@@ -41,14 +41,17 @@ Web3ContentListEntry copyWith({Web3ContentListEntryContent? Function()? content,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ContentListEntry &&
           content == other.content &&
           createdOn == other.createdOn &&
           description == other.description &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, createdOn, description, id, modifiedOn, type); } 
-@override String toString() { return 'Web3ContentListEntry(content: $content, createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(content, createdOn, description, id, modifiedOn, type);
+
+@override String toString() => 'Web3ContentListEntry(content: $content, createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, type: $type)';
+
  }

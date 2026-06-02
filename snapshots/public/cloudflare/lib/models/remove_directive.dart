@@ -22,10 +22,13 @@ RemoveDirective copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? clo
   cloudflareOnly: cloudflareOnly != null ? cloudflareOnly() : this.cloudflareOnly,
   operation: operation ?? this.operation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RemoveDirective &&
           cloudflareOnly == other.cloudflareOnly &&
-          operation == other.operation; } 
-@override int get hashCode { return Object.hash(cloudflareOnly, operation); } 
-@override String toString() { return 'RemoveDirective(cloudflareOnly: $cloudflareOnly, operation: $operation)'; } 
+          operation == other.operation;
+
+@override int get hashCode => Object.hash(cloudflareOnly, operation);
+
+@override String toString() => 'RemoveDirective(cloudflareOnly: $cloudflareOnly, operation: $operation)';
+
  }

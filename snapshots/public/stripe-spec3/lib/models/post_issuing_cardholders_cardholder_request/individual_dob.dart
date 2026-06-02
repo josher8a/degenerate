@@ -27,11 +27,14 @@ IndividualDob copyWith({int? day, int? month, int? year, }) { return IndividualD
   month: month ?? this.month,
   year: year ?? this.year,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IndividualDob &&
           day == other.day &&
           month == other.month &&
-          year == other.year; } 
-@override int get hashCode { return Object.hash(day, month, year); } 
-@override String toString() { return 'IndividualDob(day: $day, month: $month, year: $year)'; } 
+          year == other.year;
+
+@override int get hashCode => Object.hash(day, month, year);
+
+@override String toString() => 'IndividualDob(day: $day, month: $month, year: $year)';
+
  }

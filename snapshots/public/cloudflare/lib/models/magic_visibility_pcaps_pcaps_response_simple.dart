@@ -52,7 +52,7 @@ MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilte
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsResponseSimple &&
           filterV1 == other.filterV1 &&
           id == other.id &&
@@ -61,7 +61,10 @@ MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilte
           submitted == other.submitted &&
           system == other.system &&
           timeLimit == other.timeLimit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(filterV1, id, offsetTime, status, submitted, system, timeLimit, type); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsResponseSimple(filterV1: $filterV1, id: $id, offsetTime: $offsetTime, status: $status, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(filterV1, id, offsetTime, status, submitted, system, timeLimit, type);
+
+@override String toString() => 'MagicVisibilityPcapsPcapsResponseSimple(filterV1: $filterV1, id: $id, offsetTime: $offsetTime, status: $status, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)';
+
  }

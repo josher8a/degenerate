@@ -35,12 +35,15 @@ LoadBalancerIngress copyWith({String? Function()? hostname, String? Function()? 
   ipMode: ipMode != null ? ipMode() : this.ipMode,
   ports: ports != null ? ports() : this.ports,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerIngress &&
           hostname == other.hostname &&
           ip == other.ip &&
           ipMode == other.ipMode &&
-          listEquals(ports, other.ports); } 
-@override int get hashCode { return Object.hash(hostname, ip, ipMode, Object.hashAll(ports ?? const [])); } 
-@override String toString() { return 'LoadBalancerIngress(hostname: $hostname, ip: $ip, ipMode: $ipMode, ports: $ports)'; } 
+          listEquals(ports, other.ports);
+
+@override int get hashCode => Object.hash(hostname, ip, ipMode, Object.hashAll(ports ?? const []));
+
+@override String toString() => 'LoadBalancerIngress(hostname: $hostname, ip: $ip, ipMode: $ipMode, ports: $ports)';
+
  }

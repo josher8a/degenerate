@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseCreatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseCreatedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseCreatedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseCreatedType($value)';
+
  }
 /// Returned when a new Response is created. The first event of response creation,
 /// where the response is in an initial state of `in_progress`.
@@ -54,11 +57,14 @@ RealtimeBetaServerEventResponseCreated copyWith({String? eventId, RealtimeBetaSe
   type: type ?? this.type,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseCreated &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseCreated(eventId: $eventId, type: $type, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(eventId, type, response);
+
+@override String toString() => 'RealtimeBetaServerEventResponseCreated(eventId: $eventId, type: $type, response: $response)';
+
  }

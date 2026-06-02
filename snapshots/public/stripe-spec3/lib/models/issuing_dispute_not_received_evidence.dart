@@ -52,13 +52,16 @@ IssuingDisputeNotReceivedEvidence copyWith({IssuingDisputeCanceledEvidenceAdditi
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeNotReceivedEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
           expectedAt == other.expectedAt &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
-          productType == other.productType; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType); } 
-@override String toString() { return 'IssuingDisputeNotReceivedEvidence(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+          productType == other.productType;
+
+@override int get hashCode => Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType);
+
+@override String toString() => 'IssuingDisputeNotReceivedEvidence(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)';
+
  }

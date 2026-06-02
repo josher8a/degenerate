@@ -81,7 +81,7 @@ ZeroTrustGatewayGatewayAccountSettingsSettings copyWith({ZeroTrustGatewayActivit
   sandbox: sandbox != null ? sandbox() : this.sandbox,
   tlsDecrypt: tlsDecrypt != null ? tlsDecrypt() : this.tlsDecrypt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountSettingsSettings &&
           activityLog == other.activityLog &&
           antivirus == other.antivirus &&
@@ -96,7 +96,10 @@ ZeroTrustGatewayGatewayAccountSettingsSettings copyWith({ZeroTrustGatewayActivit
           inspection == other.inspection &&
           protocolDetection == other.protocolDetection &&
           sandbox == other.sandbox &&
-          tlsDecrypt == other.tlsDecrypt; } 
-@override int get hashCode { return Object.hash(activityLog, antivirus, blockPage, bodyScanning, browserIsolation, certificate, customCertificate, extendedEmailMatching, fips, hostSelector, inspection, protocolDetection, sandbox, tlsDecrypt); } 
-@override String toString() { return 'ZeroTrustGatewayGatewayAccountSettingsSettings(activityLog: $activityLog, antivirus: $antivirus, blockPage: $blockPage, bodyScanning: $bodyScanning, browserIsolation: $browserIsolation, certificate: $certificate, customCertificate: $customCertificate, extendedEmailMatching: $extendedEmailMatching, fips: $fips, hostSelector: $hostSelector, inspection: $inspection, protocolDetection: $protocolDetection, sandbox: $sandbox, tlsDecrypt: $tlsDecrypt)'; } 
+          tlsDecrypt == other.tlsDecrypt;
+
+@override int get hashCode => Object.hash(activityLog, antivirus, blockPage, bodyScanning, browserIsolation, certificate, customCertificate, extendedEmailMatching, fips, hostSelector, inspection, protocolDetection, sandbox, tlsDecrypt);
+
+@override String toString() => 'ZeroTrustGatewayGatewayAccountSettingsSettings(activityLog: $activityLog, antivirus: $antivirus, blockPage: $blockPage, bodyScanning: $bodyScanning, browserIsolation: $browserIsolation, certificate: $certificate, customCertificate: $customCertificate, extendedEmailMatching: $extendedEmailMatching, fips: $fips, hostSelector: $hostSelector, inspection: $inspection, protocolDetection: $protocolDetection, sandbox: $sandbox, tlsDecrypt: $tlsDecrypt)';
+
  }

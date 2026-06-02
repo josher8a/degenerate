@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageEmbeddingsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageEmbeddingsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageEmbeddingsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageEmbeddingsResultObject($value)';
+
  }
 /// The aggregated embeddings usage details of the specific time bucket.
 @immutable final class UsageEmbeddingsResult {const UsageEmbeddingsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
@@ -75,7 +78,7 @@ UsageEmbeddingsResult copyWith({UsageEmbeddingsResultObject? object, int? inputT
   apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageEmbeddingsResult &&
           object == other.object &&
           inputTokens == other.inputTokens &&
@@ -83,7 +86,10 @@ UsageEmbeddingsResult copyWith({UsageEmbeddingsResultObject? object, int? inputT
           projectId == other.projectId &&
           userId == other.userId &&
           apiKeyId == other.apiKeyId &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(object, inputTokens, numModelRequests, projectId, userId, apiKeyId, model); } 
-@override String toString() { return 'UsageEmbeddingsResult(object: $object, inputTokens: $inputTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(object, inputTokens, numModelRequests, projectId, userId, apiKeyId, model);
+
+@override String toString() => 'UsageEmbeddingsResult(object: $object, inputTokens: $inputTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';
+
  }

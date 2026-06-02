@@ -35,12 +35,15 @@ CreatePollRequest copyWith({bool? Function()? anonymous, bool? Function()? hideV
   options: options ?? this.options,
   question: question ?? this.question,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePollRequest &&
           anonymous == other.anonymous &&
           hideVotes == other.hideVotes &&
           listEquals(options, other.options) &&
-          question == other.question; } 
-@override int get hashCode { return Object.hash(anonymous, hideVotes, Object.hashAll(options), question); } 
-@override String toString() { return 'CreatePollRequest(anonymous: $anonymous, hideVotes: $hideVotes, options: $options, question: $question)'; } 
+          question == other.question;
+
+@override int get hashCode => Object.hash(anonymous, hideVotes, Object.hashAll(options), question);
+
+@override String toString() => 'CreatePollRequest(anonymous: $anonymous, hideVotes: $hideVotes, options: $options, question: $question)';
+
  }

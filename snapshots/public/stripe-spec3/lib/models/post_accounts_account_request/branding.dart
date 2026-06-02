@@ -49,12 +49,15 @@ Branding copyWith({String? Function()? icon, String? Function()? logo, String? F
   primaryColor: primaryColor != null ? primaryColor() : this.primaryColor,
   secondaryColor: secondaryColor != null ? secondaryColor() : this.secondaryColor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Branding &&
           icon == other.icon &&
           logo == other.logo &&
           primaryColor == other.primaryColor &&
-          secondaryColor == other.secondaryColor; } 
-@override int get hashCode { return Object.hash(icon, logo, primaryColor, secondaryColor); } 
-@override String toString() { return 'Branding(icon: $icon, logo: $logo, primaryColor: $primaryColor, secondaryColor: $secondaryColor)'; } 
+          secondaryColor == other.secondaryColor;
+
+@override int get hashCode => Object.hash(icon, logo, primaryColor, secondaryColor);
+
+@override String toString() => 'Branding(icon: $icon, logo: $logo, primaryColor: $primaryColor, secondaryColor: $secondaryColor)';
+
  }

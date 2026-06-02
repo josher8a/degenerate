@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssueFieldValueDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssueFieldValueDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssueFieldValueDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssueFieldValueDataType($value)';
+
  }
 /// A value assigned to an issue field
 @immutable final class IssueFieldValue {const IssueFieldValue({required this.issueFieldId, required this.nodeId, required this.dataType, required this.value, this.singleSelectOption, });
@@ -78,13 +81,16 @@ IssueFieldValue copyWith({int? issueFieldId, String? nodeId, IssueFieldValueData
   value: value != null ? value() : this.value,
   singleSelectOption: singleSelectOption != null ? singleSelectOption() : this.singleSelectOption,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueFieldValue &&
           issueFieldId == other.issueFieldId &&
           nodeId == other.nodeId &&
           dataType == other.dataType &&
           value == other.value &&
-          singleSelectOption == other.singleSelectOption; } 
-@override int get hashCode { return Object.hash(issueFieldId, nodeId, dataType, value, singleSelectOption); } 
-@override String toString() { return 'IssueFieldValue(issueFieldId: $issueFieldId, nodeId: $nodeId, dataType: $dataType, value: $value, singleSelectOption: $singleSelectOption)'; } 
+          singleSelectOption == other.singleSelectOption;
+
+@override int get hashCode => Object.hash(issueFieldId, nodeId, dataType, value, singleSelectOption);
+
+@override String toString() => 'IssueFieldValue(issueFieldId: $issueFieldId, nodeId: $nodeId, dataType: $dataType, value: $value, singleSelectOption: $singleSelectOption)';
+
  }

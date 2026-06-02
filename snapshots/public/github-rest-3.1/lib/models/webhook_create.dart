@@ -71,7 +71,7 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCreate &&
           description == other.description &&
           enterprise == other.enterprise &&
@@ -82,7 +82,10 @@ WebhookCreate copyWith({String? Function()? description, EnterpriseWebhooks? Fun
           ref == other.ref &&
           refType == other.refType &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(description, enterprise, installation, masterBranch, organization, pusherType, ref, refType, repository, sender); } 
-@override String toString() { return 'WebhookCreate(description: $description, enterprise: $enterprise, installation: $installation, masterBranch: $masterBranch, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(description, enterprise, installation, masterBranch, organization, pusherType, ref, refType, repository, sender);
+
+@override String toString() => 'WebhookCreate(description: $description, enterprise: $enterprise, installation: $installation, masterBranch: $masterBranch, organization: $organization, pusherType: $pusherType, ref: $ref, refType: $refType, repository: $repository, sender: $sender)';
+
  }

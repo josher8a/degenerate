@@ -130,7 +130,7 @@ AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Func
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsOwner &&
           login == other.login &&
           id == other.id &&
@@ -155,7 +155,10 @@ AppsOwner copyWith({String? Function()? login, int? Function()? id, String? Func
           receivedEventsUrl == other.receivedEventsUrl &&
           type == other.type &&
           siteAdmin == other.siteAdmin &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description, gravatarId, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, receivedEventsUrl, type, siteAdmin, userViewType]); } 
-@override String toString() { return 'AppsOwner(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description, gravatarId: $gravatarId, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description, gravatarId, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, receivedEventsUrl, type, siteAdmin, userViewType]);
+
+@override String toString() => 'AppsOwner(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description, gravatarId: $gravatarId, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, userViewType: $userViewType)';
+
  }

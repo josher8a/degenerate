@@ -50,7 +50,7 @@ AddressingAddressMaps copyWith({AddressingCanDelete? Function()? canDelete, Addr
   id: id != null ? id() : this.id,
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAddressMaps &&
           canDelete == other.canDelete &&
           canModifyIps == other.canModifyIps &&
@@ -59,7 +59,10 @@ AddressingAddressMaps copyWith({AddressingCanDelete? Function()? canDelete, Addr
           description == other.description &&
           enabled == other.enabled &&
           id == other.id &&
-          modifiedAt == other.modifiedAt; } 
-@override int get hashCode { return Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt); } 
-@override String toString() { return 'AddressingAddressMaps(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt)'; } 
+          modifiedAt == other.modifiedAt;
+
+@override int get hashCode => Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt);
+
+@override String toString() => 'AddressingAddressMaps(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt)';
+
  }

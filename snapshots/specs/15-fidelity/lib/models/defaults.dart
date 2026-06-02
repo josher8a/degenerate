@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StringEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StringEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StringEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StringEnum($value)';
+
  }
 @immutable final class Defaults {const Defaults({this.enabled = true, this.count = 10, this.label = 'unnamed', this.status, this.tags = const [], });
 
@@ -62,13 +65,16 @@ Defaults copyWith({bool Function()? enabled, int Function()? count, String Funct
   status: status != null ? status() : this.status,
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Defaults &&
           enabled == other.enabled &&
           count == other.count &&
           label == other.label &&
           status == other.status &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(enabled, count, label, status, Object.hashAll(tags)); } 
-@override String toString() { return 'Defaults(enabled: $enabled, count: $count, label: $label, status: $status, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(enabled, count, label, status, Object.hashAll(tags));
+
+@override String toString() => 'Defaults(enabled: $enabled, count: $count, label: $label, status: $status, tags: $tags)';
+
  }

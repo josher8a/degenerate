@@ -17,7 +17,8 @@ final class RadarGetRankingDomainTimeseriesError$400 extends RadarGetRankingDoma
 
 final RadarGetRankingDomainTimeseriesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetRankingDomainTimeseriesError$Unknown extends RadarGetRankingDomainTimeseriesError {const RadarGetRankingDomainTimeseriesError$Unknown(this.statusCode, this.rawBody, );
 

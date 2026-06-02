@@ -22,10 +22,13 @@ GetTargetIndustryListByDatasetResponse copyWith({GetAttackerListResponseItems? i
   items: items ?? this.items,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetTargetIndustryListByDatasetResponse &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'GetTargetIndustryListByDatasetResponse(items: $items, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(items, type);
+
+@override String toString() => 'GetTargetIndustryListByDatasetResponse(items: $items, type: $type)';
+
  }

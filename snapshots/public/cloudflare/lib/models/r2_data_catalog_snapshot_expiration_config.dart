@@ -44,11 +44,14 @@ R2DataCatalogSnapshotExpirationConfig copyWith({String? maxSnapshotAge, int? min
   minSnapshotsToKeep: minSnapshotsToKeep ?? this.minSnapshotsToKeep,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogSnapshotExpirationConfig &&
           maxSnapshotAge == other.maxSnapshotAge &&
           minSnapshotsToKeep == other.minSnapshotsToKeep &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(maxSnapshotAge, minSnapshotsToKeep, state); } 
-@override String toString() { return 'R2DataCatalogSnapshotExpirationConfig(maxSnapshotAge: $maxSnapshotAge, minSnapshotsToKeep: $minSnapshotsToKeep, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(maxSnapshotAge, minSnapshotsToKeep, state);
+
+@override String toString() => 'R2DataCatalogSnapshotExpirationConfig(maxSnapshotAge: $maxSnapshotAge, minSnapshotsToKeep: $minSnapshotsToKeep, state: $state)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 MconnConduitConnector copyWith({MconnAccountId? accountId}) { return MconnConduitConnector(
   accountId: accountId ?? this.accountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnConduitConnector &&
-          accountId == other.accountId; } 
-@override int get hashCode { return accountId.hashCode; } 
-@override String toString() { return 'MconnConduitConnector(accountId: $accountId)'; } 
+          accountId == other.accountId;
+
+@override int get hashCode => accountId.hashCode;
+
+@override String toString() => 'MconnConduitConnector(accountId: $accountId)';
+
  }

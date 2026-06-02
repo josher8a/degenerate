@@ -47,14 +47,17 @@ ServiceAccount copyWith({String? Function()? apiVersion, bool? Function()? autom
   metadata: metadata != null ? metadata() : this.metadata,
   secrets: secrets != null ? secrets() : this.secrets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ServiceAccount &&
           apiVersion == other.apiVersion &&
           automountServiceAccountToken == other.automountServiceAccountToken &&
           listEquals(imagePullSecrets, other.imagePullSecrets) &&
           kind == other.kind &&
           metadata == other.metadata &&
-          listEquals(secrets, other.secrets); } 
-@override int get hashCode { return Object.hash(apiVersion, automountServiceAccountToken, Object.hashAll(imagePullSecrets ?? const []), kind, metadata, Object.hashAll(secrets ?? const [])); } 
-@override String toString() { return 'ServiceAccount(apiVersion: $apiVersion, automountServiceAccountToken: $automountServiceAccountToken, imagePullSecrets: $imagePullSecrets, kind: $kind, metadata: $metadata, secrets: $secrets)'; } 
+          listEquals(secrets, other.secrets);
+
+@override int get hashCode => Object.hash(apiVersion, automountServiceAccountToken, Object.hashAll(imagePullSecrets ?? const []), kind, metadata, Object.hashAll(secrets ?? const []));
+
+@override String toString() => 'ServiceAccount(apiVersion: $apiVersion, automountServiceAccountToken: $automountServiceAccountToken, imagePullSecrets: $imagePullSecrets, kind: $kind, metadata: $metadata, secrets: $secrets)';
+
  }

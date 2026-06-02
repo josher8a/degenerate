@@ -128,41 +128,37 @@ final class MobileSpaceDetailSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is MobileSpaceDetailSchema &&
-            slug == other.slug &&
-            title == other.title &&
-            imageLink == other.imageLink &&
-            shortDescription == other.shortDescription &&
-            content == other.content &&
-            author == other.author &&
-            category == other.category &&
-            subscribers == other.subscribers &&
-            recurring == other.recurring &&
-            price == other.price &&
-            listEquals(nextEvents, other.nextEvents);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MobileSpaceDetailSchema &&
+          slug == other.slug &&
+          title == other.title &&
+          imageLink == other.imageLink &&
+          shortDescription == other.shortDescription &&
+          content == other.content &&
+          author == other.author &&
+          category == other.category &&
+          subscribers == other.subscribers &&
+          recurring == other.recurring &&
+          price == other.price &&
+          listEquals(nextEvents, other.nextEvents);
 
   @override
-  int get hashCode {
-    return Object.hash(
-      slug,
-      title,
-      imageLink,
-      shortDescription,
-      content,
-      author,
-      category,
-      subscribers,
-      recurring,
-      price,
-      Object.hashAll(nextEvents),
-    );
-  }
+  int get hashCode => Object.hash(
+    slug,
+    title,
+    imageLink,
+    shortDescription,
+    content,
+    author,
+    category,
+    subscribers,
+    recurring,
+    price,
+    Object.hashAll(nextEvents),
+  );
 
   @override
-  String toString() {
-    return 'MobileSpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price, nextEvents: $nextEvents)';
-  }
+  String toString() =>
+      'MobileSpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price, nextEvents: $nextEvents)';
 }

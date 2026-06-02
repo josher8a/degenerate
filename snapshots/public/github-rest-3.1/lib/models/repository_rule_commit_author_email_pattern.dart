@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleCommitAuthorEmailPatternType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleCommitAuthorEmailPatternType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleCommitAuthorEmailPatternType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleCommitAuthorEmailPatternType($value)';
+
  }
 /// Parameters to be used for the commit_author_email_pattern rule
 @immutable final class RepositoryRuleCommitAuthorEmailPattern {const RepositoryRuleCommitAuthorEmailPattern({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleCommitAuthorEmailPattern copyWith({RepositoryRuleCommitAuthorEmail
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCommitAuthorEmailPattern &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleCommitAuthorEmailPattern(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleCommitAuthorEmailPattern(type: $type, parameters: $parameters)';
+
  }

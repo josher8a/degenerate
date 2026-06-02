@@ -52,7 +52,7 @@ WebhookRepositoryRulesetEdited copyWith({ItemEditedAction? action, EnterpriseWeb
   changes: changes != null ? changes() : this.changes,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryRulesetEdited &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -61,7 +61,10 @@ WebhookRepositoryRulesetEdited copyWith({ItemEditedAction? action, EnterpriseWeb
           repository == other.repository &&
           repositoryRuleset == other.repositoryRuleset &&
           changes == other.changes &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, repositoryRuleset, changes, sender); } 
-@override String toString() { return 'WebhookRepositoryRulesetEdited(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, repositoryRuleset: $repositoryRuleset, changes: $changes, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, repositoryRuleset, changes, sender);
+
+@override String toString() => 'WebhookRepositoryRulesetEdited(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, repositoryRuleset: $repositoryRuleset, changes: $changes, sender: $sender)';
+
  }

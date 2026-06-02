@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitInteractiveConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitInteractiveConfigType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitInteractiveConfigType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitInteractiveConfigType($value)';
+
  }
 /// Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.
 @immutable final class RealtimekitInteractiveConfig {const RealtimekitInteractiveConfig({this.type});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RealtimekitInteractiveConfig copyWith({RealtimekitInteractiveConfigType? Function()? type}) { return RealtimekitInteractiveConfig(
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitInteractiveConfig &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RealtimekitInteractiveConfig(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'RealtimekitInteractiveConfig(type: $type)';
+
  }

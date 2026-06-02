@@ -47,13 +47,16 @@ PostTransfersIdReversalsRequest copyWith({int? Function()? amount, String? Funct
   metadata: metadata != null ? metadata() : this.metadata,
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTransfersIdReversalsRequest &&
           amount == other.amount &&
           description == other.description &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          refundApplicationFee == other.refundApplicationFee; } 
-@override int get hashCode { return Object.hash(amount, description, Object.hashAll(expand ?? const []), metadata, refundApplicationFee); } 
-@override String toString() { return 'PostTransfersIdReversalsRequest(amount: $amount, description: $description, expand: $expand, metadata: $metadata, refundApplicationFee: $refundApplicationFee)'; } 
+          refundApplicationFee == other.refundApplicationFee;
+
+@override int get hashCode => Object.hash(amount, description, Object.hashAll(expand ?? const []), metadata, refundApplicationFee);
+
+@override String toString() => 'PostTransfersIdReversalsRequest(amount: $amount, description: $description, expand: $expand, metadata: $metadata, refundApplicationFee: $refundApplicationFee)';
+
  }

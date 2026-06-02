@@ -29,10 +29,13 @@ TerminalConfigurationConfigurationResourcePersonalPskWifi copyWith({String? pass
   password: password ?? this.password,
   ssid: ssid ?? this.ssid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourcePersonalPskWifi &&
           password == other.password &&
-          ssid == other.ssid; } 
-@override int get hashCode { return Object.hash(password, ssid); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourcePersonalPskWifi(password: $password, ssid: $ssid)'; } 
+          ssid == other.ssid;
+
+@override int get hashCode => Object.hash(password, ssid);
+
+@override String toString() => 'TerminalConfigurationConfigurationResourcePersonalPskWifi(password: $password, ssid: $ssid)';
+
  }

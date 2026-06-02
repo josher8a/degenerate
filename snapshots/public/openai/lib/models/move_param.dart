@@ -31,11 +31,14 @@ MoveParam copyWith({String? type, int? x, int? y, }) { return MoveParam(
   x: x ?? this.x,
   y: y ?? this.y,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MoveParam &&
           type == other.type &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(type, x, y); } 
-@override String toString() { return 'MoveParam(type: $type, x: $x, y: $y)'; } 
+          y == other.y;
+
+@override int get hashCode => Object.hash(type, x, y);
+
+@override String toString() => 'MoveParam(type: $type, x: $x, y: $y)';
+
  }

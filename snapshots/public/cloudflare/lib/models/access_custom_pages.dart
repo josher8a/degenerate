@@ -26,10 +26,13 @@ AccessCustomPages copyWith({String? Function()? forbidden, String? Function()? i
   forbidden: forbidden != null ? forbidden() : this.forbidden,
   identityDenied: identityDenied != null ? identityDenied() : this.identityDenied,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomPages &&
           forbidden == other.forbidden &&
-          identityDenied == other.identityDenied; } 
-@override int get hashCode { return Object.hash(forbidden, identityDenied); } 
-@override String toString() { return 'AccessCustomPages(forbidden: $forbidden, identityDenied: $identityDenied)'; } 
+          identityDenied == other.identityDenied;
+
+@override int get hashCode => Object.hash(forbidden, identityDenied);
+
+@override String toString() => 'AccessCustomPages(forbidden: $forbidden, identityDenied: $identityDenied)';
+
  }

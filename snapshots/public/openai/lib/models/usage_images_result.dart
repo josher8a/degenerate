@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageImagesResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageImagesResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageImagesResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageImagesResultObject($value)';
+
  }
 /// The aggregated images usage details of the specific time bucket.
 @immutable final class UsageImagesResult {const UsageImagesResult({required this.object, required this.images, required this.numModelRequests, this.source, this.size, this.projectId, this.userId, this.apiKeyId, this.model, });
@@ -87,7 +90,7 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
   apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageImagesResult &&
           object == other.object &&
           images == other.images &&
@@ -97,7 +100,10 @@ UsageImagesResult copyWith({UsageImagesResultObject? object, int? images, int? n
           projectId == other.projectId &&
           userId == other.userId &&
           apiKeyId == other.apiKeyId &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(object, images, numModelRequests, source, size, projectId, userId, apiKeyId, model); } 
-@override String toString() { return 'UsageImagesResult(object: $object, images: $images, numModelRequests: $numModelRequests, source: $source, size: $size, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(object, images, numModelRequests, source, size, projectId, userId, apiKeyId, model);
+
+@override String toString() => 'UsageImagesResult(object: $object, images: $images, numModelRequests: $numModelRequests, source: $source, size: $size, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';
+
  }

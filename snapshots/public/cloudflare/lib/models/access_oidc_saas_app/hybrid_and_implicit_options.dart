@@ -22,10 +22,13 @@ HybridAndImplicitOptions copyWith({bool? Function()? returnAccessTokenFromAuthor
   returnAccessTokenFromAuthorizationEndpoint: returnAccessTokenFromAuthorizationEndpoint != null ? returnAccessTokenFromAuthorizationEndpoint() : this.returnAccessTokenFromAuthorizationEndpoint,
   returnIdTokenFromAuthorizationEndpoint: returnIdTokenFromAuthorizationEndpoint != null ? returnIdTokenFromAuthorizationEndpoint() : this.returnIdTokenFromAuthorizationEndpoint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HybridAndImplicitOptions &&
           returnAccessTokenFromAuthorizationEndpoint == other.returnAccessTokenFromAuthorizationEndpoint &&
-          returnIdTokenFromAuthorizationEndpoint == other.returnIdTokenFromAuthorizationEndpoint; } 
-@override int get hashCode { return Object.hash(returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint); } 
-@override String toString() { return 'HybridAndImplicitOptions(returnAccessTokenFromAuthorizationEndpoint: $returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint: $returnIdTokenFromAuthorizationEndpoint)'; } 
+          returnIdTokenFromAuthorizationEndpoint == other.returnIdTokenFromAuthorizationEndpoint;
+
+@override int get hashCode => Object.hash(returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint);
+
+@override String toString() => 'HybridAndImplicitOptions(returnAccessTokenFromAuthorizationEndpoint: $returnAccessTokenFromAuthorizationEndpoint, returnIdTokenFromAuthorizationEndpoint: $returnIdTokenFromAuthorizationEndpoint)';
+
  }

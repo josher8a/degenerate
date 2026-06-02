@@ -24,10 +24,13 @@ ShippingRateCurrencyOption copyWith({int? amount, PostInvoiceitemsInvoiceitemReq
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior ?? this.taxBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRateCurrencyOption &&
           amount == other.amount &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(amount, taxBehavior); } 
-@override String toString() { return 'ShippingRateCurrencyOption(amount: $amount, taxBehavior: $taxBehavior)'; } 
+          taxBehavior == other.taxBehavior;
+
+@override int get hashCode => Object.hash(amount, taxBehavior);
+
+@override String toString() => 'ShippingRateCurrencyOption(amount: $amount, taxBehavior: $taxBehavior)';
+
  }

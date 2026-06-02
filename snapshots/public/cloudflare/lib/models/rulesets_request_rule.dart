@@ -126,7 +126,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'block';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleBlock(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -141,10 +142,13 @@ RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParame
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.block($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleBlock && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.block($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -178,7 +182,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'challenge';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -193,10 +198,13 @@ RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionPa
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.challenge($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleChallenge && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.challenge($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -230,7 +238,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'compress_response';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleCompressResponse(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -245,10 +254,13 @@ RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? a
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.compressResponse($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleCompressResponse && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.compressResponse($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -282,7 +294,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'ddos_dynamic';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleDdosDynamic(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -297,10 +310,13 @@ RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? action
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.ddosDynamic($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleDdosDynamic && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.ddosDynamic($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -334,7 +350,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'execute';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleExecute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -349,10 +366,13 @@ RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionPara
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.execute($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleExecute && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.execute($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -386,7 +406,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'force_connection_close';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleForceConnectionClose(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -401,10 +422,13 @@ RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function(
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.forceConnectionClose($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleForceConnectionClose && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.forceConnectionClose($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -438,7 +462,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'js_challenge';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleJsChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -453,10 +478,13 @@ RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? action
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.jsChallenge($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleJsChallenge && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.jsChallenge($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -490,7 +518,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'log';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLog(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -505,10 +534,13 @@ RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParamete
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.log($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleLog && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.log($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -542,7 +574,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'log_custom_field';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLogCustomField(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -557,10 +590,13 @@ RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? act
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.logCustomField($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleLogCustomField && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.logCustomField($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -594,7 +630,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'managed_challenge';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleManagedChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -609,10 +646,13 @@ RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? a
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.managedChallenge($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleManagedChallenge && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.managedChallenge($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -646,7 +686,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'redirect';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRedirect(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -661,10 +702,13 @@ RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionPar
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.redirect($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleRedirect && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.redirect($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -698,7 +742,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'rewrite';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRewrite(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -713,10 +758,13 @@ RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionPara
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.rewrite($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleRewrite && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.rewrite($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -750,7 +798,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'route';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRoute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -765,10 +814,13 @@ RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParame
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.route($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleRoute && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.route($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -802,7 +854,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'score';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleScore(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -817,10 +870,13 @@ RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParame
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.score($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleScore && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.score($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -854,7 +910,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'serve_error';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleServeError(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -869,10 +926,13 @@ RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionP
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.serveError($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleServeError && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.serveError($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -906,7 +966,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'set_cache_control';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheControl(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -921,10 +982,13 @@ RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? ac
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.setCacheControl($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleSetCacheControl && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.setCacheControl($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -958,7 +1022,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'set_cache_settings';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheSettings(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -973,10 +1038,13 @@ RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? a
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.setCacheSettings($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleSetCacheSettings && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.setCacheSettings($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -1010,7 +1078,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'set_cache_tags';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheTags(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -1025,10 +1094,13 @@ RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actio
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.setCacheTags($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleSetCacheTags && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.setCacheTags($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -1062,7 +1134,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'set_config';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetConfig(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -1077,10 +1150,13 @@ RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionPa
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.setConfig($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleSetConfig && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.setConfig($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -1114,7 +1190,8 @@ final RulesetsRule rulesetsRule;
 
 @override String get action => 'skip';
 
-@override Map<String, dynamic> toJson() { return {...rulesetsRule.toJson(), 'action': action}; } 
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+
 RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSkip(rulesetsRule.copyWith(
   actionParameters: actionParameters,
   categories: categories,
@@ -1129,10 +1206,13 @@ RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParamet
   ref: ref,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule; } 
-@override int get hashCode { return rulesetsRule.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.skip($rulesetsRule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRuleSkip && rulesetsRule == other.rulesetsRule;
+
+@override int get hashCode => rulesetsRule.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.skip($rulesetsRule)';
+
 @override Map<String,dynamic>? get actionParameters => rulesetsRule.actionParameters;
 
 @override List<RulesetsRuleCategory>? get categories => rulesetsRule.categories;
@@ -1166,11 +1246,15 @@ final Map<String, dynamic> json;
 
 @override String get action => json['action'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRequestRule$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'RulesetsRequestRule.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRequestRule$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'RulesetsRequestRule.unknown($json)';
+
 @override Map<String,dynamic>? get actionParameters => json['action_parameters'] as Map<String, dynamic>?;
 
 @override List<RulesetsRuleCategory>? get categories => (json['categories'] as List<dynamic>?)?.map((e) => RulesetsRuleCategory.fromJson(e as String)).toList();

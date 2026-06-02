@@ -21,10 +21,13 @@ BrapiPostContentResponse400 copyWith({List<AccountsByAccountIdPipelinesByPipelin
   errors: errors != null ? errors() : this.errors,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostContentResponse400 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), success); } 
-@override String toString() { return 'BrapiPostContentResponse400(errors: $errors, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), success);
+
+@override String toString() => 'BrapiPostContentResponse400(errors: $errors, success: $success)';
+
  }

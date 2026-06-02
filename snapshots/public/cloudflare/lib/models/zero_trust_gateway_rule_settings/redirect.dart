@@ -29,11 +29,14 @@ Redirect copyWith({bool? Function()? includeContext, bool? Function()? preserveP
   preservePathAndQuery: preservePathAndQuery != null ? preservePathAndQuery() : this.preservePathAndQuery,
   targetUri: targetUri ?? this.targetUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Redirect &&
           includeContext == other.includeContext &&
           preservePathAndQuery == other.preservePathAndQuery &&
-          targetUri == other.targetUri; } 
-@override int get hashCode { return Object.hash(includeContext, preservePathAndQuery, targetUri); } 
-@override String toString() { return 'Redirect(includeContext: $includeContext, preservePathAndQuery: $preservePathAndQuery, targetUri: $targetUri)'; } 
+          targetUri == other.targetUri;
+
+@override int get hashCode => Object.hash(includeContext, preservePathAndQuery, targetUri);
+
+@override String toString() => 'Redirect(includeContext: $includeContext, preservePathAndQuery: $preservePathAndQuery, targetUri: $targetUri)';
+
  }

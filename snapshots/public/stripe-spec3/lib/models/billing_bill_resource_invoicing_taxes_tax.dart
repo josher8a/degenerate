@@ -62,10 +62,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingTaxesTaxTaxabilityReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingTaxesTaxTaxabilityReason($value)';
+
  }
 /// The type of tax information.
 @immutable final class BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType._(this.value);
@@ -84,10 +87,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoicingTaxesTaxType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingTaxesTaxType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoicingTaxesTaxType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingTaxesTaxType($value)';
+
  }
 /// 
 @immutable final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoicingTaxesTax({required this.amount, required this.taxBehavior, required this.taxabilityReason, required this.type, this.taxRateDetails, this.taxableAmount, });
@@ -139,14 +145,17 @@ BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceI
   taxableAmount: taxableAmount != null ? taxableAmount() : this.taxableAmount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingTaxesTax &&
           amount == other.amount &&
           taxBehavior == other.taxBehavior &&
           taxRateDetails == other.taxRateDetails &&
           taxabilityReason == other.taxabilityReason &&
           taxableAmount == other.taxableAmount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, taxBehavior, taxRateDetails, taxabilityReason, taxableAmount, type); } 
-@override String toString() { return 'BillingBillResourceInvoicingTaxesTax(amount: $amount, taxBehavior: $taxBehavior, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, taxBehavior, taxRateDetails, taxabilityReason, taxableAmount, type);
+
+@override String toString() => 'BillingBillResourceInvoicingTaxesTax(amount: $amount, taxBehavior: $taxBehavior, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount, type: $type)';
+
  }

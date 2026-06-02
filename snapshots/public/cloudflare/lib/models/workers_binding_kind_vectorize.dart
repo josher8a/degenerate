@@ -31,11 +31,14 @@ WorkersBindingKindVectorize copyWith({String? indexName, WorkersBindingName? nam
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindVectorize &&
           indexName == other.indexName &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(indexName, name, type); } 
-@override String toString() { return 'WorkersBindingKindVectorize(indexName: $indexName, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(indexName, name, type);
+
+@override String toString() => 'WorkersBindingKindVectorize(indexName: $indexName, name: $name, type: $type)';
+
  }

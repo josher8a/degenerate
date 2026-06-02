@@ -34,11 +34,14 @@ HostedComputeCreateNetworkConfigurationForOrgRequest copyWith({String? name, Hos
   computeService: computeService != null ? computeService() : this.computeService,
   networkSettingsIds: networkSettingsIds ?? this.networkSettingsIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostedComputeCreateNetworkConfigurationForOrgRequest &&
           name == other.name &&
           computeService == other.computeService &&
-          listEquals(networkSettingsIds, other.networkSettingsIds); } 
-@override int get hashCode { return Object.hash(name, computeService, Object.hashAll(networkSettingsIds)); } 
-@override String toString() { return 'HostedComputeCreateNetworkConfigurationForOrgRequest(name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds)'; } 
+          listEquals(networkSettingsIds, other.networkSettingsIds);
+
+@override int get hashCode => Object.hash(name, computeService, Object.hashAll(networkSettingsIds));
+
+@override String toString() => 'HostedComputeCreateNetworkConfigurationForOrgRequest(name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds)';
+
  }

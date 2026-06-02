@@ -27,11 +27,14 @@ PostEventCreateRequestRaw copyWith({Map<String, dynamic>? Function()? data, Stri
   source: source != null ? source() : this.source,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateRequestRaw &&
           data == other.data &&
           source == other.source &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(data, source, tlp); } 
-@override String toString() { return 'PostEventCreateRequestRaw(data: $data, source: $source, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(data, source, tlp);
+
+@override String toString() => 'PostEventCreateRequestRaw(data: $data, source: $source, tlp: $tlp)';
+
  }

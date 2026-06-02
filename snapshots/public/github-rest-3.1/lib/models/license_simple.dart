@@ -45,14 +45,17 @@ LicenseSimple copyWith({String? key, String? name, Uri? Function()? url, String?
   nodeId: nodeId ?? this.nodeId,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LicenseSimple &&
           key == other.key &&
           name == other.name &&
           url == other.url &&
           spdxId == other.spdxId &&
           nodeId == other.nodeId &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(key, name, url, spdxId, nodeId, htmlUrl); } 
-@override String toString() { return 'LicenseSimple(key: $key, name: $name, url: $url, spdxId: $spdxId, nodeId: $nodeId, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(key, name, url, spdxId, nodeId, htmlUrl);
+
+@override String toString() => 'LicenseSimple(key: $key, name: $name, url: $url, spdxId: $spdxId, nodeId: $nodeId, htmlUrl: $htmlUrl)';
+
  }

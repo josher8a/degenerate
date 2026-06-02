@@ -25,11 +25,14 @@ SubscriptionPaymentMethodOptionsParam copyWith({SubscriptionPaymentMethodOptions
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionPaymentMethodOptionsParam &&
           mandateOptions == other.mandateOptions &&
           network == other.network &&
-          requestThreeDSecure == other.requestThreeDSecure; } 
-@override int get hashCode { return Object.hash(mandateOptions, network, requestThreeDSecure); } 
-@override String toString() { return 'SubscriptionPaymentMethodOptionsParam(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)'; } 
+          requestThreeDSecure == other.requestThreeDSecure;
+
+@override int get hashCode => Object.hash(mandateOptions, network, requestThreeDSecure);
+
+@override String toString() => 'SubscriptionPaymentMethodOptionsParam(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)';
+
  }

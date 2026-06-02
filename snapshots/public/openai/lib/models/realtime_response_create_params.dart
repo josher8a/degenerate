@@ -97,7 +97,7 @@ RealtimeResponseCreateParams copyWith({List<OutputModalities>? Function()? outpu
   prompt: prompt != null ? prompt() : this.prompt,
   input: input != null ? input() : this.input,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponseCreateParams &&
           listEquals(outputModalities, other.outputModalities) &&
           instructions == other.instructions &&
@@ -108,7 +108,10 @@ RealtimeResponseCreateParams copyWith({List<OutputModalities>? Function()? outpu
           conversation == other.conversation &&
           metadata == other.metadata &&
           prompt == other.prompt &&
-          listEquals(input, other.input); } 
-@override int get hashCode { return Object.hash(Object.hashAll(outputModalities ?? const []), instructions, audio, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const [])); } 
-@override String toString() { return 'RealtimeResponseCreateParams(outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)'; } 
+          listEquals(input, other.input);
+
+@override int get hashCode => Object.hash(Object.hashAll(outputModalities ?? const []), instructions, audio, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));
+
+@override String toString() => 'RealtimeResponseCreateParams(outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';
+
  }

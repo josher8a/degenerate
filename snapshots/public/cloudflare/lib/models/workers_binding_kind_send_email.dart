@@ -46,13 +46,16 @@ WorkersBindingKindSendEmail copyWith({List<String>? Function()? allowedDestinati
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindSendEmail &&
           listEquals(allowedDestinationAddresses, other.allowedDestinationAddresses) &&
           listEquals(allowedSenderAddresses, other.allowedSenderAddresses) &&
           destinationAddress == other.destinationAddress &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedDestinationAddresses ?? const []), Object.hashAll(allowedSenderAddresses ?? const []), destinationAddress, name, type); } 
-@override String toString() { return 'WorkersBindingKindSendEmail(allowedDestinationAddresses: $allowedDestinationAddresses, allowedSenderAddresses: $allowedSenderAddresses, destinationAddress: $destinationAddress, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedDestinationAddresses ?? const []), Object.hashAll(allowedSenderAddresses ?? const []), destinationAddress, name, type);
+
+@override String toString() => 'WorkersBindingKindSendEmail(allowedDestinationAddresses: $allowedDestinationAddresses, allowedSenderAddresses: $allowedSenderAddresses, destinationAddress: $destinationAddress, name: $name, type: $type)';
+
  }

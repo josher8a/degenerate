@@ -50,7 +50,7 @@ CalculationsSeriesData copyWith({double? count, String? firstSeen, List<Groups>?
   sampleInterval: sampleInterval ?? this.sampleInterval,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CalculationsSeriesData &&
           count == other.count &&
           firstSeen == other.firstSeen &&
@@ -58,7 +58,10 @@ CalculationsSeriesData copyWith({double? count, String? firstSeen, List<Groups>?
           interval == other.interval &&
           lastSeen == other.lastSeen &&
           sampleInterval == other.sampleInterval &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(count, firstSeen, Object.hashAll(groups ?? const []), interval, lastSeen, sampleInterval, value); } 
-@override String toString() { return 'CalculationsSeriesData(count: $count, firstSeen: $firstSeen, groups: $groups, interval: $interval, lastSeen: $lastSeen, sampleInterval: $sampleInterval, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(count, firstSeen, Object.hashAll(groups ?? const []), interval, lastSeen, sampleInterval, value);
+
+@override String toString() => 'CalculationsSeriesData(count: $count, firstSeen: $firstSeen, groups: $groups, interval: $interval, lastSeen: $lastSeen, sampleInterval: $sampleInterval, value: $value)';
+
  }

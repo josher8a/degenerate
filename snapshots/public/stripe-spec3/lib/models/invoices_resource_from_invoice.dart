@@ -28,10 +28,13 @@ InvoicesResourceFromInvoice copyWith({String? action, BillingCreditGrantsResourc
   action: action ?? this.action,
   invoice: invoice ?? this.invoice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesResourceFromInvoice &&
           action == other.action &&
-          invoice == other.invoice; } 
-@override int get hashCode { return Object.hash(action, invoice); } 
-@override String toString() { return 'InvoicesResourceFromInvoice(action: $action, invoice: $invoice)'; } 
+          invoice == other.invoice;
+
+@override int get hashCode => Object.hash(action, invoice);
+
+@override String toString() => 'InvoicesResourceFromInvoice(action: $action, invoice: $invoice)';
+
  }

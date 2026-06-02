@@ -61,7 +61,7 @@ RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId,
   callId: callId ?? this.callId,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseFunctionCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -69,7 +69,10 @@ RealtimeServerEventResponseFunctionCallArgumentsDelta copyWith({String? eventId,
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           callId == other.callId &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta); } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, callId, delta);
+
+@override String toString() => 'RealtimeServerEventResponseFunctionCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, delta: $delta)';
+
  }

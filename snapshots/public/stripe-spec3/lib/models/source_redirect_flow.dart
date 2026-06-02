@@ -47,12 +47,15 @@ SourceRedirectFlow copyWith({String? Function()? failureReason, String? returnUr
   status: status ?? this.status,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceRedirectFlow &&
           failureReason == other.failureReason &&
           returnUrl == other.returnUrl &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(failureReason, returnUrl, status, url); } 
-@override String toString() { return 'SourceRedirectFlow(failureReason: $failureReason, returnUrl: $returnUrl, status: $status, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(failureReason, returnUrl, status, url);
+
+@override String toString() => 'SourceRedirectFlow(failureReason: $failureReason, returnUrl: $returnUrl, status: $status, url: $url)';
+
  }

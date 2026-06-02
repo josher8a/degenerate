@@ -30,12 +30,15 @@ ObservatoryPagesResponseCollectionResult copyWith({ObservatoryLabeledRegion? Fun
   tests: tests != null ? tests() : this.tests,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryPagesResponseCollectionResult &&
           region == other.region &&
           scheduleFrequency == other.scheduleFrequency &&
           listEquals(tests, other.tests) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(region, scheduleFrequency, Object.hashAll(tests ?? const []), url); } 
-@override String toString() { return 'ObservatoryPagesResponseCollectionResult(region: $region, scheduleFrequency: $scheduleFrequency, tests: $tests, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(region, scheduleFrequency, Object.hashAll(tests ?? const []), url);
+
+@override String toString() => 'ObservatoryPagesResponseCollectionResult(region: $region, scheduleFrequency: $scheduleFrequency, tests: $tests, url: $url)';
+
  }

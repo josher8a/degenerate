@@ -17,7 +17,8 @@ final class DeleteServersError$404 extends DeleteServersError {const DeleteServe
 
 final DeleteServersResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteServersError$Unknown extends DeleteServersError {const DeleteServersError$Unknown(this.statusCode, this.rawBody, );
 

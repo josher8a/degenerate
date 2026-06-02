@@ -64,7 +64,7 @@ GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUse
   updatedAt: updatedAt ?? this.updatedAt,
   authorAssociation: authorAssociation ?? this.authorAssociation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistComment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -73,7 +73,10 @@ GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUse
           user == other.user &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          authorAssociation == other.authorAssociation; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, body, user, createdAt, updatedAt, authorAssociation); } 
-@override String toString() { return 'GistComment(id: $id, nodeId: $nodeId, url: $url, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation)'; } 
+          authorAssociation == other.authorAssociation;
+
+@override int get hashCode => Object.hash(id, nodeId, url, body, user, createdAt, updatedAt, authorAssociation);
+
+@override String toString() => 'GistComment(id: $id, nodeId: $nodeId, url: $url, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation)';
+
  }

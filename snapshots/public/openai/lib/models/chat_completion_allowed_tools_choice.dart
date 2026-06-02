@@ -24,10 +24,13 @@ ChatCompletionAllowedToolsChoice copyWith({ChatCompletionAllowedToolsChoiceType?
   type: type ?? this.type,
   allowedTools: allowedTools ?? this.allowedTools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionAllowedToolsChoice &&
           type == other.type &&
-          allowedTools == other.allowedTools; } 
-@override int get hashCode { return Object.hash(type, allowedTools); } 
-@override String toString() { return 'ChatCompletionAllowedToolsChoice(type: $type, allowedTools: $allowedTools)'; } 
+          allowedTools == other.allowedTools;
+
+@override int get hashCode => Object.hash(type, allowedTools);
+
+@override String toString() => 'ChatCompletionAllowedToolsChoice(type: $type, allowedTools: $allowedTools)';
+
  }

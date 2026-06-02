@@ -48,13 +48,16 @@ PostCustomersCustomerBalanceTransactionsRequest copyWith({int? amount, String? c
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerBalanceTransactionsRequest &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostCustomersCustomerBalanceTransactionsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostCustomersCustomerBalanceTransactionsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata)';
+
  }

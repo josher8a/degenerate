@@ -31,12 +31,15 @@ BasicError copyWith({String? Function()? message, String? Function()? documentat
   url: url != null ? url() : this.url,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BasicError &&
           message == other.message &&
           documentationUrl == other.documentationUrl &&
           url == other.url &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(message, documentationUrl, url, status); } 
-@override String toString() { return 'BasicError(message: $message, documentationUrl: $documentationUrl, url: $url, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(message, documentationUrl, url, status);
+
+@override String toString() => 'BasicError(message: $message, documentationUrl: $documentationUrl, url: $url, status: $status)';
+
  }

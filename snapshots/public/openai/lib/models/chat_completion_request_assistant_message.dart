@@ -57,7 +57,7 @@ ChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAssistantMe
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   functionCall: functionCall != null ? functionCall() : this.functionCall,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestAssistantMessage &&
           content == other.content &&
           refusal == other.refusal &&
@@ -65,7 +65,10 @@ ChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAssistantMe
           name == other.name &&
           audio == other.audio &&
           listEquals(toolCalls, other.toolCalls) &&
-          functionCall == other.functionCall; } 
-@override int get hashCode { return Object.hash(content, refusal, role, name, audio, Object.hashAll(toolCalls ?? const []), functionCall); } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessage(content: $content, refusal: $refusal, role: $role, name: $name, audio: $audio, toolCalls: $toolCalls, functionCall: $functionCall)'; } 
+          functionCall == other.functionCall;
+
+@override int get hashCode => Object.hash(content, refusal, role, name, audio, Object.hashAll(toolCalls ?? const []), functionCall);
+
+@override String toString() => 'ChatCompletionRequestAssistantMessage(content: $content, refusal: $refusal, role: $role, name: $name, audio: $audio, toolCalls: $toolCalls, functionCall: $functionCall)';
+
  }

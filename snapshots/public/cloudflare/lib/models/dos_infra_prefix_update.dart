@@ -22,10 +22,13 @@ DosInfraPrefixUpdate copyWith({String? Function()? comment, bool? Function()? en
   comment: comment != null ? comment() : this.comment,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosInfraPrefixUpdate &&
           comment == other.comment &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(comment, enabled); } 
-@override String toString() { return 'DosInfraPrefixUpdate(comment: $comment, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(comment, enabled);
+
+@override String toString() => 'DosInfraPrefixUpdate(comment: $comment, enabled: $enabled)';
+
  }

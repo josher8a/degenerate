@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 TokenValidationRulesCreateResponse copyWith({ShieldRule? result}) { return TokenValidationRulesCreateResponse(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationRulesCreateResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'TokenValidationRulesCreateResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'TokenValidationRulesCreateResponse(result: $result)';
+
  }

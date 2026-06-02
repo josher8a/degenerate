@@ -32,10 +32,13 @@ RadarGetHttpSummaryByBotClassResponseResultSummary0 copyWith({String? bot, Strin
   bot: bot ?? this.bot,
   human: human ?? this.human,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByBotClassResponseResultSummary0 &&
           bot == other.bot &&
-          human == other.human; } 
-@override int get hashCode { return Object.hash(bot, human); } 
-@override String toString() { return 'RadarGetHttpSummaryByBotClassResponseResultSummary0(bot: $bot, human: $human)'; } 
+          human == other.human;
+
+@override int get hashCode => Object.hash(bot, human);
+
+@override String toString() => 'RadarGetHttpSummaryByBotClassResponseResultSummary0(bot: $bot, human: $human)';
+
  }

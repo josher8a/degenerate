@@ -91,7 +91,7 @@ AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchem
   ownerId: ownerId != null ? ownerId() : this.ownerId,
   purpose: purpose != null ? purpose() : this.purpose,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingLease &&
           activeFrom == other.activeFrom &&
           listEquals(cidrs, other.cidrs) &&
@@ -99,7 +99,10 @@ AddressingLease copyWith({DateTime? Function()? activeFrom, List<AddressingSchem
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           ownerId == other.ownerId &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(activeFrom, Object.hashAll(cidrs ?? const []), createdAt, id, modifiedAt, ownerId, purpose); } 
-@override String toString() { return 'AddressingLease(activeFrom: $activeFrom, cidrs: $cidrs, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, ownerId: $ownerId, purpose: $purpose)'; } 
+          purpose == other.purpose;
+
+@override int get hashCode => Object.hash(activeFrom, Object.hashAll(cidrs ?? const []), createdAt, id, modifiedAt, ownerId, purpose);
+
+@override String toString() => 'AddressingLease(activeFrom: $activeFrom, cidrs: $cidrs, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, ownerId: $ownerId, purpose: $purpose)';
+
  }

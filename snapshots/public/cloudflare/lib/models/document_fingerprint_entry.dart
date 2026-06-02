@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DocumentFingerprintEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DocumentFingerprintEntryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DocumentFingerprintEntryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DocumentFingerprintEntryType($value)';
+
  }
 @immutable final class DocumentFingerprintEntry {const DocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, });
 
@@ -66,14 +69,17 @@ DocumentFingerprintEntry copyWith({DateTime? createdAt, bool? enabled, String? i
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DocumentFingerprintEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
           id == other.id &&
           name == other.name &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, updatedAt, type); } 
-@override String toString() { return 'DocumentFingerprintEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, updatedAt, type);
+
+@override String toString() => 'DocumentFingerprintEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, updatedAt: $updatedAt, type: $type)';
+
  }

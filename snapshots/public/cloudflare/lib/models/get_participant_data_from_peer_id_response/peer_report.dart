@@ -20,10 +20,13 @@ PeerReport copyWith({PeerReportMetadata? Function()? metadata, PeerReportQuality
   metadata: metadata != null ? metadata() : this.metadata,
   quality: quality != null ? quality() : this.quality,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PeerReport &&
           metadata == other.metadata &&
-          quality == other.quality; } 
-@override int get hashCode { return Object.hash(metadata, quality); } 
-@override String toString() { return 'PeerReport(metadata: $metadata, quality: $quality)'; } 
+          quality == other.quality;
+
+@override int get hashCode => Object.hash(metadata, quality);
+
+@override String toString() => 'PeerReport(metadata: $metadata, quality: $quality)';
+
  }

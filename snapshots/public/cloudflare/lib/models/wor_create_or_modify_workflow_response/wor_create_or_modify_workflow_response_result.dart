@@ -75,7 +75,7 @@ WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? c
   triggeredOn: triggeredOn != null ? triggeredOn() : this.triggeredOn,
   versionId: versionId ?? this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateOrModifyWorkflowResponseResult &&
           className == other.className &&
           createdOn == other.createdOn &&
@@ -86,7 +86,10 @@ WorCreateOrModifyWorkflowResponseResult copyWith({String? className, DateTime? c
           scriptName == other.scriptName &&
           terminatorRunning == other.terminatorRunning &&
           triggeredOn == other.triggeredOn &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(className, createdOn, id, isDeleted, modifiedOn, name, scriptName, terminatorRunning, triggeredOn, versionId); } 
-@override String toString() { return 'WorCreateOrModifyWorkflowResponseResult(className: $className, createdOn: $createdOn, id: $id, isDeleted: $isDeleted, modifiedOn: $modifiedOn, name: $name, scriptName: $scriptName, terminatorRunning: $terminatorRunning, triggeredOn: $triggeredOn, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(className, createdOn, id, isDeleted, modifiedOn, name, scriptName, terminatorRunning, triggeredOn, versionId);
+
+@override String toString() => 'WorCreateOrModifyWorkflowResponseResult(className: $className, createdOn: $createdOn, id: $id, isDeleted: $isDeleted, modifiedOn: $modifiedOn, name: $name, scriptName: $scriptName, terminatorRunning: $terminatorRunning, triggeredOn: $triggeredOn, versionId: $versionId)';
+
  }

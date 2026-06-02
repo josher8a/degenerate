@@ -133,7 +133,7 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Cl
   deadline: deadline != null ? deadline() : this.deadline,
   classroom: classroom ?? this.classroom,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroomAssignment &&
           id == other.id &&
           publicRepo == other.publicRepo &&
@@ -152,7 +152,10 @@ SimpleClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Cl
           passing == other.passing &&
           language == other.language &&
           deadline == other.deadline &&
-          classroom == other.classroom; } 
-@override int get hashCode { return Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, classroom); } 
-@override String toString() { return 'SimpleClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, classroom: $classroom)'; } 
+          classroom == other.classroom;
+
+@override int get hashCode => Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, classroom);
+
+@override String toString() => 'SimpleClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, classroom: $classroom)';
+
  }

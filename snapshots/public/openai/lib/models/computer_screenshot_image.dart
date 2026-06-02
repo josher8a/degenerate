@@ -32,11 +32,14 @@ ComputerScreenshotImage copyWith({ComputerScreenshotContentType? type, String? F
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerScreenshotImage &&
           type == other.type &&
           imageUrl == other.imageUrl &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(type, imageUrl, fileId); } 
-@override String toString() { return 'ComputerScreenshotImage(type: $type, imageUrl: $imageUrl, fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => Object.hash(type, imageUrl, fileId);
+
+@override String toString() => 'ComputerScreenshotImage(type: $type, imageUrl: $imageUrl, fileId: $fileId)';
+
  }

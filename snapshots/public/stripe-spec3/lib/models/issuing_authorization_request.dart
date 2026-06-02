@@ -74,10 +74,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationRequestReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationRequestReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationRequestReason($value)';
+
  }
 /// 
 @immutable final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({required this.amount, required this.approved, required this.created, required this.currency, required this.merchantAmount, required this.merchantCurrency, required this.reason, this.amountDetails, this.authorizationCode, this.networkRiskScore, this.reasonMessage, this.requestedAt, });
@@ -181,7 +184,7 @@ IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDet
   reasonMessage: reasonMessage != null ? reasonMessage() : this.reasonMessage,
   requestedAt: requestedAt != null ? requestedAt() : this.requestedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -194,7 +197,10 @@ IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDet
           networkRiskScore == other.networkRiskScore &&
           reason == other.reason &&
           reasonMessage == other.reasonMessage &&
-          requestedAt == other.requestedAt; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, approved, authorizationCode, created, currency, merchantAmount, merchantCurrency, networkRiskScore, reason, reasonMessage, requestedAt); } 
-@override String toString() { return 'IssuingAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationCode: $authorizationCode, created: $created, currency: $currency, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore, reason: $reason, reasonMessage: $reasonMessage, requestedAt: $requestedAt)'; } 
+          requestedAt == other.requestedAt;
+
+@override int get hashCode => Object.hash(amount, amountDetails, approved, authorizationCode, created, currency, merchantAmount, merchantCurrency, networkRiskScore, reason, reasonMessage, requestedAt);
+
+@override String toString() => 'IssuingAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationCode: $authorizationCode, created: $created, currency: $currency, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore, reason: $reason, reasonMessage: $reasonMessage, requestedAt: $requestedAt)';
+
  }

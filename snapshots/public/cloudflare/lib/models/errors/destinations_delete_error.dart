@@ -19,19 +19,22 @@ final class DestinationsDeleteError$401 extends DestinationsDeleteError {const D
 
 final DestinationsDeleteResponse401 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class DestinationsDeleteError$404 extends DestinationsDeleteError {const DestinationsDeleteError$404(this.error);
 
 final DestinationsDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DestinationsDeleteError$500 extends DestinationsDeleteError {const DestinationsDeleteError$500(this.error);
 
 final DestinationsDeleteResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class DestinationsDeleteError$Unknown extends DestinationsDeleteError {const DestinationsDeleteError$Unknown(this.statusCode, this.rawBody, );
 

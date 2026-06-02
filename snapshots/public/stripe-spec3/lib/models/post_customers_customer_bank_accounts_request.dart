@@ -57,14 +57,17 @@ PostCustomersCustomerBankAccountsRequest copyWith({String? Function()? alipayAcc
   metadata: metadata != null ? metadata() : this.metadata,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerBankAccountsRequest &&
           alipayAccount == other.alipayAccount &&
           bankAccount == other.bankAccount &&
           card == other.card &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(alipayAccount, bankAccount, card, Object.hashAll(expand ?? const []), metadata, source); } 
-@override String toString() { return 'PostCustomersCustomerBankAccountsRequest(alipayAccount: $alipayAccount, bankAccount: $bankAccount, card: $card, expand: $expand, metadata: $metadata, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(alipayAccount, bankAccount, card, Object.hashAll(expand ?? const []), metadata, source);
+
+@override String toString() => 'PostCustomersCustomerBankAccountsRequest(alipayAccount: $alipayAccount, bankAccount: $bankAccount, card: $card, expand: $expand, metadata: $metadata, source: $source)';
+
  }

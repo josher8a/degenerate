@@ -17,7 +17,8 @@ final class WorkersAiPostToMarkdownError$400 extends WorkersAiPostToMarkdownErro
 
 final WorkersAiPostToMarkdownResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostToMarkdownError$Unknown extends WorkersAiPostToMarkdownError {const WorkersAiPostToMarkdownError$Unknown(this.statusCode, this.rawBody, );
 

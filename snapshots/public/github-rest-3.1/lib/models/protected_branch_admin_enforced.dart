@@ -22,10 +22,13 @@ ProtectedBranchAdminEnforced copyWith({Uri? url, bool? enabled, }) { return Prot
   url: url ?? this.url,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchAdminEnforced &&
           url == other.url &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(url, enabled); } 
-@override String toString() { return 'ProtectedBranchAdminEnforced(url: $url, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(url, enabled);
+
+@override String toString() => 'ProtectedBranchAdminEnforced(url: $url, enabled: $enabled)';
+
  }

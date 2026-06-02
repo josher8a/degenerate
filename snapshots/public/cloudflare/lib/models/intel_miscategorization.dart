@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IndicatorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IndicatorType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IndicatorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IndicatorType($value)';
+
  }
 @immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });
 
@@ -90,7 +93,7 @@ IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? 
   securityRemoves: securityRemoves != null ? securityRemoves() : this.securityRemoves,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelMiscategorization &&
           listEquals(contentAdds, other.contentAdds) &&
           listEquals(contentRemoves, other.contentRemoves) &&
@@ -98,7 +101,10 @@ IntelMiscategorization copyWith({List<int>? Function()? contentAdds, List<int>? 
           ip == other.ip &&
           listEquals(securityAdds, other.securityAdds) &&
           listEquals(securityRemoves, other.securityRemoves) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contentAdds ?? const []), Object.hashAll(contentRemoves ?? const []), indicatorType, ip, Object.hashAll(securityAdds ?? const []), Object.hashAll(securityRemoves ?? const []), url); } 
-@override String toString() { return 'IntelMiscategorization(contentAdds: $contentAdds, contentRemoves: $contentRemoves, indicatorType: $indicatorType, ip: $ip, securityAdds: $securityAdds, securityRemoves: $securityRemoves, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(contentAdds ?? const []), Object.hashAll(contentRemoves ?? const []), indicatorType, ip, Object.hashAll(securityAdds ?? const []), Object.hashAll(securityRemoves ?? const []), url);
+
+@override String toString() => 'IntelMiscategorization(contentAdds: $contentAdds, contentRemoves: $contentRemoves, indicatorType: $indicatorType, ip: $ip, securityAdds: $securityAdds, securityRemoves: $securityRemoves, url: $url)';
+
  }

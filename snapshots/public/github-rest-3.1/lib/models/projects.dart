@@ -122,7 +122,7 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
   latestStatusUpdate: latestStatusUpdate != null ? latestStatusUpdate() : this.latestStatusUpdate,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Projects &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -140,7 +140,10 @@ Projects copyWith({double? id, String? nodeId, SimpleUser? owner, SimpleUser? cr
           deletedBy == other.deletedBy &&
           state == other.state &&
           latestStatusUpdate == other.latestStatusUpdate &&
-          isTemplate == other.isTemplate; } 
-@override int get hashCode { return Object.hash(id, nodeId, owner, creator, title, description, public, closedAt, createdAt, updatedAt, number, shortDescription, deletedAt, deletedBy, state, latestStatusUpdate, isTemplate); } 
-@override String toString() { return 'Projects(id: $id, nodeId: $nodeId, owner: $owner, creator: $creator, title: $title, description: $description, public: $public, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, number: $number, shortDescription: $shortDescription, deletedAt: $deletedAt, deletedBy: $deletedBy, state: $state, latestStatusUpdate: $latestStatusUpdate, isTemplate: $isTemplate)'; } 
+          isTemplate == other.isTemplate;
+
+@override int get hashCode => Object.hash(id, nodeId, owner, creator, title, description, public, closedAt, createdAt, updatedAt, number, shortDescription, deletedAt, deletedBy, state, latestStatusUpdate, isTemplate);
+
+@override String toString() => 'Projects(id: $id, nodeId: $nodeId, owner: $owner, creator: $creator, title: $title, description: $description, public: $public, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, number: $number, shortDescription: $shortDescription, deletedAt: $deletedAt, deletedBy: $deletedBy, state: $state, latestStatusUpdate: $latestStatusUpdate, isTemplate: $isTemplate)';
+
  }

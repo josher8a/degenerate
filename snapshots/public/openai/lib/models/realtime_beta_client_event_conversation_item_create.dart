@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemCreateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemCreateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventConversationItemCreateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventConversationItemCreateType($value)';
+
  }
 /// Add a new Item to the Conversation's context, including messages, function
 /// calls, and function call responses. This event can be used both to populate a
@@ -76,12 +79,15 @@ RealtimeBetaClientEventConversationItemCreate copyWith({String? Function()? even
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventConversationItemCreate &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, previousItemId, item);
+
+@override String toString() => 'RealtimeBetaClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';
+
  }

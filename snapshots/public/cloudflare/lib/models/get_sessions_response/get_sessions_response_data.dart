@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 GetSessionsResponseData copyWith({List<RealtimekitActiveSession>? Function()? sessions}) { return GetSessionsResponseData(
   sessions: sessions != null ? sessions() : this.sessions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetSessionsResponseData &&
-          listEquals(sessions, other.sessions); } 
-@override int get hashCode { return Object.hashAll(sessions ?? const []); } 
-@override String toString() { return 'GetSessionsResponseData(sessions: $sessions)'; } 
+          listEquals(sessions, other.sessions);
+
+@override int get hashCode => Object.hashAll(sessions ?? const []);
+
+@override String toString() => 'GetSessionsResponseData(sessions: $sessions)';
+
  }

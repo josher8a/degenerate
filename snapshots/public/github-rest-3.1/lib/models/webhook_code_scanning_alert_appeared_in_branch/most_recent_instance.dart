@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MostRecentInstanceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MostRecentInstanceState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MostRecentInstanceState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MostRecentInstanceState($value)';
+
  }
 @immutable final class MostRecentInstance {const MostRecentInstance({required this.analysisKey, required this.environment, required this.ref, required this.state, this.category, this.classifications, this.commitSha, this.location, this.message, });
 
@@ -91,7 +94,7 @@ MostRecentInstance copyWith({String? analysisKey, String? Function()? category, 
   ref: ref ?? this.ref,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MostRecentInstance &&
           analysisKey == other.analysisKey &&
           category == other.category &&
@@ -101,7 +104,10 @@ MostRecentInstance copyWith({String? analysisKey, String? Function()? category, 
           location == other.location &&
           message == other.message &&
           ref == other.ref &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(analysisKey, category, Object.hashAll(classifications ?? const []), commitSha, environment, location, message, ref, state); } 
-@override String toString() { return 'MostRecentInstance(analysisKey: $analysisKey, category: $category, classifications: $classifications, commitSha: $commitSha, environment: $environment, location: $location, message: $message, ref: $ref, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(analysisKey, category, Object.hashAll(classifications ?? const []), commitSha, environment, location, message, ref, state);
+
+@override String toString() => 'MostRecentInstance(analysisKey: $analysisKey, category: $category, classifications: $classifications, commitSha: $commitSha, environment: $environment, location: $location, message: $message, ref: $ref, state: $state)';
+
  }

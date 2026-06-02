@@ -84,7 +84,7 @@ Bot copyWith({String? category, String? description, String? kind, String? name,
   userAgentPatterns: userAgentPatterns ?? this.userAgentPatterns,
   userAgents: userAgents ?? this.userAgents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Bot &&
           category == other.category &&
           description == other.description &&
@@ -94,7 +94,10 @@ Bot copyWith({String? category, String? description, String? kind, String? name,
           operatorUrl == other.operatorUrl &&
           slug == other.slug &&
           listEquals(userAgentPatterns, other.userAgentPatterns) &&
-          listEquals(userAgents, other.userAgents); } 
-@override int get hashCode { return Object.hash(category, description, kind, name, $operator, operatorUrl, slug, Object.hashAll(userAgentPatterns), Object.hashAll(userAgents)); } 
-@override String toString() { return 'Bot(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, operatorUrl: $operatorUrl, slug: $slug, userAgentPatterns: $userAgentPatterns, userAgents: $userAgents)'; } 
+          listEquals(userAgents, other.userAgents);
+
+@override int get hashCode => Object.hash(category, description, kind, name, $operator, operatorUrl, slug, Object.hashAll(userAgentPatterns), Object.hashAll(userAgents));
+
+@override String toString() => 'Bot(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, operatorUrl: $operatorUrl, slug: $slug, userAgentPatterns: $userAgentPatterns, userAgents: $userAgents)';
+
  }

@@ -21,9 +21,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('targe
 RealtimeCallReferRequest copyWith({String? targetUri}) { return RealtimeCallReferRequest(
   targetUri: targetUri ?? this.targetUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCallReferRequest &&
-          targetUri == other.targetUri; } 
-@override int get hashCode { return targetUri.hashCode; } 
-@override String toString() { return 'RealtimeCallReferRequest(targetUri: $targetUri)'; } 
+          targetUri == other.targetUri;
+
+@override int get hashCode => targetUri.hashCode;
+
+@override String toString() => 'RealtimeCallReferRequest(targetUri: $targetUri)';
+
  }

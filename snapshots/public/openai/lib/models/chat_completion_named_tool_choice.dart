@@ -23,10 +23,13 @@ ChatCompletionNamedToolChoice copyWith({AssistantToolsFunctionType? type, Assist
   type: type ?? this.type,
   function: function ?? this.function,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionNamedToolChoice &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(type, function); } 
-@override String toString() { return 'ChatCompletionNamedToolChoice(type: $type, function: $function)'; } 
+          function == other.function;
+
+@override int get hashCode => Object.hash(type, function);
+
+@override String toString() => 'ChatCompletionNamedToolChoice(type: $type, function: $function)';
+
  }

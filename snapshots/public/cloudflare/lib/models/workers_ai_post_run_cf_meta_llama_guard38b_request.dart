@@ -39,12 +39,15 @@ WorkersAiPostRunCfMetaLlamaGuard38bRequest copyWith({int Function()? maxTokens, 
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   temperature: temperature != null ? temperature() : this.temperature,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlamaGuard38bRequest &&
           maxTokens == other.maxTokens &&
           listEquals(messages, other.messages) &&
           responseFormat == other.responseFormat &&
-          temperature == other.temperature; } 
-@override int get hashCode { return Object.hash(maxTokens, Object.hashAll(messages), responseFormat, temperature); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaLlamaGuard38bRequest(maxTokens: $maxTokens, messages: $messages, responseFormat: $responseFormat, temperature: $temperature)'; } 
+          temperature == other.temperature;
+
+@override int get hashCode => Object.hash(maxTokens, Object.hashAll(messages), responseFormat, temperature);
+
+@override String toString() => 'WorkersAiPostRunCfMetaLlamaGuard38bRequest(maxTokens: $maxTokens, messages: $messages, responseFormat: $responseFormat, temperature: $temperature)';
+
  }

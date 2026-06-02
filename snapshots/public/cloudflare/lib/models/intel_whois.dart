@@ -63,7 +63,7 @@ IntelWhois copyWith({String? Function()? createdDate, IntelDomainName? Function(
   registrar: registrar != null ? registrar() : this.registrar,
   updatedDate: updatedDate != null ? updatedDate() : this.updatedDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelWhois &&
           createdDate == other.createdDate &&
           domain == other.domain &&
@@ -73,7 +73,10 @@ IntelWhois copyWith({String? Function()? createdDate, IntelDomainName? Function(
           registrantEmail == other.registrantEmail &&
           registrantOrg == other.registrantOrg &&
           registrar == other.registrar &&
-          updatedDate == other.updatedDate; } 
-@override int get hashCode { return Object.hash(createdDate, domain, Object.hashAll(nameservers ?? const []), registrant, registrantCountry, registrantEmail, registrantOrg, registrar, updatedDate); } 
-@override String toString() { return 'IntelWhois(createdDate: $createdDate, domain: $domain, nameservers: $nameservers, registrant: $registrant, registrantCountry: $registrantCountry, registrantEmail: $registrantEmail, registrantOrg: $registrantOrg, registrar: $registrar, updatedDate: $updatedDate)'; } 
+          updatedDate == other.updatedDate;
+
+@override int get hashCode => Object.hash(createdDate, domain, Object.hashAll(nameservers ?? const []), registrant, registrantCountry, registrantEmail, registrantOrg, registrar, updatedDate);
+
+@override String toString() => 'IntelWhois(createdDate: $createdDate, domain: $domain, nameservers: $nameservers, registrant: $registrant, registrantCountry: $registrantCountry, registrantEmail: $registrantEmail, registrantOrg: $registrantOrg, registrar: $registrar, updatedDate: $updatedDate)';
+
  }

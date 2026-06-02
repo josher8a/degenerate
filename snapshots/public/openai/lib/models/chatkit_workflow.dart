@@ -38,12 +38,15 @@ ChatkitWorkflow copyWith({String? id, String? Function()? version, Map<String, d
   stateVariables: stateVariables != null ? stateVariables() : this.stateVariables,
   tracing: tracing ?? this.tracing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatkitWorkflow &&
           id == other.id &&
           version == other.version &&
           stateVariables == other.stateVariables &&
-          tracing == other.tracing; } 
-@override int get hashCode { return Object.hash(id, version, stateVariables, tracing); } 
-@override String toString() { return 'ChatkitWorkflow(id: $id, version: $version, stateVariables: $stateVariables, tracing: $tracing)'; } 
+          tracing == other.tracing;
+
+@override int get hashCode => Object.hash(id, version, stateVariables, tracing);
+
+@override String toString() => 'ChatkitWorkflow(id: $id, version: $version, stateVariables: $stateVariables, tracing: $tracing)';
+
  }

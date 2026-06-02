@@ -33,10 +33,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamSsoConnectorVerificationInfoStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamSsoConnectorVerificationInfoStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IamSsoConnectorVerificationInfoStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IamSsoConnectorVerificationInfoStatus($value)';
+
  }
 @immutable final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });
 
@@ -62,10 +65,13 @@ IamSsoConnectorVerificationInfo copyWith({IamDnsVerificationCode? Function()? co
   code: code != null ? code() : this.code,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamSsoConnectorVerificationInfo &&
           code == other.code &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(code, status); } 
-@override String toString() { return 'IamSsoConnectorVerificationInfo(code: $code, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(code, status);
+
+@override String toString() => 'IamSsoConnectorVerificationInfo(code: $code, status: $status)';
+
  }

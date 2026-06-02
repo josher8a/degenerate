@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectLastErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectLastErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunObjectLastErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunObjectLastErrorCode($value)';
+
  }
 /// The last error associated with this run. Will be `null` if there are no errors.
 @immutable final class RunObjectLastError {const RunObjectLastError({required this.code, required this.message, });
@@ -52,10 +55,13 @@ RunObjectLastError copyWith({RunObjectLastErrorCode? code, String? message, }) {
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunObjectLastError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'RunObjectLastError(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'RunObjectLastError(code: $code, message: $message)';
+
  }

@@ -38,12 +38,15 @@ SingleSelectOptions copyWith({String? id, SingleSelectOptionsName? name, SingleS
   description: description ?? this.description,
   color: color ?? this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SingleSelectOptions &&
           id == other.id &&
           name == other.name &&
           description == other.description &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(id, name, description, color); } 
-@override String toString() { return 'SingleSelectOptions(id: $id, name: $name, description: $description, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(id, name, description, color);
+
+@override String toString() => 'SingleSelectOptions(id: $id, name: $name, description: $description, color: $color)';
+
  }

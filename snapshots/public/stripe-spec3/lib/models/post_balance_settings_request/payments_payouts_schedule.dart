@@ -25,11 +25,14 @@ PaymentsPayoutsSchedule copyWith({ScheduleInterval? Function()? interval, List<i
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPayoutsSchedule &&
           interval == other.interval &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'PaymentsPayoutsSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)'; } 
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);
+
+@override int get hashCode => Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const []));
+
+@override String toString() => 'PaymentsPayoutsSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)';
+
  }

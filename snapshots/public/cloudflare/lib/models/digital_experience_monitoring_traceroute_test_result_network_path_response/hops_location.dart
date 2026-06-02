@@ -25,11 +25,14 @@ HopsLocation copyWith({String? Function()? city, String? Function()? state, Stri
   state: state != null ? state() : this.state,
   zip: zip != null ? zip() : this.zip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HopsLocation &&
           city == other.city &&
           state == other.state &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hash(city, state, zip); } 
-@override String toString() { return 'HopsLocation(city: $city, state: $state, zip: $zip)'; } 
+          zip == other.zip;
+
+@override int get hashCode => Object.hash(city, state, zip);
+
+@override String toString() => 'HopsLocation(city: $city, state: $state, zip: $zip)';
+
  }

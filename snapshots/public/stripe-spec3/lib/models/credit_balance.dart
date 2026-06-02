@@ -22,10 +22,13 @@ CreditBalance copyWith({BillingCreditGrantsResourceAmount? availableBalance, Bil
   availableBalance: availableBalance ?? this.availableBalance,
   ledgerBalance: ledgerBalance ?? this.ledgerBalance,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditBalance &&
           availableBalance == other.availableBalance &&
-          ledgerBalance == other.ledgerBalance; } 
-@override int get hashCode { return Object.hash(availableBalance, ledgerBalance); } 
-@override String toString() { return 'CreditBalance(availableBalance: $availableBalance, ledgerBalance: $ledgerBalance)'; } 
+          ledgerBalance == other.ledgerBalance;
+
+@override int get hashCode => Object.hash(availableBalance, ledgerBalance);
+
+@override String toString() => 'CreditBalance(availableBalance: $availableBalance, ledgerBalance: $ledgerBalance)';
+
  }

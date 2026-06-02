@@ -35,12 +35,15 @@ AbuseReportsSubmitErrorResponse copyWith({AbuseReportsErrorCode? errorCode, Stri
   request: request ?? this.request,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsSubmitErrorResponse &&
           errorCode == other.errorCode &&
           msg == other.msg &&
           request == other.request &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(errorCode, msg, request, result); } 
-@override String toString() { return 'AbuseReportsSubmitErrorResponse(errorCode: $errorCode, msg: $msg, request: $request, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(errorCode, msg, request, result);
+
+@override String toString() => 'AbuseReportsSubmitErrorResponse(errorCode: $errorCode, msg: $msg, request: $request, result: $result)';
+
  }

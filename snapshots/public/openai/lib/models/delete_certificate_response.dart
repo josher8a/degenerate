@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteCertificateResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteCertificateResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeleteCertificateResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeleteCertificateResponseObject($value)';
+
  }
 @immutable final class DeleteCertificateResponse {const DeleteCertificateResponse({required this.object, required this.id, });
 
@@ -45,10 +48,13 @@ DeleteCertificateResponse copyWith({DeleteCertificateResponseObject? object, Str
   object: object ?? this.object,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteCertificateResponse &&
           object == other.object &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(object, id); } 
-@override String toString() { return 'DeleteCertificateResponse(object: $object, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(object, id);
+
+@override String toString() => 'DeleteCertificateResponse(object: $object, id: $id)';
+
  }

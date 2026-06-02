@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMyshellAiMelottsError$400 extends WorkersAiPostRun
 
 final WorkersAiPostRunCfMyshellAiMelottsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMyshellAiMelottsError$Unknown extends WorkersAiPostRunCfMyshellAiMelottsError {const WorkersAiPostRunCfMyshellAiMelottsError$Unknown(this.statusCode, this.rawBody, );
 

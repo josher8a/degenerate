@@ -94,7 +94,7 @@ DnsFirewallDnsFirewallClusterResponse copyWith({DnsFirewallAttackMitigation? Fun
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallClusterResponse &&
           attackMitigation == other.attackMitigation &&
           deprecateAnyRequests == other.deprecateAnyRequests &&
@@ -108,7 +108,10 @@ DnsFirewallDnsFirewallClusterResponse copyWith({DnsFirewallAttackMitigation? Fun
           listEquals(upstreamIps, other.upstreamIps) &&
           listEquals(dnsFirewallIps, other.dnsFirewallIps) &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps), Object.hashAll(dnsFirewallIps), id, modifiedOn); } 
-@override String toString() { return 'DnsFirewallDnsFirewallClusterResponse(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps, dnsFirewallIps: $dnsFirewallIps, id: $id, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps), Object.hashAll(dnsFirewallIps), id, modifiedOn);
+
+@override String toString() => 'DnsFirewallDnsFirewallClusterResponse(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps, dnsFirewallIps: $dnsFirewallIps, id: $id, modifiedOn: $modifiedOn)';
+
  }

@@ -51,14 +51,17 @@ PageShieldPolicyWithId copyWith({PageShieldPolicyAction? action, PageShieldPolic
   value: value ?? this.value,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldPolicyWithId &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
           value == other.value &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, value, id); } 
-@override String toString() { return 'PageShieldPolicyWithId(action: $action, description: $description, enabled: $enabled, expression: $expression, value: $value, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, value, id);
+
+@override String toString() => 'PageShieldPolicyWithId(action: $action, description: $description, enabled: $enabled, expression: $expression, value: $value, id: $id)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FromInvoiceAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FromInvoiceAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FromInvoiceAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FromInvoiceAction($value)';
+
  }
 /// Revise an existing invoice. The new invoice will be created in `status=draft`. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
 @immutable final class FromInvoice {const FromInvoice({required this.action, required this.invoice, });
@@ -47,10 +50,13 @@ FromInvoice copyWith({FromInvoiceAction? action, String? invoice, }) { return Fr
   action: action ?? this.action,
   invoice: invoice ?? this.invoice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FromInvoice &&
           action == other.action &&
-          invoice == other.invoice; } 
-@override int get hashCode { return Object.hash(action, invoice); } 
-@override String toString() { return 'FromInvoice(action: $action, invoice: $invoice)'; } 
+          invoice == other.invoice;
+
+@override int get hashCode => Object.hash(action, invoice);
+
+@override String toString() => 'FromInvoice(action: $action, invoice: $invoice)';
+
  }

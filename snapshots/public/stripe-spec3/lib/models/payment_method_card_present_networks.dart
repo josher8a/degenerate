@@ -30,10 +30,13 @@ PaymentMethodCardPresentNetworks copyWith({List<String>? available, String? Func
   available: available ?? this.available,
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCardPresentNetworks &&
           listEquals(available, other.available) &&
-          preferred == other.preferred; } 
-@override int get hashCode { return Object.hash(Object.hashAll(available), preferred); } 
-@override String toString() { return 'PaymentMethodCardPresentNetworks(available: $available, preferred: $preferred)'; } 
+          preferred == other.preferred;
+
+@override int get hashCode => Object.hash(Object.hashAll(available), preferred);
+
+@override String toString() => 'PaymentMethodCardPresentNetworks(available: $available, preferred: $preferred)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 GelatoSessionPhoneOptions copyWith({bool? Function()? requireVerification}) { return GelatoSessionPhoneOptions(
   requireVerification: requireVerification != null ? requireVerification() : this.requireVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoSessionPhoneOptions &&
-          requireVerification == other.requireVerification; } 
-@override int get hashCode { return requireVerification.hashCode; } 
-@override String toString() { return 'GelatoSessionPhoneOptions(requireVerification: $requireVerification)'; } 
+          requireVerification == other.requireVerification;
+
+@override int get hashCode => requireVerification.hashCode;
+
+@override String toString() => 'GelatoSessionPhoneOptions(requireVerification: $requireVerification)';
+
  }

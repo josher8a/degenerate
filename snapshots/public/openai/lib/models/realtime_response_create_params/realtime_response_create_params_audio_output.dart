@@ -28,10 +28,13 @@ RealtimeResponseCreateParamsAudioOutput copyWith({RealtimeAudioFormats? Function
   format: format != null ? format() : this.format,
   voice: voice != null ? voice() : this.voice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponseCreateParamsAudioOutput &&
           format == other.format &&
-          voice == other.voice; } 
-@override int get hashCode { return Object.hash(format, voice); } 
-@override String toString() { return 'RealtimeResponseCreateParamsAudioOutput(format: $format, voice: $voice)'; } 
+          voice == other.voice;
+
+@override int get hashCode => Object.hash(format, voice);
+
+@override String toString() => 'RealtimeResponseCreateParamsAudioOutput(format: $format, voice: $voice)';
+
  }

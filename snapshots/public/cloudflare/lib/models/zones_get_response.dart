@@ -40,13 +40,16 @@ ZonesGetResponse copyWith({List<ZonesMessages2>? errors, List<ZonesMessages2>? m
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesGetResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
           resultInfo == other.resultInfo &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const [])); } 
-@override String toString() { return 'ZonesGetResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, Object.hashAll(result ?? const []));
+
+@override String toString() => 'ZonesGetResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
+
  }

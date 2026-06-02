@@ -25,18 +25,13 @@ final class LivekitTokenResponseSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is LivekitTokenResponseSchema && token == other.token;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LivekitTokenResponseSchema && token == other.token;
 
   @override
-  int get hashCode {
-    return token.hashCode;
-  }
+  int get hashCode => token.hashCode;
 
   @override
-  String toString() {
-    return 'LivekitTokenResponseSchema(token: $token)';
-  }
+  String toString() => 'LivekitTokenResponseSchema(token: $token)';
 }

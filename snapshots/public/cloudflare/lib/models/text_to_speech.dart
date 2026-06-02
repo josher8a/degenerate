@@ -26,10 +26,13 @@ TextToSpeech copyWith({String Function()? lang, String? prompt, }) { return Text
   lang: lang != null ? lang() : this.lang,
   prompt: prompt ?? this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextToSpeech &&
           lang == other.lang &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(lang, prompt); } 
-@override String toString() { return 'TextToSpeech(lang: $lang, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(lang, prompt);
+
+@override String toString() => 'TextToSpeech(lang: $lang, prompt: $prompt)';
+
  }

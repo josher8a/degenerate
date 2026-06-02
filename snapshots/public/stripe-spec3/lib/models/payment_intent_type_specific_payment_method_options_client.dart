@@ -62,7 +62,7 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentTypeSpecificPaymentMethodOptionsClient &&
           captureMethod == other.captureMethod &&
           installments == other.installments &&
@@ -71,7 +71,10 @@ PaymentIntentTypeSpecificPaymentMethodOptionsClient copyWith({PaymentIntentTypeS
           requireCvcRecollection == other.requireCvcRecollection &&
           routing == other.routing &&
           setupFutureUsage == other.setupFutureUsage &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(captureMethod, installments, mandateOptions, requestIncrementalAuthorizationSupport, requireCvcRecollection, routing, setupFutureUsage, verificationMethod); } 
-@override String toString() { return 'PaymentIntentTypeSpecificPaymentMethodOptionsClient(captureMethod: $captureMethod, installments: $installments, mandateOptions: $mandateOptions, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, requireCvcRecollection: $requireCvcRecollection, routing: $routing, setupFutureUsage: $setupFutureUsage, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(captureMethod, installments, mandateOptions, requestIncrementalAuthorizationSupport, requireCvcRecollection, routing, setupFutureUsage, verificationMethod);
+
+@override String toString() => 'PaymentIntentTypeSpecificPaymentMethodOptionsClient(captureMethod: $captureMethod, installments: $installments, mandateOptions: $mandateOptions, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, requireCvcRecollection: $requireCvcRecollection, routing: $routing, setupFutureUsage: $setupFutureUsage, verificationMethod: $verificationMethod)';
+
  }

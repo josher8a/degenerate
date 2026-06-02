@@ -61,7 +61,7 @@ AccountToken copyWith({String? Function()? accountSid, String? Function()? dateC
   ttl: ttl != null ? ttl() : this.ttl,
   username: username != null ? username() : this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountToken &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
@@ -69,7 +69,10 @@ AccountToken copyWith({String? Function()? accountSid, String? Function()? dateC
           listEquals(iceServers, other.iceServers) &&
           password == other.password &&
           ttl == other.ttl &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, Object.hashAll(iceServers ?? const []), password, ttl, username); } 
-@override String toString() { return 'AccountToken(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, iceServers: $iceServers, password: $password, ttl: $ttl, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, Object.hashAll(iceServers ?? const []), password, ttl, username);
+
+@override String toString() => 'AccountToken(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, iceServers: $iceServers, password: $password, ttl: $ttl, username: $username)';
+
  }

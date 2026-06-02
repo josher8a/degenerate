@@ -34,10 +34,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WeeklyAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WeeklyAnchor($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WeeklyAnchor && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WeeklyAnchor($value)';
+
  }
 @immutable final class SettingsPayoutsSchedule {const SettingsPayoutsSchedule({this.delayDays, this.interval, this.monthlyAnchor, this.monthlyPayoutDays, this.weeklyAnchor, this.weeklyPayoutDays, });
 
@@ -79,14 +82,17 @@ SettingsPayoutsSchedule copyWith({DelayDays? Function()? delayDays, ScheduleInte
   weeklyAnchor: weeklyAnchor != null ? weeklyAnchor() : this.weeklyAnchor,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsPayoutsSchedule &&
           delayDays == other.delayDays &&
           interval == other.interval &&
           monthlyAnchor == other.monthlyAnchor &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
           weeklyAnchor == other.weeklyAnchor &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'SettingsPayoutsSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)'; } 
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);
+
+@override int get hashCode => Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const []));
+
+@override String toString() => 'SettingsPayoutsSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)';
+
  }

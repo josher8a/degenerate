@@ -24,10 +24,13 @@ McpToolApprovalFilter copyWith({McpToolFilter? Function()? always, McpToolFilter
   always: always != null ? always() : this.always,
   never: never != null ? never() : this.never,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpToolApprovalFilter &&
           always == other.always &&
-          never == other.never; } 
-@override int get hashCode { return Object.hash(always, never); } 
-@override String toString() { return 'McpToolApprovalFilter(always: $always, never: $never)'; } 
+          never == other.never;
+
+@override int get hashCode => Object.hash(always, never);
+
+@override String toString() => 'McpToolApprovalFilter(always: $always, never: $never)';
+
  }

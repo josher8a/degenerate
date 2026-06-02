@@ -82,7 +82,7 @@ CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId,
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateForAuthenticatedUserRequestVariant1 &&
           repositoryId == other.repositoryId &&
           ref == other.ref &&
@@ -95,7 +95,10 @@ CodespacesCreateForAuthenticatedUserRequestVariant1 copyWith({int? repositoryId,
           workingDirectory == other.workingDirectory &&
           idleTimeoutMinutes == other.idleTimeoutMinutes &&
           displayName == other.displayName &&
-          retentionPeriodMinutes == other.retentionPeriodMinutes; } 
-@override int get hashCode { return Object.hash(repositoryId, ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes); } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant1(repositoryId: $repositoryId, ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)'; } 
+          retentionPeriodMinutes == other.retentionPeriodMinutes;
+
+@override int get hashCode => Object.hash(repositoryId, ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);
+
+@override String toString() => 'CodespacesCreateForAuthenticatedUserRequestVariant1(repositoryId: $repositoryId, ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';
+
  }

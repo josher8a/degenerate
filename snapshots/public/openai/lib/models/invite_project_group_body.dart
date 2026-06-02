@@ -24,10 +24,13 @@ InviteProjectGroupBody copyWith({String? groupId, String? role, }) { return Invi
   groupId: groupId ?? this.groupId,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InviteProjectGroupBody &&
           groupId == other.groupId &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(groupId, role); } 
-@override String toString() { return 'InviteProjectGroupBody(groupId: $groupId, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(groupId, role);
+
+@override String toString() => 'InviteProjectGroupBody(groupId: $groupId, role: $role)';
+
  }

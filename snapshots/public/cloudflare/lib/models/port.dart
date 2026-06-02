@@ -28,11 +28,14 @@ Port copyWith({double? Function()? number, String? Function()? proto, String? Fu
   proto: proto != null ? proto() : this.proto,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Port &&
           number == other.number &&
           proto == other.proto &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(number, proto, status); } 
-@override String toString() { return 'Port(number: $number, proto: $proto, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(number, proto, status);
+
+@override String toString() => 'Port(number: $number, proto: $proto, status: $status)';
+
  }

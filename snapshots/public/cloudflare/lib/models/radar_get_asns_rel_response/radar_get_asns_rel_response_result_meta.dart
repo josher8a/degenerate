@@ -27,11 +27,14 @@ RadarGetAsnsRelResponseResultMeta copyWith({String? dataTime, String? queryTime,
   queryTime: queryTime ?? this.queryTime,
   totalPeers: totalPeers ?? this.totalPeers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsnsRelResponseResultMeta &&
           dataTime == other.dataTime &&
           queryTime == other.queryTime &&
-          totalPeers == other.totalPeers; } 
-@override int get hashCode { return Object.hash(dataTime, queryTime, totalPeers); } 
-@override String toString() { return 'RadarGetAsnsRelResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalPeers: $totalPeers)'; } 
+          totalPeers == other.totalPeers;
+
+@override int get hashCode => Object.hash(dataTime, queryTime, totalPeers);
+
+@override String toString() => 'RadarGetAsnsRelResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalPeers: $totalPeers)';
+
  }

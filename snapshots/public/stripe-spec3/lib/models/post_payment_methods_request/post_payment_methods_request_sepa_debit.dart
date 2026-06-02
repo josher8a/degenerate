@@ -19,9 +19,12 @@ return errors; }
 PostPaymentMethodsRequestSepaDebit copyWith({String? iban}) { return PostPaymentMethodsRequestSepaDebit(
   iban: iban ?? this.iban,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestSepaDebit &&
-          iban == other.iban; } 
-@override int get hashCode { return iban.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestSepaDebit(iban: $iban)'; } 
+          iban == other.iban;
+
+@override int get hashCode => iban.hashCode;
+
+@override String toString() => 'PostPaymentMethodsRequestSepaDebit(iban: $iban)';
+
  }

@@ -32,11 +32,14 @@ DlpPayloadLogSetting copyWith({DlpPayloadLogMaskingLevel? Function()? maskingLev
   publicKey: publicKey != null ? publicKey() : this.publicKey,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPayloadLogSetting &&
           maskingLevel == other.maskingLevel &&
           publicKey == other.publicKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(maskingLevel, publicKey, updatedAt); } 
-@override String toString() { return 'DlpPayloadLogSetting(maskingLevel: $maskingLevel, publicKey: $publicKey, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(maskingLevel, publicKey, updatedAt);
+
+@override String toString() => 'DlpPayloadLogSetting(maskingLevel: $maskingLevel, publicKey: $publicKey, updatedAt: $updatedAt)';
+
  }

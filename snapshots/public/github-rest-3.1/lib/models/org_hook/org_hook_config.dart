@@ -30,12 +30,15 @@ OrgHookConfig copyWith({String? Function()? url, String? Function()? insecureSsl
   contentType: contentType != null ? contentType() : this.contentType,
   secret: secret != null ? secret() : this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgHookConfig &&
           url == other.url &&
           insecureSsl == other.insecureSsl &&
           contentType == other.contentType &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(url, insecureSsl, contentType, secret); } 
-@override String toString() { return 'OrgHookConfig(url: $url, insecureSsl: $insecureSsl, contentType: $contentType, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(url, insecureSsl, contentType, secret);
+
+@override String toString() => 'OrgHookConfig(url: $url, insecureSsl: $insecureSsl, contentType: $contentType, secret: $secret)';
+
  }

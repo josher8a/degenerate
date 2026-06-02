@@ -61,12 +61,15 @@ AlexandriaCategory copyWith({AlexandriaCategoryCreatedAt? createdAt, AlexandriaC
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AlexandriaCategory &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, name); } 
-@override String toString() { return 'AlexandriaCategory(createdAt: $createdAt, description: $description, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdAt, description, id, name);
+
+@override String toString() => 'AlexandriaCategory(createdAt: $createdAt, description: $description, id: $id, name: $name)';
+
  }

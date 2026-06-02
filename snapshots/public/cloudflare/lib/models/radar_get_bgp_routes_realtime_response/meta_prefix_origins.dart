@@ -51,14 +51,17 @@ MetaPrefixOrigins copyWith({int? origin, String? prefix, String? rpkiValidation,
   totalVisible: totalVisible ?? this.totalVisible,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetaPrefixOrigins &&
           origin == other.origin &&
           prefix == other.prefix &&
           rpkiValidation == other.rpkiValidation &&
           totalPeers == other.totalPeers &&
           totalVisible == other.totalVisible &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(origin, prefix, rpkiValidation, totalPeers, totalVisible, visibility); } 
-@override String toString() { return 'MetaPrefixOrigins(origin: $origin, prefix: $prefix, rpkiValidation: $rpkiValidation, totalPeers: $totalPeers, totalVisible: $totalVisible, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(origin, prefix, rpkiValidation, totalPeers, totalVisible, visibility);
+
+@override String toString() => 'MetaPrefixOrigins(origin: $origin, prefix: $prefix, rpkiValidation: $rpkiValidation, totalPeers: $totalPeers, totalVisible: $totalVisible, visibility: $visibility)';
+
  }

@@ -30,11 +30,14 @@ ReposUpdateBranchProtectionRequestRequiredStatusChecks copyWith({bool? strict, L
   contexts: contexts ?? this.contexts,
   checks: checks != null ? checks() : this.checks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateBranchProtectionRequestRequiredStatusChecks &&
           strict == other.strict &&
           listEquals(contexts, other.contexts) &&
-          listEquals(checks, other.checks); } 
-@override int get hashCode { return Object.hash(strict, Object.hashAll(contexts), Object.hashAll(checks ?? const [])); } 
-@override String toString() { return 'ReposUpdateBranchProtectionRequestRequiredStatusChecks(strict: $strict, contexts: $contexts, checks: $checks)'; } 
+          listEquals(checks, other.checks);
+
+@override int get hashCode => Object.hash(strict, Object.hashAll(contexts), Object.hashAll(checks ?? const []));
+
+@override String toString() => 'ReposUpdateBranchProtectionRequestRequiredStatusChecks(strict: $strict, contexts: $contexts, checks: $checks)';
+
  }

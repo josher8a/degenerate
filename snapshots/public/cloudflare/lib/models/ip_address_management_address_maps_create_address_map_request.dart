@@ -34,12 +34,15 @@ IpAddressManagementAddressMapsCreateAddressMapRequest copyWith({AddressingSchema
   ips: ips != null ? ips() : this.ips,
   memberships: memberships != null ? memberships() : this.memberships,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementAddressMapsCreateAddressMapRequest &&
           description == other.description &&
           enabled == other.enabled &&
           listEquals(ips, other.ips) &&
-          listEquals(memberships, other.memberships); } 
-@override int get hashCode { return Object.hash(description, enabled, Object.hashAll(ips ?? const []), Object.hashAll(memberships ?? const [])); } 
-@override String toString() { return 'IpAddressManagementAddressMapsCreateAddressMapRequest(description: $description, enabled: $enabled, ips: $ips, memberships: $memberships)'; } 
+          listEquals(memberships, other.memberships);
+
+@override int get hashCode => Object.hash(description, enabled, Object.hashAll(ips ?? const []), Object.hashAll(memberships ?? const []));
+
+@override String toString() => 'IpAddressManagementAddressMapsCreateAddressMapRequest(description: $description, enabled: $enabled, ips: $ips, memberships: $memberships)';
+
  }

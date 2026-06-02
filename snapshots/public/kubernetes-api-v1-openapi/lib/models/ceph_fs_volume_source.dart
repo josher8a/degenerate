@@ -47,14 +47,17 @@ CephFsVolumeSource copyWith({List<String>? monitors, String? Function()? path, b
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CephFsVolumeSource &&
           listEquals(monitors, other.monitors) &&
           path == other.path &&
           readOnly == other.readOnly &&
           secretFile == other.secretFile &&
           secretRef == other.secretRef &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(Object.hashAll(monitors), path, readOnly, secretFile, secretRef, user); } 
-@override String toString() { return 'CephFsVolumeSource(monitors: $monitors, path: $path, readOnly: $readOnly, secretFile: $secretFile, secretRef: $secretRef, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(Object.hashAll(monitors), path, readOnly, secretFile, secretRef, user);
+
+@override String toString() => 'CephFsVolumeSource(monitors: $monitors, path: $path, readOnly: $readOnly, secretFile: $secretFile, secretRef: $secretRef, user: $user)';
+
  }

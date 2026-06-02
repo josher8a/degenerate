@@ -122,7 +122,7 @@ PostSubscriptionSchedulesRequestPhases copyWith({List<PhasesAddInvoiceItems>? Fu
   trial: trial != null ? trial() : this.trial,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesRequestPhases &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -144,7 +144,10 @@ PostSubscriptionSchedulesRequestPhases copyWith({List<PhasesAddInvoiceItems>? Fu
           prorationBehavior == other.prorationBehavior &&
           transferData == other.transferData &&
           trial == other.trial &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, transferData, trial, trialEnd]); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)'; } 
+          trialEnd == other.trialEnd;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, defaultTaxRates, description, discounts, duration, endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, transferData, trial, trialEnd]);
+
+@override String toString() => 'PostSubscriptionSchedulesRequestPhases(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, duration: $duration, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trial: $trial, trialEnd: $trialEnd)';
+
  }

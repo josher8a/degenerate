@@ -22,9 +22,12 @@ return errors; }
 IssuesSetLabelsRequestVariant3 copyWith({List<Variant3Labels>? Function()? labels}) { return IssuesSetLabelsRequestVariant3(
   labels: labels != null ? labels() : this.labels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesSetLabelsRequestVariant3 &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll(labels ?? const []); } 
-@override String toString() { return 'IssuesSetLabelsRequestVariant3(labels: $labels)'; } 
+          listEquals(labels, other.labels);
+
+@override int get hashCode => Object.hashAll(labels ?? const []);
+
+@override String toString() => 'IssuesSetLabelsRequestVariant3(labels: $labels)';
+
  }

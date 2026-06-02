@@ -24,10 +24,13 @@ DeletedRoleAssignmentResource copyWith({String? object, bool? deleted, }) { retu
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedRoleAssignmentResource &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(object, deleted); } 
-@override String toString() { return 'DeletedRoleAssignmentResource(object: $object, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(object, deleted);
+
+@override String toString() => 'DeletedRoleAssignmentResource(object: $object, deleted: $deleted)';
+
  }

@@ -20,10 +20,13 @@ ReportedBreakdownTax copyWith({String? Function()? localAmountDecimal, String? F
   localAmountDecimal: localAmountDecimal != null ? localAmountDecimal() : this.localAmountDecimal,
   nationalAmountDecimal: nationalAmountDecimal != null ? nationalAmountDecimal() : this.nationalAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReportedBreakdownTax &&
           localAmountDecimal == other.localAmountDecimal &&
-          nationalAmountDecimal == other.nationalAmountDecimal; } 
-@override int get hashCode { return Object.hash(localAmountDecimal, nationalAmountDecimal); } 
-@override String toString() { return 'ReportedBreakdownTax(localAmountDecimal: $localAmountDecimal, nationalAmountDecimal: $nationalAmountDecimal)'; } 
+          nationalAmountDecimal == other.nationalAmountDecimal;
+
+@override int get hashCode => Object.hash(localAmountDecimal, nationalAmountDecimal);
+
+@override String toString() => 'ReportedBreakdownTax(localAmountDecimal: $localAmountDecimal, nationalAmountDecimal: $nationalAmountDecimal)';
+
  }

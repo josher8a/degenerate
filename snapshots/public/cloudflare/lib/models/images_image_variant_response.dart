@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ImagesImageVariantResponse copyWith({ImagesImageVariantDefinition? Function()? variant}) { return ImagesImageVariantResponse(
   variant: variant != null ? variant() : this.variant,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageVariantResponse &&
-          variant == other.variant; } 
-@override int get hashCode { return variant.hashCode; } 
-@override String toString() { return 'ImagesImageVariantResponse(variant: $variant)'; } 
+          variant == other.variant;
+
+@override int get hashCode => variant.hashCode;
+
+@override String toString() => 'ImagesImageVariantResponse(variant: $variant)';
+
  }

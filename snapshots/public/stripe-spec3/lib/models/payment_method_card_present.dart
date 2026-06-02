@@ -148,7 +148,7 @@ PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()
   readMethod: readMethod != null ? readMethod() : this.readMethod,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCardPresent &&
           brand == other.brand &&
           brandProduct == other.brandProduct &&
@@ -165,7 +165,10 @@ PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()
           offline == other.offline &&
           listEquals(preferredLocales, other.preferredLocales) &&
           readMethod == other.readMethod &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(brand, brandProduct, cardholderName, country, description, expMonth, expYear, fingerprint, funding, issuer, last4, networks, offline, Object.hashAll(preferredLocales ?? const []), readMethod, wallet); } 
-@override String toString() { return 'PaymentMethodCardPresent(brand: $brand, brandProduct: $brandProduct, cardholderName: $cardholderName, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, issuer: $issuer, last4: $last4, networks: $networks, offline: $offline, preferredLocales: $preferredLocales, readMethod: $readMethod, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hash(brand, brandProduct, cardholderName, country, description, expMonth, expYear, fingerprint, funding, issuer, last4, networks, offline, Object.hashAll(preferredLocales ?? const []), readMethod, wallet);
+
+@override String toString() => 'PaymentMethodCardPresent(brand: $brand, brandProduct: $brandProduct, cardholderName: $cardholderName, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, issuer: $issuer, last4: $last4, networks: $networks, offline: $offline, preferredLocales: $preferredLocales, readMethod: $readMethod, wallet: $wallet)';
+
  }

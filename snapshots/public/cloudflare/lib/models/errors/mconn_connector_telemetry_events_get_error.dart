@@ -22,37 +22,43 @@ final class MconnConnectorTelemetryEventsGetError$400 extends MconnConnectorTele
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class MconnConnectorTelemetryEventsGetError$401 extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$401(this.error);
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class MconnConnectorTelemetryEventsGetError$403 extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$403(this.error);
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class MconnConnectorTelemetryEventsGetError$404 extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$404(this.error);
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class MconnConnectorTelemetryEventsGetError$429 extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$429(this.error);
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class MconnConnectorTelemetryEventsGetError$500 extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$500(this.error);
 
 final MconnEnvelope error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class MconnConnectorTelemetryEventsGetError$Unknown extends MconnConnectorTelemetryEventsGetError {const MconnConnectorTelemetryEventsGetError$Unknown(this.statusCode, this.rawBody, );
 

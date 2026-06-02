@@ -48,13 +48,16 @@ ZonesCacheKeyFieldsValue copyWith({Cookie? Function()? cookie, Header? Function(
   queryString: queryString != null ? queryString() : this.queryString,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesCacheKeyFieldsValue &&
           cookie == other.cookie &&
           header == other.header &&
           host == other.host &&
           queryString == other.queryString &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(cookie, header, host, queryString, user); } 
-@override String toString() { return 'ZonesCacheKeyFieldsValue(cookie: $cookie, header: $header, host: $host, queryString: $queryString, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(cookie, header, host, queryString, user);
+
+@override String toString() => 'ZonesCacheKeyFieldsValue(cookie: $cookie, header: $header, host: $host, queryString: $queryString, user: $user)';
+
  }

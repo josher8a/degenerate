@@ -39,12 +39,15 @@ LoadBalancingMonitorGroupReferencesResponse copyWith({List<LoadBalancingMessages
   success: success ?? this.success,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroupReferencesResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result)); } 
-@override String toString() { return 'LoadBalancingMonitorGroupReferencesResponse(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result));
+
+@override String toString() => 'LoadBalancingMonitorGroupReferencesResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
+
  }

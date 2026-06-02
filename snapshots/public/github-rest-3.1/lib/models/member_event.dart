@@ -21,10 +21,13 @@ MemberEvent copyWith({String? action, SimpleUser? member, }) { return MemberEven
   action: action ?? this.action,
   member: member ?? this.member,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MemberEvent &&
           action == other.action &&
-          member == other.member; } 
-@override int get hashCode { return Object.hash(action, member); } 
-@override String toString() { return 'MemberEvent(action: $action, member: $member)'; } 
+          member == other.member;
+
+@override int get hashCode => Object.hash(action, member);
+
+@override String toString() => 'MemberEvent(action: $action, member: $member)';
+
  }

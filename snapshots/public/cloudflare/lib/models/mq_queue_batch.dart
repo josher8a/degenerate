@@ -23,10 +23,13 @@ MqQueueBatch copyWith({double? Function()? delaySeconds, List<MqQueueMessage>? F
   delaySeconds: delaySeconds != null ? delaySeconds() : this.delaySeconds,
   messages: messages != null ? messages() : this.messages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueueBatch &&
           delaySeconds == other.delaySeconds &&
-          listEquals(messages, other.messages); } 
-@override int get hashCode { return Object.hash(delaySeconds, Object.hashAll(messages ?? const [])); } 
-@override String toString() { return 'MqQueueBatch(delaySeconds: $delaySeconds, messages: $messages)'; } 
+          listEquals(messages, other.messages);
+
+@override int get hashCode => Object.hash(delaySeconds, Object.hashAll(messages ?? const []));
+
+@override String toString() => 'MqQueueBatch(delaySeconds: $delaySeconds, messages: $messages)';
+
  }

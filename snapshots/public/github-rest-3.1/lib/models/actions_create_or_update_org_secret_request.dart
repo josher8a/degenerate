@@ -40,12 +40,15 @@ ActionsCreateOrUpdateOrgSecretRequest copyWith({String? encryptedValue, String? 
   visibility: visibility ?? this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateOrUpdateOrgSecretRequest &&
           encryptedValue == other.encryptedValue &&
           keyId == other.keyId &&
           visibility == other.visibility &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'ActionsCreateOrUpdateOrgSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'ActionsCreateOrUpdateOrgSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

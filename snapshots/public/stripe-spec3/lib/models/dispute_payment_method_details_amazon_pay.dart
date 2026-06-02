@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeType($value)';
+
  }
 /// 
 @immutable final class DisputePaymentMethodDetailsAmazonPay {const DisputePaymentMethodDetailsAmazonPay({this.disputeType});
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DisputePaymentMethodDetailsAmazonPay copyWith({DisputeType? Function()? disputeType}) { return DisputePaymentMethodDetailsAmazonPay(
   disputeType: disputeType != null ? disputeType() : this.disputeType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetailsAmazonPay &&
-          disputeType == other.disputeType; } 
-@override int get hashCode { return disputeType.hashCode; } 
-@override String toString() { return 'DisputePaymentMethodDetailsAmazonPay(disputeType: $disputeType)'; } 
+          disputeType == other.disputeType;
+
+@override int get hashCode => disputeType.hashCode;
+
+@override String toString() => 'DisputePaymentMethodDetailsAmazonPay(disputeType: $disputeType)';
+
  }

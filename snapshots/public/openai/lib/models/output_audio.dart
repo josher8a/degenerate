@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputAudioType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutputAudioType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputAudioType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OutputAudioType($value)';
+
  }
 /// An audio output from the model.
 /// 
@@ -58,11 +61,14 @@ OutputAudio copyWith({OutputAudioType? type, String? data, String? transcript, }
   data: data ?? this.data,
   transcript: transcript ?? this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutputAudio &&
           type == other.type &&
           data == other.data &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, data, transcript); } 
-@override String toString() { return 'OutputAudio(type: $type, data: $data, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(type, data, transcript);
+
+@override String toString() => 'OutputAudio(type: $type, data: $data, transcript: $transcript)';
+
  }

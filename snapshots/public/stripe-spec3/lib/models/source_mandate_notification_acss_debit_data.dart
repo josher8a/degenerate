@@ -24,9 +24,12 @@ return errors; }
 SourceMandateNotificationAcssDebitData copyWith({String? Function()? statementDescriptor}) { return SourceMandateNotificationAcssDebitData(
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceMandateNotificationAcssDebitData &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return statementDescriptor.hashCode; } 
-@override String toString() { return 'SourceMandateNotificationAcssDebitData(statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => statementDescriptor.hashCode;
+
+@override String toString() => 'SourceMandateNotificationAcssDebitData(statementDescriptor: $statementDescriptor)';
+
  }

@@ -21,10 +21,13 @@ ActionsListHostedRunnersForOrgResponse copyWith({int? totalCount, List<ActionsHo
   totalCount: totalCount ?? this.totalCount,
   runners: runners ?? this.runners,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListHostedRunnersForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(runners, other.runners); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(runners)); } 
-@override String toString() { return 'ActionsListHostedRunnersForOrgResponse(totalCount: $totalCount, runners: $runners)'; } 
+          listEquals(runners, other.runners);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(runners));
+
+@override String toString() => 'ActionsListHostedRunnersForOrgResponse(totalCount: $totalCount, runners: $runners)';
+
  }

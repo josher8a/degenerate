@@ -36,11 +36,14 @@ PaymentIntentNextActionKonbini copyWith({int? expiresAt, String? Function()? hos
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,
   stores: stores ?? this.stores,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionKonbini &&
           expiresAt == other.expiresAt &&
           hostedVoucherUrl == other.hostedVoucherUrl &&
-          stores == other.stores; } 
-@override int get hashCode { return Object.hash(expiresAt, hostedVoucherUrl, stores); } 
-@override String toString() { return 'PaymentIntentNextActionKonbini(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, stores: $stores)'; } 
+          stores == other.stores;
+
+@override int get hashCode => Object.hash(expiresAt, hostedVoucherUrl, stores);
+
+@override String toString() => 'PaymentIntentNextActionKonbini(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, stores: $stores)';
+
  }

@@ -39,11 +39,14 @@ RealtimeServerEventResponseDone copyWith({String? eventId, String? type, Realtim
   type: type ?? this.type,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseDone &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeServerEventResponseDone(eventId: $eventId, type: $type, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(eventId, type, response);
+
+@override String toString() => 'RealtimeServerEventResponseDone(eventId: $eventId, type: $type, response: $response)';
+
  }

@@ -44,13 +44,16 @@ ActionsHostedRunnerPoolImage copyWith({String? id, int? sizeGb, String? displayN
   source: source ?? this.source,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerPoolImage &&
           id == other.id &&
           sizeGb == other.sizeGb &&
           displayName == other.displayName &&
           source == other.source &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, sizeGb, displayName, source, version); } 
-@override String toString() { return 'ActionsHostedRunnerPoolImage(id: $id, sizeGb: $sizeGb, displayName: $displayName, source: $source, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(id, sizeGb, displayName, source, version);
+
+@override String toString() => 'ActionsHostedRunnerPoolImage(id: $id, sizeGb: $sizeGb, displayName: $displayName, source: $source, version: $version)';
+
  }

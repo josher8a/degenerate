@@ -90,7 +90,7 @@ ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<Stri
   videoBandwidth: videoBandwidth != null ? videoBandwidth() : this.videoBandwidth,
   videoStats: videoStats != null ? videoStats() : this.videoStats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantQualityStats &&
           audioBandwidth == other.audioBandwidth &&
           listEquals(audioStats, other.audioStats) &&
@@ -107,7 +107,10 @@ ParticipantQualityStats copyWith({int? Function()? audioBandwidth, List<Map<Stri
           totalVideoPackets == other.totalVideoPackets &&
           totalVideoPacketsLost == other.totalVideoPacketsLost &&
           videoBandwidth == other.videoBandwidth &&
-          listEquals(videoStats, other.videoStats); } 
-@override int get hashCode { return Object.hash(audioBandwidth, Object.hashAll(audioStats ?? const []), averageQuality, end, firstAudioPacketReceived, firstVideoPacketReceived, lastAudioPacketReceived, lastVideoPacketReceived, Object.hashAll(peerIds ?? const []), start, totalAudioPackets, totalAudioPacketsLost, totalVideoPackets, totalVideoPacketsLost, videoBandwidth, Object.hashAll(videoStats ?? const [])); } 
-@override String toString() { return 'ParticipantQualityStats(audioBandwidth: $audioBandwidth, audioStats: $audioStats, averageQuality: $averageQuality, end: $end, firstAudioPacketReceived: $firstAudioPacketReceived, firstVideoPacketReceived: $firstVideoPacketReceived, lastAudioPacketReceived: $lastAudioPacketReceived, lastVideoPacketReceived: $lastVideoPacketReceived, peerIds: $peerIds, start: $start, totalAudioPackets: $totalAudioPackets, totalAudioPacketsLost: $totalAudioPacketsLost, totalVideoPackets: $totalVideoPackets, totalVideoPacketsLost: $totalVideoPacketsLost, videoBandwidth: $videoBandwidth, videoStats: $videoStats)'; } 
+          listEquals(videoStats, other.videoStats);
+
+@override int get hashCode => Object.hash(audioBandwidth, Object.hashAll(audioStats ?? const []), averageQuality, end, firstAudioPacketReceived, firstVideoPacketReceived, lastAudioPacketReceived, lastVideoPacketReceived, Object.hashAll(peerIds ?? const []), start, totalAudioPackets, totalAudioPacketsLost, totalVideoPackets, totalVideoPacketsLost, videoBandwidth, Object.hashAll(videoStats ?? const []));
+
+@override String toString() => 'ParticipantQualityStats(audioBandwidth: $audioBandwidth, audioStats: $audioStats, averageQuality: $averageQuality, end: $end, firstAudioPacketReceived: $firstAudioPacketReceived, firstVideoPacketReceived: $firstVideoPacketReceived, lastAudioPacketReceived: $lastAudioPacketReceived, lastVideoPacketReceived: $lastVideoPacketReceived, peerIds: $peerIds, start: $start, totalAudioPackets: $totalAudioPackets, totalAudioPacketsLost: $totalAudioPacketsLost, totalVideoPackets: $totalVideoPackets, totalVideoPacketsLost: $totalVideoPacketsLost, videoBandwidth: $videoBandwidth, videoStats: $videoStats)';
+
  }

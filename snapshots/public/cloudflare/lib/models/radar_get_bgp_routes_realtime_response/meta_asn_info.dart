@@ -44,13 +44,16 @@ MetaAsnInfo copyWith({String? asName, int? asn, String? countryCode, String? org
   orgId: orgId ?? this.orgId,
   orgName: orgName ?? this.orgName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetaAsnInfo &&
           asName == other.asName &&
           asn == other.asn &&
           countryCode == other.countryCode &&
           orgId == other.orgId &&
-          orgName == other.orgName; } 
-@override int get hashCode { return Object.hash(asName, asn, countryCode, orgId, orgName); } 
-@override String toString() { return 'MetaAsnInfo(asName: $asName, asn: $asn, countryCode: $countryCode, orgId: $orgId, orgName: $orgName)'; } 
+          orgName == other.orgName;
+
+@override int get hashCode => Object.hash(asName, asn, countryCode, orgId, orgName);
+
+@override String toString() => 'MetaAsnInfo(asName: $asName, asn: $asn, countryCode: $countryCode, orgId: $orgId, orgName: $orgName)';
+
  }

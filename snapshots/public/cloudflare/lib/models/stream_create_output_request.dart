@@ -26,11 +26,14 @@ StreamCreateOutputRequest copyWith({StreamOutputEnabled? Function()? enabled, St
   streamKey: streamKey ?? this.streamKey,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCreateOutputRequest &&
           enabled == other.enabled &&
           streamKey == other.streamKey &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, streamKey, url); } 
-@override String toString() { return 'StreamCreateOutputRequest(enabled: $enabled, streamKey: $streamKey, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(enabled, streamKey, url);
+
+@override String toString() => 'StreamCreateOutputRequest(enabled: $enabled, streamKey: $streamKey, url: $url)';
+
  }

@@ -45,12 +45,15 @@ DurableObjects copyWith({String? namespaceId, String? namespaceName, String? wor
   workerId: workerId ?? this.workerId,
   workerName: workerName ?? this.workerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DurableObjects &&
           namespaceId == other.namespaceId &&
           namespaceName == other.namespaceName &&
           workerId == other.workerId &&
-          workerName == other.workerName; } 
-@override int get hashCode { return Object.hash(namespaceId, namespaceName, workerId, workerName); } 
-@override String toString() { return 'DurableObjects(namespaceId: $namespaceId, namespaceName: $namespaceName, workerId: $workerId, workerName: $workerName)'; } 
+          workerName == other.workerName;
+
+@override int get hashCode => Object.hash(namespaceId, namespaceName, workerId, workerName);
+
+@override String toString() => 'DurableObjects(namespaceId: $namespaceId, namespaceName: $namespaceName, workerId: $workerId, workerName: $workerName)';
+
  }

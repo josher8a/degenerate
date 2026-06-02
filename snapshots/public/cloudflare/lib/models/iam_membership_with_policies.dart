@@ -48,7 +48,7 @@ IamMembershipWithPolicies copyWith({IamAccount? Function()? account, AccessEnabl
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamMembershipWithPolicies &&
           account == other.account &&
           apiAccessEnabled == other.apiAccessEnabled &&
@@ -56,7 +56,10 @@ IamMembershipWithPolicies copyWith({IamAccount? Function()? account, AccessEnabl
           permissions == other.permissions &&
           listEquals(policies, other.policies) &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status); } 
-@override String toString() { return 'IamMembershipWithPolicies(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, policies: $policies, roles: $roles, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status);
+
+@override String toString() => 'IamMembershipWithPolicies(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, policies: $policies, roles: $roles, status: $status)';
+
  }

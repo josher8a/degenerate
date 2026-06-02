@@ -46,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentMethodOptionsParamMandateOptionsPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamMandateOptionsPurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParamMandateOptionsPurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoicePaymentMethodOptionsParamMandateOptionsPurpose($value)';
+
  }
 @immutable final class InvoicePaymentMethodOptionsParam12MandateOptions {const InvoicePaymentMethodOptionsParam12MandateOptions({this.amount, this.purpose, });
 
@@ -71,10 +74,13 @@ InvoicePaymentMethodOptionsParam12MandateOptions copyWith({int? Function()? amou
   amount: amount != null ? amount() : this.amount,
   purpose: purpose != null ? purpose() : this.purpose,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam12MandateOptions &&
           amount == other.amount &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(amount, purpose); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam12MandateOptions(amount: $amount, purpose: $purpose)'; } 
+          purpose == other.purpose;
+
+@override int get hashCode => Object.hash(amount, purpose);
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam12MandateOptions(amount: $amount, purpose: $purpose)';
+
  }

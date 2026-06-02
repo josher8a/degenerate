@@ -108,7 +108,7 @@ CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, Da
   status: status != null ? status() : this.status,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateServersResponseResult &&
           authType == other.authType &&
           createdAt == other.createdAt &&
@@ -124,7 +124,10 @@ CreateServersResponseResult copyWith({CreateServersRequestAuthType? authType, Da
           name == other.name &&
           listEquals(prompts, other.prompts) &&
           status == other.status &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(authType, createdAt, createdBy, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, Object.hashAll(prompts), status, Object.hashAll(tools)); } 
-@override String toString() { return 'CreateServersResponseResult(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, prompts: $prompts, status: $status, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(authType, createdAt, createdBy, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, Object.hashAll(prompts), status, Object.hashAll(tools));
+
+@override String toString() => 'CreateServersResponseResult(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, prompts: $prompts, status: $status, tools: $tools)';
+
  }

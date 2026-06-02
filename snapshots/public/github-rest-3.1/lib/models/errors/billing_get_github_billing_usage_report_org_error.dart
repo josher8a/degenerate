@@ -20,25 +20,29 @@ final class BillingGetGithubBillingUsageReportOrgError$400 extends BillingGetGit
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BillingGetGithubBillingUsageReportOrgError$403 extends BillingGetGithubBillingUsageReportOrgError {const BillingGetGithubBillingUsageReportOrgError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class BillingGetGithubBillingUsageReportOrgError$500 extends BillingGetGithubBillingUsageReportOrgError {const BillingGetGithubBillingUsageReportOrgError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BillingGetGithubBillingUsageReportOrgError$503 extends BillingGetGithubBillingUsageReportOrgError {const BillingGetGithubBillingUsageReportOrgError$503(this.error);
 
 final BillingGetGithubBillingUsageReportOrgResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class BillingGetGithubBillingUsageReportOrgError$Unknown extends BillingGetGithubBillingUsageReportOrgError {const BillingGetGithubBillingUsageReportOrgError$Unknown(this.statusCode, this.rawBody, );
 

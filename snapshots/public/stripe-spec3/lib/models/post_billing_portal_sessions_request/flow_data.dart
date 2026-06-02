@@ -36,13 +36,16 @@ FlowData copyWith({FlowDataAfterCompletion? Function()? afterCompletion, FlowDat
   subscriptionUpdateConfirm: subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : this.subscriptionUpdateConfirm,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FlowData &&
           afterCompletion == other.afterCompletion &&
           subscriptionCancel == other.subscriptionCancel &&
           subscriptionUpdate == other.subscriptionUpdate &&
           subscriptionUpdateConfirm == other.subscriptionUpdateConfirm &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type); } 
-@override String toString() { return 'FlowData(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type);
+
+@override String toString() => 'FlowData(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)';
+
  }

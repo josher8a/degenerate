@@ -24,10 +24,13 @@ TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPayment
   code: code ?? this.code,
   transaction: transaction ?? this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceReturnedStatus &&
           code == other.code &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(code, transaction); } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hash(code, transaction);
+
+@override String toString() => 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)';
+
  }

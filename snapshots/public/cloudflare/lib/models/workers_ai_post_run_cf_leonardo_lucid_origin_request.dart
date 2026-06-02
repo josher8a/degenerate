@@ -76,7 +76,7 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidan
   steps: steps != null ? steps() : this.steps,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfLeonardoLucidOriginRequest &&
           guidance == other.guidance &&
           height == other.height &&
@@ -84,7 +84,10 @@ WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidan
           prompt == other.prompt &&
           seed == other.seed &&
           steps == other.steps &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(guidance, height, numSteps, prompt, seed, steps, width); } 
-@override String toString() { return 'WorkersAiPostRunCfLeonardoLucidOriginRequest(guidance: $guidance, height: $height, numSteps: $numSteps, prompt: $prompt, seed: $seed, steps: $steps, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(guidance, height, numSteps, prompt, seed, steps, width);
+
+@override String toString() => 'WorkersAiPostRunCfLeonardoLucidOriginRequest(guidance: $guidance, height: $height, numSteps: $numSteps, prompt: $prompt, seed: $seed, steps: $steps, width: $width)';
+
  }

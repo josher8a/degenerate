@@ -34,12 +34,15 @@ RealtimekitDaywiseStats copyWith({String? Function()? date, double? Function()? 
   sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
   sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitDaywiseStats &&
           date == other.date &&
           recordingsMinutesConsumed == other.recordingsMinutesConsumed &&
           sessionsCount == other.sessionsCount &&
-          sessionsMinutesConsumed == other.sessionsMinutesConsumed; } 
-@override int get hashCode { return Object.hash(date, recordingsMinutesConsumed, sessionsCount, sessionsMinutesConsumed); } 
-@override String toString() { return 'RealtimekitDaywiseStats(date: $date, recordingsMinutesConsumed: $recordingsMinutesConsumed, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)'; } 
+          sessionsMinutesConsumed == other.sessionsMinutesConsumed;
+
+@override int get hashCode => Object.hash(date, recordingsMinutesConsumed, sessionsCount, sessionsMinutesConsumed);
+
+@override String toString() => 'RealtimekitDaywiseStats(date: $date, recordingsMinutesConsumed: $recordingsMinutesConsumed, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)';
+
  }

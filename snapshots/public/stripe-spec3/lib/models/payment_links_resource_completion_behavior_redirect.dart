@@ -21,9 +21,12 @@ return errors; }
 PaymentLinksResourceCompletionBehaviorRedirect copyWith({String? url}) { return PaymentLinksResourceCompletionBehaviorRedirect(
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCompletionBehaviorRedirect &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceCompletionBehaviorRedirect(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'PaymentLinksResourceCompletionBehaviorRedirect(url: $url)';
+
  }

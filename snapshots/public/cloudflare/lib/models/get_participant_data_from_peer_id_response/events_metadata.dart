@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 EventsMetadata copyWith({ConnectionInfo? Function()? connectionInfo}) { return EventsMetadata(
   connectionInfo: connectionInfo != null ? connectionInfo() : this.connectionInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventsMetadata &&
-          connectionInfo == other.connectionInfo; } 
-@override int get hashCode { return connectionInfo.hashCode; } 
-@override String toString() { return 'EventsMetadata(connectionInfo: $connectionInfo)'; } 
+          connectionInfo == other.connectionInfo;
+
+@override int get hashCode => connectionInfo.hashCode;
+
+@override String toString() => 'EventsMetadata(connectionInfo: $connectionInfo)';
+
  }

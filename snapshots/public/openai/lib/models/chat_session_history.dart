@@ -24,10 +24,13 @@ ChatSessionHistory copyWith({bool? enabled, int? Function()? recentThreads, }) {
   enabled: enabled ?? this.enabled,
   recentThreads: recentThreads != null ? recentThreads() : this.recentThreads,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionHistory &&
           enabled == other.enabled &&
-          recentThreads == other.recentThreads; } 
-@override int get hashCode { return Object.hash(enabled, recentThreads); } 
-@override String toString() { return 'ChatSessionHistory(enabled: $enabled, recentThreads: $recentThreads)'; } 
+          recentThreads == other.recentThreads;
+
+@override int get hashCode => Object.hash(enabled, recentThreads);
+
+@override String toString() => 'ChatSessionHistory(enabled: $enabled, recentThreads: $recentThreads)';
+
  }

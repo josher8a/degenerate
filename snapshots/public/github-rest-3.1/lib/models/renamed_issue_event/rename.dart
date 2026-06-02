@@ -21,10 +21,13 @@ Rename copyWith({String? from, String? to, }) { return Rename(
   from: from ?? this.from,
   to: to ?? this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rename &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'Rename(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'Rename(from: $from, to: $to)';
+
  }

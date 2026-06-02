@@ -54,13 +54,16 @@ ZarazZarazHistoryResponseResult copyWith({DateTime? createdAt, int? id, DateTime
   userId: userId ?? this.userId,
   description: description ?? this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazHistoryResponseResult &&
           createdAt == other.createdAt &&
           id == other.id &&
           updatedAt == other.updatedAt &&
           userId == other.userId &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(createdAt, id, updatedAt, userId, description); } 
-@override String toString() { return 'ZarazZarazHistoryResponseResult(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(createdAt, id, updatedAt, userId, description);
+
+@override String toString() => 'ZarazZarazHistoryResponseResult(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId, description: $description)';
+
  }

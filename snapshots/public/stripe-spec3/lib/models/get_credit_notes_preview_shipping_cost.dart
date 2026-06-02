@@ -22,9 +22,12 @@ return errors; }
 GetCreditNotesPreviewShippingCost copyWith({String? Function()? shippingRate}) { return GetCreditNotesPreviewShippingCost(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCreditNotesPreviewShippingCost &&
-          shippingRate == other.shippingRate; } 
-@override int get hashCode { return shippingRate.hashCode; } 
-@override String toString() { return 'GetCreditNotesPreviewShippingCost(shippingRate: $shippingRate)'; } 
+          shippingRate == other.shippingRate;
+
+@override int get hashCode => shippingRate.hashCode;
+
+@override String toString() => 'GetCreditNotesPreviewShippingCost(shippingRate: $shippingRate)';
+
  }

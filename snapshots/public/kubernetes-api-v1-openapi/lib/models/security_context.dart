@@ -83,7 +83,7 @@ SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorPr
   seccompProfile: seccompProfile != null ? seccompProfile() : this.seccompProfile,
   windowsOptions: windowsOptions != null ? windowsOptions() : this.windowsOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityContext &&
           allowPrivilegeEscalation == other.allowPrivilegeEscalation &&
           appArmorProfile == other.appArmorProfile &&
@@ -96,7 +96,10 @@ SecurityContext copyWith({bool? Function()? allowPrivilegeEscalation, AppArmorPr
           runAsUser == other.runAsUser &&
           seLinuxOptions == other.seLinuxOptions &&
           seccompProfile == other.seccompProfile &&
-          windowsOptions == other.windowsOptions; } 
-@override int get hashCode { return Object.hash(allowPrivilegeEscalation, appArmorProfile, capabilities, privileged, procMount, readOnlyRootFilesystem, runAsGroup, runAsNonRoot, runAsUser, seLinuxOptions, seccompProfile, windowsOptions); } 
-@override String toString() { return 'SecurityContext(allowPrivilegeEscalation: $allowPrivilegeEscalation, appArmorProfile: $appArmorProfile, capabilities: $capabilities, privileged: $privileged, procMount: $procMount, readOnlyRootFilesystem: $readOnlyRootFilesystem, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, windowsOptions: $windowsOptions)'; } 
+          windowsOptions == other.windowsOptions;
+
+@override int get hashCode => Object.hash(allowPrivilegeEscalation, appArmorProfile, capabilities, privileged, procMount, readOnlyRootFilesystem, runAsGroup, runAsNonRoot, runAsUser, seLinuxOptions, seccompProfile, windowsOptions);
+
+@override String toString() => 'SecurityContext(allowPrivilegeEscalation: $allowPrivilegeEscalation, appArmorProfile: $appArmorProfile, capabilities: $capabilities, privileged: $privileged, procMount: $procMount, readOnlyRootFilesystem: $readOnlyRootFilesystem, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, windowsOptions: $windowsOptions)';
+
  }

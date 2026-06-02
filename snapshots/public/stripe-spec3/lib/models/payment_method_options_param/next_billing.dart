@@ -25,10 +25,13 @@ NextBilling copyWith({int? amount, String? date, }) { return NextBilling(
   amount: amount ?? this.amount,
   date: date ?? this.date,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NextBilling &&
           amount == other.amount &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(amount, date); } 
-@override String toString() { return 'NextBilling(amount: $amount, date: $date)'; } 
+          date == other.date;
+
+@override int get hashCode => Object.hash(amount, date);
+
+@override String toString() => 'NextBilling(amount: $amount, date: $date)';
+
  }

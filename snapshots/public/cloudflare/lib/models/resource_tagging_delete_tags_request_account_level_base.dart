@@ -71,10 +71,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingAccountResourceTypeBaseEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResourceTaggingAccountResourceTypeBaseEnum($value)';
+
  }
 /// Request body schema for deleting tags from account-level resources.
 @immutable final class ResourceTaggingDeleteTagsRequestAccountLevelBase {const ResourceTaggingDeleteTagsRequestAccountLevelBase({required this.resourceId, required this.resourceType, });
@@ -99,10 +102,13 @@ ResourceTaggingDeleteTagsRequestAccountLevelBase copyWith({ResourceTaggingResour
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingDeleteTagsRequestAccountLevelBase &&
           resourceId == other.resourceId &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(resourceId, resourceType); } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceId: $resourceId, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(resourceId, resourceType);
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceId: $resourceId, resourceType: $resourceType)';
+
  }

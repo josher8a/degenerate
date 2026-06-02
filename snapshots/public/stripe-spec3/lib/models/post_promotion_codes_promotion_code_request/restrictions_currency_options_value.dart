@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RestrictionsCurrencyOptionsValue copyWith({int? Function()? minimumAmount}) { return RestrictionsCurrencyOptionsValue(
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RestrictionsCurrencyOptionsValue &&
-          minimumAmount == other.minimumAmount; } 
-@override int get hashCode { return minimumAmount.hashCode; } 
-@override String toString() { return 'RestrictionsCurrencyOptionsValue(minimumAmount: $minimumAmount)'; } 
+          minimumAmount == other.minimumAmount;
+
+@override int get hashCode => minimumAmount.hashCode;
+
+@override String toString() => 'RestrictionsCurrencyOptionsValue(minimumAmount: $minimumAmount)';
+
  }

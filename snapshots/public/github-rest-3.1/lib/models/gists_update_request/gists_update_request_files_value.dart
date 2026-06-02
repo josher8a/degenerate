@@ -22,10 +22,13 @@ GistsUpdateRequestFilesValue copyWith({String? Function()? content, String? Func
   content: content != null ? content() : this.content,
   filename: filename != null ? filename() : this.filename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistsUpdateRequestFilesValue &&
           content == other.content &&
-          filename == other.filename; } 
-@override int get hashCode { return Object.hash(content, filename); } 
-@override String toString() { return 'GistsUpdateRequestFilesValue(content: $content, filename: $filename)'; } 
+          filename == other.filename;
+
+@override int get hashCode => Object.hash(content, filename);
+
+@override String toString() => 'GistsUpdateRequestFilesValue(content: $content, filename: $filename)';
+
  }

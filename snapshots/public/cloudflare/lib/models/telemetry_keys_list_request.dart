@@ -47,7 +47,7 @@ TelemetryKeysListRequest copyWith({List<String> Function()? datasets, List<Telem
   needle: needle != null ? needle() : this.needle,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryKeysListRequest &&
           listEquals(datasets, other.datasets) &&
           listEquals(filters, other.filters) &&
@@ -55,7 +55,10 @@ TelemetryKeysListRequest copyWith({List<String> Function()? datasets, List<Telem
           keyNeedle == other.keyNeedle &&
           limit == other.limit &&
           needle == other.needle &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(Object.hashAll(datasets), Object.hashAll(filters), from, keyNeedle, limit, needle, to); } 
-@override String toString() { return 'TelemetryKeysListRequest(datasets: $datasets, filters: $filters, from: $from, keyNeedle: $keyNeedle, limit: $limit, needle: $needle, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(Object.hashAll(datasets), Object.hashAll(filters), from, keyNeedle, limit, needle, to);
+
+@override String toString() => 'TelemetryKeysListRequest(datasets: $datasets, filters: $filters, from: $from, keyNeedle: $keyNeedle, limit: $limit, needle: $needle, to: $to)';
+
  }

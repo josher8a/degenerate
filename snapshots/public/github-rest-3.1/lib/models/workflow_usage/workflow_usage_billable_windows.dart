@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WorkflowUsageBillableWindows copyWith({int? Function()? totalMs}) { return WorkflowUsageBillableWindows(
   totalMs: totalMs != null ? totalMs() : this.totalMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowUsageBillableWindows &&
-          totalMs == other.totalMs; } 
-@override int get hashCode { return totalMs.hashCode; } 
-@override String toString() { return 'WorkflowUsageBillableWindows(totalMs: $totalMs)'; } 
+          totalMs == other.totalMs;
+
+@override int get hashCode => totalMs.hashCode;
+
+@override String toString() => 'WorkflowUsageBillableWindows(totalMs: $totalMs)';
+
  }

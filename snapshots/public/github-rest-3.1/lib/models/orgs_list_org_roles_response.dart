@@ -22,10 +22,13 @@ OrgsListOrgRolesResponse copyWith({int? Function()? totalCount, List<Organizatio
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   roles: roles != null ? roles() : this.roles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListOrgRolesResponse &&
           totalCount == other.totalCount &&
-          listEquals(roles, other.roles); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(roles ?? const [])); } 
-@override String toString() { return 'OrgsListOrgRolesResponse(totalCount: $totalCount, roles: $roles)'; } 
+          listEquals(roles, other.roles);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(roles ?? const []));
+
+@override String toString() => 'OrgsListOrgRolesResponse(totalCount: $totalCount, roles: $roles)';
+
  }

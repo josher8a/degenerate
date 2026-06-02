@@ -83,7 +83,7 @@ AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalG
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicies &&
           listEquals(approvalGroups, other.approvalGroups) &&
           approvalRequired == other.approvalRequired &&
@@ -98,7 +98,10 @@ AccessPolicies copyWith({List<AccessSchemasApprovalGroup>? Function()? approvalG
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
           listEquals(require, other.require) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []), updatedAt); } 
-@override String toString() { return 'AccessPolicies(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []), updatedAt);
+
+@override String toString() => 'AccessPolicies(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require, updatedAt: $updatedAt)';
+
  }

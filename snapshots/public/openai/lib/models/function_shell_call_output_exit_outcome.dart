@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputExitOutcomeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputExitOutcomeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallOutputExitOutcomeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputExitOutcomeType($value)';
+
  }
 /// Indicates that the shell commands finished and returned an exit code.
 @immutable final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({required this.exitCode, this.type = FunctionShellCallOutputExitOutcomeType.exit, });
@@ -46,10 +49,13 @@ FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeT
   type: type ?? this.type,
   exitCode: exitCode ?? this.exitCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputExitOutcome &&
           type == other.type &&
-          exitCode == other.exitCode; } 
-@override int get hashCode { return Object.hash(type, exitCode); } 
-@override String toString() { return 'FunctionShellCallOutputExitOutcome(type: $type, exitCode: $exitCode)'; } 
+          exitCode == other.exitCode;
+
+@override int get hashCode => Object.hash(type, exitCode);
+
+@override String toString() => 'FunctionShellCallOutputExitOutcome(type: $type, exitCode: $exitCode)';
+
  }

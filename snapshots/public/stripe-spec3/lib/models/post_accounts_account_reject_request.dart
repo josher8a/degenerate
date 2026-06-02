@@ -26,10 +26,13 @@ PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, Str
   expand: expand != null ? expand() : this.expand,
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRejectRequest &&
           listEquals(expand, other.expand) &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), reason); } 
-@override String toString() { return 'PostAccountsAccountRejectRequest(expand: $expand, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), reason);
+
+@override String toString() => 'PostAccountsAccountRejectRequest(expand: $expand, reason: $reason)';
+
  }

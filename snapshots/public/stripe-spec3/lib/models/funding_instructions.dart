@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FundingInstructionsObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FundingInstructionsObject($value)';
+
  }
 /// Each customer has a [`balance`](https://docs.stripe.com/api/customers/object#customer_object-balance) that is
 /// automatically applied to future invoices and payments using the `customer_balance` payment method.
@@ -74,13 +77,16 @@ FundingInstructions copyWith({FundingInstructionsBankTransfer? bankTransfer, Str
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructions &&
           bankTransfer == other.bankTransfer &&
           currency == other.currency &&
           fundingType == other.fundingType &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(bankTransfer, currency, fundingType, livemode, object); } 
-@override String toString() { return 'FundingInstructions(bankTransfer: $bankTransfer, currency: $currency, fundingType: $fundingType, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(bankTransfer, currency, fundingType, livemode, object);
+
+@override String toString() => 'FundingInstructions(bankTransfer: $bankTransfer, currency: $currency, fundingType: $fundingType, livemode: $livemode, object: $object)';
+
  }

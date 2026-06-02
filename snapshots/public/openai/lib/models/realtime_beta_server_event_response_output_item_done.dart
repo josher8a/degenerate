@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseOutputItemDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseOutputItemDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseOutputItemDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemDoneType($value)';
+
  }
 /// Returned when an Item is done streaming. Also emitted when a Response is
 /// interrupted, incomplete, or cancelled.
@@ -68,13 +71,16 @@ RealtimeBetaServerEventResponseOutputItemDone copyWith({String? eventId, Realtim
   outputIndex: outputIndex ?? this.outputIndex,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseOutputItemDone &&
           eventId == other.eventId &&
           type == other.type &&
           responseId == other.responseId &&
           outputIndex == other.outputIndex &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, outputIndex, item); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseOutputItemDone(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, outputIndex, item);
+
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemDone(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)';
+
  }

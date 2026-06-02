@@ -147,7 +147,7 @@ TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDev
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDevices &&
           created == other.created &&
           deleted == other.deleted &&
@@ -168,7 +168,10 @@ TeamsDevicesDevices copyWith({TeamsDevicesCreated? Function()? created, TeamsDev
           serialNumber == other.serialNumber &&
           updated == other.updated &&
           user == other.user &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version); } 
-@override String toString() { return 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version);
+
+@override String toString() => 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)';
+
  }

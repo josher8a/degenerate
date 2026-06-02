@@ -38,13 +38,16 @@ WebhookInstallationRepositoriesAddedRepositoriesRemoved copyWith({String? Functi
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   private: private != null ? private() : this.private,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationRepositoriesAddedRepositoriesRemoved &&
           fullName == other.fullName &&
           id == other.id &&
           name == other.name &&
           nodeId == other.nodeId &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(fullName, id, name, nodeId, private); } 
-@override String toString() { return 'WebhookInstallationRepositoriesAddedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)'; } 
+          private == other.private;
+
+@override int get hashCode => Object.hash(fullName, id, name, nodeId, private);
+
+@override String toString() => 'WebhookInstallationRepositoriesAddedRepositoriesRemoved(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)';
+
  }

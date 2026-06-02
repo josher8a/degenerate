@@ -17,7 +17,8 @@ final class RadarGetQualitySpeedTopLocationsError$404 extends RadarGetQualitySpe
 
 final RadarGetQualitySpeedTopLocationsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetQualitySpeedTopLocationsError$Unknown extends RadarGetQualitySpeedTopLocationsError {const RadarGetQualitySpeedTopLocationsError$Unknown(this.statusCode, this.rawBody, );
 

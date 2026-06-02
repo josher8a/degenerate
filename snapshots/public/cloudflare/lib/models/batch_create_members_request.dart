@@ -19,9 +19,12 @@ return errors; }
 BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return BatchCreateMembersRequest(
   members: members ?? this.members,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BatchCreateMembersRequest &&
-          listEquals(members, other.members); } 
-@override int get hashCode { return Object.hashAll(members); } 
-@override String toString() { return 'BatchCreateMembersRequest(members: $members)'; } 
+          listEquals(members, other.members);
+
+@override int get hashCode => Object.hashAll(members);
+
+@override String toString() => 'BatchCreateMembersRequest(members: $members)';
+
  }

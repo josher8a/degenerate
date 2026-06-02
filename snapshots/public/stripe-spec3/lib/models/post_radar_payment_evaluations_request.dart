@@ -41,13 +41,16 @@ PostRadarPaymentEvaluationsRequest copyWith({ClientDeviceMetadataDetails? Functi
   metadata: metadata != null ? metadata() : this.metadata,
   paymentDetails: paymentDetails ?? this.paymentDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequest &&
           clientDeviceMetadataDetails == other.clientDeviceMetadataDetails &&
           customerDetails == other.customerDetails &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          paymentDetails == other.paymentDetails; } 
-@override int get hashCode { return Object.hash(clientDeviceMetadataDetails, customerDetails, Object.hashAll(expand ?? const []), metadata, paymentDetails); } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequest(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, customerDetails: $customerDetails, expand: $expand, metadata: $metadata, paymentDetails: $paymentDetails)'; } 
+          paymentDetails == other.paymentDetails;
+
+@override int get hashCode => Object.hash(clientDeviceMetadataDetails, customerDetails, Object.hashAll(expand ?? const []), metadata, paymentDetails);
+
+@override String toString() => 'PostRadarPaymentEvaluationsRequest(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, customerDetails: $customerDetails, expand: $expand, metadata: $metadata, paymentDetails: $paymentDetails)';
+
  }

@@ -23,10 +23,13 @@ EstimatedUsers copyWith({int? Function()? estimatedUsers, List<EstimatedUsersLoc
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   locations: locations ?? this.locations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EstimatedUsers &&
           estimatedUsers == other.estimatedUsers &&
-          listEquals(locations, other.locations); } 
-@override int get hashCode { return Object.hash(estimatedUsers, Object.hashAll(locations)); } 
-@override String toString() { return 'EstimatedUsers(estimatedUsers: $estimatedUsers, locations: $locations)'; } 
+          listEquals(locations, other.locations);
+
+@override int get hashCode => Object.hash(estimatedUsers, Object.hashAll(locations));
+
+@override String toString() => 'EstimatedUsers(estimatedUsers: $estimatedUsers, locations: $locations)';
+
  }

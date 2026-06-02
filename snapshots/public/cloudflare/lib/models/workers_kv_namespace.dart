@@ -29,11 +29,14 @@ WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool? Function()?
   supportsUrlEncoding: supportsUrlEncoding != null ? supportsUrlEncoding() : this.supportsUrlEncoding,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvNamespace &&
           id == other.id &&
           supportsUrlEncoding == other.supportsUrlEncoding &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(id, supportsUrlEncoding, title); } 
-@override String toString() { return 'WorkersKvNamespace(id: $id, supportsUrlEncoding: $supportsUrlEncoding, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(id, supportsUrlEncoding, title);
+
+@override String toString() => 'WorkersKvNamespace(id: $id, supportsUrlEncoding: $supportsUrlEncoding, title: $title)';
+
  }

@@ -81,7 +81,7 @@ FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, Firewa
   actionMode: actionMode ?? this.actionMode,
   sensitivity: sensitivity ?? this.sensitivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallAnomalyPackage &&
           description == other.description &&
           detectionMode == other.detectionMode &&
@@ -90,7 +90,10 @@ FirewallAnomalyPackage copyWith({FirewallAnomalyDescription? description, Firewa
           status == other.status &&
           zoneId == other.zoneId &&
           actionMode == other.actionMode &&
-          sensitivity == other.sensitivity; } 
-@override int get hashCode { return Object.hash(description, detectionMode, id, name, status, zoneId, actionMode, sensitivity); } 
-@override String toString() { return 'FirewallAnomalyPackage(description: $description, detectionMode: $detectionMode, id: $id, name: $name, status: $status, zoneId: $zoneId, actionMode: $actionMode, sensitivity: $sensitivity)'; } 
+          sensitivity == other.sensitivity;
+
+@override int get hashCode => Object.hash(description, detectionMode, id, name, status, zoneId, actionMode, sensitivity);
+
+@override String toString() => 'FirewallAnomalyPackage(description: $description, detectionMode: $detectionMode, id: $id, name: $name, status: $status, zoneId: $zoneId, actionMode: $actionMode, sensitivity: $sensitivity)';
+
  }

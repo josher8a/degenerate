@@ -22,10 +22,13 @@ R2BucketConfig copyWith({String? Function()? bucketName, List<R2QueuesConfig>? F
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   queues: queues != null ? queues() : this.queues,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2BucketConfig &&
           bucketName == other.bucketName &&
-          listEquals(queues, other.queues); } 
-@override int get hashCode { return Object.hash(bucketName, Object.hashAll(queues ?? const [])); } 
-@override String toString() { return 'R2BucketConfig(bucketName: $bucketName, queues: $queues)'; } 
+          listEquals(queues, other.queues);
+
+@override int get hashCode => Object.hash(bucketName, Object.hashAll(queues ?? const []));
+
+@override String toString() => 'R2BucketConfig(bucketName: $bucketName, queues: $queues)';
+
  }

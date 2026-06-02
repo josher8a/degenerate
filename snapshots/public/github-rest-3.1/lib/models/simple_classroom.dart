@@ -38,12 +38,15 @@ SimpleClassroom copyWith({int? id, String? name, bool? archived, String? url, })
   archived: archived ?? this.archived,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroom &&
           id == other.id &&
           name == other.name &&
           archived == other.archived &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, name, archived, url); } 
-@override String toString() { return 'SimpleClassroom(id: $id, name: $name, archived: $archived, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(id, name, archived, url);
+
+@override String toString() => 'SimpleClassroom(id: $id, name: $name, archived: $archived, url: $url)';
+
  }

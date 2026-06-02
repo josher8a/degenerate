@@ -20,10 +20,13 @@ InvoicePaymentMethodOptionsParam copyWith({InvoicePaymentMethodOptionsParam15Man
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(mandateOptions, verificationMethod); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(mandateOptions, verificationMethod);
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
+
  }

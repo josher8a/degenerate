@@ -45,13 +45,16 @@ ActionsHostedRunnerCuratedImage copyWith({String? id, String? platform, int? siz
   displayName: displayName ?? this.displayName,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerCuratedImage &&
           id == other.id &&
           platform == other.platform &&
           sizeGb == other.sizeGb &&
           displayName == other.displayName &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(id, platform, sizeGb, displayName, source); } 
-@override String toString() { return 'ActionsHostedRunnerCuratedImage(id: $id, platform: $platform, sizeGb: $sizeGb, displayName: $displayName, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(id, platform, sizeGb, displayName, source);
+
+@override String toString() => 'ActionsHostedRunnerCuratedImage(id: $id, platform: $platform, sizeGb: $sizeGb, displayName: $displayName, source: $source)';
+
  }

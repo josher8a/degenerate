@@ -47,13 +47,16 @@ ResponseMcpCallArgumentsDeltaEvent copyWith({String? type, int? outputIndex, Str
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseMcpCallArgumentsDeltaEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           delta == other.delta &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, delta, sequenceNumber); } 
-@override String toString() { return 'ResponseMcpCallArgumentsDeltaEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, delta, sequenceNumber);
+
+@override String toString() => 'ResponseMcpCallArgumentsDeltaEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, delta: $delta, sequenceNumber: $sequenceNumber)';
+
  }

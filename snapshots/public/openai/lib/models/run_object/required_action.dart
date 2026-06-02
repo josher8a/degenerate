@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RequiredActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RequiredActionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RequiredActionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RequiredActionType($value)';
+
  }
 /// Details on the action required to continue the run. Will be `null` if no action is required.
 @immutable final class RequiredAction {const RequiredAction({required this.type, required this.submitToolOutputs, });
@@ -46,10 +49,13 @@ RequiredAction copyWith({RequiredActionType? type, SubmitToolOutputs? submitTool
   type: type ?? this.type,
   submitToolOutputs: submitToolOutputs ?? this.submitToolOutputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequiredAction &&
           type == other.type &&
-          submitToolOutputs == other.submitToolOutputs; } 
-@override int get hashCode { return Object.hash(type, submitToolOutputs); } 
-@override String toString() { return 'RequiredAction(type: $type, submitToolOutputs: $submitToolOutputs)'; } 
+          submitToolOutputs == other.submitToolOutputs;
+
+@override int get hashCode => Object.hash(type, submitToolOutputs);
+
+@override String toString() => 'RequiredAction(type: $type, submitToolOutputs: $submitToolOutputs)';
+
  }

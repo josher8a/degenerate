@@ -33,12 +33,15 @@ OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig? Function()? c
   active: active != null ? active() : this.active,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsUpdateWebhookRequest &&
           config == other.config &&
           listEquals(events, other.events) &&
           active == other.active &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(config, Object.hashAll(events ?? const []), active, name); } 
-@override String toString() { return 'OrgsUpdateWebhookRequest(config: $config, events: $events, active: $active, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(config, Object.hashAll(events ?? const []), active, name);
+
+@override String toString() => 'OrgsUpdateWebhookRequest(config: $config, events: $events, active: $active, name: $name)';
+
  }

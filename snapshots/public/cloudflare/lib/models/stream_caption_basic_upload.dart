@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'
 StreamCaptionBasicUpload copyWith({String? file}) { return StreamCaptionBasicUpload(
   file: file ?? this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCaptionBasicUpload &&
-          file == other.file; } 
-@override int get hashCode { return file.hashCode; } 
-@override String toString() { return 'StreamCaptionBasicUpload(file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => file.hashCode;
+
+@override String toString() => 'StreamCaptionBasicUpload(file: $file)';
+
  }

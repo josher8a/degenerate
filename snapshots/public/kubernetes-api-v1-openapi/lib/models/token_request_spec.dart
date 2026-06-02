@@ -29,11 +29,14 @@ TokenRequestSpec copyWith({List<String>? Function()? audiences, BoundObjectRefer
   boundObjectRef: boundObjectRef != null ? boundObjectRef() : this.boundObjectRef,
   expirationSeconds: expirationSeconds != null ? expirationSeconds() : this.expirationSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenRequestSpec &&
           listEquals(audiences, other.audiences) &&
           boundObjectRef == other.boundObjectRef &&
-          expirationSeconds == other.expirationSeconds; } 
-@override int get hashCode { return Object.hash(Object.hashAll(audiences ?? const []), boundObjectRef, expirationSeconds); } 
-@override String toString() { return 'TokenRequestSpec(audiences: $audiences, boundObjectRef: $boundObjectRef, expirationSeconds: $expirationSeconds)'; } 
+          expirationSeconds == other.expirationSeconds;
+
+@override int get hashCode => Object.hash(Object.hashAll(audiences ?? const []), boundObjectRef, expirationSeconds);
+
+@override String toString() => 'TokenRequestSpec(audiences: $audiences, boundObjectRef: $boundObjectRef, expirationSeconds: $expirationSeconds)';
+
  }

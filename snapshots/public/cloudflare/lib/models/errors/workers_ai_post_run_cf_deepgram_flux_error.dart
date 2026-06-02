@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfDeepgramFluxError$400 extends WorkersAiPostRunCfDe
 
 final WorkersAiPostRunCfDeepgramFluxResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfDeepgramFluxError$Unknown extends WorkersAiPostRunCfDeepgramFluxError {const WorkersAiPostRunCfDeepgramFluxError$Unknown(this.statusCode, this.rawBody, );
 

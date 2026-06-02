@@ -54,12 +54,15 @@ TerminalReaderReaderResourceCustomText copyWith({String? Function()? description
   submitButton: submitButton != null ? submitButton() : this.submitButton,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceCustomText &&
           description == other.description &&
           skipButton == other.skipButton &&
           submitButton == other.submitButton &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, skipButton, submitButton, title); } 
-@override String toString() { return 'TerminalReaderReaderResourceCustomText(description: $description, skipButton: $skipButton, submitButton: $submitButton, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(description, skipButton, submitButton, title);
+
+@override String toString() => 'TerminalReaderReaderResourceCustomText(description: $description, skipButton: $skipButton, submitButton: $submitButton, title: $title)';
+
  }

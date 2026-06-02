@@ -48,7 +48,7 @@ WebhookDependabotAlertFixed copyWith({WebhookCodeScanningAlertFixedAction? actio
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertFixed &&
           action == other.action &&
           alert == other.alert &&
@@ -56,7 +56,10 @@ WebhookDependabotAlertFixed copyWith({WebhookCodeScanningAlertFixedAction? actio
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertFixed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, installation, organization, enterprise, repository, sender);
+
+@override String toString() => 'WebhookDependabotAlertFixed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
+
  }

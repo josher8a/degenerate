@@ -38,13 +38,16 @@ ResultVersion copyWith({Active? active, String? Function()? comment, String? cre
   data: data ?? this.data,
   versionId: versionId ?? this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultVersion &&
           active == other.active &&
           comment == other.comment &&
           createdAt == other.createdAt &&
           data == other.data &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(active, comment, createdAt, data, versionId); } 
-@override String toString() { return 'ResultVersion(active: $active, comment: $comment, createdAt: $createdAt, data: $data, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(active, comment, createdAt, data, versionId);
+
+@override String toString() => 'ResultVersion(active: $active, comment: $comment, createdAt: $createdAt, data: $data, versionId: $versionId)';
+
  }

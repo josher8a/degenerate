@@ -17,7 +17,8 @@ final class CancelBuildByUuidError$404 extends CancelBuildByUuidError {const Can
 
 final BuildsErrorResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CancelBuildByUuidError$Unknown extends CancelBuildByUuidError {const CancelBuildByUuidError$Unknown(this.statusCode, this.rawBody, );
 

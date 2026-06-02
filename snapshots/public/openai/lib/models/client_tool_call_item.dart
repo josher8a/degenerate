@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClientToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClientToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClientToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClientToolCallStatus($value)';
+
  }
 /// Record of a client side tool invocation initiated by the assistant.
 @immutable final class ClientToolCallItem {const ClientToolCallItem({required this.id, required this.createdAt, required this.threadId, required this.status, required this.callId, required this.name, required this.arguments, required this.output, this.object = AssistantMessageItemObject.chatkitThreadItem, this.type = 'chatkit.client_tool_call', });
@@ -104,7 +107,7 @@ ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int
   arguments: arguments ?? this.arguments,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientToolCallItem &&
           id == other.id &&
           object == other.object &&
@@ -115,7 +118,10 @@ ClientToolCallItem copyWith({String? id, AssistantMessageItemObject? object, int
           callId == other.callId &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output); } 
-@override String toString() { return 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output);
+
+@override String toString() => 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)';
+
  }

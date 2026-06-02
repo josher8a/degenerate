@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection copyWith({List<TlsCertificatesAndHostnamesCustomTrustStore>? Function()? result}) { return TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result ?? const []); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection(result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hashAll(result ?? const []);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection(result: $result)';
+
  }

@@ -20,10 +20,13 @@ JobEvent copyWith({String? Function()? jobId, String? Function()? status, }) { r
   jobId: jobId != null ? jobId() : this.jobId,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JobEvent &&
           jobId == other.jobId &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(jobId, status); } 
-@override String toString() { return 'JobEvent(jobId: $jobId, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(jobId, status);
+
+@override String toString() => 'JobEvent(jobId: $jobId, status: $status)';
+
  }

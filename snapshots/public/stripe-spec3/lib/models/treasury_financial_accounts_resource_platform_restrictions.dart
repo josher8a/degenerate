@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows($value)';
+
  }
 /// Restricts all outbound money movement.
 @immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)';
+
  }
 /// Restrictions that a Connect Platform has placed on this FinancialAccount.
 @immutable final class TreasuryFinancialAccountsResourcePlatformRestrictions {const TreasuryFinancialAccountsResourcePlatformRestrictions({this.inboundFlows, this.outboundFlows, });
@@ -73,10 +79,13 @@ TreasuryFinancialAccountsResourcePlatformRestrictions copyWith({TreasuryFinancia
   inboundFlows: inboundFlows != null ? inboundFlows() : this.inboundFlows,
   outboundFlows: outboundFlows != null ? outboundFlows() : this.outboundFlows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourcePlatformRestrictions &&
           inboundFlows == other.inboundFlows &&
-          outboundFlows == other.outboundFlows; } 
-@override int get hashCode { return Object.hash(inboundFlows, outboundFlows); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourcePlatformRestrictions(inboundFlows: $inboundFlows, outboundFlows: $outboundFlows)'; } 
+          outboundFlows == other.outboundFlows;
+
+@override int get hashCode => Object.hash(inboundFlows, outboundFlows);
+
+@override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictions(inboundFlows: $inboundFlows, outboundFlows: $outboundFlows)';
+
  }

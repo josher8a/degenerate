@@ -30,11 +30,14 @@ RealtimekitPresetPermissionsChatPublic copyWith({bool? canSend, bool? files, boo
   files: files ?? this.files,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsChatPublic &&
           canSend == other.canSend &&
           files == other.files &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(canSend, files, text); } 
-@override String toString() { return 'RealtimekitPresetPermissionsChatPublic(canSend: $canSend, files: $files, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(canSend, files, text);
+
+@override String toString() => 'RealtimekitPresetPermissionsChatPublic(canSend: $canSend, files: $files, text: $text)';
+
  }

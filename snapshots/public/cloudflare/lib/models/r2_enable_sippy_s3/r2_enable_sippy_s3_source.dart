@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyS3SourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyS3SourceProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2EnableSippyS3SourceProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2EnableSippyS3SourceProvider($value)';
+
  }
 /// General S3-compatible provider to copy objects from.
 @immutable final class R2EnableSippyS3Source {const R2EnableSippyS3Source({this.accessKeyId, this.bucketUrl, this.provider, this.secretAccessKey, });
@@ -55,12 +58,15 @@ R2EnableSippyS3Source copyWith({String? Function()? accessKeyId, String? Functio
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyS3Source &&
           accessKeyId == other.accessKeyId &&
           bucketUrl == other.bucketUrl &&
           provider == other.provider &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, bucketUrl, provider, secretAccessKey); } 
-@override String toString() { return 'R2EnableSippyS3Source(accessKeyId: $accessKeyId, bucketUrl: $bucketUrl, provider: $provider, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, bucketUrl, provider, secretAccessKey);
+
+@override String toString() => 'R2EnableSippyS3Source(accessKeyId: $accessKeyId, bucketUrl: $bucketUrl, provider: $provider, secretAccessKey: $secretAccessKey)';
+
  }

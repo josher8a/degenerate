@@ -92,7 +92,7 @@ PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? a
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingCreditGrantsRequest &&
           amount == other.amount &&
           applicabilityConfig == other.applicabilityConfig &&
@@ -104,7 +104,10 @@ PostBillingCreditGrantsRequest copyWith({PostBillingCreditGrantsRequestAmount? a
           expiresAt == other.expiresAt &&
           metadata == other.metadata &&
           name == other.name &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(amount, applicabilityConfig, category, customer, customerAccount, effectiveAt, Object.hashAll(expand ?? const []), expiresAt, metadata, name, priority); } 
-@override String toString() { return 'PostBillingCreditGrantsRequest(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expand: $expand, expiresAt: $expiresAt, metadata: $metadata, name: $name, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(amount, applicabilityConfig, category, customer, customerAccount, effectiveAt, Object.hashAll(expand ?? const []), expiresAt, metadata, name, priority);
+
+@override String toString() => 'PostBillingCreditGrantsRequest(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expand: $expand, expiresAt: $expiresAt, metadata: $metadata, name: $name, priority: $priority)';
+
  }

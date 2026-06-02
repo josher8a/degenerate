@@ -28,11 +28,14 @@ RealtimekitPagingResponse copyWith({List<Map<String,dynamic>>? data, Realtimekit
   paging: paging ?? this.paging,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPagingResponse &&
           listEquals(data, other.data) &&
           paging == other.paging &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), paging, success); } 
-@override String toString() { return 'RealtimekitPagingResponse(data: $data, paging: $paging, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), paging, success);
+
+@override String toString() => 'RealtimekitPagingResponse(data: $data, paging: $paging, success: $success)';
+
  }

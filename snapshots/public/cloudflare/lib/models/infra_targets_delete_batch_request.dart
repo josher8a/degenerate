@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('targe
 InfraTargetsDeleteBatchRequest copyWith({List<InfraTargetId>? targetIds}) { return InfraTargetsDeleteBatchRequest(
   targetIds: targetIds ?? this.targetIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTargetsDeleteBatchRequest &&
-          listEquals(targetIds, other.targetIds); } 
-@override int get hashCode { return Object.hashAll(targetIds); } 
-@override String toString() { return 'InfraTargetsDeleteBatchRequest(targetIds: $targetIds)'; } 
+          listEquals(targetIds, other.targetIds);
+
+@override int get hashCode => Object.hashAll(targetIds);
+
+@override String toString() => 'InfraTargetsDeleteBatchRequest(targetIds: $targetIds)';
+
  }

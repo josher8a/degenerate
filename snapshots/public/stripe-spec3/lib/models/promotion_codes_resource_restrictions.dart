@@ -42,12 +42,15 @@ PromotionCodesResourceRestrictions copyWith({Map<String, PromotionCodeCurrencyOp
   minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
   minimumAmountCurrency: minimumAmountCurrency != null ? minimumAmountCurrency() : this.minimumAmountCurrency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCodesResourceRestrictions &&
           currencyOptions == other.currencyOptions &&
           firstTimeTransaction == other.firstTimeTransaction &&
           minimumAmount == other.minimumAmount &&
-          minimumAmountCurrency == other.minimumAmountCurrency; } 
-@override int get hashCode { return Object.hash(currencyOptions, firstTimeTransaction, minimumAmount, minimumAmountCurrency); } 
-@override String toString() { return 'PromotionCodesResourceRestrictions(currencyOptions: $currencyOptions, firstTimeTransaction: $firstTimeTransaction, minimumAmount: $minimumAmount, minimumAmountCurrency: $minimumAmountCurrency)'; } 
+          minimumAmountCurrency == other.minimumAmountCurrency;
+
+@override int get hashCode => Object.hash(currencyOptions, firstTimeTransaction, minimumAmount, minimumAmountCurrency);
+
+@override String toString() => 'PromotionCodesResourceRestrictions(currencyOptions: $currencyOptions, firstTimeTransaction: $firstTimeTransaction, minimumAmount: $minimumAmount, minimumAmountCurrency: $minimumAmountCurrency)';
+
  }

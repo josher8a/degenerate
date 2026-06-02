@@ -138,7 +138,7 @@ DomainProperties copyWith({Available? Function()? available, CanRegister? Functi
   transferIn: transferIn != null ? transferIn() : this.transferIn,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DomainProperties &&
           available == other.available &&
           canRegister == other.canRegister &&
@@ -151,7 +151,10 @@ DomainProperties copyWith({Available? Function()? available, CanRegister? Functi
           registryStatuses == other.registryStatuses &&
           supportedTld == other.supportedTld &&
           transferIn == other.transferIn &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(available, canRegister, createdAt, currentRegistrar, expiresAt, id, locked, registrantContact, registryStatuses, supportedTld, transferIn, updatedAt); } 
-@override String toString() { return 'DomainProperties(available: $available, canRegister: $canRegister, createdAt: $createdAt, currentRegistrar: $currentRegistrar, expiresAt: $expiresAt, id: $id, locked: $locked, registrantContact: $registrantContact, registryStatuses: $registryStatuses, supportedTld: $supportedTld, transferIn: $transferIn, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(available, canRegister, createdAt, currentRegistrar, expiresAt, id, locked, registrantContact, registryStatuses, supportedTld, transferIn, updatedAt);
+
+@override String toString() => 'DomainProperties(available: $available, canRegister: $canRegister, createdAt: $createdAt, currentRegistrar: $currentRegistrar, expiresAt: $expiresAt, id: $id, locked: $locked, registrantContact: $registrantContact, registryStatuses: $registryStatuses, supportedTld: $supportedTld, transferIn: $transferIn, updatedAt: $updatedAt)';
+
  }

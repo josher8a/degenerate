@@ -44,11 +44,14 @@ RollingPolicy copyWith({int? Function()? fileSizeBytes, int? Function()? inactiv
   inactivitySeconds: inactivitySeconds != null ? inactivitySeconds() : this.inactivitySeconds,
   intervalSeconds: intervalSeconds != null ? intervalSeconds() : this.intervalSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RollingPolicy &&
           fileSizeBytes == other.fileSizeBytes &&
           inactivitySeconds == other.inactivitySeconds &&
-          intervalSeconds == other.intervalSeconds; } 
-@override int get hashCode { return Object.hash(fileSizeBytes, inactivitySeconds, intervalSeconds); } 
-@override String toString() { return 'RollingPolicy(fileSizeBytes: $fileSizeBytes, inactivitySeconds: $inactivitySeconds, intervalSeconds: $intervalSeconds)'; } 
+          intervalSeconds == other.intervalSeconds;
+
+@override int get hashCode => Object.hash(fileSizeBytes, inactivitySeconds, intervalSeconds);
+
+@override String toString() => 'RollingPolicy(fileSizeBytes: $fileSizeBytes, inactivitySeconds: $inactivitySeconds, intervalSeconds: $intervalSeconds)';
+
  }

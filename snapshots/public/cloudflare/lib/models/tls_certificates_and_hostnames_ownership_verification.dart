@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final Txt _value;
 
-@override Txt get value { return _value; } 
+@override Txt get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesOwnershipVerificationTxt && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerification.txt($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesOwnershipVerificationTxt && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerification.txt($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerification$Unknown extends TlsCertificatesAndHostnamesOwnershipVerification {const TlsCertificatesAndHostnamesOwnershipVerification$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesOwnershipVerification$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerification.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesOwnershipVerification$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerification.unknown($_value)';
+
  }

@@ -152,7 +152,7 @@ DevicesUpdateDeviceSettingsPolicyRequest copyWith({TeamsDevicesAllowModeSwitch? 
   switchLocked: switchLocked != null ? switchLocked() : this.switchLocked,
   tunnelProtocol: tunnelProtocol != null ? tunnelProtocol() : this.tunnelProtocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DevicesUpdateDeviceSettingsPolicyRequest &&
           allowModeSwitch == other.allowModeSwitch &&
           allowUpdates == other.allowUpdates &&
@@ -175,7 +175,10 @@ DevicesUpdateDeviceSettingsPolicyRequest copyWith({TeamsDevicesAllowModeSwitch? 
           serviceModeV2 == other.serviceModeV2 &&
           supportUrl == other.supportUrl &&
           switchLocked == other.switchLocked &&
-          tunnelProtocol == other.tunnelProtocol; } 
-@override int get hashCode { return Object.hashAll([allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, description, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(include ?? const []), lanAllowMinutes, lanAllowSubnetSize, match, name, precedence, registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, tunnelProtocol]); } 
-@override String toString() { return 'DevicesUpdateDeviceSettingsPolicyRequest(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, description: $description, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, include: $include, lanAllowMinutes: $lanAllowMinutes, lanAllowSubnetSize: $lanAllowSubnetSize, match: $match, name: $name, precedence: $precedence, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, tunnelProtocol: $tunnelProtocol)'; } 
+          tunnelProtocol == other.tunnelProtocol;
+
+@override int get hashCode => Object.hashAll([allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, description, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(include ?? const []), lanAllowMinutes, lanAllowSubnetSize, match, name, precedence, registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, tunnelProtocol]);
+
+@override String toString() => 'DevicesUpdateDeviceSettingsPolicyRequest(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, description: $description, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, include: $include, lanAllowMinutes: $lanAllowMinutes, lanAllowSubnetSize: $lanAllowSubnetSize, match: $match, name: $name, precedence: $precedence, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, tunnelProtocol: $tunnelProtocol)';
+
  }

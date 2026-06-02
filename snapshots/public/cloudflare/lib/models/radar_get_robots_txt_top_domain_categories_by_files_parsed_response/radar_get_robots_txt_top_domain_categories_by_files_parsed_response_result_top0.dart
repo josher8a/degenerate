@@ -23,10 +23,13 @@ RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0 copyWith({St
   name: name ?? this.name,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0 &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultTop0(name: $name, value: $value)';
+
  }

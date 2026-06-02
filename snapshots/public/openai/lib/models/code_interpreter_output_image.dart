@@ -24,10 +24,13 @@ CodeInterpreterOutputImage copyWith({CodeInterpreterOutputImageType? type, Strin
   type: type ?? this.type,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterOutputImage &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(type, url); } 
-@override String toString() { return 'CodeInterpreterOutputImage(type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(type, url);
+
+@override String toString() => 'CodeInterpreterOutputImage(type: $type, url: $url)';
+
  }

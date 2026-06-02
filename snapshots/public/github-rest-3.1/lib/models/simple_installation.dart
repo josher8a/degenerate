@@ -26,10 +26,13 @@ SimpleInstallation copyWith({int? id, String? nodeId, }) { return SimpleInstalla
   id: id ?? this.id,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleInstallation &&
           id == other.id &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(id, nodeId); } 
-@override String toString() { return 'SimpleInstallation(id: $id, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(id, nodeId);
+
+@override String toString() => 'SimpleInstallation(id: $id, nodeId: $nodeId)';
+
  }

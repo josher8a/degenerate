@@ -20,10 +20,13 @@ NameCollectionParamsIndividual copyWith({bool? enabled, bool? Function()? option
   enabled: enabled ?? this.enabled,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NameCollectionParamsIndividual &&
           enabled == other.enabled &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(enabled, optional); } 
-@override String toString() { return 'NameCollectionParamsIndividual(enabled: $enabled, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(enabled, optional);
+
+@override String toString() => 'NameCollectionParamsIndividual(enabled: $enabled, optional: $optional)';
+
  }

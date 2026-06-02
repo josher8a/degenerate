@@ -29,11 +29,14 @@ CustomUnitAmount copyWith({int? Function()? maximum, int? Function()? minimum, i
   minimum: minimum != null ? minimum() : this.minimum,
   preset: preset != null ? preset() : this.preset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomUnitAmount &&
           maximum == other.maximum &&
           minimum == other.minimum &&
-          preset == other.preset; } 
-@override int get hashCode { return Object.hash(maximum, minimum, preset); } 
-@override String toString() { return 'CustomUnitAmount(maximum: $maximum, minimum: $minimum, preset: $preset)'; } 
+          preset == other.preset;
+
+@override int get hashCode => Object.hash(maximum, minimum, preset);
+
+@override String toString() => 'CustomUnitAmount(maximum: $maximum, minimum: $minimum, preset: $preset)';
+
  }

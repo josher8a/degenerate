@@ -26,10 +26,13 @@ PostProductsProductFeaturesRequest copyWith({String? entitlementFeature, List<St
   entitlementFeature: entitlementFeature ?? this.entitlementFeature,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsProductFeaturesRequest &&
           entitlementFeature == other.entitlementFeature &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(entitlementFeature, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostProductsProductFeaturesRequest(entitlementFeature: $entitlementFeature, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(entitlementFeature, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostProductsProductFeaturesRequest(entitlementFeature: $entitlementFeature, expand: $expand)';
+
  }

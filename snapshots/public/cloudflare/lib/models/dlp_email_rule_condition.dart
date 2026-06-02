@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEmailRuleOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpEmailRuleOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpEmailRuleOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DlpEmailRuleOperator($value)';
+
  }
 @immutable final class DlpEmailRuleSelector {const DlpEmailRuleSelector._(this.value);
 
@@ -52,10 +55,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEmailRuleSelector && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpEmailRuleSelector($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpEmailRuleSelector && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DlpEmailRuleSelector($value)';
+
  }
 @immutable final class DlpEmailRuleCondition {const DlpEmailRuleCondition({required this.$operator, required this.selector, required this.value, });
 
@@ -84,11 +90,14 @@ DlpEmailRuleCondition copyWith({DlpEmailRuleOperator? $operator, DlpEmailRuleSel
   selector: selector ?? this.selector,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEmailRuleCondition &&
           $operator == other.$operator &&
           selector == other.selector &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash($operator, selector, value); } 
-@override String toString() { return 'DlpEmailRuleCondition(\$operator: ${$operator}, selector: $selector, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash($operator, selector, value);
+
+@override String toString() => 'DlpEmailRuleCondition(\$operator: ${$operator}, selector: $selector, value: $value)';
+
  }

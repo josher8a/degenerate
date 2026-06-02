@@ -50,7 +50,7 @@ ParticipantPeerStatsIpInformation copyWith({IpInformationAsn? Function()? asn, S
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStatsIpInformation &&
           asn == other.asn &&
           city == other.city &&
@@ -59,7 +59,10 @@ ParticipantPeerStatsIpInformation copyWith({IpInformationAsn? Function()? asn, S
           ipv4 == other.ipv4 &&
           org == other.org &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(asn, city, country, ipLocation, ipv4, org, region, timezone); } 
-@override String toString() { return 'ParticipantPeerStatsIpInformation(asn: $asn, city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, region: $region, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(asn, city, country, ipLocation, ipv4, org, region, timezone);
+
+@override String toString() => 'ParticipantPeerStatsIpInformation(asn: $asn, city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, region: $region, timezone: $timezone)';
+
  }

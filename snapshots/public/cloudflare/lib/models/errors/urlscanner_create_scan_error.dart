@@ -19,19 +19,22 @@ final class UrlscannerCreateScanError$400 extends UrlscannerCreateScanError {con
 
 final UrlscannerCreateScanResponse4002 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UrlscannerCreateScanError$409 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$409(this.error);
 
 final UrlscannerCreateScanResponse4092 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class UrlscannerCreateScanError$429 extends UrlscannerCreateScanError {const UrlscannerCreateScanError$429(this.error);
 
 final UrlscannerCreateScanResponse4292 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class UrlscannerCreateScanError$Unknown extends UrlscannerCreateScanError {const UrlscannerCreateScanError$Unknown(this.statusCode, this.rawBody, );
 

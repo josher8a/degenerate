@@ -24,10 +24,13 @@ PopHealth copyWith({bool? Function()? healthy, List<LoadBalancingOriginHealth>? 
   healthy: healthy != null ? healthy() : this.healthy,
   origins: origins != null ? origins() : this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PopHealth &&
           healthy == other.healthy &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(healthy, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'PopHealth(healthy: $healthy, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(healthy, Object.hashAll(origins ?? const []));
+
+@override String toString() => 'PopHealth(healthy: $healthy, origins: $origins)';
+
  }

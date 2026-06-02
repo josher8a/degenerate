@@ -21,31 +21,36 @@ final class BillingDeleteBudgetOrgError$400 extends BillingDeleteBudgetOrgError 
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BillingDeleteBudgetOrgError$403 extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class BillingDeleteBudgetOrgError$404 extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class BillingDeleteBudgetOrgError$500 extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BillingDeleteBudgetOrgError$503 extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError$503(this.error);
 
 final BillingDeleteBudgetOrgResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class BillingDeleteBudgetOrgError$Unknown extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError$Unknown(this.statusCode, this.rawBody, );
 

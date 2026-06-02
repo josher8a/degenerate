@@ -75,7 +75,7 @@ EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEm
   lastModified: lastModified ?? this.lastModified,
   provenance: provenance != null ? provenance() : this.provenance,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateDisplayNameResponseResult &&
           email == other.email &&
           isEmailRegex == other.isEmailRegex &&
@@ -87,7 +87,10 @@ EmailSecurityCreateDisplayNameResponseResult copyWith({String? email, bool? isEm
           externalDirectoryNodeId == other.externalDirectoryNodeId &&
           id == other.id &&
           lastModified == other.lastModified &&
-          provenance == other.provenance; } 
-@override int get hashCode { return Object.hash(email, isEmailRegex, name, comments, createdAt, directoryId, directoryNodeId, externalDirectoryNodeId, id, lastModified, provenance); } 
-@override String toString() { return 'EmailSecurityCreateDisplayNameResponseResult(email: $email, isEmailRegex: $isEmailRegex, name: $name, comments: $comments, createdAt: $createdAt, directoryId: $directoryId, directoryNodeId: $directoryNodeId, externalDirectoryNodeId: $externalDirectoryNodeId, id: $id, lastModified: $lastModified, provenance: $provenance)'; } 
+          provenance == other.provenance;
+
+@override int get hashCode => Object.hash(email, isEmailRegex, name, comments, createdAt, directoryId, directoryNodeId, externalDirectoryNodeId, id, lastModified, provenance);
+
+@override String toString() => 'EmailSecurityCreateDisplayNameResponseResult(email: $email, isEmailRegex: $isEmailRegex, name: $name, comments: $comments, createdAt: $createdAt, directoryId: $directoryId, directoryNodeId: $directoryNodeId, externalDirectoryNodeId: $externalDirectoryNodeId, id: $id, lastModified: $lastModified, provenance: $provenance)';
+
  }

@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesIntuneInputRequestComplianceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesIntuneInputRequestComplianceStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesIntuneInputRequestComplianceStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesIntuneInputRequestComplianceStatus($value)';
+
  }
 @immutable final class TeamsDevicesIntuneInputRequest {const TeamsDevicesIntuneInputRequest({required this.complianceStatus, required this.connectionId, });
 
@@ -64,10 +67,13 @@ TeamsDevicesIntuneInputRequest copyWith({TeamsDevicesIntuneInputRequestComplianc
   complianceStatus: complianceStatus ?? this.complianceStatus,
   connectionId: connectionId ?? this.connectionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIntuneInputRequest &&
           complianceStatus == other.complianceStatus &&
-          connectionId == other.connectionId; } 
-@override int get hashCode { return Object.hash(complianceStatus, connectionId); } 
-@override String toString() { return 'TeamsDevicesIntuneInputRequest(complianceStatus: $complianceStatus, connectionId: $connectionId)'; } 
+          connectionId == other.connectionId;
+
+@override int get hashCode => Object.hash(complianceStatus, connectionId);
+
+@override String toString() => 'TeamsDevicesIntuneInputRequest(complianceStatus: $complianceStatus, connectionId: $connectionId)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityUpdateBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityUpdateBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentityUpdateBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentityUpdateBehavior($value)';
+
  }
 /// The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.
 @immutable final class ScimConfig {const ScimConfig({this.enabled = false, this.identityUpdateBehavior = IdentityUpdateBehavior.noAction, this.scimBaseUrl, this.seatDeprovision = false, this.secret, this.userDeprovision = false, });
@@ -75,14 +78,17 @@ ScimConfig copyWith({bool Function()? enabled, IdentityUpdateBehavior Function()
   secret: secret != null ? secret() : this.secret,
   userDeprovision: userDeprovision != null ? userDeprovision() : this.userDeprovision,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScimConfig &&
           enabled == other.enabled &&
           identityUpdateBehavior == other.identityUpdateBehavior &&
           scimBaseUrl == other.scimBaseUrl &&
           seatDeprovision == other.seatDeprovision &&
           secret == other.secret &&
-          userDeprovision == other.userDeprovision; } 
-@override int get hashCode { return Object.hash(enabled, identityUpdateBehavior, scimBaseUrl, seatDeprovision, secret, userDeprovision); } 
-@override String toString() { return 'ScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, scimBaseUrl: $scimBaseUrl, seatDeprovision: $seatDeprovision, secret: $secret, userDeprovision: $userDeprovision)'; } 
+          userDeprovision == other.userDeprovision;
+
+@override int get hashCode => Object.hash(enabled, identityUpdateBehavior, scimBaseUrl, seatDeprovision, secret, userDeprovision);
+
+@override String toString() => 'ScimConfig(enabled: $enabled, identityUpdateBehavior: $identityUpdateBehavior, scimBaseUrl: $scimBaseUrl, seatDeprovision: $seatDeprovision, secret: $secret, userDeprovision: $userDeprovision)';
+
  }

@@ -50,7 +50,7 @@ WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({String? Function()? con
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRejectedWorkflowJobRuns &&
           conclusion == other.conclusion &&
           createdAt == other.createdAt &&
@@ -59,7 +59,10 @@ WebhookDeploymentReviewRejectedWorkflowJobRuns copyWith({String? Function()? con
           id == other.id &&
           name == other.name &&
           status == other.status &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt); } 
-@override String toString() { return 'WebhookDeploymentReviewRejectedWorkflowJobRuns(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt);
+
+@override String toString() => 'WebhookDeploymentReviewRejectedWorkflowJobRuns(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)';
+
  }

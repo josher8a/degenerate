@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('disco
 ProrationDetails copyWith({List<DiscountsResourceDiscountAmount>? discountAmounts}) { return ProrationDetails(
   discountAmounts: discountAmounts ?? this.discountAmounts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProrationDetails &&
-          listEquals(discountAmounts, other.discountAmounts); } 
-@override int get hashCode { return Object.hashAll(discountAmounts); } 
-@override String toString() { return 'ProrationDetails(discountAmounts: $discountAmounts)'; } 
+          listEquals(discountAmounts, other.discountAmounts);
+
+@override int get hashCode => Object.hashAll(discountAmounts);
+
+@override String toString() => 'ProrationDetails(discountAmounts: $discountAmounts)';
+
  }

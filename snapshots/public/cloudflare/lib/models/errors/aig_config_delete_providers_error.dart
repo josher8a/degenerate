@@ -17,7 +17,8 @@ final class AigConfigDeleteProvidersError$404 extends AigConfigDeleteProvidersEr
 
 final AigConfigDeleteProvidersResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigDeleteProvidersError$Unknown extends AigConfigDeleteProvidersError {const AigConfigDeleteProvidersError$Unknown(this.statusCode, this.rawBody, );
 

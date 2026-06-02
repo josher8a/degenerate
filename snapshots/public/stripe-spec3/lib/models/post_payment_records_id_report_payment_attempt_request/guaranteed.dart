@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('guara
 Guaranteed copyWith({int? guaranteedAt}) { return Guaranteed(
   guaranteedAt: guaranteedAt ?? this.guaranteedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Guaranteed &&
-          guaranteedAt == other.guaranteedAt; } 
-@override int get hashCode { return guaranteedAt.hashCode; } 
-@override String toString() { return 'Guaranteed(guaranteedAt: $guaranteedAt)'; } 
+          guaranteedAt == other.guaranteedAt;
+
+@override int get hashCode => guaranteedAt.hashCode;
+
+@override String toString() => 'Guaranteed(guaranteedAt: $guaranteedAt)';
+
  }

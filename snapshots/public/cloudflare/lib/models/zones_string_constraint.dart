@@ -24,10 +24,13 @@ ZonesStringConstraint copyWith({dynamic Function()? $operator, String? value, })
   $operator: $operator != null ? $operator() : this.$operator,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesStringConstraint &&
           $operator == other.$operator &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash($operator, value); } 
-@override String toString() { return 'ZonesStringConstraint(\$operator: ${$operator}, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash($operator, value);
+
+@override String toString() => 'ZonesStringConstraint(\$operator: ${$operator}, value: $value)';
+
  }

@@ -82,7 +82,7 @@ LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBal
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOrigin &&
           address == other.address &&
           disabledAt == other.disabledAt &&
@@ -91,7 +91,10 @@ LoadBalancingOrigin copyWith({LoadBalancingAddress? Function()? address, LoadBal
           name == other.name &&
           port == other.port &&
           virtualNetworkId == other.virtualNetworkId &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(address, disabledAt, enabled, header, name, port, virtualNetworkId, weight); } 
-@override String toString() { return 'LoadBalancingOrigin(address: $address, disabledAt: $disabledAt, enabled: $enabled, header: $header, name: $name, port: $port, virtualNetworkId: $virtualNetworkId, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(address, disabledAt, enabled, header, name, port, virtualNetworkId, weight);
+
+@override String toString() => 'LoadBalancingOrigin(address: $address, disabledAt: $disabledAt, enabled: $enabled, header: $header, name: $name, port: $port, virtualNetworkId: $virtualNetworkId, weight: $weight)';
+
  }

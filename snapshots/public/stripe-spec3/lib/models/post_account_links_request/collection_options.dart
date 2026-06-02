@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Fields && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Fields($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Fields && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Fields($value)';
+
  }
 @immutable final class FutureRequirements {const FutureRequirements._(this.value);
 
@@ -43,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FutureRequirements && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FutureRequirements($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FutureRequirements && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FutureRequirements($value)';
+
  }
 /// Specifies the requirements that Stripe collects from connected accounts in the Connect Onboarding flow.
 @immutable final class CollectionOptions {const CollectionOptions({this.fields, this.futureRequirements, });
@@ -69,10 +75,13 @@ CollectionOptions copyWith({Fields? Function()? fields, FutureRequirements? Func
   fields: fields != null ? fields() : this.fields,
   futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CollectionOptions &&
           fields == other.fields &&
-          futureRequirements == other.futureRequirements; } 
-@override int get hashCode { return Object.hash(fields, futureRequirements); } 
-@override String toString() { return 'CollectionOptions(fields: $fields, futureRequirements: $futureRequirements)'; } 
+          futureRequirements == other.futureRequirements;
+
+@override int get hashCode => Object.hash(fields, futureRequirements);
+
+@override String toString() => 'CollectionOptions(fields: $fields, futureRequirements: $futureRequirements)';
+
  }

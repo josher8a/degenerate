@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ObservatoryLighthouseErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ObservatoryLighthouseErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ObservatoryLighthouseErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ObservatoryLighthouseErrorCode($value)';
+
  }
 @immutable final class ObservatoryLighthouseReportError {const ObservatoryLighthouseReportError({this.code, this.detail, this.finalDisplayedUrl, });
 
@@ -66,11 +69,14 @@ ObservatoryLighthouseReportError copyWith({ObservatoryLighthouseErrorCode? Funct
   detail: detail != null ? detail() : this.detail,
   finalDisplayedUrl: finalDisplayedUrl != null ? finalDisplayedUrl() : this.finalDisplayedUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryLighthouseReportError &&
           code == other.code &&
           detail == other.detail &&
-          finalDisplayedUrl == other.finalDisplayedUrl; } 
-@override int get hashCode { return Object.hash(code, detail, finalDisplayedUrl); } 
-@override String toString() { return 'ObservatoryLighthouseReportError(code: $code, detail: $detail, finalDisplayedUrl: $finalDisplayedUrl)'; } 
+          finalDisplayedUrl == other.finalDisplayedUrl;
+
+@override int get hashCode => Object.hash(code, detail, finalDisplayedUrl);
+
+@override String toString() => 'ObservatoryLighthouseReportError(code: $code, detail: $detail, finalDisplayedUrl: $finalDisplayedUrl)';
+
  }

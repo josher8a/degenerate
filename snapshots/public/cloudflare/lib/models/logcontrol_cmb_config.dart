@@ -35,10 +35,13 @@ LogcontrolCmbConfig copyWith({LogcontrolAllowOutOfRegionAccess? Function()? allo
   allowOutOfRegionAccess: allowOutOfRegionAccess != null ? allowOutOfRegionAccess() : this.allowOutOfRegionAccess,
   regions: regions != null ? regions() : this.regions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogcontrolCmbConfig &&
           allowOutOfRegionAccess == other.allowOutOfRegionAccess &&
-          regions == other.regions; } 
-@override int get hashCode { return Object.hash(allowOutOfRegionAccess, regions); } 
-@override String toString() { return 'LogcontrolCmbConfig(allowOutOfRegionAccess: $allowOutOfRegionAccess, regions: $regions)'; } 
+          regions == other.regions;
+
+@override int get hashCode => Object.hash(allowOutOfRegionAccess, regions);
+
+@override String toString() => 'LogcontrolCmbConfig(allowOutOfRegionAccess: $allowOutOfRegionAccess, regions: $regions)';
+
  }

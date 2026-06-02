@@ -21,10 +21,13 @@ MuteParticipantsRequest copyWith({List<String>? customParticipantIds, List<Strin
   customParticipantIds: customParticipantIds ?? this.customParticipantIds,
   participantIds: participantIds ?? this.participantIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MuteParticipantsRequest &&
           listEquals(customParticipantIds, other.customParticipantIds) &&
-          listEquals(participantIds, other.participantIds); } 
-@override int get hashCode { return Object.hash(Object.hashAll(customParticipantIds), Object.hashAll(participantIds)); } 
-@override String toString() { return 'MuteParticipantsRequest(customParticipantIds: $customParticipantIds, participantIds: $participantIds)'; } 
+          listEquals(participantIds, other.participantIds);
+
+@override int get hashCode => Object.hash(Object.hashAll(customParticipantIds), Object.hashAll(participantIds));
+
+@override String toString() => 'MuteParticipantsRequest(customParticipantIds: $customParticipantIds, participantIds: $participantIds)';
+
  }

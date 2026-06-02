@@ -31,10 +31,13 @@ CvssSeveritiesCvss copyWith({String? Function()? vectorString, double? Function(
   vectorString: vectorString != null ? vectorString() : this.vectorString,
   score: score != null ? score() : this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CvssSeveritiesCvss &&
           vectorString == other.vectorString &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(vectorString, score); } 
-@override String toString() { return 'CvssSeveritiesCvss(vectorString: $vectorString, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(vectorString, score);
+
+@override String toString() => 'CvssSeveritiesCvss(vectorString: $vectorString, score: $score)';
+
  }

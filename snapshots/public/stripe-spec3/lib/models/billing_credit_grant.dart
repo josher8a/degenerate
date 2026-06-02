@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditGrantObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditGrantObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditGrantObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingCreditGrantObject($value)';
+
  }
 /// A credit grant is an API resource that documents the allocation of some billing credits to a customer.
 /// 
@@ -156,7 +159,7 @@ BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingC
   updated: updated ?? this.updated,
   voidedAt: voidedAt != null ? voidedAt() : this.voidedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrant &&
           amount == other.amount &&
           applicabilityConfig == other.applicabilityConfig &&
@@ -174,7 +177,10 @@ BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingC
           priority == other.priority &&
           testClock == other.testClock &&
           updated == other.updated &&
-          voidedAt == other.voidedAt; } 
-@override int get hashCode { return Object.hash(amount, applicabilityConfig, category, created, customer, customerAccount, effectiveAt, expiresAt, id, livemode, metadata, name, object, priority, testClock, updated, voidedAt); } 
-@override String toString() { return 'BillingCreditGrant(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, created: $created, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expiresAt: $expiresAt, id: $id, livemode: $livemode, metadata: $metadata, name: $name, object: $object, priority: $priority, testClock: $testClock, updated: $updated, voidedAt: $voidedAt)'; } 
+          voidedAt == other.voidedAt;
+
+@override int get hashCode => Object.hash(amount, applicabilityConfig, category, created, customer, customerAccount, effectiveAt, expiresAt, id, livemode, metadata, name, object, priority, testClock, updated, voidedAt);
+
+@override String toString() => 'BillingCreditGrant(amount: $amount, applicabilityConfig: $applicabilityConfig, category: $category, created: $created, customer: $customer, customerAccount: $customerAccount, effectiveAt: $effectiveAt, expiresAt: $expiresAt, id: $id, livemode: $livemode, metadata: $metadata, name: $name, object: $object, priority: $priority, testClock: $testClock, updated: $updated, voidedAt: $voidedAt)';
+
  }

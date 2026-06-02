@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id');
 DnsRecordsDnsRecordBatchPut copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordBatchPut(
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRecordBatchPut &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordBatchPut(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordBatchPut(id: $id)';
+
  }

@@ -18,13 +18,15 @@ final class SecretScanningListAlertsForOrgError$404 extends SecretScanningListAl
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SecretScanningListAlertsForOrgError$503 extends SecretScanningListAlertsForOrgError {const SecretScanningListAlertsForOrgError$503(this.error);
 
 final SecretScanningListAlertsForOrgResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SecretScanningListAlertsForOrgError$Unknown extends SecretScanningListAlertsForOrgError {const SecretScanningListAlertsForOrgError$Unknown(this.statusCode, this.rawBody, );
 

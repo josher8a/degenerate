@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel($value)';
+
  }
 @immutable final class DependabotSetRepositoryAccessDefaultLevelRequest {const DependabotSetRepositoryAccessDefaultLevelRequest({required this.defaultLevel});
 
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
 DependabotSetRepositoryAccessDefaultLevelRequest copyWith({DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel? defaultLevel}) { return DependabotSetRepositoryAccessDefaultLevelRequest(
   defaultLevel: defaultLevel ?? this.defaultLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotSetRepositoryAccessDefaultLevelRequest &&
-          defaultLevel == other.defaultLevel; } 
-@override int get hashCode { return defaultLevel.hashCode; } 
-@override String toString() { return 'DependabotSetRepositoryAccessDefaultLevelRequest(defaultLevel: $defaultLevel)'; } 
+          defaultLevel == other.defaultLevel;
+
+@override int get hashCode => defaultLevel.hashCode;
+
+@override String toString() => 'DependabotSetRepositoryAccessDefaultLevelRequest(defaultLevel: $defaultLevel)';
+
  }

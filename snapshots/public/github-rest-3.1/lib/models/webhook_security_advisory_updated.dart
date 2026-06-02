@@ -46,7 +46,7 @@ WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? act
   securityAdvisory: securityAdvisory ?? this.securityAdvisory,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecurityAdvisoryUpdated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -54,7 +54,10 @@ WebhookSecurityAdvisoryUpdated copyWith({WebhookCustomPropertyUpdatedAction? act
           organization == other.organization &&
           repository == other.repository &&
           securityAdvisory == other.securityAdvisory &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender); } 
-@override String toString() { return 'WebhookSecurityAdvisoryUpdated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender);
+
+@override String toString() => 'WebhookSecurityAdvisoryUpdated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)';
+
  }

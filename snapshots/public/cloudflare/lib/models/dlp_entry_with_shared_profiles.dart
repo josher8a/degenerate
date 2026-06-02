@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('profi
 DlpEntryWithSharedProfiles copyWith({List<DlpEntryProfile>? profiles}) { return DlpEntryWithSharedProfiles(
   profiles: profiles ?? this.profiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithSharedProfiles &&
-          listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hashAll(profiles); } 
-@override String toString() { return 'DlpEntryWithSharedProfiles(profiles: $profiles)'; } 
+          listEquals(profiles, other.profiles);
+
+@override int get hashCode => Object.hashAll(profiles);
+
+@override String toString() => 'DlpEntryWithSharedProfiles(profiles: $profiles)';
+
  }

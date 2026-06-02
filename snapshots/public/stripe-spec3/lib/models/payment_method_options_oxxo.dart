@@ -29,10 +29,13 @@ PaymentMethodOptionsOxxo copyWith({int? expiresAfterDays, CheckoutAffirmPaymentM
   expiresAfterDays: expiresAfterDays ?? this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsOxxo &&
           expiresAfterDays == other.expiresAfterDays &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsOxxo(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(expiresAfterDays, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsOxxo(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';
+
  }

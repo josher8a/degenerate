@@ -43,13 +43,16 @@ CompletionUsage copyWith({int? completionTokens, int? promptTokens, int? totalTo
   completionTokensDetails: completionTokensDetails != null ? completionTokensDetails() : this.completionTokensDetails,
   promptTokensDetails: promptTokensDetails != null ? promptTokensDetails() : this.promptTokensDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompletionUsage &&
           completionTokens == other.completionTokens &&
           promptTokens == other.promptTokens &&
           totalTokens == other.totalTokens &&
           completionTokensDetails == other.completionTokensDetails &&
-          promptTokensDetails == other.promptTokensDetails; } 
-@override int get hashCode { return Object.hash(completionTokens, promptTokens, totalTokens, completionTokensDetails, promptTokensDetails); } 
-@override String toString() { return 'CompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens, completionTokensDetails: $completionTokensDetails, promptTokensDetails: $promptTokensDetails)'; } 
+          promptTokensDetails == other.promptTokensDetails;
+
+@override int get hashCode => Object.hash(completionTokens, promptTokens, totalTokens, completionTokensDetails, promptTokensDetails);
+
+@override String toString() => 'CompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens, completionTokensDetails: $completionTokensDetails, promptTokensDetails: $promptTokensDetails)';
+
  }

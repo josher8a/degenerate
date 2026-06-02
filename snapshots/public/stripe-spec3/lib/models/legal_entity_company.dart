@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LegalEntityCompanyOwnershipExemptionReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LegalEntityCompanyOwnershipExemptionReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LegalEntityCompanyOwnershipExemptionReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LegalEntityCompanyOwnershipExemptionReason($value)';
+
  }
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
 @immutable final class LegalEntityCompanyStructure {const LegalEntityCompanyStructure._(this.value);
@@ -108,10 +111,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LegalEntityCompanyStructure && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LegalEntityCompanyStructure($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LegalEntityCompanyStructure && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LegalEntityCompanyStructure($value)';
+
  }
 /// 
 @immutable final class LegalEntityCompany {const LegalEntityCompany({this.address, this.addressKana, this.addressKanji, this.directorsProvided, this.directorshipDeclaration, this.executivesProvided, this.exportLicenseId, this.exportPurposeCode, this.name, this.nameKana, this.nameKanji, this.ownersProvided, this.ownershipDeclaration, this.ownershipExemptionReason, this.phone, this.registrationDate, this.representativeDeclaration, this.structure, this.taxIdProvided, this.taxIdRegistrar, this.vatIdProvided, this.verification, });
@@ -285,7 +291,7 @@ LegalEntityCompany copyWith({Address? Function()? address, LegalEntityJapanAddre
   vatIdProvided: vatIdProvided != null ? vatIdProvided() : this.vatIdProvided,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityCompany &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -308,7 +314,10 @@ LegalEntityCompany copyWith({Address? Function()? address, LegalEntityJapanAddre
           taxIdProvided == other.taxIdProvided &&
           taxIdRegistrar == other.taxIdRegistrar &&
           vatIdProvided == other.vatIdProvided &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, representativeDeclaration, structure, taxIdProvided, taxIdRegistrar, vatIdProvided, verification]); } 
-@override String toString() { return 'LegalEntityCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, representativeDeclaration: $representativeDeclaration, structure: $structure, taxIdProvided: $taxIdProvided, taxIdRegistrar: $taxIdRegistrar, vatIdProvided: $vatIdProvided, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, representativeDeclaration, structure, taxIdProvided, taxIdRegistrar, vatIdProvided, verification]);
+
+@override String toString() => 'LegalEntityCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, representativeDeclaration: $representativeDeclaration, structure: $structure, taxIdProvided: $taxIdProvided, taxIdRegistrar: $taxIdRegistrar, vatIdProvided: $vatIdProvided, verification: $verification)';
+
  }

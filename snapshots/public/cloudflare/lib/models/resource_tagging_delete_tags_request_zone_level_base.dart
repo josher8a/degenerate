@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingZoneResourceTypeBaseEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceTaggingZoneResourceTypeBaseEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingZoneResourceTypeBaseEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResourceTaggingZoneResourceTypeBaseEnum($value)';
+
  }
 /// Request body schema for deleting tags from zone-level resources. Zone ID comes from URL path.
 @immutable final class ResourceTaggingDeleteTagsRequestZoneLevelBase {const ResourceTaggingDeleteTagsRequestZoneLevelBase({required this.resourceId, required this.resourceType, });
@@ -59,10 +62,13 @@ ResourceTaggingDeleteTagsRequestZoneLevelBase copyWith({ResourceTaggingResourceI
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingDeleteTagsRequestZoneLevelBase &&
           resourceId == other.resourceId &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(resourceId, resourceType); } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceId: $resourceId, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(resourceId, resourceType);
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceId: $resourceId, resourceType: $resourceType)';
+
  }

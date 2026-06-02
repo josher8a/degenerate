@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDependencyScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDependencyScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotAlertDependencyScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotAlertDependencyScope($value)';
+
  }
 /// The vulnerable dependency's relationship to your project.
 /// 
@@ -58,10 +61,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDependencyRelationship && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDependencyRelationship($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotAlertDependencyRelationship && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotAlertDependencyRelationship($value)';
+
  }
 /// Details for the vulnerable dependency.
 @immutable final class DependabotAlertDependency {const DependabotAlertDependency({this.package, this.manifestPath, this.scope, this.relationship, });
@@ -101,12 +107,15 @@ DependabotAlertDependency copyWith({DependabotAlertPackage? Function()? package,
   scope: scope != null ? scope() : this.scope,
   relationship: relationship != null ? relationship() : this.relationship,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertDependency &&
           package == other.package &&
           manifestPath == other.manifestPath &&
           scope == other.scope &&
-          relationship == other.relationship; } 
-@override int get hashCode { return Object.hash(package, manifestPath, scope, relationship); } 
-@override String toString() { return 'DependabotAlertDependency(package: $package, manifestPath: $manifestPath, scope: $scope, relationship: $relationship)'; } 
+          relationship == other.relationship;
+
+@override int get hashCode => Object.hash(package, manifestPath, scope, relationship);
+
+@override String toString() => 'DependabotAlertDependency(package: $package, manifestPath: $manifestPath, scope: $scope, relationship: $relationship)';
+
  }

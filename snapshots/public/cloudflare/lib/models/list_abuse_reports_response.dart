@@ -35,13 +35,16 @@ ListAbuseReportsResponse copyWith({List<AbuseReportsMessage>? Function()? errors
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListAbuseReportsResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), result, resultInfo, success); } 
-@override String toString() { return 'ListAbuseReportsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), result, resultInfo, success);
+
+@override String toString() => 'ListAbuseReportsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
+
  }

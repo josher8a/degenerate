@@ -17,7 +17,8 @@ final class RadarGetSearchGlobalError$400 extends RadarGetSearchGlobalError {con
 
 final RadarGetSearchGlobalResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetSearchGlobalError$Unknown extends RadarGetSearchGlobalError {const RadarGetSearchGlobalError$Unknown(this.statusCode, this.rawBody, );
 

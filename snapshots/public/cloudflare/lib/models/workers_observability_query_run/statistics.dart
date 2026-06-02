@@ -36,12 +36,15 @@ Statistics copyWith({double? Function()? abrLevel, double? bytesRead, double? el
   elapsed: elapsed ?? this.elapsed,
   rowsRead: rowsRead ?? this.rowsRead,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Statistics &&
           abrLevel == other.abrLevel &&
           bytesRead == other.bytesRead &&
           elapsed == other.elapsed &&
-          rowsRead == other.rowsRead; } 
-@override int get hashCode { return Object.hash(abrLevel, bytesRead, elapsed, rowsRead); } 
-@override String toString() { return 'Statistics(abrLevel: $abrLevel, bytesRead: $bytesRead, elapsed: $elapsed, rowsRead: $rowsRead)'; } 
+          rowsRead == other.rowsRead;
+
+@override int get hashCode => Object.hash(abrLevel, bytesRead, elapsed, rowsRead);
+
+@override String toString() => 'Statistics(abrLevel: $abrLevel, bytesRead: $bytesRead, elapsed: $elapsed, rowsRead: $rowsRead)';
+
  }

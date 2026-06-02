@@ -17,7 +17,8 @@ final class AigConfigDeleteDatasetError$404 extends AigConfigDeleteDatasetError 
 
 final AigConfigDeleteDatasetResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigDeleteDatasetError$Unknown extends AigConfigDeleteDatasetError {const AigConfigDeleteDatasetError$Unknown(this.statusCode, this.rawBody, );
 

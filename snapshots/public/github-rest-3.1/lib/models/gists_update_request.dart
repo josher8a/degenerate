@@ -26,10 +26,13 @@ GistsUpdateRequest copyWith({String? Function()? description, Map<String, GistsU
   description: description != null ? description() : this.description,
   files: files != null ? files() : this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistsUpdateRequest &&
           description == other.description &&
-          files == other.files; } 
-@override int get hashCode { return Object.hash(description, files); } 
-@override String toString() { return 'GistsUpdateRequest(description: $description, files: $files)'; } 
+          files == other.files;
+
+@override int get hashCode => Object.hash(description, files);
+
+@override String toString() => 'GistsUpdateRequest(description: $description, files: $files)';
+
  }

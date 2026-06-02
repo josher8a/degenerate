@@ -104,7 +104,7 @@ LogEntries copyWith({String? initialPriority, String? initiatorType, String? pri
   startedDateTime: startedDateTime ?? this.startedDateTime,
   time: time ?? this.time,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogEntries &&
           initialPriority == other.initialPriority &&
           initiatorType == other.initiatorType &&
@@ -119,7 +119,10 @@ LogEntries copyWith({String? initialPriority, String? initiatorType, String? pri
           response == other.response &&
           serverIpAddress == other.serverIpAddress &&
           startedDateTime == other.startedDateTime &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(initialPriority, initiatorType, priority, requestId, requestTime, resourceType, cache, connection, pageref, request, response, serverIpAddress, startedDateTime, time); } 
-@override String toString() { return 'LogEntries(initialPriority: $initialPriority, initiatorType: $initiatorType, priority: $priority, requestId: $requestId, requestTime: $requestTime, resourceType: $resourceType, cache: $cache, connection: $connection, pageref: $pageref, request: $request, response: $response, serverIpAddress: $serverIpAddress, startedDateTime: $startedDateTime, time: $time)'; } 
+          time == other.time;
+
+@override int get hashCode => Object.hash(initialPriority, initiatorType, priority, requestId, requestTime, resourceType, cache, connection, pageref, request, response, serverIpAddress, startedDateTime, time);
+
+@override String toString() => 'LogEntries(initialPriority: $initialPriority, initiatorType: $initiatorType, priority: $priority, requestId: $requestId, requestTime: $requestTime, resourceType: $resourceType, cache: $cache, connection: $connection, pageref: $pageref, request: $request, response: $response, serverIpAddress: $serverIpAddress, startedDateTime: $startedDateTime, time: $time)';
+
  }

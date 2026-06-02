@@ -20,10 +20,13 @@ ComponentsIssuingCard copyWith({bool? enabled, IssuingCardFeatures? Function()? 
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentsIssuingCard &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'ComponentsIssuingCard(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'ComponentsIssuingCard(enabled: $enabled, features: $features)';
+
  }

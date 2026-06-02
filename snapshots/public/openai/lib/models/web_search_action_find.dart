@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchActionFindType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchActionFindType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchActionFindType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchActionFindType($value)';
+
  }
 /// Action type "find_in_page": Searches for a pattern within a loaded page.
 /// 
@@ -58,11 +61,14 @@ WebSearchActionFind copyWith({WebSearchActionFindType? type, Uri? url, String? p
   url: url ?? this.url,
   pattern: pattern ?? this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchActionFind &&
           type == other.type &&
           url == other.url &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(type, url, pattern); } 
-@override String toString() { return 'WebSearchActionFind(type: $type, url: $url, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(type, url, pattern);
+
+@override String toString() => 'WebSearchActionFind(type: $type, url: $url, pattern: $pattern)';
+
  }

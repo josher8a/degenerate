@@ -72,14 +72,17 @@ RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 copyWith({String? $
   over3Hours: over3Hours ?? this.over3Hours,
   under10Mins: under10Mins ?? this.under10Mins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 &&
           $1HourTo3Hours == other.$1HourTo3Hours &&
           $10MinsTo20Mins == other.$10MinsTo20Mins &&
           $20MinsTo40Mins == other.$20MinsTo40Mins &&
           $40MinsTo1Hour == other.$40MinsTo1Hour &&
           over3Hours == other.over3Hours &&
-          under10Mins == other.under10Mins; } 
-@override int get hashCode { return Object.hash($1HourTo3Hours, $10MinsTo20Mins, $20MinsTo40Mins, $40MinsTo1Hour, over3Hours, under10Mins); } 
-@override String toString() { return 'RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins)'; } 
+          under10Mins == other.under10Mins;
+
+@override int get hashCode => Object.hash($1HourTo3Hours, $10MinsTo20Mins, $20MinsTo40Mins, $40MinsTo1Hour, over3Hours, under10Mins);
+
+@override String toString() => 'RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins)';
+
  }

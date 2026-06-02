@@ -27,11 +27,14 @@ RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0 copyWith({List<String>
   human: human ?? this.human,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0 &&
           listEquals(bot, other.bot) &&
           listEquals(human, other.human) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(bot), Object.hashAll(human), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0(bot: $bot, human: $human, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(bot), Object.hashAll(human), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetHttpTimeseriesGroupByBotClassResponseResultSerie0(bot: $bot, human: $human, timestamps: $timestamps)';
+
  }

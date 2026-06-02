@@ -29,11 +29,14 @@ CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers copyWith(
   reviewerType: reviewerType ?? this.reviewerType,
   securityConfigurationId: securityConfigurationId != null ? securityConfigurationId() : this.securityConfigurationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers &&
           reviewerId == other.reviewerId &&
           reviewerType == other.reviewerType &&
-          securityConfigurationId == other.securityConfigurationId; } 
-@override int get hashCode { return Object.hash(reviewerId, reviewerType, securityConfigurationId); } 
-@override String toString() { return 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType, securityConfigurationId: $securityConfigurationId)'; } 
+          securityConfigurationId == other.securityConfigurationId;
+
+@override int get hashCode => Object.hash(reviewerId, reviewerType, securityConfigurationId);
+
+@override String toString() => 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType, securityConfigurationId: $securityConfigurationId)';
+
  }

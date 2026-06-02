@@ -21,10 +21,13 @@ PatternsSeries copyWith({PatternsSeriesData? data, String? time, }) { return Pat
   data: data ?? this.data,
   time: time ?? this.time,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatternsSeries &&
           data == other.data &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(data, time); } 
-@override String toString() { return 'PatternsSeries(data: $data, time: $time)'; } 
+          time == other.time;
+
+@override int get hashCode => Object.hash(data, time);
+
+@override String toString() => 'PatternsSeries(data: $data, time: $time)';
+
  }

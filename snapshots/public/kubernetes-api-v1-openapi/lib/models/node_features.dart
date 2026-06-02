@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 NodeFeatures copyWith({bool? Function()? supplementalGroupsPolicy}) { return NodeFeatures(
   supplementalGroupsPolicy: supplementalGroupsPolicy != null ? supplementalGroupsPolicy() : this.supplementalGroupsPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeFeatures &&
-          supplementalGroupsPolicy == other.supplementalGroupsPolicy; } 
-@override int get hashCode { return supplementalGroupsPolicy.hashCode; } 
-@override String toString() { return 'NodeFeatures(supplementalGroupsPolicy: $supplementalGroupsPolicy)'; } 
+          supplementalGroupsPolicy == other.supplementalGroupsPolicy;
+
+@override int get hashCode => supplementalGroupsPolicy.hashCode;
+
+@override String toString() => 'NodeFeatures(supplementalGroupsPolicy: $supplementalGroupsPolicy)';
+
  }

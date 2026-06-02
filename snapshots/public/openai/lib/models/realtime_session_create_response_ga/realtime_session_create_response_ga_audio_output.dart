@@ -43,11 +43,14 @@ RealtimeSessionCreateResponseGaAudioOutput copyWith({RealtimeAudioFormats? Funct
   voice: voice != null ? voice() : this.voice,
   speed: speed != null ? speed() : this.speed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateResponseGaAudioOutput &&
           format == other.format &&
           voice == other.voice &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(format, voice, speed); } 
-@override String toString() { return 'RealtimeSessionCreateResponseGaAudioOutput(format: $format, voice: $voice, speed: $speed)'; } 
+          speed == other.speed;
+
+@override int get hashCode => Object.hash(format, voice, speed);
+
+@override String toString() => 'RealtimeSessionCreateResponseGaAudioOutput(format: $format, voice: $voice, speed: $speed)';
+
  }

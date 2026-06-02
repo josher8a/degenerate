@@ -24,9 +24,12 @@ return errors; }
 CheckoutSwishPaymentMethodOptions copyWith({String? Function()? reference}) { return CheckoutSwishPaymentMethodOptions(
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutSwishPaymentMethodOptions &&
-          reference == other.reference; } 
-@override int get hashCode { return reference.hashCode; } 
-@override String toString() { return 'CheckoutSwishPaymentMethodOptions(reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => reference.hashCode;
+
+@override String toString() => 'CheckoutSwishPaymentMethodOptions(reference: $reference)';
+
  }

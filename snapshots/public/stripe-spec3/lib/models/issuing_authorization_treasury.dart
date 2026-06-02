@@ -37,11 +37,14 @@ IssuingAuthorizationTreasury copyWith({List<String>? receivedCredits, List<Strin
   receivedDebits: receivedDebits ?? this.receivedDebits,
   transaction: transaction != null ? transaction() : this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationTreasury &&
           listEquals(receivedCredits, other.receivedCredits) &&
           listEquals(receivedDebits, other.receivedDebits) &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(Object.hashAll(receivedCredits), Object.hashAll(receivedDebits), transaction); } 
-@override String toString() { return 'IssuingAuthorizationTreasury(receivedCredits: $receivedCredits, receivedDebits: $receivedDebits, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hash(Object.hashAll(receivedCredits), Object.hashAll(receivedDebits), transaction);
+
+@override String toString() => 'IssuingAuthorizationTreasury(receivedCredits: $receivedCredits, receivedDebits: $receivedDebits, transaction: $transaction)';
+
  }

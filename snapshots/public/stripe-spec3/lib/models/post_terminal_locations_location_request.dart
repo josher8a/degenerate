@@ -70,7 +70,7 @@ PostTerminalLocationsLocationRequest copyWith({CustomerShippingAddress? Function
   metadata: metadata != null ? metadata() : this.metadata,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalLocationsLocationRequest &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -81,7 +81,10 @@ PostTerminalLocationsLocationRequest copyWith({CustomerShippingAddress? Function
           displayNameKanji == other.displayNameKanji &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, Object.hashAll(expand ?? const []), metadata, phone); } 
-@override String toString() { return 'PostTerminalLocationsLocationRequest(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, expand: $expand, metadata: $metadata, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, Object.hashAll(expand ?? const []), metadata, phone);
+
+@override String toString() => 'PostTerminalLocationsLocationRequest(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, expand: $expand, metadata: $metadata, phone: $phone)';
+
  }

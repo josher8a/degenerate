@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id');
 AccountUserGroupMemberCreateRequest copyWith({IamCommonComponentsSchemasIdentifier? id}) { return AccountUserGroupMemberCreateRequest(
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUserGroupMemberCreateRequest &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'AccountUserGroupMemberCreateRequest(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'AccountUserGroupMemberCreateRequest(id: $id)';
+
  }

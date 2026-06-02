@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoSessionMatchingOptionsDob && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoSessionMatchingOptionsDob($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GelatoSessionMatchingOptionsDob && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GelatoSessionMatchingOptionsDob($value)';
+
  }
 /// Strictness of the name matching policy to apply.
 @immutable final class GelatoSessionMatchingOptionsName {const GelatoSessionMatchingOptionsName._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoSessionMatchingOptionsName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoSessionMatchingOptionsName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GelatoSessionMatchingOptionsName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GelatoSessionMatchingOptionsName($value)';
+
  }
 /// 
 @immutable final class GelatoSessionMatchingOptions {const GelatoSessionMatchingOptions({this.dob, this.name, });
@@ -73,10 +79,13 @@ GelatoSessionMatchingOptions copyWith({GelatoSessionMatchingOptionsDob? Function
   dob: dob != null ? dob() : this.dob,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoSessionMatchingOptions &&
           dob == other.dob &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(dob, name); } 
-@override String toString() { return 'GelatoSessionMatchingOptions(dob: $dob, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(dob, name);
+
+@override String toString() => 'GelatoSessionMatchingOptions(dob: $dob, name: $name)';
+
  }

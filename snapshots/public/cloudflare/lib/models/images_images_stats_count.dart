@@ -35,10 +35,13 @@ ImagesImagesStatsCount copyWith({ImagesImagesStatsAllowed? Function()? allowed, 
   allowed: allowed != null ? allowed() : this.allowed,
   current: current != null ? current() : this.current,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImagesStatsCount &&
           allowed == other.allowed &&
-          current == other.current; } 
-@override int get hashCode { return Object.hash(allowed, current); } 
-@override String toString() { return 'ImagesImagesStatsCount(allowed: $allowed, current: $current)'; } 
+          current == other.current;
+
+@override int get hashCode => Object.hash(allowed, current);
+
+@override String toString() => 'ImagesImagesStatsCount(allowed: $allowed, current: $current)';
+
  }

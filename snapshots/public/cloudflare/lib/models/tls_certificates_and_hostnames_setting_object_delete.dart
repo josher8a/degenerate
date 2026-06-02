@@ -39,13 +39,16 @@ TlsCertificatesAndHostnamesSettingObjectDelete copyWith({TlsCertificatesAndHostn
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSettingObjectDelete &&
           createdAt == other.createdAt &&
           hostname == other.hostname &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(createdAt, hostname, status, updatedAt, value); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSettingObjectDelete(createdAt: $createdAt, hostname: $hostname, status: $status, updatedAt: $updatedAt, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(createdAt, hostname, status, updatedAt, value);
+
+@override String toString() => 'TlsCertificatesAndHostnamesSettingObjectDelete(createdAt: $createdAt, hostname: $hostname, status: $status, updatedAt: $updatedAt, value: $value)';
+
  }

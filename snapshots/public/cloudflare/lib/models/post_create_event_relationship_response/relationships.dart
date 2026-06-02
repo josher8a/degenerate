@@ -44,13 +44,16 @@ Relationships copyWith({String? childDatasetId, String? childId, String? parentD
   parentId: parentId ?? this.parentId,
   relationshipType: relationshipType ?? this.relationshipType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Relationships &&
           childDatasetId == other.childDatasetId &&
           childId == other.childId &&
           parentDatasetId == other.parentDatasetId &&
           parentId == other.parentId &&
-          relationshipType == other.relationshipType; } 
-@override int get hashCode { return Object.hash(childDatasetId, childId, parentDatasetId, parentId, relationshipType); } 
-@override String toString() { return 'Relationships(childDatasetId: $childDatasetId, childId: $childId, parentDatasetId: $parentDatasetId, parentId: $parentId, relationshipType: $relationshipType)'; } 
+          relationshipType == other.relationshipType;
+
+@override int get hashCode => Object.hash(childDatasetId, childId, parentDatasetId, parentId, relationshipType);
+
+@override String toString() => 'Relationships(childDatasetId: $childDatasetId, childId: $childId, parentDatasetId: $parentDatasetId, parentId: $parentId, relationshipType: $relationshipType)';
+
  }

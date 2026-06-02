@@ -24,10 +24,13 @@ PaymentPagesCheckoutSessionTaxIdCollection copyWith({bool? enabled, Required? $r
   enabled: enabled ?? this.enabled,
   $required: $required ?? this.$required,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionTaxIdCollection &&
           enabled == other.enabled &&
-          $required == other.$required; } 
-@override int get hashCode { return Object.hash(enabled, $required); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionTaxIdCollection(enabled: $enabled, \$required: ${$required})'; } 
+          $required == other.$required;
+
+@override int get hashCode => Object.hash(enabled, $required);
+
+@override String toString() => 'PaymentPagesCheckoutSessionTaxIdCollection(enabled: $enabled, \$required: ${$required})';
+
  }

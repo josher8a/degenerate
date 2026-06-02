@@ -31,11 +31,14 @@ ChatSessionChatkitConfiguration copyWith({ChatSessionAutomaticThreadTitling? aut
   fileUpload: fileUpload ?? this.fileUpload,
   history: history ?? this.history,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionChatkitConfiguration &&
           automaticThreadTitling == other.automaticThreadTitling &&
           fileUpload == other.fileUpload &&
-          history == other.history; } 
-@override int get hashCode { return Object.hash(automaticThreadTitling, fileUpload, history); } 
-@override String toString() { return 'ChatSessionChatkitConfiguration(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)'; } 
+          history == other.history;
+
+@override int get hashCode => Object.hash(automaticThreadTitling, fileUpload, history);
+
+@override String toString() => 'ChatSessionChatkitConfiguration(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)';
+
  }

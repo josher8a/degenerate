@@ -51,7 +51,7 @@ MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function(
   name: name != null ? name() : this.name,
   secondaryConnectorId: secondaryConnectorId != null ? secondaryConnectorId() : this.secondaryConnectorId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSite &&
           connectorId == other.connectorId &&
           description == other.description &&
@@ -59,7 +59,10 @@ MagicSite copyWith({MagicConnectorId? Function()? connectorId, String? Function(
           id == other.id &&
           location == other.location &&
           name == other.name &&
-          secondaryConnectorId == other.secondaryConnectorId; } 
-@override int get hashCode { return Object.hash(connectorId, description, haMode, id, location, name, secondaryConnectorId); } 
-@override String toString() { return 'MagicSite(connectorId: $connectorId, description: $description, haMode: $haMode, id: $id, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)'; } 
+          secondaryConnectorId == other.secondaryConnectorId;
+
+@override int get hashCode => Object.hash(connectorId, description, haMode, id, location, name, secondaryConnectorId);
+
+@override String toString() => 'MagicSite(connectorId: $connectorId, description: $description, haMode: $haMode, id: $id, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)';
+
  }

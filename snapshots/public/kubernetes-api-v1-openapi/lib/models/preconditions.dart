@@ -23,10 +23,13 @@ Preconditions copyWith({String? Function()? resourceVersion, String? Function()?
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Preconditions &&
           resourceVersion == other.resourceVersion &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(resourceVersion, uid); } 
-@override String toString() { return 'Preconditions(resourceVersion: $resourceVersion, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(resourceVersion, uid);
+
+@override String toString() => 'Preconditions(resourceVersion: $resourceVersion, uid: $uid)';
+
  }

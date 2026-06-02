@@ -47,13 +47,16 @@ MagicLanAclConfiguration copyWith({String? lanId, String? Function()? lanName, L
   ports: ports != null ? ports() : this.ports,
   subnets: subnets != null ? subnets() : this.subnets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLanAclConfiguration &&
           lanId == other.lanId &&
           lanName == other.lanName &&
           listEquals(portRanges, other.portRanges) &&
           listEquals(ports, other.ports) &&
-          listEquals(subnets, other.subnets); } 
-@override int get hashCode { return Object.hash(lanId, lanName, Object.hashAll(portRanges ?? const []), Object.hashAll(ports ?? const []), Object.hashAll(subnets ?? const [])); } 
-@override String toString() { return 'MagicLanAclConfiguration(lanId: $lanId, lanName: $lanName, portRanges: $portRanges, ports: $ports, subnets: $subnets)'; } 
+          listEquals(subnets, other.subnets);
+
+@override int get hashCode => Object.hash(lanId, lanName, Object.hashAll(portRanges ?? const []), Object.hashAll(ports ?? const []), Object.hashAll(subnets ?? const []));
+
+@override String toString() => 'MagicLanAclConfiguration(lanId: $lanId, lanName: $lanName, portRanges: $portRanges, ports: $ports, subnets: $subnets)';
+
  }

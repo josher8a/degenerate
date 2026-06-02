@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageDeltaObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageDeltaObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageDeltaObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageDeltaObjectObject($value)';
+
  }
 /// Represents a message delta i.e. any changed fields on a message during streaming.
 /// 
@@ -54,11 +57,14 @@ MessageDeltaObject copyWith({String? id, MessageDeltaObjectObject? object, Messa
   object: object ?? this.object,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaObject &&
           id == other.id &&
           object == other.object &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(id, object, delta); } 
-@override String toString() { return 'MessageDeltaObject(id: $id, object: $object, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(id, object, delta);
+
+@override String toString() => 'MessageDeltaObject(id: $id, object: $object, delta: $delta)';
+
  }

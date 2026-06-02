@@ -51,12 +51,15 @@ ResourceSharingShareRecipientResourceObject copyWith({ResourceSharingRecipientRe
   resourceVersion: resourceVersion ?? this.resourceVersion,
   terminal: terminal ?? this.terminal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareRecipientResourceObject &&
           error == other.error &&
           resourceId == other.resourceId &&
           resourceVersion == other.resourceVersion &&
-          terminal == other.terminal; } 
-@override int get hashCode { return Object.hash(error, resourceId, resourceVersion, terminal); } 
-@override String toString() { return 'ResourceSharingShareRecipientResourceObject(error: $error, resourceId: $resourceId, resourceVersion: $resourceVersion, terminal: $terminal)'; } 
+          terminal == other.terminal;
+
+@override int get hashCode => Object.hash(error, resourceId, resourceVersion, terminal);
+
+@override String toString() => 'ResourceSharingShareRecipientResourceObject(error: $error, resourceId: $resourceId, resourceVersion: $resourceVersion, terminal: $terminal)';
+
  }

@@ -72,22 +72,18 @@ final class Proto {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is Proto &&
-            constructor == other.constructor &&
-            $toString == other.$toString &&
-            valueOf == other.valueOf &&
-            prototype == other.prototype;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Proto &&
+          constructor == other.constructor &&
+          $toString == other.$toString &&
+          valueOf == other.valueOf &&
+          prototype == other.prototype;
 
   @override
-  int get hashCode {
-    return Object.hash(constructor, $toString, valueOf, prototype);
-  }
+  int get hashCode => Object.hash(constructor, $toString, valueOf, prototype);
 
   @override
-  String toString() {
-    return 'Proto(constructor: $constructor, \$toString: ${$toString}, valueOf: $valueOf, prototype: $prototype)';
-  }
+  String toString() =>
+      'Proto(constructor: $constructor, \$toString: ${$toString}, valueOf: $valueOf, prototype: $prototype)';
 }

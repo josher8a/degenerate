@@ -74,7 +74,7 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approv
   appCount: appCount != null ? appCount() : this.appCount,
   reusable: reusable != null ? reusable() : this.reusable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessReusablePolicyResp &&
           listEquals(approvalGroups, other.approvalGroups) &&
           approvalRequired == other.approvalRequired &&
@@ -85,7 +85,10 @@ AccessReusablePolicyResp copyWith({List<AccessApprovalGroup>? Function()? approv
           purposeJustificationRequired == other.purposeJustificationRequired &&
           sessionDuration == other.sessionDuration &&
           appCount == other.appCount &&
-          reusable == other.reusable; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, appCount, reusable); } 
-@override String toString() { return 'AccessReusablePolicyResp(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, appCount: $appCount, reusable: $reusable)'; } 
+          reusable == other.reusable;
+
+@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, appCount, reusable);
+
+@override String toString() => 'AccessReusablePolicyResp(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, appCount: $appCount, reusable: $reusable)';
+
  }

@@ -50,14 +50,17 @@ WorkersObservabilityTelemetryEvent copyWith({Map<String, dynamic>? Function()? $
   source: source ?? this.source,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityTelemetryEvent &&
           $containers == other.$containers &&
           $metadata == other.$metadata &&
           $workers == other.$workers &&
           dataset == other.dataset &&
           source == other.source &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash($containers, $metadata, $workers, dataset, source, timestamp); } 
-@override String toString() { return 'WorkersObservabilityTelemetryEvent(\$containers: ${$containers}, \$metadata: ${$metadata}, \$workers: ${$workers}, dataset: $dataset, source: $source, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash($containers, $metadata, $workers, dataset, source, timestamp);
+
+@override String toString() => 'WorkersObservabilityTelemetryEvent(\$containers: ${$containers}, \$metadata: ${$metadata}, \$workers: ${$workers}, dataset: $dataset, source: $source, timestamp: $timestamp)';
+
  }

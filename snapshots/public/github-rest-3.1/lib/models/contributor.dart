@@ -122,7 +122,7 @@ Contributor copyWith({String? Function()? login, int? Function()? id, String? Fu
   name: name != null ? name() : this.name,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Contributor &&
           login == other.login &&
           id == other.id &&
@@ -145,7 +145,10 @@ Contributor copyWith({String? Function()? login, int? Function()? id, String? Fu
           contributions == other.contributions &&
           email == other.email &&
           name == other.name &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, contributions, email, name, userViewType]); } 
-@override String toString() { return 'Contributor(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, contributions: $contributions, email: $email, name: $name, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, contributions, email, name, userViewType]);
+
+@override String toString() => 'Contributor(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, contributions: $contributions, email: $email, name: $name, userViewType: $userViewType)';
+
  }

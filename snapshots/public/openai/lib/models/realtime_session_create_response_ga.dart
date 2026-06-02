@@ -113,7 +113,7 @@ RealtimeSessionCreateResponseGa copyWith({ClientSecret? clientSecret, RealtimeSe
   truncation: truncation != null ? truncation() : this.truncation,
   prompt: prompt != null ? prompt() : this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateResponseGa &&
           clientSecret == other.clientSecret &&
           type == other.type &&
@@ -127,7 +127,10 @@ RealtimeSessionCreateResponseGa copyWith({ClientSecret? clientSecret, RealtimeSe
           toolChoice == other.toolChoice &&
           maxOutputTokens == other.maxOutputTokens &&
           truncation == other.truncation &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(clientSecret, type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt); } 
-@override String toString() { return 'RealtimeSessionCreateResponseGa(clientSecret: $clientSecret, type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(clientSecret, type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt);
+
+@override String toString() => 'RealtimeSessionCreateResponseGa(clientSecret: $clientSecret, type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)';
+
  }

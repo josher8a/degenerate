@@ -51,12 +51,15 @@ AddressingBgpOnDemand copyWith({AddressingSchemasAdvertised? Function()? adverti
   onDemandEnabled: onDemandEnabled != null ? onDemandEnabled() : this.onDemandEnabled,
   onDemandLocked: onDemandLocked != null ? onDemandLocked() : this.onDemandLocked,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingBgpOnDemand &&
           advertised == other.advertised &&
           advertisedModifiedAt == other.advertisedModifiedAt &&
           onDemandEnabled == other.onDemandEnabled &&
-          onDemandLocked == other.onDemandLocked; } 
-@override int get hashCode { return Object.hash(advertised, advertisedModifiedAt, onDemandEnabled, onDemandLocked); } 
-@override String toString() { return 'AddressingBgpOnDemand(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked)'; } 
+          onDemandLocked == other.onDemandLocked;
+
+@override int get hashCode => Object.hash(advertised, advertisedModifiedAt, onDemandEnabled, onDemandLocked);
+
+@override String toString() => 'AddressingBgpOnDemand(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked)';
+
  }

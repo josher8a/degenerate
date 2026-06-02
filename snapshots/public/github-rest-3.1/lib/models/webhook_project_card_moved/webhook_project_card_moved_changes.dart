@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('colum
 WebhookProjectCardMovedChanges copyWith({ColumnId? columnId}) { return WebhookProjectCardMovedChanges(
   columnId: columnId ?? this.columnId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectCardMovedChanges &&
-          columnId == other.columnId; } 
-@override int get hashCode { return columnId.hashCode; } 
-@override String toString() { return 'WebhookProjectCardMovedChanges(columnId: $columnId)'; } 
+          columnId == other.columnId;
+
+@override int get hashCode => columnId.hashCode;
+
+@override String toString() => 'WebhookProjectCardMovedChanges(columnId: $columnId)';
+
  }

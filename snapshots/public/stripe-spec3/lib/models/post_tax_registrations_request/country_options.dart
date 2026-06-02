@@ -516,7 +516,7 @@ CountryOptions copyWith({Ae? Function()? ae, Al? Function()? al, Am? Function()?
   zm: zm != null ? zm() : this.zm,
   zw: zw != null ? zw() : this.zw,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountryOptions &&
           ae == other.ae &&
           al == other.al &&
@@ -618,7 +618,10 @@ CountryOptions copyWith({Ae? Function()? ae, Al? Function()? al, Am? Function()?
           vn == other.vn &&
           za == other.za &&
           zm == other.zm &&
-          zw == other.zw; } 
-@override int get hashCode { return Object.hashAll([ae, al, am, ao, at, au, aw, az, ba, bb, bd, be, bf, bg, bh, bj, bs, by, ca, cd, ch, cl, cm, co, cr, cv, cy, cz, de, dk, ec, ee, eg, es, et, fi, fr, gb, ge, gn, gr, hr, hu, id, ie, $in, $is, it, jp, ke, kg, kh, kr, kz, la, lk, lt, lu, lv, ma, md, me, mk, mr, mt, mx, my, ng, nl, no, np, nz, om, pe, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, sn, sr, th, tj, tr, tw, tz, ua, ug, us, uy, uz, vn, za, zm, zw]); } 
-@override String toString() { return 'CountryOptions(ae: $ae, al: $al, am: $am, ao: $ao, at: $at, au: $au, aw: $aw, az: $az, ba: $ba, bb: $bb, bd: $bd, be: $be, bf: $bf, bg: $bg, bh: $bh, bj: $bj, bs: $bs, by: $by, ca: $ca, cd: $cd, ch: $ch, cl: $cl, cm: $cm, co: $co, cr: $cr, cv: $cv, cy: $cy, cz: $cz, de: $de, dk: $dk, ec: $ec, ee: $ee, eg: $eg, es: $es, et: $et, fi: $fi, fr: $fr, gb: $gb, ge: $ge, gn: $gn, gr: $gr, hr: $hr, hu: $hu, id: $id, ie: $ie, \$in: ${$in}, \$is: ${$is}, it: $it, jp: $jp, ke: $ke, kg: $kg, kh: $kh, kr: $kr, kz: $kz, la: $la, lk: $lk, lt: $lt, lu: $lu, lv: $lv, ma: $ma, md: $md, me: $me, mk: $mk, mr: $mr, mt: $mt, mx: $mx, my: $my, ng: $ng, nl: $nl, no: $no, np: $np, nz: $nz, om: $om, pe: $pe, ph: $ph, pl: $pl, pt: $pt, ro: $ro, rs: $rs, ru: $ru, sa: $sa, se: $se, sg: $sg, si: $si, sk: $sk, sn: $sn, sr: $sr, th: $th, tj: $tj, tr: $tr, tw: $tw, tz: $tz, ua: $ua, ug: $ug, us: $us, uy: $uy, uz: $uz, vn: $vn, za: $za, zm: $zm, zw: $zw)'; } 
+          zw == other.zw;
+
+@override int get hashCode => Object.hashAll([ae, al, am, ao, at, au, aw, az, ba, bb, bd, be, bf, bg, bh, bj, bs, by, ca, cd, ch, cl, cm, co, cr, cv, cy, cz, de, dk, ec, ee, eg, es, et, fi, fr, gb, ge, gn, gr, hr, hu, id, ie, $in, $is, it, jp, ke, kg, kh, kr, kz, la, lk, lt, lu, lv, ma, md, me, mk, mr, mt, mx, my, ng, nl, no, np, nz, om, pe, ph, pl, pt, ro, rs, ru, sa, se, sg, si, sk, sn, sr, th, tj, tr, tw, tz, ua, ug, us, uy, uz, vn, za, zm, zw]);
+
+@override String toString() => 'CountryOptions(ae: $ae, al: $al, am: $am, ao: $ao, at: $at, au: $au, aw: $aw, az: $az, ba: $ba, bb: $bb, bd: $bd, be: $be, bf: $bf, bg: $bg, bh: $bh, bj: $bj, bs: $bs, by: $by, ca: $ca, cd: $cd, ch: $ch, cl: $cl, cm: $cm, co: $co, cr: $cr, cv: $cv, cy: $cy, cz: $cz, de: $de, dk: $dk, ec: $ec, ee: $ee, eg: $eg, es: $es, et: $et, fi: $fi, fr: $fr, gb: $gb, ge: $ge, gn: $gn, gr: $gr, hr: $hr, hu: $hu, id: $id, ie: $ie, \$in: ${$in}, \$is: ${$is}, it: $it, jp: $jp, ke: $ke, kg: $kg, kh: $kh, kr: $kr, kz: $kz, la: $la, lk: $lk, lt: $lt, lu: $lu, lv: $lv, ma: $ma, md: $md, me: $me, mk: $mk, mr: $mr, mt: $mt, mx: $mx, my: $my, ng: $ng, nl: $nl, no: $no, np: $np, nz: $nz, om: $om, pe: $pe, ph: $ph, pl: $pl, pt: $pt, ro: $ro, rs: $rs, ru: $ru, sa: $sa, se: $se, sg: $sg, si: $si, sk: $sk, sn: $sn, sr: $sr, th: $th, tj: $tj, tr: $tr, tw: $tw, tz: $tz, ua: $ua, ug: $ug, us: $us, uy: $uy, uz: $uz, vn: $vn, za: $za, zm: $zm, zw: $zw)';
+
  }

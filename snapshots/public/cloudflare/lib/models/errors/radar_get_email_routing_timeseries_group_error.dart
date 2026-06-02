@@ -17,7 +17,8 @@ final class RadarGetEmailRoutingTimeseriesGroupError$400 extends RadarGetEmailRo
 
 final RadarGetEmailRoutingTimeseriesGroupResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetEmailRoutingTimeseriesGroupError$Unknown extends RadarGetEmailRoutingTimeseriesGroupError {const RadarGetEmailRoutingTimeseriesGroupError$Unknown(this.statusCode, this.rawBody, );
 

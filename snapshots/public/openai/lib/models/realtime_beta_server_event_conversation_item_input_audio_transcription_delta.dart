@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType($value)';
+
  }
 /// Returned when the text value of an input audio transcription content part is updated.
 /// 
@@ -72,14 +75,17 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta copyWith({St
   delta: delta != null ? delta() : this.delta,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
           delta == other.delta &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const [])); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)'; } 
+          listEquals(logprobs, other.logprobs);
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const []));
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)';
+
  }

@@ -24,10 +24,13 @@ RunStepDeltaStepDetailsToolCallsObject copyWith({RunStepDeltaStepDetailsToolCall
   type: type ?? this.type,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsObject &&
           type == other.type &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(toolCalls ?? const [])); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)'; } 
+          listEquals(toolCalls, other.toolCalls);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(toolCalls ?? const []));
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsObject(type: $type, toolCalls: $toolCalls)';
+
  }

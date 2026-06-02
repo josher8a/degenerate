@@ -38,13 +38,16 @@ D1DatabaseResponse copyWith({D1CreatedAt? Function()? createdAt, D1JurisdictionN
   uuid: uuid != null ? uuid() : this.uuid,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1DatabaseResponse &&
           createdAt == other.createdAt &&
           jurisdiction == other.jurisdiction &&
           name == other.name &&
           uuid == other.uuid &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, jurisdiction, name, uuid, version); } 
-@override String toString() { return 'D1DatabaseResponse(createdAt: $createdAt, jurisdiction: $jurisdiction, name: $name, uuid: $uuid, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(createdAt, jurisdiction, name, uuid, version);
+
+@override String toString() => 'D1DatabaseResponse(createdAt: $createdAt, jurisdiction: $jurisdiction, name: $name, uuid: $uuid, version: $version)';
+
  }

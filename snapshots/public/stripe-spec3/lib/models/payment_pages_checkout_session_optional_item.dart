@@ -31,11 +31,14 @@ PaymentPagesCheckoutSessionOptionalItem copyWith({PaymentPagesCheckoutSessionOpt
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionOptionalItem &&
           adjustableQuantity == other.adjustableQuantity &&
           price == other.price &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, price, quantity); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionOptionalItem(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)'; } 
+          quantity == other.quantity;
+
+@override int get hashCode => Object.hash(adjustableQuantity, price, quantity);
+
+@override String toString() => 'PaymentPagesCheckoutSessionOptionalItem(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)';
+
  }

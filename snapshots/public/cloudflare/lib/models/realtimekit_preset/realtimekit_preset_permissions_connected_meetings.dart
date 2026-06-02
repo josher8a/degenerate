@@ -27,11 +27,14 @@ RealtimekitPresetPermissionsConnectedMeetings copyWith({bool? canAlterConnectedM
   canSwitchConnectedMeetings: canSwitchConnectedMeetings ?? this.canSwitchConnectedMeetings,
   canSwitchToParentMeeting: canSwitchToParentMeeting ?? this.canSwitchToParentMeeting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsConnectedMeetings &&
           canAlterConnectedMeetings == other.canAlterConnectedMeetings &&
           canSwitchConnectedMeetings == other.canSwitchConnectedMeetings &&
-          canSwitchToParentMeeting == other.canSwitchToParentMeeting; } 
-@override int get hashCode { return Object.hash(canAlterConnectedMeetings, canSwitchConnectedMeetings, canSwitchToParentMeeting); } 
-@override String toString() { return 'RealtimekitPresetPermissionsConnectedMeetings(canAlterConnectedMeetings: $canAlterConnectedMeetings, canSwitchConnectedMeetings: $canSwitchConnectedMeetings, canSwitchToParentMeeting: $canSwitchToParentMeeting)'; } 
+          canSwitchToParentMeeting == other.canSwitchToParentMeeting;
+
+@override int get hashCode => Object.hash(canAlterConnectedMeetings, canSwitchConnectedMeetings, canSwitchToParentMeeting);
+
+@override String toString() => 'RealtimekitPresetPermissionsConnectedMeetings(canAlterConnectedMeetings: $canAlterConnectedMeetings, canSwitchConnectedMeetings: $canSwitchConnectedMeetings, canSwitchToParentMeeting: $canSwitchToParentMeeting)';
+
  }

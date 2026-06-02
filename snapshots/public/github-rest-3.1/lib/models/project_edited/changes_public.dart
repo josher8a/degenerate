@@ -20,10 +20,13 @@ ChangesPublic copyWith({bool? Function()? from, bool? Function()? to, }) { retur
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesPublic &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'ChangesPublic(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'ChangesPublic(from: $from, to: $to)';
+
  }

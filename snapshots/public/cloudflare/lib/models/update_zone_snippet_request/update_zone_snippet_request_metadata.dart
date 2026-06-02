@@ -24,9 +24,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('main_
 UpdateZoneSnippetRequestMetadata copyWith({SnippetsSnippetMainModule? mainModule}) { return UpdateZoneSnippetRequestMetadata(
   mainModule: mainModule ?? this.mainModule,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneSnippetRequestMetadata &&
-          mainModule == other.mainModule; } 
-@override int get hashCode { return mainModule.hashCode; } 
-@override String toString() { return 'UpdateZoneSnippetRequestMetadata(mainModule: $mainModule)'; } 
+          mainModule == other.mainModule;
+
+@override int get hashCode => mainModule.hashCode;
+
+@override String toString() => 'UpdateZoneSnippetRequestMetadata(mainModule: $mainModule)';
+
  }

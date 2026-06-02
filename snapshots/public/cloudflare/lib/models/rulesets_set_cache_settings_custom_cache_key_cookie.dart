@@ -36,10 +36,13 @@ RulesetsSetCacheSettingsCustomCacheKeyCookie copyWith({List<String>? Function()?
   checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyCookie &&
           listEquals(checkPresence, other.checkPresence) &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkPresence ?? const []), Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyCookie(checkPresence: $checkPresence, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkPresence ?? const []), Object.hashAll(include ?? const []));
+
+@override String toString() => 'RulesetsSetCacheSettingsCustomCacheKeyCookie(checkPresence: $checkPresence, include: $include)';
+
  }

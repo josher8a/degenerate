@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('schem
 ApplicationJson copyWith({Schema? schema}) { return ApplicationJson(
   schema: schema ?? this.schema,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplicationJson &&
-          schema == other.schema; } 
-@override int get hashCode { return schema.hashCode; } 
-@override String toString() { return 'ApplicationJson(schema: $schema)'; } 
+          schema == other.schema;
+
+@override int get hashCode => schema.hashCode;
+
+@override String toString() => 'ApplicationJson(schema: $schema)';
+
  }

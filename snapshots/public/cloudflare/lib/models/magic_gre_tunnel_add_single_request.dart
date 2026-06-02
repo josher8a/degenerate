@@ -66,7 +66,7 @@ MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()
   name: name ?? this.name,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicGreTunnelAddSingleRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
           cloudflareGreEndpoint == other.cloudflareGreEndpoint &&
@@ -77,7 +77,10 @@ MagicGreTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function()
           interfaceAddress6 == other.interfaceAddress6 &&
           mtu == other.mtu &&
           name == other.name &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, cloudflareGreEndpoint, customerGreEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, mtu, name, ttl); } 
-@override String toString() { return 'MagicGreTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, cloudflareGreEndpoint: $cloudflareGreEndpoint, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu, name: $name, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(automaticReturnRouting, cloudflareGreEndpoint, customerGreEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, mtu, name, ttl);
+
+@override String toString() => 'MagicGreTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, cloudflareGreEndpoint: $cloudflareGreEndpoint, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu, name: $name, ttl: $ttl)';
+
  }

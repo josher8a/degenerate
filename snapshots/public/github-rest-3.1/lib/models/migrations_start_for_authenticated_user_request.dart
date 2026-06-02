@@ -63,7 +63,7 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
   exclude: exclude != null ? exclude() : this.exclude,
   repositories: repositories ?? this.repositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsStartForAuthenticatedUserRequest &&
           lockRepositories == other.lockRepositories &&
           excludeMetadata == other.excludeMetadata &&
@@ -73,7 +73,10 @@ MigrationsStartForAuthenticatedUserRequest copyWith({bool? Function()? lockRepos
           excludeOwnerProjects == other.excludeOwnerProjects &&
           orgMetadataOnly == other.orgMetadataOnly &&
           listEquals(exclude, other.exclude) &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []), Object.hashAll(repositories)); } 
-@override String toString() { return 'MigrationsStartForAuthenticatedUserRequest(lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude, repositories: $repositories)'; } 
+          listEquals(repositories, other.repositories);
+
+@override int get hashCode => Object.hash(lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []), Object.hashAll(repositories));
+
+@override String toString() => 'MigrationsStartForAuthenticatedUserRequest(lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude, repositories: $repositories)';
+
  }

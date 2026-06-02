@@ -37,12 +37,15 @@ ScanStatus copyWith({String? Function()? lastProcessed, bool? Function()? scanCo
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   submissionId: submissionId != null ? submissionId() : this.submissionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanStatus &&
           lastProcessed == other.lastProcessed &&
           scanComplete == other.scanComplete &&
           statusCode == other.statusCode &&
-          submissionId == other.submissionId; } 
-@override int get hashCode { return Object.hash(lastProcessed, scanComplete, statusCode, submissionId); } 
-@override String toString() { return 'ScanStatus(lastProcessed: $lastProcessed, scanComplete: $scanComplete, statusCode: $statusCode, submissionId: $submissionId)'; } 
+          submissionId == other.submissionId;
+
+@override int get hashCode => Object.hash(lastProcessed, scanComplete, statusCode, submissionId);
+
+@override String toString() => 'ScanStatus(lastProcessed: $lastProcessed, scanComplete: $scanComplete, statusCode: $statusCode, submissionId: $submissionId)';
+
  }

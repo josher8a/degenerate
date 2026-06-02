@@ -17,7 +17,8 @@ final class PostGroupCreateError$400 extends PostGroupCreateError {const PostGro
 
 final PostGroupCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostGroupCreateError$Unknown extends PostGroupCreateError {const PostGroupCreateError$Unknown(this.statusCode, this.rawBody, );
 

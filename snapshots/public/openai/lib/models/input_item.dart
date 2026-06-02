@@ -31,16 +31,20 @@ final EasyInputMessage easyInputMessage;
 
 @override String get type => 'message';
 
-@override Map<String, dynamic> toJson() { return {...easyInputMessage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...easyInputMessage.toJson(), 'type': type};
+
 InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
   role: role,
   content: content,
   phase: phase,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemMessage && easyInputMessage == other.easyInputMessage; } 
-@override int get hashCode { return easyInputMessage.hashCode; } 
-@override String toString() { return 'InputItem.message($easyInputMessage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputItemMessage && easyInputMessage == other.easyInputMessage;
+
+@override int get hashCode => easyInputMessage.hashCode;
+
+@override String toString() => 'InputItem.message($easyInputMessage)';
+
  }
 @immutable final class InputItemItem extends InputItem {const InputItemItem(this.item);
 
@@ -50,12 +54,16 @@ final Item item;
 
 @override String get type => 'Item';
 
-@override Map<String, dynamic> toJson() { return {...item.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...item.toJson(), 'type': type};
+
 InputItemItem copyWith({Item? item}) { return InputItemItem(item ?? this.item); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemItem && item == other.item; } 
-@override int get hashCode { return item.hashCode; } 
-@override String toString() { return 'InputItem.item($item)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputItemItem && item == other.item;
+
+@override int get hashCode => item.hashCode;
+
+@override String toString() => 'InputItem.item($item)';
+
  }
 @immutable final class InputItemItemReferenceParam extends InputItem {const InputItemItemReferenceParam(this.itemReferenceParam);
 
@@ -65,14 +73,18 @@ final ItemReferenceParam itemReferenceParam;
 
 @override String get type => 'ItemReferenceParam';
 
-@override Map<String, dynamic> toJson() { return {...itemReferenceParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...itemReferenceParam.toJson(), 'type': type};
+
 InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferenceParam(itemReferenceParam.copyWith(
   id: id,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam; } 
-@override int get hashCode { return itemReferenceParam.hashCode; } 
-@override String toString() { return 'InputItem.itemReferenceParam($itemReferenceParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputItemItemReferenceParam && itemReferenceParam == other.itemReferenceParam;
+
+@override int get hashCode => itemReferenceParam.hashCode;
+
+@override String toString() => 'InputItem.itemReferenceParam($itemReferenceParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -82,9 +94,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputItem$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'InputItem.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputItem$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'InputItem.unknown($json)';
+
  }

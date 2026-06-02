@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchActionOpenPageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchActionOpenPageType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchActionOpenPageType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchActionOpenPageType($value)';
+
  }
 /// Action type "open_page" - Opens a specific URL from search results.
 /// 
@@ -49,10 +52,13 @@ WebSearchActionOpenPage copyWith({WebSearchActionOpenPageType? type, Uri? Functi
   type: type ?? this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchActionOpenPage &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(type, url); } 
-@override String toString() { return 'WebSearchActionOpenPage(type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(type, url);
+
+@override String toString() => 'WebSearchActionOpenPage(type: $type, url: $url)';
+
  }

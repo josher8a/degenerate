@@ -58,7 +58,7 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
   meta: meta != null ? meta() : this.meta,
   schemas: schemas != null ? schemas() : this.schemas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessUsers &&
           active == other.active &&
           displayName == other.displayName &&
@@ -66,7 +66,10 @@ AccessUsers copyWith({bool? Function()? active, String? Function()? displayName,
           externalId == other.externalId &&
           id == other.id &&
           meta == other.meta &&
-          listEquals(schemas, other.schemas); } 
-@override int get hashCode { return Object.hash(active, displayName, Object.hashAll(emails ?? const []), externalId, id, meta, Object.hashAll(schemas ?? const [])); } 
-@override String toString() { return 'AccessUsers(active: $active, displayName: $displayName, emails: $emails, externalId: $externalId, id: $id, meta: $meta, schemas: $schemas)'; } 
+          listEquals(schemas, other.schemas);
+
+@override int get hashCode => Object.hash(active, displayName, Object.hashAll(emails ?? const []), externalId, id, meta, Object.hashAll(schemas ?? const []));
+
+@override String toString() => 'AccessUsers(active: $active, displayName: $displayName, emails: $emails, externalId: $externalId, id: $id, meta: $meta, schemas: $schemas)';
+
  }

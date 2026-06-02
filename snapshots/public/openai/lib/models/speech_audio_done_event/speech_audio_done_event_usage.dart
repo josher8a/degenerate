@@ -32,11 +32,14 @@ SpeechAudioDoneEventUsage copyWith({int? inputTokens, int? outputTokens, int? to
   outputTokens: outputTokens ?? this.outputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpeechAudioDoneEventUsage &&
           inputTokens == other.inputTokens &&
           outputTokens == other.outputTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(inputTokens, outputTokens, totalTokens); } 
-@override String toString() { return 'SpeechAudioDoneEventUsage(inputTokens: $inputTokens, outputTokens: $outputTokens, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(inputTokens, outputTokens, totalTokens);
+
+@override String toString() => 'SpeechAudioDoneEventUsage(inputTokens: $inputTokens, outputTokens: $outputTokens, totalTokens: $totalTokens)';
+
  }

@@ -51,14 +51,17 @@ Condition copyWith({Time? lastTransitionTime, String? message, int? Function()? 
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Condition &&
           lastTransitionTime == other.lastTransitionTime &&
           message == other.message &&
           observedGeneration == other.observedGeneration &&
           reason == other.reason &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(lastTransitionTime, message, observedGeneration, reason, status, type); } 
-@override String toString() { return 'Condition(lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(lastTransitionTime, message, observedGeneration, reason, status, type);
+
+@override String toString() => 'Condition(lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)';
+
  }

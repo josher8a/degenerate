@@ -64,7 +64,7 @@ WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTim
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksProjectColumn &&
           afterId == other.afterId &&
           cardsUrl == other.cardsUrl &&
@@ -74,7 +74,10 @@ WebhooksProjectColumn copyWith({int? Function()? afterId, Uri? cardsUrl, DateTim
           nodeId == other.nodeId &&
           projectUrl == other.projectUrl &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(afterId, cardsUrl, createdAt, id, name, nodeId, projectUrl, updatedAt, url); } 
-@override String toString() { return 'WebhooksProjectColumn(afterId: $afterId, cardsUrl: $cardsUrl, createdAt: $createdAt, id: $id, name: $name, nodeId: $nodeId, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(afterId, cardsUrl, createdAt, id, name, nodeId, projectUrl, updatedAt, url);
+
+@override String toString() => 'WebhooksProjectColumn(afterId: $afterId, cardsUrl: $cardsUrl, createdAt: $createdAt, id: $id, name: $name, nodeId: $nodeId, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)';
+
  }

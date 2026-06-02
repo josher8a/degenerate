@@ -17,7 +17,8 @@ final class WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError$400 extends Worke
 
 final WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError$Unknown extends WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError {const WorkersAiPostWebsocketRunCfPipecatAiSmartTurnError$Unknown(this.statusCode, this.rawBody, );
 

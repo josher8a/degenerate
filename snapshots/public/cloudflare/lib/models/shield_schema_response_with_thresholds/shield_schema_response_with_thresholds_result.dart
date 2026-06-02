@@ -20,10 +20,13 @@ ShieldSchemaResponseWithThresholdsResult copyWith({List<Map<String, dynamic>>? F
   schemas: schemas != null ? schemas() : this.schemas,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaResponseWithThresholdsResult &&
           listEquals(schemas, other.schemas) &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(Object.hashAll(schemas ?? const []), timestamp); } 
-@override String toString() { return 'ShieldSchemaResponseWithThresholdsResult(schemas: $schemas, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(Object.hashAll(schemas ?? const []), timestamp);
+
+@override String toString() => 'ShieldSchemaResponseWithThresholdsResult(schemas: $schemas, timestamp: $timestamp)';
+
  }

@@ -28,11 +28,14 @@ ReposUpdateStatusCheckProtectionRequest copyWith({bool? Function()? strict, List
   contexts: contexts != null ? contexts() : this.contexts,
   checks: checks != null ? checks() : this.checks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateStatusCheckProtectionRequest &&
           strict == other.strict &&
           listEquals(contexts, other.contexts) &&
-          listEquals(checks, other.checks); } 
-@override int get hashCode { return Object.hash(strict, Object.hashAll(contexts ?? const []), Object.hashAll(checks ?? const [])); } 
-@override String toString() { return 'ReposUpdateStatusCheckProtectionRequest(strict: $strict, contexts: $contexts, checks: $checks)'; } 
+          listEquals(checks, other.checks);
+
+@override int get hashCode => Object.hash(strict, Object.hashAll(contexts ?? const []), Object.hashAll(checks ?? const []));
+
+@override String toString() => 'ReposUpdateStatusCheckProtectionRequest(strict: $strict, contexts: $contexts, checks: $checks)';
+
  }

@@ -39,13 +39,16 @@ KeyList copyWith({String? Function()? object, List<Key>? Function()? data, bool?
   firstId: firstId != null ? firstId() : this.firstId,
   lastId: lastId != null ? lastId() : this.lastId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeyList &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           firstId == other.firstId &&
-          lastId == other.lastId; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data ?? const []), hasMore, firstId, lastId); } 
-@override String toString() { return 'KeyList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)'; } 
+          lastId == other.lastId;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data ?? const []), hasMore, firstId, lastId);
+
+@override String toString() => 'KeyList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)';
+
  }

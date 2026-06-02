@@ -135,7 +135,7 @@ PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResource
   resources: resources != null ? resources() : this.resources,
   startTime: startTime != null ? startTime() : this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodStatus &&
           allocatedResources == other.allocatedResources &&
           listEquals(conditions, other.conditions) &&
@@ -156,7 +156,10 @@ PodStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedResource
           resize == other.resize &&
           listEquals(resourceClaimStatuses, other.resourceClaimStatuses) &&
           resources == other.resources &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(allocatedResources, Object.hashAll(conditions ?? const []), Object.hashAll(containerStatuses ?? const []), Object.hashAll(ephemeralContainerStatuses ?? const []), extendedResourceClaimStatus, hostIp, Object.hashAll(hostIPs ?? const []), Object.hashAll(initContainerStatuses ?? const []), message, nominatedNodeName, observedGeneration, phase, podIp, Object.hashAll(podIPs ?? const []), qosClass, reason, resize, Object.hashAll(resourceClaimStatuses ?? const []), resources, startTime); } 
-@override String toString() { return 'PodStatus(allocatedResources: $allocatedResources, conditions: $conditions, containerStatuses: $containerStatuses, ephemeralContainerStatuses: $ephemeralContainerStatuses, extendedResourceClaimStatus: $extendedResourceClaimStatus, hostIp: $hostIp, hostIPs: $hostIPs, initContainerStatuses: $initContainerStatuses, message: $message, nominatedNodeName: $nominatedNodeName, observedGeneration: $observedGeneration, phase: $phase, podIp: $podIp, podIPs: $podIPs, qosClass: $qosClass, reason: $reason, resize: $resize, resourceClaimStatuses: $resourceClaimStatuses, resources: $resources, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(allocatedResources, Object.hashAll(conditions ?? const []), Object.hashAll(containerStatuses ?? const []), Object.hashAll(ephemeralContainerStatuses ?? const []), extendedResourceClaimStatus, hostIp, Object.hashAll(hostIPs ?? const []), Object.hashAll(initContainerStatuses ?? const []), message, nominatedNodeName, observedGeneration, phase, podIp, Object.hashAll(podIPs ?? const []), qosClass, reason, resize, Object.hashAll(resourceClaimStatuses ?? const []), resources, startTime);
+
+@override String toString() => 'PodStatus(allocatedResources: $allocatedResources, conditions: $conditions, containerStatuses: $containerStatuses, ephemeralContainerStatuses: $ephemeralContainerStatuses, extendedResourceClaimStatus: $extendedResourceClaimStatus, hostIp: $hostIp, hostIPs: $hostIPs, initContainerStatuses: $initContainerStatuses, message: $message, nominatedNodeName: $nominatedNodeName, observedGeneration: $observedGeneration, phase: $phase, podIp: $podIp, podIPs: $podIPs, qosClass: $qosClass, reason: $reason, resize: $resize, resourceClaimStatuses: $resourceClaimStatuses, resources: $resources, startTime: $startTime)';
+
  }

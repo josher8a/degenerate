@@ -32,11 +32,14 @@ AaaSilenceCreateRequest copyWith({String? Function()? endTime, AaaPolicyId? Func
   policyId: policyId != null ? policyId() : this.policyId,
   startTime: startTime != null ? startTime() : this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaSilenceCreateRequest &&
           endTime == other.endTime &&
           policyId == other.policyId &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(endTime, policyId, startTime); } 
-@override String toString() { return 'AaaSilenceCreateRequest(endTime: $endTime, policyId: $policyId, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(endTime, policyId, startTime);
+
+@override String toString() => 'AaaSilenceCreateRequest(endTime: $endTime, policyId: $policyId, startTime: $startTime)';
+
  }

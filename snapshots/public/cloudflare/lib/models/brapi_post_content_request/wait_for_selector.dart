@@ -38,12 +38,15 @@ WaitForSelector copyWith({bool? Function()? hidden, String? selector, double? Fu
   timeout: timeout != null ? timeout() : this.timeout,
   visible: visible != null ? visible() : this.visible,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitForSelector &&
           hidden == other.hidden &&
           selector == other.selector &&
           timeout == other.timeout &&
-          visible == other.visible; } 
-@override int get hashCode { return Object.hash(hidden, selector, timeout, visible); } 
-@override String toString() { return 'WaitForSelector(hidden: $hidden, selector: $selector, timeout: $timeout, visible: $visible)'; } 
+          visible == other.visible;
+
+@override int get hashCode => Object.hash(hidden, selector, timeout, visible);
+
+@override String toString() => 'WaitForSelector(hidden: $hidden, selector: $selector, timeout: $timeout, visible: $visible)';
+
  }

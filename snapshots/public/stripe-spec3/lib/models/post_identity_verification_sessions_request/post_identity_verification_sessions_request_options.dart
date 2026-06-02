@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostIdentityVerificationSessionsRequestOptions copyWith({OptionsDocument? Function()? document}) { return PostIdentityVerificationSessionsRequestOptions(
   document: document != null ? document() : this.document,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsRequestOptions &&
-          document == other.document; } 
-@override int get hashCode { return document.hashCode; } 
-@override String toString() { return 'PostIdentityVerificationSessionsRequestOptions(document: $document)'; } 
+          document == other.document;
+
+@override int get hashCode => document.hashCode;
+
+@override String toString() => 'PostIdentityVerificationSessionsRequestOptions(document: $document)';
+
  }

@@ -161,7 +161,7 @@ Container copyWith({List<String>? Function()? args, List<String>? Function()? co
   volumeMounts: volumeMounts != null ? volumeMounts() : this.volumeMounts,
   workingDir: workingDir != null ? workingDir() : this.workingDir,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Container &&
           listEquals(args, other.args) &&
           listEquals(command, other.command) &&
@@ -187,7 +187,10 @@ Container copyWith({List<String>? Function()? args, List<String>? Function()? co
           tty == other.tty &&
           listEquals(volumeDevices, other.volumeDevices) &&
           listEquals(volumeMounts, other.volumeMounts) &&
-          workingDir == other.workingDir; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(args ?? const []), Object.hashAll(command ?? const []), Object.hashAll(env ?? const []), Object.hashAll(envFrom ?? const []), image, imagePullPolicy, lifecycle, livenessProbe, name, Object.hashAll(ports ?? const []), readinessProbe, Object.hashAll(resizePolicy ?? const []), resources, restartPolicy, Object.hashAll(restartPolicyRules ?? const []), securityContext, startupProbe, stdin, stdinOnce, terminationMessagePath, terminationMessagePolicy, tty, Object.hashAll(volumeDevices ?? const []), Object.hashAll(volumeMounts ?? const []), workingDir]); } 
-@override String toString() { return 'Container(args: $args, command: $command, env: $env, envFrom: $envFrom, image: $image, imagePullPolicy: $imagePullPolicy, lifecycle: $lifecycle, livenessProbe: $livenessProbe, name: $name, ports: $ports, readinessProbe: $readinessProbe, resizePolicy: $resizePolicy, resources: $resources, restartPolicy: $restartPolicy, restartPolicyRules: $restartPolicyRules, securityContext: $securityContext, startupProbe: $startupProbe, stdin: $stdin, stdinOnce: $stdinOnce, terminationMessagePath: $terminationMessagePath, terminationMessagePolicy: $terminationMessagePolicy, tty: $tty, volumeDevices: $volumeDevices, volumeMounts: $volumeMounts, workingDir: $workingDir)'; } 
+          workingDir == other.workingDir;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(args ?? const []), Object.hashAll(command ?? const []), Object.hashAll(env ?? const []), Object.hashAll(envFrom ?? const []), image, imagePullPolicy, lifecycle, livenessProbe, name, Object.hashAll(ports ?? const []), readinessProbe, Object.hashAll(resizePolicy ?? const []), resources, restartPolicy, Object.hashAll(restartPolicyRules ?? const []), securityContext, startupProbe, stdin, stdinOnce, terminationMessagePath, terminationMessagePolicy, tty, Object.hashAll(volumeDevices ?? const []), Object.hashAll(volumeMounts ?? const []), workingDir]);
+
+@override String toString() => 'Container(args: $args, command: $command, env: $env, envFrom: $envFrom, image: $image, imagePullPolicy: $imagePullPolicy, lifecycle: $lifecycle, livenessProbe: $livenessProbe, name: $name, ports: $ports, readinessProbe: $readinessProbe, resizePolicy: $resizePolicy, resources: $resources, restartPolicy: $restartPolicy, restartPolicyRules: $restartPolicyRules, securityContext: $securityContext, startupProbe: $startupProbe, stdin: $stdin, stdinOnce: $stdinOnce, terminationMessagePath: $terminationMessagePath, terminationMessagePolicy: $terminationMessagePolicy, tty: $tty, volumeDevices: $volumeDevices, volumeMounts: $volumeMounts, workingDir: $workingDir)';
+
  }

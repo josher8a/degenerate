@@ -25,11 +25,14 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit copyWith({Chec
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit &&
           currency == other.currency &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(currency, mandateOptions, verificationMethod); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(currency, mandateOptions, verificationMethod);
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
+
  }

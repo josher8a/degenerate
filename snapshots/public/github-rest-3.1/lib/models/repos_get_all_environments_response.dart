@@ -21,10 +21,13 @@ ReposGetAllEnvironmentsResponse copyWith({int? Function()? totalCount, List<Envi
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   environments: environments != null ? environments() : this.environments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposGetAllEnvironmentsResponse &&
           totalCount == other.totalCount &&
-          listEquals(environments, other.environments); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(environments ?? const [])); } 
-@override String toString() { return 'ReposGetAllEnvironmentsResponse(totalCount: $totalCount, environments: $environments)'; } 
+          listEquals(environments, other.environments);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(environments ?? const []));
+
+@override String toString() => 'ReposGetAllEnvironmentsResponse(totalCount: $totalCount, environments: $environments)';
+
  }

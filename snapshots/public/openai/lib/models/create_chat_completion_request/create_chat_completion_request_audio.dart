@@ -34,10 +34,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AudioFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AudioFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AudioFormat($value)';
+
  }
 /// Parameters for audio output. Required when audio output is requested with
 /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
@@ -71,10 +74,13 @@ CreateChatCompletionRequestAudio copyWith({VoiceIdsOrCustomVoice? voice, AudioFo
   voice: voice ?? this.voice,
   format: format ?? this.format,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionRequestAudio &&
           voice == other.voice &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(voice, format); } 
-@override String toString() { return 'CreateChatCompletionRequestAudio(voice: $voice, format: $format)'; } 
+          format == other.format;
+
+@override int get hashCode => Object.hash(voice, format);
+
+@override String toString() => 'CreateChatCompletionRequestAudio(voice: $voice, format: $format)';
+
  }

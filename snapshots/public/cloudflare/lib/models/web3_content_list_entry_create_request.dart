@@ -27,11 +27,14 @@ Web3ContentListEntryCreateRequest copyWith({Web3ContentListEntryContent? content
   description: description != null ? description() : this.description,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ContentListEntryCreateRequest &&
           content == other.content &&
           description == other.description &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, description, type); } 
-@override String toString() { return 'Web3ContentListEntryCreateRequest(content: $content, description: $description, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(content, description, type);
+
+@override String toString() => 'Web3ContentListEntryCreateRequest(content: $content, description: $description, type: $type)';
+
  }

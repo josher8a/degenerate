@@ -54,7 +54,7 @@ AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<Str
   portProtocols: portProtocols != null ? portProtocols() : this.portProtocols,
   supportDomains: supportDomains != null ? supportDomains() : this.supportDomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AlexandriaCreateApplicationRequest &&
           applicationTypeId == other.applicationTypeId &&
           listEquals(hostnames, other.hostnames) &&
@@ -62,7 +62,10 @@ AlexandriaCreateApplicationRequest copyWith({String? applicationTypeId, List<Str
           listEquals(ipSubnets, other.ipSubnets) &&
           name == other.name &&
           listEquals(portProtocols, other.portProtocols) &&
-          listEquals(supportDomains, other.supportDomains); } 
-@override int get hashCode { return Object.hash(applicationTypeId, Object.hashAll(hostnames ?? const []), humanId, Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const [])); } 
-@override String toString() { return 'AlexandriaCreateApplicationRequest(applicationTypeId: $applicationTypeId, hostnames: $hostnames, humanId: $humanId, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains)'; } 
+          listEquals(supportDomains, other.supportDomains);
+
+@override int get hashCode => Object.hash(applicationTypeId, Object.hashAll(hostnames ?? const []), humanId, Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const []));
+
+@override String toString() => 'AlexandriaCreateApplicationRequest(applicationTypeId: $applicationTypeId, hostnames: $hostnames, humanId: $humanId, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains)';
+
  }

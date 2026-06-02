@@ -21,10 +21,13 @@ InputEmbedding copyWith({InputEmbeddingText? text, bool Function()? truncateInpu
   text: text ?? this.text,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputEmbedding &&
           text == other.text &&
-          truncateInputs == other.truncateInputs; } 
-@override int get hashCode { return Object.hash(text, truncateInputs); } 
-@override String toString() { return 'InputEmbedding(text: $text, truncateInputs: $truncateInputs)'; } 
+          truncateInputs == other.truncateInputs;
+
+@override int get hashCode => Object.hash(text, truncateInputs);
+
+@override String toString() => 'InputEmbedding(text: $text, truncateInputs: $truncateInputs)';
+
  }

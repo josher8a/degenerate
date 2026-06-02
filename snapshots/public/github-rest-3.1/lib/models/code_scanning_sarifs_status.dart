@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProcessingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProcessingStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProcessingStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProcessingStatus($value)';
+
  }
 @immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl, this.errors, });
 
@@ -56,11 +59,14 @@ CodeScanningSarifsStatus copyWith({ProcessingStatus? Function()? processingStatu
   analysesUrl: analysesUrl != null ? analysesUrl() : this.analysesUrl,
   errors: errors != null ? errors() : this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningSarifsStatus &&
           processingStatus == other.processingStatus &&
           analysesUrl == other.analysesUrl &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(processingStatus, analysesUrl, Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'CodeScanningSarifsStatus(processingStatus: $processingStatus, analysesUrl: $analysesUrl, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(processingStatus, analysesUrl, Object.hashAll(errors ?? const []));
+
+@override String toString() => 'CodeScanningSarifsStatus(processingStatus: $processingStatus, analysesUrl: $analysesUrl, errors: $errors)';
+
  }

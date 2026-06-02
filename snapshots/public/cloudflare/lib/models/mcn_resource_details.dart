@@ -134,7 +134,7 @@ McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, M
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourceDetails &&
           accountId == other.accountId &&
           cloudType == other.cloudType &&
@@ -156,7 +156,10 @@ McnResourceDetails copyWith({McnAccountId? accountId, McnCloudType? cloudType, M
           state == other.state &&
           tags == other.tags &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([accountId, cloudType, config, deploymentProvider, id, managed, Object.hashAll(managedBy ?? const []), monthlyCostEstimate, name, nativeId, observations, Object.hashAll(providerIds), providerNamesById, region, resourceGroup, resourceType, Object.hashAll(sections), state, tags, updatedAt, url]); } 
-@override String toString() { return 'McnResourceDetails(accountId: $accountId, cloudType: $cloudType, config: $config, deploymentProvider: $deploymentProvider, id: $id, managed: $managed, managedBy: $managedBy, monthlyCostEstimate: $monthlyCostEstimate, name: $name, nativeId: $nativeId, observations: $observations, providerIds: $providerIds, providerNamesById: $providerNamesById, region: $region, resourceGroup: $resourceGroup, resourceType: $resourceType, sections: $sections, state: $state, tags: $tags, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([accountId, cloudType, config, deploymentProvider, id, managed, Object.hashAll(managedBy ?? const []), monthlyCostEstimate, name, nativeId, observations, Object.hashAll(providerIds), providerNamesById, region, resourceGroup, resourceType, Object.hashAll(sections), state, tags, updatedAt, url]);
+
+@override String toString() => 'McnResourceDetails(accountId: $accountId, cloudType: $cloudType, config: $config, deploymentProvider: $deploymentProvider, id: $id, managed: $managed, managedBy: $managedBy, monthlyCostEstimate: $monthlyCostEstimate, name: $name, nativeId: $nativeId, observations: $observations, providerIds: $providerIds, providerNamesById: $providerNamesById, region: $region, resourceGroup: $resourceGroup, resourceType: $resourceType, sections: $sections, state: $state, tags: $tags, updatedAt: $updatedAt, url: $url)';
+
  }

@@ -31,11 +31,14 @@ FineTuningJobError copyWith({String? code, String? message, String? Function()? 
   message: message ?? this.message,
   param: param != null ? param() : this.param,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJobError &&
           code == other.code &&
           message == other.message &&
-          param == other.param; } 
-@override int get hashCode { return Object.hash(code, message, param); } 
-@override String toString() { return 'FineTuningJobError(code: $code, message: $message, param: $param)'; } 
+          param == other.param;
+
+@override int get hashCode => Object.hash(code, message, param);
+
+@override String toString() => 'FineTuningJobError(code: $code, message: $message, param: $param)';
+
  }

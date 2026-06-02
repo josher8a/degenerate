@@ -30,10 +30,13 @@ SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, St
   currency: currency != null ? currency() : this.currency,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsKlarna &&
           currency == other.currency &&
-          preferredLocale == other.preferredLocale; } 
-@override int get hashCode { return Object.hash(currency, preferredLocale); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsKlarna(currency: $currency, preferredLocale: $preferredLocale)'; } 
+          preferredLocale == other.preferredLocale;
+
+@override int get hashCode => Object.hash(currency, preferredLocale);
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsKlarna(currency: $currency, preferredLocale: $preferredLocale)';
+
  }

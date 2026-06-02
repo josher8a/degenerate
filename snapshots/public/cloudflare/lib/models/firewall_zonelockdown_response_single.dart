@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 FirewallZonelockdownResponseSingle copyWith({FirewallZonelockdown? result}) { return FirewallZonelockdownResponseSingle(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallZonelockdownResponseSingle &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'FirewallZonelockdownResponseSingle(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'FirewallZonelockdownResponseSingle(result: $result)';
+
  }

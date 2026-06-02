@@ -34,10 +34,13 @@ SourceTransactionPaperCheckData copyWith({String? Function()? availableAt, Strin
   availableAt: availableAt != null ? availableAt() : this.availableAt,
   invoices: invoices != null ? invoices() : this.invoices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransactionPaperCheckData &&
           availableAt == other.availableAt &&
-          invoices == other.invoices; } 
-@override int get hashCode { return Object.hash(availableAt, invoices); } 
-@override String toString() { return 'SourceTransactionPaperCheckData(availableAt: $availableAt, invoices: $invoices)'; } 
+          invoices == other.invoices;
+
+@override int get hashCode => Object.hash(availableAt, invoices);
+
+@override String toString() => 'SourceTransactionPaperCheckData(availableAt: $availableAt, invoices: $invoices)';
+
  }

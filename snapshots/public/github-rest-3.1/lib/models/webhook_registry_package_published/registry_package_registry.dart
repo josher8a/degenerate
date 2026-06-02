@@ -35,13 +35,16 @@ RegistryPackageRegistry copyWith({String? Function()? aboutUrl, String? Function
   url: url != null ? url() : this.url,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackageRegistry &&
           aboutUrl == other.aboutUrl &&
           name == other.name &&
           type == other.type &&
           url == other.url &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(aboutUrl, name, type, url, vendor); } 
-@override String toString() { return 'RegistryPackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(aboutUrl, name, type, url, vendor);
+
+@override String toString() => 'RegistryPackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)';
+
  }

@@ -20,10 +20,13 @@ EmailSecurityLink copyWith({String? href, String? Function()? text, }) { return 
   href: href ?? this.href,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityLink &&
           href == other.href &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(href, text); } 
-@override String toString() { return 'EmailSecurityLink(href: $href, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(href, text);
+
+@override String toString() => 'EmailSecurityLink(href: $href, text: $text)';
+
  }

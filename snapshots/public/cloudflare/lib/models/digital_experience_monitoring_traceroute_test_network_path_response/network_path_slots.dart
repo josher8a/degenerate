@@ -49,14 +49,17 @@ NetworkPathSlots copyWith({int? Function()? clientToAppRttMs, int? Function()? c
   id: id ?? this.id,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkPathSlots &&
           clientToAppRttMs == other.clientToAppRttMs &&
           clientToCfEgressRttMs == other.clientToCfEgressRttMs &&
           clientToCfIngressRttMs == other.clientToCfIngressRttMs &&
           clientToIspRttMs == other.clientToIspRttMs &&
           id == other.id &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(clientToAppRttMs, clientToCfEgressRttMs, clientToCfIngressRttMs, clientToIspRttMs, id, timestamp); } 
-@override String toString() { return 'NetworkPathSlots(clientToAppRttMs: $clientToAppRttMs, clientToCfEgressRttMs: $clientToCfEgressRttMs, clientToCfIngressRttMs: $clientToCfIngressRttMs, clientToIspRttMs: $clientToIspRttMs, id: $id, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(clientToAppRttMs, clientToCfEgressRttMs, clientToCfIngressRttMs, clientToIspRttMs, id, timestamp);
+
+@override String toString() => 'NetworkPathSlots(clientToAppRttMs: $clientToAppRttMs, clientToCfEgressRttMs: $clientToCfEgressRttMs, clientToCfIngressRttMs: $clientToCfIngressRttMs, clientToIspRttMs: $clientToIspRttMs, id: $id, timestamp: $timestamp)';
+
  }

@@ -30,11 +30,14 @@ RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject copyWith({int? index, CodeI
   type: type ?? this.type,
   logs: logs != null ? logs() : this.logs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject &&
           index == other.index &&
           type == other.type &&
-          logs == other.logs; } 
-@override int get hashCode { return Object.hash(index, type, logs); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(index: $index, type: $type, logs: $logs)'; } 
+          logs == other.logs;
+
+@override int get hashCode => Object.hash(index, type, logs);
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(index: $index, type: $type, logs: $logs)';
+
  }

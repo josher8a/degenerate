@@ -79,7 +79,7 @@ IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool?
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   targetPortal: targetPortal ?? this.targetPortal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IscsiPersistentVolumeSource &&
           chapAuthDiscovery == other.chapAuthDiscovery &&
           chapAuthSession == other.chapAuthSession &&
@@ -91,7 +91,10 @@ IscsiPersistentVolumeSource copyWith({bool? Function()? chapAuthDiscovery, bool?
           listEquals(portals, other.portals) &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
-          targetPortal == other.targetPortal; } 
-@override int get hashCode { return Object.hash(chapAuthDiscovery, chapAuthSession, fsType, initiatorName, iqn, iscsiInterface, lun, Object.hashAll(portals ?? const []), readOnly, secretRef, targetPortal); } 
-@override String toString() { return 'IscsiPersistentVolumeSource(chapAuthDiscovery: $chapAuthDiscovery, chapAuthSession: $chapAuthSession, fsType: $fsType, initiatorName: $initiatorName, iqn: $iqn, iscsiInterface: $iscsiInterface, lun: $lun, portals: $portals, readOnly: $readOnly, secretRef: $secretRef, targetPortal: $targetPortal)'; } 
+          targetPortal == other.targetPortal;
+
+@override int get hashCode => Object.hash(chapAuthDiscovery, chapAuthSession, fsType, initiatorName, iqn, iscsiInterface, lun, Object.hashAll(portals ?? const []), readOnly, secretRef, targetPortal);
+
+@override String toString() => 'IscsiPersistentVolumeSource(chapAuthDiscovery: $chapAuthDiscovery, chapAuthSession: $chapAuthSession, fsType: $fsType, initiatorName: $initiatorName, iqn: $iqn, iscsiInterface: $iscsiInterface, lun: $lun, portals: $portals, readOnly: $readOnly, secretRef: $secretRef, targetPortal: $targetPortal)';
+
  }

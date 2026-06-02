@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WaitingroomWaitingRoomIdResponse copyWith({LoadBalancingComponentsSchemasIdResponseResult? Function()? result}) { return WaitingroomWaitingRoomIdResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomWaitingRoomIdResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'WaitingroomWaitingRoomIdResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'WaitingroomWaitingRoomIdResponse(result: $result)';
+
  }

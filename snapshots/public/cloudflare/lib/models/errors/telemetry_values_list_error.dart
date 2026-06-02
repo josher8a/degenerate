@@ -18,13 +18,15 @@ final class TelemetryValuesListError$401 extends TelemetryValuesListError {const
 
 final TelemetryValuesListResponse401 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class TelemetryValuesListError$500 extends TelemetryValuesListError {const TelemetryValuesListError$500(this.error);
 
 final TelemetryValuesListResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class TelemetryValuesListError$Unknown extends TelemetryValuesListError {const TelemetryValuesListError$Unknown(this.statusCode, this.rawBody, );
 

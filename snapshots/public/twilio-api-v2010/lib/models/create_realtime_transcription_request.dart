@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionEnumTrack && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionEnumTrack($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTranscriptionEnumTrack && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeTranscriptionEnumTrack($value)';
+
  }
 @immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });
 
@@ -128,7 +131,7 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
   intelligenceService: intelligenceService != null ? intelligenceService() : this.intelligenceService,
   enableProviderData: enableProviderData != null ? enableProviderData() : this.enableProviderData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateRealtimeTranscriptionRequest &&
           name == other.name &&
           track == other.track &&
@@ -144,7 +147,10 @@ CreateRealtimeTranscriptionRequest copyWith({String? Function()? name, RealtimeT
           hints == other.hints &&
           enableAutomaticPunctuation == other.enableAutomaticPunctuation &&
           intelligenceService == other.intelligenceService &&
-          enableProviderData == other.enableProviderData; } 
-@override int get hashCode { return Object.hash(name, track, statusCallbackUrl, statusCallbackMethod, inboundTrackLabel, outboundTrackLabel, partialResults, languageCode, transcriptionEngine, profanityFilter, speechModel, hints, enableAutomaticPunctuation, intelligenceService, enableProviderData); } 
-@override String toString() { return 'CreateRealtimeTranscriptionRequest(name: $name, track: $track, statusCallbackUrl: $statusCallbackUrl, statusCallbackMethod: $statusCallbackMethod, inboundTrackLabel: $inboundTrackLabel, outboundTrackLabel: $outboundTrackLabel, partialResults: $partialResults, languageCode: $languageCode, transcriptionEngine: $transcriptionEngine, profanityFilter: $profanityFilter, speechModel: $speechModel, hints: $hints, enableAutomaticPunctuation: $enableAutomaticPunctuation, intelligenceService: $intelligenceService, enableProviderData: $enableProviderData)'; } 
+          enableProviderData == other.enableProviderData;
+
+@override int get hashCode => Object.hash(name, track, statusCallbackUrl, statusCallbackMethod, inboundTrackLabel, outboundTrackLabel, partialResults, languageCode, transcriptionEngine, profanityFilter, speechModel, hints, enableAutomaticPunctuation, intelligenceService, enableProviderData);
+
+@override String toString() => 'CreateRealtimeTranscriptionRequest(name: $name, track: $track, statusCallbackUrl: $statusCallbackUrl, statusCallbackMethod: $statusCallbackMethod, inboundTrackLabel: $inboundTrackLabel, outboundTrackLabel: $outboundTrackLabel, partialResults: $partialResults, languageCode: $languageCode, transcriptionEngine: $transcriptionEngine, profanityFilter: $profanityFilter, speechModel: $speechModel, hints: $hints, enableAutomaticPunctuation: $enableAutomaticPunctuation, intelligenceService: $intelligenceService, enableProviderData: $enableProviderData)';
+
  }

@@ -21,10 +21,13 @@ DlpVariant2 copyWith({bool? enabled, List<Variant2Policies>? policies, }) { retu
   enabled: enabled ?? this.enabled,
   policies: policies ?? this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpVariant2 &&
           enabled == other.enabled &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(policies)); } 
-@override String toString() { return 'DlpVariant2(enabled: $enabled, policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(policies));
+
+@override String toString() => 'DlpVariant2(enabled: $enabled, policies: $policies)';
+
  }

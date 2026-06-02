@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostPaymentMethodConfigurationsConfigurationRequestBoleto copyWith({DisplayPreference? Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestBoleto(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodConfigurationsConfigurationRequestBoleto &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestBoleto(displayPreference: $displayPreference)'; } 
+          displayPreference == other.displayPreference;
+
+@override int get hashCode => displayPreference.hashCode;
+
+@override String toString() => 'PostPaymentMethodConfigurationsConfigurationRequestBoleto(displayPreference: $displayPreference)';
+
  }

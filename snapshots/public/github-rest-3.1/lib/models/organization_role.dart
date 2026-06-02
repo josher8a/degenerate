@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BaseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BaseRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BaseRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BaseRole($value)';
+
  }
 /// Source answers the question, "where did this role come from?"
 @immutable final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
@@ -63,10 +66,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationRoleSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationRoleSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationRoleSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationRoleSource($value)';
+
  }
 /// Organization roles
 @immutable final class OrganizationRole {const OrganizationRole({required this.id, required this.name, required this.permissions, required this.organization, required this.createdAt, required this.updatedAt, this.description, this.baseRole, this.source, });
@@ -137,7 +143,7 @@ OrganizationRole copyWith({int? id, String? name, String? Function()? descriptio
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationRole &&
           id == other.id &&
           name == other.name &&
@@ -147,7 +153,10 @@ OrganizationRole copyWith({int? id, String? name, String? Function()? descriptio
           listEquals(permissions, other.permissions) &&
           organization == other.organization &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, description, baseRole, source, Object.hashAll(permissions), organization, createdAt, updatedAt); } 
-@override String toString() { return 'OrganizationRole(id: $id, name: $name, description: $description, baseRole: $baseRole, source: $source, permissions: $permissions, organization: $organization, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, description, baseRole, source, Object.hashAll(permissions), organization, createdAt, updatedAt);
+
+@override String toString() => 'OrganizationRole(id: $id, name: $name, description: $description, baseRole: $baseRole, source: $source, permissions: $permissions, organization: $organization, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

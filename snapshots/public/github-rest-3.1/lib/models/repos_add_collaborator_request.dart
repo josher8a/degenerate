@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ReposAddCollaboratorRequest copyWith({String Function()? permission}) { return ReposAddCollaboratorRequest(
   permission: permission != null ? permission() : this.permission,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposAddCollaboratorRequest &&
-          permission == other.permission; } 
-@override int get hashCode { return permission.hashCode; } 
-@override String toString() { return 'ReposAddCollaboratorRequest(permission: $permission)'; } 
+          permission == other.permission;
+
+@override int get hashCode => permission.hashCode;
+
+@override String toString() => 'ReposAddCollaboratorRequest(permission: $permission)';
+
  }

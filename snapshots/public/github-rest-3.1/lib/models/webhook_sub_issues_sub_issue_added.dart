@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSubIssuesSubIssueAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSubIssuesSubIssueAddedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSubIssuesSubIssueAddedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSubIssuesSubIssueAddedAction($value)';
+
  }
 @immutable final class WebhookSubIssuesSubIssueAdded {const WebhookSubIssuesSubIssueAdded({required this.action, required this.subIssueId, required this.subIssue, required this.subIssueRepo, required this.parentIssueId, required this.parentIssue, this.installation, this.organization, this.repository, this.sender, });
 
@@ -88,7 +91,7 @@ WebhookSubIssuesSubIssueAdded copyWith({WebhookSubIssuesSubIssueAddedAction? act
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSubIssuesSubIssueAdded &&
           action == other.action &&
           subIssueId == other.subIssueId &&
@@ -99,7 +102,10 @@ WebhookSubIssuesSubIssueAdded copyWith({WebhookSubIssuesSubIssueAddedAction? act
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, subIssueId, subIssue, subIssueRepo, parentIssueId, parentIssue, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSubIssuesSubIssueAdded(action: $action, subIssueId: $subIssueId, subIssue: $subIssue, subIssueRepo: $subIssueRepo, parentIssueId: $parentIssueId, parentIssue: $parentIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, subIssueId, subIssue, subIssueRepo, parentIssueId, parentIssue, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSubIssuesSubIssueAdded(action: $action, subIssueId: $subIssueId, subIssue: $subIssue, subIssueRepo: $subIssueRepo, parentIssueId: $parentIssueId, parentIssue: $parentIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_
 RunStepDetailsToolCallsCodeOutputImageObjectImage copyWith({String? fileId}) { return RunStepDetailsToolCallsCodeOutputImageObjectImage(
   fileId: fileId ?? this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeOutputImageObjectImage &&
-          fileId == other.fileId; } 
-@override int get hashCode { return fileId.hashCode; } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObjectImage(fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => fileId.hashCode;
+
+@override String toString() => 'RunStepDetailsToolCallsCodeOutputImageObjectImage(fileId: $fileId)';
+
  }

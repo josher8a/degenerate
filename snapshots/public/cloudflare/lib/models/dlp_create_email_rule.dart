@@ -39,13 +39,16 @@ DlpCreateEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondit
   enabled: enabled ?? this.enabled,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpCreateEmailRule &&
           action == other.action &&
           listEquals(conditions, other.conditions) &&
           description == other.description &&
           enabled == other.enabled &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(conditions), description, enabled, name); } 
-@override String toString() { return 'DlpCreateEmailRule(action: $action, conditions: $conditions, description: $description, enabled: $enabled, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(conditions), description, enabled, name);
+
+@override String toString() => 'DlpCreateEmailRule(action: $action, conditions: $conditions, description: $description, enabled: $enabled, name: $name)';
+
  }

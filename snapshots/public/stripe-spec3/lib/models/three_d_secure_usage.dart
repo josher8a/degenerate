@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('suppo
 ThreeDSecureUsage copyWith({bool? supported}) { return ThreeDSecureUsage(
   supported: supported ?? this.supported,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreeDSecureUsage &&
-          supported == other.supported; } 
-@override int get hashCode { return supported.hashCode; } 
-@override String toString() { return 'ThreeDSecureUsage(supported: $supported)'; } 
+          supported == other.supported;
+
+@override int get hashCode => supported.hashCode;
+
+@override String toString() => 'ThreeDSecureUsage(supported: $supported)';
+
  }

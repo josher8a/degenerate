@@ -24,10 +24,13 @@ ChatCompletionRequestAssistantMessageFunctionCall copyWith({String? arguments, S
   arguments: arguments ?? this.arguments,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestAssistantMessageFunctionCall &&
           arguments == other.arguments &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(arguments, name); } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageFunctionCall(arguments: $arguments, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(arguments, name);
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageFunctionCall(arguments: $arguments, name: $name)';
+
  }

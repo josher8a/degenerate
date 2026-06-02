@@ -21,9 +21,12 @@ return errors; }
 PaymentMethodBoleto copyWith({String? taxId}) { return PaymentMethodBoleto(
   taxId: taxId ?? this.taxId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodBoleto &&
-          taxId == other.taxId; } 
-@override int get hashCode { return taxId.hashCode; } 
-@override String toString() { return 'PaymentMethodBoleto(taxId: $taxId)'; } 
+          taxId == other.taxId;
+
+@override int get hashCode => taxId.hashCode;
+
+@override String toString() => 'PaymentMethodBoleto(taxId: $taxId)';
+
  }

@@ -52,13 +52,16 @@ CertificateLogRelated copyWith({String? description, DateTime? endExclusive, Str
   startInclusive: startInclusive ?? this.startInclusive,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLogRelated &&
           description == other.description &&
           endExclusive == other.endExclusive &&
           slug == other.slug &&
           startInclusive == other.startInclusive &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(description, endExclusive, slug, startInclusive, state); } 
-@override String toString() { return 'CertificateLogRelated(description: $description, endExclusive: $endExclusive, slug: $slug, startInclusive: $startInclusive, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(description, endExclusive, slug, startInclusive, state);
+
+@override String toString() => 'CertificateLogRelated(description: $description, endExclusive: $endExclusive, slug: $slug, startInclusive: $startInclusive, state: $state)';
+
  }

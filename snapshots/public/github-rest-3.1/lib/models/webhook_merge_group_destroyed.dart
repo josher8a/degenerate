@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupDestroyedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupDestroyedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookMergeGroupDestroyedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookMergeGroupDestroyedAction($value)';
+
  }
 /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
 @immutable final class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason._(this.value);
@@ -44,10 +47,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupDestroyedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupDestroyedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookMergeGroupDestroyedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookMergeGroupDestroyedReason($value)';
+
  }
 @immutable final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({required this.action, required this.mergeGroup, this.reason, this.installation, this.organization, this.repository, this.sender, });
 
@@ -96,7 +102,7 @@ WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, W
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMergeGroupDestroyed &&
           action == other.action &&
           reason == other.reason &&
@@ -104,7 +110,10 @@ WebhookMergeGroupDestroyed copyWith({WebhookMergeGroupDestroyedAction? action, W
           mergeGroup == other.mergeGroup &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, reason, installation, mergeGroup, organization, repository, sender); } 
-@override String toString() { return 'WebhookMergeGroupDestroyed(action: $action, reason: $reason, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, reason, installation, mergeGroup, organization, repository, sender);
+
+@override String toString() => 'WebhookMergeGroupDestroyed(action: $action, reason: $reason, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)';
+
  }

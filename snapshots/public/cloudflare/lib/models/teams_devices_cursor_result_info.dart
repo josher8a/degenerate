@@ -47,12 +47,15 @@ TeamsDevicesCursorResultInfo copyWith({int? count, String? cursor, int? perPage,
   perPage: perPage ?? this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCursorResultInfo &&
           count == other.count &&
           cursor == other.cursor &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, cursor, perPage, totalCount); } 
-@override String toString() { return 'TeamsDevicesCursorResultInfo(count: $count, cursor: $cursor, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, cursor, perPage, totalCount);
+
+@override String toString() => 'TeamsDevicesCursorResultInfo(count: $count, cursor: $cursor, perPage: $perPage, totalCount: $totalCount)';
+
  }

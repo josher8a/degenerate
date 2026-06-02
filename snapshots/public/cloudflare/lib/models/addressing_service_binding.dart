@@ -36,13 +36,16 @@ AddressingServiceBinding copyWith({AddressingCidr? Function()? cidr, AddressingS
   serviceId: serviceId != null ? serviceId() : this.serviceId,
   serviceName: serviceName != null ? serviceName() : this.serviceName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingServiceBinding &&
           cidr == other.cidr &&
           id == other.id &&
           provisioning == other.provisioning &&
           serviceId == other.serviceId &&
-          serviceName == other.serviceName; } 
-@override int get hashCode { return Object.hash(cidr, id, provisioning, serviceId, serviceName); } 
-@override String toString() { return 'AddressingServiceBinding(cidr: $cidr, id: $id, provisioning: $provisioning, serviceId: $serviceId, serviceName: $serviceName)'; } 
+          serviceName == other.serviceName;
+
+@override int get hashCode => Object.hash(cidr, id, provisioning, serviceId, serviceName);
+
+@override String toString() => 'AddressingServiceBinding(cidr: $cidr, id: $id, provisioning: $provisioning, serviceId: $serviceId, serviceName: $serviceName)';
+
  }

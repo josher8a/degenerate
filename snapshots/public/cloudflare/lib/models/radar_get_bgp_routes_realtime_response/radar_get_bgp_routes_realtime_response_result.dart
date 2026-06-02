@@ -21,10 +21,13 @@ RadarGetBgpRoutesRealtimeResponseResult copyWith({RadarGetBgpRoutesRealtimeRespo
   meta: meta ?? this.meta,
   routes: routes ?? this.routes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRoutesRealtimeResponseResult &&
           meta == other.meta &&
-          listEquals(routes, other.routes); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(routes)); } 
-@override String toString() { return 'RadarGetBgpRoutesRealtimeResponseResult(meta: $meta, routes: $routes)'; } 
+          listEquals(routes, other.routes);
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(routes));
+
+@override String toString() => 'RadarGetBgpRoutesRealtimeResponseResult(meta: $meta, routes: $routes)';
+
  }

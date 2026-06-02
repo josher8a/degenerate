@@ -27,10 +27,13 @@ MetaDateRange copyWith({DateTime? endTime, DateTime? startTime, }) { return Meta
   endTime: endTime ?? this.endTime,
   startTime: startTime ?? this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetaDateRange &&
           endTime == other.endTime &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(endTime, startTime); } 
-@override String toString() { return 'MetaDateRange(endTime: $endTime, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(endTime, startTime);
+
+@override String toString() => 'MetaDateRange(endTime: $endTime, startTime: $startTime)';
+
  }

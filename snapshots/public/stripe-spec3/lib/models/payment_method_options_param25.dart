@@ -20,10 +20,13 @@ PaymentMethodOptionsParam25 copyWith({CheckoutAffirmPaymentMethodOptionsSetupFut
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam25 &&
           setupFutureUsage == other.setupFutureUsage &&
-          tosShownAndAccepted == other.tosShownAndAccepted; } 
-@override int get hashCode { return Object.hash(setupFutureUsage, tosShownAndAccepted); } 
-@override String toString() { return 'PaymentMethodOptionsParam25(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)'; } 
+          tosShownAndAccepted == other.tosShownAndAccepted;
+
+@override int get hashCode => Object.hash(setupFutureUsage, tosShownAndAccepted);
+
+@override String toString() => 'PaymentMethodOptionsParam25(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)';
+
  }

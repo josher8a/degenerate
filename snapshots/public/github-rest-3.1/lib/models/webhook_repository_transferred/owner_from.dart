@@ -20,10 +20,13 @@ OwnerFrom copyWith({Organization? Function()? organization, DiscussionUser? Func
   organization: organization != null ? organization() : this.organization,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OwnerFrom &&
           organization == other.organization &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(organization, user); } 
-@override String toString() { return 'OwnerFrom(organization: $organization, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(organization, user);
+
+@override String toString() => 'OwnerFrom(organization: $organization, user: $user)';
+
  }

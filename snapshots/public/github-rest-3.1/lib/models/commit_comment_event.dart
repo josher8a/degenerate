@@ -21,10 +21,13 @@ CommitCommentEvent copyWith({String? action, CommitCommentEventComment? comment,
   action: action ?? this.action,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommentEvent &&
           action == other.action &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(action, comment); } 
-@override String toString() { return 'CommitCommentEvent(action: $action, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(action, comment);
+
+@override String toString() => 'CommitCommentEvent(action: $action, comment: $comment)';
+
  }

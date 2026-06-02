@@ -84,7 +84,7 @@ McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? desti
   policy: policy ?? this.policy,
   updateMode: updateMode ?? this.updateMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCatalogSync &&
           description == other.description &&
           destinationId == other.destinationId &&
@@ -97,7 +97,10 @@ McnCatalogSync copyWith({String? description, McnCatalogSyncDestinationId? desti
           lastUserUpdateAt == other.lastUserUpdateAt &&
           name == other.name &&
           policy == other.policy &&
-          updateMode == other.updateMode; } 
-@override int get hashCode { return Object.hash(description, destinationId, destinationType, errors, id, includesDiscoveriesUntil, lastAttemptedUpdateAt, lastSuccessfulUpdateAt, lastUserUpdateAt, name, policy, updateMode); } 
-@override String toString() { return 'McnCatalogSync(description: $description, destinationId: $destinationId, destinationType: $destinationType, errors: $errors, id: $id, includesDiscoveriesUntil: $includesDiscoveriesUntil, lastAttemptedUpdateAt: $lastAttemptedUpdateAt, lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt, lastUserUpdateAt: $lastUserUpdateAt, name: $name, policy: $policy, updateMode: $updateMode)'; } 
+          updateMode == other.updateMode;
+
+@override int get hashCode => Object.hash(description, destinationId, destinationType, errors, id, includesDiscoveriesUntil, lastAttemptedUpdateAt, lastSuccessfulUpdateAt, lastUserUpdateAt, name, policy, updateMode);
+
+@override String toString() => 'McnCatalogSync(description: $description, destinationId: $destinationId, destinationType: $destinationType, errors: $errors, id: $id, includesDiscoveriesUntil: $includesDiscoveriesUntil, lastAttemptedUpdateAt: $lastAttemptedUpdateAt, lastSuccessfulUpdateAt: $lastSuccessfulUpdateAt, lastUserUpdateAt: $lastUserUpdateAt, name: $name, policy: $policy, updateMode: $updateMode)';
+
  }

@@ -34,12 +34,15 @@ PageShieldUpdateZoneSettingsResponse copyWith({PageShieldEnabled? enabled, PageS
   useCloudflareReportingEndpoint: useCloudflareReportingEndpoint ?? this.useCloudflareReportingEndpoint,
   useConnectionUrlPath: useConnectionUrlPath ?? this.useConnectionUrlPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldUpdateZoneSettingsResponse &&
           enabled == other.enabled &&
           updatedAt == other.updatedAt &&
           useCloudflareReportingEndpoint == other.useCloudflareReportingEndpoint &&
-          useConnectionUrlPath == other.useConnectionUrlPath; } 
-@override int get hashCode { return Object.hash(enabled, updatedAt, useCloudflareReportingEndpoint, useConnectionUrlPath); } 
-@override String toString() { return 'PageShieldUpdateZoneSettingsResponse(enabled: $enabled, updatedAt: $updatedAt, useCloudflareReportingEndpoint: $useCloudflareReportingEndpoint, useConnectionUrlPath: $useConnectionUrlPath)'; } 
+          useConnectionUrlPath == other.useConnectionUrlPath;
+
+@override int get hashCode => Object.hash(enabled, updatedAt, useCloudflareReportingEndpoint, useConnectionUrlPath);
+
+@override String toString() => 'PageShieldUpdateZoneSettingsResponse(enabled: $enabled, updatedAt: $updatedAt, useCloudflareReportingEndpoint: $useCloudflareReportingEndpoint, useConnectionUrlPath: $useConnectionUrlPath)';
+
  }

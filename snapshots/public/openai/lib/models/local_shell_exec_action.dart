@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellExecActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellExecActionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LocalShellExecActionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LocalShellExecActionType($value)';
+
  }
 /// Execute a shell command on the server.
 @immutable final class LocalShellExecAction {const LocalShellExecAction({required this.command, required this.env, this.type = LocalShellExecActionType.exec, this.timeoutMs, this.workingDirectory, this.user, });
@@ -71,14 +74,17 @@ LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? com
   env: env ?? this.env,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellExecAction &&
           type == other.type &&
           listEquals(command, other.command) &&
           timeoutMs == other.timeoutMs &&
           workingDirectory == other.workingDirectory &&
           env == other.env &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(command), timeoutMs, workingDirectory, env, user); } 
-@override String toString() { return 'LocalShellExecAction(type: $type, command: $command, timeoutMs: $timeoutMs, workingDirectory: $workingDirectory, env: $env, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(type, Object.hashAll(command), timeoutMs, workingDirectory, env, user);
+
+@override String toString() => 'LocalShellExecAction(type: $type, command: $command, timeoutMs: $timeoutMs, workingDirectory: $workingDirectory, env: $env, user: $user)';
+
  }

@@ -31,12 +31,15 @@ DnsSettingsDnsView copyWith({DnsSettingsCreatedTime? Function()? createdTime, Dn
   name: name != null ? name() : this.name,
   zones: zones != null ? zones() : this.zones,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsView &&
           createdTime == other.createdTime &&
           modifiedTime == other.modifiedTime &&
           name == other.name &&
-          listEquals(zones, other.zones); } 
-@override int get hashCode { return Object.hash(createdTime, modifiedTime, name, Object.hashAll(zones ?? const [])); } 
-@override String toString() { return 'DnsSettingsDnsView(createdTime: $createdTime, modifiedTime: $modifiedTime, name: $name, zones: $zones)'; } 
+          listEquals(zones, other.zones);
+
+@override int get hashCode => Object.hash(createdTime, modifiedTime, name, Object.hashAll(zones ?? const []));
+
+@override String toString() => 'DnsSettingsDnsView(createdTime: $createdTime, modifiedTime: $modifiedTime, name: $name, zones: $zones)';
+
  }

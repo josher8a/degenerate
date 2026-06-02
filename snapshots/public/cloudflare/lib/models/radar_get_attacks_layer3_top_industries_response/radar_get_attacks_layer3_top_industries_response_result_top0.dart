@@ -23,10 +23,13 @@ RadarGetAttacksLayer3TopIndustriesResponseResultTop0 copyWith({String? name, Str
   name: name ?? this.name,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopIndustriesResponseResultTop0 &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'RadarGetAttacksLayer3TopIndustriesResponseResultTop0(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'RadarGetAttacksLayer3TopIndustriesResponseResultTop0(name: $name, value: $value)';
+
  }

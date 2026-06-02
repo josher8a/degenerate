@@ -46,7 +46,7 @@ ExtendedPet copyWith({int? id, String? name, PetStatus? Function()? status, Stri
   weight: weight != null ? weight() : this.weight,
   owner: owner != null ? owner() : this.owner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExtendedPet &&
           id == other.id &&
           name == other.name &&
@@ -54,7 +54,10 @@ ExtendedPet copyWith({int? id, String? name, PetStatus? Function()? status, Stri
           breed == other.breed &&
           vaccinated == other.vaccinated &&
           weight == other.weight &&
-          owner == other.owner; } 
-@override int get hashCode { return Object.hash(id, name, status, breed, vaccinated, weight, owner); } 
-@override String toString() { return 'ExtendedPet(id: $id, name: $name, status: $status, breed: $breed, vaccinated: $vaccinated, weight: $weight, owner: $owner)'; } 
+          owner == other.owner;
+
+@override int get hashCode => Object.hash(id, name, status, breed, vaccinated, weight, owner);
+
+@override String toString() => 'ExtendedPet(id: $id, name: $name, status: $status, breed: $breed, vaccinated: $vaccinated, weight: $weight, owner: $owner)';
+
  }

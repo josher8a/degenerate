@@ -17,7 +17,8 @@ final class RadarGetAsBotnetThreatFeedError$400 extends RadarGetAsBotnetThreatFe
 
 final RadarGetAsBotnetThreatFeedResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAsBotnetThreatFeedError$Unknown extends RadarGetAsBotnetThreatFeedError {const RadarGetAsBotnetThreatFeedError$Unknown(this.statusCode, this.rawBody, );
 

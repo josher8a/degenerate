@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EvalObject($value)';
+
  }
 /// An Eval object with a data source config and testing criteria.
 /// An Eval represents a task to be done for your LLM integration.
@@ -88,7 +91,7 @@ Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfi
   createdAt: createdAt ?? this.createdAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Eval &&
           object == other.object &&
           id == other.id &&
@@ -96,7 +99,10 @@ Eval copyWith({EvalObject? object, String? id, String? name, EvalDataSourceConfi
           dataSourceConfig == other.dataSourceConfig &&
           listEquals(testingCriteria, other.testingCriteria) &&
           createdAt == other.createdAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(object, id, name, dataSourceConfig, Object.hashAll(testingCriteria), createdAt, metadata); } 
-@override String toString() { return 'Eval(object: $object, id: $id, name: $name, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria, createdAt: $createdAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(object, id, name, dataSourceConfig, Object.hashAll(testingCriteria), createdAt, metadata);
+
+@override String toString() => 'Eval(object: $object, id: $id, name: $name, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria, createdAt: $createdAt, metadata: $metadata)';
+
  }

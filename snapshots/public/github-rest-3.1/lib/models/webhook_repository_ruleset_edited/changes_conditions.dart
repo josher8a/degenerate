@@ -25,11 +25,14 @@ ChangesConditions copyWith({List<RepositoryRulesetConditions>? Function()? added
   deleted: deleted != null ? deleted() : this.deleted,
   updated: updated != null ? updated() : this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesConditions &&
           listEquals(added, other.added) &&
           listEquals(deleted, other.deleted) &&
-          listEquals(updated, other.updated); } 
-@override int get hashCode { return Object.hash(Object.hashAll(added ?? const []), Object.hashAll(deleted ?? const []), Object.hashAll(updated ?? const [])); } 
-@override String toString() { return 'ChangesConditions(added: $added, deleted: $deleted, updated: $updated)'; } 
+          listEquals(updated, other.updated);
+
+@override int get hashCode => Object.hash(Object.hashAll(added ?? const []), Object.hashAll(deleted ?? const []), Object.hashAll(updated ?? const []));
+
+@override String toString() => 'ChangesConditions(added: $added, deleted: $deleted, updated: $updated)';
+
  }

@@ -26,10 +26,13 @@ AaaAuditLogsResource copyWith({String? Function()? id, String? Function()? type,
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsResource &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, type); } 
-@override String toString() { return 'AaaAuditLogsResource(id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, type);
+
+@override String toString() => 'AaaAuditLogsResource(id: $id, type: $type)';
+
  }

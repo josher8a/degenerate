@@ -54,7 +54,7 @@ DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Functi
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   profileId: profileId ?? this.profileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewPredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -62,7 +62,10 @@ DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Functi
           contextAwareness == other.contextAwareness &&
           listEquals(entries, other.entries) &&
           ocrEnabled == other.ocrEnabled &&
-          profileId == other.profileId; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries ?? const []), ocrEnabled, profileId); } 
-@override String toString() { return 'DlpNewPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, ocrEnabled: $ocrEnabled, profileId: $profileId)'; } 
+          profileId == other.profileId;
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries ?? const []), ocrEnabled, profileId);
+
+@override String toString() => 'DlpNewPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, ocrEnabled: $ocrEnabled, profileId: $profileId)';
+
  }

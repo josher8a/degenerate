@@ -38,12 +38,15 @@ GraderPython copyWith({EvalGraderPythonType? type, String? name, String? source,
   source: source ?? this.source,
   imageTag: imageTag != null ? imageTag() : this.imageTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GraderPython &&
           type == other.type &&
           name == other.name &&
           source == other.source &&
-          imageTag == other.imageTag; } 
-@override int get hashCode { return Object.hash(type, name, source, imageTag); } 
-@override String toString() { return 'GraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag)'; } 
+          imageTag == other.imageTag;
+
+@override int get hashCode => Object.hash(type, name, source, imageTag);
+
+@override String toString() => 'GraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag)';
+
  }

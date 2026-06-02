@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicePaymentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicePaymentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoicePaymentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoicePaymentObject($value)';
+
  }
 /// Invoice Payments represent payments made against invoices. Invoice Payments can
 /// be accessed in two ways:
@@ -126,7 +129,7 @@ InvoicePayment copyWith({int? Function()? amountPaid, int? amountRequested, int?
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePayment &&
           amountPaid == other.amountPaid &&
           amountRequested == other.amountRequested &&
@@ -139,7 +142,10 @@ InvoicePayment copyWith({int? Function()? amountPaid, int? amountRequested, int?
           object == other.object &&
           payment == other.payment &&
           status == other.status &&
-          statusTransitions == other.statusTransitions; } 
-@override int get hashCode { return Object.hash(amountPaid, amountRequested, created, currency, id, invoice, isDefault, livemode, object, payment, status, statusTransitions); } 
-@override String toString() { return 'InvoicePayment(amountPaid: $amountPaid, amountRequested: $amountRequested, created: $created, currency: $currency, id: $id, invoice: $invoice, isDefault: $isDefault, livemode: $livemode, object: $object, payment: $payment, status: $status, statusTransitions: $statusTransitions)'; } 
+          statusTransitions == other.statusTransitions;
+
+@override int get hashCode => Object.hash(amountPaid, amountRequested, created, currency, id, invoice, isDefault, livemode, object, payment, status, statusTransitions);
+
+@override String toString() => 'InvoicePayment(amountPaid: $amountPaid, amountRequested: $amountRequested, created: $created, currency: $currency, id: $id, invoice: $invoice, isDefault: $isDefault, livemode: $livemode, object: $object, payment: $payment, status: $status, statusTransitions: $statusTransitions)';
+
  }

@@ -60,7 +60,7 @@ WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? 
   dependencies: dependencies != null ? dependencies() : this.dependencies,
   commitOid: commitOid != null ? commitOid() : this.commitOid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRubygemsMetadata &&
           name == other.name &&
           description == other.description &&
@@ -71,7 +71,10 @@ WebhookRubygemsMetadata copyWith({String? Function()? name, String? Function()? 
           metadata == other.metadata &&
           repo == other.repo &&
           listEquals(dependencies, other.dependencies) &&
-          commitOid == other.commitOid; } 
-@override int get hashCode { return Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid); } 
-@override String toString() { return 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)'; } 
+          commitOid == other.commitOid;
+
+@override int get hashCode => Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid);
+
+@override String toString() => 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)';
+
  }

@@ -71,7 +71,7 @@ PostIssuingCardholdersCardholderRequest copyWith({Billing? Function()? billing, 
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardholdersCardholderRequest &&
           billing == other.billing &&
           company == other.company &&
@@ -82,7 +82,10 @@ PostIssuingCardholdersCardholderRequest copyWith({Billing? Function()? billing, 
           phoneNumber == other.phoneNumber &&
           listEquals(preferredLocales, other.preferredLocales) &&
           spendingControls == other.spendingControls &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(billing, company, email, Object.hashAll(expand ?? const []), individual, metadata, phoneNumber, Object.hashAll(preferredLocales ?? const []), spendingControls, status); } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequest(billing: $billing, company: $company, email: $email, expand: $expand, individual: $individual, metadata: $metadata, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, spendingControls: $spendingControls, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(billing, company, email, Object.hashAll(expand ?? const []), individual, metadata, phoneNumber, Object.hashAll(preferredLocales ?? const []), spendingControls, status);
+
+@override String toString() => 'PostIssuingCardholdersCardholderRequest(billing: $billing, company: $company, email: $email, expand: $expand, individual: $individual, metadata: $metadata, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, spendingControls: $spendingControls, status: $status)';
+
  }

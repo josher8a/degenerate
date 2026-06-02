@@ -27,11 +27,14 @@ PaymentLinksResourceAfterCompletion copyWith({PaymentLinksResourceCompletionBeha
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceAfterCompletion &&
           hostedConfirmation == other.hostedConfirmation &&
           redirect == other.redirect &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(hostedConfirmation, redirect, type); } 
-@override String toString() { return 'PaymentLinksResourceAfterCompletion(hostedConfirmation: $hostedConfirmation, redirect: $redirect, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(hostedConfirmation, redirect, type);
+
+@override String toString() => 'PaymentLinksResourceAfterCompletion(hostedConfirmation: $hostedConfirmation, redirect: $redirect, type: $type)';
+
  }

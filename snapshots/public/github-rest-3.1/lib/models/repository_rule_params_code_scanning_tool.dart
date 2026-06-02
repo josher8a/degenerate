@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AlertsThreshold && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AlertsThreshold($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AlertsThreshold && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AlertsThreshold($value)';
+
  }
 /// The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
 @immutable final class SecurityAlertsThreshold {const SecurityAlertsThreshold._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecurityAlertsThreshold && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecurityAlertsThreshold($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SecurityAlertsThreshold && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SecurityAlertsThreshold($value)';
+
  }
 /// A tool that must provide code scanning results for this rule to pass.
 @immutable final class RepositoryRuleParamsCodeScanningTool {const RepositoryRuleParamsCodeScanningTool({required this.alertsThreshold, required this.securityAlertsThreshold, required this.tool, });
@@ -96,11 +102,14 @@ RepositoryRuleParamsCodeScanningTool copyWith({AlertsThreshold? alertsThreshold,
   securityAlertsThreshold: securityAlertsThreshold ?? this.securityAlertsThreshold,
   tool: tool ?? this.tool,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsCodeScanningTool &&
           alertsThreshold == other.alertsThreshold &&
           securityAlertsThreshold == other.securityAlertsThreshold &&
-          tool == other.tool; } 
-@override int get hashCode { return Object.hash(alertsThreshold, securityAlertsThreshold, tool); } 
-@override String toString() { return 'RepositoryRuleParamsCodeScanningTool(alertsThreshold: $alertsThreshold, securityAlertsThreshold: $securityAlertsThreshold, tool: $tool)'; } 
+          tool == other.tool;
+
+@override int get hashCode => Object.hash(alertsThreshold, securityAlertsThreshold, tool);
+
+@override String toString() => 'RepositoryRuleParamsCodeScanningTool(alertsThreshold: $alertsThreshold, securityAlertsThreshold: $securityAlertsThreshold, tool: $tool)';
+
  }

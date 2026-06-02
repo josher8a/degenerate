@@ -35,11 +35,14 @@ RulesetsSetConfigAutominify copyWith({bool Function()? css, bool Function()? htm
   html: html != null ? html() : this.html,
   js: js != null ? js() : this.js,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetConfigAutominify &&
           css == other.css &&
           html == other.html &&
-          js == other.js; } 
-@override int get hashCode { return Object.hash(css, html, js); } 
-@override String toString() { return 'RulesetsSetConfigAutominify(css: $css, html: $html, js: $js)'; } 
+          js == other.js;
+
+@override int get hashCode => Object.hash(css, html, js);
+
+@override String toString() => 'RulesetsSetConfigAutominify(css: $css, html: $html, js: $js)';
+
  }

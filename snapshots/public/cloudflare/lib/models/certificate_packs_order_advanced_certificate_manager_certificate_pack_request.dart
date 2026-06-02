@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesAdvancedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesAdvancedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesAdvancedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesAdvancedType($value)';
+
  }
 @immutable final class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest({required this.certificateAuthority, required this.hosts, required this.type, required this.validationMethod, required this.validityDays, this.cloudflareBranding, });
 
@@ -72,14 +75,17 @@ CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest copyWith({
   validationMethod: validationMethod ?? this.validationMethod,
   validityDays: validityDays ?? this.validityDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest &&
           certificateAuthority == other.certificateAuthority &&
           cloudflareBranding == other.cloudflareBranding &&
           listEquals(hosts, other.hosts) &&
           type == other.type &&
           validationMethod == other.validationMethod &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(certificateAuthority, cloudflareBranding, Object.hashAll(hosts), type, validationMethod, validityDays); } 
-@override String toString() { return 'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, hosts: $hosts, type: $type, validationMethod: $validationMethod, validityDays: $validityDays)'; } 
+          validityDays == other.validityDays;
+
+@override int get hashCode => Object.hash(certificateAuthority, cloudflareBranding, Object.hashAll(hosts), type, validationMethod, validityDays);
+
+@override String toString() => 'CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest(certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, hosts: $hosts, type: $type, validationMethod: $validationMethod, validityDays: $validityDays)';
+
  }

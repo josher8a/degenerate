@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd copyWith({List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEndConditions>? Function()? conditions}) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd &&
-          listEquals(conditions, other.conditions); } 
-@override int get hashCode { return Object.hashAll(conditions ?? const []); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(conditions: $conditions)'; } 
+          listEquals(conditions, other.conditions);
+
+@override int get hashCode => Object.hashAll(conditions ?? const []);
+
+@override String toString() => 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateScheduleAtPeriodEnd(conditions: $conditions)';
+
  }

@@ -17,7 +17,8 @@ final class FetchGatewaysError$404 extends FetchGatewaysError {const FetchGatewa
 
 final FetchGatewaysResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class FetchGatewaysError$Unknown extends FetchGatewaysError {const FetchGatewaysError$Unknown(this.statusCode, this.rawBody, );
 

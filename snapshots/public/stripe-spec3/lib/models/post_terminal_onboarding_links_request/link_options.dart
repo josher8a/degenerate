@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LinkOptions copyWith({AppleTermsAndConditions? Function()? appleTermsAndConditions}) { return LinkOptions(
   appleTermsAndConditions: appleTermsAndConditions != null ? appleTermsAndConditions() : this.appleTermsAndConditions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LinkOptions &&
-          appleTermsAndConditions == other.appleTermsAndConditions; } 
-@override int get hashCode { return appleTermsAndConditions.hashCode; } 
-@override String toString() { return 'LinkOptions(appleTermsAndConditions: $appleTermsAndConditions)'; } 
+          appleTermsAndConditions == other.appleTermsAndConditions;
+
+@override int get hashCode => appleTermsAndConditions.hashCode;
+
+@override String toString() => 'LinkOptions(appleTermsAndConditions: $appleTermsAndConditions)';
+
  }

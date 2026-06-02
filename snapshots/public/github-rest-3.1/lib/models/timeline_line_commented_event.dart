@@ -26,11 +26,14 @@ TimelineLineCommentedEvent copyWith({String? Function()? event, String? Function
   nodeId: nodeId != null ? nodeId() : this.nodeId,
   comments: comments != null ? comments() : this.comments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineLineCommentedEvent &&
           event == other.event &&
           nodeId == other.nodeId &&
-          listEquals(comments, other.comments); } 
-@override int get hashCode { return Object.hash(event, nodeId, Object.hashAll(comments ?? const [])); } 
-@override String toString() { return 'TimelineLineCommentedEvent(event: $event, nodeId: $nodeId, comments: $comments)'; } 
+          listEquals(comments, other.comments);
+
+@override int get hashCode => Object.hash(event, nodeId, Object.hashAll(comments ?? const []));
+
+@override String toString() => 'TimelineLineCommentedEvent(event: $event, nodeId: $nodeId, comments: $comments)';
+
  }

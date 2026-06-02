@@ -17,7 +17,8 @@ final class RadarGetOriginPostQuantumTimeseriesGroupsError$400 extends RadarGetO
 
 final RadarGetOriginPostQuantumTimeseriesGroupsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetOriginPostQuantumTimeseriesGroupsError$Unknown extends RadarGetOriginPostQuantumTimeseriesGroupsError {const RadarGetOriginPostQuantumTimeseriesGroupsError$Unknown(this.statusCode, this.rawBody, );
 

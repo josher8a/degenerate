@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingAddressValidationResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingAddressValidationResult($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardShippingAddressValidationResult && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardShippingAddressValidationResult($value)';
+
  }
 /// 
 @immutable final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddressValidation({required this.mode, this.normalizedAddress, this.result, });
@@ -57,11 +60,14 @@ IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidat
   normalizedAddress: normalizedAddress != null ? normalizedAddress() : this.normalizedAddress,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardShippingAddressValidation &&
           mode == other.mode &&
           normalizedAddress == other.normalizedAddress &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(mode, normalizedAddress, result); } 
-@override String toString() { return 'IssuingCardShippingAddressValidation(mode: $mode, normalizedAddress: $normalizedAddress, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(mode, normalizedAddress, result);
+
+@override String toString() => 'IssuingCardShippingAddressValidation(mode: $mode, normalizedAddress: $normalizedAddress, result: $result)';
+
  }

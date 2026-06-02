@@ -36,12 +36,15 @@ ProjectsCreateViewForOrgRequest copyWith({String? name, Layout? layout, String? 
   filter: filter != null ? filter() : this.filter,
   visibleFields: visibleFields != null ? visibleFields() : this.visibleFields,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectsCreateViewForOrgRequest &&
           name == other.name &&
           layout == other.layout &&
           filter == other.filter &&
-          listEquals(visibleFields, other.visibleFields); } 
-@override int get hashCode { return Object.hash(name, layout, filter, Object.hashAll(visibleFields ?? const [])); } 
-@override String toString() { return 'ProjectsCreateViewForOrgRequest(name: $name, layout: $layout, filter: $filter, visibleFields: $visibleFields)'; } 
+          listEquals(visibleFields, other.visibleFields);
+
+@override int get hashCode => Object.hash(name, layout, filter, Object.hashAll(visibleFields ?? const []));
+
+@override String toString() => 'ProjectsCreateViewForOrgRequest(name: $name, layout: $layout, filter: $filter, visibleFields: $visibleFields)';
+
  }

@@ -27,10 +27,13 @@ TeamsDevicesKolideConfigRequest copyWith({String? clientId, String? clientSecret
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesKolideConfigRequest &&
           clientId == other.clientId &&
-          clientSecret == other.clientSecret; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret); } 
-@override String toString() { return 'TeamsDevicesKolideConfigRequest(clientId: $clientId, clientSecret: $clientSecret)'; } 
+          clientSecret == other.clientSecret;
+
+@override int get hashCode => Object.hash(clientId, clientSecret);
+
+@override String toString() => 'TeamsDevicesKolideConfigRequest(clientId: $clientId, clientSecret: $clientSecret)';
+
  }

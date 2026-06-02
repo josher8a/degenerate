@@ -22,10 +22,13 @@ StreamInput copyWith({int? Function()? height, int? Function()? width, }) { retu
   height: height != null ? height() : this.height,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamInput &&
           height == other.height &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(height, width); } 
-@override String toString() { return 'StreamInput(height: $height, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(height, width);
+
+@override String toString() => 'StreamInput(height: $height, width: $width)';
+
  }

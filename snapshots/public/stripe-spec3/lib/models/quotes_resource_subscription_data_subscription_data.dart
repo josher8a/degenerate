@@ -47,13 +47,16 @@ QuotesResourceSubscriptionDataSubscriptionData copyWith({QuotesResourceSubscript
   metadata: metadata != null ? metadata() : this.metadata,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceSubscriptionDataSubscriptionData &&
           billingMode == other.billingMode &&
           description == other.description &&
           effectiveDate == other.effectiveDate &&
           metadata == other.metadata &&
-          trialPeriodDays == other.trialPeriodDays; } 
-@override int get hashCode { return Object.hash(billingMode, description, effectiveDate, metadata, trialPeriodDays); } 
-@override String toString() { return 'QuotesResourceSubscriptionDataSubscriptionData(billingMode: $billingMode, description: $description, effectiveDate: $effectiveDate, metadata: $metadata, trialPeriodDays: $trialPeriodDays)'; } 
+          trialPeriodDays == other.trialPeriodDays;
+
+@override int get hashCode => Object.hash(billingMode, description, effectiveDate, metadata, trialPeriodDays);
+
+@override String toString() => 'QuotesResourceSubscriptionDataSubscriptionData(billingMode: $billingMode, description: $description, effectiveDate: $effectiveDate, metadata: $metadata, trialPeriodDays: $trialPeriodDays)';
+
  }

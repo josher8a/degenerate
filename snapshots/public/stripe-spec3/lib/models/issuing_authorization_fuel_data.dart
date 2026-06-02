@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFuelDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFuelDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFuelDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationFuelDataType($value)';
+
  }
 /// The units for `quantity_decimal`.
 @immutable final class IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit._(this.value);
@@ -72,10 +75,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFuelDataUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFuelDataUnit($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFuelDataUnit && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationFuelDataUnit($value)';
+
  }
 /// 
 @immutable final class IssuingAuthorizationFuelData {const IssuingAuthorizationFuelData({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
@@ -125,13 +131,16 @@ IssuingAuthorizationFuelData copyWith({String? Function()? industryProductCode, 
   unit: unit != null ? unit() : this.unit,
   unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFuelData &&
           industryProductCode == other.industryProductCode &&
           quantityDecimal == other.quantityDecimal &&
           type == other.type &&
           unit == other.unit &&
-          unitCostDecimal == other.unitCostDecimal; } 
-@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
-@override String toString() { return 'IssuingAuthorizationFuelData(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
+          unitCostDecimal == other.unitCostDecimal;
+
+@override int get hashCode => Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal);
+
+@override String toString() => 'IssuingAuthorizationFuelData(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMicrosoftPhi2Error$400 extends WorkersAiPostRunCfM
 
 final WorkersAiPostRunCfMicrosoftPhi2Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMicrosoftPhi2Error$Unknown extends WorkersAiPostRunCfMicrosoftPhi2Error {const WorkersAiPostRunCfMicrosoftPhi2Error$Unknown(this.statusCode, this.rawBody, );
 

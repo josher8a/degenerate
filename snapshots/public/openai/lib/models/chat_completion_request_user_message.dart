@@ -33,11 +33,14 @@ ChatCompletionRequestUserMessage copyWith({ChatCompletionRequestUserMessageConte
   role: role ?? this.role,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestUserMessage &&
           content == other.content &&
           role == other.role &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(content, role, name); } 
-@override String toString() { return 'ChatCompletionRequestUserMessage(content: $content, role: $role, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(content, role, name);
+
+@override String toString() => 'ChatCompletionRequestUserMessage(content: $content, role: $role, name: $name)';
+
  }

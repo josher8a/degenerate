@@ -111,7 +111,7 @@ HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redel
   request: request ?? this.request,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HookDelivery &&
           id == other.id &&
           guid == other.guid &&
@@ -127,7 +127,10 @@ HookDelivery copyWith({int? id, String? guid, DateTime? deliveredAt, bool? redel
           throttledAt == other.throttledAt &&
           url == other.url &&
           request == other.request &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(id, guid, deliveredAt, redelivery, duration, status, statusCode, event, action, installationId, repositoryId, throttledAt, url, request, response); } 
-@override String toString() { return 'HookDelivery(id: $id, guid: $guid, deliveredAt: $deliveredAt, redelivery: $redelivery, duration: $duration, status: $status, statusCode: $statusCode, event: $event, action: $action, installationId: $installationId, repositoryId: $repositoryId, throttledAt: $throttledAt, url: $url, request: $request, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(id, guid, deliveredAt, redelivery, duration, status, statusCode, event, action, installationId, repositoryId, throttledAt, url, request, response);
+
+@override String toString() => 'HookDelivery(id: $id, guid: $guid, deliveredAt: $deliveredAt, redelivery: $redelivery, duration: $duration, status: $status, statusCode: $statusCode, event: $event, action: $action, installationId: $installationId, repositoryId: $repositoryId, throttledAt: $throttledAt, url: $url, request: $request, response: $response)';
+
  }

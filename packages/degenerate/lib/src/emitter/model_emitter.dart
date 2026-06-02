@@ -497,8 +497,8 @@ class ModelEmitter {
     }
 
     final body = allComparisons.isEmpty
-        ? 'return identical(this, other) || other is ${model.name};'
-        : 'return identical(this, other) ||\n      other is ${model.name} &&\n          $allComparisons;';
+        ? 'identical(this, other) || other is ${model.name}'
+        : 'identical(this, other) ||\n      other is ${model.name} &&\n          $allComparisons';
 
     return buildEqualsOverride(body);
   }
@@ -518,16 +518,14 @@ class ModelEmitter {
 
     final String body;
     if (fieldExprs.isEmpty) {
-      body = 'return runtimeType.hashCode;';
+      body = 'runtimeType.hashCode';
     } else if (fieldExprs.length == 1) {
       final expr = fieldExprs.first;
-      body = expr.startsWith('Object.')
-          ? 'return $expr;'
-          : 'return $expr.hashCode;';
+      body = expr.startsWith('Object.') ? expr : '$expr.hashCode';
     } else if (fieldExprs.length <= 20) {
-      body = 'return Object.hash(${fieldExprs.join(', ')});';
+      body = 'Object.hash(${fieldExprs.join(', ')})';
     } else {
-      body = 'return Object.hashAll([${fieldExprs.join(', ')}]);';
+      body = 'Object.hashAll([${fieldExprs.join(', ')}])';
     }
 
     return buildHashCodeOverride(body);
@@ -541,7 +539,7 @@ class ModelEmitter {
     }
 
     return buildToStringOverride(
-      "return '${escapeNameForString(model.name)}($fieldStr)';",
+      "'${escapeNameForString(model.name)}($fieldStr)'",
     );
   }
 

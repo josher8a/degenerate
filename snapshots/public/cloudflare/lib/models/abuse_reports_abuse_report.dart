@@ -72,7 +72,7 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
   type: type ?? this.type,
   urls: urls != null ? urls() : this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsAbuseReport &&
           cdate == other.cdate &&
           domain == other.domain &&
@@ -83,7 +83,10 @@ AbuseReportsAbuseReport copyWith({String? cdate, String? domain, String? id, Str
           status == other.status &&
           submitter == other.submitter &&
           type == other.type &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(cdate, domain, id, justification, mitigationSummary, originalWork, status, submitter, type, Object.hashAll(urls ?? const [])); } 
-@override String toString() { return 'AbuseReportsAbuseReport(cdate: $cdate, domain: $domain, id: $id, justification: $justification, mitigationSummary: $mitigationSummary, originalWork: $originalWork, status: $status, submitter: $submitter, type: $type, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(cdate, domain, id, justification, mitigationSummary, originalWork, status, submitter, type, Object.hashAll(urls ?? const []));
+
+@override String toString() => 'AbuseReportsAbuseReport(cdate: $cdate, domain: $domain, id: $id, justification: $justification, mitigationSummary: $mitigationSummary, originalWork: $originalWork, status: $status, submitter: $submitter, type: $type, urls: $urls)';
+
  }

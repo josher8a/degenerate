@@ -35,12 +35,15 @@ ZeroTrustGatewayNotificationSettings copyWith({bool? Function()? enabled, bool? 
   msg: msg != null ? msg() : this.msg,
   supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayNotificationSettings &&
           enabled == other.enabled &&
           includeContext == other.includeContext &&
           msg == other.msg &&
-          supportUrl == other.supportUrl; } 
-@override int get hashCode { return Object.hash(enabled, includeContext, msg, supportUrl); } 
-@override String toString() { return 'ZeroTrustGatewayNotificationSettings(enabled: $enabled, includeContext: $includeContext, msg: $msg, supportUrl: $supportUrl)'; } 
+          supportUrl == other.supportUrl;
+
+@override int get hashCode => Object.hash(enabled, includeContext, msg, supportUrl);
+
+@override String toString() => 'ZeroTrustGatewayNotificationSettings(enabled: $enabled, includeContext: $includeContext, msg: $msg, supportUrl: $supportUrl)';
+
  }

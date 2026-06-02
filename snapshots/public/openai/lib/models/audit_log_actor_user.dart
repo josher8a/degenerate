@@ -23,10 +23,13 @@ AuditLogActorUser copyWith({String? Function()? id, String? Function()? email, }
   id: id != null ? id() : this.id,
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuditLogActorUser &&
           id == other.id &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(id, email); } 
-@override String toString() { return 'AuditLogActorUser(id: $id, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(id, email);
+
+@override String toString() => 'AuditLogActorUser(id: $id, email: $email)';
+
  }

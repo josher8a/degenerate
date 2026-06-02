@@ -22,10 +22,13 @@ PostSubscriptionSchedulesScheduleReleaseRequest copyWith({List<String>? Function
   expand: expand != null ? expand() : this.expand,
   preserveCancelDate: preserveCancelDate != null ? preserveCancelDate() : this.preserveCancelDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleReleaseRequest &&
           listEquals(expand, other.expand) &&
-          preserveCancelDate == other.preserveCancelDate; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), preserveCancelDate); } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleReleaseRequest(expand: $expand, preserveCancelDate: $preserveCancelDate)'; } 
+          preserveCancelDate == other.preserveCancelDate;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), preserveCancelDate);
+
+@override String toString() => 'PostSubscriptionSchedulesScheduleReleaseRequest(expand: $expand, preserveCancelDate: $preserveCancelDate)';
+
  }

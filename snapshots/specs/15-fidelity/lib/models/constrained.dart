@@ -48,12 +48,15 @@ Constrained copyWith({String? name, int? age, double? Function()? score, List<dy
   score: score != null ? score() : this.score,
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Constrained &&
           name == other.name &&
           age == other.age &&
           score == other.score &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(name, age, score, Object.hashAll(items)); } 
-@override String toString() { return 'Constrained(name: $name, age: $age, score: $score, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(name, age, score, Object.hashAll(items));
+
+@override String toString() => 'Constrained(name: $name, age: $age, score: $score, items: $items)';
+
  }

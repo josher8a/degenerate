@@ -53,7 +53,7 @@ RadarGetEntitiesAsnListResponseResultAsns copyWith({String? Function()? aka, int
   orgName: orgName != null ? orgName() : this.orgName,
   website: website != null ? website() : this.website,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesAsnListResponseResultAsns &&
           aka == other.aka &&
           asn == other.asn &&
@@ -61,7 +61,10 @@ RadarGetEntitiesAsnListResponseResultAsns copyWith({String? Function()? aka, int
           countryName == other.countryName &&
           name == other.name &&
           orgName == other.orgName &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(aka, asn, country, countryName, name, orgName, website); } 
-@override String toString() { return 'RadarGetEntitiesAsnListResponseResultAsns(aka: $aka, asn: $asn, country: $country, countryName: $countryName, name: $name, orgName: $orgName, website: $website)'; } 
+          website == other.website;
+
+@override int get hashCode => Object.hash(aka, asn, country, countryName, name, orgName, website);
+
+@override String toString() => 'RadarGetEntitiesAsnListResponseResultAsns(aka: $aka, asn: $asn, country: $country, countryName: $countryName, name: $name, orgName: $orgName, website: $website)';
+
  }

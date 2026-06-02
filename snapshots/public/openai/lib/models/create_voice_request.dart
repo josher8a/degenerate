@@ -34,11 +34,14 @@ CreateVoiceRequest copyWith({String? name, Uint8List? audioSample, String? conse
   audioSample: audioSample ?? this.audioSample,
   consent: consent ?? this.consent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVoiceRequest &&
           name == other.name &&
           audioSample == other.audioSample &&
-          consent == other.consent; } 
-@override int get hashCode { return Object.hash(name, audioSample, consent); } 
-@override String toString() { return 'CreateVoiceRequest(name: $name, audioSample: $audioSample, consent: $consent)'; } 
+          consent == other.consent;
+
+@override int get hashCode => Object.hash(name, audioSample, consent);
+
+@override String toString() => 'CreateVoiceRequest(name: $name, audioSample: $audioSample, consent: $consent)';
+
  }

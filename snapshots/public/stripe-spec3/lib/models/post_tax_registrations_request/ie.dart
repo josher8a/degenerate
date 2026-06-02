@@ -20,10 +20,13 @@ Ie copyWith({AtStandard? Function()? standard, TaxProductRegistrationsResourceCo
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Ie &&
           standard == other.standard &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(standard, type); } 
-@override String toString() { return 'Ie(standard: $standard, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(standard, type);
+
+@override String toString() => 'Ie(standard: $standard, type: $type)';
+
  }

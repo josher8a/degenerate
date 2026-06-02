@@ -28,11 +28,14 @@ PostTaxSettingsRequest copyWith({Defaults? Function()? defaults, List<String>? F
   expand: expand != null ? expand() : this.expand,
   headOffice: headOffice != null ? headOffice() : this.headOffice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxSettingsRequest &&
           defaults == other.defaults &&
           listEquals(expand, other.expand) &&
-          headOffice == other.headOffice; } 
-@override int get hashCode { return Object.hash(defaults, Object.hashAll(expand ?? const []), headOffice); } 
-@override String toString() { return 'PostTaxSettingsRequest(defaults: $defaults, expand: $expand, headOffice: $headOffice)'; } 
+          headOffice == other.headOffice;
+
+@override int get hashCode => Object.hash(defaults, Object.hashAll(expand ?? const []), headOffice);
+
+@override String toString() => 'PostTaxSettingsRequest(defaults: $defaults, expand: $expand, headOffice: $headOffice)';
+
  }

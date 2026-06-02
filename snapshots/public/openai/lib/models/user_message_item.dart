@@ -65,7 +65,7 @@ UserMessageItem copyWith({String? id, AssistantMessageItemObject? object, int? c
   attachments: attachments ?? this.attachments,
   inferenceOptions: inferenceOptions != null ? inferenceOptions() : this.inferenceOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserMessageItem &&
           id == other.id &&
           object == other.object &&
@@ -74,7 +74,10 @@ UserMessageItem copyWith({String? id, AssistantMessageItemObject? object, int? c
           type == other.type &&
           listEquals(content, other.content) &&
           listEquals(attachments, other.attachments) &&
-          inferenceOptions == other.inferenceOptions; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content), Object.hashAll(attachments), inferenceOptions); } 
-@override String toString() { return 'UserMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content, attachments: $attachments, inferenceOptions: $inferenceOptions)'; } 
+          inferenceOptions == other.inferenceOptions;
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content), Object.hashAll(attachments), inferenceOptions);
+
+@override String toString() => 'UserMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content, attachments: $attachments, inferenceOptions: $inferenceOptions)';
+
  }

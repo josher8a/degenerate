@@ -51,13 +51,16 @@ StrictTransportSecurity copyWith({bool? Function()? enabled, bool? Function()? i
   nosniff: nosniff != null ? nosniff() : this.nosniff,
   preload: preload != null ? preload() : this.preload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StrictTransportSecurity &&
           enabled == other.enabled &&
           includeSubdomains == other.includeSubdomains &&
           maxAge == other.maxAge &&
           nosniff == other.nosniff &&
-          preload == other.preload; } 
-@override int get hashCode { return Object.hash(enabled, includeSubdomains, maxAge, nosniff, preload); } 
-@override String toString() { return 'StrictTransportSecurity(enabled: $enabled, includeSubdomains: $includeSubdomains, maxAge: $maxAge, nosniff: $nosniff, preload: $preload)'; } 
+          preload == other.preload;
+
+@override int get hashCode => Object.hash(enabled, includeSubdomains, maxAge, nosniff, preload);
+
+@override String toString() => 'StrictTransportSecurity(enabled: $enabled, includeSubdomains: $includeSubdomains, maxAge: $maxAge, nosniff: $nosniff, preload: $preload)';
+
  }

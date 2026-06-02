@@ -17,7 +17,8 @@ final class SecretScanningCreatePushProtectionBypassError$503 extends SecretScan
 
 final SecretScanningCreatePushProtectionBypassResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SecretScanningCreatePushProtectionBypassError$Unknown extends SecretScanningCreatePushProtectionBypassError {const SecretScanningCreatePushProtectionBypassError$Unknown(this.statusCode, this.rawBody, );
 

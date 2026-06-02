@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('oidc'
 AccessOidcClaimRule copyWith({Oidc? oidc}) { return AccessOidcClaimRule(
   oidc: oidc ?? this.oidc,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOidcClaimRule &&
-          oidc == other.oidc; } 
-@override int get hashCode { return oidc.hashCode; } 
-@override String toString() { return 'AccessOidcClaimRule(oidc: $oidc)'; } 
+          oidc == other.oidc;
+
+@override int get hashCode => oidc.hashCode;
+
+@override String toString() => 'AccessOidcClaimRule(oidc: $oidc)';
+
  }

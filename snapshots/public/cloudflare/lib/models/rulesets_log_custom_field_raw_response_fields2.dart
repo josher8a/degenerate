@@ -31,10 +31,13 @@ RulesetsLogCustomFieldRawResponseFields2 copyWith({String? name, bool Function()
   name: name ?? this.name,
   preserveDuplicates: preserveDuplicates != null ? preserveDuplicates() : this.preserveDuplicates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsLogCustomFieldRawResponseFields2 &&
           name == other.name &&
-          preserveDuplicates == other.preserveDuplicates; } 
-@override int get hashCode { return Object.hash(name, preserveDuplicates); } 
-@override String toString() { return 'RulesetsLogCustomFieldRawResponseFields2(name: $name, preserveDuplicates: $preserveDuplicates)'; } 
+          preserveDuplicates == other.preserveDuplicates;
+
+@override int get hashCode => Object.hash(name, preserveDuplicates);
+
+@override String toString() => 'RulesetsLogCustomFieldRawResponseFields2(name: $name, preserveDuplicates: $preserveDuplicates)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfLykonDreamshaper8LcmError$400 extends WorkersAiPos
 
 final WorkersAiPostRunCfLykonDreamshaper8LcmResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfLykonDreamshaper8LcmError$Unknown extends WorkersAiPostRunCfLykonDreamshaper8LcmError {const WorkersAiPostRunCfLykonDreamshaper8LcmError$Unknown(this.statusCode, this.rawBody, );
 

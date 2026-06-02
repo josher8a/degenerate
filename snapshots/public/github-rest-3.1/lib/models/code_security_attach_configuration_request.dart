@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityAttachConfigurationRequestScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityAttachConfigurationRequestScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeSecurityAttachConfigurationRequestScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeSecurityAttachConfigurationRequestScope($value)';
+
  }
 @immutable final class CodeSecurityAttachConfigurationRequest {const CodeSecurityAttachConfigurationRequest({required this.scope, this.selectedRepositoryIds, });
 
@@ -56,10 +59,13 @@ CodeSecurityAttachConfigurationRequest copyWith({CodeSecurityAttachConfiguration
   scope: scope ?? this.scope,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityAttachConfigurationRequest &&
           scope == other.scope &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(scope, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'CodeSecurityAttachConfigurationRequest(scope: $scope, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(scope, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'CodeSecurityAttachConfigurationRequest(scope: $scope, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostWebsocketRunCfTestHelloWorldCogError$400 extends Worker
 
 final WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostWebsocketRunCfTestHelloWorldCogError$Unknown extends WorkersAiPostWebsocketRunCfTestHelloWorldCogError {const WorkersAiPostWebsocketRunCfTestHelloWorldCogError$Unknown(this.statusCode, this.rawBody, );
 

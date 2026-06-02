@@ -34,12 +34,15 @@ RumRuleset copyWith({bool? Function()? enabled, RumRulesetIdentifier? Function()
   zoneName: zoneName != null ? zoneName() : this.zoneName,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumRuleset &&
           enabled == other.enabled &&
           id == other.id &&
           zoneName == other.zoneName &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(enabled, id, zoneName, zoneTag); } 
-@override String toString() { return 'RumRuleset(enabled: $enabled, id: $id, zoneName: $zoneName, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(enabled, id, zoneName, zoneTag);
+
+@override String toString() => 'RumRuleset(enabled: $enabled, id: $id, zoneName: $zoneName, zoneTag: $zoneTag)';
+
  }

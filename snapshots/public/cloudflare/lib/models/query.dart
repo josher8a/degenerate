@@ -35,13 +35,16 @@ Query copyWith({DateTime? Function()? maxTime, DateTime? Function()? minTime, bo
   stringMatches: stringMatches != null ? stringMatches() : this.stringMatches,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Query &&
           maxTime == other.maxTime &&
           minTime == other.minTime &&
           scan == other.scan &&
           stringMatches == other.stringMatches &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(maxTime, minTime, scan, stringMatches, tag); } 
-@override String toString() { return 'Query(maxTime: $maxTime, minTime: $minTime, scan: $scan, stringMatches: $stringMatches, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(maxTime, minTime, scan, stringMatches, tag);
+
+@override String toString() => 'Query(maxTime: $maxTime, minTime: $minTime, scan: $scan, stringMatches: $stringMatches, tag: $tag)';
+
  }

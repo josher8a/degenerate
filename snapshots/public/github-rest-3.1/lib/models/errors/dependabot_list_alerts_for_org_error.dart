@@ -20,25 +20,29 @@ final class DependabotListAlertsForOrgError$400 extends DependabotListAlertsForO
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DependabotListAlertsForOrgError$403 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class DependabotListAlertsForOrgError$404 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DependabotListAlertsForOrgError$422 extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class DependabotListAlertsForOrgError$Unknown extends DependabotListAlertsForOrgError {const DependabotListAlertsForOrgError$Unknown(this.statusCode, this.rawBody, );
 

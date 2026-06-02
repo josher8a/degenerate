@@ -137,43 +137,39 @@ final class NextSessionSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is NextSessionSchema &&
-            slug == other.slug &&
-            start == other.start &&
-            link == other.link &&
-            title == other.title &&
-            seatsLeft == other.seatsLeft &&
-            duration == other.duration &&
-            meetingProvider == other.meetingProvider &&
-            calLink == other.calLink &&
-            attending == other.attending &&
-            cancelled == other.cancelled &&
-            open == other.open &&
-            joinable == other.joinable;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NextSessionSchema &&
+          slug == other.slug &&
+          start == other.start &&
+          link == other.link &&
+          title == other.title &&
+          seatsLeft == other.seatsLeft &&
+          duration == other.duration &&
+          meetingProvider == other.meetingProvider &&
+          calLink == other.calLink &&
+          attending == other.attending &&
+          cancelled == other.cancelled &&
+          open == other.open &&
+          joinable == other.joinable;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      slug,
-      start,
-      link,
-      title,
-      seatsLeft,
-      duration,
-      meetingProvider,
-      calLink,
-      attending,
-      cancelled,
-      open,
-      joinable,
-    );
-  }
+  int get hashCode => Object.hash(
+    slug,
+    start,
+    link,
+    title,
+    seatsLeft,
+    duration,
+    meetingProvider,
+    calLink,
+    attending,
+    cancelled,
+    open,
+    joinable,
+  );
 
   @override
-  String toString() {
-    return 'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)';
-  }
+  String toString() =>
+      'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)';
 }

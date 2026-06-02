@@ -34,10 +34,13 @@ PaymentMethodDetailsNaverPay copyWith({String? Function()? buyerId, String? Func
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsNaverPay &&
           buyerId == other.buyerId &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(buyerId, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsNaverPay(buyerId: $buyerId, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(buyerId, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsNaverPay(buyerId: $buyerId, transactionId: $transactionId)';
+
  }

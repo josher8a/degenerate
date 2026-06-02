@@ -21,10 +21,13 @@ CopilotListCopilotSeatsResponse copyWith({int? Function()? totalSeats, List<Copi
   totalSeats: totalSeats != null ? totalSeats() : this.totalSeats,
   seats: seats != null ? seats() : this.seats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotListCopilotSeatsResponse &&
           totalSeats == other.totalSeats &&
-          listEquals(seats, other.seats); } 
-@override int get hashCode { return Object.hash(totalSeats, Object.hashAll(seats ?? const [])); } 
-@override String toString() { return 'CopilotListCopilotSeatsResponse(totalSeats: $totalSeats, seats: $seats)'; } 
+          listEquals(seats, other.seats);
+
+@override int get hashCode => Object.hash(totalSeats, Object.hashAll(seats ?? const []));
+
+@override String toString() => 'CopilotListCopilotSeatsResponse(totalSeats: $totalSeats, seats: $seats)';
+
  }

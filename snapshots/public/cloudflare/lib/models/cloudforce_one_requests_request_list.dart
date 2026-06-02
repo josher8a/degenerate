@@ -81,7 +81,7 @@ CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()
   sortOrder: sortOrder != null ? sortOrder() : this.sortOrder,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestList &&
           completedAfter == other.completedAfter &&
           completedBefore == other.completedBefore &&
@@ -92,7 +92,10 @@ CloudforceOneRequestsRequestList copyWith({CloudforceOneRequestsTime? Function()
           requestType == other.requestType &&
           sortBy == other.sortBy &&
           sortOrder == other.sortOrder &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(completedAfter, completedBefore, createdAfter, createdBefore, page, perPage, requestType, sortBy, sortOrder, status); } 
-@override String toString() { return 'CloudforceOneRequestsRequestList(completedAfter: $completedAfter, completedBefore: $completedBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, perPage: $perPage, requestType: $requestType, sortBy: $sortBy, sortOrder: $sortOrder, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(completedAfter, completedBefore, createdAfter, createdBefore, page, perPage, requestType, sortBy, sortOrder, status);
+
+@override String toString() => 'CloudforceOneRequestsRequestList(completedAfter: $completedAfter, completedBefore: $completedBefore, createdAfter: $createdAfter, createdBefore: $createdBefore, page: $page, perPage: $perPage, requestType: $requestType, sortBy: $sortBy, sortOrder: $sortOrder, status: $status)';
+
  }

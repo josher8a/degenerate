@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemReferenceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemReferenceParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemReferenceParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ItemReferenceParamType($value)';
+
  }
 /// An internal identifier for an item to reference.
 @immutable final class ItemReferenceParam {const ItemReferenceParam({required this.id, this.type, });
@@ -45,10 +48,13 @@ ItemReferenceParam copyWith({ItemReferenceParamType? Function()? type, String? i
   type: type != null ? type() : this.type,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemReferenceParam &&
           type == other.type &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(type, id); } 
-@override String toString() { return 'ItemReferenceParam(type: $type, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(type, id);
+
+@override String toString() => 'ItemReferenceParam(type: $type, id: $id)';
+
  }

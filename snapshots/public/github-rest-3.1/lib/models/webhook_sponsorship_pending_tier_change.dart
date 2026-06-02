@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipPendingTierChangeAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipPendingTierChangeAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSponsorshipPendingTierChangeAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSponsorshipPendingTierChangeAction($value)';
+
  }
 @immutable final class WebhookSponsorshipPendingTierChange {const WebhookSponsorshipPendingTierChange({required this.action, required this.changes, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });
 
@@ -80,7 +83,7 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipPendingTierChange &&
           action == other.action &&
           changes == other.changes &&
@@ -90,7 +93,10 @@ WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChang
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
+          sponsorship == other.sponsorship;
+
+@override int get hashCode => Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship);
+
+@override String toString() => 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
+
  }

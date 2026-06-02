@@ -22,10 +22,13 @@ CreateSkillVersionBody copyWith({CreateSkillBodyFiles? files, bool? Function()? 
   files: files ?? this.files,
   $default: $default != null ? $default() : this.$default,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSkillVersionBody &&
           files == other.files &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(files, $default); } 
-@override String toString() { return 'CreateSkillVersionBody(files: $files, \$default: ${$default})'; } 
+          $default == other.$default;
+
+@override int get hashCode => Object.hash(files, $default);
+
+@override String toString() => 'CreateSkillVersionBody(files: $files, \$default: ${$default})';
+
  }

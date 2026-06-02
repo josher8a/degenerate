@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupingStrategy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupingStrategy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupingStrategy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GroupingStrategy($value)';
+
  }
 /// Method to use when merging changes from queued pull requests.
 @immutable final class ParametersMergeMethod {const ParametersMergeMethod._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ParametersMergeMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ParametersMergeMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ParametersMergeMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ParametersMergeMethod($value)';
+
  }
 @immutable final class RepositoryRuleMergeQueueParameters {const RepositoryRuleMergeQueueParameters({required this.checkResponseTimeoutMinutes, required this.groupingStrategy, required this.maxEntriesToBuild, required this.maxEntriesToMerge, required this.mergeMethod, required this.minEntriesToMerge, required this.minEntriesToMergeWaitMinutes, });
 
@@ -124,7 +130,7 @@ RepositoryRuleMergeQueueParameters copyWith({int? checkResponseTimeoutMinutes, G
   minEntriesToMerge: minEntriesToMerge ?? this.minEntriesToMerge,
   minEntriesToMergeWaitMinutes: minEntriesToMergeWaitMinutes ?? this.minEntriesToMergeWaitMinutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMergeQueueParameters &&
           checkResponseTimeoutMinutes == other.checkResponseTimeoutMinutes &&
           groupingStrategy == other.groupingStrategy &&
@@ -132,7 +138,10 @@ RepositoryRuleMergeQueueParameters copyWith({int? checkResponseTimeoutMinutes, G
           maxEntriesToMerge == other.maxEntriesToMerge &&
           mergeMethod == other.mergeMethod &&
           minEntriesToMerge == other.minEntriesToMerge &&
-          minEntriesToMergeWaitMinutes == other.minEntriesToMergeWaitMinutes; } 
-@override int get hashCode { return Object.hash(checkResponseTimeoutMinutes, groupingStrategy, maxEntriesToBuild, maxEntriesToMerge, mergeMethod, minEntriesToMerge, minEntriesToMergeWaitMinutes); } 
-@override String toString() { return 'RepositoryRuleMergeQueueParameters(checkResponseTimeoutMinutes: $checkResponseTimeoutMinutes, groupingStrategy: $groupingStrategy, maxEntriesToBuild: $maxEntriesToBuild, maxEntriesToMerge: $maxEntriesToMerge, mergeMethod: $mergeMethod, minEntriesToMerge: $minEntriesToMerge, minEntriesToMergeWaitMinutes: $minEntriesToMergeWaitMinutes)'; } 
+          minEntriesToMergeWaitMinutes == other.minEntriesToMergeWaitMinutes;
+
+@override int get hashCode => Object.hash(checkResponseTimeoutMinutes, groupingStrategy, maxEntriesToBuild, maxEntriesToMerge, mergeMethod, minEntriesToMerge, minEntriesToMergeWaitMinutes);
+
+@override String toString() => 'RepositoryRuleMergeQueueParameters(checkResponseTimeoutMinutes: $checkResponseTimeoutMinutes, groupingStrategy: $groupingStrategy, maxEntriesToBuild: $maxEntriesToBuild, maxEntriesToMerge: $maxEntriesToMerge, mergeMethod: $mergeMethod, minEntriesToMerge: $minEntriesToMerge, minEntriesToMergeWaitMinutes: $minEntriesToMergeWaitMinutes)';
+
  }

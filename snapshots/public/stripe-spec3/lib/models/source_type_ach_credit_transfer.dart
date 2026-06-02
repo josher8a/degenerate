@@ -50,7 +50,7 @@ SourceTypeAchCreditTransfer copyWith({String? Function()? accountNumber, String?
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
   swiftCode: swiftCode != null ? swiftCode() : this.swiftCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeAchCreditTransfer &&
           accountNumber == other.accountNumber &&
           bankName == other.bankName &&
@@ -59,7 +59,10 @@ SourceTypeAchCreditTransfer copyWith({String? Function()? accountNumber, String?
           refundAccountHolderType == other.refundAccountHolderType &&
           refundRoutingNumber == other.refundRoutingNumber &&
           routingNumber == other.routingNumber &&
-          swiftCode == other.swiftCode; } 
-@override int get hashCode { return Object.hash(accountNumber, bankName, fingerprint, refundAccountHolderName, refundAccountHolderType, refundRoutingNumber, routingNumber, swiftCode); } 
-@override String toString() { return 'SourceTypeAchCreditTransfer(accountNumber: $accountNumber, bankName: $bankName, fingerprint: $fingerprint, refundAccountHolderName: $refundAccountHolderName, refundAccountHolderType: $refundAccountHolderType, refundRoutingNumber: $refundRoutingNumber, routingNumber: $routingNumber, swiftCode: $swiftCode)'; } 
+          swiftCode == other.swiftCode;
+
+@override int get hashCode => Object.hash(accountNumber, bankName, fingerprint, refundAccountHolderName, refundAccountHolderType, refundRoutingNumber, routingNumber, swiftCode);
+
+@override String toString() => 'SourceTypeAchCreditTransfer(accountNumber: $accountNumber, bankName: $bankName, fingerprint: $fingerprint, refundAccountHolderName: $refundAccountHolderName, refundAccountHolderType: $refundAccountHolderType, refundRoutingNumber: $refundRoutingNumber, routingNumber: $routingNumber, swiftCode: $swiftCode)';
+
  }

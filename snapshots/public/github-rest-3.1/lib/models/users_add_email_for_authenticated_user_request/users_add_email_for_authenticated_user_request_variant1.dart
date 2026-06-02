@@ -29,9 +29,12 @@ return errors; }
 UsersAddEmailForAuthenticatedUserRequestVariant1 copyWith({List<String>? emails}) { return UsersAddEmailForAuthenticatedUserRequestVariant1(
   emails: emails ?? this.emails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersAddEmailForAuthenticatedUserRequestVariant1 &&
-          listEquals(emails, other.emails); } 
-@override int get hashCode { return Object.hashAll(emails); } 
-@override String toString() { return 'UsersAddEmailForAuthenticatedUserRequestVariant1(emails: $emails)'; } 
+          listEquals(emails, other.emails);
+
+@override int get hashCode => Object.hashAll(emails);
+
+@override String toString() => 'UsersAddEmailForAuthenticatedUserRequestVariant1(emails: $emails)';
+
  }

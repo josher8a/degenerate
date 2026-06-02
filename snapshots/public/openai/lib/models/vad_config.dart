@@ -42,12 +42,15 @@ VadConfig copyWith({VadConfigType? type, int Function()? prefixPaddingMs, int Fu
   silenceDurationMs: silenceDurationMs != null ? silenceDurationMs() : this.silenceDurationMs,
   threshold: threshold != null ? threshold() : this.threshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VadConfig &&
           type == other.type &&
           prefixPaddingMs == other.prefixPaddingMs &&
           silenceDurationMs == other.silenceDurationMs &&
-          threshold == other.threshold; } 
-@override int get hashCode { return Object.hash(type, prefixPaddingMs, silenceDurationMs, threshold); } 
-@override String toString() { return 'VadConfig(type: $type, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, threshold: $threshold)'; } 
+          threshold == other.threshold;
+
+@override int get hashCode => Object.hash(type, prefixPaddingMs, silenceDurationMs, threshold);
+
+@override String toString() => 'VadConfig(type: $type, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, threshold: $threshold)';
+
  }

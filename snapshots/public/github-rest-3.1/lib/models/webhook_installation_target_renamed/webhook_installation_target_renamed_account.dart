@@ -198,7 +198,7 @@ WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt
   websiteUrl: websiteUrl != null ? websiteUrl() : this.websiteUrl,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationTargetRenamedAccount &&
           archivedAt == other.archivedAt &&
           avatarUrl == other.avatarUrl &&
@@ -236,7 +236,10 @@ WebhookInstallationTargetRenamedAccount copyWith({String? Function()? archivedAt
           updatedAt == other.updatedAt &&
           url == other.url &&
           websiteUrl == other.websiteUrl &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([archivedAt, avatarUrl, createdAt, description, eventsUrl, followers, followersUrl, following, followingUrl, gistsUrl, gravatarId, hasOrganizationProjects, hasRepositoryProjects, hooksUrl, htmlUrl, id, isVerified, issuesUrl, login, membersUrl, name, nodeId, organizationsUrl, publicGists, publicMembersUrl, publicRepos, receivedEventsUrl, reposUrl, siteAdmin, slug, starredUrl, subscriptionsUrl, type, updatedAt, url, websiteUrl, userViewType]); } 
-@override String toString() { return 'WebhookInstallationTargetRenamedAccount(archivedAt: $archivedAt, avatarUrl: $avatarUrl, createdAt: $createdAt, description: $description, eventsUrl: $eventsUrl, followers: $followers, followersUrl: $followersUrl, following: $following, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, isVerified: $isVerified, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, publicGists: $publicGists, publicMembersUrl: $publicMembersUrl, publicRepos: $publicRepos, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, slug: $slug, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, updatedAt: $updatedAt, url: $url, websiteUrl: $websiteUrl, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([archivedAt, avatarUrl, createdAt, description, eventsUrl, followers, followersUrl, following, followingUrl, gistsUrl, gravatarId, hasOrganizationProjects, hasRepositoryProjects, hooksUrl, htmlUrl, id, isVerified, issuesUrl, login, membersUrl, name, nodeId, organizationsUrl, publicGists, publicMembersUrl, publicRepos, receivedEventsUrl, reposUrl, siteAdmin, slug, starredUrl, subscriptionsUrl, type, updatedAt, url, websiteUrl, userViewType]);
+
+@override String toString() => 'WebhookInstallationTargetRenamedAccount(archivedAt: $archivedAt, avatarUrl: $avatarUrl, createdAt: $createdAt, description: $description, eventsUrl: $eventsUrl, followers: $followers, followersUrl: $followersUrl, following: $following, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, isVerified: $isVerified, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, publicGists: $publicGists, publicMembersUrl: $publicMembersUrl, publicRepos: $publicRepos, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, slug: $slug, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, updatedAt: $updatedAt, url: $url, websiteUrl: $websiteUrl, userViewType: $userViewType)';
+
  }

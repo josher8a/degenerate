@@ -27,11 +27,14 @@ CreateEvalRunRequest copyWith({String? Function()? name, Map<String, String>? Fu
   metadata: metadata != null ? metadata() : this.metadata,
   dataSource: dataSource ?? this.dataSource,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalRunRequest &&
           name == other.name &&
           metadata == other.metadata &&
-          dataSource == other.dataSource; } 
-@override int get hashCode { return Object.hash(name, metadata, dataSource); } 
-@override String toString() { return 'CreateEvalRunRequest(name: $name, metadata: $metadata, dataSource: $dataSource)'; } 
+          dataSource == other.dataSource;
+
+@override int get hashCode => Object.hash(name, metadata, dataSource);
+
+@override String toString() => 'CreateEvalRunRequest(name: $name, metadata: $metadata, dataSource: $dataSource)';
+
  }

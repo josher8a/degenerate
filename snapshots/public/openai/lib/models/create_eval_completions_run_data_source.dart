@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalCompletionsRunDataSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalCompletionsRunDataSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateEvalCompletionsRunDataSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateEvalCompletionsRunDataSourceType($value)';
+
  }
 /// A CompletionsRunDataSource object describing a model sampling configuration.
 /// 
@@ -64,13 +67,16 @@ CreateEvalCompletionsRunDataSource copyWith({CreateEvalCompletionsRunDataSourceT
   model: model != null ? model() : this.model,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalCompletionsRunDataSource &&
           type == other.type &&
           inputMessages == other.inputMessages &&
           samplingParams == other.samplingParams &&
           model == other.model &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, inputMessages, samplingParams, model, source); } 
-@override String toString() { return 'CreateEvalCompletionsRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, inputMessages, samplingParams, model, source);
+
+@override String toString() => 'CreateEvalCompletionsRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)';
+
  }

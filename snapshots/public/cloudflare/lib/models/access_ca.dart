@@ -40,11 +40,14 @@ AccessCa copyWith({AccessAud? Function()? aud, AccessSchemasId? Function()? id, 
   id: id != null ? id() : this.id,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCa &&
           aud == other.aud &&
           id == other.id &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return Object.hash(aud, id, publicKey); } 
-@override String toString() { return 'AccessCa(aud: $aud, id: $id, publicKey: $publicKey)'; } 
+          publicKey == other.publicKey;
+
+@override int get hashCode => Object.hash(aud, id, publicKey);
+
+@override String toString() => 'AccessCa(aud: $aud, id: $id, publicKey: $publicKey)';
+
  }

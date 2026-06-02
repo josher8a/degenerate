@@ -31,12 +31,15 @@ CollectConfig copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedis
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CollectConfig &&
           allowRedisplay == other.allowRedisplay &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(allowRedisplay, enableCustomerCancellation, skipTipping, tipping); } 
-@override String toString() { return 'CollectConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)'; } 
+          tipping == other.tipping;
+
+@override int get hashCode => Object.hash(allowRedisplay, enableCustomerCancellation, skipTipping, tipping);
+
+@override String toString() => 'CollectConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)';
+
  }

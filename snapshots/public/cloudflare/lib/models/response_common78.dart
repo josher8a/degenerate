@@ -37,12 +37,15 @@ ResponseCommon78 copyWith({List<Web3Messages2>? errors, List<Web3Messages2>? mes
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon78 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'ResponseCommon78(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+
+@override String toString() => 'ResponseCommon78(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

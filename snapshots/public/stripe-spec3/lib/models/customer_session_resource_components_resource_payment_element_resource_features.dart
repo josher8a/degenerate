@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)';
+
  }
 /// This hash contains the features the Payment Element supports.
 @immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures({required this.paymentMethodAllowRedisplayFilters, required this.paymentMethodRedisplay, required this.paymentMethodRemove, required this.paymentMethodSave, this.paymentMethodRedisplayLimit, this.paymentMethodSaveUsage, });
@@ -85,14 +88,17 @@ CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures copyWith
   paymentMethodSave: paymentMethodSave ?? this.paymentMethodSave,
   paymentMethodSaveUsage: paymentMethodSaveUsage != null ? paymentMethodSaveUsage() : this.paymentMethodSaveUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures &&
           listEquals(paymentMethodAllowRedisplayFilters, other.paymentMethodAllowRedisplayFilters) &&
           paymentMethodRedisplay == other.paymentMethodRedisplay &&
           paymentMethodRedisplayLimit == other.paymentMethodRedisplayLimit &&
           paymentMethodRemove == other.paymentMethodRemove &&
           paymentMethodSave == other.paymentMethodSave &&
-          paymentMethodSaveUsage == other.paymentMethodSaveUsage; } 
-@override int get hashCode { return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters), paymentMethodRedisplay, paymentMethodRedisplayLimit, paymentMethodRemove, paymentMethodSave, paymentMethodSaveUsage); } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRedisplayLimit: $paymentMethodRedisplayLimit, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveUsage: $paymentMethodSaveUsage)'; } 
+          paymentMethodSaveUsage == other.paymentMethodSaveUsage;
+
+@override int get hashCode => Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters), paymentMethodRedisplay, paymentMethodRedisplayLimit, paymentMethodRemove, paymentMethodSave, paymentMethodSaveUsage);
+
+@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRedisplayLimit: $paymentMethodRedisplayLimit, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveUsage: $paymentMethodSaveUsage)';
+
  }

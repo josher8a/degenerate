@@ -52,14 +52,17 @@ ContainerFileCitationBody copyWith({String? type, String? containerId, String? f
   endIndex: endIndex ?? this.endIndex,
   filename: filename ?? this.filename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerFileCitationBody &&
           type == other.type &&
           containerId == other.containerId &&
           fileId == other.fileId &&
           startIndex == other.startIndex &&
           endIndex == other.endIndex &&
-          filename == other.filename; } 
-@override int get hashCode { return Object.hash(type, containerId, fileId, startIndex, endIndex, filename); } 
-@override String toString() { return 'ContainerFileCitationBody(type: $type, containerId: $containerId, fileId: $fileId, startIndex: $startIndex, endIndex: $endIndex, filename: $filename)'; } 
+          filename == other.filename;
+
+@override int get hashCode => Object.hash(type, containerId, fileId, startIndex, endIndex, filename);
+
+@override String toString() => 'ContainerFileCitationBody(type: $type, containerId: $containerId, fileId: $fileId, startIndex: $startIndex, endIndex: $endIndex, filename: $filename)';
+
  }

@@ -30,10 +30,13 @@ TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection copyWith({S
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection &&
           jurisdiction == other.jurisdiction &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jurisdiction, type); } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(jurisdiction: $jurisdiction, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(jurisdiction, type);
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(jurisdiction: $jurisdiction, type: $type)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemRetrievedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemRetrievedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemRetrievedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemRetrievedType($value)';
+
  }
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.
 /// 
@@ -53,11 +56,14 @@ RealtimeBetaServerEventConversationItemRetrieved copyWith({String? eventId, Real
   type: type ?? this.type,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemRetrieved &&
           eventId == other.eventId &&
           type == other.type &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, item); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemRetrieved(eventId: $eventId, type: $type, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, item);
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemRetrieved(eventId: $eventId, type: $type, item: $item)';
+
  }

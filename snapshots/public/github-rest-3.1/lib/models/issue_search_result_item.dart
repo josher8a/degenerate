@@ -233,7 +233,7 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
   pinnedComment: pinnedComment != null ? pinnedComment() : this.pinnedComment,
   reactions: reactions != null ? reactions() : this.reactions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueSearchResultItem &&
           url == other.url &&
           repositoryUrl == other.repositoryUrl &&
@@ -274,7 +274,10 @@ IssueSearchResultItem copyWith({Uri? url, Uri? repositoryUrl, String? labelsUrl,
           type == other.type &&
           performedViaGithubApp == other.performedViaGithubApp &&
           pinnedComment == other.pinnedComment &&
-          reactions == other.reactions; } 
-@override int get hashCode { return Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]); } 
-@override String toString() { return 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)'; } 
+          reactions == other.reactions;
+
+@override int get hashCode => Object.hashAll([url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, id, nodeId, number, title, locked, activeLockReason, Object.hashAll(assignees ?? const []), user, Object.hashAll(labels), subIssuesSummary, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const []), state, stateReason, assignee, milestone, comments, createdAt, updatedAt, closedAt, Object.hashAll(textMatches ?? const []), pullRequest, body, score, authorAssociation, draft, repository, bodyHtml, bodyText, timelineUrl, type, performedViaGithubApp, pinnedComment, reactions]);
+
+@override String toString() => 'IssueSearchResultItem(url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, number: $number, title: $title, locked: $locked, activeLockReason: $activeLockReason, assignees: $assignees, user: $user, labels: $labels, subIssuesSummary: $subIssuesSummary, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues, state: $state, stateReason: $stateReason, assignee: $assignee, milestone: $milestone, comments: $comments, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, textMatches: $textMatches, pullRequest: $pullRequest, body: $body, score: $score, authorAssociation: $authorAssociation, draft: $draft, repository: $repository, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, performedViaGithubApp: $performedViaGithubApp, pinnedComment: $pinnedComment, reactions: $reactions)';
+
  }

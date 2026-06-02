@@ -46,14 +46,17 @@ MagicManagedApp copyWith({List<String>? Function()? hostnames, List<MagicCidr>? 
   sourceSubnets: sourceSubnets != null ? sourceSubnets() : this.sourceSubnets,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicManagedApp &&
           listEquals(hostnames, other.hostnames) &&
           listEquals(ipSubnets, other.ipSubnets) &&
           managedAppId == other.managedAppId &&
           name == other.name &&
           listEquals(sourceSubnets, other.sourceSubnets) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), managedAppId, name, Object.hashAll(sourceSubnets ?? const []), type); } 
-@override String toString() { return 'MagicManagedApp(hostnames: $hostnames, ipSubnets: $ipSubnets, managedAppId: $managedAppId, name: $name, sourceSubnets: $sourceSubnets, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), managedAppId, name, Object.hashAll(sourceSubnets ?? const []), type);
+
+@override String toString() => 'MagicManagedApp(hostnames: $hostnames, ipSubnets: $ipSubnets, managedAppId: $managedAppId, name: $name, sourceSubnets: $sourceSubnets, type: $type)';
+
  }

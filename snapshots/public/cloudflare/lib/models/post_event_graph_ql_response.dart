@@ -20,10 +20,13 @@ PostEventGraphQlResponse copyWith({Map<String, dynamic>? Function()? data, List<
   data: data != null ? data() : this.data,
   errors: errors != null ? errors() : this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventGraphQlResponse &&
           data == other.data &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(data, Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'PostEventGraphQlResponse(data: $data, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(data, Object.hashAll(errors ?? const []));
+
+@override String toString() => 'PostEventGraphQlResponse(data: $data, errors: $errors)';
+
  }

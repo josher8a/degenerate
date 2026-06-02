@@ -895,10 +895,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MerchantDataCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MerchantDataCategory($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MerchantDataCategory && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MerchantDataCategory($value)';
+
  }
 /// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
 @immutable final class MerchantData {const MerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
@@ -991,7 +994,7 @@ MerchantData copyWith({MerchantDataCategory? Function()? category, String? Funct
   terminalId: terminalId != null ? terminalId() : this.terminalId,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MerchantData &&
           category == other.category &&
           city == other.city &&
@@ -1001,7 +1004,10 @@ MerchantData copyWith({MerchantDataCategory? Function()? category, String? Funct
           postalCode == other.postalCode &&
           state == other.state &&
           terminalId == other.terminalId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url); } 
-@override String toString() { return 'MerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url);
+
+@override String toString() => 'MerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)';
+
  }

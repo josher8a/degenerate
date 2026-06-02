@@ -42,14 +42,18 @@ final McnStringItem mcnStringItem;
 
 @override String get itemType => 'mcn_string_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnStringItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnStringItem.toJson(), 'item_type': itemType};
+
 McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
   string: string,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValueMcnStringItem && mcnStringItem == other.mcnStringItem; } 
-@override int get hashCode { return mcnStringItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnStringItem($mcnStringItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValueMcnStringItem && mcnStringItem == other.mcnStringItem;
+
+@override int get hashCode => mcnStringItem.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.mcnStringItem($mcnStringItem)';
+
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlItem(this.mcnYamlItem);
 
@@ -59,14 +63,18 @@ final McnYamlItem mcnYamlItem;
 
 @override String get itemType => 'mcn_yaml_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnYamlItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnYamlItem.toJson(), 'item_type': itemType};
+
 McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
   yaml: yaml,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValueMcnYamlItem && mcnYamlItem == other.mcnYamlItem; } 
-@override int get hashCode { return mcnYamlItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnYamlItem($mcnYamlItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValueMcnYamlItem && mcnYamlItem == other.mcnYamlItem;
+
+@override int get hashCode => mcnYamlItem.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.mcnYamlItem($mcnYamlItem)';
+
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnYamlDiffItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnYamlDiffItem(this.mcnYamlDiffItem);
 
@@ -76,14 +84,18 @@ final McnYamlDiffItem mcnYamlDiffItem;
 
 @override String get itemType => 'mcn_yaml_diff_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnYamlDiffItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnYamlDiffItem.toJson(), 'item_type': itemType};
+
 McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
   yamlDiff: yamlDiff,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValueMcnYamlDiffItem && mcnYamlDiffItem == other.mcnYamlDiffItem; } 
-@override int get hashCode { return mcnYamlDiffItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnYamlDiffItem($mcnYamlDiffItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValueMcnYamlDiffItem && mcnYamlDiffItem == other.mcnYamlDiffItem;
+
+@override int get hashCode => mcnYamlDiffItem.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.mcnYamlDiffItem($mcnYamlDiffItem)';
+
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnResourcePreviewItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
@@ -93,14 +105,18 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
 
 @override String get itemType => 'mcn_resource_preview_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnResourcePreviewItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnResourcePreviewItem.toJson(), 'item_type': itemType};
+
 McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValueMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 
-@override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnResourcePreviewItem($mcnResourcePreviewItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValueMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem;
+
+@override int get hashCode => mcnResourcePreviewItem.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.mcnResourcePreviewItem($mcnResourcePreviewItem)';
+
  }
 @immutable final class McnResourceDetailsSectionItemValueMcnListItem extends McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValueMcnListItem(this.mcnListItem);
 
@@ -110,14 +126,18 @@ final McnListItem mcnListItem;
 
 @override String get itemType => 'mcn_list_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnListItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnListItem.toJson(), 'item_type': itemType};
+
 McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) { return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
   list: list,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValueMcnListItem && mcnListItem == other.mcnListItem; } 
-@override int get hashCode { return mcnListItem.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.mcnListItem($mcnListItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValueMcnListItem && mcnListItem == other.mcnListItem;
+
+@override int get hashCode => mcnListItem.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.mcnListItem($mcnListItem)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -127,9 +147,13 @@ final Map<String, dynamic> json;
 
 @override String get itemType => json['item_type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnResourceDetailsSectionItemValue$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'McnResourceDetailsSectionItemValue.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnResourceDetailsSectionItemValue$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValue.unknown($json)';
+
  }

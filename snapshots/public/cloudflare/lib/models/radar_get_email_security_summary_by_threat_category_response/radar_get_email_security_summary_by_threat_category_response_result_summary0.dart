@@ -52,12 +52,15 @@ RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 copyWith({Str
   identityDeception: identityDeception ?? this.identityDeception,
   link: link ?? this.link,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0 &&
           brandImpersonation == other.brandImpersonation &&
           credentialHarvester == other.credentialHarvester &&
           identityDeception == other.identityDeception &&
-          link == other.link; } 
-@override int get hashCode { return Object.hash(brandImpersonation, credentialHarvester, identityDeception, link); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0(brandImpersonation: $brandImpersonation, credentialHarvester: $credentialHarvester, identityDeception: $identityDeception, link: $link)'; } 
+          link == other.link;
+
+@override int get hashCode => Object.hash(brandImpersonation, credentialHarvester, identityDeception, link);
+
+@override String toString() => 'RadarGetEmailSecuritySummaryByThreatCategoryResponseResultSummary0(brandImpersonation: $brandImpersonation, credentialHarvester: $credentialHarvester, identityDeception: $identityDeception, link: $link)';
+
  }

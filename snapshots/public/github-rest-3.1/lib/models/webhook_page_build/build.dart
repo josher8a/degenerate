@@ -58,7 +58,7 @@ Build copyWith({String? Function()? commit, String? createdAt, int? duration, Pa
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Build &&
           commit == other.commit &&
           createdAt == other.createdAt &&
@@ -67,7 +67,10 @@ Build copyWith({String? Function()? commit, String? createdAt, int? duration, Pa
           pusher == other.pusher &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(commit, createdAt, duration, error, pusher, status, updatedAt, url); } 
-@override String toString() { return 'Build(commit: $commit, createdAt: $createdAt, duration: $duration, error: $error, pusher: $pusher, status: $status, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(commit, createdAt, duration, error, pusher, status, updatedAt, url);
+
+@override String toString() => 'Build(commit: $commit, createdAt: $createdAt, duration: $duration, error: $error, pusher: $pusher, status: $status, updatedAt: $updatedAt, url: $url)';
+
  }

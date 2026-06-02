@@ -52,14 +52,17 @@ StreamSignedTokenRequest copyWith({List<StreamAccessRules>? Function()? accessRu
   nbf: nbf != null ? nbf() : this.nbf,
   pem: pem != null ? pem() : this.pem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamSignedTokenRequest &&
           listEquals(accessRules, other.accessRules) &&
           downloadable == other.downloadable &&
           exp == other.exp &&
           id == other.id &&
           nbf == other.nbf &&
-          pem == other.pem; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessRules ?? const []), downloadable, exp, id, nbf, pem); } 
-@override String toString() { return 'StreamSignedTokenRequest(accessRules: $accessRules, downloadable: $downloadable, exp: $exp, id: $id, nbf: $nbf, pem: $pem)'; } 
+          pem == other.pem;
+
+@override int get hashCode => Object.hash(Object.hashAll(accessRules ?? const []), downloadable, exp, id, nbf, pem);
+
+@override String toString() => 'StreamSignedTokenRequest(accessRules: $accessRules, downloadable: $downloadable, exp: $exp, id: $id, nbf: $nbf, pem: $pem)';
+
  }

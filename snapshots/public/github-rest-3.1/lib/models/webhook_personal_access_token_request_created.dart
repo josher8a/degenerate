@@ -43,14 +43,17 @@ WebhookPersonalAccessTokenRequestCreated copyWith({ItemCreatedAction? action, Pe
   sender: sender ?? this.sender,
   installation: installation != null ? installation() : this.installation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPersonalAccessTokenRequestCreated &&
           action == other.action &&
           personalAccessTokenRequest == other.personalAccessTokenRequest &&
           enterprise == other.enterprise &&
           organization == other.organization &&
           sender == other.sender &&
-          installation == other.installation; } 
-@override int get hashCode { return Object.hash(action, personalAccessTokenRequest, enterprise, organization, sender, installation); } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestCreated(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, enterprise: $enterprise, organization: $organization, sender: $sender, installation: $installation)'; } 
+          installation == other.installation;
+
+@override int get hashCode => Object.hash(action, personalAccessTokenRequest, enterprise, organization, sender, installation);
+
+@override String toString() => 'WebhookPersonalAccessTokenRequestCreated(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, enterprise: $enterprise, organization: $organization, sender: $sender, installation: $installation)';
+
  }

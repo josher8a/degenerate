@@ -115,7 +115,7 @@ LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInse
   id: id != null ? id() : this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitor &&
           allowInsecure == other.allowInsecure &&
           consecutiveDown == other.consecutiveDown &&
@@ -135,7 +135,10 @@ LoadBalancingMonitor copyWith({LoadBalancingAllowInsecure? Function()? allowInse
           type == other.type &&
           createdOn == other.createdOn &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type, createdOn, id, modifiedOn); } 
-@override String toString() { return 'LoadBalancingMonitor(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type, createdOn, id, modifiedOn);
+
+@override String toString() => 'LoadBalancingMonitor(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';
+
  }

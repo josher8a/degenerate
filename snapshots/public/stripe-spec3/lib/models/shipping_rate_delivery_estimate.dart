@@ -23,10 +23,13 @@ ShippingRateDeliveryEstimate copyWith({ShippingRateDeliveryEstimateBound? Functi
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRateDeliveryEstimate &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(maximum, minimum); } 
-@override String toString() { return 'ShippingRateDeliveryEstimate(maximum: $maximum, minimum: $minimum)'; } 
+          minimum == other.minimum;
+
+@override int get hashCode => Object.hash(maximum, minimum);
+
+@override String toString() => 'ShippingRateDeliveryEstimate(maximum: $maximum, minimum: $minimum)';
+
  }

@@ -27,11 +27,14 @@ IssueCommentEvent copyWith({String? action, Issue? issue, IssueComment? comment,
   issue: issue ?? this.issue,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueCommentEvent &&
           action == other.action &&
           issue == other.issue &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(action, issue, comment); } 
-@override String toString() { return 'IssueCommentEvent(action: $action, issue: $issue, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(action, issue, comment);
+
+@override String toString() => 'IssueCommentEvent(action: $action, issue: $issue, comment: $comment)';
+
  }

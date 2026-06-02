@@ -87,31 +87,21 @@ final class SpaceSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SpaceSchema &&
-            author == other.author &&
-            title == other.title &&
-            slug == other.slug &&
-            dateCreated == other.dateCreated &&
-            dateModified == other.dateModified &&
-            subtitle == other.subtitle;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SpaceSchema &&
+          author == other.author &&
+          title == other.title &&
+          slug == other.slug &&
+          dateCreated == other.dateCreated &&
+          dateModified == other.dateModified &&
+          subtitle == other.subtitle;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      author,
-      title,
-      slug,
-      dateCreated,
-      dateModified,
-      subtitle,
-    );
-  }
+  int get hashCode =>
+      Object.hash(author, title, slug, dateCreated, dateModified, subtitle);
 
   @override
-  String toString() {
-    return 'SpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle)';
-  }
+  String toString() =>
+      'SpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle)';
 }

@@ -33,12 +33,15 @@ MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest copyWith({M
   routerIps: routerIps != null ? routerIps() : this.routerIps,
   warpDevices: warpDevices != null ? warpDevices() : this.warpDevices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest &&
           defaultSampling == other.defaultSampling &&
           name == other.name &&
           listEquals(routerIps, other.routerIps) &&
-          listEquals(warpDevices, other.warpDevices); } 
-@override int get hashCode { return Object.hash(defaultSampling, name, Object.hashAll(routerIps ?? const []), Object.hashAll(warpDevices ?? const [])); } 
-@override String toString() { return 'MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)'; } 
+          listEquals(warpDevices, other.warpDevices);
+
+@override int get hashCode => Object.hash(defaultSampling, name, Object.hashAll(routerIps ?? const []), Object.hashAll(warpDevices ?? const []));
+
+@override String toString() => 'MagicNetworkMonitoringConfigurationCreateAccountConfigurationRequest(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)';
+
  }

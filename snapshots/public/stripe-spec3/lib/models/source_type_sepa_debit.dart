@@ -45,7 +45,7 @@ SourceTypeSepaDebit copyWith({String? Function()? bankCode, String? Function()? 
   mandateReference: mandateReference != null ? mandateReference() : this.mandateReference,
   mandateUrl: mandateUrl != null ? mandateUrl() : this.mandateUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeSepaDebit &&
           bankCode == other.bankCode &&
           branchCode == other.branchCode &&
@@ -53,7 +53,10 @@ SourceTypeSepaDebit copyWith({String? Function()? bankCode, String? Function()? 
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
           mandateReference == other.mandateReference &&
-          mandateUrl == other.mandateUrl; } 
-@override int get hashCode { return Object.hash(bankCode, branchCode, country, fingerprint, last4, mandateReference, mandateUrl); } 
-@override String toString() { return 'SourceTypeSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, fingerprint: $fingerprint, last4: $last4, mandateReference: $mandateReference, mandateUrl: $mandateUrl)'; } 
+          mandateUrl == other.mandateUrl;
+
+@override int get hashCode => Object.hash(bankCode, branchCode, country, fingerprint, last4, mandateReference, mandateUrl);
+
+@override String toString() => 'SourceTypeSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, fingerprint: $fingerprint, last4: $last4, mandateReference: $mandateReference, mandateUrl: $mandateUrl)';
+
  }

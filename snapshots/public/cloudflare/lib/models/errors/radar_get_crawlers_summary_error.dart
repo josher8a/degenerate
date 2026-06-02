@@ -17,7 +17,8 @@ final class RadarGetCrawlersSummaryError$400 extends RadarGetCrawlersSummaryErro
 
 final RadarGetCrawlersSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetCrawlersSummaryError$Unknown extends RadarGetCrawlersSummaryError {const RadarGetCrawlersSummaryError$Unknown(this.statusCode, this.rawBody, );
 

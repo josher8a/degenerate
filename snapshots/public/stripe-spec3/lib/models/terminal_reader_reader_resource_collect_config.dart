@@ -28,11 +28,14 @@ TerminalReaderReaderResourceCollectConfig copyWith({bool? Function()? enableCust
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceCollectConfig &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(enableCustomerCancellation, skipTipping, tipping); } 
-@override String toString() { return 'TerminalReaderReaderResourceCollectConfig(enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)'; } 
+          tipping == other.tipping;
+
+@override int get hashCode => Object.hash(enableCustomerCancellation, skipTipping, tipping);
+
+@override String toString() => 'TerminalReaderReaderResourceCollectConfig(enableCustomerCancellation: $enableCustomerCancellation, skipTipping: $skipTipping, tipping: $tipping)';
+
  }

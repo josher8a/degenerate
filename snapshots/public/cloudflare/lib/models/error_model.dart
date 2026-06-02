@@ -34,12 +34,15 @@ ErrorModel copyWith({int? Function()? code, Map<String, dynamic>? Function()? er
   message: message != null ? message() : this.message,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorModel &&
           code == other.code &&
           errors == other.errors &&
           message == other.message &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(code, errors, message, status); } 
-@override String toString() { return 'ErrorModel(code: $code, errors: $errors, message: $message, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(code, errors, message, status);
+
+@override String toString() => 'ErrorModel(code: $code, errors: $errors, message: $message, status: $status)';
+
  }

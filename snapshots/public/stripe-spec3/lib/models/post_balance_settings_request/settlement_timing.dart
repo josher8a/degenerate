@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SettlementTiming copyWith({DelayDaysOverride? Function()? delayDaysOverride}) { return SettlementTiming(
   delayDaysOverride: delayDaysOverride != null ? delayDaysOverride() : this.delayDaysOverride,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettlementTiming &&
-          delayDaysOverride == other.delayDaysOverride; } 
-@override int get hashCode { return delayDaysOverride.hashCode; } 
-@override String toString() { return 'SettlementTiming(delayDaysOverride: $delayDaysOverride)'; } 
+          delayDaysOverride == other.delayDaysOverride;
+
+@override int get hashCode => delayDaysOverride.hashCode;
+
+@override String toString() => 'SettlementTiming(delayDaysOverride: $delayDaysOverride)';
+
  }

@@ -30,11 +30,14 @@ AlertStats copyWith({int? openCount, int? closedCount, int? inProgressCount, }) 
   closedCount: closedCount ?? this.closedCount,
   inProgressCount: inProgressCount ?? this.inProgressCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AlertStats &&
           openCount == other.openCount &&
           closedCount == other.closedCount &&
-          inProgressCount == other.inProgressCount; } 
-@override int get hashCode { return Object.hash(openCount, closedCount, inProgressCount); } 
-@override String toString() { return 'AlertStats(openCount: $openCount, closedCount: $closedCount, inProgressCount: $inProgressCount)'; } 
+          inProgressCount == other.inProgressCount;
+
+@override int get hashCode => Object.hash(openCount, closedCount, inProgressCount);
+
+@override String toString() => 'AlertStats(openCount: $openCount, closedCount: $closedCount, inProgressCount: $inProgressCount)';
+
  }

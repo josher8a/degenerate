@@ -50,14 +50,17 @@ OwnerReference copyWith({String? apiVersion, bool? Function()? blockOwnerDeletio
   name: name ?? this.name,
   uid: uid ?? this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OwnerReference &&
           apiVersion == other.apiVersion &&
           blockOwnerDeletion == other.blockOwnerDeletion &&
           controller == other.controller &&
           kind == other.kind &&
           name == other.name &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(apiVersion, blockOwnerDeletion, controller, kind, name, uid); } 
-@override String toString() { return 'OwnerReference(apiVersion: $apiVersion, blockOwnerDeletion: $blockOwnerDeletion, controller: $controller, kind: $kind, name: $name, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(apiVersion, blockOwnerDeletion, controller, kind, name, uid);
+
+@override String toString() => 'OwnerReference(apiVersion: $apiVersion, blockOwnerDeletion: $blockOwnerDeletion, controller: $controller, kind: $kind, name: $name, uid: $uid)';
+
  }

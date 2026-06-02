@@ -22,9 +22,12 @@ return errors; }
 CreateGroupBody copyWith({String? name}) { return CreateGroupBody(
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateGroupBody &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'CreateGroupBody(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'CreateGroupBody(name: $name)';
+
  }

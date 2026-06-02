@@ -43,14 +43,17 @@ StatusUpdateEdited copyWith({ItemEditedAction? action, StatusUpdateEditedChanges
   projectsV2StatusUpdate: projectsV2StatusUpdate ?? this.projectsV2StatusUpdate,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusUpdateEdited &&
           action == other.action &&
           changes == other.changes &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2StatusUpdate == other.projectsV2StatusUpdate &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2StatusUpdate, sender); } 
-@override String toString() { return 'StatusUpdateEdited(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, installation, organization, projectsV2StatusUpdate, sender);
+
+@override String toString() => 'StatusUpdateEdited(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)';
+
  }

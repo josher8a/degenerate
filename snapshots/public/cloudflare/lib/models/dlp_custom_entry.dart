@@ -55,7 +55,7 @@ DlpCustomEntry copyWith({DateTime? createdAt, String? Function()? description, b
   profileId: profileId != null ? profileId() : this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpCustomEntry &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -64,7 +64,10 @@ DlpCustomEntry copyWith({DateTime? createdAt, String? Function()? description, b
           name == other.name &&
           pattern == other.pattern &&
           profileId == other.profileId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, enabled, id, name, pattern, profileId, updatedAt); } 
-@override String toString() { return 'DlpCustomEntry(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, name: $name, pattern: $pattern, profileId: $profileId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, enabled, id, name, pattern, profileId, updatedAt);
+
+@override String toString() => 'DlpCustomEntry(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, name: $name, pattern: $pattern, profileId: $profileId, updatedAt: $updatedAt)';
+
  }

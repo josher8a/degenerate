@@ -67,7 +67,7 @@ AccountOutgoingCallerId copyWith({String? Function()? sid, String? Function()? d
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountOutgoingCallerId &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
@@ -75,7 +75,10 @@ AccountOutgoingCallerId copyWith({String? Function()? sid, String? Function()? d
           friendlyName == other.friendlyName &&
           accountSid == other.accountSid &&
           phoneNumber == other.phoneNumber &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(sid, dateCreated, dateUpdated, friendlyName, accountSid, phoneNumber, uri); } 
-@override String toString() { return 'AccountOutgoingCallerId(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, accountSid: $accountSid, phoneNumber: $phoneNumber, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(sid, dateCreated, dateUpdated, friendlyName, accountSid, phoneNumber, uri);
+
+@override String toString() => 'AccountOutgoingCallerId(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, accountSid: $accountSid, phoneNumber: $phoneNumber, uri: $uri)';
+
  }

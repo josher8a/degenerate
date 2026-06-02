@@ -27,11 +27,14 @@ TerminalReaderReaderResourceCollectPaymentMethodAction copyWith({TerminalReaderR
   paymentIntent: paymentIntent ?? this.paymentIntent,
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceCollectPaymentMethodAction &&
           collectConfig == other.collectConfig &&
           paymentIntent == other.paymentIntent &&
-          paymentMethod == other.paymentMethod; } 
-@override int get hashCode { return Object.hash(collectConfig, paymentIntent, paymentMethod); } 
-@override String toString() { return 'TerminalReaderReaderResourceCollectPaymentMethodAction(collectConfig: $collectConfig, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod)'; } 
+          paymentMethod == other.paymentMethod;
+
+@override int get hashCode => Object.hash(collectConfig, paymentIntent, paymentMethod);
+
+@override String toString() => 'TerminalReaderReaderResourceCollectPaymentMethodAction(collectConfig: $collectConfig, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod)';
+
  }

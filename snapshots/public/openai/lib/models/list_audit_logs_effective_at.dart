@@ -34,12 +34,15 @@ ListAuditLogsEffectiveAt copyWith({int? Function()? gt, int? Function()? gte, in
   lt: lt != null ? lt() : this.lt,
   lte: lte != null ? lte() : this.lte,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListAuditLogsEffectiveAt &&
           gt == other.gt &&
           gte == other.gte &&
           lt == other.lt &&
-          lte == other.lte; } 
-@override int get hashCode { return Object.hash(gt, gte, lt, lte); } 
-@override String toString() { return 'ListAuditLogsEffectiveAt(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
+          lte == other.lte;
+
+@override int get hashCode => Object.hash(gt, gte, lt, lte);
+
+@override String toString() => 'ListAuditLogsEffectiveAt(gt: $gt, gte: $gte, lt: $lt, lte: $lte)';
+
  }

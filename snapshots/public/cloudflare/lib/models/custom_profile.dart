@@ -112,7 +112,7 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -129,7 +129,10 @@ CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCoun
           listEquals(sensitivityLevels, other.sensitivityLevels) &&
           listEquals(sharedEntries, other.sharedEntries) &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, createdAt, Object.hashAll(dataClasses ?? const []), Object.hashAll(dataTags ?? const []), description, Object.hashAll(entries ?? const []), id, name, ocrEnabled, Object.hashAll(sensitivityLevels ?? const []), Object.hashAll(sharedEntries ?? const []), updatedAt, type); } 
-@override String toString() { return 'CustomProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, createdAt: $createdAt, dataClasses: $dataClasses, dataTags: $dataTags, description: $description, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, sensitivityLevels: $sensitivityLevels, sharedEntries: $sharedEntries, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, createdAt, Object.hashAll(dataClasses ?? const []), Object.hashAll(dataTags ?? const []), description, Object.hashAll(entries ?? const []), id, name, ocrEnabled, Object.hashAll(sensitivityLevels ?? const []), Object.hashAll(sharedEntries ?? const []), updatedAt, type);
+
+@override String toString() => 'CustomProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, createdAt: $createdAt, dataClasses: $dataClasses, dataTags: $dataTags, description: $description, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, sensitivityLevels: $sensitivityLevels, sharedEntries: $sharedEntries, updatedAt: $updatedAt, type: $type)';
+
  }

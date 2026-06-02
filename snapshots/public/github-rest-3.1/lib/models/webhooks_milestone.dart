@@ -109,7 +109,7 @@ WebhooksMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, D
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMilestone &&
           closedAt == other.closedAt &&
           closedIssues == other.closedIssues &&
@@ -126,7 +126,10 @@ WebhooksMilestone copyWith({DateTime? Function()? closedAt, int? closedIssues, D
           state == other.state &&
           title == other.title &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(closedAt, closedIssues, createdAt, creator, description, dueOn, htmlUrl, id, labelsUrl, nodeId, number, openIssues, state, title, updatedAt, url); } 
-@override String toString() { return 'WebhooksMilestone(closedAt: $closedAt, closedIssues: $closedIssues, createdAt: $createdAt, creator: $creator, description: $description, dueOn: $dueOn, htmlUrl: $htmlUrl, id: $id, labelsUrl: $labelsUrl, nodeId: $nodeId, number: $number, openIssues: $openIssues, state: $state, title: $title, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(closedAt, closedIssues, createdAt, creator, description, dueOn, htmlUrl, id, labelsUrl, nodeId, number, openIssues, state, title, updatedAt, url);
+
+@override String toString() => 'WebhooksMilestone(closedAt: $closedAt, closedIssues: $closedIssues, createdAt: $createdAt, creator: $creator, description: $description, dueOn: $dueOn, htmlUrl: $htmlUrl, id: $id, labelsUrl: $labelsUrl, nodeId: $nodeId, number: $number, openIssues: $openIssues, state: $state, title: $title, updatedAt: $updatedAt, url: $url)';
+
  }

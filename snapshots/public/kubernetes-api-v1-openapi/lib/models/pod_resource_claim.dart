@@ -39,11 +39,14 @@ PodResourceClaim copyWith({String? name, String? Function()? resourceClaimName, 
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
   resourceClaimTemplateName: resourceClaimTemplateName != null ? resourceClaimTemplateName() : this.resourceClaimTemplateName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodResourceClaim &&
           name == other.name &&
           resourceClaimName == other.resourceClaimName &&
-          resourceClaimTemplateName == other.resourceClaimTemplateName; } 
-@override int get hashCode { return Object.hash(name, resourceClaimName, resourceClaimTemplateName); } 
-@override String toString() { return 'PodResourceClaim(name: $name, resourceClaimName: $resourceClaimName, resourceClaimTemplateName: $resourceClaimTemplateName)'; } 
+          resourceClaimTemplateName == other.resourceClaimTemplateName;
+
+@override int get hashCode => Object.hash(name, resourceClaimName, resourceClaimTemplateName);
+
+@override String toString() => 'PodResourceClaim(name: $name, resourceClaimName: $resourceClaimName, resourceClaimTemplateName: $resourceClaimTemplateName)';
+
  }

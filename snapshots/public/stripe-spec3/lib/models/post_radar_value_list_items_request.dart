@@ -34,11 +34,14 @@ PostRadarValueListItemsRequest copyWith({List<String>? Function()? expand, Strin
   value: value ?? this.value,
   valueList: valueList ?? this.valueList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarValueListItemsRequest &&
           listEquals(expand, other.expand) &&
           value == other.value &&
-          valueList == other.valueList; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), value, valueList); } 
-@override String toString() { return 'PostRadarValueListItemsRequest(expand: $expand, value: $value, valueList: $valueList)'; } 
+          valueList == other.valueList;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), value, valueList);
+
+@override String toString() => 'PostRadarValueListItemsRequest(expand: $expand, value: $value, valueList: $valueList)';
+
  }

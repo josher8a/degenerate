@@ -28,11 +28,14 @@ AsnsDetails copyWith({String? asn, AsnsDetailsLocations? Function()? locations, 
   locations: locations != null ? locations() : this.locations,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnsDetails &&
           asn == other.asn &&
           locations == other.locations &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, locations, name); } 
-@override String toString() { return 'AsnsDetails(asn: $asn, locations: $locations, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(asn, locations, name);
+
+@override String toString() => 'AsnsDetails(asn: $asn, locations: $locations, name: $name)';
+
  }

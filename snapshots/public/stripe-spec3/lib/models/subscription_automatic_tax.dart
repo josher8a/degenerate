@@ -29,11 +29,14 @@ SubscriptionAutomaticTax copyWith({SchedulesPhaseAutomaticTaxDisabledReason? Fun
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionAutomaticTax &&
           disabledReason == other.disabledReason &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(disabledReason, enabled, liability); } 
-@override String toString() { return 'SubscriptionAutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability)'; } 
+          liability == other.liability;
+
+@override int get hashCode => Object.hash(disabledReason, enabled, liability);
+
+@override String toString() => 'SubscriptionAutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability)';
+
  }

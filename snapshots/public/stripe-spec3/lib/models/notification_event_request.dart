@@ -34,10 +34,13 @@ NotificationEventRequest copyWith({String? Function()? id, String? Function()? i
   id: id != null ? id() : this.id,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationEventRequest &&
           id == other.id &&
-          idempotencyKey == other.idempotencyKey; } 
-@override int get hashCode { return Object.hash(id, idempotencyKey); } 
-@override String toString() { return 'NotificationEventRequest(id: $id, idempotencyKey: $idempotencyKey)'; } 
+          idempotencyKey == other.idempotencyKey;
+
+@override int get hashCode => Object.hash(id, idempotencyKey);
+
+@override String toString() => 'NotificationEventRequest(id: $id, idempotencyKey: $idempotencyKey)';
+
  }

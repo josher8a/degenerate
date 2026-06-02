@@ -20,25 +20,29 @@ final class BrapiPostSnapshotError$400 extends BrapiPostSnapshotError {const Bra
 
 final BrapiPostSnapshotResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BrapiPostSnapshotError$422 extends BrapiPostSnapshotError {const BrapiPostSnapshotError$422(this.error);
 
 final BrapiPostSnapshotResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BrapiPostSnapshotError$429 extends BrapiPostSnapshotError {const BrapiPostSnapshotError$429(this.error);
 
 final BrapiPostSnapshotResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class BrapiPostSnapshotError$500 extends BrapiPostSnapshotError {const BrapiPostSnapshotError$500(this.error);
 
 final BrapiPostSnapshotResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BrapiPostSnapshotError$Unknown extends BrapiPostSnapshotError {const BrapiPostSnapshotError$Unknown(this.statusCode, this.rawBody, );
 

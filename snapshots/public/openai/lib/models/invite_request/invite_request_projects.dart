@@ -23,10 +23,13 @@ InviteRequestProjects copyWith({String? id, ProjectServiceAccountRole? role, }) 
   id: id ?? this.id,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InviteRequestProjects &&
           id == other.id &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(id, role); } 
-@override String toString() { return 'InviteRequestProjects(id: $id, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(id, role);
+
+@override String toString() => 'InviteRequestProjects(id: $id, role: $role)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 Dataset copyWith({String? url}) { return Dataset(
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dataset &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'Dataset(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'Dataset(url: $url)';
+
  }

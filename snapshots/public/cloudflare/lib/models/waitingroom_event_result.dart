@@ -108,7 +108,7 @@ WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Wa
   turnstileAction: turnstileAction != null ? turnstileAction() : this.turnstileAction,
   turnstileMode: turnstileMode != null ? turnstileMode() : this.turnstileMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomEventResult &&
           createdOn == other.createdOn &&
           customPageHtml == other.customPageHtml &&
@@ -127,7 +127,10 @@ WaitingroomEventResult copyWith({WaitingroomTimestamp? Function()? createdOn, Wa
           suspended == other.suspended &&
           totalActiveUsers == other.totalActiveUsers &&
           turnstileAction == other.turnstileAction &&
-          turnstileMode == other.turnstileMode; } 
-@override int get hashCode { return Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode); } 
-@override String toString() { return 'WaitingroomEventResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)'; } 
+          turnstileMode == other.turnstileMode;
+
+@override int get hashCode => Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode);
+
+@override String toString() => 'WaitingroomEventResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)';
+
  }

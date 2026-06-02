@@ -30,11 +30,14 @@ NfsVolumeSource copyWith({String? path, bool? Function()? readOnly, String? serv
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   server: server ?? this.server,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NfsVolumeSource &&
           path == other.path &&
           readOnly == other.readOnly &&
-          server == other.server; } 
-@override int get hashCode { return Object.hash(path, readOnly, server); } 
-@override String toString() { return 'NfsVolumeSource(path: $path, readOnly: $readOnly, server: $server)'; } 
+          server == other.server;
+
+@override int get hashCode => Object.hash(path, readOnly, server);
+
+@override String toString() => 'NfsVolumeSource(path: $path, readOnly: $readOnly, server: $server)';
+
  }

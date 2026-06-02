@@ -44,13 +44,16 @@ CloudflarePipelinesPipelineEdge copyWith({int? destId, String? edgeType, String?
   srcId: srcId ?? this.srcId,
   valueType: valueType ?? this.valueType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineEdge &&
           destId == other.destId &&
           edgeType == other.edgeType &&
           keyType == other.keyType &&
           srcId == other.srcId &&
-          valueType == other.valueType; } 
-@override int get hashCode { return Object.hash(destId, edgeType, keyType, srcId, valueType); } 
-@override String toString() { return 'CloudflarePipelinesPipelineEdge(destId: $destId, edgeType: $edgeType, keyType: $keyType, srcId: $srcId, valueType: $valueType)'; } 
+          valueType == other.valueType;
+
+@override int get hashCode => Object.hash(destId, edgeType, keyType, srcId, valueType);
+
+@override String toString() => 'CloudflarePipelinesPipelineEdge(destId: $destId, edgeType: $edgeType, keyType: $keyType, srcId: $srcId, valueType: $valueType)';
+
  }

@@ -54,17 +54,12 @@ final class New0 {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is New0 && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is New0 && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'New0($value)';
-  }
+  String toString() => 'New0($value)';
 }

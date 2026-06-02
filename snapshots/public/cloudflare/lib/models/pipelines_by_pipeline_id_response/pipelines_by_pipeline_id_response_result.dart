@@ -67,7 +67,7 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
   status: status ?? this.status,
   tables: tables ?? this.tables,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesByPipelineIdResponseResult &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -75,7 +75,10 @@ PipelinesByPipelineIdResponseResult copyWith({String? createdAt, String? id, Str
           name == other.name &&
           sql == other.sql &&
           status == other.status &&
-          listEquals(tables, other.tables); } 
-@override int get hashCode { return Object.hash(createdAt, id, modifiedAt, name, sql, status, Object.hashAll(tables)); } 
-@override String toString() { return 'PipelinesByPipelineIdResponseResult(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status, tables: $tables)'; } 
+          listEquals(tables, other.tables);
+
+@override int get hashCode => Object.hash(createdAt, id, modifiedAt, name, sql, status, Object.hashAll(tables));
+
+@override String toString() => 'PipelinesByPipelineIdResponseResult(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status, tables: $tables)';
+
  }

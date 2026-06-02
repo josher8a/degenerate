@@ -17,7 +17,8 @@ final class RadarGetCertificateLogsError$400 extends RadarGetCertificateLogsErro
 
 final RadarGetCertificateLogsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetCertificateLogsError$Unknown extends RadarGetCertificateLogsError {const RadarGetCertificateLogsError$Unknown(this.statusCode, this.rawBody, );
 

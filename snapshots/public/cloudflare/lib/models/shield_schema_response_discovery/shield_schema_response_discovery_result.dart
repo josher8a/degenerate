@@ -21,10 +21,13 @@ ShieldSchemaResponseDiscoveryResult copyWith({List<Map<String,dynamic>>? schemas
   schemas: schemas ?? this.schemas,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaResponseDiscoveryResult &&
           listEquals(schemas, other.schemas) &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(Object.hashAll(schemas), timestamp); } 
-@override String toString() { return 'ShieldSchemaResponseDiscoveryResult(schemas: $schemas, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(Object.hashAll(schemas), timestamp);
+
+@override String toString() => 'ShieldSchemaResponseDiscoveryResult(schemas: $schemas, timestamp: $timestamp)';
+
  }

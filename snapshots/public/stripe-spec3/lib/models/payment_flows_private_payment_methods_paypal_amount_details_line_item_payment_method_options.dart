@@ -40,11 +40,14 @@ PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions
   description: description != null ? description() : this.description,
   soldBy: soldBy != null ? soldBy() : this.soldBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions &&
           category == other.category &&
           description == other.description &&
-          soldBy == other.soldBy; } 
-@override int get hashCode { return Object.hash(category, description, soldBy); } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions(category: $category, description: $description, soldBy: $soldBy)'; } 
+          soldBy == other.soldBy;
+
+@override int get hashCode => Object.hash(category, description, soldBy);
+
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptions(category: $category, description: $description, soldBy: $soldBy)';
+
  }

@@ -31,11 +31,14 @@ EstimatedUsersLocations copyWith({int? Function()? estimatedUsers, String? locat
   locationAlpha2: locationAlpha2 ?? this.locationAlpha2,
   locationName: locationName ?? this.locationName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EstimatedUsersLocations &&
           estimatedUsers == other.estimatedUsers &&
           locationAlpha2 == other.locationAlpha2 &&
-          locationName == other.locationName; } 
-@override int get hashCode { return Object.hash(estimatedUsers, locationAlpha2, locationName); } 
-@override String toString() { return 'EstimatedUsersLocations(estimatedUsers: $estimatedUsers, locationAlpha2: $locationAlpha2, locationName: $locationName)'; } 
+          locationName == other.locationName;
+
+@override int get hashCode => Object.hash(estimatedUsers, locationAlpha2, locationName);
+
+@override String toString() => 'EstimatedUsersLocations(estimatedUsers: $estimatedUsers, locationAlpha2: $locationAlpha2, locationName: $locationName)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentityVerificationSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentityVerificationSessionObject($value)';
+
  }
 /// Status of this VerificationSession. [Learn more about the lifecycle of sessions](https://docs.stripe.com/identity/how-sessions-work).
 @immutable final class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationSessionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentityVerificationSessionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentityVerificationSessionStatus($value)';
+
  }
 /// A VerificationSession guides you through the process of collecting and verifying the identities
 /// of your users. It contains details about the type of verification, such as what [verification
@@ -227,7 +233,7 @@ IdentityVerificationSession copyWith({String? Function()? clientReferenceId, Str
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
   verifiedOutputs: verifiedOutputs != null ? verifiedOutputs() : this.verifiedOutputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IdentityVerificationSession &&
           clientReferenceId == other.clientReferenceId &&
           clientSecret == other.clientSecret &&
@@ -248,7 +254,10 @@ IdentityVerificationSession copyWith({String? Function()? clientReferenceId, Str
           type == other.type &&
           url == other.url &&
           verificationFlow == other.verificationFlow &&
-          verifiedOutputs == other.verifiedOutputs; } 
-@override int get hashCode { return Object.hash(clientReferenceId, clientSecret, created, id, lastError, lastVerificationReport, livemode, metadata, object, options, providedDetails, redaction, relatedCustomer, relatedCustomerAccount, relatedPerson, status, type, url, verificationFlow, verifiedOutputs); } 
-@override String toString() { return 'IdentityVerificationSession(clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, created: $created, id: $id, lastError: $lastError, lastVerificationReport: $lastVerificationReport, livemode: $livemode, metadata: $metadata, object: $object, options: $options, providedDetails: $providedDetails, redaction: $redaction, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, status: $status, type: $type, url: $url, verificationFlow: $verificationFlow, verifiedOutputs: $verifiedOutputs)'; } 
+          verifiedOutputs == other.verifiedOutputs;
+
+@override int get hashCode => Object.hash(clientReferenceId, clientSecret, created, id, lastError, lastVerificationReport, livemode, metadata, object, options, providedDetails, redaction, relatedCustomer, relatedCustomerAccount, relatedPerson, status, type, url, verificationFlow, verifiedOutputs);
+
+@override String toString() => 'IdentityVerificationSession(clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, created: $created, id: $id, lastError: $lastError, lastVerificationReport: $lastVerificationReport, livemode: $livemode, metadata: $metadata, object: $object, options: $options, providedDetails: $providedDetails, redaction: $redaction, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, status: $status, type: $type, url: $url, verificationFlow: $verificationFlow, verifiedOutputs: $verifiedOutputs)';
+
  }

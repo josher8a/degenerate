@@ -44,13 +44,16 @@ NetworkSettings copyWith({String? id, String? Function()? networkConfigurationId
   subnetId: subnetId ?? this.subnetId,
   region: region ?? this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkSettings &&
           id == other.id &&
           networkConfigurationId == other.networkConfigurationId &&
           name == other.name &&
           subnetId == other.subnetId &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(id, networkConfigurationId, name, subnetId, region); } 
-@override String toString() { return 'NetworkSettings(id: $id, networkConfigurationId: $networkConfigurationId, name: $name, subnetId: $subnetId, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(id, networkConfigurationId, name, subnetId, region);
+
+@override String toString() => 'NetworkSettings(id: $id, networkConfigurationId: $networkConfigurationId, name: $name, subnetId: $subnetId, region: $region)';
+
  }

@@ -24,10 +24,13 @@ CheckImmutableReleases copyWith({bool? enabled, bool? enforcedByOwner, }) { retu
   enabled: enabled ?? this.enabled,
   enforcedByOwner: enforcedByOwner ?? this.enforcedByOwner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckImmutableReleases &&
           enabled == other.enabled &&
-          enforcedByOwner == other.enforcedByOwner; } 
-@override int get hashCode { return Object.hash(enabled, enforcedByOwner); } 
-@override String toString() { return 'CheckImmutableReleases(enabled: $enabled, enforcedByOwner: $enforcedByOwner)'; } 
+          enforcedByOwner == other.enforcedByOwner;
+
+@override int get hashCode => Object.hash(enabled, enforcedByOwner);
+
+@override String toString() => 'CheckImmutableReleases(enabled: $enabled, enforcedByOwner: $enforcedByOwner)';
+
  }

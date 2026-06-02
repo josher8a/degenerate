@@ -39,12 +39,15 @@ ZeroTrustGatewaySettings copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()
   seedId: seedId != null ? seedId() : this.seedId,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySettings &&
           createdAt == other.createdAt &&
           publicKey == other.publicKey &&
           seedId == other.seedId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, publicKey, seedId, updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewaySettings(createdAt: $createdAt, publicKey: $publicKey, seedId: $seedId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, publicKey, seedId, updatedAt);
+
+@override String toString() => 'ZeroTrustGatewaySettings(createdAt: $createdAt, publicKey: $publicKey, seedId: $seedId, updatedAt: $updatedAt)';
+
  }

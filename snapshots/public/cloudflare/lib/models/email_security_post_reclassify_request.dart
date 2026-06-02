@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExpectedDisposition && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExpectedDisposition($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ExpectedDisposition && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ExpectedDisposition($value)';
+
  }
 @immutable final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({required this.expectedDisposition, this.emlContent, this.escalatedSubmissionId, });
 
@@ -62,11 +65,14 @@ EmailSecurityPostReclassifyRequest copyWith({String? Function()? emlContent, Str
   escalatedSubmissionId: escalatedSubmissionId != null ? escalatedSubmissionId() : this.escalatedSubmissionId,
   expectedDisposition: expectedDisposition ?? this.expectedDisposition,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPostReclassifyRequest &&
           emlContent == other.emlContent &&
           escalatedSubmissionId == other.escalatedSubmissionId &&
-          expectedDisposition == other.expectedDisposition; } 
-@override int get hashCode { return Object.hash(emlContent, escalatedSubmissionId, expectedDisposition); } 
-@override String toString() { return 'EmailSecurityPostReclassifyRequest(emlContent: $emlContent, escalatedSubmissionId: $escalatedSubmissionId, expectedDisposition: $expectedDisposition)'; } 
+          expectedDisposition == other.expectedDisposition;
+
+@override int get hashCode => Object.hash(emlContent, escalatedSubmissionId, expectedDisposition);
+
+@override String toString() => 'EmailSecurityPostReclassifyRequest(emlContent: $emlContent, escalatedSubmissionId: $escalatedSubmissionId, expectedDisposition: $expectedDisposition)';
+
  }

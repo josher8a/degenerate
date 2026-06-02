@@ -43,12 +43,15 @@ RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0 copyWith({String? botCat
   botOwner: botOwner ?? this.botOwner,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0 &&
           botCategory == other.botCategory &&
           botName == other.botName &&
           botOwner == other.botOwner &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(botCategory, botName, botOwner, value); } 
-@override String toString() { return 'RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0(botCategory: $botCategory, botName: $botName, botOwner: $botOwner, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(botCategory, botName, botOwner, value);
+
+@override String toString() => 'RadarGetVerifiedBotsTopByHttpRequestsResponseResultTop0(botCategory: $botCategory, botName: $botName, botOwner: $botOwner, value: $value)';
+
  }

@@ -29,11 +29,14 @@ Lifecycle copyWith({LifecycleHandler? Function()? postStart, LifecycleHandler? F
   preStop: preStop != null ? preStop() : this.preStop,
   stopSignal: stopSignal != null ? stopSignal() : this.stopSignal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Lifecycle &&
           postStart == other.postStart &&
           preStop == other.preStop &&
-          stopSignal == other.stopSignal; } 
-@override int get hashCode { return Object.hash(postStart, preStop, stopSignal); } 
-@override String toString() { return 'Lifecycle(postStart: $postStart, preStop: $preStop, stopSignal: $stopSignal)'; } 
+          stopSignal == other.stopSignal;
+
+@override int get hashCode => Object.hash(postStart, preStop, stopSignal);
+
+@override String toString() => 'Lifecycle(postStart: $postStart, preStop: $preStop, stopSignal: $stopSignal)';
+
  }

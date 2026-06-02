@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CountrySpecObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CountrySpecObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CountrySpecObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CountrySpecObject($value)';
+
  }
 /// Stripe needs to collect certain pieces of information about each account
 /// created. These requirements can differ depending on the account's country. The
@@ -97,7 +100,7 @@ CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? ob
   supportedTransferCountries: supportedTransferCountries ?? this.supportedTransferCountries,
   verificationFields: verificationFields ?? this.verificationFields,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountrySpec &&
           defaultCurrency == other.defaultCurrency &&
           id == other.id &&
@@ -106,7 +109,10 @@ CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? ob
           listEquals(supportedPaymentCurrencies, other.supportedPaymentCurrencies) &&
           listEquals(supportedPaymentMethods, other.supportedPaymentMethods) &&
           listEquals(supportedTransferCountries, other.supportedTransferCountries) &&
-          verificationFields == other.verificationFields; } 
-@override int get hashCode { return Object.hash(defaultCurrency, id, object, supportedBankAccountCurrencies, Object.hashAll(supportedPaymentCurrencies), Object.hashAll(supportedPaymentMethods), Object.hashAll(supportedTransferCountries), verificationFields); } 
-@override String toString() { return 'CountrySpec(defaultCurrency: $defaultCurrency, id: $id, object: $object, supportedBankAccountCurrencies: $supportedBankAccountCurrencies, supportedPaymentCurrencies: $supportedPaymentCurrencies, supportedPaymentMethods: $supportedPaymentMethods, supportedTransferCountries: $supportedTransferCountries, verificationFields: $verificationFields)'; } 
+          verificationFields == other.verificationFields;
+
+@override int get hashCode => Object.hash(defaultCurrency, id, object, supportedBankAccountCurrencies, Object.hashAll(supportedPaymentCurrencies), Object.hashAll(supportedPaymentMethods), Object.hashAll(supportedTransferCountries), verificationFields);
+
+@override String toString() => 'CountrySpec(defaultCurrency: $defaultCurrency, id: $id, object: $object, supportedBankAccountCurrencies: $supportedBankAccountCurrencies, supportedPaymentCurrencies: $supportedPaymentCurrencies, supportedPaymentMethods: $supportedPaymentMethods, supportedTransferCountries: $supportedTransferCountries, verificationFields: $verificationFields)';
+
  }

@@ -33,11 +33,14 @@ ResponseInProgressEvent copyWith({String? type, Response? response, int? sequenc
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseInProgressEvent &&
           type == other.type &&
           response == other.response &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, response, sequenceNumber); } 
-@override String toString() { return 'ResponseInProgressEvent(type: $type, response: $response, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, response, sequenceNumber);
+
+@override String toString() => 'ResponseInProgressEvent(type: $type, response: $response, sequenceNumber: $sequenceNumber)';
+
  }

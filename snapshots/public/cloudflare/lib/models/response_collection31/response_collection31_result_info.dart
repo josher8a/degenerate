@@ -34,12 +34,15 @@ ResponseCollection31ResultInfo copyWith({int? Function()? count, int? Function()
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection31ResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount); } 
-@override String toString() { return 'ResponseCollection31ResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, page, perPage, totalCount);
+
+@override String toString() => 'ResponseCollection31ResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
+
  }

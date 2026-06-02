@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelSubnetType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelSubnetType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TunnelSubnetType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TunnelSubnetType($value)';
+
  }
 @immutable final class TunnelSubnet {const TunnelSubnet({this.comment, this.createdAt, this.deletedAt, this.id, this.isDefaultNetwork, this.name, this.network, this.subnetType, });
 
@@ -77,7 +80,7 @@ TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt
   network: network != null ? network() : this.network,
   subnetType: subnetType != null ? subnetType() : this.subnetType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelSubnet &&
           comment == other.comment &&
           createdAt == other.createdAt &&
@@ -86,7 +89,10 @@ TunnelSubnet copyWith({TunnelSubnetComment? Function()? comment, TunnelCreatedAt
           isDefaultNetwork == other.isDefaultNetwork &&
           name == other.name &&
           network == other.network &&
-          subnetType == other.subnetType; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name, network, subnetType); } 
-@override String toString() { return 'TunnelSubnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network, subnetType: $subnetType)'; } 
+          subnetType == other.subnetType;
+
+@override int get hashCode => Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name, network, subnetType);
+
+@override String toString() => 'TunnelSubnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network, subnetType: $subnetType)';
+
  }

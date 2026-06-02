@@ -26,10 +26,13 @@ ZeroTrustGatewayAccountLogOptions copyWith({bool Function()? logAll, bool Functi
   logAll: logAll != null ? logAll() : this.logAll,
   logBlocks: logBlocks != null ? logBlocks() : this.logBlocks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayAccountLogOptions &&
           logAll == other.logAll &&
-          logBlocks == other.logBlocks; } 
-@override int get hashCode { return Object.hash(logAll, logBlocks); } 
-@override String toString() { return 'ZeroTrustGatewayAccountLogOptions(logAll: $logAll, logBlocks: $logBlocks)'; } 
+          logBlocks == other.logBlocks;
+
+@override int get hashCode => Object.hash(logAll, logBlocks);
+
+@override String toString() => 'ZeroTrustGatewayAccountLogOptions(logAll: $logAll, logBlocks: $logBlocks)';
+
  }

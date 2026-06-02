@@ -70,7 +70,7 @@ RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<Realtimeki
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitWebhook &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -78,7 +78,10 @@ RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<Realtimeki
           id == other.id &&
           name == other.name &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, Object.hashAll(events), id, name, updatedAt, url); } 
-@override String toString() { return 'RealtimekitWebhook(createdAt: $createdAt, enabled: $enabled, events: $events, id: $id, name: $name, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(createdAt, enabled, Object.hashAll(events), id, name, updatedAt, url);
+
+@override String toString() => 'RealtimekitWebhook(createdAt: $createdAt, enabled: $enabled, events: $events, id: $id, name: $name, updatedAt: $updatedAt, url: $url)';
+
  }

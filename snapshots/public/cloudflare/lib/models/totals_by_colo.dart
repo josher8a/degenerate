@@ -36,13 +36,16 @@ TotalsByColo copyWith({BandwidthByColo? Function()? bandwidth, RequestsByColo? F
   threats: threats != null ? threats() : this.threats,
   until: until != null ? until() : this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TotalsByColo &&
           bandwidth == other.bandwidth &&
           requests == other.requests &&
           since == other.since &&
           threats == other.threats &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(bandwidth, requests, since, threats, until); } 
-@override String toString() { return 'TotalsByColo(bandwidth: $bandwidth, requests: $requests, since: $since, threats: $threats, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(bandwidth, requests, since, threats, until);
+
+@override String toString() => 'TotalsByColo(bandwidth: $bandwidth, requests: $requests, since: $since, threats: $threats, until: $until)';
+
  }

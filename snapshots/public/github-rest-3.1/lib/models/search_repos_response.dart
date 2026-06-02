@@ -27,11 +27,14 @@ SearchReposResponse copyWith({int? totalCount, bool? incompleteResults, List<Rep
   incompleteResults: incompleteResults ?? this.incompleteResults,
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SearchReposResponse &&
           totalCount == other.totalCount &&
           incompleteResults == other.incompleteResults &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(totalCount, incompleteResults, Object.hashAll(items)); } 
-@override String toString() { return 'SearchReposResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(totalCount, incompleteResults, Object.hashAll(items));
+
+@override String toString() => 'SearchReposResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';
+
  }

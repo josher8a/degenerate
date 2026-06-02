@@ -62,7 +62,7 @@ WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function(
   scriptVersion: scriptVersion != null ? scriptVersion() : this.scriptVersion,
   truncated: truncated != null ? truncated() : this.truncated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVariant1 &&
           durableObjectId == other.durableObjectId &&
           entrypoint == other.entrypoint &&
@@ -73,7 +73,10 @@ WorkersVariant1 copyWith({String? Function()? durableObjectId, String? Function(
           requestId == other.requestId &&
           scriptName == other.scriptName &&
           scriptVersion == other.scriptVersion &&
-          truncated == other.truncated; } 
-@override int get hashCode { return Object.hash(durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated); } 
-@override String toString() { return 'WorkersVariant1(durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated)'; } 
+          truncated == other.truncated;
+
+@override int get hashCode => Object.hash(durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated);
+
+@override String toString() => 'WorkersVariant1(durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated)';
+
  }

@@ -17,7 +17,8 @@ final class DeleteGroupMemberDeleteError$400 extends DeleteGroupMemberDeleteErro
 
 final DeleteGroupMemberDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteGroupMemberDeleteError$Unknown extends DeleteGroupMemberDeleteError {const DeleteGroupMemberDeleteError$Unknown(this.statusCode, this.rawBody, );
 

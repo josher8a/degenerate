@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesDecimalEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesDecimalEncoding($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesDecimalEncoding && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudflarePipelinesDecimalEncoding($value)';
+
  }
 @immutable final class CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat._(this.value);
 
@@ -46,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesTimestampFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesTimestampFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesTimestampFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudflarePipelinesTimestampFormat($value)';
+
  }
 @immutable final class CloudflarePipelinesJsonFormat {const CloudflarePipelinesJsonFormat({this.decimalEncoding, this.timestampFormat, this.unstructured, });
 
@@ -76,11 +82,14 @@ CloudflarePipelinesJsonFormat copyWith({CloudflarePipelinesDecimalEncoding? Func
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
   unstructured: unstructured != null ? unstructured() : this.unstructured,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesJsonFormat &&
           decimalEncoding == other.decimalEncoding &&
           timestampFormat == other.timestampFormat &&
-          unstructured == other.unstructured; } 
-@override int get hashCode { return Object.hash(decimalEncoding, timestampFormat, unstructured); } 
-@override String toString() { return 'CloudflarePipelinesJsonFormat(decimalEncoding: $decimalEncoding, timestampFormat: $timestampFormat, unstructured: $unstructured)'; } 
+          unstructured == other.unstructured;
+
+@override int get hashCode => Object.hash(decimalEncoding, timestampFormat, unstructured);
+
+@override String toString() => 'CloudflarePipelinesJsonFormat(decimalEncoding: $decimalEncoding, timestampFormat: $timestampFormat, unstructured: $unstructured)';
+
  }

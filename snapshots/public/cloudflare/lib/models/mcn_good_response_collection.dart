@@ -32,12 +32,15 @@ McnGoodResponseCollection copyWith({List<McnError>? messages, McnResultInfo? Fun
   success: success ?? this.success,
   errors: errors ?? this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnGoodResponseCollection &&
           listEquals(messages, other.messages) &&
           resultInfo == other.resultInfo &&
           success == other.success &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(Object.hashAll(messages), resultInfo, success, Object.hashAll(errors)); } 
-@override String toString() { return 'McnGoodResponseCollection(messages: $messages, resultInfo: $resultInfo, success: $success, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(Object.hashAll(messages), resultInfo, success, Object.hashAll(errors));
+
+@override String toString() => 'McnGoodResponseCollection(messages: $messages, resultInfo: $resultInfo, success: $success, errors: $errors)';
+
  }

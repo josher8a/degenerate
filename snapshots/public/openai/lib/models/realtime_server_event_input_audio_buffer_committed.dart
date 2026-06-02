@@ -43,12 +43,15 @@ RealtimeServerEventInputAudioBufferCommitted copyWith({String? eventId, String? 
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferCommitted &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, itemId); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferCommitted(eventId: $eventId, type: $type, previousItemId: $previousItemId, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, previousItemId, itemId);
+
+@override String toString() => 'RealtimeServerEventInputAudioBufferCommitted(eventId: $eventId, type: $type, previousItemId: $previousItemId, itemId: $itemId)';
+
  }

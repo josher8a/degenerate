@@ -42,11 +42,14 @@ PaymentMethodOptionsAffirm copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMe
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsAffirm &&
           captureMethod == other.captureMethod &&
           preferredLocale == other.preferredLocale &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, preferredLocale, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsAffirm(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, preferredLocale, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsAffirm(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)';
+
  }

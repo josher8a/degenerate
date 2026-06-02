@@ -19,19 +19,22 @@ final class CodeScanningGetDefaultSetupError$403 extends CodeScanningGetDefaultS
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningGetDefaultSetupError$404 extends CodeScanningGetDefaultSetupError {const CodeScanningGetDefaultSetupError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningGetDefaultSetupError$503 extends CodeScanningGetDefaultSetupError {const CodeScanningGetDefaultSetupError$503(this.error);
 
 final CodeScanningGetDefaultSetupResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningGetDefaultSetupError$Unknown extends CodeScanningGetDefaultSetupError {const CodeScanningGetDefaultSetupError$Unknown(this.statusCode, this.rawBody, );
 

@@ -20,10 +20,13 @@ SpectrumAnalyticsColumn copyWith({List<String>? Function()? dimensions, Metrics?
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   metrics: metrics != null ? metrics() : this.metrics,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsColumn &&
           listEquals(dimensions, other.dimensions) &&
-          metrics == other.metrics; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dimensions ?? const []), metrics); } 
-@override String toString() { return 'SpectrumAnalyticsColumn(dimensions: $dimensions, metrics: $metrics)'; } 
+          metrics == other.metrics;
+
+@override int get hashCode => Object.hash(Object.hashAll(dimensions ?? const []), metrics);
+
+@override String toString() => 'SpectrumAnalyticsColumn(dimensions: $dimensions, metrics: $metrics)';
+
  }

@@ -67,7 +67,7 @@ PredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatch
   openAccess: openAccess != null ? openAccess() : this.openAccess,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -78,7 +78,10 @@ PredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatch
           name == other.name &&
           ocrEnabled == other.ocrEnabled &&
           openAccess == other.openAccess &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess, type); } 
-@override String toString() { return 'PredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess, type);
+
+@override String toString() => 'PredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess, type: $type)';
+
  }

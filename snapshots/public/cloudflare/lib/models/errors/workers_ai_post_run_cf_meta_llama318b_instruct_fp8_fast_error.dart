@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMetaLlama318bInstructFp8FastError$400 extends Work
 
 final WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMetaLlama318bInstructFp8FastError$Unknown extends WorkersAiPostRunCfMetaLlama318bInstructFp8FastError {const WorkersAiPostRunCfMetaLlama318bInstructFp8FastError$Unknown(this.statusCode, this.rawBody, );
 

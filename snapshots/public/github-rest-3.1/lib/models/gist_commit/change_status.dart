@@ -25,11 +25,14 @@ ChangeStatus copyWith({int? Function()? total, int? Function()? additions, int? 
   additions: additions != null ? additions() : this.additions,
   deletions: deletions != null ? deletions() : this.deletions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangeStatus &&
           total == other.total &&
           additions == other.additions &&
-          deletions == other.deletions; } 
-@override int get hashCode { return Object.hash(total, additions, deletions); } 
-@override String toString() { return 'ChangeStatus(total: $total, additions: $additions, deletions: $deletions)'; } 
+          deletions == other.deletions;
+
+@override int get hashCode => Object.hash(total, additions, deletions);
+
+@override String toString() => 'ChangeStatus(total: $total, additions: $additions, deletions: $deletions)';
+
  }

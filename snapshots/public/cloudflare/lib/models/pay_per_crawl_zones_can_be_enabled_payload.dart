@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PayPerCrawlZonesCanBeEnabledPayload copyWith({List<PayPerCrawlDaricZoneCanBeEnabled>? Function()? zones}) { return PayPerCrawlZonesCanBeEnabledPayload(
   zones: zones != null ? zones() : this.zones,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlZonesCanBeEnabledPayload &&
-          listEquals(zones, other.zones); } 
-@override int get hashCode { return Object.hashAll(zones ?? const []); } 
-@override String toString() { return 'PayPerCrawlZonesCanBeEnabledPayload(zones: $zones)'; } 
+          listEquals(zones, other.zones);
+
+@override int get hashCode => Object.hashAll(zones ?? const []);
+
+@override String toString() => 'PayPerCrawlZonesCanBeEnabledPayload(zones: $zones)';
+
  }

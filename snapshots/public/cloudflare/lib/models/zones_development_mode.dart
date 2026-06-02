@@ -48,13 +48,16 @@ ZonesDevelopmentMode copyWith({bool Function()? editable, dynamic Function()? id
   value: value ?? this.value,
   timeRemaining: timeRemaining != null ? timeRemaining() : this.timeRemaining,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDevelopmentMode &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           value == other.value &&
-          timeRemaining == other.timeRemaining; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value, timeRemaining); } 
-@override String toString() { return 'ZonesDevelopmentMode(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value, timeRemaining: $timeRemaining)'; } 
+          timeRemaining == other.timeRemaining;
+
+@override int get hashCode => Object.hash(editable, id, modifiedOn, value, timeRemaining);
+
+@override String toString() => 'ZonesDevelopmentMode(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value, timeRemaining: $timeRemaining)';
+
  }

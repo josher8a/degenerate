@@ -23,10 +23,13 @@ PaymentMethodConfigResourcePaymentMethodProperties copyWith({bool? available, Pa
   available: available ?? this.available,
   displayPreference: displayPreference ?? this.displayPreference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfigResourcePaymentMethodProperties &&
           available == other.available &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return Object.hash(available, displayPreference); } 
-@override String toString() { return 'PaymentMethodConfigResourcePaymentMethodProperties(available: $available, displayPreference: $displayPreference)'; } 
+          displayPreference == other.displayPreference;
+
+@override int get hashCode => Object.hash(available, displayPreference);
+
+@override String toString() => 'PaymentMethodConfigResourcePaymentMethodProperties(available: $available, displayPreference: $displayPreference)';
+
  }

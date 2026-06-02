@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallEnumUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallEnumUpdateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CallEnumUpdateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CallEnumUpdateStatus($value)';
+
  }
 @immutable final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });
 
@@ -87,7 +90,7 @@ UpdateCallRequest copyWith({Uri? Function()? url, Method? Function()? method, Ca
   twiml: twiml != null ? twiml() : this.twiml,
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateCallRequest &&
           url == other.url &&
           method == other.method &&
@@ -97,7 +100,10 @@ UpdateCallRequest copyWith({Uri? Function()? url, Method? Function()? method, Ca
           statusCallback == other.statusCallback &&
           statusCallbackMethod == other.statusCallbackMethod &&
           twiml == other.twiml &&
-          timeLimit == other.timeLimit; } 
-@override int get hashCode { return Object.hash(url, method, status, fallbackUrl, fallbackMethod, statusCallback, statusCallbackMethod, twiml, timeLimit); } 
-@override String toString() { return 'UpdateCallRequest(url: $url, method: $method, status: $status, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, twiml: $twiml, timeLimit: $timeLimit)'; } 
+          timeLimit == other.timeLimit;
+
+@override int get hashCode => Object.hash(url, method, status, fallbackUrl, fallbackMethod, statusCallback, statusCallbackMethod, twiml, timeLimit);
+
+@override String toString() => 'UpdateCallRequest(url: $url, method: $method, status: $status, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, twiml: $twiml, timeLimit: $timeLimit)';
+
  }

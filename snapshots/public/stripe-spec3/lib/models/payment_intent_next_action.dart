@@ -112,7 +112,7 @@ PaymentIntentNextAction copyWith({PaymentIntentNextActionAlipayHandleRedirect? F
   wechatPayRedirectToAndroidApp: wechatPayRedirectToAndroidApp != null ? wechatPayRedirectToAndroidApp() : this.wechatPayRedirectToAndroidApp,
   wechatPayRedirectToIosApp: wechatPayRedirectToIosApp != null ? wechatPayRedirectToIosApp() : this.wechatPayRedirectToIosApp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextAction &&
           alipayHandleRedirect == other.alipayHandleRedirect &&
           boletoDisplayDetails == other.boletoDisplayDetails &&
@@ -132,7 +132,10 @@ PaymentIntentNextAction copyWith({PaymentIntentNextActionAlipayHandleRedirect? F
           verifyWithMicrodeposits == other.verifyWithMicrodeposits &&
           wechatPayDisplayQrCode == other.wechatPayDisplayQrCode &&
           wechatPayRedirectToAndroidApp == other.wechatPayRedirectToAndroidApp &&
-          wechatPayRedirectToIosApp == other.wechatPayRedirectToIosApp; } 
-@override int get hashCode { return Object.hash(alipayHandleRedirect, boletoDisplayDetails, cardAwaitNotification, cashappHandleRedirectOrDisplayQrCode, displayBankTransferInstructions, konbiniDisplayDetails, multibancoDisplayDetails, oxxoDisplayDetails, paynowDisplayQrCode, pixDisplayQrCode, promptpayDisplayQrCode, redirectToUrl, swishHandleRedirectOrDisplayQrCode, type, useStripeSdk, verifyWithMicrodeposits, wechatPayDisplayQrCode, wechatPayRedirectToAndroidApp, wechatPayRedirectToIosApp); } 
-@override String toString() { return 'PaymentIntentNextAction(alipayHandleRedirect: $alipayHandleRedirect, boletoDisplayDetails: $boletoDisplayDetails, cardAwaitNotification: $cardAwaitNotification, cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, displayBankTransferInstructions: $displayBankTransferInstructions, konbiniDisplayDetails: $konbiniDisplayDetails, multibancoDisplayDetails: $multibancoDisplayDetails, oxxoDisplayDetails: $oxxoDisplayDetails, paynowDisplayQrCode: $paynowDisplayQrCode, pixDisplayQrCode: $pixDisplayQrCode, promptpayDisplayQrCode: $promptpayDisplayQrCode, redirectToUrl: $redirectToUrl, swishHandleRedirectOrDisplayQrCode: $swishHandleRedirectOrDisplayQrCode, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits, wechatPayDisplayQrCode: $wechatPayDisplayQrCode, wechatPayRedirectToAndroidApp: $wechatPayRedirectToAndroidApp, wechatPayRedirectToIosApp: $wechatPayRedirectToIosApp)'; } 
+          wechatPayRedirectToIosApp == other.wechatPayRedirectToIosApp;
+
+@override int get hashCode => Object.hash(alipayHandleRedirect, boletoDisplayDetails, cardAwaitNotification, cashappHandleRedirectOrDisplayQrCode, displayBankTransferInstructions, konbiniDisplayDetails, multibancoDisplayDetails, oxxoDisplayDetails, paynowDisplayQrCode, pixDisplayQrCode, promptpayDisplayQrCode, redirectToUrl, swishHandleRedirectOrDisplayQrCode, type, useStripeSdk, verifyWithMicrodeposits, wechatPayDisplayQrCode, wechatPayRedirectToAndroidApp, wechatPayRedirectToIosApp);
+
+@override String toString() => 'PaymentIntentNextAction(alipayHandleRedirect: $alipayHandleRedirect, boletoDisplayDetails: $boletoDisplayDetails, cardAwaitNotification: $cardAwaitNotification, cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, displayBankTransferInstructions: $displayBankTransferInstructions, konbiniDisplayDetails: $konbiniDisplayDetails, multibancoDisplayDetails: $multibancoDisplayDetails, oxxoDisplayDetails: $oxxoDisplayDetails, paynowDisplayQrCode: $paynowDisplayQrCode, pixDisplayQrCode: $pixDisplayQrCode, promptpayDisplayQrCode: $promptpayDisplayQrCode, redirectToUrl: $redirectToUrl, swishHandleRedirectOrDisplayQrCode: $swishHandleRedirectOrDisplayQrCode, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits, wechatPayDisplayQrCode: $wechatPayDisplayQrCode, wechatPayRedirectToAndroidApp: $wechatPayRedirectToAndroidApp, wechatPayRedirectToIosApp: $wechatPayRedirectToIosApp)';
+
  }

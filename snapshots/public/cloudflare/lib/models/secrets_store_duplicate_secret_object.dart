@@ -27,11 +27,14 @@ SecretsStoreDuplicateSecretObject copyWith({SecretsStoreComment? Function()? com
   name: name ?? this.name,
   scopes: scopes ?? this.scopes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreDuplicateSecretObject &&
           comment == other.comment &&
           name == other.name &&
-          listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hash(comment, name, Object.hashAll(scopes)); } 
-@override String toString() { return 'SecretsStoreDuplicateSecretObject(comment: $comment, name: $name, scopes: $scopes)'; } 
+          listEquals(scopes, other.scopes);
+
+@override int get hashCode => Object.hash(comment, name, Object.hashAll(scopes));
+
+@override String toString() => 'SecretsStoreDuplicateSecretObject(comment: $comment, name: $name, scopes: $scopes)';
+
  }

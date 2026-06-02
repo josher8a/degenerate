@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentOfflineType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentOfflineType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodDetailsCardPresentOfflineType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsCardPresentOfflineType($value)';
+
  }
 /// 
 @immutable final class PaymentMethodDetailsCardPresentOffline {const PaymentMethodDetailsCardPresentOffline({this.storedAt, this.type, });
@@ -45,10 +48,13 @@ PaymentMethodDetailsCardPresentOffline copyWith({int? Function()? storedAt, Paym
   storedAt: storedAt != null ? storedAt() : this.storedAt,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardPresentOffline &&
           storedAt == other.storedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(storedAt, type); } 
-@override String toString() { return 'PaymentMethodDetailsCardPresentOffline(storedAt: $storedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(storedAt, type);
+
+@override String toString() => 'PaymentMethodDetailsCardPresentOffline(storedAt: $storedAt, type: $type)';
+
  }

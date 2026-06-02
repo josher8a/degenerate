@@ -17,7 +17,8 @@ final class WorListWorkflowVersionsError$400 extends WorListWorkflowVersionsErro
 
 final WorListWorkflowVersionsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorListWorkflowVersionsError$Unknown extends WorListWorkflowVersionsError {const WorListWorkflowVersionsError$Unknown(this.statusCode, this.rawBody, );
 

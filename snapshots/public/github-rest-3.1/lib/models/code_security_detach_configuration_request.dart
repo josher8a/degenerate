@@ -24,9 +24,12 @@ return errors; }
 CodeSecurityDetachConfigurationRequest copyWith({List<int>? Function()? selectedRepositoryIds}) { return CodeSecurityDetachConfigurationRequest(
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityDetachConfigurationRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds ?? const []); } 
-@override String toString() { return 'CodeSecurityDetachConfigurationRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hashAll(selectedRepositoryIds ?? const []);
+
+@override String toString() => 'CodeSecurityDetachConfigurationRequest(selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

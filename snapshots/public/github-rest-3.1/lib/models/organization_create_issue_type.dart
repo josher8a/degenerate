@@ -35,12 +35,15 @@ OrganizationCreateIssueType copyWith({String? name, bool? isEnabled, String? Fun
   description: description != null ? description() : this.description,
   color: color != null ? color() : this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationCreateIssueType &&
           name == other.name &&
           isEnabled == other.isEnabled &&
           description == other.description &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(name, isEnabled, description, color); } 
-@override String toString() { return 'OrganizationCreateIssueType(name: $name, isEnabled: $isEnabled, description: $description, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(name, isEnabled, description, color);
+
+@override String toString() => 'OrganizationCreateIssueType(name: $name, isEnabled: $isEnabled, description: $description, color: $color)';
+
  }

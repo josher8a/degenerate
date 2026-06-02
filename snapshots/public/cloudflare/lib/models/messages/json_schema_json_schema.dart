@@ -30,12 +30,15 @@ JsonSchemaJsonSchema copyWith({String? Function()? description, String? name, Ma
   schema: schema != null ? schema() : this.schema,
   strict: strict != null ? strict() : this.strict,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JsonSchemaJsonSchema &&
           description == other.description &&
           name == other.name &&
           schema == other.schema &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(description, name, schema, strict); } 
-@override String toString() { return 'JsonSchemaJsonSchema(description: $description, name: $name, schema: $schema, strict: $strict)'; } 
+          strict == other.strict;
+
+@override int get hashCode => Object.hash(description, name, schema, strict);
+
+@override String toString() => 'JsonSchemaJsonSchema(description: $description, name: $name, schema: $schema, strict: $strict)';
+
  }

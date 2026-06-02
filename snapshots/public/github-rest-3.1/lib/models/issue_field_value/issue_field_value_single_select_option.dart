@@ -31,11 +31,14 @@ IssueFieldValueSingleSelectOption copyWith({int? id, String? name, String? color
   name: name ?? this.name,
   color: color ?? this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueFieldValueSingleSelectOption &&
           id == other.id &&
           name == other.name &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(id, name, color); } 
-@override String toString() { return 'IssueFieldValueSingleSelectOption(id: $id, name: $name, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(id, name, color);
+
+@override String toString() => 'IssueFieldValueSingleSelectOption(id: $id, name: $name, color: $color)';
+
  }

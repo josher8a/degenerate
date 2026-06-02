@@ -61,14 +61,17 @@ CreateServersRequest copyWith({String? Function()? authCredentials, CreateServer
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateServersRequest &&
           authCredentials == other.authCredentials &&
           authType == other.authType &&
           description == other.description &&
           hostname == other.hostname &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(authCredentials, authType, description, hostname, id, name); } 
-@override String toString() { return 'CreateServersRequest(authCredentials: $authCredentials, authType: $authType, description: $description, hostname: $hostname, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(authCredentials, authType, description, hostname, id, name);
+
+@override String toString() => 'CreateServersRequest(authCredentials: $authCredentials, authType: $authType, description: $description, hostname: $hostname, id: $id, name: $name)';
+
  }

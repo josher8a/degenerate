@@ -75,7 +75,7 @@ Resource copyWith({List<String>? Function()? categories, String? Function()? gro
   verbs: verbs ?? this.verbs,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Resource &&
           listEquals(categories, other.categories) &&
           group == other.group &&
@@ -86,7 +86,10 @@ Resource copyWith({List<String>? Function()? categories, String? Function()? gro
           singularName == other.singularName &&
           storageVersionHash == other.storageVersionHash &&
           listEquals(verbs, other.verbs) &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories ?? const []), group, kind, name, namespaced, Object.hashAll(shortNames ?? const []), singularName, storageVersionHash, Object.hashAll(verbs), version); } 
-@override String toString() { return 'Resource(categories: $categories, group: $group, kind: $kind, name: $name, namespaced: $namespaced, shortNames: $shortNames, singularName: $singularName, storageVersionHash: $storageVersionHash, verbs: $verbs, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(Object.hashAll(categories ?? const []), group, kind, name, namespaced, Object.hashAll(shortNames ?? const []), singularName, storageVersionHash, Object.hashAll(verbs), version);
+
+@override String toString() => 'Resource(categories: $categories, group: $group, kind: $kind, name: $name, namespaced: $namespaced, shortNames: $shortNames, singularName: $singularName, storageVersionHash: $storageVersionHash, verbs: $verbs, version: $version)';
+
  }

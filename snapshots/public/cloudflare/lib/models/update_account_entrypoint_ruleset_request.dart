@@ -61,14 +61,17 @@ UpdateAccountEntrypointRulesetRequest copyWith({String Function()? description, 
   version: version ?? this.version,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateAccountEntrypointRulesetRequest &&
           description == other.description &&
           id == other.id &&
           lastUpdated == other.lastUpdated &&
           name == other.name &&
           version == other.version &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'UpdateAccountEntrypointRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(description, id, lastUpdated, name, version, Object.hashAll(rules ?? const []));
+
+@override String toString() => 'UpdateAccountEntrypointRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, rules: $rules)';
+
  }

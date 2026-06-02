@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 NodeConfigSource copyWith({ConfigMapNodeConfigSource? Function()? configMap}) { return NodeConfigSource(
   configMap: configMap != null ? configMap() : this.configMap,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeConfigSource &&
-          configMap == other.configMap; } 
-@override int get hashCode { return configMap.hashCode; } 
-@override String toString() { return 'NodeConfigSource(configMap: $configMap)'; } 
+          configMap == other.configMap;
+
+@override int get hashCode => configMap.hashCode;
+
+@override String toString() => 'NodeConfigSource(configMap: $configMap)';
+
  }

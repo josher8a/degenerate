@@ -70,7 +70,7 @@ CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? 
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateWithPrForAuthenticatedUserRequest &&
           location == other.location &&
           geo == other.geo &&
@@ -81,7 +81,10 @@ CodespacesCreateWithPrForAuthenticatedUserRequest copyWith({String? Function()? 
           workingDirectory == other.workingDirectory &&
           idleTimeoutMinutes == other.idleTimeoutMinutes &&
           displayName == other.displayName &&
-          retentionPeriodMinutes == other.retentionPeriodMinutes; } 
-@override int get hashCode { return Object.hash(location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes); } 
-@override String toString() { return 'CodespacesCreateWithPrForAuthenticatedUserRequest(location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)'; } 
+          retentionPeriodMinutes == other.retentionPeriodMinutes;
+
+@override int get hashCode => Object.hash(location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);
+
+@override String toString() => 'CodespacesCreateWithPrForAuthenticatedUserRequest(location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';
+
  }

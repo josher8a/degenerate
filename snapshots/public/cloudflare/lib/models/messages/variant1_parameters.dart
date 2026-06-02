@@ -30,11 +30,14 @@ Variant1Parameters copyWith({Map<String,PropertiesValue>? properties, List<Strin
   $required: $required != null ? $required() : this.$required,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Parameters &&
           properties == other.properties &&
           listEquals($required, other.$required) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, Object.hashAll($required ?? const []), type); } 
-@override String toString() { return 'Variant1Parameters(properties: $properties, \$required: ${$required}, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(properties, Object.hashAll($required ?? const []), type);
+
+@override String toString() => 'Variant1Parameters(properties: $properties, \$required: ${$required}, type: $type)';
+
  }

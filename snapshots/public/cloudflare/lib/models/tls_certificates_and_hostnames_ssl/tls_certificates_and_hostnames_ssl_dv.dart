@@ -77,10 +77,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DvStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DvStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DvStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DvStatus($value)';
+
  }
 @immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod = BundleMethod.ubiquitous, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });
 
@@ -280,7 +283,7 @@ TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod Function()? bundleMethod
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   wildcard: wildcard != null ? wildcard() : this.wildcard,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslDv &&
           bundleMethod == other.bundleMethod &&
           certificateAuthority == other.certificateAuthority &&
@@ -301,7 +304,10 @@ TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod Function()? bundleMethod
           uploadedOn == other.uploadedOn &&
           listEquals(validationErrors, other.validationErrors) &&
           listEquals(validationRecords, other.validationRecords) &&
-          wildcard == other.wildcard; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificateAuthority, customCertificate, customCsrId, customKey, Object.hashAll(dcvDelegationRecords ?? const []), expiresOn, Object.hashAll(hosts ?? const []), id, issuer, method, serialNumber, settings, signature, status, type, uploadedOn, Object.hashAll(validationErrors ?? const []), Object.hashAll(validationRecords ?? const []), wildcard); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, customCertificate: $customCertificate, customCsrId: $customCsrId, customKey: $customKey, dcvDelegationRecords: $dcvDelegationRecords, expiresOn: $expiresOn, hosts: $hosts, id: $id, issuer: $issuer, method: $method, serialNumber: $serialNumber, settings: $settings, signature: $signature, status: $status, type: $type, uploadedOn: $uploadedOn, validationErrors: $validationErrors, validationRecords: $validationRecords, wildcard: $wildcard)'; } 
+          wildcard == other.wildcard;
+
+@override int get hashCode => Object.hash(bundleMethod, certificateAuthority, customCertificate, customCsrId, customKey, Object.hashAll(dcvDelegationRecords ?? const []), expiresOn, Object.hashAll(hosts ?? const []), id, issuer, method, serialNumber, settings, signature, status, type, uploadedOn, Object.hashAll(validationErrors ?? const []), Object.hashAll(validationRecords ?? const []), wildcard);
+
+@override String toString() => 'TlsCertificatesAndHostnamesSslDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, customCertificate: $customCertificate, customCsrId: $customCsrId, customKey: $customKey, dcvDelegationRecords: $dcvDelegationRecords, expiresOn: $expiresOn, hosts: $hosts, id: $id, issuer: $issuer, method: $method, serialNumber: $serialNumber, settings: $settings, signature: $signature, status: $status, type: $type, uploadedOn: $uploadedOn, validationErrors: $validationErrors, validationRecords: $validationRecords, wildcard: $wildcard)';
+
  }

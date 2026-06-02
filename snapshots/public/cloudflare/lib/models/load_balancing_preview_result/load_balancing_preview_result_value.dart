@@ -20,10 +20,13 @@ LoadBalancingPreviewResultValue copyWith({bool? Function()? healthy, List<Map<St
   healthy: healthy != null ? healthy() : this.healthy,
   origins: origins != null ? origins() : this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingPreviewResultValue &&
           healthy == other.healthy &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(healthy, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'LoadBalancingPreviewResultValue(healthy: $healthy, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(healthy, Object.hashAll(origins ?? const []));
+
+@override String toString() => 'LoadBalancingPreviewResultValue(healthy: $healthy, origins: $origins)';
+
  }

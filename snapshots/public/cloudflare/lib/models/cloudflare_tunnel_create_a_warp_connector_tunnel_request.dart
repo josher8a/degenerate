@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
 CloudflareTunnelCreateAWarpConnectorTunnelRequest copyWith({TunnelTunnelName? name}) { return CloudflareTunnelCreateAWarpConnectorTunnelRequest(
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelCreateAWarpConnectorTunnelRequest &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'CloudflareTunnelCreateAWarpConnectorTunnelRequest(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'CloudflareTunnelCreateAWarpConnectorTunnelRequest(name: $name)';
+
  }

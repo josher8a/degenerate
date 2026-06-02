@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountSipSipDomainVoiceStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainVoiceStatusCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountSipSipDomainVoiceStatusCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountSipSipDomainVoiceStatusCallbackMethod($value)';
+
  }
 @immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid, this.apiVersion, this.authType, this.dateCreated, this.dateUpdated, this.domainName, this.friendlyName, this.sid, this.uri, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.subresourceUris, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });
 
@@ -188,7 +191,7 @@ AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()
   byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipDomain &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -210,7 +213,10 @@ AccountSipSipDomain copyWith({String? Function()? accountSid, String? Function()
           emergencyCallingEnabled == other.emergencyCallingEnabled &&
           secure == other.secure &&
           byocTrunkSid == other.byocTrunkSid &&
-          emergencyCallerSid == other.emergencyCallerSid; } 
-@override int get hashCode { return Object.hashAll([accountSid, apiVersion, authType, dateCreated, dateUpdated, domainName, friendlyName, sid, uri, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, subresourceUris, sipRegistration, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid]); } 
-@override String toString() { return 'AccountSipSipDomain(accountSid: $accountSid, apiVersion: $apiVersion, authType: $authType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, domainName: $domainName, friendlyName: $friendlyName, sid: $sid, uri: $uri, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, subresourceUris: $subresourceUris, sipRegistration: $sipRegistration, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)'; } 
+          emergencyCallerSid == other.emergencyCallerSid;
+
+@override int get hashCode => Object.hashAll([accountSid, apiVersion, authType, dateCreated, dateUpdated, domainName, friendlyName, sid, uri, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, subresourceUris, sipRegistration, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid]);
+
+@override String toString() => 'AccountSipSipDomain(accountSid: $accountSid, apiVersion: $apiVersion, authType: $authType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, domainName: $domainName, friendlyName: $friendlyName, sid: $sid, uri: $uri, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, subresourceUris: $subresourceUris, sipRegistration: $sipRegistration, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)';
+
  }

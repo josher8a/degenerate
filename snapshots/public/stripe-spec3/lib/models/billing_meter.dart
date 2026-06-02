@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventTimeWindow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventTimeWindow($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterEventTimeWindow && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingMeterEventTimeWindow($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingMeterObject {const BillingMeterObject._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingMeterObject($value)';
+
  }
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.
 /// 
@@ -151,7 +157,7 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
   updated: updated ?? this.updated,
   valueSettings: valueSettings ?? this.valueSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeter &&
           created == other.created &&
           customerMapping == other.customerMapping &&
@@ -165,7 +171,10 @@ BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings
           status == other.status &&
           statusTransitions == other.statusTransitions &&
           updated == other.updated &&
-          valueSettings == other.valueSettings; } 
-@override int get hashCode { return Object.hash(created, customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, id, livemode, object, status, statusTransitions, updated, valueSettings); } 
-@override String toString() { return 'BillingMeter(created: $created, customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, updated: $updated, valueSettings: $valueSettings)'; } 
+          valueSettings == other.valueSettings;
+
+@override int get hashCode => Object.hash(created, customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, id, livemode, object, status, statusTransitions, updated, valueSettings);
+
+@override String toString() => 'BillingMeter(created: $created, customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, updated: $updated, valueSettings: $valueSettings)';
+
  }

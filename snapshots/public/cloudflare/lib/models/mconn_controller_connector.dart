@@ -102,7 +102,7 @@ MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, S
   timezone: timezone ?? this.timezone,
   upgradeAsap: upgradeAsap ?? this.upgradeAsap,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerConnector &&
           accountId == other.accountId &&
           activated == other.activated &&
@@ -118,7 +118,10 @@ MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, S
           lastSeenVersion == other.lastSeenVersion &&
           pinnedVersion == other.pinnedVersion &&
           timezone == other.timezone &&
-          upgradeAsap == other.upgradeAsap; } 
-@override int get hashCode { return Object.hash(accountId, activated, cloudflaredTunnelToken, cohortDesiredVersion, desiredVersion, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, pinnedVersion, timezone, upgradeAsap); } 
-@override String toString() { return 'MconnControllerConnector(accountId: $accountId, activated: $activated, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortDesiredVersion: $cohortDesiredVersion, desiredVersion: $desiredVersion, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, pinnedVersion: $pinnedVersion, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
+          upgradeAsap == other.upgradeAsap;
+
+@override int get hashCode => Object.hash(accountId, activated, cloudflaredTunnelToken, cohortDesiredVersion, desiredVersion, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, pinnedVersion, timezone, upgradeAsap);
+
+@override String toString() => 'MconnControllerConnector(accountId: $accountId, activated: $activated, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortDesiredVersion: $cohortDesiredVersion, desiredVersion: $desiredVersion, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, pinnedVersion: $pinnedVersion, timezone: $timezone, upgradeAsap: $upgradeAsap)';
+
  }

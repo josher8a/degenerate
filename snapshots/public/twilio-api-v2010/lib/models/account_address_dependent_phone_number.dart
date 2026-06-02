@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependentPhoneNumberEnumAddressRequirement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependentPhoneNumberEnumAddressRequirement($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependentPhoneNumberEnumAddressRequirement && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependentPhoneNumberEnumAddressRequirement($value)';
+
  }
 /// Whether the phone number is enabled for emergency calling.
 @immutable final class DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependentPhoneNumberEnumEmergencyStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependentPhoneNumberEnumEmergencyStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependentPhoneNumberEnumEmergencyStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependentPhoneNumberEnumEmergencyStatus($value)';
+
  }
 @immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid, this.accountSid, this.friendlyName, this.phoneNumber, this.voiceUrl, this.voiceMethod, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceCallerIdLookup, this.dateCreated, this.dateUpdated, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.addressRequirements, this.capabilities, this.statusCallback, this.statusCallbackMethod, this.apiVersion, this.smsApplicationSid, this.voiceApplicationSid, this.trunkSid, this.emergencyStatus, this.emergencyAddressSid, this.uri, });
 
@@ -259,7 +265,7 @@ AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Fu
   emergencyAddressSid: emergencyAddressSid != null ? emergencyAddressSid() : this.emergencyAddressSid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAddressDependentPhoneNumber &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -286,7 +292,10 @@ AccountAddressDependentPhoneNumber copyWith({String? Function()? sid, String? Fu
           trunkSid == other.trunkSid &&
           emergencyStatus == other.emergencyStatus &&
           emergencyAddressSid == other.emergencyAddressSid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hashAll([sid, accountSid, friendlyName, phoneNumber, voiceUrl, voiceMethod, voiceFallbackMethod, voiceFallbackUrl, voiceCallerIdLookup, dateCreated, dateUpdated, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, addressRequirements, capabilities, statusCallback, statusCallbackMethod, apiVersion, smsApplicationSid, voiceApplicationSid, trunkSid, emergencyStatus, emergencyAddressSid, uri]); } 
-@override String toString() { return 'AccountAddressDependentPhoneNumber(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, phoneNumber: $phoneNumber, voiceUrl: $voiceUrl, voiceMethod: $voiceMethod, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceCallerIdLookup: $voiceCallerIdLookup, dateCreated: $dateCreated, dateUpdated: $dateUpdated, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, addressRequirements: $addressRequirements, capabilities: $capabilities, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, apiVersion: $apiVersion, smsApplicationSid: $smsApplicationSid, voiceApplicationSid: $voiceApplicationSid, trunkSid: $trunkSid, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hashAll([sid, accountSid, friendlyName, phoneNumber, voiceUrl, voiceMethod, voiceFallbackMethod, voiceFallbackUrl, voiceCallerIdLookup, dateCreated, dateUpdated, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, addressRequirements, capabilities, statusCallback, statusCallbackMethod, apiVersion, smsApplicationSid, voiceApplicationSid, trunkSid, emergencyStatus, emergencyAddressSid, uri]);
+
+@override String toString() => 'AccountAddressDependentPhoneNumber(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, phoneNumber: $phoneNumber, voiceUrl: $voiceUrl, voiceMethod: $voiceMethod, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceCallerIdLookup: $voiceCallerIdLookup, dateCreated: $dateCreated, dateUpdated: $dateUpdated, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, addressRequirements: $addressRequirements, capabilities: $capabilities, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, apiVersion: $apiVersion, smsApplicationSid: $smsApplicationSid, voiceApplicationSid: $voiceApplicationSid, trunkSid: $trunkSid, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, uri: $uri)';
+
  }

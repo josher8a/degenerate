@@ -32,11 +32,14 @@ ReverseRecords copyWith({String? Function()? firstSeen, String? Function()? host
   hostname: hostname != null ? hostname() : this.hostname,
   lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReverseRecords &&
           firstSeen == other.firstSeen &&
           hostname == other.hostname &&
-          lastSeen == other.lastSeen; } 
-@override int get hashCode { return Object.hash(firstSeen, hostname, lastSeen); } 
-@override String toString() { return 'ReverseRecords(firstSeen: $firstSeen, hostname: $hostname, lastSeen: $lastSeen)'; } 
+          lastSeen == other.lastSeen;
+
+@override int get hashCode => Object.hash(firstSeen, hostname, lastSeen);
+
+@override String toString() => 'ReverseRecords(firstSeen: $firstSeen, hostname: $hostname, lastSeen: $lastSeen)';
+
  }

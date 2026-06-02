@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InteractionExpiry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InteractionExpiry($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InteractionExpiry && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InteractionExpiry($value)';
+
  }
 /// Limit interactions to a specific type of user for a specified duration
 @immutable final class InteractionLimit {const InteractionLimit({required this.limit, this.expiry, });
@@ -57,10 +60,13 @@ InteractionLimit copyWith({InteractionGroup? limit, InteractionExpiry? Function(
   limit: limit ?? this.limit,
   expiry: expiry != null ? expiry() : this.expiry,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InteractionLimit &&
           limit == other.limit &&
-          expiry == other.expiry; } 
-@override int get hashCode { return Object.hash(limit, expiry); } 
-@override String toString() { return 'InteractionLimit(limit: $limit, expiry: $expiry)'; } 
+          expiry == other.expiry;
+
+@override int get hashCode => Object.hash(limit, expiry);
+
+@override String toString() => 'InteractionLimit(limit: $limit, expiry: $expiry)';
+
  }

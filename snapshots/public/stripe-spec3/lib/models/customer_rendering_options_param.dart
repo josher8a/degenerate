@@ -27,10 +27,13 @@ CustomerRenderingOptionsParam copyWith({AmountTaxDisplay? Function()? amountTaxD
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerRenderingOptionsParam &&
           amountTaxDisplay == other.amountTaxDisplay &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'CustomerRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+          template == other.template;
+
+@override int get hashCode => Object.hash(amountTaxDisplay, template);
+
+@override String toString() => 'CustomerRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)';
+
  }

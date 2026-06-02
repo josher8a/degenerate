@@ -33,12 +33,15 @@ PrivateUserPlan copyWith({int? collaborators, String? name, int? space, int? pri
   space: space ?? this.space,
   privateRepos: privateRepos ?? this.privateRepos,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateUserPlan &&
           collaborators == other.collaborators &&
           name == other.name &&
           space == other.space &&
-          privateRepos == other.privateRepos; } 
-@override int get hashCode { return Object.hash(collaborators, name, space, privateRepos); } 
-@override String toString() { return 'PrivateUserPlan(collaborators: $collaborators, name: $name, space: $space, privateRepos: $privateRepos)'; } 
+          privateRepos == other.privateRepos;
+
+@override int get hashCode => Object.hash(collaborators, name, space, privateRepos);
+
+@override String toString() => 'PrivateUserPlan(collaborators: $collaborators, name: $name, space: $space, privateRepos: $privateRepos)';
+
  }

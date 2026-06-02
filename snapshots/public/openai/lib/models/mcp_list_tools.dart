@@ -50,13 +50,16 @@ McpListTools copyWith({String? type, String? id, String? serverLabel, List<McpLi
   tools: tools ?? this.tools,
   error: error != null ? error() : this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpListTools &&
           type == other.type &&
           id == other.id &&
           serverLabel == other.serverLabel &&
           listEquals(tools, other.tools) &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, Object.hashAll(tools), error); } 
-@override String toString() { return 'McpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(type, id, serverLabel, Object.hashAll(tools), error);
+
+@override String toString() => 'McpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools, error: $error)';
+
  }

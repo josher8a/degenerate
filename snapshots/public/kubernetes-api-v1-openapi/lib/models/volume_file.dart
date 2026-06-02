@@ -35,12 +35,15 @@ VolumeFile copyWith({ObjectFieldSelector? Function()? fieldRef, int? Function()?
   path: path ?? this.path,
   resourceFieldRef: resourceFieldRef != null ? resourceFieldRef() : this.resourceFieldRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeFile &&
           fieldRef == other.fieldRef &&
           mode == other.mode &&
           path == other.path &&
-          resourceFieldRef == other.resourceFieldRef; } 
-@override int get hashCode { return Object.hash(fieldRef, mode, path, resourceFieldRef); } 
-@override String toString() { return 'VolumeFile(fieldRef: $fieldRef, mode: $mode, path: $path, resourceFieldRef: $resourceFieldRef)'; } 
+          resourceFieldRef == other.resourceFieldRef;
+
+@override int get hashCode => Object.hash(fieldRef, mode, path, resourceFieldRef);
+
+@override String toString() => 'VolumeFile(fieldRef: $fieldRef, mode: $mode, path: $path, resourceFieldRef: $resourceFieldRef)';
+
  }

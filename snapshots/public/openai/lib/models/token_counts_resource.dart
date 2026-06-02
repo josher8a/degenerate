@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TokenCountsResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TokenCountsResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TokenCountsResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TokenCountsResourceObject($value)';
+
  }
 /// Example:
 /// ```json
@@ -49,10 +52,13 @@ TokenCountsResource copyWith({TokenCountsResourceObject? object, int? inputToken
   object: object ?? this.object,
   inputTokens: inputTokens ?? this.inputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenCountsResource &&
           object == other.object &&
-          inputTokens == other.inputTokens; } 
-@override int get hashCode { return Object.hash(object, inputTokens); } 
-@override String toString() { return 'TokenCountsResource(object: $object, inputTokens: $inputTokens)'; } 
+          inputTokens == other.inputTokens;
+
+@override int get hashCode => Object.hash(object, inputTokens);
+
+@override String toString() => 'TokenCountsResource(object: $object, inputTokens: $inputTokens)';
+
  }

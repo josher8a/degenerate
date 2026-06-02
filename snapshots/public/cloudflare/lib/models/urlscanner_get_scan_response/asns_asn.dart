@@ -45,13 +45,16 @@ AsnsAsn copyWith({String? asn, String? description, String? locationAlpha2, Stri
   name: name ?? this.name,
   orgName: orgName ?? this.orgName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnsAsn &&
           asn == other.asn &&
           description == other.description &&
           locationAlpha2 == other.locationAlpha2 &&
           name == other.name &&
-          orgName == other.orgName; } 
-@override int get hashCode { return Object.hash(asn, description, locationAlpha2, name, orgName); } 
-@override String toString() { return 'AsnsAsn(asn: $asn, description: $description, locationAlpha2: $locationAlpha2, name: $name, orgName: $orgName)'; } 
+          orgName == other.orgName;
+
+@override int get hashCode => Object.hash(asn, description, locationAlpha2, name, orgName);
+
+@override String toString() => 'AsnsAsn(asn: $asn, description: $description, locationAlpha2: $locationAlpha2, name: $name, orgName: $orgName)';
+
  }

@@ -29,11 +29,14 @@ QuotesResourceTransferData copyWith({int? Function()? amount, double? Function()
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceTransferData &&
           amount == other.amount &&
           amountPercent == other.amountPercent &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amount, amountPercent, destination); } 
-@override String toString() { return 'QuotesResourceTransferData(amount: $amount, amountPercent: $amountPercent, destination: $destination)'; } 
+          destination == other.destination;
+
+@override int get hashCode => Object.hash(amount, amountPercent, destination);
+
+@override String toString() => 'QuotesResourceTransferData(amount: $amount, amountPercent: $amountPercent, destination: $destination)';
+
  }

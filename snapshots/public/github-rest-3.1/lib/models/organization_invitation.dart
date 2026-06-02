@@ -79,7 +79,7 @@ OrganizationInvitation copyWith({int? id, String? Function()? login, String? Fun
   invitationTeamsUrl: invitationTeamsUrl ?? this.invitationTeamsUrl,
   invitationSource: invitationSource != null ? invitationSource() : this.invitationSource,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationInvitation &&
           id == other.id &&
           login == other.login &&
@@ -92,7 +92,10 @@ OrganizationInvitation copyWith({int? id, String? Function()? login, String? Fun
           teamCount == other.teamCount &&
           nodeId == other.nodeId &&
           invitationTeamsUrl == other.invitationTeamsUrl &&
-          invitationSource == other.invitationSource; } 
-@override int get hashCode { return Object.hash(id, login, email, role, createdAt, failedAt, failedReason, inviter, teamCount, nodeId, invitationTeamsUrl, invitationSource); } 
-@override String toString() { return 'OrganizationInvitation(id: $id, login: $login, email: $email, role: $role, createdAt: $createdAt, failedAt: $failedAt, failedReason: $failedReason, inviter: $inviter, teamCount: $teamCount, nodeId: $nodeId, invitationTeamsUrl: $invitationTeamsUrl, invitationSource: $invitationSource)'; } 
+          invitationSource == other.invitationSource;
+
+@override int get hashCode => Object.hash(id, login, email, role, createdAt, failedAt, failedReason, inviter, teamCount, nodeId, invitationTeamsUrl, invitationSource);
+
+@override String toString() => 'OrganizationInvitation(id: $id, login: $login, email: $email, role: $role, createdAt: $createdAt, failedAt: $failedAt, failedReason: $failedReason, inviter: $inviter, teamCount: $teamCount, nodeId: $nodeId, invitationTeamsUrl: $invitationTeamsUrl, invitationSource: $invitationSource)';
+
  }

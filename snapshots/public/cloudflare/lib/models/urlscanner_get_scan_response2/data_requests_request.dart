@@ -77,7 +77,7 @@ DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, 
   type: type ?? this.type,
   wallTime: wallTime ?? this.wallTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataRequestsRequest &&
           documentUrl == other.documentUrl &&
           frameId == other.frameId &&
@@ -90,7 +90,10 @@ DataRequestsRequest copyWith({String? documentUrl, String? Function()? frameId, 
           request == other.request &&
           requestId == other.requestId &&
           type == other.type &&
-          wallTime == other.wallTime; } 
-@override int get hashCode { return Object.hash(documentUrl, frameId, hasUserGesture, initiator, loaderId, primaryRequest, redirectHasExtraInfo, redirectResponse, request, requestId, type, wallTime); } 
-@override String toString() { return 'DataRequestsRequest(documentUrl: $documentUrl, frameId: $frameId, hasUserGesture: $hasUserGesture, initiator: $initiator, loaderId: $loaderId, primaryRequest: $primaryRequest, redirectHasExtraInfo: $redirectHasExtraInfo, redirectResponse: $redirectResponse, request: $request, requestId: $requestId, type: $type, wallTime: $wallTime)'; } 
+          wallTime == other.wallTime;
+
+@override int get hashCode => Object.hash(documentUrl, frameId, hasUserGesture, initiator, loaderId, primaryRequest, redirectHasExtraInfo, redirectResponse, request, requestId, type, wallTime);
+
+@override String toString() => 'DataRequestsRequest(documentUrl: $documentUrl, frameId: $frameId, hasUserGesture: $hasUserGesture, initiator: $initiator, loaderId: $loaderId, primaryRequest: $primaryRequest, redirectHasExtraInfo: $redirectHasExtraInfo, redirectResponse: $redirectResponse, request: $request, requestId: $requestId, type: $type, wallTime: $wallTime)';
+
  }

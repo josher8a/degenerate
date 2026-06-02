@@ -33,12 +33,15 @@ AccountsByAccountIdPipelinesDeprecatedResponseResultInfo copyWith({double? count
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesDeprecatedResponseResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, page, perPage, totalCount);
+
+@override String toString() => 'AccountsByAccountIdPipelinesDeprecatedResponseResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
+
  }

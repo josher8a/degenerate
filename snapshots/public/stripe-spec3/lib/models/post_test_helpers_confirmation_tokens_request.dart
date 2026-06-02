@@ -61,7 +61,7 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   shipping: shipping != null ? shipping() : this.shipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequest &&
           listEquals(expand, other.expand) &&
           paymentMethod == other.paymentMethod &&
@@ -69,7 +69,10 @@ PostTestHelpersConfirmationTokensRequest copyWith({List<String>? Function()? exp
           paymentMethodOptions == other.paymentMethodOptions &&
           returnUrl == other.returnUrl &&
           setupFutureUsage == other.setupFutureUsage &&
-          shipping == other.shipping; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, setupFutureUsage, shipping); } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequest(expand: $expand, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping)'; } 
+          shipping == other.shipping;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, setupFutureUsage, shipping);
+
+@override String toString() => 'PostTestHelpersConfirmationTokensRequest(expand: $expand, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping)';
+
  }

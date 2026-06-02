@@ -29,11 +29,14 @@ PaymentMethodOptionsCardInstallments copyWith({List<PaymentMethodDetailsCardInst
   enabled: enabled ?? this.enabled,
   plan: plan != null ? plan() : this.plan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsCardInstallments &&
           listEquals(availablePlans, other.availablePlans) &&
           enabled == other.enabled &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(Object.hashAll(availablePlans ?? const []), enabled, plan); } 
-@override String toString() { return 'PaymentMethodOptionsCardInstallments(availablePlans: $availablePlans, enabled: $enabled, plan: $plan)'; } 
+          plan == other.plan;
+
+@override int get hashCode => Object.hash(Object.hashAll(availablePlans ?? const []), enabled, plan);
+
+@override String toString() => 'PaymentMethodOptionsCardInstallments(availablePlans: $availablePlans, enabled: $enabled, plan: $plan)';
+
  }

@@ -21,10 +21,13 @@ McnYamlItem copyWith({String? itemType, String? yaml, }) { return McnYamlItem(
   itemType: itemType ?? this.itemType,
   yaml: yaml ?? this.yaml,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnYamlItem &&
           itemType == other.itemType &&
-          yaml == other.yaml; } 
-@override int get hashCode { return Object.hash(itemType, yaml); } 
-@override String toString() { return 'McnYamlItem(itemType: $itemType, yaml: $yaml)'; } 
+          yaml == other.yaml;
+
+@override int get hashCode => Object.hash(itemType, yaml);
+
+@override String toString() => 'McnYamlItem(itemType: $itemType, yaml: $yaml)';
+
  }

@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsSetMembershipForUserRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsSetMembershipForUserRequestRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrgsSetMembershipForUserRequestRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrgsSetMembershipForUserRequestRole($value)';
+
  }
 @immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role = OrgsSetMembershipForUserRequestRole.member});
 
@@ -45,9 +48,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 OrgsSetMembershipForUserRequest copyWith({OrgsSetMembershipForUserRequestRole Function()? role}) { return OrgsSetMembershipForUserRequest(
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetMembershipForUserRequest &&
-          role == other.role; } 
-@override int get hashCode { return role.hashCode; } 
-@override String toString() { return 'OrgsSetMembershipForUserRequest(role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => role.hashCode;
+
+@override String toString() => 'OrgsSetMembershipForUserRequest(role: $role)';
+
  }

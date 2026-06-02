@@ -128,39 +128,35 @@ final class BlogPostSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is BlogPostSchema &&
-            author == other.author &&
-            headerImageUrl == other.headerImageUrl &&
-            contentHtml == other.contentHtml &&
-            title == other.title &&
-            subtitle == other.subtitle &&
-            datePublished == other.datePublished &&
-            slug == other.slug &&
-            publish == other.publish &&
-            readTime == other.readTime &&
-            summary == other.summary;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is BlogPostSchema &&
+          author == other.author &&
+          headerImageUrl == other.headerImageUrl &&
+          contentHtml == other.contentHtml &&
+          title == other.title &&
+          subtitle == other.subtitle &&
+          datePublished == other.datePublished &&
+          slug == other.slug &&
+          publish == other.publish &&
+          readTime == other.readTime &&
+          summary == other.summary;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      author,
-      headerImageUrl,
-      contentHtml,
-      title,
-      subtitle,
-      datePublished,
-      slug,
-      publish,
-      readTime,
-      summary,
-    );
-  }
+  int get hashCode => Object.hash(
+    author,
+    headerImageUrl,
+    contentHtml,
+    title,
+    subtitle,
+    datePublished,
+    slug,
+    publish,
+    readTime,
+    summary,
+  );
 
   @override
-  String toString() {
-    return 'BlogPostSchema(author: $author, headerImageUrl: $headerImageUrl, contentHtml: $contentHtml, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
-  }
+  String toString() =>
+      'BlogPostSchema(author: $author, headerImageUrl: $headerImageUrl, contentHtml: $contentHtml, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
 }

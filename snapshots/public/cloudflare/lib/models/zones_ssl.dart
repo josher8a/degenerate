@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSslId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSslId($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSslId && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesSslId($value)';
+
  }
 @immutable final class ZonesSsl {const ZonesSsl({this.id, this.value, });
 
@@ -49,10 +52,13 @@ ZonesSsl copyWith({ZonesSslId? Function()? id, ZonesSslValue? Function()? value,
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSsl &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesSsl(id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, value);
+
+@override String toString() => 'ZonesSsl(id: $id, value: $value)';
+
  }

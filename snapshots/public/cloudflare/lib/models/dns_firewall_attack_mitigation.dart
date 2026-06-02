@@ -27,10 +27,13 @@ DnsFirewallAttackMitigation copyWith({bool? Function()? enabled, bool Function()
   enabled: enabled != null ? enabled() : this.enabled,
   onlyWhenUpstreamUnhealthy: onlyWhenUpstreamUnhealthy != null ? onlyWhenUpstreamUnhealthy() : this.onlyWhenUpstreamUnhealthy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallAttackMitigation &&
           enabled == other.enabled &&
-          onlyWhenUpstreamUnhealthy == other.onlyWhenUpstreamUnhealthy; } 
-@override int get hashCode { return Object.hash(enabled, onlyWhenUpstreamUnhealthy); } 
-@override String toString() { return 'DnsFirewallAttackMitigation(enabled: $enabled, onlyWhenUpstreamUnhealthy: $onlyWhenUpstreamUnhealthy)'; } 
+          onlyWhenUpstreamUnhealthy == other.onlyWhenUpstreamUnhealthy;
+
+@override int get hashCode => Object.hash(enabled, onlyWhenUpstreamUnhealthy);
+
+@override String toString() => 'DnsFirewallAttackMitigation(enabled: $enabled, onlyWhenUpstreamUnhealthy: $onlyWhenUpstreamUnhealthy)';
+
  }

@@ -21,10 +21,13 @@ GelatoVerificationReportOptions copyWith({GelatoReportDocumentOptions? Function(
   document: document != null ? document() : this.document,
   idNumber: idNumber != null ? idNumber() : this.idNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoVerificationReportOptions &&
           document == other.document &&
-          idNumber == other.idNumber; } 
-@override int get hashCode { return Object.hash(document, idNumber); } 
-@override String toString() { return 'GelatoVerificationReportOptions(document: $document, idNumber: $idNumber)'; } 
+          idNumber == other.idNumber;
+
+@override int get hashCode => Object.hash(document, idNumber);
+
+@override String toString() => 'GelatoVerificationReportOptions(document: $document, idNumber: $idNumber)';
+
  }

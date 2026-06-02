@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceToggleDefaultValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceToggleDefaultValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceToggleDefaultValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceToggleDefaultValue($value)';
+
  }
 /// The toggle's collected value. Can be `enabled` or `disabled`.
 @immutable final class TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceToggleValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceToggleValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceToggleValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceToggleValue($value)';
+
  }
 /// Information about an input's toggle
 @immutable final class TerminalReaderReaderResourceToggle {const TerminalReaderReaderResourceToggle({this.defaultValue, this.description, this.title, this.value, });
@@ -96,12 +102,15 @@ TerminalReaderReaderResourceToggle copyWith({TerminalReaderReaderResourceToggleD
   title: title != null ? title() : this.title,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceToggle &&
           defaultValue == other.defaultValue &&
           description == other.description &&
           title == other.title &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(defaultValue, description, title, value); } 
-@override String toString() { return 'TerminalReaderReaderResourceToggle(defaultValue: $defaultValue, description: $description, title: $title, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(defaultValue, description, title, value);
+
+@override String toString() => 'TerminalReaderReaderResourceToggle(defaultValue: $defaultValue, description: $description, title: $title, value: $value)';
+
  }

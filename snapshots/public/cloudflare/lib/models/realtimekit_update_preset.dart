@@ -31,12 +31,15 @@ RealtimekitUpdatePreset copyWith({RealtimekitUpdatePresetConfig? Function()? con
   permissions: permissions != null ? permissions() : this.permissions,
   ui: ui != null ? ui() : this.ui,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePreset &&
           config == other.config &&
           name == other.name &&
           permissions == other.permissions &&
-          ui == other.ui; } 
-@override int get hashCode { return Object.hash(config, name, permissions, ui); } 
-@override String toString() { return 'RealtimekitUpdatePreset(config: $config, name: $name, permissions: $permissions, ui: $ui)'; } 
+          ui == other.ui;
+
+@override int get hashCode => Object.hash(config, name, permissions, ui);
+
+@override String toString() => 'RealtimekitUpdatePreset(config: $config, name: $name, permissions: $permissions, ui: $ui)';
+
  }

@@ -30,12 +30,15 @@ VectorizeIndexGetVectorsByIdResponse2 copyWith({VectorizeVectorIdentifier? Funct
   namespace: namespace != null ? namespace() : this.namespace,
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexGetVectorsByIdResponse2 &&
           id == other.id &&
           metadata == other.metadata &&
           namespace == other.namespace &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(id, metadata, namespace, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'VectorizeIndexGetVectorsByIdResponse2(id: $id, metadata: $metadata, namespace: $namespace, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(id, metadata, namespace, Object.hashAll(values ?? const []));
+
+@override String toString() => 'VectorizeIndexGetVectorsByIdResponse2(id: $id, metadata: $metadata, namespace: $namespace, values: $values)';
+
  }

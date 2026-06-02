@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ValueSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ValueSystem($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValueSystem && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ValueSystem($value)';
+
  }
 @immutable final class TriggersValue {const TriggersValue({required this.excludeRules, required this.loadRules, required this.name, this.description, this.system, });
 
@@ -62,13 +65,16 @@ TriggersValue copyWith({String? Function()? description, List<ExcludeRules>? exc
   name: name ?? this.name,
   system: system != null ? system() : this.system,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TriggersValue &&
           description == other.description &&
           listEquals(excludeRules, other.excludeRules) &&
           listEquals(loadRules, other.loadRules) &&
           name == other.name &&
-          system == other.system; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(excludeRules), Object.hashAll(loadRules), name, system); } 
-@override String toString() { return 'TriggersValue(description: $description, excludeRules: $excludeRules, loadRules: $loadRules, name: $name, system: $system)'; } 
+          system == other.system;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(excludeRules), Object.hashAll(loadRules), name, system);
+
+@override String toString() => 'TriggersValue(description: $description, excludeRules: $excludeRules, loadRules: $loadRules, name: $name, system: $system)';
+
  }

@@ -236,15 +236,19 @@ final ResponseAudioDeltaEvent responseAudioDeltaEvent;
 
 @override String get type => 'response.audio.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseAudioDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseAudioDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseAudioDelta copyWith({int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseAudioDelta(responseAudioDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
   delta: delta,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseAudioDelta && responseAudioDeltaEvent == other.responseAudioDeltaEvent; } 
-@override int get hashCode { return responseAudioDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseAudioDelta($responseAudioDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseAudioDelta && responseAudioDeltaEvent == other.responseAudioDeltaEvent;
+
+@override int get hashCode => responseAudioDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseAudioDelta($responseAudioDeltaEvent)';
+
 @override int get sequenceNumber => responseAudioDeltaEvent.sequenceNumber;
 
  }
@@ -256,14 +260,18 @@ final ResponseAudioDoneEvent responseAudioDoneEvent;
 
 @override String get type => 'response.audio.done';
 
-@override Map<String, dynamic> toJson() { return {...responseAudioDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseAudioDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseAudioDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioDone(responseAudioDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseAudioDone && responseAudioDoneEvent == other.responseAudioDoneEvent; } 
-@override int get hashCode { return responseAudioDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseAudioDone($responseAudioDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseAudioDone && responseAudioDoneEvent == other.responseAudioDoneEvent;
+
+@override int get hashCode => responseAudioDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseAudioDone($responseAudioDoneEvent)';
+
 @override int get sequenceNumber => responseAudioDoneEvent.sequenceNumber;
 
  }
@@ -275,15 +283,19 @@ final ResponseAudioTranscriptDeltaEvent responseAudioTranscriptDeltaEvent;
 
 @override String get type => 'response.audio.transcript.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseAudioTranscriptDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseAudioTranscriptDelta copyWith({String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseAudioTranscriptDelta(responseAudioTranscriptDeltaEvent.copyWith(
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseAudioTranscriptDelta && responseAudioTranscriptDeltaEvent == other.responseAudioTranscriptDeltaEvent; } 
-@override int get hashCode { return responseAudioTranscriptDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDelta($responseAudioTranscriptDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseAudioTranscriptDelta && responseAudioTranscriptDeltaEvent == other.responseAudioTranscriptDeltaEvent;
+
+@override int get hashCode => responseAudioTranscriptDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseAudioTranscriptDelta($responseAudioTranscriptDeltaEvent)';
+
 @override int get sequenceNumber => responseAudioTranscriptDeltaEvent.sequenceNumber;
 
  }
@@ -295,14 +307,18 @@ final ResponseAudioTranscriptDoneEvent responseAudioTranscriptDoneEvent;
 
 @override String get type => 'response.audio.transcript.done';
 
-@override Map<String, dynamic> toJson() { return {...responseAudioTranscriptDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseAudioTranscriptDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioTranscriptDone(responseAudioTranscriptDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseAudioTranscriptDone && responseAudioTranscriptDoneEvent == other.responseAudioTranscriptDoneEvent; } 
-@override int get hashCode { return responseAudioTranscriptDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseAudioTranscriptDone($responseAudioTranscriptDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseAudioTranscriptDone && responseAudioTranscriptDoneEvent == other.responseAudioTranscriptDoneEvent;
+
+@override int get hashCode => responseAudioTranscriptDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseAudioTranscriptDone($responseAudioTranscriptDoneEvent)';
+
 @override int get sequenceNumber => responseAudioTranscriptDoneEvent.sequenceNumber;
 
  }
@@ -314,17 +330,21 @@ final ResponseCodeInterpreterCallCodeDeltaEvent responseCodeInterpreterCallCodeD
 
 @override String get type => 'response.code_interpreter_call_code.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCodeDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCodeInterpreterCallCodeDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDelta(responseCodeInterpreterCallCodeDeltaEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDeltaEvent == other.responseCodeInterpreterCallCodeDeltaEvent; } 
-@override int get hashCode { return responseCodeInterpreterCallCodeDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDelta($responseCodeInterpreterCallCodeDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDeltaEvent == other.responseCodeInterpreterCallCodeDeltaEvent;
+
+@override int get hashCode => responseCodeInterpreterCallCodeDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCodeInterpreterCallCodeDelta($responseCodeInterpreterCallCodeDeltaEvent)';
+
 @override int get sequenceNumber => responseCodeInterpreterCallCodeDeltaEvent.sequenceNumber;
 
  }
@@ -336,17 +356,21 @@ final ResponseCodeInterpreterCallCodeDoneEvent responseCodeInterpreterCallCodeDo
 
 @override String get type => 'response.code_interpreter_call_code.done';
 
-@override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCodeDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCodeInterpreterCallCodeDone copyWith({int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDone(responseCodeInterpreterCallCodeDoneEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   code: code,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDoneEvent == other.responseCodeInterpreterCallCodeDoneEvent; } 
-@override int get hashCode { return responseCodeInterpreterCallCodeDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCodeDone($responseCodeInterpreterCallCodeDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDoneEvent == other.responseCodeInterpreterCallCodeDoneEvent;
+
+@override int get hashCode => responseCodeInterpreterCallCodeDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCodeInterpreterCallCodeDone($responseCodeInterpreterCallCodeDoneEvent)';
+
 @override int get sequenceNumber => responseCodeInterpreterCallCodeDoneEvent.sequenceNumber;
 
  }
@@ -358,16 +382,20 @@ final ResponseCodeInterpreterCallCompletedEvent responseCodeInterpreterCallCompl
 
 @override String get type => 'response.code_interpreter_call.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCodeInterpreterCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCompleted(responseCodeInterpreterCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompletedEvent == other.responseCodeInterpreterCallCompletedEvent; } 
-@override int get hashCode { return responseCodeInterpreterCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallCompleted($responseCodeInterpreterCallCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompletedEvent == other.responseCodeInterpreterCallCompletedEvent;
+
+@override int get hashCode => responseCodeInterpreterCallCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCodeInterpreterCallCompleted($responseCodeInterpreterCallCompletedEvent)';
+
 @override int get sequenceNumber => responseCodeInterpreterCallCompletedEvent.sequenceNumber;
 
  }
@@ -379,16 +407,20 @@ final ResponseCodeInterpreterCallInProgressEvent responseCodeInterpreterCallInPr
 
 @override String get type => 'response.code_interpreter_call.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCodeInterpreterCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInProgress(responseCodeInterpreterCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgressEvent == other.responseCodeInterpreterCallInProgressEvent; } 
-@override int get hashCode { return responseCodeInterpreterCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInProgress($responseCodeInterpreterCallInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgressEvent == other.responseCodeInterpreterCallInProgressEvent;
+
+@override int get hashCode => responseCodeInterpreterCallInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCodeInterpreterCallInProgress($responseCodeInterpreterCallInProgressEvent)';
+
 @override int get sequenceNumber => responseCodeInterpreterCallInProgressEvent.sequenceNumber;
 
  }
@@ -400,16 +432,20 @@ final ResponseCodeInterpreterCallInterpretingEvent responseCodeInterpreterCallIn
 
 @override String get type => 'response.code_interpreter_call.interpreting';
 
-@override Map<String, dynamic> toJson() { return {...responseCodeInterpreterCallInterpretingEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInterpretingEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCodeInterpreterCallInterpreting copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInterpreting(responseCodeInterpreterCallInterpretingEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpretingEvent == other.responseCodeInterpreterCallInterpretingEvent; } 
-@override int get hashCode { return responseCodeInterpreterCallInterpretingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCodeInterpreterCallInterpreting($responseCodeInterpreterCallInterpretingEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpretingEvent == other.responseCodeInterpreterCallInterpretingEvent;
+
+@override int get hashCode => responseCodeInterpreterCallInterpretingEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCodeInterpreterCallInterpreting($responseCodeInterpreterCallInterpretingEvent)';
+
 @override int get sequenceNumber => responseCodeInterpreterCallInterpretingEvent.sequenceNumber;
 
  }
@@ -421,15 +457,19 @@ final ResponseCompletedEvent responseCompletedEvent;
 
 @override String get type => 'response.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCompleted copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCompleted(responseCompletedEvent.copyWith(
   response: response,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCompleted && responseCompletedEvent == other.responseCompletedEvent; } 
-@override int get hashCode { return responseCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCompleted($responseCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCompleted && responseCompletedEvent == other.responseCompletedEvent;
+
+@override int get hashCode => responseCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCompleted($responseCompletedEvent)';
+
 @override int get sequenceNumber => responseCompletedEvent.sequenceNumber;
 
  }
@@ -441,7 +481,8 @@ final ResponseContentPartAddedEvent responseContentPartAddedEvent;
 
 @override String get type => 'response.content_part.added';
 
-@override Map<String, dynamic> toJson() { return {...responseContentPartAddedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseContentPartAddedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseStreamEventResponseContentPartAdded(responseContentPartAddedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -449,10 +490,13 @@ ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outpu
   $part: $part,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseContentPartAdded && responseContentPartAddedEvent == other.responseContentPartAddedEvent; } 
-@override int get hashCode { return responseContentPartAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseContentPartAdded($responseContentPartAddedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseContentPartAdded && responseContentPartAddedEvent == other.responseContentPartAddedEvent;
+
+@override int get hashCode => responseContentPartAddedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseContentPartAdded($responseContentPartAddedEvent)';
+
 @override int get sequenceNumber => responseContentPartAddedEvent.sequenceNumber;
 
  }
@@ -464,7 +508,8 @@ final ResponseContentPartDoneEvent responseContentPartDoneEvent;
 
 @override String get type => 'response.content_part.done';
 
-@override Map<String, dynamic> toJson() { return {...responseContentPartDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseContentPartDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? outputIndex, int? contentIndex, int? sequenceNumber, OutputContent? $part, }) { return ResponseStreamEventResponseContentPartDone(responseContentPartDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -472,10 +517,13 @@ ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? output
   sequenceNumber: sequenceNumber,
   $part: $part,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseContentPartDone && responseContentPartDoneEvent == other.responseContentPartDoneEvent; } 
-@override int get hashCode { return responseContentPartDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseContentPartDone($responseContentPartDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseContentPartDone && responseContentPartDoneEvent == other.responseContentPartDoneEvent;
+
+@override int get hashCode => responseContentPartDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseContentPartDone($responseContentPartDoneEvent)';
+
 @override int get sequenceNumber => responseContentPartDoneEvent.sequenceNumber;
 
  }
@@ -487,15 +535,19 @@ final ResponseCreatedEvent responseCreatedEvent;
 
 @override String get type => 'response.created';
 
-@override Map<String, dynamic> toJson() { return {...responseCreatedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCreatedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCreated copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCreated(responseCreatedEvent.copyWith(
   response: response,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCreated && responseCreatedEvent == other.responseCreatedEvent; } 
-@override int get hashCode { return responseCreatedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCreated($responseCreatedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCreated && responseCreatedEvent == other.responseCreatedEvent;
+
+@override int get hashCode => responseCreatedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCreated($responseCreatedEvent)';
+
 @override int get sequenceNumber => responseCreatedEvent.sequenceNumber;
 
  }
@@ -507,17 +559,21 @@ final ResponseErrorEvent responseErrorEvent;
 
 @override String get type => 'error';
 
-@override Map<String, dynamic> toJson() { return {...responseErrorEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseErrorEvent.toJson(), 'type': type};
+
 ResponseStreamEventError copyWith({String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseStreamEventError(responseErrorEvent.copyWith(
   code: code,
   message: message,
   param: param,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventError && responseErrorEvent == other.responseErrorEvent; } 
-@override int get hashCode { return responseErrorEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.error($responseErrorEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventError && responseErrorEvent == other.responseErrorEvent;
+
+@override int get hashCode => responseErrorEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.error($responseErrorEvent)';
+
 @override int get sequenceNumber => responseErrorEvent.sequenceNumber;
 
  }
@@ -529,16 +585,20 @@ final ResponseFileSearchCallCompletedEvent responseFileSearchCallCompletedEvent;
 
 @override String get type => 'response.file_search_call.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseFileSearchCallCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFileSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallCompleted(responseFileSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFileSearchCallCompleted && responseFileSearchCallCompletedEvent == other.responseFileSearchCallCompletedEvent; } 
-@override int get hashCode { return responseFileSearchCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallCompleted($responseFileSearchCallCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFileSearchCallCompleted && responseFileSearchCallCompletedEvent == other.responseFileSearchCallCompletedEvent;
+
+@override int get hashCode => responseFileSearchCallCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFileSearchCallCompleted($responseFileSearchCallCompletedEvent)';
+
 @override int get sequenceNumber => responseFileSearchCallCompletedEvent.sequenceNumber;
 
  }
@@ -550,16 +610,20 @@ final ResponseFileSearchCallInProgressEvent responseFileSearchCallInProgressEven
 
 @override String get type => 'response.file_search_call.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseFileSearchCallInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFileSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallInProgress(responseFileSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFileSearchCallInProgress && responseFileSearchCallInProgressEvent == other.responseFileSearchCallInProgressEvent; } 
-@override int get hashCode { return responseFileSearchCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallInProgress($responseFileSearchCallInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFileSearchCallInProgress && responseFileSearchCallInProgressEvent == other.responseFileSearchCallInProgressEvent;
+
+@override int get hashCode => responseFileSearchCallInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFileSearchCallInProgress($responseFileSearchCallInProgressEvent)';
+
 @override int get sequenceNumber => responseFileSearchCallInProgressEvent.sequenceNumber;
 
  }
@@ -571,16 +635,20 @@ final ResponseFileSearchCallSearchingEvent responseFileSearchCallSearchingEvent;
 
 @override String get type => 'response.file_search_call.searching';
 
-@override Map<String, dynamic> toJson() { return {...responseFileSearchCallSearchingEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallSearchingEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFileSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallSearching(responseFileSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFileSearchCallSearching && responseFileSearchCallSearchingEvent == other.responseFileSearchCallSearchingEvent; } 
-@override int get hashCode { return responseFileSearchCallSearchingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFileSearchCallSearching($responseFileSearchCallSearchingEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFileSearchCallSearching && responseFileSearchCallSearchingEvent == other.responseFileSearchCallSearchingEvent;
+
+@override int get hashCode => responseFileSearchCallSearchingEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFileSearchCallSearching($responseFileSearchCallSearchingEvent)';
+
 @override int get sequenceNumber => responseFileSearchCallSearchingEvent.sequenceNumber;
 
  }
@@ -592,17 +660,21 @@ final ResponseFunctionCallArgumentsDeltaEvent responseFunctionCallArgumentsDelta
 
 @override String get type => 'response.function_call_arguments.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseFunctionCallArgumentsDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFunctionCallArgumentsDelta copyWith({String? itemId, int? outputIndex, int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseFunctionCallArgumentsDelta(responseFunctionCallArgumentsDeltaEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
   delta: delta,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDeltaEvent == other.responseFunctionCallArgumentsDeltaEvent; } 
-@override int get hashCode { return responseFunctionCallArgumentsDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDelta($responseFunctionCallArgumentsDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDeltaEvent == other.responseFunctionCallArgumentsDeltaEvent;
+
+@override int get hashCode => responseFunctionCallArgumentsDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFunctionCallArgumentsDelta($responseFunctionCallArgumentsDeltaEvent)';
+
 @override int get sequenceNumber => responseFunctionCallArgumentsDeltaEvent.sequenceNumber;
 
  }
@@ -614,7 +686,8 @@ final ResponseFunctionCallArgumentsDoneEvent responseFunctionCallArgumentsDoneEv
 
 @override String get type => 'response.function_call_arguments.done';
 
-@override Map<String, dynamic> toJson() { return {...responseFunctionCallArgumentsDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, String? name, int? outputIndex, int? sequenceNumber, String? arguments, }) { return ResponseStreamEventResponseFunctionCallArgumentsDone(responseFunctionCallArgumentsDoneEvent.copyWith(
   itemId: itemId,
   name: name,
@@ -622,10 +695,13 @@ ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, S
   sequenceNumber: sequenceNumber,
   arguments: arguments,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDoneEvent == other.responseFunctionCallArgumentsDoneEvent; } 
-@override int get hashCode { return responseFunctionCallArgumentsDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFunctionCallArgumentsDone($responseFunctionCallArgumentsDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDoneEvent == other.responseFunctionCallArgumentsDoneEvent;
+
+@override int get hashCode => responseFunctionCallArgumentsDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFunctionCallArgumentsDone($responseFunctionCallArgumentsDoneEvent)';
+
 @override int get sequenceNumber => responseFunctionCallArgumentsDoneEvent.sequenceNumber;
 
  }
@@ -637,15 +713,19 @@ final ResponseInProgressEvent responseInProgressEvent;
 
 @override String get type => 'response.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseInProgress copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseInProgress(responseInProgressEvent.copyWith(
   response: response,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseInProgress && responseInProgressEvent == other.responseInProgressEvent; } 
-@override int get hashCode { return responseInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseInProgress($responseInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseInProgress && responseInProgressEvent == other.responseInProgressEvent;
+
+@override int get hashCode => responseInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseInProgress($responseInProgressEvent)';
+
 @override int get sequenceNumber => responseInProgressEvent.sequenceNumber;
 
  }
@@ -657,15 +737,19 @@ final ResponseFailedEvent responseFailedEvent;
 
 @override String get type => 'response.failed';
 
-@override Map<String, dynamic> toJson() { return {...responseFailedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseFailedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseFailed copyWith({int? sequenceNumber, Response? response, }) { return ResponseStreamEventResponseFailed(responseFailedEvent.copyWith(
   sequenceNumber: sequenceNumber,
   response: response,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseFailed && responseFailedEvent == other.responseFailedEvent; } 
-@override int get hashCode { return responseFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseFailed($responseFailedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseFailed && responseFailedEvent == other.responseFailedEvent;
+
+@override int get hashCode => responseFailedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseFailed($responseFailedEvent)';
+
 @override int get sequenceNumber => responseFailedEvent.sequenceNumber;
 
  }
@@ -677,15 +761,19 @@ final ResponseIncompleteEvent responseIncompleteEvent;
 
 @override String get type => 'response.incomplete';
 
-@override Map<String, dynamic> toJson() { return {...responseIncompleteEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseIncompleteEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseIncomplete copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseIncomplete(responseIncompleteEvent.copyWith(
   response: response,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseIncomplete && responseIncompleteEvent == other.responseIncompleteEvent; } 
-@override int get hashCode { return responseIncompleteEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseIncomplete($responseIncompleteEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseIncomplete && responseIncompleteEvent == other.responseIncompleteEvent;
+
+@override int get hashCode => responseIncompleteEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseIncomplete($responseIncompleteEvent)';
+
 @override int get sequenceNumber => responseIncompleteEvent.sequenceNumber;
 
  }
@@ -697,16 +785,20 @@ final ResponseOutputItemAddedEvent responseOutputItemAddedEvent;
 
 @override String get type => 'response.output_item.added';
 
-@override Map<String, dynamic> toJson() { return {...responseOutputItemAddedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseOutputItemAddedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseOutputItemAdded copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemAdded(responseOutputItemAddedEvent.copyWith(
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
   item: item,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseOutputItemAdded && responseOutputItemAddedEvent == other.responseOutputItemAddedEvent; } 
-@override int get hashCode { return responseOutputItemAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseOutputItemAdded($responseOutputItemAddedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseOutputItemAdded && responseOutputItemAddedEvent == other.responseOutputItemAddedEvent;
+
+@override int get hashCode => responseOutputItemAddedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseOutputItemAdded($responseOutputItemAddedEvent)';
+
 @override int get sequenceNumber => responseOutputItemAddedEvent.sequenceNumber;
 
  }
@@ -718,16 +810,20 @@ final ResponseOutputItemDoneEvent responseOutputItemDoneEvent;
 
 @override String get type => 'response.output_item.done';
 
-@override Map<String, dynamic> toJson() { return {...responseOutputItemDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseOutputItemDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseOutputItemDone copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemDone(responseOutputItemDoneEvent.copyWith(
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
   item: item,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseOutputItemDone && responseOutputItemDoneEvent == other.responseOutputItemDoneEvent; } 
-@override int get hashCode { return responseOutputItemDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseOutputItemDone($responseOutputItemDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseOutputItemDone && responseOutputItemDoneEvent == other.responseOutputItemDoneEvent;
+
+@override int get hashCode => responseOutputItemDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseOutputItemDone($responseOutputItemDoneEvent)';
+
 @override int get sequenceNumber => responseOutputItemDoneEvent.sequenceNumber;
 
  }
@@ -739,7 +835,8 @@ final ResponseReasoningSummaryPartAddedEvent responseReasoningSummaryPartAddedEv
 
 @override String get type => 'response.reasoning_summary_part.added';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningSummaryPartAddedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartAddedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartAdded(responseReasoningSummaryPartAddedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -747,10 +844,13 @@ ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, i
   sequenceNumber: sequenceNumber,
   $part: $part,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAddedEvent == other.responseReasoningSummaryPartAddedEvent; } 
-@override int get hashCode { return responseReasoningSummaryPartAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartAdded($responseReasoningSummaryPartAddedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAddedEvent == other.responseReasoningSummaryPartAddedEvent;
+
+@override int get hashCode => responseReasoningSummaryPartAddedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningSummaryPartAdded($responseReasoningSummaryPartAddedEvent)';
+
 @override int get sequenceNumber => responseReasoningSummaryPartAddedEvent.sequenceNumber;
 
  }
@@ -762,7 +862,8 @@ final ResponseReasoningSummaryPartDoneEvent responseReasoningSummaryPartDoneEven
 
 @override String get type => 'response.reasoning_summary_part.done';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningSummaryPartDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartDone(responseReasoningSummaryPartDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -770,10 +871,13 @@ ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, in
   sequenceNumber: sequenceNumber,
   $part: $part,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningSummaryPartDone && responseReasoningSummaryPartDoneEvent == other.responseReasoningSummaryPartDoneEvent; } 
-@override int get hashCode { return responseReasoningSummaryPartDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryPartDone($responseReasoningSummaryPartDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningSummaryPartDone && responseReasoningSummaryPartDoneEvent == other.responseReasoningSummaryPartDoneEvent;
+
+@override int get hashCode => responseReasoningSummaryPartDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningSummaryPartDone($responseReasoningSummaryPartDoneEvent)';
+
 @override int get sequenceNumber => responseReasoningSummaryPartDoneEvent.sequenceNumber;
 
  }
@@ -785,7 +889,8 @@ final ResponseReasoningSummaryTextDeltaEvent responseReasoningSummaryTextDeltaEv
 
 @override String get type => 'response.reasoning_summary_text.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningSummaryTextDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDelta(responseReasoningSummaryTextDeltaEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -793,10 +898,13 @@ ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, i
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDeltaEvent == other.responseReasoningSummaryTextDeltaEvent; } 
-@override int get hashCode { return responseReasoningSummaryTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDelta($responseReasoningSummaryTextDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDeltaEvent == other.responseReasoningSummaryTextDeltaEvent;
+
+@override int get hashCode => responseReasoningSummaryTextDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningSummaryTextDelta($responseReasoningSummaryTextDeltaEvent)';
+
 @override int get sequenceNumber => responseReasoningSummaryTextDeltaEvent.sequenceNumber;
 
  }
@@ -808,7 +916,8 @@ final ResponseReasoningSummaryTextDoneEvent responseReasoningSummaryTextDoneEven
 
 @override String get type => 'response.reasoning_summary_text.done';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningSummaryTextDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDone(responseReasoningSummaryTextDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -816,10 +925,13 @@ ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, in
   text: text,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningSummaryTextDone && responseReasoningSummaryTextDoneEvent == other.responseReasoningSummaryTextDoneEvent; } 
-@override int get hashCode { return responseReasoningSummaryTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningSummaryTextDone($responseReasoningSummaryTextDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningSummaryTextDone && responseReasoningSummaryTextDoneEvent == other.responseReasoningSummaryTextDoneEvent;
+
+@override int get hashCode => responseReasoningSummaryTextDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningSummaryTextDone($responseReasoningSummaryTextDoneEvent)';
+
 @override int get sequenceNumber => responseReasoningSummaryTextDoneEvent.sequenceNumber;
 
  }
@@ -831,7 +943,8 @@ final ResponseReasoningTextDeltaEvent responseReasoningTextDeltaEvent;
 
 @override String get type => 'response.reasoning_text.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningTextDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningTextDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDelta(responseReasoningTextDeltaEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -839,10 +952,13 @@ ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? out
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningTextDelta && responseReasoningTextDeltaEvent == other.responseReasoningTextDeltaEvent; } 
-@override int get hashCode { return responseReasoningTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningTextDelta($responseReasoningTextDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningTextDelta && responseReasoningTextDeltaEvent == other.responseReasoningTextDeltaEvent;
+
+@override int get hashCode => responseReasoningTextDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningTextDelta($responseReasoningTextDeltaEvent)';
+
 @override int get sequenceNumber => responseReasoningTextDeltaEvent.sequenceNumber;
 
  }
@@ -854,7 +970,8 @@ final ResponseReasoningTextDoneEvent responseReasoningTextDoneEvent;
 
 @override String get type => 'response.reasoning_text.done';
 
-@override Map<String, dynamic> toJson() { return {...responseReasoningTextDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseReasoningTextDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDone(responseReasoningTextDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -862,10 +979,13 @@ ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outp
   text: text,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseReasoningTextDone && responseReasoningTextDoneEvent == other.responseReasoningTextDoneEvent; } 
-@override int get hashCode { return responseReasoningTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseReasoningTextDone($responseReasoningTextDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseReasoningTextDone && responseReasoningTextDoneEvent == other.responseReasoningTextDoneEvent;
+
+@override int get hashCode => responseReasoningTextDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseReasoningTextDone($responseReasoningTextDoneEvent)';
+
 @override int get sequenceNumber => responseReasoningTextDoneEvent.sequenceNumber;
 
  }
@@ -877,7 +997,8 @@ final ResponseRefusalDeltaEvent responseRefusalDeltaEvent;
 
 @override String get type => 'response.refusal.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseRefusalDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseRefusalDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDelta(responseRefusalDeltaEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -885,10 +1006,13 @@ ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputInd
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseRefusalDelta && responseRefusalDeltaEvent == other.responseRefusalDeltaEvent; } 
-@override int get hashCode { return responseRefusalDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseRefusalDelta($responseRefusalDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseRefusalDelta && responseRefusalDeltaEvent == other.responseRefusalDeltaEvent;
+
+@override int get hashCode => responseRefusalDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseRefusalDelta($responseRefusalDeltaEvent)';
+
 @override int get sequenceNumber => responseRefusalDeltaEvent.sequenceNumber;
 
  }
@@ -900,7 +1024,8 @@ final ResponseRefusalDoneEvent responseRefusalDoneEvent;
 
 @override String get type => 'response.refusal.done';
 
-@override Map<String, dynamic> toJson() { return {...responseRefusalDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseRefusalDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? refusal, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDone(responseRefusalDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -908,10 +1033,13 @@ ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputInde
   refusal: refusal,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseRefusalDone && responseRefusalDoneEvent == other.responseRefusalDoneEvent; } 
-@override int get hashCode { return responseRefusalDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseRefusalDone($responseRefusalDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseRefusalDone && responseRefusalDoneEvent == other.responseRefusalDoneEvent;
+
+@override int get hashCode => responseRefusalDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseRefusalDone($responseRefusalDoneEvent)';
+
 @override int get sequenceNumber => responseRefusalDoneEvent.sequenceNumber;
 
  }
@@ -923,7 +1051,8 @@ final ResponseTextDeltaEvent responseTextDeltaEvent;
 
 @override String get type => 'response.output_text.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseTextDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseTextDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDelta(responseTextDeltaEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -932,10 +1061,13 @@ ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? output
   sequenceNumber: sequenceNumber,
   logprobs: logprobs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseOutputTextDelta && responseTextDeltaEvent == other.responseTextDeltaEvent; } 
-@override int get hashCode { return responseTextDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseOutputTextDelta($responseTextDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseOutputTextDelta && responseTextDeltaEvent == other.responseTextDeltaEvent;
+
+@override int get hashCode => responseTextDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseOutputTextDelta($responseTextDeltaEvent)';
+
 @override int get sequenceNumber => responseTextDeltaEvent.sequenceNumber;
 
  }
@@ -947,7 +1079,8 @@ final ResponseTextDoneEvent responseTextDoneEvent;
 
 @override String get type => 'response.output_text.done';
 
-@override Map<String, dynamic> toJson() { return {...responseTextDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseTextDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDone(responseTextDoneEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -956,10 +1089,13 @@ ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputI
   sequenceNumber: sequenceNumber,
   logprobs: logprobs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseOutputTextDone && responseTextDoneEvent == other.responseTextDoneEvent; } 
-@override int get hashCode { return responseTextDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseOutputTextDone($responseTextDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseOutputTextDone && responseTextDoneEvent == other.responseTextDoneEvent;
+
+@override int get hashCode => responseTextDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseOutputTextDone($responseTextDoneEvent)';
+
 @override int get sequenceNumber => responseTextDoneEvent.sequenceNumber;
 
  }
@@ -971,16 +1107,20 @@ final ResponseWebSearchCallCompletedEvent responseWebSearchCallCompletedEvent;
 
 @override String get type => 'response.web_search_call.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseWebSearchCallCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseWebSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallCompleted(responseWebSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseWebSearchCallCompleted && responseWebSearchCallCompletedEvent == other.responseWebSearchCallCompletedEvent; } 
-@override int get hashCode { return responseWebSearchCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallCompleted($responseWebSearchCallCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseWebSearchCallCompleted && responseWebSearchCallCompletedEvent == other.responseWebSearchCallCompletedEvent;
+
+@override int get hashCode => responseWebSearchCallCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseWebSearchCallCompleted($responseWebSearchCallCompletedEvent)';
+
 @override int get sequenceNumber => responseWebSearchCallCompletedEvent.sequenceNumber;
 
  }
@@ -992,16 +1132,20 @@ final ResponseWebSearchCallInProgressEvent responseWebSearchCallInProgressEvent;
 
 @override String get type => 'response.web_search_call.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseWebSearchCallInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseWebSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallInProgress(responseWebSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseWebSearchCallInProgress && responseWebSearchCallInProgressEvent == other.responseWebSearchCallInProgressEvent; } 
-@override int get hashCode { return responseWebSearchCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallInProgress($responseWebSearchCallInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseWebSearchCallInProgress && responseWebSearchCallInProgressEvent == other.responseWebSearchCallInProgressEvent;
+
+@override int get hashCode => responseWebSearchCallInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseWebSearchCallInProgress($responseWebSearchCallInProgressEvent)';
+
 @override int get sequenceNumber => responseWebSearchCallInProgressEvent.sequenceNumber;
 
  }
@@ -1013,16 +1157,20 @@ final ResponseWebSearchCallSearchingEvent responseWebSearchCallSearchingEvent;
 
 @override String get type => 'response.web_search_call.searching';
 
-@override Map<String, dynamic> toJson() { return {...responseWebSearchCallSearchingEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallSearchingEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseWebSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallSearching(responseWebSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseWebSearchCallSearching && responseWebSearchCallSearchingEvent == other.responseWebSearchCallSearchingEvent; } 
-@override int get hashCode { return responseWebSearchCallSearchingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseWebSearchCallSearching($responseWebSearchCallSearchingEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseWebSearchCallSearching && responseWebSearchCallSearchingEvent == other.responseWebSearchCallSearchingEvent;
+
+@override int get hashCode => responseWebSearchCallSearchingEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseWebSearchCallSearching($responseWebSearchCallSearchingEvent)';
+
 @override int get sequenceNumber => responseWebSearchCallSearchingEvent.sequenceNumber;
 
  }
@@ -1034,16 +1182,20 @@ final ResponseImageGenCallCompletedEvent responseImageGenCallCompletedEvent;
 
 @override String get type => 'response.image_generation_call.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseImageGenCallCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseImageGenCallCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseImageGenerationCallCompleted copyWith({int? outputIndex, int? sequenceNumber, String? itemId, }) { return ResponseStreamEventResponseImageGenerationCallCompleted(responseImageGenCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
   itemId: itemId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseImageGenerationCallCompleted && responseImageGenCallCompletedEvent == other.responseImageGenCallCompletedEvent; } 
-@override int get hashCode { return responseImageGenCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallCompleted($responseImageGenCallCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseImageGenerationCallCompleted && responseImageGenCallCompletedEvent == other.responseImageGenCallCompletedEvent;
+
+@override int get hashCode => responseImageGenCallCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseImageGenerationCallCompleted($responseImageGenCallCompletedEvent)';
+
 @override int get sequenceNumber => responseImageGenCallCompletedEvent.sequenceNumber;
 
  }
@@ -1055,16 +1207,20 @@ final ResponseImageGenCallGeneratingEvent responseImageGenCallGeneratingEvent;
 
 @override String get type => 'response.image_generation_call.generating';
 
-@override Map<String, dynamic> toJson() { return {...responseImageGenCallGeneratingEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseImageGenCallGeneratingEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseImageGenerationCallGenerating copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallGenerating(responseImageGenCallGeneratingEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseImageGenerationCallGenerating && responseImageGenCallGeneratingEvent == other.responseImageGenCallGeneratingEvent; } 
-@override int get hashCode { return responseImageGenCallGeneratingEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallGenerating($responseImageGenCallGeneratingEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseImageGenerationCallGenerating && responseImageGenCallGeneratingEvent == other.responseImageGenCallGeneratingEvent;
+
+@override int get hashCode => responseImageGenCallGeneratingEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseImageGenerationCallGenerating($responseImageGenCallGeneratingEvent)';
+
 @override int get sequenceNumber => responseImageGenCallGeneratingEvent.sequenceNumber;
 
  }
@@ -1076,16 +1232,20 @@ final ResponseImageGenCallInProgressEvent responseImageGenCallInProgressEvent;
 
 @override String get type => 'response.image_generation_call.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseImageGenCallInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseImageGenCallInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseImageGenerationCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallInProgress(responseImageGenCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseImageGenerationCallInProgress && responseImageGenCallInProgressEvent == other.responseImageGenCallInProgressEvent; } 
-@override int get hashCode { return responseImageGenCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallInProgress($responseImageGenCallInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseImageGenerationCallInProgress && responseImageGenCallInProgressEvent == other.responseImageGenCallInProgressEvent;
+
+@override int get hashCode => responseImageGenCallInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseImageGenerationCallInProgress($responseImageGenCallInProgressEvent)';
+
 @override int get sequenceNumber => responseImageGenCallInProgressEvent.sequenceNumber;
 
  }
@@ -1097,7 +1257,8 @@ final ResponseImageGenCallPartialImageEvent responseImageGenCallPartialImageEven
 
 @override String get type => 'response.image_generation_call.partial_image';
 
-@override Map<String, dynamic> toJson() { return {...responseImageGenCallPartialImageEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseImageGenCallPartialImageEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseStreamEventResponseImageGenerationCallPartialImage(responseImageGenCallPartialImageEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
@@ -1105,10 +1266,13 @@ ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? output
   partialImageIndex: partialImageIndex,
   partialImageB64: partialImageB64,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseImageGenerationCallPartialImage && responseImageGenCallPartialImageEvent == other.responseImageGenCallPartialImageEvent; } 
-@override int get hashCode { return responseImageGenCallPartialImageEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseImageGenerationCallPartialImage($responseImageGenCallPartialImageEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseImageGenerationCallPartialImage && responseImageGenCallPartialImageEvent == other.responseImageGenCallPartialImageEvent;
+
+@override int get hashCode => responseImageGenCallPartialImageEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseImageGenerationCallPartialImage($responseImageGenCallPartialImageEvent)';
+
 @override int get sequenceNumber => responseImageGenCallPartialImageEvent.sequenceNumber;
 
  }
@@ -1120,17 +1284,21 @@ final ResponseMcpCallArgumentsDeltaEvent responseMcpCallArgumentsDeltaEvent;
 
 @override String get type => 'response.mcp_call_arguments.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpCallArgumentsDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpCallArgumentsDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDelta(responseMcpCallArgumentsDeltaEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   delta: delta,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDeltaEvent == other.responseMcpCallArgumentsDeltaEvent; } 
-@override int get hashCode { return responseMcpCallArgumentsDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDelta($responseMcpCallArgumentsDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDeltaEvent == other.responseMcpCallArgumentsDeltaEvent;
+
+@override int get hashCode => responseMcpCallArgumentsDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpCallArgumentsDelta($responseMcpCallArgumentsDeltaEvent)';
+
 @override int get sequenceNumber => responseMcpCallArgumentsDeltaEvent.sequenceNumber;
 
  }
@@ -1142,17 +1310,21 @@ final ResponseMcpCallArgumentsDoneEvent responseMcpCallArgumentsDoneEvent;
 
 @override String get type => 'response.mcp_call_arguments.done';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpCallArgumentsDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpCallArgumentsDone copyWith({int? outputIndex, String? itemId, String? arguments, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDone(responseMcpCallArgumentsDoneEvent.copyWith(
   outputIndex: outputIndex,
   itemId: itemId,
   arguments: arguments,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpCallArgumentsDone && responseMcpCallArgumentsDoneEvent == other.responseMcpCallArgumentsDoneEvent; } 
-@override int get hashCode { return responseMcpCallArgumentsDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpCallArgumentsDone($responseMcpCallArgumentsDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpCallArgumentsDone && responseMcpCallArgumentsDoneEvent == other.responseMcpCallArgumentsDoneEvent;
+
+@override int get hashCode => responseMcpCallArgumentsDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpCallArgumentsDone($responseMcpCallArgumentsDoneEvent)';
+
 @override int get sequenceNumber => responseMcpCallArgumentsDoneEvent.sequenceNumber;
 
  }
@@ -1164,16 +1336,20 @@ final ResponseMcpCallCompletedEvent responseMcpCallCompletedEvent;
 
 @override String get type => 'response.mcp_call.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpCallCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpCallCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpCallCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallCompleted(responseMcpCallCompletedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpCallCompleted && responseMcpCallCompletedEvent == other.responseMcpCallCompletedEvent; } 
-@override int get hashCode { return responseMcpCallCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpCallCompleted($responseMcpCallCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpCallCompleted && responseMcpCallCompletedEvent == other.responseMcpCallCompletedEvent;
+
+@override int get hashCode => responseMcpCallCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpCallCompleted($responseMcpCallCompletedEvent)';
+
 @override int get sequenceNumber => responseMcpCallCompletedEvent.sequenceNumber;
 
  }
@@ -1185,16 +1361,20 @@ final ResponseMcpCallFailedEvent responseMcpCallFailedEvent;
 
 @override String get type => 'response.mcp_call.failed';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpCallFailedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpCallFailedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpCallFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallFailed(responseMcpCallFailedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpCallFailed && responseMcpCallFailedEvent == other.responseMcpCallFailedEvent; } 
-@override int get hashCode { return responseMcpCallFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpCallFailed($responseMcpCallFailedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpCallFailed && responseMcpCallFailedEvent == other.responseMcpCallFailedEvent;
+
+@override int get hashCode => responseMcpCallFailedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpCallFailed($responseMcpCallFailedEvent)';
+
 @override int get sequenceNumber => responseMcpCallFailedEvent.sequenceNumber;
 
  }
@@ -1206,16 +1386,20 @@ final ResponseMcpCallInProgressEvent responseMcpCallInProgressEvent;
 
 @override String get type => 'response.mcp_call.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpCallInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpCallInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpCallInProgress copyWith({int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseStreamEventResponseMcpCallInProgress(responseMcpCallInProgressEvent.copyWith(
   sequenceNumber: sequenceNumber,
   outputIndex: outputIndex,
   itemId: itemId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpCallInProgress && responseMcpCallInProgressEvent == other.responseMcpCallInProgressEvent; } 
-@override int get hashCode { return responseMcpCallInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpCallInProgress($responseMcpCallInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpCallInProgress && responseMcpCallInProgressEvent == other.responseMcpCallInProgressEvent;
+
+@override int get hashCode => responseMcpCallInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpCallInProgress($responseMcpCallInProgressEvent)';
+
 @override int get sequenceNumber => responseMcpCallInProgressEvent.sequenceNumber;
 
  }
@@ -1227,16 +1411,20 @@ final ResponseMcpListToolsCompletedEvent responseMcpListToolsCompletedEvent;
 
 @override String get type => 'response.mcp_list_tools.completed';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpListToolsCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsCompletedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpListToolsCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsCompleted(responseMcpListToolsCompletedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpListToolsCompleted && responseMcpListToolsCompletedEvent == other.responseMcpListToolsCompletedEvent; } 
-@override int get hashCode { return responseMcpListToolsCompletedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsCompleted($responseMcpListToolsCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpListToolsCompleted && responseMcpListToolsCompletedEvent == other.responseMcpListToolsCompletedEvent;
+
+@override int get hashCode => responseMcpListToolsCompletedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpListToolsCompleted($responseMcpListToolsCompletedEvent)';
+
 @override int get sequenceNumber => responseMcpListToolsCompletedEvent.sequenceNumber;
 
  }
@@ -1248,16 +1436,20 @@ final ResponseMcpListToolsFailedEvent responseMcpListToolsFailedEvent;
 
 @override String get type => 'response.mcp_list_tools.failed';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpListToolsFailedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsFailedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpListToolsFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsFailed(responseMcpListToolsFailedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpListToolsFailed && responseMcpListToolsFailedEvent == other.responseMcpListToolsFailedEvent; } 
-@override int get hashCode { return responseMcpListToolsFailedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsFailed($responseMcpListToolsFailedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpListToolsFailed && responseMcpListToolsFailedEvent == other.responseMcpListToolsFailedEvent;
+
+@override int get hashCode => responseMcpListToolsFailedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpListToolsFailed($responseMcpListToolsFailedEvent)';
+
 @override int get sequenceNumber => responseMcpListToolsFailedEvent.sequenceNumber;
 
  }
@@ -1269,16 +1461,20 @@ final ResponseMcpListToolsInProgressEvent responseMcpListToolsInProgressEvent;
 
 @override String get type => 'response.mcp_list_tools.in_progress';
 
-@override Map<String, dynamic> toJson() { return {...responseMcpListToolsInProgressEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsInProgressEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseMcpListToolsInProgress copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsInProgress(responseMcpListToolsInProgressEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseMcpListToolsInProgress && responseMcpListToolsInProgressEvent == other.responseMcpListToolsInProgressEvent; } 
-@override int get hashCode { return responseMcpListToolsInProgressEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseMcpListToolsInProgress($responseMcpListToolsInProgressEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseMcpListToolsInProgress && responseMcpListToolsInProgressEvent == other.responseMcpListToolsInProgressEvent;
+
+@override int get hashCode => responseMcpListToolsInProgressEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseMcpListToolsInProgress($responseMcpListToolsInProgressEvent)';
+
 @override int get sequenceNumber => responseMcpListToolsInProgressEvent.sequenceNumber;
 
  }
@@ -1290,7 +1486,8 @@ final ResponseOutputTextAnnotationAddedEvent responseOutputTextAnnotationAddedEv
 
 @override String get type => 'response.output_text.annotation.added';
 
-@override Map<String, dynamic> toJson() { return {...responseOutputTextAnnotationAddedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseOutputTextAnnotationAddedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) { return ResponseStreamEventResponseOutputTextAnnotationAdded(responseOutputTextAnnotationAddedEvent.copyWith(
   itemId: itemId,
   outputIndex: outputIndex,
@@ -1299,10 +1496,13 @@ ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, i
   sequenceNumber: sequenceNumber,
   annotation: annotation,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAddedEvent == other.responseOutputTextAnnotationAddedEvent; } 
-@override int get hashCode { return responseOutputTextAnnotationAddedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseOutputTextAnnotationAdded($responseOutputTextAnnotationAddedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAddedEvent == other.responseOutputTextAnnotationAddedEvent;
+
+@override int get hashCode => responseOutputTextAnnotationAddedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseOutputTextAnnotationAdded($responseOutputTextAnnotationAddedEvent)';
+
 @override int get sequenceNumber => responseOutputTextAnnotationAddedEvent.sequenceNumber;
 
  }
@@ -1314,15 +1514,19 @@ final ResponseQueuedEvent responseQueuedEvent;
 
 @override String get type => 'response.queued';
 
-@override Map<String, dynamic> toJson() { return {...responseQueuedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseQueuedEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseQueued copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseQueued(responseQueuedEvent.copyWith(
   response: response,
   sequenceNumber: sequenceNumber,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseQueued && responseQueuedEvent == other.responseQueuedEvent; } 
-@override int get hashCode { return responseQueuedEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseQueued($responseQueuedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseQueued && responseQueuedEvent == other.responseQueuedEvent;
+
+@override int get hashCode => responseQueuedEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseQueued($responseQueuedEvent)';
+
 @override int get sequenceNumber => responseQueuedEvent.sequenceNumber;
 
  }
@@ -1334,17 +1538,21 @@ final ResponseCustomToolCallInputDeltaEvent responseCustomToolCallInputDeltaEven
 
 @override String get type => 'response.custom_tool_call_input.delta';
 
-@override Map<String, dynamic> toJson() { return {...responseCustomToolCallInputDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDeltaEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCustomToolCallInputDelta copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? delta, }) { return ResponseStreamEventResponseCustomToolCallInputDelta(responseCustomToolCallInputDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
   outputIndex: outputIndex,
   itemId: itemId,
   delta: delta,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCustomToolCallInputDelta && responseCustomToolCallInputDeltaEvent == other.responseCustomToolCallInputDeltaEvent; } 
-@override int get hashCode { return responseCustomToolCallInputDeltaEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDelta($responseCustomToolCallInputDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCustomToolCallInputDelta && responseCustomToolCallInputDeltaEvent == other.responseCustomToolCallInputDeltaEvent;
+
+@override int get hashCode => responseCustomToolCallInputDeltaEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCustomToolCallInputDelta($responseCustomToolCallInputDeltaEvent)';
+
 @override int get sequenceNumber => responseCustomToolCallInputDeltaEvent.sequenceNumber;
 
  }
@@ -1356,17 +1564,21 @@ final ResponseCustomToolCallInputDoneEvent responseCustomToolCallInputDoneEvent;
 
 @override String get type => 'response.custom_tool_call_input.done';
 
-@override Map<String, dynamic> toJson() { return {...responseCustomToolCallInputDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDoneEvent.toJson(), 'type': type};
+
 ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? input, }) { return ResponseStreamEventResponseCustomToolCallInputDone(responseCustomToolCallInputDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
   outputIndex: outputIndex,
   itemId: itemId,
   input: input,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEventResponseCustomToolCallInputDone && responseCustomToolCallInputDoneEvent == other.responseCustomToolCallInputDoneEvent; } 
-@override int get hashCode { return responseCustomToolCallInputDoneEvent.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.responseCustomToolCallInputDone($responseCustomToolCallInputDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEventResponseCustomToolCallInputDone && responseCustomToolCallInputDoneEvent == other.responseCustomToolCallInputDoneEvent;
+
+@override int get hashCode => responseCustomToolCallInputDoneEvent.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.responseCustomToolCallInputDone($responseCustomToolCallInputDoneEvent)';
+
 @override int get sequenceNumber => responseCustomToolCallInputDoneEvent.sequenceNumber;
 
  }
@@ -1378,11 +1590,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStreamEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResponseStreamEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStreamEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ResponseStreamEvent.unknown($json)';
+
 @override int get sequenceNumber => (json['sequence_number'] as num).toInt();
 
  }

@@ -21,10 +21,13 @@ Globals copyWith({String? prop, String? type, }) { return Globals(
   prop: prop ?? this.prop,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Globals &&
           prop == other.prop &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(prop, type); } 
-@override String toString() { return 'Globals(prop: $prop, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(prop, type);
+
+@override String toString() => 'Globals(prop: $prop, type: $type)';
+
  }

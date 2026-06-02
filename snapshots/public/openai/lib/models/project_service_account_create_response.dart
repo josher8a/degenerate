@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectServiceAccountCreateResponseRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectServiceAccountCreateResponseRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectServiceAccountCreateResponseRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectServiceAccountCreateResponseRole($value)';
+
  }
 @immutable final class ProjectServiceAccountCreateResponse {const ProjectServiceAccountCreateResponse({required this.object, required this.id, required this.name, required this.role, required this.createdAt, required this.apiKey, });
 
@@ -68,14 +71,17 @@ ProjectServiceAccountCreateResponse copyWith({ProjectServiceAccountCreateRespons
   createdAt: createdAt ?? this.createdAt,
   apiKey: apiKey ?? this.apiKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectServiceAccountCreateResponse &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           role == other.role &&
           createdAt == other.createdAt &&
-          apiKey == other.apiKey; } 
-@override int get hashCode { return Object.hash(object, id, name, role, createdAt, apiKey); } 
-@override String toString() { return 'ProjectServiceAccountCreateResponse(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt, apiKey: $apiKey)'; } 
+          apiKey == other.apiKey;
+
+@override int get hashCode => Object.hash(object, id, name, role, createdAt, apiKey);
+
+@override String toString() => 'ProjectServiceAccountCreateResponse(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt, apiKey: $apiKey)';
+
  }

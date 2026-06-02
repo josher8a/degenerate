@@ -116,7 +116,7 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
   pullRequests: pullRequests ?? this.pullRequests,
   deployment: deployment != null ? deployment() : this.deployment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckRun &&
           id == other.id &&
           headSha == other.headSha &&
@@ -134,7 +134,10 @@ CheckRun copyWith({int? id, String? headSha, String? nodeId, String? Function()?
           checkSuite == other.checkSuite &&
           app == other.app &&
           listEquals(pullRequests, other.pullRequests) &&
-          deployment == other.deployment; } 
-@override int get hashCode { return Object.hash(id, headSha, nodeId, externalId, url, htmlUrl, detailsUrl, status, conclusion, startedAt, completedAt, output, name, checkSuite, app, Object.hashAll(pullRequests), deployment); } 
-@override String toString() { return 'CheckRun(id: $id, headSha: $headSha, nodeId: $nodeId, externalId: $externalId, url: $url, htmlUrl: $htmlUrl, detailsUrl: $detailsUrl, status: $status, conclusion: $conclusion, startedAt: $startedAt, completedAt: $completedAt, output: $output, name: $name, checkSuite: $checkSuite, app: $app, pullRequests: $pullRequests, deployment: $deployment)'; } 
+          deployment == other.deployment;
+
+@override int get hashCode => Object.hash(id, headSha, nodeId, externalId, url, htmlUrl, detailsUrl, status, conclusion, startedAt, completedAt, output, name, checkSuite, app, Object.hashAll(pullRequests), deployment);
+
+@override String toString() => 'CheckRun(id: $id, headSha: $headSha, nodeId: $nodeId, externalId: $externalId, url: $url, htmlUrl: $htmlUrl, detailsUrl: $detailsUrl, status: $status, conclusion: $conclusion, startedAt: $startedAt, completedAt: $completedAt, output: $output, name: $name, checkSuite: $checkSuite, app: $app, pullRequests: $pullRequests, deployment: $deployment)';
+
  }

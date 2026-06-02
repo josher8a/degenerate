@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ForwardingSettingsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ForwardingSettingsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ForwardingSettingsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ForwardingSettingsType($value)';
+
  }
 /// A different bank account where funds can be deposited/debited in order to get the closing FA's balance to $0
 @immutable final class ForwardingSettings {const ForwardingSettings({required this.type, this.financialAccount, this.paymentMethod, });
@@ -57,11 +60,14 @@ ForwardingSettings copyWith({String? Function()? financialAccount, String? Funct
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardingSettings &&
           financialAccount == other.financialAccount &&
           paymentMethod == other.paymentMethod &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(financialAccount, paymentMethod, type); } 
-@override String toString() { return 'ForwardingSettings(financialAccount: $financialAccount, paymentMethod: $paymentMethod, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(financialAccount, paymentMethod, type);
+
+@override String toString() => 'ForwardingSettings(financialAccount: $financialAccount, paymentMethod: $paymentMethod, type: $type)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreFileObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreFileObjectObject($value)';
+
  }
 /// A list of files attached to a vector store.
 @immutable final class VectorStoreFileObject {const VectorStoreFileObject({required this.id, required this.object, required this.usageBytes, required this.createdAt, required this.vectorStoreId, required this.status, required this.lastError, this.chunkingStrategy, this.attributes, });
@@ -98,7 +101,7 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   attributes: attributes != null ? attributes() : this.attributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreFileObject &&
           id == other.id &&
           object == other.object &&
@@ -108,7 +111,10 @@ VectorStoreFileObject copyWith({String? id, VectorStoreFileObjectObject? object,
           status == other.status &&
           lastError == other.lastError &&
           chunkingStrategy == other.chunkingStrategy &&
-          attributes == other.attributes; } 
-@override int get hashCode { return Object.hash(id, object, usageBytes, createdAt, vectorStoreId, status, lastError, chunkingStrategy, attributes); } 
-@override String toString() { return 'VectorStoreFileObject(id: $id, object: $object, usageBytes: $usageBytes, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, lastError: $lastError, chunkingStrategy: $chunkingStrategy, attributes: $attributes)'; } 
+          attributes == other.attributes;
+
+@override int get hashCode => Object.hash(id, object, usageBytes, createdAt, vectorStoreId, status, lastError, chunkingStrategy, attributes);
+
+@override String toString() => 'VectorStoreFileObject(id: $id, object: $object, usageBytes: $usageBytes, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, lastError: $lastError, chunkingStrategy: $chunkingStrategy, attributes: $attributes)';
+
  }

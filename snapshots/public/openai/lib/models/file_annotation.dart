@@ -24,10 +24,13 @@ FileAnnotation copyWith({ChatCompletionRequestMessageContentPartFileType? type, 
   type: type ?? this.type,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileAnnotation &&
           type == other.type &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, source); } 
-@override String toString() { return 'FileAnnotation(type: $type, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, source);
+
+@override String toString() => 'FileAnnotation(type: $type, source: $source)';
+
  }

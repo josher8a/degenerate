@@ -94,7 +94,7 @@ McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Fu
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   regions: regions ?? this.regions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnProviderStatus &&
           credentialsGoodSince == other.credentialsGoodSince &&
           credentialsMissingSince == other.credentialsMissingSince &&
@@ -111,7 +111,10 @@ McnProviderStatus copyWith({String? Function()? credentialsGoodSince, String? Fu
           lastDiscoveryStatus == other.lastDiscoveryStatus &&
           lastDiscoveryStatusV2 == other.lastDiscoveryStatusV2 &&
           lastUpdated == other.lastUpdated &&
-          listEquals(regions, other.regions); } 
-@override int get hashCode { return Object.hash(credentialsGoodSince, credentialsMissingSince, credentialsRejectedSince, discoveryMessage, discoveryMessageV2, discoveryProgress, discoveryProgressV2, Object.hashAll(inUseBy ?? const []), lastDiscoveryCompletedAt, lastDiscoveryCompletedAtV2, lastDiscoveryStartedAt, lastDiscoveryStartedAtV2, lastDiscoveryStatus, lastDiscoveryStatusV2, lastUpdated, Object.hashAll(regions)); } 
-@override String toString() { return 'McnProviderStatus(credentialsGoodSince: $credentialsGoodSince, credentialsMissingSince: $credentialsMissingSince, credentialsRejectedSince: $credentialsRejectedSince, discoveryMessage: $discoveryMessage, discoveryMessageV2: $discoveryMessageV2, discoveryProgress: $discoveryProgress, discoveryProgressV2: $discoveryProgressV2, inUseBy: $inUseBy, lastDiscoveryCompletedAt: $lastDiscoveryCompletedAt, lastDiscoveryCompletedAtV2: $lastDiscoveryCompletedAtV2, lastDiscoveryStartedAt: $lastDiscoveryStartedAt, lastDiscoveryStartedAtV2: $lastDiscoveryStartedAtV2, lastDiscoveryStatus: $lastDiscoveryStatus, lastDiscoveryStatusV2: $lastDiscoveryStatusV2, lastUpdated: $lastUpdated, regions: $regions)'; } 
+          listEquals(regions, other.regions);
+
+@override int get hashCode => Object.hash(credentialsGoodSince, credentialsMissingSince, credentialsRejectedSince, discoveryMessage, discoveryMessageV2, discoveryProgress, discoveryProgressV2, Object.hashAll(inUseBy ?? const []), lastDiscoveryCompletedAt, lastDiscoveryCompletedAtV2, lastDiscoveryStartedAt, lastDiscoveryStartedAtV2, lastDiscoveryStatus, lastDiscoveryStatusV2, lastUpdated, Object.hashAll(regions));
+
+@override String toString() => 'McnProviderStatus(credentialsGoodSince: $credentialsGoodSince, credentialsMissingSince: $credentialsMissingSince, credentialsRejectedSince: $credentialsRejectedSince, discoveryMessage: $discoveryMessage, discoveryMessageV2: $discoveryMessageV2, discoveryProgress: $discoveryProgress, discoveryProgressV2: $discoveryProgressV2, inUseBy: $inUseBy, lastDiscoveryCompletedAt: $lastDiscoveryCompletedAt, lastDiscoveryCompletedAtV2: $lastDiscoveryCompletedAtV2, lastDiscoveryStartedAt: $lastDiscoveryStartedAt, lastDiscoveryStartedAtV2: $lastDiscoveryStartedAtV2, lastDiscoveryStatus: $lastDiscoveryStatus, lastDiscoveryStatusV2: $lastDiscoveryStatusV2, lastUpdated: $lastUpdated, regions: $regions)';
+
  }

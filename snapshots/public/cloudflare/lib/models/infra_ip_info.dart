@@ -23,10 +23,13 @@ InfraIpInfo copyWith({Ipv4? Function()? ipv4, Ipv6? Function()? ipv6, }) { retur
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraIpInfo &&
           ipv4 == other.ipv4 &&
-          ipv6 == other.ipv6; } 
-@override int get hashCode { return Object.hash(ipv4, ipv6); } 
-@override String toString() { return 'InfraIpInfo(ipv4: $ipv4, ipv6: $ipv6)'; } 
+          ipv6 == other.ipv6;
+
+@override int get hashCode => Object.hash(ipv4, ipv6);
+
+@override String toString() => 'InfraIpInfo(ipv4: $ipv4, ipv6: $ipv6)';
+
  }

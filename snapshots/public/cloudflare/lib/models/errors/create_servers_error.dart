@@ -17,7 +17,8 @@ final class CreateServersError$400 extends CreateServersError {const CreateServe
 
 final CreateServersResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CreateServersError$Unknown extends CreateServersError {const CreateServersError$Unknown(this.statusCode, this.rawBody, );
 

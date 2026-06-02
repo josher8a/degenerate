@@ -27,11 +27,14 @@ GitTagObject copyWith({String? sha, String? type, Uri? url, }) { return GitTagOb
   type: type ?? this.type,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitTagObject &&
           sha == other.sha &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(sha, type, url); } 
-@override String toString() { return 'GitTagObject(sha: $sha, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(sha, type, url);
+
+@override String toString() => 'GitTagObject(sha: $sha, type: $type, url: $url)';
+
  }

@@ -27,11 +27,14 @@ ListFineTuningJobEventsResponse copyWith({List<FineTuningJobEvent>? data, ChatCo
   object: object ?? this.object,
   hasMore: hasMore ?? this.hasMore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListFineTuningJobEventsResponse &&
           listEquals(data, other.data) &&
           object == other.object &&
-          hasMore == other.hasMore; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), object, hasMore); } 
-@override String toString() { return 'ListFineTuningJobEventsResponse(data: $data, object: $object, hasMore: $hasMore)'; } 
+          hasMore == other.hasMore;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), object, hasMore);
+
+@override String toString() => 'ListFineTuningJobEventsResponse(data: $data, object: $object, hasMore: $hasMore)';
+
  }

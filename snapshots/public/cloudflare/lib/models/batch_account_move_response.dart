@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 BatchAccountMoveResponse copyWith({Statuses? statuses}) { return BatchAccountMoveResponse(
   statuses: statuses ?? this.statuses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BatchAccountMoveResponse &&
-          statuses == other.statuses; } 
-@override int get hashCode { return statuses.hashCode; } 
-@override String toString() { return 'BatchAccountMoveResponse(statuses: $statuses)'; } 
+          statuses == other.statuses;
+
+@override int get hashCode => statuses.hashCode;
+
+@override String toString() => 'BatchAccountMoveResponse(statuses: $statuses)';
+
  }

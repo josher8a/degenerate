@@ -17,7 +17,8 @@ final class ListMitigationsError$500 extends ListMitigationsError {const ListMit
 
 final ListMitigationsResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ListMitigationsError$Unknown extends ListMitigationsError {const ListMitigationsError$Unknown(this.statusCode, this.rawBody, );
 

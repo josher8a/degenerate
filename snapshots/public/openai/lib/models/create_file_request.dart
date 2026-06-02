@@ -39,10 +39,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateFileRequestPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateFileRequestPurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateFileRequestPurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateFileRequestPurpose($value)';
+
  }
 @immutable final class CreateFileRequest {const CreateFileRequest({required this.file, required this.purpose, this.expiresAfter, });
 
@@ -80,11 +83,14 @@ CreateFileRequest copyWith({Uint8List? file, CreateFileRequestPurpose? purpose, 
   purpose: purpose ?? this.purpose,
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFileRequest &&
           file == other.file &&
           purpose == other.purpose &&
-          expiresAfter == other.expiresAfter; } 
-@override int get hashCode { return Object.hash(file, purpose, expiresAfter); } 
-@override String toString() { return 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)'; } 
+          expiresAfter == other.expiresAfter;
+
+@override int get hashCode => Object.hash(file, purpose, expiresAfter);
+
+@override String toString() => 'CreateFileRequest(file: $file, purpose: $purpose, expiresAfter: $expiresAfter)';
+
  }

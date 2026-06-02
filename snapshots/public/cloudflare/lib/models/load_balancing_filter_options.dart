@@ -23,10 +23,13 @@ LoadBalancingFilterOptions copyWith({bool? Function()? disable, bool? Function()
   disable: disable != null ? disable() : this.disable,
   healthy: healthy != null ? healthy() : this.healthy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingFilterOptions &&
           disable == other.disable &&
-          healthy == other.healthy; } 
-@override int get hashCode { return Object.hash(disable, healthy); } 
-@override String toString() { return 'LoadBalancingFilterOptions(disable: $disable, healthy: $healthy)'; } 
+          healthy == other.healthy;
+
+@override int get hashCode => Object.hash(disable, healthy);
+
+@override String toString() => 'LoadBalancingFilterOptions(disable: $disable, healthy: $healthy)';
+
  }

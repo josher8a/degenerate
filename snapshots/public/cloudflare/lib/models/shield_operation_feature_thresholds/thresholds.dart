@@ -113,7 +113,7 @@ Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoi
   requests: requests != null ? requests() : this.requests,
   suggestedThreshold: suggestedThreshold != null ? suggestedThreshold() : this.suggestedThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Thresholds &&
           authIdTokens == other.authIdTokens &&
           dataPoints == other.dataPoints &&
@@ -123,7 +123,10 @@ Thresholds copyWith({ShieldAuthIdTokens? Function()? authIdTokens, ShieldDataPoi
           p99 == other.p99 &&
           periodSeconds == other.periodSeconds &&
           requests == other.requests &&
-          suggestedThreshold == other.suggestedThreshold; } 
-@override int get hashCode { return Object.hash(authIdTokens, dataPoints, lastUpdated, p50, p90, p99, periodSeconds, requests, suggestedThreshold); } 
-@override String toString() { return 'Thresholds(authIdTokens: $authIdTokens, dataPoints: $dataPoints, lastUpdated: $lastUpdated, p50: $p50, p90: $p90, p99: $p99, periodSeconds: $periodSeconds, requests: $requests, suggestedThreshold: $suggestedThreshold)'; } 
+          suggestedThreshold == other.suggestedThreshold;
+
+@override int get hashCode => Object.hash(authIdTokens, dataPoints, lastUpdated, p50, p90, p99, periodSeconds, requests, suggestedThreshold);
+
+@override String toString() => 'Thresholds(authIdTokens: $authIdTokens, dataPoints: $dataPoints, lastUpdated: $lastUpdated, p50: $p50, p90: $p90, p99: $p99, periodSeconds: $periodSeconds, requests: $requests, suggestedThreshold: $suggestedThreshold)';
+
  }

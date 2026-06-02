@@ -57,13 +57,16 @@ DlpDatasetsCreateRequest copyWith({bool? Function()? caseSensitive, String? Func
   name: name ?? this.name,
   secret: secret != null ? secret() : this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetsCreateRequest &&
           caseSensitive == other.caseSensitive &&
           description == other.description &&
           encodingVersion == other.encodingVersion &&
           name == other.name &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(caseSensitive, description, encodingVersion, name, secret); } 
-@override String toString() { return 'DlpDatasetsCreateRequest(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(caseSensitive, description, encodingVersion, name, secret);
+
+@override String toString() => 'DlpDatasetsCreateRequest(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)';
+
  }

@@ -57,7 +57,7 @@ IntegrationProfile copyWith({DateTime? createdAt, String? Function()? descriptio
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntegrationProfile &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -66,7 +66,10 @@ IntegrationProfile copyWith({DateTime? createdAt, String? Function()? descriptio
           name == other.name &&
           listEquals(sharedEntries, other.sharedEntries) &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(entries), id, name, Object.hashAll(sharedEntries), updatedAt, type); } 
-@override String toString() { return 'IntegrationProfile(createdAt: $createdAt, description: $description, entries: $entries, id: $id, name: $name, sharedEntries: $sharedEntries, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(entries), id, name, Object.hashAll(sharedEntries), updatedAt, type);
+
+@override String toString() => 'IntegrationProfile(createdAt: $createdAt, description: $description, entries: $entries, id: $id, name: $name, sharedEntries: $sharedEntries, updatedAt: $updatedAt, type: $type)';
+
  }

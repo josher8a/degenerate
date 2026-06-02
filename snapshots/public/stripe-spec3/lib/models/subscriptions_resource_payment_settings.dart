@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)';
+
  }
 /// 
 @immutable final class SubscriptionsResourcePaymentSettings {const SubscriptionsResourcePaymentSettings({this.paymentMethodOptions, this.paymentMethodTypes, this.saveDefaultPaymentMethod, });
@@ -54,11 +57,14 @@ SubscriptionsResourcePaymentSettings copyWith({SubscriptionsResourcePaymentMetho
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
   saveDefaultPaymentMethod: saveDefaultPaymentMethod != null ? saveDefaultPaymentMethod() : this.saveDefaultPaymentMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourcePaymentSettings &&
           paymentMethodOptions == other.paymentMethodOptions &&
           listEquals(paymentMethodTypes, other.paymentMethodTypes) &&
-          saveDefaultPaymentMethod == other.saveDefaultPaymentMethod; } 
-@override int get hashCode { return Object.hash(paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), saveDefaultPaymentMethod); } 
-@override String toString() { return 'SubscriptionsResourcePaymentSettings(paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, saveDefaultPaymentMethod: $saveDefaultPaymentMethod)'; } 
+          saveDefaultPaymentMethod == other.saveDefaultPaymentMethod;
+
+@override int get hashCode => Object.hash(paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), saveDefaultPaymentMethod);
+
+@override String toString() => 'SubscriptionsResourcePaymentSettings(paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, saveDefaultPaymentMethod: $saveDefaultPaymentMethod)';
+
  }

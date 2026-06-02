@@ -20,10 +20,13 @@ TimelineCrossReferencedEventSource copyWith({String? Function()? type, Issue? Fu
   type: type != null ? type() : this.type,
   issue: issue != null ? issue() : this.issue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCrossReferencedEventSource &&
           type == other.type &&
-          issue == other.issue; } 
-@override int get hashCode { return Object.hash(type, issue); } 
-@override String toString() { return 'TimelineCrossReferencedEventSource(type: $type, issue: $issue)'; } 
+          issue == other.issue;
+
+@override int get hashCode => Object.hash(type, issue);
+
+@override String toString() => 'TimelineCrossReferencedEventSource(type: $type, issue: $issue)';
+
  }

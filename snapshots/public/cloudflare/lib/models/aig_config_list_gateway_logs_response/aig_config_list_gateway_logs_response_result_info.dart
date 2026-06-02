@@ -80,7 +80,7 @@ AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, 
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayLogsResponseResultInfo &&
           count == other.count &&
           maxCost == other.maxCost &&
@@ -95,7 +95,10 @@ AigConfigListGatewayLogsResponseResultInfo copyWith({double? Function()? count, 
           minTotalTokens == other.minTotalTokens &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, maxCost, maxDuration, maxTokensIn, maxTokensOut, maxTotalTokens, minCost, minDuration, minTokensIn, minTokensOut, minTotalTokens, page, perPage, totalCount); } 
-@override String toString() { return 'AigConfigListGatewayLogsResponseResultInfo(count: $count, maxCost: $maxCost, maxDuration: $maxDuration, maxTokensIn: $maxTokensIn, maxTokensOut: $maxTokensOut, maxTotalTokens: $maxTotalTokens, minCost: $minCost, minDuration: $minDuration, minTokensIn: $minTokensIn, minTokensOut: $minTokensOut, minTotalTokens: $minTotalTokens, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, maxCost, maxDuration, maxTokensIn, maxTokensOut, maxTotalTokens, minCost, minDuration, minTokensIn, minTokensOut, minTotalTokens, page, perPage, totalCount);
+
+@override String toString() => 'AigConfigListGatewayLogsResponseResultInfo(count: $count, maxCost: $maxCost, maxDuration: $maxDuration, maxTokensIn: $maxTokensIn, maxTokensOut: $maxTokensOut, maxTotalTokens: $maxTotalTokens, minCost: $minCost, minDuration: $minDuration, minTokensIn: $minTokensIn, minTokensOut: $minTokensOut, minTotalTokens: $minTotalTokens, page: $page, perPage: $perPage, totalCount: $totalCount)';
+
  }

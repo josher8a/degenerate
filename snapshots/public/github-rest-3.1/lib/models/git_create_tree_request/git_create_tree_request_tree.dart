@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreeMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreeMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreeMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreeMode($value)';
+
  }
 @immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });
 
@@ -78,13 +81,16 @@ GitCreateTreeRequestTree copyWith({String? Function()? path, TreeMode? Function(
   sha: sha != null ? sha() : this.sha,
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateTreeRequestTree &&
           path == other.path &&
           mode == other.mode &&
           type == other.type &&
           sha == other.sha &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(path, mode, type, sha, content); } 
-@override String toString() { return 'GitCreateTreeRequestTree(path: $path, mode: $mode, type: $type, sha: $sha, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(path, mode, type, sha, content);
+
+@override String toString() => 'GitCreateTreeRequestTree(path: $path, mode: $mode, type: $type, sha: $sha, content: $content)';
+
  }

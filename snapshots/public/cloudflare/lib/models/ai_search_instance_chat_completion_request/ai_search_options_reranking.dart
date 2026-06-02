@@ -30,11 +30,14 @@ AiSearchOptionsReranking copyWith({bool? Function()? enabled, double Function()?
   matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchOptionsReranking &&
           enabled == other.enabled &&
           matchThreshold == other.matchThreshold &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(enabled, matchThreshold, model); } 
-@override String toString() { return 'AiSearchOptionsReranking(enabled: $enabled, matchThreshold: $matchThreshold, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(enabled, matchThreshold, model);
+
+@override String toString() => 'AiSearchOptionsReranking(enabled: $enabled, matchThreshold: $matchThreshold, model: $model)';
+
  }

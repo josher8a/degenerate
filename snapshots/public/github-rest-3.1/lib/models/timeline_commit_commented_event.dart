@@ -31,12 +31,15 @@ TimelineCommitCommentedEvent copyWith({String? Function()? event, String? Functi
   commitId: commitId != null ? commitId() : this.commitId,
   comments: comments != null ? comments() : this.comments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCommitCommentedEvent &&
           event == other.event &&
           nodeId == other.nodeId &&
           commitId == other.commitId &&
-          listEquals(comments, other.comments); } 
-@override int get hashCode { return Object.hash(event, nodeId, commitId, Object.hashAll(comments ?? const [])); } 
-@override String toString() { return 'TimelineCommitCommentedEvent(event: $event, nodeId: $nodeId, commitId: $commitId, comments: $comments)'; } 
+          listEquals(comments, other.comments);
+
+@override int get hashCode => Object.hash(event, nodeId, commitId, Object.hashAll(comments ?? const []));
+
+@override String toString() => 'TimelineCommitCommentedEvent(event: $event, nodeId: $nodeId, commitId: $commitId, comments: $comments)';
+
  }

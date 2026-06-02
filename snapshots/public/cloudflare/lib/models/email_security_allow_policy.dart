@@ -123,7 +123,7 @@ EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAccepta
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityAllowPolicy &&
           comments == other.comments &&
           isAcceptableSender == other.isAcceptableSender &&
@@ -138,7 +138,10 @@ EmailSecurityAllowPolicy copyWith({String? Function()? comments, bool? isAccepta
           verifySender == other.verifySender &&
           createdAt == other.createdAt &&
           id == other.id &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, createdAt, id, lastModified); } 
-@override String toString() { return 'EmailSecurityAllowPolicy(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, createdAt: $createdAt, id: $id, lastModified: $lastModified)'; } 
+          lastModified == other.lastModified;
+
+@override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, createdAt, id, lastModified);
+
+@override String toString() => 'EmailSecurityAllowPolicy(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
+
  }

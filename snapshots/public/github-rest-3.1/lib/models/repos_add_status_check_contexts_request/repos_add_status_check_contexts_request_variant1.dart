@@ -24,9 +24,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
 ReposAddStatusCheckContextsRequestVariant1 copyWith({List<String>? contexts}) { return ReposAddStatusCheckContextsRequestVariant1(
   contexts: contexts ?? this.contexts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposAddStatusCheckContextsRequestVariant1 &&
-          listEquals(contexts, other.contexts); } 
-@override int get hashCode { return Object.hashAll(contexts); } 
-@override String toString() { return 'ReposAddStatusCheckContextsRequestVariant1(contexts: $contexts)'; } 
+          listEquals(contexts, other.contexts);
+
+@override int get hashCode => Object.hashAll(contexts);
+
+@override String toString() => 'ReposAddStatusCheckContextsRequestVariant1(contexts: $contexts)';
+
  }

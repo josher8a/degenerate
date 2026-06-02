@@ -97,7 +97,7 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({String? Fun
   uri: uri != null ? uri() : this.uri,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -109,7 +109,10 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn copyWith({String? Fun
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
           uri == other.uri &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(sid, accountSid, resourceSid, friendlyName, description, configuration, uniqueName, dateCreated, dateUpdated, uri, subresourceUris); } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, friendlyName: $friendlyName, description: $description, configuration: $configuration, uniqueName: $uniqueName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hash(sid, accountSid, resourceSid, friendlyName, description, configuration, uniqueName, dateCreated, dateUpdated, uri, subresourceUris);
+
+@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, friendlyName: $friendlyName, description: $description, configuration: $configuration, uniqueName: $uniqueName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri, subresourceUris: $subresourceUris)';
+
  }

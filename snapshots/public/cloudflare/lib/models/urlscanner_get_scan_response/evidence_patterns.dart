@@ -71,7 +71,7 @@ EvidencePatterns copyWith({int? confidence, List<String>? excludes, List<String>
   value: value ?? this.value,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvidencePatterns &&
           confidence == other.confidence &&
           listEquals(excludes, other.excludes) &&
@@ -81,7 +81,10 @@ EvidencePatterns copyWith({int? confidence, List<String>? excludes, List<String>
           regex == other.regex &&
           type == other.type &&
           value == other.value &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(confidence, Object.hashAll(excludes), Object.hashAll(implies), match, name, regex, type, value, version); } 
-@override String toString() { return 'EvidencePatterns(confidence: $confidence, excludes: $excludes, implies: $implies, match: $match, name: $name, regex: $regex, type: $type, value: $value, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(confidence, Object.hashAll(excludes), Object.hashAll(implies), match, name, regex, type, value, version);
+
+@override String toString() => 'EvidencePatterns(confidence: $confidence, excludes: $excludes, implies: $implies, match: $match, name: $name, regex: $regex, type: $type, value: $value, version: $version)';
+
  }

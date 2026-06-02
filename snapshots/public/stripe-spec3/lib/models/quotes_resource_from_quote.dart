@@ -24,10 +24,13 @@ QuotesResourceFromQuote copyWith({bool? isRevision, QuotesResourceFromQuoteQuote
   isRevision: isRevision ?? this.isRevision,
   quote: quote ?? this.quote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceFromQuote &&
           isRevision == other.isRevision &&
-          quote == other.quote; } 
-@override int get hashCode { return Object.hash(isRevision, quote); } 
-@override String toString() { return 'QuotesResourceFromQuote(isRevision: $isRevision, quote: $quote)'; } 
+          quote == other.quote;
+
+@override int get hashCode => Object.hash(isRevision, quote);
+
+@override String toString() => 'QuotesResourceFromQuote(isRevision: $isRevision, quote: $quote)';
+
  }

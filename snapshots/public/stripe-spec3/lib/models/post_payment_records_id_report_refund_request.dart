@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentRecordsIdReportRefundRequestOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequestOutcome($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostPaymentRecordsIdReportRefundRequestOutcome && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';
+
  }
 @immutable final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({required this.outcome, required this.processorDetails, required this.refunded, this.amount, this.expand, this.initiatedAt, this.metadata, });
 
@@ -76,7 +79,7 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
   processorDetails: processorDetails ?? this.processorDetails,
   refunded: refunded ?? this.refunded,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportRefundRequest &&
           amount == other.amount &&
           listEquals(expand, other.expand) &&
@@ -84,7 +87,10 @@ PostPaymentRecordsIdReportRefundRequest copyWith({PostPaymentRecordsIdReportRefu
           metadata == other.metadata &&
           outcome == other.outcome &&
           processorDetails == other.processorDetails &&
-          refunded == other.refunded; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(expand ?? const []), initiatedAt, metadata, outcome, processorDetails, refunded); } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequest(amount: $amount, expand: $expand, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, processorDetails: $processorDetails, refunded: $refunded)'; } 
+          refunded == other.refunded;
+
+@override int get hashCode => Object.hash(amount, Object.hashAll(expand ?? const []), initiatedAt, metadata, outcome, processorDetails, refunded);
+
+@override String toString() => 'PostPaymentRecordsIdReportRefundRequest(amount: $amount, expand: $expand, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, processorDetails: $processorDetails, refunded: $refunded)';
+
  }

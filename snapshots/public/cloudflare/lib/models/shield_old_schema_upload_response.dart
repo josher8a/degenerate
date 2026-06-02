@@ -20,10 +20,13 @@ ShieldOldSchemaUploadResponse copyWith({ShieldOldPublicSchema? schema, ShieldOld
   schema: schema ?? this.schema,
   uploadDetails: uploadDetails != null ? uploadDetails() : this.uploadDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadResponse &&
           schema == other.schema &&
-          uploadDetails == other.uploadDetails; } 
-@override int get hashCode { return Object.hash(schema, uploadDetails); } 
-@override String toString() { return 'ShieldOldSchemaUploadResponse(schema: $schema, uploadDetails: $uploadDetails)'; } 
+          uploadDetails == other.uploadDetails;
+
+@override int get hashCode => Object.hash(schema, uploadDetails);
+
+@override String toString() => 'ShieldOldSchemaUploadResponse(schema: $schema, uploadDetails: $uploadDetails)';
+
  }

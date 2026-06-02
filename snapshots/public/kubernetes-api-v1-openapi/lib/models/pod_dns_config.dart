@@ -29,11 +29,14 @@ PodDnsConfig copyWith({List<String>? Function()? nameservers, List<PodDnsConfigO
   options: options != null ? options() : this.options,
   searches: searches != null ? searches() : this.searches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodDnsConfig &&
           listEquals(nameservers, other.nameservers) &&
           listEquals(options, other.options) &&
-          listEquals(searches, other.searches); } 
-@override int get hashCode { return Object.hash(Object.hashAll(nameservers ?? const []), Object.hashAll(options ?? const []), Object.hashAll(searches ?? const [])); } 
-@override String toString() { return 'PodDnsConfig(nameservers: $nameservers, options: $options, searches: $searches)'; } 
+          listEquals(searches, other.searches);
+
+@override int get hashCode => Object.hash(Object.hashAll(nameservers ?? const []), Object.hashAll(options ?? const []), Object.hashAll(searches ?? const []));
+
+@override String toString() => 'PodDnsConfig(nameservers: $nameservers, options: $options, searches: $searches)';
+
  }

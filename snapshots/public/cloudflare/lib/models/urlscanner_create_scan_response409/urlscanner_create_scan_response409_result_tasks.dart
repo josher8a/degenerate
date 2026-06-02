@@ -96,7 +96,7 @@ UrlscannerCreateScanResponse409ResultTasks copyWith({String? clientLocation, Tas
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponse409ResultTasks &&
           clientLocation == other.clientLocation &&
           clientType == other.clientType &&
@@ -109,7 +109,10 @@ UrlscannerCreateScanResponse409ResultTasks copyWith({String? clientLocation, Tas
           timeEnd == other.timeEnd &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(clientLocation, clientType, effectiveUrl, Object.hashAll(errors), scannedFrom, status, success, time, timeEnd, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanResponse409ResultTasks(clientLocation: $clientLocation, clientType: $clientType, effectiveUrl: $effectiveUrl, errors: $errors, scannedFrom: $scannedFrom, status: $status, success: $success, time: $time, timeEnd: $timeEnd, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(clientLocation, clientType, effectiveUrl, Object.hashAll(errors), scannedFrom, status, success, time, timeEnd, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerCreateScanResponse409ResultTasks(clientLocation: $clientLocation, clientType: $clientType, effectiveUrl: $effectiveUrl, errors: $errors, scannedFrom: $scannedFrom, status: $status, success: $success, time: $time, timeEnd: $timeEnd, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

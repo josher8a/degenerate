@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageCompletionsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageCompletionsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageCompletionsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageCompletionsResultObject($value)';
+
  }
 /// The aggregated completions usage details of the specific time bucket.
 @immutable final class UsageCompletionsResult {const UsageCompletionsResult({required this.object, required this.inputTokens, required this.outputTokens, required this.numModelRequests, this.inputCachedTokens, this.inputAudioTokens, this.outputAudioTokens, this.projectId, this.userId, this.apiKeyId, this.model, this.batch, this.serviceTier, });
@@ -112,7 +115,7 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
   batch: batch != null ? batch() : this.batch,
   serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageCompletionsResult &&
           object == other.object &&
           inputTokens == other.inputTokens &&
@@ -126,7 +129,10 @@ UsageCompletionsResult copyWith({UsageCompletionsResultObject? object, int? inpu
           apiKeyId == other.apiKeyId &&
           model == other.model &&
           batch == other.batch &&
-          serviceTier == other.serviceTier; } 
-@override int get hashCode { return Object.hash(object, inputTokens, inputCachedTokens, outputTokens, inputAudioTokens, outputAudioTokens, numModelRequests, projectId, userId, apiKeyId, model, batch, serviceTier); } 
-@override String toString() { return 'UsageCompletionsResult(object: $object, inputTokens: $inputTokens, inputCachedTokens: $inputCachedTokens, outputTokens: $outputTokens, inputAudioTokens: $inputAudioTokens, outputAudioTokens: $outputAudioTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model, batch: $batch, serviceTier: $serviceTier)'; } 
+          serviceTier == other.serviceTier;
+
+@override int get hashCode => Object.hash(object, inputTokens, inputCachedTokens, outputTokens, inputAudioTokens, outputAudioTokens, numModelRequests, projectId, userId, apiKeyId, model, batch, serviceTier);
+
+@override String toString() => 'UsageCompletionsResult(object: $object, inputTokens: $inputTokens, inputCachedTokens: $inputCachedTokens, outputTokens: $outputTokens, inputAudioTokens: $inputAudioTokens, outputAudioTokens: $outputAudioTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model, batch: $batch, serviceTier: $serviceTier)';
+
  }

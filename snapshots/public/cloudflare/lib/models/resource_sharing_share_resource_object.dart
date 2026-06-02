@@ -72,7 +72,7 @@ ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, Re
   resourceVersion: resourceVersion ?? this.resourceVersion,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareResourceObject &&
           created == other.created &&
           id == other.id &&
@@ -82,7 +82,10 @@ ResourceSharingShareResourceObject copyWith({ResourceSharingCreated? created, Re
           resourceId == other.resourceId &&
           resourceType == other.resourceType &&
           resourceVersion == other.resourceVersion &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(created, id, meta, modified, resourceAccountId, resourceId, resourceType, resourceVersion, status); } 
-@override String toString() { return 'ResourceSharingShareResourceObject(created: $created, id: $id, meta: $meta, modified: $modified, resourceAccountId: $resourceAccountId, resourceId: $resourceId, resourceType: $resourceType, resourceVersion: $resourceVersion, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(created, id, meta, modified, resourceAccountId, resourceId, resourceType, resourceVersion, status);
+
+@override String toString() => 'ResourceSharingShareResourceObject(created: $created, id: $id, meta: $meta, modified: $modified, resourceAccountId: $resourceAccountId, resourceId: $resourceId, resourceType: $resourceType, resourceVersion: $resourceVersion, status: $status)';
+
  }

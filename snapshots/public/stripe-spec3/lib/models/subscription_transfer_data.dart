@@ -23,10 +23,13 @@ SubscriptionTransferData copyWith({double? Function()? amountPercent, ChargeTran
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionTransferData &&
           amountPercent == other.amountPercent &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amountPercent, destination); } 
-@override String toString() { return 'SubscriptionTransferData(amountPercent: $amountPercent, destination: $destination)'; } 
+          destination == other.destination;
+
+@override int get hashCode => Object.hash(amountPercent, destination);
+
+@override String toString() => 'SubscriptionTransferData(amountPercent: $amountPercent, destination: $destination)';
+
  }

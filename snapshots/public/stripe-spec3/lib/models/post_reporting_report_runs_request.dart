@@ -28,11 +28,14 @@ PostReportingReportRunsRequest copyWith({List<String>? Function()? expand, Param
   parameters: parameters != null ? parameters() : this.parameters,
   reportType: reportType ?? this.reportType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostReportingReportRunsRequest &&
           listEquals(expand, other.expand) &&
           parameters == other.parameters &&
-          reportType == other.reportType; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), parameters, reportType); } 
-@override String toString() { return 'PostReportingReportRunsRequest(expand: $expand, parameters: $parameters, reportType: $reportType)'; } 
+          reportType == other.reportType;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), parameters, reportType);
+
+@override String toString() => 'PostReportingReportRunsRequest(expand: $expand, parameters: $parameters, reportType: $reportType)';
+
  }

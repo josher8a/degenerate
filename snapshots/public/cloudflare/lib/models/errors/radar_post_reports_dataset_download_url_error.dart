@@ -17,7 +17,8 @@ final class RadarPostReportsDatasetDownloadUrlError$400 extends RadarPostReports
 
 final RadarPostReportsDatasetDownloadUrlResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarPostReportsDatasetDownloadUrlError$Unknown extends RadarPostReportsDatasetDownloadUrlError {const RadarPostReportsDatasetDownloadUrlError$Unknown(this.statusCode, this.rawBody, );
 

@@ -31,12 +31,15 @@ PublicIpIpsJdcloud copyWith({PublicIpEtag? Function()? etag, List<String>? Funct
   ipv6Cidrs: ipv6Cidrs != null ? ipv6Cidrs() : this.ipv6Cidrs,
   jdcloudCidrs: jdcloudCidrs != null ? jdcloudCidrs() : this.jdcloudCidrs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicIpIpsJdcloud &&
           etag == other.etag &&
           listEquals(ipv4Cidrs, other.ipv4Cidrs) &&
           listEquals(ipv6Cidrs, other.ipv6Cidrs) &&
-          listEquals(jdcloudCidrs, other.jdcloudCidrs); } 
-@override int get hashCode { return Object.hash(etag, Object.hashAll(ipv4Cidrs ?? const []), Object.hashAll(ipv6Cidrs ?? const []), Object.hashAll(jdcloudCidrs ?? const [])); } 
-@override String toString() { return 'PublicIpIpsJdcloud(etag: $etag, ipv4Cidrs: $ipv4Cidrs, ipv6Cidrs: $ipv6Cidrs, jdcloudCidrs: $jdcloudCidrs)'; } 
+          listEquals(jdcloudCidrs, other.jdcloudCidrs);
+
+@override int get hashCode => Object.hash(etag, Object.hashAll(ipv4Cidrs ?? const []), Object.hashAll(ipv6Cidrs ?? const []), Object.hashAll(jdcloudCidrs ?? const []));
+
+@override String toString() => 'PublicIpIpsJdcloud(etag: $etag, ipv4Cidrs: $ipv4Cidrs, ipv6Cidrs: $ipv6Cidrs, jdcloudCidrs: $jdcloudCidrs)';
+
  }

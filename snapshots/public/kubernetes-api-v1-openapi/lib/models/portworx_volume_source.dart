@@ -29,11 +29,14 @@ PortworxVolumeSource copyWith({String? Function()? fsType, bool? Function()? rea
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeId: volumeId ?? this.volumeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortworxVolumeSource &&
           fsType == other.fsType &&
           readOnly == other.readOnly &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, readOnly, volumeId); } 
-@override String toString() { return 'PortworxVolumeSource(fsType: $fsType, readOnly: $readOnly, volumeId: $volumeId)'; } 
+          volumeId == other.volumeId;
+
+@override int get hashCode => Object.hash(fsType, readOnly, volumeId);
+
+@override String toString() => 'PortworxVolumeSource(fsType: $fsType, readOnly: $readOnly, volumeId: $volumeId)';
+
  }

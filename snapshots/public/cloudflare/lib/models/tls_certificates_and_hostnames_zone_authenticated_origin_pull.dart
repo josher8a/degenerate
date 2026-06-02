@@ -60,7 +60,7 @@ TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull copyWith({TlsCertificates
   enabled: enabled != null ? enabled() : this.enabled,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull &&
           certificate == other.certificate &&
           expiresOn == other.expiresOn &&
@@ -70,7 +70,10 @@ TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull copyWith({TlsCertificates
           status == other.status &&
           uploadedOn == other.uploadedOn &&
           enabled == other.enabled &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certificate, expiresOn, id, issuer, signature, status, uploadedOn, enabled, privateKey); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, signature: $signature, status: $status, uploadedOn: $uploadedOn, enabled: $enabled, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(certificate, expiresOn, id, issuer, signature, status, uploadedOn, enabled, privateKey);
+
+@override String toString() => 'TlsCertificatesAndHostnamesZoneAuthenticatedOriginPull(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, signature: $signature, status: $status, uploadedOn: $uploadedOn, enabled: $enabled, privateKey: $privateKey)';
+
  }

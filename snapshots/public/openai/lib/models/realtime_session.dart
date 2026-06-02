@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeSessionObject($value)';
+
  }
 /// Realtime session object for the beta interface.
 @immutable final class RealtimeSession {const RealtimeSession({this.id, this.object, this.modalities, this.model, this.instructions, this.voice, this.inputAudioFormat = InputAudioFormat.pcm16, this.outputAudioFormat = OutputAudioFormat.pcm16, this.inputAudioTranscription, this.turnDetection, this.inputAudioNoiseReduction, this.speed = 1.0, this.tracing, this.tools, this.toolChoice = 'auto', this.temperature = 0.8, this.maxResponseOutputTokens, this.expiresAt, this.prompt, this.include, });
@@ -203,7 +206,7 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
   prompt: prompt != null ? prompt() : this.prompt,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSession &&
           id == other.id &&
           object == other.object &&
@@ -224,7 +227,10 @@ RealtimeSession copyWith({String? Function()? id, RealtimeSessionObject? Functio
           maxResponseOutputTokens == other.maxResponseOutputTokens &&
           expiresAt == other.expiresAt &&
           prompt == other.prompt &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RealtimeSession(id: $id, object: $object, modalities: $modalities, model: $model, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, speed: $speed, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, expiresAt: $expiresAt, prompt: $prompt, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(id, object, modalities, model, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, turnDetection, inputAudioNoiseReduction, speed, tracing, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, expiresAt, prompt, Object.hashAll(include ?? const []));
+
+@override String toString() => 'RealtimeSession(id: $id, object: $object, modalities: $modalities, model: $model, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, speed: $speed, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, expiresAt: $expiresAt, prompt: $prompt, include: $include)';
+
  }

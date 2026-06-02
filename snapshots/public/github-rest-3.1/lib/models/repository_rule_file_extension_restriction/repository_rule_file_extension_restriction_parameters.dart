@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('restr
 RepositoryRuleFileExtensionRestrictionParameters copyWith({List<String>? restrictedFileExtensions}) { return RepositoryRuleFileExtensionRestrictionParameters(
   restrictedFileExtensions: restrictedFileExtensions ?? this.restrictedFileExtensions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleFileExtensionRestrictionParameters &&
-          listEquals(restrictedFileExtensions, other.restrictedFileExtensions); } 
-@override int get hashCode { return Object.hashAll(restrictedFileExtensions); } 
-@override String toString() { return 'RepositoryRuleFileExtensionRestrictionParameters(restrictedFileExtensions: $restrictedFileExtensions)'; } 
+          listEquals(restrictedFileExtensions, other.restrictedFileExtensions);
+
+@override int get hashCode => Object.hashAll(restrictedFileExtensions);
+
+@override String toString() => 'RepositoryRuleFileExtensionRestrictionParameters(restrictedFileExtensions: $restrictedFileExtensions)';
+
  }

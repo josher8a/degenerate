@@ -34,12 +34,15 @@ ResponseCollection33 copyWith({List<ResourceSharingV4error>? errors, List<dynami
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection33 &&
           listEquals(errors, other.errors) &&
           listEquals(result, other.result) &&
           success == other.success &&
-          resultInfo == other.resultInfo; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(result ?? const []), success, resultInfo); } 
-@override String toString() { return 'ResponseCollection33(errors: $errors, result: $result, success: $success, resultInfo: $resultInfo)'; } 
+          resultInfo == other.resultInfo;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(result ?? const []), success, resultInfo);
+
+@override String toString() => 'ResponseCollection33(errors: $errors, result: $result, success: $success, resultInfo: $resultInfo)';
+
  }

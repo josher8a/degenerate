@@ -38,12 +38,15 @@ GroupResponse copyWith({String? id, String? name, int? createdAt, bool? isScimMa
   createdAt: createdAt ?? this.createdAt,
   isScimManaged: isScimManaged ?? this.isScimManaged,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupResponse &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
-          isScimManaged == other.isScimManaged; } 
-@override int get hashCode { return Object.hash(id, name, createdAt, isScimManaged); } 
-@override String toString() { return 'GroupResponse(id: $id, name: $name, createdAt: $createdAt, isScimManaged: $isScimManaged)'; } 
+          isScimManaged == other.isScimManaged;
+
+@override int get hashCode => Object.hash(id, name, createdAt, isScimManaged);
+
+@override String toString() => 'GroupResponse(id: $id, name: $name, createdAt: $createdAt, isScimManaged: $isScimManaged)';
+
  }

@@ -36,13 +36,16 @@ PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({DiscountAmount? Fu
   shipping: shipping != null ? shipping() : this.shipping,
   tax: tax != null ? tax() : this.tax,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequestAmountDetails &&
           discountAmount == other.discountAmount &&
           enforceArithmeticValidation == other.enforceArithmeticValidation &&
           lineItems == other.lineItems &&
           shipping == other.shipping &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax); } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetails(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)'; } 
+          tax == other.tax;
+
+@override int get hashCode => Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax);
+
+@override String toString() => 'PostPaymentIntentsIntentCaptureRequestAmountDetails(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)';
+
  }

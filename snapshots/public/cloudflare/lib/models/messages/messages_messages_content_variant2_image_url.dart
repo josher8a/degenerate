@@ -23,9 +23,12 @@ return errors; }
 MessagesMessagesContentVariant2ImageUrl copyWith({String? Function()? url}) { return MessagesMessagesContentVariant2ImageUrl(
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesMessagesContentVariant2ImageUrl &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'MessagesMessagesContentVariant2ImageUrl(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'MessagesMessagesContentVariant2ImageUrl(url: $url)';
+
  }

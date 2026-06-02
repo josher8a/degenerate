@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UploadStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UploadStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UploadStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UploadStatus($value)';
+
  }
 /// The object type, which is always "upload".
 @immutable final class UploadObject {const UploadObject._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UploadObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UploadObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UploadObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UploadObject($value)';
+
  }
 /// The Upload object can accept byte chunks in the form of Parts.
 /// 
@@ -125,7 +131,7 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
   object: object != null ? object() : this.object,
   file: file != null ? file() : this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Upload &&
           id == other.id &&
           createdAt == other.createdAt &&
@@ -135,7 +141,10 @@ Upload copyWith({String? id, int? createdAt, String? filename, int? bytes, Strin
           status == other.status &&
           expiresAt == other.expiresAt &&
           object == other.object &&
-          file == other.file; } 
-@override int get hashCode { return Object.hash(id, createdAt, filename, bytes, purpose, status, expiresAt, object, file); } 
-@override String toString() { return 'Upload(id: $id, createdAt: $createdAt, filename: $filename, bytes: $bytes, purpose: $purpose, status: $status, expiresAt: $expiresAt, object: $object, file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => Object.hash(id, createdAt, filename, bytes, purpose, status, expiresAt, object, file);
+
+@override String toString() => 'Upload(id: $id, createdAt: $createdAt, filename: $filename, bytes: $bytes, purpose: $purpose, status: $status, expiresAt: $expiresAt, object: $object, file: $file)';
+
  }

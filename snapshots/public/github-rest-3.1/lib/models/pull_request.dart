@@ -298,7 +298,7 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
   deletions: deletions ?? this.deletions,
   changedFiles: changedFiles ?? this.changedFiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequest &&
           url == other.url &&
           id == other.id &&
@@ -347,7 +347,10 @@ PullRequest copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri? diff
           commits == other.commits &&
           additions == other.additions &&
           deletions == other.deletions &&
-          changedFiles == other.changedFiles; } 
-@override int get hashCode { return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles]); } 
-@override String toString() { return 'PullRequest(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles)'; } 
+          changedFiles == other.changedFiles;
+
+@override int get hashCode => Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft, merged, mergeable, rebaseable, mergeableState, mergedBy, comments, reviewComments, maintainerCanModify, commits, additions, deletions, changedFiles]);
+
+@override String toString() => 'PullRequest(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft, merged: $merged, mergeable: $mergeable, rebaseable: $rebaseable, mergeableState: $mergeableState, mergedBy: $mergedBy, comments: $comments, reviewComments: $reviewComments, maintainerCanModify: $maintainerCanModify, commits: $commits, additions: $additions, deletions: $deletions, changedFiles: $changedFiles)';
+
  }

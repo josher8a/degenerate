@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionAnsweredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionAnsweredAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDiscussionAnsweredAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDiscussionAnsweredAction($value)';
+
  }
 @immutable final class WebhookDiscussionAnswered {const WebhookDiscussionAnswered({required this.action, required this.answer, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -75,7 +78,7 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionAnswered &&
           action == other.action &&
           answer == other.answer &&
@@ -84,7 +87,10 @@ WebhookDiscussionAnswered copyWith({WebhookDiscussionAnsweredAction? action, Web
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, answer, discussion, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionAnswered(action: $action, answer: $answer, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, answer, discussion, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookDiscussionAnswered(action: $action, answer: $answer, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

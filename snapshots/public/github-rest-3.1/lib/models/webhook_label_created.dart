@@ -47,7 +47,7 @@ WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Fun
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookLabelCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -55,7 +55,10 @@ WebhookLabelCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Fun
           label == other.label &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, label, organization, repository, sender); } 
-@override String toString() { return 'WebhookLabelCreated(action: $action, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, label, organization, repository, sender);
+
+@override String toString() => 'WebhookLabelCreated(action: $action, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';
+
  }

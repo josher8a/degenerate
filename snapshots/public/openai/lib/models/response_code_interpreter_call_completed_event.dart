@@ -38,12 +38,15 @@ ResponseCodeInterpreterCallCompletedEvent copyWith({String? type, int? outputInd
   itemId: itemId ?? this.itemId,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCodeInterpreterCallCompletedEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, sequenceNumber); } 
-@override String toString() { return 'ResponseCodeInterpreterCallCompletedEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, sequenceNumber);
+
+@override String toString() => 'ResponseCodeInterpreterCallCompletedEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)';
+
  }

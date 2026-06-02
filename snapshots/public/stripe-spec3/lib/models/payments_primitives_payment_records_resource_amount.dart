@@ -24,10 +24,13 @@ PaymentsPrimitivesPaymentRecordsResourceAmount copyWith({String? currency, int? 
   currency: currency ?? this.currency,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourceAmount &&
           currency == other.currency &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(currency, value); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourceAmount(currency: $currency, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(currency, value);
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourceAmount(currency: $currency, value: $value)';
+
  }

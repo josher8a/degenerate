@@ -33,11 +33,14 @@ SetupIntentData copyWith({String? Function()? description, Map<String, String>? 
   metadata: metadata != null ? metadata() : this.metadata,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentData &&
           description == other.description &&
           metadata == other.metadata &&
-          onBehalfOf == other.onBehalfOf; } 
-@override int get hashCode { return Object.hash(description, metadata, onBehalfOf); } 
-@override String toString() { return 'SetupIntentData(description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf)'; } 
+          onBehalfOf == other.onBehalfOf;
+
+@override int get hashCode => Object.hash(description, metadata, onBehalfOf);
+
+@override String toString() => 'SetupIntentData(description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf)';
+
  }

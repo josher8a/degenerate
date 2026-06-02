@@ -53,14 +53,17 @@ EmailSecurityCursorWithLegacyResultInfo copyWith({int? count, String? Function()
   previous: previous != null ? previous() : this.previous,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCursorWithLegacyResultInfo &&
           count == other.count &&
           next == other.next &&
           page == other.page &&
           perPage == other.perPage &&
           previous == other.previous &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, next, page, perPage, previous, totalCount); } 
-@override String toString() { return 'EmailSecurityCursorWithLegacyResultInfo(count: $count, next: $next, page: $page, perPage: $perPage, previous: $previous, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, next, page, perPage, previous, totalCount);
+
+@override String toString() => 'EmailSecurityCursorWithLegacyResultInfo(count: $count, next: $next, page: $page, perPage: $perPage, previous: $previous, totalCount: $totalCount)';
+
  }

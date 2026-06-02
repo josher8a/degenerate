@@ -45,14 +45,17 @@ StreamLiveInputObjectWithoutUrl copyWith({StreamLiveInputCreated? Function()? cr
   modified: modified != null ? modified() : this.modified,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLiveInputObjectWithoutUrl &&
           created == other.created &&
           deleteRecordingAfterDays == other.deleteRecordingAfterDays &&
           enabled == other.enabled &&
           meta == other.meta &&
           modified == other.modified &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, uid); } 
-@override String toString() { return 'StreamLiveInputObjectWithoutUrl(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, uid);
+
+@override String toString() => 'StreamLiveInputObjectWithoutUrl(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, uid: $uid)';
+
  }

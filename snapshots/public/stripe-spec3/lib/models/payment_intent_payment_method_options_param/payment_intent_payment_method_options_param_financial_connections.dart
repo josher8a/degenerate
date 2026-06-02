@@ -37,12 +37,15 @@ PaymentIntentPaymentMethodOptionsParamFinancialConnections copyWith({FinancialCo
   prefetch: prefetch != null ? prefetch() : this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParamFinancialConnections &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParamFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';
+
  }

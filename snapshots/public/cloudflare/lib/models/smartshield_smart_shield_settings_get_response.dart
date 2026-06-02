@@ -43,13 +43,16 @@ SmartshieldSmartShieldSettingsGetResponse copyWith({SmartshieldSmartShieldSettin
   smartTieredCache: smartTieredCache ?? this.smartTieredCache,
   healthchecksCount: healthchecksCount ?? this.healthchecksCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSmartShieldSettingsGetResponse &&
           cacheReserve == other.cacheReserve &&
           regionalTieredCache == other.regionalTieredCache &&
           smartRouting == other.smartRouting &&
           smartTieredCache == other.smartTieredCache &&
-          healthchecksCount == other.healthchecksCount; } 
-@override int get hashCode { return Object.hash(cacheReserve, regionalTieredCache, smartRouting, smartTieredCache, healthchecksCount); } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsGetResponse(cacheReserve: $cacheReserve, regionalTieredCache: $regionalTieredCache, smartRouting: $smartRouting, smartTieredCache: $smartTieredCache, healthchecksCount: $healthchecksCount)'; } 
+          healthchecksCount == other.healthchecksCount;
+
+@override int get hashCode => Object.hash(cacheReserve, regionalTieredCache, smartRouting, smartTieredCache, healthchecksCount);
+
+@override String toString() => 'SmartshieldSmartShieldSettingsGetResponse(cacheReserve: $cacheReserve, regionalTieredCache: $regionalTieredCache, smartRouting: $smartRouting, smartTieredCache: $smartTieredCache, healthchecksCount: $healthchecksCount)';
+
  }

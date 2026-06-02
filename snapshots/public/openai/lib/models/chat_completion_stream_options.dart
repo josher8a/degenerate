@@ -39,10 +39,13 @@ ChatCompletionStreamOptions copyWith({bool? Function()? includeUsage, bool? Func
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionStreamOptions &&
           includeUsage == other.includeUsage &&
-          includeObfuscation == other.includeObfuscation; } 
-@override int get hashCode { return Object.hash(includeUsage, includeObfuscation); } 
-@override String toString() { return 'ChatCompletionStreamOptions(includeUsage: $includeUsage, includeObfuscation: $includeObfuscation)'; } 
+          includeObfuscation == other.includeObfuscation;
+
+@override int get hashCode => Object.hash(includeUsage, includeObfuscation);
+
+@override String toString() => 'ChatCompletionStreamOptions(includeUsage: $includeUsage, includeObfuscation: $includeObfuscation)';
+
  }

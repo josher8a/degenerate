@@ -28,11 +28,14 @@ PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest copyWith({List<String>
   guaranteedAt: guaranteedAt ?? this.guaranteedAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest &&
           listEquals(expand, other.expand) &&
           guaranteedAt == other.guaranteedAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), guaranteedAt, metadata); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(expand: $expand, guaranteedAt: $guaranteedAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), guaranteedAt, metadata);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(expand: $expand, guaranteedAt: $guaranteedAt, metadata: $metadata)';
+
  }

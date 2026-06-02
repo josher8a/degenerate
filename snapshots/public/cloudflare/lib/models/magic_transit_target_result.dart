@@ -28,10 +28,13 @@ MagicTransitTargetResult copyWith({List<MagicTransitColoResult>? Function()? col
   colos: colos != null ? colos() : this.colos,
   target: target != null ? target() : this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitTargetResult &&
           listEquals(colos, other.colos) &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(Object.hashAll(colos ?? const []), target); } 
-@override String toString() { return 'MagicTransitTargetResult(colos: $colos, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(Object.hashAll(colos ?? const []), target);
+
+@override String toString() => 'MagicTransitTargetResult(colos: $colos, target: $target)';
+
  }

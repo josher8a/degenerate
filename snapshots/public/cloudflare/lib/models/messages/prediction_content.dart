@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContentType($value)';
+
  }
 @immutable final class PredictionContent {const PredictionContent({required this.content, required this.type, });
 
@@ -42,10 +45,13 @@ PredictionContent copyWith({DeveloperContent? content, ContentType? type, }) { r
   content: content ?? this.content,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PredictionContent &&
           content == other.content &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, type); } 
-@override String toString() { return 'PredictionContent(content: $content, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(content, type);
+
+@override String toString() => 'PredictionContent(content: $content, type: $type)';
+
  }

@@ -31,11 +31,14 @@ AccessOauthConfiguration copyWith({DynamicClientRegistration? Function()? dynami
   enabled: enabled != null ? enabled() : this.enabled,
   grant: grant != null ? grant() : this.grant,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOauthConfiguration &&
           dynamicClientRegistration == other.dynamicClientRegistration &&
           enabled == other.enabled &&
-          grant == other.grant; } 
-@override int get hashCode { return Object.hash(dynamicClientRegistration, enabled, grant); } 
-@override String toString() { return 'AccessOauthConfiguration(dynamicClientRegistration: $dynamicClientRegistration, enabled: $enabled, grant: $grant)'; } 
+          grant == other.grant;
+
+@override int get hashCode => Object.hash(dynamicClientRegistration, enabled, grant);
+
+@override String toString() => 'AccessOauthConfiguration(dynamicClientRegistration: $dynamicClientRegistration, enabled: $enabled, grant: $grant)';
+
  }

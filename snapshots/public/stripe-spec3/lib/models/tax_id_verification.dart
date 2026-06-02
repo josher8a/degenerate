@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxIdVerificationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxIdVerificationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxIdVerificationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxIdVerificationStatus($value)';
+
  }
 /// 
 @immutable final class TaxIdVerification {const TaxIdVerification({required this.status, this.verifiedAddress, this.verifiedName, });
@@ -71,11 +74,14 @@ TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()?
   verifiedAddress: verifiedAddress != null ? verifiedAddress() : this.verifiedAddress,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIdVerification &&
           status == other.status &&
           verifiedAddress == other.verifiedAddress &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(status, verifiedAddress, verifiedName); } 
-@override String toString() { return 'TaxIdVerification(status: $status, verifiedAddress: $verifiedAddress, verifiedName: $verifiedName)'; } 
+          verifiedName == other.verifiedName;
+
+@override int get hashCode => Object.hash(status, verifiedAddress, verifiedName);
+
+@override String toString() => 'TaxIdVerification(status: $status, verifiedAddress: $verifiedAddress, verifiedName: $verifiedName)';
+
  }

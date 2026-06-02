@@ -55,7 +55,7 @@ RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetAiBotsTimeseriesGro
   normalization: normalization ?? this.normalization,
   units: units ?? this.units,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpIpsTimeseriesResponseResultMeta &&
           aggInterval == other.aggInterval &&
           confidenceInfo == other.confidenceInfo &&
@@ -63,7 +63,10 @@ RadarGetBgpIpsTimeseriesResponseResultMeta copyWith({RadarGetAiBotsTimeseriesGro
           delay == other.delay &&
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), delay, lastUpdated, normalization, Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetBgpIpsTimeseriesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, delay: $delay, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+          listEquals(units, other.units);
+
+@override int get hashCode => Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), delay, lastUpdated, normalization, Object.hashAll(units));
+
+@override String toString() => 'RadarGetBgpIpsTimeseriesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, delay: $delay, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)';
+
  }

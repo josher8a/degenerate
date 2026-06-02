@@ -21,10 +21,13 @@ CreatePortalsResponse copyWith({CreatePortalsResponseResult? result, bool? succe
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'CreatePortalsResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'CreatePortalsResponse(result: $result, success: $success)';
+
  }

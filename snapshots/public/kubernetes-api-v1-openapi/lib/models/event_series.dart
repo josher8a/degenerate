@@ -23,10 +23,13 @@ EventSeries copyWith({int? Function()? count, MicroTime? Function()? lastObserve
   count: count != null ? count() : this.count,
   lastObservedTime: lastObservedTime != null ? lastObservedTime() : this.lastObservedTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventSeries &&
           count == other.count &&
-          lastObservedTime == other.lastObservedTime; } 
-@override int get hashCode { return Object.hash(count, lastObservedTime); } 
-@override String toString() { return 'EventSeries(count: $count, lastObservedTime: $lastObservedTime)'; } 
+          lastObservedTime == other.lastObservedTime;
+
+@override int get hashCode => Object.hash(count, lastObservedTime);
+
+@override String toString() => 'EventSeries(count: $count, lastObservedTime: $lastObservedTime)';
+
  }

@@ -17,7 +17,8 @@ final class RadarGetLeakedCredentialChecksTimeseriesGroupError$400 extends Radar
 
 final RadarGetLeakedCredentialChecksTimeseriesGroupResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetLeakedCredentialChecksTimeseriesGroupError$Unknown extends RadarGetLeakedCredentialChecksTimeseriesGroupError {const RadarGetLeakedCredentialChecksTimeseriesGroupError$Unknown(this.statusCode, this.rawBody, );
 

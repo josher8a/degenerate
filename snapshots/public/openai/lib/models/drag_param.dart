@@ -30,10 +30,13 @@ DragParam copyWith({String? type, List<CoordParam>? path, }) { return DragParam(
   type: type ?? this.type,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DragParam &&
           type == other.type &&
-          listEquals(path, other.path); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(path)); } 
-@override String toString() { return 'DragParam(type: $type, path: $path)'; } 
+          listEquals(path, other.path);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(path));
+
+@override String toString() => 'DragParam(type: $type, path: $path)';
+
  }

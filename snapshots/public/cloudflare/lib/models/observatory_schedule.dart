@@ -27,11 +27,14 @@ ObservatorySchedule copyWith({ObservatoryScheduleFrequency? Function()? frequenc
   region: region != null ? region() : this.region,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatorySchedule &&
           frequency == other.frequency &&
           region == other.region &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(frequency, region, url); } 
-@override String toString() { return 'ObservatorySchedule(frequency: $frequency, region: $region, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(frequency, region, url);
+
+@override String toString() => 'ObservatorySchedule(frequency: $frequency, region: $region, url: $url)';
+
  }

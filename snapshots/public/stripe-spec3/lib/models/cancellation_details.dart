@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CancellationDetailsFeedback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CancellationDetailsFeedback($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CancellationDetailsFeedback && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CancellationDetailsFeedback($value)';
+
  }
 /// Why this subscription was canceled.
 @immutable final class CancellationDetailsReason {const CancellationDetailsReason._(this.value);
@@ -66,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CancellationDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CancellationDetailsReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CancellationDetailsReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CancellationDetailsReason($value)';
+
  }
 /// 
 @immutable final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
@@ -107,11 +113,14 @@ CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFe
   feedback: feedback != null ? feedback() : this.feedback,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CancellationDetails &&
           comment == other.comment &&
           feedback == other.feedback &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(comment, feedback, reason); } 
-@override String toString() { return 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(comment, feedback, reason);
+
+@override String toString() => 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)';
+
  }

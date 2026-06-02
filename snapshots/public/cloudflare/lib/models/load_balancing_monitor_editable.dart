@@ -100,7 +100,7 @@ LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? a
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorEditable &&
           allowInsecure == other.allowInsecure &&
           consecutiveDown == other.consecutiveDown &&
@@ -117,7 +117,10 @@ LoadBalancingMonitorEditable copyWith({LoadBalancingAllowInsecure? Function()? a
           probeZone == other.probeZone &&
           retries == other.retries &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type); } 
-@override String toString() { return 'LoadBalancingMonitorEditable(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(allowInsecure, consecutiveDown, consecutiveUp, description, expectedBody, expectedCodes, followRedirects, header, interval, method, path, port, probeZone, retries, timeout, type);
+
+@override String toString() => 'LoadBalancingMonitorEditable(allowInsecure: $allowInsecure, consecutiveDown: $consecutiveDown, consecutiveUp: $consecutiveUp, description: $description, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, interval: $interval, method: $method, path: $path, port: $port, probeZone: $probeZone, retries: $retries, timeout: $timeout, type: $type)';
+
  }

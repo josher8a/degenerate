@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('publi
 BeneficiaryParams copyWith({PublicName? publicName}) { return BeneficiaryParams(
   publicName: publicName ?? this.publicName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BeneficiaryParams &&
-          publicName == other.publicName; } 
-@override int get hashCode { return publicName.hashCode; } 
-@override String toString() { return 'BeneficiaryParams(publicName: $publicName)'; } 
+          publicName == other.publicName;
+
+@override int get hashCode => publicName.hashCode;
+
+@override String toString() => 'BeneficiaryParams(publicName: $publicName)';
+
  }

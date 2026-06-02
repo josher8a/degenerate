@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 PerPage copyWith({String? type}) { return PerPage(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PerPage &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PerPage(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'PerPage(type: $type)';
+
  }

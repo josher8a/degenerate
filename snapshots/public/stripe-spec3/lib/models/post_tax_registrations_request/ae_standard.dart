@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AeStandard copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme? Function()? placeOfSupplyScheme}) { return AeStandard(
   placeOfSupplyScheme: placeOfSupplyScheme != null ? placeOfSupplyScheme() : this.placeOfSupplyScheme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AeStandard &&
-          placeOfSupplyScheme == other.placeOfSupplyScheme; } 
-@override int get hashCode { return placeOfSupplyScheme.hashCode; } 
-@override String toString() { return 'AeStandard(placeOfSupplyScheme: $placeOfSupplyScheme)'; } 
+          placeOfSupplyScheme == other.placeOfSupplyScheme;
+
+@override int get hashCode => placeOfSupplyScheme.hashCode;
+
+@override String toString() => 'AeStandard(placeOfSupplyScheme: $placeOfSupplyScheme)';
+
  }

@@ -27,11 +27,14 @@ ToolCallsCustom copyWith({ToolCallsCustomCustom? custom, String? id, CustomEntry
   id: id ?? this.id,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolCallsCustom &&
           custom == other.custom &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, id, type); } 
-@override String toString() { return 'ToolCallsCustom(custom: $custom, id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(custom, id, type);
+
+@override String toString() => 'ToolCallsCustom(custom: $custom, id: $id, type: $type)';
+
  }

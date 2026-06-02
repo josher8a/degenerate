@@ -23,10 +23,13 @@ VolumeResourceRequirements copyWith({Map<String, ResourceQuantity>? Function()? 
   limits: limits != null ? limits() : this.limits,
   requests: requests != null ? requests() : this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeResourceRequirements &&
           limits == other.limits &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(limits, requests); } 
-@override String toString() { return 'VolumeResourceRequirements(limits: $limits, requests: $requests)'; } 
+          requests == other.requests;
+
+@override int get hashCode => Object.hash(limits, requests);
+
+@override String toString() => 'VolumeResourceRequirements(limits: $limits, requests: $requests)';
+
  }

@@ -24,10 +24,13 @@ DeploymentBranchPolicySettings copyWith({bool? protectedBranches, bool? customBr
   protectedBranches: protectedBranches ?? this.protectedBranches,
   customBranchPolicies: customBranchPolicies ?? this.customBranchPolicies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentBranchPolicySettings &&
           protectedBranches == other.protectedBranches &&
-          customBranchPolicies == other.customBranchPolicies; } 
-@override int get hashCode { return Object.hash(protectedBranches, customBranchPolicies); } 
-@override String toString() { return 'DeploymentBranchPolicySettings(protectedBranches: $protectedBranches, customBranchPolicies: $customBranchPolicies)'; } 
+          customBranchPolicies == other.customBranchPolicies;
+
+@override int get hashCode => Object.hash(protectedBranches, customBranchPolicies);
+
+@override String toString() => 'DeploymentBranchPolicySettings(protectedBranches: $protectedBranches, customBranchPolicies: $customBranchPolicies)';
+
  }

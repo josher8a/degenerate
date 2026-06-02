@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipTierChangedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipTierChangedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSponsorshipTierChangedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSponsorshipTierChangedAction($value)';
+
  }
 @immutable final class WebhookSponsorshipTierChanged {const WebhookSponsorshipTierChanged({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });
 
@@ -74,7 +77,7 @@ WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? act
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipTierChanged &&
           action == other.action &&
           changes == other.changes &&
@@ -83,7 +86,10 @@ WebhookSponsorshipTierChanged copyWith({WebhookSponsorshipTierChangedAction? act
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipTierChanged(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
+          sponsorship == other.sponsorship;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, organization, repository, sender, sponsorship);
+
+@override String toString() => 'WebhookSponsorshipTierChanged(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
+
  }

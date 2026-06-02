@@ -23,10 +23,13 @@ ContainerStateWaiting copyWith({String? Function()? message, String? Function()?
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerStateWaiting &&
           message == other.message &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(message, reason); } 
-@override String toString() { return 'ContainerStateWaiting(message: $message, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(message, reason);
+
+@override String toString() => 'ContainerStateWaiting(message: $message, reason: $reason)';
+
  }

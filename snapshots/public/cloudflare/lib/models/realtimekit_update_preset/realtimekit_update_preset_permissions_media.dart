@@ -29,11 +29,14 @@ RealtimekitUpdatePresetPermissionsMedia copyWith({RealtimekitUpdatePresetPermiss
   screenshare: screenshare != null ? screenshare() : this.screenshare,
   video: video != null ? video() : this.video,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsMedia &&
           audio == other.audio &&
           screenshare == other.screenshare &&
-          video == other.video; } 
-@override int get hashCode { return Object.hash(audio, screenshare, video); } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsMedia(audio: $audio, screenshare: $screenshare, video: $video)'; } 
+          video == other.video;
+
+@override int get hashCode => Object.hash(audio, screenshare, video);
+
+@override String toString() => 'RealtimekitUpdatePresetPermissionsMedia(audio: $audio, screenshare: $screenshare, video: $video)';
+
  }

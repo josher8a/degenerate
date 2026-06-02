@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResultReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResultReferenceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResultReferenceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResultReferenceType($value)';
+
  }
 @immutable final class LoadBalancingMonitorGroupReferencesResponseResult {const LoadBalancingMonitorGroupReferencesResponseResult({this.referenceType, this.resourceId, this.resourceName, this.resourceType, });
 
@@ -57,12 +60,15 @@ LoadBalancingMonitorGroupReferencesResponseResult copyWith({ResultReferenceType?
   resourceName: resourceName != null ? resourceName() : this.resourceName,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroupReferencesResponseResult &&
           referenceType == other.referenceType &&
           resourceId == other.resourceId &&
           resourceName == other.resourceName &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(referenceType, resourceId, resourceName, resourceType); } 
-@override String toString() { return 'LoadBalancingMonitorGroupReferencesResponseResult(referenceType: $referenceType, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(referenceType, resourceId, resourceName, resourceType);
+
+@override String toString() => 'LoadBalancingMonitorGroupReferencesResponseResult(referenceType: $referenceType, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)';
+
  }

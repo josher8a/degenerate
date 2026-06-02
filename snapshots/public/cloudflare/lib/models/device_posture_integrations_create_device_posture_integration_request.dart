@@ -36,12 +36,15 @@ DevicePostureIntegrationsCreateDevicePostureIntegrationRequest copyWith({TeamsDe
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DevicePostureIntegrationsCreateDevicePostureIntegrationRequest &&
           config == other.config &&
           interval == other.interval &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, interval, name, type); } 
-@override String toString() { return 'DevicePostureIntegrationsCreateDevicePostureIntegrationRequest(config: $config, interval: $interval, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, interval, name, type);
+
+@override String toString() => 'DevicePostureIntegrationsCreateDevicePostureIntegrationRequest(config: $config, interval: $interval, name: $name, type: $type)';
+
  }

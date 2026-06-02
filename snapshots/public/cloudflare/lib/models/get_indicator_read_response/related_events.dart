@@ -23,10 +23,13 @@ RelatedEvents copyWith({String? datasetId, String? eventId, }) { return RelatedE
   datasetId: datasetId ?? this.datasetId,
   eventId: eventId ?? this.eventId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RelatedEvents &&
           datasetId == other.datasetId &&
-          eventId == other.eventId; } 
-@override int get hashCode { return Object.hash(datasetId, eventId); } 
-@override String toString() { return 'RelatedEvents(datasetId: $datasetId, eventId: $eventId)'; } 
+          eventId == other.eventId;
+
+@override int get hashCode => Object.hash(datasetId, eventId);
+
+@override String toString() => 'RelatedEvents(datasetId: $datasetId, eventId: $eventId)';
+
  }

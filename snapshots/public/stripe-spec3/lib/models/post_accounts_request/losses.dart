@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Losses copyWith({AccountUnificationAccountControllerLossesPayments? Function()? payments}) { return Losses(
   payments: payments != null ? payments() : this.payments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Losses &&
-          payments == other.payments; } 
-@override int get hashCode { return payments.hashCode; } 
-@override String toString() { return 'Losses(payments: $payments)'; } 
+          payments == other.payments;
+
+@override int get hashCode => payments.hashCode;
+
+@override String toString() => 'Losses(payments: $payments)';
+
  }

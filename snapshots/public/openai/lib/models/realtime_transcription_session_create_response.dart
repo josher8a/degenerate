@@ -55,13 +55,16 @@ RealtimeTranscriptionSessionCreateResponse copyWith({ClientSecret? clientSecret,
   inputAudioTranscription: inputAudioTranscription != null ? inputAudioTranscription() : this.inputAudioTranscription,
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateResponse &&
           clientSecret == other.clientSecret &&
           modalities == other.modalities &&
           inputAudioFormat == other.inputAudioFormat &&
           inputAudioTranscription == other.inputAudioTranscription &&
-          turnDetection == other.turnDetection; } 
-@override int get hashCode { return Object.hash(clientSecret, modalities, inputAudioFormat, inputAudioTranscription, turnDetection); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateResponse(clientSecret: $clientSecret, modalities: $modalities, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection)'; } 
+          turnDetection == other.turnDetection;
+
+@override int get hashCode => Object.hash(clientSecret, modalities, inputAudioFormat, inputAudioTranscription, turnDetection);
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateResponse(clientSecret: $clientSecret, modalities: $modalities, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, turnDetection: $turnDetection)';
+
  }

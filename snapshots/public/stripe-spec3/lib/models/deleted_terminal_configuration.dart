@@ -35,11 +35,14 @@ DeletedTerminalConfiguration copyWith({bool? deleted, String? id, DeletedTermina
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedTerminalConfiguration &&
           deleted == other.deleted &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(deleted, id, object); } 
-@override String toString() { return 'DeletedTerminalConfiguration(deleted: $deleted, id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(deleted, id, object);
+
+@override String toString() => 'DeletedTerminalConfiguration(deleted: $deleted, id: $id, object: $object)';
+
  }

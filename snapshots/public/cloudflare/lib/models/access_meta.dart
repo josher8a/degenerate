@@ -27,10 +27,13 @@ AccessMeta copyWith({DateTime? Function()? created, DateTime? Function()? lastMo
   created: created != null ? created() : this.created,
   lastModified: lastModified != null ? lastModified() : this.lastModified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMeta &&
           created == other.created &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(created, lastModified); } 
-@override String toString() { return 'AccessMeta(created: $created, lastModified: $lastModified)'; } 
+          lastModified == other.lastModified;
+
+@override int get hashCode => Object.hash(created, lastModified);
+
+@override String toString() => 'AccessMeta(created: $created, lastModified: $lastModified)';
+
  }

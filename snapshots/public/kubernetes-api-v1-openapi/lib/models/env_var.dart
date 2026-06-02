@@ -29,11 +29,14 @@ EnvVar copyWith({String? name, String? Function()? value, EnvVarSource? Function
   value: value != null ? value() : this.value,
   valueFrom: valueFrom != null ? valueFrom() : this.valueFrom,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnvVar &&
           name == other.name &&
           value == other.value &&
-          valueFrom == other.valueFrom; } 
-@override int get hashCode { return Object.hash(name, value, valueFrom); } 
-@override String toString() { return 'EnvVar(name: $name, value: $value, valueFrom: $valueFrom)'; } 
+          valueFrom == other.valueFrom;
+
+@override int get hashCode => Object.hash(name, value, valueFrom);
+
+@override String toString() => 'EnvVar(name: $name, value: $value, valueFrom: $valueFrom)';
+
  }

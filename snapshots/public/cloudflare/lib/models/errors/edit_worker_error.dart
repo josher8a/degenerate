@@ -22,37 +22,43 @@ final class EditWorkerError$400 extends EditWorkerError {const EditWorkerError$4
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class EditWorkerError$401 extends EditWorkerError {const EditWorkerError$401(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class EditWorkerError$403 extends EditWorkerError {const EditWorkerError$403(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class EditWorkerError$404 extends EditWorkerError {const EditWorkerError$404(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class EditWorkerError$409 extends EditWorkerError {const EditWorkerError$409(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class EditWorkerError$500 extends EditWorkerError {const EditWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class EditWorkerError$Unknown extends EditWorkerError {const EditWorkerError$Unknown(this.statusCode, this.rawBody, );
 

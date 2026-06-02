@@ -21,10 +21,13 @@ GetEventAggregateResponseDateRange copyWith({String? Function()? endDate, String
   endDate: endDate != null ? endDate() : this.endDate,
   startDate: startDate != null ? startDate() : this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventAggregateResponseDateRange &&
           endDate == other.endDate &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(endDate, startDate); } 
-@override String toString() { return 'GetEventAggregateResponseDateRange(endDate: $endDate, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(endDate, startDate);
+
+@override String toString() => 'GetEventAggregateResponseDateRange(endDate: $endDate, startDate: $startDate)';
+
  }

@@ -56,7 +56,7 @@ RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, Radar
   totalTests: totalTests ?? this.totalTests,
   units: units ?? this.units,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedHistogramResponseResultMeta &&
           bucketSize == other.bucketSize &&
           confidenceInfo == other.confidenceInfo &&
@@ -64,7 +64,10 @@ RadarGetQualitySpeedHistogramResponseResultMeta copyWith({int? bucketSize, Radar
           lastUpdated == other.lastUpdated &&
           normalization == other.normalization &&
           listEquals(totalTests, other.totalTests) &&
-          listEquals(units, other.units); } 
-@override int get hashCode { return Object.hash(bucketSize, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(totalTests), Object.hashAll(units)); } 
-@override String toString() { return 'RadarGetQualitySpeedHistogramResponseResultMeta(bucketSize: $bucketSize, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, totalTests: $totalTests, units: $units)'; } 
+          listEquals(units, other.units);
+
+@override int get hashCode => Object.hash(bucketSize, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(totalTests), Object.hashAll(units));
+
+@override String toString() => 'RadarGetQualitySpeedHistogramResponseResultMeta(bucketSize: $bucketSize, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, totalTests: $totalTests, units: $units)';
+
  }

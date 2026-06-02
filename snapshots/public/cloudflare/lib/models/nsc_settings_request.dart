@@ -22,9 +22,12 @@ return errors; }
 NscSettingsRequest copyWith({int? Function()? defaultAsn}) { return NscSettingsRequest(
   defaultAsn: defaultAsn != null ? defaultAsn() : this.defaultAsn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscSettingsRequest &&
-          defaultAsn == other.defaultAsn; } 
-@override int get hashCode { return defaultAsn.hashCode; } 
-@override String toString() { return 'NscSettingsRequest(defaultAsn: $defaultAsn)'; } 
+          defaultAsn == other.defaultAsn;
+
+@override int get hashCode => defaultAsn.hashCode;
+
+@override String toString() => 'NscSettingsRequest(defaultAsn: $defaultAsn)';
+
  }

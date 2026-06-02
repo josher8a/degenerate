@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ConfirmConfig copyWith({String? Function()? returnUrl}) { return ConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmConfig &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return returnUrl.hashCode; } 
-@override String toString() { return 'ConfirmConfig(returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => returnUrl.hashCode;
+
+@override String toString() => 'ConfirmConfig(returnUrl: $returnUrl)';
+
  }

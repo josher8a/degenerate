@@ -23,10 +23,13 @@ PodTemplateSpec copyWith({ObjectMeta? Function()? metadata, PodSpec? Function()?
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodTemplateSpec &&
           metadata == other.metadata &&
-          spec == other.spec; } 
-@override int get hashCode { return Object.hash(metadata, spec); } 
-@override String toString() { return 'PodTemplateSpec(metadata: $metadata, spec: $spec)'; } 
+          spec == other.spec;
+
+@override int get hashCode => Object.hash(metadata, spec);
+
+@override String toString() => 'PodTemplateSpec(metadata: $metadata, spec: $spec)';
+
  }

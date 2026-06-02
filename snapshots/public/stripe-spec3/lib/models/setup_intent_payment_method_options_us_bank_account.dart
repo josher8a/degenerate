@@ -27,11 +27,14 @@ SetupIntentPaymentMethodOptionsUsBankAccount copyWith({LinkedAccountOptionsCommo
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, mandateOptions, verificationMethod); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(financialConnections, mandateOptions, verificationMethod);
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
+
  }

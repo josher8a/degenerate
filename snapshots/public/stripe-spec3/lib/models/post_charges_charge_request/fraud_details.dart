@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserReport && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserReport($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserReport && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserReport($value)';
+
  }
 /// A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a `user_report` key with a value of `fraudulent`. If you believe a charge is safe, include a `user_report` key with a value of `safe`. Stripe will use the information you send to improve our fraud detection algorithms.
 @immutable final class FraudDetails {const FraudDetails({required this.userReport});
@@ -43,9 +46,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_
 FraudDetails copyWith({UserReport? userReport}) { return FraudDetails(
   userReport: userReport ?? this.userReport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FraudDetails &&
-          userReport == other.userReport; } 
-@override int get hashCode { return userReport.hashCode; } 
-@override String toString() { return 'FraudDetails(userReport: $userReport)'; } 
+          userReport == other.userReport;
+
+@override int get hashCode => userReport.hashCode;
+
+@override String toString() => 'FraudDetails(userReport: $userReport)';
+
  }

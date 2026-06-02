@@ -29,10 +29,13 @@ CodeInterpreterTool copyWith({String? type, CodeInterpreterToolContainer? contai
   type: type ?? this.type,
   container: container ?? this.container,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterTool &&
           type == other.type &&
-          container == other.container; } 
-@override int get hashCode { return Object.hash(type, container); } 
-@override String toString() { return 'CodeInterpreterTool(type: $type, container: $container)'; } 
+          container == other.container;
+
+@override int get hashCode => Object.hash(type, container);
+
+@override String toString() => 'CodeInterpreterTool(type: $type, container: $container)';
+
  }

@@ -34,11 +34,14 @@ RealtimeServerEventSessionCreated copyWith({String? eventId, String? type, Realt
   type: type ?? this.type,
   session: session ?? this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventSessionCreated &&
           eventId == other.eventId &&
           type == other.type &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(eventId, type, session); } 
-@override String toString() { return 'RealtimeServerEventSessionCreated(eventId: $eventId, type: $type, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(eventId, type, session);
+
+@override String toString() => 'RealtimeServerEventSessionCreated(eventId: $eventId, type: $type, session: $session)';
+
  }

@@ -140,7 +140,7 @@ SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, String? Funct
   shippingFirstName: shippingFirstName != null ? shippingFirstName() : this.shippingFirstName,
   shippingLastName: shippingLastName != null ? shippingLastName() : this.shippingLastName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeKlarna &&
           backgroundImageUrl == other.backgroundImageUrl &&
           clientToken == other.clientToken &&
@@ -167,7 +167,10 @@ SourceTypeKlarna copyWith({String? Function()? backgroundImageUrl, String? Funct
           redirectUrl == other.redirectUrl &&
           shippingDelay == other.shippingDelay &&
           shippingFirstName == other.shippingFirstName &&
-          shippingLastName == other.shippingLastName; } 
-@override int get hashCode { return Object.hashAll([backgroundImageUrl, clientToken, firstName, lastName, locale, logoUrl, pageTitle, payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard, payLaterName, payLaterRedirectUrl, payNowAssetUrlsDescriptive, payNowAssetUrlsStandard, payNowName, payNowRedirectUrl, payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard, payOverTimeName, payOverTimeRedirectUrl, paymentMethodCategories, purchaseCountry, purchaseType, redirectUrl, shippingDelay, shippingFirstName, shippingLastName]); } 
-@override String toString() { return 'SourceTypeKlarna(backgroundImageUrl: $backgroundImageUrl, clientToken: $clientToken, firstName: $firstName, lastName: $lastName, locale: $locale, logoUrl: $logoUrl, pageTitle: $pageTitle, payLaterAssetUrlsDescriptive: $payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard: $payLaterAssetUrlsStandard, payLaterName: $payLaterName, payLaterRedirectUrl: $payLaterRedirectUrl, payNowAssetUrlsDescriptive: $payNowAssetUrlsDescriptive, payNowAssetUrlsStandard: $payNowAssetUrlsStandard, payNowName: $payNowName, payNowRedirectUrl: $payNowRedirectUrl, payOverTimeAssetUrlsDescriptive: $payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard: $payOverTimeAssetUrlsStandard, payOverTimeName: $payOverTimeName, payOverTimeRedirectUrl: $payOverTimeRedirectUrl, paymentMethodCategories: $paymentMethodCategories, purchaseCountry: $purchaseCountry, purchaseType: $purchaseType, redirectUrl: $redirectUrl, shippingDelay: $shippingDelay, shippingFirstName: $shippingFirstName, shippingLastName: $shippingLastName)'; } 
+          shippingLastName == other.shippingLastName;
+
+@override int get hashCode => Object.hashAll([backgroundImageUrl, clientToken, firstName, lastName, locale, logoUrl, pageTitle, payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard, payLaterName, payLaterRedirectUrl, payNowAssetUrlsDescriptive, payNowAssetUrlsStandard, payNowName, payNowRedirectUrl, payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard, payOverTimeName, payOverTimeRedirectUrl, paymentMethodCategories, purchaseCountry, purchaseType, redirectUrl, shippingDelay, shippingFirstName, shippingLastName]);
+
+@override String toString() => 'SourceTypeKlarna(backgroundImageUrl: $backgroundImageUrl, clientToken: $clientToken, firstName: $firstName, lastName: $lastName, locale: $locale, logoUrl: $logoUrl, pageTitle: $pageTitle, payLaterAssetUrlsDescriptive: $payLaterAssetUrlsDescriptive, payLaterAssetUrlsStandard: $payLaterAssetUrlsStandard, payLaterName: $payLaterName, payLaterRedirectUrl: $payLaterRedirectUrl, payNowAssetUrlsDescriptive: $payNowAssetUrlsDescriptive, payNowAssetUrlsStandard: $payNowAssetUrlsStandard, payNowName: $payNowName, payNowRedirectUrl: $payNowRedirectUrl, payOverTimeAssetUrlsDescriptive: $payOverTimeAssetUrlsDescriptive, payOverTimeAssetUrlsStandard: $payOverTimeAssetUrlsStandard, payOverTimeName: $payOverTimeName, payOverTimeRedirectUrl: $payOverTimeRedirectUrl, paymentMethodCategories: $paymentMethodCategories, purchaseCountry: $purchaseCountry, purchaseType: $purchaseType, redirectUrl: $redirectUrl, shippingDelay: $shippingDelay, shippingFirstName: $shippingFirstName, shippingLastName: $shippingLastName)';
+
  }

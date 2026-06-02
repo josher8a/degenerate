@@ -33,18 +33,13 @@ final class YieldTopic {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is YieldTopic && $await == other.$await && $async == other.$async;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is YieldTopic && $await == other.$await && $async == other.$async;
 
   @override
-  int get hashCode {
-    return Object.hash($await, $async);
-  }
+  int get hashCode => Object.hash($await, $async);
 
   @override
-  String toString() {
-    return 'YieldTopic(\$await: ${$await}, \$async: ${$async})';
-  }
+  String toString() => 'YieldTopic(\$await: ${$await}, \$async: ${$async})';
 }

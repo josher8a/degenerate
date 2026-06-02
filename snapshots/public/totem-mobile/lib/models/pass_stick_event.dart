@@ -27,18 +27,12 @@ final class PassStickEvent {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is PassStickEvent && type == other.type;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is PassStickEvent && type == other.type;
 
   @override
-  int get hashCode {
-    return type.hashCode;
-  }
+  int get hashCode => type.hashCode;
 
   @override
-  String toString() {
-    return 'PassStickEvent(type: $type)';
-  }
+  String toString() => 'PassStickEvent(type: $type)';
 }

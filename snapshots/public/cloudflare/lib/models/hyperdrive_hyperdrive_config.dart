@@ -58,7 +58,7 @@ HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? ca
   origin: origin ?? this.origin,
   originConnectionLimit: originConnectionLimit != null ? originConnectionLimit() : this.originConnectionLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveConfig &&
           caching == other.caching &&
           createdOn == other.createdOn &&
@@ -67,7 +67,10 @@ HyperdriveHyperdriveConfig copyWith({HyperdriveHyperdriveCaching? Function()? ca
           mtls == other.mtls &&
           name == other.name &&
           origin == other.origin &&
-          originConnectionLimit == other.originConnectionLimit; } 
-@override int get hashCode { return Object.hash(caching, createdOn, id, modifiedOn, mtls, name, origin, originConnectionLimit); } 
-@override String toString() { return 'HyperdriveHyperdriveConfig(caching: $caching, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)'; } 
+          originConnectionLimit == other.originConnectionLimit;
+
+@override int get hashCode => Object.hash(caching, createdOn, id, modifiedOn, mtls, name, origin, originConnectionLimit);
+
+@override String toString() => 'HyperdriveHyperdriveConfig(caching: $caching, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)';
+
  }

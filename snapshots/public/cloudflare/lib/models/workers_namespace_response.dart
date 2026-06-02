@@ -62,7 +62,7 @@ WorkersNamespaceResponse copyWith({WorkersIdentifier? Function()? createdBy, Wor
   scriptCount: scriptCount != null ? scriptCount() : this.scriptCount,
   trustedWorkers: trustedWorkers != null ? trustedWorkers() : this.trustedWorkers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceResponse &&
           createdBy == other.createdBy &&
           createdOn == other.createdOn &&
@@ -71,7 +71,10 @@ WorkersNamespaceResponse copyWith({WorkersIdentifier? Function()? createdBy, Wor
           namespaceId == other.namespaceId &&
           namespaceName == other.namespaceName &&
           scriptCount == other.scriptCount &&
-          trustedWorkers == other.trustedWorkers; } 
-@override int get hashCode { return Object.hash(createdBy, createdOn, modifiedBy, modifiedOn, namespaceId, namespaceName, scriptCount, trustedWorkers); } 
-@override String toString() { return 'WorkersNamespaceResponse(createdBy: $createdBy, createdOn: $createdOn, modifiedBy: $modifiedBy, modifiedOn: $modifiedOn, namespaceId: $namespaceId, namespaceName: $namespaceName, scriptCount: $scriptCount, trustedWorkers: $trustedWorkers)'; } 
+          trustedWorkers == other.trustedWorkers;
+
+@override int get hashCode => Object.hash(createdBy, createdOn, modifiedBy, modifiedOn, namespaceId, namespaceName, scriptCount, trustedWorkers);
+
+@override String toString() => 'WorkersNamespaceResponse(createdBy: $createdBy, createdOn: $createdOn, modifiedBy: $modifiedBy, modifiedOn: $modifiedOn, namespaceId: $namespaceId, namespaceName: $namespaceName, scriptCount: $scriptCount, trustedWorkers: $trustedWorkers)';
+
  }

@@ -59,14 +59,17 @@ BuildConfig copyWith({bool? Function()? buildCaching, String? Function()? buildC
   webAnalyticsTag: webAnalyticsTag != null ? webAnalyticsTag() : this.webAnalyticsTag,
   webAnalyticsToken: webAnalyticsToken != null ? webAnalyticsToken() : this.webAnalyticsToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildConfig &&
           buildCaching == other.buildCaching &&
           buildCommand == other.buildCommand &&
           destinationDir == other.destinationDir &&
           rootDir == other.rootDir &&
           webAnalyticsTag == other.webAnalyticsTag &&
-          webAnalyticsToken == other.webAnalyticsToken; } 
-@override int get hashCode { return Object.hash(buildCaching, buildCommand, destinationDir, rootDir, webAnalyticsTag, webAnalyticsToken); } 
-@override String toString() { return 'BuildConfig(buildCaching: $buildCaching, buildCommand: $buildCommand, destinationDir: $destinationDir, rootDir: $rootDir, webAnalyticsTag: $webAnalyticsTag, webAnalyticsToken: $webAnalyticsToken)'; } 
+          webAnalyticsToken == other.webAnalyticsToken;
+
+@override int get hashCode => Object.hash(buildCaching, buildCommand, destinationDir, rootDir, webAnalyticsTag, webAnalyticsToken);
+
+@override String toString() => 'BuildConfig(buildCaching: $buildCaching, buildCommand: $buildCommand, destinationDir: $destinationDir, rootDir: $rootDir, webAnalyticsTag: $webAnalyticsTag, webAnalyticsToken: $webAnalyticsToken)';
+
  }

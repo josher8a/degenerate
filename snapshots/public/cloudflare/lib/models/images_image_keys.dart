@@ -36,10 +36,13 @@ ImagesImageKeys copyWith({ImagesImageKeyName? Function()? name, ImagesImageKeyVa
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageKeys &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'ImagesImageKeys(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'ImagesImageKeys(name: $name, value: $value)';
+
  }

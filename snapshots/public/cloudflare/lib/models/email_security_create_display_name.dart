@@ -31,11 +31,14 @@ EmailSecurityCreateDisplayName copyWith({String? email, bool? isEmailRegex, Stri
   isEmailRegex: isEmailRegex ?? this.isEmailRegex,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateDisplayName &&
           email == other.email &&
           isEmailRegex == other.isEmailRegex &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, isEmailRegex, name); } 
-@override String toString() { return 'EmailSecurityCreateDisplayName(email: $email, isEmailRegex: $isEmailRegex, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(email, isEmailRegex, name);
+
+@override String toString() => 'EmailSecurityCreateDisplayName(email: $email, isEmailRegex: $isEmailRegex, name: $name)';
+
  }

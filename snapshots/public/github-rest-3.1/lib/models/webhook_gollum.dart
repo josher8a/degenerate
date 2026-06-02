@@ -43,14 +43,17 @@ WebhookGollum copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstal
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookGollum &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           listEquals(pages, other.pages) &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, Object.hashAll(pages), repository, sender); } 
-@override String toString() { return 'WebhookGollum(enterprise: $enterprise, installation: $installation, organization: $organization, pages: $pages, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(enterprise, installation, organization, Object.hashAll(pages), repository, sender);
+
+@override String toString() => 'WebhookGollum(enterprise: $enterprise, installation: $installation, organization: $organization, pages: $pages, repository: $repository, sender: $sender)';
+
  }

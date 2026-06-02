@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest copyWith({TlsCertificatesAndHostnamesCloudflareBranding? Function()? cloudflareBranding}) { return CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(
   cloudflareBranding: cloudflareBranding != null ? cloudflareBranding() : this.cloudflareBranding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest &&
-          cloudflareBranding == other.cloudflareBranding; } 
-@override int get hashCode { return cloudflareBranding.hashCode; } 
-@override String toString() { return 'CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(cloudflareBranding: $cloudflareBranding)'; } 
+          cloudflareBranding == other.cloudflareBranding;
+
+@override int get hashCode => cloudflareBranding.hashCode;
+
+@override String toString() => 'CertificatePacksRestartValidationForAdvancedCertificateManagerCertificatePackRequest(cloudflareBranding: $cloudflareBranding)';
+
  }

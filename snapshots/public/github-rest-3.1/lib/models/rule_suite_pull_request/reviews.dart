@@ -28,11 +28,14 @@ Reviews copyWith({int? Function()? id, PullRequestUser? Function()? user, String
   user: user != null ? user() : this.user,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Reviews &&
           id == other.id &&
           user == other.user &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(id, user, state); } 
-@override String toString() { return 'Reviews(id: $id, user: $user, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(id, user, state);
+
+@override String toString() => 'Reviews(id: $id, user: $user, state: $state)';
+
  }

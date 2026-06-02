@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('okta'
 AccessOktaGroupRule copyWith({Okta? okta}) { return AccessOktaGroupRule(
   okta: okta ?? this.okta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOktaGroupRule &&
-          okta == other.okta; } 
-@override int get hashCode { return okta.hashCode; } 
-@override String toString() { return 'AccessOktaGroupRule(okta: $okta)'; } 
+          okta == other.okta;
+
+@override int get hashCode => okta.hashCode;
+
+@override String toString() => 'AccessOktaGroupRule(okta: $okta)';
+
  }

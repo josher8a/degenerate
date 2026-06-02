@@ -54,7 +54,7 @@ WebhookWorkflowRunCompleted copyWith({WebhookCheckRunCompletedAction? action, En
   workflow: workflow ?? this.workflow,
   workflowRun: workflowRun ?? this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunCompleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -63,7 +63,10 @@ WebhookWorkflowRunCompleted copyWith({WebhookCheckRunCompletedAction? action, En
           repository == other.repository &&
           sender == other.sender &&
           workflow == other.workflow &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, workflow, workflowRun); } 
-@override String toString() { return 'WebhookWorkflowRunCompleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender, workflow, workflowRun);
+
+@override String toString() => 'WebhookWorkflowRunCompleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
+
  }

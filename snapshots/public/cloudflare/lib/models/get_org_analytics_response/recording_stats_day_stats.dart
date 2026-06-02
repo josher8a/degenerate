@@ -27,11 +27,14 @@ RecordingStatsDayStats copyWith({String? Function()? day, int? Function()? total
   totalRecordingMinutes: totalRecordingMinutes != null ? totalRecordingMinutes() : this.totalRecordingMinutes,
   totalRecordings: totalRecordings != null ? totalRecordings() : this.totalRecordings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RecordingStatsDayStats &&
           day == other.day &&
           totalRecordingMinutes == other.totalRecordingMinutes &&
-          totalRecordings == other.totalRecordings; } 
-@override int get hashCode { return Object.hash(day, totalRecordingMinutes, totalRecordings); } 
-@override String toString() { return 'RecordingStatsDayStats(day: $day, totalRecordingMinutes: $totalRecordingMinutes, totalRecordings: $totalRecordings)'; } 
+          totalRecordings == other.totalRecordings;
+
+@override int get hashCode => Object.hash(day, totalRecordingMinutes, totalRecordings);
+
+@override String toString() => 'RecordingStatsDayStats(day: $day, totalRecordingMinutes: $totalRecordingMinutes, totalRecordings: $totalRecordings)';
+
  }

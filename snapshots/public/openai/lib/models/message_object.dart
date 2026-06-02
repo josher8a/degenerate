@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageObjectObject($value)';
+
  }
 /// Represents a message within a [thread](/docs/api-reference/threads).
 @immutable final class MessageObject {const MessageObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.status, required this.incompleteDetails, required this.completedAt, required this.incompleteAt, required this.role, required this.content, required this.assistantId, required this.runId, required this.attachments, required this.metadata, });
@@ -129,7 +132,7 @@ MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt,
   attachments: attachments != null ? attachments() : this.attachments,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageObject &&
           id == other.id &&
           object == other.object &&
@@ -144,7 +147,10 @@ MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt,
           assistantId == other.assistantId &&
           runId == other.runId &&
           listEquals(attachments, other.attachments) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata); } 
-@override String toString() { return 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata);
+
+@override String toString() => 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)';
+
  }

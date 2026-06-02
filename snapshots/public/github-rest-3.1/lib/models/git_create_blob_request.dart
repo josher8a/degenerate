@@ -22,10 +22,13 @@ GitCreateBlobRequest copyWith({String? content, String Function()? encoding, }) 
   content: content ?? this.content,
   encoding: encoding != null ? encoding() : this.encoding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateBlobRequest &&
           content == other.content &&
-          encoding == other.encoding; } 
-@override int get hashCode { return Object.hash(content, encoding); } 
-@override String toString() { return 'GitCreateBlobRequest(content: $content, encoding: $encoding)'; } 
+          encoding == other.encoding;
+
+@override int get hashCode => Object.hash(content, encoding);
+
+@override String toString() => 'GitCreateBlobRequest(content: $content, encoding: $encoding)';
+
  }

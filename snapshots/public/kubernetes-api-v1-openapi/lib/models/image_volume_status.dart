@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('image
 ImageVolumeStatus copyWith({String? imageRef}) { return ImageVolumeStatus(
   imageRef: imageRef ?? this.imageRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageVolumeStatus &&
-          imageRef == other.imageRef; } 
-@override int get hashCode { return imageRef.hashCode; } 
-@override String toString() { return 'ImageVolumeStatus(imageRef: $imageRef)'; } 
+          imageRef == other.imageRef;
+
+@override int get hashCode => imageRef.hashCode;
+
+@override String toString() => 'ImageVolumeStatus(imageRef: $imageRef)';
+
  }

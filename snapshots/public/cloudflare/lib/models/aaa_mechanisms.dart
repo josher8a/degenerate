@@ -47,11 +47,14 @@ AaaMechanisms copyWith({List<AaaMechanismsEmail>? Function()? email, List<Pagerd
   pagerduty: pagerduty != null ? pagerduty() : this.pagerduty,
   webhooks: webhooks != null ? webhooks() : this.webhooks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaMechanisms &&
           listEquals(email, other.email) &&
           listEquals(pagerduty, other.pagerduty) &&
-          listEquals(webhooks, other.webhooks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(email ?? const []), Object.hashAll(pagerduty ?? const []), Object.hashAll(webhooks ?? const [])); } 
-@override String toString() { return 'AaaMechanisms(email: $email, pagerduty: $pagerduty, webhooks: $webhooks)'; } 
+          listEquals(webhooks, other.webhooks);
+
+@override int get hashCode => Object.hash(Object.hashAll(email ?? const []), Object.hashAll(pagerduty ?? const []), Object.hashAll(webhooks ?? const []));
+
+@override String toString() => 'AaaMechanisms(email: $email, pagerduty: $pagerduty, webhooks: $webhooks)';
+
  }

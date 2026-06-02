@@ -33,12 +33,15 @@ Screenshot copyWith({String? dhash, double? mm3Hash, String? name, String? phash
   name: name ?? this.name,
   phash: phash ?? this.phash,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Screenshot &&
           dhash == other.dhash &&
           mm3Hash == other.mm3Hash &&
           name == other.name &&
-          phash == other.phash; } 
-@override int get hashCode { return Object.hash(dhash, mm3Hash, name, phash); } 
-@override String toString() { return 'Screenshot(dhash: $dhash, mm3Hash: $mm3Hash, name: $name, phash: $phash)'; } 
+          phash == other.phash;
+
+@override int get hashCode => Object.hash(dhash, mm3Hash, name, phash);
+
+@override String toString() => 'Screenshot(dhash: $dhash, mm3Hash: $mm3Hash, name: $name, phash: $phash)';
+
  }

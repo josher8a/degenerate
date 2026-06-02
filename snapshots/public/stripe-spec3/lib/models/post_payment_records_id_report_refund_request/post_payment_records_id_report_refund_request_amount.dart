@@ -22,10 +22,13 @@ PostPaymentRecordsIdReportRefundRequestAmount copyWith({String? currency, int? v
   currency: currency ?? this.currency,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportRefundRequestAmount &&
           currency == other.currency &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(currency, value); } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequestAmount(currency: $currency, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(currency, value);
+
+@override String toString() => 'PostPaymentRecordsIdReportRefundRequestAmount(currency: $currency, value: $value)';
+
  }

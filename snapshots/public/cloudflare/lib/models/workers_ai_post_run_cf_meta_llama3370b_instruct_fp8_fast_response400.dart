@@ -27,11 +27,14 @@ WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400 copyWith({List<$0Resp
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400(errors: $errors, result: $result, success: $success)';
+
  }

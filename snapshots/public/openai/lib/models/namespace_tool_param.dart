@@ -44,12 +44,15 @@ NamespaceToolParam copyWith({String? type, String? name, String? description, Li
   description: description ?? this.description,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceToolParam &&
           type == other.type &&
           name == other.name &&
           description == other.description &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(type, name, description, Object.hashAll(tools)); } 
-@override String toString() { return 'NamespaceToolParam(type: $type, name: $name, description: $description, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(type, name, description, Object.hashAll(tools));
+
+@override String toString() => 'NamespaceToolParam(type: $type, name: $name, description: $description, tools: $tools)';
+
  }

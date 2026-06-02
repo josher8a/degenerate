@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Supported && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Supported($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Supported && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Supported($value)';
+
  }
 /// 
 @immutable final class UsBankAccountNetworks {const UsBankAccountNetworks({required this.supported, this.preferred, });
@@ -54,10 +57,13 @@ UsBankAccountNetworks copyWith({String? Function()? preferred, List<Supported>? 
   preferred: preferred != null ? preferred() : this.preferred,
   supported: supported ?? this.supported,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsBankAccountNetworks &&
           preferred == other.preferred &&
-          listEquals(supported, other.supported); } 
-@override int get hashCode { return Object.hash(preferred, Object.hashAll(supported)); } 
-@override String toString() { return 'UsBankAccountNetworks(preferred: $preferred, supported: $supported)'; } 
+          listEquals(supported, other.supported);
+
+@override int get hashCode => Object.hash(preferred, Object.hashAll(supported));
+
+@override String toString() => 'UsBankAccountNetworks(preferred: $preferred, supported: $supported)';
+
  }

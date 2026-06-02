@@ -28,11 +28,14 @@ ActionsSetGithubActionsPermissionsOrganizationRequest copyWith({EnabledRepositor
   allowedActions: allowedActions != null ? allowedActions() : this.allowedActions,
   shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetGithubActionsPermissionsOrganizationRequest &&
           enabledRepositories == other.enabledRepositories &&
           allowedActions == other.allowedActions &&
-          shaPinningRequired == other.shaPinningRequired; } 
-@override int get hashCode { return Object.hash(enabledRepositories, allowedActions, shaPinningRequired); } 
-@override String toString() { return 'ActionsSetGithubActionsPermissionsOrganizationRequest(enabledRepositories: $enabledRepositories, allowedActions: $allowedActions, shaPinningRequired: $shaPinningRequired)'; } 
+          shaPinningRequired == other.shaPinningRequired;
+
+@override int get hashCode => Object.hash(enabledRepositories, allowedActions, shaPinningRequired);
+
+@override String toString() => 'ActionsSetGithubActionsPermissionsOrganizationRequest(enabledRepositories: $enabledRepositories, allowedActions: $allowedActions, shaPinningRequired: $shaPinningRequired)';
+
  }

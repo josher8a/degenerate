@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CloudforceOneRequestsRequestAssetEdit copyWith({CloudforceOneRequestsAssetContent? Function()? source}) { return CloudforceOneRequestsRequestAssetEdit(
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestAssetEdit &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsRequestAssetEdit(source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => source.hashCode;
+
+@override String toString() => 'CloudforceOneRequestsRequestAssetEdit(source: $source)';
+
  }

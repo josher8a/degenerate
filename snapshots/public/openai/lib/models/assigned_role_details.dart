@@ -87,7 +87,7 @@ AssignedRoleDetails copyWith({String? id, String? name, List<String>? permission
   createdByUserObj: createdByUserObj != null ? createdByUserObj() : this.createdByUserObj,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssignedRoleDetails &&
           id == other.id &&
           name == other.name &&
@@ -99,7 +99,10 @@ AssignedRoleDetails copyWith({String? id, String? name, List<String>? permission
           updatedAt == other.updatedAt &&
           createdBy == other.createdBy &&
           createdByUserObj == other.createdByUserObj &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata); } 
-@override String toString() { return 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata);
+
+@override String toString() => 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)';
+
  }

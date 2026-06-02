@@ -23,9 +23,12 @@ return errors; }
 PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent copyWith({String? Function()? number}) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(
   number: number != null ? number() : this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent &&
-          number == other.number; } 
-@override int get hashCode { return number.hashCode; } 
-@override String toString() { return 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => number.hashCode;
+
+@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(number: $number)';
+
  }

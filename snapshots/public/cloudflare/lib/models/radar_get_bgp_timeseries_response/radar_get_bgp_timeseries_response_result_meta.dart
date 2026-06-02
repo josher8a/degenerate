@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarGetBgpTimeseriesResponseResultMetaAggInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarGetBgpTimeseriesResponseResultMetaAggInterval($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RadarGetBgpTimeseriesResponseResultMetaAggInterval && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RadarGetBgpTimeseriesResponseResultMetaAggInterval($value)';
+
  }
 @immutable final class RadarGetBgpTimeseriesResponseResultMeta {const RadarGetBgpTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, });
 
@@ -63,12 +66,15 @@ RadarGetBgpTimeseriesResponseResultMeta copyWith({RadarGetBgpTimeseriesResponseR
   dateRange: dateRange ?? this.dateRange,
   lastUpdated: lastUpdated ?? this.lastUpdated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTimeseriesResponseResultMeta &&
           aggInterval == other.aggInterval &&
           confidenceInfo == other.confidenceInfo &&
           listEquals(dateRange, other.dateRange) &&
-          lastUpdated == other.lastUpdated; } 
-@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated); } 
-@override String toString() { return 'RadarGetBgpTimeseriesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated)'; } 
+          lastUpdated == other.lastUpdated;
+
+@override int get hashCode => Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated);
+
+@override String toString() => 'RadarGetBgpTimeseriesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated)';
+
  }

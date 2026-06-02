@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateSupplierObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateSupplierObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateSupplierObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClimateSupplierObject($value)';
+
  }
 /// The scientific pathway used for carbon removal.
 @immutable final class RemovalPathway {const RemovalPathway._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RemovalPathway && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RemovalPathway($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RemovalPathway && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RemovalPathway($value)';
+
  }
 /// A supplier of carbon removal.
 @immutable final class ClimateSupplier {const ClimateSupplier({required this.id, required this.infoUrl, required this.livemode, required this.locations, required this.name, required this.object, required this.removalPathway, });
@@ -115,7 +121,7 @@ ClimateSupplier copyWith({String? id, String? infoUrl, bool? livemode, List<Clim
   object: object ?? this.object,
   removalPathway: removalPathway ?? this.removalPathway,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateSupplier &&
           id == other.id &&
           infoUrl == other.infoUrl &&
@@ -123,7 +129,10 @@ ClimateSupplier copyWith({String? id, String? infoUrl, bool? livemode, List<Clim
           listEquals(locations, other.locations) &&
           name == other.name &&
           object == other.object &&
-          removalPathway == other.removalPathway; } 
-@override int get hashCode { return Object.hash(id, infoUrl, livemode, Object.hashAll(locations), name, object, removalPathway); } 
-@override String toString() { return 'ClimateSupplier(id: $id, infoUrl: $infoUrl, livemode: $livemode, locations: $locations, name: $name, object: $object, removalPathway: $removalPathway)'; } 
+          removalPathway == other.removalPathway;
+
+@override int get hashCode => Object.hash(id, infoUrl, livemode, Object.hashAll(locations), name, object, removalPathway);
+
+@override String toString() => 'ClimateSupplier(id: $id, infoUrl: $infoUrl, livemode: $livemode, locations: $locations, name: $name, object: $object, removalPathway: $removalPathway)';
+
  }

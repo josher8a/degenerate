@@ -40,13 +40,16 @@ ZeroTrustGatewaySubcategory copyWith({ZeroTrustGatewayBeta? Function()? beta, Ze
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySubcategory &&
           beta == other.beta &&
           $class == other.$class &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(beta, $class, description, id, name); } 
-@override String toString() { return 'ZeroTrustGatewaySubcategory(beta: $beta, \$class: ${$class}, description: $description, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(beta, $class, description, id, name);
+
+@override String toString() => 'ZeroTrustGatewaySubcategory(beta: $beta, \$class: ${$class}, description: $description, id: $id, name: $name)';
+
  }

@@ -36,12 +36,15 @@ PostCustomersCustomerFundingInstructionsRequest copyWith({PostCustomersCustomerF
   expand: expand != null ? expand() : this.expand,
   fundingType: fundingType ?? this.fundingType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerFundingInstructionsRequest &&
           bankTransfer == other.bankTransfer &&
           currency == other.currency &&
           listEquals(expand, other.expand) &&
-          fundingType == other.fundingType; } 
-@override int get hashCode { return Object.hash(bankTransfer, currency, Object.hashAll(expand ?? const []), fundingType); } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequest(bankTransfer: $bankTransfer, currency: $currency, expand: $expand, fundingType: $fundingType)'; } 
+          fundingType == other.fundingType;
+
+@override int get hashCode => Object.hash(bankTransfer, currency, Object.hashAll(expand ?? const []), fundingType);
+
+@override String toString() => 'PostCustomersCustomerFundingInstructionsRequest(bankTransfer: $bankTransfer, currency: $currency, expand: $expand, fundingType: $fundingType)';
+
  }

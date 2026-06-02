@@ -27,18 +27,13 @@ final class LivekitOrderSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is LivekitOrderSchema && listEquals(order, other.order);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is LivekitOrderSchema && listEquals(order, other.order);
 
   @override
-  int get hashCode {
-    return Object.hashAll(order);
-  }
+  int get hashCode => Object.hashAll(order);
 
   @override
-  String toString() {
-    return 'LivekitOrderSchema(order: $order)';
-  }
+  String toString() => 'LivekitOrderSchema(order: $order)';
 }

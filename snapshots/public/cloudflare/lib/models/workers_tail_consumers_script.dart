@@ -35,11 +35,14 @@ WorkersTailConsumersScript copyWith({String? Function()? environment, String? Fu
   namespace: namespace != null ? namespace() : this.namespace,
   service: service ?? this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersTailConsumersScript &&
           environment == other.environment &&
           namespace == other.namespace &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(environment, namespace, service); } 
-@override String toString() { return 'WorkersTailConsumersScript(environment: $environment, namespace: $namespace, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(environment, namespace, service);
+
+@override String toString() => 'WorkersTailConsumersScript(environment: $environment, namespace: $namespace, service: $service)';
+
  }

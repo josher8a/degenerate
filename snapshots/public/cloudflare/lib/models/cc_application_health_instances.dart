@@ -24,10 +24,13 @@ CcApplicationHealthInstances copyWith({int? active, int? assigned, }) { return C
   active: active ?? this.active,
   assigned: assigned ?? this.assigned,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcApplicationHealthInstances &&
           active == other.active &&
-          assigned == other.assigned; } 
-@override int get hashCode { return Object.hash(active, assigned); } 
-@override String toString() { return 'CcApplicationHealthInstances(active: $active, assigned: $assigned)'; } 
+          assigned == other.assigned;
+
+@override int get hashCode => Object.hash(active, assigned);
+
+@override String toString() => 'CcApplicationHealthInstances(active: $active, assigned: $assigned)';
+
  }

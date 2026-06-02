@@ -37,12 +37,15 @@ MconnEventMetadata copyWith({double? a, String? k, double? n, double? t, }) { re
   n: n ?? this.n,
   t: t ?? this.t,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnEventMetadata &&
           a == other.a &&
           k == other.k &&
           n == other.n &&
-          t == other.t; } 
-@override int get hashCode { return Object.hash(a, k, n, t); } 
-@override String toString() { return 'MconnEventMetadata(a: $a, k: $k, n: $n, t: $t)'; } 
+          t == other.t;
+
+@override int get hashCode => Object.hash(a, k, n, t);
+
+@override String toString() => 'MconnEventMetadata(a: $a, k: $k, n: $n, t: $t)';
+
  }

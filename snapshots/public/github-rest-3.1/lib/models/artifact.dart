@@ -84,7 +84,7 @@ Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, Stri
   digest: digest != null ? digest() : this.digest,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Artifact &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -97,7 +97,10 @@ Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, Stri
           expiresAt == other.expiresAt &&
           updatedAt == other.updatedAt &&
           digest == other.digest &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, sizeInBytes, url, archiveDownloadUrl, expired, createdAt, expiresAt, updatedAt, digest, workflowRun); } 
-@override String toString() { return 'Artifact(id: $id, nodeId: $nodeId, name: $name, sizeInBytes: $sizeInBytes, url: $url, archiveDownloadUrl: $archiveDownloadUrl, expired: $expired, createdAt: $createdAt, expiresAt: $expiresAt, updatedAt: $updatedAt, digest: $digest, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(id, nodeId, name, sizeInBytes, url, archiveDownloadUrl, expired, createdAt, expiresAt, updatedAt, digest, workflowRun);
+
+@override String toString() => 'Artifact(id: $id, nodeId: $nodeId, name: $name, sizeInBytes: $sizeInBytes, url: $url, archiveDownloadUrl: $archiveDownloadUrl, expired: $expired, createdAt: $createdAt, expiresAt: $expiresAt, updatedAt: $updatedAt, digest: $digest, workflowRun: $workflowRun)';
+
  }

@@ -25,11 +25,14 @@ DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse copyWith({Digita
   packetLossPct: packetLossPct != null ? packetLossPct() : this.packetLossPct,
   roundTripTimeMs: roundTripTimeMs != null ? roundTripTimeMs() : this.roundTripTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse &&
           hopsCount == other.hopsCount &&
           packetLossPct == other.packetLossPct &&
-          roundTripTimeMs == other.roundTripTimeMs; } 
-@override int get hashCode { return Object.hash(hopsCount, packetLossPct, roundTripTimeMs); } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(hopsCount: $hopsCount, packetLossPct: $packetLossPct, roundTripTimeMs: $roundTripTimeMs)'; } 
+          roundTripTimeMs == other.roundTripTimeMs;
+
+@override int get hashCode => Object.hash(hopsCount, packetLossPct, roundTripTimeMs);
+
+@override String toString() => 'DigitalExperienceMonitoringTracerouteDetailsPercentilesResponse(hopsCount: $hopsCount, packetLossPct: $packetLossPct, roundTripTimeMs: $roundTripTimeMs)';
+
  }

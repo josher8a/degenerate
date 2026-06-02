@@ -35,12 +35,15 @@ PaymentPagesCheckoutSessionTotalDetails copyWith({int? amountDiscount, int? Func
   amountTax: amountTax ?? this.amountTax,
   breakdown: breakdown != null ? breakdown() : this.breakdown,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionTotalDetails &&
           amountDiscount == other.amountDiscount &&
           amountShipping == other.amountShipping &&
           amountTax == other.amountTax &&
-          breakdown == other.breakdown; } 
-@override int get hashCode { return Object.hash(amountDiscount, amountShipping, amountTax, breakdown); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)'; } 
+          breakdown == other.breakdown;
+
+@override int get hashCode => Object.hash(amountDiscount, amountShipping, amountTax, breakdown);
+
+@override String toString() => 'PaymentPagesCheckoutSessionTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)';
+
  }

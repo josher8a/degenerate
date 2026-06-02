@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfQwenQwen1518bChatError$400 extends WorkersAiPostRu
 
 final WorkersAiPostRunCfQwenQwen1518bChatResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfQwenQwen1518bChatError$Unknown extends WorkersAiPostRunCfQwenQwen1518bChatError {const WorkersAiPostRunCfQwenQwen1518bChatError$Unknown(this.statusCode, this.rawBody, );
 

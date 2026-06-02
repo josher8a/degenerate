@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CustomIndicatorFeedsPermissionsUpdate copyWith({bool? Function()? success}) { return CustomIndicatorFeedsPermissionsUpdate(
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsPermissionsUpdate &&
-          success == other.success; } 
-@override int get hashCode { return success.hashCode; } 
-@override String toString() { return 'CustomIndicatorFeedsPermissionsUpdate(success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => success.hashCode;
+
+@override String toString() => 'CustomIndicatorFeedsPermissionsUpdate(success: $success)';
+
  }

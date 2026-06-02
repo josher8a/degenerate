@@ -24,10 +24,13 @@ SetDynamicHeader copyWith({RulesetsRewriteHeaderExpression? expression, Rulesets
   expression: expression ?? this.expression,
   operation: operation ?? this.operation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetDynamicHeader &&
           expression == other.expression &&
-          operation == other.operation; } 
-@override int get hashCode { return Object.hash(expression, operation); } 
-@override String toString() { return 'SetDynamicHeader(expression: $expression, operation: $operation)'; } 
+          operation == other.operation;
+
+@override int get hashCode => Object.hash(expression, operation);
+
+@override String toString() => 'SetDynamicHeader(expression: $expression, operation: $operation)';
+
  }

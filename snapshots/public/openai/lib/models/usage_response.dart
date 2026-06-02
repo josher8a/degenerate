@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageResponseObject($value)';
+
  }
 @immutable final class UsageResponse {const UsageResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
 
@@ -54,12 +57,15 @@ UsageResponse copyWith({UsageResponseObject? object, List<UsageTimeBucket>? data
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage ?? this.nextPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageResponse &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          nextPage == other.nextPage; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, nextPage); } 
-@override String toString() { return 'UsageResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)'; } 
+          nextPage == other.nextPage;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, nextPage);
+
+@override String toString() => 'UsageResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)';
+
  }

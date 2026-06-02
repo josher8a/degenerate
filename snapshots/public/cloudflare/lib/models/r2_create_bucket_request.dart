@@ -32,11 +32,14 @@ R2CreateBucketRequest copyWith({R2BucketLocation? Function()? locationHint, R2Bu
   name: name ?? this.name,
   storageClass: storageClass != null ? storageClass() : this.storageClass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2CreateBucketRequest &&
           locationHint == other.locationHint &&
           name == other.name &&
-          storageClass == other.storageClass; } 
-@override int get hashCode { return Object.hash(locationHint, name, storageClass); } 
-@override String toString() { return 'R2CreateBucketRequest(locationHint: $locationHint, name: $name, storageClass: $storageClass)'; } 
+          storageClass == other.storageClass;
+
+@override int get hashCode => Object.hash(locationHint, name, storageClass);
+
+@override String toString() => 'R2CreateBucketRequest(locationHint: $locationHint, name: $name, storageClass: $storageClass)';
+
  }

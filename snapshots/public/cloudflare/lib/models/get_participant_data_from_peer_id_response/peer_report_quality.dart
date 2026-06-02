@@ -90,7 +90,7 @@ PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsume
   videoProducer: videoProducer != null ? videoProducer() : this.videoProducer,
   videoProducerCumulative: videoProducerCumulative != null ? videoProducerCumulative() : this.videoProducerCumulative,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PeerReportQuality &&
           listEquals(audioConsumer, other.audioConsumer) &&
           audioConsumerCumulative == other.audioConsumerCumulative &&
@@ -107,7 +107,10 @@ PeerReportQuality copyWith({List<Map<String, dynamic>>? Function()? audioConsume
           listEquals(videoConsumer, other.videoConsumer) &&
           videoConsumerCumulative == other.videoConsumerCumulative &&
           listEquals(videoProducer, other.videoProducer) &&
-          videoProducerCumulative == other.videoProducerCumulative; } 
-@override int get hashCode { return Object.hash(Object.hashAll(audioConsumer ?? const []), audioConsumerCumulative, Object.hashAll(audioProducer ?? const []), audioProducerCumulative, Object.hashAll(screenshareAudioConsumer ?? const []), screenshareAudioConsumerCumulative, Object.hashAll(screenshareAudioProducer ?? const []), screenshareAudioProducerCumulative, Object.hashAll(screenshareVideoConsumer ?? const []), screenshareVideoConsumerCumulative, Object.hashAll(screenshareVideoProducer ?? const []), screenshareVideoProducerCumulative, Object.hashAll(videoConsumer ?? const []), videoConsumerCumulative, Object.hashAll(videoProducer ?? const []), videoProducerCumulative); } 
-@override String toString() { return 'PeerReportQuality(audioConsumer: $audioConsumer, audioConsumerCumulative: $audioConsumerCumulative, audioProducer: $audioProducer, audioProducerCumulative: $audioProducerCumulative, screenshareAudioConsumer: $screenshareAudioConsumer, screenshareAudioConsumerCumulative: $screenshareAudioConsumerCumulative, screenshareAudioProducer: $screenshareAudioProducer, screenshareAudioProducerCumulative: $screenshareAudioProducerCumulative, screenshareVideoConsumer: $screenshareVideoConsumer, screenshareVideoConsumerCumulative: $screenshareVideoConsumerCumulative, screenshareVideoProducer: $screenshareVideoProducer, screenshareVideoProducerCumulative: $screenshareVideoProducerCumulative, videoConsumer: $videoConsumer, videoConsumerCumulative: $videoConsumerCumulative, videoProducer: $videoProducer, videoProducerCumulative: $videoProducerCumulative)'; } 
+          videoProducerCumulative == other.videoProducerCumulative;
+
+@override int get hashCode => Object.hash(Object.hashAll(audioConsumer ?? const []), audioConsumerCumulative, Object.hashAll(audioProducer ?? const []), audioProducerCumulative, Object.hashAll(screenshareAudioConsumer ?? const []), screenshareAudioConsumerCumulative, Object.hashAll(screenshareAudioProducer ?? const []), screenshareAudioProducerCumulative, Object.hashAll(screenshareVideoConsumer ?? const []), screenshareVideoConsumerCumulative, Object.hashAll(screenshareVideoProducer ?? const []), screenshareVideoProducerCumulative, Object.hashAll(videoConsumer ?? const []), videoConsumerCumulative, Object.hashAll(videoProducer ?? const []), videoProducerCumulative);
+
+@override String toString() => 'PeerReportQuality(audioConsumer: $audioConsumer, audioConsumerCumulative: $audioConsumerCumulative, audioProducer: $audioProducer, audioProducerCumulative: $audioProducerCumulative, screenshareAudioConsumer: $screenshareAudioConsumer, screenshareAudioConsumerCumulative: $screenshareAudioConsumerCumulative, screenshareAudioProducer: $screenshareAudioProducer, screenshareAudioProducerCumulative: $screenshareAudioProducerCumulative, screenshareVideoConsumer: $screenshareVideoConsumer, screenshareVideoConsumerCumulative: $screenshareVideoConsumerCumulative, screenshareVideoProducer: $screenshareVideoProducer, screenshareVideoProducerCumulative: $screenshareVideoProducerCumulative, videoConsumer: $videoConsumer, videoConsumerCumulative: $videoConsumerCumulative, videoProducer: $videoProducer, videoProducerCumulative: $videoProducerCumulative)';
+
  }

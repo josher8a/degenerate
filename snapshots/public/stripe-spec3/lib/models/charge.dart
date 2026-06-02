@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChargeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChargeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChargeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChargeObject($value)';
+
  }
 /// The `Charge` object represents a single attempt to move money into your Stripe account.
 /// PaymentIntent confirmation is the most common way to create Charges, but [Account Debits](https://docs.stripe.com/connect/account-debits) may also create Charges.
@@ -366,7 +369,7 @@ Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Applicat
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Charge &&
           amount == other.amount &&
           amountCaptured == other.amountCaptured &&
@@ -412,7 +415,10 @@ Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, Applicat
           status == other.status &&
           transfer == other.transfer &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hashAll([amount, amountCaptured, amountRefunded, application, applicationFee, applicationFeeAmount, balanceTransaction, billingDetails, calculatedStatementDescriptor, captured, created, currency, customer, description, disputed, failureBalanceTransaction, failureCode, failureMessage, fraudDetails, id, livemode, metadata, object, onBehalfOf, outcome, paid, paymentIntent, paymentMethod, paymentMethodDetails, presentmentDetails, radarOptions, receiptEmail, receiptNumber, receiptUrl, refunded, refunds, review, shipping, sourceTransfer, statementDescriptor, statementDescriptorSuffix, status, transfer, transferData, transferGroup]); } 
-@override String toString() { return 'Charge(amount: $amount, amountCaptured: $amountCaptured, amountRefunded: $amountRefunded, application: $application, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, balanceTransaction: $balanceTransaction, billingDetails: $billingDetails, calculatedStatementDescriptor: $calculatedStatementDescriptor, captured: $captured, created: $created, currency: $currency, customer: $customer, description: $description, disputed: $disputed, failureBalanceTransaction: $failureBalanceTransaction, failureCode: $failureCode, failureMessage: $failureMessage, fraudDetails: $fraudDetails, id: $id, livemode: $livemode, metadata: $metadata, object: $object, onBehalfOf: $onBehalfOf, outcome: $outcome, paid: $paid, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, presentmentDetails: $presentmentDetails, radarOptions: $radarOptions, receiptEmail: $receiptEmail, receiptNumber: $receiptNumber, receiptUrl: $receiptUrl, refunded: $refunded, refunds: $refunds, review: $review, shipping: $shipping, sourceTransfer: $sourceTransfer, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, status: $status, transfer: $transfer, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hashAll([amount, amountCaptured, amountRefunded, application, applicationFee, applicationFeeAmount, balanceTransaction, billingDetails, calculatedStatementDescriptor, captured, created, currency, customer, description, disputed, failureBalanceTransaction, failureCode, failureMessage, fraudDetails, id, livemode, metadata, object, onBehalfOf, outcome, paid, paymentIntent, paymentMethod, paymentMethodDetails, presentmentDetails, radarOptions, receiptEmail, receiptNumber, receiptUrl, refunded, refunds, review, shipping, sourceTransfer, statementDescriptor, statementDescriptorSuffix, status, transfer, transferData, transferGroup]);
+
+@override String toString() => 'Charge(amount: $amount, amountCaptured: $amountCaptured, amountRefunded: $amountRefunded, application: $application, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, balanceTransaction: $balanceTransaction, billingDetails: $billingDetails, calculatedStatementDescriptor: $calculatedStatementDescriptor, captured: $captured, created: $created, currency: $currency, customer: $customer, description: $description, disputed: $disputed, failureBalanceTransaction: $failureBalanceTransaction, failureCode: $failureCode, failureMessage: $failureMessage, fraudDetails: $fraudDetails, id: $id, livemode: $livemode, metadata: $metadata, object: $object, onBehalfOf: $onBehalfOf, outcome: $outcome, paid: $paid, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, presentmentDetails: $presentmentDetails, radarOptions: $radarOptions, receiptEmail: $receiptEmail, receiptNumber: $receiptNumber, receiptUrl: $receiptUrl, refunded: $refunded, refunds: $refunds, review: $review, shipping: $shipping, sourceTransfer: $sourceTransfer, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, status: $status, transfer: $transfer, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

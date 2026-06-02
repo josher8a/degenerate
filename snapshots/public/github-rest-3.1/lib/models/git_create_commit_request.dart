@@ -47,14 +47,17 @@ GitCreateCommitRequest copyWith({String? message, String? tree, List<String>? Fu
   committer: committer != null ? committer() : this.committer,
   signature: signature != null ? signature() : this.signature,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateCommitRequest &&
           message == other.message &&
           tree == other.tree &&
           listEquals(parents, other.parents) &&
           author == other.author &&
           committer == other.committer &&
-          signature == other.signature; } 
-@override int get hashCode { return Object.hash(message, tree, Object.hashAll(parents ?? const []), author, committer, signature); } 
-@override String toString() { return 'GitCreateCommitRequest(message: $message, tree: $tree, parents: $parents, author: $author, committer: $committer, signature: $signature)'; } 
+          signature == other.signature;
+
+@override int get hashCode => Object.hash(message, tree, Object.hashAll(parents ?? const []), author, committer, signature);
+
+@override String toString() => 'GitCreateCommitRequest(message: $message, tree: $tree, parents: $parents, author: $author, committer: $committer, signature: $signature)';
+
  }

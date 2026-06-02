@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ScaleSpec copyWith({int Function()? replicas}) { return ScaleSpec(
   replicas: replicas != null ? replicas() : this.replicas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleSpec &&
-          replicas == other.replicas; } 
-@override int get hashCode { return replicas.hashCode; } 
-@override String toString() { return 'ScaleSpec(replicas: $replicas)'; } 
+          replicas == other.replicas;
+
+@override int get hashCode => replicas.hashCode;
+
+@override String toString() => 'ScaleSpec(replicas: $replicas)';
+
  }

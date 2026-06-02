@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumPaymentMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumPaymentMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumPaymentMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsEnumPaymentMethod($value)';
+
  }
 /// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
 @immutable final class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumBankAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumBankAccountType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumBankAccountType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsEnumBankAccountType($value)';
+
  }
 /// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
 @immutable final class PaymentsEnumTokenType {const PaymentsEnumTokenType._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsEnumTokenType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsEnumTokenType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumTokenType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsEnumTokenType($value)';
+
  }
 @immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter, this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });
 
@@ -188,7 +197,7 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   validCardTypes: validCardTypes != null ? validCardTypes() : this.validCardTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePaymentsRequest &&
           idempotencyKey == other.idempotencyKey &&
           statusCallback == other.statusCallback &&
@@ -205,7 +214,10 @@ CreatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, Pay
           securityCode == other.securityCode &&
           timeout == other.timeout &&
           tokenType == other.tokenType &&
-          validCardTypes == other.validCardTypes; } 
-@override int get hashCode { return Object.hash(idempotencyKey, statusCallback, bankAccountType, chargeAmount, currency, description, input, minPostalCodeLength, parameter, paymentConnector, paymentMethod, postalCode, securityCode, timeout, tokenType, validCardTypes); } 
-@override String toString() { return 'CreatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, bankAccountType: $bankAccountType, chargeAmount: $chargeAmount, currency: $currency, description: $description, input: $input, minPostalCodeLength: $minPostalCodeLength, parameter: $parameter, paymentConnector: $paymentConnector, paymentMethod: $paymentMethod, postalCode: $postalCode, securityCode: $securityCode, timeout: $timeout, tokenType: $tokenType, validCardTypes: $validCardTypes)'; } 
+          validCardTypes == other.validCardTypes;
+
+@override int get hashCode => Object.hash(idempotencyKey, statusCallback, bankAccountType, chargeAmount, currency, description, input, minPostalCodeLength, parameter, paymentConnector, paymentMethod, postalCode, securityCode, timeout, tokenType, validCardTypes);
+
+@override String toString() => 'CreatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, bankAccountType: $bankAccountType, chargeAmount: $chargeAmount, currency: $currency, description: $description, input: $input, minPostalCodeLength: $minPostalCodeLength, parameter: $parameter, paymentConnector: $paymentConnector, paymentMethod: $paymentMethod, postalCode: $postalCode, securityCode: $securityCode, timeout: $timeout, tokenType: $tokenType, validCardTypes: $validCardTypes)';
+
  }

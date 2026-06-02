@@ -24,10 +24,13 @@ CheckAutomatedSecurityFixes copyWith({bool? enabled, bool? paused, }) { return C
   enabled: enabled ?? this.enabled,
   paused: paused ?? this.paused,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckAutomatedSecurityFixes &&
           enabled == other.enabled &&
-          paused == other.paused; } 
-@override int get hashCode { return Object.hash(enabled, paused); } 
-@override String toString() { return 'CheckAutomatedSecurityFixes(enabled: $enabled, paused: $paused)'; } 
+          paused == other.paused;
+
+@override int get hashCode => Object.hash(enabled, paused);
+
+@override String toString() => 'CheckAutomatedSecurityFixes(enabled: $enabled, paused: $paused)';
+
  }

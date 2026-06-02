@@ -29,10 +29,13 @@ RulesetsManagedTransforms copyWith({List<RulesetsManagedTransform>? managedReque
   managedRequestHeaders: managedRequestHeaders ?? this.managedRequestHeaders,
   managedResponseHeaders: managedResponseHeaders ?? this.managedResponseHeaders,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsManagedTransforms &&
           listEquals(managedRequestHeaders, other.managedRequestHeaders) &&
-          listEquals(managedResponseHeaders, other.managedResponseHeaders); } 
-@override int get hashCode { return Object.hash(Object.hashAll(managedRequestHeaders), Object.hashAll(managedResponseHeaders)); } 
-@override String toString() { return 'RulesetsManagedTransforms(managedRequestHeaders: $managedRequestHeaders, managedResponseHeaders: $managedResponseHeaders)'; } 
+          listEquals(managedResponseHeaders, other.managedResponseHeaders);
+
+@override int get hashCode => Object.hash(Object.hashAll(managedRequestHeaders), Object.hashAll(managedResponseHeaders));
+
+@override String toString() => 'RulesetsManagedTransforms(managedRequestHeaders: $managedRequestHeaders, managedResponseHeaders: $managedResponseHeaders)';
+
  }

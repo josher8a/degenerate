@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DexEndpointsTestsUniqueDevicesResponse copyWith({DigitalExperienceMonitoringUniqueDevicesResponse? Function()? result}) { return DexEndpointsTestsUniqueDevicesResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DexEndpointsTestsUniqueDevicesResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'DexEndpointsTestsUniqueDevicesResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'DexEndpointsTestsUniqueDevicesResponse(result: $result)';
+
  }

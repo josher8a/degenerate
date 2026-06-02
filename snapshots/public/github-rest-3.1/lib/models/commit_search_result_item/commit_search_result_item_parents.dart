@@ -25,11 +25,14 @@ CommitSearchResultItemParents copyWith({String? Function()? url, String? Functio
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   sha: sha != null ? sha() : this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitSearchResultItemParents &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(url, htmlUrl, sha); } 
-@override String toString() { return 'CommitSearchResultItemParents(url: $url, htmlUrl: $htmlUrl, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(url, htmlUrl, sha);
+
+@override String toString() => 'CommitSearchResultItemParents(url: $url, htmlUrl: $htmlUrl, sha: $sha)';
+
  }

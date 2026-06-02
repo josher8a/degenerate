@@ -22,10 +22,13 @@ FileCommit copyWith({FileCommitContent? Function()? content, FileCommitCommit? c
   content: content != null ? content() : this.content,
   commit: commit ?? this.commit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommit &&
           content == other.content &&
-          commit == other.commit; } 
-@override int get hashCode { return Object.hash(content, commit); } 
-@override String toString() { return 'FileCommit(content: $content, commit: $commit)'; } 
+          commit == other.commit;
+
+@override int get hashCode => Object.hash(content, commit);
+
+@override String toString() => 'FileCommit(content: $content, commit: $commit)';
+
  }

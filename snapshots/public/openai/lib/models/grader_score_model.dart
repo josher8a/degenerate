@@ -52,14 +52,17 @@ GraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, String?
   input: input ?? this.input,
   range: range != null ? range() : this.range,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GraderScoreModel &&
           type == other.type &&
           name == other.name &&
           model == other.model &&
           samplingParams == other.samplingParams &&
           listEquals(input, other.input) &&
-          listEquals(range, other.range); } 
-@override int get hashCode { return Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const [])); } 
-@override String toString() { return 'GraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range)'; } 
+          listEquals(range, other.range);
+
+@override int get hashCode => Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const []));
+
+@override String toString() => 'GraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range)';
+
  }

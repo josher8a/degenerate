@@ -36,10 +36,13 @@ ZeroTrustAccountsPatchConnectivitySettingsRequest copyWith({TunnelIcmpProxyEnabl
   icmpProxyEnabled: icmpProxyEnabled != null ? icmpProxyEnabled() : this.icmpProxyEnabled,
   offrampWarpEnabled: offrampWarpEnabled != null ? offrampWarpEnabled() : this.offrampWarpEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustAccountsPatchConnectivitySettingsRequest &&
           icmpProxyEnabled == other.icmpProxyEnabled &&
-          offrampWarpEnabled == other.offrampWarpEnabled; } 
-@override int get hashCode { return Object.hash(icmpProxyEnabled, offrampWarpEnabled); } 
-@override String toString() { return 'ZeroTrustAccountsPatchConnectivitySettingsRequest(icmpProxyEnabled: $icmpProxyEnabled, offrampWarpEnabled: $offrampWarpEnabled)'; } 
+          offrampWarpEnabled == other.offrampWarpEnabled;
+
+@override int get hashCode => Object.hash(icmpProxyEnabled, offrampWarpEnabled);
+
+@override String toString() => 'ZeroTrustAccountsPatchConnectivitySettingsRequest(icmpProxyEnabled: $icmpProxyEnabled, offrampWarpEnabled: $offrampWarpEnabled)';
+
  }

@@ -58,7 +58,7 @@ Collectors copyWith({String? collector, String? latestRealtimeTs, String? latest
   peersV4Count: peersV4Count ?? this.peersV4Count,
   peersV6Count: peersV6Count ?? this.peersV6Count,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Collectors &&
           collector == other.collector &&
           latestRealtimeTs == other.latestRealtimeTs &&
@@ -66,7 +66,10 @@ Collectors copyWith({String? collector, String? latestRealtimeTs, String? latest
           latestUpdatesTs == other.latestUpdatesTs &&
           peersCount == other.peersCount &&
           peersV4Count == other.peersV4Count &&
-          peersV6Count == other.peersV6Count; } 
-@override int get hashCode { return Object.hash(collector, latestRealtimeTs, latestRibTs, latestUpdatesTs, peersCount, peersV4Count, peersV6Count); } 
-@override String toString() { return 'Collectors(collector: $collector, latestRealtimeTs: $latestRealtimeTs, latestRibTs: $latestRibTs, latestUpdatesTs: $latestUpdatesTs, peersCount: $peersCount, peersV4Count: $peersV4Count, peersV6Count: $peersV6Count)'; } 
+          peersV6Count == other.peersV6Count;
+
+@override int get hashCode => Object.hash(collector, latestRealtimeTs, latestRibTs, latestUpdatesTs, peersCount, peersV4Count, peersV6Count);
+
+@override String toString() => 'Collectors(collector: $collector, latestRealtimeTs: $latestRealtimeTs, latestRibTs: $latestRibTs, latestUpdatesTs: $latestUpdatesTs, peersCount: $peersCount, peersV4Count: $peersV4Count, peersV6Count: $peersV6Count)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FeesPayer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FeesPayer($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FeesPayer && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FeesPayer($value)';
+
  }
 @immutable final class Fees {const Fees({this.payer});
 
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Fees copyWith({FeesPayer? Function()? payer}) { return Fees(
   payer: payer != null ? payer() : this.payer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Fees &&
-          payer == other.payer; } 
-@override int get hashCode { return payer.hashCode; } 
-@override String toString() { return 'Fees(payer: $payer)'; } 
+          payer == other.payer;
+
+@override int get hashCode => payer.hashCode;
+
+@override String toString() => 'Fees(payer: $payer)';
+
  }

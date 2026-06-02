@@ -30,11 +30,14 @@ AsnInfo13335 copyWith({int? asn, String? country, String? name, }) { return AsnI
   country: country ?? this.country,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnInfo13335 &&
           asn == other.asn &&
           country == other.country &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, country, name); } 
-@override String toString() { return 'AsnInfo13335(asn: $asn, country: $country, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(asn, country, name);
+
+@override String toString() => 'AsnInfo13335(asn: $asn, country: $country, name: $name)';
+
  }

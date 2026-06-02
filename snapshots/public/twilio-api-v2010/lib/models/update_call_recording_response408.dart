@@ -34,12 +34,15 @@ UpdateCallRecordingResponse408 copyWith({int? Function()? code, String? Function
   moreInfo: moreInfo != null ? moreInfo() : this.moreInfo,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateCallRecordingResponse408 &&
           code == other.code &&
           message == other.message &&
           moreInfo == other.moreInfo &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(code, message, moreInfo, status); } 
-@override String toString() { return 'UpdateCallRecordingResponse408(code: $code, message: $message, moreInfo: $moreInfo, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(code, message, moreInfo, status);
+
+@override String toString() => 'UpdateCallRecordingResponse408(code: $code, message: $message, moreInfo: $moreInfo, status: $status)';
+
  }

@@ -37,12 +37,15 @@ ResultsTask copyWith({String? time, String? url, String? uuid, String? visibilit
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultsTask &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(time, url, uuid, visibility); } 
-@override String toString() { return 'ResultsTask(time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(time, url, uuid, visibility);
+
+@override String toString() => 'ResultsTask(time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

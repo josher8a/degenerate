@@ -37,12 +37,15 @@ VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions? Function()? dimen
   processedUpToMutation: processedUpToMutation != null ? processedUpToMutation() : this.processedUpToMutation,
   vectorCount: vectorCount != null ? vectorCount() : this.vectorCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexInfoResponse &&
           dimensions == other.dimensions &&
           processedUpToDatetime == other.processedUpToDatetime &&
           processedUpToMutation == other.processedUpToMutation &&
-          vectorCount == other.vectorCount; } 
-@override int get hashCode { return Object.hash(dimensions, processedUpToDatetime, processedUpToMutation, vectorCount); } 
-@override String toString() { return 'VectorizeIndexInfoResponse(dimensions: $dimensions, processedUpToDatetime: $processedUpToDatetime, processedUpToMutation: $processedUpToMutation, vectorCount: $vectorCount)'; } 
+          vectorCount == other.vectorCount;
+
+@override int get hashCode => Object.hash(dimensions, processedUpToDatetime, processedUpToMutation, vectorCount);
+
+@override String toString() => 'VectorizeIndexInfoResponse(dimensions: $dimensions, processedUpToDatetime: $processedUpToDatetime, processedUpToMutation: $processedUpToMutation, vectorCount: $vectorCount)';
+
  }

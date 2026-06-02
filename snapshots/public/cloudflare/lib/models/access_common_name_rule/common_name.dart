@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('commo
 CommonName copyWith({String? commonName}) { return CommonName(
   commonName: commonName ?? this.commonName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommonName &&
-          commonName == other.commonName; } 
-@override int get hashCode { return commonName.hashCode; } 
-@override String toString() { return 'CommonName(commonName: $commonName)'; } 
+          commonName == other.commonName;
+
+@override int get hashCode => commonName.hashCode;
+
+@override String toString() => 'CommonName(commonName: $commonName)';
+
  }

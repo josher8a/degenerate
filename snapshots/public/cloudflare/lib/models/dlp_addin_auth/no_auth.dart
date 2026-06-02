@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NoAuthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NoAuthType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NoAuthType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NoAuthType($value)';
+
  }
 @immutable final class NoAuth {const NoAuth({required this.type});
 
@@ -36,9 +39,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 NoAuth copyWith({NoAuthType? type}) { return NoAuth(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NoAuth &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'NoAuth(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'NoAuth(type: $type)';
+
  }

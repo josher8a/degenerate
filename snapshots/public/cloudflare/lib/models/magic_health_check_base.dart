@@ -40,12 +40,15 @@ MagicHealthCheckBase copyWith({bool Function()? enabled, MagicHealthCheckBaseRat
   target: target != null ? target() : this.target,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicHealthCheckBase &&
           enabled == other.enabled &&
           rate == other.rate &&
           target == other.target &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(enabled, rate, target, type); } 
-@override String toString() { return 'MagicHealthCheckBase(enabled: $enabled, rate: $rate, target: $target, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(enabled, rate, target, type);
+
+@override String toString() => 'MagicHealthCheckBase(enabled: $enabled, rate: $rate, target: $target, type: $type)';
+
  }

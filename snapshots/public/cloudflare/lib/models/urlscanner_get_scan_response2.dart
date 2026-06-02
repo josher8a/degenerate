@@ -57,7 +57,7 @@ UrlscannerGetScanResponse2 copyWith({UrlscannerGetScanResponse2Data? data, Lists
   task: task ?? this.task,
   verdicts: verdicts ?? this.verdicts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2 &&
           data == other.data &&
           lists == other.lists &&
@@ -66,7 +66,10 @@ UrlscannerGetScanResponse2 copyWith({UrlscannerGetScanResponse2Data? data, Lists
           scanner == other.scanner &&
           stats == other.stats &&
           task == other.task &&
-          verdicts == other.verdicts; } 
-@override int get hashCode { return Object.hash(data, lists, meta, page, scanner, stats, task, verdicts); } 
-@override String toString() { return 'UrlscannerGetScanResponse2(data: $data, lists: $lists, meta: $meta, page: $page, scanner: $scanner, stats: $stats, task: $task, verdicts: $verdicts)'; } 
+          verdicts == other.verdicts;
+
+@override int get hashCode => Object.hash(data, lists, meta, page, scanner, stats, task, verdicts);
+
+@override String toString() => 'UrlscannerGetScanResponse2(data: $data, lists: $lists, meta: $meta, page: $page, scanner: $scanner, stats: $stats, task: $task, verdicts: $verdicts)';
+
  }

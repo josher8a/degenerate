@@ -30,10 +30,13 @@ Networks copyWith({List<String>? available, String? Function()? preferred, }) { 
   available: available ?? this.available,
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Networks &&
           listEquals(available, other.available) &&
-          preferred == other.preferred; } 
-@override int get hashCode { return Object.hash(Object.hashAll(available), preferred); } 
-@override String toString() { return 'Networks(available: $available, preferred: $preferred)'; } 
+          preferred == other.preferred;
+
+@override int get hashCode => Object.hash(Object.hashAll(available), preferred);
+
+@override String toString() => 'Networks(available: $available, preferred: $preferred)';
+
  }

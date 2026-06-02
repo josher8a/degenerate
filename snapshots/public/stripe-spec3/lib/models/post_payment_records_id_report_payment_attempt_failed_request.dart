@@ -28,11 +28,14 @@ PostPaymentRecordsIdReportPaymentAttemptFailedRequest copyWith({List<String>? Fu
   failedAt: failedAt ?? this.failedAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptFailedRequest &&
           listEquals(expand, other.expand) &&
           failedAt == other.failedAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), failedAt, metadata); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptFailedRequest(expand: $expand, failedAt: $failedAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), failedAt, metadata);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptFailedRequest(expand: $expand, failedAt: $failedAt, metadata: $metadata)';
+
  }

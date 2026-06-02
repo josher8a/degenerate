@@ -21,10 +21,13 @@ ResponsesAsyncRequests copyWith({ResponsesInput? input, Reasoning? Function()? r
   input: input ?? this.input,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponsesAsyncRequests &&
           input == other.input &&
-          reasoning == other.reasoning; } 
-@override int get hashCode { return Object.hash(input, reasoning); } 
-@override String toString() { return 'ResponsesAsyncRequests(input: $input, reasoning: $reasoning)'; } 
+          reasoning == other.reasoning;
+
+@override int get hashCode => Object.hash(input, reasoning);
+
+@override String toString() => 'ResponsesAsyncRequests(input: $input, reasoning: $reasoning)';
+
  }

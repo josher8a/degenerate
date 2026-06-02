@@ -33,12 +33,15 @@ DeleteEvent copyWith({String? ref, String? refType, String? fullRef, String? pus
   fullRef: fullRef ?? this.fullRef,
   pusherType: pusherType ?? this.pusherType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEvent &&
           ref == other.ref &&
           refType == other.refType &&
           fullRef == other.fullRef &&
-          pusherType == other.pusherType; } 
-@override int get hashCode { return Object.hash(ref, refType, fullRef, pusherType); } 
-@override String toString() { return 'DeleteEvent(ref: $ref, refType: $refType, fullRef: $fullRef, pusherType: $pusherType)'; } 
+          pusherType == other.pusherType;
+
+@override int get hashCode => Object.hash(ref, refType, fullRef, pusherType);
+
+@override String toString() => 'DeleteEvent(ref: $ref, refType: $refType, fullRef: $fullRef, pusherType: $pusherType)';
+
  }

@@ -21,9 +21,12 @@ return errors; }
 PortalFlowsCouponOffer copyWith({String? coupon}) { return PortalFlowsCouponOffer(
   coupon: coupon ?? this.coupon,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsCouponOffer &&
-          coupon == other.coupon; } 
-@override int get hashCode { return coupon.hashCode; } 
-@override String toString() { return 'PortalFlowsCouponOffer(coupon: $coupon)'; } 
+          coupon == other.coupon;
+
+@override int get hashCode => coupon.hashCode;
+
+@override String toString() => 'PortalFlowsCouponOffer(coupon: $coupon)';
+
  }

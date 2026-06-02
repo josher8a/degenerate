@@ -35,12 +35,15 @@ VsphereVirtualDiskVolumeSource copyWith({String? Function()? fsType, String? Fun
   storagePolicyName: storagePolicyName != null ? storagePolicyName() : this.storagePolicyName,
   volumePath: volumePath ?? this.volumePath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VsphereVirtualDiskVolumeSource &&
           fsType == other.fsType &&
           storagePolicyId == other.storagePolicyId &&
           storagePolicyName == other.storagePolicyName &&
-          volumePath == other.volumePath; } 
-@override int get hashCode { return Object.hash(fsType, storagePolicyId, storagePolicyName, volumePath); } 
-@override String toString() { return 'VsphereVirtualDiskVolumeSource(fsType: $fsType, storagePolicyId: $storagePolicyId, storagePolicyName: $storagePolicyName, volumePath: $volumePath)'; } 
+          volumePath == other.volumePath;
+
+@override int get hashCode => Object.hash(fsType, storagePolicyId, storagePolicyName, volumePath);
+
+@override String toString() => 'VsphereVirtualDiskVolumeSource(fsType: $fsType, storagePolicyId: $storagePolicyId, storagePolicyName: $storagePolicyName, volumePath: $volumePath)';
+
  }

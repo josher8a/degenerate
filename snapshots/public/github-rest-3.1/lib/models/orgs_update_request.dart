@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DefaultRepositoryPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DefaultRepositoryPermission($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DefaultRepositoryPermission && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DefaultRepositoryPermission($value)';
+
  }
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
@@ -55,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MembersAllowedRepositoryCreationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MembersAllowedRepositoryCreationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MembersAllowedRepositoryCreationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MembersAllowedRepositoryCreationType($value)';
+
  }
 @immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = DefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });
 
@@ -286,7 +292,7 @@ OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()
   secretScanningPushProtectionCustomLink: secretScanningPushProtectionCustomLink != null ? secretScanningPushProtectionCustomLink() : this.secretScanningPushProtectionCustomLink,
   deployKeysEnabledForRepositories: deployKeysEnabledForRepositories != null ? deployKeysEnabledForRepositories() : this.deployKeysEnabledForRepositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsUpdateRequest &&
           billingEmail == other.billingEmail &&
           company == other.company &&
@@ -317,7 +323,10 @@ OrgsUpdateRequest copyWith({String? Function()? billingEmail, String? Function()
           secretScanningPushProtectionEnabledForNewRepositories == other.secretScanningPushProtectionEnabledForNewRepositories &&
           secretScanningPushProtectionCustomLinkEnabled == other.secretScanningPushProtectionCustomLinkEnabled &&
           secretScanningPushProtectionCustomLink == other.secretScanningPushProtectionCustomLink &&
-          deployKeysEnabledForRepositories == other.deployKeysEnabledForRepositories; } 
-@override int get hashCode { return Object.hashAll([billingEmail, company, email, twitterUsername, location, name, description, hasOrganizationProjects, hasRepositoryProjects, defaultRepositoryPermission, membersCanCreateRepositories, membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType, membersCanCreatePages, membersCanCreatePublicPages, membersCanCreatePrivatePages, membersCanForkPrivateRepositories, webCommitSignoffRequired, blog, advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories]); } 
-@override String toString() { return 'OrgsUpdateRequest(billingEmail: $billingEmail, company: $company, email: $email, twitterUsername: $twitterUsername, location: $location, name: $name, description: $description, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, defaultRepositoryPermission: $defaultRepositoryPermission, membersCanCreateRepositories: $membersCanCreateRepositories, membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType, membersCanCreatePages: $membersCanCreatePages, membersCanCreatePublicPages: $membersCanCreatePublicPages, membersCanCreatePrivatePages: $membersCanCreatePrivatePages, membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories, webCommitSignoffRequired: $webCommitSignoffRequired, blog: $blog, advancedSecurityEnabledForNewRepositories: $advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories: $dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories: $dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories: $dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories: $secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories: $secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled: $secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink: $secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories: $deployKeysEnabledForRepositories)'; } 
+          deployKeysEnabledForRepositories == other.deployKeysEnabledForRepositories;
+
+@override int get hashCode => Object.hashAll([billingEmail, company, email, twitterUsername, location, name, description, hasOrganizationProjects, hasRepositoryProjects, defaultRepositoryPermission, membersCanCreateRepositories, membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType, membersCanCreatePages, membersCanCreatePublicPages, membersCanCreatePrivatePages, membersCanForkPrivateRepositories, webCommitSignoffRequired, blog, advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories]);
+
+@override String toString() => 'OrgsUpdateRequest(billingEmail: $billingEmail, company: $company, email: $email, twitterUsername: $twitterUsername, location: $location, name: $name, description: $description, hasOrganizationProjects: $hasOrganizationProjects, hasRepositoryProjects: $hasRepositoryProjects, defaultRepositoryPermission: $defaultRepositoryPermission, membersCanCreateRepositories: $membersCanCreateRepositories, membersCanCreateInternalRepositories: $membersCanCreateInternalRepositories, membersCanCreatePrivateRepositories: $membersCanCreatePrivateRepositories, membersCanCreatePublicRepositories: $membersCanCreatePublicRepositories, membersAllowedRepositoryCreationType: $membersAllowedRepositoryCreationType, membersCanCreatePages: $membersCanCreatePages, membersCanCreatePublicPages: $membersCanCreatePublicPages, membersCanCreatePrivatePages: $membersCanCreatePrivatePages, membersCanForkPrivateRepositories: $membersCanForkPrivateRepositories, webCommitSignoffRequired: $webCommitSignoffRequired, blog: $blog, advancedSecurityEnabledForNewRepositories: $advancedSecurityEnabledForNewRepositories, dependabotAlertsEnabledForNewRepositories: $dependabotAlertsEnabledForNewRepositories, dependabotSecurityUpdatesEnabledForNewRepositories: $dependabotSecurityUpdatesEnabledForNewRepositories, dependencyGraphEnabledForNewRepositories: $dependencyGraphEnabledForNewRepositories, secretScanningEnabledForNewRepositories: $secretScanningEnabledForNewRepositories, secretScanningPushProtectionEnabledForNewRepositories: $secretScanningPushProtectionEnabledForNewRepositories, secretScanningPushProtectionCustomLinkEnabled: $secretScanningPushProtectionCustomLinkEnabled, secretScanningPushProtectionCustomLink: $secretScanningPushProtectionCustomLink, deployKeysEnabledForRepositories: $deployKeysEnabledForRepositories)';
+
  }

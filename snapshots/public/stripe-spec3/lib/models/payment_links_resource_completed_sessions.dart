@@ -24,10 +24,13 @@ PaymentLinksResourceCompletedSessions copyWith({int? count, int? limit, }) { ret
   count: count ?? this.count,
   limit: limit ?? this.limit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCompletedSessions &&
           count == other.count &&
-          limit == other.limit; } 
-@override int get hashCode { return Object.hash(count, limit); } 
-@override String toString() { return 'PaymentLinksResourceCompletedSessions(count: $count, limit: $limit)'; } 
+          limit == other.limit;
+
+@override int get hashCode => Object.hash(count, limit);
+
+@override String toString() => 'PaymentLinksResourceCompletedSessions(count: $count, limit: $limit)';
+
  }

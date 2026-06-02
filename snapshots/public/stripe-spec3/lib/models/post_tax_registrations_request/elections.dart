@@ -27,10 +27,13 @@ Elections copyWith({String? Function()? jurisdiction, TaxProductRegistrationsRes
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Elections &&
           jurisdiction == other.jurisdiction &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jurisdiction, type); } 
-@override String toString() { return 'Elections(jurisdiction: $jurisdiction, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(jurisdiction, type);
+
+@override String toString() => 'Elections(jurisdiction: $jurisdiction, type: $type)';
+
  }

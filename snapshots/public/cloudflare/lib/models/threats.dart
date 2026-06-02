@@ -33,11 +33,14 @@ Threats copyWith({int? Function()? all, Map<String, dynamic>? Function()? countr
   country: country != null ? country() : this.country,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Threats &&
           all == other.all &&
           country == other.country &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(all, country, type); } 
-@override String toString() { return 'Threats(all: $all, country: $country, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(all, country, type);
+
+@override String toString() => 'Threats(all: $all, country: $country, type: $type)';
+
  }

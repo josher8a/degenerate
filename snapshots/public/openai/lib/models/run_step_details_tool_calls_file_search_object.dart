@@ -30,11 +30,14 @@ RunStepDetailsToolCallsFileSearchObject copyWith({String? id, AssistantToolsFile
   type: type ?? this.type,
   fileSearch: fileSearch ?? this.fileSearch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsFileSearchObject &&
           id == other.id &&
           type == other.type &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(id, type, fileSearch); } 
-@override String toString() { return 'RunStepDetailsToolCallsFileSearchObject(id: $id, type: $type, fileSearch: $fileSearch)'; } 
+          fileSearch == other.fileSearch;
+
+@override int get hashCode => Object.hash(id, type, fileSearch);
+
+@override String toString() => 'RunStepDetailsToolCallsFileSearchObject(id: $id, type: $type, fileSearch: $fileSearch)';
+
  }

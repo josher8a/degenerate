@@ -59,7 +59,7 @@ WorkersBindingKindDurableObjectNamespace copyWith({String? Function()? className
   scriptName: scriptName != null ? scriptName() : this.scriptName,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindDurableObjectNamespace &&
           className == other.className &&
           dispatchNamespace == other.dispatchNamespace &&
@@ -67,7 +67,10 @@ WorkersBindingKindDurableObjectNamespace copyWith({String? Function()? className
           name == other.name &&
           namespaceId == other.namespaceId &&
           scriptName == other.scriptName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(className, dispatchNamespace, environment, name, namespaceId, scriptName, type); } 
-@override String toString() { return 'WorkersBindingKindDurableObjectNamespace(className: $className, dispatchNamespace: $dispatchNamespace, environment: $environment, name: $name, namespaceId: $namespaceId, scriptName: $scriptName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(className, dispatchNamespace, environment, name, namespaceId, scriptName, type);
+
+@override String toString() => 'WorkersBindingKindDurableObjectNamespace(className: $className, dispatchNamespace: $dispatchNamespace, environment: $environment, name: $name, namespaceId: $namespaceId, scriptName: $scriptName, type: $type)';
+
  }

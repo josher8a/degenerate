@@ -33,11 +33,14 @@ TokenValidationConfigEditRequest copyWith({ShieldDescription? Function()? descri
   title: title != null ? title() : this.title,
   tokenSources: tokenSources != null ? tokenSources() : this.tokenSources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationConfigEditRequest &&
           description == other.description &&
           title == other.title &&
-          listEquals(tokenSources, other.tokenSources); } 
-@override int get hashCode { return Object.hash(description, title, Object.hashAll(tokenSources ?? const [])); } 
-@override String toString() { return 'TokenValidationConfigEditRequest(description: $description, title: $title, tokenSources: $tokenSources)'; } 
+          listEquals(tokenSources, other.tokenSources);
+
+@override int get hashCode => Object.hash(description, title, Object.hashAll(tokenSources ?? const []));
+
+@override String toString() => 'TokenValidationConfigEditRequest(description: $description, title: $title, tokenSources: $tokenSources)';
+
  }

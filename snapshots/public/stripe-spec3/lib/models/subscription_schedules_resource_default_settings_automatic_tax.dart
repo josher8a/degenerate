@@ -29,11 +29,14 @@ SubscriptionSchedulesResourceDefaultSettingsAutomaticTax copyWith({SchedulesPhas
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedulesResourceDefaultSettingsAutomaticTax &&
           disabledReason == other.disabledReason &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(disabledReason, enabled, liability); } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettingsAutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability)'; } 
+          liability == other.liability;
+
+@override int get hashCode => Object.hash(disabledReason, enabled, liability);
+
+@override String toString() => 'SubscriptionSchedulesResourceDefaultSettingsAutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability)';
+
  }

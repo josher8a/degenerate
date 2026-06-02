@@ -17,7 +17,8 @@ final class AigConfigFetchEvaluationsError$404 extends AigConfigFetchEvaluations
 
 final AigConfigFetchEvaluationsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigFetchEvaluationsError$Unknown extends AigConfigFetchEvaluationsError {const AigConfigFetchEvaluationsError$Unknown(this.statusCode, this.rawBody, );
 

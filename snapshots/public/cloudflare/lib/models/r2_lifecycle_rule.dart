@@ -50,14 +50,17 @@ R2LifecycleRule copyWith({AbortMultipartUploadsTransition? Function()? abortMult
   id: id ?? this.id,
   storageClassTransitions: storageClassTransitions != null ? storageClassTransitions() : this.storageClassTransitions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2LifecycleRule &&
           abortMultipartUploadsTransition == other.abortMultipartUploadsTransition &&
           conditions == other.conditions &&
           deleteObjectsTransition == other.deleteObjectsTransition &&
           enabled == other.enabled &&
           id == other.id &&
-          listEquals(storageClassTransitions, other.storageClassTransitions); } 
-@override int get hashCode { return Object.hash(abortMultipartUploadsTransition, conditions, deleteObjectsTransition, enabled, id, Object.hashAll(storageClassTransitions ?? const [])); } 
-@override String toString() { return 'R2LifecycleRule(abortMultipartUploadsTransition: $abortMultipartUploadsTransition, conditions: $conditions, deleteObjectsTransition: $deleteObjectsTransition, enabled: $enabled, id: $id, storageClassTransitions: $storageClassTransitions)'; } 
+          listEquals(storageClassTransitions, other.storageClassTransitions);
+
+@override int get hashCode => Object.hash(abortMultipartUploadsTransition, conditions, deleteObjectsTransition, enabled, id, Object.hashAll(storageClassTransitions ?? const []));
+
+@override String toString() => 'R2LifecycleRule(abortMultipartUploadsTransition: $abortMultipartUploadsTransition, conditions: $conditions, deleteObjectsTransition: $deleteObjectsTransition, enabled: $enabled, id: $id, storageClassTransitions: $storageClassTransitions)';
+
  }

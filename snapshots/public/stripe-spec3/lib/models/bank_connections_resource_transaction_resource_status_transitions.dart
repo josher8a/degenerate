@@ -23,10 +23,13 @@ BankConnectionsResourceTransactionResourceStatusTransitions copyWith({int? Funct
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   voidAt: voidAt != null ? voidAt() : this.voidAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankConnectionsResourceTransactionResourceStatusTransitions &&
           postedAt == other.postedAt &&
-          voidAt == other.voidAt; } 
-@override int get hashCode { return Object.hash(postedAt, voidAt); } 
-@override String toString() { return 'BankConnectionsResourceTransactionResourceStatusTransitions(postedAt: $postedAt, voidAt: $voidAt)'; } 
+          voidAt == other.voidAt;
+
+@override int get hashCode => Object.hash(postedAt, voidAt);
+
+@override String toString() => 'BankConnectionsResourceTransactionResourceStatusTransitions(postedAt: $postedAt, voidAt: $voidAt)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 ProtectedBranchBlockCreations copyWith({bool? enabled}) { return ProtectedBranchBlockCreations(
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchBlockCreations &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'ProtectedBranchBlockCreations(enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => enabled.hashCode;
+
+@override String toString() => 'ProtectedBranchBlockCreations(enabled: $enabled)';
+
  }

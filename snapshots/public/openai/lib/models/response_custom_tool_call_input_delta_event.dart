@@ -46,13 +46,16 @@ ResponseCustomToolCallInputDeltaEvent copyWith({String? type, int? sequenceNumbe
   itemId: itemId ?? this.itemId,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCustomToolCallInputDeltaEvent &&
           type == other.type &&
           sequenceNumber == other.sequenceNumber &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(type, sequenceNumber, outputIndex, itemId, delta); } 
-@override String toString() { return 'ResponseCustomToolCallInputDeltaEvent(type: $type, sequenceNumber: $sequenceNumber, outputIndex: $outputIndex, itemId: $itemId, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(type, sequenceNumber, outputIndex, itemId, delta);
+
+@override String toString() => 'ResponseCustomToolCallInputDeltaEvent(type: $type, sequenceNumber: $sequenceNumber, outputIndex: $outputIndex, itemId: $itemId, delta: $delta)';
+
  }

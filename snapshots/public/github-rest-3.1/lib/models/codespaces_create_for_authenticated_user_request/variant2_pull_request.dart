@@ -24,10 +24,13 @@ Variant2PullRequest copyWith({int? pullRequestNumber, int? repositoryId, }) { re
   pullRequestNumber: pullRequestNumber ?? this.pullRequestNumber,
   repositoryId: repositoryId ?? this.repositoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2PullRequest &&
           pullRequestNumber == other.pullRequestNumber &&
-          repositoryId == other.repositoryId; } 
-@override int get hashCode { return Object.hash(pullRequestNumber, repositoryId); } 
-@override String toString() { return 'Variant2PullRequest(pullRequestNumber: $pullRequestNumber, repositoryId: $repositoryId)'; } 
+          repositoryId == other.repositoryId;
+
+@override int get hashCode => Object.hash(pullRequestNumber, repositoryId);
+
+@override String toString() => 'Variant2PullRequest(pullRequestNumber: $pullRequestNumber, repositoryId: $repositoryId)';
+
  }

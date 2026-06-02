@@ -24,10 +24,13 @@ CodeScanningAnalysisDeletion copyWith({Uri? Function()? nextAnalysisUrl, Uri? Fu
   nextAnalysisUrl: nextAnalysisUrl != null ? nextAnalysisUrl() : this.nextAnalysisUrl,
   confirmDeleteUrl: confirmDeleteUrl != null ? confirmDeleteUrl() : this.confirmDeleteUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAnalysisDeletion &&
           nextAnalysisUrl == other.nextAnalysisUrl &&
-          confirmDeleteUrl == other.confirmDeleteUrl; } 
-@override int get hashCode { return Object.hash(nextAnalysisUrl, confirmDeleteUrl); } 
-@override String toString() { return 'CodeScanningAnalysisDeletion(nextAnalysisUrl: $nextAnalysisUrl, confirmDeleteUrl: $confirmDeleteUrl)'; } 
+          confirmDeleteUrl == other.confirmDeleteUrl;
+
+@override int get hashCode => Object.hash(nextAnalysisUrl, confirmDeleteUrl);
+
+@override String toString() => 'CodeScanningAnalysisDeletion(nextAnalysisUrl: $nextAnalysisUrl, confirmDeleteUrl: $confirmDeleteUrl)';
+
  }

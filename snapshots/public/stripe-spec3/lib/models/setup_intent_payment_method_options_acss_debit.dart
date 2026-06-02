@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsAcssDebitCurrency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentPaymentMethodOptionsAcssDebitCurrency && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)';
+
  }
 /// 
 @immutable final class SetupIntentPaymentMethodOptionsAcssDebit {const SetupIntentPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
@@ -53,11 +56,14 @@ SetupIntentPaymentMethodOptionsAcssDebit copyWith({SetupIntentPaymentMethodOptio
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsAcssDebit &&
           currency == other.currency &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(currency, mandateOptions, verificationMethod); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(currency, mandateOptions, verificationMethod);
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
+
  }

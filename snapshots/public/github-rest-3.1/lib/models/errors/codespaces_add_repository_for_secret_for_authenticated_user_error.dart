@@ -20,25 +20,29 @@ final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$401 extend
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$403 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$404 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$500 extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CodespacesAddRepositoryForSecretForAuthenticatedUserError$Unknown extends CodespacesAddRepositoryForSecretForAuthenticatedUserError {const CodespacesAddRepositoryForSecretForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

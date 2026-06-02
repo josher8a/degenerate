@@ -28,11 +28,14 @@ SecretScanningPushProtectionBypass copyWith({SecretScanningPushProtectionBypassR
   expireAt: expireAt != null ? expireAt() : this.expireAt,
   tokenType: tokenType != null ? tokenType() : this.tokenType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningPushProtectionBypass &&
           reason == other.reason &&
           expireAt == other.expireAt &&
-          tokenType == other.tokenType; } 
-@override int get hashCode { return Object.hash(reason, expireAt, tokenType); } 
-@override String toString() { return 'SecretScanningPushProtectionBypass(reason: $reason, expireAt: $expireAt, tokenType: $tokenType)'; } 
+          tokenType == other.tokenType;
+
+@override int get hashCode => Object.hash(reason, expireAt, tokenType);
+
+@override String toString() => 'SecretScanningPushProtectionBypass(reason: $reason, expireAt: $expireAt, tokenType: $tokenType)';
+
  }

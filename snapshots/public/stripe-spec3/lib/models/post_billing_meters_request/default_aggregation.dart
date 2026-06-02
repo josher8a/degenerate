@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('formu
 DefaultAggregation copyWith({Formula? formula}) { return DefaultAggregation(
   formula: formula ?? this.formula,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultAggregation &&
-          formula == other.formula; } 
-@override int get hashCode { return formula.hashCode; } 
-@override String toString() { return 'DefaultAggregation(formula: $formula)'; } 
+          formula == other.formula;
+
+@override int get hashCode => formula.hashCode;
+
+@override String toString() => 'DefaultAggregation(formula: $formula)';
+
  }

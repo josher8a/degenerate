@@ -33,12 +33,15 @@ UrlscannerGetScanResponse2VerdictsOverall copyWith({List<String>? categories, bo
   malicious: malicious ?? this.malicious,
   tags: tags ?? this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2VerdictsOverall &&
           listEquals(categories, other.categories) &&
           hasVerdicts == other.hasVerdicts &&
           malicious == other.malicious &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), hasVerdicts, malicious, Object.hashAll(tags)); } 
-@override String toString() { return 'UrlscannerGetScanResponse2VerdictsOverall(categories: $categories, hasVerdicts: $hasVerdicts, malicious: $malicious, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(Object.hashAll(categories), hasVerdicts, malicious, Object.hashAll(tags));
+
+@override String toString() => 'UrlscannerGetScanResponse2VerdictsOverall(categories: $categories, hasVerdicts: $hasVerdicts, malicious: $malicious, tags: $tags)';
+
  }

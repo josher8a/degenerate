@@ -27,11 +27,14 @@ DiagnosticsChannelEvents copyWith({String? channel, String? message, double? tim
   message: message ?? this.message,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiagnosticsChannelEvents &&
           channel == other.channel &&
           message == other.message &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(channel, message, timestamp); } 
-@override String toString() { return 'DiagnosticsChannelEvents(channel: $channel, message: $message, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(channel, message, timestamp);
+
+@override String toString() => 'DiagnosticsChannelEvents(channel: $channel, message: $message, timestamp: $timestamp)';
+
  }

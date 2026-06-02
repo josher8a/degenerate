@@ -30,11 +30,14 @@ ReposCreateDeployKeyRequest copyWith({String? Function()? title, String? key, bo
   key: key ?? this.key,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeployKeyRequest &&
           title == other.title &&
           key == other.key &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(title, key, readOnly); } 
-@override String toString() { return 'ReposCreateDeployKeyRequest(title: $title, key: $key, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(title, key, readOnly);
+
+@override String toString() => 'ReposCreateDeployKeyRequest(title: $title, key: $key, readOnly: $readOnly)';
+
  }

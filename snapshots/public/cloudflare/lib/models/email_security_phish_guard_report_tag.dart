@@ -21,10 +21,13 @@ EmailSecurityPhishGuardReportTag copyWith({String? category, String? value, }) {
   category: category ?? this.category,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPhishGuardReportTag &&
           category == other.category &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(category, value); } 
-@override String toString() { return 'EmailSecurityPhishGuardReportTag(category: $category, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(category, value);
+
+@override String toString() => 'EmailSecurityPhishGuardReportTag(category: $category, value: $value)';
+
  }

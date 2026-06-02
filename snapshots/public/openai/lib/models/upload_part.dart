@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UploadPartObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UploadPartObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UploadPartObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UploadPartObject($value)';
+
  }
 /// The upload Part represents a chunk of bytes we can add to an Upload object.
 /// 
@@ -61,12 +64,15 @@ UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObj
   uploadId: uploadId ?? this.uploadId,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UploadPart &&
           id == other.id &&
           createdAt == other.createdAt &&
           uploadId == other.uploadId &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, createdAt, uploadId, object); } 
-@override String toString() { return 'UploadPart(id: $id, createdAt: $createdAt, uploadId: $uploadId, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(id, createdAt, uploadId, object);
+
+@override String toString() => 'UploadPart(id: $id, createdAt: $createdAt, uploadId: $uploadId, object: $object)';
+
  }

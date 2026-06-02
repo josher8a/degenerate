@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TreasuryFinancialAccountsResourceStatusDetails copyWith({TreasuryFinancialAccountsResourceClosedStatusDetails? Function()? closed}) { return TreasuryFinancialAccountsResourceStatusDetails(
   closed: closed != null ? closed() : this.closed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceStatusDetails &&
-          closed == other.closed; } 
-@override int get hashCode { return closed.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceStatusDetails(closed: $closed)'; } 
+          closed == other.closed;
+
+@override int get hashCode => closed.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourceStatusDetails(closed: $closed)';
+
  }

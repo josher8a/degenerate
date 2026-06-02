@@ -124,7 +124,7 @@ EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comme
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateAllowPolicyResponseResult &&
           comments == other.comments &&
           isAcceptableSender == other.isAcceptableSender &&
@@ -139,7 +139,10 @@ EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comme
           verifySender == other.verifySender &&
           createdAt == other.createdAt &&
           id == other.id &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, createdAt, id, lastModified); } 
-@override String toString() { return 'EmailSecurityCreateAllowPolicyResponseResult(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, createdAt: $createdAt, id: $id, lastModified: $lastModified)'; } 
+          lastModified == other.lastModified;
+
+@override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, createdAt, id, lastModified);
+
+@override String toString() => 'EmailSecurityCreateAllowPolicyResponseResult(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
+
  }

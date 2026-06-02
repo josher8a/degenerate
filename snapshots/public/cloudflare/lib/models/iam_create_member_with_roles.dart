@@ -27,11 +27,14 @@ IamCreateMemberWithRoles copyWith({IamEmail? email, List<IamRoleComponentsSchema
   roles: roles ?? this.roles,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateMemberWithRoles &&
           email == other.email &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(email, Object.hashAll(roles), status); } 
-@override String toString() { return 'IamCreateMemberWithRoles(email: $email, roles: $roles, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(email, Object.hashAll(roles), status);
+
+@override String toString() => 'IamCreateMemberWithRoles(email: $email, roles: $roles, status: $status)';
+
  }

@@ -27,11 +27,14 @@ Schema copyWith({List<AiSearchInstanceChangeJobStatusResponse400Errors>? errors,
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Schema &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'Schema(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'Schema(errors: $errors, result: $result, success: $success)';
+
  }

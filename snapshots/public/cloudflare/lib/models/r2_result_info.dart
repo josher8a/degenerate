@@ -26,10 +26,13 @@ R2ResultInfo copyWith({String? Function()? cursor, double? Function()? perPage, 
   cursor: cursor != null ? cursor() : this.cursor,
   perPage: perPage != null ? perPage() : this.perPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ResultInfo &&
           cursor == other.cursor &&
-          perPage == other.perPage; } 
-@override int get hashCode { return Object.hash(cursor, perPage); } 
-@override String toString() { return 'R2ResultInfo(cursor: $cursor, perPage: $perPage)'; } 
+          perPage == other.perPage;
+
+@override int get hashCode => Object.hash(cursor, perPage);
+
+@override String toString() => 'R2ResultInfo(cursor: $cursor, perPage: $perPage)';
+
  }

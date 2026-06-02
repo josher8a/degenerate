@@ -21,31 +21,36 @@ final class CodespacesCheckPermissionsForDevcontainerError$401 extends Codespace
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$403 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$404 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$422 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$503 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$503(this.error);
 
 final CodespacesCheckPermissionsForDevcontainerResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodespacesCheckPermissionsForDevcontainerError$Unknown extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError$Unknown(this.statusCode, this.rawBody, );
 

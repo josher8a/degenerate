@@ -43,11 +43,14 @@ PaymentMethodOptionsAfterpayClearpay copyWith({CheckoutAffirmPaymentMethodOption
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsAfterpayClearpay &&
           captureMethod == other.captureMethod &&
           reference == other.reference &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, reference, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsAfterpayClearpay(captureMethod: $captureMethod, reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, reference, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsAfterpayClearpay(captureMethod: $captureMethod, reference: $reference, setupFutureUsage: $setupFutureUsage)';
+
  }

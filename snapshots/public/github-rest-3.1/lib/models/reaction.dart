@@ -41,13 +41,16 @@ Reaction copyWith({int? id, String? nodeId, SimpleUser? Function()? user, Reacti
   content: content ?? this.content,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Reaction &&
           id == other.id &&
           nodeId == other.nodeId &&
           user == other.user &&
           content == other.content &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, user, content, createdAt); } 
-@override String toString() { return 'Reaction(id: $id, nodeId: $nodeId, user: $user, content: $content, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, nodeId, user, content, createdAt);
+
+@override String toString() => 'Reaction(id: $id, nodeId: $nodeId, user: $user, content: $content, createdAt: $createdAt)';
+
  }

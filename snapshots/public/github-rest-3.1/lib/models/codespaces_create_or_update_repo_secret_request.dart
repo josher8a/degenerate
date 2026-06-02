@@ -29,10 +29,13 @@ CodespacesCreateOrUpdateRepoSecretRequest copyWith({String? Function()? encrypte
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateOrUpdateRepoSecretRequest &&
           encryptedValue == other.encryptedValue &&
-          keyId == other.keyId; } 
-@override int get hashCode { return Object.hash(encryptedValue, keyId); } 
-@override String toString() { return 'CodespacesCreateOrUpdateRepoSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId)'; } 
+          keyId == other.keyId;
+
+@override int get hashCode => Object.hash(encryptedValue, keyId);
+
+@override String toString() => 'CodespacesCreateOrUpdateRepoSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId)';
+
  }

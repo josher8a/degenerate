@@ -43,14 +43,17 @@ WebhookPing copyWith({WebhookPingHook? Function()? hook, int? Function()? hookId
   sender: sender != null ? sender() : this.sender,
   zen: zen != null ? zen() : this.zen,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPing &&
           hook == other.hook &&
           hookId == other.hookId &&
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          zen == other.zen; } 
-@override int get hashCode { return Object.hash(hook, hookId, organization, repository, sender, zen); } 
-@override String toString() { return 'WebhookPing(hook: $hook, hookId: $hookId, organization: $organization, repository: $repository, sender: $sender, zen: $zen)'; } 
+          zen == other.zen;
+
+@override int get hashCode => Object.hash(hook, hookId, organization, repository, sender, zen);
+
+@override String toString() => 'WebhookPing(hook: $hook, hookId: $hookId, organization: $organization, repository: $repository, sender: $sender, zen: $zen)';
+
  }

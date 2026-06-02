@@ -22,10 +22,13 @@ R2DataCatalogCatalogMaintenanceConfigResponse copyWith({R2DataCatalogCredentialS
   credentialStatus: credentialStatus ?? this.credentialStatus,
   maintenanceConfig: maintenanceConfig ?? this.maintenanceConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogMaintenanceConfigResponse &&
           credentialStatus == other.credentialStatus &&
-          maintenanceConfig == other.maintenanceConfig; } 
-@override int get hashCode { return Object.hash(credentialStatus, maintenanceConfig); } 
-@override String toString() { return 'R2DataCatalogCatalogMaintenanceConfigResponse(credentialStatus: $credentialStatus, maintenanceConfig: $maintenanceConfig)'; } 
+          maintenanceConfig == other.maintenanceConfig;
+
+@override int get hashCode => Object.hash(credentialStatus, maintenanceConfig);
+
+@override String toString() => 'R2DataCatalogCatalogMaintenanceConfigResponse(credentialStatus: $credentialStatus, maintenanceConfig: $maintenanceConfig)';
+
  }

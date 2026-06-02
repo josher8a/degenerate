@@ -28,10 +28,13 @@ SecretsStoreCreateStoreObjectSystem copyWith({int? accountId, SecretsStoreStoreN
   accountId: accountId ?? this.accountId,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreCreateStoreObjectSystem &&
           accountId == other.accountId &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(accountId, name); } 
-@override String toString() { return 'SecretsStoreCreateStoreObjectSystem(accountId: $accountId, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(accountId, name);
+
+@override String toString() => 'SecretsStoreCreateStoreObjectSystem(accountId: $accountId, name: $name)';
+
  }

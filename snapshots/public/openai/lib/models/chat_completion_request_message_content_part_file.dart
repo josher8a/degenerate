@@ -24,10 +24,13 @@ ChatCompletionRequestMessageContentPartFile copyWith({ChatCompletionRequestMessa
   type: type ?? this.type,
   file: file ?? this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartFile &&
           type == other.type &&
-          file == other.file; } 
-@override int get hashCode { return Object.hash(type, file); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartFile(type: $type, file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => Object.hash(type, file);
+
+@override String toString() => 'ChatCompletionRequestMessageContentPartFile(type: $type, file: $file)';
+
  }

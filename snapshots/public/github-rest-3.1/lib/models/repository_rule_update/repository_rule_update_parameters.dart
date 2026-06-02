@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('updat
 RepositoryRuleUpdateParameters copyWith({bool? updateAllowsFetchAndMerge}) { return RepositoryRuleUpdateParameters(
   updateAllowsFetchAndMerge: updateAllowsFetchAndMerge ?? this.updateAllowsFetchAndMerge,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleUpdateParameters &&
-          updateAllowsFetchAndMerge == other.updateAllowsFetchAndMerge; } 
-@override int get hashCode { return updateAllowsFetchAndMerge.hashCode; } 
-@override String toString() { return 'RepositoryRuleUpdateParameters(updateAllowsFetchAndMerge: $updateAllowsFetchAndMerge)'; } 
+          updateAllowsFetchAndMerge == other.updateAllowsFetchAndMerge;
+
+@override int get hashCode => updateAllowsFetchAndMerge.hashCode;
+
+@override String toString() => 'RepositoryRuleUpdateParameters(updateAllowsFetchAndMerge: $updateAllowsFetchAndMerge)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 UrlscannerCreateScanBulkResponseOptions copyWith({String? Function()? useragent}) { return UrlscannerCreateScanBulkResponseOptions(
   useragent: useragent != null ? useragent() : this.useragent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanBulkResponseOptions &&
-          useragent == other.useragent; } 
-@override int get hashCode { return useragent.hashCode; } 
-@override String toString() { return 'UrlscannerCreateScanBulkResponseOptions(useragent: $useragent)'; } 
+          useragent == other.useragent;
+
+@override int get hashCode => useragent.hashCode;
+
+@override String toString() => 'UrlscannerCreateScanBulkResponseOptions(useragent: $useragent)';
+
  }

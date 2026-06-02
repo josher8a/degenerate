@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsRequestUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsRequestUsage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostSetupIntentsRequestUsage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostSetupIntentsRequestUsage($value)';
+
  }
 @immutable final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachToSelf, this.automaticPaymentMethods, this.confirm, this.confirmationToken, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.mandateData, this.metadata, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.returnUrl, this.singleUse, this.usage, this.useStripeSdk, });
 
@@ -207,7 +210,7 @@ PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPayme
   usage: usage != null ? usage() : this.usage,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsRequest &&
           attachToSelf == other.attachToSelf &&
           automaticPaymentMethods == other.automaticPaymentMethods &&
@@ -230,7 +233,10 @@ PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPayme
           returnUrl == other.returnUrl &&
           singleUse == other.singleUse &&
           usage == other.usage &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hashAll([attachToSelf, automaticPaymentMethods, confirm, confirmationToken, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), Object.hashAll(flowDirections ?? const []), mandateData, metadata, onBehalfOf, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), returnUrl, singleUse, usage, useStripeSdk]); } 
-@override String toString() { return 'PostSetupIntentsRequest(attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, confirm: $confirm, confirmationToken: $confirmationToken, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, flowDirections: $flowDirections, mandateData: $mandateData, metadata: $metadata, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, returnUrl: $returnUrl, singleUse: $singleUse, usage: $usage, useStripeSdk: $useStripeSdk)'; } 
+          useStripeSdk == other.useStripeSdk;
+
+@override int get hashCode => Object.hashAll([attachToSelf, automaticPaymentMethods, confirm, confirmationToken, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(expand ?? const []), Object.hashAll(flowDirections ?? const []), mandateData, metadata, onBehalfOf, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), returnUrl, singleUse, usage, useStripeSdk]);
+
+@override String toString() => 'PostSetupIntentsRequest(attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, confirm: $confirm, confirmationToken: $confirmationToken, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, flowDirections: $flowDirections, mandateData: $mandateData, metadata: $metadata, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, returnUrl: $returnUrl, singleUse: $singleUse, usage: $usage, useStripeSdk: $useStripeSdk)';
+
  }

@@ -40,10 +40,13 @@ PaymentFlowsPaymentDetails copyWith({String? Function()? customerReference, Stri
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPaymentDetails &&
           customerReference == other.customerReference &&
-          orderReference == other.orderReference; } 
-@override int get hashCode { return Object.hash(customerReference, orderReference); } 
-@override String toString() { return 'PaymentFlowsPaymentDetails(customerReference: $customerReference, orderReference: $orderReference)'; } 
+          orderReference == other.orderReference;
+
+@override int get hashCode => Object.hash(customerReference, orderReference);
+
+@override String toString() => 'PaymentFlowsPaymentDetails(customerReference: $customerReference, orderReference: $orderReference)';
+
  }

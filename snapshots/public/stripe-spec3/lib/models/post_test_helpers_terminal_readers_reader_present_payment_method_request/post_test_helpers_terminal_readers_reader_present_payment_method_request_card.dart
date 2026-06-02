@@ -41,12 +41,15 @@ PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard copyWith({St
   expYear: expYear ?? this.expYear,
   number: number ?? this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard &&
           cvc == other.cvc &&
           expMonth == other.expMonth &&
           expYear == other.expYear &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(cvc, expMonth, expYear, number); } 
-@override String toString() { return 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(cvc: $cvc, expMonth: $expMonth, expYear: $expYear, number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => Object.hash(cvc, expMonth, expYear, number);
+
+@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestCard(cvc: $cvc, expMonth: $expMonth, expYear: $expYear, number: $number)';
+
  }

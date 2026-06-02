@@ -22,10 +22,13 @@ UsersListAttestationsBulkResponse copyWith({Map<String, List<AttestationsSubject
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersListAttestationsBulkResponse &&
           attestationsSubjectDigests == other.attestationsSubjectDigests &&
-          pageInfo == other.pageInfo; } 
-@override int get hashCode { return Object.hash(attestationsSubjectDigests, pageInfo); } 
-@override String toString() { return 'UsersListAttestationsBulkResponse(attestationsSubjectDigests: $attestationsSubjectDigests, pageInfo: $pageInfo)'; } 
+          pageInfo == other.pageInfo;
+
+@override int get hashCode => Object.hash(attestationsSubjectDigests, pageInfo);
+
+@override String toString() => 'UsersListAttestationsBulkResponse(attestationsSubjectDigests: $attestationsSubjectDigests, pageInfo: $pageInfo)';
+
  }

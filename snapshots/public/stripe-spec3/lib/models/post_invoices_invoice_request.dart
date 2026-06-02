@@ -191,7 +191,7 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceRequest &&
           accountTaxIds == other.accountTaxIds &&
           applicationFeeAmount == other.applicationFeeAmount &&
@@ -219,7 +219,10 @@ PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Fu
           shippingCost == other.shippingCost &&
           shippingDetails == other.shippingDetails &&
           statementDescriptor == other.statementDescriptor &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, customFields, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, issuer, metadata, number, onBehalfOf, paymentSettings, rendering, shippingCost, shippingDetails, statementDescriptor, transferData]); } 
-@override String toString() { return 'PostInvoicesInvoiceRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, customFields: $customFields, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, customFields, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, issuer, metadata, number, onBehalfOf, paymentSettings, rendering, shippingCost, shippingDetails, statementDescriptor, transferData]);
+
+@override String toString() => 'PostInvoicesInvoiceRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, customFields: $customFields, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)';
+
  }

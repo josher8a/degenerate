@@ -20,10 +20,13 @@ RealtimekitParticipantPeerStatsPeerStatsEvents copyWith({String? Function()? tim
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsEvents &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsEvents(timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(timestamp, type);
+
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsEvents(timestamp: $timestamp, type: $type)';
+
  }

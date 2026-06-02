@@ -62,7 +62,7 @@ ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, S
   origin: origin ?? this.origin,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldDiscoveryOperation &&
           endpoint == other.endpoint &&
           host == other.host &&
@@ -71,7 +71,10 @@ ShieldDiscoveryOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, S
           id == other.id &&
           lastUpdated == other.lastUpdated &&
           listEquals(origin, other.origin) &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(endpoint, host, method, features, id, lastUpdated, Object.hashAll(origin), state); } 
-@override String toString() { return 'ShieldDiscoveryOperation(endpoint: $endpoint, host: $host, method: $method, features: $features, id: $id, lastUpdated: $lastUpdated, origin: $origin, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(endpoint, host, method, features, id, lastUpdated, Object.hashAll(origin), state);
+
+@override String toString() => 'ShieldDiscoveryOperation(endpoint: $endpoint, host: $host, method: $method, features: $features, id: $id, lastUpdated: $lastUpdated, origin: $origin, state: $state)';
+
  }

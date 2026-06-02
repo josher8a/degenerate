@@ -32,10 +32,13 @@ RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0 copyWith({String? notSu
   notSupported: notSupported ?? this.notSupported,
   supported: supported ?? this.supported,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0 &&
           notSupported == other.notSupported &&
-          supported == other.supported; } 
-@override int get hashCode { return Object.hash(notSupported, supported); } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0(notSupported: $notSupported, supported: $supported)'; } 
+          supported == other.supported;
+
+@override int get hashCode => Object.hash(notSupported, supported);
+
+@override String toString() => 'RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0(notSupported: $notSupported, supported: $supported)';
+
  }

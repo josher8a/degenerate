@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestDequeuedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestDequeuedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestDequeuedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestDequeuedAction($value)';
+
  }
 @immutable final class WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason._(this.value);
 
@@ -70,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestDequeuedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestDequeuedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestDequeuedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestDequeuedReason($value)';
+
  }
 @immutable final class WebhookPullRequestDequeued {const WebhookPullRequestDequeued({required this.action, required this.number, required this.pullRequest, required this.reason, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -135,7 +141,7 @@ WebhookPullRequestDequeued copyWith({WebhookPullRequestDequeuedAction? action, E
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestDequeued &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -145,7 +151,10 @@ WebhookPullRequestDequeued copyWith({WebhookPullRequestDequeuedAction? action, E
           pullRequest == other.pullRequest &&
           reason == other.reason &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, number, organization, pullRequest, reason, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestDequeued(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, reason: $reason, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, number, organization, pullRequest, reason, repository, sender);
+
+@override String toString() => 'WebhookPullRequestDequeued(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, reason: $reason, repository: $repository, sender: $sender)';
+
  }

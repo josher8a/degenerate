@@ -40,11 +40,14 @@ PaymentFlowsAmountDetailsResourceShipping copyWith({int? Function()? amount, Str
   fromPostalCode: fromPostalCode != null ? fromPostalCode() : this.fromPostalCode,
   toPostalCode: toPostalCode != null ? toPostalCode() : this.toPostalCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceShipping &&
           amount == other.amount &&
           fromPostalCode == other.fromPostalCode &&
-          toPostalCode == other.toPostalCode; } 
-@override int get hashCode { return Object.hash(amount, fromPostalCode, toPostalCode); } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceShipping(amount: $amount, fromPostalCode: $fromPostalCode, toPostalCode: $toPostalCode)'; } 
+          toPostalCode == other.toPostalCode;
+
+@override int get hashCode => Object.hash(amount, fromPostalCode, toPostalCode);
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceShipping(amount: $amount, fromPostalCode: $fromPostalCode, toPostalCode: $toPostalCode)';
+
  }

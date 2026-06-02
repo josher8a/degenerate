@@ -34,12 +34,15 @@ UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest copyWith({FirewallUaCo
   mode: mode ?? this.mode,
   paused: paused != null ? paused() : this.paused,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest &&
           configuration == other.configuration &&
           description == other.description &&
           mode == other.mode &&
-          paused == other.paused; } 
-@override int get hashCode { return Object.hash(configuration, description, mode, paused); } 
-@override String toString() { return 'UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, mode: $mode, paused: $paused)'; } 
+          paused == other.paused;
+
+@override int get hashCode => Object.hash(configuration, description, mode, paused);
+
+@override String toString() => 'UserAgentBlockingRulesCreateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, mode: $mode, paused: $paused)';
+
  }

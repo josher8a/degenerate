@@ -17,7 +17,8 @@ final class SlurperCreateJobError$409 extends SlurperCreateJobError {const Slurp
 
 final Failure2 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class SlurperCreateJobError$Unknown extends SlurperCreateJobError {const SlurperCreateJobError$Unknown(this.statusCode, this.rawBody, );
 

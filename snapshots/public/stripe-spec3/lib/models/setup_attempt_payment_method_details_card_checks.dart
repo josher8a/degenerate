@@ -44,11 +44,14 @@ SetupAttemptPaymentMethodDetailsCardChecks copyWith({String? Function()? address
   addressPostalCodeCheck: addressPostalCodeCheck != null ? addressPostalCodeCheck() : this.addressPostalCodeCheck,
   cvcCheck: cvcCheck != null ? cvcCheck() : this.cvcCheck,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsCardChecks &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
-          cvcCheck == other.cvcCheck; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardChecks(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck)'; } 
+          cvcCheck == other.cvcCheck;
+
+@override int get hashCode => Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck);
+
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCardChecks(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck)';
+
  }

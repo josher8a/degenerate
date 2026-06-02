@@ -105,7 +105,7 @@ PatchTagUpdateResponse copyWith({String? Function()? activeDuration, String? Fun
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchTagUpdateResponse &&
           activeDuration == other.activeDuration &&
           actorCategory == other.actorCategory &&
@@ -124,7 +124,10 @@ PatchTagUpdateResponse copyWith({String? Function()? activeDuration, String? Fun
           priority == other.priority &&
           sophisticationLevel == other.sophisticationLevel &&
           uuid == other.uuid &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryName, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, uuid, value); } 
-@override String toString() { return 'PatchTagUpdateResponse(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryName: $categoryName, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, uuid: $uuid, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryName, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, uuid, value);
+
+@override String toString() => 'PatchTagUpdateResponse(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryName: $categoryName, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, uuid: $uuid, value: $value)';
+
  }

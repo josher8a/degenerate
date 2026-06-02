@@ -117,7 +117,7 @@ IssuingAuthorizationMerchantData copyWith({String? category, String? categoryCod
   terminalId: terminalId != null ? terminalId() : this.terminalId,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationMerchantData &&
           category == other.category &&
           categoryCode == other.categoryCode &&
@@ -129,7 +129,10 @@ IssuingAuthorizationMerchantData copyWith({String? category, String? categoryCod
           state == other.state &&
           taxId == other.taxId &&
           terminalId == other.terminalId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(category, categoryCode, city, country, name, networkId, postalCode, state, taxId, terminalId, url); } 
-@override String toString() { return 'IssuingAuthorizationMerchantData(category: $category, categoryCode: $categoryCode, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, taxId: $taxId, terminalId: $terminalId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(category, categoryCode, city, country, name, networkId, postalCode, state, taxId, terminalId, url);
+
+@override String toString() => 'IssuingAuthorizationMerchantData(category: $category, categoryCode: $categoryCode, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, taxId: $taxId, terminalId: $terminalId, url: $url)';
+
  }

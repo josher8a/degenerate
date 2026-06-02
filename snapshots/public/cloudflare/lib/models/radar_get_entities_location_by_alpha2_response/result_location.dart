@@ -74,7 +74,7 @@ ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent
   region: region ?? this.region,
   subregion: subregion ?? this.subregion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultLocation &&
           alpha2 == other.alpha2 &&
           confidenceLevel == other.confidenceLevel &&
@@ -83,7 +83,10 @@ ResultLocation copyWith({String? alpha2, int? confidenceLevel, String? continent
           longitude == other.longitude &&
           name == other.name &&
           region == other.region &&
-          subregion == other.subregion; } 
-@override int get hashCode { return Object.hash(alpha2, confidenceLevel, continent, latitude, longitude, name, region, subregion); } 
-@override String toString() { return 'ResultLocation(alpha2: $alpha2, confidenceLevel: $confidenceLevel, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)'; } 
+          subregion == other.subregion;
+
+@override int get hashCode => Object.hash(alpha2, confidenceLevel, continent, latitude, longitude, name, region, subregion);
+
+@override String toString() => 'ResultLocation(alpha2: $alpha2, confidenceLevel: $confidenceLevel, continent: $continent, latitude: $latitude, longitude: $longitude, name: $name, region: $region, subregion: $subregion)';
+
  }

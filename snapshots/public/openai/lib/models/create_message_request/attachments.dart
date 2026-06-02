@@ -22,10 +22,13 @@ Attachments copyWith({String? Function()? fileId, List<AttachmentsTools>? Functi
   fileId: fileId != null ? fileId() : this.fileId,
   tools: tools != null ? tools() : this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Attachments &&
           fileId == other.fileId &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(fileId, Object.hashAll(tools ?? const [])); } 
-@override String toString() { return 'Attachments(fileId: $fileId, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(fileId, Object.hashAll(tools ?? const []));
+
+@override String toString() => 'Attachments(fileId: $fileId, tools: $tools)';
+
  }

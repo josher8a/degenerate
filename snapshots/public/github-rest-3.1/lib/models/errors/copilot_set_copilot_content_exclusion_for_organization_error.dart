@@ -22,37 +22,43 @@ final class CopilotSetCopilotContentExclusionForOrganizationError$401 extends Co
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$403 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$404 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$413 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$413(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 413; } 
+@override int get statusCode => 413;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$422 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$500 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CopilotSetCopilotContentExclusionForOrganizationError$Unknown extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError$Unknown(this.statusCode, this.rawBody, );
 

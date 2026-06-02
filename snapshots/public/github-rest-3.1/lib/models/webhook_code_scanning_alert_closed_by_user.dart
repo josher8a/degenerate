@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertClosedByUserAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCodeScanningAlertClosedByUserAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAction($value)';
+
  }
 @immutable final class WebhookCodeScanningAlertClosedByUser {const WebhookCodeScanningAlertClosedByUser({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -84,7 +87,7 @@ WebhookCodeScanningAlertClosedByUser copyWith({WebhookCodeScanningAlertClosedByU
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUser &&
           action == other.action &&
           alert == other.alert &&
@@ -94,7 +97,10 @@ WebhookCodeScanningAlertClosedByUser copyWith({WebhookCodeScanningAlertClosedByU
           organization == other.organization &&
           ref == other.ref &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender); } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUser(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender);
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUser(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ns_po
 TenantMetadataDns copyWith({NsPool? nsPool}) { return TenantMetadataDns(
   nsPool: nsPool ?? this.nsPool,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TenantMetadataDns &&
-          nsPool == other.nsPool; } 
-@override int get hashCode { return nsPool.hashCode; } 
-@override String toString() { return 'TenantMetadataDns(nsPool: $nsPool)'; } 
+          nsPool == other.nsPool;
+
+@override int get hashCode => nsPool.hashCode;
+
+@override String toString() => 'TenantMetadataDns(nsPool: $nsPool)';
+
  }

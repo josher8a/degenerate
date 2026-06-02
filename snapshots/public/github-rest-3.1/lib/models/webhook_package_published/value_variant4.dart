@@ -30,12 +30,15 @@ ValueVariant4 copyWith({String? Function()? url, String? Function()? branch, Str
   commit: commit != null ? commit() : this.commit,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValueVariant4 &&
           url == other.url &&
           branch == other.branch &&
           commit == other.commit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(url, branch, commit, type); } 
-@override String toString() { return 'ValueVariant4(url: $url, branch: $branch, commit: $commit, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(url, branch, commit, type);
+
+@override String toString() => 'ValueVariant4(url: $url, branch: $branch, commit: $commit, type: $type)';
+
  }

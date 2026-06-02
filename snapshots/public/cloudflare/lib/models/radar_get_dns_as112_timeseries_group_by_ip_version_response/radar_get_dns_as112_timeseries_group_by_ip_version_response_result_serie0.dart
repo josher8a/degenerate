@@ -21,10 +21,13 @@ RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0 copyWith({List<St
   iPv4: iPv4 ?? this.iPv4,
   iPv6: iPv6 ?? this.iPv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0 &&
           listEquals(iPv4, other.iPv4) &&
-          listEquals(iPv6, other.iPv6); } 
-@override int get hashCode { return Object.hash(Object.hashAll(iPv4), Object.hashAll(iPv6)); } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0(iPv4: $iPv4, iPv6: $iPv6)'; } 
+          listEquals(iPv6, other.iPv6);
+
+@override int get hashCode => Object.hash(Object.hashAll(iPv4), Object.hashAll(iPv6));
+
+@override String toString() => 'RadarGetDnsAs112TimeseriesGroupByIpVersionResponseResultSerie0(iPv4: $iPv4, iPv6: $iPv6)';
+
  }

@@ -44,13 +44,16 @@ QuotesResourceRecurring copyWith({int? amountSubtotal, int? amountTotal, GetPric
   intervalCount: intervalCount ?? this.intervalCount,
   totalDetails: totalDetails ?? this.totalDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceRecurring &&
           amountSubtotal == other.amountSubtotal &&
           amountTotal == other.amountTotal &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
-          totalDetails == other.totalDetails; } 
-@override int get hashCode { return Object.hash(amountSubtotal, amountTotal, interval, intervalCount, totalDetails); } 
-@override String toString() { return 'QuotesResourceRecurring(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, interval: $interval, intervalCount: $intervalCount, totalDetails: $totalDetails)'; } 
+          totalDetails == other.totalDetails;
+
+@override int get hashCode => Object.hash(amountSubtotal, amountTotal, interval, intervalCount, totalDetails);
+
+@override String toString() => 'QuotesResourceRecurring(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, interval: $interval, intervalCount: $intervalCount, totalDetails: $totalDetails)';
+
  }

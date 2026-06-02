@@ -88,7 +88,7 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
   idleTimeoutMs: idleTimeoutMs != null ? idleTimeoutMs() : this.idleTimeoutMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ServerVad &&
           type == other.type &&
           threshold == other.threshold &&
@@ -96,7 +96,10 @@ ServerVad copyWith({String? type, double? Function()? threshold, int? Function()
           silenceDurationMs == other.silenceDurationMs &&
           createResponse == other.createResponse &&
           interruptResponse == other.interruptResponse &&
-          idleTimeoutMs == other.idleTimeoutMs; } 
-@override int get hashCode { return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs, createResponse, interruptResponse, idleTimeoutMs); } 
-@override String toString() { return 'ServerVad(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, createResponse: $createResponse, interruptResponse: $interruptResponse, idleTimeoutMs: $idleTimeoutMs)'; } 
+          idleTimeoutMs == other.idleTimeoutMs;
+
+@override int get hashCode => Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs, createResponse, interruptResponse, idleTimeoutMs);
+
+@override String toString() => 'ServerVad(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs, createResponse: $createResponse, interruptResponse: $interruptResponse, idleTimeoutMs: $idleTimeoutMs)';
+
  }

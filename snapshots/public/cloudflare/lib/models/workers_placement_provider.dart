@@ -25,10 +25,13 @@ WorkersPlacementProvider copyWith({String? id, List<WorkersPlacementRegion>? reg
   id: id ?? this.id,
   regions: regions ?? this.regions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementProvider &&
           id == other.id &&
-          listEquals(regions, other.regions); } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(regions)); } 
-@override String toString() { return 'WorkersPlacementProvider(id: $id, regions: $regions)'; } 
+          listEquals(regions, other.regions);
+
+@override int get hashCode => Object.hash(id, Object.hashAll(regions));
+
+@override String toString() => 'WorkersPlacementProvider(id: $id, regions: $regions)';
+
  }

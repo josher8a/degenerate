@@ -162,7 +162,7 @@ PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPayme
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   taxIdCollection: taxIdCollection != null ? taxIdCollection() : this.taxIdCollection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequest &&
           active == other.active &&
           afterCompletion == other.afterCompletion &&
@@ -187,7 +187,10 @@ PostPaymentLinksPaymentLinkRequest copyWith({bool? Function()? active, PostPayme
           shippingAddressCollection == other.shippingAddressCollection &&
           submitType == other.submitType &&
           subscriptionData == other.subscriptionData &&
-          taxIdCollection == other.taxIdCollection; } 
-@override int get hashCode { return Object.hashAll([active, afterCompletion, allowPromotionCodes, automaticTax, billingAddressCollection, customFields, customText, customerCreation, Object.hashAll(expand ?? const []), inactiveMessage, invoiceCreation, Object.hashAll(lineItems ?? const []), metadata, nameCollection, optionalItems, paymentIntentData, paymentMethodCollection, paymentMethodTypes, phoneNumberCollection, restrictions, shippingAddressCollection, submitType, subscriptionData, taxIdCollection]); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequest(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, expand: $expand, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, metadata: $metadata, nameCollection: $nameCollection, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection)'; } 
+          taxIdCollection == other.taxIdCollection;
+
+@override int get hashCode => Object.hashAll([active, afterCompletion, allowPromotionCodes, automaticTax, billingAddressCollection, customFields, customText, customerCreation, Object.hashAll(expand ?? const []), inactiveMessage, invoiceCreation, Object.hashAll(lineItems ?? const []), metadata, nameCollection, optionalItems, paymentIntentData, paymentMethodCollection, paymentMethodTypes, phoneNumberCollection, restrictions, shippingAddressCollection, submitType, subscriptionData, taxIdCollection]);
+
+@override String toString() => 'PostPaymentLinksPaymentLinkRequest(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, expand: $expand, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, metadata: $metadata, nameCollection: $nameCollection, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection)';
+
  }

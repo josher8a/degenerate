@@ -57,13 +57,16 @@ DlpNewDataset copyWith({bool? Function()? caseSensitive, String? Function()? des
   name: name ?? this.name,
   secret: secret != null ? secret() : this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewDataset &&
           caseSensitive == other.caseSensitive &&
           description == other.description &&
           encodingVersion == other.encodingVersion &&
           name == other.name &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(caseSensitive, description, encodingVersion, name, secret); } 
-@override String toString() { return 'DlpNewDataset(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(caseSensitive, description, encodingVersion, name, secret);
+
+@override String toString() => 'DlpNewDataset(caseSensitive: $caseSensitive, description: $description, encodingVersion: $encodingVersion, name: $name, secret: $secret)';
+
  }

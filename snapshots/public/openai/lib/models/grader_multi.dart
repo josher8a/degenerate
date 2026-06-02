@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderMultiType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderMultiType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GraderMultiType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GraderMultiType($value)';
+
  }
 /// A MultiGrader object combines the output of multiple graders to produce a single score.
 @immutable final class GraderMulti {const GraderMulti({required this.name, required this.graders, required this.calculateOutput, this.type = GraderMultiType.multi, });
@@ -59,12 +62,15 @@ GraderMulti copyWith({GraderMultiType? type, String? name, Graders? graders, Str
   graders: graders ?? this.graders,
   calculateOutput: calculateOutput ?? this.calculateOutput,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GraderMulti &&
           type == other.type &&
           name == other.name &&
           graders == other.graders &&
-          calculateOutput == other.calculateOutput; } 
-@override int get hashCode { return Object.hash(type, name, graders, calculateOutput); } 
-@override String toString() { return 'GraderMulti(type: $type, name: $name, graders: $graders, calculateOutput: $calculateOutput)'; } 
+          calculateOutput == other.calculateOutput;
+
+@override int get hashCode => Object.hash(type, name, graders, calculateOutput);
+
+@override String toString() => 'GraderMulti(type: $type, name: $name, graders: $graders, calculateOutput: $calculateOutput)';
+
  }

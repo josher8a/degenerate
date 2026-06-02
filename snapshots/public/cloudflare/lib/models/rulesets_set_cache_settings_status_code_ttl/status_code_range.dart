@@ -40,10 +40,13 @@ StatusCodeRange copyWith({int? Function()? from, int? Function()? to, }) { retur
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusCodeRange &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'StatusCodeRange(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'StatusCodeRange(from: $from, to: $to)';
+
  }

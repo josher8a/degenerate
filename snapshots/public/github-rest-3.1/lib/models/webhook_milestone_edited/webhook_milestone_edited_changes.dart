@@ -26,11 +26,14 @@ WebhookMilestoneEditedChanges copyWith({WebhookLabelEditedChangesDescription? Fu
   dueOn: dueOn != null ? dueOn() : this.dueOn,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMilestoneEditedChanges &&
           description == other.description &&
           dueOn == other.dueOn &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, dueOn, title); } 
-@override String toString() { return 'WebhookMilestoneEditedChanges(description: $description, dueOn: $dueOn, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(description, dueOn, title);
+
+@override String toString() => 'WebhookMilestoneEditedChanges(description: $description, dueOn: $dueOn, title: $title)';
+
  }

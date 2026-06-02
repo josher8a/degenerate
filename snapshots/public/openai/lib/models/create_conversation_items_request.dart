@@ -21,9 +21,12 @@ return errors; }
 CreateConversationItemsRequest copyWith({List<InputItem>? items}) { return CreateConversationItemsRequest(
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateConversationItemsRequest &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hashAll(items); } 
-@override String toString() { return 'CreateConversationItemsRequest(items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hashAll(items);
+
+@override String toString() => 'CreateConversationItemsRequest(items: $items)';
+
  }

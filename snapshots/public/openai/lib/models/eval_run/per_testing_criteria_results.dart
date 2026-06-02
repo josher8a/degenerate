@@ -30,11 +30,14 @@ PerTestingCriteriaResults copyWith({String? testingCriteria, int? passed, int? f
   passed: passed ?? this.passed,
   failed: failed ?? this.failed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PerTestingCriteriaResults &&
           testingCriteria == other.testingCriteria &&
           passed == other.passed &&
-          failed == other.failed; } 
-@override int get hashCode { return Object.hash(testingCriteria, passed, failed); } 
-@override String toString() { return 'PerTestingCriteriaResults(testingCriteria: $testingCriteria, passed: $passed, failed: $failed)'; } 
+          failed == other.failed;
+
+@override int get hashCode => Object.hash(testingCriteria, passed, failed);
+
+@override String toString() => 'PerTestingCriteriaResults(testingCriteria: $testingCriteria, passed: $passed, failed: $failed)';
+
  }

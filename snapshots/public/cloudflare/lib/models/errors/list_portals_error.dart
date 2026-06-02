@@ -17,7 +17,8 @@ final class ListPortalsError$400 extends ListPortalsError {const ListPortalsErro
 
 final ListPortalsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ListPortalsError$Unknown extends ListPortalsError {const ListPortalsError$Unknown(this.statusCode, this.rawBody, );
 

@@ -72,7 +72,7 @@ SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColum
   timeIntervals: timeIntervals != null ? timeIntervals() : this.timeIntervals,
   totals: totals ?? this.totals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQueryResponseSingleResult &&
           listEquals(data, other.data) &&
           dataLag == other.dataLag &&
@@ -81,7 +81,10 @@ SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColum
           query == other.query &&
           rows == other.rows &&
           listEquals(timeIntervals, other.timeIntervals) &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, Object.hashAll(timeIntervals ?? const []), totals); } 
-@override String toString() { return 'SpectrumAnalyticsQueryResponseSingleResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, timeIntervals: $timeIntervals, totals: $totals)'; } 
+          totals == other.totals;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, Object.hashAll(timeIntervals ?? const []), totals);
+
+@override String toString() => 'SpectrumAnalyticsQueryResponseSingleResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, timeIntervals: $timeIntervals, totals: $totals)';
+
  }

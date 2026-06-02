@@ -65,7 +65,7 @@ SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? a
   secretScanningDelegatedBypass: secretScanningDelegatedBypass != null ? secretScanningDelegatedBypass() : this.secretScanningDelegatedBypass,
   secretScanningDelegatedBypassOptions: secretScanningDelegatedBypassOptions != null ? secretScanningDelegatedBypassOptions() : this.secretScanningDelegatedBypassOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityAndAnalysis &&
           advancedSecurity == other.advancedSecurity &&
           codeSecurity == other.codeSecurity &&
@@ -76,7 +76,10 @@ SecurityAndAnalysis copyWith({SecurityAndAnalysisAdvancedSecurity? Function()? a
           secretScanningAiDetection == other.secretScanningAiDetection &&
           secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
           secretScanningDelegatedBypass == other.secretScanningDelegatedBypass &&
-          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions; } 
-@override int get hashCode { return Object.hash(advancedSecurity, codeSecurity, dependabotSecurityUpdates, secretScanning, secretScanningPushProtection, secretScanningNonProviderPatterns, secretScanningAiDetection, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions); } 
-@override String toString() { return 'SecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependabotSecurityUpdates: $dependabotSecurityUpdates, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningAiDetection: $secretScanningAiDetection, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)'; } 
+          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions;
+
+@override int get hashCode => Object.hash(advancedSecurity, codeSecurity, dependabotSecurityUpdates, secretScanning, secretScanningPushProtection, secretScanningNonProviderPatterns, secretScanningAiDetection, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions);
+
+@override String toString() => 'SecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, dependabotSecurityUpdates: $dependabotSecurityUpdates, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningAiDetection: $secretScanningAiDetection, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)';
+
  }

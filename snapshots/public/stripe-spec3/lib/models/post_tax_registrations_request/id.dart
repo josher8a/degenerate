@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 Id copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type}) { return Id(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Id &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'Id(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'Id(type: $type)';
+
  }

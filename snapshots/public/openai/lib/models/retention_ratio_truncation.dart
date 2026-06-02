@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RetentionRatioTruncationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RetentionRatioTruncationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RetentionRatioTruncationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RetentionRatioTruncationType($value)';
+
  }
 /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.
 @immutable final class RetentionRatioTruncation {const RetentionRatioTruncation({required this.type, required this.retentionRatio, this.tokenLimits, });
@@ -58,11 +61,14 @@ RetentionRatioTruncation copyWith({RetentionRatioTruncationType? type, double? r
   retentionRatio: retentionRatio ?? this.retentionRatio,
   tokenLimits: tokenLimits != null ? tokenLimits() : this.tokenLimits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RetentionRatioTruncation &&
           type == other.type &&
           retentionRatio == other.retentionRatio &&
-          tokenLimits == other.tokenLimits; } 
-@override int get hashCode { return Object.hash(type, retentionRatio, tokenLimits); } 
-@override String toString() { return 'RetentionRatioTruncation(type: $type, retentionRatio: $retentionRatio, tokenLimits: $tokenLimits)'; } 
+          tokenLimits == other.tokenLimits;
+
+@override int get hashCode => Object.hash(type, retentionRatio, tokenLimits);
+
+@override String toString() => 'RetentionRatioTruncation(type: $type, retentionRatio: $retentionRatio, tokenLimits: $tokenLimits)';
+
  }

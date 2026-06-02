@@ -35,12 +35,15 @@ LifecycleHandler copyWith({ExecAction? Function()? exec, HttpGetAction? Function
   sleep: sleep != null ? sleep() : this.sleep,
   tcpSocket: tcpSocket != null ? tcpSocket() : this.tcpSocket,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LifecycleHandler &&
           exec == other.exec &&
           httpGet == other.httpGet &&
           sleep == other.sleep &&
-          tcpSocket == other.tcpSocket; } 
-@override int get hashCode { return Object.hash(exec, httpGet, sleep, tcpSocket); } 
-@override String toString() { return 'LifecycleHandler(exec: $exec, httpGet: $httpGet, sleep: $sleep, tcpSocket: $tcpSocket)'; } 
+          tcpSocket == other.tcpSocket;
+
+@override int get hashCode => Object.hash(exec, httpGet, sleep, tcpSocket);
+
+@override String toString() => 'LifecycleHandler(exec: $exec, httpGet: $httpGet, sleep: $sleep, tcpSocket: $tcpSocket)';
+
  }

@@ -43,12 +43,15 @@ IamRole copyWith({String? description, IamRoleComponentsSchemasIdentifier? id, S
   name: name ?? this.name,
   permissions: permissions ?? this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamRole &&
           description == other.description &&
           id == other.id &&
           name == other.name &&
-          permissions == other.permissions; } 
-@override int get hashCode { return Object.hash(description, id, name, permissions); } 
-@override String toString() { return 'IamRole(description: $description, id: $id, name: $name, permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => Object.hash(description, id, name, permissions);
+
+@override String toString() => 'IamRole(description: $description, id: $id, name: $name, permissions: $permissions)';
+
  }

@@ -41,13 +41,16 @@ ReposDeleteFileRequest copyWith({String? message, String? sha, String? Function(
   committer: committer != null ? committer() : this.committer,
   author: author != null ? author() : this.author,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposDeleteFileRequest &&
           message == other.message &&
           sha == other.sha &&
           branch == other.branch &&
           committer == other.committer &&
-          author == other.author; } 
-@override int get hashCode { return Object.hash(message, sha, branch, committer, author); } 
-@override String toString() { return 'ReposDeleteFileRequest(message: $message, sha: $sha, branch: $branch, committer: $committer, author: $author)'; } 
+          author == other.author;
+
+@override int get hashCode => Object.hash(message, sha, branch, committer, author);
+
+@override String toString() => 'ReposDeleteFileRequest(message: $message, sha: $sha, branch: $branch, committer: $committer, author: $author)';
+
  }

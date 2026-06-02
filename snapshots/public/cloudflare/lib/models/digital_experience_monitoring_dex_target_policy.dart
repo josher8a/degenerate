@@ -27,11 +27,14 @@ DigitalExperienceMonitoringDexTargetPolicy copyWith({bool? Function()? $default,
   id: id ?? this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexTargetPolicy &&
           $default == other.$default &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash($default, id, name); } 
-@override String toString() { return 'DigitalExperienceMonitoringDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash($default, id, name);
+
+@override String toString() => 'DigitalExperienceMonitoringDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)';
+
  }

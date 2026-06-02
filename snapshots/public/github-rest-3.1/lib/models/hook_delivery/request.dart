@@ -23,10 +23,13 @@ Request copyWith({Map<String, dynamic>? Function()? headers, Map<String, dynamic
   headers: headers != null ? headers() : this.headers,
   payload: payload != null ? payload() : this.payload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Request &&
           headers == other.headers &&
-          payload == other.payload; } 
-@override int get hashCode { return Object.hash(headers, payload); } 
-@override String toString() { return 'Request(headers: $headers, payload: $payload)'; } 
+          payload == other.payload;
+
+@override int get hashCode => Object.hash(headers, payload);
+
+@override String toString() => 'Request(headers: $headers, payload: $payload)';
+
  }

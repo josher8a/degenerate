@@ -38,12 +38,15 @@ SampleUsage copyWith({int? totalTokens, int? completionTokens, int? promptTokens
   promptTokens: promptTokens ?? this.promptTokens,
   cachedTokens: cachedTokens ?? this.cachedTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SampleUsage &&
           totalTokens == other.totalTokens &&
           completionTokens == other.completionTokens &&
           promptTokens == other.promptTokens &&
-          cachedTokens == other.cachedTokens; } 
-@override int get hashCode { return Object.hash(totalTokens, completionTokens, promptTokens, cachedTokens); } 
-@override String toString() { return 'SampleUsage(totalTokens: $totalTokens, completionTokens: $completionTokens, promptTokens: $promptTokens, cachedTokens: $cachedTokens)'; } 
+          cachedTokens == other.cachedTokens;
+
+@override int get hashCode => Object.hash(totalTokens, completionTokens, promptTokens, cachedTokens);
+
+@override String toString() => 'SampleUsage(totalTokens: $totalTokens, completionTokens: $completionTokens, promptTokens: $promptTokens, cachedTokens: $cachedTokens)';
+
  }

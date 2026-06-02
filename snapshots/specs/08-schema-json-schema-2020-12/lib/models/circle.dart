@@ -30,11 +30,14 @@ Circle copyWith({dynamic Function()? kind, double? radius, String? Function()? c
   radius: radius ?? this.radius,
   color: color != null ? color() : this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Circle &&
           kind == other.kind &&
           radius == other.radius &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(kind, radius, color); } 
-@override String toString() { return 'Circle(kind: $kind, radius: $radius, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(kind, radius, color);
+
+@override String toString() => 'Circle(kind: $kind, radius: $radius, color: $color)';
+
  }

@@ -50,12 +50,15 @@ PaymentIntentNextActionBoleto copyWith({int? Function()? expiresAt, String? Func
   number: number != null ? number() : this.number,
   pdf: pdf != null ? pdf() : this.pdf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionBoleto &&
           expiresAt == other.expiresAt &&
           hostedVoucherUrl == other.hostedVoucherUrl &&
           number == other.number &&
-          pdf == other.pdf; } 
-@override int get hashCode { return Object.hash(expiresAt, hostedVoucherUrl, number, pdf); } 
-@override String toString() { return 'PaymentIntentNextActionBoleto(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, number: $number, pdf: $pdf)'; } 
+          pdf == other.pdf;
+
+@override int get hashCode => Object.hash(expiresAt, hostedVoucherUrl, number, pdf);
+
+@override String toString() => 'PaymentIntentNextActionBoleto(expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, number: $number, pdf: $pdf)';
+
  }

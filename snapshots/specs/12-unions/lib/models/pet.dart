@@ -26,11 +26,14 @@ Pet copyWith({int? id, String? name, PetStatus? Function()? status, }) { return 
   name: name ?? this.name,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pet &&
           id == other.id &&
           name == other.name &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, name, status); } 
-@override String toString() { return 'Pet(id: $id, name: $name, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, name, status);
+
+@override String toString() => 'Pet(id: $id, name: $name, status: $status)';
+
  }

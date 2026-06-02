@@ -17,7 +17,8 @@ final class AiSearchDeleteInstancesError$404 extends AiSearchDeleteInstancesErro
 
 final AiSearchDeleteInstancesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchDeleteInstancesError$Unknown extends AiSearchDeleteInstancesError {const AiSearchDeleteInstancesError$Unknown(this.statusCode, this.rawBody, );
 

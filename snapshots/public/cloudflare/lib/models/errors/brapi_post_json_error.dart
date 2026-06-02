@@ -20,25 +20,29 @@ final class BrapiPostJsonError$400 extends BrapiPostJsonError {const BrapiPostJs
 
 final BrapiPostJsonResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BrapiPostJsonError$422 extends BrapiPostJsonError {const BrapiPostJsonError$422(this.error);
 
 final BrapiPostJsonResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BrapiPostJsonError$429 extends BrapiPostJsonError {const BrapiPostJsonError$429(this.error);
 
 final BrapiPostJsonResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class BrapiPostJsonError$500 extends BrapiPostJsonError {const BrapiPostJsonError$500(this.error);
 
 final BrapiPostJsonResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BrapiPostJsonError$Unknown extends BrapiPostJsonError {const BrapiPostJsonError$Unknown(this.statusCode, this.rawBody, );
 

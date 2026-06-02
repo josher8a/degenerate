@@ -23,10 +23,13 @@ MessageContentImageFileObject copyWith({MessageContentImageFileObjectType? type,
   type: type ?? this.type,
   imageFile: imageFile ?? this.imageFile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentImageFileObject &&
           type == other.type &&
-          imageFile == other.imageFile; } 
-@override int get hashCode { return Object.hash(type, imageFile); } 
-@override String toString() { return 'MessageContentImageFileObject(type: $type, imageFile: $imageFile)'; } 
+          imageFile == other.imageFile;
+
+@override int get hashCode => Object.hash(type, imageFile);
+
+@override String toString() => 'MessageContentImageFileObject(type: $type, imageFile: $imageFile)';
+
  }

@@ -34,10 +34,13 @@ MagicTransitColo copyWith({MagicTransitColoCity? Function()? city, MagicTransitC
   city: city != null ? city() : this.city,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitColo &&
           city == other.city &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(city, name); } 
-@override String toString() { return 'MagicTransitColo(city: $city, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(city, name);
+
+@override String toString() => 'MagicTransitColo(city: $city, name: $name)';
+
  }

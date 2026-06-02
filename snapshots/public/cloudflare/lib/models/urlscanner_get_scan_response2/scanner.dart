@@ -21,10 +21,13 @@ Scanner copyWith({String? colo, String? country, }) { return Scanner(
   colo: colo ?? this.colo,
   country: country ?? this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Scanner &&
           colo == other.colo &&
-          country == other.country; } 
-@override int get hashCode { return Object.hash(colo, country); } 
-@override String toString() { return 'Scanner(colo: $colo, country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => Object.hash(colo, country);
+
+@override String toString() => 'Scanner(colo: $colo, country: $country)';
+
  }

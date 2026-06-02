@@ -58,13 +58,16 @@ RealtimeServerEventInputAudioBufferTimeoutTriggered copyWith({String? eventId, S
   audioEndMs: audioEndMs ?? this.audioEndMs,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferTimeoutTriggered &&
           eventId == other.eventId &&
           type == other.type &&
           audioStartMs == other.audioStartMs &&
           audioEndMs == other.audioEndMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioStartMs, audioEndMs, itemId); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferTimeoutTriggered(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, audioEndMs: $audioEndMs, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, audioStartMs, audioEndMs, itemId);
+
+@override String toString() => 'RealtimeServerEventInputAudioBufferTimeoutTriggered(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, audioEndMs: $audioEndMs, itemId: $itemId)';
+
  }

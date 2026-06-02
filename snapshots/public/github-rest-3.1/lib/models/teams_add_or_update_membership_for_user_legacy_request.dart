@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TeamsAddOrUpdateMembershipForUserLegacyRequest copyWith({TeamMembershipRole Function()? role}) { return TeamsAddOrUpdateMembershipForUserLegacyRequest(
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsAddOrUpdateMembershipForUserLegacyRequest &&
-          role == other.role; } 
-@override int get hashCode { return role.hashCode; } 
-@override String toString() { return 'TeamsAddOrUpdateMembershipForUserLegacyRequest(role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => role.hashCode;
+
+@override String toString() => 'TeamsAddOrUpdateMembershipForUserLegacyRequest(role: $role)';
+
  }

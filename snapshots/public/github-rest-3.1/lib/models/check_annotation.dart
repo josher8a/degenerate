@@ -70,7 +70,7 @@ CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Funct
   rawDetails: rawDetails != null ? rawDetails() : this.rawDetails,
   blobHref: blobHref ?? this.blobHref,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckAnnotation &&
           path == other.path &&
           startLine == other.startLine &&
@@ -81,7 +81,10 @@ CheckAnnotation copyWith({String? path, int? startLine, int? endLine, int? Funct
           title == other.title &&
           message == other.message &&
           rawDetails == other.rawDetails &&
-          blobHref == other.blobHref; } 
-@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn, annotationLevel, title, message, rawDetails, blobHref); } 
-@override String toString() { return 'CheckAnnotation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, annotationLevel: $annotationLevel, title: $title, message: $message, rawDetails: $rawDetails, blobHref: $blobHref)'; } 
+          blobHref == other.blobHref;
+
+@override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, annotationLevel, title, message, rawDetails, blobHref);
+
+@override String toString() => 'CheckAnnotation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, annotationLevel: $annotationLevel, title: $title, message: $message, rawDetails: $rawDetails, blobHref: $blobHref)';
+
  }

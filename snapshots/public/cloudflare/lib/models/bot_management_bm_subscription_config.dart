@@ -54,12 +54,15 @@ BotManagementBmSubscriptionConfig copyWith({BotManagementAutoUpdateModel? Functi
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
   suppressSessionScore: suppressSessionScore != null ? suppressSessionScore() : this.suppressSessionScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementBmSubscriptionConfig &&
           autoUpdateModel == other.autoUpdateModel &&
           bmCookieEnabled == other.bmCookieEnabled &&
           staleZoneConfiguration == other.staleZoneConfiguration &&
-          suppressSessionScore == other.suppressSessionScore; } 
-@override int get hashCode { return Object.hash(autoUpdateModel, bmCookieEnabled, staleZoneConfiguration, suppressSessionScore); } 
-@override String toString() { return 'BotManagementBmSubscriptionConfig(autoUpdateModel: $autoUpdateModel, bmCookieEnabled: $bmCookieEnabled, staleZoneConfiguration: $staleZoneConfiguration, suppressSessionScore: $suppressSessionScore)'; } 
+          suppressSessionScore == other.suppressSessionScore;
+
+@override int get hashCode => Object.hash(autoUpdateModel, bmCookieEnabled, staleZoneConfiguration, suppressSessionScore);
+
+@override String toString() => 'BotManagementBmSubscriptionConfig(autoUpdateModel: $autoUpdateModel, bmCookieEnabled: $bmCookieEnabled, staleZoneConfiguration: $staleZoneConfiguration, suppressSessionScore: $suppressSessionScore)';
+
  }

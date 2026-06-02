@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicRouteSingleResponseResult copyWith({MagicRoute? Function()? route}) { return MagicRouteSingleResponseResult(
   route: route != null ? route() : this.route,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteSingleResponseResult &&
-          route == other.route; } 
-@override int get hashCode { return route.hashCode; } 
-@override String toString() { return 'MagicRouteSingleResponseResult(route: $route)'; } 
+          route == other.route;
+
+@override int get hashCode => route.hashCode;
+
+@override String toString() => 'MagicRouteSingleResponseResult(route: $route)';
+
  }

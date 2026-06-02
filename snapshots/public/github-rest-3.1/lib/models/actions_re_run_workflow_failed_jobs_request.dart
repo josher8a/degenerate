@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ActionsReRunWorkflowFailedJobsRequest copyWith({bool Function()? enableDebugLogging}) { return ActionsReRunWorkflowFailedJobsRequest(
   enableDebugLogging: enableDebugLogging != null ? enableDebugLogging() : this.enableDebugLogging,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsReRunWorkflowFailedJobsRequest &&
-          enableDebugLogging == other.enableDebugLogging; } 
-@override int get hashCode { return enableDebugLogging.hashCode; } 
-@override String toString() { return 'ActionsReRunWorkflowFailedJobsRequest(enableDebugLogging: $enableDebugLogging)'; } 
+          enableDebugLogging == other.enableDebugLogging;
+
+@override int get hashCode => enableDebugLogging.hashCode;
+
+@override String toString() => 'ActionsReRunWorkflowFailedJobsRequest(enableDebugLogging: $enableDebugLogging)';
+
  }

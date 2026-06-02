@@ -25,11 +25,14 @@ TransferDataSpecs3 copyWith({int? Function()? amount, double? Function()? amount
   amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
   destination: destination ?? this.destination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferDataSpecs3 &&
           amount == other.amount &&
           amountPercent == other.amountPercent &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amount, amountPercent, destination); } 
-@override String toString() { return 'TransferDataSpecs3(amount: $amount, amountPercent: $amountPercent, destination: $destination)'; } 
+          destination == other.destination;
+
+@override int get hashCode => Object.hash(amount, amountPercent, destination);
+
+@override String toString() => 'TransferDataSpecs3(amount: $amount, amountPercent: $amountPercent, destination: $destination)';
+
  }

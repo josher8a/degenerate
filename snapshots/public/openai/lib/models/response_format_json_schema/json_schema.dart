@@ -44,12 +44,15 @@ JsonSchema copyWith({String? Function()? description, String? name, Map<String, 
   schema: schema != null ? schema() : this.schema,
   strict: strict != null ? strict() : this.strict,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JsonSchema &&
           description == other.description &&
           name == other.name &&
           schema == other.schema &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(description, name, schema, strict); } 
-@override String toString() { return 'JsonSchema(description: $description, name: $name, schema: $schema, strict: $strict)'; } 
+          strict == other.strict;
+
+@override int get hashCode => Object.hash(description, name, schema, strict);
+
+@override String toString() => 'JsonSchema(description: $description, name: $name, schema: $schema, strict: $strict)';
+
  }

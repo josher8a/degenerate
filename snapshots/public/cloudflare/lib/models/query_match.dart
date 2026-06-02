@@ -20,10 +20,13 @@ QueryMatch copyWith({List<Map<String, dynamic>>? Function()? matches, int? Funct
   matches: matches != null ? matches() : this.matches,
   total: total != null ? total() : this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueryMatch &&
           listEquals(matches, other.matches) &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(Object.hashAll(matches ?? const []), total); } 
-@override String toString() { return 'QueryMatch(matches: $matches, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(Object.hashAll(matches ?? const []), total);
+
+@override String toString() => 'QueryMatch(matches: $matches, total: $total)';
+
  }

@@ -28,11 +28,14 @@ ActionsCreateWorkflowDispatchRequest copyWith({String? ref, Map<String, dynamic>
   inputs: inputs != null ? inputs() : this.inputs,
   returnRunDetails: returnRunDetails != null ? returnRunDetails() : this.returnRunDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateWorkflowDispatchRequest &&
           ref == other.ref &&
           inputs == other.inputs &&
-          returnRunDetails == other.returnRunDetails; } 
-@override int get hashCode { return Object.hash(ref, inputs, returnRunDetails); } 
-@override String toString() { return 'ActionsCreateWorkflowDispatchRequest(ref: $ref, inputs: $inputs, returnRunDetails: $returnRunDetails)'; } 
+          returnRunDetails == other.returnRunDetails;
+
+@override int get hashCode => Object.hash(ref, inputs, returnRunDetails);
+
+@override String toString() => 'ActionsCreateWorkflowDispatchRequest(ref: $ref, inputs: $inputs, returnRunDetails: $returnRunDetails)';
+
  }

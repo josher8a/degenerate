@@ -45,13 +45,16 @@ ResponseCodeInterpreterCallCodeDoneEvent copyWith({String? type, int? outputInde
   code: code ?? this.code,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCodeInterpreterCallCodeDoneEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           code == other.code &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, code, sequenceNumber); } 
-@override String toString() { return 'ResponseCodeInterpreterCallCodeDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, code: $code, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, code, sequenceNumber);
+
+@override String toString() => 'ResponseCodeInterpreterCallCodeDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, code: $code, sequenceNumber: $sequenceNumber)';
+
  }

@@ -60,14 +60,17 @@ PipelinesResponse2Result copyWith({String? createdAt, String? id, String? modifi
   sql: sql ?? this.sql,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesResponse2Result &&
           createdAt == other.createdAt &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
           sql == other.sql &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(createdAt, id, modifiedAt, name, sql, status); } 
-@override String toString() { return 'PipelinesResponse2Result(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(createdAt, id, modifiedAt, name, sql, status);
+
+@override String toString() => 'PipelinesResponse2Result(createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, name: $name, sql: $sql, status: $status)';
+
  }

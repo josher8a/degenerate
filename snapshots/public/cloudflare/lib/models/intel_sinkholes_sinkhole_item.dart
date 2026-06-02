@@ -79,7 +79,7 @@ IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? F
   r2Bucket: r2Bucket != null ? r2Bucket() : this.r2Bucket,
   r2Id: r2Id != null ? r2Id() : this.r2Id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelSinkholesSinkholeItem &&
           accountTag == other.accountTag &&
           createdOn == other.createdOn &&
@@ -87,7 +87,10 @@ IntelSinkholesSinkholeItem copyWith({String? Function()? accountTag, DateTime? F
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           r2Bucket == other.r2Bucket &&
-          r2Id == other.r2Id; } 
-@override int get hashCode { return Object.hash(accountTag, createdOn, id, modifiedOn, name, r2Bucket, r2Id); } 
-@override String toString() { return 'IntelSinkholesSinkholeItem(accountTag: $accountTag, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, name: $name, r2Bucket: $r2Bucket, r2Id: $r2Id)'; } 
+          r2Id == other.r2Id;
+
+@override int get hashCode => Object.hash(accountTag, createdOn, id, modifiedOn, name, r2Bucket, r2Id);
+
+@override String toString() => 'IntelSinkholesSinkholeItem(accountTag: $accountTag, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, name: $name, r2Bucket: $r2Bucket, r2Id: $r2Id)';
+
  }

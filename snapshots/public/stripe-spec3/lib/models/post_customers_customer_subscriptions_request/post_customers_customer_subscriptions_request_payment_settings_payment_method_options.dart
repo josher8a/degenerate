@@ -50,7 +50,7 @@ PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions cop
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions &&
           acssDebit == other.acssDebit &&
           bancontact == other.bancontact &&
@@ -59,7 +59,10 @@ PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions cop
           konbini == other.konbini &&
           payto == other.payto &&
           sepaDebit == other.sepaDebit &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, bancontact, card, customerBalance, konbini, payto, sepaDebit, usBankAccount); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions(acssDebit: $acssDebit, bancontact: $bancontact, card: $card, customerBalance: $customerBalance, konbini: $konbini, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(acssDebit, bancontact, card, customerBalance, konbini, payto, sepaDebit, usBankAccount);
+
+@override String toString() => 'PostCustomersCustomerSubscriptionsRequestPaymentSettingsPaymentMethodOptions(acssDebit: $acssDebit, bancontact: $bancontact, card: $card, customerBalance: $customerBalance, konbini: $konbini, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)';
+
  }

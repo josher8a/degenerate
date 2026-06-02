@@ -44,13 +44,16 @@ PostDosEventCreateBulkWithRelationshipsResponse copyWith({double? createdEventsC
   errorCount: errorCount ?? this.errorCount,
   errors: errors != null ? errors() : this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDosEventCreateBulkWithRelationshipsResponse &&
           createdEventsCount == other.createdEventsCount &&
           createdIndicatorsCount == other.createdIndicatorsCount &&
           createdRelationshipsCount == other.createdRelationshipsCount &&
           errorCount == other.errorCount &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(createdEventsCount, createdIndicatorsCount, createdRelationshipsCount, errorCount, Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsResponse(createdEventsCount: $createdEventsCount, createdIndicatorsCount: $createdIndicatorsCount, createdRelationshipsCount: $createdRelationshipsCount, errorCount: $errorCount, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(createdEventsCount, createdIndicatorsCount, createdRelationshipsCount, errorCount, Object.hashAll(errors ?? const []));
+
+@override String toString() => 'PostDosEventCreateBulkWithRelationshipsResponse(createdEventsCount: $createdEventsCount, createdIndicatorsCount: $createdIndicatorsCount, createdRelationshipsCount: $createdRelationshipsCount, errorCount: $errorCount, errors: $errors)';
+
  }

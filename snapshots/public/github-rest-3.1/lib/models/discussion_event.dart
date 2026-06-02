@@ -21,10 +21,13 @@ DiscussionEvent copyWith({String? action, Discussion? discussion, }) { return Di
   action: action ?? this.action,
   discussion: discussion ?? this.discussion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiscussionEvent &&
           action == other.action &&
-          discussion == other.discussion; } 
-@override int get hashCode { return Object.hash(action, discussion); } 
-@override String toString() { return 'DiscussionEvent(action: $action, discussion: $discussion)'; } 
+          discussion == other.discussion;
+
+@override int get hashCode => Object.hash(action, discussion);
+
+@override String toString() => 'DiscussionEvent(action: $action, discussion: $discussion)';
+
  }

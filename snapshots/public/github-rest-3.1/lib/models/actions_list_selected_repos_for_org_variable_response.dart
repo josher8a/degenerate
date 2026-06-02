@@ -21,10 +21,13 @@ ActionsListSelectedReposForOrgVariableResponse copyWith({int? totalCount, List<M
   totalCount: totalCount ?? this.totalCount,
   repositories: repositories ?? this.repositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelectedReposForOrgVariableResponse &&
           totalCount == other.totalCount &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositories)); } 
-@override String toString() { return 'ActionsListSelectedReposForOrgVariableResponse(totalCount: $totalCount, repositories: $repositories)'; } 
+          listEquals(repositories, other.repositories);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(repositories));
+
+@override String toString() => 'ActionsListSelectedReposForOrgVariableResponse(totalCount: $totalCount, repositories: $repositories)';
+
  }

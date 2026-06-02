@@ -20,10 +20,13 @@ PayPerCrawlStripeConnection copyWith({String? Function()? connectStatus, String?
   connectStatus: connectStatus != null ? connectStatus() : this.connectStatus,
   stripeAccountId: stripeAccountId != null ? stripeAccountId() : this.stripeAccountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlStripeConnection &&
           connectStatus == other.connectStatus &&
-          stripeAccountId == other.stripeAccountId; } 
-@override int get hashCode { return Object.hash(connectStatus, stripeAccountId); } 
-@override String toString() { return 'PayPerCrawlStripeConnection(connectStatus: $connectStatus, stripeAccountId: $stripeAccountId)'; } 
+          stripeAccountId == other.stripeAccountId;
+
+@override int get hashCode => Object.hash(connectStatus, stripeAccountId);
+
+@override String toString() => 'PayPerCrawlStripeConnection(connectStatus: $connectStatus, stripeAccountId: $stripeAccountId)';
+
  }

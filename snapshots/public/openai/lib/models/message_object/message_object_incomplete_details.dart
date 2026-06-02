@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageObjectIncompleteDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageObjectIncompleteDetailsReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageObjectIncompleteDetailsReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageObjectIncompleteDetailsReason($value)';
+
  }
 /// On an incomplete message, details about why the message is incomplete.
 @immutable final class MessageObjectIncompleteDetails {const MessageObjectIncompleteDetails({required this.reason});
@@ -51,9 +54,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('reaso
 MessageObjectIncompleteDetails copyWith({MessageObjectIncompleteDetailsReason? reason}) { return MessageObjectIncompleteDetails(
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageObjectIncompleteDetails &&
-          reason == other.reason; } 
-@override int get hashCode { return reason.hashCode; } 
-@override String toString() { return 'MessageObjectIncompleteDetails(reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => reason.hashCode;
+
+@override String toString() => 'MessageObjectIncompleteDetails(reason: $reason)';
+
  }

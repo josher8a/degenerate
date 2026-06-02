@@ -45,7 +45,7 @@ McnUpdateProviderRequest copyWith({String? Function()? awsArn, String? Function(
   gcpProjectId: gcpProjectId != null ? gcpProjectId() : this.gcpProjectId,
   gcpServiceAccountEmail: gcpServiceAccountEmail != null ? gcpServiceAccountEmail() : this.gcpServiceAccountEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnUpdateProviderRequest &&
           awsArn == other.awsArn &&
           azureSubscriptionId == other.azureSubscriptionId &&
@@ -53,7 +53,10 @@ McnUpdateProviderRequest copyWith({String? Function()? awsArn, String? Function(
           description == other.description &&
           friendlyName == other.friendlyName &&
           gcpProjectId == other.gcpProjectId &&
-          gcpServiceAccountEmail == other.gcpServiceAccountEmail; } 
-@override int get hashCode { return Object.hash(awsArn, azureSubscriptionId, azureTenantId, description, friendlyName, gcpProjectId, gcpServiceAccountEmail); } 
-@override String toString() { return 'McnUpdateProviderRequest(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail)'; } 
+          gcpServiceAccountEmail == other.gcpServiceAccountEmail;
+
+@override int get hashCode => Object.hash(awsArn, azureSubscriptionId, azureTenantId, description, friendlyName, gcpProjectId, gcpServiceAccountEmail);
+
+@override String toString() => 'McnUpdateProviderRequest(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail)';
+
  }

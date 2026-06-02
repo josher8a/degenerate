@@ -41,14 +41,17 @@ WebhookCustomPropertyUpdated copyWith({WebhookCustomPropertyUpdatedAction? actio
   organization: organization != null ? organization() : this.organization,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCustomPropertyUpdated &&
           action == other.action &&
           definition == other.definition &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, definition, enterprise, installation, organization, sender); } 
-@override String toString() { return 'WebhookCustomPropertyUpdated(action: $action, definition: $definition, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, definition, enterprise, installation, organization, sender);
+
+@override String toString() => 'WebhookCustomPropertyUpdated(action: $action, definition: $definition, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)';
+
  }

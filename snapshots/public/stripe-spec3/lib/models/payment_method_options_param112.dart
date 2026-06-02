@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentMethodOptionsParam112 copyWith({OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork? Function()? network}) { return PaymentMethodOptionsParam112(
   network: network != null ? network() : this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam112 &&
-          network == other.network; } 
-@override int get hashCode { return network.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsParam112(network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => network.hashCode;
+
+@override String toString() => 'PaymentMethodOptionsParam112(network: $network)';
+
  }

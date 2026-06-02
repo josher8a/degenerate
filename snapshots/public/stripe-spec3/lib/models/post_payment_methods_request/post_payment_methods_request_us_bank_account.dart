@@ -50,13 +50,16 @@ PostPaymentMethodsRequestUsBankAccount copyWith({CustomerPaymentSourceBankAccoun
   financialConnectionsAccount: financialConnectionsAccount != null ? financialConnectionsAccount() : this.financialConnectionsAccount,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestUsBankAccount &&
           accountHolderType == other.accountHolderType &&
           accountNumber == other.accountNumber &&
           accountType == other.accountType &&
           financialConnectionsAccount == other.financialConnectionsAccount &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderType, accountNumber, accountType, financialConnectionsAccount, routingNumber); } 
-@override String toString() { return 'PostPaymentMethodsRequestUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderType, accountNumber, accountType, financialConnectionsAccount, routingNumber);
+
+@override String toString() => 'PostPaymentMethodsRequestUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)';
+
  }

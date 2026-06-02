@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StartUpgradeK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StartUpgradeK($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StartUpgradeK && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StartUpgradeK($value)';
+
  }
 @immutable final class StartUpgrade {const StartUpgrade({required this.k, required this.url, });
 
@@ -45,10 +48,13 @@ StartUpgrade copyWith({StartUpgradeK? k, String? url, }) { return StartUpgrade(
   k: k ?? this.k,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StartUpgrade &&
           k == other.k &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(k, url); } 
-@override String toString() { return 'StartUpgrade(k: $k, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(k, url);
+
+@override String toString() => 'StartUpgrade(k: $k, url: $url)';
+
  }

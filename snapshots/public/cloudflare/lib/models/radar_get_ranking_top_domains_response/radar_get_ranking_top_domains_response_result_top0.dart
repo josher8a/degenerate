@@ -37,12 +37,15 @@ RadarGetRankingTopDomainsResponseResultTop0 copyWith({List<Top0Categories>? cate
   pctRankChange: pctRankChange != null ? pctRankChange() : this.pctRankChange,
   rank: rank ?? this.rank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingTopDomainsResponseResultTop0 &&
           listEquals(categories, other.categories) &&
           domain == other.domain &&
           pctRankChange == other.pctRankChange &&
-          rank == other.rank; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), domain, pctRankChange, rank); } 
-@override String toString() { return 'RadarGetRankingTopDomainsResponseResultTop0(categories: $categories, domain: $domain, pctRankChange: $pctRankChange, rank: $rank)'; } 
+          rank == other.rank;
+
+@override int get hashCode => Object.hash(Object.hashAll(categories), domain, pctRankChange, rank);
+
+@override String toString() => 'RadarGetRankingTopDomainsResponseResultTop0(categories: $categories, domain: $domain, pctRankChange: $pctRankChange, rank: $rank)';
+
  }

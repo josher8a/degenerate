@@ -34,10 +34,13 @@ SecurityAdvisoryEpss copyWith({double? Function()? percentage, double? Function(
   percentage: percentage != null ? percentage() : this.percentage,
   percentile: percentile != null ? percentile() : this.percentile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityAdvisoryEpss &&
           percentage == other.percentage &&
-          percentile == other.percentile; } 
-@override int get hashCode { return Object.hash(percentage, percentile); } 
-@override String toString() { return 'SecurityAdvisoryEpss(percentage: $percentage, percentile: $percentile)'; } 
+          percentile == other.percentile;
+
+@override int get hashCode => Object.hash(percentage, percentile);
+
+@override String toString() => 'SecurityAdvisoryEpss(percentage: $percentage, percentile: $percentile)';
+
  }

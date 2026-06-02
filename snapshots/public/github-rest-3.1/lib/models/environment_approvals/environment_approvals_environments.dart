@@ -49,7 +49,7 @@ EnvironmentApprovalsEnvironments copyWith({int? Function()? id, String? Function
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnvironmentApprovalsEnvironments &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -57,7 +57,10 @@ EnvironmentApprovalsEnvironments copyWith({int? Function()? id, String? Function
           url == other.url &&
           htmlUrl == other.htmlUrl &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, url, htmlUrl, createdAt, updatedAt); } 
-@override String toString() { return 'EnvironmentApprovalsEnvironments(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, name, url, htmlUrl, createdAt, updatedAt);
+
+@override String toString() => 'EnvironmentApprovalsEnvironments(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

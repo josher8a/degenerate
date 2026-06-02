@@ -20,10 +20,13 @@ WebhookInstallationTargetRenamedChanges copyWith({WebhookInstallationTargetRenam
   login: login != null ? login() : this.login,
   slug: slug != null ? slug() : this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationTargetRenamedChanges &&
           login == other.login &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(login, slug); } 
-@override String toString() { return 'WebhookInstallationTargetRenamedChanges(login: $login, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(login, slug);
+
+@override String toString() => 'WebhookInstallationTargetRenamedChanges(login: $login, slug: $slug)';
+
  }

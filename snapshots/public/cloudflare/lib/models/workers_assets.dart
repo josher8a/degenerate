@@ -23,10 +23,13 @@ WorkersAssets copyWith({WorkersAssetsConfig? Function()? config, String? Functio
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAssets &&
           config == other.config &&
-          jwt == other.jwt; } 
-@override int get hashCode { return Object.hash(config, jwt); } 
-@override String toString() { return 'WorkersAssets(config: $config, jwt: $jwt)'; } 
+          jwt == other.jwt;
+
+@override int get hashCode => Object.hash(config, jwt);
+
+@override String toString() => 'WorkersAssets(config: $config, jwt: $jwt)';
+
  }

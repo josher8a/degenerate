@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Subscription2App copyWith({InstallId? Function()? installId}) { return Subscription2App(
   installId: installId != null ? installId() : this.installId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subscription2App &&
-          installId == other.installId; } 
-@override int get hashCode { return installId.hashCode; } 
-@override String toString() { return 'Subscription2App(installId: $installId)'; } 
+          installId == other.installId;
+
+@override int get hashCode => installId.hashCode;
+
+@override String toString() => 'Subscription2App(installId: $installId)';
+
  }

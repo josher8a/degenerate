@@ -33,12 +33,15 @@ PostDatasetPopulateResponseProperties copyWith({AccountId? accountId, Properties
   errors: errors ?? this.errors,
   summary: summary ?? this.summary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDatasetPopulateResponseProperties &&
           accountId == other.accountId &&
           datasets == other.datasets &&
           errors == other.errors &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(accountId, datasets, errors, summary); } 
-@override String toString() { return 'PostDatasetPopulateResponseProperties(accountId: $accountId, datasets: $datasets, errors: $errors, summary: $summary)'; } 
+          summary == other.summary;
+
+@override int get hashCode => Object.hash(accountId, datasets, errors, summary);
+
+@override String toString() => 'PostDatasetPopulateResponseProperties(accountId: $accountId, datasets: $datasets, errors: $errors, summary: $summary)';
+
  }

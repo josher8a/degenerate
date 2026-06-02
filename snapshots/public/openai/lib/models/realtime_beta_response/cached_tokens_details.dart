@@ -29,11 +29,14 @@ CachedTokensDetails copyWith({int? Function()? textTokens, int? Function()? imag
   imageTokens: imageTokens != null ? imageTokens() : this.imageTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CachedTokensDetails &&
           textTokens == other.textTokens &&
           imageTokens == other.imageTokens &&
-          audioTokens == other.audioTokens; } 
-@override int get hashCode { return Object.hash(textTokens, imageTokens, audioTokens); } 
-@override String toString() { return 'CachedTokensDetails(textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens)'; } 
+          audioTokens == other.audioTokens;
+
+@override int get hashCode => Object.hash(textTokens, imageTokens, audioTokens);
+
+@override String toString() => 'CachedTokensDetails(textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens)';
+
  }

@@ -86,7 +86,7 @@ OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, Organi
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationProgrammaticAccessGrant &&
           id == other.id &&
           owner == other.owner &&
@@ -98,7 +98,10 @@ OrganizationProgrammaticAccessGrant copyWith({int? id, SimpleUser? owner, Organi
           tokenName == other.tokenName &&
           tokenExpired == other.tokenExpired &&
           tokenExpiresAt == other.tokenExpiresAt &&
-          tokenLastUsedAt == other.tokenLastUsedAt; } 
-@override int get hashCode { return Object.hash(id, owner, repositorySelection, repositoriesUrl, permissions, accessGrantedAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt); } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrant(id: $id, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, accessGrantedAt: $accessGrantedAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)'; } 
+          tokenLastUsedAt == other.tokenLastUsedAt;
+
+@override int get hashCode => Object.hash(id, owner, repositorySelection, repositoriesUrl, permissions, accessGrantedAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
+
+@override String toString() => 'OrganizationProgrammaticAccessGrant(id: $id, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, accessGrantedAt: $accessGrantedAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+
  }

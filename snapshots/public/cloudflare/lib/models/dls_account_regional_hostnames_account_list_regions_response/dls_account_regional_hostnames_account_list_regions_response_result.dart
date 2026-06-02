@@ -24,10 +24,13 @@ DlsAccountRegionalHostnamesAccountListRegionsResponseResult copyWith({DlsRegionK
   key: key != null ? key() : this.key,
   label: label != null ? label() : this.label,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountListRegionsResponseResult &&
           key == other.key &&
-          label == other.label; } 
-@override int get hashCode { return Object.hash(key, label); } 
-@override String toString() { return 'DlsAccountRegionalHostnamesAccountListRegionsResponseResult(key: $key, label: $label)'; } 
+          label == other.label;
+
+@override int get hashCode => Object.hash(key, label);
+
+@override String toString() => 'DlsAccountRegionalHostnamesAccountListRegionsResponseResult(key: $key, label: $label)';
+
  }

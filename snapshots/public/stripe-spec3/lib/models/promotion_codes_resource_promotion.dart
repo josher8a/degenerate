@@ -23,10 +23,13 @@ PromotionCodesResourcePromotion copyWith({DiscountSourceCoupon? Function()? coup
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCodesResourcePromotion &&
           coupon == other.coupon &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(coupon, type); } 
-@override String toString() { return 'PromotionCodesResourcePromotion(coupon: $coupon, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(coupon, type);
+
+@override String toString() => 'PromotionCodesResourcePromotion(coupon: $coupon, type: $type)';
+
  }

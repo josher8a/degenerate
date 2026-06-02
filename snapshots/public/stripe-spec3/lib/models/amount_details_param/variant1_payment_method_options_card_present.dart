@@ -22,9 +22,12 @@ return errors; }
 Variant1PaymentMethodOptionsCardPresent copyWith({String? Function()? commodityCode}) { return Variant1PaymentMethodOptionsCardPresent(
   commodityCode: commodityCode != null ? commodityCode() : this.commodityCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1PaymentMethodOptionsCardPresent &&
-          commodityCode == other.commodityCode; } 
-@override int get hashCode { return commodityCode.hashCode; } 
-@override String toString() { return 'Variant1PaymentMethodOptionsCardPresent(commodityCode: $commodityCode)'; } 
+          commodityCode == other.commodityCode;
+
+@override int get hashCode => commodityCode.hashCode;
+
+@override String toString() => 'Variant1PaymentMethodOptionsCardPresent(commodityCode: $commodityCode)';
+
  }

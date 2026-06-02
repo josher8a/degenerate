@@ -23,10 +23,13 @@ OriginDetails copyWith({String? name, String? origin, }) { return OriginDetails(
   name: name ?? this.name,
   origin: origin ?? this.origin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OriginDetails &&
           name == other.name &&
-          origin == other.origin; } 
-@override int get hashCode { return Object.hash(name, origin); } 
-@override String toString() { return 'OriginDetails(name: $name, origin: $origin)'; } 
+          origin == other.origin;
+
+@override int get hashCode => Object.hash(name, origin);
+
+@override String toString() => 'OriginDetails(name: $name, origin: $origin)';
+
  }

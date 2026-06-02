@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesCrowdstrikeInputRequestState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesCrowdstrikeInputRequestState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesCrowdstrikeInputRequestState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesCrowdstrikeInputRequestState($value)';
+
  }
 /// Version Operator.
 @immutable final class VersionOperator {const VersionOperator._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VersionOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VersionOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VersionOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VersionOperator($value)';
+
  }
 @immutable final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });
 
@@ -144,7 +150,7 @@ TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Func
   version: version != null ? version() : this.version,
   versionOperator: versionOperator != null ? versionOperator() : this.versionOperator,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCrowdstrikeInputRequest &&
           connectionId == other.connectionId &&
           lastSeen == other.lastSeen &&
@@ -154,7 +160,10 @@ TeamsDevicesCrowdstrikeInputRequest copyWith({String? connectionId, String? Func
           sensorConfig == other.sensorConfig &&
           state == other.state &&
           version == other.version &&
-          versionOperator == other.versionOperator; } 
-@override int get hashCode { return Object.hash(connectionId, lastSeen, $operator, os, overall, sensorConfig, state, version, versionOperator); } 
-@override String toString() { return 'TeamsDevicesCrowdstrikeInputRequest(connectionId: $connectionId, lastSeen: $lastSeen, \$operator: ${$operator}, os: $os, overall: $overall, sensorConfig: $sensorConfig, state: $state, version: $version, versionOperator: $versionOperator)'; } 
+          versionOperator == other.versionOperator;
+
+@override int get hashCode => Object.hash(connectionId, lastSeen, $operator, os, overall, sensorConfig, state, version, versionOperator);
+
+@override String toString() => 'TeamsDevicesCrowdstrikeInputRequest(connectionId: $connectionId, lastSeen: $lastSeen, \$operator: ${$operator}, os: $os, overall: $overall, sensorConfig: $sensorConfig, state: $state, version: $version, versionOperator: $versionOperator)';
+
  }

@@ -33,12 +33,15 @@ AiSearchInstanceListJobLogsResponseResult copyWith({double? createdAt, int? id, 
   message: message ?? this.message,
   messageType: messageType ?? this.messageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceListJobLogsResponseResult &&
           createdAt == other.createdAt &&
           id == other.id &&
           message == other.message &&
-          messageType == other.messageType; } 
-@override int get hashCode { return Object.hash(createdAt, id, message, messageType); } 
-@override String toString() { return 'AiSearchInstanceListJobLogsResponseResult(createdAt: $createdAt, id: $id, message: $message, messageType: $messageType)'; } 
+          messageType == other.messageType;
+
+@override int get hashCode => Object.hash(createdAt, id, message, messageType);
+
+@override String toString() => 'AiSearchInstanceListJobLogsResponseResult(createdAt: $createdAt, id: $id, message: $message, messageType: $messageType)';
+
  }

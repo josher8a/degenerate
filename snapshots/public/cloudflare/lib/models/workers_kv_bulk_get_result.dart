@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WorkersKvBulkGetResult copyWith({Map<String, WorkersKvBulkGetResultValuesValue>? Function()? values}) { return WorkersKvBulkGetResult(
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvBulkGetResult &&
-          values == other.values; } 
-@override int get hashCode { return values.hashCode; } 
-@override String toString() { return 'WorkersKvBulkGetResult(values: $values)'; } 
+          values == other.values;
+
+@override int get hashCode => values.hashCode;
+
+@override String toString() => 'WorkersKvBulkGetResult(values: $values)';
+
  }

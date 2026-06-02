@@ -27,11 +27,14 @@ AttestationsBundle copyWith({String? Function()? mediaType, VerificationMaterial
   verificationMaterial: verificationMaterial != null ? verificationMaterial() : this.verificationMaterial,
   dsseEnvelope: dsseEnvelope != null ? dsseEnvelope() : this.dsseEnvelope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AttestationsBundle &&
           mediaType == other.mediaType &&
           verificationMaterial == other.verificationMaterial &&
-          dsseEnvelope == other.dsseEnvelope; } 
-@override int get hashCode { return Object.hash(mediaType, verificationMaterial, dsseEnvelope); } 
-@override String toString() { return 'AttestationsBundle(mediaType: $mediaType, verificationMaterial: $verificationMaterial, dsseEnvelope: $dsseEnvelope)'; } 
+          dsseEnvelope == other.dsseEnvelope;
+
+@override int get hashCode => Object.hash(mediaType, verificationMaterial, dsseEnvelope);
+
+@override String toString() => 'AttestationsBundle(mediaType: $mediaType, verificationMaterial: $verificationMaterial, dsseEnvelope: $dsseEnvelope)';
+
  }

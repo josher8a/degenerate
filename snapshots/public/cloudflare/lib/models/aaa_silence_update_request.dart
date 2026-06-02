@@ -32,11 +32,14 @@ AaaSilenceUpdateRequest copyWith({String? Function()? endTime, AaaSilenceId? Fun
   id: id != null ? id() : this.id,
   startTime: startTime != null ? startTime() : this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaSilenceUpdateRequest &&
           endTime == other.endTime &&
           id == other.id &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(endTime, id, startTime); } 
-@override String toString() { return 'AaaSilenceUpdateRequest(endTime: $endTime, id: $id, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(endTime, id, startTime);
+
+@override String toString() => 'AaaSilenceUpdateRequest(endTime: $endTime, id: $id, startTime: $startTime)';
+
  }

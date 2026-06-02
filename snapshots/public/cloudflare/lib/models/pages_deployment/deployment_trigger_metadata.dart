@@ -46,12 +46,15 @@ DeploymentTriggerMetadata copyWith({String? branch, bool? commitDirty, String? c
   commitHash: commitHash ?? this.commitHash,
   commitMessage: commitMessage ?? this.commitMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentTriggerMetadata &&
           branch == other.branch &&
           commitDirty == other.commitDirty &&
           commitHash == other.commitHash &&
-          commitMessage == other.commitMessage; } 
-@override int get hashCode { return Object.hash(branch, commitDirty, commitHash, commitMessage); } 
-@override String toString() { return 'DeploymentTriggerMetadata(branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage)'; } 
+          commitMessage == other.commitMessage;
+
+@override int get hashCode => Object.hash(branch, commitDirty, commitHash, commitMessage);
+
+@override String toString() => 'DeploymentTriggerMetadata(branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage)';
+
  }

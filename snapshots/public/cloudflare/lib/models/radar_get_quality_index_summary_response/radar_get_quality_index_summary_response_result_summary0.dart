@@ -30,11 +30,14 @@ RadarGetQualityIndexSummaryResponseResultSummary0 copyWith({String? p25, String?
   p50: p50 ?? this.p50,
   p75: p75 ?? this.p75,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualityIndexSummaryResponseResultSummary0 &&
           p25 == other.p25 &&
           p50 == other.p50 &&
-          p75 == other.p75; } 
-@override int get hashCode { return Object.hash(p25, p50, p75); } 
-@override String toString() { return 'RadarGetQualityIndexSummaryResponseResultSummary0(p25: $p25, p50: $p50, p75: $p75)'; } 
+          p75 == other.p75;
+
+@override int get hashCode => Object.hash(p25, p50, p75);
+
+@override String toString() => 'RadarGetQualityIndexSummaryResponseResultSummary0(p25: $p25, p50: $p50, p75: $p75)';
+
  }

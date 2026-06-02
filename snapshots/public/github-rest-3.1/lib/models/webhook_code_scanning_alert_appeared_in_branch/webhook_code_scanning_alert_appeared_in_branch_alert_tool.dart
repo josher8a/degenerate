@@ -23,10 +23,13 @@ WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String
   name: name ?? this.name,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlertTool &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(name, version); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertTool(name: $name, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(name, version);
+
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlertTool(name: $name, version: $version)';
+
  }

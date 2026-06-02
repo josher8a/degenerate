@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PendingInvoiceItemsBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PendingInvoiceItemsBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PendingInvoiceItemsBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PendingInvoiceItemsBehavior($value)';
+
  }
 @immutable final class PostInvoicesRequest {const PostInvoicesRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.currency, this.customFields, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.fromInvoice, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.pendingInvoiceItemsBehavior, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.subscription, this.transferData, });
 
@@ -272,7 +275,7 @@ PostInvoicesRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function(
   subscription: subscription != null ? subscription() : this.subscription,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesRequest &&
           accountTaxIds == other.accountTaxIds &&
           applicationFeeAmount == other.applicationFeeAmount &&
@@ -306,7 +309,10 @@ PostInvoicesRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function(
           shippingDetails == other.shippingDetails &&
           statementDescriptor == other.statementDescriptor &&
           subscription == other.subscription &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, currency, customFields, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates ?? const []), description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, fromInvoice, issuer, metadata, number, onBehalfOf, paymentSettings, pendingInvoiceItemsBehavior, rendering, shippingCost, shippingDetails, statementDescriptor, subscription, transferData]); } 
-@override String toString() { return 'PostInvoicesRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, fromInvoice: $fromInvoice, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, pendingInvoiceItemsBehavior: $pendingInvoiceItemsBehavior, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, subscription: $subscription, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, currency, customFields, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates ?? const []), description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, fromInvoice, issuer, metadata, number, onBehalfOf, paymentSettings, pendingInvoiceItemsBehavior, rendering, shippingCost, shippingDetails, statementDescriptor, subscription, transferData]);
+
+@override String toString() => 'PostInvoicesRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, fromInvoice: $fromInvoice, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, pendingInvoiceItemsBehavior: $pendingInvoiceItemsBehavior, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, subscription: $subscription, transferData: $transferData)';
+
  }

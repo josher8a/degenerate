@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessAppReqEmbeddedScimConfig copyWith({AccessScimConfig? Function()? scimConfig}) { return AccessAppReqEmbeddedScimConfig(
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppReqEmbeddedScimConfig &&
-          scimConfig == other.scimConfig; } 
-@override int get hashCode { return scimConfig.hashCode; } 
-@override String toString() { return 'AccessAppReqEmbeddedScimConfig(scimConfig: $scimConfig)'; } 
+          scimConfig == other.scimConfig;
+
+@override int get hashCode => scimConfig.hashCode;
+
+@override String toString() => 'AccessAppReqEmbeddedScimConfig(scimConfig: $scimConfig)';
+
  }

@@ -41,14 +41,17 @@ IssuesEvent copyWith({String? action, Issue? issue, SimpleUser? Function()? assi
   label: label != null ? label() : this.label,
   labels: labels != null ? labels() : this.labels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesEvent &&
           action == other.action &&
           issue == other.issue &&
           assignee == other.assignee &&
           listEquals(assignees, other.assignees) &&
           label == other.label &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hash(action, issue, assignee, Object.hashAll(assignees ?? const []), label, Object.hashAll(labels ?? const [])); } 
-@override String toString() { return 'IssuesEvent(action: $action, issue: $issue, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)'; } 
+          listEquals(labels, other.labels);
+
+@override int get hashCode => Object.hash(action, issue, assignee, Object.hashAll(assignees ?? const []), label, Object.hashAll(labels ?? const []));
+
+@override String toString() => 'IssuesEvent(action: $action, issue: $issue, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)';
+
  }

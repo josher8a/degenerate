@@ -47,10 +47,13 @@ LoadBalancingHealthDetailsResult copyWith({String? Function()? poolId, PopHealth
   poolId: poolId != null ? poolId() : this.poolId,
   popHealth: popHealth != null ? popHealth() : this.popHealth,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingHealthDetailsResult &&
           poolId == other.poolId &&
-          popHealth == other.popHealth; } 
-@override int get hashCode { return Object.hash(poolId, popHealth); } 
-@override String toString() { return 'LoadBalancingHealthDetailsResult(poolId: $poolId, popHealth: $popHealth)'; } 
+          popHealth == other.popHealth;
+
+@override int get hashCode => Object.hash(poolId, popHealth);
+
+@override String toString() => 'LoadBalancingHealthDetailsResult(poolId: $poolId, popHealth: $popHealth)';
+
  }

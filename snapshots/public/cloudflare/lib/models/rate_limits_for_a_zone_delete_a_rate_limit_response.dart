@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RateLimitsForAZoneDeleteARateLimitResponse copyWith({AaaIdResponseResult? Function()? result}) { return RateLimitsForAZoneDeleteARateLimitResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimitsForAZoneDeleteARateLimitResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'RateLimitsForAZoneDeleteARateLimitResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'RateLimitsForAZoneDeleteARateLimitResponse(result: $result)';
+
  }

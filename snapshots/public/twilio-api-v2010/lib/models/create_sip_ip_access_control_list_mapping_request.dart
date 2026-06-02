@@ -22,9 +22,12 @@ return errors; }
 CreateSipIpAccessControlListMappingRequest copyWith({String? ipAccessControlListSid}) { return CreateSipIpAccessControlListMappingRequest(
   ipAccessControlListSid: ipAccessControlListSid ?? this.ipAccessControlListSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipIpAccessControlListMappingRequest &&
-          ipAccessControlListSid == other.ipAccessControlListSid; } 
-@override int get hashCode { return ipAccessControlListSid.hashCode; } 
-@override String toString() { return 'CreateSipIpAccessControlListMappingRequest(ipAccessControlListSid: $ipAccessControlListSid)'; } 
+          ipAccessControlListSid == other.ipAccessControlListSid;
+
+@override int get hashCode => ipAccessControlListSid.hashCode;
+
+@override String toString() => 'CreateSipIpAccessControlListMappingRequest(ipAccessControlListSid: $ipAccessControlListSid)';
+
  }

@@ -51,7 +51,7 @@ Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Fu
   nodeId: nodeId ?? this.nodeId,
   highlightedContent: highlightedContent != null ? highlightedContent() : this.highlightedContent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Blob &&
           content == other.content &&
           encoding == other.encoding &&
@@ -59,7 +59,10 @@ Blob copyWith({String? content, String? encoding, Uri? url, String? sha, int? Fu
           sha == other.sha &&
           size == other.size &&
           nodeId == other.nodeId &&
-          highlightedContent == other.highlightedContent; } 
-@override int get hashCode { return Object.hash(content, encoding, url, sha, size, nodeId, highlightedContent); } 
-@override String toString() { return 'Blob(content: $content, encoding: $encoding, url: $url, sha: $sha, size: $size, nodeId: $nodeId, highlightedContent: $highlightedContent)'; } 
+          highlightedContent == other.highlightedContent;
+
+@override int get hashCode => Object.hash(content, encoding, url, sha, size, nodeId, highlightedContent);
+
+@override String toString() => 'Blob(content: $content, encoding: $encoding, url: $url, sha: $sha, size: $size, nodeId: $nodeId, highlightedContent: $highlightedContent)';
+
  }

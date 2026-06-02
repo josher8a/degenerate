@@ -27,10 +27,13 @@ ExternalEvaluation copyWith({String? evaluateUrl, String? keysUrl, }) { return E
   evaluateUrl: evaluateUrl ?? this.evaluateUrl,
   keysUrl: keysUrl ?? this.keysUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalEvaluation &&
           evaluateUrl == other.evaluateUrl &&
-          keysUrl == other.keysUrl; } 
-@override int get hashCode { return Object.hash(evaluateUrl, keysUrl); } 
-@override String toString() { return 'ExternalEvaluation(evaluateUrl: $evaluateUrl, keysUrl: $keysUrl)'; } 
+          keysUrl == other.keysUrl;
+
+@override int get hashCode => Object.hash(evaluateUrl, keysUrl);
+
+@override String toString() => 'ExternalEvaluation(evaluateUrl: $evaluateUrl, keysUrl: $keysUrl)';
+
  }

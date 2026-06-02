@@ -21,10 +21,13 @@ WorkflowRunUsage copyWith({WorkflowRunUsageBillable? billable, int? Function()? 
   billable: billable ?? this.billable,
   runDurationMs: runDurationMs != null ? runDurationMs() : this.runDurationMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowRunUsage &&
           billable == other.billable &&
-          runDurationMs == other.runDurationMs; } 
-@override int get hashCode { return Object.hash(billable, runDurationMs); } 
-@override String toString() { return 'WorkflowRunUsage(billable: $billable, runDurationMs: $runDurationMs)'; } 
+          runDurationMs == other.runDurationMs;
+
+@override int get hashCode => Object.hash(billable, runDurationMs);
+
+@override String toString() => 'WorkflowRunUsage(billable: $billable, runDurationMs: $runDurationMs)';
+
  }

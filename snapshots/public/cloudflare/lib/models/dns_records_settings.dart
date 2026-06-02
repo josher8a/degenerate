@@ -27,10 +27,13 @@ DnsRecordsSettings copyWith({bool Function()? ipv4Only, bool Function()? ipv6Onl
   ipv4Only: ipv4Only != null ? ipv4Only() : this.ipv4Only,
   ipv6Only: ipv6Only != null ? ipv6Only() : this.ipv6Only,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSettings &&
           ipv4Only == other.ipv4Only &&
-          ipv6Only == other.ipv6Only; } 
-@override int get hashCode { return Object.hash(ipv4Only, ipv6Only); } 
-@override String toString() { return 'DnsRecordsSettings(ipv4Only: $ipv4Only, ipv6Only: $ipv6Only)'; } 
+          ipv6Only == other.ipv6Only;
+
+@override int get hashCode => Object.hash(ipv4Only, ipv6Only);
+
+@override String toString() => 'DnsRecordsSettings(ipv4Only: $ipv4Only, ipv6Only: $ipv6Only)';
+
  }

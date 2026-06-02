@@ -33,12 +33,15 @@ AppsUpdateWebhookConfigForAppRequest copyWith({WebhookConfigUrl? Function()? url
   secret: secret != null ? secret() : this.secret,
   insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsUpdateWebhookConfigForAppRequest &&
           url == other.url &&
           contentType == other.contentType &&
           secret == other.secret &&
-          insecureSsl == other.insecureSsl; } 
-@override int get hashCode { return Object.hash(url, contentType, secret, insecureSsl); } 
-@override String toString() { return 'AppsUpdateWebhookConfigForAppRequest(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)'; } 
+          insecureSsl == other.insecureSsl;
+
+@override int get hashCode => Object.hash(url, contentType, secret, insecureSsl);
+
+@override String toString() => 'AppsUpdateWebhookConfigForAppRequest(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)';
+
  }

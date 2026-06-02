@@ -58,7 +58,7 @@ AccessSchemasCorsHeaders copyWith({AccessAllowAllHeaders? Function()? allowAllHe
   allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
   maxAge: maxAge != null ? maxAge() : this.maxAge,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasCorsHeaders &&
           allowAllHeaders == other.allowAllHeaders &&
           allowAllMethods == other.allowAllMethods &&
@@ -67,7 +67,10 @@ AccessSchemasCorsHeaders copyWith({AccessAllowAllHeaders? Function()? allowAllHe
           listEquals(allowedHeaders, other.allowedHeaders) &&
           listEquals(allowedMethods, other.allowedMethods) &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
-          maxAge == other.maxAge; } 
-@override int get hashCode { return Object.hash(allowAllHeaders, allowAllMethods, allowAllOrigins, allowCredentials, Object.hashAll(allowedHeaders ?? const []), Object.hashAll(allowedMethods ?? const []), Object.hashAll(allowedOrigins ?? const []), maxAge); } 
-@override String toString() { return 'AccessSchemasCorsHeaders(allowAllHeaders: $allowAllHeaders, allowAllMethods: $allowAllMethods, allowAllOrigins: $allowAllOrigins, allowCredentials: $allowCredentials, allowedHeaders: $allowedHeaders, allowedMethods: $allowedMethods, allowedOrigins: $allowedOrigins, maxAge: $maxAge)'; } 
+          maxAge == other.maxAge;
+
+@override int get hashCode => Object.hash(allowAllHeaders, allowAllMethods, allowAllOrigins, allowCredentials, Object.hashAll(allowedHeaders ?? const []), Object.hashAll(allowedMethods ?? const []), Object.hashAll(allowedOrigins ?? const []), maxAge);
+
+@override String toString() => 'AccessSchemasCorsHeaders(allowAllHeaders: $allowAllHeaders, allowAllMethods: $allowAllMethods, allowAllOrigins: $allowAllOrigins, allowCredentials: $allowCredentials, allowedHeaders: $allowedHeaders, allowedMethods: $allowedMethods, allowedOrigins: $allowedOrigins, maxAge: $maxAge)';
+
  }

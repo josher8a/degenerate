@@ -163,7 +163,7 @@ McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResou
   vpcsById: vpcsById != null ? vpcsById() : this.vpcsById,
   vpcsByIdUnavailable: vpcsByIdUnavailable != null ? vpcsByIdUnavailable() : this.vpcsByIdUnavailable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnOnramp &&
           listEquals(attachedHubs, other.attachedHubs) &&
           listEquals(attachedVpcs, other.attachedVpcs) &&
@@ -193,7 +193,10 @@ McnOnramp copyWith({List<McnResourceId>? Function()? attachedHubs, List<McnResou
           updatedAt == other.updatedAt &&
           vpc == other.vpc &&
           vpcsById == other.vpcsById &&
-          listEquals(vpcsByIdUnavailable, other.vpcsByIdUnavailable); } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hub, id, installRoutesInCloud, installRoutesInMagicWan, lastAppliedAt, lastExportedAt, lastPlannedAt, manageHubToHubAttachments, manageVpcToHubAttachments, name, plannedMonthlyCostEstimate, Object.hashAll(plannedResources ?? const []), plannedResourcesUnavailable, postApplyMonthlyCostEstimate, postApplyResources, postApplyResourcesUnavailable, region, status, type, updatedAt, vpc, vpcsById, Object.hashAll(vpcsByIdUnavailable ?? const [])]); } 
-@override String toString() { return 'McnOnramp(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hub: $hub, id: $id, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, lastAppliedAt: $lastAppliedAt, lastExportedAt: $lastExportedAt, lastPlannedAt: $lastPlannedAt, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, plannedMonthlyCostEstimate: $plannedMonthlyCostEstimate, plannedResources: $plannedResources, plannedResourcesUnavailable: $plannedResourcesUnavailable, postApplyMonthlyCostEstimate: $postApplyMonthlyCostEstimate, postApplyResources: $postApplyResources, postApplyResourcesUnavailable: $postApplyResourcesUnavailable, region: $region, status: $status, type: $type, updatedAt: $updatedAt, vpc: $vpc, vpcsById: $vpcsById, vpcsByIdUnavailable: $vpcsByIdUnavailable)'; } 
+          listEquals(vpcsByIdUnavailable, other.vpcsByIdUnavailable);
+
+@override int get hashCode => Object.hashAll([Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hub, id, installRoutesInCloud, installRoutesInMagicWan, lastAppliedAt, lastExportedAt, lastPlannedAt, manageHubToHubAttachments, manageVpcToHubAttachments, name, plannedMonthlyCostEstimate, Object.hashAll(plannedResources ?? const []), plannedResourcesUnavailable, postApplyMonthlyCostEstimate, postApplyResources, postApplyResourcesUnavailable, region, status, type, updatedAt, vpc, vpcsById, Object.hashAll(vpcsByIdUnavailable ?? const [])]);
+
+@override String toString() => 'McnOnramp(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hub: $hub, id: $id, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, lastAppliedAt: $lastAppliedAt, lastExportedAt: $lastExportedAt, lastPlannedAt: $lastPlannedAt, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, plannedMonthlyCostEstimate: $plannedMonthlyCostEstimate, plannedResources: $plannedResources, plannedResourcesUnavailable: $plannedResourcesUnavailable, postApplyMonthlyCostEstimate: $postApplyMonthlyCostEstimate, postApplyResources: $postApplyResources, postApplyResourcesUnavailable: $postApplyResourcesUnavailable, region: $region, status: $status, type: $type, updatedAt: $updatedAt, vpc: $vpc, vpcsById: $vpcsById, vpcsByIdUnavailable: $vpcsByIdUnavailable)';
+
  }

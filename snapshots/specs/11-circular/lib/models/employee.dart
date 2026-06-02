@@ -31,12 +31,15 @@ Employee copyWith({int? id, String? name, Department? Function()? department, Em
   department: department != null ? department() : this.department,
   manager: manager != null ? manager() : this.manager,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Employee &&
           id == other.id &&
           name == other.name &&
           department == other.department &&
-          manager == other.manager; } 
-@override int get hashCode { return Object.hash(id, name, department, manager); } 
-@override String toString() { return 'Employee(id: $id, name: $name, department: $department, manager: $manager)'; } 
+          manager == other.manager;
+
+@override int get hashCode => Object.hash(id, name, department, manager);
+
+@override String toString() => 'Employee(id: $id, name: $name, department: $department, manager: $manager)';
+
  }

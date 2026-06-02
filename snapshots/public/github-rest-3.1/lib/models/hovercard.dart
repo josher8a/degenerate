@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
 Hovercard copyWith({List<Contexts>? contexts}) { return Hovercard(
   contexts: contexts ?? this.contexts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Hovercard &&
-          listEquals(contexts, other.contexts); } 
-@override int get hashCode { return Object.hashAll(contexts); } 
-@override String toString() { return 'Hovercard(contexts: $contexts)'; } 
+          listEquals(contexts, other.contexts);
+
+@override int get hashCode => Object.hashAll(contexts);
+
+@override String toString() => 'Hovercard(contexts: $contexts)';
+
  }

@@ -74,14 +74,17 @@ TreasuryReceivedDebitsResourceLinkedFlows copyWith({String? Function()? debitRev
   payout: payout != null ? payout() : this.payout,
   topup: topup != null ? topup() : this.topup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedDebitsResourceLinkedFlows &&
           debitReversal == other.debitReversal &&
           inboundTransfer == other.inboundTransfer &&
           issuingAuthorization == other.issuingAuthorization &&
           issuingTransaction == other.issuingTransaction &&
           payout == other.payout &&
-          topup == other.topup; } 
-@override int get hashCode { return Object.hash(debitReversal, inboundTransfer, issuingAuthorization, issuingTransaction, payout, topup); } 
-@override String toString() { return 'TreasuryReceivedDebitsResourceLinkedFlows(debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, issuingTransaction: $issuingTransaction, payout: $payout, topup: $topup)'; } 
+          topup == other.topup;
+
+@override int get hashCode => Object.hash(debitReversal, inboundTransfer, issuingAuthorization, issuingTransaction, payout, topup);
+
+@override String toString() => 'TreasuryReceivedDebitsResourceLinkedFlows(debitReversal: $debitReversal, inboundTransfer: $inboundTransfer, issuingAuthorization: $issuingAuthorization, issuingTransaction: $issuingTransaction, payout: $payout, topup: $topup)';
+
  }

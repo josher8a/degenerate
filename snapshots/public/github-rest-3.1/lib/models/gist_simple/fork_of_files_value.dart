@@ -35,13 +35,16 @@ ForkOfFilesValue copyWith({String? Function()? filename, String? Function()? typ
   rawUrl: rawUrl != null ? rawUrl() : this.rawUrl,
   size: size != null ? size() : this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForkOfFilesValue &&
           filename == other.filename &&
           type == other.type &&
           language == other.language &&
           rawUrl == other.rawUrl &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(filename, type, language, rawUrl, size); } 
-@override String toString() { return 'ForkOfFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(filename, type, language, rawUrl, size);
+
+@override String toString() => 'ForkOfFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size)';
+
  }

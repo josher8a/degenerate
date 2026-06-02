@@ -83,7 +83,7 @@ DlpNewCustomProfile copyWith({bool Function()? aiContextEnabled, int Function()?
   sensitivityLevels: sensitivityLevels != null ? sensitivityLevels() : this.sensitivityLevels,
   sharedEntries: sharedEntries != null ? sharedEntries() : this.sharedEntries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewCustomProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -96,7 +96,10 @@ DlpNewCustomProfile copyWith({bool Function()? aiContextEnabled, int Function()?
           name == other.name &&
           ocrEnabled == other.ocrEnabled &&
           listEquals(sensitivityLevels, other.sensitivityLevels) &&
-          listEquals(sharedEntries, other.sharedEntries); } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(dataClasses ?? const []), Object.hashAll(dataTags ?? const []), description, Object.hashAll(entries ?? const []), name, ocrEnabled, Object.hashAll(sensitivityLevels ?? const []), Object.hashAll(sharedEntries ?? const [])); } 
-@override String toString() { return 'DlpNewCustomProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, dataClasses: $dataClasses, dataTags: $dataTags, description: $description, entries: $entries, name: $name, ocrEnabled: $ocrEnabled, sensitivityLevels: $sensitivityLevels, sharedEntries: $sharedEntries)'; } 
+          listEquals(sharedEntries, other.sharedEntries);
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(dataClasses ?? const []), Object.hashAll(dataTags ?? const []), description, Object.hashAll(entries ?? const []), name, ocrEnabled, Object.hashAll(sensitivityLevels ?? const []), Object.hashAll(sharedEntries ?? const []));
+
+@override String toString() => 'DlpNewCustomProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, dataClasses: $dataClasses, dataTags: $dataTags, description: $description, entries: $entries, name: $name, ocrEnabled: $ocrEnabled, sensitivityLevels: $sensitivityLevels, sharedEntries: $sharedEntries)';
+
  }

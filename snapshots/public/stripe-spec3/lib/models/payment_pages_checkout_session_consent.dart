@@ -21,10 +21,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionConsentPromotions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionConsentPromotions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentPagesCheckoutSessionConsentPromotions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionConsentPromotions($value)';
+
  }
 /// If `accepted`, the customer in this Checkout Session has agreed to the merchant's terms of service.
 @immutable final class PaymentPagesCheckoutSessionConsentTermsOfService {const PaymentPagesCheckoutSessionConsentTermsOfService._(this.value);
@@ -43,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionConsentTermsOfService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionConsentTermsOfService($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentPagesCheckoutSessionConsentTermsOfService && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionConsentTermsOfService($value)';
+
  }
 /// 
 @immutable final class PaymentPagesCheckoutSessionConsent {const PaymentPagesCheckoutSessionConsent({this.promotions, this.termsOfService, });
@@ -72,10 +78,13 @@ PaymentPagesCheckoutSessionConsent copyWith({PaymentPagesCheckoutSessionConsentP
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionConsent &&
           promotions == other.promotions &&
-          termsOfService == other.termsOfService; } 
-@override int get hashCode { return Object.hash(promotions, termsOfService); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionConsent(promotions: $promotions, termsOfService: $termsOfService)'; } 
+          termsOfService == other.termsOfService;
+
+@override int get hashCode => Object.hash(promotions, termsOfService);
+
+@override String toString() => 'PaymentPagesCheckoutSessionConsent(promotions: $promotions, termsOfService: $termsOfService)';
+
  }

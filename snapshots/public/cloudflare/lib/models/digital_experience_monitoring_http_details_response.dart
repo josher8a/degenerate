@@ -67,7 +67,7 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
   targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
   targeted: targeted != null ? targeted() : this.targeted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringHttpDetailsResponse &&
           host == other.host &&
           httpStats == other.httpStats &&
@@ -77,7 +77,10 @@ DigitalExperienceMonitoringHttpDetailsResponse copyWith({String? Function()? hos
           method == other.method &&
           name == other.name &&
           listEquals(targetPolicies, other.targetPolicies) &&
-          targeted == other.targeted; } 
-@override int get hashCode { return Object.hash(host, httpStats, Object.hashAll(httpStatsByColo ?? const []), interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted); } 
-@override String toString() { return 'DigitalExperienceMonitoringHttpDetailsResponse(host: $host, httpStats: $httpStats, httpStatsByColo: $httpStatsByColo, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted)'; } 
+          targeted == other.targeted;
+
+@override int get hashCode => Object.hash(host, httpStats, Object.hashAll(httpStatsByColo ?? const []), interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted);
+
+@override String toString() => 'DigitalExperienceMonitoringHttpDetailsResponse(host: $host, httpStats: $httpStats, httpStatsByColo: $httpStatsByColo, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted)';
+
  }

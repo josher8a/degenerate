@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusUpdateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusUpdateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusUpdateStatus($value)';
+
  }
 /// An status update belonging to a project
 @immutable final class StatusUpdate {const StatusUpdate({required this.id, required this.nodeId, required this.createdAt, required this.updatedAt, this.projectNodeId, this.creator, this.status, this.startDate, this.targetDate, this.body, });
@@ -110,7 +113,7 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   body: body != null ? body() : this.body,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusUpdate &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -121,7 +124,10 @@ StatusUpdate copyWith({double? id, String? nodeId, String? Function()? projectNo
           status == other.status &&
           startDate == other.startDate &&
           targetDate == other.targetDate &&
-          body == other.body; } 
-@override int get hashCode { return Object.hash(id, nodeId, projectNodeId, creator, createdAt, updatedAt, status, startDate, targetDate, body); } 
-@override String toString() { return 'StatusUpdate(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, status: $status, startDate: $startDate, targetDate: $targetDate, body: $body)'; } 
+          body == other.body;
+
+@override int get hashCode => Object.hash(id, nodeId, projectNodeId, creator, createdAt, updatedAt, status, startDate, targetDate, body);
+
+@override String toString() => 'StatusUpdate(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, status: $status, startDate: $startDate, targetDate: $targetDate, body: $body)';
+
  }

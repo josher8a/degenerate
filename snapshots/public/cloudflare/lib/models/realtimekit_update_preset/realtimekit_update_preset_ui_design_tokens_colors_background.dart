@@ -35,13 +35,16 @@ RealtimekitUpdatePresetUiDesignTokensColorsBackground copyWith({String Function(
   $900: $900 != null ? $900() : this.$900,
   $1000: $1000 != null ? $1000() : this.$1000,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUiDesignTokensColorsBackground &&
           $600 == other.$600 &&
           $700 == other.$700 &&
           $800 == other.$800 &&
           $900 == other.$900 &&
-          $1000 == other.$1000; } 
-@override int get hashCode { return Object.hash($600, $700, $800, $900, $1000); } 
-@override String toString() { return 'RealtimekitUpdatePresetUiDesignTokensColorsBackground(\$600: ${$600}, \$700: ${$700}, \$800: ${$800}, \$900: ${$900}, \$1000: ${$1000})'; } 
+          $1000 == other.$1000;
+
+@override int get hashCode => Object.hash($600, $700, $800, $900, $1000);
+
+@override String toString() => 'RealtimekitUpdatePresetUiDesignTokensColorsBackground(\$600: ${$600}, \$700: ${$700}, \$800: ${$800}, \$900: ${$900}, \$1000: ${$1000})';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('regio
 DlsAccountRegionalHostnamesAccountPatchHostnameRequest copyWith({DlsRegionKey? regionKey}) { return DlsAccountRegionalHostnamesAccountPatchHostnameRequest(
   regionKey: regionKey ?? this.regionKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountPatchHostnameRequest &&
-          regionKey == other.regionKey; } 
-@override int get hashCode { return regionKey.hashCode; } 
-@override String toString() { return 'DlsAccountRegionalHostnamesAccountPatchHostnameRequest(regionKey: $regionKey)'; } 
+          regionKey == other.regionKey;
+
+@override int get hashCode => regionKey.hashCode;
+
+@override String toString() => 'DlsAccountRegionalHostnamesAccountPatchHostnameRequest(regionKey: $regionKey)';
+
  }

@@ -156,11 +156,14 @@ PagesDeploymentLog copyWith({List<PagesDeploymentLogData>? data, bool? includesC
   includesContainerLogs: includesContainerLogs ?? this.includesContainerLogs,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentLog &&
           listEquals(data, other.data) &&
           includesContainerLogs == other.includesContainerLogs &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), includesContainerLogs, total); } 
-@override String toString() { return 'PagesDeploymentLog(data: $data, includesContainerLogs: $includesContainerLogs, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), includesContainerLogs, total);
+
+@override String toString() => 'PagesDeploymentLog(data: $data, includesContainerLogs: $includesContainerLogs, total: $total)';
+
  }

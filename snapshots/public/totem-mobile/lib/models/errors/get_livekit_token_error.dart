@@ -41,9 +41,7 @@ final class GetLivekitTokenError$403 extends GetLivekitTokenError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 403;
-  }
+  int get statusCode => 403;
 }
 
 final class GetLivekitTokenError$404 extends GetLivekitTokenError {
@@ -52,9 +50,7 @@ final class GetLivekitTokenError$404 extends GetLivekitTokenError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 404;
-  }
+  int get statusCode => 404;
 }
 
 final class GetLivekitTokenError$500 extends GetLivekitTokenError {
@@ -63,9 +59,7 @@ final class GetLivekitTokenError$500 extends GetLivekitTokenError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 500;
-  }
+  int get statusCode => 500;
 }
 
 final class GetLivekitTokenError$Unknown extends GetLivekitTokenError {

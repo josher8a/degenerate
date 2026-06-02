@@ -21,10 +21,13 @@ AutomaticPaymentMethods copyWith({AllowRedirects? Function()? allowRedirects, bo
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutomaticPaymentMethods &&
           allowRedirects == other.allowRedirects &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowRedirects, enabled); } 
-@override String toString() { return 'AutomaticPaymentMethods(allowRedirects: $allowRedirects, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(allowRedirects, enabled);
+
+@override String toString() => 'AutomaticPaymentMethods(allowRedirects: $allowRedirects, enabled: $enabled)';
+
  }

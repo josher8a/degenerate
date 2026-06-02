@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceSharingRecipientAssociationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResourceSharingRecipientAssociationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceSharingRecipientAssociationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResourceSharingRecipientAssociationStatus($value)';
+
  }
 @immutable final class ResourceSharingShareRecipientObject {const ResourceSharingShareRecipientObject({required this.accountId, required this.associationStatus, required this.created, required this.id, required this.modified, this.resources, });
 
@@ -80,14 +83,17 @@ ResourceSharingShareRecipientObject copyWith({ResourceSharingAccountId? accountI
   modified: modified ?? this.modified,
   resources: resources != null ? resources() : this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareRecipientObject &&
           accountId == other.accountId &&
           associationStatus == other.associationStatus &&
           created == other.created &&
           id == other.id &&
           modified == other.modified &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hash(accountId, associationStatus, created, id, modified, Object.hashAll(resources ?? const [])); } 
-@override String toString() { return 'ResourceSharingShareRecipientObject(accountId: $accountId, associationStatus: $associationStatus, created: $created, id: $id, modified: $modified, resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hash(accountId, associationStatus, created, id, modified, Object.hashAll(resources ?? const []));
+
+@override String toString() => 'ResourceSharingShareRecipientObject(accountId: $accountId, associationStatus: $associationStatus, created: $created, id: $id, modified: $modified, resources: $resources)';
+
  }

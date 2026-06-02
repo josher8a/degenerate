@@ -22,10 +22,13 @@ ReposListDeploymentBranchPoliciesResponse copyWith({int? totalCount, List<Deploy
   totalCount: totalCount ?? this.totalCount,
   branchPolicies: branchPolicies ?? this.branchPolicies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposListDeploymentBranchPoliciesResponse &&
           totalCount == other.totalCount &&
-          listEquals(branchPolicies, other.branchPolicies); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(branchPolicies)); } 
-@override String toString() { return 'ReposListDeploymentBranchPoliciesResponse(totalCount: $totalCount, branchPolicies: $branchPolicies)'; } 
+          listEquals(branchPolicies, other.branchPolicies);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(branchPolicies));
+
+@override String toString() => 'ReposListDeploymentBranchPoliciesResponse(totalCount: $totalCount, branchPolicies: $branchPolicies)';
+
  }

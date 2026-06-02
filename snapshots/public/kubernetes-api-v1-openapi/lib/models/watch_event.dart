@@ -27,10 +27,13 @@ WatchEvent copyWith({Map<String,dynamic>? object, String? type, }) { return Watc
   object: object ?? this.object,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WatchEvent &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(object, type); } 
-@override String toString() { return 'WatchEvent(object: $object, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(object, type);
+
+@override String toString() => 'WatchEvent(object: $object, type: $type)';
+
  }

@@ -66,7 +66,7 @@ DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map
   rows: rows ?? this.rows,
   totals: totals ?? this.totals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsResult &&
           listEquals(data, other.data) &&
           dataLag == other.dataLag &&
@@ -74,7 +74,10 @@ DnsAnalyticsResult copyWith({List<DnsAnalyticsData2>? data, double? dataLag, Map
           min == other.min &&
           query == other.query &&
           rows == other.rows &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals); } 
-@override String toString() { return 'DnsAnalyticsResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals)'; } 
+          totals == other.totals;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals);
+
+@override String toString() => 'DnsAnalyticsResult(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals)';
+
  }

@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Mile && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Mile($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Mile && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Mile($value)';
+
  }
 @immutable final class Hops {const Hops({required this.ttl, this.asn, this.aso, this.ipAddress, this.location, this.mile, this.name, this.packetLossPct, this.rttMs, });
 
@@ -85,7 +88,7 @@ Hops copyWith({int? Function()? asn, String? Function()? aso, String? Function()
   rttMs: rttMs != null ? rttMs() : this.rttMs,
   ttl: ttl ?? this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Hops &&
           asn == other.asn &&
           aso == other.aso &&
@@ -95,7 +98,10 @@ Hops copyWith({int? Function()? asn, String? Function()? aso, String? Function()
           name == other.name &&
           packetLossPct == other.packetLossPct &&
           rttMs == other.rttMs &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(asn, aso, ipAddress, location, mile, name, packetLossPct, rttMs, ttl); } 
-@override String toString() { return 'Hops(asn: $asn, aso: $aso, ipAddress: $ipAddress, location: $location, mile: $mile, name: $name, packetLossPct: $packetLossPct, rttMs: $rttMs, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(asn, aso, ipAddress, location, mile, name, packetLossPct, rttMs, ttl);
+
+@override String toString() => 'Hops(asn: $asn, aso: $aso, ipAddress: $ipAddress, location: $location, mile: $mile, name: $name, packetLossPct: $packetLossPct, rttMs: $rttMs, ttl: $ttl)';
+
  }

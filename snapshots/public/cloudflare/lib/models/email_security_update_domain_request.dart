@@ -74,7 +74,7 @@ EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Func
   requireTlsOutbound: requireTlsOutbound != null ? requireTlsOutbound() : this.requireTlsOutbound,
   transport: transport != null ? transport() : this.transport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateDomainRequest &&
           listEquals(allowedDeliveryModes, other.allowedDeliveryModes) &&
           domain == other.domain &&
@@ -86,7 +86,10 @@ EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Func
           listEquals(regions, other.regions) &&
           requireTlsInbound == other.requireTlsInbound &&
           requireTlsOutbound == other.requireTlsOutbound &&
-          transport == other.transport; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedDeliveryModes ?? const []), domain, Object.hashAll(dropDispositions ?? const []), folder, integrationId, Object.hashAll(ipRestrictions), lookbackHops, Object.hashAll(regions ?? const []), requireTlsInbound, requireTlsOutbound, transport); } 
-@override String toString() { return 'EmailSecurityUpdateDomainRequest(allowedDeliveryModes: $allowedDeliveryModes, domain: $domain, dropDispositions: $dropDispositions, folder: $folder, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lookbackHops: $lookbackHops, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, transport: $transport)'; } 
+          transport == other.transport;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedDeliveryModes ?? const []), domain, Object.hashAll(dropDispositions ?? const []), folder, integrationId, Object.hashAll(ipRestrictions), lookbackHops, Object.hashAll(regions ?? const []), requireTlsInbound, requireTlsOutbound, transport);
+
+@override String toString() => 'EmailSecurityUpdateDomainRequest(allowedDeliveryModes: $allowedDeliveryModes, domain: $domain, dropDispositions: $dropDispositions, folder: $folder, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lookbackHops: $lookbackHops, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, transport: $transport)';
+
  }

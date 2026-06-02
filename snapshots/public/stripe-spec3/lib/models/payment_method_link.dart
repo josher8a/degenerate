@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodLink copyWith({String? Function()? email}) { return PaymentMethodLink(
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodLink &&
-          email == other.email; } 
-@override int get hashCode { return email.hashCode; } 
-@override String toString() { return 'PaymentMethodLink(email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => email.hashCode;
+
+@override String toString() => 'PaymentMethodLink(email: $email)';
+
  }

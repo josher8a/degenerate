@@ -20,10 +20,13 @@ ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse copyWith({i
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   repositories: repositories != null ? repositories() : this.repositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse &&
           totalCount == other.totalCount &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositories ?? const [])); } 
-@override String toString() { return 'ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(totalCount: $totalCount, repositories: $repositories)'; } 
+          listEquals(repositories, other.repositories);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(repositories ?? const []));
+
+@override String toString() => 'ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse(totalCount: $totalCount, repositories: $repositories)';
+
  }

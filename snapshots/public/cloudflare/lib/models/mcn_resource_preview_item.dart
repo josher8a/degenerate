@@ -21,10 +21,13 @@ McnResourcePreviewItem copyWith({String? itemType, McnResourcePreview? resourceP
   itemType: itemType ?? this.itemType,
   resourcePreview: resourcePreview ?? this.resourcePreview,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourcePreviewItem &&
           itemType == other.itemType &&
-          resourcePreview == other.resourcePreview; } 
-@override int get hashCode { return Object.hash(itemType, resourcePreview); } 
-@override String toString() { return 'McnResourcePreviewItem(itemType: $itemType, resourcePreview: $resourcePreview)'; } 
+          resourcePreview == other.resourcePreview;
+
+@override int get hashCode => Object.hash(itemType, resourcePreview);
+
+@override String toString() => 'McnResourcePreviewItem(itemType: $itemType, resourcePreview: $resourcePreview)';
+
  }

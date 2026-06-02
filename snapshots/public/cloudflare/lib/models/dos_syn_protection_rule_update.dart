@@ -34,12 +34,15 @@ DosSynProtectionRuleUpdate copyWith({String? Function()? burstSensitivity, Strin
   mode: mode != null ? mode() : this.mode,
   rateSensitivity: rateSensitivity != null ? rateSensitivity() : this.rateSensitivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosSynProtectionRuleUpdate &&
           burstSensitivity == other.burstSensitivity &&
           mitigationType == other.mitigationType &&
           mode == other.mode &&
-          rateSensitivity == other.rateSensitivity; } 
-@override int get hashCode { return Object.hash(burstSensitivity, mitigationType, mode, rateSensitivity); } 
-@override String toString() { return 'DosSynProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, rateSensitivity: $rateSensitivity)'; } 
+          rateSensitivity == other.rateSensitivity;
+
+@override int get hashCode => Object.hash(burstSensitivity, mitigationType, mode, rateSensitivity);
+
+@override String toString() => 'DosSynProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, rateSensitivity: $rateSensitivity)';
+
  }

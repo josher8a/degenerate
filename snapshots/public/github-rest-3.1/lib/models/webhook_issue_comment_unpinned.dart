@@ -57,7 +57,7 @@ WebhookIssueCommentUnpinned copyWith({WebhookDiscussionUnpinnedAction? action, W
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueCommentUnpinned &&
           action == other.action &&
           comment == other.comment &&
@@ -66,7 +66,10 @@ WebhookIssueCommentUnpinned copyWith({WebhookDiscussionUnpinnedAction? action, W
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, comment, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssueCommentUnpinned(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, comment, enterprise, installation, issue, organization, repository, sender);
+
+@override String toString() => 'WebhookIssueCommentUnpinned(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';
+
  }

@@ -33,12 +33,15 @@ LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAna
   pool: pool != null ? pool() : this.pool,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingAnalytics &&
           id == other.id &&
           listEquals(origins, other.origins) &&
           pool == other.pool &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(origins ?? const []), pool, timestamp); } 
-@override String toString() { return 'LoadBalancingAnalytics(id: $id, origins: $origins, pool: $pool, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(id, Object.hashAll(origins ?? const []), pool, timestamp);
+
+@override String toString() => 'LoadBalancingAnalytics(id: $id, origins: $origins, pool: $pool, timestamp: $timestamp)';
+
  }

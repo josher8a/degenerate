@@ -60,7 +60,7 @@ AccessFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSch
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessFeatureAppProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
           autoRedirectToIdentity == other.autoRedirectToIdentity &&
@@ -70,7 +70,10 @@ AccessFeatureAppProps copyWith({List<String>? Function()? allowedIdps, AccessSch
           domain == other.domain &&
           name == other.name &&
           sessionDuration == other.sessionDuration &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type); } 
-@override String toString() { return 'AccessFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type);
+
+@override String toString() => 'AccessFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)';
+
  }

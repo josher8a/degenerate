@@ -30,10 +30,13 @@ SecretServiceResourceScope copyWith({GetAppsSecretsFindScopeType? type, String? 
   type: type ?? this.type,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretServiceResourceScope &&
           type == other.type &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(type, user); } 
-@override String toString() { return 'SecretServiceResourceScope(type: $type, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(type, user);
+
+@override String toString() => 'SecretServiceResourceScope(type: $type, user: $user)';
+
  }

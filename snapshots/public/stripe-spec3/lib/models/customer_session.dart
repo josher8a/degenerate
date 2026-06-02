@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerSessionObject($value)';
+
  }
 /// A Customer Session allows you to grant Stripe's frontend SDKs (like Stripe.js) client-side access
 /// control over a Customer.
@@ -100,7 +103,7 @@ CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponent
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSession &&
           clientSecret == other.clientSecret &&
           components == other.components &&
@@ -109,7 +112,10 @@ CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponent
           customerAccount == other.customerAccount &&
           expiresAt == other.expiresAt &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(clientSecret, components, created, customer, customerAccount, expiresAt, livemode, object); } 
-@override String toString() { return 'CustomerSession(clientSecret: $clientSecret, components: $components, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(clientSecret, components, created, customer, customerAccount, expiresAt, livemode, object);
+
+@override String toString() => 'CustomerSession(clientSecret: $clientSecret, components: $components, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, livemode: $livemode, object: $object)';
+
  }

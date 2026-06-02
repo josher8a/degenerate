@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VectorizeDeleteVectorsByIdResponse copyWith({Response3? Function()? result}) { return VectorizeDeleteVectorsByIdResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeleteVectorsByIdResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'VectorizeDeleteVectorsByIdResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'VectorizeDeleteVectorsByIdResponse(result: $result)';
+
  }

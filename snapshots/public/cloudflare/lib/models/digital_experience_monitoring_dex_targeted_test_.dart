@@ -33,12 +33,15 @@ DigitalExperienceMonitoringDexTargetedTest copyWith({DigitalExperienceMonitoring
   name: name ?? this.name,
   testId: testId ?? this.testId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexTargetedTest &&
           data == other.data &&
           enabled == other.enabled &&
           name == other.name &&
-          testId == other.testId; } 
-@override int get hashCode { return Object.hash(data, enabled, name, testId); } 
-@override String toString() { return 'DigitalExperienceMonitoringDexTargetedTest(data: $data, enabled: $enabled, name: $name, testId: $testId)'; } 
+          testId == other.testId;
+
+@override int get hashCode => Object.hash(data, enabled, name, testId);
+
+@override String toString() => 'DigitalExperienceMonitoringDexTargetedTest(data: $data, enabled: $enabled, name: $name, testId: $testId)';
+
  }

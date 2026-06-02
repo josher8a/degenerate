@@ -118,7 +118,7 @@ Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String
   archiveUrl: archiveUrl != null ? archiveUrl() : this.archiveUrl,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Migration &&
           id == other.id &&
           owner == other.owner &&
@@ -137,7 +137,10 @@ Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String
           updatedAt == other.updatedAt &&
           nodeId == other.nodeId &&
           archiveUrl == other.archiveUrl &&
-          listEquals(exclude, other.exclude); } 
-@override int get hashCode { return Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const [])); } 
-@override String toString() { return 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)'; } 
+          listEquals(exclude, other.exclude);
+
+@override int get hashCode => Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const []));
+
+@override String toString() => 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)';
+
  }

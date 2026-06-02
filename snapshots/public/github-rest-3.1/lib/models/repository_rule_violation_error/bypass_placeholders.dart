@@ -21,10 +21,13 @@ BypassPlaceholders copyWith({SecretScanningPushProtectionBypassPlaceholderId? Fu
   placeholderId: placeholderId != null ? placeholderId() : this.placeholderId,
   tokenType: tokenType != null ? tokenType() : this.tokenType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BypassPlaceholders &&
           placeholderId == other.placeholderId &&
-          tokenType == other.tokenType; } 
-@override int get hashCode { return Object.hash(placeholderId, tokenType); } 
-@override String toString() { return 'BypassPlaceholders(placeholderId: $placeholderId, tokenType: $tokenType)'; } 
+          tokenType == other.tokenType;
+
+@override int get hashCode => Object.hash(placeholderId, tokenType);
+
+@override String toString() => 'BypassPlaceholders(placeholderId: $placeholderId, tokenType: $tokenType)';
+
  }

@@ -16,10 +16,13 @@ final double value;
 double toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListGatewayLogsFeedbackVariant1($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AigConfigListGatewayLogsFeedbackVariant1 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AigConfigListGatewayLogsFeedbackVariant1($value)';
+
  }
 @immutable final class AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2._(this.value);
 
@@ -37,10 +40,13 @@ final double value;
 double toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListGatewayLogsFeedbackVariant2($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AigConfigListGatewayLogsFeedbackVariant2 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AigConfigListGatewayLogsFeedbackVariant2($value)';
+
  }
 @immutable final class AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3._(this.value);
 
@@ -58,9 +64,12 @@ final double value;
 double toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AigConfigListGatewayLogsFeedbackVariant3($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AigConfigListGatewayLogsFeedbackVariant3 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AigConfigListGatewayLogsFeedbackVariant3($value)';
+
  }
 typedef AigConfigListGatewayLogsFeedback = OneOf3<AigConfigListGatewayLogsFeedbackVariant1,AigConfigListGatewayLogsFeedbackVariant2,AigConfigListGatewayLogsFeedbackVariant3>;

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('wareh
 R2DataCatalogCatalogList copyWith({List<R2DataCatalogCatalog>? warehouses}) { return R2DataCatalogCatalogList(
   warehouses: warehouses ?? this.warehouses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogList &&
-          listEquals(warehouses, other.warehouses); } 
-@override int get hashCode { return Object.hashAll(warehouses); } 
-@override String toString() { return 'R2DataCatalogCatalogList(warehouses: $warehouses)'; } 
+          listEquals(warehouses, other.warehouses);
+
+@override int get hashCode => Object.hashAll(warehouses);
+
+@override String toString() => 'R2DataCatalogCatalogList(warehouses: $warehouses)';
+
  }

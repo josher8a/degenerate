@@ -34,12 +34,15 @@ CodeOfConductSimple copyWith({Uri? url, String? key, String? name, Uri? Function
   name: name ?? this.name,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeOfConductSimple &&
           url == other.url &&
           key == other.key &&
           name == other.name &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(url, key, name, htmlUrl); } 
-@override String toString() { return 'CodeOfConductSimple(url: $url, key: $key, name: $name, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(url, key, name, htmlUrl);
+
+@override String toString() => 'CodeOfConductSimple(url: $url, key: $key, name: $name, htmlUrl: $htmlUrl)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateOptionsCollectionMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateOptionsCollectionMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateOptionsCollectionMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandateOptionsCollectionMethod($value)';
+
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14MandateOptions {const PaymentIntentPaymentMethodOptionsParam14MandateOptions({this.collectionMethod});
 
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentIntentPaymentMethodOptionsParam14MandateOptions copyWith({MandateOptionsCollectionMethod? Function()? collectionMethod}) { return PaymentIntentPaymentMethodOptionsParam14MandateOptions(
   collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam14MandateOptions &&
-          collectionMethod == other.collectionMethod; } 
-@override int get hashCode { return collectionMethod.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14MandateOptions(collectionMethod: $collectionMethod)'; } 
+          collectionMethod == other.collectionMethod;
+
+@override int get hashCode => collectionMethod.hashCode;
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam14MandateOptions(collectionMethod: $collectionMethod)';
+
  }

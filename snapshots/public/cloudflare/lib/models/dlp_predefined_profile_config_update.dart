@@ -49,14 +49,17 @@ DlpPredefinedProfileConfigUpdate copyWith({bool Function()? aiContextEnabled, in
   entries: entries != null ? entries() : this.entries,
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPredefinedProfileConfigUpdate &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
           confidenceThreshold == other.confidenceThreshold &&
           listEquals(enabledEntries, other.enabledEntries) &&
           listEquals(entries, other.entries) &&
-          ocrEnabled == other.ocrEnabled; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, Object.hashAll(enabledEntries ?? const []), Object.hashAll(entries ?? const []), ocrEnabled); } 
-@override String toString() { return 'DlpPredefinedProfileConfigUpdate(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, enabledEntries: $enabledEntries, entries: $entries, ocrEnabled: $ocrEnabled)'; } 
+          ocrEnabled == other.ocrEnabled;
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, Object.hashAll(enabledEntries ?? const []), Object.hashAll(entries ?? const []), ocrEnabled);
+
+@override String toString() => 'DlpPredefinedProfileConfigUpdate(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, enabledEntries: $enabledEntries, entries: $entries, ocrEnabled: $ocrEnabled)';
+
  }

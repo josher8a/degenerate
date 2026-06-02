@@ -76,7 +76,7 @@ RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int?
   source: source ?? this.source,
   website: website ?? this.website,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesAsnByIpResponseResultAsn &&
           aka == other.aka &&
           asn == other.asn &&
@@ -87,7 +87,10 @@ RadarGetEntitiesAsnByIpResponseResultAsn copyWith({String? Function()? aka, int?
           orgName == other.orgName &&
           listEquals(related, other.related) &&
           source == other.source &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(aka, asn, country, countryName, estimatedUsers, name, orgName, Object.hashAll(related), source, website); } 
-@override String toString() { return 'RadarGetEntitiesAsnByIpResponseResultAsn(aka: $aka, asn: $asn, country: $country, countryName: $countryName, estimatedUsers: $estimatedUsers, name: $name, orgName: $orgName, related: $related, source: $source, website: $website)'; } 
+          website == other.website;
+
+@override int get hashCode => Object.hash(aka, asn, country, countryName, estimatedUsers, name, orgName, Object.hashAll(related), source, website);
+
+@override String toString() => 'RadarGetEntitiesAsnByIpResponseResultAsn(aka: $aka, asn: $asn, country: $country, countryName: $countryName, estimatedUsers: $estimatedUsers, name: $name, orgName: $orgName, related: $related, source: $source, website: $website)';
+
  }

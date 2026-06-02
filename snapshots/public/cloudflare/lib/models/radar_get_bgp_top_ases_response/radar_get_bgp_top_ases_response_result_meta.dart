@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dateR
 RadarGetBgpTopAsesResponseResultMeta copyWith({List<MetaDateRange>? dateRange}) { return RadarGetBgpTopAsesResponseResultMeta(
   dateRange: dateRange ?? this.dateRange,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsesResponseResultMeta &&
-          listEquals(dateRange, other.dateRange); } 
-@override int get hashCode { return Object.hashAll(dateRange); } 
-@override String toString() { return 'RadarGetBgpTopAsesResponseResultMeta(dateRange: $dateRange)'; } 
+          listEquals(dateRange, other.dateRange);
+
+@override int get hashCode => Object.hashAll(dateRange);
+
+@override String toString() => 'RadarGetBgpTopAsesResponseResultMeta(dateRange: $dateRange)';
+
  }

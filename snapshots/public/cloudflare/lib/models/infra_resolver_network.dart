@@ -21,10 +21,13 @@ InfraResolverNetwork copyWith({List<String>? Function()? resolverIps, String? tu
   resolverIps: resolverIps != null ? resolverIps() : this.resolverIps,
   tunnelId: tunnelId ?? this.tunnelId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraResolverNetwork &&
           listEquals(resolverIps, other.resolverIps) &&
-          tunnelId == other.tunnelId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(resolverIps ?? const []), tunnelId); } 
-@override String toString() { return 'InfraResolverNetwork(resolverIps: $resolverIps, tunnelId: $tunnelId)'; } 
+          tunnelId == other.tunnelId;
+
+@override int get hashCode => Object.hash(Object.hashAll(resolverIps ?? const []), tunnelId);
+
+@override String toString() => 'InfraResolverNetwork(resolverIps: $resolverIps, tunnelId: $tunnelId)';
+
  }

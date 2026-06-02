@@ -23,10 +23,13 @@ PersistentVolumeClaimTemplate copyWith({ObjectMeta? Function()? metadata, Persis
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec ?? this.spec,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimTemplate &&
           metadata == other.metadata &&
-          spec == other.spec; } 
-@override int get hashCode { return Object.hash(metadata, spec); } 
-@override String toString() { return 'PersistentVolumeClaimTemplate(metadata: $metadata, spec: $spec)'; } 
+          spec == other.spec;
+
+@override int get hashCode => Object.hash(metadata, spec);
+
+@override String toString() => 'PersistentVolumeClaimTemplate(metadata: $metadata, spec: $spec)';
+
  }

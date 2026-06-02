@@ -38,12 +38,15 @@ RealtimeServerEventResponseMcpCallInProgress copyWith({String? eventId, String? 
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseMcpCallInProgress &&
           eventId == other.eventId &&
           type == other.type &&
           outputIndex == other.outputIndex &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, outputIndex, itemId); } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallInProgress(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, outputIndex, itemId);
+
+@override String toString() => 'RealtimeServerEventResponseMcpCallInProgress(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
+
  }

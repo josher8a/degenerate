@@ -22,10 +22,13 @@ Variant1ToolCalls copyWith({Map<String, dynamic>? Function()? arguments, String?
   arguments: arguments != null ? arguments() : this.arguments,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1ToolCalls &&
           arguments == other.arguments &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(arguments, name); } 
-@override String toString() { return 'Variant1ToolCalls(arguments: $arguments, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(arguments, name);
+
+@override String toString() => 'Variant1ToolCalls(arguments: $arguments, name: $name)';
+
  }

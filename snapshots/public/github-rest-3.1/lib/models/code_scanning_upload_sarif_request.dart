@@ -72,7 +72,7 @@ CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSh
   toolName: toolName != null ? toolName() : this.toolName,
   validate: validate != null ? validate() : this.validate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningUploadSarifRequest &&
           commitSha == other.commitSha &&
           ref == other.ref &&
@@ -80,7 +80,10 @@ CodeScanningUploadSarifRequest copyWith({CodeScanningAnalysisCommitSha? commitSh
           checkoutUri == other.checkoutUri &&
           startedAt == other.startedAt &&
           toolName == other.toolName &&
-          validate == other.validate; } 
-@override int get hashCode { return Object.hash(commitSha, ref, sarif, checkoutUri, startedAt, toolName, validate); } 
-@override String toString() { return 'CodeScanningUploadSarifRequest(commitSha: $commitSha, ref: $ref, sarif: $sarif, checkoutUri: $checkoutUri, startedAt: $startedAt, toolName: $toolName, validate: $validate)'; } 
+          validate == other.validate;
+
+@override int get hashCode => Object.hash(commitSha, ref, sarif, checkoutUri, startedAt, toolName, validate);
+
+@override String toString() => 'CodeScanningUploadSarifRequest(commitSha: $commitSha, ref: $ref, sarif: $sarif, checkoutUri: $checkoutUri, startedAt: $startedAt, toolName: $toolName, validate: $validate)';
+
  }

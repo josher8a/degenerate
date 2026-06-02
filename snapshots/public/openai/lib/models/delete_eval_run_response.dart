@@ -28,11 +28,14 @@ DeleteEvalRunResponse copyWith({String? Function()? object, bool? Function()? de
   deleted: deleted != null ? deleted() : this.deleted,
   runId: runId != null ? runId() : this.runId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEvalRunResponse &&
           object == other.object &&
           deleted == other.deleted &&
-          runId == other.runId; } 
-@override int get hashCode { return Object.hash(object, deleted, runId); } 
-@override String toString() { return 'DeleteEvalRunResponse(object: $object, deleted: $deleted, runId: $runId)'; } 
+          runId == other.runId;
+
+@override int get hashCode => Object.hash(object, deleted, runId);
+
+@override String toString() => 'DeleteEvalRunResponse(object: $object, deleted: $deleted, runId: $runId)';
+
  }

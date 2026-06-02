@@ -38,12 +38,15 @@ ActionsHostedRunnerMachineSpec copyWith({String? id, int? cpuCores, int? memoryG
   memoryGb: memoryGb ?? this.memoryGb,
   storageGb: storageGb ?? this.storageGb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerMachineSpec &&
           id == other.id &&
           cpuCores == other.cpuCores &&
           memoryGb == other.memoryGb &&
-          storageGb == other.storageGb; } 
-@override int get hashCode { return Object.hash(id, cpuCores, memoryGb, storageGb); } 
-@override String toString() { return 'ActionsHostedRunnerMachineSpec(id: $id, cpuCores: $cpuCores, memoryGb: $memoryGb, storageGb: $storageGb)'; } 
+          storageGb == other.storageGb;
+
+@override int get hashCode => Object.hash(id, cpuCores, memoryGb, storageGb);
+
+@override String toString() => 'ActionsHostedRunnerMachineSpec(id: $id, cpuCores: $cpuCores, memoryGb: $memoryGb, storageGb: $storageGb)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDiscussionUnansweredAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDiscussionUnansweredAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDiscussionUnansweredAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDiscussionUnansweredAction($value)';
+
  }
 @immutable final class WebhookDiscussionUnanswered {const WebhookDiscussionUnanswered({required this.action, required this.discussion, required this.oldAnswer, required this.repository, this.organization, this.sender, });
 
@@ -64,14 +67,17 @@ WebhookDiscussionUnanswered copyWith({WebhookDiscussionUnansweredAction? action,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionUnanswered &&
           action == other.action &&
           discussion == other.discussion &&
           oldAnswer == other.oldAnswer &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, discussion, oldAnswer, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionUnanswered(action: $action, discussion: $discussion, oldAnswer: $oldAnswer, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, discussion, oldAnswer, organization, repository, sender);
+
+@override String toString() => 'WebhookDiscussionUnanswered(action: $action, discussion: $discussion, oldAnswer: $oldAnswer, organization: $organization, repository: $repository, sender: $sender)';
+
  }

@@ -30,10 +30,13 @@ IntelResolvesToRef copyWith({IntelStixIdentifier? Function()? id, String? Functi
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelResolvesToRef &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'IntelResolvesToRef(id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, value);
+
+@override String toString() => 'IntelResolvesToRef(id: $id, value: $value)';
+
  }

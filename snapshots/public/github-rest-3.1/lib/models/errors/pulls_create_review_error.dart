@@ -18,13 +18,15 @@ final class PullsCreateReviewError$403 extends PullsCreateReviewError {const Pul
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class PullsCreateReviewError$422 extends PullsCreateReviewError {const PullsCreateReviewError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class PullsCreateReviewError$Unknown extends PullsCreateReviewError {const PullsCreateReviewError$Unknown(this.statusCode, this.rawBody, );
 

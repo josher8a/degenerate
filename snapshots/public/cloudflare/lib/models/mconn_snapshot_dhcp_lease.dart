@@ -58,7 +58,7 @@ MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connector
   ipAddress: ipAddress ?? this.ipAddress,
   macAddress: macAddress ?? this.macAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotDhcpLease &&
           clientId == other.clientId &&
           connectorId == other.connectorId &&
@@ -66,7 +66,10 @@ MconnSnapshotDhcpLease copyWith({String? clientId, String? Function()? connector
           hostname == other.hostname &&
           interfaceName == other.interfaceName &&
           ipAddress == other.ipAddress &&
-          macAddress == other.macAddress; } 
-@override int get hashCode { return Object.hash(clientId, connectorId, expiryTime, hostname, interfaceName, ipAddress, macAddress); } 
-@override String toString() { return 'MconnSnapshotDhcpLease(clientId: $clientId, connectorId: $connectorId, expiryTime: $expiryTime, hostname: $hostname, interfaceName: $interfaceName, ipAddress: $ipAddress, macAddress: $macAddress)'; } 
+          macAddress == other.macAddress;
+
+@override int get hashCode => Object.hash(clientId, connectorId, expiryTime, hostname, interfaceName, ipAddress, macAddress);
+
+@override String toString() => 'MconnSnapshotDhcpLease(clientId: $clientId, connectorId: $connectorId, expiryTime: $expiryTime, hostname: $hostname, interfaceName: $interfaceName, ipAddress: $ipAddress, macAddress: $macAddress)';
+
  }

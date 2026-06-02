@@ -17,7 +17,8 @@ final class CancelResponseError$404 extends CancelResponseError {const CancelRes
 
 final ErrorModel error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CancelResponseError$Unknown extends CancelResponseError {const CancelResponseError$Unknown(this.statusCode, this.rawBody, );
 

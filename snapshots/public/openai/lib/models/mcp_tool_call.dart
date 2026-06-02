@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McpToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McpToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McpToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McpToolCallStatus($value)';
+
  }
 /// An invocation of a tool on an MCP server.
 /// 
@@ -113,7 +116,7 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
   status: status != null ? status() : this.status,
   approvalRequestId: approvalRequestId != null ? approvalRequestId() : this.approvalRequestId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpToolCall &&
           type == other.type &&
           id == other.id &&
@@ -123,7 +126,10 @@ McpToolCall copyWith({String? type, String? id, String? serverLabel, String? nam
           output == other.output &&
           error == other.error &&
           status == other.status &&
-          approvalRequestId == other.approvalRequestId; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments, output, error, status, approvalRequestId); } 
-@override String toString() { return 'McpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, output: $output, error: $error, status: $status, approvalRequestId: $approvalRequestId)'; } 
+          approvalRequestId == other.approvalRequestId;
+
+@override int get hashCode => Object.hash(type, id, serverLabel, name, arguments, output, error, status, approvalRequestId);
+
+@override String toString() => 'McpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, output: $output, error: $error, status: $status, approvalRequestId: $approvalRequestId)';
+
  }

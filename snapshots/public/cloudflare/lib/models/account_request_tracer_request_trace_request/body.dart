@@ -30,11 +30,14 @@ Body copyWith({String? Function()? base64, Map<String, dynamic>? Function()? jso
   json: json != null ? json() : this.json,
   plainText: plainText != null ? plainText() : this.plainText,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Body &&
           base64 == other.base64 &&
           json == other.json &&
-          plainText == other.plainText; } 
-@override int get hashCode { return Object.hash(base64, json, plainText); } 
-@override String toString() { return 'Body(base64: $base64, json: $json, plainText: $plainText)'; } 
+          plainText == other.plainText;
+
+@override int get hashCode => Object.hash(base64, json, plainText);
+
+@override String toString() => 'Body(base64: $base64, json: $json, plainText: $plainText)';
+
  }

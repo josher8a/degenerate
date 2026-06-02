@@ -30,12 +30,15 @@ CreateCompletionResponseChoicesLogprobs copyWith({List<int>? Function()? textOff
   tokens: tokens != null ? tokens() : this.tokens,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionResponseChoicesLogprobs &&
           listEquals(textOffset, other.textOffset) &&
           listEquals(tokenLogprobs, other.tokenLogprobs) &&
           listEquals(tokens, other.tokens) &&
-          listEquals(topLogprobs, other.topLogprobs); } 
-@override int get hashCode { return Object.hash(Object.hashAll(textOffset ?? const []), Object.hashAll(tokenLogprobs ?? const []), Object.hashAll(tokens ?? const []), Object.hashAll(topLogprobs ?? const [])); } 
-@override String toString() { return 'CreateCompletionResponseChoicesLogprobs(textOffset: $textOffset, tokenLogprobs: $tokenLogprobs, tokens: $tokens, topLogprobs: $topLogprobs)'; } 
+          listEquals(topLogprobs, other.topLogprobs);
+
+@override int get hashCode => Object.hash(Object.hashAll(textOffset ?? const []), Object.hashAll(tokenLogprobs ?? const []), Object.hashAll(tokens ?? const []), Object.hashAll(topLogprobs ?? const []));
+
+@override String toString() => 'CreateCompletionResponseChoicesLogprobs(textOffset: $textOffset, tokenLogprobs: $tokenLogprobs, tokens: $tokens, topLogprobs: $topLogprobs)';
+
  }

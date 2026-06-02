@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)';
+
  }
 /// Returned when an input audio transcription segment is identified for an item.
 @immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment({required this.eventId, required this.type, required this.itemId, required this.contentIndex, required this.text, required this.id, required this.speaker, required this.start, required this.end, });
@@ -95,7 +98,7 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({
   start: start ?? this.start,
   end: end ?? this.end,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment &&
           eventId == other.eventId &&
           type == other.type &&
@@ -105,7 +108,10 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment copyWith({
           id == other.id &&
           speaker == other.speaker &&
           start == other.start &&
-          end == other.end; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)'; } 
+          end == other.end;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end);
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)';
+
  }

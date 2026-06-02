@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String>? Function()? ptr}) { return DnsFirewallDnsFirewallReverseDns(
   ptr: ptr != null ? ptr() : this.ptr,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallReverseDns &&
-          ptr == other.ptr; } 
-@override int get hashCode { return ptr.hashCode; } 
-@override String toString() { return 'DnsFirewallDnsFirewallReverseDns(ptr: $ptr)'; } 
+          ptr == other.ptr;
+
+@override int get hashCode => ptr.hashCode;
+
+@override String toString() => 'DnsFirewallDnsFirewallReverseDns(ptr: $ptr)';
+
  }

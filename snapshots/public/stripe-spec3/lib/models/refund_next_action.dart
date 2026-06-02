@@ -26,10 +26,13 @@ RefundNextAction copyWith({RefundNextActionDisplayDetails? Function()? displayDe
   displayDetails: displayDetails != null ? displayDetails() : this.displayDetails,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundNextAction &&
           displayDetails == other.displayDetails &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(displayDetails, type); } 
-@override String toString() { return 'RefundNextAction(displayDetails: $displayDetails, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(displayDetails, type);
+
+@override String toString() => 'RefundNextAction(displayDetails: $displayDetails, type: $type)';
+
  }

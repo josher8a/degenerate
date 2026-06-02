@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerEnvironment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerEnvironment($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerEnvironment && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ComputerEnvironment($value)';
+
  }
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
 @immutable final class ComputerUsePreviewTool {const ComputerUsePreviewTool({required this.environment, required this.displayWidth, required this.displayHeight, this.type = 'computer_use_preview', });
@@ -71,12 +74,15 @@ ComputerUsePreviewTool copyWith({String? type, ComputerEnvironment? environment,
   displayWidth: displayWidth ?? this.displayWidth,
   displayHeight: displayHeight ?? this.displayHeight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerUsePreviewTool &&
           type == other.type &&
           environment == other.environment &&
           displayWidth == other.displayWidth &&
-          displayHeight == other.displayHeight; } 
-@override int get hashCode { return Object.hash(type, environment, displayWidth, displayHeight); } 
-@override String toString() { return 'ComputerUsePreviewTool(type: $type, environment: $environment, displayWidth: $displayWidth, displayHeight: $displayHeight)'; } 
+          displayHeight == other.displayHeight;
+
+@override int get hashCode => Object.hash(type, environment, displayWidth, displayHeight);
+
+@override String toString() => 'ComputerUsePreviewTool(type: $type, environment: $environment, displayWidth: $displayWidth, displayHeight: $displayHeight)';
+
  }

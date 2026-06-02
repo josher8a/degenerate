@@ -20,10 +20,13 @@ ProofOfUltimateBeneficialOwnership copyWith({List<String>? Function()? files, Si
   files: files != null ? files() : this.files,
   signer: signer != null ? signer() : this.signer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProofOfUltimateBeneficialOwnership &&
           listEquals(files, other.files) &&
-          signer == other.signer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(files ?? const []), signer); } 
-@override String toString() { return 'ProofOfUltimateBeneficialOwnership(files: $files, signer: $signer)'; } 
+          signer == other.signer;
+
+@override int get hashCode => Object.hash(Object.hashAll(files ?? const []), signer);
+
+@override String toString() => 'ProofOfUltimateBeneficialOwnership(files: $files, signer: $signer)';
+
  }

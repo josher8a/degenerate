@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfZaiOrgGlm47FlashError$400 extends WorkersAiPostRun
 
 final WorkersAiPostRunCfZaiOrgGlm47FlashResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfZaiOrgGlm47FlashError$Unknown extends WorkersAiPostRunCfZaiOrgGlm47FlashError {const WorkersAiPostRunCfZaiOrgGlm47FlashError$Unknown(this.statusCode, this.rawBody, );
 

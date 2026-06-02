@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestQuality($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageRequestQuality && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateImageRequestQuality($value)';
+
  }
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.
 @immutable final class CreateImageRequestSize {const CreateImageRequestSize._(this.value);
@@ -81,10 +84,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageRequestSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageRequestSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageRequestSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateImageRequestSize($value)';
+
  }
 /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.
 @immutable final class Style {const Style._(this.value);
@@ -106,10 +112,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Style && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Style($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Style && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Style($value)';
+
  }
 @immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model, this.n = 1, this.quality = CreateImageRequestQuality.auto, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.stream = false, this.partialImages, this.size = CreateImageRequestSize.auto, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.style = Style.vivid, this.user, });
 
@@ -255,7 +264,7 @@ CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()
   style: style != null ? style() : this.style,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateImageRequest &&
           prompt == other.prompt &&
           model == other.model &&
@@ -270,7 +279,10 @@ CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()
           moderation == other.moderation &&
           background == other.background &&
           style == other.style &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(prompt, model, n, quality, responseFormat, outputFormat, outputCompression, stream, partialImages, size, moderation, background, style, user); } 
-@override String toString() { return 'CreateImageRequest(prompt: $prompt, model: $model, n: $n, quality: $quality, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, stream: $stream, partialImages: $partialImages, size: $size, moderation: $moderation, background: $background, style: $style, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(prompt, model, n, quality, responseFormat, outputFormat, outputCompression, stream, partialImages, size, moderation, background, style, user);
+
+@override String toString() => 'CreateImageRequest(prompt: $prompt, model: $model, n: $n, quality: $quality, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, stream: $stream, partialImages: $partialImages, size: $size, moderation: $moderation, background: $background, style: $style, user: $user)';
+
  }

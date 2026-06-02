@@ -57,7 +57,7 @@ Bandwidth2 copyWith({int? Function()? all, int? Function()? cached, Map<String, 
   sslProtocols: sslProtocols != null ? sslProtocols() : this.sslProtocols,
   uncached: uncached != null ? uncached() : this.uncached,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Bandwidth2 &&
           all == other.all &&
           cached == other.cached &&
@@ -65,7 +65,10 @@ Bandwidth2 copyWith({int? Function()? all, int? Function()? cached, Map<String, 
           country == other.country &&
           ssl == other.ssl &&
           sslProtocols == other.sslProtocols &&
-          uncached == other.uncached; } 
-@override int get hashCode { return Object.hash(all, cached, contentType, country, ssl, sslProtocols, uncached); } 
-@override String toString() { return 'Bandwidth2(all: $all, cached: $cached, contentType: $contentType, country: $country, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)'; } 
+          uncached == other.uncached;
+
+@override int get hashCode => Object.hash(all, cached, contentType, country, ssl, sslProtocols, uncached);
+
+@override String toString() => 'Bandwidth2(all: $all, cached: $cached, contentType: $contentType, country: $country, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)';
+
  }

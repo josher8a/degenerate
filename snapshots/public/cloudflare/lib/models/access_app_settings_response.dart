@@ -21,10 +21,13 @@ AccessAppSettingsResponse copyWith({AccessAllowIframe? Function()? allowIframe, 
   allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
   skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppSettingsResponse &&
           allowIframe == other.allowIframe &&
-          skipInterstitial == other.skipInterstitial; } 
-@override int get hashCode { return Object.hash(allowIframe, skipInterstitial); } 
-@override String toString() { return 'AccessAppSettingsResponse(allowIframe: $allowIframe, skipInterstitial: $skipInterstitial)'; } 
+          skipInterstitial == other.skipInterstitial;
+
+@override int get hashCode => Object.hash(allowIframe, skipInterstitial);
+
+@override String toString() => 'AccessAppSettingsResponse(allowIframe: $allowIframe, skipInterstitial: $skipInterstitial)';
+
  }

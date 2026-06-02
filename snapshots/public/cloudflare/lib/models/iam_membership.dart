@@ -42,14 +42,17 @@ IamMembership copyWith({IamAccount? Function()? account, AccessEnabled? Function
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamMembership &&
           account == other.account &&
           apiAccessEnabled == other.apiAccessEnabled &&
           id == other.id &&
           permissions == other.permissions &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(roles ?? const []), status); } 
-@override String toString() { return 'IamMembership(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, roles: $roles, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(account, apiAccessEnabled, id, permissions, Object.hashAll(roles ?? const []), status);
+
+@override String toString() => 'IamMembership(account: $account, apiAccessEnabled: $apiAccessEnabled, id: $id, permissions: $permissions, roles: $roles, status: $status)';
+
  }

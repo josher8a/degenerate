@@ -26,10 +26,13 @@ RealtimeServerEventInputAudioBufferCleared copyWith({String? eventId, String? ty
   eventId: eventId ?? this.eventId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferCleared &&
           eventId == other.eventId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventId, type); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferCleared(eventId: $eventId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eventId, type);
+
+@override String toString() => 'RealtimeServerEventInputAudioBufferCleared(eventId: $eventId, type: $type)';
+
  }

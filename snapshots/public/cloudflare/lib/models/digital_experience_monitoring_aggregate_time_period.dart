@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DigitalExperienceMonitoringAggregateTimePeriodUnits && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringAggregateTimePeriodUnits($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DigitalExperienceMonitoringAggregateTimePeriodUnits && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DigitalExperienceMonitoringAggregateTimePeriodUnits($value)';
+
  }
 @immutable final class DigitalExperienceMonitoringAggregateTimePeriod {const DigitalExperienceMonitoringAggregateTimePeriod({required this.units, required this.value, });
 
@@ -48,10 +51,13 @@ DigitalExperienceMonitoringAggregateTimePeriod copyWith({DigitalExperienceMonito
   units: units ?? this.units,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringAggregateTimePeriod &&
           units == other.units &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(units, value); } 
-@override String toString() { return 'DigitalExperienceMonitoringAggregateTimePeriod(units: $units, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(units, value);
+
+@override String toString() => 'DigitalExperienceMonitoringAggregateTimePeriod(units: $units, value: $value)';
+
  }

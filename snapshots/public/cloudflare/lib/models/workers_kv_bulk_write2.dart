@@ -49,14 +49,17 @@ WorkersKvBulkWrite2 copyWith({bool Function()? base64, WorkersKvExpiration? Func
   metadata: metadata != null ? metadata() : this.metadata,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvBulkWrite2 &&
           base64 == other.base64 &&
           expiration == other.expiration &&
           expirationTtl == other.expirationTtl &&
           key == other.key &&
           metadata == other.metadata &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(base64, expiration, expirationTtl, key, metadata, value); } 
-@override String toString() { return 'WorkersKvBulkWrite2(base64: $base64, expiration: $expiration, expirationTtl: $expirationTtl, key: $key, metadata: $metadata, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(base64, expiration, expirationTtl, key, metadata, value);
+
+@override String toString() => 'WorkersKvBulkWrite2(base64: $base64, expiration: $expiration, expirationTtl: $expirationTtl, key: $key, metadata: $metadata, value: $value)';
+
  }

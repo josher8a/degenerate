@@ -20,9 +20,12 @@ return errors; }
 R2PutEventNotificationConfigRequest copyWith({List<R2Rule>? rules}) { return R2PutEventNotificationConfigRequest(
   rules: rules ?? this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2PutEventNotificationConfigRequest &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules); } 
-@override String toString() { return 'R2PutEventNotificationConfigRequest(rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hashAll(rules);
+
+@override String toString() => 'R2PutEventNotificationConfigRequest(rules: $rules)';
+
  }

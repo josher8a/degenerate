@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DnsRecordsCnameRecordSettings copyWith({bool Function()? flattenCname}) { return DnsRecordsCnameRecordSettings(
   flattenCname: flattenCname != null ? flattenCname() : this.flattenCname,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsCnameRecordSettings &&
-          flattenCname == other.flattenCname; } 
-@override int get hashCode { return flattenCname.hashCode; } 
-@override String toString() { return 'DnsRecordsCnameRecordSettings(flattenCname: $flattenCname)'; } 
+          flattenCname == other.flattenCname;
+
+@override int get hashCode => flattenCname.hashCode;
+
+@override String toString() => 'DnsRecordsCnameRecordSettings(flattenCname: $flattenCname)';
+
  }

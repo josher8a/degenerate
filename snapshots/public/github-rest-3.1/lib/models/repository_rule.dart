@@ -79,252 +79,344 @@ dynamic toJson() { return value; }
 
 final RepositoryRuleCreation _value;
 
-@override RepositoryRuleCreation get value { return _value; } 
+@override RepositoryRuleCreation get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCreation && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCreation($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCreation && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCreation($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleUpdate extends RepositoryRule {const RepositoryRuleRepositoryRuleUpdate(this._value);
 
 final RepositoryRuleUpdate _value;
 
-@override RepositoryRuleUpdate get value { return _value; } 
+@override RepositoryRuleUpdate get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleUpdate && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleUpdate($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleUpdate && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleUpdate($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleDeletion extends RepositoryRule {const RepositoryRuleRepositoryRuleDeletion(this._value);
 
 final RepositoryRuleDeletion _value;
 
-@override RepositoryRuleDeletion get value { return _value; } 
+@override RepositoryRuleDeletion get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleDeletion && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleDeletion($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleDeletion && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleDeletion($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleRequiredLinearHistory extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredLinearHistory(this._value);
 
 final RepositoryRuleRequiredLinearHistory _value;
 
-@override RepositoryRuleRequiredLinearHistory get value { return _value; } 
+@override RepositoryRuleRequiredLinearHistory get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleRequiredLinearHistory && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleRequiredLinearHistory($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleRequiredLinearHistory && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleRequiredLinearHistory($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleMergeQueue extends RepositoryRule {const RepositoryRuleRepositoryRuleMergeQueue(this._value);
 
 final RepositoryRuleMergeQueue _value;
 
-@override RepositoryRuleMergeQueue get value { return _value; } 
+@override RepositoryRuleMergeQueue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleMergeQueue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleMergeQueue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleMergeQueue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleMergeQueue($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleRequiredDeployments extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredDeployments(this._value);
 
 final RepositoryRuleRequiredDeployments _value;
 
-@override RepositoryRuleRequiredDeployments get value { return _value; } 
+@override RepositoryRuleRequiredDeployments get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleRequiredDeployments && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleRequiredDeployments($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleRequiredDeployments && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleRequiredDeployments($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleRequiredSignatures extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredSignatures(this._value);
 
 final RepositoryRuleRequiredSignatures _value;
 
-@override RepositoryRuleRequiredSignatures get value { return _value; } 
+@override RepositoryRuleRequiredSignatures get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleRequiredSignatures && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleRequiredSignatures($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleRequiredSignatures && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleRequiredSignatures($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRulePullRequest extends RepositoryRule {const RepositoryRuleRepositoryRulePullRequest(this._value);
 
 final RepositoryRulePullRequest _value;
 
-@override RepositoryRulePullRequest get value { return _value; } 
+@override RepositoryRulePullRequest get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRulePullRequest && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRulePullRequest($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRulePullRequest && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRulePullRequest($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleRequiredStatusChecks extends RepositoryRule {const RepositoryRuleRepositoryRuleRequiredStatusChecks(this._value);
 
 final RepositoryRuleRequiredStatusChecks _value;
 
-@override RepositoryRuleRequiredStatusChecks get value { return _value; } 
+@override RepositoryRuleRequiredStatusChecks get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleRequiredStatusChecks && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleRequiredStatusChecks($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleRequiredStatusChecks && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleRequiredStatusChecks($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleNonFastForward extends RepositoryRule {const RepositoryRuleRepositoryRuleNonFastForward(this._value);
 
 final RepositoryRuleNonFastForward _value;
 
-@override RepositoryRuleNonFastForward get value { return _value; } 
+@override RepositoryRuleNonFastForward get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleNonFastForward && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleNonFastForward($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleNonFastForward && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleNonFastForward($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleCommitMessagePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitMessagePattern(this._value);
 
 final RepositoryRuleCommitMessagePattern _value;
 
-@override RepositoryRuleCommitMessagePattern get value { return _value; } 
+@override RepositoryRuleCommitMessagePattern get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCommitMessagePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCommitMessagePattern($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCommitMessagePattern && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCommitMessagePattern($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleCommitAuthorEmailPattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitAuthorEmailPattern(this._value);
 
 final RepositoryRuleCommitAuthorEmailPattern _value;
 
-@override RepositoryRuleCommitAuthorEmailPattern get value { return _value; } 
+@override RepositoryRuleCommitAuthorEmailPattern get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCommitAuthorEmailPattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCommitAuthorEmailPattern($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCommitAuthorEmailPattern && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCommitAuthorEmailPattern($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleCommitterEmailPattern extends RepositoryRule {const RepositoryRuleRepositoryRuleCommitterEmailPattern(this._value);
 
 final RepositoryRuleCommitterEmailPattern _value;
 
-@override RepositoryRuleCommitterEmailPattern get value { return _value; } 
+@override RepositoryRuleCommitterEmailPattern get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCommitterEmailPattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCommitterEmailPattern($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCommitterEmailPattern && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCommitterEmailPattern($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleBranchNamePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleBranchNamePattern(this._value);
 
 final RepositoryRuleBranchNamePattern _value;
 
-@override RepositoryRuleBranchNamePattern get value { return _value; } 
+@override RepositoryRuleBranchNamePattern get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleBranchNamePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleBranchNamePattern($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleBranchNamePattern && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleBranchNamePattern($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleTagNamePattern extends RepositoryRule {const RepositoryRuleRepositoryRuleTagNamePattern(this._value);
 
 final RepositoryRuleTagNamePattern _value;
 
-@override RepositoryRuleTagNamePattern get value { return _value; } 
+@override RepositoryRuleTagNamePattern get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleTagNamePattern && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleTagNamePattern($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleTagNamePattern && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleTagNamePattern($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleFilePathRestriction extends RepositoryRule {const RepositoryRuleRepositoryRuleFilePathRestriction(this._value);
 
 final RepositoryRuleFilePathRestriction _value;
 
-@override RepositoryRuleFilePathRestriction get value { return _value; } 
+@override RepositoryRuleFilePathRestriction get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleFilePathRestriction && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleFilePathRestriction($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleFilePathRestriction && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleFilePathRestriction($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleMaxFilePathLength extends RepositoryRule {const RepositoryRuleRepositoryRuleMaxFilePathLength(this._value);
 
 final RepositoryRuleMaxFilePathLength _value;
 
-@override RepositoryRuleMaxFilePathLength get value { return _value; } 
+@override RepositoryRuleMaxFilePathLength get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleMaxFilePathLength && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleMaxFilePathLength($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleMaxFilePathLength && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleMaxFilePathLength($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleFileExtensionRestriction extends RepositoryRule {const RepositoryRuleRepositoryRuleFileExtensionRestriction(this._value);
 
 final RepositoryRuleFileExtensionRestriction _value;
 
-@override RepositoryRuleFileExtensionRestriction get value { return _value; } 
+@override RepositoryRuleFileExtensionRestriction get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleFileExtensionRestriction && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleFileExtensionRestriction($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleFileExtensionRestriction && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleFileExtensionRestriction($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleMaxFileSize extends RepositoryRule {const RepositoryRuleRepositoryRuleMaxFileSize(this._value);
 
 final RepositoryRuleMaxFileSize _value;
 
-@override RepositoryRuleMaxFileSize get value { return _value; } 
+@override RepositoryRuleMaxFileSize get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleMaxFileSize && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleMaxFileSize($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleMaxFileSize && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleMaxFileSize($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleWorkflows extends RepositoryRule {const RepositoryRuleRepositoryRuleWorkflows(this._value);
 
 final RepositoryRuleWorkflows _value;
 
-@override RepositoryRuleWorkflows get value { return _value; } 
+@override RepositoryRuleWorkflows get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleWorkflows && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleWorkflows($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleWorkflows && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleWorkflows($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleCodeScanning extends RepositoryRule {const RepositoryRuleRepositoryRuleCodeScanning(this._value);
 
 final RepositoryRuleCodeScanning _value;
 
-@override RepositoryRuleCodeScanning get value { return _value; } 
+@override RepositoryRuleCodeScanning get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCodeScanning && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCodeScanning($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCodeScanning && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCodeScanning($_value)';
+
  }
 @immutable final class RepositoryRuleRepositoryRuleCopilotCodeReview extends RepositoryRule {const RepositoryRuleRepositoryRuleCopilotCodeReview(this._value);
 
 final RepositoryRuleCopilotCodeReview _value;
 
-@override RepositoryRuleCopilotCodeReview get value { return _value; } 
+@override RepositoryRuleCopilotCodeReview get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRepositoryRuleCopilotCodeReview && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.repositoryRuleCopilotCodeReview($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRepositoryRuleCopilotCodeReview && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.repositoryRuleCopilotCodeReview($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RepositoryRule$Unknown extends RepositoryRule {const RepositoryRule$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRule$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RepositoryRule.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRule$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RepositoryRule.unknown($_value)';
+
  }

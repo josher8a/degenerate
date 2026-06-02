@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOldSchemaUploadDetailsWarningsOnly copyWith({List<ShieldOldSchemaUploadLogEvent>? Function()? warnings}) { return ShieldOldSchemaUploadDetailsWarningsOnly(
   warnings: warnings != null ? warnings() : this.warnings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadDetailsWarningsOnly &&
-          listEquals(warnings, other.warnings); } 
-@override int get hashCode { return Object.hashAll(warnings ?? const []); } 
-@override String toString() { return 'ShieldOldSchemaUploadDetailsWarningsOnly(warnings: $warnings)'; } 
+          listEquals(warnings, other.warnings);
+
+@override int get hashCode => Object.hashAll(warnings ?? const []);
+
+@override String toString() => 'ShieldOldSchemaUploadDetailsWarningsOnly(warnings: $warnings)';
+
  }

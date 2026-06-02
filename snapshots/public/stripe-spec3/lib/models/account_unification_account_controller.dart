@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUnificationAccountControllerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountUnificationAccountControllerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountUnificationAccountControllerType($value)';
+
  }
 /// 
 @immutable final class AccountUnificationAccountController {const AccountUnificationAccountController({required this.type, this.fees, this.isController, this.losses, this.requirementCollection, this.stripeDashboard, });
@@ -69,14 +72,17 @@ AccountUnificationAccountController copyWith({AccountUnificationAccountControlle
   stripeDashboard: stripeDashboard != null ? stripeDashboard() : this.stripeDashboard,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUnificationAccountController &&
           fees == other.fees &&
           isController == other.isController &&
           losses == other.losses &&
           requirementCollection == other.requirementCollection &&
           stripeDashboard == other.stripeDashboard &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(fees, isController, losses, requirementCollection, stripeDashboard, type); } 
-@override String toString() { return 'AccountUnificationAccountController(fees: $fees, isController: $isController, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(fees, isController, losses, requirementCollection, stripeDashboard, type);
+
+@override String toString() => 'AccountUnificationAccountController(fees: $fees, isController: $isController, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard, type: $type)';
+
  }

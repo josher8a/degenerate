@@ -27,11 +27,14 @@ MagicPskGenerationResponseResult copyWith({MagicIdentifier? Function()? ipsecTun
   psk: psk != null ? psk() : this.psk,
   pskMetadata: pskMetadata != null ? pskMetadata() : this.pskMetadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicPskGenerationResponseResult &&
           ipsecTunnelId == other.ipsecTunnelId &&
           psk == other.psk &&
-          pskMetadata == other.pskMetadata; } 
-@override int get hashCode { return Object.hash(ipsecTunnelId, psk, pskMetadata); } 
-@override String toString() { return 'MagicPskGenerationResponseResult(ipsecTunnelId: $ipsecTunnelId, psk: $psk, pskMetadata: $pskMetadata)'; } 
+          pskMetadata == other.pskMetadata;
+
+@override int get hashCode => Object.hash(ipsecTunnelId, psk, pskMetadata);
+
+@override String toString() => 'MagicPskGenerationResponseResult(ipsecTunnelId: $ipsecTunnelId, psk: $psk, pskMetadata: $pskMetadata)';
+
  }

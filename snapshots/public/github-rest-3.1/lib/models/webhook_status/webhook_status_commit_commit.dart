@@ -53,7 +53,7 @@ WebhookStatusCommitCommit copyWith({CommitCommitAuthor? author, int? commentCoun
   url: url ?? this.url,
   verification: verification ?? this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStatusCommitCommit &&
           author == other.author &&
           commentCount == other.commentCount &&
@@ -61,7 +61,10 @@ WebhookStatusCommitCommit copyWith({CommitCommitAuthor? author, int? commentCoun
           message == other.message &&
           tree == other.tree &&
           url == other.url &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(author, commentCount, committer, message, tree, url, verification); } 
-@override String toString() { return 'WebhookStatusCommitCommit(author: $author, commentCount: $commentCount, committer: $committer, message: $message, tree: $tree, url: $url, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(author, commentCount, committer, message, tree, url, verification);
+
+@override String toString() => 'WebhookStatusCommitCommit(author: $author, commentCount: $commentCount, committer: $committer, message: $message, tree: $tree, url: $url, verification: $verification)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleNonFastForwardType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleNonFastForwardType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleNonFastForwardType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleNonFastForwardType($value)';
+
  }
 /// Prevent users with push access from force pushing to refs.
 @immutable final class RepositoryRuleNonFastForward {const RepositoryRuleNonFastForward({required this.type});
@@ -37,9 +40,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 RepositoryRuleNonFastForward copyWith({RepositoryRuleNonFastForwardType? type}) { return RepositoryRuleNonFastForward(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleNonFastForward &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RepositoryRuleNonFastForward(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'RepositoryRuleNonFastForward(type: $type)';
+
  }

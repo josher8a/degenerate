@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)';
+
  }
 /// Money Movement card details attached to this payment.
 @immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCard {const InsightsResourcesPaymentEvaluationMoneyMovementCard({this.customerPresence, this.paymentType, });
@@ -54,10 +57,13 @@ InsightsResourcesPaymentEvaluationMoneyMovementCard copyWith({InsightsResourcesP
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
   paymentType: paymentType != null ? paymentType() : this.paymentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMoneyMovementCard &&
           customerPresence == other.customerPresence &&
-          paymentType == other.paymentType; } 
-@override int get hashCode { return Object.hash(customerPresence, paymentType); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementCard(customerPresence: $customerPresence, paymentType: $paymentType)'; } 
+          paymentType == other.paymentType;
+
+@override int get hashCode => Object.hash(customerPresence, paymentType);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationMoneyMovementCard(customerPresence: $customerPresence, paymentType: $paymentType)';
+
  }

@@ -23,10 +23,13 @@ CloudflarePipelinesWorkersPipelinesBindingSource copyWith({CloudflarePipelinesWo
   format: format ?? this.format,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesBindingSource &&
           format == other.format &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(format, type); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesBindingSource(format: $format, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(format, type);
+
+@override String toString() => 'CloudflarePipelinesWorkersPipelinesBindingSource(format: $format, type: $type)';
+
  }

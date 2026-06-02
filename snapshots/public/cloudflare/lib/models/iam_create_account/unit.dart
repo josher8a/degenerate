@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Unit copyWith({String? Function()? id}) { return Unit(
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Unit &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'Unit(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'Unit(id: $id)';
+
  }

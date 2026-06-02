@@ -77,7 +77,7 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
   title: title != null ? title() : this.title,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitMeeting &&
           createdAt == other.createdAt &&
           id == other.id &&
@@ -88,7 +88,10 @@ RealtimekitMeeting copyWith({DateTime? createdAt, String? id, bool? Function()? 
           status == other.status &&
           summarizeOnEnd == other.summarizeOnEnd &&
           title == other.title &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, id, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title, updatedAt); } 
-@override String toString() { return 'RealtimekitMeeting(createdAt: $createdAt, id: $id, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, id, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title, updatedAt);
+
+@override String toString() => 'RealtimekitMeeting(createdAt: $createdAt, id: $id, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title, updatedAt: $updatedAt)';
+
  }

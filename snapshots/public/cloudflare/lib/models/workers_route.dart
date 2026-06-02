@@ -33,11 +33,14 @@ WorkersRoute copyWith({WorkersIdentifier? id, String? pattern, String? Function(
   pattern: pattern ?? this.pattern,
   script: script != null ? script() : this.script,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersRoute &&
           id == other.id &&
           pattern == other.pattern &&
-          script == other.script; } 
-@override int get hashCode { return Object.hash(id, pattern, script); } 
-@override String toString() { return 'WorkersRoute(id: $id, pattern: $pattern, script: $script)'; } 
+          script == other.script;
+
+@override int get hashCode => Object.hash(id, pattern, script);
+
+@override String toString() => 'WorkersRoute(id: $id, pattern: $pattern, script: $script)';
+
  }

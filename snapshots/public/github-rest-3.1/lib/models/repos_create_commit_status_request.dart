@@ -36,12 +36,15 @@ ReposCreateCommitStatusRequest copyWith({ReposCreateCommitStatusRequestState? st
   description: description != null ? description() : this.description,
   context: context != null ? context() : this.context,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateCommitStatusRequest &&
           state == other.state &&
           targetUrl == other.targetUrl &&
           description == other.description &&
-          context == other.context; } 
-@override int get hashCode { return Object.hash(state, targetUrl, description, context); } 
-@override String toString() { return 'ReposCreateCommitStatusRequest(state: $state, targetUrl: $targetUrl, description: $description, context: $context)'; } 
+          context == other.context;
+
+@override int get hashCode => Object.hash(state, targetUrl, description, context);
+
+@override String toString() => 'ReposCreateCommitStatusRequest(state: $state, targetUrl: $targetUrl, description: $description, context: $context)';
+
  }

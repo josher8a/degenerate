@@ -59,7 +59,7 @@ MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDa
   notes: notes != null ? notes() : this.notes,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnectorFields &&
           activated == other.activated &&
           listEquals(interruptWindowDaysOfWeek, other.interruptWindowDaysOfWeek) &&
@@ -67,7 +67,10 @@ MconnCustomerConnectorFields copyWith({bool? Function()? activated, List<MconnDa
           listEquals(interruptWindowEmbargoDates, other.interruptWindowEmbargoDates) &&
           interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
           notes == other.notes &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone); } 
-@override String toString() { return 'MconnCustomerConnectorFields(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone);
+
+@override String toString() => 'MconnCustomerConnectorFields(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone)';
+
  }

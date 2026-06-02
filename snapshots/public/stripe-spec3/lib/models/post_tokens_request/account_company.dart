@@ -173,7 +173,7 @@ AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function
   vatId: vatId != null ? vatId() : this.vatId,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCompany &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -198,7 +198,10 @@ AccountCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function
           taxId == other.taxId &&
           taxIdRegistrar == other.taxIdRegistrar &&
           vatId == other.vatId &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipDeclarationShownAndSigned, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]); } 
-@override String toString() { return 'AccountCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipDeclarationShownAndSigned: $ownershipDeclarationShownAndSigned, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipDeclarationShownAndSigned, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]);
+
+@override String toString() => 'AccountCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipDeclarationShownAndSigned: $ownershipDeclarationShownAndSigned, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)';
+
  }

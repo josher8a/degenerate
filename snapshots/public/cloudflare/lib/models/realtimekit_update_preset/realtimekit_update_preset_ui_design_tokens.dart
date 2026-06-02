@@ -40,14 +40,17 @@ RealtimekitUpdatePresetUiDesignTokens copyWith({BorderRadius? Function()? border
   spacingBase: spacingBase != null ? spacingBase() : this.spacingBase,
   theme: theme != null ? theme() : this.theme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUiDesignTokens &&
           borderRadius == other.borderRadius &&
           borderWidth == other.borderWidth &&
           colors == other.colors &&
           logo == other.logo &&
           spacingBase == other.spacingBase &&
-          theme == other.theme; } 
-@override int get hashCode { return Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme); } 
-@override String toString() { return 'RealtimekitUpdatePresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)'; } 
+          theme == other.theme;
+
+@override int get hashCode => Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme);
+
+@override String toString() => 'RealtimekitUpdatePresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)';
+
  }

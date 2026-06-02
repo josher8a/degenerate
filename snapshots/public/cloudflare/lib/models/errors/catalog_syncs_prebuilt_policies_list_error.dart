@@ -20,25 +20,29 @@ final class CatalogSyncsPrebuiltPoliciesListError$400 extends CatalogSyncsPrebui
 
 final McnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CatalogSyncsPrebuiltPoliciesListError$401 extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$401(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CatalogSyncsPrebuiltPoliciesListError$403 extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$403(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CatalogSyncsPrebuiltPoliciesListError$500 extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$500(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CatalogSyncsPrebuiltPoliciesListError$Unknown extends CatalogSyncsPrebuiltPoliciesListError {const CatalogSyncsPrebuiltPoliciesListError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreSearchResultsPageObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreSearchResultsPageObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreSearchResultsPageObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreSearchResultsPageObject($value)';
+
  }
 @immutable final class VectorStoreSearchResultsPage {const VectorStoreSearchResultsPage({required this.object, required this.searchQuery, required this.data, required this.hasMore, required this.nextPage, });
 
@@ -65,13 +68,16 @@ VectorStoreSearchResultsPage copyWith({VectorStoreSearchResultsPageObject? objec
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreSearchResultsPage &&
           object == other.object &&
           listEquals(searchQuery, other.searchQuery) &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          nextPage == other.nextPage; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(searchQuery), Object.hashAll(data), hasMore, nextPage); } 
-@override String toString() { return 'VectorStoreSearchResultsPage(object: $object, searchQuery: $searchQuery, data: $data, hasMore: $hasMore, nextPage: $nextPage)'; } 
+          nextPage == other.nextPage;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(searchQuery), Object.hashAll(data), hasMore, nextPage);
+
+@override String toString() => 'VectorStoreSearchResultsPage(object: $object, searchQuery: $searchQuery, data: $data, hasMore: $hasMore, nextPage: $nextPage)';
+
  }

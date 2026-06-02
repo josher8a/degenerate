@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostCheckoutSessionsRequestPaymentMethodOptionsAlma copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) { return PostCheckoutSessionsRequestPaymentMethodOptionsAlma(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsAlma &&
-          captureMethod == other.captureMethod; } 
-@override int get hashCode { return captureMethod.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAlma(captureMethod: $captureMethod)'; } 
+          captureMethod == other.captureMethod;
+
+@override int get hashCode => captureMethod.hashCode;
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsAlma(captureMethod: $captureMethod)';
+
  }

@@ -22,10 +22,13 @@ AuditLogActorSession copyWith({AuditLogActorUser? Function()? user, String? Func
   user: user != null ? user() : this.user,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuditLogActorSession &&
           user == other.user &&
-          ipAddress == other.ipAddress; } 
-@override int get hashCode { return Object.hash(user, ipAddress); } 
-@override String toString() { return 'AuditLogActorSession(user: $user, ipAddress: $ipAddress)'; } 
+          ipAddress == other.ipAddress;
+
+@override int get hashCode => Object.hash(user, ipAddress);
+
+@override String toString() => 'AuditLogActorSession(user: $user, ipAddress: $ipAddress)';
+
  }

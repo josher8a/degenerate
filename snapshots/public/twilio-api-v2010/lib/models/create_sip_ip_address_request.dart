@@ -29,11 +29,14 @@ CreateSipIpAddressRequest copyWith({String? friendlyName, String? ipAddress, int
   ipAddress: ipAddress ?? this.ipAddress,
   cidrPrefixLength: cidrPrefixLength != null ? cidrPrefixLength() : this.cidrPrefixLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipIpAddressRequest &&
           friendlyName == other.friendlyName &&
           ipAddress == other.ipAddress &&
-          cidrPrefixLength == other.cidrPrefixLength; } 
-@override int get hashCode { return Object.hash(friendlyName, ipAddress, cidrPrefixLength); } 
-@override String toString() { return 'CreateSipIpAddressRequest(friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength)'; } 
+          cidrPrefixLength == other.cidrPrefixLength;
+
+@override int get hashCode => Object.hash(friendlyName, ipAddress, cidrPrefixLength);
+
+@override String toString() => 'CreateSipIpAddressRequest(friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength)';
+
  }

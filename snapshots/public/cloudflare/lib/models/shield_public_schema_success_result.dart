@@ -36,12 +36,15 @@ ShieldPublicSchemaSuccessResult copyWith({List<ShieldMessages2>? errors, List<Sh
   success: success ?? this.success,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldPublicSchemaSuccessResult &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result); } 
-@override String toString() { return 'ShieldPublicSchemaSuccessResult(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);
+
+@override String toString() => 'ShieldPublicSchemaSuccessResult(errors: $errors, messages: $messages, success: $success, result: $result)';
+
  }

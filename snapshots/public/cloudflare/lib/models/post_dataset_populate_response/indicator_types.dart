@@ -22,10 +22,13 @@ IndicatorTypes copyWith({AttackersProperties? properties, String? type, }) { ret
   properties: properties ?? this.properties,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IndicatorTypes &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, type); } 
-@override String toString() { return 'IndicatorTypes(properties: $properties, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(properties, type);
+
+@override String toString() => 'IndicatorTypes(properties: $properties, type: $type)';
+
  }

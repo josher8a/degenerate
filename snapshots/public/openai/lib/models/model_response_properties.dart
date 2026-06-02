@@ -114,7 +114,7 @@ ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int
   serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
   promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModelResponseProperties &&
           metadata == other.metadata &&
           topLogprobs == other.topLogprobs &&
@@ -124,7 +124,10 @@ ModelResponseProperties copyWith({Map<String, String>? Function()? metadata, int
           safetyIdentifier == other.safetyIdentifier &&
           promptCacheKey == other.promptCacheKey &&
           serviceTier == other.serviceTier &&
-          promptCacheRetention == other.promptCacheRetention; } 
-@override int get hashCode { return Object.hash(metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention); } 
-@override String toString() { return 'ModelResponseProperties(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention)'; } 
+          promptCacheRetention == other.promptCacheRetention;
+
+@override int get hashCode => Object.hash(metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention);
+
+@override String toString() => 'ModelResponseProperties(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention)';
+
  }

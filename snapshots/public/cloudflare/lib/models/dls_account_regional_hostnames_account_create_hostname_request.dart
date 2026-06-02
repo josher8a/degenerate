@@ -29,11 +29,14 @@ DlsAccountRegionalHostnamesAccountCreateHostnameRequest copyWith({DlsHostname? h
   regionKey: regionKey ?? this.regionKey,
   routing: routing != null ? routing() : this.routing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlsAccountRegionalHostnamesAccountCreateHostnameRequest &&
           hostname == other.hostname &&
           regionKey == other.regionKey &&
-          routing == other.routing; } 
-@override int get hashCode { return Object.hash(hostname, regionKey, routing); } 
-@override String toString() { return 'DlsAccountRegionalHostnamesAccountCreateHostnameRequest(hostname: $hostname, regionKey: $regionKey, routing: $routing)'; } 
+          routing == other.routing;
+
+@override int get hashCode => Object.hash(hostname, regionKey, routing);
+
+@override String toString() => 'DlsAccountRegionalHostnamesAccountCreateHostnameRequest(hostname: $hostname, regionKey: $regionKey, routing: $routing)';
+
  }

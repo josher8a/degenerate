@@ -191,7 +191,7 @@ ZeroTrustGatewayRuleSettings copyWith({Map<String, List<String>>? Function()? ad
   resolveDnsThroughCloudflare: resolveDnsThroughCloudflare != null ? resolveDnsThroughCloudflare() : this.resolveDnsThroughCloudflare,
   untrustedCert: untrustedCert != null ? untrustedCert() : this.untrustedCert,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRuleSettings &&
           addHeaders == other.addHeaders &&
           allowChildBypass == other.allowChildBypass &&
@@ -218,7 +218,10 @@ ZeroTrustGatewayRuleSettings copyWith({Map<String, List<String>>? Function()? ad
           redirect == other.redirect &&
           resolveDnsInternally == other.resolveDnsInternally &&
           resolveDnsThroughCloudflare == other.resolveDnsThroughCloudflare &&
-          untrustedCert == other.untrustedCert; } 
-@override int get hashCode { return Object.hashAll([addHeaders, allowChildBypass, auditSsh, bisoAdminControls, blockPage, blockPageEnabled, blockReason, bypassParentRule, checkSession, dnsResolvers, egress, forensicCopy, ignoreCnameCategoryMatches, insecureDisableDnssecValidation, ipCategories, ipIndicatorFeeds, l4override, notificationSettings, overrideHost, Object.hashAll(overrideIps ?? const []), payloadLog, quarantine, redirect, resolveDnsInternally, resolveDnsThroughCloudflare, untrustedCert]); } 
-@override String toString() { return 'ZeroTrustGatewayRuleSettings(addHeaders: $addHeaders, allowChildBypass: $allowChildBypass, auditSsh: $auditSsh, bisoAdminControls: $bisoAdminControls, blockPage: $blockPage, blockPageEnabled: $blockPageEnabled, blockReason: $blockReason, bypassParentRule: $bypassParentRule, checkSession: $checkSession, dnsResolvers: $dnsResolvers, egress: $egress, forensicCopy: $forensicCopy, ignoreCnameCategoryMatches: $ignoreCnameCategoryMatches, insecureDisableDnssecValidation: $insecureDisableDnssecValidation, ipCategories: $ipCategories, ipIndicatorFeeds: $ipIndicatorFeeds, l4override: $l4override, notificationSettings: $notificationSettings, overrideHost: $overrideHost, overrideIps: $overrideIps, payloadLog: $payloadLog, quarantine: $quarantine, redirect: $redirect, resolveDnsInternally: $resolveDnsInternally, resolveDnsThroughCloudflare: $resolveDnsThroughCloudflare, untrustedCert: $untrustedCert)'; } 
+          untrustedCert == other.untrustedCert;
+
+@override int get hashCode => Object.hashAll([addHeaders, allowChildBypass, auditSsh, bisoAdminControls, blockPage, blockPageEnabled, blockReason, bypassParentRule, checkSession, dnsResolvers, egress, forensicCopy, ignoreCnameCategoryMatches, insecureDisableDnssecValidation, ipCategories, ipIndicatorFeeds, l4override, notificationSettings, overrideHost, Object.hashAll(overrideIps ?? const []), payloadLog, quarantine, redirect, resolveDnsInternally, resolveDnsThroughCloudflare, untrustedCert]);
+
+@override String toString() => 'ZeroTrustGatewayRuleSettings(addHeaders: $addHeaders, allowChildBypass: $allowChildBypass, auditSsh: $auditSsh, bisoAdminControls: $bisoAdminControls, blockPage: $blockPage, blockPageEnabled: $blockPageEnabled, blockReason: $blockReason, bypassParentRule: $bypassParentRule, checkSession: $checkSession, dnsResolvers: $dnsResolvers, egress: $egress, forensicCopy: $forensicCopy, ignoreCnameCategoryMatches: $ignoreCnameCategoryMatches, insecureDisableDnssecValidation: $insecureDisableDnssecValidation, ipCategories: $ipCategories, ipIndicatorFeeds: $ipIndicatorFeeds, l4override: $l4override, notificationSettings: $notificationSettings, overrideHost: $overrideHost, overrideIps: $overrideIps, payloadLog: $payloadLog, quarantine: $quarantine, redirect: $redirect, resolveDnsInternally: $resolveDnsInternally, resolveDnsThroughCloudflare: $resolveDnsThroughCloudflare, untrustedCert: $untrustedCert)';
+
  }

@@ -18,13 +18,15 @@ final class ListEmailsError$400 extends ListEmailsError {const ListEmailsError$4
 
 final ListEmailsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ListEmailsError$500 extends ListEmailsError {const ListEmailsError$500(this.error);
 
 final ListEmailsResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ListEmailsError$Unknown extends ListEmailsError {const ListEmailsError$Unknown(this.statusCode, this.rawBody, );
 

@@ -20,10 +20,13 @@ PatchTagCategoryUpdateRequest copyWith({String? Function()? description, String?
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchTagCategoryUpdateRequest &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, name); } 
-@override String toString() { return 'PatchTagCategoryUpdateRequest(description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, name);
+
+@override String toString() => 'PatchTagCategoryUpdateRequest(description: $description, name: $name)';
+
  }

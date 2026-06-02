@@ -26,11 +26,14 @@ ErrorModel copyWith({int? code, String? message, String? Function()? details, })
   message: message ?? this.message,
   details: details != null ? details() : this.details,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorModel &&
           code == other.code &&
           message == other.message &&
-          details == other.details; } 
-@override int get hashCode { return Object.hash(code, message, details); } 
-@override String toString() { return 'ErrorModel(code: $code, message: $message, details: $details)'; } 
+          details == other.details;
+
+@override int get hashCode => Object.hash(code, message, details);
+
+@override String toString() => 'ErrorModel(code: $code, message: $message, details: $details)';
+
  }

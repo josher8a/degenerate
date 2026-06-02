@@ -25,10 +25,13 @@ CollectedInformationShippingDetails copyWith({ShippingDetailsAddress? address, S
   address: address ?? this.address,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CollectedInformationShippingDetails &&
           address == other.address &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(address, name); } 
-@override String toString() { return 'CollectedInformationShippingDetails(address: $address, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(address, name);
+
+@override String toString() => 'CollectedInformationShippingDetails(address: $address, name: $name)';
+
  }

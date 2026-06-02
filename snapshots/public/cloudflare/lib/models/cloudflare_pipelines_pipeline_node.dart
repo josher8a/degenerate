@@ -38,12 +38,15 @@ CloudflarePipelinesPipelineNode copyWith({String? description, int? nodeId, Stri
   $operator: $operator ?? this.$operator,
   parallelism: parallelism ?? this.parallelism,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineNode &&
           description == other.description &&
           nodeId == other.nodeId &&
           $operator == other.$operator &&
-          parallelism == other.parallelism; } 
-@override int get hashCode { return Object.hash(description, nodeId, $operator, parallelism); } 
-@override String toString() { return 'CloudflarePipelinesPipelineNode(description: $description, nodeId: $nodeId, \$operator: ${$operator}, parallelism: $parallelism)'; } 
+          parallelism == other.parallelism;
+
+@override int get hashCode => Object.hash(description, nodeId, $operator, parallelism);
+
+@override String toString() => 'CloudflarePipelinesPipelineNode(description: $description, nodeId: $nodeId, \$operator: ${$operator}, parallelism: $parallelism)';
+
  }

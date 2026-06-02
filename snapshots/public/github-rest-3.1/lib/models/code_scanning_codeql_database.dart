@@ -78,7 +78,7 @@ CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, Si
   url: url ?? this.url,
   commitOid: commitOid != null ? commitOid() : this.commitOid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningCodeqlDatabase &&
           id == other.id &&
           name == other.name &&
@@ -89,7 +89,10 @@ CodeScanningCodeqlDatabase copyWith({int? id, String? name, String? language, Si
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          commitOid == other.commitOid; } 
-@override int get hashCode { return Object.hash(id, name, language, uploader, contentType, size, createdAt, updatedAt, url, commitOid); } 
-@override String toString() { return 'CodeScanningCodeqlDatabase(id: $id, name: $name, language: $language, uploader: $uploader, contentType: $contentType, size: $size, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, commitOid: $commitOid)'; } 
+          commitOid == other.commitOid;
+
+@override int get hashCode => Object.hash(id, name, language, uploader, contentType, size, createdAt, updatedAt, url, commitOid);
+
+@override String toString() => 'CodeScanningCodeqlDatabase(id: $id, name: $name, language: $language, uploader: $uploader, contentType: $contentType, size: $size, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, commitOid: $commitOid)';
+
  }

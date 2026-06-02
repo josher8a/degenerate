@@ -28,11 +28,14 @@ MconnControllerConnectorIdentity copyWith({MconnAccountId? accountId, bool? acti
   activated: activated ?? this.activated,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerConnectorIdentity &&
           accountId == other.accountId &&
           activated == other.activated &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(accountId, activated, id); } 
-@override String toString() { return 'MconnControllerConnectorIdentity(accountId: $accountId, activated: $activated, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(accountId, activated, id);
+
+@override String toString() => 'MconnControllerConnectorIdentity(accountId: $accountId, activated: $activated, id: $id)';
+
  }

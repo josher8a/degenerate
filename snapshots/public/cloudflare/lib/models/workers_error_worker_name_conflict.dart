@@ -17,10 +17,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersErrorWorkerNameConflictCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersErrorWorkerNameConflictCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersErrorWorkerNameConflictCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersErrorWorkerNameConflictCode($value)';
+
  }
 @immutable final class WorkersErrorWorkerNameConflict {const WorkersErrorWorkerNameConflict({required this.code, required this.message, });
 
@@ -45,10 +48,13 @@ WorkersErrorWorkerNameConflict copyWith({WorkersErrorWorkerNameConflictCode? cod
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersErrorWorkerNameConflict &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorkersErrorWorkerNameConflict(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'WorkersErrorWorkerNameConflict(code: $code, message: $message)';
+
  }

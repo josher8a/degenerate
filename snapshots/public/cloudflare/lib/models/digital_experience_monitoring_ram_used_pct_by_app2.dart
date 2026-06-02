@@ -20,10 +20,13 @@ DigitalExperienceMonitoringRamUsedPctByApp2 copyWith({String? Function()? name, 
   name: name != null ? name() : this.name,
   ramUsedPct: ramUsedPct != null ? ramUsedPct() : this.ramUsedPct,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringRamUsedPctByApp2 &&
           name == other.name &&
-          ramUsedPct == other.ramUsedPct; } 
-@override int get hashCode { return Object.hash(name, ramUsedPct); } 
-@override String toString() { return 'DigitalExperienceMonitoringRamUsedPctByApp2(name: $name, ramUsedPct: $ramUsedPct)'; } 
+          ramUsedPct == other.ramUsedPct;
+
+@override int get hashCode => Object.hash(name, ramUsedPct);
+
+@override String toString() => 'DigitalExperienceMonitoringRamUsedPctByApp2(name: $name, ramUsedPct: $ramUsedPct)';
+
  }

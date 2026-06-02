@@ -41,13 +41,16 @@ FlexVolumeSource copyWith({String? driver, String? Function()? fsType, Map<Strin
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FlexVolumeSource &&
           driver == other.driver &&
           fsType == other.fsType &&
           options == other.options &&
           readOnly == other.readOnly &&
-          secretRef == other.secretRef; } 
-@override int get hashCode { return Object.hash(driver, fsType, options, readOnly, secretRef); } 
-@override String toString() { return 'FlexVolumeSource(driver: $driver, fsType: $fsType, options: $options, readOnly: $readOnly, secretRef: $secretRef)'; } 
+          secretRef == other.secretRef;
+
+@override int get hashCode => Object.hash(driver, fsType, options, readOnly, secretRef);
+
+@override String toString() => 'FlexVolumeSource(driver: $driver, fsType: $fsType, options: $options, readOnly: $readOnly, secretRef: $secretRef)';
+
  }

@@ -28,11 +28,14 @@ TunnelVirtualNetworkUpdateRequest copyWith({TunnelVirtualNetworkComment? Functio
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelVirtualNetworkUpdateRequest &&
           comment == other.comment &&
           isDefaultNetwork == other.isDefaultNetwork &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(comment, isDefaultNetwork, name); } 
-@override String toString() { return 'TunnelVirtualNetworkUpdateRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(comment, isDefaultNetwork, name);
+
+@override String toString() => 'TunnelVirtualNetworkUpdateRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name)';
+
  }

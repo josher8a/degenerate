@@ -28,11 +28,14 @@ WorkersTail copyWith({String? expiresAt, WorkersIdentifier? id, String? url, }) 
   id: id ?? this.id,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersTail &&
           expiresAt == other.expiresAt &&
           id == other.id &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(expiresAt, id, url); } 
-@override String toString() { return 'WorkersTail(expiresAt: $expiresAt, id: $id, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(expiresAt, id, url);
+
+@override String toString() => 'WorkersTail(expiresAt: $expiresAt, id: $id, url: $url)';
+
  }

@@ -23,10 +23,13 @@ RadarGetRankingTopInternetServicesResponseResultTop0 copyWith({int? rank, String
   rank: rank ?? this.rank,
   service: service ?? this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingTopInternetServicesResponseResultTop0 &&
           rank == other.rank &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(rank, service); } 
-@override String toString() { return 'RadarGetRankingTopInternetServicesResponseResultTop0(rank: $rank, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(rank, service);
+
+@override String toString() => 'RadarGetRankingTopInternetServicesResponseResultTop0(rank: $rank, service: $service)';
+
  }

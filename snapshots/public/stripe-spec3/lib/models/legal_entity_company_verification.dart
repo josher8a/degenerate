@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('docum
 LegalEntityCompanyVerification copyWith({LegalEntityCompanyVerificationDocument? document}) { return LegalEntityCompanyVerification(
   document: document ?? this.document,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityCompanyVerification &&
-          document == other.document; } 
-@override int get hashCode { return document.hashCode; } 
-@override String toString() { return 'LegalEntityCompanyVerification(document: $document)'; } 
+          document == other.document;
+
+@override int get hashCode => document.hashCode;
+
+@override String toString() => 'LegalEntityCompanyVerification(document: $document)';
+
  }

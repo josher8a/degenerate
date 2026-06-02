@@ -23,10 +23,13 @@ ResourceStatus copyWith({String? name, List<ResourceHealth>? Function()? resourc
   name: name ?? this.name,
   resources: resources != null ? resources() : this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceStatus &&
           name == other.name &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(resources ?? const [])); } 
-@override String toString() { return 'ResourceStatus(name: $name, resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(resources ?? const []));
+
+@override String toString() => 'ResourceStatus(name: $name, resources: $resources)';
+
  }

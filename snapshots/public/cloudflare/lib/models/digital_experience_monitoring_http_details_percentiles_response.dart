@@ -25,11 +25,14 @@ DigitalExperienceMonitoringHttpDetailsPercentilesResponse copyWith({DigitalExper
   resourceFetchTimeMs: resourceFetchTimeMs != null ? resourceFetchTimeMs() : this.resourceFetchTimeMs,
   serverResponseTimeMs: serverResponseTimeMs != null ? serverResponseTimeMs() : this.serverResponseTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringHttpDetailsPercentilesResponse &&
           dnsResponseTimeMs == other.dnsResponseTimeMs &&
           resourceFetchTimeMs == other.resourceFetchTimeMs &&
-          serverResponseTimeMs == other.serverResponseTimeMs; } 
-@override int get hashCode { return Object.hash(dnsResponseTimeMs, resourceFetchTimeMs, serverResponseTimeMs); } 
-@override String toString() { return 'DigitalExperienceMonitoringHttpDetailsPercentilesResponse(dnsResponseTimeMs: $dnsResponseTimeMs, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs)'; } 
+          serverResponseTimeMs == other.serverResponseTimeMs;
+
+@override int get hashCode => Object.hash(dnsResponseTimeMs, resourceFetchTimeMs, serverResponseTimeMs);
+
+@override String toString() => 'DigitalExperienceMonitoringHttpDetailsPercentilesResponse(dnsResponseTimeMs: $dnsResponseTimeMs, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs)';
+
  }

@@ -60,7 +60,7 @@ CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, 
   tlp: tlp ?? this.tlp,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsPriorityItem &&
           created == other.created &&
           id == other.id &&
@@ -68,7 +68,10 @@ CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, 
           priority == other.priority &&
           requirement == other.requirement &&
           tlp == other.tlp &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(created, id, Object.hashAll(labels), priority, requirement, tlp, updated); } 
-@override String toString() { return 'CloudforceOneRequestsPriorityItem(created: $created, id: $id, labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(created, id, Object.hashAll(labels), priority, requirement, tlp, updated);
+
+@override String toString() => 'CloudforceOneRequestsPriorityItem(created: $created, id: $id, labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp, updated: $updated)';
+
  }

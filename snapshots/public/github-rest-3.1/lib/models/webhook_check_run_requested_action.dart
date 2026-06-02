@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckRunRequestedActionAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckRunRequestedActionAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCheckRunRequestedActionAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCheckRunRequestedActionAction($value)';
+
  }
 @immutable final class WebhookCheckRunRequestedAction {const WebhookCheckRunRequestedAction({required this.action, required this.checkRun, required this.repository, required this.sender, this.installation, this.enterprise, this.organization, this.requestedAction, });
 
@@ -75,7 +78,7 @@ WebhookCheckRunRequestedAction copyWith({WebhookCheckRunRequestedActionAction? a
   requestedAction: requestedAction != null ? requestedAction() : this.requestedAction,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckRunRequestedAction &&
           action == other.action &&
           checkRun == other.checkRun &&
@@ -84,7 +87,10 @@ WebhookCheckRunRequestedAction copyWith({WebhookCheckRunRequestedActionAction? a
           organization == other.organization &&
           repository == other.repository &&
           requestedAction == other.requestedAction &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, checkRun, installation, enterprise, organization, repository, requestedAction, sender); } 
-@override String toString() { return 'WebhookCheckRunRequestedAction(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, requestedAction: $requestedAction, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, checkRun, installation, enterprise, organization, repository, requestedAction, sender);
+
+@override String toString() => 'WebhookCheckRunRequestedAction(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, requestedAction: $requestedAction, sender: $sender)';
+
  }

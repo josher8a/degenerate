@@ -24,10 +24,13 @@ KeyPressAction copyWith({String? type, List<String>? keys, }) { return KeyPressA
   type: type ?? this.type,
   keys: keys ?? this.keys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeyPressAction &&
           type == other.type &&
-          listEquals(keys, other.keys); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(keys)); } 
-@override String toString() { return 'KeyPressAction(type: $type, keys: $keys)'; } 
+          listEquals(keys, other.keys);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(keys));
+
+@override String toString() => 'KeyPressAction(type: $type, keys: $keys)';
+
  }

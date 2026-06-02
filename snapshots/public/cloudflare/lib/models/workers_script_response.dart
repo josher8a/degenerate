@@ -148,7 +148,7 @@ WorkersScriptResponse copyWith({WorkersCompatibilityDate? Function()? compatibil
   tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersScriptResponse &&
           compatibilityDate == other.compatibilityDate &&
           listEquals(compatibilityFlags, other.compatibilityFlags) &&
@@ -170,7 +170,10 @@ WorkersScriptResponse copyWith({WorkersCompatibilityDate? Function()? compatibil
           tag == other.tag &&
           listEquals(tags, other.tags) &&
           listEquals(tailConsumers, other.tailConsumers) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel]); } 
-@override String toString() { return 'WorkersScriptResponse(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hashAll([compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, etag, Object.hashAll(handlers ?? const []), hasAssets, hasModules, id, lastDeployedFrom, logpush, migrationTag, modifiedOn, Object.hashAll(namedHandlers ?? const []), observability, placement, placementMode, placementStatus, tag, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel]);
+
+@override String toString() => 'WorkersScriptResponse(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, etag: $etag, handlers: $handlers, hasAssets: $hasAssets, hasModules: $hasModules, id: $id, lastDeployedFrom: $lastDeployedFrom, logpush: $logpush, migrationTag: $migrationTag, modifiedOn: $modifiedOn, namedHandlers: $namedHandlers, observability: $observability, placement: $placement, placementMode: $placementMode, placementStatus: $placementStatus, tag: $tag, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';
+
  }

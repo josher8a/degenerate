@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ApplePayLater copyWith({DisplayPreference? Function()? displayPreference}) { return ApplePayLater(
   displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplePayLater &&
-          displayPreference == other.displayPreference; } 
-@override int get hashCode { return displayPreference.hashCode; } 
-@override String toString() { return 'ApplePayLater(displayPreference: $displayPreference)'; } 
+          displayPreference == other.displayPreference;
+
+@override int get hashCode => displayPreference.hashCode;
+
+@override String toString() => 'ApplePayLater(displayPreference: $displayPreference)';
+
  }

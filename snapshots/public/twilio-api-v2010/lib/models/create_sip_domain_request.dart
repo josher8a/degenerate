@@ -103,7 +103,7 @@ CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendl
   byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipDomainRequest &&
           domainName == other.domainName &&
           friendlyName == other.friendlyName &&
@@ -117,7 +117,10 @@ CreateSipDomainRequest copyWith({String? domainName, String? Function()? friendl
           emergencyCallingEnabled == other.emergencyCallingEnabled &&
           secure == other.secure &&
           byocTrunkSid == other.byocTrunkSid &&
-          emergencyCallerSid == other.emergencyCallerSid; } 
-@override int get hashCode { return Object.hash(domainName, friendlyName, voiceUrl, voiceMethod, voiceFallbackUrl, voiceFallbackMethod, voiceStatusCallbackUrl, voiceStatusCallbackMethod, sipRegistration, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid); } 
-@override String toString() { return 'CreateSipDomainRequest(domainName: $domainName, friendlyName: $friendlyName, voiceUrl: $voiceUrl, voiceMethod: $voiceMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceFallbackMethod: $voiceFallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, sipRegistration: $sipRegistration, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)'; } 
+          emergencyCallerSid == other.emergencyCallerSid;
+
+@override int get hashCode => Object.hash(domainName, friendlyName, voiceUrl, voiceMethod, voiceFallbackUrl, voiceFallbackMethod, voiceStatusCallbackUrl, voiceStatusCallbackMethod, sipRegistration, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid);
+
+@override String toString() => 'CreateSipDomainRequest(domainName: $domainName, friendlyName: $friendlyName, voiceUrl: $voiceUrl, voiceMethod: $voiceMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceFallbackMethod: $voiceFallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, sipRegistration: $sipRegistration, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)';
+
  }

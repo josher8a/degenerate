@@ -62,7 +62,7 @@ ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials
   tokenSources: tokenSources ?? this.tokenSources,
   tokenType: tokenType ?? this.tokenType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldTokenConfiguration &&
           createdAt == other.createdAt &&
           credentials == other.credentials &&
@@ -71,7 +71,10 @@ ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials
           lastUpdated == other.lastUpdated &&
           title == other.title &&
           listEquals(tokenSources, other.tokenSources) &&
-          tokenType == other.tokenType; } 
-@override int get hashCode { return Object.hash(createdAt, credentials, description, id, lastUpdated, title, Object.hashAll(tokenSources), tokenType); } 
-@override String toString() { return 'ShieldTokenConfiguration(createdAt: $createdAt, credentials: $credentials, description: $description, id: $id, lastUpdated: $lastUpdated, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)'; } 
+          tokenType == other.tokenType;
+
+@override int get hashCode => Object.hash(createdAt, credentials, description, id, lastUpdated, title, Object.hashAll(tokenSources), tokenType);
+
+@override String toString() => 'ShieldTokenConfiguration(createdAt: $createdAt, credentials: $credentials, description: $description, id: $id, lastUpdated: $lastUpdated, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsInteracPresentReceiptAccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodDetailsInteracPresentReceiptAccountType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)';
+
  }
 /// 
 @immutable final class PaymentMethodDetailsInteracPresentReceipt {const PaymentMethodDetailsInteracPresentReceipt({this.accountType, this.applicationCryptogram, this.applicationPreferredName, this.authorizationCode, this.authorizationResponseCode, this.cardholderVerificationMethod, this.dedicatedFileName, this.terminalVerificationResults, this.transactionStatusInformation, });
@@ -128,7 +131,7 @@ PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracP
   terminalVerificationResults: terminalVerificationResults != null ? terminalVerificationResults() : this.terminalVerificationResults,
   transactionStatusInformation: transactionStatusInformation != null ? transactionStatusInformation() : this.transactionStatusInformation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsInteracPresentReceipt &&
           accountType == other.accountType &&
           applicationCryptogram == other.applicationCryptogram &&
@@ -138,7 +141,10 @@ PaymentMethodDetailsInteracPresentReceipt copyWith({PaymentMethodDetailsInteracP
           cardholderVerificationMethod == other.cardholderVerificationMethod &&
           dedicatedFileName == other.dedicatedFileName &&
           terminalVerificationResults == other.terminalVerificationResults &&
-          transactionStatusInformation == other.transactionStatusInformation; } 
-@override int get hashCode { return Object.hash(accountType, applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, cardholderVerificationMethod, dedicatedFileName, terminalVerificationResults, transactionStatusInformation); } 
-@override String toString() { return 'PaymentMethodDetailsInteracPresentReceipt(accountType: $accountType, applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, cardholderVerificationMethod: $cardholderVerificationMethod, dedicatedFileName: $dedicatedFileName, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)'; } 
+          transactionStatusInformation == other.transactionStatusInformation;
+
+@override int get hashCode => Object.hash(accountType, applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, cardholderVerificationMethod, dedicatedFileName, terminalVerificationResults, transactionStatusInformation);
+
+@override String toString() => 'PaymentMethodDetailsInteracPresentReceipt(accountType: $accountType, applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, cardholderVerificationMethod: $cardholderVerificationMethod, dedicatedFileName: $dedicatedFileName, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)';
+
  }

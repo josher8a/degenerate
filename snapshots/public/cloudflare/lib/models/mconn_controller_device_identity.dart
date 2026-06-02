@@ -25,11 +25,14 @@ MconnControllerDeviceIdentity copyWith({MconnUuid? id, String? Function()? image
   imagedAt: imagedAt != null ? imagedAt() : this.imagedAt,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerDeviceIdentity &&
           id == other.id &&
           imagedAt == other.imagedAt &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(id, imagedAt, serialNumber); } 
-@override String toString() { return 'MconnControllerDeviceIdentity(id: $id, imagedAt: $imagedAt, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(id, imagedAt, serialNumber);
+
+@override String toString() => 'MconnControllerDeviceIdentity(id: $id, imagedAt: $imagedAt, serialNumber: $serialNumber)';
+
  }

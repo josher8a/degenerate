@@ -18,13 +18,15 @@ final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$404 extends Acti
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$422 extends ActionsAddCustomLabelsToSelfHostedRunnerForOrgError {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$Unknown extends ActionsAddCustomLabelsToSelfHostedRunnerForOrgError {const ActionsAddCustomLabelsToSelfHostedRunnerForOrgError$Unknown(this.statusCode, this.rawBody, );
 

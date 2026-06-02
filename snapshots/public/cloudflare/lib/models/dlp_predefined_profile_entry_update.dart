@@ -21,10 +21,13 @@ DlpPredefinedProfileEntryUpdate copyWith({bool? enabled, String? id, }) { return
   enabled: enabled ?? this.enabled,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPredefinedProfileEntryUpdate &&
           enabled == other.enabled &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(enabled, id); } 
-@override String toString() { return 'DlpPredefinedProfileEntryUpdate(enabled: $enabled, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(enabled, id);
+
+@override String toString() => 'DlpPredefinedProfileEntryUpdate(enabled: $enabled, id: $id)';
+
  }

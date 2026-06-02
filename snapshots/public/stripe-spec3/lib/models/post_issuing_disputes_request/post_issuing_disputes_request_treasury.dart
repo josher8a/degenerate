@@ -20,9 +20,12 @@ return errors; }
 PostIssuingDisputesRequestTreasury copyWith({String? receivedDebit}) { return PostIssuingDisputesRequestTreasury(
   receivedDebit: receivedDebit ?? this.receivedDebit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingDisputesRequestTreasury &&
-          receivedDebit == other.receivedDebit; } 
-@override int get hashCode { return receivedDebit.hashCode; } 
-@override String toString() { return 'PostIssuingDisputesRequestTreasury(receivedDebit: $receivedDebit)'; } 
+          receivedDebit == other.receivedDebit;
+
+@override int get hashCode => receivedDebit.hashCode;
+
+@override String toString() => 'PostIssuingDisputesRequestTreasury(receivedDebit: $receivedDebit)';
+
  }

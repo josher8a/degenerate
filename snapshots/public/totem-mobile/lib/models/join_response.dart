@@ -37,20 +37,16 @@ final class JoinResponse {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is JoinResponse &&
-            token == other.token &&
-            isAlreadyPresent == other.isAlreadyPresent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is JoinResponse &&
+          token == other.token &&
+          isAlreadyPresent == other.isAlreadyPresent;
 
   @override
-  int get hashCode {
-    return Object.hash(token, isAlreadyPresent);
-  }
+  int get hashCode => Object.hash(token, isAlreadyPresent);
 
   @override
-  String toString() {
-    return 'JoinResponse(token: $token, isAlreadyPresent: $isAlreadyPresent)';
-  }
+  String toString() =>
+      'JoinResponse(token: $token, isAlreadyPresent: $isAlreadyPresent)';
 }

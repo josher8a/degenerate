@@ -40,13 +40,16 @@ CopilotIdeCodeCompletionsEditorsModels copyWith({String? Function()? name, bool?
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   languages: languages != null ? languages() : this.languages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeCodeCompletionsEditorsModels &&
           name == other.name &&
           isCustomModel == other.isCustomModel &&
           customModelTrainingDate == other.customModelTrainingDate &&
           totalEngagedUsers == other.totalEngagedUsers &&
-          listEquals(languages, other.languages); } 
-@override int get hashCode { return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, Object.hashAll(languages ?? const [])); } 
-@override String toString() { return 'CopilotIdeCodeCompletionsEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, languages: $languages)'; } 
+          listEquals(languages, other.languages);
+
+@override int get hashCode => Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, Object.hashAll(languages ?? const []));
+
+@override String toString() => 'CopilotIdeCodeCompletionsEditorsModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, languages: $languages)';
+
  }

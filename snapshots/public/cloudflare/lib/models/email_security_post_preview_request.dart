@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('postf
 EmailSecurityPostPreviewRequest copyWith({EmailSecurityPostfixId? postfixId}) { return EmailSecurityPostPreviewRequest(
   postfixId: postfixId ?? this.postfixId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPostPreviewRequest &&
-          postfixId == other.postfixId; } 
-@override int get hashCode { return postfixId.hashCode; } 
-@override String toString() { return 'EmailSecurityPostPreviewRequest(postfixId: $postfixId)'; } 
+          postfixId == other.postfixId;
+
+@override int get hashCode => postfixId.hashCode;
+
+@override String toString() => 'EmailSecurityPostPreviewRequest(postfixId: $postfixId)';
+
  }

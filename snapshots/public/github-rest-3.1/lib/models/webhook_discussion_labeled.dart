@@ -54,7 +54,7 @@ WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discu
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionLabeled &&
           action == other.action &&
           discussion == other.discussion &&
@@ -63,7 +63,10 @@ WebhookDiscussionLabeled copyWith({WebhookDiscussionLabeledAction? action, Discu
           label == other.label &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, discussion, enterprise, installation, label, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionLabeled(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, discussion, enterprise, installation, label, organization, repository, sender);
+
+@override String toString() => 'WebhookDiscussionLabeled(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, label: $label, organization: $organization, repository: $repository, sender: $sender)';
+
  }

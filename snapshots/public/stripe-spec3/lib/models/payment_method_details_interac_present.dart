@@ -187,7 +187,7 @@ PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? 
   reader: reader != null ? reader() : this.reader,
   receipt: receipt != null ? receipt() : this.receipt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsInteracPresent &&
           brand == other.brand &&
           cardholderName == other.cardholderName &&
@@ -207,7 +207,10 @@ PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? 
           listEquals(preferredLocales, other.preferredLocales) &&
           readMethod == other.readMethod &&
           reader == other.reader &&
-          receipt == other.receipt; } 
-@override int get hashCode { return Object.hash(brand, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, issuer, last4, location, network, networkTransactionId, Object.hashAll(preferredLocales ?? const []), readMethod, reader, receipt); } 
-@override String toString() { return 'PaymentMethodDetailsInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt)'; } 
+          receipt == other.receipt;
+
+@override int get hashCode => Object.hash(brand, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, issuer, last4, location, network, networkTransactionId, Object.hashAll(preferredLocales ?? const []), readMethod, reader, receipt);
+
+@override String toString() => 'PaymentMethodDetailsInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt)';
+
  }

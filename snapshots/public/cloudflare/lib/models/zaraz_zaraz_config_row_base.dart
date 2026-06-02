@@ -37,12 +37,15 @@ ZarazZarazConfigRowBase copyWith({DateTime? createdAt, int? id, DateTime? update
   updatedAt: updatedAt ?? this.updatedAt,
   userId: userId ?? this.userId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigRowBase &&
           createdAt == other.createdAt &&
           id == other.id &&
           updatedAt == other.updatedAt &&
-          userId == other.userId; } 
-@override int get hashCode { return Object.hash(createdAt, id, updatedAt, userId); } 
-@override String toString() { return 'ZarazZarazConfigRowBase(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId)'; } 
+          userId == other.userId;
+
+@override int get hashCode => Object.hash(createdAt, id, updatedAt, userId);
+
+@override String toString() => 'ZarazZarazConfigRowBase(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId)';
+
  }

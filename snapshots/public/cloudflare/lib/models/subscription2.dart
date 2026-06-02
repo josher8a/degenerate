@@ -40,10 +40,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Frequency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Frequency($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Frequency && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Frequency($value)';
+
  }
 /// The price of the subscription that will be billed, in US dollars.
 extension type const Price(double value) {
@@ -87,10 +90,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is State && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'State($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is State && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'State($value)';
+
  }
 @immutable final class Subscription2 {const Subscription2({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });
 
@@ -165,7 +171,7 @@ Subscription2 copyWith({Subscription2App? Function()? app, List<ComponentValue2>
   state: state != null ? state() : this.state,
   zone: zone != null ? zone() : this.zone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subscription2 &&
           app == other.app &&
           listEquals(componentValues, other.componentValues) &&
@@ -177,7 +183,10 @@ Subscription2 copyWith({Subscription2App? Function()? app, List<ComponentValue2>
           price == other.price &&
           ratePlan == other.ratePlan &&
           state == other.state &&
-          zone == other.zone; } 
-@override int get hashCode { return Object.hash(app, Object.hashAll(componentValues ?? const []), currency, currentPeriodEnd, currentPeriodStart, frequency, id, price, ratePlan, state, zone); } 
-@override String toString() { return 'Subscription2(app: $app, componentValues: $componentValues, currency: $currency, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, frequency: $frequency, id: $id, price: $price, ratePlan: $ratePlan, state: $state, zone: $zone)'; } 
+          zone == other.zone;
+
+@override int get hashCode => Object.hash(app, Object.hashAll(componentValues ?? const []), currency, currentPeriodEnd, currentPeriodStart, frequency, id, price, ratePlan, state, zone);
+
+@override String toString() => 'Subscription2(app: $app, componentValues: $componentValues, currency: $currency, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, frequency: $frequency, id: $id, price: $price, ratePlan: $ratePlan, state: $state, zone: $zone)';
+
  }

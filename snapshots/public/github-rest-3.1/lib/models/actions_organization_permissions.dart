@@ -40,13 +40,16 @@ ActionsOrganizationPermissions copyWith({EnabledRepositories? enabledRepositorie
   selectedActionsUrl: selectedActionsUrl != null ? selectedActionsUrl() : this.selectedActionsUrl,
   shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsOrganizationPermissions &&
           enabledRepositories == other.enabledRepositories &&
           selectedRepositoriesUrl == other.selectedRepositoriesUrl &&
           allowedActions == other.allowedActions &&
           selectedActionsUrl == other.selectedActionsUrl &&
-          shaPinningRequired == other.shaPinningRequired; } 
-@override int get hashCode { return Object.hash(enabledRepositories, selectedRepositoriesUrl, allowedActions, selectedActionsUrl, shaPinningRequired); } 
-@override String toString() { return 'ActionsOrganizationPermissions(enabledRepositories: $enabledRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)'; } 
+          shaPinningRequired == other.shaPinningRequired;
+
+@override int get hashCode => Object.hash(enabledRepositories, selectedRepositoriesUrl, allowedActions, selectedActionsUrl, shaPinningRequired);
+
+@override String toString() => 'ActionsOrganizationPermissions(enabledRepositories: $enabledRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)';
+
  }

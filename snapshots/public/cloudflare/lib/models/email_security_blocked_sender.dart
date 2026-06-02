@@ -71,7 +71,7 @@ EmailSecurityBlockedSender copyWith({String? Function()? comments, bool? isRegex
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBlockedSender &&
           comments == other.comments &&
           isRegex == other.isRegex &&
@@ -79,7 +79,10 @@ EmailSecurityBlockedSender copyWith({String? Function()? comments, bool? isRegex
           patternType == other.patternType &&
           createdAt == other.createdAt &&
           id == other.id &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType, createdAt, id, lastModified); } 
-@override String toString() { return 'EmailSecurityBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, createdAt: $createdAt, id: $id, lastModified: $lastModified)'; } 
+          lastModified == other.lastModified;
+
+@override int get hashCode => Object.hash(comments, isRegex, pattern, patternType, createdAt, id, lastModified);
+
+@override String toString() => 'EmailSecurityBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
+
  }

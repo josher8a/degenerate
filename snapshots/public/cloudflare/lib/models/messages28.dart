@@ -121,7 +121,7 @@ Messages28 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages28 &&
           frequencyPenalty == other.frequencyPenalty &&
           listEquals(functions, other.functions) &&
@@ -135,7 +135,10 @@ Messages28 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
           temperature == other.temperature &&
           listEquals(tools, other.tools) &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), image, maxTokens, Object.hashAll(messages), presencePenalty, repetitionPenalty, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP); } 
-@override String toString() { return 'Messages28(frequencyPenalty: $frequencyPenalty, functions: $functions, image: $image, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, repetitionPenalty: $repetitionPenalty, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), image, maxTokens, Object.hashAll(messages), presencePenalty, repetitionPenalty, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP);
+
+@override String toString() => 'Messages28(frequencyPenalty: $frequencyPenalty, functions: $functions, image: $image, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, repetitionPenalty: $repetitionPenalty, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)';
+
  }

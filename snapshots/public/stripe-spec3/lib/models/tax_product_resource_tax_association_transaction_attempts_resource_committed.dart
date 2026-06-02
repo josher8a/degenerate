@@ -21,9 +21,12 @@ return errors; }
 TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted copyWith({String? transaction}) { return TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted(
   transaction: transaction ?? this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted &&
-          transaction == other.transaction; } 
-@override int get hashCode { return transaction.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted(transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => transaction.hashCode;
+
+@override String toString() => 'TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted(transaction: $transaction)';
+
  }

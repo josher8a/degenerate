@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleCopilotCodeReviewType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleCopilotCodeReviewType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleCopilotCodeReviewType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleCopilotCodeReviewType($value)';
+
  }
 /// Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.
 @immutable final class RepositoryRuleCopilotCodeReview {const RepositoryRuleCopilotCodeReview({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleCopilotCodeReview copyWith({RepositoryRuleCopilotCodeReviewType? t
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCopilotCodeReview &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleCopilotCodeReview(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleCopilotCodeReview(type: $type, parameters: $parameters)';
+
  }

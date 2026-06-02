@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WatermarkPosition && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WatermarkPosition($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WatermarkPosition && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WatermarkPosition($value)';
+
  }
 /// Watermark to be added to the recording
 @immutable final class Watermark {const Watermark({this.position = WatermarkPosition.leftTop, this.size, this.url, });
@@ -60,11 +63,14 @@ Watermark copyWith({WatermarkPosition Function()? position, WatermarkSize? Funct
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Watermark &&
           position == other.position &&
           size == other.size &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(position, size, url); } 
-@override String toString() { return 'Watermark(position: $position, size: $size, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(position, size, url);
+
+@override String toString() => 'Watermark(position: $position, size: $size, url: $url)';
+
  }

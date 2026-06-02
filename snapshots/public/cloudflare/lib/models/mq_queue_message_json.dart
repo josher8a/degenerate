@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqQueueMessageJsonContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqQueueMessageJsonContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqQueueMessageJsonContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqQueueMessageJsonContentType($value)';
+
  }
 @immutable final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });
 
@@ -41,10 +44,13 @@ MqQueueMessageJson copyWith({Map<String, dynamic>? Function()? body, MqQueueMess
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueueMessageJson &&
           body == other.body &&
-          contentType == other.contentType; } 
-@override int get hashCode { return Object.hash(body, contentType); } 
-@override String toString() { return 'MqQueueMessageJson(body: $body, contentType: $contentType)'; } 
+          contentType == other.contentType;
+
+@override int get hashCode => Object.hash(body, contentType);
+
+@override String toString() => 'MqQueueMessageJson(body: $body, contentType: $contentType)';
+
  }

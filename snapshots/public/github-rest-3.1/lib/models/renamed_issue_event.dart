@@ -70,7 +70,7 @@ RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? ac
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   rename: rename ?? this.rename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RenamedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -81,7 +81,10 @@ RenamedIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? ac
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          rename == other.rename; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, rename); } 
-@override String toString() { return 'RenamedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, rename: $rename)'; } 
+          rename == other.rename;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, rename);
+
+@override String toString() => 'RenamedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, rename: $rename)';
+
  }

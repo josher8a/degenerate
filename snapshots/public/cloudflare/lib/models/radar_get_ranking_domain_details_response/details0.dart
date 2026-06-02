@@ -34,12 +34,15 @@ Details0 copyWith({String? Function()? bucket, List<Details0Categories>? categor
   rank: rank != null ? rank() : this.rank,
   topLocations: topLocations != null ? topLocations() : this.topLocations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Details0 &&
           bucket == other.bucket &&
           listEquals(categories, other.categories) &&
           rank == other.rank &&
-          listEquals(topLocations, other.topLocations); } 
-@override int get hashCode { return Object.hash(bucket, Object.hashAll(categories), rank, Object.hashAll(topLocations ?? const [])); } 
-@override String toString() { return 'Details0(bucket: $bucket, categories: $categories, rank: $rank, topLocations: $topLocations)'; } 
+          listEquals(topLocations, other.topLocations);
+
+@override int get hashCode => Object.hash(bucket, Object.hashAll(categories), rank, Object.hashAll(topLocations ?? const []));
+
+@override String toString() => 'Details0(bucket: $bucket, categories: $categories, rank: $rank, topLocations: $topLocations)';
+
  }

@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionCallStatus($value)';
+
  }
 @immutable final class ToolSearchCall {const ToolSearchCall({required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.type = 'tool_search_call', this.createdBy, });
 
@@ -84,7 +87,7 @@ ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, T
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchCall &&
           type == other.type &&
           id == other.id &&
@@ -92,7 +95,10 @@ ToolSearchCall copyWith({String? type, String? id, String? Function()? callId, T
           execution == other.execution &&
           arguments == other.arguments &&
           status == other.status &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, execution, arguments, status, createdBy); } 
-@override String toString() { return 'ToolSearchCall(type: $type, id: $id, callId: $callId, execution: $execution, arguments: $arguments, status: $status, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, callId, execution, arguments, status, createdBy);
+
+@override String toString() => 'ToolSearchCall(type: $type, id: $id, callId: $callId, execution: $execution, arguments: $arguments, status: $status, createdBy: $createdBy)';
+
  }

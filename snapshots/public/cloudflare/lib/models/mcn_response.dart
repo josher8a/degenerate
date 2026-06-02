@@ -21,10 +21,13 @@ McnResponse copyWith({List<McnError>? messages, bool? success, }) { return McnRe
   messages: messages ?? this.messages,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResponse &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(messages), success); } 
-@override String toString() { return 'McnResponse(messages: $messages, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(messages), success);
+
+@override String toString() => 'McnResponse(messages: $messages, success: $success)';
+
  }

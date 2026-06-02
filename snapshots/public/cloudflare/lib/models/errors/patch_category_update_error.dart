@@ -17,7 +17,8 @@ final class PatchCategoryUpdateError$400 extends PatchCategoryUpdateError {const
 
 final PatchCategoryUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchCategoryUpdateError$Unknown extends PatchCategoryUpdateError {const PatchCategoryUpdateError$Unknown(this.statusCode, this.rawBody, );
 

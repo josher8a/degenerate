@@ -17,7 +17,8 @@ final class CreateEvalRunError$400 extends CreateEvalRunError {const CreateEvalR
 
 final ErrorModel error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CreateEvalRunError$Unknown extends CreateEvalRunError {const CreateEvalRunError$Unknown(this.statusCode, this.rawBody, );
 

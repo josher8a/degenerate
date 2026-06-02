@@ -29,10 +29,13 @@ ExpiresAfterParam copyWith({BatchFileExpirationAfterAnchor? anchor, int? seconds
   anchor: anchor ?? this.anchor,
   seconds: seconds ?? this.seconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExpiresAfterParam &&
           anchor == other.anchor &&
-          seconds == other.seconds; } 
-@override int get hashCode { return Object.hash(anchor, seconds); } 
-@override String toString() { return 'ExpiresAfterParam(anchor: $anchor, seconds: $seconds)'; } 
+          seconds == other.seconds;
+
+@override int get hashCode => Object.hash(anchor, seconds);
+
+@override String toString() => 'ExpiresAfterParam(anchor: $anchor, seconds: $seconds)';
+
  }

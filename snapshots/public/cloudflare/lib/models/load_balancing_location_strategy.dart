@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingLocationStrategyMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingLocationStrategyMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingLocationStrategyMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LoadBalancingLocationStrategyMode($value)';
+
  }
 /// Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.
 /// - `"always"`: Always prefer ECS.
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PreferEcs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PreferEcs($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PreferEcs && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PreferEcs($value)';
+
  }
 /// Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.
 @immutable final class LoadBalancingLocationStrategy {const LoadBalancingLocationStrategy({this.mode = LoadBalancingLocationStrategyMode.pop, this.preferEcs = PreferEcs.proximity, });
@@ -95,10 +101,13 @@ LoadBalancingLocationStrategy copyWith({LoadBalancingLocationStrategyMode Functi
   mode: mode != null ? mode() : this.mode,
   preferEcs: preferEcs != null ? preferEcs() : this.preferEcs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingLocationStrategy &&
           mode == other.mode &&
-          preferEcs == other.preferEcs; } 
-@override int get hashCode { return Object.hash(mode, preferEcs); } 
-@override String toString() { return 'LoadBalancingLocationStrategy(mode: $mode, preferEcs: $preferEcs)'; } 
+          preferEcs == other.preferEcs;
+
+@override int get hashCode => Object.hash(mode, preferEcs);
+
+@override String toString() => 'LoadBalancingLocationStrategy(mode: $mode, preferEcs: $preferEcs)';
+
  }

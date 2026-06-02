@@ -52,7 +52,7 @@ PorterAuthor copyWith({int? id, String? remoteId, String? remoteName, String? em
   url: url ?? this.url,
   importUrl: importUrl ?? this.importUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PorterAuthor &&
           id == other.id &&
           remoteId == other.remoteId &&
@@ -60,7 +60,10 @@ PorterAuthor copyWith({int? id, String? remoteId, String? remoteName, String? em
           email == other.email &&
           name == other.name &&
           url == other.url &&
-          importUrl == other.importUrl; } 
-@override int get hashCode { return Object.hash(id, remoteId, remoteName, email, name, url, importUrl); } 
-@override String toString() { return 'PorterAuthor(id: $id, remoteId: $remoteId, remoteName: $remoteName, email: $email, name: $name, url: $url, importUrl: $importUrl)'; } 
+          importUrl == other.importUrl;
+
+@override int get hashCode => Object.hash(id, remoteId, remoteName, email, name, url, importUrl);
+
+@override String toString() => 'PorterAuthor(id: $id, remoteId: $remoteId, remoteName: $remoteName, email: $email, name: $name, url: $url, importUrl: $importUrl)';
+
  }

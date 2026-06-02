@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRequiredStatusChecksType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleRequiredStatusChecksType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRequiredStatusChecksType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleRequiredStatusChecksType($value)';
+
  }
 /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
 @immutable final class RepositoryRuleRequiredStatusChecks {const RepositoryRuleRequiredStatusChecks({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleRequiredStatusChecks copyWith({RepositoryRuleRequiredStatusChecksT
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredStatusChecks &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleRequiredStatusChecks(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleRequiredStatusChecks(type: $type, parameters: $parameters)';
+
  }

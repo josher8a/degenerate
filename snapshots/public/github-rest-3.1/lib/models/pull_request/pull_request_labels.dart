@@ -51,7 +51,7 @@ PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, 
   color: color ?? this.color,
   $default: $default ?? this.$default,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestLabels &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -59,7 +59,10 @@ PullRequestLabels copyWith({int? id, String? nodeId, String? url, String? name, 
           name == other.name &&
           description == other.description &&
           color == other.color &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, description, color, $default); } 
-@override String toString() { return 'PullRequestLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})'; } 
+          $default == other.$default;
+
+@override int get hashCode => Object.hash(id, nodeId, url, name, description, color, $default);
+
+@override String toString() => 'PullRequestLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})';
+
  }

@@ -35,13 +35,16 @@ SearchResultTextMatches2 copyWith({String? Function()? objectUrl, String? Functi
   fragment: fragment != null ? fragment() : this.fragment,
   matches: matches != null ? matches() : this.matches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SearchResultTextMatches2 &&
           objectUrl == other.objectUrl &&
           objectType == other.objectType &&
           property == other.property &&
           fragment == other.fragment &&
-          listEquals(matches, other.matches); } 
-@override int get hashCode { return Object.hash(objectUrl, objectType, property, fragment, Object.hashAll(matches ?? const [])); } 
-@override String toString() { return 'SearchResultTextMatches2(objectUrl: $objectUrl, objectType: $objectType, property: $property, fragment: $fragment, matches: $matches)'; } 
+          listEquals(matches, other.matches);
+
+@override int get hashCode => Object.hash(objectUrl, objectType, property, fragment, Object.hashAll(matches ?? const []));
+
+@override String toString() => 'SearchResultTextMatches2(objectUrl: $objectUrl, objectType: $objectType, property: $property, fragment: $fragment, matches: $matches)';
+
  }

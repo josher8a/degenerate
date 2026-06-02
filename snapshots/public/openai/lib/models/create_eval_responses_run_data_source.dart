@@ -42,13 +42,16 @@ CreateEvalResponsesRunDataSource copyWith({CreateEvalResponsesRunDataSourceType?
   model: model != null ? model() : this.model,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalResponsesRunDataSource &&
           type == other.type &&
           inputMessages == other.inputMessages &&
           samplingParams == other.samplingParams &&
           model == other.model &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, inputMessages, samplingParams, model, source); } 
-@override String toString() { return 'CreateEvalResponsesRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, inputMessages, samplingParams, model, source);
+
+@override String toString() => 'CreateEvalResponsesRunDataSource(type: $type, inputMessages: $inputMessages, samplingParams: $samplingParams, model: $model, source: $source)';
+
  }

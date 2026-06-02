@@ -27,11 +27,14 @@ RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0 copyWith({List<Stri
   supported: supported ?? this.supported,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0 &&
           listEquals(notSupported, other.notSupported) &&
           listEquals(supported, other.supported) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(notSupported), Object.hashAll(supported), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0(notSupported: $notSupported, supported: $supported, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(notSupported), Object.hashAll(supported), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumResponseResultSerie0(notSupported: $notSupported, supported: $supported, timestamps: $timestamps)';
+
  }

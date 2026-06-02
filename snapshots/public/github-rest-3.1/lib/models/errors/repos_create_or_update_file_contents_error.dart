@@ -19,19 +19,22 @@ final class ReposCreateOrUpdateFileContentsError$404 extends ReposCreateOrUpdate
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposCreateOrUpdateFileContentsError$409 extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError$409(this.error);
 
 final ReposCreateOrUpdateFileContentsResponse409 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ReposCreateOrUpdateFileContentsError$422 extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ReposCreateOrUpdateFileContentsError$Unknown extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError$Unknown(this.statusCode, this.rawBody, );
 

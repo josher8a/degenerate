@@ -25,9 +25,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
 UpdateConversationBody copyWith({Map<String, String>? Function()? metadata}) { return UpdateConversationBody(
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateConversationBody &&
-          metadata == other.metadata; } 
-@override int get hashCode { return metadata.hashCode; } 
-@override String toString() { return 'UpdateConversationBody(metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => metadata.hashCode;
+
+@override String toString() => 'UpdateConversationBody(metadata: $metadata)';
+
  }

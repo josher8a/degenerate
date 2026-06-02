@@ -62,7 +62,7 @@ WafManagedRulesSchemasGroup copyWith({WafManagedRulesDescription? Function()? de
   allowedModes: allowedModes != null ? allowedModes() : this.allowedModes,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesSchemasGroup &&
           description == other.description &&
           id == other.id &&
@@ -71,7 +71,10 @@ WafManagedRulesSchemasGroup copyWith({WafManagedRulesDescription? Function()? de
           packageId == other.packageId &&
           rulesCount == other.rulesCount &&
           listEquals(allowedModes, other.allowedModes) &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(description, id, modifiedRulesCount, name, packageId, rulesCount, Object.hashAll(allowedModes ?? const []), mode); } 
-@override String toString() { return 'WafManagedRulesSchemasGroup(description: $description, id: $id, modifiedRulesCount: $modifiedRulesCount, name: $name, packageId: $packageId, rulesCount: $rulesCount, allowedModes: $allowedModes, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(description, id, modifiedRulesCount, name, packageId, rulesCount, Object.hashAll(allowedModes ?? const []), mode);
+
+@override String toString() => 'WafManagedRulesSchemasGroup(description: $description, id: $id, modifiedRulesCount: $modifiedRulesCount, name: $name, packageId: $packageId, rulesCount: $rulesCount, allowedModes: $allowedModes, mode: $mode)';
+
  }

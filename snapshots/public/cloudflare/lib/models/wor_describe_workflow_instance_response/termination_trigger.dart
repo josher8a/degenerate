@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sourc
 TerminationTrigger copyWith({String? source}) { return TerminationTrigger(
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminationTrigger &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'TerminationTrigger(source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => source.hashCode;
+
+@override String toString() => 'TerminationTrigger(source: $source)';
+
  }

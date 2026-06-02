@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxAutomaticTax && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxAutomaticTax($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerTaxAutomaticTax && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerTaxAutomaticTax($value)';
+
  }
 /// 
 @immutable final class CustomerTax {const CustomerTax({required this.automaticTax, required this.provider, this.ipAddress, this.location, });
@@ -74,12 +77,15 @@ CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()?
   location: location != null ? location() : this.location,
   provider: provider ?? this.provider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerTax &&
           automaticTax == other.automaticTax &&
           ipAddress == other.ipAddress &&
           location == other.location &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(automaticTax, ipAddress, location, provider); } 
-@override String toString() { return 'CustomerTax(automaticTax: $automaticTax, ipAddress: $ipAddress, location: $location, provider: $provider)'; } 
+          provider == other.provider;
+
+@override int get hashCode => Object.hash(automaticTax, ipAddress, location, provider);
+
+@override String toString() => 'CustomerTax(automaticTax: $automaticTax, ipAddress: $ipAddress, location: $location, provider: $provider)';
+
  }

@@ -20,10 +20,13 @@ PaymentDisputes copyWith({bool? enabled, PaymentDisputesFeatures? Function()? fe
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentDisputes &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'PaymentDisputes(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'PaymentDisputes(enabled: $enabled, features: $features)';
+
  }

@@ -83,7 +83,7 @@ OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri
   avatarUrl: avatarUrl ?? this.avatarUrl,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationSimpleWebhooks &&
           login == other.login &&
           id == other.id &&
@@ -96,7 +96,10 @@ OrganizationSimpleWebhooks copyWith({String? login, int? id, String? nodeId, Uri
           membersUrl == other.membersUrl &&
           publicMembersUrl == other.publicMembersUrl &&
           avatarUrl == other.avatarUrl &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description); } 
-@override String toString() { return 'OrganizationSimpleWebhooks(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(login, id, nodeId, url, reposUrl, eventsUrl, hooksUrl, issuesUrl, membersUrl, publicMembersUrl, avatarUrl, description);
+
+@override String toString() => 'OrganizationSimpleWebhooks(login: $login, id: $id, nodeId: $nodeId, url: $url, reposUrl: $reposUrl, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, issuesUrl: $issuesUrl, membersUrl: $membersUrl, publicMembersUrl: $publicMembersUrl, avatarUrl: $avatarUrl, description: $description)';
+
  }

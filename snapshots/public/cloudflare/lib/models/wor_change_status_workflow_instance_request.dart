@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorChangeStatusWorkflowInstanceRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceRequestStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorChangeStatusWorkflowInstanceRequestStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorChangeStatusWorkflowInstanceRequestStatus($value)';
+
  }
 @immutable final class WorChangeStatusWorkflowInstanceRequest {const WorChangeStatusWorkflowInstanceRequest({required this.status});
 
@@ -47,9 +50,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 WorChangeStatusWorkflowInstanceRequest copyWith({WorChangeStatusWorkflowInstanceRequestStatus? status}) { return WorChangeStatusWorkflowInstanceRequest(
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorChangeStatusWorkflowInstanceRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceRequest(status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => status.hashCode;
+
+@override String toString() => 'WorChangeStatusWorkflowInstanceRequest(status: $status)';
+
  }

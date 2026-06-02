@@ -67,13 +67,16 @@ PagesProjectUpdateProjectRequest copyWith({BuildConfig? Function()? buildConfig,
   productionBranch: productionBranch != null ? productionBranch() : this.productionBranch,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProjectUpdateProjectRequest &&
           buildConfig == other.buildConfig &&
           deploymentConfigs == other.deploymentConfigs &&
           name == other.name &&
           productionBranch == other.productionBranch &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(buildConfig, deploymentConfigs, name, productionBranch, source); } 
-@override String toString() { return 'PagesProjectUpdateProjectRequest(buildConfig: $buildConfig, deploymentConfigs: $deploymentConfigs, name: $name, productionBranch: $productionBranch, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(buildConfig, deploymentConfigs, name, productionBranch, source);
+
+@override String toString() => 'PagesProjectUpdateProjectRequest(buildConfig: $buildConfig, deploymentConfigs: $deploymentConfigs, name: $name, productionBranch: $productionBranch, source: $source)';
+
  }

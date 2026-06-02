@@ -32,11 +32,14 @@ EmailsProcessed copyWith({DateTime? timestamp, int? totalEmailsProcessed, int? t
   totalEmailsProcessed: totalEmailsProcessed ?? this.totalEmailsProcessed,
   totalEmailsProcessedPrevious: totalEmailsProcessedPrevious ?? this.totalEmailsProcessedPrevious,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailsProcessed &&
           timestamp == other.timestamp &&
           totalEmailsProcessed == other.totalEmailsProcessed &&
-          totalEmailsProcessedPrevious == other.totalEmailsProcessedPrevious; } 
-@override int get hashCode { return Object.hash(timestamp, totalEmailsProcessed, totalEmailsProcessedPrevious); } 
-@override String toString() { return 'EmailsProcessed(timestamp: $timestamp, totalEmailsProcessed: $totalEmailsProcessed, totalEmailsProcessedPrevious: $totalEmailsProcessedPrevious)'; } 
+          totalEmailsProcessedPrevious == other.totalEmailsProcessedPrevious;
+
+@override int get hashCode => Object.hash(timestamp, totalEmailsProcessed, totalEmailsProcessedPrevious);
+
+@override String toString() => 'EmailsProcessed(timestamp: $timestamp, totalEmailsProcessed: $totalEmailsProcessed, totalEmailsProcessedPrevious: $totalEmailsProcessedPrevious)';
+
  }

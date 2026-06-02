@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SecretScanningUpdateOrgPatternConfigsResponse copyWith({String? Function()? patternConfigVersion}) { return SecretScanningUpdateOrgPatternConfigsResponse(
   patternConfigVersion: patternConfigVersion != null ? patternConfigVersion() : this.patternConfigVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningUpdateOrgPatternConfigsResponse &&
-          patternConfigVersion == other.patternConfigVersion; } 
-@override int get hashCode { return patternConfigVersion.hashCode; } 
-@override String toString() { return 'SecretScanningUpdateOrgPatternConfigsResponse(patternConfigVersion: $patternConfigVersion)'; } 
+          patternConfigVersion == other.patternConfigVersion;
+
+@override int get hashCode => patternConfigVersion.hashCode;
+
+@override String toString() => 'SecretScanningUpdateOrgPatternConfigsResponse(patternConfigVersion: $patternConfigVersion)';
+
  }

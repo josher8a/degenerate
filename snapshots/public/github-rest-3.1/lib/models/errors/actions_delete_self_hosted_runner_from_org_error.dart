@@ -17,7 +17,8 @@ final class ActionsDeleteSelfHostedRunnerFromOrgError$422 extends ActionsDeleteS
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsDeleteSelfHostedRunnerFromOrgError$Unknown extends ActionsDeleteSelfHostedRunnerFromOrgError {const ActionsDeleteSelfHostedRunnerFromOrgError$Unknown(this.statusCode, this.rawBody, );
 

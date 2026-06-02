@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheSchemasValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheSchemasValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CacheSchemasValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheSchemasValue($value)';
+
  }
 /// Update enablement of Automatic SSL/TLS.
 @immutable final class CacheSchemasPatch {const CacheSchemasPatch({required this.value});
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 CacheSchemasPatch copyWith({CacheSchemasValue? value}) { return CacheSchemasPatch(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheSchemasPatch &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheSchemasPatch(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheSchemasPatch(value: $value)';
+
  }

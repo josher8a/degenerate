@@ -22,10 +22,13 @@ DigitalExperienceMonitoringTestStatPctOverTimeSlots copyWith({String? timestamp,
   timestamp: timestamp ?? this.timestamp,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTestStatPctOverTimeSlots &&
           timestamp == other.timestamp &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(timestamp, value); } 
-@override String toString() { return 'DigitalExperienceMonitoringTestStatPctOverTimeSlots(timestamp: $timestamp, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(timestamp, value);
+
+@override String toString() => 'DigitalExperienceMonitoringTestStatPctOverTimeSlots(timestamp: $timestamp, value: $value)';
+
  }

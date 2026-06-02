@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('proce
 UrlscannerGetScanResponse2Meta copyWith({UrlscannerGetScanResponse2MetaProcessors? processors}) { return UrlscannerGetScanResponse2Meta(
   processors: processors ?? this.processors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Meta &&
-          processors == other.processors; } 
-@override int get hashCode { return processors.hashCode; } 
-@override String toString() { return 'UrlscannerGetScanResponse2Meta(processors: $processors)'; } 
+          processors == other.processors;
+
+@override int get hashCode => processors.hashCode;
+
+@override String toString() => 'UrlscannerGetScanResponse2Meta(processors: $processors)';
+
  }

@@ -36,12 +36,15 @@ RepositoryRuleParamsWorkflowFileReference copyWith({String? path, String? Functi
   repositoryId: repositoryId ?? this.repositoryId,
   sha: sha != null ? sha() : this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsWorkflowFileReference &&
           path == other.path &&
           ref == other.ref &&
           repositoryId == other.repositoryId &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(path, ref, repositoryId, sha); } 
-@override String toString() { return 'RepositoryRuleParamsWorkflowFileReference(path: $path, ref: $ref, repositoryId: $repositoryId, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(path, ref, repositoryId, sha);
+
+@override String toString() => 'RepositoryRuleParamsWorkflowFileReference(path: $path, ref: $ref, repositoryId: $repositoryId, sha: $sha)';
+
  }

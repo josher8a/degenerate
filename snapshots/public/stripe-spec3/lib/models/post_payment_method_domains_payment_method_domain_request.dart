@@ -22,10 +22,13 @@ PostPaymentMethodDomainsPaymentMethodDomainRequest copyWith({bool? Function()? e
   enabled: enabled != null ? enabled() : this.enabled,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodDomainsPaymentMethodDomainRequest &&
           enabled == other.enabled &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentMethodDomainsPaymentMethodDomainRequest(enabled: $enabled, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentMethodDomainsPaymentMethodDomainRequest(enabled: $enabled, expand: $expand)';
+
  }

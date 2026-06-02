@@ -91,7 +91,7 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAss
   uri: uri != null ? uri() : this.uri,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -101,7 +101,10 @@ AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAss
           productName == other.productName &&
           uniqueName == other.uniqueName &&
           uri == other.uri &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(sid, accountSid, resourceSid, assignedAddOnSid, friendlyName, productName, uniqueName, uri, enabled); } 
-@override String toString() { return 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, assignedAddOnSid: $assignedAddOnSid, friendlyName: $friendlyName, productName: $productName, uniqueName: $uniqueName, uri: $uri, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(sid, accountSid, resourceSid, assignedAddOnSid, friendlyName, productName, uniqueName, uri, enabled);
+
+@override String toString() => 'AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension(sid: $sid, accountSid: $accountSid, resourceSid: $resourceSid, assignedAddOnSid: $assignedAddOnSid, friendlyName: $friendlyName, productName: $productName, uniqueName: $uniqueName, uri: $uri, enabled: $enabled)';
+
  }

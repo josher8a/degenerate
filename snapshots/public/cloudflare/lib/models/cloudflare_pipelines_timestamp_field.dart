@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesTimestampUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesTimestampUnit($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesTimestampUnit && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudflarePipelinesTimestampUnit($value)';
+
  }
 @immutable final class CloudflarePipelinesTimestampField {const CloudflarePipelinesTimestampField({this.unit});
 
@@ -45,9 +48,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CloudflarePipelinesTimestampField copyWith({CloudflarePipelinesTimestampUnit? Function()? unit}) { return CloudflarePipelinesTimestampField(
   unit: unit != null ? unit() : this.unit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesTimestampField &&
-          unit == other.unit; } 
-@override int get hashCode { return unit.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesTimestampField(unit: $unit)'; } 
+          unit == other.unit;
+
+@override int get hashCode => unit.hashCode;
+
+@override String toString() => 'CloudflarePipelinesTimestampField(unit: $unit)';
+
  }

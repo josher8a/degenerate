@@ -61,10 +61,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImportStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImportStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImportStatus($value)';
+
  }
 /// A repository import from an external source.
 @immutable final class Import {const Import({required this.vcs, required this.vcsUrl, required this.status, required this.url, required this.htmlUrl, required this.authorsUrl, required this.repositoryUrl, this.useLfs, this.svcRoot, this.tfvcProject, this.statusText, this.failedStep, this.errorMessage, this.importPercent, this.commitCount, this.pushPercent, this.hasLargeFiles, this.largeFilesSize, this.largeFilesCount, this.projectChoices, this.message, this.authorsCount, this.svnRoot, });
@@ -199,7 +202,7 @@ Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsU
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
   svnRoot: svnRoot != null ? svnRoot() : this.svnRoot,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Import &&
           vcs == other.vcs &&
           useLfs == other.useLfs &&
@@ -223,7 +226,10 @@ Import copyWith({String? Function()? vcs, bool? Function()? useLfs, String? vcsU
           htmlUrl == other.htmlUrl &&
           authorsUrl == other.authorsUrl &&
           repositoryUrl == other.repositoryUrl &&
-          svnRoot == other.svnRoot; } 
-@override int get hashCode { return Object.hashAll([vcs, useLfs, vcsUrl, svcRoot, tfvcProject, status, statusText, failedStep, errorMessage, importPercent, commitCount, pushPercent, hasLargeFiles, largeFilesSize, largeFilesCount, Object.hashAll(projectChoices ?? const []), message, authorsCount, url, htmlUrl, authorsUrl, repositoryUrl, svnRoot]); } 
-@override String toString() { return 'Import(vcs: $vcs, useLfs: $useLfs, vcsUrl: $vcsUrl, svcRoot: $svcRoot, tfvcProject: $tfvcProject, status: $status, statusText: $statusText, failedStep: $failedStep, errorMessage: $errorMessage, importPercent: $importPercent, commitCount: $commitCount, pushPercent: $pushPercent, hasLargeFiles: $hasLargeFiles, largeFilesSize: $largeFilesSize, largeFilesCount: $largeFilesCount, projectChoices: $projectChoices, message: $message, authorsCount: $authorsCount, url: $url, htmlUrl: $htmlUrl, authorsUrl: $authorsUrl, repositoryUrl: $repositoryUrl, svnRoot: $svnRoot)'; } 
+          svnRoot == other.svnRoot;
+
+@override int get hashCode => Object.hashAll([vcs, useLfs, vcsUrl, svcRoot, tfvcProject, status, statusText, failedStep, errorMessage, importPercent, commitCount, pushPercent, hasLargeFiles, largeFilesSize, largeFilesCount, Object.hashAll(projectChoices ?? const []), message, authorsCount, url, htmlUrl, authorsUrl, repositoryUrl, svnRoot]);
+
+@override String toString() => 'Import(vcs: $vcs, useLfs: $useLfs, vcsUrl: $vcsUrl, svcRoot: $svcRoot, tfvcProject: $tfvcProject, status: $status, statusText: $statusText, failedStep: $failedStep, errorMessage: $errorMessage, importPercent: $importPercent, commitCount: $commitCount, pushPercent: $pushPercent, hasLargeFiles: $hasLargeFiles, largeFilesSize: $largeFilesSize, largeFilesCount: $largeFilesCount, projectChoices: $projectChoices, message: $message, authorsCount: $authorsCount, url: $url, htmlUrl: $htmlUrl, authorsUrl: $authorsUrl, repositoryUrl: $repositoryUrl, svnRoot: $svnRoot)';
+
  }

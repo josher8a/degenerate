@@ -20,10 +20,13 @@ ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals copyWith({ShieldTim
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   suggestedThreshold: suggestedThreshold != null ? suggestedThreshold() : this.suggestedThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals &&
           lastUpdated == other.lastUpdated &&
-          suggestedThreshold == other.suggestedThreshold; } 
-@override int get hashCode { return Object.hash(lastUpdated, suggestedThreshold); } 
-@override String toString() { return 'ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(lastUpdated: $lastUpdated, suggestedThreshold: $suggestedThreshold)'; } 
+          suggestedThreshold == other.suggestedThreshold;
+
+@override int get hashCode => Object.hash(lastUpdated, suggestedThreshold);
+
+@override String toString() => 'ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals(lastUpdated: $lastUpdated, suggestedThreshold: $suggestedThreshold)';
+
  }

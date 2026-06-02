@@ -40,13 +40,16 @@ DnsSettingsDnsViewResponse copyWith({DnsSettingsCreatedTime? createdTime, DnsSet
   zones: zones ?? this.zones,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsViewResponse &&
           createdTime == other.createdTime &&
           modifiedTime == other.modifiedTime &&
           name == other.name &&
           listEquals(zones, other.zones) &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(createdTime, modifiedTime, name, Object.hashAll(zones), id); } 
-@override String toString() { return 'DnsSettingsDnsViewResponse(createdTime: $createdTime, modifiedTime: $modifiedTime, name: $name, zones: $zones, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(createdTime, modifiedTime, name, Object.hashAll(zones), id);
+
+@override String toString() => 'DnsSettingsDnsViewResponse(createdTime: $createdTime, modifiedTime: $modifiedTime, name: $name, zones: $zones, id: $id)';
+
  }

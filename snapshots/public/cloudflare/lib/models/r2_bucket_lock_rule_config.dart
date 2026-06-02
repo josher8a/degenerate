@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 R2BucketLockRuleConfig copyWith({List<R2BucketLockRule>? Function()? rules}) { return R2BucketLockRuleConfig(
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2BucketLockRuleConfig &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []); } 
-@override String toString() { return 'R2BucketLockRuleConfig(rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hashAll(rules ?? const []);
+
+@override String toString() => 'R2BucketLockRuleConfig(rules: $rules)';
+
  }

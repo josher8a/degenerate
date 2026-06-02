@@ -28,10 +28,13 @@ R2DataCatalogCatalogActivationResponse copyWith({String? id, String? name, }) { 
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogActivationResponse &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'R2DataCatalogCatalogActivationResponse(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'R2DataCatalogCatalogActivationResponse(id: $id, name: $name)';
+
  }

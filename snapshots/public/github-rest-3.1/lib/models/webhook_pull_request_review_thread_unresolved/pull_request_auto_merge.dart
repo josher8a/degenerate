@@ -37,12 +37,15 @@ PullRequestAutoMerge copyWith({String? Function()? commitMessage, String? commit
   enabledBy: enabledBy != null ? enabledBy() : this.enabledBy,
   mergeMethod: mergeMethod ?? this.mergeMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestAutoMerge &&
           commitMessage == other.commitMessage &&
           commitTitle == other.commitTitle &&
           enabledBy == other.enabledBy &&
-          mergeMethod == other.mergeMethod; } 
-@override int get hashCode { return Object.hash(commitMessage, commitTitle, enabledBy, mergeMethod); } 
-@override String toString() { return 'PullRequestAutoMerge(commitMessage: $commitMessage, commitTitle: $commitTitle, enabledBy: $enabledBy, mergeMethod: $mergeMethod)'; } 
+          mergeMethod == other.mergeMethod;
+
+@override int get hashCode => Object.hash(commitMessage, commitTitle, enabledBy, mergeMethod);
+
+@override String toString() => 'PullRequestAutoMerge(commitMessage: $commitMessage, commitTitle: $commitTitle, enabledBy: $enabledBy, mergeMethod: $mergeMethod)';
+
  }

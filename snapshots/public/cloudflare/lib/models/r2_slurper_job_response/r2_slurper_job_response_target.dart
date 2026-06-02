@@ -25,11 +25,14 @@ R2SlurperJobResponseTarget copyWith({String? Function()? bucket, R2SlurperJurisd
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperJobResponseTarget &&
           bucket == other.bucket &&
           jurisdiction == other.jurisdiction &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, jurisdiction, vendor); } 
-@override String toString() { return 'R2SlurperJobResponseTarget(bucket: $bucket, jurisdiction: $jurisdiction, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, jurisdiction, vendor);
+
+@override String toString() => 'R2SlurperJobResponseTarget(bucket: $bucket, jurisdiction: $jurisdiction, vendor: $vendor)';
+
  }

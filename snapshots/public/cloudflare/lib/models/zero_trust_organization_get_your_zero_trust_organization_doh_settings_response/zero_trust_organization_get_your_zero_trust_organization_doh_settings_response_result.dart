@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult copyWith({String? Function()? dohJwtDuration}) { return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult &&
-          dohJwtDuration == other.dohJwtDuration; } 
-@override int get hashCode { return dohJwtDuration.hashCode; } 
-@override String toString() { return 'ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(dohJwtDuration: $dohJwtDuration)'; } 
+          dohJwtDuration == other.dohJwtDuration;
+
+@override int get hashCode => dohJwtDuration.hashCode;
+
+@override String toString() => 'ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponseResult(dohJwtDuration: $dohJwtDuration)';
+
  }

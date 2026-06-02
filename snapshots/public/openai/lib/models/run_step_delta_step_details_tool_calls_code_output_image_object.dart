@@ -28,11 +28,14 @@ RunStepDeltaStepDetailsToolCallsCodeOutputImageObject copyWith({int? index, Code
   type: type ?? this.type,
   image: image != null ? image() : this.image,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsCodeOutputImageObject &&
           index == other.index &&
           type == other.type &&
-          image == other.image; } 
-@override int get hashCode { return Object.hash(index, type, image); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(index: $index, type: $type, image: $image)'; } 
+          image == other.image;
+
+@override int get hashCode => Object.hash(index, type, image);
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(index: $index, type: $type, image: $image)';
+
  }

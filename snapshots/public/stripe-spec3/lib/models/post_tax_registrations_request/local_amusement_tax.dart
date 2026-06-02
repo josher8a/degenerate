@@ -19,9 +19,12 @@ return errors; }
 LocalAmusementTax copyWith({String? jurisdiction}) { return LocalAmusementTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalAmusementTax &&
-          jurisdiction == other.jurisdiction; } 
-@override int get hashCode { return jurisdiction.hashCode; } 
-@override String toString() { return 'LocalAmusementTax(jurisdiction: $jurisdiction)'; } 
+          jurisdiction == other.jurisdiction;
+
+@override int get hashCode => jurisdiction.hashCode;
+
+@override String toString() => 'LocalAmusementTax(jurisdiction: $jurisdiction)';
+
  }

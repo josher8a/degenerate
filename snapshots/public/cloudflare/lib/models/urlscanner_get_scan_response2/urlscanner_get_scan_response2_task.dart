@@ -87,7 +87,7 @@ UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, Str
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Task &&
           apexDomain == other.apexDomain &&
           domUrl == other.domUrl &&
@@ -101,7 +101,10 @@ UrlscannerGetScanResponse2Task copyWith({String? apexDomain, String? domUrl, Str
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(apexDomain, domUrl, domain, method, options, reportUrl, screenshotUrl, source, success, time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Task(apexDomain: $apexDomain, domUrl: $domUrl, domain: $domain, method: $method, options: $options, reportUrl: $reportUrl, screenshotUrl: $screenshotUrl, source: $source, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(apexDomain, domUrl, domain, method, options, reportUrl, screenshotUrl, source, success, time, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerGetScanResponse2Task(apexDomain: $apexDomain, domUrl: $domUrl, domain: $domain, method: $method, options: $options, reportUrl: $reportUrl, screenshotUrl: $screenshotUrl, source: $source, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuneMethodType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuneMethodType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuneMethodType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuneMethodType($value)';
+
  }
 /// The method used for fine-tuning.
 @immutable final class FineTuneMethod {const FineTuneMethod({required this.type, this.supervised, this.dpo, this.reinforcement, });
@@ -60,12 +63,15 @@ FineTuneMethod copyWith({FineTuneMethodType? type, FineTuneSupervisedMethod? Fun
   dpo: dpo != null ? dpo() : this.dpo,
   reinforcement: reinforcement != null ? reinforcement() : this.reinforcement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneMethod &&
           type == other.type &&
           supervised == other.supervised &&
           dpo == other.dpo &&
-          reinforcement == other.reinforcement; } 
-@override int get hashCode { return Object.hash(type, supervised, dpo, reinforcement); } 
-@override String toString() { return 'FineTuneMethod(type: $type, supervised: $supervised, dpo: $dpo, reinforcement: $reinforcement)'; } 
+          reinforcement == other.reinforcement;
+
+@override int get hashCode => Object.hash(type, supervised, dpo, reinforcement);
+
+@override String toString() => 'FineTuneMethod(type: $type, supervised: $supervised, dpo: $dpo, reinforcement: $reinforcement)';
+
  }

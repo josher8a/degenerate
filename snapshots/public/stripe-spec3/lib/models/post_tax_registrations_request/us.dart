@@ -40,13 +40,16 @@ Us copyWith({LocalAmusementTax? Function()? localAmusementTax, LocalLeaseTax? Fu
   stateSalesTax: stateSalesTax != null ? stateSalesTax() : this.stateSalesTax,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Us &&
           localAmusementTax == other.localAmusementTax &&
           localLeaseTax == other.localLeaseTax &&
           state == other.state &&
           stateSalesTax == other.stateSalesTax &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(localAmusementTax, localLeaseTax, state, stateSalesTax, type); } 
-@override String toString() { return 'Us(localAmusementTax: $localAmusementTax, localLeaseTax: $localLeaseTax, state: $state, stateSalesTax: $stateSalesTax, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(localAmusementTax, localLeaseTax, state, stateSalesTax, type);
+
+@override String toString() => 'Us(localAmusementTax: $localAmusementTax, localLeaseTax: $localLeaseTax, state: $state, stateSalesTax: $stateSalesTax, type: $type)';
+
  }

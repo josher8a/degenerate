@@ -107,7 +107,7 @@ RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynam
   ref: ref != null ? ref() : this.ref,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRule &&
           action == other.action &&
           actionParameters == other.actionParameters &&
@@ -121,7 +121,10 @@ RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynam
           logging == other.logging &&
           ratelimit == other.ratelimit &&
           ref == other.ref &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(action, actionParameters, Object.hashAll(categories ?? const []), description, enabled, exposedCredentialCheck, expression, id, lastUpdated, logging, ratelimit, ref, version); } 
-@override String toString() { return 'RulesetsRule(action: $action, actionParameters: $actionParameters, categories: $categories, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, lastUpdated: $lastUpdated, logging: $logging, ratelimit: $ratelimit, ref: $ref, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(action, actionParameters, Object.hashAll(categories ?? const []), description, enabled, exposedCredentialCheck, expression, id, lastUpdated, logging, ratelimit, ref, version);
+
+@override String toString() => 'RulesetsRule(action: $action, actionParameters: $actionParameters, categories: $categories, description: $description, enabled: $enabled, exposedCredentialCheck: $exposedCredentialCheck, expression: $expression, id: $id, lastUpdated: $lastUpdated, logging: $logging, ratelimit: $ratelimit, ref: $ref, version: $version)';
+
  }

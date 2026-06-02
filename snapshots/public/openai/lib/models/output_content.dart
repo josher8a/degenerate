@@ -34,16 +34,20 @@ final OutputTextContent outputTextContent;
 
 @override String get type => 'output_text';
 
-@override Map<String, dynamic> toJson() { return {...outputTextContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...outputTextContent.toJson(), 'type': type};
+
 OutputContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return OutputContentOutputText(outputTextContent.copyWith(
   text: text,
   annotations: annotations,
   logprobs: logprobs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentOutputText && outputTextContent == other.outputTextContent; } 
-@override int get hashCode { return outputTextContent.hashCode; } 
-@override String toString() { return 'OutputContent.outputText($outputTextContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputContentOutputText && outputTextContent == other.outputTextContent;
+
+@override int get hashCode => outputTextContent.hashCode;
+
+@override String toString() => 'OutputContent.outputText($outputTextContent)';
+
  }
 @immutable final class OutputContentRefusal extends OutputContent {const OutputContentRefusal(this.refusalContent);
 
@@ -53,14 +57,18 @@ final RefusalContent refusalContent;
 
 @override String get type => 'refusal';
 
-@override Map<String, dynamic> toJson() { return {...refusalContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...refusalContent.toJson(), 'type': type};
+
 OutputContentRefusal copyWith({String? refusal}) { return OutputContentRefusal(refusalContent.copyWith(
   refusal: refusal,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentRefusal && refusalContent == other.refusalContent; } 
-@override int get hashCode { return refusalContent.hashCode; } 
-@override String toString() { return 'OutputContent.refusal($refusalContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputContentRefusal && refusalContent == other.refusalContent;
+
+@override int get hashCode => refusalContent.hashCode;
+
+@override String toString() => 'OutputContent.refusal($refusalContent)';
+
  }
 @immutable final class OutputContentReasoningText extends OutputContent {const OutputContentReasoningText(this.reasoningTextContent);
 
@@ -70,14 +78,18 @@ final ReasoningTextContent reasoningTextContent;
 
 @override String get type => 'reasoning_text';
 
-@override Map<String, dynamic> toJson() { return {...reasoningTextContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...reasoningTextContent.toJson(), 'type': type};
+
 OutputContentReasoningText copyWith({String? text}) { return OutputContentReasoningText(reasoningTextContent.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContentReasoningText && reasoningTextContent == other.reasoningTextContent; } 
-@override int get hashCode { return reasoningTextContent.hashCode; } 
-@override String toString() { return 'OutputContent.reasoningText($reasoningTextContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputContentReasoningText && reasoningTextContent == other.reasoningTextContent;
+
+@override int get hashCode => reasoningTextContent.hashCode;
+
+@override String toString() => 'OutputContent.reasoningText($reasoningTextContent)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -87,9 +99,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputContent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'OutputContent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputContent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'OutputContent.unknown($json)';
+
  }

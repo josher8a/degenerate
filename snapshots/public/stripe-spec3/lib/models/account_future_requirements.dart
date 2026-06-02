@@ -59,7 +59,7 @@ AccountFutureRequirements copyWith({List<AccountRequirementsAlternative>? Functi
   pastDue: pastDue != null ? pastDue() : this.pastDue,
   pendingVerification: pendingVerification != null ? pendingVerification() : this.pendingVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountFutureRequirements &&
           listEquals(alternatives, other.alternatives) &&
           currentDeadline == other.currentDeadline &&
@@ -68,7 +68,10 @@ AccountFutureRequirements copyWith({List<AccountRequirementsAlternative>? Functi
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives ?? const []), currentDeadline, Object.hashAll(currentlyDue ?? const []), disabledReason, Object.hashAll(errors ?? const []), Object.hashAll(eventuallyDue ?? const []), Object.hashAll(pastDue ?? const []), Object.hashAll(pendingVerification ?? const [])); } 
-@override String toString() { return 'AccountFutureRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
+          listEquals(pendingVerification, other.pendingVerification);
+
+@override int get hashCode => Object.hash(Object.hashAll(alternatives ?? const []), currentDeadline, Object.hashAll(currentlyDue ?? const []), disabledReason, Object.hashAll(errors ?? const []), Object.hashAll(eventuallyDue ?? const []), Object.hashAll(pastDue ?? const []), Object.hashAll(pendingVerification ?? const []));
+
+@override String toString() => 'AccountFutureRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';
+
  }

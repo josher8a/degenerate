@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HookName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HookName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HookName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HookName($value)';
+
  }
 /// The webhook that is being pinged
 @immutable final class WebhookPingHook {const WebhookPingHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, this.appId, this.deliveriesUrl, this.lastResponse, this.pingUrl, this.testUrl, this.url, });
@@ -115,7 +118,7 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebho
   updatedAt: updatedAt ?? this.updatedAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPingHook &&
           active == other.active &&
           appId == other.appId &&
@@ -130,7 +133,10 @@ WebhookPingHook copyWith({bool? active, int? Function()? appId, ReposCreateWebho
           testUrl == other.testUrl &&
           type == other.type &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, appId, config, createdAt, deliveriesUrl, Object.hashAll(events), id, lastResponse, name, pingUrl, testUrl, type, updatedAt, url); } 
-@override String toString() { return 'WebhookPingHook(active: $active, appId: $appId, config: $config, createdAt: $createdAt, deliveriesUrl: $deliveriesUrl, events: $events, id: $id, lastResponse: $lastResponse, name: $name, pingUrl: $pingUrl, testUrl: $testUrl, type: $type, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(active, appId, config, createdAt, deliveriesUrl, Object.hashAll(events), id, lastResponse, name, pingUrl, testUrl, type, updatedAt, url);
+
+@override String toString() => 'WebhookPingHook(active: $active, appId: $appId, config: $config, createdAt: $createdAt, deliveriesUrl: $deliveriesUrl, events: $events, id: $id, lastResponse: $lastResponse, name: $name, pingUrl: $pingUrl, testUrl: $testUrl, type: $type, updatedAt: $updatedAt, url: $url)';
+
  }

@@ -22,10 +22,13 @@ PostPlansRequestTransformUsage copyWith({int? divideBy, Round? round, }) { retur
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPlansRequestTransformUsage &&
           divideBy == other.divideBy &&
-          round == other.round; } 
-@override int get hashCode { return Object.hash(divideBy, round); } 
-@override String toString() { return 'PostPlansRequestTransformUsage(divideBy: $divideBy, round: $round)'; } 
+          round == other.round;
+
+@override int get hashCode => Object.hash(divideBy, round);
+
+@override String toString() => 'PostPlansRequestTransformUsage(divideBy: $divideBy, round: $round)';
+
  }

@@ -52,12 +52,15 @@ RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 copyWith({String? g
   tcp: tcp ?? this.tcp,
   udp: udp ?? this.udp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 &&
           gre == other.gre &&
           icmp == other.icmp &&
           tcp == other.tcp &&
-          udp == other.udp; } 
-@override int get hashCode { return Object.hash(gre, icmp, tcp, udp); } 
-@override String toString() { return 'RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp)'; } 
+          udp == other.udp;
+
+@override int get hashCode => Object.hash(gre, icmp, tcp, udp);
+
+@override String toString() => 'RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp)';
+
  }

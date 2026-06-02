@@ -55,7 +55,7 @@ Findings copyWith({String? Function()? attachment, String? Function()? detail, E
   score: score != null ? score() : this.score,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Findings &&
           attachment == other.attachment &&
           detail == other.detail &&
@@ -65,7 +65,10 @@ Findings copyWith({String? Function()? attachment, String? Function()? detail, E
           portion == other.portion &&
           reason == other.reason &&
           score == other.score &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(attachment, detail, detection, field, name, portion, reason, score, value); } 
-@override String toString() { return 'Findings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(attachment, detail, detection, field, name, portion, reason, score, value);
+
+@override String toString() => 'Findings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)';
+
  }

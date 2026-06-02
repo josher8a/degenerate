@@ -17,7 +17,8 @@ final class CreateOrderError$400 extends CreateOrderError {const CreateOrderErro
 
 final ErrorModel error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CreateOrderError$Unknown extends CreateOrderError {const CreateOrderError$Unknown(this.statusCode, this.rawBody, );
 

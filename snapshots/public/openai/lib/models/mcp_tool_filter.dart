@@ -27,10 +27,13 @@ McpToolFilter copyWith({List<String>? Function()? toolNames, bool? Function()? r
   toolNames: toolNames != null ? toolNames() : this.toolNames,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpToolFilter &&
           listEquals(toolNames, other.toolNames) &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(Object.hashAll(toolNames ?? const []), readOnly); } 
-@override String toString() { return 'McpToolFilter(toolNames: $toolNames, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(Object.hashAll(toolNames ?? const []), readOnly);
+
+@override String toString() => 'McpToolFilter(toolNames: $toolNames, readOnly: $readOnly)';
+
  }

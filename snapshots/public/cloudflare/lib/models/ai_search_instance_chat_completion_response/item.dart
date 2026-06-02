@@ -25,11 +25,14 @@ Item copyWith({String? key, Map<String, dynamic>? Function()? metadata, double? 
   metadata: metadata != null ? metadata() : this.metadata,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Item &&
           key == other.key &&
           metadata == other.metadata &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(key, metadata, timestamp); } 
-@override String toString() { return 'Item(key: $key, metadata: $metadata, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(key, metadata, timestamp);
+
+@override String toString() => 'Item(key: $key, metadata: $metadata, timestamp: $timestamp)';
+
  }

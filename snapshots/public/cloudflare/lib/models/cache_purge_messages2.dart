@@ -25,10 +25,13 @@ CachePurgeMessages2 copyWith({int? code, String? message, }) { return CachePurge
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeMessages2 &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'CachePurgeMessages2(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'CachePurgeMessages2(code: $code, message: $message)';
+
  }

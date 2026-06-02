@@ -45,14 +45,17 @@ ResponseGeoip copyWith({String? city, String? country, String? countryName, Stri
   ll: ll ?? this.ll,
   region: region ?? this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseGeoip &&
           city == other.city &&
           country == other.country &&
           countryName == other.countryName &&
           geonameId == other.geonameId &&
           listEquals(ll, other.ll) &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(city, country, countryName, geonameId, Object.hashAll(ll), region); } 
-@override String toString() { return 'ResponseGeoip(city: $city, country: $country, countryName: $countryName, geonameId: $geonameId, ll: $ll, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(city, country, countryName, geonameId, Object.hashAll(ll), region);
+
+@override String toString() => 'ResponseGeoip(city: $city, country: $country, countryName: $countryName, geonameId: $geonameId, ll: $ll, region: $region)';
+
  }

@@ -34,10 +34,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesCacheReserveClearState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesCacheReserveClearState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CacheRulesCacheReserveClearState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheRulesCacheReserveClearState($value)';
+
  }
 @immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.startTs, required this.state, this.endTs, });
 
@@ -66,11 +69,14 @@ CacheRulesCacheReserveClearResponseValueResult copyWith({CacheRulesCacheReserveC
   startTs: startTs ?? this.startTs,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesCacheReserveClearResponseValueResult &&
           endTs == other.endTs &&
           startTs == other.startTs &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(endTs, startTs, state); } 
-@override String toString() { return 'CacheRulesCacheReserveClearResponseValueResult(endTs: $endTs, startTs: $startTs, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(endTs, startTs, state);
+
+@override String toString() => 'CacheRulesCacheReserveClearResponseValueResult(endTs: $endTs, startTs: $startTs, state: $state)';
+
  }

@@ -20,10 +20,13 @@ BaseModel copyWith({String? id, DateTime? Function()? createdAt, }) { return Bas
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BaseModel &&
           id == other.id &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, createdAt); } 
-@override String toString() { return 'BaseModel(id: $id, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, createdAt);
+
+@override String toString() => 'BaseModel(id: $id, createdAt: $createdAt)';
+
  }

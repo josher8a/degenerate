@@ -21,10 +21,13 @@ MagicTunnelDeletedResponseResult copyWith({bool? Function()? deleted, MagicGreTu
   deleted: deleted != null ? deleted() : this.deleted,
   deletedGreTunnel: deletedGreTunnel != null ? deletedGreTunnel() : this.deletedGreTunnel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTunnelDeletedResponseResult &&
           deleted == other.deleted &&
-          deletedGreTunnel == other.deletedGreTunnel; } 
-@override int get hashCode { return Object.hash(deleted, deletedGreTunnel); } 
-@override String toString() { return 'MagicTunnelDeletedResponseResult(deleted: $deleted, deletedGreTunnel: $deletedGreTunnel)'; } 
+          deletedGreTunnel == other.deletedGreTunnel;
+
+@override int get hashCode => Object.hash(deleted, deletedGreTunnel);
+
+@override String toString() => 'MagicTunnelDeletedResponseResult(deleted: $deleted, deletedGreTunnel: $deletedGreTunnel)';
+
  }

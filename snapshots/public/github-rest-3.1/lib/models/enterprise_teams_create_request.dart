@@ -47,13 +47,16 @@ EnterpriseTeamsCreateRequest copyWith({String? name, String? Function()? descrip
   organizationSelectionType: organizationSelectionType != null ? organizationSelectionType() : this.organizationSelectionType,
   groupId: groupId != null ? groupId() : this.groupId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseTeamsCreateRequest &&
           name == other.name &&
           description == other.description &&
           syncToOrganizations == other.syncToOrganizations &&
           organizationSelectionType == other.organizationSelectionType &&
-          groupId == other.groupId; } 
-@override int get hashCode { return Object.hash(name, description, syncToOrganizations, organizationSelectionType, groupId); } 
-@override String toString() { return 'EnterpriseTeamsCreateRequest(name: $name, description: $description, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId)'; } 
+          groupId == other.groupId;
+
+@override int get hashCode => Object.hash(name, description, syncToOrganizations, organizationSelectionType, groupId);
+
+@override String toString() => 'EnterpriseTeamsCreateRequest(name: $name, description: $description, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId)';
+
  }

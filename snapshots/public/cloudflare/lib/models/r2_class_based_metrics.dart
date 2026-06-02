@@ -21,10 +21,13 @@ R2ClassBasedMetrics copyWith({R2ObjectSizeMetrics? Function()? published, R2Obje
   published: published != null ? published() : this.published,
   uploaded: uploaded != null ? uploaded() : this.uploaded,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ClassBasedMetrics &&
           published == other.published &&
-          uploaded == other.uploaded; } 
-@override int get hashCode { return Object.hash(published, uploaded); } 
-@override String toString() { return 'R2ClassBasedMetrics(published: $published, uploaded: $uploaded)'; } 
+          uploaded == other.uploaded;
+
+@override int get hashCode => Object.hash(published, uploaded);
+
+@override String toString() => 'R2ClassBasedMetrics(published: $published, uploaded: $uploaded)';
+
  }

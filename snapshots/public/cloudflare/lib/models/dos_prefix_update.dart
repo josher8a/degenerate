@@ -22,10 +22,13 @@ DosPrefixUpdate copyWith({String? Function()? comment, bool? Function()? exclude
   comment: comment != null ? comment() : this.comment,
   excluded: excluded != null ? excluded() : this.excluded,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosPrefixUpdate &&
           comment == other.comment &&
-          excluded == other.excluded; } 
-@override int get hashCode { return Object.hash(comment, excluded); } 
-@override String toString() { return 'DosPrefixUpdate(comment: $comment, excluded: $excluded)'; } 
+          excluded == other.excluded;
+
+@override int get hashCode => Object.hash(comment, excluded);
+
+@override String toString() => 'DosPrefixUpdate(comment: $comment, excluded: $excluded)';
+
  }

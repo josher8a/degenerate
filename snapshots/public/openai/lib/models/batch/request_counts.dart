@@ -31,11 +31,14 @@ RequestCounts copyWith({int? total, int? completed, int? failed, }) { return Req
   completed: completed ?? this.completed,
   failed: failed ?? this.failed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequestCounts &&
           total == other.total &&
           completed == other.completed &&
-          failed == other.failed; } 
-@override int get hashCode { return Object.hash(total, completed, failed); } 
-@override String toString() { return 'RequestCounts(total: $total, completed: $completed, failed: $failed)'; } 
+          failed == other.failed;
+
+@override int get hashCode => Object.hash(total, completed, failed);
+
+@override String toString() => 'RequestCounts(total: $total, completed: $completed, failed: $failed)';
+
  }

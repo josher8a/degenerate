@@ -36,13 +36,16 @@ PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData copyWith({Destin
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData &&
           billingDetails == other.billingDetails &&
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(billingDetails, financialAccount, metadata, type, usBankAccount); } 
-@override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(billingDetails: $billingDetails, financialAccount: $financialAccount, metadata: $metadata, type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(billingDetails, financialAccount, metadata, type, usBankAccount);
+
+@override String toString() => 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(billingDetails: $billingDetails, financialAccount: $financialAccount, metadata: $metadata, type: $type, usBankAccount: $usBankAccount)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOperationFeatureThresholds copyWith({Thresholds? Function()? thresholds}) { return ShieldOperationFeatureThresholds(
   thresholds: thresholds != null ? thresholds() : this.thresholds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureThresholds &&
-          thresholds == other.thresholds; } 
-@override int get hashCode { return thresholds.hashCode; } 
-@override String toString() { return 'ShieldOperationFeatureThresholds(thresholds: $thresholds)'; } 
+          thresholds == other.thresholds;
+
+@override int get hashCode => thresholds.hashCode;
+
+@override String toString() => 'ShieldOperationFeatureThresholds(thresholds: $thresholds)';
+
  }

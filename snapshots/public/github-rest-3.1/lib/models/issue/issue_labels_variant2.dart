@@ -45,7 +45,7 @@ IssueLabelsVariant2 copyWith({int? Function()? id, String? Function()? nodeId, U
   color: color != null ? color() : this.color,
   $default: $default != null ? $default() : this.$default,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueLabelsVariant2 &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -53,7 +53,10 @@ IssueLabelsVariant2 copyWith({int? Function()? id, String? Function()? nodeId, U
           name == other.name &&
           description == other.description &&
           color == other.color &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, description, color, $default); } 
-@override String toString() { return 'IssueLabelsVariant2(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})'; } 
+          $default == other.$default;
+
+@override int get hashCode => Object.hash(id, nodeId, url, name, description, color, $default);
+
+@override String toString() => 'IssueLabelsVariant2(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})';
+
  }

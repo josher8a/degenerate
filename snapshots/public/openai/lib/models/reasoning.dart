@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Summary && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Summary($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Summary && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Summary($value)';
+
  }
 /// **Deprecated:** use `summary` instead.
 /// 
@@ -61,10 +64,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GenerateSummary && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GenerateSummary($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GenerateSummary && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GenerateSummary($value)';
+
  }
 /// **gpt-5 and o-series models only**
 /// 
@@ -108,11 +114,14 @@ Reasoning copyWith({ReasoningEffort? Function()? effort, Summary? Function()? su
   summary: summary != null ? summary() : this.summary,
   generateSummary: generateSummary != null ? generateSummary() : this.generateSummary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Reasoning &&
           effort == other.effort &&
           summary == other.summary &&
-          generateSummary == other.generateSummary; } 
-@override int get hashCode { return Object.hash(effort, summary, generateSummary); } 
-@override String toString() { return 'Reasoning(effort: $effort, summary: $summary, generateSummary: $generateSummary)'; } 
+          generateSummary == other.generateSummary;
+
+@override int get hashCode => Object.hash(effort, summary, generateSummary);
+
+@override String toString() => 'Reasoning(effort: $effort, summary: $summary, generateSummary: $generateSummary)';
+
  }

@@ -47,14 +47,17 @@ AccessScimConfig copyWith({AccessScimConfigAuthentication? Function()? authentic
   mappings: mappings != null ? mappings() : this.mappings,
   remoteUri: remoteUri ?? this.remoteUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfig &&
           authentication == other.authentication &&
           deactivateOnDelete == other.deactivateOnDelete &&
           enabled == other.enabled &&
           idpUid == other.idpUid &&
           listEquals(mappings, other.mappings) &&
-          remoteUri == other.remoteUri; } 
-@override int get hashCode { return Object.hash(authentication, deactivateOnDelete, enabled, idpUid, Object.hashAll(mappings ?? const []), remoteUri); } 
-@override String toString() { return 'AccessScimConfig(authentication: $authentication, deactivateOnDelete: $deactivateOnDelete, enabled: $enabled, idpUid: $idpUid, mappings: $mappings, remoteUri: $remoteUri)'; } 
+          remoteUri == other.remoteUri;
+
+@override int get hashCode => Object.hash(authentication, deactivateOnDelete, enabled, idpUid, Object.hashAll(mappings ?? const []), remoteUri);
+
+@override String toString() => 'AccessScimConfig(authentication: $authentication, deactivateOnDelete: $deactivateOnDelete, enabled: $enabled, idpUid: $idpUid, mappings: $mappings, remoteUri: $remoteUri)';
+
  }

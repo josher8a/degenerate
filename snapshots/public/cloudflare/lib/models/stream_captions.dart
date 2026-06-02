@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamCaptionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamCaptionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamCaptionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamCaptionStatus($value)';
+
  }
 /// Whether the caption was generated via AI.
 extension type const StreamGeneratedCaption(bool value) {
@@ -73,12 +76,15 @@ StreamCaptions copyWith({StreamGeneratedCaption? Function()? generated, StreamLa
   language: language != null ? language() : this.language,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCaptions &&
           generated == other.generated &&
           label == other.label &&
           language == other.language &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(generated, label, language, status); } 
-@override String toString() { return 'StreamCaptions(generated: $generated, label: $label, language: $language, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(generated, label, language, status);
+
+@override String toString() => 'StreamCaptions(generated: $generated, label: $label, language: $language, status: $status)';
+
  }

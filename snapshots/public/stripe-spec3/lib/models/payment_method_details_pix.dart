@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodDetailsPix copyWith({String? Function()? bankTransactionId}) { return PaymentMethodDetailsPix(
   bankTransactionId: bankTransactionId != null ? bankTransactionId() : this.bankTransactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPix &&
-          bankTransactionId == other.bankTransactionId; } 
-@override int get hashCode { return bankTransactionId.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsPix(bankTransactionId: $bankTransactionId)'; } 
+          bankTransactionId == other.bankTransactionId;
+
+@override int get hashCode => bankTransactionId.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsPix(bankTransactionId: $bankTransactionId)';
+
  }

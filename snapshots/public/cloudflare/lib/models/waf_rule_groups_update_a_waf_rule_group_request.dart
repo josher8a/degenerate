@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WafRuleGroupsUpdateAWafRuleGroupRequest copyWith({WafManagedRulesMode? Function()? mode}) { return WafRuleGroupsUpdateAWafRuleGroupRequest(
   mode: mode != null ? mode() : this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafRuleGroupsUpdateAWafRuleGroupRequest &&
-          mode == other.mode; } 
-@override int get hashCode { return mode.hashCode; } 
-@override String toString() { return 'WafRuleGroupsUpdateAWafRuleGroupRequest(mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => mode.hashCode;
+
+@override String toString() => 'WafRuleGroupsUpdateAWafRuleGroupRequest(mode: $mode)';
+
  }

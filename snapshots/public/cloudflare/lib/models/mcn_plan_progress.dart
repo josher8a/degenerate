@@ -21,10 +21,13 @@ McnPlanProgress copyWith({int? done, int? total, }) { return McnPlanProgress(
   done: done ?? this.done,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnPlanProgress &&
           done == other.done &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(done, total); } 
-@override String toString() { return 'McnPlanProgress(done: $done, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(done, total);
+
+@override String toString() => 'McnPlanProgress(done: $done, total: $total)';
+
  }

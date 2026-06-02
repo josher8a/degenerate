@@ -36,13 +36,16 @@ PostBillingPortalConfigurationsConfigurationRequestFeatures copyWith({PostBillin
   subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeatures &&
           customerUpdate == other.customerUpdate &&
           invoiceHistory == other.invoiceHistory &&
           paymentMethodUpdate == other.paymentMethodUpdate &&
           subscriptionCancel == other.subscriptionCancel &&
-          subscriptionUpdate == other.subscriptionUpdate; } 
-@override int get hashCode { return Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)'; } 
+          subscriptionUpdate == other.subscriptionUpdate;
+
+@override int get hashCode => Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate);
+
+@override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)';
+
  }

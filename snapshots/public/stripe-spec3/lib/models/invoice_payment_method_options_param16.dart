@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InvoicePaymentMethodOptionsParam16 copyWith({InvoicePaymentMethodOptionsBancontactPreferredLanguage? Function()? preferredLanguage}) { return InvoicePaymentMethodOptionsParam16(
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam16 &&
-          preferredLanguage == other.preferredLanguage; } 
-@override int get hashCode { return preferredLanguage.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam16(preferredLanguage: $preferredLanguage)'; } 
+          preferredLanguage == other.preferredLanguage;
+
+@override int get hashCode => preferredLanguage.hashCode;
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam16(preferredLanguage: $preferredLanguage)';
+
  }

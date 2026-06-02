@@ -223,7 +223,7 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
   autoMerge: autoMerge ?? this.autoMerge,
   draft: draft != null ? draft() : this.draft,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestSimple &&
           url == other.url &&
           id == other.id &&
@@ -260,7 +260,10 @@ PullRequestSimple copyWith({Uri? url, int? id, String? nodeId, Uri? htmlUrl, Uri
           links == other.links &&
           authorAssociation == other.authorAssociation &&
           autoMerge == other.autoMerge &&
-          draft == other.draft; } 
-@override int get hashCode { return Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft]); } 
-@override String toString() { return 'PullRequestSimple(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft)'; } 
+          draft == other.draft;
+
+@override int get hashCode => Object.hashAll([url, id, nodeId, htmlUrl, diffUrl, patchUrl, issueUrl, commitsUrl, reviewCommentsUrl, reviewCommentUrl, commentsUrl, statusesUrl, number, state, locked, title, user, body, Object.hashAll(labels), milestone, activeLockReason, createdAt, updatedAt, closedAt, mergedAt, mergeCommitSha, assignee, Object.hashAll(assignees ?? const []), Object.hashAll(requestedReviewers ?? const []), Object.hashAll(requestedTeams ?? const []), head, base, links, authorAssociation, autoMerge, draft]);
+
+@override String toString() => 'PullRequestSimple(url: $url, id: $id, nodeId: $nodeId, htmlUrl: $htmlUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, issueUrl: $issueUrl, commitsUrl: $commitsUrl, reviewCommentsUrl: $reviewCommentsUrl, reviewCommentUrl: $reviewCommentUrl, commentsUrl: $commentsUrl, statusesUrl: $statusesUrl, number: $number, state: $state, locked: $locked, title: $title, user: $user, body: $body, labels: $labels, milestone: $milestone, activeLockReason: $activeLockReason, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, mergedAt: $mergedAt, mergeCommitSha: $mergeCommitSha, assignee: $assignee, assignees: $assignees, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, head: $head, base: $base, links: $links, authorAssociation: $authorAssociation, autoMerge: $autoMerge, draft: $draft)';
+
  }

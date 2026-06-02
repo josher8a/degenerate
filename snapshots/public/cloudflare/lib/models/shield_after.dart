@@ -26,9 +26,12 @@ return errors; }
 ShieldAfter copyWith({String? Function()? after}) { return ShieldAfter(
   after: after != null ? after() : this.after,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldAfter &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'ShieldAfter(after: $after)'; } 
+          after == other.after;
+
+@override int get hashCode => after.hashCode;
+
+@override String toString() => 'ShieldAfter(after: $after)';
+
  }

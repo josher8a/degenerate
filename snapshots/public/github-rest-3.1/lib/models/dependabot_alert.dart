@@ -129,7 +129,7 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
   dismissalRequest: dismissalRequest != null ? dismissalRequest() : this.dismissalRequest,
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlert &&
           number == other.number &&
           state == other.state &&
@@ -147,7 +147,10 @@ DependabotAlert copyWith({AlertNumber? number, DependabotAlertState? state, Depe
           fixedAt == other.fixedAt &&
           autoDismissedAt == other.autoDismissedAt &&
           dismissalRequest == other.dismissalRequest &&
-          listEquals(assignees, other.assignees); } 
-@override int get hashCode { return Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const [])); } 
-@override String toString() { return 'DependabotAlert(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees)'; } 
+          listEquals(assignees, other.assignees);
+
+@override int get hashCode => Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const []));
+
+@override String toString() => 'DependabotAlert(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees)';
+
  }

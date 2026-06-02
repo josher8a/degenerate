@@ -17,7 +17,8 @@ final class AiSearchCreateTokensError$400 extends AiSearchCreateTokensError {con
 
 final AiSearchCreateTokensResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchCreateTokensError$Unknown extends AiSearchCreateTokensError {const AiSearchCreateTokensError$Unknown(this.statusCode, this.rawBody, );
 

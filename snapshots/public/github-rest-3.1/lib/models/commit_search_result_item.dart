@@ -81,7 +81,7 @@ CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? comme
   nodeId: nodeId ?? this.nodeId,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitSearchResultItem &&
           url == other.url &&
           sha == other.sha &&
@@ -94,7 +94,10 @@ CommitSearchResultItem copyWith({Uri? url, String? sha, Uri? htmlUrl, Uri? comme
           repository == other.repository &&
           score == other.score &&
           nodeId == other.nodeId &&
-          listEquals(textMatches, other.textMatches); } 
-@override int get hashCode { return Object.hash(url, sha, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), repository, score, nodeId, Object.hashAll(textMatches ?? const [])); } 
-@override String toString() { return 'CommitSearchResultItem(url: $url, sha: $sha, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, repository: $repository, score: $score, nodeId: $nodeId, textMatches: $textMatches)'; } 
+          listEquals(textMatches, other.textMatches);
+
+@override int get hashCode => Object.hash(url, sha, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), repository, score, nodeId, Object.hashAll(textMatches ?? const []));
+
+@override String toString() => 'CommitSearchResultItem(url: $url, sha: $sha, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, repository: $repository, score: $score, nodeId: $nodeId, textMatches: $textMatches)';
+
  }

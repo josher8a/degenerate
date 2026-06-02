@@ -20,25 +20,29 @@ final class BrapiPostMarkdownError$400 extends BrapiPostMarkdownError {const Bra
 
 final BrapiPostMarkdownResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BrapiPostMarkdownError$422 extends BrapiPostMarkdownError {const BrapiPostMarkdownError$422(this.error);
 
 final BrapiPostMarkdownResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BrapiPostMarkdownError$429 extends BrapiPostMarkdownError {const BrapiPostMarkdownError$429(this.error);
 
 final BrapiPostMarkdownResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class BrapiPostMarkdownError$500 extends BrapiPostMarkdownError {const BrapiPostMarkdownError$500(this.error);
 
 final BrapiPostMarkdownResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BrapiPostMarkdownError$Unknown extends BrapiPostMarkdownError {const BrapiPostMarkdownError$Unknown(this.statusCode, this.rawBody, );
 

@@ -69,7 +69,7 @@ PaymentIntentNextActionWechatPayRedirectToAndroidApp copyWith({String? appId, St
   sign: sign ?? this.sign,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionWechatPayRedirectToAndroidApp &&
           appId == other.appId &&
           nonceStr == other.nonceStr &&
@@ -77,7 +77,10 @@ PaymentIntentNextActionWechatPayRedirectToAndroidApp copyWith({String? appId, St
           partnerId == other.partnerId &&
           prepayId == other.prepayId &&
           sign == other.sign &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(appId, nonceStr, package, partnerId, prepayId, sign, timestamp); } 
-@override String toString() { return 'PaymentIntentNextActionWechatPayRedirectToAndroidApp(appId: $appId, nonceStr: $nonceStr, package: $package, partnerId: $partnerId, prepayId: $prepayId, sign: $sign, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(appId, nonceStr, package, partnerId, prepayId, sign, timestamp);
+
+@override String toString() => 'PaymentIntentNextActionWechatPayRedirectToAndroidApp(appId: $appId, nonceStr: $nonceStr, package: $package, partnerId: $partnerId, prepayId: $prepayId, sign: $sign, timestamp: $timestamp)';
+
  }

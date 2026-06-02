@@ -21,10 +21,13 @@ BundleCustomScan copyWith({BundleIdentifier? Function()? id, BundleCustomScanPay
   id: id != null ? id() : this.id,
   payload: payload != null ? payload() : this.payload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BundleCustomScan &&
           id == other.id &&
-          payload == other.payload; } 
-@override int get hashCode { return Object.hash(id, payload); } 
-@override String toString() { return 'BundleCustomScan(id: $id, payload: $payload)'; } 
+          payload == other.payload;
+
+@override int get hashCode => Object.hash(id, payload);
+
+@override String toString() => 'BundleCustomScan(id: $id, payload: $payload)';
+
  }

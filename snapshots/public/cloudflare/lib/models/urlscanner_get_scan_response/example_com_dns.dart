@@ -36,12 +36,15 @@ ExampleComDns copyWith({String? address, bool? dnssecValid, String? name, String
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExampleComDns &&
           address == other.address &&
           dnssecValid == other.dnssecValid &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, dnssecValid, name, type); } 
-@override String toString() { return 'ExampleComDns(address: $address, dnssecValid: $dnssecValid, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, dnssecValid, name, type);
+
+@override String toString() => 'ExampleComDns(address: $address, dnssecValid: $dnssecValid, name: $name, type: $type)';
+
  }

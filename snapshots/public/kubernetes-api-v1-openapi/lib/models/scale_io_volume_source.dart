@@ -73,7 +73,7 @@ ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String
   system: system ?? this.system,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleIoVolumeSource &&
           fsType == other.fsType &&
           gateway == other.gateway &&
@@ -84,7 +84,10 @@ ScaleIoVolumeSource copyWith({String Function()? fsType, String? gateway, String
           storageMode == other.storageMode &&
           storagePool == other.storagePool &&
           system == other.system &&
-          volumeName == other.volumeName; } 
-@override int get hashCode { return Object.hash(fsType, gateway, protectionDomain, readOnly, secretRef, sslEnabled, storageMode, storagePool, system, volumeName); } 
-@override String toString() { return 'ScaleIoVolumeSource(fsType: $fsType, gateway: $gateway, protectionDomain: $protectionDomain, readOnly: $readOnly, secretRef: $secretRef, sslEnabled: $sslEnabled, storageMode: $storageMode, storagePool: $storagePool, system: $system, volumeName: $volumeName)'; } 
+          volumeName == other.volumeName;
+
+@override int get hashCode => Object.hash(fsType, gateway, protectionDomain, readOnly, secretRef, sslEnabled, storageMode, storagePool, system, volumeName);
+
+@override String toString() => 'ScaleIoVolumeSource(fsType: $fsType, gateway: $gateway, protectionDomain: $protectionDomain, readOnly: $readOnly, secretRef: $secretRef, sslEnabled: $sslEnabled, storageMode: $storageMode, storagePool: $storagePool, system: $system, volumeName: $volumeName)';
+
  }

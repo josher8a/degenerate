@@ -43,11 +43,14 @@ WorkersVersionItemShort copyWith({String? Function()? id, WorkersVersionItemFull
   metadata: metadata != null ? metadata() : this.metadata,
   number: number != null ? number() : this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemShort &&
           id == other.id &&
           metadata == other.metadata &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(id, metadata, number); } 
-@override String toString() { return 'WorkersVersionItemShort(id: $id, metadata: $metadata, number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => Object.hash(id, metadata, number);
+
+@override String toString() => 'WorkersVersionItemShort(id: $id, metadata: $metadata, number: $number)';
+
  }

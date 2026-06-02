@@ -26,10 +26,13 @@ FirewallIpConfiguration copyWith({FirewallIpConfigurationTarget? Function()? tar
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallIpConfiguration &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(target, value); } 
-@override String toString() { return 'FirewallIpConfiguration(target: $target, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(target, value);
+
+@override String toString() => 'FirewallIpConfiguration(target: $target, value: $value)';
+
  }

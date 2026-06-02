@@ -39,7 +39,8 @@ final MqHttpConsumerResponse mqHttpConsumerResponse;
 
 @override String get type => 'http_pull';
 
-@override Map<String, dynamic> toJson() { return {...mqHttpConsumerResponse.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mqHttpConsumerResponse.toJson(), 'type': type};
+
 MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseHttpPull(mqHttpConsumerResponse.copyWith(
   consumerId: consumerId,
   createdOn: createdOn,
@@ -47,10 +48,13 @@ MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateT
   queueName: queueName,
   settings: settings,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse; } 
-@override int get hashCode { return mqHttpConsumerResponse.hashCode; } 
-@override String toString() { return 'MqConsumerResponse.httpPull($mqHttpConsumerResponse)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerResponseHttpPull && mqHttpConsumerResponse == other.mqHttpConsumerResponse;
+
+@override int get hashCode => mqHttpConsumerResponse.hashCode;
+
+@override String toString() => 'MqConsumerResponse.httpPull($mqHttpConsumerResponse)';
+
 @override MqIdentifier? get consumerId => mqHttpConsumerResponse.consumerId;
 
 @override DateTime? get createdOn => mqHttpConsumerResponse.createdOn;
@@ -68,7 +72,8 @@ final MqWorkerConsumerResponse mqWorkerConsumerResponse;
 
 @override String get type => 'worker';
 
-@override Map<String, dynamic> toJson() { return {...mqWorkerConsumerResponse.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mqWorkerConsumerResponse.toJson(), 'type': type};
+
 MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseWorker(mqWorkerConsumerResponse.copyWith(
   consumerId: consumerId,
   createdOn: createdOn,
@@ -77,10 +82,13 @@ MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTim
   scriptName: scriptName,
   settings: settings,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse; } 
-@override int get hashCode { return mqWorkerConsumerResponse.hashCode; } 
-@override String toString() { return 'MqConsumerResponse.worker($mqWorkerConsumerResponse)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerResponseWorker && mqWorkerConsumerResponse == other.mqWorkerConsumerResponse;
+
+@override int get hashCode => mqWorkerConsumerResponse.hashCode;
+
+@override String toString() => 'MqConsumerResponse.worker($mqWorkerConsumerResponse)';
+
 @override MqIdentifier? get consumerId => mqWorkerConsumerResponse.consumerId;
 
 @override DateTime? get createdOn => mqWorkerConsumerResponse.createdOn;
@@ -98,11 +106,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerResponse$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'MqConsumerResponse.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerResponse$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'MqConsumerResponse.unknown($json)';
+
 @override MqIdentifier? get consumerId => json['consumer_id'] != null ? MqIdentifier.fromJson(json['consumer_id'] as String) : null;
 
 @override DateTime? get createdOn => json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null;

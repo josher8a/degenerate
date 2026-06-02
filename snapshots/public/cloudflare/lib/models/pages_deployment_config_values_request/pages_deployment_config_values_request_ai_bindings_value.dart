@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('proje
 PagesDeploymentConfigValuesRequestAiBindingsValue copyWith({String? projectId}) { return PagesDeploymentConfigValuesRequestAiBindingsValue(
   projectId: projectId ?? this.projectId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestAiBindingsValue &&
-          projectId == other.projectId; } 
-@override int get hashCode { return projectId.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestAiBindingsValue(projectId: $projectId)'; } 
+          projectId == other.projectId;
+
+@override int get hashCode => projectId.hashCode;
+
+@override String toString() => 'PagesDeploymentConfigValuesRequestAiBindingsValue(projectId: $projectId)';
+
  }

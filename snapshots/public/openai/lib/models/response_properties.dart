@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Truncation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Truncation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Truncation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Truncation($value)';
+
  }
 @immutable final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
 
@@ -119,7 +122,7 @@ ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsRes
   prompt: prompt != null ? prompt() : this.prompt,
   truncation: truncation != null ? truncation() : this.truncation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseProperties &&
           previousResponseId == other.previousResponseId &&
           model == other.model &&
@@ -131,7 +134,10 @@ ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsRes
           listEquals(tools, other.tools) &&
           toolChoice == other.toolChoice &&
           prompt == other.prompt &&
-          truncation == other.truncation; } 
-@override int get hashCode { return Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation); } 
-@override String toString() { return 'ResponseProperties(previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation)'; } 
+          truncation == other.truncation;
+
+@override int get hashCode => Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation);
+
+@override String toString() => 'ResponseProperties(previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation)';
+
  }

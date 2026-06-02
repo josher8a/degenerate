@@ -40,11 +40,14 @@ RulesetsSetCacheSettingsStatusCodeTtl2 copyWith({int? Function()? statusCode, St
   statusCodeRange: statusCodeRange != null ? statusCodeRange() : this.statusCodeRange,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsStatusCodeTtl2 &&
           statusCode == other.statusCode &&
           statusCodeRange == other.statusCodeRange &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(statusCode, statusCodeRange, value); } 
-@override String toString() { return 'RulesetsSetCacheSettingsStatusCodeTtl2(statusCode: $statusCode, statusCodeRange: $statusCodeRange, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(statusCode, statusCodeRange, value);
+
+@override String toString() => 'RulesetsSetCacheSettingsStatusCodeTtl2(statusCode: $statusCode, statusCodeRange: $statusCodeRange, value: $value)';
+
  }

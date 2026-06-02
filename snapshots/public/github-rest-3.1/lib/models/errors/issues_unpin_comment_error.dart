@@ -21,31 +21,36 @@ final class IssuesUnpinCommentError$401 extends IssuesUnpinCommentError {const I
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class IssuesUnpinCommentError$403 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesUnpinCommentError$404 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesUnpinCommentError$410 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesUnpinCommentError$503 extends IssuesUnpinCommentError {const IssuesUnpinCommentError$503(this.error);
 
 final IssuesUnpinCommentResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class IssuesUnpinCommentError$Unknown extends IssuesUnpinCommentError {const IssuesUnpinCommentError$Unknown(this.statusCode, this.rawBody, );
 

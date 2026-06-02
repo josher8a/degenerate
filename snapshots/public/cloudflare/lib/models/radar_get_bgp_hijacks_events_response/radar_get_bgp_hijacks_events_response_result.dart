@@ -27,11 +27,14 @@ RadarGetBgpHijacksEventsResponseResult copyWith({List<RadarGetBgpHijacksEventsRe
   events: events ?? this.events,
   totalMonitors: totalMonitors ?? this.totalMonitors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponseResult &&
           listEquals(asnInfo, other.asnInfo) &&
           listEquals(events, other.events) &&
-          totalMonitors == other.totalMonitors; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asnInfo), Object.hashAll(events), totalMonitors); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponseResult(asnInfo: $asnInfo, events: $events, totalMonitors: $totalMonitors)'; } 
+          totalMonitors == other.totalMonitors;
+
+@override int get hashCode => Object.hash(Object.hashAll(asnInfo), Object.hashAll(events), totalMonitors);
+
+@override String toString() => 'RadarGetBgpHijacksEventsResponseResult(asnInfo: $asnInfo, events: $events, totalMonitors: $totalMonitors)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCardInstallments? Function()? installments}) { return PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard(
   installments: installments != null ? installments() : this.installments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard &&
-          installments == other.installments; } 
-@override int get hashCode { return installments.hashCode; } 
-@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard(installments: $installments)'; } 
+          installments == other.installments;
+
+@override int get hashCode => installments.hashCode;
+
+@override String toString() => 'PostTestHelpersConfirmationTokensRequestPaymentMethodOptionsCard(installments: $installments)';
+
  }

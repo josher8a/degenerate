@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewayIpv4Endpoint copyWith({bool? Function()? enabled}) { return ZeroTrustGatewayIpv4Endpoint(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayIpv4Endpoint &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayIpv4Endpoint(enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => enabled.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayIpv4Endpoint(enabled: $enabled)';
+
  }

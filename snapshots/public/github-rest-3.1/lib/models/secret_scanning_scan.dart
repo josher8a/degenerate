@@ -35,12 +35,15 @@ SecretScanningScan copyWith({String? Function()? type, String? Function()? statu
   completedAt: completedAt != null ? completedAt() : this.completedAt,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningScan &&
           type == other.type &&
           status == other.status &&
           completedAt == other.completedAt &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(type, status, completedAt, startedAt); } 
-@override String toString() { return 'SecretScanningScan(type: $type, status: $status, completedAt: $completedAt, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(type, status, completedAt, startedAt);
+
+@override String toString() => 'SecretScanningScan(type: $type, status: $status, completedAt: $completedAt, startedAt: $startedAt)';
+
  }

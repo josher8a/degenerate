@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError$400 exten
 
 final WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError$Unknown extends WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError {const WorkersAiPostRunCfBytedanceStableDiffusionXlLightningError$Unknown(this.statusCode, this.rawBody, );
 

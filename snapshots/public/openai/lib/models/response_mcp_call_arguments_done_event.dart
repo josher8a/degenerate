@@ -47,13 +47,16 @@ ResponseMcpCallArgumentsDoneEvent copyWith({String? type, int? outputIndex, Stri
   arguments: arguments ?? this.arguments,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseMcpCallArgumentsDoneEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           arguments == other.arguments &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, arguments, sequenceNumber); } 
-@override String toString() { return 'ResponseMcpCallArgumentsDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, arguments: $arguments, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, arguments, sequenceNumber);
+
+@override String toString() => 'ResponseMcpCallArgumentsDoneEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, arguments: $arguments, sequenceNumber: $sequenceNumber)';
+
  }

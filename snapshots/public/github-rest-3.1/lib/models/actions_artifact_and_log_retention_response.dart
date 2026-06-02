@@ -23,10 +23,13 @@ ActionsArtifactAndLogRetentionResponse copyWith({int? days, int? maximumAllowedD
   days: days ?? this.days,
   maximumAllowedDays: maximumAllowedDays ?? this.maximumAllowedDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsArtifactAndLogRetentionResponse &&
           days == other.days &&
-          maximumAllowedDays == other.maximumAllowedDays; } 
-@override int get hashCode { return Object.hash(days, maximumAllowedDays); } 
-@override String toString() { return 'ActionsArtifactAndLogRetentionResponse(days: $days, maximumAllowedDays: $maximumAllowedDays)'; } 
+          maximumAllowedDays == other.maximumAllowedDays;
+
+@override int get hashCode => Object.hash(days, maximumAllowedDays);
+
+@override String toString() => 'ActionsArtifactAndLogRetentionResponse(days: $days, maximumAllowedDays: $maximumAllowedDays)';
+
  }

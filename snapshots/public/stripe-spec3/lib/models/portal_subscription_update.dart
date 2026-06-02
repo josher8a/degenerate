@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionUpdateBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionUpdateBillingCycleAnchor($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PortalSubscriptionUpdateBillingCycleAnchor && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PortalSubscriptionUpdateBillingCycleAnchor($value)';
+
  }
 @immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates._(this.value);
 
@@ -47,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionUpdateDefaultAllowedUpdates && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PortalSubscriptionUpdateDefaultAllowedUpdates && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)';
+
  }
 /// 
 @immutable final class PortalSubscriptionUpdate {const PortalSubscriptionUpdate({required this.defaultAllowedUpdates, required this.enabled, required this.prorationBehavior, required this.scheduleAtPeriodEnd, required this.trialUpdateBehavior, this.billingCycleAnchor, this.products, });
@@ -108,7 +114,7 @@ PortalSubscriptionUpdate copyWith({PortalSubscriptionUpdateBillingCycleAnchor? F
   scheduleAtPeriodEnd: scheduleAtPeriodEnd ?? this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior ?? this.trialUpdateBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
           listEquals(defaultAllowedUpdates, other.defaultAllowedUpdates) &&
@@ -116,7 +122,10 @@ PortalSubscriptionUpdate copyWith({PortalSubscriptionUpdateBillingCycleAnchor? F
           listEquals(products, other.products) &&
           prorationBehavior == other.prorationBehavior &&
           scheduleAtPeriodEnd == other.scheduleAtPeriodEnd &&
-          trialUpdateBehavior == other.trialUpdateBehavior; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, Object.hashAll(defaultAllowedUpdates), enabled, Object.hashAll(products ?? const []), prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior); } 
-@override String toString() { return 'PortalSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)'; } 
+          trialUpdateBehavior == other.trialUpdateBehavior;
+
+@override int get hashCode => Object.hash(billingCycleAnchor, Object.hashAll(defaultAllowedUpdates), enabled, Object.hashAll(products ?? const []), prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior);
+
+@override String toString() => 'PortalSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)';
+
  }

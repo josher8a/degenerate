@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 BranchProtectionAllowForcePushes copyWith({bool? Function()? enabled}) { return BranchProtectionAllowForcePushes(
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchProtectionAllowForcePushes &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'BranchProtectionAllowForcePushes(enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => enabled.hashCode;
+
+@override String toString() => 'BranchProtectionAllowForcePushes(enabled: $enabled)';
+
  }

@@ -46,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupLanguages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupLanguages($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupLanguages && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningDefaultSetupLanguages($value)';
+
  }
 /// Runner type to be used.
 @immutable final class CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType._(this.value);
@@ -74,10 +77,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupRunnerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupRunnerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningDefaultSetupRunnerType($value)';
+
  }
 /// The frequency of the periodic analysis.
 @immutable final class Schedule {const Schedule._(this.value);
@@ -99,10 +105,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Schedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Schedule($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Schedule && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Schedule($value)';
+
  }
 /// Configuration for code scanning default setup.
 @immutable final class CodeScanningDefaultSetup {const CodeScanningDefaultSetup({this.state, this.languages, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.updatedAt, this.schedule, });
@@ -163,7 +172,7 @@ CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState? Function()? st
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   schedule: schedule != null ? schedule() : this.schedule,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetup &&
           state == other.state &&
           listEquals(languages, other.languages) &&
@@ -172,7 +181,10 @@ CodeScanningDefaultSetup copyWith({CodeScanningDefaultSetupState? Function()? st
           querySuite == other.querySuite &&
           threatModel == other.threatModel &&
           updatedAt == other.updatedAt &&
-          schedule == other.schedule; } 
-@override int get hashCode { return Object.hash(state, Object.hashAll(languages ?? const []), runnerType, runnerLabel, querySuite, threatModel, updatedAt, schedule); } 
-@override String toString() { return 'CodeScanningDefaultSetup(state: $state, languages: $languages, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, updatedAt: $updatedAt, schedule: $schedule)'; } 
+          schedule == other.schedule;
+
+@override int get hashCode => Object.hash(state, Object.hashAll(languages ?? const []), runnerType, runnerLabel, querySuite, threatModel, updatedAt, schedule);
+
+@override String toString() => 'CodeScanningDefaultSetup(state: $state, languages: $languages, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, updatedAt: $updatedAt, schedule: $schedule)';
+
  }

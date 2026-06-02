@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxAssociationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxAssociationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxAssociationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxAssociationObject($value)';
+
  }
 /// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input
 @immutable final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
@@ -72,13 +75,16 @@ TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? 
   paymentIntent: paymentIntent ?? this.paymentIntent,
   taxTransactionAttempts: taxTransactionAttempts != null ? taxTransactionAttempts() : this.taxTransactionAttempts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxAssociation &&
           calculation == other.calculation &&
           id == other.id &&
           object == other.object &&
           paymentIntent == other.paymentIntent &&
-          listEquals(taxTransactionAttempts, other.taxTransactionAttempts); } 
-@override int get hashCode { return Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts ?? const [])); } 
-@override String toString() { return 'TaxAssociation(calculation: $calculation, id: $id, object: $object, paymentIntent: $paymentIntent, taxTransactionAttempts: $taxTransactionAttempts)'; } 
+          listEquals(taxTransactionAttempts, other.taxTransactionAttempts);
+
+@override int get hashCode => Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts ?? const []));
+
+@override String toString() => 'TaxAssociation(calculation: $calculation, id: $id, object: $object, paymentIntent: $paymentIntent, taxTransactionAttempts: $taxTransactionAttempts)';
+
  }

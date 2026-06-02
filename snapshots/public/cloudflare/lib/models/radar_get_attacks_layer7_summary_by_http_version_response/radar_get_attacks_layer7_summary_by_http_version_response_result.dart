@@ -32,10 +32,13 @@ RadarGetAttacksLayer7SummaryByHttpVersionResponseResult copyWith({RadarGetAiBots
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7SummaryByHttpVersionResponseResult &&
           meta == other.meta &&
-          summary0 == other.summary0; } 
-@override int get hashCode { return Object.hash(meta, summary0); } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(meta: $meta, summary0: $summary0)'; } 
+          summary0 == other.summary0;
+
+@override int get hashCode => Object.hash(meta, summary0);
+
+@override String toString() => 'RadarGetAttacksLayer7SummaryByHttpVersionResponseResult(meta: $meta, summary0: $summary0)';
+
  }

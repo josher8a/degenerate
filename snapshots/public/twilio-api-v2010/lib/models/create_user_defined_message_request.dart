@@ -22,10 +22,13 @@ CreateUserDefinedMessageRequest copyWith({String? content, String? Function()? i
   content: content ?? this.content,
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateUserDefinedMessageRequest &&
           content == other.content &&
-          idempotencyKey == other.idempotencyKey; } 
-@override int get hashCode { return Object.hash(content, idempotencyKey); } 
-@override String toString() { return 'CreateUserDefinedMessageRequest(content: $content, idempotencyKey: $idempotencyKey)'; } 
+          idempotencyKey == other.idempotencyKey;
+
+@override int get hashCode => Object.hash(content, idempotencyKey);
+
+@override String toString() => 'CreateUserDefinedMessageRequest(content: $content, idempotencyKey: $idempotencyKey)';
+
  }

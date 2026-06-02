@@ -50,13 +50,16 @@ DeletedTerminalReader copyWith({bool? deleted, DeviceType? deviceType, String? i
   object: object ?? this.object,
   serialNumber: serialNumber ?? this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedTerminalReader &&
           deleted == other.deleted &&
           deviceType == other.deviceType &&
           id == other.id &&
           object == other.object &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(deleted, deviceType, id, object, serialNumber); } 
-@override String toString() { return 'DeletedTerminalReader(deleted: $deleted, deviceType: $deviceType, id: $id, object: $object, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(deleted, deviceType, id, object, serialNumber);
+
+@override String toString() => 'DeletedTerminalReader(deleted: $deleted, deviceType: $deviceType, id: $id, object: $object, serialNumber: $serialNumber)';
+
  }

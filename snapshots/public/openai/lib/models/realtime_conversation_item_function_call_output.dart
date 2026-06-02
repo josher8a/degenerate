@@ -49,14 +49,17 @@ RealtimeConversationItemFunctionCallOutput copyWith({String? Function()? id, Rea
   callId: callId ?? this.callId,
   output: output ?? this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemFunctionCallOutput &&
           id == other.id &&
           object == other.object &&
           type == other.type &&
           status == other.status &&
           callId == other.callId &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(id, object, type, status, callId, output); } 
-@override String toString() { return 'RealtimeConversationItemFunctionCallOutput(id: $id, object: $object, type: $type, status: $status, callId: $callId, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(id, object, type, status, callId, output);
+
+@override String toString() => 'RealtimeConversationItemFunctionCallOutput(id: $id, object: $object, type: $type, status: $status, callId: $callId, output: $output)';
+
  }

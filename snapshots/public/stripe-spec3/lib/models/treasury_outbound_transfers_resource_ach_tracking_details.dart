@@ -21,9 +21,12 @@ return errors; }
 TreasuryOutboundTransfersResourceAchTrackingDetails copyWith({String? traceId}) { return TreasuryOutboundTransfersResourceAchTrackingDetails(
   traceId: traceId ?? this.traceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfersResourceAchTrackingDetails &&
-          traceId == other.traceId; } 
-@override int get hashCode { return traceId.hashCode; } 
-@override String toString() { return 'TreasuryOutboundTransfersResourceAchTrackingDetails(traceId: $traceId)'; } 
+          traceId == other.traceId;
+
+@override int get hashCode => traceId.hashCode;
+
+@override String toString() => 'TreasuryOutboundTransfersResourceAchTrackingDetails(traceId: $traceId)';
+
  }

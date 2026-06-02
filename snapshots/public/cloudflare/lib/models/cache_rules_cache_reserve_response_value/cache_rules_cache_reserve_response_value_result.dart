@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 CacheRulesCacheReserveResponseValueResult copyWith({CacheRulesCacheReserveValue? value}) { return CacheRulesCacheReserveResponseValueResult(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesCacheReserveResponseValueResult &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesCacheReserveResponseValueResult(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheRulesCacheReserveResponseValueResult(value: $value)';
+
  }

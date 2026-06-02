@@ -17,7 +17,8 @@ final class ActivityListStargazersForRepoError$422 extends ActivityListStargazer
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActivityListStargazersForRepoError$Unknown extends ActivityListStargazersForRepoError {const ActivityListStargazersForRepoError$Unknown(this.statusCode, this.rawBody, );
 

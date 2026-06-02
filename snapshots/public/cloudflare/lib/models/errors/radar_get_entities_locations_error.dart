@@ -17,7 +17,8 @@ final class RadarGetEntitiesLocationsError$400 extends RadarGetEntitiesLocations
 
 final RadarGetEntitiesLocationsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetEntitiesLocationsError$Unknown extends RadarGetEntitiesLocationsError {const RadarGetEntitiesLocationsError$Unknown(this.statusCode, this.rawBody, );
 

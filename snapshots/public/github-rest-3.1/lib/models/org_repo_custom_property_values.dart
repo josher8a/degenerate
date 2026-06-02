@@ -35,12 +35,15 @@ OrgRepoCustomPropertyValues copyWith({int? repositoryId, String? repositoryName,
   repositoryFullName: repositoryFullName ?? this.repositoryFullName,
   properties: properties ?? this.properties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgRepoCustomPropertyValues &&
           repositoryId == other.repositoryId &&
           repositoryName == other.repositoryName &&
           repositoryFullName == other.repositoryFullName &&
-          listEquals(properties, other.properties); } 
-@override int get hashCode { return Object.hash(repositoryId, repositoryName, repositoryFullName, Object.hashAll(properties)); } 
-@override String toString() { return 'OrgRepoCustomPropertyValues(repositoryId: $repositoryId, repositoryName: $repositoryName, repositoryFullName: $repositoryFullName, properties: $properties)'; } 
+          listEquals(properties, other.properties);
+
+@override int get hashCode => Object.hash(repositoryId, repositoryName, repositoryFullName, Object.hashAll(properties));
+
+@override String toString() => 'OrgRepoCustomPropertyValues(repositoryId: $repositoryId, repositoryName: $repositoryName, repositoryFullName: $repositoryFullName, properties: $properties)';
+
  }

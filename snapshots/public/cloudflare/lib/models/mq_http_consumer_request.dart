@@ -25,11 +25,14 @@ MqHttpConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqHttp
   settings: settings != null ? settings() : this.settings,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqHttpConsumerRequest &&
           deadLetterQueue == other.deadLetterQueue &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(deadLetterQueue, settings, type); } 
-@override String toString() { return 'MqHttpConsumerRequest(deadLetterQueue: $deadLetterQueue, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(deadLetterQueue, settings, type);
+
+@override String toString() => 'MqHttpConsumerRequest(deadLetterQueue: $deadLetterQueue, settings: $settings, type: $type)';
+
  }

@@ -36,12 +36,15 @@ ComponentCondition copyWith({String? Function()? error, String? Function()? mess
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentCondition &&
           error == other.error &&
           message == other.message &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(error, message, status, type); } 
-@override String toString() { return 'ComponentCondition(error: $error, message: $message, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(error, message, status, type);
+
+@override String toString() => 'ComponentCondition(error: $error, message: $message, status: $status, type: $type)';
+
  }

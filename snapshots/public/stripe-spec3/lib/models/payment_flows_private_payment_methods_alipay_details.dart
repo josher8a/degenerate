@@ -44,11 +44,14 @@ PaymentFlowsPrivatePaymentMethodsAlipayDetails copyWith({String? Function()? buy
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsAlipayDetails &&
           buyerId == other.buyerId &&
           fingerprint == other.fingerprint &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(buyerId, fingerprint, transactionId); } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsAlipayDetails(buyerId: $buyerId, fingerprint: $fingerprint, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(buyerId, fingerprint, transactionId);
+
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsAlipayDetails(buyerId: $buyerId, fingerprint: $fingerprint, transactionId: $transactionId)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 LocalEnvironmentResource copyWith({LocalEnvironmentParamType? type}) { return LocalEnvironmentResource(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalEnvironmentResource &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'LocalEnvironmentResource(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'LocalEnvironmentResource(type: $type)';
+
  }

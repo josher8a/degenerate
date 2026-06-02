@@ -22,10 +22,13 @@ RefName copyWith({List<String>? Function()? include, List<String>? Function()? e
   include: include != null ? include() : this.include,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefName &&
           listEquals(include, other.include) &&
-          listEquals(exclude, other.exclude); } 
-@override int get hashCode { return Object.hash(Object.hashAll(include ?? const []), Object.hashAll(exclude ?? const [])); } 
-@override String toString() { return 'RefName(include: $include, exclude: $exclude)'; } 
+          listEquals(exclude, other.exclude);
+
+@override int get hashCode => Object.hash(Object.hashAll(include ?? const []), Object.hashAll(exclude ?? const []));
+
+@override String toString() => 'RefName(include: $include, exclude: $exclude)';
+
  }

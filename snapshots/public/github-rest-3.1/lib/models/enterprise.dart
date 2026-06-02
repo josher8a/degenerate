@@ -73,7 +73,7 @@ Enterprise copyWith({String? Function()? description, Uri? htmlUrl, Uri? Functio
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Enterprise &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -84,7 +84,10 @@ Enterprise copyWith({String? Function()? description, Uri? htmlUrl, Uri? Functio
           slug == other.slug &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          avatarUrl == other.avatarUrl; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl); } 
-@override String toString() { return 'Enterprise(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)'; } 
+          avatarUrl == other.avatarUrl;
+
+@override int get hashCode => Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl);
+
+@override String toString() => 'Enterprise(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)';
+
  }

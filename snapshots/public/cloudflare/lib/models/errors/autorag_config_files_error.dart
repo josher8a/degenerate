@@ -18,13 +18,15 @@ final class AutoragConfigFilesError$404 extends AutoragConfigFilesError {const A
 
 final AutoragConfigFilesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AutoragConfigFilesError$503 extends AutoragConfigFilesError {const AutoragConfigFilesError$503(this.error);
 
 final AutoragConfigFilesResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class AutoragConfigFilesError$Unknown extends AutoragConfigFilesError {const AutoragConfigFilesError$Unknown(this.statusCode, this.rawBody, );
 

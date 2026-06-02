@@ -22,10 +22,13 @@ PostTaxTransactionsCreateReversalRequestShippingCost copyWith({int? amount, int?
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequestShippingCost &&
           amount == other.amount &&
-          amountTax == other.amountTax; } 
-@override int get hashCode { return Object.hash(amount, amountTax); } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequestShippingCost(amount: $amount, amountTax: $amountTax)'; } 
+          amountTax == other.amountTax;
+
+@override int get hashCode => Object.hash(amount, amountTax);
+
+@override String toString() => 'PostTaxTransactionsCreateReversalRequestShippingCost(amount: $amount, amountTax: $amountTax)';
+
  }

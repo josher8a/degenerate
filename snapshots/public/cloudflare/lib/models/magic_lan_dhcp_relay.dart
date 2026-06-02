@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicLanDhcpRelay copyWith({List<MagicIpAddress>? Function()? serverAddresses}) { return MagicLanDhcpRelay(
   serverAddresses: serverAddresses != null ? serverAddresses() : this.serverAddresses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLanDhcpRelay &&
-          listEquals(serverAddresses, other.serverAddresses); } 
-@override int get hashCode { return Object.hashAll(serverAddresses ?? const []); } 
-@override String toString() { return 'MagicLanDhcpRelay(serverAddresses: $serverAddresses)'; } 
+          listEquals(serverAddresses, other.serverAddresses);
+
+@override int get hashCode => Object.hashAll(serverAddresses ?? const []);
+
+@override String toString() => 'MagicLanDhcpRelay(serverAddresses: $serverAddresses)';
+
  }

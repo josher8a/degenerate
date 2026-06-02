@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SmartshieldCacheReserveClearResponseValue copyWith({CacheRulesCacheReserveClearResponseValueResult? Function()? result}) { return SmartshieldCacheReserveClearResponseValue(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldCacheReserveClearResponseValue &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'SmartshieldCacheReserveClearResponseValue(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'SmartshieldCacheReserveClearResponseValue(result: $result)';
+
  }

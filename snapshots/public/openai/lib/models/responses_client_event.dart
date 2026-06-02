@@ -28,7 +28,8 @@ final CreateResponse createResponse;
 
 @override String get type => 'response.create';
 
-@override Map<String, dynamic> toJson() { return {...createResponse.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...createResponse.toJson(), 'type': type};
+
 ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return ResponsesClientEventResponseCreate(createResponse.copyWith(
   input: input,
   include: include,
@@ -40,10 +41,13 @@ ResponsesClientEventResponseCreate copyWith({InputParam? Function()? input, List
   conversation: conversation,
   contextManagement: contextManagement,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesClientEventResponseCreate && createResponse == other.createResponse; } 
-@override int get hashCode { return createResponse.hashCode; } 
-@override String toString() { return 'ResponsesClientEvent.responseCreate($createResponse)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponsesClientEventResponseCreate && createResponse == other.createResponse;
+
+@override int get hashCode => createResponse.hashCode;
+
+@override String toString() => 'ResponsesClientEvent.responseCreate($createResponse)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -53,9 +57,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesClientEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResponsesClientEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponsesClientEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ResponsesClientEvent.unknown($json)';
+
  }

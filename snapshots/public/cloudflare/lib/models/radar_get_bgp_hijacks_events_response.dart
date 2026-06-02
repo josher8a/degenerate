@@ -28,11 +28,14 @@ RadarGetBgpHijacksEventsResponse copyWith({RadarGetBgpHijacksEventsResponseResul
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponse &&
           result == other.result &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, resultInfo, success); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponse(result: $result, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, resultInfo, success);
+
+@override String toString() => 'RadarGetBgpHijacksEventsResponse(result: $result, resultInfo: $resultInfo, success: $success)';
+
  }

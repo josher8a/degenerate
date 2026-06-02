@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserContentVariant2Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserContentVariant2Type($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserContentVariant2Type && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserContentVariant2Type($value)';
+
  }
 @immutable final class UserContentVariant2 {const UserContentVariant2({required this.type, this.file, this.imageUrl, this.inputAudio, this.text, });
 
@@ -65,13 +68,16 @@ UserContentVariant2 copyWith({File? Function()? file, UserContentVariant2ImageUr
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserContentVariant2 &&
           file == other.file &&
           imageUrl == other.imageUrl &&
           inputAudio == other.inputAudio &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(file, imageUrl, inputAudio, text, type); } 
-@override String toString() { return 'UserContentVariant2(file: $file, imageUrl: $imageUrl, inputAudio: $inputAudio, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(file, imageUrl, inputAudio, text, type);
+
+@override String toString() => 'UserContentVariant2(file: $file, imageUrl: $imageUrl, inputAudio: $inputAudio, text: $text, type: $type)';
+
  }

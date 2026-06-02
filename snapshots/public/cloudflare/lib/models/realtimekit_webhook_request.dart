@@ -42,12 +42,15 @@ RealtimekitWebhookRequest copyWith({bool Function()? enabled, List<RealtimekitPa
   name: name ?? this.name,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitWebhookRequest &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(events), name, url); } 
-@override String toString() { return 'RealtimekitWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(events), name, url);
+
+@override String toString() => 'RealtimekitWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)';
+
  }

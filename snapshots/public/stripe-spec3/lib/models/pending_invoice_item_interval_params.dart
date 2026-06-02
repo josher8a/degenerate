@@ -20,10 +20,13 @@ PendingInvoiceItemIntervalParams copyWith({GetPricesRecurringInterval? interval,
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PendingInvoiceItemIntervalParams &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'PendingInvoiceItemIntervalParams(interval: $interval, intervalCount: $intervalCount)'; } 
+          intervalCount == other.intervalCount;
+
+@override int get hashCode => Object.hash(interval, intervalCount);
+
+@override String toString() => 'PendingInvoiceItemIntervalParams(interval: $interval, intervalCount: $intervalCount)';
+
  }

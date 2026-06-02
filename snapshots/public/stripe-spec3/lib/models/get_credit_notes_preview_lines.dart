@@ -66,7 +66,7 @@ GetCreditNotesPreviewLines copyWith({int? Function()? amount, String? Function()
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCreditNotesPreviewLines &&
           amount == other.amount &&
           description == other.description &&
@@ -76,7 +76,10 @@ GetCreditNotesPreviewLines copyWith({int? Function()? amount, String? Function()
           taxRates == other.taxRates &&
           type == other.type &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'GetCreditNotesPreviewLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'GetCreditNotesPreviewLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

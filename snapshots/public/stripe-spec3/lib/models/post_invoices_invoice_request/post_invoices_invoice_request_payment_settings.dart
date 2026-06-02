@@ -26,11 +26,14 @@ PostInvoicesInvoiceRequestPaymentSettings copyWith({DefaultMandate? Function()? 
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceRequestPaymentSettings &&
           defaultMandate == other.defaultMandate &&
           paymentMethodOptions == other.paymentMethodOptions &&
-          paymentMethodTypes == other.paymentMethodTypes; } 
-@override int get hashCode { return Object.hash(defaultMandate, paymentMethodOptions, paymentMethodTypes); } 
-@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)'; } 
+          paymentMethodTypes == other.paymentMethodTypes;
+
+@override int get hashCode => Object.hash(defaultMandate, paymentMethodOptions, paymentMethodTypes);
+
+@override String toString() => 'PostInvoicesInvoiceRequestPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)';
+
  }

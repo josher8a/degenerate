@@ -478,10 +478,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McnErrorCode($value)';
+
  }
 @immutable final class McnError {const McnError({required this.code, required this.message, this.documentationUrl, this.meta, this.source, });
 
@@ -519,13 +522,16 @@ McnError copyWith({McnErrorCode? code, String? Function()? documentationUrl, Str
   meta: meta != null ? meta() : this.meta,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnError &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           message == other.message &&
           meta == other.meta &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, message, meta, source); } 
-@override String toString() { return 'McnError(code: $code, documentationUrl: $documentationUrl, message: $message, meta: $meta, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, documentationUrl, message, meta, source);
+
+@override String toString() => 'McnError(code: $code, documentationUrl: $documentationUrl, message: $message, meta: $meta, source: $source)';
+
  }

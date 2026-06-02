@@ -92,7 +92,7 @@ PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Funct
   sophisticationLevel: sophisticationLevel != null ? sophisticationLevel() : this.sophisticationLevel,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTagCreateRequest &&
           activeDuration == other.activeDuration &&
           actorCategory == other.actorCategory &&
@@ -109,7 +109,10 @@ PostTagCreateRequest copyWith({String? Function()? activeDuration, String? Funct
           originCountryIso == other.originCountryIso &&
           priority == other.priority &&
           sophisticationLevel == other.sophisticationLevel &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value); } 
-@override String toString() { return 'PostTagCreateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(activeDuration, actorCategory, Object.hashAll(aliasGroupNames ?? const []), Object.hashAll(aliasGroupNamesInternal ?? const []), analyticPriority, attributionConfidence, attributionOrganization, categoryUuid, Object.hashAll(externalReferenceLinks ?? const []), internalDescription, motive, opsecLevel, originCountryIso, priority, sophisticationLevel, value);
+
+@override String toString() => 'PostTagCreateRequest(activeDuration: $activeDuration, actorCategory: $actorCategory, aliasGroupNames: $aliasGroupNames, aliasGroupNamesInternal: $aliasGroupNamesInternal, analyticPriority: $analyticPriority, attributionConfidence: $attributionConfidence, attributionOrganization: $attributionOrganization, categoryUuid: $categoryUuid, externalReferenceLinks: $externalReferenceLinks, internalDescription: $internalDescription, motive: $motive, opsecLevel: $opsecLevel, originCountryIso: $originCountryIso, priority: $priority, sophisticationLevel: $sophisticationLevel, value: $value)';
+
  }

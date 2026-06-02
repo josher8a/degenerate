@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudConnectorProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudConnectorProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudConnectorProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudConnectorProvider($value)';
+
  }
 @immutable final class CloudConnectorRule {const CloudConnectorRule({this.description, this.enabled, this.expression, this.id, this.parameters, this.provider, });
 
@@ -77,14 +80,17 @@ CloudConnectorRule copyWith({String? Function()? description, bool? Function()? 
   parameters: parameters != null ? parameters() : this.parameters,
   provider: provider != null ? provider() : this.provider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudConnectorRule &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
           id == other.id &&
           parameters == other.parameters &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(description, enabled, expression, id, parameters, provider); } 
-@override String toString() { return 'CloudConnectorRule(description: $description, enabled: $enabled, expression: $expression, id: $id, parameters: $parameters, provider: $provider)'; } 
+          provider == other.provider;
+
+@override int get hashCode => Object.hash(description, enabled, expression, id, parameters, provider);
+
+@override String toString() => 'CloudConnectorRule(description: $description, enabled: $enabled, expression: $expression, id: $id, parameters: $parameters, provider: $provider)';
+
  }

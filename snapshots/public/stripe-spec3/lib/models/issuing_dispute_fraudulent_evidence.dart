@@ -30,10 +30,13 @@ IssuingDisputeFraudulentEvidence copyWith({IssuingDisputeCanceledEvidenceAdditio
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeFraudulentEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
-          explanation == other.explanation; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation); } 
-@override String toString() { return 'IssuingDisputeFraudulentEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation)'; } 
+          explanation == other.explanation;
+
+@override int get hashCode => Object.hash(additionalDocumentation, explanation);
+
+@override String toString() => 'IssuingDisputeFraudulentEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation)';
+
  }

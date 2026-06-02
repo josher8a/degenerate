@@ -38,12 +38,15 @@ ProjectGroupListResource copyWith({ChatCompletionListObject? object, List<Projec
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectGroupListResource &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          next == other.next; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, next); } 
-@override String toString() { return 'ProjectGroupListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)'; } 
+          next == other.next;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, next);
+
+@override String toString() => 'ProjectGroupListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
+
  }

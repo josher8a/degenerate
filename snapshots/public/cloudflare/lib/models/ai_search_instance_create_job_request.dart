@@ -22,9 +22,12 @@ return errors; }
 AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) { return AiSearchInstanceCreateJobRequest(
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceCreateJobRequest &&
-          description == other.description; } 
-@override int get hashCode { return description.hashCode; } 
-@override String toString() { return 'AiSearchInstanceCreateJobRequest(description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => description.hashCode;
+
+@override String toString() => 'AiSearchInstanceCreateJobRequest(description: $description)';
+
  }

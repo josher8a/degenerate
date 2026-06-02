@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqR2ProducerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqR2ProducerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqR2ProducerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqR2ProducerType($value)';
+
  }
 @immutable final class MqR2Producer {const MqR2Producer({this.bucketName, this.type, });
 
@@ -41,10 +44,13 @@ MqR2Producer copyWith({String? Function()? bucketName, MqR2ProducerType? Functio
   bucketName: bucketName != null ? bucketName() : this.bucketName,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqR2Producer &&
           bucketName == other.bucketName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(bucketName, type); } 
-@override String toString() { return 'MqR2Producer(bucketName: $bucketName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(bucketName, type);
+
+@override String toString() => 'MqR2Producer(bucketName: $bucketName, type: $type)';
+
  }

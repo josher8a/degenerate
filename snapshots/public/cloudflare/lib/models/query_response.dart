@@ -27,11 +27,14 @@ QueryResponse copyWith({Since? Function()? since, int? Function()? timeDelta, Un
   timeDelta: timeDelta != null ? timeDelta() : this.timeDelta,
   until: until != null ? until() : this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueryResponse &&
           since == other.since &&
           timeDelta == other.timeDelta &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(since, timeDelta, until); } 
-@override String toString() { return 'QueryResponse(since: $since, timeDelta: $timeDelta, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(since, timeDelta, until);
+
+@override String toString() => 'QueryResponse(since: $since, timeDelta: $timeDelta, until: $until)';
+
  }

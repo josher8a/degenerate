@@ -17,7 +17,8 @@ final class AccessPolicyTestsError$400 extends AccessPolicyTestsError {const Acc
 
 final ResponseCommonFailure4 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AccessPolicyTestsError$Unknown extends AccessPolicyTestsError {const AccessPolicyTestsError$Unknown(this.statusCode, this.rawBody, );
 

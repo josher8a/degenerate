@@ -22,10 +22,13 @@ PostBalanceSettingsRequest copyWith({List<String>? Function()? expand, PostBalan
   expand: expand != null ? expand() : this.expand,
   payments: payments != null ? payments() : this.payments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBalanceSettingsRequest &&
           listEquals(expand, other.expand) &&
-          payments == other.payments; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), payments); } 
-@override String toString() { return 'PostBalanceSettingsRequest(expand: $expand, payments: $payments)'; } 
+          payments == other.payments;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), payments);
+
+@override String toString() => 'PostBalanceSettingsRequest(expand: $expand, payments: $payments)';
+
  }

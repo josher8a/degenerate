@@ -47,7 +47,7 @@ WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResol
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertResolved &&
           action == other.action &&
           alert == other.alert &&
@@ -55,7 +55,10 @@ WebhookSecretScanningAlertResolved copyWith({WebhookPullRequestReviewThreadResol
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertResolved(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSecretScanningAlertResolved(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

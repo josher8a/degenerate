@@ -34,12 +34,15 @@ ActionsRepositoryPermissions copyWith({ActionsEnabled? enabled, AllowedActions? 
   selectedActionsUrl: selectedActionsUrl != null ? selectedActionsUrl() : this.selectedActionsUrl,
   shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsRepositoryPermissions &&
           enabled == other.enabled &&
           allowedActions == other.allowedActions &&
           selectedActionsUrl == other.selectedActionsUrl &&
-          shaPinningRequired == other.shaPinningRequired; } 
-@override int get hashCode { return Object.hash(enabled, allowedActions, selectedActionsUrl, shaPinningRequired); } 
-@override String toString() { return 'ActionsRepositoryPermissions(enabled: $enabled, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)'; } 
+          shaPinningRequired == other.shaPinningRequired;
+
+@override int get hashCode => Object.hash(enabled, allowedActions, selectedActionsUrl, shaPinningRequired);
+
+@override String toString() => 'ActionsRepositoryPermissions(enabled: $enabled, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)';
+
  }

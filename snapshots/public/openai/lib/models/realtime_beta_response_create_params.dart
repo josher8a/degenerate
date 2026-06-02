@@ -124,7 +124,7 @@ RealtimeBetaResponseCreateParams copyWith({List<Modalities>? Function()? modalit
   prompt: prompt != null ? prompt() : this.prompt,
   input: input != null ? input() : this.input,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaResponseCreateParams &&
           listEquals(modalities, other.modalities) &&
           instructions == other.instructions &&
@@ -137,7 +137,10 @@ RealtimeBetaResponseCreateParams copyWith({List<Modalities>? Function()? modalit
           conversation == other.conversation &&
           metadata == other.metadata &&
           prompt == other.prompt &&
-          listEquals(input, other.input); } 
-@override int get hashCode { return Object.hash(Object.hashAll(modalities ?? const []), instructions, voice, outputAudioFormat, Object.hashAll(tools ?? const []), toolChoice, temperature, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const [])); } 
-@override String toString() { return 'RealtimeBetaResponseCreateParams(modalities: $modalities, instructions: $instructions, voice: $voice, outputAudioFormat: $outputAudioFormat, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)'; } 
+          listEquals(input, other.input);
+
+@override int get hashCode => Object.hash(Object.hashAll(modalities ?? const []), instructions, voice, outputAudioFormat, Object.hashAll(tools ?? const []), toolChoice, temperature, maxOutputTokens, conversation, metadata, prompt, Object.hashAll(input ?? const []));
+
+@override String toString() => 'RealtimeBetaResponseCreateParams(modalities: $modalities, instructions: $instructions, voice: $voice, outputAudioFormat: $outputAudioFormat, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxOutputTokens: $maxOutputTokens, conversation: $conversation, metadata: $metadata, prompt: $prompt, input: $input)';
+
  }

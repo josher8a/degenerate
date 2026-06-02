@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentCancellationReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class PaymentIntentObject {const PaymentIntentObject._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentObject($value)';
+
  }
 /// Status of this PaymentIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `requires_capture`, `canceled`, or `succeeded`. Read more about each PaymentIntent [status](https://docs.stripe.com/payments/intents#intent-statuses).
 @immutable final class PaymentIntentStatus {const PaymentIntentStatus._(this.value);
@@ -100,10 +106,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentStatus($value)';
+
  }
 /// A PaymentIntent guides you through the process of collecting a payment from your customer.
 /// We recommend that you create exactly one PaymentIntent for each order or
@@ -437,7 +446,7 @@ PaymentIntent copyWith({int? Function()? amount, int? Function()? amountCapturab
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntent &&
           amount == other.amount &&
           amountCapturable == other.amountCapturable &&
@@ -481,7 +490,10 @@ PaymentIntent copyWith({int? Function()? amount, int? Function()? amountCapturab
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           status == other.status &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hashAll([amount, amountCapturable, amountDetails, amountReceived, application, applicationFeeAmount, automaticPaymentMethods, canceledAt, cancellationReason, captureMethod, clientSecret, confirmationMethod, created, currency, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), hooks, id, lastPaymentError, latestCharge, livemode, metadata, nextAction, object, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), presentmentDetails, processing, receiptEmail, review, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, status, transferData, transferGroup]); } 
-@override String toString() { return 'PaymentIntent(amount: $amount, amountCapturable: $amountCapturable, amountDetails: $amountDetails, amountReceived: $amountReceived, application: $application, applicationFeeAmount: $applicationFeeAmount, automaticPaymentMethods: $automaticPaymentMethods, canceledAt: $canceledAt, cancellationReason: $cancellationReason, captureMethod: $captureMethod, clientSecret: $clientSecret, confirmationMethod: $confirmationMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, hooks: $hooks, id: $id, lastPaymentError: $lastPaymentError, latestCharge: $latestCharge, livemode: $livemode, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, presentmentDetails: $presentmentDetails, processing: $processing, receiptEmail: $receiptEmail, review: $review, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, status: $status, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hashAll([amount, amountCapturable, amountDetails, amountReceived, application, applicationFeeAmount, automaticPaymentMethods, canceledAt, cancellationReason, captureMethod, clientSecret, confirmationMethod, created, currency, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), hooks, id, lastPaymentError, latestCharge, livemode, metadata, nextAction, object, onBehalfOf, paymentDetails, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), presentmentDetails, processing, receiptEmail, review, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, status, transferData, transferGroup]);
+
+@override String toString() => 'PaymentIntent(amount: $amount, amountCapturable: $amountCapturable, amountDetails: $amountDetails, amountReceived: $amountReceived, application: $application, applicationFeeAmount: $applicationFeeAmount, automaticPaymentMethods: $automaticPaymentMethods, canceledAt: $canceledAt, cancellationReason: $cancellationReason, captureMethod: $captureMethod, clientSecret: $clientSecret, confirmationMethod: $confirmationMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, hooks: $hooks, id: $id, lastPaymentError: $lastPaymentError, latestCharge: $latestCharge, livemode: $livemode, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, presentmentDetails: $presentmentDetails, processing: $processing, receiptEmail: $receiptEmail, review: $review, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, status: $status, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

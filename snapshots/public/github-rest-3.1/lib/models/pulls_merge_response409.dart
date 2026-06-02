@@ -20,10 +20,13 @@ PullsMergeResponse409 copyWith({String? Function()? message, String? Function()?
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsMergeResponse409 &&
           message == other.message &&
-          documentationUrl == other.documentationUrl; } 
-@override int get hashCode { return Object.hash(message, documentationUrl); } 
-@override String toString() { return 'PullsMergeResponse409(message: $message, documentationUrl: $documentationUrl)'; } 
+          documentationUrl == other.documentationUrl;
+
+@override int get hashCode => Object.hash(message, documentationUrl);
+
+@override String toString() => 'PullsMergeResponse409(message: $message, documentationUrl: $documentationUrl)';
+
  }

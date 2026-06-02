@@ -120,7 +120,7 @@ PostSetupIntentsIntentRequest copyWith({bool? Function()? attachToSelf, String? 
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentRequest &&
           attachToSelf == other.attachToSelf &&
           customer == other.customer &&
@@ -134,7 +134,10 @@ PostSetupIntentsIntentRequest copyWith({bool? Function()? attachToSelf, String? 
           paymentMethodConfiguration == other.paymentMethodConfiguration &&
           paymentMethodData == other.paymentMethodData &&
           paymentMethodOptions == other.paymentMethodOptions &&
-          listEquals(paymentMethodTypes, other.paymentMethodTypes); } 
-@override int get hashCode { return Object.hash(attachToSelf, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), Object.hashAll(flowDirections ?? const []), metadata, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const [])); } 
-@override String toString() { return 'PostSetupIntentsIntentRequest(attachToSelf: $attachToSelf, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, flowDirections: $flowDirections, metadata: $metadata, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)'; } 
+          listEquals(paymentMethodTypes, other.paymentMethodTypes);
+
+@override int get hashCode => Object.hash(attachToSelf, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), Object.hashAll(flowDirections ?? const []), metadata, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []));
+
+@override String toString() => 'PostSetupIntentsIntentRequest(attachToSelf: $attachToSelf, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, flowDirections: $flowDirections, metadata: $metadata, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)';
+
  }

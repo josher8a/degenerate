@@ -49,7 +49,7 @@ AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, St
   secret: secret ?? this.secret,
   secretId: secretId ?? this.secretId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateProvidersRequest &&
           alias == other.alias &&
           defaultConfig == other.defaultConfig &&
@@ -57,7 +57,10 @@ AigConfigCreateProvidersRequest copyWith({String? alias, bool? defaultConfig, St
           rateLimit == other.rateLimit &&
           rateLimitPeriod == other.rateLimitPeriod &&
           secret == other.secret &&
-          secretId == other.secretId; } 
-@override int get hashCode { return Object.hash(alias, defaultConfig, providerSlug, rateLimit, rateLimitPeriod, secret, secretId); } 
-@override String toString() { return 'AigConfigCreateProvidersRequest(alias: $alias, defaultConfig: $defaultConfig, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secret: $secret, secretId: $secretId)'; } 
+          secretId == other.secretId;
+
+@override int get hashCode => Object.hash(alias, defaultConfig, providerSlug, rateLimit, rateLimitPeriod, secret, secretId);
+
+@override String toString() => 'AigConfigCreateProvidersRequest(alias: $alias, defaultConfig: $defaultConfig, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secret: $secret, secretId: $secretId)';
+
  }

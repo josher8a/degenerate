@@ -54,7 +54,7 @@ PriorUndisputedTransactions copyWith({String? charge, CustomerAccountId? Functio
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PriorUndisputedTransactions &&
           charge == other.charge &&
           customerAccountId == other.customerAccountId &&
@@ -63,7 +63,10 @@ PriorUndisputedTransactions copyWith({String? charge, CustomerAccountId? Functio
           customerEmailAddress == other.customerEmailAddress &&
           customerPurchaseIp == other.customerPurchaseIp &&
           productDescription == other.productDescription &&
-          shippingAddress == other.shippingAddress; } 
-@override int get hashCode { return Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress); } 
-@override String toString() { return 'PriorUndisputedTransactions(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)'; } 
+          shippingAddress == other.shippingAddress;
+
+@override int get hashCode => Object.hash(charge, customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, productDescription, shippingAddress);
+
+@override String toString() => 'PriorUndisputedTransactions(charge: $charge, customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, productDescription: $productDescription, shippingAddress: $shippingAddress)';
+
  }

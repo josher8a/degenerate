@@ -23,9 +23,12 @@ return errors; }
 RulesetsExecuteMatchedData copyWith({String? publicKey}) { return RulesetsExecuteMatchedData(
   publicKey: publicKey ?? this.publicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteMatchedData &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return publicKey.hashCode; } 
-@override String toString() { return 'RulesetsExecuteMatchedData(publicKey: $publicKey)'; } 
+          publicKey == other.publicKey;
+
+@override int get hashCode => publicKey.hashCode;
+
+@override String toString() => 'RulesetsExecuteMatchedData(publicKey: $publicKey)';
+
  }

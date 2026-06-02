@@ -27,11 +27,14 @@ RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0 copyWith({Li
   iPv6: iPv6 ?? this.iPv6,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0 &&
           listEquals(iPv4, other.iPv4) &&
           listEquals(iPv6, other.iPv6) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(iPv4), Object.hashAll(iPv6), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0(iPv4: $iPv4, iPv6: $iPv6, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(iPv4), Object.hashAll(iPv6), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionResponseResultSerie0(iPv4: $iPv4, iPv6: $iPv6, timestamps: $timestamps)';
+
  }

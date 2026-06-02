@@ -30,12 +30,15 @@ Other copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumenta
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Other &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
-          productType == other.productType; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation, productDescription, productType); } 
-@override String toString() { return 'Other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+          productType == other.productType;
+
+@override int get hashCode => Object.hash(additionalDocumentation, explanation, productDescription, productType);
+
+@override String toString() => 'Other(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)';
+
  }

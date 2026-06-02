@@ -63,7 +63,7 @@ WorListWorkflowInstancesResponseResult copyWith({DateTime? createdOn, DateTime? 
   versionId: versionId ?? this.versionId,
   workflowId: workflowId ?? this.workflowId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorListWorkflowInstancesResponseResult &&
           createdOn == other.createdOn &&
           endedOn == other.endedOn &&
@@ -72,7 +72,10 @@ WorListWorkflowInstancesResponseResult copyWith({DateTime? createdOn, DateTime? 
           startedOn == other.startedOn &&
           status == other.status &&
           versionId == other.versionId &&
-          workflowId == other.workflowId; } 
-@override int get hashCode { return Object.hash(createdOn, endedOn, id, modifiedOn, startedOn, status, versionId, workflowId); } 
-@override String toString() { return 'WorListWorkflowInstancesResponseResult(createdOn: $createdOn, endedOn: $endedOn, id: $id, modifiedOn: $modifiedOn, startedOn: $startedOn, status: $status, versionId: $versionId, workflowId: $workflowId)'; } 
+          workflowId == other.workflowId;
+
+@override int get hashCode => Object.hash(createdOn, endedOn, id, modifiedOn, startedOn, status, versionId, workflowId);
+
+@override String toString() => 'WorListWorkflowInstancesResponseResult(createdOn: $createdOn, endedOn: $endedOn, id: $id, modifiedOn: $modifiedOn, startedOn: $startedOn, status: $status, versionId: $versionId, workflowId: $workflowId)';
+
  }

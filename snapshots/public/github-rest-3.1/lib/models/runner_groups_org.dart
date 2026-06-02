@@ -91,7 +91,7 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
   restrictedToWorkflows: restrictedToWorkflows != null ? restrictedToWorkflows() : this.restrictedToWorkflows,
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunnerGroupsOrg &&
           id == other.id &&
           name == other.name &&
@@ -106,7 +106,10 @@ RunnerGroupsOrg copyWith({double? id, String? name, String? visibility, bool? $d
           allowsPublicRepositories == other.allowsPublicRepositories &&
           workflowRestrictionsReadOnly == other.workflowRestrictionsReadOnly &&
           restrictedToWorkflows == other.restrictedToWorkflows &&
-          listEquals(selectedWorkflows, other.selectedWorkflows); } 
-@override int get hashCode { return Object.hash(id, name, visibility, $default, selectedRepositoriesUrl, runnersUrl, hostedRunnersUrl, networkConfigurationId, inherited, inheritedAllowsPublicRepositories, allowsPublicRepositories, workflowRestrictionsReadOnly, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const [])); } 
-@override String toString() { return 'RunnerGroupsOrg(id: $id, name: $name, visibility: $visibility, \$default: ${$default}, selectedRepositoriesUrl: $selectedRepositoriesUrl, runnersUrl: $runnersUrl, hostedRunnersUrl: $hostedRunnersUrl, networkConfigurationId: $networkConfigurationId, inherited: $inherited, inheritedAllowsPublicRepositories: $inheritedAllowsPublicRepositories, allowsPublicRepositories: $allowsPublicRepositories, workflowRestrictionsReadOnly: $workflowRestrictionsReadOnly, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows)'; } 
+          listEquals(selectedWorkflows, other.selectedWorkflows);
+
+@override int get hashCode => Object.hash(id, name, visibility, $default, selectedRepositoriesUrl, runnersUrl, hostedRunnersUrl, networkConfigurationId, inherited, inheritedAllowsPublicRepositories, allowsPublicRepositories, workflowRestrictionsReadOnly, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []));
+
+@override String toString() => 'RunnerGroupsOrg(id: $id, name: $name, visibility: $visibility, \$default: ${$default}, selectedRepositoriesUrl: $selectedRepositoriesUrl, runnersUrl: $runnersUrl, hostedRunnersUrl: $hostedRunnersUrl, networkConfigurationId: $networkConfigurationId, inherited: $inherited, inheritedAllowsPublicRepositories: $inheritedAllowsPublicRepositories, allowsPublicRepositories: $allowsPublicRepositories, workflowRestrictionsReadOnly: $workflowRestrictionsReadOnly, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows)';
+
  }

@@ -86,7 +86,7 @@ BuildsBuildResponseTrigger copyWith({List<String>? Function()? branchExcludes, L
   triggerName: triggerName != null ? triggerName() : this.triggerName,
   triggerUuid: triggerUuid != null ? triggerUuid() : this.triggerUuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildResponseTrigger &&
           listEquals(branchExcludes, other.branchExcludes) &&
           listEquals(branchIncludes, other.branchIncludes) &&
@@ -102,7 +102,10 @@ BuildsBuildResponseTrigger copyWith({List<String>? Function()? branchExcludes, L
           repoConnection == other.repoConnection &&
           rootDirectory == other.rootDirectory &&
           triggerName == other.triggerName &&
-          triggerUuid == other.triggerUuid; } 
-@override int get hashCode { return Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, createdOn, deletedOn, deployCommand, externalScriptId, modifiedOn, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), repoConnection, rootDirectory, triggerName, triggerUuid); } 
-@override String toString() { return 'BuildsBuildResponseTrigger(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, createdOn: $createdOn, deletedOn: $deletedOn, deployCommand: $deployCommand, externalScriptId: $externalScriptId, modifiedOn: $modifiedOn, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnection: $repoConnection, rootDirectory: $rootDirectory, triggerName: $triggerName, triggerUuid: $triggerUuid)'; } 
+          triggerUuid == other.triggerUuid;
+
+@override int get hashCode => Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, createdOn, deletedOn, deployCommand, externalScriptId, modifiedOn, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), repoConnection, rootDirectory, triggerName, triggerUuid);
+
+@override String toString() => 'BuildsBuildResponseTrigger(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, createdOn: $createdOn, deletedOn: $deletedOn, deployCommand: $deployCommand, externalScriptId: $externalScriptId, modifiedOn: $modifiedOn, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnection: $repoConnection, rootDirectory: $rootDirectory, triggerName: $triggerName, triggerUuid: $triggerUuid)';
+
  }

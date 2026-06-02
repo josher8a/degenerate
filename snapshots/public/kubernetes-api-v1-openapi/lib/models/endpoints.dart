@@ -51,12 +51,15 @@ Endpoints copyWith({String? Function()? apiVersion, String? Function()? kind, Ob
   metadata: metadata != null ? metadata() : this.metadata,
   subsets: subsets != null ? subsets() : this.subsets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Endpoints &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          listEquals(subsets, other.subsets); } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, Object.hashAll(subsets ?? const [])); } 
-@override String toString() { return 'Endpoints(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, subsets: $subsets)'; } 
+          listEquals(subsets, other.subsets);
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, Object.hashAll(subsets ?? const []));
+
+@override String toString() => 'Endpoints(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, subsets: $subsets)';
+
  }

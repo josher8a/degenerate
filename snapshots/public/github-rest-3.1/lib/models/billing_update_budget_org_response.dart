@@ -20,10 +20,13 @@ BillingUpdateBudgetOrgResponse copyWith({String? Function()? message, BillingUpd
   message: message != null ? message() : this.message,
   budget: budget != null ? budget() : this.budget,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUpdateBudgetOrgResponse &&
           message == other.message &&
-          budget == other.budget; } 
-@override int get hashCode { return Object.hash(message, budget); } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponse(message: $message, budget: $budget)'; } 
+          budget == other.budget;
+
+@override int get hashCode => Object.hash(message, budget);
+
+@override String toString() => 'BillingUpdateBudgetOrgResponse(message: $message, budget: $budget)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ExternalAccountPayoutBankAccountDocuments copyWith({BankAccountOwnershipVerification? Function()? bankAccountOwnershipVerification}) { return ExternalAccountPayoutBankAccountDocuments(
   bankAccountOwnershipVerification: bankAccountOwnershipVerification != null ? bankAccountOwnershipVerification() : this.bankAccountOwnershipVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalAccountPayoutBankAccountDocuments &&
-          bankAccountOwnershipVerification == other.bankAccountOwnershipVerification; } 
-@override int get hashCode { return bankAccountOwnershipVerification.hashCode; } 
-@override String toString() { return 'ExternalAccountPayoutBankAccountDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification)'; } 
+          bankAccountOwnershipVerification == other.bankAccountOwnershipVerification;
+
+@override int get hashCode => bankAccountOwnershipVerification.hashCode;
+
+@override String toString() => 'ExternalAccountPayoutBankAccountDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification)';
+
  }

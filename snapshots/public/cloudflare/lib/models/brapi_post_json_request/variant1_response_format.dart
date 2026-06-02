@@ -21,10 +21,13 @@ Variant1ResponseFormat copyWith({Map<String, JsonSchemaValue>? Function()? jsonS
   jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1ResponseFormat &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'Variant1ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(jsonSchema, type);
+
+@override String toString() => 'Variant1ResponseFormat(jsonSchema: $jsonSchema, type: $type)';
+
  }

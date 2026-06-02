@@ -95,7 +95,7 @@ TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClea
   region: region ?? this.region,
   sitekey: sitekey ?? this.sitekey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TurnstileWidgetList &&
           botFightMode == other.botFightMode &&
           clearanceLevel == other.clearanceLevel &&
@@ -107,7 +107,10 @@ TurnstileWidgetList copyWith({TurnstileBotFightMode? botFightMode, TurnstileClea
           name == other.name &&
           offlabel == other.offlabel &&
           region == other.region &&
-          sitekey == other.sitekey; } 
-@override int get hashCode { return Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, sitekey); } 
-@override String toString() { return 'TurnstileWidgetList(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, sitekey: $sitekey)'; } 
+          sitekey == other.sitekey;
+
+@override int get hashCode => Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, sitekey);
+
+@override String toString() => 'TurnstileWidgetList(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, sitekey: $sitekey)';
+
  }

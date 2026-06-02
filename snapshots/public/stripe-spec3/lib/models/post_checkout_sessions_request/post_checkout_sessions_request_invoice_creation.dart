@@ -21,10 +21,13 @@ PostCheckoutSessionsRequestInvoiceCreation copyWith({bool? enabled, PostCheckout
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestInvoiceCreation &&
           enabled == other.enabled &&
-          invoiceData == other.invoiceData; } 
-@override int get hashCode { return Object.hash(enabled, invoiceData); } 
-@override String toString() { return 'PostCheckoutSessionsRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)'; } 
+          invoiceData == other.invoiceData;
+
+@override int get hashCode => Object.hash(enabled, invoiceData);
+
+@override String toString() => 'PostCheckoutSessionsRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)';
+
  }

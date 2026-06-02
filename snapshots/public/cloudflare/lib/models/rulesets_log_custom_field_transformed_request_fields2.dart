@@ -23,9 +23,12 @@ return errors; }
 RulesetsLogCustomFieldTransformedRequestFields2 copyWith({String? name}) { return RulesetsLogCustomFieldTransformedRequestFields2(
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsLogCustomFieldTransformedRequestFields2 &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'RulesetsLogCustomFieldTransformedRequestFields2(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'RulesetsLogCustomFieldTransformedRequestFields2(name: $name)';
+
  }

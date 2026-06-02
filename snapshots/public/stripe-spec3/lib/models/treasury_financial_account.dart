@@ -46,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActiveFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActiveFeatures($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActiveFeatures && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ActiveFeatures($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
@@ -68,10 +71,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountObject($value)';
+
  }
 @immutable final class PendingFeatures {const PendingFeatures._(this.value);
 
@@ -119,10 +125,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PendingFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PendingFeatures($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PendingFeatures && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PendingFeatures($value)';
+
  }
 @immutable final class RestrictedFeatures {const RestrictedFeatures._(this.value);
 
@@ -170,10 +179,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RestrictedFeatures && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RestrictedFeatures($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RestrictedFeatures && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RestrictedFeatures($value)';
+
  }
 /// Status of this FinancialAccount.
 @immutable final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
@@ -195,10 +207,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountStatus($value)';
+
  }
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.
 /// FinancialAccounts serve as the source and destination of Treasury’s money movement APIs.
@@ -334,7 +349,7 @@ TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatu
   statusDetails: statusDetails ?? this.statusDetails,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccount &&
           listEquals(activeFeatures, other.activeFeatures) &&
           balance == other.balance &&
@@ -353,7 +368,10 @@ TreasuryFinancialAccount copyWith({List<ActiveFeatures>? Function()? activeFeatu
           listEquals(restrictedFeatures, other.restrictedFeatures) &&
           status == other.status &&
           statusDetails == other.statusDetails &&
-          listEquals(supportedCurrencies, other.supportedCurrencies); } 
-@override int get hashCode { return Object.hash(Object.hashAll(activeFeatures ?? const []), balance, country, created, features, Object.hashAll(financialAddresses), id, isDefault, livemode, metadata, nickname, object, Object.hashAll(pendingFeatures ?? const []), platformRestrictions, Object.hashAll(restrictedFeatures ?? const []), status, statusDetails, Object.hashAll(supportedCurrencies)); } 
-@override String toString() { return 'TreasuryFinancialAccount(activeFeatures: $activeFeatures, balance: $balance, country: $country, created: $created, features: $features, financialAddresses: $financialAddresses, id: $id, isDefault: $isDefault, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, pendingFeatures: $pendingFeatures, platformRestrictions: $platformRestrictions, restrictedFeatures: $restrictedFeatures, status: $status, statusDetails: $statusDetails, supportedCurrencies: $supportedCurrencies)'; } 
+          listEquals(supportedCurrencies, other.supportedCurrencies);
+
+@override int get hashCode => Object.hash(Object.hashAll(activeFeatures ?? const []), balance, country, created, features, Object.hashAll(financialAddresses), id, isDefault, livemode, metadata, nickname, object, Object.hashAll(pendingFeatures ?? const []), platformRestrictions, Object.hashAll(restrictedFeatures ?? const []), status, statusDetails, Object.hashAll(supportedCurrencies));
+
+@override String toString() => 'TreasuryFinancialAccount(activeFeatures: $activeFeatures, balance: $balance, country: $country, created: $created, features: $features, financialAddresses: $financialAddresses, id: $id, isDefault: $isDefault, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, pendingFeatures: $pendingFeatures, platformRestrictions: $platformRestrictions, restrictedFeatures: $restrictedFeatures, status: $status, statusDetails: $statusDetails, supportedCurrencies: $supportedCurrencies)';
+
  }

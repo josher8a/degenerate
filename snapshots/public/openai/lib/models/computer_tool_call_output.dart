@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerToolCallOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComputerToolCallOutputType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerToolCallOutputType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ComputerToolCallOutputType($value)';
+
  }
 /// The output of a computer tool call.
 /// 
@@ -79,14 +82,17 @@ ComputerToolCallOutput copyWith({ComputerToolCallOutputType? type, String? Funct
   output: output ?? this.output,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerToolCallOutput &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           listEquals(acknowledgedSafetyChecks, other.acknowledgedSafetyChecks) &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, callId, Object.hashAll(acknowledgedSafetyChecks ?? const []), output, status); } 
-@override String toString() { return 'ComputerToolCallOutput(type: $type, id: $id, callId: $callId, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, output: $output, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(type, id, callId, Object.hashAll(acknowledgedSafetyChecks ?? const []), output, status);
+
+@override String toString() => 'ComputerToolCallOutput(type: $type, id: $id, callId: $callId, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, output: $output, status: $status)';
+
  }

@@ -24,10 +24,13 @@ ImageGenOutputTokensDetails copyWith({int? imageTokens, int? textTokens, }) { re
   imageTokens: imageTokens ?? this.imageTokens,
   textTokens: textTokens ?? this.textTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenOutputTokensDetails &&
           imageTokens == other.imageTokens &&
-          textTokens == other.textTokens; } 
-@override int get hashCode { return Object.hash(imageTokens, textTokens); } 
-@override String toString() { return 'ImageGenOutputTokensDetails(imageTokens: $imageTokens, textTokens: $textTokens)'; } 
+          textTokens == other.textTokens;
+
+@override int get hashCode => Object.hash(imageTokens, textTokens);
+
+@override String toString() => 'ImageGenOutputTokensDetails(imageTokens: $imageTokens, textTokens: $textTokens)';
+
  }

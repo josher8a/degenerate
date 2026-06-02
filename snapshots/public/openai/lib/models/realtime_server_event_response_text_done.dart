@@ -61,7 +61,7 @@ RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, Str
   contentIndex: contentIndex ?? this.contentIndex,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseTextDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -69,7 +69,10 @@ RealtimeServerEventResponseTextDone copyWith({String? eventId, String? type, Str
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, text); } 
-@override String toString() { return 'RealtimeServerEventResponseTextDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, text);
+
+@override String toString() => 'RealtimeServerEventResponseTextDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text)';
+
  }

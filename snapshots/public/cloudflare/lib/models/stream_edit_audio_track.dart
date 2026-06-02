@@ -22,10 +22,13 @@ StreamEditAudioTrack copyWith({StreamAudioDefault? Function()? $default, StreamA
   $default: $default != null ? $default() : this.$default,
   label: label != null ? label() : this.label,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamEditAudioTrack &&
           $default == other.$default &&
-          label == other.label; } 
-@override int get hashCode { return Object.hash($default, label); } 
-@override String toString() { return 'StreamEditAudioTrack(\$default: ${$default}, label: $label)'; } 
+          label == other.label;
+
+@override int get hashCode => Object.hash($default, label);
+
+@override String toString() => 'StreamEditAudioTrack(\$default: ${$default}, label: $label)';
+
  }

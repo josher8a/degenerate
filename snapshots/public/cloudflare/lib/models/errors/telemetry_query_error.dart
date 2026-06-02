@@ -19,19 +19,22 @@ final class TelemetryQueryError$400 extends TelemetryQueryError {const Telemetry
 
 final TelemetryQueryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class TelemetryQueryError$401 extends TelemetryQueryError {const TelemetryQueryError$401(this.error);
 
 final TelemetryQueryResponse401 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class TelemetryQueryError$500 extends TelemetryQueryError {const TelemetryQueryError$500(this.error);
 
 final TelemetryQueryResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class TelemetryQueryError$Unknown extends TelemetryQueryError {const TelemetryQueryError$Unknown(this.statusCode, this.rawBody, );
 

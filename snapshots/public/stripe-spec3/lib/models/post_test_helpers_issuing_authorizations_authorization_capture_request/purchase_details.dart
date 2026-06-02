@@ -48,14 +48,17 @@ PurchaseDetails copyWith({Fleet? Function()? fleet, Flight? Function()? flight, 
   receipt: receipt != null ? receipt() : this.receipt,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PurchaseDetails &&
           fleet == other.fleet &&
           flight == other.flight &&
           fuel == other.fuel &&
           lodging == other.lodging &&
           listEquals(receipt, other.receipt) &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(fleet, flight, fuel, lodging, Object.hashAll(receipt ?? const []), reference); } 
-@override String toString() { return 'PurchaseDetails(fleet: $fleet, flight: $flight, fuel: $fuel, lodging: $lodging, receipt: $receipt, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(fleet, flight, fuel, lodging, Object.hashAll(receipt ?? const []), reference);
+
+@override String toString() => 'PurchaseDetails(fleet: $fleet, flight: $flight, fuel: $fuel, lodging: $lodging, receipt: $receipt, reference: $reference)';
+
  }

@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyRsaAlg && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyRsaAlg($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyRsaAlg && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyRsaAlg($value)';
+
  }
 /// Key Type
 @immutable final class ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty._(this.value);
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyRsaKty && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyRsaKty($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyRsaKty && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyRsaKty($value)';
+
  }
 /// JSON representation of an RSA key.
 @immutable final class ShieldCredentialsJwtKeyRsa {const ShieldCredentialsJwtKeyRsa({required this.kid, required this.alg, required this.e, required this.kty, required this.n, });
@@ -104,13 +110,16 @@ ShieldCredentialsJwtKeyRsa copyWith({String? kid, ShieldCredentialsJwtKeyRsaAlg?
   kty: kty ?? this.kty,
   n: n ?? this.n,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentialsJwtKeyRsa &&
           kid == other.kid &&
           alg == other.alg &&
           e == other.e &&
           kty == other.kty &&
-          n == other.n; } 
-@override int get hashCode { return Object.hash(kid, alg, e, kty, n); } 
-@override String toString() { return 'ShieldCredentialsJwtKeyRsa(kid: $kid, alg: $alg, e: $e, kty: $kty, n: $n)'; } 
+          n == other.n;
+
+@override int get hashCode => Object.hash(kid, alg, e, kty, n);
+
+@override String toString() => 'ShieldCredentialsJwtKeyRsa(kid: $kid, alg: $alg, e: $e, kty: $kty, n: $n)';
+
  }

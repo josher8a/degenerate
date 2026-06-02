@@ -30,11 +30,14 @@ WorkloadReference copyWith({String? name, String? podGroup, String? Function()? 
   podGroup: podGroup ?? this.podGroup,
   podGroupReplicaKey: podGroupReplicaKey != null ? podGroupReplicaKey() : this.podGroupReplicaKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkloadReference &&
           name == other.name &&
           podGroup == other.podGroup &&
-          podGroupReplicaKey == other.podGroupReplicaKey; } 
-@override int get hashCode { return Object.hash(name, podGroup, podGroupReplicaKey); } 
-@override String toString() { return 'WorkloadReference(name: $name, podGroup: $podGroup, podGroupReplicaKey: $podGroupReplicaKey)'; } 
+          podGroupReplicaKey == other.podGroupReplicaKey;
+
+@override int get hashCode => Object.hash(name, podGroup, podGroupReplicaKey);
+
+@override String toString() => 'WorkloadReference(name: $name, podGroup: $podGroup, podGroupReplicaKey: $podGroupReplicaKey)';
+
  }

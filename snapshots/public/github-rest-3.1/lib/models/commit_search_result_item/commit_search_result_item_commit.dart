@@ -50,7 +50,7 @@ CommitSearchResultItemCommit copyWith({GitCommitAuthor? author, GitUser? Functio
   url: url ?? this.url,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitSearchResultItemCommit &&
           author == other.author &&
           committer == other.committer &&
@@ -58,7 +58,10 @@ CommitSearchResultItemCommit copyWith({GitCommitAuthor? author, GitUser? Functio
           message == other.message &&
           tree == other.tree &&
           url == other.url &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(author, committer, commentCount, message, tree, url, verification); } 
-@override String toString() { return 'CommitSearchResultItemCommit(author: $author, committer: $committer, commentCount: $commentCount, message: $message, tree: $tree, url: $url, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(author, committer, commentCount, message, tree, url, verification);
+
+@override String toString() => 'CommitSearchResultItemCommit(author: $author, committer: $committer, commentCount: $commentCount, message: $message, tree: $tree, url: $url, verification: $verification)';
+
  }

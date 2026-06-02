@@ -20,25 +20,29 @@ final class AppsCreateInstallationAccessTokenError$401 extends AppsCreateInstall
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class AppsCreateInstallationAccessTokenError$403 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class AppsCreateInstallationAccessTokenError$404 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AppsCreateInstallationAccessTokenError$422 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class AppsCreateInstallationAccessTokenError$Unknown extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError$Unknown(this.statusCode, this.rawBody, );
 

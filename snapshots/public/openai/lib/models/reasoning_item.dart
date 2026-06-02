@@ -61,14 +61,17 @@ ReasoningItem copyWith({String? type, String? id, String? Function()? encryptedC
   content: content != null ? content() : this.content,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReasoningItem &&
           type == other.type &&
           id == other.id &&
           encryptedContent == other.encryptedContent &&
           listEquals(summary, other.summary) &&
           listEquals(content, other.content) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, encryptedContent, Object.hashAll(summary), Object.hashAll(content ?? const []), status); } 
-@override String toString() { return 'ReasoningItem(type: $type, id: $id, encryptedContent: $encryptedContent, summary: $summary, content: $content, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(type, id, encryptedContent, Object.hashAll(summary), Object.hashAll(content ?? const []), status);
+
+@override String toString() => 'ReasoningItem(type: $type, id: $id, encryptedContent: $encryptedContent, summary: $summary, content: $content, status: $status)';
+
  }

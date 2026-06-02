@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadRunExpiredEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadRunExpiredEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadRunExpiredEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadRunExpiredEvent($value)';
+
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) expires.
 @immutable final class ThreadRunExpired {const ThreadRunExpired({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadRunExpired copyWith({ThreadRunExpiredEvent? event, RunObject? data, }) { r
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadRunExpired &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadRunExpired(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadRunExpired(event: $event, data: $data)';
+
  }

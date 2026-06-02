@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IpAllowlistConfigActivated copyWith({List<Configs>? Function()? configs}) { return IpAllowlistConfigActivated(
   configs: configs != null ? configs() : this.configs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAllowlistConfigActivated &&
-          listEquals(configs, other.configs); } 
-@override int get hashCode { return Object.hashAll(configs ?? const []); } 
-@override String toString() { return 'IpAllowlistConfigActivated(configs: $configs)'; } 
+          listEquals(configs, other.configs);
+
+@override int get hashCode => Object.hashAll(configs ?? const []);
+
+@override String toString() => 'IpAllowlistConfigActivated(configs: $configs)';
+
  }

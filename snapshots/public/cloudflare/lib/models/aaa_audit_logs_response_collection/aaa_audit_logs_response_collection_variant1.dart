@@ -31,12 +31,15 @@ AaaAuditLogsResponseCollectionVariant1 copyWith({List<AaaMessages2>? Function()?
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsResponseCollectionVariant1 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), Object.hashAll(result ?? const []), success); } 
-@override String toString() { return 'AaaAuditLogsResponseCollectionVariant1(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), Object.hashAll(result ?? const []), success);
+
+@override String toString() => 'AaaAuditLogsResponseCollectionVariant1(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

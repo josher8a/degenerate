@@ -17,7 +17,8 @@ final class RadarGetTrafficAnomaliesTopError$400 extends RadarGetTrafficAnomalie
 
 final RadarGetTrafficAnomaliesTopResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetTrafficAnomaliesTopError$Unknown extends RadarGetTrafficAnomaliesTopError {const RadarGetTrafficAnomaliesTopError$Unknown(this.statusCode, this.rawBody, );
 

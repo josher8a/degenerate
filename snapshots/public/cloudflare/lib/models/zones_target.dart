@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final ZonesUrlTarget _value;
 
-@override ZonesUrlTarget get value { return _value; } 
+@override ZonesUrlTarget get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTargetZonesUrlTarget && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesTarget.zonesUrlTarget($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTargetZonesUrlTarget && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesTarget.zonesUrlTarget($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class ZonesTarget$Unknown extends ZonesTarget {const ZonesTarget$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTarget$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesTarget.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTarget$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesTarget.unknown($_value)';
+
  }

@@ -25,10 +25,13 @@ Input copyWith({int Function()? limit, int Function()? offset, }) { return Input
   limit: limit != null ? limit() : this.limit,
   offset: offset != null ? offset() : this.offset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Input &&
           limit == other.limit &&
-          offset == other.offset; } 
-@override int get hashCode { return Object.hash(limit, offset); } 
-@override String toString() { return 'Input(limit: $limit, offset: $offset)'; } 
+          offset == other.offset;
+
+@override int get hashCode => Object.hash(limit, offset);
+
+@override String toString() => 'Input(limit: $limit, offset: $offset)';
+
  }

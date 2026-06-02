@@ -63,7 +63,7 @@ WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? descri
   unitName: unitName != null ? unitName() : this.unitName,
   yearlyPriceInCents: yearlyPriceInCents ?? this.yearlyPriceInCents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMarketplacePurchasePlan &&
           listEquals(bullets, other.bullets) &&
           description == other.description &&
@@ -73,7 +73,10 @@ WebhooksMarketplacePurchasePlan copyWith({List<String?>? bullets, String? descri
           name == other.name &&
           priceModel == other.priceModel &&
           unitName == other.unitName &&
-          yearlyPriceInCents == other.yearlyPriceInCents; } 
-@override int get hashCode { return Object.hash(Object.hashAll(bullets), description, hasFreeTrial, id, monthlyPriceInCents, name, priceModel, unitName, yearlyPriceInCents); } 
-@override String toString() { return 'WebhooksMarketplacePurchasePlan(bullets: $bullets, description: $description, hasFreeTrial: $hasFreeTrial, id: $id, monthlyPriceInCents: $monthlyPriceInCents, name: $name, priceModel: $priceModel, unitName: $unitName, yearlyPriceInCents: $yearlyPriceInCents)'; } 
+          yearlyPriceInCents == other.yearlyPriceInCents;
+
+@override int get hashCode => Object.hash(Object.hashAll(bullets), description, hasFreeTrial, id, monthlyPriceInCents, name, priceModel, unitName, yearlyPriceInCents);
+
+@override String toString() => 'WebhooksMarketplacePurchasePlan(bullets: $bullets, description: $description, hasFreeTrial: $hasFreeTrial, id: $id, monthlyPriceInCents: $monthlyPriceInCents, name: $name, priceModel: $priceModel, unitName: $unitName, yearlyPriceInCents: $yearlyPriceInCents)';
+
  }

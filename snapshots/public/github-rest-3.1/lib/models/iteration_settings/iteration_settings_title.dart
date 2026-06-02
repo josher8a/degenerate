@@ -22,10 +22,13 @@ IterationSettingsTitle copyWith({String? raw, String? html, }) { return Iteratio
   raw: raw ?? this.raw,
   html: html ?? this.html,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IterationSettingsTitle &&
           raw == other.raw &&
-          html == other.html; } 
-@override int get hashCode { return Object.hash(raw, html); } 
-@override String toString() { return 'IterationSettingsTitle(raw: $raw, html: $html)'; } 
+          html == other.html;
+
+@override int get hashCode => Object.hash(raw, html);
+
+@override String toString() => 'IterationSettingsTitle(raw: $raw, html: $html)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ForwardingRequestObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ForwardingRequestObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ForwardingRequestObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ForwardingRequestObject($value)';
+
  }
 /// Instructs Stripe to make a request on your behalf using the destination URL. The destination URL
 /// is activated by Stripe at the time of onboarding. Stripe verifies requests with your credentials
@@ -128,7 +131,7 @@ ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String
   responseDetails: responseDetails != null ? responseDetails() : this.responseDetails,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardingRequest &&
           created == other.created &&
           id == other.id &&
@@ -140,7 +143,10 @@ ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String
           requestContext == other.requestContext &&
           requestDetails == other.requestDetails &&
           responseDetails == other.responseDetails &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, id, livemode, metadata, object, paymentMethod, Object.hashAll(replacements), requestContext, requestDetails, responseDetails, url); } 
-@override String toString() { return 'ForwardingRequest(created: $created, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethod: $paymentMethod, replacements: $replacements, requestContext: $requestContext, requestDetails: $requestDetails, responseDetails: $responseDetails, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(created, id, livemode, metadata, object, paymentMethod, Object.hashAll(replacements), requestContext, requestDetails, responseDetails, url);
+
+@override String toString() => 'ForwardingRequest(created: $created, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethod: $paymentMethod, replacements: $replacements, requestContext: $requestContext, requestDetails: $requestDetails, responseDetails: $responseDetails, url: $url)';
+
  }

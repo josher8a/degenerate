@@ -39,12 +39,15 @@ FineTuningCheckpointPermission copyWith({String? id, int? createdAt, String? pro
   projectId: projectId ?? this.projectId,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningCheckpointPermission &&
           id == other.id &&
           createdAt == other.createdAt &&
           projectId == other.projectId &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, createdAt, projectId, object); } 
-@override String toString() { return 'FineTuningCheckpointPermission(id: $id, createdAt: $createdAt, projectId: $projectId, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(id, createdAt, projectId, object);
+
+@override String toString() => 'FineTuningCheckpointPermission(id: $id, createdAt: $createdAt, projectId: $projectId, object: $object)';
+
  }

@@ -46,13 +46,16 @@ ScanConfig copyWith({String? accountId, Frequency2? frequency, String? id, List<
   ips: ips ?? this.ips,
   ports: ports ?? this.ports,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanConfig &&
           accountId == other.accountId &&
           frequency == other.frequency &&
           id == other.id &&
           listEquals(ips, other.ips) &&
-          listEquals(ports, other.ports); } 
-@override int get hashCode { return Object.hash(accountId, frequency, id, Object.hashAll(ips), Object.hashAll(ports)); } 
-@override String toString() { return 'ScanConfig(accountId: $accountId, frequency: $frequency, id: $id, ips: $ips, ports: $ports)'; } 
+          listEquals(ports, other.ports);
+
+@override int get hashCode => Object.hash(accountId, frequency, id, Object.hashAll(ips), Object.hashAll(ports));
+
+@override String toString() => 'ScanConfig(accountId: $accountId, frequency: $frequency, id: $id, ips: $ips, ports: $ports)';
+
  }

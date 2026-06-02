@@ -35,12 +35,15 @@ PodTemplate copyWith({String? Function()? apiVersion, String? Function()? kind, 
   metadata: metadata != null ? metadata() : this.metadata,
   template: template != null ? template() : this.template,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodTemplate &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, template); } 
-@override String toString() { return 'PodTemplate(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, template: $template)'; } 
+          template == other.template;
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, template);
+
+@override String toString() => 'PodTemplate(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, template: $template)';
+
  }

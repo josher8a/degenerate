@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('selec
 ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest copyWith({List<int>? selectedRepositoryIds}) { return ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
-@override String toString() { return 'ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hashAll(selectedRepositoryIds);
+
+@override String toString() => 'ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest(selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

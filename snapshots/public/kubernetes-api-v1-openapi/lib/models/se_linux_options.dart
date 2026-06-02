@@ -35,12 +35,15 @@ SeLinuxOptions copyWith({String? Function()? level, String? Function()? role, St
   type: type != null ? type() : this.type,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SeLinuxOptions &&
           level == other.level &&
           role == other.role &&
           type == other.type &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(level, role, type, user); } 
-@override String toString() { return 'SeLinuxOptions(level: $level, role: $role, type: $type, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(level, role, type, user);
+
+@override String toString() => 'SeLinuxOptions(level: $level, role: $role, type: $type, user: $user)';
+
  }

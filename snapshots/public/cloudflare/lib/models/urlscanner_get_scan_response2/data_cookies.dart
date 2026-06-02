@@ -87,7 +87,7 @@ DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
   sourceScheme: sourceScheme ?? this.sourceScheme,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataCookies &&
           domain == other.domain &&
           expires == other.expires &&
@@ -101,7 +101,10 @@ DataCookies copyWith({String? domain, double? expires, bool? httpOnly, String? n
           size == other.size &&
           sourcePort == other.sourcePort &&
           sourceScheme == other.sourceScheme &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(domain, expires, httpOnly, name, path, priority, sameParty, secure, session, size, sourcePort, sourceScheme, value); } 
-@override String toString() { return 'DataCookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, path: $path, priority: $priority, sameParty: $sameParty, secure: $secure, session: $session, size: $size, sourcePort: $sourcePort, sourceScheme: $sourceScheme, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(domain, expires, httpOnly, name, path, priority, sameParty, secure, session, size, sourcePort, sourceScheme, value);
+
+@override String toString() => 'DataCookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, path: $path, priority: $priority, sameParty: $sameParty, secure: $secure, session: $session, size: $size, sourcePort: $sourcePort, sourceScheme: $sourceScheme, value: $value)';
+
  }

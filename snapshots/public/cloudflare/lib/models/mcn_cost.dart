@@ -21,10 +21,13 @@ McnCost copyWith({String? currency, double? monthlyCost, }) { return McnCost(
   currency: currency ?? this.currency,
   monthlyCost: monthlyCost ?? this.monthlyCost,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCost &&
           currency == other.currency &&
-          monthlyCost == other.monthlyCost; } 
-@override int get hashCode { return Object.hash(currency, monthlyCost); } 
-@override String toString() { return 'McnCost(currency: $currency, monthlyCost: $monthlyCost)'; } 
+          monthlyCost == other.monthlyCost;
+
+@override int get hashCode => Object.hash(currency, monthlyCost);
+
+@override String toString() => 'McnCost(currency: $currency, monthlyCost: $monthlyCost)';
+
  }

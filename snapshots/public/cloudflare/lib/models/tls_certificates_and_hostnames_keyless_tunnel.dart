@@ -37,10 +37,13 @@ TlsCertificatesAndHostnamesKeylessTunnel copyWith({TlsCertificatesAndHostnamesKe
   privateIp: privateIp ?? this.privateIp,
   vnetId: vnetId ?? this.vnetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesKeylessTunnel &&
           privateIp == other.privateIp &&
-          vnetId == other.vnetId; } 
-@override int get hashCode { return Object.hash(privateIp, vnetId); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesKeylessTunnel(privateIp: $privateIp, vnetId: $vnetId)'; } 
+          vnetId == other.vnetId;
+
+@override int get hashCode => Object.hash(privateIp, vnetId);
+
+@override String toString() => 'TlsCertificatesAndHostnamesKeylessTunnel(privateIp: $privateIp, vnetId: $vnetId)';
+
  }

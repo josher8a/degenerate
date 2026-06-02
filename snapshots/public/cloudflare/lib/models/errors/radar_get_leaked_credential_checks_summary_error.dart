@@ -17,7 +17,8 @@ final class RadarGetLeakedCredentialChecksSummaryError$400 extends RadarGetLeake
 
 final RadarGetLeakedCredentialChecksSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetLeakedCredentialChecksSummaryError$Unknown extends RadarGetLeakedCredentialChecksSummaryError {const RadarGetLeakedCredentialChecksSummaryError$Unknown(this.statusCode, this.rawBody, );
 

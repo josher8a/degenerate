@@ -22,10 +22,13 @@ ResultInfoCursors copyWith({String? Function()? after, String? Function()? befor
   after: after != null ? after() : this.after,
   before: before != null ? before() : this.before,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultInfoCursors &&
           after == other.after &&
-          before == other.before; } 
-@override int get hashCode { return Object.hash(after, before); } 
-@override String toString() { return 'ResultInfoCursors(after: $after, before: $before)'; } 
+          before == other.before;
+
+@override int get hashCode => Object.hash(after, before);
+
+@override String toString() => 'ResultInfoCursors(after: $after, before: $before)';
+
  }

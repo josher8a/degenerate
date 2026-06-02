@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageStatus($value)';
+
  }
 @immutable final class MessageRole {const MessageRole._(this.value);
 
@@ -64,10 +67,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageRole($value)';
+
  }
 /// A message to or from the model.
 @immutable final class Message {const Message({required this.id, required this.status, required this.role, required this.content, this.type = 'message', });
@@ -114,13 +120,16 @@ Message copyWith({String? type, String? id, MessageStatus? status, MessageRole? 
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Message &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(type, id, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'Message(type: $type, id: $id, status: $status, role: $role, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(type, id, status, role, Object.hashAll(content));
+
+@override String toString() => 'Message(type: $type, id: $id, status: $status, role: $role, content: $content)';
+
  }

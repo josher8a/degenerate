@@ -52,13 +52,16 @@ WorkersObservabilityLogs copyWith({List<String>? Function()? destinations, bool?
   invocationLogs: invocationLogs ?? this.invocationLogs,
   persist: persist != null ? persist() : this.persist,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityLogs &&
           listEquals(destinations, other.destinations) &&
           enabled == other.enabled &&
           headSamplingRate == other.headSamplingRate &&
           invocationLogs == other.invocationLogs &&
-          persist == other.persist; } 
-@override int get hashCode { return Object.hash(Object.hashAll(destinations ?? const []), enabled, headSamplingRate, invocationLogs, persist); } 
-@override String toString() { return 'WorkersObservabilityLogs(destinations: $destinations, enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs, persist: $persist)'; } 
+          persist == other.persist;
+
+@override int get hashCode => Object.hash(Object.hashAll(destinations ?? const []), enabled, headSamplingRate, invocationLogs, persist);
+
+@override String toString() => 'WorkersObservabilityLogs(destinations: $destinations, enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs, persist: $persist)';
+
  }

@@ -18,13 +18,15 @@ final class UrlscannerCreateScanBulkError$400 extends UrlscannerCreateScanBulkEr
 
 final UrlscannerCreateScanBulkResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UrlscannerCreateScanBulkError$429 extends UrlscannerCreateScanBulkError {const UrlscannerCreateScanBulkError$429(this.error);
 
 final UrlscannerCreateScanBulkResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class UrlscannerCreateScanBulkError$Unknown extends UrlscannerCreateScanBulkError {const UrlscannerCreateScanBulkError$Unknown(this.statusCode, this.rawBody, );
 

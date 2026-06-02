@@ -17,7 +17,8 @@ final class DeletePortalsError$404 extends DeletePortalsError {const DeletePorta
 
 final DeletePortalsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeletePortalsError$Unknown extends DeletePortalsError {const DeletePortalsError$Unknown(this.statusCode, this.rawBody, );
 

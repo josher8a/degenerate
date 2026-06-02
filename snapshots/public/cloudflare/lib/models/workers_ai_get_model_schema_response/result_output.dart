@@ -30,11 +30,14 @@ ResultOutput copyWith({bool? additionalProperties, String? description, String? 
   description: description ?? this.description,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultOutput &&
           additionalProperties == other.additionalProperties &&
           description == other.description &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(additionalProperties, description, type); } 
-@override String toString() { return 'ResultOutput(additionalProperties: $additionalProperties, description: $description, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(additionalProperties, description, type);
+
+@override String toString() => 'ResultOutput(additionalProperties: $additionalProperties, description: $description, type: $type)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PreviewMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PreviewMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PreviewMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PreviewMode($value)';
+
  }
 @immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });
 
@@ -144,7 +147,7 @@ PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticT
   subscription: subscription != null ? subscription() : this.subscription,
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesCreatePreviewRequest &&
           automaticTax == other.automaticTax &&
           currency == other.currency &&
@@ -160,7 +163,10 @@ PostInvoicesCreatePreviewRequest copyWith({PostCheckoutSessionsRequestAutomaticT
           schedule == other.schedule &&
           scheduleDetails == other.scheduleDetails &&
           subscription == other.subscription &&
-          subscriptionDetails == other.subscriptionDetails; } 
-@override int get hashCode { return Object.hash(automaticTax, currency, customer, customerAccount, customerDetails, discounts, Object.hashAll(expand ?? const []), Object.hashAll(invoiceItems ?? const []), issuer, onBehalfOf, previewMode, schedule, scheduleDetails, subscription, subscriptionDetails); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequest(automaticTax: $automaticTax, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerDetails: $customerDetails, discounts: $discounts, expand: $expand, invoiceItems: $invoiceItems, issuer: $issuer, onBehalfOf: $onBehalfOf, previewMode: $previewMode, schedule: $schedule, scheduleDetails: $scheduleDetails, subscription: $subscription, subscriptionDetails: $subscriptionDetails)'; } 
+          subscriptionDetails == other.subscriptionDetails;
+
+@override int get hashCode => Object.hash(automaticTax, currency, customer, customerAccount, customerDetails, discounts, Object.hashAll(expand ?? const []), Object.hashAll(invoiceItems ?? const []), issuer, onBehalfOf, previewMode, schedule, scheduleDetails, subscription, subscriptionDetails);
+
+@override String toString() => 'PostInvoicesCreatePreviewRequest(automaticTax: $automaticTax, currency: $currency, customer: $customer, customerAccount: $customerAccount, customerDetails: $customerDetails, discounts: $discounts, expand: $expand, invoiceItems: $invoiceItems, issuer: $issuer, onBehalfOf: $onBehalfOf, previewMode: $previewMode, schedule: $schedule, scheduleDetails: $scheduleDetails, subscription: $subscription, subscriptionDetails: $subscriptionDetails)';
+
  }

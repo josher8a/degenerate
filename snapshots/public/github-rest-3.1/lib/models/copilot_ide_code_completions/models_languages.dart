@@ -47,14 +47,17 @@ ModelsLanguages copyWith({String? Function()? name, int? Function()? totalEngage
   totalCodeLinesSuggested: totalCodeLinesSuggested != null ? totalCodeLinesSuggested() : this.totalCodeLinesSuggested,
   totalCodeLinesAccepted: totalCodeLinesAccepted != null ? totalCodeLinesAccepted() : this.totalCodeLinesAccepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModelsLanguages &&
           name == other.name &&
           totalEngagedUsers == other.totalEngagedUsers &&
           totalCodeSuggestions == other.totalCodeSuggestions &&
           totalCodeAcceptances == other.totalCodeAcceptances &&
           totalCodeLinesSuggested == other.totalCodeLinesSuggested &&
-          totalCodeLinesAccepted == other.totalCodeLinesAccepted; } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers, totalCodeSuggestions, totalCodeAcceptances, totalCodeLinesSuggested, totalCodeLinesAccepted); } 
-@override String toString() { return 'ModelsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers, totalCodeSuggestions: $totalCodeSuggestions, totalCodeAcceptances: $totalCodeAcceptances, totalCodeLinesSuggested: $totalCodeLinesSuggested, totalCodeLinesAccepted: $totalCodeLinesAccepted)'; } 
+          totalCodeLinesAccepted == other.totalCodeLinesAccepted;
+
+@override int get hashCode => Object.hash(name, totalEngagedUsers, totalCodeSuggestions, totalCodeAcceptances, totalCodeLinesSuggested, totalCodeLinesAccepted);
+
+@override String toString() => 'ModelsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers, totalCodeSuggestions: $totalCodeSuggestions, totalCodeAcceptances: $totalCodeAcceptances, totalCodeLinesSuggested: $totalCodeLinesSuggested, totalCodeLinesAccepted: $totalCodeLinesAccepted)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumContentRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumContentRetention($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumContentRetention && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumContentRetention($value)';
+
  }
 /// Determines if the address can be stored or obfuscated based on privacy settings
 @immutable final class MessageEnumAddressRetention {const MessageEnumAddressRetention._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumAddressRetention && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumAddressRetention($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumAddressRetention && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumAddressRetention($value)';
+
  }
 @immutable final class MessageEnumTrafficType {const MessageEnumTrafficType._(this.value);
 
@@ -66,10 +72,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumTrafficType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumTrafficType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumTrafficType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumTrafficType($value)';
+
  }
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
 @immutable final class MessageEnumScheduleType {const MessageEnumScheduleType._(this.value);
@@ -88,10 +97,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumScheduleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumScheduleType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumScheduleType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumScheduleType($value)';
+
  }
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
 @immutable final class MessageEnumRiskCheck {const MessageEnumRiskCheck._(this.value);
@@ -113,10 +125,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumRiskCheck && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumRiskCheck($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumRiskCheck && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumRiskCheck($value)';
+
  }
 @immutable final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });
 
@@ -292,7 +307,7 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
   mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
   contentSid: contentSid != null ? contentSid() : this.contentSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMessageRequest &&
           to == other.to &&
           statusCallback == other.statusCallback &&
@@ -317,7 +332,10 @@ CreateMessageRequest copyWith({String? to, Uri? Function()? statusCallback, Stri
           messagingServiceSid == other.messagingServiceSid &&
           body == other.body &&
           listEquals(mediaUrl, other.mediaUrl) &&
-          contentSid == other.contentSid; } 
-@override int get hashCode { return Object.hashAll([to, statusCallback, applicationSid, maxPrice, provideFeedback, attempt, validityPeriod, forceDelivery, contentRetention, addressRetention, smartEncoded, Object.hashAll(persistentAction ?? const []), trafficType, shortenUrls, scheduleType, sendAt, sendAsMms, contentVariables, riskCheck, from, messagingServiceSid, body, Object.hashAll(mediaUrl ?? const []), contentSid]); } 
-@override String toString() { return 'CreateMessageRequest(to: $to, statusCallback: $statusCallback, applicationSid: $applicationSid, maxPrice: $maxPrice, provideFeedback: $provideFeedback, attempt: $attempt, validityPeriod: $validityPeriod, forceDelivery: $forceDelivery, contentRetention: $contentRetention, addressRetention: $addressRetention, smartEncoded: $smartEncoded, persistentAction: $persistentAction, trafficType: $trafficType, shortenUrls: $shortenUrls, scheduleType: $scheduleType, sendAt: $sendAt, sendAsMms: $sendAsMms, contentVariables: $contentVariables, riskCheck: $riskCheck, from: $from, messagingServiceSid: $messagingServiceSid, body: $body, mediaUrl: $mediaUrl, contentSid: $contentSid)'; } 
+          contentSid == other.contentSid;
+
+@override int get hashCode => Object.hashAll([to, statusCallback, applicationSid, maxPrice, provideFeedback, attempt, validityPeriod, forceDelivery, contentRetention, addressRetention, smartEncoded, Object.hashAll(persistentAction ?? const []), trafficType, shortenUrls, scheduleType, sendAt, sendAsMms, contentVariables, riskCheck, from, messagingServiceSid, body, Object.hashAll(mediaUrl ?? const []), contentSid]);
+
+@override String toString() => 'CreateMessageRequest(to: $to, statusCallback: $statusCallback, applicationSid: $applicationSid, maxPrice: $maxPrice, provideFeedback: $provideFeedback, attempt: $attempt, validityPeriod: $validityPeriod, forceDelivery: $forceDelivery, contentRetention: $contentRetention, addressRetention: $addressRetention, smartEncoded: $smartEncoded, persistentAction: $persistentAction, trafficType: $trafficType, shortenUrls: $shortenUrls, scheduleType: $scheduleType, sendAt: $sendAt, sendAsMms: $sendAsMms, contentVariables: $contentVariables, riskCheck: $riskCheck, from: $from, messagingServiceSid: $messagingServiceSid, body: $body, mediaUrl: $mediaUrl, contentSid: $contentSid)';
+
  }

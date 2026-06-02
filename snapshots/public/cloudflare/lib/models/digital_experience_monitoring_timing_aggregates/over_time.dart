@@ -21,10 +21,13 @@ OverTime copyWith({DigitalExperienceMonitoringAggregateTimePeriod? timePeriod, L
   timePeriod: timePeriod ?? this.timePeriod,
   values: values ?? this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OverTime &&
           timePeriod == other.timePeriod &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(timePeriod, Object.hashAll(values)); } 
-@override String toString() { return 'OverTime(timePeriod: $timePeriod, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(timePeriod, Object.hashAll(values));
+
+@override String toString() => 'OverTime(timePeriod: $timePeriod, values: $values)';
+
  }

@@ -45,14 +45,17 @@ ReposUpdateOrgRulesetRequest copyWith({String? Function()? name, ReposCreateOrgR
   conditions: conditions != null ? conditions() : this.conditions,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateOrgRulesetRequest &&
           name == other.name &&
           target == other.target &&
           enforcement == other.enforcement &&
           listEquals(bypassActors, other.bypassActors) &&
           conditions == other.conditions &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'ReposUpdateOrgRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(name, target, enforcement, Object.hashAll(bypassActors ?? const []), conditions, Object.hashAll(rules ?? const []));
+
+@override String toString() => 'ReposUpdateOrgRulesetRequest(name: $name, target: $target, enforcement: $enforcement, bypassActors: $bypassActors, conditions: $conditions, rules: $rules)';
+
  }

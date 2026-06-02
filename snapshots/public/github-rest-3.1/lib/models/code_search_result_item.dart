@@ -83,7 +83,7 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
   lineNumbers: lineNumbers != null ? lineNumbers() : this.lineNumbers,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSearchResultItem &&
           name == other.name &&
           path == other.path &&
@@ -97,7 +97,10 @@ CodeSearchResultItem copyWith({String? name, String? path, String? sha, Uri? url
           language == other.language &&
           lastModifiedAt == other.lastModifiedAt &&
           listEquals(lineNumbers, other.lineNumbers) &&
-          listEquals(textMatches, other.textMatches); } 
-@override int get hashCode { return Object.hash(name, path, sha, url, gitUrl, htmlUrl, repository, score, fileSize, language, lastModifiedAt, Object.hashAll(lineNumbers ?? const []), Object.hashAll(textMatches ?? const [])); } 
-@override String toString() { return 'CodeSearchResultItem(name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, repository: $repository, score: $score, fileSize: $fileSize, language: $language, lastModifiedAt: $lastModifiedAt, lineNumbers: $lineNumbers, textMatches: $textMatches)'; } 
+          listEquals(textMatches, other.textMatches);
+
+@override int get hashCode => Object.hash(name, path, sha, url, gitUrl, htmlUrl, repository, score, fileSize, language, lastModifiedAt, Object.hashAll(lineNumbers ?? const []), Object.hashAll(textMatches ?? const []));
+
+@override String toString() => 'CodeSearchResultItem(name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, repository: $repository, score: $score, fileSize: $fileSize, language: $language, lastModifiedAt: $lastModifiedAt, lineNumbers: $lineNumbers, textMatches: $textMatches)';
+
  }

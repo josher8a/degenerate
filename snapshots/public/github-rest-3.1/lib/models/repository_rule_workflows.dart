@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleWorkflowsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleWorkflowsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleWorkflowsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleWorkflowsType($value)';
+
  }
 /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
 @immutable final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleWorkflows copyWith({RepositoryRuleWorkflowsType? type, RepositoryR
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleWorkflows &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleWorkflows(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleWorkflows(type: $type, parameters: $parameters)';
+
  }

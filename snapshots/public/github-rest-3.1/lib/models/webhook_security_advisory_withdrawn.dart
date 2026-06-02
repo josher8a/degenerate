@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecurityAdvisoryWithdrawnAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSecurityAdvisoryWithdrawnAction($value)';
+
  }
 @immutable final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });
 
@@ -68,7 +71,7 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
   securityAdvisory: securityAdvisory ?? this.securityAdvisory,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecurityAdvisoryWithdrawn &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -76,7 +79,10 @@ WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnActio
           organization == other.organization &&
           repository == other.repository &&
           securityAdvisory == other.securityAdvisory &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender); } 
-@override String toString() { return 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender);
+
+@override String toString() => 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)';
+
  }

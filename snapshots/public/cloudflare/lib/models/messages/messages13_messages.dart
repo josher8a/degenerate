@@ -21,10 +21,13 @@ Messages13Messages copyWith({Messages13MessagesContent? Function()? content, Str
   content: content != null ? content() : this.content,
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages13Messages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'Messages13Messages(content: $content, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, role);
+
+@override String toString() => 'Messages13Messages(content: $content, role: $role)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReturnMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReturnMetadata($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReturnMetadata && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReturnMetadata($value)';
+
  }
 @immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = ReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });
 
@@ -74,13 +77,16 @@ Request copyWith({Map<String, dynamic>? Function()? filter, ReturnMetadata Funct
   topK: topK != null ? topK() : this.topK,
   vector: vector ?? this.vector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Request &&
           filter == other.filter &&
           returnMetadata == other.returnMetadata &&
           returnValues == other.returnValues &&
           topK == other.topK &&
-          listEquals(vector, other.vector); } 
-@override int get hashCode { return Object.hash(filter, returnMetadata, returnValues, topK, Object.hashAll(vector)); } 
-@override String toString() { return 'Request(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)'; } 
+          listEquals(vector, other.vector);
+
+@override int get hashCode => Object.hash(filter, returnMetadata, returnValues, topK, Object.hashAll(vector));
+
+@override String toString() => 'Request(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)';
+
  }

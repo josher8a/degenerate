@@ -17,7 +17,8 @@ final class RadarGetDnsTopAsesError$404 extends RadarGetDnsTopAsesError {const R
 
 final RadarGetDnsTopAsesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetDnsTopAsesError$Unknown extends RadarGetDnsTopAsesError {const RadarGetDnsTopAsesError$Unknown(this.statusCode, this.rawBody, );
 

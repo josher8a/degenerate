@@ -30,12 +30,15 @@ WebhookRepositoryEditedChanges copyWith({DefaultBranch? Function()? defaultBranc
   homepage: homepage != null ? homepage() : this.homepage,
   topics: topics != null ? topics() : this.topics,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryEditedChanges &&
           defaultBranch == other.defaultBranch &&
           description == other.description &&
           homepage == other.homepage &&
-          topics == other.topics; } 
-@override int get hashCode { return Object.hash(defaultBranch, description, homepage, topics); } 
-@override String toString() { return 'WebhookRepositoryEditedChanges(defaultBranch: $defaultBranch, description: $description, homepage: $homepage, topics: $topics)'; } 
+          topics == other.topics;
+
+@override int get hashCode => Object.hash(defaultBranch, description, homepage, topics);
+
+@override String toString() => 'WebhookRepositoryEditedChanges(defaultBranch: $defaultBranch, description: $description, homepage: $homepage, topics: $topics)';
+
  }

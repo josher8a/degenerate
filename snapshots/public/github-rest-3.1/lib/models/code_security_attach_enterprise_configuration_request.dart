@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityAttachEnterpriseConfigurationRequestScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeSecurityAttachEnterpriseConfigurationRequestScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)';
+
  }
 @immutable final class CodeSecurityAttachEnterpriseConfigurationRequest {const CodeSecurityAttachEnterpriseConfigurationRequest({required this.scope});
 
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope
 CodeSecurityAttachEnterpriseConfigurationRequest copyWith({CodeSecurityAttachEnterpriseConfigurationRequestScope? scope}) { return CodeSecurityAttachEnterpriseConfigurationRequest(
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityAttachEnterpriseConfigurationRequest &&
-          scope == other.scope; } 
-@override int get hashCode { return scope.hashCode; } 
-@override String toString() { return 'CodeSecurityAttachEnterpriseConfigurationRequest(scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => scope.hashCode;
+
+@override String toString() => 'CodeSecurityAttachEnterpriseConfigurationRequest(scope: $scope)';
+
  }

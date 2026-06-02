@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RateType($value)';
+
  }
 @immutable final class ElementsRate {const ElementsRate({required this.id, required this.outputs, required this.properties, required this.type, });
 
@@ -54,12 +57,15 @@ ElementsRate copyWith({String? id, ModelOutputs? outputs, RateProperties? proper
   properties: properties ?? this.properties,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ElementsRate &&
           id == other.id &&
           outputs == other.outputs &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, outputs, properties, type); } 
-@override String toString() { return 'ElementsRate(id: $id, outputs: $outputs, properties: $properties, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, outputs, properties, type);
+
+@override String toString() => 'ElementsRate(id: $id, outputs: $outputs, properties: $properties, type: $type)';
+
  }

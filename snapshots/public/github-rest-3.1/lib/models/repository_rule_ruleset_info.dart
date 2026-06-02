@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetSourceType($value)';
+
  }
 /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
 @immutable final class RepositoryRuleRulesetInfo {const RepositoryRuleRulesetInfo({this.rulesetSourceType, this.rulesetSource, this.rulesetId, });
@@ -54,11 +57,14 @@ RepositoryRuleRulesetInfo copyWith({RulesetSourceType? Function()? rulesetSource
   rulesetSource: rulesetSource != null ? rulesetSource() : this.rulesetSource,
   rulesetId: rulesetId != null ? rulesetId() : this.rulesetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRulesetInfo &&
           rulesetSourceType == other.rulesetSourceType &&
           rulesetSource == other.rulesetSource &&
-          rulesetId == other.rulesetId; } 
-@override int get hashCode { return Object.hash(rulesetSourceType, rulesetSource, rulesetId); } 
-@override String toString() { return 'RepositoryRuleRulesetInfo(rulesetSourceType: $rulesetSourceType, rulesetSource: $rulesetSource, rulesetId: $rulesetId)'; } 
+          rulesetId == other.rulesetId;
+
+@override int get hashCode => Object.hash(rulesetSourceType, rulesetSource, rulesetId);
+
+@override String toString() => 'RepositoryRuleRulesetInfo(rulesetSourceType: $rulesetSourceType, rulesetSource: $rulesetSource, rulesetId: $rulesetId)';
+
  }

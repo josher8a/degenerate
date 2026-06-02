@@ -61,7 +61,7 @@ RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Functio
   siteToken: siteToken != null ? siteToken() : this.siteToken,
   snippet: snippet != null ? snippet() : this.snippet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumSite &&
           autoInstall == other.autoInstall &&
           created == other.created &&
@@ -69,7 +69,10 @@ RumSite copyWith({RumAutoInstall? Function()? autoInstall, RumTimestamp? Functio
           ruleset == other.ruleset &&
           siteTag == other.siteTag &&
           siteToken == other.siteToken &&
-          snippet == other.snippet; } 
-@override int get hashCode { return Object.hash(autoInstall, created, Object.hashAll(rules ?? const []), ruleset, siteTag, siteToken, snippet); } 
-@override String toString() { return 'RumSite(autoInstall: $autoInstall, created: $created, rules: $rules, ruleset: $ruleset, siteTag: $siteTag, siteToken: $siteToken, snippet: $snippet)'; } 
+          snippet == other.snippet;
+
+@override int get hashCode => Object.hash(autoInstall, created, Object.hashAll(rules ?? const []), ruleset, siteTag, siteToken, snippet);
+
+@override String toString() => 'RumSite(autoInstall: $autoInstall, created: $created, rules: $rules, ruleset: $ruleset, siteTag: $siteTag, siteToken: $siteToken, snippet: $snippet)';
+
  }

@@ -174,7 +174,7 @@ SecretScanningAlert copyWith({AlertNumber? Function()? number, AlertCreatedAt? F
   hasMoreLocations: hasMoreLocations != null ? hasMoreLocations() : this.hasMoreLocations,
   assignedTo: assignedTo != null ? assignedTo() : this.assignedTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningAlert &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -203,7 +203,10 @@ SecretScanningAlert copyWith({AlertNumber? Function()? number, AlertCreatedAt? F
           isBase64Encoded == other.isBase64Encoded &&
           firstLocationDetected == other.firstLocationDetected &&
           hasMoreLocations == other.hasMoreLocations &&
-          assignedTo == other.assignedTo; } 
-@override int get hashCode { return Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, resolutionComment, secretType, secretTypeDisplayName, secret, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]); } 
-@override String toString() { return 'SecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, resolutionComment: $resolutionComment, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)'; } 
+          assignedTo == other.assignedTo;
+
+@override int get hashCode => Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, resolutionComment, secretType, secretTypeDisplayName, secret, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]);
+
+@override String toString() => 'SecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, resolutionComment: $resolutionComment, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)';
+
  }

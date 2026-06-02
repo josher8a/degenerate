@@ -55,7 +55,7 @@ PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Fun
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData &&
           disabled == other.disabled &&
           id == other.id &&
@@ -64,7 +64,10 @@ PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool? Fun
           name == other.name &&
           playbackUrl == other.playbackUrl &&
           status == other.status &&
-          streamKey == other.streamKey; } 
-@override int get hashCode { return Object.hash(disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey); } 
-@override String toString() { return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)'; } 
+          streamKey == other.streamKey;
+
+@override int get hashCode => Object.hash(disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey);
+
+@override String toString() => 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)';
+
  }

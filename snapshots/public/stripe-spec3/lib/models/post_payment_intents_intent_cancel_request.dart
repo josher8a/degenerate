@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostPaymentIntentsIntentCancelRequestCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostPaymentIntentsIntentCancelRequestCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostPaymentIntentsIntentCancelRequestCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostPaymentIntentsIntentCancelRequestCancellationReason($value)';
+
  }
 @immutable final class PostPaymentIntentsIntentCancelRequest {const PostPaymentIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
 
@@ -53,10 +56,13 @@ PostPaymentIntentsIntentCancelRequest copyWith({PostPaymentIntentsIntentCancelRe
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentCancelRequest &&
           cancellationReason == other.cancellationReason &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(cancellationReason, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(cancellationReason, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)';
+
  }

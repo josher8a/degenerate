@@ -37,13 +37,16 @@ OrganizationFullPlan copyWith({String? name, int? space, int? privateRepos, int?
   filledSeats: filledSeats != null ? filledSeats() : this.filledSeats,
   seats: seats != null ? seats() : this.seats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationFullPlan &&
           name == other.name &&
           space == other.space &&
           privateRepos == other.privateRepos &&
           filledSeats == other.filledSeats &&
-          seats == other.seats; } 
-@override int get hashCode { return Object.hash(name, space, privateRepos, filledSeats, seats); } 
-@override String toString() { return 'OrganizationFullPlan(name: $name, space: $space, privateRepos: $privateRepos, filledSeats: $filledSeats, seats: $seats)'; } 
+          seats == other.seats;
+
+@override int get hashCode => Object.hash(name, space, privateRepos, filledSeats, seats);
+
+@override String toString() => 'OrganizationFullPlan(name: $name, space: $space, privateRepos: $privateRepos, filledSeats: $filledSeats, seats: $seats)';
+
  }

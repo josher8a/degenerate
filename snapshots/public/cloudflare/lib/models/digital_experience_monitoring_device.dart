@@ -216,7 +216,7 @@ DigitalExperienceMonitoringDevice copyWith({bool? Function()? alwaysOn, bool? Fu
   version: version ?? this.version,
   wifiStrengthDbm: wifiStrengthDbm != null ? wifiStrengthDbm() : this.wifiStrengthDbm,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDevice &&
           alwaysOn == other.alwaysOn &&
           batteryCharging == other.batteryCharging &&
@@ -255,7 +255,10 @@ DigitalExperienceMonitoringDevice copyWith({bool? Function()? alwaysOn, bool? Fu
           switchLocked == other.switchLocked &&
           timestamp == other.timestamp &&
           version == other.version &&
-          wifiStrengthDbm == other.wifiStrengthDbm; } 
-@override int get hashCode { return Object.hashAll([alwaysOn, batteryCharging, batteryCycles, batteryPct, colo, connectionType, cpuPct, Object.hashAll(cpuPctByApp ?? const []), deviceId, deviceIpv4, deviceIpv6, deviceName, diskReadBps, diskUsagePct, diskWriteBps, dohSubdomain, estimatedLossPct, firewallEnabled, gatewayIpv4, gatewayIpv6, handshakeLatencyMs, ispIpv4, ispIpv6, metal, mode, networkRcvdBps, networkSentBps, networkSsid, personEmail, platform, ramAvailableKb, ramUsedPct, Object.hashAll(ramUsedPctByApp ?? const []), status, switchLocked, timestamp, version, wifiStrengthDbm]); } 
-@override String toString() { return 'DigitalExperienceMonitoringDevice(alwaysOn: $alwaysOn, batteryCharging: $batteryCharging, batteryCycles: $batteryCycles, batteryPct: $batteryPct, colo: $colo, connectionType: $connectionType, cpuPct: $cpuPct, cpuPctByApp: $cpuPctByApp, deviceId: $deviceId, deviceIpv4: $deviceIpv4, deviceIpv6: $deviceIpv6, deviceName: $deviceName, diskReadBps: $diskReadBps, diskUsagePct: $diskUsagePct, diskWriteBps: $diskWriteBps, dohSubdomain: $dohSubdomain, estimatedLossPct: $estimatedLossPct, firewallEnabled: $firewallEnabled, gatewayIpv4: $gatewayIpv4, gatewayIpv6: $gatewayIpv6, handshakeLatencyMs: $handshakeLatencyMs, ispIpv4: $ispIpv4, ispIpv6: $ispIpv6, metal: $metal, mode: $mode, networkRcvdBps: $networkRcvdBps, networkSentBps: $networkSentBps, networkSsid: $networkSsid, personEmail: $personEmail, platform: $platform, ramAvailableKb: $ramAvailableKb, ramUsedPct: $ramUsedPct, ramUsedPctByApp: $ramUsedPctByApp, status: $status, switchLocked: $switchLocked, timestamp: $timestamp, version: $version, wifiStrengthDbm: $wifiStrengthDbm)'; } 
+          wifiStrengthDbm == other.wifiStrengthDbm;
+
+@override int get hashCode => Object.hashAll([alwaysOn, batteryCharging, batteryCycles, batteryPct, colo, connectionType, cpuPct, Object.hashAll(cpuPctByApp ?? const []), deviceId, deviceIpv4, deviceIpv6, deviceName, diskReadBps, diskUsagePct, diskWriteBps, dohSubdomain, estimatedLossPct, firewallEnabled, gatewayIpv4, gatewayIpv6, handshakeLatencyMs, ispIpv4, ispIpv6, metal, mode, networkRcvdBps, networkSentBps, networkSsid, personEmail, platform, ramAvailableKb, ramUsedPct, Object.hashAll(ramUsedPctByApp ?? const []), status, switchLocked, timestamp, version, wifiStrengthDbm]);
+
+@override String toString() => 'DigitalExperienceMonitoringDevice(alwaysOn: $alwaysOn, batteryCharging: $batteryCharging, batteryCycles: $batteryCycles, batteryPct: $batteryPct, colo: $colo, connectionType: $connectionType, cpuPct: $cpuPct, cpuPctByApp: $cpuPctByApp, deviceId: $deviceId, deviceIpv4: $deviceIpv4, deviceIpv6: $deviceIpv6, deviceName: $deviceName, diskReadBps: $diskReadBps, diskUsagePct: $diskUsagePct, diskWriteBps: $diskWriteBps, dohSubdomain: $dohSubdomain, estimatedLossPct: $estimatedLossPct, firewallEnabled: $firewallEnabled, gatewayIpv4: $gatewayIpv4, gatewayIpv6: $gatewayIpv6, handshakeLatencyMs: $handshakeLatencyMs, ispIpv4: $ispIpv4, ispIpv6: $ispIpv6, metal: $metal, mode: $mode, networkRcvdBps: $networkRcvdBps, networkSentBps: $networkSentBps, networkSsid: $networkSsid, personEmail: $personEmail, platform: $platform, ramAvailableKb: $ramAvailableKb, ramUsedPct: $ramUsedPct, ramUsedPctByApp: $ramUsedPctByApp, status: $status, switchLocked: $switchLocked, timestamp: $timestamp, version: $version, wifiStrengthDbm: $wifiStrengthDbm)';
+
  }

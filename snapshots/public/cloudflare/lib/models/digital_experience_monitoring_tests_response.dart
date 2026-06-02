@@ -22,10 +22,13 @@ DigitalExperienceMonitoringTestsResponse copyWith({OverviewMetrics? overviewMetr
   overviewMetrics: overviewMetrics ?? this.overviewMetrics,
   tests: tests ?? this.tests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTestsResponse &&
           overviewMetrics == other.overviewMetrics &&
-          listEquals(tests, other.tests); } 
-@override int get hashCode { return Object.hash(overviewMetrics, Object.hashAll(tests)); } 
-@override String toString() { return 'DigitalExperienceMonitoringTestsResponse(overviewMetrics: $overviewMetrics, tests: $tests)'; } 
+          listEquals(tests, other.tests);
+
+@override int get hashCode => Object.hash(overviewMetrics, Object.hashAll(tests));
+
+@override String toString() => 'DigitalExperienceMonitoringTestsResponse(overviewMetrics: $overviewMetrics, tests: $tests)';
+
  }

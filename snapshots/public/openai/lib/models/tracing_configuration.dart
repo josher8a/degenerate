@@ -36,11 +36,14 @@ TracingConfiguration copyWith({String? Function()? workflowName, String? Functio
   groupId: groupId != null ? groupId() : this.groupId,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TracingConfiguration &&
           workflowName == other.workflowName &&
           groupId == other.groupId &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(workflowName, groupId, metadata); } 
-@override String toString() { return 'TracingConfiguration(workflowName: $workflowName, groupId: $groupId, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(workflowName, groupId, metadata);
+
+@override String toString() => 'TracingConfiguration(workflowName: $workflowName, groupId: $groupId, metadata: $metadata)';
+
  }

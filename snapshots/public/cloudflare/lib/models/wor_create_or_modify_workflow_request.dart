@@ -33,11 +33,14 @@ WorCreateOrModifyWorkflowRequest copyWith({String? className, WorCreateOrModifyW
   limits: limits != null ? limits() : this.limits,
   scriptName: scriptName ?? this.scriptName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateOrModifyWorkflowRequest &&
           className == other.className &&
           limits == other.limits &&
-          scriptName == other.scriptName; } 
-@override int get hashCode { return Object.hash(className, limits, scriptName); } 
-@override String toString() { return 'WorCreateOrModifyWorkflowRequest(className: $className, limits: $limits, scriptName: $scriptName)'; } 
+          scriptName == other.scriptName;
+
+@override int get hashCode => Object.hash(className, limits, scriptName);
+
+@override String toString() => 'WorCreateOrModifyWorkflowRequest(className: $className, limits: $limits, scriptName: $scriptName)';
+
  }

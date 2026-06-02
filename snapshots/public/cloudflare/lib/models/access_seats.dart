@@ -38,13 +38,16 @@ AccessSeats copyWith({AccessAccessSeat? Function()? accessSeat, AccessTimestamp?
   seatUid: seatUid != null ? seatUid() : this.seatUid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSeats &&
           accessSeat == other.accessSeat &&
           createdAt == other.createdAt &&
           gatewaySeat == other.gatewaySeat &&
           seatUid == other.seatUid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(accessSeat, createdAt, gatewaySeat, seatUid, updatedAt); } 
-@override String toString() { return 'AccessSeats(accessSeat: $accessSeat, createdAt: $createdAt, gatewaySeat: $gatewaySeat, seatUid: $seatUid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(accessSeat, createdAt, gatewaySeat, seatUid, updatedAt);
+
+@override String toString() => 'AccessSeats(accessSeat: $accessSeat, createdAt: $createdAt, gatewaySeat: $gatewaySeat, seatUid: $seatUid, updatedAt: $updatedAt)';
+
  }

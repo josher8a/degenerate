@@ -37,12 +37,15 @@ FunctionShellCallOutputContent copyWith({String? stdout, String? stderr, Outcome
   outcome: outcome ?? this.outcome,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputContent &&
           stdout == other.stdout &&
           stderr == other.stderr &&
           outcome == other.outcome &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(stdout, stderr, outcome, createdBy); } 
-@override String toString() { return 'FunctionShellCallOutputContent(stdout: $stdout, stderr: $stderr, outcome: $outcome, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(stdout, stderr, outcome, createdBy);
+
+@override String toString() => 'FunctionShellCallOutputContent(stdout: $stdout, stderr: $stderr, outcome: $outcome, createdBy: $createdBy)';
+
  }

@@ -55,14 +55,17 @@ UrlscannerCreateScanBulkRequest copyWith({Map<String, String>? Function()? custo
   url: url ?? this.url,
   visibility: visibility != null ? visibility() : this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanBulkRequest &&
           customHeaders == other.customHeaders &&
           customagent == other.customagent &&
           referer == other.referer &&
           listEquals(screenshotsResolutions, other.screenshotsResolutions) &&
           url == other.url &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanBulkRequest(customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility);
+
+@override String toString() => 'UrlscannerCreateScanBulkRequest(customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)';
+
  }

@@ -22,10 +22,13 @@ MessageContentTextObjectText copyWith({String? value, List<MessageContentTextObj
   value: value ?? this.value,
   annotations: annotations ?? this.annotations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentTextObjectText &&
           value == other.value &&
-          listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hash(value, Object.hashAll(annotations)); } 
-@override String toString() { return 'MessageContentTextObjectText(value: $value, annotations: $annotations)'; } 
+          listEquals(annotations, other.annotations);
+
+@override int get hashCode => Object.hash(value, Object.hashAll(annotations));
+
+@override String toString() => 'MessageContentTextObjectText(value: $value, annotations: $annotations)';
+
  }

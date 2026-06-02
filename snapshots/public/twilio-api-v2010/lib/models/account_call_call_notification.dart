@@ -115,7 +115,7 @@ AccountCallCallNotification copyWith({String? Function()? accountSid, String? Fu
   sid: sid != null ? sid() : this.sid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallCallNotification &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -130,7 +130,10 @@ AccountCallCallNotification copyWith({String? Function()? accountSid, String? Fu
           requestMethod == other.requestMethod &&
           requestUrl == other.requestUrl &&
           sid == other.sid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, sid, uri); } 
-@override String toString() { return 'AccountCallCallNotification(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, sid: $sid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, sid, uri);
+
+@override String toString() => 'AccountCallCallNotification(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, sid: $sid, uri: $uri)';
+
  }

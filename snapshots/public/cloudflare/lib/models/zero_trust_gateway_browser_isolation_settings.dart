@@ -27,10 +27,13 @@ ZeroTrustGatewayBrowserIsolationSettings copyWith({bool? Function()? nonIdentity
   nonIdentityEnabled: nonIdentityEnabled != null ? nonIdentityEnabled() : this.nonIdentityEnabled,
   urlBrowserIsolationEnabled: urlBrowserIsolationEnabled != null ? urlBrowserIsolationEnabled() : this.urlBrowserIsolationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayBrowserIsolationSettings &&
           nonIdentityEnabled == other.nonIdentityEnabled &&
-          urlBrowserIsolationEnabled == other.urlBrowserIsolationEnabled; } 
-@override int get hashCode { return Object.hash(nonIdentityEnabled, urlBrowserIsolationEnabled); } 
-@override String toString() { return 'ZeroTrustGatewayBrowserIsolationSettings(nonIdentityEnabled: $nonIdentityEnabled, urlBrowserIsolationEnabled: $urlBrowserIsolationEnabled)'; } 
+          urlBrowserIsolationEnabled == other.urlBrowserIsolationEnabled;
+
+@override int get hashCode => Object.hash(nonIdentityEnabled, urlBrowserIsolationEnabled);
+
+@override String toString() => 'ZeroTrustGatewayBrowserIsolationSettings(nonIdentityEnabled: $nonIdentityEnabled, urlBrowserIsolationEnabled: $urlBrowserIsolationEnabled)';
+
  }

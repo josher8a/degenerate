@@ -34,12 +34,15 @@ ActionsForkPrWorkflowsPrivateReposRequest copyWith({bool? runWorkflowsFromForkPu
   sendSecretsAndVariables: sendSecretsAndVariables != null ? sendSecretsAndVariables() : this.sendSecretsAndVariables,
   requireApprovalForForkPrWorkflows: requireApprovalForForkPrWorkflows != null ? requireApprovalForForkPrWorkflows() : this.requireApprovalForForkPrWorkflows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsForkPrWorkflowsPrivateReposRequest &&
           runWorkflowsFromForkPullRequests == other.runWorkflowsFromForkPullRequests &&
           sendWriteTokensToWorkflows == other.sendWriteTokensToWorkflows &&
           sendSecretsAndVariables == other.sendSecretsAndVariables &&
-          requireApprovalForForkPrWorkflows == other.requireApprovalForForkPrWorkflows; } 
-@override int get hashCode { return Object.hash(runWorkflowsFromForkPullRequests, sendWriteTokensToWorkflows, sendSecretsAndVariables, requireApprovalForForkPrWorkflows); } 
-@override String toString() { return 'ActionsForkPrWorkflowsPrivateReposRequest(runWorkflowsFromForkPullRequests: $runWorkflowsFromForkPullRequests, sendWriteTokensToWorkflows: $sendWriteTokensToWorkflows, sendSecretsAndVariables: $sendSecretsAndVariables, requireApprovalForForkPrWorkflows: $requireApprovalForForkPrWorkflows)'; } 
+          requireApprovalForForkPrWorkflows == other.requireApprovalForForkPrWorkflows;
+
+@override int get hashCode => Object.hash(runWorkflowsFromForkPullRequests, sendWriteTokensToWorkflows, sendSecretsAndVariables, requireApprovalForForkPrWorkflows);
+
+@override String toString() => 'ActionsForkPrWorkflowsPrivateReposRequest(runWorkflowsFromForkPullRequests: $runWorkflowsFromForkPullRequests, sendWriteTokensToWorkflows: $sendWriteTokensToWorkflows, sendSecretsAndVariables: $sendSecretsAndVariables, requireApprovalForForkPrWorkflows: $requireApprovalForForkPrWorkflows)';
+
  }

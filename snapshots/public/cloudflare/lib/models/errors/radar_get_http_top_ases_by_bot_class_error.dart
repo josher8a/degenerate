@@ -17,7 +17,8 @@ final class RadarGetHttpTopAsesByBotClassError$404 extends RadarGetHttpTopAsesBy
 
 final RadarGetHttpTopAsesByBotClassResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetHttpTopAsesByBotClassError$Unknown extends RadarGetHttpTopAsesByBotClassError {const RadarGetHttpTopAsesByBotClassError$Unknown(this.statusCode, this.rawBody, );
 

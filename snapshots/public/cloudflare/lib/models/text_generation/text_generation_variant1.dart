@@ -28,11 +28,14 @@ TextGenerationVariant1 copyWith({String? response, List<Variant1ToolCalls>? Func
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextGenerationVariant1 &&
           response == other.response &&
           listEquals(toolCalls, other.toolCalls) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(response, Object.hashAll(toolCalls ?? const []), usage); } 
-@override String toString() { return 'TextGenerationVariant1(response: $response, toolCalls: $toolCalls, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(response, Object.hashAll(toolCalls ?? const []), usage);
+
+@override String toString() => 'TextGenerationVariant1(response: $response, toolCalls: $toolCalls, usage: $usage)';
+
  }

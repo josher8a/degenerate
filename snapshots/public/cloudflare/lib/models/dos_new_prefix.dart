@@ -32,11 +32,14 @@ DosNewPrefix copyWith({String? comment, bool? excluded, String? prefix, }) { ret
   excluded: excluded ?? this.excluded,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewPrefix &&
           comment == other.comment &&
           excluded == other.excluded &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, excluded, prefix); } 
-@override String toString() { return 'DosNewPrefix(comment: $comment, excluded: $excluded, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(comment, excluded, prefix);
+
+@override String toString() => 'DosNewPrefix(comment: $comment, excluded: $excluded, prefix: $prefix)';
+
  }

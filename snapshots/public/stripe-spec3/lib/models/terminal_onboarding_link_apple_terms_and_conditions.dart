@@ -27,10 +27,13 @@ TerminalOnboardingLinkAppleTermsAndConditions copyWith({bool? Function()? allowR
   allowRelinking: allowRelinking != null ? allowRelinking() : this.allowRelinking,
   merchantDisplayName: merchantDisplayName ?? this.merchantDisplayName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalOnboardingLinkAppleTermsAndConditions &&
           allowRelinking == other.allowRelinking &&
-          merchantDisplayName == other.merchantDisplayName; } 
-@override int get hashCode { return Object.hash(allowRelinking, merchantDisplayName); } 
-@override String toString() { return 'TerminalOnboardingLinkAppleTermsAndConditions(allowRelinking: $allowRelinking, merchantDisplayName: $merchantDisplayName)'; } 
+          merchantDisplayName == other.merchantDisplayName;
+
+@override int get hashCode => Object.hash(allowRelinking, merchantDisplayName);
+
+@override String toString() => 'TerminalOnboardingLinkAppleTermsAndConditions(allowRelinking: $allowRelinking, merchantDisplayName: $merchantDisplayName)';
+
  }

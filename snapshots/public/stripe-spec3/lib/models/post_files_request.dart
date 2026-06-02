@@ -59,10 +59,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostFilesRequestPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostFilesRequestPurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostFilesRequestPurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostFilesRequestPurpose($value)';
+
  }
 @immutable final class PostFilesRequest {const PostFilesRequest({required this.file, required this.purpose, this.expand, this.fileLinkData, });
 
@@ -99,12 +102,15 @@ PostFilesRequest copyWith({List<String>? Function()? expand, Uint8List? file, Fi
   fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,
   purpose: purpose ?? this.purpose,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostFilesRequest &&
           listEquals(expand, other.expand) &&
           file == other.file &&
           fileLinkData == other.fileLinkData &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), file, fileLinkData, purpose); } 
-@override String toString() { return 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)'; } 
+          purpose == other.purpose;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), file, fileLinkData, purpose);
+
+@override String toString() => 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoginLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoginLinkObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoginLinkObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LoginLinkObject($value)';
+
  }
 /// Login Links are single-use URLs that takes an Express account to the login page for their Stripe dashboard.
 /// A Login Link differs from an [Account Link](https://docs.stripe.com/api/account_links) in that it takes the user directly to their [Express dashboard for the specified account](https://docs.stripe.com/connect/integrate-express-dashboard#create-login-link)
@@ -58,11 +61,14 @@ LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) { ret
   object: object ?? this.object,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoginLink &&
           created == other.created &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, object, url); } 
-@override String toString() { return 'LoginLink(created: $created, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(created, object, url);
+
+@override String toString() => 'LoginLink(created: $created, object: $object, url: $url)';
+
  }

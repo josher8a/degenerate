@@ -23,10 +23,13 @@ PaymentPagesCheckoutSessionDiscount copyWith({DiscountSourceCoupon? Function()? 
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionDiscount &&
           coupon == other.coupon &&
-          promotionCode == other.promotionCode; } 
-@override int get hashCode { return Object.hash(coupon, promotionCode); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionDiscount(coupon: $coupon, promotionCode: $promotionCode)'; } 
+          promotionCode == other.promotionCode;
+
+@override int get hashCode => Object.hash(coupon, promotionCode);
+
+@override String toString() => 'PaymentPagesCheckoutSessionDiscount(coupon: $coupon, promotionCode: $promotionCode)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('kid')
 ShieldCredentialsJwtKeyCommon copyWith({String? kid}) { return ShieldCredentialsJwtKeyCommon(
   kid: kid ?? this.kid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentialsJwtKeyCommon &&
-          kid == other.kid; } 
-@override int get hashCode { return kid.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyCommon(kid: $kid)'; } 
+          kid == other.kid;
+
+@override int get hashCode => kid.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyCommon(kid: $kid)';
+
  }

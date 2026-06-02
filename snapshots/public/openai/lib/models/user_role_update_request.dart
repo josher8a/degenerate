@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('role'
 UserRoleUpdateRequest copyWith({InviteRequestRole? role}) { return UserRoleUpdateRequest(
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserRoleUpdateRequest &&
-          role == other.role; } 
-@override int get hashCode { return role.hashCode; } 
-@override String toString() { return 'UserRoleUpdateRequest(role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => role.hashCode;
+
+@override String toString() => 'UserRoleUpdateRequest(role: $role)';
+
  }

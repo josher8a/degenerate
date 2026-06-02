@@ -27,11 +27,14 @@ RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 copyWith({List<Str
   https: https ?? this.https,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 &&
           listEquals(http, other.http) &&
           listEquals(https, other.https) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(http), Object.hashAll(https), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(http: $http, https: $https, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(http), Object.hashAll(https), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(http: $http, https: $https, timestamps: $timestamps)';
+
  }

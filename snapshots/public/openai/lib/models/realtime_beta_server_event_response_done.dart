@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseDoneType($value)';
+
  }
 /// Returned when a Response is done streaming. Always emitted, no matter the
 /// final state. The Response object included in the `response.done` event will
@@ -55,11 +58,14 @@ RealtimeBetaServerEventResponseDone copyWith({String? eventId, RealtimeBetaServe
   type: type ?? this.type,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseDone &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseDone(eventId: $eventId, type: $type, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(eventId, type, response);
+
+@override String toString() => 'RealtimeBetaServerEventResponseDone(eventId: $eventId, type: $type, response: $response)';
+
  }

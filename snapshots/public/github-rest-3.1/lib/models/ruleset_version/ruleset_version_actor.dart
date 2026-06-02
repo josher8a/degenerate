@@ -21,10 +21,13 @@ RulesetVersionActor copyWith({int? Function()? id, String? Function()? type, }) 
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetVersionActor &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, type); } 
-@override String toString() { return 'RulesetVersionActor(id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, type);
+
+@override String toString() => 'RulesetVersionActor(id: $id, type: $type)';
+
  }

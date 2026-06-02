@@ -23,10 +23,13 @@ Requester copyWith({int? Function()? id, String? Function()? login, }) { return 
   id: id != null ? id() : this.id,
   login: login != null ? login() : this.login,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Requester &&
           id == other.id &&
-          login == other.login; } 
-@override int get hashCode { return Object.hash(id, login); } 
-@override String toString() { return 'Requester(id: $id, login: $login)'; } 
+          login == other.login;
+
+@override int get hashCode => Object.hash(id, login);
+
+@override String toString() => 'Requester(id: $id, login: $login)';
+
  }

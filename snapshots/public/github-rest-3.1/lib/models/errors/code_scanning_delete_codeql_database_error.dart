@@ -19,19 +19,22 @@ final class CodeScanningDeleteCodeqlDatabaseError$403 extends CodeScanningDelete
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningDeleteCodeqlDatabaseError$404 extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningDeleteCodeqlDatabaseError$503 extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError$503(this.error);
 
 final CodeScanningDeleteCodeqlDatabaseResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningDeleteCodeqlDatabaseError$Unknown extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError$Unknown(this.statusCode, this.rawBody, );
 

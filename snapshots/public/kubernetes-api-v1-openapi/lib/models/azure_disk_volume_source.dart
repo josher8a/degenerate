@@ -48,14 +48,17 @@ AzureDiskVolumeSource copyWith({String Function()? cachingMode, String? diskName
   kind: kind != null ? kind() : this.kind,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AzureDiskVolumeSource &&
           cachingMode == other.cachingMode &&
           diskName == other.diskName &&
           diskUri == other.diskUri &&
           fsType == other.fsType &&
           kind == other.kind &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(cachingMode, diskName, diskUri, fsType, kind, readOnly); } 
-@override String toString() { return 'AzureDiskVolumeSource(cachingMode: $cachingMode, diskName: $diskName, diskUri: $diskUri, fsType: $fsType, kind: $kind, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(cachingMode, diskName, diskUri, fsType, kind, readOnly);
+
+@override String toString() => 'AzureDiskVolumeSource(cachingMode: $cachingMode, diskName: $diskName, diskUri: $diskUri, fsType: $fsType, kind: $kind, readOnly: $readOnly)';
+
  }

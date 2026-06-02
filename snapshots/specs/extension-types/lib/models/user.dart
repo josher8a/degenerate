@@ -71,14 +71,17 @@ User copyWith({UserId? id, String? name, Timestamp? createdAt, Score? Function()
   ratio: ratio != null ? ratio() : this.ratio,
   active: active != null ? active() : this.active,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is User &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
           score == other.score &&
           ratio == other.ratio &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(id, name, createdAt, score, ratio, active); } 
-@override String toString() { return 'User(id: $id, name: $name, createdAt: $createdAt, score: $score, ratio: $ratio, active: $active)'; } 
+          active == other.active;
+
+@override int get hashCode => Object.hash(id, name, createdAt, score, ratio, active);
+
+@override String toString() => 'User(id: $id, name: $name, createdAt: $createdAt, score: $score, ratio: $ratio, active: $active)';
+
  }

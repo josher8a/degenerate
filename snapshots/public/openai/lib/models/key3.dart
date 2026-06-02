@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Key3Object && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Key3Object($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Key3Object && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Key3Object($value)';
+
  }
 /// Represents an individual API key in a project.
 @immutable final class Key3 {const Key3({required this.object, required this.redactedValue, required this.name, required this.createdAt, required this.lastUsedAt, required this.id, required this.owner, });
@@ -80,7 +83,7 @@ Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? cre
   id: id ?? this.id,
   owner: owner ?? this.owner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Key3 &&
           object == other.object &&
           redactedValue == other.redactedValue &&
@@ -88,7 +91,10 @@ Key3 copyWith({Key3Object? object, String? redactedValue, String? name, int? cre
           createdAt == other.createdAt &&
           lastUsedAt == other.lastUsedAt &&
           id == other.id &&
-          owner == other.owner; } 
-@override int get hashCode { return Object.hash(object, redactedValue, name, createdAt, lastUsedAt, id, owner); } 
-@override String toString() { return 'Key3(object: $object, redactedValue: $redactedValue, name: $name, createdAt: $createdAt, lastUsedAt: $lastUsedAt, id: $id, owner: $owner)'; } 
+          owner == other.owner;
+
+@override int get hashCode => Object.hash(object, redactedValue, name, createdAt, lastUsedAt, id, owner);
+
+@override String toString() => 'Key3(object: $object, redactedValue: $redactedValue, name: $name, createdAt: $createdAt, lastUsedAt: $lastUsedAt, id: $id, owner: $owner)';
+
  }

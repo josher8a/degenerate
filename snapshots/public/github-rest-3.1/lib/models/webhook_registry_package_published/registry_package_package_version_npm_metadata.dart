@@ -195,7 +195,7 @@ RegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, Str
   publishedViaActions: publishedViaActions != null ? publishedViaActions() : this.publishedViaActions,
   deletedById: deletedById != null ? deletedById() : this.deletedById,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackagePackageVersionNpmMetadata &&
           name == other.name &&
           version == other.version &&
@@ -233,7 +233,10 @@ RegistryPackagePackageVersionNpmMetadata copyWith({String? Function()? name, Str
           releaseId == other.releaseId &&
           commitOid == other.commitOid &&
           publishedViaActions == other.publishedViaActions &&
-          deletedById == other.deletedById; } 
-@override int get hashCode { return Object.hashAll([name, version, npmUser, author, bugs, dependencies, devDependencies, peerDependencies, optionalDependencies, description, dist, gitHead, homepage, license, main, repository, scripts, id, nodeVersion, npmVersion, hasShrinkwrap, Object.hashAll(maintainers ?? const []), Object.hashAll(contributors ?? const []), engines, Object.hashAll(keywords ?? const []), Object.hashAll(files ?? const []), bin, man, directories, Object.hashAll(os ?? const []), Object.hashAll(cpu ?? const []), readme, installationCommand, releaseId, commitOid, publishedViaActions, deletedById]); } 
-@override String toString() { return 'RegistryPackagePackageVersionNpmMetadata(name: $name, version: $version, npmUser: $npmUser, author: $author, bugs: $bugs, dependencies: $dependencies, devDependencies: $devDependencies, peerDependencies: $peerDependencies, optionalDependencies: $optionalDependencies, description: $description, dist: $dist, gitHead: $gitHead, homepage: $homepage, license: $license, main: $main, repository: $repository, scripts: $scripts, id: $id, nodeVersion: $nodeVersion, npmVersion: $npmVersion, hasShrinkwrap: $hasShrinkwrap, maintainers: $maintainers, contributors: $contributors, engines: $engines, keywords: $keywords, files: $files, bin: $bin, man: $man, directories: $directories, os: $os, cpu: $cpu, readme: $readme, installationCommand: $installationCommand, releaseId: $releaseId, commitOid: $commitOid, publishedViaActions: $publishedViaActions, deletedById: $deletedById)'; } 
+          deletedById == other.deletedById;
+
+@override int get hashCode => Object.hashAll([name, version, npmUser, author, bugs, dependencies, devDependencies, peerDependencies, optionalDependencies, description, dist, gitHead, homepage, license, main, repository, scripts, id, nodeVersion, npmVersion, hasShrinkwrap, Object.hashAll(maintainers ?? const []), Object.hashAll(contributors ?? const []), engines, Object.hashAll(keywords ?? const []), Object.hashAll(files ?? const []), bin, man, directories, Object.hashAll(os ?? const []), Object.hashAll(cpu ?? const []), readme, installationCommand, releaseId, commitOid, publishedViaActions, deletedById]);
+
+@override String toString() => 'RegistryPackagePackageVersionNpmMetadata(name: $name, version: $version, npmUser: $npmUser, author: $author, bugs: $bugs, dependencies: $dependencies, devDependencies: $devDependencies, peerDependencies: $peerDependencies, optionalDependencies: $optionalDependencies, description: $description, dist: $dist, gitHead: $gitHead, homepage: $homepage, license: $license, main: $main, repository: $repository, scripts: $scripts, id: $id, nodeVersion: $nodeVersion, npmVersion: $npmVersion, hasShrinkwrap: $hasShrinkwrap, maintainers: $maintainers, contributors: $contributors, engines: $engines, keywords: $keywords, files: $files, bin: $bin, man: $man, directories: $directories, os: $os, cpu: $cpu, readme: $readme, installationCommand: $installationCommand, releaseId: $releaseId, commitOid: $commitOid, publishedViaActions: $publishedViaActions, deletedById: $deletedById)';
+
  }

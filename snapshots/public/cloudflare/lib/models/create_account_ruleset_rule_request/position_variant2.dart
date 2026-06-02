@@ -25,9 +25,12 @@ return errors; }
 PositionVariant2 copyWith({String? Function()? after}) { return PositionVariant2(
   after: after != null ? after() : this.after,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PositionVariant2 &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'PositionVariant2(after: $after)'; } 
+          after == other.after;
+
+@override int get hashCode => after.hashCode;
+
+@override String toString() => 'PositionVariant2(after: $after)';
+
  }

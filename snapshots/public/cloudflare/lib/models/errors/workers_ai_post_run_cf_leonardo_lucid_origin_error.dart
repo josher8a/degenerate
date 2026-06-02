@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfLeonardoLucidOriginError$400 extends WorkersAiPost
 
 final WorkersAiPostRunCfLeonardoLucidOriginResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfLeonardoLucidOriginError$Unknown extends WorkersAiPostRunCfLeonardoLucidOriginError {const WorkersAiPostRunCfLeonardoLucidOriginError$Unknown(this.statusCode, this.rawBody, );
 

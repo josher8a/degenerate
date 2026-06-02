@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 EphemeralVolumeSource copyWith({PersistentVolumeClaimTemplate? Function()? volumeClaimTemplate}) { return EphemeralVolumeSource(
   volumeClaimTemplate: volumeClaimTemplate != null ? volumeClaimTemplate() : this.volumeClaimTemplate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EphemeralVolumeSource &&
-          volumeClaimTemplate == other.volumeClaimTemplate; } 
-@override int get hashCode { return volumeClaimTemplate.hashCode; } 
-@override String toString() { return 'EphemeralVolumeSource(volumeClaimTemplate: $volumeClaimTemplate)'; } 
+          volumeClaimTemplate == other.volumeClaimTemplate;
+
+@override int get hashCode => volumeClaimTemplate.hashCode;
+
+@override String toString() => 'EphemeralVolumeSource(volumeClaimTemplate: $volumeClaimTemplate)';
+
  }

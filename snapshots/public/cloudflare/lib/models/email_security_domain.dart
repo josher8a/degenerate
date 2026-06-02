@@ -155,7 +155,7 @@ EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryMo
   spfStatus: spfStatus != null ? spfStatus() : this.spfStatus,
   transport: transport ?? this.transport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityDomain &&
           listEquals(allowedDeliveryModes, other.allowedDeliveryModes) &&
           authorization == other.authorization &&
@@ -176,7 +176,10 @@ EmailSecurityDomain copyWith({List<EmailSecurityDeliveryMode>? allowedDeliveryMo
           requireTlsInbound == other.requireTlsInbound &&
           requireTlsOutbound == other.requireTlsOutbound &&
           spfStatus == other.spfStatus &&
-          transport == other.transport; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedDeliveryModes), authorization, createdAt, dmarcStatus, domain, Object.hashAll(dropDispositions), emailsProcessed, folder, id, inboxProvider, integrationId, Object.hashAll(ipRestrictions), lastModified, lookbackHops, o365TenantId, Object.hashAll(regions), requireTlsInbound, requireTlsOutbound, spfStatus, transport); } 
-@override String toString() { return 'EmailSecurityDomain(allowedDeliveryModes: $allowedDeliveryModes, authorization: $authorization, createdAt: $createdAt, dmarcStatus: $dmarcStatus, domain: $domain, dropDispositions: $dropDispositions, emailsProcessed: $emailsProcessed, folder: $folder, id: $id, inboxProvider: $inboxProvider, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lastModified: $lastModified, lookbackHops: $lookbackHops, o365TenantId: $o365TenantId, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, spfStatus: $spfStatus, transport: $transport)'; } 
+          transport == other.transport;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedDeliveryModes), authorization, createdAt, dmarcStatus, domain, Object.hashAll(dropDispositions), emailsProcessed, folder, id, inboxProvider, integrationId, Object.hashAll(ipRestrictions), lastModified, lookbackHops, o365TenantId, Object.hashAll(regions), requireTlsInbound, requireTlsOutbound, spfStatus, transport);
+
+@override String toString() => 'EmailSecurityDomain(allowedDeliveryModes: $allowedDeliveryModes, authorization: $authorization, createdAt: $createdAt, dmarcStatus: $dmarcStatus, domain: $domain, dropDispositions: $dropDispositions, emailsProcessed: $emailsProcessed, folder: $folder, id: $id, inboxProvider: $inboxProvider, integrationId: $integrationId, ipRestrictions: $ipRestrictions, lastModified: $lastModified, lookbackHops: $lookbackHops, o365TenantId: $o365TenantId, regions: $regions, requireTlsInbound: $requireTlsInbound, requireTlsOutbound: $requireTlsOutbound, spfStatus: $spfStatus, transport: $transport)';
+
  }

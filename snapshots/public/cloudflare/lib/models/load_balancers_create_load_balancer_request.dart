@@ -124,7 +124,7 @@ LoadBalancersCreateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? F
   steeringPolicy: steeringPolicy != null ? steeringPolicy() : this.steeringPolicy,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancersCreateLoadBalancerRequest &&
           adaptiveRouting == other.adaptiveRouting &&
           countryPools == other.countryPools &&
@@ -143,7 +143,10 @@ LoadBalancersCreateLoadBalancerRequest copyWith({LoadBalancingAdaptiveRouting? F
           sessionAffinityAttributes == other.sessionAffinityAttributes &&
           sessionAffinityTtl == other.sessionAffinityTtl &&
           steeringPolicy == other.steeringPolicy &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools), description, fallbackPool, locationStrategy, name, Object.hashAll(networks ?? const []), popPools, proxied, randomSteering, regionPools, Object.hashAll(rules ?? const []), sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl); } 
-@override String toString() { return 'LoadBalancersCreateLoadBalancerRequest(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, description: $description, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, name: $name, networks: $networks, popPools: $popPools, proxied: $proxied, randomSteering: $randomSteering, regionPools: $regionPools, rules: $rules, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools), description, fallbackPool, locationStrategy, name, Object.hashAll(networks ?? const []), popPools, proxied, randomSteering, regionPools, Object.hashAll(rules ?? const []), sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl);
+
+@override String toString() => 'LoadBalancersCreateLoadBalancerRequest(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, description: $description, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, name: $name, networks: $networks, popPools: $popPools, proxied: $proxied, randomSteering: $randomSteering, regionPools: $regionPools, rules: $rules, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)';
+
  }

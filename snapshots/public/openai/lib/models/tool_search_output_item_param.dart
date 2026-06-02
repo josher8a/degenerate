@@ -54,14 +54,17 @@ ToolSearchOutputItemParam copyWith({String? Function()? id, String? Function()? 
   tools: tools ?? this.tools,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchOutputItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           execution == other.execution &&
           listEquals(tools, other.tools) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, callId, type, execution, Object.hashAll(tools), status); } 
-@override String toString() { return 'ToolSearchOutputItemParam(id: $id, callId: $callId, type: $type, execution: $execution, tools: $tools, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, callId, type, execution, Object.hashAll(tools), status);
+
+@override String toString() => 'ToolSearchOutputItemParam(id: $id, callId: $callId, type: $type, execution: $execution, tools: $tools, status: $status)';
+
  }

@@ -45,14 +45,17 @@ WebhookWorkflowJobWaitingWorkflowJobSteps copyWith({String? Function()? complete
   startedAt: startedAt != null ? startedAt() : this.startedAt,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobWaitingWorkflowJobSteps &&
           completedAt == other.completedAt &&
           conclusion == other.conclusion &&
           name == other.name &&
           number == other.number &&
           startedAt == other.startedAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(completedAt, conclusion, name, number, startedAt, status); } 
-@override String toString() { return 'WebhookWorkflowJobWaitingWorkflowJobSteps(completedAt: $completedAt, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(completedAt, conclusion, name, number, startedAt, status);
+
+@override String toString() => 'WebhookWorkflowJobWaitingWorkflowJobSteps(completedAt: $completedAt, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, status: $status)';
+
  }

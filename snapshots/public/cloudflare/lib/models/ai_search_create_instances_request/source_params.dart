@@ -52,13 +52,16 @@ SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Fun
   r2Jurisdiction: r2Jurisdiction != null ? r2Jurisdiction() : this.r2Jurisdiction,
   webCrawler: webCrawler != null ? webCrawler() : this.webCrawler,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceParams &&
           listEquals(excludeItems, other.excludeItems) &&
           listEquals(includeItems, other.includeItems) &&
           prefix == other.prefix &&
           r2Jurisdiction == other.r2Jurisdiction &&
-          webCrawler == other.webCrawler; } 
-@override int get hashCode { return Object.hash(Object.hashAll(excludeItems ?? const []), Object.hashAll(includeItems ?? const []), prefix, r2Jurisdiction, webCrawler); } 
-@override String toString() { return 'SourceParams(excludeItems: $excludeItems, includeItems: $includeItems, prefix: $prefix, r2Jurisdiction: $r2Jurisdiction, webCrawler: $webCrawler)'; } 
+          webCrawler == other.webCrawler;
+
+@override int get hashCode => Object.hash(Object.hashAll(excludeItems ?? const []), Object.hashAll(includeItems ?? const []), prefix, r2Jurisdiction, webCrawler);
+
+@override String toString() => 'SourceParams(excludeItems: $excludeItems, includeItems: $includeItems, prefix: $prefix, r2Jurisdiction: $r2Jurisdiction, webCrawler: $webCrawler)';
+
  }

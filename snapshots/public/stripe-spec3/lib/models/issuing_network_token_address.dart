@@ -29,10 +29,13 @@ IssuingNetworkTokenAddress copyWith({String? line1, String? postalCode, }) { ret
   line1: line1 ?? this.line1,
   postalCode: postalCode ?? this.postalCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenAddress &&
           line1 == other.line1 &&
-          postalCode == other.postalCode; } 
-@override int get hashCode { return Object.hash(line1, postalCode); } 
-@override String toString() { return 'IssuingNetworkTokenAddress(line1: $line1, postalCode: $postalCode)'; } 
+          postalCode == other.postalCode;
+
+@override int get hashCode => Object.hash(line1, postalCode);
+
+@override String toString() => 'IssuingNetworkTokenAddress(line1: $line1, postalCode: $postalCode)';
+
  }

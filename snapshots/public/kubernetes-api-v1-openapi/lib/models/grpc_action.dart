@@ -25,10 +25,13 @@ GrpcAction copyWith({int? port, String Function()? service, }) { return GrpcActi
   port: port ?? this.port,
   service: service != null ? service() : this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GrpcAction &&
           port == other.port &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(port, service); } 
-@override String toString() { return 'GrpcAction(port: $port, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(port, service);
+
+@override String toString() => 'GrpcAction(port: $port, service: $service)';
+
  }

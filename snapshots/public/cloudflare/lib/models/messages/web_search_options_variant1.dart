@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchContextSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SearchContextSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SearchContextSize($value)';
+
  }
 /// Options for the web search tool (when using built-in web search).
 @immutable final class WebSearchOptionsVariant1 {const WebSearchOptionsVariant1({this.searchContextSize = SearchContextSize.medium, this.userLocation, });
@@ -48,10 +51,13 @@ WebSearchOptionsVariant1 copyWith({SearchContextSize Function()? searchContextSi
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchOptionsVariant1 &&
           searchContextSize == other.searchContextSize &&
-          userLocation == other.userLocation; } 
-@override int get hashCode { return Object.hash(searchContextSize, userLocation); } 
-@override String toString() { return 'WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)'; } 
+          userLocation == other.userLocation;
+
+@override int get hashCode => Object.hash(searchContextSize, userLocation);
+
+@override String toString() => 'WebSearchOptionsVariant1(searchContextSize: $searchContextSize, userLocation: $userLocation)';
+
  }

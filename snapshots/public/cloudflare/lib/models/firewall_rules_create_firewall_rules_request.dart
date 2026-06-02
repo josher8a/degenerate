@@ -21,10 +21,13 @@ FirewallRulesCreateFirewallRulesRequest copyWith({FirewallAction? action, Firewa
   action: action ?? this.action,
   filter: filter ?? this.filter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRulesCreateFirewallRulesRequest &&
           action == other.action &&
-          filter == other.filter; } 
-@override int get hashCode { return Object.hash(action, filter); } 
-@override String toString() { return 'FirewallRulesCreateFirewallRulesRequest(action: $action, filter: $filter)'; } 
+          filter == other.filter;
+
+@override int get hashCode => Object.hash(action, filter);
+
+@override String toString() => 'FirewallRulesCreateFirewallRulesRequest(action: $action, filter: $filter)';
+
  }

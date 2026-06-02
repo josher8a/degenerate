@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Zones0rttValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Zones0rttValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Zones0rttValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Zones0rttValue($value)';
+
  }
 /// Value of the zone setting.
 /// Notes: Defaults to on for Business+ plans
@@ -46,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesAdvancedDdosValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesAdvancedDdosValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesAdvancedDdosValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesAdvancedDdosValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesAlwaysOnlineValue {const ZonesAlwaysOnlineValue._(this.value);
@@ -71,10 +77,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesAlwaysOnlineValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesAlwaysOnlineValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesAlwaysOnlineValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesAlwaysOnlineValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesAlwaysUseHttpsValue {const ZonesAlwaysUseHttpsValue._(this.value);
@@ -96,10 +105,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesAlwaysUseHttpsValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesAlwaysUseHttpsValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesAlwaysUseHttpsValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesAlwaysUseHttpsValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesBrotliValue {const ZonesBrotliValue._(this.value);
@@ -121,10 +133,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesBrotliValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesBrotliValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesBrotliValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesBrotliValue($value)';
+
  }
 /// Value of the zone setting in seconds.
 /// Minimum values by plan:
@@ -195,10 +210,13 @@ final double value;
 double toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesChallengeTtlValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesChallengeTtlValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesChallengeTtlValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesChallengeTtlValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesChinaNetworkEnabledValue {const ZonesChinaNetworkEnabledValue._(this.value);
@@ -220,10 +238,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesChinaNetworkEnabledValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesChinaNetworkEnabledValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesChinaNetworkEnabledValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesChinaNetworkEnabledValue($value)';
+
  }
 /// Value of the cname flattening setting.
 @immutable final class ZonesCnameFlatteningValue {const ZonesCnameFlatteningValue._(this.value);
@@ -245,10 +266,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCnameFlatteningValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCnameFlatteningValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesCnameFlatteningValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesCnameFlatteningValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesContentConverterValue {const ZonesContentConverterValue._(this.value);
@@ -270,10 +294,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesContentConverterValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesContentConverterValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesContentConverterValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesContentConverterValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesEarlyHintsValue {const ZonesEarlyHintsValue._(this.value);
@@ -295,10 +322,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesEarlyHintsValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesEarlyHintsValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesEarlyHintsValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesEarlyHintsValue($value)';
+
  }
 /// Value of the zone setting.
 /// Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)
@@ -378,10 +408,13 @@ final double value;
 double toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesEdgeCacheTtlValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesEdgeCacheTtlValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesEdgeCacheTtlValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesEdgeCacheTtlValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue._(this.value);
@@ -406,10 +439,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesH2PrioritizationValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesH2PrioritizationValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesH2PrioritizationValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesH2PrioritizationValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesHotlinkProtectionValue {const ZonesHotlinkProtectionValue._(this.value);
@@ -431,10 +467,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesHotlinkProtectionValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesHotlinkProtectionValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesHotlinkProtectionValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesHotlinkProtectionValue($value)';
+
  }
 /// Value of the HTTP2 setting.
 @immutable final class ZonesHttp2Value {const ZonesHttp2Value._(this.value);
@@ -456,10 +495,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesHttp2Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesHttp2Value($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesHttp2Value && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesHttp2Value($value)';
+
  }
 /// Value of the HTTP3 setting.
 @immutable final class ZonesHttp3Value {const ZonesHttp3Value._(this.value);
@@ -481,10 +523,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesHttp3Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesHttp3Value($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesHttp3Value && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesHttp3Value($value)';
+
  }
 /// Whether the feature is enabled, disabled, or enabled in `open proxy` mode.
 @immutable final class ZonesImageResizingValue {const ZonesImageResizingValue._(this.value);
@@ -509,10 +554,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesImageResizingValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesImageResizingValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesImageResizingValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesImageResizingValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesIpv6Value {const ZonesIpv6Value._(this.value);
@@ -534,10 +582,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesIpv6Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesIpv6Value($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesIpv6Value && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesIpv6Value($value)';
+
  }
 /// Value of the zone setting.
 /// Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)
@@ -608,10 +659,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesMaxUploadValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesMaxUploadValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesMaxUploadValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesMaxUploadValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesMinTlsVersionValue {const ZonesMinTlsVersionValue._(this.value);
@@ -639,10 +693,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesMinTlsVersionValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesMinTlsVersionValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesMinTlsVersionValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesMinTlsVersionValue($value)';
+
  }
 /// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
@@ -665,10 +722,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesOpportunisticOnionValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesOpportunisticOnionValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesOpportunisticOnionValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesOpportunisticOnionValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesOrangeToOrangeValue {const ZonesOrangeToOrangeValue._(this.value);
@@ -690,10 +750,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesOrangeToOrangeValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesOrangeToOrangeValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesOrangeToOrangeValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesOrangeToOrangeValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesPrefetchPreloadValue {const ZonesPrefetchPreloadValue._(this.value);
@@ -715,10 +778,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesPrefetchPreloadValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesPrefetchPreloadValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesPrefetchPreloadValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesPrefetchPreloadValue($value)';
+
  }
 /// Value of the Privacy Pass v1 (deprecated) zone setting
 @immutable final class ZonesPrivacyPassValue {const ZonesPrivacyPassValue._(this.value);
@@ -740,10 +806,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesPrivacyPassValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesPrivacyPassValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesPrivacyPassValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesPrivacyPassValue($value)';
+
  }
 /// Value of the Pseudo IPv4 setting.
 @immutable final class ZonesPseudoIpv4Value {const ZonesPseudoIpv4Value._(this.value);
@@ -768,10 +837,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesPseudoIpv4Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesPseudoIpv4Value($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesPseudoIpv4Value && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesPseudoIpv4Value($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesRedirectsForAiTrainingValue {const ZonesRedirectsForAiTrainingValue._(this.value);
@@ -793,10 +865,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesRedirectsForAiTrainingValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesRedirectsForAiTrainingValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesRedirectsForAiTrainingValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesRedirectsForAiTrainingValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesReplaceInsecureJsValue {const ZonesReplaceInsecureJsValue._(this.value);
@@ -818,10 +893,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesReplaceInsecureJsValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesReplaceInsecureJsValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesReplaceInsecureJsValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesReplaceInsecureJsValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesServerSideExcludeValue {const ZonesServerSideExcludeValue._(this.value);
@@ -843,10 +921,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesServerSideExcludeValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesServerSideExcludeValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesServerSideExcludeValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesServerSideExcludeValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesSha1SupportValue {const ZonesSha1SupportValue._(this.value);
@@ -868,10 +949,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSha1SupportValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesSha1SupportValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSha1SupportValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesSha1SupportValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesTls12OnlyValue {const ZonesTls12OnlyValue._(this.value);
@@ -893,10 +977,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTls12OnlyValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesTls12OnlyValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTls12OnlyValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesTls12OnlyValue($value)';
+
  }
 /// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
@@ -922,10 +1009,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTls13Value && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesTls13Value($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTls13Value && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesTls13Value($value)';
+
  }
 /// value of the zone setting.
 @immutable final class ZonesTlsClientAuthValue {const ZonesTlsClientAuthValue._(this.value);
@@ -947,10 +1037,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesTlsClientAuthValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesTlsClientAuthValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTlsClientAuthValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesTlsClientAuthValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesWebpValue {const ZonesWebpValue._(this.value);
@@ -972,10 +1065,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesWebpValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesWebpValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesWebpValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesWebpValue($value)';
+
  }
 /// Value of the zone setting.
 @immutable final class ZonesWebsocketsValue {const ZonesWebsocketsValue._(this.value);
@@ -997,10 +1093,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesWebsocketsValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesWebsocketsValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesWebsocketsValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesWebsocketsValue($value)';
+
  }
 /// A value that is one of: `Zones0rttValue`, `ZonesAdvancedDdosValue`, `ZonesCacheRulesAegisValue`, `ZonesAlwaysOnlineValue`, `ZonesAlwaysUseHttpsValue`, `ZonesAutomaticHttpsRewritesValue`, `ZonesBrotliValue`, `ZonesBrowserCacheTtlValue`, `ZonesBrowserCheckValue`, `ZonesCacheLevelValue`, `ZonesChallengeTtlValue`, `ZonesChinaNetworkEnabledValue`, `ZonesContentConverterValue`, `List<String>`, `ZonesCnameFlatteningValue`, `ZonesDevelopmentModeValue`, `ZonesEarlyHintsValue`, `ZonesEdgeCacheTtlValue`, `ZonesEmailObfuscationValue`, `ZonesH2PrioritizationValue`, `ZonesHotlinkProtectionValue`, `ZonesHttp2Value`, `ZonesHttp3Value`, `ZonesImageResizingValue`, `ZonesIpGeolocationValue`, `ZonesIpv6Value`, `ZonesMaxUploadValue`, `ZonesMinTlsVersionValue`, `ZonesMirageValue`, `ZonesNelValue`, `ZonesOpportunisticEncryptionValue`, `ZonesOpportunisticOnionValue`, `ZonesOrangeToOrangeValue`, `ZonesOriginErrorPagePassThruValue`, `ZonesCacheRulesOriginMaxHttpVersionValue`, `ZonesPolishValue`, `ZonesPrefetchPreloadValue`, `ZonesPrivacyPassValue`, `ZonesPseudoIpv4Value`, `ZonesRedirectsForAiTrainingValue`, `ZonesReplaceInsecureJsValue`, `ZonesResponseBufferingValue`, `ZonesRocketLoaderValue`, `ZonesAutomaticPlatformOptimization`, `ZonesSecurityHeaderValue`, `ZonesSecurityLevelValue`, `ZonesServerSideExcludeValue`, `ZonesSha1SupportValue`, `ZonesSortQueryStringForCacheValue`, `ZonesSslValue`, `ZonesTls12OnlyValue`, `ZonesTls13Value`, `ZonesTlsClientAuthValue`, `ZonesTrueClientIpHeaderValue`, `ZonesWafValue`, `ZonesWebpValue`, `ZonesWebsocketsValue`.
 sealed class ZonesSettingValue {const ZonesSettingValue();
@@ -1027,636 +1126,868 @@ dynamic toJson() { return value; }
 
 final Zones0rttValue _value;
 
-@override Zones0rttValue get value { return _value; } 
+@override Zones0rttValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZones0rttValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zones0rttValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZones0rttValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zones0rttValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesAdvancedDdosValue extends ZonesSettingValue {const ZonesSettingValueZonesAdvancedDdosValue(this._value);
 
 final ZonesAdvancedDdosValue _value;
 
-@override ZonesAdvancedDdosValue get value { return _value; } 
+@override ZonesAdvancedDdosValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesAdvancedDdosValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesAdvancedDdosValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesAdvancedDdosValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesAdvancedDdosValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesCacheRulesAegisValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesAegisValue(this._value);
 
 final ZonesCacheRulesAegisValue _value;
 
-@override ZonesCacheRulesAegisValue get value { return _value; } 
+@override ZonesCacheRulesAegisValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesCacheRulesAegisValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesCacheRulesAegisValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesCacheRulesAegisValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesCacheRulesAegisValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesAlwaysOnlineValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysOnlineValue(this._value);
 
 final ZonesAlwaysOnlineValue _value;
 
-@override ZonesAlwaysOnlineValue get value { return _value; } 
+@override ZonesAlwaysOnlineValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesAlwaysOnlineValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesAlwaysOnlineValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesAlwaysOnlineValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesAlwaysOnlineValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesAlwaysUseHttpsValue extends ZonesSettingValue {const ZonesSettingValueZonesAlwaysUseHttpsValue(this._value);
 
 final ZonesAlwaysUseHttpsValue _value;
 
-@override ZonesAlwaysUseHttpsValue get value { return _value; } 
+@override ZonesAlwaysUseHttpsValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesAlwaysUseHttpsValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesAlwaysUseHttpsValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesAlwaysUseHttpsValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesAlwaysUseHttpsValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesAutomaticHttpsRewritesValue extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticHttpsRewritesValue(this._value);
 
 final ZonesAutomaticHttpsRewritesValue _value;
 
-@override ZonesAutomaticHttpsRewritesValue get value { return _value; } 
+@override ZonesAutomaticHttpsRewritesValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesAutomaticHttpsRewritesValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesAutomaticHttpsRewritesValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesAutomaticHttpsRewritesValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesAutomaticHttpsRewritesValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesBrotliValue extends ZonesSettingValue {const ZonesSettingValueZonesBrotliValue(this._value);
 
 final ZonesBrotliValue _value;
 
-@override ZonesBrotliValue get value { return _value; } 
+@override ZonesBrotliValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesBrotliValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesBrotliValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesBrotliValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesBrotliValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesBrowserCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCacheTtlValue(this._value);
 
 final ZonesBrowserCacheTtlValue _value;
 
-@override ZonesBrowserCacheTtlValue get value { return _value; } 
+@override ZonesBrowserCacheTtlValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesBrowserCacheTtlValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesBrowserCacheTtlValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesBrowserCacheTtlValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesBrowserCacheTtlValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesBrowserCheckValue extends ZonesSettingValue {const ZonesSettingValueZonesBrowserCheckValue(this._value);
 
 final ZonesBrowserCheckValue _value;
 
-@override ZonesBrowserCheckValue get value { return _value; } 
+@override ZonesBrowserCheckValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesBrowserCheckValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesBrowserCheckValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesBrowserCheckValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesBrowserCheckValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesCacheLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheLevelValue(this._value);
 
 final ZonesCacheLevelValue _value;
 
-@override ZonesCacheLevelValue get value { return _value; } 
+@override ZonesCacheLevelValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesCacheLevelValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesCacheLevelValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesCacheLevelValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesCacheLevelValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesChallengeTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesChallengeTtlValue(this._value);
 
 final ZonesChallengeTtlValue _value;
 
-@override ZonesChallengeTtlValue get value { return _value; } 
+@override ZonesChallengeTtlValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesChallengeTtlValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesChallengeTtlValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesChallengeTtlValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesChallengeTtlValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesChinaNetworkEnabledValue extends ZonesSettingValue {const ZonesSettingValueZonesChinaNetworkEnabledValue(this._value);
 
 final ZonesChinaNetworkEnabledValue _value;
 
-@override ZonesChinaNetworkEnabledValue get value { return _value; } 
+@override ZonesChinaNetworkEnabledValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesChinaNetworkEnabledValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesChinaNetworkEnabledValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesChinaNetworkEnabledValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesChinaNetworkEnabledValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesContentConverterValue extends ZonesSettingValue {const ZonesSettingValueZonesContentConverterValue(this._value);
 
 final ZonesContentConverterValue _value;
 
-@override ZonesContentConverterValue get value { return _value; } 
+@override ZonesContentConverterValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesContentConverterValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesContentConverterValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesContentConverterValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesContentConverterValue($_value)';
+
  }
 @immutable final class ZonesSettingValueListString extends ZonesSettingValue {const ZonesSettingValueListString(this._value);
 
 final List<String> _value;
 
-@override List<String> get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueListString && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.list<String>($_value)'; } 
+@override List<String> get value => _value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueListString && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.list<String>($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesCnameFlatteningValue extends ZonesSettingValue {const ZonesSettingValueZonesCnameFlatteningValue(this._value);
 
 final ZonesCnameFlatteningValue _value;
 
-@override ZonesCnameFlatteningValue get value { return _value; } 
+@override ZonesCnameFlatteningValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesCnameFlatteningValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesCnameFlatteningValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesCnameFlatteningValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesCnameFlatteningValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesDevelopmentModeValue extends ZonesSettingValue {const ZonesSettingValueZonesDevelopmentModeValue(this._value);
 
 final ZonesDevelopmentModeValue _value;
 
-@override ZonesDevelopmentModeValue get value { return _value; } 
+@override ZonesDevelopmentModeValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesDevelopmentModeValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesDevelopmentModeValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesDevelopmentModeValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesDevelopmentModeValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesEarlyHintsValue extends ZonesSettingValue {const ZonesSettingValueZonesEarlyHintsValue(this._value);
 
 final ZonesEarlyHintsValue _value;
 
-@override ZonesEarlyHintsValue get value { return _value; } 
+@override ZonesEarlyHintsValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesEarlyHintsValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesEarlyHintsValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesEarlyHintsValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesEarlyHintsValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesEdgeCacheTtlValue extends ZonesSettingValue {const ZonesSettingValueZonesEdgeCacheTtlValue(this._value);
 
 final ZonesEdgeCacheTtlValue _value;
 
-@override ZonesEdgeCacheTtlValue get value { return _value; } 
+@override ZonesEdgeCacheTtlValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesEdgeCacheTtlValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesEdgeCacheTtlValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesEdgeCacheTtlValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesEdgeCacheTtlValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesEmailObfuscationValue extends ZonesSettingValue {const ZonesSettingValueZonesEmailObfuscationValue(this._value);
 
 final ZonesEmailObfuscationValue _value;
 
-@override ZonesEmailObfuscationValue get value { return _value; } 
+@override ZonesEmailObfuscationValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesEmailObfuscationValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesEmailObfuscationValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesEmailObfuscationValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesEmailObfuscationValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesH2PrioritizationValue extends ZonesSettingValue {const ZonesSettingValueZonesH2PrioritizationValue(this._value);
 
 final ZonesH2PrioritizationValue _value;
 
-@override ZonesH2PrioritizationValue get value { return _value; } 
+@override ZonesH2PrioritizationValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesH2PrioritizationValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesH2PrioritizationValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesH2PrioritizationValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesH2PrioritizationValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesHotlinkProtectionValue extends ZonesSettingValue {const ZonesSettingValueZonesHotlinkProtectionValue(this._value);
 
 final ZonesHotlinkProtectionValue _value;
 
-@override ZonesHotlinkProtectionValue get value { return _value; } 
+@override ZonesHotlinkProtectionValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesHotlinkProtectionValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesHotlinkProtectionValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesHotlinkProtectionValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesHotlinkProtectionValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesHttp2Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp2Value(this._value);
 
 final ZonesHttp2Value _value;
 
-@override ZonesHttp2Value get value { return _value; } 
+@override ZonesHttp2Value get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesHttp2Value && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesHttp2Value($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesHttp2Value && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesHttp2Value($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesHttp3Value extends ZonesSettingValue {const ZonesSettingValueZonesHttp3Value(this._value);
 
 final ZonesHttp3Value _value;
 
-@override ZonesHttp3Value get value { return _value; } 
+@override ZonesHttp3Value get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesHttp3Value && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesHttp3Value($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesHttp3Value && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesHttp3Value($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesImageResizingValue extends ZonesSettingValue {const ZonesSettingValueZonesImageResizingValue(this._value);
 
 final ZonesImageResizingValue _value;
 
-@override ZonesImageResizingValue get value { return _value; } 
+@override ZonesImageResizingValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesImageResizingValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesImageResizingValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesImageResizingValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesImageResizingValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesIpGeolocationValue extends ZonesSettingValue {const ZonesSettingValueZonesIpGeolocationValue(this._value);
 
 final ZonesIpGeolocationValue _value;
 
-@override ZonesIpGeolocationValue get value { return _value; } 
+@override ZonesIpGeolocationValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesIpGeolocationValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesIpGeolocationValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesIpGeolocationValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesIpGeolocationValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesIpv6Value extends ZonesSettingValue {const ZonesSettingValueZonesIpv6Value(this._value);
 
 final ZonesIpv6Value _value;
 
-@override ZonesIpv6Value get value { return _value; } 
+@override ZonesIpv6Value get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesIpv6Value && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesIpv6Value($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesIpv6Value && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesIpv6Value($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesMaxUploadValue extends ZonesSettingValue {const ZonesSettingValueZonesMaxUploadValue(this._value);
 
 final ZonesMaxUploadValue _value;
 
-@override ZonesMaxUploadValue get value { return _value; } 
+@override ZonesMaxUploadValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesMaxUploadValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesMaxUploadValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesMaxUploadValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesMaxUploadValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesMinTlsVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesMinTlsVersionValue(this._value);
 
 final ZonesMinTlsVersionValue _value;
 
-@override ZonesMinTlsVersionValue get value { return _value; } 
+@override ZonesMinTlsVersionValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesMinTlsVersionValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesMinTlsVersionValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesMinTlsVersionValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesMinTlsVersionValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesMirageValue extends ZonesSettingValue {const ZonesSettingValueZonesMirageValue(this._value);
 
 final ZonesMirageValue _value;
 
-@override ZonesMirageValue get value { return _value; } 
+@override ZonesMirageValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesMirageValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesMirageValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesMirageValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesMirageValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesNelValue extends ZonesSettingValue {const ZonesSettingValueZonesNelValue(this._value);
 
 final ZonesNelValue _value;
 
-@override ZonesNelValue get value { return _value; } 
+@override ZonesNelValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesNelValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesNelValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesNelValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesNelValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesOpportunisticEncryptionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticEncryptionValue(this._value);
 
 final ZonesOpportunisticEncryptionValue _value;
 
-@override ZonesOpportunisticEncryptionValue get value { return _value; } 
+@override ZonesOpportunisticEncryptionValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesOpportunisticEncryptionValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesOpportunisticEncryptionValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesOpportunisticEncryptionValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesOpportunisticEncryptionValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesOpportunisticOnionValue extends ZonesSettingValue {const ZonesSettingValueZonesOpportunisticOnionValue(this._value);
 
 final ZonesOpportunisticOnionValue _value;
 
-@override ZonesOpportunisticOnionValue get value { return _value; } 
+@override ZonesOpportunisticOnionValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesOpportunisticOnionValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesOpportunisticOnionValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesOpportunisticOnionValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesOpportunisticOnionValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesOrangeToOrangeValue extends ZonesSettingValue {const ZonesSettingValueZonesOrangeToOrangeValue(this._value);
 
 final ZonesOrangeToOrangeValue _value;
 
-@override ZonesOrangeToOrangeValue get value { return _value; } 
+@override ZonesOrangeToOrangeValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesOrangeToOrangeValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesOrangeToOrangeValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesOrangeToOrangeValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesOrangeToOrangeValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesOriginErrorPagePassThruValue extends ZonesSettingValue {const ZonesSettingValueZonesOriginErrorPagePassThruValue(this._value);
 
 final ZonesOriginErrorPagePassThruValue _value;
 
-@override ZonesOriginErrorPagePassThruValue get value { return _value; } 
+@override ZonesOriginErrorPagePassThruValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesOriginErrorPagePassThruValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesOriginErrorPagePassThruValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesOriginErrorPagePassThruValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesOriginErrorPagePassThruValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue(this._value);
 
 final ZonesCacheRulesOriginMaxHttpVersionValue _value;
 
-@override ZonesCacheRulesOriginMaxHttpVersionValue get value { return _value; } 
+@override ZonesCacheRulesOriginMaxHttpVersionValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesCacheRulesOriginMaxHttpVersionValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesCacheRulesOriginMaxHttpVersionValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesPolishValue extends ZonesSettingValue {const ZonesSettingValueZonesPolishValue(this._value);
 
 final ZonesPolishValue _value;
 
-@override ZonesPolishValue get value { return _value; } 
+@override ZonesPolishValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesPolishValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesPolishValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesPolishValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesPolishValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesPrefetchPreloadValue extends ZonesSettingValue {const ZonesSettingValueZonesPrefetchPreloadValue(this._value);
 
 final ZonesPrefetchPreloadValue _value;
 
-@override ZonesPrefetchPreloadValue get value { return _value; } 
+@override ZonesPrefetchPreloadValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesPrefetchPreloadValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesPrefetchPreloadValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesPrefetchPreloadValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesPrefetchPreloadValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesPrivacyPassValue extends ZonesSettingValue {const ZonesSettingValueZonesPrivacyPassValue(this._value);
 
 final ZonesPrivacyPassValue _value;
 
-@override ZonesPrivacyPassValue get value { return _value; } 
+@override ZonesPrivacyPassValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesPrivacyPassValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesPrivacyPassValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesPrivacyPassValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesPrivacyPassValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesPseudoIpv4Value extends ZonesSettingValue {const ZonesSettingValueZonesPseudoIpv4Value(this._value);
 
 final ZonesPseudoIpv4Value _value;
 
-@override ZonesPseudoIpv4Value get value { return _value; } 
+@override ZonesPseudoIpv4Value get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesPseudoIpv4Value && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesPseudoIpv4Value($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesPseudoIpv4Value && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesPseudoIpv4Value($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesRedirectsForAiTrainingValue extends ZonesSettingValue {const ZonesSettingValueZonesRedirectsForAiTrainingValue(this._value);
 
 final ZonesRedirectsForAiTrainingValue _value;
 
-@override ZonesRedirectsForAiTrainingValue get value { return _value; } 
+@override ZonesRedirectsForAiTrainingValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesRedirectsForAiTrainingValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesRedirectsForAiTrainingValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesRedirectsForAiTrainingValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesRedirectsForAiTrainingValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesReplaceInsecureJsValue extends ZonesSettingValue {const ZonesSettingValueZonesReplaceInsecureJsValue(this._value);
 
 final ZonesReplaceInsecureJsValue _value;
 
-@override ZonesReplaceInsecureJsValue get value { return _value; } 
+@override ZonesReplaceInsecureJsValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesReplaceInsecureJsValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesReplaceInsecureJsValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesReplaceInsecureJsValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesReplaceInsecureJsValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesResponseBufferingValue extends ZonesSettingValue {const ZonesSettingValueZonesResponseBufferingValue(this._value);
 
 final ZonesResponseBufferingValue _value;
 
-@override ZonesResponseBufferingValue get value { return _value; } 
+@override ZonesResponseBufferingValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesResponseBufferingValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesResponseBufferingValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesResponseBufferingValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesResponseBufferingValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesRocketLoaderValue extends ZonesSettingValue {const ZonesSettingValueZonesRocketLoaderValue(this._value);
 
 final ZonesRocketLoaderValue _value;
 
-@override ZonesRocketLoaderValue get value { return _value; } 
+@override ZonesRocketLoaderValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesRocketLoaderValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesRocketLoaderValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesRocketLoaderValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesRocketLoaderValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesAutomaticPlatformOptimization extends ZonesSettingValue {const ZonesSettingValueZonesAutomaticPlatformOptimization(this._value);
 
 final ZonesAutomaticPlatformOptimization _value;
 
-@override ZonesAutomaticPlatformOptimization get value { return _value; } 
+@override ZonesAutomaticPlatformOptimization get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesAutomaticPlatformOptimization && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesAutomaticPlatformOptimization($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesAutomaticPlatformOptimization && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesAutomaticPlatformOptimization($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesSecurityHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityHeaderValue(this._value);
 
 final ZonesSecurityHeaderValue _value;
 
-@override ZonesSecurityHeaderValue get value { return _value; } 
+@override ZonesSecurityHeaderValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesSecurityHeaderValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesSecurityHeaderValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesSecurityHeaderValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesSecurityHeaderValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesSecurityLevelValue extends ZonesSettingValue {const ZonesSettingValueZonesSecurityLevelValue(this._value);
 
 final ZonesSecurityLevelValue _value;
 
-@override ZonesSecurityLevelValue get value { return _value; } 
+@override ZonesSecurityLevelValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesSecurityLevelValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesSecurityLevelValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesSecurityLevelValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesSecurityLevelValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesServerSideExcludeValue extends ZonesSettingValue {const ZonesSettingValueZonesServerSideExcludeValue(this._value);
 
 final ZonesServerSideExcludeValue _value;
 
-@override ZonesServerSideExcludeValue get value { return _value; } 
+@override ZonesServerSideExcludeValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesServerSideExcludeValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesServerSideExcludeValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesServerSideExcludeValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesServerSideExcludeValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesSha1SupportValue extends ZonesSettingValue {const ZonesSettingValueZonesSha1SupportValue(this._value);
 
 final ZonesSha1SupportValue _value;
 
-@override ZonesSha1SupportValue get value { return _value; } 
+@override ZonesSha1SupportValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesSha1SupportValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesSha1SupportValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesSha1SupportValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesSha1SupportValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesSortQueryStringForCacheValue extends ZonesSettingValue {const ZonesSettingValueZonesSortQueryStringForCacheValue(this._value);
 
 final ZonesSortQueryStringForCacheValue _value;
 
-@override ZonesSortQueryStringForCacheValue get value { return _value; } 
+@override ZonesSortQueryStringForCacheValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesSortQueryStringForCacheValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesSortQueryStringForCacheValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesSortQueryStringForCacheValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesSortQueryStringForCacheValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesSslValue extends ZonesSettingValue {const ZonesSettingValueZonesSslValue(this._value);
 
 final ZonesSslValue _value;
 
-@override ZonesSslValue get value { return _value; } 
+@override ZonesSslValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesSslValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesSslValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesSslValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesSslValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesTls12OnlyValue extends ZonesSettingValue {const ZonesSettingValueZonesTls12OnlyValue(this._value);
 
 final ZonesTls12OnlyValue _value;
 
-@override ZonesTls12OnlyValue get value { return _value; } 
+@override ZonesTls12OnlyValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesTls12OnlyValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesTls12OnlyValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesTls12OnlyValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesTls12OnlyValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesTls13Value extends ZonesSettingValue {const ZonesSettingValueZonesTls13Value(this._value);
 
 final ZonesTls13Value _value;
 
-@override ZonesTls13Value get value { return _value; } 
+@override ZonesTls13Value get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesTls13Value && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesTls13Value($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesTls13Value && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesTls13Value($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesTlsClientAuthValue extends ZonesSettingValue {const ZonesSettingValueZonesTlsClientAuthValue(this._value);
 
 final ZonesTlsClientAuthValue _value;
 
-@override ZonesTlsClientAuthValue get value { return _value; } 
+@override ZonesTlsClientAuthValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesTlsClientAuthValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesTlsClientAuthValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesTlsClientAuthValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesTlsClientAuthValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesTrueClientIpHeaderValue extends ZonesSettingValue {const ZonesSettingValueZonesTrueClientIpHeaderValue(this._value);
 
 final ZonesTrueClientIpHeaderValue _value;
 
-@override ZonesTrueClientIpHeaderValue get value { return _value; } 
+@override ZonesTrueClientIpHeaderValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesTrueClientIpHeaderValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesTrueClientIpHeaderValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesTrueClientIpHeaderValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesTrueClientIpHeaderValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesWafValue extends ZonesSettingValue {const ZonesSettingValueZonesWafValue(this._value);
 
 final ZonesWafValue _value;
 
-@override ZonesWafValue get value { return _value; } 
+@override ZonesWafValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesWafValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesWafValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesWafValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesWafValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesWebpValue extends ZonesSettingValue {const ZonesSettingValueZonesWebpValue(this._value);
 
 final ZonesWebpValue _value;
 
-@override ZonesWebpValue get value { return _value; } 
+@override ZonesWebpValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesWebpValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesWebpValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesWebpValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesWebpValue($_value)';
+
  }
 @immutable final class ZonesSettingValueZonesWebsocketsValue extends ZonesSettingValue {const ZonesSettingValueZonesWebsocketsValue(this._value);
 
 final ZonesWebsocketsValue _value;
 
-@override ZonesWebsocketsValue get value { return _value; } 
+@override ZonesWebsocketsValue get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesWebsocketsValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesWebsocketsValue($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValueZonesWebsocketsValue && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.zonesWebsocketsValue($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class ZonesSettingValue$Unknown extends ZonesSettingValue {const ZonesSettingValue$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValue$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSettingValue$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'ZonesSettingValue.unknown($_value)';
+
  }

@@ -28,11 +28,14 @@ OverviewMetrics copyWith({double? Function()? avgHttpAvailabilityPct, double? Fu
   avgTracerouteAvailabilityPct: avgTracerouteAvailabilityPct != null ? avgTracerouteAvailabilityPct() : this.avgTracerouteAvailabilityPct,
   testsTotal: testsTotal ?? this.testsTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OverviewMetrics &&
           avgHttpAvailabilityPct == other.avgHttpAvailabilityPct &&
           avgTracerouteAvailabilityPct == other.avgTracerouteAvailabilityPct &&
-          testsTotal == other.testsTotal; } 
-@override int get hashCode { return Object.hash(avgHttpAvailabilityPct, avgTracerouteAvailabilityPct, testsTotal); } 
-@override String toString() { return 'OverviewMetrics(avgHttpAvailabilityPct: $avgHttpAvailabilityPct, avgTracerouteAvailabilityPct: $avgTracerouteAvailabilityPct, testsTotal: $testsTotal)'; } 
+          testsTotal == other.testsTotal;
+
+@override int get hashCode => Object.hash(avgHttpAvailabilityPct, avgTracerouteAvailabilityPct, testsTotal);
+
+@override String toString() => 'OverviewMetrics(avgHttpAvailabilityPct: $avgHttpAvailabilityPct, avgTracerouteAvailabilityPct: $avgTracerouteAvailabilityPct, testsTotal: $testsTotal)';
+
  }

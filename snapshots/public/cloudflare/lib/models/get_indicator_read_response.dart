@@ -62,7 +62,7 @@ GetIndicatorReadResponse copyWith({DateTime? createdAt, String? Function()? data
   uuid: uuid ?? this.uuid,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorReadResponse &&
           createdAt == other.createdAt &&
           datasetId == other.datasetId &&
@@ -71,7 +71,10 @@ GetIndicatorReadResponse copyWith({DateTime? createdAt, String? Function()? data
           listEquals(tags, other.tags) &&
           updatedAt == other.updatedAt &&
           uuid == other.uuid &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(createdAt, datasetId, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), updatedAt, uuid, value); } 
-@override String toString() { return 'GetIndicatorReadResponse(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(createdAt, datasetId, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), updatedAt, uuid, value);
+
+@override String toString() => 'GetIndicatorReadResponse(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)';
+
  }

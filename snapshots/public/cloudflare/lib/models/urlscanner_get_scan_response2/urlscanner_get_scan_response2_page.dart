@@ -111,7 +111,7 @@ UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String
   tlsValidFrom: tlsValidFrom ?? this.tlsValidFrom,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Page &&
           apexDomain == other.apexDomain &&
           asn == other.asn &&
@@ -129,7 +129,10 @@ UrlscannerGetScanResponse2Page copyWith({String? apexDomain, String? asn, String
           tlsIssuer == other.tlsIssuer &&
           tlsValidDays == other.tlsValidDays &&
           tlsValidFrom == other.tlsValidFrom &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(apexDomain, asn, asnname, city, country, domain, ip, mimeType, screenshot, server, status, title, tlsAgeDays, tlsIssuer, tlsValidDays, tlsValidFrom, url); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Page(apexDomain: $apexDomain, asn: $asn, asnname: $asnname, city: $city, country: $country, domain: $domain, ip: $ip, mimeType: $mimeType, screenshot: $screenshot, server: $server, status: $status, title: $title, tlsAgeDays: $tlsAgeDays, tlsIssuer: $tlsIssuer, tlsValidDays: $tlsValidDays, tlsValidFrom: $tlsValidFrom, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(apexDomain, asn, asnname, city, country, domain, ip, mimeType, screenshot, server, status, title, tlsAgeDays, tlsIssuer, tlsValidDays, tlsValidFrom, url);
+
+@override String toString() => 'UrlscannerGetScanResponse2Page(apexDomain: $apexDomain, asn: $asn, asnname: $asnname, city: $city, country: $country, domain: $domain, ip: $ip, mimeType: $mimeType, screenshot: $screenshot, server: $server, status: $status, title: $title, tlsAgeDays: $tlsAgeDays, tlsIssuer: $tlsIssuer, tlsValidDays: $tlsValidDays, tlsValidFrom: $tlsValidFrom, url: $url)';
+
  }

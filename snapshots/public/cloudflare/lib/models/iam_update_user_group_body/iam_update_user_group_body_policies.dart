@@ -39,12 +39,15 @@ IamUpdateUserGroupBodyPolicies copyWith({IamAccess? access, List<IamPermissionGr
   resourceGroups: resourceGroups ?? this.resourceGroups,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUpdateUserGroupBodyPolicies &&
           access == other.access &&
           listEquals(permissionGroups, other.permissionGroups) &&
           listEquals(resourceGroups, other.resourceGroups) &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(access, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups), id); } 
-@override String toString() { return 'IamUpdateUserGroupBodyPolicies(access: $access, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(access, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups), id);
+
+@override String toString() => 'IamUpdateUserGroupBodyPolicies(access: $access, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups, id: $id)';
+
  }

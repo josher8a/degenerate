@@ -36,11 +36,14 @@ AccountsByAccountIdPipelinesDeprecatedRequest copyWith({AccountsByAccountIdPipel
   name: name ?? this.name,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesDeprecatedRequest &&
           destination == other.destination &&
           name == other.name &&
-          listEquals(source, other.source); } 
-@override int get hashCode { return Object.hash(destination, name, Object.hashAll(source)); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequest(destination: $destination, name: $name, source: $source)'; } 
+          listEquals(source, other.source);
+
+@override int get hashCode => Object.hash(destination, name, Object.hashAll(source));
+
+@override String toString() => 'AccountsByAccountIdPipelinesDeprecatedRequest(destination: $destination, name: $name, source: $source)';
+
  }

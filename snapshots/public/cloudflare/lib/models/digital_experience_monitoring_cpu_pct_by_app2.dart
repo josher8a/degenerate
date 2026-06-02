@@ -20,10 +20,13 @@ DigitalExperienceMonitoringCpuPctByApp2 copyWith({double? Function()? cpuPct, St
   cpuPct: cpuPct != null ? cpuPct() : this.cpuPct,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringCpuPctByApp2 &&
           cpuPct == other.cpuPct &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cpuPct, name); } 
-@override String toString() { return 'DigitalExperienceMonitoringCpuPctByApp2(cpuPct: $cpuPct, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(cpuPct, name);
+
+@override String toString() => 'DigitalExperienceMonitoringCpuPctByApp2(cpuPct: $cpuPct, name: $name)';
+
  }

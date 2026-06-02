@@ -34,10 +34,13 @@ RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? 
   eligible: eligible ?? this.eligible,
   minimumFileSize: minimumFileSize != null ? minimumFileSize() : this.minimumFileSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCacheReserve &&
           eligible == other.eligible &&
-          minimumFileSize == other.minimumFileSize; } 
-@override int get hashCode { return Object.hash(eligible, minimumFileSize); } 
-@override String toString() { return 'RulesetsSetCacheSettingsCacheReserve(eligible: $eligible, minimumFileSize: $minimumFileSize)'; } 
+          minimumFileSize == other.minimumFileSize;
+
+@override int get hashCode => Object.hash(eligible, minimumFileSize);
+
+@override String toString() => 'RulesetsSetCacheSettingsCacheReserve(eligible: $eligible, minimumFileSize: $minimumFileSize)';
+
  }

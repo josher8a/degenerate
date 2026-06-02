@@ -46,14 +46,17 @@ MqQueuePullBatch2 copyWith({double? Function()? attempts, String? Function()? bo
   metadata: metadata != null ? metadata() : this.metadata,
   timestampMs: timestampMs != null ? timestampMs() : this.timestampMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueuePullBatch2 &&
           attempts == other.attempts &&
           body == other.body &&
           id == other.id &&
           leaseId == other.leaseId &&
           metadata == other.metadata &&
-          timestampMs == other.timestampMs; } 
-@override int get hashCode { return Object.hash(attempts, body, id, leaseId, metadata, timestampMs); } 
-@override String toString() { return 'MqQueuePullBatch2(attempts: $attempts, body: $body, id: $id, leaseId: $leaseId, metadata: $metadata, timestampMs: $timestampMs)'; } 
+          timestampMs == other.timestampMs;
+
+@override int get hashCode => Object.hash(attempts, body, id, leaseId, metadata, timestampMs);
+
+@override String toString() => 'MqQueuePullBatch2(attempts: $attempts, body: $body, id: $id, leaseId: $leaseId, metadata: $metadata, timestampMs: $timestampMs)';
+
  }

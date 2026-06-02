@@ -31,11 +31,14 @@ PaymentLinksResourceOptionalItem copyWith({PaymentLinksResourceOptionalItemAdjus
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceOptionalItem &&
           adjustableQuantity == other.adjustableQuantity &&
           price == other.price &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, price, quantity); } 
-@override String toString() { return 'PaymentLinksResourceOptionalItem(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)'; } 
+          quantity == other.quantity;
+
+@override int get hashCode => Object.hash(adjustableQuantity, price, quantity);
+
+@override String toString() => 'PaymentLinksResourceOptionalItem(adjustableQuantity: $adjustableQuantity, price: $price, quantity: $quantity)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldSchemaIssueNotificationSource copyWith({List<String>? Function()? locations}) { return ShieldSchemaIssueNotificationSource(
   locations: locations != null ? locations() : this.locations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaIssueNotificationSource &&
-          listEquals(locations, other.locations); } 
-@override int get hashCode { return Object.hashAll(locations ?? const []); } 
-@override String toString() { return 'ShieldSchemaIssueNotificationSource(locations: $locations)'; } 
+          listEquals(locations, other.locations);
+
+@override int get hashCode => Object.hashAll(locations ?? const []);
+
+@override String toString() => 'ShieldSchemaIssueNotificationSource(locations: $locations)';
+
  }

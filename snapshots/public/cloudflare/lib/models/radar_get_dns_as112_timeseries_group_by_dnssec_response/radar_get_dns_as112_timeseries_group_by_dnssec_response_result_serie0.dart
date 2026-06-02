@@ -21,10 +21,13 @@ RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<Strin
   notSupported: notSupported ?? this.notSupported,
   supported: supported ?? this.supported,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0 &&
           listEquals(notSupported, other.notSupported) &&
-          listEquals(supported, other.supported); } 
-@override int get hashCode { return Object.hash(Object.hashAll(notSupported), Object.hashAll(supported)); } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(notSupported: $notSupported, supported: $supported)'; } 
+          listEquals(supported, other.supported);
+
+@override int get hashCode => Object.hash(Object.hashAll(notSupported), Object.hashAll(supported));
+
+@override String toString() => 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultSerie0(notSupported: $notSupported, supported: $supported)';
+
  }

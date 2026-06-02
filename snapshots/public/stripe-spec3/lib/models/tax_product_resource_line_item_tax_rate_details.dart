@@ -36,11 +36,14 @@ TaxProductResourceLineItemTaxRateDetails copyWith({String? displayName, String? 
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,
   taxType: taxType ?? this.taxType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceLineItemTaxRateDetails &&
           displayName == other.displayName &&
           percentageDecimal == other.percentageDecimal &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(displayName, percentageDecimal, taxType); } 
-@override String toString() { return 'TaxProductResourceLineItemTaxRateDetails(displayName: $displayName, percentageDecimal: $percentageDecimal, taxType: $taxType)'; } 
+          taxType == other.taxType;
+
+@override int get hashCode => Object.hash(displayName, percentageDecimal, taxType);
+
+@override String toString() => 'TaxProductResourceLineItemTaxRateDetails(displayName: $displayName, percentageDecimal: $percentageDecimal, taxType: $taxType)';
+
  }

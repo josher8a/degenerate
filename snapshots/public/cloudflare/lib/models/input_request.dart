@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesExtendedKeyUsageEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesExtendedKeyUsageEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesExtendedKeyUsageEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesExtendedKeyUsageEnum($value)';
+
  }
 @immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });
 
@@ -93,7 +96,7 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
   operatingSystem: operatingSystem ?? this.operatingSystem,
   subjectAlternativeNames: subjectAlternativeNames != null ? subjectAlternativeNames() : this.subjectAlternativeNames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputRequest &&
           certificateId == other.certificateId &&
           checkPrivateKey == other.checkPrivateKey &&
@@ -101,7 +104,10 @@ InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Fun
           listEquals(extendedKeyUsage, other.extendedKeyUsage) &&
           locations == other.locations &&
           operatingSystem == other.operatingSystem &&
-          listEquals(subjectAlternativeNames, other.subjectAlternativeNames); } 
-@override int get hashCode { return Object.hash(certificateId, checkPrivateKey, cn, Object.hashAll(extendedKeyUsage ?? const []), locations, operatingSystem, Object.hashAll(subjectAlternativeNames ?? const [])); } 
-@override String toString() { return 'InputRequest(certificateId: $certificateId, checkPrivateKey: $checkPrivateKey, cn: $cn, extendedKeyUsage: $extendedKeyUsage, locations: $locations, operatingSystem: $operatingSystem, subjectAlternativeNames: $subjectAlternativeNames)'; } 
+          listEquals(subjectAlternativeNames, other.subjectAlternativeNames);
+
+@override int get hashCode => Object.hash(certificateId, checkPrivateKey, cn, Object.hashAll(extendedKeyUsage ?? const []), locations, operatingSystem, Object.hashAll(subjectAlternativeNames ?? const []));
+
+@override String toString() => 'InputRequest(certificateId: $certificateId, checkPrivateKey: $checkPrivateKey, cn: $cn, extendedKeyUsage: $extendedKeyUsage, locations: $locations, operatingSystem: $operatingSystem, subjectAlternativeNames: $subjectAlternativeNames)';
+
  }

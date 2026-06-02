@@ -18,13 +18,15 @@ final class AppsGetWebhookDeliveryError$400 extends AppsGetWebhookDeliveryError 
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AppsGetWebhookDeliveryError$422 extends AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class AppsGetWebhookDeliveryError$Unknown extends AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError$Unknown(this.statusCode, this.rawBody, );
 

@@ -26,10 +26,13 @@ DnsRecordsDnsResponseImportScanResult copyWith({double? Function()? recsAdded, d
   recsAdded: recsAdded != null ? recsAdded() : this.recsAdded,
   totalRecordsParsed: totalRecordsParsed != null ? totalRecordsParsed() : this.totalRecordsParsed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseImportScanResult &&
           recsAdded == other.recsAdded &&
-          totalRecordsParsed == other.totalRecordsParsed; } 
-@override int get hashCode { return Object.hash(recsAdded, totalRecordsParsed); } 
-@override String toString() { return 'DnsRecordsDnsResponseImportScanResult(recsAdded: $recsAdded, totalRecordsParsed: $totalRecordsParsed)'; } 
+          totalRecordsParsed == other.totalRecordsParsed;
+
+@override int get hashCode => Object.hash(recsAdded, totalRecordsParsed);
+
+@override String toString() => 'DnsRecordsDnsResponseImportScanResult(recsAdded: $recsAdded, totalRecordsParsed: $totalRecordsParsed)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorizeIndexMetric && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorizeIndexMetric($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorizeIndexMetric && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorizeIndexMetric($value)';
+
  }
 @immutable final class VectorizeIndexDimensionConfiguration {const VectorizeIndexDimensionConfiguration({required this.dimensions, required this.metric, });
 
@@ -49,10 +52,13 @@ VectorizeIndexDimensionConfiguration copyWith({VectorizeIndexDimensions? dimensi
   dimensions: dimensions ?? this.dimensions,
   metric: metric ?? this.metric,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexDimensionConfiguration &&
           dimensions == other.dimensions &&
-          metric == other.metric; } 
-@override int get hashCode { return Object.hash(dimensions, metric); } 
-@override String toString() { return 'VectorizeIndexDimensionConfiguration(dimensions: $dimensions, metric: $metric)'; } 
+          metric == other.metric;
+
+@override int get hashCode => Object.hash(dimensions, metric);
+
+@override String toString() => 'VectorizeIndexDimensionConfiguration(dimensions: $dimensions, metric: $metric)';
+
  }

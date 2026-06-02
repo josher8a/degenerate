@@ -79,7 +79,7 @@ WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? act
   workflowJobRun: workflowJobRun ?? this.workflowJobRun,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRequested &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -92,7 +92,10 @@ WebhookDeploymentReviewRequested copyWith({WebhookCheckSuiteRequestedAction? act
           sender == other.sender &&
           since == other.since &&
           workflowJobRun == other.workflowJobRun &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, enterprise, environment, installation, organization, repository, requestor, Object.hashAll(reviewers), sender, since, workflowJobRun, workflowRun); } 
-@override String toString() { return 'WebhookDeploymentReviewRequested(action: $action, enterprise: $enterprise, environment: $environment, installation: $installation, organization: $organization, repository: $repository, requestor: $requestor, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(action, enterprise, environment, installation, organization, repository, requestor, Object.hashAll(reviewers), sender, since, workflowJobRun, workflowRun);
+
+@override String toString() => 'WebhookDeploymentReviewRequested(action: $action, enterprise: $enterprise, environment: $environment, installation: $installation, organization: $organization, repository: $repository, requestor: $requestor, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowRun: $workflowRun)';
+
  }

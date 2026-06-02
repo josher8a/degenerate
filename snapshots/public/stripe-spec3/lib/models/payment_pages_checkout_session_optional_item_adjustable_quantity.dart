@@ -29,11 +29,14 @@ PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity copyWith({bool? enable
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity &&
           enabled == other.enabled &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)'; } 
+          minimum == other.minimum;
+
+@override int get hashCode => Object.hash(enabled, maximum, minimum);
+
+@override String toString() => 'PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)';
+
  }

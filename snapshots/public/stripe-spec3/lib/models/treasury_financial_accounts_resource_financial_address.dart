@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks($value)';
+
  }
 /// The type of financial address
 @immutable final class TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType._(this.value);
@@ -41,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceFinancialAddressType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddressType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceFinancialAddressType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressType($value)';
+
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.
 @immutable final class TreasuryFinancialAccountsResourceFinancialAddress {const TreasuryFinancialAccountsResourceFinancialAddress({required this.type, this.aba, this.supportedNetworks, });
@@ -74,11 +80,14 @@ TreasuryFinancialAccountsResourceFinancialAddress copyWith({TreasuryFinancialAcc
   supportedNetworks: supportedNetworks != null ? supportedNetworks() : this.supportedNetworks,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceFinancialAddress &&
           aba == other.aba &&
           listEquals(supportedNetworks, other.supportedNetworks) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(aba, Object.hashAll(supportedNetworks ?? const []), type); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddress(aba: $aba, supportedNetworks: $supportedNetworks, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(aba, Object.hashAll(supportedNetworks ?? const []), type);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddress(aba: $aba, supportedNetworks: $supportedNetworks, type: $type)';
+
  }

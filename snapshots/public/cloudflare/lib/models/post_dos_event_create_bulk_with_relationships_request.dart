@@ -22,10 +22,13 @@ PostDosEventCreateBulkWithRelationshipsRequest copyWith({List<PostDosEventCreate
   data: data ?? this.data,
   datasetId: datasetId ?? this.datasetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDosEventCreateBulkWithRelationshipsRequest &&
           listEquals(data, other.data) &&
-          datasetId == other.datasetId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), datasetId); } 
-@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsRequest(data: $data, datasetId: $datasetId)'; } 
+          datasetId == other.datasetId;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), datasetId);
+
+@override String toString() => 'PostDosEventCreateBulkWithRelationshipsRequest(data: $data, datasetId: $datasetId)';
+
  }

@@ -28,11 +28,14 @@ StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfi
   maxSeconds: maxSeconds != null ? maxSeconds() : this.maxSeconds,
   meetingId: meetingId ?? this.meetingId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StartTrackRecordingForAMeetingRequest &&
           layers == other.layers &&
           maxSeconds == other.maxSeconds &&
-          meetingId == other.meetingId; } 
-@override int get hashCode { return Object.hash(layers, maxSeconds, meetingId); } 
-@override String toString() { return 'StartTrackRecordingForAMeetingRequest(layers: $layers, maxSeconds: $maxSeconds, meetingId: $meetingId)'; } 
+          meetingId == other.meetingId;
+
+@override int get hashCode => Object.hash(layers, maxSeconds, meetingId);
+
+@override String toString() => 'StartTrackRecordingForAMeetingRequest(layers: $layers, maxSeconds: $maxSeconds, meetingId: $meetingId)';
+
  }

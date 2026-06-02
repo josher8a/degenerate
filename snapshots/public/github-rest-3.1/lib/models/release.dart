@@ -158,7 +158,7 @@ Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri
   discussionUrl: discussionUrl != null ? discussionUrl() : this.discussionUrl,
   reactions: reactions != null ? reactions() : this.reactions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Release &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
@@ -184,7 +184,10 @@ Release copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? uploadUrl, Uri
           bodyText == other.bodyText &&
           mentionsCount == other.mentionsCount &&
           discussionUrl == other.discussionUrl &&
-          reactions == other.reactions; } 
-@override int get hashCode { return Object.hashAll([url, htmlUrl, assetsUrl, uploadUrl, tarballUrl, zipballUrl, id, nodeId, tagName, targetCommitish, name, body, draft, prerelease, immutable, createdAt, publishedAt, updatedAt, author, Object.hashAll(assets), bodyHtml, bodyText, mentionsCount, discussionUrl, reactions]); } 
-@override String toString() { return 'Release(url: $url, htmlUrl: $htmlUrl, assetsUrl: $assetsUrl, uploadUrl: $uploadUrl, tarballUrl: $tarballUrl, zipballUrl: $zipballUrl, id: $id, nodeId: $nodeId, tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, immutable: $immutable, createdAt: $createdAt, publishedAt: $publishedAt, updatedAt: $updatedAt, author: $author, assets: $assets, bodyHtml: $bodyHtml, bodyText: $bodyText, mentionsCount: $mentionsCount, discussionUrl: $discussionUrl, reactions: $reactions)'; } 
+          reactions == other.reactions;
+
+@override int get hashCode => Object.hashAll([url, htmlUrl, assetsUrl, uploadUrl, tarballUrl, zipballUrl, id, nodeId, tagName, targetCommitish, name, body, draft, prerelease, immutable, createdAt, publishedAt, updatedAt, author, Object.hashAll(assets), bodyHtml, bodyText, mentionsCount, discussionUrl, reactions]);
+
+@override String toString() => 'Release(url: $url, htmlUrl: $htmlUrl, assetsUrl: $assetsUrl, uploadUrl: $uploadUrl, tarballUrl: $tarballUrl, zipballUrl: $zipballUrl, id: $id, nodeId: $nodeId, tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, immutable: $immutable, createdAt: $createdAt, publishedAt: $publishedAt, updatedAt: $updatedAt, author: $author, assets: $assets, bodyHtml: $bodyHtml, bodyText: $bodyText, mentionsCount: $mentionsCount, discussionUrl: $discussionUrl, reactions: $reactions)';
+
  }

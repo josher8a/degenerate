@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelSchemasConfigSrc && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelSchemasConfigSrc($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TunnelSchemasConfigSrc && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TunnelSchemasConfigSrc($value)';
+
  }
 /// The version of the Tunnel Configuration.
 extension type const TunnelSchemasConfigVersion(int value) {
@@ -79,14 +82,17 @@ TunnelConfiguration copyWith({TunnelIdentifier? Function()? accountId, TunnelCon
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelConfiguration &&
           accountId == other.accountId &&
           config == other.config &&
           createdAt == other.createdAt &&
           source == other.source &&
           tunnelId == other.tunnelId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(accountId, config, createdAt, source, tunnelId, version); } 
-@override String toString() { return 'TunnelConfiguration(accountId: $accountId, config: $config, createdAt: $createdAt, source: $source, tunnelId: $tunnelId, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(accountId, config, createdAt, source, tunnelId, version);
+
+@override String toString() => 'TunnelConfiguration(accountId: $accountId, config: $config, createdAt: $createdAt, source: $source, tunnelId: $tunnelId, version: $version)';
+
  }

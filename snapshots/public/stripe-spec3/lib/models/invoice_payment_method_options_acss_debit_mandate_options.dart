@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InvoicePaymentMethodOptionsAcssDebitMandateOptions copyWith({CheckoutAcssDebitMandateOptionsTransactionType? Function()? transactionType}) { return InvoicePaymentMethodOptionsAcssDebitMandateOptions(
   transactionType: transactionType != null ? transactionType() : this.transactionType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsAcssDebitMandateOptions &&
-          transactionType == other.transactionType; } 
-@override int get hashCode { return transactionType.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsAcssDebitMandateOptions(transactionType: $transactionType)'; } 
+          transactionType == other.transactionType;
+
+@override int get hashCode => transactionType.hashCode;
+
+@override String toString() => 'InvoicePaymentMethodOptionsAcssDebitMandateOptions(transactionType: $transactionType)';
+
  }

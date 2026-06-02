@@ -17,7 +17,8 @@ final class RadarGetAttacksLayer3SummaryError$400 extends RadarGetAttacksLayer3S
 
 final RadarGetAttacksLayer3SummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAttacksLayer3SummaryError$Unknown extends RadarGetAttacksLayer3SummaryError {const RadarGetAttacksLayer3SummaryError$Unknown(this.statusCode, this.rawBody, );
 

@@ -55,14 +55,17 @@ CloudforceOneRequestsRequestMessageList copyWith({CloudforceOneRequestsTime? Fun
   sortBy: sortBy != null ? sortBy() : this.sortBy,
   sortOrder: sortOrder != null ? sortOrder() : this.sortOrder,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestMessageList &&
           after == other.after &&
           before == other.before &&
           page == other.page &&
           perPage == other.perPage &&
           sortBy == other.sortBy &&
-          sortOrder == other.sortOrder; } 
-@override int get hashCode { return Object.hash(after, before, page, perPage, sortBy, sortOrder); } 
-@override String toString() { return 'CloudforceOneRequestsRequestMessageList(after: $after, before: $before, page: $page, perPage: $perPage, sortBy: $sortBy, sortOrder: $sortOrder)'; } 
+          sortOrder == other.sortOrder;
+
+@override int get hashCode => Object.hash(after, before, page, perPage, sortBy, sortOrder);
+
+@override String toString() => 'CloudforceOneRequestsRequestMessageList(after: $after, before: $before, page: $page, perPage: $perPage, sortBy: $sortBy, sortOrder: $sortOrder)';
+
  }

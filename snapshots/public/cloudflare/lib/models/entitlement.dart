@@ -21,10 +21,13 @@ Entitlement copyWith({Allocation? allocation, Feature? feature, }) { return Enti
   allocation: allocation ?? this.allocation,
   feature: feature ?? this.feature,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Entitlement &&
           allocation == other.allocation &&
-          feature == other.feature; } 
-@override int get hashCode { return Object.hash(allocation, feature); } 
-@override String toString() { return 'Entitlement(allocation: $allocation, feature: $feature)'; } 
+          feature == other.feature;
+
+@override int get hashCode => Object.hash(allocation, feature);
+
+@override String toString() => 'Entitlement(allocation: $allocation, feature: $feature)';
+
  }

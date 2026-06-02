@@ -26,10 +26,13 @@ CustomIndicatorFeedsPermissionsRequest copyWith({String? Function()? accountTag,
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   feedId: feedId != null ? feedId() : this.feedId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsPermissionsRequest &&
           accountTag == other.accountTag &&
-          feedId == other.feedId; } 
-@override int get hashCode { return Object.hash(accountTag, feedId); } 
-@override String toString() { return 'CustomIndicatorFeedsPermissionsRequest(accountTag: $accountTag, feedId: $feedId)'; } 
+          feedId == other.feedId;
+
+@override int get hashCode => Object.hash(accountTag, feedId);
+
+@override String toString() => 'CustomIndicatorFeedsPermissionsRequest(accountTag: $accountTag, feedId: $feedId)';
+
  }

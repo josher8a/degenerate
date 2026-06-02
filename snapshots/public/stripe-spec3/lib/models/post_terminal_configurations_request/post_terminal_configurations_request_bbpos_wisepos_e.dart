@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostTerminalConfigurationsRequestBbposWiseposE copyWith({BbposWisePad3Splashscreen? Function()? splashscreen}) { return PostTerminalConfigurationsRequestBbposWiseposE(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalConfigurationsRequestBbposWiseposE &&
-          splashscreen == other.splashscreen; } 
-@override int get hashCode { return splashscreen.hashCode; } 
-@override String toString() { return 'PostTerminalConfigurationsRequestBbposWiseposE(splashscreen: $splashscreen)'; } 
+          splashscreen == other.splashscreen;
+
+@override int get hashCode => splashscreen.hashCode;
+
+@override String toString() => 'PostTerminalConfigurationsRequestBbposWiseposE(splashscreen: $splashscreen)';
+
  }

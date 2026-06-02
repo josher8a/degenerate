@@ -30,11 +30,14 @@ ToolsVariant1 copyWith({String? description, String? name, Variant1Parameters? p
   name: name ?? this.name,
   parameters: parameters ?? this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolsVariant1 &&
           description == other.description &&
           name == other.name &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(description, name, parameters); } 
-@override String toString() { return 'ToolsVariant1(description: $description, name: $name, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(description, name, parameters);
+
+@override String toString() => 'ToolsVariant1(description: $description, name: $name, parameters: $parameters)';
+
  }

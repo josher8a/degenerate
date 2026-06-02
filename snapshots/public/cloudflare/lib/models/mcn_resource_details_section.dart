@@ -32,12 +32,15 @@ McnResourceDetailsSection copyWith({String? Function()? helpText, List<McnResour
   name: name ?? this.name,
   visibleItems: visibleItems ?? this.visibleItems,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourceDetailsSection &&
           helpText == other.helpText &&
           listEquals(hiddenItems, other.hiddenItems) &&
           name == other.name &&
-          listEquals(visibleItems, other.visibleItems); } 
-@override int get hashCode { return Object.hash(helpText, Object.hashAll(hiddenItems), name, Object.hashAll(visibleItems)); } 
-@override String toString() { return 'McnResourceDetailsSection(helpText: $helpText, hiddenItems: $hiddenItems, name: $name, visibleItems: $visibleItems)'; } 
+          listEquals(visibleItems, other.visibleItems);
+
+@override int get hashCode => Object.hash(helpText, Object.hashAll(hiddenItems), name, Object.hashAll(visibleItems));
+
+@override String toString() => 'McnResourceDetailsSection(helpText: $helpText, hiddenItems: $hiddenItems, name: $name, visibleItems: $visibleItems)';
+
  }

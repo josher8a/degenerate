@@ -23,10 +23,13 @@ RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? Func
   input: input != null ? input() : this.input,
   outputs: outputs != null ? outputs() : this.outputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter &&
           input == other.input &&
-          listEquals(outputs, other.outputs); } 
-@override int get hashCode { return Object.hash(input, Object.hashAll(outputs ?? const [])); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)'; } 
+          listEquals(outputs, other.outputs);
+
+@override int get hashCode => Object.hash(input, Object.hashAll(outputs ?? const []));
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)';
+
  }

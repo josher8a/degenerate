@@ -30,11 +30,14 @@ IamUserGroupPolicyWriteBody copyWith({IamAccess? access, List<IamPermissionGroup
   permissionGroups: permissionGroups ?? this.permissionGroups,
   resourceGroups: resourceGroups ?? this.resourceGroups,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserGroupPolicyWriteBody &&
           access == other.access &&
           listEquals(permissionGroups, other.permissionGroups) &&
-          listEquals(resourceGroups, other.resourceGroups); } 
-@override int get hashCode { return Object.hash(access, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups)); } 
-@override String toString() { return 'IamUserGroupPolicyWriteBody(access: $access, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)'; } 
+          listEquals(resourceGroups, other.resourceGroups);
+
+@override int get hashCode => Object.hash(access, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups));
+
+@override String toString() => 'IamUserGroupPolicyWriteBody(access: $access, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)';
+
  }

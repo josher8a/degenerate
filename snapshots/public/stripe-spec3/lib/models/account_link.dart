@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountLinkObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountLinkObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountLinkObject($value)';
+
  }
 /// Account Links are the means by which a Connect platform grants a connected account permission to access
 /// Stripe-hosted applications, such as Connect Onboarding.
@@ -67,12 +70,15 @@ AccountLink copyWith({int? created, int? expiresAt, AccountLinkObject? object, S
   object: object ?? this.object,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLink &&
           created == other.created &&
           expiresAt == other.expiresAt &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, expiresAt, object, url); } 
-@override String toString() { return 'AccountLink(created: $created, expiresAt: $expiresAt, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(created, expiresAt, object, url);
+
+@override String toString() => 'AccountLink(created: $created, expiresAt: $expiresAt, object: $object, url: $url)';
+
  }

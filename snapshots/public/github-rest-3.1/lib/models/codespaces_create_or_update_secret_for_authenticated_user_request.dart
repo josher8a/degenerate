@@ -35,11 +35,14 @@ CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Func
   keyId: keyId ?? this.keyId,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest &&
           encryptedValue == other.encryptedValue &&
           keyId == other.keyId &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(encryptedValue, keyId, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(encryptedValue: $encryptedValue, keyId: $keyId, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(encryptedValue, keyId, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(encryptedValue: $encryptedValue, keyId: $keyId, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

@@ -18,13 +18,15 @@ final class ActivityDeleteThreadSubscriptionError$401 extends ActivityDeleteThre
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ActivityDeleteThreadSubscriptionError$403 extends ActivityDeleteThreadSubscriptionError {const ActivityDeleteThreadSubscriptionError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActivityDeleteThreadSubscriptionError$Unknown extends ActivityDeleteThreadSubscriptionError {const ActivityDeleteThreadSubscriptionError$Unknown(this.statusCode, this.rawBody, );
 

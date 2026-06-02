@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('succe
 AigConfigDeleteGatewayLogsResponse copyWith({bool? success}) { return AigConfigDeleteGatewayLogsResponse(
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigDeleteGatewayLogsResponse &&
-          success == other.success; } 
-@override int get hashCode { return success.hashCode; } 
-@override String toString() { return 'AigConfigDeleteGatewayLogsResponse(success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => success.hashCode;
+
+@override String toString() => 'AigConfigDeleteGatewayLogsResponse(success: $success)';
+
  }

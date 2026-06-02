@@ -70,7 +70,7 @@ RealtimekitParticipantPeerStatsPeerStatsDeviceInfo copyWith({String? Function()?
   userAgent: userAgent != null ? userAgent() : this.userAgent,
   webglSupport: webglSupport != null ? webglSupport() : this.webglSupport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsDeviceInfo &&
           browser == other.browser &&
           browserVersion == other.browserVersion &&
@@ -83,7 +83,10 @@ RealtimekitParticipantPeerStatsPeerStatsDeviceInfo copyWith({String? Function()?
           sdkName == other.sdkName &&
           sdkVersion == other.sdkVersion &&
           userAgent == other.userAgent &&
-          webglSupport == other.webglSupport; } 
-@override int get hashCode { return Object.hash(browser, browserVersion, cpus, engine, isMobile, memory, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, memory: $memory, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)'; } 
+          webglSupport == other.webglSupport;
+
+@override int get hashCode => Object.hash(browser, browserVersion, cpus, engine, isMobile, memory, os, osVersion, sdkName, sdkVersion, userAgent, webglSupport);
+
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsDeviceInfo(browser: $browser, browserVersion: $browserVersion, cpus: $cpus, engine: $engine, isMobile: $isMobile, memory: $memory, os: $os, osVersion: $osVersion, sdkName: $sdkName, sdkVersion: $sdkVersion, userAgent: $userAgent, webglSupport: $webglSupport)';
+
  }

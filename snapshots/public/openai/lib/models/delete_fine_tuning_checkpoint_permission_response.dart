@@ -30,11 +30,14 @@ DeleteFineTuningCheckpointPermissionResponse copyWith({String? id, DeleteFineTun
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteFineTuningCheckpointPermissionResponse &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'DeleteFineTuningCheckpointPermissionResponse(id: $id, object: $object, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(id, object, deleted);
+
+@override String toString() => 'DeleteFineTuningCheckpointPermissionResponse(id: $id, object: $object, deleted: $deleted)';
+
  }

@@ -24,10 +24,13 @@ FunctionShellCallOutputExitOutcomeParam copyWith({String? type, int? exitCode, }
   type: type ?? this.type,
   exitCode: exitCode ?? this.exitCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputExitOutcomeParam &&
           type == other.type &&
-          exitCode == other.exitCode; } 
-@override int get hashCode { return Object.hash(type, exitCode); } 
-@override String toString() { return 'FunctionShellCallOutputExitOutcomeParam(type: $type, exitCode: $exitCode)'; } 
+          exitCode == other.exitCode;
+
+@override int get hashCode => Object.hash(type, exitCode);
+
+@override String toString() => 'FunctionShellCallOutputExitOutcomeParam(type: $type, exitCode: $exitCode)';
+
  }

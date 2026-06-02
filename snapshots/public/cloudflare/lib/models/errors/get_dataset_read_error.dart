@@ -17,7 +17,8 @@ final class GetDatasetReadError$400 extends GetDatasetReadError {const GetDatase
 
 final GetDatasetReadResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetDatasetReadError$Unknown extends GetDatasetReadError {const GetDatasetReadError$Unknown(this.statusCode, this.rawBody, );
 

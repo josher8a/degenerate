@@ -69,7 +69,7 @@ PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount,
   refundPaymentConfig: refundPaymentConfig != null ? refundPaymentConfig() : this.refundPaymentConfig,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderRefundPaymentRequest &&
           amount == other.amount &&
           charge == other.charge &&
@@ -78,7 +78,10 @@ PostTerminalReadersReaderRefundPaymentRequest copyWith({int? Function()? amount,
           paymentIntent == other.paymentIntent &&
           refundApplicationFee == other.refundApplicationFee &&
           refundPaymentConfig == other.refundPaymentConfig &&
-          reverseTransfer == other.reverseTransfer; } 
-@override int get hashCode { return Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, refundApplicationFee, refundPaymentConfig, reverseTransfer); } 
-@override String toString() { return 'PostTerminalReadersReaderRefundPaymentRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)'; } 
+          reverseTransfer == other.reverseTransfer;
+
+@override int get hashCode => Object.hash(amount, charge, Object.hashAll(expand ?? const []), metadata, paymentIntent, refundApplicationFee, refundPaymentConfig, reverseTransfer);
+
+@override String toString() => 'PostTerminalReadersReaderRefundPaymentRequest(amount: $amount, charge: $charge, expand: $expand, metadata: $metadata, paymentIntent: $paymentIntent, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)';
+
  }

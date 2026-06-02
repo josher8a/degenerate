@@ -29,10 +29,13 @@ ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileI
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
   fileId: fileId != null ? fileId() : this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageRefParam2 &&
           imageUrl == other.imageUrl &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(imageUrl, fileId); } 
-@override String toString() { return 'ImageRefParam2(imageUrl: $imageUrl, fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => Object.hash(imageUrl, fileId);
+
+@override String toString() => 'ImageRefParam2(imageUrl: $imageUrl, fileId: $fileId)';
+
  }

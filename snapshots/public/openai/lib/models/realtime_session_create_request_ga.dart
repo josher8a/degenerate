@@ -104,7 +104,7 @@ RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? typ
   truncation: truncation != null ? truncation() : this.truncation,
   prompt: prompt != null ? prompt() : this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGa &&
           type == other.type &&
           listEquals(outputModalities, other.outputModalities) &&
@@ -117,7 +117,10 @@ RealtimeSessionCreateRequestGa copyWith({RealtimeSessionCreateRequestGaType? typ
           toolChoice == other.toolChoice &&
           maxOutputTokens == other.maxOutputTokens &&
           truncation == other.truncation &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt); } 
-@override String toString() { return 'RealtimeSessionCreateRequestGa(type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(type, Object.hashAll(outputModalities ?? const []), model, instructions, audio, Object.hashAll(include ?? const []), tracing, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens, truncation, prompt);
+
+@override String toString() => 'RealtimeSessionCreateRequestGa(type: $type, outputModalities: $outputModalities, model: $model, instructions: $instructions, audio: $audio, include: $include, tracing: $tracing, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens, truncation: $truncation, prompt: $prompt)';
+
  }

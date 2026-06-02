@@ -17,7 +17,8 @@ final class SubscriptionsGetError$404 extends SubscriptionsGetError {const Subsc
 
 final Failure error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SubscriptionsGetError$Unknown extends SubscriptionsGetError {const SubscriptionsGetError$Unknown(this.statusCode, this.rawBody, );
 

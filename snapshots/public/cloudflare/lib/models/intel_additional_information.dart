@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IntelAdditionalInformation copyWith({String? Function()? suspectedMalwareFamily}) { return IntelAdditionalInformation(
   suspectedMalwareFamily: suspectedMalwareFamily != null ? suspectedMalwareFamily() : this.suspectedMalwareFamily,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelAdditionalInformation &&
-          suspectedMalwareFamily == other.suspectedMalwareFamily; } 
-@override int get hashCode { return suspectedMalwareFamily.hashCode; } 
-@override String toString() { return 'IntelAdditionalInformation(suspectedMalwareFamily: $suspectedMalwareFamily)'; } 
+          suspectedMalwareFamily == other.suspectedMalwareFamily;
+
+@override int get hashCode => suspectedMalwareFamily.hashCode;
+
+@override String toString() => 'IntelAdditionalInformation(suspectedMalwareFamily: $suspectedMalwareFamily)';
+
  }

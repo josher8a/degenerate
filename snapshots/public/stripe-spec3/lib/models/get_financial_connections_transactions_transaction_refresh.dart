@@ -19,9 +19,12 @@ return errors; }
 GetFinancialConnectionsTransactionsTransactionRefresh copyWith({String? after}) { return GetFinancialConnectionsTransactionsTransactionRefresh(
   after: after ?? this.after,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetFinancialConnectionsTransactionsTransactionRefresh &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'GetFinancialConnectionsTransactionsTransactionRefresh(after: $after)'; } 
+          after == other.after;
+
+@override int get hashCode => after.hashCode;
+
+@override String toString() => 'GetFinancialConnectionsTransactionsTransactionRefresh(after: $after)';
+
  }

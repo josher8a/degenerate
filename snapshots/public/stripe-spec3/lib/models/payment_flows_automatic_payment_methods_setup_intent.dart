@@ -25,10 +25,13 @@ PaymentFlowsAutomaticPaymentMethodsSetupIntent copyWith({AllowRedirects? Functio
   allowRedirects: allowRedirects != null ? allowRedirects() : this.allowRedirects,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAutomaticPaymentMethodsSetupIntent &&
           allowRedirects == other.allowRedirects &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowRedirects, enabled); } 
-@override String toString() { return 'PaymentFlowsAutomaticPaymentMethodsSetupIntent(allowRedirects: $allowRedirects, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(allowRedirects, enabled);
+
+@override String toString() => 'PaymentFlowsAutomaticPaymentMethodsSetupIntent(allowRedirects: $allowRedirects, enabled: $enabled)';
+
  }

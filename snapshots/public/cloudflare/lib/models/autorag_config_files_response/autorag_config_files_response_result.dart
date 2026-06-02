@@ -21,10 +21,13 @@ AutoragConfigFilesResponseResult copyWith({String? error, String? key, }) { retu
   error: error ?? this.error,
   key: key ?? this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigFilesResponseResult &&
           error == other.error &&
-          key == other.key; } 
-@override int get hashCode { return Object.hash(error, key); } 
-@override String toString() { return 'AutoragConfigFilesResponseResult(error: $error, key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => Object.hash(error, key);
+
+@override String toString() => 'AutoragConfigFilesResponseResult(error: $error, key: $key)';
+
  }

@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TriggerSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TriggerSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TriggerSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TriggerSource($value)';
+
  }
 @immutable final class ResultTrigger {const ResultTrigger({required this.source});
 
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sourc
 ResultTrigger copyWith({TriggerSource? source}) { return ResultTrigger(
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultTrigger &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'ResultTrigger(source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => source.hashCode;
+
+@override String toString() => 'ResultTrigger(source: $source)';
+
  }

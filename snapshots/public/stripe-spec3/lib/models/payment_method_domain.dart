@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDomainObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDomainObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodDomainObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodDomainObject($value)';
+
  }
 /// A payment method domain represents a web domain that you have registered with Stripe.
 /// Stripe Elements use registered payment method domains to control where certain payment methods are shown.
@@ -118,7 +121,7 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
   object: object ?? this.object,
   paypal: paypal ?? this.paypal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDomain &&
           amazonPay == other.amazonPay &&
           applePay == other.applePay &&
@@ -131,7 +134,10 @@ PaymentMethodDomain copyWith({PaymentMethodDomainResourcePaymentMethodStatus? am
           link == other.link &&
           livemode == other.livemode &&
           object == other.object &&
-          paypal == other.paypal; } 
-@override int get hashCode { return Object.hash(amazonPay, applePay, created, domainName, enabled, googlePay, id, klarna, link, livemode, object, paypal); } 
-@override String toString() { return 'PaymentMethodDomain(amazonPay: $amazonPay, applePay: $applePay, created: $created, domainName: $domainName, enabled: $enabled, googlePay: $googlePay, id: $id, klarna: $klarna, link: $link, livemode: $livemode, object: $object, paypal: $paypal)'; } 
+          paypal == other.paypal;
+
+@override int get hashCode => Object.hash(amazonPay, applePay, created, domainName, enabled, googlePay, id, klarna, link, livemode, object, paypal);
+
+@override String toString() => 'PaymentMethodDomain(amazonPay: $amazonPay, applePay: $applePay, created: $created, domainName: $domainName, enabled: $enabled, googlePay: $googlePay, id: $id, klarna: $klarna, link: $link, livemode: $livemode, object: $object, paypal: $paypal)';
+
  }

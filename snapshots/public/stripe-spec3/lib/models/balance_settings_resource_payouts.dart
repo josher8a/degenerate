@@ -42,12 +42,15 @@ BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBa
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceSettingsResourcePayouts &&
           minimumBalanceByCurrency == other.minimumBalanceByCurrency &&
           schedule == other.schedule &&
           statementDescriptor == other.statementDescriptor &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(minimumBalanceByCurrency, schedule, statementDescriptor, status); } 
-@override String toString() { return 'BalanceSettingsResourcePayouts(minimumBalanceByCurrency: $minimumBalanceByCurrency, schedule: $schedule, statementDescriptor: $statementDescriptor, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(minimumBalanceByCurrency, schedule, statementDescriptor, status);
+
+@override String toString() => 'BalanceSettingsResourcePayouts(minimumBalanceByCurrency: $minimumBalanceByCurrency, schedule: $schedule, statementDescriptor: $statementDescriptor, status: $status)';
+
  }

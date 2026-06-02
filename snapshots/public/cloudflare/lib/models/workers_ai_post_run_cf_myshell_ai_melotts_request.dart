@@ -26,10 +26,13 @@ WorkersAiPostRunCfMyshellAiMelottsRequest copyWith({String Function()? lang, Str
   lang: lang != null ? lang() : this.lang,
   prompt: prompt ?? this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMyshellAiMelottsRequest &&
           lang == other.lang &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(lang, prompt); } 
-@override String toString() { return 'WorkersAiPostRunCfMyshellAiMelottsRequest(lang: $lang, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(lang, prompt);
+
+@override String toString() => 'WorkersAiPostRunCfMyshellAiMelottsRequest(lang: $lang, prompt: $prompt)';
+
  }

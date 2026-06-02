@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IssuingAuthorizationFleetNonFuelPriceData copyWith({String? Function()? grossAmountDecimal}) { return IssuingAuthorizationFleetNonFuelPriceData(
   grossAmountDecimal: grossAmountDecimal != null ? grossAmountDecimal() : this.grossAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFleetNonFuelPriceData &&
-          grossAmountDecimal == other.grossAmountDecimal; } 
-@override int get hashCode { return grossAmountDecimal.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFleetNonFuelPriceData(grossAmountDecimal: $grossAmountDecimal)'; } 
+          grossAmountDecimal == other.grossAmountDecimal;
+
+@override int get hashCode => grossAmountDecimal.hashCode;
+
+@override String toString() => 'IssuingAuthorizationFleetNonFuelPriceData(grossAmountDecimal: $grossAmountDecimal)';
+
  }

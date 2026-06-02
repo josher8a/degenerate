@@ -66,7 +66,7 @@ WebhookBranchProtectionRuleEditedChanges copyWith({AdminEnforced? Function()? ad
   requiredStatusChecks: requiredStatusChecks != null ? requiredStatusChecks() : this.requiredStatusChecks,
   requiredStatusChecksEnforcementLevel: requiredStatusChecksEnforcementLevel != null ? requiredStatusChecksEnforcementLevel() : this.requiredStatusChecksEnforcementLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookBranchProtectionRuleEditedChanges &&
           adminEnforced == other.adminEnforced &&
           authorizedActorNames == other.authorizedActorNames &&
@@ -78,7 +78,10 @@ WebhookBranchProtectionRuleEditedChanges copyWith({AdminEnforced? Function()? ad
           pullRequestReviewsEnforcementLevel == other.pullRequestReviewsEnforcementLevel &&
           requireLastPushApproval == other.requireLastPushApproval &&
           requiredStatusChecks == other.requiredStatusChecks &&
-          requiredStatusChecksEnforcementLevel == other.requiredStatusChecksEnforcementLevel; } 
-@override int get hashCode { return Object.hash(adminEnforced, authorizedActorNames, authorizedActorsOnly, authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, pullRequestReviewsEnforcementLevel, requireLastPushApproval, requiredStatusChecks, requiredStatusChecksEnforcementLevel); } 
-@override String toString() { return 'WebhookBranchProtectionRuleEditedChanges(adminEnforced: $adminEnforced, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, requireLastPushApproval: $requireLastPushApproval, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel)'; } 
+          requiredStatusChecksEnforcementLevel == other.requiredStatusChecksEnforcementLevel;
+
+@override int get hashCode => Object.hash(adminEnforced, authorizedActorNames, authorizedActorsOnly, authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel, lockAllowsForkSync, pullRequestReviewsEnforcementLevel, requireLastPushApproval, requiredStatusChecks, requiredStatusChecksEnforcementLevel);
+
+@override String toString() => 'WebhookBranchProtectionRuleEditedChanges(adminEnforced: $adminEnforced, authorizedActorNames: $authorizedActorNames, authorizedActorsOnly: $authorizedActorsOnly, authorizedDismissalActorsOnly: $authorizedDismissalActorsOnly, linearHistoryRequirementEnforcementLevel: $linearHistoryRequirementEnforcementLevel, lockBranchEnforcementLevel: $lockBranchEnforcementLevel, lockAllowsForkSync: $lockAllowsForkSync, pullRequestReviewsEnforcementLevel: $pullRequestReviewsEnforcementLevel, requireLastPushApproval: $requireLastPushApproval, requiredStatusChecks: $requiredStatusChecks, requiredStatusChecksEnforcementLevel: $requiredStatusChecksEnforcementLevel)';
+
  }

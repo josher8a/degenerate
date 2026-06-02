@@ -29,11 +29,14 @@ Usage copyWith({double Function()? completionTokens, double Function()? promptTo
   promptTokens: promptTokens != null ? promptTokens() : this.promptTokens,
   totalTokens: totalTokens != null ? totalTokens() : this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Usage &&
           completionTokens == other.completionTokens &&
           promptTokens == other.promptTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(completionTokens, promptTokens, totalTokens); } 
-@override String toString() { return 'Usage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(completionTokens, promptTokens, totalTokens);
+
+@override String toString() => 'Usage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens)';
+
  }

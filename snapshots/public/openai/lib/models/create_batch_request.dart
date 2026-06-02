@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Endpoint && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Endpoint($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Endpoint && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Endpoint($value)';
+
  }
 /// The time frame within which the batch should be processed. Currently only `24h` is supported.
 @immutable final class CompletionWindow {const CompletionWindow._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompletionWindow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CompletionWindow($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CompletionWindow && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CompletionWindow($value)';
+
  }
 @immutable final class CreateBatchRequest {const CreateBatchRequest({required this.inputFileId, required this.endpoint, required this.completionWindow, this.metadata, this.outputExpiresAfter, });
 
@@ -114,13 +120,16 @@ CreateBatchRequest copyWith({String? inputFileId, Endpoint? endpoint, Completion
   metadata: metadata != null ? metadata() : this.metadata,
   outputExpiresAfter: outputExpiresAfter != null ? outputExpiresAfter() : this.outputExpiresAfter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateBatchRequest &&
           inputFileId == other.inputFileId &&
           endpoint == other.endpoint &&
           completionWindow == other.completionWindow &&
           metadata == other.metadata &&
-          outputExpiresAfter == other.outputExpiresAfter; } 
-@override int get hashCode { return Object.hash(inputFileId, endpoint, completionWindow, metadata, outputExpiresAfter); } 
-@override String toString() { return 'CreateBatchRequest(inputFileId: $inputFileId, endpoint: $endpoint, completionWindow: $completionWindow, metadata: $metadata, outputExpiresAfter: $outputExpiresAfter)'; } 
+          outputExpiresAfter == other.outputExpiresAfter;
+
+@override int get hashCode => Object.hash(inputFileId, endpoint, completionWindow, metadata, outputExpiresAfter);
+
+@override String toString() => 'CreateBatchRequest(inputFileId: $inputFileId, endpoint: $endpoint, completionWindow: $completionWindow, metadata: $metadata, outputExpiresAfter: $outputExpiresAfter)';
+
  }

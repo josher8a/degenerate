@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('every
 AccessEveryoneRule copyWith({Map<String,dynamic>? everyone}) { return AccessEveryoneRule(
   everyone: everyone ?? this.everyone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessEveryoneRule &&
-          everyone == other.everyone; } 
-@override int get hashCode { return everyone.hashCode; } 
-@override String toString() { return 'AccessEveryoneRule(everyone: $everyone)'; } 
+          everyone == other.everyone;
+
+@override int get hashCode => everyone.hashCode;
+
+@override String toString() => 'AccessEveryoneRule(everyone: $everyone)';
+
  }

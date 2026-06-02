@@ -18,13 +18,15 @@ final class PostEventQueryAlertUpdateError$400 extends PostEventQueryAlertUpdate
 
 final PostEventQueryAlertUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventQueryAlertUpdateError$404 extends PostEventQueryAlertUpdateError {const PostEventQueryAlertUpdateError$404(this.error);
 
 final PostEventQueryAlertUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PostEventQueryAlertUpdateError$Unknown extends PostEventQueryAlertUpdateError {const PostEventQueryAlertUpdateError$Unknown(this.statusCode, this.rawBody, );
 

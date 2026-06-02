@@ -35,12 +35,15 @@ R2SippyDestination copyWith({String? Function()? accessKeyId, String? Function()
   bucket: bucket != null ? bucket() : this.bucket,
   provider: provider != null ? provider() : this.provider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SippyDestination &&
           accessKeyId == other.accessKeyId &&
           account == other.account &&
           bucket == other.bucket &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(accessKeyId, account, bucket, provider); } 
-@override String toString() { return 'R2SippyDestination(accessKeyId: $accessKeyId, account: $account, bucket: $bucket, provider: $provider)'; } 
+          provider == other.provider;
+
+@override int get hashCode => Object.hash(accessKeyId, account, bucket, provider);
+
+@override String toString() => 'R2SippyDestination(accessKeyId: $accessKeyId, account: $account, bucket: $bucket, provider: $provider)';
+
  }

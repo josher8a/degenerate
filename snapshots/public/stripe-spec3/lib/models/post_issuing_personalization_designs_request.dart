@@ -76,7 +76,7 @@ PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo,
   preferences: preferences != null ? preferences() : this.preferences,
   transferLookupKey: transferLookupKey != null ? transferLookupKey() : this.transferLookupKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingPersonalizationDesignsRequest &&
           cardLogo == other.cardLogo &&
           carrierText == other.carrierText &&
@@ -86,7 +86,10 @@ PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo,
           name == other.name &&
           physicalBundle == other.physicalBundle &&
           preferences == other.preferences &&
-          transferLookupKey == other.transferLookupKey; } 
-@override int get hashCode { return Object.hash(cardLogo, carrierText, Object.hashAll(expand ?? const []), lookupKey, metadata, name, physicalBundle, preferences, transferLookupKey); } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsRequest(cardLogo: $cardLogo, carrierText: $carrierText, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name, physicalBundle: $physicalBundle, preferences: $preferences, transferLookupKey: $transferLookupKey)'; } 
+          transferLookupKey == other.transferLookupKey;
+
+@override int get hashCode => Object.hash(cardLogo, carrierText, Object.hashAll(expand ?? const []), lookupKey, metadata, name, physicalBundle, preferences, transferLookupKey);
+
+@override String toString() => 'PostIssuingPersonalizationDesignsRequest(cardLogo: $cardLogo, carrierText: $carrierText, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name, physicalBundle: $physicalBundle, preferences: $preferences, transferLookupKey: $transferLookupKey)';
+
  }

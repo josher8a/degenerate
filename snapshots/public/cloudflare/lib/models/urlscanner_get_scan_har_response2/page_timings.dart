@@ -23,10 +23,13 @@ PageTimings copyWith({double? onContentLoad, double? onLoad, }) { return PageTim
   onContentLoad: onContentLoad ?? this.onContentLoad,
   onLoad: onLoad ?? this.onLoad,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageTimings &&
           onContentLoad == other.onContentLoad &&
-          onLoad == other.onLoad; } 
-@override int get hashCode { return Object.hash(onContentLoad, onLoad); } 
-@override String toString() { return 'PageTimings(onContentLoad: $onContentLoad, onLoad: $onLoad)'; } 
+          onLoad == other.onLoad;
+
+@override int get hashCode => Object.hash(onContentLoad, onLoad);
+
+@override String toString() => 'PageTimings(onContentLoad: $onContentLoad, onLoad: $onLoad)';
+
  }

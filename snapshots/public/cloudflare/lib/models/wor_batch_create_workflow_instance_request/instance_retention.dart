@@ -30,10 +30,13 @@ InstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function
   errorRetention: errorRetention != null ? errorRetention() : this.errorRetention,
   successRetention: successRetention != null ? successRetention() : this.successRetention,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InstanceRetention &&
           errorRetention == other.errorRetention &&
-          successRetention == other.successRetention; } 
-@override int get hashCode { return Object.hash(errorRetention, successRetention); } 
-@override String toString() { return 'InstanceRetention(errorRetention: $errorRetention, successRetention: $successRetention)'; } 
+          successRetention == other.successRetention;
+
+@override int get hashCode => Object.hash(errorRetention, successRetention);
+
+@override String toString() => 'InstanceRetention(errorRetention: $errorRetention, successRetention: $successRetention)';
+
  }

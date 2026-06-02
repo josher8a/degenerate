@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterEventObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingMeterEventObject($value)';
+
  }
 /// Meter events represent actions that customers take in your system. You can use meter events to bill a customer based on their usage. Meter events are associated with billing meters, which define both the contents of the event’s payload and how to aggregate those events.
 @immutable final class BillingMeterEvent {const BillingMeterEvent({required this.created, required this.eventName, required this.identifier, required this.livemode, required this.object, required this.payload, required this.timestamp, });
@@ -86,7 +89,7 @@ BillingMeterEvent copyWith({int? created, String? eventName, String? identifier,
   payload: payload ?? this.payload,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterEvent &&
           created == other.created &&
           eventName == other.eventName &&
@@ -94,7 +97,10 @@ BillingMeterEvent copyWith({int? created, String? eventName, String? identifier,
           livemode == other.livemode &&
           object == other.object &&
           payload == other.payload &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(created, eventName, identifier, livemode, object, payload, timestamp); } 
-@override String toString() { return 'BillingMeterEvent(created: $created, eventName: $eventName, identifier: $identifier, livemode: $livemode, object: $object, payload: $payload, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(created, eventName, identifier, livemode, object, payload, timestamp);
+
+@override String toString() => 'BillingMeterEvent(created: $created, eventName: $eventName, identifier: $identifier, livemode: $livemode, object: $object, payload: $payload, timestamp: $timestamp)';
+
  }

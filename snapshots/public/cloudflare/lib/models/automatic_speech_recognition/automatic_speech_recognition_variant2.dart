@@ -28,11 +28,14 @@ AutomaticSpeechRecognitionVariant2 copyWith({List<double>? audio, String? Functi
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,
   targetLang: targetLang != null ? targetLang() : this.targetLang,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutomaticSpeechRecognitionVariant2 &&
           listEquals(audio, other.audio) &&
           sourceLang == other.sourceLang &&
-          targetLang == other.targetLang; } 
-@override int get hashCode { return Object.hash(Object.hashAll(audio), sourceLang, targetLang); } 
-@override String toString() { return 'AutomaticSpeechRecognitionVariant2(audio: $audio, sourceLang: $sourceLang, targetLang: $targetLang)'; } 
+          targetLang == other.targetLang;
+
+@override int get hashCode => Object.hash(Object.hashAll(audio), sourceLang, targetLang);
+
+@override String toString() => 'AutomaticSpeechRecognitionVariant2(audio: $audio, sourceLang: $sourceLang, targetLang: $targetLang)';
+
  }

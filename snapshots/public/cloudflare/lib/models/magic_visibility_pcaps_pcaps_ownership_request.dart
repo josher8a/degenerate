@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
 MagicVisibilityPcapsPcapsOwnershipRequest copyWith({MagicVisibilityPcapsPcapsDestinationConf? destinationConf}) { return MagicVisibilityPcapsPcapsOwnershipRequest(
   destinationConf: destinationConf ?? this.destinationConf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsOwnershipRequest &&
-          destinationConf == other.destinationConf; } 
-@override int get hashCode { return destinationConf.hashCode; } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsOwnershipRequest(destinationConf: $destinationConf)'; } 
+          destinationConf == other.destinationConf;
+
+@override int get hashCode => destinationConf.hashCode;
+
+@override String toString() => 'MagicVisibilityPcapsPcapsOwnershipRequest(destinationConf: $destinationConf)';
+
  }

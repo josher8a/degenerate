@@ -55,7 +55,7 @@ MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Funct
   queueName: queueName != null ? queueName() : this.queueName,
   settings: settings != null ? settings() : this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueue &&
           listEquals(consumers, other.consumers) &&
           consumersTotalCount == other.consumersTotalCount &&
@@ -65,7 +65,10 @@ MqQueue copyWith({List<MqConsumerResponse>? Function()? consumers, double? Funct
           producersTotalCount == other.producersTotalCount &&
           queueId == other.queueId &&
           queueName == other.queueName &&
-          settings == other.settings; } 
-@override int get hashCode { return Object.hash(Object.hashAll(consumers ?? const []), consumersTotalCount, createdOn, modifiedOn, Object.hashAll(producers ?? const []), producersTotalCount, queueId, queueName, settings); } 
-@override String toString() { return 'MqQueue(consumers: $consumers, consumersTotalCount: $consumersTotalCount, createdOn: $createdOn, modifiedOn: $modifiedOn, producers: $producers, producersTotalCount: $producersTotalCount, queueId: $queueId, queueName: $queueName, settings: $settings)'; } 
+          settings == other.settings;
+
+@override int get hashCode => Object.hash(Object.hashAll(consumers ?? const []), consumersTotalCount, createdOn, modifiedOn, Object.hashAll(producers ?? const []), producersTotalCount, queueId, queueName, settings);
+
+@override String toString() => 'MqQueue(consumers: $consumers, consumersTotalCount: $consumersTotalCount, createdOn: $createdOn, modifiedOn: $modifiedOn, producers: $producers, producersTotalCount: $producersTotalCount, queueId: $queueId, queueName: $queueName, settings: $settings)';
+
  }

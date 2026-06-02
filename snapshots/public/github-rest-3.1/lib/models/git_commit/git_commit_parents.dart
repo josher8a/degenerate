@@ -28,11 +28,14 @@ GitCommitParents copyWith({String? sha, Uri? url, Uri? htmlUrl, }) { return GitC
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCommitParents &&
           sha == other.sha &&
           url == other.url &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(sha, url, htmlUrl); } 
-@override String toString() { return 'GitCommitParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(sha, url, htmlUrl);
+
+@override String toString() => 'GitCommitParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)';
+
  }

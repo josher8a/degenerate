@@ -24,10 +24,13 @@ ChatCompletionMessageCustomToolCallCustom copyWith({String? name, String? input,
   name: name ?? this.name,
   input: input ?? this.input,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionMessageCustomToolCallCustom &&
           name == other.name &&
-          input == other.input; } 
-@override int get hashCode { return Object.hash(name, input); } 
-@override String toString() { return 'ChatCompletionMessageCustomToolCallCustom(name: $name, input: $input)'; } 
+          input == other.input;
+
+@override int get hashCode => Object.hash(name, input);
+
+@override String toString() => 'ChatCompletionMessageCustomToolCallCustom(name: $name, input: $input)';
+
  }

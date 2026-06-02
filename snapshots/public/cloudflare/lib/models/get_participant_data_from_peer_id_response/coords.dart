@@ -20,10 +20,13 @@ Coords copyWith({double? Function()? latitude, double? Function()? longitude, })
   latitude: latitude != null ? latitude() : this.latitude,
   longitude: longitude != null ? longitude() : this.longitude,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Coords &&
           latitude == other.latitude &&
-          longitude == other.longitude; } 
-@override int get hashCode { return Object.hash(latitude, longitude); } 
-@override String toString() { return 'Coords(latitude: $latitude, longitude: $longitude)'; } 
+          longitude == other.longitude;
+
+@override int get hashCode => Object.hash(latitude, longitude);
+
+@override String toString() => 'Coords(latitude: $latitude, longitude: $longitude)';
+
  }

@@ -23,9 +23,12 @@ return errors; }
 Cancel copyWith({String? Function()? identifier}) { return Cancel(
   identifier: identifier != null ? identifier() : this.identifier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Cancel &&
-          identifier == other.identifier; } 
-@override int get hashCode { return identifier.hashCode; } 
-@override String toString() { return 'Cancel(identifier: $identifier)'; } 
+          identifier == other.identifier;
+
+@override int get hashCode => identifier.hashCode;
+
+@override String toString() => 'Cancel(identifier: $identifier)';
+
  }

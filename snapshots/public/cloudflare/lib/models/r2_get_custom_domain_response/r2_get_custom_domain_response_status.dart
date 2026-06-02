@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Ownership && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Ownership($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Ownership && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Ownership($value)';
+
  }
 /// SSL certificate status.
 @immutable final class StatusSsl {const StatusSsl._(this.value);
@@ -69,10 +72,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusSsl && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusSsl($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusSsl && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusSsl($value)';
+
  }
 @immutable final class R2GetCustomDomainResponseStatus {const R2GetCustomDomainResponseStatus({required this.ownership, required this.ssl, });
 
@@ -97,10 +103,13 @@ R2GetCustomDomainResponseStatus copyWith({Ownership? ownership, StatusSsl? ssl, 
   ownership: ownership ?? this.ownership,
   ssl: ssl ?? this.ssl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2GetCustomDomainResponseStatus &&
           ownership == other.ownership &&
-          ssl == other.ssl; } 
-@override int get hashCode { return Object.hash(ownership, ssl); } 
-@override String toString() { return 'R2GetCustomDomainResponseStatus(ownership: $ownership, ssl: $ssl)'; } 
+          ssl == other.ssl;
+
+@override int get hashCode => Object.hash(ownership, ssl);
+
+@override String toString() => 'R2GetCustomDomainResponseStatus(ownership: $ownership, ssl: $ssl)';
+
  }

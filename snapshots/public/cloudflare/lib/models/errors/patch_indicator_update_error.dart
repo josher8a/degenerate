@@ -18,13 +18,15 @@ final class PatchIndicatorUpdateError$400 extends PatchIndicatorUpdateError {con
 
 final PatchIndicatorUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchIndicatorUpdateError$404 extends PatchIndicatorUpdateError {const PatchIndicatorUpdateError$404(this.error);
 
 final PatchIndicatorUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PatchIndicatorUpdateError$Unknown extends PatchIndicatorUpdateError {const PatchIndicatorUpdateError$Unknown(this.statusCode, this.rawBody, );
 

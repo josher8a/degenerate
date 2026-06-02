@@ -30,12 +30,15 @@ SourceTypeGiropay copyWith({String? Function()? bankCode, String? Function()? ba
   bic: bic != null ? bic() : this.bic,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeGiropay &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
           bic == other.bic &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, statementDescriptor); } 
-@override String toString() { return 'SourceTypeGiropay(bankCode: $bankCode, bankName: $bankName, bic: $bic, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(bankCode, bankName, bic, statementDescriptor);
+
+@override String toString() => 'SourceTypeGiropay(bankCode: $bankCode, bankName: $bankName, bic: $bic, statementDescriptor: $statementDescriptor)';
+
  }

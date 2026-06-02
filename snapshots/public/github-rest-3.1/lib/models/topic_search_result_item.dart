@@ -101,7 +101,7 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
   related: related != null ? related() : this.related,
   aliases: aliases != null ? aliases() : this.aliases,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TopicSearchResultItem &&
           name == other.name &&
           displayName == other.displayName &&
@@ -118,7 +118,10 @@ TopicSearchResultItem copyWith({String? name, String? Function()? displayName, S
           logoUrl == other.logoUrl &&
           listEquals(textMatches, other.textMatches) &&
           listEquals(related, other.related) &&
-          listEquals(aliases, other.aliases); } 
-@override int get hashCode { return Object.hash(name, displayName, shortDescription, description, createdBy, released, createdAt, updatedAt, featured, curated, score, repositoryCount, logoUrl, Object.hashAll(textMatches ?? const []), Object.hashAll(related ?? const []), Object.hashAll(aliases ?? const [])); } 
-@override String toString() { return 'TopicSearchResultItem(name: $name, displayName: $displayName, shortDescription: $shortDescription, description: $description, createdBy: $createdBy, released: $released, createdAt: $createdAt, updatedAt: $updatedAt, featured: $featured, curated: $curated, score: $score, repositoryCount: $repositoryCount, logoUrl: $logoUrl, textMatches: $textMatches, related: $related, aliases: $aliases)'; } 
+          listEquals(aliases, other.aliases);
+
+@override int get hashCode => Object.hash(name, displayName, shortDescription, description, createdBy, released, createdAt, updatedAt, featured, curated, score, repositoryCount, logoUrl, Object.hashAll(textMatches ?? const []), Object.hashAll(related ?? const []), Object.hashAll(aliases ?? const []));
+
+@override String toString() => 'TopicSearchResultItem(name: $name, displayName: $displayName, shortDescription: $shortDescription, description: $description, createdBy: $createdBy, released: $released, createdAt: $createdAt, updatedAt: $updatedAt, featured: $featured, curated: $curated, score: $score, repositoryCount: $repositoryCount, logoUrl: $logoUrl, textMatches: $textMatches, related: $related, aliases: $aliases)';
+
  }

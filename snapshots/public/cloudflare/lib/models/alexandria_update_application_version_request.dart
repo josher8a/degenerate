@@ -34,12 +34,15 @@ AlexandriaUpdateApplicationVersionRequest copyWith({List<String>? Function()? ho
   portProtocols: portProtocols != null ? portProtocols() : this.portProtocols,
   supportDomains: supportDomains != null ? supportDomains() : this.supportDomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AlexandriaUpdateApplicationVersionRequest &&
           listEquals(hostnames, other.hostnames) &&
           listEquals(ipSubnets, other.ipSubnets) &&
           listEquals(portProtocols, other.portProtocols) &&
-          listEquals(supportDomains, other.supportDomains); } 
-@override int get hashCode { return Object.hash(Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const [])); } 
-@override String toString() { return 'AlexandriaUpdateApplicationVersionRequest(hostnames: $hostnames, ipSubnets: $ipSubnets, portProtocols: $portProtocols, supportDomains: $supportDomains)'; } 
+          listEquals(supportDomains, other.supportDomains);
+
+@override int get hashCode => Object.hash(Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), Object.hashAll(portProtocols ?? const []), Object.hashAll(supportDomains ?? const []));
+
+@override String toString() => 'AlexandriaUpdateApplicationVersionRequest(hostnames: $hostnames, ipSubnets: $ipSubnets, portProtocols: $portProtocols, supportDomains: $supportDomains)';
+
  }

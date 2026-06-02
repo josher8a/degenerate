@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicVisibilityPcapsPcapsOwnershipResponseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsOwnershipResponseStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicVisibilityPcapsPcapsOwnershipResponseStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MagicVisibilityPcapsPcapsOwnershipResponseStatus($value)';
+
  }
 @immutable final class MagicVisibilityPcapsPcapsOwnershipResponse {const MagicVisibilityPcapsPcapsOwnershipResponse({required this.destinationConf, required this.filename, required this.id, required this.status, required this.submitted, this.validated, });
 
@@ -91,14 +94,17 @@ MagicVisibilityPcapsPcapsOwnershipResponse copyWith({MagicVisibilityPcapsPcapsDe
   submitted: submitted ?? this.submitted,
   validated: validated != null ? validated() : this.validated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsOwnershipResponse &&
           destinationConf == other.destinationConf &&
           filename == other.filename &&
           id == other.id &&
           status == other.status &&
           submitted == other.submitted &&
-          validated == other.validated; } 
-@override int get hashCode { return Object.hash(destinationConf, filename, id, status, submitted, validated); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsOwnershipResponse(destinationConf: $destinationConf, filename: $filename, id: $id, status: $status, submitted: $submitted, validated: $validated)'; } 
+          validated == other.validated;
+
+@override int get hashCode => Object.hash(destinationConf, filename, id, status, submitted, validated);
+
+@override String toString() => 'MagicVisibilityPcapsPcapsOwnershipResponse(destinationConf: $destinationConf, filename: $filename, id: $id, status: $status, submitted: $submitted, validated: $validated)';
+
  }

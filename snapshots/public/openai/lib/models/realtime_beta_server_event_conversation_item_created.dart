@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemCreatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemCreatedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemCreatedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemCreatedType($value)';
+
  }
 /// Returned when a conversation item is created. There are several scenarios that produce this event:
 ///   - The server is generating a Response, which if successful will produce
@@ -70,12 +73,15 @@ RealtimeBetaServerEventConversationItemCreated copyWith({String? eventId, Realti
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemCreated &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemCreated(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, previousItemId, item);
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemCreated(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';
+
  }

@@ -23,10 +23,13 @@ RadarGetBgpRpkiAspaChangesResponseResultMeta copyWith({DateTime? dataTime, DateT
   dataTime: dataTime ?? this.dataTime,
   queryTime: queryTime ?? this.queryTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaChangesResponseResultMeta &&
           dataTime == other.dataTime &&
-          queryTime == other.queryTime; } 
-@override int get hashCode { return Object.hash(dataTime, queryTime); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime)'; } 
+          queryTime == other.queryTime;
+
+@override int get hashCode => Object.hash(dataTime, queryTime);
+
+@override String toString() => 'RadarGetBgpRpkiAspaChangesResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime)';
+
  }

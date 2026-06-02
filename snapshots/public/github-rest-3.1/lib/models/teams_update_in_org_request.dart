@@ -53,14 +53,17 @@ TeamsUpdateInOrgRequest copyWith({String? Function()? name, String? Function()? 
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId != null ? parentTeamId() : this.parentTeamId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsUpdateInOrgRequest &&
           name == other.name &&
           description == other.description &&
           privacy == other.privacy &&
           notificationSetting == other.notificationSetting &&
           permission == other.permission &&
-          parentTeamId == other.parentTeamId; } 
-@override int get hashCode { return Object.hash(name, description, privacy, notificationSetting, permission, parentTeamId); } 
-@override String toString() { return 'TeamsUpdateInOrgRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)'; } 
+          parentTeamId == other.parentTeamId;
+
+@override int get hashCode => Object.hash(name, description, privacy, notificationSetting, permission, parentTeamId);
+
+@override String toString() => 'TeamsUpdateInOrgRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';
+
  }

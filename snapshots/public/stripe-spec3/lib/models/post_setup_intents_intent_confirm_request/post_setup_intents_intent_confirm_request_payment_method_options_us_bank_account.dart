@@ -30,12 +30,15 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount copyWith({
   networks: networks != null ? networks() : this.networks,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
           mandateOptions == other.mandateOptions &&
           networks == other.networks &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, mandateOptions, networks, verificationMethod); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(financialConnections, mandateOptions, networks, verificationMethod);
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, verificationMethod: $verificationMethod)';
+
  }

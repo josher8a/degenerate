@@ -196,7 +196,7 @@ Metadata copyWith({String? Function()? account, String? Function()? cloudService
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Metadata &&
           account == other.account &&
           cloudService == other.cloudService &&
@@ -228,7 +228,10 @@ Metadata copyWith({String? Function()? account, String? Function()? cloudService
           transactionName == other.transactionName &&
           trigger == other.trigger &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([account, cloudService, coldStart, cost, duration, endTime, error, errorTemplate, fingerprint, id, level, message, messageTemplate, metricName, origin, parentSpanId, provider, region, requestId, service, spanId, spanName, stackId, startTime, statusCode, traceDuration, traceId, transactionName, trigger, type, url]); } 
-@override String toString() { return 'Metadata(account: $account, cloudService: $cloudService, coldStart: $coldStart, cost: $cost, duration: $duration, endTime: $endTime, error: $error, errorTemplate: $errorTemplate, fingerprint: $fingerprint, id: $id, level: $level, message: $message, messageTemplate: $messageTemplate, metricName: $metricName, origin: $origin, parentSpanId: $parentSpanId, provider: $provider, region: $region, requestId: $requestId, service: $service, spanId: $spanId, spanName: $spanName, stackId: $stackId, startTime: $startTime, statusCode: $statusCode, traceDuration: $traceDuration, traceId: $traceId, transactionName: $transactionName, trigger: $trigger, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([account, cloudService, coldStart, cost, duration, endTime, error, errorTemplate, fingerprint, id, level, message, messageTemplate, metricName, origin, parentSpanId, provider, region, requestId, service, spanId, spanName, stackId, startTime, statusCode, traceDuration, traceId, transactionName, trigger, type, url]);
+
+@override String toString() => 'Metadata(account: $account, cloudService: $cloudService, coldStart: $coldStart, cost: $cost, duration: $duration, endTime: $endTime, error: $error, errorTemplate: $errorTemplate, fingerprint: $fingerprint, id: $id, level: $level, message: $message, messageTemplate: $messageTemplate, metricName: $metricName, origin: $origin, parentSpanId: $parentSpanId, provider: $provider, region: $region, requestId: $requestId, service: $service, spanId: $spanId, spanName: $spanName, stackId: $stackId, startTime: $startTime, statusCode: $statusCode, traceDuration: $traceDuration, traceId: $traceId, transactionName: $transactionName, trigger: $trigger, type: $type, url: $url)';
+
  }

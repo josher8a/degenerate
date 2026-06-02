@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretsStoreSecretStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretsStoreSecretStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SecretsStoreSecretStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SecretsStoreSecretStatus($value)';
+
  }
 @immutable final class SecretsStoreSecretObject {const SecretsStoreSecretObject({required this.created, required this.id, required this.modified, required this.name, required this.status, required this.storeId, this.comment, });
 
@@ -82,7 +85,7 @@ SecretsStoreSecretObject copyWith({SecretsStoreComment? Function()? comment, Sec
   status: status ?? this.status,
   storeId: storeId ?? this.storeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreSecretObject &&
           comment == other.comment &&
           created == other.created &&
@@ -90,7 +93,10 @@ SecretsStoreSecretObject copyWith({SecretsStoreComment? Function()? comment, Sec
           modified == other.modified &&
           name == other.name &&
           status == other.status &&
-          storeId == other.storeId; } 
-@override int get hashCode { return Object.hash(comment, created, id, modified, name, status, storeId); } 
-@override String toString() { return 'SecretsStoreSecretObject(comment: $comment, created: $created, id: $id, modified: $modified, name: $name, status: $status, storeId: $storeId)'; } 
+          storeId == other.storeId;
+
+@override int get hashCode => Object.hash(comment, created, id, modified, name, status, storeId);
+
+@override String toString() => 'SecretsStoreSecretObject(comment: $comment, created: $created, id: $id, modified: $modified, name: $name, status: $status, storeId: $storeId)';
+
  }

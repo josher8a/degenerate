@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentifierType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentifierType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentifierType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentifierType($value)';
+
  }
 /// Whether the account number is currently active and usable for transactions.
 @immutable final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BankConnectionsResourceAccountNumberDetailsStatus($value)';
+
  }
 @immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(this.value);
 
@@ -66,10 +72,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)';
+
  }
 /// 
 @immutable final class BankConnectionsResourceAccountNumberDetails {const BankConnectionsResourceAccountNumberDetails({required this.identifierType, required this.status, required this.supportedNetworks, this.expectedExpiryDate, });
@@ -108,12 +117,15 @@ BankConnectionsResourceAccountNumberDetails copyWith({int? Function()? expectedE
   status: status ?? this.status,
   supportedNetworks: supportedNetworks ?? this.supportedNetworks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankConnectionsResourceAccountNumberDetails &&
           expectedExpiryDate == other.expectedExpiryDate &&
           identifierType == other.identifierType &&
           status == other.status &&
-          listEquals(supportedNetworks, other.supportedNetworks); } 
-@override int get hashCode { return Object.hash(expectedExpiryDate, identifierType, status, Object.hashAll(supportedNetworks)); } 
-@override String toString() { return 'BankConnectionsResourceAccountNumberDetails(expectedExpiryDate: $expectedExpiryDate, identifierType: $identifierType, status: $status, supportedNetworks: $supportedNetworks)'; } 
+          listEquals(supportedNetworks, other.supportedNetworks);
+
+@override int get hashCode => Object.hash(expectedExpiryDate, identifierType, status, Object.hashAll(supportedNetworks));
+
+@override String toString() => 'BankConnectionsResourceAccountNumberDetails(expectedExpiryDate: $expectedExpiryDate, identifierType: $identifierType, status: $status, supportedNetworks: $supportedNetworks)';
+
  }

@@ -29,11 +29,14 @@ DlpCreateIntegrationBody copyWith({DlpRiskScoreIntegrationType? integrationType,
   referenceId: referenceId != null ? referenceId() : this.referenceId,
   tenantUrl: tenantUrl ?? this.tenantUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpCreateIntegrationBody &&
           integrationType == other.integrationType &&
           referenceId == other.referenceId &&
-          tenantUrl == other.tenantUrl; } 
-@override int get hashCode { return Object.hash(integrationType, referenceId, tenantUrl); } 
-@override String toString() { return 'DlpCreateIntegrationBody(integrationType: $integrationType, referenceId: $referenceId, tenantUrl: $tenantUrl)'; } 
+          tenantUrl == other.tenantUrl;
+
+@override int get hashCode => Object.hash(integrationType, referenceId, tenantUrl);
+
+@override String toString() => 'DlpCreateIntegrationBody(integrationType: $integrationType, referenceId: $referenceId, tenantUrl: $tenantUrl)';
+
  }

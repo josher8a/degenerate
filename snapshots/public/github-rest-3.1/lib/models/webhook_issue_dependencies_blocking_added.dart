@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssueDependenciesBlockingAddedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssueDependenciesBlockingAddedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookIssueDependenciesBlockingAddedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookIssueDependenciesBlockingAddedAction($value)';
+
  }
 @immutable final class WebhookIssueDependenciesBlockingAdded {const WebhookIssueDependenciesBlockingAdded({required this.action, required this.organization, required this.repository, required this.sender, this.blockedIssueId, this.blockedIssue, this.blockedIssueRepo, this.blockingIssueId, this.blockingIssue, this.installation, });
 
@@ -86,7 +89,7 @@ WebhookIssueDependenciesBlockingAdded copyWith({WebhookIssueDependenciesBlocking
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueDependenciesBlockingAdded &&
           action == other.action &&
           blockedIssueId == other.blockedIssueId &&
@@ -97,7 +100,10 @@ WebhookIssueDependenciesBlockingAdded copyWith({WebhookIssueDependenciesBlocking
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, blockedIssueId, blockedIssue, blockedIssueRepo, blockingIssueId, blockingIssue, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssueDependenciesBlockingAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockedIssueRepo: $blockedIssueRepo, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, blockedIssueId, blockedIssue, blockedIssueRepo, blockingIssueId, blockingIssue, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookIssueDependenciesBlockingAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockedIssueRepo: $blockedIssueRepo, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

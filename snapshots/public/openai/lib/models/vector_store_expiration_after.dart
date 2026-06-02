@@ -29,10 +29,13 @@ VectorStoreExpirationAfter copyWith({VectorStoreExpirationAfterAnchor? anchor, i
   anchor: anchor ?? this.anchor,
   days: days ?? this.days,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreExpirationAfter &&
           anchor == other.anchor &&
-          days == other.days; } 
-@override int get hashCode { return Object.hash(anchor, days); } 
-@override String toString() { return 'VectorStoreExpirationAfter(anchor: $anchor, days: $days)'; } 
+          days == other.days;
+
+@override int get hashCode => Object.hash(anchor, days);
+
+@override String toString() => 'VectorStoreExpirationAfter(anchor: $anchor, days: $days)';
+
  }

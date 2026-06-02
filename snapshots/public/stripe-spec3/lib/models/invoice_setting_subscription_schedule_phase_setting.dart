@@ -29,11 +29,14 @@ InvoiceSettingSubscriptionSchedulePhaseSetting copyWith({List<InvoiceAccountTaxI
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceSettingSubscriptionSchedulePhaseSetting &&
           listEquals(accountTaxIds, other.accountTaxIds) &&
           daysUntilDue == other.daysUntilDue &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountTaxIds ?? const []), daysUntilDue, issuer); } 
-@override String toString() { return 'InvoiceSettingSubscriptionSchedulePhaseSetting(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => Object.hash(Object.hashAll(accountTaxIds ?? const []), daysUntilDue, issuer);
+
+@override String toString() => 'InvoiceSettingSubscriptionSchedulePhaseSetting(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)';
+
  }

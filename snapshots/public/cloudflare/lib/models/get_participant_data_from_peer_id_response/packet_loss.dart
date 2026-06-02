@@ -35,13 +35,16 @@ PacketLoss copyWith({int? Function()? $5OrGreaterEventFraction, int? Function()?
   $50OrGreaterEventFraction: $50OrGreaterEventFraction != null ? $50OrGreaterEventFraction() : this.$50OrGreaterEventFraction,
   avg: avg != null ? avg() : this.avg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PacketLoss &&
           $5OrGreaterEventFraction == other.$5OrGreaterEventFraction &&
           $10OrGreaterEventFraction == other.$10OrGreaterEventFraction &&
           $25OrGreaterEventFraction == other.$25OrGreaterEventFraction &&
           $50OrGreaterEventFraction == other.$50OrGreaterEventFraction &&
-          avg == other.avg; } 
-@override int get hashCode { return Object.hash($5OrGreaterEventFraction, $10OrGreaterEventFraction, $25OrGreaterEventFraction, $50OrGreaterEventFraction, avg); } 
-@override String toString() { return 'PacketLoss(\$5OrGreaterEventFraction: ${$5OrGreaterEventFraction}, \$10OrGreaterEventFraction: ${$10OrGreaterEventFraction}, \$25OrGreaterEventFraction: ${$25OrGreaterEventFraction}, \$50OrGreaterEventFraction: ${$50OrGreaterEventFraction}, avg: $avg)'; } 
+          avg == other.avg;
+
+@override int get hashCode => Object.hash($5OrGreaterEventFraction, $10OrGreaterEventFraction, $25OrGreaterEventFraction, $50OrGreaterEventFraction, avg);
+
+@override String toString() => 'PacketLoss(\$5OrGreaterEventFraction: ${$5OrGreaterEventFraction}, \$10OrGreaterEventFraction: ${$10OrGreaterEventFraction}, \$25OrGreaterEventFraction: ${$25OrGreaterEventFraction}, \$50OrGreaterEventFraction: ${$50OrGreaterEventFraction}, avg: $avg)';
+
  }

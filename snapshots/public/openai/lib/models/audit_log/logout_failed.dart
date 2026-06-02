@@ -23,10 +23,13 @@ LogoutFailed copyWith({String? Function()? errorCode, String? Function()? errorM
   errorCode: errorCode != null ? errorCode() : this.errorCode,
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogoutFailed &&
           errorCode == other.errorCode &&
-          errorMessage == other.errorMessage; } 
-@override int get hashCode { return Object.hash(errorCode, errorMessage); } 
-@override String toString() { return 'LogoutFailed(errorCode: $errorCode, errorMessage: $errorMessage)'; } 
+          errorMessage == other.errorMessage;
+
+@override int get hashCode => Object.hash(errorCode, errorMessage);
+
+@override String toString() => 'LogoutFailed(errorCode: $errorCode, errorMessage: $errorMessage)';
+
  }

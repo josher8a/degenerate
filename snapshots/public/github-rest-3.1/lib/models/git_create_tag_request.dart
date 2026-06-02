@@ -43,13 +43,16 @@ GitCreateTagRequest copyWith({String? tag, String? message, String? object, GitC
   type: type ?? this.type,
   tagger: tagger != null ? tagger() : this.tagger,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateTagRequest &&
           tag == other.tag &&
           message == other.message &&
           object == other.object &&
           type == other.type &&
-          tagger == other.tagger; } 
-@override int get hashCode { return Object.hash(tag, message, object, type, tagger); } 
-@override String toString() { return 'GitCreateTagRequest(tag: $tag, message: $message, object: $object, type: $type, tagger: $tagger)'; } 
+          tagger == other.tagger;
+
+@override int get hashCode => Object.hash(tag, message, object, type, tagger);
+
+@override String toString() => 'GitCreateTagRequest(tag: $tag, message: $message, object: $object, type: $type, tagger: $tagger)';
+
  }

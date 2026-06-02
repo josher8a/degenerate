@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attri
 UpdateVectorStoreFileAttributesRequest copyWith({Map<String, dynamic>? Function()? attributes}) { return UpdateVectorStoreFileAttributesRequest(
   attributes: attributes != null ? attributes() : this.attributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateVectorStoreFileAttributesRequest &&
-          attributes == other.attributes; } 
-@override int get hashCode { return attributes.hashCode; } 
-@override String toString() { return 'UpdateVectorStoreFileAttributesRequest(attributes: $attributes)'; } 
+          attributes == other.attributes;
+
+@override int get hashCode => attributes.hashCode;
+
+@override String toString() => 'UpdateVectorStoreFileAttributesRequest(attributes: $attributes)';
+
  }

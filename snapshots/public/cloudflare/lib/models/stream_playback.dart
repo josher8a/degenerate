@@ -26,10 +26,13 @@ StreamPlayback copyWith({String? Function()? dash, String? Function()? hls, }) {
   dash: dash != null ? dash() : this.dash,
   hls: hls != null ? hls() : this.hls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamPlayback &&
           dash == other.dash &&
-          hls == other.hls; } 
-@override int get hashCode { return Object.hash(dash, hls); } 
-@override String toString() { return 'StreamPlayback(dash: $dash, hls: $hls)'; } 
+          hls == other.hls;
+
+@override int get hashCode => Object.hash(dash, hls);
+
+@override String toString() => 'StreamPlayback(dash: $dash, hls: $hls)';
+
  }

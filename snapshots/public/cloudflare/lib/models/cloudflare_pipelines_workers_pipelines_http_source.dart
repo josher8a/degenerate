@@ -34,12 +34,15 @@ CloudflarePipelinesWorkersPipelinesHttpSource copyWith({bool? Function()? authen
   format: format ?? this.format,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesHttpSource &&
           authentication == other.authentication &&
           cors == other.cors &&
           format == other.format &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(authentication, cors, format, type); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSource(authentication: $authentication, cors: $cors, format: $format, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(authentication, cors, format, type);
+
+@override String toString() => 'CloudflarePipelinesWorkersPipelinesHttpSource(authentication: $authentication, cors: $cors, format: $format, type: $type)';
+
  }

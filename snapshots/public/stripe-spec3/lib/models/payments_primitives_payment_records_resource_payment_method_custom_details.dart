@@ -33,10 +33,13 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails copyWith({Str
   displayName: displayName ?? this.displayName,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails &&
           displayName == other.displayName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(displayName, type); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(displayName, type);
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCustomDetails(displayName: $displayName, type: $type)';
+
  }

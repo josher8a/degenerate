@@ -57,7 +57,7 @@ AigConfigGetGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, Dep
   name: name ?? this.name,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigGetGatewayDynamicRouteResponseResult &&
           createdAt == other.createdAt &&
           deployment == other.deployment &&
@@ -66,7 +66,10 @@ AigConfigGetGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, Dep
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, deployment, Object.hashAll(elements), gatewayId, id, modifiedAt, name, version); } 
-@override String toString() { return 'AigConfigGetGatewayDynamicRouteResponseResult(createdAt: $createdAt, deployment: $deployment, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(createdAt, deployment, Object.hashAll(elements), gatewayId, id, modifiedAt, name, version);
+
+@override String toString() => 'AigConfigGetGatewayDynamicRouteResponseResult(createdAt: $createdAt, deployment: $deployment, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version)';
+
  }

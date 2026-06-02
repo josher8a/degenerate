@@ -27,10 +27,13 @@ RealtimeCallCreateRequest copyWith({String? sdp, RealtimeSessionCreateRequestGa?
   sdp: sdp ?? this.sdp,
   session: session != null ? session() : this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCallCreateRequest &&
           sdp == other.sdp &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(sdp, session); } 
-@override String toString() { return 'RealtimeCallCreateRequest(sdp: $sdp, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(sdp, session);
+
+@override String toString() => 'RealtimeCallCreateRequest(sdp: $sdp, session: $session)';
+
  }

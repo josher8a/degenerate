@@ -96,7 +96,7 @@ Overview copyWith({bool? verifiablePasswordAuthentication, SshKeyFingerprints? F
   copilot: copilot != null ? copilot() : this.copilot,
   domains: domains != null ? domains() : this.domains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Overview &&
           verifiablePasswordAuthentication == other.verifiablePasswordAuthentication &&
           sshKeyFingerprints == other.sshKeyFingerprints &&
@@ -114,7 +114,10 @@ Overview copyWith({bool? verifiablePasswordAuthentication, SshKeyFingerprints? F
           listEquals(codespaces, other.codespaces) &&
           listEquals(dependabot, other.dependabot) &&
           listEquals(copilot, other.copilot) &&
-          domains == other.domains; } 
-@override int get hashCode { return Object.hash(verifiablePasswordAuthentication, sshKeyFingerprints, Object.hashAll(sshKeys ?? const []), Object.hashAll(hooks ?? const []), Object.hashAll(githubEnterpriseImporter ?? const []), Object.hashAll(web ?? const []), Object.hashAll(api ?? const []), Object.hashAll(git ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(pages ?? const []), Object.hashAll(importer ?? const []), Object.hashAll(actions ?? const []), Object.hashAll(actionsMacos ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(dependabot ?? const []), Object.hashAll(copilot ?? const []), domains); } 
-@override String toString() { return 'Overview(verifiablePasswordAuthentication: $verifiablePasswordAuthentication, sshKeyFingerprints: $sshKeyFingerprints, sshKeys: $sshKeys, hooks: $hooks, githubEnterpriseImporter: $githubEnterpriseImporter, web: $web, api: $api, git: $git, packages: $packages, pages: $pages, importer: $importer, actions: $actions, actionsMacos: $actionsMacos, codespaces: $codespaces, dependabot: $dependabot, copilot: $copilot, domains: $domains)'; } 
+          domains == other.domains;
+
+@override int get hashCode => Object.hash(verifiablePasswordAuthentication, sshKeyFingerprints, Object.hashAll(sshKeys ?? const []), Object.hashAll(hooks ?? const []), Object.hashAll(githubEnterpriseImporter ?? const []), Object.hashAll(web ?? const []), Object.hashAll(api ?? const []), Object.hashAll(git ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(pages ?? const []), Object.hashAll(importer ?? const []), Object.hashAll(actions ?? const []), Object.hashAll(actionsMacos ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(dependabot ?? const []), Object.hashAll(copilot ?? const []), domains);
+
+@override String toString() => 'Overview(verifiablePasswordAuthentication: $verifiablePasswordAuthentication, sshKeyFingerprints: $sshKeyFingerprints, sshKeys: $sshKeys, hooks: $hooks, githubEnterpriseImporter: $githubEnterpriseImporter, web: $web, api: $api, git: $git, packages: $packages, pages: $pages, importer: $importer, actions: $actions, actionsMacos: $actionsMacos, codespaces: $codespaces, dependabot: $dependabot, copilot: $copilot, domains: $domains)';
+
  }

@@ -50,7 +50,7 @@ RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsIpInformation &&
           city == other.city &&
           country == other.country &&
@@ -59,7 +59,10 @@ RealtimekitParticipantPeerStatsPeerStatsIpInformation copyWith({String? Function
           org == other.org &&
           portal == other.portal &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(city, country, ipLocation, ipv4, org, portal, region, timezone); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsIpInformation(city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, portal: $portal, region: $region, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(city, country, ipLocation, ipv4, org, portal, region, timezone);
+
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsIpInformation(city: $city, country: $country, ipLocation: $ipLocation, ipv4: $ipv4, org: $org, portal: $portal, region: $region, timezone: $timezone)';
+
  }

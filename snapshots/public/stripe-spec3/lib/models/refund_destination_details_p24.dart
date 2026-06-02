@@ -34,10 +34,13 @@ RefundDestinationDetailsP24 copyWith({String? Function()? reference, String? Fun
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsP24 &&
           reference == other.reference &&
-          referenceStatus == other.referenceStatus; } 
-@override int get hashCode { return Object.hash(reference, referenceStatus); } 
-@override String toString() { return 'RefundDestinationDetailsP24(reference: $reference, referenceStatus: $referenceStatus)'; } 
+          referenceStatus == other.referenceStatus;
+
+@override int get hashCode => Object.hash(reference, referenceStatus);
+
+@override String toString() => 'RefundDestinationDetailsP24(reference: $reference, referenceStatus: $referenceStatus)';
+
  }

@@ -18,13 +18,15 @@ final class PostTagCategoryCreateError$400 extends PostTagCategoryCreateError {c
 
 final PostTagCategoryCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostTagCategoryCreateError$409 extends PostTagCategoryCreateError {const PostTagCategoryCreateError$409(this.error);
 
 final PostTagCategoryCreateResponse409 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class PostTagCategoryCreateError$Unknown extends PostTagCategoryCreateError {const PostTagCategoryCreateError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,7 +17,8 @@ final class RadarGetBgpHijacksEventsError$400 extends RadarGetBgpHijacksEventsEr
 
 final RadarGetBgpHijacksEventsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpHijacksEventsError$Unknown extends RadarGetBgpHijacksEventsError {const RadarGetBgpHijacksEventsError$Unknown(this.statusCode, this.rawBody, );
 

@@ -23,10 +23,13 @@ ProjectsAddFieldForUserRequestVariant1 copyWith({String? name, Variant2DataType?
   name: name ?? this.name,
   dataType: dataType ?? this.dataType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectsAddFieldForUserRequestVariant1 &&
           name == other.name &&
-          dataType == other.dataType; } 
-@override int get hashCode { return Object.hash(name, dataType); } 
-@override String toString() { return 'ProjectsAddFieldForUserRequestVariant1(name: $name, dataType: $dataType)'; } 
+          dataType == other.dataType;
+
+@override int get hashCode => Object.hash(name, dataType);
+
+@override String toString() => 'ProjectsAddFieldForUserRequestVariant1(name: $name, dataType: $dataType)';
+
  }

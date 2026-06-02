@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExchangeRateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExchangeRateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ExchangeRateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ExchangeRateObject($value)';
+
  }
 /// `[Deprecated]` The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.
 /// 
@@ -84,11 +87,14 @@ ExchangeRate copyWith({String? id, ExchangeRateObject? object, Map<String,double
   object: object ?? this.object,
   rates: rates ?? this.rates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExchangeRate &&
           id == other.id &&
           object == other.object &&
-          rates == other.rates; } 
-@override int get hashCode { return Object.hash(id, object, rates); } 
-@override String toString() { return 'ExchangeRate(id: $id, object: $object, rates: $rates)'; } 
+          rates == other.rates;
+
+@override int get hashCode => Object.hash(id, object, rates);
+
+@override String toString() => 'ExchangeRate(id: $id, object: $object, rates: $rates)';
+
  }

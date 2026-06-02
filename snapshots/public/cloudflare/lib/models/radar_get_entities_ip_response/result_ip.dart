@@ -65,7 +65,7 @@ ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? as
   location: location ?? this.location,
   locationName: locationName ?? this.locationName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultIp &&
           asn == other.asn &&
           asnLocation == other.asnLocation &&
@@ -74,7 +74,10 @@ ResultIp copyWith({String? asn, String? asnLocation, String? asnName, String? as
           ip == other.ip &&
           ipVersion == other.ipVersion &&
           location == other.location &&
-          locationName == other.locationName; } 
-@override int get hashCode { return Object.hash(asn, asnLocation, asnName, asnOrgName, ip, ipVersion, location, locationName); } 
-@override String toString() { return 'ResultIp(asn: $asn, asnLocation: $asnLocation, asnName: $asnName, asnOrgName: $asnOrgName, ip: $ip, ipVersion: $ipVersion, location: $location, locationName: $locationName)'; } 
+          locationName == other.locationName;
+
+@override int get hashCode => Object.hash(asn, asnLocation, asnName, asnOrgName, ip, ipVersion, location, locationName);
+
+@override String toString() => 'ResultIp(asn: $asn, asnLocation: $asnLocation, asnName: $asnName, asnOrgName: $asnOrgName, ip: $ip, ipVersion: $ipVersion, location: $location, locationName: $locationName)';
+
  }

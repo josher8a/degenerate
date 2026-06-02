@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LogcontrolRetentionFlag copyWith({LogcontrolFlag? Function()? flag}) { return LogcontrolRetentionFlag(
   flag: flag != null ? flag() : this.flag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogcontrolRetentionFlag &&
-          flag == other.flag; } 
-@override int get hashCode { return flag.hashCode; } 
-@override String toString() { return 'LogcontrolRetentionFlag(flag: $flag)'; } 
+          flag == other.flag;
+
+@override int get hashCode => flag.hashCode;
+
+@override String toString() => 'LogcontrolRetentionFlag(flag: $flag)';
+
  }

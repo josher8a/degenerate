@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageCodeInterpreterSessionsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageCodeInterpreterSessionsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageCodeInterpreterSessionsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageCodeInterpreterSessionsResultObject($value)';
+
  }
 /// The aggregated code interpreter sessions usage details of the specific time bucket.
 @immutable final class UsageCodeInterpreterSessionsResult {const UsageCodeInterpreterSessionsResult({required this.object, this.numSessions, this.projectId, });
@@ -49,11 +52,14 @@ UsageCodeInterpreterSessionsResult copyWith({UsageCodeInterpreterSessionsResultO
   numSessions: numSessions != null ? numSessions() : this.numSessions,
   projectId: projectId != null ? projectId() : this.projectId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageCodeInterpreterSessionsResult &&
           object == other.object &&
           numSessions == other.numSessions &&
-          projectId == other.projectId; } 
-@override int get hashCode { return Object.hash(object, numSessions, projectId); } 
-@override String toString() { return 'UsageCodeInterpreterSessionsResult(object: $object, numSessions: $numSessions, projectId: $projectId)'; } 
+          projectId == other.projectId;
+
+@override int get hashCode => Object.hash(object, numSessions, projectId);
+
+@override String toString() => 'UsageCodeInterpreterSessionsResult(object: $object, numSessions: $numSessions, projectId: $projectId)';
+
  }

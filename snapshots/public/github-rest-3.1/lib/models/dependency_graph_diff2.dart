@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChangeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChangeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChangeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChangeType($value)';
+
  }
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
 @immutable final class DependencyGraphDiffScope {const DependencyGraphDiffScope._(this.value);
@@ -47,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependencyGraphDiffScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependencyGraphDiffScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependencyGraphDiffScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependencyGraphDiffScope($value)';
+
  }
 @immutable final class DependencyGraphDiff2 {const DependencyGraphDiff2({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope, });
 
@@ -122,7 +128,7 @@ DependencyGraphDiff2 copyWith({ChangeType? changeType, String? manifest, String?
   vulnerabilities: vulnerabilities ?? this.vulnerabilities,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphDiff2 &&
           changeType == other.changeType &&
           manifest == other.manifest &&
@@ -133,7 +139,10 @@ DependencyGraphDiff2 copyWith({ChangeType? changeType, String? manifest, String?
           license == other.license &&
           sourceRepositoryUrl == other.sourceRepositoryUrl &&
           listEquals(vulnerabilities, other.vulnerabilities) &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(changeType, manifest, ecosystem, name, version, packageUrl, license, sourceRepositoryUrl, Object.hashAll(vulnerabilities), scope); } 
-@override String toString() { return 'DependencyGraphDiff2(changeType: $changeType, manifest: $manifest, ecosystem: $ecosystem, name: $name, version: $version, packageUrl: $packageUrl, license: $license, sourceRepositoryUrl: $sourceRepositoryUrl, vulnerabilities: $vulnerabilities, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(changeType, manifest, ecosystem, name, version, packageUrl, license, sourceRepositoryUrl, Object.hashAll(vulnerabilities), scope);
+
+@override String toString() => 'DependencyGraphDiff2(changeType: $changeType, manifest: $manifest, ecosystem: $ecosystem, name: $name, version: $version, packageUrl: $packageUrl, license: $license, sourceRepositoryUrl: $sourceRepositoryUrl, vulnerabilities: $vulnerabilities, scope: $scope)';
+
  }

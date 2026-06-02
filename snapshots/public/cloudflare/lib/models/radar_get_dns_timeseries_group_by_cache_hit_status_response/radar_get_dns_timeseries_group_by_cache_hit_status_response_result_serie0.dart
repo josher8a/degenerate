@@ -21,10 +21,13 @@ RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 copyWith({List<St
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0 &&
           listEquals(negative, other.negative) &&
-          listEquals(positive, other.positive); } 
-@override int get hashCode { return Object.hash(Object.hashAll(negative), Object.hashAll(positive)); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(negative: $negative, positive: $positive)'; } 
+          listEquals(positive, other.positive);
+
+@override int get hashCode => Object.hash(Object.hashAll(negative), Object.hashAll(positive));
+
+@override String toString() => 'RadarGetDnsTimeseriesGroupByCacheHitStatusResponseResultSerie0(negative: $negative, positive: $positive)';
+
  }

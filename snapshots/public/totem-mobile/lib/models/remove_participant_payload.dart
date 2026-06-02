@@ -50,21 +50,17 @@ final class RemoveParticipantPayload {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is RemoveParticipantPayload &&
-            action == other.action &&
-            identity == other.identity &&
-            reason == other.reason;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RemoveParticipantPayload &&
+          action == other.action &&
+          identity == other.identity &&
+          reason == other.reason;
 
   @override
-  int get hashCode {
-    return Object.hash(action, identity, reason);
-  }
+  int get hashCode => Object.hash(action, identity, reason);
 
   @override
-  String toString() {
-    return 'RemoveParticipantPayload(action: $action, identity: $identity, reason: $reason)';
-  }
+  String toString() =>
+      'RemoveParticipantPayload(action: $action, identity: $identity, reason: $reason)';
 }

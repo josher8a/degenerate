@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OtelContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OtelContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OtelContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OtelContentType($value)';
+
  }
 @immutable final class Otel {const Otel({required this.authorization, required this.headers, required this.url, this.contentType = OtelContentType.$json, });
 
@@ -56,12 +59,15 @@ Otel copyWith({String? authorization, OtelContentType Function()? contentType, M
   headers: headers ?? this.headers,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Otel &&
           authorization == other.authorization &&
           contentType == other.contentType &&
           headers == other.headers &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(authorization, contentType, headers, url); } 
-@override String toString() { return 'Otel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(authorization, contentType, headers, url);
+
+@override String toString() => 'Otel(authorization: $authorization, contentType: $contentType, headers: $headers, url: $url)';
+
  }

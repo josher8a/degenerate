@@ -33,11 +33,14 @@ UpdateVectorStoreRequest copyWith({String? Function()? name, VectorStoreExpirati
   expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateVectorStoreRequest &&
           name == other.name &&
           expiresAfter == other.expiresAfter &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(name, expiresAfter, metadata); } 
-@override String toString() { return 'UpdateVectorStoreRequest(name: $name, expiresAfter: $expiresAfter, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(name, expiresAfter, metadata);
+
+@override String toString() => 'UpdateVectorStoreRequest(name: $name, expiresAfter: $expiresAfter, metadata: $metadata)';
+
  }

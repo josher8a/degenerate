@@ -47,14 +47,17 @@ AccountSettings copyWith({String? Function()? abuseContactEmail, DateTime? Funct
   enforceTwofactor: enforceTwofactor != null ? enforceTwofactor() : this.enforceTwofactor,
   useAccountCustomNsByDefault: useAccountCustomNsByDefault != null ? useAccountCustomNsByDefault() : this.useAccountCustomNsByDefault,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSettings &&
           abuseContactEmail == other.abuseContactEmail &&
           accessApprovalExpiry == other.accessApprovalExpiry &&
           apiAccessEnabled == other.apiAccessEnabled &&
           defaultNameservers == other.defaultNameservers &&
           enforceTwofactor == other.enforceTwofactor &&
-          useAccountCustomNsByDefault == other.useAccountCustomNsByDefault; } 
-@override int get hashCode { return Object.hash(abuseContactEmail, accessApprovalExpiry, apiAccessEnabled, defaultNameservers, enforceTwofactor, useAccountCustomNsByDefault); } 
-@override String toString() { return 'AccountSettings(abuseContactEmail: $abuseContactEmail, accessApprovalExpiry: $accessApprovalExpiry, apiAccessEnabled: $apiAccessEnabled, defaultNameservers: $defaultNameservers, enforceTwofactor: $enforceTwofactor, useAccountCustomNsByDefault: $useAccountCustomNsByDefault)'; } 
+          useAccountCustomNsByDefault == other.useAccountCustomNsByDefault;
+
+@override int get hashCode => Object.hash(abuseContactEmail, accessApprovalExpiry, apiAccessEnabled, defaultNameservers, enforceTwofactor, useAccountCustomNsByDefault);
+
+@override String toString() => 'AccountSettings(abuseContactEmail: $abuseContactEmail, accessApprovalExpiry: $accessApprovalExpiry, apiAccessEnabled: $apiAccessEnabled, defaultNameservers: $defaultNameservers, enforceTwofactor: $enforceTwofactor, useAccountCustomNsByDefault: $useAccountCustomNsByDefault)';
+
  }

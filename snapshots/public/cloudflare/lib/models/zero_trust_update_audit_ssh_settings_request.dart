@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('publi
 ZeroTrustUpdateAuditSshSettingsRequest copyWith({ZeroTrustGatewayPublicKey? publicKey}) { return ZeroTrustUpdateAuditSshSettingsRequest(
   publicKey: publicKey ?? this.publicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustUpdateAuditSshSettingsRequest &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return publicKey.hashCode; } 
-@override String toString() { return 'ZeroTrustUpdateAuditSshSettingsRequest(publicKey: $publicKey)'; } 
+          publicKey == other.publicKey;
+
+@override int get hashCode => publicKey.hashCode;
+
+@override String toString() => 'ZeroTrustUpdateAuditSshSettingsRequest(publicKey: $publicKey)';
+
  }

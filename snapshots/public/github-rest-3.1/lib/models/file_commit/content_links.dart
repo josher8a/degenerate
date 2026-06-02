@@ -25,11 +25,14 @@ ContentLinks copyWith({String? Function()? self, String? Function()? git, String
   git: git != null ? git() : this.git,
   html: html != null ? html() : this.html,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentLinks &&
           self == other.self &&
           git == other.git &&
-          html == other.html; } 
-@override int get hashCode { return Object.hash(self, git, html); } 
-@override String toString() { return 'ContentLinks(self: $self, git: $git, html: $html)'; } 
+          html == other.html;
+
+@override int get hashCode => Object.hash(self, git, html);
+
+@override String toString() => 'ContentLinks(self: $self, git: $git, html: $html)';
+
  }

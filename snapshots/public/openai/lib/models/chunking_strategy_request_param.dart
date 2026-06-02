@@ -28,12 +28,16 @@ final AutoChunkingStrategyRequestParam autoChunkingStrategyRequestParam;
 
 @override String get type => 'auto';
 
-@override Map<String, dynamic> toJson() { return {...autoChunkingStrategyRequestParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...autoChunkingStrategyRequestParam.toJson(), 'type': type};
+
 ChunkingStrategyRequestParamAuto copyWith({AutoChunkingStrategyRequestParam? autoChunkingStrategyRequestParam}) { return ChunkingStrategyRequestParamAuto(autoChunkingStrategyRequestParam ?? this.autoChunkingStrategyRequestParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChunkingStrategyRequestParamAuto && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam; } 
-@override int get hashCode { return autoChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParam.auto($autoChunkingStrategyRequestParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChunkingStrategyRequestParamAuto && autoChunkingStrategyRequestParam == other.autoChunkingStrategyRequestParam;
+
+@override int get hashCode => autoChunkingStrategyRequestParam.hashCode;
+
+@override String toString() => 'ChunkingStrategyRequestParam.auto($autoChunkingStrategyRequestParam)';
+
  }
 @immutable final class ChunkingStrategyRequestParamStatic extends ChunkingStrategyRequestParam {const ChunkingStrategyRequestParamStatic(this.staticChunkingStrategyRequestParam);
 
@@ -43,14 +47,18 @@ final StaticChunkingStrategyRequestParam staticChunkingStrategyRequestParam;
 
 @override String get type => 'static';
 
-@override Map<String, dynamic> toJson() { return {...staticChunkingStrategyRequestParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...staticChunkingStrategyRequestParam.toJson(), 'type': type};
+
 ChunkingStrategyRequestParamStatic copyWith({StaticChunkingStrategy? $static}) { return ChunkingStrategyRequestParamStatic(staticChunkingStrategyRequestParam.copyWith(
   $static: $static,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChunkingStrategyRequestParamStatic && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam; } 
-@override int get hashCode { return staticChunkingStrategyRequestParam.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParam.\$static($staticChunkingStrategyRequestParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChunkingStrategyRequestParamStatic && staticChunkingStrategyRequestParam == other.staticChunkingStrategyRequestParam;
+
+@override int get hashCode => staticChunkingStrategyRequestParam.hashCode;
+
+@override String toString() => 'ChunkingStrategyRequestParam.\$static($staticChunkingStrategyRequestParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -60,9 +68,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChunkingStrategyRequestParam$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ChunkingStrategyRequestParam.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChunkingStrategyRequestParam$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ChunkingStrategyRequestParam.unknown($json)';
+
  }

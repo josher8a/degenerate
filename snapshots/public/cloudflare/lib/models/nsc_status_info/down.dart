@@ -21,10 +21,13 @@ Down copyWith({String? Function()? reason, String? state, }) { return Down(
   reason: reason != null ? reason() : this.reason,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Down &&
           reason == other.reason &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(reason, state); } 
-@override String toString() { return 'Down(reason: $reason, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(reason, state);
+
+@override String toString() => 'Down(reason: $reason, state: $state)';
+
  }

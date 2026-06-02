@@ -22,10 +22,13 @@ AccountRequestTracerRequestTraceResponseResult copyWith({int? Function()? status
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   trace: trace != null ? trace() : this.trace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequestTracerRequestTraceResponseResult &&
           statusCode == other.statusCode &&
-          listEquals(trace, other.trace); } 
-@override int get hashCode { return Object.hash(statusCode, Object.hashAll(trace ?? const [])); } 
-@override String toString() { return 'AccountRequestTracerRequestTraceResponseResult(statusCode: $statusCode, trace: $trace)'; } 
+          listEquals(trace, other.trace);
+
+@override int get hashCode => Object.hash(statusCode, Object.hashAll(trace ?? const []));
+
+@override String toString() => 'AccountRequestTracerRequestTraceResponseResult(statusCode: $statusCode, trace: $trace)';
+
  }

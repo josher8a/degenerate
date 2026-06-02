@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GroupObject($value)';
+
  }
 /// Summary information about a group returned in role assignment responses.
 @immutable final class Group {const Group({required this.object, required this.id, required this.name, required this.createdAt, required this.scimManaged, });
@@ -67,13 +70,16 @@ Group copyWith({GroupObject? object, String? id, String? name, int? createdAt, b
   createdAt: createdAt ?? this.createdAt,
   scimManaged: scimManaged ?? this.scimManaged,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Group &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
-          scimManaged == other.scimManaged; } 
-@override int get hashCode { return Object.hash(object, id, name, createdAt, scimManaged); } 
-@override String toString() { return 'Group(object: $object, id: $id, name: $name, createdAt: $createdAt, scimManaged: $scimManaged)'; } 
+          scimManaged == other.scimManaged;
+
+@override int get hashCode => Object.hash(object, id, name, createdAt, scimManaged);
+
+@override String toString() => 'Group(object: $object, id: $id, name: $name, createdAt: $createdAt, scimManaged: $scimManaged)';
+
  }

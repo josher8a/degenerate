@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotRepositoryAccessDetailsDefaultLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotRepositoryAccessDetailsDefaultLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotRepositoryAccessDetailsDefaultLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotRepositoryAccessDetailsDefaultLevel($value)';
+
  }
 /// Information about repositories that Dependabot is able to access in an organization
 @immutable final class DependabotRepositoryAccessDetails {const DependabotRepositoryAccessDetails({this.defaultLevel, this.accessibleRepositories, });
@@ -50,10 +53,13 @@ DependabotRepositoryAccessDetails copyWith({DependabotRepositoryAccessDetailsDef
   defaultLevel: defaultLevel != null ? defaultLevel() : this.defaultLevel,
   accessibleRepositories: accessibleRepositories != null ? accessibleRepositories() : this.accessibleRepositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotRepositoryAccessDetails &&
           defaultLevel == other.defaultLevel &&
-          listEquals(accessibleRepositories, other.accessibleRepositories); } 
-@override int get hashCode { return Object.hash(defaultLevel, Object.hashAll(accessibleRepositories ?? const [])); } 
-@override String toString() { return 'DependabotRepositoryAccessDetails(defaultLevel: $defaultLevel, accessibleRepositories: $accessibleRepositories)'; } 
+          listEquals(accessibleRepositories, other.accessibleRepositories);
+
+@override int get hashCode => Object.hash(defaultLevel, Object.hashAll(accessibleRepositories ?? const []));
+
+@override String toString() => 'DependabotRepositoryAccessDetails(defaultLevel: $defaultLevel, accessibleRepositories: $accessibleRepositories)';
+
  }

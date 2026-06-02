@@ -33,10 +33,13 @@ RulesetsRuleExposedCredentialCheck copyWith({String? passwordExpression, String?
   passwordExpression: passwordExpression ?? this.passwordExpression,
   usernameExpression: usernameExpression ?? this.usernameExpression,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRuleExposedCredentialCheck &&
           passwordExpression == other.passwordExpression &&
-          usernameExpression == other.usernameExpression; } 
-@override int get hashCode { return Object.hash(passwordExpression, usernameExpression); } 
-@override String toString() { return 'RulesetsRuleExposedCredentialCheck(passwordExpression: $passwordExpression, usernameExpression: $usernameExpression)'; } 
+          usernameExpression == other.usernameExpression;
+
+@override int get hashCode => Object.hash(passwordExpression, usernameExpression);
+
+@override String toString() => 'RulesetsRuleExposedCredentialCheck(passwordExpression: $passwordExpression, usernameExpression: $usernameExpression)';
+
  }

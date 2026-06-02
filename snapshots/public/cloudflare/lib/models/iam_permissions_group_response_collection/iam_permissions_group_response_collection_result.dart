@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResultScopes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResultScopes($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResultScopes && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResultScopes($value)';
+
  }
 @immutable final class IamPermissionsGroupResponseCollectionResult {const IamPermissionsGroupResponseCollectionResult({this.id, this.name, this.scopes, });
 
@@ -58,11 +61,14 @@ IamPermissionsGroupResponseCollectionResult copyWith({String? Function()? id, St
   name: name != null ? name() : this.name,
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissionsGroupResponseCollectionResult &&
           id == other.id &&
           name == other.name &&
-          listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(scopes ?? const [])); } 
-@override String toString() { return 'IamPermissionsGroupResponseCollectionResult(id: $id, name: $name, scopes: $scopes)'; } 
+          listEquals(scopes, other.scopes);
+
+@override int get hashCode => Object.hash(id, name, Object.hashAll(scopes ?? const []));
+
+@override String toString() => 'IamPermissionsGroupResponseCollectionResult(id: $id, name: $name, scopes: $scopes)';
+
  }

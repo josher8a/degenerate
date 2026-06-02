@@ -36,13 +36,16 @@ AccessSchemasBasicAppResponseProps copyWith({AccessSchemasAud? Function()? aud, 
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasBasicAppResponseProps &&
           aud == other.aud &&
           createdAt == other.createdAt &&
           id == other.id &&
           scimConfig == other.scimConfig &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(aud, createdAt, id, scimConfig, updatedAt); } 
-@override String toString() { return 'AccessSchemasBasicAppResponseProps(aud: $aud, createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(aud, createdAt, id, scimConfig, updatedAt);
+
+@override String toString() => 'AccessSchemasBasicAppResponseProps(aud: $aud, createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt)';
+
  }

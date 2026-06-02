@@ -23,10 +23,13 @@ Subdomain copyWith({bool Function()? enabled, bool? Function()? previewsEnabled,
   enabled: enabled != null ? enabled() : this.enabled,
   previewsEnabled: previewsEnabled != null ? previewsEnabled() : this.previewsEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subdomain &&
           enabled == other.enabled &&
-          previewsEnabled == other.previewsEnabled; } 
-@override int get hashCode { return Object.hash(enabled, previewsEnabled); } 
-@override String toString() { return 'Subdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)'; } 
+          previewsEnabled == other.previewsEnabled;
+
+@override int get hashCode => Object.hash(enabled, previewsEnabled);
+
+@override String toString() => 'Subdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)';
+
  }

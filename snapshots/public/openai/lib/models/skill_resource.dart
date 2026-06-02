@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SkillResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SkillResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SkillResourceObject($value)';
+
  }
 @immutable final class SkillResource {const SkillResource({required this.id, required this.name, required this.description, required this.createdAt, required this.defaultVersion, required this.latestVersion, this.object = SkillResourceObject.skill, });
 
@@ -80,7 +83,7 @@ SkillResource copyWith({String? id, SkillResourceObject? object, String? name, S
   defaultVersion: defaultVersion ?? this.defaultVersion,
   latestVersion: latestVersion ?? this.latestVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SkillResource &&
           id == other.id &&
           object == other.object &&
@@ -88,7 +91,10 @@ SkillResource copyWith({String? id, SkillResourceObject? object, String? name, S
           description == other.description &&
           createdAt == other.createdAt &&
           defaultVersion == other.defaultVersion &&
-          latestVersion == other.latestVersion; } 
-@override int get hashCode { return Object.hash(id, object, name, description, createdAt, defaultVersion, latestVersion); } 
-@override String toString() { return 'SkillResource(id: $id, object: $object, name: $name, description: $description, createdAt: $createdAt, defaultVersion: $defaultVersion, latestVersion: $latestVersion)'; } 
+          latestVersion == other.latestVersion;
+
+@override int get hashCode => Object.hash(id, object, name, description, createdAt, defaultVersion, latestVersion);
+
+@override String toString() => 'SkillResource(id: $id, object: $object, name: $name, description: $description, createdAt: $createdAt, defaultVersion: $defaultVersion, latestVersion: $latestVersion)';
+
  }

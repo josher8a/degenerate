@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 BotnetThreatFeedDeleteAsnResponseResult copyWith({int? Function()? asn}) { return BotnetThreatFeedDeleteAsnResponseResult(
   asn: asn != null ? asn() : this.asn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotnetThreatFeedDeleteAsnResponseResult &&
-          asn == other.asn; } 
-@override int get hashCode { return asn.hashCode; } 
-@override String toString() { return 'BotnetThreatFeedDeleteAsnResponseResult(asn: $asn)'; } 
+          asn == other.asn;
+
+@override int get hashCode => asn.hashCode;
+
+@override String toString() => 'BotnetThreatFeedDeleteAsnResponseResult(asn: $asn)';
+
  }

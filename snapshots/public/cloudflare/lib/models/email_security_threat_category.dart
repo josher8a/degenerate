@@ -25,11 +25,14 @@ EmailSecurityThreatCategory copyWith({String? Function()? description, int? id, 
   id: id ?? this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityThreatCategory &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, id, name); } 
-@override String toString() { return 'EmailSecurityThreatCategory(description: $description, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, id, name);
+
+@override String toString() => 'EmailSecurityThreatCategory(description: $description, id: $id, name: $name)';
+
  }

@@ -45,13 +45,16 @@ IterationSettings copyWith({String? id, String? startDate, int? duration, Iterat
   title: title ?? this.title,
   completed: completed ?? this.completed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IterationSettings &&
           id == other.id &&
           startDate == other.startDate &&
           duration == other.duration &&
           title == other.title &&
-          completed == other.completed; } 
-@override int get hashCode { return Object.hash(id, startDate, duration, title, completed); } 
-@override String toString() { return 'IterationSettings(id: $id, startDate: $startDate, duration: $duration, title: $title, completed: $completed)'; } 
+          completed == other.completed;
+
+@override int get hashCode => Object.hash(id, startDate, duration, title, completed);
+
+@override String toString() => 'IterationSettings(id: $id, startDate: $startDate, duration: $duration, title: $title, completed: $completed)';
+
  }

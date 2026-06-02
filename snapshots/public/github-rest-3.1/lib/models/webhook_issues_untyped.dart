@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesUntypedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesUntypedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookIssuesUntypedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookIssuesUntypedAction($value)';
+
  }
 @immutable final class WebhookIssuesUntyped {const WebhookIssuesUntyped({required this.action, required this.issue, required this.type, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -75,7 +78,7 @@ WebhookIssuesUntyped copyWith({WebhookIssuesUntypedAction? action, EnterpriseWeb
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesUntyped &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -84,7 +87,10 @@ WebhookIssuesUntyped copyWith({WebhookIssuesUntypedAction? action, EnterpriseWeb
           type == other.type &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, issue, type, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssuesUntyped(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, type: $type, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, issue, type, organization, repository, sender);
+
+@override String toString() => 'WebhookIssuesUntyped(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, type: $type, organization: $organization, repository: $repository, sender: $sender)';
+
  }

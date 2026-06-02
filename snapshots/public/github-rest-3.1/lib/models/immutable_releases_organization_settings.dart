@@ -23,10 +23,13 @@ ImmutableReleasesOrganizationSettings copyWith({EnforcedRepositories? enforcedRe
   enforcedRepositories: enforcedRepositories ?? this.enforcedRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImmutableReleasesOrganizationSettings &&
           enforcedRepositories == other.enforcedRepositories &&
-          selectedRepositoriesUrl == other.selectedRepositoriesUrl; } 
-@override int get hashCode { return Object.hash(enforcedRepositories, selectedRepositoriesUrl); } 
-@override String toString() { return 'ImmutableReleasesOrganizationSettings(enforcedRepositories: $enforcedRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)'; } 
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl;
+
+@override int get hashCode => Object.hash(enforcedRepositories, selectedRepositoriesUrl);
+
+@override String toString() => 'ImmutableReleasesOrganizationSettings(enforcedRepositories: $enforcedRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
+
  }

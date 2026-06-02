@@ -37,11 +37,14 @@ WorkflowDispatchResponse copyWith({WorkflowRunId? workflowRunId, Uri? runUrl, Ur
   runUrl: runUrl ?? this.runUrl,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowDispatchResponse &&
           workflowRunId == other.workflowRunId &&
           runUrl == other.runUrl &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(workflowRunId, runUrl, htmlUrl); } 
-@override String toString() { return 'WorkflowDispatchResponse(workflowRunId: $workflowRunId, runUrl: $runUrl, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(workflowRunId, runUrl, htmlUrl);
+
+@override String toString() => 'WorkflowDispatchResponse(workflowRunId: $workflowRunId, runUrl: $runUrl, htmlUrl: $htmlUrl)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
 PageBuildError copyWith({String? Function()? message}) { return PageBuildError(
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageBuildError &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PageBuildError(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'PageBuildError(message: $message)';
+
  }

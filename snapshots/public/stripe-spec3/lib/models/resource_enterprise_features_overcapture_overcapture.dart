@@ -24,10 +24,13 @@ ResourceEnterpriseFeaturesOvercaptureOvercapture copyWith({int? maximumAmountCap
   maximumAmountCapturable: maximumAmountCapturable ?? this.maximumAmountCapturable,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceEnterpriseFeaturesOvercaptureOvercapture &&
           maximumAmountCapturable == other.maximumAmountCapturable &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(maximumAmountCapturable, status); } 
-@override String toString() { return 'ResourceEnterpriseFeaturesOvercaptureOvercapture(maximumAmountCapturable: $maximumAmountCapturable, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(maximumAmountCapturable, status);
+
+@override String toString() => 'ResourceEnterpriseFeaturesOvercaptureOvercapture(maximumAmountCapturable: $maximumAmountCapturable, status: $status)';
+
  }

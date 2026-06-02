@@ -44,13 +44,16 @@ ResultRoutes copyWith({List<int>? asPath, String? collector, List<String>? commu
   prefix: prefix ?? this.prefix,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultRoutes &&
           listEquals(asPath, other.asPath) &&
           collector == other.collector &&
           listEquals(communities, other.communities) &&
           prefix == other.prefix &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asPath), collector, Object.hashAll(communities), prefix, timestamp); } 
-@override String toString() { return 'ResultRoutes(asPath: $asPath, collector: $collector, communities: $communities, prefix: $prefix, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(Object.hashAll(asPath), collector, Object.hashAll(communities), prefix, timestamp);
+
+@override String toString() => 'ResultRoutes(asPath: $asPath, collector: $collector, communities: $communities, prefix: $prefix, timestamp: $timestamp)';
+
  }

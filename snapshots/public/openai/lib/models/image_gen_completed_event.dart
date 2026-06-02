@@ -73,7 +73,7 @@ ImageGenCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, 
   outputFormat: outputFormat ?? this.outputFormat,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenCompletedEvent &&
           type == other.type &&
           b64Json == other.b64Json &&
@@ -82,7 +82,10 @@ ImageGenCompletedEvent copyWith({String? type, String? b64Json, int? createdAt, 
           quality == other.quality &&
           background == other.background &&
           outputFormat == other.outputFormat &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, usage); } 
-@override String toString() { return 'ImageGenCompletedEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, usage);
+
+@override String toString() => 'ImageGenCompletedEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, usage: $usage)';
+
  }

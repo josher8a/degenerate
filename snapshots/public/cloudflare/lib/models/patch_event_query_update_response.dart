@@ -85,7 +85,7 @@ PatchEventQueryUpdateResponse copyWith({int? accountId, bool? alertEnabled, bool
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchEventQueryUpdateResponse &&
           accountId == other.accountId &&
           alertEnabled == other.alertEnabled &&
@@ -97,7 +97,10 @@ PatchEventQueryUpdateResponse copyWith({int? accountId, bool? alertEnabled, bool
           ruleEnabled == other.ruleEnabled &&
           ruleScope == other.ruleScope &&
           updatedAt == other.updatedAt &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(accountId, alertEnabled, alertRollupEnabled, createdAt, id, name, queryJson, ruleEnabled, ruleScope, updatedAt, userEmail); } 
-@override String toString() { return 'PatchEventQueryUpdateResponse(accountId: $accountId, alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, createdAt: $createdAt, id: $id, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope, updatedAt: $updatedAt, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(accountId, alertEnabled, alertRollupEnabled, createdAt, id, name, queryJson, ruleEnabled, ruleScope, updatedAt, userEmail);
+
+@override String toString() => 'PatchEventQueryUpdateResponse(accountId: $accountId, alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, createdAt: $createdAt, id: $id, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope, updatedAt: $updatedAt, userEmail: $userEmail)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScheduledQueryRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScheduledQueryRunObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ScheduledQueryRunObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ScheduledQueryRunObject($value)';
+
  }
 /// If you have [scheduled a Sigma query](https://docs.stripe.com/sigma/scheduled-queries), you'll
 /// receive a `sigma.scheduled_query_run.created` webhook each time the query
@@ -116,7 +119,7 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
   status: status ?? this.status,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScheduledQueryRun &&
           created == other.created &&
           dataLoadTime == other.dataLoadTime &&
@@ -128,7 +131,10 @@ ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQuery
           resultAvailableUntil == other.resultAvailableUntil &&
           sql == other.sql &&
           status == other.status &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(created, dataLoadTime, error, file, id, livemode, object, resultAvailableUntil, sql, status, title); } 
-@override String toString() { return 'ScheduledQueryRun(created: $created, dataLoadTime: $dataLoadTime, error: $error, file: $file, id: $id, livemode: $livemode, object: $object, resultAvailableUntil: $resultAvailableUntil, sql: $sql, status: $status, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(created, dataLoadTime, error, file, id, livemode, object, resultAvailableUntil, sql, status, title);
+
+@override String toString() => 'ScheduledQueryRun(created: $created, dataLoadTime: $dataLoadTime, error: $error, file: $file, id: $id, livemode: $livemode, object: $object, resultAvailableUntil: $resultAvailableUntil, sql: $sql, status: $status, title: $title)';
+
  }

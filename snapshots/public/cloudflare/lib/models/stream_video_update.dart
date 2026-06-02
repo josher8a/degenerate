@@ -58,7 +58,7 @@ StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCrea
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   uploadExpiry: uploadExpiry != null ? uploadExpiry() : this.uploadExpiry,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideoUpdate &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
           creator == other.creator &&
@@ -67,7 +67,10 @@ StreamVideoUpdate copyWith({List<String>? Function()? allowedOrigins, StreamCrea
           requireSignedUrLs == other.requireSignedUrLs &&
           scheduledDeletion == other.scheduledDeletion &&
           thumbnailTimestampPct == other.thumbnailTimestampPct &&
-          uploadExpiry == other.uploadExpiry; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedOrigins ?? const []), creator, maxDurationSeconds, meta, requireSignedUrLs, scheduledDeletion, thumbnailTimestampPct, uploadExpiry); } 
-@override String toString() { return 'StreamVideoUpdate(allowedOrigins: $allowedOrigins, creator: $creator, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, uploadExpiry: $uploadExpiry)'; } 
+          uploadExpiry == other.uploadExpiry;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), creator, maxDurationSeconds, meta, requireSignedUrLs, scheduledDeletion, thumbnailTimestampPct, uploadExpiry);
+
+@override String toString() => 'StreamVideoUpdate(allowedOrigins: $allowedOrigins, creator: $creator, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, uploadExpiry: $uploadExpiry)';
+
  }

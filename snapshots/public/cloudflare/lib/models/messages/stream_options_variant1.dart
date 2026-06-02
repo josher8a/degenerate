@@ -20,10 +20,13 @@ StreamOptionsVariant1 copyWith({bool? Function()? includeObfuscation, bool? Func
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
   includeUsage: includeUsage != null ? includeUsage() : this.includeUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamOptionsVariant1 &&
           includeObfuscation == other.includeObfuscation &&
-          includeUsage == other.includeUsage; } 
-@override int get hashCode { return Object.hash(includeObfuscation, includeUsage); } 
-@override String toString() { return 'StreamOptionsVariant1(includeObfuscation: $includeObfuscation, includeUsage: $includeUsage)'; } 
+          includeUsage == other.includeUsage;
+
+@override int get hashCode => Object.hash(includeObfuscation, includeUsage);
+
+@override String toString() => 'StreamOptionsVariant1(includeObfuscation: $includeObfuscation, includeUsage: $includeUsage)';
+
  }

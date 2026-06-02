@@ -39,13 +39,16 @@ TimelineCrossReferencedEvent copyWith({String? event, SimpleUser? Function()? ac
   updatedAt: updatedAt ?? this.updatedAt,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCrossReferencedEvent &&
           event == other.event &&
           actor == other.actor &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(event, actor, createdAt, updatedAt, source); } 
-@override String toString() { return 'TimelineCrossReferencedEvent(event: $event, actor: $actor, createdAt: $createdAt, updatedAt: $updatedAt, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(event, actor, createdAt, updatedAt, source);
+
+@override String toString() => 'TimelineCrossReferencedEvent(event: $event, actor: $actor, createdAt: $createdAt, updatedAt: $updatedAt, source: $source)';
+
  }

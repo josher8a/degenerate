@@ -17,7 +17,8 @@ final class AigConfigPatchGatewayLogError$404 extends AigConfigPatchGatewayLogEr
 
 final AigConfigPatchGatewayLogResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigPatchGatewayLogError$Unknown extends AigConfigPatchGatewayLogError {const AigConfigPatchGatewayLogError$Unknown(this.statusCode, this.rawBody, );
 

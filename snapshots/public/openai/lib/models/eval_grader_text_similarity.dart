@@ -54,14 +54,17 @@ EvalGraderTextSimilarity copyWith({EvalGraderTextSimilarityType? type, String? n
   evaluationMetric: evaluationMetric ?? this.evaluationMetric,
   passThreshold: passThreshold ?? this.passThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalGraderTextSimilarity &&
           type == other.type &&
           name == other.name &&
           input == other.input &&
           reference == other.reference &&
           evaluationMetric == other.evaluationMetric &&
-          passThreshold == other.passThreshold; } 
-@override int get hashCode { return Object.hash(type, name, input, reference, evaluationMetric, passThreshold); } 
-@override String toString() { return 'EvalGraderTextSimilarity(type: $type, name: $name, input: $input, reference: $reference, evaluationMetric: $evaluationMetric, passThreshold: $passThreshold)'; } 
+          passThreshold == other.passThreshold;
+
+@override int get hashCode => Object.hash(type, name, input, reference, evaluationMetric, passThreshold);
+
+@override String toString() => 'EvalGraderTextSimilarity(type: $type, name: $name, input: $input, reference: $reference, evaluationMetric: $evaluationMetric, passThreshold: $passThreshold)';
+
  }

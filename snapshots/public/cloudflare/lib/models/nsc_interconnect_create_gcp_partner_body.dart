@@ -35,12 +35,15 @@ NscInterconnectCreateGcpPartnerBody copyWith({String? account, String? type, Ban
   bandwidth: bandwidth ?? this.bandwidth,
   pairingKey: pairingKey ?? this.pairingKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscInterconnectCreateGcpPartnerBody &&
           account == other.account &&
           type == other.type &&
           bandwidth == other.bandwidth &&
-          pairingKey == other.pairingKey; } 
-@override int get hashCode { return Object.hash(account, type, bandwidth, pairingKey); } 
-@override String toString() { return 'NscInterconnectCreateGcpPartnerBody(account: $account, type: $type, bandwidth: $bandwidth, pairingKey: $pairingKey)'; } 
+          pairingKey == other.pairingKey;
+
+@override int get hashCode => Object.hash(account, type, bandwidth, pairingKey);
+
+@override String toString() => 'NscInterconnectCreateGcpPartnerBody(account: $account, type: $type, bandwidth: $bandwidth, pairingKey: $pairingKey)';
+
  }

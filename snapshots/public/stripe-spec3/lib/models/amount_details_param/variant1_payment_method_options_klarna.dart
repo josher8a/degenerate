@@ -49,12 +49,15 @@ Variant1PaymentMethodOptionsKlarna copyWith({String? Function()? imageUrl, Strin
   reference: reference != null ? reference() : this.reference,
   subscriptionReference: subscriptionReference != null ? subscriptionReference() : this.subscriptionReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1PaymentMethodOptionsKlarna &&
           imageUrl == other.imageUrl &&
           productUrl == other.productUrl &&
           reference == other.reference &&
-          subscriptionReference == other.subscriptionReference; } 
-@override int get hashCode { return Object.hash(imageUrl, productUrl, reference, subscriptionReference); } 
-@override String toString() { return 'Variant1PaymentMethodOptionsKlarna(imageUrl: $imageUrl, productUrl: $productUrl, reference: $reference, subscriptionReference: $subscriptionReference)'; } 
+          subscriptionReference == other.subscriptionReference;
+
+@override int get hashCode => Object.hash(imageUrl, productUrl, reference, subscriptionReference);
+
+@override String toString() => 'Variant1PaymentMethodOptionsKlarna(imageUrl: $imageUrl, productUrl: $productUrl, reference: $reference, subscriptionReference: $subscriptionReference)';
+
  }

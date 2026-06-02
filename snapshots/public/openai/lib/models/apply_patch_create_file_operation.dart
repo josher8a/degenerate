@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchCreateFileOperationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplyPatchCreateFileOperationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchCreateFileOperationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApplyPatchCreateFileOperationType($value)';
+
  }
 /// Instruction describing how to create a file via the apply_patch tool.
 @immutable final class ApplyPatchCreateFileOperation {const ApplyPatchCreateFileOperation({required this.path, required this.diff, this.type = ApplyPatchCreateFileOperationType.createFile, });
@@ -53,11 +56,14 @@ ApplyPatchCreateFileOperation copyWith({ApplyPatchCreateFileOperationType? type,
   path: path ?? this.path,
   diff: diff ?? this.diff,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchCreateFileOperation &&
           type == other.type &&
           path == other.path &&
-          diff == other.diff; } 
-@override int get hashCode { return Object.hash(type, path, diff); } 
-@override String toString() { return 'ApplyPatchCreateFileOperation(type: $type, path: $path, diff: $diff)'; } 
+          diff == other.diff;
+
+@override int get hashCode => Object.hash(type, path, diff);
+
+@override String toString() => 'ApplyPatchCreateFileOperation(type: $type, path: $path, diff: $diff)';
+
  }

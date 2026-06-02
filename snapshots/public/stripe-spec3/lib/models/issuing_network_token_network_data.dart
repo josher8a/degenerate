@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenNetworkDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenNetworkDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingNetworkTokenNetworkDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingNetworkTokenNetworkDataType($value)';
+
  }
 /// 
 @immutable final class IssuingNetworkTokenNetworkData {const IssuingNetworkTokenNetworkData({required this.type, this.device, this.mastercard, this.visa, this.walletProvider, });
@@ -62,13 +65,16 @@ IssuingNetworkTokenNetworkData copyWith({IssuingNetworkTokenDevice? Function()? 
   visa: visa != null ? visa() : this.visa,
   walletProvider: walletProvider != null ? walletProvider() : this.walletProvider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenNetworkData &&
           device == other.device &&
           mastercard == other.mastercard &&
           type == other.type &&
           visa == other.visa &&
-          walletProvider == other.walletProvider; } 
-@override int get hashCode { return Object.hash(device, mastercard, type, visa, walletProvider); } 
-@override String toString() { return 'IssuingNetworkTokenNetworkData(device: $device, mastercard: $mastercard, type: $type, visa: $visa, walletProvider: $walletProvider)'; } 
+          walletProvider == other.walletProvider;
+
+@override int get hashCode => Object.hash(device, mastercard, type, visa, walletProvider);
+
+@override String toString() => 'IssuingNetworkTokenNetworkData(device: $device, mastercard: $mastercard, type: $type, visa: $visa, walletProvider: $walletProvider)';
+
  }

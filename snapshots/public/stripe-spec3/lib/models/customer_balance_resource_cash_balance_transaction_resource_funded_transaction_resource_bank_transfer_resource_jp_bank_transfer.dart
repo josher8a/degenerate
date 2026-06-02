@@ -44,11 +44,14 @@ CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBa
   senderBranch: senderBranch != null ? senderBranch() : this.senderBranch,
   senderName: senderName != null ? senderName() : this.senderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer &&
           senderBank == other.senderBank &&
           senderBranch == other.senderBranch &&
-          senderName == other.senderName; } 
-@override int get hashCode { return Object.hash(senderBank, senderBranch, senderName); } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer(senderBank: $senderBank, senderBranch: $senderBranch, senderName: $senderName)'; } 
+          senderName == other.senderName;
+
+@override int get hashCode => Object.hash(senderBank, senderBranch, senderName);
+
+@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer(senderBank: $senderBank, senderBranch: $senderBranch, senderName: $senderName)';
+
  }

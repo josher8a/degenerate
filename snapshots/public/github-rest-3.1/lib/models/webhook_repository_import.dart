@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryImportStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryImportStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookRepositoryImportStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookRepositoryImportStatus($value)';
+
  }
 @immutable final class WebhookRepositoryImport {const WebhookRepositoryImport({required this.repository, required this.sender, required this.status, this.enterprise, this.installation, this.organization, });
 
@@ -69,14 +72,17 @@ WebhookRepositoryImport copyWith({EnterpriseWebhooks? Function()? enterprise, Si
   sender: sender ?? this.sender,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryImport &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, repository, sender, status); } 
-@override String toString() { return 'WebhookRepositoryImport(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(enterprise, installation, organization, repository, sender, status);
+
+@override String toString() => 'WebhookRepositoryImport(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, status: $status)';
+
  }

@@ -54,14 +54,17 @@ ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase copyWith({Resourc
   tags: tags ?? this.tags,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase &&
           accessApplicationId == other.accessApplicationId &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
           tags == other.tags &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(accessApplicationId, etag, id, name, tags, zoneId); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(accessApplicationId: $accessApplicationId, etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(accessApplicationId, etag, id, name, tags, zoneId);
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase(accessApplicationId: $accessApplicationId, etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)';
+
  }

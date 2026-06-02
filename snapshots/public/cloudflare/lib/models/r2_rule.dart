@@ -46,12 +46,15 @@ R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, Str
   prefix: prefix != null ? prefix() : this.prefix,
   suffix: suffix != null ? suffix() : this.suffix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2Rule &&
           listEquals(actions, other.actions) &&
           description == other.description &&
           prefix == other.prefix &&
-          suffix == other.suffix; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions), description, prefix, suffix); } 
-@override String toString() { return 'R2Rule(actions: $actions, description: $description, prefix: $prefix, suffix: $suffix)'; } 
+          suffix == other.suffix;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions), description, prefix, suffix);
+
+@override String toString() => 'R2Rule(actions: $actions, description: $description, prefix: $prefix, suffix: $suffix)';
+
  }

@@ -22,10 +22,13 @@ RealtimekitPresetPermissionsChat copyWith({RealtimekitPresetPermissionsChatPriva
   private: private ?? this.private,
   public: public ?? this.public,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsChat &&
           private == other.private &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(private, public); } 
-@override String toString() { return 'RealtimekitPresetPermissionsChat(private: $private, public: $public)'; } 
+          public == other.public;
+
+@override int get hashCode => Object.hash(private, public);
+
+@override String toString() => 'RealtimekitPresetPermissionsChat(private: $private, public: $public)';
+
  }

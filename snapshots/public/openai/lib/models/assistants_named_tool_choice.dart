@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantsNamedToolChoiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantsNamedToolChoiceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AssistantsNamedToolChoiceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AssistantsNamedToolChoiceType($value)';
+
  }
 /// Specifies a tool the model should use. Use to force the model to call a specific tool.
 @immutable final class AssistantsNamedToolChoice {const AssistantsNamedToolChoice({required this.type, this.function, });
@@ -50,10 +53,13 @@ AssistantsNamedToolChoice copyWith({AssistantsNamedToolChoiceType? type, Assista
   type: type ?? this.type,
   function: function != null ? function() : this.function,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantsNamedToolChoice &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(type, function); } 
-@override String toString() { return 'AssistantsNamedToolChoice(type: $type, function: $function)'; } 
+          function == other.function;
+
+@override int get hashCode => Object.hash(type, function);
+
+@override String toString() => 'AssistantsNamedToolChoice(type: $type, function: $function)';
+
  }

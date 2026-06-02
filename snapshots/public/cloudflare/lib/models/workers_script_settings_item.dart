@@ -39,12 +39,15 @@ WorkersScriptSettingsItem copyWith({WorkersLogpush? Function()? logpush, Workers
   tags: tags != null ? tags() : this.tags,
   tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersScriptSettingsItem &&
           logpush == other.logpush &&
           observability == other.observability &&
           listEquals(tags, other.tags) &&
-          listEquals(tailConsumers, other.tailConsumers); } 
-@override int get hashCode { return Object.hash(logpush, observability, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const [])); } 
-@override String toString() { return 'WorkersScriptSettingsItem(logpush: $logpush, observability: $observability, tags: $tags, tailConsumers: $tailConsumers)'; } 
+          listEquals(tailConsumers, other.tailConsumers);
+
+@override int get hashCode => Object.hash(logpush, observability, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []));
+
+@override String toString() => 'WorkersScriptSettingsItem(logpush: $logpush, observability: $observability, tags: $tags, tailConsumers: $tailConsumers)';
+
  }

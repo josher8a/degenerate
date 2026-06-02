@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DoneEventEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DoneEventEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DoneEventEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DoneEventEvent($value)';
+
  }
 @immutable final class DoneEventData {const DoneEventData._(this.value);
 
@@ -37,10 +40,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DoneEventData && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DoneEventData($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DoneEventData && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DoneEventData($value)';
+
  }
 /// Occurs when a stream ends.
 @immutable final class DoneEvent {const DoneEvent({required this.event, required this.data, });
@@ -64,10 +70,13 @@ DoneEvent copyWith({DoneEventEvent? event, DoneEventData? data, }) { return Done
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DoneEvent &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'DoneEvent(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'DoneEvent(event: $event, data: $data)';
+
  }

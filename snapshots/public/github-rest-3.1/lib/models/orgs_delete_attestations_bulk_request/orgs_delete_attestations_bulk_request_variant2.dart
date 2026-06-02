@@ -21,9 +21,12 @@ return errors; }
 OrgsDeleteAttestationsBulkRequestVariant2 copyWith({List<int>? attestationIds}) { return OrgsDeleteAttestationsBulkRequestVariant2(
   attestationIds: attestationIds ?? this.attestationIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsDeleteAttestationsBulkRequestVariant2 &&
-          listEquals(attestationIds, other.attestationIds); } 
-@override int get hashCode { return Object.hashAll(attestationIds); } 
-@override String toString() { return 'OrgsDeleteAttestationsBulkRequestVariant2(attestationIds: $attestationIds)'; } 
+          listEquals(attestationIds, other.attestationIds);
+
+@override int get hashCode => Object.hashAll(attestationIds);
+
+@override String toString() => 'OrgsDeleteAttestationsBulkRequestVariant2(attestationIds: $attestationIds)';
+
  }

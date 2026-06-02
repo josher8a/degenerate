@@ -57,14 +57,17 @@ FundingInstructionsBankTransferIbanRecord copyWith({Address? accountHolderAddres
   country: country ?? this.country,
   iban: iban ?? this.iban,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferIbanRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
           bankAddress == other.bankAddress &&
           bic == other.bic &&
           country == other.country &&
-          iban == other.iban; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, bankAddress, bic, country, iban); } 
-@override String toString() { return 'FundingInstructionsBankTransferIbanRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, bankAddress: $bankAddress, bic: $bic, country: $country, iban: $iban)'; } 
+          iban == other.iban;
+
+@override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, bankAddress, bic, country, iban);
+
+@override String toString() => 'FundingInstructionsBankTransferIbanRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, bankAddress: $bankAddress, bic: $bic, country: $country, iban: $iban)';
+
  }

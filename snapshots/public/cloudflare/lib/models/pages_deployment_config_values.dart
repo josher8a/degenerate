@@ -207,7 +207,7 @@ PagesDeploymentConfigValues copyWith({Map<String, PagesDeploymentConfigValuesAiB
   vectorizeBindings: vectorizeBindings != null ? vectorizeBindings() : this.vectorizeBindings,
   wranglerConfigHash: wranglerConfigHash != null ? wranglerConfigHash() : this.wranglerConfigHash,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValues &&
           aiBindings == other.aiBindings &&
           alwaysUseLatestCompatibilityDate == other.alwaysUseLatestCompatibilityDate &&
@@ -230,7 +230,10 @@ PagesDeploymentConfigValues copyWith({Map<String, PagesDeploymentConfigValuesAiB
           services == other.services &&
           usageModel == other.usageModel &&
           vectorizeBindings == other.vectorizeBindings &&
-          wranglerConfigHash == other.wranglerConfigHash; } 
-@override int get hashCode { return Object.hashAll([aiBindings, alwaysUseLatestCompatibilityDate, analyticsEngineDatasets, browsers, buildImageMajorVersion, compatibilityDate, Object.hashAll(compatibilityFlags), d1Databases, durableObjectNamespaces, envVars, failOpen, hyperdriveBindings, kvNamespaces, limits, mtlsCertificates, placement, queueProducers, r2Buckets, services, usageModel, vectorizeBindings, wranglerConfigHash]); } 
-@override String toString() { return 'PagesDeploymentConfigValues(aiBindings: $aiBindings, alwaysUseLatestCompatibilityDate: $alwaysUseLatestCompatibilityDate, analyticsEngineDatasets: $analyticsEngineDatasets, browsers: $browsers, buildImageMajorVersion: $buildImageMajorVersion, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, d1Databases: $d1Databases, durableObjectNamespaces: $durableObjectNamespaces, envVars: $envVars, failOpen: $failOpen, hyperdriveBindings: $hyperdriveBindings, kvNamespaces: $kvNamespaces, limits: $limits, mtlsCertificates: $mtlsCertificates, placement: $placement, queueProducers: $queueProducers, r2Buckets: $r2Buckets, services: $services, usageModel: $usageModel, vectorizeBindings: $vectorizeBindings, wranglerConfigHash: $wranglerConfigHash)'; } 
+          wranglerConfigHash == other.wranglerConfigHash;
+
+@override int get hashCode => Object.hashAll([aiBindings, alwaysUseLatestCompatibilityDate, analyticsEngineDatasets, browsers, buildImageMajorVersion, compatibilityDate, Object.hashAll(compatibilityFlags), d1Databases, durableObjectNamespaces, envVars, failOpen, hyperdriveBindings, kvNamespaces, limits, mtlsCertificates, placement, queueProducers, r2Buckets, services, usageModel, vectorizeBindings, wranglerConfigHash]);
+
+@override String toString() => 'PagesDeploymentConfigValues(aiBindings: $aiBindings, alwaysUseLatestCompatibilityDate: $alwaysUseLatestCompatibilityDate, analyticsEngineDatasets: $analyticsEngineDatasets, browsers: $browsers, buildImageMajorVersion: $buildImageMajorVersion, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, d1Databases: $d1Databases, durableObjectNamespaces: $durableObjectNamespaces, envVars: $envVars, failOpen: $failOpen, hyperdriveBindings: $hyperdriveBindings, kvNamespaces: $kvNamespaces, limits: $limits, mtlsCertificates: $mtlsCertificates, placement: $placement, queueProducers: $queueProducers, r2Buckets: $r2Buckets, services: $services, usageModel: $usageModel, vectorizeBindings: $vectorizeBindings, wranglerConfigHash: $wranglerConfigHash)';
+
  }

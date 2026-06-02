@@ -28,11 +28,14 @@ TeamsDevicesDexTargetPolicy copyWith({bool? Function()? $default, String? Functi
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDexTargetPolicy &&
           $default == other.$default &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash($default, id, name); } 
-@override String toString() { return 'TeamsDevicesDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash($default, id, name);
+
+@override String toString() => 'TeamsDevicesDexTargetPolicy(\$default: ${$default}, id: $id, name: $name)';
+
  }

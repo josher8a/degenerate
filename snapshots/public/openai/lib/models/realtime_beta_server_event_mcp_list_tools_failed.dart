@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsFailedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventMcpListToolsFailedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsFailedType($value)';
+
  }
 /// Returned when listing MCP tools has failed for an item.
 @immutable final class RealtimeBetaServerEventMcpListToolsFailed {const RealtimeBetaServerEventMcpListToolsFailed({required this.eventId, required this.type, required this.itemId, });
@@ -53,11 +56,14 @@ RealtimeBetaServerEventMcpListToolsFailed copyWith({String? eventId, RealtimeBet
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventMcpListToolsFailed &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsFailed(eventId: $eventId, type: $type, itemId: $itemId)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionStreamResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionStreamResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateChatCompletionStreamResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateChatCompletionStreamResponseObject($value)';
+
  }
 /// Represents a streamed chunk of a chat completion response returned
 /// by the model, based on the provided input.
@@ -99,7 +102,7 @@ CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompleti
   object: object ?? this.object,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionStreamResponse &&
           id == other.id &&
           listEquals(choices, other.choices) &&
@@ -108,7 +111,10 @@ CreateChatCompletionStreamResponse copyWith({String? id, List<CreateChatCompleti
           serviceTier == other.serviceTier &&
           systemFingerprint == other.systemFingerprint &&
           object == other.object &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(choices), created, model, serviceTier, systemFingerprint, object, usage); } 
-@override String toString() { return 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(id, Object.hashAll(choices), created, model, serviceTier, systemFingerprint, object, usage);
+
+@override String toString() => 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)';
+
  }

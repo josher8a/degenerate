@@ -25,11 +25,14 @@ CardTestingRisk copyWith({int? Function()? invalidAccountNumberDeclineRatePastHo
   invalidCredentialsDeclineRatePastHour: invalidCredentialsDeclineRatePastHour != null ? invalidCredentialsDeclineRatePastHour() : this.invalidCredentialsDeclineRatePastHour,
   riskLevel: riskLevel ?? this.riskLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardTestingRisk &&
           invalidAccountNumberDeclineRatePastHour == other.invalidAccountNumberDeclineRatePastHour &&
           invalidCredentialsDeclineRatePastHour == other.invalidCredentialsDeclineRatePastHour &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour, riskLevel); } 
-@override String toString() { return 'CardTestingRisk(invalidAccountNumberDeclineRatePastHour: $invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour: $invalidCredentialsDeclineRatePastHour, riskLevel: $riskLevel)'; } 
+          riskLevel == other.riskLevel;
+
+@override int get hashCode => Object.hash(invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour, riskLevel);
+
+@override String toString() => 'CardTestingRisk(invalidAccountNumberDeclineRatePastHour: $invalidAccountNumberDeclineRatePastHour, invalidCredentialsDeclineRatePastHour: $invalidCredentialsDeclineRatePastHour, riskLevel: $riskLevel)';
+
  }

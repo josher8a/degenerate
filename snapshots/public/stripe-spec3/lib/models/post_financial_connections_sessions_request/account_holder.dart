@@ -46,12 +46,15 @@ AccountHolder copyWith({String? Function()? account, String? Function()? custome
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountHolder &&
           account == other.account &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount, type); } 
-@override String toString() { return 'AccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, customer, customerAccount, type);
+
+@override String toString() => 'AccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)';
+
  }

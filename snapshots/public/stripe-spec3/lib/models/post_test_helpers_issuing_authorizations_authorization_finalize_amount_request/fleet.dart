@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FleetPurchaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FleetPurchaseType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FleetPurchaseType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FleetPurchaseType($value)';
+
  }
 @immutable final class FleetServiceType {const FleetServiceType._(this.value);
 
@@ -49,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FleetServiceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FleetServiceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FleetServiceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FleetServiceType($value)';
+
  }
 /// Fleet-specific information for authorizations using Fleet cards.
 @immutable final class Fleet {const Fleet({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
@@ -85,12 +91,15 @@ Fleet copyWith({CardholderPromptData? Function()? cardholderPromptData, FleetPur
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
   serviceType: serviceType != null ? serviceType() : this.serviceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Fleet &&
           cardholderPromptData == other.cardholderPromptData &&
           purchaseType == other.purchaseType &&
           reportedBreakdown == other.reportedBreakdown &&
-          serviceType == other.serviceType; } 
-@override int get hashCode { return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType); } 
-@override String toString() { return 'Fleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)'; } 
+          serviceType == other.serviceType;
+
+@override int get hashCode => Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType);
+
+@override String toString() => 'Fleet(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)';
+
  }

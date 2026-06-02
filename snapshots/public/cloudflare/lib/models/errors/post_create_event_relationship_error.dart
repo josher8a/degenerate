@@ -17,7 +17,8 @@ final class PostCreateEventRelationshipError$400 extends PostCreateEventRelation
 
 final PostCreateEventRelationshipResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostCreateEventRelationshipError$Unknown extends PostCreateEventRelationshipError {const PostCreateEventRelationshipError$Unknown(this.statusCode, this.rawBody, );
 

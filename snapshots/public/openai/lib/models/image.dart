@@ -29,11 +29,14 @@ Image copyWith({String? Function()? b64Json, String? Function()? url, String? Fu
   url: url != null ? url() : this.url,
   revisedPrompt: revisedPrompt != null ? revisedPrompt() : this.revisedPrompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Image &&
           b64Json == other.b64Json &&
           url == other.url &&
-          revisedPrompt == other.revisedPrompt; } 
-@override int get hashCode { return Object.hash(b64Json, url, revisedPrompt); } 
-@override String toString() { return 'Image(b64Json: $b64Json, url: $url, revisedPrompt: $revisedPrompt)'; } 
+          revisedPrompt == other.revisedPrompt;
+
+@override int get hashCode => Object.hash(b64Json, url, revisedPrompt);
+
+@override String toString() => 'Image(b64Json: $b64Json, url: $url, revisedPrompt: $revisedPrompt)';
+
  }

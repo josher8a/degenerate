@@ -63,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnOnrampLifecycleState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnOnrampLifecycleState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnOnrampLifecycleState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McnOnrampLifecycleState($value)';
+
  }
 @immutable final class McnOnrampStatus {const McnOnrampStatus({required this.applyProgress, required this.lifecycleState, required this.planProgress, required this.routes, required this.tunnels, this.lifecycleErrors, });
 
@@ -112,14 +115,17 @@ McnOnrampStatus copyWith({McnApplyProgress? applyProgress, Map<String, McnError>
   routes: routes ?? this.routes,
   tunnels: tunnels ?? this.tunnels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnOnrampStatus &&
           applyProgress == other.applyProgress &&
           lifecycleErrors == other.lifecycleErrors &&
           lifecycleState == other.lifecycleState &&
           planProgress == other.planProgress &&
           listEquals(routes, other.routes) &&
-          listEquals(tunnels, other.tunnels); } 
-@override int get hashCode { return Object.hash(applyProgress, lifecycleErrors, lifecycleState, planProgress, Object.hashAll(routes), Object.hashAll(tunnels)); } 
-@override String toString() { return 'McnOnrampStatus(applyProgress: $applyProgress, lifecycleErrors: $lifecycleErrors, lifecycleState: $lifecycleState, planProgress: $planProgress, routes: $routes, tunnels: $tunnels)'; } 
+          listEquals(tunnels, other.tunnels);
+
+@override int get hashCode => Object.hash(applyProgress, lifecycleErrors, lifecycleState, planProgress, Object.hashAll(routes), Object.hashAll(tunnels));
+
+@override String toString() => 'McnOnrampStatus(applyProgress: $applyProgress, lifecycleErrors: $lifecycleErrors, lifecycleState: $lifecycleState, planProgress: $planProgress, routes: $routes, tunnels: $tunnels)';
+
  }

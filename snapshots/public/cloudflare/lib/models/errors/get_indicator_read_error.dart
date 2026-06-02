@@ -17,7 +17,8 @@ final class GetIndicatorReadError$404 extends GetIndicatorReadError {const GetIn
 
 final GetIndicatorReadResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetIndicatorReadError$Unknown extends GetIndicatorReadError {const GetIndicatorReadError$Unknown(this.statusCode, this.rawBody, );
 

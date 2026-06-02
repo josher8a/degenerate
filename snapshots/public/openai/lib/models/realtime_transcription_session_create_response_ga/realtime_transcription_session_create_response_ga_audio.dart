@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RealtimeTranscriptionSessionCreateResponseGaAudio copyWith({RealtimeSessionCreateResponseAudioInput? Function()? input}) { return RealtimeTranscriptionSessionCreateResponseGaAudio(
   input: input != null ? input() : this.input,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateResponseGaAudio &&
-          input == other.input; } 
-@override int get hashCode { return input.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateResponseGaAudio(input: $input)'; } 
+          input == other.input;
+
+@override int get hashCode => input.hashCode;
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateResponseGaAudio(input: $input)';
+
  }

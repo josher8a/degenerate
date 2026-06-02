@@ -34,12 +34,15 @@ PostChargesChargeDisputeRequest copyWith({PostChargesChargeDisputeRequestEvidenc
   metadata: metadata != null ? metadata() : this.metadata,
   submit: submit != null ? submit() : this.submit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeDisputeRequest &&
           evidence == other.evidence &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          submit == other.submit; } 
-@override int get hashCode { return Object.hash(evidence, Object.hashAll(expand ?? const []), metadata, submit); } 
-@override String toString() { return 'PostChargesChargeDisputeRequest(evidence: $evidence, expand: $expand, metadata: $metadata, submit: $submit)'; } 
+          submit == other.submit;
+
+@override int get hashCode => Object.hash(evidence, Object.hashAll(expand ?? const []), metadata, submit);
+
+@override String toString() => 'PostChargesChargeDisputeRequest(evidence: $evidence, expand: $expand, metadata: $metadata, submit: $submit)';
+
  }

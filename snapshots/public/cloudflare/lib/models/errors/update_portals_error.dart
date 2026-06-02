@@ -18,13 +18,15 @@ final class UpdatePortalsError$400 extends UpdatePortalsError {const UpdatePorta
 
 final UpdatePortalsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UpdatePortalsError$404 extends UpdatePortalsError {const UpdatePortalsError$404(this.error);
 
 final UpdatePortalsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class UpdatePortalsError$Unknown extends UpdatePortalsError {const UpdatePortalsError$Unknown(this.statusCode, this.rawBody, );
 

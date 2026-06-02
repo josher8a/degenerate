@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('azure
 AccessAzureGroupRule copyWith({AzureAd? azureAd}) { return AccessAzureGroupRule(
   azureAd: azureAd ?? this.azureAd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAzureGroupRule &&
-          azureAd == other.azureAd; } 
-@override int get hashCode { return azureAd.hashCode; } 
-@override String toString() { return 'AccessAzureGroupRule(azureAd: $azureAd)'; } 
+          azureAd == other.azureAd;
+
+@override int get hashCode => azureAd.hashCode;
+
+@override String toString() => 'AccessAzureGroupRule(azureAd: $azureAd)';
+
  }

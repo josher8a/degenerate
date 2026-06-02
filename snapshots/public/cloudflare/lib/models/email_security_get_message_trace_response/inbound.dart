@@ -20,10 +20,13 @@ Inbound copyWith({List<EmailSecurityTraceLine>? Function()? lines, bool? Functio
   lines: lines != null ? lines() : this.lines,
   pending: pending != null ? pending() : this.pending,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Inbound &&
           listEquals(lines, other.lines) &&
-          pending == other.pending; } 
-@override int get hashCode { return Object.hash(Object.hashAll(lines ?? const []), pending); } 
-@override String toString() { return 'Inbound(lines: $lines, pending: $pending)'; } 
+          pending == other.pending;
+
+@override int get hashCode => Object.hash(Object.hashAll(lines ?? const []), pending);
+
+@override String toString() => 'Inbound(lines: $lines, pending: $pending)';
+
  }

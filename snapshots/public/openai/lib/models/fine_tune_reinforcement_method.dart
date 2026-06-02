@@ -22,10 +22,13 @@ FineTuneReinforcementMethod copyWith({Grader? grader, FineTuneReinforcementHyper
   grader: grader ?? this.grader,
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneReinforcementMethod &&
           grader == other.grader &&
-          hyperparameters == other.hyperparameters; } 
-@override int get hashCode { return Object.hash(grader, hyperparameters); } 
-@override String toString() { return 'FineTuneReinforcementMethod(grader: $grader, hyperparameters: $hyperparameters)'; } 
+          hyperparameters == other.hyperparameters;
+
+@override int get hashCode => Object.hash(grader, hyperparameters);
+
+@override String toString() => 'FineTuneReinforcementMethod(grader: $grader, hyperparameters: $hyperparameters)';
+
  }

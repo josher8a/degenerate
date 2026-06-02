@@ -27,11 +27,14 @@ AsnDataLatest copyWith({double? entriesCount, String? path, double? timestamp, }
   path: path ?? this.path,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnDataLatest &&
           entriesCount == other.entriesCount &&
           path == other.path &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(entriesCount, path, timestamp); } 
-@override String toString() { return 'AsnDataLatest(entriesCount: $entriesCount, path: $path, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(entriesCount, path, timestamp);
+
+@override String toString() => 'AsnDataLatest(entriesCount: $entriesCount, path: $path, timestamp: $timestamp)';
+
  }

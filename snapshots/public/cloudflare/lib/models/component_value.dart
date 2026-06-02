@@ -46,11 +46,14 @@ ComponentValue copyWith({Default? Function()? $default, ComponentsSchemasName? F
   name: name != null ? name() : this.name,
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentValue &&
           $default == other.$default &&
           name == other.name &&
-          unitPrice == other.unitPrice; } 
-@override int get hashCode { return Object.hash($default, name, unitPrice); } 
-@override String toString() { return 'ComponentValue(\$default: ${$default}, name: $name, unitPrice: $unitPrice)'; } 
+          unitPrice == other.unitPrice;
+
+@override int get hashCode => Object.hash($default, name, unitPrice);
+
+@override String toString() => 'ComponentValue(\$default: ${$default}, name: $name, unitPrice: $unitPrice)';
+
  }

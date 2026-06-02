@@ -53,7 +53,7 @@ AccessSchemasServiceTokens copyWith({AccessClientId? Function()? clientId, Acces
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasServiceTokens &&
           clientId == other.clientId &&
           createdAt == other.createdAt &&
@@ -62,7 +62,10 @@ AccessSchemasServiceTokens copyWith({AccessClientId? Function()? clientId, Acces
           id == other.id &&
           lastSeenAt == other.lastSeenAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(clientId, createdAt, duration, expiresAt, id, lastSeenAt, name, updatedAt); } 
-@override String toString() { return 'AccessSchemasServiceTokens(clientId: $clientId, createdAt: $createdAt, duration: $duration, expiresAt: $expiresAt, id: $id, lastSeenAt: $lastSeenAt, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(clientId, createdAt, duration, expiresAt, id, lastSeenAt, name, updatedAt);
+
+@override String toString() => 'AccessSchemasServiceTokens(clientId: $clientId, createdAt: $createdAt, duration: $duration, expiresAt: $expiresAt, id: $id, lastSeenAt: $lastSeenAt, name: $name, updatedAt: $updatedAt)';
+
  }

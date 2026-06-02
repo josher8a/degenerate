@@ -39,13 +39,16 @@ SummaryProperties copyWith({FailedDatasets? failedDatasets, SuccessfulDatasets? 
   totalIndicatorTypes: totalIndicatorTypes ?? this.totalIndicatorTypes,
   totalProcessingTimeMs: totalProcessingTimeMs ?? this.totalProcessingTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SummaryProperties &&
           failedDatasets == other.failedDatasets &&
           successfulDatasets == other.successfulDatasets &&
           totalDatasets == other.totalDatasets &&
           totalIndicatorTypes == other.totalIndicatorTypes &&
-          totalProcessingTimeMs == other.totalProcessingTimeMs; } 
-@override int get hashCode { return Object.hash(failedDatasets, successfulDatasets, totalDatasets, totalIndicatorTypes, totalProcessingTimeMs); } 
-@override String toString() { return 'SummaryProperties(failedDatasets: $failedDatasets, successfulDatasets: $successfulDatasets, totalDatasets: $totalDatasets, totalIndicatorTypes: $totalIndicatorTypes, totalProcessingTimeMs: $totalProcessingTimeMs)'; } 
+          totalProcessingTimeMs == other.totalProcessingTimeMs;
+
+@override int get hashCode => Object.hash(failedDatasets, successfulDatasets, totalDatasets, totalIndicatorTypes, totalProcessingTimeMs);
+
+@override String toString() => 'SummaryProperties(failedDatasets: $failedDatasets, successfulDatasets: $successfulDatasets, totalDatasets: $totalDatasets, totalIndicatorTypes: $totalIndicatorTypes, totalProcessingTimeMs: $totalProcessingTimeMs)';
+
  }

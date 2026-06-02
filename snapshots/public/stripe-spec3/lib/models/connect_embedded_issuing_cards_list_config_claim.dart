@@ -23,10 +23,13 @@ ConnectEmbeddedIssuingCardsListConfigClaim copyWith({bool? enabled, ConnectEmbed
   enabled: enabled ?? this.enabled,
   features: features ?? this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedIssuingCardsListConfigClaim &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'ConnectEmbeddedIssuingCardsListConfigClaim(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'ConnectEmbeddedIssuingCardsListConfigClaim(enabled: $enabled, features: $features)';
+
  }

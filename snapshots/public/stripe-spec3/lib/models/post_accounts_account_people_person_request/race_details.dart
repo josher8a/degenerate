@@ -27,10 +27,13 @@ RaceDetails copyWith({List<Race>? Function()? race, String? Function()? raceOthe
   race: race != null ? race() : this.race,
   raceOther: raceOther != null ? raceOther() : this.raceOther,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RaceDetails &&
           listEquals(race, other.race) &&
-          raceOther == other.raceOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(race ?? const []), raceOther); } 
-@override String toString() { return 'RaceDetails(race: $race, raceOther: $raceOther)'; } 
+          raceOther == other.raceOther;
+
+@override int get hashCode => Object.hash(Object.hashAll(race ?? const []), raceOther);
+
+@override String toString() => 'RaceDetails(race: $race, raceOther: $raceOther)';
+
  }

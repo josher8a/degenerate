@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatSessionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatSessionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChatSessionStatus($value)';
+
  }
 /// Type discriminator that is always `chatkit.session`.
 @immutable final class ChatSessionResourceObject {const ChatSessionResourceObject._(this.value);
@@ -44,10 +47,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatSessionResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatSessionResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatSessionResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChatSessionResourceObject($value)';
+
  }
 /// Represents a ChatKit session and its resolved configuration.
 /// 
@@ -163,7 +169,7 @@ ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int
   status: status ?? this.status,
   chatkitConfiguration: chatkitConfiguration ?? this.chatkitConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionResource &&
           id == other.id &&
           object == other.object &&
@@ -174,7 +180,10 @@ ChatSessionResource copyWith({String? id, ChatSessionResourceObject? object, int
           rateLimits == other.rateLimits &&
           maxRequestsPer1Minute == other.maxRequestsPer1Minute &&
           status == other.status &&
-          chatkitConfiguration == other.chatkitConfiguration; } 
-@override int get hashCode { return Object.hash(id, object, expiresAt, clientSecret, workflow, user, rateLimits, maxRequestsPer1Minute, status, chatkitConfiguration); } 
-@override String toString() { return 'ChatSessionResource(id: $id, object: $object, expiresAt: $expiresAt, clientSecret: $clientSecret, workflow: $workflow, user: $user, rateLimits: $rateLimits, maxRequestsPer1Minute: $maxRequestsPer1Minute, status: $status, chatkitConfiguration: $chatkitConfiguration)'; } 
+          chatkitConfiguration == other.chatkitConfiguration;
+
+@override int get hashCode => Object.hash(id, object, expiresAt, clientSecret, workflow, user, rateLimits, maxRequestsPer1Minute, status, chatkitConfiguration);
+
+@override String toString() => 'ChatSessionResource(id: $id, object: $object, expiresAt: $expiresAt, clientSecret: $clientSecret, workflow: $workflow, user: $user, rateLimits: $rateLimits, maxRequestsPer1Minute: $maxRequestsPer1Minute, status: $status, chatkitConfiguration: $chatkitConfiguration)';
+
  }

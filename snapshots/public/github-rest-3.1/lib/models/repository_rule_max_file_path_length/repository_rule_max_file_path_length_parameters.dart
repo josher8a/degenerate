@@ -21,9 +21,12 @@ return errors; }
 RepositoryRuleMaxFilePathLengthParameters copyWith({int? maxFilePathLength}) { return RepositoryRuleMaxFilePathLengthParameters(
   maxFilePathLength: maxFilePathLength ?? this.maxFilePathLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFilePathLengthParameters &&
-          maxFilePathLength == other.maxFilePathLength; } 
-@override int get hashCode { return maxFilePathLength.hashCode; } 
-@override String toString() { return 'RepositoryRuleMaxFilePathLengthParameters(maxFilePathLength: $maxFilePathLength)'; } 
+          maxFilePathLength == other.maxFilePathLength;
+
+@override int get hashCode => maxFilePathLength.hashCode;
+
+@override String toString() => 'RepositoryRuleMaxFilePathLengthParameters(maxFilePathLength: $maxFilePathLength)';
+
  }

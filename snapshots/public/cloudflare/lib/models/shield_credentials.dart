@@ -20,9 +20,12 @@ return errors; }
 ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) { return ShieldCredentials(
   keys: keys ?? this.keys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentials &&
-          listEquals(keys, other.keys); } 
-@override int get hashCode { return Object.hashAll(keys); } 
-@override String toString() { return 'ShieldCredentials(keys: $keys)'; } 
+          listEquals(keys, other.keys);
+
+@override int get hashCode => Object.hashAll(keys);
+
+@override String toString() => 'ShieldCredentials(keys: $keys)';
+
  }

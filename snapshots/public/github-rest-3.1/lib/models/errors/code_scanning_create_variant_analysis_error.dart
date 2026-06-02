@@ -19,19 +19,22 @@ final class CodeScanningCreateVariantAnalysisError$404 extends CodeScanningCreat
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningCreateVariantAnalysisError$422 extends CodeScanningCreateVariantAnalysisError {const CodeScanningCreateVariantAnalysisError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CodeScanningCreateVariantAnalysisError$503 extends CodeScanningCreateVariantAnalysisError {const CodeScanningCreateVariantAnalysisError$503(this.error);
 
 final CodeScanningCreateVariantAnalysisResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningCreateVariantAnalysisError$Unknown extends CodeScanningCreateVariantAnalysisError {const CodeScanningCreateVariantAnalysisError$Unknown(this.statusCode, this.rawBody, );
 

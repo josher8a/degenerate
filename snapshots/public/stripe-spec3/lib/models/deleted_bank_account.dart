@@ -45,12 +45,15 @@ DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedBankAccount &&
           currency == other.currency &&
           deleted == other.deleted &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(currency, deleted, id, object); } 
-@override String toString() { return 'DeletedBankAccount(currency: $currency, deleted: $deleted, id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(currency, deleted, id, object);
+
+@override String toString() => 'DeletedBankAccount(currency: $currency, deleted: $deleted, id: $id, object: $object)';
+
  }

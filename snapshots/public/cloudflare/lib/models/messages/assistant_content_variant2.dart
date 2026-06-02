@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantContentVariant2Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantContentVariant2Type($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AssistantContentVariant2Type && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AssistantContentVariant2Type($value)';
+
  }
 @immutable final class AssistantContentVariant2 {const AssistantContentVariant2({required this.type, this.refusal, this.text, });
 
@@ -49,11 +52,14 @@ AssistantContentVariant2 copyWith({String? Function()? refusal, String? Function
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantContentVariant2 &&
           refusal == other.refusal &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(refusal, text, type); } 
-@override String toString() { return 'AssistantContentVariant2(refusal: $refusal, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(refusal, text, type);
+
+@override String toString() => 'AssistantContentVariant2(refusal: $refusal, text: $text, type: $type)';
+
  }

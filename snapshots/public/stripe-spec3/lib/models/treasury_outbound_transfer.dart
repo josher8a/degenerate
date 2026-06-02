@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundTransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundTransferObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryOutboundTransferObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryOutboundTransferObject($value)';
+
  }
 /// Use [OutboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-transfers) to transfer funds from a [FinancialAccount](https://api.stripe.com#financial_accounts) to a PaymentMethod belonging to the same entity. To send funds to a different party, use [OutboundPayments](https://api.stripe.com#outbound_payments) instead. You can send funds over ACH rails or through a domestic wire transfer to a user's own external bank account.
 /// 
@@ -187,7 +190,7 @@ TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, 
   trackingDetails: trackingDetails != null ? trackingDetails() : this.trackingDetails,
   transaction: transaction ?? this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfer &&
           amount == other.amount &&
           cancelable == other.cancelable &&
@@ -208,7 +211,10 @@ TreasuryOutboundTransfer copyWith({int? amount, bool? cancelable, int? created, 
           status == other.status &&
           statusTransitions == other.statusTransitions &&
           trackingDetails == other.trackingDetails &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, cancelable, created, currency, description, destinationPaymentMethod, destinationPaymentMethodDetails, expectedArrivalDate, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, object, returnedDetails, statementDescriptor, status, statusTransitions, trackingDetails, transaction); } 
-@override String toString() { return 'TreasuryOutboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodDetails: $destinationPaymentMethodDetails, expectedArrivalDate: $expectedArrivalDate, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, object: $object, returnedDetails: $returnedDetails, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, trackingDetails: $trackingDetails, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hash(amount, cancelable, created, currency, description, destinationPaymentMethod, destinationPaymentMethodDetails, expectedArrivalDate, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, object, returnedDetails, statementDescriptor, status, statusTransitions, trackingDetails, transaction);
+
+@override String toString() => 'TreasuryOutboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodDetails: $destinationPaymentMethodDetails, expectedArrivalDate: $expectedArrivalDate, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, object: $object, returnedDetails: $returnedDetails, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, trackingDetails: $trackingDetails, transaction: $transaction)';
+
  }

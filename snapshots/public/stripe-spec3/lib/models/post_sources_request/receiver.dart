@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RefundAttributesMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RefundAttributesMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RefundAttributesMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RefundAttributesMethod($value)';
+
  }
 /// Optional parameters for the receiver flow. Can be set only if the source is a receiver (`flow` is `receiver`).
 @immutable final class Receiver {const Receiver({this.refundAttributesMethod});
@@ -43,9 +46,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Receiver copyWith({RefundAttributesMethod? Function()? refundAttributesMethod}) { return Receiver(
   refundAttributesMethod: refundAttributesMethod != null ? refundAttributesMethod() : this.refundAttributesMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Receiver &&
-          refundAttributesMethod == other.refundAttributesMethod; } 
-@override int get hashCode { return refundAttributesMethod.hashCode; } 
-@override String toString() { return 'Receiver(refundAttributesMethod: $refundAttributesMethod)'; } 
+          refundAttributesMethod == other.refundAttributesMethod;
+
+@override int get hashCode => refundAttributesMethod.hashCode;
+
+@override String toString() => 'Receiver(refundAttributesMethod: $refundAttributesMethod)';
+
  }

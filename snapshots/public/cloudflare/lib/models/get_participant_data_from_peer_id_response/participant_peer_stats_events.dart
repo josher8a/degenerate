@@ -25,11 +25,14 @@ ParticipantPeerStatsEvents copyWith({EventsMetadata? Function()? metadata, Strin
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStatsEvents &&
           metadata == other.metadata &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(metadata, timestamp, type); } 
-@override String toString() { return 'ParticipantPeerStatsEvents(metadata: $metadata, timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(metadata, timestamp, type);
+
+@override String toString() => 'ParticipantPeerStatsEvents(metadata: $metadata, timestamp: $timestamp, type: $type)';
+
  }

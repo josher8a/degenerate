@@ -17,7 +17,8 @@ final class FetchServersError$404 extends FetchServersError {const FetchServersE
 
 final FetchServersResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class FetchServersError$Unknown extends FetchServersError {const FetchServersError$Unknown(this.statusCode, this.rawBody, );
 

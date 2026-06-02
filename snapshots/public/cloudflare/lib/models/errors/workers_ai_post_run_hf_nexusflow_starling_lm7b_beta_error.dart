@@ -17,7 +17,8 @@ final class WorkersAiPostRunHfNexusflowStarlingLm7bBetaError$400 extends Workers
 
 final WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunHfNexusflowStarlingLm7bBetaError$Unknown extends WorkersAiPostRunHfNexusflowStarlingLm7bBetaError {const WorkersAiPostRunHfNexusflowStarlingLm7bBetaError$Unknown(this.statusCode, this.rawBody, );
 

@@ -41,12 +41,15 @@ PageDeployment copyWith({dynamic id, Uri? statusUrl, Uri? pageUrl, Uri? Function
   pageUrl: pageUrl ?? this.pageUrl,
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageDeployment &&
           id == other.id &&
           statusUrl == other.statusUrl &&
           pageUrl == other.pageUrl &&
-          previewUrl == other.previewUrl; } 
-@override int get hashCode { return Object.hash(id, statusUrl, pageUrl, previewUrl); } 
-@override String toString() { return 'PageDeployment(id: $id, statusUrl: $statusUrl, pageUrl: $pageUrl, previewUrl: $previewUrl)'; } 
+          previewUrl == other.previewUrl;
+
+@override int get hashCode => Object.hash(id, statusUrl, pageUrl, previewUrl);
+
+@override String toString() => 'PageDeployment(id: $id, statusUrl: $statusUrl, pageUrl: $pageUrl, previewUrl: $previewUrl)';
+
  }

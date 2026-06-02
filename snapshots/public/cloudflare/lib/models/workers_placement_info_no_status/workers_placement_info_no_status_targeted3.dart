@@ -25,10 +25,13 @@ WorkersPlacementInfoNoStatusTargeted3 copyWith({String? host, TargetedMode? mode
   host: host ?? this.host,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersPlacementInfoNoStatusTargeted3 &&
           host == other.host &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(host, mode); } 
-@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted3(host: $host, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(host, mode);
+
+@override String toString() => 'WorkersPlacementInfoNoStatusTargeted3(host: $host, mode: $mode)';
+
  }

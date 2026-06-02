@@ -26,11 +26,14 @@ CreateVectorStoreFileRequest copyWith({String? fileId, ChunkingStrategyRequestPa
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   attributes: attributes != null ? attributes() : this.attributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVectorStoreFileRequest &&
           fileId == other.fileId &&
           chunkingStrategy == other.chunkingStrategy &&
-          attributes == other.attributes; } 
-@override int get hashCode { return Object.hash(fileId, chunkingStrategy, attributes); } 
-@override String toString() { return 'CreateVectorStoreFileRequest(fileId: $fileId, chunkingStrategy: $chunkingStrategy, attributes: $attributes)'; } 
+          attributes == other.attributes;
+
+@override int get hashCode => Object.hash(fileId, chunkingStrategy, attributes);
+
+@override String toString() => 'CreateVectorStoreFileRequest(fileId: $fileId, chunkingStrategy: $chunkingStrategy, attributes: $attributes)';
+
  }

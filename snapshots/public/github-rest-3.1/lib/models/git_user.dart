@@ -26,11 +26,14 @@ GitUser copyWith({String? Function()? name, String? Function()? email, DateTime?
   email: email != null ? email() : this.email,
   date: date != null ? date() : this.date,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitUser &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitUser(name: $name, email: $email, date: $date)'; } 
+          date == other.date;
+
+@override int get hashCode => Object.hash(name, email, date);
+
+@override String toString() => 'GitUser(name: $name, email: $email, date: $date)';
+
  }

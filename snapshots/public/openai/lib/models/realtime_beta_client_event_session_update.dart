@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventSessionUpdateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventSessionUpdateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventSessionUpdateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventSessionUpdateType($value)';
+
  }
 /// Send this event to update the session’s default configuration.
 /// The client may send this event at any time to update any field,
@@ -61,11 +64,14 @@ RealtimeBetaClientEventSessionUpdate copyWith({String? Function()? eventId, Real
   type: type ?? this.type,
   session: session ?? this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventSessionUpdate &&
           eventId == other.eventId &&
           type == other.type &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(eventId, type, session); } 
-@override String toString() { return 'RealtimeBetaClientEventSessionUpdate(eventId: $eventId, type: $type, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(eventId, type, session);
+
+@override String toString() => 'RealtimeBetaClientEventSessionUpdate(eventId: $eventId, type: $type, session: $session)';
+
  }

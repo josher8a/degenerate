@@ -80,7 +80,7 @@ ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function(
   itemUrl: itemUrl != null ? itemUrl() : this.itemUrl,
   fields: fields != null ? fields() : this.fields,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemWithContent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -92,7 +92,10 @@ ItemWithContent copyWith({double? id, String? Function()? nodeId, Uri? Function(
           updatedAt == other.updatedAt &&
           archivedAt == other.archivedAt &&
           itemUrl == other.itemUrl &&
-          listEquals(fields, other.fields); } 
-@override int get hashCode { return Object.hash(id, nodeId, projectUrl, contentType, content, creator, createdAt, updatedAt, archivedAt, itemUrl, Object.hashAll(fields ?? const [])); } 
-@override String toString() { return 'ItemWithContent(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, contentType: $contentType, content: $content, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, itemUrl: $itemUrl, fields: $fields)'; } 
+          listEquals(fields, other.fields);
+
+@override int get hashCode => Object.hash(id, nodeId, projectUrl, contentType, content, creator, createdAt, updatedAt, archivedAt, itemUrl, Object.hashAll(fields ?? const []));
+
+@override String toString() => 'ItemWithContent(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, contentType: $contentType, content: $content, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, itemUrl: $itemUrl, fields: $fields)';
+
  }

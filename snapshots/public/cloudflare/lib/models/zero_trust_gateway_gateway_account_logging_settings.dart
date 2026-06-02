@@ -24,10 +24,13 @@ ZeroTrustGatewayGatewayAccountLoggingSettings copyWith({bool Function()? redactP
   redactPii: redactPii != null ? redactPii() : this.redactPii,
   settingsByRuleType: settingsByRuleType != null ? settingsByRuleType() : this.settingsByRuleType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountLoggingSettings &&
           redactPii == other.redactPii &&
-          settingsByRuleType == other.settingsByRuleType; } 
-@override int get hashCode { return Object.hash(redactPii, settingsByRuleType); } 
-@override String toString() { return 'ZeroTrustGatewayGatewayAccountLoggingSettings(redactPii: $redactPii, settingsByRuleType: $settingsByRuleType)'; } 
+          settingsByRuleType == other.settingsByRuleType;
+
+@override int get hashCode => Object.hash(redactPii, settingsByRuleType);
+
+@override String toString() => 'ZeroTrustGatewayGatewayAccountLoggingSettings(redactPii: $redactPii, settingsByRuleType: $settingsByRuleType)';
+
  }

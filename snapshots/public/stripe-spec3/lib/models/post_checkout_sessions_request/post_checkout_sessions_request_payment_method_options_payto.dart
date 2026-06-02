@@ -20,10 +20,13 @@ PostCheckoutSessionsRequestPaymentMethodOptionsPayto copyWith({PaytoMandateOptio
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsPayto &&
           mandateOptions == other.mandateOptions &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(mandateOptions, setupFutureUsage);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)';
+
  }

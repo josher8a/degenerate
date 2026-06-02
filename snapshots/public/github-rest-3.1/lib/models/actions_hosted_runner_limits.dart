@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('publi
 ActionsHostedRunnerLimits copyWith({PublicIps? publicIps}) { return ActionsHostedRunnerLimits(
   publicIps: publicIps ?? this.publicIps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerLimits &&
-          publicIps == other.publicIps; } 
-@override int get hashCode { return publicIps.hashCode; } 
-@override String toString() { return 'ActionsHostedRunnerLimits(publicIps: $publicIps)'; } 
+          publicIps == other.publicIps;
+
+@override int get hashCode => publicIps.hashCode;
+
+@override String toString() => 'ActionsHostedRunnerLimits(publicIps: $publicIps)';
+
  }

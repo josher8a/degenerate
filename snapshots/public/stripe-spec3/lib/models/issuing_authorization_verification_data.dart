@@ -63,7 +63,7 @@ IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationD
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationVerificationData &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
@@ -71,7 +71,10 @@ IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationD
           cvcCheck == other.cvcCheck &&
           expiryCheck == other.expiryCheck &&
           postalCode == other.postalCode &&
-          threeDSecure == other.threeDSecure; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, authenticationExemption, cvcCheck, expiryCheck, postalCode, threeDSecure); } 
-@override String toString() { return 'IssuingAuthorizationVerificationData(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, authenticationExemption: $authenticationExemption, cvcCheck: $cvcCheck, expiryCheck: $expiryCheck, postalCode: $postalCode, threeDSecure: $threeDSecure)'; } 
+          threeDSecure == other.threeDSecure;
+
+@override int get hashCode => Object.hash(addressLine1Check, addressPostalCodeCheck, authenticationExemption, cvcCheck, expiryCheck, postalCode, threeDSecure);
+
+@override String toString() => 'IssuingAuthorizationVerificationData(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, authenticationExemption: $authenticationExemption, cvcCheck: $cvcCheck, expiryCheck: $expiryCheck, postalCode: $postalCode, threeDSecure: $threeDSecure)';
+
  }

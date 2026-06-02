@@ -17,7 +17,8 @@ final class AigConfigCreateGatewayError$400 extends AigConfigCreateGatewayError 
 
 final AigConfigCreateGatewayResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigCreateGatewayError$Unknown extends AigConfigCreateGatewayError {const AigConfigCreateGatewayError$Unknown(this.statusCode, this.rawBody, );
 

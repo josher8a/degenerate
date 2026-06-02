@@ -23,10 +23,13 @@ ImageVolumeSource copyWith({String? Function()? pullPolicy, String? Function()? 
   pullPolicy: pullPolicy != null ? pullPolicy() : this.pullPolicy,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageVolumeSource &&
           pullPolicy == other.pullPolicy &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(pullPolicy, reference); } 
-@override String toString() { return 'ImageVolumeSource(pullPolicy: $pullPolicy, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(pullPolicy, reference);
+
+@override String toString() => 'ImageVolumeSource(pullPolicy: $pullPolicy, reference: $reference)';
+
  }

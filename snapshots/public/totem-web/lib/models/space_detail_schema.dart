@@ -75,7 +75,7 @@ SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? ima
   recurring: recurring != null ? recurring() : this.recurring,
   price: price ?? this.price,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpaceDetailSchema &&
           slug == other.slug &&
           title == other.title &&
@@ -87,7 +87,10 @@ SpaceDetailSchema copyWith({String? slug, String? title, String? Function()? ima
           category == other.category &&
           subscribers == other.subscribers &&
           recurring == other.recurring &&
-          price == other.price; } 
-@override int get hashCode { return Object.hash(slug, title, imageLink, shortDescription, content, author, nextEvent, category, subscribers, recurring, price); } 
-@override String toString() { return 'SpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, nextEvent: $nextEvent, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price)'; } 
+          price == other.price;
+
+@override int get hashCode => Object.hash(slug, title, imageLink, shortDescription, content, author, nextEvent, category, subscribers, recurring, price);
+
+@override String toString() => 'SpaceDetailSchema(slug: $slug, title: $title, imageLink: $imageLink, shortDescription: $shortDescription, content: $content, author: $author, nextEvent: $nextEvent, category: $category, subscribers: $subscribers, recurring: $recurring, price: $price)';
+
  }

@@ -34,10 +34,13 @@ OnlineAcceptance copyWith({String? Function()? ipAddress, String? Function()? us
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OnlineAcceptance &&
           ipAddress == other.ipAddress &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(ipAddress, userAgent); } 
-@override String toString() { return 'OnlineAcceptance(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(ipAddress, userAgent);
+
+@override String toString() => 'OnlineAcceptance(ipAddress: $ipAddress, userAgent: $userAgent)';
+
  }

@@ -35,11 +35,14 @@ IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay
   googlePay: googlePay ?? this.googlePay,
   primaryAccountIdentifier: primaryAccountIdentifier != null ? primaryAccountIdentifier() : this.primaryAccountIdentifier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardWallets &&
           applePay == other.applePay &&
           googlePay == other.googlePay &&
-          primaryAccountIdentifier == other.primaryAccountIdentifier; } 
-@override int get hashCode { return Object.hash(applePay, googlePay, primaryAccountIdentifier); } 
-@override String toString() { return 'IssuingCardWallets(applePay: $applePay, googlePay: $googlePay, primaryAccountIdentifier: $primaryAccountIdentifier)'; } 
+          primaryAccountIdentifier == other.primaryAccountIdentifier;
+
+@override int get hashCode => Object.hash(applePay, googlePay, primaryAccountIdentifier);
+
+@override String toString() => 'IssuingCardWallets(applePay: $applePay, googlePay: $googlePay, primaryAccountIdentifier: $primaryAccountIdentifier)';
+
  }

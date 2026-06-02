@@ -27,11 +27,14 @@ Histogram0 copyWith({List<String>? bandwidthDownload, List<String>? bandwidthUpl
   bandwidthUpload: bandwidthUpload ?? this.bandwidthUpload,
   bucketMin: bucketMin ?? this.bucketMin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Histogram0 &&
           listEquals(bandwidthDownload, other.bandwidthDownload) &&
           listEquals(bandwidthUpload, other.bandwidthUpload) &&
-          listEquals(bucketMin, other.bucketMin); } 
-@override int get hashCode { return Object.hash(Object.hashAll(bandwidthDownload), Object.hashAll(bandwidthUpload), Object.hashAll(bucketMin)); } 
-@override String toString() { return 'Histogram0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, bucketMin: $bucketMin)'; } 
+          listEquals(bucketMin, other.bucketMin);
+
+@override int get hashCode => Object.hash(Object.hashAll(bandwidthDownload), Object.hashAll(bandwidthUpload), Object.hashAll(bucketMin));
+
+@override String toString() => 'Histogram0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, bucketMin: $bucketMin)';
+
  }

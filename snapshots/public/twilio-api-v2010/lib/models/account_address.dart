@@ -121,7 +121,7 @@ AccountAddress copyWith({String? Function()? accountSid, String? Function()? cit
   verified: verified != null ? verified() : this.verified,
   streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAddress &&
           accountSid == other.accountSid &&
           city == other.city &&
@@ -138,7 +138,10 @@ AccountAddress copyWith({String? Function()? accountSid, String? Function()? cit
           emergencyEnabled == other.emergencyEnabled &&
           validated == other.validated &&
           verified == other.verified &&
-          streetSecondary == other.streetSecondary; } 
-@override int get hashCode { return Object.hash(accountSid, city, customerName, dateCreated, dateUpdated, friendlyName, isoCountry, postalCode, region, sid, street, uri, emergencyEnabled, validated, verified, streetSecondary); } 
-@override String toString() { return 'AccountAddress(accountSid: $accountSid, city: $city, customerName: $customerName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, isoCountry: $isoCountry, postalCode: $postalCode, region: $region, sid: $sid, street: $street, uri: $uri, emergencyEnabled: $emergencyEnabled, validated: $validated, verified: $verified, streetSecondary: $streetSecondary)'; } 
+          streetSecondary == other.streetSecondary;
+
+@override int get hashCode => Object.hash(accountSid, city, customerName, dateCreated, dateUpdated, friendlyName, isoCountry, postalCode, region, sid, street, uri, emergencyEnabled, validated, verified, streetSecondary);
+
+@override String toString() => 'AccountAddress(accountSid: $accountSid, city: $city, customerName: $customerName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, isoCountry: $isoCountry, postalCode: $postalCode, region: $region, sid: $sid, street: $street, uri: $uri, emergencyEnabled: $emergencyEnabled, validated: $validated, verified: $verified, streetSecondary: $streetSecondary)';
+
  }

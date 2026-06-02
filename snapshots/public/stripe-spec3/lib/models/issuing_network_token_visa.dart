@@ -47,12 +47,15 @@ IssuingNetworkTokenVisa copyWith({String? cardReferenceId, String? tokenReferenc
   tokenRequestorId: tokenRequestorId ?? this.tokenRequestorId,
   tokenRiskScore: tokenRiskScore != null ? tokenRiskScore() : this.tokenRiskScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenVisa &&
           cardReferenceId == other.cardReferenceId &&
           tokenReferenceId == other.tokenReferenceId &&
           tokenRequestorId == other.tokenRequestorId &&
-          tokenRiskScore == other.tokenRiskScore; } 
-@override int get hashCode { return Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRiskScore); } 
-@override String toString() { return 'IssuingNetworkTokenVisa(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRiskScore: $tokenRiskScore)'; } 
+          tokenRiskScore == other.tokenRiskScore;
+
+@override int get hashCode => Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRiskScore);
+
+@override String toString() => 'IssuingNetworkTokenVisa(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRiskScore: $tokenRiskScore)';
+
  }

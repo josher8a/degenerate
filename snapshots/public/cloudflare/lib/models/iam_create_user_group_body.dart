@@ -25,10 +25,13 @@ IamCreateUserGroupBody copyWith({String? name, List<IamUserGroupPolicyWriteBody>
   name: name ?? this.name,
   policies: policies ?? this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateUserGroupBody &&
           name == other.name &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(policies)); } 
-@override String toString() { return 'IamCreateUserGroupBody(name: $name, policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(policies));
+
+@override String toString() => 'IamCreateUserGroupBody(name: $name, policies: $policies)';
+
  }

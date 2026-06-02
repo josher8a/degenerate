@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IamSinglePermissionGroupsResponse copyWith({IamPermissionGroup? Function()? result}) { return IamSinglePermissionGroupsResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamSinglePermissionGroupsResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'IamSinglePermissionGroupsResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'IamSinglePermissionGroupsResponse(result: $result)';
+
  }

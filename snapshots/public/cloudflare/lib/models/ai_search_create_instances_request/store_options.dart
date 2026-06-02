@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StorageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StorageType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StorageType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StorageType($value)';
+
  }
 @immutable final class StoreOptions {const StoreOptions({required this.storageId, this.r2Jurisdiction = 'default', this.storageType = StorageType.r2, });
 
@@ -46,11 +49,14 @@ StoreOptions copyWith({String Function()? r2Jurisdiction, String? storageId, Sto
   storageId: storageId ?? this.storageId,
   storageType: storageType != null ? storageType() : this.storageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StoreOptions &&
           r2Jurisdiction == other.r2Jurisdiction &&
           storageId == other.storageId &&
-          storageType == other.storageType; } 
-@override int get hashCode { return Object.hash(r2Jurisdiction, storageId, storageType); } 
-@override String toString() { return 'StoreOptions(r2Jurisdiction: $r2Jurisdiction, storageId: $storageId, storageType: $storageType)'; } 
+          storageType == other.storageType;
+
+@override int get hashCode => Object.hash(r2Jurisdiction, storageId, storageType);
+
+@override String toString() => 'StoreOptions(r2Jurisdiction: $r2Jurisdiction, storageId: $storageId, storageType: $storageType)';
+
  }

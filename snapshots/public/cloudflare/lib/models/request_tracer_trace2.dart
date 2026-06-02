@@ -95,7 +95,7 @@ RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? 
   trace: trace != null ? trace() : this.trace,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequestTracerTrace2 &&
           action == other.action &&
           actionParameters == other.actionParameters &&
@@ -106,7 +106,10 @@ RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? 
           name == other.name &&
           stepName == other.stepName &&
           listEquals(trace, other.trace) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(action, actionParameters, description, expression, kind, matched, name, stepName, Object.hashAll(trace ?? const []), type); } 
-@override String toString() { return 'RequestTracerTrace2(action: $action, actionParameters: $actionParameters, description: $description, expression: $expression, kind: $kind, matched: $matched, name: $name, stepName: $stepName, trace: $trace, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(action, actionParameters, description, expression, kind, matched, name, stepName, Object.hashAll(trace ?? const []), type);
+
+@override String toString() => 'RequestTracerTrace2(action: $action, actionParameters: $actionParameters, description: $description, expression: $expression, kind: $kind, matched: $matched, name: $name, stepName: $stepName, trace: $trace, type: $type)';
+
  }

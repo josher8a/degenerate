@@ -41,13 +41,16 @@ CurrencyOption copyWith({CustomUnitAmount? Function()? customUnitAmount, Currenc
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CurrencyOption &&
           customUnitAmount == other.customUnitAmount &&
           taxBehavior == other.taxBehavior &&
           listEquals(tiers, other.tiers) &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(customUnitAmount, taxBehavior, Object.hashAll(tiers ?? const []), unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'CurrencyOption(customUnitAmount: $customUnitAmount, taxBehavior: $taxBehavior, tiers: $tiers, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(customUnitAmount, taxBehavior, Object.hashAll(tiers ?? const []), unitAmount, unitAmountDecimal);
+
+@override String toString() => 'CurrencyOption(customUnitAmount: $customUnitAmount, taxBehavior: $taxBehavior, tiers: $tiers, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

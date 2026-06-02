@@ -62,7 +62,7 @@ Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String?
   traceId: traceId ?? this.traceId,
   traceStartMs: traceStartMs ?? this.traceStartMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Traces &&
           listEquals(errors, other.errors) &&
           rootSpanName == other.rootSpanName &&
@@ -72,7 +72,10 @@ Traces copyWith({List<String>? Function()? errors, String? rootSpanName, String?
           traceDurationMs == other.traceDurationMs &&
           traceEndMs == other.traceEndMs &&
           traceId == other.traceId &&
-          traceStartMs == other.traceStartMs; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), rootSpanName, rootTransactionName, Object.hashAll(service), spans, traceDurationMs, traceEndMs, traceId, traceStartMs); } 
-@override String toString() { return 'Traces(errors: $errors, rootSpanName: $rootSpanName, rootTransactionName: $rootTransactionName, service: $service, spans: $spans, traceDurationMs: $traceDurationMs, traceEndMs: $traceEndMs, traceId: $traceId, traceStartMs: $traceStartMs)'; } 
+          traceStartMs == other.traceStartMs;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), rootSpanName, rootTransactionName, Object.hashAll(service), spans, traceDurationMs, traceEndMs, traceId, traceStartMs);
+
+@override String toString() => 'Traces(errors: $errors, rootSpanName: $rootSpanName, rootTransactionName: $rootTransactionName, service: $service, spans: $spans, traceDurationMs: $traceDurationMs, traceEndMs: $traceEndMs, traceId: $traceId, traceStartMs: $traceStartMs)';
+
  }

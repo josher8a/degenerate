@@ -21,10 +21,13 @@ BotManagementMetricRequests copyWith({String? metric, int? requests, }) { return
   metric: metric ?? this.metric,
   requests: requests ?? this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementMetricRequests &&
           metric == other.metric &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(metric, requests); } 
-@override String toString() { return 'BotManagementMetricRequests(metric: $metric, requests: $requests)'; } 
+          requests == other.requests;
+
+@override int get hashCode => Object.hash(metric, requests);
+
+@override String toString() => 'BotManagementMetricRequests(metric: $metric, requests: $requests)';
+
  }

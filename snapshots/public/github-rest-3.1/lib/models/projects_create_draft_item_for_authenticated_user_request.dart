@@ -22,10 +22,13 @@ ProjectsCreateDraftItemForAuthenticatedUserRequest copyWith({String? title, Stri
   title: title ?? this.title,
   body: body != null ? body() : this.body,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectsCreateDraftItemForAuthenticatedUserRequest &&
           title == other.title &&
-          body == other.body; } 
-@override int get hashCode { return Object.hash(title, body); } 
-@override String toString() { return 'ProjectsCreateDraftItemForAuthenticatedUserRequest(title: $title, body: $body)'; } 
+          body == other.body;
+
+@override int get hashCode => Object.hash(title, body);
+
+@override String toString() => 'ProjectsCreateDraftItemForAuthenticatedUserRequest(title: $title, body: $body)';
+
  }

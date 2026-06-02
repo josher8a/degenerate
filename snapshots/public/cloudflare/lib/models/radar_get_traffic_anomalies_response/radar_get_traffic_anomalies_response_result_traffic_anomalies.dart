@@ -62,7 +62,7 @@ RadarGetTrafficAnomaliesResponseResultTrafficAnomalies copyWith({AsnDetails? Fun
   uuid: uuid ?? this.uuid,
   visibleInDataSources: visibleInDataSources != null ? visibleInDataSources() : this.visibleInDataSources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTrafficAnomaliesResponseResultTrafficAnomalies &&
           asnDetails == other.asnDetails &&
           endDate == other.endDate &&
@@ -72,7 +72,10 @@ RadarGetTrafficAnomaliesResponseResultTrafficAnomalies copyWith({AsnDetails? Fun
           status == other.status &&
           type == other.type &&
           uuid == other.uuid &&
-          listEquals(visibleInDataSources, other.visibleInDataSources); } 
-@override int get hashCode { return Object.hash(asnDetails, endDate, locationDetails, originDetails, startDate, status, type, uuid, Object.hashAll(visibleInDataSources ?? const [])); } 
-@override String toString() { return 'RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(asnDetails: $asnDetails, endDate: $endDate, locationDetails: $locationDetails, originDetails: $originDetails, startDate: $startDate, status: $status, type: $type, uuid: $uuid, visibleInDataSources: $visibleInDataSources)'; } 
+          listEquals(visibleInDataSources, other.visibleInDataSources);
+
+@override int get hashCode => Object.hash(asnDetails, endDate, locationDetails, originDetails, startDate, status, type, uuid, Object.hashAll(visibleInDataSources ?? const []));
+
+@override String toString() => 'RadarGetTrafficAnomaliesResponseResultTrafficAnomalies(asnDetails: $asnDetails, endDate: $endDate, locationDetails: $locationDetails, originDetails: $originDetails, startDate: $startDate, status: $status, type: $type, uuid: $uuid, visibleInDataSources: $visibleInDataSources)';
+
  }

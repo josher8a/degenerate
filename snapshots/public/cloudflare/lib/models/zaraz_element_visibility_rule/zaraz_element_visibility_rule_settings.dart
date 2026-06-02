@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('selec
 ZarazElementVisibilityRuleSettings copyWith({String? selector}) { return ZarazElementVisibilityRuleSettings(
   selector: selector ?? this.selector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazElementVisibilityRuleSettings &&
-          selector == other.selector; } 
-@override int get hashCode { return selector.hashCode; } 
-@override String toString() { return 'ZarazElementVisibilityRuleSettings(selector: $selector)'; } 
+          selector == other.selector;
+
+@override int get hashCode => selector.hashCode;
+
+@override String toString() => 'ZarazElementVisibilityRuleSettings(selector: $selector)';
+
  }

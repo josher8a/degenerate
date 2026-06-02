@@ -19,19 +19,22 @@ final class ReposCompareCommitsError$404 extends ReposCompareCommitsError {const
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposCompareCommitsError$500 extends ReposCompareCommitsError {const ReposCompareCommitsError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ReposCompareCommitsError$503 extends ReposCompareCommitsError {const ReposCompareCommitsError$503(this.error);
 
 final ReposCompareCommitsResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class ReposCompareCommitsError$Unknown extends ReposCompareCommitsError {const ReposCompareCommitsError$Unknown(this.statusCode, this.rawBody, );
 

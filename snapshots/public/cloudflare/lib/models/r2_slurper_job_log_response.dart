@@ -58,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LogType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LogType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LogType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LogType($value)';
+
  }
 @immutable final class R2SlurperJobLogResponse {const R2SlurperJobLogResponse({this.createdAt, this.job, this.logType, this.message, this.objectKey, });
 
@@ -98,13 +101,16 @@ R2SlurperJobLogResponse copyWith({String? Function()? createdAt, String? Functio
   message: message != null ? message() : this.message,
   objectKey: objectKey != null ? objectKey() : this.objectKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperJobLogResponse &&
           createdAt == other.createdAt &&
           job == other.job &&
           logType == other.logType &&
           message == other.message &&
-          objectKey == other.objectKey; } 
-@override int get hashCode { return Object.hash(createdAt, job, logType, message, objectKey); } 
-@override String toString() { return 'R2SlurperJobLogResponse(createdAt: $createdAt, job: $job, logType: $logType, message: $message, objectKey: $objectKey)'; } 
+          objectKey == other.objectKey;
+
+@override int get hashCode => Object.hash(createdAt, job, logType, message, objectKey);
+
+@override String toString() => 'R2SlurperJobLogResponse(createdAt: $createdAt, job: $job, logType: $logType, message: $message, objectKey: $objectKey)';
+
  }

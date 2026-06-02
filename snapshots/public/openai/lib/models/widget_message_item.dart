@@ -52,14 +52,17 @@ WidgetMessageItem copyWith({String? id, AssistantMessageItemObject? object, int?
   type: type ?? this.type,
   widget: widget ?? this.widget,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WidgetMessageItem &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           threadId == other.threadId &&
           type == other.type &&
-          widget == other.widget; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, widget); } 
-@override String toString() { return 'WidgetMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, widget: $widget)'; } 
+          widget == other.widget;
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, widget);
+
+@override String toString() => 'WidgetMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, widget: $widget)';
+
  }

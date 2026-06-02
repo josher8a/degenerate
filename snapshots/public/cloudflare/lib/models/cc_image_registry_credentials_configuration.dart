@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CcImageRegistryPermissions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CcImageRegistryPermissions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CcImageRegistryPermissions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CcImageRegistryPermissions($value)';
+
  }
 /// Specifies the configuration for the image registry credential to create.
 @immutable final class CcImageRegistryCredentialsConfiguration {const CcImageRegistryCredentialsConfiguration({required this.expirationMinutes, required this.permissions, });
@@ -48,10 +51,13 @@ CcImageRegistryCredentialsConfiguration copyWith({int? expirationMinutes, List<C
   expirationMinutes: expirationMinutes ?? this.expirationMinutes,
   permissions: permissions ?? this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcImageRegistryCredentialsConfiguration &&
           expirationMinutes == other.expirationMinutes &&
-          listEquals(permissions, other.permissions); } 
-@override int get hashCode { return Object.hash(expirationMinutes, Object.hashAll(permissions)); } 
-@override String toString() { return 'CcImageRegistryCredentialsConfiguration(expirationMinutes: $expirationMinutes, permissions: $permissions)'; } 
+          listEquals(permissions, other.permissions);
+
+@override int get hashCode => Object.hash(expirationMinutes, Object.hashAll(permissions));
+
+@override String toString() => 'CcImageRegistryCredentialsConfiguration(expirationMinutes: $expirationMinutes, permissions: $permissions)';
+
  }

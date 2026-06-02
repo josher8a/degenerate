@@ -42,13 +42,16 @@ Autolink copyWith({int? id, String? keyPrefix, String? urlTemplate, bool? isAlph
   isAlphanumeric: isAlphanumeric ?? this.isAlphanumeric,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Autolink &&
           id == other.id &&
           keyPrefix == other.keyPrefix &&
           urlTemplate == other.urlTemplate &&
           isAlphanumeric == other.isAlphanumeric &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, keyPrefix, urlTemplate, isAlphanumeric, updatedAt); } 
-@override String toString() { return 'Autolink(id: $id, keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, keyPrefix, urlTemplate, isAlphanumeric, updatedAt);
+
+@override String toString() => 'Autolink(id: $id, keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric, updatedAt: $updatedAt)';
+
  }

@@ -23,10 +23,13 @@ PersistentVolumeClaimVolumeSource copyWith({String? claimName, bool? Function()?
   claimName: claimName ?? this.claimName,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimVolumeSource &&
           claimName == other.claimName &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(claimName, readOnly); } 
-@override String toString() { return 'PersistentVolumeClaimVolumeSource(claimName: $claimName, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(claimName, readOnly);
+
+@override String toString() => 'PersistentVolumeClaimVolumeSource(claimName: $claimName, readOnly: $readOnly)';
+
  }

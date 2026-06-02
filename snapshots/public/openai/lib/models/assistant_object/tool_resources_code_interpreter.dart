@@ -21,9 +21,12 @@ return errors; }
 ToolResourcesCodeInterpreter copyWith({List<String> Function()? fileIds}) { return ToolResourcesCodeInterpreter(
   fileIds: fileIds != null ? fileIds() : this.fileIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolResourcesCodeInterpreter &&
-          listEquals(fileIds, other.fileIds); } 
-@override int get hashCode { return Object.hashAll(fileIds); } 
-@override String toString() { return 'ToolResourcesCodeInterpreter(fileIds: $fileIds)'; } 
+          listEquals(fileIds, other.fileIds);
+
+@override int get hashCode => Object.hashAll(fileIds);
+
+@override String toString() => 'ToolResourcesCodeInterpreter(fileIds: $fileIds)';
+
  }

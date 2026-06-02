@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionObject($value)';
+
  }
 /// Possible values are `incomplete`, `incomplete_expired`, `trialing`, `active`, `past_due`, `canceled`, `unpaid`, or `paused`.
 /// 
@@ -70,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionStatus($value)';
+
  }
 /// Subscriptions allow you to charge a customer on a recurring basis.
 /// 
@@ -393,7 +399,7 @@ Subscription copyWith({BillingPortalConfigurationApplication? Function()? applic
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
   trialStart: trialStart != null ? trialStart() : this.trialStart,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subscription &&
           application == other.application &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -439,7 +445,10 @@ Subscription copyWith({BillingPortalConfigurationApplication? Function()? applic
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialSettings == other.trialSettings &&
-          trialStart == other.trialStart; } 
-@override int get hashCode { return Object.hashAll([application, applicationFeePercent, automaticTax, billingCycleAnchor, billingCycleAnchorConfig, billingMode, billingThresholds, cancelAt, cancelAtPeriodEnd, canceledAt, cancellationDetails, collectionMethod, created, currency, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), endedAt, id, invoiceSettings, items, latestInvoice, livemode, metadata, nextPendingInvoiceItemInvoice, object, onBehalfOf, pauseCollection, paymentSettings, pendingInvoiceItemInterval, pendingSetupIntent, pendingUpdate, schedule, startDate, status, testClock, transferData, trialEnd, trialSettings, trialStart]); } 
-@override String toString() { return 'Subscription(application: $application, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingCycleAnchorConfig: $billingCycleAnchorConfig, billingMode: $billingMode, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, canceledAt: $canceledAt, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endedAt: $endedAt, id: $id, invoiceSettings: $invoiceSettings, items: $items, latestInvoice: $latestInvoice, livemode: $livemode, metadata: $metadata, nextPendingInvoiceItemInvoice: $nextPendingInvoiceItemInvoice, object: $object, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, pendingSetupIntent: $pendingSetupIntent, pendingUpdate: $pendingUpdate, schedule: $schedule, startDate: $startDate, status: $status, testClock: $testClock, transferData: $transferData, trialEnd: $trialEnd, trialSettings: $trialSettings, trialStart: $trialStart)'; } 
+          trialStart == other.trialStart;
+
+@override int get hashCode => Object.hashAll([application, applicationFeePercent, automaticTax, billingCycleAnchor, billingCycleAnchorConfig, billingMode, billingThresholds, cancelAt, cancelAtPeriodEnd, canceledAt, cancellationDetails, collectionMethod, created, currency, customer, customerAccount, daysUntilDue, defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), endedAt, id, invoiceSettings, items, latestInvoice, livemode, metadata, nextPendingInvoiceItemInvoice, object, onBehalfOf, pauseCollection, paymentSettings, pendingInvoiceItemInterval, pendingSetupIntent, pendingUpdate, schedule, startDate, status, testClock, transferData, trialEnd, trialSettings, trialStart]);
+
+@override String toString() => 'Subscription(application: $application, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingCycleAnchorConfig: $billingCycleAnchorConfig, billingMode: $billingMode, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, canceledAt: $canceledAt, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endedAt: $endedAt, id: $id, invoiceSettings: $invoiceSettings, items: $items, latestInvoice: $latestInvoice, livemode: $livemode, metadata: $metadata, nextPendingInvoiceItemInvoice: $nextPendingInvoiceItemInvoice, object: $object, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, pendingSetupIntent: $pendingSetupIntent, pendingUpdate: $pendingUpdate, schedule: $schedule, startDate: $startDate, status: $status, testClock: $testClock, transferData: $transferData, trialEnd: $trialEnd, trialSettings: $trialSettings, trialStart: $trialStart)';
+
  }

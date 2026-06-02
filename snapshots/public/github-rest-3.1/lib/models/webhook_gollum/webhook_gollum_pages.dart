@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesAction($value)';
+
  }
 @immutable final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });
 
@@ -75,14 +78,17 @@ WebhookGollumPages copyWith({PagesAction? action, Uri? htmlUrl, String? pageName
   summary: summary != null ? summary() : this.summary,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookGollumPages &&
           action == other.action &&
           htmlUrl == other.htmlUrl &&
           pageName == other.pageName &&
           sha == other.sha &&
           summary == other.summary &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, htmlUrl, pageName, sha, summary, title); } 
-@override String toString() { return 'WebhookGollumPages(action: $action, htmlUrl: $htmlUrl, pageName: $pageName, sha: $sha, summary: $summary, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(action, htmlUrl, pageName, sha, summary, title);
+
+@override String toString() => 'WebhookGollumPages(action: $action, htmlUrl: $htmlUrl, pageName: $pageName, sha: $sha, summary: $summary, title: $title)';
+
  }

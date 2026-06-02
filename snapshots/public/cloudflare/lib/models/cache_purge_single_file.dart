@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CachePurgeSingleFile copyWith({List<String>? Function()? files}) { return CachePurgeSingleFile(
   files: files != null ? files() : this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeSingleFile &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []); } 
-@override String toString() { return 'CachePurgeSingleFile(files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hashAll(files ?? const []);
+
+@override String toString() => 'CachePurgeSingleFile(files: $files)';
+
  }

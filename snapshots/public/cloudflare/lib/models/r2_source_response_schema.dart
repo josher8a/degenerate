@@ -35,13 +35,16 @@ R2SourceResponseSchema copyWith({String? Function()? bucket, R2SlurperJurisdicti
   pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SourceResponseSchema &&
           bucket == other.bucket &&
           jurisdiction == other.jurisdiction &&
           listEquals(keys, other.keys) &&
           pathPrefix == other.pathPrefix &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, jurisdiction, Object.hashAll(keys ?? const []), pathPrefix, vendor); } 
-@override String toString() { return 'R2SourceResponseSchema(bucket: $bucket, jurisdiction: $jurisdiction, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, jurisdiction, Object.hashAll(keys ?? const []), pathPrefix, vendor);
+
+@override String toString() => 'R2SourceResponseSchema(bucket: $bucket, jurisdiction: $jurisdiction, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAlertInstanceState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAlertInstanceState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningAlertInstanceState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningAlertInstanceState($value)';
+
  }
 @immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });
 
@@ -96,7 +99,7 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   classifications: classifications != null ? classifications() : this.classifications,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAlertInstanceList &&
           ref == other.ref &&
           analysisKey == other.analysisKey &&
@@ -107,7 +110,10 @@ CodeScanningAlertInstanceList copyWith({CodeScanningRef? Function()? ref, CodeSc
           message == other.message &&
           location == other.location &&
           htmlUrl == other.htmlUrl &&
-          listEquals(classifications, other.classifications); } 
-@override int get hashCode { return Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const [])); } 
-@override String toString() { return 'CodeScanningAlertInstanceList(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)'; } 
+          listEquals(classifications, other.classifications);
+
+@override int get hashCode => Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const []));
+
+@override String toString() => 'CodeScanningAlertInstanceList(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)';
+
  }

@@ -22,10 +22,13 @@ ZarazCustomManagedComponentWorker copyWith({String? escapedWorkerName, String? w
   escapedWorkerName: escapedWorkerName ?? this.escapedWorkerName,
   workerTag: workerTag ?? this.workerTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazCustomManagedComponentWorker &&
           escapedWorkerName == other.escapedWorkerName &&
-          workerTag == other.workerTag; } 
-@override int get hashCode { return Object.hash(escapedWorkerName, workerTag); } 
-@override String toString() { return 'ZarazCustomManagedComponentWorker(escapedWorkerName: $escapedWorkerName, workerTag: $workerTag)'; } 
+          workerTag == other.workerTag;
+
+@override int get hashCode => Object.hash(escapedWorkerName, workerTag);
+
+@override String toString() => 'ZarazCustomManagedComponentWorker(escapedWorkerName: $escapedWorkerName, workerTag: $workerTag)';
+
  }

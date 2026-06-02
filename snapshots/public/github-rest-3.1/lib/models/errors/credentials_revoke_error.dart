@@ -18,13 +18,15 @@ final class CredentialsRevokeError$422 extends CredentialsRevokeError {const Cre
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CredentialsRevokeError$500 extends CredentialsRevokeError {const CredentialsRevokeError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CredentialsRevokeError$Unknown extends CredentialsRevokeError {const CredentialsRevokeError$Unknown(this.statusCode, this.rawBody, );
 

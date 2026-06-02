@@ -46,13 +46,16 @@ DosExpressionFilter copyWith({DateTime? createdOn, String? expression, String? i
   mode: mode ?? this.mode,
   modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosExpressionFilter &&
           createdOn == other.createdOn &&
           expression == other.expression &&
           id == other.id &&
           mode == other.mode &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(createdOn, expression, id, mode, modifiedOn); } 
-@override String toString() { return 'DosExpressionFilter(createdOn: $createdOn, expression: $expression, id: $id, mode: $mode, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(createdOn, expression, id, mode, modifiedOn);
+
+@override String toString() => 'DosExpressionFilter(createdOn: $createdOn, expression: $expression, id: $id, mode: $mode, modifiedOn: $modifiedOn)';
+
  }

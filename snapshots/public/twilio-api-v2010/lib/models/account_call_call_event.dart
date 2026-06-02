@@ -22,10 +22,13 @@ AccountCallCallEvent copyWith({dynamic Function()? request, dynamic Function()? 
   request: request != null ? request() : this.request,
   response: response != null ? response() : this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallCallEvent &&
           request == other.request &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(request, response); } 
-@override String toString() { return 'AccountCallCallEvent(request: $request, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(request, response);
+
+@override String toString() => 'AccountCallCallEvent(request: $request, response: $response)';
+
  }

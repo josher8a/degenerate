@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 PostGroupMemberCreateRequest copyWith({String? accountId}) { return PostGroupMemberCreateRequest(
   accountId: accountId ?? this.accountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostGroupMemberCreateRequest &&
-          accountId == other.accountId; } 
-@override int get hashCode { return accountId.hashCode; } 
-@override String toString() { return 'PostGroupMemberCreateRequest(accountId: $accountId)'; } 
+          accountId == other.accountId;
+
+@override int get hashCode => accountId.hashCode;
+
+@override String toString() => 'PostGroupMemberCreateRequest(accountId: $accountId)';
+
  }

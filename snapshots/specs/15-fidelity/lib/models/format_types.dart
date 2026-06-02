@@ -36,13 +36,16 @@ FormatTypes copyWith({DateTime? createdAt, Uri? website, Uint8List? Function()? 
   trackingId: trackingId != null ? trackingId() : this.trackingId,
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FormatTypes &&
           createdAt == other.createdAt &&
           website == other.website &&
           avatar == other.avatar &&
           trackingId == other.trackingId &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(createdAt, website, avatar, trackingId, email); } 
-@override String toString() { return 'FormatTypes(createdAt: $createdAt, website: $website, avatar: $avatar, trackingId: $trackingId, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(createdAt, website, avatar, trackingId, email);
+
+@override String toString() => 'FormatTypes(createdAt: $createdAt, website: $website, avatar: $avatar, trackingId: $trackingId, email: $email)';
+
  }

@@ -23,10 +23,13 @@ PaymentLinksResourceTransferData copyWith({int? Function()? amount, ChargeTransf
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceTransferData &&
           amount == other.amount &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amount, destination); } 
-@override String toString() { return 'PaymentLinksResourceTransferData(amount: $amount, destination: $destination)'; } 
+          destination == other.destination;
+
+@override int get hashCode => Object.hash(amount, destination);
+
+@override String toString() => 'PaymentLinksResourceTransferData(amount: $amount, destination: $destination)';
+
  }

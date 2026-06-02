@@ -21,10 +21,13 @@ MconnAdminFlare copyWith({MconnUuid? id, String? triggeredAt, }) { return MconnA
   id: id ?? this.id,
   triggeredAt: triggeredAt ?? this.triggeredAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminFlare &&
           id == other.id &&
-          triggeredAt == other.triggeredAt; } 
-@override int get hashCode { return Object.hash(id, triggeredAt); } 
-@override String toString() { return 'MconnAdminFlare(id: $id, triggeredAt: $triggeredAt)'; } 
+          triggeredAt == other.triggeredAt;
+
+@override int get hashCode => Object.hash(id, triggeredAt);
+
+@override String toString() => 'MconnAdminFlare(id: $id, triggeredAt: $triggeredAt)';
+
  }

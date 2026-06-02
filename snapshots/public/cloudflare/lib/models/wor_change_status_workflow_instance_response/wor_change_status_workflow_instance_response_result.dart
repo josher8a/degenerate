@@ -22,10 +22,13 @@ WorChangeStatusWorkflowInstanceResponseResult copyWith({WorBatchCreateWorkflowIn
   status: status ?? this.status,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorChangeStatusWorkflowInstanceResponseResult &&
           status == other.status &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(status, timestamp); } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceResponseResult(status: $status, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(status, timestamp);
+
+@override String toString() => 'WorChangeStatusWorkflowInstanceResponseResult(status: $status, timestamp: $timestamp)';
+
  }

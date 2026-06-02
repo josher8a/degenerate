@@ -21,9 +21,12 @@ return errors; }
 CredentialsRevokeRequest copyWith({List<String>? credentials}) { return CredentialsRevokeRequest(
   credentials: credentials ?? this.credentials,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CredentialsRevokeRequest &&
-          listEquals(credentials, other.credentials); } 
-@override int get hashCode { return Object.hashAll(credentials); } 
-@override String toString() { return 'CredentialsRevokeRequest(credentials: $credentials)'; } 
+          listEquals(credentials, other.credentials);
+
+@override int get hashCode => Object.hashAll(credentials);
+
+@override String toString() => 'CredentialsRevokeRequest(credentials: $credentials)';
+
  }

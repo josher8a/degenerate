@@ -34,11 +34,14 @@ PortalFlowsFlowSubscriptionUpdateConfirm copyWith({List<PortalFlowsSubscriptionU
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsFlowSubscriptionUpdateConfirm &&
           listEquals(discounts, other.discounts) &&
           listEquals(items, other.items) &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts ?? const []), Object.hashAll(items), subscription); } 
-@override String toString() { return 'PortalFlowsFlowSubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => Object.hash(Object.hashAll(discounts ?? const []), Object.hashAll(items), subscription);
+
+@override String toString() => 'PortalFlowsFlowSubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)';
+
  }

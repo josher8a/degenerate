@@ -39,13 +39,16 @@ McnYamlDiff copyWith({String? diff, String? leftDescription, String? leftYaml, S
   rightDescription: rightDescription ?? this.rightDescription,
   rightYaml: rightYaml ?? this.rightYaml,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnYamlDiff &&
           diff == other.diff &&
           leftDescription == other.leftDescription &&
           leftYaml == other.leftYaml &&
           rightDescription == other.rightDescription &&
-          rightYaml == other.rightYaml; } 
-@override int get hashCode { return Object.hash(diff, leftDescription, leftYaml, rightDescription, rightYaml); } 
-@override String toString() { return 'McnYamlDiff(diff: $diff, leftDescription: $leftDescription, leftYaml: $leftYaml, rightDescription: $rightDescription, rightYaml: $rightYaml)'; } 
+          rightYaml == other.rightYaml;
+
+@override int get hashCode => Object.hash(diff, leftDescription, leftYaml, rightDescription, rightYaml);
+
+@override String toString() => 'McnYamlDiff(diff: $diff, leftDescription: $leftDescription, leftYaml: $leftYaml, rightDescription: $rightDescription, rightYaml: $rightYaml)';
+
  }

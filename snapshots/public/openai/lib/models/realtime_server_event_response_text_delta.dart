@@ -59,7 +59,7 @@ RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, St
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseTextDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -67,7 +67,10 @@ RealtimeServerEventResponseTextDelta copyWith({String? eventId, String? type, St
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);
+
+@override String toString() => 'RealtimeServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';
+
  }

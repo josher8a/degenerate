@@ -51,7 +51,7 @@ EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailR
   priority: priority != null ? priority() : this.priority,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailRuleProperties &&
           listEquals(actions, other.actions) &&
           enabled == other.enabled &&
@@ -59,7 +59,10 @@ EmailRuleProperties copyWith({List<EmailRuleAction>? Function()? actions, EmailR
           listEquals(matchers, other.matchers) &&
           name == other.name &&
           priority == other.priority &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions ?? const []), enabled, id, Object.hashAll(matchers ?? const []), name, priority, tag); } 
-@override String toString() { return 'EmailRuleProperties(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, priority: $priority, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions ?? const []), enabled, id, Object.hashAll(matchers ?? const []), name, priority, tag);
+
+@override String toString() => 'EmailRuleProperties(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, priority: $priority, tag: $tag)';
+
  }

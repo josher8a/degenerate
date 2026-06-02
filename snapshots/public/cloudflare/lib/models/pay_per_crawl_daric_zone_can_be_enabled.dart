@@ -20,10 +20,13 @@ PayPerCrawlDaricZoneCanBeEnabled copyWith({bool? Function()? canBeEnabled, Strin
   canBeEnabled: canBeEnabled != null ? canBeEnabled() : this.canBeEnabled,
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlDaricZoneCanBeEnabled &&
           canBeEnabled == other.canBeEnabled &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(canBeEnabled, id); } 
-@override String toString() { return 'PayPerCrawlDaricZoneCanBeEnabled(canBeEnabled: $canBeEnabled, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(canBeEnabled, id);
+
+@override String toString() => 'PayPerCrawlDaricZoneCanBeEnabled(canBeEnabled: $canBeEnabled, id: $id)';
+
  }

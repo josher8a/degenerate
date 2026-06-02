@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleCreationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleCreationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleCreationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleCreationType($value)';
+
  }
 /// Only allow users with bypass permission to create matching refs.
 @immutable final class RepositoryRuleCreation {const RepositoryRuleCreation({required this.type});
@@ -37,9 +40,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 RepositoryRuleCreation copyWith({RepositoryRuleCreationType? type}) { return RepositoryRuleCreation(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCreation &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'RepositoryRuleCreation(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'RepositoryRuleCreation(type: $type)';
+
  }

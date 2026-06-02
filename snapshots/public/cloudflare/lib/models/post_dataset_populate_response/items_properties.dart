@@ -51,7 +51,7 @@ ItemsProperties copyWith({Attackers? attackers, PropertiesCategories? categories
   targetIndustries: targetIndustries ?? this.targetIndustries,
   totalProcessed: totalProcessed ?? this.totalProcessed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemsProperties &&
           attackers == other.attackers &&
           categories == other.categories &&
@@ -59,7 +59,10 @@ ItemsProperties copyWith({Attackers? attackers, PropertiesCategories? categories
           indicatorTypes == other.indicatorTypes &&
           processingTimeMs == other.processingTimeMs &&
           targetIndustries == other.targetIndustries &&
-          totalProcessed == other.totalProcessed; } 
-@override int get hashCode { return Object.hash(attackers, categories, datasetId, indicatorTypes, processingTimeMs, targetIndustries, totalProcessed); } 
-@override String toString() { return 'ItemsProperties(attackers: $attackers, categories: $categories, datasetId: $datasetId, indicatorTypes: $indicatorTypes, processingTimeMs: $processingTimeMs, targetIndustries: $targetIndustries, totalProcessed: $totalProcessed)'; } 
+          totalProcessed == other.totalProcessed;
+
+@override int get hashCode => Object.hash(attackers, categories, datasetId, indicatorTypes, processingTimeMs, targetIndustries, totalProcessed);
+
+@override String toString() => 'ItemsProperties(attackers: $attackers, categories: $categories, datasetId: $datasetId, indicatorTypes: $indicatorTypes, processingTimeMs: $processingTimeMs, targetIndustries: $targetIndustries, totalProcessed: $totalProcessed)';
+
  }

@@ -33,12 +33,15 @@ RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0 copyWith({List<Str
   tls: tls ?? this.tls,
   udp: udp ?? this.udp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0 &&
           listEquals(https, other.https) &&
           listEquals(tcp, other.tcp) &&
           listEquals(tls, other.tls) &&
-          listEquals(udp, other.udp); } 
-@override int get hashCode { return Object.hash(Object.hashAll(https), Object.hashAll(tcp), Object.hashAll(tls), Object.hashAll(udp)); } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)'; } 
+          listEquals(udp, other.udp);
+
+@override int get hashCode => Object.hash(Object.hashAll(https), Object.hashAll(tcp), Object.hashAll(tls), Object.hashAll(udp));
+
+@override String toString() => 'RadarGetDnsAs112TimeseriesGroupByProtocolResponseResultSerie0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)';
+
  }

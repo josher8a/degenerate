@@ -51,14 +51,17 @@ PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest copyWith({int? amo
   merchantData: merchantData != null ? merchantData() : this.merchantData,
   purchaseDetails: purchaseDetails != null ? purchaseDetails() : this.purchaseDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest &&
           amount == other.amount &&
           card == other.card &&
           currency == other.currency &&
           listEquals(expand, other.expand) &&
           merchantData == other.merchantData &&
-          purchaseDetails == other.purchaseDetails; } 
-@override int get hashCode { return Object.hash(amount, card, currency, Object.hashAll(expand ?? const []), merchantData, purchaseDetails); } 
-@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(amount: $amount, card: $card, currency: $currency, expand: $expand, merchantData: $merchantData, purchaseDetails: $purchaseDetails)'; } 
+          purchaseDetails == other.purchaseDetails;
+
+@override int get hashCode => Object.hash(amount, card, currency, Object.hashAll(expand ?? const []), merchantData, purchaseDetails);
+
+@override String toString() => 'PostTestHelpersIssuingTransactionsCreateUnlinkedRefundRequest(amount: $amount, card: $card, currency: $currency, expand: $expand, merchantData: $merchantData, purchaseDetails: $purchaseDetails)';
+
  }

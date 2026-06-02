@@ -33,11 +33,14 @@ SubscriptionUpdateConfirmItems copyWith({String? id, String? Function()? price, 
   price: price != null ? price() : this.price,
   quantity: quantity != null ? quantity() : this.quantity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionUpdateConfirmItems &&
           id == other.id &&
           price == other.price &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(id, price, quantity); } 
-@override String toString() { return 'SubscriptionUpdateConfirmItems(id: $id, price: $price, quantity: $quantity)'; } 
+          quantity == other.quantity;
+
+@override int get hashCode => Object.hash(id, price, quantity);
+
+@override String toString() => 'SubscriptionUpdateConfirmItems(id: $id, price: $price, quantity: $quantity)';
+
  }

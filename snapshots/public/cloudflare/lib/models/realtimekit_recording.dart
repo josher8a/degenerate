@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitRecordingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitRecordingStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitRecordingStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitRecordingStatus($value)';
+
  }
 @immutable final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, });
 
@@ -129,7 +132,7 @@ RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function(
   status: status ?? this.status,
   stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitRecording &&
           audioDownloadUrl == other.audioDownloadUrl &&
           downloadUrl == other.downloadUrl &&
@@ -142,7 +145,10 @@ RealtimekitRecording copyWith({Uri? Function()? audioDownloadUrl, Uri? Function(
           sessionId == other.sessionId &&
           startedTime == other.startedTime &&
           status == other.status &&
-          stoppedTime == other.stoppedTime; } 
-@override int get hashCode { return Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime); } 
-@override String toString() { return 'RealtimekitRecording(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime)'; } 
+          stoppedTime == other.stoppedTime;
+
+@override int get hashCode => Object.hash(audioDownloadUrl, downloadUrl, downloadUrlExpiry, fileSize, id, invokedTime, outputFileName, recordingDuration, sessionId, startedTime, status, stoppedTime);
+
+@override String toString() => 'RealtimekitRecording(audioDownloadUrl: $audioDownloadUrl, downloadUrl: $downloadUrl, downloadUrlExpiry: $downloadUrlExpiry, fileSize: $fileSize, id: $id, invokedTime: $invokedTime, outputFileName: $outputFileName, recordingDuration: $recordingDuration, sessionId: $sessionId, startedTime: $startedTime, status: $status, stoppedTime: $stoppedTime)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 TaxProductRegistrationsResourceCountryOptionsDefault copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultInboundGoodsType? type}) { return TaxProductRegistrationsResourceCountryOptionsDefault(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsDefault &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsDefault(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsDefault(type: $type)';
+
  }

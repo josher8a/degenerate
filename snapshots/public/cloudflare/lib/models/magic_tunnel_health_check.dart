@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicTunnelHealthCheckDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicTunnelHealthCheckDirection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicTunnelHealthCheckDirection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MagicTunnelHealthCheckDirection($value)';
+
  }
 @immutable final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, this.direction = MagicTunnelHealthCheckDirection.unidirectional, });
 
@@ -73,13 +76,16 @@ MagicTunnelHealthCheck copyWith({bool Function()? enabled, MagicHealthCheckBaseR
   type: type != null ? type() : this.type,
   direction: direction != null ? direction() : this.direction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTunnelHealthCheck &&
           enabled == other.enabled &&
           rate == other.rate &&
           target == other.target &&
           type == other.type &&
-          direction == other.direction; } 
-@override int get hashCode { return Object.hash(enabled, rate, target, type, direction); } 
-@override String toString() { return 'MagicTunnelHealthCheck(enabled: $enabled, rate: $rate, target: $target, type: $type, direction: $direction)'; } 
+          direction == other.direction;
+
+@override int get hashCode => Object.hash(enabled, rate, target, type, direction);
+
+@override String toString() => 'MagicTunnelHealthCheck(enabled: $enabled, rate: $rate, target: $target, type: $type, direction: $direction)';
+
  }

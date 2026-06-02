@@ -17,7 +17,8 @@ final class GetTagListError$400 extends GetTagListError {const GetTagListError$4
 
 final GetTagListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetTagListError$Unknown extends GetTagListError {const GetTagListError$Unknown(this.statusCode, this.rawBody, );
 

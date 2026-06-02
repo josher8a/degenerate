@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookGithubAppAuthorizationRevokedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookGithubAppAuthorizationRevokedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookGithubAppAuthorizationRevokedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookGithubAppAuthorizationRevokedAction($value)';
+
  }
 @immutable final class WebhookGithubAppAuthorizationRevoked {const WebhookGithubAppAuthorizationRevoked({required this.action, required this.sender, });
 
@@ -42,10 +45,13 @@ WebhookGithubAppAuthorizationRevoked copyWith({WebhookGithubAppAuthorizationRevo
   action: action ?? this.action,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookGithubAppAuthorizationRevoked &&
           action == other.action &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, sender); } 
-@override String toString() { return 'WebhookGithubAppAuthorizationRevoked(action: $action, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, sender);
+
+@override String toString() => 'WebhookGithubAppAuthorizationRevoked(action: $action, sender: $sender)';
+
  }

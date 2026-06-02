@@ -17,7 +17,8 @@ final class RadarGetAnnotationsError$400 extends RadarGetAnnotationsError {const
 
 final RadarGetAnnotationsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAnnotationsError$Unknown extends RadarGetAnnotationsError {const RadarGetAnnotationsError$Unknown(this.statusCode, this.rawBody, );
 

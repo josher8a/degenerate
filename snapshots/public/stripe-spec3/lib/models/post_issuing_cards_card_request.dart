@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsCardRequestCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsCardRequestCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostIssuingCardsCardRequestCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostIssuingCardsCardRequestCancellationReason($value)';
+
  }
 @immutable final class PostIssuingCardsCardRequest {const PostIssuingCardsCardRequest({this.cancellationReason, this.expand, this.metadata, this.personalizationDesign, this.pin, this.shipping, this.spendingControls, this.status, });
 
@@ -89,7 +92,7 @@ PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationRea
   spendingControls: spendingControls != null ? spendingControls() : this.spendingControls,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsCardRequest &&
           cancellationReason == other.cancellationReason &&
           listEquals(expand, other.expand) &&
@@ -98,7 +101,10 @@ PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationRea
           pin == other.pin &&
           shipping == other.shipping &&
           spendingControls == other.spendingControls &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cancellationReason, Object.hashAll(expand ?? const []), metadata, personalizationDesign, pin, shipping, spendingControls, status); } 
-@override String toString() { return 'PostIssuingCardsCardRequest(cancellationReason: $cancellationReason, expand: $expand, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, shipping: $shipping, spendingControls: $spendingControls, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(cancellationReason, Object.hashAll(expand ?? const []), metadata, personalizationDesign, pin, shipping, spendingControls, status);
+
+@override String toString() => 'PostIssuingCardsCardRequest(cancellationReason: $cancellationReason, expand: $expand, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, shipping: $shipping, spendingControls: $spendingControls, status: $status)';
+
  }

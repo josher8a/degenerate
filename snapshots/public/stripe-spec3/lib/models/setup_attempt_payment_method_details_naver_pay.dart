@@ -24,9 +24,12 @@ return errors; }
 SetupAttemptPaymentMethodDetailsNaverPay copyWith({String? Function()? buyerId}) { return SetupAttemptPaymentMethodDetailsNaverPay(
   buyerId: buyerId != null ? buyerId() : this.buyerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsNaverPay &&
-          buyerId == other.buyerId; } 
-@override int get hashCode { return buyerId.hashCode; } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsNaverPay(buyerId: $buyerId)'; } 
+          buyerId == other.buyerId;
+
+@override int get hashCode => buyerId.hashCode;
+
+@override String toString() => 'SetupAttemptPaymentMethodDetailsNaverPay(buyerId: $buyerId)';
+
  }

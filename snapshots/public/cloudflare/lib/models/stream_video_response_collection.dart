@@ -51,14 +51,17 @@ StreamVideoResponseCollection copyWith({List<StreamMessages2>? errors, List<Stre
   range: range != null ? range() : this.range,
   total: total != null ? total() : this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideoResponseCollection &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
           listEquals(result, other.result) &&
           range == other.range &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result ?? const []), range, total); } 
-@override String toString() { return 'StreamVideoResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result, range: $range, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result ?? const []), range, total);
+
+@override String toString() => 'StreamVideoResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result, range: $range, total: $total)';
+
  }

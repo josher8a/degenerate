@@ -46,14 +46,17 @@ WebhookFork copyWith({EnterpriseWebhooks? Function()? enterprise, WebhookForkFor
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookFork &&
           enterprise == other.enterprise &&
           forkee == other.forkee &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(enterprise, forkee, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookFork(enterprise: $enterprise, forkee: $forkee, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(enterprise, forkee, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookFork(enterprise: $enterprise, forkee: $forkee, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

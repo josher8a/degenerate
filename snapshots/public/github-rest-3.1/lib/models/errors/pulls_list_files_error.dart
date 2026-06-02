@@ -19,19 +19,22 @@ final class PullsListFilesError$422 extends PullsListFilesError {const PullsList
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class PullsListFilesError$500 extends PullsListFilesError {const PullsListFilesError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class PullsListFilesError$503 extends PullsListFilesError {const PullsListFilesError$503(this.error);
 
 final PullsListFilesResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class PullsListFilesError$Unknown extends PullsListFilesError {const PullsListFilesError$Unknown(this.statusCode, this.rawBody, );
 

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sbom'
 DependencyGraphSpdxSbom copyWith({Sbom? sbom}) { return DependencyGraphSpdxSbom(
   sbom: sbom ?? this.sbom,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphSpdxSbom &&
-          sbom == other.sbom; } 
-@override int get hashCode { return sbom.hashCode; } 
-@override String toString() { return 'DependencyGraphSpdxSbom(sbom: $sbom)'; } 
+          sbom == other.sbom;
+
+@override int get hashCode => sbom.hashCode;
+
+@override String toString() => 'DependencyGraphSpdxSbom(sbom: $sbom)';
+
  }

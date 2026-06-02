@@ -47,13 +47,16 @@ AbuseReportsEmailListItem copyWith({String? body, String? id, String? recipient,
   sentAt: sentAt ?? this.sentAt,
   subject: subject ?? this.subject,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsEmailListItem &&
           body == other.body &&
           id == other.id &&
           recipient == other.recipient &&
           sentAt == other.sentAt &&
-          subject == other.subject; } 
-@override int get hashCode { return Object.hash(body, id, recipient, sentAt, subject); } 
-@override String toString() { return 'AbuseReportsEmailListItem(body: $body, id: $id, recipient: $recipient, sentAt: $sentAt, subject: $subject)'; } 
+          subject == other.subject;
+
+@override int get hashCode => Object.hash(body, id, recipient, sentAt, subject);
+
+@override String toString() => 'AbuseReportsEmailListItem(body: $body, id: $id, recipient: $recipient, sentAt: $sentAt, subject: $subject)';
+
  }

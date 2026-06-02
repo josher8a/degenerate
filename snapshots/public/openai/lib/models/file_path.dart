@@ -35,11 +35,14 @@ FilePath copyWith({String? type, String? fileId, int? index, }) { return FilePat
   fileId: fileId ?? this.fileId,
   index: index ?? this.index,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FilePath &&
           type == other.type &&
           fileId == other.fileId &&
-          index == other.index; } 
-@override int get hashCode { return Object.hash(type, fileId, index); } 
-@override String toString() { return 'FilePath(type: $type, fileId: $fileId, index: $index)'; } 
+          index == other.index;
+
+@override int get hashCode => Object.hash(type, fileId, index);
+
+@override String toString() => 'FilePath(type: $type, fileId: $fileId, index: $index)';
+
  }

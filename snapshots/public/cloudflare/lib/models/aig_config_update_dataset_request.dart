@@ -27,11 +27,14 @@ AigConfigUpdateDatasetRequest copyWith({bool? enable, List<AigConfigCreateDatase
   filters: filters ?? this.filters,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigUpdateDatasetRequest &&
           enable == other.enable &&
           listEquals(filters, other.filters) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(enable, Object.hashAll(filters), name); } 
-@override String toString() { return 'AigConfigUpdateDatasetRequest(enable: $enable, filters: $filters, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(enable, Object.hashAll(filters), name);
+
+@override String toString() => 'AigConfigUpdateDatasetRequest(enable: $enable, filters: $filters, name: $name)';
+
  }

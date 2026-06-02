@@ -28,10 +28,13 @@ BillingMeterResourceCustomerMappingSettings copyWith({String? eventPayloadKey, B
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterResourceCustomerMappingSettings &&
           eventPayloadKey == other.eventPayloadKey &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventPayloadKey, type); } 
-@override String toString() { return 'BillingMeterResourceCustomerMappingSettings(eventPayloadKey: $eventPayloadKey, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eventPayloadKey, type);
+
+@override String toString() => 'BillingMeterResourceCustomerMappingSettings(eventPayloadKey: $eventPayloadKey, type: $type)';
+
  }

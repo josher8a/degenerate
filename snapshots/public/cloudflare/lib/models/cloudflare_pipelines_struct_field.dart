@@ -20,10 +20,13 @@ CloudflarePipelinesStructField copyWith({List<CloudflarePipelinesSourceField>? f
   fields: fields ?? this.fields,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesStructField &&
           listEquals(fields, other.fields) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fields), name); } 
-@override String toString() { return 'CloudflarePipelinesStructField(fields: $fields, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(fields), name);
+
+@override String toString() => 'CloudflarePipelinesStructField(fields: $fields, name: $name)';
+
  }

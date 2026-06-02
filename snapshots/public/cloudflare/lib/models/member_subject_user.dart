@@ -33,12 +33,15 @@ MemberSubjectUser copyWith({String? email, String? id, String? name, bool? twoFa
   name: name ?? this.name,
   twoFactorAuthenticationEnabled: twoFactorAuthenticationEnabled ?? this.twoFactorAuthenticationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MemberSubjectUser &&
           email == other.email &&
           id == other.id &&
           name == other.name &&
-          twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled; } 
-@override int get hashCode { return Object.hash(email, id, name, twoFactorAuthenticationEnabled); } 
-@override String toString() { return 'MemberSubjectUser(email: $email, id: $id, name: $name, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled)'; } 
+          twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled;
+
+@override int get hashCode => Object.hash(email, id, name, twoFactorAuthenticationEnabled);
+
+@override String toString() => 'MemberSubjectUser(email: $email, id: $id, name: $name, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled)';
+
  }

@@ -57,7 +57,7 @@ WorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, Stri
   status: status ?? this.status,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowJobRun &&
           conclusion == other.conclusion &&
           createdAt == other.createdAt &&
@@ -66,7 +66,10 @@ WorkflowJobRun copyWith({dynamic Function()? conclusion, String? createdAt, Stri
           id == other.id &&
           name == other.name &&
           status == other.status &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt); } 
-@override String toString() { return 'WorkflowJobRun(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(conclusion, createdAt, environment, htmlUrl, id, name, status, updatedAt);
+
+@override String toString() => 'WorkflowJobRun(conclusion: $conclusion, createdAt: $createdAt, environment: $environment, htmlUrl: $htmlUrl, id: $id, name: $name, status: $status, updatedAt: $updatedAt)';
+
  }

@@ -47,13 +47,16 @@ ResourceTaggingTaggedResourceObjectWorkerVersionBase copyWith({ResourceTaggingEt
   tags: tags ?? this.tags,
   workerId: workerId ?? this.workerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectWorkerVersionBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
           tags == other.tags &&
-          workerId == other.workerId; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags, workerId); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectWorkerVersionBase(etag: $etag, id: $id, name: $name, tags: $tags, workerId: $workerId)'; } 
+          workerId == other.workerId;
+
+@override int get hashCode => Object.hash(etag, id, name, tags, workerId);
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectWorkerVersionBase(etag: $etag, id: $id, name: $name, tags: $tags, workerId: $workerId)';
+
  }

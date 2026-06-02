@@ -41,19 +41,14 @@ final class NaN {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is NaN && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NaN && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'NaN($value)';
-  }
+  String toString() => 'NaN($value)';
 }
 
 @immutable
@@ -103,19 +98,14 @@ final class Infinity {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is Infinity && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Infinity && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'Infinity($value)';
-  }
+  String toString() => 'Infinity($value)';
 }
 
 @immutable
@@ -163,21 +153,17 @@ final class ObjectModel {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ObjectModel &&
-            $return == other.$return &&
-            naN == other.naN &&
-            infinity == other.infinity;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ObjectModel &&
+          $return == other.$return &&
+          naN == other.naN &&
+          infinity == other.infinity;
 
   @override
-  int get hashCode {
-    return Object.hash($return, naN, infinity);
-  }
+  int get hashCode => Object.hash($return, naN, infinity);
 
   @override
-  String toString() {
-    return 'ObjectModel(\$return: ${$return}, naN: $naN, infinity: $infinity)';
-  }
+  String toString() =>
+      'ObjectModel(\$return: ${$return}, naN: $naN, infinity: $infinity)';
 }

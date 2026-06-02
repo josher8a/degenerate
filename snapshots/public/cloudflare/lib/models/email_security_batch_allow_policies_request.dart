@@ -33,12 +33,15 @@ EmailSecurityBatchAllowPoliciesRequest copyWith({List<Deletes>? deletes, List<Em
   posts: posts ?? this.posts,
   puts: puts ?? this.puts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchAllowPoliciesRequest &&
           listEquals(deletes, other.deletes) &&
           listEquals(patches, other.patches) &&
           listEquals(posts, other.posts) &&
-          listEquals(puts, other.puts); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deletes), Object.hashAll(patches), Object.hashAll(posts), Object.hashAll(puts)); } 
-@override String toString() { return 'EmailSecurityBatchAllowPoliciesRequest(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)'; } 
+          listEquals(puts, other.puts);
+
+@override int get hashCode => Object.hash(Object.hashAll(deletes), Object.hashAll(patches), Object.hashAll(posts), Object.hashAll(puts));
+
+@override String toString() => 'EmailSecurityBatchAllowPoliciesRequest(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)';
+
  }

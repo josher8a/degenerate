@@ -59,7 +59,7 @@ PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? 
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequestPaymentDetails &&
           amount == other.amount &&
           currency == other.currency &&
@@ -67,7 +67,10 @@ PostRadarPaymentEvaluationsRequestPaymentDetails copyWith({int? amount, String? 
           moneyMovementDetails == other.moneyMovementDetails &&
           paymentMethodDetails == other.paymentMethodDetails &&
           shippingDetails == other.shippingDetails &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, moneyMovementDetails, paymentMethodDetails, shippingDetails, statementDescriptor); } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetails(amount: $amount, currency: $currency, description: $description, moneyMovementDetails: $moneyMovementDetails, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(amount, currency, description, moneyMovementDetails, paymentMethodDetails, shippingDetails, statementDescriptor);
+
+@override String toString() => 'PostRadarPaymentEvaluationsRequestPaymentDetails(amount: $amount, currency: $currency, description: $description, moneyMovementDetails: $moneyMovementDetails, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor)';
+
  }

@@ -20,10 +20,13 @@ PatchItemRequest2 copyWith({String? Function()? name, dynamic Function()? avatar
   name: name != null ? name() : this.name,
   avatar: avatar != null ? avatar() : this.avatar,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchItemRequest2 &&
           name == other.name &&
-          avatar == other.avatar; } 
-@override int get hashCode { return Object.hash(name, avatar); } 
-@override String toString() { return 'PatchItemRequest2(name: $name, avatar: $avatar)'; } 
+          avatar == other.avatar;
+
+@override int get hashCode => Object.hash(name, avatar);
+
+@override String toString() => 'PatchItemRequest2(name: $name, avatar: $avatar)';
+
  }

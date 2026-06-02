@@ -27,10 +27,13 @@ StartLivestreamingRequest copyWith({String? Function()? name, VideoConfig? Funct
   name: name != null ? name() : this.name,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StartLivestreamingRequest &&
           name == other.name &&
-          videoConfig == other.videoConfig; } 
-@override int get hashCode { return Object.hash(name, videoConfig); } 
-@override String toString() { return 'StartLivestreamingRequest(name: $name, videoConfig: $videoConfig)'; } 
+          videoConfig == other.videoConfig;
+
+@override int get hashCode => Object.hash(name, videoConfig);
+
+@override String toString() => 'StartLivestreamingRequest(name: $name, videoConfig: $videoConfig)';
+
  }

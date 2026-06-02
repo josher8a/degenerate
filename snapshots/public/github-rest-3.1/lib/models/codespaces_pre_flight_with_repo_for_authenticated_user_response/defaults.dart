@@ -21,10 +21,13 @@ Defaults copyWith({String? location, String? Function()? devcontainerPath, }) { 
   location: location ?? this.location,
   devcontainerPath: devcontainerPath != null ? devcontainerPath() : this.devcontainerPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Defaults &&
           location == other.location &&
-          devcontainerPath == other.devcontainerPath; } 
-@override int get hashCode { return Object.hash(location, devcontainerPath); } 
-@override String toString() { return 'Defaults(location: $location, devcontainerPath: $devcontainerPath)'; } 
+          devcontainerPath == other.devcontainerPath;
+
+@override int get hashCode => Object.hash(location, devcontainerPath);
+
+@override String toString() => 'Defaults(location: $location, devcontainerPath: $devcontainerPath)';
+
  }

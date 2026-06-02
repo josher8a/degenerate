@@ -80,7 +80,7 @@ Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Fu
   rawKey: rawKey != null ? rawKey() : this.rawKey,
   revoked: revoked != null ? revoked() : this.revoked,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subkeys &&
           id == other.id &&
           primaryKeyId == other.primaryKeyId &&
@@ -95,7 +95,10 @@ Subkeys copyWith({int? Function()? id, int? Function()? primaryKeyId, String? Fu
           createdAt == other.createdAt &&
           expiresAt == other.expiresAt &&
           rawKey == other.rawKey &&
-          revoked == other.revoked; } 
-@override int get hashCode { return Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked); } 
-@override String toString() { return 'Subkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)'; } 
+          revoked == other.revoked;
+
+@override int get hashCode => Object.hash(id, primaryKeyId, keyId, publicKey, Object.hashAll(emails ?? const []), Object.hashAll(subkeys ?? const []), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, rawKey, revoked);
+
+@override String toString() => 'Subkeys(id: $id, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, rawKey: $rawKey, revoked: $revoked)';
+
  }

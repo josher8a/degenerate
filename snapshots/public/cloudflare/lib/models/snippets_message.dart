@@ -31,10 +31,13 @@ SnippetsMessage copyWith({int? Function()? code, String? message, }) { return Sn
   code: code != null ? code() : this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsMessage &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'SnippetsMessage(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'SnippetsMessage(code: $code, message: $message)';
+
  }

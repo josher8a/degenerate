@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('Port'
 DaemonEndpoint copyWith({int? port}) { return DaemonEndpoint(
   port: port ?? this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DaemonEndpoint &&
-          port == other.port; } 
-@override int get hashCode { return port.hashCode; } 
-@override String toString() { return 'DaemonEndpoint(port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => port.hashCode;
+
+@override String toString() => 'DaemonEndpoint(port: $port)';
+
  }

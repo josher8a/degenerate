@@ -39,11 +39,14 @@ TreasurySharedResourceBillingDetails copyWith({Address? address, String? Functio
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasurySharedResourceBillingDetails &&
           address == other.address &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(address, email, name); } 
-@override String toString() { return 'TreasurySharedResourceBillingDetails(address: $address, email: $email, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(address, email, name);
+
+@override String toString() => 'TreasurySharedResourceBillingDetails(address: $address, email: $email, name: $name)';
+
  }

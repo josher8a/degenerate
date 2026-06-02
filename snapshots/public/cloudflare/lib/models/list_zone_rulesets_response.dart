@@ -44,13 +44,16 @@ ListZoneRulesetsResponse copyWith({dynamic Function()? errors, List<RulesetsMess
   success: success != null ? success() : this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListZoneRulesetsResponse &&
           errors == other.errors &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
           success == other.success &&
-          resultInfo == other.resultInfo; } 
-@override int get hashCode { return Object.hash(errors, Object.hashAll(messages), Object.hashAll(result), success, resultInfo); } 
-@override String toString() { return 'ListZoneRulesetsResponse(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)'; } 
+          resultInfo == other.resultInfo;
+
+@override int get hashCode => Object.hash(errors, Object.hashAll(messages), Object.hashAll(result), success, resultInfo);
+
+@override String toString() => 'ListZoneRulesetsResponse(errors: $errors, messages: $messages, result: $result, success: $success, resultInfo: $resultInfo)';
+
  }

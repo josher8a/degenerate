@@ -23,10 +23,13 @@ GitCreateRefRequest copyWith({String? ref, String? sha, }) { return GitCreateRef
   ref: ref ?? this.ref,
   sha: sha ?? this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateRefRequest &&
           ref == other.ref &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(ref, sha); } 
-@override String toString() { return 'GitCreateRefRequest(ref: $ref, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(ref, sha);
+
+@override String toString() => 'GitCreateRefRequest(ref: $ref, sha: $sha)';
+
  }

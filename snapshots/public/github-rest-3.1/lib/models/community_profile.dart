@@ -45,14 +45,17 @@ CommunityProfile copyWith({int? healthPercentage, String? Function()? descriptio
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   contentReportsEnabled: contentReportsEnabled != null ? contentReportsEnabled() : this.contentReportsEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommunityProfile &&
           healthPercentage == other.healthPercentage &&
           description == other.description &&
           documentation == other.documentation &&
           files == other.files &&
           updatedAt == other.updatedAt &&
-          contentReportsEnabled == other.contentReportsEnabled; } 
-@override int get hashCode { return Object.hash(healthPercentage, description, documentation, files, updatedAt, contentReportsEnabled); } 
-@override String toString() { return 'CommunityProfile(healthPercentage: $healthPercentage, description: $description, documentation: $documentation, files: $files, updatedAt: $updatedAt, contentReportsEnabled: $contentReportsEnabled)'; } 
+          contentReportsEnabled == other.contentReportsEnabled;
+
+@override int get hashCode => Object.hash(healthPercentage, description, documentation, files, updatedAt, contentReportsEnabled);
+
+@override String toString() => 'CommunityProfile(healthPercentage: $healthPercentage, description: $description, documentation: $documentation, files: $files, updatedAt: $updatedAt, contentReportsEnabled: $contentReportsEnabled)';
+
  }

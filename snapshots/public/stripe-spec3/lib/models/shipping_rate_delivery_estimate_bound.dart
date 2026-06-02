@@ -24,10 +24,13 @@ ShippingRateDeliveryEstimateBound copyWith({ShippingRateDeliveryEstimateBoundUni
   unit: unit ?? this.unit,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRateDeliveryEstimateBound &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'ShippingRateDeliveryEstimateBound(unit: $unit, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(unit, value);
+
+@override String toString() => 'ShippingRateDeliveryEstimateBound(unit: $unit, value: $value)';
+
  }

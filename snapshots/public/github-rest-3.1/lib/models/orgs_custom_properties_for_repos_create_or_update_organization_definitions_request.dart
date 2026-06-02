@@ -21,9 +21,12 @@ return errors; }
 OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest copyWith({List<CustomProperty>? properties}) { return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(
   properties: properties ?? this.properties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest &&
-          listEquals(properties, other.properties); } 
-@override int get hashCode { return Object.hashAll(properties); } 
-@override String toString() { return 'OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(properties: $properties)'; } 
+          listEquals(properties, other.properties);
+
+@override int get hashCode => Object.hashAll(properties);
+
+@override String toString() => 'OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(properties: $properties)';
+
  }

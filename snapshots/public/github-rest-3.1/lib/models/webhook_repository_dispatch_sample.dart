@@ -57,7 +57,7 @@ WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<St
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryDispatchSample &&
           action == other.action &&
           branch == other.branch &&
@@ -66,7 +66,10 @@ WebhookRepositoryDispatchSample copyWith({String? action, String? branch, Map<St
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, branch, clientPayload, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookRepositoryDispatchSample(action: $action, branch: $branch, clientPayload: $clientPayload, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, branch, clientPayload, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookRepositoryDispatchSample(action: $action, branch: $branch, clientPayload: $clientPayload, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

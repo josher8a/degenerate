@@ -21,10 +21,13 @@ ReposListCustomDeploymentRuleIntegrationsResponse copyWith({int? Function()? tot
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   availableCustomDeploymentProtectionRuleIntegrations: availableCustomDeploymentProtectionRuleIntegrations != null ? availableCustomDeploymentProtectionRuleIntegrations() : this.availableCustomDeploymentProtectionRuleIntegrations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposListCustomDeploymentRuleIntegrationsResponse &&
           totalCount == other.totalCount &&
-          listEquals(availableCustomDeploymentProtectionRuleIntegrations, other.availableCustomDeploymentProtectionRuleIntegrations); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(availableCustomDeploymentProtectionRuleIntegrations ?? const [])); } 
-@override String toString() { return 'ReposListCustomDeploymentRuleIntegrationsResponse(totalCount: $totalCount, availableCustomDeploymentProtectionRuleIntegrations: $availableCustomDeploymentProtectionRuleIntegrations)'; } 
+          listEquals(availableCustomDeploymentProtectionRuleIntegrations, other.availableCustomDeploymentProtectionRuleIntegrations);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(availableCustomDeploymentProtectionRuleIntegrations ?? const []));
+
+@override String toString() => 'ReposListCustomDeploymentRuleIntegrationsResponse(totalCount: $totalCount, availableCustomDeploymentProtectionRuleIntegrations: $availableCustomDeploymentProtectionRuleIntegrations)';
+
  }

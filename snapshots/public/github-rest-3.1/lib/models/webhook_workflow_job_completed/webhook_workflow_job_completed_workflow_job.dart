@@ -34,10 +34,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkflowJobConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkflowJobConclusion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkflowJobConclusion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkflowJobConclusion($value)';
+
  }
 /// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.
 @immutable final class WebhookWorkflowJobCompletedWorkflowJob {const WebhookWorkflowJobCompletedWorkflowJob({required this.checkRunUrl, required this.completedAt, required this.conclusion, required this.createdAt, required this.headSha, required this.htmlUrl, required this.id, required this.labels, required this.name, required this.nodeId, required this.runAttempt, required this.runId, required this.runUrl, required this.runnerGroupId, required this.runnerGroupName, required this.runnerId, required this.runnerName, required this.startedAt, required this.status, required this.headBranch, required this.workflowName, required this.steps, required this.url, });
@@ -190,7 +193,7 @@ WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? co
   steps: steps ?? this.steps,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobCompletedWorkflowJob &&
           checkRunUrl == other.checkRunUrl &&
           completedAt == other.completedAt &&
@@ -214,7 +217,10 @@ WebhookWorkflowJobCompletedWorkflowJob copyWith({String? checkRunUrl, String? co
           headBranch == other.headBranch &&
           workflowName == other.workflowName &&
           listEquals(steps, other.steps) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, status, headBranch, workflowName, Object.hashAll(steps), url]); } 
-@override String toString() { return 'WebhookWorkflowJobCompletedWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, status: $status, headBranch: $headBranch, workflowName: $workflowName, steps: $steps, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, status, headBranch, workflowName, Object.hashAll(steps), url]);
+
+@override String toString() => 'WebhookWorkflowJobCompletedWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, status: $status, headBranch: $headBranch, workflowName: $workflowName, steps: $steps, url: $url)';
+
  }

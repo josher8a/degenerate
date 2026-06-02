@@ -24,9 +24,12 @@ return errors; }
 TerminalReaderReaderResourceConfirmConfig copyWith({String? Function()? returnUrl}) { return TerminalReaderReaderResourceConfirmConfig(
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceConfirmConfig &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return returnUrl.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceConfirmConfig(returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => returnUrl.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceConfirmConfig(returnUrl: $returnUrl)';
+
  }

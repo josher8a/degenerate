@@ -34,10 +34,13 @@ RealtimeCreateClientSecretRequestExpiresAfter copyWith({BatchFileExpirationAfter
   anchor: anchor != null ? anchor() : this.anchor,
   seconds: seconds != null ? seconds() : this.seconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCreateClientSecretRequestExpiresAfter &&
           anchor == other.anchor &&
-          seconds == other.seconds; } 
-@override int get hashCode { return Object.hash(anchor, seconds); } 
-@override String toString() { return 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)'; } 
+          seconds == other.seconds;
+
+@override int get hashCode => Object.hash(anchor, seconds);
+
+@override String toString() => 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)';
+
  }

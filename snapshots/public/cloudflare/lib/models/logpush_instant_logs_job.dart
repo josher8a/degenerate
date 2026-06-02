@@ -50,13 +50,16 @@ LogpushInstantLogsJob copyWith({LogpushSchemasDestinationConf? Function()? desti
   sample: sample != null ? sample() : this.sample,
   sessionId: sessionId != null ? sessionId() : this.sessionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushInstantLogsJob &&
           destinationConf == other.destinationConf &&
           fields == other.fields &&
           filter == other.filter &&
           sample == other.sample &&
-          sessionId == other.sessionId; } 
-@override int get hashCode { return Object.hash(destinationConf, fields, filter, sample, sessionId); } 
-@override String toString() { return 'LogpushInstantLogsJob(destinationConf: $destinationConf, fields: $fields, filter: $filter, sample: $sample, sessionId: $sessionId)'; } 
+          sessionId == other.sessionId;
+
+@override int get hashCode => Object.hash(destinationConf, fields, filter, sample, sessionId);
+
+@override String toString() => 'LogpushInstantLogsJob(destinationConf: $destinationConf, fields: $fields, filter: $filter, sample: $sample, sessionId: $sessionId)';
+
  }

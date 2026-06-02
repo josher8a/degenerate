@@ -53,7 +53,7 @@ CodespaceExportDetails copyWith({String? Function()? state, DateTime? Function()
   exportUrl: exportUrl != null ? exportUrl() : this.exportUrl,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespaceExportDetails &&
           state == other.state &&
           completedAt == other.completedAt &&
@@ -61,7 +61,10 @@ CodespaceExportDetails copyWith({String? Function()? state, DateTime? Function()
           sha == other.sha &&
           id == other.id &&
           exportUrl == other.exportUrl &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(state, completedAt, branch, sha, id, exportUrl, htmlUrl); } 
-@override String toString() { return 'CodespaceExportDetails(state: $state, completedAt: $completedAt, branch: $branch, sha: $sha, id: $id, exportUrl: $exportUrl, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(state, completedAt, branch, sha, id, exportUrl, htmlUrl);
+
+@override String toString() => 'CodespaceExportDetails(state: $state, completedAt: $completedAt, branch: $branch, sha: $sha, id: $id, exportUrl: $exportUrl, htmlUrl: $htmlUrl)';
+
  }

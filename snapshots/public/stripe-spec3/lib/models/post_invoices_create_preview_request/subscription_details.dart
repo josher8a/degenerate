@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResumeAt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResumeAt($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResumeAt && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResumeAt($value)';
+
  }
 /// The subscription creation or modification params to apply as a preview. Cannot be used with `schedule` or `schedule_details` fields.
 @immutable final class SubscriptionDetails {const SubscriptionDetails({this.billingCycleAnchor, this.billingMode, this.cancelAt, this.cancelAtPeriodEnd, this.cancelNow, this.defaultTaxRates, this.items, this.prorationBehavior, this.prorationDate, this.resumeAt, this.startDate, this.trialEnd, });
@@ -92,7 +95,7 @@ SubscriptionDetails copyWith({SubscriptionDetailsBillingCycleAnchor? Function()?
   startDate: startDate != null ? startDate() : this.startDate,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionDetails &&
           billingCycleAnchor == other.billingCycleAnchor &&
           billingMode == other.billingMode &&
@@ -105,7 +108,10 @@ SubscriptionDetails copyWith({SubscriptionDetailsBillingCycleAnchor? Function()?
           prorationDate == other.prorationDate &&
           resumeAt == other.resumeAt &&
           startDate == other.startDate &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, billingMode, cancelAt, cancelAtPeriodEnd, cancelNow, defaultTaxRates, Object.hashAll(items ?? const []), prorationBehavior, prorationDate, resumeAt, startDate, trialEnd); } 
-@override String toString() { return 'SubscriptionDetails(billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancelNow: $cancelNow, defaultTaxRates: $defaultTaxRates, items: $items, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, resumeAt: $resumeAt, startDate: $startDate, trialEnd: $trialEnd)'; } 
+          trialEnd == other.trialEnd;
+
+@override int get hashCode => Object.hash(billingCycleAnchor, billingMode, cancelAt, cancelAtPeriodEnd, cancelNow, defaultTaxRates, Object.hashAll(items ?? const []), prorationBehavior, prorationDate, resumeAt, startDate, trialEnd);
+
+@override String toString() => 'SubscriptionDetails(billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancelNow: $cancelNow, defaultTaxRates: $defaultTaxRates, items: $items, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, resumeAt: $resumeAt, startDate: $startDate, trialEnd: $trialEnd)';
+
  }

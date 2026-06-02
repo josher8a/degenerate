@@ -22,10 +22,13 @@ InvoicePaymentMethodOptionsAcssDebit copyWith({InvoicePaymentMethodOptionsAcssDe
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsAcssDebit &&
           mandateOptions == other.mandateOptions &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(mandateOptions, verificationMethod); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(mandateOptions, verificationMethod);
+
+@override String toString() => 'InvoicePaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)';
+
  }

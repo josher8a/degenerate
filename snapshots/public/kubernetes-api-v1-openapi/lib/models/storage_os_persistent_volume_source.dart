@@ -41,13 +41,16 @@ StorageOsPersistentVolumeSource copyWith({String? Function()? fsType, bool? Func
   volumeName: volumeName != null ? volumeName() : this.volumeName,
   volumeNamespace: volumeNamespace != null ? volumeNamespace() : this.volumeNamespace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StorageOsPersistentVolumeSource &&
           fsType == other.fsType &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
           volumeName == other.volumeName &&
-          volumeNamespace == other.volumeNamespace; } 
-@override int get hashCode { return Object.hash(fsType, readOnly, secretRef, volumeName, volumeNamespace); } 
-@override String toString() { return 'StorageOsPersistentVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeName: $volumeName, volumeNamespace: $volumeNamespace)'; } 
+          volumeNamespace == other.volumeNamespace;
+
+@override int get hashCode => Object.hash(fsType, readOnly, secretRef, volumeName, volumeNamespace);
+
+@override String toString() => 'StorageOsPersistentVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeName: $volumeName, volumeNamespace: $volumeNamespace)';
+
  }

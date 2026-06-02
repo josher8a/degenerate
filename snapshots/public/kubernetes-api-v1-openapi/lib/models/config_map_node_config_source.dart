@@ -43,13 +43,16 @@ ConfigMapNodeConfigSource copyWith({String? kubeletConfigKey, String? name, Stri
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMapNodeConfigSource &&
           kubeletConfigKey == other.kubeletConfigKey &&
           name == other.name &&
           namespace == other.namespace &&
           resourceVersion == other.resourceVersion &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(kubeletConfigKey, name, namespace, resourceVersion, uid); } 
-@override String toString() { return 'ConfigMapNodeConfigSource(kubeletConfigKey: $kubeletConfigKey, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(kubeletConfigKey, name, namespace, resourceVersion, uid);
+
+@override String toString() => 'ConfigMapNodeConfigSource(kubeletConfigKey: $kubeletConfigKey, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)';
+
  }

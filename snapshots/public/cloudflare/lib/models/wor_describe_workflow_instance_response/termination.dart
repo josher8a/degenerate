@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminationType($value)';
+
  }
 @immutable final class Termination {const Termination({required this.trigger, required this.type, });
 
@@ -42,10 +45,13 @@ Termination copyWith({TerminationTrigger? trigger, TerminationType? type, }) { r
   trigger: trigger ?? this.trigger,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Termination &&
           trigger == other.trigger &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(trigger, type); } 
-@override String toString() { return 'Termination(trigger: $trigger, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(trigger, type);
+
+@override String toString() => 'Termination(trigger: $trigger, type: $type)';
+
  }

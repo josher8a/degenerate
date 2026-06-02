@@ -20,10 +20,13 @@ PauseCollectionParam copyWith({PauseCollectionParamBehavior? behavior, int? Func
   behavior: behavior ?? this.behavior,
   resumesAt: resumesAt != null ? resumesAt() : this.resumesAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PauseCollectionParam &&
           behavior == other.behavior &&
-          resumesAt == other.resumesAt; } 
-@override int get hashCode { return Object.hash(behavior, resumesAt); } 
-@override String toString() { return 'PauseCollectionParam(behavior: $behavior, resumesAt: $resumesAt)'; } 
+          resumesAt == other.resumesAt;
+
+@override int get hashCode => Object.hash(behavior, resumesAt);
+
+@override String toString() => 'PauseCollectionParam(behavior: $behavior, resumesAt: $resumesAt)';
+
  }

@@ -40,20 +40,16 @@ final class PinRequestSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is PinRequestSchema &&
-            email == other.email &&
-            newsletterConsent == other.newsletterConsent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PinRequestSchema &&
+          email == other.email &&
+          newsletterConsent == other.newsletterConsent;
 
   @override
-  int get hashCode {
-    return Object.hash(email, newsletterConsent);
-  }
+  int get hashCode => Object.hash(email, newsletterConsent);
 
   @override
-  String toString() {
-    return 'PinRequestSchema(email: $email, newsletterConsent: $newsletterConsent)';
-  }
+  String toString() =>
+      'PinRequestSchema(email: $email, newsletterConsent: $newsletterConsent)';
 }

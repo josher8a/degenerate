@@ -43,13 +43,16 @@ ShieldOldSchemaUploadFailure copyWith({List<ShieldMessages2>? errors, List<Shiel
   success: success ?? this.success,
   uploadDetails: uploadDetails != null ? uploadDetails() : this.uploadDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadFailure &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
           success == other.success &&
-          uploadDetails == other.uploadDetails; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, uploadDetails); } 
-@override String toString() { return 'ShieldOldSchemaUploadFailure(errors: $errors, messages: $messages, result: $result, success: $success, uploadDetails: $uploadDetails)'; } 
+          uploadDetails == other.uploadDetails;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, uploadDetails);
+
+@override String toString() => 'ShieldOldSchemaUploadFailure(errors: $errors, messages: $messages, result: $result, success: $success, uploadDetails: $uploadDetails)';
+
  }

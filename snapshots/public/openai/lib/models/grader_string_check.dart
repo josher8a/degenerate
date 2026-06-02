@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderStringCheckType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderStringCheckType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GraderStringCheckType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GraderStringCheckType($value)';
+
  }
 /// The string check operation to perform. One of `eq`, `ne`, `like`, or `ilike`.
 @immutable final class GraderStringCheckOperation {const GraderStringCheckOperation._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GraderStringCheckOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GraderStringCheckOperation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GraderStringCheckOperation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GraderStringCheckOperation($value)';
+
  }
 /// A StringCheckGrader object that performs a string comparison between input and reference using a specified operation.
 /// 
@@ -99,13 +105,16 @@ GraderStringCheck copyWith({GraderStringCheckType? type, String? name, String? i
   reference: reference ?? this.reference,
   operation: operation ?? this.operation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GraderStringCheck &&
           type == other.type &&
           name == other.name &&
           input == other.input &&
           reference == other.reference &&
-          operation == other.operation; } 
-@override int get hashCode { return Object.hash(type, name, input, reference, operation); } 
-@override String toString() { return 'GraderStringCheck(type: $type, name: $name, input: $input, reference: $reference, operation: $operation)'; } 
+          operation == other.operation;
+
+@override int get hashCode => Object.hash(type, name, input, reference, operation);
+
+@override String toString() => 'GraderStringCheck(type: $type, name: $name, input: $input, reference: $reference, operation: $operation)';
+
  }

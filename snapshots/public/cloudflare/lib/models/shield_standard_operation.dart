@@ -42,13 +42,16 @@ ShieldStandardOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, Sh
   lastUpdated: lastUpdated ?? this.lastUpdated,
   operationId: operationId ?? this.operationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldStandardOperation &&
           endpoint == other.endpoint &&
           host == other.host &&
           method == other.method &&
           lastUpdated == other.lastUpdated &&
-          operationId == other.operationId; } 
-@override int get hashCode { return Object.hash(endpoint, host, method, lastUpdated, operationId); } 
-@override String toString() { return 'ShieldStandardOperation(endpoint: $endpoint, host: $host, method: $method, lastUpdated: $lastUpdated, operationId: $operationId)'; } 
+          operationId == other.operationId;
+
+@override int get hashCode => Object.hash(endpoint, host, method, lastUpdated, operationId);
+
+@override String toString() => 'ShieldStandardOperation(endpoint: $endpoint, host: $host, method: $method, lastUpdated: $lastUpdated, operationId: $operationId)';
+
  }

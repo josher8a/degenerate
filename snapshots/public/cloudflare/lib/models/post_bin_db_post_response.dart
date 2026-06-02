@@ -37,12 +37,15 @@ PostBinDbPostResponse copyWith({String? contentType, String? md5, String? sha1, 
   sha1: sha1 ?? this.sha1,
   sha256: sha256 ?? this.sha256,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBinDbPostResponse &&
           contentType == other.contentType &&
           md5 == other.md5 &&
           sha1 == other.sha1 &&
-          sha256 == other.sha256; } 
-@override int get hashCode { return Object.hash(contentType, md5, sha1, sha256); } 
-@override String toString() { return 'PostBinDbPostResponse(contentType: $contentType, md5: $md5, sha1: $sha1, sha256: $sha256)'; } 
+          sha256 == other.sha256;
+
+@override int get hashCode => Object.hash(contentType, md5, sha1, sha256);
+
+@override String toString() => 'PostBinDbPostResponse(contentType: $contentType, md5: $md5, sha1: $sha1, sha256: $sha256)';
+
  }

@@ -38,12 +38,15 @@ RuleMatches copyWith({bool? Function()? banning, bool? Function()? blocking, Str
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleMatches &&
           banning == other.banning &&
           blocking == other.blocking &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(banning, blocking, description, name); } 
-@override String toString() { return 'RuleMatches(banning: $banning, blocking: $blocking, description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(banning, blocking, description, name);
+
+@override String toString() => 'RuleMatches(banning: $banning, blocking: $blocking, description: $description, name: $name)';
+
  }

@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EntriesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EntriesType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EntriesType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EntriesType($value)';
+
  }
 @immutable final class ChangesEntries {const ChangesEntries({required this.customerAsn, required this.providers, required this.type, });
 
@@ -58,11 +61,14 @@ ChangesEntries copyWith({int? customerAsn, List<int>? providers, EntriesType? ty
   providers: providers ?? this.providers,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesEntries &&
           customerAsn == other.customerAsn &&
           listEquals(providers, other.providers) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customerAsn, Object.hashAll(providers), type); } 
-@override String toString() { return 'ChangesEntries(customerAsn: $customerAsn, providers: $providers, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customerAsn, Object.hashAll(providers), type);
+
+@override String toString() => 'ChangesEntries(customerAsn: $customerAsn, providers: $providers, type: $type)';
+
  }

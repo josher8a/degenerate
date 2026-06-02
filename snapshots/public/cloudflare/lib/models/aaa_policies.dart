@@ -69,7 +69,7 @@ AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType?
   modified: modified != null ? modified() : this.modified,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaPolicies &&
           alertInterval == other.alertInterval &&
           alertType == other.alertType &&
@@ -80,7 +80,10 @@ AaaPolicies copyWith({AaaAlertInterval? Function()? alertInterval, AaaAlertType?
           id == other.id &&
           mechanisms == other.mechanisms &&
           modified == other.modified &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alertInterval, alertType, created, description, enabled, filters, id, mechanisms, modified, name); } 
-@override String toString() { return 'AaaPolicies(alertInterval: $alertInterval, alertType: $alertType, created: $created, description: $description, enabled: $enabled, filters: $filters, id: $id, mechanisms: $mechanisms, modified: $modified, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(alertInterval, alertType, created, description, enabled, filters, id, mechanisms, modified, name);
+
+@override String toString() => 'AaaPolicies(alertInterval: $alertInterval, alertType: $alertType, created: $created, description: $description, enabled: $enabled, filters: $filters, id: $id, mechanisms: $mechanisms, modified: $modified, name: $name)';
+
  }

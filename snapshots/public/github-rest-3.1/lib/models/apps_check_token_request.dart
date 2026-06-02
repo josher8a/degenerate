@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('acces
 AppsCheckTokenRequest copyWith({String? accessToken}) { return AppsCheckTokenRequest(
   accessToken: accessToken ?? this.accessToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCheckTokenRequest &&
-          accessToken == other.accessToken; } 
-@override int get hashCode { return accessToken.hashCode; } 
-@override String toString() { return 'AppsCheckTokenRequest(accessToken: $accessToken)'; } 
+          accessToken == other.accessToken;
+
+@override int get hashCode => accessToken.hashCode;
+
+@override String toString() => 'AppsCheckTokenRequest(accessToken: $accessToken)';
+
  }

@@ -80,7 +80,7 @@ TeamsDevicesZeroTrustAccountDeviceSettings copyWith({double? Function()? disable
   rootCertificateInstallationEnabled: rootCertificateInstallationEnabled != null ? rootCertificateInstallationEnabled() : this.rootCertificateInstallationEnabled,
   useZtVirtualIp: useZtVirtualIp != null ? useZtVirtualIp() : this.useZtVirtualIp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesZeroTrustAccountDeviceSettings &&
           disableForTime == other.disableForTime &&
           externalEmergencySignalEnabled == other.externalEmergencySignalEnabled &&
@@ -90,7 +90,10 @@ TeamsDevicesZeroTrustAccountDeviceSettings copyWith({double? Function()? disable
           gatewayProxyEnabled == other.gatewayProxyEnabled &&
           gatewayUdpProxyEnabled == other.gatewayUdpProxyEnabled &&
           rootCertificateInstallationEnabled == other.rootCertificateInstallationEnabled &&
-          useZtVirtualIp == other.useZtVirtualIp; } 
-@override int get hashCode { return Object.hash(disableForTime, externalEmergencySignalEnabled, externalEmergencySignalFingerprint, externalEmergencySignalInterval, externalEmergencySignalUrl, gatewayProxyEnabled, gatewayUdpProxyEnabled, rootCertificateInstallationEnabled, useZtVirtualIp); } 
-@override String toString() { return 'TeamsDevicesZeroTrustAccountDeviceSettings(disableForTime: $disableForTime, externalEmergencySignalEnabled: $externalEmergencySignalEnabled, externalEmergencySignalFingerprint: $externalEmergencySignalFingerprint, externalEmergencySignalInterval: $externalEmergencySignalInterval, externalEmergencySignalUrl: $externalEmergencySignalUrl, gatewayProxyEnabled: $gatewayProxyEnabled, gatewayUdpProxyEnabled: $gatewayUdpProxyEnabled, rootCertificateInstallationEnabled: $rootCertificateInstallationEnabled, useZtVirtualIp: $useZtVirtualIp)'; } 
+          useZtVirtualIp == other.useZtVirtualIp;
+
+@override int get hashCode => Object.hash(disableForTime, externalEmergencySignalEnabled, externalEmergencySignalFingerprint, externalEmergencySignalInterval, externalEmergencySignalUrl, gatewayProxyEnabled, gatewayUdpProxyEnabled, rootCertificateInstallationEnabled, useZtVirtualIp);
+
+@override String toString() => 'TeamsDevicesZeroTrustAccountDeviceSettings(disableForTime: $disableForTime, externalEmergencySignalEnabled: $externalEmergencySignalEnabled, externalEmergencySignalFingerprint: $externalEmergencySignalFingerprint, externalEmergencySignalInterval: $externalEmergencySignalInterval, externalEmergencySignalUrl: $externalEmergencySignalUrl, gatewayProxyEnabled: $gatewayProxyEnabled, gatewayUdpProxyEnabled: $gatewayUdpProxyEnabled, rootCertificateInstallationEnabled: $rootCertificateInstallationEnabled, useZtVirtualIp: $useZtVirtualIp)';
+
  }

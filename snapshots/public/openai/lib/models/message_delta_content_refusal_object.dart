@@ -29,11 +29,14 @@ MessageDeltaContentRefusalObject copyWith({int? index, MessageContentRefusalObje
   type: type ?? this.type,
   refusal: refusal != null ? refusal() : this.refusal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentRefusalObject &&
           index == other.index &&
           type == other.type &&
-          refusal == other.refusal; } 
-@override int get hashCode { return Object.hash(index, type, refusal); } 
-@override String toString() { return 'MessageDeltaContentRefusalObject(index: $index, type: $type, refusal: $refusal)'; } 
+          refusal == other.refusal;
+
+@override int get hashCode => Object.hash(index, type, refusal);
+
+@override String toString() => 'MessageDeltaContentRefusalObject(index: $index, type: $type, refusal: $refusal)';
+
  }

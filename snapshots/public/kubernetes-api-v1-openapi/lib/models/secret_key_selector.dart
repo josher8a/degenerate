@@ -29,11 +29,14 @@ SecretKeySelector copyWith({String? key, String Function()? name, bool? Function
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretKeySelector &&
           key == other.key &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(key, name, optional); } 
-@override String toString() { return 'SecretKeySelector(key: $key, name: $name, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(key, name, optional);
+
+@override String toString() => 'SecretKeySelector(key: $key, name: $name, optional: $optional)';
+
  }

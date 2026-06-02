@@ -22,10 +22,13 @@ RadarGetHttpSummaryResponse copyWith({RadarGetAttacksLayer3SummaryResponseResult
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetHttpSummaryResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'RadarGetHttpSummaryResponse(result: $result, success: $success)';
+
  }

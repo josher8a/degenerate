@@ -26,11 +26,14 @@ WorkflowRunUsageBillableMacos copyWith({int? totalMs, int? jobs, List<JobRuns>? 
   jobs: jobs ?? this.jobs,
   jobRuns: jobRuns != null ? jobRuns() : this.jobRuns,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowRunUsageBillableMacos &&
           totalMs == other.totalMs &&
           jobs == other.jobs &&
-          listEquals(jobRuns, other.jobRuns); } 
-@override int get hashCode { return Object.hash(totalMs, jobs, Object.hashAll(jobRuns ?? const [])); } 
-@override String toString() { return 'WorkflowRunUsageBillableMacos(totalMs: $totalMs, jobs: $jobs, jobRuns: $jobRuns)'; } 
+          listEquals(jobRuns, other.jobRuns);
+
+@override int get hashCode => Object.hash(totalMs, jobs, Object.hashAll(jobRuns ?? const []));
+
+@override String toString() => 'WorkflowRunUsageBillableMacos(totalMs: $totalMs, jobs: $jobs, jobRuns: $jobRuns)';
+
  }

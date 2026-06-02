@@ -33,12 +33,15 @@ RateLimit copyWith({int? limit, int? remaining, int? reset, int? used, }) { retu
   reset: reset ?? this.reset,
   used: used ?? this.used,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimit &&
           limit == other.limit &&
           remaining == other.remaining &&
           reset == other.reset &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(limit, remaining, reset, used); } 
-@override String toString() { return 'RateLimit(limit: $limit, remaining: $remaining, reset: $reset, used: $used)'; } 
+          used == other.used;
+
+@override int get hashCode => Object.hash(limit, remaining, reset, used);
+
+@override String toString() => 'RateLimit(limit: $limit, remaining: $remaining, reset: $reset, used: $used)';
+
  }

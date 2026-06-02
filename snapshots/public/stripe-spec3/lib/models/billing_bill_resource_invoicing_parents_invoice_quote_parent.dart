@@ -21,9 +21,12 @@ return errors; }
 BillingBillResourceInvoicingParentsInvoiceQuoteParent copyWith({String? quote}) { return BillingBillResourceInvoicingParentsInvoiceQuoteParent(
   quote: quote ?? this.quote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingParentsInvoiceQuoteParent &&
-          quote == other.quote; } 
-@override int get hashCode { return quote.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingParentsInvoiceQuoteParent(quote: $quote)'; } 
+          quote == other.quote;
+
+@override int get hashCode => quote.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingParentsInvoiceQuoteParent(quote: $quote)';
+
  }

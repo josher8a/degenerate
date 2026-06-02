@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest copyWith({DefaultForNewRepos? Function()? defaultForNewRepos}) { return CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest &&
-          defaultForNewRepos == other.defaultForNewRepos; } 
-@override int get hashCode { return defaultForNewRepos.hashCode; } 
-@override String toString() { return 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(defaultForNewRepos: $defaultForNewRepos)'; } 
+          defaultForNewRepos == other.defaultForNewRepos;
+
+@override int get hashCode => defaultForNewRepos.hashCode;
+
+@override String toString() => 'CodeSecuritySetConfigurationAsDefaultForEnterpriseRequest(defaultForNewRepos: $defaultForNewRepos)';
+
  }

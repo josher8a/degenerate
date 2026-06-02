@@ -37,12 +37,15 @@ ZeroTrustGatewayPacfilesCreatePacfileRequest copyWith({ZeroTrustGatewayContents?
   name: name ?? this.name,
   slug: slug != null ? slug() : this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayPacfilesCreatePacfileRequest &&
           contents == other.contents &&
           description == other.description &&
           name == other.name &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(contents, description, name, slug); } 
-@override String toString() { return 'ZeroTrustGatewayPacfilesCreatePacfileRequest(contents: $contents, description: $description, name: $name, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(contents, description, name, slug);
+
+@override String toString() => 'ZeroTrustGatewayPacfilesCreatePacfileRequest(contents: $contents, description: $description, name: $name, slug: $slug)';
+
  }

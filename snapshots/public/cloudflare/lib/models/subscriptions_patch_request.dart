@@ -40,12 +40,15 @@ SubscriptionsPatchRequest copyWith({MqEventDestination? Function()? destination,
   events: events != null ? events() : this.events,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsPatchRequest &&
           destination == other.destination &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(destination, enabled, Object.hashAll(events ?? const []), name); } 
-@override String toString() { return 'SubscriptionsPatchRequest(destination: $destination, enabled: $enabled, events: $events, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(destination, enabled, Object.hashAll(events ?? const []), name);
+
+@override String toString() => 'SubscriptionsPatchRequest(destination: $destination, enabled: $enabled, events: $events, name: $name)';
+
  }

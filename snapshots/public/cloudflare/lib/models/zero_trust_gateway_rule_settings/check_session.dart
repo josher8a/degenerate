@@ -27,10 +27,13 @@ CheckSession copyWith({String? Function()? duration, bool? Function()? enforce, 
   duration: duration != null ? duration() : this.duration,
   enforce: enforce != null ? enforce() : this.enforce,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckSession &&
           duration == other.duration &&
-          enforce == other.enforce; } 
-@override int get hashCode { return Object.hash(duration, enforce); } 
-@override String toString() { return 'CheckSession(duration: $duration, enforce: $enforce)'; } 
+          enforce == other.enforce;
+
+@override int get hashCode => Object.hash(duration, enforce);
+
+@override String toString() => 'CheckSession(duration: $duration, enforce: $enforce)';
+
  }

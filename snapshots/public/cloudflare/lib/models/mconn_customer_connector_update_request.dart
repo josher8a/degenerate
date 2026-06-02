@@ -65,7 +65,7 @@ MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<
   timezone: timezone != null ? timezone() : this.timezone,
   provisionLicense: provisionLicense != null ? provisionLicense() : this.provisionLicense,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnectorUpdateRequest &&
           activated == other.activated &&
           listEquals(interruptWindowDaysOfWeek, other.interruptWindowDaysOfWeek) &&
@@ -74,7 +74,10 @@ MconnCustomerConnectorUpdateRequest copyWith({bool? Function()? activated, List<
           interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
           notes == other.notes &&
           timezone == other.timezone &&
-          provisionLicense == other.provisionLicense; } 
-@override int get hashCode { return Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone, provisionLicense); } 
-@override String toString() { return 'MconnCustomerConnectorUpdateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, provisionLicense: $provisionLicense)'; } 
+          provisionLicense == other.provisionLicense;
+
+@override int get hashCode => Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone, provisionLicense);
+
+@override String toString() => 'MconnCustomerConnectorUpdateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, provisionLicense: $provisionLicense)';
+
  }

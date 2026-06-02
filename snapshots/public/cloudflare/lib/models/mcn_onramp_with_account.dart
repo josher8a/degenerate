@@ -169,7 +169,7 @@ McnOnrampWithAccount copyWith({List<McnResourceId>? Function()? attachedHubs, Li
   vpcsByIdUnavailable: vpcsByIdUnavailable != null ? vpcsByIdUnavailable() : this.vpcsByIdUnavailable,
   accountId: accountId ?? this.accountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnOnrampWithAccount &&
           listEquals(attachedHubs, other.attachedHubs) &&
           listEquals(attachedVpcs, other.attachedVpcs) &&
@@ -200,7 +200,10 @@ McnOnrampWithAccount copyWith({List<McnResourceId>? Function()? attachedHubs, Li
           vpc == other.vpc &&
           vpcsById == other.vpcsById &&
           listEquals(vpcsByIdUnavailable, other.vpcsByIdUnavailable) &&
-          accountId == other.accountId; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hub, id, installRoutesInCloud, installRoutesInMagicWan, lastAppliedAt, lastExportedAt, lastPlannedAt, manageHubToHubAttachments, manageVpcToHubAttachments, name, plannedMonthlyCostEstimate, Object.hashAll(plannedResources ?? const []), plannedResourcesUnavailable, postApplyMonthlyCostEstimate, postApplyResources, postApplyResourcesUnavailable, region, status, type, updatedAt, vpc, vpcsById, Object.hashAll(vpcsByIdUnavailable ?? const []), accountId]); } 
-@override String toString() { return 'McnOnrampWithAccount(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hub: $hub, id: $id, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, lastAppliedAt: $lastAppliedAt, lastExportedAt: $lastExportedAt, lastPlannedAt: $lastPlannedAt, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, plannedMonthlyCostEstimate: $plannedMonthlyCostEstimate, plannedResources: $plannedResources, plannedResourcesUnavailable: $plannedResourcesUnavailable, postApplyMonthlyCostEstimate: $postApplyMonthlyCostEstimate, postApplyResources: $postApplyResources, postApplyResourcesUnavailable: $postApplyResourcesUnavailable, region: $region, status: $status, type: $type, updatedAt: $updatedAt, vpc: $vpc, vpcsById: $vpcsById, vpcsByIdUnavailable: $vpcsByIdUnavailable, accountId: $accountId)'; } 
+          accountId == other.accountId;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hub, id, installRoutesInCloud, installRoutesInMagicWan, lastAppliedAt, lastExportedAt, lastPlannedAt, manageHubToHubAttachments, manageVpcToHubAttachments, name, plannedMonthlyCostEstimate, Object.hashAll(plannedResources ?? const []), plannedResourcesUnavailable, postApplyMonthlyCostEstimate, postApplyResources, postApplyResourcesUnavailable, region, status, type, updatedAt, vpc, vpcsById, Object.hashAll(vpcsByIdUnavailable ?? const []), accountId]);
+
+@override String toString() => 'McnOnrampWithAccount(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hub: $hub, id: $id, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, lastAppliedAt: $lastAppliedAt, lastExportedAt: $lastExportedAt, lastPlannedAt: $lastPlannedAt, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, plannedMonthlyCostEstimate: $plannedMonthlyCostEstimate, plannedResources: $plannedResources, plannedResourcesUnavailable: $plannedResourcesUnavailable, postApplyMonthlyCostEstimate: $postApplyMonthlyCostEstimate, postApplyResources: $postApplyResources, postApplyResourcesUnavailable: $postApplyResourcesUnavailable, region: $region, status: $status, type: $type, updatedAt: $updatedAt, vpc: $vpc, vpcsById: $vpcsById, vpcsByIdUnavailable: $vpcsByIdUnavailable, accountId: $accountId)';
+
  }

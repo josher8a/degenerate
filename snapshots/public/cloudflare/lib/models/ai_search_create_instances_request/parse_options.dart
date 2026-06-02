@@ -52,13 +52,16 @@ ParseOptions copyWith({List<ContentSelector>? Function()? contentSelector, Map<S
   specificSitemaps: specificSitemaps != null ? specificSitemaps() : this.specificSitemaps,
   useBrowserRendering: useBrowserRendering != null ? useBrowserRendering() : this.useBrowserRendering,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParseOptions &&
           listEquals(contentSelector, other.contentSelector) &&
           includeHeaders == other.includeHeaders &&
           includeImages == other.includeImages &&
           listEquals(specificSitemaps, other.specificSitemaps) &&
-          useBrowserRendering == other.useBrowserRendering; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contentSelector ?? const []), includeHeaders, includeImages, Object.hashAll(specificSitemaps ?? const []), useBrowserRendering); } 
-@override String toString() { return 'ParseOptions(contentSelector: $contentSelector, includeHeaders: $includeHeaders, includeImages: $includeImages, specificSitemaps: $specificSitemaps, useBrowserRendering: $useBrowserRendering)'; } 
+          useBrowserRendering == other.useBrowserRendering;
+
+@override int get hashCode => Object.hash(Object.hashAll(contentSelector ?? const []), includeHeaders, includeImages, Object.hashAll(specificSitemaps ?? const []), useBrowserRendering);
+
+@override String toString() => 'ParseOptions(contentSelector: $contentSelector, includeHeaders: $includeHeaders, includeImages: $includeImages, specificSitemaps: $specificSitemaps, useBrowserRendering: $useBrowserRendering)';
+
  }

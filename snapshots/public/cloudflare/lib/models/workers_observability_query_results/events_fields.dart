@@ -21,10 +21,13 @@ EventsFields copyWith({String? key, String? type, }) { return EventsFields(
   key: key ?? this.key,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventsFields &&
           key == other.key &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(key, type); } 
-@override String toString() { return 'EventsFields(key: $key, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(key, type);
+
+@override String toString() => 'EventsFields(key: $key, type: $type)';
+
  }

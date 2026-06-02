@@ -28,11 +28,14 @@ FetchAllLivestreamsResponseDataPaging copyWith({int? Function()? endOffset, int?
   startOffset: startOffset != null ? startOffset() : this.startOffset,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FetchAllLivestreamsResponseDataPaging &&
           endOffset == other.endOffset &&
           startOffset == other.startOffset &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(endOffset, startOffset, totalCount); } 
-@override String toString() { return 'FetchAllLivestreamsResponseDataPaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(endOffset, startOffset, totalCount);
+
+@override String toString() => 'FetchAllLivestreamsResponseDataPaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)';
+
  }

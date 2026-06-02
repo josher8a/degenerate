@@ -93,7 +93,7 @@ PostEventUpdateRequest copyWith({String? Function()? attacker, String? Function(
   targetIndustry: targetIndustry != null ? targetIndustry() : this.targetIndustry,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventUpdateRequest &&
           attacker == other.attacker &&
           attackerCountry == other.attackerCountry &&
@@ -108,7 +108,10 @@ PostEventUpdateRequest copyWith({String? Function()? attacker, String? Function(
           raw == other.raw &&
           targetCountry == other.targetCountry &&
           targetIndustry == other.targetIndustry &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(attacker, attackerCountry, category, createdAt, datasetId, date, event, indicator, indicatorType, insight, raw, targetCountry, targetIndustry, tlp); } 
-@override String toString() { return 'PostEventUpdateRequest(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, createdAt: $createdAt, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, insight: $insight, raw: $raw, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(attacker, attackerCountry, category, createdAt, datasetId, date, event, indicator, indicatorType, insight, raw, targetCountry, targetIndustry, tlp);
+
+@override String toString() => 'PostEventUpdateRequest(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, createdAt: $createdAt, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, insight: $insight, raw: $raw, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)';
+
  }

@@ -75,7 +75,7 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitLivestreamBase &&
           createdAt == other.createdAt &&
           disabled == other.disabled &&
@@ -87,7 +87,10 @@ RealtimekitLivestreamBase copyWith({DateTime? Function()? createdAt, bool? Funct
           playbackUrl == other.playbackUrl &&
           status == other.status &&
           streamKey == other.streamKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, orgId, playbackUrl, status, streamKey, updatedAt); } 
-@override String toString() { return 'RealtimekitLivestreamBase(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, orgId: $orgId, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, orgId, playbackUrl, status, streamKey, updatedAt);
+
+@override String toString() => 'RealtimekitLivestreamBase(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, orgId: $orgId, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';
+
  }

@@ -34,10 +34,13 @@ SetupIntentNextActionRedirectToUrl copyWith({String? Function()? returnUrl, Stri
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentNextActionRedirectToUrl &&
           returnUrl == other.returnUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(returnUrl, url); } 
-@override String toString() { return 'SetupIntentNextActionRedirectToUrl(returnUrl: $returnUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(returnUrl, url);
+
+@override String toString() => 'SetupIntentNextActionRedirectToUrl(returnUrl: $returnUrl, url: $url)';
+
  }

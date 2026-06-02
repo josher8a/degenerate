@@ -26,10 +26,13 @@ Summarization copyWith({String? inputText, int Function()? maxLength, }) { retur
   inputText: inputText ?? this.inputText,
   maxLength: maxLength != null ? maxLength() : this.maxLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summarization &&
           inputText == other.inputText &&
-          maxLength == other.maxLength; } 
-@override int get hashCode { return Object.hash(inputText, maxLength); } 
-@override String toString() { return 'Summarization(inputText: $inputText, maxLength: $maxLength)'; } 
+          maxLength == other.maxLength;
+
+@override int get hashCode => Object.hash(inputText, maxLength);
+
+@override String toString() => 'Summarization(inputText: $inputText, maxLength: $maxLength)';
+
  }

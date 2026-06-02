@@ -92,7 +92,7 @@ RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function(
   scorePerPeriod: scorePerPeriod != null ? scorePerPeriod() : this.scorePerPeriod,
   scoreResponseHeaderName: scoreResponseHeaderName != null ? scoreResponseHeaderName() : this.scoreResponseHeaderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRuleRatelimit &&
           listEquals(characteristics, other.characteristics) &&
           countingExpression == other.countingExpression &&
@@ -101,7 +101,10 @@ RulesetsRuleRatelimit copyWith({List<String>? characteristics, String? Function(
           requestsPerPeriod == other.requestsPerPeriod &&
           requestsToOrigin == other.requestsToOrigin &&
           scorePerPeriod == other.scorePerPeriod &&
-          scoreResponseHeaderName == other.scoreResponseHeaderName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(characteristics), countingExpression, mitigationTimeout, period, requestsPerPeriod, requestsToOrigin, scorePerPeriod, scoreResponseHeaderName); } 
-@override String toString() { return 'RulesetsRuleRatelimit(characteristics: $characteristics, countingExpression: $countingExpression, mitigationTimeout: $mitigationTimeout, period: $period, requestsPerPeriod: $requestsPerPeriod, requestsToOrigin: $requestsToOrigin, scorePerPeriod: $scorePerPeriod, scoreResponseHeaderName: $scoreResponseHeaderName)'; } 
+          scoreResponseHeaderName == other.scoreResponseHeaderName;
+
+@override int get hashCode => Object.hash(Object.hashAll(characteristics), countingExpression, mitigationTimeout, period, requestsPerPeriod, requestsToOrigin, scorePerPeriod, scoreResponseHeaderName);
+
+@override String toString() => 'RulesetsRuleRatelimit(characteristics: $characteristics, countingExpression: $countingExpression, mitigationTimeout: $mitigationTimeout, period: $period, requestsPerPeriod: $requestsPerPeriod, requestsToOrigin: $requestsToOrigin, scorePerPeriod: $scorePerPeriod, scoreResponseHeaderName: $scoreResponseHeaderName)';
+
  }

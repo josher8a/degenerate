@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicRoutesCollectionResponseResult copyWith({List<MagicRoute>? Function()? routes}) { return MagicRoutesCollectionResponseResult(
   routes: routes != null ? routes() : this.routes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoutesCollectionResponseResult &&
-          listEquals(routes, other.routes); } 
-@override int get hashCode { return Object.hashAll(routes ?? const []); } 
-@override String toString() { return 'MagicRoutesCollectionResponseResult(routes: $routes)'; } 
+          listEquals(routes, other.routes);
+
+@override int get hashCode => Object.hashAll(routes ?? const []);
+
+@override String toString() => 'MagicRoutesCollectionResponseResult(routes: $routes)';
+
  }

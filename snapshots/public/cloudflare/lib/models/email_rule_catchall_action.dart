@@ -24,10 +24,13 @@ EmailRuleCatchallAction copyWith({EmailRuleActionType? type, List<String>? Funct
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailRuleCatchallAction &&
           type == other.type &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(value ?? const [])); } 
-@override String toString() { return 'EmailRuleCatchallAction(type: $type, value: $value)'; } 
+          listEquals(value, other.value);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(value ?? const []));
+
+@override String toString() => 'EmailRuleCatchallAction(type: $type, value: $value)';
+
  }

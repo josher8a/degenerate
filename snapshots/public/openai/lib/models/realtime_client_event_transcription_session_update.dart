@@ -30,11 +30,14 @@ RealtimeClientEventTranscriptionSessionUpdate copyWith({String? Function()? even
   type: type ?? this.type,
   session: session ?? this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventTranscriptionSessionUpdate &&
           eventId == other.eventId &&
           type == other.type &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(eventId, type, session); } 
-@override String toString() { return 'RealtimeClientEventTranscriptionSessionUpdate(eventId: $eventId, type: $type, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(eventId, type, session);
+
+@override String toString() => 'RealtimeClientEventTranscriptionSessionUpdate(eventId: $eventId, type: $type, session: $session)';
+
  }

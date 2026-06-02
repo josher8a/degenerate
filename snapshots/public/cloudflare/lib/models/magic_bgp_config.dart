@@ -47,11 +47,14 @@ MagicBgpConfig copyWith({int? customerAsn, List<String>? Function()? extraPrefix
   extraPrefixes: extraPrefixes != null ? extraPrefixes() : this.extraPrefixes,
   md5Key: md5Key != null ? md5Key() : this.md5Key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicBgpConfig &&
           customerAsn == other.customerAsn &&
           listEquals(extraPrefixes, other.extraPrefixes) &&
-          md5Key == other.md5Key; } 
-@override int get hashCode { return Object.hash(customerAsn, Object.hashAll(extraPrefixes ?? const []), md5Key); } 
-@override String toString() { return 'MagicBgpConfig(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)'; } 
+          md5Key == other.md5Key;
+
+@override int get hashCode => Object.hash(customerAsn, Object.hashAll(extraPrefixes ?? const []), md5Key);
+
+@override String toString() => 'MagicBgpConfig(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)';
+
  }

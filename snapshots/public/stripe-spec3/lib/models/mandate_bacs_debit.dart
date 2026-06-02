@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NetworkStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NetworkStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NetworkStatus($value)';
+
  }
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
 @immutable final class RevocationReason {const RevocationReason._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RevocationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RevocationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RevocationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RevocationReason($value)';
+
  }
 /// 
 @immutable final class MandateBacsDebit {const MandateBacsDebit({required this.networkStatus, required this.reference, required this.url, this.displayName, this.revocationReason, this.serviceUserNumber, });
@@ -127,14 +133,17 @@ MandateBacsDebit copyWith({String? Function()? displayName, NetworkStatus? netwo
   serviceUserNumber: serviceUserNumber != null ? serviceUserNumber() : this.serviceUserNumber,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandateBacsDebit &&
           displayName == other.displayName &&
           networkStatus == other.networkStatus &&
           reference == other.reference &&
           revocationReason == other.revocationReason &&
           serviceUserNumber == other.serviceUserNumber &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(displayName, networkStatus, reference, revocationReason, serviceUserNumber, url); } 
-@override String toString() { return 'MandateBacsDebit(displayName: $displayName, networkStatus: $networkStatus, reference: $reference, revocationReason: $revocationReason, serviceUserNumber: $serviceUserNumber, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(displayName, networkStatus, reference, revocationReason, serviceUserNumber, url);
+
+@override String toString() => 'MandateBacsDebit(displayName: $displayName, networkStatus: $networkStatus, reference: $reference, revocationReason: $revocationReason, serviceUserNumber: $serviceUserNumber, url: $url)';
+
  }

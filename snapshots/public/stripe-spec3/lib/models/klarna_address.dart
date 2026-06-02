@@ -24,9 +24,12 @@ return errors; }
 KlarnaAddress copyWith({String? Function()? country}) { return KlarnaAddress(
   country: country != null ? country() : this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KlarnaAddress &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'KlarnaAddress(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'KlarnaAddress(country: $country)';
+
  }

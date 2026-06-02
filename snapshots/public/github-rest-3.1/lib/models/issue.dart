@@ -239,7 +239,7 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
   issueDependenciesSummary: issueDependenciesSummary != null ? issueDependenciesSummary() : this.issueDependenciesSummary,
   issueFieldValues: issueFieldValues != null ? issueFieldValues() : this.issueFieldValues,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Issue &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -280,7 +280,10 @@ Issue copyWith({int? id, String? nodeId, Uri? url, Uri? repositoryUrl, String? l
           parentIssueUrl == other.parentIssueUrl &&
           pinnedComment == other.pinnedComment &&
           issueDependenciesSummary == other.issueDependenciesSummary &&
-          listEquals(issueFieldValues, other.issueFieldValues); } 
-@override int get hashCode { return Object.hashAll([id, nodeId, url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, number, state, stateReason, title, body, user, Object.hashAll(labels), assignee, Object.hashAll(assignees ?? const []), milestone, locked, activeLockReason, comments, pullRequest, closedAt, createdAt, updatedAt, draft, closedBy, bodyHtml, bodyText, timelineUrl, type, repository, performedViaGithubApp, authorAssociation, reactions, subIssuesSummary, parentIssueUrl, pinnedComment, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const [])]); } 
-@override String toString() { return 'Issue(id: $id, nodeId: $nodeId, url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, number: $number, state: $state, stateReason: $stateReason, title: $title, body: $body, user: $user, labels: $labels, assignee: $assignee, assignees: $assignees, milestone: $milestone, locked: $locked, activeLockReason: $activeLockReason, comments: $comments, pullRequest: $pullRequest, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, draft: $draft, closedBy: $closedBy, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, repository: $repository, performedViaGithubApp: $performedViaGithubApp, authorAssociation: $authorAssociation, reactions: $reactions, subIssuesSummary: $subIssuesSummary, parentIssueUrl: $parentIssueUrl, pinnedComment: $pinnedComment, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues)'; } 
+          listEquals(issueFieldValues, other.issueFieldValues);
+
+@override int get hashCode => Object.hashAll([id, nodeId, url, repositoryUrl, labelsUrl, commentsUrl, eventsUrl, htmlUrl, number, state, stateReason, title, body, user, Object.hashAll(labels), assignee, Object.hashAll(assignees ?? const []), milestone, locked, activeLockReason, comments, pullRequest, closedAt, createdAt, updatedAt, draft, closedBy, bodyHtml, bodyText, timelineUrl, type, repository, performedViaGithubApp, authorAssociation, reactions, subIssuesSummary, parentIssueUrl, pinnedComment, issueDependenciesSummary, Object.hashAll(issueFieldValues ?? const [])]);
+
+@override String toString() => 'Issue(id: $id, nodeId: $nodeId, url: $url, repositoryUrl: $repositoryUrl, labelsUrl: $labelsUrl, commentsUrl: $commentsUrl, eventsUrl: $eventsUrl, htmlUrl: $htmlUrl, number: $number, state: $state, stateReason: $stateReason, title: $title, body: $body, user: $user, labels: $labels, assignee: $assignee, assignees: $assignees, milestone: $milestone, locked: $locked, activeLockReason: $activeLockReason, comments: $comments, pullRequest: $pullRequest, closedAt: $closedAt, createdAt: $createdAt, updatedAt: $updatedAt, draft: $draft, closedBy: $closedBy, bodyHtml: $bodyHtml, bodyText: $bodyText, timelineUrl: $timelineUrl, type: $type, repository: $repository, performedViaGithubApp: $performedViaGithubApp, authorAssociation: $authorAssociation, reactions: $reactions, subIssuesSummary: $subIssuesSummary, parentIssueUrl: $parentIssueUrl, pinnedComment: $pinnedComment, issueDependenciesSummary: $issueDependenciesSummary, issueFieldValues: $issueFieldValues)';
+
  }

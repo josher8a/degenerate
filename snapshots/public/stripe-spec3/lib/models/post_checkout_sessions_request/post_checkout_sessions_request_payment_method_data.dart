@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostCheckoutSessionsRequestPaymentMethodData copyWith({ConfirmationTokensResourcePaymentMethodPreviewAllowRedisplay? Function()? allowRedisplay}) { return PostCheckoutSessionsRequestPaymentMethodData(
   allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodData &&
-          allowRedisplay == other.allowRedisplay; } 
-@override int get hashCode { return allowRedisplay.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodData(allowRedisplay: $allowRedisplay)'; } 
+          allowRedisplay == other.allowRedisplay;
+
+@override int get hashCode => allowRedisplay.hashCode;
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodData(allowRedisplay: $allowRedisplay)';
+
  }

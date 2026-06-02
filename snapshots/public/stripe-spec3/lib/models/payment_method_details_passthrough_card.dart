@@ -66,14 +66,17 @@ PaymentMethodDetailsPassthroughCard copyWith({String? Function()? brand, String?
   funding: funding != null ? funding() : this.funding,
   last4: last4 != null ? last4() : this.last4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPassthroughCard &&
           brand == other.brand &&
           country == other.country &&
           expMonth == other.expMonth &&
           expYear == other.expYear &&
           funding == other.funding &&
-          last4 == other.last4; } 
-@override int get hashCode { return Object.hash(brand, country, expMonth, expYear, funding, last4); } 
-@override String toString() { return 'PaymentMethodDetailsPassthroughCard(brand: $brand, country: $country, expMonth: $expMonth, expYear: $expYear, funding: $funding, last4: $last4)'; } 
+          last4 == other.last4;
+
+@override int get hashCode => Object.hash(brand, country, expMonth, expYear, funding, last4);
+
+@override String toString() => 'PaymentMethodDetailsPassthroughCard(brand: $brand, country: $country, expMonth: $expMonth, expYear: $expYear, funding: $funding, last4: $last4)';
+
  }

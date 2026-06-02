@@ -23,10 +23,13 @@ ZeroTrustGatewayDotEndpoint copyWith({bool? Function()? enabled, List<ZeroTrustG
   enabled: enabled != null ? enabled() : this.enabled,
   networks: networks != null ? networks() : this.networks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayDotEndpoint &&
           enabled == other.enabled &&
-          listEquals(networks, other.networks); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(networks ?? const [])); } 
-@override String toString() { return 'ZeroTrustGatewayDotEndpoint(enabled: $enabled, networks: $networks)'; } 
+          listEquals(networks, other.networks);
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(networks ?? const []));
+
+@override String toString() => 'ZeroTrustGatewayDotEndpoint(enabled: $enabled, networks: $networks)';
+
  }

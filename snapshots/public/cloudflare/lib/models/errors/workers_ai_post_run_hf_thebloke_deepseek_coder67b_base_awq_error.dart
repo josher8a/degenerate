@@ -17,7 +17,8 @@ final class WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError$400 extends W
 
 final WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError$Unknown extends WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError {const WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqError$Unknown(this.statusCode, this.rawBody, );
 

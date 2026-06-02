@@ -37,12 +37,15 @@ PostPaymentLinksRequestLineItems copyWith({AdjustableQuantity? Function()? adjus
   priceData: priceData != null ? priceData() : this.priceData,
   quantity: quantity ?? this.quantity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequestLineItems &&
           adjustableQuantity == other.adjustableQuantity &&
           price == other.price &&
           priceData == other.priceData &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, price, priceData, quantity); } 
-@override String toString() { return 'PostPaymentLinksRequestLineItems(adjustableQuantity: $adjustableQuantity, price: $price, priceData: $priceData, quantity: $quantity)'; } 
+          quantity == other.quantity;
+
+@override int get hashCode => Object.hash(adjustableQuantity, price, priceData, quantity);
+
+@override String toString() => 'PostPaymentLinksRequestLineItems(adjustableQuantity: $adjustableQuantity, price: $price, priceData: $priceData, quantity: $quantity)';
+
  }

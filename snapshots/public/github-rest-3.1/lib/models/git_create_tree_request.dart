@@ -23,10 +23,13 @@ GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String? Fun
   tree: tree ?? this.tree,
   baseTree: baseTree != null ? baseTree() : this.baseTree,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateTreeRequest &&
           listEquals(tree, other.tree) &&
-          baseTree == other.baseTree; } 
-@override int get hashCode { return Object.hash(Object.hashAll(tree), baseTree); } 
-@override String toString() { return 'GitCreateTreeRequest(tree: $tree, baseTree: $baseTree)'; } 
+          baseTree == other.baseTree;
+
+@override int get hashCode => Object.hash(Object.hashAll(tree), baseTree);
+
+@override String toString() => 'GitCreateTreeRequest(tree: $tree, baseTree: $baseTree)';
+
  }

@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FeaturesPaymentMethodSaveAllowRedisplayOverride && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FeaturesPaymentMethodSaveAllowRedisplayOverride($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FeaturesPaymentMethodSaveAllowRedisplayOverride && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FeaturesPaymentMethodSaveAllowRedisplayOverride($value)';
+
  }
 @immutable final class MobilePaymentElementFeatures {const MobilePaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });
 
@@ -62,13 +65,16 @@ MobilePaymentElementFeatures copyWith({List<PaymentMethodAllowRedisplayFilters>?
   paymentMethodSave: paymentMethodSave != null ? paymentMethodSave() : this.paymentMethodSave,
   paymentMethodSaveAllowRedisplayOverride: paymentMethodSaveAllowRedisplayOverride != null ? paymentMethodSaveAllowRedisplayOverride() : this.paymentMethodSaveAllowRedisplayOverride,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MobilePaymentElementFeatures &&
           listEquals(paymentMethodAllowRedisplayFilters, other.paymentMethodAllowRedisplayFilters) &&
           paymentMethodRedisplay == other.paymentMethodRedisplay &&
           paymentMethodRemove == other.paymentMethodRemove &&
           paymentMethodSave == other.paymentMethodSave &&
-          paymentMethodSaveAllowRedisplayOverride == other.paymentMethodSaveAllowRedisplayOverride; } 
-@override int get hashCode { return Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters ?? const []), paymentMethodRedisplay, paymentMethodRemove, paymentMethodSave, paymentMethodSaveAllowRedisplayOverride); } 
-@override String toString() { return 'MobilePaymentElementFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveAllowRedisplayOverride: $paymentMethodSaveAllowRedisplayOverride)'; } 
+          paymentMethodSaveAllowRedisplayOverride == other.paymentMethodSaveAllowRedisplayOverride;
+
+@override int get hashCode => Object.hash(Object.hashAll(paymentMethodAllowRedisplayFilters ?? const []), paymentMethodRedisplay, paymentMethodRemove, paymentMethodSave, paymentMethodSaveAllowRedisplayOverride);
+
+@override String toString() => 'MobilePaymentElementFeatures(paymentMethodAllowRedisplayFilters: $paymentMethodAllowRedisplayFilters, paymentMethodRedisplay: $paymentMethodRedisplay, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave, paymentMethodSaveAllowRedisplayOverride: $paymentMethodSaveAllowRedisplayOverride)';
+
  }

@@ -17,7 +17,8 @@ final class RadarGetAttacksLayer3TimeseriesByBytesError$400 extends RadarGetAtta
 
 final RadarGetAttacksLayer3TimeseriesByBytesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAttacksLayer3TimeseriesByBytesError$Unknown extends RadarGetAttacksLayer3TimeseriesByBytesError {const RadarGetAttacksLayer3TimeseriesByBytesError$Unknown(this.statusCode, this.rawBody, );
 

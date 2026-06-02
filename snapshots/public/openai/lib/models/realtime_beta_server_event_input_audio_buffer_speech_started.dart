@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)';
+
  }
 /// Sent by the server when in `server_vad` mode to indicate that speech has been
 /// detected in the audio buffer. This can happen any time audio is added to the
@@ -75,12 +78,15 @@ RealtimeBetaServerEventInputAudioBufferSpeechStarted copyWith({String? eventId, 
   audioStartMs: audioStartMs ?? this.audioStartMs,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventInputAudioBufferSpeechStarted &&
           eventId == other.eventId &&
           type == other.type &&
           audioStartMs == other.audioStartMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioStartMs, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, audioStartMs, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStarted(eventId: $eventId, type: $type, audioStartMs: $audioStartMs, itemId: $itemId)';
+
  }

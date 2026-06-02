@@ -132,7 +132,7 @@ CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitS
   deletable: deletable ?? this.deletable,
   warning: warning ?? this.warning,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAnalysis &&
           ref == other.ref &&
           commitSha == other.commitSha &&
@@ -148,7 +148,10 @@ CodeScanningAnalysis copyWith({CodeScanningRef? ref, CodeScanningAnalysisCommitS
           sarifId == other.sarifId &&
           tool == other.tool &&
           deletable == other.deletable &&
-          warning == other.warning; } 
-@override int get hashCode { return Object.hash(ref, commitSha, analysisKey, environment, category, error, createdAt, resultsCount, rulesCount, id, url, sarifId, tool, deletable, warning); } 
-@override String toString() { return 'CodeScanningAnalysis(ref: $ref, commitSha: $commitSha, analysisKey: $analysisKey, environment: $environment, category: $category, error: $error, createdAt: $createdAt, resultsCount: $resultsCount, rulesCount: $rulesCount, id: $id, url: $url, sarifId: $sarifId, tool: $tool, deletable: $deletable, warning: $warning)'; } 
+          warning == other.warning;
+
+@override int get hashCode => Object.hash(ref, commitSha, analysisKey, environment, category, error, createdAt, resultsCount, rulesCount, id, url, sarifId, tool, deletable, warning);
+
+@override String toString() => 'CodeScanningAnalysis(ref: $ref, commitSha: $commitSha, analysisKey: $analysisKey, environment: $environment, category: $category, error: $error, createdAt: $createdAt, resultsCount: $resultsCount, rulesCount: $rulesCount, id: $id, url: $url, sarifId: $sarifId, tool: $tool, deletable: $deletable, warning: $warning)';
+
  }

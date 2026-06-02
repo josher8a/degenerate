@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcEs256Alg && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcEs256Alg($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyEcEs256Alg && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyEcEs256Alg($value)';
+
  }
 /// Curve
 @immutable final class ShieldCredentialsJwtKeyEcEs256Crv {const ShieldCredentialsJwtKeyEcEs256Crv._(this.value);
@@ -39,10 +42,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcEs256Crv && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcEs256Crv($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyEcEs256Crv && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyEcEs256Crv($value)';
+
  }
 /// JSON representation of an ES256 key
 @immutable final class ShieldCredentialsJwtKeyEcEs256 {const ShieldCredentialsJwtKeyEcEs256({required this.kid, required this.alg, required this.crv, });
@@ -75,11 +81,14 @@ ShieldCredentialsJwtKeyEcEs256 copyWith({String? kid, ShieldCredentialsJwtKeyEcE
   alg: alg ?? this.alg,
   crv: crv ?? this.crv,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentialsJwtKeyEcEs256 &&
           kid == other.kid &&
           alg == other.alg &&
-          crv == other.crv; } 
-@override int get hashCode { return Object.hash(kid, alg, crv); } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcEs256(kid: $kid, alg: $alg, crv: $crv)'; } 
+          crv == other.crv;
+
+@override int get hashCode => Object.hash(kid, alg, crv);
+
+@override String toString() => 'ShieldCredentialsJwtKeyEcEs256(kid: $kid, alg: $alg, crv: $crv)';
+
  }

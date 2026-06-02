@@ -21,10 +21,13 @@ PagesDeploymentLogData copyWith({String? line, String? ts, }) { return PagesDepl
   line: line ?? this.line,
   ts: ts ?? this.ts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentLogData &&
           line == other.line &&
-          ts == other.ts; } 
-@override int get hashCode { return Object.hash(line, ts); } 
-@override String toString() { return 'PagesDeploymentLogData(line: $line, ts: $ts)'; } 
+          ts == other.ts;
+
+@override int get hashCode => Object.hash(line, ts);
+
+@override String toString() => 'PagesDeploymentLogData(line: $line, ts: $ts)';
+
  }

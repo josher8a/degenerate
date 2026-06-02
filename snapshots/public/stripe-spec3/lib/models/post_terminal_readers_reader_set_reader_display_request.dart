@@ -28,11 +28,14 @@ PostTerminalReadersReaderSetReaderDisplayRequest copyWith({Cart? Function()? car
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderSetReaderDisplayRequest &&
           cart == other.cart &&
           listEquals(expand, other.expand) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cart, Object.hashAll(expand ?? const []), type); } 
-@override String toString() { return 'PostTerminalReadersReaderSetReaderDisplayRequest(cart: $cart, expand: $expand, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cart, Object.hashAll(expand ?? const []), type);
+
+@override String toString() => 'PostTerminalReadersReaderSetReaderDisplayRequest(cart: $cart, expand: $expand, type: $type)';
+
  }

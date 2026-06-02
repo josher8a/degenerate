@@ -66,7 +66,7 @@ FunctionToolCall copyWith({String? Function()? id, String? type, String? callId,
   arguments: arguments ?? this.arguments,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolCall &&
           id == other.id &&
           type == other.type &&
@@ -74,7 +74,10 @@ FunctionToolCall copyWith({String? Function()? id, String? type, String? callId,
           namespace == other.namespace &&
           name == other.name &&
           arguments == other.arguments &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, type, callId, namespace, name, arguments, status); } 
-@override String toString() { return 'FunctionToolCall(id: $id, type: $type, callId: $callId, namespace: $namespace, name: $name, arguments: $arguments, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, type, callId, namespace, name, arguments, status);
+
+@override String toString() => 'FunctionToolCall(id: $id, type: $type, callId: $callId, namespace: $namespace, name: $name, arguments: $arguments, status: $status)';
+
  }

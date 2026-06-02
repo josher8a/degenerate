@@ -62,13 +62,16 @@ RadarGetHttpSummaryByTlsVersionResponseResultSummary0 copyWith({String? tls10, S
   tls13: tls13 ?? this.tls13,
   tlsQuic: tlsQuic ?? this.tlsQuic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByTlsVersionResponseResultSummary0 &&
           tls10 == other.tls10 &&
           tls11 == other.tls11 &&
           tls12 == other.tls12 &&
           tls13 == other.tls13 &&
-          tlsQuic == other.tlsQuic; } 
-@override int get hashCode { return Object.hash(tls10, tls11, tls12, tls13, tlsQuic); } 
-@override String toString() { return 'RadarGetHttpSummaryByTlsVersionResponseResultSummary0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13, tlsQuic: $tlsQuic)'; } 
+          tlsQuic == other.tlsQuic;
+
+@override int get hashCode => Object.hash(tls10, tls11, tls12, tls13, tlsQuic);
+
+@override String toString() => 'RadarGetHttpSummaryByTlsVersionResponseResultSummary0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13, tlsQuic: $tlsQuic)';
+
  }

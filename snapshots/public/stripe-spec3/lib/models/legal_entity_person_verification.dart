@@ -52,13 +52,16 @@ LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationDocument? F
   document: document != null ? document() : this.document,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityPersonVerification &&
           additionalDocument == other.additionalDocument &&
           details == other.details &&
           detailsCode == other.detailsCode &&
           document == other.document &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(additionalDocument, details, detailsCode, document, status); } 
-@override String toString() { return 'LegalEntityPersonVerification(additionalDocument: $additionalDocument, details: $details, detailsCode: $detailsCode, document: $document, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(additionalDocument, details, detailsCode, document, status);
+
+@override String toString() => 'LegalEntityPersonVerification(additionalDocument: $additionalDocument, details: $details, detailsCode: $detailsCode, document: $document, status: $status)';
+
  }

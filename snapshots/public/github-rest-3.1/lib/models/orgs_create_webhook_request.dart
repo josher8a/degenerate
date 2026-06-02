@@ -35,12 +35,15 @@ OrgsCreateWebhookRequest copyWith({String? name, OrgsCreateWebhookRequestConfig?
   events: events != null ? events() : this.events,
   active: active != null ? active() : this.active,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateWebhookRequest &&
           name == other.name &&
           config == other.config &&
           listEquals(events, other.events) &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(name, config, Object.hashAll(events ?? const []), active); } 
-@override String toString() { return 'OrgsCreateWebhookRequest(name: $name, config: $config, events: $events, active: $active)'; } 
+          active == other.active;
+
+@override int get hashCode => Object.hash(name, config, Object.hashAll(events ?? const []), active);
+
+@override String toString() => 'OrgsCreateWebhookRequest(name: $name, config: $config, events: $events, active: $active)';
+
  }

@@ -51,13 +51,16 @@ PostRadarPaymentEvaluationsRequestCustomerDetails copyWith({String? Function()? 
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarPaymentEvaluationsRequestCustomerDetails &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           email == other.email &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(customer, customerAccount, email, name, phone); } 
-@override String toString() { return 'PostRadarPaymentEvaluationsRequestCustomerDetails(customer: $customer, customerAccount: $customerAccount, email: $email, name: $name, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(customer, customerAccount, email, name, phone);
+
+@override String toString() => 'PostRadarPaymentEvaluationsRequestCustomerDetails(customer: $customer, customerAccount: $customerAccount, email: $email, name: $name, phone: $phone)';
+
  }

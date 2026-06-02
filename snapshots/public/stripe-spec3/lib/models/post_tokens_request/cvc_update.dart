@@ -20,9 +20,12 @@ return errors; }
 CvcUpdate copyWith({String? cvc}) { return CvcUpdate(
   cvc: cvc ?? this.cvc,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CvcUpdate &&
-          cvc == other.cvc; } 
-@override int get hashCode { return cvc.hashCode; } 
-@override String toString() { return 'CvcUpdate(cvc: $cvc)'; } 
+          cvc == other.cvc;
+
+@override int get hashCode => cvc.hashCode;
+
+@override String toString() => 'CvcUpdate(cvc: $cvc)';
+
  }

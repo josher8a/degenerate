@@ -30,11 +30,14 @@ PayPerCrawlSource copyWith({String? Function()? parameter, int? Function()? para
   parameterValueIndex: parameterValueIndex != null ? parameterValueIndex() : this.parameterValueIndex,
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlSource &&
           parameter == other.parameter &&
           parameterValueIndex == other.parameterValueIndex &&
-          listEquals(pointer, other.pointer); } 
-@override int get hashCode { return Object.hash(parameter, parameterValueIndex, Object.hashAll(pointer ?? const [])); } 
-@override String toString() { return 'PayPerCrawlSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)'; } 
+          listEquals(pointer, other.pointer);
+
+@override int get hashCode => Object.hash(parameter, parameterValueIndex, Object.hashAll(pointer ?? const []));
+
+@override String toString() => 'PayPerCrawlSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)';
+
  }

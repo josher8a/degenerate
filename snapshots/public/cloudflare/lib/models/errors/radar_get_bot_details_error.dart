@@ -17,7 +17,8 @@ final class RadarGetBotDetailsError$404 extends RadarGetBotDetailsError {const R
 
 final RadarGetBotDetailsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetBotDetailsError$Unknown extends RadarGetBotDetailsError {const RadarGetBotDetailsError$Unknown(this.statusCode, this.rawBody, );
 

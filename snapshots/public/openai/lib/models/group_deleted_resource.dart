@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupDeletedResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupDeletedResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupDeletedResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GroupDeletedResourceObject($value)';
+
  }
 /// Confirmation payload returned after deleting a group.
 @immutable final class GroupDeletedResource {const GroupDeletedResource({required this.object, required this.id, required this.deleted, });
@@ -53,11 +56,14 @@ GroupDeletedResource copyWith({GroupDeletedResourceObject? object, String? id, b
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupDeletedResource &&
           object == other.object &&
           id == other.id &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(object, id, deleted); } 
-@override String toString() { return 'GroupDeletedResource(object: $object, id: $id, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(object, id, deleted);
+
+@override String toString() => 'GroupDeletedResource(object: $object, id: $id, deleted: $deleted)';
+
  }

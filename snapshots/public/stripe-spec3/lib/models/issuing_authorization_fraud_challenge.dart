@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Channel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Channel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Channel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Channel($value)';
+
  }
 /// The status of the fraud challenge.
 @immutable final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationFraudChallengeStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFraudChallengeStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationFraudChallengeStatus($value)';
+
  }
 /// If the challenge is not deliverable, the reason why.
 @immutable final class UndeliverableReason {const UndeliverableReason._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UndeliverableReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UndeliverableReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UndeliverableReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UndeliverableReason($value)';
+
  }
 /// 
 @immutable final class IssuingAuthorizationFraudChallenge {const IssuingAuthorizationFraudChallenge({required this.channel, required this.status, this.undeliverableReason, });
@@ -111,11 +120,14 @@ IssuingAuthorizationFraudChallenge copyWith({Channel? channel, IssuingAuthorizat
   status: status ?? this.status,
   undeliverableReason: undeliverableReason != null ? undeliverableReason() : this.undeliverableReason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFraudChallenge &&
           channel == other.channel &&
           status == other.status &&
-          undeliverableReason == other.undeliverableReason; } 
-@override int get hashCode { return Object.hash(channel, status, undeliverableReason); } 
-@override String toString() { return 'IssuingAuthorizationFraudChallenge(channel: $channel, status: $status, undeliverableReason: $undeliverableReason)'; } 
+          undeliverableReason == other.undeliverableReason;
+
+@override int get hashCode => Object.hash(channel, status, undeliverableReason);
+
+@override String toString() => 'IssuingAuthorizationFraudChallenge(channel: $channel, status: $status, undeliverableReason: $undeliverableReason)';
+
  }

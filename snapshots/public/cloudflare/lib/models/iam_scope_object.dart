@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
 IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) { return IamScopeObject(
   key: key != null ? key() : this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamScopeObject &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'IamScopeObject(key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => key.hashCode;
+
+@override String toString() => 'IamScopeObject(key: $key)';
+
  }

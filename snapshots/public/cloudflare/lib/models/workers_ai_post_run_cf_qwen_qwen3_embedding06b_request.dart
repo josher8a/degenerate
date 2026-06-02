@@ -31,12 +31,15 @@ WorkersAiPostRunCfQwenQwen3Embedding06bRequest copyWith({Documents? Function()? 
   queries: queries != null ? queries() : this.queries,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfQwenQwen3Embedding06bRequest &&
           documents == other.documents &&
           instruction == other.instruction &&
           queries == other.queries &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(documents, instruction, queries, text); } 
-@override String toString() { return 'WorkersAiPostRunCfQwenQwen3Embedding06bRequest(documents: $documents, instruction: $instruction, queries: $queries, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(documents, instruction, queries, text);
+
+@override String toString() => 'WorkersAiPostRunCfQwenQwen3Embedding06bRequest(documents: $documents, instruction: $instruction, queries: $queries, text: $text)';
+
  }

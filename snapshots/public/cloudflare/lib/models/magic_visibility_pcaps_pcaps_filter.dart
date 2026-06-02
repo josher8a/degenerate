@@ -51,13 +51,16 @@ MagicVisibilityPcapsPcapsFilter copyWith({String? Function()? destinationAddress
   sourceAddress: sourceAddress != null ? sourceAddress() : this.sourceAddress,
   sourcePort: sourcePort != null ? sourcePort() : this.sourcePort,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsFilter &&
           destinationAddress == other.destinationAddress &&
           destinationPort == other.destinationPort &&
           protocol == other.protocol &&
           sourceAddress == other.sourceAddress &&
-          sourcePort == other.sourcePort; } 
-@override int get hashCode { return Object.hash(destinationAddress, destinationPort, protocol, sourceAddress, sourcePort); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsFilter(destinationAddress: $destinationAddress, destinationPort: $destinationPort, protocol: $protocol, sourceAddress: $sourceAddress, sourcePort: $sourcePort)'; } 
+          sourcePort == other.sourcePort;
+
+@override int get hashCode => Object.hash(destinationAddress, destinationPort, protocol, sourceAddress, sourcePort);
+
+@override String toString() => 'MagicVisibilityPcapsPcapsFilter(destinationAddress: $destinationAddress, destinationPort: $destinationPort, protocol: $protocol, sourceAddress: $sourceAddress, sourcePort: $sourcePort)';
+
  }

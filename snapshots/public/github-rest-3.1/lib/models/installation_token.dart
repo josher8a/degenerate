@@ -52,7 +52,7 @@ InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Fu
   hasMultipleSingleFiles: hasMultipleSingleFiles != null ? hasMultipleSingleFiles() : this.hasMultipleSingleFiles,
   singleFilePaths: singleFilePaths != null ? singleFilePaths() : this.singleFilePaths,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InstallationToken &&
           token == other.token &&
           expiresAt == other.expiresAt &&
@@ -61,7 +61,10 @@ InstallationToken copyWith({String? token, String? expiresAt, AppPermissions? Fu
           listEquals(repositories, other.repositories) &&
           singleFile == other.singleFile &&
           hasMultipleSingleFiles == other.hasMultipleSingleFiles &&
-          listEquals(singleFilePaths, other.singleFilePaths); } 
-@override int get hashCode { return Object.hash(token, expiresAt, permissions, repositorySelection, Object.hashAll(repositories ?? const []), singleFile, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const [])); } 
-@override String toString() { return 'InstallationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositorySelection: $repositorySelection, repositories: $repositories, singleFile: $singleFile, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths)'; } 
+          listEquals(singleFilePaths, other.singleFilePaths);
+
+@override int get hashCode => Object.hash(token, expiresAt, permissions, repositorySelection, Object.hashAll(repositories ?? const []), singleFile, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []));
+
+@override String toString() => 'InstallationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositorySelection: $repositorySelection, repositories: $repositories, singleFile: $singleFile, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths)';
+
  }

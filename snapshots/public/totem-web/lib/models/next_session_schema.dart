@@ -81,7 +81,7 @@ NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String?
   open: open ?? this.open,
   joinable: joinable ?? this.joinable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NextSessionSchema &&
           slug == other.slug &&
           start == other.start &&
@@ -94,7 +94,10 @@ NextSessionSchema copyWith({String? slug, DateTime? start, String? link, String?
           attending == other.attending &&
           cancelled == other.cancelled &&
           open == other.open &&
-          joinable == other.joinable; } 
-@override int get hashCode { return Object.hash(slug, start, link, title, seatsLeft, duration, meetingProvider, calLink, attending, cancelled, open, joinable); } 
-@override String toString() { return 'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)'; } 
+          joinable == other.joinable;
+
+@override int get hashCode => Object.hash(slug, start, link, title, seatsLeft, duration, meetingProvider, calLink, attending, cancelled, open, joinable);
+
+@override String toString() => 'NextSessionSchema(slug: $slug, start: $start, link: $link, title: $title, seatsLeft: $seatsLeft, duration: $duration, meetingProvider: $meetingProvider, calLink: $calLink, attending: $attending, cancelled: $cancelled, open: $open, joinable: $joinable)';
+
  }

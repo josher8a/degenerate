@@ -20,25 +20,29 @@ final class CampaignsCreateCampaignError$400 extends CampaignsCreateCampaignErro
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CampaignsCreateCampaignError$404 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CampaignsCreateCampaignError$422 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CampaignsCreateCampaignError$503 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$503(this.error);
 
 final CampaignsCreateCampaignResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CampaignsCreateCampaignError$Unknown extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError$Unknown(this.statusCode, this.rawBody, );
 

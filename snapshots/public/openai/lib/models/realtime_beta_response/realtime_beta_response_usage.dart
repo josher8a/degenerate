@@ -51,13 +51,16 @@ RealtimeBetaResponseUsage copyWith({int? Function()? totalTokens, int? Function(
   inputTokenDetails: inputTokenDetails != null ? inputTokenDetails() : this.inputTokenDetails,
   outputTokenDetails: outputTokenDetails != null ? outputTokenDetails() : this.outputTokenDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaResponseUsage &&
           totalTokens == other.totalTokens &&
           inputTokens == other.inputTokens &&
           outputTokens == other.outputTokens &&
           inputTokenDetails == other.inputTokenDetails &&
-          outputTokenDetails == other.outputTokenDetails; } 
-@override int get hashCode { return Object.hash(totalTokens, inputTokens, outputTokens, inputTokenDetails, outputTokenDetails); } 
-@override String toString() { return 'RealtimeBetaResponseUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokenDetails: $inputTokenDetails, outputTokenDetails: $outputTokenDetails)'; } 
+          outputTokenDetails == other.outputTokenDetails;
+
+@override int get hashCode => Object.hash(totalTokens, inputTokens, outputTokens, inputTokenDetails, outputTokenDetails);
+
+@override String toString() => 'RealtimeBetaResponseUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokenDetails: $inputTokenDetails, outputTokenDetails: $outputTokenDetails)';
+
  }

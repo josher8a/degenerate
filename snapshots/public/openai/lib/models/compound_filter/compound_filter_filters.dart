@@ -26,15 +26,19 @@ final ComparisonFilter comparisonFilter;
 
 @override String get type => 'eq';
 
-@override Map<String, dynamic> toJson() { return {...comparisonFilter.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...comparisonFilter.toJson(), 'type': type};
+
 CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) { return CompoundFilterFiltersEq(comparisonFilter.copyWith(
   key: key,
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompoundFilterFiltersEq && comparisonFilter == other.comparisonFilter; } 
-@override int get hashCode { return comparisonFilter.hashCode; } 
-@override String toString() { return 'CompoundFilterFilters.eq($comparisonFilter)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CompoundFilterFiltersEq && comparisonFilter == other.comparisonFilter;
+
+@override int get hashCode => comparisonFilter.hashCode;
+
+@override String toString() => 'CompoundFilterFilters.eq($comparisonFilter)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -44,9 +48,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompoundFilterFilters$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CompoundFilterFilters.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CompoundFilterFilters$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CompoundFilterFilters.unknown($json)';
+
  }

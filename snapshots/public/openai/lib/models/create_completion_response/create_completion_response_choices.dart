@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCompletionResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCompletionResponseChoicesFinishReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateCompletionResponseChoicesFinishReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateCompletionResponseChoicesFinishReason($value)';
+
  }
 @immutable final class CreateCompletionResponseChoices {const CreateCompletionResponseChoices({required this.finishReason, required this.index, required this.logprobs, required this.text, });
 
@@ -68,12 +71,15 @@ CreateCompletionResponseChoices copyWith({CreateCompletionResponseChoicesFinishR
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionResponseChoices &&
           finishReason == other.finishReason &&
           index == other.index &&
           logprobs == other.logprobs &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(finishReason, index, logprobs, text); } 
-@override String toString() { return 'CreateCompletionResponseChoices(finishReason: $finishReason, index: $index, logprobs: $logprobs, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(finishReason, index, logprobs, text);
+
+@override String toString() => 'CreateCompletionResponseChoices(finishReason: $finishReason, index: $index, logprobs: $logprobs, text: $text)';
+
  }

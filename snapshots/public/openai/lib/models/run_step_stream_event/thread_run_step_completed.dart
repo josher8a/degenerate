@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadRunStepCompletedEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadRunStepCompletedEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadRunStepCompletedEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadRunStepCompletedEvent($value)';
+
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
 @immutable final class ThreadRunStepCompleted {const ThreadRunStepCompleted({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadRunStepCompleted copyWith({ThreadRunStepCompletedEvent? event, RunStepObje
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadRunStepCompleted &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadRunStepCompleted(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadRunStepCompleted(event: $event, data: $data)';
+
  }

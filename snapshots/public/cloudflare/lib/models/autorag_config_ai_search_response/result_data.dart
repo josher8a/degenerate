@@ -35,13 +35,16 @@ ResultData copyWith({Map<String, dynamic>? Function()? attributes, List<ResultDa
   filename: filename != null ? filename() : this.filename,
   score: score ?? this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultData &&
           attributes == other.attributes &&
           listEquals(content, other.content) &&
           fileId == other.fileId &&
           filename == other.filename &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(attributes, Object.hashAll(content ?? const []), fileId, filename, score); } 
-@override String toString() { return 'ResultData(attributes: $attributes, content: $content, fileId: $fileId, filename: $filename, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(attributes, Object.hashAll(content ?? const []), fileId, filename, score);
+
+@override String toString() => 'ResultData(attributes: $attributes, content: $content, fileId: $fileId, filename: $filename, score: $score)';
+
  }

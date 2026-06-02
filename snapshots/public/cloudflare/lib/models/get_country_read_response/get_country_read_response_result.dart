@@ -23,10 +23,13 @@ GetCountryReadResponseResult copyWith({String? alpha3, String? name, }) { return
   alpha3: alpha3 ?? this.alpha3,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCountryReadResponseResult &&
           alpha3 == other.alpha3 &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alpha3, name); } 
-@override String toString() { return 'GetCountryReadResponseResult(alpha3: $alpha3, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(alpha3, name);
+
+@override String toString() => 'GetCountryReadResponseResult(alpha3: $alpha3, name: $name)';
+
  }

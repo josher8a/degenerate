@@ -86,7 +86,7 @@ PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicat
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentIntentData &&
           applicationFeeAmount == other.applicationFeeAmount &&
           captureMethod == other.captureMethod &&
@@ -99,7 +99,10 @@ PostCheckoutSessionsRequestPaymentIntentData copyWith({int? Function()? applicat
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(applicationFeeAmount, captureMethod, description, metadata, onBehalfOf, receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentIntentData(applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(applicationFeeAmount, captureMethod, description, metadata, onBehalfOf, receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentIntentData(applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, description: $description, metadata: $metadata, onBehalfOf: $onBehalfOf, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

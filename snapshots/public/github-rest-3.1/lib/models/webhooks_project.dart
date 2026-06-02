@@ -90,7 +90,7 @@ WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? c
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksProject &&
           body == other.body &&
           columnsUrl == other.columnsUrl &&
@@ -104,7 +104,10 @@ WebhooksProject copyWith({String? Function()? body, Uri? columnsUrl, DateTime? c
           ownerUrl == other.ownerUrl &&
           state == other.state &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(body, columnsUrl, createdAt, creator, htmlUrl, id, name, nodeId, number, ownerUrl, state, updatedAt, url); } 
-@override String toString() { return 'WebhooksProject(body: $body, columnsUrl: $columnsUrl, createdAt: $createdAt, creator: $creator, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, number: $number, ownerUrl: $ownerUrl, state: $state, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(body, columnsUrl, createdAt, creator, htmlUrl, id, name, nodeId, number, ownerUrl, state, updatedAt, url);
+
+@override String toString() => 'WebhooksProject(body: $body, columnsUrl: $columnsUrl, createdAt: $createdAt, creator: $creator, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, number: $number, ownerUrl: $ownerUrl, state: $state, updatedAt: $updatedAt, url: $url)';
+
  }

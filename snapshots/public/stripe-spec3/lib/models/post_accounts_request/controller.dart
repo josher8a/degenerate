@@ -31,12 +31,15 @@ Controller copyWith({Fees? Function()? fees, Losses? Function()? losses, Require
   requirementCollection: requirementCollection != null ? requirementCollection() : this.requirementCollection,
   stripeDashboard: stripeDashboard != null ? stripeDashboard() : this.stripeDashboard,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Controller &&
           fees == other.fees &&
           losses == other.losses &&
           requirementCollection == other.requirementCollection &&
-          stripeDashboard == other.stripeDashboard; } 
-@override int get hashCode { return Object.hash(fees, losses, requirementCollection, stripeDashboard); } 
-@override String toString() { return 'Controller(fees: $fees, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard)'; } 
+          stripeDashboard == other.stripeDashboard;
+
+@override int get hashCode => Object.hash(fees, losses, requirementCollection, stripeDashboard);
+
+@override String toString() => 'Controller(fees: $fees, losses: $losses, requirementCollection: $requirementCollection, stripeDashboard: $stripeDashboard)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 R2EventNotificationDeleteConfigRequest copyWith({List<String>? Function()? ruleIds}) { return R2EventNotificationDeleteConfigRequest(
   ruleIds: ruleIds != null ? ruleIds() : this.ruleIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EventNotificationDeleteConfigRequest &&
-          listEquals(ruleIds, other.ruleIds); } 
-@override int get hashCode { return Object.hashAll(ruleIds ?? const []); } 
-@override String toString() { return 'R2EventNotificationDeleteConfigRequest(ruleIds: $ruleIds)'; } 
+          listEquals(ruleIds, other.ruleIds);
+
+@override int get hashCode => Object.hashAll(ruleIds ?? const []);
+
+@override String toString() => 'R2EventNotificationDeleteConfigRequest(ruleIds: $ruleIds)';
+
  }

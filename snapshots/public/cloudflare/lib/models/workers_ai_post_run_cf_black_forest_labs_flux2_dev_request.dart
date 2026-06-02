@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('multi
 WorkersAiPostRunCfBlackForestLabsFlux2DevRequest copyWith({Multipart? multipart}) { return WorkersAiPostRunCfBlackForestLabsFlux2DevRequest(
   multipart: multipart ?? this.multipart,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfBlackForestLabsFlux2DevRequest &&
-          multipart == other.multipart; } 
-@override int get hashCode { return multipart.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfBlackForestLabsFlux2DevRequest(multipart: $multipart)'; } 
+          multipart == other.multipart;
+
+@override int get hashCode => multipart.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfBlackForestLabsFlux2DevRequest(multipart: $multipart)';
+
  }

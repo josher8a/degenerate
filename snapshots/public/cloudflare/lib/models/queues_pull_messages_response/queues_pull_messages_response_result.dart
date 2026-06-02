@@ -23,10 +23,13 @@ QueuesPullMessagesResponseResult copyWith({double? Function()? messageBacklogCou
   messageBacklogCount: messageBacklogCount != null ? messageBacklogCount() : this.messageBacklogCount,
   messages: messages != null ? messages() : this.messages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesPullMessagesResponseResult &&
           messageBacklogCount == other.messageBacklogCount &&
-          listEquals(messages, other.messages); } 
-@override int get hashCode { return Object.hash(messageBacklogCount, Object.hashAll(messages ?? const [])); } 
-@override String toString() { return 'QueuesPullMessagesResponseResult(messageBacklogCount: $messageBacklogCount, messages: $messages)'; } 
+          listEquals(messages, other.messages);
+
+@override int get hashCode => Object.hash(messageBacklogCount, Object.hashAll(messages ?? const []));
+
+@override String toString() => 'QueuesPullMessagesResponseResult(messageBacklogCount: $messageBacklogCount, messages: $messages)';
+
  }

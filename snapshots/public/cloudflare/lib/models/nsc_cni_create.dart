@@ -33,12 +33,15 @@ NscCniCreate copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, S
   interconnect: interconnect ?? this.interconnect,
   magic: magic ?? this.magic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscCniCreate &&
           account == other.account &&
           bgp == other.bgp &&
           interconnect == other.interconnect &&
-          magic == other.magic; } 
-@override int get hashCode { return Object.hash(account, bgp, interconnect, magic); } 
-@override String toString() { return 'NscCniCreate(account: $account, bgp: $bgp, interconnect: $interconnect, magic: $magic)'; } 
+          magic == other.magic;
+
+@override int get hashCode => Object.hash(account, bgp, interconnect, magic);
+
+@override String toString() => 'NscCniCreate(account: $account, bgp: $bgp, interconnect: $interconnect, magic: $magic)';
+
  }

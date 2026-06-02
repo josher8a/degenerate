@@ -35,12 +35,15 @@ ResponseCollection11 copyWith({List<DlsMessages2>? errors, List<DlsMessages2>? m
   success: success ?? this.success,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCollection11 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          resultInfo == other.resultInfo; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo); } 
-@override String toString() { return 'ResponseCollection11(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo)'; } 
+          resultInfo == other.resultInfo;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo);
+
+@override String toString() => 'ResponseCollection11(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo)';
+
  }

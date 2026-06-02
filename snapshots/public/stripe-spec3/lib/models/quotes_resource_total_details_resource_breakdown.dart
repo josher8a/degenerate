@@ -24,10 +24,13 @@ QuotesResourceTotalDetailsResourceBreakdown copyWith({List<LineItemsDiscountAmou
   discounts: discounts ?? this.discounts,
   taxes: taxes ?? this.taxes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceTotalDetailsResourceBreakdown &&
           listEquals(discounts, other.discounts) &&
-          listEquals(taxes, other.taxes); } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts), Object.hashAll(taxes)); } 
-@override String toString() { return 'QuotesResourceTotalDetailsResourceBreakdown(discounts: $discounts, taxes: $taxes)'; } 
+          listEquals(taxes, other.taxes);
+
+@override int get hashCode => Object.hash(Object.hashAll(discounts), Object.hashAll(taxes));
+
+@override String toString() => 'QuotesResourceTotalDetailsResourceBreakdown(discounts: $discounts, taxes: $taxes)';
+
  }

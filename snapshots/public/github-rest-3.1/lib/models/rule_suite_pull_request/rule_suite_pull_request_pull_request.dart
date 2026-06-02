@@ -35,12 +35,15 @@ RuleSuitePullRequestPullRequest copyWith({int? Function()? id, int? Function()? 
   user: user != null ? user() : this.user,
   reviews: reviews != null ? reviews() : this.reviews,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuitePullRequestPullRequest &&
           id == other.id &&
           number == other.number &&
           user == other.user &&
-          listEquals(reviews, other.reviews); } 
-@override int get hashCode { return Object.hash(id, number, user, Object.hashAll(reviews ?? const [])); } 
-@override String toString() { return 'RuleSuitePullRequestPullRequest(id: $id, number: $number, user: $user, reviews: $reviews)'; } 
+          listEquals(reviews, other.reviews);
+
+@override int get hashCode => Object.hash(id, number, user, Object.hashAll(reviews ?? const []));
+
+@override String toString() => 'RuleSuitePullRequestPullRequest(id: $id, number: $number, user: $user, reviews: $reviews)';
+
  }

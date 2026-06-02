@@ -67,7 +67,7 @@ CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedItem &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -76,7 +76,10 @@ CustomIndicatorFeedsIndicatorFeedItem copyWith({DateTime? Function()? createdOn,
           isDownloadable == other.isDownloadable &&
           isPublic == other.isPublic &&
           modifiedOn == other.modifiedOn &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, modifiedOn, name); } 
-@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedItem(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, modifiedOn: $modifiedOn, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, modifiedOn, name);
+
+@override String toString() => 'CustomIndicatorFeedsIndicatorFeedItem(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, modifiedOn: $modifiedOn, name: $name)';
+
  }

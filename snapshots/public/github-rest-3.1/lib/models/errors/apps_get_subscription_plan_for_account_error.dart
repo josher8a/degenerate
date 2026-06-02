@@ -18,13 +18,15 @@ final class AppsGetSubscriptionPlanForAccountError$401 extends AppsGetSubscripti
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class AppsGetSubscriptionPlanForAccountError$404 extends AppsGetSubscriptionPlanForAccountError {const AppsGetSubscriptionPlanForAccountError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AppsGetSubscriptionPlanForAccountError$Unknown extends AppsGetSubscriptionPlanForAccountError {const AppsGetSubscriptionPlanForAccountError$Unknown(this.statusCode, this.rawBody, );
 

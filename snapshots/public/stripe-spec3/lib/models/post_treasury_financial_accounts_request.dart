@@ -46,14 +46,17 @@ PostTreasuryFinancialAccountsRequest copyWith({List<String>? Function()? expand,
   platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
   supportedCurrencies: supportedCurrencies ?? this.supportedCurrencies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsRequest &&
           listEquals(expand, other.expand) &&
           features == other.features &&
           metadata == other.metadata &&
           nickname == other.nickname &&
           platformRestrictions == other.platformRestrictions &&
-          listEquals(supportedCurrencies, other.supportedCurrencies); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), features, metadata, nickname, platformRestrictions, Object.hashAll(supportedCurrencies)); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsRequest(expand: $expand, features: $features, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions, supportedCurrencies: $supportedCurrencies)'; } 
+          listEquals(supportedCurrencies, other.supportedCurrencies);
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), features, metadata, nickname, platformRestrictions, Object.hashAll(supportedCurrencies));
+
+@override String toString() => 'PostTreasuryFinancialAccountsRequest(expand: $expand, features: $features, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions, supportedCurrencies: $supportedCurrencies)';
+
  }

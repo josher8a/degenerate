@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodConfigurationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodConfigurationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodConfigurationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodConfigurationObject($value)';
+
  }
 /// PaymentMethodConfigurations control which payment methods are displayed to your customers when you don't explicitly specify payment method types. You can have multiple configurations with different sets of payment methods for different scenarios.
 /// 
@@ -382,7 +385,7 @@ PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodPro
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfiguration &&
           acssDebit == other.acssDebit &&
           active == other.active &&
@@ -445,7 +448,10 @@ PaymentMethodConfiguration copyWith({PaymentMethodConfigResourcePaymentMethodPro
           twint == other.twint &&
           usBankAccount == other.usBankAccount &&
           wechatPay == other.wechatPay &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hashAll([acssDebit, active, affirm, afterpayClearpay, alipay, alma, amazonPay, applePay, application, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cartesBancaires, cashapp, crypto, customerBalance, eps, fpx, giropay, googlePay, grabpay, id, ideal, isDefault, jcb, kakaoPay, klarna, konbini, krCard, link, livemode, mbWay, mobilepay, multibanco, name, naverPay, nzBankAccount, object, oxxo, p24, parent, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip]); } 
-@override String toString() { return 'PaymentMethodConfiguration(acssDebit: $acssDebit, active: $active, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, applePay: $applePay, application: $application, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, blik: $blik, boleto: $boleto, card: $card, cartesBancaires: $cartesBancaires, cashapp: $cashapp, crypto: $crypto, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, googlePay: $googlePay, grabpay: $grabpay, id: $id, ideal: $ideal, isDefault: $isDefault, jcb: $jcb, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, livemode: $livemode, mbWay: $mbWay, mobilepay: $mobilepay, multibanco: $multibanco, name: $name, naverPay: $naverPay, nzBankAccount: $nzBankAccount, object: $object, oxxo: $oxxo, p24: $p24, parent: $parent, payByBank: $payByBank, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, promptpay: $promptpay, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, usBankAccount: $usBankAccount, wechatPay: $wechatPay, zip: $zip)'; } 
+          zip == other.zip;
+
+@override int get hashCode => Object.hashAll([acssDebit, active, affirm, afterpayClearpay, alipay, alma, amazonPay, applePay, application, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cartesBancaires, cashapp, crypto, customerBalance, eps, fpx, giropay, googlePay, grabpay, id, ideal, isDefault, jcb, kakaoPay, klarna, konbini, krCard, link, livemode, mbWay, mobilepay, multibanco, name, naverPay, nzBankAccount, object, oxxo, p24, parent, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip]);
+
+@override String toString() => 'PaymentMethodConfiguration(acssDebit: $acssDebit, active: $active, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, applePay: $applePay, application: $application, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, blik: $blik, boleto: $boleto, card: $card, cartesBancaires: $cartesBancaires, cashapp: $cashapp, crypto: $crypto, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, googlePay: $googlePay, grabpay: $grabpay, id: $id, ideal: $ideal, isDefault: $isDefault, jcb: $jcb, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, livemode: $livemode, mbWay: $mbWay, mobilepay: $mobilepay, multibanco: $multibanco, name: $name, naverPay: $naverPay, nzBankAccount: $nzBankAccount, object: $object, oxxo: $oxxo, p24: $p24, parent: $parent, payByBank: $payByBank, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, promptpay: $promptpay, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, usBankAccount: $usBankAccount, wechatPay: $wechatPay, zip: $zip)';
+
  }

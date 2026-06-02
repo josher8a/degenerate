@@ -48,7 +48,7 @@ WebhookDiscussionClosed copyWith({ProjectClosedAction? action, Discussion? discu
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionClosed &&
           action == other.action &&
           discussion == other.discussion &&
@@ -56,7 +56,10 @@ WebhookDiscussionClosed copyWith({ProjectClosedAction? action, Discussion? discu
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, discussion, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookDiscussionClosed(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, discussion, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookDiscussionClosed(action: $action, discussion: $discussion, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

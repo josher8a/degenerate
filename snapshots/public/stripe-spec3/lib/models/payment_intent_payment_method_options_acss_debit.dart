@@ -47,12 +47,15 @@ PaymentIntentPaymentMethodOptionsAcssDebit copyWith({PaymentIntentPaymentMethodO
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsAcssDebit &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate, verificationMethod); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(mandateOptions, setupFutureUsage, targetDate, verificationMethod);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsAcssDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)';
+
  }

@@ -136,7 +136,7 @@ AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, 
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AlexandriaApplication &&
           applicationSource == other.applicationSource &&
           applicationType == other.applicationType &&
@@ -150,7 +150,10 @@ AlexandriaApplication copyWith({AlexandriaApplicationSource? applicationSource, 
           listEquals(portProtocols, other.portProtocols) &&
           listEquals(supportDomains, other.supportDomains) &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(applicationSource, applicationType, applicationTypeDescription, createdAt, Object.hashAll(hostnames), humanId, id, Object.hashAll(ipSubnets), name, Object.hashAll(portProtocols), Object.hashAll(supportDomains), updatedAt, version); } 
-@override String toString() { return 'AlexandriaApplication(applicationSource: $applicationSource, applicationType: $applicationType, applicationTypeDescription: $applicationTypeDescription, createdAt: $createdAt, hostnames: $hostnames, humanId: $humanId, id: $id, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains, updatedAt: $updatedAt, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(applicationSource, applicationType, applicationTypeDescription, createdAt, Object.hashAll(hostnames), humanId, id, Object.hashAll(ipSubnets), name, Object.hashAll(portProtocols), Object.hashAll(supportDomains), updatedAt, version);
+
+@override String toString() => 'AlexandriaApplication(applicationSource: $applicationSource, applicationType: $applicationType, applicationTypeDescription: $applicationTypeDescription, createdAt: $createdAt, hostnames: $hostnames, humanId: $humanId, id: $id, ipSubnets: $ipSubnets, name: $name, portProtocols: $portProtocols, supportDomains: $supportDomains, updatedAt: $updatedAt, version: $version)';
+
  }

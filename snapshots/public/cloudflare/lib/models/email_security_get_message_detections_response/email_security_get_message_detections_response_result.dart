@@ -100,7 +100,7 @@ EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<E
   threatCategories: threatCategories ?? this.threatCategories,
   validation: validation ?? this.validation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessageDetectionsResponseResult &&
           action == other.action &&
           listEquals(attachments, other.attachments) &&
@@ -109,7 +109,10 @@ EmailSecurityGetMessageDetectionsResponseResult copyWith({String? action, List<E
           listEquals(links, other.links) &&
           senderInfo == other.senderInfo &&
           listEquals(threatCategories, other.threatCategories) &&
-          validation == other.validation; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(attachments), finalDisposition, Object.hashAll(headers), Object.hashAll(links), senderInfo, Object.hashAll(threatCategories), validation); } 
-@override String toString() { return 'EmailSecurityGetMessageDetectionsResponseResult(action: $action, attachments: $attachments, finalDisposition: $finalDisposition, headers: $headers, links: $links, senderInfo: $senderInfo, threatCategories: $threatCategories, validation: $validation)'; } 
+          validation == other.validation;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(attachments), finalDisposition, Object.hashAll(headers), Object.hashAll(links), senderInfo, Object.hashAll(threatCategories), validation);
+
+@override String toString() => 'EmailSecurityGetMessageDetectionsResponseResult(action: $action, attachments: $attachments, finalDisposition: $finalDisposition, headers: $headers, links: $links, senderInfo: $senderInfo, threatCategories: $threatCategories, validation: $validation)';
+
  }

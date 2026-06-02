@@ -26,10 +26,13 @@ WorkersMigrationTagConditions copyWith({String? Function()? newTag, String? Func
   newTag: newTag != null ? newTag() : this.newTag,
   oldTag: oldTag != null ? oldTag() : this.oldTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMigrationTagConditions &&
           newTag == other.newTag &&
-          oldTag == other.oldTag; } 
-@override int get hashCode { return Object.hash(newTag, oldTag); } 
-@override String toString() { return 'WorkersMigrationTagConditions(newTag: $newTag, oldTag: $oldTag)'; } 
+          oldTag == other.oldTag;
+
+@override int get hashCode => Object.hash(newTag, oldTag);
+
+@override String toString() => 'WorkersMigrationTagConditions(newTag: $newTag, oldTag: $oldTag)';
+
  }

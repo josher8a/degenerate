@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StartType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StartType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StartType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StartType($value)';
+
  }
 @immutable final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart({required this.type, this.timestamp, });
 
@@ -47,10 +50,13 @@ PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart copyWith({in
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart(timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(timestamp, type);
+
+@override String toString() => 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart(timestamp: $timestamp, type: $type)';
+
  }

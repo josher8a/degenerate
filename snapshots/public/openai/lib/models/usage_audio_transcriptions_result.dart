@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageAudioTranscriptionsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageAudioTranscriptionsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageAudioTranscriptionsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageAudioTranscriptionsResultObject($value)';
+
  }
 /// The aggregated audio transcriptions usage details of the specific time bucket.
 @immutable final class UsageAudioTranscriptionsResult {const UsageAudioTranscriptionsResult({required this.object, required this.seconds, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
@@ -75,7 +78,7 @@ UsageAudioTranscriptionsResult copyWith({UsageAudioTranscriptionsResultObject? o
   apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageAudioTranscriptionsResult &&
           object == other.object &&
           seconds == other.seconds &&
@@ -83,7 +86,10 @@ UsageAudioTranscriptionsResult copyWith({UsageAudioTranscriptionsResultObject? o
           projectId == other.projectId &&
           userId == other.userId &&
           apiKeyId == other.apiKeyId &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(object, seconds, numModelRequests, projectId, userId, apiKeyId, model); } 
-@override String toString() { return 'UsageAudioTranscriptionsResult(object: $object, seconds: $seconds, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(object, seconds, numModelRequests, projectId, userId, apiKeyId, model);
+
+@override String toString() => 'UsageAudioTranscriptionsResult(object: $object, seconds: $seconds, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';
+
  }

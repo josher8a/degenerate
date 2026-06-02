@@ -29,10 +29,13 @@ PaymentMethodDetailsAlma copyWith({AlmaInstallments? Function()? installments, S
   installments: installments != null ? installments() : this.installments,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAlma &&
           installments == other.installments &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(installments, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsAlma(installments: $installments, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(installments, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsAlma(installments: $installments, transactionId: $transactionId)';
+
  }

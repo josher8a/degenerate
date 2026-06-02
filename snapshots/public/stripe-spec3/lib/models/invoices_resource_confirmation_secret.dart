@@ -29,10 +29,13 @@ InvoicesResourceConfirmationSecret copyWith({String? clientSecret, String? type,
   clientSecret: clientSecret ?? this.clientSecret,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesResourceConfirmationSecret &&
           clientSecret == other.clientSecret &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(clientSecret, type); } 
-@override String toString() { return 'InvoicesResourceConfirmationSecret(clientSecret: $clientSecret, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(clientSecret, type);
+
+@override String toString() => 'InvoicesResourceConfirmationSecret(clientSecret: $clientSecret, type: $type)';
+
  }

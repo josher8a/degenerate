@@ -26,10 +26,13 @@ AppArmorProfile copyWith({String? Function()? localhostProfile, String? type, })
   localhostProfile: localhostProfile != null ? localhostProfile() : this.localhostProfile,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppArmorProfile &&
           localhostProfile == other.localhostProfile &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(localhostProfile, type); } 
-@override String toString() { return 'AppArmorProfile(localhostProfile: $localhostProfile, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(localhostProfile, type);
+
+@override String toString() => 'AppArmorProfile(localhostProfile: $localhostProfile, type: $type)';
+
  }

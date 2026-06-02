@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileInputDetail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileInputDetail($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileInputDetail && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileInputDetail($value)';
+
  }
 /// A file input to the model.
 @immutable final class InputFileContent {const InputFileContent({this.type = 'input_file', this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
@@ -72,14 +75,17 @@ InputFileContent copyWith({String? type, String? Function()? fileId, String? Fun
   fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputFileContent &&
           type == other.type &&
           fileId == other.fileId &&
           filename == other.filename &&
           fileData == other.fileData &&
           fileUrl == other.fileUrl &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, fileId, filename, fileData, fileUrl, detail); } 
-@override String toString() { return 'InputFileContent(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(type, fileId, filename, fileData, fileUrl, detail);
+
+@override String toString() => 'InputFileContent(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)';
+
  }

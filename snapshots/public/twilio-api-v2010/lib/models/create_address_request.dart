@@ -75,7 +75,7 @@ CreateAddressRequest copyWith({String? customerName, String? street, String? cit
   autoCorrectAddress: autoCorrectAddress != null ? autoCorrectAddress() : this.autoCorrectAddress,
   streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAddressRequest &&
           customerName == other.customerName &&
           street == other.street &&
@@ -86,7 +86,10 @@ CreateAddressRequest copyWith({String? customerName, String? street, String? cit
           friendlyName == other.friendlyName &&
           emergencyEnabled == other.emergencyEnabled &&
           autoCorrectAddress == other.autoCorrectAddress &&
-          streetSecondary == other.streetSecondary; } 
-@override int get hashCode { return Object.hash(customerName, street, city, region, postalCode, isoCountry, friendlyName, emergencyEnabled, autoCorrectAddress, streetSecondary); } 
-@override String toString() { return 'CreateAddressRequest(customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, friendlyName: $friendlyName, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)'; } 
+          streetSecondary == other.streetSecondary;
+
+@override int get hashCode => Object.hash(customerName, street, city, region, postalCode, isoCountry, friendlyName, emergencyEnabled, autoCorrectAddress, streetSecondary);
+
+@override String toString() => 'CreateAddressRequest(customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, friendlyName: $friendlyName, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)';
+
  }

@@ -20,10 +20,13 @@ Lodging copyWith({int? Function()? checkInAt, int? Function()? nights, }) { retu
   checkInAt: checkInAt != null ? checkInAt() : this.checkInAt,
   nights: nights != null ? nights() : this.nights,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Lodging &&
           checkInAt == other.checkInAt &&
-          nights == other.nights; } 
-@override int get hashCode { return Object.hash(checkInAt, nights); } 
-@override String toString() { return 'Lodging(checkInAt: $checkInAt, nights: $nights)'; } 
+          nights == other.nights;
+
+@override int get hashCode => Object.hash(checkInAt, nights);
+
+@override String toString() => 'Lodging(checkInAt: $checkInAt, nights: $nights)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ViaMcpServerPortalDestinationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ViaMcpServerPortalDestinationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ViaMcpServerPortalDestinationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ViaMcpServerPortalDestinationType($value)';
+
  }
 /// A MCP server id configured in ai-controls. Access will secure the MCP server if accessed through a MCP portal.
 /// 
@@ -44,10 +47,13 @@ ViaMcpServerPortalDestination copyWith({String? Function()? mcpServerId, ViaMcpS
   mcpServerId: mcpServerId != null ? mcpServerId() : this.mcpServerId,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ViaMcpServerPortalDestination &&
           mcpServerId == other.mcpServerId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(mcpServerId, type); } 
-@override String toString() { return 'ViaMcpServerPortalDestination(mcpServerId: $mcpServerId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(mcpServerId, type);
+
+@override String toString() => 'ViaMcpServerPortalDestination(mcpServerId: $mcpServerId, type: $type)';
+
  }

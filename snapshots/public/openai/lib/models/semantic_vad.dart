@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Eagerness && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Eagerness($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Eagerness && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Eagerness($value)';
+
  }
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.
 @immutable final class SemanticVad {const SemanticVad({required this.type, this.eagerness = Eagerness.auto, this.createResponse = true, this.interruptResponse = true, });
@@ -72,12 +75,15 @@ SemanticVad copyWith({String? type, Eagerness Function()? eagerness, bool Functi
   createResponse: createResponse != null ? createResponse() : this.createResponse,
   interruptResponse: interruptResponse != null ? interruptResponse() : this.interruptResponse,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SemanticVad &&
           type == other.type &&
           eagerness == other.eagerness &&
           createResponse == other.createResponse &&
-          interruptResponse == other.interruptResponse; } 
-@override int get hashCode { return Object.hash(type, eagerness, createResponse, interruptResponse); } 
-@override String toString() { return 'SemanticVad(type: $type, eagerness: $eagerness, createResponse: $createResponse, interruptResponse: $interruptResponse)'; } 
+          interruptResponse == other.interruptResponse;
+
+@override int get hashCode => Object.hash(type, eagerness, createResponse, interruptResponse);
+
+@override String toString() => 'SemanticVad(type: $type, eagerness: $eagerness, createResponse: $createResponse, interruptResponse: $interruptResponse)';
+
  }

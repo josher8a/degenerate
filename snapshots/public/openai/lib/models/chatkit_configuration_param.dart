@@ -29,11 +29,14 @@ ChatkitConfigurationParam copyWith({AutomaticThreadTitlingParam? Function()? aut
   fileUpload: fileUpload != null ? fileUpload() : this.fileUpload,
   history: history != null ? history() : this.history,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatkitConfigurationParam &&
           automaticThreadTitling == other.automaticThreadTitling &&
           fileUpload == other.fileUpload &&
-          history == other.history; } 
-@override int get hashCode { return Object.hash(automaticThreadTitling, fileUpload, history); } 
-@override String toString() { return 'ChatkitConfigurationParam(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)'; } 
+          history == other.history;
+
+@override int get hashCode => Object.hash(automaticThreadTitling, fileUpload, history);
+
+@override String toString() => 'ChatkitConfigurationParam(automaticThreadTitling: $automaticThreadTitling, fileUpload: $fileUpload, history: $history)';
+
  }

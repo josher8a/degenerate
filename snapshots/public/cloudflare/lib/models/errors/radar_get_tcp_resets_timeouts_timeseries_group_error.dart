@@ -17,7 +17,8 @@ final class RadarGetTcpResetsTimeoutsTimeseriesGroupError$400 extends RadarGetTc
 
 final RadarGetTcpResetsTimeoutsTimeseriesGroupResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetTcpResetsTimeoutsTimeseriesGroupError$Unknown extends RadarGetTcpResetsTimeoutsTimeseriesGroupError {const RadarGetTcpResetsTimeoutsTimeseriesGroupError$Unknown(this.statusCode, this.rawBody, );
 

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DefaultPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DefaultPolicy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DefaultPolicy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DefaultPolicy($value)';
+
  }
 /// Only the hash policy is supported for existing sessions (to avoid exponential decay).
 @immutable final class SessionPolicy {const SessionPolicy._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SessionPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SessionPolicy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SessionPolicy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SessionPolicy($value)';
+
  }
 /// Configures load shedding policies and percentages for the pool.
 @immutable final class LoadBalancingLoadShedding {const LoadBalancingLoadShedding({this.defaultPercent = 0.0, this.defaultPolicy = DefaultPolicy.random, this.sessionPercent = 0.0, this.sessionPolicy = SessionPolicy.hash, });
@@ -89,12 +95,15 @@ LoadBalancingLoadShedding copyWith({double Function()? defaultPercent, DefaultPo
   sessionPercent: sessionPercent != null ? sessionPercent() : this.sessionPercent,
   sessionPolicy: sessionPolicy != null ? sessionPolicy() : this.sessionPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingLoadShedding &&
           defaultPercent == other.defaultPercent &&
           defaultPolicy == other.defaultPolicy &&
           sessionPercent == other.sessionPercent &&
-          sessionPolicy == other.sessionPolicy; } 
-@override int get hashCode { return Object.hash(defaultPercent, defaultPolicy, sessionPercent, sessionPolicy); } 
-@override String toString() { return 'LoadBalancingLoadShedding(defaultPercent: $defaultPercent, defaultPolicy: $defaultPolicy, sessionPercent: $sessionPercent, sessionPolicy: $sessionPolicy)'; } 
+          sessionPolicy == other.sessionPolicy;
+
+@override int get hashCode => Object.hash(defaultPercent, defaultPolicy, sessionPercent, sessionPolicy);
+
+@override String toString() => 'LoadBalancingLoadShedding(defaultPercent: $defaultPercent, defaultPolicy: $defaultPolicy, sessionPercent: $sessionPercent, sessionPolicy: $sessionPolicy)';
+
  }

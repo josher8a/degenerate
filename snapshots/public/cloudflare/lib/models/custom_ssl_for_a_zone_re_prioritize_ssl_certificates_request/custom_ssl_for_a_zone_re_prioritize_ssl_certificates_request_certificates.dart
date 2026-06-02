@@ -22,10 +22,13 @@ CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates copyWith({TlsCer
   id: id != null ? id() : this.id,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates &&
           id == other.id &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(id, priority); } 
-@override String toString() { return 'CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates(id: $id, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(id, priority);
+
+@override String toString() => 'CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates(id: $id, priority: $priority)';
+
  }

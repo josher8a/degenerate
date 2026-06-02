@@ -29,10 +29,13 @@ AccessConnectionRulesSsh copyWith({AccessAllowEmailAlias? Function()? allowEmail
   allowEmailAlias: allowEmailAlias != null ? allowEmailAlias() : this.allowEmailAlias,
   usernames: usernames ?? this.usernames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessConnectionRulesSsh &&
           allowEmailAlias == other.allowEmailAlias &&
-          listEquals(usernames, other.usernames); } 
-@override int get hashCode { return Object.hash(allowEmailAlias, Object.hashAll(usernames)); } 
-@override String toString() { return 'AccessConnectionRulesSsh(allowEmailAlias: $allowEmailAlias, usernames: $usernames)'; } 
+          listEquals(usernames, other.usernames);
+
+@override int get hashCode => Object.hash(allowEmailAlias, Object.hashAll(usernames));
+
+@override String toString() => 'AccessConnectionRulesSsh(allowEmailAlias: $allowEmailAlias, usernames: $usernames)';
+
  }

@@ -57,7 +57,7 @@ TunnelHostnameRoute copyWith({TunnelHostnameComment? Function()? comment, Tunnel
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
   tunnelName: tunnelName != null ? tunnelName() : this.tunnelName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelHostnameRoute &&
           comment == other.comment &&
           createdAt == other.createdAt &&
@@ -65,7 +65,10 @@ TunnelHostnameRoute copyWith({TunnelHostnameComment? Function()? comment, Tunnel
           hostname == other.hostname &&
           id == other.id &&
           tunnelId == other.tunnelId &&
-          tunnelName == other.tunnelName; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deletedAt, hostname, id, tunnelId, tunnelName); } 
-@override String toString() { return 'TunnelHostnameRoute(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, hostname: $hostname, id: $id, tunnelId: $tunnelId, tunnelName: $tunnelName)'; } 
+          tunnelName == other.tunnelName;
+
+@override int get hashCode => Object.hash(comment, createdAt, deletedAt, hostname, id, tunnelId, tunnelName);
+
+@override String toString() => 'TunnelHostnameRoute(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, hostname: $hostname, id: $id, tunnelId: $tunnelId, tunnelName: $tunnelName)';
+
  }

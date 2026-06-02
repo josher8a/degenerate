@@ -23,10 +23,13 @@ DlpContextAwareness copyWith({bool? enabled, DlpSkipConfig? skip, }) { return Dl
   enabled: enabled ?? this.enabled,
   skip: skip ?? this.skip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpContextAwareness &&
           enabled == other.enabled &&
-          skip == other.skip; } 
-@override int get hashCode { return Object.hash(enabled, skip); } 
-@override String toString() { return 'DlpContextAwareness(enabled: $enabled, skip: $skip)'; } 
+          skip == other.skip;
+
+@override int get hashCode => Object.hash(enabled, skip);
+
+@override String toString() => 'DlpContextAwareness(enabled: $enabled, skip: $skip)';
+
  }

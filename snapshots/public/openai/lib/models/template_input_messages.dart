@@ -23,10 +23,13 @@ TemplateInputMessages copyWith({InputMessagesTemplateType? type, List<TemplateIn
   type: type ?? this.type,
   template: template ?? this.template,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TemplateInputMessages &&
           type == other.type &&
-          listEquals(template, other.template); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(template)); } 
-@override String toString() { return 'TemplateInputMessages(type: $type, template: $template)'; } 
+          listEquals(template, other.template);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(template));
+
+@override String toString() => 'TemplateInputMessages(type: $type, template: $template)';
+
  }

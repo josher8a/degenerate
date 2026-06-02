@@ -32,10 +32,13 @@ RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 copyWith({String? e
   encrypted: encrypted ?? this.encrypted,
   notEncrypted: notEncrypted ?? this.notEncrypted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0 &&
           encrypted == other.encrypted &&
-          notEncrypted == other.notEncrypted; } 
-@override int get hashCode { return Object.hash(encrypted, notEncrypted); } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(encrypted: $encrypted, notEncrypted: $notEncrypted)'; } 
+          notEncrypted == other.notEncrypted;
+
+@override int get hashCode => Object.hash(encrypted, notEncrypted);
+
+@override String toString() => 'RadarGetEmailRoutingSummaryByEncryptedResponseResultSummary0(encrypted: $encrypted, notEncrypted: $notEncrypted)';
+
  }

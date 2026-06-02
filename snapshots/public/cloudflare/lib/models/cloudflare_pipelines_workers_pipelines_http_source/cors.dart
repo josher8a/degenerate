@@ -25,9 +25,12 @@ return errors; }
 Cors copyWith({List<String>? Function()? origins}) { return Cors(
   origins: origins != null ? origins() : this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Cors &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hashAll(origins ?? const []); } 
-@override String toString() { return 'Cors(origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hashAll(origins ?? const []);
+
+@override String toString() => 'Cors(origins: $origins)';
+
  }

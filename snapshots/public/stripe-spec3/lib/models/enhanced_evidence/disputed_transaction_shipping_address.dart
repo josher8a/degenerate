@@ -40,14 +40,17 @@ DisputedTransactionShippingAddress copyWith({City? Function()? city, ShippingAdd
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputedTransactionShippingAddress &&
           city == other.city &&
           country == other.country &&
           line1 == other.line1 &&
           line2 == other.line2 &&
           postalCode == other.postalCode &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
-@override String toString() { return 'DisputedTransactionShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(city, country, line1, line2, postalCode, state);
+
+@override String toString() => 'DisputedTransactionShippingAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)';
+
  }

@@ -31,12 +31,15 @@ TeamsDevicesDeviceManagedNetworks copyWith({TeamsDevicesSchemasConfigResponse? F
   networkId: networkId != null ? networkId() : this.networkId,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceManagedNetworks &&
           config == other.config &&
           name == other.name &&
           networkId == other.networkId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, name, networkId, type); } 
-@override String toString() { return 'TeamsDevicesDeviceManagedNetworks(config: $config, name: $name, networkId: $networkId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, name, networkId, type);
+
+@override String toString() => 'TeamsDevicesDeviceManagedNetworks(config: $config, name: $name, networkId: $networkId, type: $type)';
+
  }

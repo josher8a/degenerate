@@ -69,7 +69,7 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
   requester: requester ?? this.requester,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationRepositoriesAdded &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -80,7 +80,10 @@ WebhookInstallationRepositoriesAdded copyWith({WebhookInstallationRepositoriesAd
           repository == other.repository &&
           repositorySelection == other.repositorySelection &&
           requester == other.requester &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositoriesAdded), Object.hashAll(repositoriesRemoved), repository, repositorySelection, requester, sender); } 
-@override String toString() { return 'WebhookInstallationRepositoriesAdded(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositoriesAdded: $repositoriesAdded, repositoriesRemoved: $repositoriesRemoved, repository: $repository, repositorySelection: $repositorySelection, requester: $requester, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, Object.hashAll(repositoriesAdded), Object.hashAll(repositoriesRemoved), repository, repositorySelection, requester, sender);
+
+@override String toString() => 'WebhookInstallationRepositoriesAdded(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositoriesAdded: $repositoriesAdded, repositoriesRemoved: $repositoriesRemoved, repository: $repository, repositorySelection: $repositorySelection, requester: $requester, sender: $sender)';
+
  }

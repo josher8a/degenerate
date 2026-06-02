@@ -40,13 +40,16 @@ GistCommit copyWith({Uri? url, String? version, SimpleUser? Function()? user, Ch
   changeStatus: changeStatus ?? this.changeStatus,
   committedAt: committedAt ?? this.committedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistCommit &&
           url == other.url &&
           version == other.version &&
           user == other.user &&
           changeStatus == other.changeStatus &&
-          committedAt == other.committedAt; } 
-@override int get hashCode { return Object.hash(url, version, user, changeStatus, committedAt); } 
-@override String toString() { return 'GistCommit(url: $url, version: $version, user: $user, changeStatus: $changeStatus, committedAt: $committedAt)'; } 
+          committedAt == other.committedAt;
+
+@override int get hashCode => Object.hash(url, version, user, changeStatus, committedAt);
+
+@override String toString() => 'GistCommit(url: $url, version: $version, user: $user, changeStatus: $changeStatus, committedAt: $committedAt)';
+
  }

@@ -33,11 +33,14 @@ ResponseAudioTranscriptDeltaEvent copyWith({String? type, String? delta, int? se
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseAudioTranscriptDeltaEvent &&
           type == other.type &&
           delta == other.delta &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, delta, sequenceNumber); } 
-@override String toString() { return 'ResponseAudioTranscriptDeltaEvent(type: $type, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, delta, sequenceNumber);
+
+@override String toString() => 'ResponseAudioTranscriptDeltaEvent(type: $type, delta: $delta, sequenceNumber: $sequenceNumber)';
+
  }

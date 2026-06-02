@@ -41,13 +41,16 @@ HttpGetAction copyWith({String? Function()? host, List<HttpHeader>? Function()? 
   port: port ?? this.port,
   scheme: scheme != null ? scheme() : this.scheme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HttpGetAction &&
           host == other.host &&
           listEquals(httpHeaders, other.httpHeaders) &&
           path == other.path &&
           port == other.port &&
-          scheme == other.scheme; } 
-@override int get hashCode { return Object.hash(host, Object.hashAll(httpHeaders ?? const []), path, port, scheme); } 
-@override String toString() { return 'HttpGetAction(host: $host, httpHeaders: $httpHeaders, path: $path, port: $port, scheme: $scheme)'; } 
+          scheme == other.scheme;
+
+@override int get hashCode => Object.hash(host, Object.hashAll(httpHeaders ?? const []), path, port, scheme);
+
+@override String toString() => 'HttpGetAction(host: $host, httpHeaders: $httpHeaders, path: $path, port: $port, scheme: $scheme)';
+
  }

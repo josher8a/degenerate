@@ -20,10 +20,13 @@ DeliveryEstimate copyWith({Maximum? Function()? maximum, Minimum? Function()? mi
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeliveryEstimate &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(maximum, minimum); } 
-@override String toString() { return 'DeliveryEstimate(maximum: $maximum, minimum: $minimum)'; } 
+          minimum == other.minimum;
+
+@override int get hashCode => Object.hash(maximum, minimum);
+
+@override String toString() => 'DeliveryEstimate(maximum: $maximum, minimum: $minimum)';
+
  }

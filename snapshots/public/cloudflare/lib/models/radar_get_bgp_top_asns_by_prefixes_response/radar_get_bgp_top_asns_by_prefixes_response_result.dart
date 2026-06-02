@@ -21,10 +21,13 @@ RadarGetBgpTopAsnsByPrefixesResponseResult copyWith({List<RadarGetBgpTopAsnsByPr
   asns: asns ?? this.asns,
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsnsByPrefixesResponseResult &&
           listEquals(asns, other.asns) &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asns), meta); } 
-@override String toString() { return 'RadarGetBgpTopAsnsByPrefixesResponseResult(asns: $asns, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(Object.hashAll(asns), meta);
+
+@override String toString() => 'RadarGetBgpTopAsnsByPrefixesResponseResult(asns: $asns, meta: $meta)';
+
  }

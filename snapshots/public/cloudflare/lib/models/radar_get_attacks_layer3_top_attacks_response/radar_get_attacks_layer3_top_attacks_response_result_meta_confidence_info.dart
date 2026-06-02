@@ -22,10 +22,13 @@ RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo copyWith({List<C
   annotations: annotations ?? this.annotations,
   level: level ?? this.level,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo &&
           listEquals(annotations, other.annotations) &&
-          level == other.level; } 
-@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
-@override String toString() { return 'RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+          level == other.level;
+
+@override int get hashCode => Object.hash(Object.hashAll(annotations), level);
+
+@override String toString() => 'RadarGetAttacksLayer3TopAttacksResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)';
+
  }

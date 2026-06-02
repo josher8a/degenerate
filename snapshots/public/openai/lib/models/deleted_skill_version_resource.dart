@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedSkillVersionResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedSkillVersionResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeletedSkillVersionResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeletedSkillVersionResourceObject($value)';
+
  }
 @immutable final class DeletedSkillVersionResource {const DeletedSkillVersionResource({required this.deleted, required this.id, required this.version, this.object = DeletedSkillVersionResourceObject.skillVersionDeleted, });
 
@@ -55,12 +58,15 @@ DeletedSkillVersionResource copyWith({DeletedSkillVersionResourceObject? object,
   id: id ?? this.id,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedSkillVersionResource &&
           object == other.object &&
           deleted == other.deleted &&
           id == other.id &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(object, deleted, id, version); } 
-@override String toString() { return 'DeletedSkillVersionResource(object: $object, deleted: $deleted, id: $id, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(object, deleted, id, version);
+
+@override String toString() => 'DeletedSkillVersionResource(object: $object, deleted: $deleted, id: $id, version: $version)';
+
  }

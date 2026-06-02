@@ -75,7 +75,7 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImag
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageToTextVariant2 &&
           frequencyPenalty == other.frequencyPenalty &&
           image == other.image &&
@@ -87,7 +87,10 @@ ImageToTextVariant2 copyWith({double? Function()? frequencyPenalty, MessagesImag
           seed == other.seed &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, image, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, temperature, topK, topP); } 
-@override String toString() { return 'ImageToTextVariant2(frequencyPenalty: $frequencyPenalty, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(frequencyPenalty, image, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, seed, temperature, topK, topP);
+
+@override String toString() => 'ImageToTextVariant2(frequencyPenalty: $frequencyPenalty, image: $image, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, seed: $seed, temperature: $temperature, topK: $topK, topP: $topP)';
+
  }

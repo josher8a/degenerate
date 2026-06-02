@@ -57,13 +57,16 @@ TerminalConfigurationConfigurationResourceEnterpriseTlsWifi copyWith({String? Fu
   privateKeyFilePassword: privateKeyFilePassword != null ? privateKeyFilePassword() : this.privateKeyFilePassword,
   ssid: ssid ?? this.ssid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceEnterpriseTlsWifi &&
           caCertificateFile == other.caCertificateFile &&
           clientCertificateFile == other.clientCertificateFile &&
           privateKeyFile == other.privateKeyFile &&
           privateKeyFilePassword == other.privateKeyFilePassword &&
-          ssid == other.ssid; } 
-@override int get hashCode { return Object.hash(caCertificateFile, clientCertificateFile, privateKeyFile, privateKeyFilePassword, ssid); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceEnterpriseTlsWifi(caCertificateFile: $caCertificateFile, clientCertificateFile: $clientCertificateFile, privateKeyFile: $privateKeyFile, privateKeyFilePassword: $privateKeyFilePassword, ssid: $ssid)'; } 
+          ssid == other.ssid;
+
+@override int get hashCode => Object.hash(caCertificateFile, clientCertificateFile, privateKeyFile, privateKeyFilePassword, ssid);
+
+@override String toString() => 'TerminalConfigurationConfigurationResourceEnterpriseTlsWifi(caCertificateFile: $caCertificateFile, clientCertificateFile: $clientCertificateFile, privateKeyFile: $privateKeyFile, privateKeyFilePassword: $privateKeyFilePassword, ssid: $ssid)';
+
  }

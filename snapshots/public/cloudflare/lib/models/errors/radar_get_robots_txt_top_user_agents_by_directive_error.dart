@@ -17,7 +17,8 @@ final class RadarGetRobotsTxtTopUserAgentsByDirectiveError$404 extends RadarGetR
 
 final RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetRobotsTxtTopUserAgentsByDirectiveError$Unknown extends RadarGetRobotsTxtTopUserAgentsByDirectiveError {const RadarGetRobotsTxtTopUserAgentsByDirectiveError$Unknown(this.statusCode, this.rawBody, );
 

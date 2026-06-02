@@ -32,12 +32,15 @@ TerminalConfigurationConfigurationResourceWifiConfig copyWith({TerminalConfigura
   personalPsk: personalPsk != null ? personalPsk() : this.personalPsk,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceWifiConfig &&
           enterpriseEapPeap == other.enterpriseEapPeap &&
           enterpriseEapTls == other.enterpriseEapTls &&
           personalPsk == other.personalPsk &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(enterpriseEapPeap, enterpriseEapTls, personalPsk, type); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceWifiConfig(enterpriseEapPeap: $enterpriseEapPeap, enterpriseEapTls: $enterpriseEapTls, personalPsk: $personalPsk, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(enterpriseEapPeap, enterpriseEapTls, personalPsk, type);
+
+@override String toString() => 'TerminalConfigurationConfigurationResourceWifiConfig(enterpriseEapPeap: $enterpriseEapPeap, enterpriseEapTls: $enterpriseEapTls, personalPsk: $personalPsk, type: $type)';
+
  }

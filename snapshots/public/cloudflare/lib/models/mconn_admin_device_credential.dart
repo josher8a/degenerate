@@ -39,13 +39,16 @@ MconnAdminDeviceCredential copyWith({MconnUuid? deviceId, MconnUuid? id, String?
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminDeviceCredential &&
           deviceId == other.deviceId &&
           id == other.id &&
           provisionedAt == other.provisionedAt &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(deviceId, id, provisionedAt, type, value); } 
-@override String toString() { return 'MconnAdminDeviceCredential(deviceId: $deviceId, id: $id, provisionedAt: $provisionedAt, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(deviceId, id, provisionedAt, type, value);
+
+@override String toString() => 'MconnAdminDeviceCredential(deviceId: $deviceId, id: $id, provisionedAt: $provisionedAt, type: $type, value: $value)';
+
  }

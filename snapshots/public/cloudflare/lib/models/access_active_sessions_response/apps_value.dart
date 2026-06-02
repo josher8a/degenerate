@@ -34,12 +34,15 @@ AppsValue copyWith({String? Function()? hostname, String? Function()? name, Stri
   type: type != null ? type() : this.type,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsValue &&
           hostname == other.hostname &&
           name == other.name &&
           type == other.type &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(hostname, name, type, uid); } 
-@override String toString() { return 'AppsValue(hostname: $hostname, name: $name, type: $type, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(hostname, name, type, uid);
+
+@override String toString() => 'AppsValue(hostname: $hostname, name: $name, type: $type, uid: $uid)';
+
  }

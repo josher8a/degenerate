@@ -33,12 +33,15 @@ Attempts copyWith({DateTime? Function()? end, ResultError? Function()? error, Da
   start: start ?? this.start,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Attempts &&
           end == other.end &&
           error == other.error &&
           start == other.start &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(end, error, start, success); } 
-@override String toString() { return 'Attempts(end: $end, error: $error, start: $start, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(end, error, start, success);
+
+@override String toString() => 'Attempts(end: $end, error: $error, start: $start, success: $success)';
+
  }

@@ -46,12 +46,15 @@ Wandb copyWith({String? project, String? Function()? name, String? Function()? e
   entity: entity != null ? entity() : this.entity,
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Wandb &&
           project == other.project &&
           name == other.name &&
           entity == other.entity &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(project, name, entity, Object.hashAll(tags ?? const [])); } 
-@override String toString() { return 'Wandb(project: $project, name: $name, entity: $entity, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(project, name, entity, Object.hashAll(tags ?? const []));
+
+@override String toString() => 'Wandb(project: $project, name: $name, entity: $entity, tags: $tags)';
+
  }

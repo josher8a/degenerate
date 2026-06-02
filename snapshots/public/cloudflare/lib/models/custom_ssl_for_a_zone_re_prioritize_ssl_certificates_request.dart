@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
 CustomSslForAZoneRePrioritizeSslCertificatesRequest copyWith({List<CustomSslForAZoneRePrioritizeSslCertificatesRequestCertificates>? certificates}) { return CustomSslForAZoneRePrioritizeSslCertificatesRequest(
   certificates: certificates ?? this.certificates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomSslForAZoneRePrioritizeSslCertificatesRequest &&
-          listEquals(certificates, other.certificates); } 
-@override int get hashCode { return Object.hashAll(certificates); } 
-@override String toString() { return 'CustomSslForAZoneRePrioritizeSslCertificatesRequest(certificates: $certificates)'; } 
+          listEquals(certificates, other.certificates);
+
+@override int get hashCode => Object.hashAll(certificates);
+
+@override String toString() => 'CustomSslForAZoneRePrioritizeSslCertificatesRequest(certificates: $certificates)';
+
  }

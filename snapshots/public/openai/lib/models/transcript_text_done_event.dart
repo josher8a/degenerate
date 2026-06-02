@@ -38,12 +38,15 @@ TranscriptTextDoneEvent copyWith({String? type, String? text, List<TranscriptTex
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDoneEvent &&
           type == other.type &&
           text == other.text &&
           listEquals(logprobs, other.logprobs) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(type, text, Object.hashAll(logprobs ?? const []), usage); } 
-@override String toString() { return 'TranscriptTextDoneEvent(type: $type, text: $text, logprobs: $logprobs, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(type, text, Object.hashAll(logprobs ?? const []), usage);
+
+@override String toString() => 'TranscriptTextDoneEvent(type: $type, text: $text, logprobs: $logprobs, usage: $usage)';
+
  }

@@ -32,11 +32,14 @@ EmailSecurityUpdateDisplayNameRequest copyWith({String? Function()? email, bool?
   isEmailRegex: isEmailRegex != null ? isEmailRegex() : this.isEmailRegex,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateDisplayNameRequest &&
           email == other.email &&
           isEmailRegex == other.isEmailRegex &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, isEmailRegex, name); } 
-@override String toString() { return 'EmailSecurityUpdateDisplayNameRequest(email: $email, isEmailRegex: $isEmailRegex, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(email, isEmailRegex, name);
+
+@override String toString() => 'EmailSecurityUpdateDisplayNameRequest(email: $email, isEmailRegex: $isEmailRegex, name: $name)';
+
  }

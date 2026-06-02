@@ -30,11 +30,14 @@ IssuingCardholderSpendingLimit copyWith({int? amount, List<Categories>? Function
   categories: categories != null ? categories() : this.categories,
   interval: interval ?? this.interval,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderSpendingLimit &&
           amount == other.amount &&
           listEquals(categories, other.categories) &&
-          interval == other.interval; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(categories ?? const []), interval); } 
-@override String toString() { return 'IssuingCardholderSpendingLimit(amount: $amount, categories: $categories, interval: $interval)'; } 
+          interval == other.interval;
+
+@override int get hashCode => Object.hash(amount, Object.hashAll(categories ?? const []), interval);
+
+@override String toString() => 'IssuingCardholderSpendingLimit(amount: $amount, categories: $categories, interval: $interval)';
+
  }

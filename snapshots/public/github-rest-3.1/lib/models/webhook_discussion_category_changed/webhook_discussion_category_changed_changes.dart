@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
 WebhookDiscussionCategoryChangedChanges copyWith({ChangesCategory? category}) { return WebhookDiscussionCategoryChangedChanges(
   category: category ?? this.category,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionCategoryChangedChanges &&
-          category == other.category; } 
-@override int get hashCode { return category.hashCode; } 
-@override String toString() { return 'WebhookDiscussionCategoryChangedChanges(category: $category)'; } 
+          category == other.category;
+
+@override int get hashCode => category.hashCode;
+
+@override String toString() => 'WebhookDiscussionCategoryChangedChanges(category: $category)';
+
  }

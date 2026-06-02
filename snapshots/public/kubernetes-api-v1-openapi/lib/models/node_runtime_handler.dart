@@ -23,10 +23,13 @@ NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures? Function()? features, S
   features: features != null ? features() : this.features,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeRuntimeHandler &&
           features == other.features &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(features, name); } 
-@override String toString() { return 'NodeRuntimeHandler(features: $features, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(features, name);
+
+@override String toString() => 'NodeRuntimeHandler(features: $features, name: $name)';
+
  }

@@ -22,10 +22,13 @@ RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResult copyWith({RadarGet
   meta: meta ?? this.meta,
   top0: top0 ?? this.top0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResult &&
           meta == other.meta &&
-          listEquals(top0, other.top0); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(top0)); } 
-@override String toString() { return 'RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResult(meta: $meta, top0: $top0)'; } 
+          listEquals(top0, other.top0);
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(top0));
+
+@override String toString() => 'RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResult(meta: $meta, top0: $top0)';
+
  }

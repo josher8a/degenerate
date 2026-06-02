@@ -32,12 +32,15 @@ NscInterconnectCreatePhysicalBody copyWith({String? account, String? type, Strin
   slotId: slotId ?? this.slotId,
   speed: speed != null ? speed() : this.speed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscInterconnectCreatePhysicalBody &&
           account == other.account &&
           type == other.type &&
           slotId == other.slotId &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(account, type, slotId, speed); } 
-@override String toString() { return 'NscInterconnectCreatePhysicalBody(account: $account, type: $type, slotId: $slotId, speed: $speed)'; } 
+          speed == other.speed;
+
+@override int get hashCode => Object.hash(account, type, slotId, speed);
+
+@override String toString() => 'NscInterconnectCreatePhysicalBody(account: $account, type: $type, slotId: $slotId, speed: $speed)';
+
  }

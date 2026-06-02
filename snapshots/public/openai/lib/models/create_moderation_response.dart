@@ -31,11 +31,14 @@ CreateModerationResponse copyWith({String? id, String? model, List<CreateModerat
   model: model ?? this.model,
   results: results ?? this.results,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateModerationResponse &&
           id == other.id &&
           model == other.model &&
-          listEquals(results, other.results); } 
-@override int get hashCode { return Object.hash(id, model, Object.hashAll(results)); } 
-@override String toString() { return 'CreateModerationResponse(id: $id, model: $model, results: $results)'; } 
+          listEquals(results, other.results);
+
+@override int get hashCode => Object.hash(id, model, Object.hashAll(results));
+
+@override String toString() => 'CreateModerationResponse(id: $id, model: $model, results: $results)';
+
  }

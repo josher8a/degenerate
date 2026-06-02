@@ -36,15 +36,19 @@ final ZarazSecretVariable zarazSecretVariable;
 
 @override String get type => 'secret';
 
-@override Map<String, dynamic> toJson() { return {...zarazSecretVariable.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...zarazSecretVariable.toJson(), 'type': type};
+
 VariablesValueSecret copyWith({String? name, String? value, }) { return VariablesValueSecret(zarazSecretVariable.copyWith(
   name: name,
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VariablesValueSecret && zarazSecretVariable == other.zarazSecretVariable; } 
-@override int get hashCode { return zarazSecretVariable.hashCode; } 
-@override String toString() { return 'VariablesValue.secret($zarazSecretVariable)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VariablesValueSecret && zarazSecretVariable == other.zarazSecretVariable;
+
+@override int get hashCode => zarazSecretVariable.hashCode;
+
+@override String toString() => 'VariablesValue.secret($zarazSecretVariable)';
+
 @override String get name => zarazSecretVariable.name;
 
  }
@@ -56,15 +60,19 @@ final ZarazStringVariable zarazStringVariable;
 
 @override String get type => 'string';
 
-@override Map<String, dynamic> toJson() { return {...zarazStringVariable.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...zarazStringVariable.toJson(), 'type': type};
+
 VariablesValueString copyWith({String? name, String? value, }) { return VariablesValueString(zarazStringVariable.copyWith(
   name: name,
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VariablesValueString && zarazStringVariable == other.zarazStringVariable; } 
-@override int get hashCode { return zarazStringVariable.hashCode; } 
-@override String toString() { return 'VariablesValue.string($zarazStringVariable)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VariablesValueString && zarazStringVariable == other.zarazStringVariable;
+
+@override int get hashCode => zarazStringVariable.hashCode;
+
+@override String toString() => 'VariablesValue.string($zarazStringVariable)';
+
 @override String get name => zarazStringVariable.name;
 
  }
@@ -76,15 +84,19 @@ final ZarazWorkerVariable zarazWorkerVariable;
 
 @override String get type => 'worker';
 
-@override Map<String, dynamic> toJson() { return {...zarazWorkerVariable.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...zarazWorkerVariable.toJson(), 'type': type};
+
 VariablesValueWorker copyWith({String? name, ZarazWorkerVariableValue? value, }) { return VariablesValueWorker(zarazWorkerVariable.copyWith(
   name: name,
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VariablesValueWorker && zarazWorkerVariable == other.zarazWorkerVariable; } 
-@override int get hashCode { return zarazWorkerVariable.hashCode; } 
-@override String toString() { return 'VariablesValue.worker($zarazWorkerVariable)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VariablesValueWorker && zarazWorkerVariable == other.zarazWorkerVariable;
+
+@override int get hashCode => zarazWorkerVariable.hashCode;
+
+@override String toString() => 'VariablesValue.worker($zarazWorkerVariable)';
+
 @override String get name => zarazWorkerVariable.name;
 
  }
@@ -96,11 +108,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VariablesValue$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'VariablesValue.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VariablesValue$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'VariablesValue.unknown($json)';
+
 @override String get name => json['name'] as String;
 
  }

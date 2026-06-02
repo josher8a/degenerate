@@ -45,13 +45,16 @@ SubscriptionsCreateRequest copyWith({MqEventDestination? Function()? destination
   name: name != null ? name() : this.name,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsCreateRequest &&
           destination == other.destination &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
           name == other.name &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(destination, enabled, Object.hashAll(events ?? const []), name, source); } 
-@override String toString() { return 'SubscriptionsCreateRequest(destination: $destination, enabled: $enabled, events: $events, name: $name, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(destination, enabled, Object.hashAll(events ?? const []), name, source);
+
+@override String toString() => 'SubscriptionsCreateRequest(destination: $destination, enabled: $enabled, events: $events, name: $name, source: $source)';
+
  }

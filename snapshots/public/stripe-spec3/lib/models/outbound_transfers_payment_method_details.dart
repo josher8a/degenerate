@@ -33,12 +33,15 @@ OutboundTransfersPaymentMethodDetails copyWith({TreasurySharedResourceBillingDet
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutboundTransfersPaymentMethodDetails &&
           billingDetails == other.billingDetails &&
           financialAccount == other.financialAccount &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(billingDetails, financialAccount, type, usBankAccount); } 
-@override String toString() { return 'OutboundTransfersPaymentMethodDetails(billingDetails: $billingDetails, financialAccount: $financialAccount, type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(billingDetails, financialAccount, type, usBankAccount);
+
+@override String toString() => 'OutboundTransfersPaymentMethodDetails(billingDetails: $billingDetails, financialAccount: $financialAccount, type: $type, usBankAccount: $usBankAccount)';
+
  }

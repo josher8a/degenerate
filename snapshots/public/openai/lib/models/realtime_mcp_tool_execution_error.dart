@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeMcpToolExecutionErrorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeMcpToolExecutionErrorType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeMcpToolExecutionErrorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeMcpToolExecutionErrorType($value)';
+
  }
 @immutable final class RealtimeMcpToolExecutionError {const RealtimeMcpToolExecutionError({required this.type, required this.message, });
 
@@ -42,10 +45,13 @@ RealtimeMcpToolExecutionError copyWith({RealtimeMcpToolExecutionErrorType? type,
   type: type ?? this.type,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpToolExecutionError &&
           type == other.type &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(type, message); } 
-@override String toString() { return 'RealtimeMcpToolExecutionError(type: $type, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(type, message);
+
+@override String toString() => 'RealtimeMcpToolExecutionError(type: $type, message: $message)';
+
  }

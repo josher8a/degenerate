@@ -25,11 +25,14 @@ ProjectChoices copyWith({String? Function()? vcs, String? Function()? tfvcProjec
   tfvcProject: tfvcProject != null ? tfvcProject() : this.tfvcProject,
   humanName: humanName != null ? humanName() : this.humanName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectChoices &&
           vcs == other.vcs &&
           tfvcProject == other.tfvcProject &&
-          humanName == other.humanName; } 
-@override int get hashCode { return Object.hash(vcs, tfvcProject, humanName); } 
-@override String toString() { return 'ProjectChoices(vcs: $vcs, tfvcProject: $tfvcProject, humanName: $humanName)'; } 
+          humanName == other.humanName;
+
+@override int get hashCode => Object.hash(vcs, tfvcProject, humanName);
+
+@override String toString() => 'ProjectChoices(vcs: $vcs, tfvcProject: $tfvcProject, humanName: $humanName)';
+
  }

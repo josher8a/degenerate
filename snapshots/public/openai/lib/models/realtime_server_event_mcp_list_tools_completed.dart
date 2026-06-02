@@ -31,11 +31,14 @@ RealtimeServerEventMcpListToolsCompleted copyWith({String? eventId, String? type
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventMcpListToolsCompleted &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeServerEventMcpListToolsCompleted(eventId: $eventId, type: $type, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, itemId);
+
+@override String toString() => 'RealtimeServerEventMcpListToolsCompleted(eventId: $eventId, type: $type, itemId: $itemId)';
+
  }

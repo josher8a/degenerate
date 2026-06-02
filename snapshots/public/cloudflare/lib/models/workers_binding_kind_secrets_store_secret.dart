@@ -40,12 +40,15 @@ WorkersBindingKindSecretsStoreSecret copyWith({WorkersBindingName? name, String?
   storeId: storeId ?? this.storeId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindSecretsStoreSecret &&
           name == other.name &&
           secretName == other.secretName &&
           storeId == other.storeId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, secretName, storeId, type); } 
-@override String toString() { return 'WorkersBindingKindSecretsStoreSecret(name: $name, secretName: $secretName, storeId: $storeId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, secretName, storeId, type);
+
+@override String toString() => 'WorkersBindingKindSecretsStoreSecret(name: $name, secretName: $secretName, storeId: $storeId, type: $type)';
+
  }

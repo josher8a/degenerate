@@ -53,14 +53,17 @@ ResponseImageGenCallPartialImageEvent copyWith({String? type, int? outputIndex, 
   partialImageIndex: partialImageIndex ?? this.partialImageIndex,
   partialImageB64: partialImageB64 ?? this.partialImageB64,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseImageGenCallPartialImageEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
           sequenceNumber == other.sequenceNumber &&
           partialImageIndex == other.partialImageIndex &&
-          partialImageB64 == other.partialImageB64; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, sequenceNumber, partialImageIndex, partialImageB64); } 
-@override String toString() { return 'ResponseImageGenCallPartialImageEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber, partialImageIndex: $partialImageIndex, partialImageB64: $partialImageB64)'; } 
+          partialImageB64 == other.partialImageB64;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, sequenceNumber, partialImageIndex, partialImageB64);
+
+@override String toString() => 'ResponseImageGenCallPartialImageEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber, partialImageIndex: $partialImageIndex, partialImageB64: $partialImageB64)';
+
  }

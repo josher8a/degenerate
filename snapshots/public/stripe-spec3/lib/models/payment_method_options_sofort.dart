@@ -29,10 +29,13 @@ PaymentMethodOptionsSofort copyWith({PaymentMethodDetailsSofortPreferredLanguage
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsSofort &&
           preferredLanguage == other.preferredLanguage &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(preferredLanguage, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsSofort(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(preferredLanguage, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsSofort(preferredLanguage: $preferredLanguage, setupFutureUsage: $setupFutureUsage)';
+
  }

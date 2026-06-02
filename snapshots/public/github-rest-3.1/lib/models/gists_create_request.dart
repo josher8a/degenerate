@@ -27,11 +27,14 @@ GistsCreateRequest copyWith({String? Function()? description, Map<String,GistsCr
   files: files ?? this.files,
   public: public != null ? public() : this.public,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistsCreateRequest &&
           description == other.description &&
           files == other.files &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(description, files, public); } 
-@override String toString() { return 'GistsCreateRequest(description: $description, files: $files, public: $public)'; } 
+          public == other.public;
+
+@override int get hashCode => Object.hash(description, files, public);
+
+@override String toString() => 'GistsCreateRequest(description: $description, files: $files, public: $public)';
+
  }

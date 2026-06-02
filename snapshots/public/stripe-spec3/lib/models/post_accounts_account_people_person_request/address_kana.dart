@@ -76,7 +76,7 @@ AddressKana copyWith({String? Function()? city, String? Function()? country, Str
   state: state != null ? state() : this.state,
   town: town != null ? town() : this.town,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressKana &&
           city == other.city &&
           country == other.country &&
@@ -84,7 +84,10 @@ AddressKana copyWith({String? Function()? city, String? Function()? country, Str
           line2 == other.line2 &&
           postalCode == other.postalCode &&
           state == other.state &&
-          town == other.town; } 
-@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state, town); } 
-@override String toString() { return 'AddressKana(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state, town: $town)'; } 
+          town == other.town;
+
+@override int get hashCode => Object.hash(city, country, line1, line2, postalCode, state, town);
+
+@override String toString() => 'AddressKana(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state, town: $town)';
+
  }

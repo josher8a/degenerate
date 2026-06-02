@@ -30,12 +30,15 @@ WebhookRepositoryRulesetEditedChanges copyWith({WebhookRepositoryRulesetEditedCh
   conditions: conditions != null ? conditions() : this.conditions,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryRulesetEditedChanges &&
           name == other.name &&
           enforcement == other.enforcement &&
           conditions == other.conditions &&
-          rules == other.rules; } 
-@override int get hashCode { return Object.hash(name, enforcement, conditions, rules); } 
-@override String toString() { return 'WebhookRepositoryRulesetEditedChanges(name: $name, enforcement: $enforcement, conditions: $conditions, rules: $rules)'; } 
+          rules == other.rules;
+
+@override int get hashCode => Object.hash(name, enforcement, conditions, rules);
+
+@override String toString() => 'WebhookRepositoryRulesetEditedChanges(name: $name, enforcement: $enforcement, conditions: $conditions, rules: $rules)';
+
  }

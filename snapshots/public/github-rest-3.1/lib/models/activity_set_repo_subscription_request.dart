@@ -22,10 +22,13 @@ ActivitySetRepoSubscriptionRequest copyWith({bool? Function()? subscribed, bool?
   subscribed: subscribed != null ? subscribed() : this.subscribed,
   ignored: ignored != null ? ignored() : this.ignored,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActivitySetRepoSubscriptionRequest &&
           subscribed == other.subscribed &&
-          ignored == other.ignored; } 
-@override int get hashCode { return Object.hash(subscribed, ignored); } 
-@override String toString() { return 'ActivitySetRepoSubscriptionRequest(subscribed: $subscribed, ignored: $ignored)'; } 
+          ignored == other.ignored;
+
+@override int get hashCode => Object.hash(subscribed, ignored);
+
+@override String toString() => 'ActivitySetRepoSubscriptionRequest(subscribed: $subscribed, ignored: $ignored)';
+
  }

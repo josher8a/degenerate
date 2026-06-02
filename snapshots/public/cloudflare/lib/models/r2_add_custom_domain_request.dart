@@ -50,13 +50,16 @@ R2AddCustomDomainRequest copyWith({List<String>? Function()? ciphers, String? do
   minTls: minTls != null ? minTls() : this.minTls,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2AddCustomDomainRequest &&
           listEquals(ciphers, other.ciphers) &&
           domain == other.domain &&
           enabled == other.enabled &&
           minTls == other.minTls &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, zoneId); } 
-@override String toString() { return 'R2AddCustomDomainRequest(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, zoneId);
+
+@override String toString() => 'R2AddCustomDomainRequest(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, zoneId: $zoneId)';
+
  }

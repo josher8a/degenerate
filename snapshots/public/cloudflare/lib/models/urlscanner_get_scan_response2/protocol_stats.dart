@@ -45,14 +45,17 @@ ProtocolStats copyWith({double? count, List<String>? countries, double? encodedS
   protocol: protocol ?? this.protocol,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtocolStats &&
           count == other.count &&
           listEquals(countries, other.countries) &&
           encodedSize == other.encodedSize &&
           listEquals(ips, other.ips) &&
           protocol == other.protocol &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), protocol, size); } 
-@override String toString() { return 'ProtocolStats(count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, protocol: $protocol, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), protocol, size);
+
+@override String toString() => 'ProtocolStats(count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, protocol: $protocol, size: $size)';
+
  }

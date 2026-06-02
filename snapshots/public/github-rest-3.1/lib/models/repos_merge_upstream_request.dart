@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
 ReposMergeUpstreamRequest copyWith({String? branch}) { return ReposMergeUpstreamRequest(
   branch: branch ?? this.branch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposMergeUpstreamRequest &&
-          branch == other.branch; } 
-@override int get hashCode { return branch.hashCode; } 
-@override String toString() { return 'ReposMergeUpstreamRequest(branch: $branch)'; } 
+          branch == other.branch;
+
+@override int get hashCode => branch.hashCode;
+
+@override String toString() => 'ReposMergeUpstreamRequest(branch: $branch)';
+
  }

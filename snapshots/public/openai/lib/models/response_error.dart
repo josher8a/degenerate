@@ -69,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseErrorCode($value)';
+
  }
 /// An error object returned when the model fails to generate a Response.
 /// 
@@ -99,10 +102,13 @@ ResponseError copyWith({ResponseErrorCode? code, String? message, }) { return Re
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'ResponseError(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'ResponseError(code: $code, message: $message)';
+
  }

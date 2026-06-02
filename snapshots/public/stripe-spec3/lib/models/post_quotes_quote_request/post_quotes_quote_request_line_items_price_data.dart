@@ -45,14 +45,17 @@ PostQuotesQuoteRequestLineItemsPriceData copyWith({String? currency, String? pro
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesQuoteRequestLineItemsPriceData &&
           currency == other.currency &&
           product == other.product &&
           recurring == other.recurring &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, product, recurring, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostQuotesQuoteRequestLineItemsPriceData(currency: $currency, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(currency, product, recurring, taxBehavior, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'PostQuotesQuoteRequestLineItemsPriceData(currency: $currency, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

@@ -38,12 +38,15 @@ CustomDeploymentRuleApp copyWith({int? id, String? slug, String? integrationUrl,
   integrationUrl: integrationUrl ?? this.integrationUrl,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomDeploymentRuleApp &&
           id == other.id &&
           slug == other.slug &&
           integrationUrl == other.integrationUrl &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(id, slug, integrationUrl, nodeId); } 
-@override String toString() { return 'CustomDeploymentRuleApp(id: $id, slug: $slug, integrationUrl: $integrationUrl, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(id, slug, integrationUrl, nodeId);
+
+@override String toString() => 'CustomDeploymentRuleApp(id: $id, slug: $slug, integrationUrl: $integrationUrl, nodeId: $nodeId)';
+
  }

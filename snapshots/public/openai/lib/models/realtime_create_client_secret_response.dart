@@ -33,11 +33,14 @@ RealtimeCreateClientSecretResponse copyWith({String? value, int? expiresAt, Real
   expiresAt: expiresAt ?? this.expiresAt,
   session: session ?? this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeCreateClientSecretResponse &&
           value == other.value &&
           expiresAt == other.expiresAt &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(value, expiresAt, session); } 
-@override String toString() { return 'RealtimeCreateClientSecretResponse(value: $value, expiresAt: $expiresAt, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(value, expiresAt, session);
+
+@override String toString() => 'RealtimeCreateClientSecretResponse(value: $value, expiresAt: $expiresAt, session: $session)';
+
  }

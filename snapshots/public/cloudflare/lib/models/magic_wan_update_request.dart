@@ -36,13 +36,16 @@ MagicWanUpdateRequest copyWith({String? Function()? name, MagicPort? Function()?
   staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
   vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicWanUpdateRequest &&
           name == other.name &&
           physport == other.physport &&
           priority == other.priority &&
           staticAddressing == other.staticAddressing &&
-          vlanTag == other.vlanTag; } 
-@override int get hashCode { return Object.hash(name, physport, priority, staticAddressing, vlanTag); } 
-@override String toString() { return 'MagicWanUpdateRequest(name: $name, physport: $physport, priority: $priority, staticAddressing: $staticAddressing, vlanTag: $vlanTag)'; } 
+          vlanTag == other.vlanTag;
+
+@override int get hashCode => Object.hash(name, physport, priority, staticAddressing, vlanTag);
+
+@override String toString() => 'MagicWanUpdateRequest(name: $name, physport: $physport, priority: $priority, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+
  }

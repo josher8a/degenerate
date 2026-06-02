@@ -44,14 +44,17 @@ ItemConverted copyWith({ItemConvertedAction? action, ItemConvertedChanges? chang
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemConverted &&
           action == other.action &&
           changes == other.changes &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2Item == other.projectsV2Item &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2Item, sender); } 
-@override String toString() { return 'ItemConverted(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, installation, organization, projectsV2Item, sender);
+
+@override String toString() => 'ItemConverted(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
+
  }

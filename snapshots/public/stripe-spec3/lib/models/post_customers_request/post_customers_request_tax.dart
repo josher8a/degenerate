@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCustomersRequestTaxValidateLocation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCustomersRequestTaxValidateLocation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostCustomersRequestTaxValidateLocation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostCustomersRequestTaxValidateLocation($value)';
+
  }
 /// Tax details about the customer.
 @immutable final class PostCustomersRequestTax {const PostCustomersRequestTax({this.ipAddress, this.validateLocation, });
@@ -45,10 +48,13 @@ PostCustomersRequestTax copyWith({IpAddress? Function()? ipAddress, PostCustomer
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   validateLocation: validateLocation != null ? validateLocation() : this.validateLocation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersRequestTax &&
           ipAddress == other.ipAddress &&
-          validateLocation == other.validateLocation; } 
-@override int get hashCode { return Object.hash(ipAddress, validateLocation); } 
-@override String toString() { return 'PostCustomersRequestTax(ipAddress: $ipAddress, validateLocation: $validateLocation)'; } 
+          validateLocation == other.validateLocation;
+
+@override int get hashCode => Object.hash(ipAddress, validateLocation);
+
+@override String toString() => 'PostCustomersRequestTax(ipAddress: $ipAddress, validateLocation: $validateLocation)';
+
  }

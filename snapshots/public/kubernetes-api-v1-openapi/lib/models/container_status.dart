@@ -107,7 +107,7 @@ ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedRe
   user: user != null ? user() : this.user,
   volumeMounts: volumeMounts != null ? volumeMounts() : this.volumeMounts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerStatus &&
           allocatedResources == other.allocatedResources &&
           listEquals(allocatedResourcesStatus, other.allocatedResourcesStatus) &&
@@ -123,7 +123,10 @@ ContainerStatus copyWith({Map<String, ResourceQuantity>? Function()? allocatedRe
           state == other.state &&
           stopSignal == other.stopSignal &&
           user == other.user &&
-          listEquals(volumeMounts, other.volumeMounts); } 
-@override int get hashCode { return Object.hash(allocatedResources, Object.hashAll(allocatedResourcesStatus ?? const []), containerId, image, imageId, lastState, name, ready, resources, restartCount, started, state, stopSignal, user, Object.hashAll(volumeMounts ?? const [])); } 
-@override String toString() { return 'ContainerStatus(allocatedResources: $allocatedResources, allocatedResourcesStatus: $allocatedResourcesStatus, containerId: $containerId, image: $image, imageId: $imageId, lastState: $lastState, name: $name, ready: $ready, resources: $resources, restartCount: $restartCount, started: $started, state: $state, stopSignal: $stopSignal, user: $user, volumeMounts: $volumeMounts)'; } 
+          listEquals(volumeMounts, other.volumeMounts);
+
+@override int get hashCode => Object.hash(allocatedResources, Object.hashAll(allocatedResourcesStatus ?? const []), containerId, image, imageId, lastState, name, ready, resources, restartCount, started, state, stopSignal, user, Object.hashAll(volumeMounts ?? const []));
+
+@override String toString() => 'ContainerStatus(allocatedResources: $allocatedResources, allocatedResourcesStatus: $allocatedResourcesStatus, containerId: $containerId, image: $image, imageId: $imageId, lastState: $lastState, name: $name, ready: $ready, resources: $resources, restartCount: $restartCount, started: $started, state: $state, stopSignal: $stopSignal, user: $user, volumeMounts: $volumeMounts)';
+
  }

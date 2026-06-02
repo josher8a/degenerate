@@ -26,11 +26,14 @@ PostBillingPortalConfigurationsConfigurationRequestBusinessProfile copyWith({Hea
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,
   termsOfServiceUrl: termsOfServiceUrl != null ? termsOfServiceUrl() : this.termsOfServiceUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestBusinessProfile &&
           headline == other.headline &&
           privacyPolicyUrl == other.privacyPolicyUrl &&
-          termsOfServiceUrl == other.termsOfServiceUrl; } 
-@override int get hashCode { return Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)'; } 
+          termsOfServiceUrl == other.termsOfServiceUrl;
+
+@override int get hashCode => Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl);
+
+@override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)';
+
  }

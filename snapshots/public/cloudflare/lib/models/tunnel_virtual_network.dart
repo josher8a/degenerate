@@ -47,14 +47,17 @@ TunnelVirtualNetwork copyWith({TunnelVirtualNetworkComment? comment, TunnelCreat
   isDefaultNetwork: isDefaultNetwork ?? this.isDefaultNetwork,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelVirtualNetwork &&
           comment == other.comment &&
           createdAt == other.createdAt &&
           deletedAt == other.deletedAt &&
           id == other.id &&
           isDefaultNetwork == other.isDefaultNetwork &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name); } 
-@override String toString() { return 'TunnelVirtualNetwork(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(comment, createdAt, deletedAt, id, isDefaultNetwork, name);
+
+@override String toString() => 'TunnelVirtualNetwork(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, isDefaultNetwork: $isDefaultNetwork, name: $name)';
+
  }

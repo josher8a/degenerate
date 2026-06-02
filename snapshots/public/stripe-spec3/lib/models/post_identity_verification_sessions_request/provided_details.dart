@@ -21,10 +21,13 @@ ProvidedDetails copyWith({String? Function()? email, String? Function()? phone, 
   email: email != null ? email() : this.email,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProvidedDetails &&
           email == other.email &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(email, phone); } 
-@override String toString() { return 'ProvidedDetails(email: $email, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(email, phone);
+
+@override String toString() => 'ProvidedDetails(email: $email, phone: $phone)';
+
  }

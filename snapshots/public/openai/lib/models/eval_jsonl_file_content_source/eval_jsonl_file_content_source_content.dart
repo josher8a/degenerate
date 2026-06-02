@@ -20,10 +20,13 @@ EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<Strin
   item: item ?? this.item,
   sample: sample != null ? sample() : this.sample,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalJsonlFileContentSourceContent &&
           item == other.item &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(item, sample); } 
-@override String toString() { return 'EvalJsonlFileContentSourceContent(item: $item, sample: $sample)'; } 
+          sample == other.sample;
+
+@override int get hashCode => Object.hash(item, sample);
+
+@override String toString() => 'EvalJsonlFileContentSourceContent(item: $item, sample: $sample)';
+
  }

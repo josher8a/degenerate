@@ -25,10 +25,13 @@ EmailSecurityMessage copyWith({int? code, String? message, }) { return EmailSecu
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMessage &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'EmailSecurityMessage(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'EmailSecurityMessage(code: $code, message: $message)';
+
  }

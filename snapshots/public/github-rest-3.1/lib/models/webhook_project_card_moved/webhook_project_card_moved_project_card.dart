@@ -86,7 +86,7 @@ WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? 
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectCardMovedProjectCard &&
           afterId == other.afterId &&
           archived == other.archived &&
@@ -100,7 +100,10 @@ WebhookProjectCardMovedProjectCard copyWith({double? Function()? afterId, bool? 
           note == other.note &&
           projectUrl == other.projectUrl &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(afterId, archived, columnId, columnUrl, contentUrl, createdAt, creator, id, nodeId, note, projectUrl, updatedAt, url); } 
-@override String toString() { return 'WebhookProjectCardMovedProjectCard(afterId: $afterId, archived: $archived, columnId: $columnId, columnUrl: $columnUrl, contentUrl: $contentUrl, createdAt: $createdAt, creator: $creator, id: $id, nodeId: $nodeId, note: $note, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(afterId, archived, columnId, columnUrl, contentUrl, createdAt, creator, id, nodeId, note, projectUrl, updatedAt, url);
+
+@override String toString() => 'WebhookProjectCardMovedProjectCard(afterId: $afterId, archived: $archived, columnId: $columnId, columnUrl: $columnUrl, contentUrl: $contentUrl, createdAt: $createdAt, creator: $creator, id: $id, nodeId: $nodeId, note: $note, projectUrl: $projectUrl, updatedAt: $updatedAt, url: $url)';
+
  }

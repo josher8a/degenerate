@@ -39,12 +39,15 @@ FineTuneDpoHyperparameters copyWith({Beta? Function()? beta, BatchSize? Function
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneDpoHyperparameters &&
           beta == other.beta &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
-          nEpochs == other.nEpochs; } 
-@override int get hashCode { return Object.hash(beta, batchSize, learningRateMultiplier, nEpochs); } 
-@override String toString() { return 'FineTuneDpoHyperparameters(beta: $beta, batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
+          nEpochs == other.nEpochs;
+
+@override int get hashCode => Object.hash(beta, batchSize, learningRateMultiplier, nEpochs);
+
+@override String toString() => 'FineTuneDpoHyperparameters(beta: $beta, batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)';
+
  }

@@ -50,14 +50,17 @@ FunctionTool copyWith({String? type, String? name, String? Function()? descripti
   strict: strict != null ? strict() : this.strict,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionTool &&
           type == other.type &&
           name == other.name &&
           description == other.description &&
           parameters == other.parameters &&
           strict == other.strict &&
-          deferLoading == other.deferLoading; } 
-@override int get hashCode { return Object.hash(type, name, description, parameters, strict, deferLoading); } 
-@override String toString() { return 'FunctionTool(type: $type, name: $name, description: $description, parameters: $parameters, strict: $strict, deferLoading: $deferLoading)'; } 
+          deferLoading == other.deferLoading;
+
+@override int get hashCode => Object.hash(type, name, description, parameters, strict, deferLoading);
+
+@override String toString() => 'FunctionTool(type: $type, name: $name, description: $description, parameters: $parameters, strict: $strict, deferLoading: $deferLoading)';
+
  }

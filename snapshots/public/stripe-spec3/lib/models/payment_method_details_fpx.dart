@@ -30,10 +30,13 @@ PaymentMethodDetailsFpx copyWith({PaymentMethodDetailsFpxBank? bank, String? Fun
   bank: bank ?? this.bank,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsFpx &&
           bank == other.bank &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(bank, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsFpx(bank: $bank, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(bank, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsFpx(bank: $bank, transactionId: $transactionId)';
+
  }

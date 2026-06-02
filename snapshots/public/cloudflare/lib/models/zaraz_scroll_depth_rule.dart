@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazScrollDepthRuleAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazScrollDepthRuleAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZarazScrollDepthRuleAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZarazScrollDepthRuleAction($value)';
+
  }
 @immutable final class ZarazScrollDepthRule {const ZarazScrollDepthRule({required this.action, required this.id, required this.settings, });
 
@@ -48,11 +51,14 @@ ZarazScrollDepthRule copyWith({ZarazScrollDepthRuleAction? action, String? id, Z
   id: id ?? this.id,
   settings: settings ?? this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazScrollDepthRule &&
           action == other.action &&
           id == other.id &&
-          settings == other.settings; } 
-@override int get hashCode { return Object.hash(action, id, settings); } 
-@override String toString() { return 'ZarazScrollDepthRule(action: $action, id: $id, settings: $settings)'; } 
+          settings == other.settings;
+
+@override int get hashCode => Object.hash(action, id, settings);
+
+@override String toString() => 'ZarazScrollDepthRule(action: $action, id: $id, settings: $settings)';
+
  }

@@ -55,13 +55,16 @@ Fee copyWith({int? amount, String? Function()? application, String? currency, St
   description: description != null ? description() : this.description,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Fee &&
           amount == other.amount &&
           application == other.application &&
           currency == other.currency &&
           description == other.description &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, application, currency, description, type); } 
-@override String toString() { return 'Fee(amount: $amount, application: $application, currency: $currency, description: $description, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, application, currency, description, type);
+
+@override String toString() => 'Fee(amount: $amount, application: $application, currency: $currency, description: $description, type: $type)';
+
  }

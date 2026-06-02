@@ -40,11 +40,14 @@ AccessKeyConfig copyWith({AccessDaysUntilNextRotation? Function()? daysUntilNext
   keyRotationIntervalDays: keyRotationIntervalDays != null ? keyRotationIntervalDays() : this.keyRotationIntervalDays,
   lastKeyRotationAt: lastKeyRotationAt != null ? lastKeyRotationAt() : this.lastKeyRotationAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessKeyConfig &&
           daysUntilNextRotation == other.daysUntilNextRotation &&
           keyRotationIntervalDays == other.keyRotationIntervalDays &&
-          lastKeyRotationAt == other.lastKeyRotationAt; } 
-@override int get hashCode { return Object.hash(daysUntilNextRotation, keyRotationIntervalDays, lastKeyRotationAt); } 
-@override String toString() { return 'AccessKeyConfig(daysUntilNextRotation: $daysUntilNextRotation, keyRotationIntervalDays: $keyRotationIntervalDays, lastKeyRotationAt: $lastKeyRotationAt)'; } 
+          lastKeyRotationAt == other.lastKeyRotationAt;
+
+@override int get hashCode => Object.hash(daysUntilNextRotation, keyRotationIntervalDays, lastKeyRotationAt);
+
+@override String toString() => 'AccessKeyConfig(daysUntilNextRotation: $daysUntilNextRotation, keyRotationIntervalDays: $keyRotationIntervalDays, lastKeyRotationAt: $lastKeyRotationAt)';
+
  }

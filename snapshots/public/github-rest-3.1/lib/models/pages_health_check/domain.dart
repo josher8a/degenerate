@@ -150,7 +150,7 @@ Domain copyWith({String? Function()? host, String? Function()? uri, String? Func
   isHttpsEligible: isHttpsEligible != null ? isHttpsEligible() : this.isHttpsEligible,
   caaError: caaError != null ? caaError() : this.caaError,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Domain &&
           host == other.host &&
           uri == other.uri &&
@@ -179,7 +179,10 @@ Domain copyWith({String? Function()? host, String? Function()? uri, String? Func
           enforcesHttps == other.enforcesHttps &&
           httpsError == other.httpsError &&
           isHttpsEligible == other.isHttpsEligible &&
-          caaError == other.caaError; } 
-@override int get hashCode { return Object.hashAll([host, uri, nameservers, dnsResolves, isProxied, isCloudflareIp, isFastlyIp, isOldIpAddress, isARecord, hasCnameRecord, hasMxRecordsPresent, isValidDomain, isApexDomain, shouldBeARecord, isCnameToGithubUserDomain, isCnameToPagesDotGithubDotCom, isCnameToFastly, isPointedToGithubPagesIp, isNonGithubPagesIpPresent, isPagesDomain, isServedByPages, isValid, reason, respondsToHttps, enforcesHttps, httpsError, isHttpsEligible, caaError]); } 
-@override String toString() { return 'Domain(host: $host, uri: $uri, nameservers: $nameservers, dnsResolves: $dnsResolves, isProxied: $isProxied, isCloudflareIp: $isCloudflareIp, isFastlyIp: $isFastlyIp, isOldIpAddress: $isOldIpAddress, isARecord: $isARecord, hasCnameRecord: $hasCnameRecord, hasMxRecordsPresent: $hasMxRecordsPresent, isValidDomain: $isValidDomain, isApexDomain: $isApexDomain, shouldBeARecord: $shouldBeARecord, isCnameToGithubUserDomain: $isCnameToGithubUserDomain, isCnameToPagesDotGithubDotCom: $isCnameToPagesDotGithubDotCom, isCnameToFastly: $isCnameToFastly, isPointedToGithubPagesIp: $isPointedToGithubPagesIp, isNonGithubPagesIpPresent: $isNonGithubPagesIpPresent, isPagesDomain: $isPagesDomain, isServedByPages: $isServedByPages, isValid: $isValid, reason: $reason, respondsToHttps: $respondsToHttps, enforcesHttps: $enforcesHttps, httpsError: $httpsError, isHttpsEligible: $isHttpsEligible, caaError: $caaError)'; } 
+          caaError == other.caaError;
+
+@override int get hashCode => Object.hashAll([host, uri, nameservers, dnsResolves, isProxied, isCloudflareIp, isFastlyIp, isOldIpAddress, isARecord, hasCnameRecord, hasMxRecordsPresent, isValidDomain, isApexDomain, shouldBeARecord, isCnameToGithubUserDomain, isCnameToPagesDotGithubDotCom, isCnameToFastly, isPointedToGithubPagesIp, isNonGithubPagesIpPresent, isPagesDomain, isServedByPages, isValid, reason, respondsToHttps, enforcesHttps, httpsError, isHttpsEligible, caaError]);
+
+@override String toString() => 'Domain(host: $host, uri: $uri, nameservers: $nameservers, dnsResolves: $dnsResolves, isProxied: $isProxied, isCloudflareIp: $isCloudflareIp, isFastlyIp: $isFastlyIp, isOldIpAddress: $isOldIpAddress, isARecord: $isARecord, hasCnameRecord: $hasCnameRecord, hasMxRecordsPresent: $hasMxRecordsPresent, isValidDomain: $isValidDomain, isApexDomain: $isApexDomain, shouldBeARecord: $shouldBeARecord, isCnameToGithubUserDomain: $isCnameToGithubUserDomain, isCnameToPagesDotGithubDotCom: $isCnameToPagesDotGithubDotCom, isCnameToFastly: $isCnameToFastly, isPointedToGithubPagesIp: $isPointedToGithubPagesIp, isNonGithubPagesIpPresent: $isNonGithubPagesIpPresent, isPagesDomain: $isPagesDomain, isServedByPages: $isServedByPages, isValid: $isValid, reason: $reason, respondsToHttps: $respondsToHttps, enforcesHttps: $enforcesHttps, httpsError: $httpsError, isHttpsEligible: $isHttpsEligible, caaError: $caaError)';
+
  }

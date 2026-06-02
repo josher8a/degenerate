@@ -17,7 +17,8 @@ final class ActionsDownloadArtifactError$410 extends ActionsDownloadArtifactErro
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class ActionsDownloadArtifactError$Unknown extends ActionsDownloadArtifactError {const ActionsDownloadArtifactError$Unknown(this.statusCode, this.rawBody, );
 

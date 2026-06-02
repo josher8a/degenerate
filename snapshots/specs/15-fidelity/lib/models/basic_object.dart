@@ -48,14 +48,17 @@ BasicObject copyWith({String? reqNonNull, String? Function()? reqNullable, Strin
   reqWithDefault: reqWithDefault ?? this.reqWithDefault,
   optWithDefault: optWithDefault != null ? optWithDefault() : this.optWithDefault,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BasicObject &&
           reqNonNull == other.reqNonNull &&
           reqNullable == other.reqNullable &&
           optNonNull == other.optNonNull &&
           optNullable == other.optNullable &&
           reqWithDefault == other.reqWithDefault &&
-          optWithDefault == other.optWithDefault; } 
-@override int get hashCode { return Object.hash(reqNonNull, reqNullable, optNonNull, optNullable, reqWithDefault, optWithDefault); } 
-@override String toString() { return 'BasicObject(reqNonNull: $reqNonNull, reqNullable: $reqNullable, optNonNull: $optNonNull, optNullable: $optNullable, reqWithDefault: $reqWithDefault, optWithDefault: $optWithDefault)'; } 
+          optWithDefault == other.optWithDefault;
+
+@override int get hashCode => Object.hash(reqNonNull, reqNullable, optNonNull, optNullable, reqWithDefault, optWithDefault);
+
+@override String toString() => 'BasicObject(reqNonNull: $reqNonNull, reqNullable: $reqNullable, optNonNull: $optNonNull, optNullable: $optNullable, reqWithDefault: $reqWithDefault, optWithDefault: $optWithDefault)';
+
  }

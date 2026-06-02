@@ -23,10 +23,13 @@ DeleteBudget copyWith({String? message, String? id, }) { return DeleteBudget(
   message: message ?? this.message,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteBudget &&
           message == other.message &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(message, id); } 
-@override String toString() { return 'DeleteBudget(message: $message, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(message, id);
+
+@override String toString() => 'DeleteBudget(message: $message, id: $id)';
+
  }

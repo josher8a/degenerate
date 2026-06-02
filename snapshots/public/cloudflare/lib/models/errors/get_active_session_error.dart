@@ -17,7 +17,8 @@ final class GetActiveSessionError$404 extends GetActiveSessionError {const GetAc
 
 final RealtimekitGenericErrorResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetActiveSessionError$Unknown extends GetActiveSessionError {const GetActiveSessionError$Unknown(this.statusCode, this.rawBody, );
 

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafManagedRulesModeAllowTraditional && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafManagedRulesModeAllowTraditional($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WafManagedRulesModeAllowTraditional && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WafManagedRulesModeAllowTraditional($value)';
+
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act on the request based on the rule configuration. An 'allow' rule will immediately allow the request and no other rules will be processed.
 @immutable final class WafManagedRulesTraditionalAllowRule {const WafManagedRulesTraditionalAllowRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.mode, });
@@ -84,7 +87,7 @@ WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription?
   allowedModes: allowedModes ?? this.allowedModes,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesTraditionalAllowRule &&
           description == other.description &&
           group == other.group &&
@@ -92,7 +95,10 @@ WafManagedRulesTraditionalAllowRule copyWith({WafManagedRulesSchemasDescription?
           packageId == other.packageId &&
           priority == other.priority &&
           listEquals(allowedModes, other.allowedModes) &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), mode); } 
-@override String toString() { return 'WafManagedRulesTraditionalAllowRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), mode);
+
+@override String toString() => 'WafManagedRulesTraditionalAllowRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, mode: $mode)';
+
  }

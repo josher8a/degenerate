@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TruncationEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TruncationEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TruncationEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TruncationEnum($value)';
+
  }
 @immutable final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this.previousResponseId, this.tools, this.text, this.reasoning, this.truncation, this.instructions, this.conversation, this.toolChoice, this.parallelToolCalls, });
 
@@ -99,7 +102,7 @@ TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublic
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenCountsBody &&
           model == other.model &&
           input == other.input &&
@@ -111,7 +114,10 @@ TokenCountsBody copyWith({String? Function()? model, CompactResponseMethodPublic
           instructions == other.instructions &&
           conversation == other.conversation &&
           toolChoice == other.toolChoice &&
-          parallelToolCalls == other.parallelToolCalls; } 
-@override int get hashCode { return Object.hash(model, input, previousResponseId, Object.hashAll(tools ?? const []), text, reasoning, truncation, instructions, conversation, toolChoice, parallelToolCalls); } 
-@override String toString() { return 'TokenCountsBody(model: $model, input: $input, previousResponseId: $previousResponseId, tools: $tools, text: $text, reasoning: $reasoning, truncation: $truncation, instructions: $instructions, conversation: $conversation, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls)'; } 
+          parallelToolCalls == other.parallelToolCalls;
+
+@override int get hashCode => Object.hash(model, input, previousResponseId, Object.hashAll(tools ?? const []), text, reasoning, truncation, instructions, conversation, toolChoice, parallelToolCalls);
+
+@override String toString() => 'TokenCountsBody(model: $model, input: $input, previousResponseId: $previousResponseId, tools: $tools, text: $text, reasoning: $reasoning, truncation: $truncation, instructions: $instructions, conversation: $conversation, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls)';
+
  }

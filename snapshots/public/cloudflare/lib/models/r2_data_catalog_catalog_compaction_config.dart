@@ -22,10 +22,13 @@ R2DataCatalogCatalogCompactionConfig copyWith({R2DataCatalogCatalogMaintenanceSt
   state: state ?? this.state,
   targetSizeMb: targetSizeMb ?? this.targetSizeMb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogCompactionConfig &&
           state == other.state &&
-          targetSizeMb == other.targetSizeMb; } 
-@override int get hashCode { return Object.hash(state, targetSizeMb); } 
-@override String toString() { return 'R2DataCatalogCatalogCompactionConfig(state: $state, targetSizeMb: $targetSizeMb)'; } 
+          targetSizeMb == other.targetSizeMb;
+
+@override int get hashCode => Object.hash(state, targetSizeMb);
+
+@override String toString() => 'R2DataCatalogCatalogCompactionConfig(state: $state, targetSizeMb: $targetSizeMb)';
+
  }

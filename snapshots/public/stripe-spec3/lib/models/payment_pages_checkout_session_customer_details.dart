@@ -83,7 +83,7 @@ PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? addres
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomerDetails &&
           address == other.address &&
           businessName == other.businessName &&
@@ -92,7 +92,10 @@ PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? addres
           name == other.name &&
           phone == other.phone &&
           taxExempt == other.taxExempt &&
-          listEquals(taxIds, other.taxIds); } 
-@override int get hashCode { return Object.hash(address, businessName, email, individualName, name, phone, taxExempt, Object.hashAll(taxIds ?? const [])); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomerDetails(address: $address, businessName: $businessName, email: $email, individualName: $individualName, name: $name, phone: $phone, taxExempt: $taxExempt, taxIds: $taxIds)'; } 
+          listEquals(taxIds, other.taxIds);
+
+@override int get hashCode => Object.hash(address, businessName, email, individualName, name, phone, taxExempt, Object.hashAll(taxIds ?? const []));
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomerDetails(address: $address, businessName: $businessName, email: $email, individualName: $individualName, name: $name, phone: $phone, taxExempt: $taxExempt, taxIds: $taxIds)';
+
  }

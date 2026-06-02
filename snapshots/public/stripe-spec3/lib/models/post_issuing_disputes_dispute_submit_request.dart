@@ -22,10 +22,13 @@ PostIssuingDisputesDisputeSubmitRequest copyWith({List<String>? Function()? expa
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingDisputesDisputeSubmitRequest &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostIssuingDisputesDisputeSubmitRequest(expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostIssuingDisputesDisputeSubmitRequest(expand: $expand, metadata: $metadata)';
+
  }

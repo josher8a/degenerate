@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessInfraAppReqEmbeddedPolicies copyWith({List<AccessInfraPolicyReq>? Function()? policies}) { return AccessInfraAppReqEmbeddedPolicies(
   policies: policies != null ? policies() : this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessInfraAppReqEmbeddedPolicies &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll(policies ?? const []); } 
-@override String toString() { return 'AccessInfraAppReqEmbeddedPolicies(policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hashAll(policies ?? const []);
+
+@override String toString() => 'AccessInfraAppReqEmbeddedPolicies(policies: $policies)';
+
  }

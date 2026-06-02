@@ -18,13 +18,15 @@ final class UpdateServersError$400 extends UpdateServersError {const UpdateServe
 
 final UpdateServersResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UpdateServersError$404 extends UpdateServersError {const UpdateServersError$404(this.error);
 
 final UpdateServersResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class UpdateServersError$Unknown extends UpdateServersError {const UpdateServersError$Unknown(this.statusCode, this.rawBody, );
 

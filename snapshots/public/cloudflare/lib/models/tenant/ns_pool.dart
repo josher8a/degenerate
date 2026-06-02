@@ -20,10 +20,13 @@ NsPool copyWith({String? Function()? primary, String? Function()? secondary, }) 
   primary: primary != null ? primary() : this.primary,
   secondary: secondary != null ? secondary() : this.secondary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NsPool &&
           primary == other.primary &&
-          secondary == other.secondary; } 
-@override int get hashCode { return Object.hash(primary, secondary); } 
-@override String toString() { return 'NsPool(primary: $primary, secondary: $secondary)'; } 
+          secondary == other.secondary;
+
+@override int get hashCode => Object.hash(primary, secondary);
+
+@override String toString() => 'NsPool(primary: $primary, secondary: $secondary)';
+
  }

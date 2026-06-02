@@ -17,7 +17,8 @@ final class WorkersAiUploadFinetuneAssetError$400 extends WorkersAiUploadFinetun
 
 final WorkersAiUploadFinetuneAssetResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiUploadFinetuneAssetError$Unknown extends WorkersAiUploadFinetuneAssetError {const WorkersAiUploadFinetuneAssetError$Unknown(this.statusCode, this.rawBody, );
 

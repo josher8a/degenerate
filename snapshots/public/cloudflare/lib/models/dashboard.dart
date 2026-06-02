@@ -21,10 +21,13 @@ Dashboard copyWith({List<Timeseries2>? Function()? timeseries, Totals? Function(
   timeseries: timeseries != null ? timeseries() : this.timeseries,
   totals: totals != null ? totals() : this.totals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dashboard &&
           listEquals(timeseries, other.timeseries) &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(Object.hashAll(timeseries ?? const []), totals); } 
-@override String toString() { return 'Dashboard(timeseries: $timeseries, totals: $totals)'; } 
+          totals == other.totals;
+
+@override int get hashCode => Object.hash(Object.hashAll(timeseries ?? const []), totals);
+
+@override String toString() => 'Dashboard(timeseries: $timeseries, totals: $totals)';
+
  }

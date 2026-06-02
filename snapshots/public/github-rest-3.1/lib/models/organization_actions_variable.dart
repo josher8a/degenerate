@@ -50,14 +50,17 @@ OrganizationActionsVariable copyWith({String? name, String? value, DateTime? cre
   visibility: visibility ?? this.visibility,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationActionsVariable &&
           name == other.name &&
           value == other.value &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           visibility == other.visibility &&
-          selectedRepositoriesUrl == other.selectedRepositoriesUrl; } 
-@override int get hashCode { return Object.hash(name, value, createdAt, updatedAt, visibility, selectedRepositoriesUrl); } 
-@override String toString() { return 'OrganizationActionsVariable(name: $name, value: $value, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)'; } 
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl;
+
+@override int get hashCode => Object.hash(name, value, createdAt, updatedAt, visibility, selectedRepositoriesUrl);
+
+@override String toString() => 'OrganizationActionsVariable(name: $name, value: $value, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
+
  }

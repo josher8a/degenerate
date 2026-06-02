@@ -45,7 +45,7 @@ SourceTypeSofort copyWith({String? Function()? bankCode, String? Function()? ban
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeSofort &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
@@ -53,7 +53,10 @@ SourceTypeSofort copyWith({String? Function()? bankCode, String? Function()? ban
           country == other.country &&
           ibanLast4 == other.ibanLast4 &&
           preferredLanguage == other.preferredLanguage &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, country, ibanLast4, preferredLanguage, statementDescriptor); } 
-@override String toString() { return 'SourceTypeSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(bankCode, bankName, bic, country, ibanLast4, preferredLanguage, statementDescriptor);
+
+@override String toString() => 'SourceTypeSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)';
+
  }

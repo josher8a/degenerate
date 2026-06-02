@@ -21,10 +21,13 @@ TextEmbeddings2 copyWith({List<List<double>>? Function()? data, List<double>? Fu
   data: data != null ? data() : this.data,
   shape: shape != null ? shape() : this.shape,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextEmbeddings2 &&
           listEquals(data, other.data) &&
-          listEquals(shape, other.shape); } 
-@override int get hashCode { return Object.hash(Object.hashAll(data ?? const []), Object.hashAll(shape ?? const [])); } 
-@override String toString() { return 'TextEmbeddings2(data: $data, shape: $shape)'; } 
+          listEquals(shape, other.shape);
+
+@override int get hashCode => Object.hash(Object.hashAll(data ?? const []), Object.hashAll(shape ?? const []));
+
+@override String toString() => 'TextEmbeddings2(data: $data, shape: $shape)';
+
  }

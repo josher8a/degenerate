@@ -20,10 +20,13 @@ ResultDataContent copyWith({String? Function()? text, String? Function()? type, 
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultDataContent &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(text, type); } 
-@override String toString() { return 'ResultDataContent(text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(text, type);
+
+@override String toString() => 'ResultDataContent(text: $text, type: $type)';
+
  }

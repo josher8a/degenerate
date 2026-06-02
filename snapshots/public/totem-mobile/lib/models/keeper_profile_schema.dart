@@ -175,45 +175,41 @@ final class KeeperProfileSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is KeeperProfileSchema &&
-            user == other.user &&
-            circleCount == other.circleCount &&
-            monthJoined == other.monthJoined &&
-            bioHtml == other.bioHtml &&
-            username == other.username &&
-            title == other.title &&
-            bio == other.bio &&
-            location == other.location &&
-            languages == other.languages &&
-            instagramUsername == other.instagramUsername &&
-            website == other.website &&
-            xUsername == other.xUsername &&
-            blueskyUsername == other.blueskyUsername;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is KeeperProfileSchema &&
+          user == other.user &&
+          circleCount == other.circleCount &&
+          monthJoined == other.monthJoined &&
+          bioHtml == other.bioHtml &&
+          username == other.username &&
+          title == other.title &&
+          bio == other.bio &&
+          location == other.location &&
+          languages == other.languages &&
+          instagramUsername == other.instagramUsername &&
+          website == other.website &&
+          xUsername == other.xUsername &&
+          blueskyUsername == other.blueskyUsername;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      user,
-      circleCount,
-      monthJoined,
-      bioHtml,
-      username,
-      title,
-      bio,
-      location,
-      languages,
-      instagramUsername,
-      website,
-      xUsername,
-      blueskyUsername,
-    );
-  }
+  int get hashCode => Object.hash(
+    user,
+    circleCount,
+    monthJoined,
+    bioHtml,
+    username,
+    title,
+    bio,
+    location,
+    languages,
+    instagramUsername,
+    website,
+    xUsername,
+    blueskyUsername,
+  );
 
   @override
-  String toString() {
-    return 'KeeperProfileSchema(user: $user, circleCount: $circleCount, monthJoined: $monthJoined, bioHtml: $bioHtml, username: $username, title: $title, bio: $bio, location: $location, languages: $languages, instagramUsername: $instagramUsername, website: $website, xUsername: $xUsername, blueskyUsername: $blueskyUsername)';
-  }
+  String toString() =>
+      'KeeperProfileSchema(user: $user, circleCount: $circleCount, monthJoined: $monthJoined, bioHtml: $bioHtml, username: $username, title: $title, bio: $bio, location: $location, languages: $languages, instagramUsername: $instagramUsername, website: $website, xUsername: $xUsername, blueskyUsername: $blueskyUsername)';
 }

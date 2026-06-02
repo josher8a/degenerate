@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqEventSourceSuperSlurperType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqEventSourceSuperSlurperType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqEventSourceSuperSlurperType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqEventSourceSuperSlurperType($value)';
+
  }
 @immutable final class MqEventSourceSuperSlurper {const MqEventSourceSuperSlurper({this.type});
 
@@ -38,9 +41,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MqEventSourceSuperSlurper copyWith({MqEventSourceSuperSlurperType? Function()? type}) { return MqEventSourceSuperSlurper(
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqEventSourceSuperSlurper &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'MqEventSourceSuperSlurper(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'MqEventSourceSuperSlurper(type: $type)';
+
  }

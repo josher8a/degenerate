@@ -18,13 +18,15 @@ final class ListWorkersError$401 extends ListWorkersError {const ListWorkersErro
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ListWorkersError$500 extends ListWorkersError {const ListWorkersError$500(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ListWorkersError$Unknown extends ListWorkersError {const ListWorkersError$Unknown(this.statusCode, this.rawBody, );
 

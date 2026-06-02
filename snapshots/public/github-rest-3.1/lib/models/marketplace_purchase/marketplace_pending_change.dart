@@ -35,13 +35,16 @@ MarketplacePendingChange copyWith({bool? Function()? isInstalled, String? Functi
   id: id != null ? id() : this.id,
   plan: plan != null ? plan() : this.plan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplacePendingChange &&
           isInstalled == other.isInstalled &&
           effectiveDate == other.effectiveDate &&
           unitCount == other.unitCount &&
           id == other.id &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(isInstalled, effectiveDate, unitCount, id, plan); } 
-@override String toString() { return 'MarketplacePendingChange(isInstalled: $isInstalled, effectiveDate: $effectiveDate, unitCount: $unitCount, id: $id, plan: $plan)'; } 
+          plan == other.plan;
+
+@override int get hashCode => Object.hash(isInstalled, effectiveDate, unitCount, id, plan);
+
+@override String toString() => 'MarketplacePendingChange(isInstalled: $isInstalled, effectiveDate: $effectiveDate, unitCount: $unitCount, id: $id, plan: $plan)';
+
  }

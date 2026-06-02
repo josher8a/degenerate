@@ -21,10 +21,13 @@ DigitalExperienceMonitoringAggregateTimeSlot copyWith({int? avgMs, String? times
   avgMs: avgMs ?? this.avgMs,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringAggregateTimeSlot &&
           avgMs == other.avgMs &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(avgMs, timestamp); } 
-@override String toString() { return 'DigitalExperienceMonitoringAggregateTimeSlot(avgMs: $avgMs, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(avgMs, timestamp);
+
+@override String toString() => 'DigitalExperienceMonitoringAggregateTimeSlot(avgMs: $avgMs, timestamp: $timestamp)';
+
  }

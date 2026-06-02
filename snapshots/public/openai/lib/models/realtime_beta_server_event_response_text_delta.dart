@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseTextDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDeltaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseTextDeltaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseTextDeltaType($value)';
+
  }
 /// Returned when the text value of an "output_text" content part is updated.
 @immutable final class RealtimeBetaServerEventResponseTextDelta {const RealtimeBetaServerEventResponseTextDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, });
@@ -81,7 +84,7 @@ RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBeta
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseTextDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -89,7 +92,10 @@ RealtimeBetaServerEventResponseTextDelta copyWith({String? eventId, RealtimeBeta
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);
+
+@override String toString() => 'RealtimeBetaServerEventResponseTextDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';
+
  }

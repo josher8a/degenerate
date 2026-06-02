@@ -26,11 +26,14 @@ ObservatoryAvailabilities copyWith({Quota? Function()? quota, List<ObservatoryLa
   regions: regions != null ? regions() : this.regions,
   regionsPerPlan: regionsPerPlan != null ? regionsPerPlan() : this.regionsPerPlan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryAvailabilities &&
           quota == other.quota &&
           listEquals(regions, other.regions) &&
-          regionsPerPlan == other.regionsPerPlan; } 
-@override int get hashCode { return Object.hash(quota, Object.hashAll(regions ?? const []), regionsPerPlan); } 
-@override String toString() { return 'ObservatoryAvailabilities(quota: $quota, regions: $regions, regionsPerPlan: $regionsPerPlan)'; } 
+          regionsPerPlan == other.regionsPerPlan;
+
+@override int get hashCode => Object.hash(quota, Object.hashAll(regions ?? const []), regionsPerPlan);
+
+@override String toString() => 'ObservatoryAvailabilities(quota: $quota, regions: $regions, regionsPerPlan: $regionsPerPlan)';
+
  }

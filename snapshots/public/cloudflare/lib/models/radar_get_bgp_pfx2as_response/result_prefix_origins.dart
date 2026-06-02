@@ -33,12 +33,15 @@ ResultPrefixOrigins copyWith({int? origin, int? peerCount, String? prefix, Strin
   prefix: prefix ?? this.prefix,
   rpkiValidation: rpkiValidation ?? this.rpkiValidation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultPrefixOrigins &&
           origin == other.origin &&
           peerCount == other.peerCount &&
           prefix == other.prefix &&
-          rpkiValidation == other.rpkiValidation; } 
-@override int get hashCode { return Object.hash(origin, peerCount, prefix, rpkiValidation); } 
-@override String toString() { return 'ResultPrefixOrigins(origin: $origin, peerCount: $peerCount, prefix: $prefix, rpkiValidation: $rpkiValidation)'; } 
+          rpkiValidation == other.rpkiValidation;
+
+@override int get hashCode => Object.hash(origin, peerCount, prefix, rpkiValidation);
+
+@override String toString() => 'ResultPrefixOrigins(origin: $origin, peerCount: $peerCount, prefix: $prefix, rpkiValidation: $rpkiValidation)';
+
  }

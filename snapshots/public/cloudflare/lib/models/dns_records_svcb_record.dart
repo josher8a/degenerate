@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsSvcbRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsSvcbRecordType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsSvcbRecordType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnsRecordsSvcbRecordType($value)';
+
  }
 @immutable final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });
 
@@ -82,7 +85,7 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
   data: data != null ? data() : this.data,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSvcbRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -92,7 +95,10 @@ DnsRecordsSvcbRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecord
           ttl == other.ttl &&
           content == other.content &&
           data == other.data &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, type); } 
-@override String toString() { return 'DnsRecordsSvcbRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, data, type);
+
+@override String toString() => 'DnsRecordsSvcbRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, data: $data, type: $type)';
+
  }

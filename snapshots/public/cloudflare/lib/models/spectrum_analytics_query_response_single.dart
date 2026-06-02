@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SpectrumAnalyticsQueryResponseSingle copyWith({SpectrumAnalyticsQueryResponseSingleResult? Function()? result}) { return SpectrumAnalyticsQueryResponseSingle(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQueryResponseSingle &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'SpectrumAnalyticsQueryResponseSingle(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'SpectrumAnalyticsQueryResponseSingle(result: $result)';
+
  }

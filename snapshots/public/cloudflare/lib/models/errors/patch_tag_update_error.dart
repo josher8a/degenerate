@@ -18,13 +18,15 @@ final class PatchTagUpdateError$400 extends PatchTagUpdateError {const PatchTagU
 
 final PatchTagUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchTagUpdateError$404 extends PatchTagUpdateError {const PatchTagUpdateError$404(this.error);
 
 final PatchTagUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PatchTagUpdateError$Unknown extends PatchTagUpdateError {const PatchTagUpdateError$Unknown(this.statusCode, this.rawBody, );
 

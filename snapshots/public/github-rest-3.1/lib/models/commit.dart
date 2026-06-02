@@ -74,7 +74,7 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
   stats: stats != null ? stats() : this.stats,
   files: files != null ? files() : this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Commit &&
           url == other.url &&
           sha == other.sha &&
@@ -86,7 +86,10 @@ Commit copyWith({Uri? url, String? sha, String? nodeId, Uri? htmlUrl, Uri? comme
           committer == other.committer &&
           listEquals(parents, other.parents) &&
           stats == other.stats &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hash(url, sha, nodeId, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), stats, Object.hashAll(files ?? const [])); } 
-@override String toString() { return 'Commit(url: $url, sha: $sha, nodeId: $nodeId, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, stats: $stats, files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hash(url, sha, nodeId, htmlUrl, commentsUrl, commit, author, committer, Object.hashAll(parents), stats, Object.hashAll(files ?? const []));
+
+@override String toString() => 'Commit(url: $url, sha: $sha, nodeId: $nodeId, htmlUrl: $htmlUrl, commentsUrl: $commentsUrl, commit: $commit, author: $author, committer: $committer, parents: $parents, stats: $stats, files: $files)';
+
  }

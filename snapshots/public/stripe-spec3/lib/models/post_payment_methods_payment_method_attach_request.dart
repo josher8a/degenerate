@@ -39,11 +39,14 @@ PostPaymentMethodsPaymentMethodAttachRequest copyWith({String? Function()? custo
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodAttachRequest &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(customer, customerAccount, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodAttachRequest(customer: $customer, customerAccount: $customerAccount, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(customer, customerAccount, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodAttachRequest(customer: $customer, customerAccount: $customerAccount, expand: $expand)';
+
  }

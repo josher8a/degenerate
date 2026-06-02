@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('appli
 PostIndicatorTypeCreateResponse400Content copyWith({ApplicationJson? applicationJson}) { return PostIndicatorTypeCreateResponse400Content(
   applicationJson: applicationJson ?? this.applicationJson,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorTypeCreateResponse400Content &&
-          applicationJson == other.applicationJson; } 
-@override int get hashCode { return applicationJson.hashCode; } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse400Content(applicationJson: $applicationJson)'; } 
+          applicationJson == other.applicationJson;
+
+@override int get hashCode => applicationJson.hashCode;
+
+@override String toString() => 'PostIndicatorTypeCreateResponse400Content(applicationJson: $applicationJson)';
+
  }

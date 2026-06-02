@@ -51,7 +51,7 @@ ZeroTrustGatewayPacfile copyWith({ZeroTrustGatewayContents? Function()? contents
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayPacfile &&
           contents == other.contents &&
           createdAt == other.createdAt &&
@@ -60,7 +60,10 @@ ZeroTrustGatewayPacfile copyWith({ZeroTrustGatewayContents? Function()? contents
           name == other.name &&
           slug == other.slug &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(contents, createdAt, description, id, name, slug, updatedAt, url); } 
-@override String toString() { return 'ZeroTrustGatewayPacfile(contents: $contents, createdAt: $createdAt, description: $description, id: $id, name: $name, slug: $slug, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(contents, createdAt, description, id, name, slug, updatedAt, url);
+
+@override String toString() => 'ZeroTrustGatewayPacfile(contents: $contents, createdAt: $createdAt, description: $description, id: $id, name: $name, slug: $slug, updatedAt: $updatedAt, url: $url)';
+
  }

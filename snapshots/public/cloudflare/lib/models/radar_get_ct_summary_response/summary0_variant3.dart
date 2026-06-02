@@ -45,14 +45,17 @@ Summary0Variant3 copyWith({String? gt3dLte16d, String? gt16dLte31d, String? gt31
   gt121d: gt121d ?? this.gt121d,
   lte3d: lte3d ?? this.lte3d,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant3 &&
           gt3dLte16d == other.gt3dLte16d &&
           gt16dLte31d == other.gt16dLte31d &&
           gt31dLte91d == other.gt31dLte91d &&
           gt91dLte121d == other.gt91dLte121d &&
           gt121d == other.gt121d &&
-          lte3d == other.lte3d; } 
-@override int get hashCode { return Object.hash(gt3dLte16d, gt16dLte31d, gt31dLte91d, gt91dLte121d, gt121d, lte3d); } 
-@override String toString() { return 'Summary0Variant3(gt3dLte16d: $gt3dLte16d, gt16dLte31d: $gt16dLte31d, gt31dLte91d: $gt31dLte91d, gt91dLte121d: $gt91dLte121d, gt121d: $gt121d, lte3d: $lte3d)'; } 
+          lte3d == other.lte3d;
+
+@override int get hashCode => Object.hash(gt3dLte16d, gt16dLte31d, gt31dLte91d, gt91dLte121d, gt121d, lte3d);
+
+@override String toString() => 'Summary0Variant3(gt3dLte16d: $gt3dLte16d, gt16dLte31d: $gt16dLte31d, gt31dLte91d: $gt31dLte91d, gt91dLte121d: $gt91dLte121d, gt121d: $gt121d, lte3d: $lte3d)';
+
  }

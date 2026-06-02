@@ -116,7 +116,7 @@ LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkR
   originSteering: originSteering != null ? originSteering() : this.originSteering,
   origins: origins != null ? origins() : this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingPool &&
           listEquals(checkRegions, other.checkRegions) &&
           createdOn == other.createdOn &&
@@ -136,7 +136,10 @@ LoadBalancingPool copyWith({List<LoadBalancingCheckRegions2>? Function()? checkR
           notificationEmail == other.notificationEmail &&
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkRegions ?? const []), createdOn, description, disabledAt, enabled, id, latitude, loadShedding, longitude, minimumOrigins, modifiedOn, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'LoadBalancingPool(checkRegions: $checkRegions, createdOn: $createdOn, description: $description, disabledAt: $disabledAt, enabled: $enabled, id: $id, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, modifiedOn: $modifiedOn, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), createdOn, description, disabledAt, enabled, id, latitude, loadShedding, longitude, minimumOrigins, modifiedOn, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
+
+@override String toString() => 'LoadBalancingPool(checkRegions: $checkRegions, createdOn: $createdOn, description: $description, disabledAt: $disabledAt, enabled: $enabled, id: $id, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, modifiedOn: $modifiedOn, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+
  }

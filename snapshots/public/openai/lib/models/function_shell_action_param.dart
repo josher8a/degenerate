@@ -29,11 +29,14 @@ FunctionShellActionParam copyWith({List<String>? commands, int? Function()? time
   timeoutMs: timeoutMs != null ? timeoutMs() : this.timeoutMs,
   maxOutputLength: maxOutputLength != null ? maxOutputLength() : this.maxOutputLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellActionParam &&
           listEquals(commands, other.commands) &&
           timeoutMs == other.timeoutMs &&
-          maxOutputLength == other.maxOutputLength; } 
-@override int get hashCode { return Object.hash(Object.hashAll(commands), timeoutMs, maxOutputLength); } 
-@override String toString() { return 'FunctionShellActionParam(commands: $commands, timeoutMs: $timeoutMs, maxOutputLength: $maxOutputLength)'; } 
+          maxOutputLength == other.maxOutputLength;
+
+@override int get hashCode => Object.hash(Object.hashAll(commands), timeoutMs, maxOutputLength);
+
+@override String toString() => 'FunctionShellActionParam(commands: $commands, timeoutMs: $timeoutMs, maxOutputLength: $maxOutputLength)';
+
  }

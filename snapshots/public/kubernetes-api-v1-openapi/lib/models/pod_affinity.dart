@@ -23,10 +23,13 @@ PodAffinity copyWith({List<WeightedPodAffinityTerm>? Function()? preferredDuring
   preferredDuringSchedulingIgnoredDuringExecution: preferredDuringSchedulingIgnoredDuringExecution != null ? preferredDuringSchedulingIgnoredDuringExecution() : this.preferredDuringSchedulingIgnoredDuringExecution,
   requiredDuringSchedulingIgnoredDuringExecution: requiredDuringSchedulingIgnoredDuringExecution != null ? requiredDuringSchedulingIgnoredDuringExecution() : this.requiredDuringSchedulingIgnoredDuringExecution,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodAffinity &&
           listEquals(preferredDuringSchedulingIgnoredDuringExecution, other.preferredDuringSchedulingIgnoredDuringExecution) &&
-          listEquals(requiredDuringSchedulingIgnoredDuringExecution, other.requiredDuringSchedulingIgnoredDuringExecution); } 
-@override int get hashCode { return Object.hash(Object.hashAll(preferredDuringSchedulingIgnoredDuringExecution ?? const []), Object.hashAll(requiredDuringSchedulingIgnoredDuringExecution ?? const [])); } 
-@override String toString() { return 'PodAffinity(preferredDuringSchedulingIgnoredDuringExecution: $preferredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution: $requiredDuringSchedulingIgnoredDuringExecution)'; } 
+          listEquals(requiredDuringSchedulingIgnoredDuringExecution, other.requiredDuringSchedulingIgnoredDuringExecution);
+
+@override int get hashCode => Object.hash(Object.hashAll(preferredDuringSchedulingIgnoredDuringExecution ?? const []), Object.hashAll(requiredDuringSchedulingIgnoredDuringExecution ?? const []));
+
+@override String toString() => 'PodAffinity(preferredDuringSchedulingIgnoredDuringExecution: $preferredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution: $requiredDuringSchedulingIgnoredDuringExecution)';
+
  }

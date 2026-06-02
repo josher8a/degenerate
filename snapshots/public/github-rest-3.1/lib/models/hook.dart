@@ -91,7 +91,7 @@ Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? 
   deliveriesUrl: deliveriesUrl != null ? deliveriesUrl() : this.deliveriesUrl,
   lastResponse: lastResponse ?? this.lastResponse,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Hook &&
           type == other.type &&
           id == other.id &&
@@ -105,7 +105,10 @@ Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? 
           testUrl == other.testUrl &&
           pingUrl == other.pingUrl &&
           deliveriesUrl == other.deliveriesUrl &&
-          lastResponse == other.lastResponse; } 
-@override int get hashCode { return Object.hash(type, id, name, active, Object.hashAll(events), config, updatedAt, createdAt, url, testUrl, pingUrl, deliveriesUrl, lastResponse); } 
-@override String toString() { return 'Hook(type: $type, id: $id, name: $name, active: $active, events: $events, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, url: $url, testUrl: $testUrl, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, lastResponse: $lastResponse)'; } 
+          lastResponse == other.lastResponse;
+
+@override int get hashCode => Object.hash(type, id, name, active, Object.hashAll(events), config, updatedAt, createdAt, url, testUrl, pingUrl, deliveriesUrl, lastResponse);
+
+@override String toString() => 'Hook(type: $type, id: $id, name: $name, active: $active, events: $events, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, url: $url, testUrl: $testUrl, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, lastResponse: $lastResponse)';
+
  }

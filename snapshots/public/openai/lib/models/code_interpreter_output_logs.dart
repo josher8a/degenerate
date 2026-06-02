@@ -24,10 +24,13 @@ CodeInterpreterOutputLogs copyWith({CodeInterpreterOutputLogsType? type, String?
   type: type ?? this.type,
   logs: logs ?? this.logs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterOutputLogs &&
           type == other.type &&
-          logs == other.logs; } 
-@override int get hashCode { return Object.hash(type, logs); } 
-@override String toString() { return 'CodeInterpreterOutputLogs(type: $type, logs: $logs)'; } 
+          logs == other.logs;
+
+@override int get hashCode => Object.hash(type, logs);
+
+@override String toString() => 'CodeInterpreterOutputLogs(type: $type, logs: $logs)';
+
  }

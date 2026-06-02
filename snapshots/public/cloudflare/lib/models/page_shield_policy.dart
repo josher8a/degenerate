@@ -39,13 +39,16 @@ PageShieldPolicy copyWith({PageShieldPolicyAction? action, PageShieldPolicyDescr
   expression: expression ?? this.expression,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldPolicy &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, value); } 
-@override String toString() { return 'PageShieldPolicy(action: $action, description: $description, enabled: $enabled, expression: $expression, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, value);
+
+@override String toString() => 'PageShieldPolicy(action: $action, description: $description, enabled: $enabled, expression: $expression, value: $value)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QueryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QueryObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is QueryObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'QueryObject($value)';
+
  }
 /// A saved query object represents a query that can be executed for a run.
 @immutable final class Query {const Query({required this.created, required this.id, required this.livemode, required this.name, required this.object, required this.sql, });
@@ -80,14 +83,17 @@ Query copyWith({int? created, String? id, bool? livemode, String? name, QueryObj
   object: object ?? this.object,
   sql: sql ?? this.sql,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Query &&
           created == other.created &&
           id == other.id &&
           livemode == other.livemode &&
           name == other.name &&
           object == other.object &&
-          sql == other.sql; } 
-@override int get hashCode { return Object.hash(created, id, livemode, name, object, sql); } 
-@override String toString() { return 'Query(created: $created, id: $id, livemode: $livemode, name: $name, object: $object, sql: $sql)'; } 
+          sql == other.sql;
+
+@override int get hashCode => Object.hash(created, id, livemode, name, object, sql);
+
+@override String toString() => 'Query(created: $created, id: $id, livemode: $livemode, name: $name, object: $object, sql: $sql)';
+
  }

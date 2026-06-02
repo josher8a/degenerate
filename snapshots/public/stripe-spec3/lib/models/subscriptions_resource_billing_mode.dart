@@ -29,11 +29,14 @@ SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexi
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourceBillingMode &&
           flexible == other.flexible &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(flexible, type, updatedAt); } 
-@override String toString() { return 'SubscriptionsResourceBillingMode(flexible: $flexible, type: $type, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(flexible, type, updatedAt);
+
+@override String toString() => 'SubscriptionsResourceBillingMode(flexible: $flexible, type: $type, updatedAt: $updatedAt)';
+
  }

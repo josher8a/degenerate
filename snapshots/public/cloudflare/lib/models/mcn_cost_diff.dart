@@ -33,12 +33,15 @@ McnCostDiff copyWith({String? currency, double? currentMonthlyCost, double? diff
   diff: diff ?? this.diff,
   proposedMonthlyCost: proposedMonthlyCost ?? this.proposedMonthlyCost,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCostDiff &&
           currency == other.currency &&
           currentMonthlyCost == other.currentMonthlyCost &&
           diff == other.diff &&
-          proposedMonthlyCost == other.proposedMonthlyCost; } 
-@override int get hashCode { return Object.hash(currency, currentMonthlyCost, diff, proposedMonthlyCost); } 
-@override String toString() { return 'McnCostDiff(currency: $currency, currentMonthlyCost: $currentMonthlyCost, diff: $diff, proposedMonthlyCost: $proposedMonthlyCost)'; } 
+          proposedMonthlyCost == other.proposedMonthlyCost;
+
+@override int get hashCode => Object.hash(currency, currentMonthlyCost, diff, proposedMonthlyCost);
+
+@override String toString() => 'McnCostDiff(currency: $currency, currentMonthlyCost: $currentMonthlyCost, diff: $diff, proposedMonthlyCost: $proposedMonthlyCost)';
+
  }

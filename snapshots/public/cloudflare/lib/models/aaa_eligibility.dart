@@ -37,10 +37,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaSchemasType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AaaSchemasType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AaaSchemasType($value)';
+
  }
 @immutable final class AaaEligibility {const AaaEligibility({this.eligible, this.ready, this.type, });
 
@@ -67,11 +70,14 @@ AaaEligibility copyWith({AaaEligible? Function()? eligible, AaaReady? Function()
   ready: ready != null ? ready() : this.ready,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaEligibility &&
           eligible == other.eligible &&
           ready == other.ready &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eligible, ready, type); } 
-@override String toString() { return 'AaaEligibility(eligible: $eligible, ready: $ready, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eligible, ready, type);
+
+@override String toString() => 'AaaEligibility(eligible: $eligible, ready: $ready, type: $type)';
+
  }

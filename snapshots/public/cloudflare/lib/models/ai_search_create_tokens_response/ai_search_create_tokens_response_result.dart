@@ -59,7 +59,7 @@ AiSearchCreateTokensResponseResult copyWith({String? cfApiId, DateTime? createdA
   modifiedBy: modifiedBy != null ? modifiedBy() : this.modifiedBy,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchCreateTokensResponseResult &&
           cfApiId == other.cfApiId &&
           createdAt == other.createdAt &&
@@ -69,7 +69,10 @@ AiSearchCreateTokensResponseResult copyWith({String? cfApiId, DateTime? createdA
           legacy == other.legacy &&
           modifiedAt == other.modifiedAt &&
           modifiedBy == other.modifiedBy &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cfApiId, createdAt, createdBy, enabled, id, legacy, modifiedAt, modifiedBy, name); } 
-@override String toString() { return 'AiSearchCreateTokensResponseResult(cfApiId: $cfApiId, createdAt: $createdAt, createdBy: $createdBy, enabled: $enabled, id: $id, legacy: $legacy, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(cfApiId, createdAt, createdBy, enabled, id, legacy, modifiedAt, modifiedBy, name);
+
+@override String toString() => 'AiSearchCreateTokensResponseResult(cfApiId: $cfApiId, createdAt: $createdAt, createdBy: $createdBy, enabled: $enabled, id: $id, legacy: $legacy, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name)';
+
  }

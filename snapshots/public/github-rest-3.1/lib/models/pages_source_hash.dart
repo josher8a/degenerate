@@ -21,10 +21,13 @@ PagesSourceHash copyWith({String? branch, String? path, }) { return PagesSourceH
   branch: branch ?? this.branch,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesSourceHash &&
           branch == other.branch &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(branch, path); } 
-@override String toString() { return 'PagesSourceHash(branch: $branch, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(branch, path);
+
+@override String toString() => 'PagesSourceHash(branch: $branch, path: $path)';
+
  }

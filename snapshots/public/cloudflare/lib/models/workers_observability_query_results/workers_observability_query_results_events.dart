@@ -30,12 +30,15 @@ WorkersObservabilityQueryResultsEvents copyWith({double? Function()? count, List
   fields: fields != null ? fields() : this.fields,
   series: series != null ? series() : this.series,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryResultsEvents &&
           count == other.count &&
           listEquals(events, other.events) &&
           listEquals(fields, other.fields) &&
-          listEquals(series, other.series); } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(events ?? const []), Object.hashAll(fields ?? const []), Object.hashAll(series ?? const [])); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsEvents(count: $count, events: $events, fields: $fields, series: $series)'; } 
+          listEquals(series, other.series);
+
+@override int get hashCode => Object.hash(count, Object.hashAll(events ?? const []), Object.hashAll(fields ?? const []), Object.hashAll(series ?? const []));
+
+@override String toString() => 'WorkersObservabilityQueryResultsEvents(count: $count, events: $events, fields: $fields, series: $series)';
+
  }

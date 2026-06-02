@@ -60,7 +60,7 @@ WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRe
   review: review ?? this.review,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -70,7 +70,10 @@ WebhookPullRequestReviewEdited copyWith({ItemEditedAction? action, WebhookPullRe
           pullRequest == other.pullRequest &&
           repository == other.repository &&
           review == other.review &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, pullRequest, repository, review, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, organization, pullRequest, repository, review, sender);
+
+@override String toString() => 'WebhookPullRequestReviewEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';
+
  }

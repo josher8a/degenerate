@@ -28,11 +28,14 @@ Zones0HoldDeleteResponseResult copyWith({bool? Function()? hold, String? Functio
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0HoldDeleteResponseResult &&
           hold == other.hold &&
           holdAfter == other.holdAfter &&
-          includeSubdomains == other.includeSubdomains; } 
-@override int get hashCode { return Object.hash(hold, holdAfter, includeSubdomains); } 
-@override String toString() { return 'Zones0HoldDeleteResponseResult(hold: $hold, holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)'; } 
+          includeSubdomains == other.includeSubdomains;
+
+@override int get hashCode => Object.hash(hold, holdAfter, includeSubdomains);
+
+@override String toString() => 'Zones0HoldDeleteResponseResult(hold: $hold, holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)';
+
  }

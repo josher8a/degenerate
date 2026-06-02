@@ -49,7 +49,7 @@ WebhookPageBuild copyWith({Build? build, EnterpriseWebhooks? Function()? enterpr
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPageBuild &&
           build == other.build &&
           enterprise == other.enterprise &&
@@ -57,7 +57,10 @@ WebhookPageBuild copyWith({Build? build, EnterpriseWebhooks? Function()? enterpr
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(build, enterprise, id, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookPageBuild(build: $build, enterprise: $enterprise, id: $id, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(build, enterprise, id, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookPageBuild(build: $build, enterprise: $enterprise, id: $id, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

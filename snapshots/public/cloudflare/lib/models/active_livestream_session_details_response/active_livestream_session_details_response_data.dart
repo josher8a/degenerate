@@ -20,10 +20,13 @@ ActiveLivestreamSessionDetailsResponseData copyWith({ActiveLivestreamSessionDeta
   livestream: livestream != null ? livestream() : this.livestream,
   session: session != null ? session() : this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActiveLivestreamSessionDetailsResponseData &&
           livestream == other.livestream &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(livestream, session); } 
-@override String toString() { return 'ActiveLivestreamSessionDetailsResponseData(livestream: $livestream, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(livestream, session);
+
+@override String toString() => 'ActiveLivestreamSessionDetailsResponseData(livestream: $livestream, session: $session)';
+
  }

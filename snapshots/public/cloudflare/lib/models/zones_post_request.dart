@@ -37,11 +37,14 @@ ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, Zo
   name: name ?? this.name,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesPostRequest &&
           account == other.account &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, name, type); } 
-@override String toString() { return 'ZonesPostRequest(account: $account, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, name, type);
+
+@override String toString() => 'ZonesPostRequest(account: $account, name: $name, type: $type)';
+
  }

@@ -24,10 +24,13 @@ CustomAttributesSource copyWith({String? Function()? name, List<NameByIdp>? Func
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomAttributesSource &&
           name == other.name &&
-          listEquals(nameByIdp, other.nameByIdp); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(nameByIdp ?? const [])); } 
-@override String toString() { return 'CustomAttributesSource(name: $name, nameByIdp: $nameByIdp)'; } 
+          listEquals(nameByIdp, other.nameByIdp);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(nameByIdp ?? const []));
+
+@override String toString() => 'CustomAttributesSource(name: $name, nameByIdp: $nameByIdp)';
+
  }

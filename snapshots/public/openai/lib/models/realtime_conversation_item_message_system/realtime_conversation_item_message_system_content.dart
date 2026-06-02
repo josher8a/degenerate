@@ -22,10 +22,13 @@ RealtimeConversationItemMessageSystemContent copyWith({InputTextContentParamType
   type: type != null ? type() : this.type,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageSystemContent &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'RealtimeConversationItemMessageSystemContent(type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(type, text);
+
+@override String toString() => 'RealtimeConversationItemMessageSystemContent(type: $type, text: $text)';
+
  }

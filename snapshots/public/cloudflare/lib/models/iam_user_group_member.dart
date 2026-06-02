@@ -33,11 +33,14 @@ IamUserGroupMember copyWith({IamEmail? Function()? email, String? id, dynamic Fu
   id: id ?? this.id,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserGroupMember &&
           email == other.email &&
           id == other.id &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(email, id, status); } 
-@override String toString() { return 'IamUserGroupMember(email: $email, id: $id, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(email, id, status);
+
+@override String toString() => 'IamUserGroupMember(email: $email, id: $id, status: $status)';
+
  }

@@ -54,7 +54,7 @@ PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTr
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodCondition &&
           lastProbeTime == other.lastProbeTime &&
           lastTransitionTime == other.lastTransitionTime &&
@@ -62,7 +62,10 @@ PodCondition copyWith({Time? Function()? lastProbeTime, Time? Function()? lastTr
           observedGeneration == other.observedGeneration &&
           reason == other.reason &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(lastProbeTime, lastTransitionTime, message, observedGeneration, reason, status, type); } 
-@override String toString() { return 'PodCondition(lastProbeTime: $lastProbeTime, lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(lastProbeTime, lastTransitionTime, message, observedGeneration, reason, status, type);
+
+@override String toString() => 'PodCondition(lastProbeTime: $lastProbeTime, lastTransitionTime: $lastTransitionTime, message: $message, observedGeneration: $observedGeneration, reason: $reason, status: $status, type: $type)';
+
  }

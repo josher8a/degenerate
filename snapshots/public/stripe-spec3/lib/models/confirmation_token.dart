@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConfirmationTokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConfirmationTokenObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConfirmationTokenObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConfirmationTokenObject($value)';
+
  }
 /// ConfirmationTokens help transport client side data collected by Stripe JS over
 /// to your server for confirming a PaymentIntent or SetupIntent. If the confirmation
@@ -145,7 +148,7 @@ ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id
   shipping: shipping != null ? shipping() : this.shipping,
   useStripeSdk: useStripeSdk ?? this.useStripeSdk,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationToken &&
           created == other.created &&
           expiresAt == other.expiresAt &&
@@ -160,7 +163,10 @@ ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id
           setupFutureUsage == other.setupFutureUsage &&
           setupIntent == other.setupIntent &&
           shipping == other.shipping &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hash(created, expiresAt, id, livemode, mandateData, object, paymentIntent, paymentMethodOptions, paymentMethodPreview, returnUrl, setupFutureUsage, setupIntent, shipping, useStripeSdk); } 
-@override String toString() { return 'ConfirmationToken(created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, mandateData: $mandateData, object: $object, paymentIntent: $paymentIntent, paymentMethodOptions: $paymentMethodOptions, paymentMethodPreview: $paymentMethodPreview, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, setupIntent: $setupIntent, shipping: $shipping, useStripeSdk: $useStripeSdk)'; } 
+          useStripeSdk == other.useStripeSdk;
+
+@override int get hashCode => Object.hash(created, expiresAt, id, livemode, mandateData, object, paymentIntent, paymentMethodOptions, paymentMethodPreview, returnUrl, setupFutureUsage, setupIntent, shipping, useStripeSdk);
+
+@override String toString() => 'ConfirmationToken(created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, mandateData: $mandateData, object: $object, paymentIntent: $paymentIntent, paymentMethodOptions: $paymentMethodOptions, paymentMethodPreview: $paymentMethodPreview, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, setupIntent: $setupIntent, shipping: $shipping, useStripeSdk: $useStripeSdk)';
+
  }

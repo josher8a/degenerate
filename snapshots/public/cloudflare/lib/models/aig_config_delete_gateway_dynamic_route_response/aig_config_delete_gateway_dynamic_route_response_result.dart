@@ -45,14 +45,17 @@ AigConfigDeleteGatewayDynamicRouteResponseResult copyWith({DateTime? createdAt, 
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigDeleteGatewayDynamicRouteResponseResult &&
           createdAt == other.createdAt &&
           listEquals(elements, other.elements) &&
           gatewayId == other.gatewayId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(elements), gatewayId, id, modifiedAt, name); } 
-@override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResult(createdAt: $createdAt, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(elements), gatewayId, id, modifiedAt, name);
+
+@override String toString() => 'AigConfigDeleteGatewayDynamicRouteResponseResult(createdAt: $createdAt, elements: $elements, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';
+
  }

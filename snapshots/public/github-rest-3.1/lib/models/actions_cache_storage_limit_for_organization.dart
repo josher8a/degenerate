@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ActionsCacheStorageLimitForOrganization copyWith({int? Function()? maxCacheSizeGb}) { return ActionsCacheStorageLimitForOrganization(
   maxCacheSizeGb: maxCacheSizeGb != null ? maxCacheSizeGb() : this.maxCacheSizeGb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCacheStorageLimitForOrganization &&
-          maxCacheSizeGb == other.maxCacheSizeGb; } 
-@override int get hashCode { return maxCacheSizeGb.hashCode; } 
-@override String toString() { return 'ActionsCacheStorageLimitForOrganization(maxCacheSizeGb: $maxCacheSizeGb)'; } 
+          maxCacheSizeGb == other.maxCacheSizeGb;
+
+@override int get hashCode => maxCacheSizeGb.hashCode;
+
+@override String toString() => 'ActionsCacheStorageLimitForOrganization(maxCacheSizeGb: $maxCacheSizeGb)';
+
  }

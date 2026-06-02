@@ -28,10 +28,13 @@ PaymentFlowsPaymentIntentPresentmentDetails copyWith({int? presentmentAmount, St
   presentmentAmount: presentmentAmount ?? this.presentmentAmount,
   presentmentCurrency: presentmentCurrency ?? this.presentmentCurrency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPaymentIntentPresentmentDetails &&
           presentmentAmount == other.presentmentAmount &&
-          presentmentCurrency == other.presentmentCurrency; } 
-@override int get hashCode { return Object.hash(presentmentAmount, presentmentCurrency); } 
-@override String toString() { return 'PaymentFlowsPaymentIntentPresentmentDetails(presentmentAmount: $presentmentAmount, presentmentCurrency: $presentmentCurrency)'; } 
+          presentmentCurrency == other.presentmentCurrency;
+
+@override int get hashCode => Object.hash(presentmentAmount, presentmentCurrency);
+
+@override String toString() => 'PaymentFlowsPaymentIntentPresentmentDetails(presentmentAmount: $presentmentAmount, presentmentCurrency: $presentmentCurrency)';
+
  }

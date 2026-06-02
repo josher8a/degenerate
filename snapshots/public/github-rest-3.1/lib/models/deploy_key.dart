@@ -67,7 +67,7 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
   lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeployKey &&
           id == other.id &&
           key == other.key &&
@@ -78,7 +78,10 @@ DeployKey copyWith({int? id, String? key, String? url, String? title, bool? veri
           readOnly == other.readOnly &&
           addedBy == other.addedBy &&
           lastUsed == other.lastUsed &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(id, key, url, title, verified, createdAt, readOnly, addedBy, lastUsed, enabled); } 
-@override String toString() { return 'DeployKey(id: $id, key: $key, url: $url, title: $title, verified: $verified, createdAt: $createdAt, readOnly: $readOnly, addedBy: $addedBy, lastUsed: $lastUsed, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(id, key, url, title, verified, createdAt, readOnly, addedBy, lastUsed, enabled);
+
+@override String toString() => 'DeployKey(id: $id, key: $key, url: $url, title: $title, verified: $verified, createdAt: $createdAt, readOnly: $readOnly, addedBy: $addedBy, lastUsed: $lastUsed, enabled: $enabled)';
+
  }

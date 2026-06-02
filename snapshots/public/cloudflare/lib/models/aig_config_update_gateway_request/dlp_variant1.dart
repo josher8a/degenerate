@@ -27,11 +27,14 @@ DlpVariant1 copyWith({Variant1Action? action, bool? enabled, List<String>? profi
   enabled: enabled ?? this.enabled,
   profiles: profiles ?? this.profiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpVariant1 &&
           action == other.action &&
           enabled == other.enabled &&
-          listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hash(action, enabled, Object.hashAll(profiles)); } 
-@override String toString() { return 'DlpVariant1(action: $action, enabled: $enabled, profiles: $profiles)'; } 
+          listEquals(profiles, other.profiles);
+
+@override int get hashCode => Object.hash(action, enabled, Object.hashAll(profiles));
+
+@override String toString() => 'DlpVariant1(action: $action, enabled: $enabled, profiles: $profiles)';
+
  }

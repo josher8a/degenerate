@@ -142,7 +142,7 @@ PageShieldScript copyWith({DateTime? addedAt, PageShieldCryptominingScore? Funct
   urlContainsCdnCgiPath: urlContainsCdnCgiPath ?? this.urlContainsCdnCgiPath,
   urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldScript &&
           addedAt == other.addedAt &&
           cryptominingScore == other.cryptominingScore &&
@@ -164,7 +164,10 @@ PageShieldScript copyWith({DateTime? addedAt, PageShieldCryptominingScore? Funct
           listEquals(pageUrls, other.pageUrls) &&
           url == other.url &&
           urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
-          urlReportedMalicious == other.urlReportedMalicious; } 
-@override int get hashCode { return Object.hashAll([addedAt, cryptominingScore, dataflowScore, domainReportedMalicious, fetchedAt, firstPageUrl, firstSeenAt, hash, host, id, jsIntegrityScore, lastSeenAt, magecartScore, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), malwareScore, obfuscationScore, Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious]); } 
-@override String toString() { return 'PageShieldScript(addedAt: $addedAt, cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, domainReportedMalicious: $domainReportedMalicious, fetchedAt: $fetchedAt, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, hash: $hash, host: $host, id: $id, jsIntegrityScore: $jsIntegrityScore, lastSeenAt: $lastSeenAt, magecartScore: $magecartScore, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)'; } 
+          urlReportedMalicious == other.urlReportedMalicious;
+
+@override int get hashCode => Object.hashAll([addedAt, cryptominingScore, dataflowScore, domainReportedMalicious, fetchedAt, firstPageUrl, firstSeenAt, hash, host, id, jsIntegrityScore, lastSeenAt, magecartScore, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), malwareScore, obfuscationScore, Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious]);
+
+@override String toString() => 'PageShieldScript(addedAt: $addedAt, cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, domainReportedMalicious: $domainReportedMalicious, fetchedAt: $fetchedAt, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, hash: $hash, host: $host, id: $id, jsIntegrityScore: $jsIntegrityScore, lastSeenAt: $lastSeenAt, magecartScore: $magecartScore, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)';
+
  }

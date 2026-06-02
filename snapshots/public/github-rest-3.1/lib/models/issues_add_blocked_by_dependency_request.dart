@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue
 IssuesAddBlockedByDependencyRequest copyWith({int? issueId}) { return IssuesAddBlockedByDependencyRequest(
   issueId: issueId ?? this.issueId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesAddBlockedByDependencyRequest &&
-          issueId == other.issueId; } 
-@override int get hashCode { return issueId.hashCode; } 
-@override String toString() { return 'IssuesAddBlockedByDependencyRequest(issueId: $issueId)'; } 
+          issueId == other.issueId;
+
+@override int get hashCode => issueId.hashCode;
+
+@override String toString() => 'IssuesAddBlockedByDependencyRequest(issueId: $issueId)';
+
  }

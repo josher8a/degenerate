@@ -59,7 +59,7 @@ CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, Cloudfla
   path: path != null ? path() : this.path,
   rollingPolicy: rollingPolicy != null ? rollingPolicy() : this.rollingPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesR2Table &&
           accountId == other.accountId &&
           bucket == other.bucket &&
@@ -68,7 +68,10 @@ CloudflarePipelinesR2Table copyWith({String? accountId, String? bucket, Cloudfla
           jurisdiction == other.jurisdiction &&
           partitioning == other.partitioning &&
           path == other.path &&
-          rollingPolicy == other.rollingPolicy; } 
-@override int get hashCode { return Object.hash(accountId, bucket, credentials, fileNaming, jurisdiction, partitioning, path, rollingPolicy); } 
-@override String toString() { return 'CloudflarePipelinesR2Table(accountId: $accountId, bucket: $bucket, credentials: $credentials, fileNaming: $fileNaming, jurisdiction: $jurisdiction, partitioning: $partitioning, path: $path, rollingPolicy: $rollingPolicy)'; } 
+          rollingPolicy == other.rollingPolicy;
+
+@override int get hashCode => Object.hash(accountId, bucket, credentials, fileNaming, jurisdiction, partitioning, path, rollingPolicy);
+
+@override String toString() => 'CloudflarePipelinesR2Table(accountId: $accountId, bucket: $bucket, credentials: $credentials, fileNaming: $fileNaming, jurisdiction: $jurisdiction, partitioning: $partitioning, path: $path, rollingPolicy: $rollingPolicy)';
+
  }

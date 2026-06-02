@@ -43,13 +43,16 @@ AccessSchemasIdentityProvider copyWith({Map<String,dynamic>? config, AccessUuid?
   scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasIdentityProvider &&
           config == other.config &&
           id == other.id &&
           name == other.name &&
           scimConfig == other.scimConfig &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, id, name, scimConfig, type); } 
-@override String toString() { return 'AccessSchemasIdentityProvider(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, id, name, scimConfig, type);
+
+@override String toString() => 'AccessSchemasIdentityProvider(config: $config, id: $id, name: $name, scimConfig: $scimConfig, type: $type)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotAlertDismissalRequestSimpleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotAlertDismissalRequestSimpleStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotAlertDismissalRequestSimpleStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotAlertDismissalRequestSimpleStatus($value)';
+
  }
 /// Information about an active dismissal request for this Dependabot alert.
 @immutable final class DependabotAlertDismissalRequestSimple {const DependabotAlertDismissalRequestSimple({this.id, this.status, this.requester, this.createdAt, this.url, });
@@ -72,13 +75,16 @@ DependabotAlertDismissalRequestSimple copyWith({int? Function()? id, DependabotA
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertDismissalRequestSimple &&
           id == other.id &&
           status == other.status &&
           requester == other.requester &&
           createdAt == other.createdAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, status, requester, createdAt, url); } 
-@override String toString() { return 'DependabotAlertDismissalRequestSimple(id: $id, status: $status, requester: $requester, createdAt: $createdAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(id, status, requester, createdAt, url);
+
+@override String toString() => 'DependabotAlertDismissalRequestSimple(id: $id, status: $status, requester: $requester, createdAt: $createdAt, url: $url)';
+
  }

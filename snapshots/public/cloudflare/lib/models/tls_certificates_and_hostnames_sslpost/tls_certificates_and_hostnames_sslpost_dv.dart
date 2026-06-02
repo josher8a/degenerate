@@ -123,7 +123,7 @@ TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMe
   type: type != null ? type() : this.type,
   wildcard: wildcard != null ? wildcard() : this.wildcard,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslpostDv &&
           bundleMethod == other.bundleMethod &&
           certificateAuthority == other.certificateAuthority &&
@@ -134,7 +134,10 @@ TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMe
           method == other.method &&
           settings == other.settings &&
           type == other.type &&
-          wildcard == other.wildcard; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificateAuthority, cloudflareBranding, Object.hashAll(customCertBundle ?? const []), customCertificate, customKey, method, settings, type, wildcard); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslpostDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, customCertBundle: $customCertBundle, customCertificate: $customCertificate, customKey: $customKey, method: $method, settings: $settings, type: $type, wildcard: $wildcard)'; } 
+          wildcard == other.wildcard;
+
+@override int get hashCode => Object.hash(bundleMethod, certificateAuthority, cloudflareBranding, Object.hashAll(customCertBundle ?? const []), customCertificate, customKey, method, settings, type, wildcard);
+
+@override String toString() => 'TlsCertificatesAndHostnamesSslpostDv(bundleMethod: $bundleMethod, certificateAuthority: $certificateAuthority, cloudflareBranding: $cloudflareBranding, customCertBundle: $customCertBundle, customCertificate: $customCertificate, customKey: $customKey, method: $method, settings: $settings, type: $type, wildcard: $wildcard)';
+
  }

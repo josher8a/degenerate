@@ -21,31 +21,36 @@ final class PullsMergeError$403 extends PullsMergeError {const PullsMergeError$4
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class PullsMergeError$404 extends PullsMergeError {const PullsMergeError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PullsMergeError$405 extends PullsMergeError {const PullsMergeError$405(this.error);
 
 final PullsMergeResponse405 error;
 
-@override int get statusCode { return 405; } 
+@override int get statusCode => 405;
+
  }
 final class PullsMergeError$409 extends PullsMergeError {const PullsMergeError$409(this.error);
 
 final PullsMergeResponse409 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class PullsMergeError$422 extends PullsMergeError {const PullsMergeError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class PullsMergeError$Unknown extends PullsMergeError {const PullsMergeError$Unknown(this.statusCode, this.rawBody, );
 

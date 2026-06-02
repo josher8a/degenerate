@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupRoleAssignmentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupRoleAssignmentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupRoleAssignmentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GroupRoleAssignmentObject($value)';
+
  }
 /// Role assignment linking a group to a role.
 @immutable final class GroupRoleAssignment {const GroupRoleAssignment({required this.object, required this.group, required this.role, });
@@ -51,11 +54,14 @@ GroupRoleAssignment copyWith({GroupRoleAssignmentObject? object, Group? group, R
   group: group ?? this.group,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupRoleAssignment &&
           object == other.object &&
           group == other.group &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(object, group, role); } 
-@override String toString() { return 'GroupRoleAssignment(object: $object, group: $group, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(object, group, role);
+
+@override String toString() => 'GroupRoleAssignment(object: $object, group: $group, role: $role)';
+
  }

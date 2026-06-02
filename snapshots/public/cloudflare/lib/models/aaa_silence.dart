@@ -53,14 +53,17 @@ AaaSilence copyWith({String? Function()? createdAt, String? Function()? endTime,
   startTime: startTime != null ? startTime() : this.startTime,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaSilence &&
           createdAt == other.createdAt &&
           endTime == other.endTime &&
           id == other.id &&
           policyId == other.policyId &&
           startTime == other.startTime &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, endTime, id, policyId, startTime, updatedAt); } 
-@override String toString() { return 'AaaSilence(createdAt: $createdAt, endTime: $endTime, id: $id, policyId: $policyId, startTime: $startTime, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, endTime, id, policyId, startTime, updatedAt);
+
+@override String toString() => 'AaaSilence(createdAt: $createdAt, endTime: $endTime, id: $id, policyId: $policyId, startTime: $startTime, updatedAt: $updatedAt)';
+
  }

@@ -66,7 +66,7 @@ PersonRelationship copyWith({bool? Function()? authorizer, bool? Function()? dir
   representative: representative != null ? representative() : this.representative,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersonRelationship &&
           authorizer == other.authorizer &&
           director == other.director &&
@@ -75,7 +75,10 @@ PersonRelationship copyWith({bool? Function()? authorizer, bool? Function()? dir
           owner == other.owner &&
           percentOwnership == other.percentOwnership &&
           representative == other.representative &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title); } 
-@override String toString() { return 'PersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title);
+
+@override String toString() => 'PersonRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)';
+
  }

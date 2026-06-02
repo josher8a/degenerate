@@ -21,10 +21,13 @@ HostedComputeListNetworkConfigurationsForOrgResponse copyWith({int? totalCount, 
   totalCount: totalCount ?? this.totalCount,
   networkConfigurations: networkConfigurations ?? this.networkConfigurations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostedComputeListNetworkConfigurationsForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(networkConfigurations, other.networkConfigurations); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(networkConfigurations)); } 
-@override String toString() { return 'HostedComputeListNetworkConfigurationsForOrgResponse(totalCount: $totalCount, networkConfigurations: $networkConfigurations)'; } 
+          listEquals(networkConfigurations, other.networkConfigurations);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(networkConfigurations));
+
+@override String toString() => 'HostedComputeListNetworkConfigurationsForOrgResponse(totalCount: $totalCount, networkConfigurations: $networkConfigurations)';
+
  }

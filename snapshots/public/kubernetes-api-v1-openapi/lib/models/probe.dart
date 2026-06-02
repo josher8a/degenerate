@@ -71,7 +71,7 @@ Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold,
   terminationGracePeriodSeconds: terminationGracePeriodSeconds != null ? terminationGracePeriodSeconds() : this.terminationGracePeriodSeconds,
   timeoutSeconds: timeoutSeconds != null ? timeoutSeconds() : this.timeoutSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Probe &&
           exec == other.exec &&
           failureThreshold == other.failureThreshold &&
@@ -82,7 +82,10 @@ Probe copyWith({ExecAction? Function()? exec, int? Function()? failureThreshold,
           successThreshold == other.successThreshold &&
           tcpSocket == other.tcpSocket &&
           terminationGracePeriodSeconds == other.terminationGracePeriodSeconds &&
-          timeoutSeconds == other.timeoutSeconds; } 
-@override int get hashCode { return Object.hash(exec, failureThreshold, grpc, httpGet, initialDelaySeconds, periodSeconds, successThreshold, tcpSocket, terminationGracePeriodSeconds, timeoutSeconds); } 
-@override String toString() { return 'Probe(exec: $exec, failureThreshold: $failureThreshold, grpc: $grpc, httpGet: $httpGet, initialDelaySeconds: $initialDelaySeconds, periodSeconds: $periodSeconds, successThreshold: $successThreshold, tcpSocket: $tcpSocket, terminationGracePeriodSeconds: $terminationGracePeriodSeconds, timeoutSeconds: $timeoutSeconds)'; } 
+          timeoutSeconds == other.timeoutSeconds;
+
+@override int get hashCode => Object.hash(exec, failureThreshold, grpc, httpGet, initialDelaySeconds, periodSeconds, successThreshold, tcpSocket, terminationGracePeriodSeconds, timeoutSeconds);
+
+@override String toString() => 'Probe(exec: $exec, failureThreshold: $failureThreshold, grpc: $grpc, httpGet: $httpGet, initialDelaySeconds: $initialDelaySeconds, periodSeconds: $periodSeconds, successThreshold: $successThreshold, tcpSocket: $tcpSocket, terminationGracePeriodSeconds: $terminationGracePeriodSeconds, timeoutSeconds: $timeoutSeconds)';
+
  }

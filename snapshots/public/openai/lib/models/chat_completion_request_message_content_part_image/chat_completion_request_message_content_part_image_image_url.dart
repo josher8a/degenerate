@@ -22,10 +22,13 @@ ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, Detail 
   url: url ?? this.url,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartImageImageUrl &&
           url == other.url &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(url, detail); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrl(url: $url, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(url, detail);
+
+@override String toString() => 'ChatCompletionRequestMessageContentPartImageImageUrl(url: $url, detail: $detail)';
+
  }

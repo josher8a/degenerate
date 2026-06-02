@@ -135,7 +135,7 @@ MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, dou
   sentFifo: sentFifo ?? this.sentFifo,
   sentPackets: sentPackets ?? this.sentPackets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotNetdev &&
           connectorId == other.connectorId &&
           name == other.name &&
@@ -154,7 +154,10 @@ MconnSnapshotNetdev copyWith({String? Function()? connectorId, String? name, dou
           sentDrop == other.sentDrop &&
           sentErrs == other.sentErrs &&
           sentFifo == other.sentFifo &&
-          sentPackets == other.sentPackets; } 
-@override int get hashCode { return Object.hash(connectorId, name, recvBytes, recvCompressed, recvDrop, recvErrs, recvFifo, recvFrame, recvMulticast, recvPackets, sentBytes, sentCarrier, sentColls, sentCompressed, sentDrop, sentErrs, sentFifo, sentPackets); } 
-@override String toString() { return 'MconnSnapshotNetdev(connectorId: $connectorId, name: $name, recvBytes: $recvBytes, recvCompressed: $recvCompressed, recvDrop: $recvDrop, recvErrs: $recvErrs, recvFifo: $recvFifo, recvFrame: $recvFrame, recvMulticast: $recvMulticast, recvPackets: $recvPackets, sentBytes: $sentBytes, sentCarrier: $sentCarrier, sentColls: $sentColls, sentCompressed: $sentCompressed, sentDrop: $sentDrop, sentErrs: $sentErrs, sentFifo: $sentFifo, sentPackets: $sentPackets)'; } 
+          sentPackets == other.sentPackets;
+
+@override int get hashCode => Object.hash(connectorId, name, recvBytes, recvCompressed, recvDrop, recvErrs, recvFifo, recvFrame, recvMulticast, recvPackets, sentBytes, sentCarrier, sentColls, sentCompressed, sentDrop, sentErrs, sentFifo, sentPackets);
+
+@override String toString() => 'MconnSnapshotNetdev(connectorId: $connectorId, name: $name, recvBytes: $recvBytes, recvCompressed: $recvCompressed, recvDrop: $recvDrop, recvErrs: $recvErrs, recvFifo: $recvFifo, recvFrame: $recvFrame, recvMulticast: $recvMulticast, recvPackets: $recvPackets, sentBytes: $sentBytes, sentCarrier: $sentCarrier, sentColls: $sentColls, sentCompressed: $sentCompressed, sentDrop: $sentDrop, sentErrs: $sentErrs, sentFifo: $sentFifo, sentPackets: $sentPackets)';
+
  }

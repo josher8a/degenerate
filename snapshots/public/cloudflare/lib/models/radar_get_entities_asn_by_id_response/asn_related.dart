@@ -36,12 +36,15 @@ AsnRelated copyWith({String? Function()? aka, int? asn, int? Function()? estimat
   estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnRelated &&
           aka == other.aka &&
           asn == other.asn &&
           estimatedUsers == other.estimatedUsers &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(aka, asn, estimatedUsers, name); } 
-@override String toString() { return 'AsnRelated(aka: $aka, asn: $asn, estimatedUsers: $estimatedUsers, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(aka, asn, estimatedUsers, name);
+
+@override String toString() => 'AsnRelated(aka: $aka, asn: $asn, estimatedUsers: $estimatedUsers, name: $name)';
+
  }

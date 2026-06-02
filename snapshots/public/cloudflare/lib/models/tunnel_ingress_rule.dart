@@ -42,12 +42,15 @@ TunnelIngressRule copyWith({String? hostname, TunnelOriginRequest? Function()? o
   path: path != null ? path() : this.path,
   service: service ?? this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelIngressRule &&
           hostname == other.hostname &&
           originRequest == other.originRequest &&
           path == other.path &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(hostname, originRequest, path, service); } 
-@override String toString() { return 'TunnelIngressRule(hostname: $hostname, originRequest: $originRequest, path: $path, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(hostname, originRequest, path, service);
+
+@override String toString() => 'TunnelIngressRule(hostname: $hostname, originRequest: $originRequest, path: $path, service: $service)';
+
  }

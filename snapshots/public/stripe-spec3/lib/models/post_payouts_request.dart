@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Method && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Method($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Method && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Method($value)';
+
  }
 @immutable final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });
 
@@ -107,7 +110,7 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPayoutsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -118,7 +121,10 @@ PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? 
           method == other.method &&
           payoutMethod == other.payoutMethod &&
           sourceType == other.sourceType &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, method, payoutMethod, sourceType, statementDescriptor); } 
-@override String toString() { return 'PostPayoutsRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, method: $method, payoutMethod: $payoutMethod, sourceType: $sourceType, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, method, payoutMethod, sourceType, statementDescriptor);
+
+@override String toString() => 'PostPayoutsRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, method: $method, payoutMethod: $payoutMethod, sourceType: $sourceType, statementDescriptor: $statementDescriptor)';
+
  }

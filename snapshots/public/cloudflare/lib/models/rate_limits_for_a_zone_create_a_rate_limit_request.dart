@@ -35,12 +35,15 @@ RateLimitsForAZoneCreateARateLimitRequest copyWith({FirewallAction? action, Fire
   period: period ?? this.period,
   threshold: threshold ?? this.threshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimitsForAZoneCreateARateLimitRequest &&
           action == other.action &&
           match == other.match &&
           period == other.period &&
-          threshold == other.threshold; } 
-@override int get hashCode { return Object.hash(action, match, period, threshold); } 
-@override String toString() { return 'RateLimitsForAZoneCreateARateLimitRequest(action: $action, match: $match, period: $period, threshold: $threshold)'; } 
+          threshold == other.threshold;
+
+@override int get hashCode => Object.hash(action, match, period, threshold);
+
+@override String toString() => 'RateLimitsForAZoneCreateARateLimitRequest(action: $action, match: $match, period: $period, threshold: $threshold)';
+
  }

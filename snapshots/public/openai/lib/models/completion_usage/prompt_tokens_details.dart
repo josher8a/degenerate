@@ -23,10 +23,13 @@ PromptTokensDetails copyWith({int Function()? audioTokens, int Function()? cache
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
   cachedTokens: cachedTokens != null ? cachedTokens() : this.cachedTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromptTokensDetails &&
           audioTokens == other.audioTokens &&
-          cachedTokens == other.cachedTokens; } 
-@override int get hashCode { return Object.hash(audioTokens, cachedTokens); } 
-@override String toString() { return 'PromptTokensDetails(audioTokens: $audioTokens, cachedTokens: $cachedTokens)'; } 
+          cachedTokens == other.cachedTokens;
+
+@override int get hashCode => Object.hash(audioTokens, cachedTokens);
+
+@override String toString() => 'PromptTokensDetails(audioTokens: $audioTokens, cachedTokens: $cachedTokens)';
+
  }

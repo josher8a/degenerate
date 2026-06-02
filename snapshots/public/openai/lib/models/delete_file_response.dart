@@ -27,11 +27,14 @@ DeleteFileResponse copyWith({String? id, DeleteFileResponseObject? object, bool?
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteFileResponse &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'DeleteFileResponse(id: $id, object: $object, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(id, object, deleted);
+
+@override String toString() => 'DeleteFileResponse(id: $id, object: $object, deleted: $deleted)';
+
  }

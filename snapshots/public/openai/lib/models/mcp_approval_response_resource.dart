@@ -50,13 +50,16 @@ McpApprovalResponseResource copyWith({String? type, String? id, String? approval
   approve: approve ?? this.approve,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpApprovalResponseResource &&
           type == other.type &&
           id == other.id &&
           approvalRequestId == other.approvalRequestId &&
           approve == other.approve &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(type, id, approvalRequestId, approve, reason); } 
-@override String toString() { return 'McpApprovalResponseResource(type: $type, id: $id, approvalRequestId: $approvalRequestId, approve: $approve, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(type, id, approvalRequestId, approve, reason);
+
+@override String toString() => 'McpApprovalResponseResource(type: $type, id: $id, approvalRequestId: $approvalRequestId, approve: $approve, reason: $reason)';
+
  }

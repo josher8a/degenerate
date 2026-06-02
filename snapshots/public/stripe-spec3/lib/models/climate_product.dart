@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateProductObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateProductObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateProductObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClimateProductObject($value)';
+
  }
 /// A Climate product represents a type of carbon removal unit available for reservation.
 /// You can retrieve it to see the current price and availability.
@@ -102,7 +105,7 @@ ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>?
   object: object ?? this.object,
   suppliers: suppliers ?? this.suppliers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateProduct &&
           created == other.created &&
           currentPricesPerMetricTon == other.currentPricesPerMetricTon &&
@@ -112,7 +115,10 @@ ClimateProduct copyWith({int? created, Map<String,ClimateRemovalsProductsPrice>?
           metricTonsAvailable == other.metricTonsAvailable &&
           name == other.name &&
           object == other.object &&
-          listEquals(suppliers, other.suppliers); } 
-@override int get hashCode { return Object.hash(created, currentPricesPerMetricTon, deliveryYear, id, livemode, metricTonsAvailable, name, object, Object.hashAll(suppliers)); } 
-@override String toString() { return 'ClimateProduct(created: $created, currentPricesPerMetricTon: $currentPricesPerMetricTon, deliveryYear: $deliveryYear, id: $id, livemode: $livemode, metricTonsAvailable: $metricTonsAvailable, name: $name, object: $object, suppliers: $suppliers)'; } 
+          listEquals(suppliers, other.suppliers);
+
+@override int get hashCode => Object.hash(created, currentPricesPerMetricTon, deliveryYear, id, livemode, metricTonsAvailable, name, object, Object.hashAll(suppliers));
+
+@override String toString() => 'ClimateProduct(created: $created, currentPricesPerMetricTon: $currentPricesPerMetricTon, deliveryYear: $deliveryYear, id: $id, livemode: $livemode, metricTonsAvailable: $metricTonsAvailable, name: $name, object: $object, suppliers: $suppliers)';
+
  }

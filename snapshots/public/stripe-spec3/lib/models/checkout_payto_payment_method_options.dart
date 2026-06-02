@@ -28,10 +28,13 @@ CheckoutPaytoPaymentMethodOptions copyWith({MandateOptionsPayto? Function()? man
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutPaytoPaymentMethodOptions &&
           mandateOptions == other.mandateOptions &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage); } 
-@override String toString() { return 'CheckoutPaytoPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(mandateOptions, setupFutureUsage);
+
+@override String toString() => 'CheckoutPaytoPaymentMethodOptions(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)';
+
  }

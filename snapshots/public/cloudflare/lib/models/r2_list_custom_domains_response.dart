@@ -41,9 +41,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
 R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? domains}) { return R2ListCustomDomainsResponse(
   domains: domains ?? this.domains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ListCustomDomainsResponse &&
-          listEquals(domains, other.domains); } 
-@override int get hashCode { return Object.hashAll(domains); } 
-@override String toString() { return 'R2ListCustomDomainsResponse(domains: $domains)'; } 
+          listEquals(domains, other.domains);
+
+@override int get hashCode => Object.hashAll(domains);
+
+@override String toString() => 'R2ListCustomDomainsResponse(domains: $domains)';
+
  }

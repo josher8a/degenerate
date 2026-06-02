@@ -72,7 +72,7 @@ DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosSynProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           createdOn == other.createdOn &&
@@ -82,7 +82,10 @@ DosSynProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, createdOn, id, mitigationType, mode, modifiedOn, name, rateSensitivity, scope); } 
-@override String toString() { return 'DosSynProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mitigationType: $mitigationType, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(burstSensitivity, createdOn, id, mitigationType, mode, modifiedOn, name, rateSensitivity, scope);
+
+@override String toString() => 'DosSynProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mitigationType: $mitigationType, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';
+
  }

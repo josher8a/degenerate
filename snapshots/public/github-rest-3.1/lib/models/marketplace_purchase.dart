@@ -55,7 +55,7 @@ MarketplacePurchase copyWith({String? url, String? type, int? id, String? login,
   marketplacePendingChange: marketplacePendingChange != null ? marketplacePendingChange() : this.marketplacePendingChange,
   marketplacePurchase: marketplacePurchase ?? this.marketplacePurchase,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplacePurchase &&
           url == other.url &&
           type == other.type &&
@@ -64,7 +64,10 @@ MarketplacePurchase copyWith({String? url, String? type, int? id, String? login,
           organizationBillingEmail == other.organizationBillingEmail &&
           email == other.email &&
           marketplacePendingChange == other.marketplacePendingChange &&
-          marketplacePurchase == other.marketplacePurchase; } 
-@override int get hashCode { return Object.hash(url, type, id, login, organizationBillingEmail, email, marketplacePendingChange, marketplacePurchase); } 
-@override String toString() { return 'MarketplacePurchase(url: $url, type: $type, id: $id, login: $login, organizationBillingEmail: $organizationBillingEmail, email: $email, marketplacePendingChange: $marketplacePendingChange, marketplacePurchase: $marketplacePurchase)'; } 
+          marketplacePurchase == other.marketplacePurchase;
+
+@override int get hashCode => Object.hash(url, type, id, login, organizationBillingEmail, email, marketplacePendingChange, marketplacePurchase);
+
+@override String toString() => 'MarketplacePurchase(url: $url, type: $type, id: $id, login: $login, organizationBillingEmail: $organizationBillingEmail, email: $email, marketplacePendingChange: $marketplacePendingChange, marketplacePurchase: $marketplacePurchase)';
+
  }

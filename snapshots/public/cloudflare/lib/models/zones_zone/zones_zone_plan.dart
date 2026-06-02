@@ -89,7 +89,7 @@ ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? curr
   name: name != null ? name() : this.name,
   price: price != null ? price() : this.price,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZonePlan &&
           canSubscribe == other.canSubscribe &&
           currency == other.currency &&
@@ -100,7 +100,10 @@ ZonesZonePlan copyWith({bool? Function()? canSubscribe, String? Function()? curr
           legacyDiscount == other.legacyDiscount &&
           legacyId == other.legacyId &&
           name == other.name &&
-          price == other.price; } 
-@override int get hashCode { return Object.hash(canSubscribe, currency, externallyManaged, frequency, id, isSubscribed, legacyDiscount, legacyId, name, price); } 
-@override String toString() { return 'ZonesZonePlan(canSubscribe: $canSubscribe, currency: $currency, externallyManaged: $externallyManaged, frequency: $frequency, id: $id, isSubscribed: $isSubscribed, legacyDiscount: $legacyDiscount, legacyId: $legacyId, name: $name, price: $price)'; } 
+          price == other.price;
+
+@override int get hashCode => Object.hash(canSubscribe, currency, externallyManaged, frequency, id, isSubscribed, legacyDiscount, legacyId, name, price);
+
+@override String toString() => 'ZonesZonePlan(canSubscribe: $canSubscribe, currency: $currency, externallyManaged: $externallyManaged, frequency: $frequency, id: $id, isSubscribed: $isSubscribed, legacyDiscount: $legacyDiscount, legacyId: $legacyId, name: $name, price: $price)';
+
  }

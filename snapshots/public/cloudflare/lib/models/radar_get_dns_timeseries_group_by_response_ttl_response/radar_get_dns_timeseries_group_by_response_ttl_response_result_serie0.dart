@@ -51,7 +51,7 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<Strin
   gt15mLte1h: gt15mLte1h ?? this.gt15mLte1h,
   lte1m: lte1m ?? this.lte1m,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 &&
           listEquals(gt1dLte1w, other.gt1dLte1w) &&
           listEquals(gt1hLte1d, other.gt1hLte1d) &&
@@ -59,7 +59,10 @@ RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0 copyWith({List<Strin
           listEquals(gt1w, other.gt1w) &&
           listEquals(gt5mLte15m, other.gt5mLte15m) &&
           listEquals(gt15mLte1h, other.gt15mLte1h) &&
-          listEquals(lte1m, other.lte1m); } 
-@override int get hashCode { return Object.hash(Object.hashAll(gt1dLte1w), Object.hashAll(gt1hLte1d), Object.hashAll(gt1mLte5m), Object.hashAll(gt1w), Object.hashAll(gt5mLte15m), Object.hashAll(gt15mLte1h), Object.hashAll(lte1m)); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(gt1dLte1w: $gt1dLte1w, gt1hLte1d: $gt1hLte1d, gt1mLte5m: $gt1mLte5m, gt1w: $gt1w, gt5mLte15m: $gt5mLte15m, gt15mLte1h: $gt15mLte1h, lte1m: $lte1m)'; } 
+          listEquals(lte1m, other.lte1m);
+
+@override int get hashCode => Object.hash(Object.hashAll(gt1dLte1w), Object.hashAll(gt1hLte1d), Object.hashAll(gt1mLte5m), Object.hashAll(gt1w), Object.hashAll(gt5mLte15m), Object.hashAll(gt15mLte1h), Object.hashAll(lte1m));
+
+@override String toString() => 'RadarGetDnsTimeseriesGroupByResponseTtlResponseResultSerie0(gt1dLte1w: $gt1dLte1w, gt1hLte1d: $gt1hLte1d, gt1mLte5m: $gt1mLte5m, gt1w: $gt1w, gt5mLte15m: $gt5mLte15m, gt15mLte1h: $gt15mLte1h, lte1m: $lte1m)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is JsonSchemaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'JsonSchemaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is JsonSchemaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'JsonSchemaType($value)';
+
  }
 @immutable final class Variant1JsonSchema {const Variant1JsonSchema({required this.jsonSchema, required this.type, });
 
@@ -42,10 +45,13 @@ Variant1JsonSchema copyWith({JsonSchemaJsonSchema? jsonSchema, JsonSchemaType? t
   jsonSchema: jsonSchema ?? this.jsonSchema,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1JsonSchema &&
           jsonSchema == other.jsonSchema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(jsonSchema, type); } 
-@override String toString() { return 'Variant1JsonSchema(jsonSchema: $jsonSchema, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(jsonSchema, type);
+
+@override String toString() => 'Variant1JsonSchema(jsonSchema: $jsonSchema, type: $type)';
+
  }

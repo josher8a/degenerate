@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplicationFeeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplicationFeeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplicationFeeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApplicationFeeObject($value)';
+
  }
 /// 
 @immutable final class ApplicationFee {const ApplicationFee({required this.account, required this.amount, required this.amountRefunded, required this.application, required this.charge, required this.created, required this.currency, required this.id, required this.livemode, required this.object, required this.refunded, required this.refunds, this.balanceTransaction, this.feeSource, this.originatingTransaction, });
@@ -138,7 +141,7 @@ ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amoun
   refunded: refunded ?? this.refunded,
   refunds: refunds ?? this.refunds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplicationFee &&
           account == other.account &&
           amount == other.amount &&
@@ -154,7 +157,10 @@ ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amoun
           object == other.object &&
           originatingTransaction == other.originatingTransaction &&
           refunded == other.refunded &&
-          refunds == other.refunds; } 
-@override int get hashCode { return Object.hash(account, amount, amountRefunded, application, balanceTransaction, charge, created, currency, feeSource, id, livemode, object, originatingTransaction, refunded, refunds); } 
-@override String toString() { return 'ApplicationFee(account: $account, amount: $amount, amountRefunded: $amountRefunded, application: $application, balanceTransaction: $balanceTransaction, charge: $charge, created: $created, currency: $currency, feeSource: $feeSource, id: $id, livemode: $livemode, object: $object, originatingTransaction: $originatingTransaction, refunded: $refunded, refunds: $refunds)'; } 
+          refunds == other.refunds;
+
+@override int get hashCode => Object.hash(account, amount, amountRefunded, application, balanceTransaction, charge, created, currency, feeSource, id, livemode, object, originatingTransaction, refunded, refunds);
+
+@override String toString() => 'ApplicationFee(account: $account, amount: $amount, amountRefunded: $amountRefunded, application: $application, balanceTransaction: $balanceTransaction, charge: $charge, created: $created, currency: $currency, feeSource: $feeSource, id: $id, livemode: $livemode, object: $object, originatingTransaction: $originatingTransaction, refunded: $refunded, refunds: $refunds)';
+
  }

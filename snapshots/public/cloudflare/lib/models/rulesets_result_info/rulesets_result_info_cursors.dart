@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('after
 RulesetsResultInfoCursors copyWith({RulesetsCursor? after}) { return RulesetsResultInfoCursors(
   after: after ?? this.after,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsResultInfoCursors &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'RulesetsResultInfoCursors(after: $after)'; } 
+          after == other.after;
+
+@override int get hashCode => after.hashCode;
+
+@override String toString() => 'RulesetsResultInfoCursors(after: $after)';
+
  }

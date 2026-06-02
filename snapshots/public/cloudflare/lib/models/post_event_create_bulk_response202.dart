@@ -56,7 +56,7 @@ PostEventCreateBulkResponse202 copyWith({String? Function()? createBulkEventsReq
   errors: errors != null ? errors() : this.errors,
   queuedIndicatorsCount: queuedIndicatorsCount ?? this.queuedIndicatorsCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateBulkResponse202 &&
           createBulkEventsRequestId == other.createBulkEventsRequestId &&
           listEquals(createdEvents, other.createdEvents) &&
@@ -64,7 +64,10 @@ PostEventCreateBulkResponse202 copyWith({String? Function()? createBulkEventsReq
           createdTagsCount == other.createdTagsCount &&
           errorCount == other.errorCount &&
           listEquals(errors, other.errors) &&
-          queuedIndicatorsCount == other.queuedIndicatorsCount; } 
-@override int get hashCode { return Object.hash(createBulkEventsRequestId, Object.hashAll(createdEvents ?? const []), createdEventsCount, createdTagsCount, errorCount, Object.hashAll(errors ?? const []), queuedIndicatorsCount); } 
-@override String toString() { return 'PostEventCreateBulkResponse202(createBulkEventsRequestId: $createBulkEventsRequestId, createdEvents: $createdEvents, createdEventsCount: $createdEventsCount, createdTagsCount: $createdTagsCount, errorCount: $errorCount, errors: $errors, queuedIndicatorsCount: $queuedIndicatorsCount)'; } 
+          queuedIndicatorsCount == other.queuedIndicatorsCount;
+
+@override int get hashCode => Object.hash(createBulkEventsRequestId, Object.hashAll(createdEvents ?? const []), createdEventsCount, createdTagsCount, errorCount, Object.hashAll(errors ?? const []), queuedIndicatorsCount);
+
+@override String toString() => 'PostEventCreateBulkResponse202(createBulkEventsRequestId: $createBulkEventsRequestId, createdEvents: $createdEvents, createdEventsCount: $createdEventsCount, createdTagsCount: $createdTagsCount, errorCount: $errorCount, errors: $errors, queuedIndicatorsCount: $queuedIndicatorsCount)';
+
  }

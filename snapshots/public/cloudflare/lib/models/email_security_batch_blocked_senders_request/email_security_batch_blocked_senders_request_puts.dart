@@ -48,13 +48,16 @@ EmailSecurityBatchBlockedSendersRequestPuts copyWith({String? Function()? commen
   patternType: patternType != null ? patternType() : this.patternType,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchBlockedSendersRequestPuts &&
           comments == other.comments &&
           isRegex == other.isRegex &&
           pattern == other.pattern &&
           patternType == other.patternType &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType, id); } 
-@override String toString() { return 'EmailSecurityBatchBlockedSendersRequestPuts(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(comments, isRegex, pattern, patternType, id);
+
+@override String toString() => 'EmailSecurityBatchBlockedSendersRequestPuts(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType, id: $id)';
+
  }

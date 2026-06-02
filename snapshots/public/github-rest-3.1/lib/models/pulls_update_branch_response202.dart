@@ -20,10 +20,13 @@ PullsUpdateBranchResponse202 copyWith({String? Function()? message, String? Func
   message: message != null ? message() : this.message,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsUpdateBranchResponse202 &&
           message == other.message &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(message, url); } 
-@override String toString() { return 'PullsUpdateBranchResponse202(message: $message, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(message, url);
+
+@override String toString() => 'PullsUpdateBranchResponse202(message: $message, url: $url)';
+
  }

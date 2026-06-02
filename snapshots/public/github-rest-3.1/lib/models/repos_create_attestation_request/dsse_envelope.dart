@@ -18,9 +18,12 @@ DsseEnvelope copyWith({Map<String, dynamic>? additionalProperties}) { return Dss
 
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DsseEnvelope &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hashAll(additionalProperties.entries); } 
-@override String toString() { return 'DsseEnvelope(additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hashAll(additionalProperties.entries);
+
+@override String toString() => 'DsseEnvelope(additionalProperties: $additionalProperties)';
+
  }

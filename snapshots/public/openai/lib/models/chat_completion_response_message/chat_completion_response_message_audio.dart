@@ -45,12 +45,15 @@ ChatCompletionResponseMessageAudio copyWith({String? id, int? expiresAt, String?
   data: data ?? this.data,
   transcript: transcript ?? this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionResponseMessageAudio &&
           id == other.id &&
           expiresAt == other.expiresAt &&
           data == other.data &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(id, expiresAt, data, transcript); } 
-@override String toString() { return 'ChatCompletionResponseMessageAudio(id: $id, expiresAt: $expiresAt, data: $data, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(id, expiresAt, data, transcript);
+
+@override String toString() => 'ChatCompletionResponseMessageAudio(id: $id, expiresAt: $expiresAt, data: $data, transcript: $transcript)';
+
  }

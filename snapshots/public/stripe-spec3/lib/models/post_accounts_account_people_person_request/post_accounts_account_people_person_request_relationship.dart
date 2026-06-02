@@ -58,7 +58,7 @@ PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? a
   representative: representative != null ? representative() : this.representative,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountPeoplePersonRequestRelationship &&
           authorizer == other.authorizer &&
           director == other.director &&
@@ -67,7 +67,10 @@ PostAccountsAccountPeoplePersonRequestRelationship copyWith({bool? Function()? a
           owner == other.owner &&
           percentOwnership == other.percentOwnership &&
           representative == other.representative &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title); } 
-@override String toString() { return 'PostAccountsAccountPeoplePersonRequestRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(authorizer, director, executive, legalGuardian, owner, percentOwnership, representative, title);
+
+@override String toString() => 'PostAccountsAccountPeoplePersonRequestRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, percentOwnership: $percentOwnership, representative: $representative, title: $title)';
+
  }

@@ -25,10 +25,13 @@ DeploymentBranchPolicyNamePatternWithType copyWith({String? name, DeploymentBran
   name: name ?? this.name,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentBranchPolicyNamePatternWithType &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'DeploymentBranchPolicyNamePatternWithType(name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, type);
+
+@override String toString() => 'DeploymentBranchPolicyNamePatternWithType(name: $name, type: $type)';
+
  }

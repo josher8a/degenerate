@@ -31,11 +31,14 @@ R2QueuesConfig copyWith({String? Function()? queueId, String? Function()? queueN
   queueName: queueName != null ? queueName() : this.queueName,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2QueuesConfig &&
           queueId == other.queueId &&
           queueName == other.queueName &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(queueId, queueName, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'R2QueuesConfig(queueId: $queueId, queueName: $queueName, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(queueId, queueName, Object.hashAll(rules ?? const []));
+
+@override String toString() => 'R2QueuesConfig(queueId: $queueId, queueName: $queueName, rules: $rules)';
+
  }

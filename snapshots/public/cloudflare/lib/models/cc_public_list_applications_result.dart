@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 CcPublicListApplicationsResult copyWith({List<CcPublicApplication>? result}) { return CcPublicListApplicationsResult(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcPublicListApplicationsResult &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hashAll(result); } 
-@override String toString() { return 'CcPublicListApplicationsResult(result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hashAll(result);
+
+@override String toString() => 'CcPublicListApplicationsResult(result: $result)';
+
  }

@@ -58,7 +58,7 @@ ObservatoryTrend copyWith({List<double>? Function()? cls, List<double>? Function
   ttfb: ttfb != null ? ttfb() : this.ttfb,
   tti: tti != null ? tti() : this.tti,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryTrend &&
           listEquals(cls, other.cls) &&
           listEquals(fcp, other.fcp) &&
@@ -67,7 +67,10 @@ ObservatoryTrend copyWith({List<double>? Function()? cls, List<double>? Function
           listEquals(si, other.si) &&
           listEquals(tbt, other.tbt) &&
           listEquals(ttfb, other.ttfb) &&
-          listEquals(tti, other.tti); } 
-@override int get hashCode { return Object.hash(Object.hashAll(cls ?? const []), Object.hashAll(fcp ?? const []), Object.hashAll(lcp ?? const []), Object.hashAll(performanceScore ?? const []), Object.hashAll(si ?? const []), Object.hashAll(tbt ?? const []), Object.hashAll(ttfb ?? const []), Object.hashAll(tti ?? const [])); } 
-@override String toString() { return 'ObservatoryTrend(cls: $cls, fcp: $fcp, lcp: $lcp, performanceScore: $performanceScore, si: $si, tbt: $tbt, ttfb: $ttfb, tti: $tti)'; } 
+          listEquals(tti, other.tti);
+
+@override int get hashCode => Object.hash(Object.hashAll(cls ?? const []), Object.hashAll(fcp ?? const []), Object.hashAll(lcp ?? const []), Object.hashAll(performanceScore ?? const []), Object.hashAll(si ?? const []), Object.hashAll(tbt ?? const []), Object.hashAll(ttfb ?? const []), Object.hashAll(tti ?? const []));
+
+@override String toString() => 'ObservatoryTrend(cls: $cls, fcp: $fcp, lcp: $lcp, performanceScore: $performanceScore, si: $si, tbt: $tbt, ttfb: $ttfb, tti: $tti)';
+
  }

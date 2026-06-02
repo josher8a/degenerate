@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 BillingMeterResourceBillingMeterStatusTransitions copyWith({int? Function()? deactivatedAt}) { return BillingMeterResourceBillingMeterStatusTransitions(
   deactivatedAt: deactivatedAt != null ? deactivatedAt() : this.deactivatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterResourceBillingMeterStatusTransitions &&
-          deactivatedAt == other.deactivatedAt; } 
-@override int get hashCode { return deactivatedAt.hashCode; } 
-@override String toString() { return 'BillingMeterResourceBillingMeterStatusTransitions(deactivatedAt: $deactivatedAt)'; } 
+          deactivatedAt == other.deactivatedAt;
+
+@override int get hashCode => deactivatedAt.hashCode;
+
+@override String toString() => 'BillingMeterResourceBillingMeterStatusTransitions(deactivatedAt: $deactivatedAt)';
+
  }

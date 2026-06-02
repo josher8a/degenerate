@@ -40,12 +40,15 @@ Triangle copyWith({String? type, double? base, double? height, List<double>? Fun
   height: height ?? this.height,
   angles: angles != null ? angles() : this.angles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Triangle &&
           type == other.type &&
           base == other.base &&
           height == other.height &&
-          listEquals(angles, other.angles); } 
-@override int get hashCode { return Object.hash(type, base, height, Object.hashAll(angles ?? const [])); } 
-@override String toString() { return 'Triangle(type: $type, base: $base, height: $height, angles: $angles)'; } 
+          listEquals(angles, other.angles);
+
+@override int get hashCode => Object.hash(type, base, height, Object.hashAll(angles ?? const []));
+
+@override String toString() => 'Triangle(type: $type, base: $base, height: $height, angles: $angles)';
+
  }

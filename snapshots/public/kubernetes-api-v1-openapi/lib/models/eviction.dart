@@ -35,12 +35,15 @@ Eviction copyWith({String? Function()? apiVersion, DeleteOptions? Function()? de
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Eviction &&
           apiVersion == other.apiVersion &&
           deleteOptions == other.deleteOptions &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, deleteOptions, kind, metadata); } 
-@override String toString() { return 'Eviction(apiVersion: $apiVersion, deleteOptions: $deleteOptions, kind: $kind, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(apiVersion, deleteOptions, kind, metadata);
+
+@override String toString() => 'Eviction(apiVersion: $apiVersion, deleteOptions: $deleteOptions, kind: $kind, metadata: $metadata)';
+
  }

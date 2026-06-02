@@ -59,10 +59,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LineItemsTaxAmountTaxabilityReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LineItemsTaxAmountTaxabilityReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LineItemsTaxAmountTaxabilityReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LineItemsTaxAmountTaxabilityReason($value)';
+
  }
 /// 
 @immutable final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason, this.taxableAmount, });
@@ -99,12 +102,15 @@ LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, LineItemsTaxAmountTaxab
   taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,
   taxableAmount: taxableAmount != null ? taxableAmount() : this.taxableAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LineItemsTaxAmount &&
           amount == other.amount &&
           rate == other.rate &&
           taxabilityReason == other.taxabilityReason &&
-          taxableAmount == other.taxableAmount; } 
-@override int get hashCode { return Object.hash(amount, rate, taxabilityReason, taxableAmount); } 
-@override String toString() { return 'LineItemsTaxAmount(amount: $amount, rate: $rate, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+          taxableAmount == other.taxableAmount;
+
+@override int get hashCode => Object.hash(amount, rate, taxabilityReason, taxableAmount);
+
+@override String toString() => 'LineItemsTaxAmount(amount: $amount, rate: $rate, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)';
+
  }

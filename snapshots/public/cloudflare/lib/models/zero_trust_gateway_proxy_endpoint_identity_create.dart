@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointIdentityCreateKind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointIdentityCreateKind($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointIdentityCreateKind && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreateKind($value)';
+
  }
 @immutable final class ZeroTrustGatewayProxyEndpointIdentityCreate {const ZeroTrustGatewayProxyEndpointIdentityCreate({required this.kind, required this.name, });
 
@@ -46,10 +49,13 @@ ZeroTrustGatewayProxyEndpointIdentityCreate copyWith({ZeroTrustGatewayProxyEndpo
   kind: kind ?? this.kind,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointIdentityCreate &&
           kind == other.kind &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(kind, name); } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointIdentityCreate(kind: $kind, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(kind, name);
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreate(kind: $kind, name: $name)';
+
  }

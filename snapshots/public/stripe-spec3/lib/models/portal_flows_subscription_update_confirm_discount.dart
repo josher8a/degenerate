@@ -34,10 +34,13 @@ PortalFlowsSubscriptionUpdateConfirmDiscount copyWith({String? Function()? coupo
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsSubscriptionUpdateConfirmDiscount &&
           coupon == other.coupon &&
-          promotionCode == other.promotionCode; } 
-@override int get hashCode { return Object.hash(coupon, promotionCode); } 
-@override String toString() { return 'PortalFlowsSubscriptionUpdateConfirmDiscount(coupon: $coupon, promotionCode: $promotionCode)'; } 
+          promotionCode == other.promotionCode;
+
+@override int get hashCode => Object.hash(coupon, promotionCode);
+
+@override String toString() => 'PortalFlowsSubscriptionUpdateConfirmDiscount(coupon: $coupon, promotionCode: $promotionCode)';
+
  }

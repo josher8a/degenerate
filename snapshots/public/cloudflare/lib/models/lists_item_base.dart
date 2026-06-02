@@ -42,12 +42,15 @@ ListsItemBase copyWith({ListsItemComment? Function()? comment, ListsCreatedOn? c
   id: id ?? this.id,
   modifiedOn: modifiedOn ?? this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsItemBase &&
           comment == other.comment &&
           createdOn == other.createdOn &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(comment, createdOn, id, modifiedOn); } 
-@override String toString() { return 'ListsItemBase(comment: $comment, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(comment, createdOn, id, modifiedOn);
+
+@override String toString() => 'ListsItemBase(comment: $comment, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn)';
+
  }

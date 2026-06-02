@@ -63,25 +63,21 @@ final class SummarySpacesSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SummarySpacesSchema &&
-            listEquals(upcoming, other.upcoming) &&
-            listEquals(forYou, other.forYou) &&
-            listEquals(explore, other.explore);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SummarySpacesSchema &&
+          listEquals(upcoming, other.upcoming) &&
+          listEquals(forYou, other.forYou) &&
+          listEquals(explore, other.explore);
 
   @override
-  int get hashCode {
-    return Object.hash(
-      Object.hashAll(upcoming),
-      Object.hashAll(forYou),
-      Object.hashAll(explore),
-    );
-  }
+  int get hashCode => Object.hash(
+    Object.hashAll(upcoming),
+    Object.hashAll(forYou),
+    Object.hashAll(explore),
+  );
 
   @override
-  String toString() {
-    return 'SummarySpacesSchema(upcoming: $upcoming, forYou: $forYou, explore: $explore)';
-  }
+  String toString() =>
+      'SummarySpacesSchema(upcoming: $upcoming, forYou: $forYou, explore: $explore)';
 }

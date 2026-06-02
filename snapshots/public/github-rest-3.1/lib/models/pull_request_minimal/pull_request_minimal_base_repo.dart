@@ -27,11 +27,14 @@ PullRequestMinimalBaseRepo copyWith({int? id, String? url, String? name, }) { re
   url: url ?? this.url,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestMinimalBaseRepo &&
           id == other.id &&
           url == other.url &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, url, name); } 
-@override String toString() { return 'PullRequestMinimalBaseRepo(id: $id, url: $url, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, url, name);
+
+@override String toString() => 'PullRequestMinimalBaseRepo(id: $id, url: $url, name: $name)';
+
  }

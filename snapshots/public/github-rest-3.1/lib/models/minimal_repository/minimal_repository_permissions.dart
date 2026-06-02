@@ -35,13 +35,16 @@ MinimalRepositoryPermissions copyWith({bool? Function()? admin, bool? Function()
   triage: triage != null ? triage() : this.triage,
   pull: pull != null ? pull() : this.pull,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MinimalRepositoryPermissions &&
           admin == other.admin &&
           maintain == other.maintain &&
           push == other.push &&
           triage == other.triage &&
-          pull == other.pull; } 
-@override int get hashCode { return Object.hash(admin, maintain, push, triage, pull); } 
-@override String toString() { return 'MinimalRepositoryPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)'; } 
+          pull == other.pull;
+
+@override int get hashCode => Object.hash(admin, maintain, push, triage, pull);
+
+@override String toString() => 'MinimalRepositoryPermissions(admin: $admin, maintain: $maintain, push: $push, triage: $triage, pull: $pull)';
+
  }

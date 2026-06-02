@@ -22,10 +22,13 @@ TargetIndustries copyWith({AttackersProperties? properties, String? type, }) { r
   properties: properties ?? this.properties,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TargetIndustries &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, type); } 
-@override String toString() { return 'TargetIndustries(properties: $properties, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(properties, type);
+
+@override String toString() => 'TargetIndustries(properties: $properties, type: $type)';
+
  }

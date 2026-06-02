@@ -29,11 +29,14 @@ BandwidthByColo copyWith({int? Function()? all, int? Function()? cached, int? Fu
   cached: cached != null ? cached() : this.cached,
   uncached: uncached != null ? uncached() : this.uncached,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BandwidthByColo &&
           all == other.all &&
           cached == other.cached &&
-          uncached == other.uncached; } 
-@override int get hashCode { return Object.hash(all, cached, uncached); } 
-@override String toString() { return 'BandwidthByColo(all: $all, cached: $cached, uncached: $uncached)'; } 
+          uncached == other.uncached;
+
+@override int get hashCode => Object.hash(all, cached, uncached);
+
+@override String toString() => 'BandwidthByColo(all: $all, cached: $cached, uncached: $uncached)';
+
  }

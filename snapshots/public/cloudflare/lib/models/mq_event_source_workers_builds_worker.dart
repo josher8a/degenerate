@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqEventSourceWorkersBuildsWorkerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqEventSourceWorkersBuildsWorkerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqEventSourceWorkersBuildsWorkerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqEventSourceWorkersBuildsWorkerType($value)';
+
  }
 @immutable final class MqEventSourceWorkersBuildsWorker {const MqEventSourceWorkersBuildsWorker({this.type, this.workerName, });
 
@@ -44,10 +47,13 @@ MqEventSourceWorkersBuildsWorker copyWith({MqEventSourceWorkersBuildsWorkerType?
   type: type != null ? type() : this.type,
   workerName: workerName != null ? workerName() : this.workerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqEventSourceWorkersBuildsWorker &&
           type == other.type &&
-          workerName == other.workerName; } 
-@override int get hashCode { return Object.hash(type, workerName); } 
-@override String toString() { return 'MqEventSourceWorkersBuildsWorker(type: $type, workerName: $workerName)'; } 
+          workerName == other.workerName;
+
+@override int get hashCode => Object.hash(type, workerName);
+
+@override String toString() => 'MqEventSourceWorkersBuildsWorker(type: $type, workerName: $workerName)';
+
  }

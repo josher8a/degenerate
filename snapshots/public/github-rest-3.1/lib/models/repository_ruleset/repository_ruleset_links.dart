@@ -20,10 +20,13 @@ RepositoryRulesetLinks copyWith({RepositoryRulesetLinksSelf? Function()? self, R
   self: self != null ? self() : this.self,
   html: html != null ? html() : this.html,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetLinks &&
           self == other.self &&
-          html == other.html; } 
-@override int get hashCode { return Object.hash(self, html); } 
-@override String toString() { return 'RepositoryRulesetLinks(self: $self, html: $html)'; } 
+          html == other.html;
+
+@override int get hashCode => Object.hash(self, html);
+
+@override String toString() => 'RepositoryRulesetLinks(self: $self, html: $html)';
+
  }

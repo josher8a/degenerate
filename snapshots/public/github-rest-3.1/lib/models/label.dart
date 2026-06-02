@@ -58,7 +58,7 @@ Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Functio
   color: color ?? this.color,
   $default: $default ?? this.$default,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Label &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -66,7 +66,10 @@ Label copyWith({int? id, String? nodeId, Uri? url, String? name, String? Functio
           name == other.name &&
           description == other.description &&
           color == other.color &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, description, color, $default); } 
-@override String toString() { return 'Label(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})'; } 
+          $default == other.$default;
+
+@override int get hashCode => Object.hash(id, nodeId, url, name, description, color, $default);
+
+@override String toString() => 'Label(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})';
+
  }

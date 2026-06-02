@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetInvoicePaymentsPaymentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetInvoicePaymentsPaymentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GetInvoicePaymentsPaymentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GetInvoicePaymentsPaymentType($value)';
+
  }
 @immutable final class GetInvoicePaymentsPayment {const GetInvoicePaymentsPayment({required this.type, this.paymentIntent, this.paymentRecord, });
 
@@ -60,11 +63,14 @@ GetInvoicePaymentsPayment copyWith({String? Function()? paymentIntent, String? F
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetInvoicePaymentsPayment &&
           paymentIntent == other.paymentIntent &&
           paymentRecord == other.paymentRecord &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(paymentIntent, paymentRecord, type); } 
-@override String toString() { return 'GetInvoicePaymentsPayment(paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(paymentIntent, paymentRecord, type);
+
+@override String toString() => 'GetInvoicePaymentsPayment(paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)';
+
  }

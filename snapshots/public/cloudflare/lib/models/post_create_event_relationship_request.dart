@@ -41,12 +41,15 @@ PostCreateEventRelationshipRequest copyWith({List<String>? childIds, String? dat
   parentId: parentId ?? this.parentId,
   relationshipType: relationshipType ?? this.relationshipType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreateEventRelationshipRequest &&
           listEquals(childIds, other.childIds) &&
           datasetId == other.datasetId &&
           parentId == other.parentId &&
-          relationshipType == other.relationshipType; } 
-@override int get hashCode { return Object.hash(Object.hashAll(childIds), datasetId, parentId, relationshipType); } 
-@override String toString() { return 'PostCreateEventRelationshipRequest(childIds: $childIds, datasetId: $datasetId, parentId: $parentId, relationshipType: $relationshipType)'; } 
+          relationshipType == other.relationshipType;
+
+@override int get hashCode => Object.hash(Object.hashAll(childIds), datasetId, parentId, relationshipType);
+
+@override String toString() => 'PostCreateEventRelationshipRequest(childIds: $childIds, datasetId: $datasetId, parentId: $parentId, relationshipType: $relationshipType)';
+
  }

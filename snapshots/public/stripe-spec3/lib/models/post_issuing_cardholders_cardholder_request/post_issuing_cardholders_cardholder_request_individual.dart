@@ -36,13 +36,16 @@ PostIssuingCardholdersCardholderRequestIndividual copyWith({IndividualCardIssuin
   lastName: lastName != null ? lastName() : this.lastName,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardholdersCardholderRequestIndividual &&
           cardIssuing == other.cardIssuing &&
           dob == other.dob &&
           firstName == other.firstName &&
           lastName == other.lastName &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(cardIssuing, dob, firstName, lastName, verification); } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestIndividual(cardIssuing: $cardIssuing, dob: $dob, firstName: $firstName, lastName: $lastName, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(cardIssuing, dob, firstName, lastName, verification);
+
+@override String toString() => 'PostIssuingCardholdersCardholderRequestIndividual(cardIssuing: $cardIssuing, dob: $dob, firstName: $firstName, lastName: $lastName, verification: $verification)';
+
  }

@@ -55,7 +55,7 @@ SessionListSchema copyWith({SpaceSchema? space, String? url, DateTime? Function(
   dateModified: dateModified ?? this.dateModified,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionListSchema &&
           space == other.space &&
           url == other.url &&
@@ -63,7 +63,10 @@ SessionListSchema copyWith({SpaceSchema? space, String? url, DateTime? Function(
           slug == other.slug &&
           dateCreated == other.dateCreated &&
           dateModified == other.dateModified &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(space, url, start, slug, dateCreated, dateModified, title); } 
-@override String toString() { return 'SessionListSchema(space: $space, url: $url, start: $start, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(space, url, start, slug, dateCreated, dateModified, title);
+
+@override String toString() => 'SessionListSchema(space: $space, url: $url, start: $start, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, title: $title)';
+
  }

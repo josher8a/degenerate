@@ -30,11 +30,14 @@ CheckoutCustomerBalanceBankTransferPaymentMethodOptions copyWith({PaymentMethodO
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutCustomerBalanceBankTransferPaymentMethodOptions &&
           euBankTransfer == other.euBankTransfer &&
           listEquals(requestedAddressTypes, other.requestedAddressTypes) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type); } 
-@override String toString() { return 'CheckoutCustomerBalanceBankTransferPaymentMethodOptions(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type);
+
+@override String toString() => 'CheckoutCustomerBalanceBankTransferPaymentMethodOptions(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)';
+
  }

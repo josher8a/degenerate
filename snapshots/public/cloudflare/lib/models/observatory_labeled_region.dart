@@ -22,10 +22,13 @@ ObservatoryLabeledRegion copyWith({String? Function()? label, ObservatoryRegion?
   label: label != null ? label() : this.label,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryLabeledRegion &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'ObservatoryLabeledRegion(label: $label, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(label, value);
+
+@override String toString() => 'ObservatoryLabeledRegion(label: $label, value: $value)';
+
  }

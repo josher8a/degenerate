@@ -21,10 +21,13 @@ WebhookProjectEditedChanges copyWith({WebhooksChangesBody? Function()? body, Web
   body: body != null ? body() : this.body,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectEditedChanges &&
           body == other.body &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(body, name); } 
-@override String toString() { return 'WebhookProjectEditedChanges(body: $body, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(body, name);
+
+@override String toString() => 'WebhookProjectEditedChanges(body: $body, name: $name)';
+
  }

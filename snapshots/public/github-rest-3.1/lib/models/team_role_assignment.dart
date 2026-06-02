@@ -116,7 +116,7 @@ TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamRoleAssignment &&
           assignment == other.assignment &&
           id == other.id &&
@@ -135,7 +135,10 @@ TeamRoleAssignment copyWith({Assignment? Function()? assignment, int? id, String
           parent == other.parent &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(assignment, id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, parent, type, organizationId, enterpriseId); } 
-@override String toString() { return 'TeamRoleAssignment(assignment: $assignment, id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
+          enterpriseId == other.enterpriseId;
+
+@override int get hashCode => Object.hash(assignment, id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, parent, type, organizationId, enterpriseId);
+
+@override String toString() => 'TeamRoleAssignment(assignment: $assignment, id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, parent: $parent, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+
  }

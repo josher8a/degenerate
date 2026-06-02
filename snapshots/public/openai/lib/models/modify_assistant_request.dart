@@ -116,7 +116,7 @@ ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model,
   topP: topP != null ? topP() : this.topP,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModifyAssistantRequest &&
           model == other.model &&
           reasoningEffort == other.reasoningEffort &&
@@ -128,7 +128,10 @@ ModifyAssistantRequest copyWith({CreateAssistantRequestModel? Function()? model,
           metadata == other.metadata &&
           temperature == other.temperature &&
           topP == other.topP &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat); } 
-@override String toString() { return 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
+          responseFormat == other.responseFormat;
+
+@override int get hashCode => Object.hash(model, reasoningEffort, name, description, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
+
+@override String toString() => 'ModifyAssistantRequest(model: $model, reasoningEffort: $reasoningEffort, name: $name, description: $description, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';
+
  }

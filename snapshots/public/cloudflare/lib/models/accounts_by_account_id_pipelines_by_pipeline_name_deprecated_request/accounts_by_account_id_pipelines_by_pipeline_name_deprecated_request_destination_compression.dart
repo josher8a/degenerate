@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression copyWith({CompressionType Function()? type}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression(
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationCompression(type: $type)';
+
  }

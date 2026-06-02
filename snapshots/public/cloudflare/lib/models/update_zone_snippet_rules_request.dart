@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('rules
 UpdateZoneSnippetRulesRequest copyWith({List<SnippetsSnippetRules2>? rules}) { return UpdateZoneSnippetRulesRequest(
   rules: rules ?? this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneSnippetRulesRequest &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules); } 
-@override String toString() { return 'UpdateZoneSnippetRulesRequest(rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hashAll(rules);
+
+@override String toString() => 'UpdateZoneSnippetRulesRequest(rules: $rules)';
+
  }

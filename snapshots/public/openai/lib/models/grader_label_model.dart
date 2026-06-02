@@ -53,14 +53,17 @@ GraderLabelModel copyWith({CreateEvalLabelModelGraderType? type, String? name, S
   labels: labels ?? this.labels,
   passingLabels: passingLabels ?? this.passingLabels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GraderLabelModel &&
           type == other.type &&
           name == other.name &&
           model == other.model &&
           listEquals(input, other.input) &&
           listEquals(labels, other.labels) &&
-          listEquals(passingLabels, other.passingLabels); } 
-@override int get hashCode { return Object.hash(type, name, model, Object.hashAll(input), Object.hashAll(labels), Object.hashAll(passingLabels)); } 
-@override String toString() { return 'GraderLabelModel(type: $type, name: $name, model: $model, input: $input, labels: $labels, passingLabels: $passingLabels)'; } 
+          listEquals(passingLabels, other.passingLabels);
+
+@override int get hashCode => Object.hash(type, name, model, Object.hashAll(input), Object.hashAll(labels), Object.hashAll(passingLabels));
+
+@override String toString() => 'GraderLabelModel(type: $type, name: $name, model: $model, input: $input, labels: $labels, passingLabels: $passingLabels)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinksResourcePaymentIntentDataCaptureMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentLinksResourcePaymentIntentDataCaptureMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)';
+
  }
 /// 
 @immutable final class PaymentLinksResourcePaymentIntentData {const PaymentLinksResourcePaymentIntentData({required this.metadata, this.captureMethod, this.description, this.setupFutureUsage, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
@@ -100,7 +103,7 @@ PaymentLinksResourcePaymentIntentData copyWith({PaymentLinksResourcePaymentInten
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourcePaymentIntentData &&
           captureMethod == other.captureMethod &&
           description == other.description &&
@@ -108,7 +111,10 @@ PaymentLinksResourcePaymentIntentData copyWith({PaymentLinksResourcePaymentInten
           setupFutureUsage == other.setupFutureUsage &&
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(captureMethod, description, metadata, setupFutureUsage, statementDescriptor, statementDescriptorSuffix, transferGroup); } 
-@override String toString() { return 'PaymentLinksResourcePaymentIntentData(captureMethod: $captureMethod, description: $description, metadata: $metadata, setupFutureUsage: $setupFutureUsage, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(captureMethod, description, metadata, setupFutureUsage, statementDescriptor, statementDescriptorSuffix, transferGroup);
+
+@override String toString() => 'PaymentLinksResourcePaymentIntentData(captureMethod: $captureMethod, description: $description, metadata: $metadata, setupFutureUsage: $setupFutureUsage, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)';
+
  }

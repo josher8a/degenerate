@@ -41,12 +41,15 @@ TerminalReaderReaderResourceProcessConfig copyWith({bool? Function()? enableCust
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceProcessConfig &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           returnUrl == other.returnUrl &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(enableCustomerCancellation, returnUrl, skipTipping, tipping); } 
-@override String toString() { return 'TerminalReaderReaderResourceProcessConfig(enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)'; } 
+          tipping == other.tipping;
+
+@override int get hashCode => Object.hash(enableCustomerCancellation, returnUrl, skipTipping, tipping);
+
+@override String toString() => 'TerminalReaderReaderResourceProcessConfig(enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)';
+
  }

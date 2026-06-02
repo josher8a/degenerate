@@ -32,11 +32,14 @@ CacheRulesAegis copyWith({CacheRulesAegisId? id, DateTime? Function()? modifiedO
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesAegis &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, modifiedOn, value); } 
-@override String toString() { return 'CacheRulesAegis(id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, modifiedOn, value);
+
+@override String toString() => 'CacheRulesAegis(id: $id, modifiedOn: $modifiedOn, value: $value)';
+
  }

@@ -37,10 +37,13 @@ DlpRegexValidationQuery copyWith({int? Function()? maxMatchBytes, String? regex,
   maxMatchBytes: maxMatchBytes != null ? maxMatchBytes() : this.maxMatchBytes,
   regex: regex ?? this.regex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRegexValidationQuery &&
           maxMatchBytes == other.maxMatchBytes &&
-          regex == other.regex; } 
-@override int get hashCode { return Object.hash(maxMatchBytes, regex); } 
-@override String toString() { return 'DlpRegexValidationQuery(maxMatchBytes: $maxMatchBytes, regex: $regex)'; } 
+          regex == other.regex;
+
+@override int get hashCode => Object.hash(maxMatchBytes, regex);
+
+@override String toString() => 'DlpRegexValidationQuery(maxMatchBytes: $maxMatchBytes, regex: $regex)';
+
  }

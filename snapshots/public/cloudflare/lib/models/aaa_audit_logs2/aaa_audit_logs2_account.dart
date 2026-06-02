@@ -27,10 +27,13 @@ AaaAuditLogs2Account copyWith({String? Function()? id, String? Function()? name,
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2Account &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'AaaAuditLogs2Account(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'AaaAuditLogs2Account(id: $id, name: $name)';
+
  }

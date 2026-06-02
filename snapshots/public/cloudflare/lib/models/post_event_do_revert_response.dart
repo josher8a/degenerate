@@ -28,11 +28,14 @@ PostEventDoRevertResponse copyWith({PostEventDoRevertResponseProperties? propert
   $required: $required ?? this.$required,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventDoRevertResponse &&
           properties == other.properties &&
           listEquals($required, other.$required) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, Object.hashAll($required), type); } 
-@override String toString() { return 'PostEventDoRevertResponse(properties: $properties, \$required: ${$required}, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(properties, Object.hashAll($required), type);
+
+@override String toString() => 'PostEventDoRevertResponse(properties: $properties, \$required: ${$required}, type: $type)';
+
  }

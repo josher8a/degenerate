@@ -27,10 +27,13 @@ MagicSiteLocation copyWith({String? Function()? lat, String? Function()? lon, })
   lat: lat != null ? lat() : this.lat,
   lon: lon != null ? lon() : this.lon,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSiteLocation &&
           lat == other.lat &&
-          lon == other.lon; } 
-@override int get hashCode { return Object.hash(lat, lon); } 
-@override String toString() { return 'MagicSiteLocation(lat: $lat, lon: $lon)'; } 
+          lon == other.lon;
+
+@override int get hashCode => Object.hash(lat, lon);
+
+@override String toString() => 'MagicSiteLocation(lat: $lat, lon: $lon)';
+
  }

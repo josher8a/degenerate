@@ -35,13 +35,16 @@ BrowserMetadata copyWith({String? Function()? browser, String? Function()? brows
   userAgent: userAgent != null ? userAgent() : this.userAgent,
   webglSupport: webglSupport != null ? webglSupport() : this.webglSupport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrowserMetadata &&
           browser == other.browser &&
           browserVersion == other.browserVersion &&
           engine == other.engine &&
           userAgent == other.userAgent &&
-          webglSupport == other.webglSupport; } 
-@override int get hashCode { return Object.hash(browser, browserVersion, engine, userAgent, webglSupport); } 
-@override String toString() { return 'BrowserMetadata(browser: $browser, browserVersion: $browserVersion, engine: $engine, userAgent: $userAgent, webglSupport: $webglSupport)'; } 
+          webglSupport == other.webglSupport;
+
+@override int get hashCode => Object.hash(browser, browserVersion, engine, userAgent, webglSupport);
+
+@override String toString() => 'BrowserMetadata(browser: $browser, browserVersion: $browserVersion, engine: $engine, userAgent: $userAgent, webglSupport: $webglSupport)';
+
  }

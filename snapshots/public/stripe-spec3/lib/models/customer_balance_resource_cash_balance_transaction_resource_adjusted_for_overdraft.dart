@@ -24,10 +24,13 @@ CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft copyWi
   balanceTransaction: balanceTransaction ?? this.balanceTransaction,
   linkedTransaction: linkedTransaction ?? this.linkedTransaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft &&
           balanceTransaction == other.balanceTransaction &&
-          linkedTransaction == other.linkedTransaction; } 
-@override int get hashCode { return Object.hash(balanceTransaction, linkedTransaction); } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(balanceTransaction: $balanceTransaction, linkedTransaction: $linkedTransaction)'; } 
+          linkedTransaction == other.linkedTransaction;
+
+@override int get hashCode => Object.hash(balanceTransaction, linkedTransaction);
+
+@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft(balanceTransaction: $balanceTransaction, linkedTransaction: $linkedTransaction)';
+
  }

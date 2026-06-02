@@ -108,7 +108,7 @@ PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double? Function()?
   targetIndustry: targetIndustry != null ? targetIndustry() : this.targetIndustry,
   tlp: tlp ?? this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDosEventCreateBulkWithRelationshipsRequestData &&
           accountId == other.accountId &&
           attacker == other.attacker &&
@@ -125,7 +125,10 @@ PostDosEventCreateBulkWithRelationshipsRequestData copyWith({double? Function()?
           listEquals(tags, other.tags) &&
           targetCountry == other.targetCountry &&
           targetIndustry == other.targetIndustry &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(accountId, attacker, attackerCountry, category, datasetId, date, event, indicator, indicatorType, Object.hashAll(indicators ?? const []), insight, raw, Object.hashAll(tags ?? const []), targetCountry, targetIndustry, tlp); } 
-@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsRequestData(accountId: $accountId, attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, indicators: $indicators, insight: $insight, raw: $raw, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(accountId, attacker, attackerCountry, category, datasetId, date, event, indicator, indicatorType, Object.hashAll(indicators ?? const []), insight, raw, Object.hashAll(tags ?? const []), targetCountry, targetIndustry, tlp);
+
+@override String toString() => 'PostDosEventCreateBulkWithRelationshipsRequestData(accountId: $accountId, attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, indicator: $indicator, indicatorType: $indicatorType, indicators: $indicators, insight: $insight, raw: $raw, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp)';
+
  }

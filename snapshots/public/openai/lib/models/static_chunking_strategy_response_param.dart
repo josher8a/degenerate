@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StaticChunkingStrategyResponseParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StaticChunkingStrategyResponseParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StaticChunkingStrategyResponseParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StaticChunkingStrategyResponseParamType($value)';
+
  }
 @immutable final class StaticChunkingStrategyResponseParam {const StaticChunkingStrategyResponseParam({required this.type, required this.$static, });
 
@@ -44,10 +47,13 @@ StaticChunkingStrategyResponseParam copyWith({StaticChunkingStrategyResponsePara
   type: type ?? this.type,
   $static: $static ?? this.$static,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StaticChunkingStrategyResponseParam &&
           type == other.type &&
-          $static == other.$static; } 
-@override int get hashCode { return Object.hash(type, $static); } 
-@override String toString() { return 'StaticChunkingStrategyResponseParam(type: $type, \$static: ${$static})'; } 
+          $static == other.$static;
+
+@override int get hashCode => Object.hash(type, $static);
+
+@override String toString() => 'StaticChunkingStrategyResponseParam(type: $type, \$static: ${$static})';
+
  }

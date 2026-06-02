@@ -155,10 +155,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingPortalSessionsRequestLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingPortalSessionsRequestLocale($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostBillingPortalSessionsRequestLocale && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostBillingPortalSessionsRequestLocale($value)';
+
  }
 @immutable final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
 
@@ -233,7 +236,7 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalSessionsRequest &&
           configuration == other.configuration &&
           customer == other.customer &&
@@ -242,7 +245,10 @@ PostBillingPortalSessionsRequest copyWith({String? Function()? configuration, St
           flowData == other.flowData &&
           locale == other.locale &&
           onBehalfOf == other.onBehalfOf &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(configuration, customer, customerAccount, Object.hashAll(expand ?? const []), flowData, locale, onBehalfOf, returnUrl); } 
-@override String toString() { return 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => Object.hash(configuration, customer, customerAccount, Object.hashAll(expand ?? const []), flowData, locale, onBehalfOf, returnUrl);
+
+@override String toString() => 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)';
+
  }

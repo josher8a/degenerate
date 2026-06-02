@@ -20,10 +20,13 @@ InvoicePaymentMethodOptionsParam10 copyWith({InvoicePaymentMethodOptionsParamBan
   bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
   fundingType: fundingType != null ? fundingType() : this.fundingType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam10 &&
           bankTransfer == other.bankTransfer &&
-          fundingType == other.fundingType; } 
-@override int get hashCode { return Object.hash(bankTransfer, fundingType); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam10(bankTransfer: $bankTransfer, fundingType: $fundingType)'; } 
+          fundingType == other.fundingType;
+
+@override int get hashCode => Object.hash(bankTransfer, fundingType);
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam10(bankTransfer: $bankTransfer, fundingType: $fundingType)';
+
  }

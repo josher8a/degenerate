@@ -28,11 +28,14 @@ IssuesUpdateLabelRequest copyWith({String? Function()? newName, String? Function
   color: color != null ? color() : this.color,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesUpdateLabelRequest &&
           newName == other.newName &&
           color == other.color &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(newName, color, description); } 
-@override String toString() { return 'IssuesUpdateLabelRequest(newName: $newName, color: $color, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(newName, color, description);
+
+@override String toString() => 'IssuesUpdateLabelRequest(newName: $newName, color: $color, description: $description)';
+
  }

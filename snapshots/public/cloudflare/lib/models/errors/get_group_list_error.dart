@@ -17,7 +17,8 @@ final class GetGroupListError$400 extends GetGroupListError {const GetGroupListE
 
 final GetGroupListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetGroupListError$Unknown extends GetGroupListError {const GetGroupListError$Unknown(this.statusCode, this.rawBody, );
 

@@ -20,10 +20,13 @@ TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection copyWith({List<
   result: result != null ? result() : this.result,
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection &&
           listEquals(result, other.result) &&
-          resultInfo == other.resultInfo; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result ?? const []), resultInfo); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection(result: $result, resultInfo: $resultInfo)'; } 
+          resultInfo == other.resultInfo;
+
+@override int get hashCode => Object.hash(Object.hashAll(result ?? const []), resultInfo);
+
+@override String toString() => 'TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection(result: $result, resultInfo: $resultInfo)';
+
  }

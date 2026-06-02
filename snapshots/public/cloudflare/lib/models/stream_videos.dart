@@ -207,7 +207,7 @@ StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? 
   uploaded: uploaded != null ? uploaded() : this.uploaded,
   watermark: watermark != null ? watermark() : this.watermark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideos &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
           created == other.created &&
@@ -231,7 +231,10 @@ StreamVideos copyWith({List<String>? Function()? allowedOrigins, StreamCreated? 
           uid == other.uid &&
           uploadExpiry == other.uploadExpiry &&
           uploaded == other.uploaded &&
-          watermark == other.watermark; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(allowedOrigins ?? const []), created, creator, duration, input, liveInput, maxDurationSeconds, meta, modified, playback, preview, readyToStream, readyToStreamAt, requireSignedUrLs, scheduledDeletion, size, status, thumbnail, thumbnailTimestampPct, uid, uploadExpiry, uploaded, watermark]); } 
-@override String toString() { return 'StreamVideos(allowedOrigins: $allowedOrigins, created: $created, creator: $creator, duration: $duration, input: $input, liveInput: $liveInput, maxDurationSeconds: $maxDurationSeconds, meta: $meta, modified: $modified, playback: $playback, preview: $preview, readyToStream: $readyToStream, readyToStreamAt: $readyToStreamAt, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, size: $size, status: $status, thumbnail: $thumbnail, thumbnailTimestampPct: $thumbnailTimestampPct, uid: $uid, uploadExpiry: $uploadExpiry, uploaded: $uploaded, watermark: $watermark)'; } 
+          watermark == other.watermark;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(allowedOrigins ?? const []), created, creator, duration, input, liveInput, maxDurationSeconds, meta, modified, playback, preview, readyToStream, readyToStreamAt, requireSignedUrLs, scheduledDeletion, size, status, thumbnail, thumbnailTimestampPct, uid, uploadExpiry, uploaded, watermark]);
+
+@override String toString() => 'StreamVideos(allowedOrigins: $allowedOrigins, created: $created, creator: $creator, duration: $duration, input: $input, liveInput: $liveInput, maxDurationSeconds: $maxDurationSeconds, meta: $meta, modified: $modified, playback: $playback, preview: $preview, readyToStream: $readyToStream, readyToStreamAt: $readyToStreamAt, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, size: $size, status: $status, thumbnail: $thumbnail, thumbnailTimestampPct: $thumbnailTimestampPct, uid: $uid, uploadExpiry: $uploadExpiry, uploaded: $uploaded, watermark: $watermark)';
+
  }

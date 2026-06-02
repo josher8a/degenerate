@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('usage
 ItemBillingThresholdsParam copyWith({int? usageGte}) { return ItemBillingThresholdsParam(
   usageGte: usageGte ?? this.usageGte,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemBillingThresholdsParam &&
-          usageGte == other.usageGte; } 
-@override int get hashCode { return usageGte.hashCode; } 
-@override String toString() { return 'ItemBillingThresholdsParam(usageGte: $usageGte)'; } 
+          usageGte == other.usageGte;
+
+@override int get hashCode => usageGte.hashCode;
+
+@override String toString() => 'ItemBillingThresholdsParam(usageGte: $usageGte)';
+
  }

@@ -67,7 +67,7 @@ TlsCertificatesAndHostnamesCertificates copyWith({TlsCertificatesAndHostnamesCer
   requestType: requestType ?? this.requestType,
   requestedValidity: requestedValidity ?? this.requestedValidity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificates &&
           certificate == other.certificate &&
           csr == other.csr &&
@@ -75,7 +75,10 @@ TlsCertificatesAndHostnamesCertificates copyWith({TlsCertificatesAndHostnamesCer
           listEquals(hostnames, other.hostnames) &&
           id == other.id &&
           requestType == other.requestType &&
-          requestedValidity == other.requestedValidity; } 
-@override int get hashCode { return Object.hash(certificate, csr, expiresOn, Object.hashAll(hostnames), id, requestType, requestedValidity); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificates(certificate: $certificate, csr: $csr, expiresOn: $expiresOn, hostnames: $hostnames, id: $id, requestType: $requestType, requestedValidity: $requestedValidity)'; } 
+          requestedValidity == other.requestedValidity;
+
+@override int get hashCode => Object.hash(certificate, csr, expiresOn, Object.hashAll(hostnames), id, requestType, requestedValidity);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificates(certificate: $certificate, csr: $csr, expiresOn: $expiresOn, hostnames: $hostnames, id: $id, requestType: $requestType, requestedValidity: $requestedValidity)';
+
  }

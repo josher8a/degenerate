@@ -23,10 +23,13 @@ PhotonPersistentDiskVolumeSource copyWith({String? Function()? fsType, String? p
   fsType: fsType != null ? fsType() : this.fsType,
   pdId: pdId ?? this.pdId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PhotonPersistentDiskVolumeSource &&
           fsType == other.fsType &&
-          pdId == other.pdId; } 
-@override int get hashCode { return Object.hash(fsType, pdId); } 
-@override String toString() { return 'PhotonPersistentDiskVolumeSource(fsType: $fsType, pdId: $pdId)'; } 
+          pdId == other.pdId;
+
+@override int get hashCode => Object.hash(fsType, pdId);
+
+@override String toString() => 'PhotonPersistentDiskVolumeSource(fsType: $fsType, pdId: $pdId)';
+
  }

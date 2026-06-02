@@ -20,10 +20,13 @@ ChecksCreateRequestVariant2 copyWith({dynamic Function()? status, Map<String, dy
   status: status != null ? status() : this.status,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksCreateRequestVariant2 &&
           status == other.status &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(status, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'ChecksCreateRequestVariant2(status: $status, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(status, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'ChecksCreateRequestVariant2(status: $status, additionalProperties: $additionalProperties)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 PageShieldGetZoneConnectionResponse copyWith({PageShieldConnection? result}) { return PageShieldGetZoneConnectionResponse(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldGetZoneConnectionResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'PageShieldGetZoneConnectionResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'PageShieldGetZoneConnectionResponse(result: $result)';
+
  }

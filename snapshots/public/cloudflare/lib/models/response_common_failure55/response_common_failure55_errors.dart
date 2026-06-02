@@ -22,10 +22,13 @@ ResponseCommonFailure55Errors copyWith({int? Function()? code, String? Function(
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure55Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'ResponseCommonFailure55Errors(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'ResponseCommonFailure55Errors(code: $code, message: $message)';
+
  }

@@ -23,10 +23,13 @@ CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReview
   reviewerId: reviewerId ?? this.reviewerId,
   reviewerType: reviewerType ?? this.reviewerType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers &&
           reviewerId == other.reviewerId &&
-          reviewerType == other.reviewerType; } 
-@override int get hashCode { return Object.hash(reviewerId, reviewerType); } 
-@override String toString() { return 'CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType)'; } 
+          reviewerType == other.reviewerType;
+
+@override int get hashCode => Object.hash(reviewerId, reviewerType);
+
+@override String toString() => 'CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers(reviewerId: $reviewerId, reviewerType: $reviewerType)';
+
  }

@@ -34,12 +34,15 @@ PostSubscriptionsSubscriptionResumeRequest copyWith({PostCustomersCustomerSubscr
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   prorationDate: prorationDate != null ? prorationDate() : this.prorationDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionsSubscriptionResumeRequest &&
           billingCycleAnchor == other.billingCycleAnchor &&
           listEquals(expand, other.expand) &&
           prorationBehavior == other.prorationBehavior &&
-          prorationDate == other.prorationDate; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, Object.hashAll(expand ?? const []), prorationBehavior, prorationDate); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionResumeRequest(billingCycleAnchor: $billingCycleAnchor, expand: $expand, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)'; } 
+          prorationDate == other.prorationDate;
+
+@override int get hashCode => Object.hash(billingCycleAnchor, Object.hashAll(expand ?? const []), prorationBehavior, prorationDate);
+
+@override String toString() => 'PostSubscriptionsSubscriptionResumeRequest(billingCycleAnchor: $billingCycleAnchor, expand: $expand, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)';
+
  }

@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Endpoint && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Endpoint($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Endpoint && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Endpoint($value)';
+
  }
 @immutable final class Endpoints {const Endpoints({required this.endpoint, required this.responseTime, required this.uptime, });
 
@@ -68,11 +71,14 @@ Endpoints copyWith({Endpoint? endpoint, double? responseTime, double? uptime, })
   responseTime: responseTime ?? this.responseTime,
   uptime: uptime ?? this.uptime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Endpoints &&
           endpoint == other.endpoint &&
           responseTime == other.responseTime &&
-          uptime == other.uptime; } 
-@override int get hashCode { return Object.hash(endpoint, responseTime, uptime); } 
-@override String toString() { return 'Endpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)'; } 
+          uptime == other.uptime;
+
+@override int get hashCode => Object.hash(endpoint, responseTime, uptime);
+
+@override String toString() => 'Endpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)';
+
  }

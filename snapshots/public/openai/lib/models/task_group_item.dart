@@ -52,14 +52,17 @@ TaskGroupItem copyWith({String? id, AssistantMessageItemObject? object, int? cre
   type: type ?? this.type,
   tasks: tasks ?? this.tasks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaskGroupItem &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           threadId == other.threadId &&
           type == other.type &&
-          listEquals(tasks, other.tasks); } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, Object.hashAll(tasks)); } 
-@override String toString() { return 'TaskGroupItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, tasks: $tasks)'; } 
+          listEquals(tasks, other.tasks);
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, Object.hashAll(tasks));
+
+@override String toString() => 'TaskGroupItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, tasks: $tasks)';
+
  }

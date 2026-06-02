@@ -26,11 +26,14 @@ PostShippingRatesRequestFixedAmount copyWith({int? amount, String? currency, Map
   currency: currency ?? this.currency,
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostShippingRatesRequestFixedAmount &&
           amount == other.amount &&
           currency == other.currency &&
-          currencyOptions == other.currencyOptions; } 
-@override int get hashCode { return Object.hash(amount, currency, currencyOptions); } 
-@override String toString() { return 'PostShippingRatesRequestFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)'; } 
+          currencyOptions == other.currencyOptions;
+
+@override int get hashCode => Object.hash(amount, currency, currencyOptions);
+
+@override String toString() => 'PostShippingRatesRequestFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)';
+
  }

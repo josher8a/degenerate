@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CrawlOptionsSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CrawlOptionsSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CrawlOptionsSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CrawlOptionsSource($value)';
+
  }
 @immutable final class CrawlOptions {const CrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = CrawlOptionsSource.all, });
 
@@ -75,13 +78,16 @@ CrawlOptions copyWith({double? Function()? depth, bool Function()? includeExtern
   maxAge: maxAge != null ? maxAge() : this.maxAge,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CrawlOptions &&
           depth == other.depth &&
           includeExternalLinks == other.includeExternalLinks &&
           includeSubdomains == other.includeSubdomains &&
           maxAge == other.maxAge &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(depth, includeExternalLinks, includeSubdomains, maxAge, source); } 
-@override String toString() { return 'CrawlOptions(depth: $depth, includeExternalLinks: $includeExternalLinks, includeSubdomains: $includeSubdomains, maxAge: $maxAge, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(depth, includeExternalLinks, includeSubdomains, maxAge, source);
+
+@override String toString() => 'CrawlOptions(depth: $depth, includeExternalLinks: $includeExternalLinks, includeSubdomains: $includeSubdomains, maxAge: $maxAge, source: $source)';
+
  }

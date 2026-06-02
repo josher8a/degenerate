@@ -88,7 +88,7 @@ License copyWith({String? key, String? name, String? Function()? spdxId, Uri? Fu
   body: body ?? this.body,
   featured: featured ?? this.featured,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is License &&
           key == other.key &&
           name == other.name &&
@@ -102,7 +102,10 @@ License copyWith({String? key, String? name, String? Function()? spdxId, Uri? Fu
           listEquals(conditions, other.conditions) &&
           listEquals(limitations, other.limitations) &&
           body == other.body &&
-          featured == other.featured; } 
-@override int get hashCode { return Object.hash(key, name, spdxId, url, nodeId, htmlUrl, description, implementation, Object.hashAll(permissions), Object.hashAll(conditions), Object.hashAll(limitations), body, featured); } 
-@override String toString() { return 'License(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId, htmlUrl: $htmlUrl, description: $description, implementation: $implementation, permissions: $permissions, conditions: $conditions, limitations: $limitations, body: $body, featured: $featured)'; } 
+          featured == other.featured;
+
+@override int get hashCode => Object.hash(key, name, spdxId, url, nodeId, htmlUrl, description, implementation, Object.hashAll(permissions), Object.hashAll(conditions), Object.hashAll(limitations), body, featured);
+
+@override String toString() => 'License(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId, htmlUrl: $htmlUrl, description: $description, implementation: $implementation, permissions: $permissions, conditions: $conditions, limitations: $limitations, body: $body, featured: $featured)';
+
  }

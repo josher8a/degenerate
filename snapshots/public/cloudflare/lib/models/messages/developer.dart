@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeveloperRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeveloperRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeveloperRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeveloperRole($value)';
+
  }
 @immutable final class Developer {const Developer({required this.content, required this.role, this.name, });
 
@@ -47,11 +50,14 @@ Developer copyWith({DeveloperContent? content, String? Function()? name, Develop
   name: name != null ? name() : this.name,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Developer &&
           content == other.content &&
           name == other.name &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, name, role); } 
-@override String toString() { return 'Developer(content: $content, name: $name, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, name, role);
+
+@override String toString() => 'Developer(content: $content, name: $name, role: $role)';
+
  }

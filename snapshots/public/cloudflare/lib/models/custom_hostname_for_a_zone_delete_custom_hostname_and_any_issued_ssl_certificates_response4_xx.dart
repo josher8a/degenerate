@@ -44,13 +44,16 @@ CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx
   success: success ?? this.success,
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
           success == other.success &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, id); } 
-@override String toString() { return 'CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, id);
+
+@override String toString() => 'CustomHostnameForAZoneDeleteCustomHostnameAndAnyIssuedSslCertificatesResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success, id: $id)';
+
  }

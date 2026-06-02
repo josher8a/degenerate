@@ -21,10 +21,13 @@ R2SlurperGcsLikeCredsSchema copyWith({String? clientEmail, String? privateKey, }
   clientEmail: clientEmail ?? this.clientEmail,
   privateKey: privateKey ?? this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperGcsLikeCredsSchema &&
           clientEmail == other.clientEmail &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(clientEmail, privateKey); } 
-@override String toString() { return 'R2SlurperGcsLikeCredsSchema(clientEmail: $clientEmail, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(clientEmail, privateKey);
+
+@override String toString() => 'R2SlurperGcsLikeCredsSchema(clientEmail: $clientEmail, privateKey: $privateKey)';
+
  }

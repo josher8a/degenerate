@@ -21,10 +21,13 @@ EmailSecurityGetMessageTraceResponseResult copyWith({Inbound? inbound, ResultOut
   inbound: inbound ?? this.inbound,
   outbound: outbound ?? this.outbound,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessageTraceResponseResult &&
           inbound == other.inbound &&
-          outbound == other.outbound; } 
-@override int get hashCode { return Object.hash(inbound, outbound); } 
-@override String toString() { return 'EmailSecurityGetMessageTraceResponseResult(inbound: $inbound, outbound: $outbound)'; } 
+          outbound == other.outbound;
+
+@override int get hashCode => Object.hash(inbound, outbound);
+
+@override String toString() => 'EmailSecurityGetMessageTraceResponseResult(inbound: $inbound, outbound: $outbound)';
+
  }

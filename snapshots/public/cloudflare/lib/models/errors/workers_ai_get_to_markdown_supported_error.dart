@@ -17,7 +17,8 @@ final class WorkersAiGetToMarkdownSupportedError$400 extends WorkersAiGetToMarkd
 
 final WorkersAiGetToMarkdownSupportedResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiGetToMarkdownSupportedError$Unknown extends WorkersAiGetToMarkdownSupportedError {const WorkersAiGetToMarkdownSupportedError$Unknown(this.statusCode, this.rawBody, );
 

@@ -46,13 +46,16 @@ PostTaxTransactionsCreateFromCalculationRequest copyWith({String? calculation, L
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   reference: reference ?? this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateFromCalculationRequest &&
           calculation == other.calculation &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           postedAt == other.postedAt &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(calculation, Object.hashAll(expand ?? const []), metadata, postedAt, reference); } 
-@override String toString() { return 'PostTaxTransactionsCreateFromCalculationRequest(calculation: $calculation, expand: $expand, metadata: $metadata, postedAt: $postedAt, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(calculation, Object.hashAll(expand ?? const []), metadata, postedAt, reference);
+
+@override String toString() => 'PostTaxTransactionsCreateFromCalculationRequest(calculation: $calculation, expand: $expand, metadata: $metadata, postedAt: $postedAt, reference: $reference)';
+
  }

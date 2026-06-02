@@ -33,15 +33,19 @@ final MqHttpConsumerRequest mqHttpConsumerRequest;
 
 @override String get type => 'http_pull';
 
-@override Map<String, dynamic> toJson() { return {...mqHttpConsumerRequest.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mqHttpConsumerRequest.toJson(), 'type': type};
+
 MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
   settings: settings,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest; } 
-@override int get hashCode { return mqHttpConsumerRequest.hashCode; } 
-@override String toString() { return 'MqConsumerRequest.httpPull($mqHttpConsumerRequest)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerRequestHttpPull && mqHttpConsumerRequest == other.mqHttpConsumerRequest;
+
+@override int get hashCode => mqHttpConsumerRequest.hashCode;
+
+@override String toString() => 'MqConsumerRequest.httpPull($mqHttpConsumerRequest)';
+
 @override MqQueueName? get deadLetterQueue => mqHttpConsumerRequest.deadLetterQueue;
 
  }
@@ -53,16 +57,20 @@ final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
 @override String get type => 'worker';
 
-@override Map<String, dynamic> toJson() { return {...mqWorkerConsumerRequest.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mqWorkerConsumerRequest.toJson(), 'type': type};
+
 MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
   scriptName: scriptName,
   settings: settings,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest; } 
-@override int get hashCode { return mqWorkerConsumerRequest.hashCode; } 
-@override String toString() { return 'MqConsumerRequest.worker($mqWorkerConsumerRequest)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerRequestWorker && mqWorkerConsumerRequest == other.mqWorkerConsumerRequest;
+
+@override int get hashCode => mqWorkerConsumerRequest.hashCode;
+
+@override String toString() => 'MqConsumerRequest.worker($mqWorkerConsumerRequest)';
+
 @override MqQueueName? get deadLetterQueue => mqWorkerConsumerRequest.deadLetterQueue;
 
  }
@@ -74,11 +82,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqConsumerRequest$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'MqConsumerRequest.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqConsumerRequest$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'MqConsumerRequest.unknown($json)';
+
 @override MqQueueName? get deadLetterQueue => json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null;
 
  }

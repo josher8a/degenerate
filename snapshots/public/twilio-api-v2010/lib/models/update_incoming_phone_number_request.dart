@@ -198,7 +198,7 @@ UpdateIncomingPhoneNumberRequest copyWith({String? Function()? accountSid, Strin
   addressSid: addressSid != null ? addressSid() : this.addressSid,
   bundleSid: bundleSid != null ? bundleSid() : this.bundleSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateIncomingPhoneNumberRequest &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -222,7 +222,10 @@ UpdateIncomingPhoneNumberRequest copyWith({String? Function()? accountSid, Strin
           voiceReceiveMode == other.voiceReceiveMode &&
           identitySid == other.identitySid &&
           addressSid == other.addressSid &&
-          bundleSid == other.bundleSid; } 
-@override int get hashCode { return Object.hashAll([accountSid, apiVersion, friendlyName, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, trunkSid, voiceReceiveMode, identitySid, addressSid, bundleSid]); } 
-@override String toString() { return 'UpdateIncomingPhoneNumberRequest(accountSid: $accountSid, apiVersion: $apiVersion, friendlyName: $friendlyName, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, trunkSid: $trunkSid, voiceReceiveMode: $voiceReceiveMode, identitySid: $identitySid, addressSid: $addressSid, bundleSid: $bundleSid)'; } 
+          bundleSid == other.bundleSid;
+
+@override int get hashCode => Object.hashAll([accountSid, apiVersion, friendlyName, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, trunkSid, voiceReceiveMode, identitySid, addressSid, bundleSid]);
+
+@override String toString() => 'UpdateIncomingPhoneNumberRequest(accountSid: $accountSid, apiVersion: $apiVersion, friendlyName: $friendlyName, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, trunkSid: $trunkSid, voiceReceiveMode: $voiceReceiveMode, identitySid: $identitySid, addressSid: $addressSid, bundleSid: $bundleSid)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FraudType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FraudType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FraudType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FraudType($value)';
+
  }
 /// Early Fraud Warning Received event details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived {const InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived({required this.fraudType});
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('fraud
 InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived copyWith({FraudType? fraudType}) { return InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(
   fraudType: fraudType ?? this.fraudType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived &&
-          fraudType == other.fraudType; } 
-@override int get hashCode { return fraudType.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(fraudType: $fraudType)'; } 
+          fraudType == other.fraudType;
+
+@override int get hashCode => fraudType.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationEarlyFraudWarningReceived(fraudType: $fraudType)';
+
  }

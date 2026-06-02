@@ -71,7 +71,7 @@ PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String? Function()? de
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptRequest &&
           description == other.description &&
           listEquals(expand, other.expand) &&
@@ -81,7 +81,10 @@ PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String? Function()? de
           metadata == other.metadata &&
           outcome == other.outcome &&
           paymentMethodDetails == other.paymentMethodDetails &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, shippingDetails); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequest(description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails)'; } 
+          shippingDetails == other.shippingDetails;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, shippingDetails);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptRequest(description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails)';
+
  }

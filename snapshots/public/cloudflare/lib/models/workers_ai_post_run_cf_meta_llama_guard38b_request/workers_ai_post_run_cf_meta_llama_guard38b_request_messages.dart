@@ -23,10 +23,13 @@ WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages copyWith({String? content, dy
   content: content ?? this.content,
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(content: $content, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, role);
+
+@override String toString() => 'WorkersAiPostRunCfMetaLlamaGuard38bRequestMessages(content: $content, role: $role)';
+
  }

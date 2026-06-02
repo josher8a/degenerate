@@ -21,10 +21,13 @@ RadarGetAiBotsTimeseriesResponseResult copyWith({RadarGetAiBotsTimeseriesGroupBy
   meta: meta ?? this.meta,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAiBotsTimeseriesResponseResult &&
           meta == other.meta &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResult(meta: $meta, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'RadarGetAiBotsTimeseriesResponseResult(meta: $meta, additionalProperties: $additionalProperties)';
+
  }

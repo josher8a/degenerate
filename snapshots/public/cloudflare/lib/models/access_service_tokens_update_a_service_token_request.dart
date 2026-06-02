@@ -34,12 +34,15 @@ AccessServiceTokensUpdateAServiceTokenRequest copyWith({AccessClientSecretVersio
   name: name != null ? name() : this.name,
   previousClientSecretExpiresAt: previousClientSecretExpiresAt != null ? previousClientSecretExpiresAt() : this.previousClientSecretExpiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessServiceTokensUpdateAServiceTokenRequest &&
           clientSecretVersion == other.clientSecretVersion &&
           duration == other.duration &&
           name == other.name &&
-          previousClientSecretExpiresAt == other.previousClientSecretExpiresAt; } 
-@override int get hashCode { return Object.hash(clientSecretVersion, duration, name, previousClientSecretExpiresAt); } 
-@override String toString() { return 'AccessServiceTokensUpdateAServiceTokenRequest(clientSecretVersion: $clientSecretVersion, duration: $duration, name: $name, previousClientSecretExpiresAt: $previousClientSecretExpiresAt)'; } 
+          previousClientSecretExpiresAt == other.previousClientSecretExpiresAt;
+
+@override int get hashCode => Object.hash(clientSecretVersion, duration, name, previousClientSecretExpiresAt);
+
+@override String toString() => 'AccessServiceTokensUpdateAServiceTokenRequest(clientSecretVersion: $clientSecretVersion, duration: $duration, name: $name, previousClientSecretExpiresAt: $previousClientSecretExpiresAt)';
+
  }

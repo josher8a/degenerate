@@ -35,11 +35,14 @@ CodeScanningAnalysisTool copyWith({CodeScanningAnalysisToolName? Function()? nam
   version: version != null ? version() : this.version,
   guid: guid != null ? guid() : this.guid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAnalysisTool &&
           name == other.name &&
           version == other.version &&
-          guid == other.guid; } 
-@override int get hashCode { return Object.hash(name, version, guid); } 
-@override String toString() { return 'CodeScanningAnalysisTool(name: $name, version: $version, guid: $guid)'; } 
+          guid == other.guid;
+
+@override int get hashCode => Object.hash(name, version, guid);
+
+@override String toString() => 'CodeScanningAnalysisTool(name: $name, version: $version, guid: $guid)';
+
  }

@@ -21,10 +21,13 @@ ListModelsResponse copyWith({ChatCompletionListObject? object, List<Model>? data
   object: object ?? this.object,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListModelsResponse &&
           object == other.object &&
-          listEquals(data, other.data); } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data)); } 
-@override String toString() { return 'ListModelsResponse(object: $object, data: $data)'; } 
+          listEquals(data, other.data);
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data));
+
+@override String toString() => 'ListModelsResponse(object: $object, data: $data)';
+
  }

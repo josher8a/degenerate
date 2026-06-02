@@ -29,11 +29,14 @@ WorkersBindingKindJson copyWith({Map<String,dynamic>? json, WorkersBindingName? 
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindJson &&
           json == other.json &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(json, name, type); } 
-@override String toString() { return 'WorkersBindingKindJson(json: $json, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(json, name, type);
+
+@override String toString() => 'WorkersBindingKindJson(json: $json, name: $name, type: $type)';
+
  }

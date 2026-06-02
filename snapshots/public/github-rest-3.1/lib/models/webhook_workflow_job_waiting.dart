@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookWorkflowJobWaitingAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookWorkflowJobWaitingAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookWorkflowJobWaitingAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookWorkflowJobWaitingAction($value)';
+
  }
 @immutable final class WebhookWorkflowJobWaiting {const WebhookWorkflowJobWaiting({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });
 
@@ -74,7 +77,7 @@ WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, Ent
   workflowJob: workflowJob ?? this.workflowJob,
   deployment: deployment != null ? deployment() : this.deployment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobWaiting &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -83,7 +86,10 @@ WebhookWorkflowJobWaiting copyWith({WebhookWorkflowJobWaitingAction? action, Ent
           repository == other.repository &&
           sender == other.sender &&
           workflowJob == other.workflowJob &&
-          deployment == other.deployment; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment); } 
-@override String toString() { return 'WebhookWorkflowJobWaiting(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)'; } 
+          deployment == other.deployment;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment);
+
+@override String toString() => 'WebhookWorkflowJobWaiting(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)';
+
  }

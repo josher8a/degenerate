@@ -127,7 +127,7 @@ PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url
   reactions: reactions ?? this.reactions,
   inReplyToId: inReplyToId != null ? inReplyToId() : this.inReplyToId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewCommentEventComment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -148,7 +148,10 @@ PullRequestReviewCommentEventComment copyWith({int? id, String? nodeId, Uri? url
           links == other.links &&
           originalCommitId == other.originalCommitId &&
           reactions == other.reactions &&
-          inReplyToId == other.inReplyToId; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, pullRequestReviewId, diffHunk, path, position, originalPosition, subjectType, commitId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, links, originalCommitId, reactions, inReplyToId); } 
-@override String toString() { return 'PullRequestReviewCommentEventComment(id: $id, nodeId: $nodeId, url: $url, pullRequestReviewId: $pullRequestReviewId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, subjectType: $subjectType, commitId: $commitId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, originalCommitId: $originalCommitId, reactions: $reactions, inReplyToId: $inReplyToId)'; } 
+          inReplyToId == other.inReplyToId;
+
+@override int get hashCode => Object.hash(id, nodeId, url, pullRequestReviewId, diffHunk, path, position, originalPosition, subjectType, commitId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, links, originalCommitId, reactions, inReplyToId);
+
+@override String toString() => 'PullRequestReviewCommentEventComment(id: $id, nodeId: $nodeId, url: $url, pullRequestReviewId: $pullRequestReviewId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, subjectType: $subjectType, commitId: $commitId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, originalCommitId: $originalCommitId, reactions: $reactions, inReplyToId: $inReplyToId)';
+
  }

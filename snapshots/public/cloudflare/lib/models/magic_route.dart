@@ -79,7 +79,7 @@ MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Fu
   scope: scope != null ? scope() : this.scope,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoute &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -89,7 +89,10 @@ MagicRoute copyWith({MagicCreatedOn? Function()? createdOn, MagicDescription? Fu
           prefix == other.prefix &&
           priority == other.priority &&
           scope == other.scope &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, modifiedOn, nexthop, prefix, priority, scope, weight); } 
-@override String toString() { return 'MagicRoute(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(createdOn, description, id, modifiedOn, nexthop, prefix, priority, scope, weight);
+
+@override String toString() => 'MagicRoute(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)';
+
  }

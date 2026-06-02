@@ -33,12 +33,15 @@ Manifest copyWith({String? name, File? Function()? file, Map<String, dynamic>? F
   metadata: metadata != null ? metadata() : this.metadata,
   resolved: resolved != null ? resolved() : this.resolved,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Manifest &&
           name == other.name &&
           file == other.file &&
           metadata == other.metadata &&
-          resolved == other.resolved; } 
-@override int get hashCode { return Object.hash(name, file, metadata, resolved); } 
-@override String toString() { return 'Manifest(name: $name, file: $file, metadata: $metadata, resolved: $resolved)'; } 
+          resolved == other.resolved;
+
+@override int get hashCode => Object.hash(name, file, metadata, resolved);
+
+@override String toString() => 'Manifest(name: $name, file: $file, metadata: $metadata, resolved: $resolved)';
+
  }

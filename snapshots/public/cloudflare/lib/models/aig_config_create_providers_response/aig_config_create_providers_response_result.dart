@@ -76,7 +76,7 @@ AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultCon
   secretId: secretId ?? this.secretId,
   secretPreview: secretPreview ?? this.secretPreview,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateProvidersResponseResult &&
           alias == other.alias &&
           defaultConfig == other.defaultConfig &&
@@ -87,7 +87,10 @@ AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultCon
           rateLimit == other.rateLimit &&
           rateLimitPeriod == other.rateLimitPeriod &&
           secretId == other.secretId &&
-          secretPreview == other.secretPreview; } 
-@override int get hashCode { return Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview); } 
-@override String toString() { return 'AigConfigCreateProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)'; } 
+          secretPreview == other.secretPreview;
+
+@override int get hashCode => Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview);
+
+@override String toString() => 'AigConfigCreateProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)';
+
  }

@@ -19,19 +19,22 @@ final class ReposCreateOrgRulesetError$404 extends ReposCreateOrgRulesetError {c
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposCreateOrgRulesetError$422 extends ReposCreateOrgRulesetError {const ReposCreateOrgRulesetError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ReposCreateOrgRulesetError$500 extends ReposCreateOrgRulesetError {const ReposCreateOrgRulesetError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ReposCreateOrgRulesetError$Unknown extends ReposCreateOrgRulesetError {const ReposCreateOrgRulesetError$Unknown(this.statusCode, this.rawBody, );
 

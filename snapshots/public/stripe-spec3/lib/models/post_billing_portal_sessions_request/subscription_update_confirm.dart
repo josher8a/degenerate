@@ -30,11 +30,14 @@ SubscriptionUpdateConfirm copyWith({List<PostCheckoutSessionsRequestDiscounts>? 
   items: items ?? this.items,
   subscription: subscription ?? this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionUpdateConfirm &&
           listEquals(discounts, other.discounts) &&
           listEquals(items, other.items) &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts ?? const []), Object.hashAll(items), subscription); } 
-@override String toString() { return 'SubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => Object.hash(Object.hashAll(discounts ?? const []), Object.hashAll(items), subscription);
+
+@override String toString() => 'SubscriptionUpdateConfirm(discounts: $discounts, items: $items, subscription: $subscription)';
+
  }

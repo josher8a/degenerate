@@ -100,7 +100,7 @@ SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()?
   repoId: repoId != null ? repoId() : this.repoId,
   repoName: repoName != null ? repoName() : this.repoName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceConfig &&
           deploymentsEnabled == other.deploymentsEnabled &&
           owner == other.owner &&
@@ -114,7 +114,10 @@ SourceConfig copyWith({bool? Function()? deploymentsEnabled, String? Function()?
           productionBranch == other.productionBranch &&
           productionDeploymentsEnabled == other.productionDeploymentsEnabled &&
           repoId == other.repoId &&
-          repoName == other.repoName; } 
-@override int get hashCode { return Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), prCommentsEnabled, Object.hashAll(previewBranchExcludes ?? const []), Object.hashAll(previewBranchIncludes ?? const []), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName); } 
-@override String toString() { return 'SourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)'; } 
+          repoName == other.repoName;
+
+@override int get hashCode => Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), prCommentsEnabled, Object.hashAll(previewBranchExcludes ?? const []), Object.hashAll(previewBranchIncludes ?? const []), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName);
+
+@override String toString() => 'SourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)';
+
  }

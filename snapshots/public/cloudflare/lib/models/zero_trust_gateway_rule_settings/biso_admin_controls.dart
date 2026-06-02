@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Copy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Copy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Copy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Copy($value)';
+
  }
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
 @immutable final class Download {const Download._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Download && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Download($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Download && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Download($value)';
+
  }
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
 @immutable final class Keyboard {const Keyboard._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Keyboard && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Keyboard($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Keyboard && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Keyboard($value)';
+
  }
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
 @immutable final class Paste {const Paste._(this.value);
@@ -104,10 +113,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Paste && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Paste($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Paste && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Paste($value)';
+
  }
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
 @immutable final class Printing {const Printing._(this.value);
@@ -129,10 +141,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Printing && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Printing($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Printing && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Printing($value)';
+
  }
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
 @immutable final class Upload {const Upload._(this.value);
@@ -154,10 +169,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Upload && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Upload($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Upload && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Upload($value)';
+
  }
 /// Indicate which version of the browser isolation controls should apply.
 @immutable final class BisoAdminControlsVersion {const BisoAdminControlsVersion._(this.value);
@@ -179,10 +197,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BisoAdminControlsVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BisoAdminControlsVersion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BisoAdminControlsVersion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BisoAdminControlsVersion($value)';
+
  }
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
 @immutable final class BisoAdminControls {const BisoAdminControls({this.copy, this.dcp, this.dd, this.dk, this.download, this.dp, this.du, this.keyboard, this.paste, this.printing, this.upload, this.version = BisoAdminControlsVersion.v1, });
@@ -281,7 +302,7 @@ BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool?
   upload: upload != null ? upload() : this.upload,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BisoAdminControls &&
           copy == other.copy &&
           dcp == other.dcp &&
@@ -294,7 +315,10 @@ BisoAdminControls copyWith({Copy? Function()? copy, bool? Function()? dcp, bool?
           paste == other.paste &&
           printing == other.printing &&
           upload == other.upload &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(copy, dcp, dd, dk, download, dp, du, keyboard, paste, printing, upload, version); } 
-@override String toString() { return 'BisoAdminControls(copy: $copy, dcp: $dcp, dd: $dd, dk: $dk, download: $download, dp: $dp, du: $du, keyboard: $keyboard, paste: $paste, printing: $printing, upload: $upload, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(copy, dcp, dd, dk, download, dp, du, keyboard, paste, printing, upload, version);
+
+@override String toString() => 'BisoAdminControls(copy: $copy, dcp: $dcp, dd: $dd, dk: $dk, download: $download, dp: $dp, du: $du, keyboard: $keyboard, paste: $paste, printing: $printing, upload: $upload, version: $version)';
+
  }

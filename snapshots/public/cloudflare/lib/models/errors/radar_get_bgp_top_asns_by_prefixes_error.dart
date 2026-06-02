@@ -17,7 +17,8 @@ final class RadarGetBgpTopAsnsByPrefixesError$404 extends RadarGetBgpTopAsnsByPr
 
 final RadarGetBgpTopAsnsByPrefixesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetBgpTopAsnsByPrefixesError$Unknown extends RadarGetBgpTopAsnsByPrefixesError {const RadarGetBgpTopAsnsByPrefixesError$Unknown(this.statusCode, this.rawBody, );
 

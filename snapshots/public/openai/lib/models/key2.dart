@@ -33,12 +33,15 @@ Key2 copyWith({String? Function()? id, Key2Type? Function()? type, AuditLogActor
   user: user != null ? user() : this.user,
   serviceAccount: serviceAccount != null ? serviceAccount() : this.serviceAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Key2 &&
           id == other.id &&
           type == other.type &&
           user == other.user &&
-          serviceAccount == other.serviceAccount; } 
-@override int get hashCode { return Object.hash(id, type, user, serviceAccount); } 
-@override String toString() { return 'Key2(id: $id, type: $type, user: $user, serviceAccount: $serviceAccount)'; } 
+          serviceAccount == other.serviceAccount;
+
+@override int get hashCode => Object.hash(id, type, user, serviceAccount);
+
+@override String toString() => 'Key2(id: $id, type: $type, user: $user, serviceAccount: $serviceAccount)';
+
  }

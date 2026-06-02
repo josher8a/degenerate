@@ -31,11 +31,14 @@ DlpDlpSettingsUpdate copyWith({bool? Function()? aiContextAnalysis, bool? Functi
   ocr: ocr != null ? ocr() : this.ocr,
   payloadLogging: payloadLogging != null ? payloadLogging() : this.payloadLogging,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDlpSettingsUpdate &&
           aiContextAnalysis == other.aiContextAnalysis &&
           ocr == other.ocr &&
-          payloadLogging == other.payloadLogging; } 
-@override int get hashCode { return Object.hash(aiContextAnalysis, ocr, payloadLogging); } 
-@override String toString() { return 'DlpDlpSettingsUpdate(aiContextAnalysis: $aiContextAnalysis, ocr: $ocr, payloadLogging: $payloadLogging)'; } 
+          payloadLogging == other.payloadLogging;
+
+@override int get hashCode => Object.hash(aiContextAnalysis, ocr, payloadLogging);
+
+@override String toString() => 'DlpDlpSettingsUpdate(aiContextAnalysis: $aiContextAnalysis, ocr: $ocr, payloadLogging: $payloadLogging)';
+
  }

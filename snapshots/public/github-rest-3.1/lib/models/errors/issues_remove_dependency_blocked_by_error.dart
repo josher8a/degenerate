@@ -21,31 +21,36 @@ final class IssuesRemoveDependencyBlockedByError$400 extends IssuesRemoveDepende
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class IssuesRemoveDependencyBlockedByError$401 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$401(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class IssuesRemoveDependencyBlockedByError$403 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesRemoveDependencyBlockedByError$404 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesRemoveDependencyBlockedByError$410 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesRemoveDependencyBlockedByError$Unknown extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError$Unknown(this.statusCode, this.rawBody, );
 

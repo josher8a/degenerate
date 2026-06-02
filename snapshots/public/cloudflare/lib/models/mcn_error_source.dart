@@ -25,11 +25,14 @@ McnErrorSource copyWith({String? Function()? parameter, int? Function()? paramet
   parameterValueIndex: parameterValueIndex != null ? parameterValueIndex() : this.parameterValueIndex,
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnErrorSource &&
           parameter == other.parameter &&
           parameterValueIndex == other.parameterValueIndex &&
-          pointer == other.pointer; } 
-@override int get hashCode { return Object.hash(parameter, parameterValueIndex, pointer); } 
-@override String toString() { return 'McnErrorSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)'; } 
+          pointer == other.pointer;
+
+@override int get hashCode => Object.hash(parameter, parameterValueIndex, pointer);
+
+@override String toString() => 'McnErrorSource(parameter: $parameter, parameterValueIndex: $parameterValueIndex, pointer: $pointer)';
+
  }

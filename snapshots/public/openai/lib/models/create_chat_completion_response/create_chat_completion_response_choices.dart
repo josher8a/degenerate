@@ -33,10 +33,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionResponseChoicesFinishReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateChatCompletionResponseChoicesFinishReason($value)';
+
  }
 @immutable final class CreateChatCompletionResponseChoices {const CreateChatCompletionResponseChoices({required this.finishReason, required this.index, required this.message, required this.logprobs, });
 
@@ -78,12 +81,15 @@ CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoice
   message: message ?? this.message,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionResponseChoices &&
           finishReason == other.finishReason &&
           index == other.index &&
           message == other.message &&
-          logprobs == other.logprobs; } 
-@override int get hashCode { return Object.hash(finishReason, index, message, logprobs); } 
-@override String toString() { return 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)'; } 
+          logprobs == other.logprobs;
+
+@override int get hashCode => Object.hash(finishReason, index, message, logprobs);
+
+@override String toString() => 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)';
+
  }

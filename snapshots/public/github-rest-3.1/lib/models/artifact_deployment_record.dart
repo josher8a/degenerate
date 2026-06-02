@@ -76,7 +76,7 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   attestationId: attestationId != null ? attestationId() : this.attestationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ArtifactDeploymentRecord &&
           id == other.id &&
           digest == other.digest &&
@@ -88,7 +88,10 @@ ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? dige
           listEquals(runtimeRisks, other.runtimeRisks) &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          attestationId == other.attestationId; } 
-@override int get hashCode { return Object.hash(id, digest, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), createdAt, updatedAt, attestationId); } 
-@override String toString() { return 'ArtifactDeploymentRecord(id: $id, digest: $digest, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, createdAt: $createdAt, updatedAt: $updatedAt, attestationId: $attestationId)'; } 
+          attestationId == other.attestationId;
+
+@override int get hashCode => Object.hash(id, digest, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), createdAt, updatedAt, attestationId);
+
+@override String toString() => 'ArtifactDeploymentRecord(id: $id, digest: $digest, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, createdAt: $createdAt, updatedAt: $updatedAt, attestationId: $attestationId)';
+
  }

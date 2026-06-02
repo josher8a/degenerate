@@ -47,7 +47,7 @@ PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pull
   label: label != null ? label() : this.label,
   labels: labels != null ? labels() : this.labels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestEvent &&
           action == other.action &&
           number == other.number &&
@@ -55,7 +55,10 @@ PullRequestEvent copyWith({String? action, int? number, PullRequestMinimal? pull
           assignee == other.assignee &&
           listEquals(assignees, other.assignees) &&
           label == other.label &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hash(action, number, pullRequest, assignee, Object.hashAll(assignees ?? const []), label, Object.hashAll(labels ?? const [])); } 
-@override String toString() { return 'PullRequestEvent(action: $action, number: $number, pullRequest: $pullRequest, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)'; } 
+          listEquals(labels, other.labels);
+
+@override int get hashCode => Object.hash(action, number, pullRequest, assignee, Object.hashAll(assignees ?? const []), label, Object.hashAll(labels ?? const []));
+
+@override String toString() => 'PullRequestEvent(action: $action, number: $number, pullRequest: $pullRequest, assignee: $assignee, assignees: $assignees, label: $label, labels: $labels)';
+
  }

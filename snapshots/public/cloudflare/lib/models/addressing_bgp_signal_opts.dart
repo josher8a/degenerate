@@ -34,10 +34,13 @@ AddressingBgpSignalOpts copyWith({AddressingBgpSignalingEnabled? Function()? ena
   enabled: enabled != null ? enabled() : this.enabled,
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingBgpSignalOpts &&
           enabled == other.enabled &&
-          modifiedAt == other.modifiedAt; } 
-@override int get hashCode { return Object.hash(enabled, modifiedAt); } 
-@override String toString() { return 'AddressingBgpSignalOpts(enabled: $enabled, modifiedAt: $modifiedAt)'; } 
+          modifiedAt == other.modifiedAt;
+
+@override int get hashCode => Object.hash(enabled, modifiedAt);
+
+@override String toString() => 'AddressingBgpSignalOpts(enabled: $enabled, modifiedAt: $modifiedAt)';
+
  }

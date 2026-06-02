@@ -17,7 +17,8 @@ final class PostBinDbPostError$400 extends PostBinDbPostError {const PostBinDbPo
 
 final PostBinDbPostResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostBinDbPostError$Unknown extends PostBinDbPostError {const PostBinDbPostError$Unknown(this.statusCode, this.rawBody, );
 

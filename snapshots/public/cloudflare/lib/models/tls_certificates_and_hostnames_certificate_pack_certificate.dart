@@ -102,7 +102,7 @@ TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
   zoneId: zoneId != null ? zoneId() : this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificatePackCertificate &&
           bundleMethod == other.bundleMethod &&
           expiresOn == other.expiresOn &&
@@ -115,7 +115,10 @@ TlsCertificatesAndHostnamesCertificatePackCertificate copyWith({String? Function
           signature == other.signature &&
           status == other.status &&
           uploadedOn == other.uploadedOn &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts), id, issuer, modifiedOn, priority, signature, status, uploadedOn, zoneId); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificatePackCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, modifiedOn: $modifiedOn, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts), id, issuer, modifiedOn, priority, signature, status, uploadedOn, zoneId);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePackCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, modifiedOn: $modifiedOn, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)';
+
  }

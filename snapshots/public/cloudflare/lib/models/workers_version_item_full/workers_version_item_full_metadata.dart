@@ -44,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MetadataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MetadataSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MetadataSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MetadataSource($value)';
+
  }
 /// Example:
 /// ```json
@@ -115,14 +118,17 @@ WorkersVersionItemFullMetadata copyWith({String? Function()? authorEmail, String
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemFullMetadata &&
           authorEmail == other.authorEmail &&
           authorId == other.authorId &&
           createdOn == other.createdOn &&
           hasPreview == other.hasPreview &&
           modifiedOn == other.modifiedOn &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(authorEmail, authorId, createdOn, hasPreview, modifiedOn, source); } 
-@override String toString() { return 'WorkersVersionItemFullMetadata(authorEmail: $authorEmail, authorId: $authorId, createdOn: $createdOn, hasPreview: $hasPreview, modifiedOn: $modifiedOn, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(authorEmail, authorId, createdOn, hasPreview, modifiedOn, source);
+
+@override String toString() => 'WorkersVersionItemFullMetadata(authorEmail: $authorEmail, authorId: $authorId, createdOn: $createdOn, hasPreview: $hasPreview, modifiedOn: $modifiedOn, source: $source)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesSecretTextEnvVarType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesSecretTextEnvVarType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesSecretTextEnvVarType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesSecretTextEnvVarType($value)';
+
  }
 /// An encrypted environment variable.
 /// 
@@ -52,10 +55,13 @@ PagesSecretTextEnvVar copyWith({PagesSecretTextEnvVarType? type, String? value, 
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesSecretTextEnvVar &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PagesSecretTextEnvVar(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'PagesSecretTextEnvVar(type: $type, value: $value)';
+
  }

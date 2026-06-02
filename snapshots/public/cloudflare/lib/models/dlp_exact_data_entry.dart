@@ -54,7 +54,7 @@ DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enab
   secret: secret ?? this.secret,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpExactDataEntry &&
           caseSensitive == other.caseSensitive &&
           createdAt == other.createdAt &&
@@ -62,7 +62,10 @@ DlpExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enab
           id == other.id &&
           name == other.name &&
           secret == other.secret &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt); } 
-@override String toString() { return 'DlpExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt);
+
+@override String toString() => 'DlpExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt)';
+
  }

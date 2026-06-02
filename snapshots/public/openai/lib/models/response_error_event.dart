@@ -49,13 +49,16 @@ ResponseErrorEvent copyWith({String? type, String? Function()? code, String? mes
   param: param != null ? param() : this.param,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseErrorEvent &&
           type == other.type &&
           code == other.code &&
           message == other.message &&
           param == other.param &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, code, message, param, sequenceNumber); } 
-@override String toString() { return 'ResponseErrorEvent(type: $type, code: $code, message: $message, param: $param, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, code, message, param, sequenceNumber);
+
+@override String toString() => 'ResponseErrorEvent(type: $type, code: $code, message: $message, param: $param, sequenceNumber: $sequenceNumber)';
+
  }

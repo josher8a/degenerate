@@ -23,10 +23,13 @@ IssuingCardholderIdDocument copyWith({Back? Function()? back, Front? Function()?
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderIdDocument &&
           back == other.back &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, front); } 
-@override String toString() { return 'IssuingCardholderIdDocument(back: $back, front: $front)'; } 
+          front == other.front;
+
+@override int get hashCode => Object.hash(back, front);
+
+@override String toString() => 'IssuingCardholderIdDocument(back: $back, front: $front)';
+
  }

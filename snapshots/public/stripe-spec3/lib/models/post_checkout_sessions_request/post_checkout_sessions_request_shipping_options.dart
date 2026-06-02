@@ -27,10 +27,13 @@ PostCheckoutSessionsRequestShippingOptions copyWith({String? Function()? shippin
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   shippingRateData: shippingRateData != null ? shippingRateData() : this.shippingRateData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestShippingOptions &&
           shippingRate == other.shippingRate &&
-          shippingRateData == other.shippingRateData; } 
-@override int get hashCode { return Object.hash(shippingRate, shippingRateData); } 
-@override String toString() { return 'PostCheckoutSessionsRequestShippingOptions(shippingRate: $shippingRate, shippingRateData: $shippingRateData)'; } 
+          shippingRateData == other.shippingRateData;
+
+@override int get hashCode => Object.hash(shippingRate, shippingRateData);
+
+@override String toString() => 'PostCheckoutSessionsRequestShippingOptions(shippingRate: $shippingRate, shippingRateData: $shippingRateData)';
+
  }

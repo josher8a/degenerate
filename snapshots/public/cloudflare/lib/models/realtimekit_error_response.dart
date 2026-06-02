@@ -25,10 +25,13 @@ RealtimekitErrorResponse copyWith({RealtimekitErrorResponseError? error, bool? s
   error: error ?? this.error,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitErrorResponse &&
           error == other.error &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(error, success); } 
-@override String toString() { return 'RealtimekitErrorResponse(error: $error, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(error, success);
+
+@override String toString() => 'RealtimekitErrorResponse(error: $error, success: $success)';
+
  }

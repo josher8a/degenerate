@@ -26,11 +26,14 @@ BankAccount copyWith({String? routingNumber, String? accountNumber, String? Func
   accountNumber: accountNumber ?? this.accountNumber,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankAccount &&
           routingNumber == other.routingNumber &&
           accountNumber == other.accountNumber &&
-          accountHolderName == other.accountHolderName; } 
-@override int get hashCode { return Object.hash(routingNumber, accountNumber, accountHolderName); } 
-@override String toString() { return 'BankAccount(routingNumber: $routingNumber, accountNumber: $accountNumber, accountHolderName: $accountHolderName)'; } 
+          accountHolderName == other.accountHolderName;
+
+@override int get hashCode => Object.hash(routingNumber, accountNumber, accountHolderName);
+
+@override String toString() => 'BankAccount(routingNumber: $routingNumber, accountNumber: $accountNumber, accountHolderName: $accountHolderName)';
+
  }

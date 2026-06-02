@@ -18,13 +18,15 @@ final class PostIndicatorTypeCreateError$400 extends PostIndicatorTypeCreateErro
 
 final PostIndicatorTypeCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostIndicatorTypeCreateError$500 extends PostIndicatorTypeCreateError {const PostIndicatorTypeCreateError$500(this.error);
 
 final PostIndicatorTypeCreateResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class PostIndicatorTypeCreateError$Unknown extends PostIndicatorTypeCreateError {const PostIndicatorTypeCreateError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RunStepDeltaObjectDelta copyWith({DeltaStepDetails? Function()? stepDetails}) { return RunStepDeltaObjectDelta(
   stepDetails: stepDetails != null ? stepDetails() : this.stepDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaObjectDelta &&
-          stepDetails == other.stepDetails; } 
-@override int get hashCode { return stepDetails.hashCode; } 
-@override String toString() { return 'RunStepDeltaObjectDelta(stepDetails: $stepDetails)'; } 
+          stepDetails == other.stepDetails;
+
+@override int get hashCode => stepDetails.hashCode;
+
+@override String toString() => 'RunStepDeltaObjectDelta(stepDetails: $stepDetails)';
+
  }

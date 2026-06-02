@@ -17,7 +17,8 @@ final class ReposListForksError$400 extends ReposListForksError {const ReposList
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ReposListForksError$Unknown extends ReposListForksError {const ReposListForksError$Unknown(this.statusCode, this.rawBody, );
 

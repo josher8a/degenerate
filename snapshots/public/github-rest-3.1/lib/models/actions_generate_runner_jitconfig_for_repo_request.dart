@@ -41,12 +41,15 @@ ActionsGenerateRunnerJitconfigForRepoRequest copyWith({String? name, int? runner
   labels: labels ?? this.labels,
   workFolder: workFolder != null ? workFolder() : this.workFolder,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForRepoRequest &&
           name == other.name &&
           runnerGroupId == other.runnerGroupId &&
           listEquals(labels, other.labels) &&
-          workFolder == other.workFolder; } 
-@override int get hashCode { return Object.hash(name, runnerGroupId, Object.hashAll(labels), workFolder); } 
-@override String toString() { return 'ActionsGenerateRunnerJitconfigForRepoRequest(name: $name, runnerGroupId: $runnerGroupId, labels: $labels, workFolder: $workFolder)'; } 
+          workFolder == other.workFolder;
+
+@override int get hashCode => Object.hash(name, runnerGroupId, Object.hashAll(labels), workFolder);
+
+@override String toString() => 'ActionsGenerateRunnerJitconfigForRepoRequest(name: $name, runnerGroupId: $runnerGroupId, labels: $labels, workFolder: $workFolder)';
+
  }

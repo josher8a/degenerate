@@ -31,11 +31,14 @@ WorkersBindingKindPipelines copyWith({WorkersBindingName? name, String? pipeline
   pipeline: pipeline ?? this.pipeline,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindPipelines &&
           name == other.name &&
           pipeline == other.pipeline &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, pipeline, type); } 
-@override String toString() { return 'WorkersBindingKindPipelines(name: $name, pipeline: $pipeline, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, pipeline, type);
+
+@override String toString() => 'WorkersBindingKindPipelines(name: $name, pipeline: $pipeline, type: $type)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentMethodOptionsBillie copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod}) { return PaymentMethodOptionsBillie(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsBillie &&
-          captureMethod == other.captureMethod; } 
-@override int get hashCode { return captureMethod.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsBillie(captureMethod: $captureMethod)'; } 
+          captureMethod == other.captureMethod;
+
+@override int get hashCode => captureMethod.hashCode;
+
+@override String toString() => 'PaymentMethodOptionsBillie(captureMethod: $captureMethod)';
+
  }

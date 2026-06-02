@@ -35,11 +35,14 @@ InputQueryAndContexts copyWith({List<Contexts>? contexts, String? Function()? qu
   query: query != null ? query() : this.query,
   truncateInputs: truncateInputs != null ? truncateInputs() : this.truncateInputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputQueryAndContexts &&
           listEquals(contexts, other.contexts) &&
           query == other.query &&
-          truncateInputs == other.truncateInputs; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contexts), query, truncateInputs); } 
-@override String toString() { return 'InputQueryAndContexts(contexts: $contexts, query: $query, truncateInputs: $truncateInputs)'; } 
+          truncateInputs == other.truncateInputs;
+
+@override int get hashCode => Object.hash(Object.hashAll(contexts), query, truncateInputs);
+
+@override String toString() => 'InputQueryAndContexts(contexts: $contexts, query: $query, truncateInputs: $truncateInputs)';
+
  }

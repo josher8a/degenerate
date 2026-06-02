@@ -28,11 +28,14 @@ RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse400 copyWith({List<AiSearc
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse400 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse400(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse400(errors: $errors, result: $result, success: $success)';
+
  }

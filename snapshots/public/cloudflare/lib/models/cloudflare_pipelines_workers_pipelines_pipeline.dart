@@ -64,14 +64,17 @@ CloudflarePipelinesWorkersPipelinesPipeline copyWith({CloudflarePipelinesWorkers
   source: source ?? this.source,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesPipeline &&
           destination == other.destination &&
           endpoint == other.endpoint &&
           id == other.id &&
           name == other.name &&
           listEquals(source, other.source) &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(destination, endpoint, id, name, Object.hashAll(source), version); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipeline(destination: $destination, endpoint: $endpoint, id: $id, name: $name, source: $source, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(destination, endpoint, id, name, Object.hashAll(source), version);
+
+@override String toString() => 'CloudflarePipelinesWorkersPipelinesPipeline(destination: $destination, endpoint: $endpoint, id: $id, name: $name, source: $source, version: $version)';
+
  }

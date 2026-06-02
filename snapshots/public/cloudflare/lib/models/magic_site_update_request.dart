@@ -38,13 +38,16 @@ MagicSiteUpdateRequest copyWith({MagicConnectorId? Function()? connectorId, Stri
   name: name != null ? name() : this.name,
   secondaryConnectorId: secondaryConnectorId != null ? secondaryConnectorId() : this.secondaryConnectorId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSiteUpdateRequest &&
           connectorId == other.connectorId &&
           description == other.description &&
           location == other.location &&
           name == other.name &&
-          secondaryConnectorId == other.secondaryConnectorId; } 
-@override int get hashCode { return Object.hash(connectorId, description, location, name, secondaryConnectorId); } 
-@override String toString() { return 'MagicSiteUpdateRequest(connectorId: $connectorId, description: $description, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)'; } 
+          secondaryConnectorId == other.secondaryConnectorId;
+
+@override int get hashCode => Object.hash(connectorId, description, location, name, secondaryConnectorId);
+
+@override String toString() => 'MagicSiteUpdateRequest(connectorId: $connectorId, description: $description, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)';
+
  }

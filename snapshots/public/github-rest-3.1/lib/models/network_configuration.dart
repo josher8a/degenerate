@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NetworkConfigurationComputeService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NetworkConfigurationComputeService($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkConfigurationComputeService && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NetworkConfigurationComputeService($value)';
+
  }
 /// A hosted compute network configuration.
 @immutable final class NetworkConfiguration {const NetworkConfiguration({required this.id, required this.name, required this.createdOn, this.computeService, this.networkSettingsIds, this.failoverNetworkSettingsIds, this.failoverNetworkEnabled, });
@@ -83,7 +86,7 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
   failoverNetworkEnabled: failoverNetworkEnabled != null ? failoverNetworkEnabled() : this.failoverNetworkEnabled,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkConfiguration &&
           id == other.id &&
           name == other.name &&
@@ -91,7 +94,10 @@ NetworkConfiguration copyWith({String? id, String? name, NetworkConfigurationCom
           listEquals(networkSettingsIds, other.networkSettingsIds) &&
           listEquals(failoverNetworkSettingsIds, other.failoverNetworkSettingsIds) &&
           failoverNetworkEnabled == other.failoverNetworkEnabled &&
-          createdOn == other.createdOn; } 
-@override int get hashCode { return Object.hash(id, name, computeService, Object.hashAll(networkSettingsIds ?? const []), Object.hashAll(failoverNetworkSettingsIds ?? const []), failoverNetworkEnabled, createdOn); } 
-@override String toString() { return 'NetworkConfiguration(id: $id, name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds, failoverNetworkSettingsIds: $failoverNetworkSettingsIds, failoverNetworkEnabled: $failoverNetworkEnabled, createdOn: $createdOn)'; } 
+          createdOn == other.createdOn;
+
+@override int get hashCode => Object.hash(id, name, computeService, Object.hashAll(networkSettingsIds ?? const []), Object.hashAll(failoverNetworkSettingsIds ?? const []), failoverNetworkEnabled, createdOn);
+
+@override String toString() => 'NetworkConfiguration(id: $id, name: $name, computeService: $computeService, networkSettingsIds: $networkSettingsIds, failoverNetworkSettingsIds: $failoverNetworkSettingsIds, failoverNetworkEnabled: $failoverNetworkEnabled, createdOn: $createdOn)';
+
  }

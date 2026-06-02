@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prope
 VectorizeDeleteMetadataIndexRequest copyWith({String? propertyName}) { return VectorizeDeleteMetadataIndexRequest(
   propertyName: propertyName ?? this.propertyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeleteMetadataIndexRequest &&
-          propertyName == other.propertyName; } 
-@override int get hashCode { return propertyName.hashCode; } 
-@override String toString() { return 'VectorizeDeleteMetadataIndexRequest(propertyName: $propertyName)'; } 
+          propertyName == other.propertyName;
+
+@override int get hashCode => propertyName.hashCode;
+
+@override String toString() => 'VectorizeDeleteMetadataIndexRequest(propertyName: $propertyName)';
+
  }

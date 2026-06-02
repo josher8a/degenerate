@@ -34,10 +34,13 @@ MandatePaypal copyWith({String? Function()? billingAgreementId, String? Function
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
   payerId: payerId != null ? payerId() : this.payerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandatePaypal &&
           billingAgreementId == other.billingAgreementId &&
-          payerId == other.payerId; } 
-@override int get hashCode { return Object.hash(billingAgreementId, payerId); } 
-@override String toString() { return 'MandatePaypal(billingAgreementId: $billingAgreementId, payerId: $payerId)'; } 
+          payerId == other.payerId;
+
+@override int get hashCode => Object.hash(billingAgreementId, payerId);
+
+@override String toString() => 'MandatePaypal(billingAgreementId: $billingAgreementId, payerId: $payerId)';
+
  }

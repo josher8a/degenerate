@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmbeddingObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmbeddingObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmbeddingObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EmbeddingObject($value)';
+
  }
 /// Represents an embedding vector returned by embedding endpoint.
 /// 
@@ -55,11 +58,14 @@ Embedding copyWith({int? index, List<double>? embedding, EmbeddingObject? object
   embedding: embedding ?? this.embedding,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Embedding &&
           index == other.index &&
           listEquals(embedding, other.embedding) &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(index, Object.hashAll(embedding), object); } 
-@override String toString() { return 'Embedding(index: $index, embedding: $embedding, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(index, Object.hashAll(embedding), object);
+
+@override String toString() => 'Embedding(index: $index, embedding: $embedding, object: $object)';
+
  }

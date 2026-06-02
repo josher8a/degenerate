@@ -59,14 +59,17 @@ EmailSecurityBatchTrustedDomainsRequestPuts copyWith({String? Function()? commen
   pattern: pattern ?? this.pattern,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchTrustedDomainsRequestPuts &&
           comments == other.comments &&
           isRecent == other.isRecent &&
           isRegex == other.isRegex &&
           isSimilarity == other.isSimilarity &&
           pattern == other.pattern &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, id); } 
-@override String toString() { return 'EmailSecurityBatchTrustedDomainsRequestPuts(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, id);
+
+@override String toString() => 'EmailSecurityBatchTrustedDomainsRequestPuts(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, id: $id)';
+
  }

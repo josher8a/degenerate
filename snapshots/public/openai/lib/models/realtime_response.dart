@@ -100,7 +100,7 @@ RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? F
   outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponse &&
           id == other.id &&
           object == other.object &&
@@ -112,7 +112,10 @@ RealtimeResponse copyWith({String? Function()? id, RealtimeBetaResponseObject? F
           usage == other.usage &&
           conversationId == other.conversationId &&
           listEquals(outputModalities, other.outputModalities) &&
-          maxOutputTokens == other.maxOutputTokens; } 
-@override int get hashCode { return Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens); } 
-@override String toString() { return 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)'; } 
+          maxOutputTokens == other.maxOutputTokens;
+
+@override int get hashCode => Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens);
+
+@override String toString() => 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)';
+
  }

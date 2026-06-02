@@ -20,10 +20,13 @@ AccessPolicyCheckResponseResult copyWith({AccessPolicyCheckResponseResultAppStat
   appState: appState != null ? appState() : this.appState,
   userIdentity: userIdentity != null ? userIdentity() : this.userIdentity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyCheckResponseResult &&
           appState == other.appState &&
-          userIdentity == other.userIdentity; } 
-@override int get hashCode { return Object.hash(appState, userIdentity); } 
-@override String toString() { return 'AccessPolicyCheckResponseResult(appState: $appState, userIdentity: $userIdentity)'; } 
+          userIdentity == other.userIdentity;
+
+@override int get hashCode => Object.hash(appState, userIdentity);
+
+@override String toString() => 'AccessPolicyCheckResponseResult(appState: $appState, userIdentity: $userIdentity)';
+
  }

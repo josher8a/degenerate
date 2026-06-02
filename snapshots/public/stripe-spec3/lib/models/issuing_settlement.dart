@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingSettlementObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingSettlementObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingSettlementObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingSettlementObject($value)';
+
  }
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.
 @immutable final class IssuingSettlement {const IssuingSettlement({required this.bin, required this.clearingDate, required this.created, required this.currency, required this.id, required this.interchangeFeesAmount, required this.livemode, required this.metadata, required this.netTotalAmount, required this.network, required this.networkFeesAmount, required this.networkSettlementIdentifier, required this.object, required this.settlementService, required this.status, required this.transactionAmount, required this.transactionCount, });
@@ -158,7 +161,7 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
   transactionAmount: transactionAmount ?? this.transactionAmount,
   transactionCount: transactionCount ?? this.transactionCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingSettlement &&
           bin == other.bin &&
           clearingDate == other.clearingDate &&
@@ -176,7 +179,10 @@ IssuingSettlement copyWith({String? bin, int? clearingDate, int? created, String
           settlementService == other.settlementService &&
           status == other.status &&
           transactionAmount == other.transactionAmount &&
-          transactionCount == other.transactionCount; } 
-@override int get hashCode { return Object.hash(bin, clearingDate, created, currency, id, interchangeFeesAmount, livemode, metadata, netTotalAmount, network, networkFeesAmount, networkSettlementIdentifier, object, settlementService, status, transactionAmount, transactionCount); } 
-@override String toString() { return 'IssuingSettlement(bin: $bin, clearingDate: $clearingDate, created: $created, currency: $currency, id: $id, interchangeFeesAmount: $interchangeFeesAmount, livemode: $livemode, metadata: $metadata, netTotalAmount: $netTotalAmount, network: $network, networkFeesAmount: $networkFeesAmount, networkSettlementIdentifier: $networkSettlementIdentifier, object: $object, settlementService: $settlementService, status: $status, transactionAmount: $transactionAmount, transactionCount: $transactionCount)'; } 
+          transactionCount == other.transactionCount;
+
+@override int get hashCode => Object.hash(bin, clearingDate, created, currency, id, interchangeFeesAmount, livemode, metadata, netTotalAmount, network, networkFeesAmount, networkSettlementIdentifier, object, settlementService, status, transactionAmount, transactionCount);
+
+@override String toString() => 'IssuingSettlement(bin: $bin, clearingDate: $clearingDate, created: $created, currency: $currency, id: $id, interchangeFeesAmount: $interchangeFeesAmount, livemode: $livemode, metadata: $metadata, netTotalAmount: $netTotalAmount, network: $network, networkFeesAmount: $networkFeesAmount, networkSettlementIdentifier: $networkSettlementIdentifier, object: $object, settlementService: $settlementService, status: $status, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';
+
  }

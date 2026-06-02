@@ -41,13 +41,16 @@ PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, Porta
   subscriptionUpdateConfirm: subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : this.subscriptionUpdateConfirm,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsFlow &&
           afterCompletion == other.afterCompletion &&
           subscriptionCancel == other.subscriptionCancel &&
           subscriptionUpdate == other.subscriptionUpdate &&
           subscriptionUpdateConfirm == other.subscriptionUpdateConfirm &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type); } 
-@override String toString() { return 'PortalFlowsFlow(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type);
+
+@override String toString() => 'PortalFlowsFlow(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)';
+
  }

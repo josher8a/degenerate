@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 NodeDaemonEndpoints copyWith({DaemonEndpoint? Function()? kubeletEndpoint}) { return NodeDaemonEndpoints(
   kubeletEndpoint: kubeletEndpoint != null ? kubeletEndpoint() : this.kubeletEndpoint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeDaemonEndpoints &&
-          kubeletEndpoint == other.kubeletEndpoint; } 
-@override int get hashCode { return kubeletEndpoint.hashCode; } 
-@override String toString() { return 'NodeDaemonEndpoints(kubeletEndpoint: $kubeletEndpoint)'; } 
+          kubeletEndpoint == other.kubeletEndpoint;
+
+@override int get hashCode => kubeletEndpoint.hashCode;
+
+@override String toString() => 'NodeDaemonEndpoints(kubeletEndpoint: $kubeletEndpoint)';
+
  }

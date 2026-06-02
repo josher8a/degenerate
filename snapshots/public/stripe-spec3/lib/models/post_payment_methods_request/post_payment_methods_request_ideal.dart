@@ -73,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdealBank && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdealBank($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdealBank && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdealBank($value)';
+
  }
 @immutable final class PostPaymentMethodsRequestIdeal {const PostPaymentMethodsRequestIdeal({this.bank});
 
@@ -93,9 +96,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostPaymentMethodsRequestIdeal copyWith({IdealBank? Function()? bank}) { return PostPaymentMethodsRequestIdeal(
   bank: bank != null ? bank() : this.bank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestIdeal &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestIdeal(bank: $bank)'; } 
+          bank == other.bank;
+
+@override int get hashCode => bank.hashCode;
+
+@override String toString() => 'PostPaymentMethodsRequestIdeal(bank: $bank)';
+
  }

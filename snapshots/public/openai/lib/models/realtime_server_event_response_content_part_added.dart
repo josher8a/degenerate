@@ -61,7 +61,7 @@ RealtimeServerEventResponseContentPartAdded copyWith({String? eventId, String? t
   contentIndex: contentIndex ?? this.contentIndex,
   $part: $part ?? this.$part,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseContentPartAdded &&
           eventId == other.eventId &&
           type == other.type &&
@@ -69,7 +69,10 @@ RealtimeServerEventResponseContentPartAdded copyWith({String? eventId, String? t
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          $part == other.$part; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, $part); } 
-@override String toString() { return 'RealtimeServerEventResponseContentPartAdded(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part})'; } 
+          $part == other.$part;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, $part);
+
+@override String toString() => 'RealtimeServerEventResponseContentPartAdded(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part})';
+
  }

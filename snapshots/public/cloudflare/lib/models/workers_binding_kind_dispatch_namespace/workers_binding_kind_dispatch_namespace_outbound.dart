@@ -23,10 +23,13 @@ WorkersBindingKindDispatchNamespaceOutbound copyWith({List<Params>? Function()? 
   params: params != null ? params() : this.params,
   worker: worker != null ? worker() : this.worker,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindDispatchNamespaceOutbound &&
           listEquals(params, other.params) &&
-          worker == other.worker; } 
-@override int get hashCode { return Object.hash(Object.hashAll(params ?? const []), worker); } 
-@override String toString() { return 'WorkersBindingKindDispatchNamespaceOutbound(params: $params, worker: $worker)'; } 
+          worker == other.worker;
+
+@override int get hashCode => Object.hash(Object.hashAll(params ?? const []), worker);
+
+@override String toString() => 'WorkersBindingKindDispatchNamespaceOutbound(params: $params, worker: $worker)';
+
  }

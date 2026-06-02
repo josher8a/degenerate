@@ -22,10 +22,13 @@ RevolutPayUnderlyingPaymentMethodFundingDetails copyWith({PaymentMethodDetailsPa
   card: card != null ? card() : this.card,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RevolutPayUnderlyingPaymentMethodFundingDetails &&
           card == other.card &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(card, type); } 
-@override String toString() { return 'RevolutPayUnderlyingPaymentMethodFundingDetails(card: $card, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(card, type);
+
+@override String toString() => 'RevolutPayUnderlyingPaymentMethodFundingDetails(card: $card, type: $type)';
+
  }

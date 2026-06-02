@@ -56,7 +56,7 @@ WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, Str
   severity: severity != null ? severity() : this.severity,
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlertRule &&
           description == other.description &&
           fullDescription == other.fullDescription &&
@@ -65,7 +65,10 @@ WebhookCodeScanningAlertClosedByUserAlertRule copyWith({String? description, Str
           id == other.id &&
           name == other.name &&
           severity == other.severity &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags ?? const [])); } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlertRule(description: $description, fullDescription: $fullDescription, help: $help, helpUri: $helpUri, id: $id, name: $name, severity: $severity, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(description, fullDescription, help, helpUri, id, name, severity, Object.hashAll(tags ?? const []));
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertRule(description: $description, fullDescription: $fullDescription, help: $help, helpUri: $helpUri, id: $id, name: $name, severity: $severity, tags: $tags)';
+
  }

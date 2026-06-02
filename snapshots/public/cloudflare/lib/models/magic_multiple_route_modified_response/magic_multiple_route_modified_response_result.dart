@@ -21,10 +21,13 @@ MagicMultipleRouteModifiedResponseResult copyWith({bool? Function()? modified, L
   modified: modified != null ? modified() : this.modified,
   modifiedRoutes: modifiedRoutes != null ? modifiedRoutes() : this.modifiedRoutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicMultipleRouteModifiedResponseResult &&
           modified == other.modified &&
-          listEquals(modifiedRoutes, other.modifiedRoutes); } 
-@override int get hashCode { return Object.hash(modified, Object.hashAll(modifiedRoutes ?? const [])); } 
-@override String toString() { return 'MagicMultipleRouteModifiedResponseResult(modified: $modified, modifiedRoutes: $modifiedRoutes)'; } 
+          listEquals(modifiedRoutes, other.modifiedRoutes);
+
+@override int get hashCode => Object.hash(modified, Object.hashAll(modifiedRoutes ?? const []));
+
+@override String toString() => 'MagicMultipleRouteModifiedResponseResult(modified: $modified, modifiedRoutes: $modifiedRoutes)';
+
  }

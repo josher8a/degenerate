@@ -19,19 +19,22 @@ final class ActionsGenerateRunnerJitconfigForOrgError$404 extends ActionsGenerat
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsGenerateRunnerJitconfigForOrgError$409 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ActionsGenerateRunnerJitconfigForOrgError$422 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsGenerateRunnerJitconfigForOrgError$Unknown extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('new_p
 DlpUpdateEmailRulePriorities copyWith({Map<String,int>? newPriorities}) { return DlpUpdateEmailRulePriorities(
   newPriorities: newPriorities ?? this.newPriorities,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpUpdateEmailRulePriorities &&
-          newPriorities == other.newPriorities; } 
-@override int get hashCode { return newPriorities.hashCode; } 
-@override String toString() { return 'DlpUpdateEmailRulePriorities(newPriorities: $newPriorities)'; } 
+          newPriorities == other.newPriorities;
+
+@override int get hashCode => newPriorities.hashCode;
+
+@override String toString() => 'DlpUpdateEmailRulePriorities(newPriorities: $newPriorities)';
+
  }

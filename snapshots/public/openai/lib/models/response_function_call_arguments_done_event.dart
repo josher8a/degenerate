@@ -51,14 +51,17 @@ ResponseFunctionCallArgumentsDoneEvent copyWith({String? type, String? itemId, S
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFunctionCallArgumentsDoneEvent &&
           type == other.type &&
           itemId == other.itemId &&
           name == other.name &&
           outputIndex == other.outputIndex &&
           sequenceNumber == other.sequenceNumber &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(type, itemId, name, outputIndex, sequenceNumber, arguments); } 
-@override String toString() { return 'ResponseFunctionCallArgumentsDoneEvent(type: $type, itemId: $itemId, name: $name, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(type, itemId, name, outputIndex, sequenceNumber, arguments);
+
+@override String toString() => 'ResponseFunctionCallArgumentsDoneEvent(type: $type, itemId: $itemId, name: $name, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, arguments: $arguments)';
+
  }

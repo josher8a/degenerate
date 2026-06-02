@@ -35,12 +35,15 @@ BoundObjectReference copyWith({String? Function()? apiVersion, String? Function(
   name: name != null ? name() : this.name,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BoundObjectReference &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           name == other.name &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, name, uid); } 
-@override String toString() { return 'BoundObjectReference(apiVersion: $apiVersion, kind: $kind, name: $name, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(apiVersion, kind, name, uid);
+
+@override String toString() => 'BoundObjectReference(apiVersion: $apiVersion, kind: $kind, name: $name, uid: $uid)';
+
  }

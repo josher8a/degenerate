@@ -31,10 +31,13 @@ DnsRecordsForAZoneImportDnsRecordsRequest copyWith({String? file, String Functio
   file: file ?? this.file,
   proxied: proxied != null ? proxied() : this.proxied,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsForAZoneImportDnsRecordsRequest &&
           file == other.file &&
-          proxied == other.proxied; } 
-@override int get hashCode { return Object.hash(file, proxied); } 
-@override String toString() { return 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)'; } 
+          proxied == other.proxied;
+
+@override int get hashCode => Object.hash(file, proxied);
+
+@override String toString() => 'DnsRecordsForAZoneImportDnsRecordsRequest(file: $file, proxied: $proxied)';
+
  }

@@ -42,11 +42,14 @@ Http copyWith({bool? authentication, Cors? Function()? cors, bool? enabled, }) {
   cors: cors != null ? cors() : this.cors,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Http &&
           authentication == other.authentication &&
           cors == other.cors &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(authentication, cors, enabled); } 
-@override String toString() { return 'Http(authentication: $authentication, cors: $cors, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(authentication, cors, enabled);
+
+@override String toString() => 'Http(authentication: $authentication, cors: $cors, enabled: $enabled)';
+
  }

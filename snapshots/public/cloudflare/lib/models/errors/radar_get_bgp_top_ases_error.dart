@@ -17,7 +17,8 @@ final class RadarGetBgpTopAsesError$400 extends RadarGetBgpTopAsesError {const R
 
 final RadarGetBgpTopAsesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpTopAsesError$Unknown extends RadarGetBgpTopAsesError {const RadarGetBgpTopAsesError$Unknown(this.statusCode, this.rawBody, );
 

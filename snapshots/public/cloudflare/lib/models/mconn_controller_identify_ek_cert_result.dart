@@ -20,10 +20,13 @@ MconnControllerIdentifyEkCertResult copyWith({MconnControllerConnectorIdentity? 
   connector: connector != null ? connector() : this.connector,
   device: device != null ? device() : this.device,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerIdentifyEkCertResult &&
           connector == other.connector &&
-          device == other.device; } 
-@override int get hashCode { return Object.hash(connector, device); } 
-@override String toString() { return 'MconnControllerIdentifyEkCertResult(connector: $connector, device: $device)'; } 
+          device == other.device;
+
+@override int get hashCode => Object.hash(connector, device);
+
+@override String toString() => 'MconnControllerIdentifyEkCertResult(connector: $connector, device: $device)';
+
  }

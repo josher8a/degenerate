@@ -21,10 +21,13 @@ PostCustomersCustomerSubscriptionsRequestInvoiceSettings copyWith({PostInvoicesI
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestInvoiceSettings &&
           accountTaxIds == other.accountTaxIds &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(accountTaxIds, issuer); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => Object.hash(accountTaxIds, issuer);
+
+@override String toString() => 'PostCustomersCustomerSubscriptionsRequestInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)';
+
  }

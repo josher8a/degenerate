@@ -20,10 +20,13 @@ PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue copyWit
   amount: amount != null ? amount() : this.amount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue &&
           amount == other.amount &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(amount, taxBehavior); } 
-@override String toString() { return 'PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)'; } 
+          taxBehavior == other.taxBehavior;
+
+@override int get hashCode => Object.hash(amount, taxBehavior);
+
+@override String toString() => 'PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)';
+
  }

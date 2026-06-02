@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Zones0PatchRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Zones0PatchRequestType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Zones0PatchRequestType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Zones0PatchRequestType($value)';
+
  }
 /// Example:
 /// ```json
@@ -89,12 +92,15 @@ Zones0PatchRequest copyWith({ZonesPaused? Function()? paused, Zones0PatchRequest
   type: type != null ? type() : this.type,
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0PatchRequest &&
           paused == other.paused &&
           plan == other.plan &&
           type == other.type &&
-          listEquals(vanityNameServers, other.vanityNameServers); } 
-@override int get hashCode { return Object.hash(paused, plan, type, Object.hashAll(vanityNameServers ?? const [])); } 
-@override String toString() { return 'Zones0PatchRequest(paused: $paused, plan: $plan, type: $type, vanityNameServers: $vanityNameServers)'; } 
+          listEquals(vanityNameServers, other.vanityNameServers);
+
+@override int get hashCode => Object.hash(paused, plan, type, Object.hashAll(vanityNameServers ?? const []));
+
+@override String toString() => 'Zones0PatchRequest(paused: $paused, plan: $plan, type: $type, vanityNameServers: $vanityNameServers)';
+
  }

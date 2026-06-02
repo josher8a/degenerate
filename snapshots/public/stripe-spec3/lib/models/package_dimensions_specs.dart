@@ -33,12 +33,15 @@ PackageDimensionsSpecs copyWith({double? height, double? length, double? weight,
   weight: weight ?? this.weight,
   width: width ?? this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PackageDimensionsSpecs &&
           height == other.height &&
           length == other.length &&
           weight == other.weight &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(height, length, weight, width); } 
-@override String toString() { return 'PackageDimensionsSpecs(height: $height, length: $length, weight: $weight, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(height, length, weight, width);
+
+@override String toString() => 'PackageDimensionsSpecs(height: $height, length: $length, weight: $weight, width: $width)';
+
  }

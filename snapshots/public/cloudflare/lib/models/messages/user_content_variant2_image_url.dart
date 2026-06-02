@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Detail && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Detail($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Detail && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Detail($value)';
+
  }
 @immutable final class UserContentVariant2ImageUrl {const UserContentVariant2ImageUrl({this.detail = Detail.auto, this.url, });
 
@@ -47,10 +50,13 @@ UserContentVariant2ImageUrl copyWith({Detail Function()? detail, String? Functio
   detail: detail != null ? detail() : this.detail,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserContentVariant2ImageUrl &&
           detail == other.detail &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(detail, url); } 
-@override String toString() { return 'UserContentVariant2ImageUrl(detail: $detail, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(detail, url);
+
+@override String toString() => 'UserContentVariant2ImageUrl(detail: $detail, url: $url)';
+
  }

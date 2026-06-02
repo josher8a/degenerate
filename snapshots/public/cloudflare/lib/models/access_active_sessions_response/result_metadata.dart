@@ -39,13 +39,16 @@ ResultMetadata copyWith({Map<String, AppsValue>? Function()? apps, int? Function
   nonce: nonce != null ? nonce() : this.nonce,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultMetadata &&
           apps == other.apps &&
           expires == other.expires &&
           iat == other.iat &&
           nonce == other.nonce &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(apps, expires, iat, nonce, ttl); } 
-@override String toString() { return 'ResultMetadata(apps: $apps, expires: $expires, iat: $iat, nonce: $nonce, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(apps, expires, iat, nonce, ttl);
+
+@override String toString() => 'ResultMetadata(apps: $apps, expires: $expires, iat: $iat, nonce: $nonce, ttl: $ttl)';
+
  }

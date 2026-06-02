@@ -25,10 +25,13 @@ VectorizeCreateMetadataIndexRequest copyWith({IndexType? indexType, String? prop
   indexType: indexType ?? this.indexType,
   propertyName: propertyName ?? this.propertyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeCreateMetadataIndexRequest &&
           indexType == other.indexType &&
-          propertyName == other.propertyName; } 
-@override int get hashCode { return Object.hash(indexType, propertyName); } 
-@override String toString() { return 'VectorizeCreateMetadataIndexRequest(indexType: $indexType, propertyName: $propertyName)'; } 
+          propertyName == other.propertyName;
+
+@override int get hashCode => Object.hash(indexType, propertyName);
+
+@override String toString() => 'VectorizeCreateMetadataIndexRequest(indexType: $indexType, propertyName: $propertyName)';
+
  }

@@ -38,11 +38,14 @@ UpdateServersRequest copyWith({String? Function()? authCredentials, String? Func
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateServersRequest &&
           authCredentials == other.authCredentials &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(authCredentials, description, name); } 
-@override String toString() { return 'UpdateServersRequest(authCredentials: $authCredentials, description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(authCredentials, description, name);
+
+@override String toString() => 'UpdateServersRequest(authCredentials: $authCredentials, description: $description, name: $name)';
+
  }

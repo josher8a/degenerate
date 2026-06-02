@@ -25,11 +25,14 @@ SourceTypeAlipay copyWith({String? Function()? dataString, String? Function()? n
   nativeUrl: nativeUrl != null ? nativeUrl() : this.nativeUrl,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeAlipay &&
           dataString == other.dataString &&
           nativeUrl == other.nativeUrl &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(dataString, nativeUrl, statementDescriptor); } 
-@override String toString() { return 'SourceTypeAlipay(dataString: $dataString, nativeUrl: $nativeUrl, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(dataString, nativeUrl, statementDescriptor);
+
+@override String toString() => 'SourceTypeAlipay(dataString: $dataString, nativeUrl: $nativeUrl, statementDescriptor: $statementDescriptor)';
+
  }

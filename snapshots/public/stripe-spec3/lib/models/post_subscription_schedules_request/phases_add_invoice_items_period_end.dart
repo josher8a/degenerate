@@ -20,10 +20,13 @@ PhasesAddInvoiceItemsPeriodEnd copyWith({int? Function()? timestamp, Subscriptio
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PhasesAddInvoiceItemsPeriodEnd &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'PhasesAddInvoiceItemsPeriodEnd(timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(timestamp, type);
+
+@override String toString() => 'PhasesAddInvoiceItemsPeriodEnd(timestamp: $timestamp, type: $type)';
+
  }

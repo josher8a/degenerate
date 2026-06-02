@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)';
+
  }
 /// Returned when MCP tool call arguments are updated during response generation.
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDelta {const RealtimeBetaServerEventResponseMcpCallArgumentsDelta({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.delta, this.obfuscation, });
@@ -80,7 +83,7 @@ RealtimeBetaServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, 
   delta: delta ?? this.delta,
   obfuscation: obfuscation != null ? obfuscation() : this.obfuscation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -88,7 +91,10 @@ RealtimeBetaServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, 
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           delta == other.delta &&
-          obfuscation == other.obfuscation; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)'; } 
+          obfuscation == other.obfuscation;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation);
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)';
+
  }

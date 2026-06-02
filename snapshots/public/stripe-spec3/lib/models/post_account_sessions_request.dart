@@ -29,11 +29,14 @@ PostAccountSessionsRequest copyWith({String? account, PostAccountSessionsRequest
   components: components ?? this.components,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountSessionsRequest &&
           account == other.account &&
           components == other.components &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(account, components, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostAccountSessionsRequest(account: $account, components: $components, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(account, components, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostAccountSessionsRequest(account: $account, components: $components, expand: $expand)';
+
  }

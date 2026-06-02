@@ -22,10 +22,13 @@ PostInvoicesInvoiceFinalizeRequest copyWith({bool? Function()? autoAdvance, List
   autoAdvance: autoAdvance != null ? autoAdvance() : this.autoAdvance,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceFinalizeRequest &&
           autoAdvance == other.autoAdvance &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(autoAdvance, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostInvoicesInvoiceFinalizeRequest(autoAdvance: $autoAdvance, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(autoAdvance, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostInvoicesInvoiceFinalizeRequest(autoAdvance: $autoAdvance, expand: $expand)';
+
  }

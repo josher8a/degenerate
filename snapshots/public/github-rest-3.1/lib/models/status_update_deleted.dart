@@ -38,13 +38,16 @@ StatusUpdateDeleted copyWith({ItemDeletedAction? action, SimpleInstallation? Fun
   projectsV2StatusUpdate: projectsV2StatusUpdate ?? this.projectsV2StatusUpdate,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusUpdateDeleted &&
           action == other.action &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2StatusUpdate == other.projectsV2StatusUpdate &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, organization, projectsV2StatusUpdate, sender); } 
-@override String toString() { return 'StatusUpdateDeleted(action: $action, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, installation, organization, projectsV2StatusUpdate, sender);
+
+@override String toString() => 'StatusUpdateDeleted(action: $action, installation: $installation, organization: $organization, projectsV2StatusUpdate: $projectsV2StatusUpdate, sender: $sender)';
+
  }

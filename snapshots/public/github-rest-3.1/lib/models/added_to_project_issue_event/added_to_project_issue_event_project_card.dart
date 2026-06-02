@@ -44,14 +44,17 @@ AddedToProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId,
   columnName: columnName ?? this.columnName,
   previousColumnName: previousColumnName != null ? previousColumnName() : this.previousColumnName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddedToProjectIssueEventProjectCard &&
           id == other.id &&
           url == other.url &&
           projectId == other.projectId &&
           projectUrl == other.projectUrl &&
           columnName == other.columnName &&
-          previousColumnName == other.previousColumnName; } 
-@override int get hashCode { return Object.hash(id, url, projectId, projectUrl, columnName, previousColumnName); } 
-@override String toString() { return 'AddedToProjectIssueEventProjectCard(id: $id, url: $url, projectId: $projectId, projectUrl: $projectUrl, columnName: $columnName, previousColumnName: $previousColumnName)'; } 
+          previousColumnName == other.previousColumnName;
+
+@override int get hashCode => Object.hash(id, url, projectId, projectUrl, columnName, previousColumnName);
+
+@override String toString() => 'AddedToProjectIssueEventProjectCard(id: $id, url: $url, projectId: $projectId, projectUrl: $projectUrl, columnName: $columnName, previousColumnName: $previousColumnName)';
+
  }

@@ -37,13 +37,16 @@ EmailSecurityReleaseResponse copyWith({List<String>? Function()? delivered, List
   id: id ?? this.id,
   postfixId: postfixId ?? this.postfixId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityReleaseResponse &&
           listEquals(delivered, other.delivered) &&
           listEquals(failed, other.failed) &&
           listEquals(undelivered, other.undelivered) &&
           id == other.id &&
-          postfixId == other.postfixId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(delivered ?? const []), Object.hashAll(failed ?? const []), Object.hashAll(undelivered ?? const []), id, postfixId); } 
-@override String toString() { return 'EmailSecurityReleaseResponse(delivered: $delivered, failed: $failed, undelivered: $undelivered, id: $id, postfixId: $postfixId)'; } 
+          postfixId == other.postfixId;
+
+@override int get hashCode => Object.hash(Object.hashAll(delivered ?? const []), Object.hashAll(failed ?? const []), Object.hashAll(undelivered ?? const []), id, postfixId);
+
+@override String toString() => 'EmailSecurityReleaseResponse(delivered: $delivered, failed: $failed, undelivered: $undelivered, id: $id, postfixId: $postfixId)';
+
  }

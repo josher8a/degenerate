@@ -55,7 +55,7 @@ BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? create
   repoId: repoId != null ? repoId() : this.repoId,
   repoName: repoName != null ? repoName() : this.repoName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsUpsertRepoConnectionResponse &&
           createdOn == other.createdOn &&
           deletedOn == other.deletedOn &&
@@ -65,7 +65,10 @@ BuildsUpsertRepoConnectionResponse copyWith({BuildsCreatedOn? Function()? create
           providerType == other.providerType &&
           repoConnectionUuid == other.repoConnectionUuid &&
           repoId == other.repoId &&
-          repoName == other.repoName; } 
-@override int get hashCode { return Object.hash(createdOn, deletedOn, modifiedOn, providerAccountId, providerAccountName, providerType, repoConnectionUuid, repoId, repoName); } 
-@override String toString() { return 'BuildsUpsertRepoConnectionResponse(createdOn: $createdOn, deletedOn: $deletedOn, modifiedOn: $modifiedOn, providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoConnectionUuid: $repoConnectionUuid, repoId: $repoId, repoName: $repoName)'; } 
+          repoName == other.repoName;
+
+@override int get hashCode => Object.hash(createdOn, deletedOn, modifiedOn, providerAccountId, providerAccountName, providerType, repoConnectionUuid, repoId, repoName);
+
+@override String toString() => 'BuildsUpsertRepoConnectionResponse(createdOn: $createdOn, deletedOn: $deletedOn, modifiedOn: $modifiedOn, providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoConnectionUuid: $repoConnectionUuid, repoId: $repoId, repoName: $repoName)';
+
  }

@@ -25,11 +25,14 @@ ToolsCustomCustom copyWith({String? Function()? description, CustomFormat? Funct
   format: format != null ? format() : this.format,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolsCustomCustom &&
           description == other.description &&
           format == other.format &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, format, name); } 
-@override String toString() { return 'ToolsCustomCustom(description: $description, format: $format, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, format, name);
+
+@override String toString() => 'ToolsCustomCustom(description: $description, format: $format, name: $name)';
+
  }

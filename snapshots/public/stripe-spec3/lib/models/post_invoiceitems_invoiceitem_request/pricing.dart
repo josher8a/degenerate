@@ -23,9 +23,12 @@ return errors; }
 Pricing copyWith({String? Function()? price}) { return Pricing(
   price: price != null ? price() : this.price,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pricing &&
-          price == other.price; } 
-@override int get hashCode { return price.hashCode; } 
-@override String toString() { return 'Pricing(price: $price)'; } 
+          price == other.price;
+
+@override int get hashCode => price.hashCode;
+
+@override String toString() => 'Pricing(price: $price)';
+
  }

@@ -17,7 +17,8 @@ final class RadarGetOriginPostQuantumSummaryError$400 extends RadarGetOriginPost
 
 final RadarGetOriginPostQuantumSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetOriginPostQuantumSummaryError$Unknown extends RadarGetOriginPostQuantumSummaryError {const RadarGetOriginPostQuantumSummaryError$Unknown(this.statusCode, this.rawBody, );
 

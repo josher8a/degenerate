@@ -31,12 +31,15 @@ UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 copyWith({List<Strin
   crawlDelay: crawlDelay != null ? crawlDelay() : this.crawlDelay,
   disallow: disallow ?? this.disallow,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 &&
           listEquals(allow, other.allow) &&
           contentSignal == other.contentSignal &&
           crawlDelay == other.crawlDelay &&
-          listEquals(disallow, other.disallow); } 
-@override int get hashCode { return Object.hash(Object.hashAll(allow), contentSignal, crawlDelay, Object.hashAll(disallow)); } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(allow: $allow, contentSignal: $contentSignal, crawlDelay: $crawlDelay, disallow: $disallow)'; } 
+          listEquals(disallow, other.disallow);
+
+@override int get hashCode => Object.hash(Object.hashAll(allow), contentSignal, crawlDelay, Object.hashAll(disallow));
+
+@override String toString() => 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(allow: $allow, contentSignal: $contentSignal, crawlDelay: $crawlDelay, disallow: $disallow)';
+
  }

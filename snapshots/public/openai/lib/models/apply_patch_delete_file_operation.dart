@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchDeleteFileOperationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApplyPatchDeleteFileOperationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchDeleteFileOperationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApplyPatchDeleteFileOperationType($value)';
+
  }
 /// Instruction describing how to delete a file via the apply_patch tool.
 @immutable final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({required this.path, this.type = ApplyPatchDeleteFileOperationType.deleteFile, });
@@ -46,10 +49,13 @@ ApplyPatchDeleteFileOperation copyWith({ApplyPatchDeleteFileOperationType? type,
   type: type ?? this.type,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchDeleteFileOperation &&
           type == other.type &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(type, path); } 
-@override String toString() { return 'ApplyPatchDeleteFileOperation(type: $type, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(type, path);
+
+@override String toString() => 'ApplyPatchDeleteFileOperation(type: $type, path: $path)';
+
  }

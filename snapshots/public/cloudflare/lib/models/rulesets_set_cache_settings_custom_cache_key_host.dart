@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RulesetsSetCacheSettingsCustomCacheKeyHost copyWith({bool? Function()? resolved}) { return RulesetsSetCacheSettingsCustomCacheKeyHost(
   resolved: resolved != null ? resolved() : this.resolved,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyHost &&
-          resolved == other.resolved; } 
-@override int get hashCode { return resolved.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyHost(resolved: $resolved)'; } 
+          resolved == other.resolved;
+
+@override int get hashCode => resolved.hashCode;
+
+@override String toString() => 'RulesetsSetCacheSettingsCustomCacheKeyHost(resolved: $resolved)';
+
  }

@@ -22,10 +22,13 @@ ToolOutputs copyWith({String? Function()? toolCallId, String? Function()? output
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolOutputs &&
           toolCallId == other.toolCallId &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(toolCallId, output); } 
-@override String toString() { return 'ToolOutputs(toolCallId: $toolCallId, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(toolCallId, output);
+
+@override String toString() => 'ToolOutputs(toolCallId: $toolCallId, output: $output)';
+
  }

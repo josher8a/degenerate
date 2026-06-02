@@ -32,11 +32,14 @@ ShieldSchemaIssueNotification copyWith({int? code, String? message, ShieldSchema
   message: message ?? this.message,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaIssueNotification &&
           code == other.code &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, message, source); } 
-@override String toString() { return 'ShieldSchemaIssueNotification(code: $code, message: $message, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, message, source);
+
+@override String toString() => 'ShieldSchemaIssueNotification(code: $code, message: $message, source: $source)';
+
  }

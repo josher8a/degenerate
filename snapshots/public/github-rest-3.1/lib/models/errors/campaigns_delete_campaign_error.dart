@@ -18,13 +18,15 @@ final class CampaignsDeleteCampaignError$404 extends CampaignsDeleteCampaignErro
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CampaignsDeleteCampaignError$503 extends CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError$503(this.error);
 
 final CampaignsDeleteCampaignResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CampaignsDeleteCampaignError$Unknown extends CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError$Unknown(this.statusCode, this.rawBody, );
 

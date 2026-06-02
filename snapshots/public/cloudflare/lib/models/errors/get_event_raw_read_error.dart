@@ -17,7 +17,8 @@ final class GetEventRawReadError$400 extends GetEventRawReadError {const GetEven
 
 final GetEventRawReadResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetEventRawReadError$Unknown extends GetEventRawReadError {const GetEventRawReadError$Unknown(this.statusCode, this.rawBody, );
 

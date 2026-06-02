@@ -21,9 +21,12 @@ return errors; }
 ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest copyWith({List<String>? labels}) { return ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest(
   labels: labels ?? this.labels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll(labels); } 
-@override String toString() { return 'ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest(labels: $labels)'; } 
+          listEquals(labels, other.labels);
+
+@override int get hashCode => Object.hashAll(labels);
+
+@override String toString() => 'ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest(labels: $labels)';
+
  }

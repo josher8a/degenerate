@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallIpv6ConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallIpv6ConfigurationTarget($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallIpv6ConfigurationTarget && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallIpv6ConfigurationTarget($value)';
+
  }
 @immutable final class FirewallIpv6Configuration {const FirewallIpv6Configuration({this.target, this.value, });
 
@@ -48,10 +51,13 @@ FirewallIpv6Configuration copyWith({FirewallIpv6ConfigurationTarget? Function()?
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallIpv6Configuration &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(target, value); } 
-@override String toString() { return 'FirewallIpv6Configuration(target: $target, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(target, value);
+
+@override String toString() => 'FirewallIpv6Configuration(target: $target, value: $value)';
+
  }

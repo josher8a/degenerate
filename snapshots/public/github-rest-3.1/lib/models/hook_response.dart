@@ -27,11 +27,14 @@ HookResponse copyWith({int? Function()? code, String? Function()? status, String
   status: status != null ? status() : this.status,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HookResponse &&
           code == other.code &&
           status == other.status &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, status, message); } 
-@override String toString() { return 'HookResponse(code: $code, status: $status, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, status, message);
+
+@override String toString() => 'HookResponse(code: $code, status: $status, message: $message)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('valid
 DlpRegexValidationResult copyWith({bool? valid}) { return DlpRegexValidationResult(
   valid: valid ?? this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRegexValidationResult &&
-          valid == other.valid; } 
-@override int get hashCode { return valid.hashCode; } 
-@override String toString() { return 'DlpRegexValidationResult(valid: $valid)'; } 
+          valid == other.valid;
+
+@override int get hashCode => valid.hashCode;
+
+@override String toString() => 'DlpRegexValidationResult(valid: $valid)';
+
  }

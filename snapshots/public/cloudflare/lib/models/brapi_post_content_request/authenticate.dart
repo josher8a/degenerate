@@ -27,10 +27,13 @@ Authenticate copyWith({String? password, String? username, }) { return Authentic
   password: password ?? this.password,
   username: username ?? this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Authenticate &&
           password == other.password &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(password, username); } 
-@override String toString() { return 'Authenticate(password: $password, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(password, username);
+
+@override String toString() => 'Authenticate(password: $password, username: $username)';
+
  }

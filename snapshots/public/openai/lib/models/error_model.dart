@@ -33,12 +33,15 @@ ErrorModel copyWith({String? Function()? code, String? message, String? Function
   param: param != null ? param() : this.param,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorModel &&
           code == other.code &&
           message == other.message &&
           param == other.param &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(code, message, param, type); } 
-@override String toString() { return 'ErrorModel(code: $code, message: $message, param: $param, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(code, message, param, type);
+
+@override String toString() => 'ErrorModel(code: $code, message: $message, param: $param, type: $type)';
+
  }

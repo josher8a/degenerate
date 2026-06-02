@@ -50,7 +50,7 @@ DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? 
   templateId: templateId != null ? templateId() : this.templateId,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpSensitivityGroup &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -58,7 +58,10 @@ DlpSensitivityGroup copyWith({DateTime? createdAt, String? description, String? 
           listEquals(levels, other.levels) &&
           name == other.name &&
           templateId == other.templateId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, Object.hashAll(levels), name, templateId, updatedAt); } 
-@override String toString() { return 'DlpSensitivityGroup(createdAt: $createdAt, description: $description, id: $id, levels: $levels, name: $name, templateId: $templateId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, id, Object.hashAll(levels), name, templateId, updatedAt);
+
+@override String toString() => 'DlpSensitivityGroup(createdAt: $createdAt, description: $description, id: $id, levels: $levels, name: $name, templateId: $templateId, updatedAt: $updatedAt)';
+
  }

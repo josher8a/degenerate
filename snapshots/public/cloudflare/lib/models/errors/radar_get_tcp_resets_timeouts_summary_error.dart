@@ -17,7 +17,8 @@ final class RadarGetTcpResetsTimeoutsSummaryError$400 extends RadarGetTcpResetsT
 
 final RadarGetTcpResetsTimeoutsSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetTcpResetsTimeoutsSummaryError$Unknown extends RadarGetTcpResetsTimeoutsSummaryError {const RadarGetTcpResetsTimeoutsSummaryError$Unknown(this.statusCode, this.rawBody, );
 

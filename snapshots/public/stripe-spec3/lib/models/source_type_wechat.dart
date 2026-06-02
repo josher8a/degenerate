@@ -25,11 +25,14 @@ SourceTypeWechat copyWith({String? Function()? prepayId, String? Function()? qrC
   qrCodeUrl: qrCodeUrl != null ? qrCodeUrl() : this.qrCodeUrl,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeWechat &&
           prepayId == other.prepayId &&
           qrCodeUrl == other.qrCodeUrl &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(prepayId, qrCodeUrl, statementDescriptor); } 
-@override String toString() { return 'SourceTypeWechat(prepayId: $prepayId, qrCodeUrl: $qrCodeUrl, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(prepayId, qrCodeUrl, statementDescriptor);
+
+@override String toString() => 'SourceTypeWechat(prepayId: $prepayId, qrCodeUrl: $qrCodeUrl, statementDescriptor: $statementDescriptor)';
+
  }

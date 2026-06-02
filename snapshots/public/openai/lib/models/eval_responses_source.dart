@@ -89,7 +89,7 @@ EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<St
   users: users != null ? users() : this.users,
   tools: tools != null ? tools() : this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalResponsesSource &&
           type == other.type &&
           metadata == other.metadata &&
@@ -101,7 +101,10 @@ EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<St
           temperature == other.temperature &&
           topP == other.topP &&
           listEquals(users, other.users) &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users ?? const []), Object.hashAll(tools ?? const [])); } 
-@override String toString() { return 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users ?? const []), Object.hashAll(tools ?? const []));
+
+@override String toString() => 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)';
+
  }

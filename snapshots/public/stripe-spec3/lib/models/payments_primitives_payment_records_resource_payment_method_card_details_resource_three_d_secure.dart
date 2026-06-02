@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecureVersion($value)';
+
  }
 /// 
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure({this.authenticationFlow, this.result, this.resultReason, this.version, });
@@ -63,12 +66,15 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSe
   resultReason: resultReason != null ? resultReason() : this.resultReason,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure &&
           authenticationFlow == other.authenticationFlow &&
           result == other.result &&
           resultReason == other.resultReason &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(authenticationFlow, result, resultReason, version); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(authenticationFlow: $authenticationFlow, result: $result, resultReason: $resultReason, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(authenticationFlow, result, resultReason, version);
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure(authenticationFlow: $authenticationFlow, result: $result, resultReason: $resultReason, version: $version)';
+
  }

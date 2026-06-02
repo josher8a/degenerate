@@ -25,11 +25,14 @@ DigitalExperienceMonitoringAggregateStat copyWith({int? Function()? avgMs, doubl
   deltaPct: deltaPct != null ? deltaPct() : this.deltaPct,
   timePeriod: timePeriod ?? this.timePeriod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringAggregateStat &&
           avgMs == other.avgMs &&
           deltaPct == other.deltaPct &&
-          timePeriod == other.timePeriod; } 
-@override int get hashCode { return Object.hash(avgMs, deltaPct, timePeriod); } 
-@override String toString() { return 'DigitalExperienceMonitoringAggregateStat(avgMs: $avgMs, deltaPct: $deltaPct, timePeriod: $timePeriod)'; } 
+          timePeriod == other.timePeriod;
+
+@override int get hashCode => Object.hash(avgMs, deltaPct, timePeriod);
+
+@override String toString() => 'DigitalExperienceMonitoringAggregateStat(avgMs: $avgMs, deltaPct: $deltaPct, timePeriod: $timePeriod)';
+
  }

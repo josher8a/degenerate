@@ -48,14 +48,17 @@ CreateTranscriptionResponseVerboseJson copyWith({String? language, double? durat
   segments: segments != null ? segments() : this.segments,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionResponseVerboseJson &&
           language == other.language &&
           duration == other.duration &&
           text == other.text &&
           listEquals(words, other.words) &&
           listEquals(segments, other.segments) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(language, duration, text, Object.hashAll(words ?? const []), Object.hashAll(segments ?? const []), usage); } 
-@override String toString() { return 'CreateTranscriptionResponseVerboseJson(language: $language, duration: $duration, text: $text, words: $words, segments: $segments, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(language, duration, text, Object.hashAll(words ?? const []), Object.hashAll(segments ?? const []), usage);
+
+@override String toString() => 'CreateTranscriptionResponseVerboseJson(language: $language, duration: $duration, text: $text, words: $words, segments: $segments, usage: $usage)';
+
  }

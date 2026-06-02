@@ -42,12 +42,15 @@ PaymentPagesCheckoutSessionAutomaticTax copyWith({bool? enabled, ConnectAccountR
   provider: provider != null ? provider() : this.provider,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionAutomaticTax &&
           enabled == other.enabled &&
           liability == other.liability &&
           provider == other.provider &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(enabled, liability, provider, status); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAutomaticTax(enabled: $enabled, liability: $liability, provider: $provider, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(enabled, liability, provider, status);
+
+@override String toString() => 'PaymentPagesCheckoutSessionAutomaticTax(enabled: $enabled, liability: $liability, provider: $provider, status: $status)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceCustomerDetailsAddressSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceCustomerDetailsAddressSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxProductResourceCustomerDetailsAddressSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxProductResourceCustomerDetailsAddressSource($value)';
+
  }
 /// 
 @immutable final class TaxProductResourceCustomerDetails {const TaxProductResourceCustomerDetails({required this.taxIds, required this.taxabilityOverride, this.address, this.addressSource, this.ipAddress, });
@@ -74,13 +77,16 @@ TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Fun
   taxIds: taxIds ?? this.taxIds,
   taxabilityOverride: taxabilityOverride ?? this.taxabilityOverride,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceCustomerDetails &&
           address == other.address &&
           addressSource == other.addressSource &&
           ipAddress == other.ipAddress &&
           listEquals(taxIds, other.taxIds) &&
-          taxabilityOverride == other.taxabilityOverride; } 
-@override int get hashCode { return Object.hash(address, addressSource, ipAddress, Object.hashAll(taxIds), taxabilityOverride); } 
-@override String toString() { return 'TaxProductResourceCustomerDetails(address: $address, addressSource: $addressSource, ipAddress: $ipAddress, taxIds: $taxIds, taxabilityOverride: $taxabilityOverride)'; } 
+          taxabilityOverride == other.taxabilityOverride;
+
+@override int get hashCode => Object.hash(address, addressSource, ipAddress, Object.hashAll(taxIds), taxabilityOverride);
+
+@override String toString() => 'TaxProductResourceCustomerDetails(address: $address, addressSource: $addressSource, ipAddress: $ipAddress, taxIds: $taxIds, taxabilityOverride: $taxabilityOverride)';
+
  }

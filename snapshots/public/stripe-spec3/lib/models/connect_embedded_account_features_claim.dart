@@ -24,10 +24,13 @@ ConnectEmbeddedAccountFeaturesClaim copyWith({bool? disableStripeUserAuthenticat
   disableStripeUserAuthentication: disableStripeUserAuthentication ?? this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection ?? this.externalAccountCollection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedAccountFeaturesClaim &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
-          externalAccountCollection == other.externalAccountCollection; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection); } 
-@override String toString() { return 'ConnectEmbeddedAccountFeaturesClaim(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection)'; } 
+          externalAccountCollection == other.externalAccountCollection;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, externalAccountCollection);
+
+@override String toString() => 'ConnectEmbeddedAccountFeaturesClaim(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection)';
+
  }

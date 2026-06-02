@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CodeScanningOptions copyWith({bool? Function()? allowAdvanced}) { return CodeScanningOptions(
   allowAdvanced: allowAdvanced != null ? allowAdvanced() : this.allowAdvanced,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningOptions &&
-          allowAdvanced == other.allowAdvanced; } 
-@override int get hashCode { return allowAdvanced.hashCode; } 
-@override String toString() { return 'CodeScanningOptions(allowAdvanced: $allowAdvanced)'; } 
+          allowAdvanced == other.allowAdvanced;
+
+@override int get hashCode => allowAdvanced.hashCode;
+
+@override String toString() => 'CodeScanningOptions(allowAdvanced: $allowAdvanced)';
+
  }

@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceEnumReasonConferenceEnded && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceEnumReasonConferenceEnded($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceEnumReasonConferenceEnded && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConferenceEnumReasonConferenceEnded($value)';
+
  }
 @immutable final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });
 
@@ -135,7 +138,7 @@ AccountConference copyWith({String? Function()? accountSid, String? Function()? 
   reasonConferenceEnded: reasonConferenceEnded != null ? reasonConferenceEnded() : this.reasonConferenceEnded,
   callSidEndingConference: callSidEndingConference != null ? callSidEndingConference() : this.callSidEndingConference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConference &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
@@ -148,7 +151,10 @@ AccountConference copyWith({String? Function()? accountSid, String? Function()? 
           uri == other.uri &&
           subresourceUris == other.subresourceUris &&
           reasonConferenceEnded == other.reasonConferenceEnded &&
-          callSidEndingConference == other.callSidEndingConference; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference); } 
-@override String toString() { return 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)'; } 
+          callSidEndingConference == other.callSidEndingConference;
+
+@override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference);
+
+@override String toString() => 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)';
+
  }

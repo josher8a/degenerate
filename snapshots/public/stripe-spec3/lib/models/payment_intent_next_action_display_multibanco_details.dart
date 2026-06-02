@@ -50,12 +50,15 @@ PaymentIntentNextActionDisplayMultibancoDetails copyWith({String? Function()? en
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionDisplayMultibancoDetails &&
           entity == other.entity &&
           expiresAt == other.expiresAt &&
           hostedVoucherUrl == other.hostedVoucherUrl &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(entity, expiresAt, hostedVoucherUrl, reference); } 
-@override String toString() { return 'PaymentIntentNextActionDisplayMultibancoDetails(entity: $entity, expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(entity, expiresAt, hostedVoucherUrl, reference);
+
+@override String toString() => 'PaymentIntentNextActionDisplayMultibancoDetails(entity: $entity, expiresAt: $expiresAt, hostedVoucherUrl: $hostedVoucherUrl, reference: $reference)';
+
  }

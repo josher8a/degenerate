@@ -24,10 +24,13 @@ RunStepDetailsToolCallsCodeOutputLogsObject copyWith({CodeInterpreterOutputLogsT
   type: type ?? this.type,
   logs: logs ?? this.logs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeOutputLogsObject &&
           type == other.type &&
-          logs == other.logs; } 
-@override int get hashCode { return Object.hash(type, logs); } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputLogsObject(type: $type, logs: $logs)'; } 
+          logs == other.logs;
+
+@override int get hashCode => Object.hash(type, logs);
+
+@override String toString() => 'RunStepDetailsToolCallsCodeOutputLogsObject(type: $type, logs: $logs)';
+
  }

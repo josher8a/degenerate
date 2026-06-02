@@ -50,14 +50,17 @@ CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBa
   type: type ?? this.type,
   usBankTransfer: usBankTransfer != null ? usBankTransfer() : this.usBankTransfer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer &&
           euBankTransfer == other.euBankTransfer &&
           gbBankTransfer == other.gbBankTransfer &&
           jpBankTransfer == other.jpBankTransfer &&
           reference == other.reference &&
           type == other.type &&
-          usBankTransfer == other.usBankTransfer; } 
-@override int get hashCode { return Object.hash(euBankTransfer, gbBankTransfer, jpBankTransfer, reference, type, usBankTransfer); } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, jpBankTransfer: $jpBankTransfer, reference: $reference, type: $type, usBankTransfer: $usBankTransfer)'; } 
+          usBankTransfer == other.usBankTransfer;
+
+@override int get hashCode => Object.hash(euBankTransfer, gbBankTransfer, jpBankTransfer, reference, type, usBankTransfer);
+
+@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, jpBankTransfer: $jpBankTransfer, reference: $reference, type: $type, usBankTransfer: $usBankTransfer)';
+
  }

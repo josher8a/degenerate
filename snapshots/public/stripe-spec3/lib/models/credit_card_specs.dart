@@ -119,7 +119,7 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
   networks: networks != null ? networks() : this.networks,
   number: number ?? this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditCardSpecs &&
           addressCity == other.addressCity &&
           addressCountry == other.addressCountry &&
@@ -133,7 +133,10 @@ CreditCardSpecs copyWith({String? Function()? addressCity, String? Function()? a
           expYear == other.expYear &&
           name == other.name &&
           networks == other.networks &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number); } 
-@override String toString() { return 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, currency, cvc, expMonth, expYear, name, networks, number);
+
+@override String toString() => 'CreditCardSpecs(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, name: $name, networks: $networks, number: $number)';
+
  }

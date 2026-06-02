@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessConnectionRules copyWith({AccessConnectionRulesRdp? Function()? rdp}) { return AccessConnectionRules(
   rdp: rdp != null ? rdp() : this.rdp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessConnectionRules &&
-          rdp == other.rdp; } 
-@override int get hashCode { return rdp.hashCode; } 
-@override String toString() { return 'AccessConnectionRules(rdp: $rdp)'; } 
+          rdp == other.rdp;
+
+@override int get hashCode => rdp.hashCode;
+
+@override String toString() => 'AccessConnectionRules(rdp: $rdp)';
+
  }

@@ -23,10 +23,13 @@ QueryString copyWith({QueryStringExclude? Function()? exclude, QueryStringInclud
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueryString &&
           exclude == other.exclude &&
-          include == other.include; } 
-@override int get hashCode { return Object.hash(exclude, include); } 
-@override String toString() { return 'QueryString(exclude: $exclude, include: $include)'; } 
+          include == other.include;
+
+@override int get hashCode => Object.hash(exclude, include);
+
+@override String toString() => 'QueryString(exclude: $exclude, include: $include)';
+
  }

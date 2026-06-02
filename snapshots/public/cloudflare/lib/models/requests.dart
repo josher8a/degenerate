@@ -65,7 +65,7 @@ Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dy
   sslProtocols: sslProtocols != null ? sslProtocols() : this.sslProtocols,
   uncached: uncached != null ? uncached() : this.uncached,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Requests &&
           all == other.all &&
           cached == other.cached &&
@@ -74,7 +74,10 @@ Requests copyWith({int? Function()? all, int? Function()? cached, Map<String, dy
           httpStatus == other.httpStatus &&
           ssl == other.ssl &&
           sslProtocols == other.sslProtocols &&
-          uncached == other.uncached; } 
-@override int get hashCode { return Object.hash(all, cached, contentType, country, httpStatus, ssl, sslProtocols, uncached); } 
-@override String toString() { return 'Requests(all: $all, cached: $cached, contentType: $contentType, country: $country, httpStatus: $httpStatus, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)'; } 
+          uncached == other.uncached;
+
+@override int get hashCode => Object.hash(all, cached, contentType, country, httpStatus, ssl, sslProtocols, uncached);
+
+@override String toString() => 'Requests(all: $all, cached: $cached, contentType: $contentType, country: $country, httpStatus: $httpStatus, ssl: $ssl, sslProtocols: $sslProtocols, uncached: $uncached)';
+
  }

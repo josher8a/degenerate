@@ -36,13 +36,16 @@ WafManagedRulesBase copyWith({WafManagedRulesSchemasDescription? Function()? des
   packageId: packageId != null ? packageId() : this.packageId,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesBase &&
           description == other.description &&
           group == other.group &&
           id == other.id &&
           packageId == other.packageId &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(description, group, id, packageId, priority); } 
-@override String toString() { return 'WafManagedRulesBase(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(description, group, id, packageId, priority);
+
+@override String toString() => 'WafManagedRulesBase(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority)';
+
  }

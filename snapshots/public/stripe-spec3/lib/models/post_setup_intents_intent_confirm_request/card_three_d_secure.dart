@@ -60,7 +60,7 @@ CardThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String?
   transactionId: transactionId != null ? transactionId() : this.transactionId,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardThreeDSecure &&
           aresTransStatus == other.aresTransStatus &&
           cryptogram == other.cryptogram &&
@@ -68,7 +68,10 @@ CardThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String?
           networkOptions == other.networkOptions &&
           requestorChallengeIndicator == other.requestorChallengeIndicator &&
           transactionId == other.transactionId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(aresTransStatus, cryptogram, electronicCommerceIndicator, networkOptions, requestorChallengeIndicator, transactionId, version); } 
-@override String toString() { return 'CardThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(aresTransStatus, cryptogram, electronicCommerceIndicator, networkOptions, requestorChallengeIndicator, transactionId, version);
+
+@override String toString() => 'CardThreeDSecure(aresTransStatus: $aresTransStatus, cryptogram: $cryptogram, electronicCommerceIndicator: $electronicCommerceIndicator, networkOptions: $networkOptions, requestorChallengeIndicator: $requestorChallengeIndicator, transactionId: $transactionId, version: $version)';
+
  }

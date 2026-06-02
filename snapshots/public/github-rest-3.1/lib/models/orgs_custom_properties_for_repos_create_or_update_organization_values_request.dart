@@ -28,10 +28,13 @@ OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest copyWith({Li
   repositoryNames: repositoryNames ?? this.repositoryNames,
   properties: properties ?? this.properties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest &&
           listEquals(repositoryNames, other.repositoryNames) &&
-          listEquals(properties, other.properties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(repositoryNames), Object.hashAll(properties)); } 
-@override String toString() { return 'OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest(repositoryNames: $repositoryNames, properties: $properties)'; } 
+          listEquals(properties, other.properties);
+
+@override int get hashCode => Object.hash(Object.hashAll(repositoryNames), Object.hashAll(properties));
+
+@override String toString() => 'OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesRequest(repositoryNames: $repositoryNames, properties: $properties)';
+
  }

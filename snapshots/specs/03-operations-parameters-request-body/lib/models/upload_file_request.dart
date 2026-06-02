@@ -26,11 +26,14 @@ UploadFileRequest copyWith({Uint8List? file, String? description, String? Functi
   description: description ?? this.description,
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UploadFileRequest &&
           file == other.file &&
           description == other.description &&
-          tags == other.tags; } 
-@override int get hashCode { return Object.hash(file, description, tags); } 
-@override String toString() { return 'UploadFileRequest(file: $file, description: $description, tags: $tags)'; } 
+          tags == other.tags;
+
+@override int get hashCode => Object.hash(file, description, tags);
+
+@override String toString() => 'UploadFileRequest(file: $file, description: $description, tags: $tags)';
+
  }

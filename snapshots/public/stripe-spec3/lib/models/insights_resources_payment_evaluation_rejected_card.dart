@@ -53,10 +53,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationRejectedCardReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';
+
  }
 /// Details of an rejected card outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationRejectedCard {const InsightsResourcesPaymentEvaluationRejectedCard({required this.addressLine1Check, required this.addressPostalCodeCheck, required this.cvcCheck, required this.reason, });
@@ -96,12 +99,15 @@ InsightsResourcesPaymentEvaluationRejectedCard copyWith({InsightsResourcesPaymen
   cvcCheck: cvcCheck ?? this.cvcCheck,
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationRejectedCard &&
           addressLine1Check == other.addressLine1Check &&
           addressPostalCodeCheck == other.addressPostalCodeCheck &&
           cvcCheck == other.cvcCheck &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck, reason); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationRejectedCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(addressLine1Check, addressPostalCodeCheck, cvcCheck, reason);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCard(addressLine1Check: $addressLine1Check, addressPostalCodeCheck: $addressPostalCodeCheck, cvcCheck: $cvcCheck, reason: $reason)';
+
  }

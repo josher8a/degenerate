@@ -135,7 +135,7 @@ Installation copyWith({int? id, InstallationAccount? Function()? account, Authen
   suspendedAt: suspendedAt != null ? suspendedAt() : this.suspendedAt,
   contactEmail: contactEmail != null ? contactEmail() : this.contactEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Installation &&
           id == other.id &&
           account == other.account &&
@@ -157,7 +157,10 @@ Installation copyWith({int? id, InstallationAccount? Function()? account, Authen
           appSlug == other.appSlug &&
           suspendedBy == other.suspendedBy &&
           suspendedAt == other.suspendedAt &&
-          contactEmail == other.contactEmail; } 
-@override int get hashCode { return Object.hashAll([id, account, repositorySelection, accessTokensUrl, repositoriesUrl, htmlUrl, appId, clientId, targetId, targetType, permissions, Object.hashAll(events), createdAt, updatedAt, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), appSlug, suspendedBy, suspendedAt, contactEmail]); } 
-@override String toString() { return 'Installation(id: $id, account: $account, repositorySelection: $repositorySelection, accessTokensUrl: $accessTokensUrl, repositoriesUrl: $repositoriesUrl, htmlUrl: $htmlUrl, appId: $appId, clientId: $clientId, targetId: $targetId, targetType: $targetType, permissions: $permissions, events: $events, createdAt: $createdAt, updatedAt: $updatedAt, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, appSlug: $appSlug, suspendedBy: $suspendedBy, suspendedAt: $suspendedAt, contactEmail: $contactEmail)'; } 
+          contactEmail == other.contactEmail;
+
+@override int get hashCode => Object.hashAll([id, account, repositorySelection, accessTokensUrl, repositoriesUrl, htmlUrl, appId, clientId, targetId, targetType, permissions, Object.hashAll(events), createdAt, updatedAt, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), appSlug, suspendedBy, suspendedAt, contactEmail]);
+
+@override String toString() => 'Installation(id: $id, account: $account, repositorySelection: $repositorySelection, accessTokensUrl: $accessTokensUrl, repositoriesUrl: $repositoriesUrl, htmlUrl: $htmlUrl, appId: $appId, clientId: $clientId, targetId: $targetId, targetType: $targetType, permissions: $permissions, events: $events, createdAt: $createdAt, updatedAt: $updatedAt, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, appSlug: $appSlug, suspendedBy: $suspendedBy, suspendedAt: $suspendedAt, contactEmail: $contactEmail)';
+
  }

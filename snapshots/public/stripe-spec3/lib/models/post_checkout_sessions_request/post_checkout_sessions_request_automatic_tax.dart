@@ -21,10 +21,13 @@ PostCheckoutSessionsRequestAutomaticTax copyWith({bool? enabled, Liability? Func
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestAutomaticTax &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(enabled, liability); } 
-@override String toString() { return 'PostCheckoutSessionsRequestAutomaticTax(enabled: $enabled, liability: $liability)'; } 
+          liability == other.liability;
+
+@override int get hashCode => Object.hash(enabled, liability);
+
+@override String toString() => 'PostCheckoutSessionsRequestAutomaticTax(enabled: $enabled, liability: $liability)';
+
  }

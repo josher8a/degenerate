@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CapabilityObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CapabilityObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CapabilityObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CapabilityObject($value)';
+
  }
 /// The status of the capability.
 @immutable final class CapabilityStatus {const CapabilityStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CapabilityStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CapabilityStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CapabilityStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CapabilityStatus($value)';
+
  }
 /// This is an object representing a capability for a Stripe account.
 /// 
@@ -120,7 +126,7 @@ Capability copyWith({ApplicationFeeAccount? account, AccountCapabilityFutureRequ
   requirements: requirements != null ? requirements() : this.requirements,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Capability &&
           account == other.account &&
           futureRequirements == other.futureRequirements &&
@@ -129,7 +135,10 @@ Capability copyWith({ApplicationFeeAccount? account, AccountCapabilityFutureRequ
           requested == other.requested &&
           requestedAt == other.requestedAt &&
           requirements == other.requirements &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, futureRequirements, id, object, requested, requestedAt, requirements, status); } 
-@override String toString() { return 'Capability(account: $account, futureRequirements: $futureRequirements, id: $id, object: $object, requested: $requested, requestedAt: $requestedAt, requirements: $requirements, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(account, futureRequirements, id, object, requested, requestedAt, requirements, status);
+
+@override String toString() => 'Capability(account: $account, futureRequirements: $futureRequirements, id: $id, object: $object, requested: $requested, requestedAt: $requestedAt, requirements: $requirements, status: $status)';
+
  }

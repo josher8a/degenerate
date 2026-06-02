@@ -28,11 +28,14 @@ AccountsByAccountIdPipelinesDeprecatedResponse copyWith({AccountsByAccountIdPipe
   results: results ?? this.results,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesDeprecatedResponse &&
           resultInfo == other.resultInfo &&
           listEquals(results, other.results) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(resultInfo, Object.hashAll(results), success); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedResponse(resultInfo: $resultInfo, results: $results, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(resultInfo, Object.hashAll(results), success);
+
+@override String toString() => 'AccountsByAccountIdPipelinesDeprecatedResponse(resultInfo: $resultInfo, results: $results, success: $success)';
+
  }

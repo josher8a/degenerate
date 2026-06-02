@@ -17,7 +17,8 @@ final class WorCreateOrModifyWorkflowError$400 extends WorCreateOrModifyWorkflow
 
 final WorCreateOrModifyWorkflowResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorCreateOrModifyWorkflowError$Unknown extends WorCreateOrModifyWorkflowError {const WorCreateOrModifyWorkflowError$Unknown(this.statusCode, this.rawBody, );
 

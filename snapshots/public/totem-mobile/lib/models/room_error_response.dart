@@ -87,19 +87,14 @@ final class ErrorCode {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is ErrorCode && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'ErrorCode($value)';
-  }
+  String toString() => 'ErrorCode($value)';
 }
 
 /// Structured error. Clients switch on `code`, display `message`.
@@ -151,21 +146,17 @@ final class RoomErrorResponse {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is RoomErrorResponse &&
-            code == other.code &&
-            message == other.message &&
-            detail == other.detail;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RoomErrorResponse &&
+          code == other.code &&
+          message == other.message &&
+          detail == other.detail;
 
   @override
-  int get hashCode {
-    return Object.hash(code, message, detail);
-  }
+  int get hashCode => Object.hash(code, message, detail);
 
   @override
-  String toString() {
-    return 'RoomErrorResponse(code: $code, message: $message, detail: $detail)';
-  }
+  String toString() =>
+      'RoomErrorResponse(code: $code, message: $message, detail: $detail)';
 }

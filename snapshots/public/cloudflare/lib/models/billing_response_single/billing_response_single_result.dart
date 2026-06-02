@@ -243,7 +243,7 @@ BillingResponseSingleResult copyWith({String? Function()? accountType, String? F
   vat: vat != null ? vat() : this.vat,
   zipcode: zipcode != null ? zipcode() : this.zipcode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingResponseSingleResult &&
           accountType == other.accountType &&
           address == other.address &&
@@ -283,7 +283,10 @@ BillingResponseSingleResult copyWith({String? Function()? accountType, String? F
           useLegacy == other.useLegacy &&
           validationCode == other.validationCode &&
           vat == other.vat &&
-          zipcode == other.zipcode; } 
-@override int get hashCode { return Object.hashAll([accountType, address, address2, balance, cardExpiryMonth, cardExpiryYear, cardNumber, city, company, country, createdOn, deviceData, editedOn, enterpriseBillingEmail, enterprisePrimaryEmail, firstName, id, isPartner, lastName, nextBillDate, paymentAddress, paymentAddress2, paymentCity, paymentCountry, paymentEmail, paymentFirstName, paymentGateway, paymentLastName, paymentNonce, paymentState, paymentZipcode, primaryEmail, state, taxIdType, telephone, useLegacy, validationCode, vat, zipcode]); } 
-@override String toString() { return 'BillingResponseSingleResult(accountType: $accountType, address: $address, address2: $address2, balance: $balance, cardExpiryMonth: $cardExpiryMonth, cardExpiryYear: $cardExpiryYear, cardNumber: $cardNumber, city: $city, company: $company, country: $country, createdOn: $createdOn, deviceData: $deviceData, editedOn: $editedOn, enterpriseBillingEmail: $enterpriseBillingEmail, enterprisePrimaryEmail: $enterprisePrimaryEmail, firstName: $firstName, id: $id, isPartner: $isPartner, lastName: $lastName, nextBillDate: $nextBillDate, paymentAddress: $paymentAddress, paymentAddress2: $paymentAddress2, paymentCity: $paymentCity, paymentCountry: $paymentCountry, paymentEmail: $paymentEmail, paymentFirstName: $paymentFirstName, paymentGateway: $paymentGateway, paymentLastName: $paymentLastName, paymentNonce: $paymentNonce, paymentState: $paymentState, paymentZipcode: $paymentZipcode, primaryEmail: $primaryEmail, state: $state, taxIdType: $taxIdType, telephone: $telephone, useLegacy: $useLegacy, validationCode: $validationCode, vat: $vat, zipcode: $zipcode)'; } 
+          zipcode == other.zipcode;
+
+@override int get hashCode => Object.hashAll([accountType, address, address2, balance, cardExpiryMonth, cardExpiryYear, cardNumber, city, company, country, createdOn, deviceData, editedOn, enterpriseBillingEmail, enterprisePrimaryEmail, firstName, id, isPartner, lastName, nextBillDate, paymentAddress, paymentAddress2, paymentCity, paymentCountry, paymentEmail, paymentFirstName, paymentGateway, paymentLastName, paymentNonce, paymentState, paymentZipcode, primaryEmail, state, taxIdType, telephone, useLegacy, validationCode, vat, zipcode]);
+
+@override String toString() => 'BillingResponseSingleResult(accountType: $accountType, address: $address, address2: $address2, balance: $balance, cardExpiryMonth: $cardExpiryMonth, cardExpiryYear: $cardExpiryYear, cardNumber: $cardNumber, city: $city, company: $company, country: $country, createdOn: $createdOn, deviceData: $deviceData, editedOn: $editedOn, enterpriseBillingEmail: $enterpriseBillingEmail, enterprisePrimaryEmail: $enterprisePrimaryEmail, firstName: $firstName, id: $id, isPartner: $isPartner, lastName: $lastName, nextBillDate: $nextBillDate, paymentAddress: $paymentAddress, paymentAddress2: $paymentAddress2, paymentCity: $paymentCity, paymentCountry: $paymentCountry, paymentEmail: $paymentEmail, paymentFirstName: $paymentFirstName, paymentGateway: $paymentGateway, paymentLastName: $paymentLastName, paymentNonce: $paymentNonce, paymentState: $paymentState, paymentZipcode: $paymentZipcode, primaryEmail: $primaryEmail, state: $state, taxIdType: $taxIdType, telephone: $telephone, useLegacy: $useLegacy, validationCode: $validationCode, vat: $vat, zipcode: $zipcode)';
+
  }

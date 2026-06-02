@@ -35,12 +35,15 @@ RunStepDeltaStepDetailsToolCallsFunctionObject copyWith({int? index, String? Fun
   type: type ?? this.type,
   function: function != null ? function() : this.function,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsFunctionObject &&
           index == other.index &&
           id == other.id &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(index, id, type, function); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsFunctionObject(index: $index, id: $id, type: $type, function: $function)'; } 
+          function == other.function;
+
+@override int get hashCode => Object.hash(index, id, type, function);
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsFunctionObject(index: $index, id: $id, type: $type, function: $function)';
+
  }

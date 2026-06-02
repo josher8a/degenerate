@@ -27,11 +27,14 @@ PullRequestReviewCommentEvent copyWith({String? action, PullRequestMinimal? pull
   pullRequest: pullRequest ?? this.pullRequest,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewCommentEvent &&
           action == other.action &&
           pullRequest == other.pullRequest &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(action, pullRequest, comment); } 
-@override String toString() { return 'PullRequestReviewCommentEvent(action: $action, pullRequest: $pullRequest, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(action, pullRequest, comment);
+
+@override String toString() => 'PullRequestReviewCommentEvent(action: $action, pullRequest: $pullRequest, comment: $comment)';
+
  }

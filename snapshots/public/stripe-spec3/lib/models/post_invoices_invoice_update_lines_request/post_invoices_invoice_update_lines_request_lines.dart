@@ -78,7 +78,7 @@ PostInvoicesInvoiceUpdateLinesRequestLines copyWith({int? Function()? amount, St
   taxAmounts: taxAmounts != null ? taxAmounts() : this.taxAmounts,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceUpdateLinesRequestLines &&
           amount == other.amount &&
           description == other.description &&
@@ -91,7 +91,10 @@ PostInvoicesInvoiceUpdateLinesRequestLines copyWith({int? Function()? amount, St
           pricing == other.pricing &&
           quantity == other.quantity &&
           taxAmounts == other.taxAmounts &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(amount, description, discountable, discounts, id, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates); } 
-@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, id: $id, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(amount, description, discountable, discounts, id, metadata, period, priceData, pricing, quantity, taxAmounts, taxRates);
+
+@override String toString() => 'PostInvoicesInvoiceUpdateLinesRequestLines(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, id: $id, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates)';
+
  }

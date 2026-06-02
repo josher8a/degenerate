@@ -26,10 +26,13 @@ TeamsDevicesDomainJoinedInputRequest copyWith({String? Function()? domain, Teams
   domain: domain != null ? domain() : this.domain,
   operatingSystem: operatingSystem ?? this.operatingSystem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDomainJoinedInputRequest &&
           domain == other.domain &&
-          operatingSystem == other.operatingSystem; } 
-@override int get hashCode { return Object.hash(domain, operatingSystem); } 
-@override String toString() { return 'TeamsDevicesDomainJoinedInputRequest(domain: $domain, operatingSystem: $operatingSystem)'; } 
+          operatingSystem == other.operatingSystem;
+
+@override int get hashCode => Object.hash(domain, operatingSystem);
+
+@override String toString() => 'TeamsDevicesDomainJoinedInputRequest(domain: $domain, operatingSystem: $operatingSystem)';
+
  }

@@ -22,10 +22,13 @@ InvoicePaymentMethodOptionsCard copyWith({InvoiceInstallmentsCard? Function()? i
   installments: installments != null ? installments() : this.installments,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsCard &&
           installments == other.installments &&
-          requestThreeDSecure == other.requestThreeDSecure; } 
-@override int get hashCode { return Object.hash(installments, requestThreeDSecure); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsCard(installments: $installments, requestThreeDSecure: $requestThreeDSecure)'; } 
+          requestThreeDSecure == other.requestThreeDSecure;
+
+@override int get hashCode => Object.hash(installments, requestThreeDSecure);
+
+@override String toString() => 'InvoicePaymentMethodOptionsCard(installments: $installments, requestThreeDSecure: $requestThreeDSecure)';
+
  }

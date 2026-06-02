@@ -43,13 +43,16 @@ InvoicesResourceShippingCost copyWith({int? amountSubtotal, int? amountTax, int?
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   taxes: taxes != null ? taxes() : this.taxes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesResourceShippingCost &&
           amountSubtotal == other.amountSubtotal &&
           amountTax == other.amountTax &&
           amountTotal == other.amountTotal &&
           shippingRate == other.shippingRate &&
-          listEquals(taxes, other.taxes); } 
-@override int get hashCode { return Object.hash(amountSubtotal, amountTax, amountTotal, shippingRate, Object.hashAll(taxes ?? const [])); } 
-@override String toString() { return 'InvoicesResourceShippingCost(amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, shippingRate: $shippingRate, taxes: $taxes)'; } 
+          listEquals(taxes, other.taxes);
+
+@override int get hashCode => Object.hash(amountSubtotal, amountTax, amountTotal, shippingRate, Object.hashAll(taxes ?? const []));
+
+@override String toString() => 'InvoicesResourceShippingCost(amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, shippingRate: $shippingRate, taxes: $taxes)';
+
  }

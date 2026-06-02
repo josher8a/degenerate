@@ -39,13 +39,16 @@ ProcessorsAsnData copyWith({String? asn, String? country, String? description, S
   ip: ip ?? this.ip,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProcessorsAsnData &&
           asn == other.asn &&
           country == other.country &&
           description == other.description &&
           ip == other.ip &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(asn, country, description, ip, name); } 
-@override String toString() { return 'ProcessorsAsnData(asn: $asn, country: $country, description: $description, ip: $ip, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(asn, country, description, ip, name);
+
+@override String toString() => 'ProcessorsAsnData(asn: $asn, country: $country, description: $description, ip: $ip, name: $name)';
+
  }

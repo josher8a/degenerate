@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CostsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CostsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CostsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CostsResultObject($value)';
+
  }
 /// The aggregated costs details of the specific time bucket.
 @immutable final class CostsResult {const CostsResult({required this.object, this.amount, this.lineItem, this.projectId, });
@@ -55,12 +58,15 @@ CostsResult copyWith({CostsResultObject? object, Amount? Function()? amount, Str
   lineItem: lineItem != null ? lineItem() : this.lineItem,
   projectId: projectId != null ? projectId() : this.projectId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CostsResult &&
           object == other.object &&
           amount == other.amount &&
           lineItem == other.lineItem &&
-          projectId == other.projectId; } 
-@override int get hashCode { return Object.hash(object, amount, lineItem, projectId); } 
-@override String toString() { return 'CostsResult(object: $object, amount: $amount, lineItem: $lineItem, projectId: $projectId)'; } 
+          projectId == other.projectId;
+
+@override int get hashCode => Object.hash(object, amount, lineItem, projectId);
+
+@override String toString() => 'CostsResult(object: $object, amount: $amount, lineItem: $lineItem, projectId: $projectId)';
+
  }

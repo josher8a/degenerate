@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RepositoryRuleViolationErrorMetadata copyWith({MetadataSecretScanning? Function()? secretScanning}) { return RepositoryRuleViolationErrorMetadata(
   secretScanning: secretScanning != null ? secretScanning() : this.secretScanning,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleViolationErrorMetadata &&
-          secretScanning == other.secretScanning; } 
-@override int get hashCode { return secretScanning.hashCode; } 
-@override String toString() { return 'RepositoryRuleViolationErrorMetadata(secretScanning: $secretScanning)'; } 
+          secretScanning == other.secretScanning;
+
+@override int get hashCode => secretScanning.hashCode;
+
+@override String toString() => 'RepositoryRuleViolationErrorMetadata(secretScanning: $secretScanning)';
+
  }

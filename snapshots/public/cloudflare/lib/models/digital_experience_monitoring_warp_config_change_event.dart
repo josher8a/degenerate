@@ -56,7 +56,7 @@ DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMoni
   to: to != null ? to() : this.to,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringWarpConfigChangeEvent &&
           deviceId == other.deviceId &&
           deviceRegistration == other.deviceRegistration &&
@@ -65,7 +65,10 @@ DigitalExperienceMonitoringWarpConfigChangeEvent copyWith({DigitalExperienceMoni
           serialNumber == other.serialNumber &&
           timestamp == other.timestamp &&
           to == other.to &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(deviceId, deviceRegistration, from, hostname, serialNumber, timestamp, to, userEmail); } 
-@override String toString() { return 'DigitalExperienceMonitoringWarpConfigChangeEvent(deviceId: $deviceId, deviceRegistration: $deviceRegistration, from: $from, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, to: $to, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(deviceId, deviceRegistration, from, hostname, serialNumber, timestamp, to, userEmail);
+
+@override String toString() => 'DigitalExperienceMonitoringWarpConfigChangeEvent(deviceId: $deviceId, deviceRegistration: $deviceRegistration, from: $from, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, to: $to, userEmail: $userEmail)';
+
  }

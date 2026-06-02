@@ -35,10 +35,13 @@ DnsSettingsDnsSettingsZoneResponseNameservers copyWith({int? Function()? nsSet, 
   nsSet: nsSet != null ? nsSet() : this.nsSet,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsSettingsZoneResponseNameservers &&
           nsSet == other.nsSet &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(nsSet, type); } 
-@override String toString() { return 'DnsSettingsDnsSettingsZoneResponseNameservers(nsSet: $nsSet, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(nsSet, type);
+
+@override String toString() => 'DnsSettingsDnsSettingsZoneResponseNameservers(nsSet: $nsSet, type: $type)';
+
  }

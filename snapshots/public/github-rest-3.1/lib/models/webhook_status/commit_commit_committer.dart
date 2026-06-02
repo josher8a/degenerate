@@ -33,12 +33,15 @@ CommitCommitCommitter copyWith({String? date, String? email, String? name, Strin
   name: name ?? this.name,
   username: username != null ? username() : this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommitCommitter &&
           date == other.date &&
           email == other.email &&
           name == other.name &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(date, email, name, username); } 
-@override String toString() { return 'CommitCommitCommitter(date: $date, email: $email, name: $name, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(date, email, name, username);
+
+@override String toString() => 'CommitCommitCommitter(date: $date, email: $email, name: $name, username: $username)';
+
  }

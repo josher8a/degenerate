@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sub_i
 IssuesRemoveSubIssueRequest copyWith({int? subIssueId}) { return IssuesRemoveSubIssueRequest(
   subIssueId: subIssueId ?? this.subIssueId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesRemoveSubIssueRequest &&
-          subIssueId == other.subIssueId; } 
-@override int get hashCode { return subIssueId.hashCode; } 
-@override String toString() { return 'IssuesRemoveSubIssueRequest(subIssueId: $subIssueId)'; } 
+          subIssueId == other.subIssueId;
+
+@override int get hashCode => subIssueId.hashCode;
+
+@override String toString() => 'IssuesRemoveSubIssueRequest(subIssueId: $subIssueId)';
+
  }

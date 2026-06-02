@@ -37,11 +37,14 @@ Rule copyWith({String? action, String? id, String? predicate, }) { return Rule(
   id: id ?? this.id,
   predicate: predicate ?? this.predicate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rule &&
           action == other.action &&
           id == other.id &&
-          predicate == other.predicate; } 
-@override int get hashCode { return Object.hash(action, id, predicate); } 
-@override String toString() { return 'Rule(action: $action, id: $id, predicate: $predicate)'; } 
+          predicate == other.predicate;
+
+@override int get hashCode => Object.hash(action, id, predicate);
+
+@override String toString() => 'Rule(action: $action, id: $id, predicate: $predicate)';
+
  }

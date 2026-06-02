@@ -32,11 +32,14 @@ FineTuneSupervisedHyperparameters copyWith({BatchSize? Function()? batchSize, Le
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneSupervisedHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
-          nEpochs == other.nEpochs; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs); } 
-@override String toString() { return 'FineTuneSupervisedHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
+          nEpochs == other.nEpochs;
+
+@override int get hashCode => Object.hash(batchSize, learningRateMultiplier, nEpochs);
+
+@override String toString() => 'FineTuneSupervisedHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)';
+
  }

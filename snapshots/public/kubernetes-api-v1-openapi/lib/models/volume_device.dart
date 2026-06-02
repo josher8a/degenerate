@@ -24,10 +24,13 @@ VolumeDevice copyWith({String? devicePath, String? name, }) { return VolumeDevic
   devicePath: devicePath ?? this.devicePath,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeDevice &&
           devicePath == other.devicePath &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(devicePath, name); } 
-@override String toString() { return 'VolumeDevice(devicePath: $devicePath, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(devicePath, name);
+
+@override String toString() => 'VolumeDevice(devicePath: $devicePath, name: $name)';
+
  }

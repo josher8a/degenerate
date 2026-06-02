@@ -32,14 +32,18 @@ final ZeroTrustGatewayProxyEndpointIdentityCreate zeroTrustGatewayProxyEndpointI
 
 @override String get kind => 'identity';
 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind}; } 
+@override Map<String, dynamic> toJson() => {...zeroTrustGatewayProxyEndpointIdentityCreate.toJson(), 'kind': kind};
+
 ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity copyWith({ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity(zeroTrustGatewayProxyEndpointIdentityCreate.copyWith(
   name: name,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIdentityCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity($zeroTrustGatewayProxyEndpointIdentityCreate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIdentity && zeroTrustGatewayProxyEndpointIdentityCreate == other.zeroTrustGatewayProxyEndpointIdentityCreate;
+
+@override int get hashCode => zeroTrustGatewayProxyEndpointIdentityCreate.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.identity($zeroTrustGatewayProxyEndpointIdentityCreate)';
+
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => zeroTrustGatewayProxyEndpointIdentityCreate.name;
 
  }
@@ -51,14 +55,18 @@ final ZeroTrustGatewayProxyEndpointIpCreate zeroTrustGatewayProxyEndpointIpCreat
 
 @override String get kind => 'ip';
 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind}; } 
+@override Map<String, dynamic> toJson() => {...zeroTrustGatewayProxyEndpointIpCreate.toJson(), 'kind': kind};
+
 ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp copyWith({ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name}) { return ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp(zeroTrustGatewayProxyEndpointIpCreate.copyWith(
   name: name,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIpCreate.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip($zeroTrustGatewayProxyEndpointIpCreate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequestIp && zeroTrustGatewayProxyEndpointIpCreate == other.zeroTrustGatewayProxyEndpointIpCreate;
+
+@override int get hashCode => zeroTrustGatewayProxyEndpointIpCreate.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.ip($zeroTrustGatewayProxyEndpointIpCreate)';
+
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => zeroTrustGatewayProxyEndpointIpCreate.name;
 
  }
@@ -70,11 +78,15 @@ final Map<String, dynamic> json;
 
 @override String get kind => json['kind'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest.unknown($json)';
+
 @override ZeroTrustGatewayProxyEndpointsComponentsSchemasName get name => ZeroTrustGatewayProxyEndpointsComponentsSchemasName.fromJson(json['name'] as String);
 
  }

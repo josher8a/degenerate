@@ -67,7 +67,7 @@ RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyMa
   scope: scope != null ? scope() : this.scope,
   sets: sets != null ? sets() : this.sets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RatePlan2 &&
           currency == other.currency &&
           externallyManaged == other.externallyManaged &&
@@ -75,7 +75,10 @@ RatePlan2 copyWith({String? Function()? currency, bool? Function()? externallyMa
           isContract == other.isContract &&
           publicName == other.publicName &&
           scope == other.scope &&
-          listEquals(sets, other.sets); } 
-@override int get hashCode { return Object.hash(currency, externallyManaged, id, isContract, publicName, scope, Object.hashAll(sets ?? const [])); } 
-@override String toString() { return 'RatePlan2(currency: $currency, externallyManaged: $externallyManaged, id: $id, isContract: $isContract, publicName: $publicName, scope: $scope, sets: $sets)'; } 
+          listEquals(sets, other.sets);
+
+@override int get hashCode => Object.hash(currency, externallyManaged, id, isContract, publicName, scope, Object.hashAll(sets ?? const []));
+
+@override String toString() => 'RatePlan2(currency: $currency, externallyManaged: $externallyManaged, id: $id, isContract: $isContract, publicName: $publicName, scope: $scope, sets: $sets)';
+
  }

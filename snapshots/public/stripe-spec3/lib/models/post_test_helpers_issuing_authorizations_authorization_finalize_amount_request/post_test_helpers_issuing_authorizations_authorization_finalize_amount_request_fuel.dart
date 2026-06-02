@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FuelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FuelType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FuelType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FuelType($value)';
+
  }
 @immutable final class FuelUnit {const FuelUnit._(this.value);
 
@@ -70,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FuelUnit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FuelUnit($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FuelUnit && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FuelUnit($value)';
+
  }
 /// Information about fuel that was purchased with this transaction.
 @immutable final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel({this.industryProductCode, this.quantityDecimal, this.type, this.unit, this.unitCostDecimal, });
@@ -118,13 +124,16 @@ PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel copyW
   unit: unit != null ? unit() : this.unit,
   unitCostDecimal: unitCostDecimal != null ? unitCostDecimal() : this.unitCostDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel &&
           industryProductCode == other.industryProductCode &&
           quantityDecimal == other.quantityDecimal &&
           type == other.type &&
           unit == other.unit &&
-          unitCostDecimal == other.unitCostDecimal; } 
-@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
+          unitCostDecimal == other.unitCostDecimal;
+
+@override int get hashCode => Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFuel(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';
+
  }

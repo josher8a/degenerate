@@ -27,11 +27,14 @@ $1AwqResponse4002 copyWith({List<$0Response400Errors>? errors, Map<String,dynami
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is $1AwqResponse4002 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return '\$1AwqResponse4002(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => '\$1AwqResponse4002(errors: $errors, result: $result, success: $success)';
+
  }

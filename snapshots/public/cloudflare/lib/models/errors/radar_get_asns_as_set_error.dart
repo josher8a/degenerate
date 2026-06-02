@@ -17,7 +17,8 @@ final class RadarGetAsnsAsSetError$400 extends RadarGetAsnsAsSetError {const Rad
 
 final RadarGetAsnsAsSetResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAsnsAsSetError$Unknown extends RadarGetAsnsAsSetError {const RadarGetAsnsAsSetError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RuleSuiteRequiredStatusChecks copyWith({List<RuleSuiteRequiredStatusChecksChecks>? Function()? checks}) { return RuleSuiteRequiredStatusChecks(
   checks: checks != null ? checks() : this.checks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuiteRequiredStatusChecks &&
-          listEquals(checks, other.checks); } 
-@override int get hashCode { return Object.hashAll(checks ?? const []); } 
-@override String toString() { return 'RuleSuiteRequiredStatusChecks(checks: $checks)'; } 
+          listEquals(checks, other.checks);
+
+@override int get hashCode => Object.hashAll(checks ?? const []);
+
+@override String toString() => 'RuleSuiteRequiredStatusChecks(checks: $checks)';
+
  }

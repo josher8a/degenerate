@@ -96,7 +96,7 @@ AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecisio
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyResp &&
           createdAt == other.createdAt &&
           decision == other.decision &&
@@ -113,7 +113,10 @@ AccessPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDecisio
           mfaConfig == other.mfaConfig &&
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
-          sessionDuration == other.sessionDuration; } 
-@override int get hashCode { return Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration); } 
-@override String toString() { return 'AccessPolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration)'; } 
+          sessionDuration == other.sessionDuration;
+
+@override int get hashCode => Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration);
+
+@override String toString() => 'AccessPolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration)';
+
  }

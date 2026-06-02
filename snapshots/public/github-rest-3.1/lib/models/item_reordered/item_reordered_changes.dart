@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ItemReorderedChanges copyWith({ItemNodeId? Function()? previousProjectsV2ItemNodeId}) { return ItemReorderedChanges(
   previousProjectsV2ItemNodeId: previousProjectsV2ItemNodeId != null ? previousProjectsV2ItemNodeId() : this.previousProjectsV2ItemNodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemReorderedChanges &&
-          previousProjectsV2ItemNodeId == other.previousProjectsV2ItemNodeId; } 
-@override int get hashCode { return previousProjectsV2ItemNodeId.hashCode; } 
-@override String toString() { return 'ItemReorderedChanges(previousProjectsV2ItemNodeId: $previousProjectsV2ItemNodeId)'; } 
+          previousProjectsV2ItemNodeId == other.previousProjectsV2ItemNodeId;
+
+@override int get hashCode => previousProjectsV2ItemNodeId.hashCode;
+
+@override String toString() => 'ItemReorderedChanges(previousProjectsV2ItemNodeId: $previousProjectsV2ItemNodeId)';
+
  }

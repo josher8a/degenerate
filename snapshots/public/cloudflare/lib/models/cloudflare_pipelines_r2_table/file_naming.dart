@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileNamingStrategy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileNamingStrategy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileNamingStrategy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileNamingStrategy($value)';
+
  }
 /// Controls filename prefix/suffix and strategy.
 @immutable final class FileNaming {const FileNaming({this.prefix, this.strategy, this.suffix, });
@@ -60,11 +63,14 @@ FileNaming copyWith({String? Function()? prefix, FileNamingStrategy? Function()?
   strategy: strategy != null ? strategy() : this.strategy,
   suffix: suffix != null ? suffix() : this.suffix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileNaming &&
           prefix == other.prefix &&
           strategy == other.strategy &&
-          suffix == other.suffix; } 
-@override int get hashCode { return Object.hash(prefix, strategy, suffix); } 
-@override String toString() { return 'FileNaming(prefix: $prefix, strategy: $strategy, suffix: $suffix)'; } 
+          suffix == other.suffix;
+
+@override int get hashCode => Object.hash(prefix, strategy, suffix);
+
+@override String toString() => 'FileNaming(prefix: $prefix, strategy: $strategy, suffix: $suffix)';
+
  }

@@ -105,7 +105,7 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
   tracerouteResultsByColo: tracerouteResultsByColo != null ? tracerouteResultsByColo() : this.tracerouteResultsByColo,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tests &&
           created == other.created &&
           description == other.description &&
@@ -122,7 +122,10 @@ Tests copyWith({String? created, String? description, bool? enabled, String? hos
           targeted == other.targeted &&
           tracerouteResults == other.tracerouteResults &&
           listEquals(tracerouteResultsByColo, other.tracerouteResultsByColo) &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated); } 
-@override String toString() { return 'Tests(created: $created, description: $description, enabled: $enabled, host: $host, httpResults: $httpResults, httpResultsByColo: $httpResultsByColo, id: $id, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteResults: $tracerouteResults, tracerouteResultsByColo: $tracerouteResultsByColo, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(created, description, enabled, host, httpResults, Object.hashAll(httpResultsByColo ?? const []), id, interval, kind, method, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteResults, Object.hashAll(tracerouteResultsByColo ?? const []), updated);
+
+@override String toString() => 'Tests(created: $created, description: $description, enabled: $enabled, host: $host, httpResults: $httpResults, httpResultsByColo: $httpResultsByColo, id: $id, interval: $interval, kind: $kind, method: $method, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteResults: $tracerouteResults, tracerouteResultsByColo: $tracerouteResultsByColo, updated: $updated)';
+
  }

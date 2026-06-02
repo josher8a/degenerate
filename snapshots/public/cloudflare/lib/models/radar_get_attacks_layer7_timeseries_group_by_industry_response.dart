@@ -22,10 +22,13 @@ RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse copyWith({RadarGetAiBotsT
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByIndustryResponse(result: $result, success: $success)';
+
  }

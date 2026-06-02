@@ -18,13 +18,15 @@ final class OrgsUpdateError$409 extends OrgsUpdateError {const OrgsUpdateError$4
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class OrgsUpdateError$422 extends OrgsUpdateError {const OrgsUpdateError$422(this.error);
 
 final OrgsUpdateResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class OrgsUpdateError$Unknown extends OrgsUpdateError {const OrgsUpdateError$Unknown(this.statusCode, this.rawBody, );
 

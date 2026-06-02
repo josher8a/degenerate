@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('code_
 RepositoryRuleCodeScanningParameters copyWith({List<RepositoryRuleParamsCodeScanningTool>? codeScanningTools}) { return RepositoryRuleCodeScanningParameters(
   codeScanningTools: codeScanningTools ?? this.codeScanningTools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCodeScanningParameters &&
-          listEquals(codeScanningTools, other.codeScanningTools); } 
-@override int get hashCode { return Object.hashAll(codeScanningTools); } 
-@override String toString() { return 'RepositoryRuleCodeScanningParameters(codeScanningTools: $codeScanningTools)'; } 
+          listEquals(codeScanningTools, other.codeScanningTools);
+
+@override int get hashCode => Object.hashAll(codeScanningTools);
+
+@override String toString() => 'RepositoryRuleCodeScanningParameters(codeScanningTools: $codeScanningTools)';
+
  }

@@ -20,10 +20,13 @@ VisaCompellingEvidence3 copyWith({DisputedTransaction? Function()? disputedTrans
   disputedTransaction: disputedTransaction != null ? disputedTransaction() : this.disputedTransaction,
   priorUndisputedTransactions: priorUndisputedTransactions != null ? priorUndisputedTransactions() : this.priorUndisputedTransactions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VisaCompellingEvidence3 &&
           disputedTransaction == other.disputedTransaction &&
-          listEquals(priorUndisputedTransactions, other.priorUndisputedTransactions); } 
-@override int get hashCode { return Object.hash(disputedTransaction, Object.hashAll(priorUndisputedTransactions ?? const [])); } 
-@override String toString() { return 'VisaCompellingEvidence3(disputedTransaction: $disputedTransaction, priorUndisputedTransactions: $priorUndisputedTransactions)'; } 
+          listEquals(priorUndisputedTransactions, other.priorUndisputedTransactions);
+
+@override int get hashCode => Object.hash(disputedTransaction, Object.hashAll(priorUndisputedTransactions ?? const []));
+
+@override String toString() => 'VisaCompellingEvidence3(disputedTransaction: $disputedTransaction, priorUndisputedTransactions: $priorUndisputedTransactions)';
+
  }

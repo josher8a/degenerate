@@ -22,10 +22,13 @@ RunStepDetailsToolCallsCodeOutputImageObject copyWith({CodeInterpreterOutputImag
   type: type ?? this.type,
   image: image ?? this.image,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeOutputImageObject &&
           type == other.type &&
-          image == other.image; } 
-@override int get hashCode { return Object.hash(type, image); } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeOutputImageObject(type: $type, image: $image)'; } 
+          image == other.image;
+
+@override int get hashCode => Object.hash(type, image);
+
+@override String toString() => 'RunStepDetailsToolCallsCodeOutputImageObject(type: $type, image: $image)';
+
  }

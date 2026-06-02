@@ -23,10 +23,13 @@ BillingCreditGrantsResourceScope copyWith({PriceType? Function()? priceType, Lis
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrantsResourceScope &&
           priceType == other.priceType &&
-          listEquals(prices, other.prices); } 
-@override int get hashCode { return Object.hash(priceType, Object.hashAll(prices ?? const [])); } 
-@override String toString() { return 'BillingCreditGrantsResourceScope(priceType: $priceType, prices: $prices)'; } 
+          listEquals(prices, other.prices);
+
+@override int get hashCode => Object.hash(priceType, Object.hashAll(prices ?? const []));
+
+@override String toString() => 'BillingCreditGrantsResourceScope(priceType: $priceType, prices: $prices)';
+
  }

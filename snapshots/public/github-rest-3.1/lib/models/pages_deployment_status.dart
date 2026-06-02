@@ -47,10 +47,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDeploymentStatusStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDeploymentStatusStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesDeploymentStatusStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesDeploymentStatusStatus($value)';
+
  }
 @immutable final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});
 
@@ -68,9 +71,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PagesDeploymentStatus copyWith({PagesDeploymentStatusStatus? Function()? status}) { return PagesDeploymentStatus(
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentStatus &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'PagesDeploymentStatus(status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => status.hashCode;
+
+@override String toString() => 'PagesDeploymentStatus(status: $status)';
+
  }

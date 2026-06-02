@@ -36,10 +36,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafManagedRulesModeDenyTraditional && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafManagedRulesModeDenyTraditional($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WafManagedRulesModeDenyTraditional && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WafManagedRulesModeDenyTraditional($value)';
+
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act upon the request based on the configuration of the rule. A 'deny' rule will immediately respond to the request based on the configured rule action/mode (for example, 'block') and no other rules will be processed.
 @immutable final class WafManagedRulesTraditionalDenyRule {const WafManagedRulesTraditionalDenyRule({required this.description, required this.group, required this.id, required this.packageId, required this.priority, required this.allowedModes, required this.defaultMode, required this.mode, });
@@ -107,7 +110,7 @@ WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? 
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesTraditionalDenyRule &&
           description == other.description &&
           group == other.group &&
@@ -116,7 +119,10 @@ WafManagedRulesTraditionalDenyRule copyWith({WafManagedRulesSchemasDescription? 
           priority == other.priority &&
           listEquals(allowedModes, other.allowedModes) &&
           defaultMode == other.defaultMode &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), defaultMode, mode); } 
-@override String toString() { return 'WafManagedRulesTraditionalDenyRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, defaultMode: $defaultMode, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(description, group, id, packageId, priority, Object.hashAll(allowedModes), defaultMode, mode);
+
+@override String toString() => 'WafManagedRulesTraditionalDenyRule(description: $description, group: $group, id: $id, packageId: $packageId, priority: $priority, allowedModes: $allowedModes, defaultMode: $defaultMode, mode: $mode)';
+
  }

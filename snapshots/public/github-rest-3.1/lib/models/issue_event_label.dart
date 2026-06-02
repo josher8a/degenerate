@@ -22,10 +22,13 @@ IssueEventLabel copyWith({String? Function()? name, String? Function()? color, }
   name: name != null ? name() : this.name,
   color: color != null ? color() : this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueEventLabel &&
           name == other.name &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(name, color); } 
-@override String toString() { return 'IssueEventLabel(name: $name, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(name, color);
+
+@override String toString() => 'IssueEventLabel(name: $name, color: $color)';
+
  }

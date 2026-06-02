@@ -54,7 +54,7 @@ WebhookBranchProtectionRuleEdited copyWith({ItemEditedAction? action, WebhookBra
   rule: rule ?? this.rule,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookBranchProtectionRuleEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -63,7 +63,10 @@ WebhookBranchProtectionRuleEdited copyWith({ItemEditedAction? action, WebhookBra
           organization == other.organization &&
           repository == other.repository &&
           rule == other.rule &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, repository, rule, sender); } 
-@override String toString() { return 'WebhookBranchProtectionRuleEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, rule: $rule, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, organization, repository, rule, sender);
+
+@override String toString() => 'WebhookBranchProtectionRuleEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, rule: $rule, sender: $sender)';
+
  }

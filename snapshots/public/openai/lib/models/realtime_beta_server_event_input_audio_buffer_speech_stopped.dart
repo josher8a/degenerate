@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferSpeechStoppedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStoppedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventInputAudioBufferSpeechStoppedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStoppedType($value)';
+
  }
 /// Returned in `server_vad` mode when the server detects the end of speech in
 /// the audio buffer. The server will also send an `conversation.item.created`
@@ -66,12 +69,15 @@ RealtimeBetaServerEventInputAudioBufferSpeechStopped copyWith({String? eventId, 
   audioEndMs: audioEndMs ?? this.audioEndMs,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventInputAudioBufferSpeechStopped &&
           eventId == other.eventId &&
           type == other.type &&
           audioEndMs == other.audioEndMs &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, audioEndMs, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferSpeechStopped(eventId: $eventId, type: $type, audioEndMs: $audioEndMs, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, audioEndMs, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStopped(eventId: $eventId, type: $type, audioEndMs: $audioEndMs, itemId: $itemId)';
+
  }

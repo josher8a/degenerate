@@ -62,7 +62,7 @@ RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String
   contentIndex: contentIndex ?? this.contentIndex,
   transcript: transcript ?? this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseAudioTranscriptDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -70,7 +70,10 @@ RealtimeServerEventResponseAudioTranscriptDone copyWith({String? eventId, String
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript); } 
-@override String toString() { return 'RealtimeServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript);
+
+@override String toString() => 'RealtimeServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)';
+
  }

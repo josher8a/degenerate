@@ -38,13 +38,16 @@ CalculationsAggregates copyWith({double? count, List<Groups>? Function()? groups
   sampleInterval: sampleInterval ?? this.sampleInterval,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CalculationsAggregates &&
           count == other.count &&
           listEquals(groups, other.groups) &&
           interval == other.interval &&
           sampleInterval == other.sampleInterval &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(groups ?? const []), interval, sampleInterval, value); } 
-@override String toString() { return 'CalculationsAggregates(count: $count, groups: $groups, interval: $interval, sampleInterval: $sampleInterval, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(groups ?? const []), interval, sampleInterval, value);
+
+@override String toString() => 'CalculationsAggregates(count: $count, groups: $groups, interval: $interval, sampleInterval: $sampleInterval, value: $value)';
+
  }

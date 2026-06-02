@@ -41,13 +41,16 @@ ExampleCom copyWith({ExampleComCategories? categories, List<ExampleComDns>? dns,
   rank: rank ?? this.rank,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExampleCom &&
           categories == other.categories &&
           listEquals(dns, other.dns) &&
           name == other.name &&
           rank == other.rank &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(categories, Object.hashAll(dns), name, rank, type); } 
-@override String toString() { return 'ExampleCom(categories: $categories, dns: $dns, name: $name, rank: $rank, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(categories, Object.hashAll(dns), name, rank, type);
+
+@override String toString() => 'ExampleCom(categories: $categories, dns: $dns, name: $name, rank: $rank, type: $type)';
+
  }

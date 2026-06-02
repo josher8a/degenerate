@@ -35,12 +35,15 @@ PersistentVolumeStatus copyWith({Time? Function()? lastPhaseTransitionTime, Stri
   phase: phase != null ? phase() : this.phase,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeStatus &&
           lastPhaseTransitionTime == other.lastPhaseTransitionTime &&
           message == other.message &&
           phase == other.phase &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(lastPhaseTransitionTime, message, phase, reason); } 
-@override String toString() { return 'PersistentVolumeStatus(lastPhaseTransitionTime: $lastPhaseTransitionTime, message: $message, phase: $phase, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(lastPhaseTransitionTime, message, phase, reason);
+
+@override String toString() => 'PersistentVolumeStatus(lastPhaseTransitionTime: $lastPhaseTransitionTime, message: $message, phase: $phase, reason: $reason)';
+
  }

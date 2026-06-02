@@ -40,13 +40,16 @@ ReposCreateUsingTemplateRequest copyWith({String? Function()? owner, String? nam
   includeAllBranches: includeAllBranches != null ? includeAllBranches() : this.includeAllBranches,
   private: private != null ? private() : this.private,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateUsingTemplateRequest &&
           owner == other.owner &&
           name == other.name &&
           description == other.description &&
           includeAllBranches == other.includeAllBranches &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(owner, name, description, includeAllBranches, private); } 
-@override String toString() { return 'ReposCreateUsingTemplateRequest(owner: $owner, name: $name, description: $description, includeAllBranches: $includeAllBranches, private: $private)'; } 
+          private == other.private;
+
+@override int get hashCode => Object.hash(owner, name, description, includeAllBranches, private);
+
+@override String toString() => 'ReposCreateUsingTemplateRequest(owner: $owner, name: $name, description: $description, includeAllBranches: $includeAllBranches, private: $private)';
+
  }

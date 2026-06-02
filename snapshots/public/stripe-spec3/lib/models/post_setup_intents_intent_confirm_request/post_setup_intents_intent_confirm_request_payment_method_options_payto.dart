@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto copyWith({PaytoMandateOptions? Function()? mandateOptions}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions)'; } 
+          mandateOptions == other.mandateOptions;
+
+@override int get hashCode => mandateOptions.hashCode;
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions)';
+
  }

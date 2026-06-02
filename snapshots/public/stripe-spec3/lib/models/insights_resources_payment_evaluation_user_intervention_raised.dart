@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionRaisedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionRaisedType($value)';
+
  }
 /// User intervention raised event details attached to this payment evaluation
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaised {const InsightsResourcesPaymentEvaluationUserInterventionRaised({required this.key, required this.type, this.custom, });
@@ -61,11 +64,14 @@ InsightsResourcesPaymentEvaluationUserInterventionRaised copyWith({InsightsResou
   key: key ?? this.key,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionRaised &&
           custom == other.custom &&
           key == other.key &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, key, type); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionRaised(custom: $custom, key: $key, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(custom, key, type);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionRaised(custom: $custom, key: $key, type: $type)';
+
  }

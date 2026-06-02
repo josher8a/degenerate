@@ -59,7 +59,7 @@ ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()?
   subresource: subresource != null ? subresource() : this.subresource,
   time: time != null ? time() : this.time,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ManagedFieldsEntry &&
           apiVersion == other.apiVersion &&
           fieldsType == other.fieldsType &&
@@ -67,7 +67,10 @@ ManagedFieldsEntry copyWith({String? Function()? apiVersion, String? Function()?
           manager == other.manager &&
           operation == other.operation &&
           subresource == other.subresource &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(apiVersion, fieldsType, fieldsV1, manager, operation, subresource, time); } 
-@override String toString() { return 'ManagedFieldsEntry(apiVersion: $apiVersion, fieldsType: $fieldsType, fieldsV1: $fieldsV1, manager: $manager, operation: $operation, subresource: $subresource, time: $time)'; } 
+          time == other.time;
+
+@override int get hashCode => Object.hash(apiVersion, fieldsType, fieldsV1, manager, operation, subresource, time);
+
+@override String toString() => 'ManagedFieldsEntry(apiVersion: $apiVersion, fieldsType: $fieldsType, fieldsV1: $fieldsV1, manager: $manager, operation: $operation, subresource: $subresource, time: $time)';
+
  }

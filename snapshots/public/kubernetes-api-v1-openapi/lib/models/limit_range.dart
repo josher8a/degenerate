@@ -35,12 +35,15 @@ LimitRange copyWith({String? Function()? apiVersion, String? Function()? kind, O
   metadata: metadata != null ? metadata() : this.metadata,
   spec: spec != null ? spec() : this.spec,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LimitRange &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          spec == other.spec; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, spec); } 
-@override String toString() { return 'LimitRange(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec)'; } 
+          spec == other.spec;
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, spec);
+
+@override String toString() => 'LimitRange(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec)';
+
  }

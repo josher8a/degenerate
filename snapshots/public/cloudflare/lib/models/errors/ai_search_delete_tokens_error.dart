@@ -17,7 +17,8 @@ final class AiSearchDeleteTokensError$404 extends AiSearchDeleteTokensError {con
 
 final AiSearchDeleteTokensResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchDeleteTokensError$Unknown extends AiSearchDeleteTokensError {const AiSearchDeleteTokensError$Unknown(this.statusCode, this.rawBody, );
 

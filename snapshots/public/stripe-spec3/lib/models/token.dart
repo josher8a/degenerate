@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TokenObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TokenObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TokenObject($value)';
+
  }
 /// Tokenization is the process Stripe uses to collect sensitive card or bank
 /// account details, or personally identifiable information (PII), directly from
@@ -118,7 +121,7 @@ Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, St
   type: type ?? this.type,
   used: used ?? this.used,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Token &&
           bankAccount == other.bankAccount &&
           card == other.card &&
@@ -128,7 +131,10 @@ Token copyWith({BankAccount? Function()? bankAccount, Card? Function()? card, St
           livemode == other.livemode &&
           object == other.object &&
           type == other.type &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(bankAccount, card, clientIp, created, id, livemode, object, type, used); } 
-@override String toString() { return 'Token(bankAccount: $bankAccount, card: $card, clientIp: $clientIp, created: $created, id: $id, livemode: $livemode, object: $object, type: $type, used: $used)'; } 
+          used == other.used;
+
+@override int get hashCode => Object.hash(bankAccount, card, clientIp, created, id, livemode, object, type, used);
+
+@override String toString() => 'Token(bankAccount: $bankAccount, card: $card, clientIp: $clientIp, created: $created, id: $id, livemode: $livemode, object: $object, type: $type, used: $used)';
+
  }

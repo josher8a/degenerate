@@ -28,11 +28,14 @@ IssuesReprioritizeSubIssueRequest copyWith({int? subIssueId, int? Function()? af
   afterId: afterId != null ? afterId() : this.afterId,
   beforeId: beforeId != null ? beforeId() : this.beforeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesReprioritizeSubIssueRequest &&
           subIssueId == other.subIssueId &&
           afterId == other.afterId &&
-          beforeId == other.beforeId; } 
-@override int get hashCode { return Object.hash(subIssueId, afterId, beforeId); } 
-@override String toString() { return 'IssuesReprioritizeSubIssueRequest(subIssueId: $subIssueId, afterId: $afterId, beforeId: $beforeId)'; } 
+          beforeId == other.beforeId;
+
+@override int get hashCode => Object.hash(subIssueId, afterId, beforeId);
+
+@override String toString() => 'IssuesReprioritizeSubIssueRequest(subIssueId: $subIssueId, afterId: $afterId, beforeId: $beforeId)';
+
  }

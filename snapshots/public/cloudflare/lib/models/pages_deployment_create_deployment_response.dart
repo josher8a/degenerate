@@ -36,12 +36,15 @@ PagesDeploymentCreateDeploymentResponse copyWith({List<PagesMessages2>? errors, 
   success: success ?? this.success,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentCreateDeploymentResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result); } 
-@override String toString() { return 'PagesDeploymentCreateDeploymentResponse(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);
+
+@override String toString() => 'PagesDeploymentCreateDeploymentResponse(errors: $errors, messages: $messages, success: $success, result: $result)';
+
  }

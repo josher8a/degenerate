@@ -35,12 +35,15 @@ PaymentIntentNextActionKonbiniStores copyWith({PaymentIntentNextActionKonbiniFam
   ministop: ministop != null ? ministop() : this.ministop,
   seicomart: seicomart != null ? seicomart() : this.seicomart,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionKonbiniStores &&
           familymart == other.familymart &&
           lawson == other.lawson &&
           ministop == other.ministop &&
-          seicomart == other.seicomart; } 
-@override int get hashCode { return Object.hash(familymart, lawson, ministop, seicomart); } 
-@override String toString() { return 'PaymentIntentNextActionKonbiniStores(familymart: $familymart, lawson: $lawson, ministop: $ministop, seicomart: $seicomart)'; } 
+          seicomart == other.seicomart;
+
+@override int get hashCode => Object.hash(familymart, lawson, ministop, seicomart);
+
+@override String toString() => 'PaymentIntentNextActionKonbiniStores(familymart: $familymart, lawson: $lawson, ministop: $ministop, seicomart: $seicomart)';
+
  }

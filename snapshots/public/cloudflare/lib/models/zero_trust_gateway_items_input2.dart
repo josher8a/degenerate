@@ -21,10 +21,13 @@ ZeroTrustGatewayItemsInput2 copyWith({ZeroTrustGatewayDescriptionItem? Function(
   description: description != null ? description() : this.description,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayItemsInput2 &&
           description == other.description &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(description, value); } 
-@override String toString() { return 'ZeroTrustGatewayItemsInput2(description: $description, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(description, value);
+
+@override String toString() => 'ZeroTrustGatewayItemsInput2(description: $description, value: $value)';
+
  }

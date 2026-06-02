@@ -87,7 +87,7 @@ PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, St
   metadata: metadata != null ? metadata() : this.metadata,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryOutboundTransfersRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -98,7 +98,10 @@ PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, St
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor); } 
-@override String toString() { return 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor);
+
+@override String toString() => 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)';
+
  }

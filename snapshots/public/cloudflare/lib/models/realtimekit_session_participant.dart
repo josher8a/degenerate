@@ -46,14 +46,17 @@ RealtimekitSessionParticipant copyWith({String? createdAt, String? Function()? e
   picture: picture != null ? picture() : this.picture,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitSessionParticipant &&
           createdAt == other.createdAt &&
           email == other.email &&
           id == other.id &&
           name == other.name &&
           picture == other.picture &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, email, id, name, picture, updatedAt); } 
-@override String toString() { return 'RealtimekitSessionParticipant(createdAt: $createdAt, email: $email, id: $id, name: $name, picture: $picture, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, email, id, name, picture, updatedAt);
+
+@override String toString() => 'RealtimekitSessionParticipant(createdAt: $createdAt, email: $email, id: $id, name: $name, picture: $picture, updatedAt: $updatedAt)';
+
  }

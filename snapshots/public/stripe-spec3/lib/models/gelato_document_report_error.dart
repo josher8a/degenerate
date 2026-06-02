@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoDocumentReportErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoDocumentReportErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GelatoDocumentReportErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GelatoDocumentReportErrorCode($value)';
+
  }
 /// 
 @immutable final class GelatoDocumentReportError {const GelatoDocumentReportError({this.code, this.reason, });
@@ -58,10 +61,13 @@ GelatoDocumentReportError copyWith({GelatoDocumentReportErrorCode? Function()? c
   code: code != null ? code() : this.code,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoDocumentReportError &&
           code == other.code &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(code, reason); } 
-@override String toString() { return 'GelatoDocumentReportError(code: $code, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(code, reason);
+
+@override String toString() => 'GelatoDocumentReportError(code: $code, reason: $reason)';
+
  }

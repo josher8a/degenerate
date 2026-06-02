@@ -56,7 +56,7 @@ PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? 
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxCalculationsRequestLineItems &&
           amount == other.amount &&
           metadata == other.metadata &&
@@ -64,7 +64,10 @@ PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? 
           quantity == other.quantity &&
           reference == other.reference &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(amount, metadata, product, quantity, reference, taxBehavior, taxCode); } 
-@override String toString() { return 'PostTaxCalculationsRequestLineItems(amount: $amount, metadata: $metadata, product: $product, quantity: $quantity, reference: $reference, taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
+          taxCode == other.taxCode;
+
+@override int get hashCode => Object.hash(amount, metadata, product, quantity, reference, taxBehavior, taxCode);
+
+@override String toString() => 'PostTaxCalculationsRequestLineItems(amount: $amount, metadata: $metadata, product: $product, quantity: $quantity, reference: $reference, taxBehavior: $taxBehavior, taxCode: $taxCode)';
+
  }

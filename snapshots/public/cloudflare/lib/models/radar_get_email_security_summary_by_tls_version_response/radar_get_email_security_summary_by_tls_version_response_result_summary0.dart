@@ -52,12 +52,15 @@ RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0 copyWith({String?
   tls12: tls12 ?? this.tls12,
   tls13: tls13 ?? this.tls13,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0 &&
           tls10 == other.tls10 &&
           tls11 == other.tls11 &&
           tls12 == other.tls12 &&
-          tls13 == other.tls13; } 
-@override int get hashCode { return Object.hash(tls10, tls11, tls12, tls13); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13)'; } 
+          tls13 == other.tls13;
+
+@override int get hashCode => Object.hash(tls10, tls11, tls12, tls13);
+
+@override String toString() => 'RadarGetEmailSecuritySummaryByTlsVersionResponseResultSummary0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13)';
+
  }

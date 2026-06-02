@@ -139,7 +139,7 @@ PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()?
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPricesRequest &&
           active == other.active &&
           billingScheme == other.billingScheme &&
@@ -159,7 +159,10 @@ PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()?
           transferLookupKey == other.transferLookupKey &&
           transformQuantity == other.transformQuantity &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(active, billingScheme, currency, currencyOptions, customUnitAmount, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, product, productData, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transferLookupKey, transformQuantity, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostPricesRequest(active: $active, billingScheme: $billingScheme, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transferLookupKey: $transferLookupKey, transformQuantity: $transformQuantity, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(active, billingScheme, currency, currencyOptions, customUnitAmount, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, product, productData, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transferLookupKey, transformQuantity, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'PostPricesRequest(active: $active, billingScheme: $billingScheme, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transferLookupKey: $transferLookupKey, transformQuantity: $transformQuantity, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

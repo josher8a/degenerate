@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookReleasePrereleasedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookReleasePrereleasedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookReleasePrereleasedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookReleasePrereleasedAction($value)';
+
  }
 @immutable final class WebhookReleasePrereleased {const WebhookReleasePrereleased({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
@@ -69,7 +72,7 @@ WebhookReleasePrereleased copyWith({WebhookReleasePrereleasedAction? action, Ent
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookReleasePrereleased &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +80,10 @@ WebhookReleasePrereleased copyWith({WebhookReleasePrereleasedAction? action, Ent
           organization == other.organization &&
           release == other.release &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, release, repository, sender); } 
-@override String toString() { return 'WebhookReleasePrereleased(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, release, repository, sender);
+
+@override String toString() => 'WebhookReleasePrereleased(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, release: $release, repository: $repository, sender: $sender)';
+
  }

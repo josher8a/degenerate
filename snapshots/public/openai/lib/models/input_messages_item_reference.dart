@@ -23,10 +23,13 @@ InputMessagesItemReference copyWith({InputMessagesItemReferenceType? type, Strin
   type: type ?? this.type,
   itemReference: itemReference ?? this.itemReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputMessagesItemReference &&
           type == other.type &&
-          itemReference == other.itemReference; } 
-@override int get hashCode { return Object.hash(type, itemReference); } 
-@override String toString() { return 'InputMessagesItemReference(type: $type, itemReference: $itemReference)'; } 
+          itemReference == other.itemReference;
+
+@override int get hashCode => Object.hash(type, itemReference);
+
+@override String toString() => 'InputMessagesItemReference(type: $type, itemReference: $itemReference)';
+
  }

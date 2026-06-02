@@ -21,10 +21,13 @@ PostPaymentLinksPaymentLinkRequestInvoiceCreation copyWith({bool? enabled, PostP
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestInvoiceCreation &&
           enabled == other.enabled &&
-          invoiceData == other.invoiceData; } 
-@override int get hashCode { return Object.hash(enabled, invoiceData); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)'; } 
+          invoiceData == other.invoiceData;
+
+@override int get hashCode => Object.hash(enabled, invoiceData);
+
+@override String toString() => 'PostPaymentLinksPaymentLinkRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)';
+
  }

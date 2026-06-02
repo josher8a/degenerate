@@ -27,10 +27,13 @@ PostIndicatorTypeCreateRequest copyWith({String? Function()? description, String
   description: description != null ? description() : this.description,
   indicatorType: indicatorType ?? this.indicatorType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorTypeCreateRequest &&
           description == other.description &&
-          indicatorType == other.indicatorType; } 
-@override int get hashCode { return Object.hash(description, indicatorType); } 
-@override String toString() { return 'PostIndicatorTypeCreateRequest(description: $description, indicatorType: $indicatorType)'; } 
+          indicatorType == other.indicatorType;
+
+@override int get hashCode => Object.hash(description, indicatorType);
+
+@override String toString() => 'PostIndicatorTypeCreateRequest(description: $description, indicatorType: $indicatorType)';
+
  }

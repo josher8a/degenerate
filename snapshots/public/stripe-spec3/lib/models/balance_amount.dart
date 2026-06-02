@@ -29,11 +29,14 @@ BalanceAmount copyWith({int? amount, String? currency, BalanceAmountBySourceType
   currency: currency ?? this.currency,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceAmount &&
           amount == other.amount &&
           currency == other.currency &&
-          sourceTypes == other.sourceTypes; } 
-@override int get hashCode { return Object.hash(amount, currency, sourceTypes); } 
-@override String toString() { return 'BalanceAmount(amount: $amount, currency: $currency, sourceTypes: $sourceTypes)'; } 
+          sourceTypes == other.sourceTypes;
+
+@override int get hashCode => Object.hash(amount, currency, sourceTypes);
+
+@override String toString() => 'BalanceAmount(amount: $amount, currency: $currency, sourceTypes: $sourceTypes)';
+
  }

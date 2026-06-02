@@ -17,7 +17,8 @@ final class ListServersError$400 extends ListServersError {const ListServersErro
 
 final ListServersResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ListServersError$Unknown extends ListServersError {const ListServersError$Unknown(this.statusCode, this.rawBody, );
 

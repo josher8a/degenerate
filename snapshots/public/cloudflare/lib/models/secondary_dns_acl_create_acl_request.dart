@@ -23,10 +23,13 @@ SecondaryDnsAclCreateAclRequest copyWith({SecondaryDnsIpRange? ipRange, Secondar
   ipRange: ipRange ?? this.ipRange,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsAclCreateAclRequest &&
           ipRange == other.ipRange &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(ipRange, name); } 
-@override String toString() { return 'SecondaryDnsAclCreateAclRequest(ipRange: $ipRange, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(ipRange, name);
+
+@override String toString() => 'SecondaryDnsAclCreateAclRequest(ipRange: $ipRange, name: $name)';
+
  }

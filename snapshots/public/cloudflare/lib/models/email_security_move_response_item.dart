@@ -52,7 +52,7 @@ EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, String? Fu
   status: status != null ? status() : this.status,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMoveResponseItem &&
           completedTimestamp == other.completedTimestamp &&
           destination == other.destination &&
@@ -61,7 +61,10 @@ EmailSecurityMoveResponseItem copyWith({DateTime? completedTimestamp, String? Fu
           operation == other.operation &&
           recipient == other.recipient &&
           status == other.status &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(completedTimestamp, destination, itemCount, messageId, operation, recipient, status, success); } 
-@override String toString() { return 'EmailSecurityMoveResponseItem(completedTimestamp: $completedTimestamp, destination: $destination, itemCount: $itemCount, messageId: $messageId, operation: $operation, recipient: $recipient, status: $status, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(completedTimestamp, destination, itemCount, messageId, operation, recipient, status, success);
+
+@override String toString() => 'EmailSecurityMoveResponseItem(completedTimestamp: $completedTimestamp, destination: $destination, itemCount: $itemCount, messageId: $messageId, operation: $operation, recipient: $recipient, status: $status, success: $success)';
+
  }

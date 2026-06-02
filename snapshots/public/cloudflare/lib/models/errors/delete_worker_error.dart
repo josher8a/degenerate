@@ -20,25 +20,29 @@ final class DeleteWorkerError$400 extends DeleteWorkerError {const DeleteWorkerE
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteWorkerError$401 extends DeleteWorkerError {const DeleteWorkerError$401(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class DeleteWorkerError$404 extends DeleteWorkerError {const DeleteWorkerError$404(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteWorkerError$500 extends DeleteWorkerError {const DeleteWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class DeleteWorkerError$Unknown extends DeleteWorkerError {const DeleteWorkerError$Unknown(this.statusCode, this.rawBody, );
 

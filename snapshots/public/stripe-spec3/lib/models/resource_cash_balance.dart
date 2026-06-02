@@ -21,9 +21,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ResourceCashBalance copyWith({Map<String, int>? Function()? available}) { return ResourceCashBalance(
   available: available != null ? available() : this.available,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceCashBalance &&
-          available == other.available; } 
-@override int get hashCode { return available.hashCode; } 
-@override String toString() { return 'ResourceCashBalance(available: $available)'; } 
+          available == other.available;
+
+@override int get hashCode => available.hashCode;
+
+@override String toString() => 'ResourceCashBalance(available: $available)';
+
  }

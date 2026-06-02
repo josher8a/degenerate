@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessTagsCreateTagRequest copyWith({AccessTagsComponentsSchemasName? Function()? name}) { return AccessTagsCreateTagRequest(
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTagsCreateTagRequest &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'AccessTagsCreateTagRequest(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'AccessTagsCreateTagRequest(name: $name)';
+
  }

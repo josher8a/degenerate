@@ -27,11 +27,14 @@ KeyNeedle copyWith({bool? Function()? isRegex, bool? Function()? matchCase, dyna
   matchCase: matchCase != null ? matchCase() : this.matchCase,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeyNeedle &&
           isRegex == other.isRegex &&
           matchCase == other.matchCase &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(isRegex, matchCase, value); } 
-@override String toString() { return 'KeyNeedle(isRegex: $isRegex, matchCase: $matchCase, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(isRegex, matchCase, value);
+
+@override String toString() => 'KeyNeedle(isRegex: $isRegex, matchCase: $matchCase, value: $value)';
+
  }

@@ -42,11 +42,14 @@ R2ManagedDomainResponse copyWith({String? bucketId, String? domain, bool? enable
   domain: domain ?? this.domain,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ManagedDomainResponse &&
           bucketId == other.bucketId &&
           domain == other.domain &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(bucketId, domain, enabled); } 
-@override String toString() { return 'R2ManagedDomainResponse(bucketId: $bucketId, domain: $domain, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(bucketId, domain, enabled);
+
+@override String toString() => 'R2ManagedDomainResponse(bucketId: $bucketId, domain: $domain, enabled: $enabled)';
+
  }

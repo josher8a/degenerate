@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementAiBotsProtection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementAiBotsProtection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementAiBotsProtection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BotManagementAiBotsProtection($value)';
+
  }
 /// Specifies the Robots Access Control License variant to use.
 @immutable final class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementCfRobotsVariant && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementCfRobotsVariant($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementCfRobotsVariant && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BotManagementCfRobotsVariant($value)';
+
  }
 /// Enable rule to punish AI Scrapers and Crawlers via a link maze.
 @immutable final class BotManagementCrawlerProtection {const BotManagementCrawlerProtection._(this.value);
@@ -73,10 +79,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementCrawlerProtection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementCrawlerProtection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementCrawlerProtection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BotManagementCrawlerProtection($value)';
+
  }
 /// Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).
 extension type const BotManagementEnableJs(bool value) {
@@ -141,14 +150,17 @@ BotManagementBaseConfig copyWith({BotManagementAiBotsProtection? Function()? aiB
   isRobotsTxtManaged: isRobotsTxtManaged != null ? isRobotsTxtManaged() : this.isRobotsTxtManaged,
   usingLatestModel: usingLatestModel != null ? usingLatestModel() : this.usingLatestModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementBaseConfig &&
           aiBotsProtection == other.aiBotsProtection &&
           cfRobotsVariant == other.cfRobotsVariant &&
           crawlerProtection == other.crawlerProtection &&
           enableJs == other.enableJs &&
           isRobotsTxtManaged == other.isRobotsTxtManaged &&
-          usingLatestModel == other.usingLatestModel; } 
-@override int get hashCode { return Object.hash(aiBotsProtection, cfRobotsVariant, crawlerProtection, enableJs, isRobotsTxtManaged, usingLatestModel); } 
-@override String toString() { return 'BotManagementBaseConfig(aiBotsProtection: $aiBotsProtection, cfRobotsVariant: $cfRobotsVariant, crawlerProtection: $crawlerProtection, enableJs: $enableJs, isRobotsTxtManaged: $isRobotsTxtManaged, usingLatestModel: $usingLatestModel)'; } 
+          usingLatestModel == other.usingLatestModel;
+
+@override int get hashCode => Object.hash(aiBotsProtection, cfRobotsVariant, crawlerProtection, enableJs, isRobotsTxtManaged, usingLatestModel);
+
+@override String toString() => 'BotManagementBaseConfig(aiBotsProtection: $aiBotsProtection, cfRobotsVariant: $cfRobotsVariant, crawlerProtection: $crawlerProtection, enableJs: $enableJs, isRobotsTxtManaged: $isRobotsTxtManaged, usingLatestModel: $usingLatestModel)';
+
  }

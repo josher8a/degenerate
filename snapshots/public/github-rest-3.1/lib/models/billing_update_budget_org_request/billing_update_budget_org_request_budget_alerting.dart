@@ -22,10 +22,13 @@ BillingUpdateBudgetOrgRequestBudgetAlerting copyWith({bool? Function()? willAler
   willAlert: willAlert != null ? willAlert() : this.willAlert,
   alertRecipients: alertRecipients != null ? alertRecipients() : this.alertRecipients,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUpdateBudgetOrgRequestBudgetAlerting &&
           willAlert == other.willAlert &&
-          listEquals(alertRecipients, other.alertRecipients); } 
-@override int get hashCode { return Object.hash(willAlert, Object.hashAll(alertRecipients ?? const [])); } 
-@override String toString() { return 'BillingUpdateBudgetOrgRequestBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)'; } 
+          listEquals(alertRecipients, other.alertRecipients);
+
+@override int get hashCode => Object.hash(willAlert, Object.hashAll(alertRecipients ?? const []));
+
+@override String toString() => 'BillingUpdateBudgetOrgRequestBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)';
+
  }

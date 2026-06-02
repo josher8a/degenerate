@@ -17,7 +17,8 @@ final class DeleteIndicatorDeleteError$404 extends DeleteIndicatorDeleteError {c
 
 final DeleteIndicatorDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteIndicatorDeleteError$Unknown extends DeleteIndicatorDeleteError {const DeleteIndicatorDeleteError$Unknown(this.statusCode, this.rawBody, );
 

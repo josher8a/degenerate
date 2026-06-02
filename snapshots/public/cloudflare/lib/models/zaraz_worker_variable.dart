@@ -27,11 +27,14 @@ ZarazWorkerVariable copyWith({String? name, MqWorkerProducerType? type, ZarazWor
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazWorkerVariable &&
           name == other.name &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, type, value); } 
-@override String toString() { return 'ZarazWorkerVariable(name: $name, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, type, value);
+
+@override String toString() => 'ZarazWorkerVariable(name: $name, type: $type, value: $value)';
+
  }

@@ -23,9 +23,12 @@ return errors; }
 Pin copyWith({String? Function()? encryptedNumber}) { return Pin(
   encryptedNumber: encryptedNumber != null ? encryptedNumber() : this.encryptedNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pin &&
-          encryptedNumber == other.encryptedNumber; } 
-@override int get hashCode { return encryptedNumber.hashCode; } 
-@override String toString() { return 'Pin(encryptedNumber: $encryptedNumber)'; } 
+          encryptedNumber == other.encryptedNumber;
+
+@override int get hashCode => encryptedNumber.hashCode;
+
+@override String toString() => 'Pin(encryptedNumber: $encryptedNumber)';
+
  }

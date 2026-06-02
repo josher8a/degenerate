@@ -31,10 +31,13 @@ FileSearchRankingOptions copyWith({FileSearchRanker? Function()? ranker, double?
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold ?? this.scoreThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchRankingOptions &&
           ranker == other.ranker &&
-          scoreThreshold == other.scoreThreshold; } 
-@override int get hashCode { return Object.hash(ranker, scoreThreshold); } 
-@override String toString() { return 'FileSearchRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)'; } 
+          scoreThreshold == other.scoreThreshold;
+
+@override int get hashCode => Object.hash(ranker, scoreThreshold);
+
+@override String toString() => 'FileSearchRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)';
+
  }

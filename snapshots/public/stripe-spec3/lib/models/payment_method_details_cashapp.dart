@@ -44,11 +44,14 @@ PaymentMethodDetailsCashapp copyWith({String? Function()? buyerId, String? Funct
   cashtag: cashtag != null ? cashtag() : this.cashtag,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCashapp &&
           buyerId == other.buyerId &&
           cashtag == other.cashtag &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(buyerId, cashtag, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsCashapp(buyerId: $buyerId, cashtag: $cashtag, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(buyerId, cashtag, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsCashapp(buyerId: $buyerId, cashtag: $cashtag, transactionId: $transactionId)';
+
  }

@@ -23,10 +23,13 @@ PaymentLinksResourceTaxIdCollection copyWith({bool? enabled, Required? $required
   enabled: enabled ?? this.enabled,
   $required: $required ?? this.$required,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceTaxIdCollection &&
           enabled == other.enabled &&
-          $required == other.$required; } 
-@override int get hashCode { return Object.hash(enabled, $required); } 
-@override String toString() { return 'PaymentLinksResourceTaxIdCollection(enabled: $enabled, \$required: ${$required})'; } 
+          $required == other.$required;
+
+@override int get hashCode => Object.hash(enabled, $required);
+
+@override String toString() => 'PaymentLinksResourceTaxIdCollection(enabled: $enabled, \$required: ${$required})';
+
  }

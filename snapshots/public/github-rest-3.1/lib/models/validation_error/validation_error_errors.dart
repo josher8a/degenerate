@@ -40,14 +40,17 @@ ValidationErrorErrors copyWith({String? Function()? resource, String? Function()
   index: index != null ? index() : this.index,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationErrorErrors &&
           resource == other.resource &&
           field == other.field &&
           message == other.message &&
           code == other.code &&
           index == other.index &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(resource, field, message, code, index, value); } 
-@override String toString() { return 'ValidationErrorErrors(resource: $resource, field: $field, message: $message, code: $code, index: $index, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(resource, field, message, code, index, value);
+
+@override String toString() => 'ValidationErrorErrors(resource: $resource, field: $field, message: $message, code: $code, index: $index, value: $value)';
+
  }

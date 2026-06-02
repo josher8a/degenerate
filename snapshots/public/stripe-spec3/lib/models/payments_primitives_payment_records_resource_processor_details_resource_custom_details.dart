@@ -26,9 +26,12 @@ return errors; }
 PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails copyWith({String? Function()? paymentReference}) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails &&
-          paymentReference == other.paymentReference; } 
-@override int get hashCode { return paymentReference.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(paymentReference: $paymentReference)'; } 
+          paymentReference == other.paymentReference;
+
+@override int get hashCode => paymentReference.hashCode;
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(paymentReference: $paymentReference)';
+
  }

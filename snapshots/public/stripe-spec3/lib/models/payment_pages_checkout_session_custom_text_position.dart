@@ -21,9 +21,12 @@ return errors; }
 PaymentPagesCheckoutSessionCustomTextPosition copyWith({String? message}) { return PaymentPagesCheckoutSessionCustomTextPosition(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomTextPosition &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomTextPosition(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomTextPosition(message: $message)';
+
  }

@@ -21,10 +21,13 @@ WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest copyWith({WorkersKvAny? F
   metadata: metadata != null ? metadata() : this.metadata,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest &&
           metadata == other.metadata &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(metadata, value); } 
-@override String toString() { return 'WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(metadata: $metadata, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(metadata, value);
+
+@override String toString() => 'WorkersKvNamespaceWriteKeyValuePairWithMetadataRequest(metadata: $metadata, value: $value)';
+
  }

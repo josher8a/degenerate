@@ -32,12 +32,15 @@ DlpCustomEntryUpdate copyWith({String? Function()? description, String? name, Dl
   pattern: pattern ?? this.pattern,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpCustomEntryUpdate &&
           description == other.description &&
           name == other.name &&
           pattern == other.pattern &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(description, name, pattern, enabled); } 
-@override String toString() { return 'DlpCustomEntryUpdate(description: $description, name: $name, pattern: $pattern, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(description, name, pattern, enabled);
+
+@override String toString() => 'DlpCustomEntryUpdate(description: $description, name: $name, pattern: $pattern, enabled: $enabled)';
+
  }

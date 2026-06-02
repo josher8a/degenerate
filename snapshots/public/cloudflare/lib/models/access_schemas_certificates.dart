@@ -22,10 +22,13 @@ AccessSchemasCertificates copyWith({String? Function()? id, String? Function()? 
   id: id != null ? id() : this.id,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasCertificates &&
           id == other.id &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return Object.hash(id, publicKey); } 
-@override String toString() { return 'AccessSchemasCertificates(id: $id, publicKey: $publicKey)'; } 
+          publicKey == other.publicKey;
+
+@override int get hashCode => Object.hash(id, publicKey);
+
+@override String toString() => 'AccessSchemasCertificates(id: $id, publicKey: $publicKey)';
+
  }

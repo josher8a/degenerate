@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeSecurityConfigurationCodeScanningDefaultSetupOptionsRunnerType($value)';
+
  }
 /// Feature options for code scanning default setup
 @immutable final class CodeSecurityConfigurationCodeScanningDefaultSetupOptions {const CodeSecurityConfigurationCodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
@@ -54,10 +57,13 @@ CodeSecurityConfigurationCodeScanningDefaultSetupOptions copyWith({CodeSecurityC
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityConfigurationCodeScanningDefaultSetupOptions &&
           runnerType == other.runnerType &&
-          runnerLabel == other.runnerLabel; } 
-@override int get hashCode { return Object.hash(runnerType, runnerLabel); } 
-@override String toString() { return 'CodeSecurityConfigurationCodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)'; } 
+          runnerLabel == other.runnerLabel;
+
+@override int get hashCode => Object.hash(runnerType, runnerLabel);
+
+@override String toString() => 'CodeSecurityConfigurationCodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)';
+
  }

@@ -33,11 +33,14 @@ GitRefObject copyWith({String? type, String? sha, Uri? url, }) { return GitRefOb
   sha: sha ?? this.sha,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitRefObject &&
           type == other.type &&
           sha == other.sha &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(type, sha, url); } 
-@override String toString() { return 'GitRefObject(type: $type, sha: $sha, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(type, sha, url);
+
+@override String toString() => 'GitRefObject(type: $type, sha: $sha, url: $url)';
+
  }

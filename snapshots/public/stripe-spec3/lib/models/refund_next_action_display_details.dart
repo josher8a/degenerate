@@ -23,10 +23,13 @@ RefundNextActionDisplayDetails copyWith({EmailSent? emailSent, int? expiresAt, }
   emailSent: emailSent ?? this.emailSent,
   expiresAt: expiresAt ?? this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundNextActionDisplayDetails &&
           emailSent == other.emailSent &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(emailSent, expiresAt); } 
-@override String toString() { return 'RefundNextActionDisplayDetails(emailSent: $emailSent, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(emailSent, expiresAt);
+
+@override String toString() => 'RefundNextActionDisplayDetails(emailSent: $emailSent, expiresAt: $expiresAt)';
+
  }

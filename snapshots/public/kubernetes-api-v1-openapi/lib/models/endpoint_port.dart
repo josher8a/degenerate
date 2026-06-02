@@ -44,12 +44,15 @@ EndpointPort copyWith({String? Function()? appProtocol, String? Function()? name
   port: port ?? this.port,
   protocol: protocol != null ? protocol() : this.protocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EndpointPort &&
           appProtocol == other.appProtocol &&
           name == other.name &&
           port == other.port &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(appProtocol, name, port, protocol); } 
-@override String toString() { return 'EndpointPort(appProtocol: $appProtocol, name: $name, port: $port, protocol: $protocol)'; } 
+          protocol == other.protocol;
+
+@override int get hashCode => Object.hash(appProtocol, name, port, protocol);
+
+@override String toString() => 'EndpointPort(appProtocol: $appProtocol, name: $name, port: $port, protocol: $protocol)';
+
  }

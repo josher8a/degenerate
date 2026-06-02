@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallMode($value)';
+
  }
 /// The time in seconds during which Cloudflare will perform the mitigation action. Must be an integer value greater than or equal to the period.
 /// Notes: If "mode" is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the zone's Challenge Passage time and you should not provide this value.
@@ -67,11 +70,14 @@ FirewallActionVariant1 copyWith({FirewallMode? Function()? mode, FirewallCustomR
   response: response != null ? response() : this.response,
   timeout: timeout != null ? timeout() : this.timeout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallActionVariant1 &&
           mode == other.mode &&
           response == other.response &&
-          timeout == other.timeout; } 
-@override int get hashCode { return Object.hash(mode, response, timeout); } 
-@override String toString() { return 'FirewallActionVariant1(mode: $mode, response: $response, timeout: $timeout)'; } 
+          timeout == other.timeout;
+
+@override int get hashCode => Object.hash(mode, response, timeout);
+
+@override String toString() => 'FirewallActionVariant1(mode: $mode, response: $response, timeout: $timeout)';
+
  }

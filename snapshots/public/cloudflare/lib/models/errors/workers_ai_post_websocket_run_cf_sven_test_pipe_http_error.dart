@@ -17,7 +17,8 @@ final class WorkersAiPostWebsocketRunCfSvenTestPipeHttpError$400 extends Workers
 
 final WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostWebsocketRunCfSvenTestPipeHttpError$Unknown extends WorkersAiPostWebsocketRunCfSvenTestPipeHttpError {const WorkersAiPostWebsocketRunCfSvenTestPipeHttpError$Unknown(this.statusCode, this.rawBody, );
 

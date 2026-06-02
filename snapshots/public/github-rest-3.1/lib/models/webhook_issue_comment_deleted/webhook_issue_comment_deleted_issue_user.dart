@@ -105,7 +105,7 @@ WebhookIssueCommentDeletedIssueUser copyWith({String? Function()? avatarUrl, Str
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueCommentDeletedIssueUser &&
           avatarUrl == other.avatarUrl &&
           eventsUrl == other.eventsUrl &&
@@ -125,7 +125,10 @@ WebhookIssueCommentDeletedIssueUser copyWith({String? Function()? avatarUrl, Str
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
           url == other.url &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType); } 
-@override String toString() { return 'WebhookIssueCommentDeletedIssueUser(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType);
+
+@override String toString() => 'WebhookIssueCommentDeletedIssueUser(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';
+
  }

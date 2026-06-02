@@ -20,25 +20,29 @@ final class BrapiPostPdfError$400 extends BrapiPostPdfError {const BrapiPostPdfE
 
 final BrapiPostPdfResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BrapiPostPdfError$422 extends BrapiPostPdfError {const BrapiPostPdfError$422(this.error);
 
 final BrapiPostPdfResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BrapiPostPdfError$429 extends BrapiPostPdfError {const BrapiPostPdfError$429(this.error);
 
 final BrapiPostPdfResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class BrapiPostPdfError$500 extends BrapiPostPdfError {const BrapiPostPdfError$500(this.error);
 
 final BrapiPostPdfResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BrapiPostPdfError$Unknown extends BrapiPostPdfError {const BrapiPostPdfError$Unknown(this.statusCode, this.rawBody, );
 

@@ -90,7 +90,7 @@ PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCapture
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentCaptureRequest &&
           amountDetails == other.amountDetails &&
           amountToCapture == other.amountToCapture &&
@@ -102,7 +102,10 @@ PostPaymentIntentsIntentCaptureRequest copyWith({PostPaymentIntentsIntentCapture
           paymentDetails == other.paymentDetails &&
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(amountDetails, amountToCapture, applicationFeeAmount, Object.hashAll(expand ?? const []), finalCapture, hooks, metadata, paymentDetails, statementDescriptor, statementDescriptorSuffix, transferData); } 
-@override String toString() { return 'PostPaymentIntentsIntentCaptureRequest(amountDetails: $amountDetails, amountToCapture: $amountToCapture, applicationFeeAmount: $applicationFeeAmount, expand: $expand, finalCapture: $finalCapture, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hash(amountDetails, amountToCapture, applicationFeeAmount, Object.hashAll(expand ?? const []), finalCapture, hooks, metadata, paymentDetails, statementDescriptor, statementDescriptorSuffix, transferData);
+
+@override String toString() => 'PostPaymentIntentsIntentCaptureRequest(amountDetails: $amountDetails, amountToCapture: $amountToCapture, applicationFeeAmount: $applicationFeeAmount, expand: $expand, finalCapture: $finalCapture, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData)';
+
  }

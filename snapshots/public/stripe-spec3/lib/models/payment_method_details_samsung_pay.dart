@@ -34,10 +34,13 @@ PaymentMethodDetailsSamsungPay copyWith({String? Function()? buyerId, String? Fu
   buyerId: buyerId != null ? buyerId() : this.buyerId,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsSamsungPay &&
           buyerId == other.buyerId &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(buyerId, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsSamsungPay(buyerId: $buyerId, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(buyerId, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsSamsungPay(buyerId: $buyerId, transactionId: $transactionId)';
+
  }

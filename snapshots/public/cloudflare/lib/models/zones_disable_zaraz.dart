@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesDisableZarazId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesDisableZarazId($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesDisableZarazId && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesDisableZarazId($value)';
+
  }
 @immutable final class ZonesDisableZaraz {const ZonesDisableZaraz({this.id});
 
@@ -40,9 +43,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZonesDisableZaraz copyWith({ZonesDisableZarazId? Function()? id}) { return ZonesDisableZaraz(
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesDisableZaraz &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'ZonesDisableZaraz(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'ZonesDisableZaraz(id: $id)';
+
  }

@@ -69,7 +69,7 @@ PaymentMethodDetailsIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? b
   transactionId: transactionId != null ? transactionId() : this.transactionId,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsIdeal &&
           bank == other.bank &&
           bic == other.bic &&
@@ -77,7 +77,10 @@ PaymentMethodDetailsIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? b
           generatedSepaDebitMandate == other.generatedSepaDebitMandate &&
           ibanLast4 == other.ibanLast4 &&
           transactionId == other.transactionId &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bank, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, transactionId, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsIdeal(bank: $bank, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, transactionId: $transactionId, verifiedName: $verifiedName)'; } 
+          verifiedName == other.verifiedName;
+
+@override int get hashCode => Object.hash(bank, bic, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, transactionId, verifiedName);
+
+@override String toString() => 'PaymentMethodDetailsIdeal(bank: $bank, bic: $bic, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, transactionId: $transactionId, verifiedName: $verifiedName)';
+
  }

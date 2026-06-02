@@ -23,10 +23,13 @@ BudgetBudgetAlerting copyWith({bool? willAlert, List<String>? alertRecipients, }
   willAlert: willAlert ?? this.willAlert,
   alertRecipients: alertRecipients ?? this.alertRecipients,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BudgetBudgetAlerting &&
           willAlert == other.willAlert &&
-          listEquals(alertRecipients, other.alertRecipients); } 
-@override int get hashCode { return Object.hash(willAlert, Object.hashAll(alertRecipients)); } 
-@override String toString() { return 'BudgetBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)'; } 
+          listEquals(alertRecipients, other.alertRecipients);
+
+@override int get hashCode => Object.hash(willAlert, Object.hashAll(alertRecipients));
+
+@override String toString() => 'BudgetBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)';
+
  }

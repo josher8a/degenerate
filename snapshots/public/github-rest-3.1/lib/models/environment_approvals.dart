@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnvironmentApprovalsState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnvironmentApprovalsState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnvironmentApprovalsState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EnvironmentApprovalsState($value)';
+
  }
 /// An entry in the reviews log for environment deployments
 @immutable final class EnvironmentApprovals {const EnvironmentApprovals({required this.environments, required this.state, required this.user, required this.comment, });
@@ -65,12 +68,15 @@ EnvironmentApprovals copyWith({List<EnvironmentApprovalsEnvironments>? environme
   user: user ?? this.user,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnvironmentApprovals &&
           listEquals(environments, other.environments) &&
           state == other.state &&
           user == other.user &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(Object.hashAll(environments), state, user, comment); } 
-@override String toString() { return 'EnvironmentApprovals(environments: $environments, state: $state, user: $user, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(Object.hashAll(environments), state, user, comment);
+
+@override String toString() => 'EnvironmentApprovals(environments: $environments, state: $state, user: $user, comment: $comment)';
+
  }

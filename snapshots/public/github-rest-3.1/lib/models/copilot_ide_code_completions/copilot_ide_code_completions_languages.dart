@@ -23,10 +23,13 @@ CopilotIdeCodeCompletionsLanguages copyWith({String? Function()? name, int? Func
   name: name != null ? name() : this.name,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeCodeCompletionsLanguages &&
           name == other.name &&
-          totalEngagedUsers == other.totalEngagedUsers; } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers); } 
-@override String toString() { return 'CopilotIdeCodeCompletionsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers)'; } 
+          totalEngagedUsers == other.totalEngagedUsers;
+
+@override int get hashCode => Object.hash(name, totalEngagedUsers);
+
+@override String toString() => 'CopilotIdeCodeCompletionsLanguages(name: $name, totalEngagedUsers: $totalEngagedUsers)';
+
  }

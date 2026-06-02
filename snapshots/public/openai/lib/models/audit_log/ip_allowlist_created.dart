@@ -29,11 +29,14 @@ IpAllowlistCreated copyWith({String? Function()? id, String? Function()? name, L
   name: name != null ? name() : this.name,
   allowedIps: allowedIps != null ? allowedIps() : this.allowedIps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAllowlistCreated &&
           id == other.id &&
           name == other.name &&
-          listEquals(allowedIps, other.allowedIps); } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(allowedIps ?? const [])); } 
-@override String toString() { return 'IpAllowlistCreated(id: $id, name: $name, allowedIps: $allowedIps)'; } 
+          listEquals(allowedIps, other.allowedIps);
+
+@override int get hashCode => Object.hash(id, name, Object.hashAll(allowedIps ?? const []));
+
+@override String toString() => 'IpAllowlistCreated(id: $id, name: $name, allowedIps: $allowedIps)';
+
  }

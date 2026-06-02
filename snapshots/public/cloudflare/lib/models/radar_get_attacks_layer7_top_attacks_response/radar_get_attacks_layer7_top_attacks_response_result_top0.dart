@@ -44,13 +44,16 @@ RadarGetAttacksLayer7TopAttacksResponseResultTop0 copyWith({String? originCountr
   targetCountryName: targetCountryName ?? this.targetCountryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopAttacksResponseResultTop0 &&
           originCountryAlpha2 == other.originCountryAlpha2 &&
           originCountryName == other.originCountryName &&
           targetCountryAlpha2 == other.targetCountryAlpha2 &&
           targetCountryName == other.targetCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(originCountryAlpha2, originCountryName, targetCountryAlpha2, targetCountryName, value); } 
-@override String toString() { return 'RadarGetAttacksLayer7TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, targetCountryAlpha2: $targetCountryAlpha2, targetCountryName: $targetCountryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(originCountryAlpha2, originCountryName, targetCountryAlpha2, targetCountryName, value);
+
+@override String toString() => 'RadarGetAttacksLayer7TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, targetCountryAlpha2: $targetCountryAlpha2, targetCountryName: $targetCountryName, value: $value)';
+
  }

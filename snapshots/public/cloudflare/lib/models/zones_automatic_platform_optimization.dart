@@ -63,14 +63,17 @@ ZonesAutomaticPlatformOptimization copyWith({bool? cacheByDeviceType, bool? cf, 
   wordpress: wordpress ?? this.wordpress,
   wpPlugin: wpPlugin ?? this.wpPlugin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesAutomaticPlatformOptimization &&
           cacheByDeviceType == other.cacheByDeviceType &&
           cf == other.cf &&
           enabled == other.enabled &&
           listEquals(hostnames, other.hostnames) &&
           wordpress == other.wordpress &&
-          wpPlugin == other.wpPlugin; } 
-@override int get hashCode { return Object.hash(cacheByDeviceType, cf, enabled, Object.hashAll(hostnames), wordpress, wpPlugin); } 
-@override String toString() { return 'ZonesAutomaticPlatformOptimization(cacheByDeviceType: $cacheByDeviceType, cf: $cf, enabled: $enabled, hostnames: $hostnames, wordpress: $wordpress, wpPlugin: $wpPlugin)'; } 
+          wpPlugin == other.wpPlugin;
+
+@override int get hashCode => Object.hash(cacheByDeviceType, cf, enabled, Object.hashAll(hostnames), wordpress, wpPlugin);
+
+@override String toString() => 'ZonesAutomaticPlatformOptimization(cacheByDeviceType: $cacheByDeviceType, cf: $cf, enabled: $enabled, hostnames: $hostnames, wordpress: $wordpress, wpPlugin: $wpPlugin)';
+
  }

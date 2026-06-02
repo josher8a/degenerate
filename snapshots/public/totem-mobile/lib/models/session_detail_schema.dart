@@ -211,59 +211,55 @@ final class SessionDetailSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SessionDetailSchema &&
-            slug == other.slug &&
-            title == other.title &&
-            space == other.space &&
-            content == other.content &&
-            seatsLeft == other.seatsLeft &&
-            duration == other.duration &&
-            start == other.start &&
-            attending == other.attending &&
-            open == other.open &&
-            started == other.started &&
-            cancelled == other.cancelled &&
-            joinable == other.joinable &&
-            ended == other.ended &&
-            rsvpUrl == other.rsvpUrl &&
-            joinUrl == other.joinUrl &&
-            subscribeUrl == other.subscribeUrl &&
-            calLink == other.calLink &&
-            subscribed == other.subscribed &&
-            userTimezone == other.userTimezone &&
-            meetingProvider == other.meetingProvider;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionDetailSchema &&
+          slug == other.slug &&
+          title == other.title &&
+          space == other.space &&
+          content == other.content &&
+          seatsLeft == other.seatsLeft &&
+          duration == other.duration &&
+          start == other.start &&
+          attending == other.attending &&
+          open == other.open &&
+          started == other.started &&
+          cancelled == other.cancelled &&
+          joinable == other.joinable &&
+          ended == other.ended &&
+          rsvpUrl == other.rsvpUrl &&
+          joinUrl == other.joinUrl &&
+          subscribeUrl == other.subscribeUrl &&
+          calLink == other.calLink &&
+          subscribed == other.subscribed &&
+          userTimezone == other.userTimezone &&
+          meetingProvider == other.meetingProvider;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      slug,
-      title,
-      space,
-      content,
-      seatsLeft,
-      duration,
-      start,
-      attending,
-      open,
-      started,
-      cancelled,
-      joinable,
-      ended,
-      rsvpUrl,
-      joinUrl,
-      subscribeUrl,
-      calLink,
-      subscribed,
-      userTimezone,
-      meetingProvider,
-    );
-  }
+  int get hashCode => Object.hash(
+    slug,
+    title,
+    space,
+    content,
+    seatsLeft,
+    duration,
+    start,
+    attending,
+    open,
+    started,
+    cancelled,
+    joinable,
+    ended,
+    rsvpUrl,
+    joinUrl,
+    subscribeUrl,
+    calLink,
+    subscribed,
+    userTimezone,
+    meetingProvider,
+  );
 
   @override
-  String toString() {
-    return 'SessionDetailSchema(slug: $slug, title: $title, space: $space, content: $content, seatsLeft: $seatsLeft, duration: $duration, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)';
-  }
+  String toString() =>
+      'SessionDetailSchema(slug: $slug, title: $title, space: $space, content: $content, seatsLeft: $seatsLeft, duration: $duration, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)';
 }

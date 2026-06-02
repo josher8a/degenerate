@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusFrom && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusFrom($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusFrom && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusFrom($value)';
+
  }
 @immutable final class StatusTo {const StatusTo._(this.value);
 
@@ -67,10 +70,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusTo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusTo($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusTo && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusTo($value)';
+
  }
 @immutable final class ChangesStatus {const ChangesStatus({this.from, this.to, });
 
@@ -92,10 +98,13 @@ ChangesStatus copyWith({StatusFrom? Function()? from, StatusTo? Function()? to, 
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesStatus &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'ChangesStatus(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'ChangesStatus(from: $from, to: $to)';
+
  }

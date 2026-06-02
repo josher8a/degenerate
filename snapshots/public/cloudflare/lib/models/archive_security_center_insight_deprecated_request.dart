@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ArchiveSecurityCenterInsightDeprecatedRequest copyWith({bool Function()? dismiss}) { return ArchiveSecurityCenterInsightDeprecatedRequest(
   dismiss: dismiss != null ? dismiss() : this.dismiss,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ArchiveSecurityCenterInsightDeprecatedRequest &&
-          dismiss == other.dismiss; } 
-@override int get hashCode { return dismiss.hashCode; } 
-@override String toString() { return 'ArchiveSecurityCenterInsightDeprecatedRequest(dismiss: $dismiss)'; } 
+          dismiss == other.dismiss;
+
+@override int get hashCode => dismiss.hashCode;
+
+@override String toString() => 'ArchiveSecurityCenterInsightDeprecatedRequest(dismiss: $dismiss)';
+
  }

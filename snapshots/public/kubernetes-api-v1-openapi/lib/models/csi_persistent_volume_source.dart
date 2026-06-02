@@ -72,7 +72,7 @@ CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpan
   volumeAttributes: volumeAttributes != null ? volumeAttributes() : this.volumeAttributes,
   volumeHandle: volumeHandle ?? this.volumeHandle,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CsiPersistentVolumeSource &&
           controllerExpandSecretRef == other.controllerExpandSecretRef &&
           controllerPublishSecretRef == other.controllerPublishSecretRef &&
@@ -83,7 +83,10 @@ CsiPersistentVolumeSource copyWith({SecretReference? Function()? controllerExpan
           nodeStageSecretRef == other.nodeStageSecretRef &&
           readOnly == other.readOnly &&
           volumeAttributes == other.volumeAttributes &&
-          volumeHandle == other.volumeHandle; } 
-@override int get hashCode { return Object.hash(controllerExpandSecretRef, controllerPublishSecretRef, driver, fsType, nodeExpandSecretRef, nodePublishSecretRef, nodeStageSecretRef, readOnly, volumeAttributes, volumeHandle); } 
-@override String toString() { return 'CsiPersistentVolumeSource(controllerExpandSecretRef: $controllerExpandSecretRef, controllerPublishSecretRef: $controllerPublishSecretRef, driver: $driver, fsType: $fsType, nodeExpandSecretRef: $nodeExpandSecretRef, nodePublishSecretRef: $nodePublishSecretRef, nodeStageSecretRef: $nodeStageSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes, volumeHandle: $volumeHandle)'; } 
+          volumeHandle == other.volumeHandle;
+
+@override int get hashCode => Object.hash(controllerExpandSecretRef, controllerPublishSecretRef, driver, fsType, nodeExpandSecretRef, nodePublishSecretRef, nodeStageSecretRef, readOnly, volumeAttributes, volumeHandle);
+
+@override String toString() => 'CsiPersistentVolumeSource(controllerExpandSecretRef: $controllerExpandSecretRef, controllerPublishSecretRef: $controllerPublishSecretRef, driver: $driver, fsType: $fsType, nodeExpandSecretRef: $nodeExpandSecretRef, nodePublishSecretRef: $nodePublishSecretRef, nodeStageSecretRef: $nodeStageSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes, volumeHandle: $volumeHandle)';
+
  }

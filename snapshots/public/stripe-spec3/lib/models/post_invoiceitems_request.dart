@@ -147,7 +147,7 @@ PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? c
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoiceitemsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -167,7 +167,10 @@ PostInvoiceitemsRequest copyWith({int? Function()? amount, String? Function()? c
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
           listEquals(taxRates, other.taxRates) &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, customerAccount, description, discountable, discounts, Object.hashAll(expand ?? const []), invoice, metadata, period, priceData, pricing, quantity, subscription, taxBehavior, taxCode, Object.hashAll(taxRates ?? const []), unitAmountDecimal); } 
-@override String toString() { return 'PostInvoiceitemsRequest(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, invoice: $invoice, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, subscription: $subscription, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(amount, currency, customer, customerAccount, description, discountable, discounts, Object.hashAll(expand ?? const []), invoice, metadata, period, priceData, pricing, quantity, subscription, taxBehavior, taxCode, Object.hashAll(taxRates ?? const []), unitAmountDecimal);
+
+@override String toString() => 'PostInvoiceitemsRequest(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, invoice: $invoice, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, subscription: $subscription, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)';
+
  }

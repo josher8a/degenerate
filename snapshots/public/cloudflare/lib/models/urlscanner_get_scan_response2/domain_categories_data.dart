@@ -27,11 +27,14 @@ DomainCategoriesData copyWith({Map<String,dynamic>? inherited, bool? isPrimary, 
   isPrimary: isPrimary ?? this.isPrimary,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DomainCategoriesData &&
           inherited == other.inherited &&
           isPrimary == other.isPrimary &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(inherited, isPrimary, name); } 
-@override String toString() { return 'DomainCategoriesData(inherited: $inherited, isPrimary: $isPrimary, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(inherited, isPrimary, name);
+
+@override String toString() => 'DomainCategoriesData(inherited: $inherited, isPrimary: $isPrimary, name: $name)';
+
  }

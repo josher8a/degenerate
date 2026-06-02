@@ -23,10 +23,13 @@ AccessTargetCriteriaBase copyWith({AccessPort? port, Map<String,List<String>>? t
   port: port ?? this.port,
   targetAttributes: targetAttributes ?? this.targetAttributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTargetCriteriaBase &&
           port == other.port &&
-          targetAttributes == other.targetAttributes; } 
-@override int get hashCode { return Object.hash(port, targetAttributes); } 
-@override String toString() { return 'AccessTargetCriteriaBase(port: $port, targetAttributes: $targetAttributes)'; } 
+          targetAttributes == other.targetAttributes;
+
+@override int get hashCode => Object.hash(port, targetAttributes);
+
+@override String toString() => 'AccessTargetCriteriaBase(port: $port, targetAttributes: $targetAttributes)';
+
  }

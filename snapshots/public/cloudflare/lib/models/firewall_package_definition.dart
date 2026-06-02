@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallDetectionMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallDetectionMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallDetectionMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallDetectionMode($value)';
+
  }
 /// The name of the WAF package.
 extension type const FirewallName(String value) {
@@ -87,14 +90,17 @@ FirewallPackageDefinition copyWith({FirewallSchemasDescription? description, Fir
   status: status != null ? status() : this.status,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallPackageDefinition &&
           description == other.description &&
           detectionMode == other.detectionMode &&
           id == other.id &&
           name == other.name &&
           status == other.status &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(description, detectionMode, id, name, status, zoneId); } 
-@override String toString() { return 'FirewallPackageDefinition(description: $description, detectionMode: $detectionMode, id: $id, name: $name, status: $status, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(description, detectionMode, id, name, status, zoneId);
+
+@override String toString() => 'FirewallPackageDefinition(description: $description, detectionMode: $detectionMode, id: $id, name: $name, status: $status, zoneId: $zoneId)';
+
  }

@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActorContext && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActorContext($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActorContext && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ActorContext($value)';
+
  }
 /// The type of actor.
 @immutable final class AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType._(this.value);
@@ -59,10 +62,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaAuditLogs2ActorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaAuditLogs2ActorType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AaaAuditLogs2ActorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AaaAuditLogs2ActorType($value)';
+
  }
 /// Provides details about the actor who performed the action.
 @immutable final class AaaAuditLogs2Actor {const AaaAuditLogs2Actor({this.context, this.email, this.id, this.ipAddress, this.tokenId, this.tokenName, this.type, });
@@ -125,7 +131,7 @@ AaaAuditLogs2Actor copyWith({ActorContext? Function()? context, String? Function
   tokenName: tokenName != null ? tokenName() : this.tokenName,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2Actor &&
           context == other.context &&
           email == other.email &&
@@ -133,7 +139,10 @@ AaaAuditLogs2Actor copyWith({ActorContext? Function()? context, String? Function
           ipAddress == other.ipAddress &&
           tokenId == other.tokenId &&
           tokenName == other.tokenName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(context, email, id, ipAddress, tokenId, tokenName, type); } 
-@override String toString() { return 'AaaAuditLogs2Actor(context: $context, email: $email, id: $id, ipAddress: $ipAddress, tokenId: $tokenId, tokenName: $tokenName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(context, email, id, ipAddress, tokenId, tokenName, type);
+
+@override String toString() => 'AaaAuditLogs2Actor(context: $context, email: $email, id: $id, ipAddress: $ipAddress, tokenId: $tokenId, tokenName: $tokenName, type: $type)';
+
  }

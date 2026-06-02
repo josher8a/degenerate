@@ -42,13 +42,16 @@ Members copyWith({String? accountId, DateTime? Function()? createdAt, String? gr
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Members &&
           accountId == other.accountId &&
           createdAt == other.createdAt &&
           groupId == other.groupId &&
           updatedAt == other.updatedAt &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(accountId, createdAt, groupId, updatedAt, uuid); } 
-@override String toString() { return 'Members(accountId: $accountId, createdAt: $createdAt, groupId: $groupId, updatedAt: $updatedAt, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(accountId, createdAt, groupId, updatedAt, uuid);
+
+@override String toString() => 'Members(accountId: $accountId, createdAt: $createdAt, groupId: $groupId, updatedAt: $updatedAt, uuid: $uuid)';
+
  }

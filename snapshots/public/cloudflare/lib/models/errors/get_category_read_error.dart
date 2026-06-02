@@ -17,7 +17,8 @@ final class GetCategoryReadError$400 extends GetCategoryReadError {const GetCate
 
 final GetCategoryReadResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetCategoryReadError$Unknown extends GetCategoryReadError {const GetCategoryReadError$Unknown(this.statusCode, this.rawBody, );
 

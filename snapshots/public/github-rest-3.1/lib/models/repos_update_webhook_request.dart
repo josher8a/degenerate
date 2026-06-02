@@ -39,13 +39,16 @@ ReposUpdateWebhookRequest copyWith({WebhookConfig? Function()? config, List<Stri
   removeEvents: removeEvents != null ? removeEvents() : this.removeEvents,
   active: active != null ? active() : this.active,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateWebhookRequest &&
           config == other.config &&
           listEquals(events, other.events) &&
           listEquals(addEvents, other.addEvents) &&
           listEquals(removeEvents, other.removeEvents) &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(config, Object.hashAll(events ?? const []), Object.hashAll(addEvents ?? const []), Object.hashAll(removeEvents ?? const []), active); } 
-@override String toString() { return 'ReposUpdateWebhookRequest(config: $config, events: $events, addEvents: $addEvents, removeEvents: $removeEvents, active: $active)'; } 
+          active == other.active;
+
+@override int get hashCode => Object.hash(config, Object.hashAll(events ?? const []), Object.hashAll(addEvents ?? const []), Object.hashAll(removeEvents ?? const []), active);
+
+@override String toString() => 'ReposUpdateWebhookRequest(config: $config, events: $events, addEvents: $addEvents, removeEvents: $removeEvents, active: $active)';
+
  }

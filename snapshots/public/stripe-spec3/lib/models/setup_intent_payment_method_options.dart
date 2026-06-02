@@ -66,7 +66,7 @@ SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDeb
   sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptions &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -78,7 +78,10 @@ SetupIntentPaymentMethodOptions copyWith({SetupIntentPaymentMethodOptionsAcssDeb
           paypal == other.paypal &&
           payto == other.payto &&
           sepaDebit == other.sepaDebit &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, amazonPay, bacsDebit, card, cardPresent, klarna, link, paypal, payto, sepaDebit, usBankAccount); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptions(acssDebit: $acssDebit, amazonPay: $amazonPay, bacsDebit: $bacsDebit, card: $card, cardPresent: $cardPresent, klarna: $klarna, link: $link, paypal: $paypal, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(acssDebit, amazonPay, bacsDebit, card, cardPresent, klarna, link, paypal, payto, sepaDebit, usBankAccount);
+
+@override String toString() => 'SetupIntentPaymentMethodOptions(acssDebit: $acssDebit, amazonPay: $amazonPay, bacsDebit: $bacsDebit, card: $card, cardPresent: $cardPresent, klarna: $klarna, link: $link, paypal: $paypal, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)';
+
  }

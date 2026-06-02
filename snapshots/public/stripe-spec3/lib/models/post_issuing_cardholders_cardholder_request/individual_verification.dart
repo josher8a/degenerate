@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IndividualVerification copyWith({IndividualVerificationDocument? Function()? document}) { return IndividualVerification(
   document: document != null ? document() : this.document,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IndividualVerification &&
-          document == other.document; } 
-@override int get hashCode { return document.hashCode; } 
-@override String toString() { return 'IndividualVerification(document: $document)'; } 
+          document == other.document;
+
+@override int get hashCode => document.hashCode;
+
+@override String toString() => 'IndividualVerification(document: $document)';
+
  }

@@ -28,11 +28,14 @@ CacheRulesResultObjectDelete copyWith({CacheRulesEditable? editable, CacheRulesS
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesResultObjectDelete &&
           editable == other.editable &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn); } 
-@override String toString() { return 'CacheRulesResultObjectDelete(editable: $editable, id: $id, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(editable, id, modifiedOn);
+
+@override String toString() => 'CacheRulesResultObjectDelete(editable: $editable, id: $id, modifiedOn: $modifiedOn)';
+
  }

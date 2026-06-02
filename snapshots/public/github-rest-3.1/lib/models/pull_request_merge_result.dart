@@ -28,11 +28,14 @@ PullRequestMergeResult copyWith({String? sha, bool? merged, String? message, }) 
   merged: merged ?? this.merged,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestMergeResult &&
           sha == other.sha &&
           merged == other.merged &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(sha, merged, message); } 
-@override String toString() { return 'PullRequestMergeResult(sha: $sha, merged: $merged, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(sha, merged, message);
+
+@override String toString() => 'PullRequestMergeResult(sha: $sha, merged: $merged, message: $message)';
+
  }

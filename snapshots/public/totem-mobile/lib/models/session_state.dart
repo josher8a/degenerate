@@ -35,20 +35,14 @@ final class SessionStatus {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SessionStatus && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionStatus && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'SessionStatus($value)';
-  }
+  String toString() => 'SessionStatus($value)';
 }
 
 @immutable
@@ -84,20 +78,14 @@ final class TotemStatus {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is TotemStatus && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TotemStatus && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'TotemStatus($value)';
-  }
+  String toString() => 'TotemStatus($value)';
 }
 
 @immutable
@@ -176,31 +164,27 @@ final class SessionState {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SessionState &&
-            keeperSlug == other.keeperSlug &&
-            status == other.status &&
-            listEquals(speakingOrder, other.speakingOrder) &&
-            speakingNow == other.speakingNow &&
-            nextSpeaker == other.nextSpeaker &&
-            totemStatus == other.totemStatus;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionState &&
+          keeperSlug == other.keeperSlug &&
+          status == other.status &&
+          listEquals(speakingOrder, other.speakingOrder) &&
+          speakingNow == other.speakingNow &&
+          nextSpeaker == other.nextSpeaker &&
+          totemStatus == other.totemStatus;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      keeperSlug,
-      status,
-      Object.hashAll(speakingOrder),
-      speakingNow,
-      nextSpeaker,
-      totemStatus,
-    );
-  }
+  int get hashCode => Object.hash(
+    keeperSlug,
+    status,
+    Object.hashAll(speakingOrder),
+    speakingNow,
+    nextSpeaker,
+    totemStatus,
+  );
 
   @override
-  String toString() {
-    return 'SessionState(keeperSlug: $keeperSlug, status: $status, speakingOrder: $speakingOrder, speakingNow: $speakingNow, nextSpeaker: $nextSpeaker, totemStatus: $totemStatus)';
-  }
+  String toString() =>
+      'SessionState(keeperSlug: $keeperSlug, status: $status, speakingOrder: $speakingOrder, speakingNow: $speakingNow, nextSpeaker: $nextSpeaker, totemStatus: $totemStatus)';
 }

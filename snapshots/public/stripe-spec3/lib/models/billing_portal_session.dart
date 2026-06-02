@@ -155,10 +155,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingPortalSessionLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingPortalSessionLocale($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingPortalSessionLocale && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingPortalSessionLocale($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
@@ -177,10 +180,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingPortalSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingPortalSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingPortalSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingPortalSessionObject($value)';
+
  }
 /// The Billing customer portal is a Stripe-hosted UI for subscription and
 /// billing management.
@@ -302,7 +308,7 @@ BillingPortalSession copyWith({Configuration? configuration, int? created, Strin
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPortalSession &&
           configuration == other.configuration &&
           created == other.created &&
@@ -315,7 +321,10 @@ BillingPortalSession copyWith({Configuration? configuration, int? created, Strin
           object == other.object &&
           onBehalfOf == other.onBehalfOf &&
           returnUrl == other.returnUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url); } 
-@override String toString() { return 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url);
+
+@override String toString() => 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)';
+
  }

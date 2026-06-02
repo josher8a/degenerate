@@ -18,13 +18,15 @@ final class ActionsDeleteWorkflowRunLogsError$403 extends ActionsDeleteWorkflowR
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActionsDeleteWorkflowRunLogsError$500 extends ActionsDeleteWorkflowRunLogsError {const ActionsDeleteWorkflowRunLogsError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ActionsDeleteWorkflowRunLogsError$Unknown extends ActionsDeleteWorkflowRunLogsError {const ActionsDeleteWorkflowRunLogsError$Unknown(this.statusCode, this.rawBody, );
 

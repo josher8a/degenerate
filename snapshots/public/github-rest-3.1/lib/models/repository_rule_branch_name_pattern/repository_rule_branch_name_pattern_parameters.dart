@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Operator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Operator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Operator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Operator($value)';
+
  }
 @immutable final class RepositoryRuleBranchNamePatternParameters {const RepositoryRuleBranchNamePatternParameters({required this.$operator, required this.pattern, this.name, this.negate, });
 
@@ -66,12 +69,15 @@ RepositoryRuleBranchNamePatternParameters copyWith({String? Function()? name, bo
   $operator: $operator ?? this.$operator,
   pattern: pattern ?? this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleBranchNamePatternParameters &&
           name == other.name &&
           negate == other.negate &&
           $operator == other.$operator &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(name, negate, $operator, pattern); } 
-@override String toString() { return 'RepositoryRuleBranchNamePatternParameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(name, negate, $operator, pattern);
+
+@override String toString() => 'RepositoryRuleBranchNamePatternParameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)';
+
  }

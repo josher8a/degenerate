@@ -33,10 +33,13 @@ RulesetsRedirectFromList copyWith({String? key, String? name, }) { return Rulese
   key: key ?? this.key,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRedirectFromList &&
           key == other.key &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(key, name); } 
-@override String toString() { return 'RulesetsRedirectFromList(key: $key, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(key, name);
+
+@override String toString() => 'RulesetsRedirectFromList(key: $key, name: $name)';
+
  }

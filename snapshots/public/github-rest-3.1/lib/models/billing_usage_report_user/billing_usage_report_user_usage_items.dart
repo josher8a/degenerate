@@ -78,7 +78,7 @@ BillingUsageReportUserUsageItems copyWith({String? date, String? product, String
   netAmount: netAmount ?? this.netAmount,
   repositoryName: repositoryName != null ? repositoryName() : this.repositoryName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUsageReportUserUsageItems &&
           date == other.date &&
           product == other.product &&
@@ -89,7 +89,10 @@ BillingUsageReportUserUsageItems copyWith({String? date, String? product, String
           grossAmount == other.grossAmount &&
           discountAmount == other.discountAmount &&
           netAmount == other.netAmount &&
-          repositoryName == other.repositoryName; } 
-@override int get hashCode { return Object.hash(date, product, sku, quantity, unitType, pricePerUnit, grossAmount, discountAmount, netAmount, repositoryName); } 
-@override String toString() { return 'BillingUsageReportUserUsageItems(date: $date, product: $product, sku: $sku, quantity: $quantity, unitType: $unitType, pricePerUnit: $pricePerUnit, grossAmount: $grossAmount, discountAmount: $discountAmount, netAmount: $netAmount, repositoryName: $repositoryName)'; } 
+          repositoryName == other.repositoryName;
+
+@override int get hashCode => Object.hash(date, product, sku, quantity, unitType, pricePerUnit, grossAmount, discountAmount, netAmount, repositoryName);
+
+@override String toString() => 'BillingUsageReportUserUsageItems(date: $date, product: $product, sku: $sku, quantity: $quantity, unitType: $unitType, pricePerUnit: $pricePerUnit, grossAmount: $grossAmount, discountAmount: $discountAmount, netAmount: $netAmount, repositoryName: $repositoryName)';
+
  }

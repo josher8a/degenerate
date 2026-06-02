@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandateObject($value)';
+
  }
 /// The mandate status indicates whether or not you can use it to initiate a payment.
 @immutable final class MandateStatus {const MandateStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandateStatus($value)';
+
  }
 /// The type of the mandate.
 @immutable final class MandateType {const MandateType._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandateType($value)';
+
  }
 /// A Mandate is a record of the permission that your customer gives you to debit their payment method.
 @immutable final class Mandate {const Mandate({required this.customerAcceptance, required this.id, required this.livemode, required this.object, required this.paymentMethod, required this.paymentMethodDetails, required this.status, required this.type, this.multiUse, this.onBehalfOf, this.singleUse, });
@@ -163,7 +172,7 @@ Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? live
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Mandate &&
           customerAcceptance == other.customerAcceptance &&
           id == other.id &&
@@ -175,7 +184,10 @@ Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? live
           paymentMethodDetails == other.paymentMethodDetails &&
           singleUse == other.singleUse &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customerAcceptance, id, livemode, multiUse, object, onBehalfOf, paymentMethod, paymentMethodDetails, singleUse, status, type); } 
-@override String toString() { return 'Mandate(customerAcceptance: $customerAcceptance, id: $id, livemode: $livemode, multiUse: $multiUse, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, singleUse: $singleUse, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customerAcceptance, id, livemode, multiUse, object, onBehalfOf, paymentMethod, paymentMethodDetails, singleUse, status, type);
+
+@override String toString() => 'Mandate(customerAcceptance: $customerAcceptance, id: $id, livemode: $livemode, multiUse: $multiUse, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, singleUse: $singleUse, status: $status, type: $type)';
+
  }

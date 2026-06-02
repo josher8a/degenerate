@@ -32,11 +32,14 @@ PostTerminalReadersReaderConfirmPaymentIntentRequest copyWith({ConfirmConfig? Fu
   expand: expand != null ? expand() : this.expand,
   paymentIntent: paymentIntent ?? this.paymentIntent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderConfirmPaymentIntentRequest &&
           confirmConfig == other.confirmConfig &&
           listEquals(expand, other.expand) &&
-          paymentIntent == other.paymentIntent; } 
-@override int get hashCode { return Object.hash(confirmConfig, Object.hashAll(expand ?? const []), paymentIntent); } 
-@override String toString() { return 'PostTerminalReadersReaderConfirmPaymentIntentRequest(confirmConfig: $confirmConfig, expand: $expand, paymentIntent: $paymentIntent)'; } 
+          paymentIntent == other.paymentIntent;
+
+@override int get hashCode => Object.hash(confirmConfig, Object.hashAll(expand ?? const []), paymentIntent);
+
+@override String toString() => 'PostTerminalReadersReaderConfirmPaymentIntentRequest(confirmConfig: $confirmConfig, expand: $expand, paymentIntent: $paymentIntent)';
+
  }

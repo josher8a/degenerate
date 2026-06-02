@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 StreamWatermarkResponseSingle copyWith({StreamWatermarks? Function()? result}) { return StreamWatermarkResponseSingle(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarkResponseSingle &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'StreamWatermarkResponseSingle(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'StreamWatermarkResponseSingle(result: $result)';
+
  }

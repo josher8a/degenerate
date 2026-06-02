@@ -57,7 +57,7 @@ Event copyWith({String? id, String? Function()? type, Actor? actor, EventRepo? r
   public: public ?? this.public,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Event &&
           id == other.id &&
           type == other.type &&
@@ -66,7 +66,10 @@ Event copyWith({String? id, String? Function()? type, Actor? actor, EventRepo? r
           org == other.org &&
           payload == other.payload &&
           public == other.public &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, type, actor, repo, org, payload, public, createdAt); } 
-@override String toString() { return 'Event(id: $id, type: $type, actor: $actor, repo: $repo, org: $org, payload: $payload, public: $public, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, type, actor, repo, org, payload, public, createdAt);
+
+@override String toString() => 'Event(id: $id, type: $type, actor: $actor, repo: $repo, org: $org, payload: $payload, public: $public, createdAt: $createdAt)';
+
  }

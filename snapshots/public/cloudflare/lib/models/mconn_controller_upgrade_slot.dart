@@ -25,11 +25,14 @@ MconnControllerUpgradeSlot copyWith({MconnUuid? Function()? connectorId, double?
   id: id ?? this.id,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerUpgradeSlot &&
           connectorId == other.connectorId &&
           id == other.id &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(connectorId, id, startedAt); } 
-@override String toString() { return 'MconnControllerUpgradeSlot(connectorId: $connectorId, id: $id, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(connectorId, id, startedAt);
+
+@override String toString() => 'MconnControllerUpgradeSlot(connectorId: $connectorId, id: $id, startedAt: $startedAt)';
+
  }

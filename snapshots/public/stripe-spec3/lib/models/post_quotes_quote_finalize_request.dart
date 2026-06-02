@@ -22,10 +22,13 @@ PostQuotesQuoteFinalizeRequest copyWith({List<String>? Function()? expand, int? 
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesQuoteFinalizeRequest &&
           listEquals(expand, other.expand) &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt); } 
-@override String toString() { return 'PostQuotesQuoteFinalizeRequest(expand: $expand, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), expiresAt);
+
+@override String toString() => 'PostQuotesQuoteFinalizeRequest(expand: $expand, expiresAt: $expiresAt)';
+
  }

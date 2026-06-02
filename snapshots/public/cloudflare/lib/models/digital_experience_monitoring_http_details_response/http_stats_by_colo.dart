@@ -55,7 +55,7 @@ HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availa
   serverResponseTimeMs: serverResponseTimeMs ?? this.serverResponseTimeMs,
   uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HttpStatsByColo &&
           availabilityPct == other.availabilityPct &&
           colo == other.colo &&
@@ -63,7 +63,10 @@ HttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availa
           listEquals(httpStatusCode, other.httpStatusCode) &&
           resourceFetchTimeMs == other.resourceFetchTimeMs &&
           serverResponseTimeMs == other.serverResponseTimeMs &&
-          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
-@override int get hashCode { return Object.hash(availabilityPct, colo, dnsResponseTimeMs, Object.hashAll(httpStatusCode), resourceFetchTimeMs, serverResponseTimeMs, uniqueDevicesTotal); } 
-@override String toString() { return 'HttpStatsByColo(availabilityPct: $availabilityPct, colo: $colo, dnsResponseTimeMs: $dnsResponseTimeMs, httpStatusCode: $httpStatusCode, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+          uniqueDevicesTotal == other.uniqueDevicesTotal;
+
+@override int get hashCode => Object.hash(availabilityPct, colo, dnsResponseTimeMs, Object.hashAll(httpStatusCode), resourceFetchTimeMs, serverResponseTimeMs, uniqueDevicesTotal);
+
+@override String toString() => 'HttpStatsByColo(availabilityPct: $availabilityPct, colo: $colo, dnsResponseTimeMs: $dnsResponseTimeMs, httpStatusCode: $httpStatusCode, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)';
+
  }

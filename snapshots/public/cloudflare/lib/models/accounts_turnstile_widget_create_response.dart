@@ -40,13 +40,16 @@ AccountsTurnstileWidgetCreateResponse copyWith({List<TurnstileMessages2>? errors
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsTurnstileWidgetCreateResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
           resultInfo == other.resultInfo &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, result); } 
-@override String toString() { return 'AccountsTurnstileWidgetCreateResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, result);
+
+@override String toString() => 'AccountsTurnstileWidgetCreateResponse(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
+
  }

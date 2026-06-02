@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Docker copyWith({List<String>? Function()? tag}) { return Docker(
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Docker &&
-          listEquals(tag, other.tag); } 
-@override int get hashCode { return Object.hashAll(tag ?? const []); } 
-@override String toString() { return 'Docker(tag: $tag)'; } 
+          listEquals(tag, other.tag);
+
+@override int get hashCode => Object.hashAll(tag ?? const []);
+
+@override String toString() => 'Docker(tag: $tag)';
+
  }

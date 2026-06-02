@@ -58,14 +58,17 @@ IssuingDisputeMerchandiseNotAsDescribedEvidence copyWith({IssuingDisputeCanceled
   returnStatus: returnStatus != null ? returnStatus() : this.returnStatus,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeMerchandiseNotAsDescribedEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           receivedAt == other.receivedAt &&
           returnDescription == other.returnDescription &&
           returnStatus == other.returnStatus &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation, receivedAt, returnDescription, returnStatus, returnedAt); } 
-@override String toString() { return 'IssuingDisputeMerchandiseNotAsDescribedEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation, receivedAt: $receivedAt, returnDescription: $returnDescription, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
+          returnedAt == other.returnedAt;
+
+@override int get hashCode => Object.hash(additionalDocumentation, explanation, receivedAt, returnDescription, returnStatus, returnedAt);
+
+@override String toString() => 'IssuingDisputeMerchandiseNotAsDescribedEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation, receivedAt: $receivedAt, returnDescription: $returnDescription, returnStatus: $returnStatus, returnedAt: $returnedAt)';
+
  }

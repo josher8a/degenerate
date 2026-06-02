@@ -42,13 +42,16 @@ PostPaymentMethodsPaymentMethodRequestBillingDetails copyWith({PostPaymentMethod
   phone: phone != null ? phone() : this.phone,
   taxId: taxId != null ? taxId() : this.taxId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequestBillingDetails &&
           address == other.address &&
           email == other.email &&
           name == other.name &&
           phone == other.phone &&
-          taxId == other.taxId; } 
-@override int get hashCode { return Object.hash(address, email, name, phone, taxId); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestBillingDetails(address: $address, email: $email, name: $name, phone: $phone, taxId: $taxId)'; } 
+          taxId == other.taxId;
+
+@override int get hashCode => Object.hash(address, email, name, phone, taxId);
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodRequestBillingDetails(address: $address, email: $email, name: $name, phone: $phone, taxId: $taxId)';
+
  }

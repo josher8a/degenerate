@@ -40,14 +40,17 @@ EmailCatchAllRule copyWith({List<EmailRuleCatchallAction>? Function()? actions, 
   name: name != null ? name() : this.name,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailCatchAllRule &&
           listEquals(actions, other.actions) &&
           enabled == other.enabled &&
           id == other.id &&
           listEquals(matchers, other.matchers) &&
           name == other.name &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions ?? const []), enabled, id, Object.hashAll(matchers ?? const []), name, tag); } 
-@override String toString() { return 'EmailCatchAllRule(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions ?? const []), enabled, id, Object.hashAll(matchers ?? const []), name, tag);
+
+@override String toString() => 'EmailCatchAllRule(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, tag: $tag)';
+
  }

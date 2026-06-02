@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AllowedToolsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AllowedToolsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowedToolsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AllowedToolsType($value)';
+
  }
 /// Constrain to an allowed subset of tools.
 @immutable final class Variant1AllowedTools {const Variant1AllowedTools({required this.allowedTools, required this.type, });
@@ -43,10 +46,13 @@ Variant1AllowedTools copyWith({AllowedToolsAllowedTools? allowedTools, AllowedTo
   allowedTools: allowedTools ?? this.allowedTools,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1AllowedTools &&
           allowedTools == other.allowedTools &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(allowedTools, type); } 
-@override String toString() { return 'Variant1AllowedTools(allowedTools: $allowedTools, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(allowedTools, type);
+
+@override String toString() => 'Variant1AllowedTools(allowedTools: $allowedTools, type: $type)';
+
  }

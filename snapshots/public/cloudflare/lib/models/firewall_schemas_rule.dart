@@ -67,7 +67,7 @@ FirewallSchemasRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallC
   notes: notes != null ? notes() : this.notes,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallSchemasRule &&
           listEquals(allowedModes, other.allowedModes) &&
           configuration == other.configuration &&
@@ -76,7 +76,10 @@ FirewallSchemasRule copyWith({List<FirewallSchemasMode>? allowedModes, FirewallC
           mode == other.mode &&
           modifiedOn == other.modifiedOn &&
           notes == other.notes &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedModes), configuration, createdOn, id, mode, modifiedOn, notes, scope); } 
-@override String toString() { return 'FirewallSchemasRule(allowedModes: $allowedModes, configuration: $configuration, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, notes: $notes, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedModes), configuration, createdOn, id, mode, modifiedOn, notes, scope);
+
+@override String toString() => 'FirewallSchemasRule(allowedModes: $allowedModes, configuration: $configuration, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, notes: $notes, scope: $scope)';
+
  }

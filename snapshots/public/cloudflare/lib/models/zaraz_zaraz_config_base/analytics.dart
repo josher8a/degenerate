@@ -37,11 +37,14 @@ Analytics copyWith({String? Function()? defaultPurpose, bool? Function()? enable
   enabled: enabled != null ? enabled() : this.enabled,
   sessionExpTime: sessionExpTime != null ? sessionExpTime() : this.sessionExpTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Analytics &&
           defaultPurpose == other.defaultPurpose &&
           enabled == other.enabled &&
-          sessionExpTime == other.sessionExpTime; } 
-@override int get hashCode { return Object.hash(defaultPurpose, enabled, sessionExpTime); } 
-@override String toString() { return 'Analytics(defaultPurpose: $defaultPurpose, enabled: $enabled, sessionExpTime: $sessionExpTime)'; } 
+          sessionExpTime == other.sessionExpTime;
+
+@override int get hashCode => Object.hash(defaultPurpose, enabled, sessionExpTime);
+
+@override String toString() => 'Analytics(defaultPurpose: $defaultPurpose, enabled: $enabled, sessionExpTime: $sessionExpTime)';
+
  }

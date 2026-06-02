@@ -31,11 +31,14 @@ WorkersBindingKindQueue copyWith({WorkersBindingName? name, String? queueName, S
   queueName: queueName ?? this.queueName,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindQueue &&
           name == other.name &&
           queueName == other.queueName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, queueName, type); } 
-@override String toString() { return 'WorkersBindingKindQueue(name: $name, queueName: $queueName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, queueName, type);
+
+@override String toString() => 'WorkersBindingKindQueue(name: $name, queueName: $queueName, type: $type)';
+
  }

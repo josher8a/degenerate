@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Flow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Flow($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Flow && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Flow($value)';
+
  }
 @immutable final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
 
@@ -50,10 +53,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSourcesRequestUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSourcesRequestUsage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostSourcesRequestUsage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostSourcesRequestUsage($value)';
+
  }
 @immutable final class PostSourcesRequest {const PostSourcesRequest({this.amount, this.currency, this.customer, this.expand, this.flow, this.mandate, this.metadata, this.originalSource, this.owner, this.receiver, this.redirect, this.sourceOrder, this.statementDescriptor, this.token, this.type, this.usage, });
 
@@ -182,7 +188,7 @@ PostSourcesRequest copyWith({int? Function()? amount, String? Function()? curren
   type: type != null ? type() : this.type,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -199,7 +205,10 @@ PostSourcesRequest copyWith({int? Function()? amount, String? Function()? curren
           statementDescriptor == other.statementDescriptor &&
           token == other.token &&
           type == other.type &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, Object.hashAll(expand ?? const []), flow, mandate, metadata, originalSource, owner, receiver, redirect, sourceOrder, statementDescriptor, token, type, usage); } 
-@override String toString() { return 'PostSourcesRequest(amount: $amount, currency: $currency, customer: $customer, expand: $expand, flow: $flow, mandate: $mandate, metadata: $metadata, originalSource: $originalSource, owner: $owner, receiver: $receiver, redirect: $redirect, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, token: $token, type: $type, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(amount, currency, customer, Object.hashAll(expand ?? const []), flow, mandate, metadata, originalSource, owner, receiver, redirect, sourceOrder, statementDescriptor, token, type, usage);
+
+@override String toString() => 'PostSourcesRequest(amount: $amount, currency: $currency, customer: $customer, expand: $expand, flow: $flow, mandate: $mandate, metadata: $metadata, originalSource: $originalSource, owner: $owner, receiver: $receiver, redirect: $redirect, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, token: $token, type: $type, usage: $usage)';
+
  }

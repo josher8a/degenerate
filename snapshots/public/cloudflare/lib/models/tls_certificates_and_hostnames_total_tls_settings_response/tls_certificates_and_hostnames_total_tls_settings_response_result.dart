@@ -17,10 +17,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesValidityPeriod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesValidityPeriod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesValidityPeriod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesValidityPeriod($value)';
+
  }
 @immutable final class TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult {const TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult({this.certificateAuthority, this.enabled, this.validityPeriod, });
 
@@ -49,11 +52,14 @@ TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult copyWith({TlsCertifica
   enabled: enabled != null ? enabled() : this.enabled,
   validityPeriod: validityPeriod != null ? validityPeriod() : this.validityPeriod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult &&
           certificateAuthority == other.certificateAuthority &&
           enabled == other.enabled &&
-          validityPeriod == other.validityPeriod; } 
-@override int get hashCode { return Object.hash(certificateAuthority, enabled, validityPeriod); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult(certificateAuthority: $certificateAuthority, enabled: $enabled, validityPeriod: $validityPeriod)'; } 
+          validityPeriod == other.validityPeriod;
+
+@override int get hashCode => Object.hash(certificateAuthority, enabled, validityPeriod);
+
+@override String toString() => 'TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult(certificateAuthority: $certificateAuthority, enabled: $enabled, validityPeriod: $validityPeriod)';
+
  }

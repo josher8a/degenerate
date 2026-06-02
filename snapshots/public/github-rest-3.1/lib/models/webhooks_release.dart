@@ -145,7 +145,7 @@ WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, W
   url: url ?? this.url,
   zipballUrl: zipballUrl != null ? zipballUrl() : this.zipballUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksRelease &&
           listEquals(assets, other.assets) &&
           assetsUrl == other.assetsUrl &&
@@ -168,7 +168,10 @@ WebhooksRelease copyWith({List<WebhooksReleaseAssets>? assets, Uri? assetsUrl, W
           targetCommitish == other.targetCommitish &&
           uploadUrl == other.uploadUrl &&
           url == other.url &&
-          zipballUrl == other.zipballUrl; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(assets), assetsUrl, author, body, createdAt, updatedAt, discussionUrl, draft, htmlUrl, id, immutable, name, nodeId, prerelease, publishedAt, reactions, tagName, tarballUrl, targetCommitish, uploadUrl, url, zipballUrl]); } 
-@override String toString() { return 'WebhooksRelease(assets: $assets, assetsUrl: $assetsUrl, author: $author, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, discussionUrl: $discussionUrl, draft: $draft, htmlUrl: $htmlUrl, id: $id, immutable: $immutable, name: $name, nodeId: $nodeId, prerelease: $prerelease, publishedAt: $publishedAt, reactions: $reactions, tagName: $tagName, tarballUrl: $tarballUrl, targetCommitish: $targetCommitish, uploadUrl: $uploadUrl, url: $url, zipballUrl: $zipballUrl)'; } 
+          zipballUrl == other.zipballUrl;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(assets), assetsUrl, author, body, createdAt, updatedAt, discussionUrl, draft, htmlUrl, id, immutable, name, nodeId, prerelease, publishedAt, reactions, tagName, tarballUrl, targetCommitish, uploadUrl, url, zipballUrl]);
+
+@override String toString() => 'WebhooksRelease(assets: $assets, assetsUrl: $assetsUrl, author: $author, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, discussionUrl: $discussionUrl, draft: $draft, htmlUrl: $htmlUrl, id: $id, immutable: $immutable, name: $name, nodeId: $nodeId, prerelease: $prerelease, publishedAt: $publishedAt, reactions: $reactions, tagName: $tagName, tarballUrl: $tarballUrl, targetCommitish: $targetCommitish, uploadUrl: $uploadUrl, url: $url, zipballUrl: $zipballUrl)';
+
  }

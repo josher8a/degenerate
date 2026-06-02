@@ -22,10 +22,13 @@ AigConfigPostGatewayDynamicRouteVersionRequest copyWith({String? comment, List<A
   comment: comment ?? this.comment,
   elements: elements ?? this.elements,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteVersionRequest &&
           comment == other.comment &&
-          listEquals(elements, other.elements); } 
-@override int get hashCode { return Object.hash(comment, Object.hashAll(elements)); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionRequest(comment: $comment, elements: $elements)'; } 
+          listEquals(elements, other.elements);
+
+@override int get hashCode => Object.hash(comment, Object.hashAll(elements));
+
+@override String toString() => 'AigConfigPostGatewayDynamicRouteVersionRequest(comment: $comment, elements: $elements)';
+
  }

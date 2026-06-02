@@ -43,13 +43,16 @@ FirewallRewriteAction copyWith({FirewallWafRewriteAction? Function()? block, Fir
   disable: disable != null ? disable() : this.disable,
   simulate: simulate != null ? simulate() : this.simulate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRewriteAction &&
           block == other.block &&
           challenge == other.challenge &&
           $default == other.$default &&
           disable == other.disable &&
-          simulate == other.simulate; } 
-@override int get hashCode { return Object.hash(block, challenge, $default, disable, simulate); } 
-@override String toString() { return 'FirewallRewriteAction(block: $block, challenge: $challenge, \$default: ${$default}, disable: $disable, simulate: $simulate)'; } 
+          simulate == other.simulate;
+
+@override int get hashCode => Object.hash(block, challenge, $default, disable, simulate);
+
+@override String toString() => 'FirewallRewriteAction(block: $block, challenge: $challenge, \$default: ${$default}, disable: $disable, simulate: $simulate)';
+
  }

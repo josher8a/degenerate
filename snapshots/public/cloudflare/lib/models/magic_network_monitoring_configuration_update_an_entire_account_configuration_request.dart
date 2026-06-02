@@ -33,12 +33,15 @@ MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest cop
   routerIps: routerIps != null ? routerIps() : this.routerIps,
   warpDevices: warpDevices != null ? warpDevices() : this.warpDevices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest &&
           defaultSampling == other.defaultSampling &&
           name == other.name &&
           listEquals(routerIps, other.routerIps) &&
-          listEquals(warpDevices, other.warpDevices); } 
-@override int get hashCode { return Object.hash(defaultSampling, name, Object.hashAll(routerIps ?? const []), Object.hashAll(warpDevices ?? const [])); } 
-@override String toString() { return 'MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)'; } 
+          listEquals(warpDevices, other.warpDevices);
+
+@override int get hashCode => Object.hash(defaultSampling, name, Object.hashAll(routerIps ?? const []), Object.hashAll(warpDevices ?? const []));
+
+@override String toString() => 'MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)';
+
  }

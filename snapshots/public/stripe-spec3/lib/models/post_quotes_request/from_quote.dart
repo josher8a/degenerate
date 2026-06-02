@@ -25,10 +25,13 @@ FromQuote copyWith({bool? Function()? isRevision, String? quote, }) { return Fro
   isRevision: isRevision != null ? isRevision() : this.isRevision,
   quote: quote ?? this.quote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FromQuote &&
           isRevision == other.isRevision &&
-          quote == other.quote; } 
-@override int get hashCode { return Object.hash(isRevision, quote); } 
-@override String toString() { return 'FromQuote(isRevision: $isRevision, quote: $quote)'; } 
+          quote == other.quote;
+
+@override int get hashCode => Object.hash(isRevision, quote);
+
+@override String toString() => 'FromQuote(isRevision: $isRevision, quote: $quote)';
+
  }

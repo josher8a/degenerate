@@ -120,7 +120,7 @@ ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? c
   networks: networks != null ? networks() : this.networks,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayLocations &&
           clientDefault == other.clientDefault &&
           createdAt == other.createdAt &&
@@ -135,7 +135,10 @@ ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault? Function()? c
           ipv4DestinationBackup == other.ipv4DestinationBackup &&
           name == other.name &&
           listEquals(networks, other.networks) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks ?? const []), updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks ?? const []), updatedAt);
+
+@override String toString() => 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)';
+
  }

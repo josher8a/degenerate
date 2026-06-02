@@ -81,7 +81,7 @@ TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, doubl
   task: task != null ? task() : this.task,
   vadFilter: vadFilter != null ? vadFilter() : this.vadFilter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TurboRequest &&
           audio == other.audio &&
           beamSize == other.beamSize &&
@@ -94,7 +94,10 @@ TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, doubl
           noSpeechThreshold == other.noSpeechThreshold &&
           prefix == other.prefix &&
           task == other.task &&
-          vadFilter == other.vadFilter; } 
-@override int get hashCode { return Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter); } 
-@override String toString() { return 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)'; } 
+          vadFilter == other.vadFilter;
+
+@override int get hashCode => Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter);
+
+@override String toString() => 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)';
+
  }

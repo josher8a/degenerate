@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sql')
 ValidateSqlRequest copyWith({String? sql}) { return ValidateSqlRequest(
   sql: sql ?? this.sql,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidateSqlRequest &&
-          sql == other.sql; } 
-@override int get hashCode { return sql.hashCode; } 
-@override String toString() { return 'ValidateSqlRequest(sql: $sql)'; } 
+          sql == other.sql;
+
+@override int get hashCode => sql.hashCode;
+
+@override String toString() => 'ValidateSqlRequest(sql: $sql)';
+
  }

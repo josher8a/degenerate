@@ -27,10 +27,13 @@ PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode copyWith({String? host
   hostedInstructionsUrl: hostedInstructionsUrl ?? this.hostedInstructionsUrl,
   qrCode: qrCode ?? this.qrCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode &&
           hostedInstructionsUrl == other.hostedInstructionsUrl &&
-          qrCode == other.qrCode; } 
-@override int get hashCode { return Object.hash(hostedInstructionsUrl, qrCode); } 
-@override String toString() { return 'PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode(hostedInstructionsUrl: $hostedInstructionsUrl, qrCode: $qrCode)'; } 
+          qrCode == other.qrCode;
+
+@override int get hashCode => Object.hash(hostedInstructionsUrl, qrCode);
+
+@override String toString() => 'PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode(hostedInstructionsUrl: $hostedInstructionsUrl, qrCode: $qrCode)';
+
  }

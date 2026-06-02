@@ -21,10 +21,13 @@ GetItemFilter copyWith({String? status, int? limit, }) { return GetItemFilter(
   status: status ?? this.status,
   limit: limit ?? this.limit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetItemFilter &&
           status == other.status &&
-          limit == other.limit; } 
-@override int get hashCode { return Object.hash(status, limit); } 
-@override String toString() { return 'GetItemFilter(status: $status, limit: $limit)'; } 
+          limit == other.limit;
+
+@override int get hashCode => Object.hash(status, limit);
+
+@override String toString() => 'GetItemFilter(status: $status, limit: $limit)';
+
  }

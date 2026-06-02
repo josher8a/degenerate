@@ -170,7 +170,7 @@ Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? custom
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   testClock: testClock != null ? testClock() : this.testClock,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Invoiceitem &&
           amount == other.amount &&
           currency == other.currency &&
@@ -193,7 +193,10 @@ Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? custom
           prorationDetails == other.prorationDetails &&
           quantity == other.quantity &&
           listEquals(taxRates, other.taxRates) &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([amount, currency, customer, customerAccount, date, description, discountable, Object.hashAll(discounts ?? const []), id, invoice, livemode, metadata, netAmount, object, parent, period, pricing, proration, prorationDetails, quantity, Object.hashAll(taxRates ?? const []), testClock]); } 
-@override String toString() { return 'Invoiceitem(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, date: $date, description: $description, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, netAmount: $netAmount, object: $object, parent: $parent, period: $period, pricing: $pricing, proration: $proration, prorationDetails: $prorationDetails, quantity: $quantity, taxRates: $taxRates, testClock: $testClock)'; } 
+          testClock == other.testClock;
+
+@override int get hashCode => Object.hashAll([amount, currency, customer, customerAccount, date, description, discountable, Object.hashAll(discounts ?? const []), id, invoice, livemode, metadata, netAmount, object, parent, period, pricing, proration, prorationDetails, quantity, Object.hashAll(taxRates ?? const []), testClock]);
+
+@override String toString() => 'Invoiceitem(amount: $amount, currency: $currency, customer: $customer, customerAccount: $customerAccount, date: $date, description: $description, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, netAmount: $netAmount, object: $object, parent: $parent, period: $period, pricing: $pricing, proration: $proration, prorationDetails: $prorationDetails, quantity: $quantity, taxRates: $taxRates, testClock: $testClock)';
+
  }

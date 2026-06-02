@@ -45,13 +45,16 @@ RequestsByColo copyWith({int? Function()? all, int? Function()? cached, Map<Stri
   httpStatus: httpStatus != null ? httpStatus() : this.httpStatus,
   uncached: uncached != null ? uncached() : this.uncached,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequestsByColo &&
           all == other.all &&
           cached == other.cached &&
           country == other.country &&
           httpStatus == other.httpStatus &&
-          uncached == other.uncached; } 
-@override int get hashCode { return Object.hash(all, cached, country, httpStatus, uncached); } 
-@override String toString() { return 'RequestsByColo(all: $all, cached: $cached, country: $country, httpStatus: $httpStatus, uncached: $uncached)'; } 
+          uncached == other.uncached;
+
+@override int get hashCode => Object.hash(all, cached, country, httpStatus, uncached);
+
+@override String toString() => 'RequestsByColo(all: $all, cached: $cached, country: $country, httpStatus: $httpStatus, uncached: $uncached)';
+
  }

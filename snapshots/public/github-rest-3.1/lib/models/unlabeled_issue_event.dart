@@ -70,7 +70,7 @@ UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? 
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   label: label ?? this.label,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UnlabeledIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -81,7 +81,10 @@ UnlabeledIssueEvent copyWith({int? id, String? nodeId, String? url, SimpleUser? 
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          label == other.label; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, label); } 
-@override String toString() { return 'UnlabeledIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, label: $label)'; } 
+          label == other.label;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, label);
+
+@override String toString() => 'UnlabeledIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, label: $label)';
+
  }

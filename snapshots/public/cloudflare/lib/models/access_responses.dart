@@ -95,7 +95,7 @@ AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? 
   resourceUserEmail: resourceUserEmail != null ? resourceUserEmail() : this.resourceUserEmail,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessResponses &&
           cfResourceId == other.cfResourceId &&
           errorDescription == other.errorDescription &&
@@ -107,7 +107,10 @@ AccessResponses copyWith({String? Function()? cfResourceId, String? Function()? 
           resourceGroupName == other.resourceGroupName &&
           resourceType == other.resourceType &&
           resourceUserEmail == other.resourceUserEmail &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cfResourceId, errorDescription, idpId, idpResourceId, loggedAt, requestBody, requestMethod, resourceGroupName, resourceType, resourceUserEmail, status); } 
-@override String toString() { return 'AccessResponses(cfResourceId: $cfResourceId, errorDescription: $errorDescription, idpId: $idpId, idpResourceId: $idpResourceId, loggedAt: $loggedAt, requestBody: $requestBody, requestMethod: $requestMethod, resourceGroupName: $resourceGroupName, resourceType: $resourceType, resourceUserEmail: $resourceUserEmail, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(cfResourceId, errorDescription, idpId, idpResourceId, loggedAt, requestBody, requestMethod, resourceGroupName, resourceType, resourceUserEmail, status);
+
+@override String toString() => 'AccessResponses(cfResourceId: $cfResourceId, errorDescription: $errorDescription, idpId: $idpId, idpResourceId: $idpResourceId, loggedAt: $loggedAt, requestBody: $requestBody, requestMethod: $requestMethod, resourceGroupName: $resourceGroupName, resourceType: $resourceType, resourceUserEmail: $resourceUserEmail, status: $status)';
+
  }

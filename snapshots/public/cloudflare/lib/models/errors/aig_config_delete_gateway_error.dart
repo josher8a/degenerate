@@ -17,7 +17,8 @@ final class AigConfigDeleteGatewayError$404 extends AigConfigDeleteGatewayError 
 
 final AigConfigDeleteGatewayResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigDeleteGatewayError$Unknown extends AigConfigDeleteGatewayError {const AigConfigDeleteGatewayError$Unknown(this.statusCode, this.rawBody, );
 

@@ -21,9 +21,12 @@ return errors; }
 TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax copyWith({String? jurisdiction}) { return TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax &&
-          jurisdiction == other.jurisdiction; } 
-@override int get hashCode { return jurisdiction.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)'; } 
+          jurisdiction == other.jurisdiction;
+
+@override int get hashCode => jurisdiction.hashCode;
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsLocalAmusementTax(jurisdiction: $jurisdiction)';
+
  }

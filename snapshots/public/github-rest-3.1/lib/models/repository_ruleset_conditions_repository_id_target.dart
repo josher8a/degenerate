@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('repos
 RepositoryRulesetConditionsRepositoryIdTarget copyWith({RepositoryId? repositoryId}) { return RepositoryRulesetConditionsRepositoryIdTarget(
   repositoryId: repositoryId ?? this.repositoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetConditionsRepositoryIdTarget &&
-          repositoryId == other.repositoryId; } 
-@override int get hashCode { return repositoryId.hashCode; } 
-@override String toString() { return 'RepositoryRulesetConditionsRepositoryIdTarget(repositoryId: $repositoryId)'; } 
+          repositoryId == other.repositoryId;
+
+@override int get hashCode => repositoryId.hashCode;
+
+@override String toString() => 'RepositoryRulesetConditionsRepositoryIdTarget(repositoryId: $repositoryId)';
+
  }

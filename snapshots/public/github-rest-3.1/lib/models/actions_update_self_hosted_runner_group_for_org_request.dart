@@ -46,14 +46,17 @@ ActionsUpdateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsC
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
   networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateSelfHostedRunnerGroupForOrgRequest &&
           name == other.name &&
           visibility == other.visibility &&
           allowsPublicRepositories == other.allowsPublicRepositories &&
           restrictedToWorkflows == other.restrictedToWorkflows &&
           listEquals(selectedWorkflows, other.selectedWorkflows) &&
-          networkConfigurationId == other.networkConfigurationId; } 
-@override int get hashCode { return Object.hash(name, visibility, allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId); } 
-@override String toString() { return 'ActionsUpdateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)'; } 
+          networkConfigurationId == other.networkConfigurationId;
+
+@override int get hashCode => Object.hash(name, visibility, allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId);
+
+@override String toString() => 'ActionsUpdateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)';
+
  }

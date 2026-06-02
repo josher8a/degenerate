@@ -107,7 +107,7 @@ AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, Str
   ssoEndpoint: ssoEndpoint != null ? ssoEndpoint() : this.ssoEndpoint,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSamlSaasApp &&
           authType == other.authType &&
           consumerServiceUrl == other.consumerServiceUrl &&
@@ -121,7 +121,10 @@ AccessSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authType, Str
           samlAttributeTransformJsonata == other.samlAttributeTransformJsonata &&
           spEntityId == other.spEntityId &&
           ssoEndpoint == other.ssoEndpoint &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), defaultRelayState, idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, samlAttributeTransformJsonata, spEntityId, ssoEndpoint, updatedAt); } 
-@override String toString() { return 'AccessSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, defaultRelayState: $defaultRelayState, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, samlAttributeTransformJsonata: $samlAttributeTransformJsonata, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), defaultRelayState, idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, samlAttributeTransformJsonata, spEntityId, ssoEndpoint, updatedAt);
+
+@override String toString() => 'AccessSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, defaultRelayState: $defaultRelayState, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, samlAttributeTransformJsonata: $samlAttributeTransformJsonata, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)';
+
  }

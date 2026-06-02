@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldSelectorInclude copyWith({List<ShieldHost>? Function()? host}) { return ShieldSelectorInclude(
   host: host != null ? host() : this.host,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSelectorInclude &&
-          listEquals(host, other.host); } 
-@override int get hashCode { return Object.hashAll(host ?? const []); } 
-@override String toString() { return 'ShieldSelectorInclude(host: $host)'; } 
+          listEquals(host, other.host);
+
+@override int get hashCode => Object.hashAll(host ?? const []);
+
+@override String toString() => 'ShieldSelectorInclude(host: $host)';
+
  }

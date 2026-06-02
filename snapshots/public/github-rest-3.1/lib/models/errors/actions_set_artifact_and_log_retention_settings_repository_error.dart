@@ -18,13 +18,15 @@ final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$404 extends
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const ActionsSetArtifactAndLogRetentionSettingsRepositoryError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallInProgressType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallInProgressType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseMcpCallInProgressType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallInProgressType($value)';
+
  }
 /// Returned when an MCP tool call has started and is in progress.
 @immutable final class RealtimeBetaServerEventResponseMcpCallInProgress {const RealtimeBetaServerEventResponseMcpCallInProgress({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
@@ -60,12 +63,15 @@ RealtimeBetaServerEventResponseMcpCallInProgress copyWith({String? eventId, Real
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallInProgress &&
           eventId == other.eventId &&
           type == other.type &&
           outputIndex == other.outputIndex &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, outputIndex, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallInProgress(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, outputIndex, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallInProgress(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
+
  }

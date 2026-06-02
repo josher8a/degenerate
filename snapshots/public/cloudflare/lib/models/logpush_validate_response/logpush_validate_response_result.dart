@@ -22,10 +22,13 @@ LogpushValidateResponseResult copyWith({String? Function()? message, bool? Funct
   message: message != null ? message() : this.message,
   valid: valid != null ? valid() : this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushValidateResponseResult &&
           message == other.message &&
-          valid == other.valid; } 
-@override int get hashCode { return Object.hash(message, valid); } 
-@override String toString() { return 'LogpushValidateResponseResult(message: $message, valid: $valid)'; } 
+          valid == other.valid;
+
+@override int get hashCode => Object.hash(message, valid);
+
+@override String toString() => 'LogpushValidateResponseResult(message: $message, valid: $valid)';
+
  }

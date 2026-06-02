@@ -34,10 +34,13 @@ AccountBacsDebitPaymentsSettings copyWith({String? Function()? displayName, Stri
   displayName: displayName != null ? displayName() : this.displayName,
   serviceUserNumber: serviceUserNumber != null ? serviceUserNumber() : this.serviceUserNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountBacsDebitPaymentsSettings &&
           displayName == other.displayName &&
-          serviceUserNumber == other.serviceUserNumber; } 
-@override int get hashCode { return Object.hash(displayName, serviceUserNumber); } 
-@override String toString() { return 'AccountBacsDebitPaymentsSettings(displayName: $displayName, serviceUserNumber: $serviceUserNumber)'; } 
+          serviceUserNumber == other.serviceUserNumber;
+
+@override int get hashCode => Object.hash(displayName, serviceUserNumber);
+
+@override String toString() => 'AccountBacsDebitPaymentsSettings(displayName: $displayName, serviceUserNumber: $serviceUserNumber)';
+
  }

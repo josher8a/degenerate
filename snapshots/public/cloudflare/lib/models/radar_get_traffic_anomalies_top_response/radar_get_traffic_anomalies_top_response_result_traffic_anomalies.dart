@@ -36,11 +36,14 @@ RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies copyWith({String? clie
   clientCountryName: clientCountryName ?? this.clientCountryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies &&
           clientCountryAlpha2 == other.clientCountryAlpha2 &&
           clientCountryName == other.clientCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(clientCountryAlpha2, clientCountryName, value); } 
-@override String toString() { return 'RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(clientCountryAlpha2, clientCountryName, value);
+
+@override String toString() => 'RadarGetTrafficAnomaliesTopResponseResultTrafficAnomalies(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)';
+
  }

@@ -20,9 +20,12 @@ return errors; }
 ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacteristics}) { return ShieldConfiguration(
   authIdCharacteristics: authIdCharacteristics ?? this.authIdCharacteristics,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldConfiguration &&
-          listEquals(authIdCharacteristics, other.authIdCharacteristics); } 
-@override int get hashCode { return Object.hashAll(authIdCharacteristics); } 
-@override String toString() { return 'ShieldConfiguration(authIdCharacteristics: $authIdCharacteristics)'; } 
+          listEquals(authIdCharacteristics, other.authIdCharacteristics);
+
+@override int get hashCode => Object.hashAll(authIdCharacteristics);
+
+@override String toString() => 'ShieldConfiguration(authIdCharacteristics: $authIdCharacteristics)';
+
  }

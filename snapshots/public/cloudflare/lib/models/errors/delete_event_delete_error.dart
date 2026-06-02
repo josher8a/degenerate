@@ -17,7 +17,8 @@ final class DeleteEventDeleteError$400 extends DeleteEventDeleteError {const Del
 
 final DeleteEventDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteEventDeleteError$Unknown extends DeleteEventDeleteError {const DeleteEventDeleteError$Unknown(this.statusCode, this.rawBody, );
 

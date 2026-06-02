@@ -69,7 +69,7 @@ PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Func
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   transferLookupKey: transferLookupKey != null ? transferLookupKey() : this.transferLookupKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPricesPriceRequest &&
           active == other.active &&
           currencyOptions == other.currencyOptions &&
@@ -78,7 +78,10 @@ PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Func
           metadata == other.metadata &&
           nickname == other.nickname &&
           taxBehavior == other.taxBehavior &&
-          transferLookupKey == other.transferLookupKey; } 
-@override int get hashCode { return Object.hash(active, currencyOptions, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, taxBehavior, transferLookupKey); } 
-@override String toString() { return 'PostPricesPriceRequest(active: $active, currencyOptions: $currencyOptions, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, taxBehavior: $taxBehavior, transferLookupKey: $transferLookupKey)'; } 
+          transferLookupKey == other.transferLookupKey;
+
+@override int get hashCode => Object.hash(active, currencyOptions, Object.hashAll(expand ?? const []), lookupKey, metadata, nickname, taxBehavior, transferLookupKey);
+
+@override String toString() => 'PostPricesPriceRequest(active: $active, currencyOptions: $currencyOptions, expand: $expand, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, taxBehavior: $taxBehavior, transferLookupKey: $transferLookupKey)';
+
  }

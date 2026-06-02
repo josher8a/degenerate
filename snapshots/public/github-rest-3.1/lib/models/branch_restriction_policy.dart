@@ -52,7 +52,7 @@ BranchRestrictionPolicy copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, Uri? a
   teams: teams ?? this.teams,
   apps: apps ?? this.apps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchRestrictionPolicy &&
           url == other.url &&
           usersUrl == other.usersUrl &&
@@ -60,7 +60,10 @@ BranchRestrictionPolicy copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, Uri? a
           appsUrl == other.appsUrl &&
           listEquals(users, other.users) &&
           listEquals(teams, other.teams) &&
-          listEquals(apps, other.apps); } 
-@override int get hashCode { return Object.hash(url, usersUrl, teamsUrl, appsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps)); } 
-@override String toString() { return 'BranchRestrictionPolicy(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, appsUrl: $appsUrl, users: $users, teams: $teams, apps: $apps)'; } 
+          listEquals(apps, other.apps);
+
+@override int get hashCode => Object.hash(url, usersUrl, teamsUrl, appsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps));
+
+@override String toString() => 'BranchRestrictionPolicy(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, appsUrl: $appsUrl, users: $users, teams: $teams, apps: $apps)';
+
  }

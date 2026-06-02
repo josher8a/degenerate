@@ -36,12 +36,15 @@ WafOverridesUpdateWafOverrideRequest copyWith({FirewallIdentifier? id, FirewallR
   rules: rules ?? this.rules,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafOverridesUpdateWafOverrideRequest &&
           id == other.id &&
           rewriteAction == other.rewriteAction &&
           rules == other.rules &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(id, rewriteAction, rules, Object.hashAll(urls)); } 
-@override String toString() { return 'WafOverridesUpdateWafOverrideRequest(id: $id, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(id, rewriteAction, rules, Object.hashAll(urls));
+
+@override String toString() => 'WafOverridesUpdateWafOverrideRequest(id: $id, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)';
+
  }

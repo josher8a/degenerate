@@ -20,10 +20,13 @@ PaymentMethodOptionsParam45 copyWith({int? Function()? expiresAfterDays, Payment
   expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam45 &&
           expiresAfterDays == other.expiresAfterDays &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam45(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(expiresAfterDays, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsParam45(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)';
+
  }

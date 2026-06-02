@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters copyWith({List<InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFiltersAccountSubcategories>? Function()? accountSubcategories}) { return InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters &&
-          listEquals(accountSubcategories, other.accountSubcategories); } 
-@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(accountSubcategories: $accountSubcategories)'; } 
+          listEquals(accountSubcategories, other.accountSubcategories);
+
+@override int get hashCode => Object.hashAll(accountSubcategories ?? const []);
+
+@override String toString() => 'InvoicePaymentMethodOptionsUsBankAccountLinkedAccountOptionsFilters(accountSubcategories: $accountSubcategories)';
+
  }

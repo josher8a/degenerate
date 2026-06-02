@@ -112,16 +112,20 @@ final InputMessage inputMessage;
 
 @override String get type => 'InputMessageResource';
 
-@override Map<String, dynamic> toJson() { return {...inputMessage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputMessage.toJson(), 'type': type};
+
 ItemResourceInputMessageResource copyWith({InputMessageRole? role, ComputerToolCallOutputStatus? Function()? status, List<InputContent>? content, }) { return ItemResourceInputMessageResource(inputMessage.copyWith(
   role: role,
   status: status,
   content: content,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceInputMessageResource && inputMessage == other.inputMessage; } 
-@override int get hashCode { return inputMessage.hashCode; } 
-@override String toString() { return 'ItemResource.inputMessageResource($inputMessage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceInputMessageResource && inputMessage == other.inputMessage;
+
+@override int get hashCode => inputMessage.hashCode;
+
+@override String toString() => 'ItemResource.inputMessageResource($inputMessage)';
+
  }
 @immutable final class ItemResourceMessage extends ItemResource {const ItemResourceMessage(this.outputMessage);
 
@@ -131,7 +135,8 @@ final OutputMessage outputMessage;
 
 @override String get type => 'message';
 
-@override Map<String, dynamic> toJson() { return {...outputMessage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...outputMessage.toJson(), 'type': type};
+
 ItemResourceMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputStatus? status, }) { return ItemResourceMessage(outputMessage.copyWith(
   id: id,
   role: role,
@@ -139,10 +144,13 @@ ItemResourceMessage copyWith({String? id, ChatCompletionResponseMessageRole? rol
   phase: phase,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceMessage && outputMessage == other.outputMessage; } 
-@override int get hashCode { return outputMessage.hashCode; } 
-@override String toString() { return 'ItemResource.message($outputMessage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceMessage && outputMessage == other.outputMessage;
+
+@override int get hashCode => outputMessage.hashCode;
+
+@override String toString() => 'ItemResource.message($outputMessage)';
+
  }
 @immutable final class ItemResourceFileSearchCall extends ItemResource {const ItemResourceFileSearchCall(this.fileSearchToolCall);
 
@@ -152,17 +160,21 @@ final FileSearchToolCall fileSearchToolCall;
 
 @override String get type => 'file_search_call';
 
-@override Map<String, dynamic> toJson() { return {...fileSearchToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type};
+
 ItemResourceFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ItemResourceFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
   status: status,
   queries: queries,
   results: results,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceFileSearchCall && fileSearchToolCall == other.fileSearchToolCall; } 
-@override int get hashCode { return fileSearchToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.fileSearchCall($fileSearchToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceFileSearchCall && fileSearchToolCall == other.fileSearchToolCall;
+
+@override int get hashCode => fileSearchToolCall.hashCode;
+
+@override String toString() => 'ItemResource.fileSearchCall($fileSearchToolCall)';
+
  }
 @immutable final class ItemResourceComputerCall extends ItemResource {const ItemResourceComputerCall(this.computerToolCall);
 
@@ -172,7 +184,8 @@ final ComputerToolCall computerToolCall;
 
 @override String get type => 'computer_call';
 
-@override Map<String, dynamic> toJson() { return {...computerToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...computerToolCall.toJson(), 'type': type};
+
 ItemResourceComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemResourceComputerCall(computerToolCall.copyWith(
   id: id,
   callId: callId,
@@ -181,10 +194,13 @@ ItemResourceComputerCall copyWith({String? id, String? callId, ComputerAction? F
   pendingSafetyChecks: pendingSafetyChecks,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceComputerCall && computerToolCall == other.computerToolCall; } 
-@override int get hashCode { return computerToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.computerCall($computerToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceComputerCall && computerToolCall == other.computerToolCall;
+
+@override int get hashCode => computerToolCall.hashCode;
+
+@override String toString() => 'ItemResource.computerCall($computerToolCall)';
+
  }
 @immutable final class ItemResourceComputerToolCallOutputResource extends ItemResource {const ItemResourceComputerToolCallOutputResource(this.computerToolCallOutput);
 
@@ -194,7 +210,8 @@ final ComputerToolCallOutput computerToolCallOutput;
 
 @override String get type => 'ComputerToolCallOutputResource';
 
-@override Map<String, dynamic> toJson() { return {...computerToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...computerToolCallOutput.toJson(), 'type': type};
+
 ItemResourceComputerToolCallOutputResource copyWith({String? Function()? id, String? callId, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, ComputerScreenshotImage? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemResourceComputerToolCallOutputResource(computerToolCallOutput.copyWith(
   id: id,
   callId: callId,
@@ -202,10 +219,13 @@ ItemResourceComputerToolCallOutputResource copyWith({String? Function()? id, Str
   output: output,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput; } 
-@override int get hashCode { return computerToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResource.computerToolCallOutputResource($computerToolCallOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceComputerToolCallOutputResource && computerToolCallOutput == other.computerToolCallOutput;
+
+@override int get hashCode => computerToolCallOutput.hashCode;
+
+@override String toString() => 'ItemResource.computerToolCallOutputResource($computerToolCallOutput)';
+
  }
 @immutable final class ItemResourceWebSearchCall extends ItemResource {const ItemResourceWebSearchCall(this.webSearchToolCall);
 
@@ -215,16 +235,20 @@ final WebSearchToolCall webSearchToolCall;
 
 @override String get type => 'web_search_call';
 
-@override Map<String, dynamic> toJson() { return {...webSearchToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...webSearchToolCall.toJson(), 'type': type};
+
 ItemResourceWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ItemResourceWebSearchCall(webSearchToolCall.copyWith(
   id: id,
   status: status,
   action: action,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceWebSearchCall && webSearchToolCall == other.webSearchToolCall; } 
-@override int get hashCode { return webSearchToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.webSearchCall($webSearchToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceWebSearchCall && webSearchToolCall == other.webSearchToolCall;
+
+@override int get hashCode => webSearchToolCall.hashCode;
+
+@override String toString() => 'ItemResource.webSearchCall($webSearchToolCall)';
+
  }
 @immutable final class ItemResourceFunctionToolCallResource extends ItemResource {const ItemResourceFunctionToolCallResource(this.functionToolCall);
 
@@ -234,7 +258,8 @@ final FunctionToolCall functionToolCall;
 
 @override String get type => 'FunctionToolCallResource';
 
-@override Map<String, dynamic> toJson() { return {...functionToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionToolCall.toJson(), 'type': type};
+
 ItemResourceFunctionToolCallResource copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemResourceFunctionToolCallResource(functionToolCall.copyWith(
   id: id,
   callId: callId,
@@ -243,10 +268,13 @@ ItemResourceFunctionToolCallResource copyWith({String? Function()? id, String? c
   arguments: arguments,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceFunctionToolCallResource && functionToolCall == other.functionToolCall; } 
-@override int get hashCode { return functionToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.functionToolCallResource($functionToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceFunctionToolCallResource && functionToolCall == other.functionToolCall;
+
+@override int get hashCode => functionToolCall.hashCode;
+
+@override String toString() => 'ItemResource.functionToolCallResource($functionToolCall)';
+
  }
 @immutable final class ItemResourceFunctionToolCallOutputResource extends ItemResource {const ItemResourceFunctionToolCallOutputResource(this.functionToolCallOutput);
 
@@ -256,17 +284,21 @@ final FunctionToolCallOutput functionToolCallOutput;
 
 @override String get type => 'FunctionToolCallOutputResource';
 
-@override Map<String, dynamic> toJson() { return {...functionToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionToolCallOutput.toJson(), 'type': type};
+
 ItemResourceFunctionToolCallOutputResource copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, ComputerToolCallOutputStatus? Function()? status, }) { return ItemResourceFunctionToolCallOutputResource(functionToolCallOutput.copyWith(
   id: id,
   callId: callId,
   output: output,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput; } 
-@override int get hashCode { return functionToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResource.functionToolCallOutputResource($functionToolCallOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceFunctionToolCallOutputResource && functionToolCallOutput == other.functionToolCallOutput;
+
+@override int get hashCode => functionToolCallOutput.hashCode;
+
+@override String toString() => 'ItemResource.functionToolCallOutputResource($functionToolCallOutput)';
+
  }
 @immutable final class ItemResourceToolSearchCall extends ItemResource {const ItemResourceToolSearchCall(this.toolSearchCall);
 
@@ -276,7 +308,8 @@ final ToolSearchCall toolSearchCall;
 
 @override String get type => 'tool_search_call';
 
-@override Map<String, dynamic> toJson() { return {...toolSearchCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...toolSearchCall.toJson(), 'type': type};
+
 ItemResourceToolSearchCall copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, dynamic Function()? arguments, FunctionCallStatus? status, String? Function()? createdBy, }) { return ItemResourceToolSearchCall(toolSearchCall.copyWith(
   id: id,
   callId: callId,
@@ -285,10 +318,13 @@ ItemResourceToolSearchCall copyWith({String? id, String? Function()? callId, Too
   status: status,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceToolSearchCall && toolSearchCall == other.toolSearchCall; } 
-@override int get hashCode { return toolSearchCall.hashCode; } 
-@override String toString() { return 'ItemResource.toolSearchCall($toolSearchCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceToolSearchCall && toolSearchCall == other.toolSearchCall;
+
+@override int get hashCode => toolSearchCall.hashCode;
+
+@override String toString() => 'ItemResource.toolSearchCall($toolSearchCall)';
+
  }
 @immutable final class ItemResourceToolSearchOutput extends ItemResource {const ItemResourceToolSearchOutput(this.toolSearchOutput);
 
@@ -298,7 +334,8 @@ final ToolSearchOutput toolSearchOutput;
 
 @override String get type => 'tool_search_output';
 
-@override Map<String, dynamic> toJson() { return {...toolSearchOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...toolSearchOutput.toJson(), 'type': type};
+
 ItemResourceToolSearchOutput copyWith({String? id, String? Function()? callId, ToolSearchExecutionType? execution, List<Tool>? tools, FunctionCallOutputStatusEnum? status, String? Function()? createdBy, }) { return ItemResourceToolSearchOutput(toolSearchOutput.copyWith(
   id: id,
   callId: callId,
@@ -307,10 +344,13 @@ ItemResourceToolSearchOutput copyWith({String? id, String? Function()? callId, T
   status: status,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceToolSearchOutput && toolSearchOutput == other.toolSearchOutput; } 
-@override int get hashCode { return toolSearchOutput.hashCode; } 
-@override String toString() { return 'ItemResource.toolSearchOutput($toolSearchOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceToolSearchOutput && toolSearchOutput == other.toolSearchOutput;
+
+@override int get hashCode => toolSearchOutput.hashCode;
+
+@override String toString() => 'ItemResource.toolSearchOutput($toolSearchOutput)';
+
  }
 @immutable final class ItemResourceImageGenerationCall extends ItemResource {const ItemResourceImageGenerationCall(this.imageGenToolCall);
 
@@ -320,16 +360,20 @@ final ImageGenToolCall imageGenToolCall;
 
 @override String get type => 'image_generation_call';
 
-@override Map<String, dynamic> toJson() { return {...imageGenToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...imageGenToolCall.toJson(), 'type': type};
+
 ItemResourceImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ItemResourceImageGenerationCall(imageGenToolCall.copyWith(
   id: id,
   status: status,
   result: result,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceImageGenerationCall && imageGenToolCall == other.imageGenToolCall; } 
-@override int get hashCode { return imageGenToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.imageGenerationCall($imageGenToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceImageGenerationCall && imageGenToolCall == other.imageGenToolCall;
+
+@override int get hashCode => imageGenToolCall.hashCode;
+
+@override String toString() => 'ItemResource.imageGenerationCall($imageGenToolCall)';
+
  }
 @immutable final class ItemResourceCodeInterpreterCall extends ItemResource {const ItemResourceCodeInterpreterCall(this.codeInterpreterToolCall);
 
@@ -339,7 +383,8 @@ final CodeInterpreterToolCall codeInterpreterToolCall;
 
 @override String get type => 'code_interpreter_call';
 
-@override Map<String, dynamic> toJson() { return {...codeInterpreterToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...codeInterpreterToolCall.toJson(), 'type': type};
+
 ItemResourceCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ItemResourceCodeInterpreterCall(codeInterpreterToolCall.copyWith(
   id: id,
   status: status,
@@ -347,10 +392,13 @@ ItemResourceCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallSta
   code: code,
   outputs: outputs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall; } 
-@override int get hashCode { return codeInterpreterToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.codeInterpreterCall($codeInterpreterToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceCodeInterpreterCall && codeInterpreterToolCall == other.codeInterpreterToolCall;
+
+@override int get hashCode => codeInterpreterToolCall.hashCode;
+
+@override String toString() => 'ItemResource.codeInterpreterCall($codeInterpreterToolCall)';
+
  }
 @immutable final class ItemResourceLocalShellCall extends ItemResource {const ItemResourceLocalShellCall(this.localShellToolCall);
 
@@ -360,17 +408,21 @@ final LocalShellToolCall localShellToolCall;
 
 @override String get type => 'local_shell_call';
 
-@override Map<String, dynamic> toJson() { return {...localShellToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...localShellToolCall.toJson(), 'type': type};
+
 ItemResourceLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ItemResourceLocalShellCall(localShellToolCall.copyWith(
   id: id,
   callId: callId,
   action: action,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceLocalShellCall && localShellToolCall == other.localShellToolCall; } 
-@override int get hashCode { return localShellToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.localShellCall($localShellToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceLocalShellCall && localShellToolCall == other.localShellToolCall;
+
+@override int get hashCode => localShellToolCall.hashCode;
+
+@override String toString() => 'ItemResource.localShellCall($localShellToolCall)';
+
  }
 @immutable final class ItemResourceLocalShellCallOutput extends ItemResource {const ItemResourceLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -380,16 +432,20 @@ final LocalShellToolCallOutput localShellToolCallOutput;
 
 @override String get type => 'local_shell_call_output';
 
-@override Map<String, dynamic> toJson() { return {...localShellToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type};
+
 ItemResourceLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ItemResourceLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
   output: output,
   status: status,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput; } 
-@override int get hashCode { return localShellToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResource.localShellCallOutput($localShellToolCallOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceLocalShellCallOutput && localShellToolCallOutput == other.localShellToolCallOutput;
+
+@override int get hashCode => localShellToolCallOutput.hashCode;
+
+@override String toString() => 'ItemResource.localShellCallOutput($localShellToolCallOutput)';
+
  }
 @immutable final class ItemResourceShellCall extends ItemResource {const ItemResourceShellCall(this.functionShellCall);
 
@@ -399,7 +455,8 @@ final FunctionShellCall functionShellCall;
 
 @override String get type => 'shell_call';
 
-@override Map<String, dynamic> toJson() { return {...functionShellCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionShellCall.toJson(), 'type': type};
+
 ItemResourceShellCall copyWith({String? id, String? callId, FunctionShellAction? action, LocalShellCallStatus? status, FunctionShellCallEnvironment? Function()? environment, String? Function()? createdBy, }) { return ItemResourceShellCall(functionShellCall.copyWith(
   id: id,
   callId: callId,
@@ -408,10 +465,13 @@ ItemResourceShellCall copyWith({String? id, String? callId, FunctionShellAction?
   environment: environment,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceShellCall && functionShellCall == other.functionShellCall; } 
-@override int get hashCode { return functionShellCall.hashCode; } 
-@override String toString() { return 'ItemResource.shellCall($functionShellCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceShellCall && functionShellCall == other.functionShellCall;
+
+@override int get hashCode => functionShellCall.hashCode;
+
+@override String toString() => 'ItemResource.shellCall($functionShellCall)';
+
  }
 @immutable final class ItemResourceShellCallOutput extends ItemResource {const ItemResourceShellCallOutput(this.functionShellCallOutput);
 
@@ -421,7 +481,8 @@ final FunctionShellCallOutput functionShellCallOutput;
 
 @override String get type => 'shell_call_output';
 
-@override Map<String, dynamic> toJson() { return {...functionShellCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionShellCallOutput.toJson(), 'type': type};
+
 ItemResourceShellCallOutput copyWith({String? id, String? callId, LocalShellCallOutputStatusEnum? status, List<FunctionShellCallOutputContent>? output, int? Function()? maxOutputLength, String? Function()? createdBy, }) { return ItemResourceShellCallOutput(functionShellCallOutput.copyWith(
   id: id,
   callId: callId,
@@ -430,10 +491,13 @@ ItemResourceShellCallOutput copyWith({String? id, String? callId, LocalShellCall
   maxOutputLength: maxOutputLength,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceShellCallOutput && functionShellCallOutput == other.functionShellCallOutput; } 
-@override int get hashCode { return functionShellCallOutput.hashCode; } 
-@override String toString() { return 'ItemResource.shellCallOutput($functionShellCallOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceShellCallOutput && functionShellCallOutput == other.functionShellCallOutput;
+
+@override int get hashCode => functionShellCallOutput.hashCode;
+
+@override String toString() => 'ItemResource.shellCallOutput($functionShellCallOutput)';
+
  }
 @immutable final class ItemResourceApplyPatchCall extends ItemResource {const ItemResourceApplyPatchCall(this.applyPatchToolCall);
 
@@ -443,7 +507,8 @@ final ApplyPatchToolCall applyPatchToolCall;
 
 @override String get type => 'apply_patch_call';
 
-@override Map<String, dynamic> toJson() { return {...applyPatchToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...applyPatchToolCall.toJson(), 'type': type};
+
 ItemResourceApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchToolCallOperation? operation, String? Function()? createdBy, }) { return ItemResourceApplyPatchCall(applyPatchToolCall.copyWith(
   id: id,
   callId: callId,
@@ -451,10 +516,13 @@ ItemResourceApplyPatchCall copyWith({String? id, String? callId, ApplyPatchCallS
   operation: operation,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall; } 
-@override int get hashCode { return applyPatchToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.applyPatchCall($applyPatchToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceApplyPatchCall && applyPatchToolCall == other.applyPatchToolCall;
+
+@override int get hashCode => applyPatchToolCall.hashCode;
+
+@override String toString() => 'ItemResource.applyPatchCall($applyPatchToolCall)';
+
  }
 @immutable final class ItemResourceApplyPatchCallOutput extends ItemResource {const ItemResourceApplyPatchCallOutput(this.applyPatchToolCallOutput);
 
@@ -464,7 +532,8 @@ final ApplyPatchToolCallOutput applyPatchToolCallOutput;
 
 @override String get type => 'apply_patch_call_output';
 
-@override Map<String, dynamic> toJson() { return {...applyPatchToolCallOutput.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...applyPatchToolCallOutput.toJson(), 'type': type};
+
 ItemResourceApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, String? Function()? createdBy, }) { return ItemResourceApplyPatchCallOutput(applyPatchToolCallOutput.copyWith(
   id: id,
   callId: callId,
@@ -472,10 +541,13 @@ ItemResourceApplyPatchCallOutput copyWith({String? id, String? callId, ApplyPatc
   output: output,
   createdBy: createdBy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput; } 
-@override int get hashCode { return applyPatchToolCallOutput.hashCode; } 
-@override String toString() { return 'ItemResource.applyPatchCallOutput($applyPatchToolCallOutput)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceApplyPatchCallOutput && applyPatchToolCallOutput == other.applyPatchToolCallOutput;
+
+@override int get hashCode => applyPatchToolCallOutput.hashCode;
+
+@override String toString() => 'ItemResource.applyPatchCallOutput($applyPatchToolCallOutput)';
+
  }
 @immutable final class ItemResourceMcpListTools extends ItemResource {const ItemResourceMcpListTools(this.mcpListTools);
 
@@ -485,17 +557,21 @@ final McpListTools mcpListTools;
 
 @override String get type => 'mcp_list_tools';
 
-@override Map<String, dynamic> toJson() { return {...mcpListTools.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type};
+
 ItemResourceMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ItemResourceMcpListTools(mcpListTools.copyWith(
   id: id,
   serverLabel: serverLabel,
   tools: tools,
   error: error,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceMcpListTools && mcpListTools == other.mcpListTools; } 
-@override int get hashCode { return mcpListTools.hashCode; } 
-@override String toString() { return 'ItemResource.mcpListTools($mcpListTools)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceMcpListTools && mcpListTools == other.mcpListTools;
+
+@override int get hashCode => mcpListTools.hashCode;
+
+@override String toString() => 'ItemResource.mcpListTools($mcpListTools)';
+
  }
 @immutable final class ItemResourceMcpApprovalRequest extends ItemResource {const ItemResourceMcpApprovalRequest(this.mcpApprovalRequest);
 
@@ -505,17 +581,21 @@ final McpApprovalRequest mcpApprovalRequest;
 
 @override String get type => 'mcp_approval_request';
 
-@override Map<String, dynamic> toJson() { return {...mcpApprovalRequest.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mcpApprovalRequest.toJson(), 'type': type};
+
 ItemResourceMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ItemResourceMcpApprovalRequest(mcpApprovalRequest.copyWith(
   id: id,
   serverLabel: serverLabel,
   name: name,
   arguments: arguments,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
-@override int get hashCode { return mcpApprovalRequest.hashCode; } 
-@override String toString() { return 'ItemResource.mcpApprovalRequest($mcpApprovalRequest)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest;
+
+@override int get hashCode => mcpApprovalRequest.hashCode;
+
+@override String toString() => 'ItemResource.mcpApprovalRequest($mcpApprovalRequest)';
+
  }
 @immutable final class ItemResourceMcpApprovalResponse extends ItemResource {const ItemResourceMcpApprovalResponse(this.mcpApprovalResponseResource);
 
@@ -525,17 +605,21 @@ final McpApprovalResponseResource mcpApprovalResponseResource;
 
 @override String get type => 'mcp_approval_response';
 
-@override Map<String, dynamic> toJson() { return {...mcpApprovalResponseResource.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mcpApprovalResponseResource.toJson(), 'type': type};
+
 ItemResourceMcpApprovalResponse copyWith({String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ItemResourceMcpApprovalResponse(mcpApprovalResponseResource.copyWith(
   id: id,
   approvalRequestId: approvalRequestId,
   approve: approve,
   reason: reason,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
-@override int get hashCode { return mcpApprovalResponseResource.hashCode; } 
-@override String toString() { return 'ItemResource.mcpApprovalResponse($mcpApprovalResponseResource)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceMcpApprovalResponse && mcpApprovalResponseResource == other.mcpApprovalResponseResource;
+
+@override int get hashCode => mcpApprovalResponseResource.hashCode;
+
+@override String toString() => 'ItemResource.mcpApprovalResponse($mcpApprovalResponseResource)';
+
  }
 @immutable final class ItemResourceMcpCall extends ItemResource {const ItemResourceMcpCall(this.mcpToolCall);
 
@@ -545,7 +629,8 @@ final McpToolCall mcpToolCall;
 
 @override String get type => 'mcp_call';
 
-@override Map<String, dynamic> toJson() { return {...mcpToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type};
+
 ItemResourceMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemResourceMcpCall(mcpToolCall.copyWith(
   id: id,
   serverLabel: serverLabel,
@@ -556,10 +641,13 @@ ItemResourceMcpCall copyWith({String? id, String? serverLabel, String? name, Str
   status: status,
   approvalRequestId: approvalRequestId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResourceMcpCall && mcpToolCall == other.mcpToolCall; } 
-@override int get hashCode { return mcpToolCall.hashCode; } 
-@override String toString() { return 'ItemResource.mcpCall($mcpToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResourceMcpCall && mcpToolCall == other.mcpToolCall;
+
+@override int get hashCode => mcpToolCall.hashCode;
+
+@override String toString() => 'ItemResource.mcpCall($mcpToolCall)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -569,9 +657,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemResource$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ItemResource.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemResource$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ItemResource.unknown($json)';
+
  }

@@ -22,10 +22,13 @@ RadarGetQualityIndexSummaryResponseResult copyWith({RadarGetAiBotsSummaryByUserA
   meta: meta ?? this.meta,
   summary0: summary0 ?? this.summary0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualityIndexSummaryResponseResult &&
           meta == other.meta &&
-          summary0 == other.summary0; } 
-@override int get hashCode { return Object.hash(meta, summary0); } 
-@override String toString() { return 'RadarGetQualityIndexSummaryResponseResult(meta: $meta, summary0: $summary0)'; } 
+          summary0 == other.summary0;
+
+@override int get hashCode => Object.hash(meta, summary0);
+
+@override String toString() => 'RadarGetQualityIndexSummaryResponseResult(meta: $meta, summary0: $summary0)';
+
  }

@@ -39,13 +39,16 @@ Verification copyWith({bool? verified, String? reason, String? Function()? paylo
   signature: signature != null ? signature() : this.signature,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Verification &&
           verified == other.verified &&
           reason == other.reason &&
           payload == other.payload &&
           signature == other.signature &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(verified, reason, payload, signature, verifiedAt); } 
-@override String toString() { return 'Verification(verified: $verified, reason: $reason, payload: $payload, signature: $signature, verifiedAt: $verifiedAt)'; } 
+          verifiedAt == other.verifiedAt;
+
+@override int get hashCode => Object.hash(verified, reason, payload, signature, verifiedAt);
+
+@override String toString() => 'Verification(verified: $verified, reason: $reason, payload: $payload, signature: $signature, verifiedAt: $verifiedAt)';
+
  }

@@ -96,7 +96,7 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingTh
   subscription: subscription ?? this.subscription,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionItemsRequest &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -109,7 +109,10 @@ PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsItemRequestBillingTh
           prorationDate == other.prorationDate &&
           quantity == other.quantity &&
           subscription == other.subscription &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, subscription, taxRates); } 
-@override String toString() { return 'PostSubscriptionItemsRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, subscription, taxRates);
+
+@override String toString() => 'PostSubscriptionItemsRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)';
+
  }

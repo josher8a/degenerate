@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('query
 UriQuery copyWith({RulesetsRewriteUriQuery? query}) { return UriQuery(
   query: query ?? this.query,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UriQuery &&
-          query == other.query; } 
-@override int get hashCode { return query.hashCode; } 
-@override String toString() { return 'UriQuery(query: $query)'; } 
+          query == other.query;
+
+@override int get hashCode => query.hashCode;
+
+@override String toString() => 'UriQuery(query: $query)';
+
  }

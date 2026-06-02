@@ -31,11 +31,14 @@ NscMagicSettings copyWith({String? conduitName, String? description, int? mtu, }
   description: description ?? this.description,
   mtu: mtu ?? this.mtu,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscMagicSettings &&
           conduitName == other.conduitName &&
           description == other.description &&
-          mtu == other.mtu; } 
-@override int get hashCode { return Object.hash(conduitName, description, mtu); } 
-@override String toString() { return 'NscMagicSettings(conduitName: $conduitName, description: $description, mtu: $mtu)'; } 
+          mtu == other.mtu;
+
+@override int get hashCode => Object.hash(conduitName, description, mtu);
+
+@override String toString() => 'NscMagicSettings(conduitName: $conduitName, description: $description, mtu: $mtu)';
+
  }

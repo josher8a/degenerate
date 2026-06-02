@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IntelPhishingUrlInfoComponentsSchemasSingleResponse copyWith({IntelPhishingUrlInfo? Function()? result}) { return IntelPhishingUrlInfoComponentsSchemasSingleResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelPhishingUrlInfoComponentsSchemasSingleResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'IntelPhishingUrlInfoComponentsSchemasSingleResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'IntelPhishingUrlInfoComponentsSchemasSingleResponse(result: $result)';
+
  }

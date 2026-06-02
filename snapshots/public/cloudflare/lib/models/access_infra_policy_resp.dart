@@ -56,7 +56,7 @@ AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDe
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessInfraPolicyResp &&
           createdAt == other.createdAt &&
           decision == other.decision &&
@@ -66,7 +66,10 @@ AccessInfraPolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDe
           name == other.name &&
           listEquals(require, other.require) &&
           updatedAt == other.updatedAt &&
-          connectionRules == other.connectionRules; } 
-@override int get hashCode { return Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, connectionRules); } 
-@override String toString() { return 'AccessInfraPolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, connectionRules: $connectionRules)'; } 
+          connectionRules == other.connectionRules;
+
+@override int get hashCode => Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt, connectionRules);
+
+@override String toString() => 'AccessInfraPolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt, connectionRules: $connectionRules)';
+
  }

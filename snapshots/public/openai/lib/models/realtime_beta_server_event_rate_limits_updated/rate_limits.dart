@@ -21,10 +21,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Name && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Name($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Name && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Name($value)';
+
  }
 @immutable final class RateLimits {const RateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });
 
@@ -61,12 +64,15 @@ RateLimits copyWith({Name? Function()? name, int? Function()? limit, int? Functi
   remaining: remaining != null ? remaining() : this.remaining,
   resetSeconds: resetSeconds != null ? resetSeconds() : this.resetSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimits &&
           name == other.name &&
           limit == other.limit &&
           remaining == other.remaining &&
-          resetSeconds == other.resetSeconds; } 
-@override int get hashCode { return Object.hash(name, limit, remaining, resetSeconds); } 
-@override String toString() { return 'RateLimits(name: $name, limit: $limit, remaining: $remaining, resetSeconds: $resetSeconds)'; } 
+          resetSeconds == other.resetSeconds;
+
+@override int get hashCode => Object.hash(name, limit, remaining, resetSeconds);
+
+@override String toString() => 'RateLimits(name: $name, limit: $limit, remaining: $remaining, resetSeconds: $resetSeconds)';
+
  }

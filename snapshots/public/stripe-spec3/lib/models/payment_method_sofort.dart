@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodSofort copyWith({String? Function()? country}) { return PaymentMethodSofort(
   country: country != null ? country() : this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodSofort &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PaymentMethodSofort(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'PaymentMethodSofort(country: $country)';
+
  }

@@ -24,9 +24,12 @@ return errors; }
 TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({String? Function()? issuingDispute}) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(
   issuingDispute: issuingDispute != null ? issuingDispute() : this.issuingDispute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedDebitsResourceDebitReversalLinkedFlows &&
-          issuingDispute == other.issuingDispute; } 
-@override int get hashCode { return issuingDispute.hashCode; } 
-@override String toString() { return 'TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(issuingDispute: $issuingDispute)'; } 
+          issuingDispute == other.issuingDispute;
+
+@override int get hashCode => issuingDispute.hashCode;
+
+@override String toString() => 'TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(issuingDispute: $issuingDispute)';
+
  }

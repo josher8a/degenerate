@@ -29,10 +29,13 @@ DependabotCreateOrUpdateRepoSecretRequest copyWith({String? Function()? encrypte
   encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
   keyId: keyId != null ? keyId() : this.keyId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotCreateOrUpdateRepoSecretRequest &&
           encryptedValue == other.encryptedValue &&
-          keyId == other.keyId; } 
-@override int get hashCode { return Object.hash(encryptedValue, keyId); } 
-@override String toString() { return 'DependabotCreateOrUpdateRepoSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId)'; } 
+          keyId == other.keyId;
+
+@override int get hashCode => Object.hash(encryptedValue, keyId);
+
+@override String toString() => 'DependabotCreateOrUpdateRepoSecretRequest(encryptedValue: $encryptedValue, keyId: $keyId)';
+
  }

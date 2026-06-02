@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesMirageId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesMirageId($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesMirageId && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesMirageId($value)';
+
  }
 @immutable final class ZonesMirage {const ZonesMirage({this.id, this.value, });
 
@@ -53,10 +56,13 @@ ZonesMirage copyWith({ZonesMirageId? Function()? id, ZonesMirageValue? Function(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesMirage &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesMirage(id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, value);
+
+@override String toString() => 'ZonesMirage(id: $id, value: $value)';
+
  }

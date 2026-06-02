@@ -21,10 +21,13 @@ Serie0Variant5 copyWith({List<String>? expired, List<String>? valid, }) { return
   expired: expired ?? this.expired,
   valid: valid ?? this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant5 &&
           listEquals(expired, other.expired) &&
-          listEquals(valid, other.valid); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expired), Object.hashAll(valid)); } 
-@override String toString() { return 'Serie0Variant5(expired: $expired, valid: $valid)'; } 
+          listEquals(valid, other.valid);
+
+@override int get hashCode => Object.hash(Object.hashAll(expired), Object.hashAll(valid));
+
+@override String toString() => 'Serie0Variant5(expired: $expired, valid: $valid)';
+
  }

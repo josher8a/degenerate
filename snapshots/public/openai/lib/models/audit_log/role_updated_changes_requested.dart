@@ -53,7 +53,7 @@ RoleUpdatedChangesRequested copyWith({String? Function()? roleName, String? Func
   description: description != null ? description() : this.description,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RoleUpdatedChangesRequested &&
           roleName == other.roleName &&
           resourceId == other.resourceId &&
@@ -61,7 +61,10 @@ RoleUpdatedChangesRequested copyWith({String? Function()? roleName, String? Func
           listEquals(permissionsAdded, other.permissionsAdded) &&
           listEquals(permissionsRemoved, other.permissionsRemoved) &&
           description == other.description &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(roleName, resourceId, resourceType, Object.hashAll(permissionsAdded ?? const []), Object.hashAll(permissionsRemoved ?? const []), description, metadata); } 
-@override String toString() { return 'RoleUpdatedChangesRequested(roleName: $roleName, resourceId: $resourceId, resourceType: $resourceType, permissionsAdded: $permissionsAdded, permissionsRemoved: $permissionsRemoved, description: $description, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(roleName, resourceId, resourceType, Object.hashAll(permissionsAdded ?? const []), Object.hashAll(permissionsRemoved ?? const []), description, metadata);
+
+@override String toString() => 'RoleUpdatedChangesRequested(roleName: $roleName, resourceId: $resourceId, resourceType: $resourceType, permissionsAdded: $permissionsAdded, permissionsRemoved: $permissionsRemoved, description: $description, metadata: $metadata)';
+
  }

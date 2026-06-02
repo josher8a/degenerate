@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SchemaInfoMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SchemaInfoMitigationAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SchemaInfoMitigationAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SchemaInfoMitigationAction($value)';
+
  }
 @immutable final class SchemaInfo {const SchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });
 
@@ -60,11 +63,14 @@ SchemaInfo copyWith({ActiveSchema? Function()? activeSchema, bool? Function()? l
   learnedAvailable: learnedAvailable != null ? learnedAvailable() : this.learnedAvailable,
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaInfo &&
           activeSchema == other.activeSchema &&
           learnedAvailable == other.learnedAvailable &&
-          mitigationAction == other.mitigationAction; } 
-@override int get hashCode { return Object.hash(activeSchema, learnedAvailable, mitigationAction); } 
-@override String toString() { return 'SchemaInfo(activeSchema: $activeSchema, learnedAvailable: $learnedAvailable, mitigationAction: $mitigationAction)'; } 
+          mitigationAction == other.mitigationAction;
+
+@override int get hashCode => Object.hash(activeSchema, learnedAvailable, mitigationAction);
+
+@override String toString() => 'SchemaInfo(activeSchema: $activeSchema, learnedAvailable: $learnedAvailable, mitigationAction: $mitigationAction)';
+
  }

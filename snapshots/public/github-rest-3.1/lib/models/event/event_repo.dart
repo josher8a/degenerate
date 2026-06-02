@@ -27,11 +27,14 @@ EventRepo copyWith({int? id, String? name, Uri? url, }) { return EventRepo(
   name: name ?? this.name,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventRepo &&
           id == other.id &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, name, url); } 
-@override String toString() { return 'EventRepo(id: $id, name: $name, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(id, name, url);
+
+@override String toString() => 'EventRepo(id: $id, name: $name, url: $url)';
+
  }

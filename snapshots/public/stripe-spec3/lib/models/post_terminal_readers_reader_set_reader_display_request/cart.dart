@@ -33,12 +33,15 @@ Cart copyWith({String? currency, List<CartLineItems>? lineItems, int? Function()
   tax: tax != null ? tax() : this.tax,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Cart &&
           currency == other.currency &&
           listEquals(lineItems, other.lineItems) &&
           tax == other.tax &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(currency, Object.hashAll(lineItems), tax, total); } 
-@override String toString() { return 'Cart(currency: $currency, lineItems: $lineItems, tax: $tax, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(currency, Object.hashAll(lineItems), tax, total);
+
+@override String toString() => 'Cart(currency: $currency, lineItems: $lineItems, tax: $tax, total: $total)';
+
  }

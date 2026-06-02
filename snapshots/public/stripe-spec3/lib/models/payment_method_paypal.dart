@@ -45,11 +45,14 @@ PaymentMethodPaypal copyWith({String? Function()? country, String? Function()? p
   payerEmail: payerEmail != null ? payerEmail() : this.payerEmail,
   payerId: payerId != null ? payerId() : this.payerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodPaypal &&
           country == other.country &&
           payerEmail == other.payerEmail &&
-          payerId == other.payerId; } 
-@override int get hashCode { return Object.hash(country, payerEmail, payerId); } 
-@override String toString() { return 'PaymentMethodPaypal(country: $country, payerEmail: $payerEmail, payerId: $payerId)'; } 
+          payerId == other.payerId;
+
+@override int get hashCode => Object.hash(country, payerEmail, payerId);
+
+@override String toString() => 'PaymentMethodPaypal(country: $country, payerEmail: $payerEmail, payerId: $payerId)';
+
  }

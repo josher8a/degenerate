@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PatternType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PatternType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PatternType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PatternType($value)';
+
  }
 /// View type for presenting the query results.
 @immutable final class View {const View._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is View && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'View($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is View && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'View($value)';
+
  }
 @immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = View.calculations, });
 
@@ -161,7 +167,7 @@ TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compa
   timeframe: timeframe ?? this.timeframe,
   view: view != null ? view() : this.view,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryQueryRequest &&
           chart == other.chart &&
           compare == other.compare &&
@@ -176,7 +182,10 @@ TelemetryQueryRequest copyWith({bool? Function()? chart, bool? Function()? compa
           patternType == other.patternType &&
           queryId == other.queryId &&
           timeframe == other.timeframe &&
-          view == other.view; } 
-@override int get hashCode { return Object.hash(chart, compare, dry, granularity, ignoreSeries, limit, offset, offsetBy, offsetDirection, parameters, patternType, queryId, timeframe, view); } 
-@override String toString() { return 'TelemetryQueryRequest(chart: $chart, compare: $compare, dry: $dry, granularity: $granularity, ignoreSeries: $ignoreSeries, limit: $limit, offset: $offset, offsetBy: $offsetBy, offsetDirection: $offsetDirection, parameters: $parameters, patternType: $patternType, queryId: $queryId, timeframe: $timeframe, view: $view)'; } 
+          view == other.view;
+
+@override int get hashCode => Object.hash(chart, compare, dry, granularity, ignoreSeries, limit, offset, offsetBy, offsetDirection, parameters, patternType, queryId, timeframe, view);
+
+@override String toString() => 'TelemetryQueryRequest(chart: $chart, compare: $compare, dry: $dry, granularity: $granularity, ignoreSeries: $ignoreSeries, limit: $limit, offset: $offset, offsetBy: $offsetBy, offsetDirection: $offsetDirection, parameters: $parameters, patternType: $patternType, queryId: $queryId, timeframe: $timeframe, view: $view)';
+
  }

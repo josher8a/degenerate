@@ -34,12 +34,15 @@ MigrationsUpdateImportRequest copyWith({String? Function()? vcsUsername, String?
   vcs: vcs != null ? vcs() : this.vcs,
   tfvcProject: tfvcProject != null ? tfvcProject() : this.tfvcProject,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsUpdateImportRequest &&
           vcsUsername == other.vcsUsername &&
           vcsPassword == other.vcsPassword &&
           vcs == other.vcs &&
-          tfvcProject == other.tfvcProject; } 
-@override int get hashCode { return Object.hash(vcsUsername, vcsPassword, vcs, tfvcProject); } 
-@override String toString() { return 'MigrationsUpdateImportRequest(vcsUsername: $vcsUsername, vcsPassword: $vcsPassword, vcs: $vcs, tfvcProject: $tfvcProject)'; } 
+          tfvcProject == other.tfvcProject;
+
+@override int get hashCode => Object.hash(vcsUsername, vcsPassword, vcs, tfvcProject);
+
+@override String toString() => 'MigrationsUpdateImportRequest(vcsUsername: $vcsUsername, vcsPassword: $vcsPassword, vcs: $vcs, tfvcProject: $tfvcProject)';
+
  }

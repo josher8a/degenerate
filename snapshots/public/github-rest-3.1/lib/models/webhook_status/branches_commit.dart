@@ -21,10 +21,13 @@ BranchesCommit copyWith({String? Function()? sha, Uri? Function()? url, }) { ret
   sha: sha != null ? sha() : this.sha,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchesCommit &&
           sha == other.sha &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(sha, url); } 
-@override String toString() { return 'BranchesCommit(sha: $sha, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(sha, url);
+
+@override String toString() => 'BranchesCommit(sha: $sha, url: $url)';
+
  }

@@ -53,14 +53,17 @@ DosPrefix copyWith({String? comment, DateTime? createdOn, bool? excluded, String
   modifiedOn: modifiedOn ?? this.modifiedOn,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosPrefix &&
           comment == other.comment &&
           createdOn == other.createdOn &&
           excluded == other.excluded &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, createdOn, excluded, id, modifiedOn, prefix); } 
-@override String toString() { return 'DosPrefix(comment: $comment, createdOn: $createdOn, excluded: $excluded, id: $id, modifiedOn: $modifiedOn, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(comment, createdOn, excluded, id, modifiedOn, prefix);
+
+@override String toString() => 'DosPrefix(comment: $comment, createdOn: $createdOn, excluded: $excluded, id: $id, modifiedOn: $modifiedOn, prefix: $prefix)';
+
  }

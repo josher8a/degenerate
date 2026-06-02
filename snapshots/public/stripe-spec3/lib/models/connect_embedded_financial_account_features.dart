@@ -38,12 +38,15 @@ ConnectEmbeddedFinancialAccountFeatures copyWith({bool? disableStripeUserAuthent
   sendMoney: sendMoney ?? this.sendMoney,
   transferBalance: transferBalance ?? this.transferBalance,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedFinancialAccountFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
           externalAccountCollection == other.externalAccountCollection &&
           sendMoney == other.sendMoney &&
-          transferBalance == other.transferBalance; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection, sendMoney, transferBalance); } 
-@override String toString() { return 'ConnectEmbeddedFinancialAccountFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, sendMoney: $sendMoney, transferBalance: $transferBalance)'; } 
+          transferBalance == other.transferBalance;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, externalAccountCollection, sendMoney, transferBalance);
+
+@override String toString() => 'ConnectEmbeddedFinancialAccountFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, sendMoney: $sendMoney, transferBalance: $transferBalance)';
+
  }

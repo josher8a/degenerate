@@ -26,11 +26,14 @@ BuildsBuildLogsResponse copyWith({BuildsCursor? Function()? cursor, List<List<dy
   lines: lines != null ? lines() : this.lines,
   truncated: truncated != null ? truncated() : this.truncated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildLogsResponse &&
           cursor == other.cursor &&
           listEquals(lines, other.lines) &&
-          truncated == other.truncated; } 
-@override int get hashCode { return Object.hash(cursor, Object.hashAll(lines ?? const []), truncated); } 
-@override String toString() { return 'BuildsBuildLogsResponse(cursor: $cursor, lines: $lines, truncated: $truncated)'; } 
+          truncated == other.truncated;
+
+@override int get hashCode => Object.hash(cursor, Object.hashAll(lines ?? const []), truncated);
+
+@override String toString() => 'BuildsBuildLogsResponse(cursor: $cursor, lines: $lines, truncated: $truncated)';
+
  }

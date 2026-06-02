@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LocalShellCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LocalShellCallStatus($value)';
+
  }
 /// A tool call that executes one or more shell commands in a managed environment.
 @immutable final class FunctionShellCall {const FunctionShellCall({required this.id, required this.callId, required this.action, required this.status, required this.environment, this.type = 'shell_call', this.createdBy, });
@@ -84,7 +87,7 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
   environment: environment != null ? environment() : this.environment,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCall &&
           type == other.type &&
           id == other.id &&
@@ -92,7 +95,10 @@ FunctionShellCall copyWith({String? type, String? id, String? callId, FunctionSh
           action == other.action &&
           status == other.status &&
           environment == other.environment &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, action, status, environment, createdBy); } 
-@override String toString() { return 'FunctionShellCall(type: $type, id: $id, callId: $callId, action: $action, status: $status, environment: $environment, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, callId, action, status, environment, createdBy);
+
+@override String toString() => 'FunctionShellCall(type: $type, id: $id, callId: $callId, action: $action, status: $status, environment: $environment, createdBy: $createdBy)';
+
  }

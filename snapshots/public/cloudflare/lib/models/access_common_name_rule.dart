@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('commo
 AccessCommonNameRule copyWith({CommonName? commonName}) { return AccessCommonNameRule(
   commonName: commonName ?? this.commonName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCommonNameRule &&
-          commonName == other.commonName; } 
-@override int get hashCode { return commonName.hashCode; } 
-@override String toString() { return 'AccessCommonNameRule(commonName: $commonName)'; } 
+          commonName == other.commonName;
+
+@override int get hashCode => commonName.hashCode;
+
+@override String toString() => 'AccessCommonNameRule(commonName: $commonName)';
+
  }

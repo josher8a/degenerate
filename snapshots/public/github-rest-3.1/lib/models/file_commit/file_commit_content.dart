@@ -60,7 +60,7 @@ FileCommitContent copyWith({String? Function()? name, String? Function()? path, 
   type: type != null ? type() : this.type,
   links: links != null ? links() : this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitContent &&
           name == other.name &&
           path == other.path &&
@@ -71,7 +71,10 @@ FileCommitContent copyWith({String? Function()? name, String? Function()? path, 
           gitUrl == other.gitUrl &&
           downloadUrl == other.downloadUrl &&
           type == other.type &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, links); } 
-@override String toString() { return 'FileCommitContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, links);
+
+@override String toString() => 'FileCommitContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, links: $links)';
+
  }

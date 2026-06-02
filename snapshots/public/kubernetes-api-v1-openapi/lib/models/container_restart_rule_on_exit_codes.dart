@@ -26,10 +26,13 @@ ContainerRestartRuleOnExitCodes copyWith({String? $operator, List<int>? Function
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerRestartRuleOnExitCodes &&
           $operator == other.$operator &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash($operator, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'ContainerRestartRuleOnExitCodes(\$operator: ${$operator}, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash($operator, Object.hashAll(values ?? const []));
+
+@override String toString() => 'ContainerRestartRuleOnExitCodes(\$operator: ${$operator}, values: $values)';
+
  }

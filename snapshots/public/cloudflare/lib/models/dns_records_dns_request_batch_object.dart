@@ -30,12 +30,15 @@ DnsRecordsDnsRequestBatchObject copyWith({List<DnsRecordsDnsRecordBatchDelete>? 
   posts: posts != null ? posts() : this.posts,
   puts: puts != null ? puts() : this.puts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRequestBatchObject &&
           listEquals(deletes, other.deletes) &&
           listEquals(patches, other.patches) &&
           listEquals(posts, other.posts) &&
-          listEquals(puts, other.puts); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deletes ?? const []), Object.hashAll(patches ?? const []), Object.hashAll(posts ?? const []), Object.hashAll(puts ?? const [])); } 
-@override String toString() { return 'DnsRecordsDnsRequestBatchObject(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)'; } 
+          listEquals(puts, other.puts);
+
+@override int get hashCode => Object.hash(Object.hashAll(deletes ?? const []), Object.hashAll(patches ?? const []), Object.hashAll(posts ?? const []), Object.hashAll(puts ?? const []));
+
+@override String toString() => 'DnsRecordsDnsRequestBatchObject(deletes: $deletes, patches: $patches, posts: $posts, puts: $puts)';
+
  }

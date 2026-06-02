@@ -39,13 +39,16 @@ ListRegistrationsResponse copyWith({List<ResponseMessage>? errors, List<Response
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListRegistrationsResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), resultInfo, success); } 
-@override String toString() { return 'ListRegistrationsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), resultInfo, success);
+
+@override String toString() => 'ListRegistrationsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)';
+
  }

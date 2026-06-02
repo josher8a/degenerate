@@ -22,10 +22,13 @@ CategorizationsCategories copyWith({int? Function()? id, String? Function()? nam
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CategorizationsCategories &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'CategorizationsCategories(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'CategorizationsCategories(id: $id, name: $name)';
+
  }

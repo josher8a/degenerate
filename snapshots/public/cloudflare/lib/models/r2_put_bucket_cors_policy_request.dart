@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 R2PutBucketCorsPolicyRequest copyWith({List<R2CorsRule>? Function()? rules}) { return R2PutBucketCorsPolicyRequest(
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2PutBucketCorsPolicyRequest &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hashAll(rules ?? const []); } 
-@override String toString() { return 'R2PutBucketCorsPolicyRequest(rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hashAll(rules ?? const []);
+
+@override String toString() => 'R2PutBucketCorsPolicyRequest(rules: $rules)';
+
  }

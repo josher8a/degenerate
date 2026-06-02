@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTranscriptionEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeTranscriptionEnumStatus($value)';
+
  }
 @immutable final class AccountCallRealtimeTranscription {const AccountCallRealtimeTranscription({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });
 
@@ -96,7 +99,7 @@ AccountCallRealtimeTranscription copyWith({String? Function()? sid, String? Func
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallRealtimeTranscription &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -104,7 +107,10 @@ AccountCallRealtimeTranscription copyWith({String? Function()? sid, String? Func
           name == other.name &&
           status == other.status &&
           dateUpdated == other.dateUpdated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(sid, accountSid, callSid, name, status, dateUpdated, uri); } 
-@override String toString() { return 'AccountCallRealtimeTranscription(sid: $sid, accountSid: $accountSid, callSid: $callSid, name: $name, status: $status, dateUpdated: $dateUpdated, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(sid, accountSid, callSid, name, status, dateUpdated, uri);
+
+@override String toString() => 'AccountCallRealtimeTranscription(sid: $sid, accountSid: $accountSid, callSid: $callSid, name: $name, status: $status, dateUpdated: $dateUpdated, uri: $uri)';
+
  }

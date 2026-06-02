@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOperationFeatureSchemaInfo copyWith({SchemaInfo? Function()? schemaInfo}) { return ShieldOperationFeatureSchemaInfo(
   schemaInfo: schemaInfo != null ? schemaInfo() : this.schemaInfo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureSchemaInfo &&
-          schemaInfo == other.schemaInfo; } 
-@override int get hashCode { return schemaInfo.hashCode; } 
-@override String toString() { return 'ShieldOperationFeatureSchemaInfo(schemaInfo: $schemaInfo)'; } 
+          schemaInfo == other.schemaInfo;
+
+@override int get hashCode => schemaInfo.hashCode;
+
+@override String toString() => 'ShieldOperationFeatureSchemaInfo(schemaInfo: $schemaInfo)';
+
  }

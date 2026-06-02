@@ -17,7 +17,8 @@ final class DeleteAccountsBrandProtectionQueriesError$422 extends DeleteAccounts
 
 final ErrorModel error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class DeleteAccountsBrandProtectionQueriesError$Unknown extends DeleteAccountsBrandProtectionQueriesError {const DeleteAccountsBrandProtectionQueriesError$Unknown(this.statusCode, this.rawBody, );
 

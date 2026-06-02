@@ -21,10 +21,13 @@ Serie0Variant6 copyWith({List<String>? negative, List<String>? positive, }) { re
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant6 &&
           listEquals(negative, other.negative) &&
-          listEquals(positive, other.positive); } 
-@override int get hashCode { return Object.hash(Object.hashAll(negative), Object.hashAll(positive)); } 
-@override String toString() { return 'Serie0Variant6(negative: $negative, positive: $positive)'; } 
+          listEquals(positive, other.positive);
+
+@override int get hashCode => Object.hash(Object.hashAll(negative), Object.hashAll(positive));
+
+@override String toString() => 'Serie0Variant6(negative: $negative, positive: $positive)';
+
  }

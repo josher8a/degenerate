@@ -46,14 +46,17 @@ BillingPremiumRequestUsageReportOrg copyWith({TimePeriod? timePeriod, String? or
   model: model != null ? model() : this.model,
   usageItems: usageItems ?? this.usageItems,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPremiumRequestUsageReportOrg &&
           timePeriod == other.timePeriod &&
           organization == other.organization &&
           user == other.user &&
           product == other.product &&
           model == other.model &&
-          listEquals(usageItems, other.usageItems); } 
-@override int get hashCode { return Object.hash(timePeriod, organization, user, product, model, Object.hashAll(usageItems)); } 
-@override String toString() { return 'BillingPremiumRequestUsageReportOrg(timePeriod: $timePeriod, organization: $organization, user: $user, product: $product, model: $model, usageItems: $usageItems)'; } 
+          listEquals(usageItems, other.usageItems);
+
+@override int get hashCode => Object.hash(timePeriod, organization, user, product, model, Object.hashAll(usageItems));
+
+@override String toString() => 'BillingPremiumRequestUsageReportOrg(timePeriod: $timePeriod, organization: $organization, user: $user, product: $product, model: $model, usageItems: $usageItems)';
+
  }

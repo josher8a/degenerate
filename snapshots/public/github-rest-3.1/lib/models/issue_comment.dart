@@ -97,7 +97,7 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
   reactions: reactions != null ? reactions() : this.reactions,
   pin: pin != null ? pin() : this.pin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueComment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -113,7 +113,10 @@ IssueComment copyWith({int? id, String? nodeId, Uri? url, String? Function()? bo
           authorAssociation == other.authorAssociation &&
           performedViaGithubApp == other.performedViaGithubApp &&
           reactions == other.reactions &&
-          pin == other.pin; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin); } 
-@override String toString() { return 'IssueComment(id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)'; } 
+          pin == other.pin;
+
+@override int get hashCode => Object.hash(id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);
+
+@override String toString() => 'IssueComment(id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';
+
  }

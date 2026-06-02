@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserObject($value)';
+
  }
 /// Represents an individual `user` within an organization.
 @immutable final class User {const User({required this.object, required this.id, required this.name, required this.email, required this.role, required this.addedAt, });
@@ -74,14 +77,17 @@ User copyWith({UserObject? object, String? id, String? name, String? email, Invi
   role: role ?? this.role,
   addedAt: addedAt ?? this.addedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is User &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           email == other.email &&
           role == other.role &&
-          addedAt == other.addedAt; } 
-@override int get hashCode { return Object.hash(object, id, name, email, role, addedAt); } 
-@override String toString() { return 'User(object: $object, id: $id, name: $name, email: $email, role: $role, addedAt: $addedAt)'; } 
+          addedAt == other.addedAt;
+
+@override int get hashCode => Object.hash(object, id, name, email, role, addedAt);
+
+@override String toString() => 'User(object: $object, id: $id, name: $name, email: $email, role: $role, addedAt: $addedAt)';
+
  }

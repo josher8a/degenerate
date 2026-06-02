@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheResultValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheResultValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CacheResultValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheResultValue($value)';
+
  }
 @immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan, });
 
@@ -74,13 +77,16 @@ CacheResult copyWith({bool? editable, String? id, DateTime? modifiedOn, DateTime
   nextScheduledScan: nextScheduledScan != null ? nextScheduledScan() : this.nextScheduledScan,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheResult &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           nextScheduledScan == other.nextScheduledScan &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, nextScheduledScan, value); } 
-@override String toString() { return 'CacheResult(editable: $editable, id: $id, modifiedOn: $modifiedOn, nextScheduledScan: $nextScheduledScan, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(editable, id, modifiedOn, nextScheduledScan, value);
+
+@override String toString() => 'CacheResult(editable: $editable, id: $id, modifiedOn: $modifiedOn, nextScheduledScan: $nextScheduledScan, value: $value)';
+
  }

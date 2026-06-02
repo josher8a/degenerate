@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicComponentsSchemasTunnelSingleResponseResult copyWith({MagicInterconnect? Function()? interconnect}) { return MagicComponentsSchemasTunnelSingleResponseResult(
   interconnect: interconnect != null ? interconnect() : this.interconnect,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicComponentsSchemasTunnelSingleResponseResult &&
-          interconnect == other.interconnect; } 
-@override int get hashCode { return interconnect.hashCode; } 
-@override String toString() { return 'MagicComponentsSchemasTunnelSingleResponseResult(interconnect: $interconnect)'; } 
+          interconnect == other.interconnect;
+
+@override int get hashCode => interconnect.hashCode;
+
+@override String toString() => 'MagicComponentsSchemasTunnelSingleResponseResult(interconnect: $interconnect)';
+
  }

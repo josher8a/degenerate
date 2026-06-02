@@ -46,14 +46,17 @@ MagicSitesAddSingleRequest copyWith({MagicConnectorId? Function()? connectorId, 
   name: name ?? this.name,
   secondaryConnectorId: secondaryConnectorId != null ? secondaryConnectorId() : this.secondaryConnectorId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSitesAddSingleRequest &&
           connectorId == other.connectorId &&
           description == other.description &&
           haMode == other.haMode &&
           location == other.location &&
           name == other.name &&
-          secondaryConnectorId == other.secondaryConnectorId; } 
-@override int get hashCode { return Object.hash(connectorId, description, haMode, location, name, secondaryConnectorId); } 
-@override String toString() { return 'MagicSitesAddSingleRequest(connectorId: $connectorId, description: $description, haMode: $haMode, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)'; } 
+          secondaryConnectorId == other.secondaryConnectorId;
+
+@override int get hashCode => Object.hash(connectorId, description, haMode, location, name, secondaryConnectorId);
+
+@override String toString() => 'MagicSitesAddSingleRequest(connectorId: $connectorId, description: $description, haMode: $haMode, location: $location, name: $name, secondaryConnectorId: $secondaryConnectorId)';
+
  }

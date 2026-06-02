@@ -41,12 +41,15 @@ McpListToolsTool copyWith({String? name, String? Function()? description, Map<St
   inputSchema: inputSchema ?? this.inputSchema,
   annotations: annotations != null ? annotations() : this.annotations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpListToolsTool &&
           name == other.name &&
           description == other.description &&
           inputSchema == other.inputSchema &&
-          annotations == other.annotations; } 
-@override int get hashCode { return Object.hash(name, description, inputSchema, annotations); } 
-@override String toString() { return 'McpListToolsTool(name: $name, description: $description, inputSchema: $inputSchema, annotations: $annotations)'; } 
+          annotations == other.annotations;
+
+@override int get hashCode => Object.hash(name, description, inputSchema, annotations);
+
+@override String toString() => 'McpListToolsTool(name: $name, description: $description, inputSchema: $inputSchema, annotations: $annotations)';
+
  }

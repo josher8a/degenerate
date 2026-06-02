@@ -19,19 +19,22 @@ final class DependabotListAlertsForEnterpriseError$403 extends DependabotListAle
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class DependabotListAlertsForEnterpriseError$404 extends DependabotListAlertsForEnterpriseError {const DependabotListAlertsForEnterpriseError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DependabotListAlertsForEnterpriseError$422 extends DependabotListAlertsForEnterpriseError {const DependabotListAlertsForEnterpriseError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class DependabotListAlertsForEnterpriseError$Unknown extends DependabotListAlertsForEnterpriseError {const DependabotListAlertsForEnterpriseError$Unknown(this.statusCode, this.rawBody, );
 

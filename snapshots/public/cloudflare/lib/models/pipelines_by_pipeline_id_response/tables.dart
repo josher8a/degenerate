@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TablesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TablesType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TablesType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TablesType($value)';
+
  }
 @immutable final class Tables {const Tables({required this.id, required this.latest, required this.name, required this.type, required this.version, });
 
@@ -84,13 +87,16 @@ Tables copyWith({String? id, int? latest, String? name, TablesType? type, int? v
   type: type ?? this.type,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tables &&
           id == other.id &&
           latest == other.latest &&
           name == other.name &&
           type == other.type &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, latest, name, type, version); } 
-@override String toString() { return 'Tables(id: $id, latest: $latest, name: $name, type: $type, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(id, latest, name, type, version);
+
+@override String toString() => 'Tables(id: $id, latest: $latest, name: $name, type: $type, version: $version)';
+
  }

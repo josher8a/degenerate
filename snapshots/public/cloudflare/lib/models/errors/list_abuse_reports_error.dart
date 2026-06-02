@@ -17,7 +17,8 @@ final class ListAbuseReportsError$500 extends ListAbuseReportsError {const ListA
 
 final ListAbuseReportsResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ListAbuseReportsError$Unknown extends ListAbuseReportsError {const ListAbuseReportsError$Unknown(this.statusCode, this.rawBody, );
 

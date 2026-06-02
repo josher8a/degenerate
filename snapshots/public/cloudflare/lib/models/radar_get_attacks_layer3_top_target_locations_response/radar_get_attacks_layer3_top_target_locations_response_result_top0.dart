@@ -37,12 +37,15 @@ RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0 copyWith({double? rank
   targetCountryName: targetCountryName ?? this.targetCountryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0 &&
           rank == other.rank &&
           targetCountryAlpha2 == other.targetCountryAlpha2 &&
           targetCountryName == other.targetCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(rank, targetCountryAlpha2, targetCountryName, value); } 
-@override String toString() { return 'RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0(rank: $rank, targetCountryAlpha2: $targetCountryAlpha2, targetCountryName: $targetCountryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(rank, targetCountryAlpha2, targetCountryName, value);
+
+@override String toString() => 'RadarGetAttacksLayer3TopTargetLocationsResponseResultTop0(rank: $rank, targetCountryAlpha2: $targetCountryAlpha2, targetCountryName: $targetCountryName, value: $value)';
+
  }

@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 QueuesPurgeRequest copyWith({bool? Function()? deleteMessagesPermanently}) { return QueuesPurgeRequest(
   deleteMessagesPermanently: deleteMessagesPermanently != null ? deleteMessagesPermanently() : this.deleteMessagesPermanently,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesPurgeRequest &&
-          deleteMessagesPermanently == other.deleteMessagesPermanently; } 
-@override int get hashCode { return deleteMessagesPermanently.hashCode; } 
-@override String toString() { return 'QueuesPurgeRequest(deleteMessagesPermanently: $deleteMessagesPermanently)'; } 
+          deleteMessagesPermanently == other.deleteMessagesPermanently;
+
+@override int get hashCode => deleteMessagesPermanently.hashCode;
+
+@override String toString() => 'QueuesPurgeRequest(deleteMessagesPermanently: $deleteMessagesPermanently)';
+
  }

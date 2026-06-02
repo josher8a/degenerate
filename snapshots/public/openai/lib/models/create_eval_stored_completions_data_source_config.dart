@@ -29,10 +29,13 @@ CreateEvalStoredCompletionsDataSourceConfig copyWith({CreateEvalStoredCompletion
   type: type ?? this.type,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalStoredCompletionsDataSourceConfig &&
           type == other.type &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(type, metadata); } 
-@override String toString() { return 'CreateEvalStoredCompletionsDataSourceConfig(type: $type, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(type, metadata);
+
+@override String toString() => 'CreateEvalStoredCompletionsDataSourceConfig(type: $type, metadata: $metadata)';
+
  }

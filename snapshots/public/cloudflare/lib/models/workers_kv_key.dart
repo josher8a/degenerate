@@ -29,11 +29,14 @@ WorkersKvKey copyWith({double? Function()? expiration, WorkersKvAny? Function()?
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvKey &&
           expiration == other.expiration &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(expiration, metadata, name); } 
-@override String toString() { return 'WorkersKvKey(expiration: $expiration, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(expiration, metadata, name);
+
+@override String toString() => 'WorkersKvKey(expiration: $expiration, metadata: $metadata, name: $name)';
+
  }

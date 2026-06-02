@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VectorizeDeprecatedQueryVectorResponse copyWith({VectorizeIndexQueryResponse? Function()? result}) { return VectorizeDeprecatedQueryVectorResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeDeprecatedQueryVectorResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'VectorizeDeprecatedQueryVectorResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'VectorizeDeprecatedQueryVectorResponse(result: $result)';
+
  }

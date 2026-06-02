@@ -21,10 +21,13 @@ CodeSecurityDefaultConfigurations2 copyWith({dynamic Function()? defaultForNewRe
   defaultForNewRepos: defaultForNewRepos != null ? defaultForNewRepos() : this.defaultForNewRepos,
   configuration: configuration != null ? configuration() : this.configuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityDefaultConfigurations2 &&
           defaultForNewRepos == other.defaultForNewRepos &&
-          configuration == other.configuration; } 
-@override int get hashCode { return Object.hash(defaultForNewRepos, configuration); } 
-@override String toString() { return 'CodeSecurityDefaultConfigurations2(defaultForNewRepos: $defaultForNewRepos, configuration: $configuration)'; } 
+          configuration == other.configuration;
+
+@override int get hashCode => Object.hash(defaultForNewRepos, configuration);
+
+@override String toString() => 'CodeSecurityDefaultConfigurations2(defaultForNewRepos: $defaultForNewRepos, configuration: $configuration)';
+
  }

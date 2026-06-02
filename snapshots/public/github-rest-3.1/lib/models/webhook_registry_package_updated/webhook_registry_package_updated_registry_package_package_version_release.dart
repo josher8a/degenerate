@@ -75,7 +75,7 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Pack
   targetCommitish: targetCommitish ?? this.targetCommitish,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease &&
           author == other.author &&
           createdAt == other.createdAt &&
@@ -87,7 +87,10 @@ WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease copyWith({Pack
           publishedAt == other.publishedAt &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url); } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(author, createdAt, draft, htmlUrl, id, name, prerelease, publishedAt, tagName, targetCommitish, url);
+
+@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackagePackageVersionRelease(author: $author, createdAt: $createdAt, draft: $draft, htmlUrl: $htmlUrl, id: $id, name: $name, prerelease: $prerelease, publishedAt: $publishedAt, tagName: $tagName, targetCommitish: $targetCommitish, url: $url)';
+
  }

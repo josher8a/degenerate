@@ -29,11 +29,14 @@ CopilotIdeChatEditors copyWith({String? Function()? name, int? Function()? total
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   models: models != null ? models() : this.models,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeChatEditors &&
           name == other.name &&
           totalEngagedUsers == other.totalEngagedUsers &&
-          listEquals(models, other.models); } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const [])); } 
-@override String toString() { return 'CopilotIdeChatEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models)'; } 
+          listEquals(models, other.models);
+
+@override int get hashCode => Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const []));
+
+@override String toString() => 'CopilotIdeChatEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models)';
+
  }

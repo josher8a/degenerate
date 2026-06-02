@@ -21,10 +21,13 @@ BatchErrors copyWith({String? Function()? object, List<ErrorsData>? Function()? 
   object: object != null ? object() : this.object,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BatchErrors &&
           object == other.object &&
-          listEquals(data, other.data); } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data ?? const [])); } 
-@override String toString() { return 'BatchErrors(object: $object, data: $data)'; } 
+          listEquals(data, other.data);
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data ?? const []));
+
+@override String toString() => 'BatchErrors(object: $object, data: $data)';
+
  }

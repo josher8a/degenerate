@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OtherChunkingStrategyResponseParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OtherChunkingStrategyResponseParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OtherChunkingStrategyResponseParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OtherChunkingStrategyResponseParamType($value)';
+
  }
 /// This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.
 @immutable final class OtherChunkingStrategyResponseParam {const OtherChunkingStrategyResponseParam({required this.type});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 OtherChunkingStrategyResponseParam copyWith({OtherChunkingStrategyResponseParamType? type}) { return OtherChunkingStrategyResponseParam(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OtherChunkingStrategyResponseParam &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'OtherChunkingStrategyResponseParam(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'OtherChunkingStrategyResponseParam(type: $type)';
+
  }

@@ -52,14 +52,17 @@ SimpleCommit copyWith({String? id, String? treeId, String? message, DateTime? ti
   author: author != null ? author() : this.author,
   committer: committer != null ? committer() : this.committer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleCommit &&
           id == other.id &&
           treeId == other.treeId &&
           message == other.message &&
           timestamp == other.timestamp &&
           author == other.author &&
-          committer == other.committer; } 
-@override int get hashCode { return Object.hash(id, treeId, message, timestamp, author, committer); } 
-@override String toString() { return 'SimpleCommit(id: $id, treeId: $treeId, message: $message, timestamp: $timestamp, author: $author, committer: $committer)'; } 
+          committer == other.committer;
+
+@override int get hashCode => Object.hash(id, treeId, message, timestamp, author, committer);
+
+@override String toString() => 'SimpleCommit(id: $id, treeId: $treeId, message: $message, timestamp: $timestamp, author: $author, committer: $committer)';
+
  }

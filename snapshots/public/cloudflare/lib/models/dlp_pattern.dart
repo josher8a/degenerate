@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpValidation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpValidation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpValidation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DlpValidation($value)';
+
  }
 @immutable final class DlpPattern {const DlpPattern({required this.regex, this.validation, });
 
@@ -41,10 +44,13 @@ DlpPattern copyWith({String? regex, DlpValidation? Function()? validation, }) { 
   regex: regex ?? this.regex,
   validation: validation != null ? validation() : this.validation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPattern &&
           regex == other.regex &&
-          validation == other.validation; } 
-@override int get hashCode { return Object.hash(regex, validation); } 
-@override String toString() { return 'DlpPattern(regex: $regex, validation: $validation)'; } 
+          validation == other.validation;
+
+@override int get hashCode => Object.hash(regex, validation);
+
+@override String toString() => 'DlpPattern(regex: $regex, validation: $validation)';
+
  }

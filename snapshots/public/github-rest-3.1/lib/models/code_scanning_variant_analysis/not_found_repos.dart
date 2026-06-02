@@ -23,10 +23,13 @@ NotFoundRepos copyWith({int? repositoryCount, List<String>? repositoryFullNames,
   repositoryCount: repositoryCount ?? this.repositoryCount,
   repositoryFullNames: repositoryFullNames ?? this.repositoryFullNames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotFoundRepos &&
           repositoryCount == other.repositoryCount &&
-          listEquals(repositoryFullNames, other.repositoryFullNames); } 
-@override int get hashCode { return Object.hash(repositoryCount, Object.hashAll(repositoryFullNames)); } 
-@override String toString() { return 'NotFoundRepos(repositoryCount: $repositoryCount, repositoryFullNames: $repositoryFullNames)'; } 
+          listEquals(repositoryFullNames, other.repositoryFullNames);
+
+@override int get hashCode => Object.hash(repositoryCount, Object.hashAll(repositoryFullNames));
+
+@override String toString() => 'NotFoundRepos(repositoryCount: $repositoryCount, repositoryFullNames: $repositoryFullNames)';
+
  }

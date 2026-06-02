@@ -59,12 +59,15 @@ DnsRecordsCertRecordData copyWith({double? Function()? algorithm, String? Functi
   keyTag: keyTag != null ? keyTag() : this.keyTag,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsCertRecordData &&
           algorithm == other.algorithm &&
           certificate == other.certificate &&
           keyTag == other.keyTag &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(algorithm, certificate, keyTag, type); } 
-@override String toString() { return 'DnsRecordsCertRecordData(algorithm: $algorithm, certificate: $certificate, keyTag: $keyTag, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(algorithm, certificate, keyTag, type);
+
+@override String toString() => 'DnsRecordsCertRecordData(algorithm: $algorithm, certificate: $certificate, keyTag: $keyTag, type: $type)';
+
  }

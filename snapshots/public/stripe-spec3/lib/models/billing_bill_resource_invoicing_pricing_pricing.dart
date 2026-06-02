@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoicingPricingPricingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingPricingPricingType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoicingPricingPricingType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingPricingPricingType($value)';
+
  }
 /// 
 @immutable final class BillingBillResourceInvoicingPricingPricing {const BillingBillResourceInvoicingPricingPricing({required this.type, this.priceDetails, this.unitAmountDecimal, });
@@ -50,11 +53,14 @@ BillingBillResourceInvoicingPricingPricing copyWith({BillingBillResourceInvoicin
   type: type ?? this.type,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingPricingPricing &&
           priceDetails == other.priceDetails &&
           type == other.type &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(priceDetails, type, unitAmountDecimal); } 
-@override String toString() { return 'BillingBillResourceInvoicingPricingPricing(priceDetails: $priceDetails, type: $type, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(priceDetails, type, unitAmountDecimal);
+
+@override String toString() => 'BillingBillResourceInvoicingPricingPricing(priceDetails: $priceDetails, type: $type, unitAmountDecimal: $unitAmountDecimal)';
+
  }

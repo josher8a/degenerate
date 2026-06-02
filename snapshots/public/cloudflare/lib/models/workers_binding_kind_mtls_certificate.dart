@@ -31,11 +31,14 @@ WorkersBindingKindMtlsCertificate copyWith({String? certificateId, WorkersBindin
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindMtlsCertificate &&
           certificateId == other.certificateId &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(certificateId, name, type); } 
-@override String toString() { return 'WorkersBindingKindMtlsCertificate(certificateId: $certificateId, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(certificateId, name, type);
+
+@override String toString() => 'WorkersBindingKindMtlsCertificate(certificateId: $certificateId, name: $name, type: $type)';
+
  }

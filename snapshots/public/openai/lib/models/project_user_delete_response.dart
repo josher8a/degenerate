@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectUserDeleteResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectUserDeleteResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectUserDeleteResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectUserDeleteResponseObject($value)';
+
  }
 @immutable final class ProjectUserDeleteResponse {const ProjectUserDeleteResponse({required this.object, required this.id, required this.deleted, });
 
@@ -48,11 +51,14 @@ ProjectUserDeleteResponse copyWith({ProjectUserDeleteResponseObject? object, Str
   id: id ?? this.id,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectUserDeleteResponse &&
           object == other.object &&
           id == other.id &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(object, id, deleted); } 
-@override String toString() { return 'ProjectUserDeleteResponse(object: $object, id: $id, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(object, id, deleted);
+
+@override String toString() => 'ProjectUserDeleteResponse(object: $object, id: $id, deleted: $deleted)';
+
  }

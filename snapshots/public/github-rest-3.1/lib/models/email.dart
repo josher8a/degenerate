@@ -34,12 +34,15 @@ Email copyWith({String? email, bool? primary, bool? verified, String? Function()
   verified: verified ?? this.verified,
   visibility: visibility != null ? visibility() : this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Email &&
           email == other.email &&
           primary == other.primary &&
           verified == other.verified &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(email, primary, verified, visibility); } 
-@override String toString() { return 'Email(email: $email, primary: $primary, verified: $verified, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(email, primary, verified, visibility);
+
+@override String toString() => 'Email(email: $email, primary: $primary, verified: $verified, visibility: $visibility)';
+
  }

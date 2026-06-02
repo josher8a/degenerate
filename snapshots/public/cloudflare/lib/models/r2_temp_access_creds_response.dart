@@ -36,11 +36,14 @@ R2TempAccessCredsResponse copyWith({String? Function()? accessKeyId, String? Fun
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
   sessionToken: sessionToken != null ? sessionToken() : this.sessionToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2TempAccessCredsResponse &&
           accessKeyId == other.accessKeyId &&
           secretAccessKey == other.secretAccessKey &&
-          sessionToken == other.sessionToken; } 
-@override int get hashCode { return Object.hash(accessKeyId, secretAccessKey, sessionToken); } 
-@override String toString() { return 'R2TempAccessCredsResponse(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey, sessionToken: $sessionToken)'; } 
+          sessionToken == other.sessionToken;
+
+@override int get hashCode => Object.hash(accessKeyId, secretAccessKey, sessionToken);
+
+@override String toString() => 'R2TempAccessCredsResponse(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey, sessionToken: $sessionToken)';
+
  }

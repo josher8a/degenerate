@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)';
+
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam18 {const PaymentIntentPaymentMethodOptionsParam18({this.code, this.setupFutureUsage, });
 
@@ -51,10 +54,13 @@ PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, Pay
   code: code != null ? code() : this.code,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam18 &&
           code == other.code &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(code, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam18(code: $code, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(code, setupFutureUsage);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam18(code: $code, setupFutureUsage: $setupFutureUsage)';
+
  }

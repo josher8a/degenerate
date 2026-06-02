@@ -50,13 +50,16 @@ CloudflarePipelinesWorkersPipelinesPipelineDestination copyWith({CloudflarePipel
   path: path ?? this.path,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesPipelineDestination &&
           batch == other.batch &&
           compression == other.compression &&
           format == other.format &&
           path == other.path &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(batch, compression, format, path, type); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestination(batch: $batch, compression: $compression, format: $format, path: $path, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(batch, compression, format, path, type);
+
+@override String toString() => 'CloudflarePipelinesWorkersPipelinesPipelineDestination(batch: $batch, compression: $compression, format: $format, path: $path, type: $type)';
+
  }

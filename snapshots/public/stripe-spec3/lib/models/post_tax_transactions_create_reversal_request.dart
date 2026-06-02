@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTaxTransactionsCreateReversalRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequestMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostTaxTransactionsCreateReversalRequestMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostTaxTransactionsCreateReversalRequestMode($value)';
+
  }
 @immutable final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({required this.mode, required this.originalTransaction, required this.reference, this.expand, this.flatAmount, this.lineItems, this.metadata, this.shippingCost, });
 
@@ -90,7 +93,7 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
   reference: reference ?? this.reference,
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequest &&
           listEquals(expand, other.expand) &&
           flatAmount == other.flatAmount &&
@@ -99,7 +102,10 @@ PostTaxTransactionsCreateReversalRequest copyWith({List<String>? Function()? exp
           mode == other.mode &&
           originalTransaction == other.originalTransaction &&
           reference == other.reference &&
-          shippingCost == other.shippingCost; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), flatAmount, Object.hashAll(lineItems ?? const []), metadata, mode, originalTransaction, reference, shippingCost); } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequest(expand: $expand, flatAmount: $flatAmount, lineItems: $lineItems, metadata: $metadata, mode: $mode, originalTransaction: $originalTransaction, reference: $reference, shippingCost: $shippingCost)'; } 
+          shippingCost == other.shippingCost;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), flatAmount, Object.hashAll(lineItems ?? const []), metadata, mode, originalTransaction, reference, shippingCost);
+
+@override String toString() => 'PostTaxTransactionsCreateReversalRequest(expand: $expand, flatAmount: $flatAmount, lineItems: $lineItems, metadata: $metadata, mode: $mode, originalTransaction: $originalTransaction, reference: $reference, shippingCost: $shippingCost)';
+
  }

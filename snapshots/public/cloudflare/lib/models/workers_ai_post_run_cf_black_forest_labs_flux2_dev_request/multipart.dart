@@ -20,10 +20,13 @@ Multipart copyWith({Map<String, dynamic>? Function()? body, String? Function()? 
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Multipart &&
           body == other.body &&
-          contentType == other.contentType; } 
-@override int get hashCode { return Object.hash(body, contentType); } 
-@override String toString() { return 'Multipart(body: $body, contentType: $contentType)'; } 
+          contentType == other.contentType;
+
+@override int get hashCode => Object.hash(body, contentType);
+
+@override String toString() => 'Multipart(body: $body, contentType: $contentType)';
+
  }

@@ -99,7 +99,7 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
   installation: installation != null ? installation() : this.installation,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Authorization &&
           id == other.id &&
           url == other.url &&
@@ -115,7 +115,10 @@ Authorization copyWith({int? id, Uri? url, List<String>? Function()? scopes, Str
           fingerprint == other.fingerprint &&
           user == other.user &&
           installation == other.installation &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(id, url, Object.hashAll(scopes ?? const []), token, tokenLastEight, hashedToken, app, note, noteUrl, updatedAt, createdAt, fingerprint, user, installation, expiresAt); } 
-@override String toString() { return 'Authorization(id: $id, url: $url, scopes: $scopes, token: $token, tokenLastEight: $tokenLastEight, hashedToken: $hashedToken, app: $app, note: $note, noteUrl: $noteUrl, updatedAt: $updatedAt, createdAt: $createdAt, fingerprint: $fingerprint, user: $user, installation: $installation, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(id, url, Object.hashAll(scopes ?? const []), token, tokenLastEight, hashedToken, app, note, noteUrl, updatedAt, createdAt, fingerprint, user, installation, expiresAt);
+
+@override String toString() => 'Authorization(id: $id, url: $url, scopes: $scopes, token: $token, tokenLastEight: $tokenLastEight, hashedToken: $hashedToken, app: $app, note: $note, noteUrl: $noteUrl, updatedAt: $updatedAt, createdAt: $createdAt, fingerprint: $fingerprint, user: $user, installation: $installation, expiresAt: $expiresAt)';
+
  }

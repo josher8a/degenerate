@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentTriggerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentTriggerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeploymentTriggerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeploymentTriggerType($value)';
+
  }
 /// Info about what caused the deployment.
 @immutable final class DeploymentTrigger {const DeploymentTrigger({required this.metadata, required this.type, });
@@ -54,10 +57,13 @@ DeploymentTrigger copyWith({DeploymentTriggerMetadata? metadata, DeploymentTrigg
   metadata: metadata ?? this.metadata,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentTrigger &&
           metadata == other.metadata &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(metadata, type); } 
-@override String toString() { return 'DeploymentTrigger(metadata: $metadata, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(metadata, type);
+
+@override String toString() => 'DeploymentTrigger(metadata: $metadata, type: $type)';
+
  }

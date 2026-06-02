@@ -23,10 +23,13 @@ ServiceStatus copyWith({List<Condition>? Function()? conditions, LoadBalancerSta
   conditions: conditions != null ? conditions() : this.conditions,
   loadBalancer: loadBalancer != null ? loadBalancer() : this.loadBalancer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ServiceStatus &&
           listEquals(conditions, other.conditions) &&
-          loadBalancer == other.loadBalancer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(conditions ?? const []), loadBalancer); } 
-@override String toString() { return 'ServiceStatus(conditions: $conditions, loadBalancer: $loadBalancer)'; } 
+          loadBalancer == other.loadBalancer;
+
+@override int get hashCode => Object.hash(Object.hashAll(conditions ?? const []), loadBalancer);
+
+@override String toString() => 'ServiceStatus(conditions: $conditions, loadBalancer: $loadBalancer)';
+
  }

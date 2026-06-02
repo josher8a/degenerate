@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DefaultSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DefaultSetting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DefaultSetting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DefaultSetting($value)';
+
  }
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
 @immutable final class EnterpriseSetting {const EnterpriseSetting._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnterpriseSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnterpriseSetting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnterpriseSetting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EnterpriseSetting($value)';
+
  }
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
 @immutable final class Setting {const Setting._(this.value);
@@ -79,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Setting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Setting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Setting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Setting($value)';
+
  }
 @immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });
 
@@ -166,7 +175,7 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
   enterpriseSetting: enterpriseSetting != null ? enterpriseSetting() : this.enterpriseSetting,
   setting: setting != null ? setting() : this.setting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningPatternOverride &&
           tokenType == other.tokenType &&
           customPatternVersion == other.customPatternVersion &&
@@ -179,7 +188,10 @@ SecretScanningPatternOverride copyWith({String? Function()? tokenType, String? F
           bypassRate == other.bypassRate &&
           defaultSetting == other.defaultSetting &&
           enterpriseSetting == other.enterpriseSetting &&
-          setting == other.setting; } 
-@override int get hashCode { return Object.hash(tokenType, customPatternVersion, slug, displayName, alertTotal, alertTotalPercentage, falsePositives, falsePositiveRate, bypassRate, defaultSetting, enterpriseSetting, setting); } 
-@override String toString() { return 'SecretScanningPatternOverride(tokenType: $tokenType, customPatternVersion: $customPatternVersion, slug: $slug, displayName: $displayName, alertTotal: $alertTotal, alertTotalPercentage: $alertTotalPercentage, falsePositives: $falsePositives, falsePositiveRate: $falsePositiveRate, bypassRate: $bypassRate, defaultSetting: $defaultSetting, enterpriseSetting: $enterpriseSetting, setting: $setting)'; } 
+          setting == other.setting;
+
+@override int get hashCode => Object.hash(tokenType, customPatternVersion, slug, displayName, alertTotal, alertTotalPercentage, falsePositives, falsePositiveRate, bypassRate, defaultSetting, enterpriseSetting, setting);
+
+@override String toString() => 'SecretScanningPatternOverride(tokenType: $tokenType, customPatternVersion: $customPatternVersion, slug: $slug, displayName: $displayName, alertTotal: $alertTotal, alertTotalPercentage: $alertTotalPercentage, falsePositives: $falsePositives, falsePositiveRate: $falsePositiveRate, bypassRate: $bypassRate, defaultSetting: $defaultSetting, enterpriseSetting: $enterpriseSetting, setting: $setting)';
+
  }

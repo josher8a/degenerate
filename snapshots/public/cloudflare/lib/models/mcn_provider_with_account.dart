@@ -92,7 +92,7 @@ McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()?
   status: status != null ? status() : this.status,
   accountId: accountId ?? this.accountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnProviderWithAccount &&
           awsArn == other.awsArn &&
           azureSubscriptionId == other.azureSubscriptionId &&
@@ -108,7 +108,10 @@ McnProviderWithAccount copyWith({String? Function()? awsArn, String? Function()?
           state == other.state &&
           stateV2 == other.stateV2 &&
           status == other.status &&
-          accountId == other.accountId; } 
-@override int get hashCode { return Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status, accountId); } 
-@override String toString() { return 'McnProviderWithAccount(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status, accountId: $accountId)'; } 
+          accountId == other.accountId;
+
+@override int get hashCode => Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status, accountId);
+
+@override String toString() => 'McnProviderWithAccount(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status, accountId: $accountId)';
+
  }

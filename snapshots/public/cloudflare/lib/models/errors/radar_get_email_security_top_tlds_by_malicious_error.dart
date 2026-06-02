@@ -17,7 +17,8 @@ final class RadarGetEmailSecurityTopTldsByMaliciousError$404 extends RadarGetEma
 
 final RadarGetEmailSecurityTopTldsByMaliciousResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetEmailSecurityTopTldsByMaliciousError$Unknown extends RadarGetEmailSecurityTopTldsByMaliciousError {const RadarGetEmailSecurityTopTldsByMaliciousError$Unknown(this.statusCode, this.rawBody, );
 

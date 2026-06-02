@@ -40,10 +40,13 @@ ChatCompletionAllowedTools copyWith({Mode? mode, List<Map<String,dynamic>>? tool
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionAllowedTools &&
           mode == other.mode &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(mode, Object.hashAll(tools)); } 
-@override String toString() { return 'ChatCompletionAllowedTools(mode: $mode, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(mode, Object.hashAll(tools));
+
+@override String toString() => 'ChatCompletionAllowedTools(mode: $mode, tools: $tools)';
+
  }

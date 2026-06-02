@@ -36,9 +36,7 @@ final class AuthRefreshTokenError$400 extends AuthRefreshTokenError {
   final ErrorResponse error;
 
   @override
-  int get statusCode {
-    return 400;
-  }
+  int get statusCode => 400;
 }
 
 final class AuthRefreshTokenError$429 extends AuthRefreshTokenError {
@@ -47,9 +45,7 @@ final class AuthRefreshTokenError$429 extends AuthRefreshTokenError {
   final ErrorResponse error;
 
   @override
-  int get statusCode {
-    return 429;
-  }
+  int get statusCode => 429;
 }
 
 final class AuthRefreshTokenError$Unknown extends AuthRefreshTokenError {

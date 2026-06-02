@@ -30,11 +30,14 @@ PortalSubscriptionUpdateProductAdjustableQuantity copyWith({bool? enabled, int? 
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum ?? this.minimum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionUpdateProductAdjustableQuantity &&
           enabled == other.enabled &&
           maximum == other.maximum &&
-          minimum == other.minimum; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum); } 
-@override String toString() { return 'PortalSubscriptionUpdateProductAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)'; } 
+          minimum == other.minimum;
+
+@override int get hashCode => Object.hash(enabled, maximum, minimum);
+
+@override String toString() => 'PortalSubscriptionUpdateProductAdjustableQuantity(enabled: $enabled, maximum: $maximum, minimum: $minimum)';
+
  }

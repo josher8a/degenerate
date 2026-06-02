@@ -25,11 +25,14 @@ LivestreamSessionLivestreamIdResponseData copyWith({LivestreamSessionLivestreamI
   paging: paging != null ? paging() : this.paging,
   session: session != null ? session() : this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamSessionLivestreamIdResponseData &&
           livestream == other.livestream &&
           paging == other.paging &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(livestream, paging, session); } 
-@override String toString() { return 'LivestreamSessionLivestreamIdResponseData(livestream: $livestream, paging: $paging, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(livestream, paging, session);
+
+@override String toString() => 'LivestreamSessionLivestreamIdResponseData(livestream: $livestream, paging: $paging, session: $session)';
+
  }

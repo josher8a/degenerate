@@ -20,10 +20,13 @@ PutPermissionUpdateResponse copyWith({String? Function()? message, bool? Functio
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PutPermissionUpdateResponse &&
           message == other.message &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(message, success); } 
-@override String toString() { return 'PutPermissionUpdateResponse(message: $message, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(message, success);
+
+@override String toString() => 'PutPermissionUpdateResponse(message: $message, success: $success)';
+
  }

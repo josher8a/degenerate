@@ -26,11 +26,14 @@ Circle copyWith({String? type, double? radius, String? Function()? color, }) { r
   radius: radius ?? this.radius,
   color: color != null ? color() : this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Circle &&
           type == other.type &&
           radius == other.radius &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(type, radius, color); } 
-@override String toString() { return 'Circle(type: $type, radius: $radius, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(type, radius, color);
+
+@override String toString() => 'Circle(type: $type, radius: $radius, color: $color)';
+
  }

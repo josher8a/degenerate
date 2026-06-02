@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConversationResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConversationResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConversationResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConversationResourceObject($value)';
+
  }
 @immutable final class ConversationResource {const ConversationResource({required this.id, required this.metadata, required this.createdAt, this.object = ConversationResourceObject.conversation, });
 
@@ -60,12 +63,15 @@ ConversationResource copyWith({String? id, ConversationResourceObject? object, d
   metadata: metadata != null ? metadata() : this.metadata,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConversationResource &&
           id == other.id &&
           object == other.object &&
           metadata == other.metadata &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, object, metadata, createdAt); } 
-@override String toString() { return 'ConversationResource(id: $id, object: $object, metadata: $metadata, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, object, metadata, createdAt);
+
+@override String toString() => 'ConversationResource(id: $id, object: $object, metadata: $metadata, createdAt: $createdAt)';
+
  }

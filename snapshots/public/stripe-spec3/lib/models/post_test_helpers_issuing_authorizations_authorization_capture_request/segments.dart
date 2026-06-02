@@ -63,14 +63,17 @@ Segments copyWith({String? Function()? arrivalAirportCode, String? Function()? c
   serviceClass: serviceClass != null ? serviceClass() : this.serviceClass,
   stopoverAllowed: stopoverAllowed != null ? stopoverAllowed() : this.stopoverAllowed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Segments &&
           arrivalAirportCode == other.arrivalAirportCode &&
           carrier == other.carrier &&
           departureAirportCode == other.departureAirportCode &&
           flightNumber == other.flightNumber &&
           serviceClass == other.serviceClass &&
-          stopoverAllowed == other.stopoverAllowed; } 
-@override int get hashCode { return Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed); } 
-@override String toString() { return 'Segments(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)'; } 
+          stopoverAllowed == other.stopoverAllowed;
+
+@override int get hashCode => Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed);
+
+@override String toString() => 'Segments(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)';
+
  }

@@ -21,10 +21,13 @@ MagicSchemasTunnelDeletedResponseResult copyWith({bool? Function()? deleted, Mag
   deleted: deleted != null ? deleted() : this.deleted,
   deletedIpsecTunnel: deletedIpsecTunnel != null ? deletedIpsecTunnel() : this.deletedIpsecTunnel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicSchemasTunnelDeletedResponseResult &&
           deleted == other.deleted &&
-          deletedIpsecTunnel == other.deletedIpsecTunnel; } 
-@override int get hashCode { return Object.hash(deleted, deletedIpsecTunnel); } 
-@override String toString() { return 'MagicSchemasTunnelDeletedResponseResult(deleted: $deleted, deletedIpsecTunnel: $deletedIpsecTunnel)'; } 
+          deletedIpsecTunnel == other.deletedIpsecTunnel;
+
+@override int get hashCode => Object.hash(deleted, deletedIpsecTunnel);
+
+@override String toString() => 'MagicSchemasTunnelDeletedResponseResult(deleted: $deleted, deletedIpsecTunnel: $deletedIpsecTunnel)';
+
  }

@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Severity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Severity($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Severity && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Severity($value)';
+
  }
 @immutable final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });
 
@@ -93,7 +96,7 @@ SecurityCenterIssue copyWith({bool? Function()? dismissed, String? Function()? i
   subject: subject != null ? subject() : this.subject,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityCenterIssue &&
           dismissed == other.dismissed &&
           id == other.id &&
@@ -105,7 +108,10 @@ SecurityCenterIssue copyWith({bool? Function()? dismissed, String? Function()? i
           severity == other.severity &&
           since == other.since &&
           subject == other.subject &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(dismissed, id, issueClass, issueType, payload, resolveLink, resolveText, severity, since, subject, timestamp); } 
-@override String toString() { return 'SecurityCenterIssue(dismissed: $dismissed, id: $id, issueClass: $issueClass, issueType: $issueType, payload: $payload, resolveLink: $resolveLink, resolveText: $resolveText, severity: $severity, since: $since, subject: $subject, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(dismissed, id, issueClass, issueType, payload, resolveLink, resolveText, severity, since, subject, timestamp);
+
+@override String toString() => 'SecurityCenterIssue(dismissed: $dismissed, id: $id, issueClass: $issueClass, issueType: $issueType, payload: $payload, resolveLink: $resolveLink, resolveText: $resolveText, severity: $severity, since: $since, subject: $subject, timestamp: $timestamp)';
+
  }

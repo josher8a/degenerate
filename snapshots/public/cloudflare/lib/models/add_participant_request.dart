@@ -39,12 +39,15 @@ AddParticipantRequest copyWith({String? customParticipantId, String? Function()?
   picture: picture != null ? picture() : this.picture,
   presetName: presetName ?? this.presetName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddParticipantRequest &&
           customParticipantId == other.customParticipantId &&
           name == other.name &&
           picture == other.picture &&
-          presetName == other.presetName; } 
-@override int get hashCode { return Object.hash(customParticipantId, name, picture, presetName); } 
-@override String toString() { return 'AddParticipantRequest(customParticipantId: $customParticipantId, name: $name, picture: $picture, presetName: $presetName)'; } 
+          presetName == other.presetName;
+
+@override int get hashCode => Object.hash(customParticipantId, name, picture, presetName);
+
+@override String toString() => 'AddParticipantRequest(customParticipantId: $customParticipantId, name: $name, picture: $picture, presetName: $presetName)';
+
  }

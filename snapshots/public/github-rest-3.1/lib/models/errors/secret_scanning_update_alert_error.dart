@@ -17,7 +17,8 @@ final class SecretScanningUpdateAlertError$503 extends SecretScanningUpdateAlert
 
 final SecretScanningUpdateAlertResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SecretScanningUpdateAlertError$Unknown extends SecretScanningUpdateAlertError {const SecretScanningUpdateAlertError$Unknown(this.statusCode, this.rawBody, );
 

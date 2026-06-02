@@ -42,12 +42,15 @@ GetIdentityVerificationReportsResponse copyWith({List<IdentityVerificationReport
   object: object ?? this.object,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIdentityVerificationReportsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetIdentityVerificationReportsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), hasMore, object, url);
+
+@override String toString() => 'GetIdentityVerificationReportsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
+
  }

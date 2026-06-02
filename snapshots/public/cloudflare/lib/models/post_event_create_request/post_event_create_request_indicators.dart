@@ -27,10 +27,13 @@ PostEventCreateRequestIndicators copyWith({String? indicatorType, String? value,
   indicatorType: indicatorType ?? this.indicatorType,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateRequestIndicators &&
           indicatorType == other.indicatorType &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(indicatorType, value); } 
-@override String toString() { return 'PostEventCreateRequestIndicators(indicatorType: $indicatorType, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(indicatorType, value);
+
+@override String toString() => 'PostEventCreateRequestIndicators(indicatorType: $indicatorType, value: $value)';
+
  }

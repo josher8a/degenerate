@@ -46,14 +46,17 @@ PostSubscriptionSchedulesScheduleRequest copyWith({DefaultSettings? Function()? 
   phases: phases != null ? phases() : this.phases,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesScheduleRequest &&
           defaultSettings == other.defaultSettings &&
           endBehavior == other.endBehavior &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           listEquals(phases, other.phases) &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(defaultSettings, endBehavior, Object.hashAll(expand ?? const []), metadata, Object.hashAll(phases ?? const []), prorationBehavior); } 
-@override String toString() { return 'PostSubscriptionSchedulesScheduleRequest(defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, metadata: $metadata, phases: $phases, prorationBehavior: $prorationBehavior)'; } 
+          prorationBehavior == other.prorationBehavior;
+
+@override int get hashCode => Object.hash(defaultSettings, endBehavior, Object.hashAll(expand ?? const []), metadata, Object.hashAll(phases ?? const []), prorationBehavior);
+
+@override String toString() => 'PostSubscriptionSchedulesScheduleRequest(defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, metadata: $metadata, phases: $phases, prorationBehavior: $prorationBehavior)';
+
  }

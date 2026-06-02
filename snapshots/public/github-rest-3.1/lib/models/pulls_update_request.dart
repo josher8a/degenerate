@@ -40,13 +40,16 @@ PullsUpdateRequest copyWith({String? Function()? title, String? Function()? body
   base: base != null ? base() : this.base,
   maintainerCanModify: maintainerCanModify != null ? maintainerCanModify() : this.maintainerCanModify,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsUpdateRequest &&
           title == other.title &&
           body == other.body &&
           state == other.state &&
           base == other.base &&
-          maintainerCanModify == other.maintainerCanModify; } 
-@override int get hashCode { return Object.hash(title, body, state, base, maintainerCanModify); } 
-@override String toString() { return 'PullsUpdateRequest(title: $title, body: $body, state: $state, base: $base, maintainerCanModify: $maintainerCanModify)'; } 
+          maintainerCanModify == other.maintainerCanModify;
+
+@override int get hashCode => Object.hash(title, body, state, base, maintainerCanModify);
+
+@override String toString() => 'PullsUpdateRequest(title: $title, body: $body, state: $state, base: $base, maintainerCanModify: $maintainerCanModify)';
+
  }

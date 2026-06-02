@@ -41,13 +41,16 @@ Toleration copyWith({String? Function()? effect, String? Function()? key, String
   tolerationSeconds: tolerationSeconds != null ? tolerationSeconds() : this.tolerationSeconds,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Toleration &&
           effect == other.effect &&
           key == other.key &&
           $operator == other.$operator &&
           tolerationSeconds == other.tolerationSeconds &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(effect, key, $operator, tolerationSeconds, value); } 
-@override String toString() { return 'Toleration(effect: $effect, key: $key, \$operator: ${$operator}, tolerationSeconds: $tolerationSeconds, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(effect, key, $operator, tolerationSeconds, value);
+
+@override String toString() => 'Toleration(effect: $effect, key: $key, \$operator: ${$operator}, tolerationSeconds: $tolerationSeconds, value: $value)';
+
  }

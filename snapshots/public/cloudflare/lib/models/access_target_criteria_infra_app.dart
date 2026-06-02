@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessProtocolInfraApp && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessProtocolInfraApp($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessProtocolInfraApp && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessProtocolInfraApp($value)';
+
  }
 @immutable final class AccessTargetCriteriaInfraApp {const AccessTargetCriteriaInfraApp({required this.port, required this.targetAttributes, required this.protocol, });
 
@@ -52,11 +55,14 @@ AccessTargetCriteriaInfraApp copyWith({AccessPort? port, Map<String,List<String>
   targetAttributes: targetAttributes ?? this.targetAttributes,
   protocol: protocol ?? this.protocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTargetCriteriaInfraApp &&
           port == other.port &&
           targetAttributes == other.targetAttributes &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(port, targetAttributes, protocol); } 
-@override String toString() { return 'AccessTargetCriteriaInfraApp(port: $port, targetAttributes: $targetAttributes, protocol: $protocol)'; } 
+          protocol == other.protocol;
+
+@override int get hashCode => Object.hash(port, targetAttributes, protocol);
+
+@override String toString() => 'AccessTargetCriteriaInfraApp(port: $port, targetAttributes: $targetAttributes, protocol: $protocol)';
+
  }

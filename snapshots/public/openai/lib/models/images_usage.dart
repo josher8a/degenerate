@@ -40,12 +40,15 @@ ImagesUsage copyWith({int? totalTokens, int? inputTokens, int? outputTokens, Ima
   outputTokens: outputTokens ?? this.outputTokens,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesUsage &&
           totalTokens == other.totalTokens &&
           inputTokens == other.inputTokens &&
           outputTokens == other.outputTokens &&
-          inputTokensDetails == other.inputTokensDetails; } 
-@override int get hashCode { return Object.hash(totalTokens, inputTokens, outputTokens, inputTokensDetails); } 
-@override String toString() { return 'ImagesUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokensDetails: $inputTokensDetails)'; } 
+          inputTokensDetails == other.inputTokensDetails;
+
+@override int get hashCode => Object.hash(totalTokens, inputTokens, outputTokens, inputTokensDetails);
+
+@override String toString() => 'ImagesUsage(totalTokens: $totalTokens, inputTokens: $inputTokens, outputTokens: $outputTokens, inputTokensDetails: $inputTokensDetails)';
+
  }

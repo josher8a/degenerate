@@ -21,10 +21,13 @@ ListServersResponse copyWith({List<CreateServersResponseResult>? result, bool? s
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListServersResponse &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), success); } 
-@override String toString() { return 'ListServersResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(result), success);
+
+@override String toString() => 'ListServersResponse(result: $result, success: $success)';
+
  }

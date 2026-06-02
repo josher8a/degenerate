@@ -23,10 +23,13 @@ RealtimekitUpdatePresetConfigMedia copyWith({RealtimekitUpdatePresetConfigMediaS
   screenshare: screenshare != null ? screenshare() : this.screenshare,
   video: video != null ? video() : this.video,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetConfigMedia &&
           screenshare == other.screenshare &&
-          video == other.video; } 
-@override int get hashCode { return Object.hash(screenshare, video); } 
-@override String toString() { return 'RealtimekitUpdatePresetConfigMedia(screenshare: $screenshare, video: $video)'; } 
+          video == other.video;
+
+@override int get hashCode => Object.hash(screenshare, video);
+
+@override String toString() => 'RealtimekitUpdatePresetConfigMedia(screenshare: $screenshare, video: $video)';
+
  }

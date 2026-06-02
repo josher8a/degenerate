@@ -18,13 +18,15 @@ final class GistsListPublicError$403 extends GistsListPublicError {const GistsLi
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class GistsListPublicError$422 extends GistsListPublicError {const GistsListPublicError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class GistsListPublicError$Unknown extends GistsListPublicError {const GistsListPublicError$Unknown(this.statusCode, this.rawBody, );
 

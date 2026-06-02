@@ -35,13 +35,16 @@ Forks copyWith({String? Function()? id, Uri? Function()? url, PublicUser? Functi
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Forks &&
           id == other.id &&
           url == other.url &&
           user == other.user &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, url, user, createdAt, updatedAt); } 
-@override String toString() { return 'Forks(id: $id, url: $url, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, url, user, createdAt, updatedAt);
+
+@override String toString() => 'Forks(id: $id, url: $url, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

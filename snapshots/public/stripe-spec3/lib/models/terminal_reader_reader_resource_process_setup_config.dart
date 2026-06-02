@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TerminalReaderReaderResourceProcessSetupConfig copyWith({bool? Function()? enableCustomerCancellation}) { return TerminalReaderReaderResourceProcessSetupConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceProcessSetupConfig &&
-          enableCustomerCancellation == other.enableCustomerCancellation; } 
-@override int get hashCode { return enableCustomerCancellation.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceProcessSetupConfig(enableCustomerCancellation: $enableCustomerCancellation)'; } 
+          enableCustomerCancellation == other.enableCustomerCancellation;
+
+@override int get hashCode => enableCustomerCancellation.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceProcessSetupConfig(enableCustomerCancellation: $enableCustomerCancellation)';
+
  }

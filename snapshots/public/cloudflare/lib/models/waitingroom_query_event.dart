@@ -102,7 +102,7 @@ WaitingroomQueryEvent copyWith({WaitingroomEventCustomPageHtml? Function()? cust
   turnstileAction: turnstileAction != null ? turnstileAction() : this.turnstileAction,
   turnstileMode: turnstileMode != null ? turnstileMode() : this.turnstileMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomQueryEvent &&
           customPageHtml == other.customPageHtml &&
           description == other.description &&
@@ -118,7 +118,10 @@ WaitingroomQueryEvent copyWith({WaitingroomEventCustomPageHtml? Function()? cust
           suspended == other.suspended &&
           totalActiveUsers == other.totalActiveUsers &&
           turnstileAction == other.turnstileAction &&
-          turnstileMode == other.turnstileMode; } 
-@override int get hashCode { return Object.hash(customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode); } 
-@override String toString() { return 'WaitingroomQueryEvent(customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)'; } 
+          turnstileMode == other.turnstileMode;
+
+@override int get hashCode => Object.hash(customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers, turnstileAction, turnstileMode);
+
+@override String toString() => 'WaitingroomQueryEvent(customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)';
+
  }

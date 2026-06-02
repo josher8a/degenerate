@@ -53,7 +53,7 @@ R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, 
   zoneId: zoneId != null ? zoneId() : this.zoneId,
   zoneName: zoneName != null ? zoneName() : this.zoneName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ListCustomDomainsResponseDomains &&
           listEquals(ciphers, other.ciphers) &&
           domain == other.domain &&
@@ -61,7 +61,10 @@ R2ListCustomDomainsResponseDomains copyWith({List<String>? Function()? ciphers, 
           minTls == other.minTls &&
           status == other.status &&
           zoneId == other.zoneId &&
-          zoneName == other.zoneName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, status, zoneId, zoneName); } 
-@override String toString() { return 'R2ListCustomDomainsResponseDomains(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, status: $status, zoneId: $zoneId, zoneName: $zoneName)'; } 
+          zoneName == other.zoneName;
+
+@override int get hashCode => Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls, status, zoneId, zoneName);
+
+@override String toString() => 'R2ListCustomDomainsResponseDomains(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls, status: $status, zoneId: $zoneId, zoneName: $zoneName)';
+
  }

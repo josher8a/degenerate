@@ -17,7 +17,8 @@ final class RadarGetDnsTopLocationsError$404 extends RadarGetDnsTopLocationsErro
 
 final RadarGetDnsTopLocationsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetDnsTopLocationsError$Unknown extends RadarGetDnsTopLocationsError {const RadarGetDnsTopLocationsError$Unknown(this.statusCode, this.rawBody, );
 

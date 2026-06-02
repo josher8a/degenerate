@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceFlowType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceFlowType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceFlowType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceFlowType($value)';
+
  }
 @immutable final class GetTreasuryReceivedCreditsLinkedFlows {const GetTreasuryReceivedCreditsLinkedFlows({required this.sourceFlowType});
 
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sourc
 GetTreasuryReceivedCreditsLinkedFlows copyWith({SourceFlowType? sourceFlowType}) { return GetTreasuryReceivedCreditsLinkedFlows(
   sourceFlowType: sourceFlowType ?? this.sourceFlowType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetTreasuryReceivedCreditsLinkedFlows &&
-          sourceFlowType == other.sourceFlowType; } 
-@override int get hashCode { return sourceFlowType.hashCode; } 
-@override String toString() { return 'GetTreasuryReceivedCreditsLinkedFlows(sourceFlowType: $sourceFlowType)'; } 
+          sourceFlowType == other.sourceFlowType;
+
+@override int get hashCode => sourceFlowType.hashCode;
+
+@override String toString() => 'GetTreasuryReceivedCreditsLinkedFlows(sourceFlowType: $sourceFlowType)';
+
  }

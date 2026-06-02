@@ -24,10 +24,13 @@ NodeAddress copyWith({String? address, String? type, }) { return NodeAddress(
   address: address ?? this.address,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeAddress &&
           address == other.address &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, type); } 
-@override String toString() { return 'NodeAddress(address: $address, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, type);
+
+@override String toString() => 'NodeAddress(address: $address, type: $type)';
+
  }

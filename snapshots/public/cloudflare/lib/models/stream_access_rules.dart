@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamAccessRulesAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamAccessRulesAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamAccessRulesAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamAccessRulesAction($value)';
+
  }
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
 @immutable final class StreamAccessRulesType {const StreamAccessRulesType._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamAccessRulesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamAccessRulesType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamAccessRulesType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamAccessRulesType($value)';
+
  }
 /// Defines rules for fine-grained control over content than signed URL tokens alone. Access rules primarily make tokens conditionally valid based on user information. Access Rules are specified on token payloads as the `accessRules` property containing an array of Rule objects.
 @immutable final class StreamAccessRules {const StreamAccessRules({this.action, this.country, this.ip, this.type, });
@@ -92,12 +98,15 @@ StreamAccessRules copyWith({StreamAccessRulesAction? Function()? action, List<St
   ip: ip != null ? ip() : this.ip,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamAccessRules &&
           action == other.action &&
           listEquals(country, other.country) &&
           listEquals(ip, other.ip) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(country ?? const []), Object.hashAll(ip ?? const []), type); } 
-@override String toString() { return 'StreamAccessRules(action: $action, country: $country, ip: $ip, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(country ?? const []), Object.hashAll(ip ?? const []), type);
+
+@override String toString() => 'StreamAccessRules(action: $action, country: $country, ip: $ip, type: $type)';
+
  }

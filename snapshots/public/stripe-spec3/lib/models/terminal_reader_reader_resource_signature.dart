@@ -24,9 +24,12 @@ return errors; }
 TerminalReaderReaderResourceSignature copyWith({String? Function()? value}) { return TerminalReaderReaderResourceSignature(
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceSignature &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceSignature(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceSignature(value: $value)';
+
  }

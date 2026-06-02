@@ -41,13 +41,16 @@ VectorizeCreateIndexResponse copyWith({VectorizeIndexDimensionConfiguration? Fun
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeCreateIndexResponse &&
           config == other.config &&
           createdOn == other.createdOn &&
           description == other.description &&
           modifiedOn == other.modifiedOn &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(config, createdOn, description, modifiedOn, name); } 
-@override String toString() { return 'VectorizeCreateIndexResponse(config: $config, createdOn: $createdOn, description: $description, modifiedOn: $modifiedOn, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(config, createdOn, description, modifiedOn, name);
+
+@override String toString() => 'VectorizeCreateIndexResponse(config: $config, createdOn: $createdOn, description: $description, modifiedOn: $modifiedOn, name: $name)';
+
  }

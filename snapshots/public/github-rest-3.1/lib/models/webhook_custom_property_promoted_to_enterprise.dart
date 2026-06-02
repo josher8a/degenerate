@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCustomPropertyPromotedToEnterpriseAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCustomPropertyPromotedToEnterpriseAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCustomPropertyPromotedToEnterpriseAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCustomPropertyPromotedToEnterpriseAction($value)';
+
  }
 @immutable final class WebhookCustomPropertyPromotedToEnterprise {const WebhookCustomPropertyPromotedToEnterprise({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });
 
@@ -62,14 +65,17 @@ WebhookCustomPropertyPromotedToEnterprise copyWith({WebhookCustomPropertyPromote
   organization: organization != null ? organization() : this.organization,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCustomPropertyPromotedToEnterprise &&
           action == other.action &&
           definition == other.definition &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, definition, enterprise, installation, organization, sender); } 
-@override String toString() { return 'WebhookCustomPropertyPromotedToEnterprise(action: $action, definition: $definition, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, definition, enterprise, installation, organization, sender);
+
+@override String toString() => 'WebhookCustomPropertyPromotedToEnterprise(action: $action, definition: $definition, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)';
+
  }

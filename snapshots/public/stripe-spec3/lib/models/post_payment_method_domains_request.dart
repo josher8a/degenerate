@@ -32,11 +32,14 @@ PostPaymentMethodDomainsRequest copyWith({String? domainName, bool? Function()? 
   enabled: enabled != null ? enabled() : this.enabled,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodDomainsRequest &&
           domainName == other.domainName &&
           enabled == other.enabled &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(domainName, enabled, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentMethodDomainsRequest(domainName: $domainName, enabled: $enabled, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(domainName, enabled, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentMethodDomainsRequest(domainName: $domainName, enabled: $enabled, expand: $expand)';
+
  }

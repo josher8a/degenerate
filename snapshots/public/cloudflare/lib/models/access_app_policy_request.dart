@@ -55,7 +55,7 @@ AccessAppPolicyRequest copyWith({List<AccessApprovalGroup>? Function()? approval
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   precedence: precedence != null ? precedence() : this.precedence,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppPolicyRequest &&
           listEquals(approvalGroups, other.approvalGroups) &&
           approvalRequired == other.approvalRequired &&
@@ -65,7 +65,10 @@ AccessAppPolicyRequest copyWith({List<AccessApprovalGroup>? Function()? approval
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
           sessionDuration == other.sessionDuration &&
-          precedence == other.precedence; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, precedence); } 
-@override String toString() { return 'AccessAppPolicyRequest(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, precedence: $precedence)'; } 
+          precedence == other.precedence;
+
+@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration, precedence);
+
+@override String toString() => 'AccessAppPolicyRequest(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration, precedence: $precedence)';
+
  }

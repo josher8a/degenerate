@@ -36,11 +36,14 @@ TeamsDevicesIntuneConfigRequest copyWith({String? clientId, String? clientSecret
   clientSecret: clientSecret ?? this.clientSecret,
   customerId: customerId ?? this.customerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIntuneConfigRequest &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
-          customerId == other.customerId; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, customerId); } 
-@override String toString() { return 'TeamsDevicesIntuneConfigRequest(clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)'; } 
+          customerId == other.customerId;
+
+@override int get hashCode => Object.hash(clientId, clientSecret, customerId);
+
+@override String toString() => 'TeamsDevicesIntuneConfigRequest(clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)';
+
  }

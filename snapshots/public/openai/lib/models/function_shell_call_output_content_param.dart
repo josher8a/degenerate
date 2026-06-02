@@ -36,11 +36,14 @@ FunctionShellCallOutputContentParam copyWith({String? stdout, String? stderr, Fu
   stderr: stderr ?? this.stderr,
   outcome: outcome ?? this.outcome,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputContentParam &&
           stdout == other.stdout &&
           stderr == other.stderr &&
-          outcome == other.outcome; } 
-@override int get hashCode { return Object.hash(stdout, stderr, outcome); } 
-@override String toString() { return 'FunctionShellCallOutputContentParam(stdout: $stdout, stderr: $stderr, outcome: $outcome)'; } 
+          outcome == other.outcome;
+
+@override int get hashCode => Object.hash(stdout, stderr, outcome);
+
+@override String toString() => 'FunctionShellCallOutputContentParam(stdout: $stdout, stderr: $stderr, outcome: $outcome)';
+
  }

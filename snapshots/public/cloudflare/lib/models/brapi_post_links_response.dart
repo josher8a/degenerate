@@ -27,11 +27,14 @@ BrapiPostLinksResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineName
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostLinksResponse &&
           listEquals(errors, other.errors) &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(result), success); } 
-@override String toString() { return 'BrapiPostLinksResponse(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(result), success);
+
+@override String toString() => 'BrapiPostLinksResponse(errors: $errors, result: $result, success: $success)';
+
  }

@@ -22,10 +22,13 @@ PinnedIssueComment copyWith({DateTime? pinnedAt, SimpleUser? Function()? pinnedB
   pinnedAt: pinnedAt ?? this.pinnedAt,
   pinnedBy: pinnedBy != null ? pinnedBy() : this.pinnedBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PinnedIssueComment &&
           pinnedAt == other.pinnedAt &&
-          pinnedBy == other.pinnedBy; } 
-@override int get hashCode { return Object.hash(pinnedAt, pinnedBy); } 
-@override String toString() { return 'PinnedIssueComment(pinnedAt: $pinnedAt, pinnedBy: $pinnedBy)'; } 
+          pinnedBy == other.pinnedBy;
+
+@override int get hashCode => Object.hash(pinnedAt, pinnedBy);
+
+@override String toString() => 'PinnedIssueComment(pinnedAt: $pinnedAt, pinnedBy: $pinnedBy)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Flexible copyWith({ProrationDiscounts? Function()? prorationDiscounts}) { return Flexible(
   prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Flexible &&
-          prorationDiscounts == other.prorationDiscounts; } 
-@override int get hashCode { return prorationDiscounts.hashCode; } 
-@override String toString() { return 'Flexible(prorationDiscounts: $prorationDiscounts)'; } 
+          prorationDiscounts == other.prorationDiscounts;
+
+@override int get hashCode => prorationDiscounts.hashCode;
+
+@override String toString() => 'Flexible(prorationDiscounts: $prorationDiscounts)';
+
  }

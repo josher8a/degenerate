@@ -53,10 +53,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumStatus($value)';
+
  }
 /// The direction of the message. Can be: `inbound` for incoming messages, `outbound-api` for messages created by the REST API, `outbound-call` for messages created during a call, or `outbound-reply` for messages created in response to an incoming message.
 @immutable final class MessageEnumDirection {const MessageEnumDirection._(this.value);
@@ -84,10 +87,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MessageEnumDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MessageEnumDirection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumDirection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageEnumDirection($value)';
+
  }
 @immutable final class AccountMessage {const AccountMessage({this.body, this.numSegments, this.direction, this.from, this.to, this.dateUpdated, this.price, this.errorMessage, this.uri, this.accountSid, this.numMedia, this.status, this.messagingServiceSid, this.sid, this.dateSent, this.dateCreated, this.errorCode, this.priceUnit, this.apiVersion, this.subresourceUris, });
 
@@ -238,7 +244,7 @@ AccountMessage copyWith({String? Function()? body, String? Function()? numSegmen
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountMessage &&
           body == other.body &&
           numSegments == other.numSegments &&
@@ -259,7 +265,10 @@ AccountMessage copyWith({String? Function()? body, String? Function()? numSegmen
           errorCode == other.errorCode &&
           priceUnit == other.priceUnit &&
           apiVersion == other.apiVersion &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(body, numSegments, direction, from, to, dateUpdated, price, errorMessage, uri, accountSid, numMedia, status, messagingServiceSid, sid, dateSent, dateCreated, errorCode, priceUnit, apiVersion, subresourceUris); } 
-@override String toString() { return 'AccountMessage(body: $body, numSegments: $numSegments, direction: $direction, from: $from, to: $to, dateUpdated: $dateUpdated, price: $price, errorMessage: $errorMessage, uri: $uri, accountSid: $accountSid, numMedia: $numMedia, status: $status, messagingServiceSid: $messagingServiceSid, sid: $sid, dateSent: $dateSent, dateCreated: $dateCreated, errorCode: $errorCode, priceUnit: $priceUnit, apiVersion: $apiVersion, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hash(body, numSegments, direction, from, to, dateUpdated, price, errorMessage, uri, accountSid, numMedia, status, messagingServiceSid, sid, dateSent, dateCreated, errorCode, priceUnit, apiVersion, subresourceUris);
+
+@override String toString() => 'AccountMessage(body: $body, numSegments: $numSegments, direction: $direction, from: $from, to: $to, dateUpdated: $dateUpdated, price: $price, errorMessage: $errorMessage, uri: $uri, accountSid: $accountSid, numMedia: $numMedia, status: $status, messagingServiceSid: $messagingServiceSid, sid: $sid, dateSent: $dateSent, dateCreated: $dateCreated, errorCode: $errorCode, priceUnit: $priceUnit, apiVersion: $apiVersion, subresourceUris: $subresourceUris)';
+
  }

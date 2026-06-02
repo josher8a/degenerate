@@ -28,11 +28,14 @@ RuleSource copyWith({String? Function()? type, int? Function()? id, String? Func
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSource &&
           type == other.type &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(type, id, name); } 
-@override String toString() { return 'RuleSource(type: $type, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(type, id, name);
+
+@override String toString() => 'RuleSource(type: $type, id: $id, name: $name)';
+
  }

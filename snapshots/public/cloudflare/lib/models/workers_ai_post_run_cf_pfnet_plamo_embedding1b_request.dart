@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'
 WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest copyWith({WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestText? text}) { return WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => text.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest(text: $text)';
+
  }

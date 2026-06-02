@@ -17,7 +17,8 @@ final class GetIndicatorTypesListError$400 extends GetIndicatorTypesListError {c
 
 final GetIndicatorTypesListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetIndicatorTypesListError$Unknown extends GetIndicatorTypesListError {const GetIndicatorTypesListError$Unknown(this.statusCode, this.rawBody, );
 

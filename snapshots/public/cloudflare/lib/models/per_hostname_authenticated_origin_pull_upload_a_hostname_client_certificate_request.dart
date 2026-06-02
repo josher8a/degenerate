@@ -23,10 +23,13 @@ PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest copyWi
   certificate: certificate ?? this.certificate,
   privateKey: privateKey ?? this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest &&
           certificate == other.certificate &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certificate, privateKey); } 
-@override String toString() { return 'PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(certificate: $certificate, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(certificate, privateKey);
+
+@override String toString() => 'PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(certificate: $certificate, privateKey: $privateKey)';
+
  }

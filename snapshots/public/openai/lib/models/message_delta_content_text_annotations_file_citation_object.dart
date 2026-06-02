@@ -56,14 +56,17 @@ MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, Messa
   startIndex: startIndex != null ? startIndex() : this.startIndex,
   endIndex: endIndex != null ? endIndex() : this.endIndex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextAnnotationsFileCitationObject &&
           index == other.index &&
           type == other.type &&
           text == other.text &&
           fileCitation == other.fileCitation &&
           startIndex == other.startIndex &&
-          endIndex == other.endIndex; } 
-@override int get hashCode { return Object.hash(index, type, text, fileCitation, startIndex, endIndex); } 
-@override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObject(index: $index, type: $type, text: $text, fileCitation: $fileCitation, startIndex: $startIndex, endIndex: $endIndex)'; } 
+          endIndex == other.endIndex;
+
+@override int get hashCode => Object.hash(index, type, text, fileCitation, startIndex, endIndex);
+
+@override String toString() => 'MessageDeltaContentTextAnnotationsFileCitationObject(index: $index, type: $type, text: $text, fileCitation: $fileCitation, startIndex: $startIndex, endIndex: $endIndex)';
+
  }

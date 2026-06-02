@@ -56,12 +56,15 @@ FixedResponse copyWith({String? Function()? contentType, String? Function()? loc
   messageBody: messageBody != null ? messageBody() : this.messageBody,
   statusCode: statusCode != null ? statusCode() : this.statusCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FixedResponse &&
           contentType == other.contentType &&
           location == other.location &&
           messageBody == other.messageBody &&
-          statusCode == other.statusCode; } 
-@override int get hashCode { return Object.hash(contentType, location, messageBody, statusCode); } 
-@override String toString() { return 'FixedResponse(contentType: $contentType, location: $location, messageBody: $messageBody, statusCode: $statusCode)'; } 
+          statusCode == other.statusCode;
+
+@override int get hashCode => Object.hash(contentType, location, messageBody, statusCode);
+
+@override String toString() => 'FixedResponse(contentType: $contentType, location: $location, messageBody: $messageBody, statusCode: $statusCode)';
+
  }

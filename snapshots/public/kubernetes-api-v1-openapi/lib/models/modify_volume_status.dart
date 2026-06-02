@@ -32,10 +32,13 @@ ModifyVolumeStatus copyWith({String? status, String? Function()? targetVolumeAtt
   status: status ?? this.status,
   targetVolumeAttributesClassName: targetVolumeAttributesClassName != null ? targetVolumeAttributesClassName() : this.targetVolumeAttributesClassName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModifyVolumeStatus &&
           status == other.status &&
-          targetVolumeAttributesClassName == other.targetVolumeAttributesClassName; } 
-@override int get hashCode { return Object.hash(status, targetVolumeAttributesClassName); } 
-@override String toString() { return 'ModifyVolumeStatus(status: $status, targetVolumeAttributesClassName: $targetVolumeAttributesClassName)'; } 
+          targetVolumeAttributesClassName == other.targetVolumeAttributesClassName;
+
+@override int get hashCode => Object.hash(status, targetVolumeAttributesClassName);
+
+@override String toString() => 'ModifyVolumeStatus(status: $status, targetVolumeAttributesClassName: $targetVolumeAttributesClassName)';
+
  }

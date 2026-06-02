@@ -31,11 +31,14 @@ TreasuryFinancialAccountsResourceBalance copyWith({Map<String,int>? cash, Map<St
   inboundPending: inboundPending ?? this.inboundPending,
   outboundPending: outboundPending ?? this.outboundPending,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceBalance &&
           cash == other.cash &&
           inboundPending == other.inboundPending &&
-          outboundPending == other.outboundPending; } 
-@override int get hashCode { return Object.hash(cash, inboundPending, outboundPending); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceBalance(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)'; } 
+          outboundPending == other.outboundPending;
+
+@override int get hashCode => Object.hash(cash, inboundPending, outboundPending);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceBalance(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)';
+
  }

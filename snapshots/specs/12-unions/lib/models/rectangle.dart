@@ -32,12 +32,15 @@ Rectangle copyWith({String? type, double? width, double? height, String? Functio
   height: height ?? this.height,
   color: color != null ? color() : this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rectangle &&
           type == other.type &&
           width == other.width &&
           height == other.height &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(type, width, height, color); } 
-@override String toString() { return 'Rectangle(type: $type, width: $width, height: $height, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(type, width, height, color);
+
+@override String toString() => 'Rectangle(type: $type, width: $width, height: $height, color: $color)';
+
  }

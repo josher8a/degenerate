@@ -24,10 +24,13 @@ IamAccountSettings copyWith({String? Function()? abuseContactEmail, bool Functio
   abuseContactEmail: abuseContactEmail != null ? abuseContactEmail() : this.abuseContactEmail,
   enforceTwofactor: enforceTwofactor != null ? enforceTwofactor() : this.enforceTwofactor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamAccountSettings &&
           abuseContactEmail == other.abuseContactEmail &&
-          enforceTwofactor == other.enforceTwofactor; } 
-@override int get hashCode { return Object.hash(abuseContactEmail, enforceTwofactor); } 
-@override String toString() { return 'IamAccountSettings(abuseContactEmail: $abuseContactEmail, enforceTwofactor: $enforceTwofactor)'; } 
+          enforceTwofactor == other.enforceTwofactor;
+
+@override int get hashCode => Object.hash(abuseContactEmail, enforceTwofactor);
+
+@override String toString() => 'IamAccountSettings(abuseContactEmail: $abuseContactEmail, enforceTwofactor: $enforceTwofactor)';
+
  }

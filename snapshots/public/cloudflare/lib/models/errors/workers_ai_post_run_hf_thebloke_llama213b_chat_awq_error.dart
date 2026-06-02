@@ -17,7 +17,8 @@ final class WorkersAiPostRunHfTheblokeLlama213bChatAwqError$400 extends WorkersA
 
 final WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunHfTheblokeLlama213bChatAwqError$Unknown extends WorkersAiPostRunHfTheblokeLlama213bChatAwqError {const WorkersAiPostRunHfTheblokeLlama213bChatAwqError$Unknown(this.statusCode, this.rawBody, );
 

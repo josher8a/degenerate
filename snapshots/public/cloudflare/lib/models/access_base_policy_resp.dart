@@ -50,7 +50,7 @@ AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDec
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBasePolicyResp &&
           createdAt == other.createdAt &&
           decision == other.decision &&
@@ -59,7 +59,10 @@ AccessBasePolicyResp copyWith({AccessTimestamp? Function()? createdAt, AccessDec
           listEquals(include, other.include) &&
           name == other.name &&
           listEquals(require, other.require) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt); } 
-@override String toString() { return 'AccessBasePolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt);
+
+@override String toString() => 'AccessBasePolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)';
+
  }

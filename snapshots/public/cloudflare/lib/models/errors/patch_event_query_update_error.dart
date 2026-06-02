@@ -18,13 +18,15 @@ final class PatchEventQueryUpdateError$400 extends PatchEventQueryUpdateError {c
 
 final PatchEventQueryUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchEventQueryUpdateError$404 extends PatchEventQueryUpdateError {const PatchEventQueryUpdateError$404(this.error);
 
 final PatchEventQueryUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PatchEventQueryUpdateError$Unknown extends PatchEventQueryUpdateError {const PatchEventQueryUpdateError$Unknown(this.statusCode, this.rawBody, );
 

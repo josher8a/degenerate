@@ -263,9 +263,10 @@ Class _buildVariantClass(
       b.methods.add(Method((m) => m
         ..name = 'statusCode'
         ..type = MethodType.getter
+        ..lambda = true
         ..annotations.add(refer('override'))
         ..returns = refer('int')
-        ..body = Code('return $code;')));
+        ..body = Code('$code')));
     }
   });
 }

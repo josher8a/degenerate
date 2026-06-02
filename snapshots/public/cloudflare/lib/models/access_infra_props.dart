@@ -27,11 +27,14 @@ AccessInfraProps copyWith({List<AccessTargetCriteriaInfraApp>? targetCriteria, A
   name: name != null ? name() : this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessInfraProps &&
           listEquals(targetCriteria, other.targetCriteria) &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(targetCriteria), name, type); } 
-@override String toString() { return 'AccessInfraProps(targetCriteria: $targetCriteria, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(targetCriteria), name, type);
+
+@override String toString() => 'AccessInfraProps(targetCriteria: $targetCriteria, name: $name, type: $type)';
+
  }

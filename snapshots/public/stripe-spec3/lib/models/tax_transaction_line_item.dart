@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionLineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionLineItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxTransactionLineItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxTransactionLineItemObject($value)';
+
  }
 /// 
 @immutable final class TaxTransactionLineItem {const TaxTransactionLineItem({required this.amount, required this.amountTax, required this.id, required this.livemode, required this.object, required this.quantity, required this.reference, required this.taxBehavior, required this.taxCode, required this.type, this.metadata, this.product, this.reversal, });
@@ -130,7 +133,7 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
   taxCode: taxCode ?? this.taxCode,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxTransactionLineItem &&
           amount == other.amount &&
           amountTax == other.amountTax &&
@@ -144,7 +147,10 @@ TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? 
           reversal == other.reversal &&
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, reversal, taxBehavior, taxCode, type); } 
-@override String toString() { return 'TaxTransactionLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, reversal: $reversal, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, amountTax, id, livemode, metadata, object, product, quantity, reference, reversal, taxBehavior, taxCode, type);
+
+@override String toString() => 'TaxTransactionLineItem(amount: $amount, amountTax: $amountTax, id: $id, livemode: $livemode, metadata: $metadata, object: $object, product: $product, quantity: $quantity, reference: $reference, reversal: $reversal, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
+
  }

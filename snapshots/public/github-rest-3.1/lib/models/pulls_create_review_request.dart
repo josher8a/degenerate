@@ -34,12 +34,15 @@ PullsCreateReviewRequest copyWith({String? Function()? commitId, String? Functio
   event: event != null ? event() : this.event,
   comments: comments != null ? comments() : this.comments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsCreateReviewRequest &&
           commitId == other.commitId &&
           body == other.body &&
           event == other.event &&
-          listEquals(comments, other.comments); } 
-@override int get hashCode { return Object.hash(commitId, body, event, Object.hashAll(comments ?? const [])); } 
-@override String toString() { return 'PullsCreateReviewRequest(commitId: $commitId, body: $body, event: $event, comments: $comments)'; } 
+          listEquals(comments, other.comments);
+
+@override int get hashCode => Object.hash(commitId, body, event, Object.hashAll(comments ?? const []));
+
+@override String toString() => 'PullsCreateReviewRequest(commitId: $commitId, body: $body, event: $event, comments: $comments)';
+
  }

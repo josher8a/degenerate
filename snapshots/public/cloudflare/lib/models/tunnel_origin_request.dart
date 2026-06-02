@@ -118,7 +118,7 @@ TunnelOriginRequest copyWith({Access? Function()? access, String? Function()? ca
   tcpKeepAlive: tcpKeepAlive != null ? tcpKeepAlive() : this.tcpKeepAlive,
   tlsTimeout: tlsTimeout != null ? tlsTimeout() : this.tlsTimeout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelOriginRequest &&
           access == other.access &&
           caPool == other.caPool &&
@@ -134,7 +134,10 @@ TunnelOriginRequest copyWith({Access? Function()? access, String? Function()? ca
           originServerName == other.originServerName &&
           proxyType == other.proxyType &&
           tcpKeepAlive == other.tcpKeepAlive &&
-          tlsTimeout == other.tlsTimeout; } 
-@override int get hashCode { return Object.hash(access, caPool, connectTimeout, disableChunkedEncoding, http2Origin, httpHostHeader, keepAliveConnections, keepAliveTimeout, matchSnItoHost, noHappyEyeballs, noTlsVerify, originServerName, proxyType, tcpKeepAlive, tlsTimeout); } 
-@override String toString() { return 'TunnelOriginRequest(access: $access, caPool: $caPool, connectTimeout: $connectTimeout, disableChunkedEncoding: $disableChunkedEncoding, http2Origin: $http2Origin, httpHostHeader: $httpHostHeader, keepAliveConnections: $keepAliveConnections, keepAliveTimeout: $keepAliveTimeout, matchSnItoHost: $matchSnItoHost, noHappyEyeballs: $noHappyEyeballs, noTlsVerify: $noTlsVerify, originServerName: $originServerName, proxyType: $proxyType, tcpKeepAlive: $tcpKeepAlive, tlsTimeout: $tlsTimeout)'; } 
+          tlsTimeout == other.tlsTimeout;
+
+@override int get hashCode => Object.hash(access, caPool, connectTimeout, disableChunkedEncoding, http2Origin, httpHostHeader, keepAliveConnections, keepAliveTimeout, matchSnItoHost, noHappyEyeballs, noTlsVerify, originServerName, proxyType, tcpKeepAlive, tlsTimeout);
+
+@override String toString() => 'TunnelOriginRequest(access: $access, caPool: $caPool, connectTimeout: $connectTimeout, disableChunkedEncoding: $disableChunkedEncoding, http2Origin: $http2Origin, httpHostHeader: $httpHostHeader, keepAliveConnections: $keepAliveConnections, keepAliveTimeout: $keepAliveTimeout, matchSnItoHost: $matchSnItoHost, noHappyEyeballs: $noHappyEyeballs, noTlsVerify: $noTlsVerify, originServerName: $originServerName, proxyType: $proxyType, tcpKeepAlive: $tcpKeepAlive, tlsTimeout: $tlsTimeout)';
+
  }

@@ -36,13 +36,16 @@ GistHistory copyWith({SimpleUser? Function()? user, String? Function()? version,
   changeStatus: changeStatus != null ? changeStatus() : this.changeStatus,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistHistory &&
           user == other.user &&
           version == other.version &&
           committedAt == other.committedAt &&
           changeStatus == other.changeStatus &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(user, version, committedAt, changeStatus, url); } 
-@override String toString() { return 'GistHistory(user: $user, version: $version, committedAt: $committedAt, changeStatus: $changeStatus, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(user, version, committedAt, changeStatus, url);
+
+@override String toString() => 'GistHistory(user: $user, version: $version, committedAt: $committedAt, changeStatus: $changeStatus, url: $url)';
+
  }

@@ -86,7 +86,7 @@ CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive,
   stateTimestamp: stateTimestamp ?? this.stateTimestamp,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLogs &&
           api == other.api &&
           description == other.description &&
@@ -96,7 +96,10 @@ CertificateLogs copyWith({Api? api, String? description, DateTime? endExclusive,
           startInclusive == other.startInclusive &&
           state == other.state &&
           stateTimestamp == other.stateTimestamp &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(api, description, endExclusive, $operator, slug, startInclusive, state, stateTimestamp, url); } 
-@override String toString() { return 'CertificateLogs(api: $api, description: $description, endExclusive: $endExclusive, \$operator: ${$operator}, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(api, description, endExclusive, $operator, slug, startInclusive, state, stateTimestamp, url);
+
+@override String toString() => 'CertificateLogs(api: $api, description: $description, endExclusive: $endExclusive, \$operator: ${$operator}, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, url: $url)';
+
  }

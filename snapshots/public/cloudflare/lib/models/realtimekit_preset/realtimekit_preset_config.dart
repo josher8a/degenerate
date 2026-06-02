@@ -37,12 +37,15 @@ RealtimekitPresetConfig copyWith({int? maxScreenshareCount, RealtimekitPresetCon
   media: media ?? this.media,
   viewType: viewType ?? this.viewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetConfig &&
           maxScreenshareCount == other.maxScreenshareCount &&
           maxVideoStreams == other.maxVideoStreams &&
           media == other.media &&
-          viewType == other.viewType; } 
-@override int get hashCode { return Object.hash(maxScreenshareCount, maxVideoStreams, media, viewType); } 
-@override String toString() { return 'RealtimekitPresetConfig(maxScreenshareCount: $maxScreenshareCount, maxVideoStreams: $maxVideoStreams, media: $media, viewType: $viewType)'; } 
+          viewType == other.viewType;
+
+@override int get hashCode => Object.hash(maxScreenshareCount, maxVideoStreams, media, viewType);
+
+@override String toString() => 'RealtimekitPresetConfig(maxScreenshareCount: $maxScreenshareCount, maxVideoStreams: $maxVideoStreams, media: $media, viewType: $viewType)';
+
  }

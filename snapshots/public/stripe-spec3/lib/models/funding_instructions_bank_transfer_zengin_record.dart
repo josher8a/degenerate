@@ -95,7 +95,7 @@ FundingInstructionsBankTransferZenginRecord copyWith({Address? accountHolderAddr
   branchCode: branchCode != null ? branchCode() : this.branchCode,
   branchName: branchName != null ? branchName() : this.branchName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferZenginRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
@@ -105,7 +105,10 @@ FundingInstructionsBankTransferZenginRecord copyWith({Address? accountHolderAddr
           bankCode == other.bankCode &&
           bankName == other.bankName &&
           branchCode == other.branchCode &&
-          branchName == other.branchName; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankCode, bankName, branchCode, branchName); } 
-@override String toString() { return 'FundingInstructionsBankTransferZenginRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankCode: $bankCode, bankName: $bankName, branchCode: $branchCode, branchName: $branchName)'; } 
+          branchName == other.branchName;
+
+@override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankCode, bankName, branchCode, branchName);
+
+@override String toString() => 'FundingInstructionsBankTransferZenginRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankCode: $bankCode, bankName: $bankName, branchCode: $branchCode, branchName: $branchName)';
+
  }

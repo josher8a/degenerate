@@ -52,14 +52,17 @@ AssistantMessageItem copyWith({String? id, AssistantMessageItemObject? object, i
   type: type ?? this.type,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantMessageItem &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           threadId == other.threadId &&
           type == other.type &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content)); } 
-@override String toString() { return 'AssistantMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, Object.hashAll(content));
+
+@override String toString() => 'AssistantMessageItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, content: $content)';
+
  }

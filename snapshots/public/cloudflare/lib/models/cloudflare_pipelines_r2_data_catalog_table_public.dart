@@ -47,13 +47,16 @@ CloudflarePipelinesR2DataCatalogTablePublic copyWith({Uri? accountId, String? bu
   rollingPolicy: rollingPolicy != null ? rollingPolicy() : this.rollingPolicy,
   tableName: tableName ?? this.tableName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesR2DataCatalogTablePublic &&
           accountId == other.accountId &&
           bucket == other.bucket &&
           namespace == other.namespace &&
           rollingPolicy == other.rollingPolicy &&
-          tableName == other.tableName; } 
-@override int get hashCode { return Object.hash(accountId, bucket, namespace, rollingPolicy, tableName); } 
-@override String toString() { return 'CloudflarePipelinesR2DataCatalogTablePublic(accountId: $accountId, bucket: $bucket, namespace: $namespace, rollingPolicy: $rollingPolicy, tableName: $tableName)'; } 
+          tableName == other.tableName;
+
+@override int get hashCode => Object.hash(accountId, bucket, namespace, rollingPolicy, tableName);
+
+@override String toString() => 'CloudflarePipelinesR2DataCatalogTablePublic(accountId: $accountId, bucket: $bucket, namespace: $namespace, rollingPolicy: $rollingPolicy, tableName: $tableName)';
+
  }

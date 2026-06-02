@@ -52,13 +52,16 @@ FunctionToolCallOutput copyWith({String? Function()? id, String? type, String? c
   output: output ?? this.output,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolCallOutput &&
           id == other.id &&
           type == other.type &&
           callId == other.callId &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, type, callId, output, status); } 
-@override String toString() { return 'FunctionToolCallOutput(id: $id, type: $type, callId: $callId, output: $output, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, type, callId, output, status);
+
+@override String toString() => 'FunctionToolCallOutput(id: $id, type: $type, callId: $callId, output: $output, status: $status)';
+
  }

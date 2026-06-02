@@ -36,11 +36,14 @@ ApplyPatchCreateFileOperationParam copyWith({String? type, String? path, String?
   path: path ?? this.path,
   diff: diff ?? this.diff,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchCreateFileOperationParam &&
           type == other.type &&
           path == other.path &&
-          diff == other.diff; } 
-@override int get hashCode { return Object.hash(type, path, diff); } 
-@override String toString() { return 'ApplyPatchCreateFileOperationParam(type: $type, path: $path, diff: $diff)'; } 
+          diff == other.diff;
+
+@override int get hashCode => Object.hash(type, path, diff);
+
+@override String toString() => 'ApplyPatchCreateFileOperationParam(type: $type, path: $path, diff: $diff)';
+
  }

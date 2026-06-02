@@ -22,10 +22,13 @@ IpAccessRulesForAUserUpdateAnIpAccessRuleRequest copyWith({FirewallSchemasMode? 
   mode: mode != null ? mode() : this.mode,
   notes: notes != null ? notes() : this.notes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAccessRulesForAUserUpdateAnIpAccessRuleRequest &&
           mode == other.mode &&
-          notes == other.notes; } 
-@override int get hashCode { return Object.hash(mode, notes); } 
-@override String toString() { return 'IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(mode: $mode, notes: $notes)'; } 
+          notes == other.notes;
+
+@override int get hashCode => Object.hash(mode, notes);
+
+@override String toString() => 'IpAccessRulesForAUserUpdateAnIpAccessRuleRequest(mode: $mode, notes: $notes)';
+
  }

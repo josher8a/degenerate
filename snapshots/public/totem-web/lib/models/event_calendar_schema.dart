@@ -33,12 +33,15 @@ EventCalendarSchema copyWith({String? title, String? start, String? slug, String
   slug: slug ?? this.slug,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventCalendarSchema &&
           title == other.title &&
           start == other.start &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(title, start, slug, url); } 
-@override String toString() { return 'EventCalendarSchema(title: $title, start: $start, slug: $slug, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(title, start, slug, url);
+
+@override String toString() => 'EventCalendarSchema(title: $title, start: $start, slug: $slug, url: $url)';
+
  }

@@ -36,12 +36,15 @@ IamUpdateMemberWithRoles copyWith({IamMembershipComponentsSchemasIdentifier? Fun
   status: status != null ? status() : this.status,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUpdateMemberWithRoles &&
           id == other.id &&
           listEquals(roles, other.roles) &&
           status == other.status &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(roles ?? const []), status, user); } 
-@override String toString() { return 'IamUpdateMemberWithRoles(id: $id, roles: $roles, status: $status, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(id, Object.hashAll(roles ?? const []), status, user);
+
+@override String toString() => 'IamUpdateMemberWithRoles(id: $id, roles: $roles, status: $status, user: $user)';
+
  }

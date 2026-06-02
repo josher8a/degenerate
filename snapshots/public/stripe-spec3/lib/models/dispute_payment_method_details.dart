@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputePaymentMethodDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputePaymentMethodDetailsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputePaymentMethodDetailsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputePaymentMethodDetailsType($value)';
+
  }
 /// 
 @immutable final class DisputePaymentMethodDetails {const DisputePaymentMethodDetails({required this.type, this.amazonPay, this.card, this.klarna, this.paypal, });
@@ -68,13 +71,16 @@ DisputePaymentMethodDetails copyWith({DisputePaymentMethodDetailsAmazonPay? Func
   paypal: paypal != null ? paypal() : this.paypal,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetails &&
           amazonPay == other.amazonPay &&
           card == other.card &&
           klarna == other.klarna &&
           paypal == other.paypal &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amazonPay, card, klarna, paypal, type); } 
-@override String toString() { return 'DisputePaymentMethodDetails(amazonPay: $amazonPay, card: $card, klarna: $klarna, paypal: $paypal, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amazonPay, card, klarna, paypal, type);
+
+@override String toString() => 'DisputePaymentMethodDetails(amazonPay: $amazonPay, card: $card, klarna: $klarna, paypal: $paypal, type: $type)';
+
  }

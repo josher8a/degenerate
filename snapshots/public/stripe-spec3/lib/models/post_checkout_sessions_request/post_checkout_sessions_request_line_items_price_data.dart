@@ -52,7 +52,7 @@ PostCheckoutSessionsRequestLineItemsPriceData copyWith({String? currency, String
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestLineItemsPriceData &&
           currency == other.currency &&
           product == other.product &&
@@ -60,7 +60,10 @@ PostCheckoutSessionsRequestLineItemsPriceData copyWith({String? currency, String
           recurring == other.recurring &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, product, productData, recurring, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostCheckoutSessionsRequestLineItemsPriceData(currency: $currency, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(currency, product, productData, recurring, taxBehavior, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'PostCheckoutSessionsRequestLineItemsPriceData(currency: $currency, product: $product, productData: $productData, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

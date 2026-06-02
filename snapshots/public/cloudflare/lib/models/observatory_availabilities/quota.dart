@@ -46,13 +46,16 @@ Quota copyWith({String? Function()? plan, QuotasPerPlan? Function()? quotasPerPl
   remainingTests: remainingTests != null ? remainingTests() : this.remainingTests,
   scheduleQuotasPerPlan: scheduleQuotasPerPlan != null ? scheduleQuotasPerPlan() : this.scheduleQuotasPerPlan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Quota &&
           plan == other.plan &&
           quotasPerPlan == other.quotasPerPlan &&
           remainingSchedules == other.remainingSchedules &&
           remainingTests == other.remainingTests &&
-          scheduleQuotasPerPlan == other.scheduleQuotasPerPlan; } 
-@override int get hashCode { return Object.hash(plan, quotasPerPlan, remainingSchedules, remainingTests, scheduleQuotasPerPlan); } 
-@override String toString() { return 'Quota(plan: $plan, quotasPerPlan: $quotasPerPlan, remainingSchedules: $remainingSchedules, remainingTests: $remainingTests, scheduleQuotasPerPlan: $scheduleQuotasPerPlan)'; } 
+          scheduleQuotasPerPlan == other.scheduleQuotasPerPlan;
+
+@override int get hashCode => Object.hash(plan, quotasPerPlan, remainingSchedules, remainingTests, scheduleQuotasPerPlan);
+
+@override String toString() => 'Quota(plan: $plan, quotasPerPlan: $quotasPerPlan, remainingSchedules: $remainingSchedules, remainingTests: $remainingTests, scheduleQuotasPerPlan: $scheduleQuotasPerPlan)';
+
  }

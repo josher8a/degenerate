@@ -33,12 +33,15 @@ WorChangeStatusWorkflowInstanceResponse409 copyWith({List<AccountsByAccountIdPip
   result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorChangeStatusWorkflowInstanceResponse409 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'WorChangeStatusWorkflowInstanceResponse409(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+
+@override String toString() => 'WorChangeStatusWorkflowInstanceResponse409(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

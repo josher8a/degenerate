@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PayPerCrawlErrorSource copyWith({String? Function()? pointer}) { return PayPerCrawlErrorSource(
   pointer: pointer != null ? pointer() : this.pointer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlErrorSource &&
-          pointer == other.pointer; } 
-@override int get hashCode { return pointer.hashCode; } 
-@override String toString() { return 'PayPerCrawlErrorSource(pointer: $pointer)'; } 
+          pointer == other.pointer;
+
+@override int get hashCode => pointer.hashCode;
+
+@override String toString() => 'PayPerCrawlErrorSource(pointer: $pointer)';
+
  }

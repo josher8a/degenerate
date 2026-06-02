@@ -39,13 +39,16 @@ AiSearchInstanceChatCompletionRequest copyWith({AiSearchOptions? Function()? aiS
   stream: stream != null ? stream() : this.stream,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequest &&
           aiSearchOptions == other.aiSearchOptions &&
           listEquals(messages, other.messages) &&
           model == other.model &&
           stream == other.stream &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(aiSearchOptions, Object.hashAll(messages), model, stream, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequest(aiSearchOptions: $aiSearchOptions, messages: $messages, model: $model, stream: $stream, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(aiSearchOptions, Object.hashAll(messages), model, stream, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'AiSearchInstanceChatCompletionRequest(aiSearchOptions: $aiSearchOptions, messages: $messages, model: $model, stream: $stream, additionalProperties: $additionalProperties)';
+
  }

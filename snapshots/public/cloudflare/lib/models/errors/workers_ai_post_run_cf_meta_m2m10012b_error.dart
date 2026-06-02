@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMetaM2m10012bError$400 extends WorkersAiPostRunCfM
 
 final WorkersAiPostRunCfMetaM2m10012bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMetaM2m10012bError$Unknown extends WorkersAiPostRunCfMetaM2m10012bError {const WorkersAiPostRunCfMetaM2m10012bError$Unknown(this.statusCode, this.rawBody, );
 

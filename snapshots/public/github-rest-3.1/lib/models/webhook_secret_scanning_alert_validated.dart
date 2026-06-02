@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertValidatedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertValidatedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningAlertValidatedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSecretScanningAlertValidatedAction($value)';
+
  }
 @immutable final class WebhookSecretScanningAlertValidated {const WebhookSecretScanningAlertValidated({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
@@ -68,7 +71,7 @@ WebhookSecretScanningAlertValidated copyWith({WebhookSecretScanningAlertValidate
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertValidated &&
           action == other.action &&
           alert == other.alert &&
@@ -76,7 +79,10 @@ WebhookSecretScanningAlertValidated copyWith({WebhookSecretScanningAlertValidate
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertValidated(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSecretScanningAlertValidated(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

@@ -21,9 +21,12 @@ return errors; }
 ClimateRemovalsBeneficiary copyWith({String? publicName}) { return ClimateRemovalsBeneficiary(
   publicName: publicName ?? this.publicName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateRemovalsBeneficiary &&
-          publicName == other.publicName; } 
-@override int get hashCode { return publicName.hashCode; } 
-@override String toString() { return 'ClimateRemovalsBeneficiary(publicName: $publicName)'; } 
+          publicName == other.publicName;
+
+@override int get hashCode => publicName.hashCode;
+
+@override String toString() => 'ClimateRemovalsBeneficiary(publicName: $publicName)';
+
  }

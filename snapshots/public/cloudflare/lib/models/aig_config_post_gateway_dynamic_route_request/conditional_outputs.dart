@@ -21,10 +21,13 @@ ConditionalOutputs copyWith({False? $false, True? $true, }) { return Conditional
   $false: $false ?? this.$false,
   $true: $true ?? this.$true,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConditionalOutputs &&
           $false == other.$false &&
-          $true == other.$true; } 
-@override int get hashCode { return Object.hash($false, $true); } 
-@override String toString() { return 'ConditionalOutputs(\$false: ${$false}, \$true: ${$true})'; } 
+          $true == other.$true;
+
+@override int get hashCode => Object.hash($false, $true);
+
+@override String toString() => 'ConditionalOutputs(\$false: ${$false}, \$true: ${$true})';
+
  }

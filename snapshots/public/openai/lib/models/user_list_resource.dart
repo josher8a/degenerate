@@ -38,12 +38,15 @@ UserListResource copyWith({ChatCompletionListObject? object, List<User>? data, b
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserListResource &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          next == other.next; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, next); } 
-@override String toString() { return 'UserListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)'; } 
+          next == other.next;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, next);
+
+@override String toString() => 'UserListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
+
  }

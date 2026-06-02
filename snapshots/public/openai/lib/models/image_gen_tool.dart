@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenActionEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenActionEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenActionEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImageGenActionEnum($value)';
+
  }
 /// Moderation level for the generated image. Default: `auto`.
 /// 
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolModeration && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolModeration($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolModeration && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImageGenToolModeration($value)';
+
  }
 /// A tool that generates images using the GPT image models.
 /// 
@@ -157,7 +163,7 @@ ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, Image
   partialImages: partialImages != null ? partialImages() : this.partialImages,
   action: action != null ? action() : this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenTool &&
           type == other.type &&
           model == other.model &&
@@ -170,7 +176,10 @@ ImageGenTool copyWith({String? type, ImageGenToolModel? Function()? model, Image
           inputFidelity == other.inputFidelity &&
           inputImageMask == other.inputImageMask &&
           partialImages == other.partialImages &&
-          action == other.action; } 
-@override int get hashCode { return Object.hash(type, model, quality, size, outputFormat, outputCompression, moderation, background, inputFidelity, inputImageMask, partialImages, action); } 
-@override String toString() { return 'ImageGenTool(type: $type, model: $model, quality: $quality, size: $size, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, inputFidelity: $inputFidelity, inputImageMask: $inputImageMask, partialImages: $partialImages, action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => Object.hash(type, model, quality, size, outputFormat, outputCompression, moderation, background, inputFidelity, inputImageMask, partialImages, action);
+
+@override String toString() => 'ImageGenTool(type: $type, model: $model, quality: $quality, size: $size, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, inputFidelity: $inputFidelity, inputImageMask: $inputImageMask, partialImages: $partialImages, action: $action)';
+
  }

@@ -77,7 +77,7 @@ SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? appli
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedulesResourceDefaultSettings &&
           applicationFeePercent == other.applicationFeePercent &&
           automaticTax == other.automaticTax &&
@@ -88,7 +88,10 @@ SubscriptionSchedulesResourceDefaultSettings copyWith({double? Function()? appli
           description == other.description &&
           invoiceSettings == other.invoiceSettings &&
           onBehalfOf == other.onBehalfOf &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData); } 
-@override String toString() { return 'SubscriptionSchedulesResourceDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData);
+
+@override String toString() => 'SubscriptionSchedulesResourceDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)';
+
  }

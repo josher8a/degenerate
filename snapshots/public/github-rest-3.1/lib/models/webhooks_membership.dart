@@ -60,7 +60,7 @@ WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function(
   url: url ?? this.url,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMembership &&
           organizationUrl == other.organizationUrl &&
           role == other.role &&
@@ -68,7 +68,10 @@ WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function(
           listEquals(enterpriseTeamsProvidingIndirectMembership, other.enterpriseTeamsProvidingIndirectMembership) &&
           state == other.state &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(organizationUrl, role, directMembership, Object.hashAll(enterpriseTeamsProvidingIndirectMembership ?? const []), state, url, user); } 
-@override String toString() { return 'WebhooksMembership(organizationUrl: $organizationUrl, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, state: $state, url: $url, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(organizationUrl, role, directMembership, Object.hashAll(enterpriseTeamsProvidingIndirectMembership ?? const []), state, url, user);
+
+@override String toString() => 'WebhooksMembership(organizationUrl: $organizationUrl, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, state: $state, url: $url, user: $user)';
+
  }

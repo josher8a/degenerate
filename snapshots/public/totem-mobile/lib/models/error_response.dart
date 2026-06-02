@@ -25,18 +25,12 @@ final class ErrorResponse {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ErrorResponse && error == other.error;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorResponse && error == other.error;
 
   @override
-  int get hashCode {
-    return error.hashCode;
-  }
+  int get hashCode => error.hashCode;
 
   @override
-  String toString() {
-    return 'ErrorResponse(error: $error)';
-  }
+  String toString() => 'ErrorResponse(error: $error)';
 }

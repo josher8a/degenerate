@@ -21,9 +21,12 @@ return errors; }
 SigmaScheduledQueryRunError copyWith({String? message}) { return SigmaScheduledQueryRunError(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SigmaScheduledQueryRunError &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'SigmaScheduledQueryRunError(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'SigmaScheduledQueryRunError(message: $message)';
+
  }

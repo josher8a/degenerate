@@ -65,7 +65,7 @@ ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   logprobs: logprobs ?? this.logprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseTextDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
@@ -73,7 +73,10 @@ ResponseTextDeltaEvent copyWith({String? type, String? itemId, int? outputIndex,
           contentIndex == other.contentIndex &&
           delta == other.delta &&
           sequenceNumber == other.sequenceNumber &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber, Object.hashAll(logprobs)); } 
-@override String toString() { return 'ResponseTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber, logprobs: $logprobs)'; } 
+          listEquals(logprobs, other.logprobs);
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber, Object.hashAll(logprobs));
+
+@override String toString() => 'ResponseTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber, logprobs: $logprobs)';
+
  }

@@ -112,7 +112,7 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
   method: method != null ? method() : this.method,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFineTuningJobRequest &&
           model == other.model &&
           trainingFile == other.trainingFile &&
@@ -122,7 +122,10 @@ CreateFineTuningJobRequest copyWith({CreateFineTuningJobRequestModel? model, Str
           listEquals(integrations, other.integrations) &&
           seed == other.seed &&
           method == other.method &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations ?? const []), seed, method, metadata); } 
-@override String toString() { return 'CreateFineTuningJobRequest(model: $model, trainingFile: $trainingFile, hyperparameters: $hyperparameters, suffix: $suffix, validationFile: $validationFile, integrations: $integrations, seed: $seed, method: $method, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(model, trainingFile, hyperparameters, suffix, validationFile, Object.hashAll(integrations ?? const []), seed, method, metadata);
+
+@override String toString() => 'CreateFineTuningJobRequest(model: $model, trainingFile: $trainingFile, hyperparameters: $hyperparameters, suffix: $suffix, validationFile: $validationFile, integrations: $integrations, seed: $seed, method: $method, metadata: $metadata)';
+
  }

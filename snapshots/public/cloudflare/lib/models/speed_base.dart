@@ -40,12 +40,15 @@ SpeedBase copyWith({bool Function()? editable, String? Function()? id, DateTime?
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpeedBase &&
           editable == other.editable &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, modifiedOn, value); } 
-@override String toString() { return 'SpeedBase(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(editable, id, modifiedOn, value);
+
+@override String toString() => 'SpeedBase(editable: $editable, id: $id, modifiedOn: $modifiedOn, value: $value)';
+
  }

@@ -20,25 +20,29 @@ final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$4
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$404 extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$409 extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$422 extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$Unknown extends ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError {const ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError$Unknown(this.statusCode, this.rawBody, );
 

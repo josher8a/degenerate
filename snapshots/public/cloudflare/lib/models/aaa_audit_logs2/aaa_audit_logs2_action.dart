@@ -43,12 +43,15 @@ AaaAuditLogs2Action copyWith({String? Function()? description, String? Function(
   time: time != null ? time() : this.time,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2Action &&
           description == other.description &&
           result == other.result &&
           time == other.time &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, result, time, type); } 
-@override String toString() { return 'AaaAuditLogs2Action(description: $description, result: $result, time: $time, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, result, time, type);
+
+@override String toString() => 'AaaAuditLogs2Action(description: $description, result: $result, time: $time, type: $type)';
+
  }

@@ -25,11 +25,14 @@ RegistryPackagePackageVersionNugetMetadata copyWith({Id? Function()? id, String?
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackagePackageVersionNugetMetadata &&
           id == other.id &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, name, value); } 
-@override String toString() { return 'RegistryPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, name, value);
+
+@override String toString() => 'RegistryPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)';
+
  }

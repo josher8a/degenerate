@@ -63,7 +63,7 @@ AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
   statusDescription: statusDescription ?? this.statusDescription,
   totalLogs: totalLogs ?? this.totalLogs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponseResultResults &&
           createdAt == other.createdAt &&
           evaluationId == other.evaluationId &&
@@ -73,7 +73,10 @@ AigConfigCreateEvaluationsResponseResultResults copyWith({DateTime? createdAt, S
           result == other.result &&
           status == other.status &&
           statusDescription == other.statusDescription &&
-          totalLogs == other.totalLogs; } 
-@override int get hashCode { return Object.hash(createdAt, evaluationId, evaluationTypeId, id, modifiedAt, result, status, statusDescription, totalLogs); } 
-@override String toString() { return 'AigConfigCreateEvaluationsResponseResultResults(createdAt: $createdAt, evaluationId: $evaluationId, evaluationTypeId: $evaluationTypeId, id: $id, modifiedAt: $modifiedAt, result: $result, status: $status, statusDescription: $statusDescription, totalLogs: $totalLogs)'; } 
+          totalLogs == other.totalLogs;
+
+@override int get hashCode => Object.hash(createdAt, evaluationId, evaluationTypeId, id, modifiedAt, result, status, statusDescription, totalLogs);
+
+@override String toString() => 'AigConfigCreateEvaluationsResponseResultResults(createdAt: $createdAt, evaluationId: $evaluationId, evaluationTypeId: $evaluationTypeId, id: $id, modifiedAt: $modifiedAt, result: $result, status: $status, statusDescription: $statusDescription, totalLogs: $totalLogs)';
+
  }

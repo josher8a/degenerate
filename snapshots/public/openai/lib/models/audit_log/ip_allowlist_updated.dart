@@ -23,10 +23,13 @@ IpAllowlistUpdated copyWith({String? Function()? id, List<String>? Function()? a
   id: id != null ? id() : this.id,
   allowedIps: allowedIps != null ? allowedIps() : this.allowedIps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAllowlistUpdated &&
           id == other.id &&
-          listEquals(allowedIps, other.allowedIps); } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(allowedIps ?? const [])); } 
-@override String toString() { return 'IpAllowlistUpdated(id: $id, allowedIps: $allowedIps)'; } 
+          listEquals(allowedIps, other.allowedIps);
+
+@override int get hashCode => Object.hash(id, Object.hashAll(allowedIps ?? const []));
+
+@override String toString() => 'IpAllowlistUpdated(id: $id, allowedIps: $allowedIps)';
+
  }

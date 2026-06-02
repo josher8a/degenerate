@@ -27,11 +27,14 @@ Aggregations copyWith({double? count, String? Function()? date, Map<String, Stri
   date: date != null ? date() : this.date,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Aggregations &&
           count == other.count &&
           date == other.date &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(count, date, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'Aggregations(count: $count, date: $date, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(count, date, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'Aggregations(count: $count, date: $date, additionalProperties: $additionalProperties)';
+
  }

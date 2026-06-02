@@ -25,11 +25,14 @@ GetIndicatorReadResponseTags copyWith({String? Function()? categoryName, String?
   uuid: uuid != null ? uuid() : this.uuid,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorReadResponseTags &&
           categoryName == other.categoryName &&
           uuid == other.uuid &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(categoryName, uuid, value); } 
-@override String toString() { return 'GetIndicatorReadResponseTags(categoryName: $categoryName, uuid: $uuid, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(categoryName, uuid, value);
+
+@override String toString() => 'GetIndicatorReadResponseTags(categoryName: $categoryName, uuid: $uuid, value: $value)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsCompletedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsCompletedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventMcpListToolsCompletedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsCompletedType($value)';
+
  }
 /// Returned when listing MCP tools has completed for an item.
 @immutable final class RealtimeBetaServerEventMcpListToolsCompleted {const RealtimeBetaServerEventMcpListToolsCompleted({required this.eventId, required this.type, required this.itemId, });
@@ -53,11 +56,14 @@ RealtimeBetaServerEventMcpListToolsCompleted copyWith({String? eventId, Realtime
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventMcpListToolsCompleted &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventMcpListToolsCompleted(eventId: $eventId, type: $type, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsCompleted(eventId: $eventId, type: $type, itemId: $itemId)';
+
  }

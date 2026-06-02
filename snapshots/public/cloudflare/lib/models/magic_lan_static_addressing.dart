@@ -39,13 +39,16 @@ MagicLanStaticAddressing copyWith({MagicCidr? address, MagicLanDhcpRelay? Functi
   secondaryAddress: secondaryAddress != null ? secondaryAddress() : this.secondaryAddress,
   virtualAddress: virtualAddress != null ? virtualAddress() : this.virtualAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLanStaticAddressing &&
           address == other.address &&
           dhcpRelay == other.dhcpRelay &&
           dhcpServer == other.dhcpServer &&
           secondaryAddress == other.secondaryAddress &&
-          virtualAddress == other.virtualAddress; } 
-@override int get hashCode { return Object.hash(address, dhcpRelay, dhcpServer, secondaryAddress, virtualAddress); } 
-@override String toString() { return 'MagicLanStaticAddressing(address: $address, dhcpRelay: $dhcpRelay, dhcpServer: $dhcpServer, secondaryAddress: $secondaryAddress, virtualAddress: $virtualAddress)'; } 
+          virtualAddress == other.virtualAddress;
+
+@override int get hashCode => Object.hash(address, dhcpRelay, dhcpServer, secondaryAddress, virtualAddress);
+
+@override String toString() => 'MagicLanStaticAddressing(address: $address, dhcpRelay: $dhcpRelay, dhcpServer: $dhcpServer, secondaryAddress: $secondaryAddress, virtualAddress: $virtualAddress)';
+
  }

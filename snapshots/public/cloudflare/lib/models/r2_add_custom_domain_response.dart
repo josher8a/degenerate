@@ -42,12 +42,15 @@ R2AddCustomDomainResponse copyWith({List<String>? Function()? ciphers, String? d
   enabled: enabled ?? this.enabled,
   minTls: minTls != null ? minTls() : this.minTls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2AddCustomDomainResponse &&
           listEquals(ciphers, other.ciphers) &&
           domain == other.domain &&
           enabled == other.enabled &&
-          minTls == other.minTls; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls); } 
-@override String toString() { return 'R2AddCustomDomainResponse(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls)'; } 
+          minTls == other.minTls;
+
+@override int get hashCode => Object.hash(Object.hashAll(ciphers ?? const []), domain, enabled, minTls);
+
+@override String toString() => 'R2AddCustomDomainResponse(ciphers: $ciphers, domain: $domain, enabled: $enabled, minTls: $minTls)';
+
  }

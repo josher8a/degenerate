@@ -35,9 +35,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VectorizeListMetadataIndexResponse copyWith({List<MetadataIndexes>? Function()? metadataIndexes}) { return VectorizeListMetadataIndexResponse(
   metadataIndexes: metadataIndexes != null ? metadataIndexes() : this.metadataIndexes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeListMetadataIndexResponse &&
-          listEquals(metadataIndexes, other.metadataIndexes); } 
-@override int get hashCode { return Object.hashAll(metadataIndexes ?? const []); } 
-@override String toString() { return 'VectorizeListMetadataIndexResponse(metadataIndexes: $metadataIndexes)'; } 
+          listEquals(metadataIndexes, other.metadataIndexes);
+
+@override int get hashCode => Object.hashAll(metadataIndexes ?? const []);
+
+@override String toString() => 'VectorizeListMetadataIndexResponse(metadataIndexes: $metadataIndexes)';
+
  }

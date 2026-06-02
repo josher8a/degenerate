@@ -29,9 +29,12 @@ return errors; }
 ListsDeleteListItemsRequestItems copyWith({String? id}) { return ListsDeleteListItemsRequestItems(
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsDeleteListItemsRequestItems &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'ListsDeleteListItemsRequestItems(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'ListsDeleteListItemsRequestItems(id: $id)';
+
  }

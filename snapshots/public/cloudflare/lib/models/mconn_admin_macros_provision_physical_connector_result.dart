@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conne
 MconnAdminMacrosProvisionPhysicalConnectorResult copyWith({MconnAdminConnector? connector}) { return MconnAdminMacrosProvisionPhysicalConnectorResult(
   connector: connector ?? this.connector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminMacrosProvisionPhysicalConnectorResult &&
-          connector == other.connector; } 
-@override int get hashCode { return connector.hashCode; } 
-@override String toString() { return 'MconnAdminMacrosProvisionPhysicalConnectorResult(connector: $connector)'; } 
+          connector == other.connector;
+
+@override int get hashCode => connector.hashCode;
+
+@override String toString() => 'MconnAdminMacrosProvisionPhysicalConnectorResult(connector: $connector)';
+
  }

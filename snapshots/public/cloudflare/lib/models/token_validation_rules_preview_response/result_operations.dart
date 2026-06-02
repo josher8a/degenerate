@@ -49,14 +49,17 @@ ResultOperations copyWith({ShieldEndpoint? Function()? endpoint, ShieldHost? Fun
   operationId: operationId != null ? operationId() : this.operationId,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultOperations &&
           endpoint == other.endpoint &&
           host == other.host &&
           lastUpdated == other.lastUpdated &&
           method == other.method &&
           operationId == other.operationId &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(endpoint, host, lastUpdated, method, operationId, state); } 
-@override String toString() { return 'ResultOperations(endpoint: $endpoint, host: $host, lastUpdated: $lastUpdated, method: $method, operationId: $operationId, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(endpoint, host, lastUpdated, method, operationId, state);
+
+@override String toString() => 'ResultOperations(endpoint: $endpoint, host: $host, lastUpdated: $lastUpdated, method: $method, operationId: $operationId, state: $state)';
+
  }

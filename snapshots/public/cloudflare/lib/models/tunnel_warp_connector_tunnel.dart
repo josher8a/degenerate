@@ -77,7 +77,7 @@ TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, Lis
   status: status != null ? status() : this.status,
   tunType: tunType != null ? tunType() : this.tunType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelWarpConnectorTunnel &&
           accountTag == other.accountTag &&
           listEquals(connections, other.connections) &&
@@ -89,7 +89,10 @@ TunnelWarpConnectorTunnel copyWith({TunnelAccountId? Function()? accountTag, Lis
           metadata == other.metadata &&
           name == other.name &&
           status == other.status &&
-          tunType == other.tunType; } 
-@override int get hashCode { return Object.hash(accountTag, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, status, tunType); } 
-@override String toString() { return 'TunnelWarpConnectorTunnel(accountTag: $accountTag, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, status: $status, tunType: $tunType)'; } 
+          tunType == other.tunType;
+
+@override int get hashCode => Object.hash(accountTag, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, status, tunType);
+
+@override String toString() => 'TunnelWarpConnectorTunnel(accountTag: $accountTag, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, status: $status, tunType: $tunType)';
+
  }

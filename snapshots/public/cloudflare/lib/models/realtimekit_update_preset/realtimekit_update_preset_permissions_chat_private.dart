@@ -30,12 +30,15 @@ RealtimekitUpdatePresetPermissionsChatPrivate copyWith({bool? Function()? canRec
   files: files != null ? files() : this.files,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsChatPrivate &&
           canReceive == other.canReceive &&
           canSend == other.canSend &&
           files == other.files &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(canReceive, canSend, files, text); } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsChatPrivate(canReceive: $canReceive, canSend: $canSend, files: $files, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(canReceive, canSend, files, text);
+
+@override String toString() => 'RealtimekitUpdatePresetPermissionsChatPrivate(canReceive: $canReceive, canSend: $canSend, files: $files, text: $text)';
+
  }

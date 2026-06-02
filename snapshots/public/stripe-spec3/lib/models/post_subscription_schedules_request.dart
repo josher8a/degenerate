@@ -85,7 +85,7 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
   phases: phases != null ? phases() : this.phases,
   startDate: startDate != null ? startDate() : this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesRequest &&
           billingMode == other.billingMode &&
           customer == other.customer &&
@@ -96,7 +96,10 @@ PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBilli
           fromSubscription == other.fromSubscription &&
           metadata == other.metadata &&
           listEquals(phases, other.phases) &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(billingMode, customer, customerAccount, defaultSettings, endBehavior, Object.hashAll(expand ?? const []), fromSubscription, metadata, Object.hashAll(phases ?? const []), startDate); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequest(billingMode: $billingMode, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, fromSubscription: $fromSubscription, metadata: $metadata, phases: $phases, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(billingMode, customer, customerAccount, defaultSettings, endBehavior, Object.hashAll(expand ?? const []), fromSubscription, metadata, Object.hashAll(phases ?? const []), startDate);
+
+@override String toString() => 'PostSubscriptionSchedulesRequest(billingMode: $billingMode, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, expand: $expand, fromSubscription: $fromSubscription, metadata: $metadata, phases: $phases, startDate: $startDate)';
+
  }

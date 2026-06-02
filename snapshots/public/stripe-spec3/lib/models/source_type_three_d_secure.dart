@@ -95,7 +95,7 @@ SourceTypeThreeDSecure copyWith({String? Function()? addressLine1Check, String? 
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
   tokenizationMethod: tokenizationMethod != null ? tokenizationMethod() : this.tokenizationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeThreeDSecure &&
           addressLine1Check == other.addressLine1Check &&
           addressZipCheck == other.addressZipCheck &&
@@ -113,7 +113,10 @@ SourceTypeThreeDSecure copyWith({String? Function()? addressLine1Check, String? 
           last4 == other.last4 &&
           name == other.name &&
           threeDSecure == other.threeDSecure &&
-          tokenizationMethod == other.tokenizationMethod; } 
-@override int get hashCode { return Object.hash(addressLine1Check, addressZipCheck, authenticated, brand, card, country, customer, cvcCheck, dynamicLast4, expMonth, expYear, fingerprint, funding, last4, name, threeDSecure, tokenizationMethod); } 
-@override String toString() { return 'SourceTypeThreeDSecure(addressLine1Check: $addressLine1Check, addressZipCheck: $addressZipCheck, authenticated: $authenticated, brand: $brand, card: $card, country: $country, customer: $customer, cvcCheck: $cvcCheck, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, name: $name, threeDSecure: $threeDSecure, tokenizationMethod: $tokenizationMethod)'; } 
+          tokenizationMethod == other.tokenizationMethod;
+
+@override int get hashCode => Object.hash(addressLine1Check, addressZipCheck, authenticated, brand, card, country, customer, cvcCheck, dynamicLast4, expMonth, expYear, fingerprint, funding, last4, name, threeDSecure, tokenizationMethod);
+
+@override String toString() => 'SourceTypeThreeDSecure(addressLine1Check: $addressLine1Check, addressZipCheck: $addressZipCheck, authenticated: $authenticated, brand: $brand, card: $card, country: $country, customer: $customer, cvcCheck: $cvcCheck, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, name: $name, threeDSecure: $threeDSecure, tokenizationMethod: $tokenizationMethod)';
+
  }

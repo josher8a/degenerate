@@ -30,11 +30,14 @@ ScanVerdictsOverall copyWith({List<OverallCategories>? categories, bool? malicio
   malicious: malicious ?? this.malicious,
   phishing: phishing ?? this.phishing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanVerdictsOverall &&
           listEquals(categories, other.categories) &&
           malicious == other.malicious &&
-          listEquals(phishing, other.phishing); } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), malicious, Object.hashAll(phishing)); } 
-@override String toString() { return 'ScanVerdictsOverall(categories: $categories, malicious: $malicious, phishing: $phishing)'; } 
+          listEquals(phishing, other.phishing);
+
+@override int get hashCode => Object.hash(Object.hashAll(categories), malicious, Object.hashAll(phishing));
+
+@override String toString() => 'ScanVerdictsOverall(categories: $categories, malicious: $malicious, phishing: $phishing)';
+
  }

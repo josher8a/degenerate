@@ -36,12 +36,15 @@ ListsCertificates copyWith({String? issuer, String? subjectName, double? validFr
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsCertificates &&
           issuer == other.issuer &&
           subjectName == other.subjectName &&
           validFrom == other.validFrom &&
-          validTo == other.validTo; } 
-@override int get hashCode { return Object.hash(issuer, subjectName, validFrom, validTo); } 
-@override String toString() { return 'ListsCertificates(issuer: $issuer, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)'; } 
+          validTo == other.validTo;
+
+@override int get hashCode => Object.hash(issuer, subjectName, validFrom, validTo);
+
+@override String toString() => 'ListsCertificates(issuer: $issuer, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)';
+
  }

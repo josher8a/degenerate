@@ -44,13 +44,16 @@ Classroom copyWith({int? id, String? name, bool? archived, SimpleClassroomOrgani
   organization: organization ?? this.organization,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Classroom &&
           id == other.id &&
           name == other.name &&
           archived == other.archived &&
           organization == other.organization &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, name, archived, organization, url); } 
-@override String toString() { return 'Classroom(id: $id, name: $name, archived: $archived, organization: $organization, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(id, name, archived, organization, url);
+
+@override String toString() => 'Classroom(id: $id, name: $name, archived: $archived, organization: $organization, url: $url)';
+
  }

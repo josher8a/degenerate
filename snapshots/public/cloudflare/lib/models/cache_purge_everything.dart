@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CachePurgeEverything copyWith({bool? Function()? purgeEverything}) { return CachePurgeEverything(
   purgeEverything: purgeEverything != null ? purgeEverything() : this.purgeEverything,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeEverything &&
-          purgeEverything == other.purgeEverything; } 
-@override int get hashCode { return purgeEverything.hashCode; } 
-@override String toString() { return 'CachePurgeEverything(purgeEverything: $purgeEverything)'; } 
+          purgeEverything == other.purgeEverything;
+
+@override int get hashCode => purgeEverything.hashCode;
+
+@override String toString() => 'CachePurgeEverything(purgeEverything: $purgeEverything)';
+
  }

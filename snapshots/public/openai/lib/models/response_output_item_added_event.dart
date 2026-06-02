@@ -42,12 +42,15 @@ ResponseOutputItemAddedEvent copyWith({String? type, int? outputIndex, int? sequ
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseOutputItemAddedEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           sequenceNumber == other.sequenceNumber &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(type, outputIndex, sequenceNumber, item); } 
-@override String toString() { return 'ResponseOutputItemAddedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(type, outputIndex, sequenceNumber, item);
+
+@override String toString() => 'ResponseOutputItemAddedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, item: $item)';
+
  }

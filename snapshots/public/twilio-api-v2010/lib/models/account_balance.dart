@@ -37,11 +37,14 @@ AccountBalance copyWith({String? Function()? accountSid, String? Function()? bal
   balance: balance != null ? balance() : this.balance,
   currency: currency != null ? currency() : this.currency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountBalance &&
           accountSid == other.accountSid &&
           balance == other.balance &&
-          currency == other.currency; } 
-@override int get hashCode { return Object.hash(accountSid, balance, currency); } 
-@override String toString() { return 'AccountBalance(accountSid: $accountSid, balance: $balance, currency: $currency)'; } 
+          currency == other.currency;
+
+@override int get hashCode => Object.hash(accountSid, balance, currency);
+
+@override String toString() => 'AccountBalance(accountSid: $accountSid, balance: $balance, currency: $currency)';
+
  }

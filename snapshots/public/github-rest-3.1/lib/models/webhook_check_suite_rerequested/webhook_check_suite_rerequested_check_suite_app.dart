@@ -157,10 +157,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteRerequestedCheckSuiteAppEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppEvents($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCheckSuiteRerequestedCheckSuiteAppEvents && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCheckSuiteRerequestedCheckSuiteAppEvents($value)';
+
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookCheckSuiteRerequestedCheckSuiteApp {const WebhookCheckSuiteRerequestedCheckSuiteApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.clientId, this.permissions, this.slug, });
@@ -252,7 +255,7 @@ WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? create
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteRerequestedCheckSuiteApp &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -266,7 +269,10 @@ WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? create
           owner == other.owner &&
           permissions == other.permissions &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, clientId, name, nodeId, owner, permissions, slug, updatedAt); } 
-@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, clientId: $clientId, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, clientId, name, nodeId, owner, permissions, slug, updatedAt);
+
+@override String toString() => 'WebhookCheckSuiteRerequestedCheckSuiteApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, clientId: $clientId, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';
+
  }

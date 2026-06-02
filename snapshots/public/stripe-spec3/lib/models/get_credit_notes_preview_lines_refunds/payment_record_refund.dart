@@ -26,10 +26,13 @@ PaymentRecordRefund copyWith({String? paymentRecord, String? refundGroup, }) { r
   paymentRecord: paymentRecord ?? this.paymentRecord,
   refundGroup: refundGroup ?? this.refundGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentRecordRefund &&
           paymentRecord == other.paymentRecord &&
-          refundGroup == other.refundGroup; } 
-@override int get hashCode { return Object.hash(paymentRecord, refundGroup); } 
-@override String toString() { return 'PaymentRecordRefund(paymentRecord: $paymentRecord, refundGroup: $refundGroup)'; } 
+          refundGroup == other.refundGroup;
+
+@override int get hashCode => Object.hash(paymentRecord, refundGroup);
+
+@override String toString() => 'PaymentRecordRefund(paymentRecord: $paymentRecord, refundGroup: $refundGroup)';
+
  }

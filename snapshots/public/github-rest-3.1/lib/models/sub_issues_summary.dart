@@ -27,11 +27,14 @@ SubIssuesSummary copyWith({int? total, int? completed, int? percentCompleted, })
   completed: completed ?? this.completed,
   percentCompleted: percentCompleted ?? this.percentCompleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubIssuesSummary &&
           total == other.total &&
           completed == other.completed &&
-          percentCompleted == other.percentCompleted; } 
-@override int get hashCode { return Object.hash(total, completed, percentCompleted); } 
-@override String toString() { return 'SubIssuesSummary(total: $total, completed: $completed, percentCompleted: $percentCompleted)'; } 
+          percentCompleted == other.percentCompleted;
+
+@override int get hashCode => Object.hash(total, completed, percentCompleted);
+
+@override String toString() => 'SubIssuesSummary(total: $total, completed: $completed, percentCompleted: $percentCompleted)';
+
  }

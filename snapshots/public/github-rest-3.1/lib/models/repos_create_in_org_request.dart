@@ -178,7 +178,7 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
   mergeCommitMessage: mergeCommitMessage != null ? mergeCommitMessage() : this.mergeCommitMessage,
   customProperties: customProperties != null ? customProperties() : this.customProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateInOrgRequest &&
           name == other.name &&
           description == other.description &&
@@ -204,7 +204,10 @@ ReposCreateInOrgRequest copyWith({String? name, String? Function()? description,
           squashMergeCommitMessage == other.squashMergeCommitMessage &&
           mergeCommitTitle == other.mergeCommitTitle &&
           mergeCommitMessage == other.mergeCommitMessage &&
-          customProperties == other.customProperties; } 
-@override int get hashCode { return Object.hashAll([name, description, homepage, private, visibility, hasIssues, hasProjects, hasWiki, hasDownloads, isTemplate, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, customProperties]); } 
-@override String toString() { return 'ReposCreateInOrgRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDownloads: $hasDownloads, isTemplate: $isTemplate, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, customProperties: $customProperties)'; } 
+          customProperties == other.customProperties;
+
+@override int get hashCode => Object.hashAll([name, description, homepage, private, visibility, hasIssues, hasProjects, hasWiki, hasDownloads, isTemplate, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, customProperties]);
+
+@override String toString() => 'ReposCreateInOrgRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDownloads: $hasDownloads, isTemplate: $isTemplate, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, customProperties: $customProperties)';
+
  }

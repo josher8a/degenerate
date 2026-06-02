@@ -146,7 +146,7 @@ ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Functi
   variables: variables ?? this.variables,
   zarazVersion: zarazVersion ?? this.zarazVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigBase &&
           analytics == other.analytics &&
           consent == other.consent &&
@@ -156,7 +156,10 @@ ZarazZarazConfigBase copyWith({Analytics? Function()? analytics, Consent? Functi
           settings == other.settings &&
           triggers == other.triggers &&
           variables == other.variables &&
-          zarazVersion == other.zarazVersion; } 
-@override int get hashCode { return Object.hash(analytics, consent, dataLayer, debugKey, historyChange, settings, triggers, variables, zarazVersion); } 
-@override String toString() { return 'ZarazZarazConfigBase(analytics: $analytics, consent: $consent, dataLayer: $dataLayer, debugKey: $debugKey, historyChange: $historyChange, settings: $settings, triggers: $triggers, variables: $variables, zarazVersion: $zarazVersion)'; } 
+          zarazVersion == other.zarazVersion;
+
+@override int get hashCode => Object.hash(analytics, consent, dataLayer, debugKey, historyChange, settings, triggers, variables, zarazVersion);
+
+@override String toString() => 'ZarazZarazConfigBase(analytics: $analytics, consent: $consent, dataLayer: $dataLayer, debugKey: $debugKey, historyChange: $historyChange, settings: $settings, triggers: $triggers, variables: $variables, zarazVersion: $zarazVersion)';
+
  }

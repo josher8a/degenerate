@@ -61,10 +61,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessUpdateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessUpdateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessUpdateStatus($value)';
+
  }
 /// The number of (processed) users approved based on policy evaluation results.
 extension type const AccessUsersApproved(int value) {
@@ -152,7 +155,7 @@ AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, Acces
   usersBlocked: usersBlocked != null ? usersBlocked() : this.usersBlocked,
   usersErrored: usersErrored != null ? usersErrored() : this.usersErrored,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyUpdateRespResult &&
           id == other.id &&
           percentApproved == other.percentApproved &&
@@ -163,7 +166,10 @@ AccessPolicyUpdateRespResult copyWith({AccessPolicyTestId? Function()? id, Acces
           totalUsers == other.totalUsers &&
           usersApproved == other.usersApproved &&
           usersBlocked == other.usersBlocked &&
-          usersErrored == other.usersErrored; } 
-@override int get hashCode { return Object.hash(id, percentApproved, percentBlocked, percentErrored, percentUsersProcessed, status, totalUsers, usersApproved, usersBlocked, usersErrored); } 
-@override String toString() { return 'AccessPolicyUpdateRespResult(id: $id, percentApproved: $percentApproved, percentBlocked: $percentBlocked, percentErrored: $percentErrored, percentUsersProcessed: $percentUsersProcessed, status: $status, totalUsers: $totalUsers, usersApproved: $usersApproved, usersBlocked: $usersBlocked, usersErrored: $usersErrored)'; } 
+          usersErrored == other.usersErrored;
+
+@override int get hashCode => Object.hash(id, percentApproved, percentBlocked, percentErrored, percentUsersProcessed, status, totalUsers, usersApproved, usersBlocked, usersErrored);
+
+@override String toString() => 'AccessPolicyUpdateRespResult(id: $id, percentApproved: $percentApproved, percentBlocked: $percentBlocked, percentErrored: $percentErrored, percentUsersProcessed: $percentUsersProcessed, status: $status, totalUsers: $totalUsers, usersApproved: $usersApproved, usersBlocked: $usersBlocked, usersErrored: $usersErrored)';
+
  }

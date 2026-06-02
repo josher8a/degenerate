@@ -43,20 +43,16 @@ final class BanParticipantEvent {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is BanParticipantEvent &&
-            type == other.type &&
-            participantSlug == other.participantSlug;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is BanParticipantEvent &&
+          type == other.type &&
+          participantSlug == other.participantSlug;
 
   @override
-  int get hashCode {
-    return Object.hash(type, participantSlug);
-  }
+  int get hashCode => Object.hash(type, participantSlug);
 
   @override
-  String toString() {
-    return 'BanParticipantEvent(type: $type, participantSlug: $participantSlug)';
-  }
+  String toString() =>
+      'BanParticipantEvent(type: $type, participantSlug: $participantSlug)';
 }

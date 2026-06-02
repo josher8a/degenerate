@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DynamicConnectivity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DynamicConnectivity($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DynamicConnectivity && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DynamicConnectivity($value)';
+
  }
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
 @immutable final class DynamicType {const DynamicType._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DynamicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DynamicType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DynamicType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DynamicType($value)';
+
  }
 @immutable final class Dynamic {const Dynamic({this.connectivity, this.type, });
 
@@ -76,10 +82,13 @@ Dynamic copyWith({DynamicConnectivity? Function()? connectivity, DynamicType? Fu
   connectivity: connectivity != null ? connectivity() : this.connectivity,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dynamic &&
           connectivity == other.connectivity &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(connectivity, type); } 
-@override String toString() { return 'Dynamic(connectivity: $connectivity, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(connectivity, type);
+
+@override String toString() => 'Dynamic(connectivity: $connectivity, type: $type)';
+
  }

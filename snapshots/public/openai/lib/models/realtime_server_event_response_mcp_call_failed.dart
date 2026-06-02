@@ -38,12 +38,15 @@ RealtimeServerEventResponseMcpCallFailed copyWith({String? eventId, String? type
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseMcpCallFailed &&
           eventId == other.eventId &&
           type == other.type &&
           outputIndex == other.outputIndex &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, outputIndex, itemId); } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallFailed(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, outputIndex, itemId);
+
+@override String toString() => 'RealtimeServerEventResponseMcpCallFailed(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
+
  }

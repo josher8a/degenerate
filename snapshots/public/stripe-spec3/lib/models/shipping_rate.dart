@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShippingRateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShippingRateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShippingRateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShippingRateObject($value)';
+
  }
 /// Shipping rates describe the price of shipping presented to your customers and
 /// applied to a purchase. For more information, see [Charge for shipping](https://docs.stripe.com/payments/during-payment/charge-shipping).
@@ -119,7 +122,7 @@ ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate?
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRate &&
           active == other.active &&
           created == other.created &&
@@ -132,7 +135,10 @@ ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate?
           object == other.object &&
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(active, created, deliveryEstimate, displayName, fixedAmount, id, livemode, metadata, object, taxBehavior, taxCode, type); } 
-@override String toString() { return 'ShippingRate(active: $active, created: $created, deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, id: $id, livemode: $livemode, metadata: $metadata, object: $object, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(active, created, deliveryEstimate, displayName, fixedAmount, id, livemode, metadata, object, taxBehavior, taxCode, type);
+
+@override String toString() => 'ShippingRate(active: $active, created: $created, deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, id: $id, livemode: $livemode, metadata: $metadata, object: $object, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
+
  }

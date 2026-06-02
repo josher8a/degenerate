@@ -40,11 +40,14 @@ PaymentPagesCheckoutSessionBrandingSettingsLogo copyWith({String? Function()? fi
   type: type ?? this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionBrandingSettingsLogo &&
           file == other.file &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(file, type, url); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsLogo(file: $file, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(file, type, url);
+
+@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsLogo(file: $file, type: $type, url: $url)';
+
  }

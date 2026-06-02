@@ -31,11 +31,14 @@ TreasuryFinancialAccountsResourceInboundAchToggleSettings copyWith({bool? reques
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceInboundAchToggleSettings &&
           requested == other.requested &&
           status == other.status &&
-          listEquals(statusDetails, other.statusDetails); } 
-@override int get hashCode { return Object.hash(requested, status, Object.hashAll(statusDetails)); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceInboundAchToggleSettings(requested: $requested, status: $status, statusDetails: $statusDetails)'; } 
+          listEquals(statusDetails, other.statusDetails);
+
+@override int get hashCode => Object.hash(requested, status, Object.hashAll(statusDetails));
+
+@override String toString() => 'TreasuryFinancialAccountsResourceInboundAchToggleSettings(requested: $requested, status: $status, statusDetails: $statusDetails)';
+
  }

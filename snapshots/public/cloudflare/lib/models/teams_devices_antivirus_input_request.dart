@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TeamsDevicesAntivirusInputRequest copyWith({double? Function()? updateWindowDays}) { return TeamsDevicesAntivirusInputRequest(
   updateWindowDays: updateWindowDays != null ? updateWindowDays() : this.updateWindowDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesAntivirusInputRequest &&
-          updateWindowDays == other.updateWindowDays; } 
-@override int get hashCode { return updateWindowDays.hashCode; } 
-@override String toString() { return 'TeamsDevicesAntivirusInputRequest(updateWindowDays: $updateWindowDays)'; } 
+          updateWindowDays == other.updateWindowDays;
+
+@override int get hashCode => updateWindowDays.hashCode;
+
+@override String toString() => 'TeamsDevicesAntivirusInputRequest(updateWindowDays: $updateWindowDays)';
+
  }

@@ -58,7 +58,7 @@ WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelle
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMarketplacePurchaseCancelled &&
           action == other.action &&
           effectiveDate == other.effectiveDate &&
@@ -68,7 +68,10 @@ WebhookMarketplacePurchaseCancelled copyWith({WebhookMarketplacePurchaseCancelle
           organization == other.organization &&
           previousMarketplacePurchase == other.previousMarketplacePurchase &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender); } 
-@override String toString() { return 'WebhookMarketplacePurchaseCancelled(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender);
+
+@override String toString() => 'WebhookMarketplacePurchaseCancelled(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)';
+
  }

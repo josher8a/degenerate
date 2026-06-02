@@ -69,7 +69,7 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksWorkflow &&
           badgeUrl == other.badgeUrl &&
           createdAt == other.createdAt &&
@@ -80,7 +80,10 @@ WebhooksWorkflow copyWith({Uri? badgeUrl, DateTime? createdAt, Uri? htmlUrl, int
           path == other.path &&
           state == other.state &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(badgeUrl, createdAt, htmlUrl, id, name, nodeId, path, state, updatedAt, url); } 
-@override String toString() { return 'WebhooksWorkflow(badgeUrl: $badgeUrl, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, path: $path, state: $state, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(badgeUrl, createdAt, htmlUrl, id, name, nodeId, path, state, updatedAt, url);
+
+@override String toString() => 'WebhooksWorkflow(badgeUrl: $badgeUrl, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, path: $path, state: $state, updatedAt: $updatedAt, url: $url)';
+
  }

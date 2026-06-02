@@ -23,10 +23,13 @@ Cwes copyWith({String? cweId, String? name, }) { return Cwes(
   cweId: cweId ?? this.cweId,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Cwes &&
           cweId == other.cweId &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cweId, name); } 
-@override String toString() { return 'Cwes(cweId: $cweId, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(cweId, name);
+
+@override String toString() => 'Cwes(cweId: $cweId, name: $name)';
+
  }

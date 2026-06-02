@@ -25,11 +25,14 @@ LivestreamSessionDetailsResponseData copyWith({List<Livestreams>? Function()? li
   paging: paging != null ? paging() : this.paging,
   sessions: sessions != null ? sessions() : this.sessions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamSessionDetailsResponseData &&
           listEquals(livestreams, other.livestreams) &&
           paging == other.paging &&
-          sessions == other.sessions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(livestreams ?? const []), paging, sessions); } 
-@override String toString() { return 'LivestreamSessionDetailsResponseData(livestreams: $livestreams, paging: $paging, sessions: $sessions)'; } 
+          sessions == other.sessions;
+
+@override int get hashCode => Object.hash(Object.hashAll(livestreams ?? const []), paging, sessions);
+
+@override String toString() => 'LivestreamSessionDetailsResponseData(livestreams: $livestreams, paging: $paging, sessions: $sessions)';
+
  }

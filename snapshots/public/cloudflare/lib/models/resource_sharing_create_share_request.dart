@@ -27,11 +27,14 @@ ResourceSharingCreateShareRequest copyWith({ResourceSharingShareName? name, List
   recipients: recipients ?? this.recipients,
   resources: resources ?? this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingCreateShareRequest &&
           name == other.name &&
           listEquals(recipients, other.recipients) &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(recipients), Object.hashAll(resources)); } 
-@override String toString() { return 'ResourceSharingCreateShareRequest(name: $name, recipients: $recipients, resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(recipients), Object.hashAll(resources));
+
+@override String toString() => 'ResourceSharingCreateShareRequest(name: $name, recipients: $recipients, resources: $resources)';
+
  }

@@ -53,7 +53,7 @@ NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function(
   taints: taints != null ? taints() : this.taints,
   unschedulable: unschedulable != null ? unschedulable() : this.unschedulable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSpec &&
           configSource == other.configSource &&
           externalId == other.externalId &&
@@ -61,7 +61,10 @@ NodeSpec copyWith({NodeConfigSource? Function()? configSource, String? Function(
           listEquals(podCidRs, other.podCidRs) &&
           providerId == other.providerId &&
           listEquals(taints, other.taints) &&
-          unschedulable == other.unschedulable; } 
-@override int get hashCode { return Object.hash(configSource, externalId, podCidr, Object.hashAll(podCidRs ?? const []), providerId, Object.hashAll(taints ?? const []), unschedulable); } 
-@override String toString() { return 'NodeSpec(configSource: $configSource, externalId: $externalId, podCidr: $podCidr, podCidRs: $podCidRs, providerId: $providerId, taints: $taints, unschedulable: $unschedulable)'; } 
+          unschedulable == other.unschedulable;
+
+@override int get hashCode => Object.hash(configSource, externalId, podCidr, Object.hashAll(podCidRs ?? const []), providerId, Object.hashAll(taints ?? const []), unschedulable);
+
+@override String toString() => 'NodeSpec(configSource: $configSource, externalId: $externalId, podCidr: $podCidr, podCidRs: $podCidRs, providerId: $providerId, taints: $taints, unschedulable: $unschedulable)';
+
  }

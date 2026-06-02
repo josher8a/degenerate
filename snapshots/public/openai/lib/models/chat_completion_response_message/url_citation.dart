@@ -38,12 +38,15 @@ UrlCitation copyWith({int? endIndex, int? startIndex, String? url, String? title
   url: url ?? this.url,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlCitation &&
           endIndex == other.endIndex &&
           startIndex == other.startIndex &&
           url == other.url &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(endIndex, startIndex, url, title); } 
-@override String toString() { return 'UrlCitation(endIndex: $endIndex, startIndex: $startIndex, url: $url, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(endIndex, startIndex, url, title);
+
+@override String toString() => 'UrlCitation(endIndex: $endIndex, startIndex: $startIndex, url: $url, title: $title)';
+
  }

@@ -22,10 +22,13 @@ QuotesResourceSubscriptionDataBillingMode copyWith({SubscriptionsResourceBilling
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceSubscriptionDataBillingMode &&
           flexible == other.flexible &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(flexible, type); } 
-@override String toString() { return 'QuotesResourceSubscriptionDataBillingMode(flexible: $flexible, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(flexible, type);
+
+@override String toString() => 'QuotesResourceSubscriptionDataBillingMode(flexible: $flexible, type: $type)';
+
  }

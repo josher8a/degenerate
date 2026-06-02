@@ -17,7 +17,8 @@ final class RadarGetEntitiesAsnByIpError$404 extends RadarGetEntitiesAsnByIpErro
 
 final RadarGetEntitiesAsnByIpResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetEntitiesAsnByIpError$Unknown extends RadarGetEntitiesAsnByIpError {const RadarGetEntitiesAsnByIpError$Unknown(this.statusCode, this.rawBody, );
 

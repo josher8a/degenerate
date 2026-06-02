@@ -27,11 +27,14 @@ BuildsEnvironmentVariablesResponseValue copyWith({BuildsCreatedOn? createdOn, Bu
   isSecret: isSecret ?? this.isSecret,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsEnvironmentVariablesResponseValue &&
           createdOn == other.createdOn &&
           isSecret == other.isSecret &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(createdOn, isSecret, value); } 
-@override String toString() { return 'BuildsEnvironmentVariablesResponseValue(createdOn: $createdOn, isSecret: $isSecret, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(createdOn, isSecret, value);
+
+@override String toString() => 'BuildsEnvironmentVariablesResponseValue(createdOn: $createdOn, isSecret: $isSecret, value: $value)';
+
  }

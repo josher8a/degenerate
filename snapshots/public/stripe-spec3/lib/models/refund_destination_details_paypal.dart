@@ -24,9 +24,12 @@ return errors; }
 RefundDestinationDetailsPaypal copyWith({String? Function()? networkDeclineCode}) { return RefundDestinationDetailsPaypal(
   networkDeclineCode: networkDeclineCode != null ? networkDeclineCode() : this.networkDeclineCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsPaypal &&
-          networkDeclineCode == other.networkDeclineCode; } 
-@override int get hashCode { return networkDeclineCode.hashCode; } 
-@override String toString() { return 'RefundDestinationDetailsPaypal(networkDeclineCode: $networkDeclineCode)'; } 
+          networkDeclineCode == other.networkDeclineCode;
+
+@override int get hashCode => networkDeclineCode.hashCode;
+
+@override String toString() => 'RefundDestinationDetailsPaypal(networkDeclineCode: $networkDeclineCode)';
+
  }

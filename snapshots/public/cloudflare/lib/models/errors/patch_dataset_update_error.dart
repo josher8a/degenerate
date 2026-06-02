@@ -17,7 +17,8 @@ final class PatchDatasetUpdateError$400 extends PatchDatasetUpdateError {const P
 
 final PatchDatasetUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchDatasetUpdateError$Unknown extends PatchDatasetUpdateError {const PatchDatasetUpdateError$Unknown(this.statusCode, this.rawBody, );
 

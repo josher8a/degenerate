@@ -33,12 +33,15 @@ StreamDirectUploadResponseResult copyWith({StreamScheduledDeletion? Function()? 
   uploadUrl: uploadUrl != null ? uploadUrl() : this.uploadUrl,
   watermark: watermark != null ? watermark() : this.watermark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDirectUploadResponseResult &&
           scheduledDeletion == other.scheduledDeletion &&
           uid == other.uid &&
           uploadUrl == other.uploadUrl &&
-          watermark == other.watermark; } 
-@override int get hashCode { return Object.hash(scheduledDeletion, uid, uploadUrl, watermark); } 
-@override String toString() { return 'StreamDirectUploadResponseResult(scheduledDeletion: $scheduledDeletion, uid: $uid, uploadUrl: $uploadUrl, watermark: $watermark)'; } 
+          watermark == other.watermark;
+
+@override int get hashCode => Object.hash(scheduledDeletion, uid, uploadUrl, watermark);
+
+@override String toString() => 'StreamDirectUploadResponseResult(scheduledDeletion: $scheduledDeletion, uid: $uid, uploadUrl: $uploadUrl, watermark: $watermark)';
+
  }

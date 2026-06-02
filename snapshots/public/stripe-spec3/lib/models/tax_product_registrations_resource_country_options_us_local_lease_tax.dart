@@ -21,9 +21,12 @@ return errors; }
 TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax copyWith({String? jurisdiction}) { return TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax(
   jurisdiction: jurisdiction ?? this.jurisdiction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax &&
-          jurisdiction == other.jurisdiction; } 
-@override int get hashCode { return jurisdiction.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax(jurisdiction: $jurisdiction)'; } 
+          jurisdiction == other.jurisdiction;
+
+@override int get hashCode => jurisdiction.hashCode;
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsLocalLeaseTax(jurisdiction: $jurisdiction)';
+
  }

@@ -44,14 +44,17 @@ AsnIntelligenceGetAsnSubnetsResponse copyWith({IntelAsn? Function()? asn, IntelC
   perPage: perPage != null ? perPage() : this.perPage,
   subnets: subnets != null ? subnets() : this.subnets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnIntelligenceGetAsnSubnetsResponse &&
           asn == other.asn &&
           count == other.count &&
           ipCountTotal == other.ipCountTotal &&
           page == other.page &&
           perPage == other.perPage &&
-          listEquals(subnets, other.subnets); } 
-@override int get hashCode { return Object.hash(asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const [])); } 
-@override String toString() { return 'AsnIntelligenceGetAsnSubnetsResponse(asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)'; } 
+          listEquals(subnets, other.subnets);
+
+@override int get hashCode => Object.hash(asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const []));
+
+@override String toString() => 'AsnIntelligenceGetAsnSubnetsResponse(asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)';
+
  }

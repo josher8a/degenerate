@@ -32,12 +32,15 @@ AiSearchCreateTokensRequest copyWith({String? cfApiId, String? cfApiKey, bool Fu
   legacy: legacy != null ? legacy() : this.legacy,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchCreateTokensRequest &&
           cfApiId == other.cfApiId &&
           cfApiKey == other.cfApiKey &&
           legacy == other.legacy &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(cfApiId, cfApiKey, legacy, name); } 
-@override String toString() { return 'AiSearchCreateTokensRequest(cfApiId: $cfApiId, cfApiKey: $cfApiKey, legacy: $legacy, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(cfApiId, cfApiKey, legacy, name);
+
+@override String toString() => 'AiSearchCreateTokensRequest(cfApiId: $cfApiId, cfApiKey: $cfApiKey, legacy: $legacy, name: $name)';
+
  }

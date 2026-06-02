@@ -39,11 +39,14 @@ InfraDualStackHost copyWith({String? ipv4, String? ipv6, InfraNetwork? network, 
   ipv6: ipv6 ?? this.ipv6,
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraDualStackHost &&
           ipv4 == other.ipv4 &&
           ipv6 == other.ipv6 &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(ipv4, ipv6, network); } 
-@override String toString() { return 'InfraDualStackHost(ipv4: $ipv4, ipv6: $ipv6, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(ipv4, ipv6, network);
+
+@override String toString() => 'InfraDualStackHost(ipv4: $ipv4, ipv6: $ipv6, network: $network)';
+
  }

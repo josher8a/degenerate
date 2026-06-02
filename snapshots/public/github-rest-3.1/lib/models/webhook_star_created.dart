@@ -49,7 +49,7 @@ WebhookStarCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Func
   sender: sender ?? this.sender,
   starredAt: starredAt != null ? starredAt() : this.starredAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStarCreated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -57,7 +57,10 @@ WebhookStarCreated copyWith({ItemCreatedAction? action, EnterpriseWebhooks? Func
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          starredAt == other.starredAt; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, starredAt); } 
-@override String toString() { return 'WebhookStarCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, starredAt: $starredAt)'; } 
+          starredAt == other.starredAt;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender, starredAt);
+
+@override String toString() => 'WebhookStarCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, starredAt: $starredAt)';
+
  }

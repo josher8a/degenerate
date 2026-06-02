@@ -30,12 +30,15 @@ ParticipantPeerStats copyWith({ParticipantPeerStatsDeviceInfo? Function()? devic
   ipInformation: ipInformation != null ? ipInformation() : this.ipInformation,
   precallNetworkInformation: precallNetworkInformation != null ? precallNetworkInformation() : this.precallNetworkInformation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStats &&
           deviceInfo == other.deviceInfo &&
           listEquals(events, other.events) &&
           ipInformation == other.ipInformation &&
-          precallNetworkInformation == other.precallNetworkInformation; } 
-@override int get hashCode { return Object.hash(deviceInfo, Object.hashAll(events ?? const []), ipInformation, precallNetworkInformation); } 
-@override String toString() { return 'ParticipantPeerStats(deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, precallNetworkInformation: $precallNetworkInformation)'; } 
+          precallNetworkInformation == other.precallNetworkInformation;
+
+@override int get hashCode => Object.hash(deviceInfo, Object.hashAll(events ?? const []), ipInformation, precallNetworkInformation);
+
+@override String toString() => 'ParticipantPeerStats(deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, precallNetworkInformation: $precallNetworkInformation)';
+
  }

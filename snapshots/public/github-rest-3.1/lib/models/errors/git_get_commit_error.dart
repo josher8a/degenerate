@@ -18,13 +18,15 @@ final class GitGetCommitError$404 extends GitGetCommitError {const GitGetCommitE
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GitGetCommitError$409 extends GitGetCommitError {const GitGetCommitError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class GitGetCommitError$Unknown extends GitGetCommitError {const GitGetCommitError$Unknown(this.statusCode, this.rawBody, );
 

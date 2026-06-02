@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
 AccessAuthenticationMethodRuleAuthMethod copyWith({String? authMethod}) { return AccessAuthenticationMethodRuleAuthMethod(
   authMethod: authMethod ?? this.authMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAuthenticationMethodRuleAuthMethod &&
-          authMethod == other.authMethod; } 
-@override int get hashCode { return authMethod.hashCode; } 
-@override String toString() { return 'AccessAuthenticationMethodRuleAuthMethod(authMethod: $authMethod)'; } 
+          authMethod == other.authMethod;
+
+@override int get hashCode => authMethod.hashCode;
+
+@override String toString() => 'AccessAuthenticationMethodRuleAuthMethod(authMethod: $authMethod)';
+
  }

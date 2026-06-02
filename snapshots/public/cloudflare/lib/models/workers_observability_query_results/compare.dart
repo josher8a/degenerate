@@ -32,12 +32,15 @@ Compare copyWith({List<CalculationsAggregates>? aggregates, String? Function()? 
   calculation: calculation ?? this.calculation,
   series: series ?? this.series,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Compare &&
           listEquals(aggregates, other.aggregates) &&
           alias == other.alias &&
           calculation == other.calculation &&
-          listEquals(series, other.series); } 
-@override int get hashCode { return Object.hash(Object.hashAll(aggregates), alias, calculation, Object.hashAll(series)); } 
-@override String toString() { return 'Compare(aggregates: $aggregates, alias: $alias, calculation: $calculation, series: $series)'; } 
+          listEquals(series, other.series);
+
+@override int get hashCode => Object.hash(Object.hashAll(aggregates), alias, calculation, Object.hashAll(series));
+
+@override String toString() => 'Compare(aggregates: $aggregates, alias: $alias, calculation: $calculation, series: $series)';
+
  }

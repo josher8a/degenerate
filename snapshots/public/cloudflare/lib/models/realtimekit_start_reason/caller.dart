@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CallerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CallerType($value)';
+
  }
 @immutable final class Caller {const Caller({this.name, this.type, this.userId, });
 
@@ -57,11 +60,14 @@ Caller copyWith({String? Function()? name, CallerType? Function()? type, String?
   type: type != null ? type() : this.type,
   userId: userId != null ? userId() : this.userId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Caller &&
           name == other.name &&
           type == other.type &&
-          userId == other.userId; } 
-@override int get hashCode { return Object.hash(name, type, userId); } 
-@override String toString() { return 'Caller(name: $name, type: $type, userId: $userId)'; } 
+          userId == other.userId;
+
+@override int get hashCode => Object.hash(name, type, userId);
+
+@override String toString() => 'Caller(name: $name, type: $type, userId: $userId)';
+
  }

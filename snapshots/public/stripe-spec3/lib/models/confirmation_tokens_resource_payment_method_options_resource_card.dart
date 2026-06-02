@@ -29,10 +29,13 @@ ConfirmationTokensResourcePaymentMethodOptionsResourceCard copyWith({String? Fun
   cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,
   installments: installments != null ? installments() : this.installments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationTokensResourcePaymentMethodOptionsResourceCard &&
           cvcToken == other.cvcToken &&
-          installments == other.installments; } 
-@override int get hashCode { return Object.hash(cvcToken, installments); } 
-@override String toString() { return 'ConfirmationTokensResourcePaymentMethodOptionsResourceCard(cvcToken: $cvcToken, installments: $installments)'; } 
+          installments == other.installments;
+
+@override int get hashCode => Object.hash(cvcToken, installments);
+
+@override String toString() => 'ConfirmationTokensResourcePaymentMethodOptionsResourceCard(cvcToken: $cvcToken, installments: $installments)';
+
  }

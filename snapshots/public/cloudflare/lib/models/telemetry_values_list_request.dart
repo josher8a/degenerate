@@ -49,7 +49,7 @@ TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysL
   timeframe: timeframe ?? this.timeframe,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryValuesListRequest &&
           listEquals(datasets, other.datasets) &&
           listEquals(filters, other.filters) &&
@@ -57,7 +57,10 @@ TelemetryValuesListRequest copyWith({List<String>? datasets, List<TelemetryKeysL
           limit == other.limit &&
           needle == other.needle &&
           timeframe == other.timeframe &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(datasets), Object.hashAll(filters), key, limit, needle, timeframe, type); } 
-@override String toString() { return 'TelemetryValuesListRequest(datasets: $datasets, filters: $filters, key: $key, limit: $limit, needle: $needle, timeframe: $timeframe, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(datasets), Object.hashAll(filters), key, limit, needle, timeframe, type);
+
+@override String toString() => 'TelemetryValuesListRequest(datasets: $datasets, filters: $filters, key: $key, limit: $limit, needle: $needle, timeframe: $timeframe, type: $type)';
+
  }

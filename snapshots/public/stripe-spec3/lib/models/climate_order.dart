@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateOrderCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClimateOrderCancellationReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ClimateOrderObject {const ClimateOrderObject._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateOrderObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClimateOrderObject($value)';
+
  }
 /// The current status of this order.
 @immutable final class ClimateOrderStatus {const ClimateOrderStatus._(this.value);
@@ -79,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClimateOrderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClimateOrderStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateOrderStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClimateOrderStatus($value)';
+
  }
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the
 /// payment is deducted from your merchant balance.
@@ -249,7 +258,7 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
   productSubstitutedAt: productSubstitutedAt != null ? productSubstitutedAt() : this.productSubstitutedAt,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateOrder &&
           amountFees == other.amountFees &&
           amountSubtotal == other.amountSubtotal &&
@@ -272,7 +281,10 @@ ClimateOrder copyWith({int? amountFees, int? amountSubtotal, int? amountTotal, C
           object == other.object &&
           product == other.product &&
           productSubstitutedAt == other.productSubstitutedAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hashAll([amountFees, amountSubtotal, amountTotal, beneficiary, canceledAt, cancellationReason, certificate, confirmedAt, created, currency, delayedAt, deliveredAt, Object.hashAll(deliveryDetails), expectedDeliveryYear, id, livemode, metadata, metricTons, object, product, productSubstitutedAt, status]); } 
-@override String toString() { return 'ClimateOrder(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, beneficiary: $beneficiary, canceledAt: $canceledAt, cancellationReason: $cancellationReason, certificate: $certificate, confirmedAt: $confirmedAt, created: $created, currency: $currency, delayedAt: $delayedAt, deliveredAt: $deliveredAt, deliveryDetails: $deliveryDetails, expectedDeliveryYear: $expectedDeliveryYear, id: $id, livemode: $livemode, metadata: $metadata, metricTons: $metricTons, object: $object, product: $product, productSubstitutedAt: $productSubstitutedAt, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hashAll([amountFees, amountSubtotal, amountTotal, beneficiary, canceledAt, cancellationReason, certificate, confirmedAt, created, currency, delayedAt, deliveredAt, Object.hashAll(deliveryDetails), expectedDeliveryYear, id, livemode, metadata, metricTons, object, product, productSubstitutedAt, status]);
+
+@override String toString() => 'ClimateOrder(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, beneficiary: $beneficiary, canceledAt: $canceledAt, cancellationReason: $cancellationReason, certificate: $certificate, confirmedAt: $confirmedAt, created: $created, currency: $currency, delayedAt: $delayedAt, deliveredAt: $deliveredAt, deliveryDetails: $deliveryDetails, expectedDeliveryYear: $expectedDeliveryYear, id: $id, livemode: $livemode, metadata: $metadata, metricTons: $metricTons, object: $object, product: $product, productSubstitutedAt: $productSubstitutedAt, status: $status)';
+
  }

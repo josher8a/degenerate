@@ -32,11 +32,14 @@ AigConfigCreateEvaluationsRequest copyWith({List<String>? datasetIds, List<Strin
   evaluationTypeIds: evaluationTypeIds ?? this.evaluationTypeIds,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsRequest &&
           listEquals(datasetIds, other.datasetIds) &&
           listEquals(evaluationTypeIds, other.evaluationTypeIds) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(datasetIds), Object.hashAll(evaluationTypeIds), name); } 
-@override String toString() { return 'AigConfigCreateEvaluationsRequest(datasetIds: $datasetIds, evaluationTypeIds: $evaluationTypeIds, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(datasetIds), Object.hashAll(evaluationTypeIds), name);
+
+@override String toString() => 'AigConfigCreateEvaluationsRequest(datasetIds: $datasetIds, evaluationTypeIds: $evaluationTypeIds, name: $name)';
+
  }

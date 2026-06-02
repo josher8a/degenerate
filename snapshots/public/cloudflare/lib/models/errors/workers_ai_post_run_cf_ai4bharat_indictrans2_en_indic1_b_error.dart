@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError$400 extends Wor
 
 final WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError$Unknown extends WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError {const WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BError$Unknown(this.statusCode, this.rawBody, );
 

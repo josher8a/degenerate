@@ -71,7 +71,7 @@ ZonesPageRule copyWith({List<ZonesActions2>? actions, ZonesCreatedOn? createdOn,
   status: status ?? this.status,
   targets: targets ?? this.targets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesPageRule &&
           listEquals(actions, other.actions) &&
           createdOn == other.createdOn &&
@@ -79,7 +79,10 @@ ZonesPageRule copyWith({List<ZonesActions2>? actions, ZonesCreatedOn? createdOn,
           modifiedOn == other.modifiedOn &&
           priority == other.priority &&
           status == other.status &&
-          listEquals(targets, other.targets); } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions), createdOn, id, modifiedOn, priority, status, Object.hashAll(targets)); } 
-@override String toString() { return 'ZonesPageRule(actions: $actions, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, priority: $priority, status: $status, targets: $targets)'; } 
+          listEquals(targets, other.targets);
+
+@override int get hashCode => Object.hash(Object.hashAll(actions), createdOn, id, modifiedOn, priority, status, Object.hashAll(targets));
+
+@override String toString() => 'ZonesPageRule(actions: $actions, createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, priority: $priority, status: $status, targets: $targets)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateRunnerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateRunnerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningDefaultSetupUpdateRunnerType($value)';
+
  }
 @immutable final class CodeScanningDefaultSetupUpdateLanguages {const CodeScanningDefaultSetupUpdateLanguages._(this.value);
 
@@ -65,10 +68,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupUpdateLanguages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateLanguages($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupUpdateLanguages && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningDefaultSetupUpdateLanguages($value)';
+
  }
 /// Configuration for code scanning default setup.
 @immutable final class CodeScanningDefaultSetupUpdate {const CodeScanningDefaultSetupUpdate({this.state, this.runnerType, this.runnerLabel, this.querySuite, this.threatModel, this.languages, });
@@ -117,14 +123,17 @@ CodeScanningDefaultSetupUpdate copyWith({CodeScanningDefaultSetupState? Function
   threatModel: threatModel != null ? threatModel() : this.threatModel,
   languages: languages != null ? languages() : this.languages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetupUpdate &&
           state == other.state &&
           runnerType == other.runnerType &&
           runnerLabel == other.runnerLabel &&
           querySuite == other.querySuite &&
           threatModel == other.threatModel &&
-          listEquals(languages, other.languages); } 
-@override int get hashCode { return Object.hash(state, runnerType, runnerLabel, querySuite, threatModel, Object.hashAll(languages ?? const [])); } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdate(state: $state, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, languages: $languages)'; } 
+          listEquals(languages, other.languages);
+
+@override int get hashCode => Object.hash(state, runnerType, runnerLabel, querySuite, threatModel, Object.hashAll(languages ?? const []));
+
+@override String toString() => 'CodeScanningDefaultSetupUpdate(state: $state, runnerType: $runnerType, runnerLabel: $runnerLabel, querySuite: $querySuite, threatModel: $threatModel, languages: $languages)';
+
  }

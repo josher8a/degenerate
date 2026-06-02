@@ -29,10 +29,13 @@ DependabotAlertSecurityAdvisoryCvss copyWith({double? score, String? Function()?
   score: score ?? this.score,
   vectorString: vectorString != null ? vectorString() : this.vectorString,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryCvss &&
           score == other.score &&
-          vectorString == other.vectorString; } 
-@override int get hashCode { return Object.hash(score, vectorString); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryCvss(score: $score, vectorString: $vectorString)'; } 
+          vectorString == other.vectorString;
+
+@override int get hashCode => Object.hash(score, vectorString);
+
+@override String toString() => 'DependabotAlertSecurityAdvisoryCvss(score: $score, vectorString: $vectorString)';
+
  }

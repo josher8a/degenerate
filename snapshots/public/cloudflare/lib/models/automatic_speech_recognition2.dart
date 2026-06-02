@@ -31,12 +31,15 @@ AutomaticSpeechRecognition2 copyWith({String? text, String? Function()? vtt, dou
   wordCount: wordCount != null ? wordCount() : this.wordCount,
   words: words != null ? words() : this.words,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutomaticSpeechRecognition2 &&
           text == other.text &&
           vtt == other.vtt &&
           wordCount == other.wordCount &&
-          listEquals(words, other.words); } 
-@override int get hashCode { return Object.hash(text, vtt, wordCount, Object.hashAll(words ?? const [])); } 
-@override String toString() { return 'AutomaticSpeechRecognition2(text: $text, vtt: $vtt, wordCount: $wordCount, words: $words)'; } 
+          listEquals(words, other.words);
+
+@override int get hashCode => Object.hash(text, vtt, wordCount, Object.hashAll(words ?? const []));
+
+@override String toString() => 'AutomaticSpeechRecognition2(text: $text, vtt: $vtt, wordCount: $wordCount, words: $words)';
+
  }

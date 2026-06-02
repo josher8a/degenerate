@@ -63,7 +63,7 @@ LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name,
   score: score ?? this.score,
   textMatches: textMatches != null ? textMatches() : this.textMatches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LabelSearchResultItem &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -73,7 +73,10 @@ LabelSearchResultItem copyWith({int? id, String? nodeId, Uri? url, String? name,
           $default == other.$default &&
           description == other.description &&
           score == other.score &&
-          listEquals(textMatches, other.textMatches); } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, color, $default, description, score, Object.hashAll(textMatches ?? const [])); } 
-@override String toString() { return 'LabelSearchResultItem(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description, score: $score, textMatches: $textMatches)'; } 
+          listEquals(textMatches, other.textMatches);
+
+@override int get hashCode => Object.hash(id, nodeId, url, name, color, $default, description, score, Object.hashAll(textMatches ?? const []));
+
+@override String toString() => 'LabelSearchResultItem(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description, score: $score, textMatches: $textMatches)';
+
  }

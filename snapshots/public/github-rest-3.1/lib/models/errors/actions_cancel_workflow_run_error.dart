@@ -17,7 +17,8 @@ final class ActionsCancelWorkflowRunError$409 extends ActionsCancelWorkflowRunEr
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ActionsCancelWorkflowRunError$Unknown extends ActionsCancelWorkflowRunError {const ActionsCancelWorkflowRunError$Unknown(this.statusCode, this.rawBody, );
 

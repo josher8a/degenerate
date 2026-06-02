@@ -40,11 +40,14 @@ PostPaymentMethodsPaymentMethodRequestPayto copyWith({String? Function()? accoun
   bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
   payId: payId != null ? payId() : this.payId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequestPayto &&
           accountNumber == other.accountNumber &&
           bsbNumber == other.bsbNumber &&
-          payId == other.payId; } 
-@override int get hashCode { return Object.hash(accountNumber, bsbNumber, payId); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestPayto(accountNumber: $accountNumber, bsbNumber: $bsbNumber, payId: $payId)'; } 
+          payId == other.payId;
+
+@override int get hashCode => Object.hash(accountNumber, bsbNumber, payId);
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodRequestPayto(accountNumber: $accountNumber, bsbNumber: $bsbNumber, payId: $payId)';
+
  }

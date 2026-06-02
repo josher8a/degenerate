@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('searc
 WaitingroomZoneSettingsResponseResult copyWith({WaitingroomSearchEngineCrawlerBypass? searchEngineCrawlerBypass}) { return WaitingroomZoneSettingsResponseResult(
   searchEngineCrawlerBypass: searchEngineCrawlerBypass ?? this.searchEngineCrawlerBypass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomZoneSettingsResponseResult &&
-          searchEngineCrawlerBypass == other.searchEngineCrawlerBypass; } 
-@override int get hashCode { return searchEngineCrawlerBypass.hashCode; } 
-@override String toString() { return 'WaitingroomZoneSettingsResponseResult(searchEngineCrawlerBypass: $searchEngineCrawlerBypass)'; } 
+          searchEngineCrawlerBypass == other.searchEngineCrawlerBypass;
+
+@override int get hashCode => searchEngineCrawlerBypass.hashCode;
+
+@override String toString() => 'WaitingroomZoneSettingsResponseResult(searchEngineCrawlerBypass: $searchEngineCrawlerBypass)';
+
  }

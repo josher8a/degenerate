@@ -70,14 +70,17 @@ PaymentMethodSepaDebit copyWith({String? Function()? bankCode, String? Function(
   generatedFrom: generatedFrom != null ? generatedFrom() : this.generatedFrom,
   last4: last4 != null ? last4() : this.last4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodSepaDebit &&
           bankCode == other.bankCode &&
           branchCode == other.branchCode &&
           country == other.country &&
           fingerprint == other.fingerprint &&
           generatedFrom == other.generatedFrom &&
-          last4 == other.last4; } 
-@override int get hashCode { return Object.hash(bankCode, branchCode, country, fingerprint, generatedFrom, last4); } 
-@override String toString() { return 'PaymentMethodSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, fingerprint: $fingerprint, generatedFrom: $generatedFrom, last4: $last4)'; } 
+          last4 == other.last4;
+
+@override int get hashCode => Object.hash(bankCode, branchCode, country, fingerprint, generatedFrom, last4);
+
+@override String toString() => 'PaymentMethodSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, fingerprint: $fingerprint, generatedFrom: $generatedFrom, last4: $last4)';
+
  }

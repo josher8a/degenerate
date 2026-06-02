@@ -37,12 +37,15 @@ AutoMerge copyWith({SimpleUser? enabledBy, AutoMergeMergeMethod? mergeMethod, St
   commitTitle: commitTitle ?? this.commitTitle,
   commitMessage: commitMessage ?? this.commitMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoMerge &&
           enabledBy == other.enabledBy &&
           mergeMethod == other.mergeMethod &&
           commitTitle == other.commitTitle &&
-          commitMessage == other.commitMessage; } 
-@override int get hashCode { return Object.hash(enabledBy, mergeMethod, commitTitle, commitMessage); } 
-@override String toString() { return 'AutoMerge(enabledBy: $enabledBy, mergeMethod: $mergeMethod, commitTitle: $commitTitle, commitMessage: $commitMessage)'; } 
+          commitMessage == other.commitMessage;
+
+@override int get hashCode => Object.hash(enabledBy, mergeMethod, commitTitle, commitMessage);
+
+@override String toString() => 'AutoMerge(enabledBy: $enabledBy, mergeMethod: $mergeMethod, commitTitle: $commitTitle, commitMessage: $commitMessage)';
+
  }

@@ -31,10 +31,13 @@ TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, Strin
   certificateId: certificateId ?? this.certificateId,
   cn: cn ?? this.cn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesClientCertificateInputRequest &&
           certificateId == other.certificateId &&
-          cn == other.cn; } 
-@override int get hashCode { return Object.hash(certificateId, cn); } 
-@override String toString() { return 'TeamsDevicesClientCertificateInputRequest(certificateId: $certificateId, cn: $cn)'; } 
+          cn == other.cn;
+
+@override int get hashCode => Object.hash(certificateId, cn);
+
+@override String toString() => 'TeamsDevicesClientCertificateInputRequest(certificateId: $certificateId, cn: $cn)';
+
  }

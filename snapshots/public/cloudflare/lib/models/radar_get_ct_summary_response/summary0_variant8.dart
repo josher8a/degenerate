@@ -33,12 +33,15 @@ Summary0Variant8 copyWith({String? domain, String? extended, String? organizatio
   organization: organization ?? this.organization,
   unknown: unknown ?? this.unknown,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant8 &&
           domain == other.domain &&
           extended == other.extended &&
           organization == other.organization &&
-          unknown == other.unknown; } 
-@override int get hashCode { return Object.hash(domain, extended, organization, unknown); } 
-@override String toString() { return 'Summary0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)'; } 
+          unknown == other.unknown;
+
+@override int get hashCode => Object.hash(domain, extended, organization, unknown);
+
+@override String toString() => 'Summary0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)';
+
  }

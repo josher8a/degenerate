@@ -48,7 +48,7 @@ WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction?
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertDismissed &&
           action == other.action &&
           alert == other.alert &&
@@ -56,7 +56,10 @@ WebhookDependabotAlertDismissed copyWith({WebhookDependabotAlertDismissedAction?
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertDismissed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, installation, organization, enterprise, repository, sender);
+
+@override String toString() => 'WebhookDependabotAlertDismissed(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
+
  }

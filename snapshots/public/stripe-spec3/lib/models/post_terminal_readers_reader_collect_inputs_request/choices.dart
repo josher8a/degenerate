@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChoicesStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChoicesStyle($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChoicesStyle && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChoicesStyle($value)';
+
  }
 @immutable final class Choices {const Choices({required this.id, required this.text, this.style, });
 
@@ -55,11 +58,14 @@ Choices copyWith({String? id, ChoicesStyle? Function()? style, String? text, }) 
   style: style != null ? style() : this.style,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Choices &&
           id == other.id &&
           style == other.style &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(id, style, text); } 
-@override String toString() { return 'Choices(id: $id, style: $style, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(id, style, text);
+
+@override String toString() => 'Choices(id: $id, style: $style, text: $text)';
+
  }

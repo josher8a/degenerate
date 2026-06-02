@@ -21,10 +21,13 @@ ToolCallsCustomCustom copyWith({String? input, String? name, }) { return ToolCal
   input: input ?? this.input,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolCallsCustomCustom &&
           input == other.input &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(input, name); } 
-@override String toString() { return 'ToolCallsCustomCustom(input: $input, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(input, name);
+
+@override String toString() => 'ToolCallsCustomCustom(input: $input, name: $name)';
+
  }

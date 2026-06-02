@@ -19,19 +19,22 @@ final class GetTagIndicatorsListError$400 extends GetTagIndicatorsListError {con
 
 final GetTagIndicatorsListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetTagIndicatorsListError$404 extends GetTagIndicatorsListError {const GetTagIndicatorsListError$404(this.error);
 
 final GetTagIndicatorsListResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetTagIndicatorsListError$500 extends GetTagIndicatorsListError {const GetTagIndicatorsListError$500(this.error);
 
 final GetTagIndicatorsListResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GetTagIndicatorsListError$Unknown extends GetTagIndicatorsListError {const GetTagIndicatorsListError$Unknown(this.statusCode, this.rawBody, );
 

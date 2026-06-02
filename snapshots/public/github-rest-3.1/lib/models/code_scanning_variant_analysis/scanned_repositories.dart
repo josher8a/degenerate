@@ -39,13 +39,16 @@ ScannedRepositories copyWith({CodeScanningVariantAnalysisRepository? repository,
   artifactSizeInBytes: artifactSizeInBytes != null ? artifactSizeInBytes() : this.artifactSizeInBytes,
   failureMessage: failureMessage != null ? failureMessage() : this.failureMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScannedRepositories &&
           repository == other.repository &&
           analysisStatus == other.analysisStatus &&
           resultCount == other.resultCount &&
           artifactSizeInBytes == other.artifactSizeInBytes &&
-          failureMessage == other.failureMessage; } 
-@override int get hashCode { return Object.hash(repository, analysisStatus, resultCount, artifactSizeInBytes, failureMessage); } 
-@override String toString() { return 'ScannedRepositories(repository: $repository, analysisStatus: $analysisStatus, resultCount: $resultCount, artifactSizeInBytes: $artifactSizeInBytes, failureMessage: $failureMessage)'; } 
+          failureMessage == other.failureMessage;
+
+@override int get hashCode => Object.hash(repository, analysisStatus, resultCount, artifactSizeInBytes, failureMessage);
+
+@override String toString() => 'ScannedRepositories(repository: $repository, analysisStatus: $analysisStatus, resultCount: $resultCount, artifactSizeInBytes: $artifactSizeInBytes, failureMessage: $failureMessage)';
+
  }

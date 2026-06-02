@@ -73,7 +73,7 @@ RequestsResponse copyWith({IpStatsAsn? asn, bool? Function()? contentAvailable, 
   size: size ?? this.size,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequestsResponse &&
           asn == other.asn &&
           contentAvailable == other.contentAvailable &&
@@ -85,7 +85,10 @@ RequestsResponse copyWith({IpStatsAsn? asn, bool? Function()? contentAvailable, 
           requestId == other.requestId &&
           response == other.response &&
           size == other.size &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(asn, contentAvailable, dataLength, encodedDataLength, geoip, hasExtraInfo, hash, requestId, response, size, type); } 
-@override String toString() { return 'RequestsResponse(asn: $asn, contentAvailable: $contentAvailable, dataLength: $dataLength, encodedDataLength: $encodedDataLength, geoip: $geoip, hasExtraInfo: $hasExtraInfo, hash: $hash, requestId: $requestId, response: $response, size: $size, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(asn, contentAvailable, dataLength, encodedDataLength, geoip, hasExtraInfo, hash, requestId, response, size, type);
+
+@override String toString() => 'RequestsResponse(asn: $asn, contentAvailable: $contentAvailable, dataLength: $dataLength, encodedDataLength: $encodedDataLength, geoip: $geoip, hasExtraInfo: $hasExtraInfo, hash: $hash, requestId: $requestId, response: $response, size: $size, type: $type)';
+
  }

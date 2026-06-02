@@ -97,7 +97,7 @@ LoadBalancerPoolsPatchPoolRequest copyWith({List<LoadBalancingCheckRegions2>? Fu
   originSteering: originSteering != null ? originSteering() : this.originSteering,
   origins: origins != null ? origins() : this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerPoolsPatchPoolRequest &&
           listEquals(checkRegions, other.checkRegions) &&
           description == other.description &&
@@ -113,7 +113,10 @@ LoadBalancerPoolsPatchPoolRequest copyWith({List<LoadBalancingCheckRegions2>? Fu
           notificationEmail == other.notificationEmail &&
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const [])); } 
-@override String toString() { return 'LoadBalancerPoolsPatchPoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins ?? const []));
+
+@override String toString() => 'LoadBalancerPoolsPatchPoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+
  }

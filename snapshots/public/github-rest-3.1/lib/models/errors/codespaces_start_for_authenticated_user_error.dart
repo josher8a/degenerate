@@ -23,43 +23,50 @@ final class CodespacesStartForAuthenticatedUserError$400 extends CodespacesStart
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CodespacesStartForAuthenticatedUserError$401 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CodespacesStartForAuthenticatedUserError$402 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$402(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 402; } 
+@override int get statusCode => 402;
+
  }
 final class CodespacesStartForAuthenticatedUserError$403 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodespacesStartForAuthenticatedUserError$404 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodespacesStartForAuthenticatedUserError$409 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class CodespacesStartForAuthenticatedUserError$500 extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CodespacesStartForAuthenticatedUserError$Unknown extends CodespacesStartForAuthenticatedUserError {const CodespacesStartForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

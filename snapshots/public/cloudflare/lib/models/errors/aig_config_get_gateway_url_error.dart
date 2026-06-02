@@ -17,7 +17,8 @@ final class AigConfigGetGatewayUrlError$400 extends AigConfigGetGatewayUrlError 
 
 final AigConfigGetGatewayUrlResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigGetGatewayUrlError$Unknown extends AigConfigGetGatewayUrlError {const AigConfigGetGatewayUrlError$Unknown(this.statusCode, this.rawBody, );
 

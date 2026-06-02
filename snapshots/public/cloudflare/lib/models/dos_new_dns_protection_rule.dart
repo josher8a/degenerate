@@ -51,14 +51,17 @@ DosNewDnsProtectionRule copyWith({String? burstSensitivity, String? mode, String
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewDnsProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           mode == other.mode &&
           name == other.name &&
           profileSensitivity == other.profileSensitivity &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, mode, name, profileSensitivity, rateSensitivity, scope); } 
-@override String toString() { return 'DosNewDnsProtectionRule(burstSensitivity: $burstSensitivity, mode: $mode, name: $name, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(burstSensitivity, mode, name, profileSensitivity, rateSensitivity, scope);
+
+@override String toString() => 'DosNewDnsProtectionRule(burstSensitivity: $burstSensitivity, mode: $mode, name: $name, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity, scope: $scope)';
+
  }

@@ -18,13 +18,15 @@ final class GistsGetError$403 extends GistsGetError {const GistsGetError$403(thi
 
 final GistsGetResponse403 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class GistsGetError$404 extends GistsGetError {const GistsGetError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GistsGetError$Unknown extends GistsGetError {const GistsGetError$Unknown(this.statusCode, this.rawBody, );
 

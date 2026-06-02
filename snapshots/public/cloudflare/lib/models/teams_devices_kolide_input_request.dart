@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CountOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CountOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CountOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CountOperator($value)';
+
  }
 @immutable final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });
 
@@ -70,11 +73,14 @@ TeamsDevicesKolideInputRequest copyWith({String? connectionId, CountOperator? co
   countOperator: countOperator ?? this.countOperator,
   issueCount: issueCount ?? this.issueCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesKolideInputRequest &&
           connectionId == other.connectionId &&
           countOperator == other.countOperator &&
-          issueCount == other.issueCount; } 
-@override int get hashCode { return Object.hash(connectionId, countOperator, issueCount); } 
-@override String toString() { return 'TeamsDevicesKolideInputRequest(connectionId: $connectionId, countOperator: $countOperator, issueCount: $issueCount)'; } 
+          issueCount == other.issueCount;
+
+@override int get hashCode => Object.hash(connectionId, countOperator, issueCount);
+
+@override String toString() => 'TeamsDevicesKolideInputRequest(connectionId: $connectionId, countOperator: $countOperator, issueCount: $issueCount)';
+
  }

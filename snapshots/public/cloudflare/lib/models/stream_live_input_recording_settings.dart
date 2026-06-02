@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamLiveInputRecordingMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamLiveInputRecordingMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamLiveInputRecordingMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamLiveInputRecordingMode($value)';
+
  }
 /// Indicates if a video using the live input has the `requireSignedURLs` property set. Also enforces access controls on any video recording of the livestream with the live input.
 extension type const StreamLiveInputRecordingRequireSignedUrLs(bool value) {
@@ -96,13 +99,16 @@ StreamLiveInputRecordingSettings copyWith({List<String>? Function()? allowedOrig
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
   timeoutSeconds: timeoutSeconds != null ? timeoutSeconds() : this.timeoutSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLiveInputRecordingSettings &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
           hideLiveViewerCount == other.hideLiveViewerCount &&
           mode == other.mode &&
           requireSignedUrLs == other.requireSignedUrLs &&
-          timeoutSeconds == other.timeoutSeconds; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedOrigins ?? const []), hideLiveViewerCount, mode, requireSignedUrLs, timeoutSeconds); } 
-@override String toString() { return 'StreamLiveInputRecordingSettings(allowedOrigins: $allowedOrigins, hideLiveViewerCount: $hideLiveViewerCount, mode: $mode, requireSignedUrLs: $requireSignedUrLs, timeoutSeconds: $timeoutSeconds)'; } 
+          timeoutSeconds == other.timeoutSeconds;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), hideLiveViewerCount, mode, requireSignedUrLs, timeoutSeconds);
+
+@override String toString() => 'StreamLiveInputRecordingSettings(allowedOrigins: $allowedOrigins, hideLiveViewerCount: $hideLiveViewerCount, mode: $mode, requireSignedUrLs: $requireSignedUrLs, timeoutSeconds: $timeoutSeconds)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodDetailsCryptoNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsCryptoNetwork($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodDetailsCryptoNetwork && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsCryptoNetwork($value)';
+
  }
 /// The token currency that the transaction was sent with.
 @immutable final class TokenCurrency {const TokenCurrency._(this.value);
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TokenCurrency && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TokenCurrency($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TokenCurrency && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TokenCurrency($value)';
+
  }
 /// 
 @immutable final class PaymentMethodDetailsCrypto {const PaymentMethodDetailsCrypto({this.buyerAddress, this.network, this.tokenCurrency, this.transactionHash, });
@@ -105,12 +111,15 @@ PaymentMethodDetailsCrypto copyWith({String? Function()? buyerAddress, PaymentMe
   tokenCurrency: tokenCurrency != null ? tokenCurrency() : this.tokenCurrency,
   transactionHash: transactionHash != null ? transactionHash() : this.transactionHash,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCrypto &&
           buyerAddress == other.buyerAddress &&
           network == other.network &&
           tokenCurrency == other.tokenCurrency &&
-          transactionHash == other.transactionHash; } 
-@override int get hashCode { return Object.hash(buyerAddress, network, tokenCurrency, transactionHash); } 
-@override String toString() { return 'PaymentMethodDetailsCrypto(buyerAddress: $buyerAddress, network: $network, tokenCurrency: $tokenCurrency, transactionHash: $transactionHash)'; } 
+          transactionHash == other.transactionHash;
+
+@override int get hashCode => Object.hash(buyerAddress, network, tokenCurrency, transactionHash);
+
+@override String toString() => 'PaymentMethodDetailsCrypto(buyerAddress: $buyerAddress, network: $network, tokenCurrency: $tokenCurrency, transactionHash: $transactionHash)';
+
  }

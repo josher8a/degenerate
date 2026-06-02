@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RiskLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RiskLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RiskLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RiskLevel($value)';
+
  }
 /// Score Operator.
 @immutable final class ScoreOperator {const ScoreOperator._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScoreOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScoreOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ScoreOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ScoreOperator($value)';
+
  }
 @immutable final class TeamsDevicesTaniumInputRequest {const TeamsDevicesTaniumInputRequest({required this.connectionId, this.eidLastSeen, this.$operator, this.riskLevel, this.scoreOperator, this.totalScore, });
 
@@ -123,14 +129,17 @@ TeamsDevicesTaniumInputRequest copyWith({String? connectionId, String? Function(
   scoreOperator: scoreOperator != null ? scoreOperator() : this.scoreOperator,
   totalScore: totalScore != null ? totalScore() : this.totalScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesTaniumInputRequest &&
           connectionId == other.connectionId &&
           eidLastSeen == other.eidLastSeen &&
           $operator == other.$operator &&
           riskLevel == other.riskLevel &&
           scoreOperator == other.scoreOperator &&
-          totalScore == other.totalScore; } 
-@override int get hashCode { return Object.hash(connectionId, eidLastSeen, $operator, riskLevel, scoreOperator, totalScore); } 
-@override String toString() { return 'TeamsDevicesTaniumInputRequest(connectionId: $connectionId, eidLastSeen: $eidLastSeen, \$operator: ${$operator}, riskLevel: $riskLevel, scoreOperator: $scoreOperator, totalScore: $totalScore)'; } 
+          totalScore == other.totalScore;
+
+@override int get hashCode => Object.hash(connectionId, eidLastSeen, $operator, riskLevel, scoreOperator, totalScore);
+
+@override String toString() => 'TeamsDevicesTaniumInputRequest(connectionId: $connectionId, eidLastSeen: $eidLastSeen, \$operator: ${$operator}, riskLevel: $riskLevel, scoreOperator: $scoreOperator, totalScore: $totalScore)';
+
  }

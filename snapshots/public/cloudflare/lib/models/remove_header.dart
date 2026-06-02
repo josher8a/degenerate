@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('opera
 RemoveHeader copyWith({RulesetsRewriteHeaderOperation? operation}) { return RemoveHeader(
   operation: operation ?? this.operation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RemoveHeader &&
-          operation == other.operation; } 
-@override int get hashCode { return operation.hashCode; } 
-@override String toString() { return 'RemoveHeader(operation: $operation)'; } 
+          operation == other.operation;
+
+@override int get hashCode => operation.hashCode;
+
+@override String toString() => 'RemoveHeader(operation: $operation)';
+
  }

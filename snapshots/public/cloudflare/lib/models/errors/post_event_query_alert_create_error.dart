@@ -17,7 +17,8 @@ final class PostEventQueryAlertCreateError$400 extends PostEventQueryAlertCreate
 
 final PostEventQueryAlertCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventQueryAlertCreateError$Unknown extends PostEventQueryAlertCreateError {const PostEventQueryAlertCreateError$Unknown(this.statusCode, this.rawBody, );
 

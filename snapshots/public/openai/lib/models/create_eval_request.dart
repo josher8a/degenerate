@@ -34,12 +34,15 @@ CreateEvalRequest copyWith({String? Function()? name, Map<String, String>? Funct
   dataSourceConfig: dataSourceConfig ?? this.dataSourceConfig,
   testingCriteria: testingCriteria ?? this.testingCriteria,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalRequest &&
           name == other.name &&
           metadata == other.metadata &&
           dataSourceConfig == other.dataSourceConfig &&
-          listEquals(testingCriteria, other.testingCriteria); } 
-@override int get hashCode { return Object.hash(name, metadata, dataSourceConfig, Object.hashAll(testingCriteria)); } 
-@override String toString() { return 'CreateEvalRequest(name: $name, metadata: $metadata, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria)'; } 
+          listEquals(testingCriteria, other.testingCriteria);
+
+@override int get hashCode => Object.hash(name, metadata, dataSourceConfig, Object.hashAll(testingCriteria));
+
+@override String toString() => 'CreateEvalRequest(name: $name, metadata: $metadata, dataSourceConfig: $dataSourceConfig, testingCriteria: $testingCriteria)';
+
  }

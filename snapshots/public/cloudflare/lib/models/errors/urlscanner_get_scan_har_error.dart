@@ -18,13 +18,15 @@ final class UrlscannerGetScanHarError$400 extends UrlscannerGetScanHarError {con
 
 final UrlscannerGetScanHarResponse4002 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UrlscannerGetScanHarError$404 extends UrlscannerGetScanHarError {const UrlscannerGetScanHarError$404(this.error);
 
 final UrlscannerGetScanHarResponse4042 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class UrlscannerGetScanHarError$Unknown extends UrlscannerGetScanHarError {const UrlscannerGetScanHarError$Unknown(this.statusCode, this.rawBody, );
 

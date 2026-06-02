@@ -20,10 +20,13 @@ PaymentDetailsCaptureParams copyWith({CustomerReference? Function()? customerRef
   customerReference: customerReference != null ? customerReference() : this.customerReference,
   orderReference: orderReference != null ? orderReference() : this.orderReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentDetailsCaptureParams &&
           customerReference == other.customerReference &&
-          orderReference == other.orderReference; } 
-@override int get hashCode { return Object.hash(customerReference, orderReference); } 
-@override String toString() { return 'PaymentDetailsCaptureParams(customerReference: $customerReference, orderReference: $orderReference)'; } 
+          orderReference == other.orderReference;
+
+@override int get hashCode => Object.hash(customerReference, orderReference);
+
+@override String toString() => 'PaymentDetailsCaptureParams(customerReference: $customerReference, orderReference: $orderReference)';
+
  }

@@ -43,14 +43,17 @@ ProtectedBranchPullRequestReviewDismissalRestrictions copyWith({List<SimpleUser>
   usersUrl: usersUrl != null ? usersUrl() : this.usersUrl,
   teamsUrl: teamsUrl != null ? teamsUrl() : this.teamsUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchPullRequestReviewDismissalRestrictions &&
           listEquals(users, other.users) &&
           listEquals(teams, other.teams) &&
           listEquals(apps, other.apps) &&
           url == other.url &&
           usersUrl == other.usersUrl &&
-          teamsUrl == other.teamsUrl; } 
-@override int get hashCode { return Object.hash(Object.hashAll(users ?? const []), Object.hashAll(teams ?? const []), Object.hashAll(apps ?? const []), url, usersUrl, teamsUrl); } 
-@override String toString() { return 'ProtectedBranchPullRequestReviewDismissalRestrictions(users: $users, teams: $teams, apps: $apps, url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl)'; } 
+          teamsUrl == other.teamsUrl;
+
+@override int get hashCode => Object.hash(Object.hashAll(users ?? const []), Object.hashAll(teams ?? const []), Object.hashAll(apps ?? const []), url, usersUrl, teamsUrl);
+
+@override String toString() => 'ProtectedBranchPullRequestReviewDismissalRestrictions(users: $users, teams: $teams, apps: $apps, url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl)';
+
  }

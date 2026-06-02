@@ -21,10 +21,13 @@ McnListItem copyWith({String? itemType, List<McnListItemList>? list, }) { return
   itemType: itemType ?? this.itemType,
   list: list ?? this.list,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnListItem &&
           itemType == other.itemType &&
-          listEquals(list, other.list); } 
-@override int get hashCode { return Object.hash(itemType, Object.hashAll(list)); } 
-@override String toString() { return 'McnListItem(itemType: $itemType, list: $list)'; } 
+          listEquals(list, other.list);
+
+@override int get hashCode => Object.hash(itemType, Object.hashAll(list));
+
+@override String toString() => 'McnListItem(itemType: $itemType, list: $list)';
+
  }

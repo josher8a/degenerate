@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionEntryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionEntryObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryTransactionEntryObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryTransactionEntryObject($value)';
+
  }
 /// The specific money movement that generated the TransactionEntry.
 @immutable final class TreasuryTransactionEntryType {const TreasuryTransactionEntryType._(this.value);
@@ -96,10 +99,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionEntryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryTransactionEntryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryTransactionEntryType($value)';
+
  }
 /// TransactionEntries represent individual units of money movements within a single [Transaction](https://api.stripe.com#transactions).
 @immutable final class TreasuryTransactionEntry {const TreasuryTransactionEntry({required this.balanceImpact, required this.created, required this.currency, required this.effectiveAt, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.transaction, required this.type, this.flow, this.flowDetails, });
@@ -208,7 +214,7 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
   transaction: transaction ?? this.transaction,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryTransactionEntry &&
           balanceImpact == other.balanceImpact &&
           created == other.created &&
@@ -222,7 +228,10 @@ TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? ba
           livemode == other.livemode &&
           object == other.object &&
           transaction == other.transaction &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(balanceImpact, created, currency, effectiveAt, financialAccount, flow, flowDetails, flowType, id, livemode, object, transaction, type); } 
-@override String toString() { return 'TreasuryTransactionEntry(balanceImpact: $balanceImpact, created: $created, currency: $currency, effectiveAt: $effectiveAt, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, transaction: $transaction, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(balanceImpact, created, currency, effectiveAt, financialAccount, flow, flowDetails, flowType, id, livemode, object, transaction, type);
+
+@override String toString() => 'TreasuryTransactionEntry(balanceImpact: $balanceImpact, created: $created, currency: $currency, effectiveAt: $effectiveAt, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, transaction: $transaction, type: $type)';
+
  }

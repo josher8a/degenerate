@@ -26,10 +26,13 @@ CustomToolChatCompletions copyWith({ChatCompletionMessageCustomToolCallType? typ
   type: type ?? this.type,
   custom: custom ?? this.custom,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolChatCompletions &&
           type == other.type &&
-          custom == other.custom; } 
-@override int get hashCode { return Object.hash(type, custom); } 
-@override String toString() { return 'CustomToolChatCompletions(type: $type, custom: $custom)'; } 
+          custom == other.custom;
+
+@override int get hashCode => Object.hash(type, custom);
+
+@override String toString() => 'CustomToolChatCompletions(type: $type, custom: $custom)';
+
  }

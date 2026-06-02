@@ -144,7 +144,7 @@ AigConfigGetGatewayLogDetailResponseResult copyWith({bool? cached, double? Funct
   tokensIn: tokensIn != null ? tokensIn() : this.tokensIn,
   tokensOut: tokensOut != null ? tokensOut() : this.tokensOut,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigGetGatewayLogDetailResponseResult &&
           cached == other.cached &&
           cost == other.cost &&
@@ -170,7 +170,10 @@ AigConfigGetGatewayLogDetailResponseResult copyWith({bool? cached, double? Funct
           step == other.step &&
           success == other.success &&
           tokensIn == other.tokensIn &&
-          tokensOut == other.tokensOut; } 
-@override int get hashCode { return Object.hashAll([cached, cost, createdAt, customCost, duration, id, metadata, model, modelType, path, provider, requestContentType, requestHead, requestHeadComplete, requestSize, requestType, responseContentType, responseHead, responseHeadComplete, responseSize, statusCode, step, success, tokensIn, tokensOut]); } 
-@override String toString() { return 'AigConfigGetGatewayLogDetailResponseResult(cached: $cached, cost: $cost, createdAt: $createdAt, customCost: $customCost, duration: $duration, id: $id, metadata: $metadata, model: $model, modelType: $modelType, path: $path, provider: $provider, requestContentType: $requestContentType, requestHead: $requestHead, requestHeadComplete: $requestHeadComplete, requestSize: $requestSize, requestType: $requestType, responseContentType: $responseContentType, responseHead: $responseHead, responseHeadComplete: $responseHeadComplete, responseSize: $responseSize, statusCode: $statusCode, step: $step, success: $success, tokensIn: $tokensIn, tokensOut: $tokensOut)'; } 
+          tokensOut == other.tokensOut;
+
+@override int get hashCode => Object.hashAll([cached, cost, createdAt, customCost, duration, id, metadata, model, modelType, path, provider, requestContentType, requestHead, requestHeadComplete, requestSize, requestType, responseContentType, responseHead, responseHeadComplete, responseSize, statusCode, step, success, tokensIn, tokensOut]);
+
+@override String toString() => 'AigConfigGetGatewayLogDetailResponseResult(cached: $cached, cost: $cost, createdAt: $createdAt, customCost: $customCost, duration: $duration, id: $id, metadata: $metadata, model: $model, modelType: $modelType, path: $path, provider: $provider, requestContentType: $requestContentType, requestHead: $requestHead, requestHeadComplete: $requestHeadComplete, requestSize: $requestSize, requestType: $requestType, responseContentType: $responseContentType, responseHead: $responseHead, responseHeadComplete: $responseHeadComplete, responseSize: $responseSize, statusCode: $statusCode, step: $step, success: $success, tokensIn: $tokensIn, tokensOut: $tokensOut)';
+
  }

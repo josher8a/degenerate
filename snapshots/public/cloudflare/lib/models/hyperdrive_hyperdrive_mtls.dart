@@ -34,11 +34,14 @@ HyperdriveHyperdriveMtls copyWith({String? Function()? caCertificateId, String? 
   mtlsCertificateId: mtlsCertificateId != null ? mtlsCertificateId() : this.mtlsCertificateId,
   sslmode: sslmode != null ? sslmode() : this.sslmode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveMtls &&
           caCertificateId == other.caCertificateId &&
           mtlsCertificateId == other.mtlsCertificateId &&
-          sslmode == other.sslmode; } 
-@override int get hashCode { return Object.hash(caCertificateId, mtlsCertificateId, sslmode); } 
-@override String toString() { return 'HyperdriveHyperdriveMtls(caCertificateId: $caCertificateId, mtlsCertificateId: $mtlsCertificateId, sslmode: $sslmode)'; } 
+          sslmode == other.sslmode;
+
+@override int get hashCode => Object.hash(caCertificateId, mtlsCertificateId, sslmode);
+
+@override String toString() => 'HyperdriveHyperdriveMtls(caCertificateId: $caCertificateId, mtlsCertificateId: $mtlsCertificateId, sslmode: $sslmode)';
+
  }

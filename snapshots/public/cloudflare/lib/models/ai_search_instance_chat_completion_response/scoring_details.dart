@@ -52,13 +52,16 @@ ScoringDetails copyWith({double? Function()? keywordRank, double? Function()? ke
   vectorRank: vectorRank != null ? vectorRank() : this.vectorRank,
   vectorScore: vectorScore != null ? vectorScore() : this.vectorScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScoringDetails &&
           keywordRank == other.keywordRank &&
           keywordScore == other.keywordScore &&
           rerankingScore == other.rerankingScore &&
           vectorRank == other.vectorRank &&
-          vectorScore == other.vectorScore; } 
-@override int get hashCode { return Object.hash(keywordRank, keywordScore, rerankingScore, vectorRank, vectorScore); } 
-@override String toString() { return 'ScoringDetails(keywordRank: $keywordRank, keywordScore: $keywordScore, rerankingScore: $rerankingScore, vectorRank: $vectorRank, vectorScore: $vectorScore)'; } 
+          vectorScore == other.vectorScore;
+
+@override int get hashCode => Object.hash(keywordRank, keywordScore, rerankingScore, vectorRank, vectorScore);
+
+@override String toString() => 'ScoringDetails(keywordRank: $keywordRank, keywordScore: $keywordScore, rerankingScore: $rerankingScore, vectorRank: $vectorRank, vectorScore: $vectorScore)';
+
  }

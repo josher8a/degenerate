@@ -17,7 +17,8 @@ final class WorkersAiPostRunHfNousresearchHermes2ProMistral7bError$400 extends W
 
 final WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunHfNousresearchHermes2ProMistral7bError$Unknown extends WorkersAiPostRunHfNousresearchHermes2ProMistral7bError {const WorkersAiPostRunHfNousresearchHermes2ProMistral7bError$Unknown(this.statusCode, this.rawBody, );
 

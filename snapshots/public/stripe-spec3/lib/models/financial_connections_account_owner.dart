@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountOwnerObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountOwnerObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsAccountOwnerObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinancialConnectionsAccountOwnerObject($value)';
+
  }
 /// Describes an owner of an account.
 @immutable final class FinancialConnectionsAccountOwner {const FinancialConnectionsAccountOwner({required this.id, required this.name, required this.object, required this.ownership, this.email, this.phone, this.rawAddress, this.refreshedAt, });
@@ -102,7 +105,7 @@ FinancialConnectionsAccountOwner copyWith({String? Function()? email, String? id
   rawAddress: rawAddress != null ? rawAddress() : this.rawAddress,
   refreshedAt: refreshedAt != null ? refreshedAt() : this.refreshedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsAccountOwner &&
           email == other.email &&
           id == other.id &&
@@ -111,7 +114,10 @@ FinancialConnectionsAccountOwner copyWith({String? Function()? email, String? id
           ownership == other.ownership &&
           phone == other.phone &&
           rawAddress == other.rawAddress &&
-          refreshedAt == other.refreshedAt; } 
-@override int get hashCode { return Object.hash(email, id, name, object, ownership, phone, rawAddress, refreshedAt); } 
-@override String toString() { return 'FinancialConnectionsAccountOwner(email: $email, id: $id, name: $name, object: $object, ownership: $ownership, phone: $phone, rawAddress: $rawAddress, refreshedAt: $refreshedAt)'; } 
+          refreshedAt == other.refreshedAt;
+
+@override int get hashCode => Object.hash(email, id, name, object, ownership, phone, rawAddress, refreshedAt);
+
+@override String toString() => 'FinancialConnectionsAccountOwner(email: $email, id: $id, name: $name, object: $object, ownership: $ownership, phone: $phone, rawAddress: $rawAddress, refreshedAt: $refreshedAt)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountEnumType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountEnumType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountEnumType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountEnumType($value)';
+
  }
 @immutable final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });
 
@@ -108,7 +111,7 @@ Account copyWith({String? Function()? authToken, String? Function()? dateCreated
   type: type != null ? type() : this.type,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Account &&
           authToken == other.authToken &&
           dateCreated == other.dateCreated &&
@@ -119,7 +122,10 @@ Account copyWith({String? Function()? authToken, String? Function()? dateCreated
           status == other.status &&
           subresourceUris == other.subresourceUris &&
           type == other.type &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(authToken, dateCreated, dateUpdated, friendlyName, ownerAccountSid, sid, status, subresourceUris, type, uri); } 
-@override String toString() { return 'Account(authToken: $authToken, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, ownerAccountSid: $ownerAccountSid, sid: $sid, status: $status, subresourceUris: $subresourceUris, type: $type, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(authToken, dateCreated, dateUpdated, friendlyName, ownerAccountSid, sid, status, subresourceUris, type, uri);
+
+@override String toString() => 'Account(authToken: $authToken, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, ownerAccountSid: $ownerAccountSid, sid: $sid, status: $status, subresourceUris: $subresourceUris, type: $type, uri: $uri)';
+
  }

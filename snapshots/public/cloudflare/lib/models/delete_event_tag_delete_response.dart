@@ -22,10 +22,13 @@ DeleteEventTagDeleteResponse copyWith({DeleteEventReferenceDeleteResponseResult?
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEventTagDeleteResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'DeleteEventTagDeleteResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'DeleteEventTagDeleteResponse(result: $result, success: $success)';
+
  }

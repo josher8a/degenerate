@@ -118,7 +118,7 @@ RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObjec
   temperature: temperature != null ? temperature() : this.temperature,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaResponse &&
           id == other.id &&
           object == other.object &&
@@ -132,7 +132,10 @@ RealtimeBetaResponse copyWith({String? Function()? id, RealtimeBetaResponseObjec
           listEquals(modalities, other.modalities) &&
           outputAudioFormat == other.outputAudioFormat &&
           temperature == other.temperature &&
-          maxOutputTokens == other.maxOutputTokens; } 
-@override int get hashCode { return Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, usage, conversationId, voice, Object.hashAll(modalities ?? const []), outputAudioFormat, temperature, maxOutputTokens); } 
-@override String toString() { return 'RealtimeBetaResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, usage: $usage, conversationId: $conversationId, voice: $voice, modalities: $modalities, outputAudioFormat: $outputAudioFormat, temperature: $temperature, maxOutputTokens: $maxOutputTokens)'; } 
+          maxOutputTokens == other.maxOutputTokens;
+
+@override int get hashCode => Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, usage, conversationId, voice, Object.hashAll(modalities ?? const []), outputAudioFormat, temperature, maxOutputTokens);
+
+@override String toString() => 'RealtimeBetaResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, usage: $usage, conversationId: $conversationId, voice: $voice, modalities: $modalities, outputAudioFormat: $outputAudioFormat, temperature: $temperature, maxOutputTokens: $maxOutputTokens)';
+
  }

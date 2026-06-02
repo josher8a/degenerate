@@ -70,7 +70,7 @@ TokenValidationRulesPreviewResponseResult copyWith({List<ShieldHost>? Function()
   selectedHosts: selectedHosts != null ? selectedHosts() : this.selectedHosts,
   total: total != null ? total() : this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationRulesPreviewResponseResult &&
           listEquals(availableHosts, other.availableHosts) &&
           excluded == other.excluded &&
@@ -78,7 +78,10 @@ TokenValidationRulesPreviewResponseResult copyWith({List<ShieldHost>? Function()
           included == other.included &&
           listEquals(operations, other.operations) &&
           listEquals(selectedHosts, other.selectedHosts) &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(Object.hashAll(availableHosts ?? const []), excluded, ignored, included, Object.hashAll(operations ?? const []), Object.hashAll(selectedHosts ?? const []), total); } 
-@override String toString() { return 'TokenValidationRulesPreviewResponseResult(availableHosts: $availableHosts, excluded: $excluded, ignored: $ignored, included: $included, operations: $operations, selectedHosts: $selectedHosts, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(Object.hashAll(availableHosts ?? const []), excluded, ignored, included, Object.hashAll(operations ?? const []), Object.hashAll(selectedHosts ?? const []), total);
+
+@override String toString() => 'TokenValidationRulesPreviewResponseResult(availableHosts: $availableHosts, excluded: $excluded, ignored: $ignored, included: $included, operations: $operations, selectedHosts: $selectedHosts, total: $total)';
+
  }

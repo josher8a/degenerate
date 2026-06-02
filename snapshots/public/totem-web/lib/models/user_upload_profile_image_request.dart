@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'
 UserUploadProfileImageRequest copyWith({Uint8List? file}) { return UserUploadProfileImageRequest(
   file: file ?? this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserUploadProfileImageRequest &&
-          file == other.file; } 
-@override int get hashCode { return file.hashCode; } 
-@override String toString() { return 'UserUploadProfileImageRequest(file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => file.hashCode;
+
+@override String toString() => 'UserUploadProfileImageRequest(file: $file)';
+
  }

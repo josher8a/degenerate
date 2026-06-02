@@ -22,10 +22,13 @@ PostInvoiceitemsInvoiceitemRequestPeriod copyWith({int? end, int? start, }) { re
   end: end ?? this.end,
   start: start ?? this.start,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoiceitemsInvoiceitemRequestPeriod &&
           end == other.end &&
-          start == other.start; } 
-@override int get hashCode { return Object.hash(end, start); } 
-@override String toString() { return 'PostInvoiceitemsInvoiceitemRequestPeriod(end: $end, start: $start)'; } 
+          start == other.start;
+
+@override int get hashCode => Object.hash(end, start);
+
+@override String toString() => 'PostInvoiceitemsInvoiceitemRequestPeriod(end: $end, start: $start)';
+
  }

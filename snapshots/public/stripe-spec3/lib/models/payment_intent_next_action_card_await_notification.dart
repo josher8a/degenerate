@@ -23,10 +23,13 @@ PaymentIntentNextActionCardAwaitNotification copyWith({int? Function()? chargeAt
   chargeAttemptAt: chargeAttemptAt != null ? chargeAttemptAt() : this.chargeAttemptAt,
   customerApprovalRequired: customerApprovalRequired != null ? customerApprovalRequired() : this.customerApprovalRequired,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionCardAwaitNotification &&
           chargeAttemptAt == other.chargeAttemptAt &&
-          customerApprovalRequired == other.customerApprovalRequired; } 
-@override int get hashCode { return Object.hash(chargeAttemptAt, customerApprovalRequired); } 
-@override String toString() { return 'PaymentIntentNextActionCardAwaitNotification(chargeAttemptAt: $chargeAttemptAt, customerApprovalRequired: $customerApprovalRequired)'; } 
+          customerApprovalRequired == other.customerApprovalRequired;
+
+@override int get hashCode => Object.hash(chargeAttemptAt, customerApprovalRequired);
+
+@override String toString() => 'PaymentIntentNextActionCardAwaitNotification(chargeAttemptAt: $chargeAttemptAt, customerApprovalRequired: $customerApprovalRequired)';
+
  }

@@ -40,12 +40,15 @@ RulesetsSetCacheSettingsCacheKey copyWith({bool? Function()? cacheByDeviceType, 
   customKey: customKey != null ? customKey() : this.customKey,
   ignoreQueryStringsOrder: ignoreQueryStringsOrder != null ? ignoreQueryStringsOrder() : this.ignoreQueryStringsOrder,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCacheKey &&
           cacheByDeviceType == other.cacheByDeviceType &&
           cacheDeceptionArmor == other.cacheDeceptionArmor &&
           customKey == other.customKey &&
-          ignoreQueryStringsOrder == other.ignoreQueryStringsOrder; } 
-@override int get hashCode { return Object.hash(cacheByDeviceType, cacheDeceptionArmor, customKey, ignoreQueryStringsOrder); } 
-@override String toString() { return 'RulesetsSetCacheSettingsCacheKey(cacheByDeviceType: $cacheByDeviceType, cacheDeceptionArmor: $cacheDeceptionArmor, customKey: $customKey, ignoreQueryStringsOrder: $ignoreQueryStringsOrder)'; } 
+          ignoreQueryStringsOrder == other.ignoreQueryStringsOrder;
+
+@override int get hashCode => Object.hash(cacheByDeviceType, cacheDeceptionArmor, customKey, ignoreQueryStringsOrder);
+
+@override String toString() => 'RulesetsSetCacheSettingsCacheKey(cacheByDeviceType: $cacheByDeviceType, cacheDeceptionArmor: $cacheDeceptionArmor, customKey: $customKey, ignoreQueryStringsOrder: $ignoreQueryStringsOrder)';
+
  }

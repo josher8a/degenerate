@@ -54,13 +54,16 @@ RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 copyWith({String? laterIn
   postPsh: postPsh ?? this.postPsh,
   postSyn: postSyn ?? this.postSyn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 &&
           laterInFlow == other.laterInFlow &&
           noMatch == other.noMatch &&
           postAck == other.postAck &&
           postPsh == other.postPsh &&
-          postSyn == other.postSyn; } 
-@override int get hashCode { return Object.hash(laterInFlow, noMatch, postAck, postPsh, postSyn); } 
-@override String toString() { return 'RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn)'; } 
+          postSyn == other.postSyn;
+
+@override int get hashCode => Object.hash(laterInFlow, noMatch, postAck, postPsh, postSyn);
+
+@override String toString() => 'RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn)';
+
  }

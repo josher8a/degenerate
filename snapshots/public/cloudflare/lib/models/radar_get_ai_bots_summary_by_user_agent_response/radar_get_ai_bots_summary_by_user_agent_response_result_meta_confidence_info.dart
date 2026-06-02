@@ -22,10 +22,13 @@ RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo copyWith({List<
   annotations: annotations ?? this.annotations,
   level: level ?? this.level,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo &&
           listEquals(annotations, other.annotations) &&
-          level == other.level; } 
-@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
-@override String toString() { return 'RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+          level == other.level;
+
+@override int get hashCode => Object.hash(Object.hashAll(annotations), level);
+
+@override String toString() => 'RadarGetAiBotsSummaryByUserAgentResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)';
+
  }

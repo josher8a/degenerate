@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is KeyType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'KeyType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is KeyType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'KeyType($value)';
+
  }
 @immutable final class CalculationsOperator {const CalculationsOperator._(this.value);
 
@@ -154,10 +157,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CalculationsOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CalculationsOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CalculationsOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CalculationsOperator($value)';
+
  }
 @immutable final class ParametersCalculations {const ParametersCalculations({required this.$operator, this.alias, this.key, this.keyType, });
 
@@ -189,12 +195,15 @@ ParametersCalculations copyWith({String? Function()? alias, String? Function()? 
   keyType: keyType != null ? keyType() : this.keyType,
   $operator: $operator ?? this.$operator,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParametersCalculations &&
           alias == other.alias &&
           key == other.key &&
           keyType == other.keyType &&
-          $operator == other.$operator; } 
-@override int get hashCode { return Object.hash(alias, key, keyType, $operator); } 
-@override String toString() { return 'ParametersCalculations(alias: $alias, key: $key, keyType: $keyType, \$operator: ${$operator})'; } 
+          $operator == other.$operator;
+
+@override int get hashCode => Object.hash(alias, key, keyType, $operator);
+
+@override String toString() => 'ParametersCalculations(alias: $alias, key: $key, keyType: $keyType, \$operator: ${$operator})';
+
  }

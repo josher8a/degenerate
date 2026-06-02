@@ -40,11 +40,14 @@ ZeroTrustGatewayExpiration copyWith({int? Function()? duration, bool? Function()
   expired: expired != null ? expired() : this.expired,
   expiresAt: expiresAt ?? this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayExpiration &&
           duration == other.duration &&
           expired == other.expired &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(duration, expired, expiresAt); } 
-@override String toString() { return 'ZeroTrustGatewayExpiration(duration: $duration, expired: $expired, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(duration, expired, expiresAt);
+
+@override String toString() => 'ZeroTrustGatewayExpiration(duration: $duration, expired: $expired, expiresAt: $expiresAt)';
+
  }

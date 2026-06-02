@@ -30,11 +30,14 @@ DosNewInfraPrefix copyWith({String? comment, bool? enabled, String? prefix, }) {
   enabled: enabled ?? this.enabled,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewInfraPrefix &&
           comment == other.comment &&
           enabled == other.enabled &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, enabled, prefix); } 
-@override String toString() { return 'DosNewInfraPrefix(comment: $comment, enabled: $enabled, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(comment, enabled, prefix);
+
+@override String toString() => 'DosNewInfraPrefix(comment: $comment, enabled: $enabled, prefix: $prefix)';
+
  }

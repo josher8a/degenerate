@@ -17,7 +17,8 @@ final class RadarGetDnsAs112SummaryError$400 extends RadarGetDnsAs112SummaryErro
 
 final RadarGetDnsAs112SummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetDnsAs112SummaryError$Unknown extends RadarGetDnsAs112SummaryError {const RadarGetDnsAs112SummaryError$Unknown(this.statusCode, this.rawBody, );
 

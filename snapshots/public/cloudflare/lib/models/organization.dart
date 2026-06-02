@@ -44,14 +44,17 @@ Organization copyWith({DateTime? createTime, OrganizationId? id, OrganizationMet
   parent: parent != null ? parent() : this.parent,
   profile: profile != null ? profile() : this.profile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Organization &&
           createTime == other.createTime &&
           id == other.id &&
           meta == other.meta &&
           name == other.name &&
           parent == other.parent &&
-          profile == other.profile; } 
-@override int get hashCode { return Object.hash(createTime, id, meta, name, parent, profile); } 
-@override String toString() { return 'Organization(createTime: $createTime, id: $id, meta: $meta, name: $name, parent: $parent, profile: $profile)'; } 
+          profile == other.profile;
+
+@override int get hashCode => Object.hash(createTime, id, meta, name, parent, profile);
+
+@override String toString() => 'Organization(createTime: $createTime, id: $id, meta: $meta, name: $name, parent: $parent, profile: $profile)';
+
  }

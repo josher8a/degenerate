@@ -37,10 +37,13 @@ Serie0Variant1 copyWith({List<DateTime>? timestamps, Map<String, List<String>>? 
   timestamps: timestamps ?? this.timestamps,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant1 &&
           listEquals(timestamps, other.timestamps) &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'Serie0Variant1(timestamps: $timestamps, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(Object.hashAll(timestamps), Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'Serie0Variant1(timestamps: $timestamps, additionalProperties: $additionalProperties)';
+
  }

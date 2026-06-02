@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 copyWith({TlsCertificatesAndHostnamesIdentifier? Function()? id}) { return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(id: $id)';
+
  }

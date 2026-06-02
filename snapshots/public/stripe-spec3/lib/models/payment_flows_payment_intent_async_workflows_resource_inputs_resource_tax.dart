@@ -21,9 +21,12 @@ return errors; }
 PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax copyWith({String? calculation}) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax(
   calculation: calculation ?? this.calculation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax &&
-          calculation == other.calculation; } 
-@override int get hashCode { return calculation.hashCode; } 
-@override String toString() { return 'PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax(calculation: $calculation)'; } 
+          calculation == other.calculation;
+
+@override int get hashCode => calculation.hashCode;
+
+@override String toString() => 'PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax(calculation: $calculation)';
+
  }

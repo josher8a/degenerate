@@ -37,12 +37,15 @@ SecretVolumeSource copyWith({int? Function()? defaultMode, List<KeyToPath>? Func
   optional: optional != null ? optional() : this.optional,
   secretName: secretName != null ? secretName() : this.secretName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretVolumeSource &&
           defaultMode == other.defaultMode &&
           listEquals(items, other.items) &&
           optional == other.optional &&
-          secretName == other.secretName; } 
-@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(items ?? const []), optional, secretName); } 
-@override String toString() { return 'SecretVolumeSource(defaultMode: $defaultMode, items: $items, optional: $optional, secretName: $secretName)'; } 
+          secretName == other.secretName;
+
+@override int get hashCode => Object.hash(defaultMode, Object.hashAll(items ?? const []), optional, secretName);
+
+@override String toString() => 'SecretVolumeSource(defaultMode: $defaultMode, items: $items, optional: $optional, secretName: $secretName)';
+
  }

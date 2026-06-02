@@ -49,13 +49,16 @@ CloudforceOneRequestsRequestAssetItem copyWith({CloudforceOneRequestsTime? Funct
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestAssetItem &&
           created == other.created &&
           description == other.description &&
           fileType == other.fileType &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(created, description, fileType, id, name); } 
-@override String toString() { return 'CloudforceOneRequestsRequestAssetItem(created: $created, description: $description, fileType: $fileType, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(created, description, fileType, id, name);
+
+@override String toString() => 'CloudforceOneRequestsRequestAssetItem(created: $created, description: $description, fileType: $fileType, id: $id, name: $name)';
+
  }

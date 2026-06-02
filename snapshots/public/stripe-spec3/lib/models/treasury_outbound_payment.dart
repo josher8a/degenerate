@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryOutboundPaymentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryOutboundPaymentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryOutboundPaymentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryOutboundPaymentObject($value)';
+
  }
 /// Use [OutboundPayments](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-payments) to send funds to another party's external bank account or [FinancialAccount](https://api.stripe.com#financial_accounts). To send money to an account belonging to the same user, use an [OutboundTransfer](https://api.stripe.com#outbound_transfers).
 /// 
@@ -203,7 +206,7 @@ TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, S
   trackingDetails: trackingDetails != null ? trackingDetails() : this.trackingDetails,
   transaction: transaction ?? this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPayment &&
           amount == other.amount &&
           cancelable == other.cancelable &&
@@ -226,7 +229,10 @@ TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, S
           status == other.status &&
           statusTransitions == other.statusTransitions &&
           trackingDetails == other.trackingDetails &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hashAll([amount, cancelable, created, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodDetails, endUserDetails, expectedArrivalDate, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, object, returnedDetails, statementDescriptor, status, statusTransitions, trackingDetails, transaction]); } 
-@override String toString() { return 'TreasuryOutboundPayment(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodDetails: $destinationPaymentMethodDetails, endUserDetails: $endUserDetails, expectedArrivalDate: $expectedArrivalDate, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, object: $object, returnedDetails: $returnedDetails, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, trackingDetails: $trackingDetails, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hashAll([amount, cancelable, created, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodDetails, endUserDetails, expectedArrivalDate, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, object, returnedDetails, statementDescriptor, status, statusTransitions, trackingDetails, transaction]);
+
+@override String toString() => 'TreasuryOutboundPayment(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodDetails: $destinationPaymentMethodDetails, endUserDetails: $endUserDetails, expectedArrivalDate: $expectedArrivalDate, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, object: $object, returnedDetails: $returnedDetails, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, trackingDetails: $trackingDetails, transaction: $transaction)';
+
  }

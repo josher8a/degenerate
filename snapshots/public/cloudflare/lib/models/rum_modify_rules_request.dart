@@ -22,10 +22,13 @@ RumModifyRulesRequest copyWith({List<RumRuleIdentifier>? Function()? deleteRules
   deleteRules: deleteRules != null ? deleteRules() : this.deleteRules,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumModifyRulesRequest &&
           listEquals(deleteRules, other.deleteRules) &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deleteRules ?? const []), Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'RumModifyRulesRequest(deleteRules: $deleteRules, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(Object.hashAll(deleteRules ?? const []), Object.hashAll(rules ?? const []));
+
+@override String toString() => 'RumModifyRulesRequest(deleteRules: $deleteRules, rules: $rules)';
+
  }

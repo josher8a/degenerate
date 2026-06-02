@@ -56,14 +56,17 @@ TransferSchedule copyWith({int? delayDays, String? interval, int? Function()? mo
   weeklyAnchor: weeklyAnchor != null ? weeklyAnchor() : this.weeklyAnchor,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferSchedule &&
           delayDays == other.delayDays &&
           interval == other.interval &&
           monthlyAnchor == other.monthlyAnchor &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
           weeklyAnchor == other.weeklyAnchor &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'TransferSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)'; } 
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);
+
+@override int get hashCode => Object.hash(delayDays, interval, monthlyAnchor, Object.hashAll(monthlyPayoutDays ?? const []), weeklyAnchor, Object.hashAll(weeklyPayoutDays ?? const []));
+
+@override String toString() => 'TransferSchedule(delayDays: $delayDays, interval: $interval, monthlyAnchor: $monthlyAnchor, monthlyPayoutDays: $monthlyPayoutDays, weeklyAnchor: $weeklyAnchor, weeklyPayoutDays: $weeklyPayoutDays)';
+
  }

@@ -21,10 +21,13 @@ McnAwsTrustPolicy copyWith({String? awsTrustPolicy, String? itemType, }) { retur
   awsTrustPolicy: awsTrustPolicy ?? this.awsTrustPolicy,
   itemType: itemType ?? this.itemType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnAwsTrustPolicy &&
           awsTrustPolicy == other.awsTrustPolicy &&
-          itemType == other.itemType; } 
-@override int get hashCode { return Object.hash(awsTrustPolicy, itemType); } 
-@override String toString() { return 'McnAwsTrustPolicy(awsTrustPolicy: $awsTrustPolicy, itemType: $itemType)'; } 
+          itemType == other.itemType;
+
+@override int get hashCode => Object.hash(awsTrustPolicy, itemType);
+
+@override String toString() => 'McnAwsTrustPolicy(awsTrustPolicy: $awsTrustPolicy, itemType: $itemType)';
+
  }

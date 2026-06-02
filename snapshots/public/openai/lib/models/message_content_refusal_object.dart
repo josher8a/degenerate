@@ -23,10 +23,13 @@ MessageContentRefusalObject copyWith({MessageContentRefusalObjectType? type, Str
   type: type ?? this.type,
   refusal: refusal ?? this.refusal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentRefusalObject &&
           type == other.type &&
-          refusal == other.refusal; } 
-@override int get hashCode { return Object.hash(type, refusal); } 
-@override String toString() { return 'MessageContentRefusalObject(type: $type, refusal: $refusal)'; } 
+          refusal == other.refusal;
+
+@override int get hashCode => Object.hash(type, refusal);
+
+@override String toString() => 'MessageContentRefusalObject(type: $type, refusal: $refusal)';
+
  }

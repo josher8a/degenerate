@@ -51,7 +51,7 @@ WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResults
   statistics: statistics ?? this.statistics,
   traces: traces != null ? traces() : this.traces,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryResults &&
           listEquals(calculations, other.calculations) &&
           listEquals(compare, other.compare) &&
@@ -60,7 +60,10 @@ WorkersObservabilityQueryResults copyWith({List<WorkersObservabilityQueryResults
           listEquals(patterns, other.patterns) &&
           run == other.run &&
           statistics == other.statistics &&
-          listEquals(traces, other.traces); } 
-@override int get hashCode { return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(compare ?? const []), events, invocations, Object.hashAll(patterns ?? const []), run, statistics, Object.hashAll(traces ?? const [])); } 
-@override String toString() { return 'WorkersObservabilityQueryResults(calculations: $calculations, compare: $compare, events: $events, invocations: $invocations, patterns: $patterns, run: $run, statistics: $statistics, traces: $traces)'; } 
+          listEquals(traces, other.traces);
+
+@override int get hashCode => Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(compare ?? const []), events, invocations, Object.hashAll(patterns ?? const []), run, statistics, Object.hashAll(traces ?? const []));
+
+@override String toString() => 'WorkersObservabilityQueryResults(calculations: $calculations, compare: $compare, events: $events, invocations: $invocations, patterns: $patterns, run: $run, statistics: $statistics, traces: $traces)';
+
  }

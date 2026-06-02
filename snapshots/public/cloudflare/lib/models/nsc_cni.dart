@@ -60,7 +60,7 @@ NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String?
   magic: magic ?? this.magic,
   p2pIp: p2pIp ?? this.p2pIp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscCni &&
           account == other.account &&
           bgp == other.bgp &&
@@ -68,7 +68,10 @@ NscCni copyWith({NscAccountTag? account, NscBgpControl? Function()? bgp, String?
           id == other.id &&
           interconnect == other.interconnect &&
           magic == other.magic &&
-          p2pIp == other.p2pIp; } 
-@override int get hashCode { return Object.hash(account, bgp, custIp, id, interconnect, magic, p2pIp); } 
-@override String toString() { return 'NscCni(account: $account, bgp: $bgp, custIp: $custIp, id: $id, interconnect: $interconnect, magic: $magic, p2pIp: $p2pIp)'; } 
+          p2pIp == other.p2pIp;
+
+@override int get hashCode => Object.hash(account, bgp, custIp, id, interconnect, magic, p2pIp);
+
+@override String toString() => 'NscCni(account: $account, bgp: $bgp, custIp: $custIp, id: $id, interconnect: $interconnect, magic: $magic, p2pIp: $p2pIp)';
+
  }

@@ -23,10 +23,13 @@ DisputeEnhancedEvidenceVisaCompellingEvidence3 copyWith({DisputeVisaCompellingEv
   disputedTransaction: disputedTransaction != null ? disputedTransaction() : this.disputedTransaction,
   priorUndisputedTransactions: priorUndisputedTransactions ?? this.priorUndisputedTransactions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeEnhancedEvidenceVisaCompellingEvidence3 &&
           disputedTransaction == other.disputedTransaction &&
-          listEquals(priorUndisputedTransactions, other.priorUndisputedTransactions); } 
-@override int get hashCode { return Object.hash(disputedTransaction, Object.hashAll(priorUndisputedTransactions)); } 
-@override String toString() { return 'DisputeEnhancedEvidenceVisaCompellingEvidence3(disputedTransaction: $disputedTransaction, priorUndisputedTransactions: $priorUndisputedTransactions)'; } 
+          listEquals(priorUndisputedTransactions, other.priorUndisputedTransactions);
+
+@override int get hashCode => Object.hash(disputedTransaction, Object.hashAll(priorUndisputedTransactions));
+
+@override String toString() => 'DisputeEnhancedEvidenceVisaCompellingEvidence3(disputedTransaction: $disputedTransaction, priorUndisputedTransactions: $priorUndisputedTransactions)';
+
  }

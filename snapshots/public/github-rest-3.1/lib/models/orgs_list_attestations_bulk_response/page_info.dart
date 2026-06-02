@@ -35,12 +35,15 @@ PageInfo copyWith({bool? Function()? hasNext, bool? Function()? hasPrevious, Str
   next: next != null ? next() : this.next,
   previous: previous != null ? previous() : this.previous,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageInfo &&
           hasNext == other.hasNext &&
           hasPrevious == other.hasPrevious &&
           next == other.next &&
-          previous == other.previous; } 
-@override int get hashCode { return Object.hash(hasNext, hasPrevious, next, previous); } 
-@override String toString() { return 'PageInfo(hasNext: $hasNext, hasPrevious: $hasPrevious, next: $next, previous: $previous)'; } 
+          previous == other.previous;
+
+@override int get hashCode => Object.hash(hasNext, hasPrevious, next, previous);
+
+@override String toString() => 'PageInfo(hasNext: $hasNext, hasPrevious: $hasPrevious, next: $next, previous: $previous)';
+
  }

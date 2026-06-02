@@ -30,12 +30,15 @@ EmailSecurityMailsearchMessageValidation copyWith({String? Function()? comment, 
   dmarc: dmarc != null ? dmarc() : this.dmarc,
   spf: spf != null ? spf() : this.spf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMailsearchMessageValidation &&
           comment == other.comment &&
           dkim == other.dkim &&
           dmarc == other.dmarc &&
-          spf == other.spf; } 
-@override int get hashCode { return Object.hash(comment, dkim, dmarc, spf); } 
-@override String toString() { return 'EmailSecurityMailsearchMessageValidation(comment: $comment, dkim: $dkim, dmarc: $dmarc, spf: $spf)'; } 
+          spf == other.spf;
+
+@override int get hashCode => Object.hash(comment, dkim, dmarc, spf);
+
+@override String toString() => 'EmailSecurityMailsearchMessageValidation(comment: $comment, dkim: $dkim, dmarc: $dmarc, spf: $spf)';
+
  }

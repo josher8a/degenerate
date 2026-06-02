@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildsBuildStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildsBuildStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BuildsBuildStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BuildsBuildStatus($value)';
+
  }
 @immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn, this.modifiedOn, this.pullRequest, this.runningOn, this.status, this.stoppedOn, this.trigger, });
 
@@ -96,7 +99,7 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
   stoppedOn: stoppedOn != null ? stoppedOn() : this.stoppedOn,
   trigger: trigger != null ? trigger() : this.trigger,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildResponse &&
           buildOutcome == other.buildOutcome &&
           buildTriggerMetadata == other.buildTriggerMetadata &&
@@ -108,7 +111,10 @@ BuildsBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutcome, Buil
           runningOn == other.runningOn &&
           status == other.status &&
           stoppedOn == other.stoppedOn &&
-          trigger == other.trigger; } 
-@override int get hashCode { return Object.hash(buildOutcome, buildTriggerMetadata, buildUuid, createdOn, initializingOn, modifiedOn, pullRequest, runningOn, status, stoppedOn, trigger); } 
-@override String toString() { return 'BuildsBuildResponse(buildOutcome: $buildOutcome, buildTriggerMetadata: $buildTriggerMetadata, buildUuid: $buildUuid, createdOn: $createdOn, initializingOn: $initializingOn, modifiedOn: $modifiedOn, pullRequest: $pullRequest, runningOn: $runningOn, status: $status, stoppedOn: $stoppedOn, trigger: $trigger)'; } 
+          trigger == other.trigger;
+
+@override int get hashCode => Object.hash(buildOutcome, buildTriggerMetadata, buildUuid, createdOn, initializingOn, modifiedOn, pullRequest, runningOn, status, stoppedOn, trigger);
+
+@override String toString() => 'BuildsBuildResponse(buildOutcome: $buildOutcome, buildTriggerMetadata: $buildTriggerMetadata, buildUuid: $buildUuid, createdOn: $createdOn, initializingOn: $initializingOn, modifiedOn: $modifiedOn, pullRequest: $pullRequest, runningOn: $runningOn, status: $status, stoppedOn: $stoppedOn, trigger: $trigger)';
+
  }

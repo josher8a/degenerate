@@ -23,9 +23,12 @@ return errors; }
 PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? commodityCode}) { return PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions(
   commodityCode: commodityCode != null ? commodityCode() : this.commodityCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions &&
-          commodityCode == other.commodityCode; } 
-@override int get hashCode { return commodityCode.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions(commodityCode: $commodityCode)'; } 
+          commodityCode == other.commodityCode;
+
+@override int get hashCode => commodityCode.hashCode;
+
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentAmountDetailsLineItemPaymentMethodOptions(commodityCode: $commodityCode)';
+
  }

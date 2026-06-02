@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('saml'
 AccessSamlGroupRule copyWith({Saml? saml}) { return AccessSamlGroupRule(
   saml: saml ?? this.saml,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSamlGroupRule &&
-          saml == other.saml; } 
-@override int get hashCode { return saml.hashCode; } 
-@override String toString() { return 'AccessSamlGroupRule(saml: $saml)'; } 
+          saml == other.saml;
+
+@override int get hashCode => saml.hashCode;
+
+@override String toString() => 'AccessSamlGroupRule(saml: $saml)';
+
  }

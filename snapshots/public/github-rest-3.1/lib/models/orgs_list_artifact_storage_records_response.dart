@@ -21,10 +21,13 @@ OrgsListArtifactStorageRecordsResponse copyWith({int? Function()? totalCount, Li
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   storageRecords: storageRecords != null ? storageRecords() : this.storageRecords,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListArtifactStorageRecordsResponse &&
           totalCount == other.totalCount &&
-          listEquals(storageRecords, other.storageRecords); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(storageRecords ?? const [])); } 
-@override String toString() { return 'OrgsListArtifactStorageRecordsResponse(totalCount: $totalCount, storageRecords: $storageRecords)'; } 
+          listEquals(storageRecords, other.storageRecords);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(storageRecords ?? const []));
+
+@override String toString() => 'OrgsListArtifactStorageRecordsResponse(totalCount: $totalCount, storageRecords: $storageRecords)';
+
  }

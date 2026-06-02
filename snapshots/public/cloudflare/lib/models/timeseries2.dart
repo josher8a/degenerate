@@ -45,7 +45,7 @@ Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? 
   uniques: uniques != null ? uniques() : this.uniques,
   until: until != null ? until() : this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Timeseries2 &&
           bandwidth == other.bandwidth &&
           pageviews == other.pageviews &&
@@ -53,7 +53,10 @@ Timeseries2 copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? 
           since == other.since &&
           threats == other.threats &&
           uniques == other.uniques &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until); } 
-@override String toString() { return 'Timeseries2(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until);
+
+@override String toString() => 'Timeseries2(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)';
+
  }

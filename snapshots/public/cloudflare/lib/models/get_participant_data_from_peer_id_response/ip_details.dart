@@ -50,7 +50,7 @@ IpDetails copyWith({IpInformationAsn? Function()? asn, String? Function()? city,
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpDetails &&
           asn == other.asn &&
           city == other.city &&
@@ -59,7 +59,10 @@ IpDetails copyWith({IpInformationAsn? Function()? asn, String? Function()? city,
           loc == other.loc &&
           postal == other.postal &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(asn, city, country, ip, loc, postal, region, timezone); } 
-@override String toString() { return 'IpDetails(asn: $asn, city: $city, country: $country, ip: $ip, loc: $loc, postal: $postal, region: $region, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(asn, city, country, ip, loc, postal, region, timezone);
+
+@override String toString() => 'IpDetails(asn: $asn, city: $city, country: $country, ip: $ip, loc: $loc, postal: $postal, region: $region, timezone: $timezone)';
+
  }

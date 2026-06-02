@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)';
+
  }
 /// 
 @immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet({required this.type});
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet copyWith({PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType? type}) { return PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet(type: $type)';
+
  }

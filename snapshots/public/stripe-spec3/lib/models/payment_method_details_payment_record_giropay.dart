@@ -54,12 +54,15 @@ PaymentMethodDetailsPaymentRecordGiropay copyWith({String? Function()? bankCode,
   bic: bic != null ? bic() : this.bic,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordGiropay &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
           bic == other.bic &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordGiropay(bankCode: $bankCode, bankName: $bankName, bic: $bic, verifiedName: $verifiedName)'; } 
+          verifiedName == other.verifiedName;
+
+@override int get hashCode => Object.hash(bankCode, bankName, bic, verifiedName);
+
+@override String toString() => 'PaymentMethodDetailsPaymentRecordGiropay(bankCode: $bankCode, bankName: $bankName, bic: $bic, verifiedName: $verifiedName)';
+
  }

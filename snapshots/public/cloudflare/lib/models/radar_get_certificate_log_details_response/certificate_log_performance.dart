@@ -28,11 +28,14 @@ CertificateLogPerformance copyWith({List<Endpoints>? endpoints, double? response
   responseTime: responseTime ?? this.responseTime,
   uptime: uptime ?? this.uptime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLogPerformance &&
           listEquals(endpoints, other.endpoints) &&
           responseTime == other.responseTime &&
-          uptime == other.uptime; } 
-@override int get hashCode { return Object.hash(Object.hashAll(endpoints), responseTime, uptime); } 
-@override String toString() { return 'CertificateLogPerformance(endpoints: $endpoints, responseTime: $responseTime, uptime: $uptime)'; } 
+          uptime == other.uptime;
+
+@override int get hashCode => Object.hash(Object.hashAll(endpoints), responseTime, uptime);
+
+@override String toString() => 'CertificateLogPerformance(endpoints: $endpoints, responseTime: $responseTime, uptime: $uptime)';
+
  }

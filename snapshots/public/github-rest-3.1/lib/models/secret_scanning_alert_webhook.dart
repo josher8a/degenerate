@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningAlertResolutionWebhook && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningAlertResolutionWebhook($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SecretScanningAlertResolutionWebhook && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SecretScanningAlertResolutionWebhook($value)';
+
  }
 @immutable final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.publiclyLeaked, this.multiRepo, this.assignedTo, });
 
@@ -185,7 +188,7 @@ SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreat
   multiRepo: multiRepo != null ? multiRepo() : this.multiRepo,
   assignedTo: assignedTo != null ? assignedTo() : this.assignedTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningAlertWebhook &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -209,7 +212,10 @@ SecretScanningAlertWebhook copyWith({AlertNumber? Function()? number, AlertCreat
           pushProtectionBypassRequestHtmlUrl == other.pushProtectionBypassRequestHtmlUrl &&
           publiclyLeaked == other.publiclyLeaked &&
           multiRepo == other.multiRepo &&
-          assignedTo == other.assignedTo; } 
-@override int get hashCode { return Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, resolution, resolvedAt, resolvedBy, resolutionComment, secretType, secretTypeDisplayName, validity, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, publiclyLeaked, multiRepo, assignedTo]); } 
-@override String toString() { return 'SecretScanningAlertWebhook(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, resolutionComment: $resolutionComment, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, validity: $validity, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, assignedTo: $assignedTo)'; } 
+          assignedTo == other.assignedTo;
+
+@override int get hashCode => Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, resolution, resolvedAt, resolvedBy, resolutionComment, secretType, secretTypeDisplayName, validity, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, publiclyLeaked, multiRepo, assignedTo]);
+
+@override String toString() => 'SecretScanningAlertWebhook(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, resolutionComment: $resolutionComment, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, validity: $validity, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, assignedTo: $assignedTo)';
+
  }

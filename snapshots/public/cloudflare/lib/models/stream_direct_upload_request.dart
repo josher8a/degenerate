@@ -60,7 +60,7 @@ StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, St
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   watermark: watermark != null ? watermark() : this.watermark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDirectUploadRequest &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
           creator == other.creator &&
@@ -70,7 +70,10 @@ StreamDirectUploadRequest copyWith({List<String>? Function()? allowedOrigins, St
           requireSignedUrLs == other.requireSignedUrLs &&
           scheduledDeletion == other.scheduledDeletion &&
           thumbnailTimestampPct == other.thumbnailTimestampPct &&
-          watermark == other.watermark; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedOrigins ?? const []), creator, expiry, maxDurationSeconds, meta, requireSignedUrLs, scheduledDeletion, thumbnailTimestampPct, watermark); } 
-@override String toString() { return 'StreamDirectUploadRequest(allowedOrigins: $allowedOrigins, creator: $creator, expiry: $expiry, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)'; } 
+          watermark == other.watermark;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), creator, expiry, maxDurationSeconds, meta, requireSignedUrLs, scheduledDeletion, thumbnailTimestampPct, watermark);
+
+@override String toString() => 'StreamDirectUploadRequest(allowedOrigins: $allowedOrigins, creator: $creator, expiry: $expiry, maxDurationSeconds: $maxDurationSeconds, meta: $meta, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)';
+
  }

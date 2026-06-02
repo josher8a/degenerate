@@ -36,12 +36,15 @@ ResourceList copyWith({String? Function()? apiVersion, String? groupVersion, Str
   kind: kind != null ? kind() : this.kind,
   resources: resources ?? this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceList &&
           apiVersion == other.apiVersion &&
           groupVersion == other.groupVersion &&
           kind == other.kind &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hash(apiVersion, groupVersion, kind, Object.hashAll(resources)); } 
-@override String toString() { return 'ResourceList(apiVersion: $apiVersion, groupVersion: $groupVersion, kind: $kind, resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hash(apiVersion, groupVersion, kind, Object.hashAll(resources));
+
+@override String toString() => 'ResourceList(apiVersion: $apiVersion, groupVersion: $groupVersion, kind: $kind, resources: $resources)';
+
  }

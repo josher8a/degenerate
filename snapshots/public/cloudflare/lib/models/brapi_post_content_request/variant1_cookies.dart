@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Priority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Priority($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Priority && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Priority($value)';
+
  }
 @immutable final class SameSite {const SameSite._(this.value);
 
@@ -49,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SameSite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SameSite($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SameSite && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SameSite($value)';
+
  }
 @immutable final class SourceScheme {const SourceScheme._(this.value);
 
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceScheme($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceScheme && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceScheme($value)';
+
  }
 @immutable final class Variant1Cookies {const Variant1Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });
 
@@ -162,7 +171,7 @@ Variant1Cookies copyWith({String? Function()? domain, double? Function()? expire
   url: url != null ? url() : this.url,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Cookies &&
           domain == other.domain &&
           expires == other.expires &&
@@ -177,7 +186,10 @@ Variant1Cookies copyWith({String? Function()? domain, double? Function()? expire
           sourcePort == other.sourcePort &&
           sourceScheme == other.sourceScheme &&
           url == other.url &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value); } 
-@override String toString() { return 'Variant1Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value);
+
+@override String toString() => 'Variant1Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)';
+
  }

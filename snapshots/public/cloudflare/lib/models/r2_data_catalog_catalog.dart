@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2DataCatalogCatalogStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2DataCatalogCatalogStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2DataCatalogCatalogStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2DataCatalogCatalogStatus($value)';
+
  }
 /// Contains R2 Data Catalog information.
 @immutable final class R2DataCatalogCatalog {const R2DataCatalogCatalog({required this.bucket, required this.id, required this.name, required this.status, this.credentialStatus, this.maintenanceConfig, });
@@ -80,14 +83,17 @@ R2DataCatalogCatalog copyWith({String? bucket, R2DataCatalogCredentialStatus? Fu
   name: name ?? this.name,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalog &&
           bucket == other.bucket &&
           credentialStatus == other.credentialStatus &&
           id == other.id &&
           maintenanceConfig == other.maintenanceConfig &&
           name == other.name &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(bucket, credentialStatus, id, maintenanceConfig, name, status); } 
-@override String toString() { return 'R2DataCatalogCatalog(bucket: $bucket, credentialStatus: $credentialStatus, id: $id, maintenanceConfig: $maintenanceConfig, name: $name, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(bucket, credentialStatus, id, maintenanceConfig, name, status);
+
+@override String toString() => 'R2DataCatalogCatalog(bucket: $bucket, credentialStatus: $credentialStatus, id: $id, maintenanceConfig: $maintenanceConfig, name: $name, status: $status)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VectorizeCreateMetadataIndexResponse2 copyWith({VectorizeCreateMetadataIndexResponse? Function()? result}) { return VectorizeCreateMetadataIndexResponse2(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeCreateMetadataIndexResponse2 &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'VectorizeCreateMetadataIndexResponse2(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'VectorizeCreateMetadataIndexResponse2(result: $result)';
+
  }

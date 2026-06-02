@@ -26,10 +26,13 @@ WaitingroomAdditionalRoutes2 copyWith({String? Function()? host, String Function
   host: host != null ? host() : this.host,
   path: path != null ? path() : this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomAdditionalRoutes2 &&
           host == other.host &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(host, path); } 
-@override String toString() { return 'WaitingroomAdditionalRoutes2(host: $host, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(host, path);
+
+@override String toString() => 'WaitingroomAdditionalRoutes2(host: $host, path: $path)';
+
  }

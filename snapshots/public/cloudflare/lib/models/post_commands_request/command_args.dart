@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Interfaces && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Interfaces($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Interfaces && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Interfaces($value)';
+
  }
 @immutable final class CommandArgs {const CommandArgs({this.interfaces, this.maxFileSizeMb = 5.0, this.packetSizeBytes = 160.0, this.testAllRoutes = true, this.timeLimitMin = 5.0, });
 
@@ -70,13 +73,16 @@ CommandArgs copyWith({List<Interfaces>? Function()? interfaces, double Function(
   testAllRoutes: testAllRoutes != null ? testAllRoutes() : this.testAllRoutes,
   timeLimitMin: timeLimitMin != null ? timeLimitMin() : this.timeLimitMin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommandArgs &&
           listEquals(interfaces, other.interfaces) &&
           maxFileSizeMb == other.maxFileSizeMb &&
           packetSizeBytes == other.packetSizeBytes &&
           testAllRoutes == other.testAllRoutes &&
-          timeLimitMin == other.timeLimitMin; } 
-@override int get hashCode { return Object.hash(Object.hashAll(interfaces ?? const []), maxFileSizeMb, packetSizeBytes, testAllRoutes, timeLimitMin); } 
-@override String toString() { return 'CommandArgs(interfaces: $interfaces, maxFileSizeMb: $maxFileSizeMb, packetSizeBytes: $packetSizeBytes, testAllRoutes: $testAllRoutes, timeLimitMin: $timeLimitMin)'; } 
+          timeLimitMin == other.timeLimitMin;
+
+@override int get hashCode => Object.hash(Object.hashAll(interfaces ?? const []), maxFileSizeMb, packetSizeBytes, testAllRoutes, timeLimitMin);
+
+@override String toString() => 'CommandArgs(interfaces: $interfaces, maxFileSizeMb: $maxFileSizeMb, packetSizeBytes: $packetSizeBytes, testAllRoutes: $testAllRoutes, timeLimitMin: $timeLimitMin)';
+
  }

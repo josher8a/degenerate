@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CollectConfigTipping copyWith({int? Function()? amountEligible}) { return CollectConfigTipping(
   amountEligible: amountEligible != null ? amountEligible() : this.amountEligible,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CollectConfigTipping &&
-          amountEligible == other.amountEligible; } 
-@override int get hashCode { return amountEligible.hashCode; } 
-@override String toString() { return 'CollectConfigTipping(amountEligible: $amountEligible)'; } 
+          amountEligible == other.amountEligible;
+
+@override int get hashCode => amountEligible.hashCode;
+
+@override String toString() => 'CollectConfigTipping(amountEligible: $amountEligible)';
+
  }

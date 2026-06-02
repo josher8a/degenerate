@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tier'
 WebhooksChanges8 copyWith({WebhooksChanges8Tier? tier}) { return WebhooksChanges8(
   tier: tier ?? this.tier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksChanges8 &&
-          tier == other.tier; } 
-@override int get hashCode { return tier.hashCode; } 
-@override String toString() { return 'WebhooksChanges8(tier: $tier)'; } 
+          tier == other.tier;
+
+@override int get hashCode => tier.hashCode;
+
+@override String toString() => 'WebhooksChanges8(tier: $tier)';
+
  }

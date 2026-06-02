@@ -27,11 +27,14 @@ GitTagTagger copyWith({String? date, String? email, String? name, }) { return Gi
   email: email ?? this.email,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitTagTagger &&
           date == other.date &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(date, email, name); } 
-@override String toString() { return 'GitTagTagger(date: $date, email: $email, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(date, email, name);
+
+@override String toString() => 'GitTagTagger(date: $date, email: $email, name: $name)';
+
  }

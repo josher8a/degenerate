@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazCustomManagedComponentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazCustomManagedComponentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZarazCustomManagedComponentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZarazCustomManagedComponentType($value)';
+
  }
 @immutable final class ZarazCustomManagedComponent {const ZarazCustomManagedComponent({required this.type, required this.worker, });
 
@@ -43,10 +46,13 @@ ZarazCustomManagedComponent copyWith({ZarazCustomManagedComponentType? type, Zar
   type: type ?? this.type,
   worker: worker ?? this.worker,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazCustomManagedComponent &&
           type == other.type &&
-          worker == other.worker; } 
-@override int get hashCode { return Object.hash(type, worker); } 
-@override String toString() { return 'ZarazCustomManagedComponent(type: $type, worker: $worker)'; } 
+          worker == other.worker;
+
+@override int get hashCode => Object.hash(type, worker);
+
+@override String toString() => 'ZarazCustomManagedComponent(type: $type, worker: $worker)';
+
  }

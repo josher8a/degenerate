@@ -28,11 +28,14 @@ ObjectDetection2 copyWith({Box? Function()? box, String? Function()? label, doub
   label: label != null ? label() : this.label,
   score: score != null ? score() : this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectDetection2 &&
           box == other.box &&
           label == other.label &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(box, label, score); } 
-@override String toString() { return 'ObjectDetection2(box: $box, label: $label, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(box, label, score);
+
+@override String toString() => 'ObjectDetection2(box: $box, label: $label, score: $score)';
+
  }

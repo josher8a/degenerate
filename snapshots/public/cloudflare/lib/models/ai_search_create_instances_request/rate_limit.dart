@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Technique && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Technique($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Technique && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Technique($value)';
+
  }
 @immutable final class RateLimit {const RateLimit({this.periodMs, this.requests, this.technique, });
 
@@ -61,11 +64,14 @@ RateLimit copyWith({int? Function()? periodMs, int? Function()? requests, Techni
   requests: requests != null ? requests() : this.requests,
   technique: technique != null ? technique() : this.technique,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimit &&
           periodMs == other.periodMs &&
           requests == other.requests &&
-          technique == other.technique; } 
-@override int get hashCode { return Object.hash(periodMs, requests, technique); } 
-@override String toString() { return 'RateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)'; } 
+          technique == other.technique;
+
+@override int get hashCode => Object.hash(periodMs, requests, technique);
+
+@override String toString() => 'RateLimit(periodMs: $periodMs, requests: $requests, technique: $technique)';
+
  }

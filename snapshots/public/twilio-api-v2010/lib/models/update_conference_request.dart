@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceEnumUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceEnumUpdateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceEnumUpdateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConferenceEnumUpdateStatus($value)';
+
  }
 @immutable final class UpdateConferenceRequest {const UpdateConferenceRequest({this.status, this.announceUrl, this.announceMethod, });
 
@@ -48,11 +51,14 @@ UpdateConferenceRequest copyWith({ConferenceEnumUpdateStatus? Function()? status
   announceUrl: announceUrl != null ? announceUrl() : this.announceUrl,
   announceMethod: announceMethod != null ? announceMethod() : this.announceMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateConferenceRequest &&
           status == other.status &&
           announceUrl == other.announceUrl &&
-          announceMethod == other.announceMethod; } 
-@override int get hashCode { return Object.hash(status, announceUrl, announceMethod); } 
-@override String toString() { return 'UpdateConferenceRequest(status: $status, announceUrl: $announceUrl, announceMethod: $announceMethod)'; } 
+          announceMethod == other.announceMethod;
+
+@override int get hashCode => Object.hash(status, announceUrl, announceMethod);
+
+@override String toString() => 'UpdateConferenceRequest(status: $status, announceUrl: $announceUrl, announceMethod: $announceMethod)';
+
  }

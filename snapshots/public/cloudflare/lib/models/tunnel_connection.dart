@@ -26,11 +26,14 @@ TunnelConnection copyWith({TunnelColoName? Function()? coloName, TunnelIsPending
   isPendingReconnect: isPendingReconnect != null ? isPendingReconnect() : this.isPendingReconnect,
   uuid: uuid != null ? uuid() : this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelConnection &&
           coloName == other.coloName &&
           isPendingReconnect == other.isPendingReconnect &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(coloName, isPendingReconnect, uuid); } 
-@override String toString() { return 'TunnelConnection(coloName: $coloName, isPendingReconnect: $isPendingReconnect, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(coloName, isPendingReconnect, uuid);
+
+@override String toString() => 'TunnelConnection(coloName: $coloName, isPendingReconnect: $isPendingReconnect, uuid: $uuid)';
+
  }

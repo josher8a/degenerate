@@ -28,11 +28,14 @@ CreateUserDefinedMessageSubscriptionRequest copyWith({Uri? callback, String? Fun
   idempotencyKey: idempotencyKey != null ? idempotencyKey() : this.idempotencyKey,
   method: method != null ? method() : this.method,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateUserDefinedMessageSubscriptionRequest &&
           callback == other.callback &&
           idempotencyKey == other.idempotencyKey &&
-          method == other.method; } 
-@override int get hashCode { return Object.hash(callback, idempotencyKey, method); } 
-@override String toString() { return 'CreateUserDefinedMessageSubscriptionRequest(callback: $callback, idempotencyKey: $idempotencyKey, method: $method)'; } 
+          method == other.method;
+
+@override int get hashCode => Object.hash(callback, idempotencyKey, method);
+
+@override String toString() => 'CreateUserDefinedMessageSubscriptionRequest(callback: $callback, idempotencyKey: $idempotencyKey, method: $method)';
+
  }

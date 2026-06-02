@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VersionInfo copyWith({String? Function()? version}) { return VersionInfo(
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VersionInfo &&
-          version == other.version; } 
-@override int get hashCode { return version.hashCode; } 
-@override String toString() { return 'VersionInfo(version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => version.hashCode;
+
+@override String toString() => 'VersionInfo(version: $version)';
+
  }

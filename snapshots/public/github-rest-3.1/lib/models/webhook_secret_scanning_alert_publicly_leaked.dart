@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningAlertPubliclyLeakedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertPubliclyLeakedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningAlertPubliclyLeakedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSecretScanningAlertPubliclyLeakedAction($value)';
+
  }
 @immutable final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
@@ -68,7 +71,7 @@ WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPub
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertPubliclyLeaked &&
           action == other.action &&
           alert == other.alert &&
@@ -76,7 +79,10 @@ WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPub
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertPubliclyLeaked(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSecretScanningAlertPubliclyLeaked(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

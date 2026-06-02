@@ -35,12 +35,15 @@ ComponentStatus copyWith({String? Function()? apiVersion, List<ComponentConditio
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentStatus &&
           apiVersion == other.apiVersion &&
           listEquals(conditions, other.conditions) &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(conditions ?? const []), kind, metadata); } 
-@override String toString() { return 'ComponentStatus(apiVersion: $apiVersion, conditions: $conditions, kind: $kind, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(apiVersion, Object.hashAll(conditions ?? const []), kind, metadata);
+
+@override String toString() => 'ComponentStatus(apiVersion: $apiVersion, conditions: $conditions, kind: $kind, metadata: $metadata)';
+
  }

@@ -27,11 +27,14 @@ PullRequestReviewEvent copyWith({String? action, PullRequestReviewEventReview? r
   review: review ?? this.review,
   pullRequest: pullRequest ?? this.pullRequest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewEvent &&
           action == other.action &&
           review == other.review &&
-          pullRequest == other.pullRequest; } 
-@override int get hashCode { return Object.hash(action, review, pullRequest); } 
-@override String toString() { return 'PullRequestReviewEvent(action: $action, review: $review, pullRequest: $pullRequest)'; } 
+          pullRequest == other.pullRequest;
+
+@override int get hashCode => Object.hash(action, review, pullRequest);
+
+@override String toString() => 'PullRequestReviewEvent(action: $action, review: $review, pullRequest: $pullRequest)';
+
  }

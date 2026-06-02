@@ -27,11 +27,14 @@ IntelSchemasIp copyWith({BelongsToRef? Function()? belongsToRef, IntelIp? Functi
   ip: ip != null ? ip() : this.ip,
   riskTypes: riskTypes != null ? riskTypes() : this.riskTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelSchemasIp &&
           belongsToRef == other.belongsToRef &&
           ip == other.ip &&
-          listEquals(riskTypes, other.riskTypes); } 
-@override int get hashCode { return Object.hash(belongsToRef, ip, Object.hashAll(riskTypes ?? const [])); } 
-@override String toString() { return 'IntelSchemasIp(belongsToRef: $belongsToRef, ip: $ip, riskTypes: $riskTypes)'; } 
+          listEquals(riskTypes, other.riskTypes);
+
+@override int get hashCode => Object.hash(belongsToRef, ip, Object.hashAll(riskTypes ?? const []));
+
+@override String toString() => 'IntelSchemasIp(belongsToRef: $belongsToRef, ip: $ip, riskTypes: $riskTypes)';
+
  }

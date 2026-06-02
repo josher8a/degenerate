@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CheckoutMultibancoPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage}) { return CheckoutMultibancoPaymentMethodOptions(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutMultibancoPaymentMethodOptions &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return setupFutureUsage.hashCode; } 
-@override String toString() { return 'CheckoutMultibancoPaymentMethodOptions(setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => setupFutureUsage.hashCode;
+
+@override String toString() => 'CheckoutMultibancoPaymentMethodOptions(setupFutureUsage: $setupFutureUsage)';
+
  }

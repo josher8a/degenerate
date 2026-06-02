@@ -69,7 +69,7 @@ AccountsTurnstileWidgetUpdateRequest copyWith({TurnstileBotFightMode? Function()
   offlabel: offlabel != null ? offlabel() : this.offlabel,
   region: region != null ? region() : this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsTurnstileWidgetUpdateRequest &&
           botFightMode == other.botFightMode &&
           clearanceLevel == other.clearanceLevel &&
@@ -78,7 +78,10 @@ AccountsTurnstileWidgetUpdateRequest copyWith({TurnstileBotFightMode? Function()
           mode == other.mode &&
           name == other.name &&
           offlabel == other.offlabel &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(botFightMode, clearanceLevel, Object.hashAll(domains), ephemeralId, mode, name, offlabel, region); } 
-@override String toString() { return 'AccountsTurnstileWidgetUpdateRequest(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, name: $name, offlabel: $offlabel, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(botFightMode, clearanceLevel, Object.hashAll(domains), ephemeralId, mode, name, offlabel, region);
+
+@override String toString() => 'AccountsTurnstileWidgetUpdateRequest(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, name: $name, offlabel: $offlabel, region: $region)';
+
  }

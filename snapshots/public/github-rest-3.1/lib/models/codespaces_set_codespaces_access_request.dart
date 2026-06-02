@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodespacesSetCodespacesAccessRequestVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodespacesSetCodespacesAccessRequestVisibility($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodespacesSetCodespacesAccessRequestVisibility && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodespacesSetCodespacesAccessRequestVisibility($value)';
+
  }
 @immutable final class CodespacesSetCodespacesAccessRequest {const CodespacesSetCodespacesAccessRequest({required this.visibility, this.selectedUsernames, });
 
@@ -60,10 +63,13 @@ CodespacesSetCodespacesAccessRequest copyWith({CodespacesSetCodespacesAccessRequ
   visibility: visibility ?? this.visibility,
   selectedUsernames: selectedUsernames != null ? selectedUsernames() : this.selectedUsernames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesSetCodespacesAccessRequest &&
           visibility == other.visibility &&
-          listEquals(selectedUsernames, other.selectedUsernames); } 
-@override int get hashCode { return Object.hash(visibility, Object.hashAll(selectedUsernames ?? const [])); } 
-@override String toString() { return 'CodespacesSetCodespacesAccessRequest(visibility: $visibility, selectedUsernames: $selectedUsernames)'; } 
+          listEquals(selectedUsernames, other.selectedUsernames);
+
+@override int get hashCode => Object.hash(visibility, Object.hashAll(selectedUsernames ?? const []));
+
+@override String toString() => 'CodespacesSetCodespacesAccessRequest(visibility: $visibility, selectedUsernames: $selectedUsernames)';
+
  }

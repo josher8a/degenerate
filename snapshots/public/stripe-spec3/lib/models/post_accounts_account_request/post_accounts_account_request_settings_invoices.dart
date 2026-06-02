@@ -20,10 +20,13 @@ PostAccountsAccountRequestSettingsInvoices copyWith({InvoicesDefaultAccountTaxId
   defaultAccountTaxIds: defaultAccountTaxIds != null ? defaultAccountTaxIds() : this.defaultAccountTaxIds,
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestSettingsInvoices &&
           defaultAccountTaxIds == other.defaultAccountTaxIds &&
-          hostedPaymentMethodSave == other.hostedPaymentMethodSave; } 
-@override int get hashCode { return Object.hash(defaultAccountTaxIds, hostedPaymentMethodSave); } 
-@override String toString() { return 'PostAccountsAccountRequestSettingsInvoices(defaultAccountTaxIds: $defaultAccountTaxIds, hostedPaymentMethodSave: $hostedPaymentMethodSave)'; } 
+          hostedPaymentMethodSave == other.hostedPaymentMethodSave;
+
+@override int get hashCode => Object.hash(defaultAccountTaxIds, hostedPaymentMethodSave);
+
+@override String toString() => 'PostAccountsAccountRequestSettingsInvoices(defaultAccountTaxIds: $defaultAccountTaxIds, hostedPaymentMethodSave: $hostedPaymentMethodSave)';
+
  }

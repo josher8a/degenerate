@@ -38,12 +38,15 @@ ShieldSchemaHosts copyWith({ShieldTimestamp? createdAt, List<String>? hosts, Str
   name: name ?? this.name,
   schemaId: schemaId ?? this.schemaId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaHosts &&
           createdAt == other.createdAt &&
           listEquals(hosts, other.hosts) &&
           name == other.name &&
-          schemaId == other.schemaId; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(hosts), name, schemaId); } 
-@override String toString() { return 'ShieldSchemaHosts(createdAt: $createdAt, hosts: $hosts, name: $name, schemaId: $schemaId)'; } 
+          schemaId == other.schemaId;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(hosts), name, schemaId);
+
+@override String toString() => 'ShieldSchemaHosts(createdAt: $createdAt, hosts: $hosts, name: $name, schemaId: $schemaId)';
+
  }

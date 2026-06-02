@@ -30,11 +30,14 @@ KeyToPath copyWith({String? key, int? Function()? mode, String? path, }) { retur
   mode: mode != null ? mode() : this.mode,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeyToPath &&
           key == other.key &&
           mode == other.mode &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(key, mode, path); } 
-@override String toString() { return 'KeyToPath(key: $key, mode: $mode, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(key, mode, path);
+
+@override String toString() => 'KeyToPath(key: $key, mode: $mode, path: $path)';
+
  }

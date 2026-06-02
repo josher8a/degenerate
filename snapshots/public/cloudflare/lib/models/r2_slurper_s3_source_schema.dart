@@ -54,7 +54,7 @@ R2SlurperS3SourceSchema copyWith({String? bucket, String? Function()? endpoint, 
   secret: secret ?? this.secret,
   vendor: vendor ?? this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperS3SourceSchema &&
           bucket == other.bucket &&
           endpoint == other.endpoint &&
@@ -62,7 +62,10 @@ R2SlurperS3SourceSchema copyWith({String? bucket, String? Function()? endpoint, 
           pathPrefix == other.pathPrefix &&
           region == other.region &&
           secret == other.secret &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, endpoint, Object.hashAll(keys ?? const []), pathPrefix, region, secret, vendor); } 
-@override String toString() { return 'R2SlurperS3SourceSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, region: $region, secret: $secret, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, endpoint, Object.hashAll(keys ?? const []), pathPrefix, region, secret, vendor);
+
+@override String toString() => 'R2SlurperS3SourceSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, region: $region, secret: $secret, vendor: $vendor)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError$400 extends Work
 
 final WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError$Unknown extends WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError {const WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mError$Unknown(this.statusCode, this.rawBody, );
 

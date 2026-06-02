@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cache
 ResponseUsageInputTokensDetails copyWith({int? cachedTokens}) { return ResponseUsageInputTokensDetails(
   cachedTokens: cachedTokens ?? this.cachedTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseUsageInputTokensDetails &&
-          cachedTokens == other.cachedTokens; } 
-@override int get hashCode { return cachedTokens.hashCode; } 
-@override String toString() { return 'ResponseUsageInputTokensDetails(cachedTokens: $cachedTokens)'; } 
+          cachedTokens == other.cachedTokens;
+
+@override int get hashCode => cachedTokens.hashCode;
+
+@override String toString() => 'ResponseUsageInputTokensDetails(cachedTokens: $cachedTokens)';
+
  }

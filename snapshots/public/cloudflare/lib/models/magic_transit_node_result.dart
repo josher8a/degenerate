@@ -131,7 +131,7 @@ MagicTransitNodeResult copyWith({MagicTransitAsn? Function()? asn, MagicTransitI
   packetCount: packetCount != null ? packetCount() : this.packetCount,
   stdDevRttMs: stdDevRttMs != null ? stdDevRttMs() : this.stdDevRttMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitNodeResult &&
           asn == other.asn &&
           ip == other.ip &&
@@ -141,7 +141,10 @@ MagicTransitNodeResult copyWith({MagicTransitAsn? Function()? asn, MagicTransitI
           minRttMs == other.minRttMs &&
           name == other.name &&
           packetCount == other.packetCount &&
-          stdDevRttMs == other.stdDevRttMs; } 
-@override int get hashCode { return Object.hash(asn, ip, Object.hashAll(labels ?? const []), maxRttMs, meanRttMs, minRttMs, name, packetCount, stdDevRttMs); } 
-@override String toString() { return 'MagicTransitNodeResult(asn: $asn, ip: $ip, labels: $labels, maxRttMs: $maxRttMs, meanRttMs: $meanRttMs, minRttMs: $minRttMs, name: $name, packetCount: $packetCount, stdDevRttMs: $stdDevRttMs)'; } 
+          stdDevRttMs == other.stdDevRttMs;
+
+@override int get hashCode => Object.hash(asn, ip, Object.hashAll(labels ?? const []), maxRttMs, meanRttMs, minRttMs, name, packetCount, stdDevRttMs);
+
+@override String toString() => 'MagicTransitNodeResult(asn: $asn, ip: $ip, labels: $labels, maxRttMs: $maxRttMs, meanRttMs: $meanRttMs, minRttMs: $minRttMs, name: $name, packetCount: $packetCount, stdDevRttMs: $stdDevRttMs)';
+
  }

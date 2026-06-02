@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOldOperationSchemaValidationSettingsModifyRequest copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsModifyRequest(
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettingsModifyRequest &&
-          mitigationAction == other.mitigationAction; } 
-@override int get hashCode { return mitigationAction.hashCode; } 
-@override String toString() { return 'ShieldOldOperationSchemaValidationSettingsModifyRequest(mitigationAction: $mitigationAction)'; } 
+          mitigationAction == other.mitigationAction;
+
+@override int get hashCode => mitigationAction.hashCode;
+
+@override String toString() => 'ShieldOldOperationSchemaValidationSettingsModifyRequest(mitigationAction: $mitigationAction)';
+
  }

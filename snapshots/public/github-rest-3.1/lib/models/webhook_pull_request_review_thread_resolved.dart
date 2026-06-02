@@ -58,7 +58,7 @@ WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadR
   thread: thread ?? this.thread,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadResolved &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -68,7 +68,10 @@ WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadR
           repository == other.repository &&
           sender == other.sender &&
           thread == other.thread &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadResolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt);
+
+@override String toString() => 'WebhookPullRequestReviewThreadResolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)';
+
  }

@@ -64,7 +64,7 @@ GetBudget copyWith({String? id, BudgetScope? budgetScope, String? budgetEntityNa
   budgetType: budgetType ?? this.budgetType,
   budgetAlerting: budgetAlerting ?? this.budgetAlerting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetBudget &&
           id == other.id &&
           budgetScope == other.budgetScope &&
@@ -73,7 +73,10 @@ GetBudget copyWith({String? id, BudgetScope? budgetScope, String? budgetEntityNa
           preventFurtherUsage == other.preventFurtherUsage &&
           budgetProductSku == other.budgetProductSku &&
           budgetType == other.budgetType &&
-          budgetAlerting == other.budgetAlerting; } 
-@override int get hashCode { return Object.hash(id, budgetScope, budgetEntityName, budgetAmount, preventFurtherUsage, budgetProductSku, budgetType, budgetAlerting); } 
-@override String toString() { return 'GetBudget(id: $id, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetProductSku: $budgetProductSku, budgetType: $budgetType, budgetAlerting: $budgetAlerting)'; } 
+          budgetAlerting == other.budgetAlerting;
+
+@override int get hashCode => Object.hash(id, budgetScope, budgetEntityName, budgetAmount, preventFurtherUsage, budgetProductSku, budgetType, budgetAlerting);
+
+@override String toString() => 'GetBudget(id: $id, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetProductSku: $budgetProductSku, budgetType: $budgetType, budgetAlerting: $budgetAlerting)';
+
  }

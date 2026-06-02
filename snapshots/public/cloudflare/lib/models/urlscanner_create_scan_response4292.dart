@@ -33,12 +33,15 @@ UrlscannerCreateScanResponse4292 copyWith({String? Function()? description, List
   message: message ?? this.message,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponse4292 &&
           description == other.description &&
           listEquals(errors, other.errors) &&
           message == other.message &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(errors), message, status); } 
-@override String toString() { return 'UrlscannerCreateScanResponse4292(description: $description, errors: $errors, message: $message, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(errors), message, status);
+
+@override String toString() => 'UrlscannerCreateScanResponse4292(description: $description, errors: $errors, message: $message, status: $status)';
+
  }

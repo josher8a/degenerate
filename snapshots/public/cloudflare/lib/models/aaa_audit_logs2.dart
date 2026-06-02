@@ -58,7 +58,7 @@ AaaAuditLogs2 copyWith({AaaAuditLogs2Account? Function()? account, AaaAuditLogs2
   resource: resource != null ? resource() : this.resource,
   zone: zone != null ? zone() : this.zone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2 &&
           account == other.account &&
           action == other.action &&
@@ -66,7 +66,10 @@ AaaAuditLogs2 copyWith({AaaAuditLogs2Account? Function()? account, AaaAuditLogs2
           id == other.id &&
           raw == other.raw &&
           resource == other.resource &&
-          zone == other.zone; } 
-@override int get hashCode { return Object.hash(account, action, actor, id, raw, resource, zone); } 
-@override String toString() { return 'AaaAuditLogs2(account: $account, action: $action, actor: $actor, id: $id, raw: $raw, resource: $resource, zone: $zone)'; } 
+          zone == other.zone;
+
+@override int get hashCode => Object.hash(account, action, actor, id, raw, resource, zone);
+
+@override String toString() => 'AaaAuditLogs2(account: $account, action: $action, actor: $actor, id: $id, raw: $raw, resource: $resource, zone: $zone)';
+
  }

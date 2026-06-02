@@ -29,11 +29,14 @@ DependabotSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedA
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotSecret &&
           name == other.name &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(name, createdAt, updatedAt); } 
-@override String toString() { return 'DependabotSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(name, createdAt, updatedAt);
+
+@override String toString() => 'DependabotSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

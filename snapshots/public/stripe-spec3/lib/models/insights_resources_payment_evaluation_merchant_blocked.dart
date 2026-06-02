@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationMerchantBlockedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationMerchantBlockedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationMerchantBlockedReason($value)';
+
  }
 /// Details of a merchant_blocked outcome attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationMerchantBlocked {const InsightsResourcesPaymentEvaluationMerchantBlocked({required this.reason});
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('reaso
 InsightsResourcesPaymentEvaluationMerchantBlocked copyWith({InsightsResourcesPaymentEvaluationMerchantBlockedReason? reason}) { return InsightsResourcesPaymentEvaluationMerchantBlocked(
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMerchantBlocked &&
-          reason == other.reason; } 
-@override int get hashCode { return reason.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMerchantBlocked(reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => reason.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationMerchantBlocked(reason: $reason)';
+
  }

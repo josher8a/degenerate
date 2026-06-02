@@ -114,7 +114,7 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
   title: title != null ? title() : this.title,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsBaseReportFields &&
           act == other.act &&
           comments == other.comments &&
@@ -126,7 +126,10 @@ AbuseReportsBaseReportFields copyWith({AbuseReportsSubmissionReportType? act, St
           reportedUserAgent == other.reportedUserAgent &&
           tele == other.tele &&
           title == other.title &&
-          urls == other.urls; } 
-@override int get hashCode { return Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls); } 
-@override String toString() { return 'AbuseReportsBaseReportFields(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls)'; } 
+          urls == other.urls;
+
+@override int get hashCode => Object.hash(act, comments, company, email, email2, name, reportedCountry, reportedUserAgent, tele, title, urls);
+
+@override String toString() => 'AbuseReportsBaseReportFields(act: $act, comments: $comments, company: $company, email: $email, email2: $email2, name: $name, reportedCountry: $reportedCountry, reportedUserAgent: $reportedUserAgent, tele: $tele, title: $title, urls: $urls)';
+
  }

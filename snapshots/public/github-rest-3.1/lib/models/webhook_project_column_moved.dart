@@ -47,7 +47,7 @@ WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, Enter
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectColumnMoved &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -55,7 +55,10 @@ WebhookProjectColumnMoved copyWith({WebhookProjectCardMovedAction? action, Enter
           organization == other.organization &&
           projectColumn == other.projectColumn &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender); } 
-@override String toString() { return 'WebhookProjectColumnMoved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender);
+
+@override String toString() => 'WebhookProjectColumnMoved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)';
+
  }

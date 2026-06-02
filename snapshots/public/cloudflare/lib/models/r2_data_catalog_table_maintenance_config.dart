@@ -21,10 +21,13 @@ R2DataCatalogTableMaintenanceConfig copyWith({R2DataCatalogTableCompactionConfig
   compaction: compaction != null ? compaction() : this.compaction,
   snapshotExpiration: snapshotExpiration != null ? snapshotExpiration() : this.snapshotExpiration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableMaintenanceConfig &&
           compaction == other.compaction &&
-          snapshotExpiration == other.snapshotExpiration; } 
-@override int get hashCode { return Object.hash(compaction, snapshotExpiration); } 
-@override String toString() { return 'R2DataCatalogTableMaintenanceConfig(compaction: $compaction, snapshotExpiration: $snapshotExpiration)'; } 
+          snapshotExpiration == other.snapshotExpiration;
+
+@override int get hashCode => Object.hash(compaction, snapshotExpiration);
+
+@override String toString() => 'R2DataCatalogTableMaintenanceConfig(compaction: $compaction, snapshotExpiration: $snapshotExpiration)';
+
  }

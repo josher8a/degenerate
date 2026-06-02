@@ -62,13 +62,16 @@ RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1
   over100Gbps: over100Gbps ?? this.over100Gbps,
   under500Mbps: under500Mbps ?? this.under500Mbps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 &&
           $1GbpsTo10Gbps == other.$1GbpsTo10Gbps &&
           $10GbpsTo100Gbps == other.$10GbpsTo100Gbps &&
           $500MbpsTo1Gbps == other.$500MbpsTo1Gbps &&
           over100Gbps == other.over100Gbps &&
-          under500Mbps == other.under500Mbps; } 
-@override int get hashCode { return Object.hash($1GbpsTo10Gbps, $10GbpsTo100Gbps, $500MbpsTo1Gbps, over100Gbps, under500Mbps); } 
-@override String toString() { return 'RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps)'; } 
+          under500Mbps == other.under500Mbps;
+
+@override int get hashCode => Object.hash($1GbpsTo10Gbps, $10GbpsTo100Gbps, $500MbpsTo1Gbps, over100Gbps, under500Mbps);
+
+@override String toString() => 'RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps)';
+
  }

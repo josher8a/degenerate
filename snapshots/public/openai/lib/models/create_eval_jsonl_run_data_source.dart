@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateEvalJsonlRunDataSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateEvalJsonlRunDataSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateEvalJsonlRunDataSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateEvalJsonlRunDataSourceType($value)';
+
  }
 /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval
 /// 
@@ -47,10 +50,13 @@ CreateEvalJsonlRunDataSource copyWith({CreateEvalJsonlRunDataSourceType? type, C
   type: type ?? this.type,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalJsonlRunDataSource &&
           type == other.type &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, source); } 
-@override String toString() { return 'CreateEvalJsonlRunDataSource(type: $type, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, source);
+
+@override String toString() => 'CreateEvalJsonlRunDataSource(type: $type, source: $source)';
+
  }

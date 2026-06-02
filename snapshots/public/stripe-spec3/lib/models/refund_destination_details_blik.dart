@@ -44,11 +44,14 @@ RefundDestinationDetailsBlik copyWith({String? Function()? networkDeclineCode, S
   reference: reference != null ? reference() : this.reference,
   referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsBlik &&
           networkDeclineCode == other.networkDeclineCode &&
           reference == other.reference &&
-          referenceStatus == other.referenceStatus; } 
-@override int get hashCode { return Object.hash(networkDeclineCode, reference, referenceStatus); } 
-@override String toString() { return 'RefundDestinationDetailsBlik(networkDeclineCode: $networkDeclineCode, reference: $reference, referenceStatus: $referenceStatus)'; } 
+          referenceStatus == other.referenceStatus;
+
+@override int get hashCode => Object.hash(networkDeclineCode, reference, referenceStatus);
+
+@override String toString() => 'RefundDestinationDetailsBlik(networkDeclineCode: $networkDeclineCode, reference: $reference, referenceStatus: $referenceStatus)';
+
  }

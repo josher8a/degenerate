@@ -64,7 +64,7 @@ CodeScanningAlertRuleSummary copyWith({String? Function()? id, String? Function(
   help: help != null ? help() : this.help,
   helpUri: helpUri != null ? helpUri() : this.helpUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAlertRuleSummary &&
           id == other.id &&
           name == other.name &&
@@ -74,7 +74,10 @@ CodeScanningAlertRuleSummary copyWith({String? Function()? id, String? Function(
           fullDescription == other.fullDescription &&
           listEquals(tags, other.tags) &&
           help == other.help &&
-          helpUri == other.helpUri; } 
-@override int get hashCode { return Object.hash(id, name, severity, securitySeverityLevel, description, fullDescription, Object.hashAll(tags ?? const []), help, helpUri); } 
-@override String toString() { return 'CodeScanningAlertRuleSummary(id: $id, name: $name, severity: $severity, securitySeverityLevel: $securitySeverityLevel, description: $description, fullDescription: $fullDescription, tags: $tags, help: $help, helpUri: $helpUri)'; } 
+          helpUri == other.helpUri;
+
+@override int get hashCode => Object.hash(id, name, severity, securitySeverityLevel, description, fullDescription, Object.hashAll(tags ?? const []), help, helpUri);
+
+@override String toString() => 'CodeScanningAlertRuleSummary(id: $id, name: $name, severity: $severity, securitySeverityLevel: $securitySeverityLevel, description: $description, fullDescription: $fullDescription, tags: $tags, help: $help, helpUri: $helpUri)';
+
  }

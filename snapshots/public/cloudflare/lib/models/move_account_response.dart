@@ -27,11 +27,14 @@ MoveAccountResponse copyWith({String? accountId, String? destinationOrganization
   destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
   sourceOrganizationId: sourceOrganizationId ?? this.sourceOrganizationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MoveAccountResponse &&
           accountId == other.accountId &&
           destinationOrganizationId == other.destinationOrganizationId &&
-          sourceOrganizationId == other.sourceOrganizationId; } 
-@override int get hashCode { return Object.hash(accountId, destinationOrganizationId, sourceOrganizationId); } 
-@override String toString() { return 'MoveAccountResponse(accountId: $accountId, destinationOrganizationId: $destinationOrganizationId, sourceOrganizationId: $sourceOrganizationId)'; } 
+          sourceOrganizationId == other.sourceOrganizationId;
+
+@override int get hashCode => Object.hash(accountId, destinationOrganizationId, sourceOrganizationId);
+
+@override String toString() => 'MoveAccountResponse(accountId: $accountId, destinationOrganizationId: $destinationOrganizationId, sourceOrganizationId: $sourceOrganizationId)';
+
  }

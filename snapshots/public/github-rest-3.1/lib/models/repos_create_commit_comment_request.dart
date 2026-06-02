@@ -34,12 +34,15 @@ ReposCreateCommitCommentRequest copyWith({String? body, String? Function()? path
   position: position != null ? position() : this.position,
   line: line != null ? line() : this.line,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateCommitCommentRequest &&
           body == other.body &&
           path == other.path &&
           position == other.position &&
-          line == other.line; } 
-@override int get hashCode { return Object.hash(body, path, position, line); } 
-@override String toString() { return 'ReposCreateCommitCommentRequest(body: $body, path: $path, position: $position, line: $line)'; } 
+          line == other.line;
+
+@override int get hashCode => Object.hash(body, path, position, line);
+
+@override String toString() => 'ReposCreateCommitCommentRequest(body: $body, path: $path, position: $position, line: $line)';
+
  }

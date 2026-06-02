@@ -48,14 +48,17 @@ JobSteps copyWith({StepsStatus? status, String? Function()? conclusion, String? 
   startedAt: startedAt != null ? startedAt() : this.startedAt,
   completedAt: completedAt != null ? completedAt() : this.completedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JobSteps &&
           status == other.status &&
           conclusion == other.conclusion &&
           name == other.name &&
           number == other.number &&
           startedAt == other.startedAt &&
-          completedAt == other.completedAt; } 
-@override int get hashCode { return Object.hash(status, conclusion, name, number, startedAt, completedAt); } 
-@override String toString() { return 'JobSteps(status: $status, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, completedAt: $completedAt)'; } 
+          completedAt == other.completedAt;
+
+@override int get hashCode => Object.hash(status, conclusion, name, number, startedAt, completedAt);
+
+@override String toString() => 'JobSteps(status: $status, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, completedAt: $completedAt)';
+
  }

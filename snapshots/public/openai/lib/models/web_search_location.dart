@@ -42,12 +42,15 @@ WebSearchLocation copyWith({String? Function()? country, String? Function()? reg
   city: city != null ? city() : this.city,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchLocation &&
           country == other.country &&
           region == other.region &&
           city == other.city &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(country, region, city, timezone); } 
-@override String toString() { return 'WebSearchLocation(country: $country, region: $region, city: $city, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(country, region, city, timezone);
+
+@override String toString() => 'WebSearchLocation(country: $country, region: $region, city: $city, timezone: $timezone)';
+
  }

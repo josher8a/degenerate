@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('email
 AccessEmailListRule copyWith({EmailList? emailList}) { return AccessEmailListRule(
   emailList: emailList ?? this.emailList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessEmailListRule &&
-          emailList == other.emailList; } 
-@override int get hashCode { return emailList.hashCode; } 
-@override String toString() { return 'AccessEmailListRule(emailList: $emailList)'; } 
+          emailList == other.emailList;
+
+@override int get hashCode => emailList.hashCode;
+
+@override String toString() => 'AccessEmailListRule(emailList: $emailList)';
+
  }

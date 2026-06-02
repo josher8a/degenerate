@@ -47,14 +47,17 @@ NscSlotInfo copyWith({NscAccountTag? Function()? account, NscFacilityInfo? facil
   site: site ?? this.site,
   speed: speed ?? this.speed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscSlotInfo &&
           account == other.account &&
           facility == other.facility &&
           id == other.id &&
           occupied == other.occupied &&
           site == other.site &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(account, facility, id, occupied, site, speed); } 
-@override String toString() { return 'NscSlotInfo(account: $account, facility: $facility, id: $id, occupied: $occupied, site: $site, speed: $speed)'; } 
+          speed == other.speed;
+
+@override int get hashCode => Object.hash(account, facility, id, occupied, site, speed);
+
+@override String toString() => 'NscSlotInfo(account: $account, facility: $facility, id: $id, occupied: $occupied, site: $site, speed: $speed)';
+
  }

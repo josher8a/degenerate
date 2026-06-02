@@ -21,9 +21,12 @@ return errors; }
 TaxProductResourceTaxTransactionLineItemResourceReversal copyWith({String? originalLineItem}) { return TaxProductResourceTaxTransactionLineItemResourceReversal(
   originalLineItem: originalLineItem ?? this.originalLineItem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxTransactionLineItemResourceReversal &&
-          originalLineItem == other.originalLineItem; } 
-@override int get hashCode { return originalLineItem.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxTransactionLineItemResourceReversal(originalLineItem: $originalLineItem)'; } 
+          originalLineItem == other.originalLineItem;
+
+@override int get hashCode => originalLineItem.hashCode;
+
+@override String toString() => 'TaxProductResourceTaxTransactionLineItemResourceReversal(originalLineItem: $originalLineItem)';
+
  }

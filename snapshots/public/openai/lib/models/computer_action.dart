@@ -52,16 +52,20 @@ final ClickParam clickParam;
 
 @override String get type => 'click';
 
-@override Map<String, dynamic> toJson() { return {...clickParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...clickParam.toJson(), 'type': type};
+
 ComputerActionClick copyWith({ClickButtonType? button, int? x, int? y, }) { return ComputerActionClick(clickParam.copyWith(
   button: button,
   x: x,
   y: y,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionClick && clickParam == other.clickParam; } 
-@override int get hashCode { return clickParam.hashCode; } 
-@override String toString() { return 'ComputerAction.click($clickParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionClick && clickParam == other.clickParam;
+
+@override int get hashCode => clickParam.hashCode;
+
+@override String toString() => 'ComputerAction.click($clickParam)';
+
  }
 @immutable final class ComputerActionDoubleClick extends ComputerAction {const ComputerActionDoubleClick(this.doubleClickAction);
 
@@ -71,15 +75,19 @@ final DoubleClickAction doubleClickAction;
 
 @override String get type => 'double_click';
 
-@override Map<String, dynamic> toJson() { return {...doubleClickAction.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...doubleClickAction.toJson(), 'type': type};
+
 ComputerActionDoubleClick copyWith({int? x, int? y, }) { return ComputerActionDoubleClick(doubleClickAction.copyWith(
   x: x,
   y: y,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionDoubleClick && doubleClickAction == other.doubleClickAction; } 
-@override int get hashCode { return doubleClickAction.hashCode; } 
-@override String toString() { return 'ComputerAction.doubleClick($doubleClickAction)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionDoubleClick && doubleClickAction == other.doubleClickAction;
+
+@override int get hashCode => doubleClickAction.hashCode;
+
+@override String toString() => 'ComputerAction.doubleClick($doubleClickAction)';
+
  }
 @immutable final class ComputerActionDrag extends ComputerAction {const ComputerActionDrag(this.dragParam);
 
@@ -89,14 +97,18 @@ final DragParam dragParam;
 
 @override String get type => 'drag';
 
-@override Map<String, dynamic> toJson() { return {...dragParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...dragParam.toJson(), 'type': type};
+
 ComputerActionDrag copyWith({List<CoordParam>? path}) { return ComputerActionDrag(dragParam.copyWith(
   path: path,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionDrag && dragParam == other.dragParam; } 
-@override int get hashCode { return dragParam.hashCode; } 
-@override String toString() { return 'ComputerAction.drag($dragParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionDrag && dragParam == other.dragParam;
+
+@override int get hashCode => dragParam.hashCode;
+
+@override String toString() => 'ComputerAction.drag($dragParam)';
+
  }
 @immutable final class ComputerActionKeypress extends ComputerAction {const ComputerActionKeypress(this.keyPressAction);
 
@@ -106,14 +118,18 @@ final KeyPressAction keyPressAction;
 
 @override String get type => 'keypress';
 
-@override Map<String, dynamic> toJson() { return {...keyPressAction.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...keyPressAction.toJson(), 'type': type};
+
 ComputerActionKeypress copyWith({List<String>? keys}) { return ComputerActionKeypress(keyPressAction.copyWith(
   keys: keys,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionKeypress && keyPressAction == other.keyPressAction; } 
-@override int get hashCode { return keyPressAction.hashCode; } 
-@override String toString() { return 'ComputerAction.keypress($keyPressAction)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionKeypress && keyPressAction == other.keyPressAction;
+
+@override int get hashCode => keyPressAction.hashCode;
+
+@override String toString() => 'ComputerAction.keypress($keyPressAction)';
+
  }
 @immutable final class ComputerActionMove extends ComputerAction {const ComputerActionMove(this.moveParam);
 
@@ -123,15 +139,19 @@ final MoveParam moveParam;
 
 @override String get type => 'move';
 
-@override Map<String, dynamic> toJson() { return {...moveParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...moveParam.toJson(), 'type': type};
+
 ComputerActionMove copyWith({int? x, int? y, }) { return ComputerActionMove(moveParam.copyWith(
   x: x,
   y: y,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionMove && moveParam == other.moveParam; } 
-@override int get hashCode { return moveParam.hashCode; } 
-@override String toString() { return 'ComputerAction.move($moveParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionMove && moveParam == other.moveParam;
+
+@override int get hashCode => moveParam.hashCode;
+
+@override String toString() => 'ComputerAction.move($moveParam)';
+
  }
 @immutable final class ComputerActionScreenshot extends ComputerAction {const ComputerActionScreenshot(this.screenshotParam);
 
@@ -141,12 +161,16 @@ final ScreenshotParam screenshotParam;
 
 @override String get type => 'screenshot';
 
-@override Map<String, dynamic> toJson() { return {...screenshotParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...screenshotParam.toJson(), 'type': type};
+
 ComputerActionScreenshot copyWith({ScreenshotParam? screenshotParam}) { return ComputerActionScreenshot(screenshotParam ?? this.screenshotParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionScreenshot && screenshotParam == other.screenshotParam; } 
-@override int get hashCode { return screenshotParam.hashCode; } 
-@override String toString() { return 'ComputerAction.screenshot($screenshotParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionScreenshot && screenshotParam == other.screenshotParam;
+
+@override int get hashCode => screenshotParam.hashCode;
+
+@override String toString() => 'ComputerAction.screenshot($screenshotParam)';
+
  }
 @immutable final class ComputerActionScroll extends ComputerAction {const ComputerActionScroll(this.scrollParam);
 
@@ -156,17 +180,21 @@ final ScrollParam scrollParam;
 
 @override String get type => 'scroll';
 
-@override Map<String, dynamic> toJson() { return {...scrollParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...scrollParam.toJson(), 'type': type};
+
 ComputerActionScroll copyWith({int? x, int? y, int? scrollX, int? scrollY, }) { return ComputerActionScroll(scrollParam.copyWith(
   x: x,
   y: y,
   scrollX: scrollX,
   scrollY: scrollY,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionScroll && scrollParam == other.scrollParam; } 
-@override int get hashCode { return scrollParam.hashCode; } 
-@override String toString() { return 'ComputerAction.scroll($scrollParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionScroll && scrollParam == other.scrollParam;
+
+@override int get hashCode => scrollParam.hashCode;
+
+@override String toString() => 'ComputerAction.scroll($scrollParam)';
+
  }
 @immutable final class ComputerActionType extends ComputerAction {const ComputerActionType(this.typeParam);
 
@@ -176,14 +204,18 @@ final TypeParam typeParam;
 
 @override String get type => 'type';
 
-@override Map<String, dynamic> toJson() { return {...typeParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...typeParam.toJson(), 'type': type};
+
 ComputerActionType copyWith({String? text}) { return ComputerActionType(typeParam.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionType && typeParam == other.typeParam; } 
-@override int get hashCode { return typeParam.hashCode; } 
-@override String toString() { return 'ComputerAction.type($typeParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionType && typeParam == other.typeParam;
+
+@override int get hashCode => typeParam.hashCode;
+
+@override String toString() => 'ComputerAction.type($typeParam)';
+
  }
 @immutable final class ComputerActionWait extends ComputerAction {const ComputerActionWait(this.waitParam);
 
@@ -193,12 +225,16 @@ final WaitParam waitParam;
 
 @override String get type => 'wait';
 
-@override Map<String, dynamic> toJson() { return {...waitParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...waitParam.toJson(), 'type': type};
+
 ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(waitParam ?? this.waitParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerActionWait && waitParam == other.waitParam; } 
-@override int get hashCode { return waitParam.hashCode; } 
-@override String toString() { return 'ComputerAction.wait($waitParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerActionWait && waitParam == other.waitParam;
+
+@override int get hashCode => waitParam.hashCode;
+
+@override String toString() => 'ComputerAction.wait($waitParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -208,9 +244,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComputerAction$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ComputerAction.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComputerAction$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ComputerAction.unknown($json)';
+
  }

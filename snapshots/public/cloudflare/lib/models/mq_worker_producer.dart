@@ -20,10 +20,13 @@ MqWorkerProducer copyWith({String? Function()? script, MqWorkerProducerType? Fun
   script: script != null ? script() : this.script,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerProducer &&
           script == other.script &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(script, type); } 
-@override String toString() { return 'MqWorkerProducer(script: $script, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(script, type);
+
+@override String toString() => 'MqWorkerProducer(script: $script, type: $type)';
+
  }

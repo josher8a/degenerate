@@ -30,10 +30,13 @@ TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails copyWith({
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   present: present ?? this.present,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails &&
           ipAddress == other.ipAddress &&
-          present == other.present; } 
-@override int get hashCode { return Object.hash(ipAddress, present); } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(ipAddress: $ipAddress, present: $present)'; } 
+          present == other.present;
+
+@override int get hashCode => Object.hash(ipAddress, present);
+
+@override String toString() => 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(ipAddress: $ipAddress, present: $present)';
+
  }

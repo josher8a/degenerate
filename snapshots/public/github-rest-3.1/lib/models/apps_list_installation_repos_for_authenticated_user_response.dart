@@ -26,11 +26,14 @@ AppsListInstallationReposForAuthenticatedUserResponse copyWith({int? totalCount,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
   repositories: repositories ?? this.repositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsListInstallationReposForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
           repositorySelection == other.repositorySelection &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(totalCount, repositorySelection, Object.hashAll(repositories)); } 
-@override String toString() { return 'AppsListInstallationReposForAuthenticatedUserResponse(totalCount: $totalCount, repositorySelection: $repositorySelection, repositories: $repositories)'; } 
+          listEquals(repositories, other.repositories);
+
+@override int get hashCode => Object.hash(totalCount, repositorySelection, Object.hashAll(repositories));
+
+@override String toString() => 'AppsListInstallationReposForAuthenticatedUserResponse(totalCount: $totalCount, repositorySelection: $repositorySelection, repositories: $repositories)';
+
  }

@@ -21,10 +21,13 @@ AccessSchemasEmptyResponse copyWith({Map<String, dynamic>? Function()? result, b
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasEmptyResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'AccessSchemasEmptyResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'AccessSchemasEmptyResponse(result: $result, success: $success)';
+
  }

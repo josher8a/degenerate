@@ -181,7 +181,7 @@ ReviewComment copyWith({Uri? url, int? Function()? pullRequestReviewId, int? id,
   originalStartLine: originalStartLine != null ? originalStartLine() : this.originalStartLine,
   subjectType: subjectType != null ? subjectType() : this.subjectType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewComment &&
           url == other.url &&
           pullRequestReviewId == other.pullRequestReviewId &&
@@ -211,7 +211,10 @@ ReviewComment copyWith({Uri? url, int? Function()? pullRequestReviewId, int? id,
           originalLine == other.originalLine &&
           startLine == other.startLine &&
           originalStartLine == other.originalStartLine &&
-          subjectType == other.subjectType; } 
-@override int get hashCode { return Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, bodyText, bodyHtml, reactions, side, startSide, line, originalLine, startLine, originalStartLine, subjectType]); } 
-@override String toString() { return 'ReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, bodyText: $bodyText, bodyHtml: $bodyHtml, reactions: $reactions, side: $side, startSide: $startSide, line: $line, originalLine: $originalLine, startLine: $startLine, originalStartLine: $originalStartLine, subjectType: $subjectType)'; } 
+          subjectType == other.subjectType;
+
+@override int get hashCode => Object.hashAll([url, pullRequestReviewId, id, nodeId, diffHunk, path, position, originalPosition, commitId, originalCommitId, inReplyToId, user, body, createdAt, updatedAt, htmlUrl, pullRequestUrl, authorAssociation, links, bodyText, bodyHtml, reactions, side, startSide, line, originalLine, startLine, originalStartLine, subjectType]);
+
+@override String toString() => 'ReviewComment(url: $url, pullRequestReviewId: $pullRequestReviewId, id: $id, nodeId: $nodeId, diffHunk: $diffHunk, path: $path, position: $position, originalPosition: $originalPosition, commitId: $commitId, originalCommitId: $originalCommitId, inReplyToId: $inReplyToId, user: $user, body: $body, createdAt: $createdAt, updatedAt: $updatedAt, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, authorAssociation: $authorAssociation, links: $links, bodyText: $bodyText, bodyHtml: $bodyHtml, reactions: $reactions, side: $side, startSide: $startSide, line: $line, originalLine: $originalLine, startLine: $startLine, originalStartLine: $originalStartLine, subjectType: $subjectType)';
+
  }

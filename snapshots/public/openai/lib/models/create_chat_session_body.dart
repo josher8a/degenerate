@@ -46,13 +46,16 @@ CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAf
   rateLimits: rateLimits != null ? rateLimits() : this.rateLimits,
   chatkitConfiguration: chatkitConfiguration != null ? chatkitConfiguration() : this.chatkitConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatSessionBody &&
           workflow == other.workflow &&
           user == other.user &&
           expiresAfter == other.expiresAfter &&
           rateLimits == other.rateLimits &&
-          chatkitConfiguration == other.chatkitConfiguration; } 
-@override int get hashCode { return Object.hash(workflow, user, expiresAfter, rateLimits, chatkitConfiguration); } 
-@override String toString() { return 'CreateChatSessionBody(workflow: $workflow, user: $user, expiresAfter: $expiresAfter, rateLimits: $rateLimits, chatkitConfiguration: $chatkitConfiguration)'; } 
+          chatkitConfiguration == other.chatkitConfiguration;
+
+@override int get hashCode => Object.hash(workflow, user, expiresAfter, rateLimits, chatkitConfiguration);
+
+@override String toString() => 'CreateChatSessionBody(workflow: $workflow, user: $user, expiresAfter: $expiresAfter, rateLimits: $rateLimits, chatkitConfiguration: $chatkitConfiguration)';
+
  }

@@ -40,13 +40,16 @@ PostPaymentRecordsIdReportPaymentAttemptInformationalRequest copyWith({PostPayme
   metadata: metadata != null ? metadata() : this.metadata,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptInformationalRequest &&
           customerDetails == other.customerDetails &&
           description == other.description &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hash(customerDetails, description, Object.hashAll(expand ?? const []), metadata, shippingDetails); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(customerDetails: $customerDetails, description: $description, expand: $expand, metadata: $metadata, shippingDetails: $shippingDetails)'; } 
+          shippingDetails == other.shippingDetails;
+
+@override int get hashCode => Object.hash(customerDetails, description, Object.hashAll(expand ?? const []), metadata, shippingDetails);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequest(customerDetails: $customerDetails, description: $description, expand: $expand, metadata: $metadata, shippingDetails: $shippingDetails)';
+
  }

@@ -58,7 +58,7 @@ UrlscannerCreateScanResponse2 copyWith({String? api, String? message, Urlscanner
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponse2 &&
           api == other.api &&
           message == other.message &&
@@ -66,7 +66,10 @@ UrlscannerCreateScanResponse2 copyWith({String? api, String? message, Urlscanner
           result == other.result &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(api, message, options, result, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanResponse2(api: $api, message: $message, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(api, message, options, result, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerCreateScanResponse2(api: $api, message: $message, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

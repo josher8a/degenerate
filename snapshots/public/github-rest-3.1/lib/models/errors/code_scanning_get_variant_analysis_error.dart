@@ -18,13 +18,15 @@ final class CodeScanningGetVariantAnalysisError$404 extends CodeScanningGetVaria
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningGetVariantAnalysisError$503 extends CodeScanningGetVariantAnalysisError {const CodeScanningGetVariantAnalysisError$503(this.error);
 
 final CodeScanningGetVariantAnalysisResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningGetVariantAnalysisError$Unknown extends CodeScanningGetVariantAnalysisError {const CodeScanningGetVariantAnalysisError$Unknown(this.statusCode, this.rawBody, );
 

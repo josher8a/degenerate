@@ -44,13 +44,16 @@ MergeGroup copyWith({String? headSha, String? headRef, String? baseSha, String? 
   baseRef: baseRef ?? this.baseRef,
   headCommit: headCommit ?? this.headCommit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MergeGroup &&
           headSha == other.headSha &&
           headRef == other.headRef &&
           baseSha == other.baseSha &&
           baseRef == other.baseRef &&
-          headCommit == other.headCommit; } 
-@override int get hashCode { return Object.hash(headSha, headRef, baseSha, baseRef, headCommit); } 
-@override String toString() { return 'MergeGroup(headSha: $headSha, headRef: $headRef, baseSha: $baseSha, baseRef: $baseRef, headCommit: $headCommit)'; } 
+          headCommit == other.headCommit;
+
+@override int get hashCode => Object.hash(headSha, headRef, baseSha, baseRef, headCommit);
+
+@override String toString() => 'MergeGroup(headSha: $headSha, headRef: $headRef, baseSha: $baseSha, baseRef: $baseRef, headCommit: $headCommit)';
+
  }

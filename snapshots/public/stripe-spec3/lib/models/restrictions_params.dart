@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('compl
 RestrictionsParams copyWith({CompletedSessions? completedSessions}) { return RestrictionsParams(
   completedSessions: completedSessions ?? this.completedSessions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RestrictionsParams &&
-          completedSessions == other.completedSessions; } 
-@override int get hashCode { return completedSessions.hashCode; } 
-@override String toString() { return 'RestrictionsParams(completedSessions: $completedSessions)'; } 
+          completedSessions == other.completedSessions;
+
+@override int get hashCode => completedSessions.hashCode;
+
+@override String toString() => 'RestrictionsParams(completedSessions: $completedSessions)';
+
  }

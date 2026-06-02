@@ -55,14 +55,17 @@ RealtimeTranscriptionSessionCreateResponseGa copyWith({RealtimeTranscriptionSess
   include: include != null ? include() : this.include,
   audio: audio != null ? audio() : this.audio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateResponseGa &&
           type == other.type &&
           id == other.id &&
           object == other.object &&
           expiresAt == other.expiresAt &&
           listEquals(include, other.include) &&
-          audio == other.audio; } 
-@override int get hashCode { return Object.hash(type, id, object, expiresAt, Object.hashAll(include ?? const []), audio); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateResponseGa(type: $type, id: $id, object: $object, expiresAt: $expiresAt, include: $include, audio: $audio)'; } 
+          audio == other.audio;
+
+@override int get hashCode => Object.hash(type, id, object, expiresAt, Object.hashAll(include ?? const []), audio);
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateResponseGa(type: $type, id: $id, object: $object, expiresAt: $expiresAt, include: $include, audio: $audio)';
+
  }

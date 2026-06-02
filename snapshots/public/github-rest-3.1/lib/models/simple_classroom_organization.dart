@@ -46,14 +46,17 @@ SimpleClassroomOrganization copyWith({int? id, String? login, String? nodeId, Ur
   name: name != null ? name() : this.name,
   avatarUrl: avatarUrl ?? this.avatarUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroomOrganization &&
           id == other.id &&
           login == other.login &&
           nodeId == other.nodeId &&
           htmlUrl == other.htmlUrl &&
           name == other.name &&
-          avatarUrl == other.avatarUrl; } 
-@override int get hashCode { return Object.hash(id, login, nodeId, htmlUrl, name, avatarUrl); } 
-@override String toString() { return 'SimpleClassroomOrganization(id: $id, login: $login, nodeId: $nodeId, htmlUrl: $htmlUrl, name: $name, avatarUrl: $avatarUrl)'; } 
+          avatarUrl == other.avatarUrl;
+
+@override int get hashCode => Object.hash(id, login, nodeId, htmlUrl, name, avatarUrl);
+
+@override String toString() => 'SimpleClassroomOrganization(id: $id, login: $login, nodeId: $nodeId, htmlUrl: $htmlUrl, name: $name, avatarUrl: $avatarUrl)';
+
  }

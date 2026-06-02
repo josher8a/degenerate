@@ -67,7 +67,7 @@ CreateEvalResponsesRunDataSourceSamplingParams copyWith({ReasoningEffort? Functi
   tools: tools != null ? tools() : this.tools,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalResponsesRunDataSourceSamplingParams &&
           reasoningEffort == other.reasoningEffort &&
           temperature == other.temperature &&
@@ -75,7 +75,10 @@ CreateEvalResponsesRunDataSourceSamplingParams copyWith({ReasoningEffort? Functi
           topP == other.topP &&
           seed == other.seed &&
           listEquals(tools, other.tools) &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(reasoningEffort, temperature, maxCompletionTokens, topP, seed, Object.hashAll(tools ?? const []), text); } 
-@override String toString() { return 'CreateEvalResponsesRunDataSourceSamplingParams(reasoningEffort: $reasoningEffort, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed, tools: $tools, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(reasoningEffort, temperature, maxCompletionTokens, topP, seed, Object.hashAll(tools ?? const []), text);
+
+@override String toString() => 'CreateEvalResponsesRunDataSourceSamplingParams(reasoningEffort: $reasoningEffort, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed, tools: $tools, text: $text)';
+
  }

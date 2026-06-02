@@ -27,11 +27,14 @@ AutoragConfigListJobsResponse copyWith({List<AutoragConfigGetJobResponseResult>?
   resultInfo: resultInfo ?? this.resultInfo,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigListJobsResponse &&
           listEquals(result, other.result) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), resultInfo, success); } 
-@override String toString() { return 'AutoragConfigListJobsResponse(result: $result, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(result), resultInfo, success);
+
+@override String toString() => 'AutoragConfigListJobsResponse(result: $result, resultInfo: $resultInfo, success: $success)';
+
  }

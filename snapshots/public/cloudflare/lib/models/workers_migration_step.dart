@@ -40,13 +40,16 @@ WorkersMigrationStep copyWith({List<String>? Function()? deletedClasses, List<St
   renamedClasses: renamedClasses != null ? renamedClasses() : this.renamedClasses,
   transferredClasses: transferredClasses != null ? transferredClasses() : this.transferredClasses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMigrationStep &&
           listEquals(deletedClasses, other.deletedClasses) &&
           listEquals(newClasses, other.newClasses) &&
           listEquals(newSqliteClasses, other.newSqliteClasses) &&
           listEquals(renamedClasses, other.renamedClasses) &&
-          listEquals(transferredClasses, other.transferredClasses); } 
-@override int get hashCode { return Object.hash(Object.hashAll(deletedClasses ?? const []), Object.hashAll(newClasses ?? const []), Object.hashAll(newSqliteClasses ?? const []), Object.hashAll(renamedClasses ?? const []), Object.hashAll(transferredClasses ?? const [])); } 
-@override String toString() { return 'WorkersMigrationStep(deletedClasses: $deletedClasses, newClasses: $newClasses, newSqliteClasses: $newSqliteClasses, renamedClasses: $renamedClasses, transferredClasses: $transferredClasses)'; } 
+          listEquals(transferredClasses, other.transferredClasses);
+
+@override int get hashCode => Object.hash(Object.hashAll(deletedClasses ?? const []), Object.hashAll(newClasses ?? const []), Object.hashAll(newSqliteClasses ?? const []), Object.hashAll(renamedClasses ?? const []), Object.hashAll(transferredClasses ?? const []));
+
+@override String toString() => 'WorkersMigrationStep(deletedClasses: $deletedClasses, newClasses: $newClasses, newSqliteClasses: $newSqliteClasses, renamedClasses: $renamedClasses, transferredClasses: $transferredClasses)';
+
  }

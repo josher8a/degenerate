@@ -40,12 +40,15 @@ GetSecurityCenterInsightsResponseResultVariant1 copyWith({SecurityCenterCount? F
   page: page != null ? page() : this.page,
   perPage: perPage != null ? perPage() : this.perPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetSecurityCenterInsightsResponseResultVariant1 &&
           count == other.count &&
           listEquals(issues, other.issues) &&
           page == other.page &&
-          perPage == other.perPage; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(issues ?? const []), page, perPage); } 
-@override String toString() { return 'GetSecurityCenterInsightsResponseResultVariant1(count: $count, issues: $issues, page: $page, perPage: $perPage)'; } 
+          perPage == other.perPage;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(issues ?? const []), page, perPage);
+
+@override String toString() => 'GetSecurityCenterInsightsResponseResultVariant1(count: $count, issues: $issues, page: $page, perPage: $perPage)';
+
  }

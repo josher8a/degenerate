@@ -28,11 +28,14 @@ ZeroTrustNetworksRouteHostnameUpdateRequest copyWith({TunnelHostnameComment? Fun
   hostname: hostname != null ? hostname() : this.hostname,
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustNetworksRouteHostnameUpdateRequest &&
           comment == other.comment &&
           hostname == other.hostname &&
-          tunnelId == other.tunnelId; } 
-@override int get hashCode { return Object.hash(comment, hostname, tunnelId); } 
-@override String toString() { return 'ZeroTrustNetworksRouteHostnameUpdateRequest(comment: $comment, hostname: $hostname, tunnelId: $tunnelId)'; } 
+          tunnelId == other.tunnelId;
+
+@override int get hashCode => Object.hash(comment, hostname, tunnelId);
+
+@override String toString() => 'ZeroTrustNetworksRouteHostnameUpdateRequest(comment: $comment, hostname: $hostname, tunnelId: $tunnelId)';
+
  }

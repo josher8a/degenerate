@@ -53,10 +53,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SecretScanningLocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SecretScanningLocationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SecretScanningLocationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SecretScanningLocationType($value)';
+
  }
 @immutable final class SecretScanningLocation {const SecretScanningLocation({this.type, this.details, });
 
@@ -79,10 +82,13 @@ SecretScanningLocation copyWith({SecretScanningLocationType? Function()? type, D
   type: type != null ? type() : this.type,
   details: details != null ? details() : this.details,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningLocation &&
           type == other.type &&
-          details == other.details; } 
-@override int get hashCode { return Object.hash(type, details); } 
-@override String toString() { return 'SecretScanningLocation(type: $type, details: $details)'; } 
+          details == other.details;
+
+@override int get hashCode => Object.hash(type, details);
+
+@override String toString() => 'SecretScanningLocation(type: $type, details: $details)';
+
  }

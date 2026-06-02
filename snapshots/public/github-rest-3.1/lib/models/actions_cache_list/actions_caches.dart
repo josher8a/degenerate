@@ -45,7 +45,7 @@ ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Fu
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   sizeInBytes: sizeInBytes != null ? sizeInBytes() : this.sizeInBytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCaches &&
           id == other.id &&
           ref == other.ref &&
@@ -53,7 +53,10 @@ ActionsCaches copyWith({int? Function()? id, String? Function()? ref, String? Fu
           version == other.version &&
           lastAccessedAt == other.lastAccessedAt &&
           createdAt == other.createdAt &&
-          sizeInBytes == other.sizeInBytes; } 
-@override int get hashCode { return Object.hash(id, ref, key, version, lastAccessedAt, createdAt, sizeInBytes); } 
-@override String toString() { return 'ActionsCaches(id: $id, ref: $ref, key: $key, version: $version, lastAccessedAt: $lastAccessedAt, createdAt: $createdAt, sizeInBytes: $sizeInBytes)'; } 
+          sizeInBytes == other.sizeInBytes;
+
+@override int get hashCode => Object.hash(id, ref, key, version, lastAccessedAt, createdAt, sizeInBytes);
+
+@override String toString() => 'ActionsCaches(id: $id, ref: $ref, key: $key, version: $version, lastAccessedAt: $lastAccessedAt, createdAt: $createdAt, sizeInBytes: $sizeInBytes)';
+
  }

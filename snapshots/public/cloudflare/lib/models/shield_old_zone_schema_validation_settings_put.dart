@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldOldValidationOverrideMitigationActionWrite && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldOldValidationOverrideMitigationActionWrite($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldOldValidationOverrideMitigationActionWrite && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldOldValidationOverrideMitigationActionWrite($value)';
+
  }
 @immutable final class ShieldOldZoneSchemaValidationSettingsPut {const ShieldOldZoneSchemaValidationSettingsPut({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });
 
@@ -70,10 +73,13 @@ ShieldOldZoneSchemaValidationSettingsPut copyWith({ShieldOldValidationDefaultMit
   validationDefaultMitigationAction: validationDefaultMitigationAction ?? this.validationDefaultMitigationAction,
   validationOverrideMitigationAction: validationOverrideMitigationAction != null ? validationOverrideMitigationAction() : this.validationOverrideMitigationAction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldZoneSchemaValidationSettingsPut &&
           validationDefaultMitigationAction == other.validationDefaultMitigationAction &&
-          validationOverrideMitigationAction == other.validationOverrideMitigationAction; } 
-@override int get hashCode { return Object.hash(validationDefaultMitigationAction, validationOverrideMitigationAction); } 
-@override String toString() { return 'ShieldOldZoneSchemaValidationSettingsPut(validationDefaultMitigationAction: $validationDefaultMitigationAction, validationOverrideMitigationAction: $validationOverrideMitigationAction)'; } 
+          validationOverrideMitigationAction == other.validationOverrideMitigationAction;
+
+@override int get hashCode => Object.hash(validationDefaultMitigationAction, validationOverrideMitigationAction);
+
+@override String toString() => 'ShieldOldZoneSchemaValidationSettingsPut(validationDefaultMitigationAction: $validationDefaultMitigationAction, validationOverrideMitigationAction: $validationOverrideMitigationAction)';
+
  }

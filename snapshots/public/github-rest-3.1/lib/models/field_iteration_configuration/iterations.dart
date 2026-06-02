@@ -28,11 +28,14 @@ Iterations copyWith({String? Function()? title, String? Function()? startDate, i
   startDate: startDate != null ? startDate() : this.startDate,
   duration: duration != null ? duration() : this.duration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Iterations &&
           title == other.title &&
           startDate == other.startDate &&
-          duration == other.duration; } 
-@override int get hashCode { return Object.hash(title, startDate, duration); } 
-@override String toString() { return 'Iterations(title: $title, startDate: $startDate, duration: $duration)'; } 
+          duration == other.duration;
+
+@override int get hashCode => Object.hash(title, startDate, duration);
+
+@override String toString() => 'Iterations(title: $title, startDate: $startDate, duration: $duration)';
+
  }

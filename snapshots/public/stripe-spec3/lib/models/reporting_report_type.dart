@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReportingReportTypeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReportingReportTypeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReportingReportTypeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReportingReportTypeObject($value)';
+
  }
 /// The Report Type resource corresponds to a particular type of report, such as
 /// the "Activity summary" or "Itemized payouts" reports. These objects are
@@ -106,7 +109,7 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Li
   updated: updated ?? this.updated,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReportingReportType &&
           dataAvailableEnd == other.dataAvailableEnd &&
           dataAvailableStart == other.dataAvailableStart &&
@@ -116,7 +119,10 @@ ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, Li
           name == other.name &&
           object == other.object &&
           updated == other.updated &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns ?? const []), id, livemode, name, object, updated, version); } 
-@override String toString() { return 'ReportingReportType(dataAvailableEnd: $dataAvailableEnd, dataAvailableStart: $dataAvailableStart, defaultColumns: $defaultColumns, id: $id, livemode: $livemode, name: $name, object: $object, updated: $updated, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(dataAvailableEnd, dataAvailableStart, Object.hashAll(defaultColumns ?? const []), id, livemode, name, object, updated, version);
+
+@override String toString() => 'ReportingReportType(dataAvailableEnd: $dataAvailableEnd, dataAvailableStart: $dataAvailableStart, defaultColumns: $defaultColumns, id: $id, livemode: $livemode, name: $name, object: $object, updated: $updated, version: $version)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationObject($value)';
+
  }
 /// The current status of the authorization in its lifecycle.
 @immutable final class IssuingAuthorizationStatus {const IssuingAuthorizationStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingAuthorizationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingAuthorizationStatus($value)';
+
  }
 /// When an [issued card](https://docs.stripe.com/issuing) is used to make a purchase, an Issuing `Authorization`
 /// object is created. [Authorizations](https://docs.stripe.com/issuing/purchases/authorizations) must be approved for the
@@ -264,7 +270,7 @@ IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? F
   verifiedByFraudChallenge: verifiedByFraudChallenge != null ? verifiedByFraudChallenge() : this.verifiedByFraudChallenge,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorization &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -294,7 +300,10 @@ IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? F
           treasury == other.treasury &&
           verificationData == other.verificationData &&
           verifiedByFraudChallenge == other.verifiedByFraudChallenge &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, approved, authorizationMethod, Object.hashAll(balanceTransactions), card, cardholder, created, currency, fleet, Object.hashAll(fraudChallenges ?? const []), fuel, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, pendingRequest, Object.hashAll(requestHistory), status, token, Object.hashAll(transactions), treasury, verificationData, verifiedByFraudChallenge, wallet]); } 
-@override String toString() { return 'IssuingAuthorization(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationMethod: $authorizationMethod, balanceTransactions: $balanceTransactions, card: $card, cardholder: $cardholder, created: $created, currency: $currency, fleet: $fleet, fraudChallenges: $fraudChallenges, fuel: $fuel, id: $id, livemode: $livemode, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, metadata: $metadata, networkData: $networkData, object: $object, pendingRequest: $pendingRequest, requestHistory: $requestHistory, status: $status, token: $token, transactions: $transactions, treasury: $treasury, verificationData: $verificationData, verifiedByFraudChallenge: $verifiedByFraudChallenge, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hashAll([amount, amountDetails, approved, authorizationMethod, Object.hashAll(balanceTransactions), card, cardholder, created, currency, fleet, Object.hashAll(fraudChallenges ?? const []), fuel, id, livemode, merchantAmount, merchantCurrency, merchantData, metadata, networkData, object, pendingRequest, Object.hashAll(requestHistory), status, token, Object.hashAll(transactions), treasury, verificationData, verifiedByFraudChallenge, wallet]);
+
+@override String toString() => 'IssuingAuthorization(amount: $amount, amountDetails: $amountDetails, approved: $approved, authorizationMethod: $authorizationMethod, balanceTransactions: $balanceTransactions, card: $card, cardholder: $cardholder, created: $created, currency: $currency, fleet: $fleet, fraudChallenges: $fraudChallenges, fuel: $fuel, id: $id, livemode: $livemode, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, metadata: $metadata, networkData: $networkData, object: $object, pendingRequest: $pendingRequest, requestHistory: $requestHistory, status: $status, token: $token, transactions: $transactions, treasury: $treasury, verificationData: $verificationData, verifiedByFraudChallenge: $verifiedByFraudChallenge, wallet: $wallet)';
+
  }

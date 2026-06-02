@@ -94,7 +94,7 @@ BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Des
   type: type ?? this.type,
   zone: zone ?? this.zone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingHistory &&
           action == other.action &&
           amount == other.amount &&
@@ -103,7 +103,10 @@ BillingHistory copyWith({Action? action, Amount? amount, Currency? currency, Des
           id == other.id &&
           occurredAt == other.occurredAt &&
           type == other.type &&
-          zone == other.zone; } 
-@override int get hashCode { return Object.hash(action, amount, currency, description, id, occurredAt, type, zone); } 
-@override String toString() { return 'BillingHistory(action: $action, amount: $amount, currency: $currency, description: $description, id: $id, occurredAt: $occurredAt, type: $type, zone: $zone)'; } 
+          zone == other.zone;
+
+@override int get hashCode => Object.hash(action, amount, currency, description, id, occurredAt, type, zone);
+
+@override String toString() => 'BillingHistory(action: $action, amount: $amount, currency: $currency, description: $description, id: $id, occurredAt: $occurredAt, type: $type, zone: $zone)';
+
  }

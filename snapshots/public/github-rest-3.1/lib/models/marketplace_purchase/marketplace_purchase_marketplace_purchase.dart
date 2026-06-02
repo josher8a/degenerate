@@ -50,7 +50,7 @@ MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycl
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   plan: plan != null ? plan() : this.plan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplacePurchaseMarketplacePurchase &&
           billingCycle == other.billingCycle &&
           nextBillingDate == other.nextBillingDate &&
@@ -59,7 +59,10 @@ MarketplacePurchaseMarketplacePurchase copyWith({String? Function()? billingCycl
           onFreeTrial == other.onFreeTrial &&
           freeTrialEndsOn == other.freeTrialEndsOn &&
           updatedAt == other.updatedAt &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(billingCycle, nextBillingDate, isInstalled, unitCount, onFreeTrial, freeTrialEndsOn, updatedAt, plan); } 
-@override String toString() { return 'MarketplacePurchaseMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, isInstalled: $isInstalled, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, plan: $plan)'; } 
+          plan == other.plan;
+
+@override int get hashCode => Object.hash(billingCycle, nextBillingDate, isInstalled, unitCount, onFreeTrial, freeTrialEndsOn, updatedAt, plan);
+
+@override String toString() => 'MarketplacePurchaseMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, isInstalled: $isInstalled, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, plan: $plan)';
+
  }

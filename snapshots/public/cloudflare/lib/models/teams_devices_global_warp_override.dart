@@ -28,10 +28,13 @@ TeamsDevicesGlobalWarpOverride copyWith({TeamsDevicesDisconnect? Function()? dis
   disconnect: disconnect != null ? disconnect() : this.disconnect,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesGlobalWarpOverride &&
           disconnect == other.disconnect &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(disconnect, timestamp); } 
-@override String toString() { return 'TeamsDevicesGlobalWarpOverride(disconnect: $disconnect, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(disconnect, timestamp);
+
+@override String toString() => 'TeamsDevicesGlobalWarpOverride(disconnect: $disconnect, timestamp: $timestamp)';
+
  }

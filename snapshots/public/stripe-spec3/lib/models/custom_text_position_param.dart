@@ -19,9 +19,12 @@ return errors; }
 CustomTextPositionParam copyWith({String? message}) { return CustomTextPositionParam(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomTextPositionParam &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'CustomTextPositionParam(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'CustomTextPositionParam(message: $message)';
+
  }

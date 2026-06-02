@@ -40,12 +40,15 @@ IntelPassiveDnsByIp copyWith({double? Function()? count, double? Function()? pag
   perPage: perPage != null ? perPage() : this.perPage,
   reverseRecords: reverseRecords != null ? reverseRecords() : this.reverseRecords,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelPassiveDnsByIp &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
-          listEquals(reverseRecords, other.reverseRecords); } 
-@override int get hashCode { return Object.hash(count, page, perPage, Object.hashAll(reverseRecords ?? const [])); } 
-@override String toString() { return 'IntelPassiveDnsByIp(count: $count, page: $page, perPage: $perPage, reverseRecords: $reverseRecords)'; } 
+          listEquals(reverseRecords, other.reverseRecords);
+
+@override int get hashCode => Object.hash(count, page, perPage, Object.hashAll(reverseRecords ?? const []));
+
+@override String toString() => 'IntelPassiveDnsByIp(count: $count, page: $page, perPage: $perPage, reverseRecords: $reverseRecords)';
+
  }

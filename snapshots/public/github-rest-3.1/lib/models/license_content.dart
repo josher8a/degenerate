@@ -88,7 +88,7 @@ LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri
   links: links ?? this.links,
   license: license != null ? license() : this.license,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LicenseContent &&
           name == other.name &&
           path == other.path &&
@@ -102,7 +102,10 @@ LicenseContent copyWith({String? name, String? path, String? sha, int? size, Uri
           content == other.content &&
           encoding == other.encoding &&
           links == other.links &&
-          license == other.license; } 
-@override int get hashCode { return Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, content, encoding, links, license); } 
-@override String toString() { return 'LicenseContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, content: $content, encoding: $encoding, links: $links, license: $license)'; } 
+          license == other.license;
+
+@override int get hashCode => Object.hash(name, path, sha, size, url, htmlUrl, gitUrl, downloadUrl, type, content, encoding, links, license);
+
+@override String toString() => 'LicenseContent(name: $name, path: $path, sha: $sha, size: $size, url: $url, htmlUrl: $htmlUrl, gitUrl: $gitUrl, downloadUrl: $downloadUrl, type: $type, content: $content, encoding: $encoding, links: $links, license: $license)';
+
  }

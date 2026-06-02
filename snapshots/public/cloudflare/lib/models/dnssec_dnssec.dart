@@ -161,7 +161,7 @@ DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Fun
   publicKey: publicKey != null ? publicKey() : this.publicKey,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnssecDnssec &&
           algorithm == other.algorithm &&
           digest == other.digest &&
@@ -176,7 +176,10 @@ DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Fun
           keyType == other.keyType &&
           modifiedOn == other.modifiedOn &&
           publicKey == other.publicKey &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status); } 
-@override String toString() { return 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status);
+
+@override String toString() => 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)';
+
  }

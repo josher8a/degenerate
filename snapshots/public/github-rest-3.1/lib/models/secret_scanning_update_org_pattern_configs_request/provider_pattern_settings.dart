@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProviderPatternSettingsPushProtectionSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProviderPatternSettingsPushProtectionSetting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProviderPatternSettingsPushProtectionSetting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProviderPatternSettingsPushProtectionSetting($value)';
+
  }
 @immutable final class ProviderPatternSettings {const ProviderPatternSettings({this.tokenType, this.pushProtectionSetting, });
 
@@ -50,10 +53,13 @@ ProviderPatternSettings copyWith({String? Function()? tokenType, ProviderPattern
   tokenType: tokenType != null ? tokenType() : this.tokenType,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProviderPatternSettings &&
           tokenType == other.tokenType &&
-          pushProtectionSetting == other.pushProtectionSetting; } 
-@override int get hashCode { return Object.hash(tokenType, pushProtectionSetting); } 
-@override String toString() { return 'ProviderPatternSettings(tokenType: $tokenType, pushProtectionSetting: $pushProtectionSetting)'; } 
+          pushProtectionSetting == other.pushProtectionSetting;
+
+@override int get hashCode => Object.hash(tokenType, pushProtectionSetting);
+
+@override String toString() => 'ProviderPatternSettings(tokenType: $tokenType, pushProtectionSetting: $pushProtectionSetting)';
+
  }

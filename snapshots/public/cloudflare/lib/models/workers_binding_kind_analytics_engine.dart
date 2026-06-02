@@ -31,11 +31,14 @@ WorkersBindingKindAnalyticsEngine copyWith({String? dataset, WorkersBindingName?
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindAnalyticsEngine &&
           dataset == other.dataset &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dataset, name, type); } 
-@override String toString() { return 'WorkersBindingKindAnalyticsEngine(dataset: $dataset, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(dataset, name, type);
+
+@override String toString() => 'WorkersBindingKindAnalyticsEngine(dataset: $dataset, name: $name, type: $type)';
+
  }

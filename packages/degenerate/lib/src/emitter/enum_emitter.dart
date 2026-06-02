@@ -175,14 +175,14 @@ class EnumEmitter {
   }
 
   Method _buildEquals(String className) => buildEqualsOverride(
-    'return identical(this, other) ||\n'
-    '    other is $className && other.value == value;',
+    'identical(this, other) ||\n'
+    '    other is $className && other.value == value',
   );
 
-  Method _buildHashCode() => buildHashCodeOverride('return value.hashCode;');
+  Method _buildHashCode() => buildHashCodeOverride('value.hashCode');
 
   Method _buildToString(String className) => buildToStringOverride(
-    "return '${escapeNameForString(className)}(\$value)';",
+    "'${escapeNameForString(className)}(\$value)'",
   );
 
 }

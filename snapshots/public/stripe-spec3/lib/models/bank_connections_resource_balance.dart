@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankConnectionsResourceBalanceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankConnectionsResourceBalanceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BankConnectionsResourceBalanceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BankConnectionsResourceBalanceType($value)';
+
  }
 /// 
 @immutable final class BankConnectionsResourceBalance {const BankConnectionsResourceBalance({required this.asOf, required this.current, required this.type, this.cash, this.credit, });
@@ -70,13 +73,16 @@ BankConnectionsResourceBalance copyWith({int? asOf, ResourceCashBalance? Functio
   current: current ?? this.current,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankConnectionsResourceBalance &&
           asOf == other.asOf &&
           cash == other.cash &&
           credit == other.credit &&
           current == other.current &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(asOf, cash, credit, current, type); } 
-@override String toString() { return 'BankConnectionsResourceBalance(asOf: $asOf, cash: $cash, credit: $credit, current: $current, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(asOf, cash, credit, current, type);
+
+@override String toString() => 'BankConnectionsResourceBalance(asOf: $asOf, cash: $cash, credit: $credit, current: $current, type: $type)';
+
  }

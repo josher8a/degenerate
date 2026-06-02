@@ -46,14 +46,17 @@ CreateValidationRequestRequest copyWith({String? phoneNumber, String? Function()
   statusCallback: statusCallback != null ? statusCallback() : this.statusCallback,
   statusCallbackMethod: statusCallbackMethod != null ? statusCallbackMethod() : this.statusCallbackMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateValidationRequestRequest &&
           phoneNumber == other.phoneNumber &&
           friendlyName == other.friendlyName &&
           callDelay == other.callDelay &&
           $extension == other.$extension &&
           statusCallback == other.statusCallback &&
-          statusCallbackMethod == other.statusCallbackMethod; } 
-@override int get hashCode { return Object.hash(phoneNumber, friendlyName, callDelay, $extension, statusCallback, statusCallbackMethod); } 
-@override String toString() { return 'CreateValidationRequestRequest(phoneNumber: $phoneNumber, friendlyName: $friendlyName, callDelay: $callDelay, \$extension: ${$extension}, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod)'; } 
+          statusCallbackMethod == other.statusCallbackMethod;
+
+@override int get hashCode => Object.hash(phoneNumber, friendlyName, callDelay, $extension, statusCallback, statusCallbackMethod);
+
+@override String toString() => 'CreateValidationRequestRequest(phoneNumber: $phoneNumber, friendlyName: $friendlyName, callDelay: $callDelay, \$extension: ${$extension}, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod)';
+
  }

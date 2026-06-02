@@ -94,7 +94,7 @@ PaymentMethodDetailsSofort copyWith({String? Function()? bankCode, String? Funct
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsSofort &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
@@ -104,7 +104,10 @@ PaymentMethodDetailsSofort copyWith({String? Function()? bankCode, String? Funct
           generatedSepaDebitMandate == other.generatedSepaDebitMandate &&
           ibanLast4 == other.ibanLast4 &&
           preferredLanguage == other.preferredLanguage &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, country, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, preferredLanguage, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, verifiedName: $verifiedName)'; } 
+          verifiedName == other.verifiedName;
+
+@override int get hashCode => Object.hash(bankCode, bankName, bic, country, generatedSepaDebit, generatedSepaDebitMandate, ibanLast4, preferredLanguage, verifiedName);
+
+@override String toString() => 'PaymentMethodDetailsSofort(bankCode: $bankCode, bankName: $bankName, bic: $bic, country: $country, generatedSepaDebit: $generatedSepaDebit, generatedSepaDebitMandate: $generatedSepaDebitMandate, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, verifiedName: $verifiedName)';
+
  }

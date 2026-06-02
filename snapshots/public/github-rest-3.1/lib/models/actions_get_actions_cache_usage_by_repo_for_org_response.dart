@@ -21,10 +21,13 @@ ActionsGetActionsCacheUsageByRepoForOrgResponse copyWith({int? totalCount, List<
   totalCount: totalCount ?? this.totalCount,
   repositoryCacheUsages: repositoryCacheUsages ?? this.repositoryCacheUsages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetActionsCacheUsageByRepoForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(repositoryCacheUsages, other.repositoryCacheUsages); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositoryCacheUsages)); } 
-@override String toString() { return 'ActionsGetActionsCacheUsageByRepoForOrgResponse(totalCount: $totalCount, repositoryCacheUsages: $repositoryCacheUsages)'; } 
+          listEquals(repositoryCacheUsages, other.repositoryCacheUsages);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(repositoryCacheUsages));
+
+@override String toString() => 'ActionsGetActionsCacheUsageByRepoForOrgResponse(totalCount: $totalCount, repositoryCacheUsages: $repositoryCacheUsages)';
+
  }

@@ -25,11 +25,14 @@ IntelCategoryWithSuperCategoryId copyWith({int? Function()? id, String? Function
   name: name != null ? name() : this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelCategoryWithSuperCategoryId &&
           id == other.id &&
           name == other.name &&
-          superCategoryId == other.superCategoryId; } 
-@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
-@override String toString() { return 'IntelCategoryWithSuperCategoryId(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
+          superCategoryId == other.superCategoryId;
+
+@override int get hashCode => Object.hash(id, name, superCategoryId);
+
+@override String toString() => 'IntelCategoryWithSuperCategoryId(id: $id, name: $name, superCategoryId: $superCategoryId)';
+
  }

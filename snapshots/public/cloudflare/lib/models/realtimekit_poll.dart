@@ -50,7 +50,7 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
   question: question ?? this.question,
   voted: voted != null ? voted() : this.voted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPoll &&
           anonymous == other.anonymous &&
           createdBy == other.createdBy &&
@@ -58,7 +58,10 @@ RealtimekitPoll copyWith({bool? Function()? anonymous, String? Function()? creat
           id == other.id &&
           listEquals(options, other.options) &&
           question == other.question &&
-          listEquals(voted, other.voted); } 
-@override int get hashCode { return Object.hash(anonymous, createdBy, hideVotes, id, Object.hashAll(options), question, Object.hashAll(voted ?? const [])); } 
-@override String toString() { return 'RealtimekitPoll(anonymous: $anonymous, createdBy: $createdBy, hideVotes: $hideVotes, id: $id, options: $options, question: $question, voted: $voted)'; } 
+          listEquals(voted, other.voted);
+
+@override int get hashCode => Object.hash(anonymous, createdBy, hideVotes, id, Object.hashAll(options), question, Object.hashAll(voted ?? const []));
+
+@override String toString() => 'RealtimekitPoll(anonymous: $anonymous, createdBy: $createdBy, hideVotes: $hideVotes, id: $id, options: $options, question: $question, voted: $voted)';
+
  }

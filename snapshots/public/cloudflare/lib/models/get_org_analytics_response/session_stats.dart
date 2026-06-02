@@ -29,11 +29,14 @@ SessionStats copyWith({List<SessionStatsDayStats>? Function()? dayStats, int? Fu
   sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
   sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionStats &&
           listEquals(dayStats, other.dayStats) &&
           sessionsCount == other.sessionsCount &&
-          sessionsMinutesConsumed == other.sessionsMinutesConsumed; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dayStats ?? const []), sessionsCount, sessionsMinutesConsumed); } 
-@override String toString() { return 'SessionStats(dayStats: $dayStats, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)'; } 
+          sessionsMinutesConsumed == other.sessionsMinutesConsumed;
+
+@override int get hashCode => Object.hash(Object.hashAll(dayStats ?? const []), sessionsCount, sessionsMinutesConsumed);
+
+@override String toString() => 'SessionStats(dayStats: $dayStats, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)';
+
  }

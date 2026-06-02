@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentDirectoryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentDirectoryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContentDirectoryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContentDirectoryType($value)';
+
  }
 @immutable final class ContentDirectory2 {const ContentDirectory2({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, });
 
@@ -104,7 +107,7 @@ ContentDirectory2 copyWith({ContentDirectoryType? type, int? size, String? name,
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentDirectory2 &&
           type == other.type &&
           size == other.size &&
@@ -116,7 +119,10 @@ ContentDirectory2 copyWith({ContentDirectoryType? type, int? size, String? name,
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentDirectory2(type: $type, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(type, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links);
+
+@override String toString() => 'ContentDirectory2(type: $type, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+
  }

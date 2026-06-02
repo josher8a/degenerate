@@ -30,11 +30,14 @@ GitCreateCommitRequestAuthor copyWith({String? name, String? email, DateTime? Fu
   email: email ?? this.email,
   date: date != null ? date() : this.date,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateCommitRequestAuthor &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitCreateCommitRequestAuthor(name: $name, email: $email, date: $date)'; } 
+          date == other.date;
+
+@override int get hashCode => Object.hash(name, email, date);
+
+@override String toString() => 'GitCreateCommitRequestAuthor(name: $name, email: $email, date: $date)';
+
  }

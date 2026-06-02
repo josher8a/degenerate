@@ -73,7 +73,7 @@ SecretScanningLocationCommit copyWith({String? path, double? startLine, double? 
   commitSha: commitSha ?? this.commitSha,
   commitUrl: commitUrl ?? this.commitUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningLocationCommit &&
           path == other.path &&
           startLine == other.startLine &&
@@ -83,7 +83,10 @@ SecretScanningLocationCommit copyWith({String? path, double? startLine, double? 
           blobSha == other.blobSha &&
           blobUrl == other.blobUrl &&
           commitSha == other.commitSha &&
-          commitUrl == other.commitUrl; } 
-@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, blobUrl, commitSha, commitUrl); } 
-@override String toString() { return 'SecretScanningLocationCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, blobUrl: $blobUrl, commitSha: $commitSha, commitUrl: $commitUrl)'; } 
+          commitUrl == other.commitUrl;
+
+@override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, blobUrl, commitSha, commitUrl);
+
+@override String toString() => 'SecretScanningLocationCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, blobUrl: $blobUrl, commitSha: $commitSha, commitUrl: $commitUrl)';
+
  }

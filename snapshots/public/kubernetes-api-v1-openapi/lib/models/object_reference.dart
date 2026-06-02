@@ -53,7 +53,7 @@ ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fi
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectReference &&
           apiVersion == other.apiVersion &&
           fieldPath == other.fieldPath &&
@@ -61,7 +61,10 @@ ObjectReference copyWith({String? Function()? apiVersion, String? Function()? fi
           name == other.name &&
           namespace == other.namespace &&
           resourceVersion == other.resourceVersion &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(apiVersion, fieldPath, kind, name, namespace, resourceVersion, uid); } 
-@override String toString() { return 'ObjectReference(apiVersion: $apiVersion, fieldPath: $fieldPath, kind: $kind, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(apiVersion, fieldPath, kind, name, namespace, resourceVersion, uid);
+
+@override String toString() => 'ObjectReference(apiVersion: $apiVersion, fieldPath: $fieldPath, kind: $kind, name: $name, namespace: $namespace, resourceVersion: $resourceVersion, uid: $uid)';
+
  }

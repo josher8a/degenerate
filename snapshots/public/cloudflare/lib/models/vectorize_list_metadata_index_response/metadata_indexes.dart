@@ -24,10 +24,13 @@ MetadataIndexes copyWith({IndexType? Function()? indexType, String? Function()? 
   indexType: indexType != null ? indexType() : this.indexType,
   propertyName: propertyName != null ? propertyName() : this.propertyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataIndexes &&
           indexType == other.indexType &&
-          propertyName == other.propertyName; } 
-@override int get hashCode { return Object.hash(indexType, propertyName); } 
-@override String toString() { return 'MetadataIndexes(indexType: $indexType, propertyName: $propertyName)'; } 
+          propertyName == other.propertyName;
+
+@override int get hashCode => Object.hash(indexType, propertyName);
+
+@override String toString() => 'MetadataIndexes(indexType: $indexType, propertyName: $propertyName)';
+
  }

@@ -38,13 +38,16 @@ DlpRiskEvent copyWith({dynamic Function()? eventDetails, String? id, String? nam
   riskLevel: riskLevel ?? this.riskLevel,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskEvent &&
           eventDetails == other.eventDetails &&
           id == other.id &&
           name == other.name &&
           riskLevel == other.riskLevel &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(eventDetails, id, name, riskLevel, timestamp); } 
-@override String toString() { return 'DlpRiskEvent(eventDetails: $eventDetails, id: $id, name: $name, riskLevel: $riskLevel, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(eventDetails, id, name, riskLevel, timestamp);
+
+@override String toString() => 'DlpRiskEvent(eventDetails: $eventDetails, id: $id, name: $name, riskLevel: $riskLevel, timestamp: $timestamp)';
+
  }

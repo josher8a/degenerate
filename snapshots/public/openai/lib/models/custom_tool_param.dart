@@ -42,13 +42,16 @@ CustomToolParam copyWith({String? type, String? name, String? Function()? descri
   format: format != null ? format() : this.format,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolParam &&
           type == other.type &&
           name == other.name &&
           description == other.description &&
           format == other.format &&
-          deferLoading == other.deferLoading; } 
-@override int get hashCode { return Object.hash(type, name, description, format, deferLoading); } 
-@override String toString() { return 'CustomToolParam(type: $type, name: $name, description: $description, format: $format, deferLoading: $deferLoading)'; } 
+          deferLoading == other.deferLoading;
+
+@override int get hashCode => Object.hash(type, name, description, format, deferLoading);
+
+@override String toString() => 'CustomToolParam(type: $type, name: $name, description: $description, format: $format, deferLoading: $deferLoading)';
+
  }

@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchActionSearchType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchActionSearchType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchActionSearchType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchActionSearchType($value)';
+
  }
 /// Action type "search" - Performs a web search query.
 /// 
@@ -64,12 +67,15 @@ WebSearchActionSearch copyWith({WebSearchActionSearchType? type, String? query, 
   queries: queries != null ? queries() : this.queries,
   sources: sources != null ? sources() : this.sources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchActionSearch &&
           type == other.type &&
           query == other.query &&
           listEquals(queries, other.queries) &&
-          listEquals(sources, other.sources); } 
-@override int get hashCode { return Object.hash(type, query, Object.hashAll(queries ?? const []), Object.hashAll(sources ?? const [])); } 
-@override String toString() { return 'WebSearchActionSearch(type: $type, query: $query, queries: $queries, sources: $sources)'; } 
+          listEquals(sources, other.sources);
+
+@override int get hashCode => Object.hash(type, query, Object.hashAll(queries ?? const []), Object.hashAll(sources ?? const []));
+
+@override String toString() => 'WebSearchActionSearch(type: $type, query: $query, queries: $queries, sources: $sources)';
+
  }

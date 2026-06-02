@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('datas
 RadarPostReportsDatasetDownloadUrlResponseResult copyWith({Dataset? dataset}) { return RadarPostReportsDatasetDownloadUrlResponseResult(
   dataset: dataset ?? this.dataset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarPostReportsDatasetDownloadUrlResponseResult &&
-          dataset == other.dataset; } 
-@override int get hashCode { return dataset.hashCode; } 
-@override String toString() { return 'RadarPostReportsDatasetDownloadUrlResponseResult(dataset: $dataset)'; } 
+          dataset == other.dataset;
+
+@override int get hashCode => dataset.hashCode;
+
+@override String toString() => 'RadarPostReportsDatasetDownloadUrlResponseResult(dataset: $dataset)';
+
  }

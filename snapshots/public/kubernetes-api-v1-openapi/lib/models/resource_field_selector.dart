@@ -29,11 +29,14 @@ ResourceFieldSelector copyWith({String? Function()? containerName, ResourceQuant
   divisor: divisor != null ? divisor() : this.divisor,
   resource: resource ?? this.resource,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceFieldSelector &&
           containerName == other.containerName &&
           divisor == other.divisor &&
-          resource == other.resource; } 
-@override int get hashCode { return Object.hash(containerName, divisor, resource); } 
-@override String toString() { return 'ResourceFieldSelector(containerName: $containerName, divisor: $divisor, resource: $resource)'; } 
+          resource == other.resource;
+
+@override int get hashCode => Object.hash(containerName, divisor, resource);
+
+@override String toString() => 'ResourceFieldSelector(containerName: $containerName, divisor: $divisor, resource: $resource)';
+
  }

@@ -39,10 +39,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1ServedByRegion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1ServedByRegion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is D1ServedByRegion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'D1ServedByRegion($value)';
+
  }
 @immutable final class D1QueryMeta {const D1QueryMeta({this.changedDb, this.changes, this.duration, this.lastRowId, this.rowsRead, this.rowsWritten, this.servedByColo, this.servedByPrimary, this.servedByRegion, this.sizeAfter, this.timings, });
 
@@ -118,7 +121,7 @@ D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, 
   sizeAfter: sizeAfter != null ? sizeAfter() : this.sizeAfter,
   timings: timings != null ? timings() : this.timings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1QueryMeta &&
           changedDb == other.changedDb &&
           changes == other.changes &&
@@ -130,7 +133,10 @@ D1QueryMeta copyWith({bool? Function()? changedDb, double? Function()? changes, 
           servedByPrimary == other.servedByPrimary &&
           servedByRegion == other.servedByRegion &&
           sizeAfter == other.sizeAfter &&
-          timings == other.timings; } 
-@override int get hashCode { return Object.hash(changedDb, changes, duration, lastRowId, rowsRead, rowsWritten, servedByColo, servedByPrimary, servedByRegion, sizeAfter, timings); } 
-@override String toString() { return 'D1QueryMeta(changedDb: $changedDb, changes: $changes, duration: $duration, lastRowId: $lastRowId, rowsRead: $rowsRead, rowsWritten: $rowsWritten, servedByColo: $servedByColo, servedByPrimary: $servedByPrimary, servedByRegion: $servedByRegion, sizeAfter: $sizeAfter, timings: $timings)'; } 
+          timings == other.timings;
+
+@override int get hashCode => Object.hash(changedDb, changes, duration, lastRowId, rowsRead, rowsWritten, servedByColo, servedByPrimary, servedByRegion, sizeAfter, timings);
+
+@override String toString() => 'D1QueryMeta(changedDb: $changedDb, changes: $changes, duration: $duration, lastRowId: $lastRowId, rowsRead: $rowsRead, rowsWritten: $rowsWritten, servedByColo: $servedByColo, servedByPrimary: $servedByPrimary, servedByRegion: $servedByRegion, sizeAfter: $sizeAfter, timings: $timings)';
+
  }

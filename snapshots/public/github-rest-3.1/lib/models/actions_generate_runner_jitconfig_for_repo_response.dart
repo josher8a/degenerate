@@ -22,10 +22,13 @@ ActionsGenerateRunnerJitconfigForRepoResponse copyWith({Runner? runner, String? 
   runner: runner ?? this.runner,
   encodedJitConfig: encodedJitConfig ?? this.encodedJitConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForRepoResponse &&
           runner == other.runner &&
-          encodedJitConfig == other.encodedJitConfig; } 
-@override int get hashCode { return Object.hash(runner, encodedJitConfig); } 
-@override String toString() { return 'ActionsGenerateRunnerJitconfigForRepoResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)'; } 
+          encodedJitConfig == other.encodedJitConfig;
+
+@override int get hashCode => Object.hash(runner, encodedJitConfig);
+
+@override String toString() => 'ActionsGenerateRunnerJitconfigForRepoResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)';
+
  }

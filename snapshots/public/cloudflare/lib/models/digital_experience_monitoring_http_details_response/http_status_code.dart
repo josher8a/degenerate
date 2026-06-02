@@ -40,13 +40,16 @@ HttpStatusCode copyWith({int? status200, int? status300, int? status400, int? st
   status500: status500 ?? this.status500,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HttpStatusCode &&
           status200 == other.status200 &&
           status300 == other.status300 &&
           status400 == other.status400 &&
           status500 == other.status500 &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(status200, status300, status400, status500, timestamp); } 
-@override String toString() { return 'HttpStatusCode(status200: $status200, status300: $status300, status400: $status400, status500: $status500, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(status200, status300, status400, status500, timestamp);
+
+@override String toString() => 'HttpStatusCode(status200: $status200, status300: $status300, status400: $status400, status500: $status500, timestamp: $timestamp)';
+
  }

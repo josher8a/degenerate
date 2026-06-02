@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceTransactionObject($value)';
+
  }
 /// The type of source this transaction is attached to.
 @immutable final class SourceTransactionType {const SourceTransactionType._(this.value);
@@ -84,10 +87,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceTransactionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceTransactionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceTransactionType($value)';
+
  }
 /// Some payment methods have no required amount that a customer must send.
 /// Customers can be instructed to send any amount, and it can be made up of
@@ -196,7 +202,7 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransaction &&
           achCreditTransfer == other.achCreditTransfer &&
           amount == other.amount &&
@@ -211,7 +217,10 @@ SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? 
           sepaCreditTransfer == other.sepaCreditTransfer &&
           source == other.source &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(achCreditTransfer, amount, chfCreditTransfer, created, currency, gbpCreditTransfer, id, livemode, object, paperCheck, sepaCreditTransfer, source, status, type); } 
-@override String toString() { return 'SourceTransaction(achCreditTransfer: $achCreditTransfer, amount: $amount, chfCreditTransfer: $chfCreditTransfer, created: $created, currency: $currency, gbpCreditTransfer: $gbpCreditTransfer, id: $id, livemode: $livemode, object: $object, paperCheck: $paperCheck, sepaCreditTransfer: $sepaCreditTransfer, source: $source, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(achCreditTransfer, amount, chfCreditTransfer, created, currency, gbpCreditTransfer, id, livemode, object, paperCheck, sepaCreditTransfer, source, status, type);
+
+@override String toString() => 'SourceTransaction(achCreditTransfer: $achCreditTransfer, amount: $amount, chfCreditTransfer: $chfCreditTransfer, created: $created, currency: $currency, gbpCreditTransfer: $gbpCreditTransfer, id: $id, livemode: $livemode, object: $object, paperCheck: $paperCheck, sepaCreditTransfer: $sepaCreditTransfer, source: $source, status: $status, type: $type)';
+
  }

@@ -34,18 +34,13 @@ final class MeetingProviderEnum {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is MeetingProviderEnum && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MeetingProviderEnum && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'MeetingProviderEnum($value)';
-  }
+  String toString() => 'MeetingProviderEnum($value)';
 }

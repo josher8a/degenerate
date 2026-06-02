@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TlsCertificatesAndHostnamesHostnameAssociationsResponseResult copyWith({List<String>? Function()? hostnames}) { return TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(
   hostnames: hostnames != null ? hostnames() : this.hostnames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameAssociationsResponseResult &&
-          listEquals(hostnames, other.hostnames); } 
-@override int get hashCode { return Object.hashAll(hostnames ?? const []); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(hostnames: $hostnames)'; } 
+          listEquals(hostnames, other.hostnames);
+
+@override int get hashCode => Object.hashAll(hostnames ?? const []);
+
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameAssociationsResponseResult(hostnames: $hostnames)';
+
  }

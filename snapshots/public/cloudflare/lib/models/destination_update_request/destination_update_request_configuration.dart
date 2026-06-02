@@ -27,11 +27,14 @@ DestinationUpdateRequestConfiguration copyWith({Map<String,String>? headers, Con
   type: type ?? this.type,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationUpdateRequestConfiguration &&
           headers == other.headers &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(headers, type, url); } 
-@override String toString() { return 'DestinationUpdateRequestConfiguration(headers: $headers, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(headers, type, url);
+
+@override String toString() => 'DestinationUpdateRequestConfiguration(headers: $headers, type: $type, url: $url)';
+
  }

@@ -18,13 +18,15 @@ final class AigConfigUpdateDatasetError$400 extends AigConfigUpdateDatasetError 
 
 final AigConfigUpdateDatasetResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigUpdateDatasetError$404 extends AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError$404(this.error);
 
 final AigConfigUpdateDatasetResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigUpdateDatasetError$Unknown extends AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError$Unknown(this.statusCode, this.rawBody, );
 

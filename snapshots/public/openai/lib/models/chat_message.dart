@@ -23,10 +23,13 @@ ChatMessage copyWith({String? role, String? content, }) { return ChatMessage(
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatMessage &&
           role == other.role &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(role, content); } 
-@override String toString() { return 'ChatMessage(role: $role, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(role, content);
+
+@override String toString() => 'ChatMessage(role: $role, content: $content)';
+
  }

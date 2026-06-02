@@ -58,7 +58,7 @@ ContainerFileResource copyWith({String? id, String? object, String? containerId,
   path: path ?? this.path,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerFileResource &&
           id == other.id &&
           object == other.object &&
@@ -66,7 +66,10 @@ ContainerFileResource copyWith({String? id, String? object, String? containerId,
           createdAt == other.createdAt &&
           bytes == other.bytes &&
           path == other.path &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(id, object, containerId, createdAt, bytes, path, source); } 
-@override String toString() { return 'ContainerFileResource(id: $id, object: $object, containerId: $containerId, createdAt: $createdAt, bytes: $bytes, path: $path, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(id, object, containerId, createdAt, bytes, path, source);
+
+@override String toString() => 'ContainerFileResource(id: $id, object: $object, containerId: $containerId, createdAt: $createdAt, bytes: $bytes, path: $path, source: $source)';
+
  }

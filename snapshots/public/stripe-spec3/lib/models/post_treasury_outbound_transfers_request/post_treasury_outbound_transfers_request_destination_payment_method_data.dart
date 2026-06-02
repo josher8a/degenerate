@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DestinationPaymentMethodDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DestinationPaymentMethodDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DestinationPaymentMethodDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DestinationPaymentMethodDataType($value)';
+
  }
 /// Hash used to generate the PaymentMethod to be used for this OutboundTransfer. Exclusive with `destination_payment_method`.
 @immutable final class PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData {const PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData({required this.type, this.financialAccount, });
@@ -42,10 +45,13 @@ PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData copyWith({Strin
   financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData &&
           financialAccount == other.financialAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(financialAccount, type); } 
-@override String toString() { return 'PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData(financialAccount: $financialAccount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(financialAccount, type);
+
+@override String toString() => 'PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData(financialAccount: $financialAccount, type: $type)';
+
  }

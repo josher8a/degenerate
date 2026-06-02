@@ -70,14 +70,17 @@ IssuingTransactionFlightDataLeg copyWith({String? Function()? arrivalAirportCode
   serviceClass: serviceClass != null ? serviceClass() : this.serviceClass,
   stopoverAllowed: stopoverAllowed != null ? stopoverAllowed() : this.stopoverAllowed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFlightDataLeg &&
           arrivalAirportCode == other.arrivalAirportCode &&
           carrier == other.carrier &&
           departureAirportCode == other.departureAirportCode &&
           flightNumber == other.flightNumber &&
           serviceClass == other.serviceClass &&
-          stopoverAllowed == other.stopoverAllowed; } 
-@override int get hashCode { return Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed); } 
-@override String toString() { return 'IssuingTransactionFlightDataLeg(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)'; } 
+          stopoverAllowed == other.stopoverAllowed;
+
+@override int get hashCode => Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed);
+
+@override String toString() => 'IssuingTransactionFlightDataLeg(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)';
+
  }

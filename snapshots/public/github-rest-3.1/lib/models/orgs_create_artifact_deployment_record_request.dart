@@ -123,7 +123,7 @@ OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactDeploymentRecordRequest &&
           name == other.name &&
           digest == other.digest &&
@@ -135,7 +135,10 @@ OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest
           deploymentName == other.deploymentName &&
           tags == other.tags &&
           listEquals(runtimeRisks, other.runtimeRisks) &&
-          githubRepository == other.githubRepository; } 
-@override int get hashCode { return Object.hash(name, digest, version, status, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), githubRepository); } 
-@override String toString() { return 'OrgsCreateArtifactDeploymentRecordRequest(name: $name, digest: $digest, version: $version, status: $status, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, githubRepository: $githubRepository)'; } 
+          githubRepository == other.githubRepository;
+
+@override int get hashCode => Object.hash(name, digest, version, status, logicalEnvironment, physicalEnvironment, cluster, deploymentName, tags, Object.hashAll(runtimeRisks ?? const []), githubRepository);
+
+@override String toString() => 'OrgsCreateArtifactDeploymentRecordRequest(name: $name, digest: $digest, version: $version, status: $status, logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, cluster: $cluster, deploymentName: $deploymentName, tags: $tags, runtimeRisks: $runtimeRisks, githubRepository: $githubRepository)';
+
  }

@@ -42,12 +42,15 @@ PostAccountsAccountRequestTosAcceptance copyWith({int? Function()? date, String?
   serviceAgreement: serviceAgreement != null ? serviceAgreement() : this.serviceAgreement,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestTosAcceptance &&
           date == other.date &&
           ip == other.ip &&
           serviceAgreement == other.serviceAgreement &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, serviceAgreement, userAgent); } 
-@override String toString() { return 'PostAccountsAccountRequestTosAcceptance(date: $date, ip: $ip, serviceAgreement: $serviceAgreement, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(date, ip, serviceAgreement, userAgent);
+
+@override String toString() => 'PostAccountsAccountRequestTosAcceptance(date: $date, ip: $ip, serviceAgreement: $serviceAgreement, userAgent: $userAgent)';
+
  }

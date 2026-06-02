@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewaySingleResponseWithListItems copyWith({ZeroTrustGatewaySingleResponseWithListItemsResult? Function()? result}) { return ZeroTrustGatewaySingleResponseWithListItems(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySingleResponseWithListItems &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewaySingleResponseWithListItems(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'ZeroTrustGatewaySingleResponseWithListItems(result: $result)';
+
  }

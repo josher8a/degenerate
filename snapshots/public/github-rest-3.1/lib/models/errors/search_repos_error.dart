@@ -18,13 +18,15 @@ final class SearchReposError$422 extends SearchReposError {const SearchReposErro
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SearchReposError$503 extends SearchReposError {const SearchReposError$503(this.error);
 
 final SearchReposResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SearchReposError$Unknown extends SearchReposError {const SearchReposError$Unknown(this.statusCode, this.rawBody, );
 

@@ -22,10 +22,13 @@ MessageDeltaContentImageFileObjectImageFile copyWith({String? Function()? fileId
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentImageFileObjectImageFile &&
           fileId == other.fileId &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(fileId, detail); } 
-@override String toString() { return 'MessageDeltaContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(fileId, detail);
+
+@override String toString() => 'MessageDeltaContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)';
+
  }

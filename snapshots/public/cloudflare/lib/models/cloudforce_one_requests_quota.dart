@@ -42,12 +42,15 @@ CloudforceOneRequestsQuota copyWith({CloudforceOneRequestsTime? Function()? anni
   quota: quota != null ? quota() : this.quota,
   remaining: remaining != null ? remaining() : this.remaining,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsQuota &&
           anniversaryDate == other.anniversaryDate &&
           quarterAnniversaryDate == other.quarterAnniversaryDate &&
           quota == other.quota &&
-          remaining == other.remaining; } 
-@override int get hashCode { return Object.hash(anniversaryDate, quarterAnniversaryDate, quota, remaining); } 
-@override String toString() { return 'CloudforceOneRequestsQuota(anniversaryDate: $anniversaryDate, quarterAnniversaryDate: $quarterAnniversaryDate, quota: $quota, remaining: $remaining)'; } 
+          remaining == other.remaining;
+
+@override int get hashCode => Object.hash(anniversaryDate, quarterAnniversaryDate, quota, remaining);
+
+@override String toString() => 'CloudforceOneRequestsQuota(anniversaryDate: $anniversaryDate, quarterAnniversaryDate: $quarterAnniversaryDate, quota: $quota, remaining: $remaining)';
+
  }

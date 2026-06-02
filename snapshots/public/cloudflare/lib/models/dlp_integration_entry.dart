@@ -44,14 +44,17 @@ DlpIntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, St
   profileId: profileId != null ? profileId() : this.profileId,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpIntegrationEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
           id == other.id &&
           name == other.name &&
           profileId == other.profileId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt); } 
-@override String toString() { return 'DlpIntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, profileId, updatedAt);
+
+@override String toString() => 'DlpIntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt)';
+
  }

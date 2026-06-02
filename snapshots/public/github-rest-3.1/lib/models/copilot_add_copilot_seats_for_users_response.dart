@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('seats
 CopilotAddCopilotSeatsForUsersResponse copyWith({int? seatsCreated}) { return CopilotAddCopilotSeatsForUsersResponse(
   seatsCreated: seatsCreated ?? this.seatsCreated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotAddCopilotSeatsForUsersResponse &&
-          seatsCreated == other.seatsCreated; } 
-@override int get hashCode { return seatsCreated.hashCode; } 
-@override String toString() { return 'CopilotAddCopilotSeatsForUsersResponse(seatsCreated: $seatsCreated)'; } 
+          seatsCreated == other.seatsCreated;
+
+@override int get hashCode => seatsCreated.hashCode;
+
+@override String toString() => 'CopilotAddCopilotSeatsForUsersResponse(seatsCreated: $seatsCreated)';
+
  }

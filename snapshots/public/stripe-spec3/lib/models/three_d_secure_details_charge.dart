@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreeDSecureDetailsChargeExemptionIndicator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreeDSecureDetailsChargeExemptionIndicator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreeDSecureDetailsChargeExemptionIndicator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreeDSecureDetailsChargeExemptionIndicator($value)';
+
  }
 /// 
 @immutable final class ThreeDSecureDetailsCharge {const ThreeDSecureDetailsCharge({this.authenticationFlow, this.electronicCommerceIndicator, this.exemptionIndicator, this.exemptionIndicatorApplied, this.result, this.resultReason, this.transactionId, this.version, });
@@ -96,7 +99,7 @@ ThreeDSecureDetailsCharge copyWith({AuthenticationFlow? Function()? authenticati
   transactionId: transactionId != null ? transactionId() : this.transactionId,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreeDSecureDetailsCharge &&
           authenticationFlow == other.authenticationFlow &&
           electronicCommerceIndicator == other.electronicCommerceIndicator &&
@@ -105,7 +108,10 @@ ThreeDSecureDetailsCharge copyWith({AuthenticationFlow? Function()? authenticati
           result == other.result &&
           resultReason == other.resultReason &&
           transactionId == other.transactionId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(authenticationFlow, electronicCommerceIndicator, exemptionIndicator, exemptionIndicatorApplied, result, resultReason, transactionId, version); } 
-@override String toString() { return 'ThreeDSecureDetailsCharge(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, exemptionIndicator: $exemptionIndicator, exemptionIndicatorApplied: $exemptionIndicatorApplied, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(authenticationFlow, electronicCommerceIndicator, exemptionIndicator, exemptionIndicatorApplied, result, resultReason, transactionId, version);
+
+@override String toString() => 'ThreeDSecureDetailsCharge(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, exemptionIndicator: $exemptionIndicator, exemptionIndicatorApplied: $exemptionIndicatorApplied, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)';
+
  }

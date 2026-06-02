@@ -21,10 +21,13 @@ Votes copyWith({String? id, String? name, }) { return Votes(
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Votes &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'Votes(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'Votes(id: $id, name: $name)';
+
  }

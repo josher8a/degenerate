@@ -54,7 +54,7 @@ WebhookWorkflowJobInProgress copyWith({WebhookWorkflowJobInProgressAction? actio
   workflowJob: workflowJob ?? this.workflowJob,
   deployment: deployment != null ? deployment() : this.deployment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobInProgress &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -63,7 +63,10 @@ WebhookWorkflowJobInProgress copyWith({WebhookWorkflowJobInProgressAction? actio
           repository == other.repository &&
           sender == other.sender &&
           workflowJob == other.workflowJob &&
-          deployment == other.deployment; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment); } 
-@override String toString() { return 'WebhookWorkflowJobInProgress(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)'; } 
+          deployment == other.deployment;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender, workflowJob, deployment);
+
+@override String toString() => 'WebhookWorkflowJobInProgress(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflowJob: $workflowJob, deployment: $deployment)';
+
  }

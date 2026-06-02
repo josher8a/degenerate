@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
 AccessCountryRuleGeo copyWith({String? countryCode}) { return AccessCountryRuleGeo(
   countryCode: countryCode ?? this.countryCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCountryRuleGeo &&
-          countryCode == other.countryCode; } 
-@override int get hashCode { return countryCode.hashCode; } 
-@override String toString() { return 'AccessCountryRuleGeo(countryCode: $countryCode)'; } 
+          countryCode == other.countryCode;
+
+@override int get hashCode => countryCode.hashCode;
+
+@override String toString() => 'AccessCountryRuleGeo(countryCode: $countryCode)';
+
  }

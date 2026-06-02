@@ -30,11 +30,14 @@ ButtonTextTranslations copyWith({Map<String,String>? acceptAll, Map<String,Strin
   confirmMyChoices: confirmMyChoices ?? this.confirmMyChoices,
   rejectAll: rejectAll ?? this.rejectAll,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ButtonTextTranslations &&
           acceptAll == other.acceptAll &&
           confirmMyChoices == other.confirmMyChoices &&
-          rejectAll == other.rejectAll; } 
-@override int get hashCode { return Object.hash(acceptAll, confirmMyChoices, rejectAll); } 
-@override String toString() { return 'ButtonTextTranslations(acceptAll: $acceptAll, confirmMyChoices: $confirmMyChoices, rejectAll: $rejectAll)'; } 
+          rejectAll == other.rejectAll;
+
+@override int get hashCode => Object.hash(acceptAll, confirmMyChoices, rejectAll);
+
+@override String toString() => 'ButtonTextTranslations(acceptAll: $acceptAll, confirmMyChoices: $confirmMyChoices, rejectAll: $rejectAll)';
+
  }

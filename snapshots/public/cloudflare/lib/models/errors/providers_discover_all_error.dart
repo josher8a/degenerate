@@ -21,31 +21,36 @@ final class ProvidersDiscoverAllError$400 extends ProvidersDiscoverAllError {con
 
 final McnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ProvidersDiscoverAllError$401 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$401(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ProvidersDiscoverAllError$403 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$403(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ProvidersDiscoverAllError$409 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$409(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ProvidersDiscoverAllError$500 extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$500(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ProvidersDiscoverAllError$Unknown extends ProvidersDiscoverAllError {const ProvidersDiscoverAllError$Unknown(this.statusCode, this.rawBody, );
 

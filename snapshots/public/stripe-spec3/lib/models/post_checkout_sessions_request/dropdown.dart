@@ -27,10 +27,13 @@ Dropdown copyWith({String? Function()? defaultValue, List<DropdownOptions>? opti
   defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
   options: options ?? this.options,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dropdown &&
           defaultValue == other.defaultValue &&
-          listEquals(options, other.options); } 
-@override int get hashCode { return Object.hash(defaultValue, Object.hashAll(options)); } 
-@override String toString() { return 'Dropdown(defaultValue: $defaultValue, options: $options)'; } 
+          listEquals(options, other.options);
+
+@override int get hashCode => Object.hash(defaultValue, Object.hashAll(options));
+
+@override String toString() => 'Dropdown(defaultValue: $defaultValue, options: $options)';
+
  }

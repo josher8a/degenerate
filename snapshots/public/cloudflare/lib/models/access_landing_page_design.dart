@@ -74,13 +74,16 @@ AccessLandingPageDesign copyWith({AccessButtonColor? Function()? buttonColor, Ac
   message: message != null ? message() : this.message,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessLandingPageDesign &&
           buttonColor == other.buttonColor &&
           buttonTextColor == other.buttonTextColor &&
           imageUrl == other.imageUrl &&
           message == other.message &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(buttonColor, buttonTextColor, imageUrl, message, title); } 
-@override String toString() { return 'AccessLandingPageDesign(buttonColor: $buttonColor, buttonTextColor: $buttonTextColor, imageUrl: $imageUrl, message: $message, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(buttonColor, buttonTextColor, imageUrl, message, title);
+
+@override String toString() => 'AccessLandingPageDesign(buttonColor: $buttonColor, buttonTextColor: $buttonTextColor, imageUrl: $imageUrl, message: $message, title: $title)';
+
  }

@@ -50,7 +50,7 @@ DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function
   targetedTests: targetedTests != null ? targetedTests() : this.targetedTests,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexRule &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -58,7 +58,10 @@ DigitalExperienceMonitoringDexRule copyWith({String? createdAt, String? Function
           match == other.match &&
           name == other.name &&
           listEquals(targetedTests, other.targetedTests) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, match, name, Object.hashAll(targetedTests ?? const []), updatedAt); } 
-@override String toString() { return 'DigitalExperienceMonitoringDexRule(createdAt: $createdAt, description: $description, id: $id, match: $match, name: $name, targetedTests: $targetedTests, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, id, match, name, Object.hashAll(targetedTests ?? const []), updatedAt);
+
+@override String toString() => 'DigitalExperienceMonitoringDexRule(createdAt: $createdAt, description: $description, id: $id, match: $match, name: $name, targetedTests: $targetedTests, updatedAt: $updatedAt)';
+
  }

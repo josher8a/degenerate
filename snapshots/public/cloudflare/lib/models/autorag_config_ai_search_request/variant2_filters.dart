@@ -28,11 +28,14 @@ Variant2Filters copyWith({String? key, Variant1Type? type, dynamic value, }) { r
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2Filters &&
           key == other.key &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, type, value); } 
-@override String toString() { return 'Variant2Filters(key: $key, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(key, type, value);
+
+@override String toString() => 'Variant2Filters(key: $key, type: $type, value: $value)';
+
  }

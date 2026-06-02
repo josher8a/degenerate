@@ -101,7 +101,7 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
   tags: tags != null ? tags() : this.tags,
   runtimeRisks: runtimeRisks != null ? runtimeRisks() : this.runtimeRisks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetClusterDeploymentRecordsRequestDeployments &&
           name == other.name &&
           digest == other.digest &&
@@ -110,7 +110,10 @@ OrgsSetClusterDeploymentRecordsRequestDeployments copyWith({String? name, String
           deploymentName == other.deploymentName &&
           githubRepository == other.githubRepository &&
           tags == other.tags &&
-          listEquals(runtimeRisks, other.runtimeRisks); } 
-@override int get hashCode { return Object.hash(name, digest, version, status, deploymentName, githubRepository, tags, Object.hashAll(runtimeRisks ?? const [])); } 
-@override String toString() { return 'OrgsSetClusterDeploymentRecordsRequestDeployments(name: $name, digest: $digest, version: $version, status: $status, deploymentName: $deploymentName, githubRepository: $githubRepository, tags: $tags, runtimeRisks: $runtimeRisks)'; } 
+          listEquals(runtimeRisks, other.runtimeRisks);
+
+@override int get hashCode => Object.hash(name, digest, version, status, deploymentName, githubRepository, tags, Object.hashAll(runtimeRisks ?? const []));
+
+@override String toString() => 'OrgsSetClusterDeploymentRecordsRequestDeployments(name: $name, digest: $digest, version: $version, status: $status, deploymentName: $deploymentName, githubRepository: $githubRepository, tags: $tags, runtimeRisks: $runtimeRisks)';
+
  }

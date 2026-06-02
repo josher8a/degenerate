@@ -52,153 +52,209 @@ dynamic toJson() { return value; }
 
 final DnsRecordsCaaRecord _value;
 
-@override DnsRecordsCaaRecord get value { return _value; } 
+@override DnsRecordsCaaRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCaaRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsCaaRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsCertRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(this._value);
 
 final DnsRecordsCertRecord _value;
 
-@override DnsRecordsCertRecord get value { return _value; } 
+@override DnsRecordsCertRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsCertRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCertRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsCertRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsCertRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(this._value);
 
 final DnsRecordsDnskeyRecord _value;
 
-@override DnsRecordsDnskeyRecord get value { return _value; } 
+@override DnsRecordsDnskeyRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDnskeyRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsDnskeyRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsDsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(this._value);
 
 final DnsRecordsDsRecord _value;
 
-@override DnsRecordsDsRecord get value { return _value; } 
+@override DnsRecordsDsRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsDsRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDsRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsDsRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsDsRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(this._value);
 
 final DnsRecordsHttpsRecord _value;
 
-@override DnsRecordsHttpsRecord get value { return _value; } 
+@override DnsRecordsHttpsRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsHttpsRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsHttpsRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsLocRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(this._value);
 
 final DnsRecordsLocRecord _value;
 
-@override DnsRecordsLocRecord get value { return _value; } 
+@override DnsRecordsLocRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsLocRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsLocRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsLocRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsLocRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(this._value);
 
 final DnsRecordsNaptrRecord _value;
 
-@override DnsRecordsNaptrRecord get value { return _value; } 
+@override DnsRecordsNaptrRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsNaptrRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsNaptrRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(this._value);
 
 final DnsRecordsSmimeaRecord _value;
 
-@override DnsRecordsSmimeaRecord get value { return _value; } 
+@override DnsRecordsSmimeaRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSmimeaRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsSmimeaRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(this._value);
 
 final DnsRecordsSrvRecord _value;
 
-@override DnsRecordsSrvRecord get value { return _value; } 
+@override DnsRecordsSrvRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSrvRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsSrvRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(this._value);
 
 final DnsRecordsSshfpRecord _value;
 
-@override DnsRecordsSshfpRecord get value { return _value; } 
+@override DnsRecordsSshfpRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSshfpRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsSshfpRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(this._value);
 
 final DnsRecordsSvcbRecord _value;
 
-@override DnsRecordsSvcbRecord get value { return _value; } 
+@override DnsRecordsSvcbRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSvcbRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsSvcbRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(this._value);
 
 final DnsRecordsTlsaRecord _value;
 
-@override DnsRecordsTlsaRecord get value { return _value; } 
+@override DnsRecordsTlsaRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsTlsaRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsTlsaRecord($_value)';
+
  }
 @immutable final class DnsRecordsDnsRecordWithDataDnsRecordsUriRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(this._value);
 
 final DnsRecordsUriRecord _value;
 
-@override DnsRecordsUriRecord get value { return _value; } 
+@override DnsRecordsUriRecord get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsUriRecord && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsUriRecord($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsUriRecord && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.dnsRecordsUriRecord($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DnsRecordsDnsRecordWithData$Unknown extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithData$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsDnsRecordWithData$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DnsRecordsDnsRecordWithData.unknown($_value)';
+
  }

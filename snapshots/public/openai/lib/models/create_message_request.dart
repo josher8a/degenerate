@@ -36,12 +36,15 @@ CreateMessageRequest copyWith({CreateMessageRequestRole? role, CreateMessageRequ
   attachments: attachments != null ? attachments() : this.attachments,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMessageRequest &&
           role == other.role &&
           content == other.content &&
           listEquals(attachments, other.attachments) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(role, content, Object.hashAll(attachments ?? const []), metadata); } 
-@override String toString() { return 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(role, content, Object.hashAll(attachments ?? const []), metadata);
+
+@override String toString() => 'CreateMessageRequest(role: $role, content: $content, attachments: $attachments, metadata: $metadata)';
+
  }

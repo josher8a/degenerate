@@ -65,7 +65,7 @@ TunnelTeamnet copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
   virtualNetworkName: virtualNetworkName != null ? virtualNetworkName() : this.virtualNetworkName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelTeamnet &&
           comment == other.comment &&
           createdAt == other.createdAt &&
@@ -76,7 +76,10 @@ TunnelTeamnet copyWith({TunnelRouteComment? Function()? comment, TunnelCreatedAt
           tunnelId == other.tunnelId &&
           tunnelName == other.tunnelName &&
           virtualNetworkId == other.virtualNetworkId &&
-          virtualNetworkName == other.virtualNetworkName; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deletedAt, id, network, tunType, tunnelId, tunnelName, virtualNetworkId, virtualNetworkName); } 
-@override String toString() { return 'TunnelTeamnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, network: $network, tunType: $tunType, tunnelId: $tunnelId, tunnelName: $tunnelName, virtualNetworkId: $virtualNetworkId, virtualNetworkName: $virtualNetworkName)'; } 
+          virtualNetworkName == other.virtualNetworkName;
+
+@override int get hashCode => Object.hash(comment, createdAt, deletedAt, id, network, tunType, tunnelId, tunnelName, virtualNetworkId, virtualNetworkName);
+
+@override String toString() => 'TunnelTeamnet(comment: $comment, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, network: $network, tunType: $tunType, tunnelId: $tunnelId, tunnelName: $tunnelName, virtualNetworkId: $virtualNetworkId, virtualNetworkName: $virtualNetworkName)';
+
  }

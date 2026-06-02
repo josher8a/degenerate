@@ -50,11 +50,14 @@ NscBgpControl copyWith({int? customerAsn, List<String>? extraPrefixes, String? F
   extraPrefixes: extraPrefixes ?? this.extraPrefixes,
   md5Key: md5Key != null ? md5Key() : this.md5Key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscBgpControl &&
           customerAsn == other.customerAsn &&
           listEquals(extraPrefixes, other.extraPrefixes) &&
-          md5Key == other.md5Key; } 
-@override int get hashCode { return Object.hash(customerAsn, Object.hashAll(extraPrefixes), md5Key); } 
-@override String toString() { return 'NscBgpControl(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)'; } 
+          md5Key == other.md5Key;
+
+@override int get hashCode => Object.hash(customerAsn, Object.hashAll(extraPrefixes), md5Key);
+
+@override String toString() => 'NscBgpControl(customerAsn: $customerAsn, extraPrefixes: $extraPrefixes, md5Key: $md5Key)';
+
  }

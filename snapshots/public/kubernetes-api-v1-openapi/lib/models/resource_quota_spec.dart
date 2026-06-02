@@ -29,11 +29,14 @@ ResourceQuotaSpec copyWith({Map<String, ResourceQuantity>? Function()? hard, Sco
   scopeSelector: scopeSelector != null ? scopeSelector() : this.scopeSelector,
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceQuotaSpec &&
           hard == other.hard &&
           scopeSelector == other.scopeSelector &&
-          listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hash(hard, scopeSelector, Object.hashAll(scopes ?? const [])); } 
-@override String toString() { return 'ResourceQuotaSpec(hard: $hard, scopeSelector: $scopeSelector, scopes: $scopes)'; } 
+          listEquals(scopes, other.scopes);
+
+@override int get hashCode => Object.hash(hard, scopeSelector, Object.hashAll(scopes ?? const []));
+
+@override String toString() => 'ResourceQuotaSpec(hard: $hard, scopeSelector: $scopeSelector, scopes: $scopes)';
+
  }

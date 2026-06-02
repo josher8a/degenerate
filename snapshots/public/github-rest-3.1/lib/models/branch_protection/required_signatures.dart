@@ -21,10 +21,13 @@ RequiredSignatures copyWith({Uri? url, bool? enabled, }) { return RequiredSignat
   url: url ?? this.url,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequiredSignatures &&
           url == other.url &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(url, enabled); } 
-@override String toString() { return 'RequiredSignatures(url: $url, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(url, enabled);
+
+@override String toString() => 'RequiredSignatures(url: $url, enabled: $enabled)';
+
  }

@@ -37,15 +37,19 @@ final ApplyPatchCreateFileOperation applyPatchCreateFileOperation;
 
 @override String get type => 'create_file';
 
-@override Map<String, dynamic> toJson() { return {...applyPatchCreateFileOperation.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...applyPatchCreateFileOperation.toJson(), 'type': type};
+
 ApplyPatchToolCallOperationCreateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationCreateFile(applyPatchCreateFileOperation.copyWith(
   path: path,
   diff: diff,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchToolCallOperationCreateFile && applyPatchCreateFileOperation == other.applyPatchCreateFileOperation; } 
-@override int get hashCode { return applyPatchCreateFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperation.createFile($applyPatchCreateFileOperation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchToolCallOperationCreateFile && applyPatchCreateFileOperation == other.applyPatchCreateFileOperation;
+
+@override int get hashCode => applyPatchCreateFileOperation.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperation.createFile($applyPatchCreateFileOperation)';
+
 @override String get path => applyPatchCreateFileOperation.path;
 
  }
@@ -57,14 +61,18 @@ final ApplyPatchDeleteFileOperation applyPatchDeleteFileOperation;
 
 @override String get type => 'delete_file';
 
-@override Map<String, dynamic> toJson() { return {...applyPatchDeleteFileOperation.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...applyPatchDeleteFileOperation.toJson(), 'type': type};
+
 ApplyPatchToolCallOperationDeleteFile copyWith({String? path}) { return ApplyPatchToolCallOperationDeleteFile(applyPatchDeleteFileOperation.copyWith(
   path: path,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchToolCallOperationDeleteFile && applyPatchDeleteFileOperation == other.applyPatchDeleteFileOperation; } 
-@override int get hashCode { return applyPatchDeleteFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperation.deleteFile($applyPatchDeleteFileOperation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchToolCallOperationDeleteFile && applyPatchDeleteFileOperation == other.applyPatchDeleteFileOperation;
+
+@override int get hashCode => applyPatchDeleteFileOperation.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperation.deleteFile($applyPatchDeleteFileOperation)';
+
 @override String get path => applyPatchDeleteFileOperation.path;
 
  }
@@ -76,15 +84,19 @@ final ApplyPatchUpdateFileOperation applyPatchUpdateFileOperation;
 
 @override String get type => 'update_file';
 
-@override Map<String, dynamic> toJson() { return {...applyPatchUpdateFileOperation.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...applyPatchUpdateFileOperation.toJson(), 'type': type};
+
 ApplyPatchToolCallOperationUpdateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationUpdateFile(applyPatchUpdateFileOperation.copyWith(
   path: path,
   diff: diff,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchToolCallOperationUpdateFile && applyPatchUpdateFileOperation == other.applyPatchUpdateFileOperation; } 
-@override int get hashCode { return applyPatchUpdateFileOperation.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperation.updateFile($applyPatchUpdateFileOperation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchToolCallOperationUpdateFile && applyPatchUpdateFileOperation == other.applyPatchUpdateFileOperation;
+
+@override int get hashCode => applyPatchUpdateFileOperation.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperation.updateFile($applyPatchUpdateFileOperation)';
+
 @override String get path => applyPatchUpdateFileOperation.path;
 
  }
@@ -96,11 +108,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApplyPatchToolCallOperation$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ApplyPatchToolCallOperation.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApplyPatchToolCallOperation$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperation.unknown($json)';
+
 @override String get path => json['path'] as String;
 
  }

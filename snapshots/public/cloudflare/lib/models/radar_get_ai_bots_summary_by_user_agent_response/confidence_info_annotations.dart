@@ -89,10 +89,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DataSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DataSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DataSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DataSource($value)';
+
  }
 /// Event type for annotations.
 @immutable final class AnnotationsEventType {const AnnotationsEventType._(this.value);
@@ -126,10 +129,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationsEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AnnotationsEventType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationsEventType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AnnotationsEventType($value)';
+
  }
 /// Annotation associated with the result (e.g. outage or other type of event).
 @immutable final class ConfidenceInfoAnnotations {const ConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
@@ -187,7 +193,7 @@ ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description,
   linkedUrl: linkedUrl ?? this.linkedUrl,
   startDate: startDate ?? this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfidenceInfoAnnotations &&
           dataSource == other.dataSource &&
           description == other.description &&
@@ -195,7 +201,10 @@ ConfidenceInfoAnnotations copyWith({DataSource? dataSource, String? description,
           eventType == other.eventType &&
           isInstantaneous == other.isInstantaneous &&
           linkedUrl == other.linkedUrl &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
-@override String toString() { return 'ConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate);
+
+@override String toString() => 'ConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)';
+
  }

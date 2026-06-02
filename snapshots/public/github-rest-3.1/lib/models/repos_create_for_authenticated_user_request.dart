@@ -166,7 +166,7 @@ ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function(
   hasDownloads: hasDownloads != null ? hasDownloads() : this.hasDownloads,
   isTemplate: isTemplate != null ? isTemplate() : this.isTemplate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateForAuthenticatedUserRequest &&
           name == other.name &&
           description == other.description &&
@@ -190,7 +190,10 @@ ReposCreateForAuthenticatedUserRequest copyWith({String? name, String? Function(
           mergeCommitTitle == other.mergeCommitTitle &&
           mergeCommitMessage == other.mergeCommitMessage &&
           hasDownloads == other.hasDownloads &&
-          isTemplate == other.isTemplate; } 
-@override int get hashCode { return Object.hashAll([name, description, homepage, private, hasIssues, hasProjects, hasWiki, hasDiscussions, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, hasDownloads, isTemplate]); } 
-@override String toString() { return 'ReposCreateForAuthenticatedUserRequest(name: $name, description: $description, homepage: $homepage, private: $private, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDiscussions: $hasDiscussions, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, hasDownloads: $hasDownloads, isTemplate: $isTemplate)'; } 
+          isTemplate == other.isTemplate;
+
+@override int get hashCode => Object.hashAll([name, description, homepage, private, hasIssues, hasProjects, hasWiki, hasDiscussions, teamId, autoInit, gitignoreTemplate, licenseTemplate, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, hasDownloads, isTemplate]);
+
+@override String toString() => 'ReposCreateForAuthenticatedUserRequest(name: $name, description: $description, homepage: $homepage, private: $private, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, hasDiscussions: $hasDiscussions, teamId: $teamId, autoInit: $autoInit, gitignoreTemplate: $gitignoreTemplate, licenseTemplate: $licenseTemplate, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, hasDownloads: $hasDownloads, isTemplate: $isTemplate)';
+
  }

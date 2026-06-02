@@ -57,7 +57,7 @@ IssuingAuthorizationPendingRequest copyWith({int? amount, IssuingAuthorizationAm
   merchantCurrency: merchantCurrency ?? this.merchantCurrency,
   networkRiskScore: networkRiskScore != null ? networkRiskScore() : this.networkRiskScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationPendingRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -65,7 +65,10 @@ IssuingAuthorizationPendingRequest copyWith({int? amount, IssuingAuthorizationAm
           isAmountControllable == other.isAmountControllable &&
           merchantAmount == other.merchantAmount &&
           merchantCurrency == other.merchantCurrency &&
-          networkRiskScore == other.networkRiskScore; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, currency, isAmountControllable, merchantAmount, merchantCurrency, networkRiskScore); } 
-@override String toString() { return 'IssuingAuthorizationPendingRequest(amount: $amount, amountDetails: $amountDetails, currency: $currency, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore)'; } 
+          networkRiskScore == other.networkRiskScore;
+
+@override int get hashCode => Object.hash(amount, amountDetails, currency, isAmountControllable, merchantAmount, merchantCurrency, networkRiskScore);
+
+@override String toString() => 'IssuingAuthorizationPendingRequest(amount: $amount, amountDetails: $amountDetails, currency: $currency, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, networkRiskScore: $networkRiskScore)';
+
  }

@@ -39,13 +39,16 @@ PullRequestMinimal copyWith({int? id, int? number, String? url, PullRequestMinim
   head: head ?? this.head,
   base: base ?? this.base,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestMinimal &&
           id == other.id &&
           number == other.number &&
           url == other.url &&
           head == other.head &&
-          base == other.base; } 
-@override int get hashCode { return Object.hash(id, number, url, head, base); } 
-@override String toString() { return 'PullRequestMinimal(id: $id, number: $number, url: $url, head: $head, base: $base)'; } 
+          base == other.base;
+
+@override int get hashCode => Object.hash(id, number, url, head, base);
+
+@override String toString() => 'PullRequestMinimal(id: $id, number: $number, url: $url, head: $head, base: $base)';
+
  }

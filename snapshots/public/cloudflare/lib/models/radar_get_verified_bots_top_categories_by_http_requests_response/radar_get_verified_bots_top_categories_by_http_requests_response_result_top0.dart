@@ -29,10 +29,13 @@ RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0 copyWith({Stri
   botCategory: botCategory ?? this.botCategory,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0 &&
           botCategory == other.botCategory &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(botCategory, value); } 
-@override String toString() { return 'RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0(botCategory: $botCategory, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(botCategory, value);
+
+@override String toString() => 'RadarGetVerifiedBotsTopCategoriesByHttpRequestsResponseResultTop0(botCategory: $botCategory, value: $value)';
+
  }

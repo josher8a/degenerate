@@ -46,14 +46,17 @@ CreateContainerBody copyWith({String? name, List<String>? Function()? fileIds, C
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateContainerBody &&
           name == other.name &&
           listEquals(fileIds, other.fileIds) &&
           expiresAfter == other.expiresAfter &&
           listEquals(skills, other.skills) &&
           memoryLimit == other.memoryLimit &&
-          networkPolicy == other.networkPolicy; } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(fileIds ?? const []), expiresAfter, Object.hashAll(skills ?? const []), memoryLimit, networkPolicy); } 
-@override String toString() { return 'CreateContainerBody(name: $name, fileIds: $fileIds, expiresAfter: $expiresAfter, skills: $skills, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)'; } 
+          networkPolicy == other.networkPolicy;
+
+@override int get hashCode => Object.hash(name, Object.hashAll(fileIds ?? const []), expiresAfter, Object.hashAll(skills ?? const []), memoryLimit, networkPolicy);
+
+@override String toString() => 'CreateContainerBody(name: $name, fileIds: $fileIds, expiresAfter: $expiresAfter, skills: $skills, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)';
+
  }

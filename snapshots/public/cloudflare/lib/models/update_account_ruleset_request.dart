@@ -73,7 +73,7 @@ UpdateAccountRulesetRequest copyWith({String Function()? description, RulesetsRu
   phase: phase != null ? phase() : this.phase,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateAccountRulesetRequest &&
           description == other.description &&
           id == other.id &&
@@ -82,7 +82,10 @@ UpdateAccountRulesetRequest copyWith({String Function()? description, RulesetsRu
           version == other.version &&
           kind == other.kind &&
           phase == other.phase &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, kind, phase, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'UpdateAccountRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(description, id, lastUpdated, name, version, kind, phase, Object.hashAll(rules ?? const []));
+
+@override String toString() => 'UpdateAccountRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)';
+
  }

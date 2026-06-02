@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnhancedEligibilityTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnhancedEligibilityTypes($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnhancedEligibilityTypes && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EnhancedEligibilityTypes($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class DisputeObject {const DisputeObject._(this.value);
@@ -41,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeObject($value)';
+
  }
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
 @immutable final class DisputeStatus {const DisputeStatus._(this.value);
@@ -84,10 +90,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeStatus($value)';
+
  }
 /// A dispute occurs when a customer questions your charge with their card issuer.
 /// When this happens, you have the opportunity to respond to the dispute with
@@ -222,7 +231,7 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Ap
   reason: reason ?? this.reason,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dispute &&
           amount == other.amount &&
           listEquals(balanceTransactions, other.balanceTransactions) &&
@@ -240,7 +249,10 @@ Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, Ap
           paymentIntent == other.paymentIntent &&
           paymentMethodDetails == other.paymentMethodDetails &&
           reason == other.reason &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status); } 
-@override String toString() { return 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status);
+
+@override String toString() => 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)';
+
  }

@@ -52,14 +52,17 @@ SimpleClassroomRepository copyWith({int? id, String? fullName, Uri? htmlUrl, Str
   private: private ?? this.private,
   defaultBranch: defaultBranch ?? this.defaultBranch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroomRepository &&
           id == other.id &&
           fullName == other.fullName &&
           htmlUrl == other.htmlUrl &&
           nodeId == other.nodeId &&
           private == other.private &&
-          defaultBranch == other.defaultBranch; } 
-@override int get hashCode { return Object.hash(id, fullName, htmlUrl, nodeId, private, defaultBranch); } 
-@override String toString() { return 'SimpleClassroomRepository(id: $id, fullName: $fullName, htmlUrl: $htmlUrl, nodeId: $nodeId, private: $private, defaultBranch: $defaultBranch)'; } 
+          defaultBranch == other.defaultBranch;
+
+@override int get hashCode => Object.hash(id, fullName, htmlUrl, nodeId, private, defaultBranch);
+
+@override String toString() => 'SimpleClassroomRepository(id: $id, fullName: $fullName, htmlUrl: $htmlUrl, nodeId: $nodeId, private: $private, defaultBranch: $defaultBranch)';
+
  }

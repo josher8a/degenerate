@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessAppPoliciesComponentsSchemasIdResponseResult copyWith({AccessUuid? Function()? id}) { return AccessAppPoliciesComponentsSchemasIdResponseResult(
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppPoliciesComponentsSchemasIdResponseResult &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'AccessAppPoliciesComponentsSchemasIdResponseResult(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'AccessAppPoliciesComponentsSchemasIdResponseResult(id: $id)';
+
  }

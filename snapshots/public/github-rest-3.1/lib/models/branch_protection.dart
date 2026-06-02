@@ -93,7 +93,7 @@ BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, P
   lockBranch: lockBranch != null ? lockBranch() : this.lockBranch,
   allowForkSyncing: allowForkSyncing != null ? allowForkSyncing() : this.allowForkSyncing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchProtection &&
           url == other.url &&
           enabled == other.enabled &&
@@ -110,7 +110,10 @@ BranchProtection copyWith({String? Function()? url, bool? Function()? enabled, P
           protectionUrl == other.protectionUrl &&
           requiredSignatures == other.requiredSignatures &&
           lockBranch == other.lockBranch &&
-          allowForkSyncing == other.allowForkSyncing; } 
-@override int get hashCode { return Object.hash(url, enabled, requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, name, protectionUrl, requiredSignatures, lockBranch, allowForkSyncing); } 
-@override String toString() { return 'BranchProtection(url: $url, enabled: $enabled, requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, name: $name, protectionUrl: $protectionUrl, requiredSignatures: $requiredSignatures, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)'; } 
+          allowForkSyncing == other.allowForkSyncing;
+
+@override int get hashCode => Object.hash(url, enabled, requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, name, protectionUrl, requiredSignatures, lockBranch, allowForkSyncing);
+
+@override String toString() => 'BranchProtection(url: $url, enabled: $enabled, requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, name: $name, protectionUrl: $protectionUrl, requiredSignatures: $requiredSignatures, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)';
+
  }

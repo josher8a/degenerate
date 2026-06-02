@@ -39,10 +39,13 @@ RulesetsRouteOrigin copyWith({String? Function()? host, int? Function()? port, }
   host: host != null ? host() : this.host,
   port: port != null ? port() : this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRouteOrigin &&
           host == other.host &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(host, port); } 
-@override String toString() { return 'RulesetsRouteOrigin(host: $host, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(host, port);
+
+@override String toString() => 'RulesetsRouteOrigin(host: $host, port: $port)';
+
  }

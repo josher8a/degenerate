@@ -32,10 +32,13 @@ RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? and
   android: android ?? this.android,
   ios: ios ?? this.ios,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 &&
           android == other.android &&
-          ios == other.ios; } 
-@override int get hashCode { return Object.hash(android, ios); } 
-@override String toString() { return 'RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(android: $android, ios: $ios)'; } 
+          ios == other.ios;
+
+@override int get hashCode => Object.hash(android, ios);
+
+@override String toString() => 'RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(android: $android, ios: $ios)';
+
  }

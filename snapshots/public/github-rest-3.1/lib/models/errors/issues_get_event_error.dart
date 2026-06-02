@@ -19,19 +19,22 @@ final class IssuesGetEventError$403 extends IssuesGetEventError {const IssuesGet
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesGetEventError$404 extends IssuesGetEventError {const IssuesGetEventError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesGetEventError$410 extends IssuesGetEventError {const IssuesGetEventError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesGetEventError$Unknown extends IssuesGetEventError {const IssuesGetEventError$Unknown(this.statusCode, this.rawBody, );
 

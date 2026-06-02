@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteRefundType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteRefundType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreditNoteRefundType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreditNoteRefundType($value)';
+
  }
 /// 
 @immutable final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefunded, required this.refund, this.paymentRecordRefund, this.type, });
@@ -61,12 +64,15 @@ CreditNoteRefund copyWith({int? amountRefunded, CreditNotesPaymentRecordRefund? 
   refund: refund ?? this.refund,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditNoteRefund &&
           amountRefunded == other.amountRefunded &&
           paymentRecordRefund == other.paymentRecordRefund &&
           refund == other.refund &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountRefunded, paymentRecordRefund, refund, type); } 
-@override String toString() { return 'CreditNoteRefund(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amountRefunded, paymentRecordRefund, refund, type);
+
+@override String toString() => 'CreditNoteRefund(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)';
+
  }

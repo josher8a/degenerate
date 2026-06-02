@@ -21,10 +21,13 @@ PendingDeploymentReviewers copyWith({DeploymentReviewerType? Function()? type, P
   type: type != null ? type() : this.type,
   reviewer: reviewer != null ? reviewer() : this.reviewer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PendingDeploymentReviewers &&
           type == other.type &&
-          reviewer == other.reviewer; } 
-@override int get hashCode { return Object.hash(type, reviewer); } 
-@override String toString() { return 'PendingDeploymentReviewers(type: $type, reviewer: $reviewer)'; } 
+          reviewer == other.reviewer;
+
+@override int get hashCode => Object.hash(type, reviewer);
+
+@override String toString() => 'PendingDeploymentReviewers(type: $type, reviewer: $reviewer)';
+
  }

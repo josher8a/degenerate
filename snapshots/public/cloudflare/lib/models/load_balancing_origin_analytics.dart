@@ -74,7 +74,7 @@ LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address
   ip: ip != null ? ip() : this.ip,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginAnalytics &&
           address == other.address &&
           changed == other.changed &&
@@ -82,7 +82,10 @@ LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress? Function()? address
           failureReason == other.failureReason &&
           healthy == other.healthy &&
           ip == other.ip &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(address, changed, enabled, failureReason, healthy, ip, name); } 
-@override String toString() { return 'LoadBalancingOriginAnalytics(address: $address, changed: $changed, enabled: $enabled, failureReason: $failureReason, healthy: $healthy, ip: $ip, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(address, changed, enabled, failureReason, healthy, ip, name);
+
+@override String toString() => 'LoadBalancingOriginAnalytics(address: $address, changed: $changed, enabled: $enabled, failureReason: $failureReason, healthy: $healthy, ip: $ip, name: $name)';
+
  }

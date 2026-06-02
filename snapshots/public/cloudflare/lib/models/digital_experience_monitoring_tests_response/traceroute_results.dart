@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('round
 TracerouteResults copyWith({DigitalExperienceMonitoringTimingAggregates? roundTripTime}) { return TracerouteResults(
   roundTripTime: roundTripTime ?? this.roundTripTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TracerouteResults &&
-          roundTripTime == other.roundTripTime; } 
-@override int get hashCode { return roundTripTime.hashCode; } 
-@override String toString() { return 'TracerouteResults(roundTripTime: $roundTripTime)'; } 
+          roundTripTime == other.roundTripTime;
+
+@override int get hashCode => roundTripTime.hashCode;
+
+@override String toString() => 'TracerouteResults(roundTripTime: $roundTripTime)';
+
  }

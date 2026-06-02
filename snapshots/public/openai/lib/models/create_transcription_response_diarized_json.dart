@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Task && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Task($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Task && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Task($value)';
+
  }
 /// Represents a diarized transcription response returned by the model, including the combined transcript and speaker-segment annotations.
 /// 
@@ -67,13 +70,16 @@ CreateTranscriptionResponseDiarizedJson copyWith({Task? task, double? duration, 
   segments: segments ?? this.segments,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranscriptionResponseDiarizedJson &&
           task == other.task &&
           duration == other.duration &&
           text == other.text &&
           listEquals(segments, other.segments) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(task, duration, text, Object.hashAll(segments), usage); } 
-@override String toString() { return 'CreateTranscriptionResponseDiarizedJson(task: $task, duration: $duration, text: $text, segments: $segments, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(task, duration, text, Object.hashAll(segments), usage);
+
+@override String toString() => 'CreateTranscriptionResponseDiarizedJson(task: $task, duration: $duration, text: $text, segments: $segments, usage: $usage)';
+
  }

@@ -23,10 +23,13 @@ LoadBalancingPreviewResponseResult copyWith({Map<String, String>? Function()? po
   pools: pools != null ? pools() : this.pools,
   previewId: previewId != null ? previewId() : this.previewId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingPreviewResponseResult &&
           pools == other.pools &&
-          previewId == other.previewId; } 
-@override int get hashCode { return Object.hash(pools, previewId); } 
-@override String toString() { return 'LoadBalancingPreviewResponseResult(pools: $pools, previewId: $previewId)'; } 
+          previewId == other.previewId;
+
+@override int get hashCode => Object.hash(pools, previewId);
+
+@override String toString() => 'LoadBalancingPreviewResponseResult(pools: $pools, previewId: $previewId)';
+
  }

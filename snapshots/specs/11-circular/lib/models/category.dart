@@ -31,12 +31,15 @@ Category copyWith({int? id, String? name, Category? Function()? parent, List<Cat
   parent: parent != null ? parent() : this.parent,
   children: children != null ? children() : this.children,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Category &&
           id == other.id &&
           name == other.name &&
           parent == other.parent &&
-          listEquals(children, other.children); } 
-@override int get hashCode { return Object.hash(id, name, parent, Object.hashAll(children ?? const [])); } 
-@override String toString() { return 'Category(id: $id, name: $name, parent: $parent, children: $children)'; } 
+          listEquals(children, other.children);
+
+@override int get hashCode => Object.hash(id, name, parent, Object.hashAll(children ?? const []));
+
+@override String toString() => 'Category(id: $id, name: $name, parent: $parent, children: $children)';
+
  }

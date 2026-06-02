@@ -45,14 +45,17 @@ ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest copyWith({ZeroTru
   name: name ?? this.name,
   networks: networks != null ? networks() : this.networks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest &&
           clientDefault == other.clientDefault &&
           dnsDestinationIpsId == other.dnsDestinationIpsId &&
           ecsSupport == other.ecsSupport &&
           endpoints == other.endpoints &&
           name == other.name &&
-          listEquals(networks, other.networks); } 
-@override int get hashCode { return Object.hash(clientDefault, dnsDestinationIpsId, ecsSupport, endpoints, name, Object.hashAll(networks ?? const [])); } 
-@override String toString() { return 'ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest(clientDefault: $clientDefault, dnsDestinationIpsId: $dnsDestinationIpsId, ecsSupport: $ecsSupport, endpoints: $endpoints, name: $name, networks: $networks)'; } 
+          listEquals(networks, other.networks);
+
+@override int get hashCode => Object.hash(clientDefault, dnsDestinationIpsId, ecsSupport, endpoints, name, Object.hashAll(networks ?? const []));
+
+@override String toString() => 'ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest(clientDefault: $clientDefault, dnsDestinationIpsId: $dnsDestinationIpsId, ecsSupport: $ecsSupport, endpoints: $endpoints, name: $name, networks: $networks)';
+
  }

@@ -70,7 +70,7 @@ RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({St
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionCompleted &&
           eventId == other.eventId &&
           type == other.type &&
@@ -78,7 +78,10 @@ RealtimeServerEventConversationItemInputAudioTranscriptionCompleted copyWith({St
           contentIndex == other.contentIndex &&
           transcript == other.transcript &&
           listEquals(logprobs, other.logprobs) &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs ?? const []), usage); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, transcript, Object.hashAll(logprobs ?? const []), usage);
+
+@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, transcript: $transcript, logprobs: $logprobs, usage: $usage)';
+
  }

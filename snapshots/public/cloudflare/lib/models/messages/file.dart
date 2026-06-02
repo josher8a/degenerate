@@ -25,11 +25,14 @@ File copyWith({String? Function()? fileData, String? Function()? fileId, String?
   fileId: fileId != null ? fileId() : this.fileId,
   filename: filename != null ? filename() : this.filename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is File &&
           fileData == other.fileData &&
           fileId == other.fileId &&
-          filename == other.filename; } 
-@override int get hashCode { return Object.hash(fileData, fileId, filename); } 
-@override String toString() { return 'File(fileData: $fileData, fileId: $fileId, filename: $filename)'; } 
+          filename == other.filename;
+
+@override int get hashCode => Object.hash(fileData, fileId, filename);
+
+@override String toString() => 'File(fileData: $fileData, fileId: $fileId, filename: $filename)';
+
  }

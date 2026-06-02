@@ -51,14 +51,17 @@ GetEventRawReadDsResponse copyWith({double? accountId, String? created, String? 
   source: source ?? this.source,
   tlp: tlp ?? this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventRawReadDsResponse &&
           accountId == other.accountId &&
           created == other.created &&
           data == other.data &&
           id == other.id &&
           source == other.source &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(accountId, created, data, id, source, tlp); } 
-@override String toString() { return 'GetEventRawReadDsResponse(accountId: $accountId, created: $created, data: $data, id: $id, source: $source, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(accountId, created, data, id, source, tlp);
+
+@override String toString() => 'GetEventRawReadDsResponse(accountId: $accountId, created: $created, data: $data, id: $id, source: $source, tlp: $tlp)';
+
  }

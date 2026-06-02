@@ -34,11 +34,14 @@ ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest copyWith({List<Stri
   certificate: certificate ?? this.certificate,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest &&
           listEquals(associatedHostnames, other.associatedHostnames) &&
           certificate == other.certificate &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(associatedHostnames ?? const []), certificate, name); } 
-@override String toString() { return 'ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(associatedHostnames: $associatedHostnames, certificate: $certificate, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(associatedHostnames ?? const []), certificate, name);
+
+@override String toString() => 'ZoneLevelAccessMtlsAuthenticationAddAnMtlsCertificateRequest(associatedHostnames: $associatedHostnames, certificate: $certificate, name: $name)';
+
  }

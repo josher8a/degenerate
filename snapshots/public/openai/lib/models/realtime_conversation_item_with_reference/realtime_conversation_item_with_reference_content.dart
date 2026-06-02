@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemWithReferenceContentType($value)';
+
  }
 @immutable final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });
 
@@ -79,13 +82,16 @@ RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemW
   audio: audio != null ? audio() : this.audio,
   transcript: transcript != null ? transcript() : this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemWithReferenceContent &&
           type == other.type &&
           text == other.text &&
           id == other.id &&
           audio == other.audio &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, id, audio, transcript); } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceContent(type: $type, text: $text, id: $id, audio: $audio, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(type, text, id, audio, transcript);
+
+@override String toString() => 'RealtimeConversationItemWithReferenceContent(type: $type, text: $text, id: $id, audio: $audio, transcript: $transcript)';
+
  }

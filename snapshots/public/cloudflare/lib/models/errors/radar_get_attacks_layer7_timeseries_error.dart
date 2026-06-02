@@ -17,7 +17,8 @@ final class RadarGetAttacksLayer7TimeseriesError$400 extends RadarGetAttacksLaye
 
 final RadarGetAttacksLayer7TimeseriesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAttacksLayer7TimeseriesError$Unknown extends RadarGetAttacksLayer7TimeseriesError {const RadarGetAttacksLayer7TimeseriesError$Unknown(this.statusCode, this.rawBody, );
 

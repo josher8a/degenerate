@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReserveTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReserveTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReserveTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReserveTransactionObject($value)';
+
  }
 /// 
 @immutable final class ReserveTransaction {const ReserveTransaction({required this.amount, required this.currency, required this.id, required this.object, this.description, });
@@ -73,13 +76,16 @@ ReserveTransaction copyWith({int? amount, String? currency, String? Function()? 
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReserveTransaction &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(amount, currency, description, id, object); } 
-@override String toString() { return 'ReserveTransaction(amount: $amount, currency: $currency, description: $description, id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(amount, currency, description, id, object);
+
+@override String toString() => 'ReserveTransaction(amount: $amount, currency: $currency, description: $description, id: $id, object: $object)';
+
  }

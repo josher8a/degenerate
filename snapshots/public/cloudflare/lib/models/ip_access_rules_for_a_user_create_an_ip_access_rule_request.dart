@@ -28,11 +28,14 @@ IpAccessRulesForAUserCreateAnIpAccessRuleRequest copyWith({FirewallConfiguration
   mode: mode ?? this.mode,
   notes: notes != null ? notes() : this.notes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAccessRulesForAUserCreateAnIpAccessRuleRequest &&
           configuration == other.configuration &&
           mode == other.mode &&
-          notes == other.notes; } 
-@override int get hashCode { return Object.hash(configuration, mode, notes); } 
-@override String toString() { return 'IpAccessRulesForAUserCreateAnIpAccessRuleRequest(configuration: $configuration, mode: $mode, notes: $notes)'; } 
+          notes == other.notes;
+
+@override int get hashCode => Object.hash(configuration, mode, notes);
+
+@override String toString() => 'IpAccessRulesForAUserCreateAnIpAccessRuleRequest(configuration: $configuration, mode: $mode, notes: $notes)';
+
  }

@@ -25,11 +25,14 @@ GistsGetResponse403 copyWith({Block? Function()? block, String? Function()? mess
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistsGetResponse403 &&
           block == other.block &&
           message == other.message &&
-          documentationUrl == other.documentationUrl; } 
-@override int get hashCode { return Object.hash(block, message, documentationUrl); } 
-@override String toString() { return 'GistsGetResponse403(block: $block, message: $message, documentationUrl: $documentationUrl)'; } 
+          documentationUrl == other.documentationUrl;
+
+@override int get hashCode => Object.hash(block, message, documentationUrl);
+
+@override String toString() => 'GistsGetResponse403(block: $block, message: $message, documentationUrl: $documentationUrl)';
+
  }

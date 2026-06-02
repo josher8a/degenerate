@@ -82,7 +82,7 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
   trigger: trigger ?? this.trigger,
   versionId: versionId ?? this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponseResult &&
           end == other.end &&
           error == other.error &&
@@ -95,7 +95,10 @@ WorDescribeWorkflowInstanceResponseResult copyWith({DateTime? Function()? end, R
           listEquals(steps, other.steps) &&
           success == other.success &&
           trigger == other.trigger &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(end, error, output, params, queued, start, status, stepCount, Object.hashAll(steps), success, trigger, versionId); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponseResult(end: $end, error: $error, output: $output, params: $params, queued: $queued, start: $start, status: $status, stepCount: $stepCount, steps: $steps, success: $success, trigger: $trigger, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(end, error, output, params, queued, start, status, stepCount, Object.hashAll(steps), success, trigger, versionId);
+
+@override String toString() => 'WorDescribeWorkflowInstanceResponseResult(end: $end, error: $error, output: $output, params: $params, queued: $queued, start: $start, status: $status, stepCount: $stepCount, steps: $steps, success: $success, trigger: $trigger, versionId: $versionId)';
+
  }

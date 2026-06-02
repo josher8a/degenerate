@@ -32,11 +32,14 @@ PostTreasuryCreditReversalsRequest copyWith({List<String>? Function()? expand, M
   metadata: metadata != null ? metadata() : this.metadata,
   receivedCredit: receivedCredit ?? this.receivedCredit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryCreditReversalsRequest &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          receivedCredit == other.receivedCredit; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata, receivedCredit); } 
-@override String toString() { return 'PostTreasuryCreditReversalsRequest(expand: $expand, metadata: $metadata, receivedCredit: $receivedCredit)'; } 
+          receivedCredit == other.receivedCredit;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), metadata, receivedCredit);
+
+@override String toString() => 'PostTreasuryCreditReversalsRequest(expand: $expand, metadata: $metadata, receivedCredit: $receivedCredit)';
+
  }

@@ -20,10 +20,13 @@ InvoicePaymentMethodOptionsParam17 copyWith({InvoicePaymentMethodOptionsParamIns
   installments: installments != null ? installments() : this.installments,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam17 &&
           installments == other.installments &&
-          requestThreeDSecure == other.requestThreeDSecure; } 
-@override int get hashCode { return Object.hash(installments, requestThreeDSecure); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam17(installments: $installments, requestThreeDSecure: $requestThreeDSecure)'; } 
+          requestThreeDSecure == other.requestThreeDSecure;
+
+@override int get hashCode => Object.hash(installments, requestThreeDSecure);
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam17(installments: $installments, requestThreeDSecure: $requestThreeDSecure)';
+
  }

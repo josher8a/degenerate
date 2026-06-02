@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookResponseFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookResponseFailedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookResponseFailedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookResponseFailedType($value)';
+
  }
 /// Sent when a background response has failed.
 /// 
@@ -73,13 +76,16 @@ WebhookResponseFailed copyWith({int? createdAt, String? id, WebhookBatchCancelle
   object: object != null ? object() : this.object,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookResponseFailed &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookResponseFailed(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, id, data, object, type);
+
+@override String toString() => 'WebhookResponseFailed(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';
+
  }

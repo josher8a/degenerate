@@ -103,7 +103,7 @@ PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? 
   sysctls: sysctls != null ? sysctls() : this.sysctls,
   windowsOptions: windowsOptions != null ? windowsOptions() : this.windowsOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodSecurityContext &&
           appArmorProfile == other.appArmorProfile &&
           fsGroup == other.fsGroup &&
@@ -117,7 +117,10 @@ PodSecurityContext copyWith({AppArmorProfile? Function()? appArmorProfile, int? 
           listEquals(supplementalGroups, other.supplementalGroups) &&
           supplementalGroupsPolicy == other.supplementalGroupsPolicy &&
           listEquals(sysctls, other.sysctls) &&
-          windowsOptions == other.windowsOptions; } 
-@override int get hashCode { return Object.hash(appArmorProfile, fsGroup, fsGroupChangePolicy, runAsGroup, runAsNonRoot, runAsUser, seLinuxChangePolicy, seLinuxOptions, seccompProfile, Object.hashAll(supplementalGroups ?? const []), supplementalGroupsPolicy, Object.hashAll(sysctls ?? const []), windowsOptions); } 
-@override String toString() { return 'PodSecurityContext(appArmorProfile: $appArmorProfile, fsGroup: $fsGroup, fsGroupChangePolicy: $fsGroupChangePolicy, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxChangePolicy: $seLinuxChangePolicy, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, supplementalGroups: $supplementalGroups, supplementalGroupsPolicy: $supplementalGroupsPolicy, sysctls: $sysctls, windowsOptions: $windowsOptions)'; } 
+          windowsOptions == other.windowsOptions;
+
+@override int get hashCode => Object.hash(appArmorProfile, fsGroup, fsGroupChangePolicy, runAsGroup, runAsNonRoot, runAsUser, seLinuxChangePolicy, seLinuxOptions, seccompProfile, Object.hashAll(supplementalGroups ?? const []), supplementalGroupsPolicy, Object.hashAll(sysctls ?? const []), windowsOptions);
+
+@override String toString() => 'PodSecurityContext(appArmorProfile: $appArmorProfile, fsGroup: $fsGroup, fsGroupChangePolicy: $fsGroupChangePolicy, runAsGroup: $runAsGroup, runAsNonRoot: $runAsNonRoot, runAsUser: $runAsUser, seLinuxChangePolicy: $seLinuxChangePolicy, seLinuxOptions: $seLinuxOptions, seccompProfile: $seccompProfile, supplementalGroups: $supplementalGroups, supplementalGroupsPolicy: $supplementalGroupsPolicy, sysctls: $sysctls, windowsOptions: $windowsOptions)';
+
  }

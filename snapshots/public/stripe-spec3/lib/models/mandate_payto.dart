@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandatePaytoPaymentSchedule && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandatePaytoPaymentSchedule($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandatePaytoPaymentSchedule && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandatePaytoPaymentSchedule($value)';
+
  }
 /// 
 @immutable final class MandatePayto {const MandatePayto({required this.amountType, required this.paymentSchedule, this.amount, this.endDate, this.paymentsPerPeriod, this.purpose, this.startDate, });
@@ -108,7 +111,7 @@ MandatePayto copyWith({int? Function()? amount, MandatePaytoAmountType? amountTy
   purpose: purpose != null ? purpose() : this.purpose,
   startDate: startDate != null ? startDate() : this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandatePayto &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -116,7 +119,10 @@ MandatePayto copyWith({int? Function()? amount, MandatePaytoAmountType? amountTy
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
           purpose == other.purpose &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate); } 
-@override String toString() { return 'MandatePayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate);
+
+@override String toString() => 'MandatePayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';
+
  }

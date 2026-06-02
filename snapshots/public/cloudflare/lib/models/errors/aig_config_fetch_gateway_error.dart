@@ -17,7 +17,8 @@ final class AigConfigFetchGatewayError$404 extends AigConfigFetchGatewayError {c
 
 final AigConfigFetchGatewayResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigFetchGatewayError$Unknown extends AigConfigFetchGatewayError {const AigConfigFetchGatewayError$Unknown(this.statusCode, this.rawBody, );
 

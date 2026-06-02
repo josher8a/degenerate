@@ -63,7 +63,7 @@ SecurityCenterSecurityTxt copyWith({List<Uri>? Function()? acknowledgments, List
   policy: policy != null ? policy() : this.policy,
   preferredLanguages: preferredLanguages != null ? preferredLanguages() : this.preferredLanguages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityCenterSecurityTxt &&
           listEquals(acknowledgments, other.acknowledgments) &&
           listEquals(canonical, other.canonical) &&
@@ -73,7 +73,10 @@ SecurityCenterSecurityTxt copyWith({List<Uri>? Function()? acknowledgments, List
           expires == other.expires &&
           listEquals(hiring, other.hiring) &&
           listEquals(policy, other.policy) &&
-          preferredLanguages == other.preferredLanguages; } 
-@override int get hashCode { return Object.hash(Object.hashAll(acknowledgments ?? const []), Object.hashAll(canonical ?? const []), Object.hashAll(contact ?? const []), enabled, Object.hashAll(encryption ?? const []), expires, Object.hashAll(hiring ?? const []), Object.hashAll(policy ?? const []), preferredLanguages); } 
-@override String toString() { return 'SecurityCenterSecurityTxt(acknowledgments: $acknowledgments, canonical: $canonical, contact: $contact, enabled: $enabled, encryption: $encryption, expires: $expires, hiring: $hiring, policy: $policy, preferredLanguages: $preferredLanguages)'; } 
+          preferredLanguages == other.preferredLanguages;
+
+@override int get hashCode => Object.hash(Object.hashAll(acknowledgments ?? const []), Object.hashAll(canonical ?? const []), Object.hashAll(contact ?? const []), enabled, Object.hashAll(encryption ?? const []), expires, Object.hashAll(hiring ?? const []), Object.hashAll(policy ?? const []), preferredLanguages);
+
+@override String toString() => 'SecurityCenterSecurityTxt(acknowledgments: $acknowledgments, canonical: $canonical, contact: $contact, enabled: $enabled, encryption: $encryption, expires: $expires, hiring: $hiring, policy: $policy, preferredLanguages: $preferredLanguages)';
+
  }

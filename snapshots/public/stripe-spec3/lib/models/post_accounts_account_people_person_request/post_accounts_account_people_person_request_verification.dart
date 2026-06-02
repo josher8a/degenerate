@@ -20,10 +20,13 @@ PostAccountsAccountPeoplePersonRequestVerification copyWith({AdditionalDocument?
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   document: document != null ? document() : this.document,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountPeoplePersonRequestVerification &&
           additionalDocument == other.additionalDocument &&
-          document == other.document; } 
-@override int get hashCode { return Object.hash(additionalDocument, document); } 
-@override String toString() { return 'PostAccountsAccountPeoplePersonRequestVerification(additionalDocument: $additionalDocument, document: $document)'; } 
+          document == other.document;
+
+@override int get hashCode => Object.hash(additionalDocument, document);
+
+@override String toString() => 'PostAccountsAccountPeoplePersonRequestVerification(additionalDocument: $additionalDocument, document: $document)';
+
  }

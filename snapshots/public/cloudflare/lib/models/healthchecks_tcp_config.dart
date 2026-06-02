@@ -23,10 +23,13 @@ HealthchecksTcpConfig copyWith({HealthchecksTcpConfigMethod Function()? method, 
   method: method != null ? method() : this.method,
   port: port != null ? port() : this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HealthchecksTcpConfig &&
           method == other.method &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(method, port); } 
-@override String toString() { return 'HealthchecksTcpConfig(method: $method, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(method, port);
+
+@override String toString() => 'HealthchecksTcpConfig(method: $method, port: $port)';
+
  }

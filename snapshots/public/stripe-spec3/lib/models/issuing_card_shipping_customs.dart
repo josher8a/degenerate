@@ -24,9 +24,12 @@ return errors; }
 IssuingCardShippingCustoms copyWith({String? Function()? eoriNumber}) { return IssuingCardShippingCustoms(
   eoriNumber: eoriNumber != null ? eoriNumber() : this.eoriNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardShippingCustoms &&
-          eoriNumber == other.eoriNumber; } 
-@override int get hashCode { return eoriNumber.hashCode; } 
-@override String toString() { return 'IssuingCardShippingCustoms(eoriNumber: $eoriNumber)'; } 
+          eoriNumber == other.eoriNumber;
+
+@override int get hashCode => eoriNumber.hashCode;
+
+@override String toString() => 'IssuingCardShippingCustoms(eoriNumber: $eoriNumber)';
+
  }

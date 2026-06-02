@@ -61,7 +61,7 @@ WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentC
   workflow: workflow ?? this.workflow,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentCreated &&
           action == other.action &&
           deployment == other.deployment &&
@@ -71,7 +71,10 @@ WebhookDeploymentCreated copyWith({ItemCreatedAction? action, WebhookDeploymentC
           repository == other.repository &&
           sender == other.sender &&
           workflow == other.workflow &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, deployment, enterprise, installation, organization, repository, sender, workflow, workflowRun); } 
-@override String toString() { return 'WebhookDeploymentCreated(action: $action, deployment: $deployment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(action, deployment, enterprise, installation, organization, repository, sender, workflow, workflowRun);
+
+@override String toString() => 'WebhookDeploymentCreated(action: $action, deployment: $deployment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, workflow: $workflow, workflowRun: $workflowRun)';
+
  }

@@ -40,13 +40,16 @@ CustomerSessionResourceComponents copyWith({CustomerSessionResourceComponentsRes
   paymentElement: paymentElement ?? this.paymentElement,
   pricingTable: pricingTable ?? this.pricingTable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponents &&
           buyButton == other.buyButton &&
           customerSheet == other.customerSheet &&
           mobilePaymentElement == other.mobilePaymentElement &&
           paymentElement == other.paymentElement &&
-          pricingTable == other.pricingTable; } 
-@override int get hashCode { return Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable); } 
-@override String toString() { return 'CustomerSessionResourceComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)'; } 
+          pricingTable == other.pricingTable;
+
+@override int get hashCode => Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable);
+
+@override String toString() => 'CustomerSessionResourceComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)';
+
  }

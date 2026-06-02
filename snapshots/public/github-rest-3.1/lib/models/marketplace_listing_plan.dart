@@ -88,7 +88,7 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
   state: state ?? this.state,
   bullets: bullets ?? this.bullets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplaceListingPlan &&
           url == other.url &&
           accountsUrl == other.accountsUrl &&
@@ -102,7 +102,10 @@ MarketplaceListingPlan copyWith({Uri? url, Uri? accountsUrl, int? id, int? numbe
           hasFreeTrial == other.hasFreeTrial &&
           unitName == other.unitName &&
           state == other.state &&
-          listEquals(bullets, other.bullets); } 
-@override int get hashCode { return Object.hash(url, accountsUrl, id, number, name, description, monthlyPriceInCents, yearlyPriceInCents, priceModel, hasFreeTrial, unitName, state, Object.hashAll(bullets)); } 
-@override String toString() { return 'MarketplaceListingPlan(url: $url, accountsUrl: $accountsUrl, id: $id, number: $number, name: $name, description: $description, monthlyPriceInCents: $monthlyPriceInCents, yearlyPriceInCents: $yearlyPriceInCents, priceModel: $priceModel, hasFreeTrial: $hasFreeTrial, unitName: $unitName, state: $state, bullets: $bullets)'; } 
+          listEquals(bullets, other.bullets);
+
+@override int get hashCode => Object.hash(url, accountsUrl, id, number, name, description, monthlyPriceInCents, yearlyPriceInCents, priceModel, hasFreeTrial, unitName, state, Object.hashAll(bullets));
+
+@override String toString() => 'MarketplaceListingPlan(url: $url, accountsUrl: $accountsUrl, id: $id, number: $number, name: $name, description: $description, monthlyPriceInCents: $monthlyPriceInCents, yearlyPriceInCents: $yearlyPriceInCents, priceModel: $priceModel, hasFreeTrial: $hasFreeTrial, unitName: $unitName, state: $state, bullets: $bullets)';
+
  }

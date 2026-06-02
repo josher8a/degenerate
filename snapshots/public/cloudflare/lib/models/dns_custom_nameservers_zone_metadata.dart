@@ -31,10 +31,13 @@ DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double Fun
   enabled: enabled != null ? enabled() : this.enabled,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsCustomNameserversZoneMetadata &&
           enabled == other.enabled &&
-          nsSet == other.nsSet; } 
-@override int get hashCode { return Object.hash(enabled, nsSet); } 
-@override String toString() { return 'DnsCustomNameserversZoneMetadata(enabled: $enabled, nsSet: $nsSet)'; } 
+          nsSet == other.nsSet;
+
+@override int get hashCode => Object.hash(enabled, nsSet);
+
+@override String toString() => 'DnsCustomNameserversZoneMetadata(enabled: $enabled, nsSet: $nsSet)';
+
  }

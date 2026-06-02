@@ -62,7 +62,7 @@ DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, Str
   tracerouteStats: tracerouteStats != null ? tracerouteStats() : this.tracerouteStats,
   tracerouteStatsByColo: tracerouteStatsByColo != null ? tracerouteStatsByColo() : this.tracerouteStatsByColo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteDetailsResponse &&
           host == other.host &&
           interval == other.interval &&
@@ -71,7 +71,10 @@ DigitalExperienceMonitoringTracerouteDetailsResponse copyWith({String? host, Str
           listEquals(targetPolicies, other.targetPolicies) &&
           targeted == other.targeted &&
           tracerouteStats == other.tracerouteStats &&
-          listEquals(tracerouteStatsByColo, other.tracerouteStatsByColo); } 
-@override int get hashCode { return Object.hash(host, interval, kind, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteStats, Object.hashAll(tracerouteStatsByColo ?? const [])); } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteDetailsResponse(host: $host, interval: $interval, kind: $kind, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteStats: $tracerouteStats, tracerouteStatsByColo: $tracerouteStatsByColo)'; } 
+          listEquals(tracerouteStatsByColo, other.tracerouteStatsByColo);
+
+@override int get hashCode => Object.hash(host, interval, kind, name, Object.hashAll(targetPolicies ?? const []), targeted, tracerouteStats, Object.hashAll(tracerouteStatsByColo ?? const []));
+
+@override String toString() => 'DigitalExperienceMonitoringTracerouteDetailsResponse(host: $host, interval: $interval, kind: $kind, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, tracerouteStats: $tracerouteStats, tracerouteStatsByColo: $tracerouteStatsByColo)';
+
  }

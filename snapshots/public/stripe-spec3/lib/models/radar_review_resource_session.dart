@@ -54,12 +54,15 @@ RadarReviewResourceSession copyWith({String? Function()? browser, String? Functi
   platform: platform != null ? platform() : this.platform,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarReviewResourceSession &&
           browser == other.browser &&
           device == other.device &&
           platform == other.platform &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(browser, device, platform, version); } 
-@override String toString() { return 'RadarReviewResourceSession(browser: $browser, device: $device, platform: $platform, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(browser, device, platform, version);
+
+@override String toString() => 'RadarReviewResourceSession(browser: $browser, device: $device, platform: $platform, version: $version)';
+
  }

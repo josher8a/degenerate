@@ -30,10 +30,13 @@ IamCreateScope copyWith({IamCreateResourceGroupScopeScopeKey? Function()? key, L
   key: key != null ? key() : this.key,
   objects: objects ?? this.objects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateScope &&
           key == other.key &&
-          listEquals(objects, other.objects); } 
-@override int get hashCode { return Object.hash(key, Object.hashAll(objects)); } 
-@override String toString() { return 'IamCreateScope(key: $key, objects: $objects)'; } 
+          listEquals(objects, other.objects);
+
+@override int get hashCode => Object.hash(key, Object.hashAll(objects));
+
+@override String toString() => 'IamCreateScope(key: $key, objects: $objects)';
+
  }

@@ -41,13 +41,16 @@ PriceTier copyWith({int? Function()? flatAmount, String? Function()? flatAmountD
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
   upTo: upTo != null ? upTo() : this.upTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PriceTier &&
           flatAmount == other.flatAmount &&
           flatAmountDecimal == other.flatAmountDecimal &&
           unitAmount == other.unitAmount &&
           unitAmountDecimal == other.unitAmountDecimal &&
-          upTo == other.upTo; } 
-@override int get hashCode { return Object.hash(flatAmount, flatAmountDecimal, unitAmount, unitAmountDecimal, upTo); } 
-@override String toString() { return 'PriceTier(flatAmount: $flatAmount, flatAmountDecimal: $flatAmountDecimal, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal, upTo: $upTo)'; } 
+          upTo == other.upTo;
+
+@override int get hashCode => Object.hash(flatAmount, flatAmountDecimal, unitAmount, unitAmountDecimal, upTo);
+
+@override String toString() => 'PriceTier(flatAmount: $flatAmount, flatAmountDecimal: $flatAmountDecimal, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal, upTo: $upTo)';
+
  }

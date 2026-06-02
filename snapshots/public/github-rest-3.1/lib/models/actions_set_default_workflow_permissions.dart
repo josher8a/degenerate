@@ -22,10 +22,13 @@ ActionsSetDefaultWorkflowPermissions copyWith({ActionsDefaultWorkflowPermissions
   defaultWorkflowPermissions: defaultWorkflowPermissions != null ? defaultWorkflowPermissions() : this.defaultWorkflowPermissions,
   canApprovePullRequestReviews: canApprovePullRequestReviews != null ? canApprovePullRequestReviews() : this.canApprovePullRequestReviews,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetDefaultWorkflowPermissions &&
           defaultWorkflowPermissions == other.defaultWorkflowPermissions &&
-          canApprovePullRequestReviews == other.canApprovePullRequestReviews; } 
-@override int get hashCode { return Object.hash(defaultWorkflowPermissions, canApprovePullRequestReviews); } 
-@override String toString() { return 'ActionsSetDefaultWorkflowPermissions(defaultWorkflowPermissions: $defaultWorkflowPermissions, canApprovePullRequestReviews: $canApprovePullRequestReviews)'; } 
+          canApprovePullRequestReviews == other.canApprovePullRequestReviews;
+
+@override int get hashCode => Object.hash(defaultWorkflowPermissions, canApprovePullRequestReviews);
+
+@override String toString() => 'ActionsSetDefaultWorkflowPermissions(defaultWorkflowPermissions: $defaultWorkflowPermissions, canApprovePullRequestReviews: $canApprovePullRequestReviews)';
+
  }

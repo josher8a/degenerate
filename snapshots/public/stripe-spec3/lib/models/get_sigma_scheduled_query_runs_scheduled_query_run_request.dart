@@ -11,7 +11,10 @@ static bool canParse(Map<String, dynamic> json) { return true; }
 GetSigmaScheduledQueryRunsScheduledQueryRunRequest copyWith() { return const GetSigmaScheduledQueryRunsScheduledQueryRunRequest(
 
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is GetSigmaScheduledQueryRunsScheduledQueryRunRequest; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'GetSigmaScheduledQueryRunsScheduledQueryRunRequest()'; } 
+@override bool operator ==(Object other) => identical(this, other) || other is GetSigmaScheduledQueryRunsScheduledQueryRunRequest;
+
+@override int get hashCode => runtimeType.hashCode;
+
+@override String toString() => 'GetSigmaScheduledQueryRunsScheduledQueryRunRequest()';
+
  }

@@ -33,12 +33,15 @@ WebhooksSecurityAdvisoryVulnerabilities copyWith({FirstPatchedVersion? Function(
   severity: severity ?? this.severity,
   vulnerableVersionRange: vulnerableVersionRange ?? this.vulnerableVersionRange,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSecurityAdvisoryVulnerabilities &&
           firstPatchedVersion == other.firstPatchedVersion &&
           package == other.package &&
           severity == other.severity &&
-          vulnerableVersionRange == other.vulnerableVersionRange; } 
-@override int get hashCode { return Object.hash(firstPatchedVersion, package, severity, vulnerableVersionRange); } 
-@override String toString() { return 'WebhooksSecurityAdvisoryVulnerabilities(firstPatchedVersion: $firstPatchedVersion, package: $package, severity: $severity, vulnerableVersionRange: $vulnerableVersionRange)'; } 
+          vulnerableVersionRange == other.vulnerableVersionRange;
+
+@override int get hashCode => Object.hash(firstPatchedVersion, package, severity, vulnerableVersionRange);
+
+@override String toString() => 'WebhooksSecurityAdvisoryVulnerabilities(firstPatchedVersion: $firstPatchedVersion, package: $package, severity: $severity, vulnerableVersionRange: $vulnerableVersionRange)';
+
  }

@@ -22,10 +22,13 @@ PostCustomersCustomerBankAccountsIdVerifyRequest copyWith({List<int>? Function()
   amounts: amounts != null ? amounts() : this.amounts,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerBankAccountsIdVerifyRequest &&
           listEquals(amounts, other.amounts) &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(Object.hashAll(amounts ?? const []), Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostCustomersCustomerBankAccountsIdVerifyRequest(amounts: $amounts, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(Object.hashAll(amounts ?? const []), Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostCustomersCustomerBankAccountsIdVerifyRequest(amounts: $amounts, expand: $expand)';
+
  }

@@ -23,10 +23,13 @@ CreateContainerBodyExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? anch
   anchor: anchor ?? this.anchor,
   minutes: minutes ?? this.minutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateContainerBodyExpiresAfter &&
           anchor == other.anchor &&
-          minutes == other.minutes; } 
-@override int get hashCode { return Object.hash(anchor, minutes); } 
-@override String toString() { return 'CreateContainerBodyExpiresAfter(anchor: $anchor, minutes: $minutes)'; } 
+          minutes == other.minutes;
+
+@override int get hashCode => Object.hash(anchor, minutes);
+
+@override String toString() => 'CreateContainerBodyExpiresAfter(anchor: $anchor, minutes: $minutes)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RuntimeConstraints copyWith({List<String>? Function()? allowedPortPrivacySettings}) { return RuntimeConstraints(
   allowedPortPrivacySettings: allowedPortPrivacySettings != null ? allowedPortPrivacySettings() : this.allowedPortPrivacySettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuntimeConstraints &&
-          listEquals(allowedPortPrivacySettings, other.allowedPortPrivacySettings); } 
-@override int get hashCode { return Object.hashAll(allowedPortPrivacySettings ?? const []); } 
-@override String toString() { return 'RuntimeConstraints(allowedPortPrivacySettings: $allowedPortPrivacySettings)'; } 
+          listEquals(allowedPortPrivacySettings, other.allowedPortPrivacySettings);
+
+@override int get hashCode => Object.hashAll(allowedPortPrivacySettings ?? const []);
+
+@override String toString() => 'RuntimeConstraints(allowedPortPrivacySettings: $allowedPortPrivacySettings)';
+
  }

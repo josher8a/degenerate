@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserLocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserLocationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserLocationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserLocationType($value)';
+
  }
 @immutable final class UserLocation {const UserLocation({required this.approximate, required this.type, });
 
@@ -42,10 +45,13 @@ UserLocation copyWith({Approximate? approximate, UserLocationType? type, }) { re
   approximate: approximate ?? this.approximate,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserLocation &&
           approximate == other.approximate &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(approximate, type); } 
-@override String toString() { return 'UserLocation(approximate: $approximate, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(approximate, type);
+
+@override String toString() => 'UserLocation(approximate: $approximate, type: $type)';
+
  }

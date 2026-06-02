@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventAdjustmentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventAdjustmentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterEventAdjustmentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingMeterEventAdjustmentObject($value)';
+
  }
 /// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.
 @immutable final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({required this.eventName, required this.livemode, required this.object, required this.status, required this.type, this.cancel, });
@@ -77,14 +80,17 @@ BillingMeterEventAdjustment copyWith({BillingMeterResourceBillingMeterEventAdjus
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterEventAdjustment &&
           cancel == other.cancel &&
           eventName == other.eventName &&
           livemode == other.livemode &&
           object == other.object &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cancel, eventName, livemode, object, status, type); } 
-@override String toString() { return 'BillingMeterEventAdjustment(cancel: $cancel, eventName: $eventName, livemode: $livemode, object: $object, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cancel, eventName, livemode, object, status, type);
+
+@override String toString() => 'BillingMeterEventAdjustment(cancel: $cancel, eventName: $eventName, livemode: $livemode, object: $object, status: $status, type: $type)';
+
  }

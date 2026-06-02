@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentityVerificationReportObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentityVerificationReportObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentityVerificationReportObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentityVerificationReportObject($value)';
+
  }
 /// A VerificationReport is the result of an attempt to collect and verify data from a user.
 /// The collection of verification checks performed is determined from the `type` and `options`
@@ -141,7 +144,7 @@ IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int?
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
   verificationSession: verificationSession != null ? verificationSession() : this.verificationSession,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IdentityVerificationReport &&
           clientReferenceId == other.clientReferenceId &&
           created == other.created &&
@@ -156,7 +159,10 @@ IdentityVerificationReport copyWith({String? Function()? clientReferenceId, int?
           selfie == other.selfie &&
           type == other.type &&
           verificationFlow == other.verificationFlow &&
-          verificationSession == other.verificationSession; } 
-@override int get hashCode { return Object.hash(clientReferenceId, created, document, email, id, idNumber, livemode, object, options, phone, selfie, type, verificationFlow, verificationSession); } 
-@override String toString() { return 'IdentityVerificationReport(clientReferenceId: $clientReferenceId, created: $created, document: $document, email: $email, id: $id, idNumber: $idNumber, livemode: $livemode, object: $object, options: $options, phone: $phone, selfie: $selfie, type: $type, verificationFlow: $verificationFlow, verificationSession: $verificationSession)'; } 
+          verificationSession == other.verificationSession;
+
+@override int get hashCode => Object.hash(clientReferenceId, created, document, email, id, idNumber, livemode, object, options, phone, selfie, type, verificationFlow, verificationSession);
+
+@override String toString() => 'IdentityVerificationReport(clientReferenceId: $clientReferenceId, created: $created, document: $document, email: $email, id: $id, idNumber: $idNumber, livemode: $livemode, object: $object, options: $options, phone: $phone, selfie: $selfie, type: $type, verificationFlow: $verificationFlow, verificationSession: $verificationSession)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
 RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404 copyWith({String? error}) { return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404(
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404 &&
-          error == other.error; } 
-@override int get hashCode { return error.hashCode; } 
-@override String toString() { return 'RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404(error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => error.hashCode;
+
+@override String toString() => 'RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404(error: $error)';
+
  }

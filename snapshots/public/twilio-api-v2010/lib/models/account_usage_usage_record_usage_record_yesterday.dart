@@ -109,7 +109,7 @@ AccountUsageUsageRecordUsageRecordYesterday copyWith({String? Function()? accoun
   usage: usage != null ? usage() : this.usage,
   usageUnit: usageUnit != null ? usageUnit() : this.usageUnit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUsageUsageRecordUsageRecordYesterday &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -125,7 +125,10 @@ AccountUsageUsageRecordUsageRecordYesterday copyWith({String? Function()? accoun
           subresourceUris == other.subresourceUris &&
           uri == other.uri &&
           usage == other.usage &&
-          usageUnit == other.usageUnit; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit); } 
-@override String toString() { return 'AccountUsageUsageRecordUsageRecordYesterday(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)'; } 
+          usageUnit == other.usageUnit;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit);
+
+@override String toString() => 'AccountUsageUsageRecordUsageRecordYesterday(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)';
+
  }

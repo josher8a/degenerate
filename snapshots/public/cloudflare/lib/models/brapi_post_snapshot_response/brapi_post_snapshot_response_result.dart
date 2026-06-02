@@ -23,10 +23,13 @@ BrapiPostSnapshotResponseResult copyWith({String? content, String? screenshot, }
   content: content ?? this.content,
   screenshot: screenshot ?? this.screenshot,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostSnapshotResponseResult &&
           content == other.content &&
-          screenshot == other.screenshot; } 
-@override int get hashCode { return Object.hash(content, screenshot); } 
-@override String toString() { return 'BrapiPostSnapshotResponseResult(content: $content, screenshot: $screenshot)'; } 
+          screenshot == other.screenshot;
+
+@override int get hashCode => Object.hash(content, screenshot);
+
+@override String toString() => 'BrapiPostSnapshotResponseResult(content: $content, screenshot: $screenshot)';
+
  }

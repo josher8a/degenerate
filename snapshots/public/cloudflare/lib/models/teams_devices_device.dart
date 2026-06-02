@@ -133,7 +133,7 @@ TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevi
   user: user != null ? user() : this.user,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDevice &&
           account == other.account &&
           created == other.created &&
@@ -153,7 +153,10 @@ TeamsDevicesDevice copyWith({TeamsDevicesAccount? Function()? account, TeamsDevi
           tunnelType == other.tunnelType &&
           updated == other.updated &&
           user == other.user &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version); } 
-@override String toString() { return 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version);
+
+@override String toString() => 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)';
+
  }

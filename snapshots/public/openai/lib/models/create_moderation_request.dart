@@ -29,10 +29,13 @@ CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateMod
   input: input ?? this.input,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateModerationRequest &&
           input == other.input &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(input, model); } 
-@override String toString() { return 'CreateModerationRequest(input: $input, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(input, model);
+
+@override String toString() => 'CreateModerationRequest(input: $input, model: $model)';
+
  }

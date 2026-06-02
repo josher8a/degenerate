@@ -113,7 +113,7 @@ WebhookCodeScanningAlertReopenedAlert copyWith({List<SimpleUser>? Function()? as
   url: url ?? this.url,
   dismissalApprovedBy: dismissalApprovedBy != null ? dismissalApprovedBy() : this.dismissalApprovedBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertReopenedAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -131,7 +131,10 @@ WebhookCodeScanningAlertReopenedAlert copyWith({List<SimpleUser>? Function()? as
           tool == other.tool &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          dismissalApprovedBy == other.dismissalApprovedBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, updatedAt, url, dismissalApprovedBy); } 
-@override String toString() { return 'WebhookCodeScanningAlertReopenedAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, updatedAt: $updatedAt, url: $url, dismissalApprovedBy: $dismissalApprovedBy)'; } 
+          dismissalApprovedBy == other.dismissalApprovedBy;
+
+@override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, updatedAt, url, dismissalApprovedBy);
+
+@override String toString() => 'WebhookCodeScanningAlertReopenedAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, updatedAt: $updatedAt, url: $url, dismissalApprovedBy: $dismissalApprovedBy)';
+
  }

@@ -25,18 +25,13 @@ final class MessageResponse {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is MessageResponse && message == other.message;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is MessageResponse && message == other.message;
 
   @override
-  int get hashCode {
-    return message.hashCode;
-  }
+  int get hashCode => message.hashCode;
 
   @override
-  String toString() {
-    return 'MessageResponse(message: $message)';
-  }
+  String toString() => 'MessageResponse(message: $message)';
 }

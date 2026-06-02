@@ -59,7 +59,7 @@ PageShieldVersion copyWith({PageShieldCryptominingScore? Function()? cryptominin
   malwareScore: malwareScore != null ? malwareScore() : this.malwareScore,
   obfuscationScore: obfuscationScore != null ? obfuscationScore() : this.obfuscationScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldVersion &&
           cryptominingScore == other.cryptominingScore &&
           dataflowScore == other.dataflowScore &&
@@ -68,7 +68,10 @@ PageShieldVersion copyWith({PageShieldCryptominingScore? Function()? cryptominin
           jsIntegrityScore == other.jsIntegrityScore &&
           magecartScore == other.magecartScore &&
           malwareScore == other.malwareScore &&
-          obfuscationScore == other.obfuscationScore; } 
-@override int get hashCode { return Object.hash(cryptominingScore, dataflowScore, fetchedAt, hash, jsIntegrityScore, magecartScore, malwareScore, obfuscationScore); } 
-@override String toString() { return 'PageShieldVersion(cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, fetchedAt: $fetchedAt, hash: $hash, jsIntegrityScore: $jsIntegrityScore, magecartScore: $magecartScore, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore)'; } 
+          obfuscationScore == other.obfuscationScore;
+
+@override int get hashCode => Object.hash(cryptominingScore, dataflowScore, fetchedAt, hash, jsIntegrityScore, magecartScore, malwareScore, obfuscationScore);
+
+@override String toString() => 'PageShieldVersion(cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, fetchedAt: $fetchedAt, hash: $hash, jsIntegrityScore: $jsIntegrityScore, magecartScore: $magecartScore, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore)';
+
  }

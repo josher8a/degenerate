@@ -17,7 +17,8 @@ final class RadarGetCrawlersTimeseriesGroupError$400 extends RadarGetCrawlersTim
 
 final RadarGetCrawlersTimeseriesGroupResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetCrawlersTimeseriesGroupError$Unknown extends RadarGetCrawlersTimeseriesGroupError {const RadarGetCrawlersTimeseriesGroupError$Unknown(this.statusCode, this.rawBody, );
 

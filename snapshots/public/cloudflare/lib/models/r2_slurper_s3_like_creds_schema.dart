@@ -21,10 +21,13 @@ R2SlurperS3LikeCredsSchema copyWith({String? accessKeyId, String? secretAccessKe
   accessKeyId: accessKeyId ?? this.accessKeyId,
   secretAccessKey: secretAccessKey ?? this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperS3LikeCredsSchema &&
           accessKeyId == other.accessKeyId &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, secretAccessKey); } 
-@override String toString() { return 'R2SlurperS3LikeCredsSchema(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, secretAccessKey);
+
+@override String toString() => 'R2SlurperS3LikeCredsSchema(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey)';
+
  }

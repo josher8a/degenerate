@@ -21,10 +21,13 @@ ProcessorsCategories copyWith({List<CategoriesContent>? content, List<Processors
   content: content ?? this.content,
   risks: risks ?? this.risks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProcessorsCategories &&
           listEquals(content, other.content) &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content), Object.hashAll(risks)); } 
-@override String toString() { return 'ProcessorsCategories(content: $content, risks: $risks)'; } 
+          listEquals(risks, other.risks);
+
+@override int get hashCode => Object.hash(Object.hashAll(content), Object.hashAll(risks));
+
+@override String toString() => 'ProcessorsCategories(content: $content, risks: $risks)';
+
  }

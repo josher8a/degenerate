@@ -17,7 +17,8 @@ final class AigConfigDeleteGatewayLogsError$400 extends AigConfigDeleteGatewayLo
 
 final AigConfigDeleteGatewayLogsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigDeleteGatewayLogsError$Unknown extends AigConfigDeleteGatewayLogsError {const AigConfigDeleteGatewayLogsError$Unknown(this.statusCode, this.rawBody, );
 

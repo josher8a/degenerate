@@ -26,11 +26,14 @@ ChoicesMessage copyWith({String? Function()? content, MessagesRole? role, Map<St
   role: role ?? this.role,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChoicesMessage &&
           content == other.content &&
           role == other.role &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(content, role, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'ChoicesMessage(content: $content, role: $role, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(content, role, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'ChoicesMessage(content: $content, role: $role, additionalProperties: $additionalProperties)';
+
  }

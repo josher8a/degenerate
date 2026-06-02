@@ -20,10 +20,13 @@ Fraudulent copyWith({CanceledAdditionalDocumentation? Function()? additionalDocu
   additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
   explanation: explanation != null ? explanation() : this.explanation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Fraudulent &&
           additionalDocumentation == other.additionalDocumentation &&
-          explanation == other.explanation; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation); } 
-@override String toString() { return 'Fraudulent(additionalDocumentation: $additionalDocumentation, explanation: $explanation)'; } 
+          explanation == other.explanation;
+
+@override int get hashCode => Object.hash(additionalDocumentation, explanation);
+
+@override String toString() => 'Fraudulent(additionalDocumentation: $additionalDocumentation, explanation: $explanation)';
+
  }

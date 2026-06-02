@@ -35,12 +35,15 @@ InvoicesResourceStatusTransitions copyWith({int? Function()? finalizedAt, int? F
   paidAt: paidAt != null ? paidAt() : this.paidAt,
   voidedAt: voidedAt != null ? voidedAt() : this.voidedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesResourceStatusTransitions &&
           finalizedAt == other.finalizedAt &&
           markedUncollectibleAt == other.markedUncollectibleAt &&
           paidAt == other.paidAt &&
-          voidedAt == other.voidedAt; } 
-@override int get hashCode { return Object.hash(finalizedAt, markedUncollectibleAt, paidAt, voidedAt); } 
-@override String toString() { return 'InvoicesResourceStatusTransitions(finalizedAt: $finalizedAt, markedUncollectibleAt: $markedUncollectibleAt, paidAt: $paidAt, voidedAt: $voidedAt)'; } 
+          voidedAt == other.voidedAt;
+
+@override int get hashCode => Object.hash(finalizedAt, markedUncollectibleAt, paidAt, voidedAt);
+
+@override String toString() => 'InvoicesResourceStatusTransitions(finalizedAt: $finalizedAt, markedUncollectibleAt: $markedUncollectibleAt, paidAt: $paidAt, voidedAt: $voidedAt)';
+
  }

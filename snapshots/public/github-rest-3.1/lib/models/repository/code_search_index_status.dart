@@ -21,10 +21,13 @@ CodeSearchIndexStatus copyWith({bool? Function()? lexicalSearchOk, String? Funct
   lexicalSearchOk: lexicalSearchOk != null ? lexicalSearchOk() : this.lexicalSearchOk,
   lexicalCommitSha: lexicalCommitSha != null ? lexicalCommitSha() : this.lexicalCommitSha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSearchIndexStatus &&
           lexicalSearchOk == other.lexicalSearchOk &&
-          lexicalCommitSha == other.lexicalCommitSha; } 
-@override int get hashCode { return Object.hash(lexicalSearchOk, lexicalCommitSha); } 
-@override String toString() { return 'CodeSearchIndexStatus(lexicalSearchOk: $lexicalSearchOk, lexicalCommitSha: $lexicalCommitSha)'; } 
+          lexicalCommitSha == other.lexicalCommitSha;
+
+@override int get hashCode => Object.hash(lexicalSearchOk, lexicalCommitSha);
+
+@override String toString() => 'CodeSearchIndexStatus(lexicalSearchOk: $lexicalSearchOk, lexicalCommitSha: $lexicalCommitSha)';
+
  }

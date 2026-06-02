@@ -73,7 +73,7 @@ PackageVersion copyWith({int? id, String? name, String? url, String? packageHtml
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PackageVersion &&
           id == other.id &&
           name == other.name &&
@@ -85,7 +85,10 @@ PackageVersion copyWith({int? id, String? name, String? url, String? packageHtml
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           deletedAt == other.deletedAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, name, url, packageHtmlUrl, htmlUrl, license, description, createdAt, updatedAt, deletedAt, metadata); } 
-@override String toString() { return 'PackageVersion(id: $id, name: $name, url: $url, packageHtmlUrl: $packageHtmlUrl, htmlUrl: $htmlUrl, license: $license, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, name, url, packageHtmlUrl, htmlUrl, license, description, createdAt, updatedAt, deletedAt, metadata);
+
+@override String toString() => 'PackageVersion(id: $id, name: $name, url: $url, packageHtmlUrl: $packageHtmlUrl, htmlUrl: $htmlUrl, license: $license, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)';
+
  }

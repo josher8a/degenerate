@@ -58,7 +58,7 @@ RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDow
   latencyLoaded: latencyLoaded ?? this.latencyLoaded,
   packetLoss: packetLoss ?? this.packetLoss,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedSummaryResponseResultSummary0 &&
           bandwidthDownload == other.bandwidthDownload &&
           bandwidthUpload == other.bandwidthUpload &&
@@ -66,7 +66,10 @@ RadarGetQualitySpeedSummaryResponseResultSummary0 copyWith({String? bandwidthDow
           jitterLoaded == other.jitterLoaded &&
           latencyIdle == other.latencyIdle &&
           latencyLoaded == other.latencyLoaded &&
-          packetLoss == other.packetLoss; } 
-@override int get hashCode { return Object.hash(bandwidthDownload, bandwidthUpload, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, packetLoss); } 
-@override String toString() { return 'RadarGetQualitySpeedSummaryResponseResultSummary0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, packetLoss: $packetLoss)'; } 
+          packetLoss == other.packetLoss;
+
+@override int get hashCode => Object.hash(bandwidthDownload, bandwidthUpload, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, packetLoss);
+
+@override String toString() => 'RadarGetQualitySpeedSummaryResponseResultSummary0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, packetLoss: $packetLoss)';
+
  }

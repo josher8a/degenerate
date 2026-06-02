@@ -33,11 +33,14 @@ WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String Function
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests &&
           sourceLang == other.sourceLang &&
           targetLang == other.targetLang &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(sourceLang, targetLang, text); } 
-@override String toString() { return 'WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(sourceLang, targetLang, text);
+
+@override String toString() => 'WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)';
+
  }

@@ -63,7 +63,7 @@ AccountCapabilityRequirements copyWith({List<AccountRequirementsAlternative>? Fu
   pastDue: pastDue ?? this.pastDue,
   pendingVerification: pendingVerification ?? this.pendingVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCapabilityRequirements &&
           listEquals(alternatives, other.alternatives) &&
           currentDeadline == other.currentDeadline &&
@@ -72,7 +72,10 @@ AccountCapabilityRequirements copyWith({List<AccountRequirementsAlternative>? Fu
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
-@override String toString() { return 'AccountCapabilityRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
+          listEquals(pendingVerification, other.pendingVerification);
+
+@override int get hashCode => Object.hash(Object.hashAll(alternatives ?? const []), currentDeadline, Object.hashAll(currentlyDue), disabledReason, Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification));
+
+@override String toString() => 'AccountCapabilityRequirements(alternatives: $alternatives, currentDeadline: $currentDeadline, currentlyDue: $currentlyDue, disabledReason: $disabledReason, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';
+
  }

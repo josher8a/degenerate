@@ -26,11 +26,14 @@ ZeroTrustGatewayGatewayAccountConfigResult copyWith({ZeroTrustGatewayGatewayAcco
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountConfigResult &&
           settings == other.settings &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(settings, createdAt, updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayGatewayAccountConfigResult(settings: $settings, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(settings, createdAt, updatedAt);
+
+@override String toString() => 'ZeroTrustGatewayGatewayAccountConfigResult(settings: $settings, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

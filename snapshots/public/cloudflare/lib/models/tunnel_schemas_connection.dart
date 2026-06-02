@@ -59,7 +59,7 @@ TunnelSchemasConnection copyWith({TunnelClientId? Function()? clientId, TunnelVe
   originIp: originIp != null ? originIp() : this.originIp,
   uuid: uuid != null ? uuid() : this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelSchemasConnection &&
           clientId == other.clientId &&
           clientVersion == other.clientVersion &&
@@ -68,7 +68,10 @@ TunnelSchemasConnection copyWith({TunnelClientId? Function()? clientId, TunnelVe
           isPendingReconnect == other.isPendingReconnect &&
           openedAt == other.openedAt &&
           originIp == other.originIp &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(clientId, clientVersion, coloName, id, isPendingReconnect, openedAt, originIp, uuid); } 
-@override String toString() { return 'TunnelSchemasConnection(clientId: $clientId, clientVersion: $clientVersion, coloName: $coloName, id: $id, isPendingReconnect: $isPendingReconnect, openedAt: $openedAt, originIp: $originIp, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(clientId, clientVersion, coloName, id, isPendingReconnect, openedAt, originIp, uuid);
+
+@override String toString() => 'TunnelSchemasConnection(clientId: $clientId, clientVersion: $clientVersion, coloName: $coloName, id: $id, isPendingReconnect: $isPendingReconnect, openedAt: $openedAt, originIp: $originIp, uuid: $uuid)';
+
  }

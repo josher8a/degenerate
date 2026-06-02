@@ -20,10 +20,13 @@ AiSearchCreateInstancesRequestMetadata copyWith({bool? Function()? createdFromAi
   createdFromAisearchWizard: createdFromAisearchWizard != null ? createdFromAisearchWizard() : this.createdFromAisearchWizard,
   workerDomain: workerDomain != null ? workerDomain() : this.workerDomain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchCreateInstancesRequestMetadata &&
           createdFromAisearchWizard == other.createdFromAisearchWizard &&
-          workerDomain == other.workerDomain; } 
-@override int get hashCode { return Object.hash(createdFromAisearchWizard, workerDomain); } 
-@override String toString() { return 'AiSearchCreateInstancesRequestMetadata(createdFromAisearchWizard: $createdFromAisearchWizard, workerDomain: $workerDomain)'; } 
+          workerDomain == other.workerDomain;
+
+@override int get hashCode => Object.hash(createdFromAisearchWizard, workerDomain);
+
+@override String toString() => 'AiSearchCreateInstancesRequestMetadata(createdFromAisearchWizard: $createdFromAisearchWizard, workerDomain: $workerDomain)';
+
  }

@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final PromptTopic _value;
 
-@override PromptTopic get value { return _value; } 
+@override PromptTopic get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPredefinedEntryVariantPromptTopic && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DlpPredefinedEntryVariant.promptTopic($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpPredefinedEntryVariantPromptTopic && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DlpPredefinedEntryVariant.promptTopic($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DlpPredefinedEntryVariant$Unknown extends DlpPredefinedEntryVariant {const DlpPredefinedEntryVariant$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPredefinedEntryVariant$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DlpPredefinedEntryVariant.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpPredefinedEntryVariant$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DlpPredefinedEntryVariant.unknown($_value)';
+
  }

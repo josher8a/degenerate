@@ -27,10 +27,13 @@ BundleSchemasStatus copyWith({String? Function()? modified, String? Function()? 
   modified: modified != null ? modified() : this.modified,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BundleSchemasStatus &&
           modified == other.modified &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(modified, value); } 
-@override String toString() { return 'BundleSchemasStatus(modified: $modified, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(modified, value);
+
+@override String toString() => 'BundleSchemasStatus(modified: $modified, value: $value)';
+
  }

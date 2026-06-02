@@ -17,7 +17,8 @@ final class SecretScanningListAlertsForRepoError$503 extends SecretScanningListA
 
 final SecretScanningListAlertsForRepoResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SecretScanningListAlertsForRepoError$Unknown extends SecretScanningListAlertsForRepoError {const SecretScanningListAlertsForRepoError$Unknown(this.statusCode, this.rawBody, );
 

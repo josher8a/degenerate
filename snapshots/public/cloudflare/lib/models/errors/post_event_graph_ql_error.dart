@@ -17,7 +17,8 @@ final class PostEventGraphQlError$400 extends PostEventGraphQlError {const PostE
 
 final PostEventGraphQlResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventGraphQlError$Unknown extends PostEventGraphQlError {const PostEventGraphQlError$Unknown(this.statusCode, this.rawBody, );
 

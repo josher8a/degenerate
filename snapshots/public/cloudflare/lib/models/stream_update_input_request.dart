@@ -39,13 +39,16 @@ StreamUpdateInputRequest copyWith({StreamLiveInputDefaultCreator? Function()? de
   meta: meta != null ? meta() : this.meta,
   recording: recording != null ? recording() : this.recording,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamUpdateInputRequest &&
           defaultCreator == other.defaultCreator &&
           deleteRecordingAfterDays == other.deleteRecordingAfterDays &&
           enabled == other.enabled &&
           meta == other.meta &&
-          recording == other.recording; } 
-@override int get hashCode { return Object.hash(defaultCreator, deleteRecordingAfterDays, enabled, meta, recording); } 
-@override String toString() { return 'StreamUpdateInputRequest(defaultCreator: $defaultCreator, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, recording: $recording)'; } 
+          recording == other.recording;
+
+@override int get hashCode => Object.hash(defaultCreator, deleteRecordingAfterDays, enabled, meta, recording);
+
+@override String toString() => 'StreamUpdateInputRequest(defaultCreator: $defaultCreator, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, recording: $recording)';
+
  }

@@ -22,10 +22,13 @@ AssistantToolsFileSearch copyWith({AssistantToolsFileSearchType? type, Assistant
   type: type ?? this.type,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantToolsFileSearch &&
           type == other.type &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(type, fileSearch); } 
-@override String toString() { return 'AssistantToolsFileSearch(type: $type, fileSearch: $fileSearch)'; } 
+          fileSearch == other.fileSearch;
+
+@override int get hashCode => Object.hash(type, fileSearch);
+
+@override String toString() => 'AssistantToolsFileSearch(type: $type, fileSearch: $fileSearch)';
+
  }

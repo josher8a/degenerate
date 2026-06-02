@@ -27,11 +27,14 @@ McnProviderDiscoveryProgress copyWith({int? done, int? total, String? unit, }) {
   total: total ?? this.total,
   unit: unit ?? this.unit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnProviderDiscoveryProgress &&
           done == other.done &&
           total == other.total &&
-          unit == other.unit; } 
-@override int get hashCode { return Object.hash(done, total, unit); } 
-@override String toString() { return 'McnProviderDiscoveryProgress(done: $done, total: $total, unit: $unit)'; } 
+          unit == other.unit;
+
+@override int get hashCode => Object.hash(done, total, unit);
+
+@override String toString() => 'McnProviderDiscoveryProgress(done: $done, total: $total, unit: $unit)';
+
  }

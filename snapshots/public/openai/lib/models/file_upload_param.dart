@@ -41,11 +41,14 @@ FileUploadParam copyWith({bool? Function()? enabled, int? Function()? maxFileSiz
   maxFileSize: maxFileSize != null ? maxFileSize() : this.maxFileSize,
   maxFiles: maxFiles != null ? maxFiles() : this.maxFiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileUploadParam &&
           enabled == other.enabled &&
           maxFileSize == other.maxFileSize &&
-          maxFiles == other.maxFiles; } 
-@override int get hashCode { return Object.hash(enabled, maxFileSize, maxFiles); } 
-@override String toString() { return 'FileUploadParam(enabled: $enabled, maxFileSize: $maxFileSize, maxFiles: $maxFiles)'; } 
+          maxFiles == other.maxFiles;
+
+@override int get hashCode => Object.hash(enabled, maxFileSize, maxFiles);
+
+@override String toString() => 'FileUploadParam(enabled: $enabled, maxFileSize: $maxFileSize, maxFiles: $maxFiles)';
+
  }

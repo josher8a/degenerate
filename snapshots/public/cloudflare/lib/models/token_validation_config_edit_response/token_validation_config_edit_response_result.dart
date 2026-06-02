@@ -39,12 +39,15 @@ TokenValidationConfigEditResponseResult copyWith({ShieldDescription? Function()?
   title: title != null ? title() : this.title,
   tokenSources: tokenSources != null ? tokenSources() : this.tokenSources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationConfigEditResponseResult &&
           description == other.description &&
           id == other.id &&
           title == other.title &&
-          listEquals(tokenSources, other.tokenSources); } 
-@override int get hashCode { return Object.hash(description, id, title, Object.hashAll(tokenSources ?? const [])); } 
-@override String toString() { return 'TokenValidationConfigEditResponseResult(description: $description, id: $id, title: $title, tokenSources: $tokenSources)'; } 
+          listEquals(tokenSources, other.tokenSources);
+
+@override int get hashCode => Object.hash(description, id, title, Object.hashAll(tokenSources ?? const []));
+
+@override String toString() => 'TokenValidationConfigEditResponseResult(description: $description, id: $id, title: $title, tokenSources: $tokenSources)';
+
  }

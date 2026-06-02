@@ -22,10 +22,13 @@ WorkerEnvironmentPutScriptContentRequest copyWith({List<Uint8List>? Function()? 
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerEnvironmentPutScriptContentRequest &&
           listEquals(files, other.files) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(files ?? const []), metadata); } 
-@override String toString() { return 'WorkerEnvironmentPutScriptContentRequest(files: $files, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(files ?? const []), metadata);
+
+@override String toString() => 'WorkerEnvironmentPutScriptContentRequest(files: $files, metadata: $metadata)';
+
  }

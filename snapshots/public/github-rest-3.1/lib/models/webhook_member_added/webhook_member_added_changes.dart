@@ -25,10 +25,13 @@ WebhookMemberAddedChanges copyWith({WebhookMemberAddedChangesPermission? Functio
   permission: permission != null ? permission() : this.permission,
   roleName: roleName != null ? roleName() : this.roleName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberAddedChanges &&
           permission == other.permission &&
-          roleName == other.roleName; } 
-@override int get hashCode { return Object.hash(permission, roleName); } 
-@override String toString() { return 'WebhookMemberAddedChanges(permission: $permission, roleName: $roleName)'; } 
+          roleName == other.roleName;
+
+@override int get hashCode => Object.hash(permission, roleName);
+
+@override String toString() => 'WebhookMemberAddedChanges(permission: $permission, roleName: $roleName)';
+
  }

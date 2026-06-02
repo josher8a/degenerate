@@ -40,11 +40,14 @@ OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequ
   action: action ?? this.action,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsReviewPatGrantRequestsInBulkRequest &&
           listEquals(patRequestIds, other.patRequestIds) &&
           action == other.action &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(Object.hashAll(patRequestIds ?? const []), action, reason); } 
-@override String toString() { return 'OrgsReviewPatGrantRequestsInBulkRequest(patRequestIds: $patRequestIds, action: $action, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(Object.hashAll(patRequestIds ?? const []), action, reason);
+
+@override String toString() => 'OrgsReviewPatGrantRequestsInBulkRequest(patRequestIds: $patRequestIds, action: $action, reason: $reason)';
+
  }

@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AllowedMergeMethods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AllowedMergeMethods($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowedMergeMethods && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AllowedMergeMethods($value)';
+
  }
 @immutable final class RepositoryRulePullRequestParameters {const RepositoryRulePullRequestParameters({required this.dismissStaleReviewsOnPush, required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.allowedMergeMethods, this.requiredReviewers, });
 
@@ -91,7 +94,7 @@ RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Functio
   requiredReviewThreadResolution: requiredReviewThreadResolution ?? this.requiredReviewThreadResolution,
   requiredReviewers: requiredReviewers != null ? requiredReviewers() : this.requiredReviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulePullRequestParameters &&
           listEquals(allowedMergeMethods, other.allowedMergeMethods) &&
           dismissStaleReviewsOnPush == other.dismissStaleReviewsOnPush &&
@@ -99,7 +102,10 @@ RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Functio
           requireLastPushApproval == other.requireLastPushApproval &&
           requiredApprovingReviewCount == other.requiredApprovingReviewCount &&
           requiredReviewThreadResolution == other.requiredReviewThreadResolution &&
-          listEquals(requiredReviewers, other.requiredReviewers); } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedMergeMethods ?? const []), dismissStaleReviewsOnPush, requireCodeOwnerReview, requireLastPushApproval, requiredApprovingReviewCount, requiredReviewThreadResolution, Object.hashAll(requiredReviewers ?? const [])); } 
-@override String toString() { return 'RepositoryRulePullRequestParameters(allowedMergeMethods: $allowedMergeMethods, dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush, requireCodeOwnerReview: $requireCodeOwnerReview, requireLastPushApproval: $requireLastPushApproval, requiredApprovingReviewCount: $requiredApprovingReviewCount, requiredReviewThreadResolution: $requiredReviewThreadResolution, requiredReviewers: $requiredReviewers)'; } 
+          listEquals(requiredReviewers, other.requiredReviewers);
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedMergeMethods ?? const []), dismissStaleReviewsOnPush, requireCodeOwnerReview, requireLastPushApproval, requiredApprovingReviewCount, requiredReviewThreadResolution, Object.hashAll(requiredReviewers ?? const []));
+
+@override String toString() => 'RepositoryRulePullRequestParameters(allowedMergeMethods: $allowedMergeMethods, dismissStaleReviewsOnPush: $dismissStaleReviewsOnPush, requireCodeOwnerReview: $requireCodeOwnerReview, requireLastPushApproval: $requireLastPushApproval, requiredApprovingReviewCount: $requiredApprovingReviewCount, requiredReviewThreadResolution: $requiredReviewThreadResolution, requiredReviewers: $requiredReviewers)';
+
  }

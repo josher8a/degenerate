@@ -93,7 +93,7 @@ MetadataErrors copyWith({bool? formulaParseError, bool? sampleParseError, bool? 
   modelGraderParseError: modelGraderParseError ?? this.modelGraderParseError,
   modelGraderServerErrorDetails: modelGraderServerErrorDetails != null ? modelGraderServerErrorDetails() : this.modelGraderServerErrorDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataErrors &&
           formulaParseError == other.formulaParseError &&
           sampleParseError == other.sampleParseError &&
@@ -108,7 +108,10 @@ MetadataErrors copyWith({bool? formulaParseError, bool? sampleParseError, bool? 
           modelGraderServerError == other.modelGraderServerError &&
           modelGraderRefusalError == other.modelGraderRefusalError &&
           modelGraderParseError == other.modelGraderParseError &&
-          modelGraderServerErrorDetails == other.modelGraderServerErrorDetails; } 
-@override int get hashCode { return Object.hash(formulaParseError, sampleParseError, truncatedObservationError, unresponsiveRewardError, invalidVariableError, otherError, pythonGraderServerError, pythonGraderServerErrorType, pythonGraderRuntimeError, pythonGraderRuntimeErrorDetails, modelGraderServerError, modelGraderRefusalError, modelGraderParseError, modelGraderServerErrorDetails); } 
-@override String toString() { return 'MetadataErrors(formulaParseError: $formulaParseError, sampleParseError: $sampleParseError, truncatedObservationError: $truncatedObservationError, unresponsiveRewardError: $unresponsiveRewardError, invalidVariableError: $invalidVariableError, otherError: $otherError, pythonGraderServerError: $pythonGraderServerError, pythonGraderServerErrorType: $pythonGraderServerErrorType, pythonGraderRuntimeError: $pythonGraderRuntimeError, pythonGraderRuntimeErrorDetails: $pythonGraderRuntimeErrorDetails, modelGraderServerError: $modelGraderServerError, modelGraderRefusalError: $modelGraderRefusalError, modelGraderParseError: $modelGraderParseError, modelGraderServerErrorDetails: $modelGraderServerErrorDetails)'; } 
+          modelGraderServerErrorDetails == other.modelGraderServerErrorDetails;
+
+@override int get hashCode => Object.hash(formulaParseError, sampleParseError, truncatedObservationError, unresponsiveRewardError, invalidVariableError, otherError, pythonGraderServerError, pythonGraderServerErrorType, pythonGraderRuntimeError, pythonGraderRuntimeErrorDetails, modelGraderServerError, modelGraderRefusalError, modelGraderParseError, modelGraderServerErrorDetails);
+
+@override String toString() => 'MetadataErrors(formulaParseError: $formulaParseError, sampleParseError: $sampleParseError, truncatedObservationError: $truncatedObservationError, unresponsiveRewardError: $unresponsiveRewardError, invalidVariableError: $invalidVariableError, otherError: $otherError, pythonGraderServerError: $pythonGraderServerError, pythonGraderServerErrorType: $pythonGraderServerErrorType, pythonGraderRuntimeError: $pythonGraderRuntimeError, pythonGraderRuntimeErrorDetails: $pythonGraderRuntimeErrorDetails, modelGraderServerError: $modelGraderServerError, modelGraderRefusalError: $modelGraderRefusalError, modelGraderParseError: $modelGraderParseError, modelGraderServerErrorDetails: $modelGraderServerErrorDetails)';
+
  }

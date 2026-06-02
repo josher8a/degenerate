@@ -57,7 +57,7 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
   budgetType: budgetType != null ? budgetType() : this.budgetType,
   budgetProductSku: budgetProductSku != null ? budgetProductSku() : this.budgetProductSku,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUpdateBudgetOrgResponseBudget &&
           id == other.id &&
           budgetAmount == other.budgetAmount &&
@@ -66,7 +66,10 @@ BillingUpdateBudgetOrgResponseBudget copyWith({String? Function()? id, double? F
           budgetScope == other.budgetScope &&
           budgetEntityName == other.budgetEntityName &&
           budgetType == other.budgetType &&
-          budgetProductSku == other.budgetProductSku; } 
-@override int get hashCode { return Object.hash(id, budgetAmount, preventFurtherUsage, budgetAlerting, budgetScope, budgetEntityName, budgetType, budgetProductSku); } 
-@override String toString() { return 'BillingUpdateBudgetOrgResponseBudget(id: $id, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetAlerting: $budgetAlerting, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetType: $budgetType, budgetProductSku: $budgetProductSku)'; } 
+          budgetProductSku == other.budgetProductSku;
+
+@override int get hashCode => Object.hash(id, budgetAmount, preventFurtherUsage, budgetAlerting, budgetScope, budgetEntityName, budgetType, budgetProductSku);
+
+@override String toString() => 'BillingUpdateBudgetOrgResponseBudget(id: $id, budgetAmount: $budgetAmount, preventFurtherUsage: $preventFurtherUsage, budgetAlerting: $budgetAlerting, budgetScope: $budgetScope, budgetEntityName: $budgetEntityName, budgetType: $budgetType, budgetProductSku: $budgetProductSku)';
+
  }

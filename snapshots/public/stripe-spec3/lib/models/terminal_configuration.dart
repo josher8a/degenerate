@@ -102,7 +102,7 @@ TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDevice
   verifoneP400: verifoneP400 != null ? verifoneP400() : this.verifoneP400,
   wifi: wifi != null ? wifi() : this.wifi,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfiguration &&
           bbposWisepad3 == other.bbposWisepad3 &&
           bbposWiseposE == other.bbposWiseposE &&
@@ -118,7 +118,10 @@ TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDevice
           stripeS710 == other.stripeS710 &&
           tipping == other.tipping &&
           verifoneP400 == other.verifoneP400 &&
-          wifi == other.wifi; } 
-@override int get hashCode { return Object.hash(bbposWisepad3, bbposWiseposE, cellular, id, isAccountDefault, livemode, name, object, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi); } 
-@override String toString() { return 'TerminalConfiguration(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, id: $id, isAccountDefault: $isAccountDefault, livemode: $livemode, name: $name, object: $object, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)'; } 
+          wifi == other.wifi;
+
+@override int get hashCode => Object.hash(bbposWisepad3, bbposWiseposE, cellular, id, isAccountDefault, livemode, name, object, offline, rebootWindow, stripeS700, stripeS710, tipping, verifoneP400, wifi);
+
+@override String toString() => 'TerminalConfiguration(bbposWisepad3: $bbposWisepad3, bbposWiseposE: $bbposWiseposE, cellular: $cellular, id: $id, isAccountDefault: $isAccountDefault, livemode: $livemode, name: $name, object: $object, offline: $offline, rebootWindow: $rebootWindow, stripeS700: $stripeS700, stripeS710: $stripeS710, tipping: $tipping, verifoneP400: $verifoneP400, wifi: $wifi)';
+
  }

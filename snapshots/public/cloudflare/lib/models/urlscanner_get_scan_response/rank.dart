@@ -29,11 +29,14 @@ Rank copyWith({String? bucket, String? name, int? Function()? rank, }) { return 
   name: name ?? this.name,
   rank: rank != null ? rank() : this.rank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rank &&
           bucket == other.bucket &&
           name == other.name &&
-          rank == other.rank; } 
-@override int get hashCode { return Object.hash(bucket, name, rank); } 
-@override String toString() { return 'Rank(bucket: $bucket, name: $name, rank: $rank)'; } 
+          rank == other.rank;
+
+@override int get hashCode => Object.hash(bucket, name, rank);
+
+@override String toString() => 'Rank(bucket: $bucket, name: $name, rank: $rank)';
+
  }

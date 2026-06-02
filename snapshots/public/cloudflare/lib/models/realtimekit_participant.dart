@@ -57,7 +57,7 @@ RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantI
   presetName: presetName ?? this.presetName,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipant &&
           createdAt == other.createdAt &&
           customParticipantId == other.customParticipantId &&
@@ -65,7 +65,10 @@ RealtimekitParticipant copyWith({DateTime? createdAt, String? customParticipantI
           name == other.name &&
           picture == other.picture &&
           presetName == other.presetName &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt); } 
-@override String toString() { return 'RealtimekitParticipant(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, customParticipantId, id, name, picture, presetName, updatedAt);
+
+@override String toString() => 'RealtimekitParticipant(createdAt: $createdAt, customParticipantId: $customParticipantId, id: $id, name: $name, picture: $picture, presetName: $presetName, updatedAt: $updatedAt)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleSuitesEvaluationResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleSuitesEvaluationResult($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RuleSuitesEvaluationResult && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RuleSuitesEvaluationResult($value)';
+
  }
 @immutable final class RuleSuites2 {const RuleSuites2({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, });
 
@@ -103,7 +106,7 @@ RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Fun
   result: result != null ? result() : this.result,
   evaluationResult: evaluationResult != null ? evaluationResult() : this.evaluationResult,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuites2 &&
           id == other.id &&
           actorId == other.actorId &&
@@ -115,7 +118,10 @@ RuleSuites2 copyWith({int? Function()? id, int? Function()? actorId, String? Fun
           repositoryName == other.repositoryName &&
           pushedAt == other.pushedAt &&
           result == other.result &&
-          evaluationResult == other.evaluationResult; } 
-@override int get hashCode { return Object.hash(id, actorId, actorName, beforeSha, afterSha, ref, repositoryId, repositoryName, pushedAt, result, evaluationResult); } 
-@override String toString() { return 'RuleSuites2(id: $id, actorId: $actorId, actorName: $actorName, beforeSha: $beforeSha, afterSha: $afterSha, ref: $ref, repositoryId: $repositoryId, repositoryName: $repositoryName, pushedAt: $pushedAt, result: $result, evaluationResult: $evaluationResult)'; } 
+          evaluationResult == other.evaluationResult;
+
+@override int get hashCode => Object.hash(id, actorId, actorName, beforeSha, afterSha, ref, repositoryId, repositoryName, pushedAt, result, evaluationResult);
+
+@override String toString() => 'RuleSuites2(id: $id, actorId: $actorId, actorName: $actorName, beforeSha: $beforeSha, afterSha: $afterSha, ref: $ref, repositoryId: $repositoryId, repositoryName: $repositoryName, pushedAt: $pushedAt, result: $result, evaluationResult: $evaluationResult)';
+
  }

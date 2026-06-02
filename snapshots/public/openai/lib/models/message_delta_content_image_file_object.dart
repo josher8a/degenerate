@@ -29,11 +29,14 @@ MessageDeltaContentImageFileObject copyWith({int? index, MessageContentImageFile
   type: type ?? this.type,
   imageFile: imageFile != null ? imageFile() : this.imageFile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentImageFileObject &&
           index == other.index &&
           type == other.type &&
-          imageFile == other.imageFile; } 
-@override int get hashCode { return Object.hash(index, type, imageFile); } 
-@override String toString() { return 'MessageDeltaContentImageFileObject(index: $index, type: $type, imageFile: $imageFile)'; } 
+          imageFile == other.imageFile;
+
+@override int get hashCode => Object.hash(index, type, imageFile);
+
+@override String toString() => 'MessageDeltaContentImageFileObject(index: $index, type: $type, imageFile: $imageFile)';
+
  }

@@ -45,14 +45,17 @@ AccessBookmarkProps copyWith({AccessAppLauncherVisible? Function()? appLauncherV
   tags: tags != null ? tags() : this.tags,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBookmarkProps &&
           appLauncherVisible == other.appLauncherVisible &&
           domain == other.domain &&
           logoUrl == other.logoUrl &&
           name == other.name &&
           listEquals(tags, other.tags) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(appLauncherVisible, domain, logoUrl, name, Object.hashAll(tags ?? const []), type); } 
-@override String toString() { return 'AccessBookmarkProps(appLauncherVisible: $appLauncherVisible, domain: $domain, logoUrl: $logoUrl, name: $name, tags: $tags, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(appLauncherVisible, domain, logoUrl, name, Object.hashAll(tags ?? const []), type);
+
+@override String toString() => 'AccessBookmarkProps(appLauncherVisible: $appLauncherVisible, domain: $domain, logoUrl: $logoUrl, name: $name, tags: $tags, type: $type)';
+
  }

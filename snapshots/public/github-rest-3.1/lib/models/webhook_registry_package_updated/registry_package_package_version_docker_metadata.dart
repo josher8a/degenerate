@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RegistryPackagePackageVersionDockerMetadata copyWith({List<String>? Function()? tags}) { return RegistryPackagePackageVersionDockerMetadata(
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackagePackageVersionDockerMetadata &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags ?? const []); } 
-@override String toString() { return 'RegistryPackagePackageVersionDockerMetadata(tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hashAll(tags ?? const []);
+
+@override String toString() => 'RegistryPackagePackageVersionDockerMetadata(tags: $tags)';
+
  }

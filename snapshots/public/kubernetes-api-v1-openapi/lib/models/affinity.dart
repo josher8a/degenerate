@@ -29,11 +29,14 @@ Affinity copyWith({NodeAffinity? Function()? nodeAffinity, PodAffinity? Function
   podAffinity: podAffinity != null ? podAffinity() : this.podAffinity,
   podAntiAffinity: podAntiAffinity != null ? podAntiAffinity() : this.podAntiAffinity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Affinity &&
           nodeAffinity == other.nodeAffinity &&
           podAffinity == other.podAffinity &&
-          podAntiAffinity == other.podAntiAffinity; } 
-@override int get hashCode { return Object.hash(nodeAffinity, podAffinity, podAntiAffinity); } 
-@override String toString() { return 'Affinity(nodeAffinity: $nodeAffinity, podAffinity: $podAffinity, podAntiAffinity: $podAntiAffinity)'; } 
+          podAntiAffinity == other.podAntiAffinity;
+
+@override int get hashCode => Object.hash(nodeAffinity, podAffinity, podAntiAffinity);
+
+@override String toString() => 'Affinity(nodeAffinity: $nodeAffinity, podAffinity: $podAffinity, podAntiAffinity: $podAntiAffinity)';
+
  }

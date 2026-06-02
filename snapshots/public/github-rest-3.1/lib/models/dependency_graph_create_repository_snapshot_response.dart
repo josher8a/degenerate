@@ -37,12 +37,15 @@ DependencyGraphCreateRepositorySnapshotResponse copyWith({int? id, String? creat
   result: result ?? this.result,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphCreateRepositorySnapshotResponse &&
           id == other.id &&
           createdAt == other.createdAt &&
           result == other.result &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(id, createdAt, result, message); } 
-@override String toString() { return 'DependencyGraphCreateRepositorySnapshotResponse(id: $id, createdAt: $createdAt, result: $result, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(id, createdAt, result, message);
+
+@override String toString() => 'DependencyGraphCreateRepositorySnapshotResponse(id: $id, createdAt: $createdAt, result: $result, message: $message)';
+
  }

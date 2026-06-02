@@ -39,13 +39,16 @@ DlpDocumentFingerprintEntry copyWith({DateTime? createdAt, bool? enabled, String
   name: name ?? this.name,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, updatedAt); } 
-@override String toString() { return 'DlpDocumentFingerprintEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, updatedAt);
+
+@override String toString() => 'DlpDocumentFingerprintEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

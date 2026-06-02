@@ -30,11 +30,14 @@ ChatCompletionTokenLogprobTopLogprobs copyWith({String? token, double? logprob, 
   logprob: logprob ?? this.logprob,
   bytes: bytes != null ? bytes() : this.bytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionTokenLogprobTopLogprobs &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(bytes, other.bytes); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(bytes ?? const [])); } 
-@override String toString() { return 'ChatCompletionTokenLogprobTopLogprobs(token: $token, logprob: $logprob, bytes: $bytes)'; } 
+          listEquals(bytes, other.bytes);
+
+@override int get hashCode => Object.hash(token, logprob, Object.hashAll(bytes ?? const []));
+
+@override String toString() => 'ChatCompletionTokenLogprobTopLogprobs(token: $token, logprob: $logprob, bytes: $bytes)';
+
  }

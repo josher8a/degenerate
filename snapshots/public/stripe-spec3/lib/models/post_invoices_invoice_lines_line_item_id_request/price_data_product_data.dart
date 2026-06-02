@@ -56,14 +56,17 @@ PriceDataProductData copyWith({String? Function()? description, List<String>? Fu
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PriceDataProductData &&
           description == other.description &&
           listEquals(images, other.images) &&
           metadata == other.metadata &&
           name == other.name &&
           taxCode == other.taxCode &&
-          unitLabel == other.unitLabel; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(images ?? const []), metadata, name, taxCode, unitLabel); } 
-@override String toString() { return 'PriceDataProductData(description: $description, images: $images, metadata: $metadata, name: $name, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
+          unitLabel == other.unitLabel;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(images ?? const []), metadata, name, taxCode, unitLabel);
+
+@override String toString() => 'PriceDataProductData(description: $description, images: $images, metadata: $metadata, name: $name, taxCode: $taxCode, unitLabel: $unitLabel)';
+
  }

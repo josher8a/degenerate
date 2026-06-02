@@ -45,13 +45,16 @@ ScrollParam copyWith({String? type, int? x, int? y, int? scrollX, int? scrollY, 
   scrollX: scrollX ?? this.scrollX,
   scrollY: scrollY ?? this.scrollY,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScrollParam &&
           type == other.type &&
           x == other.x &&
           y == other.y &&
           scrollX == other.scrollX &&
-          scrollY == other.scrollY; } 
-@override int get hashCode { return Object.hash(type, x, y, scrollX, scrollY); } 
-@override String toString() { return 'ScrollParam(type: $type, x: $x, y: $y, scrollX: $scrollX, scrollY: $scrollY)'; } 
+          scrollY == other.scrollY;
+
+@override int get hashCode => Object.hash(type, x, y, scrollX, scrollY);
+
+@override String toString() => 'ScrollParam(type: $type, x: $x, y: $y, scrollX: $scrollX, scrollY: $scrollY)';
+
  }

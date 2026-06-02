@@ -17,7 +17,8 @@ final class RadarGetNetflowsSummaryError$400 extends RadarGetNetflowsSummaryErro
 
 final RadarGetNetflowsSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetNetflowsSummaryError$Unknown extends RadarGetNetflowsSummaryError {const RadarGetNetflowsSummaryError$Unknown(this.statusCode, this.rawBody, );
 

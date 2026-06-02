@@ -21,10 +21,13 @@ EmailSecurityMessageHeader copyWith({String? name, String? value, }) { return Em
   name: name ?? this.name,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMessageHeader &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'EmailSecurityMessageHeader(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'EmailSecurityMessageHeader(name: $name, value: $value)';
+
  }

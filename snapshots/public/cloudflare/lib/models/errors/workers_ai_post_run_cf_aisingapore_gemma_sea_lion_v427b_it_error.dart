@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError$400 extends Wo
 
 final $27bItResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError$Unknown extends WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError {const WorkersAiPostRunCfAisingaporeGemmaSeaLionV427bItError$Unknown(this.statusCode, this.rawBody, );
 

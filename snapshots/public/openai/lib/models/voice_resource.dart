@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VoiceResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VoiceResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VoiceResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VoiceResourceObject($value)';
+
  }
 /// A custom voice that can be used for audio output.
 @immutable final class VoiceResource {const VoiceResource({required this.object, required this.id, required this.name, required this.createdAt, });
@@ -60,12 +63,15 @@ VoiceResource copyWith({VoiceResourceObject? object, String? id, String? name, i
   name: name ?? this.name,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VoiceResource &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(object, id, name, createdAt); } 
-@override String toString() { return 'VoiceResource(object: $object, id: $id, name: $name, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(object, id, name, createdAt);
+
+@override String toString() => 'VoiceResource(object: $object, id: $id, name: $name, createdAt: $createdAt)';
+
  }

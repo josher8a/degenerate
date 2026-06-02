@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Jurisdiction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Jurisdiction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Jurisdiction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Jurisdiction($value)';
+
  }
 @immutable final class WorkersBindingKindR2Bucket {const WorkersBindingKindR2Bucket({required this.bucketName, required this.name, required this.type, this.jurisdiction, });
 
@@ -67,12 +70,15 @@ WorkersBindingKindR2Bucket copyWith({String? bucketName, Jurisdiction? Function(
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindR2Bucket &&
           bucketName == other.bucketName &&
           jurisdiction == other.jurisdiction &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(bucketName, jurisdiction, name, type); } 
-@override String toString() { return 'WorkersBindingKindR2Bucket(bucketName: $bucketName, jurisdiction: $jurisdiction, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(bucketName, jurisdiction, name, type);
+
+@override String toString() => 'WorkersBindingKindR2Bucket(bucketName: $bucketName, jurisdiction: $jurisdiction, name: $name, type: $type)';
+
  }

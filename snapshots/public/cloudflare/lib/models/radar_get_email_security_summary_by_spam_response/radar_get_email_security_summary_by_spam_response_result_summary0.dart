@@ -32,10 +32,13 @@ RadarGetEmailSecuritySummaryBySpamResponseResultSummary0 copyWith({String? notSp
   notSpam: notSpam ?? this.notSpam,
   spam: spam ?? this.spam,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecuritySummaryBySpamResponseResultSummary0 &&
           notSpam == other.notSpam &&
-          spam == other.spam; } 
-@override int get hashCode { return Object.hash(notSpam, spam); } 
-@override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultSummary0(notSpam: $notSpam, spam: $spam)'; } 
+          spam == other.spam;
+
+@override int get hashCode => Object.hash(notSpam, spam);
+
+@override String toString() => 'RadarGetEmailSecuritySummaryBySpamResponseResultSummary0(notSpam: $notSpam, spam: $spam)';
+
  }

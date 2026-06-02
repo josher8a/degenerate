@@ -95,7 +95,7 @@ DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? min
   rname: rname != null ? rname() : this.rname,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsSoaBase &&
           expire == other.expire &&
           minTtl == other.minTtl &&
@@ -103,7 +103,10 @@ DnsSettingsSoaBase copyWith({double? Function()? expire, double? Function()? min
           refresh == other.refresh &&
           retry == other.retry &&
           rname == other.rname &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(expire, minTtl, mname, refresh, retry, rname, ttl); } 
-@override String toString() { return 'DnsSettingsSoaBase(expire: $expire, minTtl: $minTtl, mname: $mname, refresh: $refresh, retry: $retry, rname: $rname, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(expire, minTtl, mname, refresh, retry, rname, ttl);
+
+@override String toString() => 'DnsSettingsSoaBase(expire: $expire, minTtl: $minTtl, mname: $mname, refresh: $refresh, retry: $retry, rname: $rname, ttl: $ttl)';
+
  }

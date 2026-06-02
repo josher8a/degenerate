@@ -28,11 +28,14 @@ BotnetThreatFeedGetDayReportResponseResult copyWith({String? Function()? cidr, D
   date: date != null ? date() : this.date,
   offenseCount: offenseCount != null ? offenseCount() : this.offenseCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotnetThreatFeedGetDayReportResponseResult &&
           cidr == other.cidr &&
           date == other.date &&
-          offenseCount == other.offenseCount; } 
-@override int get hashCode { return Object.hash(cidr, date, offenseCount); } 
-@override String toString() { return 'BotnetThreatFeedGetDayReportResponseResult(cidr: $cidr, date: $date, offenseCount: $offenseCount)'; } 
+          offenseCount == other.offenseCount;
+
+@override int get hashCode => Object.hash(cidr, date, offenseCount);
+
+@override String toString() => 'BotnetThreatFeedGetDayReportResponseResult(cidr: $cidr, date: $date, offenseCount: $offenseCount)';
+
  }

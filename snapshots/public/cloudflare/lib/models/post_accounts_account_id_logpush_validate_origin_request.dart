@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('logpu
 PostAccountsAccountIdLogpushValidateOriginRequest copyWith({LogpushLogpullOptions? Function()? logpullOptions}) { return PostAccountsAccountIdLogpushValidateOriginRequest(
   logpullOptions: logpullOptions != null ? logpullOptions() : this.logpullOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountIdLogpushValidateOriginRequest &&
-          logpullOptions == other.logpullOptions; } 
-@override int get hashCode { return logpullOptions.hashCode; } 
-@override String toString() { return 'PostAccountsAccountIdLogpushValidateOriginRequest(logpullOptions: $logpullOptions)'; } 
+          logpullOptions == other.logpullOptions;
+
+@override int get hashCode => logpullOptions.hashCode;
+
+@override String toString() => 'PostAccountsAccountIdLogpushValidateOriginRequest(logpullOptions: $logpullOptions)';
+
  }

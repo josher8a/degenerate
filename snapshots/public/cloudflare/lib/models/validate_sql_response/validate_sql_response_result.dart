@@ -21,10 +21,13 @@ ValidateSqlResponseResult copyWith({CloudflarePipelinesPipelineGraph? Function()
   graph: graph != null ? graph() : this.graph,
   tables: tables ?? this.tables,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidateSqlResponseResult &&
           graph == other.graph &&
-          tables == other.tables; } 
-@override int get hashCode { return Object.hash(graph, tables); } 
-@override String toString() { return 'ValidateSqlResponseResult(graph: $graph, tables: $tables)'; } 
+          tables == other.tables;
+
+@override int get hashCode => Object.hash(graph, tables);
+
+@override String toString() => 'ValidateSqlResponseResult(graph: $graph, tables: $tables)';
+
  }

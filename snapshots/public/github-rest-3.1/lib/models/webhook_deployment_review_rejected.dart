@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentReviewRejectedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentReviewRejectedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDeploymentReviewRejectedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDeploymentReviewRejectedAction($value)';
+
  }
 @immutable final class WebhookDeploymentReviewRejected {const WebhookDeploymentReviewRejected({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });
 
@@ -101,7 +104,7 @@ WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction?
   workflowJobRuns: workflowJobRuns != null ? workflowJobRuns() : this.workflowJobRuns,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRejected &&
           action == other.action &&
           approver == other.approver &&
@@ -115,7 +118,10 @@ WebhookDeploymentReviewRejected copyWith({WebhookDeploymentReviewRejectedAction?
           since == other.since &&
           workflowJobRun == other.workflowJobRun &&
           listEquals(workflowJobRuns, other.workflowJobRuns) &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun); } 
-@override String toString() { return 'WebhookDeploymentReviewRejected(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun);
+
+@override String toString() => 'WebhookDeploymentReviewRejected(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)';
+
  }

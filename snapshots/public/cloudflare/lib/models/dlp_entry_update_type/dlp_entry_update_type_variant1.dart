@@ -32,12 +32,15 @@ DlpEntryUpdateTypeVariant1 copyWith({String? Function()? description, String? na
   pattern: pattern ?? this.pattern,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryUpdateTypeVariant1 &&
           description == other.description &&
           name == other.name &&
           pattern == other.pattern &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, name, pattern, type); } 
-@override String toString() { return 'DlpEntryUpdateTypeVariant1(description: $description, name: $name, pattern: $pattern, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, name, pattern, type);
+
+@override String toString() => 'DlpEntryUpdateTypeVariant1(description: $description, name: $name, pattern: $pattern, type: $type)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldAuthIdCharacteristicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldAuthIdCharacteristicType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldAuthIdCharacteristicType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldAuthIdCharacteristicType($value)';
+
  }
 /// Auth ID Characteristic
 @immutable final class ShieldAuthIdCharacteristic {const ShieldAuthIdCharacteristic({required this.name, required this.type, });
@@ -57,10 +60,13 @@ ShieldAuthIdCharacteristic copyWith({String? name, ShieldAuthIdCharacteristicTyp
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldAuthIdCharacteristic &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'ShieldAuthIdCharacteristic(name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, type);
+
+@override String toString() => 'ShieldAuthIdCharacteristic(name: $name, type: $type)';
+
  }

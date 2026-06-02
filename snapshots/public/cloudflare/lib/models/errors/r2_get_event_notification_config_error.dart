@@ -17,7 +17,8 @@ final class R2GetEventNotificationConfigError$404 extends R2GetEventNotification
 
 final ResponseFailure error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class R2GetEventNotificationConfigError$Unknown extends R2GetEventNotificationConfigError {const R2GetEventNotificationConfigError$Unknown(this.statusCode, this.rawBody, );
 

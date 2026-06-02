@@ -22,10 +22,13 @@ QueuesPurgeGetResponseResult copyWith({String? Function()? completed, String? Fu
   completed: completed != null ? completed() : this.completed,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesPurgeGetResponseResult &&
           completed == other.completed &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(completed, startedAt); } 
-@override String toString() { return 'QueuesPurgeGetResponseResult(completed: $completed, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(completed, startedAt);
+
+@override String toString() => 'QueuesPurgeGetResponseResult(completed: $completed, startedAt: $startedAt)';
+
  }

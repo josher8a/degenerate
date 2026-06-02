@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarPaymentEvaluationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarPaymentEvaluationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RadarPaymentEvaluationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RadarPaymentEvaluationObject($value)';
+
  }
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.
 @immutable final class RadarPaymentEvaluation {const RadarPaymentEvaluation({required this.createdAt, required this.events, required this.id, required this.insights, required this.livemode, required this.object, this.clientDeviceMetadataDetails, this.customerDetails, this.metadata, this.outcome, this.paymentDetails, });
@@ -104,7 +107,7 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
   outcome: outcome != null ? outcome() : this.outcome,
   paymentDetails: paymentDetails != null ? paymentDetails() : this.paymentDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarPaymentEvaluation &&
           clientDeviceMetadataDetails == other.clientDeviceMetadataDetails &&
           createdAt == other.createdAt &&
@@ -116,7 +119,10 @@ RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceM
           metadata == other.metadata &&
           object == other.object &&
           outcome == other.outcome &&
-          paymentDetails == other.paymentDetails; } 
-@override int get hashCode { return Object.hash(clientDeviceMetadataDetails, createdAt, customerDetails, Object.hashAll(events), id, insights, livemode, metadata, object, outcome, paymentDetails); } 
-@override String toString() { return 'RadarPaymentEvaluation(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, createdAt: $createdAt, customerDetails: $customerDetails, events: $events, id: $id, insights: $insights, livemode: $livemode, metadata: $metadata, object: $object, outcome: $outcome, paymentDetails: $paymentDetails)'; } 
+          paymentDetails == other.paymentDetails;
+
+@override int get hashCode => Object.hash(clientDeviceMetadataDetails, createdAt, customerDetails, Object.hashAll(events), id, insights, livemode, metadata, object, outcome, paymentDetails);
+
+@override String toString() => 'RadarPaymentEvaluation(clientDeviceMetadataDetails: $clientDeviceMetadataDetails, createdAt: $createdAt, customerDetails: $customerDetails, events: $events, id: $id, insights: $insights, livemode: $livemode, metadata: $metadata, object: $object, outcome: $outcome, paymentDetails: $paymentDetails)';
+
  }

@@ -21,10 +21,13 @@ ScanGeo copyWith({List<String>? continents, List<String>? locations, }) { return
   continents: continents ?? this.continents,
   locations: locations ?? this.locations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanGeo &&
           listEquals(continents, other.continents) &&
-          listEquals(locations, other.locations); } 
-@override int get hashCode { return Object.hash(Object.hashAll(continents), Object.hashAll(locations)); } 
-@override String toString() { return 'ScanGeo(continents: $continents, locations: $locations)'; } 
+          listEquals(locations, other.locations);
+
+@override int get hashCode => Object.hash(Object.hashAll(continents), Object.hashAll(locations));
+
+@override String toString() => 'ScanGeo(continents: $continents, locations: $locations)';
+
  }

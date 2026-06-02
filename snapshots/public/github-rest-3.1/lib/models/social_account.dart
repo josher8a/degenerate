@@ -22,10 +22,13 @@ SocialAccount copyWith({String? provider, String? url, }) { return SocialAccount
   provider: provider ?? this.provider,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SocialAccount &&
           provider == other.provider &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(provider, url); } 
-@override String toString() { return 'SocialAccount(provider: $provider, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(provider, url);
+
+@override String toString() => 'SocialAccount(provider: $provider, url: $url)';
+
  }

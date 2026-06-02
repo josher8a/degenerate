@@ -67,14 +67,17 @@ CreatePortalsRequest copyWith({String? Function()? description, String? hostname
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers != null ? servers() : this.servers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsRequest &&
           description == other.description &&
           hostname == other.hostname &&
           id == other.id &&
           name == other.name &&
           secureWebGateway == other.secureWebGateway &&
-          listEquals(servers, other.servers); } 
-@override int get hashCode { return Object.hash(description, hostname, id, name, secureWebGateway, Object.hashAll(servers ?? const [])); } 
-@override String toString() { return 'CreatePortalsRequest(description: $description, hostname: $hostname, id: $id, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)'; } 
+          listEquals(servers, other.servers);
+
+@override int get hashCode => Object.hash(description, hostname, id, name, secureWebGateway, Object.hashAll(servers ?? const []));
+
+@override String toString() => 'CreatePortalsRequest(description: $description, hostname: $hostname, id: $id, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)';
+
  }

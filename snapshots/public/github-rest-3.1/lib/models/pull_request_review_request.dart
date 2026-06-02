@@ -22,10 +22,13 @@ PullRequestReviewRequest copyWith({List<SimpleUser>? users, List<Team>? teams, }
   users: users ?? this.users,
   teams: teams ?? this.teams,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewRequest &&
           listEquals(users, other.users) &&
-          listEquals(teams, other.teams); } 
-@override int get hashCode { return Object.hash(Object.hashAll(users), Object.hashAll(teams)); } 
-@override String toString() { return 'PullRequestReviewRequest(users: $users, teams: $teams)'; } 
+          listEquals(teams, other.teams);
+
+@override int get hashCode => Object.hash(Object.hashAll(users), Object.hashAll(teams));
+
+@override String toString() => 'PullRequestReviewRequest(users: $users, teams: $teams)';
+
  }

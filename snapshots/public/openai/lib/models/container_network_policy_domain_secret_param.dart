@@ -37,11 +37,14 @@ ContainerNetworkPolicyDomainSecretParam copyWith({String? domain, String? name, 
   name: name ?? this.name,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerNetworkPolicyDomainSecretParam &&
           domain == other.domain &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(domain, name, value); } 
-@override String toString() { return 'ContainerNetworkPolicyDomainSecretParam(domain: $domain, name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(domain, name, value);
+
+@override String toString() => 'ContainerNetworkPolicyDomainSecretParam(domain: $domain, name: $name, value: $value)';
+
  }

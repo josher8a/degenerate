@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessConnectionRulesInfra copyWith({AccessConnectionRulesSsh? Function()? ssh}) { return AccessConnectionRulesInfra(
   ssh: ssh != null ? ssh() : this.ssh,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessConnectionRulesInfra &&
-          ssh == other.ssh; } 
-@override int get hashCode { return ssh.hashCode; } 
-@override String toString() { return 'AccessConnectionRulesInfra(ssh: $ssh)'; } 
+          ssh == other.ssh;
+
+@override int get hashCode => ssh.hashCode;
+
+@override String toString() => 'AccessConnectionRulesInfra(ssh: $ssh)';
+
  }

@@ -40,11 +40,14 @@ PaymentPagesCheckoutSessionCustomFieldsDropdown copyWith({String? Function()? de
   options: options ?? this.options,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFieldsDropdown &&
           defaultValue == other.defaultValue &&
           listEquals(options, other.options) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(defaultValue, Object.hashAll(options), value); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsDropdown(defaultValue: $defaultValue, options: $options, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(defaultValue, Object.hashAll(options), value);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomFieldsDropdown(defaultValue: $defaultValue, options: $options, value: $value)';
+
  }

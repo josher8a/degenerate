@@ -27,11 +27,14 @@ AttackersProperties copyWith({Created? created, PropertiesErrors? errors, Found?
   errors: errors ?? this.errors,
   found: found ?? this.found,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AttackersProperties &&
           created == other.created &&
           errors == other.errors &&
-          found == other.found; } 
-@override int get hashCode { return Object.hash(created, errors, found); } 
-@override String toString() { return 'AttackersProperties(created: $created, errors: $errors, found: $found)'; } 
+          found == other.found;
+
+@override int get hashCode => Object.hash(created, errors, found);
+
+@override String toString() => 'AttackersProperties(created: $created, errors: $errors, found: $found)';
+
  }

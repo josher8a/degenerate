@@ -49,7 +49,7 @@ PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String?
   variant: variant != null ? variant() : this.variant,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PredefinedEntry &&
           confidence == other.confidence &&
           enabled == other.enabled &&
@@ -57,7 +57,10 @@ PredefinedEntry copyWith({DlpEntryConfidence? confidence, bool? enabled, String?
           name == other.name &&
           profileId == other.profileId &&
           variant == other.variant &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(confidence, enabled, id, name, profileId, variant, type); } 
-@override String toString() { return 'PredefinedEntry(confidence: $confidence, enabled: $enabled, id: $id, name: $name, profileId: $profileId, variant: $variant, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(confidence, enabled, id, name, profileId, variant, type);
+
+@override String toString() => 'PredefinedEntry(confidence: $confidence, enabled: $enabled, id: $id, name: $name, profileId: $profileId, variant: $variant, type: $type)';
+
  }

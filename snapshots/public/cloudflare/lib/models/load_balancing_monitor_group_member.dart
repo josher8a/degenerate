@@ -58,14 +58,17 @@ LoadBalancingMonitorGroupMember copyWith({DateTime? Function()? createdAt, bool?
   mustBeHealthy: mustBeHealthy ?? this.mustBeHealthy,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroupMember &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
           monitorId == other.monitorId &&
           monitoringOnly == other.monitoringOnly &&
           mustBeHealthy == other.mustBeHealthy &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, monitorId, monitoringOnly, mustBeHealthy, updatedAt); } 
-@override String toString() { return 'LoadBalancingMonitorGroupMember(createdAt: $createdAt, enabled: $enabled, monitorId: $monitorId, monitoringOnly: $monitoringOnly, mustBeHealthy: $mustBeHealthy, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, enabled, monitorId, monitoringOnly, mustBeHealthy, updatedAt);
+
+@override String toString() => 'LoadBalancingMonitorGroupMember(createdAt: $createdAt, enabled: $enabled, monitorId: $monitorId, monitoringOnly: $monitoringOnly, mustBeHealthy: $mustBeHealthy, updatedAt: $updatedAt)';
+
  }

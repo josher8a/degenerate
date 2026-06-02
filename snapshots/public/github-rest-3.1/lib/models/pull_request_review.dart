@@ -89,7 +89,7 @@ PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? use
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   authorAssociation: authorAssociation ?? this.authorAssociation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReview &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -103,7 +103,10 @@ PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? use
           commitId == other.commitId &&
           bodyHtml == other.bodyHtml &&
           bodyText == other.bodyText &&
-          authorAssociation == other.authorAssociation; } 
-@override int get hashCode { return Object.hash(id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, commitId, bodyHtml, bodyText, authorAssociation); } 
-@override String toString() { return 'PullRequestReview(id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)'; } 
+          authorAssociation == other.authorAssociation;
+
+@override int get hashCode => Object.hash(id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, commitId, bodyHtml, bodyText, authorAssociation);
+
+@override String toString() => 'PullRequestReview(id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)';
+
  }

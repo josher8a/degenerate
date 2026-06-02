@@ -31,10 +31,13 @@ PaymentMethodConfigBizPaymentMethodConfigurationDetails copyWith({String? id, St
   id: id ?? this.id,
   parent: parent != null ? parent() : this.parent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfigBizPaymentMethodConfigurationDetails &&
           id == other.id &&
-          parent == other.parent; } 
-@override int get hashCode { return Object.hash(id, parent); } 
-@override String toString() { return 'PaymentMethodConfigBizPaymentMethodConfigurationDetails(id: $id, parent: $parent)'; } 
+          parent == other.parent;
+
+@override int get hashCode => Object.hash(id, parent);
+
+@override String toString() => 'PaymentMethodConfigBizPaymentMethodConfigurationDetails(id: $id, parent: $parent)';
+
  }

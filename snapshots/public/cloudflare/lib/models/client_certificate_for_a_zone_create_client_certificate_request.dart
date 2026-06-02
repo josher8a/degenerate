@@ -23,10 +23,13 @@ ClientCertificateForAZoneCreateClientCertificateRequest copyWith({TlsCertificate
   csr: csr ?? this.csr,
   validityDays: validityDays ?? this.validityDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientCertificateForAZoneCreateClientCertificateRequest &&
           csr == other.csr &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(csr, validityDays); } 
-@override String toString() { return 'ClientCertificateForAZoneCreateClientCertificateRequest(csr: $csr, validityDays: $validityDays)'; } 
+          validityDays == other.validityDays;
+
+@override int get hashCode => Object.hash(csr, validityDays);
+
+@override String toString() => 'ClientCertificateForAZoneCreateClientCertificateRequest(csr: $csr, validityDays: $validityDays)';
+
  }

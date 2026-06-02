@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRateJurisdictionLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRateJurisdictionLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRateJurisdictionLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxRateJurisdictionLevel($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TaxRateObject {const TaxRateObject._(this.value);
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxRateObject($value)';
+
  }
 /// Tax rates can be applied to [invoices](/invoicing/taxes/tax-rates), [subscriptions](/billing/taxes/tax-rates) and [Checkout Sessions](/payments/checkout/use-manual-tax-rates) to collect tax.
 /// 
@@ -210,7 +216,7 @@ TaxRate copyWith({bool? active, String? Function()? country, int? created, Strin
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRate &&
           active == other.active &&
           country == other.country &&
@@ -229,7 +235,10 @@ TaxRate copyWith({bool? active, String? Function()? country, int? created, Strin
           percentage == other.percentage &&
           rateType == other.rateType &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(active, country, created, description, displayName, effectivePercentage, flatAmount, id, inclusive, jurisdiction, jurisdictionLevel, livemode, metadata, object, percentage, rateType, state, taxType); } 
-@override String toString() { return 'TaxRate(active: $active, country: $country, created: $created, description: $description, displayName: $displayName, effectivePercentage: $effectivePercentage, flatAmount: $flatAmount, id: $id, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, livemode: $livemode, metadata: $metadata, object: $object, percentage: $percentage, rateType: $rateType, state: $state, taxType: $taxType)'; } 
+          taxType == other.taxType;
+
+@override int get hashCode => Object.hash(active, country, created, description, displayName, effectivePercentage, flatAmount, id, inclusive, jurisdiction, jurisdictionLevel, livemode, metadata, object, percentage, rateType, state, taxType);
+
+@override String toString() => 'TaxRate(active: $active, country: $country, created: $created, description: $description, displayName: $displayName, effectivePercentage: $effectivePercentage, flatAmount: $flatAmount, id: $id, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, livemode: $livemode, metadata: $metadata, object: $object, percentage: $percentage, rateType: $rateType, state: $state, taxType: $taxType)';
+
  }

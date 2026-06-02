@@ -50,7 +50,7 @@ IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntegrationEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -58,7 +58,10 @@ IntegrationEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
           name == other.name &&
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, type); } 
-@override String toString() { return 'IntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, profileId, updatedAt, type);
+
+@override String toString() => 'IntegrationEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, type: $type)';
+
  }

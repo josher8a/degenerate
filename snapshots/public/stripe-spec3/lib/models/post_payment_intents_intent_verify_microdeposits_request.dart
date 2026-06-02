@@ -45,12 +45,15 @@ PostPaymentIntentsIntentVerifyMicrodepositsRequest copyWith({List<int>? Function
   descriptorCode: descriptorCode != null ? descriptorCode() : this.descriptorCode,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentVerifyMicrodepositsRequest &&
           listEquals(amounts, other.amounts) &&
           clientSecret == other.clientSecret &&
           descriptorCode == other.descriptorCode &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(Object.hashAll(amounts ?? const []), clientSecret, descriptorCode, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentIntentsIntentVerifyMicrodepositsRequest(amounts: $amounts, clientSecret: $clientSecret, descriptorCode: $descriptorCode, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(Object.hashAll(amounts ?? const []), clientSecret, descriptorCode, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentIntentsIntentVerifyMicrodepositsRequest(amounts: $amounts, clientSecret: $clientSecret, descriptorCode: $descriptorCode, expand: $expand)';
+
  }

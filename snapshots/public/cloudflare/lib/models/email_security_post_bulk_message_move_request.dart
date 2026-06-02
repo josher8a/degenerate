@@ -27,11 +27,14 @@ EmailSecurityPostBulkMessageMoveRequest copyWith({EmailSecurityPostBulkMessageMo
   ids: ids != null ? ids() : this.ids,
   postfixIds: postfixIds != null ? postfixIds() : this.postfixIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPostBulkMessageMoveRequest &&
           destination == other.destination &&
           listEquals(ids, other.ids) &&
-          listEquals(postfixIds, other.postfixIds); } 
-@override int get hashCode { return Object.hash(destination, Object.hashAll(ids ?? const []), Object.hashAll(postfixIds ?? const [])); } 
-@override String toString() { return 'EmailSecurityPostBulkMessageMoveRequest(destination: $destination, ids: $ids, postfixIds: $postfixIds)'; } 
+          listEquals(postfixIds, other.postfixIds);
+
+@override int get hashCode => Object.hash(destination, Object.hashAll(ids ?? const []), Object.hashAll(postfixIds ?? const []));
+
+@override String toString() => 'EmailSecurityPostBulkMessageMoveRequest(destination: $destination, ids: $ids, postfixIds: $postfixIds)';
+
  }

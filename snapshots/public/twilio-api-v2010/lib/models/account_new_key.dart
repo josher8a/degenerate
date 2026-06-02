@@ -49,13 +49,16 @@ AccountNewKey copyWith({String? Function()? sid, String? Function()? friendlyNam
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   secret: secret != null ? secret() : this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountNewKey &&
           sid == other.sid &&
           friendlyName == other.friendlyName &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(sid, friendlyName, dateCreated, dateUpdated, secret); } 
-@override String toString() { return 'AccountNewKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(sid, friendlyName, dateCreated, dateUpdated, secret);
+
+@override String toString() => 'AccountNewKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated, secret: $secret)';
+
  }

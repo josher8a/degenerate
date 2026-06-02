@@ -77,7 +77,7 @@ Package copyWith({int? id, String? name, PackageType? packageType, String? url, 
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Package &&
           id == other.id &&
           name == other.name &&
@@ -89,7 +89,10 @@ Package copyWith({int? id, String? name, PackageType? packageType, String? url, 
           owner == other.owner &&
           repository == other.repository &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, packageType, url, htmlUrl, versionCount, visibility, owner, repository, createdAt, updatedAt); } 
-@override String toString() { return 'Package(id: $id, name: $name, packageType: $packageType, url: $url, htmlUrl: $htmlUrl, versionCount: $versionCount, visibility: $visibility, owner: $owner, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, packageType, url, htmlUrl, versionCount, visibility, owner, repository, createdAt, updatedAt);
+
+@override String toString() => 'Package(id: $id, name: $name, packageType: $packageType, url: $url, htmlUrl: $htmlUrl, versionCount: $versionCount, visibility: $visibility, owner: $owner, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

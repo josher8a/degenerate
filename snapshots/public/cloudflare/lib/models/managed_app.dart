@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('manag
 ManagedApp copyWith({MagicManagedAppId? managedAppId}) { return ManagedApp(
   managedAppId: managedAppId ?? this.managedAppId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ManagedApp &&
-          managedAppId == other.managedAppId; } 
-@override int get hashCode { return managedAppId.hashCode; } 
-@override String toString() { return 'ManagedApp(managedAppId: $managedAppId)'; } 
+          managedAppId == other.managedAppId;
+
+@override int get hashCode => managedAppId.hashCode;
+
+@override String toString() => 'ManagedApp(managedAppId: $managedAppId)';
+
  }

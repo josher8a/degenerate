@@ -17,7 +17,8 @@ final class TagsDeleteError$412 extends TagsDeleteError {const TagsDeleteError$4
 
 final ResponseCommonFailure59 error;
 
-@override int get statusCode { return 412; } 
+@override int get statusCode => 412;
+
  }
 final class TagsDeleteError$Unknown extends TagsDeleteError {const TagsDeleteError$Unknown(this.statusCode, this.rawBody, );
 

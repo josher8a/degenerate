@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ContainerStateRunning copyWith({Time? Function()? startedAt}) { return ContainerStateRunning(
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerStateRunning &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return startedAt.hashCode; } 
-@override String toString() { return 'ContainerStateRunning(startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => startedAt.hashCode;
+
+@override String toString() => 'ContainerStateRunning(startedAt: $startedAt)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DlpRiskScoreSummaryGetForUserResponse copyWith({DlpRiskEvents? Function()? result}) { return DlpRiskScoreSummaryGetForUserResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskScoreSummaryGetForUserResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'DlpRiskScoreSummaryGetForUserResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'DlpRiskScoreSummaryGetForUserResponse(result: $result)';
+
  }

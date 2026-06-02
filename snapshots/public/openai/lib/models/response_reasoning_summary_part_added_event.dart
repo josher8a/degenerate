@@ -58,14 +58,17 @@ ResponseReasoningSummaryPartAddedEvent copyWith({String? type, String? itemId, i
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   $part: $part ?? this.$part,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseReasoningSummaryPartAddedEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           summaryIndex == other.summaryIndex &&
           sequenceNumber == other.sequenceNumber &&
-          $part == other.$part; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, summaryIndex, sequenceNumber, $part); } 
-@override String toString() { return 'ResponseReasoningSummaryPartAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, sequenceNumber: $sequenceNumber, \$part: ${$part})'; } 
+          $part == other.$part;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, summaryIndex, sequenceNumber, $part);
+
+@override String toString() => 'ResponseReasoningSummaryPartAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, sequenceNumber: $sequenceNumber, \$part: ${$part})';
+
  }

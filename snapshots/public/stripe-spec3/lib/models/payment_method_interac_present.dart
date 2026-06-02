@@ -127,7 +127,7 @@ PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Functio
   preferredLocales: preferredLocales != null ? preferredLocales() : this.preferredLocales,
   readMethod: readMethod != null ? readMethod() : this.readMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodInteracPresent &&
           brand == other.brand &&
           cardholderName == other.cardholderName &&
@@ -141,7 +141,10 @@ PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Functio
           last4 == other.last4 &&
           networks == other.networks &&
           listEquals(preferredLocales, other.preferredLocales) &&
-          readMethod == other.readMethod; } 
-@override int get hashCode { return Object.hash(brand, cardholderName, country, description, expMonth, expYear, fingerprint, funding, issuer, last4, networks, Object.hashAll(preferredLocales ?? const []), readMethod); } 
-@override String toString() { return 'PaymentMethodInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, issuer: $issuer, last4: $last4, networks: $networks, preferredLocales: $preferredLocales, readMethod: $readMethod)'; } 
+          readMethod == other.readMethod;
+
+@override int get hashCode => Object.hash(brand, cardholderName, country, description, expMonth, expYear, fingerprint, funding, issuer, last4, networks, Object.hashAll(preferredLocales ?? const []), readMethod);
+
+@override String toString() => 'PaymentMethodInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, issuer: $issuer, last4: $last4, networks: $networks, preferredLocales: $preferredLocales, readMethod: $readMethod)';
+
  }

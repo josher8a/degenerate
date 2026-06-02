@@ -66,7 +66,7 @@ Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, 
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Devices &&
           deviceId == other.deviceId &&
           deviceName == other.deviceName &&
@@ -77,7 +77,10 @@ Devices copyWith({String? Function()? deviceId, String? Function()? deviceName, 
           registrationId == other.registrationId &&
           status == other.status &&
           timestamp == other.timestamp &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(deviceId, deviceName, eligible, ineligibleReason, personEmail, platform, registrationId, status, timestamp, version); } 
-@override String toString() { return 'Devices(deviceId: $deviceId, deviceName: $deviceName, eligible: $eligible, ineligibleReason: $ineligibleReason, personEmail: $personEmail, platform: $platform, registrationId: $registrationId, status: $status, timestamp: $timestamp, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(deviceId, deviceName, eligible, ineligibleReason, personEmail, platform, registrationId, status, timestamp, version);
+
+@override String toString() => 'Devices(deviceId: $deviceId, deviceName: $deviceName, eligible: $eligible, ineligibleReason: $ineligibleReason, personEmail: $personEmail, platform: $platform, registrationId: $registrationId, status: $status, timestamp: $timestamp, version: $version)';
+
  }

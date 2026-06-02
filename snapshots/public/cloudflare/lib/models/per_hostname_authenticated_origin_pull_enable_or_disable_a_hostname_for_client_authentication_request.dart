@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
 PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest copyWith({List<TlsCertificatesAndHostnamesHostnameCertidInput>? config}) { return PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest(
   config: config ?? this.config,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest &&
-          listEquals(config, other.config); } 
-@override int get hashCode { return Object.hashAll(config); } 
-@override String toString() { return 'PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest(config: $config)'; } 
+          listEquals(config, other.config);
+
+@override int get hashCode => Object.hashAll(config);
+
+@override String toString() => 'PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest(config: $config)';
+
  }

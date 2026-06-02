@@ -22,10 +22,13 @@ TotalTlsEnableOrDisableTotalTlsRequest copyWith({TlsCertificatesAndHostnamesComp
   certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TotalTlsEnableOrDisableTotalTlsRequest &&
           certificateAuthority == other.certificateAuthority &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(certificateAuthority, enabled); } 
-@override String toString() { return 'TotalTlsEnableOrDisableTotalTlsRequest(certificateAuthority: $certificateAuthority, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(certificateAuthority, enabled);
+
+@override String toString() => 'TotalTlsEnableOrDisableTotalTlsRequest(certificateAuthority: $certificateAuthority, enabled: $enabled)';
+
  }

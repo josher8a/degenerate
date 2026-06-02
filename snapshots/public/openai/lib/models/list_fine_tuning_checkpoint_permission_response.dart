@@ -37,13 +37,16 @@ ListFineTuningCheckpointPermissionResponse copyWith({List<FineTuningCheckpointPe
   lastId: lastId != null ? lastId() : this.lastId,
   hasMore: hasMore ?? this.hasMore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListFineTuningCheckpointPermissionResponse &&
           listEquals(data, other.data) &&
           object == other.object &&
           firstId == other.firstId &&
           lastId == other.lastId &&
-          hasMore == other.hasMore; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), object, firstId, lastId, hasMore); } 
-@override String toString() { return 'ListFineTuningCheckpointPermissionResponse(data: $data, object: $object, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)'; } 
+          hasMore == other.hasMore;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), object, firstId, lastId, hasMore);
+
+@override String toString() => 'ListFineTuningCheckpointPermissionResponse(data: $data, object: $object, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
+
  }

@@ -45,13 +45,16 @@ CardDetailsParams copyWith({String? Function()? cvc, int? expMonth, int? expYear
   networks: networks != null ? networks() : this.networks,
   number: number ?? this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardDetailsParams &&
           cvc == other.cvc &&
           expMonth == other.expMonth &&
           expYear == other.expYear &&
           networks == other.networks &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(cvc, expMonth, expYear, networks, number); } 
-@override String toString() { return 'CardDetailsParams(cvc: $cvc, expMonth: $expMonth, expYear: $expYear, networks: $networks, number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => Object.hash(cvc, expMonth, expYear, networks, number);
+
+@override String toString() => 'CardDetailsParams(cvc: $cvc, expMonth: $expMonth, expYear: $expYear, networks: $networks, number: $number)';
+
  }

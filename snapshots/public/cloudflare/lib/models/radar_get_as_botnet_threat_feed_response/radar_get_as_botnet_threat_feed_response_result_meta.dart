@@ -29,11 +29,14 @@ RadarGetAsBotnetThreatFeedResponseResultMeta copyWith({String? Function()? compa
   date: date ?? this.date,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsBotnetThreatFeedResponseResultMeta &&
           compareDate == other.compareDate &&
           date == other.date &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(compareDate, date, total); } 
-@override String toString() { return 'RadarGetAsBotnetThreatFeedResponseResultMeta(compareDate: $compareDate, date: $date, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(compareDate, date, total);
+
+@override String toString() => 'RadarGetAsBotnetThreatFeedResponseResultMeta(compareDate: $compareDate, date: $date, total: $total)';
+
  }

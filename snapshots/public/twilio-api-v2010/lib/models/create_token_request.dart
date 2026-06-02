@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CreateTokenRequest copyWith({int? Function()? ttl}) { return CreateTokenRequest(
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTokenRequest &&
-          ttl == other.ttl; } 
-@override int get hashCode { return ttl.hashCode; } 
-@override String toString() { return 'CreateTokenRequest(ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => ttl.hashCode;
+
+@override String toString() => 'CreateTokenRequest(ttl: $ttl)';
+
  }

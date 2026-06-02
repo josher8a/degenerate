@@ -29,11 +29,14 @@ SecretScanningPatternConfiguration copyWith({SecretScanningRowVersion? Function(
   providerPatternOverrides: providerPatternOverrides != null ? providerPatternOverrides() : this.providerPatternOverrides,
   customPatternOverrides: customPatternOverrides != null ? customPatternOverrides() : this.customPatternOverrides,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningPatternConfiguration &&
           patternConfigVersion == other.patternConfigVersion &&
           listEquals(providerPatternOverrides, other.providerPatternOverrides) &&
-          listEquals(customPatternOverrides, other.customPatternOverrides); } 
-@override int get hashCode { return Object.hash(patternConfigVersion, Object.hashAll(providerPatternOverrides ?? const []), Object.hashAll(customPatternOverrides ?? const [])); } 
-@override String toString() { return 'SecretScanningPatternConfiguration(patternConfigVersion: $patternConfigVersion, providerPatternOverrides: $providerPatternOverrides, customPatternOverrides: $customPatternOverrides)'; } 
+          listEquals(customPatternOverrides, other.customPatternOverrides);
+
+@override int get hashCode => Object.hash(patternConfigVersion, Object.hashAll(providerPatternOverrides ?? const []), Object.hashAll(customPatternOverrides ?? const []));
+
+@override String toString() => 'SecretScanningPatternConfiguration(patternConfigVersion: $patternConfigVersion, providerPatternOverrides: $providerPatternOverrides, customPatternOverrides: $customPatternOverrides)';
+
  }

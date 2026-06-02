@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleFeaturesCardLogo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleFeaturesCardLogo($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleFeaturesCardLogo && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleFeaturesCardLogo($value)';
+
  }
 /// The policy for how to use carrier letter text in a card design with this physical bundle.
 @immutable final class IssuingPhysicalBundleFeaturesCarrierText {const IssuingPhysicalBundleFeaturesCarrierText._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleFeaturesCarrierText && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleFeaturesCarrierText($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleFeaturesCarrierText && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleFeaturesCarrierText($value)';
+
  }
 /// The policy for how to use a second line on a card with this physical bundle.
 @immutable final class IssuingPhysicalBundleFeaturesSecondLine {const IssuingPhysicalBundleFeaturesSecondLine._(this.value);
@@ -79,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleFeaturesSecondLine && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleFeaturesSecondLine($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleFeaturesSecondLine && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleFeaturesSecondLine($value)';
+
  }
 /// 
 @immutable final class IssuingPhysicalBundleFeatures {const IssuingPhysicalBundleFeatures({required this.cardLogo, required this.carrierText, required this.secondLine, });
@@ -115,11 +124,14 @@ IssuingPhysicalBundleFeatures copyWith({IssuingPhysicalBundleFeaturesCardLogo? c
   carrierText: carrierText ?? this.carrierText,
   secondLine: secondLine ?? this.secondLine,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPhysicalBundleFeatures &&
           cardLogo == other.cardLogo &&
           carrierText == other.carrierText &&
-          secondLine == other.secondLine; } 
-@override int get hashCode { return Object.hash(cardLogo, carrierText, secondLine); } 
-@override String toString() { return 'IssuingPhysicalBundleFeatures(cardLogo: $cardLogo, carrierText: $carrierText, secondLine: $secondLine)'; } 
+          secondLine == other.secondLine;
+
+@override int get hashCode => Object.hash(cardLogo, carrierText, secondLine);
+
+@override String toString() => 'IssuingPhysicalBundleFeatures(cardLogo: $cardLogo, carrierText: $carrierText, secondLine: $secondLine)';
+
  }

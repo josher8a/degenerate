@@ -28,10 +28,13 @@ OrgsUpdatePatAccessesRequest copyWith({OrgsUpdatePatAccessRequestAction? action,
   action: action ?? this.action,
   patIds: patIds ?? this.patIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsUpdatePatAccessesRequest &&
           action == other.action &&
-          listEquals(patIds, other.patIds); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(patIds)); } 
-@override String toString() { return 'OrgsUpdatePatAccessesRequest(action: $action, patIds: $patIds)'; } 
+          listEquals(patIds, other.patIds);
+
+@override int get hashCode => Object.hash(action, Object.hashAll(patIds));
+
+@override String toString() => 'OrgsUpdatePatAccessesRequest(action: $action, patIds: $patIds)';
+
  }

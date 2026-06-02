@@ -49,11 +49,14 @@ MetadataAnnotations copyWith({String? Function()? workersAlias, String? Function
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTag: workersTag != null ? workersTag() : this.workersTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataAnnotations &&
           workersAlias == other.workersAlias &&
           workersMessage == other.workersMessage &&
-          workersTag == other.workersTag; } 
-@override int get hashCode { return Object.hash(workersAlias, workersMessage, workersTag); } 
-@override String toString() { return 'MetadataAnnotations(workersAlias: $workersAlias, workersMessage: $workersMessage, workersTag: $workersTag)'; } 
+          workersTag == other.workersTag;
+
+@override int get hashCode => Object.hash(workersAlias, workersMessage, workersTag);
+
+@override String toString() => 'MetadataAnnotations(workersAlias: $workersAlias, workersMessage: $workersMessage, workersTag: $workersTag)';
+
  }

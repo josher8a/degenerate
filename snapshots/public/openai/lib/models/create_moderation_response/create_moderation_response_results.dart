@@ -37,12 +37,15 @@ CreateModerationResponseResults copyWith({bool? flagged, Categories? categories,
   categoryScores: categoryScores ?? this.categoryScores,
   categoryAppliedInputTypes: categoryAppliedInputTypes ?? this.categoryAppliedInputTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateModerationResponseResults &&
           flagged == other.flagged &&
           categories == other.categories &&
           categoryScores == other.categoryScores &&
-          categoryAppliedInputTypes == other.categoryAppliedInputTypes; } 
-@override int get hashCode { return Object.hash(flagged, categories, categoryScores, categoryAppliedInputTypes); } 
-@override String toString() { return 'CreateModerationResponseResults(flagged: $flagged, categories: $categories, categoryScores: $categoryScores, categoryAppliedInputTypes: $categoryAppliedInputTypes)'; } 
+          categoryAppliedInputTypes == other.categoryAppliedInputTypes;
+
+@override int get hashCode => Object.hash(flagged, categories, categoryScores, categoryAppliedInputTypes);
+
+@override String toString() => 'CreateModerationResponseResults(flagged: $flagged, categories: $categories, categoryScores: $categoryScores, categoryAppliedInputTypes: $categoryAppliedInputTypes)';
+
  }

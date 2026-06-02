@@ -22,10 +22,13 @@ StreamsResponse2 copyWith({StreamsByStreamIdResponseResult? result, CloudflarePi
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsResponse2 &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'StreamsResponse2(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'StreamsResponse2(result: $result, success: $success)';
+
  }

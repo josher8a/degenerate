@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxCalculationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxCalculationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxCalculationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxCalculationObject($value)';
+
  }
 /// A Tax Calculation allows you to calculate the tax to collect from your customer.
 /// 
@@ -144,7 +147,7 @@ TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()?
   taxBreakdown: taxBreakdown ?? this.taxBreakdown,
   taxDate: taxDate ?? this.taxDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxCalculation &&
           amountTotal == other.amountTotal &&
           currency == other.currency &&
@@ -160,7 +163,10 @@ TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()?
           taxAmountExclusive == other.taxAmountExclusive &&
           taxAmountInclusive == other.taxAmountInclusive &&
           listEquals(taxBreakdown, other.taxBreakdown) &&
-          taxDate == other.taxDate; } 
-@override int get hashCode { return Object.hash(amountTotal, currency, customer, customerDetails, expiresAt, id, lineItems, livemode, object, shipFromDetails, shippingCost, taxAmountExclusive, taxAmountInclusive, Object.hashAll(taxBreakdown), taxDate); } 
-@override String toString() { return 'TaxCalculation(amountTotal: $amountTotal, currency: $currency, customer: $customer, customerDetails: $customerDetails, expiresAt: $expiresAt, id: $id, lineItems: $lineItems, livemode: $livemode, object: $object, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxAmountExclusive: $taxAmountExclusive, taxAmountInclusive: $taxAmountInclusive, taxBreakdown: $taxBreakdown, taxDate: $taxDate)'; } 
+          taxDate == other.taxDate;
+
+@override int get hashCode => Object.hash(amountTotal, currency, customer, customerDetails, expiresAt, id, lineItems, livemode, object, shipFromDetails, shippingCost, taxAmountExclusive, taxAmountInclusive, Object.hashAll(taxBreakdown), taxDate);
+
+@override String toString() => 'TaxCalculation(amountTotal: $amountTotal, currency: $currency, customer: $customer, customerDetails: $customerDetails, expiresAt: $expiresAt, id: $id, lineItems: $lineItems, livemode: $livemode, object: $object, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxAmountExclusive: $taxAmountExclusive, taxAmountInclusive: $taxAmountInclusive, taxBreakdown: $taxBreakdown, taxDate: $taxDate)';
+
  }

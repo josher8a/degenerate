@@ -36,11 +36,14 @@ Modules copyWith({Uint8List? contentBase64, String? contentType, String? name, }
   contentType: contentType ?? this.contentType,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Modules &&
           contentBase64 == other.contentBase64 &&
           contentType == other.contentType &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(contentBase64, contentType, name); } 
-@override String toString() { return 'Modules(contentBase64: $contentBase64, contentType: $contentType, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(contentBase64, contentType, name);
+
+@override String toString() => 'Modules(contentBase64: $contentBase64, contentType: $contentType, name: $name)';
+
  }

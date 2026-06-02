@@ -29,10 +29,13 @@ ContextManagementParam copyWith({String? type, int? Function()? compactThreshold
   type: type ?? this.type,
   compactThreshold: compactThreshold != null ? compactThreshold() : this.compactThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContextManagementParam &&
           type == other.type &&
-          compactThreshold == other.compactThreshold; } 
-@override int get hashCode { return Object.hash(type, compactThreshold); } 
-@override String toString() { return 'ContextManagementParam(type: $type, compactThreshold: $compactThreshold)'; } 
+          compactThreshold == other.compactThreshold;
+
+@override int get hashCode => Object.hash(type, compactThreshold);
+
+@override String toString() => 'ContextManagementParam(type: $type, compactThreshold: $compactThreshold)';
+
  }

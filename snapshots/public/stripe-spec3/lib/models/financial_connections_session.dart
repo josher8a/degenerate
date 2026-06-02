@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinancialConnectionsSessionObject($value)';
+
  }
 /// A Financial Connections Session is the secure way to programmatically launch the client-side Stripe.js modal that lets your users link their accounts.
 @immutable final class FinancialConnectionsSession {const FinancialConnectionsSession({required this.accounts, required this.id, required this.livemode, required this.object, required this.permissions, this.accountHolder, this.clientSecret, this.filters, this.prefetch, this.returnUrl, });
@@ -108,7 +111,7 @@ FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Func
   prefetch: prefetch != null ? prefetch() : this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsSession &&
           accountHolder == other.accountHolder &&
           accounts == other.accounts &&
@@ -119,7 +122,10 @@ FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Func
           object == other.object &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(accountHolder, accounts, clientSecret, filters, id, livemode, object, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl); } 
-@override String toString() { return 'FinancialConnectionsSession(accountHolder: $accountHolder, accounts: $accounts, clientSecret: $clientSecret, filters: $filters, id: $id, livemode: $livemode, object: $object, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => Object.hash(accountHolder, accounts, clientSecret, filters, id, livemode, object, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl);
+
+@override String toString() => 'FinancialConnectionsSession(accountHolder: $accountHolder, accounts: $accounts, clientSecret: $clientSecret, filters: $filters, id: $id, livemode: $livemode, object: $object, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';
+
  }

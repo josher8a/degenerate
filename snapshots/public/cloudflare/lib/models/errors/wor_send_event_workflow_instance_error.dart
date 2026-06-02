@@ -18,13 +18,15 @@ final class WorSendEventWorkflowInstanceError$400 extends WorSendEventWorkflowIn
 
 final WorSendEventWorkflowInstanceResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorSendEventWorkflowInstanceError$404 extends WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstanceError$404(this.error);
 
 final WorSendEventWorkflowInstanceResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorSendEventWorkflowInstanceError$Unknown extends WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstanceError$Unknown(this.statusCode, this.rawBody, );
 

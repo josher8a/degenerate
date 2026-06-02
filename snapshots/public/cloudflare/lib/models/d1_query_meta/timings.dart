@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Timings copyWith({double? Function()? sqlDurationMs}) { return Timings(
   sqlDurationMs: sqlDurationMs != null ? sqlDurationMs() : this.sqlDurationMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Timings &&
-          sqlDurationMs == other.sqlDurationMs; } 
-@override int get hashCode { return sqlDurationMs.hashCode; } 
-@override String toString() { return 'Timings(sqlDurationMs: $sqlDurationMs)'; } 
+          sqlDurationMs == other.sqlDurationMs;
+
+@override int get hashCode => sqlDurationMs.hashCode;
+
+@override String toString() => 'Timings(sqlDurationMs: $sqlDurationMs)';
+
  }

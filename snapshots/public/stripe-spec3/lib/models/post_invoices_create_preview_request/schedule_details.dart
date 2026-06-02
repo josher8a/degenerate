@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScheduleDetailsEndBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScheduleDetailsEndBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ScheduleDetailsEndBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ScheduleDetailsEndBehavior($value)';
+
  }
 /// The schedule creation or modification params to apply as a preview. Cannot be used with `subscription` or `subscription_` prefixed fields.
 @immutable final class ScheduleDetails {const ScheduleDetails({this.billingMode, this.endBehavior, this.phases, this.prorationBehavior, });
@@ -55,12 +58,15 @@ ScheduleDetails copyWith({PostSubscriptionSchedulesRequestBillingMode? Function(
   phases: phases != null ? phases() : this.phases,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScheduleDetails &&
           billingMode == other.billingMode &&
           endBehavior == other.endBehavior &&
           listEquals(phases, other.phases) &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(billingMode, endBehavior, Object.hashAll(phases ?? const []), prorationBehavior); } 
-@override String toString() { return 'ScheduleDetails(billingMode: $billingMode, endBehavior: $endBehavior, phases: $phases, prorationBehavior: $prorationBehavior)'; } 
+          prorationBehavior == other.prorationBehavior;
+
+@override int get hashCode => Object.hash(billingMode, endBehavior, Object.hashAll(phases ?? const []), prorationBehavior);
+
+@override String toString() => 'ScheduleDetails(billingMode: $billingMode, endBehavior: $endBehavior, phases: $phases, prorationBehavior: $prorationBehavior)';
+
  }

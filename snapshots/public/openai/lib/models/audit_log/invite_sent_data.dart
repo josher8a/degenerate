@@ -23,10 +23,13 @@ InviteSentData copyWith({String? Function()? email, String? Function()? role, })
   email: email != null ? email() : this.email,
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InviteSentData &&
           email == other.email &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(email, role); } 
-@override String toString() { return 'InviteSentData(email: $email, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(email, role);
+
+@override String toString() => 'InviteSentData(email: $email, role: $role)';
+
  }

@@ -48,14 +48,17 @@ PostTaxTransactionsCreateReversalRequestLineItems copyWith({int? amount, int? am
   quantity: quantity != null ? quantity() : this.quantity,
   reference: reference ?? this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxTransactionsCreateReversalRequestLineItems &&
           amount == other.amount &&
           amountTax == other.amountTax &&
           metadata == other.metadata &&
           originalLineItem == other.originalLineItem &&
           quantity == other.quantity &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(amount, amountTax, metadata, originalLineItem, quantity, reference); } 
-@override String toString() { return 'PostTaxTransactionsCreateReversalRequestLineItems(amount: $amount, amountTax: $amountTax, metadata: $metadata, originalLineItem: $originalLineItem, quantity: $quantity, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(amount, amountTax, metadata, originalLineItem, quantity, reference);
+
+@override String toString() => 'PostTaxTransactionsCreateReversalRequestLineItems(amount: $amount, amountTax: $amountTax, metadata: $metadata, originalLineItem: $originalLineItem, quantity: $quantity, reference: $reference)';
+
  }

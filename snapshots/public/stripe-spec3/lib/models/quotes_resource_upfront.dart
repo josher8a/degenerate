@@ -36,12 +36,15 @@ QuotesResourceUpfront copyWith({int? amountSubtotal, int? amountTotal, CheckoutS
   lineItems: lineItems != null ? lineItems() : this.lineItems,
   totalDetails: totalDetails ?? this.totalDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceUpfront &&
           amountSubtotal == other.amountSubtotal &&
           amountTotal == other.amountTotal &&
           lineItems == other.lineItems &&
-          totalDetails == other.totalDetails; } 
-@override int get hashCode { return Object.hash(amountSubtotal, amountTotal, lineItems, totalDetails); } 
-@override String toString() { return 'QuotesResourceUpfront(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, lineItems: $lineItems, totalDetails: $totalDetails)'; } 
+          totalDetails == other.totalDetails;
+
+@override int get hashCode => Object.hash(amountSubtotal, amountTotal, lineItems, totalDetails);
+
+@override String toString() => 'QuotesResourceUpfront(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, lineItems: $lineItems, totalDetails: $totalDetails)';
+
  }

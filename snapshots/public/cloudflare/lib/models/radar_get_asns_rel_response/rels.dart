@@ -51,7 +51,7 @@ Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, Stri
   asn2Name: asn2Name ?? this.asn2Name,
   rel: rel ?? this.rel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rels &&
           asn1 == other.asn1 &&
           asn1Country == other.asn1Country &&
@@ -59,7 +59,10 @@ Rels copyWith({int? asn1, String? asn1Country, String? asn1Name, int? asn2, Stri
           asn2 == other.asn2 &&
           asn2Country == other.asn2Country &&
           asn2Name == other.asn2Name &&
-          rel == other.rel; } 
-@override int get hashCode { return Object.hash(asn1, asn1Country, asn1Name, asn2, asn2Country, asn2Name, rel); } 
-@override String toString() { return 'Rels(asn1: $asn1, asn1Country: $asn1Country, asn1Name: $asn1Name, asn2: $asn2, asn2Country: $asn2Country, asn2Name: $asn2Name, rel: $rel)'; } 
+          rel == other.rel;
+
+@override int get hashCode => Object.hash(asn1, asn1Country, asn1Name, asn2, asn2Country, asn2Name, rel);
+
+@override String toString() => 'Rels(asn1: $asn1, asn1Country: $asn1Country, asn1Name: $asn1Name, asn2: $asn2, asn2Country: $asn2Country, asn2Name: $asn2Name, rel: $rel)';
+
  }

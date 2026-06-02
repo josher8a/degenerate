@@ -65,7 +65,7 @@ PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({RegistryType? Functio
   visibility: visibility != null ? visibility() : this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateRegistriesUpdateOrgPrivateRegistryRequest &&
           registryType == other.registryType &&
           url == other.url &&
@@ -74,7 +74,10 @@ PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({RegistryType? Functio
           encryptedValue == other.encryptedValue &&
           keyId == other.keyId &&
           visibility == other.visibility &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(registryType, url, username, replacesBase, encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequest(registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(registryType, url, username, replacesBase, encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'PrivateRegistriesUpdateOrgPrivateRegistryRequest(registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

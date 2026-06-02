@@ -35,12 +35,15 @@ IamTokenVerifyResponseSingleSegmentResult copyWith({IamExpiresOn? Function()? ex
   notBefore: notBefore != null ? notBefore() : this.notBefore,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamTokenVerifyResponseSingleSegmentResult &&
           expiresOn == other.expiresOn &&
           id == other.id &&
           notBefore == other.notBefore &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(expiresOn, id, notBefore, status); } 
-@override String toString() { return 'IamTokenVerifyResponseSingleSegmentResult(expiresOn: $expiresOn, id: $id, notBefore: $notBefore, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(expiresOn, id, notBefore, status);
+
+@override String toString() => 'IamTokenVerifyResponseSingleSegmentResult(expiresOn: $expiresOn, id: $id, notBefore: $notBefore, status: $status)';
+
  }

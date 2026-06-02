@@ -37,12 +37,15 @@ R2BucketLockRule copyWith({R2BucketLockRuleCondition? condition, bool? enabled, 
   id: id ?? this.id,
   prefix: prefix != null ? prefix() : this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2BucketLockRule &&
           condition == other.condition &&
           enabled == other.enabled &&
           id == other.id &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(condition, enabled, id, prefix); } 
-@override String toString() { return 'R2BucketLockRule(condition: $condition, enabled: $enabled, id: $id, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(condition, enabled, id, prefix);
+
+@override String toString() => 'R2BucketLockRule(condition: $condition, enabled: $enabled, id: $id, prefix: $prefix)';
+
  }

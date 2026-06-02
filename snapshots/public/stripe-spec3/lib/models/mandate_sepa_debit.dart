@@ -29,10 +29,13 @@ MandateSepaDebit copyWith({String? reference, String? url, }) { return MandateSe
   reference: reference ?? this.reference,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandateSepaDebit &&
           reference == other.reference &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(reference, url); } 
-@override String toString() { return 'MandateSepaDebit(reference: $reference, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(reference, url);
+
+@override String toString() => 'MandateSepaDebit(reference: $reference, url: $url)';
+
  }

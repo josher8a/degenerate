@@ -45,12 +45,15 @@ RealtimeTranscriptionSessionCreateRequestTurnDetection copyWith({VadConfigType? 
   prefixPaddingMs: prefixPaddingMs != null ? prefixPaddingMs() : this.prefixPaddingMs,
   silenceDurationMs: silenceDurationMs != null ? silenceDurationMs() : this.silenceDurationMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequestTurnDetection &&
           type == other.type &&
           threshold == other.threshold &&
           prefixPaddingMs == other.prefixPaddingMs &&
-          silenceDurationMs == other.silenceDurationMs; } 
-@override int get hashCode { return Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestTurnDetection(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs)'; } 
+          silenceDurationMs == other.silenceDurationMs;
+
+@override int get hashCode => Object.hash(type, threshold, prefixPaddingMs, silenceDurationMs);
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateRequestTurnDetection(type: $type, threshold: $threshold, prefixPaddingMs: $prefixPaddingMs, silenceDurationMs: $silenceDurationMs)';
+
  }

@@ -50,7 +50,7 @@ ZeroTrustGatewaySingleResponseWithListItemsResult copyWith({ZeroTrustGatewayRead
   type: type != null ? type() : this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySingleResponseWithListItemsResult &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -58,7 +58,10 @@ ZeroTrustGatewaySingleResponseWithListItemsResult copyWith({ZeroTrustGatewayRead
           listEquals(items, other.items) &&
           name == other.name &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, Object.hashAll(items ?? const []), name, type, updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewaySingleResponseWithListItemsResult(createdAt: $createdAt, description: $description, id: $id, items: $items, name: $name, type: $type, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, id, Object.hashAll(items ?? const []), name, type, updatedAt);
+
+@override String toString() => 'ZeroTrustGatewaySingleResponseWithListItemsResult(createdAt: $createdAt, description: $description, id: $id, items: $items, name: $name, type: $type, updatedAt: $updatedAt)';
+
  }

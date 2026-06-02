@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningDefaultSetupOptionsRunnerType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningDefaultSetupOptionsRunnerType($value)';
+
  }
 /// Feature options for code scanning default setup
 @immutable final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
@@ -51,10 +54,13 @@ CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerT
   runnerType: runnerType != null ? runnerType() : this.runnerType,
   runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetupOptions &&
           runnerType == other.runnerType &&
-          runnerLabel == other.runnerLabel; } 
-@override int get hashCode { return Object.hash(runnerType, runnerLabel); } 
-@override String toString() { return 'CodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)'; } 
+          runnerLabel == other.runnerLabel;
+
+@override int get hashCode => Object.hash(runnerType, runnerLabel);
+
+@override String toString() => 'CodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)';
+
  }

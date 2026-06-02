@@ -70,16 +70,20 @@ final RealtimeClientEventConversationItemCreate realtimeClientEventConversationI
 
 @override String get type => 'conversation.item.create';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventConversationItemCreate.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventConversationItemCreate.toJson(), 'type': type};
+
 RealtimeClientEventConversationItemCreate$Variant copyWith({String? Function()? eventId, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeClientEventConversationItemCreate$Variant(realtimeClientEventConversationItemCreate.copyWith(
   eventId: eventId,
   previousItemId: previousItemId,
   item: item,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventConversationItemCreate$Variant && realtimeClientEventConversationItemCreate == other.realtimeClientEventConversationItemCreate; } 
-@override int get hashCode { return realtimeClientEventConversationItemCreate.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.conversationItemCreate($realtimeClientEventConversationItemCreate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventConversationItemCreate$Variant && realtimeClientEventConversationItemCreate == other.realtimeClientEventConversationItemCreate;
+
+@override int get hashCode => realtimeClientEventConversationItemCreate.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.conversationItemCreate($realtimeClientEventConversationItemCreate)';
+
 @override String? get eventId => realtimeClientEventConversationItemCreate.eventId;
 
  }
@@ -91,15 +95,19 @@ final RealtimeClientEventConversationItemDelete realtimeClientEventConversationI
 
 @override String get type => 'conversation.item.delete';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventConversationItemDelete.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventConversationItemDelete.toJson(), 'type': type};
+
 RealtimeClientEventConversationItemDelete$Variant copyWith({String? Function()? eventId, String? itemId, }) { return RealtimeClientEventConversationItemDelete$Variant(realtimeClientEventConversationItemDelete.copyWith(
   eventId: eventId,
   itemId: itemId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventConversationItemDelete$Variant && realtimeClientEventConversationItemDelete == other.realtimeClientEventConversationItemDelete; } 
-@override int get hashCode { return realtimeClientEventConversationItemDelete.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.conversationItemDelete($realtimeClientEventConversationItemDelete)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventConversationItemDelete$Variant && realtimeClientEventConversationItemDelete == other.realtimeClientEventConversationItemDelete;
+
+@override int get hashCode => realtimeClientEventConversationItemDelete.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.conversationItemDelete($realtimeClientEventConversationItemDelete)';
+
 @override String? get eventId => realtimeClientEventConversationItemDelete.eventId;
 
  }
@@ -111,15 +119,19 @@ final RealtimeClientEventConversationItemRetrieve realtimeClientEventConversatio
 
 @override String get type => 'conversation.item.retrieve';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventConversationItemRetrieve.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventConversationItemRetrieve.toJson(), 'type': type};
+
 RealtimeClientEventConversationItemRetrieve$Variant copyWith({String? Function()? eventId, String? itemId, }) { return RealtimeClientEventConversationItemRetrieve$Variant(realtimeClientEventConversationItemRetrieve.copyWith(
   eventId: eventId,
   itemId: itemId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventConversationItemRetrieve$Variant && realtimeClientEventConversationItemRetrieve == other.realtimeClientEventConversationItemRetrieve; } 
-@override int get hashCode { return realtimeClientEventConversationItemRetrieve.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.conversationItemRetrieve($realtimeClientEventConversationItemRetrieve)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventConversationItemRetrieve$Variant && realtimeClientEventConversationItemRetrieve == other.realtimeClientEventConversationItemRetrieve;
+
+@override int get hashCode => realtimeClientEventConversationItemRetrieve.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.conversationItemRetrieve($realtimeClientEventConversationItemRetrieve)';
+
 @override String? get eventId => realtimeClientEventConversationItemRetrieve.eventId;
 
  }
@@ -131,17 +143,21 @@ final RealtimeClientEventConversationItemTruncate realtimeClientEventConversatio
 
 @override String get type => 'conversation.item.truncate';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventConversationItemTruncate.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventConversationItemTruncate.toJson(), 'type': type};
+
 RealtimeClientEventConversationItemTruncate$Variant copyWith({String? Function()? eventId, String? itemId, int? contentIndex, int? audioEndMs, }) { return RealtimeClientEventConversationItemTruncate$Variant(realtimeClientEventConversationItemTruncate.copyWith(
   eventId: eventId,
   itemId: itemId,
   contentIndex: contentIndex,
   audioEndMs: audioEndMs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventConversationItemTruncate$Variant && realtimeClientEventConversationItemTruncate == other.realtimeClientEventConversationItemTruncate; } 
-@override int get hashCode { return realtimeClientEventConversationItemTruncate.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.conversationItemTruncate($realtimeClientEventConversationItemTruncate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventConversationItemTruncate$Variant && realtimeClientEventConversationItemTruncate == other.realtimeClientEventConversationItemTruncate;
+
+@override int get hashCode => realtimeClientEventConversationItemTruncate.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.conversationItemTruncate($realtimeClientEventConversationItemTruncate)';
+
 @override String? get eventId => realtimeClientEventConversationItemTruncate.eventId;
 
  }
@@ -153,15 +169,19 @@ final RealtimeClientEventInputAudioBufferAppend realtimeClientEventInputAudioBuf
 
 @override String get type => 'input_audio_buffer.append';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventInputAudioBufferAppend.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventInputAudioBufferAppend.toJson(), 'type': type};
+
 RealtimeClientEventInputAudioBufferAppend$Variant copyWith({String? Function()? eventId, String? audio, }) { return RealtimeClientEventInputAudioBufferAppend$Variant(realtimeClientEventInputAudioBufferAppend.copyWith(
   eventId: eventId,
   audio: audio,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventInputAudioBufferAppend$Variant && realtimeClientEventInputAudioBufferAppend == other.realtimeClientEventInputAudioBufferAppend; } 
-@override int get hashCode { return realtimeClientEventInputAudioBufferAppend.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.inputAudioBufferAppend($realtimeClientEventInputAudioBufferAppend)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventInputAudioBufferAppend$Variant && realtimeClientEventInputAudioBufferAppend == other.realtimeClientEventInputAudioBufferAppend;
+
+@override int get hashCode => realtimeClientEventInputAudioBufferAppend.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.inputAudioBufferAppend($realtimeClientEventInputAudioBufferAppend)';
+
 @override String? get eventId => realtimeClientEventInputAudioBufferAppend.eventId;
 
  }
@@ -173,14 +193,18 @@ final RealtimeClientEventInputAudioBufferClear realtimeClientEventInputAudioBuff
 
 @override String get type => 'input_audio_buffer.clear';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventInputAudioBufferClear.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventInputAudioBufferClear.toJson(), 'type': type};
+
 RealtimeClientEventInputAudioBufferClear$Variant copyWith({String? Function()? eventId}) { return RealtimeClientEventInputAudioBufferClear$Variant(realtimeClientEventInputAudioBufferClear.copyWith(
   eventId: eventId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventInputAudioBufferClear$Variant && realtimeClientEventInputAudioBufferClear == other.realtimeClientEventInputAudioBufferClear; } 
-@override int get hashCode { return realtimeClientEventInputAudioBufferClear.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.inputAudioBufferClear($realtimeClientEventInputAudioBufferClear)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventInputAudioBufferClear$Variant && realtimeClientEventInputAudioBufferClear == other.realtimeClientEventInputAudioBufferClear;
+
+@override int get hashCode => realtimeClientEventInputAudioBufferClear.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.inputAudioBufferClear($realtimeClientEventInputAudioBufferClear)';
+
 @override String? get eventId => realtimeClientEventInputAudioBufferClear.eventId;
 
  }
@@ -192,14 +216,18 @@ final RealtimeClientEventOutputAudioBufferClear realtimeClientEventOutputAudioBu
 
 @override String get type => 'output_audio_buffer.clear';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventOutputAudioBufferClear.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventOutputAudioBufferClear.toJson(), 'type': type};
+
 RealtimeClientEventOutputAudioBufferClear$Variant copyWith({String? Function()? eventId}) { return RealtimeClientEventOutputAudioBufferClear$Variant(realtimeClientEventOutputAudioBufferClear.copyWith(
   eventId: eventId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventOutputAudioBufferClear$Variant && realtimeClientEventOutputAudioBufferClear == other.realtimeClientEventOutputAudioBufferClear; } 
-@override int get hashCode { return realtimeClientEventOutputAudioBufferClear.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.outputAudioBufferClear($realtimeClientEventOutputAudioBufferClear)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventOutputAudioBufferClear$Variant && realtimeClientEventOutputAudioBufferClear == other.realtimeClientEventOutputAudioBufferClear;
+
+@override int get hashCode => realtimeClientEventOutputAudioBufferClear.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.outputAudioBufferClear($realtimeClientEventOutputAudioBufferClear)';
+
 @override String? get eventId => realtimeClientEventOutputAudioBufferClear.eventId;
 
  }
@@ -211,14 +239,18 @@ final RealtimeClientEventInputAudioBufferCommit realtimeClientEventInputAudioBuf
 
 @override String get type => 'input_audio_buffer.commit';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventInputAudioBufferCommit.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventInputAudioBufferCommit.toJson(), 'type': type};
+
 RealtimeClientEventInputAudioBufferCommit$Variant copyWith({String? Function()? eventId}) { return RealtimeClientEventInputAudioBufferCommit$Variant(realtimeClientEventInputAudioBufferCommit.copyWith(
   eventId: eventId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventInputAudioBufferCommit$Variant && realtimeClientEventInputAudioBufferCommit == other.realtimeClientEventInputAudioBufferCommit; } 
-@override int get hashCode { return realtimeClientEventInputAudioBufferCommit.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.inputAudioBufferCommit($realtimeClientEventInputAudioBufferCommit)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventInputAudioBufferCommit$Variant && realtimeClientEventInputAudioBufferCommit == other.realtimeClientEventInputAudioBufferCommit;
+
+@override int get hashCode => realtimeClientEventInputAudioBufferCommit.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.inputAudioBufferCommit($realtimeClientEventInputAudioBufferCommit)';
+
 @override String? get eventId => realtimeClientEventInputAudioBufferCommit.eventId;
 
  }
@@ -230,15 +262,19 @@ final RealtimeClientEventResponseCancel realtimeClientEventResponseCancel;
 
 @override String get type => 'response.cancel';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventResponseCancel.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventResponseCancel.toJson(), 'type': type};
+
 RealtimeClientEventResponseCancel$Variant copyWith({String? Function()? eventId, String? Function()? responseId, }) { return RealtimeClientEventResponseCancel$Variant(realtimeClientEventResponseCancel.copyWith(
   eventId: eventId,
   responseId: responseId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventResponseCancel$Variant && realtimeClientEventResponseCancel == other.realtimeClientEventResponseCancel; } 
-@override int get hashCode { return realtimeClientEventResponseCancel.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.responseCancel($realtimeClientEventResponseCancel)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventResponseCancel$Variant && realtimeClientEventResponseCancel == other.realtimeClientEventResponseCancel;
+
+@override int get hashCode => realtimeClientEventResponseCancel.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.responseCancel($realtimeClientEventResponseCancel)';
+
 @override String? get eventId => realtimeClientEventResponseCancel.eventId;
 
  }
@@ -250,15 +286,19 @@ final RealtimeClientEventResponseCreate realtimeClientEventResponseCreate;
 
 @override String get type => 'response.create';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventResponseCreate.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventResponseCreate.toJson(), 'type': type};
+
 RealtimeClientEventResponseCreate$Variant copyWith({String? Function()? eventId, RealtimeResponseCreateParams? Function()? response, }) { return RealtimeClientEventResponseCreate$Variant(realtimeClientEventResponseCreate.copyWith(
   eventId: eventId,
   response: response,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventResponseCreate$Variant && realtimeClientEventResponseCreate == other.realtimeClientEventResponseCreate; } 
-@override int get hashCode { return realtimeClientEventResponseCreate.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.responseCreate($realtimeClientEventResponseCreate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventResponseCreate$Variant && realtimeClientEventResponseCreate == other.realtimeClientEventResponseCreate;
+
+@override int get hashCode => realtimeClientEventResponseCreate.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.responseCreate($realtimeClientEventResponseCreate)';
+
 @override String? get eventId => realtimeClientEventResponseCreate.eventId;
 
  }
@@ -270,15 +310,19 @@ final RealtimeClientEventSessionUpdate realtimeClientEventSessionUpdate;
 
 @override String get type => 'session.update';
 
-@override Map<String, dynamic> toJson() { return {...realtimeClientEventSessionUpdate.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeClientEventSessionUpdate.toJson(), 'type': type};
+
 RealtimeClientEventSessionUpdate$Variant copyWith({String? Function()? eventId, RealtimeClientEventSessionUpdateSession? session, }) { return RealtimeClientEventSessionUpdate$Variant(realtimeClientEventSessionUpdate.copyWith(
   eventId: eventId,
   session: session,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEventSessionUpdate$Variant && realtimeClientEventSessionUpdate == other.realtimeClientEventSessionUpdate; } 
-@override int get hashCode { return realtimeClientEventSessionUpdate.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.sessionUpdate($realtimeClientEventSessionUpdate)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEventSessionUpdate$Variant && realtimeClientEventSessionUpdate == other.realtimeClientEventSessionUpdate;
+
+@override int get hashCode => realtimeClientEventSessionUpdate.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.sessionUpdate($realtimeClientEventSessionUpdate)';
+
 @override String? get eventId => realtimeClientEventSessionUpdate.eventId;
 
  }
@@ -290,11 +334,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeClientEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'RealtimeClientEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeClientEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'RealtimeClientEvent.unknown($json)';
+
 @override String? get eventId => json['event_id'] as String?;
 
  }

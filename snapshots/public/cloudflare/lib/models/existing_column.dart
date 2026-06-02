@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('entry
 ExistingColumn copyWith({String? entryId}) { return ExistingColumn(
   entryId: entryId ?? this.entryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExistingColumn &&
-          entryId == other.entryId; } 
-@override int get hashCode { return entryId.hashCode; } 
-@override String toString() { return 'ExistingColumn(entryId: $entryId)'; } 
+          entryId == other.entryId;
+
+@override int get hashCode => entryId.hashCode;
+
+@override String toString() => 'ExistingColumn(entryId: $entryId)';
+
  }

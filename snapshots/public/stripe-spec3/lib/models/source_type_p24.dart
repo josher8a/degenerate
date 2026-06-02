@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SourceTypeP24 copyWith({String? Function()? reference}) { return SourceTypeP24(
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeP24 &&
-          reference == other.reference; } 
-@override int get hashCode { return reference.hashCode; } 
-@override String toString() { return 'SourceTypeP24(reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => reference.hashCode;
+
+@override String toString() => 'SourceTypeP24(reference: $reference)';
+
  }

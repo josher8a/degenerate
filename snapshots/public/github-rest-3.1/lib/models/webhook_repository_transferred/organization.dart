@@ -86,7 +86,7 @@ Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eve
   reposUrl: reposUrl ?? this.reposUrl,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Organization &&
           avatarUrl == other.avatarUrl &&
           description == other.description &&
@@ -100,7 +100,10 @@ Organization copyWith({Uri? avatarUrl, String? Function()? description, Uri? eve
           nodeId == other.nodeId &&
           publicMembersUrl == other.publicMembersUrl &&
           reposUrl == other.reposUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(avatarUrl, description, eventsUrl, hooksUrl, htmlUrl, id, issuesUrl, login, membersUrl, nodeId, publicMembersUrl, reposUrl, url); } 
-@override String toString() { return 'Organization(avatarUrl: $avatarUrl, description: $description, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, nodeId: $nodeId, publicMembersUrl: $publicMembersUrl, reposUrl: $reposUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(avatarUrl, description, eventsUrl, hooksUrl, htmlUrl, id, issuesUrl, login, membersUrl, nodeId, publicMembersUrl, reposUrl, url);
+
+@override String toString() => 'Organization(avatarUrl: $avatarUrl, description: $description, eventsUrl: $eventsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issuesUrl: $issuesUrl, login: $login, membersUrl: $membersUrl, nodeId: $nodeId, publicMembersUrl: $publicMembersUrl, reposUrl: $reposUrl, url: $url)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AllowedToolsMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AllowedToolsMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowedToolsMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AllowedToolsMode($value)';
+
  }
 @immutable final class AllowedToolsAllowedTools {const AllowedToolsAllowedTools({required this.mode, required this.tools, });
 
@@ -45,10 +48,13 @@ AllowedToolsAllowedTools copyWith({AllowedToolsMode? mode, List<Map<String,dynam
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AllowedToolsAllowedTools &&
           mode == other.mode &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(mode, Object.hashAll(tools)); } 
-@override String toString() { return 'AllowedToolsAllowedTools(mode: $mode, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(mode, Object.hashAll(tools));
+
+@override String toString() => 'AllowedToolsAllowedTools(mode: $mode, tools: $tools)';
+
  }

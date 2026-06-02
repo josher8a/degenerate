@@ -91,7 +91,7 @@ TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, Teams
   subnetId: subnetId ?? this.subnetId,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIpProfile &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -101,7 +101,10 @@ TeamsDevicesIpProfile copyWith({TeamsDevicesIpProfileCreatedAt? createdAt, Teams
           name == other.name &&
           precedence == other.precedence &&
           subnetId == other.subnetId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, enabled, id, match, name, precedence, subnetId, updatedAt); } 
-@override String toString() { return 'TeamsDevicesIpProfile(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, enabled, id, match, name, precedence, subnetId, updatedAt);
+
+@override String toString() => 'TeamsDevicesIpProfile(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId, updatedAt: $updatedAt)';
+
  }

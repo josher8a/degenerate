@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 WatchEvent copyWith({String? action}) { return WatchEvent(
   action: action ?? this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WatchEvent &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'WatchEvent(action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => action.hashCode;
+
+@override String toString() => 'WatchEvent(action: $action)';
+
  }

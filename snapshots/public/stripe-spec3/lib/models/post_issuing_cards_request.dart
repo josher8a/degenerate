@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingCardsRequestReplacementReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingCardsRequestReplacementReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostIssuingCardsRequestReplacementReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostIssuingCardsRequestReplacementReason($value)';
+
  }
 @immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });
 
@@ -153,7 +156,7 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
   status: status != null ? status() : this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsRequest &&
           cardholder == other.cardholder &&
           currency == other.currency &&
@@ -170,7 +173,10 @@ PostIssuingCardsRequest copyWith({String? Function()? cardholder, String? curren
           shipping == other.shipping &&
           spendingControls == other.spendingControls &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cardholder, currency, expMonth, expYear, Object.hashAll(expand ?? const []), financialAccount, metadata, personalizationDesign, pin, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type); } 
-@override String toString() { return 'PostIssuingCardsRequest(cardholder: $cardholder, currency: $currency, expMonth: $expMonth, expYear: $expYear, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cardholder, currency, expMonth, expYear, Object.hashAll(expand ?? const []), financialAccount, metadata, personalizationDesign, pin, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type);
+
+@override String toString() => 'PostIssuingCardsRequest(cardholder: $cardholder, currency: $currency, expMonth: $expMonth, expYear: $expYear, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, personalizationDesign: $personalizationDesign, pin: $pin, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type)';
+
  }

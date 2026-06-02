@@ -78,7 +78,7 @@ StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()?
   version: version ?? this.version,
   workerBinding: workerBinding ?? this.workerBinding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsByStreamIdResponse2Result &&
           createdAt == other.createdAt &&
           endpoint == other.endpoint &&
@@ -88,7 +88,10 @@ StreamsByStreamIdResponse2Result copyWith({DateTime? createdAt, Uri? Function()?
           modifiedAt == other.modifiedAt &&
           name == other.name &&
           version == other.version &&
-          workerBinding == other.workerBinding; } 
-@override int get hashCode { return Object.hash(createdAt, endpoint, format, http, id, modifiedAt, name, version, workerBinding); } 
-@override String toString() { return 'StreamsByStreamIdResponse2Result(createdAt: $createdAt, endpoint: $endpoint, format: $format, http: $http, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version, workerBinding: $workerBinding)'; } 
+          workerBinding == other.workerBinding;
+
+@override int get hashCode => Object.hash(createdAt, endpoint, format, http, id, modifiedAt, name, version, workerBinding);
+
+@override String toString() => 'StreamsByStreamIdResponse2Result(createdAt: $createdAt, endpoint: $endpoint, format: $format, http: $http, id: $id, modifiedAt: $modifiedAt, name: $name, version: $version, workerBinding: $workerBinding)';
+
  }

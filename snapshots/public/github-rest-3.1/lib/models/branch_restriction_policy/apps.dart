@@ -75,7 +75,7 @@ Apps copyWith({int? Function()? id, String? Function()? slug, String? Function()
   permissions: permissions != null ? permissions() : this.permissions,
   events: events != null ? events() : this.events,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Apps &&
           id == other.id &&
           slug == other.slug &&
@@ -89,7 +89,10 @@ Apps copyWith({int? Function()? id, String? Function()? slug, String? Function()
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           permissions == other.permissions &&
-          listEquals(events, other.events); } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, owner, name, clientId, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events ?? const [])); } 
-@override String toString() { return 'Apps(id: $id, slug: $slug, nodeId: $nodeId, owner: $owner, name: $name, clientId: $clientId, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events)'; } 
+          listEquals(events, other.events);
+
+@override int get hashCode => Object.hash(id, slug, nodeId, owner, name, clientId, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events ?? const []));
+
+@override String toString() => 'Apps(id: $id, slug: $slug, nodeId: $nodeId, owner: $owner, name: $name, clientId: $clientId, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events)';
+
  }

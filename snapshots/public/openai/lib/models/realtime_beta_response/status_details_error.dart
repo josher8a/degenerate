@@ -25,10 +25,13 @@ StatusDetailsError copyWith({String? Function()? type, String? Function()? code,
   type: type != null ? type() : this.type,
   code: code != null ? code() : this.code,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusDetailsError &&
           type == other.type &&
-          code == other.code; } 
-@override int get hashCode { return Object.hash(type, code); } 
-@override String toString() { return 'StatusDetailsError(type: $type, code: $code)'; } 
+          code == other.code;
+
+@override int get hashCode => Object.hash(type, code);
+
+@override String toString() => 'StatusDetailsError(type: $type, code: $code)';
+
  }

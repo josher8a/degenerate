@@ -55,12 +55,15 @@ StreamMediaStatus copyWith({StreamErrorReasonCode? Function()? errorReasonCode, 
   pctComplete: pctComplete != null ? pctComplete() : this.pctComplete,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamMediaStatus &&
           errorReasonCode == other.errorReasonCode &&
           errorReasonText == other.errorReasonText &&
           pctComplete == other.pctComplete &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(errorReasonCode, errorReasonText, pctComplete, state); } 
-@override String toString() { return 'StreamMediaStatus(errorReasonCode: $errorReasonCode, errorReasonText: $errorReasonText, pctComplete: $pctComplete, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(errorReasonCode, errorReasonText, pctComplete, state);
+
+@override String toString() => 'StreamMediaStatus(errorReasonCode: $errorReasonCode, errorReasonText: $errorReasonText, pctComplete: $pctComplete, state: $state)';
+
  }

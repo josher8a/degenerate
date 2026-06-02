@@ -22,10 +22,13 @@ ChatCompletionMessageToolCallChunkFunction copyWith({String? Function()? name, S
   name: name != null ? name() : this.name,
   arguments: arguments != null ? arguments() : this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionMessageToolCallChunkFunction &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(name, arguments); } 
-@override String toString() { return 'ChatCompletionMessageToolCallChunkFunction(name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(name, arguments);
+
+@override String toString() => 'ChatCompletionMessageToolCallChunkFunction(name: $name, arguments: $arguments)';
+
  }

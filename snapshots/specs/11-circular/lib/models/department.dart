@@ -31,12 +31,15 @@ Department copyWith({int? id, String? name, Employee? Function()? head, List<Emp
   head: head != null ? head() : this.head,
   members: members != null ? members() : this.members,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Department &&
           id == other.id &&
           name == other.name &&
           head == other.head &&
-          listEquals(members, other.members); } 
-@override int get hashCode { return Object.hash(id, name, head, Object.hashAll(members ?? const [])); } 
-@override String toString() { return 'Department(id: $id, name: $name, head: $head, members: $members)'; } 
+          listEquals(members, other.members);
+
+@override int get hashCode => Object.hash(id, name, head, Object.hashAll(members ?? const []));
+
+@override String toString() => 'Department(id: $id, name: $name, head: $head, members: $members)';
+
  }

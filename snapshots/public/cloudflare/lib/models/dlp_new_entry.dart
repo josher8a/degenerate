@@ -37,13 +37,16 @@ DlpNewEntry copyWith({String? Function()? description, bool? enabled, String? na
   pattern: pattern ?? this.pattern,
   profileId: profileId != null ? profileId() : this.profileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewEntry &&
           description == other.description &&
           enabled == other.enabled &&
           name == other.name &&
           pattern == other.pattern &&
-          profileId == other.profileId; } 
-@override int get hashCode { return Object.hash(description, enabled, name, pattern, profileId); } 
-@override String toString() { return 'DlpNewEntry(description: $description, enabled: $enabled, name: $name, pattern: $pattern, profileId: $profileId)'; } 
+          profileId == other.profileId;
+
+@override int get hashCode => Object.hash(description, enabled, name, pattern, profileId);
+
+@override String toString() => 'DlpNewEntry(description: $description, enabled: $enabled, name: $name, pattern: $pattern, profileId: $profileId)';
+
  }

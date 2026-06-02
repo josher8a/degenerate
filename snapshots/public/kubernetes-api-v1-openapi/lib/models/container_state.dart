@@ -29,11 +29,14 @@ ContainerState copyWith({ContainerStateRunning? Function()? running, ContainerSt
   terminated: terminated != null ? terminated() : this.terminated,
   waiting: waiting != null ? waiting() : this.waiting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerState &&
           running == other.running &&
           terminated == other.terminated &&
-          waiting == other.waiting; } 
-@override int get hashCode { return Object.hash(running, terminated, waiting); } 
-@override String toString() { return 'ContainerState(running: $running, terminated: $terminated, waiting: $waiting)'; } 
+          waiting == other.waiting;
+
+@override int get hashCode => Object.hash(running, terminated, waiting);
+
+@override String toString() => 'ContainerState(running: $running, terminated: $terminated, waiting: $waiting)';
+
  }

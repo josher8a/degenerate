@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RealtimeResponseCreateParamsAudio copyWith({RealtimeResponseCreateParamsAudioOutput? Function()? output}) { return RealtimeResponseCreateParamsAudio(
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeResponseCreateParamsAudio &&
-          output == other.output; } 
-@override int get hashCode { return output.hashCode; } 
-@override String toString() { return 'RealtimeResponseCreateParamsAudio(output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => output.hashCode;
+
+@override String toString() => 'RealtimeResponseCreateParamsAudio(output: $output)';
+
  }

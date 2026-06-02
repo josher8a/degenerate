@@ -18,13 +18,15 @@ final class CodeScanningGetSarifError$403 extends CodeScanningGetSarifError {con
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningGetSarifError$503 extends CodeScanningGetSarifError {const CodeScanningGetSarifError$503(this.error);
 
 final CodeScanningGetSarifResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningGetSarifError$Unknown extends CodeScanningGetSarifError {const CodeScanningGetSarifError$Unknown(this.statusCode, this.rawBody, );
 

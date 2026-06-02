@@ -20,10 +20,13 @@ NscSlotList copyWith({List<NscSlotInfo>? items, int? Function()? next, }) { retu
   items: items ?? this.items,
   next: next != null ? next() : this.next,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscSlotList &&
           listEquals(items, other.items) &&
-          next == other.next; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items), next); } 
-@override String toString() { return 'NscSlotList(items: $items, next: $next)'; } 
+          next == other.next;
+
+@override int get hashCode => Object.hash(Object.hashAll(items), next);
+
+@override String toString() => 'NscSlotList(items: $items, next: $next)';
+
  }

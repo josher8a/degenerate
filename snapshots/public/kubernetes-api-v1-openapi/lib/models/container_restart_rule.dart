@@ -23,10 +23,13 @@ ContainerRestartRule copyWith({String? action, ContainerRestartRuleOnExitCodes? 
   action: action ?? this.action,
   exitCodes: exitCodes != null ? exitCodes() : this.exitCodes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerRestartRule &&
           action == other.action &&
-          exitCodes == other.exitCodes; } 
-@override int get hashCode { return Object.hash(action, exitCodes); } 
-@override String toString() { return 'ContainerRestartRule(action: $action, exitCodes: $exitCodes)'; } 
+          exitCodes == other.exitCodes;
+
+@override int get hashCode => Object.hash(action, exitCodes);
+
+@override String toString() => 'ContainerRestartRule(action: $action, exitCodes: $exitCodes)';
+
  }

@@ -26,11 +26,14 @@ TrackingDetails copyWith({TrackingDetailsAch? Function()? ach, TreasuryOutboundP
   type: type ?? this.type,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TrackingDetails &&
           ach == other.ach &&
           type == other.type &&
-          usDomesticWire == other.usDomesticWire; } 
-@override int get hashCode { return Object.hash(ach, type, usDomesticWire); } 
-@override String toString() { return 'TrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)'; } 
+          usDomesticWire == other.usDomesticWire;
+
+@override int get hashCode => Object.hash(ach, type, usDomesticWire);
+
+@override String toString() => 'TrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)';
+
  }

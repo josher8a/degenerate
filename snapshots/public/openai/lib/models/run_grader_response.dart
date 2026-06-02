@@ -33,12 +33,15 @@ RunGraderResponse copyWith({double? reward, RunGraderResponseMetadata? metadata,
   subRewards: subRewards ?? this.subRewards,
   modelGraderTokenUsagePerModel: modelGraderTokenUsagePerModel ?? this.modelGraderTokenUsagePerModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunGraderResponse &&
           reward == other.reward &&
           metadata == other.metadata &&
           subRewards == other.subRewards &&
-          modelGraderTokenUsagePerModel == other.modelGraderTokenUsagePerModel; } 
-@override int get hashCode { return Object.hash(reward, metadata, subRewards, modelGraderTokenUsagePerModel); } 
-@override String toString() { return 'RunGraderResponse(reward: $reward, metadata: $metadata, subRewards: $subRewards, modelGraderTokenUsagePerModel: $modelGraderTokenUsagePerModel)'; } 
+          modelGraderTokenUsagePerModel == other.modelGraderTokenUsagePerModel;
+
+@override int get hashCode => Object.hash(reward, metadata, subRewards, modelGraderTokenUsagePerModel);
+
+@override String toString() => 'RunGraderResponse(reward: $reward, metadata: $metadata, subRewards: $subRewards, modelGraderTokenUsagePerModel: $modelGraderTokenUsagePerModel)';
+
  }

@@ -29,11 +29,14 @@ BalanceAmountBySourceType copyWith({int? Function()? bankAccount, int? Function(
   card: card != null ? card() : this.card,
   fpx: fpx != null ? fpx() : this.fpx,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceAmountBySourceType &&
           bankAccount == other.bankAccount &&
           card == other.card &&
-          fpx == other.fpx; } 
-@override int get hashCode { return Object.hash(bankAccount, card, fpx); } 
-@override String toString() { return 'BalanceAmountBySourceType(bankAccount: $bankAccount, card: $card, fpx: $fpx)'; } 
+          fpx == other.fpx;
+
+@override int get hashCode => Object.hash(bankAccount, card, fpx);
+
+@override String toString() => 'BalanceAmountBySourceType(bankAccount: $bankAccount, card: $card, fpx: $fpx)';
+
  }

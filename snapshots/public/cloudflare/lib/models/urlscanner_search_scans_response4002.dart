@@ -30,11 +30,14 @@ UrlscannerSearchScansResponse4002 copyWith({List<UrlscannerCreateScanBulkRespons
   message: message ?? this.message,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerSearchScansResponse4002 &&
           listEquals(errors, other.errors) &&
           message == other.message &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), message, status); } 
-@override String toString() { return 'UrlscannerSearchScansResponse4002(errors: $errors, message: $message, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), message, status);
+
+@override String toString() => 'UrlscannerSearchScansResponse4002(errors: $errors, message: $message, status: $status)';
+
  }

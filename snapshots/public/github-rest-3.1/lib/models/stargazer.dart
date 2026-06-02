@@ -22,10 +22,13 @@ Stargazer copyWith({DateTime? starredAt, SimpleUser? Function()? user, }) { retu
   starredAt: starredAt ?? this.starredAt,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Stargazer &&
           starredAt == other.starredAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(starredAt, user); } 
-@override String toString() { return 'Stargazer(starredAt: $starredAt, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(starredAt, user);
+
+@override String toString() => 'Stargazer(starredAt: $starredAt, user: $user)';
+
  }

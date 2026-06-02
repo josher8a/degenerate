@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesParquetCompression && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesParquetCompression($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesParquetCompression && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudflarePipelinesParquetCompression($value)';
+
  }
 @immutable final class CloudflarePipelinesParquetFormat {const CloudflarePipelinesParquetFormat({this.compression, this.rowGroupBytes, });
 
@@ -60,10 +63,13 @@ CloudflarePipelinesParquetFormat copyWith({CloudflarePipelinesParquetCompression
   compression: compression != null ? compression() : this.compression,
   rowGroupBytes: rowGroupBytes != null ? rowGroupBytes() : this.rowGroupBytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesParquetFormat &&
           compression == other.compression &&
-          rowGroupBytes == other.rowGroupBytes; } 
-@override int get hashCode { return Object.hash(compression, rowGroupBytes); } 
-@override String toString() { return 'CloudflarePipelinesParquetFormat(compression: $compression, rowGroupBytes: $rowGroupBytes)'; } 
+          rowGroupBytes == other.rowGroupBytes;
+
+@override int get hashCode => Object.hash(compression, rowGroupBytes);
+
+@override String toString() => 'CloudflarePipelinesParquetFormat(compression: $compression, rowGroupBytes: $rowGroupBytes)';
+
  }

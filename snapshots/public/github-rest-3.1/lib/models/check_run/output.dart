@@ -39,13 +39,16 @@ Output copyWith({String? Function()? title, String? Function()? summary, String?
   annotationsCount: annotationsCount ?? this.annotationsCount,
   annotationsUrl: annotationsUrl ?? this.annotationsUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Output &&
           title == other.title &&
           summary == other.summary &&
           text == other.text &&
           annotationsCount == other.annotationsCount &&
-          annotationsUrl == other.annotationsUrl; } 
-@override int get hashCode { return Object.hash(title, summary, text, annotationsCount, annotationsUrl); } 
-@override String toString() { return 'Output(title: $title, summary: $summary, text: $text, annotationsCount: $annotationsCount, annotationsUrl: $annotationsUrl)'; } 
+          annotationsUrl == other.annotationsUrl;
+
+@override int get hashCode => Object.hash(title, summary, text, annotationsCount, annotationsUrl);
+
+@override String toString() => 'Output(title: $title, summary: $summary, text: $text, annotationsCount: $annotationsCount, annotationsUrl: $annotationsUrl)';
+
  }

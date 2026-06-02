@@ -68,7 +68,7 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
   ts: ts ?? this.ts,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPhishGuardReport &&
           content == other.content &&
           createdAt == other.createdAt &&
@@ -79,7 +79,10 @@ EmailSecurityPhishGuardReport copyWith({String? content, DateTime? createdAt, Em
           listEquals(tags, other.tags) &&
           title == other.title &&
           ts == other.ts &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(content, createdAt, disposition, fields, id, priority, Object.hashAll(tags ?? const []), title, ts, updatedAt); } 
-@override String toString() { return 'EmailSecurityPhishGuardReport(content: $content, createdAt: $createdAt, disposition: $disposition, fields: $fields, id: $id, priority: $priority, tags: $tags, title: $title, ts: $ts, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(content, createdAt, disposition, fields, id, priority, Object.hashAll(tags ?? const []), title, ts, updatedAt);
+
+@override String toString() => 'EmailSecurityPhishGuardReport(content: $content, createdAt: $createdAt, disposition: $disposition, fields: $fields, id: $id, priority: $priority, tags: $tags, title: $title, ts: $ts, updatedAt: $updatedAt)';
+
  }

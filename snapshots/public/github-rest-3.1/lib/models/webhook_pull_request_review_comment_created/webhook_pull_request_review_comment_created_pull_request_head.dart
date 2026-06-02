@@ -40,13 +40,16 @@ WebhookPullRequestReviewCommentCreatedPullRequestHead copyWith({String? label, S
   sha: sha ?? this.sha,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewCommentCreatedPullRequestHead &&
           label == other.label &&
           ref == other.ref &&
           repo == other.repo &&
           sha == other.sha &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(label, ref, repo, sha, user); } 
-@override String toString() { return 'WebhookPullRequestReviewCommentCreatedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(label, ref, repo, sha, user);
+
+@override String toString() => 'WebhookPullRequestReviewCommentCreatedPullRequestHead(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)';
+
  }

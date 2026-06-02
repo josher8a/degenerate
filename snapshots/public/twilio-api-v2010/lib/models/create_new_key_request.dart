@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CreateNewKeyRequest copyWith({String? Function()? friendlyName}) { return CreateNewKeyRequest(
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateNewKeyRequest &&
-          friendlyName == other.friendlyName; } 
-@override int get hashCode { return friendlyName.hashCode; } 
-@override String toString() { return 'CreateNewKeyRequest(friendlyName: $friendlyName)'; } 
+          friendlyName == other.friendlyName;
+
+@override int get hashCode => friendlyName.hashCode;
+
+@override String toString() => 'CreateNewKeyRequest(friendlyName: $friendlyName)';
+
  }

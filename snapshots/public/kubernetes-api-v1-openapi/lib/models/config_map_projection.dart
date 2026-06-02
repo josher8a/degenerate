@@ -31,11 +31,14 @@ ConfigMapProjection copyWith({List<KeyToPath>? Function()? items, String Functio
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMapProjection &&
           listEquals(items, other.items) &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items ?? const []), name, optional); } 
-@override String toString() { return 'ConfigMapProjection(items: $items, name: $name, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(Object.hashAll(items ?? const []), name, optional);
+
+@override String toString() => 'ConfigMapProjection(items: $items, name: $name, optional: $optional)';
+
  }

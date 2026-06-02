@@ -17,7 +17,8 @@ final class RadarGetQualitySpeedHistogramError$400 extends RadarGetQualitySpeedH
 
 final RadarGetQualitySpeedHistogramResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetQualitySpeedHistogramError$Unknown extends RadarGetQualitySpeedHistogramError {const RadarGetQualitySpeedHistogramError$Unknown(this.statusCode, this.rawBody, );
 

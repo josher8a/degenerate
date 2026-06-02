@@ -29,11 +29,14 @@ SettingsByRuleType copyWith({ZeroTrustGatewayAccountLogOptions? Function()? dns,
   http: http != null ? http() : this.http,
   l4: l4 != null ? l4() : this.l4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsByRuleType &&
           dns == other.dns &&
           http == other.http &&
-          l4 == other.l4; } 
-@override int get hashCode { return Object.hash(dns, http, l4); } 
-@override String toString() { return 'SettingsByRuleType(dns: $dns, http: $http, l4: $l4)'; } 
+          l4 == other.l4;
+
+@override int get hashCode => Object.hash(dns, http, l4);
+
+@override String toString() => 'SettingsByRuleType(dns: $dns, http: $http, l4: $l4)';
+
  }

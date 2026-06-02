@@ -44,13 +44,16 @@ TaxProductResourceTaxBreakdown copyWith({int? amount, bool? inclusive, TaxProduc
   taxabilityReason: taxabilityReason ?? this.taxabilityReason,
   taxableAmount: taxableAmount ?? this.taxableAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxBreakdown &&
           amount == other.amount &&
           inclusive == other.inclusive &&
           taxRateDetails == other.taxRateDetails &&
           taxabilityReason == other.taxabilityReason &&
-          taxableAmount == other.taxableAmount; } 
-@override int get hashCode { return Object.hash(amount, inclusive, taxRateDetails, taxabilityReason, taxableAmount); } 
-@override String toString() { return 'TaxProductResourceTaxBreakdown(amount: $amount, inclusive: $inclusive, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+          taxableAmount == other.taxableAmount;
+
+@override int get hashCode => Object.hash(amount, inclusive, taxRateDetails, taxabilityReason, taxableAmount);
+
+@override String toString() => 'TaxProductResourceTaxBreakdown(amount: $amount, inclusive: $inclusive, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)';
+
  }

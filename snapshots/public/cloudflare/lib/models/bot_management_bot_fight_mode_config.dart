@@ -28,10 +28,13 @@ BotManagementBotFightModeConfig copyWith({BotManagementFightMode? Function()? fi
   fightMode: fightMode != null ? fightMode() : this.fightMode,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementBotFightModeConfig &&
           fightMode == other.fightMode &&
-          staleZoneConfiguration == other.staleZoneConfiguration; } 
-@override int get hashCode { return Object.hash(fightMode, staleZoneConfiguration); } 
-@override String toString() { return 'BotManagementBotFightModeConfig(fightMode: $fightMode, staleZoneConfiguration: $staleZoneConfiguration)'; } 
+          staleZoneConfiguration == other.staleZoneConfiguration;
+
+@override int get hashCode => Object.hash(fightMode, staleZoneConfiguration);
+
+@override String toString() => 'BotManagementBotFightModeConfig(fightMode: $fightMode, staleZoneConfiguration: $staleZoneConfiguration)';
+
  }

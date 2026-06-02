@@ -46,14 +46,17 @@ CreateCallRecordingRequest copyWith({List<String>? Function()? recordingStatusCa
   recordingChannels: recordingChannels != null ? recordingChannels() : this.recordingChannels,
   recordingTrack: recordingTrack != null ? recordingTrack() : this.recordingTrack,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCallRecordingRequest &&
           listEquals(recordingStatusCallbackEvent, other.recordingStatusCallbackEvent) &&
           recordingStatusCallback == other.recordingStatusCallback &&
           recordingStatusCallbackMethod == other.recordingStatusCallbackMethod &&
           trim == other.trim &&
           recordingChannels == other.recordingChannels &&
-          recordingTrack == other.recordingTrack; } 
-@override int get hashCode { return Object.hash(Object.hashAll(recordingStatusCallbackEvent ?? const []), recordingStatusCallback, recordingStatusCallbackMethod, trim, recordingChannels, recordingTrack); } 
-@override String toString() { return 'CreateCallRecordingRequest(recordingStatusCallbackEvent: $recordingStatusCallbackEvent, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, trim: $trim, recordingChannels: $recordingChannels, recordingTrack: $recordingTrack)'; } 
+          recordingTrack == other.recordingTrack;
+
+@override int get hashCode => Object.hash(Object.hashAll(recordingStatusCallbackEvent ?? const []), recordingStatusCallback, recordingStatusCallbackMethod, trim, recordingChannels, recordingTrack);
+
+@override String toString() => 'CreateCallRecordingRequest(recordingStatusCallbackEvent: $recordingStatusCallbackEvent, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, trim: $trim, recordingChannels: $recordingChannels, recordingTrack: $recordingTrack)';
+
  }

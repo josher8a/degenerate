@@ -24,9 +24,12 @@ return errors; }
 TaxProductResourceTaxTransactionResourceReversal copyWith({String? Function()? originalTransaction}) { return TaxProductResourceTaxTransactionResourceReversal(
   originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxTransactionResourceReversal &&
-          originalTransaction == other.originalTransaction; } 
-@override int get hashCode { return originalTransaction.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxTransactionResourceReversal(originalTransaction: $originalTransaction)'; } 
+          originalTransaction == other.originalTransaction;
+
+@override int get hashCode => originalTransaction.hashCode;
+
+@override String toString() => 'TaxProductResourceTaxTransactionResourceReversal(originalTransaction: $originalTransaction)';
+
  }

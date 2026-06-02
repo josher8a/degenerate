@@ -39,13 +39,16 @@ CloudforceOneRequestsRequestEdit copyWith({CloudforceOneRequestsRequestContent? 
   summary: summary != null ? summary() : this.summary,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestEdit &&
           content == other.content &&
           priority == other.priority &&
           requestType == other.requestType &&
           summary == other.summary &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(content, priority, requestType, summary, tlp); } 
-@override String toString() { return 'CloudforceOneRequestsRequestEdit(content: $content, priority: $priority, requestType: $requestType, summary: $summary, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(content, priority, requestType, summary, tlp);
+
+@override String toString() => 'CloudforceOneRequestsRequestEdit(content: $content, priority: $priority, requestType: $requestType, summary: $summary, tlp: $tlp)';
+
  }

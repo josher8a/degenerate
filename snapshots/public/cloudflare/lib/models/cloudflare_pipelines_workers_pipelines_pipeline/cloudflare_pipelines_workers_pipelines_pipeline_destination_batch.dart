@@ -39,11 +39,14 @@ CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch copyWith({int? maxBy
   maxDurationS: maxDurationS ?? this.maxDurationS,
   maxRows: maxRows ?? this.maxRows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch &&
           maxBytes == other.maxBytes &&
           maxDurationS == other.maxDurationS &&
-          maxRows == other.maxRows; } 
-@override int get hashCode { return Object.hash(maxBytes, maxDurationS, maxRows); } 
-@override String toString() { return 'CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)'; } 
+          maxRows == other.maxRows;
+
+@override int get hashCode => Object.hash(maxBytes, maxDurationS, maxRows);
+
+@override String toString() => 'CloudflarePipelinesWorkersPipelinesPipelineDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)';
+
  }

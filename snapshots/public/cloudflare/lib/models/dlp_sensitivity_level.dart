@@ -39,13 +39,16 @@ DlpSensitivityLevel copyWith({DateTime? createdAt, String? description, String? 
   name: name ?? this.name,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpSensitivityLevel &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, name, updatedAt); } 
-@override String toString() { return 'DlpSensitivityLevel(createdAt: $createdAt, description: $description, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, id, name, updatedAt);
+
+@override String toString() => 'DlpSensitivityLevel(createdAt: $createdAt, description: $description, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

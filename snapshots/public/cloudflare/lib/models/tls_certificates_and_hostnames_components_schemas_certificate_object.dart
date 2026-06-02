@@ -56,7 +56,7 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
   signature: signature != null ? signature() : this.signature,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesComponentsSchemasCertificateObject &&
           ca == other.ca &&
           certificates == other.certificates &&
@@ -66,7 +66,10 @@ TlsCertificatesAndHostnamesComponentsSchemasCertificateObject copyWith({TlsCerti
           name == other.name &&
           serialNumber == other.serialNumber &&
           signature == other.signature &&
-          uploadedOn == other.uploadedOn; } 
-@override int get hashCode { return Object.hash(ca, certificates, expiresOn, id, issuer, name, serialNumber, signature, uploadedOn); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(ca: $ca, certificates: $certificates, expiresOn: $expiresOn, id: $id, issuer: $issuer, name: $name, serialNumber: $serialNumber, signature: $signature, uploadedOn: $uploadedOn)'; } 
+          uploadedOn == other.uploadedOn;
+
+@override int get hashCode => Object.hash(ca, certificates, expiresOn, id, issuer, name, serialNumber, signature, uploadedOn);
+
+@override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasCertificateObject(ca: $ca, certificates: $certificates, expiresOn: $expiresOn, id: $id, issuer: $issuer, name: $name, serialNumber: $serialNumber, signature: $signature, uploadedOn: $uploadedOn)';
+
  }

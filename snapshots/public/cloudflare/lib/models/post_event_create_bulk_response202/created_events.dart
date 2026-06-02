@@ -30,11 +30,14 @@ CreatedEvents copyWith({double? eventIndex, String? shardId, String? uuid, }) { 
   shardId: shardId ?? this.shardId,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatedEvents &&
           eventIndex == other.eventIndex &&
           shardId == other.shardId &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(eventIndex, shardId, uuid); } 
-@override String toString() { return 'CreatedEvents(eventIndex: $eventIndex, shardId: $shardId, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(eventIndex, shardId, uuid);
+
+@override String toString() => 'CreatedEvents(eventIndex: $eventIndex, shardId: $shardId, uuid: $uuid)';
+
  }

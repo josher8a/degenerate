@@ -31,12 +31,15 @@ RegionsPerPlan copyWith({List<ObservatoryLabeledRegion>? Function()? business, L
   free: free != null ? free() : this.free,
   pro: pro != null ? pro() : this.pro,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegionsPerPlan &&
           listEquals(business, other.business) &&
           listEquals(enterprise, other.enterprise) &&
           listEquals(free, other.free) &&
-          listEquals(pro, other.pro); } 
-@override int get hashCode { return Object.hash(Object.hashAll(business ?? const []), Object.hashAll(enterprise ?? const []), Object.hashAll(free ?? const []), Object.hashAll(pro ?? const [])); } 
-@override String toString() { return 'RegionsPerPlan(business: $business, enterprise: $enterprise, free: $free, pro: $pro)'; } 
+          listEquals(pro, other.pro);
+
+@override int get hashCode => Object.hash(Object.hashAll(business ?? const []), Object.hashAll(enterprise ?? const []), Object.hashAll(free ?? const []), Object.hashAll(pro ?? const []));
+
+@override String toString() => 'RegionsPerPlan(business: $business, enterprise: $enterprise, free: $free, pro: $pro)';
+
  }

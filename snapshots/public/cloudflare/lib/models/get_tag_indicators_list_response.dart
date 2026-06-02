@@ -21,10 +21,13 @@ GetTagIndicatorsListResponse copyWith({List<GetIndicatorListLegacyResponseIndica
   indicators: indicators ?? this.indicators,
   pagination: pagination ?? this.pagination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetTagIndicatorsListResponse &&
           listEquals(indicators, other.indicators) &&
-          pagination == other.pagination; } 
-@override int get hashCode { return Object.hash(Object.hashAll(indicators), pagination); } 
-@override String toString() { return 'GetTagIndicatorsListResponse(indicators: $indicators, pagination: $pagination)'; } 
+          pagination == other.pagination;
+
+@override int get hashCode => Object.hash(Object.hashAll(indicators), pagination);
+
+@override String toString() => 'GetTagIndicatorsListResponse(indicators: $indicators, pagination: $pagination)';
+
  }

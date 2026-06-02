@@ -52,7 +52,7 @@ ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? 
   imageId: imageId != null ? imageId() : this.imageId,
   imageVersion: imageVersion != null ? imageVersion() : this.imageVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateHostedRunnerForOrgRequest &&
           name == other.name &&
           runnerGroupId == other.runnerGroupId &&
@@ -60,7 +60,10 @@ ActionsUpdateHostedRunnerForOrgRequest copyWith({String? Function()? name, int? 
           enableStaticIp == other.enableStaticIp &&
           size == other.size &&
           imageId == other.imageId &&
-          imageVersion == other.imageVersion; } 
-@override int get hashCode { return Object.hash(name, runnerGroupId, maximumRunners, enableStaticIp, size, imageId, imageVersion); } 
-@override String toString() { return 'ActionsUpdateHostedRunnerForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, size: $size, imageId: $imageId, imageVersion: $imageVersion)'; } 
+          imageVersion == other.imageVersion;
+
+@override int get hashCode => Object.hash(name, runnerGroupId, maximumRunners, enableStaticIp, size, imageId, imageVersion);
+
+@override String toString() => 'ActionsUpdateHostedRunnerForOrgRequest(name: $name, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, size: $size, imageId: $imageId, imageVersion: $imageVersion)';
+
  }

@@ -36,11 +36,14 @@ TeamsDevicesCustomS2sInputRequest copyWith({String? connectionId, TeamsDevicesCr
   $operator: $operator ?? this.$operator,
   score: score ?? this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCustomS2sInputRequest &&
           connectionId == other.connectionId &&
           $operator == other.$operator &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(connectionId, $operator, score); } 
-@override String toString() { return 'TeamsDevicesCustomS2sInputRequest(connectionId: $connectionId, \$operator: ${$operator}, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(connectionId, $operator, score);
+
+@override String toString() => 'TeamsDevicesCustomS2sInputRequest(connectionId: $connectionId, \$operator: ${$operator}, score: $score)';
+
  }

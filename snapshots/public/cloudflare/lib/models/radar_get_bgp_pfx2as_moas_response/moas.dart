@@ -21,10 +21,13 @@ Moas copyWith({List<MoasOrigins>? origins, String? prefix, }) { return Moas(
   origins: origins ?? this.origins,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Moas &&
           listEquals(origins, other.origins) &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(Object.hashAll(origins), prefix); } 
-@override String toString() { return 'Moas(origins: $origins, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(Object.hashAll(origins), prefix);
+
+@override String toString() => 'Moas(origins: $origins, prefix: $prefix)';
+
  }

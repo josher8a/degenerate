@@ -64,7 +64,7 @@ ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAct
   pendingSafetyChecks: pendingSafetyChecks ?? this.pendingSafetyChecks,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerToolCall &&
           type == other.type &&
           id == other.id &&
@@ -72,7 +72,10 @@ ComputerToolCall copyWith({String? type, String? id, String? callId, ComputerAct
           action == other.action &&
           listEquals(actions, other.actions) &&
           listEquals(pendingSafetyChecks, other.pendingSafetyChecks) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, callId, action, Object.hashAll(actions ?? const []), Object.hashAll(pendingSafetyChecks), status); } 
-@override String toString() { return 'ComputerToolCall(type: $type, id: $id, callId: $callId, action: $action, actions: $actions, pendingSafetyChecks: $pendingSafetyChecks, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(type, id, callId, action, Object.hashAll(actions ?? const []), Object.hashAll(pendingSafetyChecks), status);
+
+@override String toString() => 'ComputerToolCall(type: $type, id: $id, callId: $callId, action: $action, actions: $actions, pendingSafetyChecks: $pendingSafetyChecks, status: $status)';
+
  }

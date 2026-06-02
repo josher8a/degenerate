@@ -151,7 +151,7 @@ WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? F
   steps: steps ?? this.steps,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowJobInProgressWorkflowJob &&
           checkRunUrl == other.checkRunUrl &&
           completedAt == other.completedAt &&
@@ -175,7 +175,10 @@ WebhookWorkflowJobInProgressWorkflowJob copyWith({String? checkRunUrl, String? F
           headBranch == other.headBranch &&
           workflowName == other.workflowName &&
           listEquals(steps, other.steps) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, status, headBranch, workflowName, Object.hashAll(steps), url]); } 
-@override String toString() { return 'WebhookWorkflowJobInProgressWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, status: $status, headBranch: $headBranch, workflowName: $workflowName, steps: $steps, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([checkRunUrl, completedAt, conclusion, createdAt, headSha, htmlUrl, id, Object.hashAll(labels), name, nodeId, runAttempt, runId, runUrl, runnerGroupId, runnerGroupName, runnerId, runnerName, startedAt, status, headBranch, workflowName, Object.hashAll(steps), url]);
+
+@override String toString() => 'WebhookWorkflowJobInProgressWorkflowJob(checkRunUrl: $checkRunUrl, completedAt: $completedAt, conclusion: $conclusion, createdAt: $createdAt, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, labels: $labels, name: $name, nodeId: $nodeId, runAttempt: $runAttempt, runId: $runId, runUrl: $runUrl, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, runnerId: $runnerId, runnerName: $runnerName, startedAt: $startedAt, status: $status, headBranch: $headBranch, workflowName: $workflowName, steps: $steps, url: $url)';
+
  }

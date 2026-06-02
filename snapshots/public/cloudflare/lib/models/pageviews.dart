@@ -25,10 +25,13 @@ Pageviews copyWith({int? Function()? all, Map<String, dynamic>? Function()? sear
   all: all != null ? all() : this.all,
   searchEngine: searchEngine != null ? searchEngine() : this.searchEngine,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pageviews &&
           all == other.all &&
-          searchEngine == other.searchEngine; } 
-@override int get hashCode { return Object.hash(all, searchEngine); } 
-@override String toString() { return 'Pageviews(all: $all, searchEngine: $searchEngine)'; } 
+          searchEngine == other.searchEngine;
+
+@override int get hashCode => Object.hash(all, searchEngine);
+
+@override String toString() => 'Pageviews(all: $all, searchEngine: $searchEngine)';
+
  }

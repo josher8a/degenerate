@@ -77,7 +77,7 @@ PaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmount
   startDate: startDate ?? this.startDate,
   supportedTypes: supportedTypes != null ? supportedTypes() : this.supportedTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsCardMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -87,7 +87,10 @@ PaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmount
           intervalCount == other.intervalCount &&
           reference == other.reference &&
           startDate == other.startDate &&
-          listEquals(supportedTypes, other.supportedTypes); } 
-@override int get hashCode { return Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const [])); } 
-@override String toString() { return 'PaymentMethodOptionsCardMandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)'; } 
+          listEquals(supportedTypes, other.supportedTypes);
+
+@override int get hashCode => Object.hash(amount, amountType, description, endDate, interval, intervalCount, reference, startDate, Object.hashAll(supportedTypes ?? const []));
+
+@override String toString() => 'PaymentMethodOptionsCardMandateOptions(amount: $amount, amountType: $amountType, description: $description, endDate: $endDate, interval: $interval, intervalCount: $intervalCount, reference: $reference, startDate: $startDate, supportedTypes: $supportedTypes)';
+
  }

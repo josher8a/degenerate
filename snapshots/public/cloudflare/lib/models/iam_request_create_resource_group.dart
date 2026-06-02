@@ -24,10 +24,13 @@ IamRequestCreateResourceGroup copyWith({String? name, IamCreateScope? scope, }) 
   name: name ?? this.name,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamRequestCreateResourceGroup &&
           name == other.name &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(name, scope); } 
-@override String toString() { return 'IamRequestCreateResourceGroup(name: $name, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(name, scope);
+
+@override String toString() => 'IamRequestCreateResourceGroup(name: $name, scope: $scope)';
+
  }

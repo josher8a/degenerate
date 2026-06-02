@@ -35,12 +35,15 @@ ExternalAccountRequirements copyWith({List<String>? Function()? currentlyDue, Li
   pastDue: pastDue != null ? pastDue() : this.pastDue,
   pendingVerification: pendingVerification != null ? pendingVerification() : this.pendingVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalAccountRequirements &&
           listEquals(currentlyDue, other.currentlyDue) &&
           listEquals(errors, other.errors) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(currentlyDue ?? const []), Object.hashAll(errors ?? const []), Object.hashAll(pastDue ?? const []), Object.hashAll(pendingVerification ?? const [])); } 
-@override String toString() { return 'ExternalAccountRequirements(currentlyDue: $currentlyDue, errors: $errors, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
+          listEquals(pendingVerification, other.pendingVerification);
+
+@override int get hashCode => Object.hash(Object.hashAll(currentlyDue ?? const []), Object.hashAll(errors ?? const []), Object.hashAll(pastDue ?? const []), Object.hashAll(pendingVerification ?? const []));
+
+@override String toString() => 'ExternalAccountRequirements(currentlyDue: $currentlyDue, errors: $errors, pastDue: $pastDue, pendingVerification: $pendingVerification)';
+
  }

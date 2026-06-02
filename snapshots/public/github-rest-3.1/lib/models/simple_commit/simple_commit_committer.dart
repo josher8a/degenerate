@@ -24,10 +24,13 @@ SimpleCommitCommitter copyWith({String? name, String? email, }) { return SimpleC
   name: name ?? this.name,
   email: email ?? this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleCommitCommitter &&
           name == other.name &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(name, email); } 
-@override String toString() { return 'SimpleCommitCommitter(name: $name, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(name, email);
+
+@override String toString() => 'SimpleCommitCommitter(name: $name, email: $email)';
+
  }

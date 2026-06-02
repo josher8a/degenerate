@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PredictionContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PredictionContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PredictionContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PredictionContentType($value)';
+
  }
 /// Static predicted output content, such as the content of a text file that is
 /// being regenerated.
@@ -55,10 +58,13 @@ PredictionContent copyWith({PredictionContentType? type, ChatCompletionRequestDe
   type: type ?? this.type,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PredictionContent &&
           type == other.type &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(type, content); } 
-@override String toString() { return 'PredictionContent(type: $type, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(type, content);
+
+@override String toString() => 'PredictionContent(type: $type, content: $content)';
+
  }

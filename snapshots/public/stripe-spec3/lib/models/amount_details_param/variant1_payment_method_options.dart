@@ -30,12 +30,15 @@ Variant1PaymentMethodOptions copyWith({Variant1PaymentMethodOptionsCard? Functio
   klarna: klarna != null ? klarna() : this.klarna,
   paypal: paypal != null ? paypal() : this.paypal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1PaymentMethodOptions &&
           card == other.card &&
           cardPresent == other.cardPresent &&
           klarna == other.klarna &&
-          paypal == other.paypal; } 
-@override int get hashCode { return Object.hash(card, cardPresent, klarna, paypal); } 
-@override String toString() { return 'Variant1PaymentMethodOptions(card: $card, cardPresent: $cardPresent, klarna: $klarna, paypal: $paypal)'; } 
+          paypal == other.paypal;
+
+@override int get hashCode => Object.hash(card, cardPresent, klarna, paypal);
+
+@override String toString() => 'Variant1PaymentMethodOptions(card: $card, cardPresent: $cardPresent, klarna: $klarna, paypal: $paypal)';
+
  }

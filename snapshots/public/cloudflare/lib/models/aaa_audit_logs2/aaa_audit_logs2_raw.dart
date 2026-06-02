@@ -51,13 +51,16 @@ AaaAuditLogs2Raw copyWith({String? Function()? cfRayId, String? Function()? meth
   uri: uri != null ? uri() : this.uri,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2Raw &&
           cfRayId == other.cfRayId &&
           method == other.method &&
           statusCode == other.statusCode &&
           uri == other.uri &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(cfRayId, method, statusCode, uri, userAgent); } 
-@override String toString() { return 'AaaAuditLogs2Raw(cfRayId: $cfRayId, method: $method, statusCode: $statusCode, uri: $uri, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(cfRayId, method, statusCode, uri, userAgent);
+
+@override String toString() => 'AaaAuditLogs2Raw(cfRayId: $cfRayId, method: $method, statusCode: $statusCode, uri: $uri, userAgent: $userAgent)';
+
  }

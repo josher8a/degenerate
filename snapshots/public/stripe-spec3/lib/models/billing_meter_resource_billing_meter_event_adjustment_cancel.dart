@@ -24,9 +24,12 @@ return errors; }
 BillingMeterResourceBillingMeterEventAdjustmentCancel copyWith({String? Function()? identifier}) { return BillingMeterResourceBillingMeterEventAdjustmentCancel(
   identifier: identifier != null ? identifier() : this.identifier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterResourceBillingMeterEventAdjustmentCancel &&
-          identifier == other.identifier; } 
-@override int get hashCode { return identifier.hashCode; } 
-@override String toString() { return 'BillingMeterResourceBillingMeterEventAdjustmentCancel(identifier: $identifier)'; } 
+          identifier == other.identifier;
+
+@override int get hashCode => identifier.hashCode;
+
+@override String toString() => 'BillingMeterResourceBillingMeterEventAdjustmentCancel(identifier: $identifier)';
+
  }

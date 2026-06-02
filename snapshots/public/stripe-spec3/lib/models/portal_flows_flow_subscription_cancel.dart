@@ -27,10 +27,13 @@ PortalFlowsFlowSubscriptionCancel copyWith({PortalFlowsRetention? Function()? re
   retention: retention != null ? retention() : this.retention,
   subscription: subscription ?? this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsFlowSubscriptionCancel &&
           retention == other.retention &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(retention, subscription); } 
-@override String toString() { return 'PortalFlowsFlowSubscriptionCancel(retention: $retention, subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => Object.hash(retention, subscription);
+
+@override String toString() => 'PortalFlowsFlowSubscriptionCancel(retention: $retention, subscription: $subscription)';
+
  }

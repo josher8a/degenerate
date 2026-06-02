@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)';
+
  }
 @immutable final class TeamsDevicesUniqueClientIdInputRequest {const TeamsDevicesUniqueClientIdInputRequest({required this.id, required this.operatingSystem, });
 
@@ -55,10 +58,13 @@ TeamsDevicesUniqueClientIdInputRequest copyWith({String? id, TeamsDevicesUniqueC
   id: id ?? this.id,
   operatingSystem: operatingSystem ?? this.operatingSystem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesUniqueClientIdInputRequest &&
           id == other.id &&
-          operatingSystem == other.operatingSystem; } 
-@override int get hashCode { return Object.hash(id, operatingSystem); } 
-@override String toString() { return 'TeamsDevicesUniqueClientIdInputRequest(id: $id, operatingSystem: $operatingSystem)'; } 
+          operatingSystem == other.operatingSystem;
+
+@override int get hashCode => Object.hash(id, operatingSystem);
+
+@override String toString() => 'TeamsDevicesUniqueClientIdInputRequest(id: $id, operatingSystem: $operatingSystem)';
+
  }

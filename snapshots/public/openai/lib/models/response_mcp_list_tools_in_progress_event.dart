@@ -39,12 +39,15 @@ ResponseMcpListToolsInProgressEvent copyWith({String? type, String? itemId, int?
   outputIndex: outputIndex ?? this.outputIndex,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseMcpListToolsInProgressEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, sequenceNumber); } 
-@override String toString() { return 'ResponseMcpListToolsInProgressEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, sequenceNumber);
+
+@override String toString() => 'ResponseMcpListToolsInProgressEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber)';
+
  }

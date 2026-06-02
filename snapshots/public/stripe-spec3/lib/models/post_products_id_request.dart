@@ -112,7 +112,7 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsIdRequest &&
           active == other.active &&
           defaultPrice == other.defaultPrice &&
@@ -127,7 +127,10 @@ PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? de
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, defaultPrice, description, Object.hashAll(expand ?? const []), images, marketingFeatures, metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url); } 
-@override String toString() { return 'PostProductsIdRequest(active: $active, defaultPrice: $defaultPrice, description: $description, expand: $expand, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(active, defaultPrice, description, Object.hashAll(expand ?? const []), images, marketingFeatures, metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);
+
+@override String toString() => 'PostProductsIdRequest(active: $active, defaultPrice: $defaultPrice, description: $description, expand: $expand, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';
+
  }

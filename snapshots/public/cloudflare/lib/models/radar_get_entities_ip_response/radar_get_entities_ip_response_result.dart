@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip');
 RadarGetEntitiesIpResponseResult copyWith({ResultIp? ip}) { return RadarGetEntitiesIpResponseResult(
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEntitiesIpResponseResult &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'RadarGetEntitiesIpResponseResult(ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => ip.hashCode;
+
+@override String toString() => 'RadarGetEntitiesIpResponseResult(ip: $ip)';
+
  }

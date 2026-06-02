@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ReposUpdateInvitationRequest copyWith({ReposUpdateInvitationRequestPermissions? Function()? permissions}) { return ReposUpdateInvitationRequest(
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateInvitationRequest &&
-          permissions == other.permissions; } 
-@override int get hashCode { return permissions.hashCode; } 
-@override String toString() { return 'ReposUpdateInvitationRequest(permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => permissions.hashCode;
+
+@override String toString() => 'ReposUpdateInvitationRequest(permissions: $permissions)';
+
  }

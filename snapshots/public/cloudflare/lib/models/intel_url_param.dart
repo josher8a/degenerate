@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IntelUrlParam copyWith({IntelUrl? Function()? url}) { return IntelUrlParam(
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelUrlParam &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'IntelUrlParam(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'IntelUrlParam(url: $url)';
+
  }

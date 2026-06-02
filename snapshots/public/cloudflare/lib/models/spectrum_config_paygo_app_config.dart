@@ -48,14 +48,17 @@ SpectrumConfigPaygoAppConfig copyWith({SpectrumConfigTimestamp? createdOn, Spect
   originDirect: originDirect != null ? originDirect() : this.originDirect,
   protocol: protocol ?? this.protocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigPaygoAppConfig &&
           createdOn == other.createdOn &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           dns == other.dns &&
           listEquals(originDirect, other.originDirect) &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(createdOn, id, modifiedOn, dns, Object.hashAll(originDirect ?? const []), protocol); } 
-@override String toString() { return 'SpectrumConfigPaygoAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, dns: $dns, originDirect: $originDirect, protocol: $protocol)'; } 
+          protocol == other.protocol;
+
+@override int get hashCode => Object.hash(createdOn, id, modifiedOn, dns, Object.hashAll(originDirect ?? const []), protocol);
+
+@override String toString() => 'SpectrumConfigPaygoAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, dns: $dns, originDirect: $originDirect, protocol: $protocol)';
+
  }

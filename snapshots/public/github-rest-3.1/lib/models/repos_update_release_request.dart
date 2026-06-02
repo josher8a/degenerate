@@ -58,7 +58,7 @@ ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Functio
   makeLatest: makeLatest != null ? makeLatest() : this.makeLatest,
   discussionCategoryName: discussionCategoryName != null ? discussionCategoryName() : this.discussionCategoryName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateReleaseRequest &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
@@ -67,7 +67,10 @@ ReposUpdateReleaseRequest copyWith({String? Function()? tagName, String? Functio
           draft == other.draft &&
           prerelease == other.prerelease &&
           makeLatest == other.makeLatest &&
-          discussionCategoryName == other.discussionCategoryName; } 
-@override int get hashCode { return Object.hash(tagName, targetCommitish, name, body, draft, prerelease, makeLatest, discussionCategoryName); } 
-@override String toString() { return 'ReposUpdateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, makeLatest: $makeLatest, discussionCategoryName: $discussionCategoryName)'; } 
+          discussionCategoryName == other.discussionCategoryName;
+
+@override int get hashCode => Object.hash(tagName, targetCommitish, name, body, draft, prerelease, makeLatest, discussionCategoryName);
+
+@override String toString() => 'ReposUpdateReleaseRequest(tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, makeLatest: $makeLatest, discussionCategoryName: $discussionCategoryName)';
+
  }

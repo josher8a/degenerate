@@ -20,10 +20,13 @@ Ca copyWith({ProvinceStandard? Function()? provinceStandard, TaxProductRegistrat
   provinceStandard: provinceStandard != null ? provinceStandard() : this.provinceStandard,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Ca &&
           provinceStandard == other.provinceStandard &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(provinceStandard, type); } 
-@override String toString() { return 'Ca(provinceStandard: $provinceStandard, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(provinceStandard, type);
+
+@override String toString() => 'Ca(provinceStandard: $provinceStandard, type: $type)';
+
  }

@@ -22,10 +22,13 @@ Files copyWith({Map<String, String>? Function()? headers, String? Function()? ur
   headers: headers != null ? headers() : this.headers,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Files &&
           headers == other.headers &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(headers, url); } 
-@override String toString() { return 'Files(headers: $headers, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(headers, url);
+
+@override String toString() => 'Files(headers: $headers, url: $url)';
+
  }

@@ -28,11 +28,14 @@ Datacenters2 copyWith({String? Function()? coloId, List<TimeseriesByColo2>? Func
   timeseries: timeseries != null ? timeseries() : this.timeseries,
   totals: totals != null ? totals() : this.totals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Datacenters2 &&
           coloId == other.coloId &&
           listEquals(timeseries, other.timeseries) &&
-          totals == other.totals; } 
-@override int get hashCode { return Object.hash(coloId, Object.hashAll(timeseries ?? const []), totals); } 
-@override String toString() { return 'Datacenters2(coloId: $coloId, timeseries: $timeseries, totals: $totals)'; } 
+          totals == other.totals;
+
+@override int get hashCode => Object.hash(coloId, Object.hashAll(timeseries ?? const []), totals);
+
+@override String toString() => 'Datacenters2(coloId: $coloId, timeseries: $timeseries, totals: $totals)';
+
  }

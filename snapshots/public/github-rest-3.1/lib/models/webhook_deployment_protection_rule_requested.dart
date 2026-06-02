@@ -75,7 +75,7 @@ WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAct
   installation: installation != null ? installation() : this.installation,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentProtectionRuleRequested &&
           action == other.action &&
           environment == other.environment &&
@@ -88,7 +88,10 @@ WebhookDeploymentProtectionRuleRequested copyWith({WebhookCheckSuiteRequestedAct
           repository == other.repository &&
           organization == other.organization &&
           installation == other.installation &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, environment, event, sha, ref, deploymentCallbackUrl, deployment, Object.hashAll(pullRequests ?? const []), repository, organization, installation, sender); } 
-@override String toString() { return 'WebhookDeploymentProtectionRuleRequested(action: $action, environment: $environment, event: $event, sha: $sha, ref: $ref, deploymentCallbackUrl: $deploymentCallbackUrl, deployment: $deployment, pullRequests: $pullRequests, repository: $repository, organization: $organization, installation: $installation, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, environment, event, sha, ref, deploymentCallbackUrl, deployment, Object.hashAll(pullRequests ?? const []), repository, organization, installation, sender);
+
+@override String toString() => 'WebhookDeploymentProtectionRuleRequested(action: $action, environment: $environment, event: $event, sha: $sha, ref: $ref, deploymentCallbackUrl: $deploymentCallbackUrl, deployment: $deployment, pullRequests: $pullRequests, repository: $repository, organization: $organization, installation: $installation, sender: $sender)';
+
  }

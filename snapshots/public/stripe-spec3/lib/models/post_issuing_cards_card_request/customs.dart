@@ -22,9 +22,12 @@ return errors; }
 Customs copyWith({String? Function()? eoriNumber}) { return Customs(
   eoriNumber: eoriNumber != null ? eoriNumber() : this.eoriNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Customs &&
-          eoriNumber == other.eoriNumber; } 
-@override int get hashCode { return eoriNumber.hashCode; } 
-@override String toString() { return 'Customs(eoriNumber: $eoriNumber)'; } 
+          eoriNumber == other.eoriNumber;
+
+@override int get hashCode => eoriNumber.hashCode;
+
+@override String toString() => 'Customs(eoriNumber: $eoriNumber)';
+
  }

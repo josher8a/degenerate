@@ -21,10 +21,13 @@ ModelOutputs copyWith({OutputsFallback? fallback, OutputsSuccess? success, }) { 
   fallback: fallback ?? this.fallback,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModelOutputs &&
           fallback == other.fallback &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(fallback, success); } 
-@override String toString() { return 'ModelOutputs(fallback: $fallback, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(fallback, success);
+
+@override String toString() => 'ModelOutputs(fallback: $fallback, success: $success)';
+
  }

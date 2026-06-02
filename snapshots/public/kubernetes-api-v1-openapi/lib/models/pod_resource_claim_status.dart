@@ -23,10 +23,13 @@ PodResourceClaimStatus copyWith({String? name, String? Function()? resourceClaim
   name: name ?? this.name,
   resourceClaimName: resourceClaimName != null ? resourceClaimName() : this.resourceClaimName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodResourceClaimStatus &&
           name == other.name &&
-          resourceClaimName == other.resourceClaimName; } 
-@override int get hashCode { return Object.hash(name, resourceClaimName); } 
-@override String toString() { return 'PodResourceClaimStatus(name: $name, resourceClaimName: $resourceClaimName)'; } 
+          resourceClaimName == other.resourceClaimName;
+
+@override int get hashCode => Object.hash(name, resourceClaimName);
+
+@override String toString() => 'PodResourceClaimStatus(name: $name, resourceClaimName: $resourceClaimName)';
+
  }

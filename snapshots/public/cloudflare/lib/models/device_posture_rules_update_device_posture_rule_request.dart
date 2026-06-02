@@ -52,7 +52,7 @@ DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescripti
   schedule: schedule != null ? schedule() : this.schedule,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DevicePostureRulesUpdateDevicePostureRuleRequest &&
           description == other.description &&
           expiration == other.expiration &&
@@ -60,7 +60,10 @@ DevicePostureRulesUpdateDevicePostureRuleRequest copyWith({TeamsDevicesDescripti
           listEquals(match, other.match) &&
           name == other.name &&
           schedule == other.schedule &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, expiration, input, Object.hashAll(match ?? const []), name, schedule, type); } 
-@override String toString() { return 'DevicePostureRulesUpdateDevicePostureRuleRequest(description: $description, expiration: $expiration, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, expiration, input, Object.hashAll(match ?? const []), name, schedule, type);
+
+@override String toString() => 'DevicePostureRulesUpdateDevicePostureRuleRequest(description: $description, expiration: $expiration, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)';
+
  }

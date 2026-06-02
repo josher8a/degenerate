@@ -28,10 +28,13 @@ D1SingleQuery copyWith({List<String>? Function()? params, D1Sql? sql, }) { retur
   params: params != null ? params() : this.params,
   sql: sql ?? this.sql,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1SingleQuery &&
           listEquals(params, other.params) &&
-          sql == other.sql; } 
-@override int get hashCode { return Object.hash(Object.hashAll(params ?? const []), sql); } 
-@override String toString() { return 'D1SingleQuery(params: $params, sql: $sql)'; } 
+          sql == other.sql;
+
+@override int get hashCode => Object.hash(Object.hashAll(params ?? const []), sql);
+
+@override String toString() => 'D1SingleQuery(params: $params, sql: $sql)';
+
  }

@@ -38,13 +38,16 @@ Clip copyWith({double? height, double? Function()? scale, double? width, double?
   x: x ?? this.x,
   y: y ?? this.y,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Clip &&
           height == other.height &&
           scale == other.scale &&
           width == other.width &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(height, scale, width, x, y); } 
-@override String toString() { return 'Clip(height: $height, scale: $scale, width: $width, x: $x, y: $y)'; } 
+          y == other.y;
+
+@override int get hashCode => Object.hash(height, scale, width, x, y);
+
+@override String toString() => 'Clip(height: $height, scale: $scale, width: $width, x: $x, y: $y)';
+
  }

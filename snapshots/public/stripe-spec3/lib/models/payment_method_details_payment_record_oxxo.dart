@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodDetailsPaymentRecordOxxo copyWith({String? Function()? number}) { return PaymentMethodDetailsPaymentRecordOxxo(
   number: number != null ? number() : this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordOxxo &&
-          number == other.number; } 
-@override int get hashCode { return number.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordOxxo(number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => number.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsPaymentRecordOxxo(number: $number)';
+
  }

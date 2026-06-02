@@ -51,7 +51,7 @@ PostAccountsAccountRequestSettings copyWith({SettingsBacsDebitPayments? Function
   payouts: payouts != null ? payouts() : this.payouts,
   treasury: treasury != null ? treasury() : this.treasury,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
           branding == other.branding &&
@@ -60,7 +60,10 @@ PostAccountsAccountRequestSettings copyWith({SettingsBacsDebitPayments? Function
           invoices == other.invoices &&
           payments == other.payments &&
           payouts == other.payouts &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury); } 
-@override String toString() { return 'PostAccountsAccountRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)'; } 
+          treasury == other.treasury;
+
+@override int get hashCode => Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, invoices, payments, payouts, treasury);
+
+@override String toString() => 'PostAccountsAccountRequestSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, invoices: $invoices, payments: $payments, payouts: $payouts, treasury: $treasury)';
+
  }

@@ -46,13 +46,16 @@ PaymentMethodOptionsParam102 copyWith({PaymentIntentParamCaptureMethod? Function
   riskCorrelationId: riskCorrelationId != null ? riskCorrelationId() : this.riskCorrelationId,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam102 &&
           captureMethod == other.captureMethod &&
           preferredLocale == other.preferredLocale &&
           reference == other.reference &&
           riskCorrelationId == other.riskCorrelationId &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, preferredLocale, reference, riskCorrelationId, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsParam102(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, preferredLocale, reference, riskCorrelationId, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsParam102(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)';
+
  }

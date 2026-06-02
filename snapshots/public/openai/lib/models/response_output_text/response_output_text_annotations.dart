@@ -31,14 +31,18 @@ final FileAnnotation fileAnnotation;
 
 @override String get type => 'file';
 
-@override Map<String, dynamic> toJson() { return {...fileAnnotation.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...fileAnnotation.toJson(), 'type': type};
+
 ResponseOutputTextAnnotationsFile copyWith({FileAnnotationSource? source}) { return ResponseOutputTextAnnotationsFile(fileAnnotation.copyWith(
   source: source,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputTextAnnotationsFile && fileAnnotation == other.fileAnnotation; } 
-@override int get hashCode { return fileAnnotation.hashCode; } 
-@override String toString() { return 'ResponseOutputTextAnnotations.file($fileAnnotation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseOutputTextAnnotationsFile && fileAnnotation == other.fileAnnotation;
+
+@override int get hashCode => fileAnnotation.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotations.file($fileAnnotation)';
+
  }
 @immutable final class ResponseOutputTextAnnotationsUrl extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsUrl(this.urlAnnotation);
 
@@ -48,14 +52,18 @@ final UrlAnnotation urlAnnotation;
 
 @override String get type => 'url';
 
-@override Map<String, dynamic> toJson() { return {...urlAnnotation.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...urlAnnotation.toJson(), 'type': type};
+
 ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { return ResponseOutputTextAnnotationsUrl(urlAnnotation.copyWith(
   source: source,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputTextAnnotationsUrl && urlAnnotation == other.urlAnnotation; } 
-@override int get hashCode { return urlAnnotation.hashCode; } 
-@override String toString() { return 'ResponseOutputTextAnnotations.url($urlAnnotation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseOutputTextAnnotationsUrl && urlAnnotation == other.urlAnnotation;
+
+@override int get hashCode => urlAnnotation.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotations.url($urlAnnotation)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -65,9 +73,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseOutputTextAnnotations$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResponseOutputTextAnnotations.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseOutputTextAnnotations$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotations.unknown($json)';
+
  }

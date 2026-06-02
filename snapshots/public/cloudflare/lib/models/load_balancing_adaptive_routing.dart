@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancingAdaptiveRouting copyWith({bool Function()? failoverAcrossPools}) { return LoadBalancingAdaptiveRouting(
   failoverAcrossPools: failoverAcrossPools != null ? failoverAcrossPools() : this.failoverAcrossPools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingAdaptiveRouting &&
-          failoverAcrossPools == other.failoverAcrossPools; } 
-@override int get hashCode { return failoverAcrossPools.hashCode; } 
-@override String toString() { return 'LoadBalancingAdaptiveRouting(failoverAcrossPools: $failoverAcrossPools)'; } 
+          failoverAcrossPools == other.failoverAcrossPools;
+
+@override int get hashCode => failoverAcrossPools.hashCode;
+
+@override String toString() => 'LoadBalancingAdaptiveRouting(failoverAcrossPools: $failoverAcrossPools)';
+
  }

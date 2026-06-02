@@ -22,10 +22,13 @@ MessageContentImageFileObjectImageFile copyWith({String? fileId, Detail Function
   fileId: fileId ?? this.fileId,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentImageFileObjectImageFile &&
           fileId == other.fileId &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(fileId, detail); } 
-@override String toString() { return 'MessageContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(fileId, detail);
+
+@override String toString() => 'MessageContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)';
+
  }

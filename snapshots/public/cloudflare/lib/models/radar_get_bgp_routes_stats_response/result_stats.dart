@@ -117,7 +117,7 @@ ResultStats copyWith({int? distinctOrigins, int? distinctOriginsIpv4, int? disti
   routesValidIpv4: routesValidIpv4 ?? this.routesValidIpv4,
   routesValidIpv6: routesValidIpv6 ?? this.routesValidIpv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultStats &&
           distinctOrigins == other.distinctOrigins &&
           distinctOriginsIpv4 == other.distinctOriginsIpv4 &&
@@ -136,7 +136,10 @@ ResultStats copyWith({int? distinctOrigins, int? distinctOriginsIpv4, int? disti
           routesUnknownIpv6 == other.routesUnknownIpv6 &&
           routesValid == other.routesValid &&
           routesValidIpv4 == other.routesValidIpv4 &&
-          routesValidIpv6 == other.routesValidIpv6; } 
-@override int get hashCode { return Object.hash(distinctOrigins, distinctOriginsIpv4, distinctOriginsIpv6, distinctPrefixes, distinctPrefixesIpv4, distinctPrefixesIpv6, routesInvalid, routesInvalidIpv4, routesInvalidIpv6, routesTotal, routesTotalIpv4, routesTotalIpv6, routesUnknown, routesUnknownIpv4, routesUnknownIpv6, routesValid, routesValidIpv4, routesValidIpv6); } 
-@override String toString() { return 'ResultStats(distinctOrigins: $distinctOrigins, distinctOriginsIpv4: $distinctOriginsIpv4, distinctOriginsIpv6: $distinctOriginsIpv6, distinctPrefixes: $distinctPrefixes, distinctPrefixesIpv4: $distinctPrefixesIpv4, distinctPrefixesIpv6: $distinctPrefixesIpv6, routesInvalid: $routesInvalid, routesInvalidIpv4: $routesInvalidIpv4, routesInvalidIpv6: $routesInvalidIpv6, routesTotal: $routesTotal, routesTotalIpv4: $routesTotalIpv4, routesTotalIpv6: $routesTotalIpv6, routesUnknown: $routesUnknown, routesUnknownIpv4: $routesUnknownIpv4, routesUnknownIpv6: $routesUnknownIpv6, routesValid: $routesValid, routesValidIpv4: $routesValidIpv4, routesValidIpv6: $routesValidIpv6)'; } 
+          routesValidIpv6 == other.routesValidIpv6;
+
+@override int get hashCode => Object.hash(distinctOrigins, distinctOriginsIpv4, distinctOriginsIpv6, distinctPrefixes, distinctPrefixesIpv4, distinctPrefixesIpv6, routesInvalid, routesInvalidIpv4, routesInvalidIpv6, routesTotal, routesTotalIpv4, routesTotalIpv6, routesUnknown, routesUnknownIpv4, routesUnknownIpv6, routesValid, routesValidIpv4, routesValidIpv6);
+
+@override String toString() => 'ResultStats(distinctOrigins: $distinctOrigins, distinctOriginsIpv4: $distinctOriginsIpv4, distinctOriginsIpv6: $distinctOriginsIpv6, distinctPrefixes: $distinctPrefixes, distinctPrefixesIpv4: $distinctPrefixesIpv4, distinctPrefixesIpv6: $distinctPrefixesIpv6, routesInvalid: $routesInvalid, routesInvalidIpv4: $routesInvalidIpv4, routesInvalidIpv6: $routesInvalidIpv6, routesTotal: $routesTotal, routesTotalIpv4: $routesTotalIpv4, routesTotalIpv6: $routesTotalIpv6, routesUnknown: $routesUnknown, routesUnknownIpv4: $routesUnknownIpv4, routesUnknownIpv6: $routesUnknownIpv6, routesValid: $routesValid, routesValidIpv4: $routesValidIpv4, routesValidIpv6: $routesValidIpv6)';
+
  }

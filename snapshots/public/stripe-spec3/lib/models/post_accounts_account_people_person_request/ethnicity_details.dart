@@ -27,10 +27,13 @@ EthnicityDetails copyWith({List<Ethnicity>? Function()? ethnicity, String? Funct
   ethnicity: ethnicity != null ? ethnicity() : this.ethnicity,
   ethnicityOther: ethnicityOther != null ? ethnicityOther() : this.ethnicityOther,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EthnicityDetails &&
           listEquals(ethnicity, other.ethnicity) &&
-          ethnicityOther == other.ethnicityOther; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ethnicity ?? const []), ethnicityOther); } 
-@override String toString() { return 'EthnicityDetails(ethnicity: $ethnicity, ethnicityOther: $ethnicityOther)'; } 
+          ethnicityOther == other.ethnicityOther;
+
+@override int get hashCode => Object.hash(Object.hashAll(ethnicity ?? const []), ethnicityOther);
+
+@override String toString() => 'EthnicityDetails(ethnicity: $ethnicity, ethnicityOther: $ethnicityOther)';
+
  }

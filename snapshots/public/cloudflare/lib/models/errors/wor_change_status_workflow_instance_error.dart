@@ -19,19 +19,22 @@ final class WorChangeStatusWorkflowInstanceError$400 extends WorChangeStatusWork
 
 final WorChangeStatusWorkflowInstanceResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorChangeStatusWorkflowInstanceError$404 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError$404(this.error);
 
 final WorChangeStatusWorkflowInstanceResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorChangeStatusWorkflowInstanceError$409 extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError$409(this.error);
 
 final WorChangeStatusWorkflowInstanceResponse409 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class WorChangeStatusWorkflowInstanceError$Unknown extends WorChangeStatusWorkflowInstanceError {const WorChangeStatusWorkflowInstanceError$Unknown(this.statusCode, this.rawBody, );
 

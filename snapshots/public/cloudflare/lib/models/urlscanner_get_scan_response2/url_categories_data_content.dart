@@ -27,11 +27,14 @@ UrlCategoriesDataContent copyWith({double? id, String? name, double? superCatego
   name: name ?? this.name,
   superCategoryId: superCategoryId ?? this.superCategoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlCategoriesDataContent &&
           id == other.id &&
           name == other.name &&
-          superCategoryId == other.superCategoryId; } 
-@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
-@override String toString() { return 'UrlCategoriesDataContent(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
+          superCategoryId == other.superCategoryId;
+
+@override int get hashCode => Object.hash(id, name, superCategoryId);
+
+@override String toString() => 'UrlCategoriesDataContent(id: $id, name: $name, superCategoryId: $superCategoryId)';
+
  }

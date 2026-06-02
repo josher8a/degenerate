@@ -19,19 +19,22 @@ final class CodeScanningListCodeqlDatabasesError$403 extends CodeScanningListCod
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningListCodeqlDatabasesError$404 extends CodeScanningListCodeqlDatabasesError {const CodeScanningListCodeqlDatabasesError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningListCodeqlDatabasesError$503 extends CodeScanningListCodeqlDatabasesError {const CodeScanningListCodeqlDatabasesError$503(this.error);
 
 final CodeScanningListCodeqlDatabasesResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningListCodeqlDatabasesError$Unknown extends CodeScanningListCodeqlDatabasesError {const CodeScanningListCodeqlDatabasesError$Unknown(this.statusCode, this.rawBody, );
 

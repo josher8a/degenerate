@@ -21,10 +21,13 @@ NscFacilityInfo copyWith({List<String>? address, String? name, }) { return NscFa
   address: address ?? this.address,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscFacilityInfo &&
           listEquals(address, other.address) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(address), name); } 
-@override String toString() { return 'NscFacilityInfo(address: $address, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(address), name);
+
+@override String toString() => 'NscFacilityInfo(address: $address, name: $name)';
+
  }

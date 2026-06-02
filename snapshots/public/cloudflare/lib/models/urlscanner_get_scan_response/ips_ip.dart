@@ -112,7 +112,7 @@ IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, 
   subdivision1Name: subdivision1Name ?? this.subdivision1Name,
   subdivision2Name: subdivision2Name ?? this.subdivision2Name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpsIp &&
           asn == other.asn &&
           asnDescription == other.asnDescription &&
@@ -128,7 +128,10 @@ IpsIp copyWith({String? asn, String? asnDescription, String? asnLocationAlpha2, 
           locationName == other.locationName &&
           longitude == other.longitude &&
           subdivision1Name == other.subdivision1Name &&
-          subdivision2Name == other.subdivision2Name; } 
-@override int get hashCode { return Object.hash(asn, asnDescription, asnLocationAlpha2, asnName, asnOrgName, continent, geonameId, ip, ipVersion, latitude, locationAlpha2, locationName, longitude, subdivision1Name, subdivision2Name); } 
-@override String toString() { return 'IpsIp(asn: $asn, asnDescription: $asnDescription, asnLocationAlpha2: $asnLocationAlpha2, asnName: $asnName, asnOrgName: $asnOrgName, continent: $continent, geonameId: $geonameId, ip: $ip, ipVersion: $ipVersion, latitude: $latitude, locationAlpha2: $locationAlpha2, locationName: $locationName, longitude: $longitude, subdivision1Name: $subdivision1Name, subdivision2Name: $subdivision2Name)'; } 
+          subdivision2Name == other.subdivision2Name;
+
+@override int get hashCode => Object.hash(asn, asnDescription, asnLocationAlpha2, asnName, asnOrgName, continent, geonameId, ip, ipVersion, latitude, locationAlpha2, locationName, longitude, subdivision1Name, subdivision2Name);
+
+@override String toString() => 'IpsIp(asn: $asn, asnDescription: $asnDescription, asnLocationAlpha2: $asnLocationAlpha2, asnName: $asnName, asnOrgName: $asnOrgName, continent: $continent, geonameId: $geonameId, ip: $ip, ipVersion: $ipVersion, latitude: $latitude, locationAlpha2: $locationAlpha2, locationName: $locationName, longitude: $longitude, subdivision1Name: $subdivision1Name, subdivision2Name: $subdivision2Name)';
+
  }

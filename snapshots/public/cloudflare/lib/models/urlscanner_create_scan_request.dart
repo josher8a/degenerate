@@ -40,13 +40,16 @@ UrlscannerCreateScanRequest copyWith({UrlscannerCreateScanRequest2Country? Funct
   url: url ?? this.url,
   visibility: visibility != null ? visibility() : this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanRequest &&
           country == other.country &&
           customHeaders == other.customHeaders &&
           listEquals(screenshotsResolutions, other.screenshotsResolutions) &&
           url == other.url &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(country, customHeaders, Object.hashAll(screenshotsResolutions ?? const []), url, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanRequest(country: $country, customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(country, customHeaders, Object.hashAll(screenshotsResolutions ?? const []), url, visibility);
+
+@override String toString() => 'UrlscannerCreateScanRequest(country: $country, customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)';
+
  }

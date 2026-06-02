@@ -17,7 +17,8 @@ final class AigConfigDeleteEvaluationsError$404 extends AigConfigDeleteEvaluatio
 
 final AigConfigDeleteEvaluationsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigDeleteEvaluationsError$Unknown extends AigConfigDeleteEvaluationsError {const AigConfigDeleteEvaluationsError$Unknown(this.statusCode, this.rawBody, );
 

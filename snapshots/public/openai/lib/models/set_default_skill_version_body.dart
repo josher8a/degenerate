@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
 SetDefaultSkillVersionBody copyWith({String? defaultVersion}) { return SetDefaultSkillVersionBody(
   defaultVersion: defaultVersion ?? this.defaultVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetDefaultSkillVersionBody &&
-          defaultVersion == other.defaultVersion; } 
-@override int get hashCode { return defaultVersion.hashCode; } 
-@override String toString() { return 'SetDefaultSkillVersionBody(defaultVersion: $defaultVersion)'; } 
+          defaultVersion == other.defaultVersion;
+
+@override int get hashCode => defaultVersion.hashCode;
+
+@override String toString() => 'SetDefaultSkillVersionBody(defaultVersion: $defaultVersion)';
+
  }

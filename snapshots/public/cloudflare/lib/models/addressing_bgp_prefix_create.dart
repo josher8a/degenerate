@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cidr'
 AddressingBgpPrefixCreate copyWith({AddressingCidr? cidr}) { return AddressingBgpPrefixCreate(
   cidr: cidr ?? this.cidr,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingBgpPrefixCreate &&
-          cidr == other.cidr; } 
-@override int get hashCode { return cidr.hashCode; } 
-@override String toString() { return 'AddressingBgpPrefixCreate(cidr: $cidr)'; } 
+          cidr == other.cidr;
+
+@override int get hashCode => cidr.hashCode;
+
+@override String toString() => 'AddressingBgpPrefixCreate(cidr: $cidr)';
+
  }

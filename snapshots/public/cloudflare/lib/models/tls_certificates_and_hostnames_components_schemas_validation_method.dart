@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('valid
 TlsCertificatesAndHostnamesComponentsSchemasValidationMethod copyWith({TlsCertificatesAndHostnamesValidationMethodDefinition? validationMethod}) { return TlsCertificatesAndHostnamesComponentsSchemasValidationMethod(
   validationMethod: validationMethod ?? this.validationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesComponentsSchemasValidationMethod &&
-          validationMethod == other.validationMethod; } 
-@override int get hashCode { return validationMethod.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasValidationMethod(validationMethod: $validationMethod)'; } 
+          validationMethod == other.validationMethod;
+
+@override int get hashCode => validationMethod.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasValidationMethod(validationMethod: $validationMethod)';
+
  }

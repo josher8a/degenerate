@@ -80,7 +80,7 @@ Tenant copyWith({DateTime? cdate, String? Function()? customerId, DateTime? edat
   tenantType: tenantType ?? this.tenantType,
   tenantUnits: tenantUnits ?? this.tenantUnits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tenant &&
           cdate == other.cdate &&
           customerId == other.customerId &&
@@ -93,7 +93,10 @@ Tenant copyWith({DateTime? cdate, String? Function()? customerId, DateTime? edat
           tenantStatus == other.tenantStatus &&
           tenantTag == other.tenantTag &&
           tenantType == other.tenantType &&
-          listEquals(tenantUnits, other.tenantUnits); } 
-@override int get hashCode { return Object.hash(cdate, customerId, edate, tenantContacts, Object.hashAll(tenantLabels), tenantMetadata, tenantName, tenantNetwork, tenantStatus, tenantTag, tenantType, Object.hashAll(tenantUnits)); } 
-@override String toString() { return 'Tenant(cdate: $cdate, customerId: $customerId, edate: $edate, tenantContacts: $tenantContacts, tenantLabels: $tenantLabels, tenantMetadata: $tenantMetadata, tenantName: $tenantName, tenantNetwork: $tenantNetwork, tenantStatus: $tenantStatus, tenantTag: $tenantTag, tenantType: $tenantType, tenantUnits: $tenantUnits)'; } 
+          listEquals(tenantUnits, other.tenantUnits);
+
+@override int get hashCode => Object.hash(cdate, customerId, edate, tenantContacts, Object.hashAll(tenantLabels), tenantMetadata, tenantName, tenantNetwork, tenantStatus, tenantTag, tenantType, Object.hashAll(tenantUnits));
+
+@override String toString() => 'Tenant(cdate: $cdate, customerId: $customerId, edate: $edate, tenantContacts: $tenantContacts, tenantLabels: $tenantLabels, tenantMetadata: $tenantMetadata, tenantName: $tenantName, tenantNetwork: $tenantNetwork, tenantStatus: $tenantStatus, tenantTag: $tenantTag, tenantType: $tenantType, tenantUnits: $tenantUnits)';
+
  }

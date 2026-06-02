@@ -22,10 +22,13 @@ UsersCreateGpgKeyForAuthenticatedUserRequest copyWith({String? Function()? name,
   name: name != null ? name() : this.name,
   armoredPublicKey: armoredPublicKey ?? this.armoredPublicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersCreateGpgKeyForAuthenticatedUserRequest &&
           name == other.name &&
-          armoredPublicKey == other.armoredPublicKey; } 
-@override int get hashCode { return Object.hash(name, armoredPublicKey); } 
-@override String toString() { return 'UsersCreateGpgKeyForAuthenticatedUserRequest(name: $name, armoredPublicKey: $armoredPublicKey)'; } 
+          armoredPublicKey == other.armoredPublicKey;
+
+@override int get hashCode => Object.hash(name, armoredPublicKey);
+
+@override String toString() => 'UsersCreateGpgKeyForAuthenticatedUserRequest(name: $name, armoredPublicKey: $armoredPublicKey)';
+
  }

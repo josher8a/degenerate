@@ -20,10 +20,13 @@ BrapiPostContentResponseMeta copyWith({double? Function()? status, String? Funct
   status: status != null ? status() : this.status,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostContentResponseMeta &&
           status == other.status &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(status, title); } 
-@override String toString() { return 'BrapiPostContentResponseMeta(status: $status, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(status, title);
+
+@override String toString() => 'BrapiPostContentResponseMeta(status: $status, title: $title)';
+
  }

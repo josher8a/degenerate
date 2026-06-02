@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UntrustedCertAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UntrustedCertAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UntrustedCertAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UntrustedCertAction($value)';
+
  }
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.
 @immutable final class UntrustedCert {const UntrustedCert({this.action});
@@ -47,9 +50,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 UntrustedCert copyWith({UntrustedCertAction? Function()? action}) { return UntrustedCert(
   action: action != null ? action() : this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UntrustedCert &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'UntrustedCert(action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => action.hashCode;
+
+@override String toString() => 'UntrustedCert(action: $action)';
+
  }

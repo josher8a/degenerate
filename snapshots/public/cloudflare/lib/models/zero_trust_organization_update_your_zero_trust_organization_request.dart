@@ -97,7 +97,7 @@ ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest copyWith({AccessAllo
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
   warpAuthSessionDuration: warpAuthSessionDuration != null ? warpAuthSessionDuration() : this.warpAuthSessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
           authDomain == other.authDomain &&
@@ -113,7 +113,10 @@ ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest copyWith({AccessAllo
           sessionDuration == other.sessionDuration &&
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
           userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime &&
-          warpAuthSessionDuration == other.warpAuthSessionDuration; } 
-@override int get hashCode { return Object.hash(allowAuthenticateViaWarp, authDomain, autoRedirectToIdentity, customPages, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, mfaConfig, mfaRequiredForAllApps, name, sessionDuration, uiReadOnlyToggleReason, userSeatExpirationInactiveTime, warpAuthSessionDuration); } 
-@override String toString() { return 'ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, authDomain: $authDomain, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, mfaConfig: $mfaConfig, mfaRequiredForAllApps: $mfaRequiredForAllApps, name: $name, sessionDuration: $sessionDuration, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime, warpAuthSessionDuration: $warpAuthSessionDuration)'; } 
+          warpAuthSessionDuration == other.warpAuthSessionDuration;
+
+@override int get hashCode => Object.hash(allowAuthenticateViaWarp, authDomain, autoRedirectToIdentity, customPages, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, mfaConfig, mfaRequiredForAllApps, name, sessionDuration, uiReadOnlyToggleReason, userSeatExpirationInactiveTime, warpAuthSessionDuration);
+
+@override String toString() => 'ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, authDomain: $authDomain, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, mfaConfig: $mfaConfig, mfaRequiredForAllApps: $mfaRequiredForAllApps, name: $name, sessionDuration: $sessionDuration, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime, warpAuthSessionDuration: $warpAuthSessionDuration)';
+
  }

@@ -30,12 +30,15 @@ ConditionsUpdatedChanges copyWith({ConditionType? Function()? conditionType, Cha
   include: include != null ? include() : this.include,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConditionsUpdatedChanges &&
           conditionType == other.conditionType &&
           target == other.target &&
           include == other.include &&
-          exclude == other.exclude; } 
-@override int get hashCode { return Object.hash(conditionType, target, include, exclude); } 
-@override String toString() { return 'ConditionsUpdatedChanges(conditionType: $conditionType, target: $target, include: $include, exclude: $exclude)'; } 
+          exclude == other.exclude;
+
+@override int get hashCode => Object.hash(conditionType, target, include, exclude);
+
+@override String toString() => 'ConditionsUpdatedChanges(conditionType: $conditionType, target: $target, include: $include, exclude: $exclude)';
+
  }

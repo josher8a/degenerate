@@ -49,12 +49,15 @@ DestinationPath copyWith({String? bucket, String? Function()? filename, String? 
   filepath: filepath != null ? filepath() : this.filepath,
   prefix: prefix != null ? prefix() : this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationPath &&
           bucket == other.bucket &&
           filename == other.filename &&
           filepath == other.filepath &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(bucket, filename, filepath, prefix); } 
-@override String toString() { return 'DestinationPath(bucket: $bucket, filename: $filename, filepath: $filepath, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(bucket, filename, filepath, prefix);
+
+@override String toString() => 'DestinationPath(bucket: $bucket, filename: $filename, filepath: $filepath, prefix: $prefix)';
+
  }

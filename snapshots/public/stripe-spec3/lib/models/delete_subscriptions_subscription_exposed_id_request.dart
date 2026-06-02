@@ -34,12 +34,15 @@ DeleteSubscriptionsSubscriptionExposedIdRequest copyWith({DeleteSubscriptionsSub
   invoiceNow: invoiceNow != null ? invoiceNow() : this.invoiceNow,
   prorate: prorate != null ? prorate() : this.prorate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteSubscriptionsSubscriptionExposedIdRequest &&
           cancellationDetails == other.cancellationDetails &&
           listEquals(expand, other.expand) &&
           invoiceNow == other.invoiceNow &&
-          prorate == other.prorate; } 
-@override int get hashCode { return Object.hash(cancellationDetails, Object.hashAll(expand ?? const []), invoiceNow, prorate); } 
-@override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequest(cancellationDetails: $cancellationDetails, expand: $expand, invoiceNow: $invoiceNow, prorate: $prorate)'; } 
+          prorate == other.prorate;
+
+@override int get hashCode => Object.hash(cancellationDetails, Object.hashAll(expand ?? const []), invoiceNow, prorate);
+
+@override String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequest(cancellationDetails: $cancellationDetails, expand: $expand, invoiceNow: $invoiceNow, prorate: $prorate)';
+
  }

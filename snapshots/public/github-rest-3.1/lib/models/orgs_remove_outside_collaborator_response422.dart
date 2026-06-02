@@ -20,10 +20,13 @@ OrgsRemoveOutsideCollaboratorResponse422 copyWith({String? Function()? message, 
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsRemoveOutsideCollaboratorResponse422 &&
           message == other.message &&
-          documentationUrl == other.documentationUrl; } 
-@override int get hashCode { return Object.hash(message, documentationUrl); } 
-@override String toString() { return 'OrgsRemoveOutsideCollaboratorResponse422(message: $message, documentationUrl: $documentationUrl)'; } 
+          documentationUrl == other.documentationUrl;
+
+@override int get hashCode => Object.hash(message, documentationUrl);
+
+@override String toString() => 'OrgsRemoveOutsideCollaboratorResponse422(message: $message, documentationUrl: $documentationUrl)';
+
  }

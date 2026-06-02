@@ -58,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsSettingsZoneMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsSettingsZoneMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsSettingsZoneMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnsSettingsZoneMode($value)';
+
  }
 @immutable final class DnsSettingsDnsSettingsBase {const DnsSettingsDnsSettingsBase({this.flattenAllCnames, this.foundationDns, this.internalDns, this.multiProvider, this.nsTtl, this.secondaryOverrides, this.soa, this.zoneMode, });
 
@@ -113,7 +116,7 @@ DnsSettingsDnsSettingsBase copyWith({DnsSettingsFlattenAllCnames? Function()? fl
   soa: soa != null ? soa() : this.soa,
   zoneMode: zoneMode != null ? zoneMode() : this.zoneMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsSettingsBase &&
           flattenAllCnames == other.flattenAllCnames &&
           foundationDns == other.foundationDns &&
@@ -122,7 +125,10 @@ DnsSettingsDnsSettingsBase copyWith({DnsSettingsFlattenAllCnames? Function()? fl
           nsTtl == other.nsTtl &&
           secondaryOverrides == other.secondaryOverrides &&
           soa == other.soa &&
-          zoneMode == other.zoneMode; } 
-@override int get hashCode { return Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode); } 
-@override String toString() { return 'DnsSettingsDnsSettingsBase(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode)'; } 
+          zoneMode == other.zoneMode;
+
+@override int get hashCode => Object.hash(flattenAllCnames, foundationDns, internalDns, multiProvider, nsTtl, secondaryOverrides, soa, zoneMode);
+
+@override String toString() => 'DnsSettingsDnsSettingsBase(flattenAllCnames: $flattenAllCnames, foundationDns: $foundationDns, internalDns: $internalDns, multiProvider: $multiProvider, nsTtl: $nsTtl, secondaryOverrides: $secondaryOverrides, soa: $soa, zoneMode: $zoneMode)';
+
  }

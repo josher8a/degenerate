@@ -17,7 +17,8 @@ final class RadarGetOriginDetailsError$404 extends RadarGetOriginDetailsError {c
 
 final RadarGetOriginDetailsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetOriginDetailsError$Unknown extends RadarGetOriginDetailsError {const RadarGetOriginDetailsError$Unknown(this.statusCode, this.rawBody, );
 

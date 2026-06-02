@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenNetwork($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenNetwork && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingTokenNetwork($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingTokenObject {const IssuingTokenObject._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingTokenObject($value)';
+
  }
 /// The usage state of the token.
 @immutable final class IssuingTokenStatus {const IssuingTokenStatus._(this.value);
@@ -73,10 +79,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingTokenStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingTokenStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingTokenStatus($value)';
+
  }
 /// The digital wallet for this token, if one was used.
 @immutable final class WalletProvider {const WalletProvider._(this.value);
@@ -101,10 +110,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WalletProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WalletProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WalletProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WalletProvider($value)';
+
  }
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.
 @immutable final class IssuingToken {const IssuingToken({required this.card, required this.created, required this.id, required this.livemode, required this.network, required this.networkUpdatedAt, required this.object, required this.status, this.deviceFingerprint, this.last4, this.networkData, this.walletProvider, });
@@ -207,7 +219,7 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()?
   status: status ?? this.status,
   walletProvider: walletProvider != null ? walletProvider() : this.walletProvider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingToken &&
           card == other.card &&
           created == other.created &&
@@ -220,7 +232,10 @@ IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()?
           networkUpdatedAt == other.networkUpdatedAt &&
           object == other.object &&
           status == other.status &&
-          walletProvider == other.walletProvider; } 
-@override int get hashCode { return Object.hash(card, created, deviceFingerprint, id, last4, livemode, network, networkData, networkUpdatedAt, object, status, walletProvider); } 
-@override String toString() { return 'IssuingToken(card: $card, created: $created, deviceFingerprint: $deviceFingerprint, id: $id, last4: $last4, livemode: $livemode, network: $network, networkData: $networkData, networkUpdatedAt: $networkUpdatedAt, object: $object, status: $status, walletProvider: $walletProvider)'; } 
+          walletProvider == other.walletProvider;
+
+@override int get hashCode => Object.hash(card, created, deviceFingerprint, id, last4, livemode, network, networkData, networkUpdatedAt, object, status, walletProvider);
+
+@override String toString() => 'IssuingToken(card: $card, created: $created, deviceFingerprint: $deviceFingerprint, id: $id, last4: $last4, livemode: $livemode, network: $network, networkData: $networkData, networkUpdatedAt: $networkUpdatedAt, object: $object, status: $status, walletProvider: $walletProvider)';
+
  }

@@ -48,7 +48,7 @@ MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTim
   settings: settings != null ? settings() : this.settings,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerConsumerResponse &&
           consumerId == other.consumerId &&
           createdOn == other.createdOn &&
@@ -56,7 +56,10 @@ MqWorkerConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTim
           queueName == other.queueName &&
           scriptName == other.scriptName &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(consumerId, createdOn, deadLetterQueue, queueName, scriptName, settings, type); } 
-@override String toString() { return 'MqWorkerConsumerResponse(consumerId: $consumerId, createdOn: $createdOn, deadLetterQueue: $deadLetterQueue, queueName: $queueName, scriptName: $scriptName, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(consumerId, createdOn, deadLetterQueue, queueName, scriptName, settings, type);
+
+@override String toString() => 'MqWorkerConsumerResponse(consumerId: $consumerId, createdOn: $createdOn, deadLetterQueue: $deadLetterQueue, queueName: $queueName, scriptName: $scriptName, settings: $settings, type: $type)';
+
  }

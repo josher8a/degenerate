@@ -59,22 +59,18 @@ final class StringModel {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is StringModel &&
-            length == other.length &&
-            value == other.value &&
-            charAt == other.charAt &&
-            trim == other.trim;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StringModel &&
+          length == other.length &&
+          value == other.value &&
+          charAt == other.charAt &&
+          trim == other.trim;
 
   @override
-  int get hashCode {
-    return Object.hash(length, value, charAt, trim);
-  }
+  int get hashCode => Object.hash(length, value, charAt, trim);
 
   @override
-  String toString() {
-    return 'StringModel(length: $length, value: $value, charAt: $charAt, trim: $trim)';
-  }
+  String toString() =>
+      'StringModel(length: $length, value: $value, charAt: $charAt, trim: $trim)';
 }

@@ -17,7 +17,8 @@ final class DeleteCategoryDeleteError$400 extends DeleteCategoryDeleteError {con
 
 final DeleteCategoryDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteCategoryDeleteError$Unknown extends DeleteCategoryDeleteError {const DeleteCategoryDeleteError$Unknown(this.statusCode, this.rawBody, );
 

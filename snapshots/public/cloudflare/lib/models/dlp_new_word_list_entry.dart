@@ -27,11 +27,14 @@ DlpNewWordListEntry copyWith({bool? enabled, String? name, List<String>? words, 
   name: name ?? this.name,
   words: words ?? this.words,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewWordListEntry &&
           enabled == other.enabled &&
           name == other.name &&
-          listEquals(words, other.words); } 
-@override int get hashCode { return Object.hash(enabled, name, Object.hashAll(words)); } 
-@override String toString() { return 'DlpNewWordListEntry(enabled: $enabled, name: $name, words: $words)'; } 
+          listEquals(words, other.words);
+
+@override int get hashCode => Object.hash(enabled, name, Object.hashAll(words));
+
+@override String toString() => 'DlpNewWordListEntry(enabled: $enabled, name: $name, words: $words)';
+
  }

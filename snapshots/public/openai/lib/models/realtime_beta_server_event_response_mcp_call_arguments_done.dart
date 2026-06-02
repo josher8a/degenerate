@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)';
+
  }
 /// Returned when MCP tool call arguments are finalized during response generation.
 @immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDone {const RealtimeBetaServerEventResponseMcpCallArgumentsDone({required this.eventId, required this.type, required this.responseId, required this.itemId, required this.outputIndex, required this.arguments, });
@@ -74,14 +77,17 @@ RealtimeBetaServerEventResponseMcpCallArgumentsDone copyWith({String? eventId, R
   outputIndex: outputIndex ?? this.outputIndex,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallArgumentsDone &&
           eventId == other.eventId &&
           type == other.type &&
           responseId == other.responseId &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, arguments); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, arguments);
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, arguments: $arguments)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GroupUserAssignmentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GroupUserAssignmentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupUserAssignmentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GroupUserAssignmentObject($value)';
+
  }
 /// Confirmation payload returned after adding a user to a group.
 @immutable final class GroupUserAssignment {const GroupUserAssignment({required this.object, required this.userId, required this.groupId, });
@@ -53,11 +56,14 @@ GroupUserAssignment copyWith({GroupUserAssignmentObject? object, String? userId,
   userId: userId ?? this.userId,
   groupId: groupId ?? this.groupId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupUserAssignment &&
           object == other.object &&
           userId == other.userId &&
-          groupId == other.groupId; } 
-@override int get hashCode { return Object.hash(object, userId, groupId); } 
-@override String toString() { return 'GroupUserAssignment(object: $object, userId: $userId, groupId: $groupId)'; } 
+          groupId == other.groupId;
+
+@override int get hashCode => Object.hash(object, userId, groupId);
+
+@override String toString() => 'GroupUserAssignment(object: $object, userId: $userId, groupId: $groupId)';
+
  }

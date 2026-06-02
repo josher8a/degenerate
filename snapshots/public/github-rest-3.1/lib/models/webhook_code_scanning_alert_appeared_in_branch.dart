@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCodeScanningAlertAppearedInBranchAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAction($value)';
+
  }
 @immutable final class WebhookCodeScanningAlertAppearedInBranch {const WebhookCodeScanningAlertAppearedInBranch({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -84,7 +87,7 @@ WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppea
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranch &&
           action == other.action &&
           alert == other.alert &&
@@ -94,7 +97,10 @@ WebhookCodeScanningAlertAppearedInBranch copyWith({WebhookCodeScanningAlertAppea
           organization == other.organization &&
           ref == other.ref &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranch(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender);
+
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranch(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)';
+
  }

@@ -30,11 +30,14 @@ Prompt copyWith({String? id, String? Function()? version, Map<String, ResponsePr
   version: version != null ? version() : this.version,
   variables: variables != null ? variables() : this.variables,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt &&
           id == other.id &&
           version == other.version &&
-          variables == other.variables; } 
-@override int get hashCode { return Object.hash(id, version, variables); } 
-@override String toString() { return 'Prompt(id: $id, version: $version, variables: $variables)'; } 
+          variables == other.variables;
+
+@override int get hashCode => Object.hash(id, version, variables);
+
+@override String toString() => 'Prompt(id: $id, version: $version, variables: $variables)';
+
  }

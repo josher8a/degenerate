@@ -17,7 +17,8 @@ final class RadarGetEntitiesLocationByAlpha2Error$404 extends RadarGetEntitiesLo
 
 final RadarGetEntitiesLocationByAlpha2Response404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetEntitiesLocationByAlpha2Error$Unknown extends RadarGetEntitiesLocationByAlpha2Error {const RadarGetEntitiesLocationByAlpha2Error$Unknown(this.statusCode, this.rawBody, );
 

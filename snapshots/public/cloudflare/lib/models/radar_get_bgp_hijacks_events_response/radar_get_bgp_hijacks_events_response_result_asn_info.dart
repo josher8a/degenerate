@@ -27,11 +27,14 @@ RadarGetBgpHijacksEventsResponseResultAsnInfo copyWith({int? asn, String? countr
   countryCode: countryCode ?? this.countryCode,
   orgName: orgName ?? this.orgName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponseResultAsnInfo &&
           asn == other.asn &&
           countryCode == other.countryCode &&
-          orgName == other.orgName; } 
-@override int get hashCode { return Object.hash(asn, countryCode, orgName); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponseResultAsnInfo(asn: $asn, countryCode: $countryCode, orgName: $orgName)'; } 
+          orgName == other.orgName;
+
+@override int get hashCode => Object.hash(asn, countryCode, orgName);
+
+@override String toString() => 'RadarGetBgpHijacksEventsResponseResultAsnInfo(asn: $asn, countryCode: $countryCode, orgName: $orgName)';
+
  }

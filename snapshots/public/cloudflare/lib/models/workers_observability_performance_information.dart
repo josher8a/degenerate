@@ -37,12 +37,15 @@ WorkersObservabilityPerformanceInformation copyWith({double? Function()? abrLeve
   elapsed: elapsed ?? this.elapsed,
   rowsRead: rowsRead ?? this.rowsRead,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityPerformanceInformation &&
           abrLevel == other.abrLevel &&
           bytesRead == other.bytesRead &&
           elapsed == other.elapsed &&
-          rowsRead == other.rowsRead; } 
-@override int get hashCode { return Object.hash(abrLevel, bytesRead, elapsed, rowsRead); } 
-@override String toString() { return 'WorkersObservabilityPerformanceInformation(abrLevel: $abrLevel, bytesRead: $bytesRead, elapsed: $elapsed, rowsRead: $rowsRead)'; } 
+          rowsRead == other.rowsRead;
+
+@override int get hashCode => Object.hash(abrLevel, bytesRead, elapsed, rowsRead);
+
+@override String toString() => 'WorkersObservabilityPerformanceInformation(abrLevel: $abrLevel, bytesRead: $bytesRead, elapsed: $elapsed, rowsRead: $rowsRead)';
+
  }

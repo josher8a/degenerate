@@ -42,11 +42,14 @@ RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 copyWith({String? desktop,
   mobile: mobile ?? this.mobile,
   other: other ?? this.other,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 &&
           desktop == other.desktop &&
           mobile == other.mobile &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(desktop, mobile, other); } 
-@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(desktop: $desktop, mobile: $mobile, other: $other)'; } 
+          this.other == other.other;
+
+@override int get hashCode => Object.hash(desktop, mobile, other);
+
+@override String toString() => 'RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(desktop: $desktop, mobile: $mobile, other: $other)';
+
  }

@@ -81,7 +81,7 @@ Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, M
   steeringPolicy: steeringPolicy != null ? steeringPolicy() : this.steeringPolicy,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Overrides &&
           adaptiveRouting == other.adaptiveRouting &&
           countryPools == other.countryPools &&
@@ -95,7 +95,10 @@ Overrides copyWith({LoadBalancingAdaptiveRouting? Function()? adaptiveRouting, M
           sessionAffinityAttributes == other.sessionAffinityAttributes &&
           sessionAffinityTtl == other.sessionAffinityTtl &&
           steeringPolicy == other.steeringPolicy &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools ?? const []), fallbackPool, locationStrategy, popPools, randomSteering, regionPools, sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl); } 
-@override String toString() { return 'Overrides(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, popPools: $popPools, randomSteering: $randomSteering, regionPools: $regionPools, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(adaptiveRouting, countryPools, Object.hashAll(defaultPools ?? const []), fallbackPool, locationStrategy, popPools, randomSteering, regionPools, sessionAffinity, sessionAffinityAttributes, sessionAffinityTtl, steeringPolicy, ttl);
+
+@override String toString() => 'Overrides(adaptiveRouting: $adaptiveRouting, countryPools: $countryPools, defaultPools: $defaultPools, fallbackPool: $fallbackPool, locationStrategy: $locationStrategy, popPools: $popPools, randomSteering: $randomSteering, regionPools: $regionPools, sessionAffinity: $sessionAffinity, sessionAffinityAttributes: $sessionAffinityAttributes, sessionAffinityTtl: $sessionAffinityTtl, steeringPolicy: $steeringPolicy, ttl: $ttl)';
+
  }

@@ -73,7 +73,7 @@ DnsAnalyticsReportBytime copyWith({List<DnsAnalyticsReportBytimeData>? data, dou
   totals: totals ?? this.totals,
   timeIntervals: timeIntervals ?? this.timeIntervals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsReportBytime &&
           listEquals(data, other.data) &&
           dataLag == other.dataLag &&
@@ -82,7 +82,10 @@ DnsAnalyticsReportBytime copyWith({List<DnsAnalyticsReportBytimeData>? data, dou
           query == other.query &&
           rows == other.rows &&
           totals == other.totals &&
-          listEquals(timeIntervals, other.timeIntervals); } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals, Object.hashAll(timeIntervals)); } 
-@override String toString() { return 'DnsAnalyticsReportBytime(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals, timeIntervals: $timeIntervals)'; } 
+          listEquals(timeIntervals, other.timeIntervals);
+
+@override int get hashCode => Object.hash(Object.hashAll(data), dataLag, max, min, query, rows, totals, Object.hashAll(timeIntervals));
+
+@override String toString() => 'DnsAnalyticsReportBytime(data: $data, dataLag: $dataLag, max: $max, min: $min, query: $query, rows: $rows, totals: $totals, timeIntervals: $timeIntervals)';
+
  }

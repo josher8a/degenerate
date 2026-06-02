@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorizeIndexPreset && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorizeIndexPreset($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorizeIndexPreset && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorizeIndexPreset($value)';
+
  }
 @immutable final class VectorizeIndexPresetConfiguration {const VectorizeIndexPresetConfiguration({required this.preset});
 
@@ -50,9 +53,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prese
 VectorizeIndexPresetConfiguration copyWith({VectorizeIndexPreset? preset}) { return VectorizeIndexPresetConfiguration(
   preset: preset ?? this.preset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexPresetConfiguration &&
-          preset == other.preset; } 
-@override int get hashCode { return preset.hashCode; } 
-@override String toString() { return 'VectorizeIndexPresetConfiguration(preset: $preset)'; } 
+          preset == other.preset;
+
+@override int get hashCode => preset.hashCode;
+
+@override String toString() => 'VectorizeIndexPresetConfiguration(preset: $preset)';
+
  }

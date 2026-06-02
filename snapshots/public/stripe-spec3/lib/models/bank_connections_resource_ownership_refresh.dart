@@ -30,11 +30,14 @@ BankConnectionsResourceOwnershipRefresh copyWith({int? lastAttemptedAt, int? Fun
   nextRefreshAvailableAt: nextRefreshAvailableAt != null ? nextRefreshAvailableAt() : this.nextRefreshAvailableAt,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankConnectionsResourceOwnershipRefresh &&
           lastAttemptedAt == other.lastAttemptedAt &&
           nextRefreshAvailableAt == other.nextRefreshAvailableAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(lastAttemptedAt, nextRefreshAvailableAt, status); } 
-@override String toString() { return 'BankConnectionsResourceOwnershipRefresh(lastAttemptedAt: $lastAttemptedAt, nextRefreshAvailableAt: $nextRefreshAvailableAt, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(lastAttemptedAt, nextRefreshAvailableAt, status);
+
+@override String toString() => 'BankConnectionsResourceOwnershipRefresh(lastAttemptedAt: $lastAttemptedAt, nextRefreshAvailableAt: $nextRefreshAvailableAt, status: $status)';
+
  }

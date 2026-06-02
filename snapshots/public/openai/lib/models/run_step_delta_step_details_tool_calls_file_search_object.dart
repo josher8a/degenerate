@@ -36,12 +36,15 @@ RunStepDeltaStepDetailsToolCallsFileSearchObject copyWith({int? index, String? F
   type: type ?? this.type,
   fileSearch: fileSearch ?? this.fileSearch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsToolCallsFileSearchObject &&
           index == other.index &&
           id == other.id &&
           type == other.type &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(index, id, type, fileSearch); } 
-@override String toString() { return 'RunStepDeltaStepDetailsToolCallsFileSearchObject(index: $index, id: $id, type: $type, fileSearch: $fileSearch)'; } 
+          fileSearch == other.fileSearch;
+
+@override int get hashCode => Object.hash(index, id, type, fileSearch);
+
+@override String toString() => 'RunStepDeltaStepDetailsToolCallsFileSearchObject(index: $index, id: $id, type: $type, fileSearch: $fileSearch)';
+
  }

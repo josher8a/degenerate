@@ -33,10 +33,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)';
+
  }
 /// Common Name of the Client Certificate
 extension type const TlsCertificatesAndHostnamesCommonName(String value) {
@@ -224,7 +227,7 @@ TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnam
   status: status != null ? status() : this.status,
   validityDays: validityDays != null ? validityDays() : this.validityDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesClientCertificate &&
           certificate == other.certificate &&
           certificateAuthority == other.certificateAuthority &&
@@ -243,7 +246,10 @@ TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnam
           ski == other.ski &&
           state == other.state &&
           status == other.status &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(certificate, certificateAuthority, commonName, country, csr, expiresOn, fingerprintSha256, id, issuedOn, location, organization, organizationalUnit, serialNumber, signature, ski, state, status, validityDays); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesClientCertificate(certificate: $certificate, certificateAuthority: $certificateAuthority, commonName: $commonName, country: $country, csr: $csr, expiresOn: $expiresOn, fingerprintSha256: $fingerprintSha256, id: $id, issuedOn: $issuedOn, location: $location, organization: $organization, organizationalUnit: $organizationalUnit, serialNumber: $serialNumber, signature: $signature, ski: $ski, state: $state, status: $status, validityDays: $validityDays)'; } 
+          validityDays == other.validityDays;
+
+@override int get hashCode => Object.hash(certificate, certificateAuthority, commonName, country, csr, expiresOn, fingerprintSha256, id, issuedOn, location, organization, organizationalUnit, serialNumber, signature, ski, state, status, validityDays);
+
+@override String toString() => 'TlsCertificatesAndHostnamesClientCertificate(certificate: $certificate, certificateAuthority: $certificateAuthority, commonName: $commonName, country: $country, csr: $csr, expiresOn: $expiresOn, fingerprintSha256: $fingerprintSha256, id: $id, issuedOn: $issuedOn, location: $location, organization: $organization, organizationalUnit: $organizationalUnit, serialNumber: $serialNumber, signature: $signature, ski: $ski, state: $state, status: $status, validityDays: $validityDays)';
+
  }

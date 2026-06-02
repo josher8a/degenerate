@@ -52,7 +52,7 @@ FirewallFilterRuleResponse copyWith({FirewallSchemasAction? Function()? action, 
   ref: ref != null ? ref() : this.ref,
   filter: filter != null ? filter() : this.filter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilterRuleResponse &&
           action == other.action &&
           description == other.description &&
@@ -61,7 +61,10 @@ FirewallFilterRuleResponse copyWith({FirewallSchemasAction? Function()? action, 
           priority == other.priority &&
           listEquals(products, other.products) &&
           ref == other.ref &&
-          filter == other.filter; } 
-@override int get hashCode { return Object.hash(action, description, id, paused, priority, Object.hashAll(products ?? const []), ref, filter); } 
-@override String toString() { return 'FirewallFilterRuleResponse(action: $action, description: $description, id: $id, paused: $paused, priority: $priority, products: $products, ref: $ref, filter: $filter)'; } 
+          filter == other.filter;
+
+@override int get hashCode => Object.hash(action, description, id, paused, priority, Object.hashAll(products ?? const []), ref, filter);
+
+@override String toString() => 'FirewallFilterRuleResponse(action: $action, description: $description, id: $id, paused: $paused, priority: $priority, products: $products, ref: $ref, filter: $filter)';
+
  }

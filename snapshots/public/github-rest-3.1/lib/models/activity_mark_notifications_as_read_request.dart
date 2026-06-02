@@ -22,10 +22,13 @@ ActivityMarkNotificationsAsReadRequest copyWith({DateTime? Function()? lastReadA
   lastReadAt: lastReadAt != null ? lastReadAt() : this.lastReadAt,
   read: read != null ? read() : this.read,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActivityMarkNotificationsAsReadRequest &&
           lastReadAt == other.lastReadAt &&
-          read == other.read; } 
-@override int get hashCode { return Object.hash(lastReadAt, read); } 
-@override String toString() { return 'ActivityMarkNotificationsAsReadRequest(lastReadAt: $lastReadAt, read: $read)'; } 
+          read == other.read;
+
+@override int get hashCode => Object.hash(lastReadAt, read);
+
+@override String toString() => 'ActivityMarkNotificationsAsReadRequest(lastReadAt: $lastReadAt, read: $read)';
+
  }

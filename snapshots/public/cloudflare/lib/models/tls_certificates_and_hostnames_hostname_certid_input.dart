@@ -34,11 +34,14 @@ TlsCertificatesAndHostnamesHostnameCertidInput copyWith({TlsCertificatesAndHostn
   enabled: enabled != null ? enabled() : this.enabled,
   hostname: hostname != null ? hostname() : this.hostname,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameCertidInput &&
           certId == other.certId &&
           enabled == other.enabled &&
-          hostname == other.hostname; } 
-@override int get hashCode { return Object.hash(certId, enabled, hostname); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameCertidInput(certId: $certId, enabled: $enabled, hostname: $hostname)'; } 
+          hostname == other.hostname;
+
+@override int get hashCode => Object.hash(certId, enabled, hostname);
+
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameCertidInput(certId: $certId, enabled: $enabled, hostname: $hostname)';
+
  }

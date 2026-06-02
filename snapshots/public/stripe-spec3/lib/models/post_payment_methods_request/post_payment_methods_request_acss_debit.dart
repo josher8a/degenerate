@@ -33,11 +33,14 @@ PostPaymentMethodsRequestAcssDebit copyWith({String? accountNumber, String? inst
   institutionNumber: institutionNumber ?? this.institutionNumber,
   transitNumber: transitNumber ?? this.transitNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestAcssDebit &&
           accountNumber == other.accountNumber &&
           institutionNumber == other.institutionNumber &&
-          transitNumber == other.transitNumber; } 
-@override int get hashCode { return Object.hash(accountNumber, institutionNumber, transitNumber); } 
-@override String toString() { return 'PostPaymentMethodsRequestAcssDebit(accountNumber: $accountNumber, institutionNumber: $institutionNumber, transitNumber: $transitNumber)'; } 
+          transitNumber == other.transitNumber;
+
+@override int get hashCode => Object.hash(accountNumber, institutionNumber, transitNumber);
+
+@override String toString() => 'PostPaymentMethodsRequestAcssDebit(accountNumber: $accountNumber, institutionNumber: $institutionNumber, transitNumber: $transitNumber)';
+
  }

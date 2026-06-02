@@ -23,10 +23,13 @@ CheckpointPermissionCreatedData copyWith({String? Function()? projectId, String?
   projectId: projectId != null ? projectId() : this.projectId,
   fineTunedModelCheckpoint: fineTunedModelCheckpoint != null ? fineTunedModelCheckpoint() : this.fineTunedModelCheckpoint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckpointPermissionCreatedData &&
           projectId == other.projectId &&
-          fineTunedModelCheckpoint == other.fineTunedModelCheckpoint; } 
-@override int get hashCode { return Object.hash(projectId, fineTunedModelCheckpoint); } 
-@override String toString() { return 'CheckpointPermissionCreatedData(projectId: $projectId, fineTunedModelCheckpoint: $fineTunedModelCheckpoint)'; } 
+          fineTunedModelCheckpoint == other.fineTunedModelCheckpoint;
+
+@override int get hashCode => Object.hash(projectId, fineTunedModelCheckpoint);
+
+@override String toString() => 'CheckpointPermissionCreatedData(projectId: $projectId, fineTunedModelCheckpoint: $fineTunedModelCheckpoint)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
 CustomOriginTrustStoreCreateRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificate? certificate}) { return CustomOriginTrustStoreCreateRequest(
   certificate: certificate ?? this.certificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomOriginTrustStoreCreateRequest &&
-          certificate == other.certificate; } 
-@override int get hashCode { return certificate.hashCode; } 
-@override String toString() { return 'CustomOriginTrustStoreCreateRequest(certificate: $certificate)'; } 
+          certificate == other.certificate;
+
+@override int get hashCode => certificate.hashCode;
+
+@override String toString() => 'CustomOriginTrustStoreCreateRequest(certificate: $certificate)';
+
  }

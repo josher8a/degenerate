@@ -21,10 +21,13 @@ AuthorFilterSchema copyWith({String? name, String? slug, }) { return AuthorFilte
   name: name ?? this.name,
   slug: slug ?? this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuthorFilterSchema &&
           name == other.name &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(name, slug); } 
-@override String toString() { return 'AuthorFilterSchema(name: $name, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(name, slug);
+
+@override String toString() => 'AuthorFilterSchema(name: $name, slug: $slug)';
+
  }

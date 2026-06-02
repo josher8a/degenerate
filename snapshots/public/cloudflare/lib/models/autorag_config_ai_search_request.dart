@@ -60,7 +60,7 @@ AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Func
   stream: stream != null ? stream() : this.stream,
   systemPrompt: systemPrompt != null ? systemPrompt() : this.systemPrompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigAiSearchRequest &&
           filters == other.filters &&
           maxNumResults == other.maxNumResults &&
@@ -70,7 +70,10 @@ AutoragConfigAiSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Func
           reranking == other.reranking &&
           rewriteQuery == other.rewriteQuery &&
           stream == other.stream &&
-          systemPrompt == other.systemPrompt; } 
-@override int get hashCode { return Object.hash(filters, maxNumResults, model, query, rankingOptions, reranking, rewriteQuery, stream, systemPrompt); } 
-@override String toString() { return 'AutoragConfigAiSearchRequest(filters: $filters, maxNumResults: $maxNumResults, model: $model, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery, stream: $stream, systemPrompt: $systemPrompt)'; } 
+          systemPrompt == other.systemPrompt;
+
+@override int get hashCode => Object.hash(filters, maxNumResults, model, query, rankingOptions, reranking, rewriteQuery, stream, systemPrompt);
+
+@override String toString() => 'AutoragConfigAiSearchRequest(filters: $filters, maxNumResults: $maxNumResults, model: $model, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery, stream: $stream, systemPrompt: $systemPrompt)';
+
  }

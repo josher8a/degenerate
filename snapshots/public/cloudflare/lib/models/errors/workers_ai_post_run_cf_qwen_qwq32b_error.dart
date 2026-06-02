@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfQwenQwq32bError$400 extends WorkersAiPostRunCfQwen
 
 final WorkersAiPostRunCfQwenQwq32bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfQwenQwq32bError$Unknown extends WorkersAiPostRunCfQwenQwq32bError {const WorkersAiPostRunCfQwenQwq32bError$Unknown(this.statusCode, this.rawBody, );
 

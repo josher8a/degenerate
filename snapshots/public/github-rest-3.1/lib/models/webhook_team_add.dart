@@ -42,14 +42,17 @@ WebhookTeamAdd copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInsta
   sender: sender ?? this.sender,
   team: team ?? this.team,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamAdd &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          team == other.team; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, repository, sender, team); } 
-@override String toString() { return 'WebhookTeamAdd(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)'; } 
+          team == other.team;
+
+@override int get hashCode => Object.hash(enterprise, installation, organization, repository, sender, team);
+
+@override String toString() => 'WebhookTeamAdd(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';
+
  }

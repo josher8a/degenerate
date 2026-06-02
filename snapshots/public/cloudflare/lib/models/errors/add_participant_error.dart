@@ -17,7 +17,8 @@ final class AddParticipantError$500 extends AddParticipantError {const AddPartic
 
 final RealtimekitGenericErrorResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class AddParticipantError$Unknown extends AddParticipantError {const AddParticipantError$Unknown(this.statusCode, this.rawBody, );
 

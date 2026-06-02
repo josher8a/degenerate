@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReportingReportRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReportingReportRunObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReportingReportRunObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReportingReportRunObject($value)';
+
  }
 /// The Report Run object represents an instance of a report type generated with
 /// specific run parameters. Once the object is created, Stripe begins processing the report.
@@ -120,7 +123,7 @@ ReportingReportRun copyWith({int? created, String? Function()? error, String? id
   status: status ?? this.status,
   succeededAt: succeededAt != null ? succeededAt() : this.succeededAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReportingReportRun &&
           created == other.created &&
           error == other.error &&
@@ -131,7 +134,10 @@ ReportingReportRun copyWith({int? created, String? Function()? error, String? id
           reportType == other.reportType &&
           result == other.result &&
           status == other.status &&
-          succeededAt == other.succeededAt; } 
-@override int get hashCode { return Object.hash(created, error, id, livemode, object, parameters, reportType, result, status, succeededAt); } 
-@override String toString() { return 'ReportingReportRun(created: $created, error: $error, id: $id, livemode: $livemode, object: $object, parameters: $parameters, reportType: $reportType, result: $result, status: $status, succeededAt: $succeededAt)'; } 
+          succeededAt == other.succeededAt;
+
+@override int get hashCode => Object.hash(created, error, id, livemode, object, parameters, reportType, result, status, succeededAt);
+
+@override String toString() => 'ReportingReportRun(created: $created, error: $error, id: $id, livemode: $livemode, object: $object, parameters: $parameters, reportType: $reportType, result: $result, status: $status, succeededAt: $succeededAt)';
+
  }

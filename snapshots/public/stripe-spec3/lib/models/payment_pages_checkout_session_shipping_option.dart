@@ -24,10 +24,13 @@ PaymentPagesCheckoutSessionShippingOption copyWith({int? shippingAmount, Invoice
   shippingAmount: shippingAmount ?? this.shippingAmount,
   shippingRate: shippingRate ?? this.shippingRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionShippingOption &&
           shippingAmount == other.shippingAmount &&
-          shippingRate == other.shippingRate; } 
-@override int get hashCode { return Object.hash(shippingAmount, shippingRate); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionShippingOption(shippingAmount: $shippingAmount, shippingRate: $shippingRate)'; } 
+          shippingRate == other.shippingRate;
+
+@override int get hashCode => Object.hash(shippingAmount, shippingRate);
+
+@override String toString() => 'PaymentPagesCheckoutSessionShippingOption(shippingAmount: $shippingAmount, shippingRate: $shippingRate)';
+
  }

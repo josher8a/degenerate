@@ -24,10 +24,13 @@ BalanceDetailUngated copyWith({List<BalanceAmount>? available, List<BalanceAmoun
   available: available ?? this.available,
   pending: pending ?? this.pending,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceDetailUngated &&
           listEquals(available, other.available) &&
-          listEquals(pending, other.pending); } 
-@override int get hashCode { return Object.hash(Object.hashAll(available), Object.hashAll(pending)); } 
-@override String toString() { return 'BalanceDetailUngated(available: $available, pending: $pending)'; } 
+          listEquals(pending, other.pending);
+
+@override int get hashCode => Object.hash(Object.hashAll(available), Object.hashAll(pending));
+
+@override String toString() => 'BalanceDetailUngated(available: $available, pending: $pending)';
+
  }

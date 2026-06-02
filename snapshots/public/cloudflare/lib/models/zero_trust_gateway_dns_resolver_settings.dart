@@ -42,12 +42,15 @@ ZeroTrustGatewayDnsResolverSettings copyWith({String? ip, int? Function()? port,
   routeThroughPrivateNetwork: routeThroughPrivateNetwork != null ? routeThroughPrivateNetwork() : this.routeThroughPrivateNetwork,
   vnetId: vnetId != null ? vnetId() : this.vnetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayDnsResolverSettings &&
           ip == other.ip &&
           port == other.port &&
           routeThroughPrivateNetwork == other.routeThroughPrivateNetwork &&
-          vnetId == other.vnetId; } 
-@override int get hashCode { return Object.hash(ip, port, routeThroughPrivateNetwork, vnetId); } 
-@override String toString() { return 'ZeroTrustGatewayDnsResolverSettings(ip: $ip, port: $port, routeThroughPrivateNetwork: $routeThroughPrivateNetwork, vnetId: $vnetId)'; } 
+          vnetId == other.vnetId;
+
+@override int get hashCode => Object.hash(ip, port, routeThroughPrivateNetwork, vnetId);
+
+@override String toString() => 'ZeroTrustGatewayDnsResolverSettings(ip: $ip, port: $port, routeThroughPrivateNetwork: $routeThroughPrivateNetwork, vnetId: $vnetId)';
+
  }

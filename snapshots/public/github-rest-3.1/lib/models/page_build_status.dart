@@ -22,10 +22,13 @@ PageBuildStatus copyWith({Uri? url, String? status, }) { return PageBuildStatus(
   url: url ?? this.url,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageBuildStatus &&
           url == other.url &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(url, status); } 
-@override String toString() { return 'PageBuildStatus(url: $url, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(url, status);
+
+@override String toString() => 'PageBuildStatus(url: $url, status: $status)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostIssuingTokensTokenRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostIssuingTokensTokenRequestStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostIssuingTokensTokenRequestStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostIssuingTokensTokenRequestStatus($value)';
+
  }
 @immutable final class PostIssuingTokensTokenRequest {const PostIssuingTokensTokenRequest({required this.status, this.expand, });
 
@@ -50,10 +53,13 @@ PostIssuingTokensTokenRequest copyWith({List<String>? Function()? expand, PostIs
   expand: expand != null ? expand() : this.expand,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingTokensTokenRequest &&
           listEquals(expand, other.expand) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), status); } 
-@override String toString() { return 'PostIssuingTokensTokenRequest(expand: $expand, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), status);
+
+@override String toString() => 'PostIssuingTokensTokenRequest(expand: $expand, status: $status)';
+
  }

@@ -37,10 +37,13 @@ SecretsStoreUsageQuotaObject copyWith({SecretsStoreQuota? quota, SecretsStoreUsa
   quota: quota ?? this.quota,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreUsageQuotaObject &&
           quota == other.quota &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(quota, usage); } 
-@override String toString() { return 'SecretsStoreUsageQuotaObject(quota: $quota, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(quota, usage);
+
+@override String toString() => 'SecretsStoreUsageQuotaObject(quota: $quota, usage: $usage)';
+
  }

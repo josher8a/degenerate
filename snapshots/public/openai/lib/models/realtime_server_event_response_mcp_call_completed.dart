@@ -38,12 +38,15 @@ RealtimeServerEventResponseMcpCallCompleted copyWith({String? eventId, String? t
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseMcpCallCompleted &&
           eventId == other.eventId &&
           type == other.type &&
           outputIndex == other.outputIndex &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, outputIndex, itemId); } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallCompleted(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, outputIndex, itemId);
+
+@override String toString() => 'RealtimeServerEventResponseMcpCallCompleted(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
+
  }

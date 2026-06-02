@@ -23,10 +23,13 @@ ChatCompletionRequestMessageContentPartRefusal copyWith({String? type, String? r
   type: type ?? this.type,
   refusal: refusal ?? this.refusal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartRefusal &&
           type == other.type &&
-          refusal == other.refusal; } 
-@override int get hashCode { return Object.hash(type, refusal); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartRefusal(type: $type, refusal: $refusal)'; } 
+          refusal == other.refusal;
+
+@override int get hashCode => Object.hash(type, refusal);
+
+@override String toString() => 'ChatCompletionRequestMessageContentPartRefusal(type: $type, refusal: $refusal)';
+
  }

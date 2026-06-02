@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxDeductedAtSourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxDeductedAtSourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxDeductedAtSourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxDeductedAtSourceObject($value)';
+
  }
 /// 
 @immutable final class TaxDeductedAtSource {const TaxDeductedAtSource({required this.id, required this.object, required this.periodEnd, required this.periodStart, required this.taxDeductionAccountNumber, });
@@ -72,13 +75,16 @@ TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int
   periodStart: periodStart ?? this.periodStart,
   taxDeductionAccountNumber: taxDeductionAccountNumber ?? this.taxDeductionAccountNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxDeductedAtSource &&
           id == other.id &&
           object == other.object &&
           periodEnd == other.periodEnd &&
           periodStart == other.periodStart &&
-          taxDeductionAccountNumber == other.taxDeductionAccountNumber; } 
-@override int get hashCode { return Object.hash(id, object, periodEnd, periodStart, taxDeductionAccountNumber); } 
-@override String toString() { return 'TaxDeductedAtSource(id: $id, object: $object, periodEnd: $periodEnd, periodStart: $periodStart, taxDeductionAccountNumber: $taxDeductionAccountNumber)'; } 
+          taxDeductionAccountNumber == other.taxDeductionAccountNumber;
+
+@override int get hashCode => Object.hash(id, object, periodEnd, periodStart, taxDeductionAccountNumber);
+
+@override String toString() => 'TaxDeductedAtSource(id: $id, object: $object, periodEnd: $periodEnd, periodStart: $periodStart, taxDeductionAccountNumber: $taxDeductionAccountNumber)';
+
  }

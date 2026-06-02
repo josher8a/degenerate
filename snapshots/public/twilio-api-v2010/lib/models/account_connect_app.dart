@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountConnectAppDeauthorizeCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountConnectAppDeauthorizeCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountConnectAppDeauthorizeCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountConnectAppDeauthorizeCallbackMethod($value)';
+
  }
 @immutable final class AccountConnectApp {const AccountConnectApp({this.accountSid, this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, this.sid, this.uri, });
 
@@ -116,7 +119,7 @@ AccountConnectApp copyWith({String? Function()? accountSid, Uri? Function()? aut
   sid: sid != null ? sid() : this.sid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConnectApp &&
           accountSid == other.accountSid &&
           authorizeRedirectUrl == other.authorizeRedirectUrl &&
@@ -128,7 +131,10 @@ AccountConnectApp copyWith({String? Function()? accountSid, Uri? Function()? aut
           homepageUrl == other.homepageUrl &&
           listEquals(permissions, other.permissions) &&
           sid == other.sid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, authorizeRedirectUrl, companyName, deauthorizeCallbackMethod, deauthorizeCallbackUrl, description, friendlyName, homepageUrl, Object.hashAll(permissions ?? const []), sid, uri); } 
-@override String toString() { return 'AccountConnectApp(accountSid: $accountSid, authorizeRedirectUrl: $authorizeRedirectUrl, companyName: $companyName, deauthorizeCallbackMethod: $deauthorizeCallbackMethod, deauthorizeCallbackUrl: $deauthorizeCallbackUrl, description: $description, friendlyName: $friendlyName, homepageUrl: $homepageUrl, permissions: $permissions, sid: $sid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, authorizeRedirectUrl, companyName, deauthorizeCallbackMethod, deauthorizeCallbackUrl, description, friendlyName, homepageUrl, Object.hashAll(permissions ?? const []), sid, uri);
+
+@override String toString() => 'AccountConnectApp(accountSid: $accountSid, authorizeRedirectUrl: $authorizeRedirectUrl, companyName: $companyName, deauthorizeCallbackMethod: $deauthorizeCallbackMethod, deauthorizeCallbackUrl: $deauthorizeCallbackUrl, description: $description, friendlyName: $friendlyName, homepageUrl: $homepageUrl, permissions: $permissions, sid: $sid, uri: $uri)';
+
  }

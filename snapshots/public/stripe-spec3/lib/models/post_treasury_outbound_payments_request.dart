@@ -103,7 +103,7 @@ PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, Str
   metadata: metadata != null ? metadata() : this.metadata,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryOutboundPaymentsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -116,7 +116,10 @@ PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, Str
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, endUserDetails, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor); } 
-@override String toString() { return 'PostTreasuryOutboundPaymentsRequest(amount: $amount, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, endUserDetails: $endUserDetails, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(amount, currency, customer, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, endUserDetails, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor);
+
+@override String toString() => 'PostTreasuryOutboundPaymentsRequest(amount: $amount, currency: $currency, customer: $customer, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, endUserDetails: $endUserDetails, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)';
+
  }

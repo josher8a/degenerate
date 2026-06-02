@@ -49,7 +49,7 @@ ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, Strin
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingRateData &&
           deliveryEstimate == other.deliveryEstimate &&
           displayName == other.displayName &&
@@ -57,7 +57,10 @@ ShippingRateData copyWith({DeliveryEstimate? Function()? deliveryEstimate, Strin
           metadata == other.metadata &&
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(deliveryEstimate, displayName, fixedAmount, metadata, taxBehavior, taxCode, type); } 
-@override String toString() { return 'ShippingRateData(deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(deliveryEstimate, displayName, fixedAmount, metadata, taxBehavior, taxCode, type);
+
+@override String toString() => 'ShippingRateData(deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)';
+
  }

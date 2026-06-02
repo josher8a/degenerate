@@ -38,12 +38,15 @@ DynamicClientRegistration copyWith({bool? Function()? allowAnyOnLocalhost, bool?
   allowedUris: allowedUris != null ? allowedUris() : this.allowedUris,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DynamicClientRegistration &&
           allowAnyOnLocalhost == other.allowAnyOnLocalhost &&
           allowAnyOnLoopback == other.allowAnyOnLoopback &&
           listEquals(allowedUris, other.allowedUris) &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowAnyOnLocalhost, allowAnyOnLoopback, Object.hashAll(allowedUris ?? const []), enabled); } 
-@override String toString() { return 'DynamicClientRegistration(allowAnyOnLocalhost: $allowAnyOnLocalhost, allowAnyOnLoopback: $allowAnyOnLoopback, allowedUris: $allowedUris, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(allowAnyOnLocalhost, allowAnyOnLoopback, Object.hashAll(allowedUris ?? const []), enabled);
+
+@override String toString() => 'DynamicClientRegistration(allowAnyOnLocalhost: $allowAnyOnLocalhost, allowAnyOnLoopback: $allowAnyOnLoopback, allowedUris: $allowedUris, enabled: $enabled)';
+
  }

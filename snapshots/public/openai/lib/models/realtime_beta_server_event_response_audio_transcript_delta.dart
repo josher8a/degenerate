@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioTranscriptDeltaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDeltaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseAudioTranscriptDeltaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDeltaType($value)';
+
  }
 /// Returned when the model-generated transcription of audio output is updated.
 /// 
@@ -82,7 +85,7 @@ RealtimeBetaServerEventResponseAudioTranscriptDelta copyWith({String? eventId, R
   contentIndex: contentIndex ?? this.contentIndex,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseAudioTranscriptDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -90,7 +93,10 @@ RealtimeBetaServerEventResponseAudioTranscriptDelta copyWith({String? eventId, R
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, delta);
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta)';
+
  }

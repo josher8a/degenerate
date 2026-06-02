@@ -21,10 +21,13 @@ GetIndicatorListResponseProperties copyWith({PropertiesIndicators? indicators, P
   indicators: indicators ?? this.indicators,
   pagination: pagination ?? this.pagination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorListResponseProperties &&
           indicators == other.indicators &&
-          pagination == other.pagination; } 
-@override int get hashCode { return Object.hash(indicators, pagination); } 
-@override String toString() { return 'GetIndicatorListResponseProperties(indicators: $indicators, pagination: $pagination)'; } 
+          pagination == other.pagination;
+
+@override int get hashCode => Object.hash(indicators, pagination);
+
+@override String toString() => 'GetIndicatorListResponseProperties(indicators: $indicators, pagination: $pagination)';
+
  }

@@ -36,12 +36,15 @@ Pages copyWith({String? id, PageTimings? pageTimings, String? startedDateTime, S
   startedDateTime: startedDateTime ?? this.startedDateTime,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pages &&
           id == other.id &&
           pageTimings == other.pageTimings &&
           startedDateTime == other.startedDateTime &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(id, pageTimings, startedDateTime, title); } 
-@override String toString() { return 'Pages(id: $id, pageTimings: $pageTimings, startedDateTime: $startedDateTime, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(id, pageTimings, startedDateTime, title);
+
+@override String toString() => 'Pages(id: $id, pageTimings: $pageTimings, startedDateTime: $startedDateTime, title: $title)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitTrackLayerOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitTrackLayerOutputType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitTrackLayerOutputType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitTrackLayerOutputType($value)';
+
  }
 @immutable final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
 
@@ -46,10 +49,13 @@ RealtimekitTrackLayerOutput copyWith({RealtimekitStorageConfig? Function()? stor
   storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitTrackLayerOutput &&
           storageConfig == other.storageConfig &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(storageConfig, type); } 
-@override String toString() { return 'RealtimekitTrackLayerOutput(storageConfig: $storageConfig, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(storageConfig, type);
+
+@override String toString() => 'RealtimekitTrackLayerOutput(storageConfig: $storageConfig, type: $type)';
+
  }

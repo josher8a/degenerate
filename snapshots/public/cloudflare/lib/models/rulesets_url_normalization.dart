@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsUrlNormalizationScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsUrlNormalizationScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsUrlNormalizationScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetsUrlNormalizationScope($value)';
+
  }
 /// The type of URL normalization performed by Cloudflare.
 @immutable final class RulesetsUrlNormalizationType {const RulesetsUrlNormalizationType._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsUrlNormalizationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsUrlNormalizationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsUrlNormalizationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetsUrlNormalizationType($value)';
+
  }
 /// A URL Normalization object.
 @immutable final class RulesetsUrlNormalization {const RulesetsUrlNormalization({required this.scope, required this.type, });
@@ -81,10 +87,13 @@ RulesetsUrlNormalization copyWith({RulesetsUrlNormalizationScope? scope, Ruleset
   scope: scope ?? this.scope,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsUrlNormalization &&
           scope == other.scope &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(scope, type); } 
-@override String toString() { return 'RulesetsUrlNormalization(scope: $scope, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(scope, type);
+
+@override String toString() => 'RulesetsUrlNormalization(scope: $scope, type: $type)';
+
  }

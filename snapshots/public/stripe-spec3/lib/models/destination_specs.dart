@@ -24,10 +24,13 @@ DestinationSpecs copyWith({String? account, int? Function()? amount, }) { return
   account: account ?? this.account,
   amount: amount != null ? amount() : this.amount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationSpecs &&
           account == other.account &&
-          amount == other.amount; } 
-@override int get hashCode { return Object.hash(account, amount); } 
-@override String toString() { return 'DestinationSpecs(account: $account, amount: $amount)'; } 
+          amount == other.amount;
+
+@override int get hashCode => Object.hash(account, amount);
+
+@override String toString() => 'DestinationSpecs(account: $account, amount: $amount)';
+
  }

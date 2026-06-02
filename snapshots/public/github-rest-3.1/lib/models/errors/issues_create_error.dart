@@ -22,37 +22,43 @@ final class IssuesCreateError$400 extends IssuesCreateError {const IssuesCreateE
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class IssuesCreateError$403 extends IssuesCreateError {const IssuesCreateError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesCreateError$404 extends IssuesCreateError {const IssuesCreateError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesCreateError$410 extends IssuesCreateError {const IssuesCreateError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesCreateError$422 extends IssuesCreateError {const IssuesCreateError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class IssuesCreateError$503 extends IssuesCreateError {const IssuesCreateError$503(this.error);
 
 final IssuesCreateResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class IssuesCreateError$Unknown extends IssuesCreateError {const IssuesCreateError$Unknown(this.statusCode, this.rawBody, );
 

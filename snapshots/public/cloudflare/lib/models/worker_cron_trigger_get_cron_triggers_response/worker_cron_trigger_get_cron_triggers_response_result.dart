@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sched
 WorkerCronTriggerGetCronTriggersResponseResult copyWith({List<WorkersSchedule>? schedules}) { return WorkerCronTriggerGetCronTriggersResponseResult(
   schedules: schedules ?? this.schedules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerCronTriggerGetCronTriggersResponseResult &&
-          listEquals(schedules, other.schedules); } 
-@override int get hashCode { return Object.hashAll(schedules); } 
-@override String toString() { return 'WorkerCronTriggerGetCronTriggersResponseResult(schedules: $schedules)'; } 
+          listEquals(schedules, other.schedules);
+
+@override int get hashCode => Object.hashAll(schedules);
+
+@override String toString() => 'WorkerCronTriggerGetCronTriggersResponseResult(schedules: $schedules)';
+
  }

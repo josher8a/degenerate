@@ -22,10 +22,13 @@ PullsRemoveRequestedReviewersRequest copyWith({List<String>? reviewers, List<Str
   reviewers: reviewers ?? this.reviewers,
   teamReviewers: teamReviewers != null ? teamReviewers() : this.teamReviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsRemoveRequestedReviewersRequest &&
           listEquals(reviewers, other.reviewers) &&
-          listEquals(teamReviewers, other.teamReviewers); } 
-@override int get hashCode { return Object.hash(Object.hashAll(reviewers), Object.hashAll(teamReviewers ?? const [])); } 
-@override String toString() { return 'PullsRemoveRequestedReviewersRequest(reviewers: $reviewers, teamReviewers: $teamReviewers)'; } 
+          listEquals(teamReviewers, other.teamReviewers);
+
+@override int get hashCode => Object.hash(Object.hashAll(reviewers), Object.hashAll(teamReviewers ?? const []));
+
+@override String toString() => 'PullsRemoveRequestedReviewersRequest(reviewers: $reviewers, teamReviewers: $teamReviewers)';
+
  }

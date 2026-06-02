@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PatchDiscoveredOperationRequest copyWith({DiscoveryStatePatch? Function()? state}) { return PatchDiscoveredOperationRequest(
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchDiscoveredOperationRequest &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'PatchDiscoveredOperationRequest(state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => state.hashCode;
+
+@override String toString() => 'PatchDiscoveredOperationRequest(state: $state)';
+
  }

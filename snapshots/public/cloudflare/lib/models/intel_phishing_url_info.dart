@@ -54,7 +54,7 @@ IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Functi
   screenshotPath: screenshotPath != null ? screenshotPath() : this.screenshotPath,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelPhishingUrlInfo &&
           listEquals(categorizations, other.categorizations) &&
           listEquals(modelResults, other.modelResults) &&
@@ -62,7 +62,10 @@ IntelPhishingUrlInfo copyWith({List<IntelPhishingUrlInfoCategorizations>? Functi
           scanStatus == other.scanStatus &&
           screenshotDownloadSignature == other.screenshotDownloadSignature &&
           screenshotPath == other.screenshotPath &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categorizations ?? const []), Object.hashAll(modelResults ?? const []), Object.hashAll(ruleMatches ?? const []), scanStatus, screenshotDownloadSignature, screenshotPath, url); } 
-@override String toString() { return 'IntelPhishingUrlInfo(categorizations: $categorizations, modelResults: $modelResults, ruleMatches: $ruleMatches, scanStatus: $scanStatus, screenshotDownloadSignature: $screenshotDownloadSignature, screenshotPath: $screenshotPath, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(categorizations ?? const []), Object.hashAll(modelResults ?? const []), Object.hashAll(ruleMatches ?? const []), scanStatus, screenshotDownloadSignature, screenshotPath, url);
+
+@override String toString() => 'IntelPhishingUrlInfo(categorizations: $categorizations, modelResults: $modelResults, ruleMatches: $ruleMatches, scanStatus: $scanStatus, screenshotDownloadSignature: $screenshotDownloadSignature, screenshotPath: $screenshotPath, url: $url)';
+
  }

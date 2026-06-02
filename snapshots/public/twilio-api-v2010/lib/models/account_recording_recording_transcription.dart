@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordingTranscriptionEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordingTranscriptionEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordingTranscriptionEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordingTranscriptionEnumStatus($value)';
+
  }
 @immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.duration, this.price, this.priceUnit, this.recordingSid, this.sid, this.status, this.transcriptionText, this.type, this.uri, });
 
@@ -136,7 +139,7 @@ AccountRecordingRecordingTranscription copyWith({String? Function()? accountSid,
   type: type != null ? type() : this.type,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingTranscription &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -150,7 +153,10 @@ AccountRecordingRecordingTranscription copyWith({String? Function()? accountSid,
           status == other.status &&
           transcriptionText == other.transcriptionText &&
           type == other.type &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, duration, price, priceUnit, recordingSid, sid, status, transcriptionText, type, uri); } 
-@override String toString() { return 'AccountRecordingRecordingTranscription(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, duration: $duration, price: $price, priceUnit: $priceUnit, recordingSid: $recordingSid, sid: $sid, status: $status, transcriptionText: $transcriptionText, type: $type, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, duration, price, priceUnit, recordingSid, sid, status, transcriptionText, type, uri);
+
+@override String toString() => 'AccountRecordingRecordingTranscription(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, duration: $duration, price: $price, priceUnit: $priceUnit, recordingSid: $recordingSid, sid: $sid, status: $status, transcriptionText: $transcriptionText, type: $type, uri: $uri)';
+
  }

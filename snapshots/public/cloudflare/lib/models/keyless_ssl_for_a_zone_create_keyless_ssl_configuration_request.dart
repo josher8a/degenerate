@@ -54,14 +54,17 @@ KeylessSslForAZoneCreateKeylessSslConfigurationRequest copyWith({TlsCertificates
   port: port ?? this.port,
   tunnel: tunnel != null ? tunnel() : this.tunnel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeylessSslForAZoneCreateKeylessSslConfigurationRequest &&
           bundleMethod == other.bundleMethod &&
           certificate == other.certificate &&
           host == other.host &&
           name == other.name &&
           port == other.port &&
-          tunnel == other.tunnel; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificate, host, name, port, tunnel); } 
-@override String toString() { return 'KeylessSslForAZoneCreateKeylessSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, host: $host, name: $name, port: $port, tunnel: $tunnel)'; } 
+          tunnel == other.tunnel;
+
+@override int get hashCode => Object.hash(bundleMethod, certificate, host, name, port, tunnel);
+
+@override String toString() => 'KeylessSslForAZoneCreateKeylessSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, host: $host, name: $name, port: $port, tunnel: $tunnel)';
+
  }

@@ -40,10 +40,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)';
+
  }
 /// Details about why this subscription was cancelled
 @immutable final class DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
@@ -66,10 +69,13 @@ DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails copyWith({Com
   comment: comment != null ? comment() : this.comment,
   feedback: feedback != null ? feedback() : this.feedback,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails &&
           comment == other.comment &&
-          feedback == other.feedback; } 
-@override int get hashCode { return Object.hash(comment, feedback); } 
-@override String toString() { return 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(comment: $comment, feedback: $feedback)'; } 
+          feedback == other.feedback;
+
+@override int get hashCode => Object.hash(comment, feedback);
+
+@override String toString() => 'DeleteSubscriptionsSubscriptionExposedIdRequestCancellationDetails(comment: $comment, feedback: $feedback)';
+
  }

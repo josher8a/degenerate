@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 DnsSettingsDnsSettingsAccountResponseNameservers copyWith({DnsSettingsDnsSettingsAccountPatchNameserversType? type}) { return DnsSettingsDnsSettingsAccountResponseNameservers(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsSettingsAccountResponseNameservers &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'DnsSettingsDnsSettingsAccountResponseNameservers(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'DnsSettingsDnsSettingsAccountResponseNameservers(type: $type)';
+
  }

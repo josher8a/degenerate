@@ -24,9 +24,12 @@ return errors; }
 SourceMandateNotificationBacsDebitData copyWith({String? Function()? last4}) { return SourceMandateNotificationBacsDebitData(
   last4: last4 != null ? last4() : this.last4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceMandateNotificationBacsDebitData &&
-          last4 == other.last4; } 
-@override int get hashCode { return last4.hashCode; } 
-@override String toString() { return 'SourceMandateNotificationBacsDebitData(last4: $last4)'; } 
+          last4 == other.last4;
+
+@override int get hashCode => last4.hashCode;
+
+@override String toString() => 'SourceMandateNotificationBacsDebitData(last4: $last4)';
+
  }

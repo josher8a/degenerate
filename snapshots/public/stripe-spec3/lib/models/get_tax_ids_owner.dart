@@ -41,12 +41,15 @@ GetTaxIdsOwner copyWith({String? Function()? account, String? Function()? custom
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetTaxIdsOwner &&
           account == other.account &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount, type); } 
-@override String toString() { return 'GetTaxIdsOwner(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, customer, customerAccount, type);
+
+@override String toString() => 'GetTaxIdsOwner(account: $account, customer: $customer, customerAccount: $customerAccount, type: $type)';
+
  }

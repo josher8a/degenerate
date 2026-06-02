@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingTemplateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingTemplateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceRenderingTemplateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoiceRenderingTemplateObject($value)';
+
  }
 /// The status of the template, one of `active` or `archived`.
 @immutable final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingTemplateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingTemplateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceRenderingTemplateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoiceRenderingTemplateStatus($value)';
+
  }
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
 /// can be created from within the Dashboard, and they can be used over the API when creating invoices.
@@ -120,7 +126,7 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Map
   status: status ?? this.status,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceRenderingTemplate &&
           created == other.created &&
           id == other.id &&
@@ -129,7 +135,10 @@ InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Map
           nickname == other.nickname &&
           object == other.object &&
           status == other.status &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(created, id, livemode, metadata, nickname, object, status, version); } 
-@override String toString() { return 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(created, id, livemode, metadata, nickname, object, status, version);
+
+@override String toString() => 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)';
+
  }

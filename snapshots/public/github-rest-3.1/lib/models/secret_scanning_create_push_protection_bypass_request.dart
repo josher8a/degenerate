@@ -23,10 +23,13 @@ SecretScanningCreatePushProtectionBypassRequest copyWith({SecretScanningPushProt
   reason: reason ?? this.reason,
   placeholderId: placeholderId ?? this.placeholderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningCreatePushProtectionBypassRequest &&
           reason == other.reason &&
-          placeholderId == other.placeholderId; } 
-@override int get hashCode { return Object.hash(reason, placeholderId); } 
-@override String toString() { return 'SecretScanningCreatePushProtectionBypassRequest(reason: $reason, placeholderId: $placeholderId)'; } 
+          placeholderId == other.placeholderId;
+
+@override int get hashCode => Object.hash(reason, placeholderId);
+
+@override String toString() => 'SecretScanningCreatePushProtectionBypassRequest(reason: $reason, placeholderId: $placeholderId)';
+
  }

@@ -23,10 +23,13 @@ NodeAffinity copyWith({List<PreferredSchedulingTerm>? Function()? preferredDurin
   preferredDuringSchedulingIgnoredDuringExecution: preferredDuringSchedulingIgnoredDuringExecution != null ? preferredDuringSchedulingIgnoredDuringExecution() : this.preferredDuringSchedulingIgnoredDuringExecution,
   requiredDuringSchedulingIgnoredDuringExecution: requiredDuringSchedulingIgnoredDuringExecution != null ? requiredDuringSchedulingIgnoredDuringExecution() : this.requiredDuringSchedulingIgnoredDuringExecution,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeAffinity &&
           listEquals(preferredDuringSchedulingIgnoredDuringExecution, other.preferredDuringSchedulingIgnoredDuringExecution) &&
-          requiredDuringSchedulingIgnoredDuringExecution == other.requiredDuringSchedulingIgnoredDuringExecution; } 
-@override int get hashCode { return Object.hash(Object.hashAll(preferredDuringSchedulingIgnoredDuringExecution ?? const []), requiredDuringSchedulingIgnoredDuringExecution); } 
-@override String toString() { return 'NodeAffinity(preferredDuringSchedulingIgnoredDuringExecution: $preferredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution: $requiredDuringSchedulingIgnoredDuringExecution)'; } 
+          requiredDuringSchedulingIgnoredDuringExecution == other.requiredDuringSchedulingIgnoredDuringExecution;
+
+@override int get hashCode => Object.hash(Object.hashAll(preferredDuringSchedulingIgnoredDuringExecution ?? const []), requiredDuringSchedulingIgnoredDuringExecution);
+
+@override String toString() => 'NodeAffinity(preferredDuringSchedulingIgnoredDuringExecution: $preferredDuringSchedulingIgnoredDuringExecution, requiredDuringSchedulingIgnoredDuringExecution: $requiredDuringSchedulingIgnoredDuringExecution)';
+
  }

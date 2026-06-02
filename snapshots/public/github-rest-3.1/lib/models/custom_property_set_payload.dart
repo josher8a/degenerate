@@ -54,7 +54,7 @@ CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $requ
   valuesEditableBy: valuesEditableBy != null ? valuesEditableBy() : this.valuesEditableBy,
   requireExplicitValues: requireExplicitValues != null ? requireExplicitValues() : this.requireExplicitValues,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPropertySetPayload &&
           valueType == other.valueType &&
           $required == other.$required &&
@@ -62,7 +62,10 @@ CustomPropertySetPayload copyWith({ValueType? valueType, bool? Function()? $requ
           description == other.description &&
           listEquals(allowedValues, other.allowedValues) &&
           valuesEditableBy == other.valuesEditableBy &&
-          requireExplicitValues == other.requireExplicitValues; } 
-@override int get hashCode { return Object.hash(valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues); } 
-@override String toString() { return 'CustomPropertySetPayload(valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)'; } 
+          requireExplicitValues == other.requireExplicitValues;
+
+@override int get hashCode => Object.hash(valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues);
+
+@override String toString() => 'CustomPropertySetPayload(valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)';
+
  }

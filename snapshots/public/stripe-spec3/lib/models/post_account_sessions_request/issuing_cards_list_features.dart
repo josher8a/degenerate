@@ -35,13 +35,16 @@ IssuingCardsListFeatures copyWith({bool? Function()? cardManagement, bool? Funct
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   spendControlManagement: spendControlManagement != null ? spendControlManagement() : this.spendControlManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardsListFeatures &&
           cardManagement == other.cardManagement &&
           cardSpendDisputeManagement == other.cardSpendDisputeManagement &&
           cardholderManagement == other.cardholderManagement &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
-          spendControlManagement == other.spendControlManagement; } 
-@override int get hashCode { return Object.hash(cardManagement, cardSpendDisputeManagement, cardholderManagement, disableStripeUserAuthentication, spendControlManagement); } 
-@override String toString() { return 'IssuingCardsListFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, disableStripeUserAuthentication: $disableStripeUserAuthentication, spendControlManagement: $spendControlManagement)'; } 
+          spendControlManagement == other.spendControlManagement;
+
+@override int get hashCode => Object.hash(cardManagement, cardSpendDisputeManagement, cardholderManagement, disableStripeUserAuthentication, spendControlManagement);
+
+@override String toString() => 'IssuingCardsListFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, disableStripeUserAuthentication: $disableStripeUserAuthentication, spendControlManagement: $spendControlManagement)';
+
  }

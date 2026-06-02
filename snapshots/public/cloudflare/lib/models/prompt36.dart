@@ -123,7 +123,7 @@ Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lor
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Prompt36 &&
           frequencyPenalty == other.frequencyPenalty &&
           lora == other.lora &&
@@ -137,7 +137,10 @@ Prompt36 copyWith({double? Function()? frequencyPenalty, String? Function()? lor
           stream == other.stream &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, lora, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP); } 
-@override String toString() { return 'Prompt36(frequencyPenalty: $frequencyPenalty, lora: $lora, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(frequencyPenalty, lora, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP);
+
+@override String toString() => 'Prompt36(frequencyPenalty: $frequencyPenalty, lora: $lora, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)';
+
  }

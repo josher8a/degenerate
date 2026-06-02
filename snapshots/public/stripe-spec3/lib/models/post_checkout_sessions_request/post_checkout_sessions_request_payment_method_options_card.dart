@@ -76,7 +76,7 @@ PostCheckoutSessionsRequestPaymentMethodOptionsCard copyWith({CheckoutAffirmPaym
   statementDescriptorSuffixKana: statementDescriptorSuffixKana != null ? statementDescriptorSuffixKana() : this.statementDescriptorSuffixKana,
   statementDescriptorSuffixKanji: statementDescriptorSuffixKanji != null ? statementDescriptorSuffixKanji() : this.statementDescriptorSuffixKanji,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsCard &&
           captureMethod == other.captureMethod &&
           installments == other.installments &&
@@ -88,7 +88,10 @@ PostCheckoutSessionsRequestPaymentMethodOptionsCard copyWith({CheckoutAffirmPaym
           restrictions == other.restrictions &&
           setupFutureUsage == other.setupFutureUsage &&
           statementDescriptorSuffixKana == other.statementDescriptorSuffixKana &&
-          statementDescriptorSuffixKanji == other.statementDescriptorSuffixKanji; } 
-@override int get hashCode { return Object.hash(captureMethod, installments, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, restrictions, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCard(captureMethod: $captureMethod, installments: $installments, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, restrictions: $restrictions, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji)'; } 
+          statementDescriptorSuffixKanji == other.statementDescriptorSuffixKanji;
+
+@override int get hashCode => Object.hash(captureMethod, installments, requestExtendedAuthorization, requestIncrementalAuthorization, requestMulticapture, requestOvercapture, requestThreeDSecure, restrictions, setupFutureUsage, statementDescriptorSuffixKana, statementDescriptorSuffixKanji);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsCard(captureMethod: $captureMethod, installments: $installments, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorization: $requestIncrementalAuthorization, requestMulticapture: $requestMulticapture, requestOvercapture: $requestOvercapture, requestThreeDSecure: $requestThreeDSecure, restrictions: $restrictions, setupFutureUsage: $setupFutureUsage, statementDescriptorSuffixKana: $statementDescriptorSuffixKana, statementDescriptorSuffixKanji: $statementDescriptorSuffixKanji)';
+
  }

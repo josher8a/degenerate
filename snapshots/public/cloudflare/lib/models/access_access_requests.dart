@@ -104,7 +104,7 @@ AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? 
   rayId: rayId != null ? rayId() : this.rayId,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAccessRequests &&
           action == other.action &&
           allowed == other.allowed &&
@@ -114,7 +114,10 @@ AccessAccessRequests copyWith({AccessAction? Function()? action, AccessAllowed? 
           createdAt == other.createdAt &&
           ipAddress == other.ipAddress &&
           rayId == other.rayId &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(action, allowed, appDomain, appUid, connection, createdAt, ipAddress, rayId, userEmail); } 
-@override String toString() { return 'AccessAccessRequests(action: $action, allowed: $allowed, appDomain: $appDomain, appUid: $appUid, connection: $connection, createdAt: $createdAt, ipAddress: $ipAddress, rayId: $rayId, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(action, allowed, appDomain, appUid, connection, createdAt, ipAddress, rayId, userEmail);
+
+@override String toString() => 'AccessAccessRequests(action: $action, allowed: $allowed, appDomain: $appDomain, appUid: $appUid, connection: $connection, createdAt: $createdAt, ipAddress: $ipAddress, rayId: $rayId, userEmail: $userEmail)';
+
  }

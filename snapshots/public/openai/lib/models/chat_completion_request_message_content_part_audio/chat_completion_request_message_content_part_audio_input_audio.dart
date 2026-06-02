@@ -21,10 +21,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)';
+
  }
 @immutable final class ChatCompletionRequestMessageContentPartAudioInputAudio {const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format, });
 
@@ -50,10 +53,13 @@ ChatCompletionRequestMessageContentPartAudioInputAudio copyWith({String? data, C
   data: data ?? this.data,
   format: format ?? this.format,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestMessageContentPartAudioInputAudio &&
           data == other.data &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(data, format); } 
-@override String toString() { return 'ChatCompletionRequestMessageContentPartAudioInputAudio(data: $data, format: $format)'; } 
+          format == other.format;
+
+@override int get hashCode => Object.hash(data, format);
+
+@override String toString() => 'ChatCompletionRequestMessageContentPartAudioInputAudio(data: $data, format: $format)';
+
  }

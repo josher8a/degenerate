@@ -36,20 +36,14 @@ final class RoomStatus {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is RoomStatus && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is RoomStatus && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'RoomStatus($value)';
-  }
+  String toString() => 'RoomStatus($value)';
 }
 
 @immutable
@@ -85,19 +79,14 @@ final class TurnState {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is TurnState && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TurnState && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'TurnState($value)';
-  }
+  String toString() => 'TurnState($value)';
 }
 
 /// The canonical state snapshot. This is what gets:
@@ -224,39 +213,35 @@ final class RoomState {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is RoomState &&
-            sessionSlug == other.sessionSlug &&
-            version == other.version &&
-            status == other.status &&
-            turnState == other.turnState &&
-            statusDetail == other.statusDetail &&
-            currentSpeaker == other.currentSpeaker &&
-            nextSpeaker == other.nextSpeaker &&
-            listEquals(talkingOrder, other.talkingOrder) &&
-            keeper == other.keeper &&
-            listEquals(bannedParticipants, other.bannedParticipants);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RoomState &&
+          sessionSlug == other.sessionSlug &&
+          version == other.version &&
+          status == other.status &&
+          turnState == other.turnState &&
+          statusDetail == other.statusDetail &&
+          currentSpeaker == other.currentSpeaker &&
+          nextSpeaker == other.nextSpeaker &&
+          listEquals(talkingOrder, other.talkingOrder) &&
+          keeper == other.keeper &&
+          listEquals(bannedParticipants, other.bannedParticipants);
 
   @override
-  int get hashCode {
-    return Object.hash(
-      sessionSlug,
-      version,
-      status,
-      turnState,
-      statusDetail,
-      currentSpeaker,
-      nextSpeaker,
-      Object.hashAll(talkingOrder),
-      keeper,
-      Object.hashAll(bannedParticipants),
-    );
-  }
+  int get hashCode => Object.hash(
+    sessionSlug,
+    version,
+    status,
+    turnState,
+    statusDetail,
+    currentSpeaker,
+    nextSpeaker,
+    Object.hashAll(talkingOrder),
+    keeper,
+    Object.hashAll(bannedParticipants),
+  );
 
   @override
-  String toString() {
-    return 'RoomState(sessionSlug: $sessionSlug, version: $version, status: $status, turnState: $turnState, statusDetail: $statusDetail, currentSpeaker: $currentSpeaker, nextSpeaker: $nextSpeaker, talkingOrder: $talkingOrder, keeper: $keeper, bannedParticipants: $bannedParticipants)';
-  }
+  String toString() =>
+      'RoomState(sessionSlug: $sessionSlug, version: $version, status: $status, turnState: $turnState, statusDetail: $statusDetail, currentSpeaker: $currentSpeaker, nextSpeaker: $nextSpeaker, talkingOrder: $talkingOrder, keeper: $keeper, bannedParticipants: $bannedParticipants)';
 }

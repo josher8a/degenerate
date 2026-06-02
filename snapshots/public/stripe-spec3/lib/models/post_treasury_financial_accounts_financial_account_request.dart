@@ -46,14 +46,17 @@ PostTreasuryFinancialAccountsFinancialAccountRequest copyWith({List<String>? Fun
   nickname: nickname != null ? nickname() : this.nickname,
   platformRestrictions: platformRestrictions != null ? platformRestrictions() : this.platformRestrictions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountRequest &&
           listEquals(expand, other.expand) &&
           features == other.features &&
           forwardingSettings == other.forwardingSettings &&
           metadata == other.metadata &&
           nickname == other.nickname &&
-          platformRestrictions == other.platformRestrictions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), features, forwardingSettings, metadata, nickname, platformRestrictions); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequest(expand: $expand, features: $features, forwardingSettings: $forwardingSettings, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions)'; } 
+          platformRestrictions == other.platformRestrictions;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), features, forwardingSettings, metadata, nickname, platformRestrictions);
+
+@override String toString() => 'PostTreasuryFinancialAccountsFinancialAccountRequest(expand: $expand, features: $features, forwardingSettings: $forwardingSettings, metadata: $metadata, nickname: $nickname, platformRestrictions: $platformRestrictions)';
+
  }

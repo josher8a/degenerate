@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TlsCertificatesAndHostnamesGeoRestrictions copyWith({Label? Function()? label}) { return TlsCertificatesAndHostnamesGeoRestrictions(
   label: label != null ? label() : this.label,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesGeoRestrictions &&
-          label == other.label; } 
-@override int get hashCode { return label.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesGeoRestrictions(label: $label)'; } 
+          label == other.label;
+
+@override int get hashCode => label.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesGeoRestrictions(label: $label)';
+
  }

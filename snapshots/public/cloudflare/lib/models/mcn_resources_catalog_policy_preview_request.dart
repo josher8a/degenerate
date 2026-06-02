@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('polic
 McnResourcesCatalogPolicyPreviewRequest copyWith({String? policy}) { return McnResourcesCatalogPolicyPreviewRequest(
   policy: policy ?? this.policy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourcesCatalogPolicyPreviewRequest &&
-          policy == other.policy; } 
-@override int get hashCode { return policy.hashCode; } 
-@override String toString() { return 'McnResourcesCatalogPolicyPreviewRequest(policy: $policy)'; } 
+          policy == other.policy;
+
+@override int get hashCode => policy.hashCode;
+
+@override String toString() => 'McnResourcesCatalogPolicyPreviewRequest(policy: $policy)';
+
  }

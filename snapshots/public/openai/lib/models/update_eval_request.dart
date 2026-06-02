@@ -28,10 +28,13 @@ UpdateEvalRequest copyWith({String? Function()? name, Map<String, String>? Funct
   name: name != null ? name() : this.name,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateEvalRequest &&
           name == other.name &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(name, metadata); } 
-@override String toString() { return 'UpdateEvalRequest(name: $name, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(name, metadata);
+
+@override String toString() => 'UpdateEvalRequest(name: $name, metadata: $metadata)';
+
  }

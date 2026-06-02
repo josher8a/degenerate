@@ -25,11 +25,14 @@ CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesSourceFiel
   format: format != null ? format() : this.format,
   inferred: inferred != null ? inferred() : this.inferred,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesConnectionSchema &&
           listEquals(fields, other.fields) &&
           format == other.format &&
-          inferred == other.inferred; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fields ?? const []), format, inferred); } 
-@override String toString() { return 'CloudflarePipelinesConnectionSchema(fields: $fields, format: $format, inferred: $inferred)'; } 
+          inferred == other.inferred;
+
+@override int get hashCode => Object.hash(Object.hashAll(fields ?? const []), format, inferred);
+
+@override String toString() => 'CloudflarePipelinesConnectionSchema(fields: $fields, format: $format, inferred: $inferred)';
+
  }

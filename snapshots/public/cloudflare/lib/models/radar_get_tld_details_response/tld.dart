@@ -36,11 +36,14 @@ Tld copyWith({String? manager, String? tld, String? type, }) { return Tld(
   tld: tld ?? this.tld,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tld &&
           manager == other.manager &&
           tld == other.tld &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(manager, tld, type); } 
-@override String toString() { return 'Tld(manager: $manager, tld: $tld, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(manager, tld, type);
+
+@override String toString() => 'Tld(manager: $manager, tld: $tld, type: $type)';
+
  }

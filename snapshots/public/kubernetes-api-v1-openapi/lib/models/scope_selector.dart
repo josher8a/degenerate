@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ScopeSelector copyWith({List<ScopedResourceSelectorRequirement>? Function()? matchExpressions}) { return ScopeSelector(
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScopeSelector &&
-          listEquals(matchExpressions, other.matchExpressions); } 
-@override int get hashCode { return Object.hashAll(matchExpressions ?? const []); } 
-@override String toString() { return 'ScopeSelector(matchExpressions: $matchExpressions)'; } 
+          listEquals(matchExpressions, other.matchExpressions);
+
+@override int get hashCode => Object.hashAll(matchExpressions ?? const []);
+
+@override String toString() => 'ScopeSelector(matchExpressions: $matchExpressions)';
+
  }

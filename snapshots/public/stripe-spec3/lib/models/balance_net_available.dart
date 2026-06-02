@@ -33,11 +33,14 @@ BalanceNetAvailable copyWith({int? amount, String? destination, BalanceAmountByS
   destination: destination ?? this.destination,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceNetAvailable &&
           amount == other.amount &&
           destination == other.destination &&
-          sourceTypes == other.sourceTypes; } 
-@override int get hashCode { return Object.hash(amount, destination, sourceTypes); } 
-@override String toString() { return 'BalanceNetAvailable(amount: $amount, destination: $destination, sourceTypes: $sourceTypes)'; } 
+          sourceTypes == other.sourceTypes;
+
+@override int get hashCode => Object.hash(amount, destination, sourceTypes);
+
+@override String toString() => 'BalanceNetAvailable(amount: $amount, destination: $destination, sourceTypes: $sourceTypes)';
+
  }

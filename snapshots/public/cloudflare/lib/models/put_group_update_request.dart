@@ -23,10 +23,13 @@ PutGroupUpdateRequest copyWith({String? description, String? name, }) { return P
   description: description ?? this.description,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PutGroupUpdateRequest &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, name); } 
-@override String toString() { return 'PutGroupUpdateRequest(description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, name);
+
+@override String toString() => 'PutGroupUpdateRequest(description: $description, name: $name)';
+
  }

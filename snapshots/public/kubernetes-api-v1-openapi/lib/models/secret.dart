@@ -53,7 +53,7 @@ Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Functio
   stringData: stringData != null ? stringData() : this.stringData,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Secret &&
           apiVersion == other.apiVersion &&
           data == other.data &&
@@ -61,7 +61,10 @@ Secret copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Functio
           kind == other.kind &&
           metadata == other.metadata &&
           stringData == other.stringData &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(apiVersion, data, immutable, kind, metadata, stringData, type); } 
-@override String toString() { return 'Secret(apiVersion: $apiVersion, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata, stringData: $stringData, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(apiVersion, data, immutable, kind, metadata, stringData, type);
+
+@override String toString() => 'Secret(apiVersion: $apiVersion, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata, stringData: $stringData, type: $type)';
+
  }

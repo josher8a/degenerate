@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetCacheSettingsBrowserTtlMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheSettingsBrowserTtlMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsSetCacheSettingsBrowserTtlMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetsSetCacheSettingsBrowserTtlMode($value)';
+
  }
 /// How long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.
 @immutable final class RulesetsSetCacheSettingsBrowserTtl {const RulesetsSetCacheSettingsBrowserTtl({required this.mode, this.$default, });
@@ -65,10 +68,13 @@ RulesetsSetCacheSettingsBrowserTtl copyWith({int? Function()? $default, Rulesets
   $default: $default != null ? $default() : this.$default,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsBrowserTtl &&
           $default == other.$default &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash($default, mode); } 
-@override String toString() { return 'RulesetsSetCacheSettingsBrowserTtl(\$default: ${$default}, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash($default, mode);
+
+@override String toString() => 'RulesetsSetCacheSettingsBrowserTtl(\$default: ${$default}, mode: $mode)';
+
  }

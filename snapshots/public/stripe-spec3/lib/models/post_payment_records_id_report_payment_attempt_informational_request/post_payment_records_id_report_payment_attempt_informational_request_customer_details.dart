@@ -42,12 +42,15 @@ PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails copy
   name: name != null ? name() : this.name,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails &&
           customer == other.customer &&
           email == other.email &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(customer, email, name, phone); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(customer: $customer, email: $email, name: $name, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(customer, email, name, phone);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails(customer: $customer, email: $email, name: $name, phone: $phone)';
+
  }

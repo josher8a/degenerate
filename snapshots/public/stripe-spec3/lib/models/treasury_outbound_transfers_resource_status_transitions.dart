@@ -35,12 +35,15 @@ TreasuryOutboundTransfersResourceStatusTransitions copyWith({int? Function()? ca
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundTransfersResourceStatusTransitions &&
           canceledAt == other.canceledAt &&
           failedAt == other.failedAt &&
           postedAt == other.postedAt &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(canceledAt, failedAt, postedAt, returnedAt); } 
-@override String toString() { return 'TreasuryOutboundTransfersResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, postedAt: $postedAt, returnedAt: $returnedAt)'; } 
+          returnedAt == other.returnedAt;
+
+@override int get hashCode => Object.hash(canceledAt, failedAt, postedAt, returnedAt);
+
+@override String toString() => 'TreasuryOutboundTransfersResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, postedAt: $postedAt, returnedAt: $returnedAt)';
+
  }

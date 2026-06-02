@@ -26,11 +26,14 @@ MconnSupportCohort copyWith({String? Function()? desiredVersion, MconnUuid? id, 
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportCohort &&
           desiredVersion == other.desiredVersion &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(desiredVersion, id, name); } 
-@override String toString() { return 'MconnSupportCohort(desiredVersion: $desiredVersion, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(desiredVersion, id, name);
+
+@override String toString() => 'MconnSupportCohort(desiredVersion: $desiredVersion, id: $id, name: $name)';
+
  }

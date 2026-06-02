@@ -64,7 +64,7 @@ AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebi
   sepaDebitPayments: sepaDebitPayments != null ? sepaDebitPayments() : this.sepaDebitPayments,
   treasury: treasury != null ? treasury() : this.treasury,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSettings &&
           bacsDebitPayments == other.bacsDebitPayments &&
           branding == other.branding &&
@@ -75,7 +75,10 @@ AccountSettings copyWith({AccountBacsDebitPaymentsSettings? Function()? bacsDebi
           payments == other.payments &&
           payouts == other.payouts &&
           sepaDebitPayments == other.sepaDebitPayments &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, dashboard, invoices, payments, payouts, sepaDebitPayments, treasury); } 
-@override String toString() { return 'AccountSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, dashboard: $dashboard, invoices: $invoices, payments: $payments, payouts: $payouts, sepaDebitPayments: $sepaDebitPayments, treasury: $treasury)'; } 
+          treasury == other.treasury;
+
+@override int get hashCode => Object.hash(bacsDebitPayments, branding, cardIssuing, cardPayments, dashboard, invoices, payments, payouts, sepaDebitPayments, treasury);
+
+@override String toString() => 'AccountSettings(bacsDebitPayments: $bacsDebitPayments, branding: $branding, cardIssuing: $cardIssuing, cardPayments: $cardPayments, dashboard: $dashboard, invoices: $invoices, payments: $payments, payouts: $payouts, sepaDebitPayments: $sepaDebitPayments, treasury: $treasury)';
+
  }

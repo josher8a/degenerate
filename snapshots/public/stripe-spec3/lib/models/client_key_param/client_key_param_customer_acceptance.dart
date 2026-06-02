@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClientKeyParamCustomerAcceptanceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClientKeyParamCustomerAcceptanceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClientKeyParamCustomerAcceptanceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClientKeyParamCustomerAcceptanceType($value)';
+
  }
 @immutable final class ClientKeyParamCustomerAcceptance {const ClientKeyParamCustomerAcceptance({required this.online, required this.type, });
 
@@ -42,10 +45,13 @@ ClientKeyParamCustomerAcceptance copyWith({ClientKeyParamCustomerAcceptanceOnlin
   online: online ?? this.online,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientKeyParamCustomerAcceptance &&
           online == other.online &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(online, type); } 
-@override String toString() { return 'ClientKeyParamCustomerAcceptance(online: $online, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(online, type);
+
+@override String toString() => 'ClientKeyParamCustomerAcceptance(online: $online, type: $type)';
+
  }

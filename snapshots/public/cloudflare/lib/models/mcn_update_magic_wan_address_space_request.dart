@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prefi
 McnUpdateMagicWanAddressSpaceRequest copyWith({List<McnCidrPrefix>? prefixes}) { return McnUpdateMagicWanAddressSpaceRequest(
   prefixes: prefixes ?? this.prefixes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnUpdateMagicWanAddressSpaceRequest &&
-          listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hashAll(prefixes); } 
-@override String toString() { return 'McnUpdateMagicWanAddressSpaceRequest(prefixes: $prefixes)'; } 
+          listEquals(prefixes, other.prefixes);
+
+@override int get hashCode => Object.hashAll(prefixes);
+
+@override String toString() => 'McnUpdateMagicWanAddressSpaceRequest(prefixes: $prefixes)';
+
  }

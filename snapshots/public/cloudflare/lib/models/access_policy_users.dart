@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessUserResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessUserResult($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessUserResult && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessUserResult($value)';
+
  }
 @immutable final class AccessPolicyUsers {const AccessPolicyUsers({this.email, this.id, this.name, this.status, });
 
@@ -58,12 +61,15 @@ AccessPolicyUsers copyWith({AccessSchemasEmail? Function()? email, AccessUuid? F
   name: name != null ? name() : this.name,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyUsers &&
           email == other.email &&
           id == other.id &&
           name == other.name &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(email, id, name, status); } 
-@override String toString() { return 'AccessPolicyUsers(email: $email, id: $id, name: $name, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(email, id, name, status);
+
+@override String toString() => 'AccessPolicyUsers(email: $email, id: $id, name: $name, status: $status)';
+
  }

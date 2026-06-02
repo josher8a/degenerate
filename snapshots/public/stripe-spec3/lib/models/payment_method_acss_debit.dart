@@ -64,13 +64,16 @@ PaymentMethodAcssDebit copyWith({String? Function()? bankName, String? Function(
   last4: last4 != null ? last4() : this.last4,
   transitNumber: transitNumber != null ? transitNumber() : this.transitNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodAcssDebit &&
           bankName == other.bankName &&
           fingerprint == other.fingerprint &&
           institutionNumber == other.institutionNumber &&
           last4 == other.last4 &&
-          transitNumber == other.transitNumber; } 
-@override int get hashCode { return Object.hash(bankName, fingerprint, institutionNumber, last4, transitNumber); } 
-@override String toString() { return 'PaymentMethodAcssDebit(bankName: $bankName, fingerprint: $fingerprint, institutionNumber: $institutionNumber, last4: $last4, transitNumber: $transitNumber)'; } 
+          transitNumber == other.transitNumber;
+
+@override int get hashCode => Object.hash(bankName, fingerprint, institutionNumber, last4, transitNumber);
+
+@override String toString() => 'PaymentMethodAcssDebit(bankName: $bankName, fingerprint: $fingerprint, institutionNumber: $institutionNumber, last4: $last4, transitNumber: $transitNumber)';
+
  }

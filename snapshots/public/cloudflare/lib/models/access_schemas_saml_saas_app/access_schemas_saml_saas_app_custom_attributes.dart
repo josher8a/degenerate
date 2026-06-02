@@ -47,13 +47,16 @@ AccessSchemasSamlSaasAppCustomAttributes copyWith({String? Function()? friendlyN
   $required: $required != null ? $required() : this.$required,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasSamlSaasAppCustomAttributes &&
           friendlyName == other.friendlyName &&
           name == other.name &&
           nameFormat == other.nameFormat &&
           $required == other.$required &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(friendlyName, name, nameFormat, $required, source); } 
-@override String toString() { return 'AccessSchemasSamlSaasAppCustomAttributes(friendlyName: $friendlyName, name: $name, nameFormat: $nameFormat, \$required: ${$required}, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(friendlyName, name, nameFormat, $required, source);
+
+@override String toString() => 'AccessSchemasSamlSaasAppCustomAttributes(friendlyName: $friendlyName, name: $name, nameFormat: $nameFormat, \$required: ${$required}, source: $source)';
+
  }

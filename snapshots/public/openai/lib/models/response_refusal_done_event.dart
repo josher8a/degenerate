@@ -58,14 +58,17 @@ ResponseRefusalDoneEvent copyWith({String? type, String? itemId, int? outputInde
   refusal: refusal ?? this.refusal,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseRefusalDoneEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
           refusal == other.refusal &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, refusal, sequenceNumber); } 
-@override String toString() { return 'ResponseRefusalDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, refusal: $refusal, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, contentIndex, refusal, sequenceNumber);
+
+@override String toString() => 'ResponseRefusalDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, refusal: $refusal, sequenceNumber: $sequenceNumber)';
+
  }

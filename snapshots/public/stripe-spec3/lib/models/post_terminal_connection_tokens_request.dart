@@ -29,10 +29,13 @@ PostTerminalConnectionTokensRequest copyWith({List<String>? Function()? expand, 
   expand: expand != null ? expand() : this.expand,
   location: location != null ? location() : this.location,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalConnectionTokensRequest &&
           listEquals(expand, other.expand) &&
-          location == other.location; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), location); } 
-@override String toString() { return 'PostTerminalConnectionTokensRequest(expand: $expand, location: $location)'; } 
+          location == other.location;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), location);
+
+@override String toString() => 'PostTerminalConnectionTokensRequest(expand: $expand, location: $location)';
+
  }

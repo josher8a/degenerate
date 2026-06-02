@@ -46,14 +46,17 @@ AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dy
   singleFile: singleFile != null ? singleFile() : this.singleFile,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuthenticationToken &&
           token == other.token &&
           expiresAt == other.expiresAt &&
           permissions == other.permissions &&
           listEquals(repositories, other.repositories) &&
           singleFile == other.singleFile &&
-          repositorySelection == other.repositorySelection; } 
-@override int get hashCode { return Object.hash(token, expiresAt, permissions, Object.hashAll(repositories ?? const []), singleFile, repositorySelection); } 
-@override String toString() { return 'AuthenticationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositories: $repositories, singleFile: $singleFile, repositorySelection: $repositorySelection)'; } 
+          repositorySelection == other.repositorySelection;
+
+@override int get hashCode => Object.hash(token, expiresAt, permissions, Object.hashAll(repositories ?? const []), singleFile, repositorySelection);
+
+@override String toString() => 'AuthenticationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositories: $repositories, singleFile: $singleFile, repositorySelection: $repositorySelection)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TransferObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TransferObject($value)';
+
  }
 /// A `Transfer` object is created when you move funds between Stripe accounts as
 /// part of Connect.
@@ -169,7 +172,7 @@ Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransa
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Transfer &&
           amount == other.amount &&
           amountReversed == other.amountReversed &&
@@ -187,7 +190,10 @@ Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransa
           reversed == other.reversed &&
           sourceTransaction == other.sourceTransaction &&
           sourceType == other.sourceType &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, amountReversed, balanceTransaction, created, currency, description, destination, destinationPayment, id, livemode, metadata, object, reversals, reversed, sourceTransaction, sourceType, transferGroup); } 
-@override String toString() { return 'Transfer(amount: $amount, amountReversed: $amountReversed, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, destinationPayment: $destinationPayment, id: $id, livemode: $livemode, metadata: $metadata, object: $object, reversals: $reversals, reversed: $reversed, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, amountReversed, balanceTransaction, created, currency, description, destination, destinationPayment, id, livemode, metadata, object, reversals, reversed, sourceTransaction, sourceType, transferGroup);
+
+@override String toString() => 'Transfer(amount: $amount, amountReversed: $amountReversed, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, destinationPayment: $destinationPayment, id: $id, livemode: $livemode, metadata: $metadata, object: $object, reversals: $reversals, reversed: $reversed, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';
+
  }

@@ -40,12 +40,15 @@ ZeroTrustGatewayCustomCertificateSettings copyWith({String? Function()? bindingS
   id: id != null ? id() : this.id,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayCustomCertificateSettings &&
           bindingStatus == other.bindingStatus &&
           enabled == other.enabled &&
           id == other.id &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(bindingStatus, enabled, id, updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayCustomCertificateSettings(bindingStatus: $bindingStatus, enabled: $enabled, id: $id, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(bindingStatus, enabled, id, updatedAt);
+
+@override String toString() => 'ZeroTrustGatewayCustomCertificateSettings(bindingStatus: $bindingStatus, enabled: $enabled, id: $id, updatedAt: $updatedAt)';
+
  }

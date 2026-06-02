@@ -51,7 +51,7 @@ RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initi
   referrerPolicy: referrerPolicy ?? this.referrerPolicy,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequestsRequestsRequest &&
           headers == other.headers &&
           initialPriority == other.initialPriority &&
@@ -59,7 +59,10 @@ RequestsRequestsRequest copyWith({RequestsRequestHeaders? headers, String? initi
           method == other.method &&
           mixedContentType == other.mixedContentType &&
           referrerPolicy == other.referrerPolicy &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(headers, initialPriority, isSameSite, method, mixedContentType, referrerPolicy, url); } 
-@override String toString() { return 'RequestsRequestsRequest(headers: $headers, initialPriority: $initialPriority, isSameSite: $isSameSite, method: $method, mixedContentType: $mixedContentType, referrerPolicy: $referrerPolicy, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(headers, initialPriority, isSameSite, method, mixedContentType, referrerPolicy, url);
+
+@override String toString() => 'RequestsRequestsRequest(headers: $headers, initialPriority: $initialPriority, isSameSite: $isSameSite, method: $method, mixedContentType: $mixedContentType, referrerPolicy: $referrerPolicy, url: $url)';
+
  }

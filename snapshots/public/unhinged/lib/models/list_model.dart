@@ -50,21 +50,16 @@ final class ListModel {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ListModel &&
-            listEquals(items, other.items) &&
-            size == other.size &&
-            next == other.next;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ListModel &&
+          listEquals(items, other.items) &&
+          size == other.size &&
+          next == other.next;
 
   @override
-  int get hashCode {
-    return Object.hash(Object.hashAll(items), size, next);
-  }
+  int get hashCode => Object.hash(Object.hashAll(items), size, next);
 
   @override
-  String toString() {
-    return 'ListModel(items: $items, size: $size, next: $next)';
-  }
+  String toString() => 'ListModel(items: $items, size: $size, next: $next)';
 }

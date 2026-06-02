@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CreateMessageFeedbackRequest copyWith({MessageFeedbackEnumOutcome? Function()? outcome}) { return CreateMessageFeedbackRequest(
   outcome: outcome != null ? outcome() : this.outcome,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateMessageFeedbackRequest &&
-          outcome == other.outcome; } 
-@override int get hashCode { return outcome.hashCode; } 
-@override String toString() { return 'CreateMessageFeedbackRequest(outcome: $outcome)'; } 
+          outcome == other.outcome;
+
+@override int get hashCode => outcome.hashCode;
+
+@override String toString() => 'CreateMessageFeedbackRequest(outcome: $outcome)';
+
  }

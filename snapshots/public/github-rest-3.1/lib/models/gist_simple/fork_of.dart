@@ -131,7 +131,7 @@ ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? n
   forks: forks != null ? forks() : this.forks,
   history: history != null ? history() : this.history,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForkOf &&
           url == other.url &&
           forksUrl == other.forksUrl &&
@@ -153,7 +153,10 @@ ForkOf copyWith({Uri? url, Uri? forksUrl, Uri? commitsUrl, String? id, String? n
           owner == other.owner &&
           truncated == other.truncated &&
           listEquals(forks, other.forks) &&
-          listEquals(history, other.history); } 
-@override int get hashCode { return Object.hashAll([url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated, Object.hashAll(forks ?? const []), Object.hashAll(history ?? const [])]); } 
-@override String toString() { return 'ForkOf(url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated, forks: $forks, history: $history)'; } 
+          listEquals(history, other.history);
+
+@override int get hashCode => Object.hashAll([url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated, Object.hashAll(forks ?? const []), Object.hashAll(history ?? const [])]);
+
+@override String toString() => 'ForkOf(url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated, forks: $forks, history: $history)';
+
  }

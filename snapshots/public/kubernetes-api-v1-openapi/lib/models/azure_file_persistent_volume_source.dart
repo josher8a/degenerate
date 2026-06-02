@@ -36,12 +36,15 @@ AzureFilePersistentVolumeSource copyWith({bool? Function()? readOnly, String? se
   secretNamespace: secretNamespace != null ? secretNamespace() : this.secretNamespace,
   shareName: shareName ?? this.shareName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AzureFilePersistentVolumeSource &&
           readOnly == other.readOnly &&
           secretName == other.secretName &&
           secretNamespace == other.secretNamespace &&
-          shareName == other.shareName; } 
-@override int get hashCode { return Object.hash(readOnly, secretName, secretNamespace, shareName); } 
-@override String toString() { return 'AzureFilePersistentVolumeSource(readOnly: $readOnly, secretName: $secretName, secretNamespace: $secretNamespace, shareName: $shareName)'; } 
+          shareName == other.shareName;
+
+@override int get hashCode => Object.hash(readOnly, secretName, secretNamespace, shareName);
+
+@override String toString() => 'AzureFilePersistentVolumeSource(readOnly: $readOnly, secretName: $secretName, secretNamespace: $secretNamespace, shareName: $shareName)';
+
  }

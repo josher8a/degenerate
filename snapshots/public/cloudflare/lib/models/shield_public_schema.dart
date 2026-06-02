@@ -56,14 +56,17 @@ ShieldPublicSchema copyWith({ShieldTimestamp? createdAt, SchemaValidationCreateS
   source: source ?? this.source,
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldPublicSchema &&
           createdAt == other.createdAt &&
           kind == other.kind &&
           name == other.name &&
           schemaId == other.schemaId &&
           source == other.source &&
-          validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(createdAt, kind, name, schemaId, source, validationEnabled); } 
-@override String toString() { return 'ShieldPublicSchema(createdAt: $createdAt, kind: $kind, name: $name, schemaId: $schemaId, source: $source, validationEnabled: $validationEnabled)'; } 
+          validationEnabled == other.validationEnabled;
+
+@override int get hashCode => Object.hash(createdAt, kind, name, schemaId, source, validationEnabled);
+
+@override String toString() => 'ShieldPublicSchema(createdAt: $createdAt, kind: $kind, name: $name, schemaId: $schemaId, source: $source, validationEnabled: $validationEnabled)';
+
  }

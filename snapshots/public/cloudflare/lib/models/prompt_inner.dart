@@ -123,7 +123,7 @@ PromptInner copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromptInner &&
           frequencyPenalty == other.frequencyPenalty &&
           guidedJson == other.guidedJson &&
@@ -137,7 +137,10 @@ PromptInner copyWith({double? Function()? frequencyPenalty, Map<String, dynamic>
           stream == other.stream &&
           temperature == other.temperature &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, guidedJson, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP); } 
-@override String toString() { return 'PromptInner(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(frequencyPenalty, guidedJson, maxTokens, presencePenalty, prompt, raw, repetitionPenalty, responseFormat, seed, stream, temperature, topK, topP);
+
+@override String toString() => 'PromptInner(frequencyPenalty: $frequencyPenalty, guidedJson: $guidedJson, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topK: $topK, topP: $topP)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TruncationObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TruncationObjectType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TruncationObjectType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TruncationObjectType($value)';
+
  }
 /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.
 @immutable final class TruncationObject {const TruncationObject({required this.type, this.lastMessages, });
@@ -55,10 +58,13 @@ TruncationObject copyWith({TruncationObjectType? type, int? Function()? lastMess
   type: type ?? this.type,
   lastMessages: lastMessages != null ? lastMessages() : this.lastMessages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TruncationObject &&
           type == other.type &&
-          lastMessages == other.lastMessages; } 
-@override int get hashCode { return Object.hash(type, lastMessages); } 
-@override String toString() { return 'TruncationObject(type: $type, lastMessages: $lastMessages)'; } 
+          lastMessages == other.lastMessages;
+
+@override int get hashCode => Object.hash(type, lastMessages);
+
+@override String toString() => 'TruncationObject(type: $type, lastMessages: $lastMessages)';
+
  }

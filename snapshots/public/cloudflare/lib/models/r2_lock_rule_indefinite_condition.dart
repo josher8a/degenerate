@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2LockRuleIndefiniteConditionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2LockRuleIndefiniteConditionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2LockRuleIndefiniteConditionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2LockRuleIndefiniteConditionType($value)';
+
  }
 /// Condition to apply a lock rule indefinitely.
 @immutable final class R2LockRuleIndefiniteCondition {const R2LockRuleIndefiniteCondition({required this.type});
@@ -37,9 +40,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 R2LockRuleIndefiniteCondition copyWith({R2LockRuleIndefiniteConditionType? type}) { return R2LockRuleIndefiniteCondition(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2LockRuleIndefiniteCondition &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'R2LockRuleIndefiniteCondition(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'R2LockRuleIndefiniteCondition(type: $type)';
+
  }

@@ -121,37 +121,33 @@ final class BlogPostListSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is BlogPostListSchema &&
-            author == other.author &&
-            headerImageUrl == other.headerImageUrl &&
-            title == other.title &&
-            subtitle == other.subtitle &&
-            datePublished == other.datePublished &&
-            slug == other.slug &&
-            publish == other.publish &&
-            readTime == other.readTime &&
-            summary == other.summary;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is BlogPostListSchema &&
+          author == other.author &&
+          headerImageUrl == other.headerImageUrl &&
+          title == other.title &&
+          subtitle == other.subtitle &&
+          datePublished == other.datePublished &&
+          slug == other.slug &&
+          publish == other.publish &&
+          readTime == other.readTime &&
+          summary == other.summary;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      author,
-      headerImageUrl,
-      title,
-      subtitle,
-      datePublished,
-      slug,
-      publish,
-      readTime,
-      summary,
-    );
-  }
+  int get hashCode => Object.hash(
+    author,
+    headerImageUrl,
+    title,
+    subtitle,
+    datePublished,
+    slug,
+    publish,
+    readTime,
+    summary,
+  );
 
   @override
-  String toString() {
-    return 'BlogPostListSchema(author: $author, headerImageUrl: $headerImageUrl, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
-  }
+  String toString() =>
+      'BlogPostListSchema(author: $author, headerImageUrl: $headerImageUrl, title: $title, subtitle: $subtitle, datePublished: $datePublished, slug: $slug, publish: $publish, readTime: $readTime, summary: $summary)';
 }

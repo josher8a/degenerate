@@ -27,10 +27,13 @@ RelatedPerson copyWith({String? account, String? person, }) { return RelatedPers
   account: account ?? this.account,
   person: person ?? this.person,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RelatedPerson &&
           account == other.account &&
-          person == other.person; } 
-@override int get hashCode { return Object.hash(account, person); } 
-@override String toString() { return 'RelatedPerson(account: $account, person: $person)'; } 
+          person == other.person;
+
+@override int get hashCode => Object.hash(account, person);
+
+@override String toString() => 'RelatedPerson(account: $account, person: $person)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GelatoDocumentReportType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GelatoDocumentReportType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GelatoDocumentReportType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GelatoDocumentReportType($value)';
+
  }
 /// Result from a document check
 @immutable final class GelatoDocumentReport {const GelatoDocumentReport({required this.status, this.address, this.dob, this.error, this.expirationDate, this.files, this.firstName, this.issuedDate, this.issuingCountry, this.lastName, this.number, this.sex, this.type, this.unparsedPlaceOfBirth, this.unparsedSex, });
@@ -156,7 +159,7 @@ GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentR
   unparsedPlaceOfBirth: unparsedPlaceOfBirth != null ? unparsedPlaceOfBirth() : this.unparsedPlaceOfBirth,
   unparsedSex: unparsedSex != null ? unparsedSex() : this.unparsedSex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoDocumentReport &&
           address == other.address &&
           dob == other.dob &&
@@ -172,7 +175,10 @@ GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentR
           status == other.status &&
           type == other.type &&
           unparsedPlaceOfBirth == other.unparsedPlaceOfBirth &&
-          unparsedSex == other.unparsedSex; } 
-@override int get hashCode { return Object.hash(address, dob, error, expirationDate, Object.hashAll(files ?? const []), firstName, issuedDate, issuingCountry, lastName, number, sex, status, type, unparsedPlaceOfBirth, unparsedSex); } 
-@override String toString() { return 'GelatoDocumentReport(address: $address, dob: $dob, error: $error, expirationDate: $expirationDate, files: $files, firstName: $firstName, issuedDate: $issuedDate, issuingCountry: $issuingCountry, lastName: $lastName, number: $number, sex: $sex, status: $status, type: $type, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)'; } 
+          unparsedSex == other.unparsedSex;
+
+@override int get hashCode => Object.hash(address, dob, error, expirationDate, Object.hashAll(files ?? const []), firstName, issuedDate, issuingCountry, lastName, number, sex, status, type, unparsedPlaceOfBirth, unparsedSex);
+
+@override String toString() => 'GelatoDocumentReport(address: $address, dob: $dob, error: $error, expirationDate: $expirationDate, files: $files, firstName: $firstName, issuedDate: $issuedDate, issuingCountry: $issuingCountry, lastName: $lastName, number: $number, sex: $sex, status: $status, type: $type, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)';
+
  }

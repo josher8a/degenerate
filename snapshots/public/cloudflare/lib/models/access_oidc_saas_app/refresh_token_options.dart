@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RefreshTokenOptions copyWith({String? Function()? lifetime}) { return RefreshTokenOptions(
   lifetime: lifetime != null ? lifetime() : this.lifetime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefreshTokenOptions &&
-          lifetime == other.lifetime; } 
-@override int get hashCode { return lifetime.hashCode; } 
-@override String toString() { return 'RefreshTokenOptions(lifetime: $lifetime)'; } 
+          lifetime == other.lifetime;
+
+@override int get hashCode => lifetime.hashCode;
+
+@override String toString() => 'RefreshTokenOptions(lifetime: $lifetime)';
+
  }

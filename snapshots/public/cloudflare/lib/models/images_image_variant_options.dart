@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesImageVariantFit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesImageVariantFit($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImagesImageVariantFit && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImagesImageVariantFit($value)';
+
  }
 /// Maximum height in image pixels.
 extension type const ImagesImageVariantHeight(double value) {
@@ -64,10 +67,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesImageVariantSchemasMetadata && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesImageVariantSchemasMetadata($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImagesImageVariantSchemasMetadata && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImagesImageVariantSchemasMetadata($value)';
+
  }
 /// Maximum width in image pixels.
 extension type const ImagesImageVariantWidth(double value) {
@@ -112,12 +118,15 @@ ImagesImageVariantOptions copyWith({ImagesImageVariantFit? fit, ImagesImageVaria
   metadata: metadata ?? this.metadata,
   width: width ?? this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageVariantOptions &&
           fit == other.fit &&
           height == other.height &&
           metadata == other.metadata &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(fit, height, metadata, width); } 
-@override String toString() { return 'ImagesImageVariantOptions(fit: $fit, height: $height, metadata: $metadata, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(fit, height, metadata, width);
+
+@override String toString() => 'ImagesImageVariantOptions(fit: $fit, height: $height, metadata: $metadata, width: $width)';
+
  }

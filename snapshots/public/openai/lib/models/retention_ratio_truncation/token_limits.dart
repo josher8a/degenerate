@@ -24,9 +24,12 @@ return errors; }
 TokenLimits copyWith({int? Function()? postInstructions}) { return TokenLimits(
   postInstructions: postInstructions != null ? postInstructions() : this.postInstructions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenLimits &&
-          postInstructions == other.postInstructions; } 
-@override int get hashCode { return postInstructions.hashCode; } 
-@override String toString() { return 'TokenLimits(postInstructions: $postInstructions)'; } 
+          postInstructions == other.postInstructions;
+
+@override int get hashCode => postInstructions.hashCode;
+
+@override String toString() => 'TokenLimits(postInstructions: $postInstructions)';
+
  }

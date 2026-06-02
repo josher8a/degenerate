@@ -30,11 +30,14 @@ MconnRecordedEvent copyWith({MconnEvent? e, double? n, double? t, }) { return Mc
   n: n ?? this.n,
   t: t ?? this.t,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnRecordedEvent &&
           e == other.e &&
           n == other.n &&
-          t == other.t; } 
-@override int get hashCode { return Object.hash(e, n, t); } 
-@override String toString() { return 'MconnRecordedEvent(e: $e, n: $n, t: $t)'; } 
+          t == other.t;
+
+@override int get hashCode => Object.hash(e, n, t);
+
+@override String toString() => 'MconnRecordedEvent(e: $e, n: $n, t: $t)';
+
  }

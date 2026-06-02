@@ -19,19 +19,22 @@ final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$403 ex
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$404 extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$422 extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$Unknown extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError$Unknown(this.statusCode, this.rawBody, );
 

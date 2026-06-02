@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpecificApplyPatchParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpecificApplyPatchParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpecificApplyPatchParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpecificApplyPatchParamType($value)';
+
  }
 /// Forces the model to call the apply_patch tool when executing a tool call.
 @immutable final class SpecificApplyPatchParam {const SpecificApplyPatchParam({this.type = SpecificApplyPatchParamType.applyPatch});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 SpecificApplyPatchParam copyWith({SpecificApplyPatchParamType? type}) { return SpecificApplyPatchParam(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpecificApplyPatchParam &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'SpecificApplyPatchParam(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'SpecificApplyPatchParam(type: $type)';
+
  }

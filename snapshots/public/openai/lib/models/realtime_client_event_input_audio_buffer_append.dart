@@ -52,11 +52,14 @@ RealtimeClientEventInputAudioBufferAppend copyWith({String? Function()? eventId,
   type: type ?? this.type,
   audio: audio ?? this.audio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventInputAudioBufferAppend &&
           eventId == other.eventId &&
           type == other.type &&
-          audio == other.audio; } 
-@override int get hashCode { return Object.hash(eventId, type, audio); } 
-@override String toString() { return 'RealtimeClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)'; } 
+          audio == other.audio;
+
+@override int get hashCode => Object.hash(eventId, type, audio);
+
+@override String toString() => 'RealtimeClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)';
+
  }

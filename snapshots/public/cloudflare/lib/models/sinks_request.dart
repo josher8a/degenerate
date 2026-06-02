@@ -48,13 +48,16 @@ SinksRequest copyWith({SinksRequestConfig? Function()? config, CloudflarePipelin
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SinksRequest &&
           config == other.config &&
           format == other.format &&
           name == other.name &&
           schema == other.schema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, format, name, schema, type); } 
-@override String toString() { return 'SinksRequest(config: $config, format: $format, name: $name, schema: $schema, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, format, name, schema, type);
+
+@override String toString() => 'SinksRequest(config: $config, format: $format, name: $name, schema: $schema, type: $type)';
+
  }

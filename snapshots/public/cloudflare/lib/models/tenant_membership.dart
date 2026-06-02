@@ -27,11 +27,14 @@ TenantMembership copyWith({String? userEmail, String? userName, String? userTag,
   userName: userName ?? this.userName,
   userTag: userTag ?? this.userTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TenantMembership &&
           userEmail == other.userEmail &&
           userName == other.userName &&
-          userTag == other.userTag; } 
-@override int get hashCode { return Object.hash(userEmail, userName, userTag); } 
-@override String toString() { return 'TenantMembership(userEmail: $userEmail, userName: $userName, userTag: $userTag)'; } 
+          userTag == other.userTag;
+
+@override int get hashCode => Object.hash(userEmail, userName, userTag);
+
+@override String toString() => 'TenantMembership(userEmail: $userEmail, userName: $userName, userTag: $userTag)';
+
  }

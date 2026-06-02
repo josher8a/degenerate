@@ -151,7 +151,7 @@ AccountApplication copyWith({String? Function()? accountSid, String? Function()?
   voiceUrl: voiceUrl != null ? voiceUrl() : this.voiceUrl,
   publicApplicationConnectEnabled: publicApplicationConnectEnabled != null ? publicApplicationConnectEnabled() : this.publicApplicationConnectEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountApplication &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -173,7 +173,10 @@ AccountApplication copyWith({String? Function()? accountSid, String? Function()?
           voiceFallbackUrl == other.voiceFallbackUrl &&
           voiceMethod == other.voiceMethod &&
           voiceUrl == other.voiceUrl &&
-          publicApplicationConnectEnabled == other.publicApplicationConnectEnabled; } 
-@override int get hashCode { return Object.hashAll([accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, messageStatusCallback, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsStatusCallback, smsUrl, statusCallback, statusCallbackMethod, uri, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, publicApplicationConnectEnabled]); } 
-@override String toString() { return 'AccountApplication(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, messageStatusCallback: $messageStatusCallback, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsStatusCallback: $smsStatusCallback, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, uri: $uri, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, publicApplicationConnectEnabled: $publicApplicationConnectEnabled)'; } 
+          publicApplicationConnectEnabled == other.publicApplicationConnectEnabled;
+
+@override int get hashCode => Object.hashAll([accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, messageStatusCallback, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsStatusCallback, smsUrl, statusCallback, statusCallbackMethod, uri, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, publicApplicationConnectEnabled]);
+
+@override String toString() => 'AccountApplication(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, messageStatusCallback: $messageStatusCallback, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsStatusCallback: $smsStatusCallback, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, uri: $uri, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, publicApplicationConnectEnabled: $publicApplicationConnectEnabled)';
+
  }

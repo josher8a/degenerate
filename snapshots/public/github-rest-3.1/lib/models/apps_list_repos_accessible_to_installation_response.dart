@@ -26,11 +26,14 @@ AppsListReposAccessibleToInstallationResponse copyWith({int? totalCount, List<Re
   repositories: repositories ?? this.repositories,
   repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsListReposAccessibleToInstallationResponse &&
           totalCount == other.totalCount &&
           listEquals(repositories, other.repositories) &&
-          repositorySelection == other.repositorySelection; } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositories), repositorySelection); } 
-@override String toString() { return 'AppsListReposAccessibleToInstallationResponse(totalCount: $totalCount, repositories: $repositories, repositorySelection: $repositorySelection)'; } 
+          repositorySelection == other.repositorySelection;
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(repositories), repositorySelection);
+
+@override String toString() => 'AppsListReposAccessibleToInstallationResponse(totalCount: $totalCount, repositories: $repositories, repositorySelection: $repositorySelection)';
+
  }

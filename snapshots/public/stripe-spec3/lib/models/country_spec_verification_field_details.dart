@@ -24,10 +24,13 @@ CountrySpecVerificationFieldDetails copyWith({List<String>? additional, List<Str
   additional: additional ?? this.additional,
   minimum: minimum ?? this.minimum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountrySpecVerificationFieldDetails &&
           listEquals(additional, other.additional) &&
-          listEquals(minimum, other.minimum); } 
-@override int get hashCode { return Object.hash(Object.hashAll(additional), Object.hashAll(minimum)); } 
-@override String toString() { return 'CountrySpecVerificationFieldDetails(additional: $additional, minimum: $minimum)'; } 
+          listEquals(minimum, other.minimum);
+
+@override int get hashCode => Object.hash(Object.hashAll(additional), Object.hashAll(minimum));
+
+@override String toString() => 'CountrySpecVerificationFieldDetails(additional: $additional, minimum: $minimum)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinishRotateCryptKeySuccessK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinishRotateCryptKeySuccessK($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinishRotateCryptKeySuccessK && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinishRotateCryptKeySuccessK($value)';
+
  }
 @immutable final class FinishRotateCryptKeySuccess {const FinishRotateCryptKeySuccess({required this.k});
 
@@ -38,9 +41,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); 
 FinishRotateCryptKeySuccess copyWith({FinishRotateCryptKeySuccessK? k}) { return FinishRotateCryptKeySuccess(
   k: k ?? this.k,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinishRotateCryptKeySuccess &&
-          k == other.k; } 
-@override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'FinishRotateCryptKeySuccess(k: $k)'; } 
+          k == other.k;
+
+@override int get hashCode => k.hashCode;
+
+@override String toString() => 'FinishRotateCryptKeySuccess(k: $k)';
+
  }

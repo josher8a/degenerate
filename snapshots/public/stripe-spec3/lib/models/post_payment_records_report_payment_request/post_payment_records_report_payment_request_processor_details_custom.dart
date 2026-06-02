@@ -19,9 +19,12 @@ return errors; }
 PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom copyWith({String? paymentReference}) { return PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom(
   paymentReference: paymentReference ?? this.paymentReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom &&
-          paymentReference == other.paymentReference; } 
-@override int get hashCode { return paymentReference.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom(paymentReference: $paymentReference)'; } 
+          paymentReference == other.paymentReference;
+
+@override int get hashCode => paymentReference.hashCode;
+
+@override String toString() => 'PostPaymentRecordsReportPaymentRequestProcessorDetailsCustom(paymentReference: $paymentReference)';
+
  }

@@ -46,14 +46,17 @@ BillingUsageSummaryReportUser copyWith({TimePeriod? timePeriod, String? user, St
   sku: sku != null ? sku() : this.sku,
   usageItems: usageItems ?? this.usageItems,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUsageSummaryReportUser &&
           timePeriod == other.timePeriod &&
           user == other.user &&
           repository == other.repository &&
           product == other.product &&
           sku == other.sku &&
-          listEquals(usageItems, other.usageItems); } 
-@override int get hashCode { return Object.hash(timePeriod, user, repository, product, sku, Object.hashAll(usageItems)); } 
-@override String toString() { return 'BillingUsageSummaryReportUser(timePeriod: $timePeriod, user: $user, repository: $repository, product: $product, sku: $sku, usageItems: $usageItems)'; } 
+          listEquals(usageItems, other.usageItems);
+
+@override int get hashCode => Object.hash(timePeriod, user, repository, product, sku, Object.hashAll(usageItems));
+
+@override String toString() => 'BillingUsageSummaryReportUser(timePeriod: $timePeriod, user: $user, repository: $repository, product: $product, sku: $sku, usageItems: $usageItems)';
+
  }

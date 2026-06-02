@@ -34,12 +34,15 @@ StreamStorageUseResponseResult copyWith({StreamCreator? Function()? creator, int
   totalStorageMinutesLimit: totalStorageMinutesLimit != null ? totalStorageMinutesLimit() : this.totalStorageMinutesLimit,
   videoCount: videoCount != null ? videoCount() : this.videoCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamStorageUseResponseResult &&
           creator == other.creator &&
           totalStorageMinutes == other.totalStorageMinutes &&
           totalStorageMinutesLimit == other.totalStorageMinutesLimit &&
-          videoCount == other.videoCount; } 
-@override int get hashCode { return Object.hash(creator, totalStorageMinutes, totalStorageMinutesLimit, videoCount); } 
-@override String toString() { return 'StreamStorageUseResponseResult(creator: $creator, totalStorageMinutes: $totalStorageMinutes, totalStorageMinutesLimit: $totalStorageMinutesLimit, videoCount: $videoCount)'; } 
+          videoCount == other.videoCount;
+
+@override int get hashCode => Object.hash(creator, totalStorageMinutes, totalStorageMinutesLimit, videoCount);
+
+@override String toString() => 'StreamStorageUseResponseResult(creator: $creator, totalStorageMinutes: $totalStorageMinutes, totalStorageMinutesLimit: $totalStorageMinutesLimit, videoCount: $videoCount)';
+
  }

@@ -17,7 +17,8 @@ final class AigConfigFetchDatasetError$404 extends AigConfigFetchDatasetError {c
 
 final AigConfigFetchDatasetResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigFetchDatasetError$Unknown extends AigConfigFetchDatasetError {const AigConfigFetchDatasetError$Unknown(this.statusCode, this.rawBody, );
 

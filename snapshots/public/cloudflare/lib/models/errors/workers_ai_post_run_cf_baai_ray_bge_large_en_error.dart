@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfBaaiRayBgeLargeEnError$400 extends WorkersAiPostRu
 
 final $5Response4007 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfBaaiRayBgeLargeEnError$Unknown extends WorkersAiPostRunCfBaaiRayBgeLargeEnError {const WorkersAiPostRunCfBaaiRayBgeLargeEnError$Unknown(this.statusCode, this.rawBody, );
 

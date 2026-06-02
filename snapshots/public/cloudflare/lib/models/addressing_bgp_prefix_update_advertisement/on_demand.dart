@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 OnDemand copyWith({bool? Function()? advertised}) { return OnDemand(
   advertised: advertised != null ? advertised() : this.advertised,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OnDemand &&
-          advertised == other.advertised; } 
-@override int get hashCode { return advertised.hashCode; } 
-@override String toString() { return 'OnDemand(advertised: $advertised)'; } 
+          advertised == other.advertised;
+
+@override int get hashCode => advertised.hashCode;
+
+@override String toString() => 'OnDemand(advertised: $advertised)';
+
  }

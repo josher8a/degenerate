@@ -59,11 +59,14 @@ Header copyWith({List<String>? Function()? checkPresence, List<String>? Function
   exclude: exclude != null ? exclude() : this.exclude,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Header &&
           listEquals(checkPresence, other.checkPresence) &&
           listEquals(exclude, other.exclude) &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkPresence ?? const []), Object.hashAll(exclude ?? const []), Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'Header(checkPresence: $checkPresence, exclude: $exclude, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkPresence ?? const []), Object.hashAll(exclude ?? const []), Object.hashAll(include ?? const []));
+
+@override String toString() => 'Header(checkPresence: $checkPresence, exclude: $exclude, include: $include)';
+
  }

@@ -20,10 +20,13 @@ BuildsInsertBuildResponse copyWith({BuildsBuildUuid? Function()? buildUuid, Buil
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
   createdOn: createdOn != null ? createdOn() : this.createdOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsInsertBuildResponse &&
           buildUuid == other.buildUuid &&
-          createdOn == other.createdOn; } 
-@override int get hashCode { return Object.hash(buildUuid, createdOn); } 
-@override String toString() { return 'BuildsInsertBuildResponse(buildUuid: $buildUuid, createdOn: $createdOn)'; } 
+          createdOn == other.createdOn;
+
+@override int get hashCode => Object.hash(buildUuid, createdOn);
+
+@override String toString() => 'BuildsInsertBuildResponse(buildUuid: $buildUuid, createdOn: $createdOn)';
+
  }

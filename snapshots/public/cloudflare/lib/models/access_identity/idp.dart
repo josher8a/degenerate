@@ -20,10 +20,13 @@ Idp copyWith({String? Function()? id, String? Function()? type, }) { return Idp(
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Idp &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, type); } 
-@override String toString() { return 'Idp(id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, type);
+
+@override String toString() => 'Idp(id: $id, type: $type)';
+
  }

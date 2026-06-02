@@ -84,7 +84,7 @@ PostZonesZoneIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset,
   outputOptions: outputOptions != null ? outputOptions() : this.outputOptions,
   ownershipChallenge: ownershipChallenge != null ? ownershipChallenge() : this.ownershipChallenge,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostZonesZoneIdLogpushJobsRequest &&
           dataset == other.dataset &&
           destinationConf == other.destinationConf &&
@@ -98,7 +98,10 @@ PostZonesZoneIdLogpushJobsRequest copyWith({LogpushDataset? Function()? dataset,
           maxUploadRecords == other.maxUploadRecords &&
           name == other.name &&
           outputOptions == other.outputOptions &&
-          ownershipChallenge == other.ownershipChallenge; } 
-@override int get hashCode { return Object.hash(dataset, destinationConf, enabled, filter, frequency, kind, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions, ownershipChallenge); } 
-@override String toString() { return 'PostZonesZoneIdLogpushJobsRequest(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, filter: $filter, frequency: $frequency, kind: $kind, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions, ownershipChallenge: $ownershipChallenge)'; } 
+          ownershipChallenge == other.ownershipChallenge;
+
+@override int get hashCode => Object.hash(dataset, destinationConf, enabled, filter, frequency, kind, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions, ownershipChallenge);
+
+@override String toString() => 'PostZonesZoneIdLogpushJobsRequest(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, filter: $filter, frequency: $frequency, kind: $kind, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions, ownershipChallenge: $ownershipChallenge)';
+
  }

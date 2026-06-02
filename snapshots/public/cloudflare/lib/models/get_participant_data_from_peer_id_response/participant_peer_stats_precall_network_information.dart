@@ -55,7 +55,7 @@ ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? back
   throughput: throughput != null ? throughput() : this.throughput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipantPeerStatsPrecallNetworkInformation &&
           backendRtt == other.backendRtt &&
           effectiveNetworktype == other.effectiveNetworktype &&
@@ -65,7 +65,10 @@ ParticipantPeerStatsPrecallNetworkInformation copyWith({double? Function()? back
           relayConnectivity == other.relayConnectivity &&
           rtt == other.rtt &&
           throughput == other.throughput &&
-          turnConnectivity == other.turnConnectivity; } 
-@override int get hashCode { return Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughput, turnConnectivity); } 
-@override String toString() { return 'ParticipantPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughput: $throughput, turnConnectivity: $turnConnectivity)'; } 
+          turnConnectivity == other.turnConnectivity;
+
+@override int get hashCode => Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughput, turnConnectivity);
+
+@override String toString() => 'ParticipantPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughput: $throughput, turnConnectivity: $turnConnectivity)';
+
  }

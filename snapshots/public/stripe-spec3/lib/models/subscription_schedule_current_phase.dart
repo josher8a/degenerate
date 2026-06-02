@@ -24,10 +24,13 @@ SubscriptionScheduleCurrentPhase copyWith({int? endDate, int? startDate, }) { re
   endDate: endDate ?? this.endDate,
   startDate: startDate ?? this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionScheduleCurrentPhase &&
           endDate == other.endDate &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(endDate, startDate); } 
-@override String toString() { return 'SubscriptionScheduleCurrentPhase(endDate: $endDate, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(endDate, startDate);
+
+@override String toString() => 'SubscriptionScheduleCurrentPhase(endDate: $endDate, startDate: $startDate)';
+
  }

@@ -64,7 +64,7 @@ MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool Function
   orgMetadataOnly: orgMetadataOnly != null ? orgMetadataOnly() : this.orgMetadataOnly,
   exclude: exclude != null ? exclude() : this.exclude,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsStartForOrgRequest &&
           listEquals(repositories, other.repositories) &&
           lockRepositories == other.lockRepositories &&
@@ -74,7 +74,10 @@ MigrationsStartForOrgRequest copyWith({List<String>? repositories, bool Function
           excludeReleases == other.excludeReleases &&
           excludeOwnerProjects == other.excludeOwnerProjects &&
           orgMetadataOnly == other.orgMetadataOnly &&
-          listEquals(exclude, other.exclude); } 
-@override int get hashCode { return Object.hash(Object.hashAll(repositories), lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const [])); } 
-@override String toString() { return 'MigrationsStartForOrgRequest(repositories: $repositories, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude)'; } 
+          listEquals(exclude, other.exclude);
+
+@override int get hashCode => Object.hash(Object.hashAll(repositories), lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(exclude ?? const []));
+
+@override String toString() => 'MigrationsStartForOrgRequest(repositories: $repositories, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, exclude: $exclude)';
+
  }

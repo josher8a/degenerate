@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyGcsSourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyGcsSourceProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2EnableSippyGcsSourceProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2EnableSippyGcsSourceProvider($value)';
+
  }
 /// GCS bucket to copy objects from.
 @immutable final class R2EnableSippyGcsSource {const R2EnableSippyGcsSource({this.bucket, this.clientEmail, this.privateKey, this.provider, });
@@ -55,12 +58,15 @@ R2EnableSippyGcsSource copyWith({String? Function()? bucket, String? Function()?
   privateKey: privateKey != null ? privateKey() : this.privateKey,
   provider: provider != null ? provider() : this.provider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyGcsSource &&
           bucket == other.bucket &&
           clientEmail == other.clientEmail &&
           privateKey == other.privateKey &&
-          provider == other.provider; } 
-@override int get hashCode { return Object.hash(bucket, clientEmail, privateKey, provider); } 
-@override String toString() { return 'R2EnableSippyGcsSource(bucket: $bucket, clientEmail: $clientEmail, privateKey: $privateKey, provider: $provider)'; } 
+          provider == other.provider;
+
+@override int get hashCode => Object.hash(bucket, clientEmail, privateKey, provider);
+
+@override String toString() => 'R2EnableSippyGcsSource(bucket: $bucket, clientEmail: $clientEmail, privateKey: $privateKey, provider: $provider)';
+
  }

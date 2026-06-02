@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('servi
 AccessServiceTokenRule copyWith({ServiceToken? serviceToken}) { return AccessServiceTokenRule(
   serviceToken: serviceToken ?? this.serviceToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessServiceTokenRule &&
-          serviceToken == other.serviceToken; } 
-@override int get hashCode { return serviceToken.hashCode; } 
-@override String toString() { return 'AccessServiceTokenRule(serviceToken: $serviceToken)'; } 
+          serviceToken == other.serviceToken;
+
+@override int get hashCode => serviceToken.hashCode;
+
+@override String toString() => 'AccessServiceTokenRule(serviceToken: $serviceToken)';
+
  }

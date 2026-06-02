@@ -26,10 +26,13 @@ NameByIdp copyWith({String? Function()? idpId, String? Function()? sourceName, }
   idpId: idpId != null ? idpId() : this.idpId,
   sourceName: sourceName != null ? sourceName() : this.sourceName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NameByIdp &&
           idpId == other.idpId &&
-          sourceName == other.sourceName; } 
-@override int get hashCode { return Object.hash(idpId, sourceName); } 
-@override String toString() { return 'NameByIdp(idpId: $idpId, sourceName: $sourceName)'; } 
+          sourceName == other.sourceName;
+
+@override int get hashCode => Object.hash(idpId, sourceName);
+
+@override String toString() => 'NameByIdp(idpId: $idpId, sourceName: $sourceName)';
+
  }

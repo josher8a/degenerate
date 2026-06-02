@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final Block _value;
 
-@override Block get value { return _value; } 
+@override Block get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEmailRuleActionBlock && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DlpEmailRuleAction.block($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpEmailRuleActionBlock && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DlpEmailRuleAction.block($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class DlpEmailRuleAction$Unknown extends DlpEmailRuleAction {const DlpEmailRuleAction$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpEmailRuleAction$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DlpEmailRuleAction.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpEmailRuleAction$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'DlpEmailRuleAction.unknown($_value)';
+
  }

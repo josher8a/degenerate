@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadMessageCreatedEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadMessageCreatedEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadMessageCreatedEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadMessageCreatedEvent($value)';
+
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) is created.
 @immutable final class ThreadMessageCreated {const ThreadMessageCreated({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadMessageCreated copyWith({ThreadMessageCreatedEvent? event, MessageObject? 
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadMessageCreated &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadMessageCreated(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadMessageCreated(event: $event, data: $data)';
+
  }

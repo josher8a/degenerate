@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DnsSettingsInternalDnsBase copyWith({String? Function()? referenceZoneId}) { return DnsSettingsInternalDnsBase(
   referenceZoneId: referenceZoneId != null ? referenceZoneId() : this.referenceZoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsInternalDnsBase &&
-          referenceZoneId == other.referenceZoneId; } 
-@override int get hashCode { return referenceZoneId.hashCode; } 
-@override String toString() { return 'DnsSettingsInternalDnsBase(referenceZoneId: $referenceZoneId)'; } 
+          referenceZoneId == other.referenceZoneId;
+
+@override int get hashCode => referenceZoneId.hashCode;
+
+@override String toString() => 'DnsSettingsInternalDnsBase(referenceZoneId: $referenceZoneId)';
+
  }

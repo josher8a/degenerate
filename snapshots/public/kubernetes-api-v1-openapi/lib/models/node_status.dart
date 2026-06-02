@@ -95,7 +95,7 @@ NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, Resou
   volumesAttached: volumesAttached != null ? volumesAttached() : this.volumesAttached,
   volumesInUse: volumesInUse != null ? volumesInUse() : this.volumesInUse,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeStatus &&
           listEquals(addresses, other.addresses) &&
           allocatable == other.allocatable &&
@@ -110,7 +110,10 @@ NodeStatus copyWith({List<NodeAddress>? Function()? addresses, Map<String, Resou
           phase == other.phase &&
           listEquals(runtimeHandlers, other.runtimeHandlers) &&
           listEquals(volumesAttached, other.volumesAttached) &&
-          listEquals(volumesInUse, other.volumesInUse); } 
-@override int get hashCode { return Object.hash(Object.hashAll(addresses ?? const []), allocatable, capacity, Object.hashAll(conditions ?? const []), config, daemonEndpoints, Object.hashAll(declaredFeatures ?? const []), features, Object.hashAll(images ?? const []), nodeInfo, phase, Object.hashAll(runtimeHandlers ?? const []), Object.hashAll(volumesAttached ?? const []), Object.hashAll(volumesInUse ?? const [])); } 
-@override String toString() { return 'NodeStatus(addresses: $addresses, allocatable: $allocatable, capacity: $capacity, conditions: $conditions, config: $config, daemonEndpoints: $daemonEndpoints, declaredFeatures: $declaredFeatures, features: $features, images: $images, nodeInfo: $nodeInfo, phase: $phase, runtimeHandlers: $runtimeHandlers, volumesAttached: $volumesAttached, volumesInUse: $volumesInUse)'; } 
+          listEquals(volumesInUse, other.volumesInUse);
+
+@override int get hashCode => Object.hash(Object.hashAll(addresses ?? const []), allocatable, capacity, Object.hashAll(conditions ?? const []), config, daemonEndpoints, Object.hashAll(declaredFeatures ?? const []), features, Object.hashAll(images ?? const []), nodeInfo, phase, Object.hashAll(runtimeHandlers ?? const []), Object.hashAll(volumesAttached ?? const []), Object.hashAll(volumesInUse ?? const []));
+
+@override String toString() => 'NodeStatus(addresses: $addresses, allocatable: $allocatable, capacity: $capacity, conditions: $conditions, config: $config, daemonEndpoints: $daemonEndpoints, declaredFeatures: $declaredFeatures, features: $features, images: $images, nodeInfo: $nodeInfo, phase: $phase, runtimeHandlers: $runtimeHandlers, volumesAttached: $volumesAttached, volumesInUse: $volumesInUse)';
+
  }

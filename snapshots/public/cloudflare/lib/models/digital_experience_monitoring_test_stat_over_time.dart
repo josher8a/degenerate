@@ -33,12 +33,15 @@ DigitalExperienceMonitoringTestStatOverTime copyWith({int? Function()? avg, int?
   min: min != null ? min() : this.min,
   slots: slots ?? this.slots,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTestStatOverTime &&
           avg == other.avg &&
           max == other.max &&
           min == other.min &&
-          listEquals(slots, other.slots); } 
-@override int get hashCode { return Object.hash(avg, max, min, Object.hashAll(slots)); } 
-@override String toString() { return 'DigitalExperienceMonitoringTestStatOverTime(avg: $avg, max: $max, min: $min, slots: $slots)'; } 
+          listEquals(slots, other.slots);
+
+@override int get hashCode => Object.hash(avg, max, min, Object.hashAll(slots));
+
+@override String toString() => 'DigitalExperienceMonitoringTestStatOverTime(avg: $avg, max: $max, min: $min, slots: $slots)';
+
  }

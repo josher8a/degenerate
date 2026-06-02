@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlatformRestrictionsInboundFlows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlatformRestrictionsInboundFlows($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformRestrictionsInboundFlows && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PlatformRestrictionsInboundFlows($value)';
+
  }
 @immutable final class PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows._(this.value);
 
@@ -43,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlatformRestrictionsOutboundFlows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlatformRestrictionsOutboundFlows($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformRestrictionsOutboundFlows && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PlatformRestrictionsOutboundFlows($value)';
+
  }
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
 @immutable final class PlatformRestrictions {const PlatformRestrictions({this.inboundFlows, this.outboundFlows, });
@@ -69,10 +75,13 @@ PlatformRestrictions copyWith({PlatformRestrictionsInboundFlows? Function()? inb
   inboundFlows: inboundFlows != null ? inboundFlows() : this.inboundFlows,
   outboundFlows: outboundFlows != null ? outboundFlows() : this.outboundFlows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PlatformRestrictions &&
           inboundFlows == other.inboundFlows &&
-          outboundFlows == other.outboundFlows; } 
-@override int get hashCode { return Object.hash(inboundFlows, outboundFlows); } 
-@override String toString() { return 'PlatformRestrictions(inboundFlows: $inboundFlows, outboundFlows: $outboundFlows)'; } 
+          outboundFlows == other.outboundFlows;
+
+@override int get hashCode => Object.hash(inboundFlows, outboundFlows);
+
+@override String toString() => 'PlatformRestrictions(inboundFlows: $inboundFlows, outboundFlows: $outboundFlows)';
+
  }

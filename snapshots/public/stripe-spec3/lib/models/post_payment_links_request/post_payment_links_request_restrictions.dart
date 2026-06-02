@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('compl
 PostPaymentLinksRequestRestrictions copyWith({CompletedSessions? completedSessions}) { return PostPaymentLinksRequestRestrictions(
   completedSessions: completedSessions ?? this.completedSessions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequestRestrictions &&
-          completedSessions == other.completedSessions; } 
-@override int get hashCode { return completedSessions.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestRestrictions(completedSessions: $completedSessions)'; } 
+          completedSessions == other.completedSessions;
+
+@override int get hashCode => completedSessions.hashCode;
+
+@override String toString() => 'PostPaymentLinksRequestRestrictions(completedSessions: $completedSessions)';
+
  }

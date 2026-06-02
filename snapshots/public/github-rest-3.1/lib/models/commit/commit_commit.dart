@@ -50,7 +50,7 @@ CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function(
   tree: tree ?? this.tree,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommit &&
           url == other.url &&
           author == other.author &&
@@ -58,7 +58,10 @@ CommitCommit copyWith({Uri? url, GitUser? Function()? author, GitUser? Function(
           message == other.message &&
           commentCount == other.commentCount &&
           tree == other.tree &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(url, author, committer, message, commentCount, tree, verification); } 
-@override String toString() { return 'CommitCommit(url: $url, author: $author, committer: $committer, message: $message, commentCount: $commentCount, tree: $tree, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(url, author, committer, message, commentCount, tree, verification);
+
+@override String toString() => 'CommitCommit(url: $url, author: $author, committer: $committer, message: $message, commentCount: $commentCount, tree: $tree, verification: $verification)';
+
  }

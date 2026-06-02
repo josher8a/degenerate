@@ -33,12 +33,15 @@ McnObservation copyWith({String? firstObservedAt, String? lastObservedAt, McnPro
   providerId: providerId ?? this.providerId,
   resourceId: resourceId ?? this.resourceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnObservation &&
           firstObservedAt == other.firstObservedAt &&
           lastObservedAt == other.lastObservedAt &&
           providerId == other.providerId &&
-          resourceId == other.resourceId; } 
-@override int get hashCode { return Object.hash(firstObservedAt, lastObservedAt, providerId, resourceId); } 
-@override String toString() { return 'McnObservation(firstObservedAt: $firstObservedAt, lastObservedAt: $lastObservedAt, providerId: $providerId, resourceId: $resourceId)'; } 
+          resourceId == other.resourceId;
+
+@override int get hashCode => Object.hash(firstObservedAt, lastObservedAt, providerId, resourceId);
+
+@override String toString() => 'McnObservation(firstObservedAt: $firstObservedAt, lastObservedAt: $lastObservedAt, providerId: $providerId, resourceId: $resourceId)';
+
  }

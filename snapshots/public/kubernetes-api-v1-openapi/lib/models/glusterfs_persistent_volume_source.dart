@@ -36,12 +36,15 @@ GlusterfsPersistentVolumeSource copyWith({String? endpoints, String? Function()?
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GlusterfsPersistentVolumeSource &&
           endpoints == other.endpoints &&
           endpointsNamespace == other.endpointsNamespace &&
           path == other.path &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(endpoints, endpointsNamespace, path, readOnly); } 
-@override String toString() { return 'GlusterfsPersistentVolumeSource(endpoints: $endpoints, endpointsNamespace: $endpointsNamespace, path: $path, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(endpoints, endpointsNamespace, path, readOnly);
+
+@override String toString() => 'GlusterfsPersistentVolumeSource(endpoints: $endpoints, endpointsNamespace: $endpointsNamespace, path: $path, readOnly: $readOnly)';
+
  }

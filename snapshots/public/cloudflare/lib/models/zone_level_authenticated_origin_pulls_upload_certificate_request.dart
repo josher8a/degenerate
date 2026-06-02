@@ -23,10 +23,13 @@ ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest copyWith({TlsCertifica
   certificate: certificate ?? this.certificate,
   privateKey: privateKey ?? this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest &&
           certificate == other.certificate &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certificate, privateKey); } 
-@override String toString() { return 'ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest(certificate: $certificate, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(certificate, privateKey);
+
+@override String toString() => 'ZoneLevelAuthenticatedOriginPullsUploadCertificateRequest(certificate: $certificate, privateKey: $privateKey)';
+
  }

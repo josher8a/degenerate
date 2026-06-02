@@ -42,7 +42,8 @@ final ImageEditPartialImageEvent imageEditPartialImageEvent;
 
 @override String get type => 'image_edit.partial_image';
 
-@override Map<String, dynamic> toJson() { return {...imageEditPartialImageEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...imageEditPartialImageEvent.toJson(), 'type': type};
+
 ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditStreamEventImageEditPartialImage(imageEditPartialImageEvent.copyWith(
   b64Json: b64Json,
   createdAt: createdAt,
@@ -52,10 +53,13 @@ ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? create
   outputFormat: outputFormat,
   partialImageIndex: partialImageIndex,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditStreamEventImageEditPartialImage && imageEditPartialImageEvent == other.imageEditPartialImageEvent; } 
-@override int get hashCode { return imageEditPartialImageEvent.hashCode; } 
-@override String toString() { return 'ImageEditStreamEvent.imageEditPartialImage($imageEditPartialImageEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageEditStreamEventImageEditPartialImage && imageEditPartialImageEvent == other.imageEditPartialImageEvent;
+
+@override int get hashCode => imageEditPartialImageEvent.hashCode;
+
+@override String toString() => 'ImageEditStreamEvent.imageEditPartialImage($imageEditPartialImageEvent)';
+
 @override String get b64Json => imageEditPartialImageEvent.b64Json;
 
 @override int get createdAt => imageEditPartialImageEvent.createdAt;
@@ -77,7 +81,8 @@ final ImageEditCompletedEvent imageEditCompletedEvent;
 
 @override String get type => 'image_edit.completed';
 
-@override Map<String, dynamic> toJson() { return {...imageEditCompletedEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...imageEditCompletedEvent.toJson(), 'type': type};
+
 ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageEditStreamEventImageEditCompleted(imageEditCompletedEvent.copyWith(
   b64Json: b64Json,
   createdAt: createdAt,
@@ -87,10 +92,13 @@ ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt
   outputFormat: outputFormat,
   usage: usage,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditStreamEventImageEditCompleted && imageEditCompletedEvent == other.imageEditCompletedEvent; } 
-@override int get hashCode { return imageEditCompletedEvent.hashCode; } 
-@override String toString() { return 'ImageEditStreamEvent.imageEditCompleted($imageEditCompletedEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageEditStreamEventImageEditCompleted && imageEditCompletedEvent == other.imageEditCompletedEvent;
+
+@override int get hashCode => imageEditCompletedEvent.hashCode;
+
+@override String toString() => 'ImageEditStreamEvent.imageEditCompleted($imageEditCompletedEvent)';
+
 @override String get b64Json => imageEditCompletedEvent.b64Json;
 
 @override int get createdAt => imageEditCompletedEvent.createdAt;
@@ -112,11 +120,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageEditStreamEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ImageEditStreamEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageEditStreamEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ImageEditStreamEvent.unknown($json)';
+
 @override String get b64Json => json['b64_json'] as String;
 
 @override int get createdAt => (json['created_at'] as num).toInt();

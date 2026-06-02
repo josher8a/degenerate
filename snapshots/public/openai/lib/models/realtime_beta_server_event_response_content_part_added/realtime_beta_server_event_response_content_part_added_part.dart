@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PartType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PartType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PartType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PartType($value)';
+
  }
 /// The content part that was added.
 @immutable final class RealtimeBetaServerEventResponseContentPartAddedPart {const RealtimeBetaServerEventResponseContentPartAddedPart({this.type, this.text, this.audio, this.transcript, });
@@ -60,12 +63,15 @@ RealtimeBetaServerEventResponseContentPartAddedPart copyWith({PartType? Function
   audio: audio != null ? audio() : this.audio,
   transcript: transcript != null ? transcript() : this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseContentPartAddedPart &&
           type == other.type &&
           text == other.text &&
           audio == other.audio &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, audio, transcript); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseContentPartAddedPart(type: $type, text: $text, audio: $audio, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(type, text, audio, transcript);
+
+@override String toString() => 'RealtimeBetaServerEventResponseContentPartAddedPart(type: $type, text: $text, audio: $audio, transcript: $transcript)';
+
  }

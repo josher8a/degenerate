@@ -27,11 +27,14 @@ ReposUpdateReleaseAssetRequest copyWith({String? Function()? name, String? Funct
   label: label != null ? label() : this.label,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateReleaseAssetRequest &&
           name == other.name &&
           label == other.label &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(name, label, state); } 
-@override String toString() { return 'ReposUpdateReleaseAssetRequest(name: $name, label: $label, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(name, label, state);
+
+@override String toString() => 'ReposUpdateReleaseAssetRequest(name: $name, label: $label, state: $state)';
+
  }

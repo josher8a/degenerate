@@ -36,12 +36,15 @@ GetEventAggregateResponse copyWith({String? aggregateBy, List<Aggregations>? agg
   dateRange: dateRange != null ? dateRange() : this.dateRange,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventAggregateResponse &&
           aggregateBy == other.aggregateBy &&
           listEquals(aggregations, other.aggregations) &&
           dateRange == other.dateRange &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(aggregateBy, Object.hashAll(aggregations), dateRange, total); } 
-@override String toString() { return 'GetEventAggregateResponse(aggregateBy: $aggregateBy, aggregations: $aggregations, dateRange: $dateRange, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(aggregateBy, Object.hashAll(aggregations), dateRange, total);
+
+@override String toString() => 'GetEventAggregateResponse(aggregateBy: $aggregateBy, aggregations: $aggregations, dateRange: $dateRange, total: $total)';
+
  }

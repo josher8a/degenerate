@@ -47,10 +47,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)';
+
  }
 /// Dispute opened event details attached to this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationDisputeOpened {const InsightsResourcesPaymentEvaluationDisputeOpened({required this.amount, required this.currency, required this.reason, });
@@ -83,11 +86,14 @@ InsightsResourcesPaymentEvaluationDisputeOpened copyWith({int? amount, String? c
   currency: currency ?? this.currency,
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationDisputeOpened &&
           amount == other.amount &&
           currency == other.currency &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(amount, currency, reason); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationDisputeOpened(amount: $amount, currency: $currency, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(amount, currency, reason);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationDisputeOpened(amount: $amount, currency: $currency, reason: $reason)';
+
  }

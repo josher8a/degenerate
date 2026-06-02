@@ -41,13 +41,16 @@ SubscriptionsResourceBillingCycleAnchorConfig copyWith({int? dayOfMonth, int? Fu
   month: month != null ? month() : this.month,
   second: second != null ? second() : this.second,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourceBillingCycleAnchorConfig &&
           dayOfMonth == other.dayOfMonth &&
           hour == other.hour &&
           minute == other.minute &&
           month == other.month &&
-          second == other.second; } 
-@override int get hashCode { return Object.hash(dayOfMonth, hour, minute, month, second); } 
-@override String toString() { return 'SubscriptionsResourceBillingCycleAnchorConfig(dayOfMonth: $dayOfMonth, hour: $hour, minute: $minute, month: $month, second: $second)'; } 
+          second == other.second;
+
+@override int get hashCode => Object.hash(dayOfMonth, hour, minute, month, second);
+
+@override String toString() => 'SubscriptionsResourceBillingCycleAnchorConfig(dayOfMonth: $dayOfMonth, hour: $hour, minute: $minute, month: $month, second: $second)';
+
  }

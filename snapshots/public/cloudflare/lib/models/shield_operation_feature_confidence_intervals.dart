@@ -40,9 +40,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOperationFeatureConfidenceIntervals copyWith({ShieldOperationFeatureConfidenceIntervalsConfidenceIntervals? Function()? confidenceIntervals}) { return ShieldOperationFeatureConfidenceIntervals(
   confidenceIntervals: confidenceIntervals != null ? confidenceIntervals() : this.confidenceIntervals,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOperationFeatureConfidenceIntervals &&
-          confidenceIntervals == other.confidenceIntervals; } 
-@override int get hashCode { return confidenceIntervals.hashCode; } 
-@override String toString() { return 'ShieldOperationFeatureConfidenceIntervals(confidenceIntervals: $confidenceIntervals)'; } 
+          confidenceIntervals == other.confidenceIntervals;
+
+@override int get hashCode => confidenceIntervals.hashCode;
+
+@override String toString() => 'ShieldOperationFeatureConfidenceIntervals(confidenceIntervals: $confidenceIntervals)';
+
  }

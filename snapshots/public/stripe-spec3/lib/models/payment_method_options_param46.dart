@@ -30,12 +30,15 @@ PaymentMethodOptionsParam46 copyWith({PaymentIntentTypeSpecificPaymentMethodOpti
   requestIncrementalAuthorizationSupport: requestIncrementalAuthorizationSupport != null ? requestIncrementalAuthorizationSupport() : this.requestIncrementalAuthorizationSupport,
   routing: routing != null ? routing() : this.routing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam46 &&
           captureMethod == other.captureMethod &&
           requestExtendedAuthorization == other.requestExtendedAuthorization &&
           requestIncrementalAuthorizationSupport == other.requestIncrementalAuthorizationSupport &&
-          routing == other.routing; } 
-@override int get hashCode { return Object.hash(captureMethod, requestExtendedAuthorization, requestIncrementalAuthorizationSupport, routing); } 
-@override String toString() { return 'PaymentMethodOptionsParam46(captureMethod: $captureMethod, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, routing: $routing)'; } 
+          routing == other.routing;
+
+@override int get hashCode => Object.hash(captureMethod, requestExtendedAuthorization, requestIncrementalAuthorizationSupport, routing);
+
+@override String toString() => 'PaymentMethodOptionsParam46(captureMethod: $captureMethod, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, routing: $routing)';
+
  }

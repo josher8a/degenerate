@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateSpeechRequestResponseFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateSpeechRequestResponseFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateSpeechRequestResponseFormat($value)';
+
  }
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
 @immutable final class StreamFormat {const StreamFormat._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamFormat($value)';
+
  }
 @immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = StreamFormat.audio, });
 
@@ -127,7 +133,7 @@ CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, St
   speed: speed != null ? speed() : this.speed,
   streamFormat: streamFormat != null ? streamFormat() : this.streamFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSpeechRequest &&
           model == other.model &&
           input == other.input &&
@@ -135,7 +141,10 @@ CreateSpeechRequest copyWith({CreateSpeechRequestModel? model, String? input, St
           voice == other.voice &&
           responseFormat == other.responseFormat &&
           speed == other.speed &&
-          streamFormat == other.streamFormat; } 
-@override int get hashCode { return Object.hash(model, input, instructions, voice, responseFormat, speed, streamFormat); } 
-@override String toString() { return 'CreateSpeechRequest(model: $model, input: $input, instructions: $instructions, voice: $voice, responseFormat: $responseFormat, speed: $speed, streamFormat: $streamFormat)'; } 
+          streamFormat == other.streamFormat;
+
+@override int get hashCode => Object.hash(model, input, instructions, voice, responseFormat, speed, streamFormat);
+
+@override String toString() => 'CreateSpeechRequest(model: $model, input: $input, instructions: $instructions, voice: $voice, responseFormat: $responseFormat, speed: $speed, streamFormat: $streamFormat)';
+
  }

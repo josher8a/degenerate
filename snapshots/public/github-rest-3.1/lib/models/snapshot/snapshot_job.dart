@@ -29,11 +29,14 @@ SnapshotJob copyWith({String? id, String? correlator, String? Function()? htmlUr
   correlator: correlator ?? this.correlator,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SnapshotJob &&
           id == other.id &&
           correlator == other.correlator &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(id, correlator, htmlUrl); } 
-@override String toString() { return 'SnapshotJob(id: $id, correlator: $correlator, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(id, correlator, htmlUrl);
+
+@override String toString() => 'SnapshotJob(id: $id, correlator: $correlator, htmlUrl: $htmlUrl)';
+
  }

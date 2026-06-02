@@ -21,9 +21,12 @@ return errors; }
 TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard copyWith({String? province}) { return TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard(
   province: province ?? this.province,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard &&
-          province == other.province; } 
-@override int get hashCode { return province.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard(province: $province)'; } 
+          province == other.province;
+
+@override int get hashCode => province.hashCode;
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsCaProvinceStandard(province: $province)';
+
  }

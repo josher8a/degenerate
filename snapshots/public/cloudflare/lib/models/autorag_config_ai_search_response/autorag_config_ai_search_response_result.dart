@@ -41,14 +41,17 @@ AutoragConfigAiSearchResponseResult copyWith({List<ResultData>? Function()? data
   response: response ?? this.response,
   searchQuery: searchQuery ?? this.searchQuery,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigAiSearchResponseResult &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           nextPage == other.nextPage &&
           object == other.object &&
           response == other.response &&
-          searchQuery == other.searchQuery; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data ?? const []), hasMore, nextPage, object, response, searchQuery); } 
-@override String toString() { return 'AutoragConfigAiSearchResponseResult(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, response: $response, searchQuery: $searchQuery)'; } 
+          searchQuery == other.searchQuery;
+
+@override int get hashCode => Object.hash(Object.hashAll(data ?? const []), hasMore, nextPage, object, response, searchQuery);
+
+@override String toString() => 'AutoragConfigAiSearchResponseResult(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, response: $response, searchQuery: $searchQuery)';
+
  }

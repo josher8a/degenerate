@@ -22,10 +22,13 @@ SingleSelectOptionsDescription copyWith({String? raw, String? html, }) { return 
   raw: raw ?? this.raw,
   html: html ?? this.html,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SingleSelectOptionsDescription &&
           raw == other.raw &&
-          html == other.html; } 
-@override int get hashCode { return Object.hash(raw, html); } 
-@override String toString() { return 'SingleSelectOptionsDescription(raw: $raw, html: $html)'; } 
+          html == other.html;
+
+@override int get hashCode => Object.hash(raw, html);
+
+@override String toString() => 'SingleSelectOptionsDescription(raw: $raw, html: $html)';
+
  }

@@ -23,10 +23,13 @@ Bandwidth2Ssl copyWith({int? Function()? encrypted, int? Function()? unencrypted
   encrypted: encrypted != null ? encrypted() : this.encrypted,
   unencrypted: unencrypted != null ? unencrypted() : this.unencrypted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Bandwidth2Ssl &&
           encrypted == other.encrypted &&
-          unencrypted == other.unencrypted; } 
-@override int get hashCode { return Object.hash(encrypted, unencrypted); } 
-@override String toString() { return 'Bandwidth2Ssl(encrypted: $encrypted, unencrypted: $unencrypted)'; } 
+          unencrypted == other.unencrypted;
+
+@override int get hashCode => Object.hash(encrypted, unencrypted);
+
+@override String toString() => 'Bandwidth2Ssl(encrypted: $encrypted, unencrypted: $unencrypted)';
+
  }

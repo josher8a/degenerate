@@ -27,10 +27,13 @@ R2DataCatalogCompactionUpdateParams copyWith({R2DataCatalogCatalogMaintenanceSta
   state: state != null ? state() : this.state,
   targetSizeMb: targetSizeMb != null ? targetSizeMb() : this.targetSizeMb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCompactionUpdateParams &&
           state == other.state &&
-          targetSizeMb == other.targetSizeMb; } 
-@override int get hashCode { return Object.hash(state, targetSizeMb); } 
-@override String toString() { return 'R2DataCatalogCompactionUpdateParams(state: $state, targetSizeMb: $targetSizeMb)'; } 
+          targetSizeMb == other.targetSizeMb;
+
+@override int get hashCode => Object.hash(state, targetSizeMb);
+
+@override String toString() => 'R2DataCatalogCompactionUpdateParams(state: $state, targetSizeMb: $targetSizeMb)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WebhookSponsorshipEditedChanges copyWith({PrivacyLevel? Function()? privacyLevel}) { return WebhookSponsorshipEditedChanges(
   privacyLevel: privacyLevel != null ? privacyLevel() : this.privacyLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipEditedChanges &&
-          privacyLevel == other.privacyLevel; } 
-@override int get hashCode { return privacyLevel.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipEditedChanges(privacyLevel: $privacyLevel)'; } 
+          privacyLevel == other.privacyLevel;
+
+@override int get hashCode => privacyLevel.hashCode;
+
+@override String toString() => 'WebhookSponsorshipEditedChanges(privacyLevel: $privacyLevel)';
+
  }

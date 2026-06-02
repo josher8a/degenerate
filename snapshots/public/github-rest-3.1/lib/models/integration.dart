@@ -109,7 +109,7 @@ Integration copyWith({int? id, String? Function()? slug, String? nodeId, String?
   events: events ?? this.events,
   installationsCount: installationsCount != null ? installationsCount() : this.installationsCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Integration &&
           id == other.id &&
           slug == other.slug &&
@@ -124,7 +124,10 @@ Integration copyWith({int? id, String? Function()? slug, String? nodeId, String?
           updatedAt == other.updatedAt &&
           permissions == other.permissions &&
           listEquals(events, other.events) &&
-          installationsCount == other.installationsCount; } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount); } 
-@override String toString() { return 'Integration(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount)'; } 
+          installationsCount == other.installationsCount;
+
+@override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount);
+
+@override String toString() => 'Integration(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount)';
+
  }

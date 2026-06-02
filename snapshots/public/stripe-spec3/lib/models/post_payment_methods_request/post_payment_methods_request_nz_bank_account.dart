@@ -58,14 +58,17 @@ PostPaymentMethodsRequestNzBankAccount copyWith({String? Function()? accountHold
   reference: reference != null ? reference() : this.reference,
   suffix: suffix ?? this.suffix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestNzBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountNumber == other.accountNumber &&
           bankCode == other.bankCode &&
           branchCode == other.branchCode &&
           reference == other.reference &&
-          suffix == other.suffix; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountNumber, bankCode, branchCode, reference, suffix); } 
-@override String toString() { return 'PostPaymentMethodsRequestNzBankAccount(accountHolderName: $accountHolderName, accountNumber: $accountNumber, bankCode: $bankCode, branchCode: $branchCode, reference: $reference, suffix: $suffix)'; } 
+          suffix == other.suffix;
+
+@override int get hashCode => Object.hash(accountHolderName, accountNumber, bankCode, branchCode, reference, suffix);
+
+@override String toString() => 'PostPaymentMethodsRequestNzBankAccount(accountHolderName: $accountHolderName, accountNumber: $accountNumber, bankCode: $bankCode, branchCode: $branchCode, reference: $reference, suffix: $suffix)';
+
  }

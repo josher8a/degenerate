@@ -41,14 +41,17 @@ DnsRecordsDnsRecordSharedFields copyWith({DnsRecordsComment? Function()? comment
   tags: tags != null ? tags() : this.tags,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsRecordSharedFields &&
           comment == other.comment &&
           name == other.name &&
           proxied == other.proxied &&
           settings == other.settings &&
           listEquals(tags, other.tags) &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl); } 
-@override String toString() { return 'DnsRecordsDnsRecordSharedFields(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl);
+
+@override String toString() => 'DnsRecordsDnsRecordSharedFields(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl)';
+
  }

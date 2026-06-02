@@ -33,7 +33,8 @@ final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
 @override String get type => 'secret_key';
 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretKey.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretKey.toJson(), 'type': type};
+
 WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
   format: format,
@@ -42,10 +43,13 @@ WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingK
   name: name,
   usages: usages,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey; } 
-@override int get hashCode { return workersBindingKindSecretKey.hashCode; } 
-@override String toString() { return 'WorkersSecret.secretKey($workersBindingKindSecretKey)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersSecretSecretKey && workersBindingKindSecretKey == other.workersBindingKindSecretKey;
+
+@override int get hashCode => workersBindingKindSecretKey.hashCode;
+
+@override String toString() => 'WorkersSecret.secretKey($workersBindingKindSecretKey)';
+
 @override WorkersBindingName get name => workersBindingKindSecretKey.name;
 
  }
@@ -57,15 +61,19 @@ final WorkersBindingKindSecretText workersBindingKindSecretText;
 
 @override String get type => 'secret_text';
 
-@override Map<String, dynamic> toJson() { return {...workersBindingKindSecretText.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretText.toJson(), 'type': type};
+
 WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { return WorkersSecretSecretText(workersBindingKindSecretText.copyWith(
   name: name,
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText; } 
-@override int get hashCode { return workersBindingKindSecretText.hashCode; } 
-@override String toString() { return 'WorkersSecret.secretText($workersBindingKindSecretText)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersSecretSecretText && workersBindingKindSecretText == other.workersBindingKindSecretText;
+
+@override int get hashCode => workersBindingKindSecretText.hashCode;
+
+@override String toString() => 'WorkersSecret.secretText($workersBindingKindSecretText)';
+
 @override WorkersBindingName get name => workersBindingKindSecretText.name;
 
  }
@@ -77,11 +85,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersSecret$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'WorkersSecret.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersSecret$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'WorkersSecret.unknown($json)';
+
 @override WorkersBindingName get name => WorkersBindingName.fromJson(json['name'] as String);
 
  }

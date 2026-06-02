@@ -53,7 +53,7 @@ MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? descriptio
   weight: weight != null ? weight() : this.weight,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRouteUpdateSingleRequest &&
           description == other.description &&
           nexthop == other.nexthop &&
@@ -61,7 +61,10 @@ MagicRouteUpdateSingleRequest copyWith({MagicDescription? Function()? descriptio
           priority == other.priority &&
           scope == other.scope &&
           weight == other.weight &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(description, nexthop, prefix, priority, scope, weight, id); } 
-@override String toString() { return 'MagicRouteUpdateSingleRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(description, nexthop, prefix, priority, scope, weight, id);
+
+@override String toString() => 'MagicRouteUpdateSingleRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight, id: $id)';
+
  }

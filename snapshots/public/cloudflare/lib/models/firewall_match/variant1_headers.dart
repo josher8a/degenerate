@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallHeaderOp && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallHeaderOp($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallHeaderOp && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallHeaderOp($value)';
+
  }
 /// The value of the response header, which must match exactly.
 extension type const FirewallHeaderValue(String value) {
@@ -67,11 +70,14 @@ Variant1Headers copyWith({FirewallHeaderName? Function()? name, FirewallHeaderOp
   op: op != null ? op() : this.op,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Headers &&
           name == other.name &&
           op == other.op &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, op, value); } 
-@override String toString() { return 'Variant1Headers(name: $name, op: $op, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, op, value);
+
+@override String toString() => 'Variant1Headers(name: $name, op: $op, value: $value)';
+
  }

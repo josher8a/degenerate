@@ -56,7 +56,7 @@ CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? sou
   message: message ?? this.message,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeownersErrorsErrors &&
           line == other.line &&
           column == other.column &&
@@ -64,7 +64,10 @@ CodeownersErrorsErrors copyWith({int? line, int? column, String? Function()? sou
           kind == other.kind &&
           suggestion == other.suggestion &&
           message == other.message &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(line, column, source, kind, suggestion, message, path); } 
-@override String toString() { return 'CodeownersErrorsErrors(line: $line, column: $column, source: $source, kind: $kind, suggestion: $suggestion, message: $message, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(line, column, source, kind, suggestion, message, path);
+
+@override String toString() => 'CodeownersErrorsErrors(line: $line, column: $column, source: $source, kind: $kind, suggestion: $suggestion, message: $message, path: $path)';
+
  }

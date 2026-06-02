@@ -39,13 +39,16 @@ WebhookWorkflowRunCompletedWorkflowRunPullRequests copyWith({PullRequestsBase? b
   number: number ?? this.number,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunCompletedWorkflowRunPullRequests &&
           base == other.base &&
           head == other.head &&
           id == other.id &&
           number == other.number &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(base, head, id, number, url); } 
-@override String toString() { return 'WebhookWorkflowRunCompletedWorkflowRunPullRequests(base: $base, head: $head, id: $id, number: $number, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(base, head, id, number, url);
+
+@override String toString() => 'WebhookWorkflowRunCompletedWorkflowRunPullRequests(base: $base, head: $head, id: $id, number: $number, url: $url)';
+
  }

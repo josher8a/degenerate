@@ -31,11 +31,14 @@ ActionsCacheUsageByRepository copyWith({String? fullName, int? activeCachesSizeI
   activeCachesSizeInBytes: activeCachesSizeInBytes ?? this.activeCachesSizeInBytes,
   activeCachesCount: activeCachesCount ?? this.activeCachesCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCacheUsageByRepository &&
           fullName == other.fullName &&
           activeCachesSizeInBytes == other.activeCachesSizeInBytes &&
-          activeCachesCount == other.activeCachesCount; } 
-@override int get hashCode { return Object.hash(fullName, activeCachesSizeInBytes, activeCachesCount); } 
-@override String toString() { return 'ActionsCacheUsageByRepository(fullName: $fullName, activeCachesSizeInBytes: $activeCachesSizeInBytes, activeCachesCount: $activeCachesCount)'; } 
+          activeCachesCount == other.activeCachesCount;
+
+@override int get hashCode => Object.hash(fullName, activeCachesSizeInBytes, activeCachesCount);
+
+@override String toString() => 'ActionsCacheUsageByRepository(fullName: $fullName, activeCachesSizeInBytes: $activeCachesSizeInBytes, activeCachesCount: $activeCachesCount)';
+
  }

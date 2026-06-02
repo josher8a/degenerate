@@ -24,10 +24,13 @@ Sysctl copyWith({String? name, String? value, }) { return Sysctl(
   name: name ?? this.name,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sysctl &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'Sysctl(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'Sysctl(name: $name, value: $value)';
+
  }

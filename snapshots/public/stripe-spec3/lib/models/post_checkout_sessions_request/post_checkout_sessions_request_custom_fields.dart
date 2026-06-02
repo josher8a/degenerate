@@ -51,7 +51,7 @@ PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestCustomFields &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -59,7 +59,10 @@ PostCheckoutSessionsRequestCustomFields copyWith({Dropdown? Function()? dropdown
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(dropdown, key, label, numeric, optional, text, type);
+
+@override String toString() => 'PostCheckoutSessionsRequestCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';
+
  }

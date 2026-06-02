@@ -21,31 +21,36 @@ final class CatalogSyncsListError$400 extends CatalogSyncsListError {const Catal
 
 final McnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CatalogSyncsListError$401 extends CatalogSyncsListError {const CatalogSyncsListError$401(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CatalogSyncsListError$403 extends CatalogSyncsListError {const CatalogSyncsListError$403(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CatalogSyncsListError$404 extends CatalogSyncsListError {const CatalogSyncsListError$404(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CatalogSyncsListError$500 extends CatalogSyncsListError {const CatalogSyncsListError$500(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CatalogSyncsListError$Unknown extends CatalogSyncsListError {const CatalogSyncsListError$Unknown(this.statusCode, this.rawBody, );
 

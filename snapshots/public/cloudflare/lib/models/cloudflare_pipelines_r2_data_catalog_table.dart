@@ -56,14 +56,17 @@ CloudflarePipelinesR2DataCatalogTable copyWith({Uri? accountId, String? bucket, 
   tableName: tableName ?? this.tableName,
   token: token ?? this.token,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesR2DataCatalogTable &&
           accountId == other.accountId &&
           bucket == other.bucket &&
           namespace == other.namespace &&
           rollingPolicy == other.rollingPolicy &&
           tableName == other.tableName &&
-          token == other.token; } 
-@override int get hashCode { return Object.hash(accountId, bucket, namespace, rollingPolicy, tableName, token); } 
-@override String toString() { return 'CloudflarePipelinesR2DataCatalogTable(accountId: $accountId, bucket: $bucket, namespace: $namespace, rollingPolicy: $rollingPolicy, tableName: $tableName, token: $token)'; } 
+          token == other.token;
+
+@override int get hashCode => Object.hash(accountId, bucket, namespace, rollingPolicy, tableName, token);
+
+@override String toString() => 'CloudflarePipelinesR2DataCatalogTable(accountId: $accountId, bucket: $bucket, namespace: $namespace, rollingPolicy: $rollingPolicy, tableName: $tableName, token: $token)';
+
  }

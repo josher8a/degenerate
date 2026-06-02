@@ -25,11 +25,14 @@ ErrorResponse2 copyWith({List<PayPerCrawlRestError>? Function()? errors, dynamic
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorResponse2 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), result, success); } 
-@override String toString() { return 'ErrorResponse2(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), result, success);
+
+@override String toString() => 'ErrorResponse2(errors: $errors, result: $result, success: $success)';
+
  }

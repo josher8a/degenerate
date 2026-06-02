@@ -57,14 +57,17 @@ FundingInstructionsBankTransferSpeiRecord copyWith({Address? accountHolderAddres
   bankName: bankName ?? this.bankName,
   clabe: clabe ?? this.clabe,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferSpeiRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
           bankAddress == other.bankAddress &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
-          clabe == other.clabe; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, bankAddress, bankCode, bankName, clabe); } 
-@override String toString() { return 'FundingInstructionsBankTransferSpeiRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, bankAddress: $bankAddress, bankCode: $bankCode, bankName: $bankName, clabe: $clabe)'; } 
+          clabe == other.clabe;
+
+@override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, bankAddress, bankCode, bankName, clabe);
+
+@override String toString() => 'FundingInstructionsBankTransferSpeiRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, bankAddress: $bankAddress, bankCode: $bankCode, bankName: $bankName, clabe: $clabe)';
+
  }

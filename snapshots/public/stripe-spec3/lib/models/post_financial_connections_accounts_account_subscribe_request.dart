@@ -22,10 +22,13 @@ PostFinancialConnectionsAccountsAccountSubscribeRequest copyWith({List<String>? 
   expand: expand != null ? expand() : this.expand,
   features: features ?? this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostFinancialConnectionsAccountsAccountSubscribeRequest &&
           listEquals(expand, other.expand) &&
-          listEquals(features, other.features); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(features)); } 
-@override String toString() { return 'PostFinancialConnectionsAccountsAccountSubscribeRequest(expand: $expand, features: $features)'; } 
+          listEquals(features, other.features);
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(features));
+
+@override String toString() => 'PostFinancialConnectionsAccountsAccountSubscribeRequest(expand: $expand, features: $features)';
+
  }

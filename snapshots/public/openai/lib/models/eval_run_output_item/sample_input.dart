@@ -24,10 +24,13 @@ SampleInput copyWith({String? role, String? content, }) { return SampleInput(
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SampleInput &&
           role == other.role &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(role, content); } 
-@override String toString() { return 'SampleInput(role: $role, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(role, content);
+
+@override String toString() => 'SampleInput(role: $role, content: $content)';
+
  }

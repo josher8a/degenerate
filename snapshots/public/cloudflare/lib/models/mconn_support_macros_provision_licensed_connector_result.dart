@@ -27,11 +27,14 @@ MconnSupportMacrosProvisionLicensedConnectorResult copyWith({MconnSupportConnect
   device: device ?? this.device,
   licenseKey: licenseKey ?? this.licenseKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportMacrosProvisionLicensedConnectorResult &&
           connector == other.connector &&
           device == other.device &&
-          licenseKey == other.licenseKey; } 
-@override int get hashCode { return Object.hash(connector, device, licenseKey); } 
-@override String toString() { return 'MconnSupportMacrosProvisionLicensedConnectorResult(connector: $connector, device: $device, licenseKey: $licenseKey)'; } 
+          licenseKey == other.licenseKey;
+
+@override int get hashCode => Object.hash(connector, device, licenseKey);
+
+@override String toString() => 'MconnSupportMacrosProvisionLicensedConnectorResult(connector: $connector, device: $device, licenseKey: $licenseKey)';
+
  }

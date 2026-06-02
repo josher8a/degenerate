@@ -30,12 +30,15 @@ Approximate copyWith({String? Function()? city, String? Function()? country, Str
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Approximate &&
           city == other.city &&
           country == other.country &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(city, country, region, timezone); } 
-@override String toString() { return 'Approximate(city: $city, country: $country, region: $region, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(city, country, region, timezone);
+
+@override String toString() => 'Approximate(city: $city, country: $country, region: $region, timezone: $timezone)';
+
  }

@@ -49,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetEventListGetSearchOp && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetEventListGetSearchOp($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GetEventListGetSearchOp && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GetEventListGetSearchOp($value)';
+
  }
 @immutable final class GetEventListGetSearch {const GetEventListGetSearch({this.field, this.op, this.value, });
 
@@ -81,11 +84,14 @@ GetEventListGetSearch copyWith({String? Function()? field, GetEventListGetSearch
   op: op != null ? op() : this.op,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventListGetSearch &&
           field == other.field &&
           op == other.op &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(field, op, value); } 
-@override String toString() { return 'GetEventListGetSearch(field: $field, op: $op, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(field, op, value);
+
+@override String toString() => 'GetEventListGetSearch(field: $field, op: $op, value: $value)';
+
  }

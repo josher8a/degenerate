@@ -21,10 +21,13 @@ RadarGetRankingDomainDetailsResponseResult copyWith({Details0? details0, RadarGe
   details0: details0 ?? this.details0,
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetRankingDomainDetailsResponseResult &&
           details0 == other.details0 &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(details0, meta); } 
-@override String toString() { return 'RadarGetRankingDomainDetailsResponseResult(details0: $details0, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(details0, meta);
+
+@override String toString() => 'RadarGetRankingDomainDetailsResponseResult(details0: $details0, meta: $meta)';
+
  }

@@ -30,10 +30,13 @@ PaymentPagesCheckoutSessionTaxId copyWith({InvoicesResourceInvoiceTaxIdType? typ
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionTaxId &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionTaxId(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'PaymentPagesCheckoutSessionTaxId(type: $type, value: $value)';
+
  }

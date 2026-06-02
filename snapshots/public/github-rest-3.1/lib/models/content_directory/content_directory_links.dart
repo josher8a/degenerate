@@ -27,11 +27,14 @@ ContentDirectoryLinks copyWith({Uri? Function()? git, Uri? Function()? html, Uri
   html: html != null ? html() : this.html,
   self: self ?? this.self,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentDirectoryLinks &&
           git == other.git &&
           html == other.html &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(git, html, self); } 
-@override String toString() { return 'ContentDirectoryLinks(git: $git, html: $html, self: $self)'; } 
+          self == other.self;
+
+@override int get hashCode => Object.hash(git, html, self);
+
+@override String toString() => 'ContentDirectoryLinks(git: $git, html: $html, self: $self)';
+
  }

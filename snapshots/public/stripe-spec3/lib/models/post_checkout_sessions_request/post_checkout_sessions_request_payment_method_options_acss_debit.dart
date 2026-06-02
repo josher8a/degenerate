@@ -42,13 +42,16 @@ PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit copyWith({CheckoutAcssD
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit &&
           currency == other.currency &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(currency, mandateOptions, setupFutureUsage, targetDate, verificationMethod); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(currency, mandateOptions, setupFutureUsage, targetDate, verificationMethod);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)';
+
  }

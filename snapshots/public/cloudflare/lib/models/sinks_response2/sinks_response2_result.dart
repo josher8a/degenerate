@@ -68,7 +68,7 @@ SinksResponse2Result copyWith({SinksRequestConfig? Function()? config, DateTime?
   schema: schema != null ? schema() : this.schema,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SinksResponse2Result &&
           config == other.config &&
           createdAt == other.createdAt &&
@@ -77,7 +77,10 @@ SinksResponse2Result copyWith({SinksRequestConfig? Function()? config, DateTime?
           modifiedAt == other.modifiedAt &&
           name == other.name &&
           schema == other.schema &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, createdAt, format, id, modifiedAt, name, schema, type); } 
-@override String toString() { return 'SinksResponse2Result(config: $config, createdAt: $createdAt, format: $format, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, createdAt, format, id, modifiedAt, name, schema, type);
+
+@override String toString() => 'SinksResponse2Result(config: $config, createdAt: $createdAt, format: $format, id: $id, modifiedAt: $modifiedAt, name: $name, schema: $schema, type: $type)';
+
  }

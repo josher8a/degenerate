@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputTimeoutOutcomeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputTimeoutOutcomeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallOutputTimeoutOutcomeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputTimeoutOutcomeType($value)';
+
  }
 /// Indicates that the shell call exceeded its configured time limit.
 @immutable final class FunctionShellCallOutputTimeoutOutcome {const FunctionShellCallOutputTimeoutOutcome({this.type = FunctionShellCallOutputTimeoutOutcomeType.timeout});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 FunctionShellCallOutputTimeoutOutcome copyWith({FunctionShellCallOutputTimeoutOutcomeType? type}) { return FunctionShellCallOutputTimeoutOutcome(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputTimeoutOutcome &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputTimeoutOutcome(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputTimeoutOutcome(type: $type)';
+
  }

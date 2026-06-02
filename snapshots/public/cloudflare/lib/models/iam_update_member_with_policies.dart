@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('polic
 IamUpdateMemberWithPolicies copyWith({List<IamCreateMemberPolicy>? policies}) { return IamUpdateMemberWithPolicies(
   policies: policies ?? this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUpdateMemberWithPolicies &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hashAll(policies); } 
-@override String toString() { return 'IamUpdateMemberWithPolicies(policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hashAll(policies);
+
+@override String toString() => 'IamUpdateMemberWithPolicies(policies: $policies)';
+
  }

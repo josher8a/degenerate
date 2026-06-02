@@ -23,9 +23,12 @@ return errors; }
 NetworkData copyWith({String? Function()? acquiringInstitutionId}) { return NetworkData(
   acquiringInstitutionId: acquiringInstitutionId != null ? acquiringInstitutionId() : this.acquiringInstitutionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkData &&
-          acquiringInstitutionId == other.acquiringInstitutionId; } 
-@override int get hashCode { return acquiringInstitutionId.hashCode; } 
-@override String toString() { return 'NetworkData(acquiringInstitutionId: $acquiringInstitutionId)'; } 
+          acquiringInstitutionId == other.acquiringInstitutionId;
+
+@override int get hashCode => acquiringInstitutionId.hashCode;
+
+@override String toString() => 'NetworkData(acquiringInstitutionId: $acquiringInstitutionId)';
+
  }

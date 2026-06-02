@@ -34,10 +34,13 @@ DisputePaymentMethodDetailsKlarna copyWith({String? Function()? chargebackLossRe
   chargebackLossReasonCode: chargebackLossReasonCode != null ? chargebackLossReasonCode() : this.chargebackLossReasonCode,
   reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetailsKlarna &&
           chargebackLossReasonCode == other.chargebackLossReasonCode &&
-          reasonCode == other.reasonCode; } 
-@override int get hashCode { return Object.hash(chargebackLossReasonCode, reasonCode); } 
-@override String toString() { return 'DisputePaymentMethodDetailsKlarna(chargebackLossReasonCode: $chargebackLossReasonCode, reasonCode: $reasonCode)'; } 
+          reasonCode == other.reasonCode;
+
+@override int get hashCode => Object.hash(chargebackLossReasonCode, reasonCode);
+
+@override String toString() => 'DisputePaymentMethodDetailsKlarna(chargebackLossReasonCode: $chargebackLossReasonCode, reasonCode: $reasonCode)';
+
  }

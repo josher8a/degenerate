@@ -25,11 +25,14 @@ Sgd copyWith({List<int>? Function()? fixedAmounts, List<int>? Function()? percen
   percentages: percentages != null ? percentages() : this.percentages,
   smartTipThreshold: smartTipThreshold != null ? smartTipThreshold() : this.smartTipThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sgd &&
           listEquals(fixedAmounts, other.fixedAmounts) &&
           listEquals(percentages, other.percentages) &&
-          smartTipThreshold == other.smartTipThreshold; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fixedAmounts ?? const []), Object.hashAll(percentages ?? const []), smartTipThreshold); } 
-@override String toString() { return 'Sgd(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)'; } 
+          smartTipThreshold == other.smartTipThreshold;
+
+@override int get hashCode => Object.hash(Object.hashAll(fixedAmounts ?? const []), Object.hashAll(percentages ?? const []), smartTipThreshold);
+
+@override String toString() => 'Sgd(fixedAmounts: $fixedAmounts, percentages: $percentages, smartTipThreshold: $smartTipThreshold)';
+
  }

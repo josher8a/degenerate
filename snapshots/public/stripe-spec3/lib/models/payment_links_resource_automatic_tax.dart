@@ -23,10 +23,13 @@ PaymentLinksResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReferenc
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceAutomaticTax &&
           enabled == other.enabled &&
-          liability == other.liability; } 
-@override int get hashCode { return Object.hash(enabled, liability); } 
-@override String toString() { return 'PaymentLinksResourceAutomaticTax(enabled: $enabled, liability: $liability)'; } 
+          liability == other.liability;
+
+@override int get hashCode => Object.hash(enabled, liability);
+
+@override String toString() => 'PaymentLinksResourceAutomaticTax(enabled: $enabled, liability: $liability)';
+
  }

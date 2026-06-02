@@ -25,11 +25,14 @@ Block copyWith({String? Function()? reason, String? Function()? createdAt, Strin
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Block &&
           reason == other.reason &&
           createdAt == other.createdAt &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(reason, createdAt, htmlUrl); } 
-@override String toString() { return 'Block(reason: $reason, createdAt: $createdAt, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(reason, createdAt, htmlUrl);
+
+@override String toString() => 'Block(reason: $reason, createdAt: $createdAt, htmlUrl: $htmlUrl)';
+
  }

@@ -27,10 +27,13 @@ AccessFooterLinks2 copyWith({String? name, String? url, }) { return AccessFooter
   name: name ?? this.name,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessFooterLinks2 &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(name, url); } 
-@override String toString() { return 'AccessFooterLinks2(name: $name, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(name, url);
+
+@override String toString() => 'AccessFooterLinks2(name: $name, url: $url)';
+
  }

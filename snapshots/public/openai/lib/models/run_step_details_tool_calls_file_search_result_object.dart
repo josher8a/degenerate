@@ -42,12 +42,15 @@ RunStepDetailsToolCallsFileSearchResultObject copyWith({String? fileId, String? 
   score: score ?? this.score,
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsFileSearchResultObject &&
           fileId == other.fileId &&
           fileName == other.fileName &&
           score == other.score &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(fileId, fileName, score, Object.hashAll(content ?? const [])); } 
-@override String toString() { return 'RunStepDetailsToolCallsFileSearchResultObject(fileId: $fileId, fileName: $fileName, score: $score, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(fileId, fileName, score, Object.hashAll(content ?? const []));
+
+@override String toString() => 'RunStepDetailsToolCallsFileSearchResultObject(fileId: $fileId, fileName: $fileName, score: $score, content: $content)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Codespaces && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Codespaces($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Codespaces && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Codespaces($value)';
+
  }
 /// The level of permission to grant the access token to manage Dependabot secrets.
 @immutable final class DependabotSecrets {const DependabotSecrets._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependabotSecrets && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependabotSecrets($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotSecrets && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependabotSecrets($value)';
+
  }
 /// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
 @immutable final class RepositoryCustomProperties {const RepositoryCustomProperties._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryCustomProperties && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryCustomProperties($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryCustomProperties && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryCustomProperties($value)';
+
  }
 /// The level of permission to grant the access token to update GitHub Actions workflow files.
 @immutable final class AppPermissionsWorkflows {const AppPermissionsWorkflows._(this.value);
@@ -92,10 +101,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AppPermissionsWorkflows && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AppPermissionsWorkflows($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppPermissionsWorkflows && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AppPermissionsWorkflows($value)';
+
  }
 /// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
 @immutable final class CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations._(this.value);
@@ -117,10 +129,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertiesForOrganizations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertiesForOrganizations($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomPropertiesForOrganizations && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomPropertiesForOrganizations($value)';
+
  }
 /// The level of permission to grant the access token for custom repository roles management.
 @immutable final class OrganizationCustomRoles {const OrganizationCustomRoles._(this.value);
@@ -142,10 +157,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationCustomRoles && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationCustomRoles($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomRoles && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationCustomRoles($value)';
+
  }
 /// The level of permission to grant the access token for custom organization roles management.
 @immutable final class OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles._(this.value);
@@ -167,10 +185,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationCustomOrgRoles && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationCustomOrgRoles($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomOrgRoles && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationCustomOrgRoles($value)';
+
  }
 /// The level of permission to grant the access token for repository custom properties management at the organization level.
 @immutable final class OrganizationCustomProperties {const OrganizationCustomProperties._(this.value);
@@ -195,10 +216,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationCustomProperties && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationCustomProperties($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomProperties && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationCustomProperties($value)';
+
  }
 /// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 @immutable final class OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement._(this.value);
@@ -217,10 +241,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationCopilotSeatManagement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationCopilotSeatManagement($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCopilotSeatManagement && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationCopilotSeatManagement($value)';
+
  }
 /// The level of permission to grant the access token to view and manage announcement banners for an organization.
 @immutable final class OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners._(this.value);
@@ -242,10 +269,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationAnnouncementBanners && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationAnnouncementBanners($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationAnnouncementBanners && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationAnnouncementBanners($value)';
+
  }
 /// The level of permission to grant the access token to view events triggered by an activity in an organization.
 @immutable final class OrganizationEvents {const OrganizationEvents._(this.value);
@@ -264,10 +294,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationEvents($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationEvents && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationEvents($value)';
+
  }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
 @immutable final class OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens._(this.value);
@@ -289,10 +322,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationPersonalAccessTokens && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationPersonalAccessTokens($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationPersonalAccessTokens && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationPersonalAccessTokens($value)';
+
  }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
 @immutable final class OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests._(this.value);
@@ -314,10 +350,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrganizationPersonalAccessTokenRequests && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrganizationPersonalAccessTokenRequests($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationPersonalAccessTokenRequests && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrganizationPersonalAccessTokenRequests($value)';
+
  }
 /// The level of permission to grant the access token for viewing an organization's plan.
 @immutable final class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan._(this.value);
@@ -336,10 +375,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AppPermissionsOrganizationPlan && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AppPermissionsOrganizationPlan($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppPermissionsOrganizationPlan && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AppPermissionsOrganizationPlan($value)';
+
  }
 /// The level of permission to grant the access token to manage the email addresses belonging to a user.
 @immutable final class EmailAddresses {const EmailAddresses._(this.value);
@@ -361,10 +403,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailAddresses && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailAddresses($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailAddresses && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EmailAddresses($value)';
+
  }
 /// The level of permission to grant the access token to manage the followers belonging to a user.
 @immutable final class Followers {const Followers._(this.value);
@@ -386,10 +431,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Followers && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Followers($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Followers && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Followers($value)';
+
  }
 /// The level of permission to grant the access token to manage git SSH keys.
 @immutable final class GitSshKeys {const GitSshKeys._(this.value);
@@ -411,10 +459,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GitSshKeys && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GitSshKeys($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GitSshKeys && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GitSshKeys($value)';
+
  }
 /// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
 @immutable final class GpgKeys {const GpgKeys._(this.value);
@@ -436,10 +487,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GpgKeys && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GpgKeys($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GpgKeys && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GpgKeys($value)';
+
  }
 /// The level of permission to grant the access token to view and manage interaction limits on a repository.
 @immutable final class InteractionLimits {const InteractionLimits._(this.value);
@@ -461,10 +515,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InteractionLimits && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InteractionLimits($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InteractionLimits && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InteractionLimits($value)';
+
  }
 /// The level of permission to grant the access token to manage the profile settings belonging to a user.
 @immutable final class Profile {const Profile._(this.value);
@@ -483,10 +540,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Profile && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Profile($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Profile && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Profile($value)';
+
  }
 /// The level of permission to grant the access token to list and manage repositories a user is starring.
 @immutable final class Starring {const Starring._(this.value);
@@ -508,10 +568,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Starring && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Starring($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Starring && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Starring($value)';
+
  }
 /// The level of permission to grant the access token for organization custom properties management at the enterprise level.
 @immutable final class EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations._(this.value);
@@ -536,10 +599,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnterpriseCustomPropertiesForOrganizations && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnterpriseCustomPropertiesForOrganizations($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnterpriseCustomPropertiesForOrganizations && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EnterpriseCustomPropertiesForOrganizations($value)';
+
  }
 /// The permissions granted to the user access token.
 /// 
@@ -880,7 +946,7 @@ AppPermissions copyWith({Actions? Function()? actions, Administration? Function(
   starring: starring != null ? starring() : this.starring,
   enterpriseCustomPropertiesForOrganizations: enterpriseCustomPropertiesForOrganizations != null ? enterpriseCustomPropertiesForOrganizations() : this.enterpriseCustomPropertiesForOrganizations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppPermissions &&
           actions == other.actions &&
           administration == other.administration &&
@@ -934,7 +1000,10 @@ AppPermissions copyWith({Actions? Function()? actions, Administration? Function(
           interactionLimits == other.interactionLimits &&
           profile == other.profile &&
           starring == other.starring &&
-          enterpriseCustomPropertiesForOrganizations == other.enterpriseCustomPropertiesForOrganizations; } 
-@override int get hashCode { return Object.hashAll([actions, administration, artifactMetadata, attestations, checks, codespaces, contents, dependabotSecrets, deployments, discussions, environments, issues, mergeQueues, metadata, packages, pages, pullRequests, repositoryCustomProperties, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, singleFile, statuses, vulnerabilityAlerts, workflows, customPropertiesForOrganizations, members, organizationAdministration, organizationCustomRoles, organizationCustomOrgRoles, organizationCustomProperties, organizationCopilotSeatManagement, organizationAnnouncementBanners, organizationEvents, organizationHooks, organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests, organizationPlan, organizationProjects, organizationPackages, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, emailAddresses, followers, gitSshKeys, gpgKeys, interactionLimits, profile, starring, enterpriseCustomPropertiesForOrganizations]); } 
-@override String toString() { return 'AppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, codespaces: $codespaces, contents: $contents, dependabotSecrets: $dependabotSecrets, deployments: $deployments, discussions: $discussions, environments: $environments, issues: $issues, mergeQueues: $mergeQueues, metadata: $metadata, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryCustomProperties: $repositoryCustomProperties, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows, customPropertiesForOrganizations: $customPropertiesForOrganizations, members: $members, organizationAdministration: $organizationAdministration, organizationCustomRoles: $organizationCustomRoles, organizationCustomOrgRoles: $organizationCustomOrgRoles, organizationCustomProperties: $organizationCustomProperties, organizationCopilotSeatManagement: $organizationCopilotSeatManagement, organizationAnnouncementBanners: $organizationAnnouncementBanners, organizationEvents: $organizationEvents, organizationHooks: $organizationHooks, organizationPersonalAccessTokens: $organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests: $organizationPersonalAccessTokenRequests, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationPackages: $organizationPackages, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, emailAddresses: $emailAddresses, followers: $followers, gitSshKeys: $gitSshKeys, gpgKeys: $gpgKeys, interactionLimits: $interactionLimits, profile: $profile, starring: $starring, enterpriseCustomPropertiesForOrganizations: $enterpriseCustomPropertiesForOrganizations)'; } 
+          enterpriseCustomPropertiesForOrganizations == other.enterpriseCustomPropertiesForOrganizations;
+
+@override int get hashCode => Object.hashAll([actions, administration, artifactMetadata, attestations, checks, codespaces, contents, dependabotSecrets, deployments, discussions, environments, issues, mergeQueues, metadata, packages, pages, pullRequests, repositoryCustomProperties, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, singleFile, statuses, vulnerabilityAlerts, workflows, customPropertiesForOrganizations, members, organizationAdministration, organizationCustomRoles, organizationCustomOrgRoles, organizationCustomProperties, organizationCopilotSeatManagement, organizationAnnouncementBanners, organizationEvents, organizationHooks, organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests, organizationPlan, organizationProjects, organizationPackages, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, emailAddresses, followers, gitSshKeys, gpgKeys, interactionLimits, profile, starring, enterpriseCustomPropertiesForOrganizations]);
+
+@override String toString() => 'AppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, codespaces: $codespaces, contents: $contents, dependabotSecrets: $dependabotSecrets, deployments: $deployments, discussions: $discussions, environments: $environments, issues: $issues, mergeQueues: $mergeQueues, metadata: $metadata, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryCustomProperties: $repositoryCustomProperties, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows, customPropertiesForOrganizations: $customPropertiesForOrganizations, members: $members, organizationAdministration: $organizationAdministration, organizationCustomRoles: $organizationCustomRoles, organizationCustomOrgRoles: $organizationCustomOrgRoles, organizationCustomProperties: $organizationCustomProperties, organizationCopilotSeatManagement: $organizationCopilotSeatManagement, organizationAnnouncementBanners: $organizationAnnouncementBanners, organizationEvents: $organizationEvents, organizationHooks: $organizationHooks, organizationPersonalAccessTokens: $organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests: $organizationPersonalAccessTokenRequests, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationPackages: $organizationPackages, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, emailAddresses: $emailAddresses, followers: $followers, gitSshKeys: $gitSshKeys, gpgKeys: $gpgKeys, interactionLimits: $interactionLimits, profile: $profile, starring: $starring, enterpriseCustomPropertiesForOrganizations: $enterpriseCustomPropertiesForOrganizations)';
+
  }

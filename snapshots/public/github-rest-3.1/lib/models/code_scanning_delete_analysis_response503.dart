@@ -25,11 +25,14 @@ CodeScanningDeleteAnalysisResponse503 copyWith({String? Function()? code, String
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDeleteAnalysisResponse503 &&
           code == other.code &&
           message == other.message &&
-          documentationUrl == other.documentationUrl; } 
-@override int get hashCode { return Object.hash(code, message, documentationUrl); } 
-@override String toString() { return 'CodeScanningDeleteAnalysisResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)'; } 
+          documentationUrl == other.documentationUrl;
+
+@override int get hashCode => Object.hash(code, message, documentationUrl);
+
+@override String toString() => 'CodeScanningDeleteAnalysisResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
+
  }

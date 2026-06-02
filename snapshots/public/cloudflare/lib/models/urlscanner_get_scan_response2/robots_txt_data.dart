@@ -26,11 +26,14 @@ RobotsTxtData copyWith({String? Function()? hash, DataRules? rules, List<String>
   rules: rules ?? this.rules,
   sitemaps: sitemaps ?? this.sitemaps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RobotsTxtData &&
           hash == other.hash &&
           rules == other.rules &&
-          listEquals(sitemaps, other.sitemaps); } 
-@override int get hashCode { return Object.hash(hash, rules, Object.hashAll(sitemaps)); } 
-@override String toString() { return 'RobotsTxtData(hash: $hash, rules: $rules, sitemaps: $sitemaps)'; } 
+          listEquals(sitemaps, other.sitemaps);
+
+@override int get hashCode => Object.hash(hash, rules, Object.hashAll(sitemaps));
+
+@override String toString() => 'RobotsTxtData(hash: $hash, rules: $rules, sitemaps: $sitemaps)';
+
  }

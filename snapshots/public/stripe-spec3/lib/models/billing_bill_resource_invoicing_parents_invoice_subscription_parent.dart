@@ -30,11 +30,14 @@ BillingBillResourceInvoicingParentsInvoiceSubscriptionParent copyWith({Map<Strin
   subscription: subscription ?? this.subscription,
   subscriptionProrationDate: subscriptionProrationDate != null ? subscriptionProrationDate() : this.subscriptionProrationDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingParentsInvoiceSubscriptionParent &&
           metadata == other.metadata &&
           subscription == other.subscription &&
-          subscriptionProrationDate == other.subscriptionProrationDate; } 
-@override int get hashCode { return Object.hash(metadata, subscription, subscriptionProrationDate); } 
-@override String toString() { return 'BillingBillResourceInvoicingParentsInvoiceSubscriptionParent(metadata: $metadata, subscription: $subscription, subscriptionProrationDate: $subscriptionProrationDate)'; } 
+          subscriptionProrationDate == other.subscriptionProrationDate;
+
+@override int get hashCode => Object.hash(metadata, subscription, subscriptionProrationDate);
+
+@override String toString() => 'BillingBillResourceInvoicingParentsInvoiceSubscriptionParent(metadata: $metadata, subscription: $subscription, subscriptionProrationDate: $subscriptionProrationDate)';
+
  }

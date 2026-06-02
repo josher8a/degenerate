@@ -20,10 +20,13 @@ Recovery copyWith({bool? Function()? allowPromotionCodes, bool? enabled, }) { re
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Recovery &&
           allowPromotionCodes == other.allowPromotionCodes &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowPromotionCodes, enabled); } 
-@override String toString() { return 'Recovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(allowPromotionCodes, enabled);
+
+@override String toString() => 'Recovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled)';
+
  }

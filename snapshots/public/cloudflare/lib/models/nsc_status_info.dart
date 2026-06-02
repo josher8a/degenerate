@@ -32,12 +32,16 @@ final Pending pending;
 
 @override String get state => 'Pending';
 
-@override Map<String, dynamic> toJson() { return {...pending.toJson(), 'state': state}; } 
+@override Map<String, dynamic> toJson() => {...pending.toJson(), 'state': state};
+
 NscStatusInfoPending copyWith({Pending? pending}) { return NscStatusInfoPending(pending ?? this.pending); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoPending && pending == other.pending; } 
-@override int get hashCode { return pending.hashCode; } 
-@override String toString() { return 'NscStatusInfo.pending($pending)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscStatusInfoPending && pending == other.pending;
+
+@override int get hashCode => pending.hashCode;
+
+@override String toString() => 'NscStatusInfo.pending($pending)';
+
  }
 @immutable final class NscStatusInfoDown extends NscStatusInfo {const NscStatusInfoDown(this.down);
 
@@ -47,14 +51,18 @@ final Down down;
 
 @override String get state => 'Down';
 
-@override Map<String, dynamic> toJson() { return {...down.toJson(), 'state': state}; } 
+@override Map<String, dynamic> toJson() => {...down.toJson(), 'state': state};
+
 NscStatusInfoDown copyWith({String? Function()? reason}) { return NscStatusInfoDown(down.copyWith(
   reason: reason,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoDown && down == other.down; } 
-@override int get hashCode { return down.hashCode; } 
-@override String toString() { return 'NscStatusInfo.down($down)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscStatusInfoDown && down == other.down;
+
+@override int get hashCode => down.hashCode;
+
+@override String toString() => 'NscStatusInfo.down($down)';
+
  }
 @immutable final class NscStatusInfoUnhealthy extends NscStatusInfo {const NscStatusInfoUnhealthy(this.unhealthy);
 
@@ -64,14 +72,18 @@ final Unhealthy unhealthy;
 
 @override String get state => 'Unhealthy';
 
-@override Map<String, dynamic> toJson() { return {...unhealthy.toJson(), 'state': state}; } 
+@override Map<String, dynamic> toJson() => {...unhealthy.toJson(), 'state': state};
+
 NscStatusInfoUnhealthy copyWith({String? Function()? reason}) { return NscStatusInfoUnhealthy(unhealthy.copyWith(
   reason: reason,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoUnhealthy && unhealthy == other.unhealthy; } 
-@override int get hashCode { return unhealthy.hashCode; } 
-@override String toString() { return 'NscStatusInfo.unhealthy($unhealthy)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscStatusInfoUnhealthy && unhealthy == other.unhealthy;
+
+@override int get hashCode => unhealthy.hashCode;
+
+@override String toString() => 'NscStatusInfo.unhealthy($unhealthy)';
+
  }
 @immutable final class NscStatusInfoHealthy extends NscStatusInfo {const NscStatusInfoHealthy(this.healthy);
 
@@ -81,12 +93,16 @@ final Healthy healthy;
 
 @override String get state => 'Healthy';
 
-@override Map<String, dynamic> toJson() { return {...healthy.toJson(), 'state': state}; } 
+@override Map<String, dynamic> toJson() => {...healthy.toJson(), 'state': state};
+
 NscStatusInfoHealthy copyWith({Healthy? healthy}) { return NscStatusInfoHealthy(healthy ?? this.healthy); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfoHealthy && healthy == other.healthy; } 
-@override int get hashCode { return healthy.hashCode; } 
-@override String toString() { return 'NscStatusInfo.healthy($healthy)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscStatusInfoHealthy && healthy == other.healthy;
+
+@override int get hashCode => healthy.hashCode;
+
+@override String toString() => 'NscStatusInfo.healthy($healthy)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -96,9 +112,13 @@ final Map<String, dynamic> json;
 
 @override String get state => json['state'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscStatusInfo$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'NscStatusInfo.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscStatusInfo$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'NscStatusInfo.unknown($json)';
+
  }

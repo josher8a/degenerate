@@ -33,11 +33,14 @@ PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Fu
   directive: directive != null ? directive() : this.directive,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostApplicationFeesIdRefundRequest &&
           amount == other.amount &&
           directive == other.directive &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(amount, directive, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostApplicationFeesIdRefundRequest(amount: $amount, directive: $directive, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(amount, directive, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostApplicationFeesIdRefundRequest(amount: $amount, directive: $directive, expand: $expand)';
+
  }

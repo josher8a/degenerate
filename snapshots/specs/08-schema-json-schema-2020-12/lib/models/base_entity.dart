@@ -20,10 +20,13 @@ BaseEntity copyWith({String? id, DateTime? Function()? createdAt, }) { return Ba
   id: id ?? this.id,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BaseEntity &&
           id == other.id &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, createdAt); } 
-@override String toString() { return 'BaseEntity(id: $id, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, createdAt);
+
+@override String toString() => 'BaseEntity(id: $id, createdAt: $createdAt)';
+
  }

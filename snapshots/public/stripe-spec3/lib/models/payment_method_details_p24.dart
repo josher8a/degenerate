@@ -42,11 +42,14 @@ PaymentMethodDetailsP24 copyWith({PaymentMethodDetailsP24Bank? Function()? bank,
   reference: reference != null ? reference() : this.reference,
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsP24 &&
           bank == other.bank &&
           reference == other.reference &&
-          verifiedName == other.verifiedName; } 
-@override int get hashCode { return Object.hash(bank, reference, verifiedName); } 
-@override String toString() { return 'PaymentMethodDetailsP24(bank: $bank, reference: $reference, verifiedName: $verifiedName)'; } 
+          verifiedName == other.verifiedName;
+
+@override int get hashCode => Object.hash(bank, reference, verifiedName);
+
+@override String toString() => 'PaymentMethodDetailsP24(bank: $bank, reference: $reference, verifiedName: $verifiedName)';
+
  }

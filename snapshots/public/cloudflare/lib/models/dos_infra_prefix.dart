@@ -51,14 +51,17 @@ DosInfraPrefix copyWith({String? comment, DateTime? createdOn, bool? enabled, St
   modifiedOn: modifiedOn ?? this.modifiedOn,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosInfraPrefix &&
           comment == other.comment &&
           createdOn == other.createdOn &&
           enabled == other.enabled &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(comment, createdOn, enabled, id, modifiedOn, prefix); } 
-@override String toString() { return 'DosInfraPrefix(comment: $comment, createdOn: $createdOn, enabled: $enabled, id: $id, modifiedOn: $modifiedOn, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(comment, createdOn, enabled, id, modifiedOn, prefix);
+
+@override String toString() => 'DosInfraPrefix(comment: $comment, createdOn: $createdOn, enabled: $enabled, id: $id, modifiedOn: $modifiedOn, prefix: $prefix)';
+
  }

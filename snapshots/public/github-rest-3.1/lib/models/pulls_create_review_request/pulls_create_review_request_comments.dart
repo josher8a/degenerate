@@ -49,7 +49,7 @@ PullsCreateReviewRequestComments copyWith({String? path, int? Function()? positi
   startLine: startLine != null ? startLine() : this.startLine,
   startSide: startSide != null ? startSide() : this.startSide,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsCreateReviewRequestComments &&
           path == other.path &&
           position == other.position &&
@@ -57,7 +57,10 @@ PullsCreateReviewRequestComments copyWith({String? path, int? Function()? positi
           line == other.line &&
           side == other.side &&
           startLine == other.startLine &&
-          startSide == other.startSide; } 
-@override int get hashCode { return Object.hash(path, position, body, line, side, startLine, startSide); } 
-@override String toString() { return 'PullsCreateReviewRequestComments(path: $path, position: $position, body: $body, line: $line, side: $side, startLine: $startLine, startSide: $startSide)'; } 
+          startSide == other.startSide;
+
+@override int get hashCode => Object.hash(path, position, body, line, side, startLine, startSide);
+
+@override String toString() => 'PullsCreateReviewRequestComments(path: $path, position: $position, body: $body, line: $line, side: $side, startLine: $startLine, startSide: $startSide)';
+
  }

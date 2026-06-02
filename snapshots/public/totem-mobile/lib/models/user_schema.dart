@@ -122,39 +122,35 @@ final class UserSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is UserSchema &&
-            profileAvatarType == other.profileAvatarType &&
-            circleCount == other.circleCount &&
-            name == other.name &&
-            slug == other.slug &&
-            isStaff == other.isStaff &&
-            apiKey == other.apiKey &&
-            profileAvatarSeed == other.profileAvatarSeed &&
-            profileImage == other.profileImage &&
-            email == other.email &&
-            dateCreated == other.dateCreated;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserSchema &&
+          profileAvatarType == other.profileAvatarType &&
+          circleCount == other.circleCount &&
+          name == other.name &&
+          slug == other.slug &&
+          isStaff == other.isStaff &&
+          apiKey == other.apiKey &&
+          profileAvatarSeed == other.profileAvatarSeed &&
+          profileImage == other.profileImage &&
+          email == other.email &&
+          dateCreated == other.dateCreated;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      profileAvatarType,
-      circleCount,
-      name,
-      slug,
-      isStaff,
-      apiKey,
-      profileAvatarSeed,
-      profileImage,
-      email,
-      dateCreated,
-    );
-  }
+  int get hashCode => Object.hash(
+    profileAvatarType,
+    circleCount,
+    name,
+    slug,
+    isStaff,
+    apiKey,
+    profileAvatarSeed,
+    profileImage,
+    email,
+    dateCreated,
+  );
 
   @override
-  String toString() {
-    return 'UserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, apiKey: $apiKey, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, email: $email, dateCreated: $dateCreated)';
-  }
+  String toString() =>
+      'UserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, apiKey: $apiKey, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, email: $email, dateCreated: $dateCreated)';
 }

@@ -19,9 +19,12 @@ return errors; }
 PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom copyWith({String? refundReference}) { return PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom(
   refundReference: refundReference ?? this.refundReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom &&
-          refundReference == other.refundReference; } 
-@override int get hashCode { return refundReference.hashCode; } 
-@override String toString() { return 'PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom(refundReference: $refundReference)'; } 
+          refundReference == other.refundReference;
+
+@override int get hashCode => refundReference.hashCode;
+
+@override String toString() => 'PostPaymentRecordsIdReportRefundRequestProcessorDetailsCustom(refundReference: $refundReference)';
+
  }

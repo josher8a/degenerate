@@ -21,10 +21,13 @@ PagedSessionListSchema copyWith({List<SessionListSchema>? items, int? count, }) 
   items: items ?? this.items,
   count: count ?? this.count,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagedSessionListSchema &&
           listEquals(items, other.items) &&
-          count == other.count; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items), count); } 
-@override String toString() { return 'PagedSessionListSchema(items: $items, count: $count)'; } 
+          count == other.count;
+
+@override int get hashCode => Object.hash(Object.hashAll(items), count);
+
+@override String toString() => 'PagedSessionListSchema(items: $items, count: $count)';
+
  }

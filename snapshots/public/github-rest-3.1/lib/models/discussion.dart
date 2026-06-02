@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscussionState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscussionState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DiscussionState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DiscussionState($value)';
+
  }
 /// The reason for the current state
 @immutable final class DiscussionStateReason {const DiscussionStateReason._(this.value);
@@ -65,10 +68,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiscussionStateReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiscussionStateReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DiscussionStateReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DiscussionStateReason($value)';
+
  }
 /// A Discussion in a repository.
 @immutable final class Discussion {const Discussion({required this.activeLockReason, required this.answerChosenAt, required this.answerChosenBy, required this.answerHtmlUrl, required this.body, required this.category, required this.comments, required this.createdAt, required this.htmlUrl, required this.id, required this.locked, required this.nodeId, required this.number, required this.repositoryUrl, required this.state, required this.stateReason, required this.title, required this.updatedAt, required this.user, this.authorAssociation, this.reactions, this.timelineUrl, this.labels, });
@@ -219,7 +225,7 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
   user: user != null ? user() : this.user,
   labels: labels != null ? labels() : this.labels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Discussion &&
           activeLockReason == other.activeLockReason &&
           answerChosenAt == other.answerChosenAt &&
@@ -243,7 +249,10 @@ Discussion copyWith({String? Function()? activeLockReason, String? Function()? a
           title == other.title &&
           updatedAt == other.updatedAt &&
           user == other.user &&
-          listEquals(labels, other.labels); } 
-@override int get hashCode { return Object.hashAll([activeLockReason, answerChosenAt, answerChosenBy, answerHtmlUrl, authorAssociation, body, category, comments, createdAt, htmlUrl, id, locked, nodeId, number, reactions, repositoryUrl, state, stateReason, timelineUrl, title, updatedAt, user, Object.hashAll(labels ?? const [])]); } 
-@override String toString() { return 'Discussion(activeLockReason: $activeLockReason, answerChosenAt: $answerChosenAt, answerChosenBy: $answerChosenBy, answerHtmlUrl: $answerHtmlUrl, authorAssociation: $authorAssociation, body: $body, category: $category, comments: $comments, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, locked: $locked, nodeId: $nodeId, number: $number, reactions: $reactions, repositoryUrl: $repositoryUrl, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, user: $user, labels: $labels)'; } 
+          listEquals(labels, other.labels);
+
+@override int get hashCode => Object.hashAll([activeLockReason, answerChosenAt, answerChosenBy, answerHtmlUrl, authorAssociation, body, category, comments, createdAt, htmlUrl, id, locked, nodeId, number, reactions, repositoryUrl, state, stateReason, timelineUrl, title, updatedAt, user, Object.hashAll(labels ?? const [])]);
+
+@override String toString() => 'Discussion(activeLockReason: $activeLockReason, answerChosenAt: $answerChosenAt, answerChosenBy: $answerChosenBy, answerHtmlUrl: $answerHtmlUrl, authorAssociation: $authorAssociation, body: $body, category: $category, comments: $comments, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, locked: $locked, nodeId: $nodeId, number: $number, reactions: $reactions, repositoryUrl: $repositoryUrl, state: $state, stateReason: $stateReason, timelineUrl: $timelineUrl, title: $title, updatedAt: $updatedAt, user: $user, labels: $labels)';
+
  }

@@ -21,10 +21,13 @@ WorkersAiListPublicFinetunesResponse copyWith({List<WorkersAiCreateFinetuneRespo
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiListPublicFinetunesResponse &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(result), success); } 
-@override String toString() { return 'WorkersAiListPublicFinetunesResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(result), success);
+
+@override String toString() => 'WorkersAiListPublicFinetunesResponse(result: $result, success: $success)';
+
  }

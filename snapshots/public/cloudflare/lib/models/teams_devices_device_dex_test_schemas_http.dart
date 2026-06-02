@@ -90,7 +90,7 @@ TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasD
   targeted: targeted != null ? targeted() : this.targeted,
   testId: testId != null ? testId() : this.testId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceDexTestSchemasHttp &&
           data == other.data &&
           description == other.description &&
@@ -99,7 +99,10 @@ TeamsDevicesDeviceDexTestSchemasHttp copyWith({TeamsDevicesDeviceDexTestSchemasD
           name == other.name &&
           listEquals(targetPolicies, other.targetPolicies) &&
           targeted == other.targeted &&
-          testId == other.testId; } 
-@override int get hashCode { return Object.hash(data, description, enabled, interval, name, Object.hashAll(targetPolicies ?? const []), targeted, testId); } 
-@override String toString() { return 'TeamsDevicesDeviceDexTestSchemasHttp(data: $data, description: $description, enabled: $enabled, interval: $interval, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, testId: $testId)'; } 
+          testId == other.testId;
+
+@override int get hashCode => Object.hash(data, description, enabled, interval, name, Object.hashAll(targetPolicies ?? const []), targeted, testId);
+
+@override String toString() => 'TeamsDevicesDeviceDexTestSchemasHttp(data: $data, description: $description, enabled: $enabled, interval: $interval, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, testId: $testId)';
+
  }

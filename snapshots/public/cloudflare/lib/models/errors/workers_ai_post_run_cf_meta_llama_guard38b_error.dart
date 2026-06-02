@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMetaLlamaGuard38bError$400 extends WorkersAiPostRu
 
 final WorkersAiPostRunCfMetaLlamaGuard38bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMetaLlamaGuard38bError$Unknown extends WorkersAiPostRunCfMetaLlamaGuard38bError {const WorkersAiPostRunCfMetaLlamaGuard38bError$Unknown(this.statusCode, this.rawBody, );
 

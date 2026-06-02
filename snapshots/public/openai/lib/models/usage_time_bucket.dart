@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageTimeBucketObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageTimeBucketObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageTimeBucketObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageTimeBucketObject($value)';
+
  }
 @immutable final class UsageTimeBucket {const UsageTimeBucket({required this.object, required this.startTime, required this.endTime, required this.result, });
 
@@ -54,12 +57,15 @@ UsageTimeBucket copyWith({UsageTimeBucketObject? object, int? startTime, int? en
   endTime: endTime ?? this.endTime,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageTimeBucket &&
           object == other.object &&
           startTime == other.startTime &&
           endTime == other.endTime &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(object, startTime, endTime, Object.hashAll(result)); } 
-@override String toString() { return 'UsageTimeBucket(object: $object, startTime: $startTime, endTime: $endTime, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(object, startTime, endTime, Object.hashAll(result));
+
+@override String toString() => 'UsageTimeBucket(object: $object, startTime: $startTime, endTime: $endTime, result: $result)';
+
  }

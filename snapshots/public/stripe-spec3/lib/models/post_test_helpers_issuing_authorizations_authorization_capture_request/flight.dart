@@ -46,13 +46,16 @@ Flight copyWith({int? Function()? departureAt, String? Function()? passengerName
   segments: segments != null ? segments() : this.segments,
   travelAgency: travelAgency != null ? travelAgency() : this.travelAgency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Flight &&
           departureAt == other.departureAt &&
           passengerName == other.passengerName &&
           refundable == other.refundable &&
           listEquals(segments, other.segments) &&
-          travelAgency == other.travelAgency; } 
-@override int get hashCode { return Object.hash(departureAt, passengerName, refundable, Object.hashAll(segments ?? const []), travelAgency); } 
-@override String toString() { return 'Flight(departureAt: $departureAt, passengerName: $passengerName, refundable: $refundable, segments: $segments, travelAgency: $travelAgency)'; } 
+          travelAgency == other.travelAgency;
+
+@override int get hashCode => Object.hash(departureAt, passengerName, refundable, Object.hashAll(segments ?? const []), travelAgency);
+
+@override String toString() => 'Flight(departureAt: $departureAt, passengerName: $passengerName, refundable: $refundable, segments: $segments, travelAgency: $travelAgency)';
+
  }

@@ -22,10 +22,13 @@ GitignoreTemplate copyWith({String? name, String? source, }) { return GitignoreT
   name: name ?? this.name,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitignoreTemplate &&
           name == other.name &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, source); } 
-@override String toString() { return 'GitignoreTemplate(name: $name, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(name, source);
+
+@override String toString() => 'GitignoreTemplate(name: $name, source: $source)';
+
  }

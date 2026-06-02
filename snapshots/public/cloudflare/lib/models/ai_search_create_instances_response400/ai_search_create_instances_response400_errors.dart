@@ -29,11 +29,14 @@ AiSearchCreateInstancesResponse400Errors copyWith({double? code, String? message
   message: message ?? this.message,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchCreateInstancesResponse400Errors &&
           code == other.code &&
           message == other.message &&
-          listEquals(path, other.path); } 
-@override int get hashCode { return Object.hash(code, message, Object.hashAll(path)); } 
-@override String toString() { return 'AiSearchCreateInstancesResponse400Errors(code: $code, message: $message, path: $path)'; } 
+          listEquals(path, other.path);
+
+@override int get hashCode => Object.hash(code, message, Object.hashAll(path));
+
+@override String toString() => 'AiSearchCreateInstancesResponse400Errors(code: $code, message: $message, path: $path)';
+
  }

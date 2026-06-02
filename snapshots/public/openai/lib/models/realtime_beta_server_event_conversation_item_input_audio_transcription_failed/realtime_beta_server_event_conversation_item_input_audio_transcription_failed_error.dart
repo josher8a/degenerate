@@ -35,12 +35,15 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError copyWi
   message: message != null ? message() : this.message,
   param: param != null ? param() : this.param,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError &&
           type == other.type &&
           code == other.code &&
           message == other.message &&
-          param == other.param; } 
-@override int get hashCode { return Object.hash(type, code, message, param); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(type: $type, code: $code, message: $message, param: $param)'; } 
+          param == other.param;
+
+@override int get hashCode => Object.hash(type, code, message, param);
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError(type: $type, code: $code, message: $message, param: $param)';
+
  }

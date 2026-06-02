@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaComplianceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaComplianceStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeEnhancedEligibilityVisaComplianceStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeEnhancedEligibilityVisaComplianceStatus($value)';
+
  }
 /// 
 @immutable final class DisputeEnhancedEligibilityVisaCompliance {const DisputeEnhancedEligibilityVisaCompliance({required this.status});
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 DisputeEnhancedEligibilityVisaCompliance copyWith({DisputeEnhancedEligibilityVisaComplianceStatus? status}) { return DisputeEnhancedEligibilityVisaCompliance(
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeEnhancedEligibilityVisaCompliance &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'DisputeEnhancedEligibilityVisaCompliance(status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => status.hashCode;
+
+@override String toString() => 'DisputeEnhancedEligibilityVisaCompliance(status: $status)';
+
  }

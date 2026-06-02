@@ -32,12 +32,15 @@ ReposListAttestationsResponseAttestations copyWith({ReposCreateAttestationReques
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,
   initiator: initiator != null ? initiator() : this.initiator,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposListAttestationsResponseAttestations &&
           bundle == other.bundle &&
           repositoryId == other.repositoryId &&
           bundleUrl == other.bundleUrl &&
-          initiator == other.initiator; } 
-@override int get hashCode { return Object.hash(bundle, repositoryId, bundleUrl, initiator); } 
-@override String toString() { return 'ReposListAttestationsResponseAttestations(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl, initiator: $initiator)'; } 
+          initiator == other.initiator;
+
+@override int get hashCode => Object.hash(bundle, repositoryId, bundleUrl, initiator);
+
+@override String toString() => 'ReposListAttestationsResponseAttestations(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl, initiator: $initiator)';
+
  }

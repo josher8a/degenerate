@@ -37,12 +37,15 @@ PaymentIntentPaymentMethodOptionsParam15MandateOptions copyWith({CustomMandateUr
   paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,
   transactionType: transactionType != null ? transactionType() : this.transactionType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam15MandateOptions &&
           customMandateUrl == other.customMandateUrl &&
           intervalDescription == other.intervalDescription &&
           paymentSchedule == other.paymentSchedule &&
-          transactionType == other.transactionType; } 
-@override int get hashCode { return Object.hash(customMandateUrl, intervalDescription, paymentSchedule, transactionType); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam15MandateOptions(customMandateUrl: $customMandateUrl, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)'; } 
+          transactionType == other.transactionType;
+
+@override int get hashCode => Object.hash(customMandateUrl, intervalDescription, paymentSchedule, transactionType);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam15MandateOptions(customMandateUrl: $customMandateUrl, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)';
+
  }

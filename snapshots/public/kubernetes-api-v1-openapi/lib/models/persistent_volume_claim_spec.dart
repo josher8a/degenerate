@@ -72,7 +72,7 @@ PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, Typed
   volumeMode: volumeMode != null ? volumeMode() : this.volumeMode,
   volumeName: volumeName != null ? volumeName() : this.volumeName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimSpec &&
           listEquals(accessModes, other.accessModes) &&
           dataSource == other.dataSource &&
@@ -82,7 +82,10 @@ PersistentVolumeClaimSpec copyWith({List<String>? Function()? accessModes, Typed
           storageClassName == other.storageClassName &&
           volumeAttributesClassName == other.volumeAttributesClassName &&
           volumeMode == other.volumeMode &&
-          volumeName == other.volumeName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessModes ?? const []), dataSource, dataSourceRef, resources, selector, storageClassName, volumeAttributesClassName, volumeMode, volumeName); } 
-@override String toString() { return 'PersistentVolumeClaimSpec(accessModes: $accessModes, dataSource: $dataSource, dataSourceRef: $dataSourceRef, resources: $resources, selector: $selector, storageClassName: $storageClassName, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, volumeName: $volumeName)'; } 
+          volumeName == other.volumeName;
+
+@override int get hashCode => Object.hash(Object.hashAll(accessModes ?? const []), dataSource, dataSourceRef, resources, selector, storageClassName, volumeAttributesClassName, volumeMode, volumeName);
+
+@override String toString() => 'PersistentVolumeClaimSpec(accessModes: $accessModes, dataSource: $dataSource, dataSourceRef: $dataSourceRef, resources: $resources, selector: $selector, storageClassName: $storageClassName, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, volumeName: $volumeName)';
+
  }

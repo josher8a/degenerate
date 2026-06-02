@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicGre copyWith({String? Function()? cloudflareEndpoint}) { return MagicGre(
   cloudflareEndpoint: cloudflareEndpoint != null ? cloudflareEndpoint() : this.cloudflareEndpoint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicGre &&
-          cloudflareEndpoint == other.cloudflareEndpoint; } 
-@override int get hashCode { return cloudflareEndpoint.hashCode; } 
-@override String toString() { return 'MagicGre(cloudflareEndpoint: $cloudflareEndpoint)'; } 
+          cloudflareEndpoint == other.cloudflareEndpoint;
+
+@override int get hashCode => cloudflareEndpoint.hashCode;
+
+@override String toString() => 'MagicGre(cloudflareEndpoint: $cloudflareEndpoint)';
+
  }

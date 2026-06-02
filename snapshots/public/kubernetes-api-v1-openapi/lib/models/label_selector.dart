@@ -23,10 +23,13 @@ LabelSelector copyWith({List<LabelSelectorRequirement>? Function()? matchExpress
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
   matchLabels: matchLabels != null ? matchLabels() : this.matchLabels,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LabelSelector &&
           listEquals(matchExpressions, other.matchExpressions) &&
-          matchLabels == other.matchLabels; } 
-@override int get hashCode { return Object.hash(Object.hashAll(matchExpressions ?? const []), matchLabels); } 
-@override String toString() { return 'LabelSelector(matchExpressions: $matchExpressions, matchLabels: $matchLabels)'; } 
+          matchLabels == other.matchLabels;
+
+@override int get hashCode => Object.hash(Object.hashAll(matchExpressions ?? const []), matchLabels);
+
+@override String toString() => 'LabelSelector(matchExpressions: $matchExpressions, matchLabels: $matchLabels)';
+
  }

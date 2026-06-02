@@ -17,7 +17,8 @@ final class InpaintingError$400 extends InpaintingError {const InpaintingError$4
 
 final $5InpaintingResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class InpaintingError$Unknown extends InpaintingError {const InpaintingError$Unknown(this.statusCode, this.rawBody, );
 

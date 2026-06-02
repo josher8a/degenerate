@@ -85,7 +85,7 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, String? Fu
   image: image != null ? image() : this.image,
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionSpaceSchema &&
           author == other.author &&
           title == other.title &&
@@ -97,7 +97,10 @@ SessionSpaceSchema copyWith({PublicUserSchema? author, String? title, String? Fu
           shortDescription == other.shortDescription &&
           recurring == other.recurring &&
           image == other.image &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(author, title, slug, dateCreated, dateModified, subtitle, Object.hashAll(categories), shortDescription, recurring, image, content); } 
-@override String toString() { return 'SessionSpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle, categories: $categories, shortDescription: $shortDescription, recurring: $recurring, image: $image, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(author, title, slug, dateCreated, dateModified, subtitle, Object.hashAll(categories), shortDescription, recurring, image, content);
+
+@override String toString() => 'SessionSpaceSchema(author: $author, title: $title, slug: $slug, dateCreated: $dateCreated, dateModified: $dateModified, subtitle: $subtitle, categories: $categories, shortDescription: $shortDescription, recurring: $recurring, image: $image, content: $content)';
+
  }

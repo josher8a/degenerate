@@ -175,7 +175,7 @@ PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? 
   taxIdData: taxIdData != null ? taxIdData() : this.taxIdData,
   testClock: testClock != null ? testClock() : this.testClock,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersRequest &&
           address == other.address &&
           balance == other.balance &&
@@ -198,7 +198,10 @@ PostCustomersRequest copyWith({PostCustomersCustomerRequestAddress? Function()? 
           tax == other.tax &&
           taxExempt == other.taxExempt &&
           listEquals(taxIdData, other.taxIdData) &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([address, balance, businessName, cashBalance, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, paymentMethod, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt, Object.hashAll(taxIdData ?? const []), testClock]); } 
-@override String toString() { return 'PostCustomersRequest(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, paymentMethod: $paymentMethod, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt, taxIdData: $taxIdData, testClock: $testClock)'; } 
+          testClock == other.testClock;
+
+@override int get hashCode => Object.hashAll([address, balance, businessName, cashBalance, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, paymentMethod, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt, Object.hashAll(taxIdData ?? const []), testClock]);
+
+@override String toString() => 'PostCustomersRequest(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, paymentMethod: $paymentMethod, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt, taxIdData: $taxIdData, testClock: $testClock)';
+
  }

@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SummaryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SummaryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SummaryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SummaryType($value)';
+
  }
 /// Determines the text format of the summary, such as plain text or markdown.
 @immutable final class TextFormat {const TextFormat._(this.value);
@@ -66,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TextFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TextFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TextFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TextFormat($value)';
+
  }
 /// Summary Config
 @immutable final class RealtimekitSummarizationConfig {const RealtimekitSummarizationConfig({this.summaryType = SummaryType.general, this.textFormat = TextFormat.markdown, this.wordLimit = 500, });
@@ -105,11 +111,14 @@ RealtimekitSummarizationConfig copyWith({SummaryType Function()? summaryType, Te
   textFormat: textFormat != null ? textFormat() : this.textFormat,
   wordLimit: wordLimit != null ? wordLimit() : this.wordLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitSummarizationConfig &&
           summaryType == other.summaryType &&
           textFormat == other.textFormat &&
-          wordLimit == other.wordLimit; } 
-@override int get hashCode { return Object.hash(summaryType, textFormat, wordLimit); } 
-@override String toString() { return 'RealtimekitSummarizationConfig(summaryType: $summaryType, textFormat: $textFormat, wordLimit: $wordLimit)'; } 
+          wordLimit == other.wordLimit;
+
+@override int get hashCode => Object.hash(summaryType, textFormat, wordLimit);
+
+@override String toString() => 'RealtimekitSummarizationConfig(summaryType: $summaryType, textFormat: $textFormat, wordLimit: $wordLimit)';
+
  }

@@ -36,12 +36,15 @@ ActionsCreateOrgVariableRequest copyWith({String? name, String? value, ActionsCr
   visibility: visibility ?? this.visibility,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateOrgVariableRequest &&
           name == other.name &&
           value == other.value &&
           visibility == other.visibility &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(name, value, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'ActionsCreateOrgVariableRequest(name: $name, value: $value, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(name, value, visibility, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'ActionsCreateOrgVariableRequest(name: $name, value: $value, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('adver
 IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest copyWith({AddressingComponentsSchemasAdvertised? advertised}) { return IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest(
   advertised: advertised ?? this.advertised,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest &&
-          advertised == other.advertised; } 
-@override int get hashCode { return advertised.hashCode; } 
-@override String toString() { return 'IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest(advertised: $advertised)'; } 
+          advertised == other.advertised;
+
+@override int get hashCode => advertised.hashCode;
+
+@override String toString() => 'IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest(advertised: $advertised)';
+
  }

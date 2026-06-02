@@ -66,7 +66,7 @@ InlineProductParams copyWith({bool? Function()? active, String? Function()? id, 
   taxCode: taxCode != null ? taxCode() : this.taxCode,
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InlineProductParams &&
           active == other.active &&
           id == other.id &&
@@ -74,7 +74,10 @@ InlineProductParams copyWith({bool? Function()? active, String? Function()? id, 
           name == other.name &&
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
-          unitLabel == other.unitLabel; } 
-@override int get hashCode { return Object.hash(active, id, metadata, name, statementDescriptor, taxCode, unitLabel); } 
-@override String toString() { return 'InlineProductParams(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
+          unitLabel == other.unitLabel;
+
+@override int get hashCode => Object.hash(active, id, metadata, name, statementDescriptor, taxCode, unitLabel);
+
+@override String toString() => 'InlineProductParams(active: $active, id: $id, metadata: $metadata, name: $name, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel)';
+
  }

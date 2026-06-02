@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Requested && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Requested($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Requested && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Requested($value)';
+
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParamNetworks {const PaymentIntentPaymentMethodOptionsParamNetworks({this.requested});
 
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentIntentPaymentMethodOptionsParamNetworks copyWith({List<Requested>? Function()? requested}) { return PaymentIntentPaymentMethodOptionsParamNetworks(
   requested: requested != null ? requested() : this.requested,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParamNetworks &&
-          listEquals(requested, other.requested); } 
-@override int get hashCode { return Object.hashAll(requested ?? const []); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamNetworks(requested: $requested)'; } 
+          listEquals(requested, other.requested);
+
+@override int get hashCode => Object.hashAll(requested ?? const []);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParamNetworks(requested: $requested)';
+
  }

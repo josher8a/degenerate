@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditBalanceSummaryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditBalanceSummaryObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditBalanceSummaryObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingCreditBalanceSummaryObject($value)';
+
  }
 /// Indicates the billing credit balance for billing credits granted to a customer.
 @immutable final class BillingCreditBalanceSummary {const BillingCreditBalanceSummary({required this.balances, required this.customer, required this.livemode, required this.object, this.customerAccount, });
@@ -73,13 +76,16 @@ BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccount
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditBalanceSummary &&
           listEquals(balances, other.balances) &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(Object.hashAll(balances), customer, customerAccount, livemode, object); } 
-@override String toString() { return 'BillingCreditBalanceSummary(balances: $balances, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(Object.hashAll(balances), customer, customerAccount, livemode, object);
+
+@override String toString() => 'BillingCreditBalanceSummary(balances: $balances, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object)';
+
  }

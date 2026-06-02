@@ -101,7 +101,7 @@ PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Fu
   taxRates: taxRates != null ? taxRates() : this.taxRates,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoiceitemsInvoiceitemRequest &&
           amount == other.amount &&
           description == other.description &&
@@ -116,7 +116,10 @@ PostInvoiceitemsInvoiceitemRequest copyWith({int? Function()? amount, String? Fu
           taxBehavior == other.taxBehavior &&
           taxCode == other.taxCode &&
           taxRates == other.taxRates &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, discountable, discounts, Object.hashAll(expand ?? const []), metadata, period, priceData, pricing, quantity, taxBehavior, taxCode, taxRates, unitAmountDecimal); } 
-@override String toString() { return 'PostInvoiceitemsInvoiceitemRequest(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(amount, description, discountable, discounts, Object.hashAll(expand ?? const []), metadata, period, priceData, pricing, quantity, taxBehavior, taxCode, taxRates, unitAmountDecimal);
+
+@override String toString() => 'PostInvoiceitemsInvoiceitemRequest(amount: $amount, description: $description, discountable: $discountable, discounts: $discounts, expand: $expand, metadata: $metadata, period: $period, priceData: $priceData, pricing: $pricing, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmountDecimal: $unitAmountDecimal)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AnnotationsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AnnotationsType($value)';
+
  }
 /// A URL citation when using web search.
 /// 
@@ -47,10 +50,13 @@ ChatCompletionResponseMessageAnnotations copyWith({AnnotationsType? type, UrlCit
   type: type ?? this.type,
   urlCitation: urlCitation ?? this.urlCitation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionResponseMessageAnnotations &&
           type == other.type &&
-          urlCitation == other.urlCitation; } 
-@override int get hashCode { return Object.hash(type, urlCitation); } 
-@override String toString() { return 'ChatCompletionResponseMessageAnnotations(type: $type, urlCitation: $urlCitation)'; } 
+          urlCitation == other.urlCitation;
+
+@override int get hashCode => Object.hash(type, urlCitation);
+
+@override String toString() => 'ChatCompletionResponseMessageAnnotations(type: $type, urlCitation: $urlCitation)';
+
  }

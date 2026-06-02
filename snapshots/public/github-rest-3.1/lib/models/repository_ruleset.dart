@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRulesetSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRulesetSourceType($value)';
+
  }
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
@@ -55,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CurrentUserCanBypass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CurrentUserCanBypass($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CurrentUserCanBypass && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CurrentUserCanBypass($value)';
+
  }
 /// A set of rules to apply when specified conditions are met.
 @immutable final class RepositoryRuleset {const RepositoryRuleset({required this.id, required this.name, required this.source, required this.enforcement, this.target, this.sourceType, this.bypassActors, this.currentUserCanBypass, this.nodeId, this.links, this.conditions, this.rules, this.createdAt, this.updatedAt, });
@@ -153,7 +159,7 @@ RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestT
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleset &&
           id == other.id &&
           name == other.name &&
@@ -168,7 +174,10 @@ RepositoryRuleset copyWith({int? id, String? name, ReposCreateOrgRulesetRequestT
           conditions == other.conditions &&
           listEquals(rules, other.rules) &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, target, sourceType, source, enforcement, Object.hashAll(bypassActors ?? const []), currentUserCanBypass, nodeId, links, conditions, Object.hashAll(rules ?? const []), createdAt, updatedAt); } 
-@override String toString() { return 'RepositoryRuleset(id: $id, name: $name, target: $target, sourceType: $sourceType, source: $source, enforcement: $enforcement, bypassActors: $bypassActors, currentUserCanBypass: $currentUserCanBypass, nodeId: $nodeId, links: $links, conditions: $conditions, rules: $rules, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, target, sourceType, source, enforcement, Object.hashAll(bypassActors ?? const []), currentUserCanBypass, nodeId, links, conditions, Object.hashAll(rules ?? const []), createdAt, updatedAt);
+
+@override String toString() => 'RepositoryRuleset(id: $id, name: $name, target: $target, sourceType: $sourceType, source: $source, enforcement: $enforcement, bypassActors: $bypassActors, currentUserCanBypass: $currentUserCanBypass, nodeId: $nodeId, links: $links, conditions: $conditions, rules: $rules, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

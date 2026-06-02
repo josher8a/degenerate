@@ -56,14 +56,17 @@ CloudforceOneRequestsRequestMessageItem copyWith({String? author, CloudforceOneR
   isFollowOnRequest: isFollowOnRequest ?? this.isFollowOnRequest,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestMessageItem &&
           author == other.author &&
           content == other.content &&
           created == other.created &&
           id == other.id &&
           isFollowOnRequest == other.isFollowOnRequest &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(author, content, created, id, isFollowOnRequest, updated); } 
-@override String toString() { return 'CloudforceOneRequestsRequestMessageItem(author: $author, content: $content, created: $created, id: $id, isFollowOnRequest: $isFollowOnRequest, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(author, content, created, id, isFollowOnRequest, updated);
+
+@override String toString() => 'CloudforceOneRequestsRequestMessageItem(author: $author, content: $content, created: $created, id: $id, isFollowOnRequest: $isFollowOnRequest, updated: $updated)';
+
  }

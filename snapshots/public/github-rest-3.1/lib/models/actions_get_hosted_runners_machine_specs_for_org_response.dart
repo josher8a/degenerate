@@ -21,10 +21,13 @@ ActionsGetHostedRunnersMachineSpecsForOrgResponse copyWith({int? totalCount, Lis
   totalCount: totalCount ?? this.totalCount,
   machineSpecs: machineSpecs ?? this.machineSpecs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetHostedRunnersMachineSpecsForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(machineSpecs, other.machineSpecs); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(machineSpecs)); } 
-@override String toString() { return 'ActionsGetHostedRunnersMachineSpecsForOrgResponse(totalCount: $totalCount, machineSpecs: $machineSpecs)'; } 
+          listEquals(machineSpecs, other.machineSpecs);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(machineSpecs));
+
+@override String toString() => 'ActionsGetHostedRunnersMachineSpecsForOrgResponse(totalCount: $totalCount, machineSpecs: $machineSpecs)';
+
  }

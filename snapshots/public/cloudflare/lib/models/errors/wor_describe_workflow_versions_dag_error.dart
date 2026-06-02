@@ -17,7 +17,8 @@ final class WorDescribeWorkflowVersionsDagError$404 extends WorDescribeWorkflowV
 
 final WorDescribeWorkflowVersionsDagResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorDescribeWorkflowVersionsDagError$Unknown extends WorDescribeWorkflowVersionsDagError {const WorDescribeWorkflowVersionsDagError$Unknown(this.statusCode, this.rawBody, );
 

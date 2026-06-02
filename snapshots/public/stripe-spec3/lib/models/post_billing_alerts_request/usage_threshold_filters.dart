@@ -27,10 +27,13 @@ UsageThresholdFilters copyWith({String? Function()? customer, ThresholdsResource
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageThresholdFilters &&
           customer == other.customer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customer, type); } 
-@override String toString() { return 'UsageThresholdFilters(customer: $customer, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customer, type);
+
+@override String toString() => 'UsageThresholdFilters(customer: $customer, type: $type)';
+
  }

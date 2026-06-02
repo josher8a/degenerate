@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AiSearchInstanceChangeJobStatusRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChangeJobStatusRequestAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AiSearchInstanceChangeJobStatusRequestAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AiSearchInstanceChangeJobStatusRequestAction($value)';
+
  }
 @immutable final class AiSearchInstanceChangeJobStatusRequest {const AiSearchInstanceChangeJobStatusRequest({required this.action});
 
@@ -36,9 +39,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 AiSearchInstanceChangeJobStatusRequest copyWith({AiSearchInstanceChangeJobStatusRequestAction? action}) { return AiSearchInstanceChangeJobStatusRequest(
   action: action ?? this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChangeJobStatusRequest &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChangeJobStatusRequest(action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => action.hashCode;
+
+@override String toString() => 'AiSearchInstanceChangeJobStatusRequest(action: $action)';
+
  }

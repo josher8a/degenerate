@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LockReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LockReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LockReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LockReason($value)';
+
  }
 @immutable final class IssuesLockRequest {const IssuesLockRequest({this.lockReason});
 
@@ -55,9 +58,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 IssuesLockRequest copyWith({LockReason? Function()? lockReason}) { return IssuesLockRequest(
   lockReason: lockReason != null ? lockReason() : this.lockReason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesLockRequest &&
-          lockReason == other.lockReason; } 
-@override int get hashCode { return lockReason.hashCode; } 
-@override String toString() { return 'IssuesLockRequest(lockReason: $lockReason)'; } 
+          lockReason == other.lockReason;
+
+@override int get hashCode => lockReason.hashCode;
+
+@override String toString() => 'IssuesLockRequest(lockReason: $lockReason)';
+
  }

@@ -88,7 +88,7 @@ CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Funct
   conversation: conversation != null ? conversation() : this.conversation,
   contextManagement: contextManagement != null ? contextManagement() : this.contextManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateResponse &&
           input == other.input &&
           listEquals(include, other.include) &&
@@ -98,7 +98,10 @@ CreateResponse copyWith({InputParam? Function()? input, List<IncludeEnum>? Funct
           stream == other.stream &&
           streamOptions == other.streamOptions &&
           conversation == other.conversation &&
-          listEquals(contextManagement, other.contextManagement); } 
-@override int get hashCode { return Object.hash(input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const [])); } 
-@override String toString() { return 'CreateResponse(input: $input, include: $include, parallelToolCalls: $parallelToolCalls, store: $store, instructions: $instructions, stream: $stream, streamOptions: $streamOptions, conversation: $conversation, contextManagement: $contextManagement)'; } 
+          listEquals(contextManagement, other.contextManagement);
+
+@override int get hashCode => Object.hash(input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const []));
+
+@override String toString() => 'CreateResponse(input: $input, include: $include, parallelToolCalls: $parallelToolCalls, store: $store, instructions: $instructions, stream: $stream, streamOptions: $streamOptions, conversation: $conversation, contextManagement: $contextManagement)';
+
  }

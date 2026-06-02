@@ -75,7 +75,7 @@ TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname,
   txtName: txtName != null ? txtName() : this.txtName,
   txtValue: txtValue != null ? txtValue() : this.txtValue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesValidationRecord &&
           cname == other.cname &&
           cnameTarget == other.cnameTarget &&
@@ -84,7 +84,10 @@ TlsCertificatesAndHostnamesValidationRecord copyWith({String? Function()? cname,
           httpUrl == other.httpUrl &&
           status == other.status &&
           txtName == other.txtName &&
-          txtValue == other.txtValue; } 
-@override int get hashCode { return Object.hash(cname, cnameTarget, Object.hashAll(emails ?? const []), httpBody, httpUrl, status, txtName, txtValue); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesValidationRecord(cname: $cname, cnameTarget: $cnameTarget, emails: $emails, httpBody: $httpBody, httpUrl: $httpUrl, status: $status, txtName: $txtName, txtValue: $txtValue)'; } 
+          txtValue == other.txtValue;
+
+@override int get hashCode => Object.hash(cname, cnameTarget, Object.hashAll(emails ?? const []), httpBody, httpUrl, status, txtName, txtValue);
+
+@override String toString() => 'TlsCertificatesAndHostnamesValidationRecord(cname: $cname, cnameTarget: $cnameTarget, emails: $emails, httpBody: $httpBody, httpUrl: $httpUrl, status: $status, txtName: $txtName, txtValue: $txtValue)';
+
  }

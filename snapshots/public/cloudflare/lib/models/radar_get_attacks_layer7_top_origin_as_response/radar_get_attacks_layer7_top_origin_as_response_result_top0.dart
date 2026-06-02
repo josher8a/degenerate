@@ -37,12 +37,15 @@ RadarGetAttacksLayer7TopOriginAsResponseResultTop0 copyWith({String? originAsn, 
   rank: rank ?? this.rank,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginAsResponseResultTop0 &&
           originAsn == other.originAsn &&
           originAsnName == other.originAsnName &&
           rank == other.rank &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(originAsn, originAsnName, rank, value); } 
-@override String toString() { return 'RadarGetAttacksLayer7TopOriginAsResponseResultTop0(originAsn: $originAsn, originAsnName: $originAsnName, rank: $rank, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(originAsn, originAsnName, rank, value);
+
+@override String toString() => 'RadarGetAttacksLayer7TopOriginAsResponseResultTop0(originAsn: $originAsn, originAsnName: $originAsnName, rank: $rank, value: $value)';
+
  }

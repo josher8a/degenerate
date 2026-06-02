@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Variant1Format && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Variant1Format($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Variant1Format && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Variant1Format($value)';
+
  }
 /// Parameters for audio output. Required when modalities includes 'audio'.
 @immutable final class MessagesAudioVariant1 {const MessagesAudioVariant1({required this.format, required this.voice, });
@@ -58,10 +61,13 @@ MessagesAudioVariant1 copyWith({Variant1Format? format, Voice? voice, }) { retur
   format: format ?? this.format,
   voice: voice ?? this.voice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesAudioVariant1 &&
           format == other.format &&
-          voice == other.voice; } 
-@override int get hashCode { return Object.hash(format, voice); } 
-@override String toString() { return 'MessagesAudioVariant1(format: $format, voice: $voice)'; } 
+          voice == other.voice;
+
+@override int get hashCode => Object.hash(format, voice);
+
+@override String toString() => 'MessagesAudioVariant1(format: $format, voice: $voice)';
+
  }

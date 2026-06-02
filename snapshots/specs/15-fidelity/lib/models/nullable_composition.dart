@@ -25,11 +25,14 @@ NullableComposition copyWith({String? id, DateTime? Function()? createdAt, Strin
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   extra: extra != null ? extra() : this.extra,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NullableComposition &&
           id == other.id &&
           createdAt == other.createdAt &&
-          extra == other.extra; } 
-@override int get hashCode { return Object.hash(id, createdAt, extra); } 
-@override String toString() { return 'NullableComposition(id: $id, createdAt: $createdAt, extra: $extra)'; } 
+          extra == other.extra;
+
+@override int get hashCode => Object.hash(id, createdAt, extra);
+
+@override String toString() => 'NullableComposition(id: $id, createdAt: $createdAt, extra: $extra)';
+
  }

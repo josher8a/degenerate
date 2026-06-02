@@ -17,7 +17,8 @@ final class RadarGetBgpPfx2asMoasError$400 extends RadarGetBgpPfx2asMoasError {c
 
 final RadarGetBgpPfx2asMoasResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpPfx2asMoasError$Unknown extends RadarGetBgpPfx2asMoasError {const RadarGetBgpPfx2asMoasError$Unknown(this.statusCode, this.rawBody, );
 

@@ -31,10 +31,13 @@ PayoutsTraceId copyWith({String? status, String? Function()? value, }) { return 
   status: status ?? this.status,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayoutsTraceId &&
           status == other.status &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(status, value); } 
-@override String toString() { return 'PayoutsTraceId(status: $status, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(status, value);
+
+@override String toString() => 'PayoutsTraceId(status: $status, value: $value)';
+
  }

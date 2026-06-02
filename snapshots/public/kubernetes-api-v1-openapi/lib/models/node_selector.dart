@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('nodeS
 NodeSelector copyWith({List<NodeSelectorTerm>? nodeSelectorTerms}) { return NodeSelector(
   nodeSelectorTerms: nodeSelectorTerms ?? this.nodeSelectorTerms,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSelector &&
-          listEquals(nodeSelectorTerms, other.nodeSelectorTerms); } 
-@override int get hashCode { return Object.hashAll(nodeSelectorTerms); } 
-@override String toString() { return 'NodeSelector(nodeSelectorTerms: $nodeSelectorTerms)'; } 
+          listEquals(nodeSelectorTerms, other.nodeSelectorTerms);
+
+@override int get hashCode => Object.hashAll(nodeSelectorTerms);
+
+@override String toString() => 'NodeSelector(nodeSelectorTerms: $nodeSelectorTerms)';
+
  }

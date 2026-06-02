@@ -28,11 +28,14 @@ RadarGetAttacksLayer7SummaryByMitigationProductResponse400 copyWith({List<AiSear
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7SummaryByMitigationProductResponse400 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'RadarGetAttacksLayer7SummaryByMitigationProductResponse400(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'RadarGetAttacksLayer7SummaryByMitigationProductResponse400(errors: $errors, result: $result, success: $success)';
+
  }

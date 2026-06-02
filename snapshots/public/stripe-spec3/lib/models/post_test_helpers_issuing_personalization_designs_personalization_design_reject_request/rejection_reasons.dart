@@ -21,10 +21,13 @@ RejectionReasons copyWith({List<IssuingPersonalizationDesignRejectionReasonsCard
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RejectionReasons &&
           listEquals(cardLogo, other.cardLogo) &&
-          listEquals(carrierText, other.carrierText); } 
-@override int get hashCode { return Object.hash(Object.hashAll(cardLogo ?? const []), Object.hashAll(carrierText ?? const [])); } 
-@override String toString() { return 'RejectionReasons(cardLogo: $cardLogo, carrierText: $carrierText)'; } 
+          listEquals(carrierText, other.carrierText);
+
+@override int get hashCode => Object.hash(Object.hashAll(cardLogo ?? const []), Object.hashAll(carrierText ?? const []));
+
+@override String toString() => 'RejectionReasons(cardLogo: $cardLogo, carrierText: $carrierText)';
+
  }

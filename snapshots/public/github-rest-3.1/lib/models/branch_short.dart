@@ -28,11 +28,14 @@ BranchShort copyWith({String? name, BranchShortCommit? commit, bool? protected, 
   commit: commit ?? this.commit,
   protected: protected ?? this.protected,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchShort &&
           name == other.name &&
           commit == other.commit &&
-          protected == other.protected; } 
-@override int get hashCode { return Object.hash(name, commit, protected); } 
-@override String toString() { return 'BranchShort(name: $name, commit: $commit, protected: $protected)'; } 
+          protected == other.protected;
+
+@override int get hashCode => Object.hash(name, commit, protected);
+
+@override String toString() => 'BranchShort(name: $name, commit: $commit, protected: $protected)';
+
  }

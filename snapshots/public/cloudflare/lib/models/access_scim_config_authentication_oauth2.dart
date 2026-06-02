@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessScimConfigAuthenticationOauth2Scheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessScimConfigAuthenticationOauth2Scheme($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessScimConfigAuthenticationOauth2Scheme && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessScimConfigAuthenticationOauth2Scheme($value)';
+
  }
 /// Attributes for configuring OAuth 2 authentication scheme for SCIM provisioning to an application.
 @immutable final class AccessScimConfigAuthenticationOauth2 {const AccessScimConfigAuthenticationOauth2({required this.authorizationUrl, required this.clientId, required this.clientSecret, required this.scheme, required this.tokenUrl, this.scopes, });
@@ -73,14 +76,17 @@ AccessScimConfigAuthenticationOauth2 copyWith({String? authorizationUrl, String?
   scopes: scopes != null ? scopes() : this.scopes,
   tokenUrl: tokenUrl ?? this.tokenUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigAuthenticationOauth2 &&
           authorizationUrl == other.authorizationUrl &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
           scheme == other.scheme &&
           listEquals(scopes, other.scopes) &&
-          tokenUrl == other.tokenUrl; } 
-@override int get hashCode { return Object.hash(authorizationUrl, clientId, clientSecret, scheme, Object.hashAll(scopes ?? const []), tokenUrl); } 
-@override String toString() { return 'AccessScimConfigAuthenticationOauth2(authorizationUrl: $authorizationUrl, clientId: $clientId, clientSecret: $clientSecret, scheme: $scheme, scopes: $scopes, tokenUrl: $tokenUrl)'; } 
+          tokenUrl == other.tokenUrl;
+
+@override int get hashCode => Object.hash(authorizationUrl, clientId, clientSecret, scheme, Object.hashAll(scopes ?? const []), tokenUrl);
+
+@override String toString() => 'AccessScimConfigAuthenticationOauth2(authorizationUrl: $authorizationUrl, clientId: $clientId, clientSecret: $clientSecret, scheme: $scheme, scopes: $scopes, tokenUrl: $tokenUrl)';
+
  }

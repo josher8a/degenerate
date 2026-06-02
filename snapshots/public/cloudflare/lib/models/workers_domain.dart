@@ -40,14 +40,17 @@ WorkersDomain copyWith({WorkersSchemasEnvironment? Function()? environment, Work
   zoneId: zoneId != null ? zoneId() : this.zoneId,
   zoneName: zoneName != null ? zoneName() : this.zoneName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDomain &&
           environment == other.environment &&
           hostname == other.hostname &&
           id == other.id &&
           service == other.service &&
           zoneId == other.zoneId &&
-          zoneName == other.zoneName; } 
-@override int get hashCode { return Object.hash(environment, hostname, id, service, zoneId, zoneName); } 
-@override String toString() { return 'WorkersDomain(environment: $environment, hostname: $hostname, id: $id, service: $service, zoneId: $zoneId, zoneName: $zoneName)'; } 
+          zoneName == other.zoneName;
+
+@override int get hashCode => Object.hash(environment, hostname, id, service, zoneId, zoneName);
+
+@override String toString() => 'WorkersDomain(environment: $environment, hostname: $hostname, id: $id, service: $service, zoneId: $zoneId, zoneName: $zoneName)';
+
  }

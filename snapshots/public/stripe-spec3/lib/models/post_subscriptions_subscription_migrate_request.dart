@@ -22,10 +22,13 @@ PostSubscriptionsSubscriptionMigrateRequest copyWith({PostSubscriptionsSubscript
   billingMode: billingMode ?? this.billingMode,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionsSubscriptionMigrateRequest &&
           billingMode == other.billingMode &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(billingMode, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionMigrateRequest(billingMode: $billingMode, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(billingMode, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostSubscriptionsSubscriptionMigrateRequest(billingMode: $billingMode, expand: $expand)';
+
  }

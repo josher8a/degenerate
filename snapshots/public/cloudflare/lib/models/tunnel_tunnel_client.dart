@@ -73,7 +73,7 @@ TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? 
   runAt: runAt != null ? runAt() : this.runAt,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelTunnelClient &&
           arch == other.arch &&
           configVersion == other.configVersion &&
@@ -81,7 +81,10 @@ TunnelTunnelClient copyWith({TunnelArch? Function()? arch, TunnelConfigVersion? 
           listEquals(features, other.features) &&
           id == other.id &&
           runAt == other.runAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(arch, configVersion, Object.hashAll(conns ?? const []), Object.hashAll(features ?? const []), id, runAt, version); } 
-@override String toString() { return 'TunnelTunnelClient(arch: $arch, configVersion: $configVersion, conns: $conns, features: $features, id: $id, runAt: $runAt, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(arch, configVersion, Object.hashAll(conns ?? const []), Object.hashAll(features ?? const []), id, runAt, version);
+
+@override String toString() => 'TunnelTunnelClient(arch: $arch, configVersion: $configVersion, conns: $conns, features: $features, id: $id, runAt: $runAt, version: $version)';
+
  }

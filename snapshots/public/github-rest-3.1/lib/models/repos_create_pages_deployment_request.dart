@@ -42,13 +42,16 @@ ReposCreatePagesDeploymentRequest copyWith({double? Function()? artifactId, Stri
   pagesBuildVersion: pagesBuildVersion ?? this.pagesBuildVersion,
   oidcToken: oidcToken ?? this.oidcToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreatePagesDeploymentRequest &&
           artifactId == other.artifactId &&
           artifactUrl == other.artifactUrl &&
           environment == other.environment &&
           pagesBuildVersion == other.pagesBuildVersion &&
-          oidcToken == other.oidcToken; } 
-@override int get hashCode { return Object.hash(artifactId, artifactUrl, environment, pagesBuildVersion, oidcToken); } 
-@override String toString() { return 'ReposCreatePagesDeploymentRequest(artifactId: $artifactId, artifactUrl: $artifactUrl, environment: $environment, pagesBuildVersion: $pagesBuildVersion, oidcToken: $oidcToken)'; } 
+          oidcToken == other.oidcToken;
+
+@override int get hashCode => Object.hash(artifactId, artifactUrl, environment, pagesBuildVersion, oidcToken);
+
+@override String toString() => 'ReposCreatePagesDeploymentRequest(artifactId: $artifactId, artifactUrl: $artifactUrl, environment: $environment, pagesBuildVersion: $pagesBuildVersion, oidcToken: $oidcToken)';
+
  }

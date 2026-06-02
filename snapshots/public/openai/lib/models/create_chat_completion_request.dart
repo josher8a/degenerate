@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseModalities2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseModalities2($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseModalities2 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseModalities2($value)';
+
  }
 @immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.messages, required this.model, this.modalities, this.verbosity, this.reasoningEffort, this.maxCompletionTokens, this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.topLogprobs, this.responseFormat, this.audio, this.store = false, this.stream = false, this.stop, this.logitBias, this.logprobs = false, this.maxTokens, this.n = 1, this.prediction, this.seed, this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.functions, });
 
@@ -313,7 +316,7 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   functions: functions != null ? functions() : this.functions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionRequest &&
           listEquals(messages, other.messages) &&
           model == other.model &&
@@ -341,7 +344,10 @@ CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messag
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls &&
           functionCall == other.functionCall &&
-          listEquals(functions, other.functions); } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, topLogprobs, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]); } 
-@override String toString() { return 'CreateChatCompletionRequest(messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, topLogprobs: $topLogprobs, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)'; } 
+          listEquals(functions, other.functions);
+
+@override int get hashCode => Object.hashAll([Object.hashAll(messages), model, Object.hashAll(modalities ?? const []), verbosity, reasoningEffort, maxCompletionTokens, frequencyPenalty, presencePenalty, webSearchOptions, topLogprobs, responseFormat, audio, store, stream, stop, logitBias, logprobs, maxTokens, n, prediction, seed, streamOptions, Object.hashAll(tools ?? const []), toolChoice, parallelToolCalls, functionCall, Object.hashAll(functions ?? const [])]);
+
+@override String toString() => 'CreateChatCompletionRequest(messages: $messages, model: $model, modalities: $modalities, verbosity: $verbosity, reasoningEffort: $reasoningEffort, maxCompletionTokens: $maxCompletionTokens, frequencyPenalty: $frequencyPenalty, presencePenalty: $presencePenalty, webSearchOptions: $webSearchOptions, topLogprobs: $topLogprobs, responseFormat: $responseFormat, audio: $audio, store: $store, stream: $stream, stop: $stop, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, prediction: $prediction, seed: $seed, streamOptions: $streamOptions, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, functionCall: $functionCall, functions: $functions)';
+
  }

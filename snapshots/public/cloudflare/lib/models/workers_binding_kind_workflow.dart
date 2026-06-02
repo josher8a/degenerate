@@ -47,13 +47,16 @@ WorkersBindingKindWorkflow copyWith({String? Function()? className, WorkersBindi
   type: type ?? this.type,
   workflowName: workflowName ?? this.workflowName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindWorkflow &&
           className == other.className &&
           name == other.name &&
           scriptName == other.scriptName &&
           type == other.type &&
-          workflowName == other.workflowName; } 
-@override int get hashCode { return Object.hash(className, name, scriptName, type, workflowName); } 
-@override String toString() { return 'WorkersBindingKindWorkflow(className: $className, name: $name, scriptName: $scriptName, type: $type, workflowName: $workflowName)'; } 
+          workflowName == other.workflowName;
+
+@override int get hashCode => Object.hash(className, name, scriptName, type, workflowName);
+
+@override String toString() => 'WorkersBindingKindWorkflow(className: $className, name: $name, scriptName: $scriptName, type: $type, workflowName: $workflowName)';
+
  }

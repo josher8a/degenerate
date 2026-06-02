@@ -22,10 +22,13 @@ BotManagementSbfmDefinitelyConfigStaleZoneConfiguration copyWith({BotManagementF
   fightMode: fightMode != null ? fightMode() : this.fightMode,
   sbfmLikelyAutomated: sbfmLikelyAutomated != null ? sbfmLikelyAutomated() : this.sbfmLikelyAutomated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementSbfmDefinitelyConfigStaleZoneConfiguration &&
           fightMode == other.fightMode &&
-          sbfmLikelyAutomated == other.sbfmLikelyAutomated; } 
-@override int get hashCode { return Object.hash(fightMode, sbfmLikelyAutomated); } 
-@override String toString() { return 'BotManagementSbfmDefinitelyConfigStaleZoneConfiguration(fightMode: $fightMode, sbfmLikelyAutomated: $sbfmLikelyAutomated)'; } 
+          sbfmLikelyAutomated == other.sbfmLikelyAutomated;
+
+@override int get hashCode => Object.hash(fightMode, sbfmLikelyAutomated);
+
+@override String toString() => 'BotManagementSbfmDefinitelyConfigStaleZoneConfiguration(fightMode: $fightMode, sbfmLikelyAutomated: $sbfmLikelyAutomated)';
+
  }

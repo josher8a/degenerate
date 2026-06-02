@@ -60,7 +60,7 @@ ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, i
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   annotation: annotation ?? this.annotation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseOutputTextAnnotationAddedEvent &&
           type == other.type &&
           itemId == other.itemId &&
@@ -68,7 +68,10 @@ ResponseOutputTextAnnotationAddedEvent copyWith({String? type, String? itemId, i
           contentIndex == other.contentIndex &&
           annotationIndex == other.annotationIndex &&
           sequenceNumber == other.sequenceNumber &&
-          annotation == other.annotation; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, annotationIndex, sequenceNumber, annotation); } 
-@override String toString() { return 'ResponseOutputTextAnnotationAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, annotationIndex: $annotationIndex, sequenceNumber: $sequenceNumber, annotation: $annotation)'; } 
+          annotation == other.annotation;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, contentIndex, annotationIndex, sequenceNumber, annotation);
+
+@override String toString() => 'ResponseOutputTextAnnotationAddedEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, annotationIndex: $annotationIndex, sequenceNumber: $sequenceNumber, annotation: $annotation)';
+
  }

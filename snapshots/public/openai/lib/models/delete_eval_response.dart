@@ -30,11 +30,14 @@ DeleteEvalResponse copyWith({String? object, bool? deleted, String? evalId, }) {
   deleted: deleted ?? this.deleted,
   evalId: evalId ?? this.evalId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEvalResponse &&
           object == other.object &&
           deleted == other.deleted &&
-          evalId == other.evalId; } 
-@override int get hashCode { return Object.hash(object, deleted, evalId); } 
-@override String toString() { return 'DeleteEvalResponse(object: $object, deleted: $deleted, evalId: $evalId)'; } 
+          evalId == other.evalId;
+
+@override int get hashCode => Object.hash(object, deleted, evalId);
+
+@override String toString() => 'DeleteEvalResponse(object: $object, deleted: $deleted, evalId: $evalId)';
+
  }

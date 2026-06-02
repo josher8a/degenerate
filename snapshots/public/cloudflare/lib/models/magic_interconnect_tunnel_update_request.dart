@@ -47,7 +47,7 @@ MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Func
   interfaceAddress6: interfaceAddress6 != null ? interfaceAddress6() : this.interfaceAddress6,
   mtu: mtu != null ? mtu() : this.mtu,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicInterconnectTunnelUpdateRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
           description == other.description &&
@@ -55,7 +55,10 @@ MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting? Func
           healthCheck == other.healthCheck &&
           interfaceAddress == other.interfaceAddress &&
           interfaceAddress6 == other.interfaceAddress6 &&
-          mtu == other.mtu; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, description, gre, healthCheck, interfaceAddress, interfaceAddress6, mtu); } 
-@override String toString() { return 'MagicInterconnectTunnelUpdateRequest(automaticReturnRouting: $automaticReturnRouting, description: $description, gre: $gre, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu)'; } 
+          mtu == other.mtu;
+
+@override int get hashCode => Object.hash(automaticReturnRouting, description, gre, healthCheck, interfaceAddress, interfaceAddress6, mtu);
+
+@override String toString() => 'MagicInterconnectTunnelUpdateRequest(automaticReturnRouting: $automaticReturnRouting, description: $description, gre: $gre, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu)';
+
  }

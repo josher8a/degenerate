@@ -65,7 +65,7 @@ PostPaymentLinksRequestPaymentIntentData copyWith({PaymentIntentCaptureMethod? F
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequestPaymentIntentData &&
           captureMethod == other.captureMethod &&
           description == other.description &&
@@ -73,7 +73,10 @@ PostPaymentLinksRequestPaymentIntentData copyWith({PaymentIntentCaptureMethod? F
           setupFutureUsage == other.setupFutureUsage &&
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(captureMethod, description, metadata, setupFutureUsage, statementDescriptor, statementDescriptorSuffix, transferGroup); } 
-@override String toString() { return 'PostPaymentLinksRequestPaymentIntentData(captureMethod: $captureMethod, description: $description, metadata: $metadata, setupFutureUsage: $setupFutureUsage, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(captureMethod, description, metadata, setupFutureUsage, statementDescriptor, statementDescriptorSuffix, transferGroup);
+
+@override String toString() => 'PostPaymentLinksRequestPaymentIntentData(captureMethod: $captureMethod, description: $description, metadata: $metadata, setupFutureUsage: $setupFutureUsage, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)';
+
  }

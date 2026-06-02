@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InspectionMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InspectionMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InspectionMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InspectionMode($value)';
+
  }
 /// Specify the DLP inspection mode.
 @immutable final class ZeroTrustGatewayBodyScanningSettings {const ZeroTrustGatewayBodyScanningSettings({this.inspectionMode});
@@ -44,9 +47,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewayBodyScanningSettings copyWith({InspectionMode? Function()? inspectionMode}) { return ZeroTrustGatewayBodyScanningSettings(
   inspectionMode: inspectionMode != null ? inspectionMode() : this.inspectionMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayBodyScanningSettings &&
-          inspectionMode == other.inspectionMode; } 
-@override int get hashCode { return inspectionMode.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayBodyScanningSettings(inspectionMode: $inspectionMode)'; } 
+          inspectionMode == other.inspectionMode;
+
+@override int get hashCode => inspectionMode.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayBodyScanningSettings(inspectionMode: $inspectionMode)';
+
  }

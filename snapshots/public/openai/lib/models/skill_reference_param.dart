@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillReferenceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SkillReferenceParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SkillReferenceParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SkillReferenceParamType($value)';
+
  }
 @immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });
 
@@ -56,11 +59,14 @@ SkillReferenceParam copyWith({SkillReferenceParamType? type, String? skillId, St
   skillId: skillId ?? this.skillId,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SkillReferenceParam &&
           type == other.type &&
           skillId == other.skillId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(type, skillId, version); } 
-@override String toString() { return 'SkillReferenceParam(type: $type, skillId: $skillId, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(type, skillId, version);
+
+@override String toString() => 'SkillReferenceParam(type: $type, skillId: $skillId, version: $version)';
+
  }

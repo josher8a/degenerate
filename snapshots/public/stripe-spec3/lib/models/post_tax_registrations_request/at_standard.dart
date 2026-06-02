@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('place
 AtStandard copyWith({TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme? placeOfSupplyScheme}) { return AtStandard(
   placeOfSupplyScheme: placeOfSupplyScheme ?? this.placeOfSupplyScheme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AtStandard &&
-          placeOfSupplyScheme == other.placeOfSupplyScheme; } 
-@override int get hashCode { return placeOfSupplyScheme.hashCode; } 
-@override String toString() { return 'AtStandard(placeOfSupplyScheme: $placeOfSupplyScheme)'; } 
+          placeOfSupplyScheme == other.placeOfSupplyScheme;
+
+@override int get hashCode => placeOfSupplyScheme.hashCode;
+
+@override String toString() => 'AtStandard(placeOfSupplyScheme: $placeOfSupplyScheme)';
+
  }

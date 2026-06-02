@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateArtifactStorageRecordRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateArtifactStorageRecordRequestStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrgsCreateArtifactStorageRecordRequestStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrgsCreateArtifactStorageRecordRequestStatus($value)';
+
  }
 @immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status = OrgsCreateArtifactStorageRecordRequestStatus.active, this.githubRepository, });
 
@@ -121,7 +124,7 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
   status: status != null ? status() : this.status,
   githubRepository: githubRepository != null ? githubRepository() : this.githubRepository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactStorageRecordRequest &&
           name == other.name &&
           digest == other.digest &&
@@ -131,7 +134,10 @@ OrgsCreateArtifactStorageRecordRequest copyWith({String? name, String? digest, S
           registryUrl == other.registryUrl &&
           repository == other.repository &&
           status == other.status &&
-          githubRepository == other.githubRepository; } 
-@override int get hashCode { return Object.hash(name, digest, version, artifactUrl, path, registryUrl, repository, status, githubRepository); } 
-@override String toString() { return 'OrgsCreateArtifactStorageRecordRequest(name: $name, digest: $digest, version: $version, artifactUrl: $artifactUrl, path: $path, registryUrl: $registryUrl, repository: $repository, status: $status, githubRepository: $githubRepository)'; } 
+          githubRepository == other.githubRepository;
+
+@override int get hashCode => Object.hash(name, digest, version, artifactUrl, path, registryUrl, repository, status, githubRepository);
+
+@override String toString() => 'OrgsCreateArtifactStorageRecordRequest(name: $name, digest: $digest, version: $version, artifactUrl: $artifactUrl, path: $path, registryUrl: $registryUrl, repository: $repository, status: $status, githubRepository: $githubRepository)';
+
  }

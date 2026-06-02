@@ -24,10 +24,13 @@ ResultOrigins copyWith({List<OriginRegions>? regions, String? slug, }) { return 
   regions: regions ?? this.regions,
   slug: slug ?? this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultOrigins &&
           listEquals(regions, other.regions) &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(Object.hashAll(regions), slug); } 
-@override String toString() { return 'ResultOrigins(regions: $regions, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(Object.hashAll(regions), slug);
+
+@override String toString() => 'ResultOrigins(regions: $regions, slug: $slug)';
+
  }

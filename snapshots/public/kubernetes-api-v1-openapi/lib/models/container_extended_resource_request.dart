@@ -31,11 +31,14 @@ ContainerExtendedResourceRequest copyWith({String? containerName, String? reques
   requestName: requestName ?? this.requestName,
   resourceName: resourceName ?? this.resourceName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerExtendedResourceRequest &&
           containerName == other.containerName &&
           requestName == other.requestName &&
-          resourceName == other.resourceName; } 
-@override int get hashCode { return Object.hash(containerName, requestName, resourceName); } 
-@override String toString() { return 'ContainerExtendedResourceRequest(containerName: $containerName, requestName: $requestName, resourceName: $resourceName)'; } 
+          resourceName == other.resourceName;
+
+@override int get hashCode => Object.hash(containerName, requestName, resourceName);
+
+@override String toString() => 'ContainerExtendedResourceRequest(containerName: $containerName, requestName: $requestName, resourceName: $resourceName)';
+
  }

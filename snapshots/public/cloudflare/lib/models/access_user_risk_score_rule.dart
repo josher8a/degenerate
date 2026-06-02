@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_
 AccessUserRiskScoreRule copyWith({AccessUserRiskScoreRuleUserRiskScore? userRiskScore}) { return AccessUserRiskScoreRule(
   userRiskScore: userRiskScore ?? this.userRiskScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessUserRiskScoreRule &&
-          userRiskScore == other.userRiskScore; } 
-@override int get hashCode { return userRiskScore.hashCode; } 
-@override String toString() { return 'AccessUserRiskScoreRule(userRiskScore: $userRiskScore)'; } 
+          userRiskScore == other.userRiskScore;
+
+@override int get hashCode => userRiskScore.hashCode;
+
+@override String toString() => 'AccessUserRiskScoreRule(userRiskScore: $userRiskScore)';
+
  }

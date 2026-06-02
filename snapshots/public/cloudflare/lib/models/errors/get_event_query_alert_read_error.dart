@@ -17,7 +17,8 @@ final class GetEventQueryAlertReadError$404 extends GetEventQueryAlertReadError 
 
 final GetEventQueryAlertReadResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetEventQueryAlertReadError$Unknown extends GetEventQueryAlertReadError {const GetEventQueryAlertReadError$Unknown(this.statusCode, this.rawBody, );
 

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('linke
 AccessLinkedAppTokenRule copyWith({LinkedAppToken? linkedAppToken}) { return AccessLinkedAppTokenRule(
   linkedAppToken: linkedAppToken ?? this.linkedAppToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessLinkedAppTokenRule &&
-          linkedAppToken == other.linkedAppToken; } 
-@override int get hashCode { return linkedAppToken.hashCode; } 
-@override String toString() { return 'AccessLinkedAppTokenRule(linkedAppToken: $linkedAppToken)'; } 
+          linkedAppToken == other.linkedAppToken;
+
+@override int get hashCode => linkedAppToken.hashCode;
+
+@override String toString() => 'AccessLinkedAppTokenRule(linkedAppToken: $linkedAppToken)';
+
  }

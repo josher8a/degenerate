@@ -32,11 +32,14 @@ GetPricesRecurring copyWith({GetPricesRecurringInterval? Function()? interval, S
   meter: meter != null ? meter() : this.meter,
   usageType: usageType != null ? usageType() : this.usageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetPricesRecurring &&
           interval == other.interval &&
           meter == other.meter &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(interval, meter, usageType); } 
-@override String toString() { return 'GetPricesRecurring(interval: $interval, meter: $meter, usageType: $usageType)'; } 
+          usageType == other.usageType;
+
+@override int get hashCode => Object.hash(interval, meter, usageType);
+
+@override String toString() => 'GetPricesRecurring(interval: $interval, meter: $meter, usageType: $usageType)';
+
  }

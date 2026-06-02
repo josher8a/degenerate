@@ -53,14 +53,17 @@ TranscriptTextSegmentEvent copyWith({String? type, String? id, double? start, do
   text: text ?? this.text,
   speaker: speaker ?? this.speaker,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextSegmentEvent &&
           type == other.type &&
           id == other.id &&
           start == other.start &&
           end == other.end &&
           text == other.text &&
-          speaker == other.speaker; } 
-@override int get hashCode { return Object.hash(type, id, start, end, text, speaker); } 
-@override String toString() { return 'TranscriptTextSegmentEvent(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)'; } 
+          speaker == other.speaker;
+
+@override int get hashCode => Object.hash(type, id, start, end, text, speaker);
+
+@override String toString() => 'TranscriptTextSegmentEvent(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)';
+
  }

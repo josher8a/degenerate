@@ -45,12 +45,15 @@ PaymentPagesCheckoutSessionAfterExpirationRecovery copyWith({bool? allowPromotio
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionAfterExpirationRecovery &&
           allowPromotionCodes == other.allowPromotionCodes &&
           enabled == other.enabled &&
           expiresAt == other.expiresAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(allowPromotionCodes, enabled, expiresAt, url); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAfterExpirationRecovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled, expiresAt: $expiresAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(allowPromotionCodes, enabled, expiresAt, url);
+
+@override String toString() => 'PaymentPagesCheckoutSessionAfterExpirationRecovery(allowPromotionCodes: $allowPromotionCodes, enabled: $enabled, expiresAt: $expiresAt, url: $url)';
+
  }

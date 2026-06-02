@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseTextDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseTextDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseTextDoneType($value)';
+
  }
 /// Returned when the text value of an "output_text" content part is done streaming. Also
 /// emitted when a Response is interrupted, incomplete, or cancelled.
@@ -83,7 +86,7 @@ RealtimeBetaServerEventResponseTextDone copyWith({String? eventId, RealtimeBetaS
   contentIndex: contentIndex ?? this.contentIndex,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseTextDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -91,7 +94,10 @@ RealtimeBetaServerEventResponseTextDone copyWith({String? eventId, RealtimeBetaS
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, text); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseTextDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, text);
+
+@override String toString() => 'RealtimeBetaServerEventResponseTextDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text)';
+
  }

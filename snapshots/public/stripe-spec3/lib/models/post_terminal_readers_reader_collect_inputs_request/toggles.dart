@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TogglesDefaultValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TogglesDefaultValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TogglesDefaultValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TogglesDefaultValue($value)';
+
  }
 @immutable final class Toggles {const Toggles({this.defaultValue, this.description, this.title, });
 
@@ -60,11 +63,14 @@ Toggles copyWith({TogglesDefaultValue? Function()? defaultValue, String? Functio
   description: description != null ? description() : this.description,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Toggles &&
           defaultValue == other.defaultValue &&
           description == other.description &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(defaultValue, description, title); } 
-@override String toString() { return 'Toggles(defaultValue: $defaultValue, description: $description, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(defaultValue, description, title);
+
+@override String toString() => 'Toggles(defaultValue: $defaultValue, description: $description, title: $title)';
+
  }

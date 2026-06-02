@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionDataProrationBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionDataProrationBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionDataProrationBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionDataProrationBehavior($value)';
+
  }
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.
 @immutable final class PostCheckoutSessionsRequestSubscriptionData {const PostCheckoutSessionsRequestSubscriptionData({this.applicationFeePercent, this.billingCycleAnchor, this.billingMode, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.prorationBehavior, this.transferData, this.trialEnd, this.trialPeriodDays, this.trialSettings, });
@@ -107,7 +110,7 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestSubscriptionData &&
           applicationFeePercent == other.applicationFeePercent &&
           billingCycleAnchor == other.billingCycleAnchor &&
@@ -121,7 +124,10 @@ PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applic
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialPeriodDays == other.trialPeriodDays &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hash(applicationFeePercent, billingCycleAnchor, billingMode, Object.hashAll(defaultTaxRates ?? const []), description, invoiceSettings, metadata, onBehalfOf, prorationBehavior, transferData, trialEnd, trialPeriodDays, trialSettings); } 
-@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionData(applicationFeePercent: $applicationFeePercent, billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, defaultTaxRates: $defaultTaxRates, description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)'; } 
+          trialSettings == other.trialSettings;
+
+@override int get hashCode => Object.hash(applicationFeePercent, billingCycleAnchor, billingMode, Object.hashAll(defaultTaxRates ?? const []), description, invoiceSettings, metadata, onBehalfOf, prorationBehavior, transferData, trialEnd, trialPeriodDays, trialSettings);
+
+@override String toString() => 'PostCheckoutSessionsRequestSubscriptionData(applicationFeePercent: $applicationFeePercent, billingCycleAnchor: $billingCycleAnchor, billingMode: $billingMode, defaultTaxRates: $defaultTaxRates, description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)';
+
  }

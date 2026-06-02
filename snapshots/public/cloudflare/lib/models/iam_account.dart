@@ -54,14 +54,17 @@ IamAccount copyWith({DateTime? Function()? createdOn, IamCommonComponentsSchemas
   settings: settings != null ? settings() : this.settings,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamAccount &&
           createdOn == other.createdOn &&
           id == other.id &&
           managedBy == other.managedBy &&
           name == other.name &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdOn, id, managedBy, name, settings, type); } 
-@override String toString() { return 'IamAccount(createdOn: $createdOn, id: $id, managedBy: $managedBy, name: $name, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdOn, id, managedBy, name, settings, type);
+
+@override String toString() => 'IamAccount(createdOn: $createdOn, id: $id, managedBy: $managedBy, name: $name, settings: $settings, type: $type)';
+
  }

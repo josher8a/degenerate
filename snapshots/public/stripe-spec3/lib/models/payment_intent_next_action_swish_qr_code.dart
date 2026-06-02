@@ -37,11 +37,14 @@ PaymentIntentNextActionSwishQrCode copyWith({String? data, String? imageUrlPng, 
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionSwishQrCode &&
           data == other.data &&
           imageUrlPng == other.imageUrlPng &&
-          imageUrlSvg == other.imageUrlSvg; } 
-@override int get hashCode { return Object.hash(data, imageUrlPng, imageUrlSvg); } 
-@override String toString() { return 'PaymentIntentNextActionSwishQrCode(data: $data, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)'; } 
+          imageUrlSvg == other.imageUrlSvg;
+
+@override int get hashCode => Object.hash(data, imageUrlPng, imageUrlSvg);
+
+@override String toString() => 'PaymentIntentNextActionSwishQrCode(data: $data, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
+
  }

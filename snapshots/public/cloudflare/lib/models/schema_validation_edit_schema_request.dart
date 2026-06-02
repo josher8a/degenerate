@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SchemaValidationEditSchemaRequest copyWith({bool? Function()? validationEnabled}) { return SchemaValidationEditSchemaRequest(
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationEditSchemaRequest &&
-          validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return validationEnabled.hashCode; } 
-@override String toString() { return 'SchemaValidationEditSchemaRequest(validationEnabled: $validationEnabled)'; } 
+          validationEnabled == other.validationEnabled;
+
+@override int get hashCode => validationEnabled.hashCode;
+
+@override String toString() => 'SchemaValidationEditSchemaRequest(validationEnabled: $validationEnabled)';
+
  }

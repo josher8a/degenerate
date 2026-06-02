@@ -33,12 +33,15 @@ AsnData copyWith({double? delaySecs, String? delayStr, bool? healthy, AsnDataLat
   healthy: healthy ?? this.healthy,
   latest: latest ?? this.latest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnData &&
           delaySecs == other.delaySecs &&
           delayStr == other.delayStr &&
           healthy == other.healthy &&
-          latest == other.latest; } 
-@override int get hashCode { return Object.hash(delaySecs, delayStr, healthy, latest); } 
-@override String toString() { return 'AsnData(delaySecs: $delaySecs, delayStr: $delayStr, healthy: $healthy, latest: $latest)'; } 
+          latest == other.latest;
+
+@override int get hashCode => Object.hash(delaySecs, delayStr, healthy, latest);
+
+@override String toString() => 'AsnData(delaySecs: $delaySecs, delayStr: $delayStr, healthy: $healthy, latest: $latest)';
+
  }

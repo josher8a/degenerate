@@ -25,10 +25,13 @@ ListsItemHostname copyWith({bool? Function()? excludeExactHostname, String? urlH
   excludeExactHostname: excludeExactHostname != null ? excludeExactHostname() : this.excludeExactHostname,
   urlHostname: urlHostname ?? this.urlHostname,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsItemHostname &&
           excludeExactHostname == other.excludeExactHostname &&
-          urlHostname == other.urlHostname; } 
-@override int get hashCode { return Object.hash(excludeExactHostname, urlHostname); } 
-@override String toString() { return 'ListsItemHostname(excludeExactHostname: $excludeExactHostname, urlHostname: $urlHostname)'; } 
+          urlHostname == other.urlHostname;
+
+@override int get hashCode => Object.hash(excludeExactHostname, urlHostname);
+
+@override String toString() => 'ListsItemHostname(excludeExactHostname: $excludeExactHostname, urlHostname: $urlHostname)';
+
  }

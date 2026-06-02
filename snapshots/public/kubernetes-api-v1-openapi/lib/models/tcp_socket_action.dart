@@ -23,10 +23,13 @@ TcpSocketAction copyWith({String? Function()? host, IoK8sApimachineryPkgUtilInts
   host: host != null ? host() : this.host,
   port: port ?? this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TcpSocketAction &&
           host == other.host &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(host, port); } 
-@override String toString() { return 'TcpSocketAction(host: $host, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(host, port);
+
+@override String toString() => 'TcpSocketAction(host: $host, port: $port)';
+
  }

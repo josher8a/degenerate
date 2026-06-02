@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnCloudPlatformClientClientType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnCloudPlatformClientClientType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnCloudPlatformClientClientType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McnCloudPlatformClientClientType($value)';
+
  }
 @immutable final class McnCloudPlatformClient {const McnCloudPlatformClient({required this.clientType, required this.id, required this.name, });
 
@@ -55,11 +58,14 @@ McnCloudPlatformClient copyWith({McnCloudPlatformClientClientType? clientType, M
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCloudPlatformClient &&
           clientType == other.clientType &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(clientType, id, name); } 
-@override String toString() { return 'McnCloudPlatformClient(clientType: $clientType, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(clientType, id, name);
+
+@override String toString() => 'McnCloudPlatformClient(clientType: $clientType, id: $id, name: $name)';
+
  }

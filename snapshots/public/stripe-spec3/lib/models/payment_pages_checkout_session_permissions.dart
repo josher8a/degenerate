@@ -24,10 +24,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)';
+
  }
 /// 
 @immutable final class PaymentPagesCheckoutSessionPermissions {const PaymentPagesCheckoutSessionPermissions({this.updateShippingDetails});
@@ -50,9 +53,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentPagesCheckoutSessionPermissions copyWith({PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails? Function()? updateShippingDetails}) { return PaymentPagesCheckoutSessionPermissions(
   updateShippingDetails: updateShippingDetails != null ? updateShippingDetails() : this.updateShippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionPermissions &&
-          updateShippingDetails == other.updateShippingDetails; } 
-@override int get hashCode { return updateShippingDetails.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionPermissions(updateShippingDetails: $updateShippingDetails)'; } 
+          updateShippingDetails == other.updateShippingDetails;
+
+@override int get hashCode => updateShippingDetails.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionPermissions(updateShippingDetails: $updateShippingDetails)';
+
  }

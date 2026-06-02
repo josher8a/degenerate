@@ -29,11 +29,14 @@ ReposCreateOrUpdateFileContentsRequestAuthor copyWith({String? name, String? ema
   email: email ?? this.email,
   date: date != null ? date() : this.date,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateOrUpdateFileContentsRequestAuthor &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'ReposCreateOrUpdateFileContentsRequestAuthor(name: $name, email: $email, date: $date)'; } 
+          date == other.date;
+
+@override int get hashCode => Object.hash(name, email, date);
+
+@override String toString() => 'ReposCreateOrUpdateFileContentsRequestAuthor(name: $name, email: $email, date: $date)';
+
  }

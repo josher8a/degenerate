@@ -72,7 +72,7 @@ DosDnsProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosDnsProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           createdOn == other.createdOn &&
@@ -82,7 +82,10 @@ DosDnsProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn, St
           name == other.name &&
           profileSensitivity == other.profileSensitivity &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, profileSensitivity, rateSensitivity, scope); } 
-@override String toString() { return 'DosDnsProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, profileSensitivity, rateSensitivity, scope);
+
+@override String toString() => 'DosDnsProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, profileSensitivity: $profileSensitivity, rateSensitivity: $rateSensitivity, scope: $scope)';
+
  }

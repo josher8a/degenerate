@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'
 TextEmbeddings copyWith({InputEmbeddingText? text}) { return TextEmbeddings(
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextEmbeddings &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'TextEmbeddings(text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => text.hashCode;
+
+@override String toString() => 'TextEmbeddings(text: $text)';
+
  }

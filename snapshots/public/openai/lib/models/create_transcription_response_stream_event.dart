@@ -34,7 +34,8 @@ final TranscriptTextSegmentEvent transcriptTextSegmentEvent;
 
 @override String get type => 'transcript.text.segment';
 
-@override Map<String, dynamic> toJson() { return {...transcriptTextSegmentEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...transcriptTextSegmentEvent.toJson(), 'type': type};
+
 CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id, double? start, double? end, String? text, String? speaker, }) { return CreateTranscriptionResponseStreamEventTranscriptTextSegment(transcriptTextSegmentEvent.copyWith(
   id: id,
   start: start,
@@ -42,10 +43,13 @@ CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id
   text: text,
   speaker: speaker,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseStreamEventTranscriptTextSegment && transcriptTextSegmentEvent == other.transcriptTextSegmentEvent; } 
-@override int get hashCode { return transcriptTextSegmentEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextSegment($transcriptTextSegmentEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateTranscriptionResponseStreamEventTranscriptTextSegment && transcriptTextSegmentEvent == other.transcriptTextSegmentEvent;
+
+@override int get hashCode => transcriptTextSegmentEvent.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEvent.transcriptTextSegment($transcriptTextSegmentEvent)';
+
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextDelta extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextDelta(this.transcriptTextDeltaEvent);
 
@@ -55,16 +59,20 @@ final TranscriptTextDeltaEvent transcriptTextDeltaEvent;
 
 @override String get type => 'transcript.text.delta';
 
-@override Map<String, dynamic> toJson() { return {...transcriptTextDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...transcriptTextDeltaEvent.toJson(), 'type': type};
+
 CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
   delta: delta,
   logprobs: logprobs,
   segmentId: segmentId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseStreamEventTranscriptTextDelta && transcriptTextDeltaEvent == other.transcriptTextDeltaEvent; } 
-@override int get hashCode { return transcriptTextDeltaEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextDelta($transcriptTextDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateTranscriptionResponseStreamEventTranscriptTextDelta && transcriptTextDeltaEvent == other.transcriptTextDeltaEvent;
+
+@override int get hashCode => transcriptTextDeltaEvent.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEvent.transcriptTextDelta($transcriptTextDeltaEvent)';
+
  }
 @immutable final class CreateTranscriptionResponseStreamEventTranscriptTextDone extends CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEventTranscriptTextDone(this.transcriptTextDoneEvent);
 
@@ -74,16 +82,20 @@ final TranscriptTextDoneEvent transcriptTextDoneEvent;
 
 @override String get type => 'transcript.text.done';
 
-@override Map<String, dynamic> toJson() { return {...transcriptTextDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...transcriptTextDoneEvent.toJson(), 'type': type};
+
 CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
   text: text,
   logprobs: logprobs,
   usage: usage,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseStreamEventTranscriptTextDone && transcriptTextDoneEvent == other.transcriptTextDoneEvent; } 
-@override int get hashCode { return transcriptTextDoneEvent.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEvent.transcriptTextDone($transcriptTextDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateTranscriptionResponseStreamEventTranscriptTextDone && transcriptTextDoneEvent == other.transcriptTextDoneEvent;
+
+@override int get hashCode => transcriptTextDoneEvent.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEvent.transcriptTextDone($transcriptTextDoneEvent)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -93,9 +105,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranscriptionResponseStreamEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CreateTranscriptionResponseStreamEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateTranscriptionResponseStreamEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEvent.unknown($json)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomIntentMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomIntentMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomIntentMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomIntentMode($value)';
+
  }
 /// Sets how the model will interpret strings submitted to the custom_topic param. When strict, the model will only return topics submitted using the custom_topic param. When extended, the model will return its own detected topics in addition to those submitted using the custom_topic param.
 @immutable final class CustomTopicMode {const CustomTopicMode._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomTopicMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomTopicMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomTopicMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomTopicMode($value)';
+
  }
 /// Specify the expected encoding of your submitted audio
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding._(this.value);
@@ -88,10 +94,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3RequestEncoding($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramNova3RequestEncoding && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestEncoding($value)';
+
  }
 /// Mode of operation for the model representing broad area of topic that will be talked about in the supplied audio
 @immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode._(this.value);
@@ -116,10 +125,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramNova3RequestMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)';
+
  }
 @immutable final class WorkersAiPostRunCfDeepgramNova3Request {const WorkersAiPostRunCfDeepgramNova3Request({required this.audio, this.endpointing, this.customIntent, this.customIntentMode, this.customTopic, this.customTopicMode, this.detectEntities, this.detectLanguage, this.diarize, this.dictation, this.encoding, this.channels, this.extra, this.fillerWords, this.interimResults, this.keyterm, this.keywords, this.language, this.measurements, this.mipOptOut, this.mode, this.multichannel, this.numerals, this.vadEvents, this.profanityFilter, this.punctuate, this.redact, this.replace, this.search, this.sentiment, this.smartFormat, this.topics, this.uttSplit, this.utteranceEndMs, this.utterances, this.paragraphs, });
 
@@ -346,7 +358,7 @@ WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3
   utterances: utterances != null ? utterances() : this.utterances,
   vadEvents: vadEvents != null ? vadEvents() : this.vadEvents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramNova3Request &&
           audio == other.audio &&
           channels == other.channels &&
@@ -383,7 +395,10 @@ WorkersAiPostRunCfDeepgramNova3Request copyWith({WorkersAiPostRunCfDeepgramNova3
           uttSplit == other.uttSplit &&
           utteranceEndMs == other.utteranceEndMs &&
           utterances == other.utterances &&
-          vadEvents == other.vadEvents; } 
-@override int get hashCode { return Object.hashAll([audio, channels, customIntent, customIntentMode, customTopic, customTopicMode, detectEntities, detectLanguage, diarize, dictation, encoding, endpointing, extra, fillerWords, interimResults, keyterm, keywords, language, measurements, mipOptOut, mode, multichannel, numerals, paragraphs, profanityFilter, punctuate, redact, replace, search, sentiment, smartFormat, topics, uttSplit, utteranceEndMs, utterances, vadEvents]); } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3Request(audio: $audio, channels: $channels, customIntent: $customIntent, customIntentMode: $customIntentMode, customTopic: $customTopic, customTopicMode: $customTopicMode, detectEntities: $detectEntities, detectLanguage: $detectLanguage, diarize: $diarize, dictation: $dictation, encoding: $encoding, endpointing: $endpointing, extra: $extra, fillerWords: $fillerWords, interimResults: $interimResults, keyterm: $keyterm, keywords: $keywords, language: $language, measurements: $measurements, mipOptOut: $mipOptOut, mode: $mode, multichannel: $multichannel, numerals: $numerals, paragraphs: $paragraphs, profanityFilter: $profanityFilter, punctuate: $punctuate, redact: $redact, replace: $replace, search: $search, sentiment: $sentiment, smartFormat: $smartFormat, topics: $topics, uttSplit: $uttSplit, utteranceEndMs: $utteranceEndMs, utterances: $utterances, vadEvents: $vadEvents)'; } 
+          vadEvents == other.vadEvents;
+
+@override int get hashCode => Object.hashAll([audio, channels, customIntent, customIntentMode, customTopic, customTopicMode, detectEntities, detectLanguage, diarize, dictation, encoding, endpointing, extra, fillerWords, interimResults, keyterm, keywords, language, measurements, mipOptOut, mode, multichannel, numerals, paragraphs, profanityFilter, punctuate, redact, replace, search, sentiment, smartFormat, topics, uttSplit, utteranceEndMs, utterances, vadEvents]);
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramNova3Request(audio: $audio, channels: $channels, customIntent: $customIntent, customIntentMode: $customIntentMode, customTopic: $customTopic, customTopicMode: $customTopicMode, detectEntities: $detectEntities, detectLanguage: $detectLanguage, diarize: $diarize, dictation: $dictation, encoding: $encoding, endpointing: $endpointing, extra: $extra, fillerWords: $fillerWords, interimResults: $interimResults, keyterm: $keyterm, keywords: $keywords, language: $language, measurements: $measurements, mipOptOut: $mipOptOut, mode: $mode, multichannel: $multichannel, numerals: $numerals, paragraphs: $paragraphs, profanityFilter: $profanityFilter, punctuate: $punctuate, redact: $redact, replace: $replace, search: $search, sentiment: $sentiment, smartFormat: $smartFormat, topics: $topics, uttSplit: $uttSplit, utteranceEndMs: $utteranceEndMs, utterances: $utterances, vadEvents: $vadEvents)';
+
  }

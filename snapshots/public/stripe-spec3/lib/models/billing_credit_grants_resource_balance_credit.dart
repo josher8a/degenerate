@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditGrantsResourceBalanceCreditType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditGrantsResourceBalanceCreditType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditGrantsResourceBalanceCreditType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingCreditGrantsResourceBalanceCreditType($value)';
+
  }
 /// 
 @immutable final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsResourceBalanceCredit({required this.amount, required this.type, this.creditsApplicationInvoiceVoided, });
@@ -54,11 +57,14 @@ BillingCreditGrantsResourceBalanceCredit copyWith({BillingCreditGrantsResourceAm
   creditsApplicationInvoiceVoided: creditsApplicationInvoiceVoided != null ? creditsApplicationInvoiceVoided() : this.creditsApplicationInvoiceVoided,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditGrantsResourceBalanceCredit &&
           amount == other.amount &&
           creditsApplicationInvoiceVoided == other.creditsApplicationInvoiceVoided &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, creditsApplicationInvoiceVoided, type); } 
-@override String toString() { return 'BillingCreditGrantsResourceBalanceCredit(amount: $amount, creditsApplicationInvoiceVoided: $creditsApplicationInvoiceVoided, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, creditsApplicationInvoiceVoided, type);
+
+@override String toString() => 'BillingCreditGrantsResourceBalanceCredit(amount: $amount, creditsApplicationInvoiceVoided: $creditsApplicationInvoiceVoided, type: $type)';
+
  }

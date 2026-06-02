@@ -45,10 +45,13 @@ ShieldParameterSchemasDefinition copyWith({List<Map<String, dynamic>>? Function(
   parameters: parameters != null ? parameters() : this.parameters,
   responses: responses != null ? responses() : this.responses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldParameterSchemasDefinition &&
           listEquals(parameters, other.parameters) &&
-          responses == other.responses; } 
-@override int get hashCode { return Object.hash(Object.hashAll(parameters ?? const []), responses); } 
-@override String toString() { return 'ShieldParameterSchemasDefinition(parameters: $parameters, responses: $responses)'; } 
+          responses == other.responses;
+
+@override int get hashCode => Object.hash(Object.hashAll(parameters ?? const []), responses);
+
+@override String toString() => 'ShieldParameterSchemasDefinition(parameters: $parameters, responses: $responses)';
+
  }

@@ -40,12 +40,15 @@ ZeroTrustGatewayApplication copyWith({ZeroTrustGatewayAppTypeId? Function()? app
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayApplication &&
           applicationTypeId == other.applicationTypeId &&
           createdAt == other.createdAt &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(applicationTypeId, createdAt, id, name); } 
-@override String toString() { return 'ZeroTrustGatewayApplication(applicationTypeId: $applicationTypeId, createdAt: $createdAt, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(applicationTypeId, createdAt, id, name);
+
+@override String toString() => 'ZeroTrustGatewayApplication(applicationTypeId: $applicationTypeId, createdAt: $createdAt, id: $id, name: $name)';
+
  }

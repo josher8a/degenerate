@@ -73,7 +73,7 @@ AccountMessageMedia copyWith({String? Function()? accountSid, String? Function()
   sid: sid != null ? sid() : this.sid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountMessageMedia &&
           accountSid == other.accountSid &&
           contentType == other.contentType &&
@@ -81,7 +81,10 @@ AccountMessageMedia copyWith({String? Function()? accountSid, String? Function()
           dateUpdated == other.dateUpdated &&
           parentSid == other.parentSid &&
           sid == other.sid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, contentType, dateCreated, dateUpdated, parentSid, sid, uri); } 
-@override String toString() { return 'AccountMessageMedia(accountSid: $accountSid, contentType: $contentType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentSid: $parentSid, sid: $sid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, contentType, dateCreated, dateUpdated, parentSid, sid, uri);
+
+@override String toString() => 'AccountMessageMedia(accountSid: $accountSid, contentType: $contentType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentSid: $parentSid, sid: $sid, uri: $uri)';
+
  }

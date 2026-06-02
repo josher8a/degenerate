@@ -32,12 +32,15 @@ MqWorkerConsumerRequest copyWith({MqQueueName? Function()? deadLetterQueue, MqSc
   settings: settings != null ? settings() : this.settings,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerConsumerRequest &&
           deadLetterQueue == other.deadLetterQueue &&
           scriptName == other.scriptName &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(deadLetterQueue, scriptName, settings, type); } 
-@override String toString() { return 'MqWorkerConsumerRequest(deadLetterQueue: $deadLetterQueue, scriptName: $scriptName, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(deadLetterQueue, scriptName, settings, type);
+
+@override String toString() => 'MqWorkerConsumerRequest(deadLetterQueue: $deadLetterQueue, scriptName: $scriptName, settings: $settings, type: $type)';
+
  }

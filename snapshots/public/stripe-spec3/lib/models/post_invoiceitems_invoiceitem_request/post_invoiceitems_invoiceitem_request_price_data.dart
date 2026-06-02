@@ -40,13 +40,16 @@ PostInvoiceitemsInvoiceitemRequestPriceData copyWith({String? currency, String? 
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoiceitemsInvoiceitemRequestPriceData &&
           currency == other.currency &&
           product == other.product &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, product, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostInvoiceitemsInvoiceitemRequestPriceData(currency: $currency, product: $product, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(currency, product, taxBehavior, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'PostInvoiceitemsInvoiceitemRequestPriceData(currency: $currency, product: $product, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

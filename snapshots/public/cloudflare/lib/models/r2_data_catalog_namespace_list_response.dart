@@ -45,12 +45,15 @@ R2DataCatalogNamespaceListResponse copyWith({List<R2DataCatalogNamespaceDetails>
   namespaces: namespaces ?? this.namespaces,
   nextPageToken: nextPageToken != null ? nextPageToken() : this.nextPageToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogNamespaceListResponse &&
           listEquals(details, other.details) &&
           listEquals(namespaceUuids, other.namespaceUuids) &&
           listEquals(namespaces, other.namespaces) &&
-          nextPageToken == other.nextPageToken; } 
-@override int get hashCode { return Object.hash(Object.hashAll(details ?? const []), Object.hashAll(namespaceUuids ?? const []), Object.hashAll(namespaces), nextPageToken); } 
-@override String toString() { return 'R2DataCatalogNamespaceListResponse(details: $details, namespaceUuids: $namespaceUuids, namespaces: $namespaces, nextPageToken: $nextPageToken)'; } 
+          nextPageToken == other.nextPageToken;
+
+@override int get hashCode => Object.hash(Object.hashAll(details ?? const []), Object.hashAll(namespaceUuids ?? const []), Object.hashAll(namespaces), nextPageToken);
+
+@override String toString() => 'R2DataCatalogNamespaceListResponse(details: $details, namespaceUuids: $namespaceUuids, namespaces: $namespaces, nextPageToken: $nextPageToken)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Channel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Channel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Channel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Channel($value)';
+
  }
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
 @immutable final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitAudioConfigCodec && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitAudioConfigCodec($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitAudioConfigCodec && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitAudioConfigCodec($value)';
+
  }
 /// Object containing configuration regarding the audio that is being recorded.
 @immutable final class RealtimekitAudioConfig {const RealtimekitAudioConfig({this.channel = Channel.stereo, this.codec = RealtimekitAudioConfigCodec.aac, this.exportFile = true, });
@@ -79,11 +85,14 @@ RealtimekitAudioConfig copyWith({Channel Function()? channel, RealtimekitAudioCo
   codec: codec != null ? codec() : this.codec,
   exportFile: exportFile != null ? exportFile() : this.exportFile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitAudioConfig &&
           channel == other.channel &&
           codec == other.codec &&
-          exportFile == other.exportFile; } 
-@override int get hashCode { return Object.hash(channel, codec, exportFile); } 
-@override String toString() { return 'RealtimekitAudioConfig(channel: $channel, codec: $codec, exportFile: $exportFile)'; } 
+          exportFile == other.exportFile;
+
+@override int get hashCode => Object.hash(channel, codec, exportFile);
+
+@override String toString() => 'RealtimekitAudioConfig(channel: $channel, codec: $codec, exportFile: $exportFile)';
+
  }

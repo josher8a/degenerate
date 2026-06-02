@@ -39,12 +39,15 @@ PostBillingMeterEventAdjustmentsRequest copyWith({Cancel? Function()? cancel, St
   expand: expand != null ? expand() : this.expand,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMeterEventAdjustmentsRequest &&
           cancel == other.cancel &&
           eventName == other.eventName &&
           listEquals(expand, other.expand) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cancel, eventName, Object.hashAll(expand ?? const []), type); } 
-@override String toString() { return 'PostBillingMeterEventAdjustmentsRequest(cancel: $cancel, eventName: $eventName, expand: $expand, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cancel, eventName, Object.hashAll(expand ?? const []), type);
+
+@override String toString() => 'PostBillingMeterEventAdjustmentsRequest(cancel: $cancel, eventName: $eventName, expand: $expand, type: $type)';
+
  }

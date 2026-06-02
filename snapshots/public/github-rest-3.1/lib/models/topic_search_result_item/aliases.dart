@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Aliases copyWith({TopicRelation? Function()? topicRelation}) { return Aliases(
   topicRelation: topicRelation != null ? topicRelation() : this.topicRelation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Aliases &&
-          topicRelation == other.topicRelation; } 
-@override int get hashCode { return topicRelation.hashCode; } 
-@override String toString() { return 'Aliases(topicRelation: $topicRelation)'; } 
+          topicRelation == other.topicRelation;
+
+@override int get hashCode => topicRelation.hashCode;
+
+@override String toString() => 'Aliases(topicRelation: $topicRelation)';
+
  }

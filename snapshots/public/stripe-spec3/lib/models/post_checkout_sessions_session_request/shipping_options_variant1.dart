@@ -27,10 +27,13 @@ ShippingOptionsVariant1 copyWith({String? Function()? shippingRate, ShippingRate
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
   shippingRateData: shippingRateData != null ? shippingRateData() : this.shippingRateData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingOptionsVariant1 &&
           shippingRate == other.shippingRate &&
-          shippingRateData == other.shippingRateData; } 
-@override int get hashCode { return Object.hash(shippingRate, shippingRateData); } 
-@override String toString() { return 'ShippingOptionsVariant1(shippingRate: $shippingRate, shippingRateData: $shippingRateData)'; } 
+          shippingRateData == other.shippingRateData;
+
+@override int get hashCode => Object.hash(shippingRate, shippingRateData);
+
+@override String toString() => 'ShippingOptionsVariant1(shippingRate: $shippingRate, shippingRateData: $shippingRateData)';
+
  }

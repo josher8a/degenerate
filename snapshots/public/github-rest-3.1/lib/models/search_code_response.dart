@@ -27,11 +27,14 @@ SearchCodeResponse copyWith({int? totalCount, bool? incompleteResults, List<Code
   incompleteResults: incompleteResults ?? this.incompleteResults,
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SearchCodeResponse &&
           totalCount == other.totalCount &&
           incompleteResults == other.incompleteResults &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(totalCount, incompleteResults, Object.hashAll(items)); } 
-@override String toString() { return 'SearchCodeResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(totalCount, incompleteResults, Object.hashAll(items));
+
+@override String toString() => 'SearchCodeResponse(totalCount: $totalCount, incompleteResults: $incompleteResults, items: $items)';
+
  }

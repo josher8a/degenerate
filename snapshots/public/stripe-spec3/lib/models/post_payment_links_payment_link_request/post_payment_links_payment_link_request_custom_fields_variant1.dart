@@ -51,7 +51,7 @@ PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({Dropdown? Funct
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -59,7 +59,10 @@ PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1 copyWith({Dropdown? Funct
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(dropdown, key, label, numeric, optional, text, type);
+
+@override String toString() => 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';
+
  }

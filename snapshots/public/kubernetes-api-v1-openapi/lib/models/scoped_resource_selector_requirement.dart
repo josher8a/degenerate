@@ -30,11 +30,14 @@ ScopedResourceSelectorRequirement copyWith({String? $operator, String? scopeName
   scopeName: scopeName ?? this.scopeName,
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScopedResourceSelectorRequirement &&
           $operator == other.$operator &&
           scopeName == other.scopeName &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash($operator, scopeName, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'ScopedResourceSelectorRequirement(\$operator: ${$operator}, scopeName: $scopeName, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash($operator, scopeName, Object.hashAll(values ?? const []));
+
+@override String toString() => 'ScopedResourceSelectorRequirement(\$operator: ${$operator}, scopeName: $scopeName, values: $values)';
+
  }

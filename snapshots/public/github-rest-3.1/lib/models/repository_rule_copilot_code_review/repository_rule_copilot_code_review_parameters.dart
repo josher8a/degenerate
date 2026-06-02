@@ -22,10 +22,13 @@ RepositoryRuleCopilotCodeReviewParameters copyWith({bool? Function()? reviewDraf
   reviewDraftPullRequests: reviewDraftPullRequests != null ? reviewDraftPullRequests() : this.reviewDraftPullRequests,
   reviewOnPush: reviewOnPush != null ? reviewOnPush() : this.reviewOnPush,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleCopilotCodeReviewParameters &&
           reviewDraftPullRequests == other.reviewDraftPullRequests &&
-          reviewOnPush == other.reviewOnPush; } 
-@override int get hashCode { return Object.hash(reviewDraftPullRequests, reviewOnPush); } 
-@override String toString() { return 'RepositoryRuleCopilotCodeReviewParameters(reviewDraftPullRequests: $reviewDraftPullRequests, reviewOnPush: $reviewOnPush)'; } 
+          reviewOnPush == other.reviewOnPush;
+
+@override int get hashCode => Object.hash(reviewDraftPullRequests, reviewOnPush);
+
+@override String toString() => 'RepositoryRuleCopilotCodeReviewParameters(reviewDraftPullRequests: $reviewDraftPullRequests, reviewOnPush: $reviewOnPush)';
+
  }

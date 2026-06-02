@@ -57,7 +57,7 @@ Changes copyWith({int? customersAdded, int? customersRemoved, DateTime? date, Li
   providersRemoved: providersRemoved ?? this.providersRemoved,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Changes &&
           customersAdded == other.customersAdded &&
           customersRemoved == other.customersRemoved &&
@@ -65,7 +65,10 @@ Changes copyWith({int? customersAdded, int? customersRemoved, DateTime? date, Li
           listEquals(entries, other.entries) &&
           providersAdded == other.providersAdded &&
           providersRemoved == other.providersRemoved &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(customersAdded, customersRemoved, date, Object.hashAll(entries), providersAdded, providersRemoved, totalCount); } 
-@override String toString() { return 'Changes(customersAdded: $customersAdded, customersRemoved: $customersRemoved, date: $date, entries: $entries, providersAdded: $providersAdded, providersRemoved: $providersRemoved, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(customersAdded, customersRemoved, date, Object.hashAll(entries), providersAdded, providersRemoved, totalCount);
+
+@override String toString() => 'Changes(customersAdded: $customersAdded, customersRemoved: $customersRemoved, date: $date, entries: $entries, providersAdded: $providersAdded, providersRemoved: $providersRemoved, totalCount: $totalCount)';
+
  }

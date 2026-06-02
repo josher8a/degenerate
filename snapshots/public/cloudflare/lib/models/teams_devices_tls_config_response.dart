@@ -27,10 +27,13 @@ TeamsDevicesTlsConfigResponse copyWith({String? Function()? sha256, String? tlsS
   sha256: sha256 != null ? sha256() : this.sha256,
   tlsSockaddr: tlsSockaddr ?? this.tlsSockaddr,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesTlsConfigResponse &&
           sha256 == other.sha256 &&
-          tlsSockaddr == other.tlsSockaddr; } 
-@override int get hashCode { return Object.hash(sha256, tlsSockaddr); } 
-@override String toString() { return 'TeamsDevicesTlsConfigResponse(sha256: $sha256, tlsSockaddr: $tlsSockaddr)'; } 
+          tlsSockaddr == other.tlsSockaddr;
+
+@override int get hashCode => Object.hash(sha256, tlsSockaddr);
+
+@override String toString() => 'TeamsDevicesTlsConfigResponse(sha256: $sha256, tlsSockaddr: $tlsSockaddr)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfIbmGranite40HMicroError$400 extends WorkersAiPostR
 
 final WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfIbmGranite40HMicroError$Unknown extends WorkersAiPostRunCfIbmGranite40HMicroError {const WorkersAiPostRunCfIbmGranite40HMicroError$Unknown(this.statusCode, this.rawBody, );
 

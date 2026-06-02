@@ -22,10 +22,13 @@ AccessEmptyResponse copyWith({bool? Function()? result, bool? Function()? succes
   result: result != null ? result() : this.result,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessEmptyResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'AccessEmptyResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'AccessEmptyResponse(result: $result, success: $success)';
+
  }

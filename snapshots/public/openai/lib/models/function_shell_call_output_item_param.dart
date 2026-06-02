@@ -54,14 +54,17 @@ FunctionShellCallOutputItemParam copyWith({String? Function()? id, String? callI
   status: status != null ? status() : this.status,
   maxOutputLength: maxOutputLength != null ? maxOutputLength() : this.maxOutputLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutputItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           listEquals(output, other.output) &&
           status == other.status &&
-          maxOutputLength == other.maxOutputLength; } 
-@override int get hashCode { return Object.hash(id, callId, type, Object.hashAll(output), status, maxOutputLength); } 
-@override String toString() { return 'FunctionShellCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status, maxOutputLength: $maxOutputLength)'; } 
+          maxOutputLength == other.maxOutputLength;
+
+@override int get hashCode => Object.hash(id, callId, type, Object.hashAll(output), status, maxOutputLength);
+
+@override String toString() => 'FunctionShellCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status, maxOutputLength: $maxOutputLength)';
+
  }

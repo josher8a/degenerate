@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsMxRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsMxRecordType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsMxRecordType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnsRecordsMxRecordType($value)';
+
  }
 @immutable final class DnsRecordsMxRecord {const DnsRecordsMxRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.priority, this.type, });
 
@@ -83,7 +86,7 @@ DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
   priority: priority != null ? priority() : this.priority,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsMxRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -93,7 +96,10 @@ DnsRecordsMxRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
           ttl == other.ttl &&
           content == other.content &&
           priority == other.priority &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, priority, type); } 
-@override String toString() { return 'DnsRecordsMxRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, priority: $priority, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, priority, type);
+
+@override String toString() => 'DnsRecordsMxRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, priority: $priority, type: $type)';
+
  }

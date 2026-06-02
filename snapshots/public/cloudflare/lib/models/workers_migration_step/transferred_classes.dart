@@ -25,11 +25,14 @@ TransferredClasses copyWith({String? Function()? from, String? Function()? fromS
   fromScript: fromScript != null ? fromScript() : this.fromScript,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferredClasses &&
           from == other.from &&
           fromScript == other.fromScript &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, fromScript, to); } 
-@override String toString() { return 'TransferredClasses(from: $from, fromScript: $fromScript, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, fromScript, to);
+
+@override String toString() => 'TransferredClasses(from: $from, fromScript: $fromScript, to: $to)';
+
  }

@@ -115,7 +115,7 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
   updatedAt: updatedAt ?? this.updatedAt,
   withdrawnAt: withdrawnAt != null ? withdrawnAt() : this.withdrawnAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertSecurityAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -131,7 +131,10 @@ DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cv
           listEquals(references, other.references) &&
           publishedAt == other.publishedAt &&
           updatedAt == other.updatedAt &&
-          withdrawnAt == other.withdrawnAt; } 
-@override int get hashCode { return Object.hash(ghsaId, cveId, summary, description, Object.hashAll(vulnerabilities), severity, cvss, cvssSeverities, epss, Object.hashAll(cwes), Object.hashAll(identifiers), Object.hashAll(references), publishedAt, updatedAt, withdrawnAt); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisory(ghsaId: $ghsaId, cveId: $cveId, summary: $summary, description: $description, vulnerabilities: $vulnerabilities, severity: $severity, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, withdrawnAt: $withdrawnAt)'; } 
+          withdrawnAt == other.withdrawnAt;
+
+@override int get hashCode => Object.hash(ghsaId, cveId, summary, description, Object.hashAll(vulnerabilities), severity, cvss, cvssSeverities, epss, Object.hashAll(cwes), Object.hashAll(identifiers), Object.hashAll(references), publishedAt, updatedAt, withdrawnAt);
+
+@override String toString() => 'DependabotAlertSecurityAdvisory(ghsaId: $ghsaId, cveId: $cveId, summary: $summary, description: $description, vulnerabilities: $vulnerabilities, severity: $severity, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, withdrawnAt: $withdrawnAt)';
+
  }

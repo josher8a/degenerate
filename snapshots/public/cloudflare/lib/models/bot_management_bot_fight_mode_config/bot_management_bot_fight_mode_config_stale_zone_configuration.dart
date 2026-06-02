@@ -48,14 +48,17 @@ BotManagementBotFightModeConfigStaleZoneConfiguration copyWith({BotManagementOpt
   sbfmVerifiedBots: sbfmVerifiedBots != null ? sbfmVerifiedBots() : this.sbfmVerifiedBots,
   suppressSessionScore: suppressSessionScore != null ? suppressSessionScore() : this.suppressSessionScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementBotFightModeConfigStaleZoneConfiguration &&
           optimizeWordpress == other.optimizeWordpress &&
           sbfmDefinitelyAutomated == other.sbfmDefinitelyAutomated &&
           sbfmLikelyAutomated == other.sbfmLikelyAutomated &&
           sbfmStaticResourceProtection == other.sbfmStaticResourceProtection &&
           sbfmVerifiedBots == other.sbfmVerifiedBots &&
-          suppressSessionScore == other.suppressSessionScore; } 
-@override int get hashCode { return Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmLikelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, suppressSessionScore); } 
-@override String toString() { return 'BotManagementBotFightModeConfigStaleZoneConfiguration(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmLikelyAutomated: $sbfmLikelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, suppressSessionScore: $suppressSessionScore)'; } 
+          suppressSessionScore == other.suppressSessionScore;
+
+@override int get hashCode => Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmLikelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, suppressSessionScore);
+
+@override String toString() => 'BotManagementBotFightModeConfigStaleZoneConfiguration(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmLikelyAutomated: $sbfmLikelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, suppressSessionScore: $suppressSessionScore)';
+
  }

@@ -22,10 +22,13 @@ MigrationsMapCommitAuthorRequest copyWith({String? Function()? email, String? Fu
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsMapCommitAuthorRequest &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, name); } 
-@override String toString() { return 'MigrationsMapCommitAuthorRequest(email: $email, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(email, name);
+
+@override String toString() => 'MigrationsMapCommitAuthorRequest(email: $email, name: $name)';
+
  }

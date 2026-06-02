@@ -101,7 +101,7 @@ WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociatio
   url: url ?? this.url,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCommitCommentCreatedComment &&
           authorAssociation == other.authorAssociation &&
           body == other.body &&
@@ -116,7 +116,10 @@ WebhookCommitCommentCreatedComment copyWith({AuthorAssociation? authorAssociatio
           reactions == other.reactions &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(authorAssociation, body, commitId, createdAt, htmlUrl, id, line, nodeId, path, position, reactions, updatedAt, url, user); } 
-@override String toString() { return 'WebhookCommitCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, line: $line, nodeId: $nodeId, path: $path, position: $position, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(authorAssociation, body, commitId, createdAt, htmlUrl, id, line, nodeId, path, position, reactions, updatedAt, url, user);
+
+@override String toString() => 'WebhookCommitCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, line: $line, nodeId: $nodeId, path: $path, position: $position, reactions: $reactions, updatedAt: $updatedAt, url: $url, user: $user)';
+
  }

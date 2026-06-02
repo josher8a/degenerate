@@ -20,10 +20,13 @@ AccessDevicePostureCheck copyWith({bool? Function()? exists, String? Function()?
   exists: exists != null ? exists() : this.exists,
   path: path != null ? path() : this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessDevicePostureCheck &&
           exists == other.exists &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(exists, path); } 
-@override String toString() { return 'AccessDevicePostureCheck(exists: $exists, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(exists, path);
+
+@override String toString() => 'AccessDevicePostureCheck(exists: $exists, path: $path)';
+
  }

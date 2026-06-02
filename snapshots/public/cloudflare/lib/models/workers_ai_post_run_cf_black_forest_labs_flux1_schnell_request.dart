@@ -28,10 +28,13 @@ WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest copyWith({String? prompt, i
   prompt: prompt ?? this.prompt,
   steps: steps != null ? steps() : this.steps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest &&
           prompt == other.prompt &&
-          steps == other.steps; } 
-@override int get hashCode { return Object.hash(prompt, steps); } 
-@override String toString() { return 'WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(prompt: $prompt, steps: $steps)'; } 
+          steps == other.steps;
+
+@override int get hashCode => Object.hash(prompt, steps);
+
+@override String toString() => 'WorkersAiPostRunCfBlackForestLabsFlux1SchnellRequest(prompt: $prompt, steps: $steps)';
+
  }

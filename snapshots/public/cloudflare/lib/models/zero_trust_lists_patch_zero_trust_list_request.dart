@@ -22,10 +22,13 @@ ZeroTrustListsPatchZeroTrustListRequest copyWith({List<ZeroTrustGatewayItemsInpu
   append: append != null ? append() : this.append,
   remove: remove != null ? remove() : this.remove,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustListsPatchZeroTrustListRequest &&
           listEquals(append, other.append) &&
-          listEquals(remove, other.remove); } 
-@override int get hashCode { return Object.hash(Object.hashAll(append ?? const []), Object.hashAll(remove ?? const [])); } 
-@override String toString() { return 'ZeroTrustListsPatchZeroTrustListRequest(append: $append, remove: $remove)'; } 
+          listEquals(remove, other.remove);
+
+@override int get hashCode => Object.hash(Object.hashAll(append ?? const []), Object.hashAll(remove ?? const []));
+
+@override String toString() => 'ZeroTrustListsPatchZeroTrustListRequest(append: $append, remove: $remove)';
+
  }

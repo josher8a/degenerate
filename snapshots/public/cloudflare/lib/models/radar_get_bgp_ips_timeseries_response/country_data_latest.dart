@@ -21,10 +21,13 @@ CountryDataLatest copyWith({double? count, double? timestamp, }) { return Countr
   count: count ?? this.count,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountryDataLatest &&
           count == other.count &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(count, timestamp); } 
-@override String toString() { return 'CountryDataLatest(count: $count, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(count, timestamp);
+
+@override String toString() => 'CountryDataLatest(count: $count, timestamp: $timestamp)';
+
  }

@@ -23,10 +23,13 @@ SubmitToolOutputsRunRequest copyWith({List<ToolOutputs>? toolOutputs, bool? Func
   toolOutputs: toolOutputs ?? this.toolOutputs,
   stream: stream != null ? stream() : this.stream,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubmitToolOutputsRunRequest &&
           listEquals(toolOutputs, other.toolOutputs) &&
-          stream == other.stream; } 
-@override int get hashCode { return Object.hash(Object.hashAll(toolOutputs), stream); } 
-@override String toString() { return 'SubmitToolOutputsRunRequest(toolOutputs: $toolOutputs, stream: $stream)'; } 
+          stream == other.stream;
+
+@override int get hashCode => Object.hash(Object.hashAll(toolOutputs), stream);
+
+@override String toString() => 'SubmitToolOutputsRunRequest(toolOutputs: $toolOutputs, stream: $stream)';
+
  }

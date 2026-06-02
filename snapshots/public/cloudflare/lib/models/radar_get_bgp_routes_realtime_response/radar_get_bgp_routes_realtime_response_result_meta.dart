@@ -41,13 +41,16 @@ RadarGetBgpRoutesRealtimeResponseResultMeta copyWith({List<MetaAsnInfo>? asnInfo
   prefixOrigins: prefixOrigins ?? this.prefixOrigins,
   queryTime: queryTime ?? this.queryTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRoutesRealtimeResponseResultMeta &&
           listEquals(asnInfo, other.asnInfo) &&
           listEquals(collectors, other.collectors) &&
           dataTime == other.dataTime &&
           listEquals(prefixOrigins, other.prefixOrigins) &&
-          queryTime == other.queryTime; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asnInfo), Object.hashAll(collectors), dataTime, Object.hashAll(prefixOrigins), queryTime); } 
-@override String toString() { return 'RadarGetBgpRoutesRealtimeResponseResultMeta(asnInfo: $asnInfo, collectors: $collectors, dataTime: $dataTime, prefixOrigins: $prefixOrigins, queryTime: $queryTime)'; } 
+          queryTime == other.queryTime;
+
+@override int get hashCode => Object.hash(Object.hashAll(asnInfo), Object.hashAll(collectors), dataTime, Object.hashAll(prefixOrigins), queryTime);
+
+@override String toString() => 'RadarGetBgpRoutesRealtimeResponseResultMeta(asnInfo: $asnInfo, collectors: $collectors, dataTime: $dataTime, prefixOrigins: $prefixOrigins, queryTime: $queryTime)';
+
  }

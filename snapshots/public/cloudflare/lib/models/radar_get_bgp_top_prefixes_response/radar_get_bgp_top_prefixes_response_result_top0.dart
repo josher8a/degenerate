@@ -29,10 +29,13 @@ RadarGetBgpTopPrefixesResponseResultTop0 copyWith({String? prefix, String? value
   prefix: prefix ?? this.prefix,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopPrefixesResponseResultTop0 &&
           prefix == other.prefix &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(prefix, value); } 
-@override String toString() { return 'RadarGetBgpTopPrefixesResponseResultTop0(prefix: $prefix, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(prefix, value);
+
+@override String toString() => 'RadarGetBgpTopPrefixesResponseResultTop0(prefix: $prefix, value: $value)';
+
  }

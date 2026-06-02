@@ -26,9 +26,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'
 Placement copyWith({String? mode}) { return Placement(
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Placement &&
-          mode == other.mode; } 
-@override int get hashCode { return mode.hashCode; } 
-@override String toString() { return 'Placement(mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => mode.hashCode;
+
+@override String toString() => 'Placement(mode: $mode)';
+
  }

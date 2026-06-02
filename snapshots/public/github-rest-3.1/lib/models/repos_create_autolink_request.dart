@@ -29,11 +29,14 @@ ReposCreateAutolinkRequest copyWith({String? keyPrefix, String? urlTemplate, boo
   urlTemplate: urlTemplate ?? this.urlTemplate,
   isAlphanumeric: isAlphanumeric != null ? isAlphanumeric() : this.isAlphanumeric,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateAutolinkRequest &&
           keyPrefix == other.keyPrefix &&
           urlTemplate == other.urlTemplate &&
-          isAlphanumeric == other.isAlphanumeric; } 
-@override int get hashCode { return Object.hash(keyPrefix, urlTemplate, isAlphanumeric); } 
-@override String toString() { return 'ReposCreateAutolinkRequest(keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric)'; } 
+          isAlphanumeric == other.isAlphanumeric;
+
+@override int get hashCode => Object.hash(keyPrefix, urlTemplate, isAlphanumeric);
+
+@override String toString() => 'ReposCreateAutolinkRequest(keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric)';
+
  }

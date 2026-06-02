@@ -20,10 +20,13 @@ QueuesAckMessagesRequest copyWith({List<Acks>? Function()? acks, List<QueuesAckM
   acks: acks != null ? acks() : this.acks,
   retries: retries != null ? retries() : this.retries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesAckMessagesRequest &&
           listEquals(acks, other.acks) &&
-          listEquals(retries, other.retries); } 
-@override int get hashCode { return Object.hash(Object.hashAll(acks ?? const []), Object.hashAll(retries ?? const [])); } 
-@override String toString() { return 'QueuesAckMessagesRequest(acks: $acks, retries: $retries)'; } 
+          listEquals(retries, other.retries);
+
+@override int get hashCode => Object.hash(Object.hashAll(acks ?? const []), Object.hashAll(retries ?? const []));
+
+@override String toString() => 'QueuesAckMessagesRequest(acks: $acks, retries: $retries)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('reque
 WorkersAiPostRunCfBaaiBgeM3RequestVariant3 copyWith({List<Variant3Requests>? requests}) { return WorkersAiPostRunCfBaaiBgeM3RequestVariant3(
   requests: requests ?? this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfBaaiBgeM3RequestVariant3 &&
-          listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hashAll(requests); } 
-@override String toString() { return 'WorkersAiPostRunCfBaaiBgeM3RequestVariant3(requests: $requests)'; } 
+          listEquals(requests, other.requests);
+
+@override int get hashCode => Object.hashAll(requests);
+
+@override String toString() => 'WorkersAiPostRunCfBaaiBgeM3RequestVariant3(requests: $requests)';
+
  }

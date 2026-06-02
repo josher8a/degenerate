@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AsyncAmdStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AsyncAmdStatusCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AsyncAmdStatusCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AsyncAmdStatusCallbackMethod($value)';
+
  }
 @immutable final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.recordingChannels, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.method, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.applicationSid, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.machineDetectionSilenceTimeout, });
 
@@ -267,7 +270,7 @@ CreateCallRequest copyWith({String? to, String? from, Method? Function()? method
   twiml: twiml != null ? twiml() : this.twiml,
   applicationSid: applicationSid != null ? applicationSid() : this.applicationSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCallRequest &&
           to == other.to &&
           from == other.from &&
@@ -304,7 +307,10 @@ CreateCallRequest copyWith({String? to, String? from, Method? Function()? method
           clientNotificationUrl == other.clientNotificationUrl &&
           url == other.url &&
           twiml == other.twiml &&
-          applicationSid == other.applicationSid; } 
-@override int get hashCode { return Object.hashAll([to, from, method, fallbackUrl, fallbackMethod, statusCallback, Object.hashAll(statusCallbackEvent ?? const []), statusCallbackMethod, sendDigits, timeout, record, recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, machineDetection, machineDetectionTimeout, Object.hashAll(recordingStatusCallbackEvent ?? const []), trim, callerId, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, asyncAmd, asyncAmdStatusCallback, asyncAmdStatusCallbackMethod, byoc, callReason, callToken, recordingTrack, timeLimit, clientNotificationUrl, url, twiml, applicationSid]); } 
-@override String toString() { return 'CreateCallRequest(to: $to, from: $from, method: $method, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackEvent: $statusCallbackEvent, statusCallbackMethod: $statusCallbackMethod, sendDigits: $sendDigits, timeout: $timeout, record: $record, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, trim: $trim, callerId: $callerId, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, asyncAmd: $asyncAmd, asyncAmdStatusCallback: $asyncAmdStatusCallback, asyncAmdStatusCallbackMethod: $asyncAmdStatusCallbackMethod, byoc: $byoc, callReason: $callReason, callToken: $callToken, recordingTrack: $recordingTrack, timeLimit: $timeLimit, clientNotificationUrl: $clientNotificationUrl, url: $url, twiml: $twiml, applicationSid: $applicationSid)'; } 
+          applicationSid == other.applicationSid;
+
+@override int get hashCode => Object.hashAll([to, from, method, fallbackUrl, fallbackMethod, statusCallback, Object.hashAll(statusCallbackEvent ?? const []), statusCallbackMethod, sendDigits, timeout, record, recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, machineDetection, machineDetectionTimeout, Object.hashAll(recordingStatusCallbackEvent ?? const []), trim, callerId, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, asyncAmd, asyncAmdStatusCallback, asyncAmdStatusCallbackMethod, byoc, callReason, callToken, recordingTrack, timeLimit, clientNotificationUrl, url, twiml, applicationSid]);
+
+@override String toString() => 'CreateCallRequest(to: $to, from: $from, method: $method, fallbackUrl: $fallbackUrl, fallbackMethod: $fallbackMethod, statusCallback: $statusCallback, statusCallbackEvent: $statusCallbackEvent, statusCallbackMethod: $statusCallbackMethod, sendDigits: $sendDigits, timeout: $timeout, record: $record, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, trim: $trim, callerId: $callerId, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, asyncAmd: $asyncAmd, asyncAmdStatusCallback: $asyncAmdStatusCallback, asyncAmdStatusCallbackMethod: $asyncAmdStatusCallbackMethod, byoc: $byoc, callReason: $callReason, callToken: $callToken, recordingTrack: $recordingTrack, timeLimit: $timeLimit, clientNotificationUrl: $clientNotificationUrl, url: $url, twiml: $twiml, applicationSid: $applicationSid)';
+
  }

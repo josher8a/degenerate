@@ -26,11 +26,14 @@ Authorization copyWith({bool? authorized, String? Function()? statusMessage, Dat
   statusMessage: statusMessage != null ? statusMessage() : this.statusMessage,
   timestamp: timestamp ?? this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Authorization &&
           authorized == other.authorized &&
           statusMessage == other.statusMessage &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(authorized, statusMessage, timestamp); } 
-@override String toString() { return 'Authorization(authorized: $authorized, statusMessage: $statusMessage, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(authorized, statusMessage, timestamp);
+
+@override String toString() => 'Authorization(authorized: $authorized, statusMessage: $statusMessage, timestamp: $timestamp)';
+
  }

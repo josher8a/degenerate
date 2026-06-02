@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApprovalPolicy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApprovalPolicy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApprovalPolicy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApprovalPolicy($value)';
+
  }
 @immutable final class ActionsForkPrContributorApproval {const ActionsForkPrContributorApproval({required this.approvalPolicy});
 
@@ -44,9 +47,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('appro
 ActionsForkPrContributorApproval copyWith({ApprovalPolicy? approvalPolicy}) { return ActionsForkPrContributorApproval(
   approvalPolicy: approvalPolicy ?? this.approvalPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsForkPrContributorApproval &&
-          approvalPolicy == other.approvalPolicy; } 
-@override int get hashCode { return approvalPolicy.hashCode; } 
-@override String toString() { return 'ActionsForkPrContributorApproval(approvalPolicy: $approvalPolicy)'; } 
+          approvalPolicy == other.approvalPolicy;
+
+@override int get hashCode => approvalPolicy.hashCode;
+
+@override String toString() => 'ActionsForkPrContributorApproval(approvalPolicy: $approvalPolicy)';
+
  }

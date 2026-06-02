@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfDefogSqlcoder7b2Error$400 extends WorkersAiPostRun
 
 final WorkersAiPostRunCfDefogSqlcoder7b2Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfDefogSqlcoder7b2Error$Unknown extends WorkersAiPostRunCfDefogSqlcoder7b2Error {const WorkersAiPostRunCfDefogSqlcoder7b2Error$Unknown(this.statusCode, this.rawBody, );
 

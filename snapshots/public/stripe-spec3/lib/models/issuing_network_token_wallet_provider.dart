@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardNumberSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardNumberSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CardNumberSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CardNumberSource($value)';
+
  }
 @immutable final class ReasonCodes {const ReasonCodes._(this.value);
 
@@ -128,10 +131,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasonCodes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasonCodes($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReasonCodes && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReasonCodes($value)';
+
  }
 /// The recommendation on responding to the tokenization request.
 @immutable final class SuggestedDecision {const SuggestedDecision._(this.value);
@@ -156,10 +162,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SuggestedDecision && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SuggestedDecision($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SuggestedDecision && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SuggestedDecision($value)';
+
  }
 /// 
 @immutable final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
@@ -250,7 +259,7 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
   suggestedDecision: suggestedDecision != null ? suggestedDecision() : this.suggestedDecision,
   suggestedDecisionVersion: suggestedDecisionVersion != null ? suggestedDecisionVersion() : this.suggestedDecisionVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenWalletProvider &&
           accountId == other.accountId &&
           accountTrustScore == other.accountTrustScore &&
@@ -261,7 +270,10 @@ IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? 
           hashedAccountEmailAddress == other.hashedAccountEmailAddress &&
           listEquals(reasonCodes, other.reasonCodes) &&
           suggestedDecision == other.suggestedDecision &&
-          suggestedDecisionVersion == other.suggestedDecisionVersion; } 
-@override int get hashCode { return Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion); } 
-@override String toString() { return 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)'; } 
+          suggestedDecisionVersion == other.suggestedDecisionVersion;
+
+@override int get hashCode => Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion);
+
+@override String toString() => 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)';
+
  }

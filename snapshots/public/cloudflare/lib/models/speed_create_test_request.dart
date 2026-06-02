@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SpeedCreateTestRequest copyWith({ObservatoryRegion? Function()? region}) { return SpeedCreateTestRequest(
   region: region != null ? region() : this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpeedCreateTestRequest &&
-          region == other.region; } 
-@override int get hashCode { return region.hashCode; } 
-@override String toString() { return 'SpeedCreateTestRequest(region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => region.hashCode;
+
+@override String toString() => 'SpeedCreateTestRequest(region: $region)';
+
  }

@@ -55,7 +55,7 @@ ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, Strin
   environmentUrl: environmentUrl != null ? environmentUrl() : this.environmentUrl,
   autoInactive: autoInactive != null ? autoInactive() : this.autoInactive,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeploymentStatusRequest &&
           state == other.state &&
           targetUrl == other.targetUrl &&
@@ -63,7 +63,10 @@ ReposCreateDeploymentStatusRequest copyWith({DeploymentStatusState? state, Strin
           description == other.description &&
           environment == other.environment &&
           environmentUrl == other.environmentUrl &&
-          autoInactive == other.autoInactive; } 
-@override int get hashCode { return Object.hash(state, targetUrl, logUrl, description, environment, environmentUrl, autoInactive); } 
-@override String toString() { return 'ReposCreateDeploymentStatusRequest(state: $state, targetUrl: $targetUrl, logUrl: $logUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, autoInactive: $autoInactive)'; } 
+          autoInactive == other.autoInactive;
+
+@override int get hashCode => Object.hash(state, targetUrl, logUrl, description, environment, environmentUrl, autoInactive);
+
+@override String toString() => 'ReposCreateDeploymentStatusRequest(state: $state, targetUrl: $targetUrl, logUrl: $logUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, autoInactive: $autoInactive)';
+
  }

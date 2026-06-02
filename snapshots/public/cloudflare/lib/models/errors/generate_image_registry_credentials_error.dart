@@ -20,25 +20,29 @@ final class GenerateImageRegistryCredentialsError$400 extends GenerateImageRegis
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GenerateImageRegistryCredentialsError$404 extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$404(this.error);
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GenerateImageRegistryCredentialsError$409 extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$409(this.error);
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class GenerateImageRegistryCredentialsError$500 extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$500(this.error);
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GenerateImageRegistryCredentialsError$Unknown extends GenerateImageRegistryCredentialsError {const GenerateImageRegistryCredentialsError$Unknown(this.statusCode, this.rawBody, );
 

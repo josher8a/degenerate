@@ -25,10 +25,13 @@ InputAudio copyWith({ChatCompletionRequestMessageContentPartAudioType? type, Cha
   type: type ?? this.type,
   inputAudio: inputAudio ?? this.inputAudio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudio &&
           type == other.type &&
-          inputAudio == other.inputAudio; } 
-@override int get hashCode { return Object.hash(type, inputAudio); } 
-@override String toString() { return 'InputAudio(type: $type, inputAudio: $inputAudio)'; } 
+          inputAudio == other.inputAudio;
+
+@override int get hashCode => Object.hash(type, inputAudio);
+
+@override String toString() => 'InputAudio(type: $type, inputAudio: $inputAudio)';
+
  }

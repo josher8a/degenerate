@@ -86,7 +86,7 @@ EmailSecurityGetTrustedDomainResponseResult copyWith({String? Function()? commen
   id: id ?? this.id,
   lastModified: lastModified ?? this.lastModified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetTrustedDomainResponseResult &&
           comments == other.comments &&
           isRecent == other.isRecent &&
@@ -95,7 +95,10 @@ EmailSecurityGetTrustedDomainResponseResult copyWith({String? Function()? commen
           pattern == other.pattern &&
           createdAt == other.createdAt &&
           id == other.id &&
-          lastModified == other.lastModified; } 
-@override int get hashCode { return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, createdAt, id, lastModified); } 
-@override String toString() { return 'EmailSecurityGetTrustedDomainResponseResult(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, createdAt: $createdAt, id: $id, lastModified: $lastModified)'; } 
+          lastModified == other.lastModified;
+
+@override int get hashCode => Object.hash(comments, isRecent, isRegex, isSimilarity, pattern, createdAt, id, lastModified);
+
+@override String toString() => 'EmailSecurityGetTrustedDomainResponseResult(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern, createdAt: $createdAt, id: $id, lastModified: $lastModified)';
+
  }

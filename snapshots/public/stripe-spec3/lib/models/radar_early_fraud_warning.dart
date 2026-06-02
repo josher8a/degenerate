@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RadarEarlyFraudWarningObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RadarEarlyFraudWarningObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RadarEarlyFraudWarningObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RadarEarlyFraudWarningObject($value)';
+
  }
 /// An early fraud warning indicates that the card issuer has notified us that a
 /// charge may be fraudulent.
@@ -95,7 +98,7 @@ RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge,
   object: object ?? this.object,
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarEarlyFraudWarning &&
           actionable == other.actionable &&
           charge == other.charge &&
@@ -104,7 +107,10 @@ RadarEarlyFraudWarning copyWith({bool? actionable, ApplicationFeeCharge? charge,
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
-          paymentIntent == other.paymentIntent; } 
-@override int get hashCode { return Object.hash(actionable, charge, created, fraudType, id, livemode, object, paymentIntent); } 
-@override String toString() { return 'RadarEarlyFraudWarning(actionable: $actionable, charge: $charge, created: $created, fraudType: $fraudType, id: $id, livemode: $livemode, object: $object, paymentIntent: $paymentIntent)'; } 
+          paymentIntent == other.paymentIntent;
+
+@override int get hashCode => Object.hash(actionable, charge, created, fraudType, id, livemode, object, paymentIntent);
+
+@override String toString() => 'RadarEarlyFraudWarning(actionable: $actionable, charge: $charge, created: $created, fraudType: $fraudType, id: $id, livemode: $livemode, object: $object, paymentIntent: $paymentIntent)';
+
  }

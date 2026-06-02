@@ -46,14 +46,17 @@ CustomPatternBackfillScans copyWith({String? Function()? type, String? Function(
   patternName: patternName != null ? patternName() : this.patternName,
   patternScope: patternScope != null ? patternScope() : this.patternScope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPatternBackfillScans &&
           type == other.type &&
           status == other.status &&
           completedAt == other.completedAt &&
           startedAt == other.startedAt &&
           patternName == other.patternName &&
-          patternScope == other.patternScope; } 
-@override int get hashCode { return Object.hash(type, status, completedAt, startedAt, patternName, patternScope); } 
-@override String toString() { return 'CustomPatternBackfillScans(type: $type, status: $status, completedAt: $completedAt, startedAt: $startedAt, patternName: $patternName, patternScope: $patternScope)'; } 
+          patternScope == other.patternScope;
+
+@override int get hashCode => Object.hash(type, status, completedAt, startedAt, patternName, patternScope);
+
+@override String toString() => 'CustomPatternBackfillScans(type: $type, status: $status, completedAt: $completedAt, startedAt: $startedAt, patternName: $patternName, patternScope: $patternScope)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuningJobObject($value)';
+
  }
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
 @immutable final class FineTuningJobStatus {const FineTuningJobStatus._(this.value);
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuningJobStatus($value)';
+
  }
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.
 /// 
@@ -204,7 +210,7 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
   method: method != null ? method() : this.method,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJob &&
           id == other.id &&
           createdAt == other.createdAt &&
@@ -224,7 +230,10 @@ FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function
           seed == other.seed &&
           estimatedFinish == other.estimatedFinish &&
           method == other.method &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, createdAt, error, fineTunedModel, finishedAt, hyperparameters, model, object, organizationId, Object.hashAll(resultFiles), status, trainedTokens, trainingFile, validationFile, Object.hashAll(integrations ?? const []), seed, estimatedFinish, method, metadata); } 
-@override String toString() { return 'FineTuningJob(id: $id, createdAt: $createdAt, error: $error, fineTunedModel: $fineTunedModel, finishedAt: $finishedAt, hyperparameters: $hyperparameters, model: $model, object: $object, organizationId: $organizationId, resultFiles: $resultFiles, status: $status, trainedTokens: $trainedTokens, trainingFile: $trainingFile, validationFile: $validationFile, integrations: $integrations, seed: $seed, estimatedFinish: $estimatedFinish, method: $method, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, createdAt, error, fineTunedModel, finishedAt, hyperparameters, model, object, organizationId, Object.hashAll(resultFiles), status, trainedTokens, trainingFile, validationFile, Object.hashAll(integrations ?? const []), seed, estimatedFinish, method, metadata);
+
+@override String toString() => 'FineTuningJob(id: $id, createdAt: $createdAt, error: $error, fineTunedModel: $fineTunedModel, finishedAt: $finishedAt, hyperparameters: $hyperparameters, model: $model, object: $object, organizationId: $organizationId, resultFiles: $resultFiles, status: $status, trainedTokens: $trainedTokens, trainingFile: $trainingFile, validationFile: $validationFile, integrations: $integrations, seed: $seed, estimatedFinish: $estimatedFinish, method: $method, metadata: $metadata)';
+
  }

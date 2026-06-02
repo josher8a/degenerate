@@ -21,10 +21,13 @@ RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 copyWith({List<S
   notSpoof: notSpoof ?? this.notSpoof,
   spoof: spoof ?? this.spoof,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0 &&
           listEquals(notSpoof, other.notSpoof) &&
-          listEquals(spoof, other.spoof); } 
-@override int get hashCode { return Object.hash(Object.hashAll(notSpoof), Object.hashAll(spoof)); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(notSpoof: $notSpoof, spoof: $spoof)'; } 
+          listEquals(spoof, other.spoof);
+
+@override int get hashCode => Object.hash(Object.hashAll(notSpoof), Object.hashAll(spoof));
+
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpoofResponseResultSerie0(notSpoof: $notSpoof, spoof: $spoof)';
+
  }

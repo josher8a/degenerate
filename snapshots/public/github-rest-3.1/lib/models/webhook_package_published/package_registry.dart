@@ -39,13 +39,16 @@ PackageRegistry copyWith({Uri? aboutUrl, String? name, String? type, Uri? url, S
   url: url ?? this.url,
   vendor: vendor ?? this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PackageRegistry &&
           aboutUrl == other.aboutUrl &&
           name == other.name &&
           type == other.type &&
           url == other.url &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(aboutUrl, name, type, url, vendor); } 
-@override String toString() { return 'PackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(aboutUrl, name, type, url, vendor);
+
+@override String toString() => 'PackageRegistry(aboutUrl: $aboutUrl, name: $name, type: $type, url: $url, vendor: $vendor)';
+
  }

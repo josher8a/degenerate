@@ -66,7 +66,7 @@ TaskItem copyWith({String? id, AssistantMessageItemObject? object, int? createdA
   heading: heading != null ? heading() : this.heading,
   summary: summary != null ? summary() : this.summary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaskItem &&
           id == other.id &&
           object == other.object &&
@@ -75,7 +75,10 @@ TaskItem copyWith({String? id, AssistantMessageItemObject? object, int? createdA
           type == other.type &&
           taskType == other.taskType &&
           heading == other.heading &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, taskType, heading, summary); } 
-@override String toString() { return 'TaskItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, taskType: $taskType, heading: $heading, summary: $summary)'; } 
+          summary == other.summary;
+
+@override int get hashCode => Object.hash(id, object, createdAt, threadId, type, taskType, heading, summary);
+
+@override String toString() => 'TaskItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, taskType: $taskType, heading: $heading, summary: $summary)';
+
  }

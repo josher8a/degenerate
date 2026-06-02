@@ -57,7 +57,7 @@ DraftIssue copyWith({double? id, String? nodeId, String? title, String? Function
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DraftIssue &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -65,7 +65,10 @@ DraftIssue copyWith({double? id, String? nodeId, String? title, String? Function
           body == other.body &&
           user == other.user &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, title, body, user, createdAt, updatedAt); } 
-@override String toString() { return 'DraftIssue(id: $id, nodeId: $nodeId, title: $title, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, title, body, user, createdAt, updatedAt);
+
+@override String toString() => 'DraftIssue(id: $id, nodeId: $nodeId, title: $title, body: $body, user: $user, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

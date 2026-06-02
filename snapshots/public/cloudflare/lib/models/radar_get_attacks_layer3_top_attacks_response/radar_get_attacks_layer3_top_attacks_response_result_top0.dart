@@ -30,11 +30,14 @@ RadarGetAttacksLayer3TopAttacksResponseResultTop0 copyWith({String? originCountr
   originCountryName: originCountryName ?? this.originCountryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TopAttacksResponseResultTop0 &&
           originCountryAlpha2 == other.originCountryAlpha2 &&
           originCountryName == other.originCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(originCountryAlpha2, originCountryName, value); } 
-@override String toString() { return 'RadarGetAttacksLayer3TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(originCountryAlpha2, originCountryName, value);
+
+@override String toString() => 'RadarGetAttacksLayer3TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, value: $value)';
+
  }

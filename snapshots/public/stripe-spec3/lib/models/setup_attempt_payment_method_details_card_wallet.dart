@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptPaymentMethodDetailsCardWalletType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardWalletType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupAttemptPaymentMethodDetailsCardWalletType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCardWalletType($value)';
+
  }
 /// 
 @immutable final class SetupAttemptPaymentMethodDetailsCardWallet {const SetupAttemptPaymentMethodDetailsCardWallet({required this.type, this.applePay, this.googlePay, });
@@ -55,11 +58,14 @@ SetupAttemptPaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWal
   googlePay: googlePay != null ? googlePay() : this.googlePay,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsCardWallet &&
           applePay == other.applePay &&
           googlePay == other.googlePay &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(applePay, googlePay, type); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardWallet(applePay: $applePay, googlePay: $googlePay, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(applePay, googlePay, type);
+
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCardWallet(applePay: $applePay, googlePay: $googlePay, type: $type)';
+
  }

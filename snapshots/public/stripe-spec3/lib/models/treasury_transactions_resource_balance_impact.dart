@@ -31,11 +31,14 @@ TreasuryTransactionsResourceBalanceImpact copyWith({int? cash, int? inboundPendi
   inboundPending: inboundPending ?? this.inboundPending,
   outboundPending: outboundPending ?? this.outboundPending,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryTransactionsResourceBalanceImpact &&
           cash == other.cash &&
           inboundPending == other.inboundPending &&
-          outboundPending == other.outboundPending; } 
-@override int get hashCode { return Object.hash(cash, inboundPending, outboundPending); } 
-@override String toString() { return 'TreasuryTransactionsResourceBalanceImpact(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)'; } 
+          outboundPending == other.outboundPending;
+
+@override int get hashCode => Object.hash(cash, inboundPending, outboundPending);
+
+@override String toString() => 'TreasuryTransactionsResourceBalanceImpact(cash: $cash, inboundPending: $inboundPending, outboundPending: $outboundPending)';
+
  }

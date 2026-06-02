@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
 AddUploadPartRequest copyWith({Uint8List? data}) { return AddUploadPartRequest(
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddUploadPartRequest &&
-          data == other.data; } 
-@override int get hashCode { return data.hashCode; } 
-@override String toString() { return 'AddUploadPartRequest(data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => data.hashCode;
+
+@override String toString() => 'AddUploadPartRequest(data: $data)';
+
  }

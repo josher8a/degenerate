@@ -63,7 +63,7 @@ LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? creat
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   viewerSeconds: viewerSeconds != null ? viewerSeconds() : this.viewerSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamsLivestreamSessionIdResponseData &&
           createdAt == other.createdAt &&
           errMessage == other.errMessage &&
@@ -73,7 +73,10 @@ LivestreamsLivestreamSessionIdResponseData copyWith({DateTime? Function()? creat
           startedTime == other.startedTime &&
           stoppedTime == other.stoppedTime &&
           updatedAt == other.updatedAt &&
-          viewerSeconds == other.viewerSeconds; } 
-@override int get hashCode { return Object.hash(createdAt, errMessage, id, ingestSeconds, livestreamId, startedTime, stoppedTime, updatedAt, viewerSeconds); } 
-@override String toString() { return 'LivestreamsLivestreamSessionIdResponseData(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)'; } 
+          viewerSeconds == other.viewerSeconds;
+
+@override int get hashCode => Object.hash(createdAt, errMessage, id, ingestSeconds, livestreamId, startedTime, stoppedTime, updatedAt, viewerSeconds);
+
+@override String toString() => 'LivestreamsLivestreamSessionIdResponseData(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)';
+
  }

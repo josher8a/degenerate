@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Permission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Permission($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Permission && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Permission($value)';
+
  }
 /// Example:
 /// ```json
@@ -99,14 +102,17 @@ R2TempAccessCredsRequest copyWith({String? bucket, List<String>? Function()? obj
   prefixes: prefixes != null ? prefixes() : this.prefixes,
   ttlSeconds: ttlSeconds ?? this.ttlSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2TempAccessCredsRequest &&
           bucket == other.bucket &&
           listEquals(objects, other.objects) &&
           parentAccessKeyId == other.parentAccessKeyId &&
           permission == other.permission &&
           listEquals(prefixes, other.prefixes) &&
-          ttlSeconds == other.ttlSeconds; } 
-@override int get hashCode { return Object.hash(bucket, Object.hashAll(objects ?? const []), parentAccessKeyId, permission, Object.hashAll(prefixes ?? const []), ttlSeconds); } 
-@override String toString() { return 'R2TempAccessCredsRequest(bucket: $bucket, objects: $objects, parentAccessKeyId: $parentAccessKeyId, permission: $permission, prefixes: $prefixes, ttlSeconds: $ttlSeconds)'; } 
+          ttlSeconds == other.ttlSeconds;
+
+@override int get hashCode => Object.hash(bucket, Object.hashAll(objects ?? const []), parentAccessKeyId, permission, Object.hashAll(prefixes ?? const []), ttlSeconds);
+
+@override String toString() => 'R2TempAccessCredsRequest(bucket: $bucket, objects: $objects, parentAccessKeyId: $parentAccessKeyId, permission: $permission, prefixes: $prefixes, ttlSeconds: $ttlSeconds)';
+
  }

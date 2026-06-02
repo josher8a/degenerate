@@ -31,11 +31,14 @@ ChatSessionFileUpload copyWith({bool? enabled, int? Function()? maxFileSize, int
   maxFileSize: maxFileSize != null ? maxFileSize() : this.maxFileSize,
   maxFiles: maxFiles != null ? maxFiles() : this.maxFiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionFileUpload &&
           enabled == other.enabled &&
           maxFileSize == other.maxFileSize &&
-          maxFiles == other.maxFiles; } 
-@override int get hashCode { return Object.hash(enabled, maxFileSize, maxFiles); } 
-@override String toString() { return 'ChatSessionFileUpload(enabled: $enabled, maxFileSize: $maxFileSize, maxFiles: $maxFiles)'; } 
+          maxFiles == other.maxFiles;
+
+@override int get hashCode => Object.hash(enabled, maxFileSize, maxFiles);
+
+@override String toString() => 'ChatSessionFileUpload(enabled: $enabled, maxFileSize: $maxFileSize, maxFiles: $maxFiles)';
+
  }

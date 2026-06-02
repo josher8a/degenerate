@@ -40,12 +40,15 @@ SecretsStoreCreateSecretObject copyWith({SecretsStoreComment? Function()? commen
   scopes: scopes ?? this.scopes,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreCreateSecretObject &&
           comment == other.comment &&
           name == other.name &&
           listEquals(scopes, other.scopes) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(comment, name, Object.hashAll(scopes), value); } 
-@override String toString() { return 'SecretsStoreCreateSecretObject(comment: $comment, name: $name, scopes: $scopes, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(comment, name, Object.hashAll(scopes), value);
+
+@override String toString() => 'SecretsStoreCreateSecretObject(comment: $comment, name: $name, scopes: $scopes, value: $value)';
+
  }

@@ -22,10 +22,13 @@ UpdateAccountRequest copyWith({String? Function()? friendlyName, AccountEnumStat
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateAccountRequest &&
           friendlyName == other.friendlyName &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(friendlyName, status); } 
-@override String toString() { return 'UpdateAccountRequest(friendlyName: $friendlyName, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(friendlyName, status);
+
+@override String toString() => 'UpdateAccountRequest(friendlyName: $friendlyName, status: $status)';
+
  }

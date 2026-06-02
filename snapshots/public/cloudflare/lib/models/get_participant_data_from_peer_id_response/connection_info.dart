@@ -60,7 +60,7 @@ ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectiv
   throughput: throughput != null ? throughput() : this.throughput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectionInfo &&
           backendRTT == other.backendRTT &&
           connectivity == other.connectivity &&
@@ -71,7 +71,10 @@ ConnectionInfo copyWith({double? Function()? backendRTT, ConnectionInfoConnectiv
           location == other.location &&
           rTT == other.rTT &&
           throughput == other.throughput &&
-          turnConnectivity == other.turnConnectivity; } 
-@override int get hashCode { return Object.hash(backendRTT, connectivity, effectiveNetworkType, fractionalLoss, ipDetails, jitter, location, rTT, throughput, turnConnectivity); } 
-@override String toString() { return 'ConnectionInfo(backendRTT: $backendRTT, connectivity: $connectivity, effectiveNetworkType: $effectiveNetworkType, fractionalLoss: $fractionalLoss, ipDetails: $ipDetails, jitter: $jitter, location: $location, rTT: $rTT, throughput: $throughput, turnConnectivity: $turnConnectivity)'; } 
+          turnConnectivity == other.turnConnectivity;
+
+@override int get hashCode => Object.hash(backendRTT, connectivity, effectiveNetworkType, fractionalLoss, ipDetails, jitter, location, rTT, throughput, turnConnectivity);
+
+@override String toString() => 'ConnectionInfo(backendRTT: $backendRTT, connectivity: $connectivity, effectiveNetworkType: $effectiveNetworkType, fractionalLoss: $fractionalLoss, ipDetails: $ipDetails, jitter: $jitter, location: $location, rTT: $rTT, throughput: $throughput, turnConnectivity: $turnConnectivity)';
+
  }

@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ParticipantEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ParticipantEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ParticipantEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ParticipantEnumStatus($value)';
+
  }
 @immutable final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid, this.callSid, this.label, this.callSidToCoach, this.coaching, this.conferenceSid, this.dateCreated, this.dateUpdated, this.endConferenceOnExit, this.muted, this.hold, this.startConferenceOnEnter, this.status, this.queueTime, this.uri, });
 
@@ -163,7 +166,7 @@ AccountConferenceParticipant copyWith({String? Function()? accountSid, String? F
   queueTime: queueTime != null ? queueTime() : this.queueTime,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConferenceParticipant &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
@@ -179,7 +182,10 @@ AccountConferenceParticipant copyWith({String? Function()? accountSid, String? F
           startConferenceOnEnter == other.startConferenceOnEnter &&
           status == other.status &&
           queueTime == other.queueTime &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, label, callSidToCoach, coaching, conferenceSid, dateCreated, dateUpdated, endConferenceOnExit, muted, hold, startConferenceOnEnter, status, queueTime, uri); } 
-@override String toString() { return 'AccountConferenceParticipant(accountSid: $accountSid, callSid: $callSid, label: $label, callSidToCoach: $callSidToCoach, coaching: $coaching, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, endConferenceOnExit: $endConferenceOnExit, muted: $muted, hold: $hold, startConferenceOnEnter: $startConferenceOnEnter, status: $status, queueTime: $queueTime, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, callSid, label, callSidToCoach, coaching, conferenceSid, dateCreated, dateUpdated, endConferenceOnExit, muted, hold, startConferenceOnEnter, status, queueTime, uri);
+
+@override String toString() => 'AccountConferenceParticipant(accountSid: $accountSid, callSid: $callSid, label: $label, callSidToCoach: $callSidToCoach, coaching: $coaching, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, endConferenceOnExit: $endConferenceOnExit, muted: $muted, hold: $hold, startConferenceOnEnter: $startConferenceOnEnter, status: $status, queueTime: $queueTime, uri: $uri)';
+
  }

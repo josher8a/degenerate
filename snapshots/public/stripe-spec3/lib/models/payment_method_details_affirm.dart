@@ -44,11 +44,14 @@ PaymentMethodDetailsAffirm copyWith({String? Function()? location, String? Funct
   reader: reader != null ? reader() : this.reader,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAffirm &&
           location == other.location &&
           reader == other.reader &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(location, reader, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsAffirm(location: $location, reader: $reader, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(location, reader, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsAffirm(location: $location, reader: $reader, transactionId: $transactionId)';
+
  }

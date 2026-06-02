@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinancialConnectionsTransactionObject($value)';
+
  }
 /// The status of the transaction.
 @immutable final class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsTransactionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsTransactionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsTransactionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinancialConnectionsTransactionStatus($value)';
+
  }
 /// A Transaction represents a real transaction that affects a Financial Connections Account balance.
 @immutable final class FinancialConnectionsTransaction {const FinancialConnectionsTransaction({required this.account, required this.amount, required this.currency, required this.description, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, required this.transactedAt, required this.transactionRefresh, required this.updated, });
@@ -151,7 +157,7 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
   transactionRefresh: transactionRefresh ?? this.transactionRefresh,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsTransaction &&
           account == other.account &&
           amount == other.amount &&
@@ -164,7 +170,10 @@ FinancialConnectionsTransaction copyWith({String? account, int? amount, String? 
           statusTransitions == other.statusTransitions &&
           transactedAt == other.transactedAt &&
           transactionRefresh == other.transactionRefresh &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(account, amount, currency, description, id, livemode, object, status, statusTransitions, transactedAt, transactionRefresh, updated); } 
-@override String toString() { return 'FinancialConnectionsTransaction(account: $account, amount: $amount, currency: $currency, description: $description, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, transactedAt: $transactedAt, transactionRefresh: $transactionRefresh, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(account, amount, currency, description, id, livemode, object, status, statusTransitions, transactedAt, transactionRefresh, updated);
+
+@override String toString() => 'FinancialConnectionsTransaction(account: $account, amount: $amount, currency: $currency, description: $description, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions, transactedAt: $transactedAt, transactionRefresh: $transactionRefresh, updated: $updated)';
+
  }

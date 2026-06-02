@@ -28,11 +28,14 @@ Variant2MessagesContentVariant2 copyWith({Variant2MessagesContentVariant2ImageUr
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2MessagesContentVariant2 &&
           imageUrl == other.imageUrl &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(imageUrl, text, type); } 
-@override String toString() { return 'Variant2MessagesContentVariant2(imageUrl: $imageUrl, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(imageUrl, text, type);
+
+@override String toString() => 'Variant2MessagesContentVariant2(imageUrl: $imageUrl, text: $text, type: $type)';
+
  }

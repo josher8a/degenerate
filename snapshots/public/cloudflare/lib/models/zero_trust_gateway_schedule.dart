@@ -75,7 +75,7 @@ ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? 
   tue: tue != null ? tue() : this.tue,
   wed: wed != null ? wed() : this.wed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewaySchedule &&
           fri == other.fri &&
           mon == other.mon &&
@@ -84,7 +84,10 @@ ZeroTrustGatewaySchedule copyWith({String? Function()? fri, String? Function()? 
           thu == other.thu &&
           timeZone == other.timeZone &&
           tue == other.tue &&
-          wed == other.wed; } 
-@override int get hashCode { return Object.hash(fri, mon, sat, sun, thu, timeZone, tue, wed); } 
-@override String toString() { return 'ZeroTrustGatewaySchedule(fri: $fri, mon: $mon, sat: $sat, sun: $sun, thu: $thu, timeZone: $timeZone, tue: $tue, wed: $wed)'; } 
+          wed == other.wed;
+
+@override int get hashCode => Object.hash(fri, mon, sat, sun, thu, timeZone, tue, wed);
+
+@override String toString() => 'ZeroTrustGatewaySchedule(fri: $fri, mon: $mon, sat: $sat, sun: $sun, thu: $thu, timeZone: $timeZone, tue: $tue, wed: $wed)';
+
  }

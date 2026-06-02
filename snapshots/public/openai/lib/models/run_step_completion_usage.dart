@@ -31,11 +31,14 @@ RunStepCompletionUsage copyWith({int? completionTokens, int? promptTokens, int? 
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepCompletionUsage &&
           completionTokens == other.completionTokens &&
           promptTokens == other.promptTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(completionTokens, promptTokens, totalTokens); } 
-@override String toString() { return 'RunStepCompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(completionTokens, promptTokens, totalTokens);
+
+@override String toString() => 'RunStepCompletionUsage(completionTokens: $completionTokens, promptTokens: $promptTokens, totalTokens: $totalTokens)';
+
  }

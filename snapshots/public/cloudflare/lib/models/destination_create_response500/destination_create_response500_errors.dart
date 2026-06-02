@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DestinationCreateResponse500ErrorsMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DestinationCreateResponse500ErrorsMessage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DestinationCreateResponse500ErrorsMessage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DestinationCreateResponse500ErrorsMessage($value)';
+
  }
 @immutable final class DestinationCreateResponse500Errors {const DestinationCreateResponse500Errors({required this.message, this.detail, });
 
@@ -41,10 +44,13 @@ DestinationCreateResponse500Errors copyWith({String? Function()? detail, Destina
   detail: detail != null ? detail() : this.detail,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateResponse500Errors &&
           detail == other.detail &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(detail, message); } 
-@override String toString() { return 'DestinationCreateResponse500Errors(detail: $detail, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(detail, message);
+
+@override String toString() => 'DestinationCreateResponse500Errors(detail: $detail, message: $message)';
+
  }

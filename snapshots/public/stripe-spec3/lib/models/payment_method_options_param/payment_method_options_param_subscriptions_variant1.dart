@@ -44,13 +44,16 @@ PaymentMethodOptionsParamSubscriptionsVariant1 copyWith({GetPricesRecurringInter
   nextBilling: nextBilling != null ? nextBilling() : this.nextBilling,
   reference: reference ?? this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParamSubscriptionsVariant1 &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
           name == other.name &&
           nextBilling == other.nextBilling &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(interval, intervalCount, name, nextBilling, reference); } 
-@override String toString() { return 'PaymentMethodOptionsParamSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(interval, intervalCount, name, nextBilling, reference);
+
+@override String toString() => 'PaymentMethodOptionsParamSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)';
+
  }

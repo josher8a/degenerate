@@ -86,7 +86,7 @@ ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl
   pointsAvailable: pointsAvailable ?? this.pointsAvailable,
   groupName: groupName != null ? groupName() : this.groupName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAssignmentGrade &&
           assignmentName == other.assignmentName &&
           assignmentUrl == other.assignmentUrl &&
@@ -98,7 +98,10 @@ ClassroomAssignmentGrade copyWith({String? assignmentName, String? assignmentUrl
           submissionTimestamp == other.submissionTimestamp &&
           pointsAwarded == other.pointsAwarded &&
           pointsAvailable == other.pointsAvailable &&
-          groupName == other.groupName; } 
-@override int get hashCode { return Object.hash(assignmentName, assignmentUrl, starterCodeUrl, githubUsername, rosterIdentifier, studentRepositoryName, studentRepositoryUrl, submissionTimestamp, pointsAwarded, pointsAvailable, groupName); } 
-@override String toString() { return 'ClassroomAssignmentGrade(assignmentName: $assignmentName, assignmentUrl: $assignmentUrl, starterCodeUrl: $starterCodeUrl, githubUsername: $githubUsername, rosterIdentifier: $rosterIdentifier, studentRepositoryName: $studentRepositoryName, studentRepositoryUrl: $studentRepositoryUrl, submissionTimestamp: $submissionTimestamp, pointsAwarded: $pointsAwarded, pointsAvailable: $pointsAvailable, groupName: $groupName)'; } 
+          groupName == other.groupName;
+
+@override int get hashCode => Object.hash(assignmentName, assignmentUrl, starterCodeUrl, githubUsername, rosterIdentifier, studentRepositoryName, studentRepositoryUrl, submissionTimestamp, pointsAwarded, pointsAvailable, groupName);
+
+@override String toString() => 'ClassroomAssignmentGrade(assignmentName: $assignmentName, assignmentUrl: $assignmentUrl, starterCodeUrl: $starterCodeUrl, githubUsername: $githubUsername, rosterIdentifier: $rosterIdentifier, studentRepositoryName: $studentRepositoryName, studentRepositoryUrl: $studentRepositoryUrl, submissionTimestamp: $submissionTimestamp, pointsAwarded: $pointsAwarded, pointsAvailable: $pointsAvailable, groupName: $groupName)';
+
  }

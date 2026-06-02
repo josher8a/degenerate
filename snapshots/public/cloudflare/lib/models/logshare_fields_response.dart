@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LogshareFieldsResponse copyWith({String? Function()? key}) { return LogshareFieldsResponse(
   key: key != null ? key() : this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogshareFieldsResponse &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'LogshareFieldsResponse(key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => key.hashCode;
+
+@override String toString() => 'LogshareFieldsResponse(key: $key)';
+
  }

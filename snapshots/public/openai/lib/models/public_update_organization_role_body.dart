@@ -29,11 +29,14 @@ PublicUpdateOrganizationRoleBody copyWith({List<String>? Function()? permissions
   description: description != null ? description() : this.description,
   roleName: roleName != null ? roleName() : this.roleName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicUpdateOrganizationRoleBody &&
           listEquals(permissions, other.permissions) &&
           description == other.description &&
-          roleName == other.roleName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(permissions ?? const []), description, roleName); } 
-@override String toString() { return 'PublicUpdateOrganizationRoleBody(permissions: $permissions, description: $description, roleName: $roleName)'; } 
+          roleName == other.roleName;
+
+@override int get hashCode => Object.hash(Object.hashAll(permissions ?? const []), description, roleName);
+
+@override String toString() => 'PublicUpdateOrganizationRoleBody(permissions: $permissions, description: $description, roleName: $roleName)';
+
  }

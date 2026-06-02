@@ -20,9 +20,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Host copyWith({bool? Function()? resolved}) { return Host(
   resolved: resolved != null ? resolved() : this.resolved,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Host &&
-          resolved == other.resolved; } 
-@override int get hashCode { return resolved.hashCode; } 
-@override String toString() { return 'Host(resolved: $resolved)'; } 
+          resolved == other.resolved;
+
+@override int get hashCode => resolved.hashCode;
+
+@override String toString() => 'Host(resolved: $resolved)';
+
  }

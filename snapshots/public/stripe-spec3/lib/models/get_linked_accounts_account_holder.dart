@@ -40,11 +40,14 @@ GetLinkedAccountsAccountHolder copyWith({String? Function()? account, String? Fu
   customer: customer != null ? customer() : this.customer,
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetLinkedAccountsAccountHolder &&
           account == other.account &&
           customer == other.customer &&
-          customerAccount == other.customerAccount; } 
-@override int get hashCode { return Object.hash(account, customer, customerAccount); } 
-@override String toString() { return 'GetLinkedAccountsAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount)'; } 
+          customerAccount == other.customerAccount;
+
+@override int get hashCode => Object.hash(account, customer, customerAccount);
+
+@override String toString() => 'GetLinkedAccountsAccountHolder(account: $account, customer: $customer, customerAccount: $customerAccount)';
+
  }

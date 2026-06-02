@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('selec
 CodespacesSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedRepositoryIds}) { return CodespacesSetSelectedReposForOrgSecretRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesSetSelectedReposForOrgSecretRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
-@override String toString() { return 'CodespacesSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hashAll(selectedRepositoryIds);
+
+@override String toString() => 'CodespacesSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

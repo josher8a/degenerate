@@ -45,12 +45,15 @@ R2DataCatalogTableListResponse copyWith({List<R2DataCatalogTableDetails>? Functi
   nextPageToken: nextPageToken != null ? nextPageToken() : this.nextPageToken,
   tableUuids: tableUuids != null ? tableUuids() : this.tableUuids,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableListResponse &&
           listEquals(details, other.details) &&
           listEquals(identifiers, other.identifiers) &&
           nextPageToken == other.nextPageToken &&
-          listEquals(tableUuids, other.tableUuids); } 
-@override int get hashCode { return Object.hash(Object.hashAll(details ?? const []), Object.hashAll(identifiers), nextPageToken, Object.hashAll(tableUuids ?? const [])); } 
-@override String toString() { return 'R2DataCatalogTableListResponse(details: $details, identifiers: $identifiers, nextPageToken: $nextPageToken, tableUuids: $tableUuids)'; } 
+          listEquals(tableUuids, other.tableUuids);
+
+@override int get hashCode => Object.hash(Object.hashAll(details ?? const []), Object.hashAll(identifiers), nextPageToken, Object.hashAll(tableUuids ?? const []));
+
+@override String toString() => 'R2DataCatalogTableListResponse(details: $details, identifiers: $identifiers, nextPageToken: $nextPageToken, tableUuids: $tableUuids)';
+
  }

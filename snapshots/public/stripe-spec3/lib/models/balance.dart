@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BalanceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BalanceObject($value)';
+
  }
 /// This is an object representing your Stripe balance. You can retrieve it to see
 /// the balance currently on your Stripe account.
@@ -87,7 +90,7 @@ Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function(
   pending: pending ?? this.pending,
   refundAndDisputePrefunding: refundAndDisputePrefunding != null ? refundAndDisputePrefunding() : this.refundAndDisputePrefunding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Balance &&
           listEquals(available, other.available) &&
           listEquals(connectReserved, other.connectReserved) &&
@@ -96,7 +99,10 @@ Balance copyWith({List<BalanceAmount>? available, List<BalanceAmount>? Function(
           livemode == other.livemode &&
           object == other.object &&
           listEquals(pending, other.pending) &&
-          refundAndDisputePrefunding == other.refundAndDisputePrefunding; } 
-@override int get hashCode { return Object.hash(Object.hashAll(available), Object.hashAll(connectReserved ?? const []), Object.hashAll(instantAvailable ?? const []), issuing, livemode, object, Object.hashAll(pending), refundAndDisputePrefunding); } 
-@override String toString() { return 'Balance(available: $available, connectReserved: $connectReserved, instantAvailable: $instantAvailable, issuing: $issuing, livemode: $livemode, object: $object, pending: $pending, refundAndDisputePrefunding: $refundAndDisputePrefunding)'; } 
+          refundAndDisputePrefunding == other.refundAndDisputePrefunding;
+
+@override int get hashCode => Object.hash(Object.hashAll(available), Object.hashAll(connectReserved ?? const []), Object.hashAll(instantAvailable ?? const []), issuing, livemode, object, Object.hashAll(pending), refundAndDisputePrefunding);
+
+@override String toString() => 'Balance(available: $available, connectReserved: $connectReserved, instantAvailable: $instantAvailable, issuing: $issuing, livemode: $livemode, object: $object, pending: $pending, refundAndDisputePrefunding: $refundAndDisputePrefunding)';
+
  }

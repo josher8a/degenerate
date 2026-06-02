@@ -26,10 +26,13 @@ UsersCreateSshSigningKeyForAuthenticatedUserRequest copyWith({String? Function()
   title: title != null ? title() : this.title,
   key: key ?? this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersCreateSshSigningKeyForAuthenticatedUserRequest &&
           title == other.title &&
-          key == other.key; } 
-@override int get hashCode { return Object.hash(title, key); } 
-@override String toString() { return 'UsersCreateSshSigningKeyForAuthenticatedUserRequest(title: $title, key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => Object.hash(title, key);
+
+@override String toString() => 'UsersCreateSshSigningKeyForAuthenticatedUserRequest(title: $title, key: $key)';
+
  }

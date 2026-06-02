@@ -17,7 +17,8 @@ final class RadarGetHttpTopAsesByDeviceTypeError$404 extends RadarGetHttpTopAses
 
 final RadarGetHttpTopAsesByDeviceTypeResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetHttpTopAsesByDeviceTypeError$Unknown extends RadarGetHttpTopAsesByDeviceTypeError {const RadarGetHttpTopAsesByDeviceTypeError$Unknown(this.statusCode, this.rawBody, );
 

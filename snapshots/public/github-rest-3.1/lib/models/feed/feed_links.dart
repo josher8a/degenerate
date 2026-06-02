@@ -61,7 +61,7 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
   repositoryDiscussions: repositoryDiscussions != null ? repositoryDiscussions() : this.repositoryDiscussions,
   repositoryDiscussionsCategory: repositoryDiscussionsCategory != null ? repositoryDiscussionsCategory() : this.repositoryDiscussionsCategory,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FeedLinks &&
           timeline == other.timeline &&
           user == other.user &&
@@ -72,7 +72,10 @@ FeedLinks copyWith({LinkWithType? timeline, LinkWithType? user, LinkWithType? Fu
           currentUserOrganization == other.currentUserOrganization &&
           listEquals(currentUserOrganizations, other.currentUserOrganizations) &&
           repositoryDiscussions == other.repositoryDiscussions &&
-          repositoryDiscussionsCategory == other.repositoryDiscussionsCategory; } 
-@override int get hashCode { return Object.hash(timeline, user, securityAdvisories, currentUser, currentUserPublic, currentUserActor, currentUserOrganization, Object.hashAll(currentUserOrganizations ?? const []), repositoryDiscussions, repositoryDiscussionsCategory); } 
-@override String toString() { return 'FeedLinks(timeline: $timeline, user: $user, securityAdvisories: $securityAdvisories, currentUser: $currentUser, currentUserPublic: $currentUserPublic, currentUserActor: $currentUserActor, currentUserOrganization: $currentUserOrganization, currentUserOrganizations: $currentUserOrganizations, repositoryDiscussions: $repositoryDiscussions, repositoryDiscussionsCategory: $repositoryDiscussionsCategory)'; } 
+          repositoryDiscussionsCategory == other.repositoryDiscussionsCategory;
+
+@override int get hashCode => Object.hash(timeline, user, securityAdvisories, currentUser, currentUserPublic, currentUserActor, currentUserOrganization, Object.hashAll(currentUserOrganizations ?? const []), repositoryDiscussions, repositoryDiscussionsCategory);
+
+@override String toString() => 'FeedLinks(timeline: $timeline, user: $user, securityAdvisories: $securityAdvisories, currentUser: $currentUser, currentUserPublic: $currentUserPublic, currentUserActor: $currentUserActor, currentUserOrganization: $currentUserOrganization, currentUserOrganizations: $currentUserOrganizations, repositoryDiscussions: $repositoryDiscussions, repositoryDiscussionsCategory: $repositoryDiscussionsCategory)';
+
  }

@@ -28,11 +28,14 @@ PermissionsFrom copyWith({bool? Function()? admin, bool? Function()? pull, bool?
   pull: pull != null ? pull() : this.pull,
   push: push != null ? push() : this.push,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PermissionsFrom &&
           admin == other.admin &&
           pull == other.pull &&
-          push == other.push; } 
-@override int get hashCode { return Object.hash(admin, pull, push); } 
-@override String toString() { return 'PermissionsFrom(admin: $admin, pull: $pull, push: $push)'; } 
+          push == other.push;
+
+@override int get hashCode => Object.hash(admin, pull, push);
+
+@override String toString() => 'PermissionsFrom(admin: $admin, pull: $pull, push: $push)';
+
  }

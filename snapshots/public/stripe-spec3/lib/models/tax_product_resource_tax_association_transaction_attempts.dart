@@ -39,12 +39,15 @@ TaxProductResourceTaxAssociationTransactionAttempts copyWith({TaxProductResource
   source: source ?? this.source,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxAssociationTransactionAttempts &&
           committed == other.committed &&
           errored == other.errored &&
           source == other.source &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(committed, errored, source, status); } 
-@override String toString() { return 'TaxProductResourceTaxAssociationTransactionAttempts(committed: $committed, errored: $errored, source: $source, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(committed, errored, source, status);
+
+@override String toString() => 'TaxProductResourceTaxAssociationTransactionAttempts(committed: $committed, errored: $errored, source: $source, status: $status)';
+
  }

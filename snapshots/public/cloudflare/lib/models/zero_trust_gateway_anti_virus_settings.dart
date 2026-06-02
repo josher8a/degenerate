@@ -52,12 +52,15 @@ ZeroTrustGatewayAntiVirusSettings copyWith({ZeroTrustGatewayEnabledDownloadPhase
   failClosed: failClosed != null ? failClosed() : this.failClosed,
   notificationSettings: notificationSettings != null ? notificationSettings() : this.notificationSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayAntiVirusSettings &&
           enabledDownloadPhase == other.enabledDownloadPhase &&
           enabledUploadPhase == other.enabledUploadPhase &&
           failClosed == other.failClosed &&
-          notificationSettings == other.notificationSettings; } 
-@override int get hashCode { return Object.hash(enabledDownloadPhase, enabledUploadPhase, failClosed, notificationSettings); } 
-@override String toString() { return 'ZeroTrustGatewayAntiVirusSettings(enabledDownloadPhase: $enabledDownloadPhase, enabledUploadPhase: $enabledUploadPhase, failClosed: $failClosed, notificationSettings: $notificationSettings)'; } 
+          notificationSettings == other.notificationSettings;
+
+@override int get hashCode => Object.hash(enabledDownloadPhase, enabledUploadPhase, failClosed, notificationSettings);
+
+@override String toString() => 'ZeroTrustGatewayAntiVirusSettings(enabledDownloadPhase: $enabledDownloadPhase, enabledUploadPhase: $enabledUploadPhase, failClosed: $failClosed, notificationSettings: $notificationSettings)';
+
  }

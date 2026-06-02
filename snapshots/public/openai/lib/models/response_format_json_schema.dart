@@ -27,10 +27,13 @@ ResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, JsonSchem
   type: type ?? this.type,
   jsonSchema: jsonSchema ?? this.jsonSchema,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFormatJsonSchema &&
           type == other.type &&
-          jsonSchema == other.jsonSchema; } 
-@override int get hashCode { return Object.hash(type, jsonSchema); } 
-@override String toString() { return 'ResponseFormatJsonSchema(type: $type, jsonSchema: $jsonSchema)'; } 
+          jsonSchema == other.jsonSchema;
+
+@override int get hashCode => Object.hash(type, jsonSchema);
+
+@override String toString() => 'ResponseFormatJsonSchema(type: $type, jsonSchema: $jsonSchema)';
+
  }

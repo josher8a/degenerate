@@ -35,14 +35,18 @@ final InputTextContentParam inputTextContentParam;
 
 @override String get type => 'input_text';
 
-@override Map<String, dynamic> toJson() { return {...inputTextContentParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputTextContentParam.toJson(), 'type': type};
+
 OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputText(inputTextContentParam.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputVariant2InputText && inputTextContentParam == other.inputTextContentParam; } 
-@override int get hashCode { return inputTextContentParam.hashCode; } 
-@override String toString() { return 'OutputVariant2.inputText($inputTextContentParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputVariant2InputText && inputTextContentParam == other.inputTextContentParam;
+
+@override int get hashCode => inputTextContentParam.hashCode;
+
+@override String toString() => 'OutputVariant2.inputText($inputTextContentParam)';
+
  }
 @immutable final class OutputVariant2InputImage extends OutputVariant2 {const OutputVariant2InputImage(this.inputImageContentParamAutoParam);
 
@@ -52,16 +56,20 @@ final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
 @override String get type => 'input_image';
 
-@override Map<String, dynamic> toJson() { return {...inputImageContentParamAutoParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputImageContentParamAutoParam.toJson(), 'type': type};
+
 OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam; } 
-@override int get hashCode { return inputImageContentParamAutoParam.hashCode; } 
-@override String toString() { return 'OutputVariant2.inputImage($inputImageContentParamAutoParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputVariant2InputImage && inputImageContentParamAutoParam == other.inputImageContentParamAutoParam;
+
+@override int get hashCode => inputImageContentParamAutoParam.hashCode;
+
+@override String toString() => 'OutputVariant2.inputImage($inputImageContentParamAutoParam)';
+
  }
 @immutable final class OutputVariant2InputFile extends OutputVariant2 {const OutputVariant2InputFile(this.inputFileContentParam);
 
@@ -71,7 +79,8 @@ final InputFileContentParam inputFileContentParam;
 
 @override String get type => 'input_file';
 
-@override Map<String, dynamic> toJson() { return {...inputFileContentParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputFileContentParam.toJson(), 'type': type};
+
 OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
   fileId: fileId,
   filename: filename,
@@ -79,10 +88,13 @@ OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()
   fileUrl: fileUrl,
   detail: detail,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam; } 
-@override int get hashCode { return inputFileContentParam.hashCode; } 
-@override String toString() { return 'OutputVariant2.inputFile($inputFileContentParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputVariant2InputFile && inputFileContentParam == other.inputFileContentParam;
+
+@override int get hashCode => inputFileContentParam.hashCode;
+
+@override String toString() => 'OutputVariant2.inputFile($inputFileContentParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -92,9 +104,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputVariant2$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'OutputVariant2.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputVariant2$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'OutputVariant2.unknown($json)';
+
  }

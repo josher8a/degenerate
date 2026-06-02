@@ -21,10 +21,13 @@ ActionsListRepoSecretsResponse copyWith({int? totalCount, List<ActionsSecret>? s
   totalCount: totalCount ?? this.totalCount,
   secrets: secrets ?? this.secrets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListRepoSecretsResponse &&
           totalCount == other.totalCount &&
-          listEquals(secrets, other.secrets); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(secrets)); } 
-@override String toString() { return 'ActionsListRepoSecretsResponse(totalCount: $totalCount, secrets: $secrets)'; } 
+          listEquals(secrets, other.secrets);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(secrets));
+
+@override String toString() => 'ActionsListRepoSecretsResponse(totalCount: $totalCount, secrets: $secrets)';
+
  }

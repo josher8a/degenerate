@@ -31,11 +31,14 @@ UrlscannerCreateScanBulkResponse400Errors copyWith({String? detail, int? status,
   status: status ?? this.status,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanBulkResponse400Errors &&
           detail == other.detail &&
           status == other.status &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(detail, status, title); } 
-@override String toString() { return 'UrlscannerCreateScanBulkResponse400Errors(detail: $detail, status: $status, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(detail, status, title);
+
+@override String toString() => 'UrlscannerCreateScanBulkResponse400Errors(detail: $detail, status: $status, title: $title)';
+
  }

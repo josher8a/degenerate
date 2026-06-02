@@ -35,12 +35,15 @@ WindowsSecurityContextOptions copyWith({String? Function()? gmsaCredentialSpec, 
   hostProcess: hostProcess != null ? hostProcess() : this.hostProcess,
   runAsUserName: runAsUserName != null ? runAsUserName() : this.runAsUserName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WindowsSecurityContextOptions &&
           gmsaCredentialSpec == other.gmsaCredentialSpec &&
           gmsaCredentialSpecName == other.gmsaCredentialSpecName &&
           hostProcess == other.hostProcess &&
-          runAsUserName == other.runAsUserName; } 
-@override int get hashCode { return Object.hash(gmsaCredentialSpec, gmsaCredentialSpecName, hostProcess, runAsUserName); } 
-@override String toString() { return 'WindowsSecurityContextOptions(gmsaCredentialSpec: $gmsaCredentialSpec, gmsaCredentialSpecName: $gmsaCredentialSpecName, hostProcess: $hostProcess, runAsUserName: $runAsUserName)'; } 
+          runAsUserName == other.runAsUserName;
+
+@override int get hashCode => Object.hash(gmsaCredentialSpec, gmsaCredentialSpecName, hostProcess, runAsUserName);
+
+@override String toString() => 'WindowsSecurityContextOptions(gmsaCredentialSpec: $gmsaCredentialSpec, gmsaCredentialSpecName: $gmsaCredentialSpecName, hostProcess: $hostProcess, runAsUserName: $runAsUserName)';
+
  }

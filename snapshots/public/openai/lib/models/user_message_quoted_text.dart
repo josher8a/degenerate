@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageQuotedTextType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserMessageQuotedTextType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserMessageQuotedTextType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserMessageQuotedTextType($value)';
+
  }
 /// Quoted snippet that the user referenced in their message.
 @immutable final class UserMessageQuotedText {const UserMessageQuotedText({required this.text, this.type = UserMessageQuotedTextType.quotedText, });
@@ -46,10 +49,13 @@ UserMessageQuotedText copyWith({UserMessageQuotedTextType? type, String? text, }
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserMessageQuotedText &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'UserMessageQuotedText(type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(type, text);
+
+@override String toString() => 'UserMessageQuotedText(type: $type, text: $text)';
+
  }

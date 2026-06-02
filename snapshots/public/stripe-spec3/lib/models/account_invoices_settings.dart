@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountInvoicesSettingsHostedPaymentMethodSave && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountInvoicesSettingsHostedPaymentMethodSave($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountInvoicesSettingsHostedPaymentMethodSave && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountInvoicesSettingsHostedPaymentMethodSave($value)';
+
  }
 /// 
 @immutable final class AccountInvoicesSettings {const AccountInvoicesSettings({this.defaultAccountTaxIds, this.hostedPaymentMethodSave, });
@@ -51,10 +54,13 @@ AccountInvoicesSettings copyWith({List<AccountInvoicesSettingsDefaultAccountTaxI
   defaultAccountTaxIds: defaultAccountTaxIds != null ? defaultAccountTaxIds() : this.defaultAccountTaxIds,
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountInvoicesSettings &&
           listEquals(defaultAccountTaxIds, other.defaultAccountTaxIds) &&
-          hostedPaymentMethodSave == other.hostedPaymentMethodSave; } 
-@override int get hashCode { return Object.hash(Object.hashAll(defaultAccountTaxIds ?? const []), hostedPaymentMethodSave); } 
-@override String toString() { return 'AccountInvoicesSettings(defaultAccountTaxIds: $defaultAccountTaxIds, hostedPaymentMethodSave: $hostedPaymentMethodSave)'; } 
+          hostedPaymentMethodSave == other.hostedPaymentMethodSave;
+
+@override int get hashCode => Object.hash(Object.hashAll(defaultAccountTaxIds ?? const []), hostedPaymentMethodSave);
+
+@override String toString() => 'AccountInvoicesSettings(defaultAccountTaxIds: $defaultAccountTaxIds, hostedPaymentMethodSave: $hostedPaymentMethodSave)';
+
  }

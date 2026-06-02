@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionRole($value)';
+
  }
 @immutable final class MessagesFunction {const MessagesFunction({required this.content, required this.name, required this.role, });
 
@@ -48,11 +51,14 @@ MessagesFunction copyWith({String? content, String? name, FunctionRole? role, })
   name: name ?? this.name,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessagesFunction &&
           content == other.content &&
           name == other.name &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, name, role); } 
-@override String toString() { return 'MessagesFunction(content: $content, name: $name, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, name, role);
+
+@override String toString() => 'MessagesFunction(content: $content, name: $name, role: $role)';
+
  }

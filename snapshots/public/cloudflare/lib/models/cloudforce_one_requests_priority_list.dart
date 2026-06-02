@@ -25,10 +25,13 @@ CloudforceOneRequestsPriorityList copyWith({int? page, int? perPage, }) { return
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsPriorityList &&
           page == other.page &&
-          perPage == other.perPage; } 
-@override int get hashCode { return Object.hash(page, perPage); } 
-@override String toString() { return 'CloudforceOneRequestsPriorityList(page: $page, perPage: $perPage)'; } 
+          perPage == other.perPage;
+
+@override int get hashCode => Object.hash(page, perPage);
+
+@override String toString() => 'CloudforceOneRequestsPriorityList(page: $page, perPage: $perPage)';
+
  }

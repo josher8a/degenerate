@@ -32,10 +32,13 @@ PortalLoginPage copyWith({bool? enabled, String? Function()? url, }) { return Po
   enabled: enabled ?? this.enabled,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalLoginPage &&
           enabled == other.enabled &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, url); } 
-@override String toString() { return 'PortalLoginPage(enabled: $enabled, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(enabled, url);
+
+@override String toString() => 'PortalLoginPage(enabled: $enabled, url: $url)';
+
  }

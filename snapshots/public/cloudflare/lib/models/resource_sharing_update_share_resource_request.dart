@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta'
 ResourceSharingUpdateShareResourceRequest copyWith({Map<String,dynamic>? meta}) { return ResourceSharingUpdateShareResourceRequest(
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingUpdateShareResourceRequest &&
-          meta == other.meta; } 
-@override int get hashCode { return meta.hashCode; } 
-@override String toString() { return 'ResourceSharingUpdateShareResourceRequest(meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => meta.hashCode;
+
+@override String toString() => 'ResourceSharingUpdateShareResourceRequest(meta: $meta)';
+
  }

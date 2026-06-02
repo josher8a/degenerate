@@ -45,13 +45,16 @@ References copyWith({List<DispatchNamespaceOutbounds>? dispatchNamespaceOutbound
   queues: queues ?? this.queues,
   workers: workers ?? this.workers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is References &&
           listEquals(dispatchNamespaceOutbounds, other.dispatchNamespaceOutbounds) &&
           listEquals(domains, other.domains) &&
           listEquals(durableObjects, other.durableObjects) &&
           listEquals(queues, other.queues) &&
-          listEquals(workers, other.workers); } 
-@override int get hashCode { return Object.hash(Object.hashAll(dispatchNamespaceOutbounds), Object.hashAll(domains), Object.hashAll(durableObjects), Object.hashAll(queues), Object.hashAll(workers)); } 
-@override String toString() { return 'References(dispatchNamespaceOutbounds: $dispatchNamespaceOutbounds, domains: $domains, durableObjects: $durableObjects, queues: $queues, workers: $workers)'; } 
+          listEquals(workers, other.workers);
+
+@override int get hashCode => Object.hash(Object.hashAll(dispatchNamespaceOutbounds), Object.hashAll(domains), Object.hashAll(durableObjects), Object.hashAll(queues), Object.hashAll(workers));
+
+@override String toString() => 'References(dispatchNamespaceOutbounds: $dispatchNamespaceOutbounds, domains: $domains, durableObjects: $durableObjects, queues: $queues, workers: $workers)';
+
  }

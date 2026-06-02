@@ -21,10 +21,13 @@ OrganizationParent copyWith({OrganizationId? id, String? name, }) { return Organ
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationParent &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'OrganizationParent(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'OrganizationParent(id: $id, name: $name)';
+
  }

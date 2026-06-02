@@ -31,11 +31,14 @@ RealtimekitPresetPermissionsPolls copyWith({bool? canCreate, bool? canView, bool
   canView: canView ?? this.canView,
   canVote: canVote ?? this.canVote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsPolls &&
           canCreate == other.canCreate &&
           canView == other.canView &&
-          canVote == other.canVote; } 
-@override int get hashCode { return Object.hash(canCreate, canView, canVote); } 
-@override String toString() { return 'RealtimekitPresetPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)'; } 
+          canVote == other.canVote;
+
+@override int get hashCode => Object.hash(canCreate, canView, canVote);
+
+@override String toString() => 'RealtimekitPresetPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)';
+
  }

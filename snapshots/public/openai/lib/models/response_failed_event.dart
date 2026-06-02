@@ -34,11 +34,14 @@ ResponseFailedEvent copyWith({String? type, int? sequenceNumber, Response? respo
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFailedEvent &&
           type == other.type &&
           sequenceNumber == other.sequenceNumber &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(type, sequenceNumber, response); } 
-@override String toString() { return 'ResponseFailedEvent(type: $type, sequenceNumber: $sequenceNumber, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(type, sequenceNumber, response);
+
+@override String toString() => 'ResponseFailedEvent(type: $type, sequenceNumber: $sequenceNumber, response: $response)';
+
  }

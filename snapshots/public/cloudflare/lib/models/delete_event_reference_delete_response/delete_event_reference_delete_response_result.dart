@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('succe
 DeleteEventReferenceDeleteResponseResult copyWith({bool? success}) { return DeleteEventReferenceDeleteResponseResult(
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteEventReferenceDeleteResponseResult &&
-          success == other.success; } 
-@override int get hashCode { return success.hashCode; } 
-@override String toString() { return 'DeleteEventReferenceDeleteResponseResult(success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => success.hashCode;
+
+@override String toString() => 'DeleteEventReferenceDeleteResponseResult(success: $success)';
+
  }

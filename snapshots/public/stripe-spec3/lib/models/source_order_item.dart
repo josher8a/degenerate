@@ -66,14 +66,17 @@ SourceOrderItem copyWith({int? Function()? amount, String? Function()? currency,
   quantity: quantity != null ? quantity() : this.quantity,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceOrderItem &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           parent == other.parent &&
           quantity == other.quantity &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, currency, description, parent, quantity, type); } 
-@override String toString() { return 'SourceOrderItem(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, currency, description, parent, quantity, type);
+
+@override String toString() => 'SourceOrderItem(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)';
+
  }

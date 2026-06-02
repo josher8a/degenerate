@@ -43,14 +43,17 @@ GitTreeTree copyWith({String? path, String? mode, String? type, String? sha, int
   size: size != null ? size() : this.size,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitTreeTree &&
           path == other.path &&
           mode == other.mode &&
           type == other.type &&
           sha == other.sha &&
           size == other.size &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(path, mode, type, sha, size, url); } 
-@override String toString() { return 'GitTreeTree(path: $path, mode: $mode, type: $type, sha: $sha, size: $size, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(path, mode, type, sha, size, url);
+
+@override String toString() => 'GitTreeTree(path: $path, mode: $mode, type: $type, sha: $sha, size: $size, url: $url)';
+
  }

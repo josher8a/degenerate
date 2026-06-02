@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)';
+
  }
 /// 
 @immutable final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({required this.type, this.charge, this.paymentIntent, this.paymentRecord, });
@@ -63,12 +66,15 @@ InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({ApplicationFeeCharge? 
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesPaymentsInvoicePaymentAssociatedPayment &&
           charge == other.charge &&
           paymentIntent == other.paymentIntent &&
           paymentRecord == other.paymentRecord &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(charge, paymentIntent, paymentRecord, type); } 
-@override String toString() { return 'InvoicesPaymentsInvoicePaymentAssociatedPayment(charge: $charge, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(charge, paymentIntent, paymentRecord, type);
+
+@override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPayment(charge: $charge, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)';
+
  }

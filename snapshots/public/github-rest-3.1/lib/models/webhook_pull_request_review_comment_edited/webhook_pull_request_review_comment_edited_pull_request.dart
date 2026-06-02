@@ -226,7 +226,7 @@ WebhookPullRequestReviewCommentEditedPullRequest copyWith({WebhooksPullRequest5L
   url: url ?? this.url,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewCommentEditedPullRequest &&
           links == other.links &&
           activeLockReason == other.activeLockReason &&
@@ -263,7 +263,10 @@ WebhookPullRequestReviewCommentEditedPullRequest copyWith({WebhooksPullRequest5L
           title == other.title &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, closedAt, commentsUrl, commitsUrl, createdAt, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, mergeCommitSha, mergedAt, milestone, nodeId, number, patchUrl, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookPullRequestReviewCommentEditedPullRequest(links: $links, activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, closedAt: $closedAt, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, createdAt: $createdAt, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, mergeCommitSha: $mergeCommitSha, mergedAt: $mergedAt, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hashAll([links, activeLockReason, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, closedAt, commentsUrl, commitsUrl, createdAt, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, mergeCommitSha, mergedAt, milestone, nodeId, number, patchUrl, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);
+
+@override String toString() => 'WebhookPullRequestReviewCommentEditedPullRequest(links: $links, activeLockReason: $activeLockReason, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, closedAt: $closedAt, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, createdAt: $createdAt, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, mergeCommitSha: $mergeCommitSha, mergedAt: $mergedAt, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';
+
  }

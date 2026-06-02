@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CashBalanceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CashBalanceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CashBalanceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CashBalanceObject($value)';
+
  }
 /// A customer's `Cash balance` represents real funds. Customers can add funds to their cash balance by sending a bank transfer. These funds can be used for payment and can eventually be paid out to your bank account.
 @immutable final class CashBalance {const CashBalance({required this.customer, required this.livemode, required this.object, required this.settings, this.available, this.customerAccount, });
@@ -79,14 +82,17 @@ CashBalance copyWith({Map<String, int>? Function()? available, String? customer,
   object: object ?? this.object,
   settings: settings ?? this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CashBalance &&
           available == other.available &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
           livemode == other.livemode &&
           object == other.object &&
-          settings == other.settings; } 
-@override int get hashCode { return Object.hash(available, customer, customerAccount, livemode, object, settings); } 
-@override String toString() { return 'CashBalance(available: $available, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object, settings: $settings)'; } 
+          settings == other.settings;
+
+@override int get hashCode => Object.hash(available, customer, customerAccount, livemode, object, settings);
+
+@override String toString() => 'CashBalance(available: $available, customer: $customer, customerAccount: $customerAccount, livemode: $livemode, object: $object, settings: $settings)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CallsTurnKeySingleWithSecret copyWith({CallsTurnKeyWithKey? Function()? result}) { return CallsTurnKeySingleWithSecret(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CallsTurnKeySingleWithSecret &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'CallsTurnKeySingleWithSecret(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'CallsTurnKeySingleWithSecret(result: $result)';
+
  }

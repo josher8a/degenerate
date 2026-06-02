@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRepositoryUnarchivedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRepositoryUnarchivedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookRepositoryUnarchivedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookRepositoryUnarchivedAction($value)';
+
  }
 @immutable final class WebhookRepositoryUnarchived {const WebhookRepositoryUnarchived({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -63,14 +66,17 @@ WebhookRepositoryUnarchived copyWith({WebhookRepositoryUnarchivedAction? action,
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryUnarchived &&
           action == other.action &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookRepositoryUnarchived(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookRepositoryUnarchived(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

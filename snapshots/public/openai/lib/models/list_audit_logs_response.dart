@@ -41,13 +41,16 @@ ListAuditLogsResponse copyWith({ChatCompletionListObject? object, List<AuditLog>
   lastId: lastId ?? this.lastId,
   hasMore: hasMore ?? this.hasMore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListAuditLogsResponse &&
           object == other.object &&
           listEquals(data, other.data) &&
           firstId == other.firstId &&
           lastId == other.lastId &&
-          hasMore == other.hasMore; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), firstId, lastId, hasMore); } 
-@override String toString() { return 'ListAuditLogsResponse(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)'; } 
+          hasMore == other.hasMore;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), firstId, lastId, hasMore);
+
+@override String toString() => 'ListAuditLogsResponse(object: $object, data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore)';
+
  }

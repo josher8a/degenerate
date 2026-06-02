@@ -17,7 +17,8 @@ final class Img2imgError$400 extends Img2imgError {const Img2imgError$400(this.e
 
 final $5Img2imgResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class Img2imgError$Unknown extends Img2imgError {const Img2imgError$Unknown(this.statusCode, this.rawBody, );
 

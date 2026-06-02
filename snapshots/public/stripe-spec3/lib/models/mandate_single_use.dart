@@ -24,10 +24,13 @@ MandateSingleUse copyWith({int? amount, String? currency, }) { return MandateSin
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandateSingleUse &&
           amount == other.amount &&
-          currency == other.currency; } 
-@override int get hashCode { return Object.hash(amount, currency); } 
-@override String toString() { return 'MandateSingleUse(amount: $amount, currency: $currency)'; } 
+          currency == other.currency;
+
+@override int get hashCode => Object.hash(amount, currency);
+
+@override String toString() => 'MandateSingleUse(amount: $amount, currency: $currency)';
+
  }

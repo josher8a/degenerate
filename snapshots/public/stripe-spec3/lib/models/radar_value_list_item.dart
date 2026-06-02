@@ -68,7 +68,7 @@ RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? 
   value: value ?? this.value,
   valueList: valueList ?? this.valueList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarValueListItem &&
           created == other.created &&
           createdBy == other.createdBy &&
@@ -76,7 +76,10 @@ RadarValueListItem copyWith({int? created, String? createdBy, String? id, bool? 
           livemode == other.livemode &&
           object == other.object &&
           value == other.value &&
-          valueList == other.valueList; } 
-@override int get hashCode { return Object.hash(created, createdBy, id, livemode, object, value, valueList); } 
-@override String toString() { return 'RadarValueListItem(created: $created, createdBy: $createdBy, id: $id, livemode: $livemode, object: $object, value: $value, valueList: $valueList)'; } 
+          valueList == other.valueList;
+
+@override int get hashCode => Object.hash(created, createdBy, id, livemode, object, value, valueList);
+
+@override String toString() => 'RadarValueListItem(created: $created, createdBy: $createdBy, id: $id, livemode: $livemode, object: $object, value: $value, valueList: $valueList)';
+
  }

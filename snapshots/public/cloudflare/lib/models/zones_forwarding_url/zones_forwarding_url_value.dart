@@ -22,10 +22,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ValueStatusCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ValueStatusCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValueStatusCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ValueStatusCode($value)';
+
  }
 @immutable final class ZonesForwardingUrlValue {const ZonesForwardingUrlValue({this.statusCode, this.url, });
 
@@ -63,10 +66,13 @@ ZonesForwardingUrlValue copyWith({ValueStatusCode? Function()? statusCode, Strin
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesForwardingUrlValue &&
           statusCode == other.statusCode &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(statusCode, url); } 
-@override String toString() { return 'ZonesForwardingUrlValue(statusCode: $statusCode, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(statusCode, url);
+
+@override String toString() => 'ZonesForwardingUrlValue(statusCode: $statusCode, url: $url)';
+
  }

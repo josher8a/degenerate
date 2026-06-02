@@ -69,7 +69,7 @@ Livestreams copyWith({DateTime? Function()? createdAt, bool? Function()? disable
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Livestreams &&
           createdAt == other.createdAt &&
           disabled == other.disabled &&
@@ -80,7 +80,10 @@ Livestreams copyWith({DateTime? Function()? createdAt, bool? Function()? disable
           playbackUrl == other.playbackUrl &&
           status == other.status &&
           streamKey == other.streamKey &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey, updatedAt); } 
-@override String toString() { return 'Livestreams(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey, updatedAt);
+
+@override String toString() => 'Livestreams(createdAt: $createdAt, disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey, updatedAt: $updatedAt)';
+
  }

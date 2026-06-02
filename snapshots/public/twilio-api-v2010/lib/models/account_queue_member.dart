@@ -61,14 +61,17 @@ AccountQueueMember copyWith({String? Function()? callSid, String? Function()? da
   waitTime: waitTime != null ? waitTime() : this.waitTime,
   queueSid: queueSid != null ? queueSid() : this.queueSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountQueueMember &&
           callSid == other.callSid &&
           dateEnqueued == other.dateEnqueued &&
           position == other.position &&
           uri == other.uri &&
           waitTime == other.waitTime &&
-          queueSid == other.queueSid; } 
-@override int get hashCode { return Object.hash(callSid, dateEnqueued, position, uri, waitTime, queueSid); } 
-@override String toString() { return 'AccountQueueMember(callSid: $callSid, dateEnqueued: $dateEnqueued, position: $position, uri: $uri, waitTime: $waitTime, queueSid: $queueSid)'; } 
+          queueSid == other.queueSid;
+
+@override int get hashCode => Object.hash(callSid, dateEnqueued, position, uri, waitTime, queueSid);
+
+@override String toString() => 'AccountQueueMember(callSid: $callSid, dateEnqueued: $dateEnqueued, position: $position, uri: $uri, waitTime: $waitTime, queueSid: $queueSid)';
+
  }

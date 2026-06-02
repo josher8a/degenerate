@@ -36,11 +36,14 @@ HyperdriveOverAccessOrigin copyWith({String? accessClientId, String? accessClien
   accessClientSecret: accessClientSecret ?? this.accessClientSecret,
   host: host ?? this.host,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveOverAccessOrigin &&
           accessClientId == other.accessClientId &&
           accessClientSecret == other.accessClientSecret &&
-          host == other.host; } 
-@override int get hashCode { return Object.hash(accessClientId, accessClientSecret, host); } 
-@override String toString() { return 'HyperdriveOverAccessOrigin(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, host: $host)'; } 
+          host == other.host;
+
+@override int get hashCode => Object.hash(accessClientId, accessClientSecret, host);
+
+@override String toString() => 'HyperdriveOverAccessOrigin(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, host: $host)';
+
  }

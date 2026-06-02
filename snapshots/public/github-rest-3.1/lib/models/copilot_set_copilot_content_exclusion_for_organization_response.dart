@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CopilotSetCopilotContentExclusionForOrganizationResponse copyWith({String? Function()? message}) { return CopilotSetCopilotContentExclusionForOrganizationResponse(
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotSetCopilotContentExclusionForOrganizationResponse &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'CopilotSetCopilotContentExclusionForOrganizationResponse(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'CopilotSetCopilotContentExclusionForOrganizationResponse(message: $message)';
+
  }

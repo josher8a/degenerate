@@ -22,10 +22,13 @@ StarredRepository copyWith({DateTime? starredAt, Repository? repo, }) { return S
   starredAt: starredAt ?? this.starredAt,
   repo: repo ?? this.repo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StarredRepository &&
           starredAt == other.starredAt &&
-          repo == other.repo; } 
-@override int get hashCode { return Object.hash(starredAt, repo); } 
-@override String toString() { return 'StarredRepository(starredAt: $starredAt, repo: $repo)'; } 
+          repo == other.repo;
+
+@override int get hashCode => Object.hash(starredAt, repo);
+
+@override String toString() => 'StarredRepository(starredAt: $starredAt, repo: $repo)';
+
  }

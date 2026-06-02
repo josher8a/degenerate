@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemMessageUserRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemMessageUserRole($value)';
+
  }
 /// A user message item in a Realtime conversation.
 @immutable final class RealtimeConversationItemMessageUser {const RealtimeConversationItemMessageUser({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
@@ -71,14 +74,17 @@ RealtimeConversationItemMessageUser copyWith({String? Function()? id, RealtimeCo
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageUser &&
           id == other.id &&
           object == other.object &&
           type == other.type &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(id, object, type, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'RealtimeConversationItemMessageUser(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(id, object, type, status, role, Object.hashAll(content));
+
+@override String toString() => 'RealtimeConversationItemMessageUser(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';
+
  }

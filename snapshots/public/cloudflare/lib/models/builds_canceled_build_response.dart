@@ -25,11 +25,14 @@ BuildsCanceledBuildResponse copyWith({BuildsBuildOutcome? Function()? buildOutco
   buildUuid: buildUuid != null ? buildUuid() : this.buildUuid,
   stoppedOn: stoppedOn != null ? stoppedOn() : this.stoppedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsCanceledBuildResponse &&
           buildOutcome == other.buildOutcome &&
           buildUuid == other.buildUuid &&
-          stoppedOn == other.stoppedOn; } 
-@override int get hashCode { return Object.hash(buildOutcome, buildUuid, stoppedOn); } 
-@override String toString() { return 'BuildsCanceledBuildResponse(buildOutcome: $buildOutcome, buildUuid: $buildUuid, stoppedOn: $stoppedOn)'; } 
+          stoppedOn == other.stoppedOn;
+
+@override int get hashCode => Object.hash(buildOutcome, buildUuid, stoppedOn);
+
+@override String toString() => 'BuildsCanceledBuildResponse(buildOutcome: $buildOutcome, buildUuid: $buildUuid, stoppedOn: $stoppedOn)';
+
  }

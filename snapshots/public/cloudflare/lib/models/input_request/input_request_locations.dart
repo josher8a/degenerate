@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesTrustStoresEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesTrustStoresEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesTrustStoresEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesTrustStoresEnum($value)';
+
  }
 @immutable final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });
 
@@ -44,10 +47,13 @@ InputRequestLocations copyWith({List<String>? Function()? paths, List<TeamsDevic
   paths: paths != null ? paths() : this.paths,
   trustStores: trustStores != null ? trustStores() : this.trustStores,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputRequestLocations &&
           listEquals(paths, other.paths) &&
-          listEquals(trustStores, other.trustStores); } 
-@override int get hashCode { return Object.hash(Object.hashAll(paths ?? const []), Object.hashAll(trustStores ?? const [])); } 
-@override String toString() { return 'InputRequestLocations(paths: $paths, trustStores: $trustStores)'; } 
+          listEquals(trustStores, other.trustStores);
+
+@override int get hashCode => Object.hash(Object.hashAll(paths ?? const []), Object.hashAll(trustStores ?? const []));
+
+@override String toString() => 'InputRequestLocations(paths: $paths, trustStores: $trustStores)';
+
  }

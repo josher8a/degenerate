@@ -29,11 +29,14 @@ GelatoDataDocumentReportExpirationDate copyWith({int? Function()? day, int? Func
   month: month != null ? month() : this.month,
   year: year != null ? year() : this.year,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoDataDocumentReportExpirationDate &&
           day == other.day &&
           month == other.month &&
-          year == other.year; } 
-@override int get hashCode { return Object.hash(day, month, year); } 
-@override String toString() { return 'GelatoDataDocumentReportExpirationDate(day: $day, month: $month, year: $year)'; } 
+          year == other.year;
+
+@override int get hashCode => Object.hash(day, month, year);
+
+@override String toString() => 'GelatoDataDocumentReportExpirationDate(day: $day, month: $month, year: $year)';
+
  }

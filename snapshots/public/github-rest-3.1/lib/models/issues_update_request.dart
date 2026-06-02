@@ -68,7 +68,7 @@ IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? bod
   assignees: assignees != null ? assignees() : this.assignees,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesUpdateRequest &&
           title == other.title &&
           body == other.body &&
@@ -78,7 +78,10 @@ IssuesUpdateRequest copyWith({dynamic Function()? title, String? Function()? bod
           milestone == other.milestone &&
           listEquals(labels, other.labels) &&
           listEquals(assignees, other.assignees) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(title, body, assignee, state, stateReason, milestone, Object.hashAll(labels ?? const []), Object.hashAll(assignees ?? const []), type); } 
-@override String toString() { return 'IssuesUpdateRequest(title: $title, body: $body, assignee: $assignee, state: $state, stateReason: $stateReason, milestone: $milestone, labels: $labels, assignees: $assignees, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(title, body, assignee, state, stateReason, milestone, Object.hashAll(labels ?? const []), Object.hashAll(assignees ?? const []), type);
+
+@override String toString() => 'IssuesUpdateRequest(title: $title, body: $body, assignee: $assignee, state: $state, stateReason: $stateReason, milestone: $milestone, labels: $labels, assignees: $assignees, type: $type)';
+
  }

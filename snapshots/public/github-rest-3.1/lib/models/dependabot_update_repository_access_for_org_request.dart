@@ -34,10 +34,13 @@ DependabotUpdateRepositoryAccessForOrgRequest copyWith({List<int>? Function()? r
   repositoryIdsToAdd: repositoryIdsToAdd != null ? repositoryIdsToAdd() : this.repositoryIdsToAdd,
   repositoryIdsToRemove: repositoryIdsToRemove != null ? repositoryIdsToRemove() : this.repositoryIdsToRemove,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotUpdateRepositoryAccessForOrgRequest &&
           listEquals(repositoryIdsToAdd, other.repositoryIdsToAdd) &&
-          listEquals(repositoryIdsToRemove, other.repositoryIdsToRemove); } 
-@override int get hashCode { return Object.hash(Object.hashAll(repositoryIdsToAdd ?? const []), Object.hashAll(repositoryIdsToRemove ?? const [])); } 
-@override String toString() { return 'DependabotUpdateRepositoryAccessForOrgRequest(repositoryIdsToAdd: $repositoryIdsToAdd, repositoryIdsToRemove: $repositoryIdsToRemove)'; } 
+          listEquals(repositoryIdsToRemove, other.repositoryIdsToRemove);
+
+@override int get hashCode => Object.hash(Object.hashAll(repositoryIdsToAdd ?? const []), Object.hashAll(repositoryIdsToRemove ?? const []));
+
+@override String toString() => 'DependabotUpdateRepositoryAccessForOrgRequest(repositoryIdsToAdd: $repositoryIdsToAdd, repositoryIdsToRemove: $repositoryIdsToRemove)';
+
  }

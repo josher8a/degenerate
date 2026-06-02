@@ -40,13 +40,16 @@ ApproximateLocation copyWith({ApproximateLocationType? type, String? Function()?
   city: city != null ? city() : this.city,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApproximateLocation &&
           type == other.type &&
           country == other.country &&
           region == other.region &&
           city == other.city &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(type, country, region, city, timezone); } 
-@override String toString() { return 'ApproximateLocation(type: $type, country: $country, region: $region, city: $city, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(type, country, region, city, timezone);
+
+@override String toString() => 'ApproximateLocation(type: $type, country: $country, region: $region, city: $city, timezone: $timezone)';
+
  }

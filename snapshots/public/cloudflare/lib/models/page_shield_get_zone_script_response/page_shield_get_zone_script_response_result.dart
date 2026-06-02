@@ -142,7 +142,7 @@ PageShieldGetZoneScriptResponseResult copyWith({DateTime? addedAt, PageShieldCry
   urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
   versions: versions != null ? versions() : this.versions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldGetZoneScriptResponseResult &&
           addedAt == other.addedAt &&
           cryptominingScore == other.cryptominingScore &&
@@ -165,7 +165,10 @@ PageShieldGetZoneScriptResponseResult copyWith({DateTime? addedAt, PageShieldCry
           url == other.url &&
           urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
           urlReportedMalicious == other.urlReportedMalicious &&
-          listEquals(versions, other.versions); } 
-@override int get hashCode { return Object.hashAll([addedAt, cryptominingScore, dataflowScore, domainReportedMalicious, fetchedAt, firstPageUrl, firstSeenAt, hash, host, id, jsIntegrityScore, lastSeenAt, magecartScore, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), malwareScore, obfuscationScore, Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious, Object.hashAll(versions ?? const [])]); } 
-@override String toString() { return 'PageShieldGetZoneScriptResponseResult(addedAt: $addedAt, cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, domainReportedMalicious: $domainReportedMalicious, fetchedAt: $fetchedAt, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, hash: $hash, host: $host, id: $id, jsIntegrityScore: $jsIntegrityScore, lastSeenAt: $lastSeenAt, magecartScore: $magecartScore, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious, versions: $versions)'; } 
+          listEquals(versions, other.versions);
+
+@override int get hashCode => Object.hashAll([addedAt, cryptominingScore, dataflowScore, domainReportedMalicious, fetchedAt, firstPageUrl, firstSeenAt, hash, host, id, jsIntegrityScore, lastSeenAt, magecartScore, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), malwareScore, obfuscationScore, Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious, Object.hashAll(versions ?? const [])]);
+
+@override String toString() => 'PageShieldGetZoneScriptResponseResult(addedAt: $addedAt, cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, domainReportedMalicious: $domainReportedMalicious, fetchedAt: $fetchedAt, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, hash: $hash, host: $host, id: $id, jsIntegrityScore: $jsIntegrityScore, lastSeenAt: $lastSeenAt, magecartScore: $magecartScore, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious, versions: $versions)';
+
  }

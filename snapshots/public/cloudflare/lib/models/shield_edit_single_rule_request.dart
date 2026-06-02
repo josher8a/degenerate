@@ -46,7 +46,7 @@ ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSc
   title: title != null ? title() : this.title,
   position: position != null ? position() : this.position,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldEditSingleRuleRequest &&
           action == other.action &&
           description == other.description &&
@@ -54,7 +54,10 @@ ShieldEditSingleRuleRequest copyWith({ShieldAction? Function()? action, ShieldSc
           expression == other.expression &&
           selector == other.selector &&
           title == other.title &&
-          position == other.position; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, selector, title, position); } 
-@override String toString() { return 'ShieldEditSingleRuleRequest(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title, position: $position)'; } 
+          position == other.position;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, selector, title, position);
+
+@override String toString() => 'ShieldEditSingleRuleRequest(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title, position: $position)';
+
  }

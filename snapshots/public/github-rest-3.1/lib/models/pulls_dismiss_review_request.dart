@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsDismissReviewRequestEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsDismissReviewRequestEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PullsDismissReviewRequestEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PullsDismissReviewRequestEvent($value)';
+
  }
 @immutable final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });
 
@@ -42,10 +45,13 @@ PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEv
   message: message ?? this.message,
   event: event != null ? event() : this.event,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsDismissReviewRequest &&
           message == other.message &&
-          event == other.event; } 
-@override int get hashCode { return Object.hash(message, event); } 
-@override String toString() { return 'PullsDismissReviewRequest(message: $message, event: $event)'; } 
+          event == other.event;
+
+@override int get hashCode => Object.hash(message, event);
+
+@override String toString() => 'PullsDismissReviewRequest(message: $message, event: $event)';
+
  }

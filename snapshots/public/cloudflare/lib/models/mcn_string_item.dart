@@ -21,10 +21,13 @@ McnStringItem copyWith({String? itemType, String? string, }) { return McnStringI
   itemType: itemType ?? this.itemType,
   string: string ?? this.string,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnStringItem &&
           itemType == other.itemType &&
-          string == other.string; } 
-@override int get hashCode { return Object.hash(itemType, string); } 
-@override String toString() { return 'McnStringItem(itemType: $itemType, string: $string)'; } 
+          string == other.string;
+
+@override int get hashCode => Object.hash(itemType, string);
+
+@override String toString() => 'McnStringItem(itemType: $itemType, string: $string)';
+
  }

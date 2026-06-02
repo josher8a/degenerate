@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodDetailsPromptpay copyWith({String? Function()? reference}) { return PaymentMethodDetailsPromptpay(
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPromptpay &&
-          reference == other.reference; } 
-@override int get hashCode { return reference.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsPromptpay(reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => reference.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsPromptpay(reference: $reference)';
+
  }

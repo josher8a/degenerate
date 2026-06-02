@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ComparisonFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ComparisonFilterType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ComparisonFilterType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ComparisonFilterType($value)';
+
  }
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
 /// 
@@ -87,11 +90,14 @@ ComparisonFilter copyWith({ComparisonFilterType? type, String? key, ComparisonFi
   key: key ?? this.key,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComparisonFilter &&
           type == other.type &&
           key == other.key &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, key, value); } 
-@override String toString() { return 'ComparisonFilter(type: $type, key: $key, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, key, value);
+
+@override String toString() => 'ComparisonFilter(type: $type, key: $key, value: $value)';
+
  }

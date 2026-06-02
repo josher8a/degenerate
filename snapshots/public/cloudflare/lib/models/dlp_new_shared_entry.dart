@@ -21,10 +21,13 @@ DlpNewSharedEntry copyWith({bool? enabled, String? entryId, }) { return DlpNewSh
   enabled: enabled ?? this.enabled,
   entryId: entryId ?? this.entryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewSharedEntry &&
           enabled == other.enabled &&
-          entryId == other.entryId; } 
-@override int get hashCode { return Object.hash(enabled, entryId); } 
-@override String toString() { return 'DlpNewSharedEntry(enabled: $enabled, entryId: $entryId)'; } 
+          entryId == other.entryId;
+
+@override int get hashCode => Object.hash(enabled, entryId);
+
+@override String toString() => 'DlpNewSharedEntry(enabled: $enabled, entryId: $entryId)';
+
  }

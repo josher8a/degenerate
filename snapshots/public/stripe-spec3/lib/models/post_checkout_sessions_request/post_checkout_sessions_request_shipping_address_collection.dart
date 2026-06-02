@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
 PostCheckoutSessionsRequestShippingAddressCollection copyWith({List<AllowedCountries>? allowedCountries}) { return PostCheckoutSessionsRequestShippingAddressCollection(
   allowedCountries: allowedCountries ?? this.allowedCountries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestShippingAddressCollection &&
-          listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries); } 
-@override String toString() { return 'PostCheckoutSessionsRequestShippingAddressCollection(allowedCountries: $allowedCountries)'; } 
+          listEquals(allowedCountries, other.allowedCountries);
+
+@override int get hashCode => Object.hashAll(allowedCountries);
+
+@override String toString() => 'PostCheckoutSessionsRequestShippingAddressCollection(allowedCountries: $allowedCountries)';
+
  }

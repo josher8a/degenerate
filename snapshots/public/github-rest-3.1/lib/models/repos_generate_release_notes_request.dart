@@ -34,12 +34,15 @@ ReposGenerateReleaseNotesRequest copyWith({String? tagName, String? Function()? 
   previousTagName: previousTagName != null ? previousTagName() : this.previousTagName,
   configurationFilePath: configurationFilePath != null ? configurationFilePath() : this.configurationFilePath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposGenerateReleaseNotesRequest &&
           tagName == other.tagName &&
           targetCommitish == other.targetCommitish &&
           previousTagName == other.previousTagName &&
-          configurationFilePath == other.configurationFilePath; } 
-@override int get hashCode { return Object.hash(tagName, targetCommitish, previousTagName, configurationFilePath); } 
-@override String toString() { return 'ReposGenerateReleaseNotesRequest(tagName: $tagName, targetCommitish: $targetCommitish, previousTagName: $previousTagName, configurationFilePath: $configurationFilePath)'; } 
+          configurationFilePath == other.configurationFilePath;
+
+@override int get hashCode => Object.hash(tagName, targetCommitish, previousTagName, configurationFilePath);
+
+@override String toString() => 'ReposGenerateReleaseNotesRequest(tagName: $tagName, targetCommitish: $targetCommitish, previousTagName: $previousTagName, configurationFilePath: $configurationFilePath)';
+
  }

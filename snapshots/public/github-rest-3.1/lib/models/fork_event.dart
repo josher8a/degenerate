@@ -21,10 +21,13 @@ ForkEvent copyWith({String? action, ForkEventForkee? forkee, }) { return ForkEve
   action: action ?? this.action,
   forkee: forkee ?? this.forkee,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForkEvent &&
           action == other.action &&
-          forkee == other.forkee; } 
-@override int get hashCode { return Object.hash(action, forkee); } 
-@override String toString() { return 'ForkEvent(action: $action, forkee: $forkee)'; } 
+          forkee == other.forkee;
+
+@override int get hashCode => Object.hash(action, forkee);
+
+@override String toString() => 'ForkEvent(action: $action, forkee: $forkee)';
+
  }

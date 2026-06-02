@@ -20,9 +20,12 @@ return errors; }
 ValueSettings copyWith({String? eventPayloadKey}) { return ValueSettings(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValueSettings &&
-          eventPayloadKey == other.eventPayloadKey; } 
-@override int get hashCode { return eventPayloadKey.hashCode; } 
-@override String toString() { return 'ValueSettings(eventPayloadKey: $eventPayloadKey)'; } 
+          eventPayloadKey == other.eventPayloadKey;
+
+@override int get hashCode => eventPayloadKey.hashCode;
+
+@override String toString() => 'ValueSettings(eventPayloadKey: $eventPayloadKey)';
+
  }

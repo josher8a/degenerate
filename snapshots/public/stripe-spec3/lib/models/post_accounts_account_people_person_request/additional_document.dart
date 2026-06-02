@@ -31,10 +31,13 @@ AdditionalDocument copyWith({String? Function()? back, String? Function()? front
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AdditionalDocument &&
           back == other.back &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, front); } 
-@override String toString() { return 'AdditionalDocument(back: $back, front: $front)'; } 
+          front == other.front;
+
+@override int get hashCode => Object.hash(back, front);
+
+@override String toString() => 'AdditionalDocument(back: $back, front: $front)';
+
  }

@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessServiceTokensRotateAServiceTokenRequest copyWith({DateTime? Function()? previousClientSecretExpiresAt}) { return AccessServiceTokensRotateAServiceTokenRequest(
   previousClientSecretExpiresAt: previousClientSecretExpiresAt != null ? previousClientSecretExpiresAt() : this.previousClientSecretExpiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessServiceTokensRotateAServiceTokenRequest &&
-          previousClientSecretExpiresAt == other.previousClientSecretExpiresAt; } 
-@override int get hashCode { return previousClientSecretExpiresAt.hashCode; } 
-@override String toString() { return 'AccessServiceTokensRotateAServiceTokenRequest(previousClientSecretExpiresAt: $previousClientSecretExpiresAt)'; } 
+          previousClientSecretExpiresAt == other.previousClientSecretExpiresAt;
+
+@override int get hashCode => previousClientSecretExpiresAt.hashCode;
+
+@override String toString() => 'AccessServiceTokensRotateAServiceTokenRequest(previousClientSecretExpiresAt: $previousClientSecretExpiresAt)';
+
  }

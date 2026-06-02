@@ -150,7 +150,7 @@ MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()?
   writes: writes ?? this.writes,
   writesMerged: writesMerged ?? this.writesMerged,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotDisk &&
           connectorId == other.connectorId &&
           discards == other.discards &&
@@ -172,7 +172,10 @@ MconnSnapshotDisk copyWith({String? Function()? connectorId, double? Function()?
           timeWritingMs == other.timeWritingMs &&
           weightedTimeInProgressMs == other.weightedTimeInProgressMs &&
           writes == other.writes &&
-          writesMerged == other.writesMerged; } 
-@override int get hashCode { return Object.hashAll([connectorId, discards, discardsMerged, flushes, inProgress, major, merged, minor, name, reads, sectorsDiscarded, sectorsRead, sectorsWritten, timeDiscardingMs, timeFlushingMs, timeInProgressMs, timeReadingMs, timeWritingMs, weightedTimeInProgressMs, writes, writesMerged]); } 
-@override String toString() { return 'MconnSnapshotDisk(connectorId: $connectorId, discards: $discards, discardsMerged: $discardsMerged, flushes: $flushes, inProgress: $inProgress, major: $major, merged: $merged, minor: $minor, name: $name, reads: $reads, sectorsDiscarded: $sectorsDiscarded, sectorsRead: $sectorsRead, sectorsWritten: $sectorsWritten, timeDiscardingMs: $timeDiscardingMs, timeFlushingMs: $timeFlushingMs, timeInProgressMs: $timeInProgressMs, timeReadingMs: $timeReadingMs, timeWritingMs: $timeWritingMs, weightedTimeInProgressMs: $weightedTimeInProgressMs, writes: $writes, writesMerged: $writesMerged)'; } 
+          writesMerged == other.writesMerged;
+
+@override int get hashCode => Object.hashAll([connectorId, discards, discardsMerged, flushes, inProgress, major, merged, minor, name, reads, sectorsDiscarded, sectorsRead, sectorsWritten, timeDiscardingMs, timeFlushingMs, timeInProgressMs, timeReadingMs, timeWritingMs, weightedTimeInProgressMs, writes, writesMerged]);
+
+@override String toString() => 'MconnSnapshotDisk(connectorId: $connectorId, discards: $discards, discardsMerged: $discardsMerged, flushes: $flushes, inProgress: $inProgress, major: $major, merged: $merged, minor: $minor, name: $name, reads: $reads, sectorsDiscarded: $sectorsDiscarded, sectorsRead: $sectorsRead, sectorsWritten: $sectorsWritten, timeDiscardingMs: $timeDiscardingMs, timeFlushingMs: $timeFlushingMs, timeInProgressMs: $timeInProgressMs, timeReadingMs: $timeReadingMs, timeWritingMs: $timeWritingMs, weightedTimeInProgressMs: $weightedTimeInProgressMs, writes: $writes, writesMerged: $writesMerged)';
+
  }

@@ -29,11 +29,14 @@ R2ObjectSizeMetrics copyWith({double? Function()? metadataSize, double? Function
   objects: objects != null ? objects() : this.objects,
   payloadSize: payloadSize != null ? payloadSize() : this.payloadSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2ObjectSizeMetrics &&
           metadataSize == other.metadataSize &&
           objects == other.objects &&
-          payloadSize == other.payloadSize; } 
-@override int get hashCode { return Object.hash(metadataSize, objects, payloadSize); } 
-@override String toString() { return 'R2ObjectSizeMetrics(metadataSize: $metadataSize, objects: $objects, payloadSize: $payloadSize)'; } 
+          payloadSize == other.payloadSize;
+
+@override int get hashCode => Object.hash(metadataSize, objects, payloadSize);
+
+@override String toString() => 'R2ObjectSizeMetrics(metadataSize: $metadataSize, objects: $objects, payloadSize: $payloadSize)';
+
  }

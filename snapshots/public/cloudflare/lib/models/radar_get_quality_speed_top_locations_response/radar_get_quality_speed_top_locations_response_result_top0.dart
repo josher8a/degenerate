@@ -79,7 +79,7 @@ RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDo
   numTests: numTests ?? this.numTests,
   rankPower: rankPower ?? this.rankPower,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedTopLocationsResponseResultTop0 &&
           bandwidthDownload == other.bandwidthDownload &&
           bandwidthUpload == other.bandwidthUpload &&
@@ -90,7 +90,10 @@ RadarGetQualitySpeedTopLocationsResponseResultTop0 copyWith({String? bandwidthDo
           latencyIdle == other.latencyIdle &&
           latencyLoaded == other.latencyLoaded &&
           numTests == other.numTests &&
-          rankPower == other.rankPower; } 
-@override int get hashCode { return Object.hash(bandwidthDownload, bandwidthUpload, clientCountryAlpha2, clientCountryName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower); } 
-@override String toString() { return 'RadarGetQualitySpeedTopLocationsResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)'; } 
+          rankPower == other.rankPower;
+
+@override int get hashCode => Object.hash(bandwidthDownload, bandwidthUpload, clientCountryAlpha2, clientCountryName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower);
+
+@override String toString() => 'RadarGetQualitySpeedTopLocationsResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)';
+
  }

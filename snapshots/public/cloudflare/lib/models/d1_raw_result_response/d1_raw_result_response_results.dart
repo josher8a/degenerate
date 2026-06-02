@@ -20,10 +20,13 @@ D1RawResultResponseResults copyWith({List<String>? Function()? columns, List<Lis
   columns: columns != null ? columns() : this.columns,
   rows: rows != null ? rows() : this.rows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1RawResultResponseResults &&
           listEquals(columns, other.columns) &&
-          listEquals(rows, other.rows); } 
-@override int get hashCode { return Object.hash(Object.hashAll(columns ?? const []), Object.hashAll(rows ?? const [])); } 
-@override String toString() { return 'D1RawResultResponseResults(columns: $columns, rows: $rows)'; } 
+          listEquals(rows, other.rows);
+
+@override int get hashCode => Object.hash(Object.hashAll(columns ?? const []), Object.hashAll(rows ?? const []));
+
+@override String toString() => 'D1RawResultResponseResults(columns: $columns, rows: $rows)';
+
  }

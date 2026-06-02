@@ -20,10 +20,13 @@ Doc copyWith({String? Function()? id, String? Function()? title, }) { return Doc
   id: id != null ? id() : this.id,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Doc &&
           id == other.id &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(id, title); } 
-@override String toString() { return 'Doc(id: $id, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(id, title);
+
+@override String toString() => 'Doc(id: $id, title: $title)';
+
  }

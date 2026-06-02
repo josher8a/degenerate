@@ -28,11 +28,14 @@ PageShieldUpdateSettingsRequest copyWith({PageShieldEnabled? Function()? enabled
   useCloudflareReportingEndpoint: useCloudflareReportingEndpoint != null ? useCloudflareReportingEndpoint() : this.useCloudflareReportingEndpoint,
   useConnectionUrlPath: useConnectionUrlPath != null ? useConnectionUrlPath() : this.useConnectionUrlPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldUpdateSettingsRequest &&
           enabled == other.enabled &&
           useCloudflareReportingEndpoint == other.useCloudflareReportingEndpoint &&
-          useConnectionUrlPath == other.useConnectionUrlPath; } 
-@override int get hashCode { return Object.hash(enabled, useCloudflareReportingEndpoint, useConnectionUrlPath); } 
-@override String toString() { return 'PageShieldUpdateSettingsRequest(enabled: $enabled, useCloudflareReportingEndpoint: $useCloudflareReportingEndpoint, useConnectionUrlPath: $useConnectionUrlPath)'; } 
+          useConnectionUrlPath == other.useConnectionUrlPath;
+
+@override int get hashCode => Object.hash(enabled, useCloudflareReportingEndpoint, useConnectionUrlPath);
+
+@override String toString() => 'PageShieldUpdateSettingsRequest(enabled: $enabled, useCloudflareReportingEndpoint: $useCloudflareReportingEndpoint, useConnectionUrlPath: $useConnectionUrlPath)';
+
  }

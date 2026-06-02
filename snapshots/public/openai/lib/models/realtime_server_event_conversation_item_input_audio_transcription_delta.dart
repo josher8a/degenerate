@@ -50,14 +50,17 @@ RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String
   delta: delta != null ? delta() : this.delta,
   logprobs: logprobs != null ? logprobs() : this.logprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionDelta &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
           delta == other.delta &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const [])); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)'; } 
+          listEquals(logprobs, other.logprobs);
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const []));
+
+@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)';
+
  }

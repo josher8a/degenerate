@@ -22,10 +22,13 @@ AmountRequested copyWith({String? currency, int? value, }) { return AmountReques
   currency: currency ?? this.currency,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AmountRequested &&
           currency == other.currency &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(currency, value); } 
-@override String toString() { return 'AmountRequested(currency: $currency, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(currency, value);
+
+@override String toString() => 'AmountRequested(currency: $currency, value: $value)';
+
  }

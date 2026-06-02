@@ -32,11 +32,14 @@ Access copyWith({List<String>? audTag, bool? Function()? $required, String? team
   $required: $required != null ? $required() : this.$required,
   teamName: teamName ?? this.teamName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Access &&
           listEquals(audTag, other.audTag) &&
           $required == other.$required &&
-          teamName == other.teamName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(audTag), $required, teamName); } 
-@override String toString() { return 'Access(audTag: $audTag, \$required: ${$required}, teamName: $teamName)'; } 
+          teamName == other.teamName;
+
+@override int get hashCode => Object.hash(Object.hashAll(audTag), $required, teamName);
+
+@override String toString() => 'Access(audTag: $audTag, \$required: ${$required}, teamName: $teamName)';
+
  }

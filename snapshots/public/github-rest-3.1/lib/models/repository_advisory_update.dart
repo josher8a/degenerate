@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryUpdateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryUpdateState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryAdvisoryUpdateState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryAdvisoryUpdateState($value)';
+
  }
 @immutable final class RepositoryAdvisoryUpdate {const RepositoryAdvisoryUpdate({this.summary, this.description, this.cveId, this.vulnerabilities, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.state, this.collaboratingUsers, this.collaboratingTeams, });
 
@@ -115,7 +118,7 @@ RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function
   collaboratingUsers: collaboratingUsers != null ? collaboratingUsers() : this.collaboratingUsers,
   collaboratingTeams: collaboratingTeams != null ? collaboratingTeams() : this.collaboratingTeams,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisoryUpdate &&
           summary == other.summary &&
           description == other.description &&
@@ -127,7 +130,10 @@ RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function
           cvssVectorString == other.cvssVectorString &&
           state == other.state &&
           listEquals(collaboratingUsers, other.collaboratingUsers) &&
-          listEquals(collaboratingTeams, other.collaboratingTeams); } 
-@override int get hashCode { return Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, state, Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const [])); } 
-@override String toString() { return 'RepositoryAdvisoryUpdate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, state: $state, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams)'; } 
+          listEquals(collaboratingTeams, other.collaboratingTeams);
+
+@override int get hashCode => Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, state, Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []));
+
+@override String toString() => 'RepositoryAdvisoryUpdate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, state: $state, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams)';
+
  }

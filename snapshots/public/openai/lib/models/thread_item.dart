@@ -54,7 +54,8 @@ final UserMessageItem userMessageItem;
 
 @override String get type => 'chatkit.user_message';
 
-@override Map<String, dynamic> toJson() { return {...userMessageItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...userMessageItem.toJson(), 'type': type};
+
 ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<UserMessageItemContent>? content, List<Attachment>? attachments, InferenceOptions? Function()? inferenceOptions, }) { return ThreadItemChatkitUserMessage(userMessageItem.copyWith(
   id: id,
   object: object,
@@ -64,10 +65,13 @@ ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? o
   attachments: attachments,
   inferenceOptions: inferenceOptions,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitUserMessage && userMessageItem == other.userMessageItem; } 
-@override int get hashCode { return userMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitUserMessage($userMessageItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitUserMessage && userMessageItem == other.userMessageItem;
+
+@override int get hashCode => userMessageItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitUserMessage($userMessageItem)';
+
 @override String get id => userMessageItem.id;
 
 @override AssistantMessageItemObject get object => userMessageItem.object;
@@ -85,7 +89,8 @@ final AssistantMessageItem assistantMessageItem;
 
 @override String get type => 'chatkit.assistant_message';
 
-@override Map<String, dynamic> toJson() { return {...assistantMessageItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...assistantMessageItem.toJson(), 'type': type};
+
 ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<ResponseOutputText>? content, }) { return ThreadItemChatkitAssistantMessage(assistantMessageItem.copyWith(
   id: id,
   object: object,
@@ -93,10 +98,13 @@ ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObje
   threadId: threadId,
   content: content,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitAssistantMessage && assistantMessageItem == other.assistantMessageItem; } 
-@override int get hashCode { return assistantMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitAssistantMessage($assistantMessageItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitAssistantMessage && assistantMessageItem == other.assistantMessageItem;
+
+@override int get hashCode => assistantMessageItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitAssistantMessage($assistantMessageItem)';
+
 @override String get id => assistantMessageItem.id;
 
 @override AssistantMessageItemObject get object => assistantMessageItem.object;
@@ -114,7 +122,8 @@ final WidgetMessageItem widgetMessageItem;
 
 @override String get type => 'chatkit.widget';
 
-@override Map<String, dynamic> toJson() { return {...widgetMessageItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...widgetMessageItem.toJson(), 'type': type};
+
 ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? widget, }) { return ThreadItemChatkitWidget(widgetMessageItem.copyWith(
   id: id,
   object: object,
@@ -122,10 +131,13 @@ ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object
   threadId: threadId,
   widget: widget,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitWidget && widgetMessageItem == other.widgetMessageItem; } 
-@override int get hashCode { return widgetMessageItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitWidget($widgetMessageItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitWidget && widgetMessageItem == other.widgetMessageItem;
+
+@override int get hashCode => widgetMessageItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitWidget($widgetMessageItem)';
+
 @override String get id => widgetMessageItem.id;
 
 @override AssistantMessageItemObject get object => widgetMessageItem.object;
@@ -143,7 +155,8 @@ final ClientToolCallItem clientToolCallItem;
 
 @override String get type => 'chatkit.client_tool_call';
 
-@override Map<String, dynamic> toJson() { return {...clientToolCallItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...clientToolCallItem.toJson(), 'type': type};
+
 ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ThreadItemChatkitClientToolCall(clientToolCallItem.copyWith(
   id: id,
   object: object,
@@ -155,10 +168,13 @@ ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject
   arguments: arguments,
   output: output,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitClientToolCall && clientToolCallItem == other.clientToolCallItem; } 
-@override int get hashCode { return clientToolCallItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitClientToolCall($clientToolCallItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitClientToolCall && clientToolCallItem == other.clientToolCallItem;
+
+@override int get hashCode => clientToolCallItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitClientToolCall($clientToolCallItem)';
+
 @override String get id => clientToolCallItem.id;
 
 @override AssistantMessageItemObject get object => clientToolCallItem.object;
@@ -176,7 +192,8 @@ final TaskItem taskItem;
 
 @override String get type => 'chatkit.task';
 
-@override Map<String, dynamic> toJson() { return {...taskItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...taskItem.toJson(), 'type': type};
+
 ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, TaskType? taskType, String? Function()? heading, String? Function()? summary, }) { return ThreadItemChatkitTask(taskItem.copyWith(
   id: id,
   object: object,
@@ -186,10 +203,13 @@ ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, 
   heading: heading,
   summary: summary,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitTask && taskItem == other.taskItem; } 
-@override int get hashCode { return taskItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitTask($taskItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitTask && taskItem == other.taskItem;
+
+@override int get hashCode => taskItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitTask($taskItem)';
+
 @override String get id => taskItem.id;
 
 @override AssistantMessageItemObject get object => taskItem.object;
@@ -207,7 +227,8 @@ final TaskGroupItem taskGroupItem;
 
 @override String get type => 'chatkit.task_group';
 
-@override Map<String, dynamic> toJson() { return {...taskGroupItem.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...taskGroupItem.toJson(), 'type': type};
+
 ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<TaskGroupTask>? tasks, }) { return ThreadItemChatkitTaskGroup(taskGroupItem.copyWith(
   id: id,
   object: object,
@@ -215,10 +236,13 @@ ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? obj
   threadId: threadId,
   tasks: tasks,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItemChatkitTaskGroup && taskGroupItem == other.taskGroupItem; } 
-@override int get hashCode { return taskGroupItem.hashCode; } 
-@override String toString() { return 'ThreadItem.chatkitTaskGroup($taskGroupItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItemChatkitTaskGroup && taskGroupItem == other.taskGroupItem;
+
+@override int get hashCode => taskGroupItem.hashCode;
+
+@override String toString() => 'ThreadItem.chatkitTaskGroup($taskGroupItem)';
+
 @override String get id => taskGroupItem.id;
 
 @override AssistantMessageItemObject get object => taskGroupItem.object;
@@ -236,11 +260,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadItem$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ThreadItem.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadItem$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ThreadItem.unknown($json)';
+
 @override String get id => json['id'] as String;
 
 @override AssistantMessageItemObject get object => AssistantMessageItemObject.fromJson(json['object'] as String);

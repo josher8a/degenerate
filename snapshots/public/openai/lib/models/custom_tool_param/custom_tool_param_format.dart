@@ -28,12 +28,16 @@ final CustomTextFormatParam customTextFormatParam;
 
 @override String get type => 'text';
 
-@override Map<String, dynamic> toJson() { return {...customTextFormatParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...customTextFormatParam.toJson(), 'type': type};
+
 CustomToolParamFormatText copyWith({CustomTextFormatParam? customTextFormatParam}) { return CustomToolParamFormatText(customTextFormatParam ?? this.customTextFormatParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomToolParamFormatText && customTextFormatParam == other.customTextFormatParam; } 
-@override int get hashCode { return customTextFormatParam.hashCode; } 
-@override String toString() { return 'CustomToolParamFormat.text($customTextFormatParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomToolParamFormatText && customTextFormatParam == other.customTextFormatParam;
+
+@override int get hashCode => customTextFormatParam.hashCode;
+
+@override String toString() => 'CustomToolParamFormat.text($customTextFormatParam)';
+
  }
 @immutable final class CustomToolParamFormatGrammar extends CustomToolParamFormat {const CustomToolParamFormatGrammar(this.customGrammarFormatParam);
 
@@ -43,15 +47,19 @@ final CustomGrammarFormatParam customGrammarFormatParam;
 
 @override String get type => 'grammar';
 
-@override Map<String, dynamic> toJson() { return {...customGrammarFormatParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...customGrammarFormatParam.toJson(), 'type': type};
+
 CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definition, }) { return CustomToolParamFormatGrammar(customGrammarFormatParam.copyWith(
   syntax: syntax,
   definition: definition,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomToolParamFormatGrammar && customGrammarFormatParam == other.customGrammarFormatParam; } 
-@override int get hashCode { return customGrammarFormatParam.hashCode; } 
-@override String toString() { return 'CustomToolParamFormat.grammar($customGrammarFormatParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomToolParamFormatGrammar && customGrammarFormatParam == other.customGrammarFormatParam;
+
+@override int get hashCode => customGrammarFormatParam.hashCode;
+
+@override String toString() => 'CustomToolParamFormat.grammar($customGrammarFormatParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -61,9 +69,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomToolParamFormat$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CustomToolParamFormat.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomToolParamFormat$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CustomToolParamFormat.unknown($json)';
+
  }

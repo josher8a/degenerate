@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LineItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LineItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LineItemObject($value)';
+
  }
 /// Invoice Line Items represent the individual lines within an [invoice](https://docs.stripe.com/api/invoices) and only exist within the context of an invoice.
 /// 
@@ -168,7 +171,7 @@ LineItem copyWith({int? amount, String? currency, String? Function()? descriptio
   subtotal: subtotal ?? this.subtotal,
   taxes: taxes != null ? taxes() : this.taxes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LineItem &&
           amount == other.amount &&
           currency == other.currency &&
@@ -188,7 +191,10 @@ LineItem copyWith({int? amount, String? currency, String? Function()? descriptio
           quantity == other.quantity &&
           subscription == other.subscription &&
           subtotal == other.subtotal &&
-          listEquals(taxes, other.taxes); } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(discountAmounts ?? const []), discountable, Object.hashAll(discounts), id, invoice, livemode, metadata, object, parent, period, Object.hashAll(pretaxCreditAmounts ?? const []), pricing, quantity, subscription, subtotal, Object.hashAll(taxes ?? const [])); } 
-@override String toString() { return 'LineItem(amount: $amount, currency: $currency, description: $description, discountAmounts: $discountAmounts, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, parent: $parent, period: $period, pretaxCreditAmounts: $pretaxCreditAmounts, pricing: $pricing, quantity: $quantity, subscription: $subscription, subtotal: $subtotal, taxes: $taxes)'; } 
+          listEquals(taxes, other.taxes);
+
+@override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(discountAmounts ?? const []), discountable, Object.hashAll(discounts), id, invoice, livemode, metadata, object, parent, period, Object.hashAll(pretaxCreditAmounts ?? const []), pricing, quantity, subscription, subtotal, Object.hashAll(taxes ?? const []));
+
+@override String toString() => 'LineItem(amount: $amount, currency: $currency, description: $description, discountAmounts: $discountAmounts, discountable: $discountable, discounts: $discounts, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, parent: $parent, period: $period, pretaxCreditAmounts: $pretaxCreditAmounts, pricing: $pricing, quantity: $quantity, subscription: $subscription, subtotal: $subtotal, taxes: $taxes)';
+
  }

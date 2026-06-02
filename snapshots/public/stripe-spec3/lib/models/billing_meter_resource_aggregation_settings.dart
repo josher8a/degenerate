@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('formu
 BillingMeterResourceAggregationSettings copyWith({Formula? formula}) { return BillingMeterResourceAggregationSettings(
   formula: formula ?? this.formula,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterResourceAggregationSettings &&
-          formula == other.formula; } 
-@override int get hashCode { return formula.hashCode; } 
-@override String toString() { return 'BillingMeterResourceAggregationSettings(formula: $formula)'; } 
+          formula == other.formula;
+
+@override int get hashCode => formula.hashCode;
+
+@override String toString() => 'BillingMeterResourceAggregationSettings(formula: $formula)';
+
  }

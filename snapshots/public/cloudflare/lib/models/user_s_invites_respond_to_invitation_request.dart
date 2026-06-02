@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 UserSInvitesRespondToInvitationRequest copyWith({dynamic Function()? status}) { return UserSInvitesRespondToInvitationRequest(
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserSInvitesRespondToInvitationRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'UserSInvitesRespondToInvitationRequest(status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => status.hashCode;
+
+@override String toString() => 'UserSInvitesRespondToInvitationRequest(status: $status)';
+
  }

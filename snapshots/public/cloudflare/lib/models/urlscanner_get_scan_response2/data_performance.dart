@@ -33,12 +33,15 @@ DataPerformance copyWith({double? duration, String? entryType, String? name, dou
   name: name ?? this.name,
   startTime: startTime ?? this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataPerformance &&
           duration == other.duration &&
           entryType == other.entryType &&
           name == other.name &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(duration, entryType, name, startTime); } 
-@override String toString() { return 'DataPerformance(duration: $duration, entryType: $entryType, name: $name, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(duration, entryType, name, startTime);
+
+@override String toString() => 'DataPerformance(duration: $duration, entryType: $entryType, name: $name, startTime: $startTime)';
+
  }

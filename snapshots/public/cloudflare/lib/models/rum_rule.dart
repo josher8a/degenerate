@@ -58,7 +58,7 @@ RumRule copyWith({RumTimestamp? Function()? created, String? Function()? host, R
   paths: paths != null ? paths() : this.paths,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumRule &&
           created == other.created &&
           host == other.host &&
@@ -66,7 +66,10 @@ RumRule copyWith({RumTimestamp? Function()? created, String? Function()? host, R
           inclusive == other.inclusive &&
           isPaused == other.isPaused &&
           listEquals(paths, other.paths) &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(created, host, id, inclusive, isPaused, Object.hashAll(paths ?? const []), priority); } 
-@override String toString() { return 'RumRule(created: $created, host: $host, id: $id, inclusive: $inclusive, isPaused: $isPaused, paths: $paths, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(created, host, id, inclusive, isPaused, Object.hashAll(paths ?? const []), priority);
+
+@override String toString() => 'RumRule(created: $created, host: $host, id: $id, inclusive: $inclusive, isPaused: $isPaused, paths: $paths, priority: $priority)';
+
  }

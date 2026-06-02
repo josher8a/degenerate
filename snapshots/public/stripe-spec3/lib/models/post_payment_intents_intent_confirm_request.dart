@@ -175,7 +175,7 @@ PostPaymentIntentsIntentConfirmRequest copyWith({PostPaymentIntentsIntentConfirm
   shipping: shipping != null ? shipping() : this.shipping,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentConfirmRequest &&
           amountDetails == other.amountDetails &&
           captureMethod == other.captureMethod &&
@@ -198,7 +198,10 @@ PostPaymentIntentsIntentConfirmRequest copyWith({PostPaymentIntentsIntentConfirm
           returnUrl == other.returnUrl &&
           setupFutureUsage == other.setupFutureUsage &&
           shipping == other.shipping &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hashAll([amountDetails, captureMethod, clientSecret, confirmationToken, errorOnRequiresAction, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, mandate, mandateData, offSession, paymentDetails, paymentMethod, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), radarOptions, receiptEmail, returnUrl, setupFutureUsage, shipping, useStripeSdk]); } 
-@override String toString() { return 'PostPaymentIntentsIntentConfirmRequest(amountDetails: $amountDetails, captureMethod: $captureMethod, clientSecret: $clientSecret, confirmationToken: $confirmationToken, errorOnRequiresAction: $errorOnRequiresAction, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, mandate: $mandate, mandateData: $mandateData, offSession: $offSession, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, radarOptions: $radarOptions, receiptEmail: $receiptEmail, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping, useStripeSdk: $useStripeSdk)'; } 
+          useStripeSdk == other.useStripeSdk;
+
+@override int get hashCode => Object.hashAll([amountDetails, captureMethod, clientSecret, confirmationToken, errorOnRequiresAction, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, mandate, mandateData, offSession, paymentDetails, paymentMethod, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), radarOptions, receiptEmail, returnUrl, setupFutureUsage, shipping, useStripeSdk]);
+
+@override String toString() => 'PostPaymentIntentsIntentConfirmRequest(amountDetails: $amountDetails, captureMethod: $captureMethod, clientSecret: $clientSecret, confirmationToken: $confirmationToken, errorOnRequiresAction: $errorOnRequiresAction, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, mandate: $mandate, mandateData: $mandateData, offSession: $offSession, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, radarOptions: $radarOptions, receiptEmail: $receiptEmail, returnUrl: $returnUrl, setupFutureUsage: $setupFutureUsage, shipping: $shipping, useStripeSdk: $useStripeSdk)';
+
  }

@@ -33,12 +33,15 @@ CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String>? F
   customOriginSni: customOriginSni != null ? customOriginSni() : this.customOriginSni,
   ssl: ssl != null ? ssl() : this.ssl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneEditCustomHostnameRequest &&
           customMetadata == other.customMetadata &&
           customOriginServer == other.customOriginServer &&
           customOriginSni == other.customOriginSni &&
-          ssl == other.ssl; } 
-@override int get hashCode { return Object.hash(customMetadata, customOriginServer, customOriginSni, ssl); } 
-@override String toString() { return 'CustomHostnameForAZoneEditCustomHostnameRequest(customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, ssl: $ssl)'; } 
+          ssl == other.ssl;
+
+@override int get hashCode => Object.hash(customMetadata, customOriginServer, customOriginSni, ssl);
+
+@override String toString() => 'CustomHostnameForAZoneEditCustomHostnameRequest(customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, ssl: $ssl)';
+
  }

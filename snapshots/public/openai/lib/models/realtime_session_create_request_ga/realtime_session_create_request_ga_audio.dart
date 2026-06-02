@@ -22,10 +22,13 @@ RealtimeSessionCreateRequestGaAudio copyWith({RealtimeSessionCreateRequestGaAudi
   input: input != null ? input() : this.input,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequestGaAudio &&
           input == other.input &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(input, output); } 
-@override String toString() { return 'RealtimeSessionCreateRequestGaAudio(input: $input, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(input, output);
+
+@override String toString() => 'RealtimeSessionCreateRequestGaAudio(input: $input, output: $output)';
+
  }

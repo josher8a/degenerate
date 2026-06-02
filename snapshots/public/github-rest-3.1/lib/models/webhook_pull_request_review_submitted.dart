@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewSubmittedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewSubmittedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestReviewSubmittedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestReviewSubmittedAction($value)';
+
  }
 @immutable final class WebhookPullRequestReviewSubmitted {const WebhookPullRequestReviewSubmitted({required this.action, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -75,7 +78,7 @@ WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAct
   review: review ?? this.review,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewSubmitted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -84,7 +87,10 @@ WebhookPullRequestReviewSubmitted copyWith({WebhookPullRequestReviewSubmittedAct
           pullRequest == other.pullRequest &&
           repository == other.repository &&
           review == other.review &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, review, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewSubmitted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, pullRequest, repository, review, sender);
+
+@override String toString() => 'WebhookPullRequestReviewSubmitted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';
+
  }

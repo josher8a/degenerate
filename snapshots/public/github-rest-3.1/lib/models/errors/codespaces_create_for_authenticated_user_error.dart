@@ -20,25 +20,29 @@ final class CodespacesCreateForAuthenticatedUserError$401 extends CodespacesCrea
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CodespacesCreateForAuthenticatedUserError$403 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodespacesCreateForAuthenticatedUserError$404 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodespacesCreateForAuthenticatedUserError$503 extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$503(this.error);
 
 final CodespacesCreateForAuthenticatedUserResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodespacesCreateForAuthenticatedUserError$Unknown extends CodespacesCreateForAuthenticatedUserError {const CodespacesCreateForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

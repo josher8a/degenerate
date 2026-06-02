@@ -23,10 +23,13 @@ SimpleInputMessage copyWith({String? role, String? content, }) { return SimpleIn
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleInputMessage &&
           role == other.role &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(role, content); } 
-@override String toString() { return 'SimpleInputMessage(role: $role, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(role, content);
+
+@override String toString() => 'SimpleInputMessage(role: $role, content: $content)';
+
  }

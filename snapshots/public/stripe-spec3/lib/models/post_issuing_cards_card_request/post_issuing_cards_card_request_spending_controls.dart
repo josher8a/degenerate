@@ -36,13 +36,16 @@ PostIssuingCardsCardRequestSpendingControls copyWith({List<AllowedCategories>? F
   blockedMerchantCountries: blockedMerchantCountries != null ? blockedMerchantCountries() : this.blockedMerchantCountries,
   spendingLimits: spendingLimits != null ? spendingLimits() : this.spendingLimits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsCardRequestSpendingControls &&
           listEquals(allowedCategories, other.allowedCategories) &&
           listEquals(allowedMerchantCountries, other.allowedMerchantCountries) &&
           listEquals(blockedCategories, other.blockedCategories) &&
           listEquals(blockedMerchantCountries, other.blockedMerchantCountries) &&
-          listEquals(spendingLimits, other.spendingLimits); } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedCategories ?? const []), Object.hashAll(allowedMerchantCountries ?? const []), Object.hashAll(blockedCategories ?? const []), Object.hashAll(blockedMerchantCountries ?? const []), Object.hashAll(spendingLimits ?? const [])); } 
-@override String toString() { return 'PostIssuingCardsCardRequestSpendingControls(allowedCategories: $allowedCategories, allowedMerchantCountries: $allowedMerchantCountries, blockedCategories: $blockedCategories, blockedMerchantCountries: $blockedMerchantCountries, spendingLimits: $spendingLimits)'; } 
+          listEquals(spendingLimits, other.spendingLimits);
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedCategories ?? const []), Object.hashAll(allowedMerchantCountries ?? const []), Object.hashAll(blockedCategories ?? const []), Object.hashAll(blockedMerchantCountries ?? const []), Object.hashAll(spendingLimits ?? const []));
+
+@override String toString() => 'PostIssuingCardsCardRequestSpendingControls(allowedCategories: $allowedCategories, allowedMerchantCountries: $allowedMerchantCountries, blockedCategories: $blockedCategories, blockedMerchantCountries: $blockedMerchantCountries, spendingLimits: $spendingLimits)';
+
  }

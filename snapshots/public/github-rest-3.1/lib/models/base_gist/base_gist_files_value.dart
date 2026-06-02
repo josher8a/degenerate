@@ -41,14 +41,17 @@ BaseGistFilesValue copyWith({String? Function()? filename, String? Function()? t
   size: size != null ? size() : this.size,
   encoding: encoding != null ? encoding() : this.encoding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BaseGistFilesValue &&
           filename == other.filename &&
           type == other.type &&
           language == other.language &&
           rawUrl == other.rawUrl &&
           size == other.size &&
-          encoding == other.encoding; } 
-@override int get hashCode { return Object.hash(filename, type, language, rawUrl, size, encoding); } 
-@override String toString() { return 'BaseGistFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, encoding: $encoding)'; } 
+          encoding == other.encoding;
+
+@override int get hashCode => Object.hash(filename, type, language, rawUrl, size, encoding);
+
+@override String toString() => 'BaseGistFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, encoding: $encoding)';
+
  }

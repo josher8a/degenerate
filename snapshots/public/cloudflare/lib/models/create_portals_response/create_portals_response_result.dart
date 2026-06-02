@@ -78,7 +78,7 @@ CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? F
   name: name ?? this.name,
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsResponseResult &&
           createdAt == other.createdAt &&
           createdBy == other.createdBy &&
@@ -88,7 +88,10 @@ CreatePortalsResponseResult copyWith({DateTime? Function()? createdAt, String? F
           modifiedAt == other.modifiedAt &&
           modifiedBy == other.modifiedBy &&
           name == other.name &&
-          secureWebGateway == other.secureWebGateway; } 
-@override int get hashCode { return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway); } 
-@override String toString() { return 'CreatePortalsResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway)'; } 
+          secureWebGateway == other.secureWebGateway;
+
+@override int get hashCode => Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway);
+
+@override String toString() => 'CreatePortalsResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway)';
+
  }

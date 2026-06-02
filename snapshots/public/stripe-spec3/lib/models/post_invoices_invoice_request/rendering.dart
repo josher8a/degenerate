@@ -38,12 +38,15 @@ Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Functio
   template: template != null ? template() : this.template,
   templateVersion: templateVersion != null ? templateVersion() : this.templateVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rendering &&
           amountTaxDisplay == other.amountTaxDisplay &&
           pdf == other.pdf &&
           template == other.template &&
-          templateVersion == other.templateVersion; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, pdf, template, templateVersion); } 
-@override String toString() { return 'Rendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)'; } 
+          templateVersion == other.templateVersion;
+
+@override int get hashCode => Object.hash(amountTaxDisplay, pdf, template, templateVersion);
+
+@override String toString() => 'Rendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)';
+
  }

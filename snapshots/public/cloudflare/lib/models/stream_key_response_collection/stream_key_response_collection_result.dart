@@ -20,10 +20,13 @@ StreamKeyResponseCollectionResult copyWith({StreamSigningKeyCreated? Function()?
   created: created != null ? created() : this.created,
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamKeyResponseCollectionResult &&
           created == other.created &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(created, id); } 
-@override String toString() { return 'StreamKeyResponseCollectionResult(created: $created, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(created, id);
+
+@override String toString() => 'StreamKeyResponseCollectionResult(created: $created, id: $id)';
+
  }

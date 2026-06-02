@@ -104,9 +104,7 @@ final class SelfType extends Self {
   String get type => 'type';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...$true.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...$true.toJson(), 'type': type};
 
   SelfType copyWith({
     bool? $false,
@@ -139,19 +137,14 @@ final class SelfType extends Self {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is SelfType && $true == other.$true;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SelfType && $true == other.$true;
 
   @override
-  int get hashCode {
-    return $true.hashCode;
-  }
+  int get hashCode => $true.hashCode;
 
   @override
-  String toString() {
-    return 'Self.type(${$true})';
-  }
+  String toString() => 'Self.type(${$true})';
 }
 
 @immutable
@@ -168,9 +161,7 @@ final class SelfProto extends Self {
   String get type => '__proto__';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...proto.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...proto.toJson(), 'type': type};
 
   SelfProto copyWith({
     New? Function()? constructor,
@@ -189,19 +180,14 @@ final class SelfProto extends Self {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is SelfProto && proto == other.proto;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SelfProto && proto == other.proto;
 
   @override
-  int get hashCode {
-    return proto.hashCode;
-  }
+  int get hashCode => proto.hashCode;
 
   @override
-  String toString() {
-    return 'Self.proto($proto)';
-  }
+  String toString() => 'Self.proto($proto)';
 }
 
 @immutable
@@ -218,9 +204,7 @@ final class SelfString extends Self {
   String get type => 'String';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...stringModel.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...stringModel.toJson(), 'type': type};
 
   SelfString copyWith({
     int? Function()? length,
@@ -239,20 +223,15 @@ final class SelfString extends Self {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SelfString && stringModel == other.stringModel;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SelfString && stringModel == other.stringModel;
 
   @override
-  int get hashCode {
-    return stringModel.hashCode;
-  }
+  int get hashCode => stringModel.hashCode;
 
   @override
-  String toString() {
-    return 'Self.string($stringModel)';
-  }
+  String toString() => 'Self.string($stringModel)';
 }
 
 /// An unknown variant not defined in the OpenAPI spec.
@@ -267,23 +246,15 @@ final class Self$Unknown extends Self {
   String get type => json['type'] as String? ?? '';
 
   @override
-  Map<String, dynamic> toJson() {
-    return json;
-  }
+  Map<String, dynamic> toJson() => json;
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is Self$Unknown && json == other.json;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Self$Unknown && json == other.json;
 
   @override
-  int get hashCode {
-    return json.hashCode;
-  }
+  int get hashCode => json.hashCode;
 
   @override
-  String toString() {
-    return 'Self.unknown($json)';
-  }
+  String toString() => 'Self.unknown($json)';
 }

@@ -24,10 +24,13 @@ ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled? Function()? enabled, d
   enabled: enabled != null ? enabled() : this.enabled,
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSslRecommender &&
           enabled == other.enabled &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(enabled, id); } 
-@override String toString() { return 'ZonesSslRecommender(enabled: $enabled, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(enabled, id);
+
+@override String toString() => 'ZonesSslRecommender(enabled: $enabled, id: $id)';
+
  }

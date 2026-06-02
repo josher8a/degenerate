@@ -41,12 +41,15 @@ ResponseWebSearchCallCompletedEvent copyWith({String? type, int? outputIndex, St
   itemId: itemId ?? this.itemId,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseWebSearchCallCompletedEvent &&
           type == other.type &&
           outputIndex == other.outputIndex &&
           itemId == other.itemId &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, outputIndex, itemId, sequenceNumber); } 
-@override String toString() { return 'ResponseWebSearchCallCompletedEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, outputIndex, itemId, sequenceNumber);
+
+@override String toString() => 'ResponseWebSearchCallCompletedEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, sequenceNumber: $sequenceNumber)';
+
  }

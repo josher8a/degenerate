@@ -30,11 +30,14 @@ LocalSkillParam copyWith({String? name, String? description, String? path, }) { 
   description: description ?? this.description,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalSkillParam &&
           name == other.name &&
           description == other.description &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(name, description, path); } 
-@override String toString() { return 'LocalSkillParam(name: $name, description: $description, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(name, description, path);
+
+@override String toString() => 'LocalSkillParam(name: $name, description: $description, path: $path)';
+
  }

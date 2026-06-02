@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData copyWith({Uri? Function()? redirectTo}) { return AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
   redirectTo: redirectTo != null ? redirectTo() : this.redirectTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData &&
-          redirectTo == other.redirectTo; } 
-@override int get hashCode { return redirectTo.hashCode; } 
-@override String toString() { return 'AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(redirectTo: $redirectTo)'; } 
+          redirectTo == other.redirectTo;
+
+@override int get hashCode => redirectTo.hashCode;
+
+@override String toString() => 'AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(redirectTo: $redirectTo)';
+
  }

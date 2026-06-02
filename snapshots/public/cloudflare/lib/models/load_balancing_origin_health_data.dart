@@ -41,12 +41,15 @@ LoadBalancingOriginHealthData copyWith({String? Function()? failureReason, bool?
   responseCode: responseCode != null ? responseCode() : this.responseCode,
   rtt: rtt != null ? rtt() : this.rtt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginHealthData &&
           failureReason == other.failureReason &&
           healthy == other.healthy &&
           responseCode == other.responseCode &&
-          rtt == other.rtt; } 
-@override int get hashCode { return Object.hash(failureReason, healthy, responseCode, rtt); } 
-@override String toString() { return 'LoadBalancingOriginHealthData(failureReason: $failureReason, healthy: $healthy, responseCode: $responseCode, rtt: $rtt)'; } 
+          rtt == other.rtt;
+
+@override int get hashCode => Object.hash(failureReason, healthy, responseCode, rtt);
+
+@override String toString() => 'LoadBalancingOriginHealthData(failureReason: $failureReason, healthy: $healthy, responseCode: $responseCode, rtt: $rtt)';
+
  }

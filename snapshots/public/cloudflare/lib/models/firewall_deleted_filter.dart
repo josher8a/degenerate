@@ -29,10 +29,13 @@ FirewallDeletedFilter copyWith({FirewallDeleted? deleted, FirewallFiltersCompone
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallDeletedFilter &&
           deleted == other.deleted &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(deleted, id); } 
-@override String toString() { return 'FirewallDeletedFilter(deleted: $deleted, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(deleted, id);
+
+@override String toString() => 'FirewallDeletedFilter(deleted: $deleted, id: $id)';
+
  }

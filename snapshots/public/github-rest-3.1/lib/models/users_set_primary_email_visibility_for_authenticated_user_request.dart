@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('visib
 UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest copyWith({PackageVisibility? visibility}) { return UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest &&
-          visibility == other.visibility; } 
-@override int get hashCode { return visibility.hashCode; } 
-@override String toString() { return 'UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => visibility.hashCode;
+
+@override String toString() => 'UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(visibility: $visibility)';
+
  }

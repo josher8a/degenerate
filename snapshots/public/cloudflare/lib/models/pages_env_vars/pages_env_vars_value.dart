@@ -32,14 +32,18 @@ final PagesPlainTextEnvVar pagesPlainTextEnvVar;
 
 @override String get type => 'plain_text';
 
-@override Map<String, dynamic> toJson() { return {...pagesPlainTextEnvVar.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...pagesPlainTextEnvVar.toJson(), 'type': type};
+
 PagesEnvVarsValuePlainText copyWith({String? value}) { return PagesEnvVarsValuePlainText(pagesPlainTextEnvVar.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
-@override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
-@override String toString() { return 'PagesEnvVarsValue.plainText($pagesPlainTextEnvVar)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar;
+
+@override int get hashCode => pagesPlainTextEnvVar.hashCode;
+
+@override String toString() => 'PagesEnvVarsValue.plainText($pagesPlainTextEnvVar)';
+
 @override String get value => pagesPlainTextEnvVar.value;
 
  }
@@ -51,14 +55,18 @@ final PagesSecretTextEnvVar pagesSecretTextEnvVar;
 
 @override String get type => 'secret_text';
 
-@override Map<String, dynamic> toJson() { return {...pagesSecretTextEnvVar.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...pagesSecretTextEnvVar.toJson(), 'type': type};
+
 PagesEnvVarsValueSecretText copyWith({String? value}) { return PagesEnvVarsValueSecretText(pagesSecretTextEnvVar.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
-@override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
-@override String toString() { return 'PagesEnvVarsValue.secretText($pagesSecretTextEnvVar)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar;
+
+@override int get hashCode => pagesSecretTextEnvVar.hashCode;
+
+@override String toString() => 'PagesEnvVarsValue.secretText($pagesSecretTextEnvVar)';
+
 @override String get value => pagesSecretTextEnvVar.value;
 
  }
@@ -70,11 +78,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesEnvVarsValue$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'PagesEnvVarsValue.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesEnvVarsValue$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'PagesEnvVarsValue.unknown($json)';
+
 @override String get value => json['value'] as String;
 
  }

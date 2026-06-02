@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2SippySourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2SippySourceProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2SippySourceProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2SippySourceProvider($value)';
+
  }
 /// Details about the configured source bucket.
 @immutable final class R2SippySource {const R2SippySource({this.bucket, this.bucketUrl, this.provider, this.region, });
@@ -61,12 +64,15 @@ R2SippySource copyWith({String? Function()? bucket, String? Function()? bucketUr
   provider: provider != null ? provider() : this.provider,
   region: region != null ? region() : this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SippySource &&
           bucket == other.bucket &&
           bucketUrl == other.bucketUrl &&
           provider == other.provider &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(bucket, bucketUrl, provider, region); } 
-@override String toString() { return 'R2SippySource(bucket: $bucket, bucketUrl: $bucketUrl, provider: $provider, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(bucket, bucketUrl, provider, region);
+
+@override String toString() => 'R2SippySource(bucket: $bucket, bucketUrl: $bucketUrl, provider: $provider, region: $region)';
+
  }

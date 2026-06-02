@@ -21,10 +21,13 @@ BranchWithProtectionLinks copyWith({String? html, Uri? self, }) { return BranchW
   html: html ?? this.html,
   self: self ?? this.self,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchWithProtectionLinks &&
           html == other.html &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(html, self); } 
-@override String toString() { return 'BranchWithProtectionLinks(html: $html, self: $self)'; } 
+          self == other.self;
+
+@override int get hashCode => Object.hash(html, self);
+
+@override String toString() => 'BranchWithProtectionLinks(html: $html, self: $self)';
+
  }

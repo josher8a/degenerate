@@ -49,14 +49,17 @@ RadarGetReportsDatasetsResponseResultDatasets copyWith({String? description, int
   title: title ?? this.title,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetReportsDatasetsResponseResultDatasets &&
           description == other.description &&
           id == other.id &&
           meta == other.meta &&
           listEquals(tags, other.tags) &&
           title == other.title &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, id, meta, Object.hashAll(tags), title, type); } 
-@override String toString() { return 'RadarGetReportsDatasetsResponseResultDatasets(description: $description, id: $id, meta: $meta, tags: $tags, title: $title, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, id, meta, Object.hashAll(tags), title, type);
+
+@override String toString() => 'RadarGetReportsDatasetsResponseResultDatasets(description: $description, id: $id, meta: $meta, tags: $tags, title: $title, type: $type)';
+
  }

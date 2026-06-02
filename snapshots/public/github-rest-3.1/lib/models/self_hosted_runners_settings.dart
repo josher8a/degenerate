@@ -22,10 +22,13 @@ SelfHostedRunnersSettings copyWith({EnabledRepositories? enabledRepositories, St
   enabledRepositories: enabledRepositories ?? this.enabledRepositories,
   selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SelfHostedRunnersSettings &&
           enabledRepositories == other.enabledRepositories &&
-          selectedRepositoriesUrl == other.selectedRepositoriesUrl; } 
-@override int get hashCode { return Object.hash(enabledRepositories, selectedRepositoriesUrl); } 
-@override String toString() { return 'SelfHostedRunnersSettings(enabledRepositories: $enabledRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)'; } 
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl;
+
+@override int get hashCode => Object.hash(enabledRepositories, selectedRepositoriesUrl);
+
+@override String toString() => 'SelfHostedRunnersSettings(enabledRepositories: $enabledRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
+
  }

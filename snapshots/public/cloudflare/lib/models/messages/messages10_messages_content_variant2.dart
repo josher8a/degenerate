@@ -22,10 +22,13 @@ Messages10MessagesContentVariant2 copyWith({String? Function()? text, String? Fu
   text: text != null ? text() : this.text,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages10MessagesContentVariant2 &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(text, type); } 
-@override String toString() { return 'Messages10MessagesContentVariant2(text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(text, type);
+
+@override String toString() => 'Messages10MessagesContentVariant2(text: $text, type: $type)';
+
  }

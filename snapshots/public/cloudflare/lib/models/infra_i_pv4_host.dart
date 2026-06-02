@@ -31,10 +31,13 @@ InfraIPv4Host copyWith({String? ipv4, InfraNetwork? network, }) { return InfraIP
   ipv4: ipv4 ?? this.ipv4,
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraIPv4Host &&
           ipv4 == other.ipv4 &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(ipv4, network); } 
-@override String toString() { return 'InfraIPv4Host(ipv4: $ipv4, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(ipv4, network);
+
+@override String toString() => 'InfraIPv4Host(ipv4: $ipv4, network: $network)';
+
  }

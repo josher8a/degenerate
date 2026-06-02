@@ -33,12 +33,15 @@ RadarGetQualityIndexTimeseriesGroupResponseResultSerie0 copyWith({List<String>? 
   p75: p75 ?? this.p75,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualityIndexTimeseriesGroupResponseResultSerie0 &&
           listEquals(p25, other.p25) &&
           listEquals(p50, other.p50) &&
           listEquals(p75, other.p75) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(p25), Object.hashAll(p50), Object.hashAll(p75), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetQualityIndexTimeseriesGroupResponseResultSerie0(p25: $p25, p50: $p50, p75: $p75, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(p25), Object.hashAll(p50), Object.hashAll(p75), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetQualityIndexTimeseriesGroupResponseResultSerie0(p25: $p25, p50: $p50, p75: $p75, timestamps: $timestamps)';
+
  }

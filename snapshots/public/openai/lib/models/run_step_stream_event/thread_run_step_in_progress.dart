@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadRunStepInProgressEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadRunStepInProgressEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadRunStepInProgressEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadRunStepInProgressEvent($value)';
+
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
 @immutable final class ThreadRunStepInProgress {const ThreadRunStepInProgress({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadRunStepInProgress copyWith({ThreadRunStepInProgressEvent? event, RunStepOb
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadRunStepInProgress &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadRunStepInProgress(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadRunStepInProgress(event: $event, data: $data)';
+
  }

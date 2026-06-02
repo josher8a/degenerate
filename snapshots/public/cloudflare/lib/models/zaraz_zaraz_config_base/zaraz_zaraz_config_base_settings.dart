@@ -95,7 +95,7 @@ ZarazZarazConfigBaseSettings copyWith({bool? autoInjectScript, ContextEnricher? 
   scriptPath: scriptPath != null ? scriptPath() : this.scriptPath,
   trackPath: trackPath != null ? trackPath() : this.trackPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigBaseSettings &&
           autoInjectScript == other.autoInjectScript &&
           contextEnricher == other.contextEnricher &&
@@ -110,7 +110,10 @@ ZarazZarazConfigBaseSettings copyWith({bool? autoInjectScript, ContextEnricher? 
           injectIframes == other.injectIframes &&
           mcRootPath == other.mcRootPath &&
           scriptPath == other.scriptPath &&
-          trackPath == other.trackPath; } 
-@override int get hashCode { return Object.hash(autoInjectScript, contextEnricher, cookieDomain, ecommerce, eventsApiPath, hideExternalReferer, hideIpAddress, hideQueryParams, hideUserAgent, initPath, injectIframes, mcRootPath, scriptPath, trackPath); } 
-@override String toString() { return 'ZarazZarazConfigBaseSettings(autoInjectScript: $autoInjectScript, contextEnricher: $contextEnricher, cookieDomain: $cookieDomain, ecommerce: $ecommerce, eventsApiPath: $eventsApiPath, hideExternalReferer: $hideExternalReferer, hideIpAddress: $hideIpAddress, hideQueryParams: $hideQueryParams, hideUserAgent: $hideUserAgent, initPath: $initPath, injectIframes: $injectIframes, mcRootPath: $mcRootPath, scriptPath: $scriptPath, trackPath: $trackPath)'; } 
+          trackPath == other.trackPath;
+
+@override int get hashCode => Object.hash(autoInjectScript, contextEnricher, cookieDomain, ecommerce, eventsApiPath, hideExternalReferer, hideIpAddress, hideQueryParams, hideUserAgent, initPath, injectIframes, mcRootPath, scriptPath, trackPath);
+
+@override String toString() => 'ZarazZarazConfigBaseSettings(autoInjectScript: $autoInjectScript, contextEnricher: $contextEnricher, cookieDomain: $cookieDomain, ecommerce: $ecommerce, eventsApiPath: $eventsApiPath, hideExternalReferer: $hideExternalReferer, hideIpAddress: $hideIpAddress, hideQueryParams: $hideQueryParams, hideUserAgent: $hideUserAgent, initPath: $initPath, injectIframes: $injectIframes, mcRootPath: $mcRootPath, scriptPath: $scriptPath, trackPath: $trackPath)';
+
  }

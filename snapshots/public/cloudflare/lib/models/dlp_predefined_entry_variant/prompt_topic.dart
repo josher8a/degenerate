@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DlpPromptTopicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DlpPromptTopicType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpPromptTopicType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DlpPromptTopicType($value)';
+
  }
 @immutable final class PromptTopicType {const PromptTopicType._(this.value);
 
@@ -40,10 +43,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PromptTopicType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PromptTopicType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PromptTopicType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PromptTopicType($value)';
+
  }
 @immutable final class PromptTopic {const PromptTopic({required this.topicType, required this.type, this.description, });
 
@@ -71,11 +77,14 @@ PromptTopic copyWith({String? Function()? description, DlpPromptTopicType? topic
   topicType: topicType ?? this.topicType,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromptTopic &&
           description == other.description &&
           topicType == other.topicType &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, topicType, type); } 
-@override String toString() { return 'PromptTopic(description: $description, topicType: $topicType, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, topicType, type);
+
+@override String toString() => 'PromptTopic(description: $description, topicType: $topicType, type: $type)';
+
  }

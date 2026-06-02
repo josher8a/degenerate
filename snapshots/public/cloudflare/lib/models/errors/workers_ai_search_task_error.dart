@@ -17,7 +17,8 @@ final class WorkersAiSearchTaskError$404 extends WorkersAiSearchTaskError {const
 
 final WorkersAiSearchTaskResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorkersAiSearchTaskError$Unknown extends WorkersAiSearchTaskError {const WorkersAiSearchTaskError$Unknown(this.statusCode, this.rawBody, );
 

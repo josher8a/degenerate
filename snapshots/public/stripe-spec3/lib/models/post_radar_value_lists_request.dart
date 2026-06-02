@@ -46,13 +46,16 @@ PostRadarValueListsRequest copyWith({String? alias, List<String>? Function()? ex
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRadarValueListsRequest &&
           alias == other.alias &&
           listEquals(expand, other.expand) &&
           itemType == other.itemType &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alias, Object.hashAll(expand ?? const []), itemType, metadata, name); } 
-@override String toString() { return 'PostRadarValueListsRequest(alias: $alias, expand: $expand, itemType: $itemType, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(alias, Object.hashAll(expand ?? const []), itemType, metadata, name);
+
+@override String toString() => 'PostRadarValueListsRequest(alias: $alias, expand: $expand, itemType: $itemType, metadata: $metadata, name: $name)';
+
  }

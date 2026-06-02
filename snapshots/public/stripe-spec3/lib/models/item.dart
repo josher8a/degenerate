@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ItemObject($value)';
+
  }
 /// A line item.
 @immutable final class Item {const Item({required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, required this.id, required this.object, this.adjustableQuantity, this.description, this.discounts, this.metadata, this.price, this.quantity, this.taxes, });
@@ -130,7 +133,7 @@ Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int?
   quantity: quantity != null ? quantity() : this.quantity,
   taxes: taxes != null ? taxes() : this.taxes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Item &&
           adjustableQuantity == other.adjustableQuantity &&
           amountDiscount == other.amountDiscount &&
@@ -145,7 +148,10 @@ Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int?
           object == other.object &&
           price == other.price &&
           quantity == other.quantity &&
-          listEquals(taxes, other.taxes); } 
-@override int get hashCode { return Object.hash(adjustableQuantity, amountDiscount, amountSubtotal, amountTax, amountTotal, currency, description, Object.hashAll(discounts ?? const []), id, metadata, object, price, quantity, Object.hashAll(taxes ?? const [])); } 
-@override String toString() { return 'Item(adjustableQuantity: $adjustableQuantity, amountDiscount: $amountDiscount, amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, currency: $currency, description: $description, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, taxes: $taxes)'; } 
+          listEquals(taxes, other.taxes);
+
+@override int get hashCode => Object.hash(adjustableQuantity, amountDiscount, amountSubtotal, amountTax, amountTotal, currency, description, Object.hashAll(discounts ?? const []), id, metadata, object, price, quantity, Object.hashAll(taxes ?? const []));
+
+@override String toString() => 'Item(adjustableQuantity: $adjustableQuantity, amountDiscount: $amountDiscount, amountSubtotal: $amountSubtotal, amountTax: $amountTax, amountTotal: $amountTotal, currency: $currency, description: $description, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, taxes: $taxes)';
+
  }

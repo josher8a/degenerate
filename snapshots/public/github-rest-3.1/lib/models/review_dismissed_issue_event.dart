@@ -70,7 +70,7 @@ ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, Simple
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   dismissedReview: dismissedReview ?? this.dismissedReview,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewDismissedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -81,7 +81,10 @@ ReviewDismissedIssueEvent copyWith({int? id, String? nodeId, String? url, Simple
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          dismissedReview == other.dismissedReview; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, dismissedReview); } 
-@override String toString() { return 'ReviewDismissedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, dismissedReview: $dismissedReview)'; } 
+          dismissedReview == other.dismissedReview;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, dismissedReview);
+
+@override String toString() => 'ReviewDismissedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, dismissedReview: $dismissedReview)';
+
  }

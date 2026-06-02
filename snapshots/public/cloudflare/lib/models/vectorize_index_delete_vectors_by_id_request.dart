@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VectorizeIndexDeleteVectorsByIdRequest copyWith({List<VectorizeVectorIdentifier>? Function()? ids}) { return VectorizeIndexDeleteVectorsByIdRequest(
   ids: ids != null ? ids() : this.ids,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexDeleteVectorsByIdRequest &&
-          listEquals(ids, other.ids); } 
-@override int get hashCode { return Object.hashAll(ids ?? const []); } 
-@override String toString() { return 'VectorizeIndexDeleteVectorsByIdRequest(ids: $ids)'; } 
+          listEquals(ids, other.ids);
+
+@override int get hashCode => Object.hashAll(ids ?? const []);
+
+@override String toString() => 'VectorizeIndexDeleteVectorsByIdRequest(ids: $ids)';
+
  }

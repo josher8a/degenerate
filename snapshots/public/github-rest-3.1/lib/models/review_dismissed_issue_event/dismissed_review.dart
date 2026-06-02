@@ -32,12 +32,15 @@ DismissedReview copyWith({String? state, int? reviewId, String? Function()? dism
   dismissalMessage: dismissalMessage != null ? dismissalMessage() : this.dismissalMessage,
   dismissalCommitId: dismissalCommitId != null ? dismissalCommitId() : this.dismissalCommitId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DismissedReview &&
           state == other.state &&
           reviewId == other.reviewId &&
           dismissalMessage == other.dismissalMessage &&
-          dismissalCommitId == other.dismissalCommitId; } 
-@override int get hashCode { return Object.hash(state, reviewId, dismissalMessage, dismissalCommitId); } 
-@override String toString() { return 'DismissedReview(state: $state, reviewId: $reviewId, dismissalMessage: $dismissalMessage, dismissalCommitId: $dismissalCommitId)'; } 
+          dismissalCommitId == other.dismissalCommitId;
+
+@override int get hashCode => Object.hash(state, reviewId, dismissalMessage, dismissalCommitId);
+
+@override String toString() => 'DismissedReview(state: $state, reviewId: $reviewId, dismissalMessage: $dismissalMessage, dismissalCommitId: $dismissalCommitId)';
+
  }

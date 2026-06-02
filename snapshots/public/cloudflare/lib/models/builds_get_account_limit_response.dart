@@ -22,10 +22,13 @@ BuildsGetAccountLimitResponse copyWith({DateTime? Function()? buildMinutesRefres
   buildMinutesRefreshOn: buildMinutesRefreshOn != null ? buildMinutesRefreshOn() : this.buildMinutesRefreshOn,
   hasReachedBuildMinutesLimit: hasReachedBuildMinutesLimit != null ? hasReachedBuildMinutesLimit() : this.hasReachedBuildMinutesLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsGetAccountLimitResponse &&
           buildMinutesRefreshOn == other.buildMinutesRefreshOn &&
-          hasReachedBuildMinutesLimit == other.hasReachedBuildMinutesLimit; } 
-@override int get hashCode { return Object.hash(buildMinutesRefreshOn, hasReachedBuildMinutesLimit); } 
-@override String toString() { return 'BuildsGetAccountLimitResponse(buildMinutesRefreshOn: $buildMinutesRefreshOn, hasReachedBuildMinutesLimit: $hasReachedBuildMinutesLimit)'; } 
+          hasReachedBuildMinutesLimit == other.hasReachedBuildMinutesLimit;
+
+@override int get hashCode => Object.hash(buildMinutesRefreshOn, hasReachedBuildMinutesLimit);
+
+@override String toString() => 'BuildsGetAccountLimitResponse(buildMinutesRefreshOn: $buildMinutesRefreshOn, hasReachedBuildMinutesLimit: $hasReachedBuildMinutesLimit)';
+
  }

@@ -31,11 +31,14 @@ GitRepoVolumeSource copyWith({String? Function()? directory, String? repository,
   repository: repository ?? this.repository,
   revision: revision != null ? revision() : this.revision,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitRepoVolumeSource &&
           directory == other.directory &&
           repository == other.repository &&
-          revision == other.revision; } 
-@override int get hashCode { return Object.hash(directory, repository, revision); } 
-@override String toString() { return 'GitRepoVolumeSource(directory: $directory, repository: $repository, revision: $revision)'; } 
+          revision == other.revision;
+
+@override int get hashCode => Object.hash(directory, repository, revision);
+
+@override String toString() => 'GitRepoVolumeSource(directory: $directory, repository: $repository, revision: $revision)';
+
  }

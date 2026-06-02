@@ -30,11 +30,14 @@ MconnSnapshotInterfaceAddress copyWith({String? Function()? connectorId, String?
   interfaceName: interfaceName ?? this.interfaceName,
   ipAddress: ipAddress ?? this.ipAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotInterfaceAddress &&
           connectorId == other.connectorId &&
           interfaceName == other.interfaceName &&
-          ipAddress == other.ipAddress; } 
-@override int get hashCode { return Object.hash(connectorId, interfaceName, ipAddress); } 
-@override String toString() { return 'MconnSnapshotInterfaceAddress(connectorId: $connectorId, interfaceName: $interfaceName, ipAddress: $ipAddress)'; } 
+          ipAddress == other.ipAddress;
+
+@override int get hashCode => Object.hash(connectorId, interfaceName, ipAddress);
+
+@override String toString() => 'MconnSnapshotInterfaceAddress(connectorId: $connectorId, interfaceName: $interfaceName, ipAddress: $ipAddress)';
+
  }

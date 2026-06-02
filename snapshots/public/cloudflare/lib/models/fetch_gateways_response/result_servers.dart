@@ -130,7 +130,7 @@ ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime? Functi
   updatedPrompts: updatedPrompts ?? this.updatedPrompts,
   updatedTools: updatedTools ?? this.updatedTools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultServers &&
           authType == other.authType &&
           createdAt == other.createdAt &&
@@ -150,7 +150,10 @@ ResultServers copyWith({CreateServersRequestAuthType? authType, DateTime? Functi
           status == other.status &&
           listEquals(tools, other.tools) &&
           listEquals(updatedPrompts, other.updatedPrompts) &&
-          listEquals(updatedTools, other.updatedTools); } 
-@override int get hashCode { return Object.hash(authType, createdAt, createdBy, defaultDisabled, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, onBehalf, Object.hashAll(prompts), status, Object.hashAll(tools), Object.hashAll(updatedPrompts), Object.hashAll(updatedTools)); } 
-@override String toString() { return 'ResultServers(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, defaultDisabled: $defaultDisabled, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, onBehalf: $onBehalf, prompts: $prompts, status: $status, tools: $tools, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)'; } 
+          listEquals(updatedTools, other.updatedTools);
+
+@override int get hashCode => Object.hash(authType, createdAt, createdBy, defaultDisabled, description, error, hostname, id, lastSuccessfulSync, lastSynced, modifiedAt, modifiedBy, name, onBehalf, Object.hashAll(prompts), status, Object.hashAll(tools), Object.hashAll(updatedPrompts), Object.hashAll(updatedTools));
+
+@override String toString() => 'ResultServers(authType: $authType, createdAt: $createdAt, createdBy: $createdBy, defaultDisabled: $defaultDisabled, description: $description, error: $error, hostname: $hostname, id: $id, lastSuccessfulSync: $lastSuccessfulSync, lastSynced: $lastSynced, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, onBehalf: $onBehalf, prompts: $prompts, status: $status, tools: $tools, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)';
+
  }

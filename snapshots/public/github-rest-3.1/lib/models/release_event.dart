@@ -21,10 +21,13 @@ ReleaseEvent copyWith({String? action, ReleaseEventRelease? release, }) { return
   action: action ?? this.action,
   release: release ?? this.release,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReleaseEvent &&
           action == other.action &&
-          release == other.release; } 
-@override int get hashCode { return Object.hash(action, release); } 
-@override String toString() { return 'ReleaseEvent(action: $action, release: $release)'; } 
+          release == other.release;
+
+@override int get hashCode => Object.hash(action, release);
+
+@override String toString() => 'ReleaseEvent(action: $action, release: $release)';
+
  }

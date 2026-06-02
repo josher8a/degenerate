@@ -23,10 +23,13 @@ CustomAi copyWith({String? authorization, String? model, }) { return CustomAi(
   authorization: authorization ?? this.authorization,
   model: model ?? this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomAi &&
           authorization == other.authorization &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(authorization, model); } 
-@override String toString() { return 'CustomAi(authorization: $authorization, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(authorization, model);
+
+@override String toString() => 'CustomAi(authorization: $authorization, model: $model)';
+
  }

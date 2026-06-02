@@ -22,10 +22,13 @@ TlsCertificatesAndHostnamesQuota copyWith({int? Function()? allocated, int? Func
   allocated: allocated != null ? allocated() : this.allocated,
   used: used != null ? used() : this.used,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesQuota &&
           allocated == other.allocated &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(allocated, used); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesQuota(allocated: $allocated, used: $used)'; } 
+          used == other.used;
+
+@override int get hashCode => Object.hash(allocated, used);
+
+@override String toString() => 'TlsCertificatesAndHostnamesQuota(allocated: $allocated, used: $used)';
+
  }

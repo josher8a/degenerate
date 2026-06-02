@@ -56,7 +56,7 @@ EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, Str
   range: range != null ? range() : this.range,
   passThreshold: passThreshold != null ? passThreshold() : this.passThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalGraderScoreModel &&
           type == other.type &&
           name == other.name &&
@@ -64,7 +64,10 @@ EvalGraderScoreModel copyWith({EvalGraderScoreModelType? type, String? name, Str
           samplingParams == other.samplingParams &&
           listEquals(input, other.input) &&
           listEquals(range, other.range) &&
-          passThreshold == other.passThreshold; } 
-@override int get hashCode { return Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const []), passThreshold); } 
-@override String toString() { return 'EvalGraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range, passThreshold: $passThreshold)'; } 
+          passThreshold == other.passThreshold;
+
+@override int get hashCode => Object.hash(type, name, model, samplingParams, Object.hashAll(input), Object.hashAll(range ?? const []), passThreshold);
+
+@override String toString() => 'EvalGraderScoreModel(type: $type, name: $name, model: $model, samplingParams: $samplingParams, input: $input, range: $range, passThreshold: $passThreshold)';
+
  }

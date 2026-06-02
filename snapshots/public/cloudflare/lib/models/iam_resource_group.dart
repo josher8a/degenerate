@@ -51,12 +51,15 @@ IamResourceGroup copyWith({String? id, IamPermissionGroupMeta? Function()? meta,
   name: name != null ? name() : this.name,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamResourceGroup &&
           id == other.id &&
           meta == other.meta &&
           name == other.name &&
-          listEquals(scope, other.scope); } 
-@override int get hashCode { return Object.hash(id, meta, name, Object.hashAll(scope)); } 
-@override String toString() { return 'IamResourceGroup(id: $id, meta: $meta, name: $name, scope: $scope)'; } 
+          listEquals(scope, other.scope);
+
+@override int get hashCode => Object.hash(id, meta, name, Object.hashAll(scope));
+
+@override String toString() => 'IamResourceGroup(id: $id, meta: $meta, name: $name, scope: $scope)';
+
  }

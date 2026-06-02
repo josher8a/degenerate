@@ -80,7 +80,7 @@ ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilena
   uploaded: uploaded != null ? uploaded() : this.uploaded,
   variants: variants != null ? variants() : this.variants,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImage &&
           creator == other.creator &&
           filename == other.filename &&
@@ -88,7 +88,10 @@ ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilena
           meta == other.meta &&
           requireSignedUrLs == other.requireSignedUrLs &&
           uploaded == other.uploaded &&
-          listEquals(variants, other.variants); } 
-@override int get hashCode { return Object.hash(creator, filename, id, meta, requireSignedUrLs, uploaded, Object.hashAll(variants ?? const [])); } 
-@override String toString() { return 'ImagesImage(creator: $creator, filename: $filename, id: $id, meta: $meta, requireSignedUrLs: $requireSignedUrLs, uploaded: $uploaded, variants: $variants)'; } 
+          listEquals(variants, other.variants);
+
+@override int get hashCode => Object.hash(creator, filename, id, meta, requireSignedUrLs, uploaded, Object.hashAll(variants ?? const []));
+
+@override String toString() => 'ImagesImage(creator: $creator, filename: $filename, id: $id, meta: $meta, requireSignedUrLs: $requireSignedUrLs, uploaded: $uploaded, variants: $variants)';
+
  }

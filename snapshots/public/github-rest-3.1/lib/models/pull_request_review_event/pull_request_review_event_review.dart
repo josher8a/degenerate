@@ -65,7 +65,7 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
   links: links != null ? links() : this.links,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestReviewEventReview &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -77,7 +77,10 @@ PullRequestReviewEventReview copyWith({int? Function()? id, String? Function()? 
           htmlUrl == other.htmlUrl &&
           pullRequestUrl == other.pullRequestUrl &&
           links == other.links &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, user, body, commitId, submittedAt, state, htmlUrl, pullRequestUrl, links, updatedAt); } 
-@override String toString() { return 'PullRequestReviewEventReview(id: $id, nodeId: $nodeId, user: $user, body: $body, commitId: $commitId, submittedAt: $submittedAt, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, user, body, commitId, submittedAt, state, htmlUrl, pullRequestUrl, links, updatedAt);
+
+@override String toString() => 'PullRequestReviewEventReview(id: $id, nodeId: $nodeId, user: $user, body: $body, commitId: $commitId, submittedAt: $submittedAt, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, updatedAt: $updatedAt)';
+
  }

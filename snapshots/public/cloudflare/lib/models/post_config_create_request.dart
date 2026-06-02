@@ -28,11 +28,14 @@ PostConfigCreateRequest copyWith({Frequency2? Function()? frequency, List<String
   ips: ips ?? this.ips,
   ports: ports != null ? ports() : this.ports,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostConfigCreateRequest &&
           frequency == other.frequency &&
           listEquals(ips, other.ips) &&
-          listEquals(ports, other.ports); } 
-@override int get hashCode { return Object.hash(frequency, Object.hashAll(ips), Object.hashAll(ports ?? const [])); } 
-@override String toString() { return 'PostConfigCreateRequest(frequency: $frequency, ips: $ips, ports: $ports)'; } 
+          listEquals(ports, other.ports);
+
+@override int get hashCode => Object.hash(frequency, Object.hashAll(ips), Object.hashAll(ports ?? const []));
+
+@override String toString() => 'PostConfigCreateRequest(frequency: $frequency, ips: $ips, ports: $ports)';
+
  }

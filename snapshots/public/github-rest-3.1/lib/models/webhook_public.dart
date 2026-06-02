@@ -36,13 +36,16 @@ WebhookPublic copyWith({EnterpriseWebhooks? Function()? enterprise, SimpleInstal
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPublic &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookPublic(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookPublic(enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

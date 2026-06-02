@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicPskMetadata copyWith({MagicSchemasModifiedOn? Function()? lastGeneratedOn}) { return MagicPskMetadata(
   lastGeneratedOn: lastGeneratedOn != null ? lastGeneratedOn() : this.lastGeneratedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicPskMetadata &&
-          lastGeneratedOn == other.lastGeneratedOn; } 
-@override int get hashCode { return lastGeneratedOn.hashCode; } 
-@override String toString() { return 'MagicPskMetadata(lastGeneratedOn: $lastGeneratedOn)'; } 
+          lastGeneratedOn == other.lastGeneratedOn;
+
+@override int get hashCode => lastGeneratedOn.hashCode;
+
+@override String toString() => 'MagicPskMetadata(lastGeneratedOn: $lastGeneratedOn)';
+
  }

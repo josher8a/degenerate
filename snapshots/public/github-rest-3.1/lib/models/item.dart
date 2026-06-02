@@ -69,7 +69,7 @@ Item copyWith({double? id, String? Function()? nodeId, String? Function()? proje
   updatedAt: updatedAt ?? this.updatedAt,
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Item &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -79,7 +79,10 @@ Item copyWith({double? id, String? Function()? nodeId, String? Function()? proje
           creator == other.creator &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          archivedAt == other.archivedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, projectNodeId, contentNodeId, contentType, creator, createdAt, updatedAt, archivedAt); } 
-@override String toString() { return 'Item(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, contentNodeId: $contentNodeId, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt)'; } 
+          archivedAt == other.archivedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, projectNodeId, contentNodeId, contentType, creator, createdAt, updatedAt, archivedAt);
+
+@override String toString() => 'Item(id: $id, nodeId: $nodeId, projectNodeId: $projectNodeId, contentNodeId: $contentNodeId, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt)';
+
  }

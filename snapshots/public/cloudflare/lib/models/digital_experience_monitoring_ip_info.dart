@@ -40,14 +40,17 @@ DigitalExperienceMonitoringIpInfo copyWith({String? Function()? address, int? Fu
   netmask: netmask != null ? netmask() : this.netmask,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringIpInfo &&
           address == other.address &&
           asn == other.asn &&
           aso == other.aso &&
           location == other.location &&
           netmask == other.netmask &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(address, asn, aso, location, netmask, version); } 
-@override String toString() { return 'DigitalExperienceMonitoringIpInfo(address: $address, asn: $asn, aso: $aso, location: $location, netmask: $netmask, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(address, asn, aso, location, netmask, version);
+
+@override String toString() => 'DigitalExperienceMonitoringIpInfo(address: $address, asn: $asn, aso: $aso, location: $location, netmask: $netmask, version: $version)';
+
  }

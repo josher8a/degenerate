@@ -19,9 +19,12 @@ return errors; }
 FlowDataSubscriptionUpdate copyWith({String? subscription}) { return FlowDataSubscriptionUpdate(
   subscription: subscription ?? this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FlowDataSubscriptionUpdate &&
-          subscription == other.subscription; } 
-@override int get hashCode { return subscription.hashCode; } 
-@override String toString() { return 'FlowDataSubscriptionUpdate(subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => subscription.hashCode;
+
+@override String toString() => 'FlowDataSubscriptionUpdate(subscription: $subscription)';
+
  }

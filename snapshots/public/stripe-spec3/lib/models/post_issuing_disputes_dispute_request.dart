@@ -34,12 +34,15 @@ PostIssuingDisputesDisputeRequest copyWith({int? Function()? amount, PostIssuing
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingDisputesDisputeRequest &&
           amount == other.amount &&
           evidence == other.evidence &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostIssuingDisputesDisputeRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostIssuingDisputesDisputeRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata)';
+
  }

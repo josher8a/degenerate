@@ -25,10 +25,13 @@ ZonesZoneAccount copyWith({ZonesIdentifier? Function()? id, String? Function()? 
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZoneAccount &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, name); } 
-@override String toString() { return 'ZonesZoneAccount(id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, name);
+
+@override String toString() => 'ZonesZoneAccount(id: $id, name: $name)';
+
  }

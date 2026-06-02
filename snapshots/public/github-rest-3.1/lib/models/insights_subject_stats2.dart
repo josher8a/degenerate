@@ -45,7 +45,7 @@ InsightsSubjectStats2 copyWith({String? Function()? subjectType, String? Functio
   lastRateLimitedTimestamp: lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : this.lastRateLimitedTimestamp,
   lastRequestTimestamp: lastRequestTimestamp != null ? lastRequestTimestamp() : this.lastRequestTimestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsSubjectStats2 &&
           subjectType == other.subjectType &&
           subjectName == other.subjectName &&
@@ -53,7 +53,10 @@ InsightsSubjectStats2 copyWith({String? Function()? subjectType, String? Functio
           totalRequestCount == other.totalRequestCount &&
           rateLimitedRequestCount == other.rateLimitedRequestCount &&
           lastRateLimitedTimestamp == other.lastRateLimitedTimestamp &&
-          lastRequestTimestamp == other.lastRequestTimestamp; } 
-@override int get hashCode { return Object.hash(subjectType, subjectName, subjectId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp); } 
-@override String toString() { return 'InsightsSubjectStats2(subjectType: $subjectType, subjectName: $subjectName, subjectId: $subjectId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)'; } 
+          lastRequestTimestamp == other.lastRequestTimestamp;
+
+@override int get hashCode => Object.hash(subjectType, subjectName, subjectId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);
+
+@override String toString() => 'InsightsSubjectStats2(subjectType: $subjectType, subjectName: $subjectName, subjectId: $subjectId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';
+
  }

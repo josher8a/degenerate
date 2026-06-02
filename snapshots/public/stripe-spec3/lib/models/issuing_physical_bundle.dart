@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleObject($value)';
+
  }
 /// Whether this physical bundle can be used to create cards.
 @immutable final class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleStatus($value)';
+
  }
 /// Whether this physical bundle is a standard Stripe offering or custom-made for you.
 @immutable final class IssuingPhysicalBundleType {const IssuingPhysicalBundleType._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPhysicalBundleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPhysicalBundleType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPhysicalBundleType($value)';
+
  }
 /// A Physical Bundle represents the bundle of physical items - card stock, carrier letter, and envelope - that is shipped to a cardholder when you create a physical card.
 @immutable final class IssuingPhysicalBundle {const IssuingPhysicalBundle({required this.features, required this.id, required this.livemode, required this.name, required this.object, required this.status, required this.type, });
@@ -138,7 +147,7 @@ IssuingPhysicalBundle copyWith({IssuingPhysicalBundleFeatures? features, String?
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPhysicalBundle &&
           features == other.features &&
           id == other.id &&
@@ -146,7 +155,10 @@ IssuingPhysicalBundle copyWith({IssuingPhysicalBundleFeatures? features, String?
           name == other.name &&
           object == other.object &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(features, id, livemode, name, object, status, type); } 
-@override String toString() { return 'IssuingPhysicalBundle(features: $features, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(features, id, livemode, name, object, status, type);
+
+@override String toString() => 'IssuingPhysicalBundle(features: $features, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, type: $type)';
+
  }

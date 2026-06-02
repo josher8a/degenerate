@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WaitingroomRulePositionVariant3 copyWith({String? Function()? after}) { return WaitingroomRulePositionVariant3(
   after: after != null ? after() : this.after,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomRulePositionVariant3 &&
-          after == other.after; } 
-@override int get hashCode { return after.hashCode; } 
-@override String toString() { return 'WaitingroomRulePositionVariant3(after: $after)'; } 
+          after == other.after;
+
+@override int get hashCode => after.hashCode;
+
+@override String toString() => 'WaitingroomRulePositionVariant3(after: $after)';
+
  }

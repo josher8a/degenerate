@@ -18,13 +18,15 @@ final class DeleteDatasetDeleteError$400 extends DeleteDatasetDeleteError {const
 
 final DeleteDatasetDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteDatasetDeleteError$404 extends DeleteDatasetDeleteError {const DeleteDatasetDeleteError$404(this.error);
 
 final DeleteDatasetDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteDatasetDeleteError$Unknown extends DeleteDatasetDeleteError {const DeleteDatasetDeleteError$Unknown(this.statusCode, this.rawBody, );
 

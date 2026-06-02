@@ -52,12 +52,15 @@ RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0 copyWith({String? htt
   tls: tls ?? this.tls,
   udp: udp ?? this.udp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0 &&
           https == other.https &&
           tcp == other.tcp &&
           tls == other.tls &&
-          udp == other.udp; } 
-@override int get hashCode { return Object.hash(https, tcp, tls, udp); } 
-@override String toString() { return 'RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)'; } 
+          udp == other.udp;
+
+@override int get hashCode => Object.hash(https, tcp, tls, udp);
+
+@override String toString() => 'RadarGetDnsAs112TimeseriesByProtocolResponseResultSummary0(https: $https, tcp: $tcp, tls: $tls, udp: $udp)';
+
  }

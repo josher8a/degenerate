@@ -17,7 +17,8 @@ final class RadarGetEmailRoutingSummaryError$400 extends RadarGetEmailRoutingSum
 
 final RadarGetEmailRoutingSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetEmailRoutingSummaryError$Unknown extends RadarGetEmailRoutingSummaryError {const RadarGetEmailRoutingSummaryError$Unknown(this.statusCode, this.rawBody, );
 

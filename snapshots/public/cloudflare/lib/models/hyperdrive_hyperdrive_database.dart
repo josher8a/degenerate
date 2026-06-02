@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HyperdriveHyperdriveScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveScheme($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HyperdriveHyperdriveScheme && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HyperdriveHyperdriveScheme($value)';
+
  }
 @immutable final class HyperdriveHyperdriveDatabase {const HyperdriveHyperdriveDatabase({this.database, this.password, this.scheme, this.user, });
 
@@ -65,12 +68,15 @@ HyperdriveHyperdriveDatabase copyWith({String? Function()? database, String? Fun
   scheme: scheme != null ? scheme() : this.scheme,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveDatabase &&
           database == other.database &&
           password == other.password &&
           scheme == other.scheme &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(database, password, scheme, user); } 
-@override String toString() { return 'HyperdriveHyperdriveDatabase(database: $database, password: $password, scheme: $scheme, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(database, password, scheme, user);
+
+@override String toString() => 'HyperdriveHyperdriveDatabase(database: $database, password: $password, scheme: $scheme, user: $user)';
+
  }

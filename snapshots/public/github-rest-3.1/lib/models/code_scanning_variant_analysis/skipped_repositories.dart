@@ -34,12 +34,15 @@ SkippedRepositories copyWith({CodeScanningVariantAnalysisSkippedRepoGroup? acces
   noCodeqlDbRepos: noCodeqlDbRepos ?? this.noCodeqlDbRepos,
   overLimitRepos: overLimitRepos ?? this.overLimitRepos,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SkippedRepositories &&
           accessMismatchRepos == other.accessMismatchRepos &&
           notFoundRepos == other.notFoundRepos &&
           noCodeqlDbRepos == other.noCodeqlDbRepos &&
-          overLimitRepos == other.overLimitRepos; } 
-@override int get hashCode { return Object.hash(accessMismatchRepos, notFoundRepos, noCodeqlDbRepos, overLimitRepos); } 
-@override String toString() { return 'SkippedRepositories(accessMismatchRepos: $accessMismatchRepos, notFoundRepos: $notFoundRepos, noCodeqlDbRepos: $noCodeqlDbRepos, overLimitRepos: $overLimitRepos)'; } 
+          overLimitRepos == other.overLimitRepos;
+
+@override int get hashCode => Object.hash(accessMismatchRepos, notFoundRepos, noCodeqlDbRepos, overLimitRepos);
+
+@override String toString() => 'SkippedRepositories(accessMismatchRepos: $accessMismatchRepos, notFoundRepos: $notFoundRepos, noCodeqlDbRepos: $noCodeqlDbRepos, overLimitRepos: $overLimitRepos)';
+
  }

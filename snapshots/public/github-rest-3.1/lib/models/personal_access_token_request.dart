@@ -107,7 +107,7 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdde
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersonalAccessTokenRequest &&
           id == other.id &&
           owner == other.owner &&
@@ -122,7 +122,10 @@ PersonalAccessTokenRequest copyWith({int? id, SimpleUser? owner, PermissionsAdde
           tokenName == other.tokenName &&
           tokenExpired == other.tokenExpired &&
           tokenExpiresAt == other.tokenExpiresAt &&
-          tokenLastUsedAt == other.tokenLastUsedAt; } 
-@override int get hashCode { return Object.hash(id, owner, permissionsAdded, permissionsUpgraded, permissionsResult, repositorySelection, repositoryCount, Object.hashAll(repositories ?? const []), createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt); } 
-@override String toString() { return 'PersonalAccessTokenRequest(id: $id, owner: $owner, permissionsAdded: $permissionsAdded, permissionsUpgraded: $permissionsUpgraded, permissionsResult: $permissionsResult, repositorySelection: $repositorySelection, repositoryCount: $repositoryCount, repositories: $repositories, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)'; } 
+          tokenLastUsedAt == other.tokenLastUsedAt;
+
+@override int get hashCode => Object.hash(id, owner, permissionsAdded, permissionsUpgraded, permissionsResult, repositorySelection, repositoryCount, Object.hashAll(repositories ?? const []), createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
+
+@override String toString() => 'PersonalAccessTokenRequest(id: $id, owner: $owner, permissionsAdded: $permissionsAdded, permissionsUpgraded: $permissionsUpgraded, permissionsResult: $permissionsResult, repositorySelection: $repositorySelection, repositoryCount: $repositoryCount, repositories: $repositories, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+
  }

@@ -33,12 +33,15 @@ DependencyGraphDiffVulnerabilities copyWith({String? severity, String? advisoryG
   advisorySummary: advisorySummary ?? this.advisorySummary,
   advisoryUrl: advisoryUrl ?? this.advisoryUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphDiffVulnerabilities &&
           severity == other.severity &&
           advisoryGhsaId == other.advisoryGhsaId &&
           advisorySummary == other.advisorySummary &&
-          advisoryUrl == other.advisoryUrl; } 
-@override int get hashCode { return Object.hash(severity, advisoryGhsaId, advisorySummary, advisoryUrl); } 
-@override String toString() { return 'DependencyGraphDiffVulnerabilities(severity: $severity, advisoryGhsaId: $advisoryGhsaId, advisorySummary: $advisorySummary, advisoryUrl: $advisoryUrl)'; } 
+          advisoryUrl == other.advisoryUrl;
+
+@override int get hashCode => Object.hash(severity, advisoryGhsaId, advisorySummary, advisoryUrl);
+
+@override String toString() => 'DependencyGraphDiffVulnerabilities(severity: $severity, advisoryGhsaId: $advisoryGhsaId, advisorySummary: $advisorySummary, advisoryUrl: $advisoryUrl)';
+
  }

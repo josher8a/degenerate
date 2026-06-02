@@ -45,14 +45,17 @@ AccessPolicyCheckResponseResultAppState copyWith({AccessUuid? Function()? appUid
   policies: policies != null ? policies() : this.policies,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyCheckResponseResultAppState &&
           appUid == other.appUid &&
           aud == other.aud &&
           hostname == other.hostname &&
           name == other.name &&
           listEquals(policies, other.policies) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(appUid, aud, hostname, name, Object.hashAll(policies ?? const []), status); } 
-@override String toString() { return 'AccessPolicyCheckResponseResultAppState(appUid: $appUid, aud: $aud, hostname: $hostname, name: $name, policies: $policies, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(appUid, aud, hostname, name, Object.hashAll(policies ?? const []), status);
+
+@override String toString() => 'AccessPolicyCheckResponseResultAppState(appUid: $appUid, aud: $aud, hostname: $hostname, name: $name, policies: $policies, status: $status)';
+
  }

@@ -36,13 +36,16 @@ PostPaymentLinksPaymentLinkRequestPaymentIntentData copyWith({PaymentIntentDataD
   statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksPaymentLinkRequestPaymentIntentData &&
           description == other.description &&
           metadata == other.metadata &&
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(description, metadata, statementDescriptor, statementDescriptorSuffix, transferGroup); } 
-@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentIntentData(description: $description, metadata: $metadata, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(description, metadata, statementDescriptor, statementDescriptorSuffix, transferGroup);
+
+@override String toString() => 'PostPaymentLinksPaymentLinkRequestPaymentIntentData(description: $description, metadata: $metadata, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)';
+
  }

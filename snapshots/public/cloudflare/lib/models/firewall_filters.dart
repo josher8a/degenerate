@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConfigurationTarget($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConfigurationTarget && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConfigurationTarget($value)';
+
  }
 /// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 @immutable final class FirewallFiltersMatch {const FirewallFiltersMatch._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallFiltersMatch && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallFiltersMatch($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallFiltersMatch && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallFiltersMatch($value)';
+
  }
 @immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });
 
@@ -103,13 +109,16 @@ FirewallFilters copyWith({ConfigurationTarget? Function()? configurationTarget, 
   mode: mode != null ? mode() : this.mode,
   notes: notes != null ? notes() : this.notes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilters &&
           configurationTarget == other.configurationTarget &&
           configurationValue == other.configurationValue &&
           match == other.match &&
           mode == other.mode &&
-          notes == other.notes; } 
-@override int get hashCode { return Object.hash(configurationTarget, configurationValue, match, mode, notes); } 
-@override String toString() { return 'FirewallFilters(configurationTarget: $configurationTarget, configurationValue: $configurationValue, match: $match, mode: $mode, notes: $notes)'; } 
+          notes == other.notes;
+
+@override int get hashCode => Object.hash(configurationTarget, configurationValue, match, mode, notes);
+
+@override String toString() => 'FirewallFilters(configurationTarget: $configurationTarget, configurationValue: $configurationValue, match: $match, mode: $mode, notes: $notes)';
+
  }

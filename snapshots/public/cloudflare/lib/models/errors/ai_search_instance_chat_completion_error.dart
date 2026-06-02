@@ -17,7 +17,8 @@ final class AiSearchInstanceChatCompletionError$404 extends AiSearchInstanceChat
 
 final AiSearchInstanceChatCompletionResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchInstanceChatCompletionError$Unknown extends AiSearchInstanceChatCompletionError {const AiSearchInstanceChatCompletionError$Unknown(this.statusCode, this.rawBody, );
 

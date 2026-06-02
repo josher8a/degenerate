@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SettingsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SettingsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SettingsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SettingsType($value)';
+
  }
 @immutable final class ZarazClickListenerRuleSettings {const ZarazClickListenerRuleSettings({required this.selector, required this.type, required this.waitForTags, });
 
@@ -55,11 +58,14 @@ ZarazClickListenerRuleSettings copyWith({String? selector, SettingsType? type, i
   type: type ?? this.type,
   waitForTags: waitForTags ?? this.waitForTags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazClickListenerRuleSettings &&
           selector == other.selector &&
           type == other.type &&
-          waitForTags == other.waitForTags; } 
-@override int get hashCode { return Object.hash(selector, type, waitForTags); } 
-@override String toString() { return 'ZarazClickListenerRuleSettings(selector: $selector, type: $type, waitForTags: $waitForTags)'; } 
+          waitForTags == other.waitForTags;
+
+@override int get hashCode => Object.hash(selector, type, waitForTags);
+
+@override String toString() => 'ZarazClickListenerRuleSettings(selector: $selector, type: $type, waitForTags: $waitForTags)';
+
  }

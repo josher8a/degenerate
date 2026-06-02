@@ -25,10 +25,13 @@ ContainerReferenceParam copyWith({ContainerReferenceParamType? type, String? con
   type: type ?? this.type,
   containerId: containerId ?? this.containerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerReferenceParam &&
           type == other.type &&
-          containerId == other.containerId; } 
-@override int get hashCode { return Object.hash(type, containerId); } 
-@override String toString() { return 'ContainerReferenceParam(type: $type, containerId: $containerId)'; } 
+          containerId == other.containerId;
+
+@override int get hashCode => Object.hash(type, containerId);
+
+@override String toString() => 'ContainerReferenceParam(type: $type, containerId: $containerId)';
+
  }

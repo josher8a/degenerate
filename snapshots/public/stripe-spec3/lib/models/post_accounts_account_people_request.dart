@@ -231,7 +231,7 @@ PostAccountsAccountPeopleRequest copyWith({AdditionalTosAcceptances? Function()?
   usCfpbData: usCfpbData != null ? usCfpbData() : this.usCfpbData,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountPeopleRequest &&
           additionalTosAcceptances == other.additionalTosAcceptances &&
           address == other.address &&
@@ -261,7 +261,10 @@ PostAccountsAccountPeopleRequest copyWith({AdditionalTosAcceptances? Function()?
           relationship == other.relationship &&
           ssnLast4 == other.ssnLast4 &&
           usCfpbData == other.usCfpbData &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([additionalTosAcceptances, address, addressKana, addressKanji, dob, documents, email, Object.hashAll(expand ?? const []), firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, nationality, personToken, phone, politicalExposure, registeredAddress, relationship, ssnLast4, usCfpbData, verification]); } 
-@override String toString() { return 'PostAccountsAccountPeopleRequest(additionalTosAcceptances: $additionalTosAcceptances, address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, documents: $documents, email: $email, expand: $expand, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, nationality: $nationality, personToken: $personToken, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, usCfpbData: $usCfpbData, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hashAll([additionalTosAcceptances, address, addressKana, addressKanji, dob, documents, email, Object.hashAll(expand ?? const []), firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, nationality, personToken, phone, politicalExposure, registeredAddress, relationship, ssnLast4, usCfpbData, verification]);
+
+@override String toString() => 'PostAccountsAccountPeopleRequest(additionalTosAcceptances: $additionalTosAcceptances, address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, documents: $documents, email: $email, expand: $expand, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, nationality: $nationality, personToken: $personToken, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, usCfpbData: $usCfpbData, verification: $verification)';
+
  }

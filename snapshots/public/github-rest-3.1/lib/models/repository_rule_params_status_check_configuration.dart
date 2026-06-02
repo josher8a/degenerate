@@ -23,10 +23,13 @@ RepositoryRuleParamsStatusCheckConfiguration copyWith({String? context, int? Fun
   context: context ?? this.context,
   integrationId: integrationId != null ? integrationId() : this.integrationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsStatusCheckConfiguration &&
           context == other.context &&
-          integrationId == other.integrationId; } 
-@override int get hashCode { return Object.hash(context, integrationId); } 
-@override String toString() { return 'RepositoryRuleParamsStatusCheckConfiguration(context: $context, integrationId: $integrationId)'; } 
+          integrationId == other.integrationId;
+
+@override int get hashCode => Object.hash(context, integrationId);
+
+@override String toString() => 'RepositoryRuleParamsStatusCheckConfiguration(context: $context, integrationId: $integrationId)';
+
  }

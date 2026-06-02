@@ -47,14 +47,17 @@ R2DataCatalogTableDetails copyWith({DateTime? Function()? createdAt, R2DataCatal
   tableUuid: tableUuid ?? this.tableUuid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableDetails &&
           createdAt == other.createdAt &&
           identifier == other.identifier &&
           location == other.location &&
           metadataLocation == other.metadataLocation &&
           tableUuid == other.tableUuid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, identifier, location, metadataLocation, tableUuid, updatedAt); } 
-@override String toString() { return 'R2DataCatalogTableDetails(createdAt: $createdAt, identifier: $identifier, location: $location, metadataLocation: $metadataLocation, tableUuid: $tableUuid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, identifier, location, metadataLocation, tableUuid, updatedAt);
+
+@override String toString() => 'R2DataCatalogTableDetails(createdAt: $createdAt, identifier: $identifier, location: $location, metadataLocation: $metadataLocation, tableUuid: $tableUuid, updatedAt: $updatedAt)';
+
  }

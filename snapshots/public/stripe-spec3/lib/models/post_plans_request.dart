@@ -133,7 +133,7 @@ PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, St
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   usageType: usageType != null ? usageType() : this.usageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPlansRequest &&
           active == other.active &&
           amount == other.amount &&
@@ -152,7 +152,10 @@ PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, St
           tiersMode == other.tiersMode &&
           transformUsage == other.transformUsage &&
           trialPeriodDays == other.trialPeriodDays &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(active, amount, amountDecimal, billingScheme, currency, Object.hashAll(expand ?? const []), id, interval, intervalCount, metadata, meter, nickname, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType); } 
-@override String toString() { return 'PostPlansRequest(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, currency: $currency, expand: $expand, id: $id, interval: $interval, intervalCount: $intervalCount, metadata: $metadata, meter: $meter, nickname: $nickname, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)'; } 
+          usageType == other.usageType;
+
+@override int get hashCode => Object.hash(active, amount, amountDecimal, billingScheme, currency, Object.hashAll(expand ?? const []), id, interval, intervalCount, metadata, meter, nickname, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType);
+
+@override String toString() => 'PostPlansRequest(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, currency: $currency, expand: $expand, id: $id, interval: $interval, intervalCount: $intervalCount, metadata: $metadata, meter: $meter, nickname: $nickname, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)';
+
  }

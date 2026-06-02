@@ -28,11 +28,14 @@ PostBillingCreditGrantsIdRequest copyWith({List<String>? Function()? expand, Pay
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingCreditGrantsIdRequest &&
           listEquals(expand, other.expand) &&
           expiresAt == other.expiresAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt, metadata); } 
-@override String toString() { return 'PostBillingCreditGrantsIdRequest(expand: $expand, expiresAt: $expiresAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), expiresAt, metadata);
+
+@override String toString() => 'PostBillingCreditGrantsIdRequest(expand: $expand, expiresAt: $expiresAt, metadata: $metadata)';
+
  }

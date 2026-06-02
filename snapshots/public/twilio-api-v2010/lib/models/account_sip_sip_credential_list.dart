@@ -67,7 +67,7 @@ AccountSipSipCredentialList copyWith({String? Function()? accountSid, String? Fu
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipCredentialList &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
@@ -75,7 +75,10 @@ AccountSipSipCredentialList copyWith({String? Function()? accountSid, String? Fu
           friendlyName == other.friendlyName &&
           sid == other.sid &&
           subresourceUris == other.subresourceUris &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, friendlyName, sid, subresourceUris, uri); } 
-@override String toString() { return 'AccountSipSipCredentialList(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, sid: $sid, subresourceUris: $subresourceUris, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, friendlyName, sid, subresourceUris, uri);
+
+@override String toString() => 'AccountSipSipCredentialList(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, sid: $sid, subresourceUris: $subresourceUris, uri: $uri)';
+
  }

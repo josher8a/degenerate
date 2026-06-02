@@ -61,7 +61,7 @@ DlpPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMa
   ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
   openAccess: openAccess != null ? openAccess() : this.openAccess,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpPredefinedProfile &&
           aiContextEnabled == other.aiContextEnabled &&
           allowedMatchCount == other.allowedMatchCount &&
@@ -71,7 +71,10 @@ DlpPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? allowedMa
           id == other.id &&
           name == other.name &&
           ocrEnabled == other.ocrEnabled &&
-          openAccess == other.openAccess; } 
-@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess); } 
-@override String toString() { return 'DlpPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess)'; } 
+          openAccess == other.openAccess;
+
+@override int get hashCode => Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries), id, name, ocrEnabled, openAccess);
+
+@override String toString() => 'DlpPredefinedProfile(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, id: $id, name: $name, ocrEnabled: $ocrEnabled, openAccess: $openAccess)';
+
  }

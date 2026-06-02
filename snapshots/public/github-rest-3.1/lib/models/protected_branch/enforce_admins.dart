@@ -21,10 +21,13 @@ EnforceAdmins copyWith({Uri? url, bool? enabled, }) { return EnforceAdmins(
   url: url ?? this.url,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnforceAdmins &&
           url == other.url &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(url, enabled); } 
-@override String toString() { return 'EnforceAdmins(url: $url, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(url, enabled);
+
+@override String toString() => 'EnforceAdmins(url: $url, enabled: $enabled)';
+
  }

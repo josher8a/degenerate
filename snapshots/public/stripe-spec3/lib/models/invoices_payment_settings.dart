@@ -36,11 +36,14 @@ InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPa
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesPaymentSettings &&
           defaultMandate == other.defaultMandate &&
           paymentMethodOptions == other.paymentMethodOptions &&
-          listEquals(paymentMethodTypes, other.paymentMethodTypes); } 
-@override int get hashCode { return Object.hash(defaultMandate, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const [])); } 
-@override String toString() { return 'InvoicesPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)'; } 
+          listEquals(paymentMethodTypes, other.paymentMethodTypes);
+
+@override int get hashCode => Object.hash(defaultMandate, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []));
+
+@override String toString() => 'InvoicesPaymentSettings(defaultMandate: $defaultMandate, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes)';
+
  }

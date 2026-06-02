@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AutoCodeInterpreterToolParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AutoCodeInterpreterToolParamType($value)';
+
  }
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.
 @immutable final class AutoCodeInterpreterToolParam {const AutoCodeInterpreterToolParam({this.type = AutoCodeInterpreterToolParamType.auto, this.fileIds, this.memoryLimit, this.networkPolicy, });
@@ -63,12 +66,15 @@ AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, L
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoCodeInterpreterToolParam &&
           type == other.type &&
           listEquals(fileIds, other.fileIds) &&
           memoryLimit == other.memoryLimit &&
-          networkPolicy == other.networkPolicy; } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy); } 
-@override String toString() { return 'AutoCodeInterpreterToolParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)'; } 
+          networkPolicy == other.networkPolicy;
+
+@override int get hashCode => Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy);
+
+@override String toString() => 'AutoCodeInterpreterToolParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)';
+
  }

@@ -18,13 +18,15 @@ final class GetEventRawReadDsError$404 extends GetEventRawReadDsError {const Get
 
 final GetEventRawReadDsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetEventRawReadDsError$500 extends GetEventRawReadDsError {const GetEventRawReadDsError$500(this.error);
 
 final GetEventRawReadDsResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GetEventRawReadDsError$Unknown extends GetEventRawReadDsError {const GetEventRawReadDsError$Unknown(this.statusCode, this.rawBody, );
 

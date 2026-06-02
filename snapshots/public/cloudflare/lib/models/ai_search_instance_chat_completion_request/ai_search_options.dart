@@ -25,11 +25,14 @@ AiSearchOptions copyWith({QueryRewrite? Function()? queryRewrite, AiSearchOption
   reranking: reranking != null ? reranking() : this.reranking,
   retrieval: retrieval != null ? retrieval() : this.retrieval,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchOptions &&
           queryRewrite == other.queryRewrite &&
           reranking == other.reranking &&
-          retrieval == other.retrieval; } 
-@override int get hashCode { return Object.hash(queryRewrite, reranking, retrieval); } 
-@override String toString() { return 'AiSearchOptions(queryRewrite: $queryRewrite, reranking: $reranking, retrieval: $retrieval)'; } 
+          retrieval == other.retrieval;
+
+@override int get hashCode => Object.hash(queryRewrite, reranking, retrieval);
+
+@override String toString() => 'AiSearchOptions(queryRewrite: $queryRewrite, reranking: $reranking, retrieval: $retrieval)';
+
  }

@@ -30,11 +30,14 @@ EditParticipantRequest copyWith({String? Function()? name, Uri? Function()? pict
   picture: picture != null ? picture() : this.picture,
   presetName: presetName != null ? presetName() : this.presetName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EditParticipantRequest &&
           name == other.name &&
           picture == other.picture &&
-          presetName == other.presetName; } 
-@override int get hashCode { return Object.hash(name, picture, presetName); } 
-@override String toString() { return 'EditParticipantRequest(name: $name, picture: $picture, presetName: $presetName)'; } 
+          presetName == other.presetName;
+
+@override int get hashCode => Object.hash(name, picture, presetName);
+
+@override String toString() => 'EditParticipantRequest(name: $name, picture: $picture, presetName: $presetName)';
+
  }

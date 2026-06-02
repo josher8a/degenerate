@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Hate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Hate($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Hate && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Hate($value)';
+
  }
 @immutable final class HateThreatening {const HateThreatening._(this.value);
 
@@ -37,10 +40,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HateThreatening && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HateThreatening($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HateThreatening && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HateThreatening($value)';
+
  }
 @immutable final class Harassment {const Harassment._(this.value);
 
@@ -58,10 +64,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Harassment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Harassment($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Harassment && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Harassment($value)';
+
  }
 @immutable final class HarassmentThreatening {const HarassmentThreatening._(this.value);
 
@@ -79,10 +88,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HarassmentThreatening && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HarassmentThreatening($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HarassmentThreatening && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HarassmentThreatening($value)';
+
  }
 @immutable final class Illicit {const Illicit._(this.value);
 
@@ -100,10 +112,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Illicit && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Illicit($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Illicit && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Illicit($value)';
+
  }
 @immutable final class IllicitViolent {const IllicitViolent._(this.value);
 
@@ -121,10 +136,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IllicitViolent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IllicitViolent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IllicitViolent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IllicitViolent($value)';
+
  }
 @immutable final class SelfHarm {const SelfHarm._(this.value);
 
@@ -145,10 +163,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SelfHarm && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SelfHarm($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarm && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SelfHarm($value)';
+
  }
 @immutable final class SelfHarmIntent {const SelfHarmIntent._(this.value);
 
@@ -169,10 +190,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SelfHarmIntent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SelfHarmIntent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarmIntent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SelfHarmIntent($value)';
+
  }
 @immutable final class SelfHarmInstructions {const SelfHarmInstructions._(this.value);
 
@@ -193,10 +217,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SelfHarmInstructions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SelfHarmInstructions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarmInstructions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SelfHarmInstructions($value)';
+
  }
 @immutable final class Sexual {const Sexual._(this.value);
 
@@ -217,10 +244,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Sexual && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Sexual($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Sexual && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Sexual($value)';
+
  }
 @immutable final class SexualMinors {const SexualMinors._(this.value);
 
@@ -238,10 +268,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SexualMinors && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SexualMinors($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SexualMinors && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SexualMinors($value)';
+
  }
 @immutable final class Violence {const Violence._(this.value);
 
@@ -262,10 +295,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Violence && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Violence($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Violence && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Violence($value)';
+
  }
 @immutable final class ViolenceGraphic {const ViolenceGraphic._(this.value);
 
@@ -286,10 +322,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ViolenceGraphic && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ViolenceGraphic($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ViolenceGraphic && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ViolenceGraphic($value)';
+
  }
 /// A list of the categories along with the input type(s) that the score applies to.
 @immutable final class CategoryAppliedInputTypes {const CategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
@@ -392,7 +431,7 @@ CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hat
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CategoryAppliedInputTypes &&
           listEquals(hate, other.hate) &&
           listEquals(hateThreatening, other.hateThreatening) &&
@@ -406,7 +445,10 @@ CategoryAppliedInputTypes copyWith({List<Hate>? hate, List<HateThreatening>? hat
           listEquals(sexual, other.sexual) &&
           listEquals(sexualMinors, other.sexualMinors) &&
           listEquals(violence, other.violence) &&
-          listEquals(violenceGraphic, other.violenceGraphic); } 
-@override int get hashCode { return Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic)); } 
-@override String toString() { return 'CategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
+          listEquals(violenceGraphic, other.violenceGraphic);
+
+@override int get hashCode => Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic));
+
+@override String toString() => 'CategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';
+
  }

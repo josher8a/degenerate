@@ -22,10 +22,13 @@ RadarGetDnsAs112TopLocationsByDnssecResponse copyWith({RadarGetDnsAs112TopLocati
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TopLocationsByDnssecResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsAs112TopLocationsByDnssecResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'RadarGetDnsAs112TopLocationsByDnssecResponse(result: $result, success: $success)';
+
  }

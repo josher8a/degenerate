@@ -38,12 +38,15 @@ FileCitationBody copyWith({String? type, String? fileId, int? index, String? fil
   index: index ?? this.index,
   filename: filename ?? this.filename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCitationBody &&
           type == other.type &&
           fileId == other.fileId &&
           index == other.index &&
-          filename == other.filename; } 
-@override int get hashCode { return Object.hash(type, fileId, index, filename); } 
-@override String toString() { return 'FileCitationBody(type: $type, fileId: $fileId, index: $index, filename: $filename)'; } 
+          filename == other.filename;
+
+@override int get hashCode => Object.hash(type, fileId, index, filename);
+
+@override String toString() => 'FileCitationBody(type: $type, fileId: $fileId, index: $index, filename: $filename)';
+
  }

@@ -54,21 +54,17 @@ final class FcmTokenResponseSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is FcmTokenResponseSchema &&
-            token == other.token &&
-            active == other.active &&
-            createdAt == other.createdAt;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FcmTokenResponseSchema &&
+          token == other.token &&
+          active == other.active &&
+          createdAt == other.createdAt;
 
   @override
-  int get hashCode {
-    return Object.hash(token, active, createdAt);
-  }
+  int get hashCode => Object.hash(token, active, createdAt);
 
   @override
-  String toString() {
-    return 'FcmTokenResponseSchema(token: $token, active: $active, createdAt: $createdAt)';
-  }
+  String toString() =>
+      'FcmTokenResponseSchema(token: $token, active: $active, createdAt: $createdAt)';
 }

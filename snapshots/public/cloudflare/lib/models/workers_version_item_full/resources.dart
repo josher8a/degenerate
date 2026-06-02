@@ -69,11 +69,14 @@ Resources copyWith({List<WorkersBindingItem>? Function()? bindings, Script? Func
   script: script != null ? script() : this.script,
   scriptRuntime: scriptRuntime != null ? scriptRuntime() : this.scriptRuntime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Resources &&
           listEquals(bindings, other.bindings) &&
           script == other.script &&
-          scriptRuntime == other.scriptRuntime; } 
-@override int get hashCode { return Object.hash(Object.hashAll(bindings ?? const []), script, scriptRuntime); } 
-@override String toString() { return 'Resources(bindings: $bindings, script: $script, scriptRuntime: $scriptRuntime)'; } 
+          scriptRuntime == other.scriptRuntime;
+
+@override int get hashCode => Object.hash(Object.hashAll(bindings ?? const []), script, scriptRuntime);
+
+@override String toString() => 'Resources(bindings: $bindings, script: $script, scriptRuntime: $scriptRuntime)';
+
  }

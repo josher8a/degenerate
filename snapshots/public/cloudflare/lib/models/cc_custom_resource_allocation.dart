@@ -37,11 +37,14 @@ CcCustomResourceAllocation copyWith({int? diskMb, int? memoryMib, double? vcpu, 
   memoryMib: memoryMib ?? this.memoryMib,
   vcpu: vcpu ?? this.vcpu,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcCustomResourceAllocation &&
           diskMb == other.diskMb &&
           memoryMib == other.memoryMib &&
-          vcpu == other.vcpu; } 
-@override int get hashCode { return Object.hash(diskMb, memoryMib, vcpu); } 
-@override String toString() { return 'CcCustomResourceAllocation(diskMb: $diskMb, memoryMib: $memoryMib, vcpu: $vcpu)'; } 
+          vcpu == other.vcpu;
+
+@override int get hashCode => Object.hash(diskMb, memoryMib, vcpu);
+
+@override String toString() => 'CcCustomResourceAllocation(diskMb: $diskMb, memoryMib: $memoryMib, vcpu: $vcpu)';
+
  }

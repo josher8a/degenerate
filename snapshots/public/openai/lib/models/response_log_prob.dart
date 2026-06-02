@@ -35,11 +35,14 @@ ResponseLogProb copyWith({String? token, double? logprob, List<ResponseLogProbTo
   logprob: logprob ?? this.logprob,
   topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseLogProb &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(topLogprobs, other.topLogprobs); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(topLogprobs ?? const [])); } 
-@override String toString() { return 'ResponseLogProb(token: $token, logprob: $logprob, topLogprobs: $topLogprobs)'; } 
+          listEquals(topLogprobs, other.topLogprobs);
+
+@override int get hashCode => Object.hash(token, logprob, Object.hashAll(topLogprobs ?? const []));
+
+@override String toString() => 'ResponseLogProb(token: $token, logprob: $logprob, topLogprobs: $topLogprobs)';
+
  }

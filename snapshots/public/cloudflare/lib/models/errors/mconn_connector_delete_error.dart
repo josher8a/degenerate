@@ -21,31 +21,36 @@ final class MconnConnectorDeleteError$400 extends MconnConnectorDeleteError {con
 
 final MconnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class MconnConnectorDeleteError$401 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$401(this.error);
 
 final MconnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class MconnConnectorDeleteError$403 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$403(this.error);
 
 final MconnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class MconnConnectorDeleteError$404 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$404(this.error);
 
 final MconnBadResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class MconnConnectorDeleteError$500 extends MconnConnectorDeleteError {const MconnConnectorDeleteError$500(this.error);
 
 final MconnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class MconnConnectorDeleteError$Unknown extends MconnConnectorDeleteError {const MconnConnectorDeleteError$Unknown(this.statusCode, this.rawBody, );
 

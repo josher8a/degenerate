@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WorkerScriptPatchSettingsRequest copyWith({WorkersScriptAndVersionSettingsItem? Function()? settings}) { return WorkerScriptPatchSettingsRequest(
   settings: settings != null ? settings() : this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerScriptPatchSettingsRequest &&
-          settings == other.settings; } 
-@override int get hashCode { return settings.hashCode; } 
-@override String toString() { return 'WorkerScriptPatchSettingsRequest(settings: $settings)'; } 
+          settings == other.settings;
+
+@override int get hashCode => settings.hashCode;
+
+@override String toString() => 'WorkerScriptPatchSettingsRequest(settings: $settings)';
+
  }

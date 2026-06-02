@@ -41,13 +41,16 @@ SslProtocols copyWith({int? Function()? tlSv1, int? Function()? tlSv11, int? Fun
   tlSv13: tlSv13 != null ? tlSv13() : this.tlSv13,
   none: none != null ? none() : this.none,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SslProtocols &&
           tlSv1 == other.tlSv1 &&
           tlSv11 == other.tlSv11 &&
           tlSv12 == other.tlSv12 &&
           tlSv13 == other.tlSv13 &&
-          none == other.none; } 
-@override int get hashCode { return Object.hash(tlSv1, tlSv11, tlSv12, tlSv13, none); } 
-@override String toString() { return 'SslProtocols(tlSv1: $tlSv1, tlSv11: $tlSv11, tlSv12: $tlSv12, tlSv13: $tlSv13, none: $none)'; } 
+          none == other.none;
+
+@override int get hashCode => Object.hash(tlSv1, tlSv11, tlSv12, tlSv13, none);
+
+@override String toString() => 'SslProtocols(tlSv1: $tlSv1, tlSv11: $tlSv11, tlSv12: $tlSv12, tlSv13: $tlSv13, none: $none)';
+
  }

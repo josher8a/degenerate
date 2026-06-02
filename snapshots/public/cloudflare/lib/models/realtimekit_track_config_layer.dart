@@ -21,10 +21,13 @@ RealtimekitTrackConfigLayer copyWith({String? Function()? fileNamePrefix, List<R
   fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
   outputs: outputs != null ? outputs() : this.outputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitTrackConfigLayer &&
           fileNamePrefix == other.fileNamePrefix &&
-          listEquals(outputs, other.outputs); } 
-@override int get hashCode { return Object.hash(fileNamePrefix, Object.hashAll(outputs ?? const [])); } 
-@override String toString() { return 'RealtimekitTrackConfigLayer(fileNamePrefix: $fileNamePrefix, outputs: $outputs)'; } 
+          listEquals(outputs, other.outputs);
+
+@override int get hashCode => Object.hash(fileNamePrefix, Object.hashAll(outputs ?? const []));
+
+@override String toString() => 'RealtimekitTrackConfigLayer(fileNamePrefix: $fileNamePrefix, outputs: $outputs)';
+
  }

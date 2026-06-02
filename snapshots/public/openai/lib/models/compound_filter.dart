@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompoundFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CompoundFilterType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CompoundFilterType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CompoundFilterType($value)';
+
  }
 /// Combine multiple filters using `and` or `or`.
 @immutable final class CompoundFilter {const CompoundFilter({required this.type, required this.filters, });
@@ -49,10 +52,13 @@ CompoundFilter copyWith({CompoundFilterType? type, List<CompoundFilterFilters>? 
   type: type ?? this.type,
   filters: filters ?? this.filters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompoundFilter &&
           type == other.type &&
-          listEquals(filters, other.filters); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(filters)); } 
-@override String toString() { return 'CompoundFilter(type: $type, filters: $filters)'; } 
+          listEquals(filters, other.filters);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(filters));
+
+@override String toString() => 'CompoundFilter(type: $type, filters: $filters)';
+
  }

@@ -97,7 +97,7 @@ AccountShortCode copyWith({String? Function()? accountSid, String? Function()? a
   smsUrl: smsUrl != null ? smsUrl() : this.smsUrl,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountShortCode &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -110,7 +110,10 @@ AccountShortCode copyWith({String? Function()? accountSid, String? Function()? a
           smsFallbackUrl == other.smsFallbackUrl &&
           smsMethod == other.smsMethod &&
           smsUrl == other.smsUrl &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, shortCode, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, uri); } 
-@override String toString() { return 'AccountShortCode(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, shortCode: $shortCode, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, dateCreated, dateUpdated, friendlyName, shortCode, sid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, uri);
+
+@override String toString() => 'AccountShortCode(accountSid: $accountSid, apiVersion: $apiVersion, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, shortCode: $shortCode, sid: $sid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, uri: $uri)';
+
  }

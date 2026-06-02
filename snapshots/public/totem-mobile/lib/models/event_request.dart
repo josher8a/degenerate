@@ -38,20 +38,16 @@ final class EventRequest {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventRequest &&
-            event == other.event &&
-            lastSeenVersion == other.lastSeenVersion;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventRequest &&
+          event == other.event &&
+          lastSeenVersion == other.lastSeenVersion;
 
   @override
-  int get hashCode {
-    return Object.hash(event, lastSeenVersion);
-  }
+  int get hashCode => Object.hash(event, lastSeenVersion);
 
   @override
-  String toString() {
-    return 'EventRequest(event: $event, lastSeenVersion: $lastSeenVersion)';
-  }
+  String toString() =>
+      'EventRequest(event: $event, lastSeenVersion: $lastSeenVersion)';
 }

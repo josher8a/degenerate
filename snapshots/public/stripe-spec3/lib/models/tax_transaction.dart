@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxTransactionObject($value)';
+
  }
 /// A Tax Transaction records the tax collected from or refunded to your customer.
 /// 
@@ -149,7 +152,7 @@ TaxTransaction copyWith({int? created, String? currency, String? Function()? cus
   taxDate: taxDate ?? this.taxDate,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxTransaction &&
           created == other.created &&
           currency == other.currency &&
@@ -166,7 +169,10 @@ TaxTransaction copyWith({int? created, String? currency, String? Function()? cus
           shipFromDetails == other.shipFromDetails &&
           shippingCost == other.shippingCost &&
           taxDate == other.taxDate &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(created, currency, customer, customerDetails, id, lineItems, livemode, metadata, object, postedAt, reference, reversal, shipFromDetails, shippingCost, taxDate, type); } 
-@override String toString() { return 'TaxTransaction(created: $created, currency: $currency, customer: $customer, customerDetails: $customerDetails, id: $id, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, object: $object, postedAt: $postedAt, reference: $reference, reversal: $reversal, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxDate: $taxDate, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(created, currency, customer, customerDetails, id, lineItems, livemode, metadata, object, postedAt, reference, reversal, shipFromDetails, shippingCost, taxDate, type);
+
+@override String toString() => 'TaxTransaction(created: $created, currency: $currency, customer: $customer, customerDetails: $customerDetails, id: $id, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, object: $object, postedAt: $postedAt, reference: $reference, reversal: $reversal, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxDate: $taxDate, type: $type)';
+
  }

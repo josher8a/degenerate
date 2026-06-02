@@ -25,10 +25,13 @@ SecretKeyParamCustomerAcceptanceOnline copyWith({String? ipAddress, String? user
   ipAddress: ipAddress ?? this.ipAddress,
   userAgent: userAgent ?? this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretKeyParamCustomerAcceptanceOnline &&
           ipAddress == other.ipAddress &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(ipAddress, userAgent); } 
-@override String toString() { return 'SecretKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(ipAddress, userAgent);
+
+@override String toString() => 'SecretKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)';
+
  }

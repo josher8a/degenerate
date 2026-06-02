@@ -97,10 +97,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FiltersOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FiltersOperation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FiltersOperation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FiltersOperation($value)';
+
  }
 @immutable final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });
 
@@ -135,12 +138,15 @@ TelemetryKeysListRequestFilters copyWith({String? key, FiltersOperation? operati
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryKeysListRequestFilters &&
           key == other.key &&
           operation == other.operation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, operation, type, value); } 
-@override String toString() { return 'TelemetryKeysListRequestFilters(key: $key, operation: $operation, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(key, operation, type, value);
+
+@override String toString() => 'TelemetryKeysListRequestFilters(key: $key, operation: $operation, type: $type, value: $value)';
+
  }

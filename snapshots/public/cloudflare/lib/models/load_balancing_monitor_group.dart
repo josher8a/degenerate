@@ -47,13 +47,16 @@ LoadBalancingMonitorGroup copyWith({DateTime? Function()? createdAt, String? des
   members: members ?? this.members,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingMonitorGroup &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
           listEquals(members, other.members) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, Object.hashAll(members), updatedAt); } 
-@override String toString() { return 'LoadBalancingMonitorGroup(createdAt: $createdAt, description: $description, id: $id, members: $members, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, id, Object.hashAll(members), updatedAt);
+
+@override String toString() => 'LoadBalancingMonitorGroup(createdAt: $createdAt, description: $description, id: $id, members: $members, updatedAt: $updatedAt)';
+
  }

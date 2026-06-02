@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TransferReversalObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TransferReversalObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TransferReversalObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TransferReversalObject($value)';
+
  }
 /// [Stripe Connect](https://docs.stripe.com/connect) platforms can reverse transfers made to a
 /// connected account, either entirely or partially, and can also specify whether
@@ -114,7 +117,7 @@ TransferReversal copyWith({int? amount, ApplicationFeeBalanceTransaction? Functi
   sourceRefund: sourceRefund != null ? sourceRefund() : this.sourceRefund,
   transfer: transfer ?? this.transfer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferReversal &&
           amount == other.amount &&
           balanceTransaction == other.balanceTransaction &&
@@ -125,7 +128,10 @@ TransferReversal copyWith({int? amount, ApplicationFeeBalanceTransaction? Functi
           metadata == other.metadata &&
           object == other.object &&
           sourceRefund == other.sourceRefund &&
-          transfer == other.transfer; } 
-@override int get hashCode { return Object.hash(amount, balanceTransaction, created, currency, destinationPaymentRefund, id, metadata, object, sourceRefund, transfer); } 
-@override String toString() { return 'TransferReversal(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, destinationPaymentRefund: $destinationPaymentRefund, id: $id, metadata: $metadata, object: $object, sourceRefund: $sourceRefund, transfer: $transfer)'; } 
+          transfer == other.transfer;
+
+@override int get hashCode => Object.hash(amount, balanceTransaction, created, currency, destinationPaymentRefund, id, metadata, object, sourceRefund, transfer);
+
+@override String toString() => 'TransferReversal(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, destinationPaymentRefund: $destinationPaymentRefund, id: $id, metadata: $metadata, object: $object, sourceRefund: $sourceRefund, transfer: $transfer)';
+
  }

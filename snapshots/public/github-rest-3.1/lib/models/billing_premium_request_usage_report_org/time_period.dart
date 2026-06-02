@@ -28,11 +28,14 @@ TimePeriod copyWith({int? year, int? Function()? month, int? Function()? day, })
   month: month != null ? month() : this.month,
   day: day != null ? day() : this.day,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimePeriod &&
           year == other.year &&
           month == other.month &&
-          day == other.day; } 
-@override int get hashCode { return Object.hash(year, month, day); } 
-@override String toString() { return 'TimePeriod(year: $year, month: $month, day: $day)'; } 
+          day == other.day;
+
+@override int get hashCode => Object.hash(year, month, day);
+
+@override String toString() => 'TimePeriod(year: $year, month: $month, day: $day)';
+
  }

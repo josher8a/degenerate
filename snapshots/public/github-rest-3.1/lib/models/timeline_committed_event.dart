@@ -79,7 +79,7 @@ TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String?
   verification: verification ?? this.verification,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCommittedEvent &&
           event == other.event &&
           sha == other.sha &&
@@ -91,7 +91,10 @@ TimelineCommittedEvent copyWith({String? Function()? event, String? sha, String?
           tree == other.tree &&
           listEquals(parents, other.parents) &&
           verification == other.verification &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(event, sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl); } 
-@override String toString() { return 'TimelineCommittedEvent(event: $event, sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(event, sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl);
+
+@override String toString() => 'TimelineCommittedEvent(event: $event, sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)';
+
  }

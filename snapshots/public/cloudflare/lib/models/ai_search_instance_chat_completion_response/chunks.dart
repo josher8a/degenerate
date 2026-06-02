@@ -48,14 +48,17 @@ Chunks copyWith({String? id, Item? Function()? item, double? score, ScoringDetai
   text: text ?? this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Chunks &&
           id == other.id &&
           item == other.item &&
           score == other.score &&
           scoringDetails == other.scoringDetails &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, item, score, scoringDetails, text, type); } 
-@override String toString() { return 'Chunks(id: $id, item: $item, score: $score, scoringDetails: $scoringDetails, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, item, score, scoringDetails, text, type);
+
+@override String toString() => 'Chunks(id: $id, item: $item, score: $score, scoringDetails: $scoringDetails, text: $text, type: $type)';
+
  }

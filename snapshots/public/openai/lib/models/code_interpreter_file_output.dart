@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterFileOutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeInterpreterFileOutputType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterFileOutputType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeInterpreterFileOutputType($value)';
+
  }
 /// The output of a code interpreter tool call that is a file.
 /// 
@@ -48,10 +51,13 @@ CodeInterpreterFileOutput copyWith({CodeInterpreterFileOutputType? type, List<Co
   type: type ?? this.type,
   files: files ?? this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterFileOutput &&
           type == other.type &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(files)); } 
-@override String toString() { return 'CodeInterpreterFileOutput(type: $type, files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(files));
+
+@override String toString() => 'CodeInterpreterFileOutput(type: $type, files: $files)';
+
  }

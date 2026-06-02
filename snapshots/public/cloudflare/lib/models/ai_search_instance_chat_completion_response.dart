@@ -41,14 +41,17 @@ AiSearchInstanceChatCompletionResponse copyWith({List<Choices>? choices, List<Ch
   object: object != null ? object() : this.object,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChatCompletionResponse &&
           listEquals(choices, other.choices) &&
           listEquals(chunks, other.chunks) &&
           id == other.id &&
           model == other.model &&
           object == other.object &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(Object.hashAll(choices), Object.hashAll(chunks), id, model, object, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionResponse(choices: $choices, chunks: $chunks, id: $id, model: $model, object: $object, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(Object.hashAll(choices), Object.hashAll(chunks), id, model, object, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'AiSearchInstanceChatCompletionResponse(choices: $choices, chunks: $chunks, id: $id, model: $model, object: $object, additionalProperties: $additionalProperties)';
+
  }

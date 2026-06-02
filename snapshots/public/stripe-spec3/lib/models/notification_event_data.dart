@@ -23,10 +23,13 @@ NotificationEventData copyWith({Map<String,dynamic>? object, Map<String, dynamic
   object: object ?? this.object,
   previousAttributes: previousAttributes != null ? previousAttributes() : this.previousAttributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationEventData &&
           object == other.object &&
-          previousAttributes == other.previousAttributes; } 
-@override int get hashCode { return Object.hash(object, previousAttributes); } 
-@override String toString() { return 'NotificationEventData(object: $object, previousAttributes: $previousAttributes)'; } 
+          previousAttributes == other.previousAttributes;
+
+@override int get hashCode => Object.hash(object, previousAttributes);
+
+@override String toString() => 'NotificationEventData(object: $object, previousAttributes: $previousAttributes)';
+
  }

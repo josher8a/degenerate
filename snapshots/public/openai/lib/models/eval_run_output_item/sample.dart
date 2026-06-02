@@ -79,7 +79,7 @@ Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? f
   topP: topP ?? this.topP,
   seed: seed ?? this.seed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sample &&
           listEquals(input, other.input) &&
           listEquals(output, other.output) &&
@@ -90,7 +90,10 @@ Sample copyWith({List<SampleInput>? input, List<SampleOutput>? output, String? f
           temperature == other.temperature &&
           maxCompletionTokens == other.maxCompletionTokens &&
           topP == other.topP &&
-          seed == other.seed; } 
-@override int get hashCode { return Object.hash(Object.hashAll(input), Object.hashAll(output), finishReason, model, usage, error, temperature, maxCompletionTokens, topP, seed); } 
-@override String toString() { return 'Sample(input: $input, output: $output, finishReason: $finishReason, model: $model, usage: $usage, error: $error, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed)'; } 
+          seed == other.seed;
+
+@override int get hashCode => Object.hash(Object.hashAll(input), Object.hashAll(output), finishReason, model, usage, error, temperature, maxCompletionTokens, topP, seed);
+
+@override String toString() => 'Sample(input: $input, output: $output, finishReason: $finishReason, model: $model, usage: $usage, error: $error, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed)';
+
  }

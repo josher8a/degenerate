@@ -87,7 +87,7 @@ WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksAnswer &&
           authorAssociation == other.authorAssociation &&
           body == other.body &&
@@ -101,7 +101,10 @@ WebhooksAnswer copyWith({AuthorAssociation? authorAssociation, String? body, int
           reactions == other.reactions &&
           repositoryUrl == other.repositoryUrl &&
           updatedAt == other.updatedAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(authorAssociation, body, childCommentCount, createdAt, discussionId, htmlUrl, id, nodeId, parentId, reactions, repositoryUrl, updatedAt, user); } 
-@override String toString() { return 'WebhooksAnswer(authorAssociation: $authorAssociation, body: $body, childCommentCount: $childCommentCount, createdAt: $createdAt, discussionId: $discussionId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, parentId: $parentId, reactions: $reactions, repositoryUrl: $repositoryUrl, updatedAt: $updatedAt, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(authorAssociation, body, childCommentCount, createdAt, discussionId, htmlUrl, id, nodeId, parentId, reactions, repositoryUrl, updatedAt, user);
+
+@override String toString() => 'WebhooksAnswer(authorAssociation: $authorAssociation, body: $body, childCommentCount: $childCommentCount, createdAt: $createdAt, discussionId: $discussionId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, parentId: $parentId, reactions: $reactions, repositoryUrl: $repositoryUrl, updatedAt: $updatedAt, user: $user)';
+
  }

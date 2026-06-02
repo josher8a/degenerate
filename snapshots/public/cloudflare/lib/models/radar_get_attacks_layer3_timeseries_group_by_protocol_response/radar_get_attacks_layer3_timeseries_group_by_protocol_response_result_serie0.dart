@@ -39,13 +39,16 @@ RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 copyWith({Lis
   udp: udp ?? this.udp,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0 &&
           listEquals(gre, other.gre) &&
           listEquals(icmp, other.icmp) &&
           listEquals(tcp, other.tcp) &&
           listEquals(udp, other.udp) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(gre), Object.hashAll(icmp), Object.hashAll(tcp), Object.hashAll(udp), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(gre), Object.hashAll(icmp), Object.hashAll(tcp), Object.hashAll(udp), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByProtocolResponseResultSerie0(gre: $gre, icmp: $icmp, tcp: $tcp, udp: $udp, timestamps: $timestamps)';
+
  }

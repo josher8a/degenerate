@@ -29,11 +29,14 @@ AbuseReportsSubmitReportResponse copyWith({String? abuseRand, AbuseReportsSubmit
   request: request ?? this.request,
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsSubmitReportResponse &&
           abuseRand == other.abuseRand &&
           request == other.request &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(abuseRand, request, result); } 
-@override String toString() { return 'AbuseReportsSubmitReportResponse(abuseRand: $abuseRand, request: $request, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(abuseRand, request, result);
+
+@override String toString() => 'AbuseReportsSubmitReportResponse(abuseRand: $abuseRand, request: $request, result: $result)';
+
  }

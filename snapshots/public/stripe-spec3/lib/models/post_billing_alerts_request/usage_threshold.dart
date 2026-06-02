@@ -37,12 +37,15 @@ UsageThreshold copyWith({List<UsageThresholdFilters>? Function()? filters, int? 
   meter: meter ?? this.meter,
   recurrence: recurrence ?? this.recurrence,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageThreshold &&
           listEquals(filters, other.filters) &&
           gte == other.gte &&
           meter == other.meter &&
-          recurrence == other.recurrence; } 
-@override int get hashCode { return Object.hash(Object.hashAll(filters ?? const []), gte, meter, recurrence); } 
-@override String toString() { return 'UsageThreshold(filters: $filters, gte: $gte, meter: $meter, recurrence: $recurrence)'; } 
+          recurrence == other.recurrence;
+
+@override int get hashCode => Object.hash(Object.hashAll(filters ?? const []), gte, meter, recurrence);
+
+@override String toString() => 'UsageThreshold(filters: $filters, gte: $gte, meter: $meter, recurrence: $recurrence)';
+
  }

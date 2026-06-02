@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
 Submission copyWith({bool? accepted}) { return Submission(
   accepted: accepted ?? this.accepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Submission &&
-          accepted == other.accepted; } 
-@override int get hashCode { return accepted.hashCode; } 
-@override String toString() { return 'Submission(accepted: $accepted)'; } 
+          accepted == other.accepted;
+
+@override int get hashCode => accepted.hashCode;
+
+@override String toString() => 'Submission(accepted: $accepted)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RefundPaymentConfig copyWith({bool? Function()? enableCustomerCancellation}) { return RefundPaymentConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundPaymentConfig &&
-          enableCustomerCancellation == other.enableCustomerCancellation; } 
-@override int get hashCode { return enableCustomerCancellation.hashCode; } 
-@override String toString() { return 'RefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)'; } 
+          enableCustomerCancellation == other.enableCustomerCancellation;
+
+@override int get hashCode => enableCustomerCancellation.hashCode;
+
+@override String toString() => 'RefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)';
+
  }

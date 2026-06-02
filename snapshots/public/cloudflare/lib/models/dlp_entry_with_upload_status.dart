@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DlpEntryWithUploadStatus copyWith({DlpDatasetUploadStatus? Function()? uploadStatus}) { return DlpEntryWithUploadStatus(
   uploadStatus: uploadStatus != null ? uploadStatus() : this.uploadStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryWithUploadStatus &&
-          uploadStatus == other.uploadStatus; } 
-@override int get hashCode { return uploadStatus.hashCode; } 
-@override String toString() { return 'DlpEntryWithUploadStatus(uploadStatus: $uploadStatus)'; } 
+          uploadStatus == other.uploadStatus;
+
+@override int get hashCode => uploadStatus.hashCode;
+
+@override String toString() => 'DlpEntryWithUploadStatus(uploadStatus: $uploadStatus)';
+
  }

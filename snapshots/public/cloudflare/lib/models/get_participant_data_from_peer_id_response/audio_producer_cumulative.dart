@@ -25,11 +25,14 @@ AudioProducerCumulative copyWith({PacketLoss? Function()? packetLoss, QualityMos
   qualityMos: qualityMos != null ? qualityMos() : this.qualityMos,
   rtt: rtt != null ? rtt() : this.rtt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AudioProducerCumulative &&
           packetLoss == other.packetLoss &&
           qualityMos == other.qualityMos &&
-          rtt == other.rtt; } 
-@override int get hashCode { return Object.hash(packetLoss, qualityMos, rtt); } 
-@override String toString() { return 'AudioProducerCumulative(packetLoss: $packetLoss, qualityMos: $qualityMos, rtt: $rtt)'; } 
+          rtt == other.rtt;
+
+@override int get hashCode => Object.hash(packetLoss, qualityMos, rtt);
+
+@override String toString() => 'AudioProducerCumulative(packetLoss: $packetLoss, qualityMos: $qualityMos, rtt: $rtt)';
+
  }

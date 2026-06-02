@@ -205,7 +205,7 @@ Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl,
   userRepositoriesUrl: userRepositoriesUrl ?? this.userRepositoriesUrl,
   userSearchUrl: userSearchUrl ?? this.userSearchUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Root &&
           currentUserUrl == other.currentUserUrl &&
           currentUserAuthorizationsHtmlUrl == other.currentUserAuthorizationsHtmlUrl &&
@@ -239,7 +239,10 @@ Root copyWith({String? currentUserUrl, String? currentUserAuthorizationsHtmlUrl,
           userUrl == other.userUrl &&
           userOrganizationsUrl == other.userOrganizationsUrl &&
           userRepositoriesUrl == other.userRepositoriesUrl &&
-          userSearchUrl == other.userSearchUrl; } 
-@override int get hashCode { return Object.hashAll([currentUserUrl, currentUserAuthorizationsHtmlUrl, authorizationsUrl, codeSearchUrl, commitSearchUrl, emailsUrl, emojisUrl, eventsUrl, feedsUrl, followersUrl, followingUrl, gistsUrl, hubUrl, issueSearchUrl, issuesUrl, keysUrl, labelSearchUrl, notificationsUrl, organizationUrl, organizationRepositoriesUrl, organizationTeamsUrl, publicGistsUrl, rateLimitUrl, repositoryUrl, repositorySearchUrl, currentUserRepositoriesUrl, starredUrl, starredGistsUrl, topicSearchUrl, userUrl, userOrganizationsUrl, userRepositoriesUrl, userSearchUrl]); } 
-@override String toString() { return 'Root(currentUserUrl: $currentUserUrl, currentUserAuthorizationsHtmlUrl: $currentUserAuthorizationsHtmlUrl, authorizationsUrl: $authorizationsUrl, codeSearchUrl: $codeSearchUrl, commitSearchUrl: $commitSearchUrl, emailsUrl: $emailsUrl, emojisUrl: $emojisUrl, eventsUrl: $eventsUrl, feedsUrl: $feedsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, hubUrl: $hubUrl, issueSearchUrl: $issueSearchUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelSearchUrl: $labelSearchUrl, notificationsUrl: $notificationsUrl, organizationUrl: $organizationUrl, organizationRepositoriesUrl: $organizationRepositoriesUrl, organizationTeamsUrl: $organizationTeamsUrl, publicGistsUrl: $publicGistsUrl, rateLimitUrl: $rateLimitUrl, repositoryUrl: $repositoryUrl, repositorySearchUrl: $repositorySearchUrl, currentUserRepositoriesUrl: $currentUserRepositoriesUrl, starredUrl: $starredUrl, starredGistsUrl: $starredGistsUrl, topicSearchUrl: $topicSearchUrl, userUrl: $userUrl, userOrganizationsUrl: $userOrganizationsUrl, userRepositoriesUrl: $userRepositoriesUrl, userSearchUrl: $userSearchUrl)'; } 
+          userSearchUrl == other.userSearchUrl;
+
+@override int get hashCode => Object.hashAll([currentUserUrl, currentUserAuthorizationsHtmlUrl, authorizationsUrl, codeSearchUrl, commitSearchUrl, emailsUrl, emojisUrl, eventsUrl, feedsUrl, followersUrl, followingUrl, gistsUrl, hubUrl, issueSearchUrl, issuesUrl, keysUrl, labelSearchUrl, notificationsUrl, organizationUrl, organizationRepositoriesUrl, organizationTeamsUrl, publicGistsUrl, rateLimitUrl, repositoryUrl, repositorySearchUrl, currentUserRepositoriesUrl, starredUrl, starredGistsUrl, topicSearchUrl, userUrl, userOrganizationsUrl, userRepositoriesUrl, userSearchUrl]);
+
+@override String toString() => 'Root(currentUserUrl: $currentUserUrl, currentUserAuthorizationsHtmlUrl: $currentUserAuthorizationsHtmlUrl, authorizationsUrl: $authorizationsUrl, codeSearchUrl: $codeSearchUrl, commitSearchUrl: $commitSearchUrl, emailsUrl: $emailsUrl, emojisUrl: $emojisUrl, eventsUrl: $eventsUrl, feedsUrl: $feedsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, hubUrl: $hubUrl, issueSearchUrl: $issueSearchUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelSearchUrl: $labelSearchUrl, notificationsUrl: $notificationsUrl, organizationUrl: $organizationUrl, organizationRepositoriesUrl: $organizationRepositoriesUrl, organizationTeamsUrl: $organizationTeamsUrl, publicGistsUrl: $publicGistsUrl, rateLimitUrl: $rateLimitUrl, repositoryUrl: $repositoryUrl, repositorySearchUrl: $repositorySearchUrl, currentUserRepositoriesUrl: $currentUserRepositoriesUrl, starredUrl: $starredUrl, starredGistsUrl: $starredGistsUrl, topicSearchUrl: $topicSearchUrl, userUrl: $userUrl, userOrganizationsUrl: $userOrganizationsUrl, userRepositoriesUrl: $userRepositoriesUrl, userSearchUrl: $userSearchUrl)';
+
  }

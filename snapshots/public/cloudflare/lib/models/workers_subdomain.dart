@@ -27,10 +27,13 @@ WorkersSubdomain copyWith({bool? enabled, bool? previewsEnabled, }) { return Wor
   enabled: enabled ?? this.enabled,
   previewsEnabled: previewsEnabled ?? this.previewsEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersSubdomain &&
           enabled == other.enabled &&
-          previewsEnabled == other.previewsEnabled; } 
-@override int get hashCode { return Object.hash(enabled, previewsEnabled); } 
-@override String toString() { return 'WorkersSubdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)'; } 
+          previewsEnabled == other.previewsEnabled;
+
+@override int get hashCode => Object.hash(enabled, previewsEnabled);
+
+@override String toString() => 'WorkersSubdomain(enabled: $enabled, previewsEnabled: $previewsEnabled)';
+
  }

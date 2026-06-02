@@ -25,9 +25,12 @@ return errors; }
 StreamWatermarkAtUpload copyWith({String? Function()? uid}) { return StreamWatermarkAtUpload(
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarkAtUpload &&
-          uid == other.uid; } 
-@override int get hashCode { return uid.hashCode; } 
-@override String toString() { return 'StreamWatermarkAtUpload(uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => uid.hashCode;
+
+@override String toString() => 'StreamWatermarkAtUpload(uid: $uid)';
+
  }

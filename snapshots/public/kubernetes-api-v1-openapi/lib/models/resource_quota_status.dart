@@ -23,10 +23,13 @@ ResourceQuotaStatus copyWith({Map<String, ResourceQuantity>? Function()? hard, M
   hard: hard != null ? hard() : this.hard,
   used: used != null ? used() : this.used,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceQuotaStatus &&
           hard == other.hard &&
-          used == other.used; } 
-@override int get hashCode { return Object.hash(hard, used); } 
-@override String toString() { return 'ResourceQuotaStatus(hard: $hard, used: $used)'; } 
+          used == other.used;
+
+@override int get hashCode => Object.hash(hard, used);
+
+@override String toString() => 'ResourceQuotaStatus(hard: $hard, used: $used)';
+
  }

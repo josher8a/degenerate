@@ -30,12 +30,15 @@ PayPerCrawlRestError copyWith({int? Function()? code, String? Function()? docume
   error: error != null ? error() : this.error,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlRestError &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           error == other.error &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, error, source); } 
-@override String toString() { return 'PayPerCrawlRestError(code: $code, documentationUrl: $documentationUrl, error: $error, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, documentationUrl, error, source);
+
+@override String toString() => 'PayPerCrawlRestError(code: $code, documentationUrl: $documentationUrl, error: $error, source: $source)';
+
  }

@@ -113,7 +113,7 @@ AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, Ac
   uid: uid != null ? uid() : this.uid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasUsers &&
           accessSeat == other.accessSeat &&
           activeDeviceCount == other.activeDeviceCount &&
@@ -125,7 +125,10 @@ AccessSchemasUsers copyWith({AccessSchemasAccessSeat? Function()? accessSeat, Ac
           name == other.name &&
           seatUid == other.seatUid &&
           uid == other.uid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(accessSeat, activeDeviceCount, createdAt, email, gatewaySeat, id, lastSuccessfulLogin, name, seatUid, uid, updatedAt); } 
-@override String toString() { return 'AccessSchemasUsers(accessSeat: $accessSeat, activeDeviceCount: $activeDeviceCount, createdAt: $createdAt, email: $email, gatewaySeat: $gatewaySeat, id: $id, lastSuccessfulLogin: $lastSuccessfulLogin, name: $name, seatUid: $seatUid, uid: $uid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(accessSeat, activeDeviceCount, createdAt, email, gatewaySeat, id, lastSuccessfulLogin, name, seatUid, uid, updatedAt);
+
+@override String toString() => 'AccessSchemasUsers(accessSeat: $accessSeat, activeDeviceCount: $activeDeviceCount, createdAt: $createdAt, email: $email, gatewaySeat: $gatewaySeat, id: $id, lastSuccessfulLogin: $lastSuccessfulLogin, name: $name, seatUid: $seatUid, uid: $uid, updatedAt: $updatedAt)';
+
  }

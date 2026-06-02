@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptTextUsageTokensType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptTextUsageTokensType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TranscriptTextUsageTokensType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TranscriptTextUsageTokensType($value)';
+
  }
 /// Usage statistics for models billed by token usage.
 @immutable final class TranscriptTextUsageTokens {const TranscriptTextUsageTokens({required this.type, required this.inputTokens, required this.outputTokens, required this.totalTokens, this.inputTokenDetails, });
@@ -66,13 +69,16 @@ TranscriptTextUsageTokens copyWith({TranscriptTextUsageTokensType? type, int? in
   outputTokens: outputTokens ?? this.outputTokens,
   totalTokens: totalTokens ?? this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextUsageTokens &&
           type == other.type &&
           inputTokens == other.inputTokens &&
           inputTokenDetails == other.inputTokenDetails &&
           outputTokens == other.outputTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(type, inputTokens, inputTokenDetails, outputTokens, totalTokens); } 
-@override String toString() { return 'TranscriptTextUsageTokens(type: $type, inputTokens: $inputTokens, inputTokenDetails: $inputTokenDetails, outputTokens: $outputTokens, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(type, inputTokens, inputTokenDetails, outputTokens, totalTokens);
+
+@override String toString() => 'TranscriptTextUsageTokens(type: $type, inputTokens: $inputTokens, inputTokenDetails: $inputTokenDetails, outputTokens: $outputTokens, totalTokens: $totalTokens)';
+
  }

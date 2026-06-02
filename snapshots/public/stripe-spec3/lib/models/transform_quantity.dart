@@ -24,10 +24,13 @@ TransformQuantity copyWith({int? divideBy, Round? round, }) { return TransformQu
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransformQuantity &&
           divideBy == other.divideBy &&
-          round == other.round; } 
-@override int get hashCode { return Object.hash(divideBy, round); } 
-@override String toString() { return 'TransformQuantity(divideBy: $divideBy, round: $round)'; } 
+          round == other.round;
+
+@override int get hashCode => Object.hash(divideBy, round);
+
+@override String toString() => 'TransformQuantity(divideBy: $divideBy, round: $round)';
+
  }

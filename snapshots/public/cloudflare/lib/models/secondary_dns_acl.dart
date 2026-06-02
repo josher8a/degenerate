@@ -27,11 +27,14 @@ SecondaryDnsAcl copyWith({SecondaryDnsComponentsSchemasIdentifier? id, Secondary
   ipRange: ipRange ?? this.ipRange,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsAcl &&
           id == other.id &&
           ipRange == other.ipRange &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, ipRange, name); } 
-@override String toString() { return 'SecondaryDnsAcl(id: $id, ipRange: $ipRange, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, ipRange, name);
+
+@override String toString() => 'SecondaryDnsAcl(id: $id, ipRange: $ipRange, name: $name)';
+
  }

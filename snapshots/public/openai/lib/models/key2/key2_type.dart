@@ -20,8 +20,11 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Key2Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Key2Type($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Key2Type && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Key2Type($value)';
+
  }

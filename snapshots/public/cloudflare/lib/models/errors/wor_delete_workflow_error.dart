@@ -18,13 +18,15 @@ final class WorDeleteWorkflowError$400 extends WorDeleteWorkflowError {const Wor
 
 final WorDeleteWorkflowResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorDeleteWorkflowError$404 extends WorDeleteWorkflowError {const WorDeleteWorkflowError$404(this.error);
 
 final WorDeleteWorkflowResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorDeleteWorkflowError$Unknown extends WorDeleteWorkflowError {const WorDeleteWorkflowError$Unknown(this.statusCode, this.rawBody, );
 

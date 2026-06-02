@@ -22,10 +22,13 @@ PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest copyWith({List<S
   expand: expand != null ? expand() : this.expand,
   reverseAmount: reverseAmount != null ? reverseAmount() : this.reverseAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest &&
           listEquals(expand, other.expand) &&
-          reverseAmount == other.reverseAmount; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), reverseAmount); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(expand: $expand, reverseAmount: $reverseAmount)'; } 
+          reverseAmount == other.reverseAmount;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), reverseAmount);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationReverseRequest(expand: $expand, reverseAmount: $reverseAmount)';
+
  }

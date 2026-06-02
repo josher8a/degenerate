@@ -23,10 +23,13 @@ FlockerVolumeSource copyWith({String? Function()? datasetName, String? Function(
   datasetName: datasetName != null ? datasetName() : this.datasetName,
   datasetUuid: datasetUuid != null ? datasetUuid() : this.datasetUuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FlockerVolumeSource &&
           datasetName == other.datasetName &&
-          datasetUuid == other.datasetUuid; } 
-@override int get hashCode { return Object.hash(datasetName, datasetUuid); } 
-@override String toString() { return 'FlockerVolumeSource(datasetName: $datasetName, datasetUuid: $datasetUuid)'; } 
+          datasetUuid == other.datasetUuid;
+
+@override int get hashCode => Object.hash(datasetName, datasetUuid);
+
+@override String toString() => 'FlockerVolumeSource(datasetName: $datasetName, datasetUuid: $datasetUuid)';
+
  }

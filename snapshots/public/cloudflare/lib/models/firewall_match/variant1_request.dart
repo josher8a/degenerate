@@ -42,10 +42,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallMethods2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallMethods2($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallMethods2 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallMethods2($value)';
+
  }
 @immutable final class Variant1Request {const Variant1Request({this.methods, this.schemes, this.url, });
 
@@ -72,11 +75,14 @@ Variant1Request copyWith({List<FirewallMethods2>? Function()? methods, List<Stri
   schemes: schemes != null ? schemes() : this.schemes,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Request &&
           listEquals(methods, other.methods) &&
           listEquals(schemes, other.schemes) &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(methods ?? const []), Object.hashAll(schemes ?? const []), url); } 
-@override String toString() { return 'Variant1Request(methods: $methods, schemes: $schemes, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(methods ?? const []), Object.hashAll(schemes ?? const []), url);
+
+@override String toString() => 'Variant1Request(methods: $methods, schemes: $schemes, url: $url)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerNetworkPolicyAllowlistParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerNetworkPolicyAllowlistParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContainerNetworkPolicyAllowlistParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContainerNetworkPolicyAllowlistParamType($value)';
+
  }
 @immutable final class ContainerNetworkPolicyAllowlistParam {const ContainerNetworkPolicyAllowlistParam({required this.allowedDomains, this.type = ContainerNetworkPolicyAllowlistParamType.allowlist, this.domainSecrets, });
 
@@ -59,11 +62,14 @@ ContainerNetworkPolicyAllowlistParam copyWith({ContainerNetworkPolicyAllowlistPa
   allowedDomains: allowedDomains ?? this.allowedDomains,
   domainSecrets: domainSecrets != null ? domainSecrets() : this.domainSecrets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerNetworkPolicyAllowlistParam &&
           type == other.type &&
           listEquals(allowedDomains, other.allowedDomains) &&
-          listEquals(domainSecrets, other.domainSecrets); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(allowedDomains), Object.hashAll(domainSecrets ?? const [])); } 
-@override String toString() { return 'ContainerNetworkPolicyAllowlistParam(type: $type, allowedDomains: $allowedDomains, domainSecrets: $domainSecrets)'; } 
+          listEquals(domainSecrets, other.domainSecrets);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(allowedDomains), Object.hashAll(domainSecrets ?? const []));
+
+@override String toString() => 'ContainerNetworkPolicyAllowlistParam(type: $type, allowedDomains: $allowedDomains, domainSecrets: $domainSecrets)';
+
  }

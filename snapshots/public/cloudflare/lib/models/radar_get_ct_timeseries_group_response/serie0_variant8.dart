@@ -33,12 +33,15 @@ Serie0Variant8 copyWith({List<String>? domain, List<String>? extended, List<Stri
   organization: organization ?? this.organization,
   unknown: unknown ?? this.unknown,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant8 &&
           listEquals(domain, other.domain) &&
           listEquals(extended, other.extended) &&
           listEquals(organization, other.organization) &&
-          listEquals(unknown, other.unknown); } 
-@override int get hashCode { return Object.hash(Object.hashAll(domain), Object.hashAll(extended), Object.hashAll(organization), Object.hashAll(unknown)); } 
-@override String toString() { return 'Serie0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)'; } 
+          listEquals(unknown, other.unknown);
+
+@override int get hashCode => Object.hash(Object.hashAll(domain), Object.hashAll(extended), Object.hashAll(organization), Object.hashAll(unknown));
+
+@override String toString() => 'Serie0Variant8(domain: $domain, extended: $extended, organization: $organization, unknown: $unknown)';
+
  }

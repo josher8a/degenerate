@@ -28,11 +28,14 @@ WorkersBindingKindKvNamespace copyWith({WorkersBindingName? name, WorkersNamespa
   namespaceId: namespaceId ?? this.namespaceId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindKvNamespace &&
           name == other.name &&
           namespaceId == other.namespaceId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, namespaceId, type); } 
-@override String toString() { return 'WorkersBindingKindKvNamespace(name: $name, namespaceId: $namespaceId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, namespaceId, type);
+
+@override String toString() => 'WorkersBindingKindKvNamespace(name: $name, namespaceId: $namespaceId, type: $type)';
+
  }

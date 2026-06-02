@@ -55,7 +55,7 @@ McnUpdateOnrampRequest copyWith({List<McnResourceId>? Function()? attachedHubs, 
   name: name != null ? name() : this.name,
   vpc: vpc != null ? vpc() : this.vpc,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnUpdateOnrampRequest &&
           listEquals(attachedHubs, other.attachedHubs) &&
           listEquals(attachedVpcs, other.attachedVpcs) &&
@@ -65,7 +65,10 @@ McnUpdateOnrampRequest copyWith({List<McnResourceId>? Function()? attachedHubs, 
           manageHubToHubAttachments == other.manageHubToHubAttachments &&
           manageVpcToHubAttachments == other.manageVpcToHubAttachments &&
           name == other.name &&
-          vpc == other.vpc; } 
-@override int get hashCode { return Object.hash(Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), description, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, vpc); } 
-@override String toString() { return 'McnUpdateOnrampRequest(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, description: $description, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, vpc: $vpc)'; } 
+          vpc == other.vpc;
+
+@override int get hashCode => Object.hash(Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), description, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, vpc);
+
+@override String toString() => 'McnUpdateOnrampRequest(attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, description: $description, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, vpc: $vpc)';
+
  }

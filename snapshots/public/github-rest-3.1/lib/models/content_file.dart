@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentFileType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentFileType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContentFileType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContentFileType($value)';
+
  }
 /// Content File
 @immutable final class ContentFile {const ContentFile({required this.type, required this.encoding, required this.size, required this.name, required this.path, required this.content, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.target, this.submoduleGitUrl, });
@@ -113,7 +116,7 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
   target: target != null ? target() : this.target,
   submoduleGitUrl: submoduleGitUrl != null ? submoduleGitUrl() : this.submoduleGitUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentFile &&
           type == other.type &&
           encoding == other.encoding &&
@@ -128,7 +131,10 @@ ContentFile copyWith({ContentFileType? type, String? encoding, int? size, String
           downloadUrl == other.downloadUrl &&
           links == other.links &&
           target == other.target &&
-          submoduleGitUrl == other.submoduleGitUrl; } 
-@override int get hashCode { return Object.hash(type, encoding, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links, target, submoduleGitUrl); } 
-@override String toString() { return 'ContentFile(type: $type, encoding: $encoding, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links, target: $target, submoduleGitUrl: $submoduleGitUrl)'; } 
+          submoduleGitUrl == other.submoduleGitUrl;
+
+@override int get hashCode => Object.hash(type, encoding, size, name, path, content, sha, url, gitUrl, htmlUrl, downloadUrl, links, target, submoduleGitUrl);
+
+@override String toString() => 'ContentFile(type: $type, encoding: $encoding, size: $size, name: $name, path: $path, content: $content, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links, target: $target, submoduleGitUrl: $submoduleGitUrl)';
+
  }

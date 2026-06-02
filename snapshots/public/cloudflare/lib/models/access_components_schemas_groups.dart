@@ -45,7 +45,7 @@ AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, 
   require: require != null ? require() : this.require,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessComponentsSchemasGroups &&
           createdAt == other.createdAt &&
           listEquals(exclude, other.exclude) &&
@@ -53,7 +53,10 @@ AccessComponentsSchemasGroups copyWith({AccessTimestamp? Function()? createdAt, 
           listEquals(include, other.include) &&
           name == other.name &&
           listEquals(require, other.require) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt); } 
-@override String toString() { return 'AccessComponentsSchemasGroups(createdAt: $createdAt, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt);
+
+@override String toString() => 'AccessComponentsSchemasGroups(createdAt: $createdAt, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)';
+
  }

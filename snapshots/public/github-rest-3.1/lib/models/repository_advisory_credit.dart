@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryCreditState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryCreditState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryAdvisoryCreditState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryAdvisoryCreditState($value)';
+
  }
 /// A credit given to a user for a repository security advisory.
 @immutable final class RepositoryAdvisoryCredit {const RepositoryAdvisoryCredit({required this.user, required this.type, required this.state, });
@@ -58,11 +61,14 @@ RepositoryAdvisoryCredit copyWith({SimpleUser? user, SecurityAdvisoryCreditTypes
   type: type ?? this.type,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisoryCredit &&
           user == other.user &&
           type == other.type &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(user, type, state); } 
-@override String toString() { return 'RepositoryAdvisoryCredit(user: $user, type: $type, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(user, type, state);
+
+@override String toString() => 'RepositoryAdvisoryCredit(user: $user, type: $type, state: $state)';
+
  }

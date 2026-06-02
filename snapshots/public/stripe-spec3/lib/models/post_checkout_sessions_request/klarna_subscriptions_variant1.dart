@@ -45,13 +45,16 @@ KlarnaSubscriptionsVariant1 copyWith({GetPricesRecurringInterval? interval, int?
   nextBilling: nextBilling ?? this.nextBilling,
   reference: reference ?? this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KlarnaSubscriptionsVariant1 &&
           interval == other.interval &&
           intervalCount == other.intervalCount &&
           name == other.name &&
           nextBilling == other.nextBilling &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(interval, intervalCount, name, nextBilling, reference); } 
-@override String toString() { return 'KlarnaSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(interval, intervalCount, name, nextBilling, reference);
+
+@override String toString() => 'KlarnaSubscriptionsVariant1(interval: $interval, intervalCount: $intervalCount, name: $name, nextBilling: $nextBilling, reference: $reference)';
+
  }

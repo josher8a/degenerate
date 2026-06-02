@@ -47,14 +47,17 @@ PodAffinityTerm copyWith({LabelSelector? Function()? labelSelector, List<String>
   namespaces: namespaces != null ? namespaces() : this.namespaces,
   topologyKey: topologyKey ?? this.topologyKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodAffinityTerm &&
           labelSelector == other.labelSelector &&
           listEquals(matchLabelKeys, other.matchLabelKeys) &&
           listEquals(mismatchLabelKeys, other.mismatchLabelKeys) &&
           namespaceSelector == other.namespaceSelector &&
           listEquals(namespaces, other.namespaces) &&
-          topologyKey == other.topologyKey; } 
-@override int get hashCode { return Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), Object.hashAll(mismatchLabelKeys ?? const []), namespaceSelector, Object.hashAll(namespaces ?? const []), topologyKey); } 
-@override String toString() { return 'PodAffinityTerm(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, mismatchLabelKeys: $mismatchLabelKeys, namespaceSelector: $namespaceSelector, namespaces: $namespaces, topologyKey: $topologyKey)'; } 
+          topologyKey == other.topologyKey;
+
+@override int get hashCode => Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), Object.hashAll(mismatchLabelKeys ?? const []), namespaceSelector, Object.hashAll(namespaces ?? const []), topologyKey);
+
+@override String toString() => 'PodAffinityTerm(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, mismatchLabelKeys: $mismatchLabelKeys, namespaceSelector: $namespaceSelector, namespaces: $namespaces, topologyKey: $topologyKey)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentLinkObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentLinkObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentLinkObject($value)';
+
  }
 /// A payment link is a shareable URL that will take your customers to a hosted payment page. A payment link can be shared and used multiple times.
 /// 
@@ -268,7 +271,7 @@ PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCo
   transferData: transferData != null ? transferData() : this.transferData,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLink &&
           active == other.active &&
           afterCompletion == other.afterCompletion &&
@@ -304,7 +307,10 @@ PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCo
           subscriptionData == other.subscriptionData &&
           taxIdCollection == other.taxIdCollection &&
           transferData == other.transferData &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([active, afterCompletion, allowPromotionCodes, application, applicationFeeAmount, applicationFeePercent, automaticTax, billingAddressCollection, consentCollection, currency, Object.hashAll(customFields), customText, customerCreation, id, inactiveMessage, invoiceCreation, lineItems, livemode, metadata, nameCollection, object, onBehalfOf, Object.hashAll(optionalItems ?? const []), paymentIntentData, paymentMethodCollection, Object.hashAll(paymentMethodTypes ?? const []), phoneNumberCollection, restrictions, shippingAddressCollection, Object.hashAll(shippingOptions), submitType, subscriptionData, taxIdCollection, transferData, url]); } 
-@override String toString() { return 'PaymentLink(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, consentCollection: $consentCollection, currency: $currency, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, id: $id, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, nameCollection: $nameCollection, object: $object, onBehalfOf: $onBehalfOf, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, shippingOptions: $shippingOptions, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection, transferData: $transferData, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([active, afterCompletion, allowPromotionCodes, application, applicationFeeAmount, applicationFeePercent, automaticTax, billingAddressCollection, consentCollection, currency, Object.hashAll(customFields), customText, customerCreation, id, inactiveMessage, invoiceCreation, lineItems, livemode, metadata, nameCollection, object, onBehalfOf, Object.hashAll(optionalItems ?? const []), paymentIntentData, paymentMethodCollection, Object.hashAll(paymentMethodTypes ?? const []), phoneNumberCollection, restrictions, shippingAddressCollection, Object.hashAll(shippingOptions), submitType, subscriptionData, taxIdCollection, transferData, url]);
+
+@override String toString() => 'PaymentLink(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, consentCollection: $consentCollection, currency: $currency, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, id: $id, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, nameCollection: $nameCollection, object: $object, onBehalfOf: $onBehalfOf, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, shippingOptions: $shippingOptions, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection, transferData: $transferData, url: $url)';
+
  }

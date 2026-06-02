@@ -47,14 +47,17 @@ IamMemberWithPolicies copyWith({IamEmail? Function()? email, IamMembershipCompon
   status: status != null ? status() : this.status,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamMemberWithPolicies &&
           email == other.email &&
           id == other.id &&
           listEquals(policies, other.policies) &&
           listEquals(roles, other.roles) &&
           status == other.status &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(email, id, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status, user); } 
-@override String toString() { return 'IamMemberWithPolicies(email: $email, id: $id, policies: $policies, roles: $roles, status: $status, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(email, id, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status, user);
+
+@override String toString() => 'IamMemberWithPolicies(email: $email, id: $id, policies: $policies, roles: $roles, status: $status, user: $user)';
+
  }

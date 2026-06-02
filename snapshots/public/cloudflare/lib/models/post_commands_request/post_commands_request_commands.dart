@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CommandType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CommandType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CommandType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CommandType($value)';
+
  }
 @immutable final class PostCommandsRequestCommands {const PostCommandsRequestCommands({required this.commandType, required this.deviceId, required this.userEmail, this.commandArgs, this.registrationId, });
 
@@ -66,13 +69,16 @@ PostCommandsRequestCommands copyWith({CommandArgs? Function()? commandArgs, Comm
   registrationId: registrationId != null ? registrationId() : this.registrationId,
   userEmail: userEmail ?? this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCommandsRequestCommands &&
           commandArgs == other.commandArgs &&
           commandType == other.commandType &&
           deviceId == other.deviceId &&
           registrationId == other.registrationId &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(commandArgs, commandType, deviceId, registrationId, userEmail); } 
-@override String toString() { return 'PostCommandsRequestCommands(commandArgs: $commandArgs, commandType: $commandType, deviceId: $deviceId, registrationId: $registrationId, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(commandArgs, commandType, deviceId, registrationId, userEmail);
+
+@override String toString() => 'PostCommandsRequestCommands(commandArgs: $commandArgs, commandType: $commandType, deviceId: $deviceId, registrationId: $registrationId, userEmail: $userEmail)';
+
  }

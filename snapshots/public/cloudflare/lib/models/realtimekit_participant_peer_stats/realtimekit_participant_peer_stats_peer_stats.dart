@@ -40,14 +40,17 @@ RealtimekitParticipantPeerStatsPeerStats copyWith({String? Function()? config, R
   precallNetworkInformation: precallNetworkInformation != null ? precallNetworkInformation() : this.precallNetworkInformation,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStats &&
           config == other.config &&
           deviceInfo == other.deviceInfo &&
           listEquals(events, other.events) &&
           ipInformation == other.ipInformation &&
           precallNetworkInformation == other.precallNetworkInformation &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(config, deviceInfo, Object.hashAll(events ?? const []), ipInformation, precallNetworkInformation, status); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStats(config: $config, deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, precallNetworkInformation: $precallNetworkInformation, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(config, deviceInfo, Object.hashAll(events ?? const []), ipInformation, precallNetworkInformation, status);
+
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStats(config: $config, deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, precallNetworkInformation: $precallNetworkInformation, status: $status)';
+
  }

@@ -51,14 +51,17 @@ PerModelUsage copyWith({String? modelName, int? invocationCount, int? promptToke
   totalTokens: totalTokens ?? this.totalTokens,
   cachedTokens: cachedTokens ?? this.cachedTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PerModelUsage &&
           modelName == other.modelName &&
           invocationCount == other.invocationCount &&
           promptTokens == other.promptTokens &&
           completionTokens == other.completionTokens &&
           totalTokens == other.totalTokens &&
-          cachedTokens == other.cachedTokens; } 
-@override int get hashCode { return Object.hash(modelName, invocationCount, promptTokens, completionTokens, totalTokens, cachedTokens); } 
-@override String toString() { return 'PerModelUsage(modelName: $modelName, invocationCount: $invocationCount, promptTokens: $promptTokens, completionTokens: $completionTokens, totalTokens: $totalTokens, cachedTokens: $cachedTokens)'; } 
+          cachedTokens == other.cachedTokens;
+
+@override int get hashCode => Object.hash(modelName, invocationCount, promptTokens, completionTokens, totalTokens, cachedTokens);
+
+@override String toString() => 'PerModelUsage(modelName: $modelName, invocationCount: $invocationCount, promptTokens: $promptTokens, completionTokens: $completionTokens, totalTokens: $totalTokens, cachedTokens: $cachedTokens)';
+
  }

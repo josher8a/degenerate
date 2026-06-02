@@ -37,11 +37,14 @@ WorkersAiPostRunCfBaaiBgeRerankerBaseRequest copyWith({List<Contexts>? contexts,
   query: query ?? this.query,
   topK: topK != null ? topK() : this.topK,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfBaaiBgeRerankerBaseRequest &&
           listEquals(contexts, other.contexts) &&
           query == other.query &&
-          topK == other.topK; } 
-@override int get hashCode { return Object.hash(Object.hashAll(contexts), query, topK); } 
-@override String toString() { return 'WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(contexts: $contexts, query: $query, topK: $topK)'; } 
+          topK == other.topK;
+
+@override int get hashCode => Object.hash(Object.hashAll(contexts), query, topK);
+
+@override String toString() => 'WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(contexts: $contexts, query: $query, topK: $topK)';
+
  }

@@ -20,10 +20,13 @@ Owner copyWith({String? name, String? Function()? email, }) { return Owner(
   name: name ?? this.name,
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Owner &&
           name == other.name &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(name, email); } 
-@override String toString() { return 'Owner(name: $name, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(name, email);
+
+@override String toString() => 'Owner(name: $name, email: $email)';
+
  }

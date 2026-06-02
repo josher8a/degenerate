@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgsCreateInvitationRequestRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgsCreateInvitationRequestRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrgsCreateInvitationRequestRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrgsCreateInvitationRequestRole($value)';
+
  }
 @immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });
 
@@ -73,12 +76,15 @@ OrgsCreateInvitationRequest copyWith({int? Function()? inviteeId, String? Functi
   role: role != null ? role() : this.role,
   teamIds: teamIds != null ? teamIds() : this.teamIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateInvitationRequest &&
           inviteeId == other.inviteeId &&
           email == other.email &&
           role == other.role &&
-          listEquals(teamIds, other.teamIds); } 
-@override int get hashCode { return Object.hash(inviteeId, email, role, Object.hashAll(teamIds ?? const [])); } 
-@override String toString() { return 'OrgsCreateInvitationRequest(inviteeId: $inviteeId, email: $email, role: $role, teamIds: $teamIds)'; } 
+          listEquals(teamIds, other.teamIds);
+
+@override int get hashCode => Object.hash(inviteeId, email, role, Object.hashAll(teamIds ?? const []));
+
+@override String toString() => 'OrgsCreateInvitationRequest(inviteeId: $inviteeId, email: $email, role: $role, teamIds: $teamIds)';
+
  }

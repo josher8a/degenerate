@@ -25,11 +25,14 @@ FileCommitCommitAuthor copyWith({String? Function()? date, String? Function()? n
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitCommitAuthor &&
           date == other.date &&
           name == other.name &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(date, name, email); } 
-@override String toString() { return 'FileCommitCommitAuthor(date: $date, name: $name, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(date, name, email);
+
+@override String toString() => 'FileCommitCommitAuthor(date: $date, name: $name, email: $email)';
+
  }

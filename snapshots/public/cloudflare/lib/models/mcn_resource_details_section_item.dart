@@ -25,11 +25,14 @@ McnResourceDetailsSectionItem copyWith({String? Function()? helpText, String? Fu
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourceDetailsSectionItem &&
           helpText == other.helpText &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(helpText, name, value); } 
-@override String toString() { return 'McnResourceDetailsSectionItem(helpText: $helpText, name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(helpText, name, value);
+
+@override String toString() => 'McnResourceDetailsSectionItem(helpText: $helpText, name: $name, value: $value)';
+
  }

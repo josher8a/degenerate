@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningScanCompletedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningScanCompletedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSecretScanningScanCompletedType($value)';
+
  }
 /// What type of content was scanned
 @immutable final class WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningScanCompletedSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningScanCompletedSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSecretScanningScanCompletedSource($value)';
+
  }
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
 @immutable final class CustomPatternScope {const CustomPatternScope._(this.value);
@@ -88,10 +94,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPatternScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPatternScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomPatternScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomPatternScope($value)';
+
  }
 @immutable final class WebhookSecretScanningScanCompleted {const WebhookSecretScanningScanCompleted({required this.action, required this.type, required this.source, required this.startedAt, required this.completedAt, this.secretTypes, this.customPatternName, this.customPatternScope, this.repository, this.enterprise, this.installation, this.organization, this.sender, });
 
@@ -179,7 +188,7 @@ WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? act
   organization: organization != null ? organization() : this.organization,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningScanCompleted &&
           action == other.action &&
           type == other.type &&
@@ -193,7 +202,10 @@ WebhookSecretScanningScanCompleted copyWith({WebhookCheckRunCompletedAction? act
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, type, source, startedAt, completedAt, Object.hashAll(secretTypes ?? const []), customPatternName, customPatternScope, repository, enterprise, installation, organization, sender); } 
-@override String toString() { return 'WebhookSecretScanningScanCompleted(action: $action, type: $type, source: $source, startedAt: $startedAt, completedAt: $completedAt, secretTypes: $secretTypes, customPatternName: $customPatternName, customPatternScope: $customPatternScope, repository: $repository, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, type, source, startedAt, completedAt, Object.hashAll(secretTypes ?? const []), customPatternName, customPatternScope, repository, enterprise, installation, organization, sender);
+
+@override String toString() => 'WebhookSecretScanningScanCompleted(action: $action, type: $type, source: $source, startedAt: $startedAt, completedAt: $completedAt, secretTypes: $secretTypes, customPatternName: $customPatternName, customPatternScope: $customPatternScope, repository: $repository, enterprise: $enterprise, installation: $installation, organization: $organization, sender: $sender)';
+
  }

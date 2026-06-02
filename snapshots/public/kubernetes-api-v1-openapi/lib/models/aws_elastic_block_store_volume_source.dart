@@ -37,12 +37,15 @@ AwsElasticBlockStoreVolumeSource copyWith({String? Function()? fsType, int? Func
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeId: volumeId ?? this.volumeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AwsElasticBlockStoreVolumeSource &&
           fsType == other.fsType &&
           partition == other.partition &&
           readOnly == other.readOnly &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, partition, readOnly, volumeId); } 
-@override String toString() { return 'AwsElasticBlockStoreVolumeSource(fsType: $fsType, partition: $partition, readOnly: $readOnly, volumeId: $volumeId)'; } 
+          volumeId == other.volumeId;
+
+@override int get hashCode => Object.hash(fsType, partition, readOnly, volumeId);
+
+@override String toString() => 'AwsElasticBlockStoreVolumeSource(fsType: $fsType, partition: $partition, readOnly: $readOnly, volumeId: $volumeId)';
+
  }

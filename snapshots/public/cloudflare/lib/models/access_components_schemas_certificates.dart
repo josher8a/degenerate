@@ -47,7 +47,7 @@ AccessComponentsSchemasCertificates copyWith({List<String>? Function()? associat
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessComponentsSchemasCertificates &&
           listEquals(associatedHostnames, other.associatedHostnames) &&
           createdAt == other.createdAt &&
@@ -55,7 +55,10 @@ AccessComponentsSchemasCertificates copyWith({List<String>? Function()? associat
           fingerprint == other.fingerprint &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(associatedHostnames ?? const []), createdAt, expiresOn, fingerprint, id, name, updatedAt); } 
-@override String toString() { return 'AccessComponentsSchemasCertificates(associatedHostnames: $associatedHostnames, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(Object.hashAll(associatedHostnames ?? const []), createdAt, expiresOn, fingerprint, id, name, updatedAt);
+
+@override String toString() => 'AccessComponentsSchemasCertificates(associatedHostnames: $associatedHostnames, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

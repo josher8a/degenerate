@@ -35,17 +35,21 @@ final FunctionToolParam functionToolParam;
 
 @override String get type => 'function';
 
-@override Map<String, dynamic> toJson() { return {...functionToolParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionToolParam.toJson(), 'type': type};
+
 NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
   name: name,
   description: description,
   parameters: parameters,
   strict: strict,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam; } 
-@override int get hashCode { return functionToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamTools.function($functionToolParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NamespaceToolParamToolsFunction && functionToolParam == other.functionToolParam;
+
+@override int get hashCode => functionToolParam.hashCode;
+
+@override String toString() => 'NamespaceToolParamTools.function($functionToolParam)';
+
 @override String get name => functionToolParam.name;
 
 @override String? get description => functionToolParam.description;
@@ -59,17 +63,21 @@ final CustomToolParam customToolParam;
 
 @override String get type => 'custom';
 
-@override Map<String, dynamic> toJson() { return {...customToolParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type};
+
 NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
   name: name,
   description: description,
   format: format,
   deferLoading: deferLoading,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam; } 
-@override int get hashCode { return customToolParam.hashCode; } 
-@override String toString() { return 'NamespaceToolParamTools.custom($customToolParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NamespaceToolParamToolsCustom && customToolParam == other.customToolParam;
+
+@override int get hashCode => customToolParam.hashCode;
+
+@override String toString() => 'NamespaceToolParamTools.custom($customToolParam)';
+
 @override String get name => customToolParam.name;
 
 @override String? get description => customToolParam.description;
@@ -83,11 +91,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NamespaceToolParamTools$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'NamespaceToolParamTools.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NamespaceToolParamTools$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'NamespaceToolParamTools.unknown($json)';
+
 @override String get name => json['name'] as String;
 
 @override String? get description => json['description'] as String?;

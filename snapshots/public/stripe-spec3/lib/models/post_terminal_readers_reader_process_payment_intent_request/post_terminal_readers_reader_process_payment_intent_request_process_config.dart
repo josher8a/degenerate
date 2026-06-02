@@ -36,13 +36,16 @@ PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig copyWith({Conf
   skipTipping: skipTipping != null ? skipTipping() : this.skipTipping,
   tipping: tipping != null ? tipping() : this.tipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig &&
           allowRedisplay == other.allowRedisplay &&
           enableCustomerCancellation == other.enableCustomerCancellation &&
           returnUrl == other.returnUrl &&
           skipTipping == other.skipTipping &&
-          tipping == other.tipping; } 
-@override int get hashCode { return Object.hash(allowRedisplay, enableCustomerCancellation, returnUrl, skipTipping, tipping); } 
-@override String toString() { return 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)'; } 
+          tipping == other.tipping;
+
+@override int get hashCode => Object.hash(allowRedisplay, enableCustomerCancellation, returnUrl, skipTipping, tipping);
+
+@override String toString() => 'PostTerminalReadersReaderProcessPaymentIntentRequestProcessConfig(allowRedisplay: $allowRedisplay, enableCustomerCancellation: $enableCustomerCancellation, returnUrl: $returnUrl, skipTipping: $skipTipping, tipping: $tipping)';
+
  }

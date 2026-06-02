@@ -28,11 +28,14 @@ ReferrerTraffic copyWith({String? referrer, int? count, int? uniques, }) { retur
   count: count ?? this.count,
   uniques: uniques ?? this.uniques,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReferrerTraffic &&
           referrer == other.referrer &&
           count == other.count &&
-          uniques == other.uniques; } 
-@override int get hashCode { return Object.hash(referrer, count, uniques); } 
-@override String toString() { return 'ReferrerTraffic(referrer: $referrer, count: $count, uniques: $uniques)'; } 
+          uniques == other.uniques;
+
+@override int get hashCode => Object.hash(referrer, count, uniques);
+
+@override String toString() => 'ReferrerTraffic(referrer: $referrer, count: $count, uniques: $uniques)';
+
  }

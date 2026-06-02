@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)';
+
  }
 /// Represents what the user should do, if anything, to activate the Feature.
 @immutable final class Resolution {const Resolution._(this.value);
@@ -69,10 +72,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Resolution && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Resolution($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Resolution && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Resolution($value)';
+
  }
 /// The `platform_restrictions` that are restricting this Feature.
 @immutable final class Restriction {const Restriction._(this.value);
@@ -94,10 +100,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Restriction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Restriction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Restriction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Restriction($value)';
+
  }
 /// Additional details on the FinancialAccount Features information.
 @immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetails {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetails({required this.code, this.resolution, this.restriction, });
@@ -128,11 +137,14 @@ TreasuryFinancialAccountsResourceTogglesSettingStatusDetails copyWith({TreasuryF
   resolution: resolution != null ? resolution() : this.resolution,
   restriction: restriction != null ? restriction() : this.restriction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetails &&
           code == other.code &&
           resolution == other.resolution &&
-          restriction == other.restriction; } 
-@override int get hashCode { return Object.hash(code, resolution, restriction); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(code: $code, resolution: $resolution, restriction: $restriction)'; } 
+          restriction == other.restriction;
+
+@override int get hashCode => Object.hash(code, resolution, restriction);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetails(code: $code, resolution: $resolution, restriction: $restriction)';
+
  }

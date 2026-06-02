@@ -30,12 +30,15 @@ Rtt copyWith({double? Function()? $100msOrGreaterEventFraction, double? Function
   $500msOrGreaterEventFraction: $500msOrGreaterEventFraction != null ? $500msOrGreaterEventFraction() : this.$500msOrGreaterEventFraction,
   avg: avg != null ? avg() : this.avg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rtt &&
           $100msOrGreaterEventFraction == other.$100msOrGreaterEventFraction &&
           $250msOrGreaterEventFraction == other.$250msOrGreaterEventFraction &&
           $500msOrGreaterEventFraction == other.$500msOrGreaterEventFraction &&
-          avg == other.avg; } 
-@override int get hashCode { return Object.hash($100msOrGreaterEventFraction, $250msOrGreaterEventFraction, $500msOrGreaterEventFraction, avg); } 
-@override String toString() { return 'Rtt(\$100msOrGreaterEventFraction: ${$100msOrGreaterEventFraction}, \$250msOrGreaterEventFraction: ${$250msOrGreaterEventFraction}, \$500msOrGreaterEventFraction: ${$500msOrGreaterEventFraction}, avg: $avg)'; } 
+          avg == other.avg;
+
+@override int get hashCode => Object.hash($100msOrGreaterEventFraction, $250msOrGreaterEventFraction, $500msOrGreaterEventFraction, avg);
+
+@override String toString() => 'Rtt(\$100msOrGreaterEventFraction: ${$100msOrGreaterEventFraction}, \$250msOrGreaterEventFraction: ${$250msOrGreaterEventFraction}, \$500msOrGreaterEventFraction: ${$500msOrGreaterEventFraction}, avg: $avg)';
+
  }

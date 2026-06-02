@@ -75,7 +75,7 @@ OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUr
   createdAt: createdAt ?? this.createdAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgHook &&
           id == other.id &&
           url == other.url &&
@@ -87,7 +87,10 @@ OrgHook copyWith({int? id, Uri? url, Uri? pingUrl, Uri? Function()? deliveriesUr
           config == other.config &&
           updatedAt == other.updatedAt &&
           createdAt == other.createdAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, url, pingUrl, deliveriesUrl, name, Object.hashAll(events), active, config, updatedAt, createdAt, type); } 
-@override String toString() { return 'OrgHook(id: $id, url: $url, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, name: $name, events: $events, active: $active, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, url, pingUrl, deliveriesUrl, name, Object.hashAll(events), active, config, updatedAt, createdAt, type);
+
+@override String toString() => 'OrgHook(id: $id, url: $url, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, name: $name, events: $events, active: $active, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, type: $type)';
+
  }

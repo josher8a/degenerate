@@ -19,19 +19,22 @@ final class ChecksRerequestRunError$403 extends ChecksRerequestRunError {const C
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ChecksRerequestRunError$404 extends ChecksRerequestRunError {const ChecksRerequestRunError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ChecksRerequestRunError$422 extends ChecksRerequestRunError {const ChecksRerequestRunError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ChecksRerequestRunError$Unknown extends ChecksRerequestRunError {const ChecksRerequestRunError$Unknown(this.statusCode, this.rawBody, );
 

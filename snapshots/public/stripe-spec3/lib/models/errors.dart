@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ErrorsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ErrorsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ErrorsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ErrorsType($value)';
+
  }
 /// 
 @immutable final class Errors {const Errors({required this.type, this.adviceCode, this.charge, this.code, this.declineCode, this.docUrl, this.message, this.networkAdviceCode, this.networkDeclineCode, this.param, this.paymentIntent, this.paymentMethod, this.paymentMethodType, this.requestLogUrl, this.setupIntent, this.source, });
@@ -182,7 +185,7 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
   source: source != null ? source() : this.source,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Errors &&
           adviceCode == other.adviceCode &&
           charge == other.charge &&
@@ -199,7 +202,10 @@ Errors copyWith({String? Function()? adviceCode, String? Function()? charge, Str
           requestLogUrl == other.requestLogUrl &&
           setupIntent == other.setupIntent &&
           source == other.source &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(adviceCode, charge, code, declineCode, docUrl, message, networkAdviceCode, networkDeclineCode, param, paymentIntent, paymentMethod, paymentMethodType, requestLogUrl, setupIntent, source, type); } 
-@override String toString() { return 'Errors(adviceCode: $adviceCode, charge: $charge, code: $code, declineCode: $declineCode, docUrl: $docUrl, message: $message, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, param: $param, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodType: $paymentMethodType, requestLogUrl: $requestLogUrl, setupIntent: $setupIntent, source: $source, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(adviceCode, charge, code, declineCode, docUrl, message, networkAdviceCode, networkDeclineCode, param, paymentIntent, paymentMethod, paymentMethodType, requestLogUrl, setupIntent, source, type);
+
+@override String toString() => 'Errors(adviceCode: $adviceCode, charge: $charge, code: $code, declineCode: $declineCode, docUrl: $docUrl, message: $message, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, param: $param, paymentIntent: $paymentIntent, paymentMethod: $paymentMethod, paymentMethodType: $paymentMethodType, requestLogUrl: $requestLogUrl, setupIntent: $setupIntent, source: $source, type: $type)';
+
  }

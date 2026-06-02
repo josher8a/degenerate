@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ObservatoryLighthouseState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ObservatoryLighthouseState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ObservatoryLighthouseState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ObservatoryLighthouseState($value)';
+
  }
 /// The Lighthouse report.
 @immutable final class ObservatoryLighthouseReport {const ObservatoryLighthouseReport({this.cls, this.deviceType, this.error, this.fcp, this.jsonReportUrl, this.lcp, this.performanceScore, this.si, this.state, this.tbt, this.ttfb, this.tti, });
@@ -125,7 +128,7 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
   ttfb: ttfb != null ? ttfb() : this.ttfb,
   tti: tti != null ? tti() : this.tti,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryLighthouseReport &&
           cls == other.cls &&
           deviceType == other.deviceType &&
@@ -138,7 +141,10 @@ ObservatoryLighthouseReport copyWith({double? Function()? cls, ObservatoryDevice
           state == other.state &&
           tbt == other.tbt &&
           ttfb == other.ttfb &&
-          tti == other.tti; } 
-@override int get hashCode { return Object.hash(cls, deviceType, error, fcp, jsonReportUrl, lcp, performanceScore, si, state, tbt, ttfb, tti); } 
-@override String toString() { return 'ObservatoryLighthouseReport(cls: $cls, deviceType: $deviceType, error: $error, fcp: $fcp, jsonReportUrl: $jsonReportUrl, lcp: $lcp, performanceScore: $performanceScore, si: $si, state: $state, tbt: $tbt, ttfb: $ttfb, tti: $tti)'; } 
+          tti == other.tti;
+
+@override int get hashCode => Object.hash(cls, deviceType, error, fcp, jsonReportUrl, lcp, performanceScore, si, state, tbt, ttfb, tti);
+
+@override String toString() => 'ObservatoryLighthouseReport(cls: $cls, deviceType: $deviceType, error: $error, fcp: $fcp, jsonReportUrl: $jsonReportUrl, lcp: $lcp, performanceScore: $performanceScore, si: $si, state: $state, tbt: $tbt, ttfb: $ttfb, tti: $tti)';
+
  }

@@ -44,13 +44,16 @@ PostGroupCreateResponse copyWith({DateTime? createdAt, String? description, Stri
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostGroupCreateResponse &&
           createdAt == other.createdAt &&
           description == other.description &&
           name == other.name &&
           updatedAt == other.updatedAt &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(createdAt, description, name, updatedAt, uuid); } 
-@override String toString() { return 'PostGroupCreateResponse(createdAt: $createdAt, description: $description, name: $name, updatedAt: $updatedAt, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(createdAt, description, name, updatedAt, uuid);
+
+@override String toString() => 'PostGroupCreateResponse(createdAt: $createdAt, description: $description, name: $name, updatedAt: $updatedAt, uuid: $uuid)';
+
  }

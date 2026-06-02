@@ -32,15 +32,19 @@ final ChatCompletionMessageToolCall chatCompletionMessageToolCall;
 
 @override String get type => 'function';
 
-@override Map<String, dynamic> toJson() { return {...chatCompletionMessageToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...chatCompletionMessageToolCall.toJson(), 'type': type};
+
 ChatCompletionMessageToolCalls2Function copyWith({String? id, ChatCompletionMessageToolCallFunction? function, }) { return ChatCompletionMessageToolCalls2Function(chatCompletionMessageToolCall.copyWith(
   id: id,
   function: function,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageToolCalls2Function && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall; } 
-@override int get hashCode { return chatCompletionMessageToolCall.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCalls2.function($chatCompletionMessageToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionMessageToolCalls2Function && chatCompletionMessageToolCall == other.chatCompletionMessageToolCall;
+
+@override int get hashCode => chatCompletionMessageToolCall.hashCode;
+
+@override String toString() => 'ChatCompletionMessageToolCalls2.function($chatCompletionMessageToolCall)';
+
 @override String get id => chatCompletionMessageToolCall.id;
 
  }
@@ -52,15 +56,19 @@ final ChatCompletionMessageCustomToolCall chatCompletionMessageCustomToolCall;
 
 @override String get type => 'custom';
 
-@override Map<String, dynamic> toJson() { return {...chatCompletionMessageCustomToolCall.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...chatCompletionMessageCustomToolCall.toJson(), 'type': type};
+
 ChatCompletionMessageToolCalls2Custom copyWith({String? id, ChatCompletionMessageCustomToolCallCustom? custom, }) { return ChatCompletionMessageToolCalls2Custom(chatCompletionMessageCustomToolCall.copyWith(
   id: id,
   custom: custom,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageToolCalls2Custom && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall; } 
-@override int get hashCode { return chatCompletionMessageCustomToolCall.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCalls2.custom($chatCompletionMessageCustomToolCall)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionMessageToolCalls2Custom && chatCompletionMessageCustomToolCall == other.chatCompletionMessageCustomToolCall;
+
+@override int get hashCode => chatCompletionMessageCustomToolCall.hashCode;
+
+@override String toString() => 'ChatCompletionMessageToolCalls2.custom($chatCompletionMessageCustomToolCall)';
+
 @override String get id => chatCompletionMessageCustomToolCall.id;
 
  }
@@ -72,11 +80,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionMessageToolCalls2$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ChatCompletionMessageToolCalls2.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionMessageToolCalls2$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ChatCompletionMessageToolCalls2.unknown($json)';
+
 @override String get id => json['id'] as String;
 
  }

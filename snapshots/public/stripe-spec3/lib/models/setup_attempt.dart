@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupAttemptObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupAttemptObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupAttemptObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupAttemptObject($value)';
+
  }
 /// A SetupAttempt describes one attempted confirmation of a SetupIntent,
 /// whether that confirmation is successful or unsuccessful. You can use
@@ -153,7 +156,7 @@ SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool?
   status: status ?? this.status,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttempt &&
           application == other.application &&
           attachToSelf == other.attachToSelf &&
@@ -170,7 +173,10 @@ SetupAttempt copyWith({ApplicationFeeApplication? Function()? application, bool?
           setupError == other.setupError &&
           setupIntent == other.setupIntent &&
           status == other.status &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage); } 
-@override String toString() { return 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(application, attachToSelf, created, customer, customerAccount, Object.hashAll(flowDirections ?? const []), id, livemode, object, onBehalfOf, paymentMethod, paymentMethodDetails, setupError, setupIntent, status, usage);
+
+@override String toString() => 'SetupAttempt(application: $application, attachToSelf: $attachToSelf, created: $created, customer: $customer, customerAccount: $customerAccount, flowDirections: $flowDirections, id: $id, livemode: $livemode, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodDetails: $paymentMethodDetails, setupError: $setupError, setupIntent: $setupIntent, status: $status, usage: $usage)';
+
  }

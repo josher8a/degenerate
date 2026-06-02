@@ -93,7 +93,7 @@ EmailSecurityBatchAllowPoliciesRequestPuts copyWith({String? Function()? comment
   verifySender: verifySender ?? this.verifySender,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchAllowPoliciesRequestPuts &&
           comments == other.comments &&
           isAcceptableSender == other.isAcceptableSender &&
@@ -106,7 +106,10 @@ EmailSecurityBatchAllowPoliciesRequestPuts copyWith({String? Function()? comment
           pattern == other.pattern &&
           patternType == other.patternType &&
           verifySender == other.verifySender &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, id); } 
-@override String toString() { return 'EmailSecurityBatchAllowPoliciesRequestPuts(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRecipient, isRegex, isSender, isSpoof, isTrustedSender, pattern, patternType, verifySender, id);
+
+@override String toString() => 'EmailSecurityBatchAllowPoliciesRequestPuts(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRecipient: $isRecipient, isRegex: $isRegex, isSender: $isSender, isSpoof: $isSpoof, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender, id: $id)';
+
  }

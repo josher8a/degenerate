@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingNetworkTokenDeviceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingNetworkTokenDeviceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingNetworkTokenDeviceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingNetworkTokenDeviceType($value)';
+
  }
 /// 
 @immutable final class IssuingNetworkTokenDevice {const IssuingNetworkTokenDevice({this.deviceFingerprint, this.ipAddress, this.location, this.name, this.phoneNumber, this.type, });
@@ -98,14 +101,17 @@ IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, Strin
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenDevice &&
           deviceFingerprint == other.deviceFingerprint &&
           ipAddress == other.ipAddress &&
           location == other.location &&
           name == other.name &&
           phoneNumber == other.phoneNumber &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(deviceFingerprint, ipAddress, location, name, phoneNumber, type); } 
-@override String toString() { return 'IssuingNetworkTokenDevice(deviceFingerprint: $deviceFingerprint, ipAddress: $ipAddress, location: $location, name: $name, phoneNumber: $phoneNumber, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(deviceFingerprint, ipAddress, location, name, phoneNumber, type);
+
+@override String toString() => 'IssuingNetworkTokenDevice(deviceFingerprint: $deviceFingerprint, ipAddress: $ipAddress, location: $location, name: $name, phoneNumber: $phoneNumber, type: $type)';
+
  }

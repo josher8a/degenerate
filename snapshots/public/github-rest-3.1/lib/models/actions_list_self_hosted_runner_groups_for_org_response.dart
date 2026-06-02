@@ -21,10 +21,13 @@ ActionsListSelfHostedRunnerGroupsForOrgResponse copyWith({double? totalCount, Li
   totalCount: totalCount ?? this.totalCount,
   runnerGroups: runnerGroups ?? this.runnerGroups,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListSelfHostedRunnerGroupsForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(runnerGroups, other.runnerGroups); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(runnerGroups)); } 
-@override String toString() { return 'ActionsListSelfHostedRunnerGroupsForOrgResponse(totalCount: $totalCount, runnerGroups: $runnerGroups)'; } 
+          listEquals(runnerGroups, other.runnerGroups);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(runnerGroups));
+
+@override String toString() => 'ActionsListSelfHostedRunnerGroupsForOrgResponse(totalCount: $totalCount, runnerGroups: $runnerGroups)';
+
  }

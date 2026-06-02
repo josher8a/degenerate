@@ -28,11 +28,14 @@ IssuesCreateLabelRequest copyWith({String? name, String? Function()? color, Stri
   color: color != null ? color() : this.color,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesCreateLabelRequest &&
           name == other.name &&
           color == other.color &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(name, color, description); } 
-@override String toString() { return 'IssuesCreateLabelRequest(name: $name, color: $color, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(name, color, description);
+
+@override String toString() => 'IssuesCreateLabelRequest(name: $name, color: $color, description: $description)';
+
  }

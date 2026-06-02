@@ -33,11 +33,14 @@ StatusCause copyWith({String? Function()? field, String? Function()? message, St
   message: message != null ? message() : this.message,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusCause &&
           field == other.field &&
           message == other.message &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(field, message, reason); } 
-@override String toString() { return 'StatusCause(field: $field, message: $message, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(field, message, reason);
+
+@override String toString() => 'StatusCause(field: $field, message: $message, reason: $reason)';
+
  }

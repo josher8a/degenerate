@@ -22,10 +22,13 @@ PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest c
   expand: expand != null ? expand() : this.expand,
   rejectionReasons: rejectionReasons ?? this.rejectionReasons,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest &&
           listEquals(expand, other.expand) &&
-          rejectionReasons == other.rejectionReasons; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), rejectionReasons); } 
-@override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest(expand: $expand, rejectionReasons: $rejectionReasons)'; } 
+          rejectionReasons == other.rejectionReasons;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), rejectionReasons);
+
+@override String toString() => 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequest(expand: $expand, rejectionReasons: $rejectionReasons)';
+
  }

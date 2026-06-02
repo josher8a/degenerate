@@ -41,12 +41,15 @@ PostCouponsCouponRequest copyWith({Map<String, PostCouponsCouponRequestCurrencyO
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsCouponRequest &&
           currencyOptions == other.currencyOptions &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(currencyOptions, Object.hashAll(expand ?? const []), metadata, name); } 
-@override String toString() { return 'PostCouponsCouponRequest(currencyOptions: $currencyOptions, expand: $expand, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(currencyOptions, Object.hashAll(expand ?? const []), metadata, name);
+
+@override String toString() => 'PostCouponsCouponRequest(currencyOptions: $currencyOptions, expand: $expand, metadata: $metadata, name: $name)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertFixedAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertFixedAlertState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCodeScanningAlertFixedAlertState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCodeScanningAlertFixedAlertState($value)';
+
  }
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertFixedAlert {const WebhookCodeScanningAlertFixedAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment, this.fixedAt, this.instancesUrl, this.mostRecentInstance, });
@@ -128,7 +131,7 @@ WebhookCodeScanningAlertFixedAlert copyWith({List<SimpleUser>? Function()? assig
   tool: tool ?? this.tool,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertFixedAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -144,7 +147,10 @@ WebhookCodeScanningAlertFixedAlert copyWith({List<SimpleUser>? Function()? assig
           rule == other.rule &&
           state == other.state &&
           tool == other.tool &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, url); } 
-@override String toString() { return 'WebhookCodeScanningAlertFixedAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, instancesUrl, mostRecentInstance, number, rule, state, tool, url);
+
+@override String toString() => 'WebhookCodeScanningAlertFixedAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';
+
  }

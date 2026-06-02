@@ -42,13 +42,16 @@ CallsAppWithSecret copyWith({CallsCreated? Function()? created, CallsModified? F
   secret: secret != null ? secret() : this.secret,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CallsAppWithSecret &&
           created == other.created &&
           modified == other.modified &&
           name == other.name &&
           secret == other.secret &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(created, modified, name, secret, uid); } 
-@override String toString() { return 'CallsAppWithSecret(created: $created, modified: $modified, name: $name, secret: $secret, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(created, modified, name, secret, uid);
+
+@override String toString() => 'CallsAppWithSecret(created: $created, modified: $modified, name: $name, secret: $secret, uid: $uid)';
+
  }

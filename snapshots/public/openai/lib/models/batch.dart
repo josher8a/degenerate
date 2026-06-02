@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BatchObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BatchObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BatchObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BatchObject($value)';
+
  }
 /// The current status of the batch.
 @immutable final class BatchStatus {const BatchStatus._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BatchStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BatchStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BatchStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BatchStatus($value)';
+
  }
 @immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata, });
 
@@ -217,7 +223,7 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
   usage: usage != null ? usage() : this.usage,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Batch &&
           id == other.id &&
           object == other.object &&
@@ -240,7 +246,10 @@ Batch copyWith({String? id, BatchObject? object, String? endpoint, String? Funct
           cancelledAt == other.cancelledAt &&
           requestCounts == other.requestCounts &&
           usage == other.usage &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hashAll([id, object, endpoint, model, errors, inputFileId, completionWindow, status, outputFileId, errorFileId, createdAt, inProgressAt, expiresAt, finalizingAt, completedAt, failedAt, expiredAt, cancellingAt, cancelledAt, requestCounts, usage, metadata]); } 
-@override String toString() { return 'Batch(id: $id, object: $object, endpoint: $endpoint, model: $model, errors: $errors, inputFileId: $inputFileId, completionWindow: $completionWindow, status: $status, outputFileId: $outputFileId, errorFileId: $errorFileId, createdAt: $createdAt, inProgressAt: $inProgressAt, expiresAt: $expiresAt, finalizingAt: $finalizingAt, completedAt: $completedAt, failedAt: $failedAt, expiredAt: $expiredAt, cancellingAt: $cancellingAt, cancelledAt: $cancelledAt, requestCounts: $requestCounts, usage: $usage, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hashAll([id, object, endpoint, model, errors, inputFileId, completionWindow, status, outputFileId, errorFileId, createdAt, inProgressAt, expiresAt, finalizingAt, completedAt, failedAt, expiredAt, cancellingAt, cancelledAt, requestCounts, usage, metadata]);
+
+@override String toString() => 'Batch(id: $id, object: $object, endpoint: $endpoint, model: $model, errors: $errors, inputFileId: $inputFileId, completionWindow: $completionWindow, status: $status, outputFileId: $outputFileId, errorFileId: $errorFileId, createdAt: $createdAt, inProgressAt: $inProgressAt, expiresAt: $expiresAt, finalizingAt: $finalizingAt, completedAt: $completedAt, failedAt: $failedAt, expiredAt: $expiredAt, cancellingAt: $cancellingAt, cancelledAt: $cancelledAt, requestCounts: $requestCounts, usage: $usage, metadata: $metadata)';
+
  }

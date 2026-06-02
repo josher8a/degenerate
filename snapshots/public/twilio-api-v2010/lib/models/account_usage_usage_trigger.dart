@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUsageUsageTriggerCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUsageUsageTriggerCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountUsageUsageTriggerCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountUsageUsageTriggerCallbackMethod($value)';
+
  }
 @immutable final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid, this.apiVersion, this.callbackMethod, this.callbackUrl, this.currentValue, this.dateCreated, this.dateFired, this.dateUpdated, this.friendlyName, this.recurring, this.sid, this.triggerBy, this.triggerValue, this.uri, this.usageCategory, this.usageRecordUri, });
 
@@ -144,7 +147,7 @@ AccountUsageUsageTrigger copyWith({String? Function()? accountSid, String? Funct
   usageCategory: usageCategory != null ? usageCategory() : this.usageCategory,
   usageRecordUri: usageRecordUri != null ? usageRecordUri() : this.usageRecordUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUsageUsageTrigger &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -161,7 +164,10 @@ AccountUsageUsageTrigger copyWith({String? Function()? accountSid, String? Funct
           triggerValue == other.triggerValue &&
           uri == other.uri &&
           usageCategory == other.usageCategory &&
-          usageRecordUri == other.usageRecordUri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callbackMethod, callbackUrl, currentValue, dateCreated, dateFired, dateUpdated, friendlyName, recurring, sid, triggerBy, triggerValue, uri, usageCategory, usageRecordUri); } 
-@override String toString() { return 'AccountUsageUsageTrigger(accountSid: $accountSid, apiVersion: $apiVersion, callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, currentValue: $currentValue, dateCreated: $dateCreated, dateFired: $dateFired, dateUpdated: $dateUpdated, friendlyName: $friendlyName, recurring: $recurring, sid: $sid, triggerBy: $triggerBy, triggerValue: $triggerValue, uri: $uri, usageCategory: $usageCategory, usageRecordUri: $usageRecordUri)'; } 
+          usageRecordUri == other.usageRecordUri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callbackMethod, callbackUrl, currentValue, dateCreated, dateFired, dateUpdated, friendlyName, recurring, sid, triggerBy, triggerValue, uri, usageCategory, usageRecordUri);
+
+@override String toString() => 'AccountUsageUsageTrigger(accountSid: $accountSid, apiVersion: $apiVersion, callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, currentValue: $currentValue, dateCreated: $dateCreated, dateFired: $dateFired, dateUpdated: $dateUpdated, friendlyName: $friendlyName, recurring: $recurring, sid: $sid, triggerBy: $triggerBy, triggerValue: $triggerValue, uri: $uri, usageCategory: $usageCategory, usageRecordUri: $usageRecordUri)';
+
  }

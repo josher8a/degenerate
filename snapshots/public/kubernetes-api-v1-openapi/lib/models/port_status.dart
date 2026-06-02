@@ -33,11 +33,14 @@ PortStatus copyWith({String? Function()? error, int? port, String? protocol, }) 
   port: port ?? this.port,
   protocol: protocol ?? this.protocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortStatus &&
           error == other.error &&
           port == other.port &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(error, port, protocol); } 
-@override String toString() { return 'PortStatus(error: $error, port: $port, protocol: $protocol)'; } 
+          protocol == other.protocol;
+
+@override int get hashCode => Object.hash(error, port, protocol);
+
+@override String toString() => 'PortStatus(error: $error, port: $port, protocol: $protocol)';
+
  }

@@ -32,11 +32,14 @@ CacheRulesOriginH2MaxStreams copyWith({CacheRulesOriginH2MaxStreamsId? id, DateT
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesOriginH2MaxStreams &&
           id == other.id &&
           modifiedOn == other.modifiedOn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, modifiedOn, value); } 
-@override String toString() { return 'CacheRulesOriginH2MaxStreams(id: $id, modifiedOn: $modifiedOn, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, modifiedOn, value);
+
+@override String toString() => 'CacheRulesOriginH2MaxStreams(id: $id, modifiedOn: $modifiedOn, value: $value)';
+
  }

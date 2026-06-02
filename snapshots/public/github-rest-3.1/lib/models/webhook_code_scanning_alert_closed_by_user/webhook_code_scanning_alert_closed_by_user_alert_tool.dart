@@ -28,11 +28,14 @@ WebhookCodeScanningAlertClosedByUserAlertTool copyWith({String? Function()? guid
   name: name ?? this.name,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlertTool &&
           guid == other.guid &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(guid, name, version); } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlertTool(guid: $guid, name: $name, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(guid, name, version);
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertTool(guid: $guid, name: $name, version: $version)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalNetwork($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryCreditReversalNetwork && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryCreditReversalNetwork($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class TreasuryCreditReversalObject {const TreasuryCreditReversalObject._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryCreditReversalObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryCreditReversalObject($value)';
+
  }
 /// Status of the CreditReversal
 @immutable final class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryCreditReversalStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryCreditReversalStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryCreditReversalStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryCreditReversalStatus($value)';
+
  }
 /// You can reverse some [ReceivedCredits](https://api.stripe.com#received_credits) depending on their network and source flow. Reversing a ReceivedCredit leads to the creation of a new object known as a CreditReversal.
 @immutable final class TreasuryCreditReversal {const TreasuryCreditReversal({required this.amount, required this.created, required this.currency, required this.financialAccount, required this.id, required this.livemode, required this.metadata, required this.network, required this.object, required this.receivedCredit, required this.status, required this.statusTransitions, this.hostedRegulatoryReceiptUrl, this.transaction, });
@@ -190,7 +199,7 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction != null ? transaction() : this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryCreditReversal &&
           amount == other.amount &&
           created == other.created &&
@@ -205,7 +214,10 @@ TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, St
           receivedCredit == other.receivedCredit &&
           status == other.status &&
           statusTransitions == other.statusTransitions &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, created, currency, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, network, object, receivedCredit, status, statusTransitions, transaction); } 
-@override String toString() { return 'TreasuryCreditReversal(amount: $amount, created: $created, currency: $currency, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, network: $network, object: $object, receivedCredit: $receivedCredit, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hash(amount, created, currency, financialAccount, hostedRegulatoryReceiptUrl, id, livemode, metadata, network, object, receivedCredit, status, statusTransitions, transaction);
+
+@override String toString() => 'TreasuryCreditReversal(amount: $amount, created: $created, currency: $currency, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, livemode: $livemode, metadata: $metadata, network: $network, object: $object, receivedCredit: $receivedCredit, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)';
+
  }

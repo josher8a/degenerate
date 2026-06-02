@@ -78,7 +78,7 @@ GetEventQueryAlertReadResponse copyWith({int? accountId, String? createdAt, bool
   updatedAt: updatedAt ?? this.updatedAt,
   userEmail: userEmail ?? this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventQueryAlertReadResponse &&
           accountId == other.accountId &&
           createdAt == other.createdAt &&
@@ -89,7 +89,10 @@ GetEventQueryAlertReadResponse copyWith({int? accountId, String? createdAt, bool
           notificationType == other.notificationType &&
           queryId == other.queryId &&
           updatedAt == other.updatedAt &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail); } 
-@override String toString() { return 'GetEventQueryAlertReadResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(accountId, createdAt, enabled, frequency, id, lastSentAt, notificationType, queryId, updatedAt, userEmail);
+
+@override String toString() => 'GetEventQueryAlertReadResponse(accountId: $accountId, createdAt: $createdAt, enabled: $enabled, frequency: $frequency, id: $id, lastSentAt: $lastSentAt, notificationType: $notificationType, queryId: $queryId, updatedAt: $updatedAt, userEmail: $userEmail)';
+
  }

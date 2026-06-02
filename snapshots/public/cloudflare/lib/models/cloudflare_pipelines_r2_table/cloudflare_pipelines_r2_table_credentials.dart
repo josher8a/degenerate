@@ -23,10 +23,13 @@ CloudflarePipelinesR2TableCredentials copyWith({String? accessKeyId, String? sec
   accessKeyId: accessKeyId ?? this.accessKeyId,
   secretAccessKey: secretAccessKey ?? this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesR2TableCredentials &&
           accessKeyId == other.accessKeyId &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, secretAccessKey); } 
-@override String toString() { return 'CloudflarePipelinesR2TableCredentials(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, secretAccessKey);
+
+@override String toString() => 'CloudflarePipelinesR2TableCredentials(accessKeyId: $accessKeyId, secretAccessKey: $secretAccessKey)';
+
  }

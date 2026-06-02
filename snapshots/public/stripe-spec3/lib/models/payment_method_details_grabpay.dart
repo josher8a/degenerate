@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodDetailsGrabpay copyWith({String? Function()? transactionId}) { return PaymentMethodDetailsGrabpay(
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsGrabpay &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return transactionId.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsGrabpay(transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => transactionId.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsGrabpay(transactionId: $transactionId)';
+
  }

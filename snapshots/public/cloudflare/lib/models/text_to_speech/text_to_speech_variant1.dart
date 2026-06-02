@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TextToSpeechVariant1 copyWith({String? Function()? audio}) { return TextToSpeechVariant1(
   audio: audio != null ? audio() : this.audio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextToSpeechVariant1 &&
-          audio == other.audio; } 
-@override int get hashCode { return audio.hashCode; } 
-@override String toString() { return 'TextToSpeechVariant1(audio: $audio)'; } 
+          audio == other.audio;
+
+@override int get hashCode => audio.hashCode;
+
+@override String toString() => 'TextToSpeechVariant1(audio: $audio)';
+
  }

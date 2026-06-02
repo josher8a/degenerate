@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RulesetsSetCacheSettingsServeStale copyWith({bool? Function()? disableStaleWhileUpdating}) { return RulesetsSetCacheSettingsServeStale(
   disableStaleWhileUpdating: disableStaleWhileUpdating != null ? disableStaleWhileUpdating() : this.disableStaleWhileUpdating,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsServeStale &&
-          disableStaleWhileUpdating == other.disableStaleWhileUpdating; } 
-@override int get hashCode { return disableStaleWhileUpdating.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheSettingsServeStale(disableStaleWhileUpdating: $disableStaleWhileUpdating)'; } 
+          disableStaleWhileUpdating == other.disableStaleWhileUpdating;
+
+@override int get hashCode => disableStaleWhileUpdating.hashCode;
+
+@override String toString() => 'RulesetsSetCacheSettingsServeStale(disableStaleWhileUpdating: $disableStaleWhileUpdating)';
+
  }

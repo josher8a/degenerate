@@ -58,7 +58,7 @@ PageBuild copyWith({Uri? url, String? status, PageBuildError? error, SimpleUser?
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageBuild &&
           url == other.url &&
           status == other.status &&
@@ -67,7 +67,10 @@ PageBuild copyWith({Uri? url, String? status, PageBuildError? error, SimpleUser?
           commit == other.commit &&
           duration == other.duration &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(url, status, error, pusher, commit, duration, createdAt, updatedAt); } 
-@override String toString() { return 'PageBuild(url: $url, status: $status, error: $error, pusher: $pusher, commit: $commit, duration: $duration, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(url, status, error, pusher, commit, duration, createdAt, updatedAt);
+
+@override String toString() => 'PageBuild(url: $url, status: $status, error: $error, pusher: $pusher, commit: $commit, duration: $duration, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

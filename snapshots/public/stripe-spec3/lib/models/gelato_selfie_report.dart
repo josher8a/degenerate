@@ -46,12 +46,15 @@ GelatoSelfieReport copyWith({String? Function()? document, GelatoSelfieReportErr
   selfie: selfie != null ? selfie() : this.selfie,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoSelfieReport &&
           document == other.document &&
           error == other.error &&
           selfie == other.selfie &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(document, error, selfie, status); } 
-@override String toString() { return 'GelatoSelfieReport(document: $document, error: $error, selfie: $selfie, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(document, error, selfie, status);
+
+@override String toString() => 'GelatoSelfieReport(document: $document, error: $error, selfie: $selfie, status: $status)';
+
  }

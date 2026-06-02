@@ -36,7 +36,8 @@ final NscInterconnectPhysicalBody nscInterconnectPhysicalBody;
 
 @override String get type => 'direct';
 
-@override Map<String, dynamic> toJson() { return {...nscInterconnectPhysicalBody.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...nscInterconnectPhysicalBody.toJson(), 'type': type};
+
 NscInterconnectDirect copyWith({String? account, String? name, String? Function()? owner, NscFacilityInfo? facility, NscCloudflareSite? site, String? slotId, String? speed, }) { return NscInterconnectDirect(nscInterconnectPhysicalBody.copyWith(
   account: account,
   name: name,
@@ -46,10 +47,13 @@ NscInterconnectDirect copyWith({String? account, String? name, String? Function(
   slotId: slotId,
   speed: speed,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody; } 
-@override int get hashCode { return nscInterconnectPhysicalBody.hashCode; } 
-@override String toString() { return 'NscInterconnect.direct($nscInterconnectPhysicalBody)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscInterconnectDirect && nscInterconnectPhysicalBody == other.nscInterconnectPhysicalBody;
+
+@override int get hashCode => nscInterconnectPhysicalBody.hashCode;
+
+@override String toString() => 'NscInterconnect.direct($nscInterconnectPhysicalBody)';
+
 @override String get account => nscInterconnectPhysicalBody.account;
 
 @override String get name => nscInterconnectPhysicalBody.name;
@@ -65,7 +69,8 @@ final NscInterconnectGcpPartnerBody nscInterconnectGcpPartnerBody;
 
 @override String get type => 'gcp_partner';
 
-@override Map<String, dynamic> toJson() { return {...nscInterconnectGcpPartnerBody.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...nscInterconnectGcpPartnerBody.toJson(), 'type': type};
+
 NscInterconnectGcpPartner copyWith({String? account, String? name, String? Function()? owner, String? region, Bandwidth? Function()? speed, }) { return NscInterconnectGcpPartner(nscInterconnectGcpPartnerBody.copyWith(
   account: account,
   name: name,
@@ -73,10 +78,13 @@ NscInterconnectGcpPartner copyWith({String? account, String? name, String? Funct
   region: region,
   speed: speed,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody; } 
-@override int get hashCode { return nscInterconnectGcpPartnerBody.hashCode; } 
-@override String toString() { return 'NscInterconnect.gcpPartner($nscInterconnectGcpPartnerBody)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscInterconnectGcpPartner && nscInterconnectGcpPartnerBody == other.nscInterconnectGcpPartnerBody;
+
+@override int get hashCode => nscInterconnectGcpPartnerBody.hashCode;
+
+@override String toString() => 'NscInterconnect.gcpPartner($nscInterconnectGcpPartnerBody)';
+
 @override String get account => nscInterconnectGcpPartnerBody.account;
 
 @override String get name => nscInterconnectGcpPartnerBody.name;
@@ -92,11 +100,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NscInterconnect$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'NscInterconnect.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NscInterconnect$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'NscInterconnect.unknown($json)';
+
 @override String get account => json['account'] as String;
 
 @override String get name => json['name'] as String;

@@ -19,19 +19,22 @@ final class SubscriptionsCreateError$400 extends SubscriptionsCreateError {const
 
 final Failure error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class SubscriptionsCreateError$404 extends SubscriptionsCreateError {const SubscriptionsCreateError$404(this.error);
 
 final Failure error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SubscriptionsCreateError$405 extends SubscriptionsCreateError {const SubscriptionsCreateError$405(this.error);
 
 final Failure error;
 
-@override int get statusCode { return 405; } 
+@override int get statusCode => 405;
+
  }
 final class SubscriptionsCreateError$Unknown extends SubscriptionsCreateError {const SubscriptionsCreateError$Unknown(this.statusCode, this.rawBody, );
 

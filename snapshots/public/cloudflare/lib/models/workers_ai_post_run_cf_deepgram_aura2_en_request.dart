@@ -134,10 +134,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker($value)';
+
  }
 @immutable final class WorkersAiPostRunCfDeepgramAura2EnRequest {const WorkersAiPostRunCfDeepgramAura2EnRequest({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker.luna, });
 
@@ -185,14 +188,17 @@ WorkersAiPostRunCfDeepgramAura2EnRequest copyWith({double? Function()? bitRate, 
   speaker: speaker != null ? speaker() : this.speaker,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramAura2EnRequest &&
           bitRate == other.bitRate &&
           container == other.container &&
           encoding == other.encoding &&
           sampleRate == other.sampleRate &&
           speaker == other.speaker &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(bitRate, container, encoding, sampleRate, speaker, text); } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequest(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(bitRate, container, encoding, sampleRate, speaker, text);
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramAura2EnRequest(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)';
+
  }

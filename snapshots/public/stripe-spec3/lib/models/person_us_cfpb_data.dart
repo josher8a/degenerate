@@ -36,11 +36,14 @@ PersonUsCfpbData copyWith({PersonEthnicityDetails? Function()? ethnicityDetails,
   raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,
   selfIdentifiedGender: selfIdentifiedGender != null ? selfIdentifiedGender() : this.selfIdentifiedGender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersonUsCfpbData &&
           ethnicityDetails == other.ethnicityDetails &&
           raceDetails == other.raceDetails &&
-          selfIdentifiedGender == other.selfIdentifiedGender; } 
-@override int get hashCode { return Object.hash(ethnicityDetails, raceDetails, selfIdentifiedGender); } 
-@override String toString() { return 'PersonUsCfpbData(ethnicityDetails: $ethnicityDetails, raceDetails: $raceDetails, selfIdentifiedGender: $selfIdentifiedGender)'; } 
+          selfIdentifiedGender == other.selfIdentifiedGender;
+
+@override int get hashCode => Object.hash(ethnicityDetails, raceDetails, selfIdentifiedGender);
+
+@override String toString() => 'PersonUsCfpbData(ethnicityDetails: $ethnicityDetails, raceDetails: $raceDetails, selfIdentifiedGender: $selfIdentifiedGender)';
+
  }

@@ -36,11 +36,14 @@ RadarGetDnsTopAsesResponseResultTop0 copyWith({int? clientAsn, String? clientAsN
   clientAsName: clientAsName ?? this.clientAsName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTopAsesResponseResultTop0 &&
           clientAsn == other.clientAsn &&
           clientAsName == other.clientAsName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(clientAsn, clientAsName, value); } 
-@override String toString() { return 'RadarGetDnsTopAsesResponseResultTop0(clientAsn: $clientAsn, clientAsName: $clientAsName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(clientAsn, clientAsName, value);
+
+@override String toString() => 'RadarGetDnsTopAsesResponseResultTop0(clientAsn: $clientAsn, clientAsName: $clientAsName, value: $value)';
+
  }

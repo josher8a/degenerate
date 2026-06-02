@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScreenshotOptionsEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScreenshotOptionsEncoding($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ScreenshotOptionsEncoding && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ScreenshotOptionsEncoding($value)';
+
  }
 /// Check [options](https://pptr.dev/api/puppeteer.screenshotoptions).
 @immutable final class BrapiPostScreenshotRequestVariant1ScreenshotOptions {const BrapiPostScreenshotRequestVariant1ScreenshotOptions({this.captureBeyondViewport, this.clip, this.encoding = ScreenshotOptionsEncoding.binary, this.fromSurface, this.fullPage, this.omitBackground, this.optimizeForSpeed, this.quality, this.type = ScreenshotOptionsType.png, });
@@ -80,7 +83,7 @@ BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? 
   quality: quality != null ? quality() : this.quality,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostScreenshotRequestVariant1ScreenshotOptions &&
           captureBeyondViewport == other.captureBeyondViewport &&
           clip == other.clip &&
@@ -90,7 +93,10 @@ BrapiPostScreenshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? 
           omitBackground == other.omitBackground &&
           optimizeForSpeed == other.optimizeForSpeed &&
           quality == other.quality &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(captureBeyondViewport, clip, encoding, fromSurface, fullPage, omitBackground, optimizeForSpeed, quality, type); } 
-@override String toString() { return 'BrapiPostScreenshotRequestVariant1ScreenshotOptions(captureBeyondViewport: $captureBeyondViewport, clip: $clip, encoding: $encoding, fromSurface: $fromSurface, fullPage: $fullPage, omitBackground: $omitBackground, optimizeForSpeed: $optimizeForSpeed, quality: $quality, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(captureBeyondViewport, clip, encoding, fromSurface, fullPage, omitBackground, optimizeForSpeed, quality, type);
+
+@override String toString() => 'BrapiPostScreenshotRequestVariant1ScreenshotOptions(captureBeyondViewport: $captureBeyondViewport, clip: $clip, encoding: $encoding, fromSurface: $fromSurface, fullPage: $fullPage, omitBackground: $omitBackground, optimizeForSpeed: $optimizeForSpeed, quality: $quality, type: $type)';
+
  }

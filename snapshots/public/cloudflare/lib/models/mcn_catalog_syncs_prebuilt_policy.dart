@@ -33,12 +33,15 @@ McnCatalogSyncsPrebuiltPolicy copyWith({List<McnCatalogSyncDestinationType>? app
   policyName: policyName ?? this.policyName,
   policyString: policyString ?? this.policyString,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCatalogSyncsPrebuiltPolicy &&
           listEquals(applicableDestinations, other.applicableDestinations) &&
           policyDescription == other.policyDescription &&
           policyName == other.policyName &&
-          policyString == other.policyString; } 
-@override int get hashCode { return Object.hash(Object.hashAll(applicableDestinations), policyDescription, policyName, policyString); } 
-@override String toString() { return 'McnCatalogSyncsPrebuiltPolicy(applicableDestinations: $applicableDestinations, policyDescription: $policyDescription, policyName: $policyName, policyString: $policyString)'; } 
+          policyString == other.policyString;
+
+@override int get hashCode => Object.hash(Object.hashAll(applicableDestinations), policyDescription, policyName, policyString);
+
+@override String toString() => 'McnCatalogSyncsPrebuiltPolicy(applicableDestinations: $applicableDestinations, policyDescription: $policyDescription, policyName: $policyName, policyString: $policyString)';
+
  }

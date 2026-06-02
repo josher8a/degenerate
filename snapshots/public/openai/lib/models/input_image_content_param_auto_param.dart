@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DetailEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DetailEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DetailEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DetailEnum($value)';
+
  }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
 @immutable final class InputImageContentParamAutoParam {const InputImageContentParamAutoParam({this.type = EvalItemInputImageType.inputImage, this.imageUrl, this.fileId, this.detail, });
@@ -71,12 +74,15 @@ InputImageContentParamAutoParam copyWith({EvalItemInputImageType? type, String? 
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputImageContentParamAutoParam &&
           type == other.type &&
           imageUrl == other.imageUrl &&
           fileId == other.fileId &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, imageUrl, fileId, detail); } 
-@override String toString() { return 'InputImageContentParamAutoParam(type: $type, imageUrl: $imageUrl, fileId: $fileId, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(type, imageUrl, fileId, detail);
+
+@override String toString() => 'InputImageContentParamAutoParam(type: $type, imageUrl: $imageUrl, fileId: $fileId, detail: $detail)';
+
  }

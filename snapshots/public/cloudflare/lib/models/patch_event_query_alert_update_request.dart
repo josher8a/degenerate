@@ -28,11 +28,14 @@ PatchEventQueryAlertUpdateRequest copyWith({bool? Function()? enabled, GetEventQ
   frequency: frequency != null ? frequency() : this.frequency,
   notificationType: notificationType != null ? notificationType() : this.notificationType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchEventQueryAlertUpdateRequest &&
           enabled == other.enabled &&
           frequency == other.frequency &&
-          notificationType == other.notificationType; } 
-@override int get hashCode { return Object.hash(enabled, frequency, notificationType); } 
-@override String toString() { return 'PatchEventQueryAlertUpdateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType)'; } 
+          notificationType == other.notificationType;
+
+@override int get hashCode => Object.hash(enabled, frequency, notificationType);
+
+@override String toString() => 'PatchEventQueryAlertUpdateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType)';
+
  }

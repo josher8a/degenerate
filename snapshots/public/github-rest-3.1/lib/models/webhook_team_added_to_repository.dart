@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookTeamAddedToRepositoryAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookTeamAddedToRepositoryAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookTeamAddedToRepositoryAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookTeamAddedToRepositoryAction($value)';
+
  }
 @immutable final class WebhookTeamAddedToRepository {const WebhookTeamAddedToRepository({required this.action, required this.organization, required this.team, this.enterprise, this.installation, this.repository, this.sender, });
 
@@ -69,7 +72,7 @@ WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? actio
   sender: sender != null ? sender() : this.sender,
   team: team ?? this.team,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamAddedToRepository &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -77,7 +80,10 @@ WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? actio
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          team == other.team; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, team); } 
-@override String toString() { return 'WebhookTeamAddedToRepository(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)'; } 
+          team == other.team;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender, team);
+
+@override String toString() => 'WebhookTeamAddedToRepository(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)';
+
  }

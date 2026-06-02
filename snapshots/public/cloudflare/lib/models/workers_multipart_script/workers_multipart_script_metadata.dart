@@ -107,7 +107,7 @@ WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List
   tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMultipartScriptMetadata &&
           assets == other.assets &&
           listEquals(bindings, other.bindings) &&
@@ -124,7 +124,10 @@ WorkersMultipartScriptMetadata copyWith({WorkersAssets? Function()? assets, List
           placement == other.placement &&
           listEquals(tags, other.tags) &&
           listEquals(tailConsumers, other.tailConsumers) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel); } 
-@override String toString() { return 'WorkersMultipartScriptMetadata(assets: $assets, bindings: $bindings, bodyPart: $bodyPart, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepAssets: $keepAssets, keepBindings: $keepBindings, limits: $limits, logpush: $logpush, mainModule: $mainModule, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hash(assets, Object.hashAll(bindings ?? const []), bodyPart, compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), keepAssets, Object.hashAll(keepBindings ?? const []), limits, logpush, mainModule, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel);
+
+@override String toString() => 'WorkersMultipartScriptMetadata(assets: $assets, bindings: $bindings, bodyPart: $bodyPart, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepAssets: $keepAssets, keepBindings: $keepBindings, limits: $limits, logpush: $logpush, mainModule: $mainModule, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';
+
  }

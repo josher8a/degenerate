@@ -26,11 +26,14 @@ ReferencedWorkflows copyWith({String? path, String? Function()? ref, String? sha
   ref: ref != null ? ref() : this.ref,
   sha: sha ?? this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReferencedWorkflows &&
           path == other.path &&
           ref == other.ref &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(path, ref, sha); } 
-@override String toString() { return 'ReferencedWorkflows(path: $path, ref: $ref, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(path, ref, sha);
+
+@override String toString() => 'ReferencedWorkflows(path: $path, ref: $ref, sha: $sha)';
+
  }

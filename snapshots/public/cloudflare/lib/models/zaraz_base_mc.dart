@@ -88,7 +88,7 @@ ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defau
   permissions: permissions ?? this.permissions,
   settings: settings ?? this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazBaseMc &&
           listEquals(blockingTriggers, other.blockingTriggers) &&
           defaultFields == other.defaultFields &&
@@ -101,7 +101,10 @@ ZarazBaseMc copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defau
           component == other.component &&
           listEquals(neoEvents, other.neoEvents) &&
           listEquals(permissions, other.permissions) &&
-          settings == other.settings; } 
-@override int get hashCode { return Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl, actions, component, Object.hashAll(neoEvents ?? const []), Object.hashAll(permissions), settings); } 
-@override String toString() { return 'ZarazBaseMc(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl, actions: $actions, component: $component, neoEvents: $neoEvents, permissions: $permissions, settings: $settings)'; } 
+          settings == other.settings;
+
+@override int get hashCode => Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl, actions, component, Object.hashAll(neoEvents ?? const []), Object.hashAll(permissions), settings);
+
+@override String toString() => 'ZarazBaseMc(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl, actions: $actions, component: $component, neoEvents: $neoEvents, permissions: $permissions, settings: $settings)';
+
  }

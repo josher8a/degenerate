@@ -33,11 +33,14 @@ File copyWith({String? Function()? filename, String? Function()? fileData, Strin
   fileData: fileData != null ? fileData() : this.fileData,
   fileId: fileId != null ? fileId() : this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is File &&
           filename == other.filename &&
           fileData == other.fileData &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(filename, fileData, fileId); } 
-@override String toString() { return 'File(filename: $filename, fileData: $fileData, fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => Object.hash(filename, fileData, fileId);
+
+@override String toString() => 'File(filename: $filename, fileData: $fileData, fileId: $fileId)';
+
  }

@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ModifyRunRequest copyWith({Map<String, String>? Function()? metadata}) { return ModifyRunRequest(
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModifyRunRequest &&
-          metadata == other.metadata; } 
-@override int get hashCode { return metadata.hashCode; } 
-@override String toString() { return 'ModifyRunRequest(metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => metadata.hashCode;
+
+@override String toString() => 'ModifyRunRequest(metadata: $metadata)';
+
  }

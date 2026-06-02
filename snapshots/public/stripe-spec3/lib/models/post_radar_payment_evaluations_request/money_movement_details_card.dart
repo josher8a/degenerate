@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardPaymentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardPaymentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CardPaymentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CardPaymentType($value)';
+
  }
 @immutable final class MoneyMovementDetailsCard {const MoneyMovementDetailsCard({this.customerPresence, this.paymentType, });
 
@@ -50,10 +53,13 @@ MoneyMovementDetailsCard copyWith({PostPaymentRecordsReportPaymentRequestCustome
   customerPresence: customerPresence != null ? customerPresence() : this.customerPresence,
   paymentType: paymentType != null ? paymentType() : this.paymentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MoneyMovementDetailsCard &&
           customerPresence == other.customerPresence &&
-          paymentType == other.paymentType; } 
-@override int get hashCode { return Object.hash(customerPresence, paymentType); } 
-@override String toString() { return 'MoneyMovementDetailsCard(customerPresence: $customerPresence, paymentType: $paymentType)'; } 
+          paymentType == other.paymentType;
+
+@override int get hashCode => Object.hash(customerPresence, paymentType);
+
+@override String toString() => 'MoneyMovementDetailsCard(customerPresence: $customerPresence, paymentType: $paymentType)';
+
  }

@@ -20,10 +20,13 @@ RealtimekitUpdatePresetPermissionsPluginsConfigVariant2 copyWith({AccessControl?
   accessControl: accessControl != null ? accessControl() : this.accessControl,
   handlesViewOnly: handlesViewOnly != null ? handlesViewOnly() : this.handlesViewOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsPluginsConfigVariant2 &&
           accessControl == other.accessControl &&
-          handlesViewOnly == other.handlesViewOnly; } 
-@override int get hashCode { return Object.hash(accessControl, handlesViewOnly); } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsPluginsConfigVariant2(accessControl: $accessControl, handlesViewOnly: $handlesViewOnly)'; } 
+          handlesViewOnly == other.handlesViewOnly;
+
+@override int get hashCode => Object.hash(accessControl, handlesViewOnly);
+
+@override String toString() => 'RealtimekitUpdatePresetPermissionsPluginsConfigVariant2(accessControl: $accessControl, handlesViewOnly: $handlesViewOnly)';
+
  }

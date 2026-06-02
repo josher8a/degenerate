@@ -25,11 +25,14 @@ Devcontainers copyWith({String? path, String? Function()? name, String? Function
   name: name != null ? name() : this.name,
   displayName: displayName != null ? displayName() : this.displayName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Devcontainers &&
           path == other.path &&
           name == other.name &&
-          displayName == other.displayName; } 
-@override int get hashCode { return Object.hash(path, name, displayName); } 
-@override String toString() { return 'Devcontainers(path: $path, name: $name, displayName: $displayName)'; } 
+          displayName == other.displayName;
+
+@override int get hashCode => Object.hash(path, name, displayName);
+
+@override String toString() => 'Devcontainers(path: $path, name: $name, displayName: $displayName)';
+
  }

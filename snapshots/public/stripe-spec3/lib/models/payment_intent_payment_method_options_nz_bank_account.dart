@@ -36,10 +36,13 @@ PaymentIntentPaymentMethodOptionsNzBankAccount copyWith({CheckoutAcssDebitPaymen
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsNzBankAccount &&
           setupFutureUsage == other.setupFutureUsage &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(setupFutureUsage, targetDate); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsNzBankAccount(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
+          targetDate == other.targetDate;
+
+@override int get hashCode => Object.hash(setupFutureUsage, targetDate);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsNzBankAccount(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';
+
  }

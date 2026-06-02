@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('geolo
 RadarGetGeolocationDetailsResponseResult copyWith({Geolocation? geolocation}) { return RadarGetGeolocationDetailsResponseResult(
   geolocation: geolocation ?? this.geolocation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetGeolocationDetailsResponseResult &&
-          geolocation == other.geolocation; } 
-@override int get hashCode { return geolocation.hashCode; } 
-@override String toString() { return 'RadarGetGeolocationDetailsResponseResult(geolocation: $geolocation)'; } 
+          geolocation == other.geolocation;
+
+@override int get hashCode => geolocation.hashCode;
+
+@override String toString() => 'RadarGetGeolocationDetailsResponseResult(geolocation: $geolocation)';
+
  }

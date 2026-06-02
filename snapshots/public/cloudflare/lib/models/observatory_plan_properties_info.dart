@@ -35,12 +35,15 @@ ObservatoryPlanPropertiesInfo copyWith({int? Function()? business, int? Function
   free: free != null ? free() : this.free,
   pro: pro != null ? pro() : this.pro,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryPlanPropertiesInfo &&
           business == other.business &&
           enterprise == other.enterprise &&
           free == other.free &&
-          pro == other.pro; } 
-@override int get hashCode { return Object.hash(business, enterprise, free, pro); } 
-@override String toString() { return 'ObservatoryPlanPropertiesInfo(business: $business, enterprise: $enterprise, free: $free, pro: $pro)'; } 
+          pro == other.pro;
+
+@override int get hashCode => Object.hash(business, enterprise, free, pro);
+
+@override String toString() => 'ObservatoryPlanPropertiesInfo(business: $business, enterprise: $enterprise, free: $free, pro: $pro)';
+
  }

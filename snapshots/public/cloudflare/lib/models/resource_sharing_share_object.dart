@@ -120,7 +120,7 @@ ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, Resour
   status: status ?? this.status,
   targetType: targetType ?? this.targetType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingShareObject &&
           accountId == other.accountId &&
           accountName == other.accountName &&
@@ -136,7 +136,10 @@ ResourceSharingShareObject copyWith({ResourceSharingAccountId? accountId, Resour
           organizationId == other.organizationId &&
           listEquals(resources, other.resources) &&
           status == other.status &&
-          targetType == other.targetType; } 
-@override int get hashCode { return Object.hash(accountId, accountName, associatedRecipientCount, associatingRecipientCount, created, disassociatedRecipientCount, disassociatingRecipientCount, id, kind, modified, name, organizationId, Object.hashAll(resources ?? const []), status, targetType); } 
-@override String toString() { return 'ResourceSharingShareObject(accountId: $accountId, accountName: $accountName, associatedRecipientCount: $associatedRecipientCount, associatingRecipientCount: $associatingRecipientCount, created: $created, disassociatedRecipientCount: $disassociatedRecipientCount, disassociatingRecipientCount: $disassociatingRecipientCount, id: $id, kind: $kind, modified: $modified, name: $name, organizationId: $organizationId, resources: $resources, status: $status, targetType: $targetType)'; } 
+          targetType == other.targetType;
+
+@override int get hashCode => Object.hash(accountId, accountName, associatedRecipientCount, associatingRecipientCount, created, disassociatedRecipientCount, disassociatingRecipientCount, id, kind, modified, name, organizationId, Object.hashAll(resources ?? const []), status, targetType);
+
+@override String toString() => 'ResourceSharingShareObject(accountId: $accountId, accountName: $accountName, associatedRecipientCount: $associatedRecipientCount, associatingRecipientCount: $associatingRecipientCount, created: $created, disassociatedRecipientCount: $disassociatedRecipientCount, disassociatingRecipientCount: $disassociatingRecipientCount, id: $id, kind: $kind, modified: $modified, name: $name, organizationId: $organizationId, resources: $resources, status: $status, targetType: $targetType)';
+
  }

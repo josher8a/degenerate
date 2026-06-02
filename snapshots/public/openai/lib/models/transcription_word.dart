@@ -30,11 +30,14 @@ TranscriptionWord copyWith({String? word, double? start, double? end, }) { retur
   start: start ?? this.start,
   end: end ?? this.end,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptionWord &&
           word == other.word &&
           start == other.start &&
-          end == other.end; } 
-@override int get hashCode { return Object.hash(word, start, end); } 
-@override String toString() { return 'TranscriptionWord(word: $word, start: $start, end: $end)'; } 
+          end == other.end;
+
+@override int get hashCode => Object.hash(word, start, end);
+
+@override String toString() => 'TranscriptionWord(word: $word, start: $start, end: $end)';
+
  }

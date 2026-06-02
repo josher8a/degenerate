@@ -113,7 +113,7 @@ View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeI
   groupBy: groupBy ?? this.groupBy,
   verticalGroupBy: verticalGroupBy ?? this.verticalGroupBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is View &&
           id == other.id &&
           number == other.number &&
@@ -129,7 +129,10 @@ View copyWith({int? id, int? number, String? name, Layout? layout, String? nodeI
           listEquals(visibleFields, other.visibleFields) &&
           listEquals(sortBy, other.sortBy) &&
           listEquals(groupBy, other.groupBy) &&
-          listEquals(verticalGroupBy, other.verticalGroupBy); } 
-@override int get hashCode { return Object.hash(id, number, name, layout, nodeId, projectUrl, htmlUrl, creator, createdAt, updatedAt, filter, Object.hashAll(visibleFields), Object.hashAll(sortBy), Object.hashAll(groupBy), Object.hashAll(verticalGroupBy)); } 
-@override String toString() { return 'View(id: $id, number: $number, name: $name, layout: $layout, nodeId: $nodeId, projectUrl: $projectUrl, htmlUrl: $htmlUrl, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, filter: $filter, visibleFields: $visibleFields, sortBy: $sortBy, groupBy: $groupBy, verticalGroupBy: $verticalGroupBy)'; } 
+          listEquals(verticalGroupBy, other.verticalGroupBy);
+
+@override int get hashCode => Object.hash(id, number, name, layout, nodeId, projectUrl, htmlUrl, creator, createdAt, updatedAt, filter, Object.hashAll(visibleFields), Object.hashAll(sortBy), Object.hashAll(groupBy), Object.hashAll(verticalGroupBy));
+
+@override String toString() => 'View(id: $id, number: $number, name: $name, layout: $layout, nodeId: $nodeId, projectUrl: $projectUrl, htmlUrl: $htmlUrl, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, filter: $filter, visibleFields: $visibleFields, sortBy: $sortBy, groupBy: $groupBy, verticalGroupBy: $verticalGroupBy)';
+
  }

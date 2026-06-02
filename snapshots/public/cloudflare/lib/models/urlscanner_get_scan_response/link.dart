@@ -25,10 +25,13 @@ Link copyWith({String? href, String? text, }) { return Link(
   href: href ?? this.href,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Link &&
           href == other.href &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(href, text); } 
-@override String toString() { return 'Link(href: $href, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(href, text);
+
+@override String toString() => 'Link(href: $href, text: $text)';
+
  }

@@ -132,7 +132,7 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
   pem: pem ?? this.pem,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCreateFromManifestResponse &&
           id == other.id &&
           slug == other.slug &&
@@ -151,7 +151,10 @@ AppsCreateFromManifestResponse copyWith({int? id, String? Function()? slug, Stri
           clientSecret == other.clientSecret &&
           webhookSecret == other.webhookSecret &&
           pem == other.pem &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(id, slug, nodeId, clientId, owner, name, description, externalUrl, htmlUrl, createdAt, updatedAt, permissions, Object.hashAll(events), installationsCount, clientSecret, webhookSecret, pem, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'AppsCreateFromManifestResponse(id: $id, slug: $slug, nodeId: $nodeId, clientId: $clientId, owner: $owner, name: $name, description: $description, externalUrl: $externalUrl, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, permissions: $permissions, events: $events, installationsCount: $installationsCount, clientSecret: $clientSecret, webhookSecret: $webhookSecret, pem: $pem, additionalProperties: $additionalProperties)';
+
  }

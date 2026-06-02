@@ -23,10 +23,13 @@ ToolsVariant2 copyWith({Variant2Function? function, String? type, }) { return To
   function: function ?? this.function,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolsVariant2 &&
           function == other.function &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(function, type); } 
-@override String toString() { return 'ToolsVariant2(function: $function, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(function, type);
+
+@override String toString() => 'ToolsVariant2(function: $function, type: $type)';
+
  }

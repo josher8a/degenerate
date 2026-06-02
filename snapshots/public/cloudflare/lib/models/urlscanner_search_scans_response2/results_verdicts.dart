@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('malic
 ResultsVerdicts copyWith({bool? malicious}) { return ResultsVerdicts(
   malicious: malicious ?? this.malicious,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultsVerdicts &&
-          malicious == other.malicious; } 
-@override int get hashCode { return malicious.hashCode; } 
-@override String toString() { return 'ResultsVerdicts(malicious: $malicious)'; } 
+          malicious == other.malicious;
+
+@override int get hashCode => malicious.hashCode;
+
+@override String toString() => 'ResultsVerdicts(malicious: $malicious)';
+
  }

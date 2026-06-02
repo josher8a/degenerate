@@ -33,18 +33,13 @@ final class ValidatePinSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ValidatePinSchema && email == other.email && pin == other.pin;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ValidatePinSchema && email == other.email && pin == other.pin;
 
   @override
-  int get hashCode {
-    return Object.hash(email, pin);
-  }
+  int get hashCode => Object.hash(email, pin);
 
   @override
-  String toString() {
-    return 'ValidatePinSchema(email: $email, pin: $pin)';
-  }
+  String toString() => 'ValidatePinSchema(email: $email, pin: $pin)';
 }

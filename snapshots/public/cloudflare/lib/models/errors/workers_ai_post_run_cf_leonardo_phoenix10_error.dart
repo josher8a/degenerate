@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfLeonardoPhoenix10Error$400 extends WorkersAiPostRu
 
 final WorkersAiPostRunCfLeonardoPhoenix10Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfLeonardoPhoenix10Error$Unknown extends WorkersAiPostRunCfLeonardoPhoenix10Error {const WorkersAiPostRunCfLeonardoPhoenix10Error$Unknown(this.statusCode, this.rawBody, );
 

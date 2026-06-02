@@ -29,11 +29,14 @@ PublicIp copyWith({bool? Function()? enabled, String? Function()? prefix, int? F
   prefix: prefix != null ? prefix() : this.prefix,
   length: length != null ? length() : this.length,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicIp &&
           enabled == other.enabled &&
           prefix == other.prefix &&
-          length == other.length; } 
-@override int get hashCode { return Object.hash(enabled, prefix, length); } 
-@override String toString() { return 'PublicIp(enabled: $enabled, prefix: $prefix, length: $length)'; } 
+          length == other.length;
+
+@override int get hashCode => Object.hash(enabled, prefix, length);
+
+@override String toString() => 'PublicIp(enabled: $enabled, prefix: $prefix, length: $length)';
+
  }

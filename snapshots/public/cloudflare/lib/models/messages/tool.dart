@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ToolRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ToolRole($value)';
+
  }
 @immutable final class Tool {const Tool({required this.content, required this.role, required this.toolCallId, });
 
@@ -48,11 +51,14 @@ Tool copyWith({DeveloperContent? content, ToolRole? role, String? toolCallId, })
   role: role ?? this.role,
   toolCallId: toolCallId ?? this.toolCallId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tool &&
           content == other.content &&
           role == other.role &&
-          toolCallId == other.toolCallId; } 
-@override int get hashCode { return Object.hash(content, role, toolCallId); } 
-@override String toString() { return 'Tool(content: $content, role: $role, toolCallId: $toolCallId)'; } 
+          toolCallId == other.toolCallId;
+
+@override int get hashCode => Object.hash(content, role, toolCallId);
+
+@override String toString() => 'Tool(content: $content, role: $role, toolCallId: $toolCallId)';
+
  }

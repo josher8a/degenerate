@@ -24,10 +24,13 @@ TerminalConfigurationConfigurationResourceRebootWindow copyWith({int? endHour, i
   endHour: endHour ?? this.endHour,
   startHour: startHour ?? this.startHour,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceRebootWindow &&
           endHour == other.endHour &&
-          startHour == other.startHour; } 
-@override int get hashCode { return Object.hash(endHour, startHour); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceRebootWindow(endHour: $endHour, startHour: $startHour)'; } 
+          startHour == other.startHour;
+
+@override int get hashCode => Object.hash(endHour, startHour);
+
+@override String toString() => 'TerminalConfigurationConfigurationResourceRebootWindow(endHour: $endHour, startHour: $startHour)';
+
  }

@@ -57,7 +57,7 @@ BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, dou
   top: top ?? this.top,
   width: width ?? this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostScrapeResponseResultResults &&
           listEquals(attributes, other.attributes) &&
           height == other.height &&
@@ -65,7 +65,10 @@ BrapiPostScrapeResponseResultResults copyWith({List<Attributes>? attributes, dou
           left == other.left &&
           text == other.text &&
           top == other.top &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(Object.hashAll(attributes), height, html, left, text, top, width); } 
-@override String toString() { return 'BrapiPostScrapeResponseResultResults(attributes: $attributes, height: $height, html: $html, left: $left, text: $text, top: $top, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(Object.hashAll(attributes), height, html, left, text, top, width);
+
+@override String toString() => 'BrapiPostScrapeResponseResultResults(attributes: $attributes, height: $height, html: $html, left: $left, text: $text, top: $top, width: $width)';
+
  }

@@ -22,9 +22,12 @@ return errors; }
 TokenValidationRulesBulkEditRequest copyWith({String? id}) { return TokenValidationRulesBulkEditRequest(
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationRulesBulkEditRequest &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'TokenValidationRulesBulkEditRequest(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'TokenValidationRulesBulkEditRequest(id: $id)';
+
  }

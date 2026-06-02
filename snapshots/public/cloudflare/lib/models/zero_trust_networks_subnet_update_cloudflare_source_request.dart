@@ -28,11 +28,14 @@ ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest copyWith({TunnelSubnetComme
   name: name != null ? name() : this.name,
   network: network != null ? network() : this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest &&
           comment == other.comment &&
           name == other.name &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(comment, name, network); } 
-@override String toString() { return 'ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest(comment: $comment, name: $name, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(comment, name, network);
+
+@override String toString() => 'ZeroTrustNetworksSubnetUpdateCloudflareSourceRequest(comment: $comment, name: $name, network: $network)';
+
  }

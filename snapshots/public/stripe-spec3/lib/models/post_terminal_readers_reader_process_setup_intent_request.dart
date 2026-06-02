@@ -39,12 +39,15 @@ PostTerminalReadersReaderProcessSetupIntentRequest copyWith({ConfirmationTokensR
   processConfig: processConfig != null ? processConfig() : this.processConfig,
   setupIntent: setupIntent ?? this.setupIntent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderProcessSetupIntentRequest &&
           allowRedisplay == other.allowRedisplay &&
           listEquals(expand, other.expand) &&
           processConfig == other.processConfig &&
-          setupIntent == other.setupIntent; } 
-@override int get hashCode { return Object.hash(allowRedisplay, Object.hashAll(expand ?? const []), processConfig, setupIntent); } 
-@override String toString() { return 'PostTerminalReadersReaderProcessSetupIntentRequest(allowRedisplay: $allowRedisplay, expand: $expand, processConfig: $processConfig, setupIntent: $setupIntent)'; } 
+          setupIntent == other.setupIntent;
+
+@override int get hashCode => Object.hash(allowRedisplay, Object.hashAll(expand ?? const []), processConfig, setupIntent);
+
+@override String toString() => 'PostTerminalReadersReaderProcessSetupIntentRequest(allowRedisplay: $allowRedisplay, expand: $expand, processConfig: $processConfig, setupIntent: $setupIntent)';
+
  }

@@ -23,10 +23,13 @@ TranscriptTextUsageTokensInputTokenDetails copyWith({int? Function()? textTokens
   textTokens: textTokens != null ? textTokens() : this.textTokens,
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextUsageTokensInputTokenDetails &&
           textTokens == other.textTokens &&
-          audioTokens == other.audioTokens; } 
-@override int get hashCode { return Object.hash(textTokens, audioTokens); } 
-@override String toString() { return 'TranscriptTextUsageTokensInputTokenDetails(textTokens: $textTokens, audioTokens: $audioTokens)'; } 
+          audioTokens == other.audioTokens;
+
+@override int get hashCode => Object.hash(textTokens, audioTokens);
+
+@override String toString() => 'TranscriptTextUsageTokensInputTokenDetails(textTokens: $textTokens, audioTokens: $audioTokens)';
+
  }

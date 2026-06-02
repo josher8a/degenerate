@@ -25,11 +25,14 @@ RegistryPackagePackageVersionContainerMetadata copyWith({Map<String, dynamic>? F
   manifest: manifest != null ? manifest() : this.manifest,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistryPackagePackageVersionContainerMetadata &&
           labels == other.labels &&
           manifest == other.manifest &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(labels, manifest, tag); } 
-@override String toString() { return 'RegistryPackagePackageVersionContainerMetadata(labels: $labels, manifest: $manifest, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(labels, manifest, tag);
+
+@override String toString() => 'RegistryPackagePackageVersionContainerMetadata(labels: $labels, manifest: $manifest, tag: $tag)';
+
  }

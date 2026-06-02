@@ -20,10 +20,13 @@ ColoResponse copyWith({QueryResponse? Function()? query, List<Datacenters2>? Fun
   query: query != null ? query() : this.query,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ColoResponse &&
           query == other.query &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(query, Object.hashAll(result ?? const [])); } 
-@override String toString() { return 'ColoResponse(query: $query, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(query, Object.hashAll(result ?? const []));
+
+@override String toString() => 'ColoResponse(query: $query, result: $result)';
+
  }

@@ -26,11 +26,14 @@ RiskAssessment copyWith({CardTestingRisk? Function()? cardTestingRisk, FraudRisk
   fraudRisk: fraudRisk != null ? fraudRisk() : this.fraudRisk,
   merchantDisputeRisk: merchantDisputeRisk != null ? merchantDisputeRisk() : this.merchantDisputeRisk,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RiskAssessment &&
           cardTestingRisk == other.cardTestingRisk &&
           fraudRisk == other.fraudRisk &&
-          merchantDisputeRisk == other.merchantDisputeRisk; } 
-@override int get hashCode { return Object.hash(cardTestingRisk, fraudRisk, merchantDisputeRisk); } 
-@override String toString() { return 'RiskAssessment(cardTestingRisk: $cardTestingRisk, fraudRisk: $fraudRisk, merchantDisputeRisk: $merchantDisputeRisk)'; } 
+          merchantDisputeRisk == other.merchantDisputeRisk;
+
+@override int get hashCode => Object.hash(cardTestingRisk, fraudRisk, merchantDisputeRisk);
+
+@override String toString() => 'RiskAssessment(cardTestingRisk: $cardTestingRisk, fraudRisk: $fraudRisk, merchantDisputeRisk: $merchantDisputeRisk)';
+
  }

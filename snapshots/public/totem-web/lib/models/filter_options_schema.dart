@@ -21,10 +21,13 @@ FilterOptionsSchema copyWith({List<CategoryFilterSchema>? categories, List<Autho
   categories: categories ?? this.categories,
   authors: authors ?? this.authors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FilterOptionsSchema &&
           listEquals(categories, other.categories) &&
-          listEquals(authors, other.authors); } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), Object.hashAll(authors)); } 
-@override String toString() { return 'FilterOptionsSchema(categories: $categories, authors: $authors)'; } 
+          listEquals(authors, other.authors);
+
+@override int get hashCode => Object.hash(Object.hashAll(categories), Object.hashAll(authors));
+
+@override String toString() => 'FilterOptionsSchema(categories: $categories, authors: $authors)';
+
  }

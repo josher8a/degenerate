@@ -26,11 +26,14 @@ PostBalanceSettingsRequestPayments copyWith({bool? Function()? debitNegativeBala
   payouts: payouts != null ? payouts() : this.payouts,
   settlementTiming: settlementTiming != null ? settlementTiming() : this.settlementTiming,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBalanceSettingsRequestPayments &&
           debitNegativeBalances == other.debitNegativeBalances &&
           payouts == other.payouts &&
-          settlementTiming == other.settlementTiming; } 
-@override int get hashCode { return Object.hash(debitNegativeBalances, payouts, settlementTiming); } 
-@override String toString() { return 'PostBalanceSettingsRequestPayments(debitNegativeBalances: $debitNegativeBalances, payouts: $payouts, settlementTiming: $settlementTiming)'; } 
+          settlementTiming == other.settlementTiming;
+
+@override int get hashCode => Object.hash(debitNegativeBalances, payouts, settlementTiming);
+
+@override String toString() => 'PostBalanceSettingsRequestPayments(debitNegativeBalances: $debitNegativeBalances, payouts: $payouts, settlementTiming: $settlementTiming)';
+
  }

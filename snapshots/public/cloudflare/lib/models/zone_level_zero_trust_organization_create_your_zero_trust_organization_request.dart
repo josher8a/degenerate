@@ -46,14 +46,17 @@ ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest copyWith({A
   uiReadOnlyToggleReason: uiReadOnlyToggleReason != null ? uiReadOnlyToggleReason() : this.uiReadOnlyToggleReason,
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest &&
           authDomain == other.authDomain &&
           isUiReadOnly == other.isUiReadOnly &&
           loginDesign == other.loginDesign &&
           name == other.name &&
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
-          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime; } 
-@override int get hashCode { return Object.hash(authDomain, isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, userSeatExpirationInactiveTime); } 
-@override String toString() { return 'ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(authDomain: $authDomain, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)'; } 
+          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime;
+
+@override int get hashCode => Object.hash(authDomain, isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, userSeatExpirationInactiveTime);
+
+@override String toString() => 'ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(authDomain: $authDomain, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)';
+
  }

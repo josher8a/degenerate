@@ -150,7 +150,7 @@ UserRoleAssignment copyWith({Assignment? Function()? assignment, List<TeamSimple
   starredAt: starredAt != null ? starredAt() : this.starredAt,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserRoleAssignment &&
           assignment == other.assignment &&
           listEquals(inheritedFrom, other.inheritedFrom) &&
@@ -175,7 +175,10 @@ UserRoleAssignment copyWith({Assignment? Function()? assignment, List<TeamSimple
           type == other.type &&
           siteAdmin == other.siteAdmin &&
           starredAt == other.starredAt &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([assignment, Object.hashAll(inheritedFrom ?? const []), name, email, login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, starredAt, userViewType]); } 
-@override String toString() { return 'UserRoleAssignment(assignment: $assignment, inheritedFrom: $inheritedFrom, name: $name, email: $email, login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, starredAt: $starredAt, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([assignment, Object.hashAll(inheritedFrom ?? const []), name, email, login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, starredAt, userViewType]);
+
+@override String toString() => 'UserRoleAssignment(assignment: $assignment, inheritedFrom: $inheritedFrom, name: $name, email: $email, login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, starredAt: $starredAt, userViewType: $userViewType)';
+
  }

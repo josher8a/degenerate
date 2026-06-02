@@ -51,7 +51,7 @@ GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()?
   content: content != null ? content() : this.content,
   encoding: encoding != null ? encoding() : this.encoding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistSimpleFilesValue &&
           filename == other.filename &&
           type == other.type &&
@@ -60,7 +60,10 @@ GistSimpleFilesValue copyWith({String? Function()? filename, String? Function()?
           size == other.size &&
           truncated == other.truncated &&
           content == other.content &&
-          encoding == other.encoding; } 
-@override int get hashCode { return Object.hash(filename, type, language, rawUrl, size, truncated, content, encoding); } 
-@override String toString() { return 'GistSimpleFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, truncated: $truncated, content: $content, encoding: $encoding)'; } 
+          encoding == other.encoding;
+
+@override int get hashCode => Object.hash(filename, type, language, rawUrl, size, truncated, content, encoding);
+
+@override String toString() => 'GistSimpleFilesValue(filename: $filename, type: $type, language: $language, rawUrl: $rawUrl, size: $size, truncated: $truncated, content: $content, encoding: $encoding)';
+
  }

@@ -33,10 +33,13 @@ AssistantToolsFileSearchFileSearch copyWith({int? Function()? maxNumResults, Fil
   maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantToolsFileSearchFileSearch &&
           maxNumResults == other.maxNumResults &&
-          rankingOptions == other.rankingOptions; } 
-@override int get hashCode { return Object.hash(maxNumResults, rankingOptions); } 
-@override String toString() { return 'AssistantToolsFileSearchFileSearch(maxNumResults: $maxNumResults, rankingOptions: $rankingOptions)'; } 
+          rankingOptions == other.rankingOptions;
+
+@override int get hashCode => Object.hash(maxNumResults, rankingOptions);
+
+@override String toString() => 'AssistantToolsFileSearchFileSearch(maxNumResults: $maxNumResults, rankingOptions: $rankingOptions)';
+
  }

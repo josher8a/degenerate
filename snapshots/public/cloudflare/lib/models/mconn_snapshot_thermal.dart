@@ -41,13 +41,16 @@ MconnSnapshotThermal copyWith({String? Function()? connectorId, double? Function
   label: label ?? this.label,
   maxCelcius: maxCelcius != null ? maxCelcius() : this.maxCelcius,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotThermal &&
           connectorId == other.connectorId &&
           criticalCelcius == other.criticalCelcius &&
           currentCelcius == other.currentCelcius &&
           label == other.label &&
-          maxCelcius == other.maxCelcius; } 
-@override int get hashCode { return Object.hash(connectorId, criticalCelcius, currentCelcius, label, maxCelcius); } 
-@override String toString() { return 'MconnSnapshotThermal(connectorId: $connectorId, criticalCelcius: $criticalCelcius, currentCelcius: $currentCelcius, label: $label, maxCelcius: $maxCelcius)'; } 
+          maxCelcius == other.maxCelcius;
+
+@override int get hashCode => Object.hash(connectorId, criticalCelcius, currentCelcius, label, maxCelcius);
+
+@override String toString() => 'MconnSnapshotThermal(connectorId: $connectorId, criticalCelcius: $criticalCelcius, currentCelcius: $currentCelcius, label: $label, maxCelcius: $maxCelcius)';
+
  }

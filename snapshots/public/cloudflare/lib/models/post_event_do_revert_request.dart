@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('minut
 PostEventDoRevertRequest copyWith({double? minutesAgo}) { return PostEventDoRevertRequest(
   minutesAgo: minutesAgo ?? this.minutesAgo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventDoRevertRequest &&
-          minutesAgo == other.minutesAgo; } 
-@override int get hashCode { return minutesAgo.hashCode; } 
-@override String toString() { return 'PostEventDoRevertRequest(minutesAgo: $minutesAgo)'; } 
+          minutesAgo == other.minutesAgo;
+
+@override int get hashCode => minutesAgo.hashCode;
+
+@override String toString() => 'PostEventDoRevertRequest(minutesAgo: $minutesAgo)';
+
  }

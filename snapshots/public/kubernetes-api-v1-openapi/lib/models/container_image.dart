@@ -23,10 +23,13 @@ ContainerImage copyWith({List<String>? Function()? names, int? Function()? sizeB
   names: names != null ? names() : this.names,
   sizeBytes: sizeBytes != null ? sizeBytes() : this.sizeBytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerImage &&
           listEquals(names, other.names) &&
-          sizeBytes == other.sizeBytes; } 
-@override int get hashCode { return Object.hash(Object.hashAll(names ?? const []), sizeBytes); } 
-@override String toString() { return 'ContainerImage(names: $names, sizeBytes: $sizeBytes)'; } 
+          sizeBytes == other.sizeBytes;
+
+@override int get hashCode => Object.hash(Object.hashAll(names ?? const []), sizeBytes);
+
+@override String toString() => 'ContainerImage(names: $names, sizeBytes: $sizeBytes)';
+
  }

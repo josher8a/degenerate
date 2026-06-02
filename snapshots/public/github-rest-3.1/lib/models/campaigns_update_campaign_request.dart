@@ -73,7 +73,7 @@ CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Funct
   contactLink: contactLink != null ? contactLink() : this.contactLink,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CampaignsUpdateCampaignRequest &&
           name == other.name &&
           description == other.description &&
@@ -81,7 +81,10 @@ CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Funct
           listEquals(teamManagers, other.teamManagers) &&
           endsAt == other.endsAt &&
           contactLink == other.contactLink &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(name, description, Object.hashAll(managers ?? const []), Object.hashAll(teamManagers ?? const []), endsAt, contactLink, state); } 
-@override String toString() { return 'CampaignsUpdateCampaignRequest(name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, endsAt: $endsAt, contactLink: $contactLink, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(name, description, Object.hashAll(managers ?? const []), Object.hashAll(teamManagers ?? const []), endsAt, contactLink, state);
+
+@override String toString() => 'CampaignsUpdateCampaignRequest(name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, endsAt: $endsAt, contactLink: $contactLink, state: $state)';
+
  }

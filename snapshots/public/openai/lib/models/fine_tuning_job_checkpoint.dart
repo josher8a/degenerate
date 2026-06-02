@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobCheckpointObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobCheckpointObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobCheckpointObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuningJobCheckpointObject($value)';
+
  }
 /// The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.
 /// 
@@ -82,7 +85,7 @@ FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedM
   fineTuningJobId: fineTuningJobId ?? this.fineTuningJobId,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJobCheckpoint &&
           id == other.id &&
           createdAt == other.createdAt &&
@@ -90,7 +93,10 @@ FineTuningJobCheckpoint copyWith({String? id, int? createdAt, String? fineTunedM
           stepNumber == other.stepNumber &&
           metrics == other.metrics &&
           fineTuningJobId == other.fineTuningJobId &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, createdAt, fineTunedModelCheckpoint, stepNumber, metrics, fineTuningJobId, object); } 
-@override String toString() { return 'FineTuningJobCheckpoint(id: $id, createdAt: $createdAt, fineTunedModelCheckpoint: $fineTunedModelCheckpoint, stepNumber: $stepNumber, metrics: $metrics, fineTuningJobId: $fineTuningJobId, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(id, createdAt, fineTunedModelCheckpoint, stepNumber, metrics, fineTuningJobId, object);
+
+@override String toString() => 'FineTuningJobCheckpoint(id: $id, createdAt: $createdAt, fineTunedModelCheckpoint: $fineTunedModelCheckpoint, stepNumber: $stepNumber, metrics: $metrics, fineTuningJobId: $fineTuningJobId, object: $object)';
+
  }

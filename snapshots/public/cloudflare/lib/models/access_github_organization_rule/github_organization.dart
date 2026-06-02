@@ -35,11 +35,14 @@ GithubOrganization copyWith({String? identityProviderId, String? name, String? F
   name: name ?? this.name,
   team: team != null ? team() : this.team,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GithubOrganization &&
           identityProviderId == other.identityProviderId &&
           name == other.name &&
-          team == other.team; } 
-@override int get hashCode { return Object.hash(identityProviderId, name, team); } 
-@override String toString() { return 'GithubOrganization(identityProviderId: $identityProviderId, name: $name, team: $team)'; } 
+          team == other.team;
+
+@override int get hashCode => Object.hash(identityProviderId, name, team);
+
+@override String toString() => 'GithubOrganization(identityProviderId: $identityProviderId, name: $name, team: $team)';
+
  }

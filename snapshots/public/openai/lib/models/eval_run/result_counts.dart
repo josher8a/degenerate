@@ -38,12 +38,15 @@ ResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) { 
   failed: failed ?? this.failed,
   passed: passed ?? this.passed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultCounts &&
           total == other.total &&
           errored == other.errored &&
           failed == other.failed &&
-          passed == other.passed; } 
-@override int get hashCode { return Object.hash(total, errored, failed, passed); } 
-@override String toString() { return 'ResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)'; } 
+          passed == other.passed;
+
+@override int get hashCode => Object.hash(total, errored, failed, passed);
+
+@override String toString() => 'ResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)';
+
  }

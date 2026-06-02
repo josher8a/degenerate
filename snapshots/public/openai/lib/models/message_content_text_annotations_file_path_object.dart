@@ -47,13 +47,16 @@ MessageContentTextAnnotationsFilePathObject copyWith({MessageContentTextAnnotati
   startIndex: startIndex ?? this.startIndex,
   endIndex: endIndex ?? this.endIndex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentTextAnnotationsFilePathObject &&
           type == other.type &&
           text == other.text &&
           filePath == other.filePath &&
           startIndex == other.startIndex &&
-          endIndex == other.endIndex; } 
-@override int get hashCode { return Object.hash(type, text, filePath, startIndex, endIndex); } 
-@override String toString() { return 'MessageContentTextAnnotationsFilePathObject(type: $type, text: $text, filePath: $filePath, startIndex: $startIndex, endIndex: $endIndex)'; } 
+          endIndex == other.endIndex;
+
+@override int get hashCode => Object.hash(type, text, filePath, startIndex, endIndex);
+
+@override String toString() => 'MessageContentTextAnnotationsFilePathObject(type: $type, text: $text, filePath: $filePath, startIndex: $startIndex, endIndex: $endIndex)';
+
  }

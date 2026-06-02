@@ -38,13 +38,16 @@ PatternsSeriesData copyWith({double? count, List<Groups>? Function()? groups, do
   sampleInterval: sampleInterval ?? this.sampleInterval,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatternsSeriesData &&
           count == other.count &&
           listEquals(groups, other.groups) &&
           interval == other.interval &&
           sampleInterval == other.sampleInterval &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(groups ?? const []), interval, sampleInterval, value); } 
-@override String toString() { return 'PatternsSeriesData(count: $count, groups: $groups, interval: $interval, sampleInterval: $sampleInterval, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(groups ?? const []), interval, sampleInterval, value);
+
+@override String toString() => 'PatternsSeriesData(count: $count, groups: $groups, interval: $interval, sampleInterval: $sampleInterval, value: $value)';
+
  }

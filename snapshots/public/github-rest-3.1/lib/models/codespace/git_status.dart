@@ -41,13 +41,16 @@ GitStatus copyWith({int? Function()? ahead, int? Function()? behind, bool? Funct
   hasUncommittedChanges: hasUncommittedChanges != null ? hasUncommittedChanges() : this.hasUncommittedChanges,
   ref: ref != null ? ref() : this.ref,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitStatus &&
           ahead == other.ahead &&
           behind == other.behind &&
           hasUnpushedChanges == other.hasUnpushedChanges &&
           hasUncommittedChanges == other.hasUncommittedChanges &&
-          ref == other.ref; } 
-@override int get hashCode { return Object.hash(ahead, behind, hasUnpushedChanges, hasUncommittedChanges, ref); } 
-@override String toString() { return 'GitStatus(ahead: $ahead, behind: $behind, hasUnpushedChanges: $hasUnpushedChanges, hasUncommittedChanges: $hasUncommittedChanges, ref: $ref)'; } 
+          ref == other.ref;
+
+@override int get hashCode => Object.hash(ahead, behind, hasUnpushedChanges, hasUncommittedChanges, ref);
+
+@override String toString() => 'GitStatus(ahead: $ahead, behind: $behind, hasUnpushedChanges: $hasUnpushedChanges, hasUncommittedChanges: $hasUncommittedChanges, ref: $ref)';
+
  }

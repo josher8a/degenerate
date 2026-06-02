@@ -17,7 +17,8 @@ final class RadarGetGeolocationDetailsError$404 extends RadarGetGeolocationDetai
 
 final RadarGetGeolocationDetailsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetGeolocationDetailsError$Unknown extends RadarGetGeolocationDetailsError {const RadarGetGeolocationDetailsError$Unknown(this.statusCode, this.rawBody, );
 

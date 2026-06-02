@@ -24,10 +24,13 @@ DiscountsResourceDiscountAmount copyWith({int? amount, CreditNotesPretaxCreditAm
   amount: amount ?? this.amount,
   discount: discount ?? this.discount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiscountsResourceDiscountAmount &&
           amount == other.amount &&
-          discount == other.discount; } 
-@override int get hashCode { return Object.hash(amount, discount); } 
-@override String toString() { return 'DiscountsResourceDiscountAmount(amount: $amount, discount: $discount)'; } 
+          discount == other.discount;
+
+@override int get hashCode => Object.hash(amount, discount);
+
+@override String toString() => 'DiscountsResourceDiscountAmount(amount: $amount, discount: $discount)';
+
  }

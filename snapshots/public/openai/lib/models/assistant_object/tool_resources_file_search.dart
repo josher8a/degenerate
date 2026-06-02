@@ -24,9 +24,12 @@ return errors; }
 ToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { return ToolResourcesFileSearch(
   vectorStoreIds: vectorStoreIds != null ? vectorStoreIds() : this.vectorStoreIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolResourcesFileSearch &&
-          listEquals(vectorStoreIds, other.vectorStoreIds); } 
-@override int get hashCode { return Object.hashAll(vectorStoreIds ?? const []); } 
-@override String toString() { return 'ToolResourcesFileSearch(vectorStoreIds: $vectorStoreIds)'; } 
+          listEquals(vectorStoreIds, other.vectorStoreIds);
+
+@override int get hashCode => Object.hashAll(vectorStoreIds ?? const []);
+
+@override String toString() => 'ToolResourcesFileSearch(vectorStoreIds: $vectorStoreIds)';
+
  }

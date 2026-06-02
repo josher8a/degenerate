@@ -57,7 +57,7 @@ Key copyWith({String? key, int? id, String? url, String? title, DateTime? create
   readOnly: readOnly ?? this.readOnly,
   lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Key &&
           key == other.key &&
           id == other.id &&
@@ -66,7 +66,10 @@ Key copyWith({String? key, int? id, String? url, String? title, DateTime? create
           createdAt == other.createdAt &&
           verified == other.verified &&
           readOnly == other.readOnly &&
-          lastUsed == other.lastUsed; } 
-@override int get hashCode { return Object.hash(key, id, url, title, createdAt, verified, readOnly, lastUsed); } 
-@override String toString() { return 'Key(key: $key, id: $id, url: $url, title: $title, createdAt: $createdAt, verified: $verified, readOnly: $readOnly, lastUsed: $lastUsed)'; } 
+          lastUsed == other.lastUsed;
+
+@override int get hashCode => Object.hash(key, id, url, title, createdAt, verified, readOnly, lastUsed);
+
+@override String toString() => 'Key(key: $key, id: $id, url: $url, title: $title, createdAt: $createdAt, verified: $verified, readOnly: $readOnly, lastUsed: $lastUsed)';
+
  }

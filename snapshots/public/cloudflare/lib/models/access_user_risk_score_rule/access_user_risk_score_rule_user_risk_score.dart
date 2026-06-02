@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserRiskScoreUserRiskScore && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserRiskScoreUserRiskScore($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserRiskScoreUserRiskScore && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserRiskScoreUserRiskScore($value)';
+
  }
 @immutable final class AccessUserRiskScoreRuleUserRiskScore {const AccessUserRiskScoreRuleUserRiskScore({required this.userRiskScore});
 
@@ -52,9 +55,12 @@ return errors; }
 AccessUserRiskScoreRuleUserRiskScore copyWith({List<UserRiskScoreUserRiskScore>? userRiskScore}) { return AccessUserRiskScoreRuleUserRiskScore(
   userRiskScore: userRiskScore ?? this.userRiskScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessUserRiskScoreRuleUserRiskScore &&
-          listEquals(userRiskScore, other.userRiskScore); } 
-@override int get hashCode { return Object.hashAll(userRiskScore); } 
-@override String toString() { return 'AccessUserRiskScoreRuleUserRiskScore(userRiskScore: $userRiskScore)'; } 
+          listEquals(userRiskScore, other.userRiskScore);
+
+@override int get hashCode => Object.hashAll(userRiskScore);
+
+@override String toString() => 'AccessUserRiskScoreRuleUserRiskScore(userRiskScore: $userRiskScore)';
+
  }

@@ -64,10 +64,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailEmailSettingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailEmailSettingStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailEmailSettingStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EmailEmailSettingStatus($value)';
+
  }
 /// Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)
 extension type const EmailEmailSettingTag(String value) {
@@ -136,7 +139,7 @@ EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? cre
   status: status != null ? status() : this.status,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailEmailSettingsProperties &&
           created == other.created &&
           enabled == other.enabled &&
@@ -145,7 +148,10 @@ EmailEmailSettingsProperties copyWith({EmailEmailSettingCreated? Function()? cre
           name == other.name &&
           skipWizard == other.skipWizard &&
           status == other.status &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(created, enabled, id, modified, name, skipWizard, status, tag); } 
-@override String toString() { return 'EmailEmailSettingsProperties(created: $created, enabled: $enabled, id: $id, modified: $modified, name: $name, skipWizard: $skipWizard, status: $status, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(created, enabled, id, modified, name, skipWizard, status, tag);
+
+@override String toString() => 'EmailEmailSettingsProperties(created: $created, enabled: $enabled, id: $id, modified: $modified, name: $name, skipWizard: $skipWizard, status: $status, tag: $tag)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfOpenaiWhisperError$400 extends WorkersAiPostRunCfO
 
 final WorkersAiPostRunCfOpenaiWhisperResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfOpenaiWhisperError$Unknown extends WorkersAiPostRunCfOpenaiWhisperError {const WorkersAiPostRunCfOpenaiWhisperError$Unknown(this.statusCode, this.rawBody, );
 

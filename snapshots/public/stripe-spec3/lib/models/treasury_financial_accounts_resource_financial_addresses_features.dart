@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TreasuryFinancialAccountsResourceFinancialAddressesFeatures copyWith({TreasuryFinancialAccountsResourceAbaToggleSettings? Function()? aba}) { return TreasuryFinancialAccountsResourceFinancialAddressesFeatures(
   aba: aba != null ? aba() : this.aba,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceFinancialAddressesFeatures &&
-          aba == other.aba; } 
-@override int get hashCode { return aba.hashCode; } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceFinancialAddressesFeatures(aba: $aba)'; } 
+          aba == other.aba;
+
+@override int get hashCode => aba.hashCode;
+
+@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressesFeatures(aba: $aba)';
+
  }

@@ -53,7 +53,7 @@ WebhookProjectCardEdited copyWith({ItemEditedAction? action, WebhookProjectCardE
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectCardEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -62,7 +62,10 @@ WebhookProjectCardEdited copyWith({ItemEditedAction? action, WebhookProjectCardE
           organization == other.organization &&
           projectCard == other.projectCard &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, organization, projectCard, repository, sender); } 
-@override String toString() { return 'WebhookProjectCardEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, organization, projectCard, repository, sender);
+
+@override String toString() => 'WebhookProjectCardEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, projectCard: $projectCard, repository: $repository, sender: $sender)';
+
  }

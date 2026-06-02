@@ -20,10 +20,13 @@ DeleteIndicatorDeleteResponse copyWith({String? Function()? message, bool? Funct
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteIndicatorDeleteResponse &&
           message == other.message &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(message, success); } 
-@override String toString() { return 'DeleteIndicatorDeleteResponse(message: $message, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(message, success);
+
+@override String toString() => 'DeleteIndicatorDeleteResponse(message: $message, success: $success)';
+
  }

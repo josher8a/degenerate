@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectIncompleteDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectIncompleteDetailsReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunObjectIncompleteDetailsReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunObjectIncompleteDetailsReason($value)';
+
  }
 /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.
 @immutable final class RunObjectIncompleteDetails {const RunObjectIncompleteDetails({this.reason});
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RunObjectIncompleteDetails copyWith({RunObjectIncompleteDetailsReason? Function()? reason}) { return RunObjectIncompleteDetails(
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunObjectIncompleteDetails &&
-          reason == other.reason; } 
-@override int get hashCode { return reason.hashCode; } 
-@override String toString() { return 'RunObjectIncompleteDetails(reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => reason.hashCode;
+
+@override String toString() => 'RunObjectIncompleteDetails(reason: $reason)';
+
  }

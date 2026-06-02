@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Acks copyWith({MqLeaseId? Function()? leaseId}) { return Acks(
   leaseId: leaseId != null ? leaseId() : this.leaseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Acks &&
-          leaseId == other.leaseId; } 
-@override int get hashCode { return leaseId.hashCode; } 
-@override String toString() { return 'Acks(leaseId: $leaseId)'; } 
+          leaseId == other.leaseId;
+
+@override int get hashCode => leaseId.hashCode;
+
+@override String toString() => 'Acks(leaseId: $leaseId)';
+
  }

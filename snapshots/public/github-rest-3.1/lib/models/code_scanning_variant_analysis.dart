@@ -44,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningVariantAnalysisLanguage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningVariantAnalysisLanguage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningVariantAnalysisLanguage($value)';
+
  }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 @immutable final class FailureReason {const FailureReason._(this.value);
@@ -72,10 +75,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FailureReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FailureReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FailureReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FailureReason($value)';
+
  }
 /// A run of a CodeQL query against one or more repositories.
 @immutable final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, required this.status, this.createdAt, this.updatedAt, this.completedAt, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
@@ -167,7 +173,7 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
   scannedRepositories: scannedRepositories != null ? scannedRepositories() : this.scannedRepositories,
   skippedRepositories: skippedRepositories != null ? skippedRepositories() : this.skippedRepositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysis &&
           id == other.id &&
           controllerRepo == other.controllerRepo &&
@@ -181,7 +187,10 @@ CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo,
           actionsWorkflowRunId == other.actionsWorkflowRunId &&
           failureReason == other.failureReason &&
           listEquals(scannedRepositories, other.scannedRepositories) &&
-          skippedRepositories == other.skippedRepositories; } 
-@override int get hashCode { return Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories); } 
-@override String toString() { return 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)'; } 
+          skippedRepositories == other.skippedRepositories;
+
+@override int get hashCode => Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories);
+
+@override String toString() => 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)';
+
  }

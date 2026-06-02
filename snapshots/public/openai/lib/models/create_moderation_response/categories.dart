@@ -101,7 +101,7 @@ Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? 
   violence: violence ?? this.violence,
   violenceGraphic: violenceGraphic ?? this.violenceGraphic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Categories &&
           hate == other.hate &&
           hateThreatening == other.hateThreatening &&
@@ -115,7 +115,10 @@ Categories copyWith({bool? hate, bool? hateThreatening, bool? harassment, bool? 
           sexual == other.sexual &&
           sexualMinors == other.sexualMinors &&
           violence == other.violence &&
-          violenceGraphic == other.violenceGraphic; } 
-@override int get hashCode { return Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic); } 
-@override String toString() { return 'Categories(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
+          violenceGraphic == other.violenceGraphic;
+
+@override int get hashCode => Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic);
+
+@override String toString() => 'Categories(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)';
+
  }

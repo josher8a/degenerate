@@ -25,11 +25,14 @@ FirewallMatchVariant1 copyWith({List<Variant1Headers>? Function()? headers, Vari
   request: request != null ? request() : this.request,
   response: response != null ? response() : this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallMatchVariant1 &&
           listEquals(headers, other.headers) &&
           request == other.request &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(Object.hashAll(headers ?? const []), request, response); } 
-@override String toString() { return 'FirewallMatchVariant1(headers: $headers, request: $request, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(Object.hashAll(headers ?? const []), request, response);
+
+@override String toString() => 'FirewallMatchVariant1(headers: $headers, request: $request, response: $response)';
+
  }

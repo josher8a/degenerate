@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('group
 AccessAccessGroupRule copyWith({AccessAccessGroupRuleGroup? group}) { return AccessAccessGroupRule(
   group: group ?? this.group,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAccessGroupRule &&
-          group == other.group; } 
-@override int get hashCode { return group.hashCode; } 
-@override String toString() { return 'AccessAccessGroupRule(group: $group)'; } 
+          group == other.group;
+
+@override int get hashCode => group.hashCode;
+
+@override String toString() => 'AccessAccessGroupRule(group: $group)';
+
  }

@@ -17,7 +17,8 @@ final class AigConfigCreateEvaluationsError$400 extends AigConfigCreateEvaluatio
 
 final AigConfigCreateEvaluationsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigCreateEvaluationsError$Unknown extends AigConfigCreateEvaluationsError {const AigConfigCreateEvaluationsError$Unknown(this.statusCode, this.rawBody, );
 

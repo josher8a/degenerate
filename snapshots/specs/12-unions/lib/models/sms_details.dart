@@ -20,10 +20,13 @@ SmsDetails copyWith({String? phoneNumber, String? Function()? message, }) { retu
   phoneNumber: phoneNumber ?? this.phoneNumber,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmsDetails &&
           phoneNumber == other.phoneNumber &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(phoneNumber, message); } 
-@override String toString() { return 'SmsDetails(phoneNumber: $phoneNumber, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(phoneNumber, message);
+
+@override String toString() => 'SmsDetails(phoneNumber: $phoneNumber, message: $message)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 Variant2MessagesContentVariant2ImageUrl copyWith({String? url}) { return Variant2MessagesContentVariant2ImageUrl(
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2MessagesContentVariant2ImageUrl &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'Variant2MessagesContentVariant2ImageUrl(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'Variant2MessagesContentVariant2ImageUrl(url: $url)';
+
  }

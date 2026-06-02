@@ -21,10 +21,13 @@ OrgsCreateArtifactDeploymentRecordResponse copyWith({int? Function()? totalCount
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   deploymentRecords: deploymentRecords != null ? deploymentRecords() : this.deploymentRecords,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactDeploymentRecordResponse &&
           totalCount == other.totalCount &&
-          listEquals(deploymentRecords, other.deploymentRecords); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(deploymentRecords ?? const [])); } 
-@override String toString() { return 'OrgsCreateArtifactDeploymentRecordResponse(totalCount: $totalCount, deploymentRecords: $deploymentRecords)'; } 
+          listEquals(deploymentRecords, other.deploymentRecords);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(deploymentRecords ?? const []));
+
+@override String toString() => 'OrgsCreateArtifactDeploymentRecordResponse(totalCount: $totalCount, deploymentRecords: $deploymentRecords)';
+
  }

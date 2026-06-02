@@ -27,11 +27,14 @@ Words copyWith({double? Function()? end, double? Function()? start, String? Func
   start: start != null ? start() : this.start,
   word: word != null ? word() : this.word,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Words &&
           end == other.end &&
           start == other.start &&
-          word == other.word; } 
-@override int get hashCode { return Object.hash(end, start, word); } 
-@override String toString() { return 'Words(end: $end, start: $start, word: $word)'; } 
+          word == other.word;
+
+@override int get hashCode => Object.hash(end, start, word);
+
+@override String toString() => 'Words(end: $end, start: $start, word: $word)';
+
  }

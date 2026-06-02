@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildsBuildTriggerSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildsBuildTriggerSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BuildsBuildTriggerSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BuildsBuildTriggerSource($value)';
+
  }
 /// Git commit hash
 extension type const BuildsCommitHash(String value) {
@@ -119,7 +122,7 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
   repoName: repoName != null ? repoName() : this.repoName,
   rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildTriggerMetadataResponse &&
           author == other.author &&
           branch == other.branch &&
@@ -134,7 +137,10 @@ BuildsBuildTriggerMetadataResponse copyWith({String? Function()? author, BuildsB
           providerAccountName == other.providerAccountName &&
           providerType == other.providerType &&
           repoName == other.repoName &&
-          rootDirectory == other.rootDirectory; } 
-@override int get hashCode { return Object.hash(author, branch, buildCommand, buildTokenName, buildTokenUuid, buildTriggerSource, commitHash, commitMessage, deployCommand, environmentVariables, providerAccountName, providerType, repoName, rootDirectory); } 
-@override String toString() { return 'BuildsBuildTriggerMetadataResponse(author: $author, branch: $branch, buildCommand: $buildCommand, buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, buildTriggerSource: $buildTriggerSource, commitHash: $commitHash, commitMessage: $commitMessage, deployCommand: $deployCommand, environmentVariables: $environmentVariables, providerAccountName: $providerAccountName, providerType: $providerType, repoName: $repoName, rootDirectory: $rootDirectory)'; } 
+          rootDirectory == other.rootDirectory;
+
+@override int get hashCode => Object.hash(author, branch, buildCommand, buildTokenName, buildTokenUuid, buildTriggerSource, commitHash, commitMessage, deployCommand, environmentVariables, providerAccountName, providerType, repoName, rootDirectory);
+
+@override String toString() => 'BuildsBuildTriggerMetadataResponse(author: $author, branch: $branch, buildCommand: $buildCommand, buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, buildTriggerSource: $buildTriggerSource, commitHash: $commitHash, commitMessage: $commitMessage, deployCommand: $deployCommand, environmentVariables: $environmentVariables, providerAccountName: $providerAccountName, providerType: $providerType, repoName: $repoName, rootDirectory: $rootDirectory)';
+
  }

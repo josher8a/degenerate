@@ -23,10 +23,13 @@ ObjectFieldSelector copyWith({String? Function()? apiVersion, String? fieldPath,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   fieldPath: fieldPath ?? this.fieldPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectFieldSelector &&
           apiVersion == other.apiVersion &&
-          fieldPath == other.fieldPath; } 
-@override int get hashCode { return Object.hash(apiVersion, fieldPath); } 
-@override String toString() { return 'ObjectFieldSelector(apiVersion: $apiVersion, fieldPath: $fieldPath)'; } 
+          fieldPath == other.fieldPath;
+
+@override int get hashCode => Object.hash(apiVersion, fieldPath);
+
+@override String toString() => 'ObjectFieldSelector(apiVersion: $apiVersion, fieldPath: $fieldPath)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('githu
 AccessGithubOrganizationRule copyWith({GithubOrganization? githubOrganization}) { return AccessGithubOrganizationRule(
   githubOrganization: githubOrganization ?? this.githubOrganization,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGithubOrganizationRule &&
-          githubOrganization == other.githubOrganization; } 
-@override int get hashCode { return githubOrganization.hashCode; } 
-@override String toString() { return 'AccessGithubOrganizationRule(githubOrganization: $githubOrganization)'; } 
+          githubOrganization == other.githubOrganization;
+
+@override int get hashCode => githubOrganization.hashCode;
+
+@override String toString() => 'AccessGithubOrganizationRule(githubOrganization: $githubOrganization)';
+
  }

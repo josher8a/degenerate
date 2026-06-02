@@ -22,10 +22,13 @@ PropertiesSummary copyWith({SummaryProperties? properties, String? type, }) { re
   properties: properties ?? this.properties,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PropertiesSummary &&
           properties == other.properties &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(properties, type); } 
-@override String toString() { return 'PropertiesSummary(properties: $properties, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(properties, type);
+
+@override String toString() => 'PropertiesSummary(properties: $properties, type: $type)';
+
  }

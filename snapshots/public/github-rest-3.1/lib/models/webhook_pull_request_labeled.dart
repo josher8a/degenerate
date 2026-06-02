@@ -60,7 +60,7 @@ WebhookPullRequestLabeled copyWith({WebhookDiscussionLabeledAction? action, Ente
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestLabeled &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -70,7 +70,10 @@ WebhookPullRequestLabeled copyWith({WebhookDiscussionLabeledAction? action, Ente
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, label, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestLabeled(action: $action, enterprise: $enterprise, installation: $installation, label: $label, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, label, number, organization, pullRequest, repository, sender);
+
+@override String toString() => 'WebhookPullRequestLabeled(action: $action, enterprise: $enterprise, installation: $installation, label: $label, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+
  }

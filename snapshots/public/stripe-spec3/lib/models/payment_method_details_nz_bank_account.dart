@@ -75,7 +75,7 @@ PaymentMethodDetailsNzBankAccount copyWith({String? Function()? accountHolderNam
   last4: last4 ?? this.last4,
   suffix: suffix != null ? suffix() : this.suffix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsNzBankAccount &&
           accountHolderName == other.accountHolderName &&
           bankCode == other.bankCode &&
@@ -83,7 +83,10 @@ PaymentMethodDetailsNzBankAccount copyWith({String? Function()? accountHolderNam
           branchCode == other.branchCode &&
           expectedDebitDate == other.expectedDebitDate &&
           last4 == other.last4 &&
-          suffix == other.suffix; } 
-@override int get hashCode { return Object.hash(accountHolderName, bankCode, bankName, branchCode, expectedDebitDate, last4, suffix); } 
-@override String toString() { return 'PaymentMethodDetailsNzBankAccount(accountHolderName: $accountHolderName, bankCode: $bankCode, bankName: $bankName, branchCode: $branchCode, expectedDebitDate: $expectedDebitDate, last4: $last4, suffix: $suffix)'; } 
+          suffix == other.suffix;
+
+@override int get hashCode => Object.hash(accountHolderName, bankCode, bankName, branchCode, expectedDebitDate, last4, suffix);
+
+@override String toString() => 'PaymentMethodDetailsNzBankAccount(accountHolderName: $accountHolderName, bankCode: $bankCode, bankName: $bankName, branchCode: $branchCode, expectedDebitDate: $expectedDebitDate, last4: $last4, suffix: $suffix)';
+
  }

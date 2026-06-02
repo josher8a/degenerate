@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('searc
 RadarGetSearchGlobalResponseResult copyWith({List<Search>? search}) { return RadarGetSearchGlobalResponseResult(
   search: search ?? this.search,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetSearchGlobalResponseResult &&
-          listEquals(search, other.search); } 
-@override int get hashCode { return Object.hashAll(search); } 
-@override String toString() { return 'RadarGetSearchGlobalResponseResult(search: $search)'; } 
+          listEquals(search, other.search);
+
+@override int get hashCode => Object.hashAll(search);
+
+@override String toString() => 'RadarGetSearchGlobalResponseResult(search: $search)';
+
  }

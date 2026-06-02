@@ -101,7 +101,7 @@ WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, Webh
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentStatusCreatedDeploymentStatus &&
           createdAt == other.createdAt &&
           creator == other.creator &&
@@ -117,7 +117,10 @@ WebhookDeploymentStatusCreatedDeploymentStatus copyWith({String? createdAt, Webh
           state == other.state &&
           targetUrl == other.targetUrl &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, creator, deploymentUrl, description, environment, environmentUrl, id, logUrl, nodeId, performedViaGithubApp, repositoryUrl, state, targetUrl, updatedAt, url); } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedDeploymentStatus(createdAt: $createdAt, creator: $creator, deploymentUrl: $deploymentUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, id: $id, logUrl: $logUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, repositoryUrl: $repositoryUrl, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(createdAt, creator, deploymentUrl, description, environment, environmentUrl, id, logUrl, nodeId, performedViaGithubApp, repositoryUrl, state, targetUrl, updatedAt, url);
+
+@override String toString() => 'WebhookDeploymentStatusCreatedDeploymentStatus(createdAt: $createdAt, creator: $creator, deploymentUrl: $deploymentUrl, description: $description, environment: $environment, environmentUrl: $environmentUrl, id: $id, logUrl: $logUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, repositoryUrl: $repositoryUrl, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt, url: $url)';
+
  }

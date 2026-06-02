@@ -27,11 +27,14 @@ JobStatus copyWith({String? errorMessage, String? lastComplete, String? lastErro
   lastComplete: lastComplete ?? this.lastComplete,
   lastError: lastError ?? this.lastError,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JobStatus &&
           errorMessage == other.errorMessage &&
           lastComplete == other.lastComplete &&
-          lastError == other.lastError; } 
-@override int get hashCode { return Object.hash(errorMessage, lastComplete, lastError); } 
-@override String toString() { return 'JobStatus(errorMessage: $errorMessage, lastComplete: $lastComplete, lastError: $lastError)'; } 
+          lastError == other.lastError;
+
+@override int get hashCode => Object.hash(errorMessage, lastComplete, lastError);
+
+@override String toString() => 'JobStatus(errorMessage: $errorMessage, lastComplete: $lastComplete, lastError: $lastError)';
+
  }

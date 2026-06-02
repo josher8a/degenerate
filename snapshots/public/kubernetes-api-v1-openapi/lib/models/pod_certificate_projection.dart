@@ -78,7 +78,7 @@ PodCertificateProjection copyWith({String? Function()? certificateChainPath, Str
   signerName: signerName ?? this.signerName,
   userAnnotations: userAnnotations != null ? userAnnotations() : this.userAnnotations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodCertificateProjection &&
           certificateChainPath == other.certificateChainPath &&
           credentialBundlePath == other.credentialBundlePath &&
@@ -86,7 +86,10 @@ PodCertificateProjection copyWith({String? Function()? certificateChainPath, Str
           keyType == other.keyType &&
           maxExpirationSeconds == other.maxExpirationSeconds &&
           signerName == other.signerName &&
-          userAnnotations == other.userAnnotations; } 
-@override int get hashCode { return Object.hash(certificateChainPath, credentialBundlePath, keyPath, keyType, maxExpirationSeconds, signerName, userAnnotations); } 
-@override String toString() { return 'PodCertificateProjection(certificateChainPath: $certificateChainPath, credentialBundlePath: $credentialBundlePath, keyPath: $keyPath, keyType: $keyType, maxExpirationSeconds: $maxExpirationSeconds, signerName: $signerName, userAnnotations: $userAnnotations)'; } 
+          userAnnotations == other.userAnnotations;
+
+@override int get hashCode => Object.hash(certificateChainPath, credentialBundlePath, keyPath, keyType, maxExpirationSeconds, signerName, userAnnotations);
+
+@override String toString() => 'PodCertificateProjection(certificateChainPath: $certificateChainPath, credentialBundlePath: $credentialBundlePath, keyPath: $keyPath, keyType: $keyType, maxExpirationSeconds: $maxExpirationSeconds, signerName: $signerName, userAnnotations: $userAnnotations)';
+
  }

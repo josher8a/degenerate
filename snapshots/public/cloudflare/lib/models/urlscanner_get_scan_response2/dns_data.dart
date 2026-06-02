@@ -33,12 +33,15 @@ DnsData copyWith({String? address, bool? dnssecValid, String? name, String? type
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsData &&
           address == other.address &&
           dnssecValid == other.dnssecValid &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, dnssecValid, name, type); } 
-@override String toString() { return 'DnsData(address: $address, dnssecValid: $dnssecValid, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, dnssecValid, name, type);
+
+@override String toString() => 'DnsData(address: $address, dnssecValid: $dnssecValid, name: $name, type: $type)';
+
  }

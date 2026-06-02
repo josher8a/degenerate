@@ -40,11 +40,14 @@ TerminalReaderReaderResourceSelection copyWith({List<TerminalReaderReaderResourc
   id: id != null ? id() : this.id,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceSelection &&
           listEquals(choices, other.choices) &&
           id == other.id &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(Object.hashAll(choices), id, text); } 
-@override String toString() { return 'TerminalReaderReaderResourceSelection(choices: $choices, id: $id, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(Object.hashAll(choices), id, text);
+
+@override String toString() => 'TerminalReaderReaderResourceSelection(choices: $choices, id: $id, text: $text)';
+
  }

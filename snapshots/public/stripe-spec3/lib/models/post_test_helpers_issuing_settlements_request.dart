@@ -81,7 +81,7 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
   transactionAmount: transactionAmount != null ? transactionAmount() : this.transactionAmount,
   transactionCount: transactionCount != null ? transactionCount() : this.transactionCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingSettlementsRequest &&
           bin == other.bin &&
           clearingDate == other.clearingDate &&
@@ -92,7 +92,10 @@ PostTestHelpersIssuingSettlementsRequest copyWith({String? bin, int? clearingDat
           network == other.network &&
           networkSettlementIdentifier == other.networkSettlementIdentifier &&
           transactionAmount == other.transactionAmount &&
-          transactionCount == other.transactionCount; } 
-@override int get hashCode { return Object.hash(bin, clearingDate, currency, Object.hashAll(expand ?? const []), interchangeFeesAmount, netTotalAmount, network, networkSettlementIdentifier, transactionAmount, transactionCount); } 
-@override String toString() { return 'PostTestHelpersIssuingSettlementsRequest(bin: $bin, clearingDate: $clearingDate, currency: $currency, expand: $expand, interchangeFeesAmount: $interchangeFeesAmount, netTotalAmount: $netTotalAmount, network: $network, networkSettlementIdentifier: $networkSettlementIdentifier, transactionAmount: $transactionAmount, transactionCount: $transactionCount)'; } 
+          transactionCount == other.transactionCount;
+
+@override int get hashCode => Object.hash(bin, clearingDate, currency, Object.hashAll(expand ?? const []), interchangeFeesAmount, netTotalAmount, network, networkSettlementIdentifier, transactionAmount, transactionCount);
+
+@override String toString() => 'PostTestHelpersIssuingSettlementsRequest(bin: $bin, clearingDate: $clearingDate, currency: $currency, expand: $expand, interchangeFeesAmount: $interchangeFeesAmount, netTotalAmount: $netTotalAmount, network: $network, networkSettlementIdentifier: $networkSettlementIdentifier, transactionAmount: $transactionAmount, transactionCount: $transactionCount)';
+
  }

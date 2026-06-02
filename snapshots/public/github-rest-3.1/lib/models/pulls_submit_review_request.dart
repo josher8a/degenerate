@@ -22,10 +22,13 @@ PullsSubmitReviewRequest copyWith({String? Function()? body, PullsCreateReviewRe
   body: body != null ? body() : this.body,
   event: event ?? this.event,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsSubmitReviewRequest &&
           body == other.body &&
-          event == other.event; } 
-@override int get hashCode { return Object.hash(body, event); } 
-@override String toString() { return 'PullsSubmitReviewRequest(body: $body, event: $event)'; } 
+          event == other.event;
+
+@override int get hashCode => Object.hash(body, event);
+
+@override String toString() => 'PullsSubmitReviewRequest(body: $body, event: $event)';
+
  }

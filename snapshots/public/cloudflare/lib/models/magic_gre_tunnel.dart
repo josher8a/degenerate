@@ -92,7 +92,7 @@ MagicGreTunnel copyWith({MagicAutomaticReturnRouting? Function()? automaticRetur
   name: name ?? this.name,
   ttl: ttl != null ? ttl() : this.ttl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicGreTunnel &&
           automaticReturnRouting == other.automaticReturnRouting &&
           bgp == other.bgp &&
@@ -108,7 +108,10 @@ MagicGreTunnel copyWith({MagicAutomaticReturnRouting? Function()? automaticRetur
           modifiedOn == other.modifiedOn &&
           mtu == other.mtu &&
           name == other.name &&
-          ttl == other.ttl; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, bgp, bgpStatus, cloudflareGreEndpoint, createdOn, customerGreEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name, ttl); } 
-@override String toString() { return 'MagicGreTunnel(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareGreEndpoint: $cloudflareGreEndpoint, createdOn: $createdOn, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name, ttl: $ttl)'; } 
+          ttl == other.ttl;
+
+@override int get hashCode => Object.hash(automaticReturnRouting, bgp, bgpStatus, cloudflareGreEndpoint, createdOn, customerGreEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name, ttl);
+
+@override String toString() => 'MagicGreTunnel(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareGreEndpoint: $cloudflareGreEndpoint, createdOn: $createdOn, customerGreEndpoint: $customerGreEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name, ttl: $ttl)';
+
  }

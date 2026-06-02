@@ -63,7 +63,7 @@ WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, Webhoo
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertReopened &&
           action == other.action &&
           alert == other.alert &&
@@ -73,7 +73,10 @@ WebhookCodeScanningAlertReopened copyWith({ProjectReopenedAction? action, Webhoo
           organization == other.organization &&
           ref == other.ref &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender); } 
-@override String toString() { return 'WebhookCodeScanningAlertReopened(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, commitOid, enterprise, installation, organization, ref, repository, sender);
+
+@override String toString() => 'WebhookCodeScanningAlertReopened(action: $action, alert: $alert, commitOid: $commitOid, enterprise: $enterprise, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender)';
+
  }

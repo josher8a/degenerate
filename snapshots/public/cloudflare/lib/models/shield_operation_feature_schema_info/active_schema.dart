@@ -37,12 +37,15 @@ ActiveSchema copyWith({ShieldTimestamp? Function()? createdAt, ShieldUuid? Funct
   isLearned: isLearned != null ? isLearned() : this.isLearned,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActiveSchema &&
           createdAt == other.createdAt &&
           id == other.id &&
           isLearned == other.isLearned &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, id, isLearned, name); } 
-@override String toString() { return 'ActiveSchema(createdAt: $createdAt, id: $id, isLearned: $isLearned, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdAt, id, isLearned, name);
+
+@override String toString() => 'ActiveSchema(createdAt: $createdAt, id: $id, isLearned: $isLearned, name: $name)';
+
  }

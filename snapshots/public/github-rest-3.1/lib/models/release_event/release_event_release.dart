@@ -167,7 +167,7 @@ ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? up
   isShortDescriptionHtmlTruncated: isShortDescriptionHtmlTruncated != null ? isShortDescriptionHtmlTruncated() : this.isShortDescriptionHtmlTruncated,
   shortDescriptionHtml: shortDescriptionHtml != null ? shortDescriptionHtml() : this.shortDescriptionHtml,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReleaseEventRelease &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
@@ -195,7 +195,10 @@ ReleaseEventRelease copyWith({Uri? url, Uri? htmlUrl, Uri? assetsUrl, String? up
           discussionUrl == other.discussionUrl &&
           reactions == other.reactions &&
           isShortDescriptionHtmlTruncated == other.isShortDescriptionHtmlTruncated &&
-          shortDescriptionHtml == other.shortDescriptionHtml; } 
-@override int get hashCode { return Object.hashAll([url, htmlUrl, assetsUrl, uploadUrl, tarballUrl, zipballUrl, id, nodeId, tagName, targetCommitish, name, body, draft, prerelease, immutable, createdAt, publishedAt, updatedAt, author, Object.hashAll(assets), bodyHtml, bodyText, mentionsCount, discussionUrl, reactions, isShortDescriptionHtmlTruncated, shortDescriptionHtml]); } 
-@override String toString() { return 'ReleaseEventRelease(url: $url, htmlUrl: $htmlUrl, assetsUrl: $assetsUrl, uploadUrl: $uploadUrl, tarballUrl: $tarballUrl, zipballUrl: $zipballUrl, id: $id, nodeId: $nodeId, tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, immutable: $immutable, createdAt: $createdAt, publishedAt: $publishedAt, updatedAt: $updatedAt, author: $author, assets: $assets, bodyHtml: $bodyHtml, bodyText: $bodyText, mentionsCount: $mentionsCount, discussionUrl: $discussionUrl, reactions: $reactions, isShortDescriptionHtmlTruncated: $isShortDescriptionHtmlTruncated, shortDescriptionHtml: $shortDescriptionHtml)'; } 
+          shortDescriptionHtml == other.shortDescriptionHtml;
+
+@override int get hashCode => Object.hashAll([url, htmlUrl, assetsUrl, uploadUrl, tarballUrl, zipballUrl, id, nodeId, tagName, targetCommitish, name, body, draft, prerelease, immutable, createdAt, publishedAt, updatedAt, author, Object.hashAll(assets), bodyHtml, bodyText, mentionsCount, discussionUrl, reactions, isShortDescriptionHtmlTruncated, shortDescriptionHtml]);
+
+@override String toString() => 'ReleaseEventRelease(url: $url, htmlUrl: $htmlUrl, assetsUrl: $assetsUrl, uploadUrl: $uploadUrl, tarballUrl: $tarballUrl, zipballUrl: $zipballUrl, id: $id, nodeId: $nodeId, tagName: $tagName, targetCommitish: $targetCommitish, name: $name, body: $body, draft: $draft, prerelease: $prerelease, immutable: $immutable, createdAt: $createdAt, publishedAt: $publishedAt, updatedAt: $updatedAt, author: $author, assets: $assets, bodyHtml: $bodyHtml, bodyText: $bodyText, mentionsCount: $mentionsCount, discussionUrl: $discussionUrl, reactions: $reactions, isShortDescriptionHtmlTruncated: $isShortDescriptionHtmlTruncated, shortDescriptionHtml: $shortDescriptionHtml)';
+
  }

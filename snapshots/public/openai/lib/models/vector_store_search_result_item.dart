@@ -54,13 +54,16 @@ VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? 
   attributes: attributes != null ? attributes() : this.attributes,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreSearchResultItem &&
           fileId == other.fileId &&
           filename == other.filename &&
           score == other.score &&
           attributes == other.attributes &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(fileId, filename, score, attributes, Object.hashAll(content)); } 
-@override String toString() { return 'VectorStoreSearchResultItem(fileId: $fileId, filename: $filename, score: $score, attributes: $attributes, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(fileId, filename, score, attributes, Object.hashAll(content));
+
+@override String toString() => 'VectorStoreSearchResultItem(fileId: $fileId, filename: $filename, score: $score, attributes: $attributes, content: $content)';
+
  }

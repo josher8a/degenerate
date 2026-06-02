@@ -33,12 +33,15 @@ Subject copyWith({String? title, String? url, String? latestCommentUrl, String? 
   latestCommentUrl: latestCommentUrl ?? this.latestCommentUrl,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Subject &&
           title == other.title &&
           url == other.url &&
           latestCommentUrl == other.latestCommentUrl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(title, url, latestCommentUrl, type); } 
-@override String toString() { return 'Subject(title: $title, url: $url, latestCommentUrl: $latestCommentUrl, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(title, url, latestCommentUrl, type);
+
+@override String toString() => 'Subject(title: $title, url: $url, latestCommentUrl: $latestCommentUrl, type: $type)';
+
  }

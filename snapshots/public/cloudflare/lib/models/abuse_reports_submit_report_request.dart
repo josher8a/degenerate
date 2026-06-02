@@ -74,7 +74,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_children';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -87,10 +88,13 @@ AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comme
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseChildren && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseChildren($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseChildren && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseChildren($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -120,7 +124,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_dmca';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -133,10 +138,13 @@ AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments,
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseDmca && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseDmca($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseDmca && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseDmca($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -166,7 +174,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_general';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -179,10 +188,13 @@ AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? commen
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseGeneral && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseGeneral($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseGeneral && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseGeneral($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -212,7 +224,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_ncsei';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -225,10 +238,13 @@ AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseNcsei && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseNcsei($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseNcsei && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseNcsei($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -258,7 +274,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_phishing';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -271,10 +288,13 @@ AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comme
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbusePhishing && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abusePhishing($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbusePhishing && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abusePhishing($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -304,7 +324,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_registrar_whois';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -317,10 +338,13 @@ AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()?
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseRegistrarWhois && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseRegistrarWhois($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseRegistrarWhois && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseRegistrarWhois($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -350,7 +374,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_threat';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -363,10 +388,13 @@ AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comment
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseThreat && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseThreat($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseThreat && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseThreat($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -396,7 +424,8 @@ final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
 @override String get act => 'abuse_trademark';
 
-@override Map<String, dynamic> toJson() { return {...abuseReportsBaseReportFields.toJson(), 'act': act}; } 
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+
 AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsBaseReportFields.copyWith(
   comments: comments,
   company: company,
@@ -409,10 +438,13 @@ AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comm
   title: title,
   urls: urls,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequestAbuseTrademark && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields; } 
-@override int get hashCode { return abuseReportsBaseReportFields.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.abuseTrademark($abuseReportsBaseReportFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequestAbuseTrademark && abuseReportsBaseReportFields == other.abuseReportsBaseReportFields;
+
+@override int get hashCode => abuseReportsBaseReportFields.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.abuseTrademark($abuseReportsBaseReportFields)';
+
 @override String? get comments => abuseReportsBaseReportFields.comments;
 
 @override String? get company => abuseReportsBaseReportFields.company;
@@ -442,11 +474,15 @@ final Map<String, dynamic> json;
 
 @override String get act => json['act'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsSubmitReportRequest$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'AbuseReportsSubmitReportRequest.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsSubmitReportRequest$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'AbuseReportsSubmitReportRequest.unknown($json)';
+
 @override String? get comments => json['comments'] as String?;
 
 @override String? get company => json['company'] as String?;

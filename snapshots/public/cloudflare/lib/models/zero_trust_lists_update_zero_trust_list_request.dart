@@ -28,11 +28,14 @@ ZeroTrustListsUpdateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription? 
   items: items != null ? items() : this.items,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustListsUpdateZeroTrustListRequest &&
           description == other.description &&
           listEquals(items, other.items) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(items ?? const []), name); } 
-@override String toString() { return 'ZeroTrustListsUpdateZeroTrustListRequest(description: $description, items: $items, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(items ?? const []), name);
+
+@override String toString() => 'ZeroTrustListsUpdateZeroTrustListRequest(description: $description, items: $items, name: $name)';
+
  }

@@ -24,10 +24,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputMessageRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputMessageRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputMessageRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InputMessageRole($value)';
+
  }
 /// A message input to the model with a role indicating instruction following
 /// hierarchy. Instructions given with the `developer` or `system` role take
@@ -71,12 +74,15 @@ InputMessage copyWith({String? Function()? type, InputMessageRole? role, Compute
   status: status != null ? status() : this.status,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputMessage &&
           type == other.type &&
           role == other.role &&
           status == other.status &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(type, role, status, Object.hashAll(content)); } 
-@override String toString() { return 'InputMessage(type: $type, role: $role, status: $status, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(type, role, status, Object.hashAll(content));
+
+@override String toString() => 'InputMessage(type: $type, role: $role, status: $status, content: $content)';
+
  }

@@ -19,19 +19,22 @@ final class BillingGetAllBudgetsOrgError$403 extends BillingGetAllBudgetsOrgErro
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class BillingGetAllBudgetsOrgError$404 extends BillingGetAllBudgetsOrgError {const BillingGetAllBudgetsOrgError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class BillingGetAllBudgetsOrgError$500 extends BillingGetAllBudgetsOrgError {const BillingGetAllBudgetsOrgError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BillingGetAllBudgetsOrgError$Unknown extends BillingGetAllBudgetsOrgError {const BillingGetAllBudgetsOrgError$Unknown(this.statusCode, this.rawBody, );
 

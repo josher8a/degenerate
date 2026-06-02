@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceStatusCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceStatusCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConferenceStatusCallbackMethod($value)';
+
  }
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 @immutable final class ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceRecordingStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceRecordingStatusCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceRecordingStatusCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConferenceRecordingStatusCallbackMethod($value)';
+
  }
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 @immutable final class AmdStatusCallbackMethod {const AmdStatusCallbackMethod._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AmdStatusCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AmdStatusCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AmdStatusCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AmdStatusCallbackMethod($value)';
+
  }
 @immutable final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.conferenceRecord, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.statusCallback, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callerDisplayName, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callSidToCoach, });
 
@@ -401,7 +410,7 @@ CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? st
   clientNotificationUrl: clientNotificationUrl != null ? clientNotificationUrl() : this.clientNotificationUrl,
   callerDisplayName: callerDisplayName != null ? callerDisplayName() : this.callerDisplayName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateParticipantRequest &&
           from == other.from &&
           to == other.to &&
@@ -452,7 +461,10 @@ CreateParticipantRequest copyWith({String? from, String? to, Uri? Function()? st
           trim == other.trim &&
           callToken == other.callToken &&
           clientNotificationUrl == other.clientNotificationUrl &&
-          callerDisplayName == other.callerDisplayName; } 
-@override int get hashCode { return Object.hashAll([from, to, statusCallback, statusCallbackMethod, Object.hashAll(statusCallbackEvent ?? const []), label, timeout, record, muted, beep, startConferenceOnEnter, endConferenceOnExit, waitUrl, waitMethod, earlyMedia, maxParticipants, conferenceRecord, conferenceTrim, conferenceStatusCallback, conferenceStatusCallbackMethod, Object.hashAll(conferenceStatusCallbackEvent ?? const []), recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, region, conferenceRecordingStatusCallback, conferenceRecordingStatusCallbackMethod, Object.hashAll(recordingStatusCallbackEvent ?? const []), Object.hashAll(conferenceRecordingStatusCallbackEvent ?? const []), coaching, callSidToCoach, jitterBufferSize, byoc, callerId, callReason, recordingTrack, timeLimit, machineDetection, machineDetectionTimeout, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, amdStatusCallback, amdStatusCallbackMethod, trim, callToken, clientNotificationUrl, callerDisplayName]); } 
-@override String toString() { return 'CreateParticipantRequest(from: $from, to: $to, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, statusCallbackEvent: $statusCallbackEvent, label: $label, timeout: $timeout, record: $record, muted: $muted, beep: $beep, startConferenceOnEnter: $startConferenceOnEnter, endConferenceOnExit: $endConferenceOnExit, waitUrl: $waitUrl, waitMethod: $waitMethod, earlyMedia: $earlyMedia, maxParticipants: $maxParticipants, conferenceRecord: $conferenceRecord, conferenceTrim: $conferenceTrim, conferenceStatusCallback: $conferenceStatusCallback, conferenceStatusCallbackMethod: $conferenceStatusCallbackMethod, conferenceStatusCallbackEvent: $conferenceStatusCallbackEvent, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, region: $region, conferenceRecordingStatusCallback: $conferenceRecordingStatusCallback, conferenceRecordingStatusCallbackMethod: $conferenceRecordingStatusCallbackMethod, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, conferenceRecordingStatusCallbackEvent: $conferenceRecordingStatusCallbackEvent, coaching: $coaching, callSidToCoach: $callSidToCoach, jitterBufferSize: $jitterBufferSize, byoc: $byoc, callerId: $callerId, callReason: $callReason, recordingTrack: $recordingTrack, timeLimit: $timeLimit, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, amdStatusCallback: $amdStatusCallback, amdStatusCallbackMethod: $amdStatusCallbackMethod, trim: $trim, callToken: $callToken, clientNotificationUrl: $clientNotificationUrl, callerDisplayName: $callerDisplayName)'; } 
+          callerDisplayName == other.callerDisplayName;
+
+@override int get hashCode => Object.hashAll([from, to, statusCallback, statusCallbackMethod, Object.hashAll(statusCallbackEvent ?? const []), label, timeout, record, muted, beep, startConferenceOnEnter, endConferenceOnExit, waitUrl, waitMethod, earlyMedia, maxParticipants, conferenceRecord, conferenceTrim, conferenceStatusCallback, conferenceStatusCallbackMethod, Object.hashAll(conferenceStatusCallbackEvent ?? const []), recordingChannels, recordingStatusCallback, recordingStatusCallbackMethod, sipAuthUsername, sipAuthPassword, region, conferenceRecordingStatusCallback, conferenceRecordingStatusCallbackMethod, Object.hashAll(recordingStatusCallbackEvent ?? const []), Object.hashAll(conferenceRecordingStatusCallbackEvent ?? const []), coaching, callSidToCoach, jitterBufferSize, byoc, callerId, callReason, recordingTrack, timeLimit, machineDetection, machineDetectionTimeout, machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout, amdStatusCallback, amdStatusCallbackMethod, trim, callToken, clientNotificationUrl, callerDisplayName]);
+
+@override String toString() => 'CreateParticipantRequest(from: $from, to: $to, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, statusCallbackEvent: $statusCallbackEvent, label: $label, timeout: $timeout, record: $record, muted: $muted, beep: $beep, startConferenceOnEnter: $startConferenceOnEnter, endConferenceOnExit: $endConferenceOnExit, waitUrl: $waitUrl, waitMethod: $waitMethod, earlyMedia: $earlyMedia, maxParticipants: $maxParticipants, conferenceRecord: $conferenceRecord, conferenceTrim: $conferenceTrim, conferenceStatusCallback: $conferenceStatusCallback, conferenceStatusCallbackMethod: $conferenceStatusCallbackMethod, conferenceStatusCallbackEvent: $conferenceStatusCallbackEvent, recordingChannels: $recordingChannels, recordingStatusCallback: $recordingStatusCallback, recordingStatusCallbackMethod: $recordingStatusCallbackMethod, sipAuthUsername: $sipAuthUsername, sipAuthPassword: $sipAuthPassword, region: $region, conferenceRecordingStatusCallback: $conferenceRecordingStatusCallback, conferenceRecordingStatusCallbackMethod: $conferenceRecordingStatusCallbackMethod, recordingStatusCallbackEvent: $recordingStatusCallbackEvent, conferenceRecordingStatusCallbackEvent: $conferenceRecordingStatusCallbackEvent, coaching: $coaching, callSidToCoach: $callSidToCoach, jitterBufferSize: $jitterBufferSize, byoc: $byoc, callerId: $callerId, callReason: $callReason, recordingTrack: $recordingTrack, timeLimit: $timeLimit, machineDetection: $machineDetection, machineDetectionTimeout: $machineDetectionTimeout, machineDetectionSpeechThreshold: $machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: $machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: $machineDetectionSilenceTimeout, amdStatusCallback: $amdStatusCallback, amdStatusCallbackMethod: $amdStatusCallbackMethod, trim: $trim, callToken: $callToken, clientNotificationUrl: $clientNotificationUrl, callerDisplayName: $callerDisplayName)';
+
  }

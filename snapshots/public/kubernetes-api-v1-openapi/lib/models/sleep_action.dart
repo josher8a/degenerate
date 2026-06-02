@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('secon
 SleepAction copyWith({int? seconds}) { return SleepAction(
   seconds: seconds ?? this.seconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SleepAction &&
-          seconds == other.seconds; } 
-@override int get hashCode { return seconds.hashCode; } 
-@override String toString() { return 'SleepAction(seconds: $seconds)'; } 
+          seconds == other.seconds;
+
+@override int get hashCode => seconds.hashCode;
+
+@override String toString() => 'SleepAction(seconds: $seconds)';
+
  }

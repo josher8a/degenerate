@@ -45,7 +45,7 @@ R2SlurperJobProgressResponse copyWith({String? Function()? createdAt, int? Funct
   status: status != null ? status() : this.status,
   transferredObjects: transferredObjects != null ? transferredObjects() : this.transferredObjects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperJobProgressResponse &&
           createdAt == other.createdAt &&
           failedObjects == other.failedObjects &&
@@ -53,7 +53,10 @@ R2SlurperJobProgressResponse copyWith({String? Function()? createdAt, int? Funct
           objects == other.objects &&
           skippedObjects == other.skippedObjects &&
           status == other.status &&
-          transferredObjects == other.transferredObjects; } 
-@override int get hashCode { return Object.hash(createdAt, failedObjects, id, objects, skippedObjects, status, transferredObjects); } 
-@override String toString() { return 'R2SlurperJobProgressResponse(createdAt: $createdAt, failedObjects: $failedObjects, id: $id, objects: $objects, skippedObjects: $skippedObjects, status: $status, transferredObjects: $transferredObjects)'; } 
+          transferredObjects == other.transferredObjects;
+
+@override int get hashCode => Object.hash(createdAt, failedObjects, id, objects, skippedObjects, status, transferredObjects);
+
+@override String toString() => 'R2SlurperJobProgressResponse(createdAt: $createdAt, failedObjects: $failedObjects, id: $id, objects: $objects, skippedObjects: $skippedObjects, status: $status, transferredObjects: $transferredObjects)';
+
  }

@@ -22,10 +22,13 @@ UpdateMemberRequest copyWith({Uri? url, Method? Function()? method, }) { return 
   url: url ?? this.url,
   method: method != null ? method() : this.method,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateMemberRequest &&
           url == other.url &&
-          method == other.method; } 
-@override int get hashCode { return Object.hash(url, method); } 
-@override String toString() { return 'UpdateMemberRequest(url: $url, method: $method)'; } 
+          method == other.method;
+
+@override int get hashCode => Object.hash(url, method);
+
+@override String toString() => 'UpdateMemberRequest(url: $url, method: $method)';
+
  }

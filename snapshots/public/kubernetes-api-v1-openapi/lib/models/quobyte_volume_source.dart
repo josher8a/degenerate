@@ -48,14 +48,17 @@ QuobyteVolumeSource copyWith({String? Function()? group, bool? Function()? readO
   user: user != null ? user() : this.user,
   volume: volume ?? this.volume,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuobyteVolumeSource &&
           group == other.group &&
           readOnly == other.readOnly &&
           registry == other.registry &&
           tenant == other.tenant &&
           user == other.user &&
-          volume == other.volume; } 
-@override int get hashCode { return Object.hash(group, readOnly, registry, tenant, user, volume); } 
-@override String toString() { return 'QuobyteVolumeSource(group: $group, readOnly: $readOnly, registry: $registry, tenant: $tenant, user: $user, volume: $volume)'; } 
+          volume == other.volume;
+
+@override int get hashCode => Object.hash(group, readOnly, registry, tenant, user, volume);
+
+@override String toString() => 'QuobyteVolumeSource(group: $group, readOnly: $readOnly, registry: $registry, tenant: $tenant, user: $user, volume: $volume)';
+
  }

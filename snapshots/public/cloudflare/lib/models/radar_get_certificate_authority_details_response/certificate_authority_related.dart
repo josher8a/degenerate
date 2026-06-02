@@ -41,12 +41,15 @@ CertificateAuthorityRelated copyWith({CertificateRecordType? certificateRecordTy
   revocationStatus: revocationStatus ?? this.revocationStatus,
   sha256Fingerprint: sha256Fingerprint ?? this.sha256Fingerprint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateAuthorityRelated &&
           certificateRecordType == other.certificateRecordType &&
           name == other.name &&
           revocationStatus == other.revocationStatus &&
-          sha256Fingerprint == other.sha256Fingerprint; } 
-@override int get hashCode { return Object.hash(certificateRecordType, name, revocationStatus, sha256Fingerprint); } 
-@override String toString() { return 'CertificateAuthorityRelated(certificateRecordType: $certificateRecordType, name: $name, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)'; } 
+          sha256Fingerprint == other.sha256Fingerprint;
+
+@override int get hashCode => Object.hash(certificateRecordType, name, revocationStatus, sha256Fingerprint);
+
+@override String toString() => 'CertificateAuthorityRelated(certificateRecordType: $certificateRecordType, name: $name, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)';
+
  }

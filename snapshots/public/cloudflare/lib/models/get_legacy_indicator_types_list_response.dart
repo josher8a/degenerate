@@ -22,10 +22,13 @@ GetLegacyIndicatorTypesListResponse copyWith({GetAttackerListResponseItems? item
   items: items ?? this.items,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetLegacyIndicatorTypesListResponse &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'GetLegacyIndicatorTypesListResponse(items: $items, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(items, type);
+
+@override String toString() => 'GetLegacyIndicatorTypesListResponse(items: $items, type: $type)';
+
  }

@@ -22,10 +22,13 @@ PostTestHelpersTreasuryOutboundPaymentsIdRequest copyWith({List<String>? Functio
   expand: expand != null ? expand() : this.expand,
   trackingDetails: trackingDetails ?? this.trackingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundPaymentsIdRequest &&
           listEquals(expand, other.expand) &&
-          trackingDetails == other.trackingDetails; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), trackingDetails); } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdRequest(expand: $expand, trackingDetails: $trackingDetails)'; } 
+          trackingDetails == other.trackingDetails;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), trackingDetails);
+
+@override String toString() => 'PostTestHelpersTreasuryOutboundPaymentsIdRequest(expand: $expand, trackingDetails: $trackingDetails)';
+
  }

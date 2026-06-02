@@ -26,11 +26,14 @@ DlpCustomEntryUpdateType copyWith({String? Function()? description, String? name
   name: name ?? this.name,
   pattern: pattern ?? this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpCustomEntryUpdateType &&
           description == other.description &&
           name == other.name &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(description, name, pattern); } 
-@override String toString() { return 'DlpCustomEntryUpdateType(description: $description, name: $name, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(description, name, pattern);
+
+@override String toString() => 'DlpCustomEntryUpdateType(description: $description, name: $name, pattern: $pattern)';
+
  }

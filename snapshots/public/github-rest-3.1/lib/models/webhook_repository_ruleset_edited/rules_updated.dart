@@ -20,10 +20,13 @@ RulesUpdated copyWith({RepositoryRule? Function()? rule, RulesUpdatedChanges? Fu
   rule: rule != null ? rule() : this.rule,
   changes: changes != null ? changes() : this.changes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesUpdated &&
           rule == other.rule &&
-          changes == other.changes; } 
-@override int get hashCode { return Object.hash(rule, changes); } 
-@override String toString() { return 'RulesUpdated(rule: $rule, changes: $changes)'; } 
+          changes == other.changes;
+
+@override int get hashCode => Object.hash(rule, changes);
+
+@override String toString() => 'RulesUpdated(rule: $rule, changes: $changes)';
+
  }

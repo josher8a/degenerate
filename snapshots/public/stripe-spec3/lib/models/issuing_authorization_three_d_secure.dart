@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 IssuingAuthorizationThreeDSecure copyWith({IssuingAuthorizationThreeDSecureResult? result}) { return IssuingAuthorizationThreeDSecure(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationThreeDSecure &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'IssuingAuthorizationThreeDSecure(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'IssuingAuthorizationThreeDSecure(result: $result)';
+
  }

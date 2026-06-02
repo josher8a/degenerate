@@ -54,7 +54,7 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
   recurring: recurring != null ? recurring() : this.recurring,
   triggerBy: triggerBy != null ? triggerBy() : this.triggerBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateUsageTriggerRequest &&
           callbackUrl == other.callbackUrl &&
           triggerValue == other.triggerValue &&
@@ -62,7 +62,10 @@ CreateUsageTriggerRequest copyWith({Uri? callbackUrl, String? triggerValue, Stri
           callbackMethod == other.callbackMethod &&
           friendlyName == other.friendlyName &&
           recurring == other.recurring &&
-          triggerBy == other.triggerBy; } 
-@override int get hashCode { return Object.hash(callbackUrl, triggerValue, usageCategory, callbackMethod, friendlyName, recurring, triggerBy); } 
-@override String toString() { return 'CreateUsageTriggerRequest(callbackUrl: $callbackUrl, triggerValue: $triggerValue, usageCategory: $usageCategory, callbackMethod: $callbackMethod, friendlyName: $friendlyName, recurring: $recurring, triggerBy: $triggerBy)'; } 
+          triggerBy == other.triggerBy;
+
+@override int get hashCode => Object.hash(callbackUrl, triggerValue, usageCategory, callbackMethod, friendlyName, recurring, triggerBy);
+
+@override String toString() => 'CreateUsageTriggerRequest(callbackUrl: $callbackUrl, triggerValue: $triggerValue, usageCategory: $usageCategory, callbackMethod: $callbackMethod, friendlyName: $friendlyName, recurring: $recurring, triggerBy: $triggerBy)';
+
  }

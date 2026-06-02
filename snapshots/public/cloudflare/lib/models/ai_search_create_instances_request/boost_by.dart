@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BoostByDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BoostByDirection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BoostByDirection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BoostByDirection($value)';
+
  }
 @immutable final class BoostBy {const BoostBy({required this.field, this.direction, });
 
@@ -60,10 +63,13 @@ BoostBy copyWith({BoostByDirection? Function()? direction, String? field, }) { r
   direction: direction != null ? direction() : this.direction,
   field: field ?? this.field,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BoostBy &&
           direction == other.direction &&
-          field == other.field; } 
-@override int get hashCode { return Object.hash(direction, field); } 
-@override String toString() { return 'BoostBy(direction: $direction, field: $field)'; } 
+          field == other.field;
+
+@override int get hashCode => Object.hash(direction, field);
+
+@override String toString() => 'BoostBy(direction: $direction, field: $field)';
+
  }

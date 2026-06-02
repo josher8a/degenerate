@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('condi
 PortalResourceScheduleUpdateAtPeriodEnd copyWith({List<PortalResourceScheduleUpdateAtPeriodEndCondition>? conditions}) { return PortalResourceScheduleUpdateAtPeriodEnd(
   conditions: conditions ?? this.conditions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalResourceScheduleUpdateAtPeriodEnd &&
-          listEquals(conditions, other.conditions); } 
-@override int get hashCode { return Object.hashAll(conditions); } 
-@override String toString() { return 'PortalResourceScheduleUpdateAtPeriodEnd(conditions: $conditions)'; } 
+          listEquals(conditions, other.conditions);
+
+@override int get hashCode => Object.hashAll(conditions);
+
+@override String toString() => 'PortalResourceScheduleUpdateAtPeriodEnd(conditions: $conditions)';
+
  }

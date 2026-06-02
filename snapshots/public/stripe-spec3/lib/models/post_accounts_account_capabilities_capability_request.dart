@@ -24,10 +24,13 @@ PostAccountsAccountCapabilitiesCapabilityRequest copyWith({List<String>? Functio
   expand: expand != null ? expand() : this.expand,
   requested: requested != null ? requested() : this.requested,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountCapabilitiesCapabilityRequest &&
           listEquals(expand, other.expand) &&
-          requested == other.requested; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), requested); } 
-@override String toString() { return 'PostAccountsAccountCapabilitiesCapabilityRequest(expand: $expand, requested: $requested)'; } 
+          requested == other.requested;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), requested);
+
+@override String toString() => 'PostAccountsAccountCapabilitiesCapabilityRequest(expand: $expand, requested: $requested)';
+
  }

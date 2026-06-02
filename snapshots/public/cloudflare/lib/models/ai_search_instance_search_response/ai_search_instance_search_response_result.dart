@@ -21,10 +21,13 @@ AiSearchInstanceSearchResponseResult copyWith({List<Chunks>? chunks, String? sea
   chunks: chunks ?? this.chunks,
   searchQuery: searchQuery ?? this.searchQuery,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceSearchResponseResult &&
           listEquals(chunks, other.chunks) &&
-          searchQuery == other.searchQuery; } 
-@override int get hashCode { return Object.hash(Object.hashAll(chunks), searchQuery); } 
-@override String toString() { return 'AiSearchInstanceSearchResponseResult(chunks: $chunks, searchQuery: $searchQuery)'; } 
+          searchQuery == other.searchQuery;
+
+@override int get hashCode => Object.hash(Object.hashAll(chunks), searchQuery);
+
+@override String toString() => 'AiSearchInstanceSearchResponseResult(chunks: $chunks, searchQuery: $searchQuery)';
+
  }

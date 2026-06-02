@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GrammarType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GrammarType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GrammarType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GrammarType($value)';
+
  }
 @immutable final class FormatGrammar {const FormatGrammar({required this.grammar, required this.type, });
 
@@ -42,10 +45,13 @@ FormatGrammar copyWith({GrammarGrammar? grammar, GrammarType? type, }) { return 
   grammar: grammar ?? this.grammar,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FormatGrammar &&
           grammar == other.grammar &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(grammar, type); } 
-@override String toString() { return 'FormatGrammar(grammar: $grammar, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(grammar, type);
+
+@override String toString() => 'FormatGrammar(grammar: $grammar, type: $type)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinishUpgradeFailureK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinishUpgradeFailureK($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinishUpgradeFailureK && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinishUpgradeFailureK($value)';
+
  }
 @immutable final class FinishUpgradeFailure {const FinishUpgradeFailure({required this.k});
 
@@ -38,9 +41,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); 
 FinishUpgradeFailure copyWith({FinishUpgradeFailureK? k}) { return FinishUpgradeFailure(
   k: k ?? this.k,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinishUpgradeFailure &&
-          k == other.k; } 
-@override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'FinishUpgradeFailure(k: $k)'; } 
+          k == other.k;
+
+@override int get hashCode => k.hashCode;
+
+@override String toString() => 'FinishUpgradeFailure(k: $k)';
+
  }

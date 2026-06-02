@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClosedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClosedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClosedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClosedReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class ReviewObject {const ReviewObject._(this.value);
@@ -60,10 +63,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReviewObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReviewObject($value)';
+
  }
 /// The reason the review was opened. One of `rule` or `manual`.
 @immutable final class OpenedReason {const OpenedReason._(this.value);
@@ -85,10 +91,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OpenedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OpenedReason($value)';
+
  }
 /// Reviews can be used to supplement automated fraud detection with human expertise.
 /// 
@@ -207,7 +216,7 @@ Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function(
   reason: reason ?? this.reason,
   session: session != null ? session() : this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Review &&
           billingZip == other.billingZip &&
           charge == other.charge &&
@@ -222,7 +231,10 @@ Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function(
           openedReason == other.openedReason &&
           paymentIntent == other.paymentIntent &&
           reason == other.reason &&
-          session == other.session; } 
-@override int get hashCode { return Object.hash(billingZip, charge, closedReason, created, id, ipAddress, ipAddressLocation, livemode, object, open, openedReason, paymentIntent, reason, session); } 
-@override String toString() { return 'Review(billingZip: $billingZip, charge: $charge, closedReason: $closedReason, created: $created, id: $id, ipAddress: $ipAddress, ipAddressLocation: $ipAddressLocation, livemode: $livemode, object: $object, open: $open, openedReason: $openedReason, paymentIntent: $paymentIntent, reason: $reason, session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => Object.hash(billingZip, charge, closedReason, created, id, ipAddress, ipAddressLocation, livemode, object, open, openedReason, paymentIntent, reason, session);
+
+@override String toString() => 'Review(billingZip: $billingZip, charge: $charge, closedReason: $closedReason, created: $created, id: $id, ipAddress: $ipAddress, ipAddressLocation: $ipAddressLocation, livemode: $livemode, object: $object, open: $open, openedReason: $openedReason, paymentIntent: $paymentIntent, reason: $reason, session: $session)';
+
  }

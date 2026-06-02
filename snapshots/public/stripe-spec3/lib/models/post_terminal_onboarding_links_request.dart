@@ -42,12 +42,15 @@ PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, L
   linkType: linkType ?? this.linkType,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalOnboardingLinksRequest &&
           listEquals(expand, other.expand) &&
           linkOptions == other.linkOptions &&
           linkType == other.linkType &&
-          onBehalfOf == other.onBehalfOf; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), linkOptions, linkType, onBehalfOf); } 
-@override String toString() { return 'PostTerminalOnboardingLinksRequest(expand: $expand, linkOptions: $linkOptions, linkType: $linkType, onBehalfOf: $onBehalfOf)'; } 
+          onBehalfOf == other.onBehalfOf;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), linkOptions, linkType, onBehalfOf);
+
+@override String toString() => 'PostTerminalOnboardingLinksRequest(expand: $expand, linkOptions: $linkOptions, linkType: $linkType, onBehalfOf: $onBehalfOf)';
+
  }

@@ -35,11 +35,14 @@ LogProbProperties copyWith({String? token, double? logprob, List<int>? bytes, })
   logprob: logprob ?? this.logprob,
   bytes: bytes ?? this.bytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogProbProperties &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(bytes, other.bytes); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(bytes)); } 
-@override String toString() { return 'LogProbProperties(token: $token, logprob: $logprob, bytes: $bytes)'; } 
+          listEquals(bytes, other.bytes);
+
+@override int get hashCode => Object.hash(token, logprob, Object.hashAll(bytes));
+
+@override String toString() => 'LogProbProperties(token: $token, logprob: $logprob, bytes: $bytes)';
+
  }

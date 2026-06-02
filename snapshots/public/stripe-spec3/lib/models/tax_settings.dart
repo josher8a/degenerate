@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxSettingsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxSettingsObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxSettingsObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxSettingsObject($value)';
+
  }
 /// The status of the Tax `Settings`.
 @immutable final class TaxSettingsStatus {const TaxSettingsStatus._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxSettingsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxSettingsStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxSettingsStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxSettingsStatus($value)';
+
  }
 /// You can use Tax `Settings` to manage configurations used by Stripe Tax calculations.
 /// 
@@ -98,14 +104,17 @@ TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, TaxProduc
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxSettings &&
           defaults == other.defaults &&
           headOffice == other.headOffice &&
           livemode == other.livemode &&
           object == other.object &&
           status == other.status &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(defaults, headOffice, livemode, object, status, statusDetails); } 
-@override String toString() { return 'TaxSettings(defaults: $defaults, headOffice: $headOffice, livemode: $livemode, object: $object, status: $status, statusDetails: $statusDetails)'; } 
+          statusDetails == other.statusDetails;
+
+@override int get hashCode => Object.hash(defaults, headOffice, livemode, object, status, statusDetails);
+
+@override String toString() => 'TaxSettings(defaults: $defaults, headOffice: $headOffice, livemode: $livemode, object: $object, status: $status, statusDetails: $statusDetails)';
+
  }

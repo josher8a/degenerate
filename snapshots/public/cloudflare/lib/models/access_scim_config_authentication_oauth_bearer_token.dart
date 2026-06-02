@@ -24,10 +24,13 @@ AccessScimConfigAuthenticationOauthBearerToken copyWith({AccessSchemasScimConfig
   scheme: scheme ?? this.scheme,
   token: token ?? this.token,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigAuthenticationOauthBearerToken &&
           scheme == other.scheme &&
-          token == other.token; } 
-@override int get hashCode { return Object.hash(scheme, token); } 
-@override String toString() { return 'AccessScimConfigAuthenticationOauthBearerToken(scheme: $scheme, token: $token)'; } 
+          token == other.token;
+
+@override int get hashCode => Object.hash(scheme, token);
+
+@override String toString() => 'AccessScimConfigAuthenticationOauthBearerToken(scheme: $scheme, token: $token)';
+
  }

@@ -21,10 +21,13 @@ EventsTags copyWith({String? name, int? score, }) { return EventsTags(
   name: name ?? this.name,
   score: score ?? this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventsTags &&
           name == other.name &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(name, score); } 
-@override String toString() { return 'EventsTags(name: $name, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(name, score);
+
+@override String toString() => 'EventsTags(name: $name, score: $score)';
+
  }

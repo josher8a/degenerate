@@ -34,12 +34,15 @@ PostEventQueryAlertCreateRequest copyWith({bool? Function()? enabled, GetEventQu
   notificationType: notificationType != null ? notificationType() : this.notificationType,
   queryId: queryId ?? this.queryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventQueryAlertCreateRequest &&
           enabled == other.enabled &&
           frequency == other.frequency &&
           notificationType == other.notificationType &&
-          queryId == other.queryId; } 
-@override int get hashCode { return Object.hash(enabled, frequency, notificationType, queryId); } 
-@override String toString() { return 'PostEventQueryAlertCreateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType, queryId: $queryId)'; } 
+          queryId == other.queryId;
+
+@override int get hashCode => Object.hash(enabled, frequency, notificationType, queryId);
+
+@override String toString() => 'PostEventQueryAlertCreateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType, queryId: $queryId)';
+
  }

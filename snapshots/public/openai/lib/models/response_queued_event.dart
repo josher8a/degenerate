@@ -32,11 +32,14 @@ ResponseQueuedEvent copyWith({String? type, Response? response, int? sequenceNum
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseQueuedEvent &&
           type == other.type &&
           response == other.response &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, response, sequenceNumber); } 
-@override String toString() { return 'ResponseQueuedEvent(type: $type, response: $response, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, response, sequenceNumber);
+
+@override String toString() => 'ResponseQueuedEvent(type: $type, response: $response, sequenceNumber: $sequenceNumber)';
+
  }

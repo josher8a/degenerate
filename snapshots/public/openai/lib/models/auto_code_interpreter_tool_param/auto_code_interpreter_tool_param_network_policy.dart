@@ -28,12 +28,16 @@ final ContainerNetworkPolicyDisabledParam containerNetworkPolicyDisabledParam;
 
 @override String get type => 'disabled';
 
-@override Map<String, dynamic> toJson() { return {...containerNetworkPolicyDisabledParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerNetworkPolicyDisabledParam.toJson(), 'type': type};
+
 AutoCodeInterpreterToolParamNetworkPolicyDisabled copyWith({ContainerNetworkPolicyDisabledParam? containerNetworkPolicyDisabledParam}) { return AutoCodeInterpreterToolParamNetworkPolicyDisabled(containerNetworkPolicyDisabledParam ?? this.containerNetworkPolicyDisabledParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam; } 
-@override int get hashCode { return containerNetworkPolicyDisabledParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicy.disabled($containerNetworkPolicyDisabledParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AutoCodeInterpreterToolParamNetworkPolicyDisabled && containerNetworkPolicyDisabledParam == other.containerNetworkPolicyDisabledParam;
+
+@override int get hashCode => containerNetworkPolicyDisabledParam.hashCode;
+
+@override String toString() => 'AutoCodeInterpreterToolParamNetworkPolicy.disabled($containerNetworkPolicyDisabledParam)';
+
  }
 @immutable final class AutoCodeInterpreterToolParamNetworkPolicyAllowlist extends AutoCodeInterpreterToolParamNetworkPolicy {const AutoCodeInterpreterToolParamNetworkPolicyAllowlist(this.containerNetworkPolicyAllowlistParam);
 
@@ -43,15 +47,19 @@ final ContainerNetworkPolicyAllowlistParam containerNetworkPolicyAllowlistParam;
 
 @override String get type => 'allowlist';
 
-@override Map<String, dynamic> toJson() { return {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerNetworkPolicyAllowlistParam.toJson(), 'type': type};
+
 AutoCodeInterpreterToolParamNetworkPolicyAllowlist copyWith({List<String>? allowedDomains, List<ContainerNetworkPolicyDomainSecretParam>? Function()? domainSecrets, }) { return AutoCodeInterpreterToolParamNetworkPolicyAllowlist(containerNetworkPolicyAllowlistParam.copyWith(
   allowedDomains: allowedDomains,
   domainSecrets: domainSecrets,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam; } 
-@override int get hashCode { return containerNetworkPolicyAllowlistParam.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicy.allowlist($containerNetworkPolicyAllowlistParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AutoCodeInterpreterToolParamNetworkPolicyAllowlist && containerNetworkPolicyAllowlistParam == other.containerNetworkPolicyAllowlistParam;
+
+@override int get hashCode => containerNetworkPolicyAllowlistParam.hashCode;
+
+@override String toString() => 'AutoCodeInterpreterToolParamNetworkPolicy.allowlist($containerNetworkPolicyAllowlistParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -61,9 +69,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutoCodeInterpreterToolParamNetworkPolicy$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'AutoCodeInterpreterToolParamNetworkPolicy.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AutoCodeInterpreterToolParamNetworkPolicy$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'AutoCodeInterpreterToolParamNetworkPolicy.unknown($json)';
+
  }

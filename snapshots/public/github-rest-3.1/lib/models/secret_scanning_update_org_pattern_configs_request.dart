@@ -28,11 +28,14 @@ SecretScanningUpdateOrgPatternConfigsRequest copyWith({SecretScanningRowVersion?
   providerPatternSettings: providerPatternSettings != null ? providerPatternSettings() : this.providerPatternSettings,
   customPatternSettings: customPatternSettings != null ? customPatternSettings() : this.customPatternSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningUpdateOrgPatternConfigsRequest &&
           patternConfigVersion == other.patternConfigVersion &&
           listEquals(providerPatternSettings, other.providerPatternSettings) &&
-          listEquals(customPatternSettings, other.customPatternSettings); } 
-@override int get hashCode { return Object.hash(patternConfigVersion, Object.hashAll(providerPatternSettings ?? const []), Object.hashAll(customPatternSettings ?? const [])); } 
-@override String toString() { return 'SecretScanningUpdateOrgPatternConfigsRequest(patternConfigVersion: $patternConfigVersion, providerPatternSettings: $providerPatternSettings, customPatternSettings: $customPatternSettings)'; } 
+          listEquals(customPatternSettings, other.customPatternSettings);
+
+@override int get hashCode => Object.hash(patternConfigVersion, Object.hashAll(providerPatternSettings ?? const []), Object.hashAll(customPatternSettings ?? const []));
+
+@override String toString() => 'SecretScanningUpdateOrgPatternConfigsRequest(patternConfigVersion: $patternConfigVersion, providerPatternSettings: $providerPatternSettings, customPatternSettings: $customPatternSettings)';
+
  }

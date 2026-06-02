@@ -22,10 +22,13 @@ R2LifecycleDateCondition copyWith({DateTime? date, R2LifecycleDateConditionType?
   date: date ?? this.date,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2LifecycleDateCondition &&
           date == other.date &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(date, type); } 
-@override String toString() { return 'R2LifecycleDateCondition(date: $date, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(date, type);
+
+@override String toString() => 'R2LifecycleDateCondition(date: $date, type: $type)';
+
  }

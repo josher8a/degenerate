@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ContainerUser copyWith({LinuxContainerUser? Function()? linux}) { return ContainerUser(
   linux: linux != null ? linux() : this.linux,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerUser &&
-          linux == other.linux; } 
-@override int get hashCode { return linux.hashCode; } 
-@override String toString() { return 'ContainerUser(linux: $linux)'; } 
+          linux == other.linux;
+
+@override int get hashCode => linux.hashCode;
+
+@override String toString() => 'ContainerUser(linux: $linux)';
+
  }

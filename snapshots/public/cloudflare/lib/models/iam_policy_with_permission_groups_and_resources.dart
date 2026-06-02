@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamEffect && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamEffect($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IamEffect && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IamEffect($value)';
+
  }
 @immutable final class IamPolicyWithPermissionGroupsAndResources {const IamPolicyWithPermissionGroupsAndResources({required this.effect, required this.id, required this.permissionGroups, required this.resources, });
 
@@ -61,12 +64,15 @@ IamPolicyWithPermissionGroupsAndResources copyWith({IamEffect? effect, IamPolicy
   permissionGroups: permissionGroups ?? this.permissionGroups,
   resources: resources ?? this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamPolicyWithPermissionGroupsAndResources &&
           effect == other.effect &&
           id == other.id &&
           listEquals(permissionGroups, other.permissionGroups) &&
-          resources == other.resources; } 
-@override int get hashCode { return Object.hash(effect, id, Object.hashAll(permissionGroups), resources); } 
-@override String toString() { return 'IamPolicyWithPermissionGroupsAndResources(effect: $effect, id: $id, permissionGroups: $permissionGroups, resources: $resources)'; } 
+          resources == other.resources;
+
+@override int get hashCode => Object.hash(effect, id, Object.hashAll(permissionGroups), resources);
+
+@override String toString() => 'IamPolicyWithPermissionGroupsAndResources(effect: $effect, id: $id, permissionGroups: $permissionGroups, resources: $resources)';
+
  }

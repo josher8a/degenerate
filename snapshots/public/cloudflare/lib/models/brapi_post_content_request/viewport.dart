@@ -42,14 +42,17 @@ Viewport copyWith({double? Function()? deviceScaleFactor, bool? Function()? hasT
   isMobile: isMobile != null ? isMobile() : this.isMobile,
   width: width ?? this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Viewport &&
           deviceScaleFactor == other.deviceScaleFactor &&
           hasTouch == other.hasTouch &&
           height == other.height &&
           isLandscape == other.isLandscape &&
           isMobile == other.isMobile &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(deviceScaleFactor, hasTouch, height, isLandscape, isMobile, width); } 
-@override String toString() { return 'Viewport(deviceScaleFactor: $deviceScaleFactor, hasTouch: $hasTouch, height: $height, isLandscape: $isLandscape, isMobile: $isMobile, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(deviceScaleFactor, hasTouch, height, isLandscape, isMobile, width);
+
+@override String toString() => 'Viewport(deviceScaleFactor: $deviceScaleFactor, hasTouch: $hasTouch, height: $height, isLandscape: $isLandscape, isMobile: $isMobile, width: $width)';
+
  }

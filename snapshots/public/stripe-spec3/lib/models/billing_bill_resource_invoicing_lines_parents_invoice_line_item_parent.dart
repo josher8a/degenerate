@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType($value)';
+
  }
 /// 
 @immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent({required this.type, this.invoiceItemDetails, this.subscriptionItemDetails, });
@@ -54,11 +57,14 @@ BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent copyWith({BillingB
   subscriptionItemDetails: subscriptionItemDetails != null ? subscriptionItemDetails() : this.subscriptionItemDetails,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent &&
           invoiceItemDetails == other.invoiceItemDetails &&
           subscriptionItemDetails == other.subscriptionItemDetails &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(invoiceItemDetails, subscriptionItemDetails, type); } 
-@override String toString() { return 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(invoiceItemDetails: $invoiceItemDetails, subscriptionItemDetails: $subscriptionItemDetails, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(invoiceItemDetails, subscriptionItemDetails, type);
+
+@override String toString() => 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(invoiceItemDetails: $invoiceItemDetails, subscriptionItemDetails: $subscriptionItemDetails, type: $type)';
+
  }

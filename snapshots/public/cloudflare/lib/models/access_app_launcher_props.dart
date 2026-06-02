@@ -117,7 +117,7 @@ AccessAppLauncherProps copyWith({List<String>? Function()? allowedIdps, AccessSc
   landingPageDesign: landingPageDesign != null ? landingPageDesign() : this.landingPageDesign,
   skipAppLauncherLoginPage: skipAppLauncherLoginPage != null ? skipAppLauncherLoginPage() : this.skipAppLauncherLoginPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppLauncherProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
           autoRedirectToIdentity == other.autoRedirectToIdentity &&
@@ -133,7 +133,10 @@ AccessAppLauncherProps copyWith({List<String>? Function()? allowedIdps, AccessSc
           listEquals(footerLinks, other.footerLinks) &&
           headerBgColor == other.headerBgColor &&
           landingPageDesign == other.landingPageDesign &&
-          skipAppLauncherLoginPage == other.skipAppLauncherLoginPage; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type, appLauncherLogoUrl, bgColor, Object.hashAll(footerLinks ?? const []), headerBgColor, landingPageDesign, skipAppLauncherLoginPage); } 
-@override String toString() { return 'AccessAppLauncherProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type, appLauncherLogoUrl: $appLauncherLogoUrl, bgColor: $bgColor, footerLinks: $footerLinks, headerBgColor: $headerBgColor, landingPageDesign: $landingPageDesign, skipAppLauncherLoginPage: $skipAppLauncherLoginPage)'; } 
+          skipAppLauncherLoginPage == other.skipAppLauncherLoginPage;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), domain, name, sessionDuration, type, appLauncherLogoUrl, bgColor, Object.hashAll(footerLinks ?? const []), headerBgColor, landingPageDesign, skipAppLauncherLoginPage);
+
+@override String toString() => 'AccessAppLauncherProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type, appLauncherLogoUrl: $appLauncherLogoUrl, bgColor: $bgColor, footerLinks: $footerLinks, headerBgColor: $headerBgColor, landingPageDesign: $landingPageDesign, skipAppLauncherLoginPage: $skipAppLauncherLoginPage)';
+
  }

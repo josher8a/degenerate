@@ -39,12 +39,15 @@ AccessOidcSaasAppCustomClaims copyWith({String? Function()? name, bool? Function
   scope: scope != null ? scope() : this.scope,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOidcSaasAppCustomClaims &&
           name == other.name &&
           $required == other.$required &&
           scope == other.scope &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, $required, scope, source); } 
-@override String toString() { return 'AccessOidcSaasAppCustomClaims(name: $name, \$required: ${$required}, scope: $scope, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(name, $required, scope, source);
+
+@override String toString() => 'AccessOidcSaasAppCustomClaims(name: $name, \$required: ${$required}, scope: $scope, source: $source)';
+
  }

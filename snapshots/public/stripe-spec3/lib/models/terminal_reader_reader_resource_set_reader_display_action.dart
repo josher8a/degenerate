@@ -23,10 +23,13 @@ TerminalReaderReaderResourceSetReaderDisplayAction copyWith({TerminalReaderReade
   cart: cart != null ? cart() : this.cart,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceSetReaderDisplayAction &&
           cart == other.cart &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cart, type); } 
-@override String toString() { return 'TerminalReaderReaderResourceSetReaderDisplayAction(cart: $cart, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cart, type);
+
+@override String toString() => 'TerminalReaderReaderResourceSetReaderDisplayAction(cart: $cart, type: $type)';
+
  }

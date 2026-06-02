@@ -22,10 +22,13 @@ TerminalReaderReaderResourceConfirmPaymentIntentAction copyWith({TerminalReaderR
   confirmConfig: confirmConfig != null ? confirmConfig() : this.confirmConfig,
   paymentIntent: paymentIntent ?? this.paymentIntent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceConfirmPaymentIntentAction &&
           confirmConfig == other.confirmConfig &&
-          paymentIntent == other.paymentIntent; } 
-@override int get hashCode { return Object.hash(confirmConfig, paymentIntent); } 
-@override String toString() { return 'TerminalReaderReaderResourceConfirmPaymentIntentAction(confirmConfig: $confirmConfig, paymentIntent: $paymentIntent)'; } 
+          paymentIntent == other.paymentIntent;
+
+@override int get hashCode => Object.hash(confirmConfig, paymentIntent);
+
+@override String toString() => 'TerminalReaderReaderResourceConfirmPaymentIntentAction(confirmConfig: $confirmConfig, paymentIntent: $paymentIntent)';
+
  }

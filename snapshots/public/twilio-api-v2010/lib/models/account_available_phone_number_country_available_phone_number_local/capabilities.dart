@@ -31,12 +31,15 @@ Capabilities copyWith({bool? Function()? mms, bool? Function()? sms, bool? Funct
   voice: voice != null ? voice() : this.voice,
   fax: fax != null ? fax() : this.fax,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Capabilities &&
           mms == other.mms &&
           sms == other.sms &&
           voice == other.voice &&
-          fax == other.fax; } 
-@override int get hashCode { return Object.hash(mms, sms, voice, fax); } 
-@override String toString() { return 'Capabilities(mms: $mms, sms: $sms, voice: $voice, fax: $fax)'; } 
+          fax == other.fax;
+
+@override int get hashCode => Object.hash(mms, sms, voice, fax);
+
+@override String toString() => 'Capabilities(mms: $mms, sms: $sms, voice: $voice, fax: $fax)';
+
  }

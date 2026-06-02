@@ -30,12 +30,15 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard copyWith({CardManda
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard &&
           mandateOptions == other.mandateOptions &&
           network == other.network &&
           requestThreeDSecure == other.requestThreeDSecure &&
-          threeDSecure == other.threeDSecure; } 
-@override int get hashCode { return Object.hash(mandateOptions, network, requestThreeDSecure, threeDSecure); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure, threeDSecure: $threeDSecure)'; } 
+          threeDSecure == other.threeDSecure;
+
+@override int get hashCode => Object.hash(mandateOptions, network, requestThreeDSecure, threeDSecure);
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure, threeDSecure: $threeDSecure)';
+
  }

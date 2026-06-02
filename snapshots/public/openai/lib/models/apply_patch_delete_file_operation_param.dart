@@ -28,10 +28,13 @@ ApplyPatchDeleteFileOperationParam copyWith({String? type, String? path, }) { re
   type: type ?? this.type,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchDeleteFileOperationParam &&
           type == other.type &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(type, path); } 
-@override String toString() { return 'ApplyPatchDeleteFileOperationParam(type: $type, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(type, path);
+
+@override String toString() => 'ApplyPatchDeleteFileOperationParam(type: $type, path: $path)';
+
  }

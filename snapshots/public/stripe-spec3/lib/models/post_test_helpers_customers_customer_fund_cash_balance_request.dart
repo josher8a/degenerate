@@ -42,12 +42,15 @@ PostTestHelpersCustomersCustomerFundCashBalanceRequest copyWith({int? amount, St
   expand: expand != null ? expand() : this.expand,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersCustomersCustomerFundCashBalanceRequest &&
           amount == other.amount &&
           currency == other.currency &&
           listEquals(expand, other.expand) &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(amount, currency, Object.hashAll(expand ?? const []), reference); } 
-@override String toString() { return 'PostTestHelpersCustomersCustomerFundCashBalanceRequest(amount: $amount, currency: $currency, expand: $expand, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(amount, currency, Object.hashAll(expand ?? const []), reference);
+
+@override String toString() => 'PostTestHelpersCustomersCustomerFundCashBalanceRequest(amount: $amount, currency: $currency, expand: $expand, reference: $reference)';
+
  }

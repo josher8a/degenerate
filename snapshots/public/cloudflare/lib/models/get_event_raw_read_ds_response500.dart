@@ -27,11 +27,14 @@ GetEventRawReadDsResponse500 copyWith({List<AiSearchInstanceChangeJobStatusRespo
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventRawReadDsResponse500 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'GetEventRawReadDsResponse500(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'GetEventRawReadDsResponse500(errors: $errors, result: $result, success: $success)';
+
  }

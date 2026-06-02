@@ -109,7 +109,7 @@ TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileCl
   secret: secret ?? this.secret,
   sitekey: sitekey ?? this.sitekey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TurnstileWidgetDetail &&
           botFightMode == other.botFightMode &&
           clearanceLevel == other.clearanceLevel &&
@@ -122,7 +122,10 @@ TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileCl
           offlabel == other.offlabel &&
           region == other.region &&
           secret == other.secret &&
-          sitekey == other.sitekey; } 
-@override int get hashCode { return Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, secret, sitekey); } 
-@override String toString() { return 'TurnstileWidgetDetail(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, secret: $secret, sitekey: $sitekey)'; } 
+          sitekey == other.sitekey;
+
+@override int get hashCode => Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, secret, sitekey);
+
+@override String toString() => 'TurnstileWidgetDetail(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, secret: $secret, sitekey: $sitekey)';
+
  }

@@ -45,13 +45,16 @@ ProjectServiceAccount copyWith({ProjectServiceAccountCreateResponseObject? objec
   role: role ?? this.role,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectServiceAccount &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           role == other.role &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(object, id, name, role, createdAt); } 
-@override String toString() { return 'ProjectServiceAccount(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(object, id, name, role, createdAt);
+
+@override String toString() => 'ProjectServiceAccount(object: $object, id: $id, name: $name, role: $role, createdAt: $createdAt)';
+
  }

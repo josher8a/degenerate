@@ -50,7 +50,7 @@ RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiD
   videoBg: videoBg != null ? videoBg() : this.videoBg,
   warning: warning != null ? warning() : this.warning,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetUiDesignTokensColors &&
           background == other.background &&
           brand == other.brand &&
@@ -59,7 +59,10 @@ RealtimekitUpdatePresetUiDesignTokensColors copyWith({RealtimekitUpdatePresetUiD
           text == other.text &&
           textOnBrand == other.textOnBrand &&
           videoBg == other.videoBg &&
-          warning == other.warning; } 
-@override int get hashCode { return Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning); } 
-@override String toString() { return 'RealtimekitUpdatePresetUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)'; } 
+          warning == other.warning;
+
+@override int get hashCode => Object.hash(background, brand, danger, success, text, textOnBrand, videoBg, warning);
+
+@override String toString() => 'RealtimekitUpdatePresetUiDesignTokensColors(background: $background, brand: $brand, danger: $danger, success: $success, text: $text, textOnBrand: $textOnBrand, videoBg: $videoBg, warning: $warning)';
+
  }

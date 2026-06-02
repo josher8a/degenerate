@@ -28,11 +28,14 @@ CloudflareTunnelCreateACloudflareTunnelRequest copyWith({TunnelConfigSrc? Functi
   name: name ?? this.name,
   tunnelSecret: tunnelSecret != null ? tunnelSecret() : this.tunnelSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelCreateACloudflareTunnelRequest &&
           configSrc == other.configSrc &&
           name == other.name &&
-          tunnelSecret == other.tunnelSecret; } 
-@override int get hashCode { return Object.hash(configSrc, name, tunnelSecret); } 
-@override String toString() { return 'CloudflareTunnelCreateACloudflareTunnelRequest(configSrc: $configSrc, name: $name, tunnelSecret: $tunnelSecret)'; } 
+          tunnelSecret == other.tunnelSecret;
+
+@override int get hashCode => Object.hash(configSrc, name, tunnelSecret);
+
+@override String toString() => 'CloudflareTunnelCreateACloudflareTunnelRequest(configSrc: $configSrc, name: $name, tunnelSecret: $tunnelSecret)';
+
  }

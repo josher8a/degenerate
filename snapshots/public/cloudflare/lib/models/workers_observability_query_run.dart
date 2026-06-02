@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersObservabilityQueryRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersObservabilityQueryRunStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersObservabilityQueryRunStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersObservabilityQueryRunStatus($value)';
+
  }
 /// A Workers Observability Query Object
 @immutable final class WorkersObservabilityQueryRun {const WorkersObservabilityQueryRun({required this.accountId, required this.dry, required this.environmentId, required this.granularity, required this.id, required this.query, required this.status, required this.timeframe, required this.userId, required this.workspaceId, this.created, this.statistics, this.updated, });
@@ -110,7 +113,7 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
   userId: userId ?? this.userId,
   workspaceId: workspaceId ?? this.workspaceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryRun &&
           accountId == other.accountId &&
           created == other.created &&
@@ -124,7 +127,10 @@ WorkersObservabilityQueryRun copyWith({String? accountId, String? Function()? cr
           timeframe == other.timeframe &&
           updated == other.updated &&
           userId == other.userId &&
-          workspaceId == other.workspaceId; } 
-@override int get hashCode { return Object.hash(accountId, created, dry, environmentId, granularity, id, query, statistics, status, timeframe, updated, userId, workspaceId); } 
-@override String toString() { return 'WorkersObservabilityQueryRun(accountId: $accountId, created: $created, dry: $dry, environmentId: $environmentId, granularity: $granularity, id: $id, query: $query, statistics: $statistics, status: $status, timeframe: $timeframe, updated: $updated, userId: $userId, workspaceId: $workspaceId)'; } 
+          workspaceId == other.workspaceId;
+
+@override int get hashCode => Object.hash(accountId, created, dry, environmentId, granularity, id, query, statistics, status, timeframe, updated, userId, workspaceId);
+
+@override String toString() => 'WorkersObservabilityQueryRun(accountId: $accountId, created: $created, dry: $dry, environmentId: $environmentId, granularity: $granularity, id: $id, query: $query, statistics: $statistics, status: $status, timeframe: $timeframe, updated: $updated, userId: $userId, workspaceId: $workspaceId)';
+
  }

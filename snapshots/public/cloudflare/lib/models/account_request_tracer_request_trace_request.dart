@@ -68,7 +68,7 @@ AccountRequestTracerRequestTraceRequest copyWith({Body? Function()? body, Accoun
   skipResponse: skipResponse != null ? skipResponse() : this.skipResponse,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequestTracerRequestTraceRequest &&
           body == other.body &&
           context == other.context &&
@@ -77,7 +77,10 @@ AccountRequestTracerRequestTraceRequest copyWith({Body? Function()? body, Accoun
           method == other.method &&
           protocol == other.protocol &&
           skipResponse == other.skipResponse &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(body, context, cookies, headers, method, protocol, skipResponse, url); } 
-@override String toString() { return 'AccountRequestTracerRequestTraceRequest(body: $body, context: $context, cookies: $cookies, headers: $headers, method: $method, protocol: $protocol, skipResponse: $skipResponse, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(body, context, cookies, headers, method, protocol, skipResponse, url);
+
+@override String toString() => 'AccountRequestTracerRequestTraceRequest(body: $body, context: $context, cookies: $cookies, headers: $headers, method: $method, protocol: $protocol, skipResponse: $skipResponse, url: $url)';
+
  }

@@ -73,7 +73,7 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
   shipping: shipping != null ? shipping() : this.shipping,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeRequest &&
           customer == other.customer &&
           description == other.description &&
@@ -82,7 +82,10 @@ PostChargesChargeRequest copyWith({String? Function()? customer, String? Functio
           metadata == other.metadata &&
           receiptEmail == other.receiptEmail &&
           shipping == other.shipping &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(customer, description, Object.hashAll(expand ?? const []), fraudDetails, metadata, receiptEmail, shipping, transferGroup); } 
-@override String toString() { return 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(customer, description, Object.hashAll(expand ?? const []), fraudDetails, metadata, receiptEmail, shipping, transferGroup);
+
+@override String toString() => 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)';
+
  }

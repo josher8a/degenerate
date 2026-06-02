@@ -33,12 +33,15 @@ RequiredNullable copyWith({String? alwaysPresent, String? Function()? nullableSt
   nullableList: nullableList != null ? nullableList() : this.nullableList,
   nullableObject: nullableObject != null ? nullableObject() : this.nullableObject,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequiredNullable &&
           alwaysPresent == other.alwaysPresent &&
           nullableString == other.nullableString &&
           listEquals(nullableList, other.nullableList) &&
-          nullableObject == other.nullableObject; } 
-@override int get hashCode { return Object.hash(alwaysPresent, nullableString, Object.hashAll(nullableList ?? const []), nullableObject); } 
-@override String toString() { return 'RequiredNullable(alwaysPresent: $alwaysPresent, nullableString: $nullableString, nullableList: $nullableList, nullableObject: $nullableObject)'; } 
+          nullableObject == other.nullableObject;
+
+@override int get hashCode => Object.hash(alwaysPresent, nullableString, Object.hashAll(nullableList ?? const []), nullableObject);
+
+@override String toString() => 'RequiredNullable(alwaysPresent: $alwaysPresent, nullableString: $nullableString, nullableList: $nullableList, nullableObject: $nullableObject)';
+
  }

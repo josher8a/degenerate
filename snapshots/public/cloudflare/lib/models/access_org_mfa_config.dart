@@ -27,10 +27,13 @@ AccessOrgMfaConfig copyWith({List<AllowedAuthenticators>? Function()? allowedAut
   allowedAuthenticators: allowedAuthenticators != null ? allowedAuthenticators() : this.allowedAuthenticators,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessOrgMfaConfig &&
           listEquals(allowedAuthenticators, other.allowedAuthenticators) &&
-          sessionDuration == other.sessionDuration; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedAuthenticators ?? const []), sessionDuration); } 
-@override String toString() { return 'AccessOrgMfaConfig(allowedAuthenticators: $allowedAuthenticators, sessionDuration: $sessionDuration)'; } 
+          sessionDuration == other.sessionDuration;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedAuthenticators ?? const []), sessionDuration);
+
+@override String toString() => 'AccessOrgMfaConfig(allowedAuthenticators: $allowedAuthenticators, sessionDuration: $sessionDuration)';
+
  }

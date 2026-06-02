@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'
 PostBinDbPostRequest copyWith({Uint8List? file}) { return PostBinDbPostRequest(
   file: file ?? this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBinDbPostRequest &&
-          file == other.file; } 
-@override int get hashCode { return file.hashCode; } 
-@override String toString() { return 'PostBinDbPostRequest(file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => file.hashCode;
+
+@override String toString() => 'PostBinDbPostRequest(file: $file)';
+
  }

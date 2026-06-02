@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AppsSecretObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AppsSecretObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppsSecretObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AppsSecretObject($value)';
+
  }
 /// Secret Store is an API that allows Stripe Apps developers to securely persist secrets for use by UI Extensions and app backends.
 /// 
@@ -108,7 +111,7 @@ AppsSecret copyWith({int? created, bool? Function()? deleted, int? Function()? e
   payload: payload != null ? payload() : this.payload,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsSecret &&
           created == other.created &&
           deleted == other.deleted &&
@@ -118,7 +121,10 @@ AppsSecret copyWith({int? created, bool? Function()? deleted, int? Function()? e
           name == other.name &&
           object == other.object &&
           payload == other.payload &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(created, deleted, expiresAt, id, livemode, name, object, payload, scope); } 
-@override String toString() { return 'AppsSecret(created: $created, deleted: $deleted, expiresAt: $expiresAt, id: $id, livemode: $livemode, name: $name, object: $object, payload: $payload, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(created, deleted, expiresAt, id, livemode, name, object, payload, scope);
+
+@override String toString() => 'AppsSecret(created: $created, deleted: $deleted, expiresAt: $expiresAt, id: $id, livemode: $livemode, name: $name, object: $object, payload: $payload, scope: $scope)';
+
  }

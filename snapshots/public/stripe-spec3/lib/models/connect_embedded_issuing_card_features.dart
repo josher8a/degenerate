@@ -38,12 +38,15 @@ ConnectEmbeddedIssuingCardFeatures copyWith({bool? cardManagement, bool? cardSpe
   cardholderManagement: cardholderManagement ?? this.cardholderManagement,
   spendControlManagement: spendControlManagement ?? this.spendControlManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedIssuingCardFeatures &&
           cardManagement == other.cardManagement &&
           cardSpendDisputeManagement == other.cardSpendDisputeManagement &&
           cardholderManagement == other.cardholderManagement &&
-          spendControlManagement == other.spendControlManagement; } 
-@override int get hashCode { return Object.hash(cardManagement, cardSpendDisputeManagement, cardholderManagement, spendControlManagement); } 
-@override String toString() { return 'ConnectEmbeddedIssuingCardFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, spendControlManagement: $spendControlManagement)'; } 
+          spendControlManagement == other.spendControlManagement;
+
+@override int get hashCode => Object.hash(cardManagement, cardSpendDisputeManagement, cardholderManagement, spendControlManagement);
+
+@override String toString() => 'ConnectEmbeddedIssuingCardFeatures(cardManagement: $cardManagement, cardSpendDisputeManagement: $cardSpendDisputeManagement, cardholderManagement: $cardholderManagement, spendControlManagement: $spendControlManagement)';
+
  }

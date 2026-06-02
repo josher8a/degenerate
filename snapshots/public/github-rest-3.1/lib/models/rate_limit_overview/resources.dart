@@ -71,7 +71,7 @@ Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? 
   dependencySbom: dependencySbom != null ? dependencySbom() : this.dependencySbom,
   codeScanningAutofix: codeScanningAutofix != null ? codeScanningAutofix() : this.codeScanningAutofix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Resources &&
           core == other.core &&
           graphql == other.graphql &&
@@ -84,7 +84,10 @@ Resources copyWith({RateLimit? core, RateLimit? Function()? graphql, RateLimit? 
           scim == other.scim &&
           dependencySnapshots == other.dependencySnapshots &&
           dependencySbom == other.dependencySbom &&
-          codeScanningAutofix == other.codeScanningAutofix; } 
-@override int get hashCode { return Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix); } 
-@override String toString() { return 'Resources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)'; } 
+          codeScanningAutofix == other.codeScanningAutofix;
+
+@override int get hashCode => Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix);
+
+@override String toString() => 'Resources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)';
+
  }

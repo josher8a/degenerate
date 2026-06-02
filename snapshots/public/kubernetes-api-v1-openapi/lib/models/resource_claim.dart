@@ -23,10 +23,13 @@ ResourceClaim copyWith({String? name, String? Function()? request, }) { return R
   name: name ?? this.name,
   request: request != null ? request() : this.request,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceClaim &&
           name == other.name &&
-          request == other.request; } 
-@override int get hashCode { return Object.hash(name, request); } 
-@override String toString() { return 'ResourceClaim(name: $name, request: $request)'; } 
+          request == other.request;
+
+@override int get hashCode => Object.hash(name, request);
+
+@override String toString() => 'ResourceClaim(name: $name, request: $request)';
+
  }

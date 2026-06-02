@@ -55,7 +55,7 @@ AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck? Function()? c
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasDevicePostureRule &&
           check == other.check &&
           data == other.data &&
@@ -65,7 +65,10 @@ AccessSchemasDevicePostureRule copyWith({AccessDevicePostureCheck? Function()? c
           ruleName == other.ruleName &&
           success == other.success &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(check, data, description, error, id, ruleName, success, timestamp, type); } 
-@override String toString() { return 'AccessSchemasDevicePostureRule(check: $check, data: $data, description: $description, error: $error, id: $id, ruleName: $ruleName, success: $success, timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(check, data, description, error, id, ruleName, success, timestamp, type);
+
+@override String toString() => 'AccessSchemasDevicePostureRule(check: $check, data: $data, description: $description, error: $error, id: $id, ruleName: $ruleName, success: $success, timestamp: $timestamp, type: $type)';
+
  }

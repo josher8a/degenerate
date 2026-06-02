@@ -37,13 +37,16 @@ CollaboratorPermissions copyWith({bool? admin, bool? pull, bool? Function()? tri
   push: push ?? this.push,
   maintain: maintain != null ? maintain() : this.maintain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CollaboratorPermissions &&
           admin == other.admin &&
           pull == other.pull &&
           triage == other.triage &&
           push == other.push &&
-          maintain == other.maintain; } 
-@override int get hashCode { return Object.hash(admin, pull, triage, push, maintain); } 
-@override String toString() { return 'CollaboratorPermissions(admin: $admin, pull: $pull, triage: $triage, push: $push, maintain: $maintain)'; } 
+          maintain == other.maintain;
+
+@override int get hashCode => Object.hash(admin, pull, triage, push, maintain);
+
+@override String toString() => 'CollaboratorPermissions(admin: $admin, pull: $pull, triage: $triage, push: $push, maintain: $maintain)';
+
  }

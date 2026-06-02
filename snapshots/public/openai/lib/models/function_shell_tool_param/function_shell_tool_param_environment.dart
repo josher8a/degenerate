@@ -34,17 +34,21 @@ final ContainerAutoParam containerAutoParam;
 
 @override String get type => 'container_auto';
 
-@override Map<String, dynamic> toJson() { return {...containerAutoParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerAutoParam.toJson(), 'type': type};
+
 FunctionShellToolParamEnvironmentContainerAuto copyWith({List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, List<Skills>? Function()? skills, }) { return FunctionShellToolParamEnvironmentContainerAuto(containerAutoParam.copyWith(
   fileIds: fileIds,
   memoryLimit: memoryLimit,
   networkPolicy: networkPolicy,
   skills: skills,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellToolParamEnvironmentContainerAuto && containerAutoParam == other.containerAutoParam; } 
-@override int get hashCode { return containerAutoParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironment.containerAuto($containerAutoParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellToolParamEnvironmentContainerAuto && containerAutoParam == other.containerAutoParam;
+
+@override int get hashCode => containerAutoParam.hashCode;
+
+@override String toString() => 'FunctionShellToolParamEnvironment.containerAuto($containerAutoParam)';
+
  }
 @immutable final class FunctionShellToolParamEnvironmentLocal extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentLocal(this.localEnvironmentParam);
 
@@ -54,14 +58,18 @@ final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type => 'local';
 
-@override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...localEnvironmentParam.toJson(), 'type': type};
+
 FunctionShellToolParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellToolParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellToolParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
-@override int get hashCode { return localEnvironmentParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironment.local($localEnvironmentParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellToolParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam;
+
+@override int get hashCode => localEnvironmentParam.hashCode;
+
+@override String toString() => 'FunctionShellToolParamEnvironment.local($localEnvironmentParam)';
+
  }
 @immutable final class FunctionShellToolParamEnvironmentContainerReference extends FunctionShellToolParamEnvironment {const FunctionShellToolParamEnvironmentContainerReference(this.containerReferenceParam);
 
@@ -71,14 +79,18 @@ final ContainerReferenceParam containerReferenceParam;
 
 @override String get type => 'container_reference';
 
-@override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerReferenceParam.toJson(), 'type': type};
+
 FunctionShellToolParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellToolParamEnvironmentContainerReference(containerReferenceParam.copyWith(
   containerId: containerId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellToolParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
-@override int get hashCode { return containerReferenceParam.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironment.containerReference($containerReferenceParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellToolParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam;
+
+@override int get hashCode => containerReferenceParam.hashCode;
+
+@override String toString() => 'FunctionShellToolParamEnvironment.containerReference($containerReferenceParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -88,9 +100,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellToolParamEnvironment$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'FunctionShellToolParamEnvironment.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellToolParamEnvironment$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'FunctionShellToolParamEnvironment.unknown($json)';
+
  }

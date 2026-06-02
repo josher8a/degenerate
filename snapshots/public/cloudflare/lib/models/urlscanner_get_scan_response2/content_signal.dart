@@ -28,11 +28,14 @@ ContentSignal copyWith({String? Function()? aiInput, String? Function()? aiTrain
   aiTrain: aiTrain != null ? aiTrain() : this.aiTrain,
   search: search != null ? search() : this.search,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentSignal &&
           aiInput == other.aiInput &&
           aiTrain == other.aiTrain &&
-          search == other.search; } 
-@override int get hashCode { return Object.hash(aiInput, aiTrain, search); } 
-@override String toString() { return 'ContentSignal(aiInput: $aiInput, aiTrain: $aiTrain, search: $search)'; } 
+          search == other.search;
+
+@override int get hashCode => Object.hash(aiInput, aiTrain, search);
+
+@override String toString() => 'ContentSignal(aiInput: $aiInput, aiTrain: $aiTrain, search: $search)';
+
  }

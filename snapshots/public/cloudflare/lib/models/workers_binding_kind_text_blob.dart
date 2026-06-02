@@ -31,11 +31,14 @@ WorkersBindingKindTextBlob copyWith({WorkersBindingName? name, String? $part, St
   $part: $part ?? this.$part,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindTextBlob &&
           name == other.name &&
           $part == other.$part &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, $part, type); } 
-@override String toString() { return 'WorkersBindingKindTextBlob(name: $name, \$part: ${$part}, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, $part, type);
+
+@override String toString() => 'WorkersBindingKindTextBlob(name: $name, \$part: ${$part}, type: $type)';
+
  }

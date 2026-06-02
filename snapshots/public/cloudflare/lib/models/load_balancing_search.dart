@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancingSearch copyWith({List<LoadBalancingResourceReference>? Function()? resources}) { return LoadBalancingSearch(
   resources: resources != null ? resources() : this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingSearch &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hashAll(resources ?? const []); } 
-@override String toString() { return 'LoadBalancingSearch(resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hashAll(resources ?? const []);
+
+@override String toString() => 'LoadBalancingSearch(resources: $resources)';
+
  }

@@ -37,12 +37,15 @@ WorkersBindingKindDispatchNamespace copyWith({WorkersBindingName? name, String? 
   outbound: outbound != null ? outbound() : this.outbound,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindDispatchNamespace &&
           name == other.name &&
           namespace == other.namespace &&
           outbound == other.outbound &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, namespace, outbound, type); } 
-@override String toString() { return 'WorkersBindingKindDispatchNamespace(name: $name, namespace: $namespace, outbound: $outbound, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, namespace, outbound, type);
+
+@override String toString() => 'WorkersBindingKindDispatchNamespace(name: $name, namespace: $namespace, outbound: $outbound, type: $type)';
+
  }

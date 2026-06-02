@@ -80,7 +80,7 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
   workflowJobRuns: workflowJobRuns != null ? workflowJobRuns() : this.workflowJobRuns,
   workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewApproved &&
           action == other.action &&
           approver == other.approver &&
@@ -94,7 +94,10 @@ WebhookDeploymentReviewApproved copyWith({WebhookDeploymentReviewApprovedAction?
           since == other.since &&
           workflowJobRun == other.workflowJobRun &&
           listEquals(workflowJobRuns, other.workflowJobRuns) &&
-          workflowRun == other.workflowRun; } 
-@override int get hashCode { return Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun); } 
-@override String toString() { return 'WebhookDeploymentReviewApproved(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)'; } 
+          workflowRun == other.workflowRun;
+
+@override int get hashCode => Object.hash(action, approver, comment, enterprise, installation, organization, repository, Object.hashAll(reviewers ?? const []), sender, since, workflowJobRun, Object.hashAll(workflowJobRuns ?? const []), workflowRun);
+
+@override String toString() => 'WebhookDeploymentReviewApproved(action: $action, approver: $approver, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, reviewers: $reviewers, sender: $sender, since: $since, workflowJobRun: $workflowJobRun, workflowJobRuns: $workflowJobRuns, workflowRun: $workflowRun)';
+
  }

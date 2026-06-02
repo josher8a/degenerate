@@ -50,7 +50,7 @@ DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
   updatedAt: updatedAt ?? this.updatedAt,
   wordList: wordList != null ? wordList() : this.wordList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpWordListEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -58,7 +58,10 @@ DlpWordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, Strin
           name == other.name &&
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
-          wordList == other.wordList; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList); } 
-@override String toString() { return 'DlpWordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList)'; } 
+          wordList == other.wordList;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList);
+
+@override String toString() => 'DlpWordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList)';
+
  }

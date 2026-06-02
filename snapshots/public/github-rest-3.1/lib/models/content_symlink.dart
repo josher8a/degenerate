@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentSymlinkType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentSymlinkType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContentSymlinkType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContentSymlinkType($value)';
+
  }
 /// An object describing a symlink
 @immutable final class ContentSymlink {const ContentSymlink({required this.type, required this.target, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
@@ -97,7 +100,7 @@ ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, St
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentSymlink &&
           type == other.type &&
           target == other.target &&
@@ -109,7 +112,10 @@ ContentSymlink copyWith({ContentSymlinkType? type, String? target, int? size, St
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, target, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentSymlink(type: $type, target: $target, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(type, target, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);
+
+@override String toString() => 'ContentSymlink(type: $type, target: $target, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+
  }

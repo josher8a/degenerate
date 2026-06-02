@@ -54,7 +54,7 @@ CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers
   copilotDotcomPullRequests: copilotDotcomPullRequests != null ? copilotDotcomPullRequests() : this.copilotDotcomPullRequests,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotUsageMetricsDay &&
           date == other.date &&
           totalActiveUsers == other.totalActiveUsers &&
@@ -63,7 +63,10 @@ CopilotUsageMetricsDay copyWith({String? date, int? Function()? totalActiveUsers
           copilotIdeChat == other.copilotIdeChat &&
           copilotDotcomChat == other.copilotDotcomChat &&
           copilotDotcomPullRequests == other.copilotDotcomPullRequests &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(date, totalActiveUsers, totalEngagedUsers, copilotIdeCodeCompletions, copilotIdeChat, copilotDotcomChat, copilotDotcomPullRequests, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotUsageMetricsDay(date: $date, totalActiveUsers: $totalActiveUsers, totalEngagedUsers: $totalEngagedUsers, copilotIdeCodeCompletions: $copilotIdeCodeCompletions, copilotIdeChat: $copilotIdeChat, copilotDotcomChat: $copilotDotcomChat, copilotDotcomPullRequests: $copilotDotcomPullRequests, additionalProperties: $additionalProperties)';
+
  }

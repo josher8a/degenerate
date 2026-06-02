@@ -51,7 +51,7 @@ WebhooksSponsorship copyWith({String? createdAt, Maintainer? Function()? maintai
   sponsorable: sponsorable != null ? sponsorable() : this.sponsorable,
   tier: tier ?? this.tier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSponsorship &&
           createdAt == other.createdAt &&
           maintainer == other.maintainer &&
@@ -59,7 +59,10 @@ WebhooksSponsorship copyWith({String? createdAt, Maintainer? Function()? maintai
           privacyLevel == other.privacyLevel &&
           sponsor == other.sponsor &&
           sponsorable == other.sponsorable &&
-          tier == other.tier; } 
-@override int get hashCode { return Object.hash(createdAt, maintainer, nodeId, privacyLevel, sponsor, sponsorable, tier); } 
-@override String toString() { return 'WebhooksSponsorship(createdAt: $createdAt, maintainer: $maintainer, nodeId: $nodeId, privacyLevel: $privacyLevel, sponsor: $sponsor, sponsorable: $sponsorable, tier: $tier)'; } 
+          tier == other.tier;
+
+@override int get hashCode => Object.hash(createdAt, maintainer, nodeId, privacyLevel, sponsor, sponsorable, tier);
+
+@override String toString() => 'WebhooksSponsorship(createdAt: $createdAt, maintainer: $maintainer, nodeId: $nodeId, privacyLevel: $privacyLevel, sponsor: $sponsor, sponsorable: $sponsorable, tier: $tier)';
+
  }

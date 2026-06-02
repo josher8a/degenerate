@@ -33,14 +33,18 @@ final UserMessageInputText userMessageInputText;
 
 @override String get type => 'input_text';
 
-@override Map<String, dynamic> toJson() { return {...userMessageInputText.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...userMessageInputText.toJson(), 'type': type};
+
 UserMessageItemContentInputText copyWith({String? text}) { return UserMessageItemContentInputText(userMessageInputText.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText; } 
-@override int get hashCode { return userMessageInputText.hashCode; } 
-@override String toString() { return 'UserMessageItemContent.inputText($userMessageInputText)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserMessageItemContentInputText && userMessageInputText == other.userMessageInputText;
+
+@override int get hashCode => userMessageInputText.hashCode;
+
+@override String toString() => 'UserMessageItemContent.inputText($userMessageInputText)';
+
 @override String get text => userMessageInputText.text;
 
  }
@@ -52,14 +56,18 @@ final UserMessageQuotedText userMessageQuotedText;
 
 @override String get type => 'quoted_text';
 
-@override Map<String, dynamic> toJson() { return {...userMessageQuotedText.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...userMessageQuotedText.toJson(), 'type': type};
+
 UserMessageItemContentQuotedText copyWith({String? text}) { return UserMessageItemContentQuotedText(userMessageQuotedText.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText; } 
-@override int get hashCode { return userMessageQuotedText.hashCode; } 
-@override String toString() { return 'UserMessageItemContent.quotedText($userMessageQuotedText)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserMessageItemContentQuotedText && userMessageQuotedText == other.userMessageQuotedText;
+
+@override int get hashCode => userMessageQuotedText.hashCode;
+
+@override String toString() => 'UserMessageItemContent.quotedText($userMessageQuotedText)';
+
 @override String get text => userMessageQuotedText.text;
 
  }
@@ -71,11 +79,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserMessageItemContent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'UserMessageItemContent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserMessageItemContent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'UserMessageItemContent.unknown($json)';
+
 @override String get text => json['text'] as String;
 
  }

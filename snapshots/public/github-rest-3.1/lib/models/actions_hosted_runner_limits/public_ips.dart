@@ -24,10 +24,13 @@ PublicIps copyWith({int? maximum, int? currentUsage, }) { return PublicIps(
   maximum: maximum ?? this.maximum,
   currentUsage: currentUsage ?? this.currentUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicIps &&
           maximum == other.maximum &&
-          currentUsage == other.currentUsage; } 
-@override int get hashCode { return Object.hash(maximum, currentUsage); } 
-@override String toString() { return 'PublicIps(maximum: $maximum, currentUsage: $currentUsage)'; } 
+          currentUsage == other.currentUsage;
+
+@override int get hashCode => Object.hash(maximum, currentUsage);
+
+@override String toString() => 'PublicIps(maximum: $maximum, currentUsage: $currentUsage)';
+
  }

@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallStatus($value)';
+
  }
 /// A tool call to run code.
 /// 
@@ -95,14 +98,17 @@ CodeInterpreterToolCall copyWith({String? type, String? id, CodeInterpreterToolC
   code: code != null ? code() : this.code,
   outputs: outputs != null ? outputs() : this.outputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterToolCall &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
           containerId == other.containerId &&
           code == other.code &&
-          listEquals(outputs, other.outputs); } 
-@override int get hashCode { return Object.hash(type, id, status, containerId, code, Object.hashAll(outputs ?? const [])); } 
-@override String toString() { return 'CodeInterpreterToolCall(type: $type, id: $id, status: $status, containerId: $containerId, code: $code, outputs: $outputs)'; } 
+          listEquals(outputs, other.outputs);
+
+@override int get hashCode => Object.hash(type, id, status, containerId, code, Object.hashAll(outputs ?? const []));
+
+@override String toString() => 'CodeInterpreterToolCall(type: $type, id: $id, status: $status, containerId: $containerId, code: $code, outputs: $outputs)';
+
  }

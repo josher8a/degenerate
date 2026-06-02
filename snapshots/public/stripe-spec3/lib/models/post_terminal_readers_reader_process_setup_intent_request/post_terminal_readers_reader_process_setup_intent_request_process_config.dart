@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig copyWith({bool? Function()? enableCustomerCancellation}) { return PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(
   enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig &&
-          enableCustomerCancellation == other.enableCustomerCancellation; } 
-@override int get hashCode { return enableCustomerCancellation.hashCode; } 
-@override String toString() { return 'PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(enableCustomerCancellation: $enableCustomerCancellation)'; } 
+          enableCustomerCancellation == other.enableCustomerCancellation;
+
+@override int get hashCode => enableCustomerCancellation.hashCode;
+
+@override String toString() => 'PostTerminalReadersReaderProcessSetupIntentRequestProcessConfig(enableCustomerCancellation: $enableCustomerCancellation)';
+
  }

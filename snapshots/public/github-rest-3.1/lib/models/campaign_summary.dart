@@ -95,7 +95,7 @@ CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt,
   contactLink: contactLink != null ? contactLink() : this.contactLink,
   alertStats: alertStats != null ? alertStats() : this.alertStats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CampaignSummary &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -109,7 +109,10 @@ CampaignSummary copyWith({int? number, DateTime? createdAt, DateTime? updatedAt,
           closedAt == other.closedAt &&
           state == other.state &&
           contactLink == other.contactLink &&
-          alertStats == other.alertStats; } 
-@override int get hashCode { return Object.hash(number, createdAt, updatedAt, name, description, Object.hashAll(managers), Object.hashAll(teamManagers ?? const []), publishedAt, endsAt, closedAt, state, contactLink, alertStats); } 
-@override String toString() { return 'CampaignSummary(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, publishedAt: $publishedAt, endsAt: $endsAt, closedAt: $closedAt, state: $state, contactLink: $contactLink, alertStats: $alertStats)'; } 
+          alertStats == other.alertStats;
+
+@override int get hashCode => Object.hash(number, createdAt, updatedAt, name, description, Object.hashAll(managers), Object.hashAll(teamManagers ?? const []), publishedAt, endsAt, closedAt, state, contactLink, alertStats);
+
+@override String toString() => 'CampaignSummary(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, description: $description, managers: $managers, teamManagers: $teamManagers, publishedAt: $publishedAt, endsAt: $endsAt, closedAt: $closedAt, state: $state, contactLink: $contactLink, alertStats: $alertStats)';
+
  }

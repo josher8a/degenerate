@@ -89,7 +89,7 @@ Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, St
   purposesWithTranslations: purposesWithTranslations != null ? purposesWithTranslations() : this.purposesWithTranslations,
   tcfCompliant: tcfCompliant != null ? tcfCompliant() : this.tcfCompliant,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Consent &&
           buttonTextTranslations == other.buttonTextTranslations &&
           companyEmail == other.companyEmail &&
@@ -105,7 +105,10 @@ Consent copyWith({ButtonTextTranslations? Function()? buttonTextTranslations, St
           hideModal == other.hideModal &&
           purposes == other.purposes &&
           purposesWithTranslations == other.purposesWithTranslations &&
-          tcfCompliant == other.tcfCompliant; } 
-@override int get hashCode { return Object.hash(buttonTextTranslations, companyEmail, companyName, companyStreetAddress, consentModalIntroHtml, consentModalIntroHtmlWithTranslations, cookieName, customCss, customIntroDisclaimerDismissed, defaultLanguage, enabled, hideModal, purposes, purposesWithTranslations, tcfCompliant); } 
-@override String toString() { return 'Consent(buttonTextTranslations: $buttonTextTranslations, companyEmail: $companyEmail, companyName: $companyName, companyStreetAddress: $companyStreetAddress, consentModalIntroHtml: $consentModalIntroHtml, consentModalIntroHtmlWithTranslations: $consentModalIntroHtmlWithTranslations, cookieName: $cookieName, customCss: $customCss, customIntroDisclaimerDismissed: $customIntroDisclaimerDismissed, defaultLanguage: $defaultLanguage, enabled: $enabled, hideModal: $hideModal, purposes: $purposes, purposesWithTranslations: $purposesWithTranslations, tcfCompliant: $tcfCompliant)'; } 
+          tcfCompliant == other.tcfCompliant;
+
+@override int get hashCode => Object.hash(buttonTextTranslations, companyEmail, companyName, companyStreetAddress, consentModalIntroHtml, consentModalIntroHtmlWithTranslations, cookieName, customCss, customIntroDisclaimerDismissed, defaultLanguage, enabled, hideModal, purposes, purposesWithTranslations, tcfCompliant);
+
+@override String toString() => 'Consent(buttonTextTranslations: $buttonTextTranslations, companyEmail: $companyEmail, companyName: $companyName, companyStreetAddress: $companyStreetAddress, consentModalIntroHtml: $consentModalIntroHtml, consentModalIntroHtmlWithTranslations: $consentModalIntroHtmlWithTranslations, cookieName: $cookieName, customCss: $customCss, customIntroDisclaimerDismissed: $customIntroDisclaimerDismissed, defaultLanguage: $defaultLanguage, enabled: $enabled, hideModal: $hideModal, purposes: $purposes, purposesWithTranslations: $purposesWithTranslations, tcfCompliant: $tcfCompliant)';
+
  }

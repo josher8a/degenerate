@@ -35,12 +35,15 @@ EndpointAddress copyWith({String? Function()? hostname, String? ip, String? Func
   nodeName: nodeName != null ? nodeName() : this.nodeName,
   targetRef: targetRef != null ? targetRef() : this.targetRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EndpointAddress &&
           hostname == other.hostname &&
           ip == other.ip &&
           nodeName == other.nodeName &&
-          targetRef == other.targetRef; } 
-@override int get hashCode { return Object.hash(hostname, ip, nodeName, targetRef); } 
-@override String toString() { return 'EndpointAddress(hostname: $hostname, ip: $ip, nodeName: $nodeName, targetRef: $targetRef)'; } 
+          targetRef == other.targetRef;
+
+@override int get hashCode => Object.hash(hostname, ip, nodeName, targetRef);
+
+@override String toString() => 'EndpointAddress(hostname: $hostname, ip: $ip, nodeName: $nodeName, targetRef: $targetRef)';
+
  }

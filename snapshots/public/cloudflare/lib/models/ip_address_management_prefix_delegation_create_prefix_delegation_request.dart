@@ -23,10 +23,13 @@ IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest copyWith({Addre
   cidr: cidr ?? this.cidr,
   delegatedAccountId: delegatedAccountId ?? this.delegatedAccountId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest &&
           cidr == other.cidr &&
-          delegatedAccountId == other.delegatedAccountId; } 
-@override int get hashCode { return Object.hash(cidr, delegatedAccountId); } 
-@override String toString() { return 'IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest(cidr: $cidr, delegatedAccountId: $delegatedAccountId)'; } 
+          delegatedAccountId == other.delegatedAccountId;
+
+@override int get hashCode => Object.hash(cidr, delegatedAccountId);
+
+@override String toString() => 'IpAddressManagementPrefixDelegationCreatePrefixDelegationRequest(cidr: $cidr, delegatedAccountId: $delegatedAccountId)';
+
  }

@@ -28,11 +28,14 @@ CommitActivity copyWith({List<int>? days, int? total, int? week, }) { return Com
   total: total ?? this.total,
   week: week ?? this.week,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitActivity &&
           listEquals(days, other.days) &&
           total == other.total &&
-          week == other.week; } 
-@override int get hashCode { return Object.hash(Object.hashAll(days), total, week); } 
-@override String toString() { return 'CommitActivity(days: $days, total: $total, week: $week)'; } 
+          week == other.week;
+
+@override int get hashCode => Object.hash(Object.hashAll(days), total, week);
+
+@override String toString() => 'CommitActivity(days: $days, total: $total, week: $week)';
+
  }

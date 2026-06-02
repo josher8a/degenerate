@@ -35,11 +35,14 @@ DeletedWebhookEndpoint copyWith({bool? deleted, String? id, DeletedWebhookEndpoi
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedWebhookEndpoint &&
           deleted == other.deleted &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(deleted, id, object); } 
-@override String toString() { return 'DeletedWebhookEndpoint(deleted: $deleted, id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(deleted, id, object);
+
+@override String toString() => 'DeletedWebhookEndpoint(deleted: $deleted, id: $id, object: $object)';
+
  }

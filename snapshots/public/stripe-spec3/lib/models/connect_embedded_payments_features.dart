@@ -38,12 +38,15 @@ ConnectEmbeddedPaymentsFeatures copyWith({bool? capturePayments, bool? destinati
   disputeManagement: disputeManagement ?? this.disputeManagement,
   refundManagement: refundManagement ?? this.refundManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedPaymentsFeatures &&
           capturePayments == other.capturePayments &&
           destinationOnBehalfOfChargeManagement == other.destinationOnBehalfOfChargeManagement &&
           disputeManagement == other.disputeManagement &&
-          refundManagement == other.refundManagement; } 
-@override int get hashCode { return Object.hash(capturePayments, destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement); } 
-@override String toString() { return 'ConnectEmbeddedPaymentsFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)'; } 
+          refundManagement == other.refundManagement;
+
+@override int get hashCode => Object.hash(capturePayments, destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement);
+
+@override String toString() => 'ConnectEmbeddedPaymentsFeatures(capturePayments: $capturePayments, destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)';
+
  }

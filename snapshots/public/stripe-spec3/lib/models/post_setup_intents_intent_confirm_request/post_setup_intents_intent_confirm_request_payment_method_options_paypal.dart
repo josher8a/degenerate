@@ -22,9 +22,12 @@ return errors; }
 PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal copyWith({String? Function()? billingAgreementId}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal &&
-          billingAgreementId == other.billingAgreementId; } 
-@override int get hashCode { return billingAgreementId.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal(billingAgreementId: $billingAgreementId)'; } 
+          billingAgreementId == other.billingAgreementId;
+
+@override int get hashCode => billingAgreementId.hashCode;
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaypal(billingAgreementId: $billingAgreementId)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('grade
 ValidateGraderRequest copyWith({Grader? grader}) { return ValidateGraderRequest(
   grader: grader ?? this.grader,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidateGraderRequest &&
-          grader == other.grader; } 
-@override int get hashCode { return grader.hashCode; } 
-@override String toString() { return 'ValidateGraderRequest(grader: $grader)'; } 
+          grader == other.grader;
+
+@override int get hashCode => grader.hashCode;
+
+@override String toString() => 'ValidateGraderRequest(grader: $grader)';
+
  }

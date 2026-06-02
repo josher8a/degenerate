@@ -54,7 +54,7 @@ WebhookIssuesOpened copyWith({WebhookIssuesOpenedAction? action, WebhookIssuesOp
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesOpened &&
           action == other.action &&
           changes == other.changes &&
@@ -63,7 +63,10 @@ WebhookIssuesOpened copyWith({WebhookIssuesOpenedAction? action, WebhookIssuesOp
           issue == other.issue &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, issue, organization, repository, sender); } 
-@override String toString() { return 'WebhookIssuesOpened(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, issue, organization, repository, sender);
+
+@override String toString() => 'WebhookIssuesOpened(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)';
+
  }

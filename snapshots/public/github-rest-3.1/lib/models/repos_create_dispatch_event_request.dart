@@ -27,10 +27,13 @@ ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, dynamic
   eventType: eventType ?? this.eventType,
   clientPayload: clientPayload != null ? clientPayload() : this.clientPayload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDispatchEventRequest &&
           eventType == other.eventType &&
-          clientPayload == other.clientPayload; } 
-@override int get hashCode { return Object.hash(eventType, clientPayload); } 
-@override String toString() { return 'ReposCreateDispatchEventRequest(eventType: $eventType, clientPayload: $clientPayload)'; } 
+          clientPayload == other.clientPayload;
+
+@override int get hashCode => Object.hash(eventType, clientPayload);
+
+@override String toString() => 'ReposCreateDispatchEventRequest(eventType: $eventType, clientPayload: $clientPayload)';
+
  }

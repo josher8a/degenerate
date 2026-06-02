@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ConditionalProperties copyWith({Map<String, dynamic>? Function()? conditions}) { return ConditionalProperties(
   conditions: conditions != null ? conditions() : this.conditions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConditionalProperties &&
-          conditions == other.conditions; } 
-@override int get hashCode { return conditions.hashCode; } 
-@override String toString() { return 'ConditionalProperties(conditions: $conditions)'; } 
+          conditions == other.conditions;
+
+@override int get hashCode => conditions.hashCode;
+
+@override String toString() => 'ConditionalProperties(conditions: $conditions)';
+
  }

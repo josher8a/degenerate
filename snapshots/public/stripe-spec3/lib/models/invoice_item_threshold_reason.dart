@@ -24,10 +24,13 @@ InvoiceItemThresholdReason copyWith({List<String>? lineItemIds, int? usageGte, }
   lineItemIds: lineItemIds ?? this.lineItemIds,
   usageGte: usageGte ?? this.usageGte,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceItemThresholdReason &&
           listEquals(lineItemIds, other.lineItemIds) &&
-          usageGte == other.usageGte; } 
-@override int get hashCode { return Object.hash(Object.hashAll(lineItemIds), usageGte); } 
-@override String toString() { return 'InvoiceItemThresholdReason(lineItemIds: $lineItemIds, usageGte: $usageGte)'; } 
+          usageGte == other.usageGte;
+
+@override int get hashCode => Object.hash(Object.hashAll(lineItemIds), usageGte);
+
+@override String toString() => 'InvoiceItemThresholdReason(lineItemIds: $lineItemIds, usageGte: $usageGte)';
+
  }

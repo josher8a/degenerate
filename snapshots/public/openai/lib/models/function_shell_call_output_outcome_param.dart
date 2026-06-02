@@ -28,12 +28,16 @@ final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutO
 
 @override String get type => 'timeout';
 
-@override Map<String, dynamic> toJson() { return {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type};
+
 FunctionShellCallOutputOutcomeParamTimeout copyWith({FunctionShellCallOutputTimeoutOutcomeParam? functionShellCallOutputTimeoutOutcomeParam}) { return FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam ?? this.functionShellCallOutputTimeoutOutcomeParam); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputOutcomeParamTimeout && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam; } 
-@override int get hashCode { return functionShellCallOutputTimeoutOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParam.timeout($functionShellCallOutputTimeoutOutcomeParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallOutputOutcomeParamTimeout && functionShellCallOutputTimeoutOutcomeParam == other.functionShellCallOutputTimeoutOutcomeParam;
+
+@override int get hashCode => functionShellCallOutputTimeoutOutcomeParam.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParam.timeout($functionShellCallOutputTimeoutOutcomeParam)';
+
  }
 @immutable final class FunctionShellCallOutputOutcomeParamExit extends FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParamExit(this.functionShellCallOutputExitOutcomeParam);
 
@@ -43,14 +47,18 @@ final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcome
 
 @override String get type => 'exit';
 
-@override Map<String, dynamic> toJson() { return {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type};
+
 FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam.copyWith(
   exitCode: exitCode,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputOutcomeParamExit && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam; } 
-@override int get hashCode { return functionShellCallOutputExitOutcomeParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParam.exit($functionShellCallOutputExitOutcomeParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallOutputOutcomeParamExit && functionShellCallOutputExitOutcomeParam == other.functionShellCallOutputExitOutcomeParam;
+
+@override int get hashCode => functionShellCallOutputExitOutcomeParam.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParam.exit($functionShellCallOutputExitOutcomeParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -60,9 +68,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallOutputOutcomeParam$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'FunctionShellCallOutputOutcomeParam.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallOutputOutcomeParam$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParam.unknown($json)';
+
  }

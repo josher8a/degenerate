@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('limit
 CompletedSessions copyWith({int? limit}) { return CompletedSessions(
   limit: limit ?? this.limit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompletedSessions &&
-          limit == other.limit; } 
-@override int get hashCode { return limit.hashCode; } 
-@override String toString() { return 'CompletedSessions(limit: $limit)'; } 
+          limit == other.limit;
+
+@override int get hashCode => limit.hashCode;
+
+@override String toString() => 'CompletedSessions(limit: $limit)';
+
  }

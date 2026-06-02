@@ -20,25 +20,29 @@ final class OrgsListPatGrantRequestsError$403 extends OrgsListPatGrantRequestsEr
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class OrgsListPatGrantRequestsError$404 extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class OrgsListPatGrantRequestsError$422 extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class OrgsListPatGrantRequestsError$500 extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class OrgsListPatGrantRequestsError$Unknown extends OrgsListPatGrantRequestsError {const OrgsListPatGrantRequestsError$Unknown(this.statusCode, this.rawBody, );
 

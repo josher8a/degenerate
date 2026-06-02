@@ -47,14 +47,17 @@ CopilotOrganizationSeatBreakdown copyWith({int? Function()? total, int? Function
   activeThisCycle: activeThisCycle != null ? activeThisCycle() : this.activeThisCycle,
   inactiveThisCycle: inactiveThisCycle != null ? inactiveThisCycle() : this.inactiveThisCycle,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotOrganizationSeatBreakdown &&
           total == other.total &&
           addedThisCycle == other.addedThisCycle &&
           pendingCancellation == other.pendingCancellation &&
           pendingInvitation == other.pendingInvitation &&
           activeThisCycle == other.activeThisCycle &&
-          inactiveThisCycle == other.inactiveThisCycle; } 
-@override int get hashCode { return Object.hash(total, addedThisCycle, pendingCancellation, pendingInvitation, activeThisCycle, inactiveThisCycle); } 
-@override String toString() { return 'CopilotOrganizationSeatBreakdown(total: $total, addedThisCycle: $addedThisCycle, pendingCancellation: $pendingCancellation, pendingInvitation: $pendingInvitation, activeThisCycle: $activeThisCycle, inactiveThisCycle: $inactiveThisCycle)'; } 
+          inactiveThisCycle == other.inactiveThisCycle;
+
+@override int get hashCode => Object.hash(total, addedThisCycle, pendingCancellation, pendingInvitation, activeThisCycle, inactiveThisCycle);
+
+@override String toString() => 'CopilotOrganizationSeatBreakdown(total: $total, addedThisCycle: $addedThisCycle, pendingCancellation: $pendingCancellation, pendingInvitation: $pendingInvitation, activeThisCycle: $activeThisCycle, inactiveThisCycle: $inactiveThisCycle)';
+
  }

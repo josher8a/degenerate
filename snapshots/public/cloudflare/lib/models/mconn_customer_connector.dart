@@ -91,7 +91,7 @@ MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function(
   notes: notes ?? this.notes,
   timezone: timezone ?? this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnector &&
           activated == other.activated &&
           device == other.device &&
@@ -105,7 +105,10 @@ MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function(
           lastUpdated == other.lastUpdated &&
           licenseKey == other.licenseKey &&
           notes == other.notes &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(activated, device, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, licenseKey, notes, timezone); } 
-@override String toString() { return 'MconnCustomerConnector(activated: $activated, device: $device, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, licenseKey: $licenseKey, notes: $notes, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(activated, device, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, licenseKey, notes, timezone);
+
+@override String toString() => 'MconnCustomerConnector(activated: $activated, device: $device, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, licenseKey: $licenseKey, notes: $notes, timezone: $timezone)';
+
  }

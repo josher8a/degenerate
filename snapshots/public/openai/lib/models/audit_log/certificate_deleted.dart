@@ -29,11 +29,14 @@ CertificateDeleted copyWith({String? Function()? id, String? Function()? name, S
   name: name != null ? name() : this.name,
   certificate: certificate != null ? certificate() : this.certificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateDeleted &&
           id == other.id &&
           name == other.name &&
-          certificate == other.certificate; } 
-@override int get hashCode { return Object.hash(id, name, certificate); } 
-@override String toString() { return 'CertificateDeleted(id: $id, name: $name, certificate: $certificate)'; } 
+          certificate == other.certificate;
+
+@override int get hashCode => Object.hash(id, name, certificate);
+
+@override String toString() => 'CertificateDeleted(id: $id, name: $name, certificate: $certificate)';
+
  }

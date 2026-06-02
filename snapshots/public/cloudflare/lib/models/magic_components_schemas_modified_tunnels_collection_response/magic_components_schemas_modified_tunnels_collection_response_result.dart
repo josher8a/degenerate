@@ -21,10 +21,13 @@ MagicComponentsSchemasModifiedTunnelsCollectionResponseResult copyWith({bool? Fu
   modified: modified != null ? modified() : this.modified,
   modifiedInterconnects: modifiedInterconnects != null ? modifiedInterconnects() : this.modifiedInterconnects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicComponentsSchemasModifiedTunnelsCollectionResponseResult &&
           modified == other.modified &&
-          listEquals(modifiedInterconnects, other.modifiedInterconnects); } 
-@override int get hashCode { return Object.hash(modified, Object.hashAll(modifiedInterconnects ?? const [])); } 
-@override String toString() { return 'MagicComponentsSchemasModifiedTunnelsCollectionResponseResult(modified: $modified, modifiedInterconnects: $modifiedInterconnects)'; } 
+          listEquals(modifiedInterconnects, other.modifiedInterconnects);
+
+@override int get hashCode => Object.hash(modified, Object.hashAll(modifiedInterconnects ?? const []));
+
+@override String toString() => 'MagicComponentsSchemasModifiedTunnelsCollectionResponseResult(modified: $modified, modifiedInterconnects: $modifiedInterconnects)';
+
  }

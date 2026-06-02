@@ -24,10 +24,13 @@ PaymentLinksResourceShippingOption copyWith({int? shippingAmount, InvoicesResour
   shippingAmount: shippingAmount ?? this.shippingAmount,
   shippingRate: shippingRate ?? this.shippingRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceShippingOption &&
           shippingAmount == other.shippingAmount &&
-          shippingRate == other.shippingRate; } 
-@override int get hashCode { return Object.hash(shippingAmount, shippingRate); } 
-@override String toString() { return 'PaymentLinksResourceShippingOption(shippingAmount: $shippingAmount, shippingRate: $shippingRate)'; } 
+          shippingRate == other.shippingRate;
+
+@override int get hashCode => Object.hash(shippingAmount, shippingRate);
+
+@override String toString() => 'PaymentLinksResourceShippingOption(shippingAmount: $shippingAmount, shippingRate: $shippingRate)';
+
  }

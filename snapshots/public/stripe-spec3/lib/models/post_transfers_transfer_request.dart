@@ -35,11 +35,14 @@ PostTransfersTransferRequest copyWith({String? Function()? description, List<Str
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTransfersTransferRequest &&
           description == other.description &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostTransfersTransferRequest(description: $description, expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostTransfersTransferRequest(description: $description, expand: $expand, metadata: $metadata)';
+
  }

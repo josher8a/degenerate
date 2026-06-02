@@ -55,12 +55,15 @@ AccountCallUserDefinedMessage copyWith({String? Function()? accountSid, String? 
   sid: sid != null ? sid() : this.sid,
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallUserDefinedMessage &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
           sid == other.sid &&
-          dateCreated == other.dateCreated; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, sid, dateCreated); } 
-@override String toString() { return 'AccountCallUserDefinedMessage(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated)'; } 
+          dateCreated == other.dateCreated;
+
+@override int get hashCode => Object.hash(accountSid, callSid, sid, dateCreated);
+
+@override String toString() => 'AccountCallUserDefinedMessage(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated)';
+
  }

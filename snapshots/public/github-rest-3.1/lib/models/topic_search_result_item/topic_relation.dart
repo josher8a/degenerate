@@ -30,12 +30,15 @@ TopicRelation copyWith({int? Function()? id, String? Function()? name, int? Func
   topicId: topicId != null ? topicId() : this.topicId,
   relationType: relationType != null ? relationType() : this.relationType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TopicRelation &&
           id == other.id &&
           name == other.name &&
           topicId == other.topicId &&
-          relationType == other.relationType; } 
-@override int get hashCode { return Object.hash(id, name, topicId, relationType); } 
-@override String toString() { return 'TopicRelation(id: $id, name: $name, topicId: $topicId, relationType: $relationType)'; } 
+          relationType == other.relationType;
+
+@override int get hashCode => Object.hash(id, name, topicId, relationType);
+
+@override String toString() => 'TopicRelation(id: $id, name: $name, topicId: $topicId, relationType: $relationType)';
+
  }

@@ -44,14 +44,17 @@ ItemArchived copyWith({ItemArchivedAction? action, WebhooksProjectChanges? chang
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemArchived &&
           action == other.action &&
           changes == other.changes &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2Item == other.projectsV2Item &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2Item, sender); } 
-@override String toString() { return 'ItemArchived(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, installation, organization, projectsV2Item, sender);
+
+@override String toString() => 'ItemArchived(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
+
  }

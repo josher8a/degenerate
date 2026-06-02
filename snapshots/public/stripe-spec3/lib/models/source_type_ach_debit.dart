@@ -40,14 +40,17 @@ SourceTypeAchDebit copyWith({String? Function()? bankName, String? Function()? c
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeAchDebit &&
           bankName == other.bankName &&
           country == other.country &&
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
           routingNumber == other.routingNumber &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(bankName, country, fingerprint, last4, routingNumber, type); } 
-@override String toString() { return 'SourceTypeAchDebit(bankName: $bankName, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(bankName, country, fingerprint, last4, routingNumber, type);
+
+@override String toString() => 'SourceTypeAchDebit(bankName: $bankName, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber, type: $type)';
+
  }

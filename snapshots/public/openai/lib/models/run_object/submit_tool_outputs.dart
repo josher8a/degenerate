@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tool_
 SubmitToolOutputs copyWith({List<RunToolCallObject>? toolCalls}) { return SubmitToolOutputs(
   toolCalls: toolCalls ?? this.toolCalls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubmitToolOutputs &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hashAll(toolCalls); } 
-@override String toString() { return 'SubmitToolOutputs(toolCalls: $toolCalls)'; } 
+          listEquals(toolCalls, other.toolCalls);
+
+@override int get hashCode => Object.hashAll(toolCalls);
+
+@override String toString() => 'SubmitToolOutputs(toolCalls: $toolCalls)';
+
  }

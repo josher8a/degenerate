@@ -24,10 +24,13 @@ UserMessageInputText copyWith({InputTextContentParamType? type, String? text, })
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserMessageInputText &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'UserMessageInputText(type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(type, text);
+
+@override String toString() => 'UserMessageInputText(type: $type, text: $text)';
+
  }

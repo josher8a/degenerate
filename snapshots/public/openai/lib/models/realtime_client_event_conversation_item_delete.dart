@@ -41,11 +41,14 @@ RealtimeClientEventConversationItemDelete copyWith({String? Function()? eventId,
   type: type ?? this.type,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventConversationItemDelete &&
           eventId == other.eventId &&
           type == other.type &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId); } 
-@override String toString() { return 'RealtimeClientEventConversationItemDelete(eventId: $eventId, type: $type, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, itemId);
+
+@override String toString() => 'RealtimeClientEventConversationItemDelete(eventId: $eventId, type: $type, itemId: $itemId)';
+
  }

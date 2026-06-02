@@ -60,7 +60,7 @@ BuildsUpdateTriggerRequest copyWith({List<String>? Function()? branchExcludes, L
   rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
   triggerName: triggerName != null ? triggerName() : this.triggerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsUpdateTriggerRequest &&
           listEquals(branchExcludes, other.branchExcludes) &&
           listEquals(branchIncludes, other.branchIncludes) &&
@@ -71,7 +71,10 @@ BuildsUpdateTriggerRequest copyWith({List<String>? Function()? branchExcludes, L
           listEquals(pathExcludes, other.pathExcludes) &&
           listEquals(pathIncludes, other.pathIncludes) &&
           rootDirectory == other.rootDirectory &&
-          triggerName == other.triggerName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), rootDirectory, triggerName); } 
-@override String toString() { return 'BuildsUpdateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, rootDirectory: $rootDirectory, triggerName: $triggerName)'; } 
+          triggerName == other.triggerName;
+
+@override int get hashCode => Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), rootDirectory, triggerName);
+
+@override String toString() => 'BuildsUpdateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, rootDirectory: $rootDirectory, triggerName: $triggerName)';
+
  }

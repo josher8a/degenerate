@@ -88,7 +88,7 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({String? Fun
   beta: beta != null ? beta() : this.beta,
   capabilities: capabilities != null ? capabilities() : this.capabilities,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip &&
           friendlyName == other.friendlyName &&
           phoneNumber == other.phoneNumber &&
@@ -102,7 +102,10 @@ AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip copyWith({String? Fun
           isoCountry == other.isoCountry &&
           addressRequirements == other.addressRequirements &&
           beta == other.beta &&
-          capabilities == other.capabilities; } 
-@override int get hashCode { return Object.hash(friendlyName, phoneNumber, lata, locality, rateCenter, latitude, longitude, region, postalCode, isoCountry, addressRequirements, beta, capabilities); } 
-@override String toString() { return 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(friendlyName: $friendlyName, phoneNumber: $phoneNumber, lata: $lata, locality: $locality, rateCenter: $rateCenter, latitude: $latitude, longitude: $longitude, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, addressRequirements: $addressRequirements, beta: $beta, capabilities: $capabilities)'; } 
+          capabilities == other.capabilities;
+
+@override int get hashCode => Object.hash(friendlyName, phoneNumber, lata, locality, rateCenter, latitude, longitude, region, postalCode, isoCountry, addressRequirements, beta, capabilities);
+
+@override String toString() => 'AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip(friendlyName: $friendlyName, phoneNumber: $phoneNumber, lata: $lata, locality: $locality, rateCenter: $rateCenter, latitude: $latitude, longitude: $longitude, region: $region, postalCode: $postalCode, isoCountry: $isoCountry, addressRequirements: $addressRequirements, beta: $beta, capabilities: $capabilities)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exter
 AccessExternalEvaluationRule copyWith({ExternalEvaluation? externalEvaluation}) { return AccessExternalEvaluationRule(
   externalEvaluation: externalEvaluation ?? this.externalEvaluation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessExternalEvaluationRule &&
-          externalEvaluation == other.externalEvaluation; } 
-@override int get hashCode { return externalEvaluation.hashCode; } 
-@override String toString() { return 'AccessExternalEvaluationRule(externalEvaluation: $externalEvaluation)'; } 
+          externalEvaluation == other.externalEvaluation;
+
+@override int get hashCode => externalEvaluation.hashCode;
+
+@override String toString() => 'AccessExternalEvaluationRule(externalEvaluation: $externalEvaluation)';
+
  }

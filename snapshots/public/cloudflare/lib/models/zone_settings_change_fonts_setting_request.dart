@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpeedCloudflareFontsValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpeedCloudflareFontsValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpeedCloudflareFontsValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpeedCloudflareFontsValue($value)';
+
  }
 @immutable final class ZoneSettingsChangeFontsSettingRequest {const ZoneSettingsChangeFontsSettingRequest({required this.value});
 
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 ZoneSettingsChangeFontsSettingRequest copyWith({SpeedCloudflareFontsValue? value}) { return ZoneSettingsChangeFontsSettingRequest(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneSettingsChangeFontsSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneSettingsChangeFontsSettingRequest(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZoneSettingsChangeFontsSettingRequest(value: $value)';
+
  }

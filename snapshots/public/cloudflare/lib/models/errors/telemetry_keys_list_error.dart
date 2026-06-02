@@ -18,13 +18,15 @@ final class TelemetryKeysListError$401 extends TelemetryKeysListError {const Tel
 
 final TelemetryKeysListResponse401 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class TelemetryKeysListError$500 extends TelemetryKeysListError {const TelemetryKeysListError$500(this.error);
 
 final TelemetryKeysListResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class TelemetryKeysListError$Unknown extends TelemetryKeysListError {const TelemetryKeysListError$Unknown(this.statusCode, this.rawBody, );
 

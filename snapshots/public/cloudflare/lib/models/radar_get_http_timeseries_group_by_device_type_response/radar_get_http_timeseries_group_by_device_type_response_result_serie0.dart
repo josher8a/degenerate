@@ -33,12 +33,15 @@ RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 copyWith({List<Strin
   other: other ?? this.other,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 &&
           listEquals(desktop, other.desktop) &&
           listEquals(mobile, other.mobile) &&
           listEquals(this.other, other.other) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(desktop), Object.hashAll(mobile), Object.hashAll(other), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(desktop: $desktop, mobile: $mobile, other: $other, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(desktop), Object.hashAll(mobile), Object.hashAll(other), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0(desktop: $desktop, mobile: $mobile, other: $other, timestamps: $timestamps)';
+
  }

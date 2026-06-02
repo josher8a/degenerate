@@ -37,12 +37,15 @@ RealtimeFunctionTool copyWith({AssistantToolsFunctionType? Function()? type, Str
   description: description != null ? description() : this.description,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeFunctionTool &&
           type == other.type &&
           name == other.name &&
           description == other.description &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, name, description, parameters); } 
-@override String toString() { return 'RealtimeFunctionTool(type: $type, name: $name, description: $description, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, name, description, parameters);
+
+@override String toString() => 'RealtimeFunctionTool(type: $type, name: $name, description: $description, parameters: $parameters)';
+
  }

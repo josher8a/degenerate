@@ -45,14 +45,17 @@ MagicNetworkMonitoringRulesUpdateRuleRequest copyWith({MagicVisibilityMnmMnmRule
   packetThreshold: packetThreshold != null ? packetThreshold() : this.packetThreshold,
   prefixes: prefixes != null ? prefixes() : this.prefixes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetworkMonitoringRulesUpdateRuleRequest &&
           automaticAdvertisement == other.automaticAdvertisement &&
           bandwidth == other.bandwidth &&
           duration == other.duration &&
           name == other.name &&
           packetThreshold == other.packetThreshold &&
-          listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hash(automaticAdvertisement, bandwidth, duration, name, packetThreshold, Object.hashAll(prefixes ?? const [])); } 
-@override String toString() { return 'MagicNetworkMonitoringRulesUpdateRuleRequest(automaticAdvertisement: $automaticAdvertisement, bandwidth: $bandwidth, duration: $duration, name: $name, packetThreshold: $packetThreshold, prefixes: $prefixes)'; } 
+          listEquals(prefixes, other.prefixes);
+
+@override int get hashCode => Object.hash(automaticAdvertisement, bandwidth, duration, name, packetThreshold, Object.hashAll(prefixes ?? const []));
+
+@override String toString() => 'MagicNetworkMonitoringRulesUpdateRuleRequest(automaticAdvertisement: $automaticAdvertisement, bandwidth: $bandwidth, duration: $duration, name: $name, packetThreshold: $packetThreshold, prefixes: $prefixes)';
+
  }

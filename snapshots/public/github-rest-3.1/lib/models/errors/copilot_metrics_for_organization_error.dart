@@ -20,25 +20,29 @@ final class CopilotMetricsForOrganizationError$403 extends CopilotMetricsForOrga
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CopilotMetricsForOrganizationError$404 extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CopilotMetricsForOrganizationError$422 extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CopilotMetricsForOrganizationError$500 extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CopilotMetricsForOrganizationError$Unknown extends CopilotMetricsForOrganizationError {const CopilotMetricsForOrganizationError$Unknown(this.statusCode, this.rawBody, );
 

@@ -50,7 +50,7 @@ WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime?
   modifiedOn: modifiedOn ?? this.modifiedOn,
   workflowId: workflowId ?? this.workflowId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowVersionsResponseResult &&
           className == other.className &&
           createdOn == other.createdOn &&
@@ -58,7 +58,10 @@ WorDescribeWorkflowVersionsResponseResult copyWith({String? className, DateTime?
           id == other.id &&
           limits == other.limits &&
           modifiedOn == other.modifiedOn &&
-          workflowId == other.workflowId; } 
-@override int get hashCode { return Object.hash(className, createdOn, hasDag, id, limits, modifiedOn, workflowId); } 
-@override String toString() { return 'WorDescribeWorkflowVersionsResponseResult(className: $className, createdOn: $createdOn, hasDag: $hasDag, id: $id, limits: $limits, modifiedOn: $modifiedOn, workflowId: $workflowId)'; } 
+          workflowId == other.workflowId;
+
+@override int get hashCode => Object.hash(className, createdOn, hasDag, id, limits, modifiedOn, workflowId);
+
+@override String toString() => 'WorDescribeWorkflowVersionsResponseResult(className: $className, createdOn: $createdOn, hasDag: $hasDag, id: $id, limits: $limits, modifiedOn: $modifiedOn, workflowId: $workflowId)';
+
  }

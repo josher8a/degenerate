@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryAdvisoryState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryAdvisoryState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryAdvisoryState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryAdvisoryState($value)';
+
  }
 /// A repository security advisory.
 @immutable final class RepositoryAdvisory {const RepositoryAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.summary, required this.description, required this.severity, required this.author, required this.publisher, required this.identifiers, required this.state, required this.createdAt, required this.updatedAt, required this.publishedAt, required this.closedAt, required this.withdrawnAt, required this.submission, required this.vulnerabilities, required this.cvss, required this.cwes, required this.cweIds, required this.credits, required this.creditsDetailed, required this.collaboratingUsers, required this.collaboratingTeams, required this.privateFork, this.cvssSeverities, });
@@ -232,7 +235,7 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
   collaboratingTeams: collaboratingTeams != null ? collaboratingTeams() : this.collaboratingTeams,
   privateFork: privateFork != null ? privateFork() : this.privateFork,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -260,7 +263,10 @@ RepositoryAdvisory copyWith({String? ghsaId, String? Function()? cveId, Uri? url
           listEquals(creditsDetailed, other.creditsDetailed) &&
           listEquals(collaboratingUsers, other.collaboratingUsers) &&
           listEquals(collaboratingTeams, other.collaboratingTeams) &&
-          privateFork == other.privateFork; } 
-@override int get hashCode { return Object.hashAll([ghsaId, cveId, url, htmlUrl, summary, description, severity, author, publisher, Object.hashAll(identifiers), state, createdAt, updatedAt, publishedAt, closedAt, withdrawnAt, submission, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, Object.hashAll(cwes ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), Object.hashAll(creditsDetailed ?? const []), Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []), privateFork]); } 
-@override String toString() { return 'RepositoryAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, summary: $summary, description: $description, severity: $severity, author: $author, publisher: $publisher, identifiers: $identifiers, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, closedAt: $closedAt, withdrawnAt: $withdrawnAt, submission: $submission, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, cweIds: $cweIds, credits: $credits, creditsDetailed: $creditsDetailed, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams, privateFork: $privateFork)'; } 
+          privateFork == other.privateFork;
+
+@override int get hashCode => Object.hashAll([ghsaId, cveId, url, htmlUrl, summary, description, severity, author, publisher, Object.hashAll(identifiers), state, createdAt, updatedAt, publishedAt, closedAt, withdrawnAt, submission, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, Object.hashAll(cwes ?? const []), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), Object.hashAll(creditsDetailed ?? const []), Object.hashAll(collaboratingUsers ?? const []), Object.hashAll(collaboratingTeams ?? const []), privateFork]);
+
+@override String toString() => 'RepositoryAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, summary: $summary, description: $description, severity: $severity, author: $author, publisher: $publisher, identifiers: $identifiers, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, publishedAt: $publishedAt, closedAt: $closedAt, withdrawnAt: $withdrawnAt, submission: $submission, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, cweIds: $cweIds, credits: $credits, creditsDetailed: $creditsDetailed, collaboratingUsers: $collaboratingUsers, collaboratingTeams: $collaboratingTeams, privateFork: $privateFork)';
+
  }

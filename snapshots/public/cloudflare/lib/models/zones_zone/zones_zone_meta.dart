@@ -65,7 +65,7 @@ ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertif
   phishingDetected: phishingDetected != null ? phishingDetected() : this.phishingDetected,
   step: step != null ? step() : this.step,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZoneMeta &&
           cdnOnly == other.cdnOnly &&
           customCertificateQuota == other.customCertificateQuota &&
@@ -73,7 +73,10 @@ ZonesZoneMeta copyWith({bool? Function()? cdnOnly, int? Function()? customCertif
           foundationDns == other.foundationDns &&
           pageRuleQuota == other.pageRuleQuota &&
           phishingDetected == other.phishingDetected &&
-          step == other.step; } 
-@override int get hashCode { return Object.hash(cdnOnly, customCertificateQuota, dnsOnly, foundationDns, pageRuleQuota, phishingDetected, step); } 
-@override String toString() { return 'ZonesZoneMeta(cdnOnly: $cdnOnly, customCertificateQuota: $customCertificateQuota, dnsOnly: $dnsOnly, foundationDns: $foundationDns, pageRuleQuota: $pageRuleQuota, phishingDetected: $phishingDetected, step: $step)'; } 
+          step == other.step;
+
+@override int get hashCode => Object.hash(cdnOnly, customCertificateQuota, dnsOnly, foundationDns, pageRuleQuota, phishingDetected, step);
+
+@override String toString() => 'ZonesZoneMeta(cdnOnly: $cdnOnly, customCertificateQuota: $customCertificateQuota, dnsOnly: $dnsOnly, foundationDns: $foundationDns, pageRuleQuota: $pageRuleQuota, phishingDetected: $phishingDetected, step: $step)';
+
  }

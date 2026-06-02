@@ -78,7 +78,7 @@ StartRecordingRequest copyWith({bool Function()? allowMultipleRecordings, Realti
   url: url != null ? url() : this.url,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StartRecordingRequest &&
           allowMultipleRecordings == other.allowMultipleRecordings &&
           audioConfig == other.audioConfig &&
@@ -90,7 +90,10 @@ StartRecordingRequest copyWith({bool Function()? allowMultipleRecordings, Realti
           rtmpOutConfig == other.rtmpOutConfig &&
           storageConfig == other.storageConfig &&
           url == other.url &&
-          videoConfig == other.videoConfig; } 
-@override int get hashCode { return Object.hash(allowMultipleRecordings, audioConfig, fileNamePrefix, interactiveConfig, maxSeconds, meetingId, realtimekitBucketConfig, rtmpOutConfig, storageConfig, url, videoConfig); } 
-@override String toString() { return 'StartRecordingRequest(allowMultipleRecordings: $allowMultipleRecordings, audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, interactiveConfig: $interactiveConfig, maxSeconds: $maxSeconds, meetingId: $meetingId, realtimekitBucketConfig: $realtimekitBucketConfig, rtmpOutConfig: $rtmpOutConfig, storageConfig: $storageConfig, url: $url, videoConfig: $videoConfig)'; } 
+          videoConfig == other.videoConfig;
+
+@override int get hashCode => Object.hash(allowMultipleRecordings, audioConfig, fileNamePrefix, interactiveConfig, maxSeconds, meetingId, realtimekitBucketConfig, rtmpOutConfig, storageConfig, url, videoConfig);
+
+@override String toString() => 'StartRecordingRequest(allowMultipleRecordings: $allowMultipleRecordings, audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, interactiveConfig: $interactiveConfig, maxSeconds: $maxSeconds, meetingId: $meetingId, realtimekitBucketConfig: $realtimekitBucketConfig, rtmpOutConfig: $rtmpOutConfig, storageConfig: $storageConfig, url: $url, videoConfig: $videoConfig)';
+
  }

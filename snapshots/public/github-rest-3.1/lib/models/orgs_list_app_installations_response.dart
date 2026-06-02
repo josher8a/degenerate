@@ -21,10 +21,13 @@ OrgsListAppInstallationsResponse copyWith({int? totalCount, List<Installation>? 
   totalCount: totalCount ?? this.totalCount,
   installations: installations ?? this.installations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsListAppInstallationsResponse &&
           totalCount == other.totalCount &&
-          listEquals(installations, other.installations); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(installations)); } 
-@override String toString() { return 'OrgsListAppInstallationsResponse(totalCount: $totalCount, installations: $installations)'; } 
+          listEquals(installations, other.installations);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(installations));
+
+@override String toString() => 'OrgsListAppInstallationsResponse(totalCount: $totalCount, installations: $installations)';
+
  }

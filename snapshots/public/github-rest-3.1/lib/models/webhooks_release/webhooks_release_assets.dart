@@ -95,7 +95,7 @@ WebhooksReleaseAssets copyWith({Uri? browserDownloadUrl, String? contentType, Da
   uploader: uploader != null ? uploader() : this.uploader,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReleaseAssets &&
           browserDownloadUrl == other.browserDownloadUrl &&
           contentType == other.contentType &&
@@ -110,7 +110,10 @@ WebhooksReleaseAssets copyWith({Uri? browserDownloadUrl, String? contentType, Da
           state == other.state &&
           updatedAt == other.updatedAt &&
           uploader == other.uploader &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(browserDownloadUrl, contentType, createdAt, downloadCount, id, label, name, nodeId, size, digest, state, updatedAt, uploader, url); } 
-@override String toString() { return 'WebhooksReleaseAssets(browserDownloadUrl: $browserDownloadUrl, contentType: $contentType, createdAt: $createdAt, downloadCount: $downloadCount, id: $id, label: $label, name: $name, nodeId: $nodeId, size: $size, digest: $digest, state: $state, updatedAt: $updatedAt, uploader: $uploader, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(browserDownloadUrl, contentType, createdAt, downloadCount, id, label, name, nodeId, size, digest, state, updatedAt, uploader, url);
+
+@override String toString() => 'WebhooksReleaseAssets(browserDownloadUrl: $browserDownloadUrl, contentType: $contentType, createdAt: $createdAt, downloadCount: $downloadCount, id: $id, label: $label, name: $name, nodeId: $nodeId, size: $size, digest: $digest, state: $state, updatedAt: $updatedAt, uploader: $uploader, url: $url)';
+
  }

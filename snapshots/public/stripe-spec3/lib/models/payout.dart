@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PayoutObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PayoutObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PayoutObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PayoutObject($value)';
+
  }
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
 @immutable final class ReconciliationStatus {const ReconciliationStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReconciliationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReconciliationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReconciliationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReconciliationStatus($value)';
+
  }
 /// Can be `bank_account` or `card`.
 @immutable final class PayoutType {const PayoutType._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PayoutType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PayoutType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PayoutType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PayoutType($value)';
+
  }
 /// A `Payout` object is created when you receive funds from Stripe, or when you
 /// initiate a payout to either a bank account or debit card of a [connected
@@ -294,7 +303,7 @@ Payout copyWith({int? amount, ChargeApplicationFee? Function()? applicationFee, 
   traceId: traceId != null ? traceId() : this.traceId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Payout &&
           amount == other.amount &&
           applicationFee == other.applicationFee &&
@@ -322,7 +331,10 @@ Payout copyWith({int? amount, ChargeApplicationFee? Function()? applicationFee, 
           statementDescriptor == other.statementDescriptor &&
           status == other.status &&
           traceId == other.traceId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hashAll([amount, applicationFee, applicationFeeAmount, arrivalDate, automatic, balanceTransaction, created, currency, description, destination, failureBalanceTransaction, failureCode, failureMessage, id, livemode, metadata, method, object, originalPayout, payoutMethod, reconciliationStatus, reversedBy, sourceType, statementDescriptor, status, traceId, type]); } 
-@override String toString() { return 'Payout(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, arrivalDate: $arrivalDate, automatic: $automatic, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, failureBalanceTransaction: $failureBalanceTransaction, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, method: $method, object: $object, originalPayout: $originalPayout, payoutMethod: $payoutMethod, reconciliationStatus: $reconciliationStatus, reversedBy: $reversedBy, sourceType: $sourceType, statementDescriptor: $statementDescriptor, status: $status, traceId: $traceId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hashAll([amount, applicationFee, applicationFeeAmount, arrivalDate, automatic, balanceTransaction, created, currency, description, destination, failureBalanceTransaction, failureCode, failureMessage, id, livemode, metadata, method, object, originalPayout, payoutMethod, reconciliationStatus, reversedBy, sourceType, statementDescriptor, status, traceId, type]);
+
+@override String toString() => 'Payout(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, arrivalDate: $arrivalDate, automatic: $automatic, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, destination: $destination, failureBalanceTransaction: $failureBalanceTransaction, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, method: $method, object: $object, originalPayout: $originalPayout, payoutMethod: $payoutMethod, reconciliationStatus: $reconciliationStatus, reversedBy: $reversedBy, sourceType: $sourceType, statementDescriptor: $statementDescriptor, status: $status, traceId: $traceId, type: $type)';
+
  }

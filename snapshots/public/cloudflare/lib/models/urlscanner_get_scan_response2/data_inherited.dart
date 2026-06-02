@@ -27,11 +27,14 @@ DataInherited copyWith({List<UrlCategoriesDataContent>? content, String? from, L
   from: from ?? this.from,
   risks: risks ?? this.risks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataInherited &&
           listEquals(content, other.content) &&
           from == other.from &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content), from, Object.hashAll(risks)); } 
-@override String toString() { return 'DataInherited(content: $content, from: $from, risks: $risks)'; } 
+          listEquals(risks, other.risks);
+
+@override int get hashCode => Object.hash(Object.hashAll(content), from, Object.hashAll(risks));
+
+@override String toString() => 'DataInherited(content: $content, from: $from, risks: $risks)';
+
  }

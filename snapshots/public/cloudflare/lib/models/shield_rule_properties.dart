@@ -46,14 +46,17 @@ ShieldRuleProperties copyWith({ShieldAction? Function()? action, ShieldSchemasDe
   selector: selector != null ? selector() : this.selector,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldRuleProperties &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
           selector == other.selector &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, selector, title); } 
-@override String toString() { return 'ShieldRuleProperties(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, selector, title);
+
+@override String toString() => 'ShieldRuleProperties(action: $action, description: $description, enabled: $enabled, expression: $expression, selector: $selector, title: $title)';
+
  }

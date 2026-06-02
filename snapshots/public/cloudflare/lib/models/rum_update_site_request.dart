@@ -53,13 +53,16 @@ RumUpdateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumEnabl
   lite: lite != null ? lite() : this.lite,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumUpdateSiteRequest &&
           autoInstall == other.autoInstall &&
           enabled == other.enabled &&
           host == other.host &&
           lite == other.lite &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(autoInstall, enabled, host, lite, zoneTag); } 
-@override String toString() { return 'RumUpdateSiteRequest(autoInstall: $autoInstall, enabled: $enabled, host: $host, lite: $lite, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(autoInstall, enabled, host, lite, zoneTag);
+
+@override String toString() => 'RumUpdateSiteRequest(autoInstall: $autoInstall, enabled: $enabled, host: $host, lite: $lite, zoneTag: $zoneTag)';
+
  }

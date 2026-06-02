@@ -122,7 +122,7 @@ Discount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Fun
   subscription: subscription != null ? subscription() : this.subscription,
   subscriptionItem: subscriptionItem != null ? subscriptionItem() : this.subscriptionItem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Discount &&
           checkoutSession == other.checkoutSession &&
           customer == other.customer &&
@@ -136,7 +136,10 @@ Discount copyWith({String? Function()? checkoutSession, BankAccountCustomer? Fun
           source == other.source &&
           start == other.start &&
           subscription == other.subscription &&
-          subscriptionItem == other.subscriptionItem; } 
-@override int get hashCode { return Object.hash(checkoutSession, customer, customerAccount, end, id, invoice, invoiceItem, object, promotionCode, source, start, subscription, subscriptionItem); } 
-@override String toString() { return 'Discount(checkoutSession: $checkoutSession, customer: $customer, customerAccount: $customerAccount, end: $end, id: $id, invoice: $invoice, invoiceItem: $invoiceItem, object: $object, promotionCode: $promotionCode, source: $source, start: $start, subscription: $subscription, subscriptionItem: $subscriptionItem)'; } 
+          subscriptionItem == other.subscriptionItem;
+
+@override int get hashCode => Object.hash(checkoutSession, customer, customerAccount, end, id, invoice, invoiceItem, object, promotionCode, source, start, subscription, subscriptionItem);
+
+@override String toString() => 'Discount(checkoutSession: $checkoutSession, customer: $customer, customerAccount: $customerAccount, end: $end, id: $id, invoice: $invoice, invoiceItem: $invoiceItem, object: $object, promotionCode: $promotionCode, source: $source, start: $start, subscription: $subscription, subscriptionItem: $subscriptionItem)';
+
  }

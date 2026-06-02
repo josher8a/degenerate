@@ -46,13 +46,16 @@ RealtimeMcpApprovalRequest copyWith({String? type, String? id, String? serverLab
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpApprovalRequest &&
           type == other.type &&
           id == other.id &&
           serverLabel == other.serverLabel &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments); } 
-@override String toString() { return 'RealtimeMcpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(type, id, serverLabel, name, arguments);
+
+@override String toString() => 'RealtimeMcpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)';
+
  }

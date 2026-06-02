@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingAlertObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingAlertObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingAlertObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingAlertObject($value)';
+
  }
 /// Status of the alert. This can be active, inactive or archived.
 @immutable final class BillingAlertStatus {const BillingAlertStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingAlertStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingAlertStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingAlertStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingAlertStatus($value)';
+
  }
 /// A billing alert is a resource that notifies you when a certain usage threshold on a meter is crossed. For example, you might create a billing alert to notify you when a certain user made 100 API requests.
 @immutable final class BillingAlert {const BillingAlert({required this.alertType, required this.id, required this.livemode, required this.object, required this.title, this.status, this.usageThreshold, });
@@ -112,7 +118,7 @@ BillingAlert copyWith({AlertType? alertType, String? id, bool? livemode, Billing
   title: title ?? this.title,
   usageThreshold: usageThreshold != null ? usageThreshold() : this.usageThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingAlert &&
           alertType == other.alertType &&
           id == other.id &&
@@ -120,7 +126,10 @@ BillingAlert copyWith({AlertType? alertType, String? id, bool? livemode, Billing
           object == other.object &&
           status == other.status &&
           title == other.title &&
-          usageThreshold == other.usageThreshold; } 
-@override int get hashCode { return Object.hash(alertType, id, livemode, object, status, title, usageThreshold); } 
-@override String toString() { return 'BillingAlert(alertType: $alertType, id: $id, livemode: $livemode, object: $object, status: $status, title: $title, usageThreshold: $usageThreshold)'; } 
+          usageThreshold == other.usageThreshold;
+
+@override int get hashCode => Object.hash(alertType, id, livemode, object, status, title, usageThreshold);
+
+@override String toString() => 'BillingAlert(alertType: $alertType, id: $id, livemode: $livemode, object: $object, status: $status, title: $title, usageThreshold: $usageThreshold)';
+
  }

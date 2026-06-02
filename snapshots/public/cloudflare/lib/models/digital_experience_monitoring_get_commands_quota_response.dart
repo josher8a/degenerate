@@ -30,11 +30,14 @@ DigitalExperienceMonitoringGetCommandsQuotaResponse copyWith({double? quota, dou
   quotaUsage: quotaUsage ?? this.quotaUsage,
   resetTime: resetTime ?? this.resetTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringGetCommandsQuotaResponse &&
           quota == other.quota &&
           quotaUsage == other.quotaUsage &&
-          resetTime == other.resetTime; } 
-@override int get hashCode { return Object.hash(quota, quotaUsage, resetTime); } 
-@override String toString() { return 'DigitalExperienceMonitoringGetCommandsQuotaResponse(quota: $quota, quotaUsage: $quotaUsage, resetTime: $resetTime)'; } 
+          resetTime == other.resetTime;
+
+@override int get hashCode => Object.hash(quota, quotaUsage, resetTime);
+
+@override String toString() => 'DigitalExperienceMonitoringGetCommandsQuotaResponse(quota: $quota, quotaUsage: $quotaUsage, resetTime: $resetTime)';
+
  }

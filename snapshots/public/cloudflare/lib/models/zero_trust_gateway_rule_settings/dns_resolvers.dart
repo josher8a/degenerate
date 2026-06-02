@@ -21,10 +21,13 @@ DnsResolvers copyWith({List<ZeroTrustGatewayDnsResolverSettings>? Function()? ip
   ipv4: ipv4 != null ? ipv4() : this.ipv4,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsResolvers &&
           listEquals(ipv4, other.ipv4) &&
-          listEquals(ipv6, other.ipv6); } 
-@override int get hashCode { return Object.hash(Object.hashAll(ipv4 ?? const []), Object.hashAll(ipv6 ?? const [])); } 
-@override String toString() { return 'DnsResolvers(ipv4: $ipv4, ipv6: $ipv6)'; } 
+          listEquals(ipv6, other.ipv6);
+
+@override int get hashCode => Object.hash(Object.hashAll(ipv4 ?? const []), Object.hashAll(ipv6 ?? const []));
+
+@override String toString() => 'DnsResolvers(ipv4: $ipv4, ipv6: $ipv6)';
+
  }

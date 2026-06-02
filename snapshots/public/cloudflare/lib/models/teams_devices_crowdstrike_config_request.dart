@@ -45,12 +45,15 @@ TeamsDevicesCrowdstrikeConfigRequest copyWith({String? apiUrl, String? clientId,
   clientSecret: clientSecret ?? this.clientSecret,
   customerId: customerId ?? this.customerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCrowdstrikeConfigRequest &&
           apiUrl == other.apiUrl &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
-          customerId == other.customerId; } 
-@override int get hashCode { return Object.hash(apiUrl, clientId, clientSecret, customerId); } 
-@override String toString() { return 'TeamsDevicesCrowdstrikeConfigRequest(apiUrl: $apiUrl, clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)'; } 
+          customerId == other.customerId;
+
+@override int get hashCode => Object.hash(apiUrl, clientId, clientSecret, customerId);
+
+@override String toString() => 'TeamsDevicesCrowdstrikeConfigRequest(apiUrl: $apiUrl, clientId: $clientId, clientSecret: $clientSecret, customerId: $customerId)';
+
  }

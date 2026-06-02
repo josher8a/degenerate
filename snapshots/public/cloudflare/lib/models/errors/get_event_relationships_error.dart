@@ -17,7 +17,8 @@ final class GetEventRelationshipsError$400 extends GetEventRelationshipsError {c
 
 final GetEventRelationshipsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetEventRelationshipsError$Unknown extends GetEventRelationshipsError {const GetEventRelationshipsError$Unknown(this.statusCode, this.rawBody, );
 

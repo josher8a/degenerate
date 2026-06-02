@@ -23,10 +23,13 @@ LocalVolumeSource copyWith({String? Function()? fsType, String? path, }) { retur
   fsType: fsType != null ? fsType() : this.fsType,
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalVolumeSource &&
           fsType == other.fsType &&
-          path == other.path; } 
-@override int get hashCode { return Object.hash(fsType, path); } 
-@override String toString() { return 'LocalVolumeSource(fsType: $fsType, path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => Object.hash(fsType, path);
+
+@override String toString() => 'LocalVolumeSource(fsType: $fsType, path: $path)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TerminalOnboardingLinkLinkOptions copyWith({TerminalOnboardingLinkAppleTermsAndConditions? Function()? appleTermsAndConditions}) { return TerminalOnboardingLinkLinkOptions(
   appleTermsAndConditions: appleTermsAndConditions != null ? appleTermsAndConditions() : this.appleTermsAndConditions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalOnboardingLinkLinkOptions &&
-          appleTermsAndConditions == other.appleTermsAndConditions; } 
-@override int get hashCode { return appleTermsAndConditions.hashCode; } 
-@override String toString() { return 'TerminalOnboardingLinkLinkOptions(appleTermsAndConditions: $appleTermsAndConditions)'; } 
+          appleTermsAndConditions == other.appleTermsAndConditions;
+
+@override int get hashCode => appleTermsAndConditions.hashCode;
+
+@override String toString() => 'TerminalOnboardingLinkLinkOptions(appleTermsAndConditions: $appleTermsAndConditions)';
+
  }

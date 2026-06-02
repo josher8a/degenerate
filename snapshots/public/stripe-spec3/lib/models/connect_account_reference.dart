@@ -23,10 +23,13 @@ ConnectAccountReference copyWith({ApplicationFeeAccount? Function()? account, Co
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectAccountReference &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'ConnectAccountReference(account: $account, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, type);
+
+@override String toString() => 'ConnectAccountReference(account: $account, type: $type)';
+
  }

@@ -74,10 +74,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LossReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LossReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LossReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LossReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingDisputeObject {const IssuingDisputeObject._(this.value);
@@ -96,10 +99,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingDisputeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingDisputeObject($value)';
+
  }
 /// Current status of the dispute.
 @immutable final class IssuingDisputeStatus {const IssuingDisputeStatus._(this.value);
@@ -130,10 +136,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingDisputeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingDisputeStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingDisputeStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingDisputeStatus($value)';
+
  }
 /// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
 /// 
@@ -238,7 +247,7 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
   transaction: transaction ?? this.transaction,
   treasury: treasury != null ? treasury() : this.treasury,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDispute &&
           amount == other.amount &&
           listEquals(balanceTransactions, other.balanceTransactions) &&
@@ -252,7 +261,10 @@ IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? bala
           object == other.object &&
           status == other.status &&
           transaction == other.transaction &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury); } 
-@override String toString() { return 'IssuingDispute(amount: $amount, balanceTransactions: $balanceTransactions, created: $created, currency: $currency, evidence: $evidence, id: $id, livemode: $livemode, lossReason: $lossReason, metadata: $metadata, object: $object, status: $status, transaction: $transaction, treasury: $treasury)'; } 
+          treasury == other.treasury;
+
+@override int get hashCode => Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury);
+
+@override String toString() => 'IssuingDispute(amount: $amount, balanceTransactions: $balanceTransactions, created: $created, currency: $currency, evidence: $evidence, id: $id, livemode: $livemode, lossReason: $lossReason, metadata: $metadata, object: $object, status: $status, transaction: $transaction, treasury: $treasury)';
+
  }

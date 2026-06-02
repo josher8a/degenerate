@@ -58,14 +58,17 @@ KeyOwner copyWith({String? Function()? type, String? Function()? object, String?
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   role: role != null ? role() : this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeyOwner &&
           type == other.type &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(type, object, id, name, createdAt, role); } 
-@override String toString() { return 'KeyOwner(type: $type, object: $object, id: $id, name: $name, createdAt: $createdAt, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(type, object, id, name, createdAt, role);
+
+@override String toString() => 'KeyOwner(type: $type, object: $object, id: $id, name: $name, createdAt: $createdAt, role: $role)';
+
  }

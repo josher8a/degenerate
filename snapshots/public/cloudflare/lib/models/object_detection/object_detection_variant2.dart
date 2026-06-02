@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ObjectDetectionVariant2 copyWith({List<double>? Function()? image}) { return ObjectDetectionVariant2(
   image: image != null ? image() : this.image,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectDetectionVariant2 &&
-          listEquals(image, other.image); } 
-@override int get hashCode { return Object.hashAll(image ?? const []); } 
-@override String toString() { return 'ObjectDetectionVariant2(image: $image)'; } 
+          listEquals(image, other.image);
+
+@override int get hashCode => Object.hashAll(image ?? const []);
+
+@override String toString() => 'ObjectDetectionVariant2(image: $image)';
+
  }

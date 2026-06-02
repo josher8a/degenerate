@@ -47,14 +47,17 @@ ReposCreateOrUpdateFileContentsRequest copyWith({String? message, String? conten
   committer: committer != null ? committer() : this.committer,
   author: author != null ? author() : this.author,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateOrUpdateFileContentsRequest &&
           message == other.message &&
           content == other.content &&
           sha == other.sha &&
           branch == other.branch &&
           committer == other.committer &&
-          author == other.author; } 
-@override int get hashCode { return Object.hash(message, content, sha, branch, committer, author); } 
-@override String toString() { return 'ReposCreateOrUpdateFileContentsRequest(message: $message, content: $content, sha: $sha, branch: $branch, committer: $committer, author: $author)'; } 
+          author == other.author;
+
+@override int get hashCode => Object.hash(message, content, sha, branch, committer, author);
+
+@override String toString() => 'ReposCreateOrUpdateFileContentsRequest(message: $message, content: $content, sha: $sha, branch: $branch, committer: $committer, author: $author)';
+
  }

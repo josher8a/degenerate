@@ -21,10 +21,13 @@ CalculationsSeries copyWith({List<CalculationsSeriesData>? data, String? time, }
   data: data ?? this.data,
   time: time ?? this.time,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CalculationsSeries &&
           listEquals(data, other.data) &&
-          time == other.time; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), time); } 
-@override String toString() { return 'CalculationsSeries(data: $data, time: $time)'; } 
+          time == other.time;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), time);
+
+@override String toString() => 'CalculationsSeries(data: $data, time: $time)';
+
  }

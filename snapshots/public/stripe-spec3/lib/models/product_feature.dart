@@ -42,12 +42,15 @@ ProductFeature copyWith({EntitlementsFeature? entitlementFeature, String? id, bo
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProductFeature &&
           entitlementFeature == other.entitlementFeature &&
           id == other.id &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(entitlementFeature, id, livemode, object); } 
-@override String toString() { return 'ProductFeature(entitlementFeature: $entitlementFeature, id: $id, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(entitlementFeature, id, livemode, object);
+
+@override String toString() => 'ProductFeature(entitlementFeature: $entitlementFeature, id: $id, livemode: $livemode, object: $object)';
+
  }

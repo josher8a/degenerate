@@ -22,10 +22,13 @@ ThresholdsResourceUsageAlertFilter copyWith({BankConnectionsResourceAccountholde
   customer: customer != null ? customer() : this.customer,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThresholdsResourceUsageAlertFilter &&
           customer == other.customer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customer, type); } 
-@override String toString() { return 'ThresholdsResourceUsageAlertFilter(customer: $customer, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customer, type);
+
+@override String toString() => 'ThresholdsResourceUsageAlertFilter(customer: $customer, type: $type)';
+
  }

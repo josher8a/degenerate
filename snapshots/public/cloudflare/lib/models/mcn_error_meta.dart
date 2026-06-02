@@ -30,12 +30,15 @@ McnErrorMeta copyWith({String? Function()? l10nKey, String? Function()? loggable
   templateData: templateData != null ? templateData() : this.templateData,
   traceId: traceId != null ? traceId() : this.traceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnErrorMeta &&
           l10nKey == other.l10nKey &&
           loggableError == other.loggableError &&
           templateData == other.templateData &&
-          traceId == other.traceId; } 
-@override int get hashCode { return Object.hash(l10nKey, loggableError, templateData, traceId); } 
-@override String toString() { return 'McnErrorMeta(l10nKey: $l10nKey, loggableError: $loggableError, templateData: $templateData, traceId: $traceId)'; } 
+          traceId == other.traceId;
+
+@override int get hashCode => Object.hash(l10nKey, loggableError, templateData, traceId);
+
+@override String toString() => 'McnErrorMeta(l10nKey: $l10nKey, loggableError: $loggableError, templateData: $templateData, traceId: $traceId)';
+
  }

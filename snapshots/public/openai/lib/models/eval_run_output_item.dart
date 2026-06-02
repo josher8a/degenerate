@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalRunOutputItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalRunOutputItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalRunOutputItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EvalRunOutputItemObject($value)';
+
  }
 /// A schema representing an evaluation run output item.
 /// 
@@ -103,7 +106,7 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
   results: results ?? this.results,
   sample: sample ?? this.sample,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalRunOutputItem &&
           object == other.object &&
           id == other.id &&
@@ -114,7 +117,10 @@ EvalRunOutputItem copyWith({EvalRunOutputItemObject? object, String? id, String?
           datasourceItemId == other.datasourceItemId &&
           datasourceItem == other.datasourceItem &&
           listEquals(results, other.results) &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(object, id, runId, evalId, createdAt, status, datasourceItemId, datasourceItem, Object.hashAll(results), sample); } 
-@override String toString() { return 'EvalRunOutputItem(object: $object, id: $id, runId: $runId, evalId: $evalId, createdAt: $createdAt, status: $status, datasourceItemId: $datasourceItemId, datasourceItem: $datasourceItem, results: $results, sample: $sample)'; } 
+          sample == other.sample;
+
+@override int get hashCode => Object.hash(object, id, runId, evalId, createdAt, status, datasourceItemId, datasourceItem, Object.hashAll(results), sample);
+
+@override String toString() => 'EvalRunOutputItem(object: $object, id: $id, runId: $runId, evalId: $evalId, createdAt: $createdAt, status: $status, datasourceItemId: $datasourceItemId, datasourceItem: $datasourceItem, results: $results, sample: $sample)';
+
  }

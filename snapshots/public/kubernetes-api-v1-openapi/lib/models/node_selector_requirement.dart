@@ -30,11 +30,14 @@ NodeSelectorRequirement copyWith({String? key, String? $operator, List<String>? 
   $operator: $operator ?? this.$operator,
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSelectorRequirement &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'NodeSelectorRequirement(key: $key, \$operator: ${$operator}, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(key, $operator, Object.hashAll(values ?? const []));
+
+@override String toString() => 'NodeSelectorRequirement(key: $key, \$operator: ${$operator}, values: $values)';
+
  }

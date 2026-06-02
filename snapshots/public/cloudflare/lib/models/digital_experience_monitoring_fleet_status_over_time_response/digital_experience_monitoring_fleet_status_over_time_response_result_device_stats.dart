@@ -25,11 +25,14 @@ DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats copyWith
   byStatus: byStatus != null ? byStatus() : this.byStatus,
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats &&
           listEquals(byMode, other.byMode) &&
           listEquals(byStatus, other.byStatus) &&
-          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
-@override int get hashCode { return Object.hash(Object.hashAll(byMode ?? const []), Object.hashAll(byStatus ?? const []), uniqueDevicesTotal); } 
-@override String toString() { return 'DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats(byMode: $byMode, byStatus: $byStatus, uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+          uniqueDevicesTotal == other.uniqueDevicesTotal;
+
+@override int get hashCode => Object.hash(Object.hashAll(byMode ?? const []), Object.hashAll(byStatus ?? const []), uniqueDevicesTotal);
+
+@override String toString() => 'DigitalExperienceMonitoringFleetStatusOverTimeResponseResultDeviceStats(byMode: $byMode, byStatus: $byStatus, uniqueDevicesTotal: $uniqueDevicesTotal)';
+
  }

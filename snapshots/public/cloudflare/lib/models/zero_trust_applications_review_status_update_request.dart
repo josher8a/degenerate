@@ -30,11 +30,14 @@ ZeroTrustApplicationsReviewStatusUpdateRequest copyWith({List<int>? approvedApps
   inReviewApps: inReviewApps ?? this.inReviewApps,
   unapprovedApps: unapprovedApps ?? this.unapprovedApps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustApplicationsReviewStatusUpdateRequest &&
           listEquals(approvedApps, other.approvedApps) &&
           listEquals(inReviewApps, other.inReviewApps) &&
-          listEquals(unapprovedApps, other.unapprovedApps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvedApps), Object.hashAll(inReviewApps), Object.hashAll(unapprovedApps)); } 
-@override String toString() { return 'ZeroTrustApplicationsReviewStatusUpdateRequest(approvedApps: $approvedApps, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps)'; } 
+          listEquals(unapprovedApps, other.unapprovedApps);
+
+@override int get hashCode => Object.hash(Object.hashAll(approvedApps), Object.hashAll(inReviewApps), Object.hashAll(unapprovedApps));
+
+@override String toString() => 'ZeroTrustApplicationsReviewStatusUpdateRequest(approvedApps: $approvedApps, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps)';
+
  }

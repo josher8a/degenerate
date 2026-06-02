@@ -34,11 +34,14 @@ RealtimeServerEventError copyWith({String? eventId, String? type, RealtimeBetaSe
   type: type ?? this.type,
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventError &&
           eventId == other.eventId &&
           type == other.type &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, error); } 
-@override String toString() { return 'RealtimeServerEventError(eventId: $eventId, type: $type, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(eventId, type, error);
+
+@override String toString() => 'RealtimeServerEventError(eventId: $eventId, type: $type, error: $error)';
+
  }

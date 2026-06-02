@@ -204,7 +204,7 @@ UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avat
   suspendedAt: suspendedAt != null ? suspendedAt() : this.suspendedAt,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserSearchResultItem &&
           login == other.login &&
           id == other.id &&
@@ -240,7 +240,10 @@ UserSearchResultItem copyWith({String? login, int? id, String? nodeId, Uri? avat
           blog == other.blog &&
           company == other.company &&
           suspendedAt == other.suspendedAt &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, subscriptionsUrl, organizationsUrl, reposUrl, receivedEventsUrl, type, score, followingUrl, gistsUrl, starredUrl, eventsUrl, publicRepos, publicGists, followers, following, createdAt, updatedAt, name, bio, email, location, siteAdmin, hireable, Object.hashAll(textMatches ?? const []), blog, company, suspendedAt, userViewType]); } 
-@override String toString() { return 'UserSearchResultItem(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, score: $score, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, eventsUrl: $eventsUrl, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, bio: $bio, email: $email, location: $location, siteAdmin: $siteAdmin, hireable: $hireable, textMatches: $textMatches, blog: $blog, company: $company, suspendedAt: $suspendedAt, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, subscriptionsUrl, organizationsUrl, reposUrl, receivedEventsUrl, type, score, followingUrl, gistsUrl, starredUrl, eventsUrl, publicRepos, publicGists, followers, following, createdAt, updatedAt, name, bio, email, location, siteAdmin, hireable, Object.hashAll(textMatches ?? const []), blog, company, suspendedAt, userViewType]);
+
+@override String toString() => 'UserSearchResultItem(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, score: $score, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, eventsUrl: $eventsUrl, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, name: $name, bio: $bio, email: $email, location: $location, siteAdmin: $siteAdmin, hireable: $hireable, textMatches: $textMatches, blog: $blog, company: $company, suspendedAt: $suspendedAt, userViewType: $userViewType)';
+
  }

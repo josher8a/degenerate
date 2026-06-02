@@ -21,10 +21,13 @@ GeoipData copyWith({IpStatsGeoip? geoip, String? ip, }) { return GeoipData(
   geoip: geoip ?? this.geoip,
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GeoipData &&
           geoip == other.geoip &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(geoip, ip); } 
-@override String toString() { return 'GeoipData(geoip: $geoip, ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => Object.hash(geoip, ip);
+
+@override String toString() => 'GeoipData(geoip: $geoip, ip: $ip)';
+
  }

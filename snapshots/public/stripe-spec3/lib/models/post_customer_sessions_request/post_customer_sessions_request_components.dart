@@ -36,13 +36,16 @@ PostCustomerSessionsRequestComponents copyWith({BuyButton? Function()? buyButton
   paymentElement: paymentElement != null ? paymentElement() : this.paymentElement,
   pricingTable: pricingTable != null ? pricingTable() : this.pricingTable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomerSessionsRequestComponents &&
           buyButton == other.buyButton &&
           customerSheet == other.customerSheet &&
           mobilePaymentElement == other.mobilePaymentElement &&
           paymentElement == other.paymentElement &&
-          pricingTable == other.pricingTable; } 
-@override int get hashCode { return Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable); } 
-@override String toString() { return 'PostCustomerSessionsRequestComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)'; } 
+          pricingTable == other.pricingTable;
+
+@override int get hashCode => Object.hash(buyButton, customerSheet, mobilePaymentElement, paymentElement, pricingTable);
+
+@override String toString() => 'PostCustomerSessionsRequestComponents(buyButton: $buyButton, customerSheet: $customerSheet, mobilePaymentElement: $mobilePaymentElement, paymentElement: $paymentElement, pricingTable: $pricingTable)';
+
  }

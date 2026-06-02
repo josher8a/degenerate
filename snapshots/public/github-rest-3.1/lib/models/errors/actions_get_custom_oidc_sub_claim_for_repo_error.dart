@@ -18,13 +18,15 @@ final class ActionsGetCustomOidcSubClaimForRepoError$400 extends ActionsGetCusto
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ActionsGetCustomOidcSubClaimForRepoError$404 extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsGetCustomOidcSubClaimForRepoError$Unknown extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError$Unknown(this.statusCode, this.rawBody, );
 

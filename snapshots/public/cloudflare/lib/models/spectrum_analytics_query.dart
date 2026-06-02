@@ -75,7 +75,7 @@ SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()?
   sort: sort != null ? sort() : this.sort,
   until: until != null ? until() : this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQuery &&
           listEquals(dimensions, other.dimensions) &&
           filters == other.filters &&
@@ -83,7 +83,10 @@ SpectrumAnalyticsQuery copyWith({List<SpectrumAnalyticsDimensions2>? Function()?
           listEquals(metrics, other.metrics) &&
           since == other.since &&
           listEquals(sort, other.sort) &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dimensions ?? const []), filters, limit, Object.hashAll(metrics ?? const []), since, Object.hashAll(sort ?? const []), until); } 
-@override String toString() { return 'SpectrumAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(Object.hashAll(dimensions ?? const []), filters, limit, Object.hashAll(metrics ?? const []), since, Object.hashAll(sort ?? const []), until);
+
+@override String toString() => 'SpectrumAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)';
+
  }

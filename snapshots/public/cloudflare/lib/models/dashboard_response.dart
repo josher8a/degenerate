@@ -20,10 +20,13 @@ DashboardResponse copyWith({QueryResponse? Function()? query, Dashboard? Functio
   query: query != null ? query() : this.query,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DashboardResponse &&
           query == other.query &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(query, result); } 
-@override String toString() { return 'DashboardResponse(query: $query, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(query, result);
+
+@override String toString() => 'DashboardResponse(query: $query, result: $result)';
+
  }

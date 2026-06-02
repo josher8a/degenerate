@@ -40,14 +40,17 @@ GetAccountsAccountPersonsRelationship copyWith({bool? Function()? authorizer, bo
   owner: owner != null ? owner() : this.owner,
   representative: representative != null ? representative() : this.representative,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetAccountsAccountPersonsRelationship &&
           authorizer == other.authorizer &&
           director == other.director &&
           executive == other.executive &&
           legalGuardian == other.legalGuardian &&
           owner == other.owner &&
-          representative == other.representative; } 
-@override int get hashCode { return Object.hash(authorizer, director, executive, legalGuardian, owner, representative); } 
-@override String toString() { return 'GetAccountsAccountPersonsRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, representative: $representative)'; } 
+          representative == other.representative;
+
+@override int get hashCode => Object.hash(authorizer, director, executive, legalGuardian, owner, representative);
+
+@override String toString() => 'GetAccountsAccountPersonsRelationship(authorizer: $authorizer, director: $director, executive: $executive, legalGuardian: $legalGuardian, owner: $owner, representative: $representative)';
+
  }

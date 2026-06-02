@@ -30,11 +30,14 @@ TypedLocalObjectReference copyWith({String? Function()? apiGroup, String? kind, 
   kind: kind ?? this.kind,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TypedLocalObjectReference &&
           apiGroup == other.apiGroup &&
           kind == other.kind &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(apiGroup, kind, name); } 
-@override String toString() { return 'TypedLocalObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(apiGroup, kind, name);
+
+@override String toString() => 'TypedLocalObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name)';
+
  }

@@ -42,12 +42,15 @@ AaaSchemasResultInfo copyWith({double? Function()? count, double? Function()? pa
   perPage: perPage != null ? perPage() : this.perPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaSchemasResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount); } 
-@override String toString() { return 'AaaSchemasResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, page, perPage, totalCount);
+
+@override String toString() => 'AaaSchemasResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount)';
+
  }

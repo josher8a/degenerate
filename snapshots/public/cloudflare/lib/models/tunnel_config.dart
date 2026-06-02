@@ -35,11 +35,14 @@ TunnelConfig copyWith({List<TunnelIngressRule>? Function()? ingress, TunnelOrigi
   originRequest: originRequest != null ? originRequest() : this.originRequest,
   warpRouting: warpRouting != null ? warpRouting() : this.warpRouting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelConfig &&
           listEquals(ingress, other.ingress) &&
           originRequest == other.originRequest &&
-          warpRouting == other.warpRouting; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ingress ?? const []), originRequest, warpRouting); } 
-@override String toString() { return 'TunnelConfig(ingress: $ingress, originRequest: $originRequest, warpRouting: $warpRouting)'; } 
+          warpRouting == other.warpRouting;
+
+@override int get hashCode => Object.hash(Object.hashAll(ingress ?? const []), originRequest, warpRouting);
+
+@override String toString() => 'TunnelConfig(ingress: $ingress, originRequest: $originRequest, warpRouting: $warpRouting)';
+
  }

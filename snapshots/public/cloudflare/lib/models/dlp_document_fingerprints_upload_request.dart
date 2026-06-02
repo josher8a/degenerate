@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'
 DlpDocumentFingerprintsUploadRequest copyWith({Uint8List? file}) { return DlpDocumentFingerprintsUploadRequest(
   file: file ?? this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintsUploadRequest &&
-          file == other.file; } 
-@override int get hashCode { return file.hashCode; } 
-@override String toString() { return 'DlpDocumentFingerprintsUploadRequest(file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => file.hashCode;
+
+@override String toString() => 'DlpDocumentFingerprintsUploadRequest(file: $file)';
+
  }

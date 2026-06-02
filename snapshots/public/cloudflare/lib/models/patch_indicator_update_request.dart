@@ -32,12 +32,15 @@ PatchIndicatorUpdateRequest copyWith({String? Function()? indicatorType, List<Re
   tags: tags != null ? tags() : this.tags,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchIndicatorUpdateRequest &&
           indicatorType == other.indicatorType &&
           listEquals(relatedEvents, other.relatedEvents) &&
           listEquals(tags, other.tags) &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value); } 
-@override String toString() { return 'PatchIndicatorUpdateRequest(indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), value);
+
+@override String toString() => 'PatchIndicatorUpdateRequest(indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, value: $value)';
+
  }

@@ -28,10 +28,13 @@ ForwardedRequestContext copyWith({int? destinationDuration, String? destinationI
   destinationDuration: destinationDuration ?? this.destinationDuration,
   destinationIpAddress: destinationIpAddress ?? this.destinationIpAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardedRequestContext &&
           destinationDuration == other.destinationDuration &&
-          destinationIpAddress == other.destinationIpAddress; } 
-@override int get hashCode { return Object.hash(destinationDuration, destinationIpAddress); } 
-@override String toString() { return 'ForwardedRequestContext(destinationDuration: $destinationDuration, destinationIpAddress: $destinationIpAddress)'; } 
+          destinationIpAddress == other.destinationIpAddress;
+
+@override int get hashCode => Object.hash(destinationDuration, destinationIpAddress);
+
+@override String toString() => 'ForwardedRequestContext(destinationDuration: $destinationDuration, destinationIpAddress: $destinationIpAddress)';
+
  }

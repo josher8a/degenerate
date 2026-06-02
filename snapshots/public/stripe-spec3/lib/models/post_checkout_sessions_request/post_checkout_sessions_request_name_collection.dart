@@ -27,10 +27,13 @@ PostCheckoutSessionsRequestNameCollection copyWith({Business? Function()? busine
   business: business != null ? business() : this.business,
   individual: individual != null ? individual() : this.individual,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestNameCollection &&
           business == other.business &&
-          individual == other.individual; } 
-@override int get hashCode { return Object.hash(business, individual); } 
-@override String toString() { return 'PostCheckoutSessionsRequestNameCollection(business: $business, individual: $individual)'; } 
+          individual == other.individual;
+
+@override int get hashCode => Object.hash(business, individual);
+
+@override String toString() => 'PostCheckoutSessionsRequestNameCollection(business: $business, individual: $individual)';
+
  }

@@ -28,11 +28,14 @@ RepositoryCollaboratorPermission copyWith({String? permission, String? roleName,
   roleName: roleName ?? this.roleName,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryCollaboratorPermission &&
           permission == other.permission &&
           roleName == other.roleName &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(permission, roleName, user); } 
-@override String toString() { return 'RepositoryCollaboratorPermission(permission: $permission, roleName: $roleName, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(permission, roleName, user);
+
+@override String toString() => 'RepositoryCollaboratorPermission(permission: $permission, roleName: $roleName, user: $user)';
+
  }

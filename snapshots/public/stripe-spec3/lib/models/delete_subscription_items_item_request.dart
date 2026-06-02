@@ -40,12 +40,15 @@ DeleteSubscriptionItemsItemRequest copyWith({bool? Function()? clearUsage, Payme
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
   prorationDate: prorationDate != null ? prorationDate() : this.prorationDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteSubscriptionItemsItemRequest &&
           clearUsage == other.clearUsage &&
           paymentBehavior == other.paymentBehavior &&
           prorationBehavior == other.prorationBehavior &&
-          prorationDate == other.prorationDate; } 
-@override int get hashCode { return Object.hash(clearUsage, paymentBehavior, prorationBehavior, prorationDate); } 
-@override String toString() { return 'DeleteSubscriptionItemsItemRequest(clearUsage: $clearUsage, paymentBehavior: $paymentBehavior, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)'; } 
+          prorationDate == other.prorationDate;
+
+@override int get hashCode => Object.hash(clearUsage, paymentBehavior, prorationBehavior, prorationDate);
+
+@override String toString() => 'DeleteSubscriptionItemsItemRequest(clearUsage: $clearUsage, paymentBehavior: $paymentBehavior, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate)';
+
  }

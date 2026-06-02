@@ -122,7 +122,7 @@ RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateResponse &&
           id == other.id &&
           object == other.object &&
@@ -136,7 +136,10 @@ RealtimeSessionCreateResponse copyWith({String? Function()? id, String? Function
           turnDetection == other.turnDetection &&
           listEquals(tools, other.tools) &&
           toolChoice == other.toolChoice &&
-          maxOutputTokens == other.maxOutputTokens; } 
-@override int get hashCode { return Object.hash(id, object, expiresAt, Object.hashAll(include ?? const []), model, outputModalities, instructions, audio, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens); } 
-@override String toString() { return 'RealtimeSessionCreateResponse(id: $id, object: $object, expiresAt: $expiresAt, include: $include, model: $model, outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens)'; } 
+          maxOutputTokens == other.maxOutputTokens;
+
+@override int get hashCode => Object.hash(id, object, expiresAt, Object.hashAll(include ?? const []), model, outputModalities, instructions, audio, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, maxOutputTokens);
+
+@override String toString() => 'RealtimeSessionCreateResponse(id: $id, object: $object, expiresAt: $expiresAt, include: $include, model: $model, outputModalities: $outputModalities, instructions: $instructions, audio: $audio, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, maxOutputTokens: $maxOutputTokens)';
+
  }

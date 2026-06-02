@@ -36,10 +36,13 @@ PaymentIntentPaymentMethodOptionsSwish copyWith({String? Function()? reference, 
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsSwish &&
           reference == other.reference &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(reference, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(reference, setupFutureUsage);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)';
+
  }

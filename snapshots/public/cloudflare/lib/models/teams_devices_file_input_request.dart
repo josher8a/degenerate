@@ -51,13 +51,16 @@ TeamsDevicesFileInputRequest copyWith({bool? Function()? exists, InputRequestOpe
   sha256: sha256 != null ? sha256() : this.sha256,
   thumbprint: thumbprint != null ? thumbprint() : this.thumbprint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesFileInputRequest &&
           exists == other.exists &&
           operatingSystem == other.operatingSystem &&
           path == other.path &&
           sha256 == other.sha256 &&
-          thumbprint == other.thumbprint; } 
-@override int get hashCode { return Object.hash(exists, operatingSystem, path, sha256, thumbprint); } 
-@override String toString() { return 'TeamsDevicesFileInputRequest(exists: $exists, operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)'; } 
+          thumbprint == other.thumbprint;
+
+@override int get hashCode => Object.hash(exists, operatingSystem, path, sha256, thumbprint);
+
+@override String toString() => 'TeamsDevicesFileInputRequest(exists: $exists, operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)';
+
  }

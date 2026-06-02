@@ -21,10 +21,13 @@ ChecksListForRefResponse copyWith({int? totalCount, List<CheckRun>? checkRuns, }
   totalCount: totalCount ?? this.totalCount,
   checkRuns: checkRuns ?? this.checkRuns,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksListForRefResponse &&
           totalCount == other.totalCount &&
-          listEquals(checkRuns, other.checkRuns); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(checkRuns)); } 
-@override String toString() { return 'ChecksListForRefResponse(totalCount: $totalCount, checkRuns: $checkRuns)'; } 
+          listEquals(checkRuns, other.checkRuns);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(checkRuns));
+
+@override String toString() => 'ChecksListForRefResponse(totalCount: $totalCount, checkRuns: $checkRuns)';
+
  }

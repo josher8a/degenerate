@@ -23,10 +23,13 @@ HostPathVolumeSource copyWith({String? path, String? Function()? type, }) { retu
   path: path ?? this.path,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostPathVolumeSource &&
           path == other.path &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(path, type); } 
-@override String toString() { return 'HostPathVolumeSource(path: $path, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(path, type);
+
+@override String toString() => 'HostPathVolumeSource(path: $path, type: $type)';
+
  }

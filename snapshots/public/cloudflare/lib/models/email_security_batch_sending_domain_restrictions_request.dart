@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
 EmailSecurityBatchSendingDomainRestrictionsRequest copyWith({List<Deletes>? deletes}) { return EmailSecurityBatchSendingDomainRestrictionsRequest(
   deletes: deletes ?? this.deletes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityBatchSendingDomainRestrictionsRequest &&
-          listEquals(deletes, other.deletes); } 
-@override int get hashCode { return Object.hashAll(deletes); } 
-@override String toString() { return 'EmailSecurityBatchSendingDomainRestrictionsRequest(deletes: $deletes)'; } 
+          listEquals(deletes, other.deletes);
+
+@override int get hashCode => Object.hashAll(deletes);
+
+@override String toString() => 'EmailSecurityBatchSendingDomainRestrictionsRequest(deletes: $deletes)';
+
  }

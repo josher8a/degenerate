@@ -21,10 +21,13 @@ WebhookMemberEditedChanges copyWith({OldPermission? Function()? oldPermission, W
   oldPermission: oldPermission != null ? oldPermission() : this.oldPermission,
   permission: permission != null ? permission() : this.permission,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberEditedChanges &&
           oldPermission == other.oldPermission &&
-          permission == other.permission; } 
-@override int get hashCode { return Object.hash(oldPermission, permission); } 
-@override String toString() { return 'WebhookMemberEditedChanges(oldPermission: $oldPermission, permission: $permission)'; } 
+          permission == other.permission;
+
+@override int get hashCode => Object.hash(oldPermission, permission);
+
+@override String toString() => 'WebhookMemberEditedChanges(oldPermission: $oldPermission, permission: $permission)';
+
  }

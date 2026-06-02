@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StorageClass && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StorageClass($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StorageClass && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StorageClass($value)';
+
  }
 @immutable final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });
 
@@ -42,10 +45,13 @@ R2LifecycleStorageTransition copyWith({R2LifecycleStorageTransitionCondition? co
   condition: condition ?? this.condition,
   storageClass: storageClass ?? this.storageClass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2LifecycleStorageTransition &&
           condition == other.condition &&
-          storageClass == other.storageClass; } 
-@override int get hashCode { return Object.hash(condition, storageClass); } 
-@override String toString() { return 'R2LifecycleStorageTransition(condition: $condition, storageClass: $storageClass)'; } 
+          storageClass == other.storageClass;
+
+@override int get hashCode => Object.hash(condition, storageClass);
+
+@override String toString() => 'R2LifecycleStorageTransition(condition: $condition, storageClass: $storageClass)';
+
  }

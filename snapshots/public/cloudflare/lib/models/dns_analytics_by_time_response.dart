@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DnsAnalyticsByTimeResponse copyWith({DnsAnalyticsReportBytime? Function()? result}) { return DnsAnalyticsByTimeResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsByTimeResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'DnsAnalyticsByTimeResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'DnsAnalyticsByTimeResponse(result: $result)';
+
  }

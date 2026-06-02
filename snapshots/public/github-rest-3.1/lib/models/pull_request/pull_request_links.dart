@@ -57,7 +57,7 @@ PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? 
   reviewComment: reviewComment ?? this.reviewComment,
   self: self ?? this.self,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestLinks &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,10 @@ PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? 
           issue == other.issue &&
           reviewComments == other.reviewComments &&
           reviewComment == other.reviewComment &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(comments, commits, statuses, html, issue, reviewComments, reviewComment, self); } 
-@override String toString() { return 'PullRequestLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)'; } 
+          self == other.self;
+
+@override int get hashCode => Object.hash(comments, commits, statuses, html, issue, reviewComments, reviewComment, self);
+
+@override String toString() => 'PullRequestLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)';
+
  }

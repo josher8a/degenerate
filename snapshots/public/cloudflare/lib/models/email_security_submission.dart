@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerStatus($value)';
+
  }
 @immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition, this.originalEdfHash, this.outcome, this.outcomeDisposition, this.requestedBy, this.requestedDisposition, this.status, this.subject, this.type, });
 
@@ -98,7 +101,7 @@ EmailSecuritySubmission copyWith({CustomerStatus? Function()? customerStatus, Em
   submissionId: submissionId ?? this.submissionId,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecuritySubmission &&
           customerStatus == other.customerStatus &&
           originalDisposition == other.originalDisposition &&
@@ -111,7 +114,10 @@ EmailSecuritySubmission copyWith({CustomerStatus? Function()? customerStatus, Em
           status == other.status &&
           subject == other.subject &&
           submissionId == other.submissionId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customerStatus, originalDisposition, originalEdfHash, outcome, outcomeDisposition, requestedBy, requestedDisposition, requestedTs, status, subject, submissionId, type); } 
-@override String toString() { return 'EmailSecuritySubmission(customerStatus: $customerStatus, originalDisposition: $originalDisposition, originalEdfHash: $originalEdfHash, outcome: $outcome, outcomeDisposition: $outcomeDisposition, requestedBy: $requestedBy, requestedDisposition: $requestedDisposition, requestedTs: $requestedTs, status: $status, subject: $subject, submissionId: $submissionId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customerStatus, originalDisposition, originalEdfHash, outcome, outcomeDisposition, requestedBy, requestedDisposition, requestedTs, status, subject, submissionId, type);
+
+@override String toString() => 'EmailSecuritySubmission(customerStatus: $customerStatus, originalDisposition: $originalDisposition, originalEdfHash: $originalEdfHash, outcome: $outcome, outcomeDisposition: $outcomeDisposition, requestedBy: $requestedBy, requestedDisposition: $requestedDisposition, requestedTs: $requestedTs, status: $status, subject: $subject, submissionId: $submissionId, type: $type)';
+
  }

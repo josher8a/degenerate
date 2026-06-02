@@ -34,11 +34,14 @@ SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String?
   hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,
   microdepositType: microdepositType != null ? microdepositType() : this.microdepositType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentNextActionVerifyWithMicrodeposits &&
           arrivalDate == other.arrivalDate &&
           hostedVerificationUrl == other.hostedVerificationUrl &&
-          microdepositType == other.microdepositType; } 
-@override int get hashCode { return Object.hash(arrivalDate, hostedVerificationUrl, microdepositType); } 
-@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodeposits(arrivalDate: $arrivalDate, hostedVerificationUrl: $hostedVerificationUrl, microdepositType: $microdepositType)'; } 
+          microdepositType == other.microdepositType;
+
+@override int get hashCode => Object.hash(arrivalDate, hostedVerificationUrl, microdepositType);
+
+@override String toString() => 'SetupIntentNextActionVerifyWithMicrodeposits(arrivalDate: $arrivalDate, hostedVerificationUrl: $hostedVerificationUrl, microdepositType: $microdepositType)';
+
  }

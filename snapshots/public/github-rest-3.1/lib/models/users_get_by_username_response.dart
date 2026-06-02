@@ -108,7 +108,8 @@ final PublicUser publicUser;
 
 @override String get userViewType => 'public';
 
-@override Map<String, dynamic> toJson() { return {...publicUser.toJson(), 'user_view_type': userViewType}; } 
+@override Map<String, dynamic> toJson() => {...publicUser.toJson(), 'user_view_type': userViewType};
+
 UsersGetByUsernameResponsePublic copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) { return UsersGetByUsernameResponsePublic(publicUser.copyWith(
   login: login,
   id: id,
@@ -150,10 +151,13 @@ UsersGetByUsernameResponsePublic copyWith({String? login, int? id, String? nodeI
   diskUsage: diskUsage,
   collaborators: collaborators,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsersGetByUsernameResponsePublic && publicUser == other.publicUser; } 
-@override int get hashCode { return publicUser.hashCode; } 
-@override String toString() { return 'UsersGetByUsernameResponse.public($publicUser)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsersGetByUsernameResponsePublic && publicUser == other.publicUser;
+
+@override int get hashCode => publicUser.hashCode;
+
+@override String toString() => 'UsersGetByUsernameResponse.public($publicUser)';
+
 @override String get login => publicUser.login;
 
 @override int get id => publicUser.id;
@@ -241,7 +245,8 @@ final PrivateUser privateUser;
 
 @override String get userViewType => 'private';
 
-@override Map<String, dynamic> toJson() { return {...privateUser.toJson(), 'user_view_type': userViewType}; } 
+@override Map<String, dynamic> toJson() => {...privateUser.toJson(), 'user_view_type': userViewType};
+
 UsersGetByUsernameResponsePrivate copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return UsersGetByUsernameResponsePrivate(privateUser.copyWith(
   login: login,
   id: id,
@@ -286,10 +291,13 @@ UsersGetByUsernameResponsePrivate copyWith({String? login, int? id, String? node
   businessPlus: businessPlus,
   ldapDn: ldapDn,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsersGetByUsernameResponsePrivate && privateUser == other.privateUser; } 
-@override int get hashCode { return privateUser.hashCode; } 
-@override String toString() { return 'UsersGetByUsernameResponse.private($privateUser)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsersGetByUsernameResponsePrivate && privateUser == other.privateUser;
+
+@override int get hashCode => privateUser.hashCode;
+
+@override String toString() => 'UsersGetByUsernameResponse.private($privateUser)';
+
 @override String get login => privateUser.login;
 
 @override int get id => privateUser.id;
@@ -377,11 +385,15 @@ final Map<String, dynamic> json;
 
 @override String get userViewType => json['user_view_type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsersGetByUsernameResponse$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'UsersGetByUsernameResponse.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsersGetByUsernameResponse$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'UsersGetByUsernameResponse.unknown($json)';
+
 @override String get login => json['login'] as String;
 
 @override int get id => (json['id'] as num).toInt();

@@ -65,7 +65,7 @@ LoadBalancingRules2 copyWith({String? Function()? condition, bool Function()? di
   priority: priority != null ? priority() : this.priority,
   terminates: terminates != null ? terminates() : this.terminates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingRules2 &&
           condition == other.condition &&
           disabled == other.disabled &&
@@ -73,7 +73,10 @@ LoadBalancingRules2 copyWith({String? Function()? condition, bool Function()? di
           name == other.name &&
           overrides == other.overrides &&
           priority == other.priority &&
-          terminates == other.terminates; } 
-@override int get hashCode { return Object.hash(condition, disabled, fixedResponse, name, overrides, priority, terminates); } 
-@override String toString() { return 'LoadBalancingRules2(condition: $condition, disabled: $disabled, fixedResponse: $fixedResponse, name: $name, overrides: $overrides, priority: $priority, terminates: $terminates)'; } 
+          terminates == other.terminates;
+
+@override int get hashCode => Object.hash(condition, disabled, fixedResponse, name, overrides, priority, terminates);
+
+@override String toString() => 'LoadBalancingRules2(condition: $condition, disabled: $disabled, fixedResponse: $fixedResponse, name: $name, overrides: $overrides, priority: $priority, terminates: $terminates)';
+
  }

@@ -73,7 +73,7 @@ RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({Stri
   start: start ?? this.start,
   end: end ?? this.end,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionSegment &&
           eventId == other.eventId &&
           type == other.type &&
@@ -83,7 +83,10 @@ RealtimeServerEventConversationItemInputAudioTranscriptionSegment copyWith({Stri
           id == other.id &&
           speaker == other.speaker &&
           start == other.start &&
-          end == other.end; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)'; } 
+          end == other.end;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, text, id, speaker, start, end);
+
+@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionSegment(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, text: $text, id: $id, speaker: $speaker, start: $start, end: $end)';
+
  }

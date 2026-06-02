@@ -58,7 +58,7 @@ UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Func
   hireable: hireable != null ? hireable() : this.hireable,
   bio: bio != null ? bio() : this.bio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersUpdateAuthenticatedRequest &&
           name == other.name &&
           email == other.email &&
@@ -67,7 +67,10 @@ UsersUpdateAuthenticatedRequest copyWith({String? Function()? name, String? Func
           company == other.company &&
           location == other.location &&
           hireable == other.hireable &&
-          bio == other.bio; } 
-@override int get hashCode { return Object.hash(name, email, blog, twitterUsername, company, location, hireable, bio); } 
-@override String toString() { return 'UsersUpdateAuthenticatedRequest(name: $name, email: $email, blog: $blog, twitterUsername: $twitterUsername, company: $company, location: $location, hireable: $hireable, bio: $bio)'; } 
+          bio == other.bio;
+
+@override int get hashCode => Object.hash(name, email, blog, twitterUsername, company, location, hireable, bio);
+
+@override String toString() => 'UsersUpdateAuthenticatedRequest(name: $name, email: $email, blog: $blog, twitterUsername: $twitterUsername, company: $company, location: $location, hireable: $hireable, bio: $bio)';
+
  }

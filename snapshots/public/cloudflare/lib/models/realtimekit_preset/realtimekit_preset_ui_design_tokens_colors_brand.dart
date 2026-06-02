@@ -39,13 +39,16 @@ RealtimekitPresetUiDesignTokensColorsBrand copyWith({String? $300, String? $400,
   $600: $600 ?? this.$600,
   $700: $700 ?? this.$700,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetUiDesignTokensColorsBrand &&
           $300 == other.$300 &&
           $400 == other.$400 &&
           $500 == other.$500 &&
           $600 == other.$600 &&
-          $700 == other.$700; } 
-@override int get hashCode { return Object.hash($300, $400, $500, $600, $700); } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokensColorsBrand(\$300: ${$300}, \$400: ${$400}, \$500: ${$500}, \$600: ${$600}, \$700: ${$700})'; } 
+          $700 == other.$700;
+
+@override int get hashCode => Object.hash($300, $400, $500, $600, $700);
+
+@override String toString() => 'RealtimekitPresetUiDesignTokensColorsBrand(\$300: ${$300}, \$400: ${$400}, \$500: ${$500}, \$600: ${$600}, \$700: ${$700})';
+
  }

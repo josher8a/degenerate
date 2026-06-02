@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DiscoveryPatchMultipleRequestEntry copyWith({DiscoveryStatePatch? Function()? state}) { return DiscoveryPatchMultipleRequestEntry(
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiscoveryPatchMultipleRequestEntry &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'DiscoveryPatchMultipleRequestEntry(state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => state.hashCode;
+
+@override String toString() => 'DiscoveryPatchMultipleRequestEntry(state: $state)';
+
  }

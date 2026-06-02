@@ -37,12 +37,15 @@ CompactionBody copyWith({String? type, String? id, String? encryptedContent, Str
   encryptedContent: encryptedContent ?? this.encryptedContent,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompactionBody &&
           type == other.type &&
           id == other.id &&
           encryptedContent == other.encryptedContent &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, encryptedContent, createdBy); } 
-@override String toString() { return 'CompactionBody(type: $type, id: $id, encryptedContent: $encryptedContent, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, encryptedContent, createdBy);
+
+@override String toString() => 'CompactionBody(type: $type, id: $id, encryptedContent: $encryptedContent, createdBy: $createdBy)';
+
  }

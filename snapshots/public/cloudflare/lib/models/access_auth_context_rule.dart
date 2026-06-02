@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
 AccessAuthContextRule copyWith({AuthContext? authContext}) { return AccessAuthContextRule(
   authContext: authContext ?? this.authContext,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAuthContextRule &&
-          authContext == other.authContext; } 
-@override int get hashCode { return authContext.hashCode; } 
-@override String toString() { return 'AccessAuthContextRule(authContext: $authContext)'; } 
+          authContext == other.authContext;
+
+@override int get hashCode => authContext.hashCode;
+
+@override String toString() => 'AccessAuthContextRule(authContext: $authContext)';
+
  }

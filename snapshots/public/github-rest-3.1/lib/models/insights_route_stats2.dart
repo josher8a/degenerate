@@ -44,14 +44,17 @@ InsightsRouteStats2 copyWith({String? Function()? httpMethod, String? Function()
   lastRateLimitedTimestamp: lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : this.lastRateLimitedTimestamp,
   lastRequestTimestamp: lastRequestTimestamp != null ? lastRequestTimestamp() : this.lastRequestTimestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsRouteStats2 &&
           httpMethod == other.httpMethod &&
           apiRoute == other.apiRoute &&
           totalRequestCount == other.totalRequestCount &&
           rateLimitedRequestCount == other.rateLimitedRequestCount &&
           lastRateLimitedTimestamp == other.lastRateLimitedTimestamp &&
-          lastRequestTimestamp == other.lastRequestTimestamp; } 
-@override int get hashCode { return Object.hash(httpMethod, apiRoute, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp); } 
-@override String toString() { return 'InsightsRouteStats2(httpMethod: $httpMethod, apiRoute: $apiRoute, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)'; } 
+          lastRequestTimestamp == other.lastRequestTimestamp;
+
+@override int get hashCode => Object.hash(httpMethod, apiRoute, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);
+
+@override String toString() => 'InsightsRouteStats2(httpMethod: $httpMethod, apiRoute: $apiRoute, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';
+
  }

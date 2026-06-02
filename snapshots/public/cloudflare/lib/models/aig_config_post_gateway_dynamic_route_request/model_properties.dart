@@ -33,12 +33,15 @@ ModelProperties copyWith({String? model, String? provider, double? retries, doub
   retries: retries ?? this.retries,
   timeout: timeout ?? this.timeout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModelProperties &&
           model == other.model &&
           provider == other.provider &&
           retries == other.retries &&
-          timeout == other.timeout; } 
-@override int get hashCode { return Object.hash(model, provider, retries, timeout); } 
-@override String toString() { return 'ModelProperties(model: $model, provider: $provider, retries: $retries, timeout: $timeout)'; } 
+          timeout == other.timeout;
+
+@override int get hashCode => Object.hash(model, provider, retries, timeout);
+
+@override String toString() => 'ModelProperties(model: $model, provider: $provider, retries: $retries, timeout: $timeout)';
+
  }

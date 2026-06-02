@@ -69,7 +69,7 @@ EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseConten
   status: status ?? this.status,
   statusText: statusText ?? this.statusText,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EntriesResponse &&
           transferSize == other.transferSize &&
           bodySize == other.bodySize &&
@@ -79,7 +79,10 @@ EntriesResponse copyWith({double? transferSize, double? bodySize, ResponseConten
           httpVersion == other.httpVersion &&
           redirectUrl == other.redirectUrl &&
           status == other.status &&
-          statusText == other.statusText; } 
-@override int get hashCode { return Object.hash(transferSize, bodySize, content, Object.hashAll(headers), headersSize, httpVersion, redirectUrl, status, statusText); } 
-@override String toString() { return 'EntriesResponse(transferSize: $transferSize, bodySize: $bodySize, content: $content, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, redirectUrl: $redirectUrl, status: $status, statusText: $statusText)'; } 
+          statusText == other.statusText;
+
+@override int get hashCode => Object.hash(transferSize, bodySize, content, Object.hashAll(headers), headersSize, httpVersion, redirectUrl, status, statusText);
+
+@override String toString() => 'EntriesResponse(transferSize: $transferSize, bodySize: $bodySize, content: $content, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, redirectUrl: $redirectUrl, status: $status, statusText: $statusText)';
+
  }

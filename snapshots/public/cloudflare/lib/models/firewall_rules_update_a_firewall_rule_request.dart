@@ -28,11 +28,14 @@ FirewallRulesUpdateAFirewallRuleRequest copyWith({FirewallAction? action, Firewa
   filter: filter ?? this.filter,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRulesUpdateAFirewallRuleRequest &&
           action == other.action &&
           filter == other.filter &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(action, filter, id); } 
-@override String toString() { return 'FirewallRulesUpdateAFirewallRuleRequest(action: $action, filter: $filter, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(action, filter, id);
+
+@override String toString() => 'FirewallRulesUpdateAFirewallRuleRequest(action: $action, filter: $filter, id: $id)';
+
  }

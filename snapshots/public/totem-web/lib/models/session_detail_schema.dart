@@ -153,7 +153,7 @@ SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? s
   userTimezone: userTimezone != null ? userTimezone() : this.userTimezone,
   meetingProvider: meetingProvider ?? this.meetingProvider,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionDetailSchema &&
           slug == other.slug &&
           title == other.title &&
@@ -178,7 +178,10 @@ SessionDetailSchema copyWith({String? slug, String? title, SessionSpaceSchema? s
           calLink == other.calLink &&
           subscribed == other.subscribed &&
           userTimezone == other.userTimezone &&
-          meetingProvider == other.meetingProvider; } 
-@override int get hashCode { return Object.hashAll([slug, title, space, spaceTitle, description, price, seatsLeft, duration, recurring, subscribers, start, attending, open, started, cancelled, joinable, ended, rsvpUrl, joinUrl, subscribeUrl, calLink, subscribed, userTimezone, meetingProvider]); } 
-@override String toString() { return 'SessionDetailSchema(slug: $slug, title: $title, space: $space, spaceTitle: $spaceTitle, description: $description, price: $price, seatsLeft: $seatsLeft, duration: $duration, recurring: $recurring, subscribers: $subscribers, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)'; } 
+          meetingProvider == other.meetingProvider;
+
+@override int get hashCode => Object.hashAll([slug, title, space, spaceTitle, description, price, seatsLeft, duration, recurring, subscribers, start, attending, open, started, cancelled, joinable, ended, rsvpUrl, joinUrl, subscribeUrl, calLink, subscribed, userTimezone, meetingProvider]);
+
+@override String toString() => 'SessionDetailSchema(slug: $slug, title: $title, space: $space, spaceTitle: $spaceTitle, description: $description, price: $price, seatsLeft: $seatsLeft, duration: $duration, recurring: $recurring, subscribers: $subscribers, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)';
+
  }

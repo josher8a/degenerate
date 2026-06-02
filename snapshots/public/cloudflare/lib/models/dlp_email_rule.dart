@@ -67,7 +67,7 @@ DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? 
   ruleId: ruleId ?? this.ruleId,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEmailRule &&
           action == other.action &&
           listEquals(conditions, other.conditions) &&
@@ -77,7 +77,10 @@ DlpEmailRule copyWith({DlpEmailRuleAction? action, List<DlpEmailRuleCondition>? 
           name == other.name &&
           priority == other.priority &&
           ruleId == other.ruleId &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(conditions), createdAt, description, enabled, name, priority, ruleId, updatedAt); } 
-@override String toString() { return 'DlpEmailRule(action: $action, conditions: $conditions, createdAt: $createdAt, description: $description, enabled: $enabled, name: $name, priority: $priority, ruleId: $ruleId, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(conditions), createdAt, description, enabled, name, priority, ruleId, updatedAt);
+
+@override String toString() => 'DlpEmailRule(action: $action, conditions: $conditions, createdAt: $createdAt, description: $description, enabled: $enabled, name: $name, priority: $priority, ruleId: $ruleId, updatedAt: $updatedAt)';
+
  }

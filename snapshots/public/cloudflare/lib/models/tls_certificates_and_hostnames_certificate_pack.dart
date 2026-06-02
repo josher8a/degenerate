@@ -77,10 +77,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)';
+
  }
 /// Identifier of the primary certificate in a pack.
 extension type const TlsCertificatesAndHostnamesPrimary(String value) {
@@ -127,10 +130,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasType($value)';
+
  }
 /// A certificate pack with all its properties.
 @immutable final class TlsCertificatesAndHostnamesCertificatePack {const TlsCertificatesAndHostnamesCertificatePack({required this.certificates, required this.hosts, required this.id, required this.status, required this.type, this.certificateAuthority, this.cloudflareBranding, this.dcvDelegationRecords, this.primaryCertificate, this.validationErrors, this.validationMethod, this.validationRecords, this.validityDays, });
@@ -217,7 +223,7 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
   validationRecords: validationRecords != null ? validationRecords() : this.validationRecords,
   validityDays: validityDays != null ? validityDays() : this.validityDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificatePack &&
           certificateAuthority == other.certificateAuthority &&
           listEquals(certificates, other.certificates) &&
@@ -231,7 +237,10 @@ TlsCertificatesAndHostnamesCertificatePack copyWith({TlsCertificatesAndHostnames
           listEquals(validationErrors, other.validationErrors) &&
           validationMethod == other.validationMethod &&
           listEquals(validationRecords, other.validationRecords) &&
-          validityDays == other.validityDays; } 
-@override int get hashCode { return Object.hash(certificateAuthority, Object.hashAll(certificates), cloudflareBranding, Object.hashAll(dcvDelegationRecords ?? const []), Object.hashAll(hosts), id, primaryCertificate, status, type, Object.hashAll(validationErrors ?? const []), validationMethod, Object.hashAll(validationRecords ?? const []), validityDays); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificatePack(certificateAuthority: $certificateAuthority, certificates: $certificates, cloudflareBranding: $cloudflareBranding, dcvDelegationRecords: $dcvDelegationRecords, hosts: $hosts, id: $id, primaryCertificate: $primaryCertificate, status: $status, type: $type, validationErrors: $validationErrors, validationMethod: $validationMethod, validationRecords: $validationRecords, validityDays: $validityDays)'; } 
+          validityDays == other.validityDays;
+
+@override int get hashCode => Object.hash(certificateAuthority, Object.hashAll(certificates), cloudflareBranding, Object.hashAll(dcvDelegationRecords ?? const []), Object.hashAll(hosts), id, primaryCertificate, status, type, Object.hashAll(validationErrors ?? const []), validationMethod, Object.hashAll(validationRecords ?? const []), validityDays);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePack(certificateAuthority: $certificateAuthority, certificates: $certificates, cloudflareBranding: $cloudflareBranding, dcvDelegationRecords: $dcvDelegationRecords, hosts: $hosts, id: $id, primaryCertificate: $primaryCertificate, status: $status, type: $type, validationErrors: $validationErrors, validationMethod: $validationMethod, validationRecords: $validationRecords, validityDays: $validityDays)';
+
  }

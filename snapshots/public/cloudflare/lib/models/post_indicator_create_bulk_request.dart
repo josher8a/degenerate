@@ -21,10 +21,13 @@ PostIndicatorCreateBulkRequest copyWith({bool? Function()? autoCreateType, List<
   autoCreateType: autoCreateType != null ? autoCreateType() : this.autoCreateType,
   indicators: indicators ?? this.indicators,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorCreateBulkRequest &&
           autoCreateType == other.autoCreateType &&
-          listEquals(indicators, other.indicators); } 
-@override int get hashCode { return Object.hash(autoCreateType, Object.hashAll(indicators)); } 
-@override String toString() { return 'PostIndicatorCreateBulkRequest(autoCreateType: $autoCreateType, indicators: $indicators)'; } 
+          listEquals(indicators, other.indicators);
+
+@override int get hashCode => Object.hash(autoCreateType, Object.hashAll(indicators));
+
+@override String toString() => 'PostIndicatorCreateBulkRequest(autoCreateType: $autoCreateType, indicators: $indicators)';
+
  }

@@ -48,14 +48,17 @@ IterationSetting copyWith({String? id, String? title, String? Function()? titleH
   startDate: startDate != null ? startDate() : this.startDate,
   completed: completed != null ? completed() : this.completed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IterationSetting &&
           id == other.id &&
           title == other.title &&
           titleHtml == other.titleHtml &&
           duration == other.duration &&
           startDate == other.startDate &&
-          completed == other.completed; } 
-@override int get hashCode { return Object.hash(id, title, titleHtml, duration, startDate, completed); } 
-@override String toString() { return 'IterationSetting(id: $id, title: $title, titleHtml: $titleHtml, duration: $duration, startDate: $startDate, completed: $completed)'; } 
+          completed == other.completed;
+
+@override int get hashCode => Object.hash(id, title, titleHtml, duration, startDate, completed);
+
+@override String toString() => 'IterationSetting(id: $id, title: $title, titleHtml: $titleHtml, duration: $duration, startDate: $startDate, completed: $completed)';
+
  }

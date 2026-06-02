@@ -33,12 +33,15 @@ ConsoleMessage copyWith({String? level, String? source, String? text, String? ur
   text: text ?? this.text,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConsoleMessage &&
           level == other.level &&
           source == other.source &&
           text == other.text &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(level, source, text, url); } 
-@override String toString() { return 'ConsoleMessage(level: $level, source: $source, text: $text, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(level, source, text, url);
+
+@override String toString() => 'ConsoleMessage(level: $level, source: $source, text: $text, url: $url)';
+
  }

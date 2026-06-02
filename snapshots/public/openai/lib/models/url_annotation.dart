@@ -24,10 +24,13 @@ UrlAnnotation copyWith({UrlAnnotationSourceType? type, UrlAnnotationSource? sour
   type: type ?? this.type,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlAnnotation &&
           type == other.type &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, source); } 
-@override String toString() { return 'UrlAnnotation(type: $type, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, source);
+
+@override String toString() => 'UrlAnnotation(type: $type, source: $source)';
+
  }

@@ -44,11 +44,14 @@ IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, S
   processingDate: processingDate != null ? processingDate() : this.processingDate,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionNetworkData &&
           authorizationCode == other.authorizationCode &&
           processingDate == other.processingDate &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(authorizationCode, processingDate, transactionId); } 
-@override String toString() { return 'IssuingTransactionNetworkData(authorizationCode: $authorizationCode, processingDate: $processingDate, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(authorizationCode, processingDate, transactionId);
+
+@override String toString() => 'IssuingTransactionNetworkData(authorizationCode: $authorizationCode, processingDate: $processingDate, transactionId: $transactionId)';
+
  }

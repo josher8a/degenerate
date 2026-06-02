@@ -47,13 +47,16 @@ CallsTurnKeyWithKey copyWith({CallsCreated? Function()? created, CallsTurnKey? F
   name: name != null ? name() : this.name,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CallsTurnKeyWithKey &&
           created == other.created &&
           key == other.key &&
           modified == other.modified &&
           name == other.name &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(created, key, modified, name, uid); } 
-@override String toString() { return 'CallsTurnKeyWithKey(created: $created, key: $key, modified: $modified, name: $name, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(created, key, modified, name, uid);
+
+@override String toString() => 'CallsTurnKeyWithKey(created: $created, key: $key, modified: $modified, name: $name, uid: $uid)';
+
  }

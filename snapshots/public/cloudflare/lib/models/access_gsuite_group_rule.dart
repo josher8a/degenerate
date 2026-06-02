@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('gsuit
 AccessGsuiteGroupRule copyWith({Gsuite? gsuite}) { return AccessGsuiteGroupRule(
   gsuite: gsuite ?? this.gsuite,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGsuiteGroupRule &&
-          gsuite == other.gsuite; } 
-@override int get hashCode { return gsuite.hashCode; } 
-@override String toString() { return 'AccessGsuiteGroupRule(gsuite: $gsuite)'; } 
+          gsuite == other.gsuite;
+
+@override int get hashCode => gsuite.hashCode;
+
+@override String toString() => 'AccessGsuiteGroupRule(gsuite: $gsuite)';
+
  }

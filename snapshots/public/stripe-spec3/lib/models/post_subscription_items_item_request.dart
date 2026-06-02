@@ -95,7 +95,7 @@ PostSubscriptionItemsItemRequest copyWith({PostSubscriptionItemsItemRequestBilli
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionItemsItemRequest &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -108,7 +108,10 @@ PostSubscriptionItemsItemRequest copyWith({PostSubscriptionItemsItemRequestBilli
           prorationBehavior == other.prorationBehavior &&
           prorationDate == other.prorationDate &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, offSession, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, taxRates); } 
-@override String toString() { return 'PostSubscriptionItemsItemRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, offSession: $offSession, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, offSession, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, taxRates);
+
+@override String toString() => 'PostSubscriptionItemsItemRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, offSession: $offSession, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, taxRates: $taxRates)';
+
  }

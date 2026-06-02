@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs copyWith({PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax? Function()? tax}) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(
   tax: tax != null ? tax() : this.tax,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs &&
-          tax == other.tax; } 
-@override int get hashCode { return tax.hashCode; } 
-@override String toString() { return 'PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(tax: $tax)'; } 
+          tax == other.tax;
+
+@override int get hashCode => tax.hashCode;
+
+@override String toString() => 'PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputs(tax: $tax)';
+
  }

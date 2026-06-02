@@ -31,10 +31,13 @@ RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude copyWith({bool? Functio
   all: all != null ? all() : this.all,
   list: list != null ? list() : this.list,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude &&
           all == other.all &&
-          listEquals(list, other.list); } 
-@override int get hashCode { return Object.hash(all, Object.hashAll(list ?? const [])); } 
-@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude(all: $all, list: $list)'; } 
+          listEquals(list, other.list);
+
+@override int get hashCode => Object.hash(all, Object.hashAll(list ?? const []));
+
+@override String toString() => 'RulesetsSetCacheSettingsCustomCacheKeyQueryStringExclude(all: $all, list: $list)';
+
  }

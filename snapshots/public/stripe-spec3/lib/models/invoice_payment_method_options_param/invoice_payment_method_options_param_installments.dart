@@ -20,10 +20,13 @@ InvoicePaymentMethodOptionsParamInstallments copyWith({bool? Function()? enabled
   enabled: enabled != null ? enabled() : this.enabled,
   plan: plan != null ? plan() : this.plan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParamInstallments &&
           enabled == other.enabled &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(enabled, plan); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamInstallments(enabled: $enabled, plan: $plan)'; } 
+          plan == other.plan;
+
+@override int get hashCode => Object.hash(enabled, plan);
+
+@override String toString() => 'InvoicePaymentMethodOptionsParamInstallments(enabled: $enabled, plan: $plan)';
+
  }

@@ -50,7 +50,7 @@ BrapiPostSnapshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? ca
   quality: quality != null ? quality() : this.quality,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostSnapshotRequestVariant1ScreenshotOptions &&
           captureBeyondViewport == other.captureBeyondViewport &&
           clip == other.clip &&
@@ -59,7 +59,10 @@ BrapiPostSnapshotRequestVariant1ScreenshotOptions copyWith({bool? Function()? ca
           omitBackground == other.omitBackground &&
           optimizeForSpeed == other.optimizeForSpeed &&
           quality == other.quality &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(captureBeyondViewport, clip, fromSurface, fullPage, omitBackground, optimizeForSpeed, quality, type); } 
-@override String toString() { return 'BrapiPostSnapshotRequestVariant1ScreenshotOptions(captureBeyondViewport: $captureBeyondViewport, clip: $clip, fromSurface: $fromSurface, fullPage: $fullPage, omitBackground: $omitBackground, optimizeForSpeed: $optimizeForSpeed, quality: $quality, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(captureBeyondViewport, clip, fromSurface, fullPage, omitBackground, optimizeForSpeed, quality, type);
+
+@override String toString() => 'BrapiPostSnapshotRequestVariant1ScreenshotOptions(captureBeyondViewport: $captureBeyondViewport, clip: $clip, fromSurface: $fromSurface, fullPage: $fullPage, omitBackground: $omitBackground, optimizeForSpeed: $optimizeForSpeed, quality: $quality, type: $type)';
+
  }

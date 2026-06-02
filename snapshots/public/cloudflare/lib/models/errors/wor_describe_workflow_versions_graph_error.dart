@@ -17,7 +17,8 @@ final class WorDescribeWorkflowVersionsGraphError$404 extends WorDescribeWorkflo
 
 final WorDescribeWorkflowVersionsGraphResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorDescribeWorkflowVersionsGraphError$Unknown extends WorDescribeWorkflowVersionsGraphError {const WorDescribeWorkflowVersionsGraphError$Unknown(this.statusCode, this.rawBody, );
 

@@ -70,7 +70,7 @@ Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? current
   repositoryDiscussionsCategoryUrl: repositoryDiscussionsCategoryUrl != null ? repositoryDiscussionsCategoryUrl() : this.repositoryDiscussionsCategoryUrl,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Feed &&
           timelineUrl == other.timelineUrl &&
           userUrl == other.userUrl &&
@@ -82,7 +82,10 @@ Feed copyWith({String? timelineUrl, String? userUrl, String? Function()? current
           securityAdvisoriesUrl == other.securityAdvisoriesUrl &&
           repositoryDiscussionsUrl == other.repositoryDiscussionsUrl &&
           repositoryDiscussionsCategoryUrl == other.repositoryDiscussionsCategoryUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(timelineUrl, userUrl, currentUserPublicUrl, currentUserUrl, currentUserActorUrl, currentUserOrganizationUrl, Object.hashAll(currentUserOrganizationUrls ?? const []), securityAdvisoriesUrl, repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl, links); } 
-@override String toString() { return 'Feed(timelineUrl: $timelineUrl, userUrl: $userUrl, currentUserPublicUrl: $currentUserPublicUrl, currentUserUrl: $currentUserUrl, currentUserActorUrl: $currentUserActorUrl, currentUserOrganizationUrl: $currentUserOrganizationUrl, currentUserOrganizationUrls: $currentUserOrganizationUrls, securityAdvisoriesUrl: $securityAdvisoriesUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(timelineUrl, userUrl, currentUserPublicUrl, currentUserUrl, currentUserActorUrl, currentUserOrganizationUrl, Object.hashAll(currentUserOrganizationUrls ?? const []), securityAdvisoriesUrl, repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl, links);
+
+@override String toString() => 'Feed(timelineUrl: $timelineUrl, userUrl: $userUrl, currentUserPublicUrl: $currentUserPublicUrl, currentUserUrl: $currentUserUrl, currentUserActorUrl: $currentUserActorUrl, currentUserOrganizationUrl: $currentUserOrganizationUrl, currentUserOrganizationUrls: $currentUserOrganizationUrls, securityAdvisoriesUrl: $securityAdvisoriesUrl, repositoryDiscussionsUrl: $repositoryDiscussionsUrl, repositoryDiscussionsCategoryUrl: $repositoryDiscussionsCategoryUrl, links: $links)';
+
  }

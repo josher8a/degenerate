@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('files
 CreateSkillBody copyWith({CreateSkillBodyFiles? files}) { return CreateSkillBody(
   files: files ?? this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSkillBody &&
-          files == other.files; } 
-@override int get hashCode { return files.hashCode; } 
-@override String toString() { return 'CreateSkillBody(files: $files)'; } 
+          files == other.files;
+
+@override int get hashCode => files.hashCode;
+
+@override String toString() => 'CreateSkillBody(files: $files)';
+
  }

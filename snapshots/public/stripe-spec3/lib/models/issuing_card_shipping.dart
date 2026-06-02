@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Carrier && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Carrier($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Carrier && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Carrier($value)';
+
  }
 /// The delivery status of the card.
 @immutable final class IssuingCardShippingStatus {const IssuingCardShippingStatus._(this.value);
@@ -66,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardShippingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardShippingStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardShippingStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardShippingStatus($value)';
+
  }
 /// 
 @immutable final class IssuingCardShipping {const IssuingCardShipping({required this.address, required this.name, required this.service, required this.type, this.addressValidation, this.carrier, this.customs, this.eta, this.phoneNumber, this.requireSignature, this.status, this.trackingNumber, this.trackingUrl, });
@@ -178,7 +184,7 @@ IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValida
   trackingUrl: trackingUrl != null ? trackingUrl() : this.trackingUrl,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardShipping &&
           address == other.address &&
           addressValidation == other.addressValidation &&
@@ -192,7 +198,10 @@ IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValida
           status == other.status &&
           trackingNumber == other.trackingNumber &&
           trackingUrl == other.trackingUrl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, addressValidation, carrier, customs, eta, name, phoneNumber, requireSignature, service, status, trackingNumber, trackingUrl, type); } 
-@override String toString() { return 'IssuingCardShipping(address: $address, addressValidation: $addressValidation, carrier: $carrier, customs: $customs, eta: $eta, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, status: $status, trackingNumber: $trackingNumber, trackingUrl: $trackingUrl, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, addressValidation, carrier, customs, eta, name, phoneNumber, requireSignature, service, status, trackingNumber, trackingUrl, type);
+
+@override String toString() => 'IssuingCardShipping(address: $address, addressValidation: $addressValidation, carrier: $carrier, customs: $customs, eta: $eta, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, status: $status, trackingNumber: $trackingNumber, trackingUrl: $trackingUrl, type: $type)';
+
  }

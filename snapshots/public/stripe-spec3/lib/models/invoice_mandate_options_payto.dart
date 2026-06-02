@@ -29,11 +29,14 @@ InvoiceMandateOptionsPayto copyWith({int? Function()? amount, InvoiceMandateOpti
   amountType: amountType != null ? amountType() : this.amountType,
   purpose: purpose != null ? purpose() : this.purpose,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceMandateOptionsPayto &&
           amount == other.amount &&
           amountType == other.amountType &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(amount, amountType, purpose); } 
-@override String toString() { return 'InvoiceMandateOptionsPayto(amount: $amount, amountType: $amountType, purpose: $purpose)'; } 
+          purpose == other.purpose;
+
+@override int get hashCode => Object.hash(amount, amountType, purpose);
+
+@override String toString() => 'InvoiceMandateOptionsPayto(amount: $amount, amountType: $amountType, purpose: $purpose)';
+
  }

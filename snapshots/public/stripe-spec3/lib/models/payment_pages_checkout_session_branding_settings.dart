@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)';
+
  }
 /// 
 @immutable final class PaymentPagesCheckoutSessionBrandingSettings {const PaymentPagesCheckoutSessionBrandingSettings({required this.backgroundColor, required this.borderStyle, required this.buttonColor, required this.displayName, required this.fontFamily, this.icon, this.logo, });
@@ -92,7 +95,7 @@ PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, P
   icon: icon != null ? icon() : this.icon,
   logo: logo != null ? logo() : this.logo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionBrandingSettings &&
           backgroundColor == other.backgroundColor &&
           borderStyle == other.borderStyle &&
@@ -100,7 +103,10 @@ PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, P
           displayName == other.displayName &&
           fontFamily == other.fontFamily &&
           icon == other.icon &&
-          logo == other.logo; } 
-@override int get hashCode { return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)'; } 
+          logo == other.logo;
+
+@override int get hashCode => Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo);
+
+@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)';
+
  }

@@ -42,13 +42,16 @@ FileSearchTool copyWith({String? type, List<String>? vectorStoreIds, int? Functi
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
   filters: filters != null ? filters() : this.filters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchTool &&
           type == other.type &&
           listEquals(vectorStoreIds, other.vectorStoreIds) &&
           maxNumResults == other.maxNumResults &&
           rankingOptions == other.rankingOptions &&
-          filters == other.filters; } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(vectorStoreIds), maxNumResults, rankingOptions, filters); } 
-@override String toString() { return 'FileSearchTool(type: $type, vectorStoreIds: $vectorStoreIds, maxNumResults: $maxNumResults, rankingOptions: $rankingOptions, filters: $filters)'; } 
+          filters == other.filters;
+
+@override int get hashCode => Object.hash(type, Object.hashAll(vectorStoreIds), maxNumResults, rankingOptions, filters);
+
+@override String toString() => 'FileSearchTool(type: $type, vectorStoreIds: $vectorStoreIds, maxNumResults: $maxNumResults, rankingOptions: $rankingOptions, filters: $filters)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxProductResourceTaxSettingsDefaultsTaxBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxProductResourceTaxSettingsDefaultsTaxBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxProductResourceTaxSettingsDefaultsTaxBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxProductResourceTaxSettingsDefaultsTaxBehavior($value)';
+
  }
 /// 
 @immutable final class TaxProductResourceTaxSettingsDefaults {const TaxProductResourceTaxSettingsDefaults({required this.provider, this.taxBehavior, this.taxCode, });
@@ -64,11 +67,14 @@ TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, TaxProductRe
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxSettingsDefaults &&
           provider == other.provider &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(provider, taxBehavior, taxCode); } 
-@override String toString() { return 'TaxProductResourceTaxSettingsDefaults(provider: $provider, taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
+          taxCode == other.taxCode;
+
+@override int get hashCode => Object.hash(provider, taxBehavior, taxCode);
+
+@override String toString() => 'TaxProductResourceTaxSettingsDefaults(provider: $provider, taxBehavior: $taxBehavior, taxCode: $taxCode)';
+
  }

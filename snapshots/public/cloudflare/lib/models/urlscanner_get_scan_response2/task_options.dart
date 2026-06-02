@@ -21,10 +21,13 @@ TaskOptions copyWith({Map<String, dynamic>? Function()? customHeaders, List<Stri
   customHeaders: customHeaders != null ? customHeaders() : this.customHeaders,
   screenshotsResolutions: screenshotsResolutions != null ? screenshotsResolutions() : this.screenshotsResolutions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaskOptions &&
           customHeaders == other.customHeaders &&
-          listEquals(screenshotsResolutions, other.screenshotsResolutions); } 
-@override int get hashCode { return Object.hash(customHeaders, Object.hashAll(screenshotsResolutions ?? const [])); } 
-@override String toString() { return 'TaskOptions(customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions)'; } 
+          listEquals(screenshotsResolutions, other.screenshotsResolutions);
+
+@override int get hashCode => Object.hash(customHeaders, Object.hashAll(screenshotsResolutions ?? const []));
+
+@override String toString() => 'TaskOptions(customHeaders: $customHeaders, screenshotsResolutions: $screenshotsResolutions)';
+
  }

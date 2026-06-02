@@ -39,13 +39,16 @@ EmailSecurityAttachment copyWith({String? Function()? contentType, EmailSecurity
   name: name != null ? name() : this.name,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityAttachment &&
           contentType == other.contentType &&
           detection == other.detection &&
           encrypted == other.encrypted &&
           name == other.name &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(contentType, detection, encrypted, name, size); } 
-@override String toString() { return 'EmailSecurityAttachment(contentType: $contentType, detection: $detection, encrypted: $encrypted, name: $name, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(contentType, detection, encrypted, name, size);
+
+@override String toString() => 'EmailSecurityAttachment(contentType: $contentType, detection: $detection, encrypted: $encrypted, name: $name, size: $size)';
+
  }

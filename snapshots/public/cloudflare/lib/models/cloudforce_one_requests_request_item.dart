@@ -89,7 +89,7 @@ CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()
   tokens: tokens != null ? tokens() : this.tokens,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestItem &&
           completed == other.completed &&
           content == other.content &&
@@ -103,7 +103,10 @@ CloudforceOneRequestsRequestItem copyWith({CloudforceOneRequestsTime? Function()
           summary == other.summary &&
           tlp == other.tlp &&
           tokens == other.tokens &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(completed, content, created, id, messageTokens, priority, readableId, request, status, summary, tlp, tokens, updated); } 
-@override String toString() { return 'CloudforceOneRequestsRequestItem(completed: $completed, content: $content, created: $created, id: $id, messageTokens: $messageTokens, priority: $priority, readableId: $readableId, request: $request, status: $status, summary: $summary, tlp: $tlp, tokens: $tokens, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(completed, content, created, id, messageTokens, priority, readableId, request, status, summary, tlp, tokens, updated);
+
+@override String toString() => 'CloudforceOneRequestsRequestItem(completed: $completed, content: $content, created: $created, id: $id, messageTokens: $messageTokens, priority: $priority, readableId: $readableId, request: $request, status: $status, summary: $summary, tlp: $tlp, tokens: $tokens, updated: $updated)';
+
  }

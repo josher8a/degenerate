@@ -32,20 +32,15 @@ final class SessionFeedbackOptions {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SessionFeedbackOptions && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionFeedbackOptions && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'SessionFeedbackOptions($value)';
-  }
+  String toString() => 'SessionFeedbackOptions($value)';
 }
 
 @immutable
@@ -82,20 +77,16 @@ final class SessionFeedbackSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is SessionFeedbackSchema &&
-            feedback == other.feedback &&
-            message == other.message;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionFeedbackSchema &&
+          feedback == other.feedback &&
+          message == other.message;
 
   @override
-  int get hashCode {
-    return Object.hash(feedback, message);
-  }
+  int get hashCode => Object.hash(feedback, message);
 
   @override
-  String toString() {
-    return 'SessionFeedbackSchema(feedback: $feedback, message: $message)';
-  }
+  String toString() =>
+      'SessionFeedbackSchema(feedback: $feedback, message: $message)';
 }

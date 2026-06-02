@@ -52,13 +52,16 @@ IssuingTransactionFuelData copyWith({String? Function()? industryProductCode, St
   unit: unit ?? this.unit,
   unitCostDecimal: unitCostDecimal ?? this.unitCostDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFuelData &&
           industryProductCode == other.industryProductCode &&
           quantityDecimal == other.quantityDecimal &&
           type == other.type &&
           unit == other.unit &&
-          unitCostDecimal == other.unitCostDecimal; } 
-@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
-@override String toString() { return 'IssuingTransactionFuelData(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
+          unitCostDecimal == other.unitCostDecimal;
+
+@override int get hashCode => Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal);
+
+@override String toString() => 'IssuingTransactionFuelData(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)';
+
  }

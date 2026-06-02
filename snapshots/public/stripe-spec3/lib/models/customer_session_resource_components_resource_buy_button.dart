@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 CustomerSessionResourceComponentsResourceBuyButton copyWith({bool? enabled}) { return CustomerSessionResourceComponentsResourceBuyButton(
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponentsResourceBuyButton &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceBuyButton(enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => enabled.hashCode;
+
+@override String toString() => 'CustomerSessionResourceComponentsResourceBuyButton(enabled: $enabled)';
+
  }

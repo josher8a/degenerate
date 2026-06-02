@@ -35,12 +35,15 @@ SecondaryDnsDnsSecondarySecondaryZone copyWith({SecondaryDnsAutoRefreshSeconds? 
   name: name ?? this.name,
   peers: peers ?? this.peers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsDnsSecondarySecondaryZone &&
           autoRefreshSeconds == other.autoRefreshSeconds &&
           id == other.id &&
           name == other.name &&
-          listEquals(peers, other.peers); } 
-@override int get hashCode { return Object.hash(autoRefreshSeconds, id, name, Object.hashAll(peers)); } 
-@override String toString() { return 'SecondaryDnsDnsSecondarySecondaryZone(autoRefreshSeconds: $autoRefreshSeconds, id: $id, name: $name, peers: $peers)'; } 
+          listEquals(peers, other.peers);
+
+@override int get hashCode => Object.hash(autoRefreshSeconds, id, name, Object.hashAll(peers));
+
+@override String toString() => 'SecondaryDnsDnsSecondarySecondaryZone(autoRefreshSeconds: $autoRefreshSeconds, id: $id, name: $name, peers: $peers)';
+
  }

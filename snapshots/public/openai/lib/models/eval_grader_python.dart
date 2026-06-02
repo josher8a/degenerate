@@ -42,13 +42,16 @@ EvalGraderPython copyWith({EvalGraderPythonType? type, String? name, String? sou
   imageTag: imageTag != null ? imageTag() : this.imageTag,
   passThreshold: passThreshold != null ? passThreshold() : this.passThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalGraderPython &&
           type == other.type &&
           name == other.name &&
           source == other.source &&
           imageTag == other.imageTag &&
-          passThreshold == other.passThreshold; } 
-@override int get hashCode { return Object.hash(type, name, source, imageTag, passThreshold); } 
-@override String toString() { return 'EvalGraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag, passThreshold: $passThreshold)'; } 
+          passThreshold == other.passThreshold;
+
+@override int get hashCode => Object.hash(type, name, source, imageTag, passThreshold);
+
+@override String toString() => 'EvalGraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag, passThreshold: $passThreshold)';
+
  }

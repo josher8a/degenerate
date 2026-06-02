@@ -91,7 +91,7 @@ WebhookIssueCommentCreatedComment copyWith({AuthorAssociation? authorAssociation
   pin: pin != null ? pin() : this.pin,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssueCommentCreatedComment &&
           authorAssociation == other.authorAssociation &&
           body == other.body &&
@@ -105,7 +105,10 @@ WebhookIssueCommentCreatedComment copyWith({AuthorAssociation? authorAssociation
           updatedAt == other.updatedAt &&
           url == other.url &&
           pin == other.pin &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(authorAssociation, body, createdAt, htmlUrl, id, issueUrl, nodeId, performedViaGithubApp, reactions, updatedAt, url, pin, user); } 
-@override String toString() { return 'WebhookIssueCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, updatedAt: $updatedAt, url: $url, pin: $pin, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(authorAssociation, body, createdAt, htmlUrl, id, issueUrl, nodeId, performedViaGithubApp, reactions, updatedAt, url, pin, user);
+
+@override String toString() => 'WebhookIssueCommentCreatedComment(authorAssociation: $authorAssociation, body: $body, createdAt: $createdAt, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, nodeId: $nodeId, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, updatedAt: $updatedAt, url: $url, pin: $pin, user: $user)';
+
  }

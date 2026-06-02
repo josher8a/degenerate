@@ -26,11 +26,14 @@ AttestationsSubjectDigestsValue copyWith({ReposCreateAttestationRequestBundle? F
   repositoryId: repositoryId != null ? repositoryId() : this.repositoryId,
   bundleUrl: bundleUrl != null ? bundleUrl() : this.bundleUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AttestationsSubjectDigestsValue &&
           bundle == other.bundle &&
           repositoryId == other.repositoryId &&
-          bundleUrl == other.bundleUrl; } 
-@override int get hashCode { return Object.hash(bundle, repositoryId, bundleUrl); } 
-@override String toString() { return 'AttestationsSubjectDigestsValue(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl)'; } 
+          bundleUrl == other.bundleUrl;
+
+@override int get hashCode => Object.hash(bundle, repositoryId, bundleUrl);
+
+@override String toString() => 'AttestationsSubjectDigestsValue(bundle: $bundle, repositoryId: $repositoryId, bundleUrl: $bundleUrl)';
+
  }

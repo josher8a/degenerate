@@ -52,7 +52,7 @@ WebhookSecretScanningAlertAssigned copyWith({WebhookIssuesAssignedAction? action
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertAssigned &&
           action == other.action &&
           alert == other.alert &&
@@ -61,7 +61,10 @@ WebhookSecretScanningAlertAssigned copyWith({WebhookIssuesAssignedAction? action
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, assignee, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertAssigned(action: $action, alert: $alert, assignee: $assignee, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, assignee, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSecretScanningAlertAssigned(action: $action, alert: $alert, assignee: $assignee, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

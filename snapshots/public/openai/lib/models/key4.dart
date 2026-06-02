@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Key4Object && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Key4Object($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Key4Object && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Key4Object($value)';
+
  }
 @immutable final class Key4 {const Key4({required this.object, required this.value, required this.name, required this.createdAt, required this.id, });
 
@@ -62,13 +65,16 @@ Key4 copyWith({Key4Object? object, String? value, String? name, int? createdAt, 
   createdAt: createdAt ?? this.createdAt,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Key4 &&
           object == other.object &&
           value == other.value &&
           name == other.name &&
           createdAt == other.createdAt &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(object, value, name, createdAt, id); } 
-@override String toString() { return 'Key4(object: $object, value: $value, name: $name, createdAt: $createdAt, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(object, value, name, createdAt, id);
+
+@override String toString() => 'Key4(object: $object, value: $value, name: $name, createdAt: $createdAt, id: $id)';
+
  }

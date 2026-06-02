@@ -30,11 +30,14 @@ ExternalRefs copyWith({String? referenceCategory, String? referenceLocator, Stri
   referenceLocator: referenceLocator ?? this.referenceLocator,
   referenceType: referenceType ?? this.referenceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalRefs &&
           referenceCategory == other.referenceCategory &&
           referenceLocator == other.referenceLocator &&
-          referenceType == other.referenceType; } 
-@override int get hashCode { return Object.hash(referenceCategory, referenceLocator, referenceType); } 
-@override String toString() { return 'ExternalRefs(referenceCategory: $referenceCategory, referenceLocator: $referenceLocator, referenceType: $referenceType)'; } 
+          referenceType == other.referenceType;
+
+@override int get hashCode => Object.hash(referenceCategory, referenceLocator, referenceType);
+
+@override String toString() => 'ExternalRefs(referenceCategory: $referenceCategory, referenceLocator: $referenceLocator, referenceType: $referenceType)';
+
  }

@@ -30,10 +30,13 @@ PaymentMethodKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand
   brand: brand != null ? brand() : this.brand,
   last4: last4 != null ? last4() : this.last4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodKrCard &&
           brand == other.brand &&
-          last4 == other.last4; } 
-@override int get hashCode { return Object.hash(brand, last4); } 
-@override String toString() { return 'PaymentMethodKrCard(brand: $brand, last4: $last4)'; } 
+          last4 == other.last4;
+
+@override int get hashCode => Object.hash(brand, last4);
+
+@override String toString() => 'PaymentMethodKrCard(brand: $brand, last4: $last4)';
+
  }

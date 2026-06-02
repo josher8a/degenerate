@@ -20,9 +20,12 @@ return errors; }
 CopilotCancelCopilotSeatAssignmentForTeamsRequest copyWith({List<String>? selectedTeams}) { return CopilotCancelCopilotSeatAssignmentForTeamsRequest(
   selectedTeams: selectedTeams ?? this.selectedTeams,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotCancelCopilotSeatAssignmentForTeamsRequest &&
-          listEquals(selectedTeams, other.selectedTeams); } 
-@override int get hashCode { return Object.hashAll(selectedTeams); } 
-@override String toString() { return 'CopilotCancelCopilotSeatAssignmentForTeamsRequest(selectedTeams: $selectedTeams)'; } 
+          listEquals(selectedTeams, other.selectedTeams);
+
+@override int get hashCode => Object.hashAll(selectedTeams);
+
+@override String toString() => 'CopilotCancelCopilotSeatAssignmentForTeamsRequest(selectedTeams: $selectedTeams)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationOutcomeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationOutcomeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationOutcomeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationOutcomeType($value)';
+
  }
 /// Outcome details for this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationOutcome {const InsightsResourcesPaymentEvaluationOutcome({required this.type, this.merchantBlocked, this.paymentIntentId, this.rejected, this.succeeded, });
@@ -76,13 +79,16 @@ InsightsResourcesPaymentEvaluationOutcome copyWith({InsightsResourcesPaymentEval
   succeeded: succeeded != null ? succeeded() : this.succeeded,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationOutcome &&
           merchantBlocked == other.merchantBlocked &&
           paymentIntentId == other.paymentIntentId &&
           rejected == other.rejected &&
           succeeded == other.succeeded &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(merchantBlocked, paymentIntentId, rejected, succeeded, type); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationOutcome(merchantBlocked: $merchantBlocked, paymentIntentId: $paymentIntentId, rejected: $rejected, succeeded: $succeeded, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(merchantBlocked, paymentIntentId, rejected, succeeded, type);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationOutcome(merchantBlocked: $merchantBlocked, paymentIntentId: $paymentIntentId, rejected: $rejected, succeeded: $succeeded, type: $type)';
+
  }

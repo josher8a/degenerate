@@ -80,7 +80,7 @@ FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? des
   rules: rules != null ? rules() : this.rules,
   urls: urls != null ? urls() : this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallOverride &&
           description == other.description &&
           groups == other.groups &&
@@ -89,7 +89,10 @@ FirewallOverride copyWith({FirewallComponentsSchemasDescription? Function()? des
           priority == other.priority &&
           rewriteAction == other.rewriteAction &&
           rules == other.rules &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(description, groups, id, paused, priority, rewriteAction, rules, Object.hashAll(urls ?? const [])); } 
-@override String toString() { return 'FirewallOverride(description: $description, groups: $groups, id: $id, paused: $paused, priority: $priority, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(description, groups, id, paused, priority, rewriteAction, rules, Object.hashAll(urls ?? const []));
+
+@override String toString() => 'FirewallOverride(description: $description, groups: $groups, id: $id, paused: $paused, priority: $priority, rewriteAction: $rewriteAction, rules: $rules, urls: $urls)';
+
  }

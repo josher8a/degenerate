@@ -33,12 +33,15 @@ McnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag,
   itemType: itemType ?? this.itemType,
   tagCliCommand: tagCliCommand ?? this.tagCliCommand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnAzureSetup &&
           azureConsentUrl == other.azureConsentUrl &&
           integrationIdentityTag == other.integrationIdentityTag &&
           itemType == other.itemType &&
-          tagCliCommand == other.tagCliCommand; } 
-@override int get hashCode { return Object.hash(azureConsentUrl, integrationIdentityTag, itemType, tagCliCommand); } 
-@override String toString() { return 'McnAzureSetup(azureConsentUrl: $azureConsentUrl, integrationIdentityTag: $integrationIdentityTag, itemType: $itemType, tagCliCommand: $tagCliCommand)'; } 
+          tagCliCommand == other.tagCliCommand;
+
+@override int get hashCode => Object.hash(azureConsentUrl, integrationIdentityTag, itemType, tagCliCommand);
+
+@override String toString() => 'McnAzureSetup(azureConsentUrl: $azureConsentUrl, integrationIdentityTag: $integrationIdentityTag, itemType: $itemType, tagCliCommand: $tagCliCommand)';
+
  }

@@ -20,10 +20,13 @@ GpgKeyEmails copyWith({String? Function()? email, bool? Function()? verified, })
   email: email != null ? email() : this.email,
   verified: verified != null ? verified() : this.verified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GpgKeyEmails &&
           email == other.email &&
-          verified == other.verified; } 
-@override int get hashCode { return Object.hash(email, verified); } 
-@override String toString() { return 'GpgKeyEmails(email: $email, verified: $verified)'; } 
+          verified == other.verified;
+
+@override int get hashCode => Object.hash(email, verified);
+
+@override String toString() => 'GpgKeyEmails(email: $email, verified: $verified)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitVideoConfigCodec && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitVideoConfigCodec($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitVideoConfigCodec && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitVideoConfigCodec($value)';
+
  }
 @immutable final class RealtimekitVideoConfig {const RealtimekitVideoConfig({this.codec = RealtimekitVideoConfigCodec.h264, this.exportFile = true, this.height = 720, this.watermark, this.width = 1280, });
 
@@ -76,13 +79,16 @@ RealtimekitVideoConfig copyWith({RealtimekitVideoConfigCodec Function()? codec, 
   watermark: watermark != null ? watermark() : this.watermark,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitVideoConfig &&
           codec == other.codec &&
           exportFile == other.exportFile &&
           height == other.height &&
           watermark == other.watermark &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(codec, exportFile, height, watermark, width); } 
-@override String toString() { return 'RealtimekitVideoConfig(codec: $codec, exportFile: $exportFile, height: $height, watermark: $watermark, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(codec, exportFile, height, watermark, width);
+
+@override String toString() => 'RealtimekitVideoConfig(codec: $codec, exportFile: $exportFile, height: $height, watermark: $watermark, width: $width)';
+
  }

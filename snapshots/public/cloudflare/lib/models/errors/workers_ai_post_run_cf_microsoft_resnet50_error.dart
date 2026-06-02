@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMicrosoftResnet50Error$400 extends WorkersAiPostRu
 
 final WorkersAiPostRunCfMicrosoftResnet50Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMicrosoftResnet50Error$Unknown extends WorkersAiPostRunCfMicrosoftResnet50Error {const WorkersAiPostRunCfMicrosoftResnet50Error$Unknown(this.statusCode, this.rawBody, );
 

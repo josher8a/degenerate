@@ -25,11 +25,14 @@ R2SlurperCreateJobRequest copyWith({bool Function()? overwrite, R2SlurperSourceJ
   source: source != null ? source() : this.source,
   target: target != null ? target() : this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperCreateJobRequest &&
           overwrite == other.overwrite &&
           source == other.source &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(overwrite, source, target); } 
-@override String toString() { return 'R2SlurperCreateJobRequest(overwrite: $overwrite, source: $source, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(overwrite, source, target);
+
+@override String toString() => 'R2SlurperCreateJobRequest(overwrite: $overwrite, source: $source, target: $target)';
+
  }

@@ -56,13 +56,16 @@ TextResponseFormatJsonSchema copyWith({ResponseFormatJsonSchemaType? type, Strin
   schema: schema ?? this.schema,
   strict: strict != null ? strict() : this.strict,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TextResponseFormatJsonSchema &&
           type == other.type &&
           description == other.description &&
           name == other.name &&
           schema == other.schema &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(type, description, name, schema, strict); } 
-@override String toString() { return 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)'; } 
+          strict == other.strict;
+
+@override int get hashCode => Object.hash(type, description, name, schema, strict);
+
+@override String toString() => 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)';
+
  }

@@ -25,11 +25,14 @@ BrandingSettingsLogo copyWith({String? Function()? file, PaymentPagesCheckoutSes
   type: type ?? this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrandingSettingsLogo &&
           file == other.file &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(file, type, url); } 
-@override String toString() { return 'BrandingSettingsLogo(file: $file, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(file, type, url);
+
+@override String toString() => 'BrandingSettingsLogo(file: $file, type: $type, url: $url)';
+
  }

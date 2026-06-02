@@ -35,12 +35,15 @@ Binding copyWith({String? Function()? apiVersion, String? Function()? kind, Obje
   metadata: metadata != null ? metadata() : this.metadata,
   target: target ?? this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Binding &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, target); } 
-@override String toString() { return 'Binding(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, target);
+
+@override String toString() => 'Binding(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, target: $target)';
+
  }

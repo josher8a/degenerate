@@ -114,7 +114,7 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
   source: source != null ? source() : this.source,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Event &&
           action == other.action &&
           apiVersion == other.apiVersion &&
@@ -132,7 +132,10 @@ Event copyWith({String? Function()? action, String? Function()? apiVersion, int?
           reportingInstance == other.reportingInstance &&
           series == other.series &&
           source == other.source &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type); } 
-@override String toString() { return 'Event(action: $action, apiVersion: $apiVersion, count: $count, eventTime: $eventTime, firstTimestamp: $firstTimestamp, involvedObject: $involvedObject, kind: $kind, lastTimestamp: $lastTimestamp, message: $message, metadata: $metadata, reason: $reason, related: $related, reportingComponent: $reportingComponent, reportingInstance: $reportingInstance, series: $series, source: $source, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(action, apiVersion, count, eventTime, firstTimestamp, involvedObject, kind, lastTimestamp, message, metadata, reason, related, reportingComponent, reportingInstance, series, source, type);
+
+@override String toString() => 'Event(action: $action, apiVersion: $apiVersion, count: $count, eventTime: $eventTime, firstTimestamp: $firstTimestamp, involvedObject: $involvedObject, kind: $kind, lastTimestamp: $lastTimestamp, message: $message, metadata: $metadata, reason: $reason, related: $related, reportingComponent: $reportingComponent, reportingInstance: $reportingInstance, series: $series, source: $source, type: $type)';
+
  }

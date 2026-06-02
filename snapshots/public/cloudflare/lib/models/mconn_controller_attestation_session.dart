@@ -32,12 +32,15 @@ MconnControllerAttestationSession copyWith({String? akPublic, MconnControllerCon
   device: device ?? this.device,
   nonce: nonce ?? this.nonce,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerAttestationSession &&
           akPublic == other.akPublic &&
           connector == other.connector &&
           device == other.device &&
-          nonce == other.nonce; } 
-@override int get hashCode { return Object.hash(akPublic, connector, device, nonce); } 
-@override String toString() { return 'MconnControllerAttestationSession(akPublic: $akPublic, connector: $connector, device: $device, nonce: $nonce)'; } 
+          nonce == other.nonce;
+
+@override int get hashCode => Object.hash(akPublic, connector, device, nonce);
+
+@override String toString() => 'MconnControllerAttestationSession(akPublic: $akPublic, connector: $connector, device: $device, nonce: $nonce)';
+
  }

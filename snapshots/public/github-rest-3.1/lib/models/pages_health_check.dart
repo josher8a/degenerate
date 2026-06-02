@@ -21,10 +21,13 @@ PagesHealthCheck copyWith({Domain? Function()? domain, AltDomain? Function()? al
   domain: domain != null ? domain() : this.domain,
   altDomain: altDomain != null ? altDomain() : this.altDomain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesHealthCheck &&
           domain == other.domain &&
-          altDomain == other.altDomain; } 
-@override int get hashCode { return Object.hash(domain, altDomain); } 
-@override String toString() { return 'PagesHealthCheck(domain: $domain, altDomain: $altDomain)'; } 
+          altDomain == other.altDomain;
+
+@override int get hashCode => Object.hash(domain, altDomain);
+
+@override String toString() => 'PagesHealthCheck(domain: $domain, altDomain: $altDomain)';
+
  }

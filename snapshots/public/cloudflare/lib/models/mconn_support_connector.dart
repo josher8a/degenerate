@@ -107,7 +107,7 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
   timezone: timezone ?? this.timezone,
   upgradeAsap: upgradeAsap ?? this.upgradeAsap,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportConnector &&
           accountId == other.accountId &&
           activated == other.activated &&
@@ -124,7 +124,10 @@ MconnSupportConnector copyWith({MconnAccountId? accountId, bool? activated, Mcon
           lastUpdated == other.lastUpdated &&
           notes == other.notes &&
           timezone == other.timezone &&
-          upgradeAsap == other.upgradeAsap; } 
-@override int get hashCode { return Object.hash(accountId, activated, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap); } 
-@override String toString() { return 'MconnSupportConnector(accountId: $accountId, activated: $activated, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
+          upgradeAsap == other.upgradeAsap;
+
+@override int get hashCode => Object.hash(accountId, activated, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap);
+
+@override String toString() => 'MconnSupportConnector(accountId: $accountId, activated: $activated, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)';
+
  }

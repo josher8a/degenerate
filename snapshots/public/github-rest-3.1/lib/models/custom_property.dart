@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPropertySourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPropertySourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomPropertySourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomPropertySourceType($value)';
+
  }
 /// Custom property defined on an organization
 @immutable final class CustomProperty {const CustomProperty({required this.propertyName, required this.valueType, this.url, this.sourceType, this.$required, this.defaultValue, this.description, this.allowedValues, this.valuesEditableBy, this.requireExplicitValues, });
@@ -98,7 +101,7 @@ CustomProperty copyWith({String? propertyName, Uri? Function()? url, CustomPrope
   valuesEditableBy: valuesEditableBy != null ? valuesEditableBy() : this.valuesEditableBy,
   requireExplicitValues: requireExplicitValues != null ? requireExplicitValues() : this.requireExplicitValues,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomProperty &&
           propertyName == other.propertyName &&
           url == other.url &&
@@ -109,7 +112,10 @@ CustomProperty copyWith({String? propertyName, Uri? Function()? url, CustomPrope
           description == other.description &&
           listEquals(allowedValues, other.allowedValues) &&
           valuesEditableBy == other.valuesEditableBy &&
-          requireExplicitValues == other.requireExplicitValues; } 
-@override int get hashCode { return Object.hash(propertyName, url, sourceType, valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues); } 
-@override String toString() { return 'CustomProperty(propertyName: $propertyName, url: $url, sourceType: $sourceType, valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)'; } 
+          requireExplicitValues == other.requireExplicitValues;
+
+@override int get hashCode => Object.hash(propertyName, url, sourceType, valueType, $required, defaultValue, description, Object.hashAll(allowedValues ?? const []), valuesEditableBy, requireExplicitValues);
+
+@override String toString() => 'CustomProperty(propertyName: $propertyName, url: $url, sourceType: $sourceType, valueType: $valueType, \$required: ${$required}, defaultValue: $defaultValue, description: $description, allowedValues: $allowedValues, valuesEditableBy: $valuesEditableBy, requireExplicitValues: $requireExplicitValues)';
+
  }

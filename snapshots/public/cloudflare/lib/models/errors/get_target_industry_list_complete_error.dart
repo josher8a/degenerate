@@ -17,7 +17,8 @@ final class GetTargetIndustryListCompleteError$400 extends GetTargetIndustryList
 
 final GetTargetIndustryListCompleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetTargetIndustryListCompleteError$Unknown extends GetTargetIndustryListCompleteError {const GetTargetIndustryListCompleteError$Unknown(this.statusCode, this.rawBody, );
 

@@ -22,10 +22,13 @@ ZeroTrustUsersCreateUserRequest copyWith({AccessSchemasEmail? email, AccessUsers
   email: email ?? this.email,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustUsersCreateUserRequest &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, name); } 
-@override String toString() { return 'ZeroTrustUsersCreateUserRequest(email: $email, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(email, name);
+
+@override String toString() => 'ZeroTrustUsersCreateUserRequest(email: $email, name: $name)';
+
  }

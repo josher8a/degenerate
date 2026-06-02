@@ -28,10 +28,13 @@ MultimodalEmbeddings copyWith({String? Function()? image, List<String>? Function
   image: image != null ? image() : this.image,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MultimodalEmbeddings &&
           image == other.image &&
-          listEquals(text, other.text); } 
-@override int get hashCode { return Object.hash(image, Object.hashAll(text ?? const [])); } 
-@override String toString() { return 'MultimodalEmbeddings(image: $image, text: $text)'; } 
+          listEquals(text, other.text);
+
+@override int get hashCode => Object.hash(image, Object.hashAll(text ?? const []));
+
+@override String toString() => 'MultimodalEmbeddings(image: $image, text: $text)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessGatewayCaComponentsSchemasSingleResponse copyWith({AccessSchemasCertificates? Function()? result}) { return AccessGatewayCaComponentsSchemasSingleResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGatewayCaComponentsSchemasSingleResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'AccessGatewayCaComponentsSchemasSingleResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'AccessGatewayCaComponentsSchemasSingleResponse(result: $result)';
+
  }

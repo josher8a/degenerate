@@ -36,13 +36,16 @@ WaitingroomPatchRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDes
   expression: expression ?? this.expression,
   position: position != null ? position() : this.position,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomPatchRule &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
-          position == other.position; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, position); } 
-@override String toString() { return 'WaitingroomPatchRule(action: $action, description: $description, enabled: $enabled, expression: $expression, position: $position)'; } 
+          position == other.position;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, position);
+
+@override String toString() => 'WaitingroomPatchRule(action: $action, description: $description, enabled: $enabled, expression: $expression, position: $position)';
+
  }

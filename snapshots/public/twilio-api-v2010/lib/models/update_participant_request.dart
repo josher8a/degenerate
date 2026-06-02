@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HoldMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HoldMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HoldMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HoldMethod($value)';
+
  }
 @immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });
 
@@ -116,7 +119,7 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
   coaching: coaching != null ? coaching() : this.coaching,
   callSidToCoach: callSidToCoach != null ? callSidToCoach() : this.callSidToCoach,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateParticipantRequest &&
           muted == other.muted &&
           hold == other.hold &&
@@ -129,7 +132,10 @@ UpdateParticipantRequest copyWith({bool? Function()? muted, bool? Function()? ho
           beepOnExit == other.beepOnExit &&
           endConferenceOnExit == other.endConferenceOnExit &&
           coaching == other.coaching &&
-          callSidToCoach == other.callSidToCoach; } 
-@override int get hashCode { return Object.hash(muted, hold, holdUrl, holdMethod, announceUrl, announceMethod, waitUrl, waitMethod, beepOnExit, endConferenceOnExit, coaching, callSidToCoach); } 
-@override String toString() { return 'UpdateParticipantRequest(muted: $muted, hold: $hold, holdUrl: $holdUrl, holdMethod: $holdMethod, announceUrl: $announceUrl, announceMethod: $announceMethod, waitUrl: $waitUrl, waitMethod: $waitMethod, beepOnExit: $beepOnExit, endConferenceOnExit: $endConferenceOnExit, coaching: $coaching, callSidToCoach: $callSidToCoach)'; } 
+          callSidToCoach == other.callSidToCoach;
+
+@override int get hashCode => Object.hash(muted, hold, holdUrl, holdMethod, announceUrl, announceMethod, waitUrl, waitMethod, beepOnExit, endConferenceOnExit, coaching, callSidToCoach);
+
+@override String toString() => 'UpdateParticipantRequest(muted: $muted, hold: $hold, holdUrl: $holdUrl, holdMethod: $holdMethod, announceUrl: $announceUrl, announceMethod: $announceMethod, waitUrl: $waitUrl, waitMethod: $waitMethod, beepOnExit: $beepOnExit, endConferenceOnExit: $endConferenceOnExit, coaching: $coaching, callSidToCoach: $callSidToCoach)';
+
  }

@@ -72,7 +72,7 @@ UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<L
   task: task ?? this.task,
   verdicts: verdicts ?? this.verdicts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponseResultScan &&
           asns == other.asns &&
           listEquals(certificates, other.certificates) &&
@@ -84,7 +84,10 @@ UrlscannerGetScanResponseResultScan copyWith({ScanAsns? Function()? asns, List<L
           page == other.page &&
           listEquals(performance, other.performance) &&
           task == other.task &&
-          verdicts == other.verdicts; } 
-@override int get hashCode { return Object.hash(asns, Object.hashAll(certificates), domains, geo, ips, links, meta, page, Object.hashAll(performance), task, verdicts); } 
-@override String toString() { return 'UrlscannerGetScanResponseResultScan(asns: $asns, certificates: $certificates, domains: $domains, geo: $geo, ips: $ips, links: $links, meta: $meta, page: $page, performance: $performance, task: $task, verdicts: $verdicts)'; } 
+          verdicts == other.verdicts;
+
+@override int get hashCode => Object.hash(asns, Object.hashAll(certificates), domains, geo, ips, links, meta, page, Object.hashAll(performance), task, verdicts);
+
+@override String toString() => 'UrlscannerGetScanResponseResultScan(asns: $asns, certificates: $certificates, domains: $domains, geo: $geo, ips: $ips, links: $links, meta: $meta, page: $page, performance: $performance, task: $task, verdicts: $verdicts)';
+
  }

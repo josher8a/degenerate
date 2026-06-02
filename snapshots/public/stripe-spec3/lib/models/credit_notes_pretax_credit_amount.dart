@@ -36,12 +36,15 @@ CreditNotesPretaxCreditAmount copyWith({int? amount, CreditBalanceTransaction? F
   discount: discount != null ? discount() : this.discount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditNotesPretaxCreditAmount &&
           amount == other.amount &&
           creditBalanceTransaction == other.creditBalanceTransaction &&
           discount == other.discount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, creditBalanceTransaction, discount, type); } 
-@override String toString() { return 'CreditNotesPretaxCreditAmount(amount: $amount, creditBalanceTransaction: $creditBalanceTransaction, discount: $discount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, creditBalanceTransaction, discount, type);
+
+@override String toString() => 'CreditNotesPretaxCreditAmount(amount: $amount, creditBalanceTransaction: $creditBalanceTransaction, discount: $discount, type: $type)';
+
  }

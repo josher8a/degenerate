@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CodeSecurityConfigurationSecretScanningDelegatedBypassOptions copyWith({List<CodeSecurityConfigurationSecretScanningDelegatedBypassOptionsReviewers>? Function()? reviewers}) { return CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(
   reviewers: reviewers != null ? reviewers() : this.reviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityConfigurationSecretScanningDelegatedBypassOptions &&
-          listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hashAll(reviewers ?? const []); } 
-@override String toString() { return 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(reviewers: $reviewers)'; } 
+          listEquals(reviewers, other.reviewers);
+
+@override int get hashCode => Object.hashAll(reviewers ?? const []);
+
+@override String toString() => 'CodeSecurityConfigurationSecretScanningDelegatedBypassOptions(reviewers: $reviewers)';
+
  }

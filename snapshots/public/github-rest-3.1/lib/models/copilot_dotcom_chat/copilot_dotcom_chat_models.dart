@@ -40,13 +40,16 @@ CopilotDotcomChatModels copyWith({String? Function()? name, bool? Function()? is
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
   totalChats: totalChats != null ? totalChats() : this.totalChats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotDotcomChatModels &&
           name == other.name &&
           isCustomModel == other.isCustomModel &&
           customModelTrainingDate == other.customModelTrainingDate &&
           totalEngagedUsers == other.totalEngagedUsers &&
-          totalChats == other.totalChats; } 
-@override int get hashCode { return Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, totalChats); } 
-@override String toString() { return 'CopilotDotcomChatModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, totalChats: $totalChats)'; } 
+          totalChats == other.totalChats;
+
+@override int get hashCode => Object.hash(name, isCustomModel, customModelTrainingDate, totalEngagedUsers, totalChats);
+
+@override String toString() => 'CopilotDotcomChatModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalEngagedUsers: $totalEngagedUsers, totalChats: $totalChats)';
+
  }

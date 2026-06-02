@@ -19,9 +19,12 @@ return errors; }
 DlpLimits copyWith({int? maxDatasetCells}) { return DlpLimits(
   maxDatasetCells: maxDatasetCells ?? this.maxDatasetCells,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpLimits &&
-          maxDatasetCells == other.maxDatasetCells; } 
-@override int get hashCode { return maxDatasetCells.hashCode; } 
-@override String toString() { return 'DlpLimits(maxDatasetCells: $maxDatasetCells)'; } 
+          maxDatasetCells == other.maxDatasetCells;
+
+@override int get hashCode => maxDatasetCells.hashCode;
+
+@override String toString() => 'DlpLimits(maxDatasetCells: $maxDatasetCells)';
+
  }

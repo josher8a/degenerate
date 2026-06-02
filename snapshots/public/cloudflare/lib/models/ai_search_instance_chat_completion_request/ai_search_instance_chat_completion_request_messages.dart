@@ -26,11 +26,14 @@ AiSearchInstanceChatCompletionRequestMessages copyWith({String? Function()? cont
   role: role ?? this.role,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChatCompletionRequestMessages &&
           content == other.content &&
           role == other.role &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(content, role, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'AiSearchInstanceChatCompletionRequestMessages(content: $content, role: $role, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(content, role, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'AiSearchInstanceChatCompletionRequestMessages(content: $content, role: $role, additionalProperties: $additionalProperties)';
+
  }

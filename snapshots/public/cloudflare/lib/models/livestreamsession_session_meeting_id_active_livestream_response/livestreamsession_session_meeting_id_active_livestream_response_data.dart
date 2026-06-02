@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ErrMessage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ErrMessage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ErrMessage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ErrMessage($value)';
+
  }
 @immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
 
@@ -98,7 +101,7 @@ LivestreamsessionSessionMeetingIdActiveLivestreamResponseData copyWith({DateTime
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   viewerSeconds: viewerSeconds != null ? viewerSeconds() : this.viewerSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LivestreamsessionSessionMeetingIdActiveLivestreamResponseData &&
           createdAt == other.createdAt &&
           errMessage == other.errMessage &&
@@ -109,7 +112,10 @@ LivestreamsessionSessionMeetingIdActiveLivestreamResponseData copyWith({DateTime
           paging == other.paging &&
           stoppedTime == other.stoppedTime &&
           updatedAt == other.updatedAt &&
-          viewerSeconds == other.viewerSeconds; } 
-@override int get hashCode { return Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, paging, stoppedTime, updatedAt, viewerSeconds); } 
-@override String toString() { return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, paging: $paging, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)'; } 
+          viewerSeconds == other.viewerSeconds;
+
+@override int get hashCode => Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, paging, stoppedTime, updatedAt, viewerSeconds);
+
+@override String toString() => 'LivestreamsessionSessionMeetingIdActiveLivestreamResponseData(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, paging: $paging, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)';
+
  }

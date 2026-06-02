@@ -19,19 +19,22 @@ final class PatchTagCategoryUpdateError$400 extends PatchTagCategoryUpdateError 
 
 final PatchTagCategoryUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PatchTagCategoryUpdateError$404 extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError$404(this.error);
 
 final PatchTagCategoryUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PatchTagCategoryUpdateError$409 extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError$409(this.error);
 
 final PatchTagCategoryUpdateResponse409 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class PatchTagCategoryUpdateError$Unknown extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError$Unknown(this.statusCode, this.rawBody, );
 

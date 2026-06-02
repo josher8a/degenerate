@@ -22,10 +22,13 @@ ChatTemplateKwargs copyWith({bool Function()? clearThinking, bool Function()? en
   clearThinking: clearThinking != null ? clearThinking() : this.clearThinking,
   enableThinking: enableThinking != null ? enableThinking() : this.enableThinking,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatTemplateKwargs &&
           clearThinking == other.clearThinking &&
-          enableThinking == other.enableThinking; } 
-@override int get hashCode { return Object.hash(clearThinking, enableThinking); } 
-@override String toString() { return 'ChatTemplateKwargs(clearThinking: $clearThinking, enableThinking: $enableThinking)'; } 
+          enableThinking == other.enableThinking;
+
+@override int get hashCode => Object.hash(clearThinking, enableThinking);
+
+@override String toString() => 'ChatTemplateKwargs(clearThinking: $clearThinking, enableThinking: $enableThinking)';
+
  }

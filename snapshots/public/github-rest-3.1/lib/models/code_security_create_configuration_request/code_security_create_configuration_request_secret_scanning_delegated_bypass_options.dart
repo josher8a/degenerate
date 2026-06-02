@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions copyWith({List<CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptionsReviewers>? Function()? reviewers}) { return CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions(
   reviewers: reviewers != null ? reviewers() : this.reviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions &&
-          listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hashAll(reviewers ?? const []); } 
-@override String toString() { return 'CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions(reviewers: $reviewers)'; } 
+          listEquals(reviewers, other.reviewers);
+
+@override int get hashCode => Object.hashAll(reviewers ?? const []);
+
+@override String toString() => 'CodeSecurityCreateConfigurationRequestSecretScanningDelegatedBypassOptions(reviewers: $reviewers)';
+
  }

@@ -31,11 +31,14 @@ WorkersBindingKindWasmModule copyWith({WorkersBindingName? name, String? $part, 
   $part: $part ?? this.$part,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindWasmModule &&
           name == other.name &&
           $part == other.$part &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, $part, type); } 
-@override String toString() { return 'WorkersBindingKindWasmModule(name: $name, \$part: ${$part}, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, $part, type);
+
+@override String toString() => 'WorkersBindingKindWasmModule(name: $name, \$part: ${$part}, type: $type)';
+
  }

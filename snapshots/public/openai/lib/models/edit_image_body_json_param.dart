@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamQuality($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamQuality && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EditImageBodyJsonParamQuality($value)';
+
  }
 @immutable final class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity._(this.value);
 
@@ -49,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamInputFidelity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamInputFidelity($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamInputFidelity && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EditImageBodyJsonParamInputFidelity($value)';
+
  }
 @immutable final class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize._(this.value);
 
@@ -79,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EditImageBodyJsonParamSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EditImageBodyJsonParamSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EditImageBodyJsonParamSize($value)';
+
  }
 /// JSON request body for image edits.
 /// 
@@ -233,7 +242,7 @@ EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model,
   stream: stream != null ? stream() : this.stream,
   partialImages: partialImages != null ? partialImages() : this.partialImages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EditImageBodyJsonParam &&
           model == other.model &&
           listEquals(images, other.images) &&
@@ -249,7 +258,10 @@ EditImageBodyJsonParam copyWith({EditImageBodyJsonParamModel? Function()? model,
           moderation == other.moderation &&
           background == other.background &&
           stream == other.stream &&
-          partialImages == other.partialImages; } 
-@override int get hashCode { return Object.hash(model, Object.hashAll(images), mask, prompt, n, quality, inputFidelity, size, user, outputFormat, outputCompression, moderation, background, stream, partialImages); } 
-@override String toString() { return 'EditImageBodyJsonParam(model: $model, images: $images, mask: $mask, prompt: $prompt, n: $n, quality: $quality, inputFidelity: $inputFidelity, size: $size, user: $user, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, stream: $stream, partialImages: $partialImages)'; } 
+          partialImages == other.partialImages;
+
+@override int get hashCode => Object.hash(model, Object.hashAll(images), mask, prompt, n, quality, inputFidelity, size, user, outputFormat, outputCompression, moderation, background, stream, partialImages);
+
+@override String toString() => 'EditImageBodyJsonParam(model: $model, images: $images, mask: $mask, prompt: $prompt, n: $n, quality: $quality, inputFidelity: $inputFidelity, size: $size, user: $user, outputFormat: $outputFormat, outputCompression: $outputCompression, moderation: $moderation, background: $background, stream: $stream, partialImages: $partialImages)';
+
  }

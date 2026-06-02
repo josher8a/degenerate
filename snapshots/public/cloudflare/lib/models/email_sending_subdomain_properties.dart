@@ -66,7 +66,7 @@ EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, Str
   name: name ?? this.name,
   tag: tag ?? this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSendingSubdomainProperties &&
           created == other.created &&
           emailSendingDkimSelector == other.emailSendingDkimSelector &&
@@ -75,7 +75,10 @@ EmailSendingSubdomainProperties copyWith({EmailCreated? Function()? created, Str
           enabled == other.enabled &&
           modified == other.modified &&
           name == other.name &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(created, emailSendingDkimSelector, emailSendingEnabled, emailSendingReturnPathDomain, enabled, modified, name, tag); } 
-@override String toString() { return 'EmailSendingSubdomainProperties(created: $created, emailSendingDkimSelector: $emailSendingDkimSelector, emailSendingEnabled: $emailSendingEnabled, emailSendingReturnPathDomain: $emailSendingReturnPathDomain, enabled: $enabled, modified: $modified, name: $name, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(created, emailSendingDkimSelector, emailSendingEnabled, emailSendingReturnPathDomain, enabled, modified, name, tag);
+
+@override String toString() => 'EmailSendingSubdomainProperties(created: $created, emailSendingDkimSelector: $emailSendingDkimSelector, emailSendingEnabled: $emailSendingEnabled, emailSendingReturnPathDomain: $emailSendingReturnPathDomain, enabled: $enabled, modified: $modified, name: $name, tag: $tag)';
+
  }

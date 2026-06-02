@@ -22,10 +22,13 @@ RunStepDetailsToolCallsFileSearchObjectFileSearch copyWith({RunStepDetailsToolCa
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
   results: results != null ? results() : this.results,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsFileSearchObjectFileSearch &&
           rankingOptions == other.rankingOptions &&
-          listEquals(results, other.results); } 
-@override int get hashCode { return Object.hash(rankingOptions, Object.hashAll(results ?? const [])); } 
-@override String toString() { return 'RunStepDetailsToolCallsFileSearchObjectFileSearch(rankingOptions: $rankingOptions, results: $results)'; } 
+          listEquals(results, other.results);
+
+@override int get hashCode => Object.hash(rankingOptions, Object.hashAll(results ?? const []));
+
+@override String toString() => 'RunStepDetailsToolCallsFileSearchObjectFileSearch(rankingOptions: $rankingOptions, results: $results)';
+
  }

@@ -57,12 +57,15 @@ SecondaryDnsTsig copyWith({SecondaryDnsAlgo? algo, SecondaryDnsSchemasIdentifier
   name: name ?? this.name,
   secret: secret ?? this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsTsig &&
           algo == other.algo &&
           id == other.id &&
           name == other.name &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(algo, id, name, secret); } 
-@override String toString() { return 'SecondaryDnsTsig(algo: $algo, id: $id, name: $name, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(algo, id, name, secret);
+
+@override String toString() => 'SecondaryDnsTsig(algo: $algo, id: $id, name: $name, secret: $secret)';
+
  }

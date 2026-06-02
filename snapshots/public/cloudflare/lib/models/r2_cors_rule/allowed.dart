@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Methods && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Methods($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Methods && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Methods($value)';
+
  }
 /// Object specifying allowed origins, methods and headers for this CORS rule.
 @immutable final class Allowed {const Allowed({required this.methods, required this.origins, this.headers, });
@@ -63,11 +66,14 @@ Allowed copyWith({List<String>? Function()? headers, List<Methods>? methods, Lis
   methods: methods ?? this.methods,
   origins: origins ?? this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Allowed &&
           listEquals(headers, other.headers) &&
           listEquals(methods, other.methods) &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(headers ?? const []), Object.hashAll(methods), Object.hashAll(origins)); } 
-@override String toString() { return 'Allowed(headers: $headers, methods: $methods, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(Object.hashAll(headers ?? const []), Object.hashAll(methods), Object.hashAll(origins));
+
+@override String toString() => 'Allowed(headers: $headers, methods: $methods, origins: $origins)';
+
  }

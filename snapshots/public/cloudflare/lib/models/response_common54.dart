@@ -30,11 +30,14 @@ ResponseCommon54 copyWith({List<RequestTracerMessages2>? errors, List<RequestTra
   messages: messages ?? this.messages,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommon54 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
-@override String toString() { return 'ResponseCommon54(errors: $errors, messages: $messages, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success);
+
+@override String toString() => 'ResponseCommon54(errors: $errors, messages: $messages, success: $success)';
+
  }

@@ -46,11 +46,14 @@ DnsRecordsSshfpRecordData copyWith({double? Function()? algorithm, String? Funct
   fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSshfpRecordData &&
           algorithm == other.algorithm &&
           fingerprint == other.fingerprint &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(algorithm, fingerprint, type); } 
-@override String toString() { return 'DnsRecordsSshfpRecordData(algorithm: $algorithm, fingerprint: $fingerprint, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(algorithm, fingerprint, type);
+
+@override String toString() => 'DnsRecordsSshfpRecordData(algorithm: $algorithm, fingerprint: $fingerprint, type: $type)';
+
  }

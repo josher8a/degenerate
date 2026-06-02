@@ -20,25 +20,29 @@ final class ListCatalogsError$400 extends ListCatalogsError {const ListCatalogsE
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ListCatalogsError$401 extends ListCatalogsError {const ListCatalogsError$401(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ListCatalogsError$403 extends ListCatalogsError {const ListCatalogsError$403(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ListCatalogsError$500 extends ListCatalogsError {const ListCatalogsError$500(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ListCatalogsError$Unknown extends ListCatalogsError {const ListCatalogsError$Unknown(this.statusCode, this.rawBody, );
 

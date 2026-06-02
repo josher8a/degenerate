@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountSessionObject($value)';
+
  }
 /// An AccountSession allows a Connect platform to grant access to a connected account in Connect embedded components.
 /// 
@@ -88,14 +91,17 @@ AccountSession copyWith({String? account, String? clientSecret, ConnectEmbeddedA
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSession &&
           account == other.account &&
           clientSecret == other.clientSecret &&
           components == other.components &&
           expiresAt == other.expiresAt &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(account, clientSecret, components, expiresAt, livemode, object); } 
-@override String toString() { return 'AccountSession(account: $account, clientSecret: $clientSecret, components: $components, expiresAt: $expiresAt, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(account, clientSecret, components, expiresAt, livemode, object);
+
+@override String toString() => 'AccountSession(account: $account, clientSecret: $clientSecret, components: $components, expiresAt: $expiresAt, livemode: $livemode, object: $object)';
+
  }

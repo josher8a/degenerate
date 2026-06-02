@@ -56,14 +56,17 @@ PostFinancialConnectionsSessionsRequest copyWith({AccountHolder? accountHolder, 
   prefetch: prefetch != null ? prefetch() : this.prefetch,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostFinancialConnectionsSessionsRequest &&
           accountHolder == other.accountHolder &&
           listEquals(expand, other.expand) &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
           listEquals(prefetch, other.prefetch) &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return Object.hash(accountHolder, Object.hashAll(expand ?? const []), filters, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl); } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequest(accountHolder: $accountHolder, expand: $expand, filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => Object.hash(accountHolder, Object.hashAll(expand ?? const []), filters, Object.hashAll(permissions), Object.hashAll(prefetch ?? const []), returnUrl);
+
+@override String toString() => 'PostFinancialConnectionsSessionsRequest(accountHolder: $accountHolder, expand: $expand, filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)';
+
  }

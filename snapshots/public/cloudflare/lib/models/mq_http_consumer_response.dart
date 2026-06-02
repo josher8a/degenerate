@@ -41,14 +41,17 @@ MqHttpConsumerResponse copyWith({MqIdentifier? Function()? consumerId, DateTime?
   settings: settings != null ? settings() : this.settings,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqHttpConsumerResponse &&
           consumerId == other.consumerId &&
           createdOn == other.createdOn &&
           deadLetterQueue == other.deadLetterQueue &&
           queueName == other.queueName &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(consumerId, createdOn, deadLetterQueue, queueName, settings, type); } 
-@override String toString() { return 'MqHttpConsumerResponse(consumerId: $consumerId, createdOn: $createdOn, deadLetterQueue: $deadLetterQueue, queueName: $queueName, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(consumerId, createdOn, deadLetterQueue, queueName, settings, type);
+
+@override String toString() => 'MqHttpConsumerResponse(consumerId: $consumerId, createdOn: $createdOn, deadLetterQueue: $deadLetterQueue, queueName: $queueName, settings: $settings, type: $type)';
+
  }

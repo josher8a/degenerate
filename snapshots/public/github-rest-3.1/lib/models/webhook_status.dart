@@ -113,7 +113,7 @@ WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, We
   targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStatus &&
           avatarUrl == other.avatarUrl &&
           listEquals(branches, other.branches) &&
@@ -131,7 +131,10 @@ WebhookStatus copyWith({Uri? Function()? avatarUrl, List<Branches>? branches, We
           sha == other.sha &&
           state == other.state &&
           targetUrl == other.targetUrl &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt); } 
-@override String toString() { return 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt);
+
+@override String toString() => 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)';
+
  }

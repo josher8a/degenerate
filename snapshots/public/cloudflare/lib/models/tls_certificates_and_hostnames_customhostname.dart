@@ -62,10 +62,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)';
+
  }
 /// This is the time the hostname was created.
 extension type TlsCertificatesAndHostnamesCreatedAt(DateTime value) {
@@ -151,7 +154,7 @@ TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesC
   status: status != null ? status() : this.status,
   verificationErrors: verificationErrors != null ? verificationErrors() : this.verificationErrors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomhostname &&
           createdAt == other.createdAt &&
           customMetadata == other.customMetadata &&
@@ -163,7 +166,10 @@ TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesC
           ownershipVerificationHttp == other.ownershipVerificationHttp &&
           ssl == other.ssl &&
           status == other.status &&
-          listEquals(verificationErrors, other.verificationErrors); } 
-@override int get hashCode { return Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const [])); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)'; } 
+          listEquals(verificationErrors, other.verificationErrors);
+
+@override int get hashCode => Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const []));
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)';
+
  }

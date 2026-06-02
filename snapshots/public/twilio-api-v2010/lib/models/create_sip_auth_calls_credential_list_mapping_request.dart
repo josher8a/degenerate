@@ -22,9 +22,12 @@ return errors; }
 CreateSipAuthCallsCredentialListMappingRequest copyWith({String? credentialListSid}) { return CreateSipAuthCallsCredentialListMappingRequest(
   credentialListSid: credentialListSid ?? this.credentialListSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipAuthCallsCredentialListMappingRequest &&
-          credentialListSid == other.credentialListSid; } 
-@override int get hashCode { return credentialListSid.hashCode; } 
-@override String toString() { return 'CreateSipAuthCallsCredentialListMappingRequest(credentialListSid: $credentialListSid)'; } 
+          credentialListSid == other.credentialListSid;
+
+@override int get hashCode => credentialListSid.hashCode;
+
+@override String toString() => 'CreateSipAuthCallsCredentialListMappingRequest(credentialListSid: $credentialListSid)';
+
  }

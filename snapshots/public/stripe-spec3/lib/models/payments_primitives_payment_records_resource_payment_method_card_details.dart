@@ -50,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)';
+
  }
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(this.value);
@@ -81,10 +84,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)';
+
  }
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(this.value);
@@ -136,10 +142,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)';
+
  }
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
 @immutable final class StoredCredentialUsage {const StoredCredentialUsage._(this.value);
@@ -161,10 +170,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StoredCredentialUsage && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StoredCredentialUsage($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StoredCredentialUsage && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StoredCredentialUsage($value)';
+
  }
 /// Details of the card used for this payment attempt.
 @immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails({required this.brand, required this.expMonth, required this.expYear, required this.funding, required this.last4, this.authorizationCode, this.captureBefore, this.checks, this.country, this.description, this.fingerprint, this.iin, this.installments, this.issuer, this.network, this.networkAdviceCode, this.networkDeclineCode, this.networkToken, this.networkTransactionId, this.storedCredentialUsage, this.threeDSecure, this.wallet, });
@@ -355,7 +367,7 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Strin
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails &&
           authorizationCode == other.authorizationCode &&
           brand == other.brand &&
@@ -378,7 +390,10 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({Strin
           networkTransactionId == other.networkTransactionId &&
           storedCredentialUsage == other.storedCredentialUsage &&
           threeDSecure == other.threeDSecure &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([authorizationCode, brand, captureBefore, checks, country, description, expMonth, expYear, fingerprint, funding, iin, installments, issuer, last4, network, networkAdviceCode, networkDeclineCode, networkToken, networkTransactionId, storedCredentialUsage, threeDSecure, wallet]); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, iin: $iin, installments: $installments, issuer: $issuer, last4: $last4, network: $network, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkToken: $networkToken, networkTransactionId: $networkTransactionId, storedCredentialUsage: $storedCredentialUsage, threeDSecure: $threeDSecure, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hashAll([authorizationCode, brand, captureBefore, checks, country, description, expMonth, expYear, fingerprint, funding, iin, installments, issuer, last4, network, networkAdviceCode, networkDeclineCode, networkToken, networkTransactionId, storedCredentialUsage, threeDSecure, wallet]);
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, description: $description, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, iin: $iin, installments: $installments, issuer: $issuer, last4: $last4, network: $network, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkToken: $networkToken, networkTransactionId: $networkTransactionId, storedCredentialUsage: $storedCredentialUsage, threeDSecure: $threeDSecure, wallet: $wallet)';
+
  }

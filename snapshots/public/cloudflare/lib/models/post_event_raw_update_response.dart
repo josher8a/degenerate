@@ -22,10 +22,13 @@ PostEventRawUpdateResponse copyWith({Map<String,dynamic>? data, String? id, }) {
   data: data ?? this.data,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventRawUpdateResponse &&
           data == other.data &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(data, id); } 
-@override String toString() { return 'PostEventRawUpdateResponse(data: $data, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(data, id);
+
+@override String toString() => 'PostEventRawUpdateResponse(data: $data, id: $id)';
+
  }

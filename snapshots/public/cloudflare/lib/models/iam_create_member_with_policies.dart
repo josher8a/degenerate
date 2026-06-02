@@ -27,11 +27,14 @@ IamCreateMemberWithPolicies copyWith({IamEmail? email, List<IamCreateMemberPolic
   policies: policies ?? this.policies,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateMemberWithPolicies &&
           email == other.email &&
           listEquals(policies, other.policies) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(email, Object.hashAll(policies), status); } 
-@override String toString() { return 'IamCreateMemberWithPolicies(email: $email, policies: $policies, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(email, Object.hashAll(policies), status);
+
+@override String toString() => 'IamCreateMemberWithPolicies(email: $email, policies: $policies, status: $status)';
+
  }

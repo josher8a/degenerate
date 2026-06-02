@@ -31,12 +31,15 @@ PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMet
   klarna: klarna != null ? klarna() : this.klarna,
   paypal: paypal != null ? paypal() : this.paypal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions &&
           card == other.card &&
           cardPresent == other.cardPresent &&
           klarna == other.klarna &&
-          paypal == other.paypal; } 
-@override int get hashCode { return Object.hash(card, cardPresent, klarna, paypal); } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions(card: $card, cardPresent: $cardPresent, klarna: $klarna, paypal: $paypal)'; } 
+          paypal == other.paypal;
+
+@override int get hashCode => Object.hash(card, cardPresent, klarna, paypal);
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions(card: $card, cardPresent: $cardPresent, klarna: $klarna, paypal: $paypal)';
+
  }

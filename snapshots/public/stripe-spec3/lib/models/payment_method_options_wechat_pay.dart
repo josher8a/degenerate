@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodOptionsWechatPayClient && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodOptionsWechatPayClient($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodOptionsWechatPayClient && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodOptionsWechatPayClient($value)';
+
  }
 /// 
 @immutable final class PaymentMethodOptionsWechatPay {const PaymentMethodOptionsWechatPay({this.appId, this.client, this.setupFutureUsage, });
@@ -70,11 +73,14 @@ PaymentMethodOptionsWechatPay copyWith({String? Function()? appId, PaymentMethod
   client: client != null ? client() : this.client,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsWechatPay &&
           appId == other.appId &&
           client == other.client &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(appId, client, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsWechatPay(appId: $appId, client: $client, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(appId, client, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsWechatPay(appId: $appId, client: $client, setupFutureUsage: $setupFutureUsage)';
+
  }

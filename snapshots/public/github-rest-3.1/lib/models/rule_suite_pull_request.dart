@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RuleSuitePullRequest copyWith({RuleSuitePullRequestPullRequest? Function()? pullRequest}) { return RuleSuitePullRequest(
   pullRequest: pullRequest != null ? pullRequest() : this.pullRequest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuitePullRequest &&
-          pullRequest == other.pullRequest; } 
-@override int get hashCode { return pullRequest.hashCode; } 
-@override String toString() { return 'RuleSuitePullRequest(pullRequest: $pullRequest)'; } 
+          pullRequest == other.pullRequest;
+
+@override int get hashCode => pullRequest.hashCode;
+
+@override String toString() => 'RuleSuitePullRequest(pullRequest: $pullRequest)';
+
  }

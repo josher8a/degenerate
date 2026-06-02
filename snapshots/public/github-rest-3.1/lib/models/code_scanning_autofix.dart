@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeScanningAutofixStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CodeScanningAutofixStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningAutofixStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeScanningAutofixStatus($value)';
+
  }
 /// The description of an autofix.
 extension type const CodeScanningAutofixDescription(String value) {
@@ -75,11 +78,14 @@ CodeScanningAutofix copyWith({CodeScanningAutofixStatus? status, CodeScanningAut
   description: description != null ? description() : this.description,
   startedAt: startedAt ?? this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAutofix &&
           status == other.status &&
           description == other.description &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(status, description, startedAt); } 
-@override String toString() { return 'CodeScanningAutofix(status: $status, description: $description, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(status, description, startedAt);
+
+@override String toString() => 'CodeScanningAutofix(status: $status, description: $description, startedAt: $startedAt)';
+
  }

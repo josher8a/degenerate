@@ -52,7 +52,7 @@ PostBillingPortalConfigurationsRequest copyWith({PostBillingPortalConfigurations
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsRequest &&
           businessProfile == other.businessProfile &&
           defaultReturnUrl == other.defaultReturnUrl &&
@@ -60,7 +60,10 @@ PostBillingPortalConfigurationsRequest copyWith({PostBillingPortalConfigurations
           features == other.features &&
           loginPage == other.loginPage &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(businessProfile, defaultReturnUrl, Object.hashAll(expand ?? const []), features, loginPage, metadata, name); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequest(businessProfile: $businessProfile, defaultReturnUrl: $defaultReturnUrl, expand: $expand, features: $features, loginPage: $loginPage, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(businessProfile, defaultReturnUrl, Object.hashAll(expand ?? const []), features, loginPage, metadata, name);
+
+@override String toString() => 'PostBillingPortalConfigurationsRequest(businessProfile: $businessProfile, defaultReturnUrl: $defaultReturnUrl, expand: $expand, features: $features, loginPage: $loginPage, metadata: $metadata, name: $name)';
+
  }

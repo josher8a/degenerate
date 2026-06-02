@@ -21,10 +21,13 @@ Minimum copyWith({ShippingRateDeliveryEstimateBoundUnit? unit, int? value, }) { 
   unit: unit ?? this.unit,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Minimum &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'Minimum(unit: $unit, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(unit, value);
+
+@override String toString() => 'Minimum(unit: $unit, value: $value)';
+
  }

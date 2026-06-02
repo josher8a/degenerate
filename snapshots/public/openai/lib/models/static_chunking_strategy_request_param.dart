@@ -23,10 +23,13 @@ StaticChunkingStrategyRequestParam copyWith({String? type, StaticChunkingStrateg
   type: type ?? this.type,
   $static: $static ?? this.$static,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StaticChunkingStrategyRequestParam &&
           type == other.type &&
-          $static == other.$static; } 
-@override int get hashCode { return Object.hash(type, $static); } 
-@override String toString() { return 'StaticChunkingStrategyRequestParam(type: $type, \$static: ${$static})'; } 
+          $static == other.$static;
+
+@override int get hashCode => Object.hash(type, $static);
+
+@override String toString() => 'StaticChunkingStrategyRequestParam(type: $type, \$static: ${$static})';
+
  }

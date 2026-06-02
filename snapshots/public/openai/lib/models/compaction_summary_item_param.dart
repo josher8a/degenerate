@@ -34,11 +34,14 @@ CompactionSummaryItemParam copyWith({String? Function()? id, String? type, Strin
   type: type ?? this.type,
   encryptedContent: encryptedContent ?? this.encryptedContent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompactionSummaryItemParam &&
           id == other.id &&
           type == other.type &&
-          encryptedContent == other.encryptedContent; } 
-@override int get hashCode { return Object.hash(id, type, encryptedContent); } 
-@override String toString() { return 'CompactionSummaryItemParam(id: $id, type: $type, encryptedContent: $encryptedContent)'; } 
+          encryptedContent == other.encryptedContent;
+
+@override int get hashCode => Object.hash(id, type, encryptedContent);
+
+@override String toString() => 'CompactionSummaryItemParam(id: $id, type: $type, encryptedContent: $encryptedContent)';
+
  }

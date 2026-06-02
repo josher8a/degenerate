@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfBaaiBgeRerankerBaseError$400 extends WorkersAiPost
 
 final WorkersAiPostRunCfBaaiBgeRerankerBaseResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfBaaiBgeRerankerBaseError$Unknown extends WorkersAiPostRunCfBaaiBgeRerankerBaseError {const WorkersAiPostRunCfBaaiBgeRerankerBaseError$Unknown(this.statusCode, this.rawBody, );
 

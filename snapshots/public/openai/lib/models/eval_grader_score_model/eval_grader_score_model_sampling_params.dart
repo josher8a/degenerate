@@ -51,13 +51,16 @@ EvalGraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Func
   maxCompletionsTokens: maxCompletionsTokens != null ? maxCompletionsTokens() : this.maxCompletionsTokens,
   reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalGraderScoreModelSamplingParams &&
           seed == other.seed &&
           topP == other.topP &&
           temperature == other.temperature &&
           maxCompletionsTokens == other.maxCompletionsTokens &&
-          reasoningEffort == other.reasoningEffort; } 
-@override int get hashCode { return Object.hash(seed, topP, temperature, maxCompletionsTokens, reasoningEffort); } 
-@override String toString() { return 'EvalGraderScoreModelSamplingParams(seed: $seed, topP: $topP, temperature: $temperature, maxCompletionsTokens: $maxCompletionsTokens, reasoningEffort: $reasoningEffort)'; } 
+          reasoningEffort == other.reasoningEffort;
+
+@override int get hashCode => Object.hash(seed, topP, temperature, maxCompletionsTokens, reasoningEffort);
+
+@override String toString() => 'EvalGraderScoreModelSamplingParams(seed: $seed, topP: $topP, temperature: $temperature, maxCompletionsTokens: $maxCompletionsTokens, reasoningEffort: $reasoningEffort)';
+
  }

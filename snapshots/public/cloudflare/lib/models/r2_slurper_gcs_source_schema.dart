@@ -44,13 +44,16 @@ R2SlurperGcsSourceSchema copyWith({String? bucket, List<String>? Function()? key
   secret: secret ?? this.secret,
   vendor: vendor ?? this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperGcsSourceSchema &&
           bucket == other.bucket &&
           listEquals(keys, other.keys) &&
           pathPrefix == other.pathPrefix &&
           secret == other.secret &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, Object.hashAll(keys ?? const []), pathPrefix, secret, vendor); } 
-@override String toString() { return 'R2SlurperGcsSourceSchema(bucket: $bucket, keys: $keys, pathPrefix: $pathPrefix, secret: $secret, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, Object.hashAll(keys ?? const []), pathPrefix, secret, vendor);
+
+@override String toString() => 'R2SlurperGcsSourceSchema(bucket: $bucket, keys: $keys, pathPrefix: $pathPrefix, secret: $secret, vendor: $vendor)';
+
  }

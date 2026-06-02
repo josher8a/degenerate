@@ -34,12 +34,15 @@ SshSigningKey copyWith({String? key, int? id, String? title, DateTime? createdAt
   title: title ?? this.title,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SshSigningKey &&
           key == other.key &&
           id == other.id &&
           title == other.title &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(key, id, title, createdAt); } 
-@override String toString() { return 'SshSigningKey(key: $key, id: $id, title: $title, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(key, id, title, createdAt);
+
+@override String toString() => 'SshSigningKey(key: $key, id: $id, title: $title, createdAt: $createdAt)';
+
  }

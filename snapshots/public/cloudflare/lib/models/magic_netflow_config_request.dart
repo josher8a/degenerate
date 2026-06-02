@@ -73,13 +73,16 @@ MagicNetflowConfigRequest copyWith({int? Function()? activeTimeout, String? Func
   inactiveTimeout: inactiveTimeout != null ? inactiveTimeout() : this.inactiveTimeout,
   samplingRate: samplingRate != null ? samplingRate() : this.samplingRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNetflowConfigRequest &&
           activeTimeout == other.activeTimeout &&
           collectorIp == other.collectorIp &&
           collectorPort == other.collectorPort &&
           inactiveTimeout == other.inactiveTimeout &&
-          samplingRate == other.samplingRate; } 
-@override int get hashCode { return Object.hash(activeTimeout, collectorIp, collectorPort, inactiveTimeout, samplingRate); } 
-@override String toString() { return 'MagicNetflowConfigRequest(activeTimeout: $activeTimeout, collectorIp: $collectorIp, collectorPort: $collectorPort, inactiveTimeout: $inactiveTimeout, samplingRate: $samplingRate)'; } 
+          samplingRate == other.samplingRate;
+
+@override int get hashCode => Object.hash(activeTimeout, collectorIp, collectorPort, inactiveTimeout, samplingRate);
+
+@override String toString() => 'MagicNetflowConfigRequest(activeTimeout: $activeTimeout, collectorIp: $collectorIp, collectorPort: $collectorPort, inactiveTimeout: $inactiveTimeout, samplingRate: $samplingRate)';
+
  }

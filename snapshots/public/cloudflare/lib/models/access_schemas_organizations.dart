@@ -65,7 +65,7 @@ AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDo
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasOrganizations &&
           authDomain == other.authDomain &&
           createdAt == other.createdAt &&
@@ -76,7 +76,10 @@ AccessSchemasOrganizations copyWith({AccessSchemasAuthDomain? Function()? authDo
           name == other.name &&
           uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
           updatedAt == other.updatedAt &&
-          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime; } 
-@override int get hashCode { return Object.hash(authDomain, createdAt, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime); } 
-@override String toString() { return 'AccessSchemasOrganizations(authDomain: $authDomain, createdAt: $createdAt, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)'; } 
+          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime;
+
+@override int get hashCode => Object.hash(authDomain, createdAt, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, name, uiReadOnlyToggleReason, updatedAt, userSeatExpirationInactiveTime);
+
+@override String toString() => 'AccessSchemasOrganizations(authDomain: $authDomain, createdAt: $createdAt, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, name: $name, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, updatedAt: $updatedAt, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime)';
+
  }

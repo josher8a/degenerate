@@ -28,11 +28,14 @@ GetLivestreamAnalyticsCompleteResponseData copyWith({int? Function()? count, int
   totalIngestSeconds: totalIngestSeconds != null ? totalIngestSeconds() : this.totalIngestSeconds,
   totalViewerSeconds: totalViewerSeconds != null ? totalViewerSeconds() : this.totalViewerSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetLivestreamAnalyticsCompleteResponseData &&
           count == other.count &&
           totalIngestSeconds == other.totalIngestSeconds &&
-          totalViewerSeconds == other.totalViewerSeconds; } 
-@override int get hashCode { return Object.hash(count, totalIngestSeconds, totalViewerSeconds); } 
-@override String toString() { return 'GetLivestreamAnalyticsCompleteResponseData(count: $count, totalIngestSeconds: $totalIngestSeconds, totalViewerSeconds: $totalViewerSeconds)'; } 
+          totalViewerSeconds == other.totalViewerSeconds;
+
+@override int get hashCode => Object.hash(count, totalIngestSeconds, totalViewerSeconds);
+
+@override String toString() => 'GetLivestreamAnalyticsCompleteResponseData(count: $count, totalIngestSeconds: $totalIngestSeconds, totalViewerSeconds: $totalViewerSeconds)';
+
  }

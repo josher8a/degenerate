@@ -22,10 +22,13 @@ SubscriptionScheduleAddInvoiceItemPeriod copyWith({SubscriptionSchedulesResource
   end: end ?? this.end,
   start: start ?? this.start,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionScheduleAddInvoiceItemPeriod &&
           end == other.end &&
-          start == other.start; } 
-@override int get hashCode { return Object.hash(end, start); } 
-@override String toString() { return 'SubscriptionScheduleAddInvoiceItemPeriod(end: $end, start: $start)'; } 
+          start == other.start;
+
+@override int get hashCode => Object.hash(end, start);
+
+@override String toString() => 'SubscriptionScheduleAddInvoiceItemPeriod(end: $end, start: $start)';
+
  }

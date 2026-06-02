@@ -45,10 +45,13 @@ EvalCustomDataSourceConfig copyWith({ChatCompletionMessageCustomToolCallType? ty
   type: type ?? this.type,
   schema: schema ?? this.schema,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalCustomDataSourceConfig &&
           type == other.type &&
-          schema == other.schema; } 
-@override int get hashCode { return Object.hash(type, schema); } 
-@override String toString() { return 'EvalCustomDataSourceConfig(type: $type, schema: $schema)'; } 
+          schema == other.schema;
+
+@override int get hashCode => Object.hash(type, schema);
+
+@override String toString() => 'EvalCustomDataSourceConfig(type: $type, schema: $schema)';
+
  }

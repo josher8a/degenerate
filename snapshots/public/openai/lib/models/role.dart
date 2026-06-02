@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RoleObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RoleObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RoleObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RoleObject($value)';
+
  }
 /// Details about a role that can be assigned through the public Roles API.
 @immutable final class Role {const Role({required this.object, required this.id, required this.name, required this.description, required this.permissions, required this.resourceType, required this.predefinedRole, });
@@ -81,7 +84,7 @@ Role copyWith({RoleObject? object, String? id, String? name, String? Function()?
   resourceType: resourceType ?? this.resourceType,
   predefinedRole: predefinedRole ?? this.predefinedRole,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Role &&
           object == other.object &&
           id == other.id &&
@@ -89,7 +92,10 @@ Role copyWith({RoleObject? object, String? id, String? name, String? Function()?
           description == other.description &&
           listEquals(permissions, other.permissions) &&
           resourceType == other.resourceType &&
-          predefinedRole == other.predefinedRole; } 
-@override int get hashCode { return Object.hash(object, id, name, description, Object.hashAll(permissions), resourceType, predefinedRole); } 
-@override String toString() { return 'Role(object: $object, id: $id, name: $name, description: $description, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole)'; } 
+          predefinedRole == other.predefinedRole;
+
+@override int get hashCode => Object.hash(object, id, name, description, Object.hashAll(permissions), resourceType, predefinedRole);
+
+@override String toString() => 'Role(object: $object, id: $id, name: $name, description: $description, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole)';
+
  }

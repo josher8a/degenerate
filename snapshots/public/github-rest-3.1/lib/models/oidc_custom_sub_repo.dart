@@ -23,10 +23,13 @@ OidcCustomSubRepo copyWith({bool? useDefault, List<String>? Function()? includeC
   useDefault: useDefault ?? this.useDefault,
   includeClaimKeys: includeClaimKeys != null ? includeClaimKeys() : this.includeClaimKeys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OidcCustomSubRepo &&
           useDefault == other.useDefault &&
-          listEquals(includeClaimKeys, other.includeClaimKeys); } 
-@override int get hashCode { return Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const [])); } 
-@override String toString() { return 'OidcCustomSubRepo(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)'; } 
+          listEquals(includeClaimKeys, other.includeClaimKeys);
+
+@override int get hashCode => Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const []));
+
+@override String toString() => 'OidcCustomSubRepo(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)';
+
  }

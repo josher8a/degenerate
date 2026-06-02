@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Partitioning copyWith({String? Function()? timePattern}) { return Partitioning(
   timePattern: timePattern != null ? timePattern() : this.timePattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Partitioning &&
-          timePattern == other.timePattern; } 
-@override int get hashCode { return timePattern.hashCode; } 
-@override String toString() { return 'Partitioning(timePattern: $timePattern)'; } 
+          timePattern == other.timePattern;
+
+@override int get hashCode => timePattern.hashCode;
+
+@override String toString() => 'Partitioning(timePattern: $timePattern)';
+
  }

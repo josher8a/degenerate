@@ -21,9 +21,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessGeo copyWith({String? Function()? country}) { return AccessGeo(
   country: country != null ? country() : this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessGeo &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'AccessGeo(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'AccessGeo(country: $country)';
+
  }

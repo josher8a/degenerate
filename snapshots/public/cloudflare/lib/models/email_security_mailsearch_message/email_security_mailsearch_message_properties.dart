@@ -37,10 +37,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AllowlistedPatternType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AllowlistedPatternType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowlistedPatternType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AllowlistedPatternType($value)';
+
  }
 @immutable final class WhitelistedPatternType {const WhitelistedPatternType._(this.value);
 
@@ -79,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WhitelistedPatternType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WhitelistedPatternType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WhitelistedPatternType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WhitelistedPatternType($value)';
+
  }
 @immutable final class EmailSecurityMailsearchMessageProperties {const EmailSecurityMailsearchMessageProperties({this.allowlistedPattern, this.allowlistedPatternType, this.blocklistedMessage, this.blocklistedPattern, this.whitelistedPatternType, });
 
@@ -119,13 +125,16 @@ EmailSecurityMailsearchMessageProperties copyWith({String? Function()? allowlist
   blocklistedPattern: blocklistedPattern != null ? blocklistedPattern() : this.blocklistedPattern,
   whitelistedPatternType: whitelistedPatternType != null ? whitelistedPatternType() : this.whitelistedPatternType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMailsearchMessageProperties &&
           allowlistedPattern == other.allowlistedPattern &&
           allowlistedPatternType == other.allowlistedPatternType &&
           blocklistedMessage == other.blocklistedMessage &&
           blocklistedPattern == other.blocklistedPattern &&
-          whitelistedPatternType == other.whitelistedPatternType; } 
-@override int get hashCode { return Object.hash(allowlistedPattern, allowlistedPatternType, blocklistedMessage, blocklistedPattern, whitelistedPatternType); } 
-@override String toString() { return 'EmailSecurityMailsearchMessageProperties(allowlistedPattern: $allowlistedPattern, allowlistedPatternType: $allowlistedPatternType, blocklistedMessage: $blocklistedMessage, blocklistedPattern: $blocklistedPattern, whitelistedPatternType: $whitelistedPatternType)'; } 
+          whitelistedPatternType == other.whitelistedPatternType;
+
+@override int get hashCode => Object.hash(allowlistedPattern, allowlistedPatternType, blocklistedMessage, blocklistedPattern, whitelistedPatternType);
+
+@override String toString() => 'EmailSecurityMailsearchMessageProperties(allowlistedPattern: $allowlistedPattern, allowlistedPatternType: $allowlistedPatternType, blocklistedMessage: $blocklistedMessage, blocklistedPattern: $blocklistedPattern, whitelistedPatternType: $whitelistedPatternType)';
+
  }

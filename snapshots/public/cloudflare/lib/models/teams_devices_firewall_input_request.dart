@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesFirewallInputRequestOperatingSystem && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsDevicesFirewallInputRequestOperatingSystem($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesFirewallInputRequestOperatingSystem && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsDevicesFirewallInputRequestOperatingSystem($value)';
+
  }
 @immutable final class TeamsDevicesFirewallInputRequest {const TeamsDevicesFirewallInputRequest({required this.enabled, required this.operatingSystem, });
 
@@ -52,10 +55,13 @@ TeamsDevicesFirewallInputRequest copyWith({bool? enabled, TeamsDevicesFirewallIn
   enabled: enabled ?? this.enabled,
   operatingSystem: operatingSystem ?? this.operatingSystem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesFirewallInputRequest &&
           enabled == other.enabled &&
-          operatingSystem == other.operatingSystem; } 
-@override int get hashCode { return Object.hash(enabled, operatingSystem); } 
-@override String toString() { return 'TeamsDevicesFirewallInputRequest(enabled: $enabled, operatingSystem: $operatingSystem)'; } 
+          operatingSystem == other.operatingSystem;
+
+@override int get hashCode => Object.hash(enabled, operatingSystem);
+
+@override String toString() => 'TeamsDevicesFirewallInputRequest(enabled: $enabled, operatingSystem: $operatingSystem)';
+
  }

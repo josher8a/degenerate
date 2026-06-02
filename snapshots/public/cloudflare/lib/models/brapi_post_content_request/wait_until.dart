@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitUntilVariant1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitUntilVariant1($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitUntilVariant1 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitUntilVariant1($value)';
+
  }
 @immutable final class WaitUntilVariant2 {const WaitUntilVariant2._(this.value);
 
@@ -37,10 +40,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitUntilVariant2 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitUntilVariant2($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitUntilVariant2 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitUntilVariant2($value)';
+
  }
 @immutable final class WaitUntilVariant3 {const WaitUntilVariant3._(this.value);
 
@@ -58,10 +64,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitUntilVariant3 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitUntilVariant3($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitUntilVariant3 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitUntilVariant3($value)';
+
  }
 @immutable final class WaitUntilVariant4 {const WaitUntilVariant4._(this.value);
 
@@ -79,10 +88,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitUntilVariant4 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitUntilVariant4($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitUntilVariant4 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitUntilVariant4($value)';
+
  }
 @immutable final class WaitUntilVariant5 {const WaitUntilVariant5._(this.value);
 
@@ -109,9 +121,12 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitUntilVariant5 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitUntilVariant5($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitUntilVariant5 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitUntilVariant5($value)';
+
  }
 typedef WaitUntil = OneOf5<WaitUntilVariant1,WaitUntilVariant2,WaitUntilVariant3,WaitUntilVariant4,List<WaitUntilVariant5>>;

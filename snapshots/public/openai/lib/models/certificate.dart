@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CertificateObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CertificateObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CertificateObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CertificateObject($value)';
+
  }
 /// Represents an individual `certificate` uploaded to the organization.
 @immutable final class Certificate {const Certificate({required this.object, required this.id, required this.name, required this.createdAt, required this.certificateDetails, this.active, });
@@ -88,14 +91,17 @@ Certificate copyWith({CertificateObject? object, String? id, String? name, int? 
   certificateDetails: certificateDetails ?? this.certificateDetails,
   active: active != null ? active() : this.active,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Certificate &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           createdAt == other.createdAt &&
           certificateDetails == other.certificateDetails &&
-          active == other.active; } 
-@override int get hashCode { return Object.hash(object, id, name, createdAt, certificateDetails, active); } 
-@override String toString() { return 'Certificate(object: $object, id: $id, name: $name, createdAt: $createdAt, certificateDetails: $certificateDetails, active: $active)'; } 
+          active == other.active;
+
+@override int get hashCode => Object.hash(object, id, name, createdAt, certificateDetails, active);
+
+@override String toString() => 'Certificate(object: $object, id: $id, name: $name, createdAt: $createdAt, certificateDetails: $certificateDetails, active: $active)';
+
  }

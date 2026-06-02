@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('paylo
 WafContentScanningAddCustomScanExpressionsRequest copyWith({BundleCustomScanPayload? payload}) { return WafContentScanningAddCustomScanExpressionsRequest(
   payload: payload ?? this.payload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafContentScanningAddCustomScanExpressionsRequest &&
-          payload == other.payload; } 
-@override int get hashCode { return payload.hashCode; } 
-@override String toString() { return 'WafContentScanningAddCustomScanExpressionsRequest(payload: $payload)'; } 
+          payload == other.payload;
+
+@override int get hashCode => payload.hashCode;
+
+@override String toString() => 'WafContentScanningAddCustomScanExpressionsRequest(payload: $payload)';
+
  }

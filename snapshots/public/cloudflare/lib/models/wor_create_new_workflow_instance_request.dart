@@ -32,11 +32,14 @@ WorCreateNewWorkflowInstanceRequest copyWith({String? Function()? instanceId, In
   instanceRetention: instanceRetention != null ? instanceRetention() : this.instanceRetention,
   params: params != null ? params() : this.params,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateNewWorkflowInstanceRequest &&
           instanceId == other.instanceId &&
           instanceRetention == other.instanceRetention &&
-          params == other.params; } 
-@override int get hashCode { return Object.hash(instanceId, instanceRetention, params); } 
-@override String toString() { return 'WorCreateNewWorkflowInstanceRequest(instanceId: $instanceId, instanceRetention: $instanceRetention, params: $params)'; } 
+          params == other.params;
+
+@override int get hashCode => Object.hash(instanceId, instanceRetention, params);
+
+@override String toString() => 'WorCreateNewWorkflowInstanceRequest(instanceId: $instanceId, instanceRetention: $instanceRetention, params: $params)';
+
  }

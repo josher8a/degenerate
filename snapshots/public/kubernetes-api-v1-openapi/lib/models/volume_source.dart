@@ -23,10 +23,13 @@ VolumeSource copyWith({int? Function()? defaultMode, List<VolumeFile>? Function(
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   items: items != null ? items() : this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeSource &&
           defaultMode == other.defaultMode &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(items ?? const [])); } 
-@override String toString() { return 'VolumeSource(defaultMode: $defaultMode, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(defaultMode, Object.hashAll(items ?? const []));
+
+@override String toString() => 'VolumeSource(defaultMode: $defaultMode, items: $items)';
+
  }

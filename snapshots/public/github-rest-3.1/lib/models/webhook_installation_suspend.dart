@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookInstallationSuspendAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookInstallationSuspendAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookInstallationSuspendAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookInstallationSuspendAction($value)';
+
  }
 @immutable final class WebhookInstallationSuspend {const WebhookInstallationSuspend({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });
 
@@ -74,7 +77,7 @@ WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, E
   requester: requester != null ? requester() : this.requester,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationSuspend &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -83,7 +86,10 @@ WebhookInstallationSuspend copyWith({WebhookInstallationSuspendAction? action, E
           listEquals(repositories, other.repositories) &&
           repository == other.repository &&
           requester == other.requester &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender); } 
-@override String toString() { return 'WebhookInstallationSuspend(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender);
+
+@override String toString() => 'WebhookInstallationSuspend(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)';
+
  }

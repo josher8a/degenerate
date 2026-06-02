@@ -101,7 +101,7 @@ RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, L
   scope: scope != null ? scope() : this.scope,
   startDate: startDate ?? this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAnnotationsOutagesResponseResultAnnotations &&
           listEquals(asns, other.asns) &&
           listEquals(asnsDetails, other.asnsDetails) &&
@@ -117,7 +117,10 @@ RadarGetAnnotationsOutagesResponseResultAnnotations copyWith({List<int>? asns, L
           listEquals(originsDetails, other.originsDetails) &&
           outage == other.outage &&
           scope == other.scope &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(Object.hashAll(asns), Object.hashAll(asnsDetails), dataSource, description, endDate, eventType, id, linkedUrl, Object.hashAll(locations), Object.hashAll(locationsDetails), Object.hashAll(origins), Object.hashAll(originsDetails), outage, scope, startDate); } 
-@override String toString() { return 'RadarGetAnnotationsOutagesResponseResultAnnotations(asns: $asns, asnsDetails: $asnsDetails, dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, id: $id, linkedUrl: $linkedUrl, locations: $locations, locationsDetails: $locationsDetails, origins: $origins, originsDetails: $originsDetails, outage: $outage, scope: $scope, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(Object.hashAll(asns), Object.hashAll(asnsDetails), dataSource, description, endDate, eventType, id, linkedUrl, Object.hashAll(locations), Object.hashAll(locationsDetails), Object.hashAll(origins), Object.hashAll(originsDetails), outage, scope, startDate);
+
+@override String toString() => 'RadarGetAnnotationsOutagesResponseResultAnnotations(asns: $asns, asnsDetails: $asnsDetails, dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, id: $id, linkedUrl: $linkedUrl, locations: $locations, locationsDetails: $locationsDetails, origins: $origins, originsDetails: $originsDetails, outage: $outage, scope: $scope, startDate: $startDate)';
+
  }

@@ -48,7 +48,7 @@ WebhookPackagePublished copyWith({WebhookPackagePublishedAction? action, Enterpr
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPackagePublished &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -56,7 +56,10 @@ WebhookPackagePublished copyWith({WebhookPackagePublishedAction? action, Enterpr
           organization == other.organization &&
           package == other.package &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, package, repository, sender); } 
-@override String toString() { return 'WebhookPackagePublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, package: $package, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, package, repository, sender);
+
+@override String toString() => 'WebhookPackagePublished(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, package: $package, repository: $repository, sender: $sender)';
+
  }

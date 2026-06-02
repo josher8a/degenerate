@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayInspectionSettingsMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayInspectionSettingsMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayInspectionSettingsMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayInspectionSettingsMode($value)';
+
  }
 /// Define the proxy inspection mode.
 @immutable final class ZeroTrustGatewayInspectionSettings {const ZeroTrustGatewayInspectionSettings({this.mode});
@@ -44,9 +47,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewayInspectionSettings copyWith({ZeroTrustGatewayInspectionSettingsMode? Function()? mode}) { return ZeroTrustGatewayInspectionSettings(
   mode: mode != null ? mode() : this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayInspectionSettings &&
-          mode == other.mode; } 
-@override int get hashCode { return mode.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayInspectionSettings(mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => mode.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayInspectionSettings(mode: $mode)';
+
  }

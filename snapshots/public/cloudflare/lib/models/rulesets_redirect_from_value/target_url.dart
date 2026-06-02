@@ -38,10 +38,13 @@ TargetUrl copyWith({String? Function()? expression, String? Function()? value, }
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TargetUrl &&
           expression == other.expression &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(expression, value); } 
-@override String toString() { return 'TargetUrl(expression: $expression, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(expression, value);
+
+@override String toString() => 'TargetUrl(expression: $expression, value: $value)';
+
  }

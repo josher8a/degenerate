@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PullsCreateReviewCommentRequestStartSide && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PullsCreateReviewCommentRequestStartSide($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PullsCreateReviewCommentRequestStartSide && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PullsCreateReviewCommentRequestStartSide($value)';
+
  }
 @immutable final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });
 
@@ -100,7 +103,7 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
   inReplyTo: inReplyTo != null ? inReplyTo() : this.inReplyTo,
   subjectType: subjectType != null ? subjectType() : this.subjectType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsCreateReviewCommentRequest &&
           body == other.body &&
           commitId == other.commitId &&
@@ -111,7 +114,10 @@ PullsCreateReviewCommentRequest copyWith({String? body, String? commitId, String
           startLine == other.startLine &&
           startSide == other.startSide &&
           inReplyTo == other.inReplyTo &&
-          subjectType == other.subjectType; } 
-@override int get hashCode { return Object.hash(body, commitId, path, position, side, line, startLine, startSide, inReplyTo, subjectType); } 
-@override String toString() { return 'PullsCreateReviewCommentRequest(body: $body, commitId: $commitId, path: $path, position: $position, side: $side, line: $line, startLine: $startLine, startSide: $startSide, inReplyTo: $inReplyTo, subjectType: $subjectType)'; } 
+          subjectType == other.subjectType;
+
+@override int get hashCode => Object.hash(body, commitId, path, position, side, line, startLine, startSide, inReplyTo, subjectType);
+
+@override String toString() => 'PullsCreateReviewCommentRequest(body: $body, commitId: $commitId, path: $path, position: $position, side: $side, line: $line, startLine: $startLine, startSide: $startSide, inReplyTo: $inReplyTo, subjectType: $subjectType)';
+
  }

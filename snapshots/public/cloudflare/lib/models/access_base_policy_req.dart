@@ -37,13 +37,16 @@ AccessBasePolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Functi
   name: name ?? this.name,
   require: require != null ? require() : this.require,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBasePolicyReq &&
           decision == other.decision &&
           listEquals(exclude, other.exclude) &&
           listEquals(include, other.include) &&
           name == other.name &&
-          listEquals(require, other.require); } 
-@override int get hashCode { return Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const [])); } 
-@override String toString() { return 'AccessBasePolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require)'; } 
+          listEquals(require, other.require);
+
+@override int get hashCode => Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []));
+
+@override String toString() => 'AccessBasePolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require)';
+
  }

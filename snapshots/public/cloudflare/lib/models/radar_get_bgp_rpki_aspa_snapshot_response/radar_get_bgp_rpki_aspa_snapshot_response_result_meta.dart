@@ -30,11 +30,14 @@ RadarGetBgpRpkiAspaSnapshotResponseResultMeta copyWith({DateTime? dataTime, Date
   queryTime: queryTime ?? this.queryTime,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponseResultMeta &&
           dataTime == other.dataTime &&
           queryTime == other.queryTime &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(dataTime, queryTime, totalCount); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaSnapshotResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(dataTime, queryTime, totalCount);
+
+@override String toString() => 'RadarGetBgpRpkiAspaSnapshotResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalCount: $totalCount)';
+
  }

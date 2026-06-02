@@ -23,10 +23,13 @@ SuggestedThreshold copyWith({SuggestedThresholdConfidenceIntervals? Function()? 
   confidenceIntervals: confidenceIntervals != null ? confidenceIntervals() : this.confidenceIntervals,
   mean: mean != null ? mean() : this.mean,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SuggestedThreshold &&
           confidenceIntervals == other.confidenceIntervals &&
-          mean == other.mean; } 
-@override int get hashCode { return Object.hash(confidenceIntervals, mean); } 
-@override String toString() { return 'SuggestedThreshold(confidenceIntervals: $confidenceIntervals, mean: $mean)'; } 
+          mean == other.mean;
+
+@override int get hashCode => Object.hash(confidenceIntervals, mean);
+
+@override String toString() => 'SuggestedThreshold(confidenceIntervals: $confidenceIntervals, mean: $mean)';
+
  }

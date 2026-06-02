@@ -54,7 +54,7 @@ WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Func
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMetaDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -63,7 +63,10 @@ WebhookMetaDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhooks? Func
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, hook, hookId, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookMetaDeleted(action: $action, enterprise: $enterprise, hook: $hook, hookId: $hookId, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, hook, hookId, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookMetaDeleted(action: $action, enterprise: $enterprise, hook: $hook, hookId: $hookId, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

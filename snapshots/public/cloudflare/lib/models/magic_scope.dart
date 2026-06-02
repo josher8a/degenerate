@@ -37,10 +37,13 @@ MagicScope copyWith({List<MagicColoName>? Function()? coloNames, List<MagicColoR
   coloNames: coloNames != null ? coloNames() : this.coloNames,
   coloRegions: coloRegions != null ? coloRegions() : this.coloRegions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicScope &&
           listEquals(coloNames, other.coloNames) &&
-          listEquals(coloRegions, other.coloRegions); } 
-@override int get hashCode { return Object.hash(Object.hashAll(coloNames ?? const []), Object.hashAll(coloRegions ?? const [])); } 
-@override String toString() { return 'MagicScope(coloNames: $coloNames, coloRegions: $coloRegions)'; } 
+          listEquals(coloRegions, other.coloRegions);
+
+@override int get hashCode => Object.hash(Object.hashAll(coloNames ?? const []), Object.hashAll(coloRegions ?? const []));
+
+@override String toString() => 'MagicScope(coloNames: $coloNames, coloRegions: $coloRegions)';
+
  }

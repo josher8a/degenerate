@@ -33,11 +33,14 @@ MagicTransitEndpointHealthCheck copyWith({MagicTransitCheckType? checkType, Stri
   endpoint: endpoint ?? this.endpoint,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitEndpointHealthCheck &&
           checkType == other.checkType &&
           endpoint == other.endpoint &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(checkType, endpoint, name); } 
-@override String toString() { return 'MagicTransitEndpointHealthCheck(checkType: $checkType, endpoint: $endpoint, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(checkType, endpoint, name);
+
+@override String toString() => 'MagicTransitEndpointHealthCheck(checkType: $checkType, endpoint: $endpoint, name: $name)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error$400 extend
 
 final WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error$Unknown extends WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Error$Unknown(this.statusCode, this.rawBody, );
 

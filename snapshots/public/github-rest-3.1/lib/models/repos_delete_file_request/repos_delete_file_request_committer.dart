@@ -23,10 +23,13 @@ ReposDeleteFileRequestCommitter copyWith({String? Function()? name, String? Func
   name: name != null ? name() : this.name,
   email: email != null ? email() : this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposDeleteFileRequestCommitter &&
           name == other.name &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(name, email); } 
-@override String toString() { return 'ReposDeleteFileRequestCommitter(name: $name, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(name, email);
+
+@override String toString() => 'ReposDeleteFileRequestCommitter(name: $name, email: $email)';
+
  }

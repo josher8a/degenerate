@@ -26,11 +26,14 @@ EmailDetails copyWith({String? emailAddress, String? subject, String? Function()
   subject: subject ?? this.subject,
   body: body != null ? body() : this.body,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailDetails &&
           emailAddress == other.emailAddress &&
           subject == other.subject &&
-          body == other.body; } 
-@override int get hashCode { return Object.hash(emailAddress, subject, body); } 
-@override String toString() { return 'EmailDetails(emailAddress: $emailAddress, subject: $subject, body: $body)'; } 
+          body == other.body;
+
+@override int get hashCode => Object.hash(emailAddress, subject, body);
+
+@override String toString() => 'EmailDetails(emailAddress: $emailAddress, subject: $subject, body: $body)';
+
  }

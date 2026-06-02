@@ -62,7 +62,7 @@ VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, S
   subPath: subPath != null ? subPath() : this.subPath,
   subPathExpr: subPathExpr != null ? subPathExpr() : this.subPathExpr,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeMount &&
           mountPath == other.mountPath &&
           mountPropagation == other.mountPropagation &&
@@ -70,7 +70,10 @@ VolumeMount copyWith({String? mountPath, String? Function()? mountPropagation, S
           readOnly == other.readOnly &&
           recursiveReadOnly == other.recursiveReadOnly &&
           subPath == other.subPath &&
-          subPathExpr == other.subPathExpr; } 
-@override int get hashCode { return Object.hash(mountPath, mountPropagation, name, readOnly, recursiveReadOnly, subPath, subPathExpr); } 
-@override String toString() { return 'VolumeMount(mountPath: $mountPath, mountPropagation: $mountPropagation, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, subPath: $subPath, subPathExpr: $subPathExpr)'; } 
+          subPathExpr == other.subPathExpr;
+
+@override int get hashCode => Object.hash(mountPath, mountPropagation, name, readOnly, recursiveReadOnly, subPath, subPathExpr);
+
+@override String toString() => 'VolumeMount(mountPath: $mountPath, mountPropagation: $mountPropagation, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, subPath: $subPath, subPathExpr: $subPathExpr)';
+
  }

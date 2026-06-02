@@ -24,9 +24,12 @@ return errors; }
 AccountGroupMembership copyWith({String? Function()? paymentsPricing}) { return AccountGroupMembership(
   paymentsPricing: paymentsPricing != null ? paymentsPricing() : this.paymentsPricing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountGroupMembership &&
-          paymentsPricing == other.paymentsPricing; } 
-@override int get hashCode { return paymentsPricing.hashCode; } 
-@override String toString() { return 'AccountGroupMembership(paymentsPricing: $paymentsPricing)'; } 
+          paymentsPricing == other.paymentsPricing;
+
+@override int get hashCode => paymentsPricing.hashCode;
+
+@override String toString() => 'AccountGroupMembership(paymentsPricing: $paymentsPricing)';
+
  }

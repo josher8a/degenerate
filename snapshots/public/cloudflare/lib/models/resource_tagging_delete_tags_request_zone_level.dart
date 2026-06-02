@@ -53,14 +53,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'access_application_policy';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.accessApplicationPolicy($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelAccessApplicationPolicy && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.accessApplicationPolicy($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -72,14 +76,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'api_gateway_operation';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.apiGatewayOperation($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelGatewayOperation && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.apiGatewayOperation($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -91,14 +99,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'custom_certificate';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.customCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelCustomCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.customCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -110,14 +122,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'custom_hostname';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.customHostname($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelCustomHostname && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.customHostname($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -129,14 +145,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'dns_record';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.dnsRecord($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelDnsRecord && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.dnsRecord($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -148,14 +168,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'managed_client_certificate';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.managedClientCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelManagedClientCertificate && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.managedClientCertificate($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -167,14 +191,18 @@ final ResourceTaggingDeleteTagsRequestZoneLevelBase resourceTaggingDeleteTagsReq
 
 @override String get resourceType => 'zone';
 
-@override Map<String, dynamic> toJson() { return {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType}; } 
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestZoneLevelBase.toJson(), 'resource_type': resourceType};
+
 ResourceTaggingDeleteTagsRequestZoneLevelZone copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingDeleteTagsRequestZoneLevelZone(resourceTaggingDeleteTagsRequestZoneLevelBase.copyWith(
   resourceId: resourceId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevelZone && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase; } 
-@override int get hashCode { return resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.zone($resourceTaggingDeleteTagsRequestZoneLevelBase)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevelZone && resourceTaggingDeleteTagsRequestZoneLevelBase == other.resourceTaggingDeleteTagsRequestZoneLevelBase;
+
+@override int get hashCode => resourceTaggingDeleteTagsRequestZoneLevelBase.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.zone($resourceTaggingDeleteTagsRequestZoneLevelBase)';
+
 @override ResourceTaggingResourceId get resourceId => resourceTaggingDeleteTagsRequestZoneLevelBase.resourceId;
 
  }
@@ -186,11 +214,15 @@ final Map<String, dynamic> json;
 
 @override String get resourceType => json['resource_type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevel.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResourceTaggingDeleteTagsRequestZoneLevel$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ResourceTaggingDeleteTagsRequestZoneLevel.unknown($json)';
+
 @override ResourceTaggingResourceId get resourceId => ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
  }

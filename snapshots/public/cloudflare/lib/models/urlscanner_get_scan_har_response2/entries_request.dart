@@ -49,14 +49,17 @@ EntriesRequest copyWith({double? bodySize, List<EntriesRequestHeaders>? headers,
   method: method ?? this.method,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EntriesRequest &&
           bodySize == other.bodySize &&
           listEquals(headers, other.headers) &&
           headersSize == other.headersSize &&
           httpVersion == other.httpVersion &&
           method == other.method &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(bodySize, Object.hashAll(headers), headersSize, httpVersion, method, url); } 
-@override String toString() { return 'EntriesRequest(bodySize: $bodySize, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, method: $method, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(bodySize, Object.hashAll(headers), headersSize, httpVersion, method, url);
+
+@override String toString() => 'EntriesRequest(bodySize: $bodySize, headers: $headers, headersSize: $headersSize, httpVersion: $httpVersion, method: $method, url: $url)';
+
  }

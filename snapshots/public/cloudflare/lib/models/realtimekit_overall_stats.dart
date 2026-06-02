@@ -28,11 +28,14 @@ RealtimekitOverallStats copyWith({double? Function()? recordingsMinutesConsumed,
   sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
   sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitOverallStats &&
           recordingsMinutesConsumed == other.recordingsMinutesConsumed &&
           sessionsCount == other.sessionsCount &&
-          sessionsMinutesConsumed == other.sessionsMinutesConsumed; } 
-@override int get hashCode { return Object.hash(recordingsMinutesConsumed, sessionsCount, sessionsMinutesConsumed); } 
-@override String toString() { return 'RealtimekitOverallStats(recordingsMinutesConsumed: $recordingsMinutesConsumed, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)'; } 
+          sessionsMinutesConsumed == other.sessionsMinutesConsumed;
+
+@override int get hashCode => Object.hash(recordingsMinutesConsumed, sessionsCount, sessionsMinutesConsumed);
+
+@override String toString() => 'RealtimekitOverallStats(recordingsMinutesConsumed: $recordingsMinutesConsumed, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)';
+
  }

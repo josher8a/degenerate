@@ -39,13 +39,16 @@ WebhooksMarketplacePurchaseAccount copyWith({int? id, String? login, String? nod
   organizationBillingEmail: organizationBillingEmail != null ? organizationBillingEmail() : this.organizationBillingEmail,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksMarketplacePurchaseAccount &&
           id == other.id &&
           login == other.login &&
           nodeId == other.nodeId &&
           organizationBillingEmail == other.organizationBillingEmail &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, login, nodeId, organizationBillingEmail, type); } 
-@override String toString() { return 'WebhooksMarketplacePurchaseAccount(id: $id, login: $login, nodeId: $nodeId, organizationBillingEmail: $organizationBillingEmail, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, login, nodeId, organizationBillingEmail, type);
+
+@override String toString() => 'WebhooksMarketplacePurchaseAccount(id: $id, login: $login, nodeId: $nodeId, organizationBillingEmail: $organizationBillingEmail, type: $type)';
+
  }

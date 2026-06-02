@@ -33,12 +33,15 @@ IssueDependenciesSummary copyWith({int? blockedBy, int? blocking, int? totalBloc
   totalBlockedBy: totalBlockedBy ?? this.totalBlockedBy,
   totalBlocking: totalBlocking ?? this.totalBlocking,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueDependenciesSummary &&
           blockedBy == other.blockedBy &&
           blocking == other.blocking &&
           totalBlockedBy == other.totalBlockedBy &&
-          totalBlocking == other.totalBlocking; } 
-@override int get hashCode { return Object.hash(blockedBy, blocking, totalBlockedBy, totalBlocking); } 
-@override String toString() { return 'IssueDependenciesSummary(blockedBy: $blockedBy, blocking: $blocking, totalBlockedBy: $totalBlockedBy, totalBlocking: $totalBlocking)'; } 
+          totalBlocking == other.totalBlocking;
+
+@override int get hashCode => Object.hash(blockedBy, blocking, totalBlockedBy, totalBlocking);
+
+@override String toString() => 'IssueDependenciesSummary(blockedBy: $blockedBy, blocking: $blocking, totalBlockedBy: $totalBlockedBy, totalBlocking: $totalBlocking)';
+
  }

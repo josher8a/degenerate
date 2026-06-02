@@ -21,9 +21,12 @@ return errors; }
 PortalFlowsAfterCompletionRedirect copyWith({String? returnUrl}) { return PortalFlowsAfterCompletionRedirect(
   returnUrl: returnUrl ?? this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFlowsAfterCompletionRedirect &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return returnUrl.hashCode; } 
-@override String toString() { return 'PortalFlowsAfterCompletionRedirect(returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => returnUrl.hashCode;
+
+@override String toString() => 'PortalFlowsAfterCompletionRedirect(returnUrl: $returnUrl)';
+
  }

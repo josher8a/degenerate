@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 AutoChunkingStrategyRequestParam copyWith({String? type}) { return AutoChunkingStrategyRequestParam(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoChunkingStrategyRequestParam &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'AutoChunkingStrategyRequestParam(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'AutoChunkingStrategyRequestParam(type: $type)';
+
  }

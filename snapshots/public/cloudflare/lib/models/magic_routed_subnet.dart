@@ -28,11 +28,14 @@ MagicRoutedSubnet copyWith({MagicNat? Function()? nat, MagicIpAddress? nextHop, 
   nextHop: nextHop ?? this.nextHop,
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicRoutedSubnet &&
           nat == other.nat &&
           nextHop == other.nextHop &&
-          prefix == other.prefix; } 
-@override int get hashCode { return Object.hash(nat, nextHop, prefix); } 
-@override String toString() { return 'MagicRoutedSubnet(nat: $nat, nextHop: $nextHop, prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => Object.hash(nat, nextHop, prefix);
+
+@override String toString() => 'MagicRoutedSubnet(nat: $nat, nextHop: $nextHop, prefix: $prefix)';
+
  }

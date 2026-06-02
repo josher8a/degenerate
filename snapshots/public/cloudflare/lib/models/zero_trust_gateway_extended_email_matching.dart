@@ -39,12 +39,15 @@ ZeroTrustGatewayExtendedEmailMatching copyWith({bool? Function()? enabled, bool?
   sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayExtendedEmailMatching &&
           enabled == other.enabled &&
           readOnly == other.readOnly &&
           sourceAccount == other.sourceAccount &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(enabled, readOnly, sourceAccount, version); } 
-@override String toString() { return 'ZeroTrustGatewayExtendedEmailMatching(enabled: $enabled, readOnly: $readOnly, sourceAccount: $sourceAccount, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(enabled, readOnly, sourceAccount, version);
+
+@override String toString() => 'ZeroTrustGatewayExtendedEmailMatching(enabled: $enabled, readOnly: $readOnly, sourceAccount: $sourceAccount, version: $version)';
+
  }

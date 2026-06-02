@@ -46,13 +46,16 @@ VectorizeIndexQueryRequest copyWith({Map<String, dynamic>? Function()? filter, b
   topK: topK != null ? topK() : this.topK,
   vector: vector ?? this.vector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexQueryRequest &&
           filter == other.filter &&
           returnMetadata == other.returnMetadata &&
           returnValues == other.returnValues &&
           topK == other.topK &&
-          listEquals(vector, other.vector); } 
-@override int get hashCode { return Object.hash(filter, returnMetadata, returnValues, topK, Object.hashAll(vector)); } 
-@override String toString() { return 'VectorizeIndexQueryRequest(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)'; } 
+          listEquals(vector, other.vector);
+
+@override int get hashCode => Object.hash(filter, returnMetadata, returnValues, topK, Object.hashAll(vector));
+
+@override String toString() => 'VectorizeIndexQueryRequest(filter: $filter, returnMetadata: $returnMetadata, returnValues: $returnValues, topK: $topK, vector: $vector)';
+
  }

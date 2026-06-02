@@ -40,11 +40,14 @@ PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? bu
   individualName: individualName != null ? individualName() : this.individualName,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCollectedInformation &&
           businessName == other.businessName &&
           individualName == other.individualName &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hash(businessName, individualName, shippingDetails); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCollectedInformation(businessName: $businessName, individualName: $individualName, shippingDetails: $shippingDetails)'; } 
+          shippingDetails == other.shippingDetails;
+
+@override int get hashCode => Object.hash(businessName, individualName, shippingDetails);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCollectedInformation(businessName: $businessName, individualName: $individualName, shippingDetails: $shippingDetails)';
+
  }

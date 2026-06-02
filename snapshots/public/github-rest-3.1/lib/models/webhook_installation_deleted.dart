@@ -53,7 +53,7 @@ WebhookInstallationDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhoo
   requester: requester != null ? requester() : this.requester,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -62,7 +62,10 @@ WebhookInstallationDeleted copyWith({ItemDeletedAction? action, EnterpriseWebhoo
           listEquals(repositories, other.repositories) &&
           repository == other.repository &&
           requester == other.requester &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender); } 
-@override String toString() { return 'WebhookInstallationDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender);
+
+@override String toString() => 'WebhookInstallationDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)';
+
  }

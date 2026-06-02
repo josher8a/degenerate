@@ -24,10 +24,13 @@ PaymentLinksResourceBusinessName copyWith({bool? enabled, bool? optional, }) { r
   enabled: enabled ?? this.enabled,
   optional: optional ?? this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceBusinessName &&
           enabled == other.enabled &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(enabled, optional); } 
-@override String toString() { return 'PaymentLinksResourceBusinessName(enabled: $enabled, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(enabled, optional);
+
+@override String toString() => 'PaymentLinksResourceBusinessName(enabled: $enabled, optional: $optional)';
+
  }

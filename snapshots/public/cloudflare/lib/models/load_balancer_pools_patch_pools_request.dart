@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancerPoolsPatchPoolsRequest copyWith({LoadBalancingPatchPoolsNotificationEmail? Function()? notificationEmail}) { return LoadBalancerPoolsPatchPoolsRequest(
   notificationEmail: notificationEmail != null ? notificationEmail() : this.notificationEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerPoolsPatchPoolsRequest &&
-          notificationEmail == other.notificationEmail; } 
-@override int get hashCode { return notificationEmail.hashCode; } 
-@override String toString() { return 'LoadBalancerPoolsPatchPoolsRequest(notificationEmail: $notificationEmail)'; } 
+          notificationEmail == other.notificationEmail;
+
+@override int get hashCode => notificationEmail.hashCode;
+
+@override String toString() => 'LoadBalancerPoolsPatchPoolsRequest(notificationEmail: $notificationEmail)';
+
  }

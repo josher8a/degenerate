@@ -61,7 +61,7 @@ WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, b
   scriptName: scriptName ?? this.scriptName,
   serviceName: serviceName != null ? serviceName() : this.serviceName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerScriptSearchWorkersResponseResult &&
           createdOn == other.createdOn &&
           environmentIsDefault == other.environmentIsDefault &&
@@ -69,7 +69,10 @@ WorkerScriptSearchWorkersResponseResult copyWith({WorkersCreatedOn? createdOn, b
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           scriptName == other.scriptName &&
-          serviceName == other.serviceName; } 
-@override int get hashCode { return Object.hash(createdOn, environmentIsDefault, environmentName, id, modifiedOn, scriptName, serviceName); } 
-@override String toString() { return 'WorkerScriptSearchWorkersResponseResult(createdOn: $createdOn, environmentIsDefault: $environmentIsDefault, environmentName: $environmentName, id: $id, modifiedOn: $modifiedOn, scriptName: $scriptName, serviceName: $serviceName)'; } 
+          serviceName == other.serviceName;
+
+@override int get hashCode => Object.hash(createdOn, environmentIsDefault, environmentName, id, modifiedOn, scriptName, serviceName);
+
+@override String toString() => 'WorkerScriptSearchWorkersResponseResult(createdOn: $createdOn, environmentIsDefault: $environmentIsDefault, environmentName: $environmentName, id: $id, modifiedOn: $modifiedOn, scriptName: $scriptName, serviceName: $serviceName)';
+
  }

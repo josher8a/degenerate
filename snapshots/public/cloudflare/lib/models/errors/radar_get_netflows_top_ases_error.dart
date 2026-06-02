@@ -17,7 +17,8 @@ final class RadarGetNetflowsTopAsesError$404 extends RadarGetNetflowsTopAsesErro
 
 final RadarGetNetflowsTopAsesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetNetflowsTopAsesError$Unknown extends RadarGetNetflowsTopAsesError {const RadarGetNetflowsTopAsesError$Unknown(this.statusCode, this.rawBody, );
 

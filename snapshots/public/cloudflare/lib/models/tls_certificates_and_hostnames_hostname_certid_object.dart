@@ -89,7 +89,7 @@ TlsCertificatesAndHostnamesHostnameCertidObject copyWith({TlsCertificatesAndHost
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameCertidObject &&
           certId == other.certId &&
           certStatus == other.certStatus &&
@@ -104,7 +104,10 @@ TlsCertificatesAndHostnamesHostnameCertidObject copyWith({TlsCertificatesAndHost
           serialNumber == other.serialNumber &&
           signature == other.signature &&
           status == other.status &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameCertidObject(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt);
+
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameCertidObject(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt)';
+
  }

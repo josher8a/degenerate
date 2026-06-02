@@ -36,11 +36,14 @@ ValueUser copyWith({bool? Function()? deviceType, bool? Function()? geo, bool? F
   geo: geo != null ? geo() : this.geo,
   lang: lang != null ? lang() : this.lang,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValueUser &&
           deviceType == other.deviceType &&
           geo == other.geo &&
-          lang == other.lang; } 
-@override int get hashCode { return Object.hash(deviceType, geo, lang); } 
-@override String toString() { return 'ValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)'; } 
+          lang == other.lang;
+
+@override int get hashCode => Object.hash(deviceType, geo, lang);
+
+@override String toString() => 'ValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)';
+
  }

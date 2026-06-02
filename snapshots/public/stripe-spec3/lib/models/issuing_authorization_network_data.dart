@@ -44,11 +44,14 @@ IssuingAuthorizationNetworkData copyWith({String? Function()? acquiringInstituti
   systemTraceAuditNumber: systemTraceAuditNumber != null ? systemTraceAuditNumber() : this.systemTraceAuditNumber,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationNetworkData &&
           acquiringInstitutionId == other.acquiringInstitutionId &&
           systemTraceAuditNumber == other.systemTraceAuditNumber &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(acquiringInstitutionId, systemTraceAuditNumber, transactionId); } 
-@override String toString() { return 'IssuingAuthorizationNetworkData(acquiringInstitutionId: $acquiringInstitutionId, systemTraceAuditNumber: $systemTraceAuditNumber, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(acquiringInstitutionId, systemTraceAuditNumber, transactionId);
+
+@override String toString() => 'IssuingAuthorizationNetworkData(acquiringInstitutionId: $acquiringInstitutionId, systemTraceAuditNumber: $systemTraceAuditNumber, transactionId: $transactionId)';
+
  }

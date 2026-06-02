@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafRulesUpdateAWafRuleRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafRulesUpdateAWafRuleRequestMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WafRulesUpdateAWafRuleRequestMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WafRulesUpdateAWafRuleRequestMode($value)';
+
  }
 @immutable final class WafRulesUpdateAWafRuleRequest {const WafRulesUpdateAWafRuleRequest({this.mode});
 
@@ -58,9 +61,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WafRulesUpdateAWafRuleRequest copyWith({WafRulesUpdateAWafRuleRequestMode? Function()? mode}) { return WafRulesUpdateAWafRuleRequest(
   mode: mode != null ? mode() : this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafRulesUpdateAWafRuleRequest &&
-          mode == other.mode; } 
-@override int get hashCode { return mode.hashCode; } 
-@override String toString() { return 'WafRulesUpdateAWafRuleRequest(mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => mode.hashCode;
+
+@override String toString() => 'WafRulesUpdateAWafRuleRequest(mode: $mode)';
+
  }

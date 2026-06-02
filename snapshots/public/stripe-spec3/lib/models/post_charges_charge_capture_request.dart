@@ -77,7 +77,7 @@ PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesChargeCaptureRequest &&
           amount == other.amount &&
           applicationFee == other.applicationFee &&
@@ -87,7 +87,10 @@ PostChargesChargeCaptureRequest copyWith({int? Function()? amount, int? Function
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, applicationFee, applicationFeeAmount, Object.hashAll(expand ?? const []), receiptEmail, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup); } 
-@override String toString() { return 'PostChargesChargeCaptureRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, expand: $expand, receiptEmail: $receiptEmail, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, applicationFee, applicationFeeAmount, Object.hashAll(expand ?? const []), receiptEmail, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);
+
+@override String toString() => 'PostChargesChargeCaptureRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, expand: $expand, receiptEmail: $receiptEmail, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

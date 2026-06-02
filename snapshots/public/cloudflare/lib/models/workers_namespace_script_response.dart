@@ -34,12 +34,15 @@ WorkersNamespaceScriptResponse copyWith({WorkersCreatedOn? Function()? createdOn
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   script: script != null ? script() : this.script,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceScriptResponse &&
           createdOn == other.createdOn &&
           dispatchNamespace == other.dispatchNamespace &&
           modifiedOn == other.modifiedOn &&
-          script == other.script; } 
-@override int get hashCode { return Object.hash(createdOn, dispatchNamespace, modifiedOn, script); } 
-@override String toString() { return 'WorkersNamespaceScriptResponse(createdOn: $createdOn, dispatchNamespace: $dispatchNamespace, modifiedOn: $modifiedOn, script: $script)'; } 
+          script == other.script;
+
+@override int get hashCode => Object.hash(createdOn, dispatchNamespace, modifiedOn, script);
+
+@override String toString() => 'WorkersNamespaceScriptResponse(createdOn: $createdOn, dispatchNamespace: $dispatchNamespace, modifiedOn: $modifiedOn, script: $script)';
+
  }

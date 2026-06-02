@@ -23,10 +23,13 @@ InsightsResourcesPaymentEvaluationInsights copyWith({int? evaluatedAt, InsightsR
   evaluatedAt: evaluatedAt ?? this.evaluatedAt,
   fraudulentDispute: fraudulentDispute ?? this.fraudulentDispute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationInsights &&
           evaluatedAt == other.evaluatedAt &&
-          fraudulentDispute == other.fraudulentDispute; } 
-@override int get hashCode { return Object.hash(evaluatedAt, fraudulentDispute); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationInsights(evaluatedAt: $evaluatedAt, fraudulentDispute: $fraudulentDispute)'; } 
+          fraudulentDispute == other.fraudulentDispute;
+
+@override int get hashCode => Object.hash(evaluatedAt, fraudulentDispute);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationInsights(evaluatedAt: $evaluatedAt, fraudulentDispute: $fraudulentDispute)';
+
  }

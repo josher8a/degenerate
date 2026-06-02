@@ -17,7 +17,8 @@ final class RadarGetEmailSecurityTopTldsBySpoofError$404 extends RadarGetEmailSe
 
 final RadarGetEmailSecurityTopTldsBySpoofResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetEmailSecurityTopTldsBySpoofError$Unknown extends RadarGetEmailSecurityTopTldsBySpoofError {const RadarGetEmailSecurityTopTldsBySpoofError$Unknown(this.statusCode, this.rawBody, );
 

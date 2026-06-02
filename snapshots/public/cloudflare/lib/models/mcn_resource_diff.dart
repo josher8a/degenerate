@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnPlannedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnPlannedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnPlannedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McnPlannedAction($value)';
+
  }
 @immutable final class McnResourceDiff {const McnResourceDiff({required this.diff, required this.keysRequireReplace, required this.monthlyCostEstimateDiff, required this.plannedAction, required this.resource, });
 
@@ -72,13 +75,16 @@ McnResourceDiff copyWith({McnYamlDiff? diff, List<String>? keysRequireReplace, M
   plannedAction: plannedAction ?? this.plannedAction,
   resource: resource ?? this.resource,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourceDiff &&
           diff == other.diff &&
           listEquals(keysRequireReplace, other.keysRequireReplace) &&
           monthlyCostEstimateDiff == other.monthlyCostEstimateDiff &&
           plannedAction == other.plannedAction &&
-          resource == other.resource; } 
-@override int get hashCode { return Object.hash(diff, Object.hashAll(keysRequireReplace), monthlyCostEstimateDiff, plannedAction, resource); } 
-@override String toString() { return 'McnResourceDiff(diff: $diff, keysRequireReplace: $keysRequireReplace, monthlyCostEstimateDiff: $monthlyCostEstimateDiff, plannedAction: $plannedAction, resource: $resource)'; } 
+          resource == other.resource;
+
+@override int get hashCode => Object.hash(diff, Object.hashAll(keysRequireReplace), monthlyCostEstimateDiff, plannedAction, resource);
+
+@override String toString() => 'McnResourceDiff(diff: $diff, keysRequireReplace: $keysRequireReplace, monthlyCostEstimateDiff: $monthlyCostEstimateDiff, plannedAction: $plannedAction, resource: $resource)';
+
  }

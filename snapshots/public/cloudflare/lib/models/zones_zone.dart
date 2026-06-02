@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesZoneStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesZoneStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesZoneStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesZoneStatus($value)';
+
  }
 @immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers = const [], this.verificationKey, });
 
@@ -236,7 +239,7 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
   vanityNameServers: vanityNameServers != null ? vanityNameServers() : this.vanityNameServers,
   verificationKey: verificationKey != null ? verificationKey() : this.verificationKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesZone &&
           account == other.account &&
           activatedOn == other.activatedOn &&
@@ -260,7 +263,10 @@ ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn
           tenantUnit == other.tenantUnit &&
           type == other.type &&
           listEquals(vanityNameServers, other.vanityNameServers) &&
-          verificationKey == other.verificationKey; } 
-@override int get hashCode { return Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers), verificationKey]); } 
-@override String toString() { return 'ZonesZone(account: $account, activatedOn: $activatedOn, cnameSuffix: $cnameSuffix, createdOn: $createdOn, developmentMode: $developmentMode, id: $id, meta: $meta, modifiedOn: $modifiedOn, name: $name, nameServers: $nameServers, originalDnshost: $originalDnshost, originalNameServers: $originalNameServers, originalRegistrar: $originalRegistrar, owner: $owner, paused: $paused, permissions: $permissions, plan: $plan, status: $status, tenant: $tenant, tenantUnit: $tenantUnit, type: $type, vanityNameServers: $vanityNameServers, verificationKey: $verificationKey)'; } 
+          verificationKey == other.verificationKey;
+
+@override int get hashCode => Object.hashAll([account, activatedOn, cnameSuffix, createdOn, developmentMode, id, meta, modifiedOn, name, Object.hashAll(nameServers), originalDnshost, Object.hashAll(originalNameServers ?? const []), originalRegistrar, owner, paused, Object.hashAll(permissions ?? const []), plan, status, tenant, tenantUnit, type, Object.hashAll(vanityNameServers), verificationKey]);
+
+@override String toString() => 'ZonesZone(account: $account, activatedOn: $activatedOn, cnameSuffix: $cnameSuffix, createdOn: $createdOn, developmentMode: $developmentMode, id: $id, meta: $meta, modifiedOn: $modifiedOn, name: $name, nameServers: $nameServers, originalDnshost: $originalDnshost, originalNameServers: $originalNameServers, originalRegistrar: $originalRegistrar, owner: $owner, paused: $paused, permissions: $permissions, plan: $plan, status: $status, tenant: $tenant, tenantUnit: $tenantUnit, type: $type, vanityNameServers: $vanityNameServers, verificationKey: $verificationKey)';
+
  }

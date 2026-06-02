@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 PostCouponsCouponRequestCurrencyOptionsValue copyWith({int? amountOff}) { return PostCouponsCouponRequestCurrencyOptionsValue(
   amountOff: amountOff ?? this.amountOff,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsCouponRequestCurrencyOptionsValue &&
-          amountOff == other.amountOff; } 
-@override int get hashCode { return amountOff.hashCode; } 
-@override String toString() { return 'PostCouponsCouponRequestCurrencyOptionsValue(amountOff: $amountOff)'; } 
+          amountOff == other.amountOff;
+
+@override int get hashCode => amountOff.hashCode;
+
+@override String toString() => 'PostCouponsCouponRequestCurrencyOptionsValue(amountOff: $amountOff)';
+
  }

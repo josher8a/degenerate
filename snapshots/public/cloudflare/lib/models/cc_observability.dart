@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CcObservability copyWith({CcObservabilityLogs? Function()? logs}) { return CcObservability(
   logs: logs != null ? logs() : this.logs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcObservability &&
-          logs == other.logs; } 
-@override int get hashCode { return logs.hashCode; } 
-@override String toString() { return 'CcObservability(logs: $logs)'; } 
+          logs == other.logs;
+
+@override int get hashCode => logs.hashCode;
+
+@override String toString() => 'CcObservability(logs: $logs)';
+
  }

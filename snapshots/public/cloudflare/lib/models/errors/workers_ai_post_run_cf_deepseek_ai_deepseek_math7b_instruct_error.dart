@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError$400 extends 
 
 final WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError$Unknown extends WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError {const WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructError$Unknown(this.statusCode, this.rawBody, );
 

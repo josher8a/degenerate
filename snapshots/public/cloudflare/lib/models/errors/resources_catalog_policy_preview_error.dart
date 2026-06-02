@@ -21,31 +21,36 @@ final class ResourcesCatalogPolicyPreviewError$400 extends ResourcesCatalogPolic
 
 final McnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ResourcesCatalogPolicyPreviewError$401 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$401(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ResourcesCatalogPolicyPreviewError$403 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$403(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ResourcesCatalogPolicyPreviewError$422 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$422(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ResourcesCatalogPolicyPreviewError$500 extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$500(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class ResourcesCatalogPolicyPreviewError$Unknown extends ResourcesCatalogPolicyPreviewError {const ResourcesCatalogPolicyPreviewError$Unknown(this.statusCode, this.rawBody, );
 

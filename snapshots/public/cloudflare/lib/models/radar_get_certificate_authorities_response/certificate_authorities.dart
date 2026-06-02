@@ -86,7 +86,7 @@ CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, S
   revocationStatus: revocationStatus ?? this.revocationStatus,
   sha256Fingerprint: sha256Fingerprint ?? this.sha256Fingerprint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateAuthorities &&
           certificateRecordType == other.certificateRecordType &&
           country == other.country &&
@@ -96,7 +96,10 @@ CertificateAuthorities copyWith({CertificateRecordType? certificateRecordType, S
           parentName == other.parentName &&
           parentSha256Fingerprint == other.parentSha256Fingerprint &&
           revocationStatus == other.revocationStatus &&
-          sha256Fingerprint == other.sha256Fingerprint; } 
-@override int get hashCode { return Object.hash(certificateRecordType, country, countryName, name, owner, parentName, parentSha256Fingerprint, revocationStatus, sha256Fingerprint); } 
-@override String toString() { return 'CertificateAuthorities(certificateRecordType: $certificateRecordType, country: $country, countryName: $countryName, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)'; } 
+          sha256Fingerprint == other.sha256Fingerprint;
+
+@override int get hashCode => Object.hash(certificateRecordType, country, countryName, name, owner, parentName, parentSha256Fingerprint, revocationStatus, sha256Fingerprint);
+
+@override String toString() => 'CertificateAuthorities(certificateRecordType: $certificateRecordType, country: $country, countryName: $countryName, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint)';
+
  }

@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)';
+
  }
 /// 
 @immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetails {const TreasuryReceivedCreditsResourceSourceFlowsDetails({required this.type, this.creditReversal, this.outboundPayment, this.outboundTransfer, this.payout, });
@@ -71,13 +74,16 @@ TreasuryReceivedCreditsResourceSourceFlowsDetails copyWith({TreasuryCreditRevers
   payout: payout != null ? payout() : this.payout,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedCreditsResourceSourceFlowsDetails &&
           creditReversal == other.creditReversal &&
           outboundPayment == other.outboundPayment &&
           outboundTransfer == other.outboundTransfer &&
           payout == other.payout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(creditReversal, outboundPayment, outboundTransfer, payout, type); } 
-@override String toString() { return 'TreasuryReceivedCreditsResourceSourceFlowsDetails(creditReversal: $creditReversal, outboundPayment: $outboundPayment, outboundTransfer: $outboundTransfer, payout: $payout, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(creditReversal, outboundPayment, outboundTransfer, payout, type);
+
+@override String toString() => 'TreasuryReceivedCreditsResourceSourceFlowsDetails(creditReversal: $creditReversal, outboundPayment: $outboundPayment, outboundTransfer: $outboundTransfer, payout: $payout, type: $type)';
+
  }

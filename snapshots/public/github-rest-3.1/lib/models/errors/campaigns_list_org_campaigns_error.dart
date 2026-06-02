@@ -18,13 +18,15 @@ final class CampaignsListOrgCampaignsError$404 extends CampaignsListOrgCampaigns
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CampaignsListOrgCampaignsError$503 extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError$503(this.error);
 
 final CampaignsListOrgCampaignsResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CampaignsListOrgCampaignsError$Unknown extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError$Unknown(this.statusCode, this.rawBody, );
 

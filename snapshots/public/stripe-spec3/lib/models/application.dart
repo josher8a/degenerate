@@ -38,11 +38,14 @@ Application copyWith({String? id, String? Function()? name, ApplicationObject? o
   name: name != null ? name() : this.name,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Application &&
           id == other.id &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, name, object); } 
-@override String toString() { return 'Application(id: $id, name: $name, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(id, name, object);
+
+@override String toString() => 'Application(id: $id, name: $name, object: $object)';
+
  }

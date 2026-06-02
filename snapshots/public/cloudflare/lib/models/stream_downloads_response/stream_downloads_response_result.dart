@@ -23,10 +23,13 @@ StreamDownloadsResponseResult copyWith({StreamDownloads? Function()? audio, Stre
   audio: audio != null ? audio() : this.audio,
   $default: $default != null ? $default() : this.$default,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamDownloadsResponseResult &&
           audio == other.audio &&
-          $default == other.$default; } 
-@override int get hashCode { return Object.hash(audio, $default); } 
-@override String toString() { return 'StreamDownloadsResponseResult(audio: $audio, \$default: ${$default})'; } 
+          $default == other.$default;
+
+@override int get hashCode => Object.hash(audio, $default);
+
+@override String toString() => 'StreamDownloadsResponseResult(audio: $audio, \$default: ${$default})';
+
  }

@@ -25,9 +25,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 UsersDeleteSocialAccountForAuthenticatedUserRequest copyWith({List<String>? accountUrls}) { return UsersDeleteSocialAccountForAuthenticatedUserRequest(
   accountUrls: accountUrls ?? this.accountUrls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersDeleteSocialAccountForAuthenticatedUserRequest &&
-          listEquals(accountUrls, other.accountUrls); } 
-@override int get hashCode { return Object.hashAll(accountUrls); } 
-@override String toString() { return 'UsersDeleteSocialAccountForAuthenticatedUserRequest(accountUrls: $accountUrls)'; } 
+          listEquals(accountUrls, other.accountUrls);
+
+@override int get hashCode => Object.hashAll(accountUrls);
+
+@override String toString() => 'UsersDeleteSocialAccountForAuthenticatedUserRequest(accountUrls: $accountUrls)';
+
  }

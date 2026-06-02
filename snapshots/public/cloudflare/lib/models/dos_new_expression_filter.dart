@@ -25,10 +25,13 @@ DosNewExpressionFilter copyWith({String? expression, String? mode, }) { return D
   expression: expression ?? this.expression,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewExpressionFilter &&
           expression == other.expression &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(expression, mode); } 
-@override String toString() { return 'DosNewExpressionFilter(expression: $expression, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(expression, mode);
+
+@override String toString() => 'DosNewExpressionFilter(expression: $expression, mode: $mode)';
+
  }

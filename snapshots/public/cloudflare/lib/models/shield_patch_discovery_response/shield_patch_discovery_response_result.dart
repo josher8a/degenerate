@@ -20,9 +20,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldPatchDiscoveryResponseResult copyWith({DiscoveryState? Function()? state}) { return ShieldPatchDiscoveryResponseResult(
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldPatchDiscoveryResponseResult &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'ShieldPatchDiscoveryResponseResult(state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => state.hashCode;
+
+@override String toString() => 'ShieldPatchDiscoveryResponseResult(state: $state)';
+
  }

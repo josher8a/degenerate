@@ -26,10 +26,13 @@ ResponseFormatTextGrammar copyWith({CustomGrammarFormatParamType? type, String? 
   type: type ?? this.type,
   grammar: grammar ?? this.grammar,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFormatTextGrammar &&
           type == other.type &&
-          grammar == other.grammar; } 
-@override int get hashCode { return Object.hash(type, grammar); } 
-@override String toString() { return 'ResponseFormatTextGrammar(type: $type, grammar: $grammar)'; } 
+          grammar == other.grammar;
+
+@override int get hashCode => Object.hash(type, grammar);
+
+@override String toString() => 'ResponseFormatTextGrammar(type: $type, grammar: $grammar)';
+
  }

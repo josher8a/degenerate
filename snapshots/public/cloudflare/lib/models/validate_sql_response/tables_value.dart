@@ -33,12 +33,15 @@ TablesValue copyWith({String? id, String? name, String? type, double? version, }
   type: type ?? this.type,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TablesValue &&
           id == other.id &&
           name == other.name &&
           type == other.type &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, name, type, version); } 
-@override String toString() { return 'TablesValue(id: $id, name: $name, type: $type, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(id, name, type, version);
+
+@override String toString() => 'TablesValue(id: $id, name: $name, type: $type, version: $version)';
+
  }

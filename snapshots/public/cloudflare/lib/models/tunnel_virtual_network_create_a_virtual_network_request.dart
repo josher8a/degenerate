@@ -36,12 +36,15 @@ TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkC
   isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelVirtualNetworkCreateAVirtualNetworkRequest &&
           comment == other.comment &&
           isDefault == other.isDefault &&
           isDefaultNetwork == other.isDefaultNetwork &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(comment, isDefault, isDefaultNetwork, name); } 
-@override String toString() { return 'TunnelVirtualNetworkCreateAVirtualNetworkRequest(comment: $comment, isDefault: $isDefault, isDefaultNetwork: $isDefaultNetwork, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(comment, isDefault, isDefaultNetwork, name);
+
+@override String toString() => 'TunnelVirtualNetworkCreateAVirtualNetworkRequest(comment: $comment, isDefault: $isDefault, isDefaultNetwork: $isDefaultNetwork, name: $name)';
+
  }

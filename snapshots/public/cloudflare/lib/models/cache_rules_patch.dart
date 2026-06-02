@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CacheRulesValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CacheRulesValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheRulesValue($value)';
+
  }
 /// Update enablement of Tiered Caching.
 @immutable final class CacheRulesPatch {const CacheRulesPatch({required this.value});
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 CacheRulesPatch copyWith({CacheRulesValue? value}) { return CacheRulesPatch(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesPatch &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesPatch(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheRulesPatch(value: $value)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsSetCacheSettingsEdgeTtlMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsSetCacheSettingsEdgeTtlMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsSetCacheSettingsEdgeTtlMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetsSetCacheSettingsEdgeTtlMode($value)';
+
  }
 /// How long the Cloudflare edge network should cache the response.
 @immutable final class RulesetsSetCacheSettingsEdgeTtl {const RulesetsSetCacheSettingsEdgeTtl({required this.mode, this.$default, this.statusCodeTtl, });
@@ -72,11 +75,14 @@ RulesetsSetCacheSettingsEdgeTtl copyWith({int? Function()? $default, RulesetsSet
   mode: mode ?? this.mode,
   statusCodeTtl: statusCodeTtl != null ? statusCodeTtl() : this.statusCodeTtl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsEdgeTtl &&
           $default == other.$default &&
           mode == other.mode &&
-          listEquals(statusCodeTtl, other.statusCodeTtl); } 
-@override int get hashCode { return Object.hash($default, mode, Object.hashAll(statusCodeTtl ?? const [])); } 
-@override String toString() { return 'RulesetsSetCacheSettingsEdgeTtl(\$default: ${$default}, mode: $mode, statusCodeTtl: $statusCodeTtl)'; } 
+          listEquals(statusCodeTtl, other.statusCodeTtl);
+
+@override int get hashCode => Object.hash($default, mode, Object.hashAll(statusCodeTtl ?? const []));
+
+@override String toString() => 'RulesetsSetCacheSettingsEdgeTtl(\$default: ${$default}, mode: $mode, statusCodeTtl: $statusCodeTtl)';
+
  }

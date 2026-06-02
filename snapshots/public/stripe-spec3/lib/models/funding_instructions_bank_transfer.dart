@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsBankTransferType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsBankTransferType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FundingInstructionsBankTransferType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FundingInstructionsBankTransferType($value)';
+
  }
 /// 
 @immutable final class FundingInstructionsBankTransfer {const FundingInstructionsBankTransfer({required this.country, required this.financialAddresses, required this.type, });
@@ -60,11 +63,14 @@ FundingInstructionsBankTransfer copyWith({String? country, List<FundingInstructi
   financialAddresses: financialAddresses ?? this.financialAddresses,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransfer &&
           country == other.country &&
           listEquals(financialAddresses, other.financialAddresses) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(country, Object.hashAll(financialAddresses), type); } 
-@override String toString() { return 'FundingInstructionsBankTransfer(country: $country, financialAddresses: $financialAddresses, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(country, Object.hashAll(financialAddresses), type);
+
+@override String toString() => 'FundingInstructionsBankTransfer(country: $country, financialAddresses: $financialAddresses, type: $type)';
+
  }

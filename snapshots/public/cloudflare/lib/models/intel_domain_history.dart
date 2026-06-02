@@ -20,10 +20,13 @@ IntelDomainHistory copyWith({List<IntelDomainHistoryCategorizations>? Function()
   categorizations: categorizations != null ? categorizations() : this.categorizations,
   domain: domain != null ? domain() : this.domain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelDomainHistory &&
           listEquals(categorizations, other.categorizations) &&
-          domain == other.domain; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categorizations ?? const []), domain); } 
-@override String toString() { return 'IntelDomainHistory(categorizations: $categorizations, domain: $domain)'; } 
+          domain == other.domain;
+
+@override int get hashCode => Object.hash(Object.hashAll(categorizations ?? const []), domain);
+
+@override String toString() => 'IntelDomainHistory(categorizations: $categorizations, domain: $domain)';
+
  }

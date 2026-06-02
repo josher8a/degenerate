@@ -31,12 +31,15 @@ WorkersAiCreateFinetuneRequest copyWith({String? Function()? description, String
   name: name ?? this.name,
   public: public != null ? public() : this.public,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiCreateFinetuneRequest &&
           description == other.description &&
           model == other.model &&
           name == other.name &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(description, model, name, public); } 
-@override String toString() { return 'WorkersAiCreateFinetuneRequest(description: $description, model: $model, name: $name, public: $public)'; } 
+          public == other.public;
+
+@override int get hashCode => Object.hash(description, model, name, public);
+
+@override String toString() => 'WorkersAiCreateFinetuneRequest(description: $description, model: $model, name: $name, public: $public)';
+
  }

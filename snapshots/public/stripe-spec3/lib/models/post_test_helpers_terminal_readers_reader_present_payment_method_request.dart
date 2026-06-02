@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)';
+
  }
 @immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest({this.amountTip, this.card, this.cardPresent, this.expand, this.interacPresent, this.type, });
 
@@ -74,14 +77,17 @@ PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest copyWith({int? F
   interacPresent: interacPresent != null ? interacPresent() : this.interacPresent,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest &&
           amountTip == other.amountTip &&
           card == other.card &&
           cardPresent == other.cardPresent &&
           listEquals(expand, other.expand) &&
           interacPresent == other.interacPresent &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountTip, card, cardPresent, Object.hashAll(expand ?? const []), interacPresent, type); } 
-@override String toString() { return 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(amountTip: $amountTip, card: $card, cardPresent: $cardPresent, expand: $expand, interacPresent: $interacPresent, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amountTip, card, cardPresent, Object.hashAll(expand ?? const []), interacPresent, type);
+
+@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest(amountTip: $amountTip, card: $card, cardPresent: $cardPresent, expand: $expand, interacPresent: $interacPresent, type: $type)';
+
  }

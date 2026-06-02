@@ -21,10 +21,13 @@ WorkersAiGetToMarkdownSupportedResponseResult copyWith({String? $extension, Stri
   $extension: $extension ?? this.$extension,
   mimeType: mimeType ?? this.mimeType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiGetToMarkdownSupportedResponseResult &&
           $extension == other.$extension &&
-          mimeType == other.mimeType; } 
-@override int get hashCode { return Object.hash($extension, mimeType); } 
-@override String toString() { return 'WorkersAiGetToMarkdownSupportedResponseResult(\$extension: ${$extension}, mimeType: $mimeType)'; } 
+          mimeType == other.mimeType;
+
+@override int get hashCode => Object.hash($extension, mimeType);
+
+@override String toString() => 'WorkersAiGetToMarkdownSupportedResponseResult(\$extension: ${$extension}, mimeType: $mimeType)';
+
  }

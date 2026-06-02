@@ -20,25 +20,29 @@ final class DestinationUpdateError$400 extends DestinationUpdateError {const Des
 
 final DestinationUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DestinationUpdateError$401 extends DestinationUpdateError {const DestinationUpdateError$401(this.error);
 
 final DestinationUpdateResponse401 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class DestinationUpdateError$404 extends DestinationUpdateError {const DestinationUpdateError$404(this.error);
 
 final DestinationUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DestinationUpdateError$500 extends DestinationUpdateError {const DestinationUpdateError$500(this.error);
 
 final DestinationUpdateResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class DestinationUpdateError$Unknown extends DestinationUpdateError {const DestinationUpdateError$Unknown(this.statusCode, this.rawBody, );
 

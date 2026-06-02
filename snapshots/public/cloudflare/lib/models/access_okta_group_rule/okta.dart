@@ -27,10 +27,13 @@ Okta copyWith({String? identityProviderId, String? name, }) { return Okta(
   identityProviderId: identityProviderId ?? this.identityProviderId,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Okta &&
           identityProviderId == other.identityProviderId &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(identityProviderId, name); } 
-@override String toString() { return 'Okta(identityProviderId: $identityProviderId, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(identityProviderId, name);
+
+@override String toString() => 'Okta(identityProviderId: $identityProviderId, name: $name)';
+
  }

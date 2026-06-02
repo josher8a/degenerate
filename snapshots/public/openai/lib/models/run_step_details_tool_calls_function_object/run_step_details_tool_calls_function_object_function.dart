@@ -31,11 +31,14 @@ RunStepDetailsToolCallsFunctionObjectFunction copyWith({String? name, String? ar
   arguments: arguments ?? this.arguments,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsFunctionObjectFunction &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(name, arguments, output); } 
-@override String toString() { return 'RunStepDetailsToolCallsFunctionObjectFunction(name: $name, arguments: $arguments, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(name, arguments, output);
+
+@override String toString() => 'RunStepDetailsToolCallsFunctionObjectFunction(name: $name, arguments: $arguments, output: $output)';
+
  }

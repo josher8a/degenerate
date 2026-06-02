@@ -32,12 +32,15 @@ Rectangle copyWith({dynamic Function()? kind, double? width, double? height, dyn
   height: height ?? this.height,
   meta: meta != null ? meta() : this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Rectangle &&
           kind == other.kind &&
           width == other.width &&
           height == other.height &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(kind, width, height, meta); } 
-@override String toString() { return 'Rectangle(kind: $kind, width: $width, height: $height, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(kind, width, height, meta);
+
+@override String toString() => 'Rectangle(kind: $kind, width: $width, height: $height, meta: $meta)';
+
  }

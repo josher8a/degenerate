@@ -46,7 +46,7 @@ Metrics copyWith({double? Function()? step, double? Function()? trainLoss, doubl
   fullValidLoss: fullValidLoss != null ? fullValidLoss() : this.fullValidLoss,
   fullValidMeanTokenAccuracy: fullValidMeanTokenAccuracy != null ? fullValidMeanTokenAccuracy() : this.fullValidMeanTokenAccuracy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Metrics &&
           step == other.step &&
           trainLoss == other.trainLoss &&
@@ -54,7 +54,10 @@ Metrics copyWith({double? Function()? step, double? Function()? trainLoss, doubl
           validLoss == other.validLoss &&
           validMeanTokenAccuracy == other.validMeanTokenAccuracy &&
           fullValidLoss == other.fullValidLoss &&
-          fullValidMeanTokenAccuracy == other.fullValidMeanTokenAccuracy; } 
-@override int get hashCode { return Object.hash(step, trainLoss, trainMeanTokenAccuracy, validLoss, validMeanTokenAccuracy, fullValidLoss, fullValidMeanTokenAccuracy); } 
-@override String toString() { return 'Metrics(step: $step, trainLoss: $trainLoss, trainMeanTokenAccuracy: $trainMeanTokenAccuracy, validLoss: $validLoss, validMeanTokenAccuracy: $validMeanTokenAccuracy, fullValidLoss: $fullValidLoss, fullValidMeanTokenAccuracy: $fullValidMeanTokenAccuracy)'; } 
+          fullValidMeanTokenAccuracy == other.fullValidMeanTokenAccuracy;
+
+@override int get hashCode => Object.hash(step, trainLoss, trainMeanTokenAccuracy, validLoss, validMeanTokenAccuracy, fullValidLoss, fullValidMeanTokenAccuracy);
+
+@override String toString() => 'Metrics(step: $step, trainLoss: $trainLoss, trainMeanTokenAccuracy: $trainMeanTokenAccuracy, validLoss: $validLoss, validMeanTokenAccuracy: $validMeanTokenAccuracy, fullValidLoss: $fullValidLoss, fullValidMeanTokenAccuracy: $fullValidMeanTokenAccuracy)';
+
  }

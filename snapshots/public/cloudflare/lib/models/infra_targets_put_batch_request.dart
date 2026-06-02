@@ -27,10 +27,13 @@ InfraTargetsPutBatchRequest copyWith({String? hostname, InfraIpInfo? ip, }) { re
   hostname: hostname ?? this.hostname,
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTargetsPutBatchRequest &&
           hostname == other.hostname &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(hostname, ip); } 
-@override String toString() { return 'InfraTargetsPutBatchRequest(hostname: $hostname, ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => Object.hash(hostname, ip);
+
+@override String toString() => 'InfraTargetsPutBatchRequest(hostname: $hostname, ip: $ip)';
+
  }

@@ -27,11 +27,14 @@ ProtectionRulesVariant3 copyWith({int? id, String? nodeId, String? type, }) { re
   nodeId: nodeId ?? this.nodeId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectionRulesVariant3 &&
           id == other.id &&
           nodeId == other.nodeId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, nodeId, type); } 
-@override String toString() { return 'ProtectionRulesVariant3(id: $id, nodeId: $nodeId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, nodeId, type);
+
+@override String toString() => 'ProtectionRulesVariant3(id: $id, nodeId: $nodeId, type: $type)';
+
  }

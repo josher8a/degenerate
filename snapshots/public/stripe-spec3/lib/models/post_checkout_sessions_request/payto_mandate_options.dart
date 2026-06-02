@@ -45,7 +45,7 @@ PaytoMandateOptions copyWith({AmountDetailsShippingParamAmount? Function()? amou
   purpose: purpose != null ? purpose() : this.purpose,
   startDate: startDate != null ? startDate() : this.startDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaytoMandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
@@ -53,7 +53,10 @@ PaytoMandateOptions copyWith({AmountDetailsShippingParamAmount? Function()? amou
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
           purpose == other.purpose &&
-          startDate == other.startDate; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate); } 
-@override String toString() { return 'PaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)'; } 
+          startDate == other.startDate;
+
+@override int get hashCode => Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose, startDate);
+
+@override String toString() => 'PaytoMandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose, startDate: $startDate)';
+
  }

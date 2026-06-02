@@ -21,10 +21,13 @@ Summary0Variant2 copyWith({String? rfc6962, String? $static, }) { return Summary
   rfc6962: rfc6962 ?? this.rfc6962,
   $static: $static ?? this.$static,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant2 &&
           rfc6962 == other.rfc6962 &&
-          $static == other.$static; } 
-@override int get hashCode { return Object.hash(rfc6962, $static); } 
-@override String toString() { return 'Summary0Variant2(rfc6962: $rfc6962, \$static: ${$static})'; } 
+          $static == other.$static;
+
+@override int get hashCode => Object.hash(rfc6962, $static);
+
+@override String toString() => 'Summary0Variant2(rfc6962: $rfc6962, \$static: ${$static})';
+
  }

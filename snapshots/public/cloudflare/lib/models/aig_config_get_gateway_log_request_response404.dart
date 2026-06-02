@@ -21,10 +21,13 @@ AigConfigGetGatewayLogRequestResponse404 copyWith({List<AccountsByAccountIdPipel
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigGetGatewayLogRequestResponse404 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
-@override String toString() { return 'AigConfigGetGatewayLogRequestResponse404(errors: $errors, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), success);
+
+@override String toString() => 'AigConfigGetGatewayLogRequestResponse404(errors: $errors, success: $success)';
+
  }

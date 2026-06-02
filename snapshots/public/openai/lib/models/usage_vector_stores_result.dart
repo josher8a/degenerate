@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageVectorStoresResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageVectorStoresResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageVectorStoresResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageVectorStoresResultObject($value)';
+
  }
 /// The aggregated vector stores usage details of the specific time bucket.
 @immutable final class UsageVectorStoresResult {const UsageVectorStoresResult({required this.object, required this.usageBytes, this.projectId, });
@@ -50,11 +53,14 @@ UsageVectorStoresResult copyWith({UsageVectorStoresResultObject? object, int? us
   usageBytes: usageBytes ?? this.usageBytes,
   projectId: projectId != null ? projectId() : this.projectId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageVectorStoresResult &&
           object == other.object &&
           usageBytes == other.usageBytes &&
-          projectId == other.projectId; } 
-@override int get hashCode { return Object.hash(object, usageBytes, projectId); } 
-@override String toString() { return 'UsageVectorStoresResult(object: $object, usageBytes: $usageBytes, projectId: $projectId)'; } 
+          projectId == other.projectId;
+
+@override int get hashCode => Object.hash(object, usageBytes, projectId);
+
+@override String toString() => 'UsageVectorStoresResult(object: $object, usageBytes: $usageBytes, projectId: $projectId)';
+
  }

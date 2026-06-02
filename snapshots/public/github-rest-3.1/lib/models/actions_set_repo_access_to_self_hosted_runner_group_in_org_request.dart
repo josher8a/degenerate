@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('selec
 ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest copyWith({List<int>? selectedRepositoryIds}) { return ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
   selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hashAll(selectedRepositoryIds); } 
-@override String toString() { return 'ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hashAll(selectedRepositoryIds);
+
+@override String toString() => 'ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

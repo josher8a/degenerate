@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('minim
 PromotionCodeCurrencyOption copyWith({int? minimumAmount}) { return PromotionCodeCurrencyOption(
   minimumAmount: minimumAmount ?? this.minimumAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCodeCurrencyOption &&
-          minimumAmount == other.minimumAmount; } 
-@override int get hashCode { return minimumAmount.hashCode; } 
-@override String toString() { return 'PromotionCodeCurrencyOption(minimumAmount: $minimumAmount)'; } 
+          minimumAmount == other.minimumAmount;
+
+@override int get hashCode => minimumAmount.hashCode;
+
+@override String toString() => 'PromotionCodeCurrencyOption(minimumAmount: $minimumAmount)';
+
  }

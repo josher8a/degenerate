@@ -39,13 +39,16 @@ CodeOfConduct copyWith({String? key, String? name, Uri? url, String? Function()?
   body: body != null ? body() : this.body,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeOfConduct &&
           key == other.key &&
           name == other.name &&
           url == other.url &&
           body == other.body &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(key, name, url, body, htmlUrl); } 
-@override String toString() { return 'CodeOfConduct(key: $key, name: $name, url: $url, body: $body, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(key, name, url, body, htmlUrl);
+
+@override String toString() => 'CodeOfConduct(key: $key, name: $name, url: $url, body: $body, htmlUrl: $htmlUrl)';
+
  }

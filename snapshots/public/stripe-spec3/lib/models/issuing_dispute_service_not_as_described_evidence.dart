@@ -52,13 +52,16 @@ IssuingDisputeServiceNotAsDescribedEvidence copyWith({IssuingDisputeCanceledEvid
   explanation: explanation != null ? explanation() : this.explanation,
   receivedAt: receivedAt != null ? receivedAt() : this.receivedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeServiceNotAsDescribedEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
           canceledAt == other.canceledAt &&
           cancellationReason == other.cancellationReason &&
           explanation == other.explanation &&
-          receivedAt == other.receivedAt; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, canceledAt, cancellationReason, explanation, receivedAt); } 
-@override String toString() { return 'IssuingDisputeServiceNotAsDescribedEvidence(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationReason: $cancellationReason, explanation: $explanation, receivedAt: $receivedAt)'; } 
+          receivedAt == other.receivedAt;
+
+@override int get hashCode => Object.hash(additionalDocumentation, canceledAt, cancellationReason, explanation, receivedAt);
+
+@override String toString() => 'IssuingDisputeServiceNotAsDescribedEvidence(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationReason: $cancellationReason, explanation: $explanation, receivedAt: $receivedAt)';
+
  }

@@ -23,10 +23,13 @@ ContainerReferenceResource copyWith({ContainerReferenceParamType? type, String? 
   type: type ?? this.type,
   containerId: containerId ?? this.containerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerReferenceResource &&
           type == other.type &&
-          containerId == other.containerId; } 
-@override int get hashCode { return Object.hash(type, containerId); } 
-@override String toString() { return 'ContainerReferenceResource(type: $type, containerId: $containerId)'; } 
+          containerId == other.containerId;
+
+@override int get hashCode => Object.hash(type, containerId);
+
+@override String toString() => 'ContainerReferenceResource(type: $type, containerId: $containerId)';
+
  }

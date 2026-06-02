@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCheckSuiteCompletedCheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCheckSuiteCompletedCheckSuiteStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)';
+
  }
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
 @immutable final class WebhookCheckSuiteCompletedCheckSuite {const WebhookCheckSuiteCompletedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, required this.status, required this.updatedAt, required this.url, this.rerequestable, this.runsRerequestable, });
@@ -160,7 +163,7 @@ WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, Webhoo
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteCompletedCheckSuite &&
           after == other.after &&
           app == other.app &&
@@ -179,7 +182,10 @@ WebhookCheckSuiteCompletedCheckSuite copyWith({String? Function()? after, Webhoo
           runsRerequestable == other.runsRerequestable &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(after, app, before, checkRunsUrl, conclusion, createdAt, headBranch, headCommit, headSha, id, latestCheckRunsCount, nodeId, Object.hashAll(pullRequests), rerequestable, runsRerequestable, status, updatedAt, url); } 
-@override String toString() { return 'WebhookCheckSuiteCompletedCheckSuite(after: $after, app: $app, before: $before, checkRunsUrl: $checkRunsUrl, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headCommit: $headCommit, headSha: $headSha, id: $id, latestCheckRunsCount: $latestCheckRunsCount, nodeId: $nodeId, pullRequests: $pullRequests, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable, status: $status, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(after, app, before, checkRunsUrl, conclusion, createdAt, headBranch, headCommit, headSha, id, latestCheckRunsCount, nodeId, Object.hashAll(pullRequests), rerequestable, runsRerequestable, status, updatedAt, url);
+
+@override String toString() => 'WebhookCheckSuiteCompletedCheckSuite(after: $after, app: $app, before: $before, checkRunsUrl: $checkRunsUrl, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headCommit: $headCommit, headSha: $headSha, id: $id, latestCheckRunsCount: $latestCheckRunsCount, nodeId: $nodeId, pullRequests: $pullRequests, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable, status: $status, updatedAt: $updatedAt, url: $url)';
+
  }

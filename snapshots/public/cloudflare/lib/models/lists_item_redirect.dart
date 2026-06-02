@@ -25,10 +25,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListsItemRedirectStatusCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListsItemRedirectStatusCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ListsItemRedirectStatusCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ListsItemRedirectStatusCode($value)';
+
  }
 /// The definition of the redirect.
 @immutable final class ListsItemRedirect {const ListsItemRedirect({required this.sourceUrl, required this.targetUrl, this.includeSubdomains = false, this.preservePathSuffix = false, this.preserveQueryString = false, this.statusCode, this.subpathMatching = false, });
@@ -79,7 +82,7 @@ ListsItemRedirect copyWith({bool Function()? includeSubdomains, bool Function()?
   subpathMatching: subpathMatching != null ? subpathMatching() : this.subpathMatching,
   targetUrl: targetUrl ?? this.targetUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsItemRedirect &&
           includeSubdomains == other.includeSubdomains &&
           preservePathSuffix == other.preservePathSuffix &&
@@ -87,7 +90,10 @@ ListsItemRedirect copyWith({bool Function()? includeSubdomains, bool Function()?
           sourceUrl == other.sourceUrl &&
           statusCode == other.statusCode &&
           subpathMatching == other.subpathMatching &&
-          targetUrl == other.targetUrl; } 
-@override int get hashCode { return Object.hash(includeSubdomains, preservePathSuffix, preserveQueryString, sourceUrl, statusCode, subpathMatching, targetUrl); } 
-@override String toString() { return 'ListsItemRedirect(includeSubdomains: $includeSubdomains, preservePathSuffix: $preservePathSuffix, preserveQueryString: $preserveQueryString, sourceUrl: $sourceUrl, statusCode: $statusCode, subpathMatching: $subpathMatching, targetUrl: $targetUrl)'; } 
+          targetUrl == other.targetUrl;
+
+@override int get hashCode => Object.hash(includeSubdomains, preservePathSuffix, preserveQueryString, sourceUrl, statusCode, subpathMatching, targetUrl);
+
+@override String toString() => 'ListsItemRedirect(includeSubdomains: $includeSubdomains, preservePathSuffix: $preservePathSuffix, preserveQueryString: $preserveQueryString, sourceUrl: $sourceUrl, statusCode: $statusCode, subpathMatching: $subpathMatching, targetUrl: $targetUrl)';
+
  }

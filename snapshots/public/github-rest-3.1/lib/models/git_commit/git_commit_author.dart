@@ -31,11 +31,14 @@ GitCommitAuthor copyWith({DateTime? date, String? email, String? name, }) { retu
   email: email ?? this.email,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCommitAuthor &&
           date == other.date &&
           email == other.email &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(date, email, name); } 
-@override String toString() { return 'GitCommitAuthor(date: $date, email: $email, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(date, email, name);
+
+@override String toString() => 'GitCommitAuthor(date: $date, email: $email, name: $name)';
+
  }

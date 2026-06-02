@@ -50,12 +50,15 @@ EmailSecurityCreateBlockedSender copyWith({String? Function()? comments, bool? i
   pattern: pattern ?? this.pattern,
   patternType: patternType != null ? patternType() : this.patternType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateBlockedSender &&
           comments == other.comments &&
           isRegex == other.isRegex &&
           pattern == other.pattern &&
-          patternType == other.patternType; } 
-@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType); } 
-@override String toString() { return 'EmailSecurityCreateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)'; } 
+          patternType == other.patternType;
+
+@override int get hashCode => Object.hash(comments, isRegex, pattern, patternType);
+
+@override String toString() => 'EmailSecurityCreateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)';
+
  }

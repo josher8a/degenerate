@@ -32,10 +32,13 @@ RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0 copyWit
   clean: clean ?? this.clean,
   compromised: compromised ?? this.compromised,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0 &&
           clean == other.clean &&
-          compromised == other.compromised; } 
-@override int get hashCode { return Object.hash(clean, compromised); } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0(clean: $clean, compromised: $compromised)'; } 
+          compromised == other.compromised;
+
+@override int get hashCode => Object.hash(clean, compromised);
+
+@override String toString() => 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0(clean: $clean, compromised: $compromised)';
+
  }

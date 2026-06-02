@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersKvNamespaceGetMultipleKeyValuePairsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersKvNamespaceGetMultipleKeyValuePairsRequestType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersKvNamespaceGetMultipleKeyValuePairsRequestType($value)';
+
  }
 @immutable final class WorkersKvNamespaceGetMultipleKeyValuePairsRequest {const WorkersKvNamespaceGetMultipleKeyValuePairsRequest({required this.keys, this.type = WorkersKvNamespaceGetMultipleKeyValuePairsRequestType.text, this.withMetadata = false, });
 
@@ -57,11 +60,14 @@ WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNam
   type: type != null ? type() : this.type,
   withMetadata: withMetadata != null ? withMetadata() : this.withMetadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvNamespaceGetMultipleKeyValuePairsRequest &&
           listEquals(keys, other.keys) &&
           type == other.type &&
-          withMetadata == other.withMetadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(keys), type, withMetadata); } 
-@override String toString() { return 'WorkersKvNamespaceGetMultipleKeyValuePairsRequest(keys: $keys, type: $type, withMetadata: $withMetadata)'; } 
+          withMetadata == other.withMetadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(keys), type, withMetadata);
+
+@override String toString() => 'WorkersKvNamespaceGetMultipleKeyValuePairsRequest(keys: $keys, type: $type, withMetadata: $withMetadata)';
+
  }

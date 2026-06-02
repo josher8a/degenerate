@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemTruncateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemTruncateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventConversationItemTruncateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventConversationItemTruncateType($value)';
+
  }
 /// Send this event to truncate a previous assistant message’s audio. The server
 /// will produce audio faster than realtime, so this event is useful when the user
@@ -82,13 +85,16 @@ RealtimeBetaClientEventConversationItemTruncate copyWith({String? Function()? ev
   contentIndex: contentIndex ?? this.contentIndex,
   audioEndMs: audioEndMs ?? this.audioEndMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventConversationItemTruncate &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          audioEndMs == other.audioEndMs; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, audioEndMs); } 
-@override String toString() { return 'RealtimeBetaClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)'; } 
+          audioEndMs == other.audioEndMs;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, audioEndMs);
+
+@override String toString() => 'RealtimeBetaClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)';
+
  }

@@ -22,10 +22,13 @@ ReposUpdateStatusCheckProtectionRequestChecks copyWith({String? context, int? Fu
   context: context ?? this.context,
   appId: appId != null ? appId() : this.appId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateStatusCheckProtectionRequestChecks &&
           context == other.context &&
-          appId == other.appId; } 
-@override int get hashCode { return Object.hash(context, appId); } 
-@override String toString() { return 'ReposUpdateStatusCheckProtectionRequestChecks(context: $context, appId: $appId)'; } 
+          appId == other.appId;
+
+@override int get hashCode => Object.hash(context, appId);
+
+@override String toString() => 'ReposUpdateStatusCheckProtectionRequestChecks(context: $context, appId: $appId)';
+
  }

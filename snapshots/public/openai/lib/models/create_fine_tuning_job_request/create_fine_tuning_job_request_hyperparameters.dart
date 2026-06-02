@@ -37,11 +37,14 @@ CreateFineTuningJobRequestHyperparameters copyWith({BatchSize? Function()? batch
   learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
   nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFineTuningJobRequestHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
-          nEpochs == other.nEpochs; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs); } 
-@override String toString() { return 'CreateFineTuningJobRequestHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
+          nEpochs == other.nEpochs;
+
+@override int get hashCode => Object.hash(batchSize, learningRateMultiplier, nEpochs);
+
+@override String toString() => 'CreateFineTuningJobRequestHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)';
+
  }

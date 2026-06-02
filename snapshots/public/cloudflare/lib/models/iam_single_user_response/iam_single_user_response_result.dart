@@ -98,7 +98,7 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, IamCountr
   twoFactorAuthenticationLocked: twoFactorAuthenticationLocked != null ? twoFactorAuthenticationLocked() : this.twoFactorAuthenticationLocked,
   zipcode: zipcode != null ? zipcode() : this.zipcode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamSingleUserResponseResult &&
           listEquals(betas, other.betas) &&
           country == other.country &&
@@ -113,7 +113,10 @@ IamSingleUserResponseResult copyWith({List<String>? Function()? betas, IamCountr
           telephone == other.telephone &&
           twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled &&
           twoFactorAuthenticationLocked == other.twoFactorAuthenticationLocked &&
-          zipcode == other.zipcode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(betas ?? const []), country, firstName, hasBusinessZones, hasEnterpriseZones, hasProZones, id, lastName, Object.hashAll(organizations ?? const []), suspended, telephone, twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked, zipcode); } 
-@override String toString() { return 'IamSingleUserResponseResult(betas: $betas, country: $country, firstName: $firstName, hasBusinessZones: $hasBusinessZones, hasEnterpriseZones: $hasEnterpriseZones, hasProZones: $hasProZones, id: $id, lastName: $lastName, organizations: $organizations, suspended: $suspended, telephone: $telephone, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked, zipcode: $zipcode)'; } 
+          zipcode == other.zipcode;
+
+@override int get hashCode => Object.hash(Object.hashAll(betas ?? const []), country, firstName, hasBusinessZones, hasEnterpriseZones, hasProZones, id, lastName, Object.hashAll(organizations ?? const []), suspended, telephone, twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked, zipcode);
+
+@override String toString() => 'IamSingleUserResponseResult(betas: $betas, country: $country, firstName: $firstName, hasBusinessZones: $hasBusinessZones, hasEnterpriseZones: $hasEnterpriseZones, hasProZones: $hasProZones, id: $id, lastName: $lastName, organizations: $organizations, suspended: $suspended, telephone: $telephone, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled, twoFactorAuthenticationLocked: $twoFactorAuthenticationLocked, zipcode: $zipcode)';
+
  }

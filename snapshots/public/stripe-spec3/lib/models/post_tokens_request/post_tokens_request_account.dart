@@ -31,12 +31,15 @@ PostTokensRequestAccount copyWith({PostAccountsAccountRequestBusinessType? Funct
   individual: individual != null ? individual() : this.individual,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTokensRequestAccount &&
           businessType == other.businessType &&
           company == other.company &&
           individual == other.individual &&
-          tosShownAndAccepted == other.tosShownAndAccepted; } 
-@override int get hashCode { return Object.hash(businessType, company, individual, tosShownAndAccepted); } 
-@override String toString() { return 'PostTokensRequestAccount(businessType: $businessType, company: $company, individual: $individual, tosShownAndAccepted: $tosShownAndAccepted)'; } 
+          tosShownAndAccepted == other.tosShownAndAccepted;
+
+@override int get hashCode => Object.hash(businessType, company, individual, tosShownAndAccepted);
+
+@override String toString() => 'PostTokensRequestAccount(businessType: $businessType, company: $company, individual: $individual, tosShownAndAccepted: $tosShownAndAccepted)';
+
  }

@@ -64,7 +64,7 @@ LineItemsVariant1 copyWith({int? Function()? discountAmount, Variant1PaymentMeth
   unitCost: unitCost ?? this.unitCost,
   unitOfMeasure: unitOfMeasure != null ? unitOfMeasure() : this.unitOfMeasure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LineItemsVariant1 &&
           discountAmount == other.discountAmount &&
           paymentMethodOptions == other.paymentMethodOptions &&
@@ -73,7 +73,10 @@ LineItemsVariant1 copyWith({int? Function()? discountAmount, Variant1PaymentMeth
           quantity == other.quantity &&
           tax == other.tax &&
           unitCost == other.unitCost &&
-          unitOfMeasure == other.unitOfMeasure; } 
-@override int get hashCode { return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure); } 
-@override String toString() { return 'LineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)'; } 
+          unitOfMeasure == other.unitOfMeasure;
+
+@override int get hashCode => Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure);
+
+@override String toString() => 'LineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)';
+
  }

@@ -21,10 +21,13 @@ RealtimekitAiConfig copyWith({RealtimekitSummarizationConfig? Function()? summar
   summarization: summarization != null ? summarization() : this.summarization,
   transcription: transcription != null ? transcription() : this.transcription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitAiConfig &&
           summarization == other.summarization &&
-          transcription == other.transcription; } 
-@override int get hashCode { return Object.hash(summarization, transcription); } 
-@override String toString() { return 'RealtimekitAiConfig(summarization: $summarization, transcription: $transcription)'; } 
+          transcription == other.transcription;
+
+@override int get hashCode => Object.hash(summarization, transcription);
+
+@override String toString() => 'RealtimekitAiConfig(summarization: $summarization, transcription: $transcription)';
+
  }

@@ -93,7 +93,7 @@ OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()
   tokenExpiresAt: tokenExpiresAt != null ? tokenExpiresAt() : this.tokenExpiresAt,
   tokenLastUsedAt: tokenLastUsedAt != null ? tokenLastUsedAt() : this.tokenLastUsedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationProgrammaticAccessGrantRequest &&
           id == other.id &&
           reason == other.reason &&
@@ -106,7 +106,10 @@ OrganizationProgrammaticAccessGrantRequest copyWith({int? id, String? Function()
           tokenName == other.tokenName &&
           tokenExpired == other.tokenExpired &&
           tokenExpiresAt == other.tokenExpiresAt &&
-          tokenLastUsedAt == other.tokenLastUsedAt; } 
-@override int get hashCode { return Object.hash(id, reason, owner, repositorySelection, repositoriesUrl, permissions, createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt); } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrantRequest(id: $id, reason: $reason, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)'; } 
+          tokenLastUsedAt == other.tokenLastUsedAt;
+
+@override int get hashCode => Object.hash(id, reason, owner, repositorySelection, repositoriesUrl, permissions, createdAt, tokenId, tokenName, tokenExpired, tokenExpiresAt, tokenLastUsedAt);
+
+@override String toString() => 'OrganizationProgrammaticAccessGrantRequest(id: $id, reason: $reason, owner: $owner, repositorySelection: $repositorySelection, repositoriesUrl: $repositoriesUrl, permissions: $permissions, createdAt: $createdAt, tokenId: $tokenId, tokenName: $tokenName, tokenExpired: $tokenExpired, tokenExpiresAt: $tokenExpiresAt, tokenLastUsedAt: $tokenLastUsedAt)';
+
  }

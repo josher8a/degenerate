@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)';
+
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });
 
@@ -85,7 +88,7 @@ PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOpt
   transactionPurpose: transactionPurpose != null ? transactionPurpose() : this.transactionPurpose,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam14 &&
           financialConnections == other.financialConnections &&
           mandateOptions == other.mandateOptions &&
@@ -93,7 +96,10 @@ PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOpt
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
           transactionPurpose == other.transactionPurpose &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, mandateOptions, networks, setupFutureUsage, targetDate, transactionPurpose, verificationMethod); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, transactionPurpose: $transactionPurpose, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(financialConnections, mandateOptions, networks, setupFutureUsage, targetDate, transactionPurpose, verificationMethod);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam14(financialConnections: $financialConnections, mandateOptions: $mandateOptions, networks: $networks, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, transactionPurpose: $transactionPurpose, verificationMethod: $verificationMethod)';
+
  }

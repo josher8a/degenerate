@@ -58,7 +58,7 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
   outboundPayments: outboundPayments != null ? outboundPayments() : this.outboundPayments,
   outboundTransfers: outboundTransfers != null ? outboundTransfers() : this.outboundTransfers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest &&
           cardIssuing == other.cardIssuing &&
           depositInsurance == other.depositInsurance &&
@@ -67,7 +67,10 @@ PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest copyWith({PostTreas
           inboundTransfers == other.inboundTransfers &&
           intraStripeFlows == other.intraStripeFlows &&
           outboundPayments == other.outboundPayments &&
-          outboundTransfers == other.outboundTransfers; } 
-@override int get hashCode { return Object.hash(cardIssuing, depositInsurance, Object.hashAll(expand ?? const []), financialAddresses, inboundTransfers, intraStripeFlows, outboundPayments, outboundTransfers); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(cardIssuing: $cardIssuing, depositInsurance: $depositInsurance, expand: $expand, financialAddresses: $financialAddresses, inboundTransfers: $inboundTransfers, intraStripeFlows: $intraStripeFlows, outboundPayments: $outboundPayments, outboundTransfers: $outboundTransfers)'; } 
+          outboundTransfers == other.outboundTransfers;
+
+@override int get hashCode => Object.hash(cardIssuing, depositInsurance, Object.hashAll(expand ?? const []), financialAddresses, inboundTransfers, intraStripeFlows, outboundPayments, outboundTransfers);
+
+@override String toString() => 'PostTreasuryFinancialAccountsFinancialAccountFeaturesRequest(cardIssuing: $cardIssuing, depositInsurance: $depositInsurance, expand: $expand, financialAddresses: $financialAddresses, inboundTransfers: $inboundTransfers, intraStripeFlows: $intraStripeFlows, outboundPayments: $outboundPayments, outboundTransfers: $outboundTransfers)';
+
  }

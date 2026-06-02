@@ -55,7 +55,7 @@ InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? 
   lastRateLimitedTimestamp: lastRateLimitedTimestamp != null ? lastRateLimitedTimestamp() : this.lastRateLimitedTimestamp,
   lastRequestTimestamp: lastRequestTimestamp != null ? lastRequestTimestamp() : this.lastRequestTimestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsUserStats2 &&
           actorType == other.actorType &&
           actorName == other.actorName &&
@@ -65,7 +65,10 @@ InsightsUserStats2 copyWith({String? Function()? actorType, String? Function()? 
           totalRequestCount == other.totalRequestCount &&
           rateLimitedRequestCount == other.rateLimitedRequestCount &&
           lastRateLimitedTimestamp == other.lastRateLimitedTimestamp &&
-          lastRequestTimestamp == other.lastRequestTimestamp; } 
-@override int get hashCode { return Object.hash(actorType, actorName, actorId, integrationId, oauthApplicationId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp); } 
-@override String toString() { return 'InsightsUserStats2(actorType: $actorType, actorName: $actorName, actorId: $actorId, integrationId: $integrationId, oauthApplicationId: $oauthApplicationId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)'; } 
+          lastRequestTimestamp == other.lastRequestTimestamp;
+
+@override int get hashCode => Object.hash(actorType, actorName, actorId, integrationId, oauthApplicationId, totalRequestCount, rateLimitedRequestCount, lastRateLimitedTimestamp, lastRequestTimestamp);
+
+@override String toString() => 'InsightsUserStats2(actorType: $actorType, actorName: $actorName, actorId: $actorId, integrationId: $integrationId, oauthApplicationId: $oauthApplicationId, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount, lastRateLimitedTimestamp: $lastRateLimitedTimestamp, lastRequestTimestamp: $lastRequestTimestamp)';
+
  }

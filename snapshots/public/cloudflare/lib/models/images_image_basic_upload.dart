@@ -57,14 +57,17 @@ ImagesImageBasicUpload copyWith({String? Function()? creator, Uint8List? Functio
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageBasicUpload &&
           creator == other.creator &&
           file == other.file &&
           id == other.id &&
           metadata == other.metadata &&
           requireSignedUrLs == other.requireSignedUrLs &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(creator, file, id, metadata, requireSignedUrLs, url); } 
-@override String toString() { return 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(creator, file, id, metadata, requireSignedUrLs, url);
+
+@override String toString() => 'ImagesImageBasicUpload(creator: $creator, file: $file, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs, url: $url)';
+
  }

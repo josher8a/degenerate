@@ -132,7 +132,7 @@ WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Functio
   urls: urls ?? this.urls,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersion &&
           annotations == other.annotations &&
           assets == other.assets &&
@@ -150,7 +150,10 @@ WorkersVersion copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Functio
           source == other.source &&
           startupTimeMs == other.startupTimeMs &&
           listEquals(urls, other.urls) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, id, limits, mainModule, migrations, Object.hashAll(modules ?? const []), number, placement, source, startupTimeMs, Object.hashAll(urls), usageModel); } 
-@override String toString() { return 'WorkersVersion(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, id: $id, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, number: $number, placement: $placement, source: $source, startupTimeMs: $startupTimeMs, urls: $urls, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hash(annotations, assets, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), createdOn, id, limits, mainModule, migrations, Object.hashAll(modules ?? const []), number, placement, source, startupTimeMs, Object.hashAll(urls), usageModel);
+
+@override String toString() => 'WorkersVersion(annotations: $annotations, assets: $assets, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, createdOn: $createdOn, id: $id, limits: $limits, mainModule: $mainModule, migrations: $migrations, modules: $modules, number: $number, placement: $placement, source: $source, startupTimeMs: $startupTimeMs, urls: $urls, usageModel: $usageModel)';
+
  }

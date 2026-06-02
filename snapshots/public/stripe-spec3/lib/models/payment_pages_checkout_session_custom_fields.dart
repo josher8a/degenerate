@@ -56,7 +56,7 @@ PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCus
   text: text != null ? text() : this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFields &&
           dropdown == other.dropdown &&
           key == other.key &&
@@ -64,7 +64,10 @@ PaymentPagesCheckoutSessionCustomFields copyWith({PaymentPagesCheckoutSessionCus
           numeric == other.numeric &&
           optional == other.optional &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(dropdown, key, label, numeric, optional, text, type); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(dropdown, key, label, numeric, optional, text, type);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomFields(dropdown: $dropdown, key: $key, label: $label, numeric: $numeric, optional: $optional, text: $text, type: $type)';
+
  }

@@ -32,11 +32,14 @@ AssetsConfig copyWith({HtmlHandling Function()? htmlHandling, NotFoundHandling F
   notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssetsConfig &&
           htmlHandling == other.htmlHandling &&
           notFoundHandling == other.notFoundHandling &&
-          runWorkerFirst == other.runWorkerFirst; } 
-@override int get hashCode { return Object.hash(htmlHandling, notFoundHandling, runWorkerFirst); } 
-@override String toString() { return 'AssetsConfig(htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst)'; } 
+          runWorkerFirst == other.runWorkerFirst;
+
+@override int get hashCode => Object.hash(htmlHandling, notFoundHandling, runWorkerFirst);
+
+@override String toString() => 'AssetsConfig(htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst)';
+
  }

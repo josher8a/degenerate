@@ -72,14 +72,17 @@ PaymentMethodDetailsPaypal copyWith({String? Function()? country, String? Functi
   sellerProtection: sellerProtection != null ? sellerProtection() : this.sellerProtection,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaypal &&
           country == other.country &&
           payerEmail == other.payerEmail &&
           payerId == other.payerId &&
           payerName == other.payerName &&
           sellerProtection == other.sellerProtection &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(country, payerEmail, payerId, payerName, sellerProtection, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsPaypal(country: $country, payerEmail: $payerEmail, payerId: $payerId, payerName: $payerName, sellerProtection: $sellerProtection, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(country, payerEmail, payerId, payerName, sellerProtection, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsPaypal(country: $country, payerEmail: $payerEmail, payerId: $payerId, payerName: $payerName, sellerProtection: $sellerProtection, transactionId: $transactionId)';
+
  }

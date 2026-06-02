@@ -79,7 +79,7 @@ BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, S
   netQuantity: netQuantity ?? this.netQuantity,
   netAmount: netAmount ?? this.netAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingUsageSummaryReportOrgUsageItems &&
           product == other.product &&
           sku == other.sku &&
@@ -90,7 +90,10 @@ BillingUsageSummaryReportOrgUsageItems copyWith({String? product, String? sku, S
           discountQuantity == other.discountQuantity &&
           discountAmount == other.discountAmount &&
           netQuantity == other.netQuantity &&
-          netAmount == other.netAmount; } 
-@override int get hashCode { return Object.hash(product, sku, unitType, pricePerUnit, grossQuantity, grossAmount, discountQuantity, discountAmount, netQuantity, netAmount); } 
-@override String toString() { return 'BillingUsageSummaryReportOrgUsageItems(product: $product, sku: $sku, unitType: $unitType, pricePerUnit: $pricePerUnit, grossQuantity: $grossQuantity, grossAmount: $grossAmount, discountQuantity: $discountQuantity, discountAmount: $discountAmount, netQuantity: $netQuantity, netAmount: $netAmount)'; } 
+          netAmount == other.netAmount;
+
+@override int get hashCode => Object.hash(product, sku, unitType, pricePerUnit, grossQuantity, grossAmount, discountQuantity, discountAmount, netQuantity, netAmount);
+
+@override String toString() => 'BillingUsageSummaryReportOrgUsageItems(product: $product, sku: $sku, unitType: $unitType, pricePerUnit: $pricePerUnit, grossQuantity: $grossQuantity, grossAmount: $grossAmount, discountQuantity: $discountQuantity, discountAmount: $discountAmount, netQuantity: $netQuantity, netAmount: $netAmount)';
+
  }

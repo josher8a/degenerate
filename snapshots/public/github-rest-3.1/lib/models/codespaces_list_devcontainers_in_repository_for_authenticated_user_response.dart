@@ -21,10 +21,13 @@ CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse copyWith({in
   totalCount: totalCount ?? this.totalCount,
   devcontainers: devcontainers ?? this.devcontainers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
-          listEquals(devcontainers, other.devcontainers); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(devcontainers)); } 
-@override String toString() { return 'CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(totalCount: $totalCount, devcontainers: $devcontainers)'; } 
+          listEquals(devcontainers, other.devcontainers);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(devcontainers));
+
+@override String toString() => 'CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(totalCount: $totalCount, devcontainers: $devcontainers)';
+
  }

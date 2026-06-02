@@ -28,11 +28,14 @@ DumpOptions copyWith({bool? Function()? noData, bool? Function()? noSchema, List
   noSchema: noSchema != null ? noSchema() : this.noSchema,
   tables: tables != null ? tables() : this.tables,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DumpOptions &&
           noData == other.noData &&
           noSchema == other.noSchema &&
-          listEquals(tables, other.tables); } 
-@override int get hashCode { return Object.hash(noData, noSchema, Object.hashAll(tables ?? const [])); } 
-@override String toString() { return 'DumpOptions(noData: $noData, noSchema: $noSchema, tables: $tables)'; } 
+          listEquals(tables, other.tables);
+
+@override int get hashCode => Object.hash(noData, noSchema, Object.hashAll(tables ?? const []));
+
+@override String toString() => 'DumpOptions(noData: $noData, noSchema: $noSchema, tables: $tables)';
+
  }

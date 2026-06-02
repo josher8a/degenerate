@@ -42,12 +42,15 @@ GetQuotesQuoteLineItemsResponse copyWith({List<Item>? data, bool? hasMore, GetAc
   object: object ?? this.object,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetQuotesQuoteLineItemsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetQuotesQuoteLineItemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), hasMore, object, url);
+
+@override String toString() => 'GetQuotesQuoteLineItemsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
+
  }

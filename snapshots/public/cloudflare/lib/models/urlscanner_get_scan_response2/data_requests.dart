@@ -26,11 +26,14 @@ DataRequests copyWith({DataRequestsRequest? request, List<RequestsRequests>? Fun
   requests: requests != null ? requests() : this.requests,
   response: response ?? this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataRequests &&
           request == other.request &&
           listEquals(requests, other.requests) &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(request, Object.hashAll(requests ?? const []), response); } 
-@override String toString() { return 'DataRequests(request: $request, requests: $requests, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(request, Object.hashAll(requests ?? const []), response);
+
+@override String toString() => 'DataRequests(request: $request, requests: $requests, response: $response)';
+
  }

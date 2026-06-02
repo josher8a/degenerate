@@ -31,11 +31,14 @@ QueuesAckMessagesResponseResult copyWith({double? Function()? ackCount, double? 
   retryCount: retryCount != null ? retryCount() : this.retryCount,
   warnings: warnings != null ? warnings() : this.warnings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesAckMessagesResponseResult &&
           ackCount == other.ackCount &&
           retryCount == other.retryCount &&
-          listEquals(warnings, other.warnings); } 
-@override int get hashCode { return Object.hash(ackCount, retryCount, Object.hashAll(warnings ?? const [])); } 
-@override String toString() { return 'QueuesAckMessagesResponseResult(ackCount: $ackCount, retryCount: $retryCount, warnings: $warnings)'; } 
+          listEquals(warnings, other.warnings);
+
+@override int get hashCode => Object.hash(ackCount, retryCount, Object.hashAll(warnings ?? const []));
+
+@override String toString() => 'QueuesAckMessagesResponseResult(ackCount: $ackCount, retryCount: $retryCount, warnings: $warnings)';
+
  }

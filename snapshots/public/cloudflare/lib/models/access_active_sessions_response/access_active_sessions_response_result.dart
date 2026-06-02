@@ -26,11 +26,14 @@ AccessActiveSessionsResponseResult copyWith({int? Function()? expiration, Result
   metadata: metadata != null ? metadata() : this.metadata,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessActiveSessionsResponseResult &&
           expiration == other.expiration &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(expiration, metadata, name); } 
-@override String toString() { return 'AccessActiveSessionsResponseResult(expiration: $expiration, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(expiration, metadata, name);
+
+@override String toString() => 'AccessActiveSessionsResponseResult(expiration: $expiration, metadata: $metadata, name: $name)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectObject($value)';
+
  }
 /// `active` or `archived`
 @immutable final class ProjectStatus {const ProjectStatus._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectStatus($value)';
+
  }
 /// Represents an individual project.
 @immutable final class Project {const Project({required this.id, required this.object, required this.name, required this.createdAt, required this.status, this.archivedAt, });
@@ -98,14 +104,17 @@ Project copyWith({String? id, ProjectObject? object, String? name, int? createdA
   archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Project &&
           id == other.id &&
           object == other.object &&
           name == other.name &&
           createdAt == other.createdAt &&
           archivedAt == other.archivedAt &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, object, name, createdAt, archivedAt, status); } 
-@override String toString() { return 'Project(id: $id, object: $object, name: $name, createdAt: $createdAt, archivedAt: $archivedAt, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, object, name, createdAt, archivedAt, status);
+
+@override String toString() => 'Project(id: $id, object: $object, name: $name, createdAt: $createdAt, archivedAt: $archivedAt, status: $status)';
+
  }

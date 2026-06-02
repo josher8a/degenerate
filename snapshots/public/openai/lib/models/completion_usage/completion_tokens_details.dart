@@ -42,12 +42,15 @@ CompletionTokensDetails copyWith({int Function()? acceptedPredictionTokens, int 
   reasoningTokens: reasoningTokens != null ? reasoningTokens() : this.reasoningTokens,
   rejectedPredictionTokens: rejectedPredictionTokens != null ? rejectedPredictionTokens() : this.rejectedPredictionTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompletionTokensDetails &&
           acceptedPredictionTokens == other.acceptedPredictionTokens &&
           audioTokens == other.audioTokens &&
           reasoningTokens == other.reasoningTokens &&
-          rejectedPredictionTokens == other.rejectedPredictionTokens; } 
-@override int get hashCode { return Object.hash(acceptedPredictionTokens, audioTokens, reasoningTokens, rejectedPredictionTokens); } 
-@override String toString() { return 'CompletionTokensDetails(acceptedPredictionTokens: $acceptedPredictionTokens, audioTokens: $audioTokens, reasoningTokens: $reasoningTokens, rejectedPredictionTokens: $rejectedPredictionTokens)'; } 
+          rejectedPredictionTokens == other.rejectedPredictionTokens;
+
+@override int get hashCode => Object.hash(acceptedPredictionTokens, audioTokens, reasoningTokens, rejectedPredictionTokens);
+
+@override String toString() => 'CompletionTokensDetails(acceptedPredictionTokens: $acceptedPredictionTokens, audioTokens: $audioTokens, reasoningTokens: $reasoningTokens, rejectedPredictionTokens: $rejectedPredictionTokens)';
+
  }

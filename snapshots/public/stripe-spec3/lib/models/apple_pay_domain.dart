@@ -49,13 +49,16 @@ ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? liv
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplePayDomain &&
           created == other.created &&
           domainName == other.domainName &&
           id == other.id &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(created, domainName, id, livemode, object); } 
-@override String toString() { return 'ApplePayDomain(created: $created, domainName: $domainName, id: $id, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(created, domainName, id, livemode, object);
+
+@override String toString() => 'ApplePayDomain(created: $created, domainName: $domainName, id: $id, livemode: $livemode, object: $object)';
+
  }

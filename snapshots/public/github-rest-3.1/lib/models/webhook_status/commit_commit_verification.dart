@@ -58,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VerificationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VerificationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VerificationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VerificationReason($value)';
+
  }
 @immutable final class CommitCommitVerification {const CommitCommitVerification({required this.payload, required this.reason, required this.signature, required this.verified, required this.verifiedAt, });
 
@@ -102,13 +105,16 @@ CommitCommitVerification copyWith({String? Function()? payload, VerificationReas
   verified: verified ?? this.verified,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitCommitVerification &&
           payload == other.payload &&
           reason == other.reason &&
           signature == other.signature &&
           verified == other.verified &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(payload, reason, signature, verified, verifiedAt); } 
-@override String toString() { return 'CommitCommitVerification(payload: $payload, reason: $reason, signature: $signature, verified: $verified, verifiedAt: $verifiedAt)'; } 
+          verifiedAt == other.verifiedAt;
+
+@override int get hashCode => Object.hash(payload, reason, signature, verified, verifiedAt);
+
+@override String toString() => 'CommitCommitVerification(payload: $payload, reason: $reason, signature: $signature, verified: $verified, verifiedAt: $verifiedAt)';
+
  }

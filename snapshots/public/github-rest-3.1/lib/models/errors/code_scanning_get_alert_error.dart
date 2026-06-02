@@ -19,19 +19,22 @@ final class CodeScanningGetAlertError$403 extends CodeScanningGetAlertError {con
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningGetAlertError$404 extends CodeScanningGetAlertError {const CodeScanningGetAlertError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningGetAlertError$503 extends CodeScanningGetAlertError {const CodeScanningGetAlertError$503(this.error);
 
 final CodeScanningGetAlertResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningGetAlertError$Unknown extends CodeScanningGetAlertError {const CodeScanningGetAlertError$Unknown(this.statusCode, this.rawBody, );
 

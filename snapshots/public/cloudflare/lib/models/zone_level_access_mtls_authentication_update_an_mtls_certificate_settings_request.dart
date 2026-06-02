@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('setti
 ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest copyWith({List<AccessSchemasSettings>? settings}) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(
   settings: settings ?? this.settings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest &&
-          listEquals(settings, other.settings); } 
-@override int get hashCode { return Object.hashAll(settings); } 
-@override String toString() { return 'ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(settings: $settings)'; } 
+          listEquals(settings, other.settings);
+
+@override int get hashCode => Object.hashAll(settings);
+
+@override String toString() => 'ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateSettingsRequest(settings: $settings)';
+
  }

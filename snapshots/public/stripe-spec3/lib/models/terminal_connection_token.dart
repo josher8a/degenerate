@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalConnectionTokenObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalConnectionTokenObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalConnectionTokenObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalConnectionTokenObject($value)';
+
  }
 /// A Connection Token is used by the Stripe Terminal SDK to connect to a reader.
 /// 
@@ -62,11 +65,14 @@ TerminalConnectionToken copyWith({String? Function()? location, TerminalConnecti
   object: object ?? this.object,
   secret: secret ?? this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConnectionToken &&
           location == other.location &&
           object == other.object &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(location, object, secret); } 
-@override String toString() { return 'TerminalConnectionToken(location: $location, object: $object, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(location, object, secret);
+
+@override String toString() => 'TerminalConnectionToken(location: $location, object: $object, secret: $secret)';
+
  }

@@ -45,14 +45,17 @@ IpStatsAsn copyWith({String? asn, String? country, String? description, String? 
   name: name ?? this.name,
   org: org ?? this.org,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpStatsAsn &&
           asn == other.asn &&
           country == other.country &&
           description == other.description &&
           ip == other.ip &&
           name == other.name &&
-          org == other.org; } 
-@override int get hashCode { return Object.hash(asn, country, description, ip, name, org); } 
-@override String toString() { return 'IpStatsAsn(asn: $asn, country: $country, description: $description, ip: $ip, name: $name, org: $org)'; } 
+          org == other.org;
+
+@override int get hashCode => Object.hash(asn, country, description, ip, name, org);
+
+@override String toString() => 'IpStatsAsn(asn: $asn, country: $country, description: $description, ip: $ip, name: $name, org: $org)';
+
  }

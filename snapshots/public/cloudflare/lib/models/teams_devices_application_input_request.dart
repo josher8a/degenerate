@@ -43,12 +43,15 @@ TeamsDevicesApplicationInputRequest copyWith({InputRequestOperatingSystem? opera
   sha256: sha256 != null ? sha256() : this.sha256,
   thumbprint: thumbprint != null ? thumbprint() : this.thumbprint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesApplicationInputRequest &&
           operatingSystem == other.operatingSystem &&
           path == other.path &&
           sha256 == other.sha256 &&
-          thumbprint == other.thumbprint; } 
-@override int get hashCode { return Object.hash(operatingSystem, path, sha256, thumbprint); } 
-@override String toString() { return 'TeamsDevicesApplicationInputRequest(operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)'; } 
+          thumbprint == other.thumbprint;
+
+@override int get hashCode => Object.hash(operatingSystem, path, sha256, thumbprint);
+
+@override String toString() => 'TeamsDevicesApplicationInputRequest(operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)';
+
  }

@@ -30,12 +30,15 @@ GetCreditNotesPreviewRefunds copyWith({int? Function()? amountRefunded, PaymentR
   refund: refund != null ? refund() : this.refund,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCreditNotesPreviewRefunds &&
           amountRefunded == other.amountRefunded &&
           paymentRecordRefund == other.paymentRecordRefund &&
           refund == other.refund &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountRefunded, paymentRecordRefund, refund, type); } 
-@override String toString() { return 'GetCreditNotesPreviewRefunds(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amountRefunded, paymentRecordRefund, refund, type);
+
+@override String toString() => 'GetCreditNotesPreviewRefunds(amountRefunded: $amountRefunded, paymentRecordRefund: $paymentRecordRefund, refund: $refund, type: $type)';
+
  }

@@ -23,10 +23,13 @@ PaymentIntentProcessingCustomerNotification copyWith({bool? Function()? approval
   approvalRequested: approvalRequested != null ? approvalRequested() : this.approvalRequested,
   completesAt: completesAt != null ? completesAt() : this.completesAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentProcessingCustomerNotification &&
           approvalRequested == other.approvalRequested &&
-          completesAt == other.completesAt; } 
-@override int get hashCode { return Object.hash(approvalRequested, completesAt); } 
-@override String toString() { return 'PaymentIntentProcessingCustomerNotification(approvalRequested: $approvalRequested, completesAt: $completesAt)'; } 
+          completesAt == other.completesAt;
+
+@override int get hashCode => Object.hash(approvalRequested, completesAt);
+
+@override String toString() => 'PaymentIntentProcessingCustomerNotification(approvalRequested: $approvalRequested, completesAt: $completesAt)';
+
  }

@@ -36,11 +36,14 @@ TeamsDevicesRegistrationDeviceDetails copyWith({String? Function()? clientVersio
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesRegistrationDeviceDetails &&
           clientVersion == other.clientVersion &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(clientVersion, id, name); } 
-@override String toString() { return 'TeamsDevicesRegistrationDeviceDetails(clientVersion: $clientVersion, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(clientVersion, id, name);
+
+@override String toString() => 'TeamsDevicesRegistrationDeviceDetails(clientVersion: $clientVersion, id: $id, name: $name)';
+
  }

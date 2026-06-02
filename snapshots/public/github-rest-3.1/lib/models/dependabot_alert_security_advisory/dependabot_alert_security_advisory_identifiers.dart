@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdentifiersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdentifiersType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentifiersType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdentifiersType($value)';
+
  }
 @immutable final class DependabotAlertSecurityAdvisoryIdentifiers {const DependabotAlertSecurityAdvisoryIdentifiers({required this.type, required this.value, });
 
@@ -48,10 +51,13 @@ DependabotAlertSecurityAdvisoryIdentifiers copyWith({IdentifiersType? type, Stri
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertSecurityAdvisoryIdentifiers &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'DependabotAlertSecurityAdvisoryIdentifiers(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'DependabotAlertSecurityAdvisoryIdentifiers(type: $type, value: $value)';
+
  }

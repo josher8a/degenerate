@@ -22,10 +22,13 @@ GlobalAdvisoryCredits copyWith({SimpleUser? user, SecurityAdvisoryCreditTypes? t
   user: user ?? this.user,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GlobalAdvisoryCredits &&
           user == other.user &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(user, type); } 
-@override String toString() { return 'GlobalAdvisoryCredits(user: $user, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(user, type);
+
+@override String toString() => 'GlobalAdvisoryCredits(user: $user, type: $type)';
+
  }

@@ -30,11 +30,14 @@ RunStepDetailsToolCallsFunctionObject copyWith({String? id, AssistantToolsFuncti
   type: type ?? this.type,
   function: function ?? this.function,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsFunctionObject &&
           id == other.id &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(id, type, function); } 
-@override String toString() { return 'RunStepDetailsToolCallsFunctionObject(id: $id, type: $type, function: $function)'; } 
+          function == other.function;
+
+@override int get hashCode => Object.hash(id, type, function);
+
+@override String toString() => 'RunStepDetailsToolCallsFunctionObject(id: $id, type: $type, function: $function)';
+
  }

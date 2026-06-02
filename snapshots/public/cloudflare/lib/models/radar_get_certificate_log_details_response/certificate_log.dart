@@ -145,7 +145,7 @@ CertificateLog copyWith({Api? api, double? avgThroughput, String? description, D
   submittedCertCount: submittedCertCount != null ? submittedCertCount() : this.submittedCertCount,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateLog &&
           api == other.api &&
           avgThroughput == other.avgThroughput &&
@@ -161,7 +161,10 @@ CertificateLog copyWith({Api? api, double? avgThroughput, String? description, D
           stateTimestamp == other.stateTimestamp &&
           submittableCertCount == other.submittableCertCount &&
           submittedCertCount == other.submittedCertCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(api, avgThroughput, description, endExclusive, lastUpdate, $operator, performance, Object.hashAll(related), slug, startInclusive, state, stateTimestamp, submittableCertCount, submittedCertCount, url); } 
-@override String toString() { return 'CertificateLog(api: $api, avgThroughput: $avgThroughput, description: $description, endExclusive: $endExclusive, lastUpdate: $lastUpdate, \$operator: ${$operator}, performance: $performance, related: $related, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, submittableCertCount: $submittableCertCount, submittedCertCount: $submittedCertCount, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(api, avgThroughput, description, endExclusive, lastUpdate, $operator, performance, Object.hashAll(related), slug, startInclusive, state, stateTimestamp, submittableCertCount, submittedCertCount, url);
+
+@override String toString() => 'CertificateLog(api: $api, avgThroughput: $avgThroughput, description: $description, endExclusive: $endExclusive, lastUpdate: $lastUpdate, \$operator: ${$operator}, performance: $performance, related: $related, slug: $slug, startInclusive: $startInclusive, state: $state, stateTimestamp: $stateTimestamp, submittableCertCount: $submittableCertCount, submittedCertCount: $submittedCertCount, url: $url)';
+
  }

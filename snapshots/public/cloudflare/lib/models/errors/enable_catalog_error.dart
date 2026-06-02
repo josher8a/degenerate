@@ -21,31 +21,36 @@ final class EnableCatalogError$400 extends EnableCatalogError {const EnableCatal
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class EnableCatalogError$401 extends EnableCatalogError {const EnableCatalogError$401(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class EnableCatalogError$403 extends EnableCatalogError {const EnableCatalogError$403(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class EnableCatalogError$409 extends EnableCatalogError {const EnableCatalogError$409(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class EnableCatalogError$500 extends EnableCatalogError {const EnableCatalogError$500(this.error);
 
 final ResponseCommonFailure55 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class EnableCatalogError$Unknown extends EnableCatalogError {const EnableCatalogError$Unknown(this.statusCode, this.rawBody, );
 

@@ -25,11 +25,14 @@ ScriptVersion copyWith({String? Function()? id, String? Function()? message, Str
   message: message != null ? message() : this.message,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScriptVersion &&
           id == other.id &&
           message == other.message &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(id, message, tag); } 
-@override String toString() { return 'ScriptVersion(id: $id, message: $message, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(id, message, tag);
+
+@override String toString() => 'ScriptVersion(id: $id, message: $message, tag: $tag)';
+
  }

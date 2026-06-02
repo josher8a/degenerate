@@ -58,7 +58,7 @@ ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsC
   selectedWorkflows: selectedWorkflows != null ? selectedWorkflows() : this.selectedWorkflows,
   networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateSelfHostedRunnerGroupForOrgRequest &&
           name == other.name &&
           visibility == other.visibility &&
@@ -67,7 +67,10 @@ ActionsCreateSelfHostedRunnerGroupForOrgRequest copyWith({String? name, ActionsC
           allowsPublicRepositories == other.allowsPublicRepositories &&
           restrictedToWorkflows == other.restrictedToWorkflows &&
           listEquals(selectedWorkflows, other.selectedWorkflows) &&
-          networkConfigurationId == other.networkConfigurationId; } 
-@override int get hashCode { return Object.hash(name, visibility, Object.hashAll(selectedRepositoryIds ?? const []), Object.hashAll(runners ?? const []), allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId); } 
-@override String toString() { return 'ActionsCreateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, runners: $runners, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)'; } 
+          networkConfigurationId == other.networkConfigurationId;
+
+@override int get hashCode => Object.hash(name, visibility, Object.hashAll(selectedRepositoryIds ?? const []), Object.hashAll(runners ?? const []), allowsPublicRepositories, restrictedToWorkflows, Object.hashAll(selectedWorkflows ?? const []), networkConfigurationId);
+
+@override String toString() => 'ActionsCreateSelfHostedRunnerGroupForOrgRequest(name: $name, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds, runners: $runners, allowsPublicRepositories: $allowsPublicRepositories, restrictedToWorkflows: $restrictedToWorkflows, selectedWorkflows: $selectedWorkflows, networkConfigurationId: $networkConfigurationId)';
+
  }

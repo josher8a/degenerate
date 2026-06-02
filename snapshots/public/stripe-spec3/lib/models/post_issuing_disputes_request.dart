@@ -53,14 +53,17 @@ PostIssuingDisputesRequest copyWith({int? Function()? amount, PostIssuingDispute
   transaction: transaction != null ? transaction() : this.transaction,
   treasury: treasury != null ? treasury() : this.treasury,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingDisputesRequest &&
           amount == other.amount &&
           evidence == other.evidence &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           transaction == other.transaction &&
-          treasury == other.treasury; } 
-@override int get hashCode { return Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata, transaction, treasury); } 
-@override String toString() { return 'PostIssuingDisputesRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata, transaction: $transaction, treasury: $treasury)'; } 
+          treasury == other.treasury;
+
+@override int get hashCode => Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata, transaction, treasury);
+
+@override String toString() => 'PostIssuingDisputesRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata, transaction: $transaction, treasury: $treasury)';
+
  }

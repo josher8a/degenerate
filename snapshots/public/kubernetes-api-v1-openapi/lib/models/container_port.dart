@@ -41,13 +41,16 @@ ContainerPort copyWith({int? containerPort, String? Function()? hostIp, int? Fun
   name: name != null ? name() : this.name,
   protocol: protocol != null ? protocol() : this.protocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerPort &&
           containerPort == other.containerPort &&
           hostIp == other.hostIp &&
           hostPort == other.hostPort &&
           name == other.name &&
-          protocol == other.protocol; } 
-@override int get hashCode { return Object.hash(containerPort, hostIp, hostPort, name, protocol); } 
-@override String toString() { return 'ContainerPort(containerPort: $containerPort, hostIp: $hostIp, hostPort: $hostPort, name: $name, protocol: $protocol)'; } 
+          protocol == other.protocol;
+
+@override int get hashCode => Object.hash(containerPort, hostIp, hostPort, name, protocol);
+
+@override String toString() => 'ContainerPort(containerPort: $containerPort, hostIp: $hostIp, hostPort: $hostPort, name: $name, protocol: $protocol)';
+
  }

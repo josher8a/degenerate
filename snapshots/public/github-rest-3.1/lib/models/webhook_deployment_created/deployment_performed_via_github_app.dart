@@ -163,10 +163,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeploymentPerformedViaGithubAppEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeploymentPerformedViaGithubAppEvents($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeploymentPerformedViaGithubAppEvents && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeploymentPerformedViaGithubAppEvents($value)';
+
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class DeploymentPerformedViaGithubApp {const DeploymentPerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
@@ -252,7 +255,7 @@ DeploymentPerformedViaGithubApp copyWith({DateTime? Function()? createdAt, Strin
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentPerformedViaGithubApp &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -265,7 +268,10 @@ DeploymentPerformedViaGithubApp copyWith({DateTime? Function()? createdAt, Strin
           owner == other.owner &&
           permissions == other.permissions &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
-@override String toString() { return 'DeploymentPerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt);
+
+@override String toString() => 'DeploymentPerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';
+
  }

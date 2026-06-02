@@ -69,7 +69,7 @@ PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, Cu
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTokensRequestBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
@@ -78,7 +78,10 @@ PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, Cu
           country == other.country &&
           currency == other.currency &&
           paymentMethod == other.paymentMethod &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, paymentMethod, routingNumber); } 
-@override String toString() { return 'PostTokensRequestBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, paymentMethod: $paymentMethod, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderName, accountHolderType, accountNumber, accountType, country, currency, paymentMethod, routingNumber);
+
+@override String toString() => 'PostTokensRequestBankAccount(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, country: $country, currency: $currency, paymentMethod: $paymentMethod, routingNumber: $routingNumber)';
+
  }

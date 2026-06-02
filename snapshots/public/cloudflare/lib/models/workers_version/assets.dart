@@ -28,10 +28,13 @@ Assets copyWith({AssetsConfig? Function()? config, String? Function()? jwt, }) {
   config: config != null ? config() : this.config,
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Assets &&
           config == other.config &&
-          jwt == other.jwt; } 
-@override int get hashCode { return Object.hash(config, jwt); } 
-@override String toString() { return 'Assets(config: $config, jwt: $jwt)'; } 
+          jwt == other.jwt;
+
+@override int get hashCode => Object.hash(config, jwt);
+
+@override String toString() => 'Assets(config: $config, jwt: $jwt)';
+
  }

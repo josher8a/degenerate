@@ -23,10 +23,13 @@ Variables copyWith({String? name, String? type, }) { return Variables(
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variables &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'Variables(name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, type);
+
+@override String toString() => 'Variables(name: $name, type: $type)';
+
  }

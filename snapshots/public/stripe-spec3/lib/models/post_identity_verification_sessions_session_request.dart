@@ -40,13 +40,16 @@ PostIdentityVerificationSessionsSessionRequest copyWith({List<String>? Function(
   providedDetails: providedDetails != null ? providedDetails() : this.providedDetails,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsSessionRequest &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           options == other.options &&
           providedDetails == other.providedDetails &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata, options, providedDetails, type); } 
-@override String toString() { return 'PostIdentityVerificationSessionsSessionRequest(expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), metadata, options, providedDetails, type);
+
+@override String toString() => 'PostIdentityVerificationSessionsSessionRequest(expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, type: $type)';
+
  }

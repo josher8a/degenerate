@@ -23,10 +23,13 @@ ScaleStatus copyWith({int? replicas, String? Function()? selector, }) { return S
   replicas: replicas ?? this.replicas,
   selector: selector != null ? selector() : this.selector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScaleStatus &&
           replicas == other.replicas &&
-          selector == other.selector; } 
-@override int get hashCode { return Object.hash(replicas, selector); } 
-@override String toString() { return 'ScaleStatus(replicas: $replicas, selector: $selector)'; } 
+          selector == other.selector;
+
+@override int get hashCode => Object.hash(replicas, selector);
+
+@override String toString() => 'ScaleStatus(replicas: $replicas, selector: $selector)';
+
  }

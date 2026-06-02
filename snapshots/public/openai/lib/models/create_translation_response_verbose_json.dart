@@ -36,12 +36,15 @@ CreateTranslationResponseVerboseJson copyWith({String? language, double? duratio
   text: text ?? this.text,
   segments: segments != null ? segments() : this.segments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranslationResponseVerboseJson &&
           language == other.language &&
           duration == other.duration &&
           text == other.text &&
-          listEquals(segments, other.segments); } 
-@override int get hashCode { return Object.hash(language, duration, text, Object.hashAll(segments ?? const [])); } 
-@override String toString() { return 'CreateTranslationResponseVerboseJson(language: $language, duration: $duration, text: $text, segments: $segments)'; } 
+          listEquals(segments, other.segments);
+
+@override int get hashCode => Object.hash(language, duration, text, Object.hashAll(segments ?? const []));
+
+@override String toString() => 'CreateTranslationResponseVerboseJson(language: $language, duration: $duration, text: $text, segments: $segments)';
+
  }

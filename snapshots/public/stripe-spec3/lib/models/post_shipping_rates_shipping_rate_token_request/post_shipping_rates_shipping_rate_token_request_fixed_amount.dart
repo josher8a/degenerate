@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostShippingRatesShippingRateTokenRequestFixedAmount copyWith({Map<String, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue>? Function()? currencyOptions}) { return PostShippingRatesShippingRateTokenRequestFixedAmount(
   currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostShippingRatesShippingRateTokenRequestFixedAmount &&
-          currencyOptions == other.currencyOptions; } 
-@override int get hashCode { return currencyOptions.hashCode; } 
-@override String toString() { return 'PostShippingRatesShippingRateTokenRequestFixedAmount(currencyOptions: $currencyOptions)'; } 
+          currencyOptions == other.currencyOptions;
+
+@override int get hashCode => currencyOptions.hashCode;
+
+@override String toString() => 'PostShippingRatesShippingRateTokenRequestFixedAmount(currencyOptions: $currencyOptions)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PageStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PageStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PageStatus($value)';
+
  }
 /// The state if the domain is verified
 @immutable final class ProtectedDomainState {const ProtectedDomainState._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProtectedDomainState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProtectedDomainState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProtectedDomainState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProtectedDomainState($value)';
+
  }
 /// The process in which the Page will be built.
 @immutable final class BuildType {const BuildType._(this.value);
@@ -85,10 +91,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BuildType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BuildType($value)';
+
  }
 /// The configuration for GitHub Pages for a repository.
 @immutable final class Page {const Page({required this.url, required this.status, required this.cname, required this.public, this.protectedDomainState, this.pendingDomainUnverifiedAt, this.custom404 = false, this.htmlUrl, this.buildType, this.source, this.httpsCertificate, this.httpsEnforced, });
@@ -175,7 +184,7 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
   httpsCertificate: httpsCertificate != null ? httpsCertificate() : this.httpsCertificate,
   httpsEnforced: httpsEnforced != null ? httpsEnforced() : this.httpsEnforced,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Page &&
           url == other.url &&
           status == other.status &&
@@ -188,7 +197,10 @@ Page copyWith({Uri? url, PageStatus? Function()? status, String? Function()? cna
           source == other.source &&
           public == other.public &&
           httpsCertificate == other.httpsCertificate &&
-          httpsEnforced == other.httpsEnforced; } 
-@override int get hashCode { return Object.hash(url, status, cname, protectedDomainState, pendingDomainUnverifiedAt, custom404, htmlUrl, buildType, source, public, httpsCertificate, httpsEnforced); } 
-@override String toString() { return 'Page(url: $url, status: $status, cname: $cname, protectedDomainState: $protectedDomainState, pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt, custom404: $custom404, htmlUrl: $htmlUrl, buildType: $buildType, source: $source, public: $public, httpsCertificate: $httpsCertificate, httpsEnforced: $httpsEnforced)'; } 
+          httpsEnforced == other.httpsEnforced;
+
+@override int get hashCode => Object.hash(url, status, cname, protectedDomainState, pendingDomainUnverifiedAt, custom404, htmlUrl, buildType, source, public, httpsCertificate, httpsEnforced);
+
+@override String toString() => 'Page(url: $url, status: $status, cname: $cname, protectedDomainState: $protectedDomainState, pendingDomainUnverifiedAt: $pendingDomainUnverifiedAt, custom404: $custom404, htmlUrl: $htmlUrl, buildType: $buildType, source: $source, public: $public, httpsCertificate: $httpsCertificate, httpsEnforced: $httpsEnforced)';
+
  }

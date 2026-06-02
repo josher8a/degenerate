@@ -32,11 +32,14 @@ WorkersMultipleStepMigrations copyWith({String? Function()? newTag, String? Func
   oldTag: oldTag != null ? oldTag() : this.oldTag,
   steps: steps != null ? steps() : this.steps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMultipleStepMigrations &&
           newTag == other.newTag &&
           oldTag == other.oldTag &&
-          listEquals(steps, other.steps); } 
-@override int get hashCode { return Object.hash(newTag, oldTag, Object.hashAll(steps ?? const [])); } 
-@override String toString() { return 'WorkersMultipleStepMigrations(newTag: $newTag, oldTag: $oldTag, steps: $steps)'; } 
+          listEquals(steps, other.steps);
+
+@override int get hashCode => Object.hash(newTag, oldTag, Object.hashAll(steps ?? const []));
+
+@override String toString() => 'WorkersMultipleStepMigrations(newTag: $newTag, oldTag: $oldTag, steps: $steps)';
+
  }

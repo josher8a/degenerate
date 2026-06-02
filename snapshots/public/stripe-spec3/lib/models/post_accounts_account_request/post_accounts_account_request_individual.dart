@@ -169,7 +169,7 @@ PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRe
   ssnLast4: ssnLast4 != null ? ssnLast4() : this.ssnLast4,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestIndividual &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -193,7 +193,10 @@ PostAccountsAccountRequestIndividual copyWith({PostAccountsAccountPeoplePersonRe
           registeredAddress == other.registeredAddress &&
           relationship == other.relationship &&
           ssnLast4 == other.ssnLast4 &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, dob, email, firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, phone, politicalExposure, registeredAddress, relationship, ssnLast4, verification]); } 
-@override String toString() { return 'PostAccountsAccountRequestIndividual(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, email: $email, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hashAll([address, addressKana, addressKanji, dob, email, firstName, firstNameKana, firstNameKanji, fullNameAliases, gender, idNumber, idNumberSecondary, lastName, lastNameKana, lastNameKanji, maidenName, metadata, phone, politicalExposure, registeredAddress, relationship, ssnLast4, verification]);
+
+@override String toString() => 'PostAccountsAccountRequestIndividual(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, dob: $dob, email: $email, firstName: $firstName, firstNameKana: $firstNameKana, firstNameKanji: $firstNameKanji, fullNameAliases: $fullNameAliases, gender: $gender, idNumber: $idNumber, idNumberSecondary: $idNumberSecondary, lastName: $lastName, lastNameKana: $lastNameKana, lastNameKanji: $lastNameKanji, maidenName: $maidenName, metadata: $metadata, phone: $phone, politicalExposure: $politicalExposure, registeredAddress: $registeredAddress, relationship: $relationship, ssnLast4: $ssnLast4, verification: $verification)';
+
  }

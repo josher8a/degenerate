@@ -45,12 +45,15 @@ PostCustomerSessionsRequest copyWith({PostCustomerSessionsRequestComponents? com
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomerSessionsRequest &&
           components == other.components &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(components, customer, customerAccount, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostCustomerSessionsRequest(components: $components, customer: $customer, customerAccount: $customerAccount, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(components, customer, customerAccount, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostCustomerSessionsRequest(components: $components, customer: $customer, customerAccount: $customerAccount, expand: $expand)';
+
  }

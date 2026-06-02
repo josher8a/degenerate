@@ -24,10 +24,13 @@ TypeParam copyWith({String? type, String? text, }) { return TypeParam(
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TypeParam &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'TypeParam(type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(type, text);
+
+@override String toString() => 'TypeParam(type: $type, text: $text)';
+
  }

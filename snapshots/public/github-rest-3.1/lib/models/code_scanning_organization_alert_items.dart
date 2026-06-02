@@ -123,7 +123,7 @@ CodeScanningOrganizationAlertItems copyWith({AlertNumber? number, AlertCreatedAt
   dismissalApprovedBy: dismissalApprovedBy != null ? dismissalApprovedBy() : this.dismissalApprovedBy,
   assignees: assignees != null ? assignees() : this.assignees,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningOrganizationAlertItems &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -142,7 +142,10 @@ CodeScanningOrganizationAlertItems copyWith({AlertNumber? number, AlertCreatedAt
           mostRecentInstance == other.mostRecentInstance &&
           repository == other.repository &&
           dismissalApprovedBy == other.dismissalApprovedBy &&
-          listEquals(assignees, other.assignees); } 
-@override int get hashCode { return Object.hash(number, createdAt, updatedAt, url, htmlUrl, instancesUrl, state, fixedAt, dismissedBy, dismissedAt, dismissedReason, dismissedComment, rule, tool, mostRecentInstance, repository, dismissalApprovedBy, Object.hashAll(assignees ?? const [])); } 
-@override String toString() { return 'CodeScanningOrganizationAlertItems(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, state: $state, fixedAt: $fixedAt, dismissedBy: $dismissedBy, dismissedAt: $dismissedAt, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, rule: $rule, tool: $tool, mostRecentInstance: $mostRecentInstance, repository: $repository, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)'; } 
+          listEquals(assignees, other.assignees);
+
+@override int get hashCode => Object.hash(number, createdAt, updatedAt, url, htmlUrl, instancesUrl, state, fixedAt, dismissedBy, dismissedAt, dismissedReason, dismissedComment, rule, tool, mostRecentInstance, repository, dismissalApprovedBy, Object.hashAll(assignees ?? const []));
+
+@override String toString() => 'CodeScanningOrganizationAlertItems(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, instancesUrl: $instancesUrl, state: $state, fixedAt: $fixedAt, dismissedBy: $dismissedBy, dismissedAt: $dismissedAt, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, rule: $rule, tool: $tool, mostRecentInstance: $mostRecentInstance, repository: $repository, dismissalApprovedBy: $dismissalApprovedBy, assignees: $assignees)';
+
  }

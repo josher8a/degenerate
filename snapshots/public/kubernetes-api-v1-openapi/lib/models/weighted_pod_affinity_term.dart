@@ -24,10 +24,13 @@ WeightedPodAffinityTerm copyWith({PodAffinityTerm? podAffinityTerm, int? weight,
   podAffinityTerm: podAffinityTerm ?? this.podAffinityTerm,
   weight: weight ?? this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WeightedPodAffinityTerm &&
           podAffinityTerm == other.podAffinityTerm &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(podAffinityTerm, weight); } 
-@override String toString() { return 'WeightedPodAffinityTerm(podAffinityTerm: $podAffinityTerm, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(podAffinityTerm, weight);
+
+@override String toString() => 'WeightedPodAffinityTerm(podAffinityTerm: $podAffinityTerm, weight: $weight)';
+
  }

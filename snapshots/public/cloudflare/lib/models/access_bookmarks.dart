@@ -74,7 +74,7 @@ AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLaunch
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessBookmarks &&
           appLauncherVisible == other.appLauncherVisible &&
           createdAt == other.createdAt &&
@@ -82,7 +82,10 @@ AccessBookmarks copyWith({AccessSchemasAppLauncherVisible? Function()? appLaunch
           id == other.id &&
           logoUrl == other.logoUrl &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(appLauncherVisible, createdAt, domain, id, logoUrl, name, updatedAt); } 
-@override String toString() { return 'AccessBookmarks(appLauncherVisible: $appLauncherVisible, createdAt: $createdAt, domain: $domain, id: $id, logoUrl: $logoUrl, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(appLauncherVisible, createdAt, domain, id, logoUrl, name, updatedAt);
+
+@override String toString() => 'AccessBookmarks(appLauncherVisible: $appLauncherVisible, createdAt: $createdAt, domain: $domain, id: $id, logoUrl: $logoUrl, name: $name, updatedAt: $updatedAt)';
+
  }

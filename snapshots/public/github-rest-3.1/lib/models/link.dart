@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('href'
 Link copyWith({String? href}) { return Link(
   href: href ?? this.href,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Link &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'Link(href: $href)'; } 
+          href == other.href;
+
+@override int get hashCode => href.hashCode;
+
+@override String toString() => 'Link(href: $href)';
+
  }

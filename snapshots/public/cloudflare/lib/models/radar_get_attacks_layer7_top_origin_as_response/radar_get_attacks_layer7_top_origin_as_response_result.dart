@@ -22,10 +22,13 @@ RadarGetAttacksLayer7TopOriginAsResponseResult copyWith({RadarGetAttacksLayer3To
   meta: meta ?? this.meta,
   top0: top0 ?? this.top0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TopOriginAsResponseResult &&
           meta == other.meta &&
-          listEquals(top0, other.top0); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(top0)); } 
-@override String toString() { return 'RadarGetAttacksLayer7TopOriginAsResponseResult(meta: $meta, top0: $top0)'; } 
+          listEquals(top0, other.top0);
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(top0));
+
+@override String toString() => 'RadarGetAttacksLayer7TopOriginAsResponseResult(meta: $meta, top0: $top0)';
+
  }

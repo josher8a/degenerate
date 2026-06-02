@@ -60,7 +60,7 @@ FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, 
   parents: parents != null ? parents() : this.parents,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitCommit &&
           sha == other.sha &&
           nodeId == other.nodeId &&
@@ -71,7 +71,10 @@ FileCommitCommit copyWith({String? Function()? sha, String? Function()? nodeId, 
           message == other.message &&
           tree == other.tree &&
           listEquals(parents, other.parents) &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(sha, nodeId, url, htmlUrl, author, committer, message, tree, Object.hashAll(parents ?? const []), verification); } 
-@override String toString() { return 'FileCommitCommit(sha: $sha, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(sha, nodeId, url, htmlUrl, author, committer, message, tree, Object.hashAll(parents ?? const []), verification);
+
+@override String toString() => 'FileCommitCommit(sha: $sha, nodeId: $nodeId, url: $url, htmlUrl: $htmlUrl, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification)';
+
  }

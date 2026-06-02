@@ -43,13 +43,16 @@ TechCategories copyWith({List<int>? groups, int? id, String? name, int? priority
   priority: priority ?? this.priority,
   slug: slug ?? this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TechCategories &&
           listEquals(groups, other.groups) &&
           id == other.id &&
           name == other.name &&
           priority == other.priority &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(Object.hashAll(groups), id, name, priority, slug); } 
-@override String toString() { return 'TechCategories(groups: $groups, id: $id, name: $name, priority: $priority, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(Object.hashAll(groups), id, name, priority, slug);
+
+@override String toString() => 'TechCategories(groups: $groups, id: $id, name: $name, priority: $priority, slug: $slug)';
+
  }

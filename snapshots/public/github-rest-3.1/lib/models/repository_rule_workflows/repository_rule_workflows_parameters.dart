@@ -22,10 +22,13 @@ RepositoryRuleWorkflowsParameters copyWith({bool? Function()? doNotEnforceOnCrea
   doNotEnforceOnCreate: doNotEnforceOnCreate != null ? doNotEnforceOnCreate() : this.doNotEnforceOnCreate,
   workflows: workflows ?? this.workflows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleWorkflowsParameters &&
           doNotEnforceOnCreate == other.doNotEnforceOnCreate &&
-          listEquals(workflows, other.workflows); } 
-@override int get hashCode { return Object.hash(doNotEnforceOnCreate, Object.hashAll(workflows)); } 
-@override String toString() { return 'RepositoryRuleWorkflowsParameters(doNotEnforceOnCreate: $doNotEnforceOnCreate, workflows: $workflows)'; } 
+          listEquals(workflows, other.workflows);
+
+@override int get hashCode => Object.hash(doNotEnforceOnCreate, Object.hashAll(workflows));
+
+@override String toString() => 'RepositoryRuleWorkflowsParameters(doNotEnforceOnCreate: $doNotEnforceOnCreate, workflows: $workflows)';
+
  }

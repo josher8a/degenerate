@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Check && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Check($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Check && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Check($value)';
+
  }
 @immutable final class Variant2Policies {const Variant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });
 
@@ -63,13 +66,16 @@ Variant2Policies copyWith({Variant1Action? action, List<Check>? check, bool? ena
   id: id ?? this.id,
   profiles: profiles ?? this.profiles,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2Policies &&
           action == other.action &&
           listEquals(check, other.check) &&
           enabled == other.enabled &&
           id == other.id &&
-          listEquals(profiles, other.profiles); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles)); } 
-@override String toString() { return 'Variant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)'; } 
+          listEquals(profiles, other.profiles);
+
+@override int get hashCode => Object.hash(action, Object.hashAll(check), enabled, id, Object.hashAll(profiles));
+
+@override String toString() => 'Variant2Policies(action: $action, check: $check, enabled: $enabled, id: $id, profiles: $profiles)';
+
  }

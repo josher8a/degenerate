@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Status && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Status($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Status && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Status($value)';
+
  }
 @immutable final class Order {const Order({required this.id, required this.items, this.status, this.shippingAddress, this.metadata, this.nullabilitySample, });
 
@@ -71,14 +74,17 @@ Order copyWith({String? id, Status? Function()? status, List<OrderItem>? items, 
   metadata: metadata != null ? metadata() : this.metadata,
   nullabilitySample: nullabilitySample != null ? nullabilitySample() : this.nullabilitySample,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Order &&
           id == other.id &&
           status == other.status &&
           listEquals(items, other.items) &&
           shippingAddress == other.shippingAddress &&
           metadata == other.metadata &&
-          nullabilitySample == other.nullabilitySample; } 
-@override int get hashCode { return Object.hash(id, status, Object.hashAll(items), shippingAddress, metadata, nullabilitySample); } 
-@override String toString() { return 'Order(id: $id, status: $status, items: $items, shippingAddress: $shippingAddress, metadata: $metadata, nullabilitySample: $nullabilitySample)'; } 
+          nullabilitySample == other.nullabilitySample;
+
+@override int get hashCode => Object.hash(id, status, Object.hashAll(items), shippingAddress, metadata, nullabilitySample);
+
+@override String toString() => 'Order(id: $id, status: $status, items: $items, shippingAddress: $shippingAddress, metadata: $metadata, nullabilitySample: $nullabilitySample)';
+
  }

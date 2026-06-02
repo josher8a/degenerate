@@ -23,9 +23,12 @@ return errors; }
 Contexts copyWith({String? Function()? text}) { return Contexts(
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Contexts &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'Contexts(text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => text.hashCode;
+
+@override String toString() => 'Contexts(text: $text)';
+
  }

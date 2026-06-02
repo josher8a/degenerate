@@ -21,10 +21,13 @@ ActionsGetHostedRunnersPlatformsForOrgResponse copyWith({int? totalCount, List<S
   totalCount: totalCount ?? this.totalCount,
   platforms: platforms ?? this.platforms,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetHostedRunnersPlatformsForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(platforms, other.platforms); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(platforms)); } 
-@override String toString() { return 'ActionsGetHostedRunnersPlatformsForOrgResponse(totalCount: $totalCount, platforms: $platforms)'; } 
+          listEquals(platforms, other.platforms);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(platforms));
+
+@override String toString() => 'ActionsGetHostedRunnersPlatformsForOrgResponse(totalCount: $totalCount, platforms: $platforms)';
+
  }

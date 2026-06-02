@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('TLS 1
 TlsStatsProtocols copyWith({double? tls13Aes128Gcm}) { return TlsStatsProtocols(
   tls13Aes128Gcm: tls13Aes128Gcm ?? this.tls13Aes128Gcm,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsStatsProtocols &&
-          tls13Aes128Gcm == other.tls13Aes128Gcm; } 
-@override int get hashCode { return tls13Aes128Gcm.hashCode; } 
-@override String toString() { return 'TlsStatsProtocols(tls13Aes128Gcm: $tls13Aes128Gcm)'; } 
+          tls13Aes128Gcm == other.tls13Aes128Gcm;
+
+@override int get hashCode => tls13Aes128Gcm.hashCode;
+
+@override String toString() => 'TlsStatsProtocols(tls13Aes128Gcm: $tls13Aes128Gcm)';
+
  }

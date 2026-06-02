@@ -40,13 +40,16 @@ OrganizationFlags copyWith({String? accountCreation, String? accountDeletion, St
   accountMobility: accountMobility ?? this.accountMobility,
   subOrgCreation: subOrgCreation ?? this.subOrgCreation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationFlags &&
           accountCreation == other.accountCreation &&
           accountDeletion == other.accountDeletion &&
           accountMigration == other.accountMigration &&
           accountMobility == other.accountMobility &&
-          subOrgCreation == other.subOrgCreation; } 
-@override int get hashCode { return Object.hash(accountCreation, accountDeletion, accountMigration, accountMobility, subOrgCreation); } 
-@override String toString() { return 'OrganizationFlags(accountCreation: $accountCreation, accountDeletion: $accountDeletion, accountMigration: $accountMigration, accountMobility: $accountMobility, subOrgCreation: $subOrgCreation)'; } 
+          subOrgCreation == other.subOrgCreation;
+
+@override int get hashCode => Object.hash(accountCreation, accountDeletion, accountMigration, accountMobility, subOrgCreation);
+
+@override String toString() => 'OrganizationFlags(accountCreation: $accountCreation, accountDeletion: $accountDeletion, accountMigration: $accountMigration, accountMobility: $accountMobility, subOrgCreation: $subOrgCreation)';
+
  }

@@ -24,10 +24,13 @@ EmailRuleAction copyWith({EmailRuleActionType? type, List<String>? Function()? v
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailRuleAction &&
           type == other.type &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(value ?? const [])); } 
-@override String toString() { return 'EmailRuleAction(type: $type, value: $value)'; } 
+          listEquals(value, other.value);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(value ?? const []));
+
+@override String toString() => 'EmailRuleAction(type: $type, value: $value)';
+
  }

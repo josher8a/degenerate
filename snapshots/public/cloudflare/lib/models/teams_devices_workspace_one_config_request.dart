@@ -45,12 +45,15 @@ TeamsDevicesWorkspaceOneConfigRequest copyWith({String? apiUrl, String? authUrl,
   clientId: clientId ?? this.clientId,
   clientSecret: clientSecret ?? this.clientSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesWorkspaceOneConfigRequest &&
           apiUrl == other.apiUrl &&
           authUrl == other.authUrl &&
           clientId == other.clientId &&
-          clientSecret == other.clientSecret; } 
-@override int get hashCode { return Object.hash(apiUrl, authUrl, clientId, clientSecret); } 
-@override String toString() { return 'TeamsDevicesWorkspaceOneConfigRequest(apiUrl: $apiUrl, authUrl: $authUrl, clientId: $clientId, clientSecret: $clientSecret)'; } 
+          clientSecret == other.clientSecret;
+
+@override int get hashCode => Object.hash(apiUrl, authUrl, clientId, clientSecret);
+
+@override String toString() => 'TeamsDevicesWorkspaceOneConfigRequest(apiUrl: $apiUrl, authUrl: $authUrl, clientId: $clientId, clientSecret: $clientSecret)';
+
  }

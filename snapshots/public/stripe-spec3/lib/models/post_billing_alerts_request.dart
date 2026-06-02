@@ -39,12 +39,15 @@ PostBillingAlertsRequest copyWith({AlertType? alertType, List<String>? Function(
   title: title ?? this.title,
   usageThreshold: usageThreshold != null ? usageThreshold() : this.usageThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingAlertsRequest &&
           alertType == other.alertType &&
           listEquals(expand, other.expand) &&
           title == other.title &&
-          usageThreshold == other.usageThreshold; } 
-@override int get hashCode { return Object.hash(alertType, Object.hashAll(expand ?? const []), title, usageThreshold); } 
-@override String toString() { return 'PostBillingAlertsRequest(alertType: $alertType, expand: $expand, title: $title, usageThreshold: $usageThreshold)'; } 
+          usageThreshold == other.usageThreshold;
+
+@override int get hashCode => Object.hash(alertType, Object.hashAll(expand ?? const []), title, usageThreshold);
+
+@override String toString() => 'PostBillingAlertsRequest(alertType: $alertType, expand: $expand, title: $title, usageThreshold: $usageThreshold)';
+
  }

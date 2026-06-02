@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resul
 SchemaValidationUpdateSettingsResponse copyWith({ShieldGlobalSettings? result}) { return SchemaValidationUpdateSettingsResponse(
   result: result ?? this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationUpdateSettingsResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'SchemaValidationUpdateSettingsResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'SchemaValidationUpdateSettingsResponse(result: $result)';
+
  }

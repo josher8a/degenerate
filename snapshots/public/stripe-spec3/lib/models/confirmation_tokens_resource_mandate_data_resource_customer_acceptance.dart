@@ -27,10 +27,13 @@ ConfirmationTokensResourceMandateDataResourceCustomerAcceptance copyWith({Confir
   online: online != null ? online() : this.online,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationTokensResourceMandateDataResourceCustomerAcceptance &&
           online == other.online &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(online, type); } 
-@override String toString() { return 'ConfirmationTokensResourceMandateDataResourceCustomerAcceptance(online: $online, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(online, type);
+
+@override String toString() => 'ConfirmationTokensResourceMandateDataResourceCustomerAcceptance(online: $online, type: $type)';
+
  }

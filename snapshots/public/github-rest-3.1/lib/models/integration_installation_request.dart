@@ -40,13 +40,16 @@ IntegrationInstallationRequest copyWith({int? id, String? Function()? nodeId, In
   requester: requester ?? this.requester,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntegrationInstallationRequest &&
           id == other.id &&
           nodeId == other.nodeId &&
           account == other.account &&
           requester == other.requester &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, account, requester, createdAt); } 
-@override String toString() { return 'IntegrationInstallationRequest(id: $id, nodeId: $nodeId, account: $account, requester: $requester, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(id, nodeId, account, requester, createdAt);
+
+@override String toString() => 'IntegrationInstallationRequest(id: $id, nodeId: $nodeId, account: $account, requester: $requester, createdAt: $createdAt)';
+
  }

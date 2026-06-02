@@ -186,7 +186,7 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
   allowForking: allowForking != null ? allowForking() : this.allowForking,
   webCommitSignoffRequired: webCommitSignoffRequired != null ? webCommitSignoffRequired() : this.webCommitSignoffRequired,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequest &&
           name == other.name &&
           description == other.description &&
@@ -212,7 +212,10 @@ ReposUpdateRequest copyWith({String? Function()? name, String? Function()? descr
           mergeCommitMessage == other.mergeCommitMessage &&
           archived == other.archived &&
           allowForking == other.allowForking &&
-          webCommitSignoffRequired == other.webCommitSignoffRequired; } 
-@override int get hashCode { return Object.hashAll([name, description, homepage, private, visibility, securityAndAnalysis, hasIssues, hasProjects, hasWiki, isTemplate, defaultBranch, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, archived, allowForking, webCommitSignoffRequired]); } 
-@override String toString() { return 'ReposUpdateRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, securityAndAnalysis: $securityAndAnalysis, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, isTemplate: $isTemplate, defaultBranch: $defaultBranch, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, archived: $archived, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired)'; } 
+          webCommitSignoffRequired == other.webCommitSignoffRequired;
+
+@override int get hashCode => Object.hashAll([name, description, homepage, private, visibility, securityAndAnalysis, hasIssues, hasProjects, hasWiki, isTemplate, defaultBranch, allowSquashMerge, allowMergeCommit, allowRebaseMerge, allowAutoMerge, deleteBranchOnMerge, allowUpdateBranch, useSquashPrTitleAsDefault, squashMergeCommitTitle, squashMergeCommitMessage, mergeCommitTitle, mergeCommitMessage, archived, allowForking, webCommitSignoffRequired]);
+
+@override String toString() => 'ReposUpdateRequest(name: $name, description: $description, homepage: $homepage, private: $private, visibility: $visibility, securityAndAnalysis: $securityAndAnalysis, hasIssues: $hasIssues, hasProjects: $hasProjects, hasWiki: $hasWiki, isTemplate: $isTemplate, defaultBranch: $defaultBranch, allowSquashMerge: $allowSquashMerge, allowMergeCommit: $allowMergeCommit, allowRebaseMerge: $allowRebaseMerge, allowAutoMerge: $allowAutoMerge, deleteBranchOnMerge: $deleteBranchOnMerge, allowUpdateBranch: $allowUpdateBranch, useSquashPrTitleAsDefault: $useSquashPrTitleAsDefault, squashMergeCommitTitle: $squashMergeCommitTitle, squashMergeCommitMessage: $squashMergeCommitMessage, mergeCommitTitle: $mergeCommitTitle, mergeCommitMessage: $mergeCommitMessage, archived: $archived, allowForking: $allowForking, webCommitSignoffRequired: $webCommitSignoffRequired)';
+
  }

@@ -49,14 +49,17 @@ EvalRunOutputItemResult copyWith({String? name, String? Function()? type, double
   sample: sample != null ? sample() : this.sample,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalRunOutputItemResult &&
           name == other.name &&
           type == other.type &&
           score == other.score &&
           passed == other.passed &&
           sample == other.sample &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, type, score, passed, sample, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'EvalRunOutputItemResult(name: $name, type: $type, score: $score, passed: $passed, sample: $sample, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(name, type, score, passed, sample, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'EvalRunOutputItemResult(name: $name, type: $type, score: $score, passed: $passed, sample: $sample, additionalProperties: $additionalProperties)';
+
  }

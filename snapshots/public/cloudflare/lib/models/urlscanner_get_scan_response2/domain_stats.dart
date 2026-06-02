@@ -63,7 +63,7 @@ DomainStats copyWith({double? count, List<String>? countries, String? domain, do
   redirects: redirects ?? this.redirects,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DomainStats &&
           count == other.count &&
           listEquals(countries, other.countries) &&
@@ -73,7 +73,10 @@ DomainStats copyWith({double? count, List<String>? countries, String? domain, do
           listEquals(initiators, other.initiators) &&
           listEquals(ips, other.ips) &&
           redirects == other.redirects &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(countries), domain, encodedSize, index, Object.hashAll(initiators), Object.hashAll(ips), redirects, size); } 
-@override String toString() { return 'DomainStats(count: $count, countries: $countries, domain: $domain, encodedSize: $encodedSize, index: $index, initiators: $initiators, ips: $ips, redirects: $redirects, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(countries), domain, encodedSize, index, Object.hashAll(initiators), Object.hashAll(ips), redirects, size);
+
+@override String toString() => 'DomainStats(count: $count, countries: $countries, domain: $domain, encodedSize: $encodedSize, index: $index, initiators: $initiators, ips: $ips, redirects: $redirects, size: $size)';
+
  }

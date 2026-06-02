@@ -47,14 +47,17 @@ UrlscannerSearchScansResponse2Results copyWith({String? id, ResultsPage? page, S
   task: task ?? this.task,
   verdicts: verdicts ?? this.verdicts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerSearchScansResponse2Results &&
           id == other.id &&
           page == other.page &&
           result == other.result &&
           stats == other.stats &&
           task == other.task &&
-          verdicts == other.verdicts; } 
-@override int get hashCode { return Object.hash(id, page, result, stats, task, verdicts); } 
-@override String toString() { return 'UrlscannerSearchScansResponse2Results(id: $id, page: $page, result: $result, stats: $stats, task: $task, verdicts: $verdicts)'; } 
+          verdicts == other.verdicts;
+
+@override int get hashCode => Object.hash(id, page, result, stats, task, verdicts);
+
+@override String toString() => 'UrlscannerSearchScansResponse2Results(id: $id, page: $page, result: $result, stats: $stats, task: $task, verdicts: $verdicts)';
+
  }

@@ -21,10 +21,13 @@ PrivateRegistriesListOrgPrivateRegistriesResponse copyWith({int? totalCount, Lis
   totalCount: totalCount ?? this.totalCount,
   configurations: configurations ?? this.configurations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateRegistriesListOrgPrivateRegistriesResponse &&
           totalCount == other.totalCount &&
-          listEquals(configurations, other.configurations); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(configurations)); } 
-@override String toString() { return 'PrivateRegistriesListOrgPrivateRegistriesResponse(totalCount: $totalCount, configurations: $configurations)'; } 
+          listEquals(configurations, other.configurations);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(configurations));
+
+@override String toString() => 'PrivateRegistriesListOrgPrivateRegistriesResponse(totalCount: $totalCount, configurations: $configurations)';
+
  }

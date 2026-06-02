@@ -30,14 +30,18 @@ final CodeInterpreterOutputLogs codeInterpreterOutputLogs;
 
 @override String get type => 'logs';
 
-@override Map<String, dynamic> toJson() { return {...codeInterpreterOutputLogs.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...codeInterpreterOutputLogs.toJson(), 'type': type};
+
 CodeInterpreterToolCallOutputsLogs copyWith({String? logs}) { return CodeInterpreterToolCallOutputsLogs(codeInterpreterOutputLogs.copyWith(
   logs: logs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterToolCallOutputsLogs && codeInterpreterOutputLogs == other.codeInterpreterOutputLogs; } 
-@override int get hashCode { return codeInterpreterOutputLogs.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallOutputs.logs($codeInterpreterOutputLogs)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterToolCallOutputsLogs && codeInterpreterOutputLogs == other.codeInterpreterOutputLogs;
+
+@override int get hashCode => codeInterpreterOutputLogs.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputs.logs($codeInterpreterOutputLogs)';
+
  }
 @immutable final class CodeInterpreterToolCallOutputsImage extends CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputsImage(this.codeInterpreterOutputImage);
 
@@ -47,14 +51,18 @@ final CodeInterpreterOutputImage codeInterpreterOutputImage;
 
 @override String get type => 'image';
 
-@override Map<String, dynamic> toJson() { return {...codeInterpreterOutputImage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...codeInterpreterOutputImage.toJson(), 'type': type};
+
 CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpreterToolCallOutputsImage(codeInterpreterOutputImage.copyWith(
   url: url,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterToolCallOutputsImage && codeInterpreterOutputImage == other.codeInterpreterOutputImage; } 
-@override int get hashCode { return codeInterpreterOutputImage.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallOutputs.image($codeInterpreterOutputImage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterToolCallOutputsImage && codeInterpreterOutputImage == other.codeInterpreterOutputImage;
+
+@override int get hashCode => codeInterpreterOutputImage.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputs.image($codeInterpreterOutputImage)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -64,9 +72,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CodeInterpreterToolCallOutputs$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CodeInterpreterToolCallOutputs.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeInterpreterToolCallOutputs$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputs.unknown($json)';
+
  }

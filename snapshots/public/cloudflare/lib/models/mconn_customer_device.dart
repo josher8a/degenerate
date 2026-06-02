@@ -20,10 +20,13 @@ MconnCustomerDevice copyWith({MconnUuid? id, String? Function()? serialNumber, }
   id: id ?? this.id,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerDevice &&
           id == other.id &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(id, serialNumber); } 
-@override String toString() { return 'MconnCustomerDevice(id: $id, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(id, serialNumber);
+
+@override String toString() => 'MconnCustomerDevice(id: $id, serialNumber: $serialNumber)';
+
  }

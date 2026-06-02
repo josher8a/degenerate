@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamAudioState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamAudioState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamAudioState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamAudioState($value)';
+
  }
 @immutable final class StreamAdditionalAudio {const StreamAdditionalAudio({this.$default, this.label, this.status, this.uid, });
 
@@ -58,12 +61,15 @@ StreamAdditionalAudio copyWith({StreamAudioDefault? Function()? $default, Stream
   status: status != null ? status() : this.status,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamAdditionalAudio &&
           $default == other.$default &&
           label == other.label &&
           status == other.status &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash($default, label, status, uid); } 
-@override String toString() { return 'StreamAdditionalAudio(\$default: ${$default}, label: $label, status: $status, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash($default, label, status, uid);
+
+@override String toString() => 'StreamAdditionalAudio(\$default: ${$default}, label: $label, status: $status, uid: $uid)';
+
  }

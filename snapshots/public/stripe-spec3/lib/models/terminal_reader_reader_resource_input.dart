@@ -71,7 +71,7 @@ TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomTe
   toggles: toggles != null ? toggles() : this.toggles,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceInput &&
           customText == other.customText &&
           email == other.email &&
@@ -83,7 +83,10 @@ TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomTe
           skipped == other.skipped &&
           text == other.text &&
           listEquals(toggles, other.toggles) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customText, email, numeric, phone, $required, selection, signature, skipped, text, Object.hashAll(toggles ?? const []), type); } 
-@override String toString() { return 'TerminalReaderReaderResourceInput(customText: $customText, email: $email, numeric: $numeric, phone: $phone, \$required: ${$required}, selection: $selection, signature: $signature, skipped: $skipped, text: $text, toggles: $toggles, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customText, email, numeric, phone, $required, selection, signature, skipped, text, Object.hashAll(toggles ?? const []), type);
+
+@override String toString() => 'TerminalReaderReaderResourceInput(customText: $customText, email: $email, numeric: $numeric, phone: $phone, \$required: ${$required}, selection: $selection, signature: $signature, skipped: $skipped, text: $text, toggles: $toggles, type: $type)';
+
  }

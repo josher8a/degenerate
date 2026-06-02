@@ -21,10 +21,13 @@ RadarGetAiBotsTimeseriesResponseResultValue copyWith({List<DateTime>? timestamps
   timestamps: timestamps ?? this.timestamps,
   values: values ?? this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAiBotsTimeseriesResponseResultValue &&
           listEquals(timestamps, other.timestamps) &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(values)); } 
-@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultValue(timestamps: $timestamps, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(Object.hashAll(timestamps), Object.hashAll(values));
+
+@override String toString() => 'RadarGetAiBotsTimeseriesResponseResultValue(timestamps: $timestamps, values: $values)';
+
  }

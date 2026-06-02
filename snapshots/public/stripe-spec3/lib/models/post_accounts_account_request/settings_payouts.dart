@@ -32,11 +32,14 @@ SettingsPayouts copyWith({bool? Function()? debitNegativeBalances, SettingsPayou
   schedule: schedule != null ? schedule() : this.schedule,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsPayouts &&
           debitNegativeBalances == other.debitNegativeBalances &&
           schedule == other.schedule &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(debitNegativeBalances, schedule, statementDescriptor); } 
-@override String toString() { return 'SettingsPayouts(debitNegativeBalances: $debitNegativeBalances, schedule: $schedule, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(debitNegativeBalances, schedule, statementDescriptor);
+
+@override String toString() => 'SettingsPayouts(debitNegativeBalances: $debitNegativeBalances, schedule: $schedule, statementDescriptor: $statementDescriptor)';
+
  }

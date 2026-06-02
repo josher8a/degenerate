@@ -44,14 +44,17 @@ CodespacesPublicKey copyWith({String? keyId, String? key, int? Function()? id, S
   title: title != null ? title() : this.title,
   createdAt: createdAt != null ? createdAt() : this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesPublicKey &&
           keyId == other.keyId &&
           key == other.key &&
           id == other.id &&
           url == other.url &&
           title == other.title &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(keyId, key, id, url, title, createdAt); } 
-@override String toString() { return 'CodespacesPublicKey(keyId: $keyId, key: $key, id: $id, url: $url, title: $title, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(keyId, key, id, url, title, createdAt);
+
+@override String toString() => 'CodespacesPublicKey(keyId: $keyId, key: $key, id: $id, url: $url, title: $title, createdAt: $createdAt)';
+
  }

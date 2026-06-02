@@ -61,7 +61,7 @@ Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? 
   labels: labels ?? this.labels,
   ephemeral: ephemeral != null ? ephemeral() : this.ephemeral,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Runner &&
           id == other.id &&
           runnerGroupId == other.runnerGroupId &&
@@ -70,7 +70,10 @@ Runner copyWith({int? id, int? Function()? runnerGroupId, String? name, String? 
           status == other.status &&
           busy == other.busy &&
           listEquals(labels, other.labels) &&
-          ephemeral == other.ephemeral; } 
-@override int get hashCode { return Object.hash(id, runnerGroupId, name, os, status, busy, Object.hashAll(labels), ephemeral); } 
-@override String toString() { return 'Runner(id: $id, runnerGroupId: $runnerGroupId, name: $name, os: $os, status: $status, busy: $busy, labels: $labels, ephemeral: $ephemeral)'; } 
+          ephemeral == other.ephemeral;
+
+@override int get hashCode => Object.hash(id, runnerGroupId, name, os, status, busy, Object.hashAll(labels), ephemeral);
+
+@override String toString() => 'Runner(id: $id, runnerGroupId: $runnerGroupId, name: $name, os: $os, status: $status, busy: $busy, labels: $labels, ephemeral: $ephemeral)';
+
  }

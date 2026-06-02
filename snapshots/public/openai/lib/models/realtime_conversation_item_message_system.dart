@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageSystemRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageSystemRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemMessageSystemRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemMessageSystemRole($value)';
+
  }
 /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.
 @immutable final class RealtimeConversationItemMessageSystem {const RealtimeConversationItemMessageSystem({required this.type, required this.role, required this.content, this.id, this.object, this.status, });
@@ -71,14 +74,17 @@ RealtimeConversationItemMessageSystem copyWith({String? Function()? id, Realtime
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageSystem &&
           id == other.id &&
           object == other.object &&
           type == other.type &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(id, object, type, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'RealtimeConversationItemMessageSystem(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(id, object, type, status, role, Object.hashAll(content));
+
+@override String toString() => 'RealtimeConversationItemMessageSystem(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';
+
  }

@@ -30,12 +30,15 @@ CloudflarePipelinesSourceField copyWith({String? Function()? metadataKey, String
   $required: $required != null ? $required() : this.$required,
   sqlName: sqlName != null ? sqlName() : this.sqlName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesSourceField &&
           metadataKey == other.metadataKey &&
           name == other.name &&
           $required == other.$required &&
-          sqlName == other.sqlName; } 
-@override int get hashCode { return Object.hash(metadataKey, name, $required, sqlName); } 
-@override String toString() { return 'CloudflarePipelinesSourceField(metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)'; } 
+          sqlName == other.sqlName;
+
+@override int get hashCode => Object.hash(metadataKey, name, $required, sqlName);
+
+@override String toString() => 'CloudflarePipelinesSourceField(metadataKey: $metadataKey, name: $name, \$required: ${$required}, sqlName: $sqlName)';
+
  }

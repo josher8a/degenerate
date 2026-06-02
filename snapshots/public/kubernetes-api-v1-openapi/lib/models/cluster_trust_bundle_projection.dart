@@ -41,13 +41,16 @@ ClusterTrustBundleProjection copyWith({LabelSelector? Function()? labelSelector,
   path: path ?? this.path,
   signerName: signerName != null ? signerName() : this.signerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClusterTrustBundleProjection &&
           labelSelector == other.labelSelector &&
           name == other.name &&
           optional == other.optional &&
           path == other.path &&
-          signerName == other.signerName; } 
-@override int get hashCode { return Object.hash(labelSelector, name, optional, path, signerName); } 
-@override String toString() { return 'ClusterTrustBundleProjection(labelSelector: $labelSelector, name: $name, optional: $optional, path: $path, signerName: $signerName)'; } 
+          signerName == other.signerName;
+
+@override int get hashCode => Object.hash(labelSelector, name, optional, path, signerName);
+
+@override String toString() => 'ClusterTrustBundleProjection(labelSelector: $labelSelector, name: $name, optional: $optional, path: $path, signerName: $signerName)';
+
  }

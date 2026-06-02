@@ -31,11 +31,14 @@ ResponseCommonFailure3 copyWith({List<AiSearchInstanceChangeJobStatusResponse400
   messages: messages != null ? messages() : this.messages,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure3 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages ?? const []), success); } 
-@override String toString() { return 'ResponseCommonFailure3(errors: $errors, messages: $messages, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages ?? const []), success);
+
+@override String toString() => 'ResponseCommonFailure3(errors: $errors, messages: $messages, success: $success)';
+
  }

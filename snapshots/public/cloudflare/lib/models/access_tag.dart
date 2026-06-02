@@ -34,12 +34,15 @@ AccessTag copyWith({int? Function()? appCount, AccessTimestamp? Function()? crea
   name: name ?? this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTag &&
           appCount == other.appCount &&
           createdAt == other.createdAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(appCount, createdAt, name, updatedAt); } 
-@override String toString() { return 'AccessTag(appCount: $appCount, createdAt: $createdAt, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(appCount, createdAt, name, updatedAt);
+
+@override String toString() => 'AccessTag(appCount: $appCount, createdAt: $createdAt, name: $name, updatedAt: $updatedAt)';
+
  }

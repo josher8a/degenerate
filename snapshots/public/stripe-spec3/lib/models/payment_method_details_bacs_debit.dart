@@ -64,13 +64,16 @@ PaymentMethodDetailsBacsDebit copyWith({String? Function()? expectedDebitDate, S
   mandate: mandate != null ? mandate() : this.mandate,
   sortCode: sortCode != null ? sortCode() : this.sortCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsBacsDebit &&
           expectedDebitDate == other.expectedDebitDate &&
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
           mandate == other.mandate &&
-          sortCode == other.sortCode; } 
-@override int get hashCode { return Object.hash(expectedDebitDate, fingerprint, last4, mandate, sortCode); } 
-@override String toString() { return 'PaymentMethodDetailsBacsDebit(expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, sortCode: $sortCode)'; } 
+          sortCode == other.sortCode;
+
+@override int get hashCode => Object.hash(expectedDebitDate, fingerprint, last4, mandate, sortCode);
+
+@override String toString() => 'PaymentMethodDetailsBacsDebit(expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, sortCode: $sortCode)';
+
  }

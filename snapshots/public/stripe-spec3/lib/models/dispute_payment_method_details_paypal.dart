@@ -34,10 +34,13 @@ DisputePaymentMethodDetailsPaypal copyWith({String? Function()? caseId, String? 
   caseId: caseId != null ? caseId() : this.caseId,
   reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetailsPaypal &&
           caseId == other.caseId &&
-          reasonCode == other.reasonCode; } 
-@override int get hashCode { return Object.hash(caseId, reasonCode); } 
-@override String toString() { return 'DisputePaymentMethodDetailsPaypal(caseId: $caseId, reasonCode: $reasonCode)'; } 
+          reasonCode == other.reasonCode;
+
+@override int get hashCode => Object.hash(caseId, reasonCode);
+
+@override String toString() => 'DisputePaymentMethodDetailsPaypal(caseId: $caseId, reasonCode: $reasonCode)';
+
  }

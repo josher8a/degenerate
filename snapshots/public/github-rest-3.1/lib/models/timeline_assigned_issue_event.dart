@@ -70,7 +70,7 @@ TimelineAssignedIssueEvent copyWith({int? id, String? nodeId, String? url, Simpl
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
   assignee: assignee ?? this.assignee,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineAssignedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -81,7 +81,10 @@ TimelineAssignedIssueEvent copyWith({int? id, String? nodeId, String? url, Simpl
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          assignee == other.assignee; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee); } 
-@override String toString() { return 'TimelineAssignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee)'; } 
+          assignee == other.assignee;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, assignee);
+
+@override String toString() => 'TimelineAssignedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, assignee: $assignee)';
+
  }

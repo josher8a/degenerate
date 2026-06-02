@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicNat copyWith({MagicCidr? Function()? staticPrefix}) { return MagicNat(
   staticPrefix: staticPrefix != null ? staticPrefix() : this.staticPrefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicNat &&
-          staticPrefix == other.staticPrefix; } 
-@override int get hashCode { return staticPrefix.hashCode; } 
-@override String toString() { return 'MagicNat(staticPrefix: $staticPrefix)'; } 
+          staticPrefix == other.staticPrefix;
+
+@override int get hashCode => staticPrefix.hashCode;
+
+@override String toString() => 'MagicNat(staticPrefix: $staticPrefix)';
+
  }

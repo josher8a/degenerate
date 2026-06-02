@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountsRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountsRequestType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostAccountsRequestType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostAccountsRequestType($value)';
+
  }
 @immutable final class PostAccountsRequest {const PostAccountsRequest({this.accountToken, this.bankAccount, this.businessProfile, this.businessType, this.capabilities, this.company, this.controller, this.country, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, this.type, });
 
@@ -174,7 +177,7 @@ PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAcco
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsRequest &&
           accountToken == other.accountToken &&
           bankAccount == other.bankAccount &&
@@ -194,7 +197,10 @@ PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAcco
           metadata == other.metadata &&
           settings == other.settings &&
           tosAcceptance == other.tosAcceptance &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(accountToken, bankAccount, businessProfile, businessType, capabilities, company, controller, country, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance, type); } 
-@override String toString() { return 'PostAccountsRequest(accountToken: $accountToken, bankAccount: $bankAccount, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, controller: $controller, country: $country, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(accountToken, bankAccount, businessProfile, businessType, capabilities, company, controller, country, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance, type);
+
+@override String toString() => 'PostAccountsRequest(accountToken: $accountToken, bankAccount: $bankAccount, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, controller: $controller, country: $country, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)';
+
  }

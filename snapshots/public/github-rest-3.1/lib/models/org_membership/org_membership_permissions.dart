@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_c
 OrgMembershipPermissions copyWith({bool? canCreateRepository}) { return OrgMembershipPermissions(
   canCreateRepository: canCreateRepository ?? this.canCreateRepository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgMembershipPermissions &&
-          canCreateRepository == other.canCreateRepository; } 
-@override int get hashCode { return canCreateRepository.hashCode; } 
-@override String toString() { return 'OrgMembershipPermissions(canCreateRepository: $canCreateRepository)'; } 
+          canCreateRepository == other.canCreateRepository;
+
+@override int get hashCode => canCreateRepository.hashCode;
+
+@override String toString() => 'OrgMembershipPermissions(canCreateRepository: $canCreateRepository)';
+
  }

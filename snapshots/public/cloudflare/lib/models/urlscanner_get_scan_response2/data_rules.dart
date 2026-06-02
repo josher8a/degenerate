@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('*'); 
 DataRules copyWith({UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2? $empty}) { return DataRules(
   $empty: $empty ?? this.$empty,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataRules &&
-          $empty == other.$empty; } 
-@override int get hashCode { return $empty.hashCode; } 
-@override String toString() { return 'DataRules(\$empty: ${$empty})'; } 
+          $empty == other.$empty;
+
+@override int get hashCode => $empty.hashCode;
+
+@override String toString() => 'DataRules(\$empty: ${$empty})';
+
  }

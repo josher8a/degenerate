@@ -60,7 +60,7 @@ SourceTypeMultibanco copyWith({String? Function()? entity, String? Function()? r
   refundAccountHolderName: refundAccountHolderName != null ? refundAccountHolderName() : this.refundAccountHolderName,
   refundIban: refundIban != null ? refundIban() : this.refundIban,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeMultibanco &&
           entity == other.entity &&
           reference == other.reference &&
@@ -71,7 +71,10 @@ SourceTypeMultibanco copyWith({String? Function()? entity, String? Function()? r
           refundAccountHolderAddressPostalCode == other.refundAccountHolderAddressPostalCode &&
           refundAccountHolderAddressState == other.refundAccountHolderAddressState &&
           refundAccountHolderName == other.refundAccountHolderName &&
-          refundIban == other.refundIban; } 
-@override int get hashCode { return Object.hash(entity, reference, refundAccountHolderAddressCity, refundAccountHolderAddressCountry, refundAccountHolderAddressLine1, refundAccountHolderAddressLine2, refundAccountHolderAddressPostalCode, refundAccountHolderAddressState, refundAccountHolderName, refundIban); } 
-@override String toString() { return 'SourceTypeMultibanco(entity: $entity, reference: $reference, refundAccountHolderAddressCity: $refundAccountHolderAddressCity, refundAccountHolderAddressCountry: $refundAccountHolderAddressCountry, refundAccountHolderAddressLine1: $refundAccountHolderAddressLine1, refundAccountHolderAddressLine2: $refundAccountHolderAddressLine2, refundAccountHolderAddressPostalCode: $refundAccountHolderAddressPostalCode, refundAccountHolderAddressState: $refundAccountHolderAddressState, refundAccountHolderName: $refundAccountHolderName, refundIban: $refundIban)'; } 
+          refundIban == other.refundIban;
+
+@override int get hashCode => Object.hash(entity, reference, refundAccountHolderAddressCity, refundAccountHolderAddressCountry, refundAccountHolderAddressLine1, refundAccountHolderAddressLine2, refundAccountHolderAddressPostalCode, refundAccountHolderAddressState, refundAccountHolderName, refundIban);
+
+@override String toString() => 'SourceTypeMultibanco(entity: $entity, reference: $reference, refundAccountHolderAddressCity: $refundAccountHolderAddressCity, refundAccountHolderAddressCountry: $refundAccountHolderAddressCountry, refundAccountHolderAddressLine1: $refundAccountHolderAddressLine1, refundAccountHolderAddressLine2: $refundAccountHolderAddressLine2, refundAccountHolderAddressPostalCode: $refundAccountHolderAddressPostalCode, refundAccountHolderAddressState: $refundAccountHolderAddressState, refundAccountHolderName: $refundAccountHolderName, refundIban: $refundIban)';
+
  }

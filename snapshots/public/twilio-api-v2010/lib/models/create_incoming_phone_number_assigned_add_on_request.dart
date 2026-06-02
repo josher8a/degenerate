@@ -22,9 +22,12 @@ return errors; }
 CreateIncomingPhoneNumberAssignedAddOnRequest copyWith({String? installedAddOnSid}) { return CreateIncomingPhoneNumberAssignedAddOnRequest(
   installedAddOnSid: installedAddOnSid ?? this.installedAddOnSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateIncomingPhoneNumberAssignedAddOnRequest &&
-          installedAddOnSid == other.installedAddOnSid; } 
-@override int get hashCode { return installedAddOnSid.hashCode; } 
-@override String toString() { return 'CreateIncomingPhoneNumberAssignedAddOnRequest(installedAddOnSid: $installedAddOnSid)'; } 
+          installedAddOnSid == other.installedAddOnSid;
+
+@override int get hashCode => installedAddOnSid.hashCode;
+
+@override String toString() => 'CreateIncomingPhoneNumberAssignedAddOnRequest(installedAddOnSid: $installedAddOnSid)';
+
  }

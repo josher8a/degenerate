@@ -109,7 +109,7 @@ AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Fun
   temperature: temperature != null ? temperature() : this.temperature,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsyncBatch2Requests &&
           externalReference == other.externalReference &&
           frequencyPenalty == other.frequencyPenalty &&
@@ -121,7 +121,10 @@ AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Fun
           seed == other.seed &&
           stream == other.stream &&
           temperature == other.temperature &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(externalReference, frequencyPenalty, maxTokens, presencePenalty, prompt, repetitionPenalty, responseFormat, seed, stream, temperature, topP); } 
-@override String toString() { return 'AsyncBatch2Requests(externalReference: $externalReference, frequencyPenalty: $frequencyPenalty, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(externalReference, frequencyPenalty, maxTokens, presencePenalty, prompt, repetitionPenalty, responseFormat, seed, stream, temperature, topP);
+
+@override String toString() => 'AsyncBatch2Requests(externalReference: $externalReference, frequencyPenalty: $frequencyPenalty, maxTokens: $maxTokens, presencePenalty: $presencePenalty, prompt: $prompt, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, topP: $topP)';
+
  }

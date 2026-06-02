@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadMessageInProgressEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadMessageInProgressEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadMessageInProgressEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadMessageInProgressEvent($value)';
+
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
 @immutable final class ThreadMessageInProgress {const ThreadMessageInProgress({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadMessageInProgress copyWith({ThreadMessageInProgressEvent? event, MessageOb
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadMessageInProgress &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadMessageInProgress(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadMessageInProgress(event: $event, data: $data)';
+
  }

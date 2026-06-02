@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LocalShellCallOutputStatusEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LocalShellCallOutputStatusEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LocalShellCallOutputStatusEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LocalShellCallOutputStatusEnum($value)';
+
  }
 /// The output of a shell tool call that was emitted.
 @immutable final class FunctionShellCallOutput {const FunctionShellCallOutput({required this.id, required this.callId, required this.status, required this.output, required this.maxOutputLength, this.type = 'shell_call_output', this.createdBy, });
@@ -85,7 +88,7 @@ FunctionShellCallOutput copyWith({String? type, String? id, String? callId, Loca
   maxOutputLength: maxOutputLength != null ? maxOutputLength() : this.maxOutputLength,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallOutput &&
           type == other.type &&
           id == other.id &&
@@ -93,7 +96,10 @@ FunctionShellCallOutput copyWith({String? type, String? id, String? callId, Loca
           status == other.status &&
           listEquals(output, other.output) &&
           maxOutputLength == other.maxOutputLength &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, status, Object.hashAll(output), maxOutputLength, createdBy); } 
-@override String toString() { return 'FunctionShellCallOutput(type: $type, id: $id, callId: $callId, status: $status, output: $output, maxOutputLength: $maxOutputLength, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, callId, status, Object.hashAll(output), maxOutputLength, createdBy);
+
+@override String toString() => 'FunctionShellCallOutput(type: $type, id: $id, callId: $callId, status: $status, output: $output, maxOutputLength: $maxOutputLength, createdBy: $createdBy)';
+
  }

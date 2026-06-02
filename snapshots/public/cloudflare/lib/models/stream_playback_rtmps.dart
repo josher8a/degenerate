@@ -35,10 +35,13 @@ StreamPlaybackRtmps copyWith({StreamPlaybackRtmpsStreamKey? Function()? streamKe
   streamKey: streamKey != null ? streamKey() : this.streamKey,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamPlaybackRtmps &&
           streamKey == other.streamKey &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(streamKey, url); } 
-@override String toString() { return 'StreamPlaybackRtmps(streamKey: $streamKey, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(streamKey, url);
+
+@override String toString() => 'StreamPlaybackRtmps(streamKey: $streamKey, url: $url)';
+
  }

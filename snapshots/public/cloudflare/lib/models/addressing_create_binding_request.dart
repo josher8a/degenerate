@@ -22,10 +22,13 @@ AddressingCreateBindingRequest copyWith({AddressingCidr? cidr, AddressingService
   cidr: cidr ?? this.cidr,
   serviceId: serviceId ?? this.serviceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingCreateBindingRequest &&
           cidr == other.cidr &&
-          serviceId == other.serviceId; } 
-@override int get hashCode { return Object.hash(cidr, serviceId); } 
-@override String toString() { return 'AddressingCreateBindingRequest(cidr: $cidr, serviceId: $serviceId)'; } 
+          serviceId == other.serviceId;
+
+@override int get hashCode => Object.hash(cidr, serviceId);
+
+@override String toString() => 'AddressingCreateBindingRequest(cidr: $cidr, serviceId: $serviceId)';
+
  }

@@ -23,10 +23,13 @@ GroupCreated copyWith({String? Function()? id, GroupCreatedData? Function()? dat
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupCreated &&
           id == other.id &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(id, data); } 
-@override String toString() { return 'GroupCreated(id: $id, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(id, data);
+
+@override String toString() => 'GroupCreated(id: $id, data: $data)';
+
  }

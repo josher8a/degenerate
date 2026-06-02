@@ -21,9 +21,12 @@ return errors; }
 RepositoryRuleMaxFileSizeParameters copyWith({int? maxFileSize}) { return RepositoryRuleMaxFileSizeParameters(
   maxFileSize: maxFileSize ?? this.maxFileSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFileSizeParameters &&
-          maxFileSize == other.maxFileSize; } 
-@override int get hashCode { return maxFileSize.hashCode; } 
-@override String toString() { return 'RepositoryRuleMaxFileSizeParameters(maxFileSize: $maxFileSize)'; } 
+          maxFileSize == other.maxFileSize;
+
+@override int get hashCode => maxFileSize.hashCode;
+
+@override String toString() => 'RepositoryRuleMaxFileSizeParameters(maxFileSize: $maxFileSize)';
+
  }

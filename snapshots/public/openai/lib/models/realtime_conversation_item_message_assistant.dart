@@ -49,14 +49,17 @@ RealtimeConversationItemMessageAssistant copyWith({String? Function()? id, Realt
   role: role ?? this.role,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageAssistant &&
           id == other.id &&
           object == other.object &&
           type == other.type &&
           status == other.status &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(id, object, type, status, role, Object.hashAll(content)); } 
-@override String toString() { return 'RealtimeConversationItemMessageAssistant(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(id, object, type, status, role, Object.hashAll(content));
+
+@override String toString() => 'RealtimeConversationItemMessageAssistant(id: $id, object: $object, type: $type, status: $status, role: $role, content: $content)';
+
  }

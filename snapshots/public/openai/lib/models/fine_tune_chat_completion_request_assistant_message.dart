@@ -20,10 +20,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Weight && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Weight($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Weight && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Weight($value)';
+
  }
 @immutable final class FineTuneChatCompletionRequestAssistantMessage {const FineTuneChatCompletionRequestAssistantMessage({required this.role, this.content, this.refusal, this.name, this.audio, this.toolCalls, this.functionCall, this.weight, });
 
@@ -86,7 +89,7 @@ FineTuneChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAss
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneChatCompletionRequestAssistantMessage &&
           content == other.content &&
           refusal == other.refusal &&
@@ -95,7 +98,10 @@ FineTuneChatCompletionRequestAssistantMessage copyWith({ChatCompletionRequestAss
           audio == other.audio &&
           listEquals(toolCalls, other.toolCalls) &&
           functionCall == other.functionCall &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(content, refusal, role, name, audio, Object.hashAll(toolCalls ?? const []), functionCall, weight); } 
-@override String toString() { return 'FineTuneChatCompletionRequestAssistantMessage(content: $content, refusal: $refusal, role: $role, name: $name, audio: $audio, toolCalls: $toolCalls, functionCall: $functionCall, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(content, refusal, role, name, audio, Object.hashAll(toolCalls ?? const []), functionCall, weight);
+
+@override String toString() => 'FineTuneChatCompletionRequestAssistantMessage(content: $content, refusal: $refusal, role: $role, name: $name, audio: $audio, toolCalls: $toolCalls, functionCall: $functionCall, weight: $weight)';
+
  }

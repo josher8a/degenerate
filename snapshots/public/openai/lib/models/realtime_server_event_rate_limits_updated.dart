@@ -35,11 +35,14 @@ RealtimeServerEventRateLimitsUpdated copyWith({String? eventId, String? type, Li
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventRateLimitsUpdated &&
           eventId == other.eventId &&
           type == other.type &&
-          listEquals(rateLimits, other.rateLimits); } 
-@override int get hashCode { return Object.hash(eventId, type, Object.hashAll(rateLimits)); } 
-@override String toString() { return 'RealtimeServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)'; } 
+          listEquals(rateLimits, other.rateLimits);
+
+@override int get hashCode => Object.hash(eventId, type, Object.hashAll(rateLimits));
+
+@override String toString() => 'RealtimeServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)';
+
  }

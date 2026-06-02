@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CloudflareTunnelConfigurationPutConfigurationRequest copyWith({TunnelConfig? Function()? config}) { return CloudflareTunnelConfigurationPutConfigurationRequest(
   config: config != null ? config() : this.config,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelConfigurationPutConfigurationRequest &&
-          config == other.config; } 
-@override int get hashCode { return config.hashCode; } 
-@override String toString() { return 'CloudflareTunnelConfigurationPutConfigurationRequest(config: $config)'; } 
+          config == other.config;
+
+@override int get hashCode => config.hashCode;
+
+@override String toString() => 'CloudflareTunnelConfigurationPutConfigurationRequest(config: $config)';
+
  }

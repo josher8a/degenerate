@@ -47,7 +47,7 @@ WebhookCheckRunCreated copyWith({ItemCreatedAction? Function()? action, CheckRun
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckRunCreated &&
           action == other.action &&
           checkRun == other.checkRun &&
@@ -55,7 +55,10 @@ WebhookCheckRunCreated copyWith({ItemCreatedAction? Function()? action, CheckRun
           enterprise == other.enterprise &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, checkRun, installation, enterprise, organization, repository, sender); } 
-@override String toString() { return 'WebhookCheckRunCreated(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, checkRun, installation, enterprise, organization, repository, sender);
+
+@override String toString() => 'WebhookCheckRunCreated(action: $action, checkRun: $checkRun, installation: $installation, enterprise: $enterprise, organization: $organization, repository: $repository, sender: $sender)';
+
  }

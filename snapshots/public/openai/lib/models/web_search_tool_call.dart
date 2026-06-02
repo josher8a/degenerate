@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchToolCallStatus($value)';
+
  }
 /// The results of a web search tool call. See the
 /// [web search guide](/docs/guides/tools-web-search) for more information.
@@ -77,12 +80,15 @@ WebSearchToolCall copyWith({String? id, String? type, WebSearchToolCallStatus? s
   status: status ?? this.status,
   action: action ?? this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchToolCall &&
           id == other.id &&
           type == other.type &&
           status == other.status &&
-          action == other.action; } 
-@override int get hashCode { return Object.hash(id, type, status, action); } 
-@override String toString() { return 'WebSearchToolCall(id: $id, type: $type, status: $status, action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => Object.hash(id, type, status, action);
+
+@override String toString() => 'WebSearchToolCall(id: $id, type: $type, status: $status, action: $action)';
+
  }

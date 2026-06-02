@@ -24,9 +24,12 @@ return errors; }
 CheckoutPaymentMethodOptionsMandateOptionsSepaDebit copyWith({String? Function()? referencePrefix}) { return CheckoutPaymentMethodOptionsMandateOptionsSepaDebit(
   referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutPaymentMethodOptionsMandateOptionsSepaDebit &&
-          referencePrefix == other.referencePrefix; } 
-@override int get hashCode { return referencePrefix.hashCode; } 
-@override String toString() { return 'CheckoutPaymentMethodOptionsMandateOptionsSepaDebit(referencePrefix: $referencePrefix)'; } 
+          referencePrefix == other.referencePrefix;
+
+@override int get hashCode => referencePrefix.hashCode;
+
+@override String toString() => 'CheckoutPaymentMethodOptionsMandateOptionsSepaDebit(referencePrefix: $referencePrefix)';
+
  }

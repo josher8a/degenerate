@@ -36,13 +36,16 @@ CodeScanningAlertLocation copyWith({String? Function()? path, int? Function()? s
   startColumn: startColumn != null ? startColumn() : this.startColumn,
   endColumn: endColumn != null ? endColumn() : this.endColumn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAlertLocation &&
           path == other.path &&
           startLine == other.startLine &&
           endLine == other.endLine &&
           startColumn == other.startColumn &&
-          endColumn == other.endColumn; } 
-@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn); } 
-@override String toString() { return 'CodeScanningAlertLocation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn)'; } 
+          endColumn == other.endColumn;
+
+@override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn);
+
+@override String toString() => 'CodeScanningAlertLocation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn)';
+
  }

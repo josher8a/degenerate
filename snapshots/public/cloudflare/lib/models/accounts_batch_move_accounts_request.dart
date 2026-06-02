@@ -23,10 +23,13 @@ AccountsBatchMoveAccountsRequest copyWith({List<String>? accountIds, String? des
   accountIds: accountIds ?? this.accountIds,
   destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsBatchMoveAccountsRequest &&
           listEquals(accountIds, other.accountIds) &&
-          destinationOrganizationId == other.destinationOrganizationId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountIds), destinationOrganizationId); } 
-@override String toString() { return 'AccountsBatchMoveAccountsRequest(accountIds: $accountIds, destinationOrganizationId: $destinationOrganizationId)'; } 
+          destinationOrganizationId == other.destinationOrganizationId;
+
+@override int get hashCode => Object.hash(Object.hashAll(accountIds), destinationOrganizationId);
+
+@override String toString() => 'AccountsBatchMoveAccountsRequest(accountIds: $accountIds, destinationOrganizationId: $destinationOrganizationId)';
+
  }

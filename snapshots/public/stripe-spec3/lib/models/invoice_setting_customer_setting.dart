@@ -42,12 +42,15 @@ InvoiceSettingCustomerSetting copyWith({List<InvoiceSettingCustomField>? Functio
   footer: footer != null ? footer() : this.footer,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceSettingCustomerSetting &&
           listEquals(customFields, other.customFields) &&
           defaultPaymentMethod == other.defaultPaymentMethod &&
           footer == other.footer &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(customFields ?? const []), defaultPaymentMethod, footer, renderingOptions); } 
-@override String toString() { return 'InvoiceSettingCustomerSetting(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)'; } 
+          renderingOptions == other.renderingOptions;
+
+@override int get hashCode => Object.hash(Object.hashAll(customFields ?? const []), defaultPaymentMethod, footer, renderingOptions);
+
+@override String toString() => 'InvoiceSettingCustomerSetting(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)';
+
  }

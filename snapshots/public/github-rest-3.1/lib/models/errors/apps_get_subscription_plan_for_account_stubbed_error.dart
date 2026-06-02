@@ -17,7 +17,8 @@ final class AppsGetSubscriptionPlanForAccountStubbedError$401 extends AppsGetSub
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class AppsGetSubscriptionPlanForAccountStubbedError$Unknown extends AppsGetSubscriptionPlanForAccountStubbedError {const AppsGetSubscriptionPlanForAccountStubbedError$Unknown(this.statusCode, this.rawBody, );
 

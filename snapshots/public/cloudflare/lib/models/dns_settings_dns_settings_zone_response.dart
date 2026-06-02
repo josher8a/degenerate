@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('names
 DnsSettingsDnsSettingsZoneResponse copyWith({DnsSettingsDnsSettingsZoneResponseNameservers? nameservers}) { return DnsSettingsDnsSettingsZoneResponse(
   nameservers: nameservers ?? this.nameservers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsSettingsDnsSettingsZoneResponse &&
-          nameservers == other.nameservers; } 
-@override int get hashCode { return nameservers.hashCode; } 
-@override String toString() { return 'DnsSettingsDnsSettingsZoneResponse(nameservers: $nameservers)'; } 
+          nameservers == other.nameservers;
+
+@override int get hashCode => nameservers.hashCode;
+
+@override String toString() => 'DnsSettingsDnsSettingsZoneResponse(nameservers: $nameservers)';
+
  }

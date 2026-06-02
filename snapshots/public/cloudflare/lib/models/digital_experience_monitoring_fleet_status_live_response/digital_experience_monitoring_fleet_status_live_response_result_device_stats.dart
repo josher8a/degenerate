@@ -40,14 +40,17 @@ DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats copyWith({Li
   byVersion: byVersion != null ? byVersion() : this.byVersion,
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats &&
           listEquals(byColo, other.byColo) &&
           listEquals(byMode, other.byMode) &&
           listEquals(byPlatform, other.byPlatform) &&
           listEquals(byStatus, other.byStatus) &&
           listEquals(byVersion, other.byVersion) &&
-          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
-@override int get hashCode { return Object.hash(Object.hashAll(byColo ?? const []), Object.hashAll(byMode ?? const []), Object.hashAll(byPlatform ?? const []), Object.hashAll(byStatus ?? const []), Object.hashAll(byVersion ?? const []), uniqueDevicesTotal); } 
-@override String toString() { return 'DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats(byColo: $byColo, byMode: $byMode, byPlatform: $byPlatform, byStatus: $byStatus, byVersion: $byVersion, uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+          uniqueDevicesTotal == other.uniqueDevicesTotal;
+
+@override int get hashCode => Object.hash(Object.hashAll(byColo ?? const []), Object.hashAll(byMode ?? const []), Object.hashAll(byPlatform ?? const []), Object.hashAll(byStatus ?? const []), Object.hashAll(byVersion ?? const []), uniqueDevicesTotal);
+
+@override String toString() => 'DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats(byColo: $byColo, byMode: $byMode, byPlatform: $byPlatform, byStatus: $byStatus, byVersion: $byVersion, uniqueDevicesTotal: $uniqueDevicesTotal)';
+
  }

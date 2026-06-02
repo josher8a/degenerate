@@ -24,9 +24,12 @@ return errors; }
 TokenCardNetworks copyWith({String? Function()? preferred}) { return TokenCardNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenCardNetworks &&
-          preferred == other.preferred; } 
-@override int get hashCode { return preferred.hashCode; } 
-@override String toString() { return 'TokenCardNetworks(preferred: $preferred)'; } 
+          preferred == other.preferred;
+
+@override int get hashCode => preferred.hashCode;
+
+@override String toString() => 'TokenCardNetworks(preferred: $preferred)';
+
  }

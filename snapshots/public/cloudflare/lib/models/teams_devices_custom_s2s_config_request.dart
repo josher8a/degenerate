@@ -36,11 +36,14 @@ TeamsDevicesCustomS2sConfigRequest copyWith({String? accessClientId, String? acc
   accessClientSecret: accessClientSecret ?? this.accessClientSecret,
   apiUrl: apiUrl ?? this.apiUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesCustomS2sConfigRequest &&
           accessClientId == other.accessClientId &&
           accessClientSecret == other.accessClientSecret &&
-          apiUrl == other.apiUrl; } 
-@override int get hashCode { return Object.hash(accessClientId, accessClientSecret, apiUrl); } 
-@override String toString() { return 'TeamsDevicesCustomS2sConfigRequest(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, apiUrl: $apiUrl)'; } 
+          apiUrl == other.apiUrl;
+
+@override int get hashCode => Object.hash(accessClientId, accessClientSecret, apiUrl);
+
+@override String toString() => 'TeamsDevicesCustomS2sConfigRequest(accessClientId: $accessClientId, accessClientSecret: $accessClientSecret, apiUrl: $apiUrl)';
+
  }

@@ -27,11 +27,14 @@ ChatCompletionFunctions copyWith({String? Function()? description, String? name,
   name: name ?? this.name,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionFunctions &&
           description == other.description &&
           name == other.name &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(description, name, parameters); } 
-@override String toString() { return 'ChatCompletionFunctions(description: $description, name: $name, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(description, name, parameters);
+
+@override String toString() => 'ChatCompletionFunctions(description: $description, name: $name, parameters: $parameters)';
+
  }

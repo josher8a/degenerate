@@ -25,11 +25,14 @@ CreateTokenRequest copyWith({String? grantType, String? Function()? scope, int? 
   scope: scope != null ? scope() : this.scope,
   timeout: timeout != null ? timeout() : this.timeout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTokenRequest &&
           grantType == other.grantType &&
           scope == other.scope &&
-          timeout == other.timeout; } 
-@override int get hashCode { return Object.hash(grantType, scope, timeout); } 
-@override String toString() { return 'CreateTokenRequest(grantType: $grantType, scope: $scope, timeout: $timeout)'; } 
+          timeout == other.timeout;
+
+@override int get hashCode => Object.hash(grantType, scope, timeout);
+
+@override String toString() => 'CreateTokenRequest(grantType: $grantType, scope: $scope, timeout: $timeout)';
+
  }

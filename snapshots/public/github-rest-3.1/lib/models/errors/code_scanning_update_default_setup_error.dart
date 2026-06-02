@@ -21,31 +21,36 @@ final class CodeScanningUpdateDefaultSetupError$403 extends CodeScanningUpdateDe
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningUpdateDefaultSetupError$404 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningUpdateDefaultSetupError$409 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class CodeScanningUpdateDefaultSetupError$422 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CodeScanningUpdateDefaultSetupError$503 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$503(this.error);
 
 final CodeScanningUpdateDefaultSetupResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningUpdateDefaultSetupError$Unknown extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError$Unknown(this.statusCode, this.rawBody, );
 

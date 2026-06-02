@@ -24,9 +24,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
 WaitingroomQueryPreview copyWith({WaitingroomCustomPageHtml? customHtml}) { return WaitingroomQueryPreview(
   customHtml: customHtml ?? this.customHtml,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomQueryPreview &&
-          customHtml == other.customHtml; } 
-@override int get hashCode { return customHtml.hashCode; } 
-@override String toString() { return 'WaitingroomQueryPreview(customHtml: $customHtml)'; } 
+          customHtml == other.customHtml;
+
+@override int get hashCode => customHtml.hashCode;
+
+@override String toString() => 'WaitingroomQueryPreview(customHtml: $customHtml)';
+
  }

@@ -50,7 +50,7 @@ WebhookCommitCommentCreated copyWith({ItemCreatedAction? action, WebhookCommitCo
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCommitCommentCreated &&
           action == other.action &&
           comment == other.comment &&
@@ -58,7 +58,10 @@ WebhookCommitCommentCreated copyWith({ItemCreatedAction? action, WebhookCommitCo
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, comment, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookCommitCommentCreated(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, comment, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookCommitCommentCreated(action: $action, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

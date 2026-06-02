@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ItemsType($value)';
+
  }
 @immutable final class SourceOrderItems {const SourceOrderItems({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });
 
@@ -81,14 +84,17 @@ SourceOrderItems copyWith({int? Function()? amount, String? Function()? currency
   quantity: quantity != null ? quantity() : this.quantity,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceOrderItems &&
           amount == other.amount &&
           currency == other.currency &&
           description == other.description &&
           parent == other.parent &&
           quantity == other.quantity &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, currency, description, parent, quantity, type); } 
-@override String toString() { return 'SourceOrderItems(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, currency, description, parent, quantity, type);
+
+@override String toString() => 'SourceOrderItems(amount: $amount, currency: $currency, description: $description, parent: $parent, quantity: $quantity, type: $type)';
+
  }

@@ -28,11 +28,14 @@ IpAddressManagementAddressMapsUpdateAddressMapRequest copyWith({AddressingDefaul
   description: description != null ? description() : this.description,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementAddressMapsUpdateAddressMapRequest &&
           defaultSni == other.defaultSni &&
           description == other.description &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(defaultSni, description, enabled); } 
-@override String toString() { return 'IpAddressManagementAddressMapsUpdateAddressMapRequest(defaultSni: $defaultSni, description: $description, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(defaultSni, description, enabled);
+
+@override String toString() => 'IpAddressManagementAddressMapsUpdateAddressMapRequest(defaultSni: $defaultSni, description: $description, enabled: $enabled)';
+
  }

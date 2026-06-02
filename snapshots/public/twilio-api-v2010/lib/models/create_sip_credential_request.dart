@@ -23,10 +23,13 @@ CreateSipCredentialRequest copyWith({String? username, String? password, }) { re
   username: username ?? this.username,
   password: password ?? this.password,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSipCredentialRequest &&
           username == other.username &&
-          password == other.password; } 
-@override int get hashCode { return Object.hash(username, password); } 
-@override String toString() { return 'CreateSipCredentialRequest(username: $username, password: $password)'; } 
+          password == other.password;
+
+@override int get hashCode => Object.hash(username, password);
+
+@override String toString() => 'CreateSipCredentialRequest(username: $username, password: $password)';
+
  }

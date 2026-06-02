@@ -24,9 +24,12 @@ return errors; }
 ProductMarketingFeature copyWith({String? Function()? name}) { return ProductMarketingFeature(
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProductMarketingFeature &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'ProductMarketingFeature(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'ProductMarketingFeature(name: $name)';
+
  }

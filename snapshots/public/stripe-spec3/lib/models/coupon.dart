@@ -128,7 +128,7 @@ Coupon copyWith({int? Function()? amountOff, CouponAppliesTo? Function()? applie
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
   valid: valid ?? this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Coupon &&
           amountOff == other.amountOff &&
           appliesTo == other.appliesTo &&
@@ -146,7 +146,10 @@ Coupon copyWith({int? Function()? amountOff, CouponAppliesTo? Function()? applie
           percentOff == other.percentOff &&
           redeemBy == other.redeemBy &&
           timesRedeemed == other.timesRedeemed &&
-          valid == other.valid; } 
-@override int get hashCode { return Object.hash(amountOff, appliesTo, created, currency, currencyOptions, duration, durationInMonths, id, livemode, maxRedemptions, metadata, name, object, percentOff, redeemBy, timesRedeemed, valid); } 
-@override String toString() { return 'Coupon(amountOff: $amountOff, appliesTo: $appliesTo, created: $created, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, object: $object, percentOff: $percentOff, redeemBy: $redeemBy, timesRedeemed: $timesRedeemed, valid: $valid)'; } 
+          valid == other.valid;
+
+@override int get hashCode => Object.hash(amountOff, appliesTo, created, currency, currencyOptions, duration, durationInMonths, id, livemode, maxRedemptions, metadata, name, object, percentOff, redeemBy, timesRedeemed, valid);
+
+@override String toString() => 'Coupon(amountOff: $amountOff, appliesTo: $appliesTo, created: $created, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, object: $object, percentOff: $percentOff, redeemBy: $redeemBy, timesRedeemed: $timesRedeemed, valid: $valid)';
+
  }

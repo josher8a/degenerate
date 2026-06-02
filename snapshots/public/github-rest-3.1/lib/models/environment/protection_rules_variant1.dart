@@ -33,12 +33,15 @@ ProtectionRulesVariant1 copyWith({int? id, String? nodeId, String? type, WaitTim
   type: type ?? this.type,
   waitTimer: waitTimer != null ? waitTimer() : this.waitTimer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectionRulesVariant1 &&
           id == other.id &&
           nodeId == other.nodeId &&
           type == other.type &&
-          waitTimer == other.waitTimer; } 
-@override int get hashCode { return Object.hash(id, nodeId, type, waitTimer); } 
-@override String toString() { return 'ProtectionRulesVariant1(id: $id, nodeId: $nodeId, type: $type, waitTimer: $waitTimer)'; } 
+          waitTimer == other.waitTimer;
+
+@override int get hashCode => Object.hash(id, nodeId, type, waitTimer);
+
+@override String toString() => 'ProtectionRulesVariant1(id: $id, nodeId: $nodeId, type: $type, waitTimer: $waitTimer)';
+
  }

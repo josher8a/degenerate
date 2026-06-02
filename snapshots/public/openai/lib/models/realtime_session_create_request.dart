@@ -146,7 +146,7 @@ RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, dynamic Funct
   truncation: truncation != null ? truncation() : this.truncation,
   prompt: prompt != null ? prompt() : this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateRequest &&
           clientSecret == other.clientSecret &&
           modalities == other.modalities &&
@@ -163,7 +163,10 @@ RealtimeSessionCreateRequest copyWith({ClientSecret? clientSecret, dynamic Funct
           temperature == other.temperature &&
           maxResponseOutputTokens == other.maxResponseOutputTokens &&
           truncation == other.truncation &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(clientSecret, modalities, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, speed, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, truncation, prompt); } 
-@override String toString() { return 'RealtimeSessionCreateRequest(clientSecret: $clientSecret, modalities: $modalities, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, speed: $speed, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, truncation: $truncation, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(clientSecret, modalities, instructions, voice, inputAudioFormat, outputAudioFormat, inputAudioTranscription, speed, tracing, turnDetection, Object.hashAll(tools ?? const []), toolChoice, temperature, maxResponseOutputTokens, truncation, prompt);
+
+@override String toString() => 'RealtimeSessionCreateRequest(clientSecret: $clientSecret, modalities: $modalities, instructions: $instructions, voice: $voice, inputAudioFormat: $inputAudioFormat, outputAudioFormat: $outputAudioFormat, inputAudioTranscription: $inputAudioTranscription, speed: $speed, tracing: $tracing, turnDetection: $turnDetection, tools: $tools, toolChoice: $toolChoice, temperature: $temperature, maxResponseOutputTokens: $maxResponseOutputTokens, truncation: $truncation, prompt: $prompt)';
+
  }

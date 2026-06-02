@@ -109,7 +109,7 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
   closedAt: closedAt != null ? closedAt() : this.closedAt,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Milestone &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
@@ -126,7 +126,10 @@ Milestone copyWith({Uri? url, Uri? htmlUrl, Uri? labelsUrl, int? id, String? nod
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           closedAt == other.closedAt &&
-          dueOn == other.dueOn; } 
-@override int get hashCode { return Object.hash(url, htmlUrl, labelsUrl, id, nodeId, number, state, title, description, creator, openIssues, closedIssues, createdAt, updatedAt, closedAt, dueOn); } 
-@override String toString() { return 'Milestone(url: $url, htmlUrl: $htmlUrl, labelsUrl: $labelsUrl, id: $id, nodeId: $nodeId, number: $number, state: $state, title: $title, description: $description, creator: $creator, openIssues: $openIssues, closedIssues: $closedIssues, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, dueOn: $dueOn)'; } 
+          dueOn == other.dueOn;
+
+@override int get hashCode => Object.hash(url, htmlUrl, labelsUrl, id, nodeId, number, state, title, description, creator, openIssues, closedIssues, createdAt, updatedAt, closedAt, dueOn);
+
+@override String toString() => 'Milestone(url: $url, htmlUrl: $htmlUrl, labelsUrl: $labelsUrl, id: $id, nodeId: $nodeId, number: $number, state: $state, title: $title, description: $description, creator: $creator, openIssues: $openIssues, closedIssues: $closedIssues, createdAt: $createdAt, updatedAt: $updatedAt, closedAt: $closedAt, dueOn: $dueOn)';
+
  }

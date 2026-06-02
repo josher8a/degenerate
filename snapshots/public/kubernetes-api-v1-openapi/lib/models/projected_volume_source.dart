@@ -23,10 +23,13 @@ ProjectedVolumeSource copyWith({int? Function()? defaultMode, List<VolumeProject
   defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
   sources: sources != null ? sources() : this.sources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectedVolumeSource &&
           defaultMode == other.defaultMode &&
-          listEquals(sources, other.sources); } 
-@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(sources ?? const [])); } 
-@override String toString() { return 'ProjectedVolumeSource(defaultMode: $defaultMode, sources: $sources)'; } 
+          listEquals(sources, other.sources);
+
+@override int get hashCode => Object.hash(defaultMode, Object.hashAll(sources ?? const []));
+
+@override String toString() => 'ProjectedVolumeSource(defaultMode: $defaultMode, sources: $sources)';
+
  }

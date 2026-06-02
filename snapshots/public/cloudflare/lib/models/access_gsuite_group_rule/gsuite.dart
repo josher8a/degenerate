@@ -27,10 +27,13 @@ Gsuite copyWith({String? email, String? identityProviderId, }) { return Gsuite(
   email: email ?? this.email,
   identityProviderId: identityProviderId ?? this.identityProviderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Gsuite &&
           email == other.email &&
-          identityProviderId == other.identityProviderId; } 
-@override int get hashCode { return Object.hash(email, identityProviderId); } 
-@override String toString() { return 'Gsuite(email: $email, identityProviderId: $identityProviderId)'; } 
+          identityProviderId == other.identityProviderId;
+
+@override int get hashCode => Object.hash(email, identityProviderId);
+
+@override String toString() => 'Gsuite(email: $email, identityProviderId: $identityProviderId)';
+
  }

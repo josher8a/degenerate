@@ -23,10 +23,13 @@ LoginFailed copyWith({String? Function()? errorCode, String? Function()? errorMe
   errorCode: errorCode != null ? errorCode() : this.errorCode,
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoginFailed &&
           errorCode == other.errorCode &&
-          errorMessage == other.errorMessage; } 
-@override int get hashCode { return Object.hash(errorCode, errorMessage); } 
-@override String toString() { return 'LoginFailed(errorCode: $errorCode, errorMessage: $errorMessage)'; } 
+          errorMessage == other.errorMessage;
+
+@override int get hashCode => Object.hash(errorCode, errorMessage);
+
+@override String toString() => 'LoginFailed(errorCode: $errorCode, errorMessage: $errorMessage)';
+
  }

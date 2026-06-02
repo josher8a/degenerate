@@ -26,11 +26,14 @@ Key3Owner copyWith({Key2Type? Function()? type, ProjectUser? Function()? user, P
   user: user != null ? user() : this.user,
   serviceAccount: serviceAccount != null ? serviceAccount() : this.serviceAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Key3Owner &&
           type == other.type &&
           user == other.user &&
-          serviceAccount == other.serviceAccount; } 
-@override int get hashCode { return Object.hash(type, user, serviceAccount); } 
-@override String toString() { return 'Key3Owner(type: $type, user: $user, serviceAccount: $serviceAccount)'; } 
+          serviceAccount == other.serviceAccount;
+
+@override int get hashCode => Object.hash(type, user, serviceAccount);
+
+@override String toString() => 'Key3Owner(type: $type, user: $user, serviceAccount: $serviceAccount)';
+
  }

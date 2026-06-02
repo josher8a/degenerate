@@ -36,12 +36,15 @@ RealtimeSessionCreateResponseAudioInput copyWith({RealtimeAudioFormats? Function
   noiseReduction: noiseReduction != null ? noiseReduction() : this.noiseReduction,
   turnDetection: turnDetection != null ? turnDetection() : this.turnDetection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeSessionCreateResponseAudioInput &&
           format == other.format &&
           transcription == other.transcription &&
           noiseReduction == other.noiseReduction &&
-          turnDetection == other.turnDetection; } 
-@override int get hashCode { return Object.hash(format, transcription, noiseReduction, turnDetection); } 
-@override String toString() { return 'RealtimeSessionCreateResponseAudioInput(format: $format, transcription: $transcription, noiseReduction: $noiseReduction, turnDetection: $turnDetection)'; } 
+          turnDetection == other.turnDetection;
+
+@override int get hashCode => Object.hash(format, transcription, noiseReduction, turnDetection);
+
+@override String toString() => 'RealtimeSessionCreateResponseAudioInput(format: $format, transcription: $transcription, noiseReduction: $noiseReduction, turnDetection: $turnDetection)';
+
  }

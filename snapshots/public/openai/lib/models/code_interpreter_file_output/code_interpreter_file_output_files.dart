@@ -25,10 +25,13 @@ CodeInterpreterFileOutputFiles copyWith({String? mimeType, String? fileId, }) { 
   mimeType: mimeType ?? this.mimeType,
   fileId: fileId ?? this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeInterpreterFileOutputFiles &&
           mimeType == other.mimeType &&
-          fileId == other.fileId; } 
-@override int get hashCode { return Object.hash(mimeType, fileId); } 
-@override String toString() { return 'CodeInterpreterFileOutputFiles(mimeType: $mimeType, fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => Object.hash(mimeType, fileId);
+
+@override String toString() => 'CodeInterpreterFileOutputFiles(mimeType: $mimeType, fileId: $fileId)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UseLfs && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UseLfs($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UseLfs && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UseLfs($value)';
+
  }
 @immutable final class MigrationsSetLfsPreferenceRequest {const MigrationsSetLfsPreferenceRequest({required this.useLfs});
 
@@ -41,9 +44,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('use_l
 MigrationsSetLfsPreferenceRequest copyWith({UseLfs? useLfs}) { return MigrationsSetLfsPreferenceRequest(
   useLfs: useLfs ?? this.useLfs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MigrationsSetLfsPreferenceRequest &&
-          useLfs == other.useLfs; } 
-@override int get hashCode { return useLfs.hashCode; } 
-@override String toString() { return 'MigrationsSetLfsPreferenceRequest(useLfs: $useLfs)'; } 
+          useLfs == other.useLfs;
+
+@override int get hashCode => useLfs.hashCode;
+
+@override String toString() => 'MigrationsSetLfsPreferenceRequest(useLfs: $useLfs)';
+
  }

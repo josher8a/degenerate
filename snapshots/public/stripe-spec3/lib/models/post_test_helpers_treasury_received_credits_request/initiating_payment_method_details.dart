@@ -21,10 +21,13 @@ InitiatingPaymentMethodDetails copyWith({InboundTransfersType? type, InitiatingP
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InitiatingPaymentMethodDetails &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(type, usBankAccount); } 
-@override String toString() { return 'InitiatingPaymentMethodDetails(type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(type, usBankAccount);
+
+@override String toString() => 'InitiatingPaymentMethodDetails(type: $type, usBankAccount: $usBankAccount)';
+
  }

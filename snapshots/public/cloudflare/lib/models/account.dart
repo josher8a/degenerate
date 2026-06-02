@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountType($value)';
+
  }
 @immutable final class Account {const Account({required this.createdOn, required this.id, required this.name, required this.settings, required this.type, });
 
@@ -63,13 +66,16 @@ Account copyWith({DateTime? createdOn, String? id, String? Function()? name, Acc
   settings: settings ?? this.settings,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Account &&
           createdOn == other.createdOn &&
           id == other.id &&
           name == other.name &&
           settings == other.settings &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdOn, id, name, settings, type); } 
-@override String toString() { return 'Account(createdOn: $createdOn, id: $id, name: $name, settings: $settings, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdOn, id, name, settings, type);
+
+@override String toString() => 'Account(createdOn: $createdOn, id: $id, name: $name, settings: $settings, type: $type)';
+
  }

@@ -34,12 +34,15 @@ ZeroTrustGatewayEndpoints copyWith({ZeroTrustGatewayDohEndpoint? doh, ZeroTrustG
   ipv4: ipv4 ?? this.ipv4,
   ipv6: ipv6 ?? this.ipv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayEndpoints &&
           doh == other.doh &&
           dot == other.dot &&
           ipv4 == other.ipv4 &&
-          ipv6 == other.ipv6; } 
-@override int get hashCode { return Object.hash(doh, dot, ipv4, ipv6); } 
-@override String toString() { return 'ZeroTrustGatewayEndpoints(doh: $doh, dot: $dot, ipv4: $ipv4, ipv6: $ipv6)'; } 
+          ipv6 == other.ipv6;
+
+@override int get hashCode => Object.hash(doh, dot, ipv4, ipv6);
+
+@override String toString() => 'ZeroTrustGatewayEndpoints(doh: $doh, dot: $dot, ipv4: $ipv4, ipv6: $ipv6)';
+
  }

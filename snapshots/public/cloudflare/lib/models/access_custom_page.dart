@@ -51,7 +51,7 @@ AccessCustomPage copyWith({AccessSchemasAppCount? Function()? appCount, AccessTi
   uid: uid != null ? uid() : this.uid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomPage &&
           appCount == other.appCount &&
           createdAt == other.createdAt &&
@@ -59,7 +59,10 @@ AccessCustomPage copyWith({AccessSchemasAppCount? Function()? appCount, AccessTi
           name == other.name &&
           type == other.type &&
           uid == other.uid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(appCount, createdAt, customHtml, name, type, uid, updatedAt); } 
-@override String toString() { return 'AccessCustomPage(appCount: $appCount, createdAt: $createdAt, customHtml: $customHtml, name: $name, type: $type, uid: $uid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(appCount, createdAt, customHtml, name, type, uid, updatedAt);
+
+@override String toString() => 'AccessCustomPage(appCount: $appCount, createdAt: $createdAt, customHtml: $customHtml, name: $name, type: $type, uid: $uid, updatedAt: $updatedAt)';
+
  }

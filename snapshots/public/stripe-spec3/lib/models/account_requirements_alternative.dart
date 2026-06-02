@@ -24,10 +24,13 @@ AccountRequirementsAlternative copyWith({List<String>? alternativeFieldsDue, Lis
   alternativeFieldsDue: alternativeFieldsDue ?? this.alternativeFieldsDue,
   originalFieldsDue: originalFieldsDue ?? this.originalFieldsDue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequirementsAlternative &&
           listEquals(alternativeFieldsDue, other.alternativeFieldsDue) &&
-          listEquals(originalFieldsDue, other.originalFieldsDue); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternativeFieldsDue), Object.hashAll(originalFieldsDue)); } 
-@override String toString() { return 'AccountRequirementsAlternative(alternativeFieldsDue: $alternativeFieldsDue, originalFieldsDue: $originalFieldsDue)'; } 
+          listEquals(originalFieldsDue, other.originalFieldsDue);
+
+@override int get hashCode => Object.hash(Object.hashAll(alternativeFieldsDue), Object.hashAll(originalFieldsDue));
+
+@override String toString() => 'AccountRequirementsAlternative(alternativeFieldsDue: $alternativeFieldsDue, originalFieldsDue: $originalFieldsDue)';
+
  }

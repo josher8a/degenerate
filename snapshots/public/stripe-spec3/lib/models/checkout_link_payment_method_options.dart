@@ -29,10 +29,13 @@ CheckoutLinkPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCap
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutLinkPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'CheckoutLinkPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, setupFutureUsage);
+
+@override String toString() => 'CheckoutLinkPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';
+
  }

@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicTransitError && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicTransitError($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicTransitError && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MagicTransitError($value)';
+
  }
 /// Total time of traceroute in ms.
 extension type const MagicTransitTracerouteTimeMs(int value) {
@@ -76,13 +79,16 @@ MagicTransitColoResult copyWith({MagicTransitColo? Function()? colo, MagicTransi
   targetSummary: targetSummary != null ? targetSummary() : this.targetSummary,
   tracerouteTimeMs: tracerouteTimeMs != null ? tracerouteTimeMs() : this.tracerouteTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitColoResult &&
           colo == other.colo &&
           error == other.error &&
           listEquals(hops, other.hops) &&
           targetSummary == other.targetSummary &&
-          tracerouteTimeMs == other.tracerouteTimeMs; } 
-@override int get hashCode { return Object.hash(colo, error, Object.hashAll(hops ?? const []), targetSummary, tracerouteTimeMs); } 
-@override String toString() { return 'MagicTransitColoResult(colo: $colo, error: $error, hops: $hops, targetSummary: $targetSummary, tracerouteTimeMs: $tracerouteTimeMs)'; } 
+          tracerouteTimeMs == other.tracerouteTimeMs;
+
+@override int get hashCode => Object.hash(colo, error, Object.hashAll(hops ?? const []), targetSummary, tracerouteTimeMs);
+
+@override String toString() => 'MagicTransitColoResult(colo: $colo, error: $error, hops: $hops, targetSummary: $targetSummary, tracerouteTimeMs: $tracerouteTimeMs)';
+
  }

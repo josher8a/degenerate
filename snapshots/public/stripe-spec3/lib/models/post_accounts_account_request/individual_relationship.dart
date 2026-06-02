@@ -42,13 +42,16 @@ IndividualRelationship copyWith({bool? Function()? director, bool? Function()? e
   percentOwnership: percentOwnership != null ? percentOwnership() : this.percentOwnership,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IndividualRelationship &&
           director == other.director &&
           executive == other.executive &&
           owner == other.owner &&
           percentOwnership == other.percentOwnership &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(director, executive, owner, percentOwnership, title); } 
-@override String toString() { return 'IndividualRelationship(director: $director, executive: $executive, owner: $owner, percentOwnership: $percentOwnership, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(director, executive, owner, percentOwnership, title);
+
+@override String toString() => 'IndividualRelationship(director: $director, executive: $executive, owner: $owner, percentOwnership: $percentOwnership, title: $title)';
+
  }

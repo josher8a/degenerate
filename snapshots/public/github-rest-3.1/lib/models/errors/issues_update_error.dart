@@ -21,31 +21,36 @@ final class IssuesUpdateError$403 extends IssuesUpdateError {const IssuesUpdateE
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesUpdateError$404 extends IssuesUpdateError {const IssuesUpdateError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesUpdateError$410 extends IssuesUpdateError {const IssuesUpdateError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesUpdateError$422 extends IssuesUpdateError {const IssuesUpdateError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class IssuesUpdateError$503 extends IssuesUpdateError {const IssuesUpdateError$503(this.error);
 
 final IssuesUpdateResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class IssuesUpdateError$Unknown extends IssuesUpdateError {const IssuesUpdateError$Unknown(this.statusCode, this.rawBody, );
 

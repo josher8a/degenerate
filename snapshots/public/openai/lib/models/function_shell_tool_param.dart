@@ -22,10 +22,13 @@ FunctionShellToolParam copyWith({String? type, FunctionShellToolParamEnvironment
   type: type ?? this.type,
   environment: environment != null ? environment() : this.environment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellToolParam &&
           type == other.type &&
-          environment == other.environment; } 
-@override int get hashCode { return Object.hash(type, environment); } 
-@override String toString() { return 'FunctionShellToolParam(type: $type, environment: $environment)'; } 
+          environment == other.environment;
+
+@override int get hashCode => Object.hash(type, environment);
+
+@override String toString() => 'FunctionShellToolParam(type: $type, environment: $environment)';
+
  }

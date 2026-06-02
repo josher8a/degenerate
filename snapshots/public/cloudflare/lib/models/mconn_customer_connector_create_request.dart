@@ -64,7 +64,7 @@ MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<
   timezone: timezone != null ? timezone() : this.timezone,
   device: device ?? this.device,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerConnectorCreateRequest &&
           activated == other.activated &&
           listEquals(interruptWindowDaysOfWeek, other.interruptWindowDaysOfWeek) &&
@@ -73,7 +73,10 @@ MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<
           interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
           notes == other.notes &&
           timezone == other.timezone &&
-          device == other.device; } 
-@override int get hashCode { return Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone, device); } 
-@override String toString() { return 'MconnCustomerConnectorCreateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, device: $device)'; } 
+          device == other.device;
+
+@override int get hashCode => Object.hash(activated, Object.hashAll(interruptWindowDaysOfWeek ?? const []), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates ?? const []), interruptWindowHourOfDay, notes, timezone, device);
+
+@override String toString() => 'MconnCustomerConnectorCreateRequest(activated: $activated, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, notes: $notes, timezone: $timezone, device: $device)';
+
  }

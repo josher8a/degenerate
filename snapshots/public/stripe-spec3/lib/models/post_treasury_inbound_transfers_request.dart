@@ -73,7 +73,7 @@ PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, Str
   originPaymentMethod: originPaymentMethod ?? this.originPaymentMethod,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryInboundTransfersRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -82,7 +82,10 @@ PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, Str
           financialAccount == other.financialAccount &&
           metadata == other.metadata &&
           originPaymentMethod == other.originPaymentMethod &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, metadata, originPaymentMethod, statementDescriptor); } 
-@override String toString() { return 'PostTreasuryInboundTransfersRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, originPaymentMethod: $originPaymentMethod, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, metadata, originPaymentMethod, statementDescriptor);
+
+@override String toString() => 'PostTreasuryInboundTransfersRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, originPaymentMethod: $originPaymentMethod, statementDescriptor: $statementDescriptor)';
+
  }

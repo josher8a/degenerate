@@ -17,7 +17,8 @@ final class CreatePortalsError$400 extends CreatePortalsError {const CreatePorta
 
 final CreatePortalsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CreatePortalsError$Unknown extends CreatePortalsError {const CreatePortalsError$Unknown(this.statusCode, this.rawBody, );
 

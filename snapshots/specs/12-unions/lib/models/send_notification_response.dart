@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NotificationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NotificationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NotificationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NotificationStatus($value)';
+
  }
 @immutable final class SendNotificationResponse {const SendNotificationResponse({this.id, this.status, });
 
@@ -47,10 +50,13 @@ SendNotificationResponse copyWith({String? Function()? id, NotificationStatus? F
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SendNotificationResponse &&
           id == other.id &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, status); } 
-@override String toString() { return 'SendNotificationResponse(id: $id, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, status);
+
+@override String toString() => 'SendNotificationResponse(id: $id, status: $status)';
+
  }

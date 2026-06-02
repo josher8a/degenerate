@@ -52,13 +52,16 @@ ApplyPatchToolCallOutputItemParam copyWith({String? type, String? Function()? id
   status: status ?? this.status,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchToolCallOutputItemParam &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           status == other.status &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(type, id, callId, status, output); } 
-@override String toString() { return 'ApplyPatchToolCallOutputItemParam(type: $type, id: $id, callId: $callId, status: $status, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(type, id, callId, status, output);
+
+@override String toString() => 'ApplyPatchToolCallOutputItemParam(type: $type, id: $id, callId: $callId, status: $status, output: $output)';
+
  }

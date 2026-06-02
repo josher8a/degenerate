@@ -30,12 +30,15 @@ GetForwardingRequestsCreated copyWith({int? Function()? gt, int? Function()? gte
   lt: lt != null ? lt() : this.lt,
   lte: lte != null ? lte() : this.lte,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetForwardingRequestsCreated &&
           gt == other.gt &&
           gte == other.gte &&
           lt == other.lt &&
-          lte == other.lte; } 
-@override int get hashCode { return Object.hash(gt, gte, lt, lte); } 
-@override String toString() { return 'GetForwardingRequestsCreated(gt: $gt, gte: $gte, lt: $lt, lte: $lte)'; } 
+          lte == other.lte;
+
+@override int get hashCode => Object.hash(gt, gte, lt, lte);
+
+@override String toString() => 'GetForwardingRequestsCreated(gt: $gt, gte: $gte, lt: $lt, lte: $lte)';
+
  }

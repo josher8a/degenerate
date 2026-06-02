@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is L4Protocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'L4Protocol($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is L4Protocol && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'L4Protocol($value)';
+
  }
 @immutable final class PrivateDestinationType {const PrivateDestinationType._(this.value);
 
@@ -41,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrivateDestinationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrivateDestinationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PrivateDestinationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PrivateDestinationType($value)';
+
  }
 @immutable final class PrivateDestination {const PrivateDestination({this.cidr, this.hostname, this.l4Protocol, this.portRange, this.type, this.vnetId, });
 
@@ -92,14 +98,17 @@ PrivateDestination copyWith({String? Function()? cidr, String? Function()? hostn
   type: type != null ? type() : this.type,
   vnetId: vnetId != null ? vnetId() : this.vnetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PrivateDestination &&
           cidr == other.cidr &&
           hostname == other.hostname &&
           l4Protocol == other.l4Protocol &&
           portRange == other.portRange &&
           type == other.type &&
-          vnetId == other.vnetId; } 
-@override int get hashCode { return Object.hash(cidr, hostname, l4Protocol, portRange, type, vnetId); } 
-@override String toString() { return 'PrivateDestination(cidr: $cidr, hostname: $hostname, l4Protocol: $l4Protocol, portRange: $portRange, type: $type, vnetId: $vnetId)'; } 
+          vnetId == other.vnetId;
+
+@override int get hashCode => Object.hash(cidr, hostname, l4Protocol, portRange, type, vnetId);
+
+@override String toString() => 'PrivateDestination(cidr: $cidr, hostname: $hostname, l4Protocol: $l4Protocol, portRange: $portRange, type: $type, vnetId: $vnetId)';
+
  }

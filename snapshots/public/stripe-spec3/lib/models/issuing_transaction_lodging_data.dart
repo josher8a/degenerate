@@ -23,10 +23,13 @@ IssuingTransactionLodgingData copyWith({int? Function()? checkInAt, int? Functio
   checkInAt: checkInAt != null ? checkInAt() : this.checkInAt,
   nights: nights != null ? nights() : this.nights,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionLodgingData &&
           checkInAt == other.checkInAt &&
-          nights == other.nights; } 
-@override int get hashCode { return Object.hash(checkInAt, nights); } 
-@override String toString() { return 'IssuingTransactionLodgingData(checkInAt: $checkInAt, nights: $nights)'; } 
+          nights == other.nights;
+
+@override int get hashCode => Object.hash(checkInAt, nights);
+
+@override String toString() => 'IssuingTransactionLodgingData(checkInAt: $checkInAt, nights: $nights)';
+
  }

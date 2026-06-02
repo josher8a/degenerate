@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';
+
  }
 /// User Intervention Resolved Event details attached to this payment evaluation
 @immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolved {const InsightsResourcesPaymentEvaluationUserInterventionResolved({required this.key, this.outcome, });
@@ -55,10 +58,13 @@ InsightsResourcesPaymentEvaluationUserInterventionResolved copyWith({String? key
   key: key ?? this.key,
   outcome: outcome != null ? outcome() : this.outcome,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionResolved &&
           key == other.key &&
-          outcome == other.outcome; } 
-@override int get hashCode { return Object.hash(key, outcome); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionResolved(key: $key, outcome: $outcome)'; } 
+          outcome == other.outcome;
+
+@override int get hashCode => Object.hash(key, outcome);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolved(key: $key, outcome: $outcome)';
+
  }

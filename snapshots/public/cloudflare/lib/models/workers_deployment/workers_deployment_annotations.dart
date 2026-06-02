@@ -33,10 +33,13 @@ WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, Strin
   workersMessage: workersMessage != null ? workersMessage() : this.workersMessage,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDeploymentAnnotations &&
           workersMessage == other.workersMessage &&
-          workersTriggeredBy == other.workersTriggeredBy; } 
-@override int get hashCode { return Object.hash(workersMessage, workersTriggeredBy); } 
-@override String toString() { return 'WorkersDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)'; } 
+          workersTriggeredBy == other.workersTriggeredBy;
+
+@override int get hashCode => Object.hash(workersMessage, workersTriggeredBy);
+
+@override String toString() => 'WorkersDeploymentAnnotations(workersMessage: $workersMessage, workersTriggeredBy: $workersTriggeredBy)';
+
  }

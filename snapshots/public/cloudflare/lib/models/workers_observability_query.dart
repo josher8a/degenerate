@@ -98,7 +98,7 @@ WorkersObservabilityQuery copyWith({String? created, String? Function()? descrip
   userId: userId ?? this.userId,
   workspaceId: workspaceId ?? this.workspaceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQuery &&
           created == other.created &&
           description == other.description &&
@@ -109,7 +109,10 @@ WorkersObservabilityQuery copyWith({String? created, String? Function()? descrip
           parameters == other.parameters &&
           updated == other.updated &&
           userId == other.userId &&
-          workspaceId == other.workspaceId; } 
-@override int get hashCode { return Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId); } 
-@override String toString() { return 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)'; } 
+          workspaceId == other.workspaceId;
+
+@override int get hashCode => Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId);
+
+@override String toString() => 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)';
+
  }

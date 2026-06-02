@@ -48,11 +48,14 @@ ToolChoiceAllowed copyWith({ChatCompletionAllowedToolsChoiceType? type, Mode? mo
   mode: mode ?? this.mode,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceAllowed &&
           type == other.type &&
           mode == other.mode &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(type, mode, Object.hashAll(tools)); } 
-@override String toString() { return 'ToolChoiceAllowed(type: $type, mode: $mode, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(type, mode, Object.hashAll(tools));
+
+@override String toString() => 'ToolChoiceAllowed(type: $type, mode: $mode, tools: $tools)';
+
  }

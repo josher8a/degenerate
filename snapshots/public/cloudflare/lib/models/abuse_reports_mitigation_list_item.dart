@@ -49,14 +49,17 @@ AbuseReportsMitigationListItem copyWith({String? effectiveDate, String? entityId
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsMitigationListItem &&
           effectiveDate == other.effectiveDate &&
           entityId == other.entityId &&
           entityType == other.entityType &&
           id == other.id &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(effectiveDate, entityId, entityType, id, status, type); } 
-@override String toString() { return 'AbuseReportsMitigationListItem(effectiveDate: $effectiveDate, entityId: $entityId, entityType: $entityType, id: $id, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(effectiveDate, entityId, entityType, id, status, type);
+
+@override String toString() => 'AbuseReportsMitigationListItem(effectiveDate: $effectiveDate, entityId: $entityId, entityType: $entityType, id: $id, status: $status, type: $type)';
+
  }

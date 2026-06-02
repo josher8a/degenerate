@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SofortCountry && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SofortCountry($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SofortCountry && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SofortCountry($value)';
+
  }
 @immutable final class PostPaymentMethodsRequestSofort {const PostPaymentMethodsRequestSofort({required this.country});
 
@@ -51,9 +54,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
 PostPaymentMethodsRequestSofort copyWith({SofortCountry? country}) { return PostPaymentMethodsRequestSofort(
   country: country ?? this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestSofort &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestSofort(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'PostPaymentMethodsRequestSofort(country: $country)';
+
  }

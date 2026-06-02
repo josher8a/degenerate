@@ -22,9 +22,12 @@ return errors; }
 PostPaymentLinksRequestShippingOptions copyWith({String? Function()? shippingRate}) { return PostPaymentLinksRequestShippingOptions(
   shippingRate: shippingRate != null ? shippingRate() : this.shippingRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequestShippingOptions &&
-          shippingRate == other.shippingRate; } 
-@override int get hashCode { return shippingRate.hashCode; } 
-@override String toString() { return 'PostPaymentLinksRequestShippingOptions(shippingRate: $shippingRate)'; } 
+          shippingRate == other.shippingRate;
+
+@override int get hashCode => shippingRate.hashCode;
+
+@override String toString() => 'PostPaymentLinksRequestShippingOptions(shippingRate: $shippingRate)';
+
  }

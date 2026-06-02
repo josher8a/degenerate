@@ -51,7 +51,7 @@ MagicAclUpdateRequest copyWith({String? Function()? description, MagicForwardLoc
   protocols: protocols != null ? protocols() : this.protocols,
   unidirectional: unidirectional != null ? unidirectional() : this.unidirectional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicAclUpdateRequest &&
           description == other.description &&
           forwardLocally == other.forwardLocally &&
@@ -59,7 +59,10 @@ MagicAclUpdateRequest copyWith({String? Function()? description, MagicForwardLoc
           lan2 == other.lan2 &&
           name == other.name &&
           listEquals(protocols, other.protocols) &&
-          unidirectional == other.unidirectional; } 
-@override int get hashCode { return Object.hash(description, forwardLocally, lan1, lan2, name, Object.hashAll(protocols ?? const []), unidirectional); } 
-@override String toString() { return 'MagicAclUpdateRequest(description: $description, forwardLocally: $forwardLocally, lan1: $lan1, lan2: $lan2, name: $name, protocols: $protocols, unidirectional: $unidirectional)'; } 
+          unidirectional == other.unidirectional;
+
+@override int get hashCode => Object.hash(description, forwardLocally, lan1, lan2, name, Object.hashAll(protocols ?? const []), unidirectional);
+
+@override String toString() => 'MagicAclUpdateRequest(description: $description, forwardLocally: $forwardLocally, lan1: $lan1, lan2: $lan2, name: $name, protocols: $protocols, unidirectional: $unidirectional)';
+
  }

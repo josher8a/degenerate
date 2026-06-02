@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AbuseReportsAppealReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AbuseReportsAppealReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AbuseReportsAppealReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AbuseReportsAppealReason($value)';
+
  }
 @immutable final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });
 
@@ -48,10 +51,13 @@ AbuseReportsMitigationAppeal copyWith({String? id, AbuseReportsAppealReason? rea
   id: id ?? this.id,
   reason: reason ?? this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsMitigationAppeal &&
           id == other.id &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(id, reason); } 
-@override String toString() { return 'AbuseReportsMitigationAppeal(id: $id, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(id, reason);
+
+@override String toString() => 'AbuseReportsMitigationAppeal(id: $id, reason: $reason)';
+
  }

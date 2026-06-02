@@ -22,10 +22,13 @@ CreateQueueRequest copyWith({String? friendlyName, int? Function()? maxSize, }) 
   friendlyName: friendlyName ?? this.friendlyName,
   maxSize: maxSize != null ? maxSize() : this.maxSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateQueueRequest &&
           friendlyName == other.friendlyName &&
-          maxSize == other.maxSize; } 
-@override int get hashCode { return Object.hash(friendlyName, maxSize); } 
-@override String toString() { return 'CreateQueueRequest(friendlyName: $friendlyName, maxSize: $maxSize)'; } 
+          maxSize == other.maxSize;
+
+@override int get hashCode => Object.hash(friendlyName, maxSize);
+
+@override String toString() => 'CreateQueueRequest(friendlyName: $friendlyName, maxSize: $maxSize)';
+
  }

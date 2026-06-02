@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalJsonlFileIdSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalJsonlFileIdSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalJsonlFileIdSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EvalJsonlFileIdSourceType($value)';
+
  }
 @immutable final class EvalJsonlFileIdSource {const EvalJsonlFileIdSource({required this.id, this.type = EvalJsonlFileIdSourceType.fileId, });
 
@@ -45,10 +48,13 @@ EvalJsonlFileIdSource copyWith({EvalJsonlFileIdSourceType? type, String? id, }) 
   type: type ?? this.type,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalJsonlFileIdSource &&
           type == other.type &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(type, id); } 
-@override String toString() { return 'EvalJsonlFileIdSource(type: $type, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(type, id);
+
+@override String toString() => 'EvalJsonlFileIdSource(type: $type, id: $id)';
+
  }

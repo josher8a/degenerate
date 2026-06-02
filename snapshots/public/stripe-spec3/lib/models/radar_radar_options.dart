@@ -24,9 +24,12 @@ return errors; }
 RadarRadarOptions copyWith({String? Function()? session}) { return RadarRadarOptions(
   session: session != null ? session() : this.session,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarRadarOptions &&
-          session == other.session; } 
-@override int get hashCode { return session.hashCode; } 
-@override String toString() { return 'RadarRadarOptions(session: $session)'; } 
+          session == other.session;
+
+@override int get hashCode => session.hashCode;
+
+@override String toString() => 'RadarRadarOptions(session: $session)';
+
  }

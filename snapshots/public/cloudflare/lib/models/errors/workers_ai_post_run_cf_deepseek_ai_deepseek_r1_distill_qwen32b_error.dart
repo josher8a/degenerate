@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError$400 extend
 
 final WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError$Unknown extends WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError {const WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bError$Unknown(this.statusCode, this.rawBody, );
 

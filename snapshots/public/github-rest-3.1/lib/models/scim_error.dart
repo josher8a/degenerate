@@ -41,14 +41,17 @@ ScimError copyWith({String? Function()? message, String? Function()? documentati
   scimType: scimType != null ? scimType() : this.scimType,
   schemas: schemas != null ? schemas() : this.schemas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScimError &&
           message == other.message &&
           documentationUrl == other.documentationUrl &&
           detail == other.detail &&
           status == other.status &&
           scimType == other.scimType &&
-          listEquals(schemas, other.schemas); } 
-@override int get hashCode { return Object.hash(message, documentationUrl, detail, status, scimType, Object.hashAll(schemas ?? const [])); } 
-@override String toString() { return 'ScimError(message: $message, documentationUrl: $documentationUrl, detail: $detail, status: $status, scimType: $scimType, schemas: $schemas)'; } 
+          listEquals(schemas, other.schemas);
+
+@override int get hashCode => Object.hash(message, documentationUrl, detail, status, scimType, Object.hashAll(schemas ?? const []));
+
+@override String toString() => 'ScimError(message: $message, documentationUrl: $documentationUrl, detail: $detail, status: $status, scimType: $scimType, schemas: $schemas)';
+
  }

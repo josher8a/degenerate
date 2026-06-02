@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_r
 AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest copyWith({AccessKeyRotationIntervalDays? keyRotationIntervalDays}) { return AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(
   keyRotationIntervalDays: keyRotationIntervalDays ?? this.keyRotationIntervalDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest &&
-          keyRotationIntervalDays == other.keyRotationIntervalDays; } 
-@override int get hashCode { return keyRotationIntervalDays.hashCode; } 
-@override String toString() { return 'AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(keyRotationIntervalDays: $keyRotationIntervalDays)'; } 
+          keyRotationIntervalDays == other.keyRotationIntervalDays;
+
+@override int get hashCode => keyRotationIntervalDays.hashCode;
+
+@override String toString() => 'AccessKeyConfigurationUpdateTheAccessKeyConfigurationRequest(keyRotationIntervalDays: $keyRotationIntervalDays)';
+
  }

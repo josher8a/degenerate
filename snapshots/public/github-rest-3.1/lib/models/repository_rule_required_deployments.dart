@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleRequiredDeploymentsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleRequiredDeploymentsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleRequiredDeploymentsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleRequiredDeploymentsType($value)';
+
  }
 /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
 @immutable final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeployments({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsTyp
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredDeployments &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleRequiredDeployments(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleRequiredDeployments(type: $type, parameters: $parameters)';
+
  }

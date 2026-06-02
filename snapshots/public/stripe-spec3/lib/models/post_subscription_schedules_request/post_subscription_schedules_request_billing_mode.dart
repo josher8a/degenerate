@@ -20,10 +20,13 @@ PostSubscriptionSchedulesRequestBillingMode copyWith({Flexible? Function()? flex
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionSchedulesRequestBillingMode &&
           flexible == other.flexible &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(flexible, type); } 
-@override String toString() { return 'PostSubscriptionSchedulesRequestBillingMode(flexible: $flexible, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(flexible, type);
+
+@override String toString() => 'PostSubscriptionSchedulesRequestBillingMode(flexible: $flexible, type: $type)';
+
  }

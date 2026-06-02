@@ -20,10 +20,13 @@ OutboundPayments copyWith({InboundTransfersAch? Function()? ach, OutboundPayment
   ach: ach != null ? ach() : this.ach,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutboundPayments &&
           ach == other.ach &&
-          usDomesticWire == other.usDomesticWire; } 
-@override int get hashCode { return Object.hash(ach, usDomesticWire); } 
-@override String toString() { return 'OutboundPayments(ach: $ach, usDomesticWire: $usDomesticWire)'; } 
+          usDomesticWire == other.usDomesticWire;
+
+@override int get hashCode => Object.hash(ach, usDomesticWire);
+
+@override String toString() => 'OutboundPayments(ach: $ach, usDomesticWire: $usDomesticWire)';
+
  }

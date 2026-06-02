@@ -26,10 +26,13 @@ TeamsDevicesServiceMode copyWith({String? Function()? mode, double? Function()? 
   mode: mode != null ? mode() : this.mode,
   port: port != null ? port() : this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesServiceMode &&
           mode == other.mode &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(mode, port); } 
-@override String toString() { return 'TeamsDevicesServiceMode(mode: $mode, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(mode, port);
+
+@override String toString() => 'TeamsDevicesServiceMode(mode: $mode, port: $port)';
+
  }

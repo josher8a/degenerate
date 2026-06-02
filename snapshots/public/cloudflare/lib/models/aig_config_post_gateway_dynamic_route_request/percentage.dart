@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PercentageType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PercentageType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PercentageType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PercentageType($value)';
+
  }
 @immutable final class Percentage {const Percentage({required this.id, required this.outputs, required this.type, });
 
@@ -48,11 +51,14 @@ Percentage copyWith({String? id, Map<String,OutputsValue>? outputs, PercentageTy
   outputs: outputs ?? this.outputs,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Percentage &&
           id == other.id &&
           outputs == other.outputs &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, outputs, type); } 
-@override String toString() { return 'Percentage(id: $id, outputs: $outputs, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, outputs, type);
+
+@override String toString() => 'Percentage(id: $id, outputs: $outputs, type: $type)';
+
  }

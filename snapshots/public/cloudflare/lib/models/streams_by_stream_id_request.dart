@@ -20,10 +20,13 @@ StreamsByStreamIdRequest copyWith({Http? Function()? http, WorkerBinding? Functi
   http: http != null ? http() : this.http,
   workerBinding: workerBinding != null ? workerBinding() : this.workerBinding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsByStreamIdRequest &&
           http == other.http &&
-          workerBinding == other.workerBinding; } 
-@override int get hashCode { return Object.hash(http, workerBinding); } 
-@override String toString() { return 'StreamsByStreamIdRequest(http: $http, workerBinding: $workerBinding)'; } 
+          workerBinding == other.workerBinding;
+
+@override int get hashCode => Object.hash(http, workerBinding);
+
+@override String toString() => 'StreamsByStreamIdRequest(http: $http, workerBinding: $workerBinding)';
+
  }

@@ -52,7 +52,7 @@ CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({Variant2PullReques
   workingDirectory: workingDirectory != null ? workingDirectory() : this.workingDirectory,
   idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateForAuthenticatedUserRequestVariant2 &&
           pullRequest == other.pullRequest &&
           location == other.location &&
@@ -60,7 +60,10 @@ CodespacesCreateForAuthenticatedUserRequestVariant2 copyWith({Variant2PullReques
           machine == other.machine &&
           devcontainerPath == other.devcontainerPath &&
           workingDirectory == other.workingDirectory &&
-          idleTimeoutMinutes == other.idleTimeoutMinutes; } 
-@override int get hashCode { return Object.hash(pullRequest, location, geo, machine, devcontainerPath, workingDirectory, idleTimeoutMinutes); } 
-@override String toString() { return 'CodespacesCreateForAuthenticatedUserRequestVariant2(pullRequest: $pullRequest, location: $location, geo: $geo, machine: $machine, devcontainerPath: $devcontainerPath, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes)'; } 
+          idleTimeoutMinutes == other.idleTimeoutMinutes;
+
+@override int get hashCode => Object.hash(pullRequest, location, geo, machine, devcontainerPath, workingDirectory, idleTimeoutMinutes);
+
+@override String toString() => 'CodespacesCreateForAuthenticatedUserRequestVariant2(pullRequest: $pullRequest, location: $location, geo: $geo, machine: $machine, devcontainerPath: $devcontainerPath, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes)';
+
  }

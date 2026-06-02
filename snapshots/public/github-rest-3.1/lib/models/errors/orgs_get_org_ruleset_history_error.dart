@@ -18,13 +18,15 @@ final class OrgsGetOrgRulesetHistoryError$404 extends OrgsGetOrgRulesetHistoryEr
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class OrgsGetOrgRulesetHistoryError$500 extends OrgsGetOrgRulesetHistoryError {const OrgsGetOrgRulesetHistoryError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class OrgsGetOrgRulesetHistoryError$Unknown extends OrgsGetOrgRulesetHistoryError {const OrgsGetOrgRulesetHistoryError$Unknown(this.statusCode, this.rawBody, );
 

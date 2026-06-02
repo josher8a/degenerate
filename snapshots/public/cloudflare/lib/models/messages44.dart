@@ -127,7 +127,7 @@ Messages44 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
   topK: topK != null ? topK() : this.topK,
   topP: topP != null ? topP() : this.topP,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages44 &&
           frequencyPenalty == other.frequencyPenalty &&
           listEquals(functions, other.functions) &&
@@ -142,7 +142,10 @@ Messages44 copyWith({double? Function()? frequencyPenalty, List<Messages10Functi
           temperature == other.temperature &&
           listEquals(tools, other.tools) &&
           topK == other.topK &&
-          topP == other.topP; } 
-@override int get hashCode { return Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP); } 
-@override String toString() { return 'Messages44(frequencyPenalty: $frequencyPenalty, functions: $functions, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)'; } 
+          topP == other.topP;
+
+@override int get hashCode => Object.hash(frequencyPenalty, Object.hashAll(functions ?? const []), maxTokens, Object.hashAll(messages), presencePenalty, raw, repetitionPenalty, responseFormat, seed, stream, temperature, Object.hashAll(tools ?? const []), topK, topP);
+
+@override String toString() => 'Messages44(frequencyPenalty: $frequencyPenalty, functions: $functions, maxTokens: $maxTokens, messages: $messages, presencePenalty: $presencePenalty, raw: $raw, repetitionPenalty: $repetitionPenalty, responseFormat: $responseFormat, seed: $seed, stream: $stream, temperature: $temperature, tools: $tools, topK: $topK, topP: $topP)';
+
  }

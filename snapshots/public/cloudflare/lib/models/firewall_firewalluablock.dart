@@ -51,13 +51,16 @@ FirewallFirewalluablock copyWith({FirewallSchemasConfiguration? Function()? conf
   mode: mode != null ? mode() : this.mode,
   paused: paused != null ? paused() : this.paused,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFirewalluablock &&
           configuration == other.configuration &&
           description == other.description &&
           id == other.id &&
           mode == other.mode &&
-          paused == other.paused; } 
-@override int get hashCode { return Object.hash(configuration, description, id, mode, paused); } 
-@override String toString() { return 'FirewallFirewalluablock(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)'; } 
+          paused == other.paused;
+
+@override int get hashCode => Object.hash(configuration, description, id, mode, paused);
+
+@override String toString() => 'FirewallFirewalluablock(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)';
+
  }

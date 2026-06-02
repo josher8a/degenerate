@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentIntentCardProcessing copyWith({PaymentIntentProcessingCustomerNotification? Function()? customerNotification}) { return PaymentIntentCardProcessing(
   customerNotification: customerNotification != null ? customerNotification() : this.customerNotification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentCardProcessing &&
-          customerNotification == other.customerNotification; } 
-@override int get hashCode { return customerNotification.hashCode; } 
-@override String toString() { return 'PaymentIntentCardProcessing(customerNotification: $customerNotification)'; } 
+          customerNotification == other.customerNotification;
+
+@override int get hashCode => customerNotification.hashCode;
+
+@override String toString() => 'PaymentIntentCardProcessing(customerNotification: $customerNotification)';
+
  }

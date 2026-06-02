@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PublicDestinationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PublicDestinationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PublicDestinationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PublicDestinationType($value)';
+
  }
 /// A public hostname that Access will secure. Public destinations support sub-domain and path. Wildcard '*' can be used in the definition.
 /// 
@@ -45,10 +48,13 @@ PublicDestination copyWith({PublicDestinationType? Function()? type, String? Fun
   type: type != null ? type() : this.type,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicDestination &&
           type == other.type &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(type, uri); } 
-@override String toString() { return 'PublicDestination(type: $type, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(type, uri);
+
+@override String toString() => 'PublicDestination(type: $type, uri: $uri)';
+
  }

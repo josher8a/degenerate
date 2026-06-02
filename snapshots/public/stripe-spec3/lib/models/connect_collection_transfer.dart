@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConnectCollectionTransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConnectCollectionTransferObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConnectCollectionTransferObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConnectCollectionTransferObject($value)';
+
  }
 /// 
 @immutable final class ConnectCollectionTransfer {const ConnectCollectionTransfer({required this.amount, required this.currency, required this.destination, required this.id, required this.livemode, required this.object, });
@@ -78,14 +81,17 @@ ConnectCollectionTransfer copyWith({int? amount, String? currency, ChargeTransfe
   livemode: livemode ?? this.livemode,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectCollectionTransfer &&
           amount == other.amount &&
           currency == other.currency &&
           destination == other.destination &&
           id == other.id &&
           livemode == other.livemode &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(amount, currency, destination, id, livemode, object); } 
-@override String toString() { return 'ConnectCollectionTransfer(amount: $amount, currency: $currency, destination: $destination, id: $id, livemode: $livemode, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(amount, currency, destination, id, livemode, object);
+
+@override String toString() => 'ConnectCollectionTransfer(amount: $amount, currency: $currency, destination: $destination, id: $id, livemode: $livemode, object: $object)';
+
  }

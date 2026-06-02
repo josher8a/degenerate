@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)';
+
  }
 /// Parameters for a targeting a repository property
 @immutable final class RepositoryRulesetConditionsRepositoryPropertySpec {const RepositoryRulesetConditionsRepositoryPropertySpec({required this.name, required this.propertyValues, this.source, });
@@ -55,11 +58,14 @@ RepositoryRulesetConditionsRepositoryPropertySpec copyWith({String? name, List<S
   propertyValues: propertyValues ?? this.propertyValues,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetConditionsRepositoryPropertySpec &&
           name == other.name &&
           listEquals(propertyValues, other.propertyValues) &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(propertyValues), source); } 
-@override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertySpec(name: $name, propertyValues: $propertyValues, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(name, Object.hashAll(propertyValues), source);
+
+@override String toString() => 'RepositoryRulesetConditionsRepositoryPropertySpec(name: $name, propertyValues: $propertyValues, source: $source)';
+
  }

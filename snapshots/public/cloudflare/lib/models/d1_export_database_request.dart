@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutputFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OutputFormat($value)';
+
  }
 @immutable final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({required this.outputFormat, this.currentBookmark, this.dumpOptions, });
 
@@ -49,11 +52,14 @@ D1ExportDatabaseRequest copyWith({String? Function()? currentBookmark, DumpOptio
   dumpOptions: dumpOptions != null ? dumpOptions() : this.dumpOptions,
   outputFormat: outputFormat ?? this.outputFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1ExportDatabaseRequest &&
           currentBookmark == other.currentBookmark &&
           dumpOptions == other.dumpOptions &&
-          outputFormat == other.outputFormat; } 
-@override int get hashCode { return Object.hash(currentBookmark, dumpOptions, outputFormat); } 
-@override String toString() { return 'D1ExportDatabaseRequest(currentBookmark: $currentBookmark, dumpOptions: $dumpOptions, outputFormat: $outputFormat)'; } 
+          outputFormat == other.outputFormat;
+
+@override int get hashCode => Object.hash(currentBookmark, dumpOptions, outputFormat);
+
+@override String toString() => 'D1ExportDatabaseRequest(currentBookmark: $currentBookmark, dumpOptions: $dumpOptions, outputFormat: $outputFormat)';
+
  }

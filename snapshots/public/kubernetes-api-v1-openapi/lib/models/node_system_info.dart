@@ -86,7 +86,7 @@ NodeSystemInfo copyWith({String? architecture, String? bootId, String? container
   swap: swap != null ? swap() : this.swap,
   systemUuid: systemUuid ?? this.systemUuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSystemInfo &&
           architecture == other.architecture &&
           bootId == other.bootId &&
@@ -98,7 +98,10 @@ NodeSystemInfo copyWith({String? architecture, String? bootId, String? container
           operatingSystem == other.operatingSystem &&
           osImage == other.osImage &&
           swap == other.swap &&
-          systemUuid == other.systemUuid; } 
-@override int get hashCode { return Object.hash(architecture, bootId, containerRuntimeVersion, kernelVersion, kubeProxyVersion, kubeletVersion, machineId, operatingSystem, osImage, swap, systemUuid); } 
-@override String toString() { return 'NodeSystemInfo(architecture: $architecture, bootId: $bootId, containerRuntimeVersion: $containerRuntimeVersion, kernelVersion: $kernelVersion, kubeProxyVersion: $kubeProxyVersion, kubeletVersion: $kubeletVersion, machineId: $machineId, operatingSystem: $operatingSystem, osImage: $osImage, swap: $swap, systemUuid: $systemUuid)'; } 
+          systemUuid == other.systemUuid;
+
+@override int get hashCode => Object.hash(architecture, bootId, containerRuntimeVersion, kernelVersion, kubeProxyVersion, kubeletVersion, machineId, operatingSystem, osImage, swap, systemUuid);
+
+@override String toString() => 'NodeSystemInfo(architecture: $architecture, bootId: $bootId, containerRuntimeVersion: $containerRuntimeVersion, kernelVersion: $kernelVersion, kubeProxyVersion: $kubeProxyVersion, kubeletVersion: $kubeletVersion, machineId: $machineId, operatingSystem: $operatingSystem, osImage: $osImage, swap: $swap, systemUuid: $systemUuid)';
+
  }

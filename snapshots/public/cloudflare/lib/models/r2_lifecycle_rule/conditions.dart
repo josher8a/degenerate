@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prefi
 Conditions copyWith({String? prefix}) { return Conditions(
   prefix: prefix ?? this.prefix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Conditions &&
-          prefix == other.prefix; } 
-@override int get hashCode { return prefix.hashCode; } 
-@override String toString() { return 'Conditions(prefix: $prefix)'; } 
+          prefix == other.prefix;
+
+@override int get hashCode => prefix.hashCode;
+
+@override String toString() => 'Conditions(prefix: $prefix)';
+
  }

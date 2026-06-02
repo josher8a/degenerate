@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PauseResumeStopRecordingRequestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PauseResumeStopRecordingRequestAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PauseResumeStopRecordingRequestAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PauseResumeStopRecordingRequestAction($value)';
+
  }
 @immutable final class PauseResumeStopRecordingRequest {const PauseResumeStopRecordingRequest({required this.action});
 
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 PauseResumeStopRecordingRequest copyWith({PauseResumeStopRecordingRequestAction? action}) { return PauseResumeStopRecordingRequest(
   action: action ?? this.action,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PauseResumeStopRecordingRequest &&
-          action == other.action; } 
-@override int get hashCode { return action.hashCode; } 
-@override String toString() { return 'PauseResumeStopRecordingRequest(action: $action)'; } 
+          action == other.action;
+
+@override int get hashCode => action.hashCode;
+
+@override String toString() => 'PauseResumeStopRecordingRequest(action: $action)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileObject($value)';
+
  }
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
 @immutable final class FilePurpose {const FilePurpose._(this.value);
@@ -99,10 +102,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FilePurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FilePurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FilePurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FilePurpose($value)';
+
  }
 /// This object represents files hosted on Stripe's servers. You can upload
 /// files with the [create file](https://api.stripe.com#create_file) request
@@ -211,7 +217,7 @@ File copyWith({int? created, int? Function()? expiresAt, String? Function()? fil
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is File &&
           created == other.created &&
           expiresAt == other.expiresAt &&
@@ -223,7 +229,10 @@ File copyWith({int? created, int? Function()? expiresAt, String? Function()? fil
           size == other.size &&
           title == other.title &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, expiresAt, filename, id, links, object, purpose, size, title, type, url); } 
-@override String toString() { return 'File(created: $created, expiresAt: $expiresAt, filename: $filename, id: $id, links: $links, object: $object, purpose: $purpose, size: $size, title: $title, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(created, expiresAt, filename, id, links, object, purpose, size, title, type, url);
+
+@override String toString() => 'File(created: $created, expiresAt: $expiresAt, filename: $filename, id: $id, links: $links, object: $object, purpose: $purpose, size: $size, title: $title, type: $type, url: $url)';
+
  }

@@ -17,7 +17,8 @@ final class AigConfigGetGatewayDynamicRouteError$400 extends AigConfigGetGateway
 
 final AigConfigGetGatewayDynamicRouteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigGetGatewayDynamicRouteError$Unknown extends AigConfigGetGatewayDynamicRouteError {const AigConfigGetGatewayDynamicRouteError$Unknown(this.statusCode, this.rawBody, );
 

@@ -22,10 +22,13 @@ IssuesAddSubIssueRequest copyWith({int? subIssueId, bool? Function()? replacePar
   subIssueId: subIssueId ?? this.subIssueId,
   replaceParent: replaceParent != null ? replaceParent() : this.replaceParent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesAddSubIssueRequest &&
           subIssueId == other.subIssueId &&
-          replaceParent == other.replaceParent; } 
-@override int get hashCode { return Object.hash(subIssueId, replaceParent); } 
-@override String toString() { return 'IssuesAddSubIssueRequest(subIssueId: $subIssueId, replaceParent: $replaceParent)'; } 
+          replaceParent == other.replaceParent;
+
+@override int get hashCode => Object.hash(subIssueId, replaceParent);
+
+@override String toString() => 'IssuesAddSubIssueRequest(subIssueId: $subIssueId, replaceParent: $replaceParent)';
+
  }

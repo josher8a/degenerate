@@ -36,13 +36,16 @@ PostInvoicesCreatePreviewRequestCustomerDetails copyWith({PostInvoicesCreatePrev
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
   taxIds: taxIds != null ? taxIds() : this.taxIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesCreatePreviewRequestCustomerDetails &&
           address == other.address &&
           shipping == other.shipping &&
           tax == other.tax &&
           taxExempt == other.taxExempt &&
-          listEquals(taxIds, other.taxIds); } 
-@override int get hashCode { return Object.hash(address, shipping, tax, taxExempt, Object.hashAll(taxIds ?? const [])); } 
-@override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetails(address: $address, shipping: $shipping, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds)'; } 
+          listEquals(taxIds, other.taxIds);
+
+@override int get hashCode => Object.hash(address, shipping, tax, taxExempt, Object.hashAll(taxIds ?? const []));
+
+@override String toString() => 'PostInvoicesCreatePreviewRequestCustomerDetails(address: $address, shipping: $shipping, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds)';
+
  }

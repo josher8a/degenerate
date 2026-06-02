@@ -70,14 +70,17 @@ IssuingAuthorizationFleetCardholderPromptData copyWith({String? Function()? alph
   userId: userId != null ? userId() : this.userId,
   vehicleNumber: vehicleNumber != null ? vehicleNumber() : this.vehicleNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFleetCardholderPromptData &&
           alphanumericId == other.alphanumericId &&
           driverId == other.driverId &&
           odometer == other.odometer &&
           unspecifiedId == other.unspecifiedId &&
           userId == other.userId &&
-          vehicleNumber == other.vehicleNumber; } 
-@override int get hashCode { return Object.hash(alphanumericId, driverId, odometer, unspecifiedId, userId, vehicleNumber); } 
-@override String toString() { return 'IssuingAuthorizationFleetCardholderPromptData(alphanumericId: $alphanumericId, driverId: $driverId, odometer: $odometer, unspecifiedId: $unspecifiedId, userId: $userId, vehicleNumber: $vehicleNumber)'; } 
+          vehicleNumber == other.vehicleNumber;
+
+@override int get hashCode => Object.hash(alphanumericId, driverId, odometer, unspecifiedId, userId, vehicleNumber);
+
+@override String toString() => 'IssuingAuthorizationFleetCardholderPromptData(alphanumericId: $alphanumericId, driverId: $driverId, odometer: $odometer, unspecifiedId: $unspecifiedId, userId: $userId, vehicleNumber: $vehicleNumber)';
+
  }

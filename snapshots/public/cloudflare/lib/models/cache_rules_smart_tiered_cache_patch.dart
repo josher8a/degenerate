@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 CacheRulesSmartTieredCachePatch copyWith({CacheRulesSmartTieredCachePatchValue? value}) { return CacheRulesSmartTieredCachePatch(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesSmartTieredCachePatch &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CacheRulesSmartTieredCachePatch(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CacheRulesSmartTieredCachePatch(value: $value)';
+
  }

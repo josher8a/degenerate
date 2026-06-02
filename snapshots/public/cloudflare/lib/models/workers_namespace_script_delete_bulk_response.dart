@@ -28,11 +28,14 @@ WorkersNamespaceScriptDeleteBulkResponse copyWith({List<Deleted>? Function()? de
   deletedCount: deletedCount != null ? deletedCount() : this.deletedCount,
   hasMore: hasMore != null ? hasMore() : this.hasMore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceScriptDeleteBulkResponse &&
           listEquals(deleted, other.deleted) &&
           deletedCount == other.deletedCount &&
-          hasMore == other.hasMore; } 
-@override int get hashCode { return Object.hash(Object.hashAll(deleted ?? const []), deletedCount, hasMore); } 
-@override String toString() { return 'WorkersNamespaceScriptDeleteBulkResponse(deleted: $deleted, deletedCount: $deletedCount, hasMore: $hasMore)'; } 
+          hasMore == other.hasMore;
+
+@override int get hashCode => Object.hash(Object.hashAll(deleted ?? const []), deletedCount, hasMore);
+
+@override String toString() => 'WorkersNamespaceScriptDeleteBulkResponse(deleted: $deleted, deletedCount: $deletedCount, hasMore: $hasMore)';
+
  }

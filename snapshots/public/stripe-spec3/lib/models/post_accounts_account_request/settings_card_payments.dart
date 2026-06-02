@@ -37,12 +37,15 @@ SettingsCardPayments copyWith({DeclineOn? Function()? declineOn, String? Functio
   statementDescriptorPrefixKana: statementDescriptorPrefixKana != null ? statementDescriptorPrefixKana() : this.statementDescriptorPrefixKana,
   statementDescriptorPrefixKanji: statementDescriptorPrefixKanji != null ? statementDescriptorPrefixKanji() : this.statementDescriptorPrefixKanji,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsCardPayments &&
           declineOn == other.declineOn &&
           statementDescriptorPrefix == other.statementDescriptorPrefix &&
           statementDescriptorPrefixKana == other.statementDescriptorPrefixKana &&
-          statementDescriptorPrefixKanji == other.statementDescriptorPrefixKanji; } 
-@override int get hashCode { return Object.hash(declineOn, statementDescriptorPrefix, statementDescriptorPrefixKana, statementDescriptorPrefixKanji); } 
-@override String toString() { return 'SettingsCardPayments(declineOn: $declineOn, statementDescriptorPrefix: $statementDescriptorPrefix, statementDescriptorPrefixKana: $statementDescriptorPrefixKana, statementDescriptorPrefixKanji: $statementDescriptorPrefixKanji)'; } 
+          statementDescriptorPrefixKanji == other.statementDescriptorPrefixKanji;
+
+@override int get hashCode => Object.hash(declineOn, statementDescriptorPrefix, statementDescriptorPrefixKana, statementDescriptorPrefixKanji);
+
+@override String toString() => 'SettingsCardPayments(declineOn: $declineOn, statementDescriptorPrefix: $statementDescriptorPrefix, statementDescriptorPrefixKana: $statementDescriptorPrefixKana, statementDescriptorPrefixKanji: $statementDescriptorPrefixKanji)';
+
  }

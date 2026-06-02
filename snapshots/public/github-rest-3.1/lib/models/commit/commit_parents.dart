@@ -26,11 +26,14 @@ CommitParents copyWith({String? sha, Uri? url, Uri? Function()? htmlUrl, }) { re
   url: url ?? this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitParents &&
           sha == other.sha &&
           url == other.url &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(sha, url, htmlUrl); } 
-@override String toString() { return 'CommitParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(sha, url, htmlUrl);
+
+@override String toString() => 'CommitParents(sha: $sha, url: $url, htmlUrl: $htmlUrl)';
+
  }

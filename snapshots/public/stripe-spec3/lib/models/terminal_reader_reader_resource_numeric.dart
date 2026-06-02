@@ -24,9 +24,12 @@ return errors; }
 TerminalReaderReaderResourceNumeric copyWith({String? Function()? value}) { return TerminalReaderReaderResourceNumeric(
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceNumeric &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceNumeric(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceNumeric(value: $value)';
+
  }

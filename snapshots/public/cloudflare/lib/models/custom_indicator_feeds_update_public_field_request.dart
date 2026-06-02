@@ -50,13 +50,16 @@ CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String? Function()? descr
   isPublic: isPublic != null ? isPublic() : this.isPublic,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdatePublicFieldRequest &&
           description == other.description &&
           isAttributable == other.isAttributable &&
           isDownloadable == other.isDownloadable &&
           isPublic == other.isPublic &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, isAttributable, isDownloadable, isPublic, name); } 
-@override String toString() { return 'CustomIndicatorFeedsUpdatePublicFieldRequest(description: $description, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, isAttributable, isDownloadable, isPublic, name);
+
+@override String toString() => 'CustomIndicatorFeedsUpdatePublicFieldRequest(description: $description, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)';
+
  }

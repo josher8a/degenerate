@@ -44,14 +44,17 @@ WorkersAiListFinetunesResponseResult copyWith({DateTime? createdAt, String? Func
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiListFinetunesResponseResult &&
           createdAt == other.createdAt &&
           description == other.description &&
           id == other.id &&
           model == other.model &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, model, modifiedAt, name); } 
-@override String toString() { return 'WorkersAiListFinetunesResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdAt, description, id, model, modifiedAt, name);
+
+@override String toString() => 'WorkersAiListFinetunesResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name)';
+
  }

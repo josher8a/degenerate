@@ -22,10 +22,13 @@ WorkersCreateAssetsUploadSessionResponseResult copyWith({List<List<String>>? Fun
   buckets: buckets != null ? buckets() : this.buckets,
   jwt: jwt != null ? jwt() : this.jwt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersCreateAssetsUploadSessionResponseResult &&
           listEquals(buckets, other.buckets) &&
-          jwt == other.jwt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(buckets ?? const []), jwt); } 
-@override String toString() { return 'WorkersCreateAssetsUploadSessionResponseResult(buckets: $buckets, jwt: $jwt)'; } 
+          jwt == other.jwt;
+
+@override int get hashCode => Object.hash(Object.hashAll(buckets ?? const []), jwt);
+
+@override String toString() => 'WorkersCreateAssetsUploadSessionResponseResult(buckets: $buckets, jwt: $jwt)';
+
  }

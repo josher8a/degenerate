@@ -71,7 +71,7 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
   memoryLimit: memoryLimit != null ? memoryLimit() : this.memoryLimit,
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerResource &&
           id == other.id &&
           object == other.object &&
@@ -81,7 +81,10 @@ ContainerResource copyWith({String? id, String? object, String? name, int? creat
           lastActiveAt == other.lastActiveAt &&
           expiresAfter == other.expiresAfter &&
           memoryLimit == other.memoryLimit &&
-          networkPolicy == other.networkPolicy; } 
-@override int get hashCode { return Object.hash(id, object, name, createdAt, status, lastActiveAt, expiresAfter, memoryLimit, networkPolicy); } 
-@override String toString() { return 'ContainerResource(id: $id, object: $object, name: $name, createdAt: $createdAt, status: $status, lastActiveAt: $lastActiveAt, expiresAfter: $expiresAfter, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)'; } 
+          networkPolicy == other.networkPolicy;
+
+@override int get hashCode => Object.hash(id, object, name, createdAt, status, lastActiveAt, expiresAfter, memoryLimit, networkPolicy);
+
+@override String toString() => 'ContainerResource(id: $id, object: $object, name: $name, createdAt: $createdAt, status: $status, lastActiveAt: $lastActiveAt, expiresAfter: $expiresAfter, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy)';
+
  }

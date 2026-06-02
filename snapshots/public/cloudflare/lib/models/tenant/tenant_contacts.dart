@@ -20,10 +20,13 @@ TenantContacts copyWith({String? Function()? email, String? Function()? website,
   email: email != null ? email() : this.email,
   website: website != null ? website() : this.website,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TenantContacts &&
           email == other.email &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(email, website); } 
-@override String toString() { return 'TenantContacts(email: $email, website: $website)'; } 
+          website == other.website;
+
+@override int get hashCode => Object.hash(email, website);
+
+@override String toString() => 'TenantContacts(email: $email, website: $website)';
+
  }

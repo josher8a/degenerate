@@ -31,10 +31,13 @@ CustomLogo copyWith({String? Function()? contentType, String? url, }) { return C
   contentType: contentType != null ? contentType() : this.contentType,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomLogo &&
           contentType == other.contentType &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(contentType, url); } 
-@override String toString() { return 'CustomLogo(contentType: $contentType, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(contentType, url);
+
+@override String toString() => 'CustomLogo(contentType: $contentType, url: $url)';
+
  }

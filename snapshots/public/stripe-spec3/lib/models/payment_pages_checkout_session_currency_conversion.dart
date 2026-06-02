@@ -42,12 +42,15 @@ PaymentPagesCheckoutSessionCurrencyConversion copyWith({int? amountSubtotal, int
   fxRate: fxRate ?? this.fxRate,
   sourceCurrency: sourceCurrency ?? this.sourceCurrency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCurrencyConversion &&
           amountSubtotal == other.amountSubtotal &&
           amountTotal == other.amountTotal &&
           fxRate == other.fxRate &&
-          sourceCurrency == other.sourceCurrency; } 
-@override int get hashCode { return Object.hash(amountSubtotal, amountTotal, fxRate, sourceCurrency); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCurrencyConversion(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, fxRate: $fxRate, sourceCurrency: $sourceCurrency)'; } 
+          sourceCurrency == other.sourceCurrency;
+
+@override int get hashCode => Object.hash(amountSubtotal, amountTotal, fxRate, sourceCurrency);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCurrencyConversion(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, fxRate: $fxRate, sourceCurrency: $sourceCurrency)';
+
  }

@@ -54,13 +54,16 @@ CardholderPromptData copyWith({String? Function()? driverId, int? Function()? od
   userId: userId != null ? userId() : this.userId,
   vehicleNumber: vehicleNumber != null ? vehicleNumber() : this.vehicleNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardholderPromptData &&
           driverId == other.driverId &&
           odometer == other.odometer &&
           unspecifiedId == other.unspecifiedId &&
           userId == other.userId &&
-          vehicleNumber == other.vehicleNumber; } 
-@override int get hashCode { return Object.hash(driverId, odometer, unspecifiedId, userId, vehicleNumber); } 
-@override String toString() { return 'CardholderPromptData(driverId: $driverId, odometer: $odometer, unspecifiedId: $unspecifiedId, userId: $userId, vehicleNumber: $vehicleNumber)'; } 
+          vehicleNumber == other.vehicleNumber;
+
+@override int get hashCode => Object.hash(driverId, odometer, unspecifiedId, userId, vehicleNumber);
+
+@override String toString() => 'CardholderPromptData(driverId: $driverId, odometer: $odometer, unspecifiedId: $unspecifiedId, userId: $userId, vehicleNumber: $vehicleNumber)';
+
  }

@@ -41,13 +41,16 @@ ResourceQuota copyWith({String? Function()? apiVersion, String? Function()? kind
   spec: spec != null ? spec() : this.spec,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceQuota &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
           spec == other.spec &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, spec, status); } 
-@override String toString() { return 'ResourceQuota(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, spec, status);
+
+@override String toString() => 'ResourceQuota(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)';
+
  }

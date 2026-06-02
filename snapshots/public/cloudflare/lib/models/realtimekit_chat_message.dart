@@ -23,10 +23,13 @@ RealtimekitChatMessage copyWith({String? chatDownloadUrl, String? chatDownloadUr
   chatDownloadUrl: chatDownloadUrl ?? this.chatDownloadUrl,
   chatDownloadUrlExpiry: chatDownloadUrlExpiry ?? this.chatDownloadUrlExpiry,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitChatMessage &&
           chatDownloadUrl == other.chatDownloadUrl &&
-          chatDownloadUrlExpiry == other.chatDownloadUrlExpiry; } 
-@override int get hashCode { return Object.hash(chatDownloadUrl, chatDownloadUrlExpiry); } 
-@override String toString() { return 'RealtimekitChatMessage(chatDownloadUrl: $chatDownloadUrl, chatDownloadUrlExpiry: $chatDownloadUrlExpiry)'; } 
+          chatDownloadUrlExpiry == other.chatDownloadUrlExpiry;
+
+@override int get hashCode => Object.hash(chatDownloadUrl, chatDownloadUrlExpiry);
+
+@override String toString() => 'RealtimekitChatMessage(chatDownloadUrl: $chatDownloadUrl, chatDownloadUrlExpiry: $chatDownloadUrlExpiry)';
+
  }

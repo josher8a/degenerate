@@ -45,7 +45,7 @@ PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPa
   total: total != null ? total() : this.total,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaginationMetadata &&
           firstPage == other.firstPage &&
           lastPage == other.lastPage &&
@@ -53,7 +53,10 @@ PaginationMetadata copyWith({int? Function()? firstPage, int? Function()? lastPa
           page == other.page &&
           previousPage == other.previousPage &&
           total == other.total &&
-          totalPages == other.totalPages; } 
-@override int get hashCode { return Object.hash(firstPage, lastPage, nextPage, page, previousPage, total, totalPages); } 
-@override String toString() { return 'PaginationMetadata(firstPage: $firstPage, lastPage: $lastPage, nextPage: $nextPage, page: $page, previousPage: $previousPage, total: $total, totalPages: $totalPages)'; } 
+          totalPages == other.totalPages;
+
+@override int get hashCode => Object.hash(firstPage, lastPage, nextPage, page, previousPage, total, totalPages);
+
+@override String toString() => 'PaginationMetadata(firstPage: $firstPage, lastPage: $lastPage, nextPage: $nextPage, page: $page, previousPage: $previousPage, total: $total, totalPages: $totalPages)';
+
  }

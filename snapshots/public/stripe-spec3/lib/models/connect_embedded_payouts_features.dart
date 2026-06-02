@@ -45,13 +45,16 @@ ConnectEmbeddedPayoutsFeatures copyWith({bool? disableStripeUserAuthentication, 
   instantPayouts: instantPayouts ?? this.instantPayouts,
   standardPayouts: standardPayouts ?? this.standardPayouts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedPayoutsFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
           editPayoutSchedule == other.editPayoutSchedule &&
           externalAccountCollection == other.externalAccountCollection &&
           instantPayouts == other.instantPayouts &&
-          standardPayouts == other.standardPayouts; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, editPayoutSchedule, externalAccountCollection, instantPayouts, standardPayouts); } 
-@override String toString() { return 'ConnectEmbeddedPayoutsFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, editPayoutSchedule: $editPayoutSchedule, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts, standardPayouts: $standardPayouts)'; } 
+          standardPayouts == other.standardPayouts;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, editPayoutSchedule, externalAccountCollection, instantPayouts, standardPayouts);
+
+@override String toString() => 'ConnectEmbeddedPayoutsFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, editPayoutSchedule: $editPayoutSchedule, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts, standardPayouts: $standardPayouts)';
+
  }

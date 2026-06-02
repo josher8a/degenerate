@@ -35,11 +35,14 @@ Egress copyWith({String? Function()? ipv4, String? Function()? ipv4Fallback, Str
   ipv4Fallback: ipv4Fallback != null ? ipv4Fallback() : this.ipv4Fallback,
   ipv6: ipv6 != null ? ipv6() : this.ipv6,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Egress &&
           ipv4 == other.ipv4 &&
           ipv4Fallback == other.ipv4Fallback &&
-          ipv6 == other.ipv6; } 
-@override int get hashCode { return Object.hash(ipv4, ipv4Fallback, ipv6); } 
-@override String toString() { return 'Egress(ipv4: $ipv4, ipv4Fallback: $ipv4Fallback, ipv6: $ipv6)'; } 
+          ipv6 == other.ipv6;
+
+@override int get hashCode => Object.hash(ipv4, ipv4Fallback, ipv6);
+
+@override String toString() => 'Egress(ipv4: $ipv4, ipv4Fallback: $ipv4Fallback, ipv6: $ipv6)';
+
  }

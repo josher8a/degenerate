@@ -26,11 +26,14 @@ Statuses copyWith({String? Function()? message, bool? moved, String? tag, }) { r
   moved: moved ?? this.moved,
   tag: tag ?? this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Statuses &&
           message == other.message &&
           moved == other.moved &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(message, moved, tag); } 
-@override String toString() { return 'Statuses(message: $message, moved: $moved, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(message, moved, tag);
+
+@override String toString() => 'Statuses(message: $message, moved: $moved, tag: $tag)';
+
  }

@@ -18,13 +18,15 @@ final class AutoragConfigListJobLogsError$404 extends AutoragConfigListJobLogsEr
 
 final AutoragConfigListJobLogsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AutoragConfigListJobLogsError$503 extends AutoragConfigListJobLogsError {const AutoragConfigListJobLogsError$503(this.error);
 
 final AutoragConfigListJobLogsResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class AutoragConfigListJobLogsError$Unknown extends AutoragConfigListJobLogsError {const AutoragConfigListJobLogsError$Unknown(this.statusCode, this.rawBody, );
 

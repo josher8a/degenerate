@@ -26,10 +26,13 @@ AccessSchemasGenericOauthConfig copyWith({String? Function()? clientId, String? 
   clientId: clientId != null ? clientId() : this.clientId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasGenericOauthConfig &&
           clientId == other.clientId &&
-          clientSecret == other.clientSecret; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret); } 
-@override String toString() { return 'AccessSchemasGenericOauthConfig(clientId: $clientId, clientSecret: $clientSecret)'; } 
+          clientSecret == other.clientSecret;
+
+@override int get hashCode => Object.hash(clientId, clientSecret);
+
+@override String toString() => 'AccessSchemasGenericOauthConfig(clientId: $clientId, clientSecret: $clientSecret)';
+
  }

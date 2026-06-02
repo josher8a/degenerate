@@ -25,11 +25,14 @@ SuggestedThresholdConfidenceIntervals copyWith({ShieldConfidenceIntervalsBounds?
   p95: p95 != null ? p95() : this.p95,
   p99: p99 != null ? p99() : this.p99,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SuggestedThresholdConfidenceIntervals &&
           p90 == other.p90 &&
           p95 == other.p95 &&
-          p99 == other.p99; } 
-@override int get hashCode { return Object.hash(p90, p95, p99); } 
-@override String toString() { return 'SuggestedThresholdConfidenceIntervals(p90: $p90, p95: $p95, p99: $p99)'; } 
+          p99 == other.p99;
+
+@override int get hashCode => Object.hash(p90, p95, p99);
+
+@override String toString() => 'SuggestedThresholdConfidenceIntervals(p90: $p90, p95: $p95, p99: $p99)';
+
  }

@@ -26,10 +26,13 @@ SpeechAudioDoneEvent copyWith({String? type, SpeechAudioDoneEventUsage? usage, }
   type: type ?? this.type,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpeechAudioDoneEvent &&
           type == other.type &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(type, usage); } 
-@override String toString() { return 'SpeechAudioDoneEvent(type: $type, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(type, usage);
+
+@override String toString() => 'SpeechAudioDoneEvent(type: $type, usage: $usage)';
+
  }

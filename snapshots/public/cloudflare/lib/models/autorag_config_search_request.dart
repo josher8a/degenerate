@@ -45,14 +45,17 @@ AutoragConfigSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Functi
   reranking: reranking != null ? reranking() : this.reranking,
   rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigSearchRequest &&
           filters == other.filters &&
           maxNumResults == other.maxNumResults &&
           query == other.query &&
           rankingOptions == other.rankingOptions &&
           reranking == other.reranking &&
-          rewriteQuery == other.rewriteQuery; } 
-@override int get hashCode { return Object.hash(filters, maxNumResults, query, rankingOptions, reranking, rewriteQuery); } 
-@override String toString() { return 'AutoragConfigSearchRequest(filters: $filters, maxNumResults: $maxNumResults, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery)'; } 
+          rewriteQuery == other.rewriteQuery;
+
+@override int get hashCode => Object.hash(filters, maxNumResults, query, rankingOptions, reranking, rewriteQuery);
+
+@override String toString() => 'AutoragConfigSearchRequest(filters: $filters, maxNumResults: $maxNumResults, query: $query, rankingOptions: $rankingOptions, reranking: $reranking, rewriteQuery: $rewriteQuery)';
+
  }

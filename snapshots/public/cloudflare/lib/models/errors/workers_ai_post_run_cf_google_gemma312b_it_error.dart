@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfGoogleGemma312bItError$400 extends WorkersAiPostRu
 
 final WorkersAiPostRunCfGoogleGemma312bItResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfGoogleGemma312bItError$Unknown extends WorkersAiPostRunCfGoogleGemma312bItError {const WorkersAiPostRunCfGoogleGemma312bItError$Unknown(this.statusCode, this.rawBody, );
 

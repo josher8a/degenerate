@@ -23,10 +23,13 @@ IssuingAuthorizationFleetTaxData copyWith({String? Function()? localAmountDecima
   localAmountDecimal: localAmountDecimal != null ? localAmountDecimal() : this.localAmountDecimal,
   nationalAmountDecimal: nationalAmountDecimal != null ? nationalAmountDecimal() : this.nationalAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationFleetTaxData &&
           localAmountDecimal == other.localAmountDecimal &&
-          nationalAmountDecimal == other.nationalAmountDecimal; } 
-@override int get hashCode { return Object.hash(localAmountDecimal, nationalAmountDecimal); } 
-@override String toString() { return 'IssuingAuthorizationFleetTaxData(localAmountDecimal: $localAmountDecimal, nationalAmountDecimal: $nationalAmountDecimal)'; } 
+          nationalAmountDecimal == other.nationalAmountDecimal;
+
+@override int get hashCode => Object.hash(localAmountDecimal, nationalAmountDecimal);
+
+@override String toString() => 'IssuingAuthorizationFleetTaxData(localAmountDecimal: $localAmountDecimal, nationalAmountDecimal: $nationalAmountDecimal)';
+
  }

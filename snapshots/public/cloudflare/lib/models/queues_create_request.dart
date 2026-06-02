@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('queue
 QueuesCreateRequest copyWith({MqQueueName? queueName}) { return QueuesCreateRequest(
   queueName: queueName ?? this.queueName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesCreateRequest &&
-          queueName == other.queueName; } 
-@override int get hashCode { return queueName.hashCode; } 
-@override String toString() { return 'QueuesCreateRequest(queueName: $queueName)'; } 
+          queueName == other.queueName;
+
+@override int get hashCode => queueName.hashCode;
+
+@override String toString() => 'QueuesCreateRequest(queueName: $queueName)';
+
  }

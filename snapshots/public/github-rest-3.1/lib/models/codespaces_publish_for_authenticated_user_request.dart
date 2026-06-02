@@ -22,10 +22,13 @@ CodespacesPublishForAuthenticatedUserRequest copyWith({String? Function()? name,
   name: name != null ? name() : this.name,
   private: private != null ? private() : this.private,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesPublishForAuthenticatedUserRequest &&
           name == other.name &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(name, private); } 
-@override String toString() { return 'CodespacesPublishForAuthenticatedUserRequest(name: $name, private: $private)'; } 
+          private == other.private;
+
+@override int get hashCode => Object.hash(name, private);
+
+@override String toString() => 'CodespacesPublishForAuthenticatedUserRequest(name: $name, private: $private)';
+
  }

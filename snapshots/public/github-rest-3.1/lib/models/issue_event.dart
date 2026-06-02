@@ -129,7 +129,7 @@ IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? 
   lockReason: lockReason != null ? lockReason() : this.lockReason,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -152,7 +152,10 @@ IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? 
           rename == other.rename &&
           authorAssociation == other.authorAssociation &&
           lockReason == other.lockReason &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]); } 
-@override String toString() { return 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)'; } 
+          performedViaGithubApp == other.performedViaGithubApp;
+
+@override int get hashCode => Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]);
+
+@override String toString() => 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)';
+
  }

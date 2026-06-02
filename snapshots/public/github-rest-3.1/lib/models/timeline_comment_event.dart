@@ -110,7 +110,7 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
   reactions: reactions != null ? reactions() : this.reactions,
   pin: pin != null ? pin() : this.pin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineCommentEvent &&
           event == other.event &&
           actor == other.actor &&
@@ -128,7 +128,10 @@ TimelineCommentEvent copyWith({String? event, SimpleUser? actor, int? id, String
           authorAssociation == other.authorAssociation &&
           performedViaGithubApp == other.performedViaGithubApp &&
           reactions == other.reactions &&
-          pin == other.pin; } 
-@override int get hashCode { return Object.hash(event, actor, id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin); } 
-@override String toString() { return 'TimelineCommentEvent(event: $event, actor: $actor, id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)'; } 
+          pin == other.pin;
+
+@override int get hashCode => Object.hash(event, actor, id, nodeId, url, body, bodyText, bodyHtml, htmlUrl, user, createdAt, updatedAt, issueUrl, authorAssociation, performedViaGithubApp, reactions, pin);
+
+@override String toString() => 'TimelineCommentEvent(event: $event, actor: $actor, id: $id, nodeId: $nodeId, url: $url, body: $body, bodyText: $bodyText, bodyHtml: $bodyHtml, htmlUrl: $htmlUrl, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, issueUrl: $issueUrl, authorAssociation: $authorAssociation, performedViaGithubApp: $performedViaGithubApp, reactions: $reactions, pin: $pin)';
+
  }

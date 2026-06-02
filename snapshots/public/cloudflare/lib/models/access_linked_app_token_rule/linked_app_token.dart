@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app_u
 LinkedAppToken copyWith({String? appUid}) { return LinkedAppToken(
   appUid: appUid ?? this.appUid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LinkedAppToken &&
-          appUid == other.appUid; } 
-@override int get hashCode { return appUid.hashCode; } 
-@override String toString() { return 'LinkedAppToken(appUid: $appUid)'; } 
+          appUid == other.appUid;
+
+@override int get hashCode => appUid.hashCode;
+
+@override String toString() => 'LinkedAppToken(appUid: $appUid)';
+
  }

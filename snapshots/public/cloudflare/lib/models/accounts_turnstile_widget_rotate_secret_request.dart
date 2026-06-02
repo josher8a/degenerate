@@ -29,9 +29,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately? Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
   invalidateImmediately: invalidateImmediately != null ? invalidateImmediately() : this.invalidateImmediately,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsTurnstileWidgetRotateSecretRequest &&
-          invalidateImmediately == other.invalidateImmediately; } 
-@override int get hashCode { return invalidateImmediately.hashCode; } 
-@override String toString() { return 'AccountsTurnstileWidgetRotateSecretRequest(invalidateImmediately: $invalidateImmediately)'; } 
+          invalidateImmediately == other.invalidateImmediately;
+
+@override int get hashCode => invalidateImmediately.hashCode;
+
+@override String toString() => 'AccountsTurnstileWidgetRotateSecretRequest(invalidateImmediately: $invalidateImmediately)';
+
  }

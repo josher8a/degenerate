@@ -44,13 +44,16 @@ RealtimeBetaServerEventErrorError copyWith({String? type, String? Function()? co
   param: param != null ? param() : this.param,
   eventId: eventId != null ? eventId() : this.eventId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventErrorError &&
           type == other.type &&
           code == other.code &&
           message == other.message &&
           param == other.param &&
-          eventId == other.eventId; } 
-@override int get hashCode { return Object.hash(type, code, message, param, eventId); } 
-@override String toString() { return 'RealtimeBetaServerEventErrorError(type: $type, code: $code, message: $message, param: $param, eventId: $eventId)'; } 
+          eventId == other.eventId;
+
+@override int get hashCode => Object.hash(type, code, message, param, eventId);
+
+@override String toString() => 'RealtimeBetaServerEventErrorError(type: $type, code: $code, message: $message, param: $param, eventId: $eventId)';
+
  }

@@ -60,7 +60,7 @@ Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocume
   returnStatus: returnStatus != null ? returnStatus() : this.returnStatus,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Canceled &&
           additionalDocumentation == other.additionalDocumentation &&
           canceledAt == other.canceledAt &&
@@ -71,7 +71,10 @@ Canceled copyWith({CanceledAdditionalDocumentation? Function()? additionalDocume
           productDescription == other.productDescription &&
           productType == other.productType &&
           returnStatus == other.returnStatus &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt); } 
-@override String toString() { return 'Canceled(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)'; } 
+          returnedAt == other.returnedAt;
+
+@override int get hashCode => Object.hash(additionalDocumentation, canceledAt, cancellationPolicyProvided, cancellationReason, expectedAt, explanation, productDescription, productType, returnStatus, returnedAt);
+
+@override String toString() => 'Canceled(additionalDocumentation: $additionalDocumentation, canceledAt: $canceledAt, cancellationPolicyProvided: $cancellationPolicyProvided, cancellationReason: $cancellationReason, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType, returnStatus: $returnStatus, returnedAt: $returnedAt)';
+
  }

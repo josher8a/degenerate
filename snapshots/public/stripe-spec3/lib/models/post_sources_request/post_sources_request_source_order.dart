@@ -21,10 +21,13 @@ PostSourcesRequestSourceOrder copyWith({List<SourceOrderItems>? Function()? item
   items: items != null ? items() : this.items,
   shipping: shipping != null ? shipping() : this.shipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequestSourceOrder &&
           listEquals(items, other.items) &&
-          shipping == other.shipping; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items ?? const []), shipping); } 
-@override String toString() { return 'PostSourcesRequestSourceOrder(items: $items, shipping: $shipping)'; } 
+          shipping == other.shipping;
+
+@override int get hashCode => Object.hash(Object.hashAll(items ?? const []), shipping);
+
+@override String toString() => 'PostSourcesRequestSourceOrder(items: $items, shipping: $shipping)';
+
  }

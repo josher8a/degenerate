@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
 MconnConnectorEventsPostResult copyWith({double? count}) { return MconnConnectorEventsPostResult(
   count: count ?? this.count,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnConnectorEventsPostResult &&
-          count == other.count; } 
-@override int get hashCode { return count.hashCode; } 
-@override String toString() { return 'MconnConnectorEventsPostResult(count: $count)'; } 
+          count == other.count;
+
+@override int get hashCode => count.hashCode;
+
+@override String toString() => 'MconnConnectorEventsPostResult(count: $count)';
+
  }

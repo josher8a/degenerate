@@ -28,10 +28,13 @@ Request copyWith({String? Function()? body, List<Headers>? Function()? headers, 
   body: body != null ? body() : this.body,
   headers: headers != null ? headers() : this.headers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Request &&
           body == other.body &&
-          listEquals(headers, other.headers); } 
-@override int get hashCode { return Object.hash(body, Object.hashAll(headers ?? const [])); } 
-@override String toString() { return 'Request(body: $body, headers: $headers)'; } 
+          listEquals(headers, other.headers);
+
+@override int get hashCode => Object.hash(body, Object.hashAll(headers ?? const []));
+
+@override String toString() => 'Request(body: $body, headers: $headers)';
+
  }

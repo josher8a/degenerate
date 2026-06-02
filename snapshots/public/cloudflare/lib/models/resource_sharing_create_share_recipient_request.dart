@@ -22,10 +22,13 @@ ResourceSharingCreateShareRecipientRequest copyWith({ResourceSharingAccountId? F
   accountId: accountId != null ? accountId() : this.accountId,
   organizationId: organizationId != null ? organizationId() : this.organizationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingCreateShareRecipientRequest &&
           accountId == other.accountId &&
-          organizationId == other.organizationId; } 
-@override int get hashCode { return Object.hash(accountId, organizationId); } 
-@override String toString() { return 'ResourceSharingCreateShareRecipientRequest(accountId: $accountId, organizationId: $organizationId)'; } 
+          organizationId == other.organizationId;
+
+@override int get hashCode => Object.hash(accountId, organizationId);
+
+@override String toString() => 'ResourceSharingCreateShareRecipientRequest(accountId: $accountId, organizationId: $organizationId)';
+
  }

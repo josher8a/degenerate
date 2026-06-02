@@ -34,10 +34,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DiffEntryStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DiffEntryStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DiffEntryStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DiffEntryStatus($value)';
+
  }
 /// Diff Entry
 @immutable final class DiffEntry {const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch, this.previousFilename, });
@@ -113,7 +116,7 @@ DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? 
   patch: patch != null ? patch() : this.patch,
   previousFilename: previousFilename != null ? previousFilename() : this.previousFilename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiffEntry &&
           sha == other.sha &&
           filename == other.filename &&
@@ -125,7 +128,10 @@ DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? 
           rawUrl == other.rawUrl &&
           contentsUrl == other.contentsUrl &&
           patch == other.patch &&
-          previousFilename == other.previousFilename; } 
-@override int get hashCode { return Object.hash(sha, filename, status, additions, deletions, changes, blobUrl, rawUrl, contentsUrl, patch, previousFilename); } 
-@override String toString() { return 'DiffEntry(sha: $sha, filename: $filename, status: $status, additions: $additions, deletions: $deletions, changes: $changes, blobUrl: $blobUrl, rawUrl: $rawUrl, contentsUrl: $contentsUrl, patch: $patch, previousFilename: $previousFilename)'; } 
+          previousFilename == other.previousFilename;
+
+@override int get hashCode => Object.hash(sha, filename, status, additions, deletions, changes, blobUrl, rawUrl, contentsUrl, patch, previousFilename);
+
+@override String toString() => 'DiffEntry(sha: $sha, filename: $filename, status: $status, additions: $additions, deletions: $deletions, changes: $changes, blobUrl: $blobUrl, rawUrl: $rawUrl, contentsUrl: $contentsUrl, patch: $patch, previousFilename: $previousFilename)';
+
  }

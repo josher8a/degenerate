@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingBillResourceInvoiceItemParentsInvoiceItemParentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoiceItemParentsInvoiceItemParentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoiceItemParentsInvoiceItemParentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoiceItemParentsInvoiceItemParentType($value)';
+
  }
 /// 
 @immutable final class BillingBillResourceInvoiceItemParentsInvoiceItemParent {const BillingBillResourceInvoiceItemParentsInvoiceItemParent({required this.type, this.subscriptionDetails, });
@@ -45,10 +48,13 @@ BillingBillResourceInvoiceItemParentsInvoiceItemParent copyWith({BillingBillReso
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoiceItemParentsInvoiceItemParent &&
           subscriptionDetails == other.subscriptionDetails &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(subscriptionDetails, type); } 
-@override String toString() { return 'BillingBillResourceInvoiceItemParentsInvoiceItemParent(subscriptionDetails: $subscriptionDetails, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(subscriptionDetails, type);
+
+@override String toString() => 'BillingBillResourceInvoiceItemParentsInvoiceItemParent(subscriptionDetails: $subscriptionDetails, type: $type)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
 Phishing copyWith({List<String>? data}) { return Phishing(
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Phishing &&
-          listEquals(data, other.data); } 
-@override int get hashCode { return Object.hashAll(data); } 
-@override String toString() { return 'Phishing(data: $data)'; } 
+          listEquals(data, other.data);
+
+@override int get hashCode => Object.hashAll(data);
+
+@override String toString() => 'Phishing(data: $data)';
+
  }

@@ -22,10 +22,13 @@ ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest copyWith({List<String>?
   ips: ips != null ? ips() : this.ips,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest &&
           listEquals(ips, other.ips) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ips ?? const []), name); } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(ips: $ips, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(ips ?? const []), name);
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest(ips: $ips, name: $name)';
+
  }

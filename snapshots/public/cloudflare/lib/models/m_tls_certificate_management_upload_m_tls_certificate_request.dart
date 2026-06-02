@@ -42,12 +42,15 @@ MTlsCertificateManagementUploadMTlsCertificateRequest copyWith({TlsCertificatesA
   name: name != null ? name() : this.name,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MTlsCertificateManagementUploadMTlsCertificateRequest &&
           ca == other.ca &&
           certificates == other.certificates &&
           name == other.name &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(ca, certificates, name, privateKey); } 
-@override String toString() { return 'MTlsCertificateManagementUploadMTlsCertificateRequest(ca: $ca, certificates: $certificates, name: $name, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(ca, certificates, name, privateKey);
+
+@override String toString() => 'MTlsCertificateManagementUploadMTlsCertificateRequest(ca: $ca, certificates: $certificates, name: $name, privateKey: $privateKey)';
+
  }

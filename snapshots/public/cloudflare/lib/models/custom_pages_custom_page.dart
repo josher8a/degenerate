@@ -60,7 +60,7 @@ CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, Str
   state: state != null ? state() : this.state,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPagesCustomPage &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -69,7 +69,10 @@ CustomPagesCustomPage copyWith({CustomPagesTimestamp? Function()? createdOn, Str
           previewTarget == other.previewTarget &&
           listEquals(requiredTokens, other.requiredTokens) &&
           state == other.state &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, modifiedOn, previewTarget, Object.hashAll(requiredTokens ?? const []), state, url); } 
-@override String toString() { return 'CustomPagesCustomPage(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, previewTarget: $previewTarget, requiredTokens: $requiredTokens, state: $state, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(createdOn, description, id, modifiedOn, previewTarget, Object.hashAll(requiredTokens ?? const []), state, url);
+
+@override String toString() => 'CustomPagesCustomPage(createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, previewTarget: $previewTarget, requiredTokens: $requiredTokens, state: $state, url: $url)';
+
  }

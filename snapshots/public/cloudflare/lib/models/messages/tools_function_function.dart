@@ -33,12 +33,15 @@ ToolsFunctionFunction copyWith({String? Function()? description, String? name, M
   parameters: parameters != null ? parameters() : this.parameters,
   strict: strict != null ? strict() : this.strict,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolsFunctionFunction &&
           description == other.description &&
           name == other.name &&
           parameters == other.parameters &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(description, name, parameters, strict); } 
-@override String toString() { return 'ToolsFunctionFunction(description: $description, name: $name, parameters: $parameters, strict: $strict)'; } 
+          strict == other.strict;
+
+@override int get hashCode => Object.hash(description, name, parameters, strict);
+
+@override String toString() => 'ToolsFunctionFunction(description: $description, name: $name, parameters: $parameters, strict: $strict)';
+
  }

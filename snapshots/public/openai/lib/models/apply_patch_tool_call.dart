@@ -51,14 +51,17 @@ ApplyPatchToolCall copyWith({String? type, String? id, String? callId, ApplyPatc
   operation: operation ?? this.operation,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplyPatchToolCall &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           status == other.status &&
           operation == other.operation &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, status, operation, createdBy); } 
-@override String toString() { return 'ApplyPatchToolCall(type: $type, id: $id, callId: $callId, status: $status, operation: $operation, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, callId, status, operation, createdBy);
+
+@override String toString() => 'ApplyPatchToolCall(type: $type, id: $id, callId: $callId, status: $status, operation: $operation, createdBy: $createdBy)';
+
  }

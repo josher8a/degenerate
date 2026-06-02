@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 VolumeNodeAffinity copyWith({NodeSelector? Function()? $required}) { return VolumeNodeAffinity(
   $required: $required != null ? $required() : this.$required,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeNodeAffinity &&
-          $required == other.$required; } 
-@override int get hashCode { return $required.hashCode; } 
-@override String toString() { return 'VolumeNodeAffinity(\$required: ${$required})'; } 
+          $required == other.$required;
+
+@override int get hashCode => $required.hashCode;
+
+@override String toString() => 'VolumeNodeAffinity(\$required: ${$required})';
+
  }

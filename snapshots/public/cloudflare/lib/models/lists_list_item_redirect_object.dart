@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('redir
 ListsListItemRedirectObject copyWith({ListsItemRedirect? redirect}) { return ListsListItemRedirectObject(
   redirect: redirect ?? this.redirect,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsListItemRedirectObject &&
-          redirect == other.redirect; } 
-@override int get hashCode { return redirect.hashCode; } 
-@override String toString() { return 'ListsListItemRedirectObject(redirect: $redirect)'; } 
+          redirect == other.redirect;
+
+@override int get hashCode => redirect.hashCode;
+
+@override String toString() => 'ListsListItemRedirectObject(redirect: $redirect)';
+
  }

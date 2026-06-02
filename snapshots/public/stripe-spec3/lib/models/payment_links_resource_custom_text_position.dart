@@ -21,9 +21,12 @@ return errors; }
 PaymentLinksResourceCustomTextPosition copyWith({String? message}) { return PaymentLinksResourceCustomTextPosition(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomTextPosition &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceCustomTextPosition(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'PaymentLinksResourceCustomTextPosition(message: $message)';
+
  }

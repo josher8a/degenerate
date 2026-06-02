@@ -37,11 +37,14 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch copy
   maxDurationS: maxDurationS != null ? maxDurationS() : this.maxDurationS,
   maxRows: maxRows != null ? maxRows() : this.maxRows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch &&
           maxBytes == other.maxBytes &&
           maxDurationS == other.maxDurationS &&
-          maxRows == other.maxRows; } 
-@override int get hashCode { return Object.hash(maxBytes, maxDurationS, maxRows); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)'; } 
+          maxRows == other.maxRows;
+
+@override int get hashCode => Object.hash(maxBytes, maxDurationS, maxRows);
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestDestinationBatch(maxBytes: $maxBytes, maxDurationS: $maxDurationS, maxRows: $maxRows)';
+
  }

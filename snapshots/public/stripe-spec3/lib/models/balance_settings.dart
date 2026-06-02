@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BalanceSettingsObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BalanceSettingsObject($value)';
+
  }
 /// Options for customizing account balances and payout settings for a Stripe platform’s connected accounts.
 @immutable final class BalanceSettings {const BalanceSettings({required this.object, required this.payments, });
@@ -45,10 +48,13 @@ BalanceSettings copyWith({BalanceSettingsObject? object, BalanceSettingsResource
   object: object ?? this.object,
   payments: payments ?? this.payments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceSettings &&
           object == other.object &&
-          payments == other.payments; } 
-@override int get hashCode { return Object.hash(object, payments); } 
-@override String toString() { return 'BalanceSettings(object: $object, payments: $payments)'; } 
+          payments == other.payments;
+
+@override int get hashCode => Object.hash(object, payments);
+
+@override String toString() => 'BalanceSettings(object: $object, payments: $payments)';
+
  }

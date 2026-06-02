@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 ZoneCacheSettingsChangeAegisSettingRequest copyWith({CacheRulesAegisValue? value}) { return ZoneCacheSettingsChangeAegisSettingRequest(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneCacheSettingsChangeAegisSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneCacheSettingsChangeAegisSettingRequest(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZoneCacheSettingsChangeAegisSettingRequest(value: $value)';
+
  }

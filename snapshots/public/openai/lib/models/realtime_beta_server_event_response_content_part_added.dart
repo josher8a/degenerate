@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseContentPartAddedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseContentPartAddedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseContentPartAddedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseContentPartAddedType($value)';
+
  }
 /// Returned when a new content part is added to an assistant message item during
 /// response generation.
@@ -83,7 +86,7 @@ RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, Realt
   contentIndex: contentIndex ?? this.contentIndex,
   $part: $part ?? this.$part,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseContentPartAdded &&
           eventId == other.eventId &&
           type == other.type &&
@@ -91,7 +94,10 @@ RealtimeBetaServerEventResponseContentPartAdded copyWith({String? eventId, Realt
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          $part == other.$part; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, $part); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseContentPartAdded(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part})'; } 
+          $part == other.$part;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, $part);
+
+@override String toString() => 'RealtimeBetaServerEventResponseContentPartAdded(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, \$part: ${$part})';
+
  }

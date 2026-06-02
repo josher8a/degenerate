@@ -61,7 +61,7 @@ UrlscannerCreateScanRequest2 copyWith({UrlscannerCreateScanRequest2Country? Func
   url: url ?? this.url,
   visibility: visibility != null ? visibility() : this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanRequest2 &&
           country == other.country &&
           customHeaders == other.customHeaders &&
@@ -69,7 +69,10 @@ UrlscannerCreateScanRequest2 copyWith({UrlscannerCreateScanRequest2Country? Func
           referer == other.referer &&
           listEquals(screenshotsResolutions, other.screenshotsResolutions) &&
           url == other.url &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(country, customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanRequest2(country: $country, customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(country, customHeaders, customagent, referer, Object.hashAll(screenshotsResolutions ?? const []), url, visibility);
+
+@override String toString() => 'UrlscannerCreateScanRequest2(country: $country, customHeaders: $customHeaders, customagent: $customagent, referer: $referer, screenshotsResolutions: $screenshotsResolutions, url: $url, visibility: $visibility)';
+
  }

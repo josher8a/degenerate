@@ -26,11 +26,14 @@ PostPaymentMethodsPaymentMethodRequestCard copyWith({int? Function()? expMonth, 
   expYear: expYear != null ? expYear() : this.expYear,
   networks: networks != null ? networks() : this.networks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequestCard &&
           expMonth == other.expMonth &&
           expYear == other.expYear &&
-          networks == other.networks; } 
-@override int get hashCode { return Object.hash(expMonth, expYear, networks); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestCard(expMonth: $expMonth, expYear: $expYear, networks: $networks)'; } 
+          networks == other.networks;
+
+@override int get hashCode => Object.hash(expMonth, expYear, networks);
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodRequestCard(expMonth: $expMonth, expYear: $expYear, networks: $networks)';
+
  }

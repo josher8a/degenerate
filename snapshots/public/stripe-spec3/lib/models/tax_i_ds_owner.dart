@@ -48,13 +48,16 @@ TaxIDsOwner copyWith({ApplicationFeeAccount? Function()? account, ApplicationFee
   customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIDsOwner &&
           account == other.account &&
           application == other.application &&
           customer == other.customer &&
           customerAccount == other.customerAccount &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, application, customer, customerAccount, type); } 
-@override String toString() { return 'TaxIDsOwner(account: $account, application: $application, customer: $customer, customerAccount: $customerAccount, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, application, customer, customerAccount, type);
+
+@override String toString() => 'TaxIDsOwner(account: $account, application: $application, customer: $customer, customerAccount: $customerAccount, type: $type)';
+
  }

@@ -49,12 +49,15 @@ IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, Str
   tokenRequestorId: tokenRequestorId ?? this.tokenRequestorId,
   tokenRequestorName: tokenRequestorName != null ? tokenRequestorName() : this.tokenRequestorName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingNetworkTokenMastercard &&
           cardReferenceId == other.cardReferenceId &&
           tokenReferenceId == other.tokenReferenceId &&
           tokenRequestorId == other.tokenRequestorId &&
-          tokenRequestorName == other.tokenRequestorName; } 
-@override int get hashCode { return Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRequestorName); } 
-@override String toString() { return 'IssuingNetworkTokenMastercard(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRequestorName: $tokenRequestorName)'; } 
+          tokenRequestorName == other.tokenRequestorName;
+
+@override int get hashCode => Object.hash(cardReferenceId, tokenReferenceId, tokenRequestorId, tokenRequestorName);
+
+@override String toString() => 'IssuingNetworkTokenMastercard(cardReferenceId: $cardReferenceId, tokenReferenceId: $tokenReferenceId, tokenRequestorId: $tokenRequestorId, tokenRequestorName: $tokenRequestorName)';
+
  }

@@ -49,14 +49,17 @@ AppsCreateFromManifestResponsePermissions copyWith({String? Function()? issues, 
   deployments: deployments != null ? deployments() : this.deployments,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCreateFromManifestResponsePermissions &&
           issues == other.issues &&
           checks == other.checks &&
           metadata == other.metadata &&
           contents == other.contents &&
           deployments == other.deployments &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(issues, checks, metadata, contents, deployments, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'AppsCreateFromManifestResponsePermissions(issues: $issues, checks: $checks, metadata: $metadata, contents: $contents, deployments: $deployments, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(issues, checks, metadata, contents, deployments, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'AppsCreateFromManifestResponsePermissions(issues: $issues, checks: $checks, metadata: $metadata, contents: $contents, deployments: $deployments, additionalProperties: $additionalProperties)';
+
  }

@@ -19,9 +19,12 @@ return errors; }
 ProvinceStandard copyWith({String? province}) { return ProvinceStandard(
   province: province ?? this.province,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProvinceStandard &&
-          province == other.province; } 
-@override int get hashCode { return province.hashCode; } 
-@override String toString() { return 'ProvinceStandard(province: $province)'; } 
+          province == other.province;
+
+@override int get hashCode => province.hashCode;
+
+@override String toString() => 'ProvinceStandard(province: $province)';
+
  }

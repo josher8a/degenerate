@@ -26,11 +26,14 @@ PublicIpIps copyWith({PublicIpEtag? Function()? etag, List<String>? Function()? 
   ipv4Cidrs: ipv4Cidrs != null ? ipv4Cidrs() : this.ipv4Cidrs,
   ipv6Cidrs: ipv6Cidrs != null ? ipv6Cidrs() : this.ipv6Cidrs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicIpIps &&
           etag == other.etag &&
           listEquals(ipv4Cidrs, other.ipv4Cidrs) &&
-          listEquals(ipv6Cidrs, other.ipv6Cidrs); } 
-@override int get hashCode { return Object.hash(etag, Object.hashAll(ipv4Cidrs ?? const []), Object.hashAll(ipv6Cidrs ?? const [])); } 
-@override String toString() { return 'PublicIpIps(etag: $etag, ipv4Cidrs: $ipv4Cidrs, ipv6Cidrs: $ipv6Cidrs)'; } 
+          listEquals(ipv6Cidrs, other.ipv6Cidrs);
+
+@override int get hashCode => Object.hash(etag, Object.hashAll(ipv4Cidrs ?? const []), Object.hashAll(ipv6Cidrs ?? const []));
+
+@override String toString() => 'PublicIpIps(etag: $etag, ipv4Cidrs: $ipv4Cidrs, ipv6Cidrs: $ipv6Cidrs)';
+
  }

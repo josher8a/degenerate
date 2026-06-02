@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CreateAppResponseData copyWith({DataApp? Function()? app}) { return CreateAppResponseData(
   app: app != null ? app() : this.app,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAppResponseData &&
-          app == other.app; } 
-@override int get hashCode { return app.hashCode; } 
-@override String toString() { return 'CreateAppResponseData(app: $app)'; } 
+          app == other.app;
+
+@override int get hashCode => app.hashCode;
+
+@override String toString() => 'CreateAppResponseData(app: $app)';
+
  }

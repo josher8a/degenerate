@@ -29,11 +29,14 @@ SetupIntentPaymentMethodOptionsCard copyWith({SetupIntentPaymentMethodOptionsCar
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsCard &&
           mandateOptions == other.mandateOptions &&
           network == other.network &&
-          requestThreeDSecure == other.requestThreeDSecure; } 
-@override int get hashCode { return Object.hash(mandateOptions, network, requestThreeDSecure); } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)'; } 
+          requestThreeDSecure == other.requestThreeDSecure;
+
+@override int get hashCode => Object.hash(mandateOptions, network, requestThreeDSecure);
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsCard(mandateOptions: $mandateOptions, network: $network, requestThreeDSecure: $requestThreeDSecure)';
+
  }

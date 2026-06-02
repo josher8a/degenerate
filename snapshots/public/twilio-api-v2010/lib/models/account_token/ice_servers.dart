@@ -30,12 +30,15 @@ IceServers copyWith({String? Function()? credential, String? Function()? usernam
   url: url != null ? url() : this.url,
   urls: urls != null ? urls() : this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IceServers &&
           credential == other.credential &&
           username == other.username &&
           url == other.url &&
-          urls == other.urls; } 
-@override int get hashCode { return Object.hash(credential, username, url, urls); } 
-@override String toString() { return 'IceServers(credential: $credential, username: $username, url: $url, urls: $urls)'; } 
+          urls == other.urls;
+
+@override int get hashCode => Object.hash(credential, username, url, urls);
+
+@override String toString() => 'IceServers(credential: $credential, username: $username, url: $url, urls: $urls)';
+
  }

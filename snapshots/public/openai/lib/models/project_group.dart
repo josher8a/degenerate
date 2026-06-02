@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectGroupObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectGroupObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectGroupObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectGroupObject($value)';
+
  }
 /// Details about a group's membership in a project.
 @immutable final class ProjectGroup {const ProjectGroup({required this.object, required this.projectId, required this.groupId, required this.groupName, required this.createdAt, });
@@ -67,13 +70,16 @@ ProjectGroup copyWith({ProjectGroupObject? object, String? projectId, String? gr
   groupName: groupName ?? this.groupName,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectGroup &&
           object == other.object &&
           projectId == other.projectId &&
           groupId == other.groupId &&
           groupName == other.groupName &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(object, projectId, groupId, groupName, createdAt); } 
-@override String toString() { return 'ProjectGroup(object: $object, projectId: $projectId, groupId: $groupId, groupName: $groupName, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(object, projectId, groupId, groupName, createdAt);
+
+@override String toString() => 'ProjectGroup(object: $object, projectId: $projectId, groupId: $groupId, groupName: $groupName, createdAt: $createdAt)';
+
  }

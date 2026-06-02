@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Projection copyWith({List<VolumeFile>? Function()? items}) { return Projection(
   items: items != null ? items() : this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Projection &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hashAll(items ?? const []); } 
-@override String toString() { return 'Projection(items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hashAll(items ?? const []);
+
+@override String toString() => 'Projection(items: $items)';
+
  }

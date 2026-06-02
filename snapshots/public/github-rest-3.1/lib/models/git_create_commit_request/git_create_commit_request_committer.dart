@@ -29,11 +29,14 @@ GitCreateCommitRequestCommitter copyWith({String? Function()? name, String? Func
   email: email != null ? email() : this.email,
   date: date != null ? date() : this.date,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCreateCommitRequestCommitter &&
           name == other.name &&
           email == other.email &&
-          date == other.date; } 
-@override int get hashCode { return Object.hash(name, email, date); } 
-@override String toString() { return 'GitCreateCommitRequestCommitter(name: $name, email: $email, date: $date)'; } 
+          date == other.date;
+
+@override int get hashCode => Object.hash(name, email, date);
+
+@override String toString() => 'GitCreateCommitRequestCommitter(name: $name, email: $email, date: $date)';
+
  }

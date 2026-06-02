@@ -26,9 +26,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ScriptRuntimeLimits copyWith({int? Function()? cpuMs}) { return ScriptRuntimeLimits(
   cpuMs: cpuMs != null ? cpuMs() : this.cpuMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScriptRuntimeLimits &&
-          cpuMs == other.cpuMs; } 
-@override int get hashCode { return cpuMs.hashCode; } 
-@override String toString() { return 'ScriptRuntimeLimits(cpuMs: $cpuMs)'; } 
+          cpuMs == other.cpuMs;
+
+@override int get hashCode => cpuMs.hashCode;
+
+@override String toString() => 'ScriptRuntimeLimits(cpuMs: $cpuMs)';
+
  }

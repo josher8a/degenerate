@@ -33,12 +33,15 @@ ReposUpdateWebhookConfigForRepoRequest copyWith({WebhookConfigUrl? Function()? u
   secret: secret != null ? secret() : this.secret,
   insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateWebhookConfigForRepoRequest &&
           url == other.url &&
           contentType == other.contentType &&
           secret == other.secret &&
-          insecureSsl == other.insecureSsl; } 
-@override int get hashCode { return Object.hash(url, contentType, secret, insecureSsl); } 
-@override String toString() { return 'ReposUpdateWebhookConfigForRepoRequest(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)'; } 
+          insecureSsl == other.insecureSsl;
+
+@override int get hashCode => Object.hash(url, contentType, secret, insecureSsl);
+
+@override String toString() => 'ReposUpdateWebhookConfigForRepoRequest(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl)';
+
  }

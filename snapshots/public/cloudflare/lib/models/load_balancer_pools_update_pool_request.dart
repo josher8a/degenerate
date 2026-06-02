@@ -104,7 +104,7 @@ LoadBalancerPoolsUpdatePoolRequest copyWith({List<LoadBalancingCheckRegions2>? F
   originSteering: originSteering != null ? originSteering() : this.originSteering,
   origins: origins ?? this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerPoolsUpdatePoolRequest &&
           listEquals(checkRegions, other.checkRegions) &&
           description == other.description &&
@@ -121,7 +121,10 @@ LoadBalancerPoolsUpdatePoolRequest copyWith({List<LoadBalancingCheckRegions2>? F
           notificationEmail == other.notificationEmail &&
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins)); } 
-@override String toString() { return 'LoadBalancerPoolsUpdatePoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkRegions ?? const []), description, disabledAt, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, Object.hashAll(networks ?? const []), notificationEmail, notificationFilter, originSteering, Object.hashAll(origins));
+
+@override String toString() => 'LoadBalancerPoolsUpdatePoolRequest(checkRegions: $checkRegions, description: $description, disabledAt: $disabledAt, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, networks: $networks, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+
  }

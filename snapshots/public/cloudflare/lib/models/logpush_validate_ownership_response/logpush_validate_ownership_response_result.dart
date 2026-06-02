@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LogpushValidateOwnershipResponseResult copyWith({bool? Function()? valid}) { return LogpushValidateOwnershipResponseResult(
   valid: valid != null ? valid() : this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushValidateOwnershipResponseResult &&
-          valid == other.valid; } 
-@override int get hashCode { return valid.hashCode; } 
-@override String toString() { return 'LogpushValidateOwnershipResponseResult(valid: $valid)'; } 
+          valid == other.valid;
+
+@override int get hashCode => valid.hashCode;
+
+@override String toString() => 'LogpushValidateOwnershipResponseResult(valid: $valid)';
+
  }

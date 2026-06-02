@@ -30,16 +30,20 @@ final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
 
 @override String get type => 'Json';
 
-@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesJsonFormat.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesJsonFormat.toJson(), 'type': type};
+
 CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
   decimalEncoding: decimalEncoding,
   timestampFormat: timestampFormat,
   unstructured: unstructured,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFormatJson && cloudflarePipelinesJsonFormat == other.cloudflarePipelinesJsonFormat; } 
-@override int get hashCode { return cloudflarePipelinesJsonFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormat.json($cloudflarePipelinesJsonFormat)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesFormatJson && cloudflarePipelinesJsonFormat == other.cloudflarePipelinesJsonFormat;
+
+@override int get hashCode => cloudflarePipelinesJsonFormat.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormat.json($cloudflarePipelinesJsonFormat)';
+
  }
 @immutable final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.cloudflarePipelinesParquetFormat);
 
@@ -49,15 +53,19 @@ final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
 @override String get type => 'Parquet';
 
-@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesParquetFormat.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesParquetFormat.toJson(), 'type': type};
+
 CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
   compression: compression,
   rowGroupBytes: rowGroupBytes,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFormatParquet && cloudflarePipelinesParquetFormat == other.cloudflarePipelinesParquetFormat; } 
-@override int get hashCode { return cloudflarePipelinesParquetFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormat.parquet($cloudflarePipelinesParquetFormat)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesFormatParquet && cloudflarePipelinesParquetFormat == other.cloudflarePipelinesParquetFormat;
+
+@override int get hashCode => cloudflarePipelinesParquetFormat.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormat.parquet($cloudflarePipelinesParquetFormat)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -67,9 +75,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFormat$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormat.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesFormat$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormat.unknown($json)';
+
  }

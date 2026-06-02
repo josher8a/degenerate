@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BelongsToRefType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BelongsToRefType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BelongsToRefType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BelongsToRefType($value)';
+
  }
 /// Specifies a reference to the autonomous systems (AS) that the IP address belongs to.
 @immutable final class BelongsToRef {const BelongsToRef({this.country, this.description, this.id, this.type, this.value, });
@@ -70,13 +73,16 @@ BelongsToRef copyWith({String? Function()? country, String? Function()? descript
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BelongsToRef &&
           country == other.country &&
           description == other.description &&
           id == other.id &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(country, description, id, type, value); } 
-@override String toString() { return 'BelongsToRef(country: $country, description: $description, id: $id, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(country, description, id, type, value);
+
+@override String toString() => 'BelongsToRef(country: $country, description: $description, id: $id, type: $type, value: $value)';
+
  }

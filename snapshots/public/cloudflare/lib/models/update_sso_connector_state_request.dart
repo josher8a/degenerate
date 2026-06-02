@@ -24,10 +24,13 @@ UpdateSsoConnectorStateRequest copyWith({bool? Function()? enabled, IamUseFedram
   enabled: enabled != null ? enabled() : this.enabled,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateSsoConnectorStateRequest &&
           enabled == other.enabled &&
-          useFedrampLanguage == other.useFedrampLanguage; } 
-@override int get hashCode { return Object.hash(enabled, useFedrampLanguage); } 
-@override String toString() { return 'UpdateSsoConnectorStateRequest(enabled: $enabled, useFedrampLanguage: $useFedrampLanguage)'; } 
+          useFedrampLanguage == other.useFedrampLanguage;
+
+@override int get hashCode => Object.hash(enabled, useFedrampLanguage);
+
+@override String toString() => 'UpdateSsoConnectorStateRequest(enabled: $enabled, useFedrampLanguage: $useFedrampLanguage)';
+
  }

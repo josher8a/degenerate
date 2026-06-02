@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertAutoReopenedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertAutoReopenedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDependabotAlertAutoReopenedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDependabotAlertAutoReopenedAction($value)';
+
  }
 @immutable final class WebhookDependabotAlertAutoReopened {const WebhookDependabotAlertAutoReopened({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
@@ -69,7 +72,7 @@ WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedA
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertAutoReopened &&
           action == other.action &&
           alert == other.alert &&
@@ -77,7 +80,10 @@ WebhookDependabotAlertAutoReopened copyWith({WebhookDependabotAlertAutoReopenedA
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertAutoReopened(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, installation, organization, enterprise, repository, sender);
+
+@override String toString() => 'WebhookDependabotAlertAutoReopened(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
+
  }

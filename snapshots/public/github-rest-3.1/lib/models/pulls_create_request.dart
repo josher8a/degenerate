@@ -59,7 +59,7 @@ PullsCreateRequest copyWith({String? Function()? title, String? head, String? Fu
   draft: draft != null ? draft() : this.draft,
   issue: issue != null ? issue() : this.issue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsCreateRequest &&
           title == other.title &&
           head == other.head &&
@@ -68,7 +68,10 @@ PullsCreateRequest copyWith({String? Function()? title, String? head, String? Fu
           body == other.body &&
           maintainerCanModify == other.maintainerCanModify &&
           draft == other.draft &&
-          issue == other.issue; } 
-@override int get hashCode { return Object.hash(title, head, headRepo, base, body, maintainerCanModify, draft, issue); } 
-@override String toString() { return 'PullsCreateRequest(title: $title, head: $head, headRepo: $headRepo, base: $base, body: $body, maintainerCanModify: $maintainerCanModify, draft: $draft, issue: $issue)'; } 
+          issue == other.issue;
+
+@override int get hashCode => Object.hash(title, head, headRepo, base, body, maintainerCanModify, draft, issue);
+
+@override String toString() => 'PullsCreateRequest(title: $title, head: $head, headRepo: $headRepo, base: $base, body: $body, maintainerCanModify: $maintainerCanModify, draft: $draft, issue: $issue)';
+
  }

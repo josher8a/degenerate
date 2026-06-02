@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('token
 R2DataCatalogCatalogCredentialRequest copyWith({String? token}) { return R2DataCatalogCatalogCredentialRequest(
   token: token ?? this.token,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogCatalogCredentialRequest &&
-          token == other.token; } 
-@override int get hashCode { return token.hashCode; } 
-@override String toString() { return 'R2DataCatalogCatalogCredentialRequest(token: $token)'; } 
+          token == other.token;
+
+@override int get hashCode => token.hashCode;
+
+@override String toString() => 'R2DataCatalogCatalogCredentialRequest(token: $token)';
+
  }

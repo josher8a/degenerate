@@ -47,14 +47,17 @@ ConfigMap copyWith({String? Function()? apiVersion, Map<String, Uint8List>? Func
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMap &&
           apiVersion == other.apiVersion &&
           binaryData == other.binaryData &&
           data == other.data &&
           immutable == other.immutable &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, binaryData, data, immutable, kind, metadata); } 
-@override String toString() { return 'ConfigMap(apiVersion: $apiVersion, binaryData: $binaryData, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(apiVersion, binaryData, data, immutable, kind, metadata);
+
+@override String toString() => 'ConfigMap(apiVersion: $apiVersion, binaryData: $binaryData, data: $data, immutable: $immutable, kind: $kind, metadata: $metadata)';
+
  }

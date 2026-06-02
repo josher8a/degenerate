@@ -34,10 +34,13 @@ PaymentMethodDetailsPaymentRecordMultibanco copyWith({String? Function()? entity
   entity: entity != null ? entity() : this.entity,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordMultibanco &&
           entity == other.entity &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(entity, reference); } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordMultibanco(entity: $entity, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(entity, reference);
+
+@override String toString() => 'PaymentMethodDetailsPaymentRecordMultibanco(entity: $entity, reference: $reference)';
+
  }

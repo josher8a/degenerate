@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CustomIndicatorFeedsUpdatePublicFieldResponse copyWith({CustomIndicatorFeedsIndicatorFeedItem? Function()? result}) { return CustomIndicatorFeedsUpdatePublicFieldResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdatePublicFieldResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'CustomIndicatorFeedsUpdatePublicFieldResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'CustomIndicatorFeedsUpdatePublicFieldResponse(result: $result)';
+
  }

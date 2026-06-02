@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventOutputAudioBufferClearType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventOutputAudioBufferClearType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventOutputAudioBufferClearType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventOutputAudioBufferClearType($value)';
+
  }
 /// **WebRTC/SIP Only:** Emit to cut off the current audio response. This will trigger the server to
 /// stop generating audio and emit a `output_audio_buffer.cleared` event. This
@@ -50,10 +53,13 @@ RealtimeBetaClientEventOutputAudioBufferClear copyWith({String? Function()? even
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventOutputAudioBufferClear &&
           eventId == other.eventId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventId, type); } 
-@override String toString() { return 'RealtimeBetaClientEventOutputAudioBufferClear(eventId: $eventId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eventId, type);
+
+@override String toString() => 'RealtimeBetaClientEventOutputAudioBufferClear(eventId: $eventId, type: $type)';
+
  }

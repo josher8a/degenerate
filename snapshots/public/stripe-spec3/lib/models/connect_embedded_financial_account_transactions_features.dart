@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card_
 ConnectEmbeddedFinancialAccountTransactionsFeatures copyWith({bool? cardSpendDisputeManagement}) { return ConnectEmbeddedFinancialAccountTransactionsFeatures(
   cardSpendDisputeManagement: cardSpendDisputeManagement ?? this.cardSpendDisputeManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedFinancialAccountTransactionsFeatures &&
-          cardSpendDisputeManagement == other.cardSpendDisputeManagement; } 
-@override int get hashCode { return cardSpendDisputeManagement.hashCode; } 
-@override String toString() { return 'ConnectEmbeddedFinancialAccountTransactionsFeatures(cardSpendDisputeManagement: $cardSpendDisputeManagement)'; } 
+          cardSpendDisputeManagement == other.cardSpendDisputeManagement;
+
+@override int get hashCode => cardSpendDisputeManagement.hashCode;
+
+@override String toString() => 'ConnectEmbeddedFinancialAccountTransactionsFeatures(cardSpendDisputeManagement: $cardSpendDisputeManagement)';
+
  }

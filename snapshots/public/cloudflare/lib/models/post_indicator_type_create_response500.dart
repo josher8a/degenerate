@@ -22,10 +22,13 @@ PostIndicatorTypeCreateResponse500 copyWith({PostIndicatorTypeCreateResponse400C
   content: content ?? this.content,
   description: description ?? this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorTypeCreateResponse500 &&
           content == other.content &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(content, description); } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse500(content: $content, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(content, description);
+
+@override String toString() => 'PostIndicatorTypeCreateResponse500(content: $content, description: $description)';
+
  }

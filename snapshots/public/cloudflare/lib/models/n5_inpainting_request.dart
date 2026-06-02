@@ -91,7 +91,7 @@ $5InpaintingRequest copyWith({double Function()? guidance, int? Function()? heig
   strength: strength != null ? strength() : this.strength,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is $5InpaintingRequest &&
           guidance == other.guidance &&
           height == other.height &&
@@ -103,7 +103,10 @@ $5InpaintingRequest copyWith({double Function()? guidance, int? Function()? heig
           prompt == other.prompt &&
           seed == other.seed &&
           strength == other.strength &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(guidance, height, Object.hashAll(image ?? const []), imageB64, Object.hashAll(mask ?? const []), negativePrompt, numSteps, prompt, seed, strength, width); } 
-@override String toString() { return '\$5InpaintingRequest(guidance: $guidance, height: $height, image: $image, imageB64: $imageB64, mask: $mask, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, strength: $strength, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(guidance, height, Object.hashAll(image ?? const []), imageB64, Object.hashAll(mask ?? const []), negativePrompt, numSteps, prompt, seed, strength, width);
+
+@override String toString() => '\$5InpaintingRequest(guidance: $guidance, height: $height, image: $image, imageB64: $imageB64, mask: $mask, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, strength: $strength, width: $width)';
+
  }

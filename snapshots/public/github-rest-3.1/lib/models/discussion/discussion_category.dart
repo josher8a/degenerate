@@ -68,7 +68,7 @@ DiscussionCategory copyWith({DateTime? createdAt, String? description, String? e
   slug: slug ?? this.slug,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiscussionCategory &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -79,7 +79,10 @@ DiscussionCategory copyWith({DateTime? createdAt, String? description, String? e
           nodeId == other.nodeId &&
           repositoryId == other.repositoryId &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, emoji, id, isAnswerable, name, nodeId, repositoryId, slug, updatedAt); } 
-@override String toString() { return 'DiscussionCategory(createdAt: $createdAt, description: $description, emoji: $emoji, id: $id, isAnswerable: $isAnswerable, name: $name, nodeId: $nodeId, repositoryId: $repositoryId, slug: $slug, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, emoji, id, isAnswerable, name, nodeId, repositoryId, slug, updatedAt);
+
+@override String toString() => 'DiscussionCategory(createdAt: $createdAt, description: $description, emoji: $emoji, id: $id, isAnswerable: $isAnswerable, name: $name, nodeId: $nodeId, repositoryId: $repositoryId, slug: $slug, updatedAt: $updatedAt)';
+
  }

@@ -32,11 +32,14 @@ ShieldOldSchemaUploadLogEvent copyWith({int? code, List<String>? Function()? loc
   locations: locations != null ? locations() : this.locations,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadLogEvent &&
           code == other.code &&
           listEquals(locations, other.locations) &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, Object.hashAll(locations ?? const []), message); } 
-@override String toString() { return 'ShieldOldSchemaUploadLogEvent(code: $code, locations: $locations, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, Object.hashAll(locations ?? const []), message);
+
+@override String toString() => 'ShieldOldSchemaUploadLogEvent(code: $code, locations: $locations, message: $message)';
+
  }

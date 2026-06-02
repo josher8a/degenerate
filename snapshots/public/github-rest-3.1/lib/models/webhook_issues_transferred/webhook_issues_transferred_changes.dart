@@ -23,10 +23,13 @@ WebhookIssuesTransferredChanges copyWith({NewIssue? newIssue, NewRepository? new
   newIssue: newIssue ?? this.newIssue,
   newRepository: newRepository ?? this.newRepository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesTransferredChanges &&
           newIssue == other.newIssue &&
-          newRepository == other.newRepository; } 
-@override int get hashCode { return Object.hash(newIssue, newRepository); } 
-@override String toString() { return 'WebhookIssuesTransferredChanges(newIssue: $newIssue, newRepository: $newRepository)'; } 
+          newRepository == other.newRepository;
+
+@override int get hashCode => Object.hash(newIssue, newRepository);
+
+@override String toString() => 'WebhookIssuesTransferredChanges(newIssue: $newIssue, newRepository: $newRepository)';
+
  }

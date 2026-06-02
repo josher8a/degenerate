@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_de
 Preferences copyWith({bool? isDefault}) { return Preferences(
   isDefault: isDefault ?? this.isDefault,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Preferences &&
-          isDefault == other.isDefault; } 
-@override int get hashCode { return isDefault.hashCode; } 
-@override String toString() { return 'Preferences(isDefault: $isDefault)'; } 
+          isDefault == other.isDefault;
+
+@override int get hashCode => isDefault.hashCode;
+
+@override String toString() => 'Preferences(isDefault: $isDefault)';
+
  }

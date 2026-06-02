@@ -20,10 +20,13 @@ DefaultPriceDataRecurring copyWith({GetPricesRecurringInterval? interval, int? F
   interval: interval ?? this.interval,
   intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultPriceDataRecurring &&
           interval == other.interval &&
-          intervalCount == other.intervalCount; } 
-@override int get hashCode { return Object.hash(interval, intervalCount); } 
-@override String toString() { return 'DefaultPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
+          intervalCount == other.intervalCount;
+
+@override int get hashCode => Object.hash(interval, intervalCount);
+
+@override String toString() => 'DefaultPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)';
+
  }

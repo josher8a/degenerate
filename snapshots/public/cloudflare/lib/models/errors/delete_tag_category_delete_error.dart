@@ -18,13 +18,15 @@ final class DeleteTagCategoryDeleteError$400 extends DeleteTagCategoryDeleteErro
 
 final DeleteTagCategoryDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteTagCategoryDeleteError$404 extends DeleteTagCategoryDeleteError {const DeleteTagCategoryDeleteError$404(this.error);
 
 final DeleteTagCategoryDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteTagCategoryDeleteError$Unknown extends DeleteTagCategoryDeleteError {const DeleteTagCategoryDeleteError$Unknown(this.statusCode, this.rawBody, );
 

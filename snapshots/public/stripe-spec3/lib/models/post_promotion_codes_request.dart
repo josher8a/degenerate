@@ -87,7 +87,7 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
   promotion: promotion ?? this.promotion,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPromotionCodesRequest &&
           active == other.active &&
           code == other.code &&
@@ -98,7 +98,10 @@ PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()
           maxRedemptions == other.maxRedemptions &&
           metadata == other.metadata &&
           promotion == other.promotion &&
-          restrictions == other.restrictions; } 
-@override int get hashCode { return Object.hash(active, code, customer, customerAccount, Object.hashAll(expand ?? const []), expiresAt, maxRedemptions, metadata, promotion, restrictions); } 
-@override String toString() { return 'PostPromotionCodesRequest(active: $active, code: $code, customer: $customer, customerAccount: $customerAccount, expand: $expand, expiresAt: $expiresAt, maxRedemptions: $maxRedemptions, metadata: $metadata, promotion: $promotion, restrictions: $restrictions)'; } 
+          restrictions == other.restrictions;
+
+@override int get hashCode => Object.hash(active, code, customer, customerAccount, Object.hashAll(expand ?? const []), expiresAt, maxRedemptions, metadata, promotion, restrictions);
+
+@override String toString() => 'PostPromotionCodesRequest(active: $active, code: $code, customer: $customer, customerAccount: $customerAccount, expand: $expand, expiresAt: $expiresAt, maxRedemptions: $maxRedemptions, metadata: $metadata, promotion: $promotion, restrictions: $restrictions)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PrebuildAvailability && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PrebuildAvailability($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PrebuildAvailability && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PrebuildAvailability($value)';
+
  }
 /// A description of the machine powering a codespace.
 @immutable final class CodespaceMachine {const CodespaceMachine({required this.name, required this.displayName, required this.operatingSystem, required this.storageInBytes, required this.memoryInBytes, required this.cpus, required this.prebuildAvailability, });
@@ -90,7 +93,7 @@ CodespaceMachine copyWith({String? name, String? displayName, String? operatingS
   cpus: cpus ?? this.cpus,
   prebuildAvailability: prebuildAvailability != null ? prebuildAvailability() : this.prebuildAvailability,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespaceMachine &&
           name == other.name &&
           displayName == other.displayName &&
@@ -98,7 +101,10 @@ CodespaceMachine copyWith({String? name, String? displayName, String? operatingS
           storageInBytes == other.storageInBytes &&
           memoryInBytes == other.memoryInBytes &&
           cpus == other.cpus &&
-          prebuildAvailability == other.prebuildAvailability; } 
-@override int get hashCode { return Object.hash(name, displayName, operatingSystem, storageInBytes, memoryInBytes, cpus, prebuildAvailability); } 
-@override String toString() { return 'CodespaceMachine(name: $name, displayName: $displayName, operatingSystem: $operatingSystem, storageInBytes: $storageInBytes, memoryInBytes: $memoryInBytes, cpus: $cpus, prebuildAvailability: $prebuildAvailability)'; } 
+          prebuildAvailability == other.prebuildAvailability;
+
+@override int get hashCode => Object.hash(name, displayName, operatingSystem, storageInBytes, memoryInBytes, cpus, prebuildAvailability);
+
+@override String toString() => 'CodespaceMachine(name: $name, displayName: $displayName, operatingSystem: $operatingSystem, storageInBytes: $storageInBytes, memoryInBytes: $memoryInBytes, cpus: $cpus, prebuildAvailability: $prebuildAvailability)';
+
  }

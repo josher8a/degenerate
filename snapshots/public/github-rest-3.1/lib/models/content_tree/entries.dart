@@ -69,7 +69,7 @@ Entries copyWith({String? type, int? size, String? name, String? path, String? s
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Entries &&
           type == other.type &&
           size == other.size &&
@@ -80,7 +80,10 @@ Entries copyWith({String? type, int? size, String? name, String? path, String? s
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'Entries(type: $type, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(type, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);
+
+@override String toString() => 'Entries(type: $type, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+
  }

@@ -44,12 +44,15 @@ BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent copyWit
   prorationDetails: prorationDetails != null ? prorationDetails() : this.prorationDetails,
   subscription: subscription != null ? subscription() : this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent &&
           invoiceItem == other.invoiceItem &&
           proration == other.proration &&
           prorationDetails == other.prorationDetails &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(invoiceItem, proration, prorationDetails, subscription); } 
-@override String toString() { return 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(invoiceItem: $invoiceItem, proration: $proration, prorationDetails: $prorationDetails, subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => Object.hash(invoiceItem, proration, prorationDetails, subscription);
+
+@override String toString() => 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(invoiceItem: $invoiceItem, proration: $proration, prorationDetails: $prorationDetails, subscription: $subscription)';
+
  }

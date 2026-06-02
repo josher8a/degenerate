@@ -61,7 +61,7 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
   selector: selector ?? this.selector,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldRule &&
           action == other.action &&
           createdAt == other.createdAt &&
@@ -71,7 +71,10 @@ ShieldRule copyWith({ShieldAction? action, ShieldTimestamp? Function()? createdA
           id == other.id &&
           lastUpdated == other.lastUpdated &&
           selector == other.selector &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(action, createdAt, description, enabled, expression, id, lastUpdated, selector, title); } 
-@override String toString() { return 'ShieldRule(action: $action, createdAt: $createdAt, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, selector: $selector, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(action, createdAt, description, enabled, expression, id, lastUpdated, selector, title);
+
+@override String toString() => 'ShieldRule(action: $action, createdAt: $createdAt, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, selector: $selector, title: $title)';
+
  }

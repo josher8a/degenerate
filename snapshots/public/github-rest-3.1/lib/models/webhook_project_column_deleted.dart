@@ -46,7 +46,7 @@ WebhookProjectColumnDeleted copyWith({ItemDeletedAction? action, EnterpriseWebho
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookProjectColumnDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -54,7 +54,10 @@ WebhookProjectColumnDeleted copyWith({ItemDeletedAction? action, EnterpriseWebho
           organization == other.organization &&
           projectColumn == other.projectColumn &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender); } 
-@override String toString() { return 'WebhookProjectColumnDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, projectColumn, repository, sender);
+
+@override String toString() => 'WebhookProjectColumnDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, projectColumn: $projectColumn, repository: $repository, sender: $sender)';
+
  }

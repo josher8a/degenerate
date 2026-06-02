@@ -27,10 +27,13 @@ TlsCertificatesAndHostnamesCertificateRevokeResponseResult copyWith({TlsCertific
   id: id != null ? id() : this.id,
   revokedAt: revokedAt != null ? revokedAt() : this.revokedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCertificateRevokeResponseResult &&
           id == other.id &&
-          revokedAt == other.revokedAt; } 
-@override int get hashCode { return Object.hash(id, revokedAt); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificateRevokeResponseResult(id: $id, revokedAt: $revokedAt)'; } 
+          revokedAt == other.revokedAt;
+
+@override int get hashCode => Object.hash(id, revokedAt);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificateRevokeResponseResult(id: $id, revokedAt: $revokedAt)';
+
  }

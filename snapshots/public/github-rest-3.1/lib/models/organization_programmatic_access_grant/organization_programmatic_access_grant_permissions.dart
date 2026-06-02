@@ -26,11 +26,14 @@ OrganizationProgrammaticAccessGrantPermissions copyWith({Map<String, String>? Fu
   repository: repository != null ? repository() : this.repository,
   other: other != null ? other() : this.other,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationProgrammaticAccessGrantPermissions &&
           organization == other.organization &&
           repository == other.repository &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(organization, repository, other); } 
-@override String toString() { return 'OrganizationProgrammaticAccessGrantPermissions(organization: $organization, repository: $repository, other: $other)'; } 
+          this.other == other.other;
+
+@override int get hashCode => Object.hash(organization, repository, other);
+
+@override String toString() => 'OrganizationProgrammaticAccessGrantPermissions(organization: $organization, repository: $repository, other: $other)';
+
  }

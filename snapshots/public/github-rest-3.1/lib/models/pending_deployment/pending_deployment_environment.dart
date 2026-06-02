@@ -37,13 +37,16 @@ PendingDeploymentEnvironment copyWith({int? Function()? id, String? Function()? 
   url: url != null ? url() : this.url,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PendingDeploymentEnvironment &&
           id == other.id &&
           nodeId == other.nodeId &&
           name == other.name &&
           url == other.url &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, url, htmlUrl); } 
-@override String toString() { return 'PendingDeploymentEnvironment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(id, nodeId, name, url, htmlUrl);
+
+@override String toString() => 'PendingDeploymentEnvironment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl)';
+
  }

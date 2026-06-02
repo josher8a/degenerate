@@ -46,12 +46,15 @@ PaymentPagesCheckoutSessionCustomFieldsNumeric copyWith({String? Function()? def
   minimumLength: minimumLength != null ? minimumLength() : this.minimumLength,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFieldsNumeric &&
           defaultValue == other.defaultValue &&
           maximumLength == other.maximumLength &&
           minimumLength == other.minimumLength &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(defaultValue, maximumLength, minimumLength, value); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsNumeric(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(defaultValue, maximumLength, minimumLength, value);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomFieldsNumeric(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength, value: $value)';
+
  }

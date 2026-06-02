@@ -20,25 +20,29 @@ final class PullsGetError$404 extends PullsGetError {const PullsGetError$404(thi
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PullsGetError$406 extends PullsGetError {const PullsGetError$406(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 406; } 
+@override int get statusCode => 406;
+
  }
 final class PullsGetError$500 extends PullsGetError {const PullsGetError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class PullsGetError$503 extends PullsGetError {const PullsGetError$503(this.error);
 
 final PullsGetResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class PullsGetError$Unknown extends PullsGetError {const PullsGetError$Unknown(this.statusCode, this.rawBody, );
 

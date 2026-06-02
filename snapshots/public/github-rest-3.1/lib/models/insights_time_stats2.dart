@@ -25,11 +25,14 @@ InsightsTimeStats2 copyWith({String? Function()? timestamp, int? Function()? tot
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsTimeStats2 &&
           timestamp == other.timestamp &&
           totalRequestCount == other.totalRequestCount &&
-          rateLimitedRequestCount == other.rateLimitedRequestCount; } 
-@override int get hashCode { return Object.hash(timestamp, totalRequestCount, rateLimitedRequestCount); } 
-@override String toString() { return 'InsightsTimeStats2(timestamp: $timestamp, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount)'; } 
+          rateLimitedRequestCount == other.rateLimitedRequestCount;
+
+@override int get hashCode => Object.hash(timestamp, totalRequestCount, rateLimitedRequestCount);
+
+@override String toString() => 'InsightsTimeStats2(timestamp: $timestamp, totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount)';
+
  }

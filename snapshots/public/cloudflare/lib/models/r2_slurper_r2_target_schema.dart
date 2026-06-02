@@ -32,12 +32,15 @@ R2SlurperR2TargetSchema copyWith({String? bucket, R2SlurperJurisdiction? Functio
   secret: secret ?? this.secret,
   vendor: vendor ?? this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperR2TargetSchema &&
           bucket == other.bucket &&
           jurisdiction == other.jurisdiction &&
           secret == other.secret &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, jurisdiction, secret, vendor); } 
-@override String toString() { return 'R2SlurperR2TargetSchema(bucket: $bucket, jurisdiction: $jurisdiction, secret: $secret, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, jurisdiction, secret, vendor);
+
+@override String toString() => 'R2SlurperR2TargetSchema(bucket: $bucket, jurisdiction: $jurisdiction, secret: $secret, vendor: $vendor)';
+
  }

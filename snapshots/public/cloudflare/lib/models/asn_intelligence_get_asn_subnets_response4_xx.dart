@@ -72,7 +72,7 @@ AsnIntelligenceGetAsnSubnetsResponse4Xx copyWith({List<IntelMessages2>? errors, 
   perPage: perPage != null ? perPage() : this.perPage,
   subnets: subnets != null ? subnets() : this.subnets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnIntelligenceGetAsnSubnetsResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
@@ -83,7 +83,10 @@ AsnIntelligenceGetAsnSubnetsResponse4Xx copyWith({List<IntelMessages2>? errors, 
           ipCountTotal == other.ipCountTotal &&
           page == other.page &&
           perPage == other.perPage &&
-          listEquals(subnets, other.subnets); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const [])); } 
-@override String toString() { return 'AsnIntelligenceGetAsnSubnetsResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success, asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)'; } 
+          listEquals(subnets, other.subnets);
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success, asn, count, ipCountTotal, page, perPage, Object.hashAll(subnets ?? const []));
+
+@override String toString() => 'AsnIntelligenceGetAsnSubnetsResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success, asn: $asn, count: $count, ipCountTotal: $ipCountTotal, page: $page, perPage: $perPage, subnets: $subnets)';
+
  }

@@ -48,14 +48,17 @@ SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThreshold
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionScheduleConfigurationItem &&
           billingThresholds == other.billingThresholds &&
           listEquals(discounts, other.discounts) &&
           metadata == other.metadata &&
           price == other.price &&
           quantity == other.quantity &&
-          listEquals(taxRates, other.taxRates); } 
-@override int get hashCode { return Object.hash(billingThresholds, Object.hashAll(discounts), metadata, price, quantity, Object.hashAll(taxRates ?? const [])); } 
-@override String toString() { return 'SubscriptionScheduleConfigurationItem(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, quantity: $quantity, taxRates: $taxRates)'; } 
+          listEquals(taxRates, other.taxRates);
+
+@override int get hashCode => Object.hash(billingThresholds, Object.hashAll(discounts), metadata, price, quantity, Object.hashAll(taxRates ?? const []));
+
+@override String toString() => 'SubscriptionScheduleConfigurationItem(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, quantity: $quantity, taxRates: $taxRates)';
+
  }

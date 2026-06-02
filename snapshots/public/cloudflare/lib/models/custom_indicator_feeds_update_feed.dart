@@ -34,11 +34,14 @@ CustomIndicatorFeedsUpdateFeed copyWith({int? Function()? fileId, String? Functi
   filename: filename != null ? filename() : this.filename,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdateFeed &&
           fileId == other.fileId &&
           filename == other.filename &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(fileId, filename, status); } 
-@override String toString() { return 'CustomIndicatorFeedsUpdateFeed(fileId: $fileId, filename: $filename, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(fileId, filename, status);
+
+@override String toString() => 'CustomIndicatorFeedsUpdateFeed(fileId: $fileId, filename: $filename, status: $status)';
+
  }

@@ -45,14 +45,17 @@ UrlscannerGetScanResponse2Data copyWith({List<DataConsole>? console, List<DataCo
   performance: performance ?? this.performance,
   requests: requests ?? this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Data &&
           listEquals(console, other.console) &&
           listEquals(cookies, other.cookies) &&
           listEquals(globals, other.globals) &&
           listEquals(links, other.links) &&
           listEquals(performance, other.performance) &&
-          listEquals(requests, other.requests); } 
-@override int get hashCode { return Object.hash(Object.hashAll(console), Object.hashAll(cookies), Object.hashAll(globals), Object.hashAll(links), Object.hashAll(performance), Object.hashAll(requests)); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Data(console: $console, cookies: $cookies, globals: $globals, links: $links, performance: $performance, requests: $requests)'; } 
+          listEquals(requests, other.requests);
+
+@override int get hashCode => Object.hash(Object.hashAll(console), Object.hashAll(cookies), Object.hashAll(globals), Object.hashAll(links), Object.hashAll(performance), Object.hashAll(requests));
+
+@override String toString() => 'UrlscannerGetScanResponse2Data(console: $console, cookies: $cookies, globals: $globals, links: $links, performance: $performance, requests: $requests)';
+
  }

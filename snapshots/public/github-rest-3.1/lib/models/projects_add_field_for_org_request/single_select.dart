@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SingleSelectDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SingleSelectDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SingleSelectDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SingleSelectDataType($value)';
+
  }
 @immutable final class SingleSelect {const SingleSelect({required this.name, required this.dataType, required this.singleSelectOptions, });
 
@@ -52,11 +55,14 @@ SingleSelect copyWith({String? name, SingleSelectDataType? dataType, List<FieldS
   dataType: dataType ?? this.dataType,
   singleSelectOptions: singleSelectOptions ?? this.singleSelectOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SingleSelect &&
           name == other.name &&
           dataType == other.dataType &&
-          listEquals(singleSelectOptions, other.singleSelectOptions); } 
-@override int get hashCode { return Object.hash(name, dataType, Object.hashAll(singleSelectOptions)); } 
-@override String toString() { return 'SingleSelect(name: $name, dataType: $dataType, singleSelectOptions: $singleSelectOptions)'; } 
+          listEquals(singleSelectOptions, other.singleSelectOptions);
+
+@override int get hashCode => Object.hash(name, dataType, Object.hashAll(singleSelectOptions));
+
+@override String toString() => 'SingleSelect(name: $name, dataType: $dataType, singleSelectOptions: $singleSelectOptions)';
+
  }

@@ -88,24 +88,21 @@ final class $3Incident {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is $3Incident &&
-            $1id == other.$1id &&
-            $2species == other.$2species &&
-            $3DreadLevel == other.$3DreadLevel &&
-            cafe == other.cafe &&
-            gnirts == other.gnirts &&
-            ab == other.ab;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is $3Incident &&
+          $1id == other.$1id &&
+          $2species == other.$2species &&
+          $3DreadLevel == other.$3DreadLevel &&
+          cafe == other.cafe &&
+          gnirts == other.gnirts &&
+          ab == other.ab;
 
   @override
-  int get hashCode {
-    return Object.hash($1id, $2species, $3DreadLevel, cafe, gnirts, ab);
-  }
+  int get hashCode =>
+      Object.hash($1id, $2species, $3DreadLevel, cafe, gnirts, ab);
 
   @override
-  String toString() {
-    return '\$3Incident(\$1id: ${$1id}, \$2species: ${$2species}, \$3DreadLevel: ${$3DreadLevel}, cafe: $cafe, gnirts: $gnirts, ab: $ab)';
-  }
+  String toString() =>
+      '\$3Incident(\$1id: ${$1id}, \$2species: ${$2species}, \$3DreadLevel: ${$3DreadLevel}, cafe: $cafe, gnirts: $gnirts, ab: $ab)';
 }

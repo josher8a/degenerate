@@ -55,7 +55,7 @@ OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()?
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateArtifactStorageRecordResponseStorageRecords &&
           id == other.id &&
           name == other.name &&
@@ -65,7 +65,10 @@ OrgsCreateArtifactStorageRecordResponseStorageRecords copyWith({int? Function()?
           repository == other.repository &&
           status == other.status &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, digest, artifactUrl, registryUrl, repository, status, createdAt, updatedAt); } 
-@override String toString() { return 'OrgsCreateArtifactStorageRecordResponseStorageRecords(id: $id, name: $name, digest: $digest, artifactUrl: $artifactUrl, registryUrl: $registryUrl, repository: $repository, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, digest, artifactUrl, registryUrl, repository, status, createdAt, updatedAt);
+
+@override String toString() => 'OrgsCreateArtifactStorageRecordResponseStorageRecords(id: $id, name: $name, digest: $digest, artifactUrl: $artifactUrl, registryUrl: $registryUrl, repository: $repository, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

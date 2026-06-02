@@ -169,7 +169,7 @@ PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonReque
   vatId: vatId != null ? vatId() : this.vatId,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestCompany &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -193,7 +193,10 @@ PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonReque
           taxId == other.taxId &&
           taxIdRegistrar == other.taxIdRegistrar &&
           vatId == other.vatId &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]); } 
-@override String toString() { return 'PostAccountsAccountRequestCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hashAll([address, addressKana, addressKanji, directorsProvided, directorshipDeclaration, executivesProvided, exportLicenseId, exportPurposeCode, name, nameKana, nameKanji, ownersProvided, ownershipDeclaration, ownershipExemptionReason, phone, registrationDate, registrationNumber, representativeDeclaration, structure, taxId, taxIdRegistrar, vatId, verification]);
+
+@override String toString() => 'PostAccountsAccountRequestCompany(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, directorsProvided: $directorsProvided, directorshipDeclaration: $directorshipDeclaration, executivesProvided: $executivesProvided, exportLicenseId: $exportLicenseId, exportPurposeCode: $exportPurposeCode, name: $name, nameKana: $nameKana, nameKanji: $nameKanji, ownersProvided: $ownersProvided, ownershipDeclaration: $ownershipDeclaration, ownershipExemptionReason: $ownershipExemptionReason, phone: $phone, registrationDate: $registrationDate, registrationNumber: $registrationNumber, representativeDeclaration: $representativeDeclaration, structure: $structure, taxId: $taxId, taxIdRegistrar: $taxIdRegistrar, vatId: $vatId, verification: $verification)';
+
  }

@@ -51,7 +51,7 @@ Files copyWith({CodeOfConductSimple? Function()? codeOfConduct, CommunityHealthF
   issueTemplate: issueTemplate != null ? issueTemplate() : this.issueTemplate,
   pullRequestTemplate: pullRequestTemplate != null ? pullRequestTemplate() : this.pullRequestTemplate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Files &&
           codeOfConduct == other.codeOfConduct &&
           codeOfConductFile == other.codeOfConductFile &&
@@ -59,7 +59,10 @@ Files copyWith({CodeOfConductSimple? Function()? codeOfConduct, CommunityHealthF
           contributing == other.contributing &&
           readme == other.readme &&
           issueTemplate == other.issueTemplate &&
-          pullRequestTemplate == other.pullRequestTemplate; } 
-@override int get hashCode { return Object.hash(codeOfConduct, codeOfConductFile, license, contributing, readme, issueTemplate, pullRequestTemplate); } 
-@override String toString() { return 'Files(codeOfConduct: $codeOfConduct, codeOfConductFile: $codeOfConductFile, license: $license, contributing: $contributing, readme: $readme, issueTemplate: $issueTemplate, pullRequestTemplate: $pullRequestTemplate)'; } 
+          pullRequestTemplate == other.pullRequestTemplate;
+
+@override int get hashCode => Object.hash(codeOfConduct, codeOfConductFile, license, contributing, readme, issueTemplate, pullRequestTemplate);
+
+@override String toString() => 'Files(codeOfConduct: $codeOfConduct, codeOfConductFile: $codeOfConductFile, license: $license, contributing: $contributing, readme: $readme, issueTemplate: $issueTemplate, pullRequestTemplate: $pullRequestTemplate)';
+
  }

@@ -19,9 +19,12 @@ return errors; }
 CouponOffer copyWith({String? coupon}) { return CouponOffer(
   coupon: coupon ?? this.coupon,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CouponOffer &&
-          coupon == other.coupon; } 
-@override int get hashCode { return coupon.hashCode; } 
-@override String toString() { return 'CouponOffer(coupon: $coupon)'; } 
+          coupon == other.coupon;
+
+@override int get hashCode => coupon.hashCode;
+
+@override String toString() => 'CouponOffer(coupon: $coupon)';
+
  }

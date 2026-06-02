@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AcceptFoa && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AcceptFoa($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AcceptFoa && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AcceptFoa($value)';
+
  }
 /// Shows transfer status with the registry.
 @immutable final class ApproveTransfer {const ApproveTransfer._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ApproveTransfer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ApproveTransfer($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApproveTransfer && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApproveTransfer($value)';
+
  }
 /// Privacy guards are disabled at the foreign registrar.
 @immutable final class DisablePrivacy {const DisablePrivacy._(this.value);
@@ -85,10 +91,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisablePrivacy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisablePrivacy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisablePrivacy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisablePrivacy($value)';
+
  }
 /// Auth code has been entered and verified.
 @immutable final class EnterAuthCode {const EnterAuthCode._(this.value);
@@ -119,10 +128,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EnterAuthCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EnterAuthCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnterAuthCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EnterAuthCode($value)';
+
  }
 /// Domain is unlocked at the foreign registrar.
 @immutable final class UnlockDomain {const UnlockDomain._(this.value);
@@ -153,10 +165,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UnlockDomain && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UnlockDomain($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UnlockDomain && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UnlockDomain($value)';
+
  }
 /// Statuses for domain transfers into Cloudflare Registrar.
 @immutable final class TransferIn {const TransferIn({this.acceptFoa, this.approveTransfer, this.canCancelTransfer, this.disablePrivacy, this.enterAuthCode, this.unlockDomain, });
@@ -217,14 +232,17 @@ TransferIn copyWith({AcceptFoa? Function()? acceptFoa, ApproveTransfer? Function
   enterAuthCode: enterAuthCode != null ? enterAuthCode() : this.enterAuthCode,
   unlockDomain: unlockDomain != null ? unlockDomain() : this.unlockDomain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferIn &&
           acceptFoa == other.acceptFoa &&
           approveTransfer == other.approveTransfer &&
           canCancelTransfer == other.canCancelTransfer &&
           disablePrivacy == other.disablePrivacy &&
           enterAuthCode == other.enterAuthCode &&
-          unlockDomain == other.unlockDomain; } 
-@override int get hashCode { return Object.hash(acceptFoa, approveTransfer, canCancelTransfer, disablePrivacy, enterAuthCode, unlockDomain); } 
-@override String toString() { return 'TransferIn(acceptFoa: $acceptFoa, approveTransfer: $approveTransfer, canCancelTransfer: $canCancelTransfer, disablePrivacy: $disablePrivacy, enterAuthCode: $enterAuthCode, unlockDomain: $unlockDomain)'; } 
+          unlockDomain == other.unlockDomain;
+
+@override int get hashCode => Object.hash(acceptFoa, approveTransfer, canCancelTransfer, disablePrivacy, enterAuthCode, unlockDomain);
+
+@override String toString() => 'TransferIn(acceptFoa: $acceptFoa, approveTransfer: $approveTransfer, canCancelTransfer: $canCancelTransfer, disablePrivacy: $disablePrivacy, enterAuthCode: $enterAuthCode, unlockDomain: $unlockDomain)';
+
  }

@@ -35,12 +35,16 @@ final List<ContentDirectory2> listContentDirectory2;
 
 @override String get type => 'array';
 
-@override Map<String, dynamic> toJson() { return {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()}; } 
+@override Map<String, dynamic> toJson() => {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()};
+
 ReposGetContentResponseArray copyWith({List<ContentDirectory2>? listContentDirectory2}) { return ReposGetContentResponseArray(listContentDirectory2 ?? this.listContentDirectory2); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2; } 
-@override int get hashCode { return listContentDirectory2.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.array($listContentDirectory2)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReposGetContentResponseArray && listContentDirectory2 == other.listContentDirectory2;
+
+@override int get hashCode => listContentDirectory2.hashCode;
+
+@override String toString() => 'ReposGetContentResponse.array($listContentDirectory2)';
+
  }
 @immutable final class ReposGetContentResponseFile extends ReposGetContentResponse {const ReposGetContentResponseFile(this.contentFile);
 
@@ -50,7 +54,8 @@ final ContentFile contentFile;
 
 @override String get type => 'file';
 
-@override Map<String, dynamic> toJson() { return {...contentFile.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...contentFile.toJson(), 'type': type};
+
 ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
   encoding: encoding,
   size: size,
@@ -66,10 +71,13 @@ ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name,
   target: target,
   submoduleGitUrl: submoduleGitUrl,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseFile && contentFile == other.contentFile; } 
-@override int get hashCode { return contentFile.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.file($contentFile)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReposGetContentResponseFile && contentFile == other.contentFile;
+
+@override int get hashCode => contentFile.hashCode;
+
+@override String toString() => 'ReposGetContentResponse.file($contentFile)';
+
  }
 @immutable final class ReposGetContentResponseSymlink extends ReposGetContentResponse {const ReposGetContentResponseSymlink(this.contentSymlink);
 
@@ -79,7 +87,8 @@ final ContentSymlink contentSymlink;
 
 @override String get type => 'symlink';
 
-@override Map<String, dynamic> toJson() { return {...contentSymlink.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...contentSymlink.toJson(), 'type': type};
+
 ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSymlink(contentSymlink.copyWith(
   target: target,
   size: size,
@@ -92,10 +101,13 @@ ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name
   downloadUrl: downloadUrl,
   links: links,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink; } 
-@override int get hashCode { return contentSymlink.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.symlink($contentSymlink)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReposGetContentResponseSymlink && contentSymlink == other.contentSymlink;
+
+@override int get hashCode => contentSymlink.hashCode;
+
+@override String toString() => 'ReposGetContentResponse.symlink($contentSymlink)';
+
  }
 @immutable final class ReposGetContentResponseSubmodule extends ReposGetContentResponse {const ReposGetContentResponseSubmodule(this.contentSubmodule);
 
@@ -105,7 +117,8 @@ final ContentSubmodule contentSubmodule;
 
 @override String get type => 'submodule';
 
-@override Map<String, dynamic> toJson() { return {...contentSubmodule.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...contentSubmodule.toJson(), 'type': type};
+
 ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSubmodule(contentSubmodule.copyWith(
   submoduleGitUrl: submoduleGitUrl,
   size: size,
@@ -118,10 +131,13 @@ ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, Stri
   downloadUrl: downloadUrl,
   links: links,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule; } 
-@override int get hashCode { return contentSubmodule.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.submodule($contentSubmodule)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReposGetContentResponseSubmodule && contentSubmodule == other.contentSubmodule;
+
+@override int get hashCode => contentSubmodule.hashCode;
+
+@override String toString() => 'ReposGetContentResponse.submodule($contentSubmodule)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -131,9 +147,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReposGetContentResponse$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ReposGetContentResponse.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReposGetContentResponse$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ReposGetContentResponse.unknown($json)';
+
  }

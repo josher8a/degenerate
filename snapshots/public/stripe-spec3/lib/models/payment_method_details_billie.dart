@@ -24,9 +24,12 @@ return errors; }
 PaymentMethodDetailsBillie copyWith({String? Function()? transactionId}) { return PaymentMethodDetailsBillie(
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsBillie &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return transactionId.hashCode; } 
-@override String toString() { return 'PaymentMethodDetailsBillie(transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => transactionId.hashCode;
+
+@override String toString() => 'PaymentMethodDetailsBillie(transactionId: $transactionId)';
+
  }

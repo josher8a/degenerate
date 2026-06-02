@@ -22,9 +22,12 @@ return errors; }
 CcApplicationNetwork copyWith({int? bandwidthLimitMbps}) { return CcApplicationNetwork(
   bandwidthLimitMbps: bandwidthLimitMbps ?? this.bandwidthLimitMbps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcApplicationNetwork &&
-          bandwidthLimitMbps == other.bandwidthLimitMbps; } 
-@override int get hashCode { return bandwidthLimitMbps.hashCode; } 
-@override String toString() { return 'CcApplicationNetwork(bandwidthLimitMbps: $bandwidthLimitMbps)'; } 
+          bandwidthLimitMbps == other.bandwidthLimitMbps;
+
+@override int get hashCode => bandwidthLimitMbps.hashCode;
+
+@override String toString() => 'CcApplicationNetwork(bandwidthLimitMbps: $bandwidthLimitMbps)';
+
  }

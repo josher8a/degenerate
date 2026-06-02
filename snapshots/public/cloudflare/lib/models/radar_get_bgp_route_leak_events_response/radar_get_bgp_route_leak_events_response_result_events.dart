@@ -87,7 +87,7 @@ RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries
   peerCount: peerCount ?? this.peerCount,
   prefixCount: prefixCount ?? this.prefixCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRouteLeakEventsResponseResultEvents &&
           listEquals(countries, other.countries) &&
           detectedTs == other.detectedTs &&
@@ -101,7 +101,10 @@ RadarGetBgpRouteLeakEventsResponseResultEvents copyWith({List<String>? countries
           minTs == other.minTs &&
           originCount == other.originCount &&
           peerCount == other.peerCount &&
-          prefixCount == other.prefixCount; } 
-@override int get hashCode { return Object.hash(Object.hashAll(countries), detectedTs, finished, id, leakAsn, leakCount, Object.hashAll(leakSeg), leakType, maxTs, minTs, originCount, peerCount, prefixCount); } 
-@override String toString() { return 'RadarGetBgpRouteLeakEventsResponseResultEvents(countries: $countries, detectedTs: $detectedTs, finished: $finished, id: $id, leakAsn: $leakAsn, leakCount: $leakCount, leakSeg: $leakSeg, leakType: $leakType, maxTs: $maxTs, minTs: $minTs, originCount: $originCount, peerCount: $peerCount, prefixCount: $prefixCount)'; } 
+          prefixCount == other.prefixCount;
+
+@override int get hashCode => Object.hash(Object.hashAll(countries), detectedTs, finished, id, leakAsn, leakCount, Object.hashAll(leakSeg), leakType, maxTs, minTs, originCount, peerCount, prefixCount);
+
+@override String toString() => 'RadarGetBgpRouteLeakEventsResponseResultEvents(countries: $countries, detectedTs: $detectedTs, finished: $finished, id: $id, leakAsn: $leakAsn, leakCount: $leakCount, leakSeg: $leakSeg, leakType: $leakType, maxTs: $maxTs, minTs: $minTs, originCount: $originCount, peerCount: $peerCount, prefixCount: $prefixCount)';
+
  }

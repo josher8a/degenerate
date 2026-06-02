@@ -34,12 +34,15 @@ Log copyWith({Creator? creator, List<LogEntries>? entries, List<Pages>? pages, S
   pages: pages ?? this.pages,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Log &&
           creator == other.creator &&
           listEquals(entries, other.entries) &&
           listEquals(pages, other.pages) &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(creator, Object.hashAll(entries), Object.hashAll(pages), version); } 
-@override String toString() { return 'Log(creator: $creator, entries: $entries, pages: $pages, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(creator, Object.hashAll(entries), Object.hashAll(pages), version);
+
+@override String toString() => 'Log(creator: $creator, entries: $entries, pages: $pages, version: $version)';
+
  }

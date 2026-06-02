@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('origi
 CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest copyWith({TlsCertificatesAndHostnamesOrigin? origin}) { return CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(
   origin: origin ?? this.origin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest &&
-          origin == other.origin; } 
-@override int get hashCode { return origin.hashCode; } 
-@override String toString() { return 'CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(origin: $origin)'; } 
+          origin == other.origin;
+
+@override int get hashCode => origin.hashCode;
+
+@override String toString() => 'CustomHostnameFallbackOriginForAZoneUpdateFallbackOriginForCustomHostnamesRequest(origin: $origin)';
+
  }

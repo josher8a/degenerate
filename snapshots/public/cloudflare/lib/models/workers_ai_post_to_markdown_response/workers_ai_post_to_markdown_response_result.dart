@@ -39,13 +39,16 @@ WorkersAiPostToMarkdownResponseResult copyWith({String? data, String? format, St
   name: name ?? this.name,
   tokens: tokens ?? this.tokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostToMarkdownResponseResult &&
           data == other.data &&
           format == other.format &&
           mimeType == other.mimeType &&
           name == other.name &&
-          tokens == other.tokens; } 
-@override int get hashCode { return Object.hash(data, format, mimeType, name, tokens); } 
-@override String toString() { return 'WorkersAiPostToMarkdownResponseResult(data: $data, format: $format, mimeType: $mimeType, name: $name, tokens: $tokens)'; } 
+          tokens == other.tokens;
+
+@override int get hashCode => Object.hash(data, format, mimeType, name, tokens);
+
+@override String toString() => 'WorkersAiPostToMarkdownResponseResult(data: $data, format: $format, mimeType: $mimeType, name: $name, tokens: $tokens)';
+
  }

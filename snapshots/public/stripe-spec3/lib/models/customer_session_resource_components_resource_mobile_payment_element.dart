@@ -23,10 +23,13 @@ CustomerSessionResourceComponentsResourceMobilePaymentElement copyWith({bool? en
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponentsResourceMobilePaymentElement &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceMobilePaymentElement(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'CustomerSessionResourceComponentsResourceMobilePaymentElement(enabled: $enabled, features: $features)';
+
  }

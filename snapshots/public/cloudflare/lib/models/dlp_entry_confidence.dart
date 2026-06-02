@@ -23,10 +23,13 @@ DlpEntryConfidence copyWith({bool? aiContextAvailable, bool? available, }) { ret
   aiContextAvailable: aiContextAvailable ?? this.aiContextAvailable,
   available: available ?? this.available,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEntryConfidence &&
           aiContextAvailable == other.aiContextAvailable &&
-          available == other.available; } 
-@override int get hashCode { return Object.hash(aiContextAvailable, available); } 
-@override String toString() { return 'DlpEntryConfidence(aiContextAvailable: $aiContextAvailable, available: $available)'; } 
+          available == other.available;
+
+@override int get hashCode => Object.hash(aiContextAvailable, available);
+
+@override String toString() => 'DlpEntryConfidence(aiContextAvailable: $aiContextAvailable, available: $available)';
+
  }

@@ -30,12 +30,15 @@ SecretScanningScanHistory copyWith({List<SecretScanningScan>? Function()? increm
   backfillScans: backfillScans != null ? backfillScans() : this.backfillScans,
   customPatternBackfillScans: customPatternBackfillScans != null ? customPatternBackfillScans() : this.customPatternBackfillScans,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningScanHistory &&
           listEquals(incrementalScans, other.incrementalScans) &&
           listEquals(patternUpdateScans, other.patternUpdateScans) &&
           listEquals(backfillScans, other.backfillScans) &&
-          listEquals(customPatternBackfillScans, other.customPatternBackfillScans); } 
-@override int get hashCode { return Object.hash(Object.hashAll(incrementalScans ?? const []), Object.hashAll(patternUpdateScans ?? const []), Object.hashAll(backfillScans ?? const []), Object.hashAll(customPatternBackfillScans ?? const [])); } 
-@override String toString() { return 'SecretScanningScanHistory(incrementalScans: $incrementalScans, patternUpdateScans: $patternUpdateScans, backfillScans: $backfillScans, customPatternBackfillScans: $customPatternBackfillScans)'; } 
+          listEquals(customPatternBackfillScans, other.customPatternBackfillScans);
+
+@override int get hashCode => Object.hash(Object.hashAll(incrementalScans ?? const []), Object.hashAll(patternUpdateScans ?? const []), Object.hashAll(backfillScans ?? const []), Object.hashAll(customPatternBackfillScans ?? const []));
+
+@override String toString() => 'SecretScanningScanHistory(incrementalScans: $incrementalScans, patternUpdateScans: $patternUpdateScans, backfillScans: $backfillScans, customPatternBackfillScans: $customPatternBackfillScans)';
+
  }

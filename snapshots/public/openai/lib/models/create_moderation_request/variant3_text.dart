@@ -26,10 +26,13 @@ Variant3Text copyWith({CustomTextFormatParamType? type, String? text, }) { retur
   type: type ?? this.type,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant3Text &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(type, text); } 
-@override String toString() { return 'Variant3Text(type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(type, text);
+
+@override String toString() => 'Variant3Text(type: $type, text: $text)';
+
  }

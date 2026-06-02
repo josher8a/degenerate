@@ -44,11 +44,14 @@ PaymentMethodDetailsSwish copyWith({String? Function()? fingerprint, String? Fun
   paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
   verifiedPhoneLast4: verifiedPhoneLast4 != null ? verifiedPhoneLast4() : this.verifiedPhoneLast4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsSwish &&
           fingerprint == other.fingerprint &&
           paymentReference == other.paymentReference &&
-          verifiedPhoneLast4 == other.verifiedPhoneLast4; } 
-@override int get hashCode { return Object.hash(fingerprint, paymentReference, verifiedPhoneLast4); } 
-@override String toString() { return 'PaymentMethodDetailsSwish(fingerprint: $fingerprint, paymentReference: $paymentReference, verifiedPhoneLast4: $verifiedPhoneLast4)'; } 
+          verifiedPhoneLast4 == other.verifiedPhoneLast4;
+
+@override int get hashCode => Object.hash(fingerprint, paymentReference, verifiedPhoneLast4);
+
+@override String toString() => 'PaymentMethodDetailsSwish(fingerprint: $fingerprint, paymentReference: $paymentReference, verifiedPhoneLast4: $verifiedPhoneLast4)';
+
  }

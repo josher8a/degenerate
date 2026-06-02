@@ -24,10 +24,13 @@ ActionsCacheList copyWith({int? totalCount, List<ActionsCaches>? actionsCaches, 
   totalCount: totalCount ?? this.totalCount,
   actionsCaches: actionsCaches ?? this.actionsCaches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCacheList &&
           totalCount == other.totalCount &&
-          listEquals(actionsCaches, other.actionsCaches); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(actionsCaches)); } 
-@override String toString() { return 'ActionsCacheList(totalCount: $totalCount, actionsCaches: $actionsCaches)'; } 
+          listEquals(actionsCaches, other.actionsCaches);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(actionsCaches));
+
+@override String toString() => 'ActionsCacheList(totalCount: $totalCount, actionsCaches: $actionsCaches)';
+
  }

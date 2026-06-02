@@ -109,7 +109,7 @@ AccessMcpProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allo
   tags: tags != null ? tags() : this.tags,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMcpProps &&
           allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -128,7 +128,10 @@ AccessMcpProps copyWith({AccessSchemasAllowAuthenticateViaWarp? Function()? allo
           scimConfig == other.scimConfig &&
           sessionDuration == other.sessionDuration &&
           listEquals(tags, other.tags) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(allowAuthenticateViaWarp, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), httpOnlyCookieAttribute, logoUrl, name, oauthConfiguration, optionsPreflightBypass, sameSiteCookieAttribute, scimConfig, sessionDuration, Object.hashAll(tags ?? const []), type); } 
-@override String toString() { return 'AccessMcpProps(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, sessionDuration: $sessionDuration, tags: $tags, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(allowAuthenticateViaWarp, Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), httpOnlyCookieAttribute, logoUrl, name, oauthConfiguration, optionsPreflightBypass, sameSiteCookieAttribute, scimConfig, sessionDuration, Object.hashAll(tags ?? const []), type);
+
+@override String toString() => 'AccessMcpProps(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, sessionDuration: $sessionDuration, tags: $tags, type: $type)';
+
  }

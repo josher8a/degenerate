@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostAccountsRequestSettingsInvoices copyWith({InvoicesHostedPaymentMethodSave? Function()? hostedPaymentMethodSave}) { return PostAccountsRequestSettingsInvoices(
   hostedPaymentMethodSave: hostedPaymentMethodSave != null ? hostedPaymentMethodSave() : this.hostedPaymentMethodSave,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsRequestSettingsInvoices &&
-          hostedPaymentMethodSave == other.hostedPaymentMethodSave; } 
-@override int get hashCode { return hostedPaymentMethodSave.hashCode; } 
-@override String toString() { return 'PostAccountsRequestSettingsInvoices(hostedPaymentMethodSave: $hostedPaymentMethodSave)'; } 
+          hostedPaymentMethodSave == other.hostedPaymentMethodSave;
+
+@override int get hashCode => hostedPaymentMethodSave.hashCode;
+
+@override String toString() => 'PostAccountsRequestSettingsInvoices(hostedPaymentMethodSave: $hostedPaymentMethodSave)';
+
  }

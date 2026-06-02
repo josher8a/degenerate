@@ -128,7 +128,7 @@ PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeploymen
   subdomain: subdomain != null ? subdomain() : this.subdomain,
   usesFunctions: usesFunctions != null ? usesFunctions() : this.usesFunctions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProject &&
           buildConfig == other.buildConfig &&
           canonicalDeployment == other.canonicalDeployment &&
@@ -145,7 +145,10 @@ PagesProject copyWith({PagesBuildConfig? Function()? buildConfig, PagesDeploymen
           productionScriptName == other.productionScriptName &&
           source == other.source &&
           subdomain == other.subdomain &&
-          usesFunctions == other.usesFunctions; } 
-@override int get hashCode { return Object.hash(buildConfig, canonicalDeployment, createdOn, deploymentConfigs, Object.hashAll(domains ?? const []), framework, frameworkVersion, id, latestDeployment, name, previewScriptName, productionBranch, productionScriptName, source, subdomain, usesFunctions); } 
-@override String toString() { return 'PagesProject(buildConfig: $buildConfig, canonicalDeployment: $canonicalDeployment, createdOn: $createdOn, deploymentConfigs: $deploymentConfigs, domains: $domains, framework: $framework, frameworkVersion: $frameworkVersion, id: $id, latestDeployment: $latestDeployment, name: $name, previewScriptName: $previewScriptName, productionBranch: $productionBranch, productionScriptName: $productionScriptName, source: $source, subdomain: $subdomain, usesFunctions: $usesFunctions)'; } 
+          usesFunctions == other.usesFunctions;
+
+@override int get hashCode => Object.hash(buildConfig, canonicalDeployment, createdOn, deploymentConfigs, Object.hashAll(domains ?? const []), framework, frameworkVersion, id, latestDeployment, name, previewScriptName, productionBranch, productionScriptName, source, subdomain, usesFunctions);
+
+@override String toString() => 'PagesProject(buildConfig: $buildConfig, canonicalDeployment: $canonicalDeployment, createdOn: $createdOn, deploymentConfigs: $deploymentConfigs, domains: $domains, framework: $framework, frameworkVersion: $frameworkVersion, id: $id, latestDeployment: $latestDeployment, name: $name, previewScriptName: $previewScriptName, productionBranch: $productionBranch, productionScriptName: $productionScriptName, source: $source, subdomain: $subdomain, usesFunctions: $usesFunctions)';
+
  }

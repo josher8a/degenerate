@@ -47,13 +47,16 @@ FunctionCallOutputItemParam copyWith({String? Function()? id, String? callId, St
   output: output ?? this.output,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionCallOutputItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           output == other.output &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, callId, type, output, status); } 
-@override String toString() { return 'FunctionCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, callId, type, output, status);
+
+@override String toString() => 'FunctionCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, status: $status)';
+
  }

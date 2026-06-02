@@ -46,12 +46,15 @@ PaymentMethodDetailsCardWalletMasterpass copyWith({Address? Function()? billingA
   name: name != null ? name() : this.name,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardWalletMasterpass &&
           billingAddress == other.billingAddress &&
           email == other.email &&
           name == other.name &&
-          shippingAddress == other.shippingAddress; } 
-@override int get hashCode { return Object.hash(billingAddress, email, name, shippingAddress); } 
-@override String toString() { return 'PaymentMethodDetailsCardWalletMasterpass(billingAddress: $billingAddress, email: $email, name: $name, shippingAddress: $shippingAddress)'; } 
+          shippingAddress == other.shippingAddress;
+
+@override int get hashCode => Object.hash(billingAddress, email, name, shippingAddress);
+
+@override String toString() => 'PaymentMethodDetailsCardWalletMasterpass(billingAddress: $billingAddress, email: $email, name: $name, shippingAddress: $shippingAddress)';
+
  }

@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesStageName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesStageName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesStageName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesStageName($value)';
+
  }
 /// State of the current stage.
 @immutable final class PagesStageStatus {const PagesStageStatus._(this.value);
@@ -63,10 +66,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesStageStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesStageStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesStageStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesStageStatus($value)';
+
  }
 /// The status of the deployment.
 @immutable final class PagesStage {const PagesStage({required this.endedOn, required this.name, required this.startedOn, required this.status, });
@@ -114,12 +120,15 @@ PagesStage copyWith({DateTime? Function()? endedOn, PagesStageName? name, DateTi
   startedOn: startedOn != null ? startedOn() : this.startedOn,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesStage &&
           endedOn == other.endedOn &&
           name == other.name &&
           startedOn == other.startedOn &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(endedOn, name, startedOn, status); } 
-@override String toString() { return 'PagesStage(endedOn: $endedOn, name: $name, startedOn: $startedOn, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(endedOn, name, startedOn, status);
+
+@override String toString() => 'PagesStage(endedOn: $endedOn, name: $name, startedOn: $startedOn, status: $status)';
+
  }

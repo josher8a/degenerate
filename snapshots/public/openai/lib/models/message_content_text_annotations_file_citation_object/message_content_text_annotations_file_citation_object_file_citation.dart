@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_
 MessageContentTextAnnotationsFileCitationObjectFileCitation copyWith({String? fileId}) { return MessageContentTextAnnotationsFileCitationObjectFileCitation(
   fileId: fileId ?? this.fileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageContentTextAnnotationsFileCitationObjectFileCitation &&
-          fileId == other.fileId; } 
-@override int get hashCode { return fileId.hashCode; } 
-@override String toString() { return 'MessageContentTextAnnotationsFileCitationObjectFileCitation(fileId: $fileId)'; } 
+          fileId == other.fileId;
+
+@override int get hashCode => fileId.hashCode;
+
+@override String toString() => 'MessageContentTextAnnotationsFileCitationObjectFileCitation(fileId: $fileId)';
+
  }

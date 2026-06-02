@@ -28,11 +28,14 @@ ReposCreateForkRequest copyWith({String? Function()? organization, String? Funct
   name: name != null ? name() : this.name,
   defaultBranchOnly: defaultBranchOnly != null ? defaultBranchOnly() : this.defaultBranchOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateForkRequest &&
           organization == other.organization &&
           name == other.name &&
-          defaultBranchOnly == other.defaultBranchOnly; } 
-@override int get hashCode { return Object.hash(organization, name, defaultBranchOnly); } 
-@override String toString() { return 'ReposCreateForkRequest(organization: $organization, name: $name, defaultBranchOnly: $defaultBranchOnly)'; } 
+          defaultBranchOnly == other.defaultBranchOnly;
+
+@override int get hashCode => Object.hash(organization, name, defaultBranchOnly);
+
+@override String toString() => 'ReposCreateForkRequest(organization: $organization, name: $name, defaultBranchOnly: $defaultBranchOnly)';
+
  }

@@ -27,10 +27,13 @@ TeamsDevicesSentineloneS2sConfigRequest copyWith({String? apiUrl, String? client
   apiUrl: apiUrl ?? this.apiUrl,
   clientSecret: clientSecret ?? this.clientSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesSentineloneS2sConfigRequest &&
           apiUrl == other.apiUrl &&
-          clientSecret == other.clientSecret; } 
-@override int get hashCode { return Object.hash(apiUrl, clientSecret); } 
-@override String toString() { return 'TeamsDevicesSentineloneS2sConfigRequest(apiUrl: $apiUrl, clientSecret: $clientSecret)'; } 
+          clientSecret == other.clientSecret;
+
+@override int get hashCode => Object.hash(apiUrl, clientSecret);
+
+@override String toString() => 'TeamsDevicesSentineloneS2sConfigRequest(apiUrl: $apiUrl, clientSecret: $clientSecret)';
+
  }

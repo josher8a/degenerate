@@ -23,10 +23,13 @@ NodeSelectorTerm copyWith({List<NodeSelectorRequirement>? Function()? matchExpre
   matchExpressions: matchExpressions != null ? matchExpressions() : this.matchExpressions,
   matchFields: matchFields != null ? matchFields() : this.matchFields,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeSelectorTerm &&
           listEquals(matchExpressions, other.matchExpressions) &&
-          listEquals(matchFields, other.matchFields); } 
-@override int get hashCode { return Object.hash(Object.hashAll(matchExpressions ?? const []), Object.hashAll(matchFields ?? const [])); } 
-@override String toString() { return 'NodeSelectorTerm(matchExpressions: $matchExpressions, matchFields: $matchFields)'; } 
+          listEquals(matchFields, other.matchFields);
+
+@override int get hashCode => Object.hash(Object.hashAll(matchExpressions ?? const []), Object.hashAll(matchFields ?? const []));
+
+@override String toString() => 'NodeSelectorTerm(matchExpressions: $matchExpressions, matchFields: $matchFields)';
+
  }

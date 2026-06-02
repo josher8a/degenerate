@@ -56,7 +56,7 @@ PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostInvoicesInvo
   metadata: metadata != null ? metadata() : this.metadata,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestInvoiceCreationInvoiceData &&
           accountTaxIds == other.accountTaxIds &&
           customFields == other.customFields &&
@@ -64,7 +64,10 @@ PostCheckoutSessionsRequestInvoiceCreationInvoiceData copyWith({PostInvoicesInvo
           footer == other.footer &&
           issuer == other.issuer &&
           metadata == other.metadata &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(accountTaxIds, customFields, description, footer, issuer, metadata, renderingOptions); } 
-@override String toString() { return 'PostCheckoutSessionsRequestInvoiceCreationInvoiceData(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)'; } 
+          renderingOptions == other.renderingOptions;
+
+@override int get hashCode => Object.hash(accountTaxIds, customFields, description, footer, issuer, metadata, renderingOptions);
+
+@override String toString() => 'PostCheckoutSessionsRequestInvoiceCreationInvoiceData(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)';
+
  }

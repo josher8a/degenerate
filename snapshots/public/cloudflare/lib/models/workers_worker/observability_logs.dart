@@ -31,11 +31,14 @@ ObservabilityLogs copyWith({bool Function()? enabled, double Function()? headSam
   headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
   invocationLogs: invocationLogs != null ? invocationLogs() : this.invocationLogs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservabilityLogs &&
           enabled == other.enabled &&
           headSamplingRate == other.headSamplingRate &&
-          invocationLogs == other.invocationLogs; } 
-@override int get hashCode { return Object.hash(enabled, headSamplingRate, invocationLogs); } 
-@override String toString() { return 'ObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)'; } 
+          invocationLogs == other.invocationLogs;
+
+@override int get hashCode => Object.hash(enabled, headSamplingRate, invocationLogs);
+
+@override String toString() => 'ObservabilityLogs(enabled: $enabled, headSamplingRate: $headSamplingRate, invocationLogs: $invocationLogs)';
+
  }

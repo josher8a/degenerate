@@ -42,11 +42,14 @@ RadarGetHttpSummaryByHttpVersionResponseResultSummary0 copyWith({String? http1X,
   http2: http2 ?? this.http2,
   http3: http3 ?? this.http3,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByHttpVersionResponseResultSummary0 &&
           http1X == other.http1X &&
           http2 == other.http2 &&
-          http3 == other.http3; } 
-@override int get hashCode { return Object.hash(http1X, http2, http3); } 
-@override String toString() { return 'RadarGetHttpSummaryByHttpVersionResponseResultSummary0(http1X: $http1X, http2: $http2, http3: $http3)'; } 
+          http3 == other.http3;
+
+@override int get hashCode => Object.hash(http1X, http2, http3);
+
+@override String toString() => 'RadarGetHttpSummaryByHttpVersionResponseResultSummary0(http1X: $http1X, http2: $http2, http3: $http3)';
+
  }

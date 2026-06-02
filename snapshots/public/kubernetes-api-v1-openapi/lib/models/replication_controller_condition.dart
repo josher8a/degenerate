@@ -42,13 +42,16 @@ ReplicationControllerCondition copyWith({Time? Function()? lastTransitionTime, S
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationControllerCondition &&
           lastTransitionTime == other.lastTransitionTime &&
           message == other.message &&
           reason == other.reason &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(lastTransitionTime, message, reason, status, type); } 
-@override String toString() { return 'ReplicationControllerCondition(lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(lastTransitionTime, message, reason, status, type);
+
+@override String toString() => 'ReplicationControllerCondition(lastTransitionTime: $lastTransitionTime, message: $message, reason: $reason, status: $status, type: $type)';
+
  }

@@ -20,10 +20,13 @@ CustomerSheet copyWith({bool? enabled, CustomerSheetFeatures? Function()? featur
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSheet &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'CustomerSheet(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'CustomerSheet(enabled: $enabled, features: $features)';
+
  }

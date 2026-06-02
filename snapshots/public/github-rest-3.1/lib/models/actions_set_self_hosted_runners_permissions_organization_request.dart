@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 ActionsSetSelfHostedRunnersPermissionsOrganizationRequest copyWith({EnabledRepositories? enabledRepositories}) { return ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(
   enabledRepositories: enabledRepositories ?? this.enabledRepositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetSelfHostedRunnersPermissionsOrganizationRequest &&
-          enabledRepositories == other.enabledRepositories; } 
-@override int get hashCode { return enabledRepositories.hashCode; } 
-@override String toString() { return 'ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(enabledRepositories: $enabledRepositories)'; } 
+          enabledRepositories == other.enabledRepositories;
+
+@override int get hashCode => enabledRepositories.hashCode;
+
+@override String toString() => 'ActionsSetSelfHostedRunnersPermissionsOrganizationRequest(enabledRepositories: $enabledRepositories)';
+
  }

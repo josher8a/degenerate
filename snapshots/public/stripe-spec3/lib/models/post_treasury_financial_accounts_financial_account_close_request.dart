@@ -22,10 +22,13 @@ PostTreasuryFinancialAccountsFinancialAccountCloseRequest copyWith({List<String>
   expand: expand != null ? expand() : this.expand,
   forwardingSettings: forwardingSettings != null ? forwardingSettings() : this.forwardingSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryFinancialAccountsFinancialAccountCloseRequest &&
           listEquals(expand, other.expand) &&
-          forwardingSettings == other.forwardingSettings; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), forwardingSettings); } 
-@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountCloseRequest(expand: $expand, forwardingSettings: $forwardingSettings)'; } 
+          forwardingSettings == other.forwardingSettings;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), forwardingSettings);
+
+@override String toString() => 'PostTreasuryFinancialAccountsFinancialAccountCloseRequest(expand: $expand, forwardingSettings: $forwardingSettings)';
+
  }

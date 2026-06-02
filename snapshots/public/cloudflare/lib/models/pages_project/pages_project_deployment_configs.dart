@@ -24,10 +24,13 @@ PagesProjectDeploymentConfigs copyWith({PagesDeploymentConfigValues? preview, Pa
   preview: preview ?? this.preview,
   production: production ?? this.production,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProjectDeploymentConfigs &&
           preview == other.preview &&
-          production == other.production; } 
-@override int get hashCode { return Object.hash(preview, production); } 
-@override String toString() { return 'PagesProjectDeploymentConfigs(preview: $preview, production: $production)'; } 
+          production == other.production;
+
+@override int get hashCode => Object.hash(preview, production);
+
+@override String toString() => 'PagesProjectDeploymentConfigs(preview: $preview, production: $production)';
+
  }

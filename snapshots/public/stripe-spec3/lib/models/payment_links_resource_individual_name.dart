@@ -24,10 +24,13 @@ PaymentLinksResourceIndividualName copyWith({bool? enabled, bool? optional, }) {
   enabled: enabled ?? this.enabled,
   optional: optional ?? this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceIndividualName &&
           enabled == other.enabled &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(enabled, optional); } 
-@override String toString() { return 'PaymentLinksResourceIndividualName(enabled: $enabled, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(enabled, optional);
+
+@override String toString() => 'PaymentLinksResourceIndividualName(enabled: $enabled, optional: $optional)';
+
  }

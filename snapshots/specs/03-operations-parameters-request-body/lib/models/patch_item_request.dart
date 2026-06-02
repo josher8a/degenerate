@@ -20,10 +20,13 @@ PatchItemRequest copyWith({String? Function()? name, String? Function()? photo, 
   name: name != null ? name() : this.name,
   photo: photo != null ? photo() : this.photo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchItemRequest &&
           name == other.name &&
-          photo == other.photo; } 
-@override int get hashCode { return Object.hash(name, photo); } 
-@override String toString() { return 'PatchItemRequest(name: $name, photo: $photo)'; } 
+          photo == other.photo;
+
+@override int get hashCode => Object.hash(name, photo);
+
+@override String toString() => 'PatchItemRequest(name: $name, photo: $photo)';
+
  }

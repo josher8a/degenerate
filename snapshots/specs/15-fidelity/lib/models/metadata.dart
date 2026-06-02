@@ -20,10 +20,13 @@ Metadata copyWith({String? Function()? name, Map<String, String>? additionalProp
   name: name != null ? name() : this.name,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Metadata &&
           name == other.name &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'Metadata(name: $name, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'Metadata(name: $name, additionalProperties: $additionalProperties)';
+
  }

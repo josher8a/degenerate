@@ -42,13 +42,16 @@ ImageGenUsage copyWith({int? inputTokens, int? totalTokens, int? outputTokens, I
   outputTokensDetails: outputTokensDetails != null ? outputTokensDetails() : this.outputTokensDetails,
   inputTokensDetails: inputTokensDetails ?? this.inputTokensDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenUsage &&
           inputTokens == other.inputTokens &&
           totalTokens == other.totalTokens &&
           outputTokens == other.outputTokens &&
           outputTokensDetails == other.outputTokensDetails &&
-          inputTokensDetails == other.inputTokensDetails; } 
-@override int get hashCode { return Object.hash(inputTokens, totalTokens, outputTokens, outputTokensDetails, inputTokensDetails); } 
-@override String toString() { return 'ImageGenUsage(inputTokens: $inputTokens, totalTokens: $totalTokens, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, inputTokensDetails: $inputTokensDetails)'; } 
+          inputTokensDetails == other.inputTokensDetails;
+
+@override int get hashCode => Object.hash(inputTokens, totalTokens, outputTokens, outputTokensDetails, inputTokensDetails);
+
+@override String toString() => 'ImageGenUsage(inputTokens: $inputTokens, totalTokens: $totalTokens, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, inputTokensDetails: $inputTokensDetails)';
+
  }

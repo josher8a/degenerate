@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementSbfmLikelyAutomated && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementSbfmLikelyAutomated($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementSbfmLikelyAutomated && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BotManagementSbfmLikelyAutomated($value)';
+
  }
 @immutable final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });
 
@@ -72,14 +75,17 @@ BotManagementSbfmLikelyConfig copyWith({BotManagementOptimizeWordpress? Function
   sbfmVerifiedBots: sbfmVerifiedBots != null ? sbfmVerifiedBots() : this.sbfmVerifiedBots,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementSbfmLikelyConfig &&
           optimizeWordpress == other.optimizeWordpress &&
           sbfmDefinitelyAutomated == other.sbfmDefinitelyAutomated &&
           sbfmLikelyAutomated == other.sbfmLikelyAutomated &&
           sbfmStaticResourceProtection == other.sbfmStaticResourceProtection &&
           sbfmVerifiedBots == other.sbfmVerifiedBots &&
-          staleZoneConfiguration == other.staleZoneConfiguration; } 
-@override int get hashCode { return Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmLikelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, staleZoneConfiguration); } 
-@override String toString() { return 'BotManagementSbfmLikelyConfig(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmLikelyAutomated: $sbfmLikelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, staleZoneConfiguration: $staleZoneConfiguration)'; } 
+          staleZoneConfiguration == other.staleZoneConfiguration;
+
+@override int get hashCode => Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmLikelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, staleZoneConfiguration);
+
+@override String toString() => 'BotManagementSbfmLikelyConfig(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmLikelyAutomated: $sbfmLikelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, staleZoneConfiguration: $staleZoneConfiguration)';
+
  }

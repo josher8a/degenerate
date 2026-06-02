@@ -27,10 +27,13 @@ ClientKeyParamCustomerAcceptanceOnline copyWith({String? Function()? ipAddress, 
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientKeyParamCustomerAcceptanceOnline &&
           ipAddress == other.ipAddress &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(ipAddress, userAgent); } 
-@override String toString() { return 'ClientKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(ipAddress, userAgent);
+
+@override String toString() => 'ClientKeyParamCustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)';
+
  }

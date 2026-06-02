@@ -106,7 +106,7 @@ WebhooksTeam1 copyWith({bool? Function()? deleted, String? Function()? descripti
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksTeam1 &&
           deleted == other.deleted &&
           description == other.description &&
@@ -124,7 +124,10 @@ WebhooksTeam1 copyWith({bool? Function()? deleted, String? Function()? descripti
           url == other.url &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId); } 
-@override String toString() { return 'WebhooksTeam1(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
+          enterpriseId == other.enterpriseId;
+
+@override int get hashCode => Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId);
+
+@override String toString() => 'WebhooksTeam1(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+
  }

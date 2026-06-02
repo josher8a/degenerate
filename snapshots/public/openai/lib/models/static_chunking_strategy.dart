@@ -31,10 +31,13 @@ StaticChunkingStrategy copyWith({int? maxChunkSizeTokens, int? chunkOverlapToken
   maxChunkSizeTokens: maxChunkSizeTokens ?? this.maxChunkSizeTokens,
   chunkOverlapTokens: chunkOverlapTokens ?? this.chunkOverlapTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StaticChunkingStrategy &&
           maxChunkSizeTokens == other.maxChunkSizeTokens &&
-          chunkOverlapTokens == other.chunkOverlapTokens; } 
-@override int get hashCode { return Object.hash(maxChunkSizeTokens, chunkOverlapTokens); } 
-@override String toString() { return 'StaticChunkingStrategy(maxChunkSizeTokens: $maxChunkSizeTokens, chunkOverlapTokens: $chunkOverlapTokens)'; } 
+          chunkOverlapTokens == other.chunkOverlapTokens;
+
+@override int get hashCode => Object.hash(maxChunkSizeTokens, chunkOverlapTokens);
+
+@override String toString() => 'StaticChunkingStrategy(maxChunkSizeTokens: $maxChunkSizeTokens, chunkOverlapTokens: $chunkOverlapTokens)';
+
  }

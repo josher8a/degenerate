@@ -127,7 +127,7 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? create
   suspended: suspended != null ? suspended() : this.suspended,
   totalActiveUsers: totalActiveUsers != null ? totalActiveUsers() : this.totalActiveUsers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomEventDetailsResult &&
           createdOn == other.createdOn &&
           customPageHtml == other.customPageHtml &&
@@ -144,7 +144,10 @@ WaitingroomEventDetailsResult copyWith({WaitingroomTimestamp? Function()? create
           sessionDuration == other.sessionDuration &&
           shuffleAtEventStart == other.shuffleAtEventStart &&
           suspended == other.suspended &&
-          totalActiveUsers == other.totalActiveUsers; } 
-@override int get hashCode { return Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers); } 
-@override String toString() { return 'WaitingroomEventDetailsResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers)'; } 
+          totalActiveUsers == other.totalActiveUsers;
+
+@override int get hashCode => Object.hash(createdOn, customPageHtml, description, disableSessionRenewal, eventEndTime, eventStartTime, id, modifiedOn, name, newUsersPerMinute, prequeueStartTime, queueingMethod, sessionDuration, shuffleAtEventStart, suspended, totalActiveUsers);
+
+@override String toString() => 'WaitingroomEventDetailsResult(createdOn: $createdOn, customPageHtml: $customPageHtml, description: $description, disableSessionRenewal: $disableSessionRenewal, eventEndTime: $eventEndTime, eventStartTime: $eventStartTime, id: $id, modifiedOn: $modifiedOn, name: $name, newUsersPerMinute: $newUsersPerMinute, prequeueStartTime: $prequeueStartTime, queueingMethod: $queueingMethod, sessionDuration: $sessionDuration, shuffleAtEventStart: $shuffleAtEventStart, suspended: $suspended, totalActiveUsers: $totalActiveUsers)';
+
  }

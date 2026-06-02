@@ -21,10 +21,13 @@ Serie0Variant4 copyWith({List<String>? certificate, List<String>? precertificate
   certificate: certificate ?? this.certificate,
   precertificate: precertificate ?? this.precertificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant4 &&
           listEquals(certificate, other.certificate) &&
-          listEquals(precertificate, other.precertificate); } 
-@override int get hashCode { return Object.hash(Object.hashAll(certificate), Object.hashAll(precertificate)); } 
-@override String toString() { return 'Serie0Variant4(certificate: $certificate, precertificate: $precertificate)'; } 
+          listEquals(precertificate, other.precertificate);
+
+@override int get hashCode => Object.hash(Object.hashAll(certificate), Object.hashAll(precertificate));
+
+@override String toString() => 'Serie0Variant4(certificate: $certificate, precertificate: $precertificate)';
+
  }

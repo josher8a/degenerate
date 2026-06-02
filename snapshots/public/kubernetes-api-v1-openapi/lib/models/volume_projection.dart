@@ -65,14 +65,17 @@ VolumeProjection copyWith({ClusterTrustBundleProjection? Function()? clusterTrus
   secret: secret != null ? secret() : this.secret,
   serviceAccountToken: serviceAccountToken != null ? serviceAccountToken() : this.serviceAccountToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeProjection &&
           clusterTrustBundle == other.clusterTrustBundle &&
           configMap == other.configMap &&
           downwardApi == other.downwardApi &&
           podCertificate == other.podCertificate &&
           secret == other.secret &&
-          serviceAccountToken == other.serviceAccountToken; } 
-@override int get hashCode { return Object.hash(clusterTrustBundle, configMap, downwardApi, podCertificate, secret, serviceAccountToken); } 
-@override String toString() { return 'VolumeProjection(clusterTrustBundle: $clusterTrustBundle, configMap: $configMap, downwardApi: $downwardApi, podCertificate: $podCertificate, secret: $secret, serviceAccountToken: $serviceAccountToken)'; } 
+          serviceAccountToken == other.serviceAccountToken;
+
+@override int get hashCode => Object.hash(clusterTrustBundle, configMap, downwardApi, podCertificate, secret, serviceAccountToken);
+
+@override String toString() => 'VolumeProjection(clusterTrustBundle: $clusterTrustBundle, configMap: $configMap, downwardApi: $downwardApi, podCertificate: $podCertificate, secret: $secret, serviceAccountToken: $serviceAccountToken)';
+
  }

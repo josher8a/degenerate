@@ -25,11 +25,14 @@ PaymentDisputesFeatures copyWith({bool? Function()? destinationOnBehalfOfChargeM
   disputeManagement: disputeManagement != null ? disputeManagement() : this.disputeManagement,
   refundManagement: refundManagement != null ? refundManagement() : this.refundManagement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentDisputesFeatures &&
           destinationOnBehalfOfChargeManagement == other.destinationOnBehalfOfChargeManagement &&
           disputeManagement == other.disputeManagement &&
-          refundManagement == other.refundManagement; } 
-@override int get hashCode { return Object.hash(destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement); } 
-@override String toString() { return 'PaymentDisputesFeatures(destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)'; } 
+          refundManagement == other.refundManagement;
+
+@override int get hashCode => Object.hash(destinationOnBehalfOfChargeManagement, disputeManagement, refundManagement);
+
+@override String toString() => 'PaymentDisputesFeatures(destinationOnBehalfOfChargeManagement: $destinationOnBehalfOfChargeManagement, disputeManagement: $disputeManagement, refundManagement: $refundManagement)';
+
  }

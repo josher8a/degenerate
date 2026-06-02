@@ -54,7 +54,7 @@ WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Ma
   sender: sender ?? this.sender,
   workflow: workflow ?? this.workflow,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowDispatch &&
           enterprise == other.enterprise &&
           inputs == other.inputs &&
@@ -63,7 +63,10 @@ WebhookWorkflowDispatch copyWith({EnterpriseWebhooks? Function()? enterprise, Ma
           ref == other.ref &&
           repository == other.repository &&
           sender == other.sender &&
-          workflow == other.workflow; } 
-@override int get hashCode { return Object.hash(enterprise, inputs, installation, organization, ref, repository, sender, workflow); } 
-@override String toString() { return 'WebhookWorkflowDispatch(enterprise: $enterprise, inputs: $inputs, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender, workflow: $workflow)'; } 
+          workflow == other.workflow;
+
+@override int get hashCode => Object.hash(enterprise, inputs, installation, organization, ref, repository, sender, workflow);
+
+@override String toString() => 'WebhookWorkflowDispatch(enterprise: $enterprise, inputs: $inputs, installation: $installation, organization: $organization, ref: $ref, repository: $repository, sender: $sender, workflow: $workflow)';
+
  }

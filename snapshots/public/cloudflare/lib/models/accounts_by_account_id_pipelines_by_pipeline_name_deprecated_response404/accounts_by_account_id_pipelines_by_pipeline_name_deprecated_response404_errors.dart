@@ -23,10 +23,13 @@ AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors copyWith({
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedResponse404Errors(code: $code, message: $message)';
+
  }

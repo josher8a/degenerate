@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IntelAsnType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IntelAsnType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IntelAsnType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IntelAsnType($value)';
+
  }
 @immutable final class IntelSchemasAsn {const IntelSchemasAsn({this.asn, this.country, this.description, this.domainCount, this.topDomains, this.type, });
 
@@ -82,14 +85,17 @@ IntelSchemasAsn copyWith({IntelAsn? Function()? asn, IntelAsnCountry? Function()
   topDomains: topDomains != null ? topDomains() : this.topDomains,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelSchemasAsn &&
           asn == other.asn &&
           country == other.country &&
           description == other.description &&
           domainCount == other.domainCount &&
           listEquals(topDomains, other.topDomains) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(asn, country, description, domainCount, Object.hashAll(topDomains ?? const []), type); } 
-@override String toString() { return 'IntelSchemasAsn(asn: $asn, country: $country, description: $description, domainCount: $domainCount, topDomains: $topDomains, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(asn, country, description, domainCount, Object.hashAll(topDomains ?? const []), type);
+
+@override String toString() => 'IntelSchemasAsn(asn: $asn, country: $country, description: $description, domainCount: $domainCount, topDomains: $topDomains, type: $type)';
+
  }

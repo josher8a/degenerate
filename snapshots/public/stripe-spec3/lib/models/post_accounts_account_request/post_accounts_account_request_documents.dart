@@ -56,7 +56,7 @@ PostAccountsAccountRequestDocuments copyWith({BankAccountOwnershipVerification? 
   proofOfRegistration: proofOfRegistration != null ? proofOfRegistration() : this.proofOfRegistration,
   proofOfUltimateBeneficialOwnership: proofOfUltimateBeneficialOwnership != null ? proofOfUltimateBeneficialOwnership() : this.proofOfUltimateBeneficialOwnership,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestDocuments &&
           bankAccountOwnershipVerification == other.bankAccountOwnershipVerification &&
           companyLicense == other.companyLicense &&
@@ -66,7 +66,10 @@ PostAccountsAccountRequestDocuments copyWith({BankAccountOwnershipVerification? 
           companyTaxIdVerification == other.companyTaxIdVerification &&
           proofOfAddress == other.proofOfAddress &&
           proofOfRegistration == other.proofOfRegistration &&
-          proofOfUltimateBeneficialOwnership == other.proofOfUltimateBeneficialOwnership; } 
-@override int get hashCode { return Object.hash(bankAccountOwnershipVerification, companyLicense, companyMemorandumOfAssociation, companyMinisterialDecree, companyRegistrationVerification, companyTaxIdVerification, proofOfAddress, proofOfRegistration, proofOfUltimateBeneficialOwnership); } 
-@override String toString() { return 'PostAccountsAccountRequestDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification, companyLicense: $companyLicense, companyMemorandumOfAssociation: $companyMemorandumOfAssociation, companyMinisterialDecree: $companyMinisterialDecree, companyRegistrationVerification: $companyRegistrationVerification, companyTaxIdVerification: $companyTaxIdVerification, proofOfAddress: $proofOfAddress, proofOfRegistration: $proofOfRegistration, proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership)'; } 
+          proofOfUltimateBeneficialOwnership == other.proofOfUltimateBeneficialOwnership;
+
+@override int get hashCode => Object.hash(bankAccountOwnershipVerification, companyLicense, companyMemorandumOfAssociation, companyMinisterialDecree, companyRegistrationVerification, companyTaxIdVerification, proofOfAddress, proofOfRegistration, proofOfUltimateBeneficialOwnership);
+
+@override String toString() => 'PostAccountsAccountRequestDocuments(bankAccountOwnershipVerification: $bankAccountOwnershipVerification, companyLicense: $companyLicense, companyMemorandumOfAssociation: $companyMemorandumOfAssociation, companyMinisterialDecree: $companyMinisterialDecree, companyRegistrationVerification: $companyRegistrationVerification, companyTaxIdVerification: $companyTaxIdVerification, proofOfAddress: $proofOfAddress, proofOfRegistration: $proofOfRegistration, proofOfUltimateBeneficialOwnership: $proofOfUltimateBeneficialOwnership)';
+
  }

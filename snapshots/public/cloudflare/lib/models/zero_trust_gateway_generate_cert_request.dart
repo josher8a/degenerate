@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewayGenerateCertRequest copyWith({int? Function()? validityPeriodDays}) { return ZeroTrustGatewayGenerateCertRequest(
   validityPeriodDays: validityPeriodDays != null ? validityPeriodDays() : this.validityPeriodDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGenerateCertRequest &&
-          validityPeriodDays == other.validityPeriodDays; } 
-@override int get hashCode { return validityPeriodDays.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayGenerateCertRequest(validityPeriodDays: $validityPeriodDays)'; } 
+          validityPeriodDays == other.validityPeriodDays;
+
+@override int get hashCode => validityPeriodDays.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayGenerateCertRequest(validityPeriodDays: $validityPeriodDays)';
+
  }

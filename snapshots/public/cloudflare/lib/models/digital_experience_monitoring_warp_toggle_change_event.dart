@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Toggle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Toggle($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Toggle && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Toggle($value)';
+
  }
 @immutable final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });
 
@@ -89,7 +92,7 @@ DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String? Function()? a
   toggle: toggle != null ? toggle() : this.toggle,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringWarpToggleChangeEvent &&
           accountName == other.accountName &&
           accountTag == other.accountTag &&
@@ -99,7 +102,10 @@ DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String? Function()? a
           serialNumber == other.serialNumber &&
           timestamp == other.timestamp &&
           toggle == other.toggle &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(accountName, accountTag, deviceId, deviceRegistration, hostname, serialNumber, timestamp, toggle, userEmail); } 
-@override String toString() { return 'DigitalExperienceMonitoringWarpToggleChangeEvent(accountName: $accountName, accountTag: $accountTag, deviceId: $deviceId, deviceRegistration: $deviceRegistration, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, toggle: $toggle, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(accountName, accountTag, deviceId, deviceRegistration, hostname, serialNumber, timestamp, toggle, userEmail);
+
+@override String toString() => 'DigitalExperienceMonitoringWarpToggleChangeEvent(accountName: $accountName, accountTag: $accountTag, deviceId: $deviceId, deviceRegistration: $deviceRegistration, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, toggle: $toggle, userEmail: $userEmail)';
+
  }

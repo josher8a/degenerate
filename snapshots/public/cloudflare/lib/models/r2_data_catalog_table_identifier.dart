@@ -33,10 +33,13 @@ R2DataCatalogTableIdentifier copyWith({String? name, List<String>? namespace, })
   name: name ?? this.name,
   namespace: namespace ?? this.namespace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableIdentifier &&
           name == other.name &&
-          listEquals(namespace, other.namespace); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(namespace)); } 
-@override String toString() { return 'R2DataCatalogTableIdentifier(name: $name, namespace: $namespace)'; } 
+          listEquals(namespace, other.namespace);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(namespace));
+
+@override String toString() => 'R2DataCatalogTableIdentifier(name: $name, namespace: $namespace)';
+
  }

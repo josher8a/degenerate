@@ -66,7 +66,7 @@ DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? cr
   tenantUrl: tenantUrl ?? this.tenantUrl,
   wellKnownUrl: wellKnownUrl ?? this.wellKnownUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskScoreIntegration &&
           accountTag == other.accountTag &&
           active == other.active &&
@@ -75,7 +75,10 @@ DlpRiskScoreIntegration copyWith({String? accountTag, bool? active, DateTime? cr
           integrationType == other.integrationType &&
           referenceId == other.referenceId &&
           tenantUrl == other.tenantUrl &&
-          wellKnownUrl == other.wellKnownUrl; } 
-@override int get hashCode { return Object.hash(accountTag, active, createdAt, id, integrationType, referenceId, tenantUrl, wellKnownUrl); } 
-@override String toString() { return 'DlpRiskScoreIntegration(accountTag: $accountTag, active: $active, createdAt: $createdAt, id: $id, integrationType: $integrationType, referenceId: $referenceId, tenantUrl: $tenantUrl, wellKnownUrl: $wellKnownUrl)'; } 
+          wellKnownUrl == other.wellKnownUrl;
+
+@override int get hashCode => Object.hash(accountTag, active, createdAt, id, integrationType, referenceId, tenantUrl, wellKnownUrl);
+
+@override String toString() => 'DlpRiskScoreIntegration(accountTag: $accountTag, active: $active, createdAt: $createdAt, id: $id, integrationType: $integrationType, referenceId: $referenceId, tenantUrl: $tenantUrl, wellKnownUrl: $wellKnownUrl)';
+
  }

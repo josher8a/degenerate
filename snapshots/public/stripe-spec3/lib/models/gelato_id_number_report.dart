@@ -68,7 +68,7 @@ GelatoIdNumberReport copyWith({GelatoDataIdNumberReportDate? Function()? dob, Ge
   lastName: lastName != null ? lastName() : this.lastName,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoIdNumberReport &&
           dob == other.dob &&
           error == other.error &&
@@ -76,7 +76,10 @@ GelatoIdNumberReport copyWith({GelatoDataIdNumberReportDate? Function()? dob, Ge
           idNumber == other.idNumber &&
           idNumberType == other.idNumberType &&
           lastName == other.lastName &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(dob, error, firstName, idNumber, idNumberType, lastName, status); } 
-@override String toString() { return 'GelatoIdNumberReport(dob: $dob, error: $error, firstName: $firstName, idNumber: $idNumber, idNumberType: $idNumberType, lastName: $lastName, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(dob, error, firstName, idNumber, idNumberType, lastName, status);
+
+@override String toString() => 'GelatoIdNumberReport(dob: $dob, error: $error, firstName: $firstName, idNumber: $idNumber, idNumberType: $idNumberType, lastName: $lastName, status: $status)';
+
  }

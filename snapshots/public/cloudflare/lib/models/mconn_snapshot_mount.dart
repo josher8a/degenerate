@@ -68,7 +68,7 @@ MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Functio
   name: name ?? this.name,
   totalBytes: totalBytes != null ? totalBytes() : this.totalBytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotMount &&
           availableBytes == other.availableBytes &&
           connectorId == other.connectorId &&
@@ -78,7 +78,10 @@ MconnSnapshotMount copyWith({double? Function()? availableBytes, String? Functio
           kind == other.kind &&
           mountPoint == other.mountPoint &&
           name == other.name &&
-          totalBytes == other.totalBytes; } 
-@override int get hashCode { return Object.hash(availableBytes, connectorId, fileSystem, isReadOnly, isRemovable, kind, mountPoint, name, totalBytes); } 
-@override String toString() { return 'MconnSnapshotMount(availableBytes: $availableBytes, connectorId: $connectorId, fileSystem: $fileSystem, isReadOnly: $isReadOnly, isRemovable: $isRemovable, kind: $kind, mountPoint: $mountPoint, name: $name, totalBytes: $totalBytes)'; } 
+          totalBytes == other.totalBytes;
+
+@override int get hashCode => Object.hash(availableBytes, connectorId, fileSystem, isReadOnly, isRemovable, kind, mountPoint, name, totalBytes);
+
+@override String toString() => 'MconnSnapshotMount(availableBytes: $availableBytes, connectorId: $connectorId, fileSystem: $fileSystem, isReadOnly: $isReadOnly, isRemovable: $isRemovable, kind: $kind, mountPoint: $mountPoint, name: $name, totalBytes: $totalBytes)';
+
  }

@@ -36,13 +36,16 @@ PostTerminalReadersReaderCollectInputsRequestInputs copyWith({InputsCustomText? 
   toggles: toggles != null ? toggles() : this.toggles,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderCollectInputsRequestInputs &&
           customText == other.customText &&
           $required == other.$required &&
           selection == other.selection &&
           listEquals(toggles, other.toggles) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(customText, $required, selection, Object.hashAll(toggles ?? const []), type); } 
-@override String toString() { return 'PostTerminalReadersReaderCollectInputsRequestInputs(customText: $customText, \$required: ${$required}, selection: $selection, toggles: $toggles, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(customText, $required, selection, Object.hashAll(toggles ?? const []), type);
+
+@override String toString() => 'PostTerminalReadersReaderCollectInputsRequestInputs(customText: $customText, \$required: ${$required}, selection: $selection, toggles: $toggles, type: $type)';
+
  }

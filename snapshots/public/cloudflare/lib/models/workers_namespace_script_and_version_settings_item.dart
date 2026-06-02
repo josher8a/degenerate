@@ -80,7 +80,7 @@ WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>?
   tailConsumers: tailConsumers != null ? tailConsumers() : this.tailConsumers,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespaceScriptAndVersionSettingsItem &&
           listEquals(bindings, other.bindings) &&
           compatibilityDate == other.compatibilityDate &&
@@ -92,7 +92,10 @@ WorkersNamespaceScriptAndVersionSettingsItem copyWith({List<WorkersBindingItem>?
           placement == other.placement &&
           listEquals(tags, other.tags) &&
           listEquals(tailConsumers, other.tailConsumers) &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, logpush, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel); } 
-@override String toString() { return 'WorkersNamespaceScriptAndVersionSettingsItem(bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, logpush: $logpush, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hash(Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, logpush, migrations, observability, placement, Object.hashAll(tags ?? const []), Object.hashAll(tailConsumers ?? const []), usageModel);
+
+@override String toString() => 'WorkersNamespaceScriptAndVersionSettingsItem(bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, logpush: $logpush, migrations: $migrations, observability: $observability, placement: $placement, tags: $tags, tailConsumers: $tailConsumers, usageModel: $usageModel)';
+
  }

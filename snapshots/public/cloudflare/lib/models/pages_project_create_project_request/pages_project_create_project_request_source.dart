@@ -25,10 +25,13 @@ PagesProjectCreateProjectRequestSource copyWith({SourceConfig? config, PagesSour
   config: config ?? this.config,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesProjectCreateProjectRequestSource &&
           config == other.config &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, type); } 
-@override String toString() { return 'PagesProjectCreateProjectRequestSource(config: $config, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, type);
+
+@override String toString() => 'PagesProjectCreateProjectRequestSource(config: $config, type: $type)';
+
  }

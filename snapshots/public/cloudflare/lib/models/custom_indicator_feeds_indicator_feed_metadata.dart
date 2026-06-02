@@ -46,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LatestUploadStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LatestUploadStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LatestUploadStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LatestUploadStatus($value)';
+
  }
 /// Example:
 /// ```json
@@ -135,7 +138,7 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
   providerId: providerId != null ? providerId() : this.providerId,
   providerName: providerName != null ? providerName() : this.providerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsIndicatorFeedMetadata &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -147,7 +150,10 @@ CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime? Function()? create
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           providerId == other.providerId &&
-          providerName == other.providerName; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName); } 
-@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)'; } 
+          providerName == other.providerName;
+
+@override int get hashCode => Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName);
+
+@override String toString() => 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)';
+
  }

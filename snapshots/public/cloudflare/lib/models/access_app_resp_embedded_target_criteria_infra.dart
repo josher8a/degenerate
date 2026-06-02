@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessAppRespEmbeddedTargetCriteriaInfra copyWith({List<AccessTargetCriteriaInfraApp>? Function()? targetCriteria}) { return AccessAppRespEmbeddedTargetCriteriaInfra(
   targetCriteria: targetCriteria != null ? targetCriteria() : this.targetCriteria,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppRespEmbeddedTargetCriteriaInfra &&
-          listEquals(targetCriteria, other.targetCriteria); } 
-@override int get hashCode { return Object.hashAll(targetCriteria ?? const []); } 
-@override String toString() { return 'AccessAppRespEmbeddedTargetCriteriaInfra(targetCriteria: $targetCriteria)'; } 
+          listEquals(targetCriteria, other.targetCriteria);
+
+@override int get hashCode => Object.hashAll(targetCriteria ?? const []);
+
+@override String toString() => 'AccessAppRespEmbeddedTargetCriteriaInfra(targetCriteria: $targetCriteria)';
+
  }

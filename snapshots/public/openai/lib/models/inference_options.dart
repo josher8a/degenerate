@@ -24,10 +24,13 @@ InferenceOptions copyWith({ToolChoice? Function()? toolChoice, String? Function(
   toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InferenceOptions &&
           toolChoice == other.toolChoice &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(toolChoice, model); } 
-@override String toString() { return 'InferenceOptions(toolChoice: $toolChoice, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(toolChoice, model);
+
+@override String toString() => 'InferenceOptions(toolChoice: $toolChoice, model: $model)';
+
  }

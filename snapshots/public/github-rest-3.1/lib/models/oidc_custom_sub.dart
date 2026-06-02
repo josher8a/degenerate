@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('inclu
 OidcCustomSub copyWith({List<String>? includeClaimKeys}) { return OidcCustomSub(
   includeClaimKeys: includeClaimKeys ?? this.includeClaimKeys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OidcCustomSub &&
-          listEquals(includeClaimKeys, other.includeClaimKeys); } 
-@override int get hashCode { return Object.hashAll(includeClaimKeys); } 
-@override String toString() { return 'OidcCustomSub(includeClaimKeys: $includeClaimKeys)'; } 
+          listEquals(includeClaimKeys, other.includeClaimKeys);
+
+@override int get hashCode => Object.hashAll(includeClaimKeys);
+
+@override String toString() => 'OidcCustomSub(includeClaimKeys: $includeClaimKeys)';
+
  }

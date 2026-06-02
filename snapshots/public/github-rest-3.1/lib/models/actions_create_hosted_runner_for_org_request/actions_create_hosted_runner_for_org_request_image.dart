@@ -29,11 +29,14 @@ ActionsCreateHostedRunnerForOrgRequestImage copyWith({String? Function()? id, Ac
   source: source != null ? source() : this.source,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCreateHostedRunnerForOrgRequestImage &&
           id == other.id &&
           source == other.source &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(id, source, version); } 
-@override String toString() { return 'ActionsCreateHostedRunnerForOrgRequestImage(id: $id, source: $source, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(id, source, version);
+
+@override String toString() => 'ActionsCreateHostedRunnerForOrgRequestImage(id: $id, source: $source, version: $version)';
+
  }

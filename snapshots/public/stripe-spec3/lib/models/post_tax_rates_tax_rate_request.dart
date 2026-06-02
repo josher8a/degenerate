@@ -87,7 +87,7 @@ PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function(
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxRatesTaxRateRequest &&
           active == other.active &&
           country == other.country &&
@@ -97,7 +97,10 @@ PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function(
           jurisdiction == other.jurisdiction &&
           metadata == other.metadata &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(active, country, description, displayName, Object.hashAll(expand ?? const []), jurisdiction, metadata, state, taxType); } 
-@override String toString() { return 'PostTaxRatesTaxRateRequest(active: $active, country: $country, description: $description, displayName: $displayName, expand: $expand, jurisdiction: $jurisdiction, metadata: $metadata, state: $state, taxType: $taxType)'; } 
+          taxType == other.taxType;
+
+@override int get hashCode => Object.hash(active, country, description, displayName, Object.hashAll(expand ?? const []), jurisdiction, metadata, state, taxType);
+
+@override String toString() => 'PostTaxRatesTaxRateRequest(active: $active, country: $country, description: $description, displayName: $displayName, expand: $expand, jurisdiction: $jurisdiction, metadata: $metadata, state: $state, taxType: $taxType)';
+
  }

@@ -62,14 +62,17 @@ R2QueuesConfigRules copyWith({List<R2R2Action>? actions, String? Function()? des
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   ruleId: ruleId != null ? ruleId() : this.ruleId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2QueuesConfigRules &&
           listEquals(actions, other.actions) &&
           description == other.description &&
           prefix == other.prefix &&
           suffix == other.suffix &&
           createdAt == other.createdAt &&
-          ruleId == other.ruleId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions), description, prefix, suffix, createdAt, ruleId); } 
-@override String toString() { return 'R2QueuesConfigRules(actions: $actions, description: $description, prefix: $prefix, suffix: $suffix, createdAt: $createdAt, ruleId: $ruleId)'; } 
+          ruleId == other.ruleId;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions), description, prefix, suffix, createdAt, ruleId);
+
+@override String toString() => 'R2QueuesConfigRules(actions: $actions, description: $description, prefix: $prefix, suffix: $suffix, createdAt: $createdAt, ruleId: $ruleId)';
+
  }

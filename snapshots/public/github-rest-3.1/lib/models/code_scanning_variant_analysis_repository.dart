@@ -50,14 +50,17 @@ CodeScanningVariantAnalysisRepository copyWith({int? id, String? name, String? f
   stargazersCount: stargazersCount ?? this.stargazersCount,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysisRepository &&
           id == other.id &&
           name == other.name &&
           fullName == other.fullName &&
           private == other.private &&
           stargazersCount == other.stargazersCount &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, fullName, private, stargazersCount, updatedAt); } 
-@override String toString() { return 'CodeScanningVariantAnalysisRepository(id: $id, name: $name, fullName: $fullName, private: $private, stargazersCount: $stargazersCount, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, fullName, private, stargazersCount, updatedAt);
+
+@override String toString() => 'CodeScanningVariantAnalysisRepository(id: $id, name: $name, fullName: $fullName, private: $private, stargazersCount: $stargazersCount, updatedAt: $updatedAt)';
+
  }

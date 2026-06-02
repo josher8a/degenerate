@@ -30,11 +30,14 @@ PublicCreateOrganizationRoleBody copyWith({String? roleName, List<String>? permi
   permissions: permissions ?? this.permissions,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicCreateOrganizationRoleBody &&
           roleName == other.roleName &&
           listEquals(permissions, other.permissions) &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(roleName, Object.hashAll(permissions), description); } 
-@override String toString() { return 'PublicCreateOrganizationRoleBody(roleName: $roleName, permissions: $permissions, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(roleName, Object.hashAll(permissions), description);
+
+@override String toString() => 'PublicCreateOrganizationRoleBody(roleName: $roleName, permissions: $permissions, description: $description)';
+
  }

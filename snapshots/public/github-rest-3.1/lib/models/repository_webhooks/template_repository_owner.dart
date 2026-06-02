@@ -100,7 +100,7 @@ TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id
   type: type != null ? type() : this.type,
   siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TemplateRepositoryOwner &&
           login == other.login &&
           id == other.id &&
@@ -119,7 +119,10 @@ TemplateRepositoryOwner copyWith({String? Function()? login, int? Function()? id
           eventsUrl == other.eventsUrl &&
           receivedEventsUrl == other.receivedEventsUrl &&
           type == other.type &&
-          siteAdmin == other.siteAdmin; } 
-@override int get hashCode { return Object.hash(login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin); } 
-@override String toString() { return 'TemplateRepositoryOwner(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin)'; } 
+          siteAdmin == other.siteAdmin;
+
+@override int get hashCode => Object.hash(login, id, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin);
+
+@override String toString() => 'TemplateRepositoryOwner(login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin)';
+
  }

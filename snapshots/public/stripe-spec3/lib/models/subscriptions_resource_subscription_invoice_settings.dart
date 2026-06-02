@@ -22,10 +22,13 @@ SubscriptionsResourceSubscriptionInvoiceSettings copyWith({List<InvoiceAccountTa
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   issuer: issuer ?? this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourceSubscriptionInvoiceSettings &&
           listEquals(accountTaxIds, other.accountTaxIds) &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountTaxIds ?? const []), issuer); } 
-@override String toString() { return 'SubscriptionsResourceSubscriptionInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => Object.hash(Object.hashAll(accountTaxIds ?? const []), issuer);
+
+@override String toString() => 'SubscriptionsResourceSubscriptionInvoiceSettings(accountTaxIds: $accountTaxIds, issuer: $issuer)';
+
  }

@@ -32,12 +32,15 @@ ExtendedModel copyWith({String? id, DateTime? Function()? createdAt, String? nam
   name: name ?? this.name,
   email: email ?? this.email,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExtendedModel &&
           id == other.id &&
           createdAt == other.createdAt &&
           name == other.name &&
-          email == other.email; } 
-@override int get hashCode { return Object.hash(id, createdAt, name, email); } 
-@override String toString() { return 'ExtendedModel(id: $id, createdAt: $createdAt, name: $name, email: $email)'; } 
+          email == other.email;
+
+@override int get hashCode => Object.hash(id, createdAt, name, email);
+
+@override String toString() => 'ExtendedModel(id: $id, createdAt: $createdAt, name: $name, email: $email)';
+
  }

@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZeroTrustGatewayFipsSettings copyWith({bool? Function()? tls}) { return ZeroTrustGatewayFipsSettings(
   tls: tls != null ? tls() : this.tls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayFipsSettings &&
-          tls == other.tls; } 
-@override int get hashCode { return tls.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayFipsSettings(tls: $tls)'; } 
+          tls == other.tls;
+
+@override int get hashCode => tls.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayFipsSettings(tls: $tls)';
+
  }

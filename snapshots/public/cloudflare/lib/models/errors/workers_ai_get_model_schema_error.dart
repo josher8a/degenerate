@@ -17,7 +17,8 @@ final class WorkersAiGetModelSchemaError$400 extends WorkersAiGetModelSchemaErro
 
 final WorkersAiGetModelSchemaResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiGetModelSchemaError$Unknown extends WorkersAiGetModelSchemaError {const WorkersAiGetModelSchemaError$Unknown(this.statusCode, this.rawBody, );
 

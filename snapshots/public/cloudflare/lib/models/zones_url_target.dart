@@ -25,10 +25,13 @@ ZonesUrlTarget copyWith({ZonesStringConstraint? Function()? constraint, dynamic 
   constraint: constraint != null ? constraint() : this.constraint,
   target: target != null ? target() : this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesUrlTarget &&
           constraint == other.constraint &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(constraint, target); } 
-@override String toString() { return 'ZonesUrlTarget(constraint: $constraint, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(constraint, target);
+
+@override String toString() => 'ZonesUrlTarget(constraint: $constraint, target: $target)';
+
  }

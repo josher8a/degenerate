@@ -34,11 +34,14 @@ RealtimekitPagingResponsePaging copyWith({double? endOffset, double? startOffset
   startOffset: startOffset ?? this.startOffset,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPagingResponsePaging &&
           endOffset == other.endOffset &&
           startOffset == other.startOffset &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(endOffset, startOffset, totalCount); } 
-@override String toString() { return 'RealtimekitPagingResponsePaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(endOffset, startOffset, totalCount);
+
+@override String toString() => 'RealtimekitPagingResponsePaging(endOffset: $endOffset, startOffset: $startOffset, totalCount: $totalCount)';
+
  }

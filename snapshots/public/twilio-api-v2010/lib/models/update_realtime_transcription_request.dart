@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTranscriptionEnumUpdateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeTranscriptionEnumUpdateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTranscriptionEnumUpdateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeTranscriptionEnumUpdateStatus($value)';
+
  }
 @immutable final class UpdateRealtimeTranscriptionRequest {const UpdateRealtimeTranscriptionRequest({required this.status});
 
@@ -36,9 +39,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('Statu
 UpdateRealtimeTranscriptionRequest copyWith({RealtimeTranscriptionEnumUpdateStatus? status}) { return UpdateRealtimeTranscriptionRequest(
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateRealtimeTranscriptionRequest &&
-          status == other.status; } 
-@override int get hashCode { return status.hashCode; } 
-@override String toString() { return 'UpdateRealtimeTranscriptionRequest(status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => status.hashCode;
+
+@override String toString() => 'UpdateRealtimeTranscriptionRequest(status: $status)';
+
  }

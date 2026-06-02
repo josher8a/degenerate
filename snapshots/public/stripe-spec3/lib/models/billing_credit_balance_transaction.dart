@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditBalanceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditBalanceTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditBalanceTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingCreditBalanceTransactionObject($value)';
+
  }
 /// The type of credit balance transaction (credit or debit).
 @immutable final class BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingCreditBalanceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingCreditBalanceTransactionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditBalanceTransactionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingCreditBalanceTransactionType($value)';
+
  }
 /// A credit balance transaction is a resource representing a transaction (either a credit or a debit) against an existing credit grant.
 @immutable final class BillingCreditBalanceTransaction {const BillingCreditBalanceTransaction({required this.created, required this.creditGrant, required this.effectiveAt, required this.id, required this.livemode, required this.object, this.credit, this.debit, this.testClock, this.type, });
@@ -127,7 +133,7 @@ BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResou
   testClock: testClock != null ? testClock() : this.testClock,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingCreditBalanceTransaction &&
           created == other.created &&
           credit == other.credit &&
@@ -138,7 +144,10 @@ BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResou
           livemode == other.livemode &&
           object == other.object &&
           testClock == other.testClock &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(created, credit, creditGrant, debit, effectiveAt, id, livemode, object, testClock, type); } 
-@override String toString() { return 'BillingCreditBalanceTransaction(created: $created, credit: $credit, creditGrant: $creditGrant, debit: $debit, effectiveAt: $effectiveAt, id: $id, livemode: $livemode, object: $object, testClock: $testClock, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(created, credit, creditGrant, debit, effectiveAt, id, livemode, object, testClock, type);
+
+@override String toString() => 'BillingCreditBalanceTransaction(created: $created, credit: $credit, creditGrant: $creditGrant, debit: $debit, effectiveAt: $effectiveAt, id: $id, livemode: $livemode, object: $object, testClock: $testClock, type: $type)';
+
  }

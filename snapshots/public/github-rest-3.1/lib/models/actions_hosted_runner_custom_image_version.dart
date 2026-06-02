@@ -45,13 +45,16 @@ ActionsHostedRunnerCustomImageVersion copyWith({String? version, String? state, 
   createdOn: createdOn ?? this.createdOn,
   stateDetails: stateDetails ?? this.stateDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsHostedRunnerCustomImageVersion &&
           version == other.version &&
           state == other.state &&
           sizeGb == other.sizeGb &&
           createdOn == other.createdOn &&
-          stateDetails == other.stateDetails; } 
-@override int get hashCode { return Object.hash(version, state, sizeGb, createdOn, stateDetails); } 
-@override String toString() { return 'ActionsHostedRunnerCustomImageVersion(version: $version, state: $state, sizeGb: $sizeGb, createdOn: $createdOn, stateDetails: $stateDetails)'; } 
+          stateDetails == other.stateDetails;
+
+@override int get hashCode => Object.hash(version, state, sizeGb, createdOn, stateDetails);
+
+@override String toString() => 'ActionsHostedRunnerCustomImageVersion(version: $version, state: $state, sizeGb: $sizeGb, createdOn: $createdOn, stateDetails: $stateDetails)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 AccountApp copyWith({MagicAccountAppId? accountAppId}) { return AccountApp(
   accountAppId: accountAppId ?? this.accountAppId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountApp &&
-          accountAppId == other.accountAppId; } 
-@override int get hashCode { return accountAppId.hashCode; } 
-@override String toString() { return 'AccountApp(accountAppId: $accountAppId)'; } 
+          accountAppId == other.accountAppId;
+
+@override int get hashCode => accountAppId.hashCode;
+
+@override String toString() => 'AccountApp(accountAppId: $accountAppId)';
+
  }

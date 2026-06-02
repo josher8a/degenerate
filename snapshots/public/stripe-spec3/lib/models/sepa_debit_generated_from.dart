@@ -23,10 +23,13 @@ SepaDebitGeneratedFrom copyWith({ApplicationFeeCharge? Function()? charge, Payme
   charge: charge != null ? charge() : this.charge,
   setupAttempt: setupAttempt != null ? setupAttempt() : this.setupAttempt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SepaDebitGeneratedFrom &&
           charge == other.charge &&
-          setupAttempt == other.setupAttempt; } 
-@override int get hashCode { return Object.hash(charge, setupAttempt); } 
-@override String toString() { return 'SepaDebitGeneratedFrom(charge: $charge, setupAttempt: $setupAttempt)'; } 
+          setupAttempt == other.setupAttempt;
+
+@override int get hashCode => Object.hash(charge, setupAttempt);
+
+@override String toString() => 'SepaDebitGeneratedFrom(charge: $charge, setupAttempt: $setupAttempt)';
+
  }

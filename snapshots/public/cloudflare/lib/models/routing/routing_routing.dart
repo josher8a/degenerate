@@ -24,10 +24,13 @@ RoutingRouting copyWith({ShieldTimestamp? Function()? lastUpdated, String? Funct
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   route: route != null ? route() : this.route,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RoutingRouting &&
           lastUpdated == other.lastUpdated &&
-          route == other.route; } 
-@override int get hashCode { return Object.hash(lastUpdated, route); } 
-@override String toString() { return 'RoutingRouting(lastUpdated: $lastUpdated, route: $route)'; } 
+          route == other.route;
+
+@override int get hashCode => Object.hash(lastUpdated, route);
+
+@override String toString() => 'RoutingRouting(lastUpdated: $lastUpdated, route: $route)';
+
  }

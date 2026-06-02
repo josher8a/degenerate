@@ -41,10 +41,13 @@ RadarGetCrawlersTimeseriesGroupResponseResult copyWith({RadarGetAiBotsTimeseries
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetCrawlersTimeseriesGroupResponseResult &&
           meta == other.meta &&
-          serie0 == other.serie0; } 
-@override int get hashCode { return Object.hash(meta, serie0); } 
-@override String toString() { return 'RadarGetCrawlersTimeseriesGroupResponseResult(meta: $meta, serie0: $serie0)'; } 
+          serie0 == other.serie0;
+
+@override int get hashCode => Object.hash(meta, serie0);
+
+@override String toString() => 'RadarGetCrawlersTimeseriesGroupResponseResult(meta: $meta, serie0: $serie0)';
+
  }

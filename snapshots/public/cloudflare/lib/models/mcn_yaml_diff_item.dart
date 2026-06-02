@@ -21,10 +21,13 @@ McnYamlDiffItem copyWith({String? itemType, McnYamlDiff? yamlDiff, }) { return M
   itemType: itemType ?? this.itemType,
   yamlDiff: yamlDiff ?? this.yamlDiff,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnYamlDiffItem &&
           itemType == other.itemType &&
-          yamlDiff == other.yamlDiff; } 
-@override int get hashCode { return Object.hash(itemType, yamlDiff); } 
-@override String toString() { return 'McnYamlDiffItem(itemType: $itemType, yamlDiff: $yamlDiff)'; } 
+          yamlDiff == other.yamlDiff;
+
+@override int get hashCode => Object.hash(itemType, yamlDiff);
+
+@override String toString() => 'McnYamlDiffItem(itemType: $itemType, yamlDiff: $yamlDiff)';
+
  }

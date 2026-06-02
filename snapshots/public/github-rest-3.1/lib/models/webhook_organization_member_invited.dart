@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookOrganizationMemberInvitedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookOrganizationMemberInvitedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookOrganizationMemberInvitedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookOrganizationMemberInvitedAction($value)';
+
  }
 @immutable final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, required this.invitation, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, this.user, });
 
@@ -75,7 +78,7 @@ WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedActio
   sender: sender ?? this.sender,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookOrganizationMemberInvited &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -84,7 +87,10 @@ WebhookOrganizationMemberInvited copyWith({WebhookOrganizationMemberInvitedActio
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, invitation, organization, repository, sender, user); } 
-@override String toString() { return 'WebhookOrganizationMemberInvited(action: $action, enterprise: $enterprise, installation: $installation, invitation: $invitation, organization: $organization, repository: $repository, sender: $sender, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, invitation, organization, repository, sender, user);
+
+@override String toString() => 'WebhookOrganizationMemberInvited(action: $action, enterprise: $enterprise, installation: $installation, invitation: $invitation, organization: $organization, repository: $repository, sender: $sender, user: $user)';
+
  }

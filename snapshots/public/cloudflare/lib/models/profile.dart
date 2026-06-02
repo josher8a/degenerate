@@ -39,13 +39,16 @@ Profile copyWith({String? businessAddress, String? businessEmail, String? busine
   businessPhone: businessPhone ?? this.businessPhone,
   externalMetadata: externalMetadata ?? this.externalMetadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Profile &&
           businessAddress == other.businessAddress &&
           businessEmail == other.businessEmail &&
           businessName == other.businessName &&
           businessPhone == other.businessPhone &&
-          externalMetadata == other.externalMetadata; } 
-@override int get hashCode { return Object.hash(businessAddress, businessEmail, businessName, businessPhone, externalMetadata); } 
-@override String toString() { return 'Profile(businessAddress: $businessAddress, businessEmail: $businessEmail, businessName: $businessName, businessPhone: $businessPhone, externalMetadata: $externalMetadata)'; } 
+          externalMetadata == other.externalMetadata;
+
+@override int get hashCode => Object.hash(businessAddress, businessEmail, businessName, businessPhone, externalMetadata);
+
+@override String toString() => 'Profile(businessAddress: $businessAddress, businessEmail: $businessEmail, businessName: $businessName, businessPhone: $businessPhone, externalMetadata: $externalMetadata)';
+
  }

@@ -18,13 +18,15 @@ final class AiSearchFetchInstancesError$400 extends AiSearchFetchInstancesError 
 
 final AiSearchFetchInstancesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchFetchInstancesError$404 extends AiSearchFetchInstancesError {const AiSearchFetchInstancesError$404(this.error);
 
 final AiSearchFetchInstancesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchFetchInstancesError$Unknown extends AiSearchFetchInstancesError {const AiSearchFetchInstancesError$Unknown(this.statusCode, this.rawBody, );
 

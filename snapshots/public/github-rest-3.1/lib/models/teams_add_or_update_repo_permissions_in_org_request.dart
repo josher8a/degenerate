@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TeamsAddOrUpdateRepoPermissionsInOrgRequest copyWith({String? Function()? permission}) { return TeamsAddOrUpdateRepoPermissionsInOrgRequest(
   permission: permission != null ? permission() : this.permission,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsAddOrUpdateRepoPermissionsInOrgRequest &&
-          permission == other.permission; } 
-@override int get hashCode { return permission.hashCode; } 
-@override String toString() { return 'TeamsAddOrUpdateRepoPermissionsInOrgRequest(permission: $permission)'; } 
+          permission == other.permission;
+
+@override int get hashCode => permission.hashCode;
+
+@override String toString() => 'TeamsAddOrUpdateRepoPermissionsInOrgRequest(permission: $permission)';
+
  }

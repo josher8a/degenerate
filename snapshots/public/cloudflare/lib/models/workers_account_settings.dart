@@ -20,10 +20,13 @@ WorkersAccountSettings copyWith({String? Function()? defaultUsageModel, bool? Fu
   defaultUsageModel: defaultUsageModel != null ? defaultUsageModel() : this.defaultUsageModel,
   greenCompute: greenCompute != null ? greenCompute() : this.greenCompute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAccountSettings &&
           defaultUsageModel == other.defaultUsageModel &&
-          greenCompute == other.greenCompute; } 
-@override int get hashCode { return Object.hash(defaultUsageModel, greenCompute); } 
-@override String toString() { return 'WorkersAccountSettings(defaultUsageModel: $defaultUsageModel, greenCompute: $greenCompute)'; } 
+          greenCompute == other.greenCompute;
+
+@override int get hashCode => Object.hash(defaultUsageModel, greenCompute);
+
+@override String toString() => 'WorkersAccountSettings(defaultUsageModel: $defaultUsageModel, greenCompute: $greenCompute)';
+
  }

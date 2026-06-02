@@ -25,11 +25,14 @@ OrganizationMeta copyWith({OrganizationFlags? Function()? flags, String? Functio
   managedBy: managedBy != null ? managedBy() : this.managedBy,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationMeta &&
           flags == other.flags &&
           managedBy == other.managedBy &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(flags, managedBy, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'OrganizationMeta(flags: $flags, managedBy: $managedBy, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(flags, managedBy, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'OrganizationMeta(flags: $flags, managedBy: $managedBy, additionalProperties: $additionalProperties)';
+
  }

@@ -31,11 +31,14 @@ D1TimeTravelRestoreResponse copyWith({D1TimeTravelBookmark? Function()? bookmark
   message: message != null ? message() : this.message,
   previousBookmark: previousBookmark != null ? previousBookmark() : this.previousBookmark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1TimeTravelRestoreResponse &&
           bookmark == other.bookmark &&
           message == other.message &&
-          previousBookmark == other.previousBookmark; } 
-@override int get hashCode { return Object.hash(bookmark, message, previousBookmark); } 
-@override String toString() { return 'D1TimeTravelRestoreResponse(bookmark: $bookmark, message: $message, previousBookmark: $previousBookmark)'; } 
+          previousBookmark == other.previousBookmark;
+
+@override int get hashCode => Object.hash(bookmark, message, previousBookmark);
+
+@override String toString() => 'D1TimeTravelRestoreResponse(bookmark: $bookmark, message: $message, previousBookmark: $previousBookmark)';
+
  }

@@ -35,13 +35,16 @@ WebhooksIssue2PullRequest copyWith({Uri? Function()? diffUrl, Uri? Function()? h
   patchUrl: patchUrl != null ? patchUrl() : this.patchUrl,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksIssue2PullRequest &&
           diffUrl == other.diffUrl &&
           htmlUrl == other.htmlUrl &&
           mergedAt == other.mergedAt &&
           patchUrl == other.patchUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(diffUrl, htmlUrl, mergedAt, patchUrl, url); } 
-@override String toString() { return 'WebhooksIssue2PullRequest(diffUrl: $diffUrl, htmlUrl: $htmlUrl, mergedAt: $mergedAt, patchUrl: $patchUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(diffUrl, htmlUrl, mergedAt, patchUrl, url);
+
+@override String toString() => 'WebhooksIssue2PullRequest(diffUrl: $diffUrl, htmlUrl: $htmlUrl, mergedAt: $mergedAt, patchUrl: $patchUrl, url: $url)';
+
  }

@@ -21,10 +21,13 @@ PaymentFlowsInstallmentOptions copyWith({bool? enabled, PaymentMethodDetailsCard
   enabled: enabled ?? this.enabled,
   plan: plan != null ? plan() : this.plan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsInstallmentOptions &&
           enabled == other.enabled &&
-          plan == other.plan; } 
-@override int get hashCode { return Object.hash(enabled, plan); } 
-@override String toString() { return 'PaymentFlowsInstallmentOptions(enabled: $enabled, plan: $plan)'; } 
+          plan == other.plan;
+
+@override int get hashCode => Object.hash(enabled, plan);
+
+@override String toString() => 'PaymentFlowsInstallmentOptions(enabled: $enabled, plan: $plan)';
+
  }

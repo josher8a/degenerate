@@ -21,10 +21,13 @@ AiSearchStatsResponse copyWith({AiSearchStatsResponseResult? result, bool? succe
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchStatsResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'AiSearchStatsResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'AiSearchStatsResponse(result: $result, success: $success)';
+
  }

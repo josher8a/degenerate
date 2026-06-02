@@ -55,7 +55,7 @@ ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberI
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListIncomingPhoneNumberMobileResponse &&
           listEquals(incomingPhoneNumbers, other.incomingPhoneNumbers) &&
           end == other.end &&
@@ -65,7 +65,10 @@ ListIncomingPhoneNumberMobileResponse copyWith({List<AccountIncomingPhoneNumberI
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(incomingPhoneNumbers ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListIncomingPhoneNumberMobileResponse(incomingPhoneNumbers: $incomingPhoneNumbers, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(incomingPhoneNumbers ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
+
+@override String toString() => 'ListIncomingPhoneNumberMobileResponse(incomingPhoneNumbers: $incomingPhoneNumbers, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+
  }

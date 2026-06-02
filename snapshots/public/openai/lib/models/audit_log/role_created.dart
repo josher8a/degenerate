@@ -41,13 +41,16 @@ RoleCreated copyWith({String? Function()? id, String? Function()? roleName, List
   resourceType: resourceType != null ? resourceType() : this.resourceType,
   resourceId: resourceId != null ? resourceId() : this.resourceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RoleCreated &&
           id == other.id &&
           roleName == other.roleName &&
           listEquals(permissions, other.permissions) &&
           resourceType == other.resourceType &&
-          resourceId == other.resourceId; } 
-@override int get hashCode { return Object.hash(id, roleName, Object.hashAll(permissions ?? const []), resourceType, resourceId); } 
-@override String toString() { return 'RoleCreated(id: $id, roleName: $roleName, permissions: $permissions, resourceType: $resourceType, resourceId: $resourceId)'; } 
+          resourceId == other.resourceId;
+
+@override int get hashCode => Object.hash(id, roleName, Object.hashAll(permissions ?? const []), resourceType, resourceId);
+
+@override String toString() => 'RoleCreated(id: $id, roleName: $roleName, permissions: $permissions, resourceType: $resourceType, resourceId: $resourceId)';
+
  }

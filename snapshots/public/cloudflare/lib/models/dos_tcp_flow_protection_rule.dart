@@ -65,7 +65,7 @@ DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosTcpFlowProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           createdOn == other.createdOn &&
@@ -74,7 +74,10 @@ DosTcpFlowProtectionRule copyWith({String? burstSensitivity, DateTime? createdOn
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, rateSensitivity, scope); } 
-@override String toString() { return 'DosTcpFlowProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(burstSensitivity, createdOn, id, mode, modifiedOn, name, rateSensitivity, scope);
+
+@override String toString() => 'DosTcpFlowProtectionRule(burstSensitivity: $burstSensitivity, createdOn: $createdOn, id: $id, mode: $mode, modifiedOn: $modifiedOn, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';
+
  }

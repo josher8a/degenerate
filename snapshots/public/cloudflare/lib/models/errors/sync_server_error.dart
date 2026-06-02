@@ -17,7 +17,8 @@ final class SyncServerError$404 extends SyncServerError {const SyncServerError$4
 
 final SyncServerResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SyncServerError$Unknown extends SyncServerError {const SyncServerError$Unknown(this.statusCode, this.rawBody, );
 

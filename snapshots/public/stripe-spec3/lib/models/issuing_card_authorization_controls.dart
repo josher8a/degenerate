@@ -47,14 +47,17 @@ IssuingCardAuthorizationControls copyWith({List<AllowedCategories>? Function()? 
   spendingLimits: spendingLimits != null ? spendingLimits() : this.spendingLimits,
   spendingLimitsCurrency: spendingLimitsCurrency != null ? spendingLimitsCurrency() : this.spendingLimitsCurrency,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardAuthorizationControls &&
           listEquals(allowedCategories, other.allowedCategories) &&
           listEquals(allowedMerchantCountries, other.allowedMerchantCountries) &&
           listEquals(blockedCategories, other.blockedCategories) &&
           listEquals(blockedMerchantCountries, other.blockedMerchantCountries) &&
           listEquals(spendingLimits, other.spendingLimits) &&
-          spendingLimitsCurrency == other.spendingLimitsCurrency; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedCategories ?? const []), Object.hashAll(allowedMerchantCountries ?? const []), Object.hashAll(blockedCategories ?? const []), Object.hashAll(blockedMerchantCountries ?? const []), Object.hashAll(spendingLimits ?? const []), spendingLimitsCurrency); } 
-@override String toString() { return 'IssuingCardAuthorizationControls(allowedCategories: $allowedCategories, allowedMerchantCountries: $allowedMerchantCountries, blockedCategories: $blockedCategories, blockedMerchantCountries: $blockedMerchantCountries, spendingLimits: $spendingLimits, spendingLimitsCurrency: $spendingLimitsCurrency)'; } 
+          spendingLimitsCurrency == other.spendingLimitsCurrency;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedCategories ?? const []), Object.hashAll(allowedMerchantCountries ?? const []), Object.hashAll(blockedCategories ?? const []), Object.hashAll(blockedMerchantCountries ?? const []), Object.hashAll(spendingLimits ?? const []), spendingLimitsCurrency);
+
+@override String toString() => 'IssuingCardAuthorizationControls(allowedCategories: $allowedCategories, allowedMerchantCountries: $allowedMerchantCountries, blockedCategories: $blockedCategories, blockedMerchantCountries: $blockedMerchantCountries, spendingLimits: $spendingLimits, spendingLimitsCurrency: $spendingLimitsCurrency)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ReposCreateDeploymentProtectionRuleRequest copyWith({int? Function()? integrationId}) { return ReposCreateDeploymentProtectionRuleRequest(
   integrationId: integrationId != null ? integrationId() : this.integrationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeploymentProtectionRuleRequest &&
-          integrationId == other.integrationId; } 
-@override int get hashCode { return integrationId.hashCode; } 
-@override String toString() { return 'ReposCreateDeploymentProtectionRuleRequest(integrationId: $integrationId)'; } 
+          integrationId == other.integrationId;
+
+@override int get hashCode => integrationId.hashCode;
+
+@override String toString() => 'ReposCreateDeploymentProtectionRuleRequest(integrationId: $integrationId)';
+
  }

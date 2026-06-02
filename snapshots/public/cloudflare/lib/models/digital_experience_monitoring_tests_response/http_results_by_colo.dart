@@ -24,10 +24,13 @@ HttpResultsByColo copyWith({String? colo, DigitalExperienceMonitoringTimingAggre
   colo: colo ?? this.colo,
   resourceFetchTime: resourceFetchTime ?? this.resourceFetchTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HttpResultsByColo &&
           colo == other.colo &&
-          resourceFetchTime == other.resourceFetchTime; } 
-@override int get hashCode { return Object.hash(colo, resourceFetchTime); } 
-@override String toString() { return 'HttpResultsByColo(colo: $colo, resourceFetchTime: $resourceFetchTime)'; } 
+          resourceFetchTime == other.resourceFetchTime;
+
+@override int get hashCode => Object.hash(colo, resourceFetchTime);
+
+@override String toString() => 'HttpResultsByColo(colo: $colo, resourceFetchTime: $resourceFetchTime)';
+
  }

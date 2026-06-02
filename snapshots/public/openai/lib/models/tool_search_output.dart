@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionCallOutputStatusEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FunctionCallOutputStatusEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionCallOutputStatusEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionCallOutputStatusEnum($value)';
+
  }
 @immutable final class ToolSearchOutput {const ToolSearchOutput({required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.type = 'tool_search_output', this.createdBy, });
 
@@ -84,7 +87,7 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
   status: status ?? this.status,
   createdBy: createdBy != null ? createdBy() : this.createdBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolSearchOutput &&
           type == other.type &&
           id == other.id &&
@@ -92,7 +95,10 @@ ToolSearchOutput copyWith({String? type, String? id, String? Function()? callId,
           execution == other.execution &&
           listEquals(tools, other.tools) &&
           status == other.status &&
-          createdBy == other.createdBy; } 
-@override int get hashCode { return Object.hash(type, id, callId, execution, Object.hashAll(tools), status, createdBy); } 
-@override String toString() { return 'ToolSearchOutput(type: $type, id: $id, callId: $callId, execution: $execution, tools: $tools, status: $status, createdBy: $createdBy)'; } 
+          createdBy == other.createdBy;
+
+@override int get hashCode => Object.hash(type, id, callId, execution, Object.hashAll(tools), status, createdBy);
+
+@override String toString() => 'ToolSearchOutput(type: $type, id: $id, callId: $callId, execution: $execution, tools: $tools, status: $status, createdBy: $createdBy)';
+
  }

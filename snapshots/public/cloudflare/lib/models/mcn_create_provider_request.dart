@@ -26,11 +26,14 @@ McnCreateProviderRequest copyWith({McnCloudType? cloudType, String? Function()? 
   description: description != null ? description() : this.description,
   friendlyName: friendlyName ?? this.friendlyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCreateProviderRequest &&
           cloudType == other.cloudType &&
           description == other.description &&
-          friendlyName == other.friendlyName; } 
-@override int get hashCode { return Object.hash(cloudType, description, friendlyName); } 
-@override String toString() { return 'McnCreateProviderRequest(cloudType: $cloudType, description: $description, friendlyName: $friendlyName)'; } 
+          friendlyName == other.friendlyName;
+
+@override int get hashCode => Object.hash(cloudType, description, friendlyName);
+
+@override String toString() => 'McnCreateProviderRequest(cloudType: $cloudType, description: $description, friendlyName: $friendlyName)';
+
  }

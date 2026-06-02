@@ -54,13 +54,16 @@ RulesetsRuleset copyWith({String Function()? description, RulesetsRulesetId? id,
   name: name != null ? name() : this.name,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRuleset &&
           description == other.description &&
           id == other.id &&
           lastUpdated == other.lastUpdated &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version); } 
-@override String toString() { return 'RulesetsRuleset(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(description, id, lastUpdated, name, version);
+
+@override String toString() => 'RulesetsRuleset(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version)';
+
  }

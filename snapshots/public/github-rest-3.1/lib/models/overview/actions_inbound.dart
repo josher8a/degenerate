@@ -20,10 +20,13 @@ ActionsInbound copyWith({List<String>? Function()? fullDomains, List<String>? Fu
   fullDomains: fullDomains != null ? fullDomains() : this.fullDomains,
   wildcardDomains: wildcardDomains != null ? wildcardDomains() : this.wildcardDomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsInbound &&
           listEquals(fullDomains, other.fullDomains) &&
-          listEquals(wildcardDomains, other.wildcardDomains); } 
-@override int get hashCode { return Object.hash(Object.hashAll(fullDomains ?? const []), Object.hashAll(wildcardDomains ?? const [])); } 
-@override String toString() { return 'ActionsInbound(fullDomains: $fullDomains, wildcardDomains: $wildcardDomains)'; } 
+          listEquals(wildcardDomains, other.wildcardDomains);
+
+@override int get hashCode => Object.hash(Object.hashAll(fullDomains ?? const []), Object.hashAll(wildcardDomains ?? const []));
+
+@override String toString() => 'ActionsInbound(fullDomains: $fullDomains, wildcardDomains: $wildcardDomains)';
+
  }

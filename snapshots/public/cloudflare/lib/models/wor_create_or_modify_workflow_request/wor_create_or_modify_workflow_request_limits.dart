@@ -22,9 +22,12 @@ return errors; }
 WorCreateOrModifyWorkflowRequestLimits copyWith({int? Function()? steps}) { return WorCreateOrModifyWorkflowRequestLimits(
   steps: steps != null ? steps() : this.steps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorCreateOrModifyWorkflowRequestLimits &&
-          steps == other.steps; } 
-@override int get hashCode { return steps.hashCode; } 
-@override String toString() { return 'WorCreateOrModifyWorkflowRequestLimits(steps: $steps)'; } 
+          steps == other.steps;
+
+@override int get hashCode => steps.hashCode;
+
+@override String toString() => 'WorCreateOrModifyWorkflowRequestLimits(steps: $steps)';
+
  }

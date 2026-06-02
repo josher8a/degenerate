@@ -25,11 +25,14 @@ ConnectionInfoConnectivity copyWith({bool? Function()? host, bool? Function()? r
   reflexive: reflexive != null ? reflexive() : this.reflexive,
   relay: relay != null ? relay() : this.relay,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectionInfoConnectivity &&
           host == other.host &&
           reflexive == other.reflexive &&
-          relay == other.relay; } 
-@override int get hashCode { return Object.hash(host, reflexive, relay); } 
-@override String toString() { return 'ConnectionInfoConnectivity(host: $host, reflexive: $reflexive, relay: $relay)'; } 
+          relay == other.relay;
+
+@override int get hashCode => Object.hash(host, reflexive, relay);
+
+@override String toString() => 'ConnectionInfoConnectivity(host: $host, reflexive: $reflexive, relay: $relay)';
+
  }

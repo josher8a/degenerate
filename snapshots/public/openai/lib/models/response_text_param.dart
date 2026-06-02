@@ -25,10 +25,13 @@ ResponseTextParam copyWith({TextResponseFormatConfiguration? Function()? format,
   format: format != null ? format() : this.format,
   verbosity: verbosity != null ? verbosity() : this.verbosity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseTextParam &&
           format == other.format &&
-          verbosity == other.verbosity; } 
-@override int get hashCode { return Object.hash(format, verbosity); } 
-@override String toString() { return 'ResponseTextParam(format: $format, verbosity: $verbosity)'; } 
+          verbosity == other.verbosity;
+
+@override int get hashCode => Object.hash(format, verbosity);
+
+@override String toString() => 'ResponseTextParam(format: $format, verbosity: $verbosity)';
+
  }

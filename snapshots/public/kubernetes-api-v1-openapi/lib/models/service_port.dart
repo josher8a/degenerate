@@ -56,14 +56,17 @@ ServicePort copyWith({String? Function()? appProtocol, String? Function()? name,
   protocol: protocol != null ? protocol() : this.protocol,
   targetPort: targetPort != null ? targetPort() : this.targetPort,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ServicePort &&
           appProtocol == other.appProtocol &&
           name == other.name &&
           nodePort == other.nodePort &&
           port == other.port &&
           protocol == other.protocol &&
-          targetPort == other.targetPort; } 
-@override int get hashCode { return Object.hash(appProtocol, name, nodePort, port, protocol, targetPort); } 
-@override String toString() { return 'ServicePort(appProtocol: $appProtocol, name: $name, nodePort: $nodePort, port: $port, protocol: $protocol, targetPort: $targetPort)'; } 
+          targetPort == other.targetPort;
+
+@override int get hashCode => Object.hash(appProtocol, name, nodePort, port, protocol, targetPort);
+
+@override String toString() => 'ServicePort(appProtocol: $appProtocol, name: $name, nodePort: $nodePort, port: $port, protocol: $protocol, targetPort: $targetPort)';
+
  }

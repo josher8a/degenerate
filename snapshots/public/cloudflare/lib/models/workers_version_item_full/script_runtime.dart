@@ -58,13 +58,16 @@ ScriptRuntime copyWith({String? Function()? compatibilityDate, List<String>? Fun
   migrationTag: migrationTag != null ? migrationTag() : this.migrationTag,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScriptRuntime &&
           compatibilityDate == other.compatibilityDate &&
           listEquals(compatibilityFlags, other.compatibilityFlags) &&
           limits == other.limits &&
           migrationTag == other.migrationTag &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, migrationTag, usageModel); } 
-@override String toString() { return 'ScriptRuntime(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, migrationTag: $migrationTag, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hash(compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), limits, migrationTag, usageModel);
+
+@override String toString() => 'ScriptRuntime(compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, limits: $limits, migrationTag: $migrationTag, usageModel: $usageModel)';
+
  }

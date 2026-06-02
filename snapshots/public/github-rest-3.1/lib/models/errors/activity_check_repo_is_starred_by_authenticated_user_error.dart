@@ -19,19 +19,22 @@ final class ActivityCheckRepoIsStarredByAuthenticatedUserError$401 extends Activ
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ActivityCheckRepoIsStarredByAuthenticatedUserError$403 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActivityCheckRepoIsStarredByAuthenticatedUserError$404 extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown extends ActivityCheckRepoIsStarredByAuthenticatedUserError {const ActivityCheckRepoIsStarredByAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

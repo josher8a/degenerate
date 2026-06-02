@@ -47,14 +47,17 @@ Duplicate copyWith({CanceledAdditionalDocumentation? Function()? additionalDocum
   explanation: explanation != null ? explanation() : this.explanation,
   originalTransaction: originalTransaction != null ? originalTransaction() : this.originalTransaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Duplicate &&
           additionalDocumentation == other.additionalDocumentation &&
           cardStatement == other.cardStatement &&
           cashReceipt == other.cashReceipt &&
           checkImage == other.checkImage &&
           explanation == other.explanation &&
-          originalTransaction == other.originalTransaction; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, cardStatement, cashReceipt, checkImage, explanation, originalTransaction); } 
-@override String toString() { return 'Duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)'; } 
+          originalTransaction == other.originalTransaction;
+
+@override int get hashCode => Object.hash(additionalDocumentation, cardStatement, cashReceipt, checkImage, explanation, originalTransaction);
+
+@override String toString() => 'Duplicate(additionalDocumentation: $additionalDocumentation, cardStatement: $cardStatement, cashReceipt: $cashReceipt, checkImage: $checkImage, explanation: $explanation, originalTransaction: $originalTransaction)';
+
  }

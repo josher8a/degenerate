@@ -60,7 +60,7 @@ SourceTypeAcssDebit copyWith({String? Function()? bankAddressCity, String? Funct
   last4: last4 != null ? last4() : this.last4,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeAcssDebit &&
           bankAddressCity == other.bankAddressCity &&
           bankAddressLine1 == other.bankAddressLine1 &&
@@ -71,7 +71,10 @@ SourceTypeAcssDebit copyWith({String? Function()? bankAddressCity, String? Funct
           country == other.country &&
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(bankAddressCity, bankAddressLine1, bankAddressLine2, bankAddressPostalCode, bankName, category, country, fingerprint, last4, routingNumber); } 
-@override String toString() { return 'SourceTypeAcssDebit(bankAddressCity: $bankAddressCity, bankAddressLine1: $bankAddressLine1, bankAddressLine2: $bankAddressLine2, bankAddressPostalCode: $bankAddressPostalCode, bankName: $bankName, category: $category, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(bankAddressCity, bankAddressLine1, bankAddressLine2, bankAddressPostalCode, bankName, category, country, fingerprint, last4, routingNumber);
+
+@override String toString() => 'SourceTypeAcssDebit(bankAddressCity: $bankAddressCity, bankAddressLine1: $bankAddressLine1, bankAddressLine2: $bankAddressLine2, bankAddressPostalCode: $bankAddressPostalCode, bankName: $bankName, category: $category, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)';
+
  }

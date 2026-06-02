@@ -60,7 +60,7 @@ DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Funct
   sort: sort != null ? sort() : this.sort,
   until: until ?? this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsQuery &&
           listEquals(dimensions, other.dimensions) &&
           filters == other.filters &&
@@ -68,7 +68,10 @@ DnsAnalyticsQuery copyWith({List<String>? dimensions, DnsAnalyticsFilters? Funct
           listEquals(metrics, other.metrics) &&
           since == other.since &&
           listEquals(sort, other.sort) &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dimensions), filters, limit, Object.hashAll(metrics), since, Object.hashAll(sort ?? const []), until); } 
-@override String toString() { return 'DnsAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(Object.hashAll(dimensions), filters, limit, Object.hashAll(metrics), since, Object.hashAll(sort ?? const []), until);
+
+@override String toString() => 'DnsAnalyticsQuery(dimensions: $dimensions, filters: $filters, limit: $limit, metrics: $metrics, since: $since, sort: $sort, until: $until)';
+
  }

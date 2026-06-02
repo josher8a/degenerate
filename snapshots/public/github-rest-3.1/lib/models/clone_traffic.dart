@@ -28,11 +28,14 @@ CloneTraffic copyWith({int? count, int? uniques, List<Traffic>? clones, }) { ret
   uniques: uniques ?? this.uniques,
   clones: clones ?? this.clones,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloneTraffic &&
           count == other.count &&
           uniques == other.uniques &&
-          listEquals(clones, other.clones); } 
-@override int get hashCode { return Object.hash(count, uniques, Object.hashAll(clones)); } 
-@override String toString() { return 'CloneTraffic(count: $count, uniques: $uniques, clones: $clones)'; } 
+          listEquals(clones, other.clones);
+
+@override int get hashCode => Object.hash(count, uniques, Object.hashAll(clones));
+
+@override String toString() => 'CloneTraffic(count: $count, uniques: $uniques, clones: $clones)';
+
  }

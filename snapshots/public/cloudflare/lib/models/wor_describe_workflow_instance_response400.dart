@@ -33,12 +33,15 @@ WorDescribeWorkflowInstanceResponse400 copyWith({List<AccountsByAccountIdPipelin
   result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorDescribeWorkflowInstanceResponse400 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'WorDescribeWorkflowInstanceResponse400(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+
+@override String toString() => 'WorDescribeWorkflowInstanceResponse400(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

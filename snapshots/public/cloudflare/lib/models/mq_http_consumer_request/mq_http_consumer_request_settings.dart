@@ -31,12 +31,15 @@ MqHttpConsumerRequestSettings copyWith({MqBatchSize? Function()? batchSize, MqMa
   retryDelay: retryDelay != null ? retryDelay() : this.retryDelay,
   visibilityTimeoutMs: visibilityTimeoutMs != null ? visibilityTimeoutMs() : this.visibilityTimeoutMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqHttpConsumerRequestSettings &&
           batchSize == other.batchSize &&
           maxRetries == other.maxRetries &&
           retryDelay == other.retryDelay &&
-          visibilityTimeoutMs == other.visibilityTimeoutMs; } 
-@override int get hashCode { return Object.hash(batchSize, maxRetries, retryDelay, visibilityTimeoutMs); } 
-@override String toString() { return 'MqHttpConsumerRequestSettings(batchSize: $batchSize, maxRetries: $maxRetries, retryDelay: $retryDelay, visibilityTimeoutMs: $visibilityTimeoutMs)'; } 
+          visibilityTimeoutMs == other.visibilityTimeoutMs;
+
+@override int get hashCode => Object.hash(batchSize, maxRetries, retryDelay, visibilityTimeoutMs);
+
+@override String toString() => 'MqHttpConsumerRequestSettings(batchSize: $batchSize, maxRetries: $maxRetries, retryDelay: $retryDelay, visibilityTimeoutMs: $visibilityTimeoutMs)';
+
  }

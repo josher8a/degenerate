@@ -38,12 +38,15 @@ PostFileLinksRequest copyWith({List<String>? Function()? expand, int? Function()
   file: file ?? this.file,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostFileLinksRequest &&
           listEquals(expand, other.expand) &&
           expiresAt == other.expiresAt &&
           file == other.file &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt, file, metadata); } 
-@override String toString() { return 'PostFileLinksRequest(expand: $expand, expiresAt: $expiresAt, file: $file, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), expiresAt, file, metadata);
+
+@override String toString() => 'PostFileLinksRequest(expand: $expand, expiresAt: $expiresAt, file: $file, metadata: $metadata)';
+
  }

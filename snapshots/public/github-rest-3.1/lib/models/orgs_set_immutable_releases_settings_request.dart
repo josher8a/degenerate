@@ -22,10 +22,13 @@ OrgsSetImmutableReleasesSettingsRequest copyWith({EnforcedRepositories? enforced
   enforcedRepositories: enforcedRepositories ?? this.enforcedRepositories,
   selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetImmutableReleasesSettingsRequest &&
           enforcedRepositories == other.enforcedRepositories &&
-          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
-@override int get hashCode { return Object.hash(enforcedRepositories, Object.hashAll(selectedRepositoryIds ?? const [])); } 
-@override String toString() { return 'OrgsSetImmutableReleasesSettingsRequest(enforcedRepositories: $enforcedRepositories, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds);
+
+@override int get hashCode => Object.hash(enforcedRepositories, Object.hashAll(selectedRepositoryIds ?? const []));
+
+@override String toString() => 'OrgsSetImmutableReleasesSettingsRequest(enforcedRepositories: $enforcedRepositories, selectedRepositoryIds: $selectedRepositoryIds)';
+
  }

@@ -39,13 +39,16 @@ ProtectionRulesVariant2 copyWith({int? id, String? nodeId, bool? Function()? pre
   type: type ?? this.type,
   reviewers: reviewers != null ? reviewers() : this.reviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectionRulesVariant2 &&
           id == other.id &&
           nodeId == other.nodeId &&
           preventSelfReview == other.preventSelfReview &&
           type == other.type &&
-          listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hash(id, nodeId, preventSelfReview, type, Object.hashAll(reviewers ?? const [])); } 
-@override String toString() { return 'ProtectionRulesVariant2(id: $id, nodeId: $nodeId, preventSelfReview: $preventSelfReview, type: $type, reviewers: $reviewers)'; } 
+          listEquals(reviewers, other.reviewers);
+
+@override int get hashCode => Object.hash(id, nodeId, preventSelfReview, type, Object.hashAll(reviewers ?? const []));
+
+@override String toString() => 'ProtectionRulesVariant2(id: $id, nodeId: $nodeId, preventSelfReview: $preventSelfReview, type: $type, reviewers: $reviewers)';
+
  }

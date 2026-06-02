@@ -30,11 +30,14 @@ PostPermissionCreateRequest copyWith({GetPermissionListResponseRole? role, Strin
   subjectId: subjectId ?? this.subjectId,
   subjectType: subjectType ?? this.subjectType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPermissionCreateRequest &&
           role == other.role &&
           subjectId == other.subjectId &&
-          subjectType == other.subjectType; } 
-@override int get hashCode { return Object.hash(role, subjectId, subjectType); } 
-@override String toString() { return 'PostPermissionCreateRequest(role: $role, subjectId: $subjectId, subjectType: $subjectType)'; } 
+          subjectType == other.subjectType;
+
+@override int get hashCode => Object.hash(role, subjectId, subjectType);
+
+@override String toString() => 'PostPermissionCreateRequest(role: $role, subjectId: $subjectId, subjectType: $subjectType)';
+
  }

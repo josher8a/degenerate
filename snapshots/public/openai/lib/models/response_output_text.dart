@@ -31,11 +31,14 @@ ResponseOutputText copyWith({EvalItemContentOutputTextType? type, String? text, 
   text: text ?? this.text,
   annotations: annotations ?? this.annotations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseOutputText &&
           type == other.type &&
           text == other.text &&
-          listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hash(type, text, Object.hashAll(annotations)); } 
-@override String toString() { return 'ResponseOutputText(type: $type, text: $text, annotations: $annotations)'; } 
+          listEquals(annotations, other.annotations);
+
+@override int get hashCode => Object.hash(type, text, Object.hashAll(annotations));
+
+@override String toString() => 'ResponseOutputText(type: $type, text: $text, annotations: $annotations)';
+
  }

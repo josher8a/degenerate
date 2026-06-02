@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileContentResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileContentResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreFileContentResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreFileContentResponseObject($value)';
+
  }
 /// Represents the parsed content of a vector store file.
 @immutable final class VectorStoreFileContentResponse {const VectorStoreFileContentResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });
@@ -60,12 +63,15 @@ VectorStoreFileContentResponse copyWith({VectorStoreFileContentResponseObject? o
   hasMore: hasMore ?? this.hasMore,
   nextPage: nextPage != null ? nextPage() : this.nextPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreFileContentResponse &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          nextPage == other.nextPage; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, nextPage); } 
-@override String toString() { return 'VectorStoreFileContentResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)'; } 
+          nextPage == other.nextPage;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, nextPage);
+
+@override String toString() => 'VectorStoreFileContentResponse(object: $object, data: $data, hasMore: $hasMore, nextPage: $nextPage)';
+
  }

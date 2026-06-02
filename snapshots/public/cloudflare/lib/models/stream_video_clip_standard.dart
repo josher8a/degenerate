@@ -65,7 +65,7 @@ StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, Stre
   thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
   watermark: watermark != null ? watermark() : this.watermark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamVideoClipStandard &&
           listEquals(allowedOrigins, other.allowedOrigins) &&
           clippedFromVideoUid == other.clippedFromVideoUid &&
@@ -75,7 +75,10 @@ StreamVideoClipStandard copyWith({List<String>? Function()? allowedOrigins, Stre
           requireSignedUrLs == other.requireSignedUrLs &&
           startTimeSeconds == other.startTimeSeconds &&
           thumbnailTimestampPct == other.thumbnailTimestampPct &&
-          watermark == other.watermark; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedOrigins ?? const []), clippedFromVideoUid, creator, endTimeSeconds, maxDurationSeconds, requireSignedUrLs, startTimeSeconds, thumbnailTimestampPct, watermark); } 
-@override String toString() { return 'StreamVideoClipStandard(allowedOrigins: $allowedOrigins, clippedFromVideoUid: $clippedFromVideoUid, creator: $creator, endTimeSeconds: $endTimeSeconds, maxDurationSeconds: $maxDurationSeconds, requireSignedUrLs: $requireSignedUrLs, startTimeSeconds: $startTimeSeconds, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)'; } 
+          watermark == other.watermark;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedOrigins ?? const []), clippedFromVideoUid, creator, endTimeSeconds, maxDurationSeconds, requireSignedUrLs, startTimeSeconds, thumbnailTimestampPct, watermark);
+
+@override String toString() => 'StreamVideoClipStandard(allowedOrigins: $allowedOrigins, clippedFromVideoUid: $clippedFromVideoUid, creator: $creator, endTimeSeconds: $endTimeSeconds, maxDurationSeconds: $maxDurationSeconds, requireSignedUrLs: $requireSignedUrLs, startTimeSeconds: $startTimeSeconds, thumbnailTimestampPct: $thumbnailTimestampPct, watermark: $watermark)';
+
  }

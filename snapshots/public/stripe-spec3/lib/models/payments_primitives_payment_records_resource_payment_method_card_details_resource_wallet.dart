@@ -41,12 +41,15 @@ PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet c
   googlePay: googlePay != null ? googlePay() : this.googlePay,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet &&
           applePay == other.applePay &&
           dynamicLast4 == other.dynamicLast4 &&
           googlePay == other.googlePay &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(applePay, dynamicLast4, googlePay, type); } 
-@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(applePay, dynamicLast4, googlePay, type);
+
+@override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, type: $type)';
+
  }

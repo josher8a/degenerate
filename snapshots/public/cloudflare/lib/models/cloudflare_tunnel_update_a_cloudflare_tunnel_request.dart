@@ -22,10 +22,13 @@ CloudflareTunnelUpdateACloudflareTunnelRequest copyWith({TunnelTunnelName? Funct
   name: name != null ? name() : this.name,
   tunnelSecret: tunnelSecret != null ? tunnelSecret() : this.tunnelSecret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelUpdateACloudflareTunnelRequest &&
           name == other.name &&
-          tunnelSecret == other.tunnelSecret; } 
-@override int get hashCode { return Object.hash(name, tunnelSecret); } 
-@override String toString() { return 'CloudflareTunnelUpdateACloudflareTunnelRequest(name: $name, tunnelSecret: $tunnelSecret)'; } 
+          tunnelSecret == other.tunnelSecret;
+
+@override int get hashCode => Object.hash(name, tunnelSecret);
+
+@override String toString() => 'CloudflareTunnelUpdateACloudflareTunnelRequest(name: $name, tunnelSecret: $tunnelSecret)';
+
  }

@@ -32,11 +32,14 @@ DirectorshipDeclaration copyWith({int? Function()? date, String? Function()? ip,
   ip: ip != null ? ip() : this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DirectorshipDeclaration &&
           date == other.date &&
           ip == other.ip &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, userAgent); } 
-@override String toString() { return 'DirectorshipDeclaration(date: $date, ip: $ip, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(date, ip, userAgent);
+
+@override String toString() => 'DirectorshipDeclaration(date: $date, ip: $ip, userAgent: $userAgent)';
+
  }

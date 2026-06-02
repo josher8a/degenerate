@@ -25,11 +25,14 @@ MconnSupportMacrosDiagnoseConnectorResult copyWith({MconnSupportConnector? Funct
   device: device != null ? device() : this.device,
   site: site != null ? site() : this.site,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportMacrosDiagnoseConnectorResult &&
           connector == other.connector &&
           device == other.device &&
-          site == other.site; } 
-@override int get hashCode { return Object.hash(connector, device, site); } 
-@override String toString() { return 'MconnSupportMacrosDiagnoseConnectorResult(connector: $connector, device: $device, site: $site)'; } 
+          site == other.site;
+
+@override int get hashCode => Object.hash(connector, device, site);
+
+@override String toString() => 'MconnSupportMacrosDiagnoseConnectorResult(connector: $connector, device: $device, site: $site)';
+
  }

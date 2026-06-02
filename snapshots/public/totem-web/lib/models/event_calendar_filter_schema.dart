@@ -35,11 +35,14 @@ EventCalendarFilterSchema copyWith({String Function()? spaceSlug, int Function()
   month: month != null ? month() : this.month,
   year: year != null ? year() : this.year,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventCalendarFilterSchema &&
           spaceSlug == other.spaceSlug &&
           month == other.month &&
-          year == other.year; } 
-@override int get hashCode { return Object.hash(spaceSlug, month, year); } 
-@override String toString() { return 'EventCalendarFilterSchema(spaceSlug: $spaceSlug, month: $month, year: $year)'; } 
+          year == other.year;
+
+@override int get hashCode => Object.hash(spaceSlug, month, year);
+
+@override String toString() => 'EventCalendarFilterSchema(spaceSlug: $spaceSlug, month: $month, year: $year)';
+
  }

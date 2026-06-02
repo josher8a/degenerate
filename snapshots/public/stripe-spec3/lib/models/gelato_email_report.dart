@@ -36,11 +36,14 @@ GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? F
   error: error != null ? error() : this.error,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoEmailReport &&
           email == other.email &&
           error == other.error &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(email, error, status); } 
-@override String toString() { return 'GelatoEmailReport(email: $email, error: $error, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(email, error, status);
+
+@override String toString() => 'GelatoEmailReport(email: $email, error: $error, status: $status)';
+
  }

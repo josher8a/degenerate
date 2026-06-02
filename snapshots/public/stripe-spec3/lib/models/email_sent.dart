@@ -28,10 +28,13 @@ EmailSent copyWith({int? emailSentAt, String? emailSentTo, }) { return EmailSent
   emailSentAt: emailSentAt ?? this.emailSentAt,
   emailSentTo: emailSentTo ?? this.emailSentTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSent &&
           emailSentAt == other.emailSentAt &&
-          emailSentTo == other.emailSentTo; } 
-@override int get hashCode { return Object.hash(emailSentAt, emailSentTo); } 
-@override String toString() { return 'EmailSent(emailSentAt: $emailSentAt, emailSentTo: $emailSentTo)'; } 
+          emailSentTo == other.emailSentTo;
+
+@override int get hashCode => Object.hash(emailSentAt, emailSentTo);
+
+@override String toString() => 'EmailSent(emailSentAt: $emailSentAt, emailSentTo: $emailSentTo)';
+
  }

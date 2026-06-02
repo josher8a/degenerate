@@ -48,7 +48,7 @@ WebhookSecretScanningAlertLocationCreated copyWith({ItemCreatedAction? Function(
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertLocationCreated &&
           action == other.action &&
           alert == other.alert &&
@@ -56,7 +56,10 @@ WebhookSecretScanningAlertLocationCreated copyWith({ItemCreatedAction? Function(
           location == other.location &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, location, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecretScanningAlertLocationCreated(action: $action, alert: $alert, installation: $installation, location: $location, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, installation, location, organization, repository, sender);
+
+@override String toString() => 'WebhookSecretScanningAlertLocationCreated(action: $action, alert: $alert, installation: $installation, location: $location, organization: $organization, repository: $repository, sender: $sender)';
+
  }

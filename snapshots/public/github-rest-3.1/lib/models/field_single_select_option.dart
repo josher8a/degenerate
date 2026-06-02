@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FieldSingleSelectOptionColor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FieldSingleSelectOptionColor($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FieldSingleSelectOptionColor && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FieldSingleSelectOptionColor($value)';
+
  }
 @immutable final class FieldSingleSelectOption {const FieldSingleSelectOption({this.name, this.color, this.description, });
 
@@ -71,11 +74,14 @@ FieldSingleSelectOption copyWith({String? Function()? name, FieldSingleSelectOpt
   color: color != null ? color() : this.color,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FieldSingleSelectOption &&
           name == other.name &&
           color == other.color &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(name, color, description); } 
-@override String toString() { return 'FieldSingleSelectOption(name: $name, color: $color, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(name, color, description);
+
+@override String toString() => 'FieldSingleSelectOption(name: $name, color: $color, description: $description)';
+
  }

@@ -108,7 +108,7 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
   object: object ?? this.object,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalLocation &&
           address == other.address &&
           addressKana == other.addressKana &&
@@ -121,7 +121,10 @@ TerminalLocation copyWith({Address? address, LegalEntityJapanAddress? Function()
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, id, livemode, metadata, object, phone); } 
-@override String toString() { return 'TerminalLocation(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(address, addressKana, addressKanji, configurationOverrides, displayName, displayNameKana, displayNameKanji, id, livemode, metadata, object, phone);
+
+@override String toString() => 'TerminalLocation(address: $address, addressKana: $addressKana, addressKanji: $addressKanji, configurationOverrides: $configurationOverrides, displayName: $displayName, displayNameKana: $displayNameKana, displayNameKanji: $displayNameKanji, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phone: $phone)';
+
  }

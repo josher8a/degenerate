@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputAudioFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputAudioFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputAudioFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InputAudioFormat($value)';
+
  }
 @immutable final class InputAudio {const InputAudio({this.data, this.format, });
 
@@ -44,10 +47,13 @@ InputAudio copyWith({String? Function()? data, InputAudioFormat? Function()? for
   data: data != null ? data() : this.data,
   format: format != null ? format() : this.format,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudio &&
           data == other.data &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(data, format); } 
-@override String toString() { return 'InputAudio(data: $data, format: $format)'; } 
+          format == other.format;
+
+@override int get hashCode => Object.hash(data, format);
+
+@override String toString() => 'InputAudio(data: $data, format: $format)';
+
  }

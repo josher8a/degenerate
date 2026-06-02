@@ -35,12 +35,15 @@ ZoneLevelAccessGroupsCreateAnAccessGroupRequest copyWith({List<AccessRule>? Func
   name: name ?? this.name,
   require: require != null ? require() : this.require,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessGroupsCreateAnAccessGroupRequest &&
           listEquals(exclude, other.exclude) &&
           listEquals(include, other.include) &&
           name == other.name &&
-          listEquals(require, other.require); } 
-@override int get hashCode { return Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const [])); } 
-@override String toString() { return 'ZoneLevelAccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, name: $name, require: $require)'; } 
+          listEquals(require, other.require);
+
+@override int get hashCode => Object.hash(Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []));
+
+@override String toString() => 'ZoneLevelAccessGroupsCreateAnAccessGroupRequest(exclude: $exclude, include: $include, name: $name, require: $require)';
+
  }

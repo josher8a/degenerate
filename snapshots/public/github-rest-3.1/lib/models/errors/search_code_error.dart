@@ -19,19 +19,22 @@ final class SearchCodeError$403 extends SearchCodeError {const SearchCodeError$4
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class SearchCodeError$422 extends SearchCodeError {const SearchCodeError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SearchCodeError$503 extends SearchCodeError {const SearchCodeError$503(this.error);
 
 final SearchCodeResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SearchCodeError$Unknown extends SearchCodeError {const SearchCodeError$Unknown(this.statusCode, this.rawBody, );
 

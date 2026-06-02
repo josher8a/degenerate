@@ -27,11 +27,14 @@ PatchEventRawUpdateRequest copyWith({Map<String, dynamic>? Function()? data, Str
   source: source != null ? source() : this.source,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PatchEventRawUpdateRequest &&
           data == other.data &&
           source == other.source &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(data, source, tlp); } 
-@override String toString() { return 'PatchEventRawUpdateRequest(data: $data, source: $source, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(data, source, tlp);
+
+@override String toString() => 'PatchEventRawUpdateRequest(data: $data, source: $source, tlp: $tlp)';
+
  }

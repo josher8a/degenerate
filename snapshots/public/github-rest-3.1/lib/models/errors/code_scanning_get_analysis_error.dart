@@ -20,25 +20,29 @@ final class CodeScanningGetAnalysisError$403 extends CodeScanningGetAnalysisErro
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningGetAnalysisError$404 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningGetAnalysisError$422 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CodeScanningGetAnalysisError$503 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$503(this.error);
 
 final CodeScanningGetAnalysisResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningGetAnalysisError$Unknown extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError$Unknown(this.statusCode, this.rawBody, );
 

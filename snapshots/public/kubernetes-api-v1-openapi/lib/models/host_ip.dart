@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip') 
 HostIp copyWith({String? ip}) { return HostIp(
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostIp &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'HostIp(ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => ip.hashCode;
+
+@override String toString() => 'HostIp(ip: $ip)';
+
  }

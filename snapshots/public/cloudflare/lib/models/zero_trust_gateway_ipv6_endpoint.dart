@@ -23,10 +23,13 @@ ZeroTrustGatewayIpv6Endpoint copyWith({bool? Function()? enabled, List<ZeroTrust
   enabled: enabled != null ? enabled() : this.enabled,
   networks: networks != null ? networks() : this.networks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayIpv6Endpoint &&
           enabled == other.enabled &&
-          listEquals(networks, other.networks); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(networks ?? const [])); } 
-@override String toString() { return 'ZeroTrustGatewayIpv6Endpoint(enabled: $enabled, networks: $networks)'; } 
+          listEquals(networks, other.networks);
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(networks ?? const []));
+
+@override String toString() => 'ZeroTrustGatewayIpv6Endpoint(enabled: $enabled, networks: $networks)';
+
  }

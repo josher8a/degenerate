@@ -60,14 +60,17 @@ SourceReceiverFlow copyWith({String? Function()? address, int? amountCharged, in
   refundAttributesMethod: refundAttributesMethod ?? this.refundAttributesMethod,
   refundAttributesStatus: refundAttributesStatus ?? this.refundAttributesStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceReceiverFlow &&
           address == other.address &&
           amountCharged == other.amountCharged &&
           amountReceived == other.amountReceived &&
           amountReturned == other.amountReturned &&
           refundAttributesMethod == other.refundAttributesMethod &&
-          refundAttributesStatus == other.refundAttributesStatus; } 
-@override int get hashCode { return Object.hash(address, amountCharged, amountReceived, amountReturned, refundAttributesMethod, refundAttributesStatus); } 
-@override String toString() { return 'SourceReceiverFlow(address: $address, amountCharged: $amountCharged, amountReceived: $amountReceived, amountReturned: $amountReturned, refundAttributesMethod: $refundAttributesMethod, refundAttributesStatus: $refundAttributesStatus)'; } 
+          refundAttributesStatus == other.refundAttributesStatus;
+
+@override int get hashCode => Object.hash(address, amountCharged, amountReceived, amountReturned, refundAttributesMethod, refundAttributesStatus);
+
+@override String toString() => 'SourceReceiverFlow(address: $address, amountCharged: $amountCharged, amountReceived: $amountReceived, amountReturned: $amountReturned, refundAttributesMethod: $refundAttributesMethod, refundAttributesStatus: $refundAttributesStatus)';
+
  }

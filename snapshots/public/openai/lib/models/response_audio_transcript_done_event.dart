@@ -25,10 +25,13 @@ ResponseAudioTranscriptDoneEvent copyWith({String? type, int? sequenceNumber, })
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseAudioTranscriptDoneEvent &&
           type == other.type &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, sequenceNumber); } 
-@override String toString() { return 'ResponseAudioTranscriptDoneEvent(type: $type, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, sequenceNumber);
+
+@override String toString() => 'ResponseAudioTranscriptDoneEvent(type: $type, sequenceNumber: $sequenceNumber)';
+
  }

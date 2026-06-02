@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsCreateRequestPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TeamsCreateRequestPermission($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsCreateRequestPermission && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TeamsCreateRequestPermission($value)';
+
  }
 @immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });
 
@@ -93,7 +96,7 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
   permission: permission != null ? permission() : this.permission,
   parentTeamId: parentTeamId != null ? parentTeamId() : this.parentTeamId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsCreateRequest &&
           name == other.name &&
           description == other.description &&
@@ -102,7 +105,10 @@ TeamsCreateRequest copyWith({String? name, String? Function()? description, List
           privacy == other.privacy &&
           notificationSetting == other.notificationSetting &&
           permission == other.permission &&
-          parentTeamId == other.parentTeamId; } 
-@override int get hashCode { return Object.hash(name, description, Object.hashAll(maintainers ?? const []), Object.hashAll(repoNames ?? const []), privacy, notificationSetting, permission, parentTeamId); } 
-@override String toString() { return 'TeamsCreateRequest(name: $name, description: $description, maintainers: $maintainers, repoNames: $repoNames, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)'; } 
+          parentTeamId == other.parentTeamId;
+
+@override int get hashCode => Object.hash(name, description, Object.hashAll(maintainers ?? const []), Object.hashAll(repoNames ?? const []), privacy, notificationSetting, permission, parentTeamId);
+
+@override String toString() => 'TeamsCreateRequest(name: $name, description: $description, maintainers: $maintainers, repoNames: $repoNames, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PriceType$1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PriceType\$1($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PriceType$1 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PriceType\$1($value)';
+
  }
 /// Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.
 /// [Products](https://api.stripe.com#products) help you track inventory or provisioning, and prices help you track payment terms. Different physical goods or levels of service should be represented by products, and pricing options should be represented by prices. This approach lets you change prices without having to change your provisioning scheme.
@@ -188,7 +191,7 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Price &&
           active == other.active &&
           billingScheme == other.billingScheme &&
@@ -210,7 +213,10 @@ Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String
           transformQuantity == other.transformQuantity &&
           type == other.type &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hashAll([active, billingScheme, created, currency, currencyOptions, customUnitAmount, id, livemode, lookupKey, metadata, nickname, object, product, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transformQuantity, type, unitAmount, unitAmountDecimal]); } 
-@override String toString() { return 'Price(active: $active, billingScheme: $billingScheme, created: $created, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, object: $object, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transformQuantity: $transformQuantity, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hashAll([active, billingScheme, created, currency, currencyOptions, customUnitAmount, id, livemode, lookupKey, metadata, nickname, object, product, recurring, taxBehavior, Object.hashAll(tiers ?? const []), tiersMode, transformQuantity, type, unitAmount, unitAmountDecimal]);
+
+@override String toString() => 'Price(active: $active, billingScheme: $billingScheme, created: $created, currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, nickname: $nickname, object: $object, product: $product, recurring: $recurring, taxBehavior: $taxBehavior, tiers: $tiers, tiersMode: $tiersMode, transformQuantity: $transformQuantity, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

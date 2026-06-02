@@ -42,13 +42,16 @@ SetupIntentNextAction copyWith({PaymentIntentNextActionCashappHandleRedirectOrDi
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
   verifyWithMicrodeposits: verifyWithMicrodeposits != null ? verifyWithMicrodeposits() : this.verifyWithMicrodeposits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentNextAction &&
           cashappHandleRedirectOrDisplayQrCode == other.cashappHandleRedirectOrDisplayQrCode &&
           redirectToUrl == other.redirectToUrl &&
           type == other.type &&
           useStripeSdk == other.useStripeSdk &&
-          verifyWithMicrodeposits == other.verifyWithMicrodeposits; } 
-@override int get hashCode { return Object.hash(cashappHandleRedirectOrDisplayQrCode, redirectToUrl, type, useStripeSdk, verifyWithMicrodeposits); } 
-@override String toString() { return 'SetupIntentNextAction(cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, redirectToUrl: $redirectToUrl, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits)'; } 
+          verifyWithMicrodeposits == other.verifyWithMicrodeposits;
+
+@override int get hashCode => Object.hash(cashappHandleRedirectOrDisplayQrCode, redirectToUrl, type, useStripeSdk, verifyWithMicrodeposits);
+
+@override String toString() => 'SetupIntentNextAction(cashappHandleRedirectOrDisplayQrCode: $cashappHandleRedirectOrDisplayQrCode, redirectToUrl: $redirectToUrl, type: $type, useStripeSdk: $useStripeSdk, verifyWithMicrodeposits: $verifyWithMicrodeposits)';
+
  }

@@ -56,7 +56,7 @@ IssuesCreateRequest copyWith({dynamic title, String? Function()? body, String? F
   assignees: assignees != null ? assignees() : this.assignees,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesCreateRequest &&
           title == other.title &&
           body == other.body &&
@@ -64,7 +64,10 @@ IssuesCreateRequest copyWith({dynamic title, String? Function()? body, String? F
           milestone == other.milestone &&
           listEquals(labels, other.labels) &&
           listEquals(assignees, other.assignees) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(title, body, assignee, milestone, Object.hashAll(labels ?? const []), Object.hashAll(assignees ?? const []), type); } 
-@override String toString() { return 'IssuesCreateRequest(title: $title, body: $body, assignee: $assignee, milestone: $milestone, labels: $labels, assignees: $assignees, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(title, body, assignee, milestone, Object.hashAll(labels ?? const []), Object.hashAll(assignees ?? const []), type);
+
+@override String toString() => 'IssuesCreateRequest(title: $title, body: $body, assignee: $assignee, milestone: $milestone, labels: $labels, assignees: $assignees, type: $type)';
+
  }

@@ -29,11 +29,14 @@ ReviewCustomGatesStateRequired copyWith({String? environmentName, ActionsReviewP
   state: state ?? this.state,
   comment: comment != null ? comment() : this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewCustomGatesStateRequired &&
           environmentName == other.environmentName &&
           state == other.state &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(environmentName, state, comment); } 
-@override String toString() { return 'ReviewCustomGatesStateRequired(environmentName: $environmentName, state: $state, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(environmentName, state, comment);
+
+@override String toString() => 'ReviewCustomGatesStateRequired(environmentName: $environmentName, state: $state, comment: $comment)';
+
  }

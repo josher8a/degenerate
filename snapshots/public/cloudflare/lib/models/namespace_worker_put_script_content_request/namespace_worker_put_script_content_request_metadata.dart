@@ -27,10 +27,13 @@ NamespaceWorkerPutScriptContentRequestMetadata copyWith({String? Function()? bod
   bodyPart: bodyPart != null ? bodyPart() : this.bodyPart,
   mainModule: mainModule != null ? mainModule() : this.mainModule,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceWorkerPutScriptContentRequestMetadata &&
           bodyPart == other.bodyPart &&
-          mainModule == other.mainModule; } 
-@override int get hashCode { return Object.hash(bodyPart, mainModule); } 
-@override String toString() { return 'NamespaceWorkerPutScriptContentRequestMetadata(bodyPart: $bodyPart, mainModule: $mainModule)'; } 
+          mainModule == other.mainModule;
+
+@override int get hashCode => Object.hash(bodyPart, mainModule);
+
+@override String toString() => 'NamespaceWorkerPutScriptContentRequestMetadata(bodyPart: $bodyPart, mainModule: $mainModule)';
+
  }

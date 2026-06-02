@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConfigContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConfigContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConfigContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConfigContentType($value)';
+
  }
 @immutable final class HookConfig {const HookConfig({required this.contentType, required this.insecureSsl, required this.url, this.secret, });
 
@@ -56,12 +59,15 @@ HookConfig copyWith({ConfigContentType? contentType, String? insecureSsl, String
   secret: secret != null ? secret() : this.secret,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HookConfig &&
           contentType == other.contentType &&
           insecureSsl == other.insecureSsl &&
           secret == other.secret &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(contentType, insecureSsl, secret, url); } 
-@override String toString() { return 'HookConfig(contentType: $contentType, insecureSsl: $insecureSsl, secret: $secret, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(contentType, insecureSsl, secret, url);
+
+@override String toString() => 'HookConfig(contentType: $contentType, insecureSsl: $insecureSsl, secret: $secret, url: $url)';
+
  }

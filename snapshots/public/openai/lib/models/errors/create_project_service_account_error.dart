@@ -17,7 +17,8 @@ final class CreateProjectServiceAccountError$400 extends CreateProjectServiceAcc
 
 final ErrorResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CreateProjectServiceAccountError$Unknown extends CreateProjectServiceAccountError {const CreateProjectServiceAccountError$Unknown(this.statusCode, this.rawBody, );
 

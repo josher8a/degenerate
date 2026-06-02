@@ -75,7 +75,7 @@ Participant copyWith({String? Function()? createdAt, String? Function()? customP
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   userId: userId != null ? userId() : this.userId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Participant &&
           createdAt == other.createdAt &&
           customParticipantId == other.customParticipantId &&
@@ -89,7 +89,10 @@ Participant copyWith({String? Function()? createdAt, String? Function()? customP
           qualityStats == other.qualityStats &&
           role == other.role &&
           updatedAt == other.updatedAt &&
-          userId == other.userId; } 
-@override int get hashCode { return Object.hash(createdAt, customParticipantId, displayName, duration, id, joinedAt, leftAt, peerReport, peerStats, qualityStats, role, updatedAt, userId); } 
-@override String toString() { return 'Participant(createdAt: $createdAt, customParticipantId: $customParticipantId, displayName: $displayName, duration: $duration, id: $id, joinedAt: $joinedAt, leftAt: $leftAt, peerReport: $peerReport, peerStats: $peerStats, qualityStats: $qualityStats, role: $role, updatedAt: $updatedAt, userId: $userId)'; } 
+          userId == other.userId;
+
+@override int get hashCode => Object.hash(createdAt, customParticipantId, displayName, duration, id, joinedAt, leftAt, peerReport, peerStats, qualityStats, role, updatedAt, userId);
+
+@override String toString() => 'Participant(createdAt: $createdAt, customParticipantId: $customParticipantId, displayName: $displayName, duration: $duration, id: $id, joinedAt: $joinedAt, leftAt: $leftAt, peerReport: $peerReport, peerStats: $peerStats, qualityStats: $qualityStats, role: $role, updatedAt: $updatedAt, userId: $userId)';
+
  }

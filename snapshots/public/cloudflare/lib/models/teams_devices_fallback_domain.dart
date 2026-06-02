@@ -39,11 +39,14 @@ TeamsDevicesFallbackDomain copyWith({String? Function()? description, List<Teams
   dnsServer: dnsServer != null ? dnsServer() : this.dnsServer,
   suffix: suffix ?? this.suffix,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesFallbackDomain &&
           description == other.description &&
           listEquals(dnsServer, other.dnsServer) &&
-          suffix == other.suffix; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(dnsServer ?? const []), suffix); } 
-@override String toString() { return 'TeamsDevicesFallbackDomain(description: $description, dnsServer: $dnsServer, suffix: $suffix)'; } 
+          suffix == other.suffix;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(dnsServer ?? const []), suffix);
+
+@override String toString() => 'TeamsDevicesFallbackDomain(description: $description, dnsServer: $dnsServer, suffix: $suffix)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Effort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Effort($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Effort && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Effort($value)';
+
  }
 /// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
 @immutable final class ReasoningSummary {const ReasoningSummary._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReasoningSummary && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReasoningSummary($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReasoningSummary && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReasoningSummary($value)';
+
  }
 @immutable final class Reasoning {const Reasoning({this.effort, this.summary, });
 
@@ -78,10 +84,13 @@ Reasoning copyWith({Effort? Function()? effort, ReasoningSummary? Function()? su
   effort: effort != null ? effort() : this.effort,
   summary: summary != null ? summary() : this.summary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Reasoning &&
           effort == other.effort &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(effort, summary); } 
-@override String toString() { return 'Reasoning(effort: $effort, summary: $summary)'; } 
+          summary == other.summary;
+
+@override int get hashCode => Object.hash(effort, summary);
+
+@override String toString() => 'Reasoning(effort: $effort, summary: $summary)';
+
  }

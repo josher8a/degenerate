@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RepositoryRulesetLinksSelf copyWith({String? Function()? href}) { return RepositoryRulesetLinksSelf(
   href: href != null ? href() : this.href,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetLinksSelf &&
-          href == other.href; } 
-@override int get hashCode { return href.hashCode; } 
-@override String toString() { return 'RepositoryRulesetLinksSelf(href: $href)'; } 
+          href == other.href;
+
+@override int get hashCode => href.hashCode;
+
+@override String toString() => 'RepositoryRulesetLinksSelf(href: $href)';
+
  }

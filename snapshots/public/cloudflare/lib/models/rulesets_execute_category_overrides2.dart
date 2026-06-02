@@ -35,12 +35,15 @@ RulesetsExecuteCategoryOverrides2 copyWith({RulesetsRuleAction? Function()? acti
   enabled: enabled != null ? enabled() : this.enabled,
   sensitivityLevel: sensitivityLevel != null ? sensitivityLevel() : this.sensitivityLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteCategoryOverrides2 &&
           action == other.action &&
           category == other.category &&
           enabled == other.enabled &&
-          sensitivityLevel == other.sensitivityLevel; } 
-@override int get hashCode { return Object.hash(action, category, enabled, sensitivityLevel); } 
-@override String toString() { return 'RulesetsExecuteCategoryOverrides2(action: $action, category: $category, enabled: $enabled, sensitivityLevel: $sensitivityLevel)'; } 
+          sensitivityLevel == other.sensitivityLevel;
+
+@override int get hashCode => Object.hash(action, category, enabled, sensitivityLevel);
+
+@override String toString() => 'RulesetsExecuteCategoryOverrides2(action: $action, category: $category, enabled: $enabled, sensitivityLevel: $sensitivityLevel)';
+
  }

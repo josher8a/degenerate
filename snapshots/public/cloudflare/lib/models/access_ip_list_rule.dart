@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_li
 AccessIpListRule copyWith({IpList? ipList}) { return AccessIpListRule(
   ipList: ipList ?? this.ipList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessIpListRule &&
-          ipList == other.ipList; } 
-@override int get hashCode { return ipList.hashCode; } 
-@override String toString() { return 'AccessIpListRule(ipList: $ipList)'; } 
+          ipList == other.ipList;
+
+@override int get hashCode => ipList.hashCode;
+
+@override String toString() => 'AccessIpListRule(ipList: $ipList)';
+
  }

@@ -33,10 +33,13 @@ Zones0HoldPatchRequest copyWith({String Function()? holdAfter, bool Function()? 
   holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
   includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0HoldPatchRequest &&
           holdAfter == other.holdAfter &&
-          includeSubdomains == other.includeSubdomains; } 
-@override int get hashCode { return Object.hash(holdAfter, includeSubdomains); } 
-@override String toString() { return 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)'; } 
+          includeSubdomains == other.includeSubdomains;
+
+@override int get hashCode => Object.hash(holdAfter, includeSubdomains);
+
+@override String toString() => 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)';
+
  }

@@ -45,7 +45,7 @@ IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? n
   $default: $default != null ? $default() : this.$default,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueSearchResultItemLabels &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -53,7 +53,10 @@ IssueSearchResultItemLabels copyWith({int? Function()? id, String? Function()? n
           name == other.name &&
           color == other.color &&
           $default == other.$default &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, name, color, $default, description); } 
-@override String toString() { return 'IssueSearchResultItemLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(id, nodeId, url, name, color, $default, description);
+
+@override String toString() => 'IssueSearchResultItemLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, color: $color, \$default: ${$default}, description: $description)';
+
  }

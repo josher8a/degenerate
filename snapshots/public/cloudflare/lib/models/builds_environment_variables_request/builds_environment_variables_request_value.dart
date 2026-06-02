@@ -21,10 +21,13 @@ BuildsEnvironmentVariablesRequestValue copyWith({BuildsIsSecret? isSecret, Strin
   isSecret: isSecret ?? this.isSecret,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsEnvironmentVariablesRequestValue &&
           isSecret == other.isSecret &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(isSecret, value); } 
-@override String toString() { return 'BuildsEnvironmentVariablesRequestValue(isSecret: $isSecret, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(isSecret, value);
+
+@override String toString() => 'BuildsEnvironmentVariablesRequestValue(isSecret: $isSecret, value: $value)';
+
  }

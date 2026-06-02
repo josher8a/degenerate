@@ -34,12 +34,15 @@ DeploymentBranchPolicy copyWith({int? Function()? id, String? Function()? nodeId
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentBranchPolicy &&
           id == other.id &&
           nodeId == other.nodeId &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, type); } 
-@override String toString() { return 'DeploymentBranchPolicy(id: $id, nodeId: $nodeId, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, nodeId, name, type);
+
+@override String toString() => 'DeploymentBranchPolicy(id: $id, nodeId: $nodeId, name: $name, type: $type)';
+
  }

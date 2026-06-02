@@ -23,10 +23,13 @@ ActionsSetCustomOidcSubClaimForRepoRequest copyWith({bool? useDefault, List<Stri
   useDefault: useDefault ?? this.useDefault,
   includeClaimKeys: includeClaimKeys != null ? includeClaimKeys() : this.includeClaimKeys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsSetCustomOidcSubClaimForRepoRequest &&
           useDefault == other.useDefault &&
-          listEquals(includeClaimKeys, other.includeClaimKeys); } 
-@override int get hashCode { return Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const [])); } 
-@override String toString() { return 'ActionsSetCustomOidcSubClaimForRepoRequest(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)'; } 
+          listEquals(includeClaimKeys, other.includeClaimKeys);
+
+@override int get hashCode => Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const []));
+
+@override String toString() => 'ActionsSetCustomOidcSubClaimForRepoRequest(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)';
+
  }

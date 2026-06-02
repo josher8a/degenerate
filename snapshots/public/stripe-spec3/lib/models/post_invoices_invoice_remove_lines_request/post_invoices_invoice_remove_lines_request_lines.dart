@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LinesBehavior && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LinesBehavior($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LinesBehavior && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LinesBehavior($value)';
+
  }
 @immutable final class PostInvoicesInvoiceRemoveLinesRequestLines {const PostInvoicesInvoiceRemoveLinesRequestLines({required this.behavior, required this.id, });
 
@@ -49,10 +52,13 @@ PostInvoicesInvoiceRemoveLinesRequestLines copyWith({LinesBehavior? behavior, St
   behavior: behavior ?? this.behavior,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceRemoveLinesRequestLines &&
           behavior == other.behavior &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(behavior, id); } 
-@override String toString() { return 'PostInvoicesInvoiceRemoveLinesRequestLines(behavior: $behavior, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(behavior, id);
+
+@override String toString() => 'PostInvoicesInvoiceRemoveLinesRequestLines(behavior: $behavior, id: $id)';
+
  }

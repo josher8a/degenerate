@@ -23,10 +23,13 @@ SecretReference copyWith({String? Function()? name, String? Function()? namespac
   name: name != null ? name() : this.name,
   namespace: namespace != null ? namespace() : this.namespace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretReference &&
           name == other.name &&
-          namespace == other.namespace; } 
-@override int get hashCode { return Object.hash(name, namespace); } 
-@override String toString() { return 'SecretReference(name: $name, namespace: $namespace)'; } 
+          namespace == other.namespace;
+
+@override int get hashCode => Object.hash(name, namespace);
+
+@override String toString() => 'SecretReference(name: $name, namespace: $namespace)';
+
  }

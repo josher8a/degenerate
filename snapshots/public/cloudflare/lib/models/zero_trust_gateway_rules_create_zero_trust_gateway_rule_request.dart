@@ -88,7 +88,7 @@ ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewa
   schedule: schedule != null ? schedule() : this.schedule,
   traffic: traffic != null ? traffic() : this.traffic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest &&
           action == other.action &&
           description == other.description &&
@@ -101,7 +101,10 @@ ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewa
           precedence == other.precedence &&
           ruleSettings == other.ruleSettings &&
           schedule == other.schedule &&
-          traffic == other.traffic; } 
-@override int get hashCode { return Object.hash(action, description, devicePosture, enabled, expiration, Object.hashAll(filters ?? const []), identity, name, precedence, ruleSettings, schedule, traffic); } 
-@override String toString() { return 'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(action: $action, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, identity: $identity, name: $name, precedence: $precedence, ruleSettings: $ruleSettings, schedule: $schedule, traffic: $traffic)'; } 
+          traffic == other.traffic;
+
+@override int get hashCode => Object.hash(action, description, devicePosture, enabled, expiration, Object.hashAll(filters ?? const []), identity, name, precedence, ruleSettings, schedule, traffic);
+
+@override String toString() => 'ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(action: $action, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, identity: $identity, name: $name, precedence: $precedence, ruleSettings: $ruleSettings, schedule: $schedule, traffic: $traffic)';
+
  }

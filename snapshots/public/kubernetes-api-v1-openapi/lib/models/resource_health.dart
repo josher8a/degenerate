@@ -37,11 +37,14 @@ ResourceHealth copyWith({String? Function()? health, String? Function()? message
   message: message != null ? message() : this.message,
   resourceId: resourceId ?? this.resourceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceHealth &&
           health == other.health &&
           message == other.message &&
-          resourceId == other.resourceId; } 
-@override int get hashCode { return Object.hash(health, message, resourceId); } 
-@override String toString() { return 'ResourceHealth(health: $health, message: $message, resourceId: $resourceId)'; } 
+          resourceId == other.resourceId;
+
+@override int get hashCode => Object.hash(health, message, resourceId);
+
+@override String toString() => 'ResourceHealth(health: $health, message: $message, resourceId: $resourceId)';
+
  }

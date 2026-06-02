@@ -50,13 +50,16 @@ LoadBalancingResultInfo copyWith({double? Function()? count, double? Function()?
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
           totalCount == other.totalCount &&
-          totalPages == other.totalPages; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount, totalPages); } 
-@override String toString() { return 'LoadBalancingResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)'; } 
+          totalPages == other.totalPages;
+
+@override int get hashCode => Object.hash(count, page, perPage, totalCount, totalPages);
+
+@override String toString() => 'LoadBalancingResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)';
+
  }

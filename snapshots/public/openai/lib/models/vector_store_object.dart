@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreObjectObject($value)';
+
  }
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
 @immutable final class VectorStoreObjectStatus {const VectorStoreObjectStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreObjectStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreObjectStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreObjectStatus($value)';
+
  }
 /// A vector store is a collection of processed files can be used by the `file_search` tool.
 @immutable final class VectorStoreObject {const VectorStoreObject({required this.id, required this.object, required this.createdAt, required this.name, required this.usageBytes, required this.fileCounts, required this.status, required this.lastActiveAt, required this.metadata, this.expiresAfter, this.expiresAt, });
@@ -139,7 +145,7 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
   lastActiveAt: lastActiveAt != null ? lastActiveAt() : this.lastActiveAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreObject &&
           id == other.id &&
           object == other.object &&
@@ -151,7 +157,10 @@ VectorStoreObject copyWith({String? id, VectorStoreObjectObject? object, int? cr
           expiresAfter == other.expiresAfter &&
           expiresAt == other.expiresAt &&
           lastActiveAt == other.lastActiveAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, name, usageBytes, fileCounts, status, expiresAfter, expiresAt, lastActiveAt, metadata); } 
-@override String toString() { return 'VectorStoreObject(id: $id, object: $object, createdAt: $createdAt, name: $name, usageBytes: $usageBytes, fileCounts: $fileCounts, status: $status, expiresAfter: $expiresAfter, expiresAt: $expiresAt, lastActiveAt: $lastActiveAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, object, createdAt, name, usageBytes, fileCounts, status, expiresAfter, expiresAt, lastActiveAt, metadata);
+
+@override String toString() => 'VectorStoreObject(id: $id, object: $object, createdAt: $createdAt, name: $name, usageBytes: $usageBytes, fileCounts: $fileCounts, status: $status, expiresAfter: $expiresAfter, expiresAt: $expiresAt, lastActiveAt: $lastActiveAt, metadata: $metadata)';
+
  }

@@ -17,7 +17,8 @@ final class DeleteEventQueryAlertDeleteError$404 extends DeleteEventQueryAlertDe
 
 final DeleteEventQueryAlertDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeleteEventQueryAlertDeleteError$Unknown extends DeleteEventQueryAlertDeleteError {const DeleteEventQueryAlertDeleteError$Unknown(this.statusCode, this.rawBody, );
 

@@ -32,11 +32,14 @@ RadarGetBgpTopAsesResponseResultTop0 copyWith({String? asName, int? asn, String?
   asn: asn ?? this.asn,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsesResponseResultTop0 &&
           asName == other.asName &&
           asn == other.asn &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(asName, asn, value); } 
-@override String toString() { return 'RadarGetBgpTopAsesResponseResultTop0(asName: $asName, asn: $asn, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(asName, asn, value);
+
+@override String toString() => 'RadarGetBgpTopAsesResponseResultTop0(asName: $asName, asn: $asn, value: $value)';
+
  }

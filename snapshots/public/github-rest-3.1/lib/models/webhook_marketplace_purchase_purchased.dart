@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMarketplacePurchasePurchasedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMarketplacePurchasePurchasedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookMarketplacePurchasePurchasedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookMarketplacePurchasePurchasedAction($value)';
+
  }
 @immutable final class WebhookMarketplacePurchasePurchased {const WebhookMarketplacePurchasePurchased({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });
 
@@ -79,7 +82,7 @@ WebhookMarketplacePurchasePurchased copyWith({WebhookMarketplacePurchasePurchase
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMarketplacePurchasePurchased &&
           action == other.action &&
           effectiveDate == other.effectiveDate &&
@@ -89,7 +92,10 @@ WebhookMarketplacePurchasePurchased copyWith({WebhookMarketplacePurchasePurchase
           organization == other.organization &&
           previousMarketplacePurchase == other.previousMarketplacePurchase &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender); } 
-@override String toString() { return 'WebhookMarketplacePurchasePurchased(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, effectiveDate, enterprise, installation, marketplacePurchase, organization, previousMarketplacePurchase, repository, sender);
+
+@override String toString() => 'WebhookMarketplacePurchasePurchased(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, marketplacePurchase: $marketplacePurchase, organization: $organization, previousMarketplacePurchase: $previousMarketplacePurchase, repository: $repository, sender: $sender)';
+
  }

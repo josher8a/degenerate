@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodConfigResourceDisplayPreferenceValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodConfigResourceDisplayPreferenceValue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodConfigResourceDisplayPreferenceValue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodConfigResourceDisplayPreferenceValue($value)';
+
  }
 /// 
 @immutable final class PaymentMethodConfigResourceDisplayPreference {const PaymentMethodConfigResourceDisplayPreference({required this.preference, required this.value, this.overridable, });
@@ -55,11 +58,14 @@ PaymentMethodConfigResourceDisplayPreference copyWith({bool? Function()? overrid
   preference: preference ?? this.preference,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodConfigResourceDisplayPreference &&
           overridable == other.overridable &&
           preference == other.preference &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(overridable, preference, value); } 
-@override String toString() { return 'PaymentMethodConfigResourceDisplayPreference(overridable: $overridable, preference: $preference, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(overridable, preference, value);
+
+@override String toString() => 'PaymentMethodConfigResourceDisplayPreference(overridable: $overridable, preference: $preference, value: $value)';
+
  }

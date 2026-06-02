@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('raw')
 EmailSecurityGetMessageRawResponseResult copyWith({String? raw}) { return EmailSecurityGetMessageRawResponseResult(
   raw: raw ?? this.raw,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessageRawResponseResult &&
-          raw == other.raw; } 
-@override int get hashCode { return raw.hashCode; } 
-@override String toString() { return 'EmailSecurityGetMessageRawResponseResult(raw: $raw)'; } 
+          raw == other.raw;
+
+@override int get hashCode => raw.hashCode;
+
+@override String toString() => 'EmailSecurityGetMessageRawResponseResult(raw: $raw)';
+
  }

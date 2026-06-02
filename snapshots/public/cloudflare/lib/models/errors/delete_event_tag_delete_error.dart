@@ -17,7 +17,8 @@ final class DeleteEventTagDeleteError$400 extends DeleteEventTagDeleteError {con
 
 final DeleteEventTagDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteEventTagDeleteError$Unknown extends DeleteEventTagDeleteError {const DeleteEventTagDeleteError$Unknown(this.statusCode, this.rawBody, );
 

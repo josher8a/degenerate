@@ -21,10 +21,13 @@ MconnAdminEventsGetLatestResult copyWith({double? count, List<MconnRecordedEvent
   count: count ?? this.count,
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminEventsGetLatestResult &&
           count == other.count &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(items)); } 
-@override String toString() { return 'MconnAdminEventsGetLatestResult(count: $count, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(count, Object.hashAll(items));
+
+@override String toString() => 'MconnAdminEventsGetLatestResult(count: $count, items: $items)';
+
  }

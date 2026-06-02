@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentFlowsAmountDetailsResourceErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentFlowsAmountDetailsResourceErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceErrorCode($value)';
+
  }
 /// 
 @immutable final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code, this.message, });
@@ -55,10 +58,13 @@ PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResour
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceError &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceError(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceError(code: $code, message: $message)';
+
  }

@@ -24,10 +24,13 @@ AiSearchInstanceSearchRequest copyWith({AiSearchOptions? Function()? aiSearchOpt
   aiSearchOptions: aiSearchOptions != null ? aiSearchOptions() : this.aiSearchOptions,
   messages: messages ?? this.messages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceSearchRequest &&
           aiSearchOptions == other.aiSearchOptions &&
-          listEquals(messages, other.messages); } 
-@override int get hashCode { return Object.hash(aiSearchOptions, Object.hashAll(messages)); } 
-@override String toString() { return 'AiSearchInstanceSearchRequest(aiSearchOptions: $aiSearchOptions, messages: $messages)'; } 
+          listEquals(messages, other.messages);
+
+@override int get hashCode => Object.hash(aiSearchOptions, Object.hashAll(messages));
+
+@override String toString() => 'AiSearchInstanceSearchRequest(aiSearchOptions: $aiSearchOptions, messages: $messages)';
+
  }

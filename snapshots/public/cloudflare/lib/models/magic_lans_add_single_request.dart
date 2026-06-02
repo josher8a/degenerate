@@ -63,7 +63,7 @@ MagicLansAddSingleRequest copyWith({MagicBondId? Function()? bondId, bool? Funct
   staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
   vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLansAddSingleRequest &&
           bondId == other.bondId &&
           haLink == other.haLink &&
@@ -74,7 +74,10 @@ MagicLansAddSingleRequest copyWith({MagicBondId? Function()? bondId, bool? Funct
           physport == other.physport &&
           listEquals(routedSubnets, other.routedSubnets) &&
           staticAddressing == other.staticAddressing &&
-          vlanTag == other.vlanTag; } 
-@override int get hashCode { return Object.hash(bondId, haLink, isBreakout, isPrioritized, name, nat, physport, Object.hashAll(routedSubnets ?? const []), staticAddressing, vlanTag); } 
-@override String toString() { return 'MagicLansAddSingleRequest(bondId: $bondId, haLink: $haLink, isBreakout: $isBreakout, isPrioritized: $isPrioritized, name: $name, nat: $nat, physport: $physport, routedSubnets: $routedSubnets, staticAddressing: $staticAddressing, vlanTag: $vlanTag)'; } 
+          vlanTag == other.vlanTag;
+
+@override int get hashCode => Object.hash(bondId, haLink, isBreakout, isPrioritized, name, nat, physport, Object.hashAll(routedSubnets ?? const []), staticAddressing, vlanTag);
+
+@override String toString() => 'MagicLansAddSingleRequest(bondId: $bondId, haLink: $haLink, isBreakout: $isBreakout, isPrioritized: $isPrioritized, name: $name, nat: $nat, physport: $physport, routedSubnets: $routedSubnets, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+
  }

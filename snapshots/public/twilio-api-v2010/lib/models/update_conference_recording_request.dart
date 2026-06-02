@@ -22,10 +22,13 @@ UpdateConferenceRecordingRequest copyWith({ConferenceRecordingEnumStatus? status
   status: status ?? this.status,
   pauseBehavior: pauseBehavior != null ? pauseBehavior() : this.pauseBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateConferenceRecordingRequest &&
           status == other.status &&
-          pauseBehavior == other.pauseBehavior; } 
-@override int get hashCode { return Object.hash(status, pauseBehavior); } 
-@override String toString() { return 'UpdateConferenceRecordingRequest(status: $status, pauseBehavior: $pauseBehavior)'; } 
+          pauseBehavior == other.pauseBehavior;
+
+@override int get hashCode => Object.hash(status, pauseBehavior);
+
+@override String toString() => 'UpdateConferenceRecordingRequest(status: $status, pauseBehavior: $pauseBehavior)';
+
  }

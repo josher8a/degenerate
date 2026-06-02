@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessComponentsSchemasType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessComponentsSchemasType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessComponentsSchemasType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessComponentsSchemasType($value)';
+
  }
 @immutable final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });
 
@@ -92,14 +95,17 @@ AccessSchemasFeatureAppProps copyWith({List<String>? Function()? allowedIdps, Ac
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasFeatureAppProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
           autoRedirectToIdentity == other.autoRedirectToIdentity &&
           domain == other.domain &&
           name == other.name &&
           sessionDuration == other.sessionDuration &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, domain, name, sessionDuration, type); } 
-@override String toString() { return 'AccessSchemasFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), autoRedirectToIdentity, domain, name, sessionDuration, type);
+
+@override String toString() => 'AccessSchemasFeatureAppProps(allowedIdps: $allowedIdps, autoRedirectToIdentity: $autoRedirectToIdentity, domain: $domain, name: $name, sessionDuration: $sessionDuration, type: $type)';
+
  }

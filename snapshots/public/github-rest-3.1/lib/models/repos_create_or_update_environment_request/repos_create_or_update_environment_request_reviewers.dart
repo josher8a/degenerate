@@ -22,10 +22,13 @@ ReposCreateOrUpdateEnvironmentRequestReviewers copyWith({DeploymentReviewerType?
   type: type != null ? type() : this.type,
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateOrUpdateEnvironmentRequestReviewers &&
           type == other.type &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(type, id); } 
-@override String toString() { return 'ReposCreateOrUpdateEnvironmentRequestReviewers(type: $type, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(type, id);
+
+@override String toString() => 'ReposCreateOrUpdateEnvironmentRequestReviewers(type: $type, id: $id)';
+
  }

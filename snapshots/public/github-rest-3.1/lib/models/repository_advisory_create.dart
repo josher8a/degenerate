@@ -71,7 +71,7 @@ RepositoryAdvisoryCreate copyWith({String? summary, String? description, String?
   cvssVectorString: cvssVectorString != null ? cvssVectorString() : this.cvssVectorString,
   startPrivateFork: startPrivateFork != null ? startPrivateFork() : this.startPrivateFork,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisoryCreate &&
           summary == other.summary &&
           description == other.description &&
@@ -81,7 +81,10 @@ RepositoryAdvisoryCreate copyWith({String? summary, String? description, String?
           listEquals(credits, other.credits) &&
           severity == other.severity &&
           cvssVectorString == other.cvssVectorString &&
-          startPrivateFork == other.startPrivateFork; } 
-@override int get hashCode { return Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, startPrivateFork); } 
-@override String toString() { return 'RepositoryAdvisoryCreate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, startPrivateFork: $startPrivateFork)'; } 
+          startPrivateFork == other.startPrivateFork;
+
+@override int get hashCode => Object.hash(summary, description, cveId, Object.hashAll(vulnerabilities), Object.hashAll(cweIds ?? const []), Object.hashAll(credits ?? const []), severity, cvssVectorString, startPrivateFork);
+
+@override String toString() => 'RepositoryAdvisoryCreate(summary: $summary, description: $description, cveId: $cveId, vulnerabilities: $vulnerabilities, cweIds: $cweIds, credits: $credits, severity: $severity, cvssVectorString: $cvssVectorString, startPrivateFork: $startPrivateFork)';
+
  }

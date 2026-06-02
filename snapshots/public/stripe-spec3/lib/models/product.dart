@@ -156,7 +156,7 @@ Product copyWith({bool? active, int? created, DefaultPrice? Function()? defaultP
   updated: updated ?? this.updated,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Product &&
           active == other.active &&
           created == other.created &&
@@ -175,7 +175,10 @@ Product copyWith({bool? active, int? created, DefaultPrice? Function()? defaultP
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel &&
           updated == other.updated &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, created, defaultPrice, description, id, Object.hashAll(images), livemode, Object.hashAll(marketingFeatures), metadata, name, object, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, updated, url); } 
-@override String toString() { return 'Product(active: $active, created: $created, defaultPrice: $defaultPrice, description: $description, id: $id, images: $images, livemode: $livemode, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, object: $object, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, updated: $updated, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(active, created, defaultPrice, description, id, Object.hashAll(images), livemode, Object.hashAll(marketingFeatures), metadata, name, object, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, updated, url);
+
+@override String toString() => 'Product(active: $active, created: $created, defaultPrice: $defaultPrice, description: $description, id: $id, images: $images, livemode: $livemode, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, object: $object, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, updated: $updated, url: $url)';
+
  }

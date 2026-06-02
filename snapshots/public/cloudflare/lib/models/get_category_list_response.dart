@@ -40,13 +40,16 @@ GetCategoryListResponse copyWith({double? killChain, List<String>? Function()? m
   shortname: shortname != null ? shortname() : this.shortname,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCategoryListResponse &&
           killChain == other.killChain &&
           listEquals(mitreAttack, other.mitreAttack) &&
           name == other.name &&
           shortname == other.shortname &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(killChain, Object.hashAll(mitreAttack ?? const []), name, shortname, uuid); } 
-@override String toString() { return 'GetCategoryListResponse(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(killChain, Object.hashAll(mitreAttack ?? const []), name, shortname, uuid);
+
+@override String toString() => 'GetCategoryListResponse(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname, uuid: $uuid)';
+
  }

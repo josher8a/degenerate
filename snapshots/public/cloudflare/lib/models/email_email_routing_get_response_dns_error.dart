@@ -20,10 +20,13 @@ EmailEmailRoutingGetResponseDnsError copyWith({String? Function()? code, EmailDn
   code: code != null ? code() : this.code,
   missing: missing != null ? missing() : this.missing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailEmailRoutingGetResponseDnsError &&
           code == other.code &&
-          missing == other.missing; } 
-@override int get hashCode { return Object.hash(code, missing); } 
-@override String toString() { return 'EmailEmailRoutingGetResponseDnsError(code: $code, missing: $missing)'; } 
+          missing == other.missing;
+
+@override int get hashCode => Object.hash(code, missing);
+
+@override String toString() => 'EmailEmailRoutingGetResponseDnsError(code: $code, missing: $missing)';
+
  }

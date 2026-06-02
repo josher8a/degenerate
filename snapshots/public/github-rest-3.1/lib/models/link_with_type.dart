@@ -22,10 +22,13 @@ LinkWithType copyWith({String? href, String? type, }) { return LinkWithType(
   href: href ?? this.href,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LinkWithType &&
           href == other.href &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(href, type); } 
-@override String toString() { return 'LinkWithType(href: $href, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(href, type);
+
+@override String toString() => 'LinkWithType(href: $href, type: $type)';
+
  }

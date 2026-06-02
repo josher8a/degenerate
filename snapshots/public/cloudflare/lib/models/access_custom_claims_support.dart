@@ -26,10 +26,13 @@ AccessCustomClaimsSupport copyWith({List<String>? Function()? claims, String? Fu
   claims: claims != null ? claims() : this.claims,
   emailClaimName: emailClaimName != null ? emailClaimName() : this.emailClaimName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomClaimsSupport &&
           listEquals(claims, other.claims) &&
-          emailClaimName == other.emailClaimName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(claims ?? const []), emailClaimName); } 
-@override String toString() { return 'AccessCustomClaimsSupport(claims: $claims, emailClaimName: $emailClaimName)'; } 
+          emailClaimName == other.emailClaimName;
+
+@override int get hashCode => Object.hash(Object.hashAll(claims ?? const []), emailClaimName);
+
+@override String toString() => 'AccessCustomClaimsSupport(claims: $claims, emailClaimName: $emailClaimName)';
+
  }

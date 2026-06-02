@@ -45,13 +45,16 @@ AbuseReportsMitigationSummary copyWith({int? acceptedUrlCount, int? activeCount,
   inReviewCount: inReviewCount ?? this.inReviewCount,
   pendingCount: pendingCount ?? this.pendingCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsMitigationSummary &&
           acceptedUrlCount == other.acceptedUrlCount &&
           activeCount == other.activeCount &&
           externalHostNotified == other.externalHostNotified &&
           inReviewCount == other.inReviewCount &&
-          pendingCount == other.pendingCount; } 
-@override int get hashCode { return Object.hash(acceptedUrlCount, activeCount, externalHostNotified, inReviewCount, pendingCount); } 
-@override String toString() { return 'AbuseReportsMitigationSummary(acceptedUrlCount: $acceptedUrlCount, activeCount: $activeCount, externalHostNotified: $externalHostNotified, inReviewCount: $inReviewCount, pendingCount: $pendingCount)'; } 
+          pendingCount == other.pendingCount;
+
+@override int get hashCode => Object.hash(acceptedUrlCount, activeCount, externalHostNotified, inReviewCount, pendingCount);
+
+@override String toString() => 'AbuseReportsMitigationSummary(acceptedUrlCount: $acceptedUrlCount, activeCount: $activeCount, externalHostNotified: $externalHostNotified, inReviewCount: $inReviewCount, pendingCount: $pendingCount)';
+
  }

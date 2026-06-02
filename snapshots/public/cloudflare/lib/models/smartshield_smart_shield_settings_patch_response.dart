@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('smart
 SmartshieldSmartShieldSettingsPatchResponse copyWith({SmartshieldSmartShieldSettingsGetResponseSmartTieredCache? smartTieredCache}) { return SmartshieldSmartShieldSettingsPatchResponse(
   smartTieredCache: smartTieredCache ?? this.smartTieredCache,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSmartShieldSettingsPatchResponse &&
-          smartTieredCache == other.smartTieredCache; } 
-@override int get hashCode { return smartTieredCache.hashCode; } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsPatchResponse(smartTieredCache: $smartTieredCache)'; } 
+          smartTieredCache == other.smartTieredCache;
+
+@override int get hashCode => smartTieredCache.hashCode;
+
+@override String toString() => 'SmartshieldSmartShieldSettingsPatchResponse(smartTieredCache: $smartTieredCache)';
+
  }

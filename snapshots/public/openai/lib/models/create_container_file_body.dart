@@ -23,10 +23,13 @@ CreateContainerFileBody copyWith({String? Function()? fileId, Uint8List? Functio
   fileId: fileId != null ? fileId() : this.fileId,
   file: file != null ? file() : this.file,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateContainerFileBody &&
           fileId == other.fileId &&
-          file == other.file; } 
-@override int get hashCode { return Object.hash(fileId, file); } 
-@override String toString() { return 'CreateContainerFileBody(fileId: $fileId, file: $file)'; } 
+          file == other.file;
+
+@override int get hashCode => Object.hash(fileId, file);
+
+@override String toString() => 'CreateContainerFileBody(fileId: $fileId, file: $file)';
+
  }

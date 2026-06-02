@@ -46,14 +46,17 @@ CustomIndicatorFeedsPermissionListItem copyWith({CustomIndicatorFeedsDescription
   isPublic: isPublic != null ? isPublic() : this.isPublic,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsPermissionListItem &&
           description == other.description &&
           id == other.id &&
           isAttributable == other.isAttributable &&
           isDownloadable == other.isDownloadable &&
           isPublic == other.isPublic &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, id, isAttributable, isDownloadable, isPublic, name); } 
-@override String toString() { return 'CustomIndicatorFeedsPermissionListItem(description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, id, isAttributable, isDownloadable, isPublic, name);
+
+@override String toString() => 'CustomIndicatorFeedsPermissionListItem(description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)';
+
  }

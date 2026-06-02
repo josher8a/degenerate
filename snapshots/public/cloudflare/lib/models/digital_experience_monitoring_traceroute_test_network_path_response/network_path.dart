@@ -21,10 +21,13 @@ NetworkPath copyWith({Sampling? Function()? sampling, List<NetworkPathSlots>? sl
   sampling: sampling != null ? sampling() : this.sampling,
   slots: slots ?? this.slots,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkPath &&
           sampling == other.sampling &&
-          listEquals(slots, other.slots); } 
-@override int get hashCode { return Object.hash(sampling, Object.hashAll(slots)); } 
-@override String toString() { return 'NetworkPath(sampling: $sampling, slots: $slots)'; } 
+          listEquals(slots, other.slots);
+
+@override int get hashCode => Object.hash(sampling, Object.hashAll(slots));
+
+@override String toString() => 'NetworkPath(sampling: $sampling, slots: $slots)';
+
  }

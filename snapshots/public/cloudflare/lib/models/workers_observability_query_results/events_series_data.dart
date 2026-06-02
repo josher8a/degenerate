@@ -44,14 +44,17 @@ EventsSeriesData copyWith({DataAggregates? aggregates, double? count, double? Fu
   interval: interval ?? this.interval,
   sampleInterval: sampleInterval ?? this.sampleInterval,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EventsSeriesData &&
           aggregates == other.aggregates &&
           count == other.count &&
           errors == other.errors &&
           groups == other.groups &&
           interval == other.interval &&
-          sampleInterval == other.sampleInterval; } 
-@override int get hashCode { return Object.hash(aggregates, count, errors, groups, interval, sampleInterval); } 
-@override String toString() { return 'EventsSeriesData(aggregates: $aggregates, count: $count, errors: $errors, groups: $groups, interval: $interval, sampleInterval: $sampleInterval)'; } 
+          sampleInterval == other.sampleInterval;
+
+@override int get hashCode => Object.hash(aggregates, count, errors, groups, interval, sampleInterval);
+
+@override String toString() => 'EventsSeriesData(aggregates: $aggregates, count: $count, errors: $errors, groups: $groups, interval: $interval, sampleInterval: $sampleInterval)';
+
  }

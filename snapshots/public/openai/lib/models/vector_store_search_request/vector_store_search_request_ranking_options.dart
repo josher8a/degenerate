@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Ranker && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Ranker($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Ranker && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Ranker($value)';
+
  }
 /// Ranking options for search.
 @immutable final class VectorStoreSearchRequestRankingOptions {const VectorStoreSearchRequestRankingOptions({this.ranker = Ranker.auto, this.scoreThreshold = 0.0, });
@@ -55,10 +58,13 @@ VectorStoreSearchRequestRankingOptions copyWith({Ranker Function()? ranker, doub
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreSearchRequestRankingOptions &&
           ranker == other.ranker &&
-          scoreThreshold == other.scoreThreshold; } 
-@override int get hashCode { return Object.hash(ranker, scoreThreshold); } 
-@override String toString() { return 'VectorStoreSearchRequestRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)'; } 
+          scoreThreshold == other.scoreThreshold;
+
+@override int get hashCode => Object.hash(ranker, scoreThreshold);
+
+@override String toString() => 'VectorStoreSearchRequestRankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)';
+
  }

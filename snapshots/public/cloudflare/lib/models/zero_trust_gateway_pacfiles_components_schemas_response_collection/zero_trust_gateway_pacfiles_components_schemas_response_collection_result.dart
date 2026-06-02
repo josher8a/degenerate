@@ -47,7 +47,7 @@ ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({Zero
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -55,7 +55,10 @@ ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult copyWith({Zero
           name == other.name &&
           slug == other.slug &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, name, slug, updatedAt, url); } 
-@override String toString() { return 'ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(createdAt: $createdAt, description: $description, id: $id, name: $name, slug: $slug, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(createdAt, description, id, name, slug, updatedAt, url);
+
+@override String toString() => 'ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult(createdAt: $createdAt, description: $description, id: $id, name: $name, slug: $slug, updatedAt: $updatedAt, url: $url)';
+
  }

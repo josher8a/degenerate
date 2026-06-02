@@ -20,10 +20,13 @@ AddStyleTag copyWith({String? Function()? content, String? Function()? url, }) {
   content: content != null ? content() : this.content,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddStyleTag &&
           content == other.content &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(content, url); } 
-@override String toString() { return 'AddStyleTag(content: $content, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(content, url);
+
+@override String toString() => 'AddStyleTag(content: $content, url: $url)';
+
  }

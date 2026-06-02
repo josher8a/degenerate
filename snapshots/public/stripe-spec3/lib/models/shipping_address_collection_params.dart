@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
 ShippingAddressCollectionParams copyWith({List<AllowedCountries>? allowedCountries}) { return ShippingAddressCollectionParams(
   allowedCountries: allowedCountries ?? this.allowedCountries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShippingAddressCollectionParams &&
-          listEquals(allowedCountries, other.allowedCountries); } 
-@override int get hashCode { return Object.hashAll(allowedCountries); } 
-@override String toString() { return 'ShippingAddressCollectionParams(allowedCountries: $allowedCountries)'; } 
+          listEquals(allowedCountries, other.allowedCountries);
+
+@override int get hashCode => Object.hashAll(allowedCountries);
+
+@override String toString() => 'ShippingAddressCollectionParams(allowedCountries: $allowedCountries)';
+
  }

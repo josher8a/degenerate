@@ -95,7 +95,7 @@ PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientRefe
   type: type != null ? type() : this.type,
   verificationFlow: verificationFlow != null ? verificationFlow() : this.verificationFlow,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIdentityVerificationSessionsRequest &&
           clientReferenceId == other.clientReferenceId &&
           listEquals(expand, other.expand) &&
@@ -107,7 +107,10 @@ PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientRefe
           relatedPerson == other.relatedPerson &&
           returnUrl == other.returnUrl &&
           type == other.type &&
-          verificationFlow == other.verificationFlow; } 
-@override int get hashCode { return Object.hash(clientReferenceId, Object.hashAll(expand ?? const []), metadata, options, providedDetails, relatedCustomer, relatedCustomerAccount, relatedPerson, returnUrl, type, verificationFlow); } 
-@override String toString() { return 'PostIdentityVerificationSessionsRequest(clientReferenceId: $clientReferenceId, expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, returnUrl: $returnUrl, type: $type, verificationFlow: $verificationFlow)'; } 
+          verificationFlow == other.verificationFlow;
+
+@override int get hashCode => Object.hash(clientReferenceId, Object.hashAll(expand ?? const []), metadata, options, providedDetails, relatedCustomer, relatedCustomerAccount, relatedPerson, returnUrl, type, verificationFlow);
+
+@override String toString() => 'PostIdentityVerificationSessionsRequest(clientReferenceId: $clientReferenceId, expand: $expand, metadata: $metadata, options: $options, providedDetails: $providedDetails, relatedCustomer: $relatedCustomer, relatedCustomerAccount: $relatedCustomerAccount, relatedPerson: $relatedPerson, returnUrl: $returnUrl, type: $type, verificationFlow: $verificationFlow)';
+
  }

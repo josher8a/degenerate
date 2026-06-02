@@ -137,7 +137,7 @@ AccessSchemasSelfHostedProps copyWith({AccessAllowIframe? Function()? allowIfram
   type: type ?? this.type,
   useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasSelfHostedProps &&
           allowIframe == other.allowIframe &&
           listEquals(allowedIdps, other.allowedIdps) &&
@@ -157,7 +157,10 @@ AccessSchemasSelfHostedProps copyWith({AccessAllowIframe? Function()? allowIfram
           sessionDuration == other.sessionDuration &&
           skipInterstitial == other.skipInterstitial &&
           type == other.type &&
-          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl; } 
-@override int get hashCode { return Object.hash(allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, name, optionsPreflightBypass, sameSiteCookieAttribute, serviceAuth401Redirect, sessionDuration, skipInterstitial, type, useClientlessIsolationAppLauncherUrl); } 
-@override String toString() { return 'AccessSchemasSelfHostedProps(allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)'; } 
+          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl;
+
+@override int get hashCode => Object.hash(allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, name, optionsPreflightBypass, sameSiteCookieAttribute, serviceAuth401Redirect, sessionDuration, skipInterstitial, type, useClientlessIsolationAppLauncherUrl);
+
+@override String toString() => 'AccessSchemasSelfHostedProps(allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, name: $name, optionsPreflightBypass: $optionsPreflightBypass, sameSiteCookieAttribute: $sameSiteCookieAttribute, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)';
+
  }

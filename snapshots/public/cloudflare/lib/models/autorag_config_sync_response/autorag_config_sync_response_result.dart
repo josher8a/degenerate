@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('job_i
 AutoragConfigSyncResponseResult copyWith({String? jobId}) { return AutoragConfigSyncResponseResult(
   jobId: jobId ?? this.jobId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigSyncResponseResult &&
-          jobId == other.jobId; } 
-@override int get hashCode { return jobId.hashCode; } 
-@override String toString() { return 'AutoragConfigSyncResponseResult(jobId: $jobId)'; } 
+          jobId == other.jobId;
+
+@override int get hashCode => jobId.hashCode;
+
+@override String toString() => 'AutoragConfigSyncResponseResult(jobId: $jobId)';
+
  }

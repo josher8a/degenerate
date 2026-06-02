@@ -112,7 +112,7 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamSimple &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -129,7 +129,10 @@ TeamSimple copyWith({int? id, String? nodeId, Uri? url, String? membersUrl, Stri
           ldapDn == other.ldapDn &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, membersUrl, name, description, permission, privacy, notificationSetting, htmlUrl, repositoriesUrl, slug, ldapDn, type, organizationId, enterpriseId); } 
-@override String toString() { return 'TeamSimple(id: $id, nodeId: $nodeId, url: $url, membersUrl: $membersUrl, name: $name, description: $description, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, htmlUrl: $htmlUrl, repositoriesUrl: $repositoriesUrl, slug: $slug, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
+          enterpriseId == other.enterpriseId;
+
+@override int get hashCode => Object.hash(id, nodeId, url, membersUrl, name, description, permission, privacy, notificationSetting, htmlUrl, repositoriesUrl, slug, ldapDn, type, organizationId, enterpriseId);
+
+@override String toString() => 'TeamSimple(id: $id, nodeId: $nodeId, url: $url, membersUrl: $membersUrl, name: $name, description: $description, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, htmlUrl: $htmlUrl, repositoriesUrl: $repositoriesUrl, slug: $slug, ldapDn: $ldapDn, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+
  }

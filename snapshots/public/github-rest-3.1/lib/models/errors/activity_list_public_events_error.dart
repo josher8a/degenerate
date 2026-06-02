@@ -18,13 +18,15 @@ final class ActivityListPublicEventsError$403 extends ActivityListPublicEventsEr
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActivityListPublicEventsError$503 extends ActivityListPublicEventsError {const ActivityListPublicEventsError$503(this.error);
 
 final ActivityListPublicEventsResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class ActivityListPublicEventsError$Unknown extends ActivityListPublicEventsError {const ActivityListPublicEventsError$Unknown(this.statusCode, this.rawBody, );
 

@@ -27,10 +27,13 @@ GetAppsSecretsScope copyWith({GetAppsSecretsFindScopeType? type, String? Functio
   type: type ?? this.type,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetAppsSecretsScope &&
           type == other.type &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(type, user); } 
-@override String toString() { return 'GetAppsSecretsScope(type: $type, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(type, user);
+
+@override String toString() => 'GetAppsSecretsScope(type: $type, user: $user)';
+
  }

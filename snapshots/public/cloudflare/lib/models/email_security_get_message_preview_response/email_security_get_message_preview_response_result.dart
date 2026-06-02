@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('scree
 EmailSecurityGetMessagePreviewResponseResult copyWith({String? screenshot}) { return EmailSecurityGetMessagePreviewResponseResult(
   screenshot: screenshot ?? this.screenshot,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityGetMessagePreviewResponseResult &&
-          screenshot == other.screenshot; } 
-@override int get hashCode { return screenshot.hashCode; } 
-@override String toString() { return 'EmailSecurityGetMessagePreviewResponseResult(screenshot: $screenshot)'; } 
+          screenshot == other.screenshot;
+
+@override int get hashCode => screenshot.hashCode;
+
+@override String toString() => 'EmailSecurityGetMessagePreviewResponseResult(screenshot: $screenshot)';
+
  }

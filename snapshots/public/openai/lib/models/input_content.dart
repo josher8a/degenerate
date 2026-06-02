@@ -34,14 +34,18 @@ final InputTextContent inputTextContent;
 
 @override String get type => 'input_text';
 
-@override Map<String, dynamic> toJson() { return {...inputTextContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type};
+
 InputContentInputText copyWith({String? text}) { return InputContentInputText(inputTextContent.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputContentInputText && inputTextContent == other.inputTextContent; } 
-@override int get hashCode { return inputTextContent.hashCode; } 
-@override String toString() { return 'InputContent.inputText($inputTextContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputContentInputText && inputTextContent == other.inputTextContent;
+
+@override int get hashCode => inputTextContent.hashCode;
+
+@override String toString() => 'InputContent.inputText($inputTextContent)';
+
  }
 @immutable final class InputContentInputImage extends InputContent {const InputContentInputImage(this.inputImageContent);
 
@@ -51,16 +55,20 @@ final InputImageContent inputImageContent;
 
 @override String get type => 'input_image';
 
-@override Map<String, dynamic> toJson() { return {...inputImageContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type};
+
 InputContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
   fileId: fileId,
   detail: detail,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputContentInputImage && inputImageContent == other.inputImageContent; } 
-@override int get hashCode { return inputImageContent.hashCode; } 
-@override String toString() { return 'InputContent.inputImage($inputImageContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputContentInputImage && inputImageContent == other.inputImageContent;
+
+@override int get hashCode => inputImageContent.hashCode;
+
+@override String toString() => 'InputContent.inputImage($inputImageContent)';
+
  }
 @immutable final class InputContentInputFile extends InputContent {const InputContentInputFile(this.inputFileContent);
 
@@ -70,7 +78,8 @@ final InputFileContent inputFileContent;
 
 @override String get type => 'input_file';
 
-@override Map<String, dynamic> toJson() { return {...inputFileContent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type};
+
 InputContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
   filename: filename,
@@ -78,10 +87,13 @@ InputContentInputFile copyWith({String? Function()? fileId, String? Function()? 
   fileUrl: fileUrl,
   detail: detail,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputContentInputFile && inputFileContent == other.inputFileContent; } 
-@override int get hashCode { return inputFileContent.hashCode; } 
-@override String toString() { return 'InputContent.inputFile($inputFileContent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputContentInputFile && inputFileContent == other.inputFileContent;
+
+@override int get hashCode => inputFileContent.hashCode;
+
+@override String toString() => 'InputContent.inputFile($inputFileContent)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -91,9 +103,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputContent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'InputContent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputContent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'InputContent.unknown($json)';
+
  }

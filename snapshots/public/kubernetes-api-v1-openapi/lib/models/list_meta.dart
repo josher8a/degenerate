@@ -35,12 +35,15 @@ ListMeta copyWith({String? Function()? $continue, int? Function()? remainingItem
   resourceVersion: resourceVersion != null ? resourceVersion() : this.resourceVersion,
   selfLink: selfLink != null ? selfLink() : this.selfLink,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListMeta &&
           $continue == other.$continue &&
           remainingItemCount == other.remainingItemCount &&
           resourceVersion == other.resourceVersion &&
-          selfLink == other.selfLink; } 
-@override int get hashCode { return Object.hash($continue, remainingItemCount, resourceVersion, selfLink); } 
-@override String toString() { return 'ListMeta(\$continue: ${$continue}, remainingItemCount: $remainingItemCount, resourceVersion: $resourceVersion, selfLink: $selfLink)'; } 
+          selfLink == other.selfLink;
+
+@override int get hashCode => Object.hash($continue, remainingItemCount, resourceVersion, selfLink);
+
+@override String toString() => 'ListMeta(\$continue: ${$continue}, remainingItemCount: $remainingItemCount, resourceVersion: $resourceVersion, selfLink: $selfLink)';
+
  }

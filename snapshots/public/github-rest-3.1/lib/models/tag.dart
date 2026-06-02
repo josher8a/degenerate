@@ -40,13 +40,16 @@ Tag copyWith({String? name, ShortBranchCommit? commit, Uri? zipballUrl, Uri? tar
   tarballUrl: tarballUrl ?? this.tarballUrl,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tag &&
           name == other.name &&
           commit == other.commit &&
           zipballUrl == other.zipballUrl &&
           tarballUrl == other.tarballUrl &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(name, commit, zipballUrl, tarballUrl, nodeId); } 
-@override String toString() { return 'Tag(name: $name, commit: $commit, zipballUrl: $zipballUrl, tarballUrl: $tarballUrl, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(name, commit, zipballUrl, tarballUrl, nodeId);
+
+@override String toString() => 'Tag(name: $name, commit: $commit, zipballUrl: $zipballUrl, tarballUrl: $tarballUrl, nodeId: $nodeId)';
+
  }

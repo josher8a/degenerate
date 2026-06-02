@@ -62,7 +62,7 @@ IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? d
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   isEnabled: isEnabled != null ? isEnabled() : this.isEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueType &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -71,7 +71,10 @@ IssueType copyWith({int? id, String? nodeId, String? name, String? Function()? d
           color == other.color &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          isEnabled == other.isEnabled; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, description, color, createdAt, updatedAt, isEnabled); } 
-@override String toString() { return 'IssueType(id: $id, nodeId: $nodeId, name: $name, description: $description, color: $color, createdAt: $createdAt, updatedAt: $updatedAt, isEnabled: $isEnabled)'; } 
+          isEnabled == other.isEnabled;
+
+@override int get hashCode => Object.hash(id, nodeId, name, description, color, createdAt, updatedAt, isEnabled);
+
+@override String toString() => 'IssueType(id: $id, nodeId: $nodeId, name: $name, description: $description, color: $color, createdAt: $createdAt, updatedAt: $updatedAt, isEnabled: $isEnabled)';
+
  }

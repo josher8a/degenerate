@@ -31,10 +31,13 @@ PaymentIntentNextActionKonbiniLawson copyWith({String? Function()? confirmationN
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   paymentCode: paymentCode ?? this.paymentCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionKonbiniLawson &&
           confirmationNumber == other.confirmationNumber &&
-          paymentCode == other.paymentCode; } 
-@override int get hashCode { return Object.hash(confirmationNumber, paymentCode); } 
-@override String toString() { return 'PaymentIntentNextActionKonbiniLawson(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)'; } 
+          paymentCode == other.paymentCode;
+
+@override int get hashCode => Object.hash(confirmationNumber, paymentCode);
+
+@override String toString() => 'PaymentIntentNextActionKonbiniLawson(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)';
+
  }

@@ -60,7 +60,7 @@ RbdVolumeSource copyWith({String? Function()? fsType, String? image, String Func
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RbdVolumeSource &&
           fsType == other.fsType &&
           image == other.image &&
@@ -69,7 +69,10 @@ RbdVolumeSource copyWith({String? Function()? fsType, String? image, String Func
           pool == other.pool &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(fsType, image, keyring, Object.hashAll(monitors), pool, readOnly, secretRef, user); } 
-@override String toString() { return 'RbdVolumeSource(fsType: $fsType, image: $image, keyring: $keyring, monitors: $monitors, pool: $pool, readOnly: $readOnly, secretRef: $secretRef, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(fsType, image, keyring, Object.hashAll(monitors), pool, readOnly, secretRef, user);
+
+@override String toString() => 'RbdVolumeSource(fsType: $fsType, image: $image, keyring: $keyring, monitors: $monitors, pool: $pool, readOnly: $readOnly, secretRef: $secretRef, user: $user)';
+
  }

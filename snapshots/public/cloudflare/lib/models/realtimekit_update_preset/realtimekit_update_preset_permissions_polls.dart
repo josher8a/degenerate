@@ -29,11 +29,14 @@ RealtimekitUpdatePresetPermissionsPolls copyWith({bool? Function()? canCreate, b
   canView: canView != null ? canView() : this.canView,
   canVote: canVote != null ? canVote() : this.canVote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsPolls &&
           canCreate == other.canCreate &&
           canView == other.canView &&
-          canVote == other.canVote; } 
-@override int get hashCode { return Object.hash(canCreate, canView, canVote); } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)'; } 
+          canVote == other.canVote;
+
+@override int get hashCode => Object.hash(canCreate, canView, canVote);
+
+@override String toString() => 'RealtimekitUpdatePresetPermissionsPolls(canCreate: $canCreate, canView: $canView, canVote: $canVote)';
+
  }

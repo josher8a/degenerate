@@ -57,7 +57,7 @@ WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commi
   self: self ?? this.self,
   statuses: statuses ?? this.statuses,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksPullRequest5Links &&
           comments == other.comments &&
           commits == other.commits &&
@@ -66,7 +66,10 @@ WebhooksPullRequest5Links copyWith({LinksComments? comments, LinksCommits? commi
           reviewComment == other.reviewComment &&
           reviewComments == other.reviewComments &&
           self == other.self &&
-          statuses == other.statuses; } 
-@override int get hashCode { return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses); } 
-@override String toString() { return 'WebhooksPullRequest5Links(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)'; } 
+          statuses == other.statuses;
+
+@override int get hashCode => Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses);
+
+@override String toString() => 'WebhooksPullRequest5Links(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)';
+
  }

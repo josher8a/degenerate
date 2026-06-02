@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfBlackForestLabsFlux2DevError$400 extends WorkersAi
 
 final WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfBlackForestLabsFlux2DevError$Unknown extends WorkersAiPostRunCfBlackForestLabsFlux2DevError {const WorkersAiPostRunCfBlackForestLabsFlux2DevError$Unknown(this.statusCode, this.rawBody, );
 

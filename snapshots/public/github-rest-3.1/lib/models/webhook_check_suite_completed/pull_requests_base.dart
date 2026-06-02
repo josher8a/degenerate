@@ -27,11 +27,14 @@ PullRequestsBase copyWith({String? ref, EventRepo? repo, String? sha, }) { retur
   repo: repo ?? this.repo,
   sha: sha ?? this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestsBase &&
           ref == other.ref &&
           repo == other.repo &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(ref, repo, sha); } 
-@override String toString() { return 'PullRequestsBase(ref: $ref, repo: $repo, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(ref, repo, sha);
+
+@override String toString() => 'PullRequestsBase(ref: $ref, repo: $repo, sha: $sha)';
+
  }

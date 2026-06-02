@@ -24,10 +24,13 @@ ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest copyWith(
   dohJwtDuration: dohJwtDuration != null ? dohJwtDuration() : this.dohJwtDuration,
   serviceTokenId: serviceTokenId != null ? serviceTokenId() : this.serviceTokenId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest &&
           dohJwtDuration == other.dohJwtDuration &&
-          serviceTokenId == other.serviceTokenId; } 
-@override int get hashCode { return Object.hash(dohJwtDuration, serviceTokenId); } 
-@override String toString() { return 'ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(dohJwtDuration: $dohJwtDuration, serviceTokenId: $serviceTokenId)'; } 
+          serviceTokenId == other.serviceTokenId;
+
+@override int get hashCode => Object.hash(dohJwtDuration, serviceTokenId);
+
+@override String toString() => 'ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest(dohJwtDuration: $dohJwtDuration, serviceTokenId: $serviceTokenId)';
+
  }

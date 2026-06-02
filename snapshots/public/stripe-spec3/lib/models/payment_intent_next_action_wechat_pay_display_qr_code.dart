@@ -53,13 +53,16 @@ PaymentIntentNextActionWechatPayDisplayQrCode copyWith({String? data, String? ho
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionWechatPayDisplayQrCode &&
           data == other.data &&
           hostedInstructionsUrl == other.hostedInstructionsUrl &&
           imageDataUrl == other.imageDataUrl &&
           imageUrlPng == other.imageUrlPng &&
-          imageUrlSvg == other.imageUrlSvg; } 
-@override int get hashCode { return Object.hash(data, hostedInstructionsUrl, imageDataUrl, imageUrlPng, imageUrlSvg); } 
-@override String toString() { return 'PaymentIntentNextActionWechatPayDisplayQrCode(data: $data, hostedInstructionsUrl: $hostedInstructionsUrl, imageDataUrl: $imageDataUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)'; } 
+          imageUrlSvg == other.imageUrlSvg;
+
+@override int get hashCode => Object.hash(data, hostedInstructionsUrl, imageDataUrl, imageUrlPng, imageUrlSvg);
+
+@override String toString() => 'PaymentIntentNextActionWechatPayDisplayQrCode(data: $data, hostedInstructionsUrl: $hostedInstructionsUrl, imageDataUrl: $imageDataUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
+
  }

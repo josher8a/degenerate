@@ -60,7 +60,7 @@ GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? mes
   object: object ?? this.object,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitTag &&
           nodeId == other.nodeId &&
           tag == other.tag &&
@@ -69,7 +69,10 @@ GitTag copyWith({String? nodeId, String? tag, String? sha, Uri? url, String? mes
           message == other.message &&
           tagger == other.tagger &&
           object == other.object &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(nodeId, tag, sha, url, message, tagger, object, verification); } 
-@override String toString() { return 'GitTag(nodeId: $nodeId, tag: $tag, sha: $sha, url: $url, message: $message, tagger: $tagger, object: $object, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(nodeId, tag, sha, url, message, tagger, object, verification);
+
+@override String toString() => 'GitTag(nodeId: $nodeId, tag: $tag, sha: $sha, url: $url, message: $message, tagger: $tagger, object: $object, verification: $verification)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostWebsocketRunCfDeepgramAura1Error$400 extends WorkersAiP
 
 final WorkersAiPostWebsocketRunCfDeepgramAura1Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostWebsocketRunCfDeepgramAura1Error$Unknown extends WorkersAiPostWebsocketRunCfDeepgramAura1Error {const WorkersAiPostWebsocketRunCfDeepgramAura1Error$Unknown(this.statusCode, this.rawBody, );
 

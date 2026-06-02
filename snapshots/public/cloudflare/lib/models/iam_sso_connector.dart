@@ -53,7 +53,7 @@ IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? e
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamSsoConnector &&
           createdOn == other.createdOn &&
           emailDomain == other.emailDomain &&
@@ -61,7 +61,10 @@ IamSsoConnector copyWith({DateTime? Function()? createdOn, String? Function()? e
           id == other.id &&
           updatedOn == other.updatedOn &&
           useFedrampLanguage == other.useFedrampLanguage &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(createdOn, emailDomain, enabled, id, updatedOn, useFedrampLanguage, verification); } 
-@override String toString() { return 'IamSsoConnector(createdOn: $createdOn, emailDomain: $emailDomain, enabled: $enabled, id: $id, updatedOn: $updatedOn, useFedrampLanguage: $useFedrampLanguage, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(createdOn, emailDomain, enabled, id, updatedOn, useFedrampLanguage, verification);
+
+@override String toString() => 'IamSsoConnector(createdOn: $createdOn, emailDomain: $emailDomain, enabled: $enabled, id: $id, updatedOn: $updatedOn, useFedrampLanguage: $useFedrampLanguage, verification: $verification)';
+
  }

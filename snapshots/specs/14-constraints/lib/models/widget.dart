@@ -56,13 +56,16 @@ Widget copyWith({String? name, int? score, double? Function()? ratio, List<Strin
   tags: tags != null ? tags() : this.tags,
   note: note != null ? note() : this.note,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Widget &&
           name == other.name &&
           score == other.score &&
           ratio == other.ratio &&
           listEquals(tags, other.tags) &&
-          note == other.note; } 
-@override int get hashCode { return Object.hash(name, score, ratio, Object.hashAll(tags ?? const []), note); } 
-@override String toString() { return 'Widget(name: $name, score: $score, ratio: $ratio, tags: $tags, note: $note)'; } 
+          note == other.note;
+
+@override int get hashCode => Object.hash(name, score, ratio, Object.hashAll(tags ?? const []), note);
+
+@override String toString() => 'Widget(name: $name, score: $score, ratio: $ratio, tags: $tags, note: $note)';
+
  }

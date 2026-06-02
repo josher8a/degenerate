@@ -50,13 +50,16 @@ TeamsDevicesDisableForTime copyWith({String? Function()? $1, String? Function()?
   $12: $12 != null ? $12() : this.$12,
   $24: $24 != null ? $24() : this.$24,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDisableForTime &&
           $1 == other.$1 &&
           $3 == other.$3 &&
           $6 == other.$6 &&
           $12 == other.$12 &&
-          $24 == other.$24; } 
-@override int get hashCode { return Object.hash($1, $3, $6, $12, $24); } 
-@override String toString() { return 'TeamsDevicesDisableForTime(\$1: ${$1}, \$3: ${$3}, \$6: ${$6}, \$12: ${$12}, \$24: ${$24})'; } 
+          $24 == other.$24;
+
+@override int get hashCode => Object.hash($1, $3, $6, $12, $24);
+
+@override String toString() => 'TeamsDevicesDisableForTime(\$1: ${$1}, \$3: ${$3}, \$6: ${$6}, \$12: ${$12}, \$24: ${$24})';
+
  }

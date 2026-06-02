@@ -85,7 +85,7 @@ WorkersVariant2 copyWith({double? cpuTimeMs, List<DiagnosticsChannelEvents>? Fun
   truncated: truncated != null ? truncated() : this.truncated,
   wallTimeMs: wallTimeMs ?? this.wallTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVariant2 &&
           cpuTimeMs == other.cpuTimeMs &&
           listEquals(diagnosticsChannelEvents, other.diagnosticsChannelEvents) &&
@@ -100,7 +100,10 @@ WorkersVariant2 copyWith({double? cpuTimeMs, List<DiagnosticsChannelEvents>? Fun
           scriptName == other.scriptName &&
           scriptVersion == other.scriptVersion &&
           truncated == other.truncated &&
-          wallTimeMs == other.wallTimeMs; } 
-@override int get hashCode { return Object.hash(cpuTimeMs, Object.hashAll(diagnosticsChannelEvents ?? const []), dispatchNamespace, durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated, wallTimeMs); } 
-@override String toString() { return 'WorkersVariant2(cpuTimeMs: $cpuTimeMs, diagnosticsChannelEvents: $diagnosticsChannelEvents, dispatchNamespace: $dispatchNamespace, durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated, wallTimeMs: $wallTimeMs)'; } 
+          wallTimeMs == other.wallTimeMs;
+
+@override int get hashCode => Object.hash(cpuTimeMs, Object.hashAll(diagnosticsChannelEvents ?? const []), dispatchNamespace, durableObjectId, entrypoint, event, eventType, executionModel, outcome, requestId, scriptName, scriptVersion, truncated, wallTimeMs);
+
+@override String toString() => 'WorkersVariant2(cpuTimeMs: $cpuTimeMs, diagnosticsChannelEvents: $diagnosticsChannelEvents, dispatchNamespace: $dispatchNamespace, durableObjectId: $durableObjectId, entrypoint: $entrypoint, event: $event, eventType: $eventType, executionModel: $executionModel, outcome: $outcome, requestId: $requestId, scriptName: $scriptName, scriptVersion: $scriptVersion, truncated: $truncated, wallTimeMs: $wallTimeMs)';
+
  }

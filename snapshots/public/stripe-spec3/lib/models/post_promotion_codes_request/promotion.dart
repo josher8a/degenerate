@@ -28,10 +28,13 @@ Promotion copyWith({String? Function()? coupon, DiscountSourceType? type, }) { r
   coupon: coupon != null ? coupon() : this.coupon,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Promotion &&
           coupon == other.coupon &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(coupon, type); } 
-@override String toString() { return 'Promotion(coupon: $coupon, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(coupon, type);
+
+@override String toString() => 'Promotion(coupon: $coupon, type: $type)';
+
  }

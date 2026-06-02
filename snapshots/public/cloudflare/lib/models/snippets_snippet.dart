@@ -33,11 +33,14 @@ SnippetsSnippet copyWith({DateTime? createdOn, DateTime? Function()? modifiedOn,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
   snippetName: snippetName ?? this.snippetName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsSnippet &&
           createdOn == other.createdOn &&
           modifiedOn == other.modifiedOn &&
-          snippetName == other.snippetName; } 
-@override int get hashCode { return Object.hash(createdOn, modifiedOn, snippetName); } 
-@override String toString() { return 'SnippetsSnippet(createdOn: $createdOn, modifiedOn: $modifiedOn, snippetName: $snippetName)'; } 
+          snippetName == other.snippetName;
+
+@override int get hashCode => Object.hash(createdOn, modifiedOn, snippetName);
+
+@override String toString() => 'SnippetsSnippet(createdOn: $createdOn, modifiedOn: $modifiedOn, snippetName: $snippetName)';
+
  }

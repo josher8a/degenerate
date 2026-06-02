@@ -35,11 +35,14 @@ PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Fun
   memo: memo != null ? memo() : this.memo,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreditNotesIdRequest &&
           listEquals(expand, other.expand) &&
           memo == other.memo &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), memo, metadata); } 
-@override String toString() { return 'PostCreditNotesIdRequest(expand: $expand, memo: $memo, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), memo, metadata);
+
+@override String toString() => 'PostCreditNotesIdRequest(expand: $expand, memo: $memo, metadata: $metadata)';
+
  }

@@ -35,12 +35,15 @@ QuotesResourceTotalDetails copyWith({int? amountDiscount, int? Function()? amoun
   amountTax: amountTax ?? this.amountTax,
   breakdown: breakdown != null ? breakdown() : this.breakdown,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceTotalDetails &&
           amountDiscount == other.amountDiscount &&
           amountShipping == other.amountShipping &&
           amountTax == other.amountTax &&
-          breakdown == other.breakdown; } 
-@override int get hashCode { return Object.hash(amountDiscount, amountShipping, amountTax, breakdown); } 
-@override String toString() { return 'QuotesResourceTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)'; } 
+          breakdown == other.breakdown;
+
+@override int get hashCode => Object.hash(amountDiscount, amountShipping, amountTax, breakdown);
+
+@override String toString() => 'QuotesResourceTotalDetails(amountDiscount: $amountDiscount, amountShipping: $amountShipping, amountTax: $amountTax, breakdown: $breakdown)';
+
  }

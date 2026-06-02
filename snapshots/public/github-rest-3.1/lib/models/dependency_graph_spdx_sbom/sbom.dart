@@ -67,7 +67,7 @@ Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment,
   packages: packages ?? this.packages,
   relationships: relationships != null ? relationships() : this.relationships,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sbom &&
           spdxid == other.spdxid &&
           spdxVersion == other.spdxVersion &&
@@ -77,7 +77,10 @@ Sbom copyWith({String? spdxid, String? spdxVersion, String? Function()? comment,
           dataLicense == other.dataLicense &&
           documentNamespace == other.documentNamespace &&
           listEquals(packages, other.packages) &&
-          listEquals(relationships, other.relationships); } 
-@override int get hashCode { return Object.hash(spdxid, spdxVersion, comment, creationInfo, name, dataLicense, documentNamespace, Object.hashAll(packages), Object.hashAll(relationships ?? const [])); } 
-@override String toString() { return 'Sbom(spdxid: $spdxid, spdxVersion: $spdxVersion, comment: $comment, creationInfo: $creationInfo, name: $name, dataLicense: $dataLicense, documentNamespace: $documentNamespace, packages: $packages, relationships: $relationships)'; } 
+          listEquals(relationships, other.relationships);
+
+@override int get hashCode => Object.hash(spdxid, spdxVersion, comment, creationInfo, name, dataLicense, documentNamespace, Object.hashAll(packages), Object.hashAll(relationships ?? const []));
+
+@override String toString() => 'Sbom(spdxid: $spdxid, spdxVersion: $spdxVersion, comment: $comment, creationInfo: $creationInfo, name: $name, dataLicense: $dataLicense, documentNamespace: $documentNamespace, packages: $packages, relationships: $relationships)';
+
  }

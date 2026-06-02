@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
 InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer copyWith({InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransferCountry? country}) { return InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer(
   country: country ?? this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'InvoicePaymentMethodOptionsCustomerBalanceBankTransferEuBankTransfer(country: $country)';
+
  }

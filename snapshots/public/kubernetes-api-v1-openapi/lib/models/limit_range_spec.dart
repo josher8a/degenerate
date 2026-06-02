@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('limit
 LimitRangeSpec copyWith({List<LimitRangeItem>? limits}) { return LimitRangeSpec(
   limits: limits ?? this.limits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LimitRangeSpec &&
-          listEquals(limits, other.limits); } 
-@override int get hashCode { return Object.hashAll(limits); } 
-@override String toString() { return 'LimitRangeSpec(limits: $limits)'; } 
+          listEquals(limits, other.limits);
+
+@override int get hashCode => Object.hashAll(limits);
+
+@override String toString() => 'LimitRangeSpec(limits: $limits)';
+
  }

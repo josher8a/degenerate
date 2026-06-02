@@ -40,13 +40,16 @@ BillingPremiumRequestUsageReportUser copyWith({TimePeriod? timePeriod, String? u
   model: model != null ? model() : this.model,
   usageItems: usageItems ?? this.usageItems,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPremiumRequestUsageReportUser &&
           timePeriod == other.timePeriod &&
           user == other.user &&
           product == other.product &&
           model == other.model &&
-          listEquals(usageItems, other.usageItems); } 
-@override int get hashCode { return Object.hash(timePeriod, user, product, model, Object.hashAll(usageItems)); } 
-@override String toString() { return 'BillingPremiumRequestUsageReportUser(timePeriod: $timePeriod, user: $user, product: $product, model: $model, usageItems: $usageItems)'; } 
+          listEquals(usageItems, other.usageItems);
+
+@override int get hashCode => Object.hash(timePeriod, user, product, model, Object.hashAll(usageItems));
+
+@override String toString() => 'BillingPremiumRequestUsageReportUser(timePeriod: $timePeriod, user: $user, product: $product, model: $model, usageItems: $usageItems)';
+
  }

@@ -41,12 +41,15 @@ WorkersBindingKindInherit copyWith({String? name, String? Function()? oldName, S
   type: type ?? this.type,
   versionId: versionId != null ? versionId() : this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindInherit &&
           name == other.name &&
           oldName == other.oldName &&
           type == other.type &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(name, oldName, type, versionId); } 
-@override String toString() { return 'WorkersBindingKindInherit(name: $name, oldName: $oldName, type: $type, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(name, oldName, type, versionId);
+
+@override String toString() => 'WorkersBindingKindInherit(name: $name, oldName: $oldName, type: $type, versionId: $versionId)';
+
  }

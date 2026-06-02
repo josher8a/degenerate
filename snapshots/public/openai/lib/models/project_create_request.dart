@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Geography && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Geography($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Geography && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Geography($value)';
+
  }
 @immutable final class ProjectCreateRequest {const ProjectCreateRequest({required this.name, this.geography, });
 
@@ -65,10 +68,13 @@ ProjectCreateRequest copyWith({String? name, Geography? Function()? geography, }
   name: name ?? this.name,
   geography: geography != null ? geography() : this.geography,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectCreateRequest &&
           name == other.name &&
-          geography == other.geography; } 
-@override int get hashCode { return Object.hash(name, geography); } 
-@override String toString() { return 'ProjectCreateRequest(name: $name, geography: $geography)'; } 
+          geography == other.geography;
+
+@override int get hashCode => Object.hash(name, geography);
+
+@override String toString() => 'ProjectCreateRequest(name: $name, geography: $geography)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookMergeGroupChecksRequestedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookMergeGroupChecksRequestedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookMergeGroupChecksRequestedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookMergeGroupChecksRequestedAction($value)';
+
  }
 @immutable final class WebhookMergeGroupChecksRequested {const WebhookMergeGroupChecksRequested({required this.action, required this.mergeGroup, this.installation, this.organization, this.repository, this.sender, });
 
@@ -62,14 +65,17 @@ WebhookMergeGroupChecksRequested copyWith({WebhookMergeGroupChecksRequestedActio
   repository: repository != null ? repository() : this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMergeGroupChecksRequested &&
           action == other.action &&
           installation == other.installation &&
           mergeGroup == other.mergeGroup &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, mergeGroup, organization, repository, sender); } 
-@override String toString() { return 'WebhookMergeGroupChecksRequested(action: $action, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, installation, mergeGroup, organization, repository, sender);
+
+@override String toString() => 'WebhookMergeGroupChecksRequested(action: $action, installation: $installation, mergeGroup: $mergeGroup, organization: $organization, repository: $repository, sender: $sender)';
+
  }

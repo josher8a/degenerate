@@ -17,7 +17,8 @@ final class RadarGetCertificateAuthorityDetailsError$404 extends RadarGetCertifi
 
 final RadarGetCertificateAuthorityDetailsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetCertificateAuthorityDetailsError$Unknown extends RadarGetCertificateAuthorityDetailsError {const RadarGetCertificateAuthorityDetailsError$Unknown(this.statusCode, this.rawBody, );
 

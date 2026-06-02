@@ -23,10 +23,13 @@ ReviewCustomGatesCommentRequired copyWith({String? environmentName, String? comm
   environmentName: environmentName ?? this.environmentName,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewCustomGatesCommentRequired &&
           environmentName == other.environmentName &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(environmentName, comment); } 
-@override String toString() { return 'ReviewCustomGatesCommentRequired(environmentName: $environmentName, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(environmentName, comment);
+
+@override String toString() => 'ReviewCustomGatesCommentRequired(environmentName: $environmentName, comment: $comment)';
+
  }

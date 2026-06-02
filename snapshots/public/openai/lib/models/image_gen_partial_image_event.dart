@@ -75,7 +75,7 @@ ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdA
   outputFormat: outputFormat ?? this.outputFormat,
   partialImageIndex: partialImageIndex ?? this.partialImageIndex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenPartialImageEvent &&
           type == other.type &&
           b64Json == other.b64Json &&
@@ -84,7 +84,10 @@ ImageGenPartialImageEvent copyWith({String? type, String? b64Json, int? createdA
           quality == other.quality &&
           background == other.background &&
           outputFormat == other.outputFormat &&
-          partialImageIndex == other.partialImageIndex; } 
-@override int get hashCode { return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, partialImageIndex); } 
-@override String toString() { return 'ImageGenPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)'; } 
+          partialImageIndex == other.partialImageIndex;
+
+@override int get hashCode => Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, partialImageIndex);
+
+@override String toString() => 'ImageGenPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)';
+
  }

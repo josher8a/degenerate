@@ -45,12 +45,15 @@ EasyInputMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? 
   phase: phase != null ? phase() : this.phase,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EasyInputMessage &&
           role == other.role &&
           content == other.content &&
           phase == other.phase &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(role, content, phase, type); } 
-@override String toString() { return 'EasyInputMessage(role: $role, content: $content, phase: $phase, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(role, content, phase, type);
+
+@override String toString() => 'EasyInputMessage(role: $role, content: $content, phase: $phase, type: $type)';
+
  }

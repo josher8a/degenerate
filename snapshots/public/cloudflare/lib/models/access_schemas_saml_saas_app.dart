@@ -90,7 +90,7 @@ AccessSchemasSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authTy
   ssoEndpoint: ssoEndpoint != null ? ssoEndpoint() : this.ssoEndpoint,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasSamlSaasApp &&
           authType == other.authType &&
           consumerServiceUrl == other.consumerServiceUrl &&
@@ -102,7 +102,10 @@ AccessSchemasSamlSaasApp copyWith({AccessOidcSaasAppAuthType? Function()? authTy
           publicKey == other.publicKey &&
           spEntityId == other.spEntityId &&
           ssoEndpoint == other.ssoEndpoint &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, spEntityId, ssoEndpoint, updatedAt); } 
-@override String toString() { return 'AccessSchemasSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(authType, consumerServiceUrl, createdAt, Object.hashAll(customAttributes ?? const []), idpEntityId, nameIdFormat, nameIdTransformJsonata, publicKey, spEntityId, ssoEndpoint, updatedAt);
+
+@override String toString() => 'AccessSchemasSamlSaasApp(authType: $authType, consumerServiceUrl: $consumerServiceUrl, createdAt: $createdAt, customAttributes: $customAttributes, idpEntityId: $idpEntityId, nameIdFormat: $nameIdFormat, nameIdTransformJsonata: $nameIdTransformJsonata, publicKey: $publicKey, spEntityId: $spEntityId, ssoEndpoint: $ssoEndpoint, updatedAt: $updatedAt)';
+
  }

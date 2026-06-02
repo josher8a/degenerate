@@ -76,7 +76,7 @@ CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()
   displayName: displayName != null ? displayName() : this.displayName,
   retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesCreateWithRepoForAuthenticatedUserRequest &&
           ref == other.ref &&
           location == other.location &&
@@ -88,7 +88,10 @@ CodespacesCreateWithRepoForAuthenticatedUserRequest copyWith({String? Function()
           workingDirectory == other.workingDirectory &&
           idleTimeoutMinutes == other.idleTimeoutMinutes &&
           displayName == other.displayName &&
-          retentionPeriodMinutes == other.retentionPeriodMinutes; } 
-@override int get hashCode { return Object.hash(ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes); } 
-@override String toString() { return 'CodespacesCreateWithRepoForAuthenticatedUserRequest(ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)'; } 
+          retentionPeriodMinutes == other.retentionPeriodMinutes;
+
+@override int get hashCode => Object.hash(ref, location, geo, clientIp, machine, devcontainerPath, multiRepoPermissionsOptOut, workingDirectory, idleTimeoutMinutes, displayName, retentionPeriodMinutes);
+
+@override String toString() => 'CodespacesCreateWithRepoForAuthenticatedUserRequest(ref: $ref, location: $location, geo: $geo, clientIp: $clientIp, machine: $machine, devcontainerPath: $devcontainerPath, multiRepoPermissionsOptOut: $multiRepoPermissionsOptOut, workingDirectory: $workingDirectory, idleTimeoutMinutes: $idleTimeoutMinutes, displayName: $displayName, retentionPeriodMinutes: $retentionPeriodMinutes)';
+
  }

@@ -56,19 +56,14 @@ final class NewType {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is NewType && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'NewType($value)';
-  }
+  String toString() => 'NewType($value)';
 }
 
 @immutable
@@ -247,53 +242,49 @@ final class New {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is New &&
-            $false == other.$false &&
-            none == other.none &&
-            $null == other.$null &&
-            $0 == other.$0 &&
-            $empty == other.$empty &&
-            constructor == other.constructor &&
-            proto == other.proto &&
-            hasOwnProperty == other.hasOwnProperty &&
-            type == other.type &&
-            $ref == other.$ref &&
-            $id == other.$id &&
-            xExtensionLookalike == other.xExtensionLookalike &&
-            $class == other.$class &&
-            listEquals($import, other.$import) &&
-            $return == other.$return &&
-            $void == other.$void &&
-            package == other.package;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is New &&
+          $false == other.$false &&
+          none == other.none &&
+          $null == other.$null &&
+          $0 == other.$0 &&
+          $empty == other.$empty &&
+          constructor == other.constructor &&
+          proto == other.proto &&
+          hasOwnProperty == other.hasOwnProperty &&
+          type == other.type &&
+          $ref == other.$ref &&
+          $id == other.$id &&
+          xExtensionLookalike == other.xExtensionLookalike &&
+          $class == other.$class &&
+          listEquals($import, other.$import) &&
+          $return == other.$return &&
+          $void == other.$void &&
+          package == other.package;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      $false,
-      none,
-      $null,
-      $0,
-      $empty,
-      constructor,
-      proto,
-      hasOwnProperty,
-      type,
-      $ref,
-      $id,
-      xExtensionLookalike,
-      $class,
-      Object.hashAll($import ?? const []),
-      $return,
-      $void,
-      package,
-    );
-  }
+  int get hashCode => Object.hash(
+    $false,
+    none,
+    $null,
+    $0,
+    $empty,
+    constructor,
+    proto,
+    hasOwnProperty,
+    type,
+    $ref,
+    $id,
+    xExtensionLookalike,
+    $class,
+    Object.hashAll($import ?? const []),
+    $return,
+    $void,
+    package,
+  );
 
   @override
-  String toString() {
-    return 'New(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, \$class: ${$class}, \$import: ${$import}, \$return: ${$return}, \$void: ${$void}, package: $package)';
-  }
+  String toString() =>
+      'New(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, \$class: ${$class}, \$import: ${$import}, \$return: ${$return}, \$void: ${$void}, package: $package)';
 }

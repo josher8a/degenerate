@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ValidationDataMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ValidationDataMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValidationDataMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ValidationDataMethod($value)';
+
  }
 @immutable final class ValidationDataStatus {const ValidationDataStatus._(this.value);
 
@@ -52,10 +55,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ValidationDataStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ValidationDataStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValidationDataStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ValidationDataStatus($value)';
+
  }
 @immutable final class ValidationData {const ValidationData({required this.method, required this.status, this.errorMessage, this.txtName, this.txtValue, });
 
@@ -93,13 +99,16 @@ ValidationData copyWith({String? Function()? errorMessage, ValidationDataMethod?
   txtName: txtName != null ? txtName() : this.txtName,
   txtValue: txtValue != null ? txtValue() : this.txtValue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationData &&
           errorMessage == other.errorMessage &&
           method == other.method &&
           status == other.status &&
           txtName == other.txtName &&
-          txtValue == other.txtValue; } 
-@override int get hashCode { return Object.hash(errorMessage, method, status, txtName, txtValue); } 
-@override String toString() { return 'ValidationData(errorMessage: $errorMessage, method: $method, status: $status, txtName: $txtName, txtValue: $txtValue)'; } 
+          txtValue == other.txtValue;
+
+@override int get hashCode => Object.hash(errorMessage, method, status, txtName, txtValue);
+
+@override String toString() => 'ValidationData(errorMessage: $errorMessage, method: $method, status: $status, txtName: $txtName, txtValue: $txtValue)';
+
  }

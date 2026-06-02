@@ -30,12 +30,15 @@ SecretKeyParamCustomerAcceptance copyWith({int? Function()? acceptedAt, Customer
   online: online != null ? online() : this.online,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretKeyParamCustomerAcceptance &&
           acceptedAt == other.acceptedAt &&
           offline == other.offline &&
           online == other.online &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(acceptedAt, offline, online, type); } 
-@override String toString() { return 'SecretKeyParamCustomerAcceptance(acceptedAt: $acceptedAt, offline: $offline, online: $online, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(acceptedAt, offline, online, type);
+
+@override String toString() => 'SecretKeyParamCustomerAcceptance(acceptedAt: $acceptedAt, offline: $offline, online: $online, type: $type)';
+
  }

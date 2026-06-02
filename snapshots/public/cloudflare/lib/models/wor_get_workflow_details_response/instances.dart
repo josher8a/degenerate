@@ -50,7 +50,7 @@ Instances copyWith({double? Function()? complete, double? Function()? errored, d
   waiting: waiting != null ? waiting() : this.waiting,
   waitingForPause: waitingForPause != null ? waitingForPause() : this.waitingForPause,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Instances &&
           complete == other.complete &&
           errored == other.errored &&
@@ -59,7 +59,10 @@ Instances copyWith({double? Function()? complete, double? Function()? errored, d
           running == other.running &&
           terminated == other.terminated &&
           waiting == other.waiting &&
-          waitingForPause == other.waitingForPause; } 
-@override int get hashCode { return Object.hash(complete, errored, paused, queued, running, terminated, waiting, waitingForPause); } 
-@override String toString() { return 'Instances(complete: $complete, errored: $errored, paused: $paused, queued: $queued, running: $running, terminated: $terminated, waiting: $waiting, waitingForPause: $waitingForPause)'; } 
+          waitingForPause == other.waitingForPause;
+
+@override int get hashCode => Object.hash(complete, errored, paused, queued, running, terminated, waiting, waitingForPause);
+
+@override String toString() => 'Instances(complete: $complete, errored: $errored, paused: $paused, queued: $queued, running: $running, terminated: $terminated, waiting: $waiting, waitingForPause: $waitingForPause)';
+
  }

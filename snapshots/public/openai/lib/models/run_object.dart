@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunObjectObject($value)';
+
  }
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
 @immutable final class RunObjectStatus {const RunObjectStatus._(this.value);
@@ -63,10 +66,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunObjectStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunObjectStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunObjectStatus($value)';
+
  }
 /// Represents an execution run on a [thread](/docs/api-reference/threads).
 @immutable final class RunObject {const RunObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.assistantId, required this.status, required this.requiredAction, required this.lastError, required this.expiresAt, required this.startedAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.incompleteDetails, required this.model, required this.instructions, required this.metadata, required this.usage, required this.maxPromptTokens, required this.maxCompletionTokens, required this.truncationStrategy, required this.toolChoice, required this.parallelToolCalls, required this.responseFormat, this.tools = const [], this.temperature, this.topP, });
@@ -281,7 +287,7 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunObject &&
           id == other.id &&
           object == other.object &&
@@ -309,7 +315,10 @@ RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String?
           truncationStrategy == other.truncationStrategy &&
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hashAll([id, object, createdAt, threadId, assistantId, status, requiredAction, lastError, expiresAt, startedAt, cancelledAt, failedAt, completedAt, incompleteDetails, model, instructions, Object.hashAll(tools), metadata, usage, temperature, topP, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat]); } 
-@override String toString() { return 'RunObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, assistantId: $assistantId, status: $status, requiredAction: $requiredAction, lastError: $lastError, expiresAt: $expiresAt, startedAt: $startedAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, incompleteDetails: $incompleteDetails, model: $model, instructions: $instructions, tools: $tools, metadata: $metadata, usage: $usage, temperature: $temperature, topP: $topP, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)'; } 
+          responseFormat == other.responseFormat;
+
+@override int get hashCode => Object.hashAll([id, object, createdAt, threadId, assistantId, status, requiredAction, lastError, expiresAt, startedAt, cancelledAt, failedAt, completedAt, incompleteDetails, model, instructions, Object.hashAll(tools), metadata, usage, temperature, topP, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat]);
+
+@override String toString() => 'RunObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, assistantId: $assistantId, status: $status, requiredAction: $requiredAction, lastError: $lastError, expiresAt: $expiresAt, startedAt: $startedAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, incompleteDetails: $incompleteDetails, model: $model, instructions: $instructions, tools: $tools, metadata: $metadata, usage: $usage, temperature: $temperature, topP: $topP, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';
+
  }

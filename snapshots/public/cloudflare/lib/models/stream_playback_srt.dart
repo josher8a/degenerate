@@ -47,11 +47,14 @@ StreamPlaybackSrt copyWith({StreamPlaybackSrtStreamPassphrase? Function()? passp
   streamId: streamId != null ? streamId() : this.streamId,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamPlaybackSrt &&
           passphrase == other.passphrase &&
           streamId == other.streamId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(passphrase, streamId, url); } 
-@override String toString() { return 'StreamPlaybackSrt(passphrase: $passphrase, streamId: $streamId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(passphrase, streamId, url);
+
+@override String toString() => 'StreamPlaybackSrt(passphrase: $passphrase, streamId: $streamId, url: $url)';
+
  }

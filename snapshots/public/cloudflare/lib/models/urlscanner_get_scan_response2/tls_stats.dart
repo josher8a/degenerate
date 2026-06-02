@@ -51,7 +51,7 @@ TlsStats copyWith({double? count, List<String>? countries, double? encodedSize, 
   securityState: securityState ?? this.securityState,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsStats &&
           count == other.count &&
           listEquals(countries, other.countries) &&
@@ -59,7 +59,10 @@ TlsStats copyWith({double? count, List<String>? countries, double? encodedSize, 
           listEquals(ips, other.ips) &&
           protocols == other.protocols &&
           securityState == other.securityState &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), protocols, securityState, size); } 
-@override String toString() { return 'TlsStats(count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, protocols: $protocols, securityState: $securityState, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), protocols, securityState, size);
+
+@override String toString() => 'TlsStats(count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, protocols: $protocols, securityState: $securityState, size: $size)';
+
  }

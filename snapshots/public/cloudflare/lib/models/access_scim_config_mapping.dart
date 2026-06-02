@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Strictness && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Strictness($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Strictness && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Strictness($value)';
+
  }
 /// Transformations and filters applied to resources before they are provisioned in the remote SCIM service.
 @immutable final class AccessScimConfigMapping {const AccessScimConfigMapping({required this.schema, this.enabled, this.filter, this.operations, this.strictness, this.transformJsonata, });
@@ -78,14 +81,17 @@ AccessScimConfigMapping copyWith({bool? Function()? enabled, String? Function()?
   strictness: strictness != null ? strictness() : this.strictness,
   transformJsonata: transformJsonata != null ? transformJsonata() : this.transformJsonata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigMapping &&
           enabled == other.enabled &&
           filter == other.filter &&
           operations == other.operations &&
           schema == other.schema &&
           strictness == other.strictness &&
-          transformJsonata == other.transformJsonata; } 
-@override int get hashCode { return Object.hash(enabled, filter, operations, schema, strictness, transformJsonata); } 
-@override String toString() { return 'AccessScimConfigMapping(enabled: $enabled, filter: $filter, operations: $operations, schema: $schema, strictness: $strictness, transformJsonata: $transformJsonata)'; } 
+          transformJsonata == other.transformJsonata;
+
+@override int get hashCode => Object.hash(enabled, filter, operations, schema, strictness, transformJsonata);
+
+@override String toString() => 'AccessScimConfigMapping(enabled: $enabled, filter: $filter, operations: $operations, schema: $schema, strictness: $strictness, transformJsonata: $transformJsonata)';
+
  }

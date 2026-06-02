@@ -27,11 +27,14 @@ PullRequestMinimalBase copyWith({String? ref, String? sha, PullRequestMinimalBas
   sha: sha ?? this.sha,
   repo: repo ?? this.repo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestMinimalBase &&
           ref == other.ref &&
           sha == other.sha &&
-          repo == other.repo; } 
-@override int get hashCode { return Object.hash(ref, sha, repo); } 
-@override String toString() { return 'PullRequestMinimalBase(ref: $ref, sha: $sha, repo: $repo)'; } 
+          repo == other.repo;
+
+@override int get hashCode => Object.hash(ref, sha, repo);
+
+@override String toString() => 'PullRequestMinimalBase(ref: $ref, sha: $sha, repo: $repo)';
+
  }

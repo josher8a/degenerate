@@ -63,22 +63,18 @@ final class ErrorModel {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ErrorModel &&
-            code == other.code &&
-            message == other.message &&
-            isYourFault == other.isYourFault &&
-            error == other.error;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ErrorModel &&
+          code == other.code &&
+          message == other.message &&
+          isYourFault == other.isYourFault &&
+          error == other.error;
 
   @override
-  int get hashCode {
-    return Object.hash(code, message, isYourFault, error);
-  }
+  int get hashCode => Object.hash(code, message, isYourFault, error);
 
   @override
-  String toString() {
-    return 'ErrorModel(code: $code, message: $message, isYourFault: $isYourFault, error: $error)';
-  }
+  String toString() =>
+      'ErrorModel(code: $code, message: $message, isYourFault: $isYourFault, error: $error)';
 }

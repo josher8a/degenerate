@@ -24,10 +24,13 @@ CompleteUploadRequest copyWith({List<String>? partIds, String? Function()? md5, 
   partIds: partIds ?? this.partIds,
   md5: md5 != null ? md5() : this.md5,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompleteUploadRequest &&
           listEquals(partIds, other.partIds) &&
-          md5 == other.md5; } 
-@override int get hashCode { return Object.hash(Object.hashAll(partIds), md5); } 
-@override String toString() { return 'CompleteUploadRequest(partIds: $partIds, md5: $md5)'; } 
+          md5 == other.md5;
+
+@override int get hashCode => Object.hash(Object.hashAll(partIds), md5);
+
+@override String toString() => 'CompleteUploadRequest(partIds: $partIds, md5: $md5)';
+
  }

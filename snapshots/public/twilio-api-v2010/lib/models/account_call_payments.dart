@@ -67,14 +67,17 @@ AccountCallPayments copyWith({String? Function()? accountSid, String? Function()
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallPayments &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, sid, dateCreated, dateUpdated, uri); } 
-@override String toString() { return 'AccountCallPayments(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, callSid, sid, dateCreated, dateUpdated, uri);
+
+@override String toString() => 'AccountCallPayments(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)';
+
  }

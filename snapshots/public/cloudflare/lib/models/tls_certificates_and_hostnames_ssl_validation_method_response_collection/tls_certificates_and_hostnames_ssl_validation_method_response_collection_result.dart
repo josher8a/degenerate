@@ -27,10 +27,13 @@ TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult copyWith(
   status: status != null ? status() : this.status,
   validationMethod: validationMethod != null ? validationMethod() : this.validationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult &&
           status == other.status &&
-          validationMethod == other.validationMethod; } 
-@override int get hashCode { return Object.hash(status, validationMethod); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(status: $status, validationMethod: $validationMethod)'; } 
+          validationMethod == other.validationMethod;
+
+@override int get hashCode => Object.hash(status, validationMethod);
+
+@override String toString() => 'TlsCertificatesAndHostnamesSslValidationMethodResponseCollectionResult(status: $status, validationMethod: $validationMethod)';
+
  }

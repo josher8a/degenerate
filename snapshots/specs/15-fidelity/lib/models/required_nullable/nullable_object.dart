@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 NullableObject copyWith({String? Function()? inner}) { return NullableObject(
   inner: inner != null ? inner() : this.inner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NullableObject &&
-          inner == other.inner; } 
-@override int get hashCode { return inner.hashCode; } 
-@override String toString() { return 'NullableObject(inner: $inner)'; } 
+          inner == other.inner;
+
+@override int get hashCode => inner.hashCode;
+
+@override String toString() => 'NullableObject(inner: $inner)';
+
  }

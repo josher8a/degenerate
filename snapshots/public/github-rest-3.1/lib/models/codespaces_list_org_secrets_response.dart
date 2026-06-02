@@ -21,10 +21,13 @@ CodespacesListOrgSecretsResponse copyWith({int? totalCount, List<CodespacesOrgSe
   totalCount: totalCount ?? this.totalCount,
   secrets: secrets ?? this.secrets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesListOrgSecretsResponse &&
           totalCount == other.totalCount &&
-          listEquals(secrets, other.secrets); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(secrets)); } 
-@override String toString() { return 'CodespacesListOrgSecretsResponse(totalCount: $totalCount, secrets: $secrets)'; } 
+          listEquals(secrets, other.secrets);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(secrets));
+
+@override String toString() => 'CodespacesListOrgSecretsResponse(totalCount: $totalCount, secrets: $secrets)';
+
  }

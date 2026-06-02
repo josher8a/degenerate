@@ -46,11 +46,14 @@ WorkersScriptAndVersionSettingsItemAnnotations copyWith({String? Function()? wor
   workersTag: workersTag != null ? workersTag() : this.workersTag,
   workersTriggeredBy: workersTriggeredBy != null ? workersTriggeredBy() : this.workersTriggeredBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersScriptAndVersionSettingsItemAnnotations &&
           workersMessage == other.workersMessage &&
           workersTag == other.workersTag &&
-          workersTriggeredBy == other.workersTriggeredBy; } 
-@override int get hashCode { return Object.hash(workersMessage, workersTag, workersTriggeredBy); } 
-@override String toString() { return 'WorkersScriptAndVersionSettingsItemAnnotations(workersMessage: $workersMessage, workersTag: $workersTag, workersTriggeredBy: $workersTriggeredBy)'; } 
+          workersTriggeredBy == other.workersTriggeredBy;
+
+@override int get hashCode => Object.hash(workersMessage, workersTag, workersTriggeredBy);
+
+@override String toString() => 'WorkersScriptAndVersionSettingsItemAnnotations(workersMessage: $workersMessage, workersTag: $workersTag, workersTriggeredBy: $workersTriggeredBy)';
+
  }

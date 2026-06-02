@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags'
 MetadataContainer copyWith({List<String>? tags}) { return MetadataContainer(
   tags: tags ?? this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataContainer &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags); } 
-@override String toString() { return 'MetadataContainer(tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hashAll(tags);
+
+@override String toString() => 'MetadataContainer(tags: $tags)';
+
  }

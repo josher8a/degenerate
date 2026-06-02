@@ -21,31 +21,36 @@ final class ReposCreateForAuthenticatedUserError$400 extends ReposCreateForAuthe
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ReposCreateForAuthenticatedUserError$401 extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError$401(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ReposCreateForAuthenticatedUserError$403 extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ReposCreateForAuthenticatedUserError$404 extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposCreateForAuthenticatedUserError$422 extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ReposCreateForAuthenticatedUserError$Unknown extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

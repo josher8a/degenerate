@@ -38,12 +38,15 @@ R2CorsRule copyWith({Allowed? allowed, List<String>? Function()? exposeHeaders, 
   id: id != null ? id() : this.id,
   maxAgeSeconds: maxAgeSeconds != null ? maxAgeSeconds() : this.maxAgeSeconds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2CorsRule &&
           allowed == other.allowed &&
           listEquals(exposeHeaders, other.exposeHeaders) &&
           id == other.id &&
-          maxAgeSeconds == other.maxAgeSeconds; } 
-@override int get hashCode { return Object.hash(allowed, Object.hashAll(exposeHeaders ?? const []), id, maxAgeSeconds); } 
-@override String toString() { return 'R2CorsRule(allowed: $allowed, exposeHeaders: $exposeHeaders, id: $id, maxAgeSeconds: $maxAgeSeconds)'; } 
+          maxAgeSeconds == other.maxAgeSeconds;
+
+@override int get hashCode => Object.hash(allowed, Object.hashAll(exposeHeaders ?? const []), id, maxAgeSeconds);
+
+@override String toString() => 'R2CorsRule(allowed: $allowed, exposeHeaders: $exposeHeaders, id: $id, maxAgeSeconds: $maxAgeSeconds)';
+
  }

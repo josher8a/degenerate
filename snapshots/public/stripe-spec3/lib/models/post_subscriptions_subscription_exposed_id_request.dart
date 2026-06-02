@@ -209,7 +209,7 @@ PostSubscriptionsSubscriptionExposedIdRequest copyWith({List<PostCustomersCustom
   trialFromPlan: trialFromPlan != null ? trialFromPlan() : this.trialFromPlan,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionsSubscriptionExposedIdRequest &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -241,7 +241,10 @@ PostSubscriptionsSubscriptionExposedIdRequest copyWith({List<PostCustomersCustom
           transferData == other.transferData &&
           trialEnd == other.trialEnd &&
           trialFromPlan == other.trialFromPlan &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, cancellationDetails, collectionMethod, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, onBehalfOf, pauseCollection, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, prorationDate, transferData, trialEnd, trialFromPlan, trialSettings]); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialSettings: $trialSettings)'; } 
+          trialSettings == other.trialSettings;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, cancellationDetails, collectionMethod, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, onBehalfOf, pauseCollection, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, prorationDate, transferData, trialEnd, trialFromPlan, trialSettings]);
+
+@override String toString() => 'PostSubscriptionsSubscriptionExposedIdRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, cancellationDetails: $cancellationDetails, collectionMethod: $collectionMethod, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, onBehalfOf: $onBehalfOf, pauseCollection: $pauseCollection, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialSettings: $trialSettings)';
+
  }

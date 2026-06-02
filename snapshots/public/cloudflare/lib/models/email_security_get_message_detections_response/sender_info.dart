@@ -37,13 +37,16 @@ SenderInfo copyWith({String? Function()? asName, int? Function()? asNumber, Stri
   ip: ip != null ? ip() : this.ip,
   pld: pld != null ? pld() : this.pld,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SenderInfo &&
           asName == other.asName &&
           asNumber == other.asNumber &&
           geo == other.geo &&
           ip == other.ip &&
-          pld == other.pld; } 
-@override int get hashCode { return Object.hash(asName, asNumber, geo, ip, pld); } 
-@override String toString() { return 'SenderInfo(asName: $asName, asNumber: $asNumber, geo: $geo, ip: $ip, pld: $pld)'; } 
+          pld == other.pld;
+
+@override int get hashCode => Object.hash(asName, asNumber, geo, ip, pld);
+
+@override String toString() => 'SenderInfo(asName: $asName, asNumber: $asNumber, geo: $geo, ip: $ip, pld: $pld)';
+
  }

@@ -27,11 +27,14 @@ AigConfigListGatewayLogsFilters copyWith({AigConfigDeleteGatewayLogsFiltersKey? 
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayLogsFilters &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
-@override String toString() { return 'AigConfigListGatewayLogsFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
+          listEquals(value, other.value);
+
+@override int get hashCode => Object.hash(key, $operator, Object.hashAll(value));
+
+@override String toString() => 'AigConfigListGatewayLogsFilters(key: $key, \$operator: ${$operator}, value: $value)';
+
  }

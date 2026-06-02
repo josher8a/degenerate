@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accep
 CodespacesPermissionsCheckForDevcontainer copyWith({bool? accepted}) { return CodespacesPermissionsCheckForDevcontainer(
   accepted: accepted ?? this.accepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesPermissionsCheckForDevcontainer &&
-          accepted == other.accepted; } 
-@override int get hashCode { return accepted.hashCode; } 
-@override String toString() { return 'CodespacesPermissionsCheckForDevcontainer(accepted: $accepted)'; } 
+          accepted == other.accepted;
+
+@override int get hashCode => accepted.hashCode;
+
+@override String toString() => 'CodespacesPermissionsCheckForDevcontainer(accepted: $accepted)';
+
  }

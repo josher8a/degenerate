@@ -19,9 +19,12 @@ return errors; }
 EuBankTransfer copyWith({String? country}) { return EuBankTransfer(
   country: country ?? this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EuBankTransfer &&
-          country == other.country; } 
-@override int get hashCode { return country.hashCode; } 
-@override String toString() { return 'EuBankTransfer(country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => country.hashCode;
+
+@override String toString() => 'EuBankTransfer(country: $country)';
+
  }

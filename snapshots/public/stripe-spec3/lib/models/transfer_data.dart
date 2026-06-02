@@ -25,10 +25,13 @@ TransferData copyWith({int? Function()? amount, ChargeTransferDataDestination? d
   amount: amount != null ? amount() : this.amount,
   destination: destination ?? this.destination,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransferData &&
           amount == other.amount &&
-          destination == other.destination; } 
-@override int get hashCode { return Object.hash(amount, destination); } 
-@override String toString() { return 'TransferData(amount: $amount, destination: $destination)'; } 
+          destination == other.destination;
+
+@override int get hashCode => Object.hash(amount, destination);
+
+@override String toString() => 'TransferData(amount: $amount, destination: $destination)';
+
  }

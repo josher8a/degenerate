@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ModelObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ModelObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ModelObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ModelObject($value)';
+
  }
 /// Describes an OpenAI model offering that can be used with the API.
 @immutable final class Model {const Model({required this.id, required this.created, required this.object, required this.ownedBy, });
@@ -60,12 +63,15 @@ Model copyWith({String? id, int? created, ModelObject? object, String? ownedBy, 
   object: object ?? this.object,
   ownedBy: ownedBy ?? this.ownedBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Model &&
           id == other.id &&
           created == other.created &&
           object == other.object &&
-          ownedBy == other.ownedBy; } 
-@override int get hashCode { return Object.hash(id, created, object, ownedBy); } 
-@override String toString() { return 'Model(id: $id, created: $created, object: $object, ownedBy: $ownedBy)'; } 
+          ownedBy == other.ownedBy;
+
+@override int get hashCode => Object.hash(id, created, object, ownedBy);
+
+@override String toString() => 'Model(id: $id, created: $created, object: $object, ownedBy: $ownedBy)';
+
  }

@@ -23,10 +23,13 @@ CreationInfo copyWith({String? created, List<String>? creators, }) { return Crea
   created: created ?? this.created,
   creators: creators ?? this.creators,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreationInfo &&
           created == other.created &&
-          listEquals(creators, other.creators); } 
-@override int get hashCode { return Object.hash(created, Object.hashAll(creators)); } 
-@override String toString() { return 'CreationInfo(created: $created, creators: $creators)'; } 
+          listEquals(creators, other.creators);
+
+@override int get hashCode => Object.hash(created, Object.hashAll(creators));
+
+@override String toString() => 'CreationInfo(created: $created, creators: $creators)';
+
  }

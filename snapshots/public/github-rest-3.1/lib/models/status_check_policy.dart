@@ -40,13 +40,16 @@ StatusCheckPolicy copyWith({Uri? url, bool? strict, List<String>? contexts, List
   checks: checks ?? this.checks,
   contextsUrl: contextsUrl ?? this.contextsUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusCheckPolicy &&
           url == other.url &&
           strict == other.strict &&
           listEquals(contexts, other.contexts) &&
           listEquals(checks, other.checks) &&
-          contextsUrl == other.contextsUrl; } 
-@override int get hashCode { return Object.hash(url, strict, Object.hashAll(contexts), Object.hashAll(checks), contextsUrl); } 
-@override String toString() { return 'StatusCheckPolicy(url: $url, strict: $strict, contexts: $contexts, checks: $checks, contextsUrl: $contextsUrl)'; } 
+          contextsUrl == other.contextsUrl;
+
+@override int get hashCode => Object.hash(url, strict, Object.hashAll(contexts), Object.hashAll(checks), contextsUrl);
+
+@override String toString() => 'StatusCheckPolicy(url: $url, strict: $strict, contexts: $contexts, checks: $checks, contextsUrl: $contextsUrl)';
+
  }

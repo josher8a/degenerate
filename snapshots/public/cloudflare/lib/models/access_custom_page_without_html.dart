@@ -42,14 +42,17 @@ AccessCustomPageWithoutHtml copyWith({AccessSchemasAppCount? Function()? appCoun
   uid: uid != null ? uid() : this.uid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCustomPageWithoutHtml &&
           appCount == other.appCount &&
           createdAt == other.createdAt &&
           name == other.name &&
           type == other.type &&
           uid == other.uid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(appCount, createdAt, name, type, uid, updatedAt); } 
-@override String toString() { return 'AccessCustomPageWithoutHtml(appCount: $appCount, createdAt: $createdAt, name: $name, type: $type, uid: $uid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(appCount, createdAt, name, type, uid, updatedAt);
+
+@override String toString() => 'AccessCustomPageWithoutHtml(appCount: $appCount, createdAt: $createdAt, name: $name, type: $type, uid: $uid, updatedAt: $updatedAt)';
+
  }

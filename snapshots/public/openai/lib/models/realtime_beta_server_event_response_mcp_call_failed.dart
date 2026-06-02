@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallFailedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseMcpCallFailedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallFailedType($value)';
+
  }
 /// Returned when an MCP tool call has failed.
 @immutable final class RealtimeBetaServerEventResponseMcpCallFailed {const RealtimeBetaServerEventResponseMcpCallFailed({required this.eventId, required this.type, required this.outputIndex, required this.itemId, });
@@ -60,12 +63,15 @@ RealtimeBetaServerEventResponseMcpCallFailed copyWith({String? eventId, Realtime
   outputIndex: outputIndex ?? this.outputIndex,
   itemId: itemId ?? this.itemId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseMcpCallFailed &&
           eventId == other.eventId &&
           type == other.type &&
           outputIndex == other.outputIndex &&
-          itemId == other.itemId; } 
-@override int get hashCode { return Object.hash(eventId, type, outputIndex, itemId); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseMcpCallFailed(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)'; } 
+          itemId == other.itemId;
+
+@override int get hashCode => Object.hash(eventId, type, outputIndex, itemId);
+
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallFailed(eventId: $eventId, type: $type, outputIndex: $outputIndex, itemId: $itemId)';
+
  }

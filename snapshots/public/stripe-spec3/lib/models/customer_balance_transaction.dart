@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerBalanceTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerBalanceTransactionObject($value)';
+
  }
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
 @immutable final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
@@ -72,10 +75,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceTransactionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerBalanceTransactionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerBalanceTransactionType($value)';
+
  }
 /// Each customer has a [Balance](https://docs.stripe.com/api/customers/object#customer_object-balance) value,
 /// which denotes a debit or credit that's automatically applied to their next invoice upon finalization.
@@ -203,7 +209,7 @@ CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionChec
   object: object ?? this.object,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceTransaction &&
           amount == other.amount &&
           checkoutSession == other.checkoutSession &&
@@ -219,7 +225,10 @@ CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionChec
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type); } 
-@override String toString() { return 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type);
+
+@override String toString() => 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)';
+
  }

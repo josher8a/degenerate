@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WebSearchToolFilters copyWith({List<String>? Function()? allowedDomains}) { return WebSearchToolFilters(
   allowedDomains: allowedDomains != null ? allowedDomains() : this.allowedDomains,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchToolFilters &&
-          listEquals(allowedDomains, other.allowedDomains); } 
-@override int get hashCode { return Object.hashAll(allowedDomains ?? const []); } 
-@override String toString() { return 'WebSearchToolFilters(allowedDomains: $allowedDomains)'; } 
+          listEquals(allowedDomains, other.allowedDomains);
+
+@override int get hashCode => Object.hashAll(allowedDomains ?? const []);
+
+@override String toString() => 'WebSearchToolFilters(allowedDomains: $allowedDomains)';
+
  }

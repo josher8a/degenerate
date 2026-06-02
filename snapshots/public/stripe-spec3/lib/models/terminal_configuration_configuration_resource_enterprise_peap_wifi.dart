@@ -47,12 +47,15 @@ TerminalConfigurationConfigurationResourceEnterprisePeapWifi copyWith({String? F
   ssid: ssid ?? this.ssid,
   username: username ?? this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalConfigurationConfigurationResourceEnterprisePeapWifi &&
           caCertificateFile == other.caCertificateFile &&
           password == other.password &&
           ssid == other.ssid &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(caCertificateFile, password, ssid, username); } 
-@override String toString() { return 'TerminalConfigurationConfigurationResourceEnterprisePeapWifi(caCertificateFile: $caCertificateFile, password: $password, ssid: $ssid, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(caCertificateFile, password, ssid, username);
+
+@override String toString() => 'TerminalConfigurationConfigurationResourceEnterprisePeapWifi(caCertificateFile: $caCertificateFile, password: $password, ssid: $ssid, username: $username)';
+
  }

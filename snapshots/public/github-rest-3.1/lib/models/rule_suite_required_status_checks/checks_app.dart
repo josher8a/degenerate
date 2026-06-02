@@ -29,11 +29,14 @@ ChecksApp copyWith({int? Function()? id, String? Function()? slug, String? Funct
   slug: slug != null ? slug() : this.slug,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksApp &&
           id == other.id &&
           slug == other.slug &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, slug, name); } 
-@override String toString() { return 'ChecksApp(id: $id, slug: $slug, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, slug, name);
+
+@override String toString() => 'ChecksApp(id: $id, slug: $slug, name: $name)';
+
  }

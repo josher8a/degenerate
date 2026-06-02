@@ -53,12 +53,15 @@ DnsRecordsSrvRecordData copyWith({double? Function()? port, DnsRecordsPriority? 
   target: target != null ? target() : this.target,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSrvRecordData &&
           port == other.port &&
           priority == other.priority &&
           target == other.target &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(port, priority, target, weight); } 
-@override String toString() { return 'DnsRecordsSrvRecordData(port: $port, priority: $priority, target: $target, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(port, priority, target, weight);
+
+@override String toString() => 'DnsRecordsSrvRecordData(port: $port, priority: $priority, target: $target, weight: $weight)';
+
  }

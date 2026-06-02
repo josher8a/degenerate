@@ -40,7 +40,8 @@ final ServerVad serverVad;
 
 @override String get type => 'ServerVad';
 
-@override Map<String, dynamic> toJson() { return {...serverVad.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...serverVad.toJson(), 'type': type};
+
 RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
   threshold: threshold,
   prefixPaddingMs: prefixPaddingMs,
@@ -49,10 +50,13 @@ RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Fun
   interruptResponse: interruptResponse,
   idleTimeoutMs: idleTimeoutMs,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
-@override int get hashCode { return serverVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetection.serverVad($serverVad)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad;
+
+@override int get hashCode => serverVad.hashCode;
+
+@override String toString() => 'RealtimeTurnDetection.serverVad($serverVad)';
+
 @override bool? get createResponse => serverVad.createResponse;
 
 @override bool? get interruptResponse => serverVad.interruptResponse;
@@ -66,16 +70,20 @@ final SemanticVad semanticVad;
 
 @override String get type => 'SemanticVad';
 
-@override Map<String, dynamic> toJson() { return {...semanticVad.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...semanticVad.toJson(), 'type': type};
+
 RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
   eagerness: eagerness,
   createResponse: createResponse,
   interruptResponse: interruptResponse,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
-@override int get hashCode { return semanticVad.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetection.semanticVad($semanticVad)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad;
+
+@override int get hashCode => semanticVad.hashCode;
+
+@override String toString() => 'RealtimeTurnDetection.semanticVad($semanticVad)';
+
 @override bool? get createResponse => semanticVad.createResponse;
 
 @override bool? get interruptResponse => semanticVad.interruptResponse;
@@ -89,11 +97,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeTurnDetection$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'RealtimeTurnDetection.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeTurnDetection$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'RealtimeTurnDetection.unknown($json)';
+
 @override bool? get createResponse => json['create_response'] as bool?;
 
 @override bool? get interruptResponse => json['interrupt_response'] as bool?;

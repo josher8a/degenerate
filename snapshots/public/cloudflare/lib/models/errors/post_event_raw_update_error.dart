@@ -17,7 +17,8 @@ final class PostEventRawUpdateError$400 extends PostEventRawUpdateError {const P
 
 final PostEventRawUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventRawUpdateError$Unknown extends PostEventRawUpdateError {const PostEventRawUpdateError$Unknown(this.statusCode, this.rawBody, );
 

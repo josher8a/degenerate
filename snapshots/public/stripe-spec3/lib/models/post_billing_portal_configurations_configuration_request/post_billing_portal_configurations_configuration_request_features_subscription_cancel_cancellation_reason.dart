@@ -20,10 +20,13 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCan
   enabled: enabled ?? this.enabled,
   options: options != null ? options() : this.options,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason &&
           enabled == other.enabled &&
-          options == other.options; } 
-@override int get hashCode { return Object.hash(enabled, options); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason(enabled: $enabled, options: $options)'; } 
+          options == other.options;
+
+@override int get hashCode => Object.hash(enabled, options);
+
+@override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancelCancellationReason(enabled: $enabled, options: $options)';
+
  }

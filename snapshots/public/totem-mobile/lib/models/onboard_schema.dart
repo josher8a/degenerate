@@ -63,20 +63,15 @@ final class ReferralChoices {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ReferralChoices && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ReferralChoices && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'ReferralChoices($value)';
-  }
+  String toString() => 'ReferralChoices($value)';
 }
 
 @immutable
@@ -162,22 +157,19 @@ final class OnboardSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is OnboardSchema &&
-            referralSource == other.referralSource &&
-            yearBorn == other.yearBorn &&
-            hopes == other.hopes &&
-            referralOther == other.referralOther;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is OnboardSchema &&
+          referralSource == other.referralSource &&
+          yearBorn == other.yearBorn &&
+          hopes == other.hopes &&
+          referralOther == other.referralOther;
 
   @override
-  int get hashCode {
-    return Object.hash(referralSource, yearBorn, hopes, referralOther);
-  }
+  int get hashCode =>
+      Object.hash(referralSource, yearBorn, hopes, referralOther);
 
   @override
-  String toString() {
-    return 'OnboardSchema(referralSource: $referralSource, yearBorn: $yearBorn, hopes: $hopes, referralOther: $referralOther)';
-  }
+  String toString() =>
+      'OnboardSchema(referralSource: $referralSource, yearBorn: $yearBorn, hopes: $hopes, referralOther: $referralOther)';
 }

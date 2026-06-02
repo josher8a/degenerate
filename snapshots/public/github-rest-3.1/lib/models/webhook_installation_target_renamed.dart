@@ -59,7 +59,7 @@ WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccou
   sender: sender != null ? sender() : this.sender,
   targetType: targetType ?? this.targetType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookInstallationTargetRenamed &&
           account == other.account &&
           action == other.action &&
@@ -69,7 +69,10 @@ WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccou
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          targetType == other.targetType; } 
-@override int get hashCode { return Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType); } 
-@override String toString() { return 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)'; } 
+          targetType == other.targetType;
+
+@override int get hashCode => Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType);
+
+@override String toString() => 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)';
+
  }

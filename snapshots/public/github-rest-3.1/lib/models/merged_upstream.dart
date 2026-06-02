@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MergeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MergeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MergeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MergeType($value)';
+
  }
 /// Results of a successful merge upstream request
 @immutable final class MergedUpstream {const MergedUpstream({this.message, this.mergeType, this.baseBranch, });
@@ -53,11 +56,14 @@ MergedUpstream copyWith({String? Function()? message, MergeType? Function()? mer
   mergeType: mergeType != null ? mergeType() : this.mergeType,
   baseBranch: baseBranch != null ? baseBranch() : this.baseBranch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MergedUpstream &&
           message == other.message &&
           mergeType == other.mergeType &&
-          baseBranch == other.baseBranch; } 
-@override int get hashCode { return Object.hash(message, mergeType, baseBranch); } 
-@override String toString() { return 'MergedUpstream(message: $message, mergeType: $mergeType, baseBranch: $baseBranch)'; } 
+          baseBranch == other.baseBranch;
+
+@override int get hashCode => Object.hash(message, mergeType, baseBranch);
+
+@override String toString() => 'MergedUpstream(message: $message, mergeType: $mergeType, baseBranch: $baseBranch)';
+
  }

@@ -41,12 +41,15 @@ GetPaymentAttemptRecordsResponse copyWith({List<PaymentAttemptRecord>? data, boo
   object: object ?? this.object,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetPaymentAttemptRecordsResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
-@override String toString() { return 'GetPaymentAttemptRecordsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), hasMore, object, url);
+
+@override String toString() => 'GetPaymentAttemptRecordsResponse(data: $data, hasMore: $hasMore, object: $object, url: $url)';
+
  }

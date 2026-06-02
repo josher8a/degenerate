@@ -39,13 +39,16 @@ IpStatsGeoip copyWith({String? city, String? country, String? countryName, List<
   ll: ll ?? this.ll,
   region: region ?? this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpStatsGeoip &&
           city == other.city &&
           country == other.country &&
           countryName == other.countryName &&
           listEquals(ll, other.ll) &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(city, country, countryName, Object.hashAll(ll), region); } 
-@override String toString() { return 'IpStatsGeoip(city: $city, country: $country, countryName: $countryName, ll: $ll, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(city, country, countryName, Object.hashAll(ll), region);
+
+@override String toString() => 'IpStatsGeoip(city: $city, country: $country, countryName: $countryName, ll: $ll, region: $region)';
+
  }

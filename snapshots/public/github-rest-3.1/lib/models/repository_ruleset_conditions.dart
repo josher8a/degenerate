@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RepositoryRulesetConditions copyWith({RefName? Function()? refName}) { return RepositoryRulesetConditions(
   refName: refName != null ? refName() : this.refName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRulesetConditions &&
-          refName == other.refName; } 
-@override int get hashCode { return refName.hashCode; } 
-@override String toString() { return 'RepositoryRulesetConditions(refName: $refName)'; } 
+          refName == other.refName;
+
+@override int get hashCode => refName.hashCode;
+
+@override String toString() => 'RepositoryRulesetConditions(refName: $refName)';
+
  }

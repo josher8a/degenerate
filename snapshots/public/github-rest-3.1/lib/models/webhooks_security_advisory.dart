@@ -87,7 +87,7 @@ WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, CvssSever
   vulnerabilities: vulnerabilities ?? this.vulnerabilities,
   withdrawnAt: withdrawnAt != null ? withdrawnAt() : this.withdrawnAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSecurityAdvisory &&
           cvss == other.cvss &&
           cvssSeverities == other.cvssSeverities &&
@@ -101,7 +101,10 @@ WebhooksSecurityAdvisory copyWith({WebhooksSecurityAdvisoryCvss? cvss, CvssSever
           summary == other.summary &&
           updatedAt == other.updatedAt &&
           listEquals(vulnerabilities, other.vulnerabilities) &&
-          withdrawnAt == other.withdrawnAt; } 
-@override int get hashCode { return Object.hash(cvss, cvssSeverities, Object.hashAll(cwes), description, ghsaId, Object.hashAll(identifiers), publishedAt, Object.hashAll(references), severity, summary, updatedAt, Object.hashAll(vulnerabilities), withdrawnAt); } 
-@override String toString() { return 'WebhooksSecurityAdvisory(cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, description: $description, ghsaId: $ghsaId, identifiers: $identifiers, publishedAt: $publishedAt, references: $references, severity: $severity, summary: $summary, updatedAt: $updatedAt, vulnerabilities: $vulnerabilities, withdrawnAt: $withdrawnAt)'; } 
+          withdrawnAt == other.withdrawnAt;
+
+@override int get hashCode => Object.hash(cvss, cvssSeverities, Object.hashAll(cwes), description, ghsaId, Object.hashAll(identifiers), publishedAt, Object.hashAll(references), severity, summary, updatedAt, Object.hashAll(vulnerabilities), withdrawnAt);
+
+@override String toString() => 'WebhooksSecurityAdvisory(cvss: $cvss, cvssSeverities: $cvssSeverities, cwes: $cwes, description: $description, ghsaId: $ghsaId, identifiers: $identifiers, publishedAt: $publishedAt, references: $references, severity: $severity, summary: $summary, updatedAt: $updatedAt, vulnerabilities: $vulnerabilities, withdrawnAt: $withdrawnAt)';
+
  }

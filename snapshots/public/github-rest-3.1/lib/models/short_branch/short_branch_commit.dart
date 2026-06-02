@@ -21,10 +21,13 @@ ShortBranchCommit copyWith({String? sha, Uri? url, }) { return ShortBranchCommit
   sha: sha ?? this.sha,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBranchCommit &&
           sha == other.sha &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(sha, url); } 
-@override String toString() { return 'ShortBranchCommit(sha: $sha, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(sha, url);
+
+@override String toString() => 'ShortBranchCommit(sha: $sha, url: $url)';
+
  }

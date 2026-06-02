@@ -22,10 +22,13 @@ AnalyzeCertificateAnalyzeCertificateRequest copyWith({TlsCertificatesAndHostname
   bundleMethod: bundleMethod != null ? bundleMethod() : this.bundleMethod,
   certificate: certificate != null ? certificate() : this.certificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AnalyzeCertificateAnalyzeCertificateRequest &&
           bundleMethod == other.bundleMethod &&
-          certificate == other.certificate; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificate); } 
-@override String toString() { return 'AnalyzeCertificateAnalyzeCertificateRequest(bundleMethod: $bundleMethod, certificate: $certificate)'; } 
+          certificate == other.certificate;
+
+@override int get hashCode => Object.hash(bundleMethod, certificate);
+
+@override String toString() => 'AnalyzeCertificateAnalyzeCertificateRequest(bundleMethod: $bundleMethod, certificate: $certificate)';
+
  }

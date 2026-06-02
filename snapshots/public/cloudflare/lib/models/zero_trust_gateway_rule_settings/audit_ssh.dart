@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AuditSsh copyWith({bool? Function()? commandLogging}) { return AuditSsh(
   commandLogging: commandLogging != null ? commandLogging() : this.commandLogging,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuditSsh &&
-          commandLogging == other.commandLogging; } 
-@override int get hashCode { return commandLogging.hashCode; } 
-@override String toString() { return 'AuditSsh(commandLogging: $commandLogging)'; } 
+          commandLogging == other.commandLogging;
+
+@override int get hashCode => commandLogging.hashCode;
+
+@override String toString() => 'AuditSsh(commandLogging: $commandLogging)';
+
  }

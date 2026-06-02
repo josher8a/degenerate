@@ -35,12 +35,15 @@ CallsTurnKeyResponseCollection copyWith({List<CallsMessages2>? errors, List<Call
   success: success ?? this.success,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CallsTurnKeyResponseCollection &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           success == other.success &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result ?? const [])); } 
-@override String toString() { return 'CallsTurnKeyResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, Object.hashAll(result ?? const []));
+
+@override String toString() => 'CallsTurnKeyResponseCollection(errors: $errors, messages: $messages, success: $success, result: $result)';
+
  }

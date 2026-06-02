@@ -64,7 +64,7 @@ RealtimeMcpToolCall copyWith({String? type, String? id, String? serverLabel, Str
   output: output != null ? output() : this.output,
   error: error != null ? error() : this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpToolCall &&
           type == other.type &&
           id == other.id &&
@@ -73,7 +73,10 @@ RealtimeMcpToolCall copyWith({String? type, String? id, String? serverLabel, Str
           arguments == other.arguments &&
           approvalRequestId == other.approvalRequestId &&
           output == other.output &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments, approvalRequestId, output, error); } 
-@override String toString() { return 'RealtimeMcpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, approvalRequestId: $approvalRequestId, output: $output, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(type, id, serverLabel, name, arguments, approvalRequestId, output, error);
+
+@override String toString() => 'RealtimeMcpToolCall(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments, approvalRequestId: $approvalRequestId, output: $output, error: $error)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ToolChoiceMcpType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ToolChoiceMcpType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ToolChoiceMcpType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ToolChoiceMcpType($value)';
+
  }
 /// Use this option to force the model to call a specific tool on a remote MCP server.
 /// 
@@ -55,11 +58,14 @@ ToolChoiceMcp copyWith({ToolChoiceMcpType? type, String? serverLabel, String? Fu
   serverLabel: serverLabel ?? this.serverLabel,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceMcp &&
           type == other.type &&
           serverLabel == other.serverLabel &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(type, serverLabel, name); } 
-@override String toString() { return 'ToolChoiceMcp(type: $type, serverLabel: $serverLabel, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(type, serverLabel, name);
+
+@override String toString() => 'ToolChoiceMcp(type: $type, serverLabel: $serverLabel, name: $name)';
+
  }

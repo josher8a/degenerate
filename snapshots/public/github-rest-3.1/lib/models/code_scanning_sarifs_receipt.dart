@@ -22,10 +22,13 @@ CodeScanningSarifsReceipt copyWith({CodeScanningAnalysisSarifId? Function()? id,
   id: id != null ? id() : this.id,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningSarifsReceipt &&
           id == other.id &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(id, url); } 
-@override String toString() { return 'CodeScanningSarifsReceipt(id: $id, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(id, url);
+
+@override String toString() => 'CodeScanningSarifsReceipt(id: $id, url: $url)';
+
  }

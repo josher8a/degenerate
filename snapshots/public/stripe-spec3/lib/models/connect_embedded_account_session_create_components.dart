@@ -124,7 +124,7 @@ ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountCo
   taxRegistrations: taxRegistrations ?? this.taxRegistrations,
   taxSettings: taxSettings ?? this.taxSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedAccountSessionCreateComponents &&
           accountManagement == other.accountManagement &&
           accountOnboarding == other.accountOnboarding &&
@@ -144,7 +144,10 @@ ConnectEmbeddedAccountSessionCreateComponents copyWith({ConnectEmbeddedAccountCo
           payouts == other.payouts &&
           payoutsList == other.payoutsList &&
           taxRegistrations == other.taxRegistrations &&
-          taxSettings == other.taxSettings; } 
-@override int get hashCode { return Object.hash(accountManagement, accountOnboarding, balances, disputesList, documents, financialAccount, financialAccountTransactions, instantPayoutsPromotion, issuingCard, issuingCardsList, notificationBanner, paymentDetails, paymentDisputes, payments, payoutDetails, payouts, payoutsList, taxRegistrations, taxSettings); } 
-@override String toString() { return 'ConnectEmbeddedAccountSessionCreateComponents(accountManagement: $accountManagement, accountOnboarding: $accountOnboarding, balances: $balances, disputesList: $disputesList, documents: $documents, financialAccount: $financialAccount, financialAccountTransactions: $financialAccountTransactions, instantPayoutsPromotion: $instantPayoutsPromotion, issuingCard: $issuingCard, issuingCardsList: $issuingCardsList, notificationBanner: $notificationBanner, paymentDetails: $paymentDetails, paymentDisputes: $paymentDisputes, payments: $payments, payoutDetails: $payoutDetails, payouts: $payouts, payoutsList: $payoutsList, taxRegistrations: $taxRegistrations, taxSettings: $taxSettings)'; } 
+          taxSettings == other.taxSettings;
+
+@override int get hashCode => Object.hash(accountManagement, accountOnboarding, balances, disputesList, documents, financialAccount, financialAccountTransactions, instantPayoutsPromotion, issuingCard, issuingCardsList, notificationBanner, paymentDetails, paymentDisputes, payments, payoutDetails, payouts, payoutsList, taxRegistrations, taxSettings);
+
+@override String toString() => 'ConnectEmbeddedAccountSessionCreateComponents(accountManagement: $accountManagement, accountOnboarding: $accountOnboarding, balances: $balances, disputesList: $disputesList, documents: $documents, financialAccount: $financialAccount, financialAccountTransactions: $financialAccountTransactions, instantPayoutsPromotion: $instantPayoutsPromotion, issuingCard: $issuingCard, issuingCardsList: $issuingCardsList, notificationBanner: $notificationBanner, paymentDetails: $paymentDetails, paymentDisputes: $paymentDisputes, payments: $payments, payoutDetails: $payoutDetails, payouts: $payouts, payoutsList: $payoutsList, taxRegistrations: $taxRegistrations, taxSettings: $taxSettings)';
+
  }

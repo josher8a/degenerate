@@ -21,10 +21,13 @@ WebhooksReviewLinks copyWith({WebhooksPullRequest5LinksHtml? html, WebhooksRevie
   html: html ?? this.html,
   pullRequest: pullRequest ?? this.pullRequest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReviewLinks &&
           html == other.html &&
-          pullRequest == other.pullRequest; } 
-@override int get hashCode { return Object.hash(html, pullRequest); } 
-@override String toString() { return 'WebhooksReviewLinks(html: $html, pullRequest: $pullRequest)'; } 
+          pullRequest == other.pullRequest;
+
+@override int get hashCode => Object.hash(html, pullRequest);
+
+@override String toString() => 'WebhooksReviewLinks(html: $html, pullRequest: $pullRequest)';
+
  }

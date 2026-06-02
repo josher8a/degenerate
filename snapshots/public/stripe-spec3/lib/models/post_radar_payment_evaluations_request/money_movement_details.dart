@@ -20,10 +20,13 @@ MoneyMovementDetails copyWith({MoneyMovementDetailsCard? Function()? card, Money
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MoneyMovementDetails &&
           card == other.card &&
-          moneyMovementType == other.moneyMovementType; } 
-@override int get hashCode { return Object.hash(card, moneyMovementType); } 
-@override String toString() { return 'MoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)'; } 
+          moneyMovementType == other.moneyMovementType;
+
+@override int get hashCode => Object.hash(card, moneyMovementType);
+
+@override String toString() => 'MoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)';
+
  }

@@ -21,10 +21,13 @@ RadarGetBgpPfx2asMoasResponseResult copyWith({RadarGetAsnsRelResponseResultMeta?
   meta: meta ?? this.meta,
   moas: moas ?? this.moas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpPfx2asMoasResponseResult &&
           meta == other.meta &&
-          listEquals(moas, other.moas); } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(moas)); } 
-@override String toString() { return 'RadarGetBgpPfx2asMoasResponseResult(meta: $meta, moas: $moas)'; } 
+          listEquals(moas, other.moas);
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(moas));
+
+@override String toString() => 'RadarGetBgpPfx2asMoasResponseResult(meta: $meta, moas: $moas)';
+
  }

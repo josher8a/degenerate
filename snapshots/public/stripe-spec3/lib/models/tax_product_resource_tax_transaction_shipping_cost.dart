@@ -52,13 +52,16 @@ TaxProductResourceTaxTransactionShippingCost copyWith({int? amount, int? amountT
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxCode: taxCode ?? this.taxCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxTransactionShippingCost &&
           amount == other.amount &&
           amountTax == other.amountTax &&
           shippingRate == other.shippingRate &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(amount, amountTax, shippingRate, taxBehavior, taxCode); } 
-@override String toString() { return 'TaxProductResourceTaxTransactionShippingCost(amount: $amount, amountTax: $amountTax, shippingRate: $shippingRate, taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
+          taxCode == other.taxCode;
+
+@override int get hashCode => Object.hash(amount, amountTax, shippingRate, taxBehavior, taxCode);
+
+@override String toString() => 'TaxProductResourceTaxTransactionShippingCost(amount: $amount, amountTax: $amountTax, shippingRate: $shippingRate, taxBehavior: $taxBehavior, taxCode: $taxCode)';
+
  }

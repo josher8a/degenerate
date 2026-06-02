@@ -50,12 +50,15 @@ RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0 copyWith({
   http3: http3 ?? this.http3,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0 &&
           listEquals(http1X, other.http1X) &&
           listEquals(http2, other.http2) &&
           listEquals(http3, other.http3) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(http1X), Object.hashAll(http2), Object.hashAll(http3), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0(http1X: $http1X, http2: $http2, http3: $http3, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(http1X), Object.hashAll(http2), Object.hashAll(http3), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByHttpVersionResponseResultSerie0(http1X: $http1X, http2: $http2, http3: $http3, timestamps: $timestamps)';
+
  }

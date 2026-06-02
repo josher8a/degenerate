@@ -20,10 +20,13 @@ SourceTypeEps copyWith({String? Function()? reference, String? Function()? state
   reference: reference != null ? reference() : this.reference,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeEps &&
           reference == other.reference &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(reference, statementDescriptor); } 
-@override String toString() { return 'SourceTypeEps(reference: $reference, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(reference, statementDescriptor);
+
+@override String toString() => 'SourceTypeEps(reference: $reference, statementDescriptor: $statementDescriptor)';
+
  }

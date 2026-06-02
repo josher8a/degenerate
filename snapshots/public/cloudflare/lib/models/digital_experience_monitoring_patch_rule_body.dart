@@ -27,11 +27,14 @@ DigitalExperienceMonitoringPatchRuleBody copyWith({String? Function()? descripti
   match: match != null ? match() : this.match,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringPatchRuleBody &&
           description == other.description &&
           match == other.match &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, match, name); } 
-@override String toString() { return 'DigitalExperienceMonitoringPatchRuleBody(description: $description, match: $match, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, match, name);
+
+@override String toString() => 'DigitalExperienceMonitoringPatchRuleBody(description: $description, match: $match, name: $name)';
+
  }

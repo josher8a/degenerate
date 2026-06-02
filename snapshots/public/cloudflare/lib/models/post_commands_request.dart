@@ -20,9 +20,12 @@ return errors; }
 PostCommandsRequest copyWith({List<PostCommandsRequestCommands>? commands}) { return PostCommandsRequest(
   commands: commands ?? this.commands,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCommandsRequest &&
-          listEquals(commands, other.commands); } 
-@override int get hashCode { return Object.hashAll(commands); } 
-@override String toString() { return 'PostCommandsRequest(commands: $commands)'; } 
+          listEquals(commands, other.commands);
+
+@override int get hashCode => Object.hashAll(commands);
+
+@override String toString() => 'PostCommandsRequest(commands: $commands)';
+
  }

@@ -21,10 +21,13 @@ Unhealthy copyWith({String? Function()? reason, String? state, }) { return Unhea
   reason: reason != null ? reason() : this.reason,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Unhealthy &&
           reason == other.reason &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(reason, state); } 
-@override String toString() { return 'Unhealthy(reason: $reason, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(reason, state);
+
+@override String toString() => 'Unhealthy(reason: $reason, state: $state)';
+
  }

@@ -17,7 +17,8 @@ final class RadarGetPostQuantumTlsSupportError$400 extends RadarGetPostQuantumTl
 
 final RadarGetPostQuantumTlsSupportResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetPostQuantumTlsSupportError$Unknown extends RadarGetPostQuantumTlsSupportError {const RadarGetPostQuantumTlsSupportError$Unknown(this.statusCode, this.rawBody, );
 

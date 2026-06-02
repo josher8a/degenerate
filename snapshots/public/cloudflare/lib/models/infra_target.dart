@@ -48,13 +48,16 @@ InfraTarget copyWith({DateTime? createdAt, String? hostname, InfraTargetId? id, 
   ip: ip ?? this.ip,
   modifiedAt: modifiedAt ?? this.modifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraTarget &&
           createdAt == other.createdAt &&
           hostname == other.hostname &&
           id == other.id &&
           ip == other.ip &&
-          modifiedAt == other.modifiedAt; } 
-@override int get hashCode { return Object.hash(createdAt, hostname, id, ip, modifiedAt); } 
-@override String toString() { return 'InfraTarget(createdAt: $createdAt, hostname: $hostname, id: $id, ip: $ip, modifiedAt: $modifiedAt)'; } 
+          modifiedAt == other.modifiedAt;
+
+@override int get hashCode => Object.hash(createdAt, hostname, id, ip, modifiedAt);
+
+@override String toString() => 'InfraTarget(createdAt: $createdAt, hostname: $hostname, id: $id, ip: $ip, modifiedAt: $modifiedAt)';
+
  }

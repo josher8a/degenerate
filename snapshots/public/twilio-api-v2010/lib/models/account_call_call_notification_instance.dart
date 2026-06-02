@@ -133,7 +133,7 @@ AccountCallCallNotificationInstance copyWith({String? Function()? accountSid, St
   sid: sid != null ? sid() : this.sid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallCallNotificationInstance &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -151,7 +151,10 @@ AccountCallCallNotificationInstance copyWith({String? Function()? accountSid, St
           responseBody == other.responseBody &&
           responseHeaders == other.responseHeaders &&
           sid == other.sid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, requestVariables, responseBody, responseHeaders, sid, uri); } 
-@override String toString() { return 'AccountCallCallNotificationInstance(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, requestVariables: $requestVariables, responseBody: $responseBody, responseHeaders: $responseHeaders, sid: $sid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callSid, dateCreated, dateUpdated, errorCode, log, messageDate, messageText, moreInfo, requestMethod, requestUrl, requestVariables, responseBody, responseHeaders, sid, uri);
+
+@override String toString() => 'AccountCallCallNotificationInstance(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, errorCode: $errorCode, log: $log, messageDate: $messageDate, messageText: $messageText, moreInfo: $moreInfo, requestMethod: $requestMethod, requestUrl: $requestUrl, requestVariables: $requestVariables, responseBody: $responseBody, responseHeaders: $responseHeaders, sid: $sid, uri: $uri)';
+
  }

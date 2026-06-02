@@ -44,13 +44,16 @@ ZarazZarazConfigHistoryResponseResultValue copyWith({DateTime? createdAt, int? i
   userId: userId ?? this.userId,
   config: config ?? this.config,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazZarazConfigHistoryResponseResultValue &&
           createdAt == other.createdAt &&
           id == other.id &&
           updatedAt == other.updatedAt &&
           userId == other.userId &&
-          config == other.config; } 
-@override int get hashCode { return Object.hash(createdAt, id, updatedAt, userId, config); } 
-@override String toString() { return 'ZarazZarazConfigHistoryResponseResultValue(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId, config: $config)'; } 
+          config == other.config;
+
+@override int get hashCode => Object.hash(createdAt, id, updatedAt, userId, config);
+
+@override String toString() => 'ZarazZarazConfigHistoryResponseResultValue(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId, config: $config)';
+
  }

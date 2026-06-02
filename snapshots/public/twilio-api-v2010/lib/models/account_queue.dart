@@ -79,7 +79,7 @@ AccountQueue copyWith({String? Function()? dateUpdated, int Function()? currentS
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   maxSize: maxSize != null ? maxSize() : this.maxSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountQueue &&
           dateUpdated == other.dateUpdated &&
           currentSize == other.currentSize &&
@@ -89,7 +89,10 @@ AccountQueue copyWith({String? Function()? dateUpdated, int Function()? currentS
           averageWaitTime == other.averageWaitTime &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
-          maxSize == other.maxSize; } 
-@override int get hashCode { return Object.hash(dateUpdated, currentSize, friendlyName, uri, accountSid, averageWaitTime, sid, dateCreated, maxSize); } 
-@override String toString() { return 'AccountQueue(dateUpdated: $dateUpdated, currentSize: $currentSize, friendlyName: $friendlyName, uri: $uri, accountSid: $accountSid, averageWaitTime: $averageWaitTime, sid: $sid, dateCreated: $dateCreated, maxSize: $maxSize)'; } 
+          maxSize == other.maxSize;
+
+@override int get hashCode => Object.hash(dateUpdated, currentSize, friendlyName, uri, accountSid, averageWaitTime, sid, dateCreated, maxSize);
+
+@override String toString() => 'AccountQueue(dateUpdated: $dateUpdated, currentSize: $currentSize, friendlyName: $friendlyName, uri: $uri, accountSid: $accountSid, averageWaitTime: $averageWaitTime, sid: $sid, dateCreated: $dateCreated, maxSize: $maxSize)';
+
  }

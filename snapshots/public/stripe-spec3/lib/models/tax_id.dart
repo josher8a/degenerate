@@ -98,7 +98,7 @@ TaxId copyWith({String? Function()? country, int? created, BankConnectionsResour
   value: value ?? this.value,
   verification: verification != null ? verification() : this.verification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxId &&
           country == other.country &&
           created == other.created &&
@@ -110,7 +110,10 @@ TaxId copyWith({String? Function()? country, int? created, BankConnectionsResour
           owner == other.owner &&
           type == other.type &&
           value == other.value &&
-          verification == other.verification; } 
-@override int get hashCode { return Object.hash(country, created, customer, customerAccount, id, livemode, object, owner, type, value, verification); } 
-@override String toString() { return 'TaxId(country: $country, created: $created, customer: $customer, customerAccount: $customerAccount, id: $id, livemode: $livemode, object: $object, owner: $owner, type: $type, value: $value, verification: $verification)'; } 
+          verification == other.verification;
+
+@override int get hashCode => Object.hash(country, created, customer, customerAccount, id, livemode, object, owner, type, value, verification);
+
+@override String toString() => 'TaxId(country: $country, created: $created, customer: $customer, customerAccount: $customerAccount, id: $id, livemode: $livemode, object: $object, owner: $owner, type: $type, value: $value, verification: $verification)';
+
  }

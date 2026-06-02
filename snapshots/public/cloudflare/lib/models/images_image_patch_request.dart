@@ -30,11 +30,14 @@ ImagesImagePatchRequest copyWith({String? Function()? creator, Map<String, dynam
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImagePatchRequest &&
           creator == other.creator &&
           metadata == other.metadata &&
-          requireSignedUrLs == other.requireSignedUrLs; } 
-@override int get hashCode { return Object.hash(creator, metadata, requireSignedUrLs); } 
-@override String toString() { return 'ImagesImagePatchRequest(creator: $creator, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)'; } 
+          requireSignedUrLs == other.requireSignedUrLs;
+
+@override int get hashCode => Object.hash(creator, metadata, requireSignedUrLs);
+
+@override String toString() => 'ImagesImagePatchRequest(creator: $creator, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)';
+
  }

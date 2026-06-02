@@ -37,11 +37,14 @@ MagicVisibilityMnmMnmConfigWarpDevice copyWith({String? id, String? name, String
   name: name ?? this.name,
   routerIp: routerIp ?? this.routerIp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmConfigWarpDevice &&
           id == other.id &&
           name == other.name &&
-          routerIp == other.routerIp; } 
-@override int get hashCode { return Object.hash(id, name, routerIp); } 
-@override String toString() { return 'MagicVisibilityMnmMnmConfigWarpDevice(id: $id, name: $name, routerIp: $routerIp)'; } 
+          routerIp == other.routerIp;
+
+@override int get hashCode => Object.hash(id, name, routerIp);
+
+@override String toString() => 'MagicVisibilityMnmMnmConfigWarpDevice(id: $id, name: $name, routerIp: $routerIp)';
+
  }

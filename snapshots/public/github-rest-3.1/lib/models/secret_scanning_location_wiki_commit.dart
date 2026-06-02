@@ -73,7 +73,7 @@ SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, doub
   commitSha: commitSha ?? this.commitSha,
   commitUrl: commitUrl ?? this.commitUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningLocationWikiCommit &&
           path == other.path &&
           startLine == other.startLine &&
@@ -83,7 +83,10 @@ SecretScanningLocationWikiCommit copyWith({String? path, double? startLine, doub
           blobSha == other.blobSha &&
           pageUrl == other.pageUrl &&
           commitSha == other.commitSha &&
-          commitUrl == other.commitUrl; } 
-@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, pageUrl, commitSha, commitUrl); } 
-@override String toString() { return 'SecretScanningLocationWikiCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, pageUrl: $pageUrl, commitSha: $commitSha, commitUrl: $commitUrl)'; } 
+          commitUrl == other.commitUrl;
+
+@override int get hashCode => Object.hash(path, startLine, endLine, startColumn, endColumn, blobSha, pageUrl, commitSha, commitUrl);
+
+@override String toString() => 'SecretScanningLocationWikiCommit(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn, blobSha: $blobSha, pageUrl: $pageUrl, commitSha: $commitSha, commitUrl: $commitUrl)';
+
  }

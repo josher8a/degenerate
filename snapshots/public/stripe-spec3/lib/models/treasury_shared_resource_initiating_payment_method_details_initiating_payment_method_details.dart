@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)';
+
  }
 /// Polymorphic type matching the originating money movement's source. This can be an external account, a Stripe balance, or a FinancialAccount.
 @immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)';
+
  }
 /// 
 @immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails({required this.billingDetails, required this.type, this.balance, this.financialAccount, this.issuingCard, this.usBankAccount, });
@@ -108,14 +114,17 @@ TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetai
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails &&
           balance == other.balance &&
           billingDetails == other.billingDetails &&
           financialAccount == other.financialAccount &&
           issuingCard == other.issuingCard &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(balance, billingDetails, financialAccount, issuingCard, type, usBankAccount); } 
-@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(balance: $balance, billingDetails: $billingDetails, financialAccount: $financialAccount, issuingCard: $issuingCard, type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(balance, billingDetails, financialAccount, issuingCard, type, usBankAccount);
+
+@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(balance: $balance, billingDetails: $billingDetails, financialAccount: $financialAccount, issuingCard: $issuingCard, type: $type, usBankAccount: $usBankAccount)';
+
  }

@@ -18,13 +18,15 @@ final class GitCreateRefError$409 extends GitCreateRefError {const GitCreateRefE
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class GitCreateRefError$422 extends GitCreateRefError {const GitCreateRefError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class GitCreateRefError$Unknown extends GitCreateRefError {const GitCreateRefError$Unknown(this.statusCode, this.rawBody, );
 

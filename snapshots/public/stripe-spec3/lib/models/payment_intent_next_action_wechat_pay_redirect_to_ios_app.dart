@@ -21,9 +21,12 @@ return errors; }
 PaymentIntentNextActionWechatPayRedirectToIosApp copyWith({String? nativeUrl}) { return PaymentIntentNextActionWechatPayRedirectToIosApp(
   nativeUrl: nativeUrl ?? this.nativeUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionWechatPayRedirectToIosApp &&
-          nativeUrl == other.nativeUrl; } 
-@override int get hashCode { return nativeUrl.hashCode; } 
-@override String toString() { return 'PaymentIntentNextActionWechatPayRedirectToIosApp(nativeUrl: $nativeUrl)'; } 
+          nativeUrl == other.nativeUrl;
+
+@override int get hashCode => nativeUrl.hashCode;
+
+@override String toString() => 'PaymentIntentNextActionWechatPayRedirectToIosApp(nativeUrl: $nativeUrl)';
+
  }

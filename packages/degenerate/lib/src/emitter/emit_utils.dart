@@ -626,10 +626,11 @@ String toSnakeCase(String input) {
 
 // ─── Shared code_builder Method helpers ─────────────────
 
-/// Build an `operator ==` override with the given [body].
+/// Build an `operator ==` override with the given expression [body].
 Method buildEqualsOverride(String body) => Method(
   (m) => m
     ..name = 'operator =='
+    ..lambda = true
     ..annotations.add(refer('override'))
     ..returns = refer('bool')
     ..requiredParameters.add(
@@ -642,20 +643,22 @@ Method buildEqualsOverride(String body) => Method(
     ..body = Code(body),
 );
 
-/// Build a `hashCode` getter override with the given [body].
+/// Build a `hashCode` getter override with the given expression [body].
 Method buildHashCodeOverride(String body) => Method(
   (m) => m
     ..name = 'hashCode'
     ..type = MethodType.getter
+    ..lambda = true
     ..annotations.add(refer('override'))
     ..returns = refer('int')
     ..body = Code(body),
 );
 
-/// Build a `toString` override with the given [body].
+/// Build a `toString` override with the given expression [body].
 Method buildToStringOverride(String body) => Method(
   (m) => m
     ..name = 'toString'
+    ..lambda = true
     ..annotations.add(refer('override'))
     ..returns = refer('String')
     ..body = Code(body),

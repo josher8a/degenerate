@@ -51,13 +51,16 @@ RealtimeTranscriptionSessionCreateRequest copyWith({RealtimeTranscriptionSession
   inputAudioTranscription: inputAudioTranscription != null ? inputAudioTranscription() : this.inputAudioTranscription,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequest &&
           turnDetection == other.turnDetection &&
           inputAudioNoiseReduction == other.inputAudioNoiseReduction &&
           inputAudioFormat == other.inputAudioFormat &&
           inputAudioTranscription == other.inputAudioTranscription &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(turnDetection, inputAudioNoiseReduction, inputAudioFormat, inputAudioTranscription, Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequest(turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(turnDetection, inputAudioNoiseReduction, inputAudioFormat, inputAudioTranscription, Object.hashAll(include ?? const []));
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateRequest(turnDetection: $turnDetection, inputAudioNoiseReduction: $inputAudioNoiseReduction, inputAudioFormat: $inputAudioFormat, inputAudioTranscription: $inputAudioTranscription, include: $include)';
+
  }

@@ -55,13 +55,16 @@ TreasuryFinancialAccountsResourceAbaRecord copyWith({String? accountHolderName, 
   bankName: bankName ?? this.bankName,
   routingNumber: routingNumber ?? this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceAbaRecord &&
           accountHolderName == other.accountHolderName &&
           accountNumber == other.accountNumber &&
           accountNumberLast4 == other.accountNumberLast4 &&
           bankName == other.bankName &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountNumber, accountNumberLast4, bankName, routingNumber); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceAbaRecord(accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountNumberLast4: $accountNumberLast4, bankName: $bankName, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderName, accountNumber, accountNumberLast4, bankName, routingNumber);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceAbaRecord(accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountNumberLast4: $accountNumberLast4, bankName: $bankName, routingNumber: $routingNumber)';
+
  }

@@ -22,9 +22,12 @@ return errors; }
 CreateVideoRemixBody copyWith({String? prompt}) { return CreateVideoRemixBody(
   prompt: prompt ?? this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVideoRemixBody &&
-          prompt == other.prompt; } 
-@override int get hashCode { return prompt.hashCode; } 
-@override String toString() { return 'CreateVideoRemixBody(prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => prompt.hashCode;
+
+@override String toString() => 'CreateVideoRemixBody(prompt: $prompt)';
+
  }

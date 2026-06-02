@@ -48,14 +48,17 @@ SubscriptionScheduleAddInvoiceItem copyWith({List<DiscountsResourceStackableDisc
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionScheduleAddInvoiceItem &&
           listEquals(discounts, other.discounts) &&
           metadata == other.metadata &&
           period == other.period &&
           price == other.price &&
           quantity == other.quantity &&
-          listEquals(taxRates, other.taxRates); } 
-@override int get hashCode { return Object.hash(Object.hashAll(discounts), metadata, period, price, quantity, Object.hashAll(taxRates ?? const [])); } 
-@override String toString() { return 'SubscriptionScheduleAddInvoiceItem(discounts: $discounts, metadata: $metadata, period: $period, price: $price, quantity: $quantity, taxRates: $taxRates)'; } 
+          listEquals(taxRates, other.taxRates);
+
+@override int get hashCode => Object.hash(Object.hashAll(discounts), metadata, period, price, quantity, Object.hashAll(taxRates ?? const []));
+
+@override String toString() => 'SubscriptionScheduleAddInvoiceItem(discounts: $discounts, metadata: $metadata, period: $period, price: $price, quantity: $quantity, taxRates: $taxRates)';
+
  }

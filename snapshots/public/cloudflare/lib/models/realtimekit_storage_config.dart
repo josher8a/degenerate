@@ -21,10 +21,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStorageConfigAuthMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStorageConfigAuthMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitStorageConfigAuthMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitStorageConfigAuthMethod($value)';
+
  }
 /// Type of storage media.
 @immutable final class RealtimekitStorageConfigType {const RealtimekitStorageConfigType._(this.value);
@@ -55,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStorageConfigType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStorageConfigType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitStorageConfigType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitStorageConfigType($value)';
+
  }
 @immutable final class RealtimekitStorageConfig {const RealtimekitStorageConfig({required this.type, this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, this.username, });
 
@@ -147,7 +153,7 @@ RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitSto
   type: type ?? this.type,
   username: username != null ? username() : this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitStorageConfig &&
           accessKey == other.accessKey &&
           authMethod == other.authMethod &&
@@ -160,7 +166,10 @@ RealtimekitStorageConfig copyWith({String? Function()? accessKey, RealtimekitSto
           region == other.region &&
           secret == other.secret &&
           type == other.type &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(accessKey, authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username); } 
-@override String toString() { return 'RealtimekitStorageConfig(accessKey: $accessKey, authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(accessKey, authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username);
+
+@override String toString() => 'RealtimekitStorageConfig(accessKey: $accessKey, authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)';
+
  }

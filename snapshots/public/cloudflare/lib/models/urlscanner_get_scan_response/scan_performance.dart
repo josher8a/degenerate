@@ -218,7 +218,7 @@ ScanPerformance copyWith({double? connectEnd, double? connectStart, double? deco
   unloadEventStart: unloadEventStart ?? this.unloadEventStart,
   workerStart: workerStart ?? this.workerStart,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanPerformance &&
           connectEnd == other.connectEnd &&
           connectStart == other.connectStart &&
@@ -250,7 +250,10 @@ ScanPerformance copyWith({double? connectEnd, double? connectStart, double? deco
           type == other.type &&
           unloadEventEnd == other.unloadEventEnd &&
           unloadEventStart == other.unloadEventStart &&
-          workerStart == other.workerStart; } 
-@override int get hashCode { return Object.hashAll([connectEnd, connectStart, decodedBodySize, domComplete, domContentLoadedEventEnd, domContentLoadedEventStart, domInteractive, domainLookupEnd, domainLookupStart, duration, encodedBodySize, entryType, fetchStart, initiatorType, loadEventEnd, loadEventStart, name, nextHopProtocol, redirectCount, redirectEnd, redirectStart, requestStart, responseEnd, responseStart, secureConnectionStart, startTime, transferSize, type, unloadEventEnd, unloadEventStart, workerStart]); } 
-@override String toString() { return 'ScanPerformance(connectEnd: $connectEnd, connectStart: $connectStart, decodedBodySize: $decodedBodySize, domComplete: $domComplete, domContentLoadedEventEnd: $domContentLoadedEventEnd, domContentLoadedEventStart: $domContentLoadedEventStart, domInteractive: $domInteractive, domainLookupEnd: $domainLookupEnd, domainLookupStart: $domainLookupStart, duration: $duration, encodedBodySize: $encodedBodySize, entryType: $entryType, fetchStart: $fetchStart, initiatorType: $initiatorType, loadEventEnd: $loadEventEnd, loadEventStart: $loadEventStart, name: $name, nextHopProtocol: $nextHopProtocol, redirectCount: $redirectCount, redirectEnd: $redirectEnd, redirectStart: $redirectStart, requestStart: $requestStart, responseEnd: $responseEnd, responseStart: $responseStart, secureConnectionStart: $secureConnectionStart, startTime: $startTime, transferSize: $transferSize, type: $type, unloadEventEnd: $unloadEventEnd, unloadEventStart: $unloadEventStart, workerStart: $workerStart)'; } 
+          workerStart == other.workerStart;
+
+@override int get hashCode => Object.hashAll([connectEnd, connectStart, decodedBodySize, domComplete, domContentLoadedEventEnd, domContentLoadedEventStart, domInteractive, domainLookupEnd, domainLookupStart, duration, encodedBodySize, entryType, fetchStart, initiatorType, loadEventEnd, loadEventStart, name, nextHopProtocol, redirectCount, redirectEnd, redirectStart, requestStart, responseEnd, responseStart, secureConnectionStart, startTime, transferSize, type, unloadEventEnd, unloadEventStart, workerStart]);
+
+@override String toString() => 'ScanPerformance(connectEnd: $connectEnd, connectStart: $connectStart, decodedBodySize: $decodedBodySize, domComplete: $domComplete, domContentLoadedEventEnd: $domContentLoadedEventEnd, domContentLoadedEventStart: $domContentLoadedEventStart, domInteractive: $domInteractive, domainLookupEnd: $domainLookupEnd, domainLookupStart: $domainLookupStart, duration: $duration, encodedBodySize: $encodedBodySize, entryType: $entryType, fetchStart: $fetchStart, initiatorType: $initiatorType, loadEventEnd: $loadEventEnd, loadEventStart: $loadEventStart, name: $name, nextHopProtocol: $nextHopProtocol, redirectCount: $redirectCount, redirectEnd: $redirectEnd, redirectStart: $redirectStart, requestStart: $requestStart, responseEnd: $responseEnd, responseStart: $responseStart, secureConnectionStart: $secureConnectionStart, startTime: $startTime, transferSize: $transferSize, type: $type, unloadEventEnd: $unloadEventEnd, unloadEventStart: $unloadEventStart, workerStart: $workerStart)';
+
  }

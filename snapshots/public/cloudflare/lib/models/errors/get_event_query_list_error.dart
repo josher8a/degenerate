@@ -17,7 +17,8 @@ final class GetEventQueryListError$500 extends GetEventQueryListError {const Get
 
 final GetEventQueryListResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GetEventQueryListError$Unknown extends GetEventQueryListError {const GetEventQueryListError$Unknown(this.statusCode, this.rawBody, );
 

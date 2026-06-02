@@ -42,12 +42,15 @@ PageRulesEditAPageRuleRequest copyWith({List<ZonesActions2>? Function()? actions
   status: status != null ? status() : this.status,
   targets: targets != null ? targets() : this.targets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageRulesEditAPageRuleRequest &&
           listEquals(actions, other.actions) &&
           priority == other.priority &&
           status == other.status &&
-          listEquals(targets, other.targets); } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions ?? const []), priority, status, Object.hashAll(targets ?? const [])); } 
-@override String toString() { return 'PageRulesEditAPageRuleRequest(actions: $actions, priority: $priority, status: $status, targets: $targets)'; } 
+          listEquals(targets, other.targets);
+
+@override int get hashCode => Object.hash(Object.hashAll(actions ?? const []), priority, status, Object.hashAll(targets ?? const []));
+
+@override String toString() => 'PageRulesEditAPageRuleRequest(actions: $actions, priority: $priority, status: $status, targets: $targets)';
+
  }

@@ -25,11 +25,14 @@ PostCheckoutSessionsRequestPaymentMethodOptionsPix copyWith({AmountIncludesIof? 
   expiresAfterSeconds: expiresAfterSeconds != null ? expiresAfterSeconds() : this.expiresAfterSeconds,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsPix &&
           amountIncludesIof == other.amountIncludesIof &&
           expiresAfterSeconds == other.expiresAfterSeconds &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(amountIncludesIof, expiresAfterSeconds, setupFutureUsage); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(amountIncludesIof, expiresAfterSeconds, setupFutureUsage);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsPix(amountIncludesIof: $amountIncludesIof, expiresAfterSeconds: $expiresAfterSeconds, setupFutureUsage: $setupFutureUsage)';
+
  }

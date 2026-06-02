@@ -47,11 +47,14 @@ ZeroTrustGatewayGatewayAccountResult copyWith({ZeroTrustGatewayGatewayTag? Funct
   id: id != null ? id() : this.id,
   providerName: providerName != null ? providerName() : this.providerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayGatewayAccountResult &&
           gatewayTag == other.gatewayTag &&
           id == other.id &&
-          providerName == other.providerName; } 
-@override int get hashCode { return Object.hash(gatewayTag, id, providerName); } 
-@override String toString() { return 'ZeroTrustGatewayGatewayAccountResult(gatewayTag: $gatewayTag, id: $id, providerName: $providerName)'; } 
+          providerName == other.providerName;
+
+@override int get hashCode => Object.hash(gatewayTag, id, providerName);
+
+@override String toString() => 'ZeroTrustGatewayGatewayAccountResult(gatewayTag: $gatewayTag, id: $id, providerName: $providerName)';
+
  }

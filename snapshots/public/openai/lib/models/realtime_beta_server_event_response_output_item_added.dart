@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseOutputItemAddedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseOutputItemAddedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseOutputItemAddedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemAddedType($value)';
+
  }
 /// Returned when a new Item is created during Response generation.
 @immutable final class RealtimeBetaServerEventResponseOutputItemAdded {const RealtimeBetaServerEventResponseOutputItemAdded({required this.eventId, required this.type, required this.responseId, required this.outputIndex, required this.item, });
@@ -66,13 +69,16 @@ RealtimeBetaServerEventResponseOutputItemAdded copyWith({String? eventId, Realti
   outputIndex: outputIndex ?? this.outputIndex,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseOutputItemAdded &&
           eventId == other.eventId &&
           type == other.type &&
           responseId == other.responseId &&
           outputIndex == other.outputIndex &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, outputIndex, item); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseOutputItemAdded(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, outputIndex, item);
+
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemAdded(eventId: $eventId, type: $type, responseId: $responseId, outputIndex: $outputIndex, item: $item)';
+
  }

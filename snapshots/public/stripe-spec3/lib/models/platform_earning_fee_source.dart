@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlatformEarningFeeSourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlatformEarningFeeSourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformEarningFeeSourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PlatformEarningFeeSourceType($value)';
+
  }
 /// 
 @immutable final class PlatformEarningFeeSource {const PlatformEarningFeeSource({required this.type, this.charge, this.payout, });
@@ -65,11 +68,14 @@ PlatformEarningFeeSource copyWith({String? Function()? charge, String? Function(
   payout: payout != null ? payout() : this.payout,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PlatformEarningFeeSource &&
           charge == other.charge &&
           payout == other.payout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(charge, payout, type); } 
-@override String toString() { return 'PlatformEarningFeeSource(charge: $charge, payout: $payout, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(charge, payout, type);
+
+@override String toString() => 'PlatformEarningFeeSource(charge: $charge, payout: $payout, type: $type)';
+
  }

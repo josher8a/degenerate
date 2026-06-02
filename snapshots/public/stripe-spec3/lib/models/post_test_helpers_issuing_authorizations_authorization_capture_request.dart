@@ -34,12 +34,15 @@ PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest copyWith({int? F
   expand: expand != null ? expand() : this.expand,
   purchaseDetails: purchaseDetails != null ? purchaseDetails() : this.purchaseDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest &&
           captureAmount == other.captureAmount &&
           closeAuthorization == other.closeAuthorization &&
           listEquals(expand, other.expand) &&
-          purchaseDetails == other.purchaseDetails; } 
-@override int get hashCode { return Object.hash(captureAmount, closeAuthorization, Object.hashAll(expand ?? const []), purchaseDetails); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(captureAmount: $captureAmount, closeAuthorization: $closeAuthorization, expand: $expand, purchaseDetails: $purchaseDetails)'; } 
+          purchaseDetails == other.purchaseDetails;
+
+@override int get hashCode => Object.hash(captureAmount, closeAuthorization, Object.hashAll(expand ?? const []), purchaseDetails);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationCaptureRequest(captureAmount: $captureAmount, closeAuthorization: $closeAuthorization, expand: $expand, purchaseDetails: $purchaseDetails)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseAudioDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioDoneType($value)';
+
  }
 /// Returned when the model-generated audio is done. Also emitted when a Response
 /// is interrupted, incomplete, or cancelled.
@@ -76,14 +79,17 @@ RealtimeBetaServerEventResponseAudioDone copyWith({String? eventId, RealtimeBeta
   outputIndex: outputIndex ?? this.outputIndex,
   contentIndex: contentIndex ?? this.contentIndex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseAudioDone &&
           eventId == other.eventId &&
           type == other.type &&
           responseId == other.responseId &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
-          contentIndex == other.contentIndex; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex)'; } 
+          contentIndex == other.contentIndex;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex);
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex)';
+
  }

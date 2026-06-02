@@ -21,31 +21,36 @@ final class CodespacesExportForAuthenticatedUserError$401 extends CodespacesExpo
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CodespacesExportForAuthenticatedUserError$403 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodespacesExportForAuthenticatedUserError$404 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodespacesExportForAuthenticatedUserError$422 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CodespacesExportForAuthenticatedUserError$500 extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CodespacesExportForAuthenticatedUserError$Unknown extends CodespacesExportForAuthenticatedUserError {const CodespacesExportForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

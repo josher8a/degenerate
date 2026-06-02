@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dimen
 DnsAnalyticsData2 copyWith({List<String>? dimensions}) { return DnsAnalyticsData2(
   dimensions: dimensions ?? this.dimensions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsData2 &&
-          listEquals(dimensions, other.dimensions); } 
-@override int get hashCode { return Object.hashAll(dimensions); } 
-@override String toString() { return 'DnsAnalyticsData2(dimensions: $dimensions)'; } 
+          listEquals(dimensions, other.dimensions);
+
+@override int get hashCode => Object.hashAll(dimensions);
+
+@override String toString() => 'DnsAnalyticsData2(dimensions: $dimensions)';
+
  }

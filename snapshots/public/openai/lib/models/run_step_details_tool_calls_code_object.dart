@@ -31,11 +31,14 @@ RunStepDetailsToolCallsCodeObject copyWith({String? id, AssistantToolsCodeType? 
   type: type ?? this.type,
   codeInterpreter: codeInterpreter ?? this.codeInterpreter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeObject &&
           id == other.id &&
           type == other.type &&
-          codeInterpreter == other.codeInterpreter; } 
-@override int get hashCode { return Object.hash(id, type, codeInterpreter); } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeObject(id: $id, type: $type, codeInterpreter: $codeInterpreter)'; } 
+          codeInterpreter == other.codeInterpreter;
+
+@override int get hashCode => Object.hash(id, type, codeInterpreter);
+
+@override String toString() => 'RunStepDetailsToolCallsCodeObject(id: $id, type: $type, codeInterpreter: $codeInterpreter)';
+
  }

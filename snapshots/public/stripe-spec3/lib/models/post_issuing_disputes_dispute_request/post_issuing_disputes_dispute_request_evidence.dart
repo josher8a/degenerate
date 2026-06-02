@@ -56,7 +56,7 @@ PostIssuingDisputesDisputeRequestEvidence copyWith({EvidenceCanceled? Function()
   reason: reason != null ? reason() : this.reason,
   serviceNotAsDescribed: serviceNotAsDescribed != null ? serviceNotAsDescribed() : this.serviceNotAsDescribed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingDisputesDisputeRequestEvidence &&
           canceled == other.canceled &&
           duplicate == other.duplicate &&
@@ -66,7 +66,10 @@ PostIssuingDisputesDisputeRequestEvidence copyWith({EvidenceCanceled? Function()
           notReceived == other.notReceived &&
           this.other == other.other &&
           reason == other.reason &&
-          serviceNotAsDescribed == other.serviceNotAsDescribed; } 
-@override int get hashCode { return Object.hash(canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other, reason, serviceNotAsDescribed); } 
-@override String toString() { return 'PostIssuingDisputesDisputeRequestEvidence(canceled: $canceled, duplicate: $duplicate, fraudulent: $fraudulent, merchandiseNotAsDescribed: $merchandiseNotAsDescribed, noValidAuthorization: $noValidAuthorization, notReceived: $notReceived, other: $other, reason: $reason, serviceNotAsDescribed: $serviceNotAsDescribed)'; } 
+          serviceNotAsDescribed == other.serviceNotAsDescribed;
+
+@override int get hashCode => Object.hash(canceled, duplicate, fraudulent, merchandiseNotAsDescribed, noValidAuthorization, notReceived, other, reason, serviceNotAsDescribed);
+
+@override String toString() => 'PostIssuingDisputesDisputeRequestEvidence(canceled: $canceled, duplicate: $duplicate, fraudulent: $fraudulent, merchandiseNotAsDescribed: $merchandiseNotAsDescribed, noValidAuthorization: $noValidAuthorization, notReceived: $notReceived, other: $other, reason: $reason, serviceNotAsDescribed: $serviceNotAsDescribed)';
+
  }

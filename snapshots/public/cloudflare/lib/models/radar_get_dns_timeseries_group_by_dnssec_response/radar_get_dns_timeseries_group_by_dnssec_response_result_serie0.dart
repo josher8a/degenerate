@@ -33,12 +33,15 @@ RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<String>? i
   other: other ?? this.other,
   secure: secure ?? this.secure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 &&
           listEquals(insecure, other.insecure) &&
           listEquals(invalid, other.invalid) &&
           listEquals(this.other, other.other) &&
-          listEquals(secure, other.secure); } 
-@override int get hashCode { return Object.hash(Object.hashAll(insecure), Object.hashAll(invalid), Object.hashAll(other), Object.hashAll(secure)); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0(insecure: $insecure, invalid: $invalid, other: $other, secure: $secure)'; } 
+          listEquals(secure, other.secure);
+
+@override int get hashCode => Object.hash(Object.hashAll(insecure), Object.hashAll(invalid), Object.hashAll(other), Object.hashAll(secure));
+
+@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0(insecure: $insecure, invalid: $invalid, other: $other, secure: $secure)';
+
  }

@@ -34,12 +34,15 @@ ErrorsData copyWith({String? Function()? code, String? Function()? message, Stri
   param: param != null ? param() : this.param,
   line: line != null ? line() : this.line,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ErrorsData &&
           code == other.code &&
           message == other.message &&
           param == other.param &&
-          line == other.line; } 
-@override int get hashCode { return Object.hash(code, message, param, line); } 
-@override String toString() { return 'ErrorsData(code: $code, message: $message, param: $param, line: $line)'; } 
+          line == other.line;
+
+@override int get hashCode => Object.hash(code, message, param, line);
+
+@override String toString() => 'ErrorsData(code: $code, message: $message, param: $param, line: $line)';
+
  }

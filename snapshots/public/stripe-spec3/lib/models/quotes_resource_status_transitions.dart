@@ -29,11 +29,14 @@ QuotesResourceStatusTransitions copyWith({int? Function()? acceptedAt, int? Func
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   finalizedAt: finalizedAt != null ? finalizedAt() : this.finalizedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceStatusTransitions &&
           acceptedAt == other.acceptedAt &&
           canceledAt == other.canceledAt &&
-          finalizedAt == other.finalizedAt; } 
-@override int get hashCode { return Object.hash(acceptedAt, canceledAt, finalizedAt); } 
-@override String toString() { return 'QuotesResourceStatusTransitions(acceptedAt: $acceptedAt, canceledAt: $canceledAt, finalizedAt: $finalizedAt)'; } 
+          finalizedAt == other.finalizedAt;
+
+@override int get hashCode => Object.hash(acceptedAt, canceledAt, finalizedAt);
+
+@override String toString() => 'QuotesResourceStatusTransitions(acceptedAt: $acceptedAt, canceledAt: $canceledAt, finalizedAt: $finalizedAt)';
+
  }

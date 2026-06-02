@@ -39,12 +39,15 @@ UrlscannerCreateScanResponseResult copyWith({DateTime? time, String? url, String
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanResponseResult &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanResponseResult(time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(time, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerCreateScanResponseResult(time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

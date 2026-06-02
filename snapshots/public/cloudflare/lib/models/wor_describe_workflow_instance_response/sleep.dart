@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SleepType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SleepType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SleepType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SleepType($value)';
+
  }
 @immutable final class Sleep {const Sleep({required this.end, required this.error, required this.finished, required this.name, required this.start, required this.type, });
 
@@ -66,14 +69,17 @@ Sleep copyWith({DateTime? end, ResultError? Function()? error, bool? finished, S
   start: start ?? this.start,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sleep &&
           end == other.end &&
           error == other.error &&
           finished == other.finished &&
           name == other.name &&
           start == other.start &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(end, error, finished, name, start, type); } 
-@override String toString() { return 'Sleep(end: $end, error: $error, finished: $finished, name: $name, start: $start, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(end, error, finished, name, start, type);
+
+@override String toString() => 'Sleep(end: $end, error: $error, finished: $finished, name: $name, start: $start, type: $type)';
+
  }

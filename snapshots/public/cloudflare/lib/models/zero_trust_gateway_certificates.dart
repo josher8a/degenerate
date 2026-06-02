@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayBindingStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayBindingStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayBindingStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayBindingStatus($value)';
+
  }
 /// Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
 @immutable final class ZeroTrustGatewayType {const ZeroTrustGatewayType._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayType($value)';
+
  }
 @immutable final class ZeroTrustGatewayCertificates {const ZeroTrustGatewayCertificates({this.bindingStatus, this.certificate, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.inUse, this.issuerOrg, this.issuerRaw, this.type, this.updatedAt, this.uploadedOn, });
 
@@ -140,7 +146,7 @@ ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayCertificates &&
           bindingStatus == other.bindingStatus &&
           certificate == other.certificate &&
@@ -153,7 +159,10 @@ ZeroTrustGatewayCertificates copyWith({ZeroTrustGatewayBindingStatus? Function()
           issuerRaw == other.issuerRaw &&
           type == other.type &&
           updatedAt == other.updatedAt &&
-          uploadedOn == other.uploadedOn; } 
-@override int get hashCode { return Object.hash(bindingStatus, certificate, createdAt, expiresOn, fingerprint, id, inUse, issuerOrg, issuerRaw, type, updatedAt, uploadedOn); } 
-@override String toString() { return 'ZeroTrustGatewayCertificates(bindingStatus: $bindingStatus, certificate: $certificate, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, inUse: $inUse, issuerOrg: $issuerOrg, issuerRaw: $issuerRaw, type: $type, updatedAt: $updatedAt, uploadedOn: $uploadedOn)'; } 
+          uploadedOn == other.uploadedOn;
+
+@override int get hashCode => Object.hash(bindingStatus, certificate, createdAt, expiresOn, fingerprint, id, inUse, issuerOrg, issuerRaw, type, updatedAt, uploadedOn);
+
+@override String toString() => 'ZeroTrustGatewayCertificates(bindingStatus: $bindingStatus, certificate: $certificate, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, inUse: $inUse, issuerOrg: $issuerOrg, issuerRaw: $issuerRaw, type: $type, updatedAt: $updatedAt, uploadedOn: $uploadedOn)';
+
  }

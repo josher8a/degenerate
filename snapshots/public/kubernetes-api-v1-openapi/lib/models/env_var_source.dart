@@ -41,13 +41,16 @@ EnvVarSource copyWith({ConfigMapKeySelector? Function()? configMapKeyRef, Object
   resourceFieldRef: resourceFieldRef != null ? resourceFieldRef() : this.resourceFieldRef,
   secretKeyRef: secretKeyRef != null ? secretKeyRef() : this.secretKeyRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnvVarSource &&
           configMapKeyRef == other.configMapKeyRef &&
           fieldRef == other.fieldRef &&
           fileKeyRef == other.fileKeyRef &&
           resourceFieldRef == other.resourceFieldRef &&
-          secretKeyRef == other.secretKeyRef; } 
-@override int get hashCode { return Object.hash(configMapKeyRef, fieldRef, fileKeyRef, resourceFieldRef, secretKeyRef); } 
-@override String toString() { return 'EnvVarSource(configMapKeyRef: $configMapKeyRef, fieldRef: $fieldRef, fileKeyRef: $fileKeyRef, resourceFieldRef: $resourceFieldRef, secretKeyRef: $secretKeyRef)'; } 
+          secretKeyRef == other.secretKeyRef;
+
+@override int get hashCode => Object.hash(configMapKeyRef, fieldRef, fileKeyRef, resourceFieldRef, secretKeyRef);
+
+@override String toString() => 'EnvVarSource(configMapKeyRef: $configMapKeyRef, fieldRef: $fieldRef, fileKeyRef: $fileKeyRef, resourceFieldRef: $resourceFieldRef, secretKeyRef: $secretKeyRef)';
+
  }

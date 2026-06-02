@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateCompletionResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateCompletionResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateCompletionResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateCompletionResponseObject($value)';
+
  }
 /// Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).
 /// 
@@ -82,7 +85,7 @@ CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoi
   object: object ?? this.object,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionResponse &&
           id == other.id &&
           listEquals(choices, other.choices) &&
@@ -90,7 +93,10 @@ CreateCompletionResponse copyWith({String? id, List<CreateCompletionResponseChoi
           model == other.model &&
           systemFingerprint == other.systemFingerprint &&
           object == other.object &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(id, Object.hashAll(choices), created, model, systemFingerprint, object, usage); } 
-@override String toString() { return 'CreateCompletionResponse(id: $id, choices: $choices, created: $created, model: $model, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(id, Object.hashAll(choices), created, model, systemFingerprint, object, usage);
+
+@override String toString() => 'CreateCompletionResponse(id: $id, choices: $choices, created: $created, model: $model, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)';
+
  }

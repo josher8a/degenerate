@@ -56,7 +56,7 @@ PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressVa
   service: service != null ? service() : this.service,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardsCardRequestShipping &&
           address == other.address &&
           addressValidation == other.addressValidation &&
@@ -65,7 +65,10 @@ PostIssuingCardsCardRequestShipping copyWith({BillingAddress? address, AddressVa
           phoneNumber == other.phoneNumber &&
           requireSignature == other.requireSignature &&
           service == other.service &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, addressValidation, customs, name, phoneNumber, requireSignature, service, type); } 
-@override String toString() { return 'PostIssuingCardsCardRequestShipping(address: $address, addressValidation: $addressValidation, customs: $customs, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, addressValidation, customs, name, phoneNumber, requireSignature, service, type);
+
+@override String toString() => 'PostIssuingCardsCardRequestShipping(address: $address, addressValidation: $addressValidation, customs: $customs, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, type: $type)';
+
  }

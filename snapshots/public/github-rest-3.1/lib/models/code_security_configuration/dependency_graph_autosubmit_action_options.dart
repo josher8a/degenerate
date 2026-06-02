@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DependencyGraphAutosubmitActionOptions copyWith({bool? Function()? labeledRunners}) { return DependencyGraphAutosubmitActionOptions(
   labeledRunners: labeledRunners != null ? labeledRunners() : this.labeledRunners,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependencyGraphAutosubmitActionOptions &&
-          labeledRunners == other.labeledRunners; } 
-@override int get hashCode { return labeledRunners.hashCode; } 
-@override String toString() { return 'DependencyGraphAutosubmitActionOptions(labeledRunners: $labeledRunners)'; } 
+          labeledRunners == other.labeledRunners;
+
+@override int get hashCode => labeledRunners.hashCode;
+
+@override String toString() => 'DependencyGraphAutosubmitActionOptions(labeledRunners: $labeledRunners)';
+
  }

@@ -59,13 +59,16 @@ PostEphemeralKeysRequest copyWith({String? Function()? customer, List<String>? F
   nonce: nonce != null ? nonce() : this.nonce,
   verificationSession: verificationSession != null ? verificationSession() : this.verificationSession,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEphemeralKeysRequest &&
           customer == other.customer &&
           listEquals(expand, other.expand) &&
           issuingCard == other.issuingCard &&
           nonce == other.nonce &&
-          verificationSession == other.verificationSession; } 
-@override int get hashCode { return Object.hash(customer, Object.hashAll(expand ?? const []), issuingCard, nonce, verificationSession); } 
-@override String toString() { return 'PostEphemeralKeysRequest(customer: $customer, expand: $expand, issuingCard: $issuingCard, nonce: $nonce, verificationSession: $verificationSession)'; } 
+          verificationSession == other.verificationSession;
+
+@override int get hashCode => Object.hash(customer, Object.hashAll(expand ?? const []), issuingCard, nonce, verificationSession);
+
+@override String toString() => 'PostEphemeralKeysRequest(customer: $customer, expand: $expand, issuingCard: $issuingCard, nonce: $nonce, verificationSession: $verificationSession)';
+
  }

@@ -54,12 +54,15 @@ SourceTransactionAchCreditTransferData copyWith({String? Function()? customerDat
   last4: last4 != null ? last4() : this.last4,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransactionAchCreditTransferData &&
           customerData == other.customerData &&
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(customerData, fingerprint, last4, routingNumber); } 
-@override String toString() { return 'SourceTransactionAchCreditTransferData(customerData: $customerData, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(customerData, fingerprint, last4, routingNumber);
+
+@override String toString() => 'SourceTransactionAchCreditTransferData(customerData: $customerData, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)';
+
  }

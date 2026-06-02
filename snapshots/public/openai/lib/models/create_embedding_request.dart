@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EncodingFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EncodingFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EncodingFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EncodingFormat($value)';
+
  }
 @immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = EncodingFormat.float, this.dimensions, this.user, });
 
@@ -85,13 +88,16 @@ CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbed
   dimensions: dimensions != null ? dimensions() : this.dimensions,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEmbeddingRequest &&
           input == other.input &&
           model == other.model &&
           encodingFormat == other.encodingFormat &&
           dimensions == other.dimensions &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(input, model, encodingFormat, dimensions, user); } 
-@override String toString() { return 'CreateEmbeddingRequest(input: $input, model: $model, encodingFormat: $encodingFormat, dimensions: $dimensions, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(input, model, encodingFormat, dimensions, user);
+
+@override String toString() => 'CreateEmbeddingRequest(input: $input, model: $model, encodingFormat: $encodingFormat, dimensions: $dimensions, user: $user)';
+
  }

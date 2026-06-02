@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 HyperdriveHyperdriveCachingCommon copyWith({bool? Function()? disabled}) { return HyperdriveHyperdriveCachingCommon(
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveCachingCommon &&
-          disabled == other.disabled; } 
-@override int get hashCode { return disabled.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCachingCommon(disabled: $disabled)'; } 
+          disabled == other.disabled;
+
+@override int get hashCode => disabled.hashCode;
+
+@override String toString() => 'HyperdriveHyperdriveCachingCommon(disabled: $disabled)';
+
  }

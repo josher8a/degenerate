@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorBatchTerminateWorkflowInstancesResponseResultStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorBatchTerminateWorkflowInstancesResponseResultStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)';
+
  }
 @immutable final class WorBatchTerminateWorkflowInstancesResponseResult {const WorBatchTerminateWorkflowInstancesResponseResult({required this.instancesTerminated, required this.status, });
 
@@ -45,10 +48,13 @@ WorBatchTerminateWorkflowInstancesResponseResult copyWith({double? instancesTerm
   instancesTerminated: instancesTerminated ?? this.instancesTerminated,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorBatchTerminateWorkflowInstancesResponseResult &&
           instancesTerminated == other.instancesTerminated &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(instancesTerminated, status); } 
-@override String toString() { return 'WorBatchTerminateWorkflowInstancesResponseResult(instancesTerminated: $instancesTerminated, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(instancesTerminated, status);
+
+@override String toString() => 'WorBatchTerminateWorkflowInstancesResponseResult(instancesTerminated: $instancesTerminated, status: $status)';
+
  }

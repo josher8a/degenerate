@@ -85,7 +85,7 @@ AccountSipSipIpAccessControlListSipIpAddress copyWith({String? Function()? sid, 
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipIpAccessControlListSipIpAddress &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -95,7 +95,10 @@ AccountSipSipIpAccessControlListSipIpAddress copyWith({String? Function()? sid, 
           ipAccessControlListSid == other.ipAccessControlListSid &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(sid, accountSid, friendlyName, ipAddress, cidrPrefixLength, ipAccessControlListSid, dateCreated, dateUpdated, uri); } 
-@override String toString() { return 'AccountSipSipIpAccessControlListSipIpAddress(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength, ipAccessControlListSid: $ipAccessControlListSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(sid, accountSid, friendlyName, ipAddress, cidrPrefixLength, ipAccessControlListSid, dateCreated, dateUpdated, uri);
+
+@override String toString() => 'AccountSipSipIpAccessControlListSipIpAddress(sid: $sid, accountSid: $accountSid, friendlyName: $friendlyName, ipAddress: $ipAddress, cidrPrefixLength: $cidrPrefixLength, ipAccessControlListSid: $ipAccessControlListSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventErrorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventErrorType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventErrorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventErrorType($value)';
+
  }
 /// Returned when an error occurs, which could be a client problem or a server
 /// problem. Most errors are recoverable and the session will stay open, we
@@ -56,11 +59,14 @@ RealtimeBetaServerEventError copyWith({String? eventId, RealtimeBetaServerEventE
   type: type ?? this.type,
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventError &&
           eventId == other.eventId &&
           type == other.type &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, error); } 
-@override String toString() { return 'RealtimeBetaServerEventError(eventId: $eventId, type: $type, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(eventId, type, error);
+
+@override String toString() => 'RealtimeBetaServerEventError(eventId: $eventId, type: $type, error: $error)';
+
  }

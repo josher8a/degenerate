@@ -103,7 +103,7 @@ TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? delete
   updatedAt: updatedAt ?? this.updatedAt,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesRegistration &&
           createdAt == other.createdAt &&
           deletedAt == other.deletedAt &&
@@ -116,7 +116,10 @@ TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? delete
           revokedAt == other.revokedAt &&
           tunnelType == other.tunnelType &&
           updatedAt == other.updatedAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(createdAt, deletedAt, device, id, key, keyType, lastSeenAt, policy, revokedAt, tunnelType, updatedAt, user); } 
-@override String toString() { return 'TeamsDevicesRegistration(createdAt: $createdAt, deletedAt: $deletedAt, device: $device, id: $id, key: $key, keyType: $keyType, lastSeenAt: $lastSeenAt, policy: $policy, revokedAt: $revokedAt, tunnelType: $tunnelType, updatedAt: $updatedAt, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(createdAt, deletedAt, device, id, key, keyType, lastSeenAt, policy, revokedAt, tunnelType, updatedAt, user);
+
+@override String toString() => 'TeamsDevicesRegistration(createdAt: $createdAt, deletedAt: $deletedAt, device: $device, id: $id, key: $key, keyType: $keyType, lastSeenAt: $lastSeenAt, policy: $policy, revokedAt: $revokedAt, tunnelType: $tunnelType, updatedAt: $updatedAt, user: $user)';
+
  }

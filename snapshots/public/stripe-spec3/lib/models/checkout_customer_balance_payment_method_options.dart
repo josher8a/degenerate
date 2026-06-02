@@ -34,11 +34,14 @@ CheckoutCustomerBalancePaymentMethodOptions copyWith({CheckoutCustomerBalanceBan
   fundingType: fundingType != null ? fundingType() : this.fundingType,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutCustomerBalancePaymentMethodOptions &&
           bankTransfer == other.bankTransfer &&
           fundingType == other.fundingType &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(bankTransfer, fundingType, setupFutureUsage); } 
-@override String toString() { return 'CheckoutCustomerBalancePaymentMethodOptions(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(bankTransfer, fundingType, setupFutureUsage);
+
+@override String toString() => 'CheckoutCustomerBalancePaymentMethodOptions(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)';
+
  }

@@ -23,10 +23,13 @@ Web3ContentListUpdateRequest copyWith({Web3ContentListAction? action, List<Web3C
   action: action ?? this.action,
   entries: entries ?? this.entries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ContentListUpdateRequest &&
           action == other.action &&
-          listEquals(entries, other.entries); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(entries)); } 
-@override String toString() { return 'Web3ContentListUpdateRequest(action: $action, entries: $entries)'; } 
+          listEquals(entries, other.entries);
+
+@override int get hashCode => Object.hash(action, Object.hashAll(entries));
+
+@override String toString() => 'Web3ContentListUpdateRequest(action: $action, entries: $entries)';
+
  }

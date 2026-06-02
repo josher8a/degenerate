@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_
 SecretScanningLocationPullRequestComment copyWith({Uri? pullRequestCommentUrl}) { return SecretScanningLocationPullRequestComment(
   pullRequestCommentUrl: pullRequestCommentUrl ?? this.pullRequestCommentUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretScanningLocationPullRequestComment &&
-          pullRequestCommentUrl == other.pullRequestCommentUrl; } 
-@override int get hashCode { return pullRequestCommentUrl.hashCode; } 
-@override String toString() { return 'SecretScanningLocationPullRequestComment(pullRequestCommentUrl: $pullRequestCommentUrl)'; } 
+          pullRequestCommentUrl == other.pullRequestCommentUrl;
+
+@override int get hashCode => pullRequestCommentUrl.hashCode;
+
+@override String toString() => 'SecretScanningLocationPullRequestComment(pullRequestCommentUrl: $pullRequestCommentUrl)';
+
  }

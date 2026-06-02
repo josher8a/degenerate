@@ -35,12 +35,15 @@ SpectrumConfigMessages2 copyWith({int? code, String? Function()? documentationUr
   message: message ?? this.message,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigMessages2 &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, message, source); } 
-@override String toString() { return 'SpectrumConfigMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, documentationUrl, message, source);
+
+@override String toString() => 'SpectrumConfigMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)';
+
  }

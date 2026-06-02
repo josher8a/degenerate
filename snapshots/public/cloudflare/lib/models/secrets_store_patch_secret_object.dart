@@ -21,10 +21,13 @@ SecretsStorePatchSecretObject copyWith({SecretsStoreComment? Function()? comment
   comment: comment != null ? comment() : this.comment,
   scopes: scopes != null ? scopes() : this.scopes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStorePatchSecretObject &&
           comment == other.comment &&
-          listEquals(scopes, other.scopes); } 
-@override int get hashCode { return Object.hash(comment, Object.hashAll(scopes ?? const [])); } 
-@override String toString() { return 'SecretsStorePatchSecretObject(comment: $comment, scopes: $scopes)'; } 
+          listEquals(scopes, other.scopes);
+
+@override int get hashCode => Object.hash(comment, Object.hashAll(scopes ?? const []));
+
+@override String toString() => 'SecretsStorePatchSecretObject(comment: $comment, scopes: $scopes)';
+
  }

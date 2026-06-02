@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedThreadResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedThreadResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeletedThreadResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeletedThreadResourceObject($value)';
+
  }
 /// Confirmation payload returned after deleting a thread.
 @immutable final class DeletedThreadResource {const DeletedThreadResource({required this.id, required this.deleted, this.object = DeletedThreadResourceObject.chatkitThreadDeleted, });
@@ -53,11 +56,14 @@ DeletedThreadResource copyWith({String? id, DeletedThreadResourceObject? object,
   object: object ?? this.object,
   deleted: deleted ?? this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedThreadResource &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'DeletedThreadResource(id: $id, object: $object, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(id, object, deleted);
+
+@override String toString() => 'DeletedThreadResource(id: $id, object: $object, deleted: $deleted)';
+
  }

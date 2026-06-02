@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayBlockPageSettingsMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayBlockPageSettingsMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayBlockPageSettingsMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayBlockPageSettingsMode($value)';
+
  }
 /// Specify block page layout settings.
 @immutable final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled, this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly, this.sourceAccount, this.suppressFooter, this.targetUri, this.version, });
@@ -147,7 +150,7 @@ ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor,
   targetUri: targetUri != null ? targetUri() : this.targetUri,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayBlockPageSettings &&
           backgroundColor == other.backgroundColor &&
           enabled == other.enabled &&
@@ -163,7 +166,10 @@ ZeroTrustGatewayBlockPageSettings copyWith({String? Function()? backgroundColor,
           sourceAccount == other.sourceAccount &&
           suppressFooter == other.suppressFooter &&
           targetUri == other.targetUri &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(backgroundColor, enabled, footerText, headerText, includeContext, logoPath, mailtoAddress, mailtoSubject, mode, name, readOnly, sourceAccount, suppressFooter, targetUri, version); } 
-@override String toString() { return 'ZeroTrustGatewayBlockPageSettings(backgroundColor: $backgroundColor, enabled: $enabled, footerText: $footerText, headerText: $headerText, includeContext: $includeContext, logoPath: $logoPath, mailtoAddress: $mailtoAddress, mailtoSubject: $mailtoSubject, mode: $mode, name: $name, readOnly: $readOnly, sourceAccount: $sourceAccount, suppressFooter: $suppressFooter, targetUri: $targetUri, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(backgroundColor, enabled, footerText, headerText, includeContext, logoPath, mailtoAddress, mailtoSubject, mode, name, readOnly, sourceAccount, suppressFooter, targetUri, version);
+
+@override String toString() => 'ZeroTrustGatewayBlockPageSettings(backgroundColor: $backgroundColor, enabled: $enabled, footerText: $footerText, headerText: $headerText, includeContext: $includeContext, logoPath: $logoPath, mailtoAddress: $mailtoAddress, mailtoSubject: $mailtoSubject, mode: $mode, name: $name, readOnly: $readOnly, sourceAccount: $sourceAccount, suppressFooter: $suppressFooter, targetUri: $targetUri, version: $version)';
+
  }

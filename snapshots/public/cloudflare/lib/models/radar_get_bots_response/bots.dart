@@ -69,7 +69,7 @@ Bots copyWith({String? category, String? description, String? kind, String? name
   slug: slug ?? this.slug,
   userAgentPatterns: userAgentPatterns ?? this.userAgentPatterns,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Bots &&
           category == other.category &&
           description == other.description &&
@@ -77,7 +77,10 @@ Bots copyWith({String? category, String? description, String? kind, String? name
           name == other.name &&
           $operator == other.$operator &&
           slug == other.slug &&
-          listEquals(userAgentPatterns, other.userAgentPatterns); } 
-@override int get hashCode { return Object.hash(category, description, kind, name, $operator, slug, Object.hashAll(userAgentPatterns)); } 
-@override String toString() { return 'Bots(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, slug: $slug, userAgentPatterns: $userAgentPatterns)'; } 
+          listEquals(userAgentPatterns, other.userAgentPatterns);
+
+@override int get hashCode => Object.hash(category, description, kind, name, $operator, slug, Object.hashAll(userAgentPatterns));
+
+@override String toString() => 'Bots(category: $category, description: $description, kind: $kind, name: $name, \$operator: ${$operator}, slug: $slug, userAgentPatterns: $userAgentPatterns)';
+
  }

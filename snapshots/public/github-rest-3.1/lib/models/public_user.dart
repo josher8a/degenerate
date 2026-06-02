@@ -241,7 +241,7 @@ PublicUser copyWith({String? login, int? id, String? Function()? userViewType, S
   diskUsage: diskUsage != null ? diskUsage() : this.diskUsage,
   collaborators: collaborators != null ? collaborators() : this.collaborators,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicUser &&
           login == other.login &&
           id == other.id &&
@@ -282,7 +282,10 @@ PublicUser copyWith({String? login, int? id, String? Function()? userViewType, S
           totalPrivateRepos == other.totalPrivateRepos &&
           ownedPrivateRepos == other.ownedPrivateRepos &&
           diskUsage == other.diskUsage &&
-          collaborators == other.collaborators; } 
-@override int get hashCode { return Object.hashAll([login, id, userViewType, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, name, company, blog, location, email, notificationEmail, hireable, bio, twitterUsername, publicRepos, publicGists, followers, following, createdAt, updatedAt, plan, privateGists, totalPrivateRepos, ownedPrivateRepos, diskUsage, collaborators]); } 
-@override String toString() { return 'PublicUser(login: $login, id: $id, userViewType: $userViewType, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, notificationEmail: $notificationEmail, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, plan: $plan, privateGists: $privateGists, totalPrivateRepos: $totalPrivateRepos, ownedPrivateRepos: $ownedPrivateRepos, diskUsage: $diskUsage, collaborators: $collaborators)'; } 
+          collaborators == other.collaborators;
+
+@override int get hashCode => Object.hashAll([login, id, userViewType, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, name, company, blog, location, email, notificationEmail, hireable, bio, twitterUsername, publicRepos, publicGists, followers, following, createdAt, updatedAt, plan, privateGists, totalPrivateRepos, ownedPrivateRepos, diskUsage, collaborators]);
+
+@override String toString() => 'PublicUser(login: $login, id: $id, userViewType: $userViewType, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, notificationEmail: $notificationEmail, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, plan: $plan, privateGists: $privateGists, totalPrivateRepos: $totalPrivateRepos, ownedPrivateRepos: $ownedPrivateRepos, diskUsage: $diskUsage, collaborators: $collaborators)';
+
  }

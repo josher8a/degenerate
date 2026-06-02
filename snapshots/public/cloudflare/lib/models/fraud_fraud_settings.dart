@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FraudUserProfilesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FraudUserProfilesStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FraudUserProfilesStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FraudUserProfilesStatus($value)';
+
  }
 @immutable final class FraudFraudSettings {const FraudFraudSettings({this.userProfiles, this.usernameExpressions, });
 
@@ -52,10 +55,13 @@ FraudFraudSettings copyWith({FraudUserProfilesStatus? Function()? userProfiles, 
   userProfiles: userProfiles != null ? userProfiles() : this.userProfiles,
   usernameExpressions: usernameExpressions != null ? usernameExpressions() : this.usernameExpressions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FraudFraudSettings &&
           userProfiles == other.userProfiles &&
-          listEquals(usernameExpressions, other.usernameExpressions); } 
-@override int get hashCode { return Object.hash(userProfiles, Object.hashAll(usernameExpressions ?? const [])); } 
-@override String toString() { return 'FraudFraudSettings(userProfiles: $userProfiles, usernameExpressions: $usernameExpressions)'; } 
+          listEquals(usernameExpressions, other.usernameExpressions);
+
+@override int get hashCode => Object.hash(userProfiles, Object.hashAll(usernameExpressions ?? const []));
+
+@override String toString() => 'FraudFraudSettings(userProfiles: $userProfiles, usernameExpressions: $usernameExpressions)';
+
  }

@@ -30,12 +30,15 @@ WebhookReleaseEditedChanges copyWith({WebhooksChangesBody? Function()? body, Web
   tagName: tagName != null ? tagName() : this.tagName,
   makeLatest: makeLatest != null ? makeLatest() : this.makeLatest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookReleaseEditedChanges &&
           body == other.body &&
           name == other.name &&
           tagName == other.tagName &&
-          makeLatest == other.makeLatest; } 
-@override int get hashCode { return Object.hash(body, name, tagName, makeLatest); } 
-@override String toString() { return 'WebhookReleaseEditedChanges(body: $body, name: $name, tagName: $tagName, makeLatest: $makeLatest)'; } 
+          makeLatest == other.makeLatest;
+
+@override int get hashCode => Object.hash(body, name, tagName, makeLatest);
+
+@override String toString() => 'WebhookReleaseEditedChanges(body: $body, name: $name, tagName: $tagName, makeLatest: $makeLatest)';
+
  }

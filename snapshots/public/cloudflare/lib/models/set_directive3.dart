@@ -35,11 +35,14 @@ SetDirective3 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloud
   operation: operation ?? this.operation,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetDirective3 &&
           cloudflareOnly == other.cloudflareOnly &&
           operation == other.operation &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(cloudflareOnly, operation, value); } 
-@override String toString() { return 'SetDirective3(cloudflareOnly: $cloudflareOnly, operation: $operation, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(cloudflareOnly, operation, value);
+
+@override String toString() => 'SetDirective3(cloudflareOnly: $cloudflareOnly, operation: $operation, value: $value)';
+
  }

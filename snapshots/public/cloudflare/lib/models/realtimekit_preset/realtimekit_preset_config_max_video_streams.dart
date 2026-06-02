@@ -24,10 +24,13 @@ RealtimekitPresetConfigMaxVideoStreams copyWith({int? desktop, int? mobile, }) {
   desktop: desktop ?? this.desktop,
   mobile: mobile ?? this.mobile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetConfigMaxVideoStreams &&
           desktop == other.desktop &&
-          mobile == other.mobile; } 
-@override int get hashCode { return Object.hash(desktop, mobile); } 
-@override String toString() { return 'RealtimekitPresetConfigMaxVideoStreams(desktop: $desktop, mobile: $mobile)'; } 
+          mobile == other.mobile;
+
+@override int get hashCode => Object.hash(desktop, mobile);
+
+@override String toString() => 'RealtimekitPresetConfigMaxVideoStreams(desktop: $desktop, mobile: $mobile)';
+
  }

@@ -17,7 +17,8 @@ final class AigConfigCreateDatasetError$400 extends AigConfigCreateDatasetError 
 
 final AigConfigCreateDatasetResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigCreateDatasetError$Unknown extends AigConfigCreateDatasetError {const AigConfigCreateDatasetError$Unknown(this.statusCode, this.rawBody, );
 

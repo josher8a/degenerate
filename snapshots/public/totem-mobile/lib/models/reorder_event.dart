@@ -36,20 +36,15 @@ final class ReorderEvent {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ReorderEvent &&
-            type == other.type &&
-            listEquals(talkingOrder, other.talkingOrder);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ReorderEvent &&
+          type == other.type &&
+          listEquals(talkingOrder, other.talkingOrder);
 
   @override
-  int get hashCode {
-    return Object.hash(type, Object.hashAll(talkingOrder));
-  }
+  int get hashCode => Object.hash(type, Object.hashAll(talkingOrder));
 
   @override
-  String toString() {
-    return 'ReorderEvent(type: $type, talkingOrder: $talkingOrder)';
-  }
+  String toString() => 'ReorderEvent(type: $type, talkingOrder: $talkingOrder)';
 }

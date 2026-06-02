@@ -35,12 +35,15 @@ ZeroTrustNetworksSubnetCreateWarpRequest copyWith({TunnelSubnetComment? Function
   name: name ?? this.name,
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustNetworksSubnetCreateWarpRequest &&
           comment == other.comment &&
           isDefaultNetwork == other.isDefaultNetwork &&
           name == other.name &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(comment, isDefaultNetwork, name, network); } 
-@override String toString() { return 'ZeroTrustNetworksSubnetCreateWarpRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(comment, isDefaultNetwork, name, network);
+
+@override String toString() => 'ZeroTrustNetworksSubnetCreateWarpRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network)';
+
  }

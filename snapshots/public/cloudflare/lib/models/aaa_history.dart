@@ -44,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaMechanismType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaMechanismType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AaaMechanismType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AaaMechanismType($value)';
+
  }
 /// Type of notification that has been dispatched.
 extension type const AaaSchemasAlertType(String value) {
@@ -120,7 +123,7 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
   policyId: policyId != null ? policyId() : this.policyId,
   sent: sent != null ? sent() : this.sent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaHistory &&
           alertBody == other.alertBody &&
           alertType == other.alertType &&
@@ -130,7 +133,10 @@ AaaHistory copyWith({AaaAlertBody? Function()? alertBody, AaaSchemasAlertType? F
           mechanismType == other.mechanismType &&
           name == other.name &&
           policyId == other.policyId &&
-          sent == other.sent; } 
-@override int get hashCode { return Object.hash(alertBody, alertType, description, id, mechanism, mechanismType, name, policyId, sent); } 
-@override String toString() { return 'AaaHistory(alertBody: $alertBody, alertType: $alertType, description: $description, id: $id, mechanism: $mechanism, mechanismType: $mechanismType, name: $name, policyId: $policyId, sent: $sent)'; } 
+          sent == other.sent;
+
+@override int get hashCode => Object.hash(alertBody, alertType, description, id, mechanism, mechanismType, name, policyId, sent);
+
+@override String toString() => 'AaaHistory(alertBody: $alertBody, alertType: $alertType, description: $description, id: $id, mechanism: $mechanism, mechanismType: $mechanismType, name: $name, policyId: $policyId, sent: $sent)';
+
  }

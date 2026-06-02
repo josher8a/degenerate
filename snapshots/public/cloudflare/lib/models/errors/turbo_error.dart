@@ -17,7 +17,8 @@ final class TurboError$400 extends TurboError {const TurboError$400(this.error);
 
 final TurboResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class TurboError$Unknown extends TurboError {const TurboError$Unknown(this.statusCode, this.rawBody, );
 

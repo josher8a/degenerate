@@ -68,10 +68,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailDnsRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailDnsRecordType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailDnsRecordType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EmailDnsRecordType($value)';
+
  }
 /// List of records needed to enable an Email Routing zone.
 @immutable final class EmailDnsRecord {const EmailDnsRecord({this.content, this.name, this.priority, this.ttl, this.type, });
@@ -136,13 +139,16 @@ EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, 
   ttl: ttl != null ? ttl() : this.ttl,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailDnsRecord &&
           content == other.content &&
           name == other.name &&
           priority == other.priority &&
           ttl == other.ttl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(content, name, priority, ttl, type); } 
-@override String toString() { return 'EmailDnsRecord(content: $content, name: $name, priority: $priority, ttl: $ttl, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(content, name, priority, ttl, type);
+
+@override String toString() => 'EmailDnsRecord(content: $content, name: $name, priority: $priority, ttl: $ttl, type: $type)';
+
  }

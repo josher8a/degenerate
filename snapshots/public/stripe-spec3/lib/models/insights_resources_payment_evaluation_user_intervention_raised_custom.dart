@@ -21,9 +21,12 @@ return errors; }
 InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom copyWith({String? type}) { return InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom(type: $type)';
+
  }

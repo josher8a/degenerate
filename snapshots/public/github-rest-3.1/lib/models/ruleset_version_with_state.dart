@@ -36,12 +36,15 @@ RulesetVersionWithState copyWith({int? versionId, RulesetVersionActor? actor, Da
   updatedAt: updatedAt ?? this.updatedAt,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetVersionWithState &&
           versionId == other.versionId &&
           actor == other.actor &&
           updatedAt == other.updatedAt &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(versionId, actor, updatedAt, state); } 
-@override String toString() { return 'RulesetVersionWithState(versionId: $versionId, actor: $actor, updatedAt: $updatedAt, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(versionId, actor, updatedAt, state);
+
+@override String toString() => 'RulesetVersionWithState(versionId: $versionId, actor: $actor, updatedAt: $updatedAt, state: $state)';
+
  }

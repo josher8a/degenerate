@@ -36,11 +36,14 @@ Queues copyWith({String? queueConsumerId, String? queueId, String? queueName, })
   queueId: queueId ?? this.queueId,
   queueName: queueName ?? this.queueName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Queues &&
           queueConsumerId == other.queueConsumerId &&
           queueId == other.queueId &&
-          queueName == other.queueName; } 
-@override int get hashCode { return Object.hash(queueConsumerId, queueId, queueName); } 
-@override String toString() { return 'Queues(queueConsumerId: $queueConsumerId, queueId: $queueId, queueName: $queueName)'; } 
+          queueName == other.queueName;
+
+@override int get hashCode => Object.hash(queueConsumerId, queueId, queueName);
+
+@override String toString() => 'Queues(queueConsumerId: $queueConsumerId, queueId: $queueId, queueName: $queueName)';
+
  }

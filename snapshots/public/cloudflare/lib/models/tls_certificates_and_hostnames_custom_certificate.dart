@@ -57,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesStatus($value)';
+
  }
 @immutable final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({required this.id, required this.zoneId, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, });
 
@@ -144,7 +147,7 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
   uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomCertificate &&
           bundleMethod == other.bundleMethod &&
           expiresOn == other.expiresOn &&
@@ -159,7 +162,10 @@ TlsCertificatesAndHostnamesCustomCertificate copyWith({TlsCertificatesAndHostnam
           signature == other.signature &&
           status == other.status &&
           uploadedOn == other.uploadedOn &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts ?? const []), id, issuer, keylessServer, modifiedOn, policyRestrictions, priority, signature, status, uploadedOn, zoneId); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, keylessServer: $keylessServer, modifiedOn: $modifiedOn, policyRestrictions: $policyRestrictions, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(bundleMethod, expiresOn, geoRestrictions, Object.hashAll(hosts ?? const []), id, issuer, keylessServer, modifiedOn, policyRestrictions, priority, signature, status, uploadedOn, zoneId);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomCertificate(bundleMethod: $bundleMethod, expiresOn: $expiresOn, geoRestrictions: $geoRestrictions, hosts: $hosts, id: $id, issuer: $issuer, keylessServer: $keylessServer, modifiedOn: $modifiedOn, policyRestrictions: $policyRestrictions, priority: $priority, signature: $signature, status: $status, uploadedOn: $uploadedOn, zoneId: $zoneId)';
+
  }

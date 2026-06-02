@@ -21,9 +21,12 @@ return errors; }
 PaymentMethodDomainResourcePaymentMethodStatusDetails copyWith({String? errorMessage}) { return PaymentMethodDomainResourcePaymentMethodStatusDetails(
   errorMessage: errorMessage ?? this.errorMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDomainResourcePaymentMethodStatusDetails &&
-          errorMessage == other.errorMessage; } 
-@override int get hashCode { return errorMessage.hashCode; } 
-@override String toString() { return 'PaymentMethodDomainResourcePaymentMethodStatusDetails(errorMessage: $errorMessage)'; } 
+          errorMessage == other.errorMessage;
+
+@override int get hashCode => errorMessage.hashCode;
+
+@override String toString() => 'PaymentMethodDomainResourcePaymentMethodStatusDetails(errorMessage: $errorMessage)';
+
  }

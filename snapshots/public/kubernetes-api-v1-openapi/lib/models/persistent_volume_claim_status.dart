@@ -94,7 +94,7 @@ PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map
   modifyVolumeStatus: modifyVolumeStatus != null ? modifyVolumeStatus() : this.modifyVolumeStatus,
   phase: phase != null ? phase() : this.phase,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeClaimStatus &&
           listEquals(accessModes, other.accessModes) &&
           allocatedResourceStatuses == other.allocatedResourceStatuses &&
@@ -103,7 +103,10 @@ PersistentVolumeClaimStatus copyWith({List<String>? Function()? accessModes, Map
           listEquals(conditions, other.conditions) &&
           currentVolumeAttributesClassName == other.currentVolumeAttributesClassName &&
           modifyVolumeStatus == other.modifyVolumeStatus &&
-          phase == other.phase; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accessModes ?? const []), allocatedResourceStatuses, allocatedResources, capacity, Object.hashAll(conditions ?? const []), currentVolumeAttributesClassName, modifyVolumeStatus, phase); } 
-@override String toString() { return 'PersistentVolumeClaimStatus(accessModes: $accessModes, allocatedResourceStatuses: $allocatedResourceStatuses, allocatedResources: $allocatedResources, capacity: $capacity, conditions: $conditions, currentVolumeAttributesClassName: $currentVolumeAttributesClassName, modifyVolumeStatus: $modifyVolumeStatus, phase: $phase)'; } 
+          phase == other.phase;
+
+@override int get hashCode => Object.hash(Object.hashAll(accessModes ?? const []), allocatedResourceStatuses, allocatedResources, capacity, Object.hashAll(conditions ?? const []), currentVolumeAttributesClassName, modifyVolumeStatus, phase);
+
+@override String toString() => 'PersistentVolumeClaimStatus(accessModes: $accessModes, allocatedResourceStatuses: $allocatedResourceStatuses, allocatedResources: $allocatedResources, capacity: $capacity, conditions: $conditions, currentVolumeAttributesClassName: $currentVolumeAttributesClassName, modifyVolumeStatus: $modifyVolumeStatus, phase: $phase)';
+
  }

@@ -23,10 +23,13 @@ ConnectEmbeddedInstantPayoutsPromotionConfig copyWith({bool? enabled, ConnectEmb
   enabled: enabled ?? this.enabled,
   features: features ?? this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedInstantPayoutsPromotionConfig &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'ConnectEmbeddedInstantPayoutsPromotionConfig(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'ConnectEmbeddedInstantPayoutsPromotionConfig(enabled: $enabled, features: $features)';
+
  }

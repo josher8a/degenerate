@@ -30,12 +30,15 @@ MetadataDeviceInfo copyWith({int? Function()? cpus, bool? Function()? isMobile, 
   os: os != null ? os() : this.os,
   osVersion: osVersion != null ? osVersion() : this.osVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataDeviceInfo &&
           cpus == other.cpus &&
           isMobile == other.isMobile &&
           os == other.os &&
-          osVersion == other.osVersion; } 
-@override int get hashCode { return Object.hash(cpus, isMobile, os, osVersion); } 
-@override String toString() { return 'MetadataDeviceInfo(cpus: $cpus, isMobile: $isMobile, os: $os, osVersion: $osVersion)'; } 
+          osVersion == other.osVersion;
+
+@override int get hashCode => Object.hash(cpus, isMobile, os, osVersion);
+
+@override String toString() => 'MetadataDeviceInfo(cpus: $cpus, isMobile: $isMobile, os: $os, osVersion: $osVersion)';
+
  }

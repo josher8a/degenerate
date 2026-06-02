@@ -20,9 +20,12 @@ return errors; }
 WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request copyWith({String? text}) { return WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => text.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Request(text: $text)';
+
  }

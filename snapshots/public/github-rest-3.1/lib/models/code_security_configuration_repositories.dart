@@ -22,10 +22,13 @@ CodeSecurityConfigurationRepositories copyWith({CodeSecurityConfigurationForRepo
   status: status != null ? status() : this.status,
   repository: repository != null ? repository() : this.repository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeSecurityConfigurationRepositories &&
           status == other.status &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(status, repository); } 
-@override String toString() { return 'CodeSecurityConfigurationRepositories(status: $status, repository: $repository)'; } 
+          repository == other.repository;
+
+@override int get hashCode => Object.hash(status, repository);
+
+@override String toString() => 'CodeSecurityConfigurationRepositories(status: $status, repository: $repository)';
+
  }

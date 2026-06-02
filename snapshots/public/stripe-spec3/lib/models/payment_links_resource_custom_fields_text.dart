@@ -36,11 +36,14 @@ PaymentLinksResourceCustomFieldsText copyWith({String? Function()? defaultValue,
   maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,
   minimumLength: minimumLength != null ? minimumLength() : this.minimumLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsText &&
           defaultValue == other.defaultValue &&
           maximumLength == other.maximumLength &&
-          minimumLength == other.minimumLength; } 
-@override int get hashCode { return Object.hash(defaultValue, maximumLength, minimumLength); } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsText(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength)'; } 
+          minimumLength == other.minimumLength;
+
+@override int get hashCode => Object.hash(defaultValue, maximumLength, minimumLength);
+
+@override String toString() => 'PaymentLinksResourceCustomFieldsText(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength)';
+
  }

@@ -29,10 +29,13 @@ CheckoutMobilepayPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptio
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutMobilepayPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
-@override String toString() { return 'CheckoutMobilepayPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, setupFutureUsage);
+
+@override String toString() => 'CheckoutMobilepayPaymentMethodOptions(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)';
+
  }

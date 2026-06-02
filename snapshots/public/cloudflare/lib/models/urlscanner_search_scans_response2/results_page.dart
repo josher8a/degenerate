@@ -37,12 +37,15 @@ ResultsPage copyWith({String? asn, String? country, String? ip, String? url, }) 
   ip: ip ?? this.ip,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultsPage &&
           asn == other.asn &&
           country == other.country &&
           ip == other.ip &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(asn, country, ip, url); } 
-@override String toString() { return 'ResultsPage(asn: $asn, country: $country, ip: $ip, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(asn, country, ip, url);
+
+@override String toString() => 'ResultsPage(asn: $asn, country: $country, ip: $ip, url: $url)';
+
  }

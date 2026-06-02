@@ -33,12 +33,15 @@ ScanMetaProcessors copyWith({ProcessorsCategories? categories, List<String>? phi
   rank: rank ?? this.rank,
   tech: tech ?? this.tech,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanMetaProcessors &&
           categories == other.categories &&
           listEquals(phishing, other.phishing) &&
           rank == other.rank &&
-          listEquals(tech, other.tech); } 
-@override int get hashCode { return Object.hash(categories, Object.hashAll(phishing), rank, Object.hashAll(tech)); } 
-@override String toString() { return 'ScanMetaProcessors(categories: $categories, phishing: $phishing, rank: $rank, tech: $tech)'; } 
+          listEquals(tech, other.tech);
+
+@override int get hashCode => Object.hash(categories, Object.hashAll(phishing), rank, Object.hashAll(tech));
+
+@override String toString() => 'ScanMetaProcessors(categories: $categories, phishing: $phishing, rank: $rank, tech: $tech)';
+
  }

@@ -40,11 +40,14 @@ LegalEntityUboDeclaration copyWith({int? Function()? date, String? Function()? i
   ip: ip != null ? ip() : this.ip,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityUboDeclaration &&
           date == other.date &&
           ip == other.ip &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, userAgent); } 
-@override String toString() { return 'LegalEntityUboDeclaration(date: $date, ip: $ip, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(date, ip, userAgent);
+
+@override String toString() => 'LegalEntityUboDeclaration(date: $date, ip: $ip, userAgent: $userAgent)';
+
  }

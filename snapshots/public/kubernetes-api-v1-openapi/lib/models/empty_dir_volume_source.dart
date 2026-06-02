@@ -23,10 +23,13 @@ EmptyDirVolumeSource copyWith({String? Function()? medium, ResourceQuantity? Fun
   medium: medium != null ? medium() : this.medium,
   sizeLimit: sizeLimit != null ? sizeLimit() : this.sizeLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmptyDirVolumeSource &&
           medium == other.medium &&
-          sizeLimit == other.sizeLimit; } 
-@override int get hashCode { return Object.hash(medium, sizeLimit); } 
-@override String toString() { return 'EmptyDirVolumeSource(medium: $medium, sizeLimit: $sizeLimit)'; } 
+          sizeLimit == other.sizeLimit;
+
+@override int get hashCode => Object.hash(medium, sizeLimit);
+
+@override String toString() => 'EmptyDirVolumeSource(medium: $medium, sizeLimit: $sizeLimit)';
+
  }

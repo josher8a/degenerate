@@ -28,11 +28,14 @@ PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest copyWith({List
   incrementAmount: incrementAmount ?? this.incrementAmount,
   isAmountControllable: isAmountControllable != null ? isAmountControllable() : this.isAmountControllable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest &&
           listEquals(expand, other.expand) &&
           incrementAmount == other.incrementAmount &&
-          isAmountControllable == other.isAmountControllable; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), incrementAmount, isAmountControllable); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest(expand: $expand, incrementAmount: $incrementAmount, isAmountControllable: $isAmountControllable)'; } 
+          isAmountControllable == other.isAmountControllable;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), incrementAmount, isAmountControllable);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationIncrementRequest(expand: $expand, incrementAmount: $incrementAmount, isAmountControllable: $isAmountControllable)';
+
  }

@@ -80,7 +80,7 @@ BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>?
   rootDirectory: rootDirectory ?? this.rootDirectory,
   triggerName: triggerName ?? this.triggerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsCreateTriggerRequest &&
           listEquals(branchExcludes, other.branchExcludes) &&
           listEquals(branchIncludes, other.branchIncludes) &&
@@ -93,7 +93,10 @@ BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>?
           listEquals(pathIncludes, other.pathIncludes) &&
           repoConnectionUuid == other.repoConnectionUuid &&
           rootDirectory == other.rootDirectory &&
-          triggerName == other.triggerName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(branchExcludes), Object.hashAll(branchIncludes), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, externalScriptId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), repoConnectionUuid, rootDirectory, triggerName); } 
-@override String toString() { return 'BuildsCreateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, externalScriptId: $externalScriptId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnectionUuid: $repoConnectionUuid, rootDirectory: $rootDirectory, triggerName: $triggerName)'; } 
+          triggerName == other.triggerName;
+
+@override int get hashCode => Object.hash(Object.hashAll(branchExcludes), Object.hashAll(branchIncludes), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, externalScriptId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), repoConnectionUuid, rootDirectory, triggerName);
+
+@override String toString() => 'BuildsCreateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, externalScriptId: $externalScriptId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnectionUuid: $repoConnectionUuid, rootDirectory: $rootDirectory, triggerName: $triggerName)';
+
  }

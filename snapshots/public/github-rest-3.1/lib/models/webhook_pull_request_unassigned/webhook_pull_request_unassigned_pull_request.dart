@@ -293,7 +293,7 @@ WebhookPullRequestUnassignedPullRequest copyWith({WebhooksPullRequest5Links? lin
   url: url ?? this.url,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestUnassignedPullRequest &&
           links == other.links &&
           activeLockReason == other.activeLockReason &&
@@ -342,7 +342,10 @@ WebhookPullRequestUnassignedPullRequest copyWith({WebhooksPullRequest5Links? lin
           title == other.title &&
           updatedAt == other.updatedAt &&
           url == other.url &&
-          user == other.user; } 
-@override int get hashCode { return Object.hashAll([links, activeLockReason, additions, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, changedFiles, closedAt, comments, commentsUrl, commits, commitsUrl, createdAt, deletions, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, maintainerCanModify, mergeCommitSha, mergeable, mergeableState, merged, mergedAt, mergedBy, milestone, nodeId, number, patchUrl, rebaseable, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewComments, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]); } 
-@override String toString() { return 'WebhookPullRequestUnassignedPullRequest(links: $links, activeLockReason: $activeLockReason, additions: $additions, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, changedFiles: $changedFiles, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, commits: $commits, commitsUrl: $commitsUrl, createdAt: $createdAt, deletions: $deletions, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, maintainerCanModify: $maintainerCanModify, mergeCommitSha: $mergeCommitSha, mergeable: $mergeable, mergeableState: $mergeableState, merged: $merged, mergedAt: $mergedAt, mergedBy: $mergedBy, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, rebaseable: $rebaseable, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewComments: $reviewComments, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hashAll([links, activeLockReason, additions, assignee, Object.hashAll(assignees), authorAssociation, autoMerge, base, body, changedFiles, closedAt, comments, commentsUrl, commits, commitsUrl, createdAt, deletions, diffUrl, draft, head, htmlUrl, id, issueUrl, Object.hashAll(labels), locked, maintainerCanModify, mergeCommitSha, mergeable, mergeableState, merged, mergedAt, mergedBy, milestone, nodeId, number, patchUrl, rebaseable, Object.hashAll(requestedReviewers), Object.hashAll(requestedTeams), reviewCommentUrl, reviewComments, reviewCommentsUrl, state, statusesUrl, title, updatedAt, url, user]);
+
+@override String toString() => 'WebhookPullRequestUnassignedPullRequest(links: $links, activeLockReason: $activeLockReason, additions: $additions, assignee: $assignee, assignees: $assignees, authorAssociation: $authorAssociation, autoMerge: $autoMerge, base: $base, body: $body, changedFiles: $changedFiles, closedAt: $closedAt, comments: $comments, commentsUrl: $commentsUrl, commits: $commits, commitsUrl: $commitsUrl, createdAt: $createdAt, deletions: $deletions, diffUrl: $diffUrl, draft: $draft, head: $head, htmlUrl: $htmlUrl, id: $id, issueUrl: $issueUrl, labels: $labels, locked: $locked, maintainerCanModify: $maintainerCanModify, mergeCommitSha: $mergeCommitSha, mergeable: $mergeable, mergeableState: $mergeableState, merged: $merged, mergedAt: $mergedAt, mergedBy: $mergedBy, milestone: $milestone, nodeId: $nodeId, number: $number, patchUrl: $patchUrl, rebaseable: $rebaseable, requestedReviewers: $requestedReviewers, requestedTeams: $requestedTeams, reviewCommentUrl: $reviewCommentUrl, reviewComments: $reviewComments, reviewCommentsUrl: $reviewCommentsUrl, state: $state, statusesUrl: $statusesUrl, title: $title, updatedAt: $updatedAt, url: $url, user: $user)';
+
  }

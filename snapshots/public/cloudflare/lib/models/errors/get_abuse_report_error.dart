@@ -18,13 +18,15 @@ final class GetAbuseReportError$400 extends GetAbuseReportError {const GetAbuseR
 
 final GetAbuseReportResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetAbuseReportError$500 extends GetAbuseReportError {const GetAbuseReportError$500(this.error);
 
 final GetAbuseReportResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GetAbuseReportError$Unknown extends GetAbuseReportError {const GetAbuseReportError$Unknown(this.statusCode, this.rawBody, );
 

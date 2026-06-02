@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessLevel($value)';
+
  }
 @immutable final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});
 
@@ -50,9 +53,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('acces
 ActionsWorkflowAccessToRepository copyWith({AccessLevel? accessLevel}) { return ActionsWorkflowAccessToRepository(
   accessLevel: accessLevel ?? this.accessLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsWorkflowAccessToRepository &&
-          accessLevel == other.accessLevel; } 
-@override int get hashCode { return accessLevel.hashCode; } 
-@override String toString() { return 'ActionsWorkflowAccessToRepository(accessLevel: $accessLevel)'; } 
+          accessLevel == other.accessLevel;
+
+@override int get hashCode => accessLevel.hashCode;
+
+@override String toString() => 'ActionsWorkflowAccessToRepository(accessLevel: $accessLevel)';
+
  }

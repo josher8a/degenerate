@@ -25,11 +25,14 @@ D1QueryResultResponse copyWith({D1QueryMeta? Function()? meta, List<Map<String, 
   results: results != null ? results() : this.results,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1QueryResultResponse &&
           meta == other.meta &&
           listEquals(results, other.results) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(meta, Object.hashAll(results ?? const []), success); } 
-@override String toString() { return 'D1QueryResultResponse(meta: $meta, results: $results, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(meta, Object.hashAll(results ?? const []), success);
+
+@override String toString() => 'D1QueryResultResponse(meta: $meta, results: $results, success: $success)';
+
  }

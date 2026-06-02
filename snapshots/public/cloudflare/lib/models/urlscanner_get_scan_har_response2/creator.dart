@@ -30,11 +30,14 @@ Creator copyWith({String? comment, String? name, String? version, }) { return Cr
   name: name ?? this.name,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Creator &&
           comment == other.comment &&
           name == other.name &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(comment, name, version); } 
-@override String toString() { return 'Creator(comment: $comment, name: $name, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(comment, name, version);
+
+@override String toString() => 'Creator(comment: $comment, name: $name, version: $version)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_
 CreateGroupUserBody copyWith({String? userId}) { return CreateGroupUserBody(
   userId: userId ?? this.userId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateGroupUserBody &&
-          userId == other.userId; } 
-@override int get hashCode { return userId.hashCode; } 
-@override String toString() { return 'CreateGroupUserBody(userId: $userId)'; } 
+          userId == other.userId;
+
+@override int get hashCode => userId.hashCode;
+
+@override String toString() => 'CreateGroupUserBody(userId: $userId)';
+
  }

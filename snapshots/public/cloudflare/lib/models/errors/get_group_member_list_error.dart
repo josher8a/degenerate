@@ -17,7 +17,8 @@ final class GetGroupMemberListError$400 extends GetGroupMemberListError {const G
 
 final GetGroupMemberListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetGroupMemberListError$Unknown extends GetGroupMemberListError {const GetGroupMemberListError$Unknown(this.statusCode, this.rawBody, );
 

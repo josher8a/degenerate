@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('days'
 ActionsArtifactAndLogRetention copyWith({int? days}) { return ActionsArtifactAndLogRetention(
   days: days ?? this.days,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsArtifactAndLogRetention &&
-          days == other.days; } 
-@override int get hashCode { return days.hashCode; } 
-@override String toString() { return 'ActionsArtifactAndLogRetention(days: $days)'; } 
+          days == other.days;
+
+@override int get hashCode => days.hashCode;
+
+@override String toString() => 'ActionsArtifactAndLogRetention(days: $days)';
+
  }

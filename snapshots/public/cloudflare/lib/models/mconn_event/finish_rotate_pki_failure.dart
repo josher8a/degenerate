@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinishRotatePkiFailureK && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinishRotatePkiFailureK($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinishRotatePkiFailureK && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinishRotatePkiFailureK($value)';
+
  }
 @immutable final class FinishRotatePkiFailure {const FinishRotatePkiFailure({required this.k});
 
@@ -38,9 +41,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); 
 FinishRotatePkiFailure copyWith({FinishRotatePkiFailureK? k}) { return FinishRotatePkiFailure(
   k: k ?? this.k,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinishRotatePkiFailure &&
-          k == other.k; } 
-@override int get hashCode { return k.hashCode; } 
-@override String toString() { return 'FinishRotatePkiFailure(k: $k)'; } 
+          k == other.k;
+
+@override int get hashCode => k.hashCode;
+
+@override String toString() => 'FinishRotatePkiFailure(k: $k)';
+
  }

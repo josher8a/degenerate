@@ -26,11 +26,14 @@ ZeroTrustGatewayItems2 copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? 
   description: description != null ? description() : this.description,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayItems2 &&
           createdAt == other.createdAt &&
           description == other.description &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(createdAt, description, value); } 
-@override String toString() { return 'ZeroTrustGatewayItems2(createdAt: $createdAt, description: $description, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(createdAt, description, value);
+
+@override String toString() => 'ZeroTrustGatewayItems2(createdAt: $createdAt, description: $description, value: $value)';
+
  }

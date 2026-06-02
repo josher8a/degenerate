@@ -61,7 +61,7 @@ CustomEntry copyWith({DateTime? createdAt, String? Function()? description, bool
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomEntry &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -71,7 +71,10 @@ CustomEntry copyWith({DateTime? createdAt, String? Function()? description, bool
           pattern == other.pattern &&
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, description, enabled, id, name, pattern, profileId, updatedAt, type); } 
-@override String toString() { return 'CustomEntry(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, name: $name, pattern: $pattern, profileId: $profileId, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, description, enabled, id, name, pattern, profileId, updatedAt, type);
+
+@override String toString() => 'CustomEntry(createdAt: $createdAt, description: $description, enabled: $enabled, id: $id, name: $name, pattern: $pattern, profileId: $profileId, updatedAt: $updatedAt, type: $type)';
+
  }

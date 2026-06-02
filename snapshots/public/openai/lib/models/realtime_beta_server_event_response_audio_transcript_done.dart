@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)';
+
  }
 /// Returned when the model-generated transcription of audio output is done
 /// streaming. Also emitted when a Response is interrupted, incomplete, or
@@ -84,7 +87,7 @@ RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, Re
   contentIndex: contentIndex ?? this.contentIndex,
   transcript: transcript ?? this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseAudioTranscriptDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -92,7 +95,10 @@ RealtimeBetaServerEventResponseAudioTranscriptDone copyWith({String? eventId, Re
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           contentIndex == other.contentIndex &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, contentIndex, transcript);
+
+@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, transcript: $transcript)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TopupObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TopupObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TopupObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TopupObject($value)';
+
  }
 /// The status of the top-up is either `canceled`, `failed`, `pending`, `reversed`, or `succeeded`.
 @immutable final class TopupStatus {const TopupStatus._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TopupStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TopupStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TopupStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TopupStatus($value)';
+
  }
 /// To top up your Stripe balance, you create a top-up object. You can retrieve
 /// individual top-ups, as well as list all top-ups. Top-ups are identified by a
@@ -199,7 +205,7 @@ Topup copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balan
   status: status ?? this.status,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Topup &&
           amount == other.amount &&
           balanceTransaction == other.balanceTransaction &&
@@ -216,7 +222,10 @@ Topup copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balan
           source == other.source &&
           statementDescriptor == other.statementDescriptor &&
           status == other.status &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, balanceTransaction, created, currency, description, expectedAvailabilityDate, failureCode, failureMessage, id, livemode, metadata, object, source, statementDescriptor, status, transferGroup); } 
-@override String toString() { return 'Topup(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, expectedAvailabilityDate: $expectedAvailabilityDate, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, object: $object, source: $source, statementDescriptor: $statementDescriptor, status: $status, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, balanceTransaction, created, currency, description, expectedAvailabilityDate, failureCode, failureMessage, id, livemode, metadata, object, source, statementDescriptor, status, transferGroup);
+
+@override String toString() => 'Topup(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, description: $description, expectedAvailabilityDate: $expectedAvailabilityDate, failureCode: $failureCode, failureMessage: $failureMessage, id: $id, livemode: $livemode, metadata: $metadata, object: $object, source: $source, statementDescriptor: $statementDescriptor, status: $status, transferGroup: $transferGroup)';
+
  }

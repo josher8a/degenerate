@@ -18,13 +18,15 @@ final class PutPermissionUpdateError$400 extends PutPermissionUpdateError {const
 
 final PutPermissionUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PutPermissionUpdateError$404 extends PutPermissionUpdateError {const PutPermissionUpdateError$404(this.error);
 
 final PutPermissionUpdateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PutPermissionUpdateError$Unknown extends PutPermissionUpdateError {const PutPermissionUpdateError$Unknown(this.statusCode, this.rawBody, );
 

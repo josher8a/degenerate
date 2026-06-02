@@ -39,13 +39,16 @@ TunnelArgoTunnel copyWith({List<TunnelConnection>? connections, TunnelCreatedAt?
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelArgoTunnel &&
           listEquals(connections, other.connections) &&
           createdAt == other.createdAt &&
           deletedAt == other.deletedAt &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(connections), createdAt, deletedAt, id, name); } 
-@override String toString() { return 'TunnelArgoTunnel(connections: $connections, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(connections), createdAt, deletedAt, id, name);
+
+@override String toString() => 'TunnelArgoTunnel(connections: $connections, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, name: $name)';
+
  }

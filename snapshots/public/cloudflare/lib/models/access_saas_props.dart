@@ -64,7 +64,7 @@ AccessSaasProps copyWith({List<String>? Function()? allowedIdps, AccessAppLaunch
   tags: tags != null ? tags() : this.tags,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSaasProps &&
           listEquals(allowedIdps, other.allowedIdps) &&
           appLauncherVisible == other.appLauncherVisible &&
@@ -75,7 +75,10 @@ AccessSaasProps copyWith({List<String>? Function()? allowedIdps, AccessAppLaunch
           saasApp == other.saasApp &&
           scimConfig == other.scimConfig &&
           listEquals(tags, other.tags) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, Object.hashAll(customPages ?? const []), logoUrl, name, saasApp, scimConfig, Object.hashAll(tags ?? const []), type); } 
-@override String toString() { return 'AccessSaasProps(allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, logoUrl: $logoUrl, name: $name, saasApp: $saasApp, scimConfig: $scimConfig, tags: $tags, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, Object.hashAll(customPages ?? const []), logoUrl, name, saasApp, scimConfig, Object.hashAll(tags ?? const []), type);
+
+@override String toString() => 'AccessSaasProps(allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, logoUrl: $logoUrl, name: $name, saasApp: $saasApp, scimConfig: $scimConfig, tags: $tags, type: $type)';
+
  }

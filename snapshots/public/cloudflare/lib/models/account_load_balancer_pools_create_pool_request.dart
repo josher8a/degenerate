@@ -86,7 +86,7 @@ AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescript
   originSteering: originSteering != null ? originSteering() : this.originSteering,
   origins: origins ?? this.origins,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLoadBalancerPoolsCreatePoolRequest &&
           description == other.description &&
           enabled == other.enabled &&
@@ -100,7 +100,10 @@ AccountLoadBalancerPoolsCreatePoolRequest copyWith({LoadBalancingSchemasDescript
           notificationEmail == other.notificationEmail &&
           notificationFilter == other.notificationFilter &&
           originSteering == other.originSteering &&
-          listEquals(origins, other.origins); } 
-@override int get hashCode { return Object.hash(description, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins)); } 
-@override String toString() { return 'AccountLoadBalancerPoolsCreatePoolRequest(description: $description, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)'; } 
+          listEquals(origins, other.origins);
+
+@override int get hashCode => Object.hash(description, enabled, latitude, loadShedding, longitude, minimumOrigins, monitor, monitorGroup, name, notificationEmail, notificationFilter, originSteering, Object.hashAll(origins));
+
+@override String toString() => 'AccountLoadBalancerPoolsCreatePoolRequest(description: $description, enabled: $enabled, latitude: $latitude, loadShedding: $loadShedding, longitude: $longitude, minimumOrigins: $minimumOrigins, monitor: $monitor, monitorGroup: $monitorGroup, name: $name, notificationEmail: $notificationEmail, notificationFilter: $notificationFilter, originSteering: $originSteering, origins: $origins)';
+
  }

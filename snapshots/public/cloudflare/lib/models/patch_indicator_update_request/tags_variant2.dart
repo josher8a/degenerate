@@ -20,10 +20,13 @@ TagsVariant2 copyWith({String? Function()? categoryName, String? value, }) { ret
   categoryName: categoryName != null ? categoryName() : this.categoryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TagsVariant2 &&
           categoryName == other.categoryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(categoryName, value); } 
-@override String toString() { return 'TagsVariant2(categoryName: $categoryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(categoryName, value);
+
+@override String toString() => 'TagsVariant2(categoryName: $categoryName, value: $value)';
+
  }

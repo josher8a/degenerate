@@ -20,10 +20,13 @@ UsBankAccountFinancialConnections copyWith({List<FinancialConnectionsAccountPerm
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsBankAccountFinancialConnections &&
           listEquals(permissions, other.permissions) &&
-          listEquals(prefetch, other.prefetch); } 
-@override int get hashCode { return Object.hash(Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const [])); } 
-@override String toString() { return 'UsBankAccountFinancialConnections(permissions: $permissions, prefetch: $prefetch)'; } 
+          listEquals(prefetch, other.prefetch);
+
+@override int get hashCode => Object.hash(Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []));
+
+@override String toString() => 'UsBankAccountFinancialConnections(permissions: $permissions, prefetch: $prefetch)';
+
  }

@@ -36,11 +36,14 @@ AuthContext copyWith({String? acId, String? id, String? identityProviderId, }) {
   id: id ?? this.id,
   identityProviderId: identityProviderId ?? this.identityProviderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AuthContext &&
           acId == other.acId &&
           id == other.id &&
-          identityProviderId == other.identityProviderId; } 
-@override int get hashCode { return Object.hash(acId, id, identityProviderId); } 
-@override String toString() { return 'AuthContext(acId: $acId, id: $id, identityProviderId: $identityProviderId)'; } 
+          identityProviderId == other.identityProviderId;
+
+@override int get hashCode => Object.hash(acId, id, identityProviderId);
+
+@override String toString() => 'AuthContext(acId: $acId, id: $id, identityProviderId: $identityProviderId)';
+
  }

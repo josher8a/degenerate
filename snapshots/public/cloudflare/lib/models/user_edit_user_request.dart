@@ -40,13 +40,16 @@ UserEditUserRequest copyWith({IamCountry? Function()? country, IamFirstName? Fun
   telephone: telephone != null ? telephone() : this.telephone,
   zipcode: zipcode != null ? zipcode() : this.zipcode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserEditUserRequest &&
           country == other.country &&
           firstName == other.firstName &&
           lastName == other.lastName &&
           telephone == other.telephone &&
-          zipcode == other.zipcode; } 
-@override int get hashCode { return Object.hash(country, firstName, lastName, telephone, zipcode); } 
-@override String toString() { return 'UserEditUserRequest(country: $country, firstName: $firstName, lastName: $lastName, telephone: $telephone, zipcode: $zipcode)'; } 
+          zipcode == other.zipcode;
+
+@override int get hashCode => Object.hash(country, firstName, lastName, telephone, zipcode);
+
+@override String toString() => 'UserEditUserRequest(country: $country, firstName: $firstName, lastName: $lastName, telephone: $telephone, zipcode: $zipcode)';
+
  }

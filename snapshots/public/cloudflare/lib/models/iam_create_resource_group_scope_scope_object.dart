@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
 IamCreateResourceGroupScopeScopeObject copyWith({IamCreateResourceGroupScopeScopeObjectKey? Function()? key}) { return IamCreateResourceGroupScopeScopeObject(
   key: key != null ? key() : this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateResourceGroupScopeScopeObject &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'IamCreateResourceGroupScopeScopeObject(key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => key.hashCode;
+
+@override String toString() => 'IamCreateResourceGroupScopeScopeObject(key: $key)';
+
  }

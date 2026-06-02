@@ -41,11 +41,14 @@ DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()?
   tag: tag != null ? tag() : this.tag,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsCaaRecordData &&
           flags == other.flags &&
           tag == other.tag &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(flags, tag, value); } 
-@override String toString() { return 'DnsRecordsCaaRecordData(flags: $flags, tag: $tag, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(flags, tag, value);
+
+@override String toString() => 'DnsRecordsCaaRecordData(flags: $flags, tag: $tag, value: $value)';
+
  }

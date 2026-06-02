@@ -43,12 +43,15 @@ SchemaValidationCreateSchemaRequest copyWith({SchemaValidationCreateSchemaReques
   source: source ?? this.source,
   validationEnabled: validationEnabled ?? this.validationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationCreateSchemaRequest &&
           kind == other.kind &&
           name == other.name &&
           source == other.source &&
-          validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(kind, name, source, validationEnabled); } 
-@override String toString() { return 'SchemaValidationCreateSchemaRequest(kind: $kind, name: $name, source: $source, validationEnabled: $validationEnabled)'; } 
+          validationEnabled == other.validationEnabled;
+
+@override int get hashCode => Object.hash(kind, name, source, validationEnabled);
+
+@override String toString() => 'SchemaValidationCreateSchemaRequest(kind: $kind, name: $name, source: $source, validationEnabled: $validationEnabled)';
+
  }

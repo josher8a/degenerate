@@ -60,13 +60,16 @@ PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int?
   imageUrlPng: imageUrlPng != null ? imageUrlPng() : this.imageUrlPng,
   imageUrlSvg: imageUrlSvg != null ? imageUrlSvg() : this.imageUrlSvg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionPixDisplayQrCode &&
           data == other.data &&
           expiresAt == other.expiresAt &&
           hostedInstructionsUrl == other.hostedInstructionsUrl &&
           imageUrlPng == other.imageUrlPng &&
-          imageUrlSvg == other.imageUrlSvg; } 
-@override int get hashCode { return Object.hash(data, expiresAt, hostedInstructionsUrl, imageUrlPng, imageUrlSvg); } 
-@override String toString() { return 'PaymentIntentNextActionPixDisplayQrCode(data: $data, expiresAt: $expiresAt, hostedInstructionsUrl: $hostedInstructionsUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)'; } 
+          imageUrlSvg == other.imageUrlSvg;
+
+@override int get hashCode => Object.hash(data, expiresAt, hostedInstructionsUrl, imageUrlPng, imageUrlSvg);
+
+@override String toString() => 'PaymentIntentNextActionPixDisplayQrCode(data: $data, expiresAt: $expiresAt, hostedInstructionsUrl: $hostedInstructionsUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
+
  }

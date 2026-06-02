@@ -25,11 +25,14 @@ ExampleComCategories copyWith({List<CategoriesContent>? Function()? content, Cat
   inherited: inherited ?? this.inherited,
   risks: risks != null ? risks() : this.risks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExampleComCategories &&
           listEquals(content, other.content) &&
           inherited == other.inherited &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content ?? const []), inherited, Object.hashAll(risks ?? const [])); } 
-@override String toString() { return 'ExampleComCategories(content: $content, inherited: $inherited, risks: $risks)'; } 
+          listEquals(risks, other.risks);
+
+@override int get hashCode => Object.hash(Object.hashAll(content ?? const []), inherited, Object.hashAll(risks ?? const []));
+
+@override String toString() => 'ExampleComCategories(content: $content, inherited: $inherited, risks: $risks)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ClientCertificateForAZoneEditClientCertificateRequest copyWith({bool? Function()? reactivate}) { return ClientCertificateForAZoneEditClientCertificateRequest(
   reactivate: reactivate != null ? reactivate() : this.reactivate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientCertificateForAZoneEditClientCertificateRequest &&
-          reactivate == other.reactivate; } 
-@override int get hashCode { return reactivate.hashCode; } 
-@override String toString() { return 'ClientCertificateForAZoneEditClientCertificateRequest(reactivate: $reactivate)'; } 
+          reactivate == other.reactivate;
+
+@override int get hashCode => reactivate.hashCode;
+
+@override String toString() => 'ClientCertificateForAZoneEditClientCertificateRequest(reactivate: $reactivate)';
+
  }

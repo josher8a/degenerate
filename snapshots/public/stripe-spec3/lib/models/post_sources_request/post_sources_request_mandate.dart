@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MandateInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MandateInterval($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateInterval && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MandateInterval($value)';
+
  }
 @immutable final class NotificationMethod {const NotificationMethod._(this.value);
 
@@ -55,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NotificationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NotificationMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NotificationMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NotificationMethod($value)';
+
  }
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.
 @immutable final class PostSourcesRequestMandate {const PostSourcesRequestMandate({this.acceptance, this.amount, this.currency, this.interval, this.notificationMethod, });
@@ -96,13 +102,16 @@ PostSourcesRequestMandate copyWith({Acceptance? Function()? acceptance, AmountDe
   interval: interval != null ? interval() : this.interval,
   notificationMethod: notificationMethod != null ? notificationMethod() : this.notificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequestMandate &&
           acceptance == other.acceptance &&
           amount == other.amount &&
           currency == other.currency &&
           interval == other.interval &&
-          notificationMethod == other.notificationMethod; } 
-@override int get hashCode { return Object.hash(acceptance, amount, currency, interval, notificationMethod); } 
-@override String toString() { return 'PostSourcesRequestMandate(acceptance: $acceptance, amount: $amount, currency: $currency, interval: $interval, notificationMethod: $notificationMethod)'; } 
+          notificationMethod == other.notificationMethod;
+
+@override int get hashCode => Object.hash(acceptance, amount, currency, interval, notificationMethod);
+
+@override String toString() => 'PostSourcesRequestMandate(acceptance: $acceptance, amount: $amount, currency: $currency, interval: $interval, notificationMethod: $notificationMethod)';
+
  }

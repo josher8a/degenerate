@@ -28,11 +28,14 @@ RepositoryName copyWith({List<String>? Function()? include, List<String>? Functi
   exclude: exclude != null ? exclude() : this.exclude,
   protected: protected != null ? protected() : this.protected,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryName &&
           listEquals(include, other.include) &&
           listEquals(exclude, other.exclude) &&
-          protected == other.protected; } 
-@override int get hashCode { return Object.hash(Object.hashAll(include ?? const []), Object.hashAll(exclude ?? const []), protected); } 
-@override String toString() { return 'RepositoryName(include: $include, exclude: $exclude, protected: $protected)'; } 
+          protected == other.protected;
+
+@override int get hashCode => Object.hash(Object.hashAll(include ?? const []), Object.hashAll(exclude ?? const []), protected);
+
+@override String toString() => 'RepositoryName(include: $include, exclude: $exclude, protected: $protected)';
+
  }

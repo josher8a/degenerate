@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billa
 WorkflowUsage copyWith({WorkflowUsageBillable? billable}) { return WorkflowUsage(
   billable: billable ?? this.billable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowUsage &&
-          billable == other.billable; } 
-@override int get hashCode { return billable.hashCode; } 
-@override String toString() { return 'WorkflowUsage(billable: $billable)'; } 
+          billable == other.billable;
+
+@override int get hashCode => billable.hashCode;
+
+@override String toString() => 'WorkflowUsage(billable: $billable)';
+
  }

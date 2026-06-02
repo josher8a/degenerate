@@ -28,11 +28,14 @@ PostZonesZoneIdLogpushEdgeJobsRequest copyWith({LogpushFields? Function()? field
   filter: filter != null ? filter() : this.filter,
   sample: sample != null ? sample() : this.sample,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostZonesZoneIdLogpushEdgeJobsRequest &&
           fields == other.fields &&
           filter == other.filter &&
-          sample == other.sample; } 
-@override int get hashCode { return Object.hash(fields, filter, sample); } 
-@override String toString() { return 'PostZonesZoneIdLogpushEdgeJobsRequest(fields: $fields, filter: $filter, sample: $sample)'; } 
+          sample == other.sample;
+
+@override int get hashCode => Object.hash(fields, filter, sample);
+
+@override String toString() => 'PostZonesZoneIdLogpushEdgeJobsRequest(fields: $fields, filter: $filter, sample: $sample)';
+
  }

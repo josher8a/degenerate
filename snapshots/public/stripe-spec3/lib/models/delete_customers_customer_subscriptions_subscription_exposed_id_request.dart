@@ -28,11 +28,14 @@ DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest copyWith({List<
   invoiceNow: invoiceNow != null ? invoiceNow() : this.invoiceNow,
   prorate: prorate != null ? prorate() : this.prorate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest &&
           listEquals(expand, other.expand) &&
           invoiceNow == other.invoiceNow &&
-          prorate == other.prorate; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), invoiceNow, prorate); } 
-@override String toString() { return 'DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(expand: $expand, invoiceNow: $invoiceNow, prorate: $prorate)'; } 
+          prorate == other.prorate;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), invoiceNow, prorate);
+
+@override String toString() => 'DeleteCustomersCustomerSubscriptionsSubscriptionExposedIdRequest(expand: $expand, invoiceNow: $invoiceNow, prorate: $prorate)';
+
  }

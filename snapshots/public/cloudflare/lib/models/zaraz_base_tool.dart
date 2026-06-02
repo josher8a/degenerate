@@ -55,7 +55,7 @@ ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? def
   vendorName: vendorName != null ? vendorName() : this.vendorName,
   vendorPolicyUrl: vendorPolicyUrl != null ? vendorPolicyUrl() : this.vendorPolicyUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazBaseTool &&
           listEquals(blockingTriggers, other.blockingTriggers) &&
           defaultFields == other.defaultFields &&
@@ -63,7 +63,10 @@ ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? def
           enabled == other.enabled &&
           name == other.name &&
           vendorName == other.vendorName &&
-          vendorPolicyUrl == other.vendorPolicyUrl; } 
-@override int get hashCode { return Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl); } 
-@override String toString() { return 'ZarazBaseTool(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl)'; } 
+          vendorPolicyUrl == other.vendorPolicyUrl;
+
+@override int get hashCode => Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl);
+
+@override String toString() => 'ZarazBaseTool(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl)';
+
  }

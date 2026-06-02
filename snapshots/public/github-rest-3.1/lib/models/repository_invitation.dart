@@ -73,7 +73,7 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
   htmlUrl: htmlUrl ?? this.htmlUrl,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryInvitation &&
           id == other.id &&
           repository == other.repository &&
@@ -84,7 +84,10 @@ RepositoryInvitation copyWith({int? id, MinimalRepository? repository, SimpleUse
           expired == other.expired &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(id, repository, invitee, inviter, permissions, createdAt, expired, url, htmlUrl, nodeId); } 
-@override String toString() { return 'RepositoryInvitation(id: $id, repository: $repository, invitee: $invitee, inviter: $inviter, permissions: $permissions, createdAt: $createdAt, expired: $expired, url: $url, htmlUrl: $htmlUrl, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(id, repository, invitee, inviter, permissions, createdAt, expired, url, htmlUrl, nodeId);
+
+@override String toString() => 'RepositoryInvitation(id: $id, repository: $repository, invitee: $invitee, inviter: $inviter, permissions: $permissions, createdAt: $createdAt, expired: $expired, url: $url, htmlUrl: $htmlUrl, nodeId: $nodeId)';
+
  }

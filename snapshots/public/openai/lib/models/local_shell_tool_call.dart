@@ -49,13 +49,16 @@ LocalShellToolCall copyWith({String? type, String? id, String? callId, LocalShel
   action: action ?? this.action,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalShellToolCall &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
           action == other.action &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(type, id, callId, action, status); } 
-@override String toString() { return 'LocalShellToolCall(type: $type, id: $id, callId: $callId, action: $action, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(type, id, callId, action, status);
+
+@override String toString() => 'LocalShellToolCall(type: $type, id: $id, callId: $callId, action: $action, status: $status)';
+
  }

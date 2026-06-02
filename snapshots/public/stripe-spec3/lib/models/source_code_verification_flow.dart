@@ -28,10 +28,13 @@ SourceCodeVerificationFlow copyWith({int? attemptsRemaining, String? status, }) 
   attemptsRemaining: attemptsRemaining ?? this.attemptsRemaining,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceCodeVerificationFlow &&
           attemptsRemaining == other.attemptsRemaining &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(attemptsRemaining, status); } 
-@override String toString() { return 'SourceCodeVerificationFlow(attemptsRemaining: $attemptsRemaining, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(attemptsRemaining, status);
+
+@override String toString() => 'SourceCodeVerificationFlow(attemptsRemaining: $attemptsRemaining, status: $status)';
+
  }

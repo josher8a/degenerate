@@ -30,12 +30,15 @@ AddScriptTag copyWith({String? Function()? content, String? Function()? id, Stri
   type: type != null ? type() : this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddScriptTag &&
           content == other.content &&
           id == other.id &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(content, id, type, url); } 
-@override String toString() { return 'AddScriptTag(content: $content, id: $id, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(content, id, type, url);
+
+@override String toString() => 'AddScriptTag(content: $content, id: $id, type: $type, url: $url)';
+
  }

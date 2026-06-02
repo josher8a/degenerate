@@ -21,10 +21,13 @@ ActionsListWorkflowRunsResponse copyWith({int? totalCount, List<WorkflowRun>? wo
   totalCount: totalCount ?? this.totalCount,
   workflowRuns: workflowRuns ?? this.workflowRuns,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListWorkflowRunsResponse &&
           totalCount == other.totalCount &&
-          listEquals(workflowRuns, other.workflowRuns); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(workflowRuns)); } 
-@override String toString() { return 'ActionsListWorkflowRunsResponse(totalCount: $totalCount, workflowRuns: $workflowRuns)'; } 
+          listEquals(workflowRuns, other.workflowRuns);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(workflowRuns));
+
+@override String toString() => 'ActionsListWorkflowRunsResponse(totalCount: $totalCount, workflowRuns: $workflowRuns)';
+
  }

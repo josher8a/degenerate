@@ -21,10 +21,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AddressingProvisioningState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AddressingProvisioningState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AddressingProvisioningState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AddressingProvisioningState($value)';
+
  }
 /// Status of a Service Binding's deployment to the Cloudflare network
 @immutable final class AddressingProvisioning {const AddressingProvisioning({this.state});
@@ -46,9 +49,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AddressingProvisioning copyWith({AddressingProvisioningState? Function()? state}) { return AddressingProvisioning(
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingProvisioning &&
-          state == other.state; } 
-@override int get hashCode { return state.hashCode; } 
-@override String toString() { return 'AddressingProvisioning(state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => state.hashCode;
+
+@override String toString() => 'AddressingProvisioning(state: $state)';
+
  }

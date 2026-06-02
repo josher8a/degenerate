@@ -65,14 +65,17 @@ SnippetsSnippetRules2 copyWith({String Function()? description, bool Function()?
   lastUpdated: lastUpdated ?? this.lastUpdated,
   snippetName: snippetName ?? this.snippetName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SnippetsSnippetRules2 &&
           description == other.description &&
           enabled == other.enabled &&
           expression == other.expression &&
           id == other.id &&
           lastUpdated == other.lastUpdated &&
-          snippetName == other.snippetName; } 
-@override int get hashCode { return Object.hash(description, enabled, expression, id, lastUpdated, snippetName); } 
-@override String toString() { return 'SnippetsSnippetRules2(description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, snippetName: $snippetName)'; } 
+          snippetName == other.snippetName;
+
+@override int get hashCode => Object.hash(description, enabled, expression, id, lastUpdated, snippetName);
+
+@override String toString() => 'SnippetsSnippetRules2(description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, snippetName: $snippetName)';
+
  }

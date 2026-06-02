@@ -74,7 +74,7 @@ ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? 
   projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,
   itemUrl: itemUrl != null ? itemUrl() : this.itemUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemSimple &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -85,7 +85,10 @@ ItemSimple copyWith({double? id, String? Function()? nodeId, ItemSimpleContent? 
           updatedAt == other.updatedAt &&
           archivedAt == other.archivedAt &&
           projectUrl == other.projectUrl &&
-          itemUrl == other.itemUrl; } 
-@override int get hashCode { return Object.hash(id, nodeId, content, contentType, creator, createdAt, updatedAt, archivedAt, projectUrl, itemUrl); } 
-@override String toString() { return 'ItemSimple(id: $id, nodeId: $nodeId, content: $content, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, projectUrl: $projectUrl, itemUrl: $itemUrl)'; } 
+          itemUrl == other.itemUrl;
+
+@override int get hashCode => Object.hash(id, nodeId, content, contentType, creator, createdAt, updatedAt, archivedAt, projectUrl, itemUrl);
+
+@override String toString() => 'ItemSimple(id: $id, nodeId: $nodeId, content: $content, contentType: $contentType, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, projectUrl: $projectUrl, itemUrl: $itemUrl)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'
 UriPath copyWith({RulesetsRewriteUriPath? path}) { return UriPath(
   path: path ?? this.path,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UriPath &&
-          path == other.path; } 
-@override int get hashCode { return path.hashCode; } 
-@override String toString() { return 'UriPath(path: $path)'; } 
+          path == other.path;
+
+@override int get hashCode => path.hashCode;
+
+@override String toString() => 'UriPath(path: $path)';
+
  }

@@ -113,7 +113,7 @@ AccessIdentity copyWith({String? Function()? accountId, String? Function()? auth
   userUuid: userUuid != null ? userUuid() : this.userUuid,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessIdentity &&
           accountId == other.accountId &&
           authStatus == other.authStatus &&
@@ -132,7 +132,10 @@ AccessIdentity copyWith({String? Function()? accountId, String? Function()? auth
           serviceTokenId == other.serviceTokenId &&
           serviceTokenStatus == other.serviceTokenStatus &&
           userUuid == other.userUuid &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(accountId, authStatus, commonName, deviceId, deviceSessions, devicePosture, email, geo, iat, idp, ip, isGateway, isWarp, mtlsAuth, serviceTokenId, serviceTokenStatus, userUuid, version); } 
-@override String toString() { return 'AccessIdentity(accountId: $accountId, authStatus: $authStatus, commonName: $commonName, deviceId: $deviceId, deviceSessions: $deviceSessions, devicePosture: $devicePosture, email: $email, geo: $geo, iat: $iat, idp: $idp, ip: $ip, isGateway: $isGateway, isWarp: $isWarp, mtlsAuth: $mtlsAuth, serviceTokenId: $serviceTokenId, serviceTokenStatus: $serviceTokenStatus, userUuid: $userUuid, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(accountId, authStatus, commonName, deviceId, deviceSessions, devicePosture, email, geo, iat, idp, ip, isGateway, isWarp, mtlsAuth, serviceTokenId, serviceTokenStatus, userUuid, version);
+
+@override String toString() => 'AccessIdentity(accountId: $accountId, authStatus: $authStatus, commonName: $commonName, deviceId: $deviceId, deviceSessions: $deviceSessions, devicePosture: $devicePosture, email: $email, geo: $geo, iat: $iat, idp: $idp, ip: $ip, isGateway: $isGateway, isWarp: $isWarp, mtlsAuth: $mtlsAuth, serviceTokenId: $serviceTokenId, serviceTokenStatus: $serviceTokenStatus, userUuid: $userUuid, version: $version)';
+
  }

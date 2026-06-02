@@ -17,7 +17,8 @@ final class AiSearchListInstancesError$400 extends AiSearchListInstancesError {c
 
 final AiSearchListInstancesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchListInstancesError$Unknown extends AiSearchListInstancesError {const AiSearchListInstancesError$Unknown(this.statusCode, this.rawBody, );
 

@@ -66,7 +66,7 @@ GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? res
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetPermissionListResponse &&
           createdAt == other.createdAt &&
           resourceId == other.resourceId &&
@@ -75,7 +75,10 @@ GetPermissionListResponse copyWith({DateTime? createdAt, String? Function()? res
           subjectId == other.subjectId &&
           subjectType == other.subjectType &&
           updatedAt == other.updatedAt &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(createdAt, resourceId, resourceType, role, subjectId, subjectType, updatedAt, uuid); } 
-@override String toString() { return 'GetPermissionListResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(createdAt, resourceId, resourceType, role, subjectId, subjectType, updatedAt, uuid);
+
+@override String toString() => 'GetPermissionListResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)';
+
  }

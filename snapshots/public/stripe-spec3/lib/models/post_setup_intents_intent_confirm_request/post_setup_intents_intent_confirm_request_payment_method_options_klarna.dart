@@ -30,12 +30,15 @@ PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna copyWith({String?
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
   subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna &&
           currency == other.currency &&
           onDemand == other.onDemand &&
           preferredLocale == other.preferredLocale &&
-          subscriptions == other.subscriptions; } 
-@override int get hashCode { return Object.hash(currency, onDemand, preferredLocale, subscriptions); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(currency: $currency, onDemand: $onDemand, preferredLocale: $preferredLocale, subscriptions: $subscriptions)'; } 
+          subscriptions == other.subscriptions;
+
+@override int get hashCode => Object.hash(currency, onDemand, preferredLocale, subscriptions);
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarna(currency: $currency, onDemand: $onDemand, preferredLocale: $preferredLocale, subscriptions: $subscriptions)';
+
  }

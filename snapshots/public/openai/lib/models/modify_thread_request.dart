@@ -29,10 +29,13 @@ ModifyThreadRequest copyWith({AssistantObjectToolResources? Function()? toolReso
   toolResources: toolResources != null ? toolResources() : this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModifyThreadRequest &&
           toolResources == other.toolResources &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(toolResources, metadata); } 
-@override String toString() { return 'ModifyThreadRequest(toolResources: $toolResources, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(toolResources, metadata);
+
+@override String toString() => 'ModifyThreadRequest(toolResources: $toolResources, metadata: $metadata)';
+
  }

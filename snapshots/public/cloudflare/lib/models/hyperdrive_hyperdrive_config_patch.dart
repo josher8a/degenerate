@@ -35,13 +35,16 @@ HyperdriveHyperdriveConfigPatch copyWith({HyperdriveHyperdriveCaching? Function(
   origin: origin != null ? origin() : this.origin,
   originConnectionLimit: originConnectionLimit != null ? originConnectionLimit() : this.originConnectionLimit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveConfigPatch &&
           caching == other.caching &&
           mtls == other.mtls &&
           name == other.name &&
           origin == other.origin &&
-          originConnectionLimit == other.originConnectionLimit; } 
-@override int get hashCode { return Object.hash(caching, mtls, name, origin, originConnectionLimit); } 
-@override String toString() { return 'HyperdriveHyperdriveConfigPatch(caching: $caching, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)'; } 
+          originConnectionLimit == other.originConnectionLimit;
+
+@override int get hashCode => Object.hash(caching, mtls, name, origin, originConnectionLimit);
+
+@override String toString() => 'HyperdriveHyperdriveConfigPatch(caching: $caching, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventResponseCreateType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCreateType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventResponseCreateType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventResponseCreateType($value)';
+
  }
 /// This event instructs the server to create a Response, which means triggering
 /// model inference. When in Server VAD mode, the server will create Responses
@@ -74,11 +77,14 @@ RealtimeBetaClientEventResponseCreate copyWith({String? Function()? eventId, Rea
   type: type ?? this.type,
   response: response != null ? response() : this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventResponseCreate &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(eventId, type, response);
+
+@override String toString() => 'RealtimeBetaClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)';
+
  }

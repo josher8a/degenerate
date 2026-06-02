@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageEditRequestSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateImageEditRequestSize($value)';
+
  }
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
@@ -67,10 +70,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageEditRequestQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageEditRequestQuality($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageEditRequestQuality && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateImageEditRequestQuality($value)';
+
  }
 @immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model, this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity, this.stream = false, this.partialImages, this.quality = CreateImageEditRequestQuality.auto, });
 
@@ -226,7 +232,7 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
   partialImages: partialImages != null ? partialImages() : this.partialImages,
   quality: quality != null ? quality() : this.quality,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateImageEditRequest &&
           image == other.image &&
           prompt == other.prompt &&
@@ -242,7 +248,10 @@ CreateImageEditRequest copyWith({CreateImageEditRequestImage? image, String? pro
           inputFidelity == other.inputFidelity &&
           stream == other.stream &&
           partialImages == other.partialImages &&
-          quality == other.quality; } 
-@override int get hashCode { return Object.hash(image, prompt, mask, background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality); } 
-@override String toString() { return 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)'; } 
+          quality == other.quality;
+
+@override int get hashCode => Object.hash(image, prompt, mask, background, model, n, size, responseFormat, outputFormat, outputCompression, user, inputFidelity, stream, partialImages, quality);
+
+@override String toString() => 'CreateImageEditRequest(image: $image, prompt: $prompt, mask: $mask, background: $background, model: $model, n: $n, size: $size, responseFormat: $responseFormat, outputFormat: $outputFormat, outputCompression: $outputCompression, user: $user, inputFidelity: $inputFidelity, stream: $stream, partialImages: $partialImages, quality: $quality)';
+
  }

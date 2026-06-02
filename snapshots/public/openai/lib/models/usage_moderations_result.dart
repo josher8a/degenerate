@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UsageModerationsResultObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UsageModerationsResultObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UsageModerationsResultObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsageModerationsResultObject($value)';
+
  }
 /// The aggregated moderations usage details of the specific time bucket.
 @immutable final class UsageModerationsResult {const UsageModerationsResult({required this.object, required this.inputTokens, required this.numModelRequests, this.projectId, this.userId, this.apiKeyId, this.model, });
@@ -75,7 +78,7 @@ UsageModerationsResult copyWith({UsageModerationsResultObject? object, int? inpu
   apiKeyId: apiKeyId != null ? apiKeyId() : this.apiKeyId,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageModerationsResult &&
           object == other.object &&
           inputTokens == other.inputTokens &&
@@ -83,7 +86,10 @@ UsageModerationsResult copyWith({UsageModerationsResultObject? object, int? inpu
           projectId == other.projectId &&
           userId == other.userId &&
           apiKeyId == other.apiKeyId &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(object, inputTokens, numModelRequests, projectId, userId, apiKeyId, model); } 
-@override String toString() { return 'UsageModerationsResult(object: $object, inputTokens: $inputTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(object, inputTokens, numModelRequests, projectId, userId, apiKeyId, model);
+
+@override String toString() => 'UsageModerationsResult(object: $object, inputTokens: $inputTokens, numModelRequests: $numModelRequests, projectId: $projectId, userId: $userId, apiKeyId: $apiKeyId, model: $model)';
+
  }

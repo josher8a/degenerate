@@ -34,12 +34,15 @@ ResourceSharingCreateShareResourceRequest copyWith({Map<String,dynamic>? meta, R
   resourceId: resourceId ?? this.resourceId,
   resourceType: resourceType ?? this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceSharingCreateShareResourceRequest &&
           meta == other.meta &&
           resourceAccountId == other.resourceAccountId &&
           resourceId == other.resourceId &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(meta, resourceAccountId, resourceId, resourceType); } 
-@override String toString() { return 'ResourceSharingCreateShareResourceRequest(meta: $meta, resourceAccountId: $resourceAccountId, resourceId: $resourceId, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(meta, resourceAccountId, resourceId, resourceType);
+
+@override String toString() => 'ResourceSharingCreateShareResourceRequest(meta: $meta, resourceAccountId: $resourceAccountId, resourceId: $resourceId, resourceType: $resourceType)';
+
  }

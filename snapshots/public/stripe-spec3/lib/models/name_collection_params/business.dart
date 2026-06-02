@@ -20,10 +20,13 @@ Business copyWith({bool? enabled, bool? Function()? optional, }) { return Busine
   enabled: enabled ?? this.enabled,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Business &&
           enabled == other.enabled &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(enabled, optional); } 
-@override String toString() { return 'Business(enabled: $enabled, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(enabled, optional);
+
+@override String toString() => 'Business(enabled: $enabled, optional: $optional)';
+
  }

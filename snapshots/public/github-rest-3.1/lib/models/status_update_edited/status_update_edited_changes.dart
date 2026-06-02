@@ -30,12 +30,15 @@ StatusUpdateEditedChanges copyWith({ChangesBody? Function()? body, ChangesStatus
   startDate: startDate != null ? startDate() : this.startDate,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusUpdateEditedChanges &&
           body == other.body &&
           status == other.status &&
           startDate == other.startDate &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(body, status, startDate, targetDate); } 
-@override String toString() { return 'StatusUpdateEditedChanges(body: $body, status: $status, startDate: $startDate, targetDate: $targetDate)'; } 
+          targetDate == other.targetDate;
+
+@override int get hashCode => Object.hash(body, status, startDate, targetDate);
+
+@override String toString() => 'StatusUpdateEditedChanges(body: $body, status: $status, startDate: $startDate, targetDate: $targetDate)';
+
  }

@@ -29,10 +29,13 @@ PostBillingMetersIdRequest copyWith({String? Function()? displayName, List<Strin
   displayName: displayName != null ? displayName() : this.displayName,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMetersIdRequest &&
           displayName == other.displayName &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(displayName, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostBillingMetersIdRequest(displayName: $displayName, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(displayName, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostBillingMetersIdRequest(displayName: $displayName, expand: $expand)';
+
  }

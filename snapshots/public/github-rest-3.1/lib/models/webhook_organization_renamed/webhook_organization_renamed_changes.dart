@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WebhookOrganizationRenamedChanges copyWith({WebhookOrganizationRenamedChangesLogin? Function()? login}) { return WebhookOrganizationRenamedChanges(
   login: login != null ? login() : this.login,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookOrganizationRenamedChanges &&
-          login == other.login; } 
-@override int get hashCode { return login.hashCode; } 
-@override String toString() { return 'WebhookOrganizationRenamedChanges(login: $login)'; } 
+          login == other.login;
+
+@override int get hashCode => login.hashCode;
+
+@override String toString() => 'WebhookOrganizationRenamedChanges(login: $login)';
+
  }

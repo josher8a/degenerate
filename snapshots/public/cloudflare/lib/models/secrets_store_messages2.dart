@@ -35,12 +35,15 @@ SecretsStoreMessages2 copyWith({int? code, String? Function()? documentationUrl,
   message: message ?? this.message,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretsStoreMessages2 &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, message, source); } 
-@override String toString() { return 'SecretsStoreMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, documentationUrl, message, source);
+
+@override String toString() => 'SecretsStoreMessages2(code: $code, documentationUrl: $documentationUrl, message: $message, source: $source)';
+
  }

@@ -115,7 +115,7 @@ Tipping copyWith({Aed? Function()? aed, Aud? Function()? aud, Cad? Function()? c
   sgd: sgd != null ? sgd() : this.sgd,
   usd: usd != null ? usd() : this.usd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tipping &&
           aed == other.aed &&
           aud == other.aud &&
@@ -137,7 +137,10 @@ Tipping copyWith({Aed? Function()? aed, Aud? Function()? aud, Cad? Function()? c
           ron == other.ron &&
           sek == other.sek &&
           sgd == other.sgd &&
-          usd == other.usd; } 
-@override int get hashCode { return Object.hashAll([aed, aud, cad, chf, czk, dkk, eur, gbp, gip, hkd, huf, jpy, mxn, myr, nok, nzd, pln, ron, sek, sgd, usd]); } 
-@override String toString() { return 'Tipping(aed: $aed, aud: $aud, cad: $cad, chf: $chf, czk: $czk, dkk: $dkk, eur: $eur, gbp: $gbp, gip: $gip, hkd: $hkd, huf: $huf, jpy: $jpy, mxn: $mxn, myr: $myr, nok: $nok, nzd: $nzd, pln: $pln, ron: $ron, sek: $sek, sgd: $sgd, usd: $usd)'; } 
+          usd == other.usd;
+
+@override int get hashCode => Object.hashAll([aed, aud, cad, chf, czk, dkk, eur, gbp, gip, hkd, huf, jpy, mxn, myr, nok, nzd, pln, ron, sek, sgd, usd]);
+
+@override String toString() => 'Tipping(aed: $aed, aud: $aud, cad: $cad, chf: $chf, czk: $czk, dkk: $dkk, eur: $eur, gbp: $gbp, gip: $gip, hkd: $hkd, huf: $huf, jpy: $jpy, mxn: $mxn, myr: $myr, nok: $nok, nzd: $nzd, pln: $pln, ron: $ron, sek: $sek, sgd: $sgd, usd: $usd)';
+
  }

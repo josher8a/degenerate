@@ -58,7 +58,7 @@ RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, Stri
   delta: delta ?? this.delta,
   obfuscation: obfuscation != null ? obfuscation() : this.obfuscation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseMcpCallArgumentsDelta &&
           eventId == other.eventId &&
           type == other.type &&
@@ -66,7 +66,10 @@ RealtimeServerEventResponseMcpCallArgumentsDelta copyWith({String? eventId, Stri
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           delta == other.delta &&
-          obfuscation == other.obfuscation; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation); } 
-@override String toString() { return 'RealtimeServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)'; } 
+          obfuscation == other.obfuscation;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, delta, obfuscation);
+
+@override String toString() => 'RealtimeServerEventResponseMcpCallArgumentsDelta(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, delta: $delta, obfuscation: $obfuscation)';
+
  }

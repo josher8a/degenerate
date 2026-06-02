@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RumSiteTagResponseSingleResult copyWith({RumSiteTag? Function()? siteTag}) { return RumSiteTagResponseSingleResult(
   siteTag: siteTag != null ? siteTag() : this.siteTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumSiteTagResponseSingleResult &&
-          siteTag == other.siteTag; } 
-@override int get hashCode { return siteTag.hashCode; } 
-@override String toString() { return 'RumSiteTagResponseSingleResult(siteTag: $siteTag)'; } 
+          siteTag == other.siteTag;
+
+@override int get hashCode => siteTag.hashCode;
+
+@override String toString() => 'RumSiteTagResponseSingleResult(siteTag: $siteTag)';
+
  }

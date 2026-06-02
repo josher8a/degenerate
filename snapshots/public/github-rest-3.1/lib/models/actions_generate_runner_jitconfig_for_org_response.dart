@@ -22,10 +22,13 @@ ActionsGenerateRunnerJitconfigForOrgResponse copyWith({Runner? runner, String? e
   runner: runner ?? this.runner,
   encodedJitConfig: encodedJitConfig ?? this.encodedJitConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGenerateRunnerJitconfigForOrgResponse &&
           runner == other.runner &&
-          encodedJitConfig == other.encodedJitConfig; } 
-@override int get hashCode { return Object.hash(runner, encodedJitConfig); } 
-@override String toString() { return 'ActionsGenerateRunnerJitconfigForOrgResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)'; } 
+          encodedJitConfig == other.encodedJitConfig;
+
+@override int get hashCode => Object.hash(runner, encodedJitConfig);
+
+@override String toString() => 'ActionsGenerateRunnerJitconfigForOrgResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)';
+
  }

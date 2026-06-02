@@ -42,12 +42,15 @@ OriginCaCreateCertificateRequest copyWith({TlsCertificatesAndHostnamesCsr? csr, 
   requestType: requestType ?? this.requestType,
   requestedValidity: requestedValidity != null ? requestedValidity() : this.requestedValidity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OriginCaCreateCertificateRequest &&
           csr == other.csr &&
           listEquals(hostnames, other.hostnames) &&
           requestType == other.requestType &&
-          requestedValidity == other.requestedValidity; } 
-@override int get hashCode { return Object.hash(csr, Object.hashAll(hostnames), requestType, requestedValidity); } 
-@override String toString() { return 'OriginCaCreateCertificateRequest(csr: $csr, hostnames: $hostnames, requestType: $requestType, requestedValidity: $requestedValidity)'; } 
+          requestedValidity == other.requestedValidity;
+
+@override int get hashCode => Object.hash(csr, Object.hashAll(hostnames), requestType, requestedValidity);
+
+@override String toString() => 'OriginCaCreateCertificateRequest(csr: $csr, hostnames: $hostnames, requestType: $requestType, requestedValidity: $requestedValidity)';
+
  }

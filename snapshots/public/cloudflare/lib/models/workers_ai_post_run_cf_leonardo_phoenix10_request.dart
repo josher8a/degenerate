@@ -72,7 +72,7 @@ WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double Function()? guidance
   seed: seed != null ? seed() : this.seed,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfLeonardoPhoenix10Request &&
           guidance == other.guidance &&
           height == other.height &&
@@ -80,7 +80,10 @@ WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double Function()? guidance
           numSteps == other.numSteps &&
           prompt == other.prompt &&
           seed == other.seed &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(guidance, height, negativePrompt, numSteps, prompt, seed, width); } 
-@override String toString() { return 'WorkersAiPostRunCfLeonardoPhoenix10Request(guidance: $guidance, height: $height, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(guidance, height, negativePrompt, numSteps, prompt, seed, width);
+
+@override String toString() => 'WorkersAiPostRunCfLeonardoPhoenix10Request(guidance: $guidance, height: $height, negativePrompt: $negativePrompt, numSteps: $numSteps, prompt: $prompt, seed: $seed, width: $width)';
+
  }

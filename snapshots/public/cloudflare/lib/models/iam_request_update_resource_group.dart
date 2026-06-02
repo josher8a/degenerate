@@ -23,10 +23,13 @@ IamRequestUpdateResourceGroup copyWith({String? Function()? name, IamCreateScope
   name: name != null ? name() : this.name,
   scope: scope != null ? scope() : this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamRequestUpdateResourceGroup &&
           name == other.name &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(name, scope); } 
-@override String toString() { return 'IamRequestUpdateResourceGroup(name: $name, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(name, scope);
+
+@override String toString() => 'IamRequestUpdateResourceGroup(name: $name, scope: $scope)';
+
  }

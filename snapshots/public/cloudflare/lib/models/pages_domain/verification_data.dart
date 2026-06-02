@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VerificationDataStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VerificationDataStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VerificationDataStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VerificationDataStatus($value)';
+
  }
 @immutable final class VerificationData {const VerificationData({required this.status, this.errorMessage, });
 
@@ -53,10 +56,13 @@ VerificationData copyWith({String? Function()? errorMessage, VerificationDataSta
   errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VerificationData &&
           errorMessage == other.errorMessage &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(errorMessage, status); } 
-@override String toString() { return 'VerificationData(errorMessage: $errorMessage, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(errorMessage, status);
+
+@override String toString() => 'VerificationData(errorMessage: $errorMessage, status: $status)';
+
  }

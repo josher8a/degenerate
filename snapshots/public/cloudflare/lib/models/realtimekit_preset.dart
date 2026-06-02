@@ -33,12 +33,15 @@ RealtimekitPreset copyWith({RealtimekitPresetConfig? config, String? name, Realt
   permissions: permissions != null ? permissions() : this.permissions,
   ui: ui ?? this.ui,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPreset &&
           config == other.config &&
           name == other.name &&
           permissions == other.permissions &&
-          ui == other.ui; } 
-@override int get hashCode { return Object.hash(config, name, permissions, ui); } 
-@override String toString() { return 'RealtimekitPreset(config: $config, name: $name, permissions: $permissions, ui: $ui)'; } 
+          ui == other.ui;
+
+@override int get hashCode => Object.hash(config, name, permissions, ui);
+
+@override String toString() => 'RealtimekitPreset(config: $config, name: $name, permissions: $permissions, ui: $ui)';
+
  }

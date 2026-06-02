@@ -36,13 +36,16 @@ IamCreatePayload copyWith({IamCondition? Function()? condition, IamExpiresOn? Fu
   notBefore: notBefore != null ? notBefore() : this.notBefore,
   policies: policies ?? this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreatePayload &&
           condition == other.condition &&
           expiresOn == other.expiresOn &&
           name == other.name &&
           notBefore == other.notBefore &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(condition, expiresOn, name, notBefore, Object.hashAll(policies)); } 
-@override String toString() { return 'IamCreatePayload(condition: $condition, expiresOn: $expiresOn, name: $name, notBefore: $notBefore, policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hash(condition, expiresOn, name, notBefore, Object.hashAll(policies));
+
+@override String toString() => 'IamCreatePayload(condition: $condition, expiresOn: $expiresOn, name: $name, notBefore: $notBefore, policies: $policies)';
+
  }

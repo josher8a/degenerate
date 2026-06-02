@@ -51,12 +51,15 @@ AaaAlertTypes copyWith({AaaDescription? Function()? description, AaaDisplayName?
   filterOptions: filterOptions != null ? filterOptions() : this.filterOptions,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAlertTypes &&
           description == other.description &&
           displayName == other.displayName &&
           listEquals(filterOptions, other.filterOptions) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, displayName, Object.hashAll(filterOptions ?? const []), type); } 
-@override String toString() { return 'AaaAlertTypes(description: $description, displayName: $displayName, filterOptions: $filterOptions, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, displayName, Object.hashAll(filterOptions ?? const []), type);
+
+@override String toString() => 'AaaAlertTypes(description: $description, displayName: $displayName, filterOptions: $filterOptions, type: $type)';
+
  }

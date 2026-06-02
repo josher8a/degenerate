@@ -88,7 +88,7 @@ PaymentMethodUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankA
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodUsBankAccount &&
           accountHolderType == other.accountHolderType &&
           accountType == other.accountType &&
@@ -98,7 +98,10 @@ PaymentMethodUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankA
           last4 == other.last4 &&
           networks == other.networks &&
           routingNumber == other.routingNumber &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(accountHolderType, accountType, bankName, financialConnectionsAccount, fingerprint, last4, networks, routingNumber, statusDetails); } 
-@override String toString() { return 'PaymentMethodUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, financialConnectionsAccount: $financialConnectionsAccount, fingerprint: $fingerprint, last4: $last4, networks: $networks, routingNumber: $routingNumber, statusDetails: $statusDetails)'; } 
+          statusDetails == other.statusDetails;
+
+@override int get hashCode => Object.hash(accountHolderType, accountType, bankName, financialConnectionsAccount, fingerprint, last4, networks, routingNumber, statusDetails);
+
+@override String toString() => 'PaymentMethodUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, financialConnectionsAccount: $financialConnectionsAccount, fingerprint: $fingerprint, last4: $last4, networks: $networks, routingNumber: $routingNumber, statusDetails: $statusDetails)';
+
  }

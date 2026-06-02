@@ -80,7 +80,7 @@ ResponseResponse copyWith({String? charset, Map<String, dynamic>? Function()? he
   statusText: statusText ?? this.statusText,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseResponse &&
           charset == other.charset &&
           headers == other.headers &&
@@ -93,7 +93,10 @@ ResponseResponse copyWith({String? charset, Map<String, dynamic>? Function()? he
           securityState == other.securityState &&
           status == other.status &&
           statusText == other.statusText &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(charset, headers, mimeType, protocol, remoteIpAddress, remotePort, securityDetails, Object.hashAll(securityHeaders), securityState, status, statusText, url); } 
-@override String toString() { return 'ResponseResponse(charset: $charset, headers: $headers, mimeType: $mimeType, protocol: $protocol, remoteIpAddress: $remoteIpAddress, remotePort: $remotePort, securityDetails: $securityDetails, securityHeaders: $securityHeaders, securityState: $securityState, status: $status, statusText: $statusText, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(charset, headers, mimeType, protocol, remoteIpAddress, remotePort, securityDetails, Object.hashAll(securityHeaders), securityState, status, statusText, url);
+
+@override String toString() => 'ResponseResponse(charset: $charset, headers: $headers, mimeType: $mimeType, protocol: $protocol, remoteIpAddress: $remoteIpAddress, remotePort: $remotePort, securityDetails: $securityDetails, securityHeaders: $securityHeaders, securityState: $securityState, status: $status, statusText: $statusText, url: $url)';
+
  }

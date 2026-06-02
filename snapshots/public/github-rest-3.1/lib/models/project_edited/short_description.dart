@@ -20,10 +20,13 @@ ShortDescription copyWith({String? Function()? from, String? Function()? to, }) 
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShortDescription &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'ShortDescription(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'ShortDescription(from: $from, to: $to)';
+
  }

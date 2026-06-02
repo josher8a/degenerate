@@ -51,9 +51,7 @@ final class GetStateError$400 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
-  int get statusCode {
-    return 400;
-  }
+  int get statusCode => 400;
 }
 
 final class GetStateError$403 extends GetStateError {
@@ -62,9 +60,7 @@ final class GetStateError$403 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
-  int get statusCode {
-    return 403;
-  }
+  int get statusCode => 403;
 }
 
 final class GetStateError$404 extends GetStateError {
@@ -73,9 +69,7 @@ final class GetStateError$404 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
-  int get statusCode {
-    return 404;
-  }
+  int get statusCode => 404;
 }
 
 final class GetStateError$409 extends GetStateError {
@@ -84,9 +78,7 @@ final class GetStateError$409 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
-  int get statusCode {
-    return 409;
-  }
+  int get statusCode => 409;
 }
 
 final class GetStateError$500 extends GetStateError {
@@ -95,9 +87,7 @@ final class GetStateError$500 extends GetStateError {
   final RoomErrorResponse error;
 
   @override
-  int get statusCode {
-    return 500;
-  }
+  int get statusCode => 500;
 }
 
 final class GetStateError$Unknown extends GetStateError {

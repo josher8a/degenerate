@@ -17,7 +17,8 @@ final class RadarGetBgpRpkiAspaChangesError$400 extends RadarGetBgpRpkiAspaChang
 
 final RadarGetBgpRpkiAspaChangesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpRpkiAspaChangesError$Unknown extends RadarGetBgpRpkiAspaChangesError {const RadarGetBgpRpkiAspaChangesError$Unknown(this.statusCode, this.rawBody, );
 

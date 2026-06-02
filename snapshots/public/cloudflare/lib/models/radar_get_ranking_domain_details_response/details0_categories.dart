@@ -30,11 +30,14 @@ Details0Categories copyWith({int? id, String? name, int? superCategoryId, }) { r
   name: name ?? this.name,
   superCategoryId: superCategoryId ?? this.superCategoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Details0Categories &&
           id == other.id &&
           name == other.name &&
-          superCategoryId == other.superCategoryId; } 
-@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
-@override String toString() { return 'Details0Categories(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
+          superCategoryId == other.superCategoryId;
+
+@override int get hashCode => Object.hash(id, name, superCategoryId);
+
+@override String toString() => 'Details0Categories(id: $id, name: $name, superCategoryId: $superCategoryId)';
+
  }

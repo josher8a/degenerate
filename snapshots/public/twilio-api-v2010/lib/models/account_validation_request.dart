@@ -55,13 +55,16 @@ AccountValidationRequest copyWith({String? Function()? accountSid, String? Funct
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   validationCode: validationCode != null ? validationCode() : this.validationCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountValidationRequest &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
           friendlyName == other.friendlyName &&
           phoneNumber == other.phoneNumber &&
-          validationCode == other.validationCode; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, friendlyName, phoneNumber, validationCode); } 
-@override String toString() { return 'AccountValidationRequest(accountSid: $accountSid, callSid: $callSid, friendlyName: $friendlyName, phoneNumber: $phoneNumber, validationCode: $validationCode)'; } 
+          validationCode == other.validationCode;
+
+@override int get hashCode => Object.hash(accountSid, callSid, friendlyName, phoneNumber, validationCode);
+
+@override String toString() => 'AccountValidationRequest(accountSid: $accountSid, callSid: $callSid, friendlyName: $friendlyName, phoneNumber: $phoneNumber, validationCode: $validationCode)';
+
  }

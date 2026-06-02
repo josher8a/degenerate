@@ -61,7 +61,7 @@ OrgPrivateRegistryConfiguration copyWith({String? name, RegistryType? registryTy
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgPrivateRegistryConfiguration &&
           name == other.name &&
           registryType == other.registryType &&
@@ -70,7 +70,10 @@ OrgPrivateRegistryConfiguration copyWith({String? name, RegistryType? registryTy
           replacesBase == other.replacesBase &&
           visibility == other.visibility &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(name, registryType, url, username, replacesBase, visibility, createdAt, updatedAt); } 
-@override String toString() { return 'OrgPrivateRegistryConfiguration(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(name, registryType, url, username, replacesBase, visibility, createdAt, updatedAt);
+
+@override String toString() => 'OrgPrivateRegistryConfiguration(name: $name, registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, visibility: $visibility, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

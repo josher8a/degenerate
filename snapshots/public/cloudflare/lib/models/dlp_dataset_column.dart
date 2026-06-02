@@ -33,12 +33,15 @@ DlpDatasetColumn copyWith({String? entryId, String? headerName, int? numCells, D
   numCells: numCells ?? this.numCells,
   uploadStatus: uploadStatus ?? this.uploadStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetColumn &&
           entryId == other.entryId &&
           headerName == other.headerName &&
           numCells == other.numCells &&
-          uploadStatus == other.uploadStatus; } 
-@override int get hashCode { return Object.hash(entryId, headerName, numCells, uploadStatus); } 
-@override String toString() { return 'DlpDatasetColumn(entryId: $entryId, headerName: $headerName, numCells: $numCells, uploadStatus: $uploadStatus)'; } 
+          uploadStatus == other.uploadStatus;
+
+@override int get hashCode => Object.hash(entryId, headerName, numCells, uploadStatus);
+
+@override String toString() => 'DlpDatasetColumn(entryId: $entryId, headerName: $headerName, numCells: $numCells, uploadStatus: $uploadStatus)';
+
  }

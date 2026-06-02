@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClosedStatusType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClosedStatusType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClosedStatusType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClosedStatusType($value)';
+
  }
 /// Indicates that a thread has been closed.
 @immutable final class ClosedStatus {const ClosedStatus({required this.reason, this.type = ClosedStatusType.closed, });
@@ -46,10 +49,13 @@ ClosedStatus copyWith({ClosedStatusType? type, String? Function()? reason, }) { 
   type: type ?? this.type,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClosedStatus &&
           type == other.type &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(type, reason); } 
-@override String toString() { return 'ClosedStatus(type: $type, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(type, reason);
+
+@override String toString() => 'ClosedStatus(type: $type, reason: $reason)';
+
  }

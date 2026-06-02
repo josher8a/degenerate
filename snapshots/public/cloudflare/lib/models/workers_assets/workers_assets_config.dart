@@ -61,14 +61,17 @@ WorkersAssetsConfig copyWith({String? Function()? headers, String? Function()? r
   runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,
   serveDirectly: serveDirectly != null ? serveDirectly() : this.serveDirectly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAssetsConfig &&
           headers == other.headers &&
           redirects == other.redirects &&
           htmlHandling == other.htmlHandling &&
           notFoundHandling == other.notFoundHandling &&
           runWorkerFirst == other.runWorkerFirst &&
-          serveDirectly == other.serveDirectly; } 
-@override int get hashCode { return Object.hash(headers, redirects, htmlHandling, notFoundHandling, runWorkerFirst, serveDirectly); } 
-@override String toString() { return 'WorkersAssetsConfig(headers: $headers, redirects: $redirects, htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst, serveDirectly: $serveDirectly)'; } 
+          serveDirectly == other.serveDirectly;
+
+@override int get hashCode => Object.hash(headers, redirects, htmlHandling, notFoundHandling, runWorkerFirst, serveDirectly);
+
+@override String toString() => 'WorkersAssetsConfig(headers: $headers, redirects: $redirects, htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst, serveDirectly: $serveDirectly)';
+
  }

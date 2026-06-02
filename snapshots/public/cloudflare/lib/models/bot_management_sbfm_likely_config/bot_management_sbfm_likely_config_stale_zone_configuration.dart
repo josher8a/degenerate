@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 BotManagementSbfmLikelyConfigStaleZoneConfiguration copyWith({BotManagementFightModeTurnedOn? Function()? fightMode}) { return BotManagementSbfmLikelyConfigStaleZoneConfiguration(
   fightMode: fightMode != null ? fightMode() : this.fightMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementSbfmLikelyConfigStaleZoneConfiguration &&
-          fightMode == other.fightMode; } 
-@override int get hashCode { return fightMode.hashCode; } 
-@override String toString() { return 'BotManagementSbfmLikelyConfigStaleZoneConfiguration(fightMode: $fightMode)'; } 
+          fightMode == other.fightMode;
+
+@override int get hashCode => fightMode.hashCode;
+
+@override String toString() => 'BotManagementSbfmLikelyConfigStaleZoneConfiguration(fightMode: $fightMode)';
+
  }

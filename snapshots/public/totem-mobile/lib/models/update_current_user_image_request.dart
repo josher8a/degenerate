@@ -31,19 +31,15 @@ final class UpdateCurrentUserImageRequest {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is UpdateCurrentUserImageRequest &&
-            profileImage == other.profileImage;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UpdateCurrentUserImageRequest &&
+          profileImage == other.profileImage;
 
   @override
-  int get hashCode {
-    return profileImage.hashCode;
-  }
+  int get hashCode => profileImage.hashCode;
 
   @override
-  String toString() {
-    return 'UpdateCurrentUserImageRequest(profileImage: $profileImage)';
-  }
+  String toString() =>
+      'UpdateCurrentUserImageRequest(profileImage: $profileImage)';
 }

@@ -33,18 +33,13 @@ final class FeedbackSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is FeedbackSchema && message == other.message;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FeedbackSchema && message == other.message;
 
   @override
-  int get hashCode {
-    return message.hashCode;
-  }
+  int get hashCode => message.hashCode;
 
   @override
-  String toString() {
-    return 'FeedbackSchema(message: $message)';
-  }
+  String toString() => 'FeedbackSchema(message: $message)';
 }

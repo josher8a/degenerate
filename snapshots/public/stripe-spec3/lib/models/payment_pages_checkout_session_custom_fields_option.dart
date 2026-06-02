@@ -29,10 +29,13 @@ PaymentPagesCheckoutSessionCustomFieldsOption copyWith({String? label, String? v
   label: label ?? this.label,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCustomFieldsOption &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCustomFieldsOption(label: $label, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(label, value);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCustomFieldsOption(label: $label, value: $value)';
+
  }

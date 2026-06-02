@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleFileExtensionRestrictionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleFileExtensionRestrictionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleFileExtensionRestrictionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleFileExtensionRestrictionType($value)';
+
  }
 /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
 @immutable final class RepositoryRuleFileExtensionRestriction {const RepositoryRuleFileExtensionRestriction({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleFileExtensionRestriction copyWith({RepositoryRuleFileExtensionRest
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleFileExtensionRestriction &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleFileExtensionRestriction(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleFileExtensionRestriction(type: $type, parameters: $parameters)';
+
  }

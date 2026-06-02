@@ -20,10 +20,13 @@ BillingThresholdsParam copyWith({int? Function()? amountGte, bool? Function()? r
   amountGte: amountGte != null ? amountGte() : this.amountGte,
   resetBillingCycleAnchor: resetBillingCycleAnchor != null ? resetBillingCycleAnchor() : this.resetBillingCycleAnchor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingThresholdsParam &&
           amountGte == other.amountGte &&
-          resetBillingCycleAnchor == other.resetBillingCycleAnchor; } 
-@override int get hashCode { return Object.hash(amountGte, resetBillingCycleAnchor); } 
-@override String toString() { return 'BillingThresholdsParam(amountGte: $amountGte, resetBillingCycleAnchor: $resetBillingCycleAnchor)'; } 
+          resetBillingCycleAnchor == other.resetBillingCycleAnchor;
+
+@override int get hashCode => Object.hash(amountGte, resetBillingCycleAnchor);
+
+@override String toString() => 'BillingThresholdsParam(amountGte: $amountGte, resetBillingCycleAnchor: $resetBillingCycleAnchor)';
+
  }

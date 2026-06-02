@@ -43,120 +43,164 @@ dynamic toJson() { return value; }
 
 final ThreadRunCreated _value;
 
-@override ThreadRunCreated get value { return _value; } 
+@override ThreadRunCreated get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunCreated && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunCreated($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunCreated && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunCreated($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunQueued extends RunStreamEvent {const RunStreamEventThreadRunQueued(this._value);
 
 final ThreadRunQueued _value;
 
-@override ThreadRunQueued get value { return _value; } 
+@override ThreadRunQueued get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunQueued && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunQueued($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunQueued && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunQueued($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunInProgress extends RunStreamEvent {const RunStreamEventThreadRunInProgress(this._value);
 
 final ThreadRunInProgress _value;
 
-@override ThreadRunInProgress get value { return _value; } 
+@override ThreadRunInProgress get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunInProgress && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunInProgress($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunInProgress && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunInProgress($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunRequiresAction extends RunStreamEvent {const RunStreamEventThreadRunRequiresAction(this._value);
 
 final ThreadRunRequiresAction _value;
 
-@override ThreadRunRequiresAction get value { return _value; } 
+@override ThreadRunRequiresAction get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunRequiresAction && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunRequiresAction($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunRequiresAction && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunRequiresAction($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunCompleted extends RunStreamEvent {const RunStreamEventThreadRunCompleted(this._value);
 
 final ThreadRunCompleted _value;
 
-@override ThreadRunCompleted get value { return _value; } 
+@override ThreadRunCompleted get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunCompleted && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunCompleted($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunCompleted && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunCompleted($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunIncomplete extends RunStreamEvent {const RunStreamEventThreadRunIncomplete(this._value);
 
 final ThreadRunIncomplete _value;
 
-@override ThreadRunIncomplete get value { return _value; } 
+@override ThreadRunIncomplete get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunIncomplete && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunIncomplete($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunIncomplete && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunIncomplete($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunFailed extends RunStreamEvent {const RunStreamEventThreadRunFailed(this._value);
 
 final ThreadRunFailed _value;
 
-@override ThreadRunFailed get value { return _value; } 
+@override ThreadRunFailed get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunFailed && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunFailed($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunFailed && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunFailed($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunCancelling extends RunStreamEvent {const RunStreamEventThreadRunCancelling(this._value);
 
 final ThreadRunCancelling _value;
 
-@override ThreadRunCancelling get value { return _value; } 
+@override ThreadRunCancelling get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunCancelling && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunCancelling($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunCancelling && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunCancelling($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunCancelled extends RunStreamEvent {const RunStreamEventThreadRunCancelled(this._value);
 
 final ThreadRunCancelled _value;
 
-@override ThreadRunCancelled get value { return _value; } 
+@override ThreadRunCancelled get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunCancelled && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunCancelled($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunCancelled && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunCancelled($_value)';
+
  }
 @immutable final class RunStreamEventThreadRunExpired extends RunStreamEvent {const RunStreamEventThreadRunExpired(this._value);
 
 final ThreadRunExpired _value;
 
-@override ThreadRunExpired get value { return _value; } 
+@override ThreadRunExpired get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEventThreadRunExpired && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.threadRunExpired($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEventThreadRunExpired && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.threadRunExpired($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class RunStreamEvent$Unknown extends RunStreamEvent {const RunStreamEvent$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStreamEvent$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'RunStreamEvent.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStreamEvent$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'RunStreamEvent.unknown($_value)';
+
  }

@@ -30,11 +30,14 @@ GetDatasetListResponse copyWith({bool? isPublic, String? name, String? uuid, }) 
   name: name ?? this.name,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetDatasetListResponse &&
           isPublic == other.isPublic &&
           name == other.name &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(isPublic, name, uuid); } 
-@override String toString() { return 'GetDatasetListResponse(isPublic: $isPublic, name: $name, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(isPublic, name, uuid);
+
+@override String toString() => 'GetDatasetListResponse(isPublic: $isPublic, name: $name, uuid: $uuid)';
+
  }

@@ -36,11 +36,14 @@ AudioTranscription copyWith({AudioTranscriptionModel? Function()? model, String?
   language: language != null ? language() : this.language,
   prompt: prompt != null ? prompt() : this.prompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AudioTranscription &&
           model == other.model &&
           language == other.language &&
-          prompt == other.prompt; } 
-@override int get hashCode { return Object.hash(model, language, prompt); } 
-@override String toString() { return 'AudioTranscription(model: $model, language: $language, prompt: $prompt)'; } 
+          prompt == other.prompt;
+
+@override int get hashCode => Object.hash(model, language, prompt);
+
+@override String toString() => 'AudioTranscription(model: $model, language: $language, prompt: $prompt)';
+
  }

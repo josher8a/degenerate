@@ -17,7 +17,8 @@ final class CurrentUserError$404 extends CurrentUserError {const CurrentUserErro
 
 final Message error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CurrentUserError$Unknown extends CurrentUserError {const CurrentUserError$Unknown(this.statusCode, this.rawBody, );
 

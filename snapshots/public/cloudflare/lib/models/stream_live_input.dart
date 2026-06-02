@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StreamLiveInputStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StreamLiveInputStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamLiveInputStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StreamLiveInputStatus($value)';
+
  }
 /// Details about a live input.
 @immutable final class StreamLiveInput {const StreamLiveInput({this.created, this.deleteRecordingAfterDays, this.enabled, this.meta, this.modified, this.recording, this.rtmps, this.rtmpsPlayback, this.srt, this.srtPlayback, this.status, this.uid, this.webRtc, this.webRtcPlayback, });
@@ -127,7 +130,7 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
   webRtc: webRtc != null ? webRtc() : this.webRtc,
   webRtcPlayback: webRtcPlayback != null ? webRtcPlayback() : this.webRtcPlayback,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLiveInput &&
           created == other.created &&
           deleteRecordingAfterDays == other.deleteRecordingAfterDays &&
@@ -142,7 +145,10 @@ StreamLiveInput copyWith({StreamLiveInputCreated? Function()? created, StreamLiv
           status == other.status &&
           uid == other.uid &&
           webRtc == other.webRtc &&
-          webRtcPlayback == other.webRtcPlayback; } 
-@override int get hashCode { return Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, recording, rtmps, rtmpsPlayback, srt, srtPlayback, status, uid, webRtc, webRtcPlayback); } 
-@override String toString() { return 'StreamLiveInput(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, recording: $recording, rtmps: $rtmps, rtmpsPlayback: $rtmpsPlayback, srt: $srt, srtPlayback: $srtPlayback, status: $status, uid: $uid, webRtc: $webRtc, webRtcPlayback: $webRtcPlayback)'; } 
+          webRtcPlayback == other.webRtcPlayback;
+
+@override int get hashCode => Object.hash(created, deleteRecordingAfterDays, enabled, meta, modified, recording, rtmps, rtmpsPlayback, srt, srtPlayback, status, uid, webRtc, webRtcPlayback);
+
+@override String toString() => 'StreamLiveInput(created: $created, deleteRecordingAfterDays: $deleteRecordingAfterDays, enabled: $enabled, meta: $meta, modified: $modified, recording: $recording, rtmps: $rtmps, rtmpsPlayback: $rtmpsPlayback, srt: $srt, srtPlayback: $srtPlayback, status: $status, uid: $uid, webRtc: $webRtc, webRtcPlayback: $webRtcPlayback)';
+
  }

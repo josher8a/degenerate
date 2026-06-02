@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileSearchToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileSearchToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileSearchToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileSearchToolCallStatus($value)';
+
  }
 /// The results of a file search tool call. See the
 /// [file search guide](/docs/guides/tools-file-search) for more information.
@@ -88,13 +91,16 @@ FileSearchToolCall copyWith({String? id, String? type, FileSearchToolCallStatus?
   queries: queries ?? this.queries,
   results: results != null ? results() : this.results,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchToolCall &&
           id == other.id &&
           type == other.type &&
           status == other.status &&
           listEquals(queries, other.queries) &&
-          listEquals(results, other.results); } 
-@override int get hashCode { return Object.hash(id, type, status, Object.hashAll(queries), Object.hashAll(results ?? const [])); } 
-@override String toString() { return 'FileSearchToolCall(id: $id, type: $type, status: $status, queries: $queries, results: $results)'; } 
+          listEquals(results, other.results);
+
+@override int get hashCode => Object.hash(id, type, status, Object.hashAll(queries), Object.hashAll(results ?? const []));
+
+@override String toString() => 'FileSearchToolCall(id: $id, type: $type, status: $status, queries: $queries, results: $results)';
+
  }

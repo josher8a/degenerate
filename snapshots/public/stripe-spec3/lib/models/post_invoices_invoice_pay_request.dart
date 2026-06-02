@@ -65,7 +65,7 @@ PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? 
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoicePayRequest &&
           listEquals(expand, other.expand) &&
           forgive == other.forgive &&
@@ -73,7 +73,10 @@ PostInvoicesInvoicePayRequest copyWith({List<String>? Function()? expand, bool? 
           offSession == other.offSession &&
           paidOutOfBand == other.paidOutOfBand &&
           paymentMethod == other.paymentMethod &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), forgive, mandate, offSession, paidOutOfBand, paymentMethod, source); } 
-@override String toString() { return 'PostInvoicesInvoicePayRequest(expand: $expand, forgive: $forgive, mandate: $mandate, offSession: $offSession, paidOutOfBand: $paidOutOfBand, paymentMethod: $paymentMethod, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), forgive, mandate, offSession, paidOutOfBand, paymentMethod, source);
+
+@override String toString() => 'PostInvoicesInvoicePayRequest(expand: $expand, forgive: $forgive, mandate: $mandate, offSession: $offSession, paidOutOfBand: $paidOutOfBand, paymentMethod: $paymentMethod, source: $source)';
+
  }

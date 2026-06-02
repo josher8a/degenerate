@@ -42,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancingHealthDetails copyWith({LoadBalancingHealthDetailsResult? Function()? result}) { return LoadBalancingHealthDetails(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingHealthDetails &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'LoadBalancingHealthDetails(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'LoadBalancingHealthDetails(result: $result)';
+
  }

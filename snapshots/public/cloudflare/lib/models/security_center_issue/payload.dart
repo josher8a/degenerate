@@ -23,10 +23,13 @@ Payload copyWith({String? Function()? detectionMethod, String? Function()? zoneT
   detectionMethod: detectionMethod != null ? detectionMethod() : this.detectionMethod,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Payload &&
           detectionMethod == other.detectionMethod &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(detectionMethod, zoneTag); } 
-@override String toString() { return 'Payload(detectionMethod: $detectionMethod, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(detectionMethod, zoneTag);
+
+@override String toString() => 'Payload(detectionMethod: $detectionMethod, zoneTag: $zoneTag)';
+
  }

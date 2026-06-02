@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('items
 CloudflarePipelinesListField copyWith({CloudflarePipelinesSourceField? items}) { return CloudflarePipelinesListField(
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesListField &&
-          items == other.items; } 
-@override int get hashCode { return items.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesListField(items: $items)'; } 
+          items == other.items;
+
+@override int get hashCode => items.hashCode;
+
+@override String toString() => 'CloudflarePipelinesListField(items: $items)';
+
  }

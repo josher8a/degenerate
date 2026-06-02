@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus($value)';
+
  }
 /// This is the time the fallback origin was created.
 extension type TlsCertificatesAndHostnamesSchemasCreatedAt(DateTime value) {
@@ -88,13 +91,16 @@ TlsCertificatesAndHostnamesFallbackorigin copyWith({TlsCertificatesAndHostnamesS
   status: status != null ? status() : this.status,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesFallbackorigin &&
           createdAt == other.createdAt &&
           listEquals(errors, other.errors) &&
           origin == other.origin &&
           status == other.status &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(errors ?? const []), origin, status, updatedAt); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesFallbackorigin(createdAt: $createdAt, errors: $errors, origin: $origin, status: $status, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(errors ?? const []), origin, status, updatedAt);
+
+@override String toString() => 'TlsCertificatesAndHostnamesFallbackorigin(createdAt: $createdAt, errors: $errors, origin: $origin, status: $status, updatedAt: $updatedAt)';
+
  }

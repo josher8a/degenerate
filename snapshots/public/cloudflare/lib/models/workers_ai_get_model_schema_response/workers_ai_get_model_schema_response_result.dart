@@ -21,10 +21,13 @@ WorkersAiGetModelSchemaResponseResult copyWith({ResultInput? input, ResultOutput
   input: input ?? this.input,
   output: output ?? this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiGetModelSchemaResponseResult &&
           input == other.input &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(input, output); } 
-@override String toString() { return 'WorkersAiGetModelSchemaResponseResult(input: $input, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(input, output);
+
+@override String toString() => 'WorkersAiGetModelSchemaResponseResult(input: $input, output: $output)';
+
  }

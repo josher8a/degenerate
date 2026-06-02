@@ -23,10 +23,13 @@ InvoiceThresholdReason copyWith({int? Function()? amountGte, List<InvoiceItemThr
   amountGte: amountGte != null ? amountGte() : this.amountGte,
   itemReasons: itemReasons ?? this.itemReasons,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceThresholdReason &&
           amountGte == other.amountGte &&
-          listEquals(itemReasons, other.itemReasons); } 
-@override int get hashCode { return Object.hash(amountGte, Object.hashAll(itemReasons)); } 
-@override String toString() { return 'InvoiceThresholdReason(amountGte: $amountGte, itemReasons: $itemReasons)'; } 
+          listEquals(itemReasons, other.itemReasons);
+
+@override int get hashCode => Object.hash(amountGte, Object.hashAll(itemReasons));
+
+@override String toString() => 'InvoiceThresholdReason(amountGte: $amountGte, itemReasons: $itemReasons)';
+
  }

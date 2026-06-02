@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NullAllocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NullAllocationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NullAllocationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NullAllocationType($value)';
+
  }
 @immutable final class NullAllocation {const NullAllocation({required this.type, this.value, });
 
@@ -41,10 +44,13 @@ NullAllocation copyWith({NullAllocationType? type, Map<String, dynamic>? Functio
   type: type ?? this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NullAllocation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'NullAllocation(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'NullAllocation(type: $type, value: $value)';
+
  }

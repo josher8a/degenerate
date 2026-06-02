@@ -26,10 +26,13 @@ CardGeneratedFromPaymentMethodDetails copyWith({PaymentMethodDetailsCardPresent?
   cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardGeneratedFromPaymentMethodDetails &&
           cardPresent == other.cardPresent &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(cardPresent, type); } 
-@override String toString() { return 'CardGeneratedFromPaymentMethodDetails(cardPresent: $cardPresent, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(cardPresent, type);
+
+@override String toString() => 'CardGeneratedFromPaymentMethodDetails(cardPresent: $cardPresent, type: $type)';
+
  }

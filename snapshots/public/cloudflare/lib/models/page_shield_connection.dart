@@ -93,7 +93,7 @@ PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReport
   urlContainsCdnCgiPath: urlContainsCdnCgiPath ?? this.urlContainsCdnCgiPath,
   urlReportedMalicious: urlReportedMalicious != null ? urlReportedMalicious() : this.urlReportedMalicious,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageShieldConnection &&
           addedAt == other.addedAt &&
           domainReportedMalicious == other.domainReportedMalicious &&
@@ -107,7 +107,10 @@ PageShieldConnection copyWith({DateTime? addedAt, bool? Function()? domainReport
           listEquals(pageUrls, other.pageUrls) &&
           url == other.url &&
           urlContainsCdnCgiPath == other.urlContainsCdnCgiPath &&
-          urlReportedMalicious == other.urlReportedMalicious; } 
-@override int get hashCode { return Object.hash(addedAt, domainReportedMalicious, firstPageUrl, firstSeenAt, host, id, lastSeenAt, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious); } 
-@override String toString() { return 'PageShieldConnection(addedAt: $addedAt, domainReportedMalicious: $domainReportedMalicious, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, host: $host, id: $id, lastSeenAt: $lastSeenAt, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)'; } 
+          urlReportedMalicious == other.urlReportedMalicious;
+
+@override int get hashCode => Object.hash(addedAt, domainReportedMalicious, firstPageUrl, firstSeenAt, host, id, lastSeenAt, Object.hashAll(maliciousDomainCategories ?? const []), Object.hashAll(maliciousUrlCategories ?? const []), Object.hashAll(pageUrls ?? const []), url, urlContainsCdnCgiPath, urlReportedMalicious);
+
+@override String toString() => 'PageShieldConnection(addedAt: $addedAt, domainReportedMalicious: $domainReportedMalicious, firstPageUrl: $firstPageUrl, firstSeenAt: $firstSeenAt, host: $host, id: $id, lastSeenAt: $lastSeenAt, maliciousDomainCategories: $maliciousDomainCategories, maliciousUrlCategories: $maliciousUrlCategories, pageUrls: $pageUrls, url: $url, urlContainsCdnCgiPath: $urlContainsCdnCgiPath, urlReportedMalicious: $urlReportedMalicious)';
+
  }

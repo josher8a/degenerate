@@ -26,11 +26,14 @@ WorkersSchedule copyWith({String? Function()? createdOn, String? cron, String? F
   cron: cron ?? this.cron,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersSchedule &&
           createdOn == other.createdOn &&
           cron == other.cron &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(createdOn, cron, modifiedOn); } 
-@override String toString() { return 'WorkersSchedule(createdOn: $createdOn, cron: $cron, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(createdOn, cron, modifiedOn);
+
+@override String toString() => 'WorkersSchedule(createdOn: $createdOn, cron: $cron, modifiedOn: $modifiedOn)';
+
  }

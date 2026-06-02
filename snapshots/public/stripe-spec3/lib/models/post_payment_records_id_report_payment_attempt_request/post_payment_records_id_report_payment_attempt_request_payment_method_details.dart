@@ -38,12 +38,15 @@ PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails copyWith({Pa
   paymentMethod: paymentMethod != null ? paymentMethod() : this.paymentMethod,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails &&
           billingDetails == other.billingDetails &&
           custom == other.custom &&
           paymentMethod == other.paymentMethod &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(billingDetails, custom, paymentMethod, type); } 
-@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(billingDetails: $billingDetails, custom: $custom, paymentMethod: $paymentMethod, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(billingDetails, custom, paymentMethod, type);
+
+@override String toString() => 'PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails(billingDetails: $billingDetails, custom: $custom, paymentMethod: $paymentMethod, type: $type)';
+
  }

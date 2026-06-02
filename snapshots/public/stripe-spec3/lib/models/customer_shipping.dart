@@ -34,11 +34,14 @@ CustomerShipping copyWith({CustomerShippingAddress? address, String? name, Strin
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerShipping &&
           address == other.address &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, name, phone); } 
-@override String toString() { return 'CustomerShipping(address: $address, name: $name, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(address, name, phone);
+
+@override String toString() => 'CustomerShipping(address: $address, name: $name, phone: $phone)';
+
  }

@@ -36,10 +36,13 @@ LoadBalancingRandomSteering copyWith({double Function()? defaultWeight, Map<Stri
   defaultWeight: defaultWeight != null ? defaultWeight() : this.defaultWeight,
   poolWeights: poolWeights != null ? poolWeights() : this.poolWeights,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingRandomSteering &&
           defaultWeight == other.defaultWeight &&
-          poolWeights == other.poolWeights; } 
-@override int get hashCode { return Object.hash(defaultWeight, poolWeights); } 
-@override String toString() { return 'LoadBalancingRandomSteering(defaultWeight: $defaultWeight, poolWeights: $poolWeights)'; } 
+          poolWeights == other.poolWeights;
+
+@override int get hashCode => Object.hash(defaultWeight, poolWeights);
+
+@override String toString() => 'LoadBalancingRandomSteering(defaultWeight: $defaultWeight, poolWeights: $poolWeights)';
+
  }

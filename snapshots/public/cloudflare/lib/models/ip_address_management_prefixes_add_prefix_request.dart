@@ -41,13 +41,16 @@ IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, Addres
   description: description != null ? description() : this.description,
   loaDocumentId: loaDocumentId != null ? loaDocumentId() : this.loaDocumentId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementPrefixesAddPrefixRequest &&
           asn == other.asn &&
           cidr == other.cidr &&
           delegateLoaCreation == other.delegateLoaCreation &&
           description == other.description &&
-          loaDocumentId == other.loaDocumentId; } 
-@override int get hashCode { return Object.hash(asn, cidr, delegateLoaCreation, description, loaDocumentId); } 
-@override String toString() { return 'IpAddressManagementPrefixesAddPrefixRequest(asn: $asn, cidr: $cidr, delegateLoaCreation: $delegateLoaCreation, description: $description, loaDocumentId: $loaDocumentId)'; } 
+          loaDocumentId == other.loaDocumentId;
+
+@override int get hashCode => Object.hash(asn, cidr, delegateLoaCreation, description, loaDocumentId);
+
+@override String toString() => 'IpAddressManagementPrefixesAddPrefixRequest(asn: $asn, cidr: $cidr, delegateLoaCreation: $delegateLoaCreation, description: $description, loaDocumentId: $loaDocumentId)';
+
  }

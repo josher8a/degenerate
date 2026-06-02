@@ -59,13 +59,16 @@ Shipping copyWith({Address? Function()? address, String? Function()? carrier, St
   phone: phone != null ? phone() : this.phone,
   trackingNumber: trackingNumber != null ? trackingNumber() : this.trackingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Shipping &&
           address == other.address &&
           carrier == other.carrier &&
           name == other.name &&
           phone == other.phone &&
-          trackingNumber == other.trackingNumber; } 
-@override int get hashCode { return Object.hash(address, carrier, name, phone, trackingNumber); } 
-@override String toString() { return 'Shipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)'; } 
+          trackingNumber == other.trackingNumber;
+
+@override int get hashCode => Object.hash(address, carrier, name, phone, trackingNumber);
+
+@override String toString() => 'Shipping(address: $address, carrier: $carrier, name: $name, phone: $phone, trackingNumber: $trackingNumber)';
+
  }

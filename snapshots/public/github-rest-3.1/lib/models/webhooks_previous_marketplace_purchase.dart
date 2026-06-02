@@ -50,7 +50,7 @@ WebhooksPreviousMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount
   plan: plan ?? this.plan,
   unitCount: unitCount ?? this.unitCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksPreviousMarketplacePurchase &&
           account == other.account &&
           billingCycle == other.billingCycle &&
@@ -58,7 +58,10 @@ WebhooksPreviousMarketplacePurchase copyWith({WebhooksMarketplacePurchaseAccount
           nextBillingDate == other.nextBillingDate &&
           onFreeTrial == other.onFreeTrial &&
           plan == other.plan &&
-          unitCount == other.unitCount; } 
-@override int get hashCode { return Object.hash(account, billingCycle, freeTrialEndsOn, nextBillingDate, onFreeTrial, plan, unitCount); } 
-@override String toString() { return 'WebhooksPreviousMarketplacePurchase(account: $account, billingCycle: $billingCycle, freeTrialEndsOn: $freeTrialEndsOn, nextBillingDate: $nextBillingDate, onFreeTrial: $onFreeTrial, plan: $plan, unitCount: $unitCount)'; } 
+          unitCount == other.unitCount;
+
+@override int get hashCode => Object.hash(account, billingCycle, freeTrialEndsOn, nextBillingDate, onFreeTrial, plan, unitCount);
+
+@override String toString() => 'WebhooksPreviousMarketplacePurchase(account: $account, billingCycle: $billingCycle, freeTrialEndsOn: $freeTrialEndsOn, nextBillingDate: $nextBillingDate, onFreeTrial: $onFreeTrial, plan: $plan, unitCount: $unitCount)';
+
  }

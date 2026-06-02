@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentPagesCheckoutSessionAfterExpiration copyWith({PaymentPagesCheckoutSessionAfterExpirationRecovery? Function()? recovery}) { return PaymentPagesCheckoutSessionAfterExpiration(
   recovery: recovery != null ? recovery() : this.recovery,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionAfterExpiration &&
-          recovery == other.recovery; } 
-@override int get hashCode { return recovery.hashCode; } 
-@override String toString() { return 'PaymentPagesCheckoutSessionAfterExpiration(recovery: $recovery)'; } 
+          recovery == other.recovery;
+
+@override int get hashCode => recovery.hashCode;
+
+@override String toString() => 'PaymentPagesCheckoutSessionAfterExpiration(recovery: $recovery)';
+
  }

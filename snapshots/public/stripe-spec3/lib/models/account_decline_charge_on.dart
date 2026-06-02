@@ -24,10 +24,13 @@ AccountDeclineChargeOn copyWith({bool? avsFailure, bool? cvcFailure, }) { return
   avsFailure: avsFailure ?? this.avsFailure,
   cvcFailure: cvcFailure ?? this.cvcFailure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountDeclineChargeOn &&
           avsFailure == other.avsFailure &&
-          cvcFailure == other.cvcFailure; } 
-@override int get hashCode { return Object.hash(avsFailure, cvcFailure); } 
-@override String toString() { return 'AccountDeclineChargeOn(avsFailure: $avsFailure, cvcFailure: $cvcFailure)'; } 
+          cvcFailure == other.cvcFailure;
+
+@override int get hashCode => Object.hash(avsFailure, cvcFailure);
+
+@override String toString() => 'AccountDeclineChargeOn(avsFailure: $avsFailure, cvcFailure: $cvcFailure)';
+
  }

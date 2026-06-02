@@ -23,10 +23,13 @@ WorkersManifestValue copyWith({String? hash, int? size, }) { return WorkersManif
   hash: hash ?? this.hash,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersManifestValue &&
           hash == other.hash &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(hash, size); } 
-@override String toString() { return 'WorkersManifestValue(hash: $hash, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(hash, size);
+
+@override String toString() => 'WorkersManifestValue(hash: $hash, size: $size)';
+
  }

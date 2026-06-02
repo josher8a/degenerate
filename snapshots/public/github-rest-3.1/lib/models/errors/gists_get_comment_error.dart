@@ -18,13 +18,15 @@ final class GistsGetCommentError$403 extends GistsGetCommentError {const GistsGe
 
 final GistsGetCommentResponse403 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class GistsGetCommentError$404 extends GistsGetCommentError {const GistsGetCommentError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GistsGetCommentError$Unknown extends GistsGetCommentError {const GistsGetCommentError$Unknown(this.statusCode, this.rawBody, );
 

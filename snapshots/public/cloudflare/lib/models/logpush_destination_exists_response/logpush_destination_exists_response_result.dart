@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LogpushDestinationExistsResponseResult copyWith({bool? Function()? exists}) { return LogpushDestinationExistsResponseResult(
   exists: exists != null ? exists() : this.exists,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushDestinationExistsResponseResult &&
-          exists == other.exists; } 
-@override int get hashCode { return exists.hashCode; } 
-@override String toString() { return 'LogpushDestinationExistsResponseResult(exists: $exists)'; } 
+          exists == other.exists;
+
+@override int get hashCode => exists.hashCode;
+
+@override String toString() => 'LogpushDestinationExistsResponseResult(exists: $exists)';
+
  }

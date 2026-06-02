@@ -56,13 +56,16 @@ RadarReviewResourceLocation copyWith({String? Function()? city, String? Function
   longitude: longitude != null ? longitude() : this.longitude,
   region: region != null ? region() : this.region,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarReviewResourceLocation &&
           city == other.city &&
           country == other.country &&
           latitude == other.latitude &&
           longitude == other.longitude &&
-          region == other.region; } 
-@override int get hashCode { return Object.hash(city, country, latitude, longitude, region); } 
-@override String toString() { return 'RadarReviewResourceLocation(city: $city, country: $country, latitude: $latitude, longitude: $longitude, region: $region)'; } 
+          region == other.region;
+
+@override int get hashCode => Object.hash(city, country, latitude, longitude, region);
+
+@override String toString() => 'RadarReviewResourceLocation(city: $city, country: $country, latitude: $latitude, longitude: $longitude, region: $region)';
+
  }

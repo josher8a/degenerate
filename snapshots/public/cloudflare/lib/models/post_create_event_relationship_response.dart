@@ -48,14 +48,17 @@ PostCreateEventRelationshipResponse copyWith({List<String>? Function()? childIds
   relationshipsCreated: relationshipsCreated != null ? relationshipsCreated() : this.relationshipsCreated,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreateEventRelationshipResponse &&
           listEquals(childIds, other.childIds) &&
           listEquals(errors, other.errors) &&
           message == other.message &&
           listEquals(relationships, other.relationships) &&
           relationshipsCreated == other.relationshipsCreated &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(childIds ?? const []), Object.hashAll(errors ?? const []), message, Object.hashAll(relationships), relationshipsCreated, success); } 
-@override String toString() { return 'PostCreateEventRelationshipResponse(childIds: $childIds, errors: $errors, message: $message, relationships: $relationships, relationshipsCreated: $relationshipsCreated, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(childIds ?? const []), Object.hashAll(errors ?? const []), message, Object.hashAll(relationships), relationshipsCreated, success);
+
+@override String toString() => 'PostCreateEventRelationshipResponse(childIds: $childIds, errors: $errors, message: $message, relationships: $relationships, relationshipsCreated: $relationshipsCreated, success: $success)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitCreateChatChannelInfoVisibility && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitCreateChatChannelInfoVisibility($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitCreateChatChannelInfoVisibility && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitCreateChatChannelInfoVisibility($value)';
+
  }
 @immutable final class RealtimekitCreateChatChannelInfo {const RealtimekitCreateChatChannelInfo({this.customParticipantIds, this.displayName, this.visibility, });
 
@@ -49,11 +52,14 @@ RealtimekitCreateChatChannelInfo copyWith({List<String>? Function()? customParti
   displayName: displayName != null ? displayName() : this.displayName,
   visibility: visibility != null ? visibility() : this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitCreateChatChannelInfo &&
           listEquals(customParticipantIds, other.customParticipantIds) &&
           displayName == other.displayName &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(Object.hashAll(customParticipantIds ?? const []), displayName, visibility); } 
-@override String toString() { return 'RealtimekitCreateChatChannelInfo(customParticipantIds: $customParticipantIds, displayName: $displayName, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(Object.hashAll(customParticipantIds ?? const []), displayName, visibility);
+
+@override String toString() => 'RealtimekitCreateChatChannelInfo(customParticipantIds: $customParticipantIds, displayName: $displayName, visibility: $visibility)';
+
  }

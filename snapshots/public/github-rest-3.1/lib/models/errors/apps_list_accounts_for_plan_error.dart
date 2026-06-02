@@ -19,19 +19,22 @@ final class AppsListAccountsForPlanError$401 extends AppsListAccountsForPlanErro
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class AppsListAccountsForPlanError$404 extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AppsListAccountsForPlanError$422 extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class AppsListAccountsForPlanError$Unknown extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError$Unknown(this.statusCode, this.rawBody, );
 

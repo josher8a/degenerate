@@ -45,14 +45,17 @@ Serie0Variant3 copyWith({List<String>? gt3dLte16d, List<String>? gt16dLte31d, Li
   gt121d: gt121d ?? this.gt121d,
   lte3d: lte3d ?? this.lte3d,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant3 &&
           listEquals(gt3dLte16d, other.gt3dLte16d) &&
           listEquals(gt16dLte31d, other.gt16dLte31d) &&
           listEquals(gt31dLte91d, other.gt31dLte91d) &&
           listEquals(gt91dLte121d, other.gt91dLte121d) &&
           listEquals(gt121d, other.gt121d) &&
-          listEquals(lte3d, other.lte3d); } 
-@override int get hashCode { return Object.hash(Object.hashAll(gt3dLte16d), Object.hashAll(gt16dLte31d), Object.hashAll(gt31dLte91d), Object.hashAll(gt91dLte121d), Object.hashAll(gt121d), Object.hashAll(lte3d)); } 
-@override String toString() { return 'Serie0Variant3(gt3dLte16d: $gt3dLte16d, gt16dLte31d: $gt16dLte31d, gt31dLte91d: $gt31dLte91d, gt91dLte121d: $gt91dLte121d, gt121d: $gt121d, lte3d: $lte3d)'; } 
+          listEquals(lte3d, other.lte3d);
+
+@override int get hashCode => Object.hash(Object.hashAll(gt3dLte16d), Object.hashAll(gt16dLte31d), Object.hashAll(gt31dLte91d), Object.hashAll(gt91dLte121d), Object.hashAll(gt121d), Object.hashAll(lte3d));
+
+@override String toString() => 'Serie0Variant3(gt3dLte16d: $gt3dLte16d, gt16dLte31d: $gt16dLte31d, gt31dLte91d: $gt31dLte91d, gt91dLte121d: $gt91dLte121d, gt121d: $gt121d, lte3d: $lte3d)';
+
  }

@@ -29,11 +29,14 @@ TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions copyWit
   failedAt: failedAt != null ? failedAt() : this.failedAt,
   succeededAt: succeededAt != null ? succeededAt() : this.succeededAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions &&
           canceledAt == other.canceledAt &&
           failedAt == other.failedAt &&
-          succeededAt == other.succeededAt; } 
-@override int get hashCode { return Object.hash(canceledAt, failedAt, succeededAt); } 
-@override String toString() { return 'TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, succeededAt: $succeededAt)'; } 
+          succeededAt == other.succeededAt;
+
+@override int get hashCode => Object.hash(canceledAt, failedAt, succeededAt);
+
+@override String toString() => 'TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, succeededAt: $succeededAt)';
+
  }

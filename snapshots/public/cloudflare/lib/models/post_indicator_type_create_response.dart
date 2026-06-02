@@ -30,11 +30,14 @@ PostIndicatorTypeCreateResponse copyWith({String? durableObjectId, String? indic
   indicatorType: indicatorType ?? this.indicatorType,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIndicatorTypeCreateResponse &&
           durableObjectId == other.durableObjectId &&
           indicatorType == other.indicatorType &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(durableObjectId, indicatorType, message); } 
-@override String toString() { return 'PostIndicatorTypeCreateResponse(durableObjectId: $durableObjectId, indicatorType: $indicatorType, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(durableObjectId, indicatorType, message);
+
+@override String toString() => 'PostIndicatorTypeCreateResponse(durableObjectId: $durableObjectId, indicatorType: $indicatorType, message: $message)';
+
  }

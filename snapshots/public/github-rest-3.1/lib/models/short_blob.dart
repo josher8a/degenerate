@@ -22,10 +22,13 @@ ShortBlob copyWith({String? url, String? sha, }) { return ShortBlob(
   url: url ?? this.url,
   sha: sha ?? this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBlob &&
           url == other.url &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(url, sha); } 
-@override String toString() { return 'ShortBlob(url: $url, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(url, sha);
+
+@override String toString() => 'ShortBlob(url: $url, sha: $sha)';
+
  }

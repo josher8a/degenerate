@@ -31,11 +31,14 @@ ConnectEmbeddedInstantPayoutsPromotionFeatures copyWith({bool? disableStripeUser
   externalAccountCollection: externalAccountCollection ?? this.externalAccountCollection,
   instantPayouts: instantPayouts ?? this.instantPayouts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConnectEmbeddedInstantPayoutsPromotionFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
           externalAccountCollection == other.externalAccountCollection &&
-          instantPayouts == other.instantPayouts; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection, instantPayouts); } 
-@override String toString() { return 'ConnectEmbeddedInstantPayoutsPromotionFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts)'; } 
+          instantPayouts == other.instantPayouts;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, externalAccountCollection, instantPayouts);
+
+@override String toString() => 'ConnectEmbeddedInstantPayoutsPromotionFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts)';
+
  }

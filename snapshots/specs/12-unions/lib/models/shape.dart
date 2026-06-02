@@ -34,15 +34,19 @@ final Circle circle;
 
 @override String get type => 'circle';
 
-@override Map<String, dynamic> toJson() { return {...circle.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...circle.toJson(), 'type': type};
+
 ShapeCircle copyWith({double? radius, String? Function()? color, }) { return ShapeCircle(circle.copyWith(
   radius: radius,
   color: color,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShapeCircle && circle == other.circle; } 
-@override int get hashCode { return circle.hashCode; } 
-@override String toString() { return 'Shape.circle($circle)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShapeCircle && circle == other.circle;
+
+@override int get hashCode => circle.hashCode;
+
+@override String toString() => 'Shape.circle($circle)';
+
  }
 @immutable final class ShapeRectangle extends Shape {const ShapeRectangle(this.rectangle);
 
@@ -52,16 +56,20 @@ final Rectangle rectangle;
 
 @override String get type => 'rectangle';
 
-@override Map<String, dynamic> toJson() { return {...rectangle.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...rectangle.toJson(), 'type': type};
+
 ShapeRectangle copyWith({double? width, double? height, String? Function()? color, }) { return ShapeRectangle(rectangle.copyWith(
   width: width,
   height: height,
   color: color,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShapeRectangle && rectangle == other.rectangle; } 
-@override int get hashCode { return rectangle.hashCode; } 
-@override String toString() { return 'Shape.rectangle($rectangle)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShapeRectangle && rectangle == other.rectangle;
+
+@override int get hashCode => rectangle.hashCode;
+
+@override String toString() => 'Shape.rectangle($rectangle)';
+
  }
 @immutable final class ShapeTriangle extends Shape {const ShapeTriangle(this.triangle);
 
@@ -71,16 +79,20 @@ final Triangle triangle;
 
 @override String get type => 'triangle';
 
-@override Map<String, dynamic> toJson() { return {...triangle.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...triangle.toJson(), 'type': type};
+
 ShapeTriangle copyWith({double? base, double? height, List<double>? Function()? angles, }) { return ShapeTriangle(triangle.copyWith(
   base: base,
   height: height,
   angles: angles,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShapeTriangle && triangle == other.triangle; } 
-@override int get hashCode { return triangle.hashCode; } 
-@override String toString() { return 'Shape.triangle($triangle)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShapeTriangle && triangle == other.triangle;
+
+@override int get hashCode => triangle.hashCode;
+
+@override String toString() => 'Shape.triangle($triangle)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -90,9 +102,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Shape$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'Shape.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Shape$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'Shape.unknown($json)';
+
  }

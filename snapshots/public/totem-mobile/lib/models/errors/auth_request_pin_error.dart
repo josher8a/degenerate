@@ -31,9 +31,7 @@ final class AuthRequestPinError$429 extends AuthRequestPinError {
   final ErrorResponse error;
 
   @override
-  int get statusCode {
-    return 429;
-  }
+  int get statusCode => 429;
 }
 
 final class AuthRequestPinError$Unknown extends AuthRequestPinError {

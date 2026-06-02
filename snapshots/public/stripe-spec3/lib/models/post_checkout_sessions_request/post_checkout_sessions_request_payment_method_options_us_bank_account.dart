@@ -37,12 +37,15 @@ PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount copyWith({UsBankAcc
   targetDate: targetDate != null ? targetDate() : this.targetDate,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
           setupFutureUsage == other.setupFutureUsage &&
           targetDate == other.targetDate &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, setupFutureUsage, targetDate, verificationMethod); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(financialConnections, setupFutureUsage, targetDate, verificationMethod);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)';
+
  }

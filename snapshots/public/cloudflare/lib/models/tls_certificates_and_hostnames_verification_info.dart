@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordName($value)';
+
  }
 /// Target of CNAME record.
 @immutable final class RecordTarget {const RecordTarget._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordTarget($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordTarget && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordTarget($value)';
+
  }
 /// Certificate's required verification information.
 @immutable final class TlsCertificatesAndHostnamesVerificationInfo {const TlsCertificatesAndHostnamesVerificationInfo({this.recordName, this.recordTarget, });
@@ -89,10 +95,13 @@ TlsCertificatesAndHostnamesVerificationInfo copyWith({RecordName? Function()? re
   recordName: recordName != null ? recordName() : this.recordName,
   recordTarget: recordTarget != null ? recordTarget() : this.recordTarget,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesVerificationInfo &&
           recordName == other.recordName &&
-          recordTarget == other.recordTarget; } 
-@override int get hashCode { return Object.hash(recordName, recordTarget); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesVerificationInfo(recordName: $recordName, recordTarget: $recordTarget)'; } 
+          recordTarget == other.recordTarget;
+
+@override int get hashCode => Object.hash(recordName, recordTarget);
+
+@override String toString() => 'TlsCertificatesAndHostnamesVerificationInfo(recordName: $recordName, recordTarget: $recordTarget)';
+
  }

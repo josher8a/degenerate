@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 StreamPlaybackWebrtc copyWith({StreamPlaybackWebrtcUrl? Function()? url}) { return StreamPlaybackWebrtc(
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamPlaybackWebrtc &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'StreamPlaybackWebrtc(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'StreamPlaybackWebrtc(url: $url)';
+
  }

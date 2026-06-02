@@ -50,7 +50,7 @@ AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function(
   running: running != null ? running() : this.running,
   skipped: skipped != null ? skipped() : this.skipped,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchStatsResponseResult &&
           completed == other.completed &&
           error == other.error &&
@@ -59,7 +59,10 @@ AiSearchStatsResponseResult copyWith({int? Function()? completed, int? Function(
           lastActivity == other.lastActivity &&
           queued == other.queued &&
           running == other.running &&
-          skipped == other.skipped; } 
-@override int get hashCode { return Object.hash(completed, error, fileEmbedErrors, indexSourceErrors, lastActivity, queued, running, skipped); } 
-@override String toString() { return 'AiSearchStatsResponseResult(completed: $completed, error: $error, fileEmbedErrors: $fileEmbedErrors, indexSourceErrors: $indexSourceErrors, lastActivity: $lastActivity, queued: $queued, running: $running, skipped: $skipped)'; } 
+          skipped == other.skipped;
+
+@override int get hashCode => Object.hash(completed, error, fileEmbedErrors, indexSourceErrors, lastActivity, queued, running, skipped);
+
+@override String toString() => 'AiSearchStatsResponseResult(completed: $completed, error: $error, fileEmbedErrors: $fileEmbedErrors, indexSourceErrors: $indexSourceErrors, lastActivity: $lastActivity, queued: $queued, running: $running, skipped: $skipped)';
+
  }

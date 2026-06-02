@@ -28,11 +28,14 @@ Relationships copyWith({String? Function()? relationshipType, String? Function()
   spdxElementId: spdxElementId != null ? spdxElementId() : this.spdxElementId,
   relatedSpdxElement: relatedSpdxElement != null ? relatedSpdxElement() : this.relatedSpdxElement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Relationships &&
           relationshipType == other.relationshipType &&
           spdxElementId == other.spdxElementId &&
-          relatedSpdxElement == other.relatedSpdxElement; } 
-@override int get hashCode { return Object.hash(relationshipType, spdxElementId, relatedSpdxElement); } 
-@override String toString() { return 'Relationships(relationshipType: $relationshipType, spdxElementId: $spdxElementId, relatedSpdxElement: $relatedSpdxElement)'; } 
+          relatedSpdxElement == other.relatedSpdxElement;
+
+@override int get hashCode => Object.hash(relationshipType, spdxElementId, relatedSpdxElement);
+
+@override String toString() => 'Relationships(relationshipType: $relationshipType, spdxElementId: $spdxElementId, relatedSpdxElement: $relatedSpdxElement)';
+
  }

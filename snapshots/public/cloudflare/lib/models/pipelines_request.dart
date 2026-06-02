@@ -32,10 +32,13 @@ PipelinesRequest copyWith({String? name, String? sql, }) { return PipelinesReque
   name: name ?? this.name,
   sql: sql ?? this.sql,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PipelinesRequest &&
           name == other.name &&
-          sql == other.sql; } 
-@override int get hashCode { return Object.hash(name, sql); } 
-@override String toString() { return 'PipelinesRequest(name: $name, sql: $sql)'; } 
+          sql == other.sql;
+
+@override int get hashCode => Object.hash(name, sql);
+
+@override String toString() => 'PipelinesRequest(name: $name, sql: $sql)';
+
  }

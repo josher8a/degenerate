@@ -20,10 +20,13 @@ DigitalExperienceMonitoringLiveStat copyWith({DigitalExperienceMonitoringUniqueD
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringLiveStat &&
           uniqueDevicesTotal == other.uniqueDevicesTotal &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(uniqueDevicesTotal, value); } 
-@override String toString() { return 'DigitalExperienceMonitoringLiveStat(uniqueDevicesTotal: $uniqueDevicesTotal, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(uniqueDevicesTotal, value);
+
+@override String toString() => 'DigitalExperienceMonitoringLiveStat(uniqueDevicesTotal: $uniqueDevicesTotal, value: $value)';
+
  }

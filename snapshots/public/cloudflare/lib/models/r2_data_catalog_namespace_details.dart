@@ -40,12 +40,15 @@ R2DataCatalogNamespaceDetails copyWith({DateTime? Function()? createdAt, List<St
   namespaceUuid: namespaceUuid ?? this.namespaceUuid,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogNamespaceDetails &&
           createdAt == other.createdAt &&
           listEquals(namespace, other.namespace) &&
           namespaceUuid == other.namespaceUuid &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(namespace), namespaceUuid, updatedAt); } 
-@override String toString() { return 'R2DataCatalogNamespaceDetails(createdAt: $createdAt, namespace: $namespace, namespaceUuid: $namespaceUuid, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(namespace), namespaceUuid, updatedAt);
+
+@override String toString() => 'R2DataCatalogNamespaceDetails(createdAt: $createdAt, namespace: $namespace, namespaceUuid: $namespaceUuid, updatedAt: $updatedAt)';
+
  }

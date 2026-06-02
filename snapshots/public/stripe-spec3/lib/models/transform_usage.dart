@@ -24,10 +24,13 @@ TransformUsage copyWith({int? divideBy, Round? round, }) { return TransformUsage
   divideBy: divideBy ?? this.divideBy,
   round: round ?? this.round,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TransformUsage &&
           divideBy == other.divideBy &&
-          round == other.round; } 
-@override int get hashCode { return Object.hash(divideBy, round); } 
-@override String toString() { return 'TransformUsage(divideBy: $divideBy, round: $round)'; } 
+          round == other.round;
+
+@override int get hashCode => Object.hash(divideBy, round);
+
+@override String toString() => 'TransformUsage(divideBy: $divideBy, round: $round)';
+
  }

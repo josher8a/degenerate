@@ -60,14 +60,17 @@ AccountMessageMessageFeedback copyWith({String? Function()? accountSid, String? 
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountMessageMessageFeedback &&
           accountSid == other.accountSid &&
           messageSid == other.messageSid &&
           outcome == other.outcome &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, messageSid, outcome, dateCreated, dateUpdated, uri); } 
-@override String toString() { return 'AccountMessageMessageFeedback(accountSid: $accountSid, messageSid: $messageSid, outcome: $outcome, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, messageSid, outcome, dateCreated, dateUpdated, uri);
+
+@override String toString() => 'AccountMessageMessageFeedback(accountSid: $accountSid, messageSid: $messageSid, outcome: $outcome, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)';
+
  }

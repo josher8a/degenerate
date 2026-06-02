@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VideoStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VideoStatus($value)';
+
  }
 /// The object type, which is always `video`.
 @immutable final class VideoResourceObject {const VideoResourceObject._(this.value);
@@ -47,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VideoResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VideoResourceObject($value)';
+
  }
 /// Structured information describing a generated video job.
 @immutable final class VideoResource {const VideoResource({required this.id, required this.model, required this.status, required this.progress, required this.createdAt, required this.completedAt, required this.expiresAt, required this.prompt, required this.size, required this.seconds, required this.remixedFromVideoId, required this.error, this.object = VideoResourceObject.video, });
@@ -153,7 +159,7 @@ VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? mod
   remixedFromVideoId: remixedFromVideoId != null ? remixedFromVideoId() : this.remixedFromVideoId,
   error: error != null ? error() : this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VideoResource &&
           id == other.id &&
           object == other.object &&
@@ -167,7 +173,10 @@ VideoResource copyWith({String? id, VideoResourceObject? object, VideoModel? mod
           size == other.size &&
           seconds == other.seconds &&
           remixedFromVideoId == other.remixedFromVideoId &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(id, object, model, status, progress, createdAt, completedAt, expiresAt, prompt, size, seconds, remixedFromVideoId, error); } 
-@override String toString() { return 'VideoResource(id: $id, object: $object, model: $model, status: $status, progress: $progress, createdAt: $createdAt, completedAt: $completedAt, expiresAt: $expiresAt, prompt: $prompt, size: $size, seconds: $seconds, remixedFromVideoId: $remixedFromVideoId, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(id, object, model, status, progress, createdAt, completedAt, expiresAt, prompt, size, seconds, remixedFromVideoId, error);
+
+@override String toString() => 'VideoResource(id: $id, object: $object, model: $model, status: $status, progress: $progress, createdAt: $createdAt, completedAt: $completedAt, expiresAt: $expiresAt, prompt: $prompt, size: $size, seconds: $seconds, remixedFromVideoId: $remixedFromVideoId, error: $error)';
+
  }

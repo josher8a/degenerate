@@ -31,11 +31,14 @@ RealtimeServerEventConversationItemRetrieved copyWith({String? eventId, String? 
   type: type ?? this.type,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemRetrieved &&
           eventId == other.eventId &&
           type == other.type &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, item); } 
-@override String toString() { return 'RealtimeServerEventConversationItemRetrieved(eventId: $eventId, type: $type, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, item);
+
+@override String toString() => 'RealtimeServerEventConversationItemRetrieved(eventId: $eventId, type: $type, item: $item)';
+
  }

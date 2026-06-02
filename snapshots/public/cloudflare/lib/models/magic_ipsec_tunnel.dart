@@ -112,7 +112,7 @@ MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, Ma
   pskMetadata: pskMetadata != null ? pskMetadata() : this.pskMetadata,
   replayProtection: replayProtection != null ? replayProtection() : this.replayProtection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicIpsecTunnel &&
           allowNullCipher == other.allowNullCipher &&
           automaticReturnRouting == other.automaticReturnRouting &&
@@ -130,7 +130,10 @@ MagicIpsecTunnel copyWith({MagicAllowNullCipher? Function()? allowNullCipher, Ma
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           pskMetadata == other.pskMetadata &&
-          replayProtection == other.replayProtection; } 
-@override int get hashCode { return Object.hash(allowNullCipher, automaticReturnRouting, bgp, bgpStatus, cloudflareEndpoint, createdOn, customRemoteIdentities, customerEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, name, pskMetadata, replayProtection); } 
-@override String toString() { return 'MagicIpsecTunnel(allowNullCipher: $allowNullCipher, automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareEndpoint: $cloudflareEndpoint, createdOn: $createdOn, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, name: $name, pskMetadata: $pskMetadata, replayProtection: $replayProtection)'; } 
+          replayProtection == other.replayProtection;
+
+@override int get hashCode => Object.hash(allowNullCipher, automaticReturnRouting, bgp, bgpStatus, cloudflareEndpoint, createdOn, customRemoteIdentities, customerEndpoint, description, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, name, pskMetadata, replayProtection);
+
+@override String toString() => 'MagicIpsecTunnel(allowNullCipher: $allowNullCipher, automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, bgpStatus: $bgpStatus, cloudflareEndpoint: $cloudflareEndpoint, createdOn: $createdOn, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, name: $name, pskMetadata: $pskMetadata, replayProtection: $replayProtection)';
+
  }

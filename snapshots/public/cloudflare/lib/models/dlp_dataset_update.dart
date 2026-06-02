@@ -30,11 +30,14 @@ DlpDatasetUpdate copyWith({bool? Function()? caseSensitive, String? Function()? 
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetUpdate &&
           caseSensitive == other.caseSensitive &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(caseSensitive, description, name); } 
-@override String toString() { return 'DlpDatasetUpdate(caseSensitive: $caseSensitive, description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(caseSensitive, description, name);
+
+@override String toString() => 'DlpDatasetUpdate(caseSensitive: $caseSensitive, description: $description, name: $name)';
+
  }

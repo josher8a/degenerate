@@ -47,14 +47,17 @@ EvalStoredCompletionsSource copyWith({CreateEvalStoredCompletionsDataSourceConfi
   createdBefore: createdBefore != null ? createdBefore() : this.createdBefore,
   limit: limit != null ? limit() : this.limit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalStoredCompletionsSource &&
           type == other.type &&
           metadata == other.metadata &&
           model == other.model &&
           createdAfter == other.createdAfter &&
           createdBefore == other.createdBefore &&
-          limit == other.limit; } 
-@override int get hashCode { return Object.hash(type, metadata, model, createdAfter, createdBefore, limit); } 
-@override String toString() { return 'EvalStoredCompletionsSource(type: $type, metadata: $metadata, model: $model, createdAfter: $createdAfter, createdBefore: $createdBefore, limit: $limit)'; } 
+          limit == other.limit;
+
+@override int get hashCode => Object.hash(type, metadata, model, createdAfter, createdBefore, limit);
+
+@override String toString() => 'EvalStoredCompletionsSource(type: $type, metadata: $metadata, model: $model, createdAfter: $createdAfter, createdBefore: $createdBefore, limit: $limit)';
+
  }

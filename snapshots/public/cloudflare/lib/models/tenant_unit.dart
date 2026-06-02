@@ -39,13 +39,16 @@ TenantUnit copyWith({List<Map<String,dynamic>>? unitMemberships, Map<String,dyna
   unitStatus: unitStatus ?? this.unitStatus,
   unitTag: unitTag ?? this.unitTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TenantUnit &&
           listEquals(unitMemberships, other.unitMemberships) &&
           unitMetadata == other.unitMetadata &&
           unitName == other.unitName &&
           unitStatus == other.unitStatus &&
-          unitTag == other.unitTag; } 
-@override int get hashCode { return Object.hash(Object.hashAll(unitMemberships), unitMetadata, unitName, unitStatus, unitTag); } 
-@override String toString() { return 'TenantUnit(unitMemberships: $unitMemberships, unitMetadata: $unitMetadata, unitName: $unitName, unitStatus: $unitStatus, unitTag: $unitTag)'; } 
+          unitTag == other.unitTag;
+
+@override int get hashCode => Object.hash(Object.hashAll(unitMemberships), unitMetadata, unitName, unitStatus, unitTag);
+
+@override String toString() => 'TenantUnit(unitMemberships: $unitMemberships, unitMetadata: $unitMetadata, unitName: $unitName, unitStatus: $unitStatus, unitTag: $unitTag)';
+
  }

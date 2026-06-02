@@ -30,12 +30,15 @@ CallsApp copyWith({CallsCreated? Function()? created, CallsModified? Function()?
   name: name != null ? name() : this.name,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CallsApp &&
           created == other.created &&
           modified == other.modified &&
           name == other.name &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(created, modified, name, uid); } 
-@override String toString() { return 'CallsApp(created: $created, modified: $modified, name: $name, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(created, modified, name, uid);
+
+@override String toString() => 'CallsApp(created: $created, modified: $modified, name: $name, uid: $uid)';
+
  }

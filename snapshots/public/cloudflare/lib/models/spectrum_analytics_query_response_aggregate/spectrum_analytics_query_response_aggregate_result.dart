@@ -44,13 +44,16 @@ SpectrumAnalyticsQueryResponseAggregateResult copyWith({SpectrumAnalyticsIdentif
   connections: connections ?? this.connections,
   durationAvg: durationAvg ?? this.durationAvg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumAnalyticsQueryResponseAggregateResult &&
           appId == other.appId &&
           bytesEgress == other.bytesEgress &&
           bytesIngress == other.bytesIngress &&
           connections == other.connections &&
-          durationAvg == other.durationAvg; } 
-@override int get hashCode { return Object.hash(appId, bytesEgress, bytesIngress, connections, durationAvg); } 
-@override String toString() { return 'SpectrumAnalyticsQueryResponseAggregateResult(appId: $appId, bytesEgress: $bytesEgress, bytesIngress: $bytesIngress, connections: $connections, durationAvg: $durationAvg)'; } 
+          durationAvg == other.durationAvg;
+
+@override int get hashCode => Object.hash(appId, bytesEgress, bytesIngress, connections, durationAvg);
+
+@override String toString() => 'SpectrumAnalyticsQueryResponseAggregateResult(appId: $appId, bytesEgress: $bytesEgress, bytesIngress: $bytesIngress, connections: $connections, durationAvg: $durationAvg)';
+
  }

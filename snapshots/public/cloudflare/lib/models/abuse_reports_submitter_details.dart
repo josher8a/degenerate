@@ -31,12 +31,15 @@ AbuseReportsSubmitterDetails copyWith({String? Function()? company, String? Func
   name: name != null ? name() : this.name,
   telephone: telephone != null ? telephone() : this.telephone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbuseReportsSubmitterDetails &&
           company == other.company &&
           email == other.email &&
           name == other.name &&
-          telephone == other.telephone; } 
-@override int get hashCode { return Object.hash(company, email, name, telephone); } 
-@override String toString() { return 'AbuseReportsSubmitterDetails(company: $company, email: $email, name: $name, telephone: $telephone)'; } 
+          telephone == other.telephone;
+
+@override int get hashCode => Object.hash(company, email, name, telephone);
+
+@override String toString() => 'AbuseReportsSubmitterDetails(company: $company, email: $email, name: $name, telephone: $telephone)';
+
  }

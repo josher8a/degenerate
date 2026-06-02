@@ -25,11 +25,14 @@ PostCheckoutSessionsRequestPaymentMethodOptionsKlarna copyWith({CheckoutAffirmPa
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsKlarna &&
           captureMethod == other.captureMethod &&
           setupFutureUsage == other.setupFutureUsage &&
-          subscriptions == other.subscriptions; } 
-@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage, subscriptions); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage, subscriptions: $subscriptions)'; } 
+          subscriptions == other.subscriptions;
+
+@override int get hashCode => Object.hash(captureMethod, setupFutureUsage, subscriptions);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarna(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage, subscriptions: $subscriptions)';
+
  }

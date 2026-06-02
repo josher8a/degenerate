@@ -29,10 +29,13 @@ UsersListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String?
   subjectDigests: subjectDigests ?? this.subjectDigests,
   predicateType: predicateType != null ? predicateType() : this.predicateType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsersListAttestationsBulkRequest &&
           listEquals(subjectDigests, other.subjectDigests) &&
-          predicateType == other.predicateType; } 
-@override int get hashCode { return Object.hash(Object.hashAll(subjectDigests), predicateType); } 
-@override String toString() { return 'UsersListAttestationsBulkRequest(subjectDigests: $subjectDigests, predicateType: $predicateType)'; } 
+          predicateType == other.predicateType;
+
+@override int get hashCode => Object.hash(Object.hashAll(subjectDigests), predicateType);
+
+@override String toString() => 'UsersListAttestationsBulkRequest(subjectDigests: $subjectDigests, predicateType: $predicateType)';
+
  }

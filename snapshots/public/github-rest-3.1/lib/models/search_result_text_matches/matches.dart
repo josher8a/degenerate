@@ -20,10 +20,13 @@ Matches copyWith({String? Function()? text, List<int>? Function()? indices, }) {
   text: text != null ? text() : this.text,
   indices: indices != null ? indices() : this.indices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Matches &&
           text == other.text &&
-          listEquals(indices, other.indices); } 
-@override int get hashCode { return Object.hash(text, Object.hashAll(indices ?? const [])); } 
-@override String toString() { return 'Matches(text: $text, indices: $indices)'; } 
+          listEquals(indices, other.indices);
+
+@override int get hashCode => Object.hash(text, Object.hashAll(indices ?? const []));
+
+@override String toString() => 'Matches(text: $text, indices: $indices)';
+
  }

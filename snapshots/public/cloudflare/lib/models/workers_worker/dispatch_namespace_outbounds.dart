@@ -45,12 +45,15 @@ DispatchNamespaceOutbounds copyWith({String? namespaceId, String? namespaceName,
   workerId: workerId ?? this.workerId,
   workerName: workerName ?? this.workerName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DispatchNamespaceOutbounds &&
           namespaceId == other.namespaceId &&
           namespaceName == other.namespaceName &&
           workerId == other.workerId &&
-          workerName == other.workerName; } 
-@override int get hashCode { return Object.hash(namespaceId, namespaceName, workerId, workerName); } 
-@override String toString() { return 'DispatchNamespaceOutbounds(namespaceId: $namespaceId, namespaceName: $namespaceName, workerId: $workerId, workerName: $workerName)'; } 
+          workerName == other.workerName;
+
+@override int get hashCode => Object.hash(namespaceId, namespaceName, workerId, workerName);
+
+@override String toString() => 'DispatchNamespaceOutbounds(namespaceId: $namespaceId, namespaceName: $namespaceName, workerId: $workerId, workerName: $workerName)';
+
  }

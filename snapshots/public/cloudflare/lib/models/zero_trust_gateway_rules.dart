@@ -176,7 +176,7 @@ ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGateway
   version: version != null ? version() : this.version,
   warningStatus: warningStatus != null ? warningStatus() : this.warningStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayRules &&
           action == other.action &&
           createdAt == other.createdAt &&
@@ -198,7 +198,10 @@ ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGateway
           traffic == other.traffic &&
           updatedAt == other.updatedAt &&
           version == other.version &&
-          warningStatus == other.warningStatus; } 
-@override int get hashCode { return Object.hashAll([action, createdAt, deletedAt, description, devicePosture, enabled, expiration, Object.hashAll(filters), id, identity, name, precedence, readOnly, ruleSettings, schedule, sharable, sourceAccount, traffic, updatedAt, version, warningStatus]); } 
-@override String toString() { return 'ZeroTrustGatewayRules(action: $action, createdAt: $createdAt, deletedAt: $deletedAt, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, id: $id, identity: $identity, name: $name, precedence: $precedence, readOnly: $readOnly, ruleSettings: $ruleSettings, schedule: $schedule, sharable: $sharable, sourceAccount: $sourceAccount, traffic: $traffic, updatedAt: $updatedAt, version: $version, warningStatus: $warningStatus)'; } 
+          warningStatus == other.warningStatus;
+
+@override int get hashCode => Object.hashAll([action, createdAt, deletedAt, description, devicePosture, enabled, expiration, Object.hashAll(filters), id, identity, name, precedence, readOnly, ruleSettings, schedule, sharable, sourceAccount, traffic, updatedAt, version, warningStatus]);
+
+@override String toString() => 'ZeroTrustGatewayRules(action: $action, createdAt: $createdAt, deletedAt: $deletedAt, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, id: $id, identity: $identity, name: $name, precedence: $precedence, readOnly: $readOnly, ruleSettings: $ruleSettings, schedule: $schedule, sharable: $sharable, sourceAccount: $sourceAccount, traffic: $traffic, updatedAt: $updatedAt, version: $version, warningStatus: $warningStatus)';
+
  }

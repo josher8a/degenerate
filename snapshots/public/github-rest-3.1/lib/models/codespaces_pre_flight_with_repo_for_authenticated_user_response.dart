@@ -20,10 +20,13 @@ CodespacesPreFlightWithRepoForAuthenticatedUserResponse copyWith({SimpleUser? Fu
   billableOwner: billableOwner != null ? billableOwner() : this.billableOwner,
   defaults: defaults != null ? defaults() : this.defaults,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesPreFlightWithRepoForAuthenticatedUserResponse &&
           billableOwner == other.billableOwner &&
-          defaults == other.defaults; } 
-@override int get hashCode { return Object.hash(billableOwner, defaults); } 
-@override String toString() { return 'CodespacesPreFlightWithRepoForAuthenticatedUserResponse(billableOwner: $billableOwner, defaults: $defaults)'; } 
+          defaults == other.defaults;
+
+@override int get hashCode => Object.hash(billableOwner, defaults);
+
+@override String toString() => 'CodespacesPreFlightWithRepoForAuthenticatedUserResponse(billableOwner: $billableOwner, defaults: $defaults)';
+
  }

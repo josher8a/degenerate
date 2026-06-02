@@ -27,11 +27,14 @@ MconnCustomerDeviceOptions copyWith({String? Function()? id, bool? Function()? p
   provisionLicense: provisionLicense != null ? provisionLicense() : this.provisionLicense,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnCustomerDeviceOptions &&
           id == other.id &&
           provisionLicense == other.provisionLicense &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(id, provisionLicense, serialNumber); } 
-@override String toString() { return 'MconnCustomerDeviceOptions(id: $id, provisionLicense: $provisionLicense, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(id, provisionLicense, serialNumber);
+
+@override String toString() => 'MconnCustomerDeviceOptions(id: $id, provisionLicense: $provisionLicense, serialNumber: $serialNumber)';
+
  }

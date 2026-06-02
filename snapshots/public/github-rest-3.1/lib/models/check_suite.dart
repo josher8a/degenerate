@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckSuiteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckSuiteStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckSuiteStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckSuiteStatus($value)';
+
  }
 /// A suite of checks performed on the code of a given code change
 @immutable final class CheckSuite {const CheckSuite({required this.id, required this.nodeId, required this.headBranch, required this.headSha, required this.status, required this.conclusion, required this.url, required this.before, required this.after, required this.pullRequests, required this.app, required this.repository, required this.createdAt, required this.updatedAt, required this.headCommit, required this.latestCheckRunsCount, required this.checkRunsUrl, this.rerequestable, this.runsRerequestable, });
@@ -164,7 +167,7 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
   rerequestable: rerequestable != null ? rerequestable() : this.rerequestable,
   runsRerequestable: runsRerequestable != null ? runsRerequestable() : this.runsRerequestable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckSuite &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -184,7 +187,10 @@ CheckSuite copyWith({int? id, String? nodeId, String? Function()? headBranch, St
           latestCheckRunsCount == other.latestCheckRunsCount &&
           checkRunsUrl == other.checkRunsUrl &&
           rerequestable == other.rerequestable &&
-          runsRerequestable == other.runsRerequestable; } 
-@override int get hashCode { return Object.hash(id, nodeId, headBranch, headSha, status, conclusion, url, before, after, Object.hashAll(pullRequests ?? const []), app, repository, createdAt, updatedAt, headCommit, latestCheckRunsCount, checkRunsUrl, rerequestable, runsRerequestable); } 
-@override String toString() { return 'CheckSuite(id: $id, nodeId: $nodeId, headBranch: $headBranch, headSha: $headSha, status: $status, conclusion: $conclusion, url: $url, before: $before, after: $after, pullRequests: $pullRequests, app: $app, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt, headCommit: $headCommit, latestCheckRunsCount: $latestCheckRunsCount, checkRunsUrl: $checkRunsUrl, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable)'; } 
+          runsRerequestable == other.runsRerequestable;
+
+@override int get hashCode => Object.hash(id, nodeId, headBranch, headSha, status, conclusion, url, before, after, Object.hashAll(pullRequests ?? const []), app, repository, createdAt, updatedAt, headCommit, latestCheckRunsCount, checkRunsUrl, rerequestable, runsRerequestable);
+
+@override String toString() => 'CheckSuite(id: $id, nodeId: $nodeId, headBranch: $headBranch, headSha: $headSha, status: $status, conclusion: $conclusion, url: $url, before: $before, after: $after, pullRequests: $pullRequests, app: $app, repository: $repository, createdAt: $createdAt, updatedAt: $updatedAt, headCommit: $headCommit, latestCheckRunsCount: $latestCheckRunsCount, checkRunsUrl: $checkRunsUrl, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable)';
+
  }

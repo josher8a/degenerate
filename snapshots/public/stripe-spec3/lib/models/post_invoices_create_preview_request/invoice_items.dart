@@ -105,7 +105,7 @@ InvoiceItems copyWith({int? Function()? amount, String? Function()? currency, St
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceItems &&
           amount == other.amount &&
           currency == other.currency &&
@@ -122,7 +122,10 @@ InvoiceItems copyWith({int? Function()? amount, String? Function()? currency, St
           taxCode == other.taxCode &&
           taxRates == other.taxRates &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, currency, description, discountable, discounts, invoiceitem, metadata, period, price, priceData, quantity, taxBehavior, taxCode, taxRates, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'InvoiceItems(amount: $amount, currency: $currency, description: $description, discountable: $discountable, discounts: $discounts, invoiceitem: $invoiceitem, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(amount, currency, description, discountable, discounts, invoiceitem, metadata, period, price, priceData, quantity, taxBehavior, taxCode, taxRates, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'InvoiceItems(amount: $amount, currency: $currency, description: $description, discountable: $discountable, discounts: $discounts, invoiceitem: $invoiceitem, metadata: $metadata, period: $period, price: $price, priceData: $priceData, quantity: $quantity, taxBehavior: $taxBehavior, taxCode: $taxCode, taxRates: $taxRates, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

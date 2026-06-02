@@ -26,10 +26,13 @@ SkippedUrls copyWith({String? Function()? url, int? Function()? urlId, }) { retu
   url: url != null ? url() : this.url,
   urlId: urlId != null ? urlId() : this.urlId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SkippedUrls &&
           url == other.url &&
-          urlId == other.urlId; } 
-@override int get hashCode { return Object.hash(url, urlId); } 
-@override String toString() { return 'SkippedUrls(url: $url, urlId: $urlId)'; } 
+          urlId == other.urlId;
+
+@override int get hashCode => Object.hash(url, urlId);
+
+@override String toString() => 'SkippedUrls(url: $url, urlId: $urlId)';
+
  }

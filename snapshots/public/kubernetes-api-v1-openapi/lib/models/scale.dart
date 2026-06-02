@@ -41,13 +41,16 @@ Scale copyWith({String? Function()? apiVersion, String? Function()? kind, Object
   spec: spec != null ? spec() : this.spec,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Scale &&
           apiVersion == other.apiVersion &&
           kind == other.kind &&
           metadata == other.metadata &&
           spec == other.spec &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(apiVersion, kind, metadata, spec, status); } 
-@override String toString() { return 'Scale(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(apiVersion, kind, metadata, spec, status);
+
+@override String toString() => 'Scale(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, spec: $spec, status: $status)';
+
  }

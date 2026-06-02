@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileLinkObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileLinkObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileLinkObject($value)';
+
  }
 /// To share the contents of a `File` object with non-Stripe users, you can
 /// create a `FileLink`. `FileLink`s contain a URL that you can use to
@@ -103,7 +106,7 @@ FileLink copyWith({int? created, bool? expired, int? Function()? expiresAt, File
   object: object ?? this.object,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileLink &&
           created == other.created &&
           expired == other.expired &&
@@ -113,7 +116,10 @@ FileLink copyWith({int? created, bool? expired, int? Function()? expiresAt, File
           livemode == other.livemode &&
           metadata == other.metadata &&
           object == other.object &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(created, expired, expiresAt, file, id, livemode, metadata, object, url); } 
-@override String toString() { return 'FileLink(created: $created, expired: $expired, expiresAt: $expiresAt, file: $file, id: $id, livemode: $livemode, metadata: $metadata, object: $object, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(created, expired, expiresAt, file, id, livemode, metadata, object, url);
+
+@override String toString() => 'FileLink(created: $created, expired: $expired, expiresAt: $expiresAt, file: $file, id: $id, livemode: $livemode, metadata: $metadata, object: $object, url: $url)';
+
  }

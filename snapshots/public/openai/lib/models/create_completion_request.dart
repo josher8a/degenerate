@@ -215,7 +215,7 @@ CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCom
   topP: topP != null ? topP() : this.topP,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateCompletionRequest &&
           model == other.model &&
           prompt == other.prompt &&
@@ -234,7 +234,10 @@ CreateCompletionRequest copyWith({CreateCompletionRequestModel? model, CreateCom
           suffix == other.suffix &&
           temperature == other.temperature &&
           topP == other.topP &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(model, prompt, bestOf, echo, frequencyPenalty, logitBias, logprobs, maxTokens, n, presencePenalty, seed, stop, stream, streamOptions, suffix, temperature, topP, user); } 
-@override String toString() { return 'CreateCompletionRequest(model: $model, prompt: $prompt, bestOf: $bestOf, echo: $echo, frequencyPenalty: $frequencyPenalty, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, presencePenalty: $presencePenalty, seed: $seed, stop: $stop, stream: $stream, streamOptions: $streamOptions, suffix: $suffix, temperature: $temperature, topP: $topP, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(model, prompt, bestOf, echo, frequencyPenalty, logitBias, logprobs, maxTokens, n, presencePenalty, seed, stop, stream, streamOptions, suffix, temperature, topP, user);
+
+@override String toString() => 'CreateCompletionRequest(model: $model, prompt: $prompt, bestOf: $bestOf, echo: $echo, frequencyPenalty: $frequencyPenalty, logitBias: $logitBias, logprobs: $logprobs, maxTokens: $maxTokens, n: $n, presencePenalty: $presencePenalty, seed: $seed, stop: $stop, stream: $stream, streamOptions: $streamOptions, suffix: $suffix, temperature: $temperature, topP: $topP, user: $user)';
+
  }

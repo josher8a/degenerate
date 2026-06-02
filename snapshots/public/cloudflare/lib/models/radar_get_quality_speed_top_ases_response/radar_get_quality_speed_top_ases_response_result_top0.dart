@@ -79,7 +79,7 @@ RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownloa
   numTests: numTests ?? this.numTests,
   rankPower: rankPower ?? this.rankPower,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedTopAsesResponseResultTop0 &&
           bandwidthDownload == other.bandwidthDownload &&
           bandwidthUpload == other.bandwidthUpload &&
@@ -90,7 +90,10 @@ RadarGetQualitySpeedTopAsesResponseResultTop0 copyWith({String? bandwidthDownloa
           latencyIdle == other.latencyIdle &&
           latencyLoaded == other.latencyLoaded &&
           numTests == other.numTests &&
-          rankPower == other.rankPower; } 
-@override int get hashCode { return Object.hash(bandwidthDownload, bandwidthUpload, clientAsn, clientAsName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower); } 
-@override String toString() { return 'RadarGetQualitySpeedTopAsesResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientAsn: $clientAsn, clientAsName: $clientAsName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)'; } 
+          rankPower == other.rankPower;
+
+@override int get hashCode => Object.hash(bandwidthDownload, bandwidthUpload, clientAsn, clientAsName, jitterIdle, jitterLoaded, latencyIdle, latencyLoaded, numTests, rankPower);
+
+@override String toString() => 'RadarGetQualitySpeedTopAsesResponseResultTop0(bandwidthDownload: $bandwidthDownload, bandwidthUpload: $bandwidthUpload, clientAsn: $clientAsn, clientAsName: $clientAsName, jitterIdle: $jitterIdle, jitterLoaded: $jitterLoaded, latencyIdle: $latencyIdle, latencyLoaded: $latencyLoaded, numTests: $numTests, rankPower: $rankPower)';
+
  }

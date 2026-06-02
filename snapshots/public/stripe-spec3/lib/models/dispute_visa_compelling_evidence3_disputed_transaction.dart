@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices($value)';
+
  }
 /// 
 @immutable final class DisputeVisaCompellingEvidence3DisputedTransaction {const DisputeVisaCompellingEvidence3DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });
@@ -111,7 +114,7 @@ DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? 
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeVisaCompellingEvidence3DisputedTransaction &&
           customerAccountId == other.customerAccountId &&
           customerDeviceFingerprint == other.customerDeviceFingerprint &&
@@ -120,7 +123,10 @@ DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? 
           customerPurchaseIp == other.customerPurchaseIp &&
           merchandiseOrServices == other.merchandiseOrServices &&
           productDescription == other.productDescription &&
-          shippingAddress == other.shippingAddress; } 
-@override int get hashCode { return Object.hash(customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, merchandiseOrServices, productDescription, shippingAddress); } 
-@override String toString() { return 'DisputeVisaCompellingEvidence3DisputedTransaction(customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, merchandiseOrServices: $merchandiseOrServices, productDescription: $productDescription, shippingAddress: $shippingAddress)'; } 
+          shippingAddress == other.shippingAddress;
+
+@override int get hashCode => Object.hash(customerAccountId, customerDeviceFingerprint, customerDeviceId, customerEmailAddress, customerPurchaseIp, merchandiseOrServices, productDescription, shippingAddress);
+
+@override String toString() => 'DisputeVisaCompellingEvidence3DisputedTransaction(customerAccountId: $customerAccountId, customerDeviceFingerprint: $customerDeviceFingerprint, customerDeviceId: $customerDeviceId, customerEmailAddress: $customerEmailAddress, customerPurchaseIp: $customerPurchaseIp, merchandiseOrServices: $merchandiseOrServices, productDescription: $productDescription, shippingAddress: $shippingAddress)';
+
  }

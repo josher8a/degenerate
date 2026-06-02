@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HealthCheckRate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HealthCheckRate($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HealthCheckRate && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HealthCheckRate($value)';
+
  }
 @immutable final class MagicWan {const MagicWan({this.healthCheckRate = HealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });
 
@@ -85,7 +88,7 @@ MagicWan copyWith({HealthCheckRate Function()? healthCheckRate, MagicIdentifier?
   staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
   vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicWan &&
           healthCheckRate == other.healthCheckRate &&
           id == other.id &&
@@ -94,7 +97,10 @@ MagicWan copyWith({HealthCheckRate Function()? healthCheckRate, MagicIdentifier?
           priority == other.priority &&
           siteId == other.siteId &&
           staticAddressing == other.staticAddressing &&
-          vlanTag == other.vlanTag; } 
-@override int get hashCode { return Object.hash(healthCheckRate, id, name, physport, priority, siteId, staticAddressing, vlanTag); } 
-@override String toString() { return 'MagicWan(healthCheckRate: $healthCheckRate, id: $id, name: $name, physport: $physport, priority: $priority, siteId: $siteId, staticAddressing: $staticAddressing, vlanTag: $vlanTag)'; } 
+          vlanTag == other.vlanTag;
+
+@override int get hashCode => Object.hash(healthCheckRate, id, name, physport, priority, siteId, staticAddressing, vlanTag);
+
+@override String toString() => 'MagicWan(healthCheckRate: $healthCheckRate, id: $id, name: $name, physport: $physport, priority: $priority, siteId: $siteId, staticAddressing: $staticAddressing, vlanTag: $vlanTag)';
+
  }

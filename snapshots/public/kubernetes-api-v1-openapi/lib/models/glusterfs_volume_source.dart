@@ -30,11 +30,14 @@ GlusterfsVolumeSource copyWith({String? endpoints, String? path, bool? Function(
   path: path ?? this.path,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GlusterfsVolumeSource &&
           endpoints == other.endpoints &&
           path == other.path &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(endpoints, path, readOnly); } 
-@override String toString() { return 'GlusterfsVolumeSource(endpoints: $endpoints, path: $path, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(endpoints, path, readOnly);
+
+@override String toString() => 'GlusterfsVolumeSource(endpoints: $endpoints, path: $path, readOnly: $readOnly)';
+
  }

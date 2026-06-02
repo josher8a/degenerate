@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ClickButtonType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ClickButtonType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClickButtonType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ClickButtonType($value)';
+
  }
 /// A click action.
 @immutable final class ClickParam {const ClickParam({required this.button, required this.x, required this.y, this.type = 'click', });
@@ -71,12 +74,15 @@ ClickParam copyWith({String? type, ClickButtonType? button, int? x, int? y, }) {
   x: x ?? this.x,
   y: y ?? this.y,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClickParam &&
           type == other.type &&
           button == other.button &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(type, button, x, y); } 
-@override String toString() { return 'ClickParam(type: $type, button: $button, x: $x, y: $y)'; } 
+          y == other.y;
+
+@override int get hashCode => Object.hash(type, button, x, y);
+
+@override String toString() => 'ClickParam(type: $type, button: $button, x: $x, y: $y)';
+
  }

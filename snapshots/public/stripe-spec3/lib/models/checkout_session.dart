@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionBillingAddressCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionBillingAddressCollection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionBillingAddressCollection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionBillingAddressCollection($value)';
+
  }
 /// Configure whether a Checkout Session creates a Customer when the Checkout Session completes.
 @immutable final class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionCustomerCreation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionCustomerCreation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionCustomerCreation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionCustomerCreation($value)';
+
  }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
 @immutable final class CheckoutSessionLocale {const CheckoutSessionLocale._(this.value);
@@ -187,10 +193,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionLocale && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionLocale($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionLocale && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionLocale($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class CheckoutSessionObject {const CheckoutSessionObject._(this.value);
@@ -209,10 +218,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionObject($value)';
+
  }
 /// Where the user is coming from. This informs the optimizations that are applied to the session.
 @immutable final class CheckoutSessionOriginContext {const CheckoutSessionOriginContext._(this.value);
@@ -234,10 +246,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionOriginContext && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionOriginContext($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionOriginContext && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionOriginContext($value)';
+
  }
 /// Configure whether a Checkout Session should collect a payment method. Defaults to `always`.
 @immutable final class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection._(this.value);
@@ -259,10 +274,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionPaymentMethodCollection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionPaymentMethodCollection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionPaymentMethodCollection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionPaymentMethodCollection($value)';
+
  }
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
@@ -288,10 +306,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentStatus($value)';
+
  }
 /// The status of the Checkout Session, one of `open`, `complete`, or `expired`.
 @immutable final class CheckoutSessionStatus {const CheckoutSessionStatus._(this.value);
@@ -316,10 +337,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionStatus($value)';
+
  }
 /// Describes the type of transaction being performed by Checkout in order to customize
 /// relevant text on the page, such as the submit button. `submit_type` can only be
@@ -352,10 +376,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionSubmitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionSubmitType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionSubmitType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionSubmitType($value)';
+
  }
 /// The UI mode of the Session. Defaults to `hosted`.
 @immutable final class CheckoutSessionUiMode {const CheckoutSessionUiMode._(this.value);
@@ -380,10 +407,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckoutSessionUiMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckoutSessionUiMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionUiMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckoutSessionUiMode($value)';
+
  }
 /// A Checkout Session represents your customer's session as they pay for
 /// one-time purchases or subscriptions through [Checkout](https://docs.stripe.com/payments/checkout)
@@ -868,7 +898,7 @@ CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()
   url: url != null ? url() : this.url,
   walletOptions: walletOptions != null ? walletOptions() : this.walletOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutSession &&
           adaptivePricing == other.adaptivePricing &&
           afterExpiration == other.afterExpiration &&
@@ -935,7 +965,10 @@ CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()
           totalDetails == other.totalDetails &&
           uiMode == other.uiMode &&
           url == other.url &&
-          walletOptions == other.walletOptions; } 
-@override int get hashCode { return Object.hashAll([adaptivePricing, afterExpiration, allowPromotionCodes, amountSubtotal, amountTotal, automaticTax, billingAddressCollection, brandingSettings, cancelUrl, clientReferenceId, clientSecret, collectedInformation, consent, consentCollection, created, currency, currencyConversion, Object.hashAll(customFields), customText, customer, customerAccount, customerCreation, customerDetails, customerEmail, Object.hashAll(discounts ?? const []), Object.hashAll(excludedPaymentMethodTypes ?? const []), expiresAt, id, invoice, invoiceCreation, lineItems, livemode, locale, metadata, mode, nameCollection, object, Object.hashAll(optionalItems ?? const []), originContext, paymentIntent, paymentLink, paymentMethodCollection, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), paymentStatus, permissions, phoneNumberCollection, presentmentDetails, recoveredFrom, redirectOnCompletion, returnUrl, savedPaymentMethodOptions, setupIntent, shippingAddressCollection, shippingCost, Object.hashAll(shippingOptions), status, submitType, subscription, successUrl, taxIdCollection, totalDetails, uiMode, url, walletOptions]); } 
-@override String toString() { return 'CheckoutSession(adaptivePricing: $adaptivePricing, afterExpiration: $afterExpiration, allowPromotionCodes: $allowPromotionCodes, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, brandingSettings: $brandingSettings, cancelUrl: $cancelUrl, clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, collectedInformation: $collectedInformation, consent: $consent, consentCollection: $consentCollection, created: $created, currency: $currency, currencyConversion: $currencyConversion, customFields: $customFields, customText: $customText, customer: $customer, customerAccount: $customerAccount, customerCreation: $customerCreation, customerDetails: $customerDetails, customerEmail: $customerEmail, discounts: $discounts, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expiresAt: $expiresAt, id: $id, invoice: $invoice, invoiceCreation: $invoiceCreation, lineItems: $lineItems, livemode: $livemode, locale: $locale, metadata: $metadata, mode: $mode, nameCollection: $nameCollection, object: $object, optionalItems: $optionalItems, originContext: $originContext, paymentIntent: $paymentIntent, paymentLink: $paymentLink, paymentMethodCollection: $paymentMethodCollection, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, paymentStatus: $paymentStatus, permissions: $permissions, phoneNumberCollection: $phoneNumberCollection, presentmentDetails: $presentmentDetails, recoveredFrom: $recoveredFrom, redirectOnCompletion: $redirectOnCompletion, returnUrl: $returnUrl, savedPaymentMethodOptions: $savedPaymentMethodOptions, setupIntent: $setupIntent, shippingAddressCollection: $shippingAddressCollection, shippingCost: $shippingCost, shippingOptions: $shippingOptions, status: $status, submitType: $submitType, subscription: $subscription, successUrl: $successUrl, taxIdCollection: $taxIdCollection, totalDetails: $totalDetails, uiMode: $uiMode, url: $url, walletOptions: $walletOptions)'; } 
+          walletOptions == other.walletOptions;
+
+@override int get hashCode => Object.hashAll([adaptivePricing, afterExpiration, allowPromotionCodes, amountSubtotal, amountTotal, automaticTax, billingAddressCollection, brandingSettings, cancelUrl, clientReferenceId, clientSecret, collectedInformation, consent, consentCollection, created, currency, currencyConversion, Object.hashAll(customFields), customText, customer, customerAccount, customerCreation, customerDetails, customerEmail, Object.hashAll(discounts ?? const []), Object.hashAll(excludedPaymentMethodTypes ?? const []), expiresAt, id, invoice, invoiceCreation, lineItems, livemode, locale, metadata, mode, nameCollection, object, Object.hashAll(optionalItems ?? const []), originContext, paymentIntent, paymentLink, paymentMethodCollection, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), paymentStatus, permissions, phoneNumberCollection, presentmentDetails, recoveredFrom, redirectOnCompletion, returnUrl, savedPaymentMethodOptions, setupIntent, shippingAddressCollection, shippingCost, Object.hashAll(shippingOptions), status, submitType, subscription, successUrl, taxIdCollection, totalDetails, uiMode, url, walletOptions]);
+
+@override String toString() => 'CheckoutSession(adaptivePricing: $adaptivePricing, afterExpiration: $afterExpiration, allowPromotionCodes: $allowPromotionCodes, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, brandingSettings: $brandingSettings, cancelUrl: $cancelUrl, clientReferenceId: $clientReferenceId, clientSecret: $clientSecret, collectedInformation: $collectedInformation, consent: $consent, consentCollection: $consentCollection, created: $created, currency: $currency, currencyConversion: $currencyConversion, customFields: $customFields, customText: $customText, customer: $customer, customerAccount: $customerAccount, customerCreation: $customerCreation, customerDetails: $customerDetails, customerEmail: $customerEmail, discounts: $discounts, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expiresAt: $expiresAt, id: $id, invoice: $invoice, invoiceCreation: $invoiceCreation, lineItems: $lineItems, livemode: $livemode, locale: $locale, metadata: $metadata, mode: $mode, nameCollection: $nameCollection, object: $object, optionalItems: $optionalItems, originContext: $originContext, paymentIntent: $paymentIntent, paymentLink: $paymentLink, paymentMethodCollection: $paymentMethodCollection, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, paymentStatus: $paymentStatus, permissions: $permissions, phoneNumberCollection: $phoneNumberCollection, presentmentDetails: $presentmentDetails, recoveredFrom: $recoveredFrom, redirectOnCompletion: $redirectOnCompletion, returnUrl: $returnUrl, savedPaymentMethodOptions: $savedPaymentMethodOptions, setupIntent: $setupIntent, shippingAddressCollection: $shippingAddressCollection, shippingCost: $shippingCost, shippingOptions: $shippingOptions, status: $status, submitType: $submitType, subscription: $subscription, successUrl: $successUrl, taxIdCollection: $taxIdCollection, totalDetails: $totalDetails, uiMode: $uiMode, url: $url, walletOptions: $walletOptions)';
+
  }

@@ -18,13 +18,15 @@ final class SubscriptionsPatchError$400 extends SubscriptionsPatchError {const S
 
 final Failure error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class SubscriptionsPatchError$404 extends SubscriptionsPatchError {const SubscriptionsPatchError$404(this.error);
 
 final Failure error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SubscriptionsPatchError$Unknown extends SubscriptionsPatchError {const SubscriptionsPatchError$Unknown(this.statusCode, this.rawBody, );
 

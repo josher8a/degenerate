@@ -22,10 +22,13 @@ InvoiceSettingQuoteSetting copyWith({int? Function()? daysUntilDue, ConnectAccou
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer ?? this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceSettingQuoteSetting &&
           daysUntilDue == other.daysUntilDue &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(daysUntilDue, issuer); } 
-@override String toString() { return 'InvoiceSettingQuoteSetting(daysUntilDue: $daysUntilDue, issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => Object.hash(daysUntilDue, issuer);
+
+@override String toString() => 'InvoiceSettingQuoteSetting(daysUntilDue: $daysUntilDue, issuer: $issuer)';
+
  }

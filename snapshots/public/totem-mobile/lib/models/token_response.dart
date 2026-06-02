@@ -54,21 +54,17 @@ final class TokenResponse {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is TokenResponse &&
-            accessToken == other.accessToken &&
-            refreshToken == other.refreshToken &&
-            expiresIn == other.expiresIn;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TokenResponse &&
+          accessToken == other.accessToken &&
+          refreshToken == other.refreshToken &&
+          expiresIn == other.expiresIn;
 
   @override
-  int get hashCode {
-    return Object.hash(accessToken, refreshToken, expiresIn);
-  }
+  int get hashCode => Object.hash(accessToken, refreshToken, expiresIn);
 
   @override
-  String toString() {
-    return 'TokenResponse(accessToken: $accessToken, refreshToken: $refreshToken, expiresIn: $expiresIn)';
-  }
+  String toString() =>
+      'TokenResponse(accessToken: $accessToken, refreshToken: $refreshToken, expiresIn: $expiresIn)';
 }

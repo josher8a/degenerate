@@ -159,7 +159,7 @@ TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, String? Function(
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesPhysicalDevice &&
           activeRegistrations == other.activeRegistrations &&
           clientVersion == other.clientVersion &&
@@ -179,7 +179,10 @@ TeamsDevicesPhysicalDevice copyWith({int? activeRegistrations, String? Function(
           osVersionExtra == other.osVersionExtra &&
           publicIp == other.publicIp &&
           serialNumber == other.serialNumber &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(activeRegistrations, clientVersion, createdAt, deletedAt, deviceType, hardwareId, id, lastSeenAt, lastSeenRegistration, lastSeenUser, macAddress, manufacturer, model, name, osVersion, osVersionExtra, publicIp, serialNumber, updatedAt); } 
-@override String toString() { return 'TeamsDevicesPhysicalDevice(activeRegistrations: $activeRegistrations, clientVersion: $clientVersion, createdAt: $createdAt, deletedAt: $deletedAt, deviceType: $deviceType, hardwareId: $hardwareId, id: $id, lastSeenAt: $lastSeenAt, lastSeenRegistration: $lastSeenRegistration, lastSeenUser: $lastSeenUser, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osVersion: $osVersion, osVersionExtra: $osVersionExtra, publicIp: $publicIp, serialNumber: $serialNumber, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(activeRegistrations, clientVersion, createdAt, deletedAt, deviceType, hardwareId, id, lastSeenAt, lastSeenRegistration, lastSeenUser, macAddress, manufacturer, model, name, osVersion, osVersionExtra, publicIp, serialNumber, updatedAt);
+
+@override String toString() => 'TeamsDevicesPhysicalDevice(activeRegistrations: $activeRegistrations, clientVersion: $clientVersion, createdAt: $createdAt, deletedAt: $deletedAt, deviceType: $deviceType, hardwareId: $hardwareId, id: $id, lastSeenAt: $lastSeenAt, lastSeenRegistration: $lastSeenRegistration, lastSeenUser: $lastSeenUser, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osVersion: $osVersion, osVersionExtra: $osVersionExtra, publicIp: $publicIp, serialNumber: $serialNumber, updatedAt: $updatedAt)';
+
  }

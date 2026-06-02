@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AcceptanceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AcceptanceStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AcceptanceStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AcceptanceStatus($value)';
+
  }
 @immutable final class Acceptance {const Acceptance({required this.status, this.date, this.ip, this.offline, this.online, this.type, this.userAgent, });
 
@@ -82,7 +85,7 @@ Acceptance copyWith({int? Function()? date, String? Function()? ip, AcceptanceOf
   type: type != null ? type() : this.type,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Acceptance &&
           date == other.date &&
           ip == other.ip &&
@@ -90,7 +93,10 @@ Acceptance copyWith({int? Function()? date, String? Function()? ip, AcceptanceOf
           online == other.online &&
           status == other.status &&
           type == other.type &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(date, ip, offline, online, status, type, userAgent); } 
-@override String toString() { return 'Acceptance(date: $date, ip: $ip, offline: $offline, online: $online, status: $status, type: $type, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(date, ip, offline, online, status, type, userAgent);
+
+@override String toString() => 'Acceptance(date: $date, ip: $ip, offline: $offline, online: $online, status: $status, type: $type, userAgent: $userAgent)';
+
  }

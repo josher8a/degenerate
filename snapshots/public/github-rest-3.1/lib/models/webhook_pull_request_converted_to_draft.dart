@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestConvertedToDraftAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestConvertedToDraftAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestConvertedToDraftAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestConvertedToDraftAction($value)';
+
  }
 @immutable final class WebhookPullRequestConvertedToDraft {const WebhookPullRequestConvertedToDraft({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -76,7 +79,7 @@ WebhookPullRequestConvertedToDraft copyWith({WebhookPullRequestConvertedToDraftA
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestConvertedToDraft &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -85,7 +88,10 @@ WebhookPullRequestConvertedToDraft copyWith({WebhookPullRequestConvertedToDraftA
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestConvertedToDraft(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, sender);
+
+@override String toString() => 'WebhookPullRequestConvertedToDraft(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+
  }

@@ -66,7 +66,7 @@ AddressingIpamBgpPrefixes copyWith({AddressingSchemasAsn? Function()? asn, Addre
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingIpamBgpPrefixes &&
           asn == other.asn &&
           asnPrependCount == other.asnPrependCount &&
@@ -76,7 +76,10 @@ AddressingIpamBgpPrefixes copyWith({AddressingSchemasAsn? Function()? asn, Addre
           createdAt == other.createdAt &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          onDemand == other.onDemand; } 
-@override int get hashCode { return Object.hash(asn, asnPrependCount, autoAdvertiseWithdraw, bgpSignalOpts, cidr, createdAt, id, modifiedAt, onDemand); } 
-@override String toString() { return 'AddressingIpamBgpPrefixes(asn: $asn, asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, bgpSignalOpts: $bgpSignalOpts, cidr: $cidr, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, onDemand: $onDemand)'; } 
+          onDemand == other.onDemand;
+
+@override int get hashCode => Object.hash(asn, asnPrependCount, autoAdvertiseWithdraw, bgpSignalOpts, cidr, createdAt, id, modifiedAt, onDemand);
+
+@override String toString() => 'AddressingIpamBgpPrefixes(asn: $asn, asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, bgpSignalOpts: $bgpSignalOpts, cidr: $cidr, createdAt: $createdAt, id: $id, modifiedAt: $modifiedAt, onDemand: $onDemand)';
+
  }

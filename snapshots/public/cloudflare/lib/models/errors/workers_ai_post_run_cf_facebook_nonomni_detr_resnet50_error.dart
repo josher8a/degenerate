@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$400 extends Worke
 
 final WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown extends WorkersAiPostRunCfFacebookNonomniDetrResnet50Error {const WorkersAiPostRunCfFacebookNonomniDetrResnet50Error$Unknown(this.statusCode, this.rawBody, );
 

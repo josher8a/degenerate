@@ -61,12 +61,15 @@ DnsRecordsDnsResponseAccountUsageResult copyWith({int? Function()? internalRecor
   recordQuota: recordQuota != null ? recordQuota() : this.recordQuota,
   recordUsage: recordUsage != null ? recordUsage() : this.recordUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseAccountUsageResult &&
           internalRecordQuota == other.internalRecordQuota &&
           internalRecordUsage == other.internalRecordUsage &&
           recordQuota == other.recordQuota &&
-          recordUsage == other.recordUsage; } 
-@override int get hashCode { return Object.hash(internalRecordQuota, internalRecordUsage, recordQuota, recordUsage); } 
-@override String toString() { return 'DnsRecordsDnsResponseAccountUsageResult(internalRecordQuota: $internalRecordQuota, internalRecordUsage: $internalRecordUsage, recordQuota: $recordQuota, recordUsage: $recordUsage)'; } 
+          recordUsage == other.recordUsage;
+
+@override int get hashCode => Object.hash(internalRecordQuota, internalRecordUsage, recordQuota, recordUsage);
+
+@override String toString() => 'DnsRecordsDnsResponseAccountUsageResult(internalRecordQuota: $internalRecordQuota, internalRecordUsage: $internalRecordUsage, recordQuota: $recordQuota, recordUsage: $recordUsage)';
+
  }

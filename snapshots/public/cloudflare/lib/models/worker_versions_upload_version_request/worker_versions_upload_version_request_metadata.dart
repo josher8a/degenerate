@@ -54,7 +54,7 @@ WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Functi
   mainModule: mainModule ?? this.mainModule,
   usageModel: usageModel != null ? usageModel() : this.usageModel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerVersionsUploadVersionRequestMetadata &&
           annotations == other.annotations &&
           listEquals(bindings, other.bindings) &&
@@ -62,7 +62,10 @@ WorkerVersionsUploadVersionRequestMetadata copyWith({MetadataAnnotations? Functi
           listEquals(compatibilityFlags, other.compatibilityFlags) &&
           listEquals(keepBindings, other.keepBindings) &&
           mainModule == other.mainModule &&
-          usageModel == other.usageModel; } 
-@override int get hashCode { return Object.hash(annotations, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), Object.hashAll(keepBindings ?? const []), mainModule, usageModel); } 
-@override String toString() { return 'WorkerVersionsUploadVersionRequestMetadata(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepBindings: $keepBindings, mainModule: $mainModule, usageModel: $usageModel)'; } 
+          usageModel == other.usageModel;
+
+@override int get hashCode => Object.hash(annotations, Object.hashAll(bindings ?? const []), compatibilityDate, Object.hashAll(compatibilityFlags ?? const []), Object.hashAll(keepBindings ?? const []), mainModule, usageModel);
+
+@override String toString() => 'WorkerVersionsUploadVersionRequestMetadata(annotations: $annotations, bindings: $bindings, compatibilityDate: $compatibilityDate, compatibilityFlags: $compatibilityFlags, keepBindings: $keepBindings, mainModule: $mainModule, usageModel: $usageModel)';
+
  }

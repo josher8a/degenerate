@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus($value)';
+
  }
 /// When the certificate was last modified.
 extension type TlsCertificatesAndHostnamesSchemasUpdatedAt(DateTime value) {
@@ -102,7 +105,7 @@ TlsCertificatesAndHostnamesCustomTrustStore copyWith({TlsCertificatesAndHostname
   updatedAt: updatedAt ?? this.updatedAt,
   uploadedOn: uploadedOn ?? this.uploadedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomTrustStore &&
           certificate == other.certificate &&
           expiresOn == other.expiresOn &&
@@ -111,7 +114,10 @@ TlsCertificatesAndHostnamesCustomTrustStore copyWith({TlsCertificatesAndHostname
           signature == other.signature &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          uploadedOn == other.uploadedOn; } 
-@override int get hashCode { return Object.hash(certificate, expiresOn, id, issuer, signature, status, updatedAt, uploadedOn); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomTrustStore(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, signature: $signature, status: $status, updatedAt: $updatedAt, uploadedOn: $uploadedOn)'; } 
+          uploadedOn == other.uploadedOn;
+
+@override int get hashCode => Object.hash(certificate, expiresOn, id, issuer, signature, status, updatedAt, uploadedOn);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStore(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, signature: $signature, status: $status, updatedAt: $updatedAt, uploadedOn: $uploadedOn)';
+
  }

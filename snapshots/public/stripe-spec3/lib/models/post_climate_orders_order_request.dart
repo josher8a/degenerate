@@ -28,11 +28,14 @@ PostClimateOrdersOrderRequest copyWith({PostClimateOrdersOrderRequestBeneficiary
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostClimateOrdersOrderRequest &&
           beneficiary == other.beneficiary &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(beneficiary, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostClimateOrdersOrderRequest(beneficiary: $beneficiary, expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(beneficiary, Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostClimateOrdersOrderRequest(beneficiary: $beneficiary, expand: $expand, metadata: $metadata)';
+
  }

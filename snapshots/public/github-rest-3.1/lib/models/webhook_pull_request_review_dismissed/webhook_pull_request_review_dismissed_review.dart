@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReviewState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReviewState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReviewState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReviewState($value)';
+
  }
 /// The review that was affected.
 @immutable final class WebhookPullRequestReviewDismissedReview {const WebhookPullRequestReviewDismissedReview({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.htmlUrl, required this.id, required this.nodeId, required this.pullRequestUrl, required this.state, required this.submittedAt, required this.user, this.updatedAt, });
@@ -112,7 +115,7 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, Au
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewDismissedReview &&
           links == other.links &&
           authorAssociation == other.authorAssociation &&
@@ -125,7 +128,10 @@ WebhookPullRequestReviewDismissedReview copyWith({WebhooksReviewLinks? links, Au
           state == other.state &&
           submittedAt == other.submittedAt &&
           updatedAt == other.updatedAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user); } 
-@override String toString() { return 'WebhookPullRequestReviewDismissedReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user);
+
+@override String toString() => 'WebhookPullRequestReviewDismissedReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)';
+
  }

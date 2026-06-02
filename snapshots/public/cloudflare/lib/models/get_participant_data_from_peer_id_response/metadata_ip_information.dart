@@ -40,14 +40,17 @@ MetadataIpInformation copyWith({IpInformationAsn? Function()? asn, String? Funct
   region: region != null ? region() : this.region,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataIpInformation &&
           asn == other.asn &&
           city == other.city &&
           country == other.country &&
           ipv4 == other.ipv4 &&
           region == other.region &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(asn, city, country, ipv4, region, timezone); } 
-@override String toString() { return 'MetadataIpInformation(asn: $asn, city: $city, country: $country, ipv4: $ipv4, region: $region, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(asn, city, country, ipv4, region, timezone);
+
+@override String toString() => 'MetadataIpInformation(asn: $asn, city: $city, country: $country, ipv4: $ipv4, region: $region, timezone: $timezone)';
+
  }

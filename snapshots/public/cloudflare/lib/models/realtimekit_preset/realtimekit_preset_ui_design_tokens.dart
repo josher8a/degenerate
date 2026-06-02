@@ -45,14 +45,17 @@ RealtimekitPresetUiDesignTokens copyWith({BorderRadius? borderRadius, BorderWidt
   spacingBase: spacingBase ?? this.spacingBase,
   theme: theme ?? this.theme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetUiDesignTokens &&
           borderRadius == other.borderRadius &&
           borderWidth == other.borderWidth &&
           colors == other.colors &&
           logo == other.logo &&
           spacingBase == other.spacingBase &&
-          theme == other.theme; } 
-@override int get hashCode { return Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme); } 
-@override String toString() { return 'RealtimekitPresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)'; } 
+          theme == other.theme;
+
+@override int get hashCode => Object.hash(borderRadius, borderWidth, colors, logo, spacingBase, theme);
+
+@override String toString() => 'RealtimekitPresetUiDesignTokens(borderRadius: $borderRadius, borderWidth: $borderWidth, colors: $colors, logo: $logo, spacingBase: $spacingBase, theme: $theme)';
+
  }

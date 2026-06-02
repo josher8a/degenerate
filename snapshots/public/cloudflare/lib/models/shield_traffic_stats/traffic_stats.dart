@@ -33,11 +33,14 @@ TrafficStats copyWith({ShieldTimestamp? lastUpdated, int? periodSeconds, double?
   periodSeconds: periodSeconds ?? this.periodSeconds,
   requests: requests ?? this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TrafficStats &&
           lastUpdated == other.lastUpdated &&
           periodSeconds == other.periodSeconds &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(lastUpdated, periodSeconds, requests); } 
-@override String toString() { return 'TrafficStats(lastUpdated: $lastUpdated, periodSeconds: $periodSeconds, requests: $requests)'; } 
+          requests == other.requests;
+
+@override int get hashCode => Object.hash(lastUpdated, periodSeconds, requests);
+
+@override String toString() => 'TrafficStats(lastUpdated: $lastUpdated, periodSeconds: $periodSeconds, requests: $requests)';
+
  }

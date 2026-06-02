@@ -17,7 +17,8 @@ final class PostEventMoveToNewDsError$400 extends PostEventMoveToNewDsError {con
 
 final PostEventMoveToNewDsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventMoveToNewDsError$Unknown extends PostEventMoveToNewDsError {const PostEventMoveToNewDsError$Unknown(this.statusCode, this.rawBody, );
 

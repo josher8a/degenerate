@@ -23,9 +23,12 @@ return errors; }
 Pii copyWith({String? Function()? idNumber}) { return Pii(
   idNumber: idNumber != null ? idNumber() : this.idNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Pii &&
-          idNumber == other.idNumber; } 
-@override int get hashCode { return idNumber.hashCode; } 
-@override String toString() { return 'Pii(idNumber: $idNumber)'; } 
+          idNumber == other.idNumber;
+
+@override int get hashCode => idNumber.hashCode;
+
+@override String toString() => 'Pii(idNumber: $idNumber)';
+
  }

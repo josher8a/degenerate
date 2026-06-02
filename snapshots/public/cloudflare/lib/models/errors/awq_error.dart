@@ -17,7 +17,8 @@ final class AwqError$400 extends AwqError {const AwqError$400(this.error);
 
 final AwqResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AwqError$Unknown extends AwqError {const AwqError$Unknown(this.statusCode, this.rawBody, );
 

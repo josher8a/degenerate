@@ -31,11 +31,14 @@ ZeroTrustGatewayDohEndpoint copyWith({bool? Function()? enabled, List<ZeroTrustG
   networks: networks != null ? networks() : this.networks,
   requireToken: requireToken != null ? requireToken() : this.requireToken,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayDohEndpoint &&
           enabled == other.enabled &&
           listEquals(networks, other.networks) &&
-          requireToken == other.requireToken; } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(networks ?? const []), requireToken); } 
-@override String toString() { return 'ZeroTrustGatewayDohEndpoint(enabled: $enabled, networks: $networks, requireToken: $requireToken)'; } 
+          requireToken == other.requireToken;
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(networks ?? const []), requireToken);
+
+@override String toString() => 'ZeroTrustGatewayDohEndpoint(enabled: $enabled, networks: $networks, requireToken: $requireToken)';
+
  }

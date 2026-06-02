@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingMeterEventSummaryObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingMeterEventSummaryObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterEventSummaryObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingMeterEventSummaryObject($value)';
+
  }
 /// A billing meter event summary represents an aggregated view of a customer's billing meter events within a specified timeframe. It indicates how much
 /// usage was accrued by a customer for that period.
@@ -89,7 +92,7 @@ BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String
   object: object ?? this.object,
   startTime: startTime ?? this.startTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterEventSummary &&
           aggregatedValue == other.aggregatedValue &&
           endTime == other.endTime &&
@@ -97,7 +100,10 @@ BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String
           livemode == other.livemode &&
           meter == other.meter &&
           object == other.object &&
-          startTime == other.startTime; } 
-@override int get hashCode { return Object.hash(aggregatedValue, endTime, id, livemode, meter, object, startTime); } 
-@override String toString() { return 'BillingMeterEventSummary(aggregatedValue: $aggregatedValue, endTime: $endTime, id: $id, livemode: $livemode, meter: $meter, object: $object, startTime: $startTime)'; } 
+          startTime == other.startTime;
+
+@override int get hashCode => Object.hash(aggregatedValue, endTime, id, livemode, meter, object, startTime);
+
+@override String toString() => 'BillingMeterEventSummary(aggregatedValue: $aggregatedValue, endTime: $endTime, id: $id, livemode: $livemode, meter: $meter, object: $object, startTime: $startTime)';
+
  }

@@ -26,11 +26,14 @@ PostAccountsAccountPeoplePersonRequestDocuments copyWith({CompanyAuthorization? 
   passport: passport != null ? passport() : this.passport,
   visa: visa != null ? visa() : this.visa,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountPeoplePersonRequestDocuments &&
           companyAuthorization == other.companyAuthorization &&
           passport == other.passport &&
-          visa == other.visa; } 
-@override int get hashCode { return Object.hash(companyAuthorization, passport, visa); } 
-@override String toString() { return 'PostAccountsAccountPeoplePersonRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)'; } 
+          visa == other.visa;
+
+@override int get hashCode => Object.hash(companyAuthorization, passport, visa);
+
+@override String toString() => 'PostAccountsAccountPeoplePersonRequestDocuments(companyAuthorization: $companyAuthorization, passport: $passport, visa: $visa)';
+
  }

@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConferenceRecordingEnumSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConferenceRecordingEnumSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceRecordingEnumSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConferenceRecordingEnumSource($value)';
+
  }
 @immutable final class AccountConferenceConferenceRecording {const AccountConferenceConferenceRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.encryptionDetails, this.uri, });
 
@@ -177,7 +180,7 @@ AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, S
   encryptionDetails: encryptionDetails != null ? encryptionDetails() : this.encryptionDetails,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountConferenceConferenceRecording &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -195,7 +198,10 @@ AccountConferenceConferenceRecording copyWith({String? Function()? accountSid, S
           source == other.source &&
           errorCode == other.errorCode &&
           encryptionDetails == other.encryptionDetails &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, encryptionDetails, uri); } 
-@override String toString() { return 'AccountConferenceConferenceRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, encryptionDetails: $encryptionDetails, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, encryptionDetails, uri);
+
+@override String toString() => 'AccountConferenceConferenceRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, encryptionDetails: $encryptionDetails, uri: $uri)';
+
  }

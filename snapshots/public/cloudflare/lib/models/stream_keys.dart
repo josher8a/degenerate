@@ -45,12 +45,15 @@ StreamKeys copyWith({StreamSigningKeyCreated? Function()? created, StreamSchemas
   jwk: jwk != null ? jwk() : this.jwk,
   pem: pem != null ? pem() : this.pem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamKeys &&
           created == other.created &&
           id == other.id &&
           jwk == other.jwk &&
-          pem == other.pem; } 
-@override int get hashCode { return Object.hash(created, id, jwk, pem); } 
-@override String toString() { return 'StreamKeys(created: $created, id: $id, jwk: $jwk, pem: $pem)'; } 
+          pem == other.pem;
+
+@override int get hashCode => Object.hash(created, id, jwk, pem);
+
+@override String toString() => 'StreamKeys(created: $created, id: $id, jwk: $jwk, pem: $pem)';
+
  }

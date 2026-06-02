@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceChoiceStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceChoiceStyle($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceChoiceStyle && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceChoiceStyle($value)';
+
  }
 /// Choice to be selected on a Reader
 @immutable final class TerminalReaderReaderResourceChoice {const TerminalReaderReaderResourceChoice({required this.text, this.id, this.style, });
@@ -62,11 +65,14 @@ TerminalReaderReaderResourceChoice copyWith({String? Function()? id, TerminalRea
   style: style != null ? style() : this.style,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceChoice &&
           id == other.id &&
           style == other.style &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(id, style, text); } 
-@override String toString() { return 'TerminalReaderReaderResourceChoice(id: $id, style: $style, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(id, style, text);
+
+@override String toString() => 'TerminalReaderReaderResourceChoice(id: $id, style: $style, text: $text)';
+
  }

@@ -27,11 +27,14 @@ AppsCreateInstallationAccessTokenRequest copyWith({List<String>? Function()? rep
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsCreateInstallationAccessTokenRequest &&
           listEquals(repositories, other.repositories) &&
           listEquals(repositoryIds, other.repositoryIds) &&
-          permissions == other.permissions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(repositories ?? const []), Object.hashAll(repositoryIds ?? const []), permissions); } 
-@override String toString() { return 'AppsCreateInstallationAccessTokenRequest(repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => Object.hash(Object.hashAll(repositories ?? const []), Object.hashAll(repositoryIds ?? const []), permissions);
+
+@override String toString() => 'AppsCreateInstallationAccessTokenRequest(repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)';
+
  }

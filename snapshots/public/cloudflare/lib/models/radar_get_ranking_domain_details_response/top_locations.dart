@@ -30,11 +30,14 @@ TopLocations copyWith({String? locationCode, String? locationName, int? rank, })
   locationName: locationName ?? this.locationName,
   rank: rank ?? this.rank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TopLocations &&
           locationCode == other.locationCode &&
           locationName == other.locationName &&
-          rank == other.rank; } 
-@override int get hashCode { return Object.hash(locationCode, locationName, rank); } 
-@override String toString() { return 'TopLocations(locationCode: $locationCode, locationName: $locationName, rank: $rank)'; } 
+          rank == other.rank;
+
+@override int get hashCode => Object.hash(locationCode, locationName, rank);
+
+@override String toString() => 'TopLocations(locationCode: $locationCode, locationName: $locationName, rank: $rank)';
+
  }

@@ -157,45 +157,41 @@ final class True {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is True &&
-            $false == other.$false &&
-            none == other.none &&
-            $null == other.$null &&
-            $0 == other.$0 &&
-            $empty == other.$empty &&
-            constructor == other.constructor &&
-            proto == other.proto &&
-            hasOwnProperty == other.hasOwnProperty &&
-            type == other.type &&
-            $ref == other.$ref &&
-            $id == other.$id &&
-            xExtensionLookalike == other.xExtensionLookalike &&
-            mapEquals(additionalProperties, other.additionalProperties);
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is True &&
+          $false == other.$false &&
+          none == other.none &&
+          $null == other.$null &&
+          $0 == other.$0 &&
+          $empty == other.$empty &&
+          constructor == other.constructor &&
+          proto == other.proto &&
+          hasOwnProperty == other.hasOwnProperty &&
+          type == other.type &&
+          $ref == other.$ref &&
+          $id == other.$id &&
+          xExtensionLookalike == other.xExtensionLookalike &&
+          mapEquals(additionalProperties, other.additionalProperties);
 
   @override
-  int get hashCode {
-    return Object.hash(
-      $false,
-      none,
-      $null,
-      $0,
-      $empty,
-      constructor,
-      proto,
-      hasOwnProperty,
-      type,
-      $ref,
-      $id,
-      xExtensionLookalike,
-      Object.hashAll(additionalProperties.entries),
-    );
-  }
+  int get hashCode => Object.hash(
+    $false,
+    none,
+    $null,
+    $0,
+    $empty,
+    constructor,
+    proto,
+    hasOwnProperty,
+    type,
+    $ref,
+    $id,
+    xExtensionLookalike,
+    Object.hashAll(additionalProperties.entries),
+  );
 
   @override
-  String toString() {
-    return 'True(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, additionalProperties: $additionalProperties)';
-  }
+  String toString() =>
+      'True(\$false: ${$false}, none: $none, \$null: ${$null}, \$0: ${$0}, \$empty: ${$empty}, constructor: $constructor, proto: $proto, hasOwnProperty: $hasOwnProperty, type: $type, \$ref: ${$ref}, \$id: ${$id}, xExtensionLookalike: $xExtensionLookalike, additionalProperties: $additionalProperties)';
 }

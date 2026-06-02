@@ -26,10 +26,13 @@ NamedHandlers copyWith({List<String>? Function()? handlers, String? Function()? 
   handlers: handlers != null ? handlers() : this.handlers,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamedHandlers &&
           listEquals(handlers, other.handlers) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(handlers ?? const []), name); } 
-@override String toString() { return 'NamedHandlers(handlers: $handlers, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(handlers ?? const []), name);
+
+@override String toString() => 'NamedHandlers(handlers: $handlers, name: $name)';
+
  }

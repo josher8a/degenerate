@@ -83,7 +83,7 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   useStripeSdk: useStripeSdk != null ? useStripeSdk() : this.useStripeSdk,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentConfirmRequest &&
           clientSecret == other.clientSecret &&
           confirmationToken == other.confirmationToken &&
@@ -93,7 +93,10 @@ PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret,
           paymentMethodData == other.paymentMethodData &&
           paymentMethodOptions == other.paymentMethodOptions &&
           returnUrl == other.returnUrl &&
-          useStripeSdk == other.useStripeSdk; } 
-@override int get hashCode { return Object.hash(clientSecret, confirmationToken, Object.hashAll(expand ?? const []), mandateData, paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, useStripeSdk); } 
-@override String toString() { return 'PostSetupIntentsIntentConfirmRequest(clientSecret: $clientSecret, confirmationToken: $confirmationToken, expand: $expand, mandateData: $mandateData, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, useStripeSdk: $useStripeSdk)'; } 
+          useStripeSdk == other.useStripeSdk;
+
+@override int get hashCode => Object.hash(clientSecret, confirmationToken, Object.hashAll(expand ?? const []), mandateData, paymentMethod, paymentMethodData, paymentMethodOptions, returnUrl, useStripeSdk);
+
+@override String toString() => 'PostSetupIntentsIntentConfirmRequest(clientSecret: $clientSecret, confirmationToken: $confirmationToken, expand: $expand, mandateData: $mandateData, paymentMethod: $paymentMethod, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, returnUrl: $returnUrl, useStripeSdk: $useStripeSdk)';
+
  }

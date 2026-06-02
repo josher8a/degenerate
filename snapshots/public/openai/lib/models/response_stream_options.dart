@@ -25,9 +25,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ResponseStreamOptions copyWith({bool? Function()? includeObfuscation}) { return ResponseStreamOptions(
   includeObfuscation: includeObfuscation != null ? includeObfuscation() : this.includeObfuscation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseStreamOptions &&
-          includeObfuscation == other.includeObfuscation; } 
-@override int get hashCode { return includeObfuscation.hashCode; } 
-@override String toString() { return 'ResponseStreamOptions(includeObfuscation: $includeObfuscation)'; } 
+          includeObfuscation == other.includeObfuscation;
+
+@override int get hashCode => includeObfuscation.hashCode;
+
+@override String toString() => 'ResponseStreamOptions(includeObfuscation: $includeObfuscation)';
+
  }

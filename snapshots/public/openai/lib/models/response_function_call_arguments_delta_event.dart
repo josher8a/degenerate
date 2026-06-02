@@ -49,13 +49,16 @@ ResponseFunctionCallArgumentsDeltaEvent copyWith({String? type, String? itemId, 
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   delta: delta ?? this.delta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseFunctionCallArgumentsDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           sequenceNumber == other.sequenceNumber &&
-          delta == other.delta; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, sequenceNumber, delta); } 
-@override String toString() { return 'ResponseFunctionCallArgumentsDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, delta: $delta)'; } 
+          delta == other.delta;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, sequenceNumber, delta);
+
+@override String toString() => 'ResponseFunctionCallArgumentsDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, delta: $delta)';
+
  }

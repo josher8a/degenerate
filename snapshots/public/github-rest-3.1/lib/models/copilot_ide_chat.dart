@@ -27,11 +27,14 @@ CopilotIdeChat copyWith({int? Function()? totalEngagedUsers, List<CopilotIdeChat
   editors: editors != null ? editors() : this.editors,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeChat &&
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(editors, other.editors) &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotIdeChat(totalEngagedUsers: $totalEngagedUsers, editors: $editors, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotIdeChat(totalEngagedUsers: $totalEngagedUsers, editors: $editors, additionalProperties: $additionalProperties)';
+
  }

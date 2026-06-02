@@ -25,11 +25,14 @@ ReportedBreakdown copyWith({ReportedBreakdownFuel? Function()? fuel, NonFuel? Fu
   nonFuel: nonFuel != null ? nonFuel() : this.nonFuel,
   tax: tax != null ? tax() : this.tax,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReportedBreakdown &&
           fuel == other.fuel &&
           nonFuel == other.nonFuel &&
-          tax == other.tax; } 
-@override int get hashCode { return Object.hash(fuel, nonFuel, tax); } 
-@override String toString() { return 'ReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)'; } 
+          tax == other.tax;
+
+@override int get hashCode => Object.hash(fuel, nonFuel, tax);
+
+@override String toString() => 'ReportedBreakdown(fuel: $fuel, nonFuel: $nonFuel, tax: $tax)';
+
  }

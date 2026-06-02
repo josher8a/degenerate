@@ -34,11 +34,14 @@ SmartshieldSmartShieldSettingsGetResponseRegionalTieredCache copyWith({bool? Fun
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSmartShieldSettingsGetResponseRegionalTieredCache &&
           editable == other.editable &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, value); } 
-@override String toString() { return 'SmartshieldSmartShieldSettingsGetResponseRegionalTieredCache(editable: $editable, id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(editable, id, value);
+
+@override String toString() => 'SmartshieldSmartShieldSettingsGetResponseRegionalTieredCache(editable: $editable, id: $id, value: $value)';
+
  }

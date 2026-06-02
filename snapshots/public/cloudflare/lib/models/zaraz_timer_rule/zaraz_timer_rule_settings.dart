@@ -26,10 +26,13 @@ ZarazTimerRuleSettings copyWith({int? interval, int? limit, }) { return ZarazTim
   interval: interval ?? this.interval,
   limit: limit ?? this.limit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazTimerRuleSettings &&
           interval == other.interval &&
-          limit == other.limit; } 
-@override int get hashCode { return Object.hash(interval, limit); } 
-@override String toString() { return 'ZarazTimerRuleSettings(interval: $interval, limit: $limit)'; } 
+          limit == other.limit;
+
+@override int get hashCode => Object.hash(interval, limit);
+
+@override String toString() => 'ZarazTimerRuleSettings(interval: $interval, limit: $limit)';
+
  }

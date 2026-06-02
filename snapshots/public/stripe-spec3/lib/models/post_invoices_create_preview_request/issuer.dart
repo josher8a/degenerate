@@ -20,10 +20,13 @@ Issuer copyWith({String? Function()? account, ConnectAccountReferenceType? type,
   account: account != null ? account() : this.account,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Issuer &&
           account == other.account &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, type); } 
-@override String toString() { return 'Issuer(account: $account, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, type);
+
+@override String toString() => 'Issuer(account: $account, type: $type)';
+
  }

@@ -42,13 +42,16 @@ FunctionToolParam copyWith({String? name, String? Function()? description, Empty
   strict: strict != null ? strict() : this.strict,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionToolParam &&
           name == other.name &&
           description == other.description &&
           parameters == other.parameters &&
           strict == other.strict &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, description, parameters, strict, type); } 
-@override String toString() { return 'FunctionToolParam(name: $name, description: $description, parameters: $parameters, strict: $strict, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, description, parameters, strict, type);
+
+@override String toString() => 'FunctionToolParam(name: $name, description: $description, parameters: $parameters, strict: $strict, type: $type)';
+
  }

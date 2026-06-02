@@ -80,7 +80,7 @@ MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticRe
   mtu: mtu != null ? mtu() : this.mtu,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicInterconnect &&
           automaticReturnRouting == other.automaticReturnRouting &&
           coloName == other.coloName &&
@@ -93,7 +93,10 @@ MagicInterconnect copyWith({MagicAutomaticReturnRouting? Function()? automaticRe
           interfaceAddress6 == other.interfaceAddress6 &&
           modifiedOn == other.modifiedOn &&
           mtu == other.mtu &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name); } 
-@override String toString() { return 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name);
+
+@override String toString() => 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)';
+
  }

@@ -20,10 +20,13 @@ DnsCustomNameserversCustomNsInput copyWith({DnsCustomNameserversNsName? nsName, 
   nsName: nsName ?? this.nsName,
   nsSet: nsSet != null ? nsSet() : this.nsSet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsCustomNameserversCustomNsInput &&
           nsName == other.nsName &&
-          nsSet == other.nsSet; } 
-@override int get hashCode { return Object.hash(nsName, nsSet); } 
-@override String toString() { return 'DnsCustomNameserversCustomNsInput(nsName: $nsName, nsSet: $nsSet)'; } 
+          nsSet == other.nsSet;
+
+@override int get hashCode => Object.hash(nsName, nsSet);
+
+@override String toString() => 'DnsCustomNameserversCustomNsInput(nsName: $nsName, nsSet: $nsSet)';
+
  }

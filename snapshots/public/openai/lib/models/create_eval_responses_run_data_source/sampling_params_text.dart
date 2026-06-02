@@ -20,9 +20,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SamplingParamsText copyWith({TextResponseFormatConfiguration? Function()? format}) { return SamplingParamsText(
   format: format != null ? format() : this.format,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SamplingParamsText &&
-          format == other.format; } 
-@override int get hashCode { return format.hashCode; } 
-@override String toString() { return 'SamplingParamsText(format: $format)'; } 
+          format == other.format;
+
+@override int get hashCode => format.hashCode;
+
+@override String toString() => 'SamplingParamsText(format: $format)';
+
  }

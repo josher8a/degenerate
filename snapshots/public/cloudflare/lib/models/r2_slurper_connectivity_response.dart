@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConnectivityStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConnectivityStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConnectivityStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConnectivityStatus($value)';
+
  }
 @immutable final class R2SlurperConnectivityResponse {const R2SlurperConnectivityResponse({this.connectivityStatus});
 
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 R2SlurperConnectivityResponse copyWith({ConnectivityStatus? Function()? connectivityStatus}) { return R2SlurperConnectivityResponse(
   connectivityStatus: connectivityStatus != null ? connectivityStatus() : this.connectivityStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperConnectivityResponse &&
-          connectivityStatus == other.connectivityStatus; } 
-@override int get hashCode { return connectivityStatus.hashCode; } 
-@override String toString() { return 'R2SlurperConnectivityResponse(connectivityStatus: $connectivityStatus)'; } 
+          connectivityStatus == other.connectivityStatus;
+
+@override int get hashCode => connectivityStatus.hashCode;
+
+@override String toString() => 'R2SlurperConnectivityResponse(connectivityStatus: $connectivityStatus)';
+
  }

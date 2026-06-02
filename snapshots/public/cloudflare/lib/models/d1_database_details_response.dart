@@ -65,7 +65,7 @@ D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSi
   uuid: uuid != null ? uuid() : this.uuid,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1DatabaseDetailsResponse &&
           createdAt == other.createdAt &&
           fileSize == other.fileSize &&
@@ -74,7 +74,10 @@ D1DatabaseDetailsResponse copyWith({D1CreatedAt? Function()? createdAt, D1FileSi
           numTables == other.numTables &&
           readReplication == other.readReplication &&
           uuid == other.uuid &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, fileSize, jurisdiction, name, numTables, readReplication, uuid, version); } 
-@override String toString() { return 'D1DatabaseDetailsResponse(createdAt: $createdAt, fileSize: $fileSize, jurisdiction: $jurisdiction, name: $name, numTables: $numTables, readReplication: $readReplication, uuid: $uuid, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(createdAt, fileSize, jurisdiction, name, numTables, readReplication, uuid, version);
+
+@override String toString() => 'D1DatabaseDetailsResponse(createdAt: $createdAt, fileSize: $fileSize, jurisdiction: $jurisdiction, name: $name, numTables: $numTables, readReplication: $readReplication, uuid: $uuid, version: $version)';
+
  }

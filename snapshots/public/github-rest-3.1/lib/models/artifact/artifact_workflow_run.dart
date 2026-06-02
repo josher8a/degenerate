@@ -35,13 +35,16 @@ ArtifactWorkflowRun copyWith({int? Function()? id, int? Function()? repositoryId
   headBranch: headBranch != null ? headBranch() : this.headBranch,
   headSha: headSha != null ? headSha() : this.headSha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ArtifactWorkflowRun &&
           id == other.id &&
           repositoryId == other.repositoryId &&
           headRepositoryId == other.headRepositoryId &&
           headBranch == other.headBranch &&
-          headSha == other.headSha; } 
-@override int get hashCode { return Object.hash(id, repositoryId, headRepositoryId, headBranch, headSha); } 
-@override String toString() { return 'ArtifactWorkflowRun(id: $id, repositoryId: $repositoryId, headRepositoryId: $headRepositoryId, headBranch: $headBranch, headSha: $headSha)'; } 
+          headSha == other.headSha;
+
+@override int get hashCode => Object.hash(id, repositoryId, headRepositoryId, headBranch, headSha);
+
+@override String toString() => 'ArtifactWorkflowRun(id: $id, repositoryId: $repositoryId, headRepositoryId: $headRepositoryId, headBranch: $headBranch, headSha: $headSha)';
+
  }

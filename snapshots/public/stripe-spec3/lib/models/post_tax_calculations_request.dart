@@ -66,7 +66,7 @@ PostTaxCalculationsRequest copyWith({String? currency, String? Function()? custo
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
   taxDate: taxDate != null ? taxDate() : this.taxDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxCalculationsRequest &&
           currency == other.currency &&
           customer == other.customer &&
@@ -75,7 +75,10 @@ PostTaxCalculationsRequest copyWith({String? currency, String? Function()? custo
           listEquals(lineItems, other.lineItems) &&
           shipFromDetails == other.shipFromDetails &&
           shippingCost == other.shippingCost &&
-          taxDate == other.taxDate; } 
-@override int get hashCode { return Object.hash(currency, customer, customerDetails, Object.hashAll(expand ?? const []), Object.hashAll(lineItems), shipFromDetails, shippingCost, taxDate); } 
-@override String toString() { return 'PostTaxCalculationsRequest(currency: $currency, customer: $customer, customerDetails: $customerDetails, expand: $expand, lineItems: $lineItems, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxDate: $taxDate)'; } 
+          taxDate == other.taxDate;
+
+@override int get hashCode => Object.hash(currency, customer, customerDetails, Object.hashAll(expand ?? const []), Object.hashAll(lineItems), shipFromDetails, shippingCost, taxDate);
+
+@override String toString() => 'PostTaxCalculationsRequest(currency: $currency, customer: $customer, customerDetails: $customerDetails, expand: $expand, lineItems: $lineItems, shipFromDetails: $shipFromDetails, shippingCost: $shippingCost, taxDate: $taxDate)';
+
  }

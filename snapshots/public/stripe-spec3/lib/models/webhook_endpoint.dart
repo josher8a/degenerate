@@ -118,7 +118,7 @@ WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? ap
   status: status ?? this.status,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookEndpoint &&
           apiVersion == other.apiVersion &&
           application == other.application &&
@@ -131,7 +131,10 @@ WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? ap
           object == other.object &&
           secret == other.secret &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(apiVersion, application, created, description, Object.hashAll(enabledEvents), id, livemode, metadata, object, secret, status, url); } 
-@override String toString() { return 'WebhookEndpoint(apiVersion: $apiVersion, application: $application, created: $created, description: $description, enabledEvents: $enabledEvents, id: $id, livemode: $livemode, metadata: $metadata, object: $object, secret: $secret, status: $status, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(apiVersion, application, created, description, Object.hashAll(enabledEvents), id, livemode, metadata, object, secret, status, url);
+
+@override String toString() => 'WebhookEndpoint(apiVersion: $apiVersion, application: $application, created: $created, description: $description, enabledEvents: $enabledEvents, id: $id, livemode: $livemode, metadata: $metadata, object: $object, secret: $secret, status: $status, url: $url)';
+
  }

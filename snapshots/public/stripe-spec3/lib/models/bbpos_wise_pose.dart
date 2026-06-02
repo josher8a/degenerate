@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 BbposWisePose copyWith({BbposWisePad3Splashscreen? Function()? splashscreen}) { return BbposWisePose(
   splashscreen: splashscreen != null ? splashscreen() : this.splashscreen,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BbposWisePose &&
-          splashscreen == other.splashscreen; } 
-@override int get hashCode { return splashscreen.hashCode; } 
-@override String toString() { return 'BbposWisePose(splashscreen: $splashscreen)'; } 
+          splashscreen == other.splashscreen;
+
+@override int get hashCode => splashscreen.hashCode;
+
+@override String toString() => 'BbposWisePose(splashscreen: $splashscreen)';
+
  }

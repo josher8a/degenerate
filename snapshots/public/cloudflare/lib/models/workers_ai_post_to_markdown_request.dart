@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('files
 WorkersAiPostToMarkdownRequest copyWith({List<Uint8List>? files}) { return WorkersAiPostToMarkdownRequest(
   files: files ?? this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostToMarkdownRequest &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files); } 
-@override String toString() { return 'WorkersAiPostToMarkdownRequest(files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hashAll(files);
+
+@override String toString() => 'WorkersAiPostToMarkdownRequest(files: $files)';
+
  }

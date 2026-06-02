@@ -40,13 +40,16 @@ RuleSuiteRequiredStatusChecksChecks copyWith({int? Function()? id, String? Funct
   type: type != null ? type() : this.type,
   app: app != null ? app() : this.app,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleSuiteRequiredStatusChecksChecks &&
           id == other.id &&
           context == other.context &&
           state == other.state &&
           type == other.type &&
-          app == other.app; } 
-@override int get hashCode { return Object.hash(id, context, state, type, app); } 
-@override String toString() { return 'RuleSuiteRequiredStatusChecksChecks(id: $id, context: $context, state: $state, type: $type, app: $app)'; } 
+          app == other.app;
+
+@override int get hashCode => Object.hash(id, context, state, type, app);
+
+@override String toString() => 'RuleSuiteRequiredStatusChecksChecks(id: $id, context: $context, state: $state, type: $type, app: $app)';
+
  }

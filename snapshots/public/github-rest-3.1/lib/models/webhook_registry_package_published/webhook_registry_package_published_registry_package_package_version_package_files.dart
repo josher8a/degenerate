@@ -75,7 +75,7 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWit
   state: state != null ? state() : this.state,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles &&
           contentType == other.contentType &&
           createdAt == other.createdAt &&
@@ -87,7 +87,10 @@ WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles copyWit
           sha256 == other.sha256 &&
           size == other.size &&
           state == other.state &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(contentType, createdAt, downloadUrl, id, md5, name, sha1, sha256, size, state, updatedAt); } 
-@override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(contentType: $contentType, createdAt: $createdAt, downloadUrl: $downloadUrl, id: $id, md5: $md5, name: $name, sha1: $sha1, sha256: $sha256, size: $size, state: $state, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(contentType, createdAt, downloadUrl, id, md5, name, sha1, sha256, size, state, updatedAt);
+
+@override String toString() => 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFiles(contentType: $contentType, createdAt: $createdAt, downloadUrl: $downloadUrl, id: $id, md5: $md5, name: $name, sha1: $sha1, sha256: $sha256, size: $size, state: $state, updatedAt: $updatedAt)';
+
  }

@@ -20,10 +20,13 @@ FetchAllLivestreamsResponse copyWith({FetchAllLivestreamsResponseData? Function(
   data: data != null ? data() : this.data,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FetchAllLivestreamsResponse &&
           data == other.data &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(data, success); } 
-@override String toString() { return 'FetchAllLivestreamsResponse(data: $data, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(data, success);
+
+@override String toString() => 'FetchAllLivestreamsResponse(data: $data, success: $success)';
+
  }

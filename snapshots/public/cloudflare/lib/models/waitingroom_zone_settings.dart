@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WaitingroomZoneSettings copyWith({WaitingroomSearchEngineCrawlerBypass? Function()? searchEngineCrawlerBypass}) { return WaitingroomZoneSettings(
   searchEngineCrawlerBypass: searchEngineCrawlerBypass != null ? searchEngineCrawlerBypass() : this.searchEngineCrawlerBypass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomZoneSettings &&
-          searchEngineCrawlerBypass == other.searchEngineCrawlerBypass; } 
-@override int get hashCode { return searchEngineCrawlerBypass.hashCode; } 
-@override String toString() { return 'WaitingroomZoneSettings(searchEngineCrawlerBypass: $searchEngineCrawlerBypass)'; } 
+          searchEngineCrawlerBypass == other.searchEngineCrawlerBypass;
+
+@override int get hashCode => searchEngineCrawlerBypass.hashCode;
+
+@override String toString() => 'WaitingroomZoneSettings(searchEngineCrawlerBypass: $searchEngineCrawlerBypass)';
+
  }

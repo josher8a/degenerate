@@ -20,10 +20,13 @@ PaymentMethodUpdate copyWith({bool? enabled, PaymentMethodUpdatePaymentMethodCon
   enabled: enabled ?? this.enabled,
   paymentMethodConfiguration: paymentMethodConfiguration != null ? paymentMethodConfiguration() : this.paymentMethodConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodUpdate &&
           enabled == other.enabled &&
-          paymentMethodConfiguration == other.paymentMethodConfiguration; } 
-@override int get hashCode { return Object.hash(enabled, paymentMethodConfiguration); } 
-@override String toString() { return 'PaymentMethodUpdate(enabled: $enabled, paymentMethodConfiguration: $paymentMethodConfiguration)'; } 
+          paymentMethodConfiguration == other.paymentMethodConfiguration;
+
+@override int get hashCode => Object.hash(enabled, paymentMethodConfiguration);
+
+@override String toString() => 'PaymentMethodUpdate(enabled: $enabled, paymentMethodConfiguration: $paymentMethodConfiguration)';
+
  }

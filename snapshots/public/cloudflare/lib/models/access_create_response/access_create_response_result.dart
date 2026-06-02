@@ -55,7 +55,7 @@ AccessCreateResponseResult copyWith({AccessClientId? Function()? clientId, Acces
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCreateResponseResult &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
@@ -63,7 +63,10 @@ AccessCreateResponseResult copyWith({AccessClientId? Function()? clientId, Acces
           duration == other.duration &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, createdAt, duration, id, name, updatedAt); } 
-@override String toString() { return 'AccessCreateResponseResult(clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, duration: $duration, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(clientId, clientSecret, createdAt, duration, id, name, updatedAt);
+
+@override String toString() => 'AccessCreateResponseResult(clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, duration: $duration, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

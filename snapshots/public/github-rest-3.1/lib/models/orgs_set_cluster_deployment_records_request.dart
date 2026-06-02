@@ -39,11 +39,14 @@ OrgsSetClusterDeploymentRecordsRequest copyWith({String? logicalEnvironment, Str
   physicalEnvironment: physicalEnvironment != null ? physicalEnvironment() : this.physicalEnvironment,
   deployments: deployments ?? this.deployments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsSetClusterDeploymentRecordsRequest &&
           logicalEnvironment == other.logicalEnvironment &&
           physicalEnvironment == other.physicalEnvironment &&
-          listEquals(deployments, other.deployments); } 
-@override int get hashCode { return Object.hash(logicalEnvironment, physicalEnvironment, Object.hashAll(deployments)); } 
-@override String toString() { return 'OrgsSetClusterDeploymentRecordsRequest(logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, deployments: $deployments)'; } 
+          listEquals(deployments, other.deployments);
+
+@override int get hashCode => Object.hash(logicalEnvironment, physicalEnvironment, Object.hashAll(deployments));
+
+@override String toString() => 'OrgsSetClusterDeploymentRecordsRequest(logicalEnvironment: $logicalEnvironment, physicalEnvironment: $physicalEnvironment, deployments: $deployments)';
+
  }

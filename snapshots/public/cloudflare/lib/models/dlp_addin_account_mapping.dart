@@ -21,10 +21,13 @@ DlpAddinAccountMapping copyWith({String? addinIdentifierToken, DlpAddinAuth? aut
   addinIdentifierToken: addinIdentifierToken ?? this.addinIdentifierToken,
   authRequirements: authRequirements ?? this.authRequirements,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpAddinAccountMapping &&
           addinIdentifierToken == other.addinIdentifierToken &&
-          authRequirements == other.authRequirements; } 
-@override int get hashCode { return Object.hash(addinIdentifierToken, authRequirements); } 
-@override String toString() { return 'DlpAddinAccountMapping(addinIdentifierToken: $addinIdentifierToken, authRequirements: $authRequirements)'; } 
+          authRequirements == other.authRequirements;
+
+@override int get hashCode => Object.hash(addinIdentifierToken, authRequirements);
+
+@override String toString() => 'DlpAddinAccountMapping(addinIdentifierToken: $addinIdentifierToken, authRequirements: $authRequirements)';
+
  }

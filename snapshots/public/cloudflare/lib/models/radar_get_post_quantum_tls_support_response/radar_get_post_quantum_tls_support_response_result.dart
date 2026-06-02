@@ -37,12 +37,15 @@ RadarGetPostQuantumTlsSupportResponseResult copyWith({String? host, double? kex,
   kexName: kexName ?? this.kexName,
   pq: pq ?? this.pq,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetPostQuantumTlsSupportResponseResult &&
           host == other.host &&
           kex == other.kex &&
           kexName == other.kexName &&
-          pq == other.pq; } 
-@override int get hashCode { return Object.hash(host, kex, kexName, pq); } 
-@override String toString() { return 'RadarGetPostQuantumTlsSupportResponseResult(host: $host, kex: $kex, kexName: $kexName, pq: $pq)'; } 
+          pq == other.pq;
+
+@override int get hashCode => Object.hash(host, kex, kexName, pq);
+
+@override String toString() => 'RadarGetPostQuantumTlsSupportResponseResult(host: $host, kex: $kex, kexName: $kexName, pq: $pq)';
+
  }

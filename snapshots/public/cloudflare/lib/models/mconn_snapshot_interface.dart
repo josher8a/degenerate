@@ -41,13 +41,16 @@ MconnSnapshotInterface copyWith({String? Function()? connectorId, List<MconnSnap
   operstate: operstate ?? this.operstate,
   speed: speed != null ? speed() : this.speed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotInterface &&
           connectorId == other.connectorId &&
           listEquals(ipAddresses, other.ipAddresses) &&
           name == other.name &&
           operstate == other.operstate &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(connectorId, Object.hashAll(ipAddresses ?? const []), name, operstate, speed); } 
-@override String toString() { return 'MconnSnapshotInterface(connectorId: $connectorId, ipAddresses: $ipAddresses, name: $name, operstate: $operstate, speed: $speed)'; } 
+          speed == other.speed;
+
+@override int get hashCode => Object.hash(connectorId, Object.hashAll(ipAddresses ?? const []), name, operstate, speed);
+
+@override String toString() => 'MconnSnapshotInterface(connectorId: $connectorId, ipAddresses: $ipAddresses, name: $name, operstate: $operstate, speed: $speed)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersDeploymentStrategy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersDeploymentStrategy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersDeploymentStrategy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersDeploymentStrategy($value)';
+
  }
 @immutable final class WorkersDeployment {const WorkersDeployment({required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, this.annotations, this.authorEmail, });
 
@@ -71,7 +74,7 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
   strategy: strategy ?? this.strategy,
   versions: versions ?? this.versions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDeployment &&
           annotations == other.annotations &&
           authorEmail == other.authorEmail &&
@@ -79,7 +82,10 @@ WorkersDeployment copyWith({WorkersDeploymentAnnotations? Function()? annotation
           id == other.id &&
           source == other.source &&
           strategy == other.strategy &&
-          listEquals(versions, other.versions); } 
-@override int get hashCode { return Object.hash(annotations, authorEmail, createdOn, id, source, strategy, Object.hashAll(versions)); } 
-@override String toString() { return 'WorkersDeployment(annotations: $annotations, authorEmail: $authorEmail, createdOn: $createdOn, id: $id, source: $source, strategy: $strategy, versions: $versions)'; } 
+          listEquals(versions, other.versions);
+
+@override int get hashCode => Object.hash(annotations, authorEmail, createdOn, id, source, strategy, Object.hashAll(versions));
+
+@override String toString() => 'WorkersDeployment(annotations: $annotations, authorEmail: $authorEmail, createdOn: $createdOn, id: $id, source: $source, strategy: $strategy, versions: $versions)';
+
  }

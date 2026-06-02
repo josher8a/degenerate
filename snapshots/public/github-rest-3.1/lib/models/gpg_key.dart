@@ -99,7 +99,7 @@ GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyI
   revoked: revoked ?? this.revoked,
   rawKey: rawKey != null ? rawKey() : this.rawKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GpgKey &&
           id == other.id &&
           name == other.name &&
@@ -115,7 +115,10 @@ GpgKey copyWith({int? id, String? Function()? name, int? Function()? primaryKeyI
           createdAt == other.createdAt &&
           expiresAt == other.expiresAt &&
           revoked == other.revoked &&
-          rawKey == other.rawKey; } 
-@override int get hashCode { return Object.hash(id, name, primaryKeyId, keyId, publicKey, Object.hashAll(emails), Object.hashAll(subkeys), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, revoked, rawKey); } 
-@override String toString() { return 'GpgKey(id: $id, name: $name, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, revoked: $revoked, rawKey: $rawKey)'; } 
+          rawKey == other.rawKey;
+
+@override int get hashCode => Object.hash(id, name, primaryKeyId, keyId, publicKey, Object.hashAll(emails), Object.hashAll(subkeys), canSign, canEncryptComms, canEncryptStorage, canCertify, createdAt, expiresAt, revoked, rawKey);
+
+@override String toString() => 'GpgKey(id: $id, name: $name, primaryKeyId: $primaryKeyId, keyId: $keyId, publicKey: $publicKey, emails: $emails, subkeys: $subkeys, canSign: $canSign, canEncryptComms: $canEncryptComms, canEncryptStorage: $canEncryptStorage, canCertify: $canCertify, createdAt: $createdAt, expiresAt: $expiresAt, revoked: $revoked, rawKey: $rawKey)';
+
  }

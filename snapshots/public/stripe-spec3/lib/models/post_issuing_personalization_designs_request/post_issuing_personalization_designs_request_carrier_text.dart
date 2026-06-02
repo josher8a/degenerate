@@ -31,12 +31,15 @@ PostIssuingPersonalizationDesignsRequestCarrierText copyWith({FooterBody? Functi
   headerBody: headerBody != null ? headerBody() : this.headerBody,
   headerTitle: headerTitle != null ? headerTitle() : this.headerTitle,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingPersonalizationDesignsRequestCarrierText &&
           footerBody == other.footerBody &&
           footerTitle == other.footerTitle &&
           headerBody == other.headerBody &&
-          headerTitle == other.headerTitle; } 
-@override int get hashCode { return Object.hash(footerBody, footerTitle, headerBody, headerTitle); } 
-@override String toString() { return 'PostIssuingPersonalizationDesignsRequestCarrierText(footerBody: $footerBody, footerTitle: $footerTitle, headerBody: $headerBody, headerTitle: $headerTitle)'; } 
+          headerTitle == other.headerTitle;
+
+@override int get hashCode => Object.hash(footerBody, footerTitle, headerBody, headerTitle);
+
+@override String toString() => 'PostIssuingPersonalizationDesignsRequestCarrierText(footerBody: $footerBody, footerTitle: $footerTitle, headerBody: $headerBody, headerTitle: $headerTitle)';
+
  }

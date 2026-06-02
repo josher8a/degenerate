@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest copyWith({CacheRulesOriginPostQuantumEncryptionValue? value}) { return ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZoneCacheSettingsChangeOriginPostQuantumEncryptionSettingRequest(value: $value)';
+
  }

@@ -27,11 +27,14 @@ IamCreateAccount copyWith({String? name, IamAccountType? Function()? type, Unit?
   type: type != null ? type() : this.type,
   unit: unit != null ? unit() : this.unit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateAccount &&
           name == other.name &&
           type == other.type &&
-          unit == other.unit; } 
-@override int get hashCode { return Object.hash(name, type, unit); } 
-@override String toString() { return 'IamCreateAccount(name: $name, type: $type, unit: $unit)'; } 
+          unit == other.unit;
+
+@override int get hashCode => Object.hash(name, type, unit);
+
+@override String toString() => 'IamCreateAccount(name: $name, type: $type, unit: $unit)';
+
  }

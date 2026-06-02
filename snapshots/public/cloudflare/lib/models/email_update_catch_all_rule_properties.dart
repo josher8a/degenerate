@@ -35,12 +35,15 @@ EmailUpdateCatchAllRuleProperties copyWith({List<EmailRuleCatchallAction>? actio
   matchers: matchers ?? this.matchers,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailUpdateCatchAllRuleProperties &&
           listEquals(actions, other.actions) &&
           enabled == other.enabled &&
           listEquals(matchers, other.matchers) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions), enabled, Object.hashAll(matchers), name); } 
-@override String toString() { return 'EmailUpdateCatchAllRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions), enabled, Object.hashAll(matchers), name);
+
+@override String toString() => 'EmailUpdateCatchAllRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name)';
+
  }

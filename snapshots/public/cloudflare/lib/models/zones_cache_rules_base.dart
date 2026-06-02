@@ -24,10 +24,13 @@ ZonesCacheRulesBase copyWith({String? id, DateTime? Function()? modifiedOn, }) {
   id: id ?? this.id,
   modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesCacheRulesBase &&
           id == other.id &&
-          modifiedOn == other.modifiedOn; } 
-@override int get hashCode { return Object.hash(id, modifiedOn); } 
-@override String toString() { return 'ZonesCacheRulesBase(id: $id, modifiedOn: $modifiedOn)'; } 
+          modifiedOn == other.modifiedOn;
+
+@override int get hashCode => Object.hash(id, modifiedOn);
+
+@override String toString() => 'ZonesCacheRulesBase(id: $id, modifiedOn: $modifiedOn)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TerminalReaderReaderResourceTippingConfig copyWith({int? Function()? amountEligible}) { return TerminalReaderReaderResourceTippingConfig(
   amountEligible: amountEligible != null ? amountEligible() : this.amountEligible,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceTippingConfig &&
-          amountEligible == other.amountEligible; } 
-@override int get hashCode { return amountEligible.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceTippingConfig(amountEligible: $amountEligible)'; } 
+          amountEligible == other.amountEligible;
+
+@override int get hashCode => amountEligible.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceTippingConfig(amountEligible: $amountEligible)';
+
  }

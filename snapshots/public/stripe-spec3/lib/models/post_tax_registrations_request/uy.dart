@@ -20,10 +20,13 @@ Uy copyWith({AeStandard? Function()? standard, TaxProductRegistrationsResourceCo
   standard: standard != null ? standard() : this.standard,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Uy &&
           standard == other.standard &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(standard, type); } 
-@override String toString() { return 'Uy(standard: $standard, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(standard, type);
+
+@override String toString() => 'Uy(standard: $standard, type: $type)';
+
  }

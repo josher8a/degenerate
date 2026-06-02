@@ -39,13 +39,16 @@ RepositoryLicense copyWith({String? key, String? name, String? nodeId, String? s
   spdxId: spdxId ?? this.spdxId,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryLicense &&
           key == other.key &&
           name == other.name &&
           nodeId == other.nodeId &&
           spdxId == other.spdxId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(key, name, nodeId, spdxId, url); } 
-@override String toString() { return 'RepositoryLicense(key: $key, name: $name, nodeId: $nodeId, spdxId: $spdxId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(key, name, nodeId, spdxId, url);
+
+@override String toString() => 'RepositoryLicense(key: $key, name: $name, nodeId: $nodeId, spdxId: $spdxId, url: $url)';
+
  }

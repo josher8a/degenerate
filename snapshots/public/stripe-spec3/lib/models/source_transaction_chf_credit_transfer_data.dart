@@ -64,13 +64,16 @@ SourceTransactionChfCreditTransferData copyWith({String? Function()? reference, 
   senderIban: senderIban != null ? senderIban() : this.senderIban,
   senderName: senderName != null ? senderName() : this.senderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransactionChfCreditTransferData &&
           reference == other.reference &&
           senderAddressCountry == other.senderAddressCountry &&
           senderAddressLine1 == other.senderAddressLine1 &&
           senderIban == other.senderIban &&
-          senderName == other.senderName; } 
-@override int get hashCode { return Object.hash(reference, senderAddressCountry, senderAddressLine1, senderIban, senderName); } 
-@override String toString() { return 'SourceTransactionChfCreditTransferData(reference: $reference, senderAddressCountry: $senderAddressCountry, senderAddressLine1: $senderAddressLine1, senderIban: $senderIban, senderName: $senderName)'; } 
+          senderName == other.senderName;
+
+@override int get hashCode => Object.hash(reference, senderAddressCountry, senderAddressLine1, senderIban, senderName);
+
+@override String toString() => 'SourceTransactionChfCreditTransferData(reference: $reference, senderAddressCountry: $senderAddressCountry, senderAddressLine1: $senderAddressLine1, senderIban: $senderIban, senderName: $senderName)';
+
  }

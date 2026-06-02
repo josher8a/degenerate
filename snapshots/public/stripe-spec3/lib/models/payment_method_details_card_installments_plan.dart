@@ -30,11 +30,14 @@ PaymentMethodDetailsCardInstallmentsPlan copyWith({int? Function()? count, Payme
   interval: interval != null ? interval() : this.interval,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardInstallmentsPlan &&
           count == other.count &&
           interval == other.interval &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(count, interval, type); } 
-@override String toString() { return 'PaymentMethodDetailsCardInstallmentsPlan(count: $count, interval: $interval, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(count, interval, type);
+
+@override String toString() => 'PaymentMethodDetailsCardInstallmentsPlan(count: $count, interval: $interval, type: $type)';
+
  }

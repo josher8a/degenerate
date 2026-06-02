@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('notif
 StreamWebhookRequest copyWith({StreamNotificationUrl? notificationUrl}) { return StreamWebhookRequest(
   notificationUrl: notificationUrl ?? this.notificationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWebhookRequest &&
-          notificationUrl == other.notificationUrl; } 
-@override int get hashCode { return notificationUrl.hashCode; } 
-@override String toString() { return 'StreamWebhookRequest(notificationUrl: $notificationUrl)'; } 
+          notificationUrl == other.notificationUrl;
+
+@override int get hashCode => notificationUrl.hashCode;
+
+@override String toString() => 'StreamWebhookRequest(notificationUrl: $notificationUrl)';
+
  }

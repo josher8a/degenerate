@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is R2EnableSippyAwsSourceProvider && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'R2EnableSippyAwsSourceProvider($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R2EnableSippyAwsSourceProvider && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'R2EnableSippyAwsSourceProvider($value)';
+
  }
 /// AWS S3 bucket to copy objects from.
 @immutable final class R2EnableSippyAwsSource {const R2EnableSippyAwsSource({this.accessKeyId, this.bucket, this.provider, this.region, this.secretAccessKey, });
@@ -61,13 +64,16 @@ R2EnableSippyAwsSource copyWith({String? Function()? accessKeyId, String? Functi
   region: region != null ? region() : this.region,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyAwsSource &&
           accessKeyId == other.accessKeyId &&
           bucket == other.bucket &&
           provider == other.provider &&
           region == other.region &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, bucket, provider, region, secretAccessKey); } 
-@override String toString() { return 'R2EnableSippyAwsSource(accessKeyId: $accessKeyId, bucket: $bucket, provider: $provider, region: $region, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, bucket, provider, region, secretAccessKey);
+
+@override String toString() => 'R2EnableSippyAwsSource(accessKeyId: $accessKeyId, bucket: $bucket, provider: $provider, region: $region, secretAccessKey: $secretAccessKey)';
+
  }

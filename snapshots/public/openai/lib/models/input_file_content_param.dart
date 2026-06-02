@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileDetailEnum && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileDetailEnum($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileDetailEnum && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileDetailEnum($value)';
+
  }
 /// The type of the input item. Always `input_file`.
 @immutable final class InputFileContentParamType {const InputFileContentParamType._(this.value);
@@ -41,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InputFileContentParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InputFileContentParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InputFileContentParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InputFileContentParamType($value)';
+
  }
 /// A file input to the model.
 @immutable final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
@@ -100,14 +106,17 @@ InputFileContentParam copyWith({InputFileContentParamType? type, String? Functio
   fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputFileContentParam &&
           type == other.type &&
           fileId == other.fileId &&
           filename == other.filename &&
           fileData == other.fileData &&
           fileUrl == other.fileUrl &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, fileId, filename, fileData, fileUrl, detail); } 
-@override String toString() { return 'InputFileContentParam(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(type, fileId, filename, fileData, fileUrl, detail);
+
+@override String toString() => 'InputFileContentParam(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)';
+
  }

@@ -41,13 +41,16 @@ UrlscannerGetScanDomResponse404Task copyWith({String? status, String? time, Stri
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanDomResponse404Task &&
           status == other.status &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(status, time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerGetScanDomResponse404Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(status, time, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerGetScanDomResponse404Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

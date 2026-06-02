@@ -36,11 +36,14 @@ PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, CardGenerat
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   setupAttempt: setupAttempt != null ? setupAttempt() : this.setupAttempt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCardGeneratedCard &&
           charge == other.charge &&
           paymentMethodDetails == other.paymentMethodDetails &&
-          setupAttempt == other.setupAttempt; } 
-@override int get hashCode { return Object.hash(charge, paymentMethodDetails, setupAttempt); } 
-@override String toString() { return 'PaymentMethodCardGeneratedCard(charge: $charge, paymentMethodDetails: $paymentMethodDetails, setupAttempt: $setupAttempt)'; } 
+          setupAttempt == other.setupAttempt;
+
+@override int get hashCode => Object.hash(charge, paymentMethodDetails, setupAttempt);
+
+@override String toString() => 'PaymentMethodCardGeneratedCard(charge: $charge, paymentMethodDetails: $paymentMethodDetails, setupAttempt: $setupAttempt)';
+
  }

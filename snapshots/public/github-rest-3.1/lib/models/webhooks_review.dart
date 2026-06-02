@@ -85,7 +85,7 @@ WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAs
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReview &&
           links == other.links &&
           authorAssociation == other.authorAssociation &&
@@ -98,7 +98,10 @@ WebhooksReview copyWith({WebhooksReviewLinks? links, AuthorAssociation? authorAs
           state == other.state &&
           submittedAt == other.submittedAt &&
           updatedAt == other.updatedAt &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user); } 
-@override String toString() { return 'WebhooksReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(links, authorAssociation, body, commitId, htmlUrl, id, nodeId, pullRequestUrl, state, submittedAt, updatedAt, user);
+
+@override String toString() => 'WebhooksReview(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, pullRequestUrl: $pullRequestUrl, state: $state, submittedAt: $submittedAt, updatedAt: $updatedAt, user: $user)';
+
  }

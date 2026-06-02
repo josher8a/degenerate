@@ -17,7 +17,8 @@ final class Bf16Error$400 extends Bf16Error {const Bf16Error$400(this.error);
 
 final Bf16Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class Bf16Error$Unknown extends Bf16Error {const Bf16Error$Unknown(this.statusCode, this.rawBody, );
 

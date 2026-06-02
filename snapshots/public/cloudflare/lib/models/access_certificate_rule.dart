@@ -24,9 +24,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
 AccessCertificateRule copyWith({Map<String,dynamic>? certificate}) { return AccessCertificateRule(
   certificate: certificate ?? this.certificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessCertificateRule &&
-          certificate == other.certificate; } 
-@override int get hashCode { return certificate.hashCode; } 
-@override String toString() { return 'AccessCertificateRule(certificate: $certificate)'; } 
+          certificate == other.certificate;
+
+@override int get hashCode => certificate.hashCode;
+
+@override String toString() => 'AccessCertificateRule(certificate: $certificate)';
+
  }

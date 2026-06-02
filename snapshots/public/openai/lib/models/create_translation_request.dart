@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateTranslationRequestResponseFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateTranslationRequestResponseFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateTranslationRequestResponseFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateTranslationRequestResponseFormat($value)';
+
  }
 @immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });
 
@@ -83,13 +86,16 @@ CreateTranslationRequest copyWith({Uint8List? file, CreateTranslationRequestMode
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
   temperature: temperature != null ? temperature() : this.temperature,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateTranslationRequest &&
           file == other.file &&
           model == other.model &&
           prompt == other.prompt &&
           responseFormat == other.responseFormat &&
-          temperature == other.temperature; } 
-@override int get hashCode { return Object.hash(file, model, prompt, responseFormat, temperature); } 
-@override String toString() { return 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)'; } 
+          temperature == other.temperature;
+
+@override int get hashCode => Object.hash(file, model, prompt, responseFormat, temperature);
+
+@override String toString() => 'CreateTranslationRequest(file: $file, model: $model, prompt: $prompt, responseFormat: $responseFormat, temperature: $temperature)';
+
  }

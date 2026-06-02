@@ -32,12 +32,16 @@ final ActiveStatus activeStatus;
 
 @override String get type => 'active';
 
-@override Map<String, dynamic> toJson() { return {...activeStatus.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...activeStatus.toJson(), 'type': type};
+
 ThreadResourceStatusActive copyWith({ActiveStatus? activeStatus}) { return ThreadResourceStatusActive(activeStatus ?? this.activeStatus); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadResourceStatusActive && activeStatus == other.activeStatus; } 
-@override int get hashCode { return activeStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatus.active($activeStatus)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadResourceStatusActive && activeStatus == other.activeStatus;
+
+@override int get hashCode => activeStatus.hashCode;
+
+@override String toString() => 'ThreadResourceStatus.active($activeStatus)';
+
  }
 @immutable final class ThreadResourceStatusLocked extends ThreadResourceStatus {const ThreadResourceStatusLocked(this.lockedStatus);
 
@@ -47,14 +51,18 @@ final LockedStatus lockedStatus;
 
 @override String get type => 'locked';
 
-@override Map<String, dynamic> toJson() { return {...lockedStatus.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...lockedStatus.toJson(), 'type': type};
+
 ThreadResourceStatusLocked copyWith({String? Function()? reason}) { return ThreadResourceStatusLocked(lockedStatus.copyWith(
   reason: reason,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadResourceStatusLocked && lockedStatus == other.lockedStatus; } 
-@override int get hashCode { return lockedStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatus.locked($lockedStatus)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadResourceStatusLocked && lockedStatus == other.lockedStatus;
+
+@override int get hashCode => lockedStatus.hashCode;
+
+@override String toString() => 'ThreadResourceStatus.locked($lockedStatus)';
+
  }
 @immutable final class ThreadResourceStatusClosed extends ThreadResourceStatus {const ThreadResourceStatusClosed(this.closedStatus);
 
@@ -64,14 +72,18 @@ final ClosedStatus closedStatus;
 
 @override String get type => 'closed';
 
-@override Map<String, dynamic> toJson() { return {...closedStatus.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...closedStatus.toJson(), 'type': type};
+
 ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return ThreadResourceStatusClosed(closedStatus.copyWith(
   reason: reason,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadResourceStatusClosed && closedStatus == other.closedStatus; } 
-@override int get hashCode { return closedStatus.hashCode; } 
-@override String toString() { return 'ThreadResourceStatus.closed($closedStatus)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadResourceStatusClosed && closedStatus == other.closedStatus;
+
+@override int get hashCode => closedStatus.hashCode;
+
+@override String toString() => 'ThreadResourceStatus.closed($closedStatus)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -81,9 +93,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadResourceStatus$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ThreadResourceStatus.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadResourceStatus$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ThreadResourceStatus.unknown($json)';
+
  }

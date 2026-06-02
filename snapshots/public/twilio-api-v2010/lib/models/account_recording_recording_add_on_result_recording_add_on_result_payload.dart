@@ -115,7 +115,7 @@ AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String
   referenceSid: referenceSid != null ? referenceSid() : this.referenceSid,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload &&
           sid == other.sid &&
           addOnResultSid == other.addOnResultSid &&
@@ -127,7 +127,10 @@ AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload copyWith({String
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
           referenceSid == other.referenceSid &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(sid, addOnResultSid, accountSid, label, addOnSid, addOnConfigurationSid, contentType, dateCreated, dateUpdated, referenceSid, subresourceUris); } 
-@override String toString() { return 'AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(sid: $sid, addOnResultSid: $addOnResultSid, accountSid: $accountSid, label: $label, addOnSid: $addOnSid, addOnConfigurationSid: $addOnConfigurationSid, contentType: $contentType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, referenceSid: $referenceSid, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hash(sid, addOnResultSid, accountSid, label, addOnSid, addOnConfigurationSid, contentType, dateCreated, dateUpdated, referenceSid, subresourceUris);
+
+@override String toString() => 'AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload(sid: $sid, addOnResultSid: $addOnResultSid, accountSid: $accountSid, label: $label, addOnSid: $addOnSid, addOnConfigurationSid: $addOnConfigurationSid, contentType: $contentType, dateCreated: $dateCreated, dateUpdated: $dateUpdated, referenceSid: $referenceSid, subresourceUris: $subresourceUris)';
+
  }

@@ -47,13 +47,16 @@ ResourceTaggingTaggedResourceObjectZoneLevelBase copyWith({ResourceTaggingEtag? 
   tags: tags ?? this.tags,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectZoneLevelBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
           tags == other.tags &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags, zoneId); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectZoneLevelBase(etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(etag, id, name, tags, zoneId);
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectZoneLevelBase(etag: $etag, id: $id, name: $name, tags: $tags, zoneId: $zoneId)';
+
  }

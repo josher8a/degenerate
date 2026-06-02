@@ -21,31 +21,36 @@ final class DependabotUpdateAlertError$400 extends DependabotUpdateAlertError {c
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DependabotUpdateAlertError$403 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class DependabotUpdateAlertError$404 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DependabotUpdateAlertError$409 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class DependabotUpdateAlertError$422 extends DependabotUpdateAlertError {const DependabotUpdateAlertError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class DependabotUpdateAlertError$Unknown extends DependabotUpdateAlertError {const DependabotUpdateAlertError$Unknown(this.statusCode, this.rawBody, );
 

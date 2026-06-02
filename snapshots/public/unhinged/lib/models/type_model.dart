@@ -99,19 +99,14 @@ final class EventType {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is EventType && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'EventType($value)';
-  }
+  String toString() => 'EventType($value)';
 }
 
 @immutable
@@ -163,21 +158,17 @@ final class TypeModel {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is TypeModel &&
-            eventType == other.eventType &&
-            timestamp == other.timestamp &&
-            details == other.details;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TypeModel &&
+          eventType == other.eventType &&
+          timestamp == other.timestamp &&
+          details == other.details;
 
   @override
-  int get hashCode {
-    return Object.hash(eventType, timestamp, details);
-  }
+  int get hashCode => Object.hash(eventType, timestamp, details);
 
   @override
-  String toString() {
-    return 'TypeModel(eventType: $eventType, timestamp: $timestamp, details: $details)';
-  }
+  String toString() =>
+      'TypeModel(eventType: $eventType, timestamp: $timestamp, details: $details)';
 }

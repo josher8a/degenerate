@@ -30,12 +30,15 @@ QualityMos copyWith({int? Function()? avg, int? Function()? p50, int? Function()
   p75: p75 != null ? p75() : this.p75,
   p90: p90 != null ? p90() : this.p90,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QualityMos &&
           avg == other.avg &&
           p50 == other.p50 &&
           p75 == other.p75 &&
-          p90 == other.p90; } 
-@override int get hashCode { return Object.hash(avg, p50, p75, p90); } 
-@override String toString() { return 'QualityMos(avg: $avg, p50: $p50, p75: $p75, p90: $p90)'; } 
+          p90 == other.p90;
+
+@override int get hashCode => Object.hash(avg, p50, p75, p90);
+
+@override String toString() => 'QualityMos(avg: $avg, p50: $p50, p75: $p75, p90: $p90)';
+
  }

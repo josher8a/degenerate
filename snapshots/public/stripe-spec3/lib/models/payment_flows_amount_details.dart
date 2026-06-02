@@ -45,14 +45,17 @@ PaymentFlowsAmountDetails copyWith({int? Function()? discountAmount, PaymentFlow
   tax: tax != null ? tax() : this.tax,
   tip: tip != null ? tip() : this.tip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetails &&
           discountAmount == other.discountAmount &&
           error == other.error &&
           lineItems == other.lineItems &&
           shipping == other.shipping &&
           tax == other.tax &&
-          tip == other.tip; } 
-@override int get hashCode { return Object.hash(discountAmount, error, lineItems, shipping, tax, tip); } 
-@override String toString() { return 'PaymentFlowsAmountDetails(discountAmount: $discountAmount, error: $error, lineItems: $lineItems, shipping: $shipping, tax: $tax, tip: $tip)'; } 
+          tip == other.tip;
+
+@override int get hashCode => Object.hash(discountAmount, error, lineItems, shipping, tax, tip);
+
+@override String toString() => 'PaymentFlowsAmountDetails(discountAmount: $discountAmount, error: $error, lineItems: $lineItems, shipping: $shipping, tax: $tax, tip: $tip)';
+
  }

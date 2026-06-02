@@ -24,10 +24,13 @@ CreateEmbeddingResponseUsage copyWith({int? promptTokens, int? totalTokens, }) {
   promptTokens: promptTokens ?? this.promptTokens,
   totalTokens: totalTokens ?? this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEmbeddingResponseUsage &&
           promptTokens == other.promptTokens &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(promptTokens, totalTokens); } 
-@override String toString() { return 'CreateEmbeddingResponseUsage(promptTokens: $promptTokens, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(promptTokens, totalTokens);
+
+@override String toString() => 'CreateEmbeddingResponseUsage(promptTokens: $promptTokens, totalTokens: $totalTokens)';
+
  }

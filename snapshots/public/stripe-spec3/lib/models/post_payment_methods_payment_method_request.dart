@@ -52,7 +52,7 @@ PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePayme
   payto: payto != null ? payto() : this.payto,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequest &&
           allowRedisplay == other.allowRedisplay &&
           billingDetails == other.billingDetails &&
@@ -60,7 +60,10 @@ PostPaymentMethodsPaymentMethodRequest copyWith({ConfirmationTokensResourcePayme
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           payto == other.payto &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(allowRedisplay, billingDetails, card, Object.hashAll(expand ?? const []), metadata, payto, usBankAccount); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequest(allowRedisplay: $allowRedisplay, billingDetails: $billingDetails, card: $card, expand: $expand, metadata: $metadata, payto: $payto, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(allowRedisplay, billingDetails, card, Object.hashAll(expand ?? const []), metadata, payto, usBankAccount);
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodRequest(allowRedisplay: $allowRedisplay, billingDetails: $billingDetails, card: $card, expand: $expand, metadata: $metadata, payto: $payto, usBankAccount: $usBankAccount)';
+
  }

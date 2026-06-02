@@ -52,9 +52,7 @@ final class AcceptTotemEndpointError$400 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 400;
-  }
+  int get statusCode => 400;
 }
 
 final class AcceptTotemEndpointError$403 extends AcceptTotemEndpointError {
@@ -63,9 +61,7 @@ final class AcceptTotemEndpointError$403 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 403;
-  }
+  int get statusCode => 403;
 }
 
 final class AcceptTotemEndpointError$404 extends AcceptTotemEndpointError {
@@ -74,9 +70,7 @@ final class AcceptTotemEndpointError$404 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 404;
-  }
+  int get statusCode => 404;
 }
 
 final class AcceptTotemEndpointError$500 extends AcceptTotemEndpointError {
@@ -85,9 +79,7 @@ final class AcceptTotemEndpointError$500 extends AcceptTotemEndpointError {
   final ErrorResponseSchema error;
 
   @override
-  int get statusCode {
-    return 500;
-  }
+  int get statusCode => 500;
 }
 
 final class AcceptTotemEndpointError$Unknown extends AcceptTotemEndpointError {

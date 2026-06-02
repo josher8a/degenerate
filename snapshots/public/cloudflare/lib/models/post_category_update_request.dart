@@ -32,12 +32,15 @@ PostCategoryUpdateRequest copyWith({double? Function()? killChain, List<String>?
   name: name != null ? name() : this.name,
   shortname: shortname != null ? shortname() : this.shortname,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCategoryUpdateRequest &&
           killChain == other.killChain &&
           listEquals(mitreAttack, other.mitreAttack) &&
           name == other.name &&
-          shortname == other.shortname; } 
-@override int get hashCode { return Object.hash(killChain, Object.hashAll(mitreAttack ?? const []), name, shortname); } 
-@override String toString() { return 'PostCategoryUpdateRequest(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname)'; } 
+          shortname == other.shortname;
+
+@override int get hashCode => Object.hash(killChain, Object.hashAll(mitreAttack ?? const []), name, shortname);
+
+@override String toString() => 'PostCategoryUpdateRequest(killChain: $killChain, mitreAttack: $mitreAttack, name: $name, shortname: $shortname)';
+
  }

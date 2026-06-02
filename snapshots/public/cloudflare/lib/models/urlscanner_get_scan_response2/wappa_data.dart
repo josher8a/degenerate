@@ -45,14 +45,17 @@ WappaData copyWith({String? app, List<DataCategories>? categories, List<Confiden
   icon: icon ?? this.icon,
   website: website ?? this.website,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WappaData &&
           app == other.app &&
           listEquals(categories, other.categories) &&
           listEquals(confidence, other.confidence) &&
           confidenceTotal == other.confidenceTotal &&
           icon == other.icon &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(app, Object.hashAll(categories), Object.hashAll(confidence), confidenceTotal, icon, website); } 
-@override String toString() { return 'WappaData(app: $app, categories: $categories, confidence: $confidence, confidenceTotal: $confidenceTotal, icon: $icon, website: $website)'; } 
+          website == other.website;
+
+@override int get hashCode => Object.hash(app, Object.hashAll(categories), Object.hashAll(confidence), confidenceTotal, icon, website);
+
+@override String toString() => 'WappaData(app: $app, categories: $categories, confidence: $confidence, confidenceTotal: $confidenceTotal, icon: $icon, website: $website)';
+
  }

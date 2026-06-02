@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolSearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebSearchToolSearchContextSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolSearchContextSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchToolSearchContextSize($value)';
+
  }
 /// Search the Internet for sources related to the prompt. Learn more about the
 /// [web search tool](/docs/guides/tools-web-search).
@@ -65,12 +68,15 @@ WebSearchTool copyWith({String? type, WebSearchToolFilters? Function()? filters,
   userLocation: userLocation != null ? userLocation() : this.userLocation,
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchTool &&
           type == other.type &&
           filters == other.filters &&
           userLocation == other.userLocation &&
-          searchContextSize == other.searchContextSize; } 
-@override int get hashCode { return Object.hash(type, filters, userLocation, searchContextSize); } 
-@override String toString() { return 'WebSearchTool(type: $type, filters: $filters, userLocation: $userLocation, searchContextSize: $searchContextSize)'; } 
+          searchContextSize == other.searchContextSize;
+
+@override int get hashCode => Object.hash(type, filters, userLocation, searchContextSize);
+
+@override String toString() => 'WebSearchTool(type: $type, filters: $filters, userLocation: $userLocation, searchContextSize: $searchContextSize)';
+
  }

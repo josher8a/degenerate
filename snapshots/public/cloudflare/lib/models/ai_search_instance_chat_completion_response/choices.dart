@@ -20,10 +20,13 @@ Choices copyWith({int? Function()? index, ChoicesMessage? message, }) { return C
   index: index != null ? index() : this.index,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Choices &&
           index == other.index &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(index, message); } 
-@override String toString() { return 'Choices(index: $index, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(index, message);
+
+@override String toString() => 'Choices(index: $index, message: $message)';
+
  }

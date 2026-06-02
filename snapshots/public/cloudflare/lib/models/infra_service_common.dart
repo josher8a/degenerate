@@ -46,14 +46,17 @@ InfraServiceCommon copyWith({DateTime? Function()? createdAt, InfraServiceHost? 
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraServiceCommon &&
           createdAt == other.createdAt &&
           host == other.host &&
           name == other.name &&
           serviceId == other.serviceId &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, host, name, serviceId, type, updatedAt); } 
-@override String toString() { return 'InfraServiceCommon(createdAt: $createdAt, host: $host, name: $name, serviceId: $serviceId, type: $type, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, host, name, serviceId, type, updatedAt);
+
+@override String toString() => 'InfraServiceCommon(createdAt: $createdAt, host: $host, name: $name, serviceId: $serviceId, type: $type, updatedAt: $updatedAt)';
+
  }

@@ -23,10 +23,13 @@ ExternalKeyRegistered copyWith({String? Function()? id, Map<String, dynamic>? Fu
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExternalKeyRegistered &&
           id == other.id &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(id, data); } 
-@override String toString() { return 'ExternalKeyRegistered(id: $id, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(id, data);
+
+@override String toString() => 'ExternalKeyRegistered(id: $id, data: $data)';
+
  }

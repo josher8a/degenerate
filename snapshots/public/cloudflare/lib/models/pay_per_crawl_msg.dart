@@ -42,14 +42,17 @@ PayPerCrawlMsg copyWith({int? Function()? code, String? Function()? documentatio
   meta: meta != null ? meta() : this.meta,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlMsg &&
           code == other.code &&
           documentationUrl == other.documentationUrl &&
           listEquals(errorChain, other.errorChain) &&
           message == other.message &&
           meta == other.meta &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, documentationUrl, Object.hashAll(errorChain ?? const []), message, meta, source); } 
-@override String toString() { return 'PayPerCrawlMsg(code: $code, documentationUrl: $documentationUrl, errorChain: $errorChain, message: $message, meta: $meta, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, documentationUrl, Object.hashAll(errorChain ?? const []), message, meta, source);
+
+@override String toString() => 'PayPerCrawlMsg(code: $code, documentationUrl: $documentationUrl, errorChain: $errorChain, message: $message, meta: $meta, source: $source)';
+
  }

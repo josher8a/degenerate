@@ -25,11 +25,14 @@ PackageVersionMetadata copyWith({PackageType? packageType, MetadataContainer? Fu
   container: container != null ? container() : this.container,
   docker: docker != null ? docker() : this.docker,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PackageVersionMetadata &&
           packageType == other.packageType &&
           container == other.container &&
-          docker == other.docker; } 
-@override int get hashCode { return Object.hash(packageType, container, docker); } 
-@override String toString() { return 'PackageVersionMetadata(packageType: $packageType, container: $container, docker: $docker)'; } 
+          docker == other.docker;
+
+@override int get hashCode => Object.hash(packageType, container, docker);
+
+@override String toString() => 'PackageVersionMetadata(packageType: $packageType, container: $container, docker: $docker)';
+
  }

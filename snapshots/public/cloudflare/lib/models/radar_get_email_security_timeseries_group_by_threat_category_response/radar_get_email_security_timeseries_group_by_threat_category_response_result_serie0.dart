@@ -33,12 +33,15 @@ RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 copyWit
   identityDeception: identityDeception ?? this.identityDeception,
   link: link ?? this.link,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0 &&
           listEquals(brandImpersonation, other.brandImpersonation) &&
           listEquals(credentialHarvester, other.credentialHarvester) &&
           listEquals(identityDeception, other.identityDeception) &&
-          listEquals(link, other.link); } 
-@override int get hashCode { return Object.hash(Object.hashAll(brandImpersonation), Object.hashAll(credentialHarvester), Object.hashAll(identityDeception), Object.hashAll(link)); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(brandImpersonation: $brandImpersonation, credentialHarvester: $credentialHarvester, identityDeception: $identityDeception, link: $link)'; } 
+          listEquals(link, other.link);
+
+@override int get hashCode => Object.hash(Object.hashAll(brandImpersonation), Object.hashAll(credentialHarvester), Object.hashAll(identityDeception), Object.hashAll(link));
+
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByThreatCategoryResponseResultSerie0(brandImpersonation: $brandImpersonation, credentialHarvester: $credentialHarvester, identityDeception: $identityDeception, link: $link)';
+
  }

@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldPerOperationSettingMitigationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldPerOperationSettingMitigationAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldPerOperationSettingMitigationAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldPerOperationSettingMitigationAction($value)';
+
  }
 @immutable final class ShieldPerOperationSetting {const ShieldPerOperationSetting({required this.mitigationAction, required this.operationId, });
 
@@ -62,10 +65,13 @@ ShieldPerOperationSetting copyWith({ShieldPerOperationSettingMitigationAction? m
   mitigationAction: mitigationAction ?? this.mitigationAction,
   operationId: operationId ?? this.operationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldPerOperationSetting &&
           mitigationAction == other.mitigationAction &&
-          operationId == other.operationId; } 
-@override int get hashCode { return Object.hash(mitigationAction, operationId); } 
-@override String toString() { return 'ShieldPerOperationSetting(mitigationAction: $mitigationAction, operationId: $operationId)'; } 
+          operationId == other.operationId;
+
+@override int get hashCode => Object.hash(mitigationAction, operationId);
+
+@override String toString() => 'ShieldPerOperationSetting(mitigationAction: $mitigationAction, operationId: $operationId)';
+
  }

@@ -28,11 +28,14 @@ RealtimekitPollOptions copyWith({double? count, String? text, List<Votes>? votes
   text: text ?? this.text,
   votes: votes ?? this.votes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPollOptions &&
           count == other.count &&
           text == other.text &&
-          listEquals(votes, other.votes); } 
-@override int get hashCode { return Object.hash(count, text, Object.hashAll(votes)); } 
-@override String toString() { return 'RealtimekitPollOptions(count: $count, text: $text, votes: $votes)'; } 
+          listEquals(votes, other.votes);
+
+@override int get hashCode => Object.hash(count, text, Object.hashAll(votes));
+
+@override String toString() => 'RealtimekitPollOptions(count: $count, text: $text, votes: $votes)';
+
  }

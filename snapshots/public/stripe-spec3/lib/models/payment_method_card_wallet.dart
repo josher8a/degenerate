@@ -65,7 +65,7 @@ PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Fu
   type: type ?? this.type,
   visaCheckout: visaCheckout != null ? visaCheckout() : this.visaCheckout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCardWallet &&
           amexExpressCheckout == other.amexExpressCheckout &&
           applePay == other.applePay &&
@@ -75,7 +75,10 @@ PaymentMethodCardWallet copyWith({PaymentMethodCardWalletAmexExpressCheckout? Fu
           masterpass == other.masterpass &&
           samsungPay == other.samsungPay &&
           type == other.type &&
-          visaCheckout == other.visaCheckout; } 
-@override int get hashCode { return Object.hash(amexExpressCheckout, applePay, dynamicLast4, googlePay, link, masterpass, samsungPay, type, visaCheckout); } 
-@override String toString() { return 'PaymentMethodCardWallet(amexExpressCheckout: $amexExpressCheckout, applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, link: $link, masterpass: $masterpass, samsungPay: $samsungPay, type: $type, visaCheckout: $visaCheckout)'; } 
+          visaCheckout == other.visaCheckout;
+
+@override int get hashCode => Object.hash(amexExpressCheckout, applePay, dynamicLast4, googlePay, link, masterpass, samsungPay, type, visaCheckout);
+
+@override String toString() => 'PaymentMethodCardWallet(amexExpressCheckout: $amexExpressCheckout, applePay: $applePay, dynamicLast4: $dynamicLast4, googlePay: $googlePay, link: $link, masterpass: $masterpass, samsungPay: $samsungPay, type: $type, visaCheckout: $visaCheckout)';
+
  }

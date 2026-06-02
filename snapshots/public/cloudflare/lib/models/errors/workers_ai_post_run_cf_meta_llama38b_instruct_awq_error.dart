@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfMetaLlama38bInstructAwqError$400 extends WorkersAi
 
 final WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfMetaLlama38bInstructAwqError$Unknown extends WorkersAiPostRunCfMetaLlama38bInstructAwqError {const WorkersAiPostRunCfMetaLlama38bInstructAwqError$Unknown(this.statusCode, this.rawBody, );
 

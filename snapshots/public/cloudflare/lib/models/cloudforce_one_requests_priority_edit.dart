@@ -40,12 +40,15 @@ CloudforceOneRequestsPriorityEdit copyWith({List<String>? labels, int? priority,
   requirement: requirement ?? this.requirement,
   tlp: tlp ?? this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsPriorityEdit &&
           listEquals(labels, other.labels) &&
           priority == other.priority &&
           requirement == other.requirement &&
-          tlp == other.tlp; } 
-@override int get hashCode { return Object.hash(Object.hashAll(labels), priority, requirement, tlp); } 
-@override String toString() { return 'CloudforceOneRequestsPriorityEdit(labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp)'; } 
+          tlp == other.tlp;
+
+@override int get hashCode => Object.hash(Object.hashAll(labels), priority, requirement, tlp);
+
+@override String toString() => 'CloudforceOneRequestsPriorityEdit(labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp)';
+
  }

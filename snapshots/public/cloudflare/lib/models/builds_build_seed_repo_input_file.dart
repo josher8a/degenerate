@@ -36,12 +36,15 @@ BuildsBuildSeedRepoInputFile copyWith({String? content, String? filename, bool F
   isBase64: isBase64 != null ? isBase64() : this.isBase64,
   replace: replace != null ? replace() : this.replace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildSeedRepoInputFile &&
           content == other.content &&
           filename == other.filename &&
           isBase64 == other.isBase64 &&
-          replace == other.replace; } 
-@override int get hashCode { return Object.hash(content, filename, isBase64, replace); } 
-@override String toString() { return 'BuildsBuildSeedRepoInputFile(content: $content, filename: $filename, isBase64: $isBase64, replace: $replace)'; } 
+          replace == other.replace;
+
+@override int get hashCode => Object.hash(content, filename, isBase64, replace);
+
+@override String toString() => 'BuildsBuildSeedRepoInputFile(content: $content, filename: $filename, isBase64: $isBase64, replace: $replace)';
+
  }

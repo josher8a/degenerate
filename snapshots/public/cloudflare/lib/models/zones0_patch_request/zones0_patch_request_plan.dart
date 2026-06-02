@@ -21,9 +21,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Zones0PatchRequestPlan copyWith({ZonesIdentifier? Function()? id}) { return Zones0PatchRequestPlan(
   id: id != null ? id() : this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Zones0PatchRequestPlan &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'Zones0PatchRequestPlan(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'Zones0PatchRequestPlan(id: $id)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WafManagedRulesModeAnomaly && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WafManagedRulesModeAnomaly($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WafManagedRulesModeAnomaly && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WafManagedRulesModeAnomaly($value)';
+
  }
 /// When triggered, anomaly detection WAF rules contribute to an overall threat score that will determine if a request is considered malicious. You can configure the total scoring threshold through the 'sensitivity' property of the WAF package.
 @immutable final class WafManagedRulesAnomalyRule {const WafManagedRulesAnomalyRule({required this.allowedModes, required this.mode, });
@@ -48,10 +51,13 @@ WafManagedRulesAnomalyRule copyWith({List<WafManagedRulesModeAnomaly>? allowedMo
   allowedModes: allowedModes ?? this.allowedModes,
   mode: mode ?? this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesAnomalyRule &&
           listEquals(allowedModes, other.allowedModes) &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedModes), mode); } 
-@override String toString() { return 'WafManagedRulesAnomalyRule(allowedModes: $allowedModes, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedModes), mode);
+
+@override String toString() => 'WafManagedRulesAnomalyRule(allowedModes: $allowedModes, mode: $mode)';
+
  }

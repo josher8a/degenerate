@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BlockAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BlockAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BlockAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BlockAction($value)';
+
  }
 @immutable final class Block {const Block({required this.action, this.message, });
 
@@ -41,10 +44,13 @@ Block copyWith({BlockAction? action, String? Function()? message, }) { return Bl
   action: action ?? this.action,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Block &&
           action == other.action &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(action, message); } 
-@override String toString() { return 'Block(action: $action, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(action, message);
+
+@override String toString() => 'Block(action: $action, message: $message)';
+
  }

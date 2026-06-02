@@ -51,13 +51,16 @@ McpApprovalRequest copyWith({String? type, String? id, String? serverLabel, Stri
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpApprovalRequest &&
           type == other.type &&
           id == other.id &&
           serverLabel == other.serverLabel &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments); } 
-@override String toString() { return 'McpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(type, id, serverLabel, name, arguments);
+
+@override String toString() => 'McpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)';
+
  }

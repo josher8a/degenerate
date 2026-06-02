@@ -74,7 +74,7 @@ SimpleCommitStatus copyWith({String? Function()? description, int? id, String? n
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleCommitStatus &&
           description == other.description &&
           id == other.id &&
@@ -86,7 +86,10 @@ SimpleCommitStatus copyWith({String? Function()? description, int? id, String? n
           avatarUrl == other.avatarUrl &&
           url == other.url &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(description, id, nodeId, state, context, targetUrl, $required, avatarUrl, url, createdAt, updatedAt); } 
-@override String toString() { return 'SimpleCommitStatus(description: $description, id: $id, nodeId: $nodeId, state: $state, context: $context, targetUrl: $targetUrl, \$required: ${$required}, avatarUrl: $avatarUrl, url: $url, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(description, id, nodeId, state, context, targetUrl, $required, avatarUrl, url, createdAt, updatedAt);
+
+@override String toString() => 'SimpleCommitStatus(description: $description, id: $id, nodeId: $nodeId, state: $state, context: $context, targetUrl: $targetUrl, \$required: ${$required}, avatarUrl: $avatarUrl, url: $url, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SchemaValidationDeletePerOperationSettingResponseResult copyWith({ShieldUuid? Function()? operationId}) { return SchemaValidationDeletePerOperationSettingResponseResult(
   operationId: operationId != null ? operationId() : this.operationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SchemaValidationDeletePerOperationSettingResponseResult &&
-          operationId == other.operationId; } 
-@override int get hashCode { return operationId.hashCode; } 
-@override String toString() { return 'SchemaValidationDeletePerOperationSettingResponseResult(operationId: $operationId)'; } 
+          operationId == other.operationId;
+
+@override int get hashCode => operationId.hashCode;
+
+@override String toString() => 'SchemaValidationDeletePerOperationSettingResponseResult(operationId: $operationId)';
+
  }

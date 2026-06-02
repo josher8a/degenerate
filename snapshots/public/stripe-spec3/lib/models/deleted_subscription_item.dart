@@ -35,11 +35,14 @@ DeletedSubscriptionItem copyWith({bool? deleted, String? id, DeletedSubscription
   id: id ?? this.id,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedSubscriptionItem &&
           deleted == other.deleted &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(deleted, id, object); } 
-@override String toString() { return 'DeletedSubscriptionItem(deleted: $deleted, id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(deleted, id, object);
+
+@override String toString() => 'DeletedSubscriptionItem(deleted: $deleted, id: $id, object: $object)';
+
  }

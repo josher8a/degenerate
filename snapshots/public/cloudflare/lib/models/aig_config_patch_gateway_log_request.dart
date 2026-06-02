@@ -38,11 +38,14 @@ AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<Stri
   metadata: metadata != null ? metadata() : this.metadata,
   score: score != null ? score() : this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigPatchGatewayLogRequest &&
           feedback == other.feedback &&
           metadata == other.metadata &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(feedback, metadata, score); } 
-@override String toString() { return 'AigConfigPatchGatewayLogRequest(feedback: $feedback, metadata: $metadata, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(feedback, metadata, score);
+
+@override String toString() => 'AigConfigPatchGatewayLogRequest(feedback: $feedback, metadata: $metadata, score: $score)';
+
  }

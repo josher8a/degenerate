@@ -39,13 +39,16 @@ BuildsUpsertRepoConnectionRequest copyWith({BuildsProviderAccountId? providerAcc
   repoId: repoId ?? this.repoId,
   repoName: repoName ?? this.repoName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsUpsertRepoConnectionRequest &&
           providerAccountId == other.providerAccountId &&
           providerAccountName == other.providerAccountName &&
           providerType == other.providerType &&
           repoId == other.repoId &&
-          repoName == other.repoName; } 
-@override int get hashCode { return Object.hash(providerAccountId, providerAccountName, providerType, repoId, repoName); } 
-@override String toString() { return 'BuildsUpsertRepoConnectionRequest(providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoId: $repoId, repoName: $repoName)'; } 
+          repoName == other.repoName;
+
+@override int get hashCode => Object.hash(providerAccountId, providerAccountName, providerType, repoId, repoName);
+
+@override String toString() => 'BuildsUpsertRepoConnectionRequest(providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoId: $repoId, repoName: $repoName)';
+
  }

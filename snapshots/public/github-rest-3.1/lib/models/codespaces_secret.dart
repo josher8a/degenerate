@@ -45,13 +45,16 @@ CodespacesSecret copyWith({String? name, DateTime? createdAt, DateTime? updatedA
   visibility: visibility ?? this.visibility,
   selectedRepositoriesUrl: selectedRepositoriesUrl ?? this.selectedRepositoriesUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesSecret &&
           name == other.name &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           visibility == other.visibility &&
-          selectedRepositoriesUrl == other.selectedRepositoriesUrl; } 
-@override int get hashCode { return Object.hash(name, createdAt, updatedAt, visibility, selectedRepositoriesUrl); } 
-@override String toString() { return 'CodespacesSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)'; } 
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl;
+
+@override int get hashCode => Object.hash(name, createdAt, updatedAt, visibility, selectedRepositoriesUrl);
+
+@override String toString() => 'CodespacesSecret(name: $name, createdAt: $createdAt, updatedAt: $updatedAt, visibility: $visibility, selectedRepositoriesUrl: $selectedRepositoriesUrl)';
+
  }

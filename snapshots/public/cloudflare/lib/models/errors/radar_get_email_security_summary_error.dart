@@ -17,7 +17,8 @@ final class RadarGetEmailSecuritySummaryError$400 extends RadarGetEmailSecurityS
 
 final RadarGetEmailSecuritySummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetEmailSecuritySummaryError$Unknown extends RadarGetEmailSecuritySummaryError {const RadarGetEmailSecuritySummaryError$Unknown(this.statusCode, this.rawBody, );
 

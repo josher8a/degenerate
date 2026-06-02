@@ -72,7 +72,7 @@ UserIdentity copyWith({String? Function()? accountId, Map<String, dynamic>? Func
   userUuid: userUuid != null ? userUuid() : this.userUuid,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserIdentity &&
           accountId == other.accountId &&
           deviceSessions == other.deviceSessions &&
@@ -84,7 +84,10 @@ UserIdentity copyWith({String? Function()? accountId, Map<String, dynamic>? Func
           isWarp == other.isWarp &&
           name == other.name &&
           userUuid == other.userUuid &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(accountId, deviceSessions, email, geo, iat, id, isGateway, isWarp, name, userUuid, version); } 
-@override String toString() { return 'UserIdentity(accountId: $accountId, deviceSessions: $deviceSessions, email: $email, geo: $geo, iat: $iat, id: $id, isGateway: $isGateway, isWarp: $isWarp, name: $name, userUuid: $userUuid, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(accountId, deviceSessions, email, geo, iat, id, isGateway, isWarp, name, userUuid, version);
+
+@override String toString() => 'UserIdentity(accountId: $accountId, deviceSessions: $deviceSessions, email: $email, geo: $geo, iat: $iat, id: $id, isGateway: $isGateway, isWarp: $isWarp, name: $name, userUuid: $userUuid, version: $version)';
+
  }

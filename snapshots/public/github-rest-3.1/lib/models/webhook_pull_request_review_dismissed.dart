@@ -55,7 +55,7 @@ WebhookPullRequestReviewDismissed copyWith({WebhookDependabotAlertDismissedActio
   review: review ?? this.review,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewDismissed &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -64,7 +64,10 @@ WebhookPullRequestReviewDismissed copyWith({WebhookDependabotAlertDismissedActio
           pullRequest == other.pullRequest &&
           repository == other.repository &&
           review == other.review &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, review, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewDismissed(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, pullRequest, repository, review, sender);
+
+@override String toString() => 'WebhookPullRequestReviewDismissed(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, review: $review, sender: $sender)';
+
  }

@@ -53,7 +53,7 @@ OrganizationUpdatedChangesRequested copyWith({String? Function()? title, String?
   apiCallLogging: apiCallLogging != null ? apiCallLogging() : this.apiCallLogging,
   apiCallLoggingProjectIds: apiCallLoggingProjectIds != null ? apiCallLoggingProjectIds() : this.apiCallLoggingProjectIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationUpdatedChangesRequested &&
           title == other.title &&
           description == other.description &&
@@ -61,7 +61,10 @@ OrganizationUpdatedChangesRequested copyWith({String? Function()? title, String?
           threadsUiVisibility == other.threadsUiVisibility &&
           usageDashboardVisibility == other.usageDashboardVisibility &&
           apiCallLogging == other.apiCallLogging &&
-          apiCallLoggingProjectIds == other.apiCallLoggingProjectIds; } 
-@override int get hashCode { return Object.hash(title, description, name, threadsUiVisibility, usageDashboardVisibility, apiCallLogging, apiCallLoggingProjectIds); } 
-@override String toString() { return 'OrganizationUpdatedChangesRequested(title: $title, description: $description, name: $name, threadsUiVisibility: $threadsUiVisibility, usageDashboardVisibility: $usageDashboardVisibility, apiCallLogging: $apiCallLogging, apiCallLoggingProjectIds: $apiCallLoggingProjectIds)'; } 
+          apiCallLoggingProjectIds == other.apiCallLoggingProjectIds;
+
+@override int get hashCode => Object.hash(title, description, name, threadsUiVisibility, usageDashboardVisibility, apiCallLogging, apiCallLoggingProjectIds);
+
+@override String toString() => 'OrganizationUpdatedChangesRequested(title: $title, description: $description, name: $name, threadsUiVisibility: $threadsUiVisibility, usageDashboardVisibility: $usageDashboardVisibility, apiCallLogging: $apiCallLogging, apiCallLoggingProjectIds: $apiCallLoggingProjectIds)';
+
  }

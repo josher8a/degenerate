@@ -51,7 +51,7 @@ RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({Lis
   under10Mins: under10Mins ?? this.under10Mins,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 &&
           listEquals($1HourTo3Hours, other.$1HourTo3Hours) &&
           listEquals($10MinsTo20Mins, other.$10MinsTo20Mins) &&
@@ -59,7 +59,10 @@ RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0 copyWith({Lis
           listEquals($40MinsTo1Hour, other.$40MinsTo1Hour) &&
           listEquals(over3Hours, other.over3Hours) &&
           listEquals(under10Mins, other.under10Mins) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll($1HourTo3Hours), Object.hashAll($10MinsTo20Mins), Object.hashAll($20MinsTo40Mins), Object.hashAll($40MinsTo1Hour), Object.hashAll(over3Hours), Object.hashAll(under10Mins), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll($1HourTo3Hours), Object.hashAll($10MinsTo20Mins), Object.hashAll($20MinsTo40Mins), Object.hashAll($40MinsTo1Hour), Object.hashAll(over3Hours), Object.hashAll(under10Mins), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByDurationResponseResultSerie0(\$1HourTo3Hours: ${$1HourTo3Hours}, \$10MinsTo20Mins: ${$10MinsTo20Mins}, \$20MinsTo40Mins: ${$20MinsTo40Mins}, \$40MinsTo1Hour: ${$40MinsTo1Hour}, over3Hours: $over3Hours, under10Mins: $under10Mins, timestamps: $timestamps)';
+
  }

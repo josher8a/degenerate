@@ -28,11 +28,14 @@ WorkersKvBulkGetResultWithMetadataValuesValue copyWith({WorkersKvExpiration? Fun
   metadata: metadata ?? this.metadata,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvBulkGetResultWithMetadataValuesValue &&
           expiration == other.expiration &&
           metadata == other.metadata &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(expiration, metadata, value); } 
-@override String toString() { return 'WorkersKvBulkGetResultWithMetadataValuesValue(expiration: $expiration, metadata: $metadata, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(expiration, metadata, value);
+
+@override String toString() => 'WorkersKvBulkGetResultWithMetadataValuesValue(expiration: $expiration, metadata: $metadata, value: $value)';
+
  }

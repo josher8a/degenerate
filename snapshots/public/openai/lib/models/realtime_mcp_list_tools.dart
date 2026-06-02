@@ -38,12 +38,15 @@ RealtimeMcpListTools copyWith({String? type, String? Function()? id, String? ser
   serverLabel: serverLabel ?? this.serverLabel,
   tools: tools ?? this.tools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeMcpListTools &&
           type == other.type &&
           id == other.id &&
           serverLabel == other.serverLabel &&
-          listEquals(tools, other.tools); } 
-@override int get hashCode { return Object.hash(type, id, serverLabel, Object.hashAll(tools)); } 
-@override String toString() { return 'RealtimeMcpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools)'; } 
+          listEquals(tools, other.tools);
+
+@override int get hashCode => Object.hash(type, id, serverLabel, Object.hashAll(tools));
+
+@override String toString() => 'RealtimeMcpListTools(type: $type, id: $id, serverLabel: $serverLabel, tools: $tools)';
+
  }

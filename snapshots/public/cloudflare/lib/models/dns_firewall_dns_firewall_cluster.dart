@@ -67,7 +67,7 @@ DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation? Function()?
   retries: retries != null ? retries() : this.retries,
   upstreamIps: upstreamIps != null ? upstreamIps() : this.upstreamIps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallCluster &&
           attackMitigation == other.attackMitigation &&
           deprecateAnyRequests == other.deprecateAnyRequests &&
@@ -78,7 +78,10 @@ DnsFirewallDnsFirewallCluster copyWith({DnsFirewallAttackMitigation? Function()?
           negativeCacheTtl == other.negativeCacheTtl &&
           ratelimit == other.ratelimit &&
           retries == other.retries &&
-          listEquals(upstreamIps, other.upstreamIps); } 
-@override int get hashCode { return Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps ?? const [])); } 
-@override String toString() { return 'DnsFirewallDnsFirewallCluster(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps)'; } 
+          listEquals(upstreamIps, other.upstreamIps);
+
+@override int get hashCode => Object.hash(attackMitigation, deprecateAnyRequests, ecsFallback, maximumCacheTtl, minimumCacheTtl, name, negativeCacheTtl, ratelimit, retries, Object.hashAll(upstreamIps ?? const []));
+
+@override String toString() => 'DnsFirewallDnsFirewallCluster(attackMitigation: $attackMitigation, deprecateAnyRequests: $deprecateAnyRequests, ecsFallback: $ecsFallback, maximumCacheTtl: $maximumCacheTtl, minimumCacheTtl: $minimumCacheTtl, name: $name, negativeCacheTtl: $negativeCacheTtl, ratelimit: $ratelimit, retries: $retries, upstreamIps: $upstreamIps)';
+
  }

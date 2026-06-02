@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 FineTuneSupervisedMethod copyWith({FineTuneSupervisedHyperparameters? Function()? hyperparameters}) { return FineTuneSupervisedMethod(
   hyperparameters: hyperparameters != null ? hyperparameters() : this.hyperparameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneSupervisedMethod &&
-          hyperparameters == other.hyperparameters; } 
-@override int get hashCode { return hyperparameters.hashCode; } 
-@override String toString() { return 'FineTuneSupervisedMethod(hyperparameters: $hyperparameters)'; } 
+          hyperparameters == other.hyperparameters;
+
+@override int get hashCode => hyperparameters.hashCode;
+
+@override String toString() => 'FineTuneSupervisedMethod(hyperparameters: $hyperparameters)';
+
  }

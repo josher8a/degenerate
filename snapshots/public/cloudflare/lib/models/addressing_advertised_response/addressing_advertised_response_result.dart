@@ -20,10 +20,13 @@ AddressingAdvertisedResponseResult copyWith({AddressingComponentsSchemasAdvertis
   advertised: advertised != null ? advertised() : this.advertised,
   advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAdvertisedResponseResult &&
           advertised == other.advertised &&
-          advertisedModifiedAt == other.advertisedModifiedAt; } 
-@override int get hashCode { return Object.hash(advertised, advertisedModifiedAt); } 
-@override String toString() { return 'AddressingAdvertisedResponseResult(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt)'; } 
+          advertisedModifiedAt == other.advertisedModifiedAt;
+
+@override int get hashCode => Object.hash(advertised, advertisedModifiedAt);
+
+@override String toString() => 'AddressingAdvertisedResponseResult(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt)';
+
  }

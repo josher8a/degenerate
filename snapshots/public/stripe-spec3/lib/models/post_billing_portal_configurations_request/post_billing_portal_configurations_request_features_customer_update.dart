@@ -20,10 +20,13 @@ PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate copyWith({CustomerU
   allowedUpdates: allowedUpdates != null ? allowedUpdates() : this.allowedUpdates,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate &&
           allowedUpdates == other.allowedUpdates &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(allowedUpdates, enabled); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(allowedUpdates, enabled);
+
+@override String toString() => 'PostBillingPortalConfigurationsRequestFeaturesCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)';
+
  }

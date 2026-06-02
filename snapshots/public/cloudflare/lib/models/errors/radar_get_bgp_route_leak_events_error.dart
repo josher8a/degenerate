@@ -17,7 +17,8 @@ final class RadarGetBgpRouteLeakEventsError$400 extends RadarGetBgpRouteLeakEven
 
 final RadarGetBgpRouteLeakEventsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpRouteLeakEventsError$Unknown extends RadarGetBgpRouteLeakEventsError {const RadarGetBgpRouteLeakEventsError$Unknown(this.statusCode, this.rawBody, );
 

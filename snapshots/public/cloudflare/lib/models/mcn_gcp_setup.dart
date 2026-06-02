@@ -27,11 +27,14 @@ McnGcpSetup copyWith({String? integrationIdentityTag, String? itemType, String? 
   itemType: itemType ?? this.itemType,
   tagCliCommand: tagCliCommand ?? this.tagCliCommand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnGcpSetup &&
           integrationIdentityTag == other.integrationIdentityTag &&
           itemType == other.itemType &&
-          tagCliCommand == other.tagCliCommand; } 
-@override int get hashCode { return Object.hash(integrationIdentityTag, itemType, tagCliCommand); } 
-@override String toString() { return 'McnGcpSetup(integrationIdentityTag: $integrationIdentityTag, itemType: $itemType, tagCliCommand: $tagCliCommand)'; } 
+          tagCliCommand == other.tagCliCommand;
+
+@override int get hashCode => Object.hash(integrationIdentityTag, itemType, tagCliCommand);
+
+@override String toString() => 'McnGcpSetup(integrationIdentityTag: $integrationIdentityTag, itemType: $itemType, tagCliCommand: $tagCliCommand)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CompactResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CompactResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CompactResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CompactResourceObject($value)';
+
  }
 /// Example:
 /// ```json
@@ -106,13 +109,16 @@ CompactResource copyWith({String? id, CompactResourceObject? object, List<ItemFi
   createdAt: createdAt ?? this.createdAt,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompactResource &&
           id == other.id &&
           object == other.object &&
           listEquals(output, other.output) &&
           createdAt == other.createdAt &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(id, object, Object.hashAll(output), createdAt, usage); } 
-@override String toString() { return 'CompactResource(id: $id, object: $object, output: $output, createdAt: $createdAt, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(id, object, Object.hashAll(output), createdAt, usage);
+
+@override String toString() => 'CompactResource(id: $id, object: $object, output: $output, createdAt: $createdAt, usage: $usage)';
+
  }

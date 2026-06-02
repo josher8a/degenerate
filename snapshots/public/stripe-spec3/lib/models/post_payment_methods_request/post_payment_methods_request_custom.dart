@@ -20,9 +20,12 @@ return errors; }
 PostPaymentMethodsRequestCustom copyWith({String? type}) { return PostPaymentMethodsRequestCustom(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestCustom &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PostPaymentMethodsRequestCustom(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'PostPaymentMethodsRequestCustom(type: $type)';
+
  }

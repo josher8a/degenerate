@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ZonesSecurityHeaderValue copyWith({StrictTransportSecurity? Function()? strictTransportSecurity}) { return ZonesSecurityHeaderValue(
   strictTransportSecurity: strictTransportSecurity != null ? strictTransportSecurity() : this.strictTransportSecurity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesSecurityHeaderValue &&
-          strictTransportSecurity == other.strictTransportSecurity; } 
-@override int get hashCode { return strictTransportSecurity.hashCode; } 
-@override String toString() { return 'ZonesSecurityHeaderValue(strictTransportSecurity: $strictTransportSecurity)'; } 
+          strictTransportSecurity == other.strictTransportSecurity;
+
+@override int get hashCode => strictTransportSecurity.hashCode;
+
+@override String toString() => 'ZonesSecurityHeaderValue(strictTransportSecurity: $strictTransportSecurity)';
+
  }

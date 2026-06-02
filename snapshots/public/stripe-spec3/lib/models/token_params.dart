@@ -19,9 +19,12 @@ return errors; }
 TokenParams copyWith({String? token}) { return TokenParams(
   token: token ?? this.token,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenParams &&
-          token == other.token; } 
-@override int get hashCode { return token.hashCode; } 
-@override String toString() { return 'TokenParams(token: $token)'; } 
+          token == other.token;
+
+@override int get hashCode => token.hashCode;
+
+@override String toString() => 'TokenParams(token: $token)';
+
  }

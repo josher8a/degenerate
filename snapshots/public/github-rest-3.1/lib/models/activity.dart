@@ -32,10 +32,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActivityType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActivityType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActivityType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ActivityType($value)';
+
  }
 /// Activity
 @immutable final class Activity {const Activity({required this.id, required this.nodeId, required this.before, required this.after, required this.ref, required this.timestamp, required this.activityType, required this.actor, });
@@ -100,7 +103,7 @@ Activity copyWith({int? id, String? nodeId, String? before, String? after, Strin
   activityType: activityType ?? this.activityType,
   actor: actor != null ? actor() : this.actor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Activity &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -109,7 +112,10 @@ Activity copyWith({int? id, String? nodeId, String? before, String? after, Strin
           ref == other.ref &&
           timestamp == other.timestamp &&
           activityType == other.activityType &&
-          actor == other.actor; } 
-@override int get hashCode { return Object.hash(id, nodeId, before, after, ref, timestamp, activityType, actor); } 
-@override String toString() { return 'Activity(id: $id, nodeId: $nodeId, before: $before, after: $after, ref: $ref, timestamp: $timestamp, activityType: $activityType, actor: $actor)'; } 
+          actor == other.actor;
+
+@override int get hashCode => Object.hash(id, nodeId, before, after, ref, timestamp, activityType, actor);
+
+@override String toString() => 'Activity(id: $id, nodeId: $nodeId, before: $before, after: $after, ref: $ref, timestamp: $timestamp, activityType: $activityType, actor: $actor)';
+
  }

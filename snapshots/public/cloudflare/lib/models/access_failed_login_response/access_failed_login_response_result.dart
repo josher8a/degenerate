@@ -21,10 +21,13 @@ AccessFailedLoginResponseResult copyWith({int? Function()? expiration, Map<Strin
   expiration: expiration != null ? expiration() : this.expiration,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessFailedLoginResponseResult &&
           expiration == other.expiration &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(expiration, metadata); } 
-@override String toString() { return 'AccessFailedLoginResponseResult(expiration: $expiration, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(expiration, metadata);
+
+@override String toString() => 'AccessFailedLoginResponseResult(expiration: $expiration, metadata: $metadata)';
+
  }

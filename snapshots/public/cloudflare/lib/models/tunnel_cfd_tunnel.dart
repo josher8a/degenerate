@@ -84,7 +84,7 @@ TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigS
   status: status != null ? status() : this.status,
   tunType: tunType != null ? tunType() : this.tunType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelCfdTunnel &&
           accountTag == other.accountTag &&
           configSrc == other.configSrc &&
@@ -98,7 +98,10 @@ TunnelCfdTunnel copyWith({TunnelAccountId? Function()? accountTag, TunnelConfigS
           name == other.name &&
           remoteConfig == other.remoteConfig &&
           status == other.status &&
-          tunType == other.tunType; } 
-@override int get hashCode { return Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType); } 
-@override String toString() { return 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)'; } 
+          tunType == other.tunType;
+
+@override int get hashCode => Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType);
+
+@override String toString() => 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)';
+
  }

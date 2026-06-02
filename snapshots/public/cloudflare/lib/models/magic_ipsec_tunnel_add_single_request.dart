@@ -78,7 +78,7 @@ MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function
   psk: psk != null ? psk() : this.psk,
   replayProtection: replayProtection != null ? replayProtection() : this.replayProtection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicIpsecTunnelAddSingleRequest &&
           automaticReturnRouting == other.automaticReturnRouting &&
           bgp == other.bgp &&
@@ -91,7 +91,10 @@ MagicIpsecTunnelAddSingleRequest copyWith({MagicAutomaticReturnRouting? Function
           interfaceAddress6 == other.interfaceAddress6 &&
           name == other.name &&
           psk == other.psk &&
-          replayProtection == other.replayProtection; } 
-@override int get hashCode { return Object.hash(automaticReturnRouting, bgp, cloudflareEndpoint, customRemoteIdentities, customerEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, name, psk, replayProtection); } 
-@override String toString() { return 'MagicIpsecTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareEndpoint: $cloudflareEndpoint, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, name: $name, psk: $psk, replayProtection: $replayProtection)'; } 
+          replayProtection == other.replayProtection;
+
+@override int get hashCode => Object.hash(automaticReturnRouting, bgp, cloudflareEndpoint, customRemoteIdentities, customerEndpoint, description, healthCheck, interfaceAddress, interfaceAddress6, name, psk, replayProtection);
+
+@override String toString() => 'MagicIpsecTunnelAddSingleRequest(automaticReturnRouting: $automaticReturnRouting, bgp: $bgp, cloudflareEndpoint: $cloudflareEndpoint, customRemoteIdentities: $customRemoteIdentities, customerEndpoint: $customerEndpoint, description: $description, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, name: $name, psk: $psk, replayProtection: $replayProtection)';
+
  }

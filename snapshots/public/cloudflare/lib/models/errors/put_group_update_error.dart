@@ -17,7 +17,8 @@ final class PutGroupUpdateError$400 extends PutGroupUpdateError {const PutGroupU
 
 final PutGroupUpdateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PutGroupUpdateError$Unknown extends PutGroupUpdateError {const PutGroupUpdateError$Unknown(this.statusCode, this.rawBody, );
 

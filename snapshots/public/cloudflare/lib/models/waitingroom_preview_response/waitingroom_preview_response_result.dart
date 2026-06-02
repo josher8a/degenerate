@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WaitingroomPreviewResponseResult copyWith({WaitingroomPreviewUrl? Function()? previewUrl}) { return WaitingroomPreviewResponseResult(
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomPreviewResponseResult &&
-          previewUrl == other.previewUrl; } 
-@override int get hashCode { return previewUrl.hashCode; } 
-@override String toString() { return 'WaitingroomPreviewResponseResult(previewUrl: $previewUrl)'; } 
+          previewUrl == other.previewUrl;
+
+@override int get hashCode => previewUrl.hashCode;
+
+@override String toString() => 'WaitingroomPreviewResponseResult(previewUrl: $previewUrl)';
+
  }

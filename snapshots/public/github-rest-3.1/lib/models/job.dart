@@ -164,7 +164,7 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
   workflowName: workflowName != null ? workflowName() : this.workflowName,
   headBranch: headBranch != null ? headBranch() : this.headBranch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Job &&
           id == other.id &&
           runId == other.runId &&
@@ -188,7 +188,10 @@ Job copyWith({int? id, int? runId, String? runUrl, int? Function()? runAttempt, 
           runnerGroupId == other.runnerGroupId &&
           runnerGroupName == other.runnerGroupName &&
           workflowName == other.workflowName &&
-          headBranch == other.headBranch; } 
-@override int get hashCode { return Object.hashAll([id, runId, runUrl, runAttempt, nodeId, headSha, url, htmlUrl, status, conclusion, createdAt, startedAt, completedAt, name, Object.hashAll(steps ?? const []), checkRunUrl, Object.hashAll(labels), runnerId, runnerName, runnerGroupId, runnerGroupName, workflowName, headBranch]); } 
-@override String toString() { return 'Job(id: $id, runId: $runId, runUrl: $runUrl, runAttempt: $runAttempt, nodeId: $nodeId, headSha: $headSha, url: $url, htmlUrl: $htmlUrl, status: $status, conclusion: $conclusion, createdAt: $createdAt, startedAt: $startedAt, completedAt: $completedAt, name: $name, steps: $steps, checkRunUrl: $checkRunUrl, labels: $labels, runnerId: $runnerId, runnerName: $runnerName, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, workflowName: $workflowName, headBranch: $headBranch)'; } 
+          headBranch == other.headBranch;
+
+@override int get hashCode => Object.hashAll([id, runId, runUrl, runAttempt, nodeId, headSha, url, htmlUrl, status, conclusion, createdAt, startedAt, completedAt, name, Object.hashAll(steps ?? const []), checkRunUrl, Object.hashAll(labels), runnerId, runnerName, runnerGroupId, runnerGroupName, workflowName, headBranch]);
+
+@override String toString() => 'Job(id: $id, runId: $runId, runUrl: $runUrl, runAttempt: $runAttempt, nodeId: $nodeId, headSha: $headSha, url: $url, htmlUrl: $htmlUrl, status: $status, conclusion: $conclusion, createdAt: $createdAt, startedAt: $startedAt, completedAt: $completedAt, name: $name, steps: $steps, checkRunUrl: $checkRunUrl, labels: $labels, runnerId: $runnerId, runnerName: $runnerName, runnerGroupId: $runnerGroupId, runnerGroupName: $runnerGroupName, workflowName: $workflowName, headBranch: $headBranch)';
+
  }

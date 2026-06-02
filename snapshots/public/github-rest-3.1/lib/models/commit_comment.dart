@@ -94,7 +94,7 @@ CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String?
   authorAssociation: authorAssociation ?? this.authorAssociation,
   reactions: reactions != null ? reactions() : this.reactions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitComment &&
           htmlUrl == other.htmlUrl &&
           url == other.url &&
@@ -109,7 +109,10 @@ CommitComment copyWith({Uri? htmlUrl, Uri? url, int? id, String? nodeId, String?
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           authorAssociation == other.authorAssociation &&
-          reactions == other.reactions; } 
-@override int get hashCode { return Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, authorAssociation, reactions); } 
-@override String toString() { return 'CommitComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation, reactions: $reactions)'; } 
+          reactions == other.reactions;
+
+@override int get hashCode => Object.hash(htmlUrl, url, id, nodeId, body, path, position, line, commitId, user, createdAt, updatedAt, authorAssociation, reactions);
+
+@override String toString() => 'CommitComment(htmlUrl: $htmlUrl, url: $url, id: $id, nodeId: $nodeId, body: $body, path: $path, position: $position, line: $line, commitId: $commitId, user: $user, createdAt: $createdAt, updatedAt: $updatedAt, authorAssociation: $authorAssociation, reactions: $reactions)';
+
  }

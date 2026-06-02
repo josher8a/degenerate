@@ -20,10 +20,13 @@ ApplicabilityConfigScope copyWith({PriceType? Function()? priceType, List<Prices
   priceType: priceType != null ? priceType() : this.priceType,
   prices: prices != null ? prices() : this.prices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplicabilityConfigScope &&
           priceType == other.priceType &&
-          listEquals(prices, other.prices); } 
-@override int get hashCode { return Object.hash(priceType, Object.hashAll(prices ?? const [])); } 
-@override String toString() { return 'ApplicabilityConfigScope(priceType: $priceType, prices: $prices)'; } 
+          listEquals(prices, other.prices);
+
+@override int get hashCode => Object.hash(priceType, Object.hashAll(prices ?? const []));
+
+@override String toString() => 'ApplicabilityConfigScope(priceType: $priceType, prices: $prices)';
+
  }

@@ -27,11 +27,14 @@ ShieldBasicOperation copyWith({ShieldEndpoint? endpoint, ShieldHost? host, Shiel
   host: host ?? this.host,
   method: method ?? this.method,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldBasicOperation &&
           endpoint == other.endpoint &&
           host == other.host &&
-          method == other.method; } 
-@override int get hashCode { return Object.hash(endpoint, host, method); } 
-@override String toString() { return 'ShieldBasicOperation(endpoint: $endpoint, host: $host, method: $method)'; } 
+          method == other.method;
+
+@override int get hashCode => Object.hash(endpoint, host, method);
+
+@override String toString() => 'ShieldBasicOperation(endpoint: $endpoint, host: $host, method: $method)';
+
  }

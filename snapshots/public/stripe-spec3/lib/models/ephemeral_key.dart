@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EphemeralKeyObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EphemeralKeyObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EphemeralKeyObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EphemeralKeyObject($value)';
+
  }
 /// 
 @immutable final class EphemeralKey {const EphemeralKey({required this.created, required this.expires, required this.id, required this.livemode, required this.object, this.secret, });
@@ -81,14 +84,17 @@ EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, E
   object: object ?? this.object,
   secret: secret != null ? secret() : this.secret,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EphemeralKey &&
           created == other.created &&
           expires == other.expires &&
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
-          secret == other.secret; } 
-@override int get hashCode { return Object.hash(created, expires, id, livemode, object, secret); } 
-@override String toString() { return 'EphemeralKey(created: $created, expires: $expires, id: $id, livemode: $livemode, object: $object, secret: $secret)'; } 
+          secret == other.secret;
+
+@override int get hashCode => Object.hash(created, expires, id, livemode, object, secret);
+
+@override String toString() => 'EphemeralKey(created: $created, expires: $expires, id: $id, livemode: $livemode, object: $object, secret: $secret)';
+
  }

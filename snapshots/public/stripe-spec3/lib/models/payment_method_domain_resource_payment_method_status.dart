@@ -22,10 +22,13 @@ PaymentMethodDomainResourcePaymentMethodStatus copyWith({BillingMeterStatus? sta
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDomainResourcePaymentMethodStatus &&
           status == other.status &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(status, statusDetails); } 
-@override String toString() { return 'PaymentMethodDomainResourcePaymentMethodStatus(status: $status, statusDetails: $statusDetails)'; } 
+          statusDetails == other.statusDetails;
+
+@override int get hashCode => Object.hash(status, statusDetails);
+
+@override String toString() => 'PaymentMethodDomainResourcePaymentMethodStatus(status: $status, statusDetails: $statusDetails)';
+
  }

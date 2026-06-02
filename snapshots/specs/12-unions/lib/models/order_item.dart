@@ -35,12 +35,15 @@ OrderItem copyWith({String? productId, int? quantity, double? Function()? unitPr
   unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,
   notes: notes != null ? notes() : this.notes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrderItem &&
           productId == other.productId &&
           quantity == other.quantity &&
           unitPrice == other.unitPrice &&
-          notes == other.notes; } 
-@override int get hashCode { return Object.hash(productId, quantity, unitPrice, notes); } 
-@override String toString() { return 'OrderItem(productId: $productId, quantity: $quantity, unitPrice: $unitPrice, notes: $notes)'; } 
+          notes == other.notes;
+
+@override int get hashCode => Object.hash(productId, quantity, unitPrice, notes);
+
+@override String toString() => 'OrderItem(productId: $productId, quantity: $quantity, unitPrice: $unitPrice, notes: $notes)';
+
  }

@@ -22,10 +22,13 @@ Variant2Messages copyWith({Variant2MessagesContent? content, String? role, }) { 
   content: content ?? this.content,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant2Messages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'Variant2Messages(content: $content, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, role);
+
+@override String toString() => 'Variant2Messages(content: $content, role: $role)';
+
  }

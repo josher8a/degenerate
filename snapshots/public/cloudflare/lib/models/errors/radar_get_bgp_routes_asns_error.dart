@@ -17,7 +17,8 @@ final class RadarGetBgpRoutesAsnsError$400 extends RadarGetBgpRoutesAsnsError {c
 
 final RadarGetBgpRoutesAsnsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpRoutesAsnsError$Unknown extends RadarGetBgpRoutesAsnsError {const RadarGetBgpRoutesAsnsError$Unknown(this.statusCode, this.rawBody, );
 

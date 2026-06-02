@@ -30,12 +30,15 @@ SourceTypeIdeal copyWith({String? Function()? bank, String? Function()? bic, Str
   ibanLast4: ibanLast4 != null ? ibanLast4() : this.ibanLast4,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeIdeal &&
           bank == other.bank &&
           bic == other.bic &&
           ibanLast4 == other.ibanLast4 &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(bank, bic, ibanLast4, statementDescriptor); } 
-@override String toString() { return 'SourceTypeIdeal(bank: $bank, bic: $bic, ibanLast4: $ibanLast4, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(bank, bic, ibanLast4, statementDescriptor);
+
+@override String toString() => 'SourceTypeIdeal(bank: $bank, bic: $bic, ibanLast4: $ibanLast4, statementDescriptor: $statementDescriptor)';
+
  }

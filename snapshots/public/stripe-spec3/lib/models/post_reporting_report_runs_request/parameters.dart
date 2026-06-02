@@ -124,10 +124,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReportingCategory && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReportingCategory($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReportingCategory && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReportingCategory($value)';
+
  }
 @immutable final class Timezone {const Timezone._(this.value);
 
@@ -1939,10 +1942,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Timezone && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Timezone($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Timezone && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Timezone($value)';
+
  }
 /// Parameters specifying how the report should be run. Different Report Types have different required and optional parameters, listed in the [API Access to Reports](https://docs.stripe.com/reporting/statements/api) documentation.
 @immutable final class Parameters {const Parameters({this.columns, this.connectedAccount, this.currency, this.intervalEnd, this.intervalStart, this.payout, this.reportingCategory, this.timezone, });
@@ -1995,7 +2001,7 @@ Parameters copyWith({List<String>? Function()? columns, String? Function()? conn
   reportingCategory: reportingCategory != null ? reportingCategory() : this.reportingCategory,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Parameters &&
           listEquals(columns, other.columns) &&
           connectedAccount == other.connectedAccount &&
@@ -2004,7 +2010,10 @@ Parameters copyWith({List<String>? Function()? columns, String? Function()? conn
           intervalStart == other.intervalStart &&
           payout == other.payout &&
           reportingCategory == other.reportingCategory &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone); } 
-@override String toString() { return 'Parameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone);
+
+@override String toString() => 'Parameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)';
+
  }

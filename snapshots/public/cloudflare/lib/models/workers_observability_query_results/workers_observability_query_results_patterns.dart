@@ -33,12 +33,15 @@ WorkersObservabilityQueryResultsPatterns copyWith({double? count, String? patter
   series: series ?? this.series,
   service: service ?? this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersObservabilityQueryResultsPatterns &&
           count == other.count &&
           pattern == other.pattern &&
           listEquals(series, other.series) &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(count, pattern, Object.hashAll(series), service); } 
-@override String toString() { return 'WorkersObservabilityQueryResultsPatterns(count: $count, pattern: $pattern, series: $series, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(count, pattern, Object.hashAll(series), service);
+
+@override String toString() => 'WorkersObservabilityQueryResultsPatterns(count: $count, pattern: $pattern, series: $series, service: $service)';
+
  }

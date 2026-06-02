@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AssistantObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AssistantObjectObject($value)';
+
  }
 /// Represents an `assistant` that can call the model and use tools.
 @immutable final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, required this.metadata, this.tools = const [], this.toolResources, this.temperature, this.topP, this.responseFormat, });
@@ -153,7 +156,7 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
   topP: topP != null ? topP() : this.topP,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantObject &&
           id == other.id &&
           object == other.object &&
@@ -167,7 +170,10 @@ AssistantObject copyWith({String? id, AssistantObjectObject? object, int? create
           metadata == other.metadata &&
           temperature == other.temperature &&
           topP == other.topP &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, name, description, model, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat); } 
-@override String toString() { return 'AssistantObject(id: $id, object: $object, createdAt: $createdAt, name: $name, description: $description, model: $model, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
+          responseFormat == other.responseFormat;
+
+@override int get hashCode => Object.hash(id, object, createdAt, name, description, model, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat);
+
+@override String toString() => 'AssistantObject(id: $id, object: $object, createdAt: $createdAt, name: $name, description: $description, model: $model, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)';
+
  }

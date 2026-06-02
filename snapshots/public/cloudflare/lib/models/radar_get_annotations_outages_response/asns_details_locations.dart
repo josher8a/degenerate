@@ -23,10 +23,13 @@ AsnsDetailsLocations copyWith({String? code, String? name, }) { return AsnsDetai
   code: code ?? this.code,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsnsDetailsLocations &&
           code == other.code &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(code, name); } 
-@override String toString() { return 'AsnsDetailsLocations(code: $code, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(code, name);
+
+@override String toString() => 'AsnsDetailsLocations(code: $code, name: $name)';
+
  }

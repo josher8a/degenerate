@@ -20,10 +20,13 @@ MconnAdminCohortFields copyWith({String? Function()? desiredVersion, String? Fun
   desiredVersion: desiredVersion != null ? desiredVersion() : this.desiredVersion,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminCohortFields &&
           desiredVersion == other.desiredVersion &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(desiredVersion, name); } 
-@override String toString() { return 'MconnAdminCohortFields(desiredVersion: $desiredVersion, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(desiredVersion, name);
+
+@override String toString() => 'MconnAdminCohortFields(desiredVersion: $desiredVersion, name: $name)';
+
  }

@@ -70,14 +70,17 @@ TreasuryReceivedCreditsResourceLinkedFlows copyWith({String? Function()? creditR
   sourceFlowDetails: sourceFlowDetails != null ? sourceFlowDetails() : this.sourceFlowDetails,
   sourceFlowType: sourceFlowType != null ? sourceFlowType() : this.sourceFlowType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedCreditsResourceLinkedFlows &&
           creditReversal == other.creditReversal &&
           issuingAuthorization == other.issuingAuthorization &&
           issuingTransaction == other.issuingTransaction &&
           sourceFlow == other.sourceFlow &&
           sourceFlowDetails == other.sourceFlowDetails &&
-          sourceFlowType == other.sourceFlowType; } 
-@override int get hashCode { return Object.hash(creditReversal, issuingAuthorization, issuingTransaction, sourceFlow, sourceFlowDetails, sourceFlowType); } 
-@override String toString() { return 'TreasuryReceivedCreditsResourceLinkedFlows(creditReversal: $creditReversal, issuingAuthorization: $issuingAuthorization, issuingTransaction: $issuingTransaction, sourceFlow: $sourceFlow, sourceFlowDetails: $sourceFlowDetails, sourceFlowType: $sourceFlowType)'; } 
+          sourceFlowType == other.sourceFlowType;
+
+@override int get hashCode => Object.hash(creditReversal, issuingAuthorization, issuingTransaction, sourceFlow, sourceFlowDetails, sourceFlowType);
+
+@override String toString() => 'TreasuryReceivedCreditsResourceLinkedFlows(creditReversal: $creditReversal, issuingAuthorization: $issuingAuthorization, issuingTransaction: $issuingTransaction, sourceFlow: $sourceFlow, sourceFlowDetails: $sourceFlowDetails, sourceFlowType: $sourceFlowType)';
+
  }

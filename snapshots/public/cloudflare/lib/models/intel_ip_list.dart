@@ -26,11 +26,14 @@ IntelIpList copyWith({String? Function()? description, int? Function()? id, Stri
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelIpList &&
           description == other.description &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, id, name); } 
-@override String toString() { return 'IntelIpList(description: $description, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, id, name);
+
+@override String toString() => 'IntelIpList(description: $description, id: $id, name: $name)';
+
  }

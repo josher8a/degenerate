@@ -42,14 +42,17 @@ ProtectedBranchRequiredStatusCheck copyWith({String? Function()? url, String? Fu
   contextsUrl: contextsUrl != null ? contextsUrl() : this.contextsUrl,
   strict: strict != null ? strict() : this.strict,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchRequiredStatusCheck &&
           url == other.url &&
           enforcementLevel == other.enforcementLevel &&
           listEquals(contexts, other.contexts) &&
           listEquals(checks, other.checks) &&
           contextsUrl == other.contextsUrl &&
-          strict == other.strict; } 
-@override int get hashCode { return Object.hash(url, enforcementLevel, Object.hashAll(contexts), Object.hashAll(checks), contextsUrl, strict); } 
-@override String toString() { return 'ProtectedBranchRequiredStatusCheck(url: $url, enforcementLevel: $enforcementLevel, contexts: $contexts, checks: $checks, contextsUrl: $contextsUrl, strict: $strict)'; } 
+          strict == other.strict;
+
+@override int get hashCode => Object.hash(url, enforcementLevel, Object.hashAll(contexts), Object.hashAll(checks), contextsUrl, strict);
+
+@override String toString() => 'ProtectedBranchRequiredStatusCheck(url: $url, enforcementLevel: $enforcementLevel, contexts: $contexts, checks: $checks, contextsUrl: $contextsUrl, strict: $strict)';
+
  }

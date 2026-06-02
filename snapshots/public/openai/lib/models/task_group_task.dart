@@ -31,11 +31,14 @@ TaskGroupTask copyWith({TaskType? type, String? Function()? heading, String? Fun
   heading: heading != null ? heading() : this.heading,
   summary: summary != null ? summary() : this.summary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaskGroupTask &&
           type == other.type &&
           heading == other.heading &&
-          summary == other.summary; } 
-@override int get hashCode { return Object.hash(type, heading, summary); } 
-@override String toString() { return 'TaskGroupTask(type: $type, heading: $heading, summary: $summary)'; } 
+          summary == other.summary;
+
+@override int get hashCode => Object.hash(type, heading, summary);
+
+@override String toString() => 'TaskGroupTask(type: $type, heading: $heading, summary: $summary)';
+
  }

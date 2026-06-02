@@ -25,12 +25,16 @@ final ResponseStreamEvent responseStreamEvent;
 
 @override String get type => 'ResponseStreamEvent';
 
-@override Map<String, dynamic> toJson() { return {...responseStreamEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...responseStreamEvent.toJson(), 'type': type};
+
 ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseStreamEvent}) { return ResponsesServerEventResponseStreamEvent(responseStreamEvent ?? this.responseStreamEvent); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesServerEventResponseStreamEvent && responseStreamEvent == other.responseStreamEvent; } 
-@override int get hashCode { return responseStreamEvent.hashCode; } 
-@override String toString() { return 'ResponsesServerEvent.responseStreamEvent($responseStreamEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponsesServerEventResponseStreamEvent && responseStreamEvent == other.responseStreamEvent;
+
+@override int get hashCode => responseStreamEvent.hashCode;
+
+@override String toString() => 'ResponsesServerEvent.responseStreamEvent($responseStreamEvent)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -40,9 +44,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponsesServerEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ResponsesServerEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponsesServerEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ResponsesServerEvent.unknown($json)';
+
  }

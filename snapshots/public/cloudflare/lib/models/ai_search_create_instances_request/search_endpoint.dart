@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SearchEndpoint copyWith({bool Function()? disabled}) { return SearchEndpoint(
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SearchEndpoint &&
-          disabled == other.disabled; } 
-@override int get hashCode { return disabled.hashCode; } 
-@override String toString() { return 'SearchEndpoint(disabled: $disabled)'; } 
+          disabled == other.disabled;
+
+@override int get hashCode => disabled.hashCode;
+
+@override String toString() => 'SearchEndpoint(disabled: $disabled)';
+
  }

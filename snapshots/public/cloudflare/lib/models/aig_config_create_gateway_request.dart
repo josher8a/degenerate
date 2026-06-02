@@ -118,7 +118,7 @@ AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? 
   workersAiBillingMode: workersAiBillingMode != null ? workersAiBillingMode() : this.workersAiBillingMode,
   zdr: zdr != null ? zdr() : this.zdr,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateGatewayRequest &&
           authentication == other.authentication &&
           cacheInvalidateOnUpdate == other.cacheInvalidateOnUpdate &&
@@ -133,7 +133,10 @@ AigConfigCreateGatewayRequest copyWith({bool? Function()? authentication, bool? 
           rateLimitingLimit == other.rateLimitingLimit &&
           rateLimitingTechnique == other.rateLimitingTechnique &&
           workersAiBillingMode == other.workersAiBillingMode &&
-          zdr == other.zdr; } 
-@override int get hashCode { return Object.hash(authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, id, logManagement, logManagementStrategy, logpush, logpushPublicKey, rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, workersAiBillingMode, zdr); } 
-@override String toString() { return 'AigConfigCreateGatewayRequest(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, id: $id, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)'; } 
+          zdr == other.zdr;
+
+@override int get hashCode => Object.hash(authentication, cacheInvalidateOnUpdate, cacheTtl, collectLogs, id, logManagement, logManagementStrategy, logpush, logpushPublicKey, rateLimitingInterval, rateLimitingLimit, rateLimitingTechnique, workersAiBillingMode, zdr);
+
+@override String toString() => 'AigConfigCreateGatewayRequest(authentication: $authentication, cacheInvalidateOnUpdate: $cacheInvalidateOnUpdate, cacheTtl: $cacheTtl, collectLogs: $collectLogs, id: $id, logManagement: $logManagement, logManagementStrategy: $logManagementStrategy, logpush: $logpush, logpushPublicKey: $logpushPublicKey, rateLimitingInterval: $rateLimitingInterval, rateLimitingLimit: $rateLimitingLimit, rateLimitingTechnique: $rateLimitingTechnique, workersAiBillingMode: $workersAiBillingMode, zdr: $zdr)';
+
  }

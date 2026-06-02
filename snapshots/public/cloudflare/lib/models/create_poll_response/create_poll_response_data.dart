@@ -20,10 +20,13 @@ CreatePollResponseData copyWith({String? Function()? action, RealtimekitPoll? Fu
   action: action != null ? action() : this.action,
   poll: poll != null ? poll() : this.poll,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePollResponseData &&
           action == other.action &&
-          poll == other.poll; } 
-@override int get hashCode { return Object.hash(action, poll); } 
-@override String toString() { return 'CreatePollResponseData(action: $action, poll: $poll)'; } 
+          poll == other.poll;
+
+@override int get hashCode => Object.hash(action, poll);
+
+@override String toString() => 'CreatePollResponseData(action: $action, poll: $poll)';
+
  }

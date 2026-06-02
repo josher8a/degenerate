@@ -28,11 +28,14 @@ PostTerminalReadersReaderRequest copyWith({List<String>? Function()? expand, Pos
   label: label != null ? label() : this.label,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderRequest &&
           listEquals(expand, other.expand) &&
           label == other.label &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), label, metadata); } 
-@override String toString() { return 'PostTerminalReadersReaderRequest(expand: $expand, label: $label, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), label, metadata);
+
+@override String toString() => 'PostTerminalReadersReaderRequest(expand: $expand, label: $label, metadata: $metadata)';
+
  }

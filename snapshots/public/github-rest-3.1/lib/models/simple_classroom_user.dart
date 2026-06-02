@@ -34,12 +34,15 @@ SimpleClassroomUser copyWith({int? id, String? login, Uri? avatarUrl, Uri? htmlU
   avatarUrl: avatarUrl ?? this.avatarUrl,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleClassroomUser &&
           id == other.id &&
           login == other.login &&
           avatarUrl == other.avatarUrl &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(id, login, avatarUrl, htmlUrl); } 
-@override String toString() { return 'SimpleClassroomUser(id: $id, login: $login, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(id, login, avatarUrl, htmlUrl);
+
+@override String toString() => 'SimpleClassroomUser(id: $id, login: $login, avatarUrl: $avatarUrl, htmlUrl: $htmlUrl)';
+
  }

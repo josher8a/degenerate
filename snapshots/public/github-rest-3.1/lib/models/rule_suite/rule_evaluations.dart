@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleEvaluationsEnforcement && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleEvaluationsEnforcement($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RuleEvaluationsEnforcement && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RuleEvaluationsEnforcement($value)';
+
  }
 /// The result of the evaluation of the individual rule.
 @immutable final class RuleEvaluationsResult {const RuleEvaluationsResult._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RuleEvaluationsResult && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RuleEvaluationsResult($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RuleEvaluationsResult && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RuleEvaluationsResult($value)';
+
  }
 @immutable final class RuleEvaluations {const RuleEvaluations({this.ruleSource, this.enforcement, this.result, this.ruleType, this.details, });
 
@@ -92,13 +98,16 @@ RuleEvaluations copyWith({RuleSource? Function()? ruleSource, RuleEvaluationsEnf
   ruleType: ruleType != null ? ruleType() : this.ruleType,
   details: details != null ? details() : this.details,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RuleEvaluations &&
           ruleSource == other.ruleSource &&
           enforcement == other.enforcement &&
           result == other.result &&
           ruleType == other.ruleType &&
-          details == other.details; } 
-@override int get hashCode { return Object.hash(ruleSource, enforcement, result, ruleType, details); } 
-@override String toString() { return 'RuleEvaluations(ruleSource: $ruleSource, enforcement: $enforcement, result: $result, ruleType: $ruleType, details: $details)'; } 
+          details == other.details;
+
+@override int get hashCode => Object.hash(ruleSource, enforcement, result, ruleType, details);
+
+@override String toString() => 'RuleEvaluations(ruleSource: $ruleSource, enforcement: $enforcement, result: $result, ruleType: $ruleType, details: $details)';
+
  }

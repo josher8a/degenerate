@@ -36,12 +36,15 @@ PageConsole copyWith({String? category, String? text, String? type, String? Func
   type: type ?? this.type,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageConsole &&
           category == other.category &&
           text == other.text &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(category, text, type, url); } 
-@override String toString() { return 'PageConsole(category: $category, text: $text, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(category, text, type, url);
+
+@override String toString() => 'PageConsole(category: $category, text: $text, type: $type, url: $url)';
+
  }

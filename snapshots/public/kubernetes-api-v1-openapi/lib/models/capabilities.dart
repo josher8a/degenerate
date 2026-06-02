@@ -23,10 +23,13 @@ Capabilities copyWith({List<String>? Function()? add, List<String>? Function()? 
   add: add != null ? add() : this.add,
   drop: drop != null ? drop() : this.drop,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Capabilities &&
           listEquals(add, other.add) &&
-          listEquals(drop, other.drop); } 
-@override int get hashCode { return Object.hash(Object.hashAll(add ?? const []), Object.hashAll(drop ?? const [])); } 
-@override String toString() { return 'Capabilities(add: $add, drop: $drop)'; } 
+          listEquals(drop, other.drop);
+
+@override int get hashCode => Object.hash(Object.hashAll(add ?? const []), Object.hashAll(drop ?? const []));
+
+@override String toString() => 'Capabilities(add: $add, drop: $drop)';
+
  }

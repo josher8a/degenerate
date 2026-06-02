@@ -20,10 +20,13 @@ ContainerMetadataTag copyWith({String? Function()? digest, String? Function()? n
   digest: digest != null ? digest() : this.digest,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerMetadataTag &&
           digest == other.digest &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(digest, name); } 
-@override String toString() { return 'ContainerMetadataTag(digest: $digest, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(digest, name);
+
+@override String toString() => 'ContainerMetadataTag(digest: $digest, name: $name)';
+
  }

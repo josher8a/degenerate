@@ -30,14 +30,18 @@ final McnStringItem mcnStringItem;
 
 @override String get itemType => 'mcn_string_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnStringItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnStringItem.toJson(), 'item_type': itemType};
+
 McnListItemListMcnStringItem copyWith({String? string}) { return McnListItemListMcnStringItem(mcnStringItem.copyWith(
   string: string,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnListItemListMcnStringItem && mcnStringItem == other.mcnStringItem; } 
-@override int get hashCode { return mcnStringItem.hashCode; } 
-@override String toString() { return 'McnListItemList.mcnStringItem($mcnStringItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnListItemListMcnStringItem && mcnStringItem == other.mcnStringItem;
+
+@override int get hashCode => mcnStringItem.hashCode;
+
+@override String toString() => 'McnListItemList.mcnStringItem($mcnStringItem)';
+
  }
 @immutable final class McnListItemListMcnResourcePreviewItem extends McnListItemList {const McnListItemListMcnResourcePreviewItem(this.mcnResourcePreviewItem);
 
@@ -47,14 +51,18 @@ final McnResourcePreviewItem mcnResourcePreviewItem;
 
 @override String get itemType => 'mcn_resource_preview_item';
 
-@override Map<String, dynamic> toJson() { return {...mcnResourcePreviewItem.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnResourcePreviewItem.toJson(), 'item_type': itemType};
+
 McnListItemListMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnListItemListMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnListItemListMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 
-@override int get hashCode { return mcnResourcePreviewItem.hashCode; } 
-@override String toString() { return 'McnListItemList.mcnResourcePreviewItem($mcnResourcePreviewItem)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnListItemListMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem;
+
+@override int get hashCode => mcnResourcePreviewItem.hashCode;
+
+@override String toString() => 'McnListItemList.mcnResourcePreviewItem($mcnResourcePreviewItem)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -64,9 +72,13 @@ final Map<String, dynamic> json;
 
 @override String get itemType => json['item_type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnListItemList$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'McnListItemList.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnListItemList$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'McnListItemList.unknown($json)';
+
  }

@@ -67,7 +67,7 @@ ListAccountEntrypointRulesetVersionsResponseResult copyWith({String Function()? 
   kind: kind ?? this.kind,
   phase: phase ?? this.phase,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListAccountEntrypointRulesetVersionsResponseResult &&
           description == other.description &&
           id == other.id &&
@@ -75,7 +75,10 @@ ListAccountEntrypointRulesetVersionsResponseResult copyWith({String Function()? 
           name == other.name &&
           version == other.version &&
           kind == other.kind &&
-          phase == other.phase; } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, kind, phase); } 
-@override String toString() { return 'ListAccountEntrypointRulesetVersionsResponseResult(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase)'; } 
+          phase == other.phase;
+
+@override int get hashCode => Object.hash(description, id, lastUpdated, name, version, kind, phase);
+
+@override String toString() => 'ListAccountEntrypointRulesetVersionsResponseResult(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase)';
+
  }

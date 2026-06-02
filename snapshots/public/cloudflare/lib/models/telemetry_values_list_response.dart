@@ -33,12 +33,15 @@ TelemetryValuesListResponse copyWith({List<AiSearchInstanceChangeJobStatusRespon
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryValuesListResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           listEquals(result, other.result) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), success); } 
-@override String toString() { return 'TelemetryValuesListResponse(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), success);
+
+@override String toString() => 'TelemetryValuesListResponse(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

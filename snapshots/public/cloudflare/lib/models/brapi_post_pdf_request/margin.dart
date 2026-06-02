@@ -35,12 +35,15 @@ Margin copyWith({dynamic Function()? bottom, dynamic Function()? left, dynamic F
   right: right != null ? right() : this.right,
   top: top != null ? top() : this.top,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Margin &&
           bottom == other.bottom &&
           left == other.left &&
           right == other.right &&
-          top == other.top; } 
-@override int get hashCode { return Object.hash(bottom, left, right, top); } 
-@override String toString() { return 'Margin(bottom: $bottom, left: $left, right: $right, top: $top)'; } 
+          top == other.top;
+
+@override int get hashCode => Object.hash(bottom, left, right, top);
+
+@override String toString() => 'Margin(bottom: $bottom, left: $left, right: $right, top: $top)';
+
  }

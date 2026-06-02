@@ -20,10 +20,13 @@ WebhookDiscussionEditedChanges copyWith({WebhooksChangesBody? Function()? body, 
   body: body != null ? body() : this.body,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionEditedChanges &&
           body == other.body &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(body, title); } 
-@override String toString() { return 'WebhookDiscussionEditedChanges(body: $body, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(body, title);
+
+@override String toString() => 'WebhookDiscussionEditedChanges(body: $body, title: $title)';
+
  }

@@ -28,10 +28,13 @@ BillingBillResourceInvoicingLinesCommonCreditedItems copyWith({String? invoice, 
   invoice: invoice ?? this.invoice,
   invoiceLineItems: invoiceLineItems ?? this.invoiceLineItems,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingLinesCommonCreditedItems &&
           invoice == other.invoice &&
-          listEquals(invoiceLineItems, other.invoiceLineItems); } 
-@override int get hashCode { return Object.hash(invoice, Object.hashAll(invoiceLineItems)); } 
-@override String toString() { return 'BillingBillResourceInvoicingLinesCommonCreditedItems(invoice: $invoice, invoiceLineItems: $invoiceLineItems)'; } 
+          listEquals(invoiceLineItems, other.invoiceLineItems);
+
+@override int get hashCode => Object.hash(invoice, Object.hashAll(invoiceLineItems));
+
+@override String toString() => 'BillingBillResourceInvoicingLinesCommonCreditedItems(invoice: $invoice, invoiceLineItems: $invoiceLineItems)';
+
  }

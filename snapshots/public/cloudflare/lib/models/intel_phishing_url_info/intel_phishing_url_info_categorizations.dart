@@ -26,10 +26,13 @@ IntelPhishingUrlInfoCategorizations copyWith({String? Function()? category, Stri
   category: category != null ? category() : this.category,
   verificationStatus: verificationStatus != null ? verificationStatus() : this.verificationStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelPhishingUrlInfoCategorizations &&
           category == other.category &&
-          verificationStatus == other.verificationStatus; } 
-@override int get hashCode { return Object.hash(category, verificationStatus); } 
-@override String toString() { return 'IntelPhishingUrlInfoCategorizations(category: $category, verificationStatus: $verificationStatus)'; } 
+          verificationStatus == other.verificationStatus;
+
+@override int get hashCode => Object.hash(category, verificationStatus);
+
+@override String toString() => 'IntelPhishingUrlInfoCategorizations(category: $category, verificationStatus: $verificationStatus)';
+
  }

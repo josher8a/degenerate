@@ -83,29 +83,22 @@ final class EventAcceptStick extends Event {
   String get type => 'accept_stick';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...acceptStickEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...acceptStickEvent.toJson(), 'type': type};
 
   EventAcceptStick copyWith({AcceptStickEvent? acceptStickEvent}) {
     return EventAcceptStick(acceptStickEvent ?? this.acceptStickEvent);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventAcceptStick && acceptStickEvent == other.acceptStickEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventAcceptStick && acceptStickEvent == other.acceptStickEvent;
 
   @override
-  int get hashCode {
-    return acceptStickEvent.hashCode;
-  }
+  int get hashCode => acceptStickEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.acceptStick($acceptStickEvent)';
-  }
+  String toString() => 'Event.acceptStick($acceptStickEvent)';
 }
 
 @immutable
@@ -122,9 +115,10 @@ final class EventBanParticipant extends Event {
   String get type => 'ban_participant';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...banParticipantEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {
+    ...banParticipantEvent.toJson(),
+    'type': type,
+  };
 
   EventBanParticipant copyWith({String? participantSlug}) {
     return EventBanParticipant(
@@ -133,21 +127,16 @@ final class EventBanParticipant extends Event {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventBanParticipant &&
-            banParticipantEvent == other.banParticipantEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventBanParticipant &&
+          banParticipantEvent == other.banParticipantEvent;
 
   @override
-  int get hashCode {
-    return banParticipantEvent.hashCode;
-  }
+  int get hashCode => banParticipantEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.banParticipant($banParticipantEvent)';
-  }
+  String toString() => 'Event.banParticipant($banParticipantEvent)';
 }
 
 @immutable
@@ -164,29 +153,22 @@ final class EventEndRoom extends Event {
   String get type => 'end_room';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...endRoomEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...endRoomEvent.toJson(), 'type': type};
 
   EventEndRoom copyWith({EndReason? reason}) {
     return EventEndRoom(endRoomEvent.copyWith(reason: reason));
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventEndRoom && endRoomEvent == other.endRoomEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventEndRoom && endRoomEvent == other.endRoomEvent;
 
   @override
-  int get hashCode {
-    return endRoomEvent.hashCode;
-  }
+  int get hashCode => endRoomEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.endRoom($endRoomEvent)';
-  }
+  String toString() => 'Event.endRoom($endRoomEvent)';
 }
 
 @immutable
@@ -203,30 +185,26 @@ final class EventForcePassStick extends Event {
   String get type => 'force_pass_stick';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...forcePassStickEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {
+    ...forcePassStickEvent.toJson(),
+    'type': type,
+  };
 
   EventForcePassStick copyWith({ForcePassStickEvent? forcePassStickEvent}) {
     return EventForcePassStick(forcePassStickEvent ?? this.forcePassStickEvent);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventForcePassStick &&
-            forcePassStickEvent == other.forcePassStickEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventForcePassStick &&
+          forcePassStickEvent == other.forcePassStickEvent;
 
   @override
-  int get hashCode {
-    return forcePassStickEvent.hashCode;
-  }
+  int get hashCode => forcePassStickEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.forcePassStick($forcePassStickEvent)';
-  }
+  String toString() => 'Event.forcePassStick($forcePassStickEvent)';
 }
 
 @immutable
@@ -243,29 +221,22 @@ final class EventPassStick extends Event {
   String get type => 'pass_stick';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...passStickEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...passStickEvent.toJson(), 'type': type};
 
   EventPassStick copyWith({PassStickEvent? passStickEvent}) {
     return EventPassStick(passStickEvent ?? this.passStickEvent);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventPassStick && passStickEvent == other.passStickEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventPassStick && passStickEvent == other.passStickEvent;
 
   @override
-  int get hashCode {
-    return passStickEvent.hashCode;
-  }
+  int get hashCode => passStickEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.passStick($passStickEvent)';
-  }
+  String toString() => 'Event.passStick($passStickEvent)';
 }
 
 @immutable
@@ -282,29 +253,22 @@ final class EventReorder extends Event {
   String get type => 'reorder';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...reorderEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...reorderEvent.toJson(), 'type': type};
 
   EventReorder copyWith({List<String>? talkingOrder}) {
     return EventReorder(reorderEvent.copyWith(talkingOrder: talkingOrder));
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventReorder && reorderEvent == other.reorderEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventReorder && reorderEvent == other.reorderEvent;
 
   @override
-  int get hashCode {
-    return reorderEvent.hashCode;
-  }
+  int get hashCode => reorderEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.reorder($reorderEvent)';
-  }
+  String toString() => 'Event.reorder($reorderEvent)';
 }
 
 @immutable
@@ -321,29 +285,22 @@ final class EventStartRoom extends Event {
   String get type => 'start_room';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...startRoomEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...startRoomEvent.toJson(), 'type': type};
 
   EventStartRoom copyWith({StartRoomEvent? startRoomEvent}) {
     return EventStartRoom(startRoomEvent ?? this.startRoomEvent);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventStartRoom && startRoomEvent == other.startRoomEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventStartRoom && startRoomEvent == other.startRoomEvent;
 
   @override
-  int get hashCode {
-    return startRoomEvent.hashCode;
-  }
+  int get hashCode => startRoomEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.startRoom($startRoomEvent)';
-  }
+  String toString() => 'Event.startRoom($startRoomEvent)';
 }
 
 @immutable
@@ -360,9 +317,10 @@ final class EventUnbanParticipant extends Event {
   String get type => 'unban_participant';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...unbanParticipantEvent.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {
+    ...unbanParticipantEvent.toJson(),
+    'type': type,
+  };
 
   EventUnbanParticipant copyWith({String? participantSlug}) {
     return EventUnbanParticipant(
@@ -371,21 +329,16 @@ final class EventUnbanParticipant extends Event {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EventUnbanParticipant &&
-            unbanParticipantEvent == other.unbanParticipantEvent;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventUnbanParticipant &&
+          unbanParticipantEvent == other.unbanParticipantEvent;
 
   @override
-  int get hashCode {
-    return unbanParticipantEvent.hashCode;
-  }
+  int get hashCode => unbanParticipantEvent.hashCode;
 
   @override
-  String toString() {
-    return 'Event.unbanParticipant($unbanParticipantEvent)';
-  }
+  String toString() => 'Event.unbanParticipant($unbanParticipantEvent)';
 }
 
 /// An unknown variant not defined in the OpenAPI spec.
@@ -400,23 +353,15 @@ final class Event$Unknown extends Event {
   String get type => json['type'] as String? ?? '';
 
   @override
-  Map<String, dynamic> toJson() {
-    return json;
-  }
+  Map<String, dynamic> toJson() => json;
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is Event$Unknown && json == other.json;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Event$Unknown && json == other.json;
 
   @override
-  int get hashCode {
-    return json.hashCode;
-  }
+  int get hashCode => json.hashCode;
 
   @override
-  String toString() {
-    return 'Event.unknown($json)';
-  }
+  String toString() => 'Event.unknown($json)';
 }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OutputType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OutputType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OutputType($value)';
+
  }
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
 @immutable final class TimestampFormat {const TimestampFormat._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TimestampFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TimestampFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TimestampFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TimestampFormat($value)';
+
  }
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.
 @immutable final class LogpushOutputOptions {const LogpushOutputOptions({this.cve202144228, this.batchPrefix, this.batchSuffix, this.fieldDelimiter, this.fieldNames, this.outputType, this.recordDelimiter, this.recordPrefix, this.recordSuffix, this.recordTemplate, this.sampleRate, this.timestampFormat, });
@@ -151,7 +157,7 @@ LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function(
   sampleRate: sampleRate != null ? sampleRate() : this.sampleRate,
   timestampFormat: timestampFormat != null ? timestampFormat() : this.timestampFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushOutputOptions &&
           cve202144228 == other.cve202144228 &&
           batchPrefix == other.batchPrefix &&
@@ -164,7 +170,10 @@ LogpushOutputOptions copyWith({bool? Function()? cve202144228, String? Function(
           recordSuffix == other.recordSuffix &&
           recordTemplate == other.recordTemplate &&
           sampleRate == other.sampleRate &&
-          timestampFormat == other.timestampFormat; } 
-@override int get hashCode { return Object.hash(cve202144228, batchPrefix, batchSuffix, fieldDelimiter, Object.hashAll(fieldNames ?? const []), outputType, recordDelimiter, recordPrefix, recordSuffix, recordTemplate, sampleRate, timestampFormat); } 
-@override String toString() { return 'LogpushOutputOptions(cve202144228: $cve202144228, batchPrefix: $batchPrefix, batchSuffix: $batchSuffix, fieldDelimiter: $fieldDelimiter, fieldNames: $fieldNames, outputType: $outputType, recordDelimiter: $recordDelimiter, recordPrefix: $recordPrefix, recordSuffix: $recordSuffix, recordTemplate: $recordTemplate, sampleRate: $sampleRate, timestampFormat: $timestampFormat)'; } 
+          timestampFormat == other.timestampFormat;
+
+@override int get hashCode => Object.hash(cve202144228, batchPrefix, batchSuffix, fieldDelimiter, Object.hashAll(fieldNames ?? const []), outputType, recordDelimiter, recordPrefix, recordSuffix, recordTemplate, sampleRate, timestampFormat);
+
+@override String toString() => 'LogpushOutputOptions(cve202144228: $cve202144228, batchPrefix: $batchPrefix, batchSuffix: $batchSuffix, fieldDelimiter: $fieldDelimiter, fieldNames: $fieldNames, outputType: $outputType, recordDelimiter: $recordDelimiter, recordPrefix: $recordPrefix, recordSuffix: $recordSuffix, recordTemplate: $recordTemplate, sampleRate: $sampleRate, timestampFormat: $timestampFormat)';
+
  }

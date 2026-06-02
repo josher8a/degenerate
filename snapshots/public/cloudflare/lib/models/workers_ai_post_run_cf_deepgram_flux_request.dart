@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramFluxRequestEncoding && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramFluxRequestEncoding && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)';
+
  }
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
 @immutable final class MipOptOut {const MipOptOut._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MipOptOut && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MipOptOut($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MipOptOut && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MipOptOut($value)';
+
  }
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = MipOptOut.$false, this.tag, });
 
@@ -111,7 +117,7 @@ WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThre
   sampleRate: sampleRate ?? this.sampleRate,
   tag: tag != null ? tag() : this.tag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramFluxRequest &&
           eagerEotThreshold == other.eagerEotThreshold &&
           encoding == other.encoding &&
@@ -120,7 +126,10 @@ WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThre
           keyterm == other.keyterm &&
           mipOptOut == other.mipOptOut &&
           sampleRate == other.sampleRate &&
-          tag == other.tag; } 
-@override int get hashCode { return Object.hash(eagerEotThreshold, encoding, eotThreshold, eotTimeoutMs, keyterm, mipOptOut, sampleRate, tag); } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramFluxRequest(eagerEotThreshold: $eagerEotThreshold, encoding: $encoding, eotThreshold: $eotThreshold, eotTimeoutMs: $eotTimeoutMs, keyterm: $keyterm, mipOptOut: $mipOptOut, sampleRate: $sampleRate, tag: $tag)'; } 
+          tag == other.tag;
+
+@override int get hashCode => Object.hash(eagerEotThreshold, encoding, eotThreshold, eotTimeoutMs, keyterm, mipOptOut, sampleRate, tag);
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequest(eagerEotThreshold: $eagerEotThreshold, encoding: $encoding, eotThreshold: $eotThreshold, eotTimeoutMs: $eotTimeoutMs, keyterm: $keyterm, mipOptOut: $mipOptOut, sampleRate: $sampleRate, tag: $tag)';
+
  }

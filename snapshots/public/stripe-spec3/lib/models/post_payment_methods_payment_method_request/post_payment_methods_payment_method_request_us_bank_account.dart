@@ -21,10 +21,13 @@ PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({CustomerPaymentSou
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsPaymentMethodRequestUsBankAccount &&
           accountHolderType == other.accountHolderType &&
-          accountType == other.accountType; } 
-@override int get hashCode { return Object.hash(accountHolderType, accountType); } 
-@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType)'; } 
+          accountType == other.accountType;
+
+@override int get hashCode => Object.hash(accountHolderType, accountType);
+
+@override String toString() => 'PostPaymentMethodsPaymentMethodRequestUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType)';
+
  }

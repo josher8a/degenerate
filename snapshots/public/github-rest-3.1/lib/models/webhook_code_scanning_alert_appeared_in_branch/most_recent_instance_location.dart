@@ -35,13 +35,16 @@ MostRecentInstanceLocation copyWith({int? Function()? endColumn, int? Function()
   startColumn: startColumn != null ? startColumn() : this.startColumn,
   startLine: startLine != null ? startLine() : this.startLine,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MostRecentInstanceLocation &&
           endColumn == other.endColumn &&
           endLine == other.endLine &&
           path == other.path &&
           startColumn == other.startColumn &&
-          startLine == other.startLine; } 
-@override int get hashCode { return Object.hash(endColumn, endLine, path, startColumn, startLine); } 
-@override String toString() { return 'MostRecentInstanceLocation(endColumn: $endColumn, endLine: $endLine, path: $path, startColumn: $startColumn, startLine: $startLine)'; } 
+          startLine == other.startLine;
+
+@override int get hashCode => Object.hash(endColumn, endLine, path, startColumn, startLine);
+
+@override String toString() => 'MostRecentInstanceLocation(endColumn: $endColumn, endLine: $endLine, path: $path, startColumn: $startColumn, startLine: $startLine)';
+
  }

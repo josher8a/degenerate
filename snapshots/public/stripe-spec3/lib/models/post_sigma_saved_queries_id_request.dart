@@ -39,11 +39,14 @@ PostSigmaSavedQueriesIdRequest copyWith({List<String>? Function()? expand, Strin
   name: name != null ? name() : this.name,
   sql: sql != null ? sql() : this.sql,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSigmaSavedQueriesIdRequest &&
           listEquals(expand, other.expand) &&
           name == other.name &&
-          sql == other.sql; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), name, sql); } 
-@override String toString() { return 'PostSigmaSavedQueriesIdRequest(expand: $expand, name: $name, sql: $sql)'; } 
+          sql == other.sql;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), name, sql);
+
+@override String toString() => 'PostSigmaSavedQueriesIdRequest(expand: $expand, name: $name, sql: $sql)';
+
  }

@@ -53,7 +53,7 @@ ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCod
   signal: signal != null ? signal() : this.signal,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerStateTerminated &&
           containerId == other.containerId &&
           exitCode == other.exitCode &&
@@ -61,7 +61,10 @@ ContainerStateTerminated copyWith({String? Function()? containerId, int? exitCod
           message == other.message &&
           reason == other.reason &&
           signal == other.signal &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(containerId, exitCode, finishedAt, message, reason, signal, startedAt); } 
-@override String toString() { return 'ContainerStateTerminated(containerId: $containerId, exitCode: $exitCode, finishedAt: $finishedAt, message: $message, reason: $reason, signal: $signal, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(containerId, exitCode, finishedAt, message, reason, signal, startedAt);
+
+@override String toString() => 'ContainerStateTerminated(containerId: $containerId, exitCode: $exitCode, finishedAt: $finishedAt, message: $message, reason: $reason, signal: $signal, startedAt: $startedAt)';
+
  }

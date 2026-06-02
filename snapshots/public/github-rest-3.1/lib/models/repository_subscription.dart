@@ -48,14 +48,17 @@ RepositorySubscription copyWith({bool? subscribed, bool? ignored, String? Functi
   url: url ?? this.url,
   repositoryUrl: repositoryUrl ?? this.repositoryUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositorySubscription &&
           subscribed == other.subscribed &&
           ignored == other.ignored &&
           reason == other.reason &&
           createdAt == other.createdAt &&
           url == other.url &&
-          repositoryUrl == other.repositoryUrl; } 
-@override int get hashCode { return Object.hash(subscribed, ignored, reason, createdAt, url, repositoryUrl); } 
-@override String toString() { return 'RepositorySubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, repositoryUrl: $repositoryUrl)'; } 
+          repositoryUrl == other.repositoryUrl;
+
+@override int get hashCode => Object.hash(subscribed, ignored, reason, createdAt, url, repositoryUrl);
+
+@override String toString() => 'RepositorySubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, repositoryUrl: $repositoryUrl)';
+
  }

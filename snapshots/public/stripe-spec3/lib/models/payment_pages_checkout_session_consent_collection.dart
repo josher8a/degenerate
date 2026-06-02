@@ -31,11 +31,14 @@ PaymentPagesCheckoutSessionConsentCollection copyWith({PaymentPagesCheckoutSessi
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionConsentCollection &&
           paymentMethodReuseAgreement == other.paymentMethodReuseAgreement &&
           promotions == other.promotions &&
-          termsOfService == other.termsOfService; } 
-@override int get hashCode { return Object.hash(paymentMethodReuseAgreement, promotions, termsOfService); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)'; } 
+          termsOfService == other.termsOfService;
+
+@override int get hashCode => Object.hash(paymentMethodReuseAgreement, promotions, termsOfService);
+
+@override String toString() => 'PaymentPagesCheckoutSessionConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)';
+
  }

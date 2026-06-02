@@ -36,11 +36,14 @@ InvoiceMandateOptionsCard copyWith({int? Function()? amount, InvoiceMandateOptio
   amountType: amountType != null ? amountType() : this.amountType,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceMandateOptionsCard &&
           amount == other.amount &&
           amountType == other.amountType &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(amount, amountType, description); } 
-@override String toString() { return 'InvoiceMandateOptionsCard(amount: $amount, amountType: $amountType, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(amount, amountType, description);
+
+@override String toString() => 'InvoiceMandateOptionsCard(amount: $amount, amountType: $amountType, description: $description)';
+
  }

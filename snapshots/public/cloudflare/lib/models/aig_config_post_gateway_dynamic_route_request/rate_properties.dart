@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LimitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LimitType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LimitType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LimitType($value)';
+
  }
 @immutable final class RateProperties {const RateProperties({required this.key, required this.limit, required this.limitType, required this.window, });
 
@@ -57,12 +60,15 @@ RateProperties copyWith({String? key, double? limit, LimitType? limitType, doubl
   limitType: limitType ?? this.limitType,
   window: window ?? this.window,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateProperties &&
           key == other.key &&
           limit == other.limit &&
           limitType == other.limitType &&
-          window == other.window; } 
-@override int get hashCode { return Object.hash(key, limit, limitType, window); } 
-@override String toString() { return 'RateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)'; } 
+          window == other.window;
+
+@override int get hashCode => Object.hash(key, limit, limitType, window);
+
+@override String toString() => 'RateProperties(key: $key, limit: $limit, limitType: $limitType, window: $window)';
+
  }

@@ -40,14 +40,17 @@ FieldValue copyWith({String? Function()? fieldNodeId, String? Function()? fieldT
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FieldValue &&
           fieldNodeId == other.fieldNodeId &&
           fieldType == other.fieldType &&
           fieldName == other.fieldName &&
           projectNumber == other.projectNumber &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(fieldNodeId, fieldType, fieldName, projectNumber, from, to); } 
-@override String toString() { return 'FieldValue(fieldNodeId: $fieldNodeId, fieldType: $fieldType, fieldName: $fieldName, projectNumber: $projectNumber, from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(fieldNodeId, fieldType, fieldName, projectNumber, from, to);
+
+@override String toString() => 'FieldValue(fieldNodeId: $fieldNodeId, fieldType: $fieldType, fieldName: $fieldName, projectNumber: $projectNumber, from: $from, to: $to)';
+
  }

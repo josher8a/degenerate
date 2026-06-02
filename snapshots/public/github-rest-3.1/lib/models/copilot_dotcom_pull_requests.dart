@@ -28,11 +28,14 @@ CopilotDotcomPullRequests copyWith({int? Function()? totalEngagedUsers, List<Cop
   repositories: repositories != null ? repositories() : this.repositories,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotDotcomPullRequests &&
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(repositories, other.repositories) &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(repositories ?? const []), Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotDotcomPullRequests(totalEngagedUsers: $totalEngagedUsers, repositories: $repositories, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(repositories ?? const []), Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotDotcomPullRequests(totalEngagedUsers: $totalEngagedUsers, repositories: $repositories, additionalProperties: $additionalProperties)';
+
  }

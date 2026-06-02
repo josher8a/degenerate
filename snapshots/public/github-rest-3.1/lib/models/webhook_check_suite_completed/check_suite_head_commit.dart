@@ -47,14 +47,17 @@ CheckSuiteHeadCommit copyWith({CommitsAuthor? author, CommitsCommitter? committe
   timestamp: timestamp ?? this.timestamp,
   treeId: treeId ?? this.treeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckSuiteHeadCommit &&
           author == other.author &&
           committer == other.committer &&
           id == other.id &&
           message == other.message &&
           timestamp == other.timestamp &&
-          treeId == other.treeId; } 
-@override int get hashCode { return Object.hash(author, committer, id, message, timestamp, treeId); } 
-@override String toString() { return 'CheckSuiteHeadCommit(author: $author, committer: $committer, id: $id, message: $message, timestamp: $timestamp, treeId: $treeId)'; } 
+          treeId == other.treeId;
+
+@override int get hashCode => Object.hash(author, committer, id, message, timestamp, treeId);
+
+@override String toString() => 'CheckSuiteHeadCommit(author: $author, committer: $committer, id: $id, message: $message, timestamp: $timestamp, treeId: $treeId)';
+
  }

@@ -22,9 +22,12 @@ return errors; }
 PostCheckoutSessionsRequestPaymentMethodOptionsSwish copyWith({String? Function()? reference}) { return PostCheckoutSessionsRequestPaymentMethodOptionsSwish(
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsSwish &&
-          reference == other.reference; } 
-@override int get hashCode { return reference.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsSwish(reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => reference.hashCode;
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsSwish(reference: $reference)';
+
  }

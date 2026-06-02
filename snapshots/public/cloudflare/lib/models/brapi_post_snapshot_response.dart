@@ -32,12 +32,15 @@ BrapiPostSnapshotResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineN
   result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostSnapshotResponse &&
           listEquals(errors, other.errors) &&
           meta == other.meta &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), meta, result, success); } 
-@override String toString() { return 'BrapiPostSnapshotResponse(errors: $errors, meta: $meta, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), meta, result, success);
+
+@override String toString() => 'BrapiPostSnapshotResponse(errors: $errors, meta: $meta, result: $result, success: $success)';
+
  }

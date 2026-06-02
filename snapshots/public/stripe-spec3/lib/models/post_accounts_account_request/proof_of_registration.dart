@@ -20,10 +20,13 @@ ProofOfRegistration copyWith({List<String>? Function()? files, Signer? Function(
   files: files != null ? files() : this.files,
   signer: signer != null ? signer() : this.signer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProofOfRegistration &&
           listEquals(files, other.files) &&
-          signer == other.signer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(files ?? const []), signer); } 
-@override String toString() { return 'ProofOfRegistration(files: $files, signer: $signer)'; } 
+          signer == other.signer;
+
+@override int get hashCode => Object.hash(Object.hashAll(files ?? const []), signer);
+
+@override String toString() => 'ProofOfRegistration(files: $files, signer: $signer)';
+
  }

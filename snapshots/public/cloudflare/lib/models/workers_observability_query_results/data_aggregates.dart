@@ -43,13 +43,16 @@ DataAggregates copyWith({int? count, String? firstSeen, int? interval, String? l
   lastSeen: lastSeen ?? this.lastSeen,
   bin: bin != null ? bin() : this.bin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataAggregates &&
           count == other.count &&
           firstSeen == other.firstSeen &&
           interval == other.interval &&
           lastSeen == other.lastSeen &&
-          bin == other.bin; } 
-@override int get hashCode { return Object.hash(count, firstSeen, interval, lastSeen, bin); } 
-@override String toString() { return 'DataAggregates(count: $count, firstSeen: $firstSeen, interval: $interval, lastSeen: $lastSeen, bin: $bin)'; } 
+          bin == other.bin;
+
+@override int get hashCode => Object.hash(count, firstSeen, interval, lastSeen, bin);
+
+@override String toString() => 'DataAggregates(count: $count, firstSeen: $firstSeen, interval: $interval, lastSeen: $lastSeen, bin: $bin)';
+
  }

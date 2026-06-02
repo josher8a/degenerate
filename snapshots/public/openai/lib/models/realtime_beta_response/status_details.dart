@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusDetailsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusDetailsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusDetailsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusDetailsType($value)';
+
  }
 /// The reason the Response did not complete. For a `cancelled` Response,
 /// one of `turn_detected` (the server VAD detected a new start of speech)
@@ -65,10 +68,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StatusDetailsReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StatusDetailsReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusDetailsReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StatusDetailsReason($value)';
+
  }
 /// Additional details about the status.
 @immutable final class StatusDetails {const StatusDetails({this.type, this.reason, this.error, });
@@ -109,11 +115,14 @@ StatusDetails copyWith({StatusDetailsType? Function()? type, StatusDetailsReason
   reason: reason != null ? reason() : this.reason,
   error: error != null ? error() : this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusDetails &&
           type == other.type &&
           reason == other.reason &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(type, reason, error); } 
-@override String toString() { return 'StatusDetails(type: $type, reason: $reason, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(type, reason, error);
+
+@override String toString() => 'StatusDetails(type: $type, reason: $reason, error: $error)';
+
  }

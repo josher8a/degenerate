@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MqEventSourceWorkflowsWorkflowType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MqEventSourceWorkflowsWorkflowType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MqEventSourceWorkflowsWorkflowType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqEventSourceWorkflowsWorkflowType($value)';
+
  }
 @immutable final class MqEventSourceWorkflowsWorkflow {const MqEventSourceWorkflowsWorkflow({this.type, this.workflowName, });
 
@@ -44,10 +47,13 @@ MqEventSourceWorkflowsWorkflow copyWith({MqEventSourceWorkflowsWorkflowType? Fun
   type: type != null ? type() : this.type,
   workflowName: workflowName != null ? workflowName() : this.workflowName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqEventSourceWorkflowsWorkflow &&
           type == other.type &&
-          workflowName == other.workflowName; } 
-@override int get hashCode { return Object.hash(type, workflowName); } 
-@override String toString() { return 'MqEventSourceWorkflowsWorkflow(type: $type, workflowName: $workflowName)'; } 
+          workflowName == other.workflowName;
+
+@override int get hashCode => Object.hash(type, workflowName);
+
+@override String toString() => 'MqEventSourceWorkflowsWorkflow(type: $type, workflowName: $workflowName)';
+
  }

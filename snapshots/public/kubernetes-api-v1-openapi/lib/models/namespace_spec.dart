@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 NamespaceSpec copyWith({List<String>? Function()? finalizers}) { return NamespaceSpec(
   finalizers: finalizers != null ? finalizers() : this.finalizers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceSpec &&
-          listEquals(finalizers, other.finalizers); } 
-@override int get hashCode { return Object.hashAll(finalizers ?? const []); } 
-@override String toString() { return 'NamespaceSpec(finalizers: $finalizers)'; } 
+          listEquals(finalizers, other.finalizers);
+
+@override int get hashCode => Object.hashAll(finalizers ?? const []);
+
+@override String toString() => 'NamespaceSpec(finalizers: $finalizers)';
+
  }

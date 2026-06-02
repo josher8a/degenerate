@@ -22,10 +22,13 @@ QueuesPullMessagesRequest copyWith({MqBatchSize? Function()? batchSize, MqVisibi
   batchSize: batchSize != null ? batchSize() : this.batchSize,
   visibilityTimeoutMs: visibilityTimeoutMs != null ? visibilityTimeoutMs() : this.visibilityTimeoutMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesPullMessagesRequest &&
           batchSize == other.batchSize &&
-          visibilityTimeoutMs == other.visibilityTimeoutMs; } 
-@override int get hashCode { return Object.hash(batchSize, visibilityTimeoutMs); } 
-@override String toString() { return 'QueuesPullMessagesRequest(batchSize: $batchSize, visibilityTimeoutMs: $visibilityTimeoutMs)'; } 
+          visibilityTimeoutMs == other.visibilityTimeoutMs;
+
+@override int get hashCode => Object.hash(batchSize, visibilityTimeoutMs);
+
+@override String toString() => 'QueuesPullMessagesRequest(batchSize: $batchSize, visibilityTimeoutMs: $visibilityTimeoutMs)';
+
  }

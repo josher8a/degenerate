@@ -34,10 +34,13 @@ TlsCertificatesAndHostnamesAssociationObject copyWith({TlsCertificatesAndHostnam
   service: service != null ? service() : this.service,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesAssociationObject &&
           service == other.service &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(service, status); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesAssociationObject(service: $service, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(service, status);
+
+@override String toString() => 'TlsCertificatesAndHostnamesAssociationObject(service: $service, status: $status)';
+
  }

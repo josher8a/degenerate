@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final TeamsDevicesTlsConfigRequest _value;
 
-@override TeamsDevicesTlsConfigRequest get value { return _value; } 
+@override TeamsDevicesTlsConfigRequest get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TeamsDevicesSchemasConfigRequest.teamsDevicesTlsConfigRequest($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TeamsDevicesSchemasConfigRequest.teamsDevicesTlsConfigRequest($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class TeamsDevicesSchemasConfigRequest$Unknown extends TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequest$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TeamsDevicesSchemasConfigRequest$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TeamsDevicesSchemasConfigRequest.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesSchemasConfigRequest$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TeamsDevicesSchemasConfigRequest.unknown($_value)';
+
  }

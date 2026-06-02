@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AppleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AppleStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppleStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AppleStatus($value)';
+
  }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class ChromeStatus {const ChromeStatus._(this.value);
@@ -75,10 +78,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChromeStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ChromeStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChromeStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChromeStatus($value)';
+
  }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class MicrosoftStatus {const MicrosoftStatus._(this.value);
@@ -115,10 +121,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MicrosoftStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MicrosoftStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MicrosoftStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MicrosoftStatus($value)';
+
  }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
 @immutable final class MozillaStatus {const MozillaStatus._(this.value);
@@ -155,10 +164,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MozillaStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MozillaStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MozillaStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MozillaStatus($value)';
+
  }
 @immutable final class ResultCertificateAuthority {const ResultCertificateAuthority({required this.appleStatus, required this.authorityKeyIdentifier, required this.certificateRecordType, required this.chromeStatus, required this.country, required this.countryName, required this.microsoftStatus, required this.mozillaStatus, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.related, required this.revocationStatus, required this.sha256Fingerprint, required this.subjectKeyIdentifier, required this.validFrom, required this.validTo, });
 
@@ -317,7 +329,7 @@ ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authority
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultCertificateAuthority &&
           appleStatus == other.appleStatus &&
           authorityKeyIdentifier == other.authorityKeyIdentifier &&
@@ -336,7 +348,10 @@ ResultCertificateAuthority copyWith({AppleStatus? appleStatus, String? authority
           sha256Fingerprint == other.sha256Fingerprint &&
           subjectKeyIdentifier == other.subjectKeyIdentifier &&
           validFrom == other.validFrom &&
-          validTo == other.validTo; } 
-@override int get hashCode { return Object.hash(appleStatus, authorityKeyIdentifier, certificateRecordType, chromeStatus, country, countryName, microsoftStatus, mozillaStatus, name, owner, parentName, parentSha256Fingerprint, Object.hashAll(related), revocationStatus, sha256Fingerprint, subjectKeyIdentifier, validFrom, validTo); } 
-@override String toString() { return 'ResultCertificateAuthority(appleStatus: $appleStatus, authorityKeyIdentifier: $authorityKeyIdentifier, certificateRecordType: $certificateRecordType, chromeStatus: $chromeStatus, country: $country, countryName: $countryName, microsoftStatus: $microsoftStatus, mozillaStatus: $mozillaStatus, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, related: $related, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint, subjectKeyIdentifier: $subjectKeyIdentifier, validFrom: $validFrom, validTo: $validTo)'; } 
+          validTo == other.validTo;
+
+@override int get hashCode => Object.hash(appleStatus, authorityKeyIdentifier, certificateRecordType, chromeStatus, country, countryName, microsoftStatus, mozillaStatus, name, owner, parentName, parentSha256Fingerprint, Object.hashAll(related), revocationStatus, sha256Fingerprint, subjectKeyIdentifier, validFrom, validTo);
+
+@override String toString() => 'ResultCertificateAuthority(appleStatus: $appleStatus, authorityKeyIdentifier: $authorityKeyIdentifier, certificateRecordType: $certificateRecordType, chromeStatus: $chromeStatus, country: $country, countryName: $countryName, microsoftStatus: $microsoftStatus, mozillaStatus: $mozillaStatus, name: $name, owner: $owner, parentName: $parentName, parentSha256Fingerprint: $parentSha256Fingerprint, related: $related, revocationStatus: $revocationStatus, sha256Fingerprint: $sha256Fingerprint, subjectKeyIdentifier: $subjectKeyIdentifier, validFrom: $validFrom, validTo: $validTo)';
+
  }

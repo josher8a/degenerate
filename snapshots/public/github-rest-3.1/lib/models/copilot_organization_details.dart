@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PublicCodeSuggestions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PublicCodeSuggestions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PublicCodeSuggestions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PublicCodeSuggestions($value)';
+
  }
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
 @immutable final class IdeChat {const IdeChat._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IdeChat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IdeChat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdeChat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IdeChat($value)';
+
  }
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
 @immutable final class PlatformChat {const PlatformChat._(this.value);
@@ -79,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PlatformChat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PlatformChat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformChat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PlatformChat($value)';
+
  }
 /// The organization policy for allowing or disallowing Copilot CLI.
 @immutable final class Cli {const Cli._(this.value);
@@ -107,10 +116,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Cli && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Cli($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Cli && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Cli($value)';
+
  }
 /// The mode of assigning new seats.
 @immutable final class SeatManagementSetting {const SeatManagementSetting._(this.value);
@@ -138,10 +150,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SeatManagementSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SeatManagementSetting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SeatManagementSetting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SeatManagementSetting($value)';
+
  }
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
 @immutable final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
@@ -163,10 +178,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotOrganizationDetailsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotOrganizationDetailsPlanType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CopilotOrganizationDetailsPlanType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CopilotOrganizationDetailsPlanType($value)';
+
  }
 /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
 @immutable final class CopilotOrganizationDetails {const CopilotOrganizationDetails({required this.seatBreakdown, required this.publicCodeSuggestions, required this.seatManagementSetting, this.ideChat, this.platformChat, this.cli, this.planType, this.additionalProperties = const {}, });
@@ -227,7 +245,7 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
   planType: planType != null ? planType() : this.planType,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotOrganizationDetails &&
           seatBreakdown == other.seatBreakdown &&
           publicCodeSuggestions == other.publicCodeSuggestions &&
@@ -236,7 +254,10 @@ CopilotOrganizationDetails copyWith({CopilotOrganizationSeatBreakdown? seatBreak
           cli == other.cli &&
           seatManagementSetting == other.seatManagementSetting &&
           planType == other.planType &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(seatBreakdown, publicCodeSuggestions, ideChat, platformChat, cli, seatManagementSetting, planType, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotOrganizationDetails(seatBreakdown: $seatBreakdown, publicCodeSuggestions: $publicCodeSuggestions, ideChat: $ideChat, platformChat: $platformChat, cli: $cli, seatManagementSetting: $seatManagementSetting, planType: $planType, additionalProperties: $additionalProperties)';
+
  }

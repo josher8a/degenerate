@@ -22,37 +22,43 @@ final class BillingUpdateBudgetOrgError$400 extends BillingUpdateBudgetOrgError 
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BillingUpdateBudgetOrgError$401 extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$401(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class BillingUpdateBudgetOrgError$403 extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class BillingUpdateBudgetOrgError$404 extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class BillingUpdateBudgetOrgError$422 extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BillingUpdateBudgetOrgError$500 extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$500(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BillingUpdateBudgetOrgError$Unknown extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError$Unknown(this.statusCode, this.rawBody, );
 

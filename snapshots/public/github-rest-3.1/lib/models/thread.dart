@@ -64,7 +64,7 @@ Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, St
   url: url ?? this.url,
   subscriptionUrl: subscriptionUrl ?? this.subscriptionUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Thread &&
           id == other.id &&
           repository == other.repository &&
@@ -74,7 +74,10 @@ Thread copyWith({String? id, MinimalRepository? repository, Subject? subject, St
           updatedAt == other.updatedAt &&
           lastReadAt == other.lastReadAt &&
           url == other.url &&
-          subscriptionUrl == other.subscriptionUrl; } 
-@override int get hashCode { return Object.hash(id, repository, subject, reason, unread, updatedAt, lastReadAt, url, subscriptionUrl); } 
-@override String toString() { return 'Thread(id: $id, repository: $repository, subject: $subject, reason: $reason, unread: $unread, updatedAt: $updatedAt, lastReadAt: $lastReadAt, url: $url, subscriptionUrl: $subscriptionUrl)'; } 
+          subscriptionUrl == other.subscriptionUrl;
+
+@override int get hashCode => Object.hash(id, repository, subject, reason, unread, updatedAt, lastReadAt, url, subscriptionUrl);
+
+@override String toString() => 'Thread(id: $id, repository: $repository, subject: $subject, reason: $reason, unread: $unread, updatedAt: $updatedAt, lastReadAt: $lastReadAt, url: $url, subscriptionUrl: $subscriptionUrl)';
+
  }

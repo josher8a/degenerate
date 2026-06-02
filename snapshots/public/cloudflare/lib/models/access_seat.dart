@@ -29,11 +29,14 @@ AccessSeat copyWith({AccessAccessSeat? accessSeat, AccessGatewaySeat? gatewaySea
   gatewaySeat: gatewaySeat ?? this.gatewaySeat,
   seatUid: seatUid ?? this.seatUid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSeat &&
           accessSeat == other.accessSeat &&
           gatewaySeat == other.gatewaySeat &&
-          seatUid == other.seatUid; } 
-@override int get hashCode { return Object.hash(accessSeat, gatewaySeat, seatUid); } 
-@override String toString() { return 'AccessSeat(accessSeat: $accessSeat, gatewaySeat: $gatewaySeat, seatUid: $seatUid)'; } 
+          seatUid == other.seatUid;
+
+@override int get hashCode => Object.hash(accessSeat, gatewaySeat, seatUid);
+
+@override String toString() => 'AccessSeat(accessSeat: $accessSeat, gatewaySeat: $gatewaySeat, seatUid: $seatUid)';
+
  }

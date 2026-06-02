@@ -19,19 +19,22 @@ final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$400 extends A
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$403 extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$404 extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError$Unknown extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError$Unknown(this.statusCode, this.rawBody, );
 

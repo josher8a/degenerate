@@ -52,12 +52,15 @@ RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()?
   excludeOrigin: excludeOrigin != null ? excludeOrigin() : this.excludeOrigin,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsSetCacheSettingsCustomCacheKeyHeader &&
           listEquals(checkPresence, other.checkPresence) &&
           contains == other.contains &&
           excludeOrigin == other.excludeOrigin &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkPresence ?? const []), contains, excludeOrigin, Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyHeader(checkPresence: $checkPresence, contains: $contains, excludeOrigin: $excludeOrigin, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(Object.hashAll(checkPresence ?? const []), contains, excludeOrigin, Object.hashAll(include ?? const []));
+
+@override String toString() => 'RulesetsSetCacheSettingsCustomCacheKeyHeader(checkPresence: $checkPresence, contains: $contains, excludeOrigin: $excludeOrigin, include: $include)';
+
  }

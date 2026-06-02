@@ -20,10 +20,13 @@ ArtifactAttestations copyWith({String? Function()? trustDomain, List<String>? Fu
   trustDomain: trustDomain != null ? trustDomain() : this.trustDomain,
   services: services != null ? services() : this.services,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ArtifactAttestations &&
           trustDomain == other.trustDomain &&
-          listEquals(services, other.services); } 
-@override int get hashCode { return Object.hash(trustDomain, Object.hashAll(services ?? const [])); } 
-@override String toString() { return 'ArtifactAttestations(trustDomain: $trustDomain, services: $services)'; } 
+          listEquals(services, other.services);
+
+@override int get hashCode => Object.hash(trustDomain, Object.hashAll(services ?? const []));
+
+@override String toString() => 'ArtifactAttestations(trustDomain: $trustDomain, services: $services)';
+
  }

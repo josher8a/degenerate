@@ -68,7 +68,7 @@ CodeScanningAlertInstance copyWith({CodeScanningRef? Function()? ref, CodeScanni
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
   classifications: classifications != null ? classifications() : this.classifications,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAlertInstance &&
           ref == other.ref &&
           analysisKey == other.analysisKey &&
@@ -79,7 +79,10 @@ CodeScanningAlertInstance copyWith({CodeScanningRef? Function()? ref, CodeScanni
           message == other.message &&
           location == other.location &&
           htmlUrl == other.htmlUrl &&
-          listEquals(classifications, other.classifications); } 
-@override int get hashCode { return Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const [])); } 
-@override String toString() { return 'CodeScanningAlertInstance(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)'; } 
+          listEquals(classifications, other.classifications);
+
+@override int get hashCode => Object.hash(ref, analysisKey, environment, category, state, commitSha, message, location, htmlUrl, Object.hashAll(classifications ?? const []));
+
+@override String toString() => 'CodeScanningAlertInstance(ref: $ref, analysisKey: $analysisKey, environment: $environment, category: $category, state: $state, commitSha: $commitSha, message: $message, location: $location, htmlUrl: $htmlUrl, classifications: $classifications)';
+
  }

@@ -17,7 +17,8 @@ final class OrgsRemoveOutsideCollaboratorError$422 extends OrgsRemoveOutsideColl
 
 final OrgsRemoveOutsideCollaboratorResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class OrgsRemoveOutsideCollaboratorError$Unknown extends OrgsRemoveOutsideCollaboratorError {const OrgsRemoveOutsideCollaboratorError$Unknown(this.statusCode, this.rawBody, );
 

@@ -41,13 +41,16 @@ RulesetsExecuteRuleOverrides2 copyWith({RulesetsRuleAction? Function()? action, 
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
   sensitivityLevel: sensitivityLevel != null ? sensitivityLevel() : this.sensitivityLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteRuleOverrides2 &&
           action == other.action &&
           enabled == other.enabled &&
           id == other.id &&
           scoreThreshold == other.scoreThreshold &&
-          sensitivityLevel == other.sensitivityLevel; } 
-@override int get hashCode { return Object.hash(action, enabled, id, scoreThreshold, sensitivityLevel); } 
-@override String toString() { return 'RulesetsExecuteRuleOverrides2(action: $action, enabled: $enabled, id: $id, scoreThreshold: $scoreThreshold, sensitivityLevel: $sensitivityLevel)'; } 
+          sensitivityLevel == other.sensitivityLevel;
+
+@override int get hashCode => Object.hash(action, enabled, id, scoreThreshold, sensitivityLevel);
+
+@override String toString() => 'RulesetsExecuteRuleOverrides2(action: $action, enabled: $enabled, id: $id, scoreThreshold: $scoreThreshold, sensitivityLevel: $sensitivityLevel)';
+
  }

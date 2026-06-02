@@ -22,10 +22,13 @@ RadarGetDnsSummaryByDnssecE2eVersionResponse copyWith({RadarGetDnsSummaryByCache
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsSummaryByDnssecE2eVersionResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'RadarGetDnsSummaryByDnssecE2eVersionResponse(result: $result, success: $success)';
+
  }

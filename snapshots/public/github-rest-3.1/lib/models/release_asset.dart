@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ReleaseAssetState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ReleaseAssetState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReleaseAssetState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReleaseAssetState($value)';
+
  }
 /// Data related to a release.
 @immutable final class ReleaseAsset {const ReleaseAsset({required this.url, required this.browserDownloadUrl, required this.id, required this.nodeId, required this.name, required this.label, required this.state, required this.contentType, required this.size, required this.digest, required this.downloadCount, required this.createdAt, required this.updatedAt, required this.uploader, });
@@ -121,7 +124,7 @@ ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeI
   updatedAt: updatedAt ?? this.updatedAt,
   uploader: uploader != null ? uploader() : this.uploader,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReleaseAsset &&
           url == other.url &&
           browserDownloadUrl == other.browserDownloadUrl &&
@@ -136,7 +139,10 @@ ReleaseAsset copyWith({Uri? url, Uri? browserDownloadUrl, int? id, String? nodeI
           downloadCount == other.downloadCount &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          uploader == other.uploader; } 
-@override int get hashCode { return Object.hash(url, browserDownloadUrl, id, nodeId, name, label, state, contentType, size, digest, downloadCount, createdAt, updatedAt, uploader); } 
-@override String toString() { return 'ReleaseAsset(url: $url, browserDownloadUrl: $browserDownloadUrl, id: $id, nodeId: $nodeId, name: $name, label: $label, state: $state, contentType: $contentType, size: $size, digest: $digest, downloadCount: $downloadCount, createdAt: $createdAt, updatedAt: $updatedAt, uploader: $uploader)'; } 
+          uploader == other.uploader;
+
+@override int get hashCode => Object.hash(url, browserDownloadUrl, id, nodeId, name, label, state, contentType, size, digest, downloadCount, createdAt, updatedAt, uploader);
+
+@override String toString() => 'ReleaseAsset(url: $url, browserDownloadUrl: $browserDownloadUrl, id: $id, nodeId: $nodeId, name: $name, label: $label, state: $state, contentType: $contentType, size: $size, digest: $digest, downloadCount: $downloadCount, createdAt: $createdAt, updatedAt: $updatedAt, uploader: $uploader)';
+
  }

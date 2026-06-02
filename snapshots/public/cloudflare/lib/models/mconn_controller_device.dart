@@ -41,14 +41,17 @@ MconnControllerDevice copyWith({String? cryptKey, String? Function()? cryptKeyRo
   lastCryptKey: lastCryptKey != null ? lastCryptKey() : this.lastCryptKey,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnControllerDevice &&
           cryptKey == other.cryptKey &&
           cryptKeyRotationFinishedAt == other.cryptKeyRotationFinishedAt &&
           id == other.id &&
           imagedAt == other.imagedAt &&
           lastCryptKey == other.lastCryptKey &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(cryptKey, cryptKeyRotationFinishedAt, id, imagedAt, lastCryptKey, serialNumber); } 
-@override String toString() { return 'MconnControllerDevice(cryptKey: $cryptKey, cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, id: $id, imagedAt: $imagedAt, lastCryptKey: $lastCryptKey, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(cryptKey, cryptKeyRotationFinishedAt, id, imagedAt, lastCryptKey, serialNumber);
+
+@override String toString() => 'MconnControllerDevice(cryptKey: $cryptKey, cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, id: $id, imagedAt: $imagedAt, lastCryptKey: $lastCryptKey, serialNumber: $serialNumber)';
+
  }

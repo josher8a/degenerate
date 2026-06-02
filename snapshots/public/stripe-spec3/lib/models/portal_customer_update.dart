@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalCustomerUpdateAllowedUpdates && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalCustomerUpdateAllowedUpdates($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PortalCustomerUpdateAllowedUpdates && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PortalCustomerUpdateAllowedUpdates($value)';
+
  }
 /// 
 @immutable final class PortalCustomerUpdate {const PortalCustomerUpdate({required this.allowedUpdates, required this.enabled, });
@@ -60,10 +63,13 @@ PortalCustomerUpdate copyWith({List<PortalCustomerUpdateAllowedUpdates>? allowed
   allowedUpdates: allowedUpdates ?? this.allowedUpdates,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalCustomerUpdate &&
           listEquals(allowedUpdates, other.allowedUpdates) &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedUpdates), enabled); } 
-@override String toString() { return 'PortalCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedUpdates), enabled);
+
+@override String toString() => 'PortalCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)';
+
  }

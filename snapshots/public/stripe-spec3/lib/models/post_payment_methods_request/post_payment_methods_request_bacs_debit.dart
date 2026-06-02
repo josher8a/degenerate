@@ -31,10 +31,13 @@ PostPaymentMethodsRequestBacsDebit copyWith({String? Function()? accountNumber, 
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   sortCode: sortCode != null ? sortCode() : this.sortCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentMethodsRequestBacsDebit &&
           accountNumber == other.accountNumber &&
-          sortCode == other.sortCode; } 
-@override int get hashCode { return Object.hash(accountNumber, sortCode); } 
-@override String toString() { return 'PostPaymentMethodsRequestBacsDebit(accountNumber: $accountNumber, sortCode: $sortCode)'; } 
+          sortCode == other.sortCode;
+
+@override int get hashCode => Object.hash(accountNumber, sortCode);
+
+@override String toString() => 'PostPaymentMethodsRequestBacsDebit(accountNumber: $accountNumber, sortCode: $sortCode)';
+
  }

@@ -20,10 +20,13 @@ ChecksCreateRequestCompleted copyWith({dynamic Function()? status, Map<String, d
   status: status != null ? status() : this.status,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksCreateRequestCompleted &&
           status == other.status &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(status, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'ChecksCreateRequestCompleted(status: $status, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(status, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'ChecksCreateRequestCompleted(status: $status, additionalProperties: $additionalProperties)';
+
  }

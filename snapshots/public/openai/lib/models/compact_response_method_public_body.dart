@@ -47,13 +47,16 @@ CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? model, CompactResp
   instructions: instructions != null ? instructions() : this.instructions,
   promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompactResponseMethodPublicBody &&
           model == other.model &&
           input == other.input &&
           previousResponseId == other.previousResponseId &&
           instructions == other.instructions &&
-          promptCacheKey == other.promptCacheKey; } 
-@override int get hashCode { return Object.hash(model, input, previousResponseId, instructions, promptCacheKey); } 
-@override String toString() { return 'CompactResponseMethodPublicBody(model: $model, input: $input, previousResponseId: $previousResponseId, instructions: $instructions, promptCacheKey: $promptCacheKey)'; } 
+          promptCacheKey == other.promptCacheKey;
+
+@override int get hashCode => Object.hash(model, input, previousResponseId, instructions, promptCacheKey);
+
+@override String toString() => 'CompactResponseMethodPublicBody(model: $model, input: $input, previousResponseId: $previousResponseId, instructions: $instructions, promptCacheKey: $promptCacheKey)';
+
  }

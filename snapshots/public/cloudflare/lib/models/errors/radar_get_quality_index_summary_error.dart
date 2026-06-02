@@ -17,7 +17,8 @@ final class RadarGetQualityIndexSummaryError$400 extends RadarGetQualityIndexSum
 
 final RadarGetQualityIndexSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetQualityIndexSummaryError$Unknown extends RadarGetQualityIndexSummaryError {const RadarGetQualityIndexSummaryError$Unknown(this.statusCode, this.rawBody, );
 

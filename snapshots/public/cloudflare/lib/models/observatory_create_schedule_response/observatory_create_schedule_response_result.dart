@@ -20,10 +20,13 @@ ObservatoryCreateScheduleResponseResult copyWith({ObservatorySchedule? Function(
   schedule: schedule != null ? schedule() : this.schedule,
   test: test != null ? test() : this.test,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryCreateScheduleResponseResult &&
           schedule == other.schedule &&
-          test == other.test; } 
-@override int get hashCode { return Object.hash(schedule, test); } 
-@override String toString() { return 'ObservatoryCreateScheduleResponseResult(schedule: $schedule, test: $test)'; } 
+          test == other.test;
+
+@override int get hashCode => Object.hash(schedule, test);
+
+@override String toString() => 'ObservatoryCreateScheduleResponseResult(schedule: $schedule, test: $test)';
+
  }

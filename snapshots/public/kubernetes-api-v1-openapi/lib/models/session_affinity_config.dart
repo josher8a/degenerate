@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SessionAffinityConfig copyWith({ClientIpConfig? Function()? clientIp}) { return SessionAffinityConfig(
   clientIp: clientIp != null ? clientIp() : this.clientIp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionAffinityConfig &&
-          clientIp == other.clientIp; } 
-@override int get hashCode { return clientIp.hashCode; } 
-@override String toString() { return 'SessionAffinityConfig(clientIp: $clientIp)'; } 
+          clientIp == other.clientIp;
+
+@override int get hashCode => clientIp.hashCode;
+
+@override String toString() => 'SessionAffinityConfig(clientIp: $clientIp)';
+
  }

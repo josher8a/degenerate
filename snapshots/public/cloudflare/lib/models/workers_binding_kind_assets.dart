@@ -22,10 +22,13 @@ WorkersBindingKindAssets copyWith({WorkersBindingName? name, String? type, }) { 
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindAssets &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'WorkersBindingKindAssets(name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, type);
+
+@override String toString() => 'WorkersBindingKindAssets(name: $name, type: $type)';
+
  }

@@ -31,12 +31,15 @@ VectorizeIndexQueryResponseMatches copyWith({VectorizeVectorIdentifier? Function
   score: score != null ? score() : this.score,
   values: values != null ? values() : this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexQueryResponseMatches &&
           id == other.id &&
           metadata == other.metadata &&
           score == other.score &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(id, metadata, score, Object.hashAll(values ?? const [])); } 
-@override String toString() { return 'VectorizeIndexQueryResponseMatches(id: $id, metadata: $metadata, score: $score, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(id, metadata, score, Object.hashAll(values ?? const []));
+
+@override String toString() => 'VectorizeIndexQueryResponseMatches(id: $id, metadata: $metadata, score: $score, values: $values)';
+
  }

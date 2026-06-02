@@ -51,7 +51,7 @@ RunGraderResponseMetadata copyWith({String? name, String? type, MetadataErrors? 
   tokenUsage: tokenUsage != null ? tokenUsage() : this.tokenUsage,
   sampledModelName: sampledModelName != null ? sampledModelName() : this.sampledModelName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunGraderResponseMetadata &&
           name == other.name &&
           type == other.type &&
@@ -59,7 +59,10 @@ RunGraderResponseMetadata copyWith({String? name, String? type, MetadataErrors? 
           executionTime == other.executionTime &&
           scores == other.scores &&
           tokenUsage == other.tokenUsage &&
-          sampledModelName == other.sampledModelName; } 
-@override int get hashCode { return Object.hash(name, type, errors, executionTime, scores, tokenUsage, sampledModelName); } 
-@override String toString() { return 'RunGraderResponseMetadata(name: $name, type: $type, errors: $errors, executionTime: $executionTime, scores: $scores, tokenUsage: $tokenUsage, sampledModelName: $sampledModelName)'; } 
+          sampledModelName == other.sampledModelName;
+
+@override int get hashCode => Object.hash(name, type, errors, executionTime, scores, tokenUsage, sampledModelName);
+
+@override String toString() => 'RunGraderResponseMetadata(name: $name, type: $type, errors: $errors, executionTime: $executionTime, scores: $scores, tokenUsage: $tokenUsage, sampledModelName: $sampledModelName)';
+
  }

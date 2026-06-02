@@ -39,12 +39,15 @@ FileKeySelector copyWith({String? key, bool Function()? optional, String? path, 
   path: path ?? this.path,
   volumeName: volumeName ?? this.volumeName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileKeySelector &&
           key == other.key &&
           optional == other.optional &&
           path == other.path &&
-          volumeName == other.volumeName; } 
-@override int get hashCode { return Object.hash(key, optional, path, volumeName); } 
-@override String toString() { return 'FileKeySelector(key: $key, optional: $optional, path: $path, volumeName: $volumeName)'; } 
+          volumeName == other.volumeName;
+
+@override int get hashCode => Object.hash(key, optional, path, volumeName);
+
+@override String toString() => 'FileKeySelector(key: $key, optional: $optional, path: $path, volumeName: $volumeName)';
+
  }

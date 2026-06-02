@@ -30,14 +30,18 @@ final ChatCompletionRequestMessageContentPartText chatCompletionRequestMessageCo
 
 @override String get type => 'text';
 
-@override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type};
+
 ChatCompletionRequestAssistantMessageContentPartText copyWith({String? text}) { return ChatCompletionRequestAssistantMessageContentPartText(chatCompletionRequestMessageContentPartText.copyWith(
   text: text,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestAssistantMessageContentPartText && chatCompletionRequestMessageContentPartText == other.chatCompletionRequestMessageContentPartText; } 
-@override int get hashCode { return chatCompletionRequestMessageContentPartText.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPart.text($chatCompletionRequestMessageContentPartText)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionRequestAssistantMessageContentPartText && chatCompletionRequestMessageContentPartText == other.chatCompletionRequestMessageContentPartText;
+
+@override int get hashCode => chatCompletionRequestMessageContentPartText.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPart.text($chatCompletionRequestMessageContentPartText)';
+
  }
 @immutable final class ChatCompletionRequestAssistantMessageContentPartRefusal extends ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPartRefusal(this.chatCompletionRequestMessageContentPartRefusal);
 
@@ -47,14 +51,18 @@ final ChatCompletionRequestMessageContentPartRefusal chatCompletionRequestMessag
 
 @override String get type => 'refusal';
 
-@override Map<String, dynamic> toJson() { return {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type};
+
 ChatCompletionRequestAssistantMessageContentPartRefusal copyWith({String? refusal}) { return ChatCompletionRequestAssistantMessageContentPartRefusal(chatCompletionRequestMessageContentPartRefusal.copyWith(
   refusal: refusal,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestAssistantMessageContentPartRefusal && chatCompletionRequestMessageContentPartRefusal == other.chatCompletionRequestMessageContentPartRefusal; } 
-@override int get hashCode { return chatCompletionRequestMessageContentPartRefusal.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPart.refusal($chatCompletionRequestMessageContentPartRefusal)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionRequestAssistantMessageContentPartRefusal && chatCompletionRequestMessageContentPartRefusal == other.chatCompletionRequestMessageContentPartRefusal;
+
+@override int get hashCode => chatCompletionRequestMessageContentPartRefusal.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPart.refusal($chatCompletionRequestMessageContentPartRefusal)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -64,9 +72,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ChatCompletionRequestAssistantMessageContentPart$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ChatCompletionRequestAssistantMessageContentPart.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatCompletionRequestAssistantMessageContentPart$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPart.unknown($json)';
+
  }

@@ -19,19 +19,22 @@ final class ReposDeleteError$403 extends ReposDeleteError {const ReposDeleteErro
 
 final ReposDeleteResponse403 error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ReposDeleteError$404 extends ReposDeleteError {const ReposDeleteError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposDeleteError$409 extends ReposDeleteError {const ReposDeleteError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ReposDeleteError$Unknown extends ReposDeleteError {const ReposDeleteError$Unknown(this.statusCode, this.rawBody, );
 

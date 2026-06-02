@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ScopeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ScopeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ScopeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ScopeType($value)';
+
  }
 /// All zones owned by the user will have the rule applied.
 @immutable final class FirewallSchemasRuleScope {const FirewallSchemasRuleScope({this.email, this.id, this.type, });
@@ -63,11 +66,14 @@ FirewallSchemasRuleScope copyWith({FirewallEmail? Function()? email, FirewallIde
   id: id != null ? id() : this.id,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallSchemasRuleScope &&
           email == other.email &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(email, id, type); } 
-@override String toString() { return 'FirewallSchemasRuleScope(email: $email, id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(email, id, type);
+
+@override String toString() => 'FirewallSchemasRuleScope(email: $email, id: $id, type: $type)';
+
  }

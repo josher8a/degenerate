@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RetrievalType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RetrievalType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RetrievalType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RetrievalType($value)';
+
  }
 @immutable final class Retrieval {const Retrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = KeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
 
@@ -99,7 +102,7 @@ Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextE
   retrievalType: retrievalType != null ? retrievalType() : this.retrievalType,
   returnOnFailure: returnOnFailure != null ? returnOnFailure() : this.returnOnFailure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Retrieval &&
           listEquals(boostBy, other.boostBy) &&
           contextExpansion == other.contextExpansion &&
@@ -109,7 +112,10 @@ Retrieval copyWith({List<BoostBy>? Function()? boostBy, int Function()? contextE
           matchThreshold == other.matchThreshold &&
           maxNumResults == other.maxNumResults &&
           retrievalType == other.retrievalType &&
-          returnOnFailure == other.returnOnFailure; } 
-@override int get hashCode { return Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure); } 
-@override String toString() { return 'Retrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)'; } 
+          returnOnFailure == other.returnOnFailure;
+
+@override int get hashCode => Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure);
+
+@override String toString() => 'Retrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)';
+
  }

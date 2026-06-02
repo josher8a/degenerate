@@ -44,14 +44,17 @@ ZeroTrustGatewayProxyEndpointIdentity copyWith({ZeroTrustGatewayReadOnlyTimestam
   subdomain: subdomain != null ? subdomain() : this.subdomain,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayProxyEndpointIdentity &&
           createdAt == other.createdAt &&
           id == other.id &&
           kind == other.kind &&
           name == other.name &&
           subdomain == other.subdomain &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, id, kind, name, subdomain, updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpointIdentity(createdAt: $createdAt, id: $id, kind: $kind, name: $name, subdomain: $subdomain, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, id, kind, name, subdomain, updatedAt);
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpointIdentity(createdAt: $createdAt, id: $id, kind: $kind, name: $name, subdomain: $subdomain, updatedAt: $updatedAt)';
+
  }

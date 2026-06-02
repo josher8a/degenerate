@@ -30,11 +30,14 @@ ActionsReviewPendingDeploymentsForRunRequest copyWith({List<int>? environmentIds
   state: state ?? this.state,
   comment: comment ?? this.comment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsReviewPendingDeploymentsForRunRequest &&
           listEquals(environmentIds, other.environmentIds) &&
           state == other.state &&
-          comment == other.comment; } 
-@override int get hashCode { return Object.hash(Object.hashAll(environmentIds), state, comment); } 
-@override String toString() { return 'ActionsReviewPendingDeploymentsForRunRequest(environmentIds: $environmentIds, state: $state, comment: $comment)'; } 
+          comment == other.comment;
+
+@override int get hashCode => Object.hash(Object.hashAll(environmentIds), state, comment);
+
+@override String toString() => 'ActionsReviewPendingDeploymentsForRunRequest(environmentIds: $environmentIds, state: $state, comment: $comment)';
+
  }

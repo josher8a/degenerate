@@ -24,10 +24,13 @@ IamUpdateUserGroupBody copyWith({String? Function()? name, List<IamUpdateUserGro
   name: name != null ? name() : this.name,
   policies: policies != null ? policies() : this.policies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUpdateUserGroupBody &&
           name == other.name &&
-          listEquals(policies, other.policies); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(policies ?? const [])); } 
-@override String toString() { return 'IamUpdateUserGroupBody(name: $name, policies: $policies)'; } 
+          listEquals(policies, other.policies);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(policies ?? const []));
+
+@override String toString() => 'IamUpdateUserGroupBody(name: $name, policies: $policies)';
+
  }

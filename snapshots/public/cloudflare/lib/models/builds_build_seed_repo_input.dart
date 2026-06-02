@@ -54,14 +54,17 @@ BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRep
   provider: provider ?? this.provider,
   repository: repository ?? this.repository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsBuildSeedRepoInput &&
           branch == other.branch &&
           listEquals(files, other.files) &&
           owner == other.owner &&
           path == other.path &&
           provider == other.provider &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(branch, Object.hashAll(files ?? const []), owner, path, provider, repository); } 
-@override String toString() { return 'BuildsBuildSeedRepoInput(branch: $branch, files: $files, owner: $owner, path: $path, provider: $provider, repository: $repository)'; } 
+          repository == other.repository;
+
+@override int get hashCode => Object.hash(branch, Object.hashAll(files ?? const []), owner, path, provider, repository);
+
+@override String toString() => 'BuildsBuildSeedRepoInput(branch: $branch, files: $files, owner: $owner, path: $path, provider: $provider, repository: $repository)';
+
  }

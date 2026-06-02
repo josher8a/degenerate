@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Include copyWith({List<String>? Function()? from}) { return Include(
   from: from != null ? from() : this.from,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Include &&
-          listEquals(from, other.from); } 
-@override int get hashCode { return Object.hashAll(from ?? const []); } 
-@override String toString() { return 'Include(from: $from)'; } 
+          listEquals(from, other.from);
+
+@override int get hashCode => Object.hashAll(from ?? const []);
+
+@override String toString() => 'Include(from: $from)';
+
  }

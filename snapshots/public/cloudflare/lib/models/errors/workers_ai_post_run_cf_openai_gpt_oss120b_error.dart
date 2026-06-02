@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfOpenaiGptOss120bError$400 extends WorkersAiPostRun
 
 final WorkersAiPostRunCfOpenaiGptOss120bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfOpenaiGptOss120bError$Unknown extends WorkersAiPostRunCfOpenaiGptOss120bError {const WorkersAiPostRunCfOpenaiGptOss120bError$Unknown(this.statusCode, this.rawBody, );
 

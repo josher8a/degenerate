@@ -61,7 +61,7 @@ Tech copyWith({List<TechCategories>? categories, int? confidence, String? Functi
   slug: slug ?? this.slug,
   website: website ?? this.website,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Tech &&
           listEquals(categories, other.categories) &&
           confidence == other.confidence &&
@@ -70,7 +70,10 @@ Tech copyWith({List<TechCategories>? categories, int? confidence, String? Functi
           icon == other.icon &&
           name == other.name &&
           slug == other.slug &&
-          website == other.website; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories), confidence, description, evidence, icon, name, slug, website); } 
-@override String toString() { return 'Tech(categories: $categories, confidence: $confidence, description: $description, evidence: $evidence, icon: $icon, name: $name, slug: $slug, website: $website)'; } 
+          website == other.website;
+
+@override int get hashCode => Object.hash(Object.hashAll(categories), confidence, description, evidence, icon, name, slug, website);
+
+@override String toString() => 'Tech(categories: $categories, confidence: $confidence, description: $description, evidence: $evidence, icon: $icon, name: $name, slug: $slug, website: $website)';
+
  }

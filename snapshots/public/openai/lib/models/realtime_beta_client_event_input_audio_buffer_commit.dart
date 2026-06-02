@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventInputAudioBufferCommitType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferCommitType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventInputAudioBufferCommitType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommitType($value)';
+
  }
 /// Send this event to commit the user input audio buffer, which will create a
 /// new user message item in the conversation. This event will produce an error
@@ -55,10 +58,13 @@ RealtimeBetaClientEventInputAudioBufferCommit copyWith({String? Function()? even
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventInputAudioBufferCommit &&
           eventId == other.eventId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventId, type); } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferCommit(eventId: $eventId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eventId, type);
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommit(eventId: $eventId, type: $type)';
+
  }

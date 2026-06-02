@@ -43,13 +43,16 @@ DisputeEvidenceDetails copyWith({int? Function()? dueBy, DisputeEnhancedEligibil
   pastDue: pastDue ?? this.pastDue,
   submissionCount: submissionCount ?? this.submissionCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputeEvidenceDetails &&
           dueBy == other.dueBy &&
           enhancedEligibility == other.enhancedEligibility &&
           hasEvidence == other.hasEvidence &&
           pastDue == other.pastDue &&
-          submissionCount == other.submissionCount; } 
-@override int get hashCode { return Object.hash(dueBy, enhancedEligibility, hasEvidence, pastDue, submissionCount); } 
-@override String toString() { return 'DisputeEvidenceDetails(dueBy: $dueBy, enhancedEligibility: $enhancedEligibility, hasEvidence: $hasEvidence, pastDue: $pastDue, submissionCount: $submissionCount)'; } 
+          submissionCount == other.submissionCount;
+
+@override int get hashCode => Object.hash(dueBy, enhancedEligibility, hasEvidence, pastDue, submissionCount);
+
+@override String toString() => 'DisputeEvidenceDetails(dueBy: $dueBy, enhancedEligibility: $enhancedEligibility, hasEvidence: $hasEvidence, pastDue: $pastDue, submissionCount: $submissionCount)';
+
  }

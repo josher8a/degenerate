@@ -26,11 +26,14 @@ ShapeCollection copyWith({String? name, List<Shape>? shapes, List<String>? Funct
   shapes: shapes ?? this.shapes,
   tags: tags != null ? tags() : this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShapeCollection &&
           name == other.name &&
           listEquals(shapes, other.shapes) &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(name, Object.hashAll(shapes), Object.hashAll(tags ?? const [])); } 
-@override String toString() { return 'ShapeCollection(name: $name, shapes: $shapes, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(name, Object.hashAll(shapes), Object.hashAll(tags ?? const []));
+
+@override String toString() => 'ShapeCollection(name: $name, shapes: $shapes, tags: $tags)';
+
  }

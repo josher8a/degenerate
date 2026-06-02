@@ -34,12 +34,15 @@ TelemetryValuesListResponseResult copyWith({String? dataset, String? key, Teleme
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryValuesListResponseResult &&
           dataset == other.dataset &&
           key == other.key &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(dataset, key, type, value); } 
-@override String toString() { return 'TelemetryValuesListResponseResult(dataset: $dataset, key: $key, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(dataset, key, type, value);
+
+@override String toString() => 'TelemetryValuesListResponseResult(dataset: $dataset, key: $key, type: $type, value: $value)';
+
  }

@@ -36,11 +36,14 @@ DestinationCredentials copyWith({String? accessKeyId, String? endpoint, String? 
   endpoint: endpoint ?? this.endpoint,
   secretAccessKey: secretAccessKey ?? this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCredentials &&
           accessKeyId == other.accessKeyId &&
           endpoint == other.endpoint &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, endpoint, secretAccessKey); } 
-@override String toString() { return 'DestinationCredentials(accessKeyId: $accessKeyId, endpoint: $endpoint, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, endpoint, secretAccessKey);
+
+@override String toString() => 'DestinationCredentials(accessKeyId: $accessKeyId, endpoint: $endpoint, secretAccessKey: $secretAccessKey)';
+
  }

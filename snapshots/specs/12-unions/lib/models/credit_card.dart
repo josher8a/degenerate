@@ -32,12 +32,15 @@ CreditCard copyWith({String? cardNumber, int? expiryMonth, int? expiryYear, Stri
   expiryYear: expiryYear ?? this.expiryYear,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditCard &&
           cardNumber == other.cardNumber &&
           expiryMonth == other.expiryMonth &&
           expiryYear == other.expiryYear &&
-          cardholderName == other.cardholderName; } 
-@override int get hashCode { return Object.hash(cardNumber, expiryMonth, expiryYear, cardholderName); } 
-@override String toString() { return 'CreditCard(cardNumber: $cardNumber, expiryMonth: $expiryMonth, expiryYear: $expiryYear, cardholderName: $cardholderName)'; } 
+          cardholderName == other.cardholderName;
+
+@override int get hashCode => Object.hash(cardNumber, expiryMonth, expiryYear, cardholderName);
+
+@override String toString() => 'CreditCard(cardNumber: $cardNumber, expiryMonth: $expiryMonth, expiryYear: $expiryYear, cardholderName: $cardholderName)';
+
  }

@@ -28,10 +28,13 @@ PostAppsSecretsDeleteRequestScope copyWith({GetAppsSecretsFindScopeType? type, S
   type: type ?? this.type,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAppsSecretsDeleteRequestScope &&
           type == other.type &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(type, user); } 
-@override String toString() { return 'PostAppsSecretsDeleteRequestScope(type: $type, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(type, user);
+
+@override String toString() => 'PostAppsSecretsDeleteRequestScope(type: $type, user: $user)';
+
  }

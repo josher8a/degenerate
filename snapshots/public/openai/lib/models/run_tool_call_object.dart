@@ -31,11 +31,14 @@ RunToolCallObject copyWith({String? id, AssistantToolsFunctionType? type, ChatCo
   type: type ?? this.type,
   function: function ?? this.function,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunToolCallObject &&
           id == other.id &&
           type == other.type &&
-          function == other.function; } 
-@override int get hashCode { return Object.hash(id, type, function); } 
-@override String toString() { return 'RunToolCallObject(id: $id, type: $type, function: $function)'; } 
+          function == other.function;
+
+@override int get hashCode => Object.hash(id, type, function);
+
+@override String toString() => 'RunToolCallObject(id: $id, type: $type, function: $function)';
+
  }

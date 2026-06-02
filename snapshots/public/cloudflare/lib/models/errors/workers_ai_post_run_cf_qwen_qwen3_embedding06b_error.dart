@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfQwenQwen3Embedding06bError$400 extends WorkersAiPo
 
 final WorkersAiPostRunCfQwenQwen3Embedding06bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfQwenQwen3Embedding06bError$Unknown extends WorkersAiPostRunCfQwenQwen3Embedding06bError {const WorkersAiPostRunCfQwenQwen3Embedding06bError$Unknown(this.statusCode, this.rawBody, );
 

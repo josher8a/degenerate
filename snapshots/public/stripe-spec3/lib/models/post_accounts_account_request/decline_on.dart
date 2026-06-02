@@ -20,10 +20,13 @@ DeclineOn copyWith({bool? Function()? avsFailure, bool? Function()? cvcFailure, 
   avsFailure: avsFailure != null ? avsFailure() : this.avsFailure,
   cvcFailure: cvcFailure != null ? cvcFailure() : this.cvcFailure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeclineOn &&
           avsFailure == other.avsFailure &&
-          cvcFailure == other.cvcFailure; } 
-@override int get hashCode { return Object.hash(avsFailure, cvcFailure); } 
-@override String toString() { return 'DeclineOn(avsFailure: $avsFailure, cvcFailure: $cvcFailure)'; } 
+          cvcFailure == other.cvcFailure;
+
+@override int get hashCode => Object.hash(avsFailure, cvcFailure);
+
+@override String toString() => 'DeclineOn(avsFailure: $avsFailure, cvcFailure: $cvcFailure)';
+
  }

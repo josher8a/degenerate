@@ -47,14 +47,17 @@ PostInvoicesInvoiceLinesLineItemIdRequestPriceData copyWith({String? currency, S
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceLinesLineItemIdRequestPriceData &&
           currency == other.currency &&
           product == other.product &&
           productData == other.productData &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, product, productData, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestPriceData(currency: $currency, product: $product, productData: $productData, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(currency, product, productData, taxBehavior, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequestPriceData(currency: $currency, product: $product, productData: $productData, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

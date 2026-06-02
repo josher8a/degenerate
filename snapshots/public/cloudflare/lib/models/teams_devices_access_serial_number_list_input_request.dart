@@ -22,9 +22,12 @@ return errors; }
 TeamsDevicesAccessSerialNumberListInputRequest copyWith({String? id}) { return TeamsDevicesAccessSerialNumberListInputRequest(
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesAccessSerialNumberListInputRequest &&
-          id == other.id; } 
-@override int get hashCode { return id.hashCode; } 
-@override String toString() { return 'TeamsDevicesAccessSerialNumberListInputRequest(id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => id.hashCode;
+
+@override String toString() => 'TeamsDevicesAccessSerialNumberListInputRequest(id: $id)';
+
  }

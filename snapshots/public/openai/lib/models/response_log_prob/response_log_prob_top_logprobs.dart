@@ -22,10 +22,13 @@ ResponseLogProbTopLogprobs copyWith({String? Function()? token, double? Function
   token: token != null ? token() : this.token,
   logprob: logprob != null ? logprob() : this.logprob,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseLogProbTopLogprobs &&
           token == other.token &&
-          logprob == other.logprob; } 
-@override int get hashCode { return Object.hash(token, logprob); } 
-@override String toString() { return 'ResponseLogProbTopLogprobs(token: $token, logprob: $logprob)'; } 
+          logprob == other.logprob;
+
+@override int get hashCode => Object.hash(token, logprob);
+
+@override String toString() => 'ResponseLogProbTopLogprobs(token: $token, logprob: $logprob)';
+
  }

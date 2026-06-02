@@ -245,7 +245,7 @@ Customer copyWith({Address? Function()? address, int? Function()? balance, Strin
   taxIds: taxIds != null ? taxIds() : this.taxIds,
   testClock: testClock != null ? testClock() : this.testClock,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Customer &&
           address == other.address &&
           balance == other.balance &&
@@ -277,7 +277,10 @@ Customer copyWith({Address? Function()? address, int? Function()? balance, Strin
           tax == other.tax &&
           taxExempt == other.taxExempt &&
           taxIds == other.taxIds &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hashAll([address, balance, businessName, cashBalance, created, currency, customerAccount, defaultSource, delinquent, description, discount, email, id, individualName, invoiceCreditBalance, invoicePrefix, invoiceSettings, livemode, metadata, name, nextInvoiceSequence, object, phone, Object.hashAll(preferredLocales ?? const []), shipping, sources, subscriptions, tax, taxExempt, taxIds, testClock]); } 
-@override String toString() { return 'Customer(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, created: $created, currency: $currency, customerAccount: $customerAccount, defaultSource: $defaultSource, delinquent: $delinquent, description: $description, discount: $discount, email: $email, id: $id, individualName: $individualName, invoiceCreditBalance: $invoiceCreditBalance, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, livemode: $livemode, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, object: $object, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, sources: $sources, subscriptions: $subscriptions, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds, testClock: $testClock)'; } 
+          testClock == other.testClock;
+
+@override int get hashCode => Object.hashAll([address, balance, businessName, cashBalance, created, currency, customerAccount, defaultSource, delinquent, description, discount, email, id, individualName, invoiceCreditBalance, invoicePrefix, invoiceSettings, livemode, metadata, name, nextInvoiceSequence, object, phone, Object.hashAll(preferredLocales ?? const []), shipping, sources, subscriptions, tax, taxExempt, taxIds, testClock]);
+
+@override String toString() => 'Customer(address: $address, balance: $balance, businessName: $businessName, cashBalance: $cashBalance, created: $created, currency: $currency, customerAccount: $customerAccount, defaultSource: $defaultSource, delinquent: $delinquent, description: $description, discount: $discount, email: $email, id: $id, individualName: $individualName, invoiceCreditBalance: $invoiceCreditBalance, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, livemode: $livemode, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, object: $object, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, sources: $sources, subscriptions: $subscriptions, tax: $tax, taxExempt: $taxExempt, taxIds: $taxIds, testClock: $testClock)';
+
  }

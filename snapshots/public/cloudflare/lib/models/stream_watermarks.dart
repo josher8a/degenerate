@@ -110,7 +110,7 @@ StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDo
   uid: uid != null ? uid() : this.uid,
   width: width != null ? width() : this.width,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarks &&
           created == other.created &&
           downloadedFrom == other.downloadedFrom &&
@@ -122,7 +122,10 @@ StreamWatermarks copyWith({StreamWatermarkCreated? Function()? created, StreamDo
           scale == other.scale &&
           size == other.size &&
           uid == other.uid &&
-          width == other.width; } 
-@override int get hashCode { return Object.hash(created, downloadedFrom, height, name, opacity, padding, position, scale, size, uid, width); } 
-@override String toString() { return 'StreamWatermarks(created: $created, downloadedFrom: $downloadedFrom, height: $height, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale, size: $size, uid: $uid, width: $width)'; } 
+          width == other.width;
+
+@override int get hashCode => Object.hash(created, downloadedFrom, height, name, opacity, padding, position, scale, size, uid, width);
+
+@override String toString() => 'StreamWatermarks(created: $created, downloadedFrom: $downloadedFrom, height: $height, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale, size: $size, uid: $uid, width: $width)';
+
  }

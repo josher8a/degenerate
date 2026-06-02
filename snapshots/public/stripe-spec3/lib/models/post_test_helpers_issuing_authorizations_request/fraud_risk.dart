@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FraudRiskLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FraudRiskLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FraudRiskLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FraudRiskLevel($value)';
+
  }
 @immutable final class FraudRisk {const FraudRisk({required this.level, this.score, });
 
@@ -56,10 +59,13 @@ FraudRisk copyWith({FraudRiskLevel? level, double? Function()? score, }) { retur
   level: level ?? this.level,
   score: score != null ? score() : this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FraudRisk &&
           level == other.level &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(level, score); } 
-@override String toString() { return 'FraudRisk(level: $level, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(level, score);
+
+@override String toString() => 'FraudRisk(level: $level, score: $score)';
+
  }

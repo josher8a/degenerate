@@ -28,11 +28,14 @@ ViewTraffic copyWith({int? count, int? uniques, List<Traffic>? views, }) { retur
   uniques: uniques ?? this.uniques,
   views: views ?? this.views,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ViewTraffic &&
           count == other.count &&
           uniques == other.uniques &&
-          listEquals(views, other.views); } 
-@override int get hashCode { return Object.hash(count, uniques, Object.hashAll(views)); } 
-@override String toString() { return 'ViewTraffic(count: $count, uniques: $uniques, views: $views)'; } 
+          listEquals(views, other.views);
+
+@override int get hashCode => Object.hash(count, uniques, Object.hashAll(views));
+
+@override String toString() => 'ViewTraffic(count: $count, uniques: $uniques, views: $views)';
+
  }

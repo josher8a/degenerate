@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DeleteObjectsTransition copyWith({R2LifecycleStorageTransitionCondition? Function()? condition}) { return DeleteObjectsTransition(
   condition: condition != null ? condition() : this.condition,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteObjectsTransition &&
-          condition == other.condition; } 
-@override int get hashCode { return condition.hashCode; } 
-@override String toString() { return 'DeleteObjectsTransition(condition: $condition)'; } 
+          condition == other.condition;
+
+@override int get hashCode => condition.hashCode;
+
+@override String toString() => 'DeleteObjectsTransition(condition: $condition)';
+
  }

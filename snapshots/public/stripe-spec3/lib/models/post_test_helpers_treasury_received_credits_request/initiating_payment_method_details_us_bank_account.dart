@@ -40,11 +40,14 @@ InitiatingPaymentMethodDetailsUsBankAccount copyWith({String? Function()? accoun
   accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InitiatingPaymentMethodDetailsUsBankAccount &&
           accountHolderName == other.accountHolderName &&
           accountNumber == other.accountNumber &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountNumber, routingNumber); } 
-@override String toString() { return 'InitiatingPaymentMethodDetailsUsBankAccount(accountHolderName: $accountHolderName, accountNumber: $accountNumber, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderName, accountNumber, routingNumber);
+
+@override String toString() => 'InitiatingPaymentMethodDetailsUsBankAccount(accountHolderName: $accountHolderName, accountNumber: $accountNumber, routingNumber: $routingNumber)';
+
  }

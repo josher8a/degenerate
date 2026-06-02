@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotRequests && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotRequests($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CopilotRequests && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CopilotRequests($value)';
+
  }
 @immutable final class PermissionsModels {const PermissionsModels._(this.value);
 
@@ -40,10 +43,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PermissionsModels && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PermissionsModels($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PermissionsModels && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PermissionsModels($value)';
+
  }
 /// The set of permissions for the GitHub app
 @immutable final class WebhookCheckSuiteRequestedCheckSuiteAppPermissions {const WebhookCheckSuiteRequestedCheckSuiteAppPermissions({this.keys, this.administration, this.artifactMetadata, this.attestations, this.checks, this.contentReferences, this.contents, this.copilotRequests, this.deployments, this.discussions, this.emails, this.environments, this.issues, this.actions, this.members, this.mergeQueues, this.metadata, this.models, this.organizationAdministration, this.organizationHooks, this.organizationPackages, this.organizationPlan, this.organizationProjects, this.organizationSecrets, this.organizationSelfHostedRunners, this.workflows, this.packages, this.pages, this.pullRequests, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.securityScanningAlert, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.organizationUserBlocking, });
@@ -251,7 +257,7 @@ WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({Actions? Function()
   vulnerabilityAlerts: vulnerabilityAlerts != null ? vulnerabilityAlerts() : this.vulnerabilityAlerts,
   workflows: workflows != null ? workflows() : this.workflows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteRequestedCheckSuiteAppPermissions &&
           actions == other.actions &&
           administration == other.administration &&
@@ -291,7 +297,10 @@ WebhookCheckSuiteRequestedCheckSuiteAppPermissions copyWith({Actions? Function()
           singleFile == other.singleFile &&
           statuses == other.statuses &&
           vulnerabilityAlerts == other.vulnerabilityAlerts &&
-          workflows == other.workflows; } 
-@override int get hashCode { return Object.hashAll([actions, administration, artifactMetadata, attestations, checks, contentReferences, contents, copilotRequests, deployments, discussions, emails, environments, issues, keys, members, mergeQueues, metadata, models, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]); } 
-@override String toString() { return 'WebhookCheckSuiteRequestedCheckSuiteAppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, contentReferences: $contentReferences, contents: $contents, copilotRequests: $copilotRequests, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, mergeQueues: $mergeQueues, metadata: $metadata, models: $models, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)'; } 
+          workflows == other.workflows;
+
+@override int get hashCode => Object.hashAll([actions, administration, artifactMetadata, attestations, checks, contentReferences, contents, copilotRequests, deployments, discussions, emails, environments, issues, keys, members, mergeQueues, metadata, models, organizationAdministration, organizationHooks, organizationPackages, organizationPlan, organizationProjects, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, packages, pages, pullRequests, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, securityScanningAlert, singleFile, statuses, vulnerabilityAlerts, workflows]);
+
+@override String toString() => 'WebhookCheckSuiteRequestedCheckSuiteAppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, contentReferences: $contentReferences, contents: $contents, copilotRequests: $copilotRequests, deployments: $deployments, discussions: $discussions, emails: $emails, environments: $environments, issues: $issues, keys: $keys, members: $members, mergeQueues: $mergeQueues, metadata: $metadata, models: $models, organizationAdministration: $organizationAdministration, organizationHooks: $organizationHooks, organizationPackages: $organizationPackages, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, securityScanningAlert: $securityScanningAlert, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows)';
+
  }

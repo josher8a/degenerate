@@ -27,11 +27,14 @@ DeviceManagedNetworksUpdateDeviceManagedNetworkRequest copyWith({TeamsDevicesSch
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeviceManagedNetworksUpdateDeviceManagedNetworkRequest &&
           config == other.config &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(config, name, type); } 
-@override String toString() { return 'DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(config: $config, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(config, name, type);
+
+@override String toString() => 'DeviceManagedNetworksUpdateDeviceManagedNetworkRequest(config: $config, name: $name, type: $type)';
+
  }

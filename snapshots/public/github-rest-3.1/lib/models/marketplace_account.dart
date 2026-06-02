@@ -48,7 +48,7 @@ MarketplaceAccount copyWith({Uri? url, int? id, String? type, String? Function()
   email: email != null ? email() : this.email,
   organizationBillingEmail: organizationBillingEmail != null ? organizationBillingEmail() : this.organizationBillingEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketplaceAccount &&
           url == other.url &&
           id == other.id &&
@@ -56,7 +56,10 @@ MarketplaceAccount copyWith({Uri? url, int? id, String? type, String? Function()
           nodeId == other.nodeId &&
           login == other.login &&
           email == other.email &&
-          organizationBillingEmail == other.organizationBillingEmail; } 
-@override int get hashCode { return Object.hash(url, id, type, nodeId, login, email, organizationBillingEmail); } 
-@override String toString() { return 'MarketplaceAccount(url: $url, id: $id, type: $type, nodeId: $nodeId, login: $login, email: $email, organizationBillingEmail: $organizationBillingEmail)'; } 
+          organizationBillingEmail == other.organizationBillingEmail;
+
+@override int get hashCode => Object.hash(url, id, type, nodeId, login, email, organizationBillingEmail);
+
+@override String toString() => 'MarketplaceAccount(url: $url, id: $id, type: $type, nodeId: $nodeId, login: $login, email: $email, organizationBillingEmail: $organizationBillingEmail)';
+
  }

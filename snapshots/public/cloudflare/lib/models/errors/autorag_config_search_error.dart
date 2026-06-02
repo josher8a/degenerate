@@ -17,7 +17,8 @@ final class AutoragConfigSearchError$404 extends AutoragConfigSearchError {const
 
 final AutoragConfigSearchResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AutoragConfigSearchError$Unknown extends AutoragConfigSearchError {const AutoragConfigSearchError$Unknown(this.statusCode, this.rawBody, );
 

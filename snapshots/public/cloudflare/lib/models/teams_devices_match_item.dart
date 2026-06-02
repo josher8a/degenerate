@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TeamsDevicesMatchItem copyWith({TeamsDevicesPlatform? Function()? platform}) { return TeamsDevicesMatchItem(
   platform: platform != null ? platform() : this.platform,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesMatchItem &&
-          platform == other.platform; } 
-@override int get hashCode { return platform.hashCode; } 
-@override String toString() { return 'TeamsDevicesMatchItem(platform: $platform)'; } 
+          platform == other.platform;
+
+@override int get hashCode => platform.hashCode;
+
+@override String toString() => 'TeamsDevicesMatchItem(platform: $platform)';
+
  }

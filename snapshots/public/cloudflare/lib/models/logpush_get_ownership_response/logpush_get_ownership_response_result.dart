@@ -28,11 +28,14 @@ LogpushGetOwnershipResponseResult copyWith({String? Function()? filename, String
   message: message != null ? message() : this.message,
   valid: valid != null ? valid() : this.valid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushGetOwnershipResponseResult &&
           filename == other.filename &&
           message == other.message &&
-          valid == other.valid; } 
-@override int get hashCode { return Object.hash(filename, message, valid); } 
-@override String toString() { return 'LogpushGetOwnershipResponseResult(filename: $filename, message: $message, valid: $valid)'; } 
+          valid == other.valid;
+
+@override int get hashCode => Object.hash(filename, message, valid);
+
+@override String toString() => 'LogpushGetOwnershipResponseResult(filename: $filename, message: $message, valid: $valid)';
+
  }

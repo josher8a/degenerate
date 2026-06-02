@@ -20,25 +20,29 @@ final class IssuesReprioritizeSubIssueError$403 extends IssuesReprioritizeSubIss
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesReprioritizeSubIssueError$404 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesReprioritizeSubIssueError$422 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$422(this.error);
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class IssuesReprioritizeSubIssueError$503 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$503(this.error);
 
 final IssuesReprioritizeSubIssueResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class IssuesReprioritizeSubIssueError$Unknown extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError$Unknown(this.statusCode, this.rawBody, );
 

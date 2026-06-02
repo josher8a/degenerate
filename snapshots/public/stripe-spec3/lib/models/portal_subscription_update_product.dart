@@ -34,11 +34,14 @@ PortalSubscriptionUpdateProduct copyWith({PortalSubscriptionUpdateProductAdjusta
   prices: prices ?? this.prices,
   product: product ?? this.product,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionUpdateProduct &&
           adjustableQuantity == other.adjustableQuantity &&
           listEquals(prices, other.prices) &&
-          product == other.product; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, Object.hashAll(prices), product); } 
-@override String toString() { return 'PortalSubscriptionUpdateProduct(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)'; } 
+          product == other.product;
+
+@override int get hashCode => Object.hash(adjustableQuantity, Object.hashAll(prices), product);
+
+@override String toString() => 'PortalSubscriptionUpdateProduct(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)';
+
  }

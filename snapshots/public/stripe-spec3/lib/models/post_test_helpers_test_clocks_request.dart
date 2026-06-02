@@ -35,11 +35,14 @@ PostTestHelpersTestClocksRequest copyWith({List<String>? Function()? expand, int
   frozenTime: frozenTime ?? this.frozenTime,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTestClocksRequest &&
           listEquals(expand, other.expand) &&
           frozenTime == other.frozenTime &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), frozenTime, name); } 
-@override String toString() { return 'PostTestHelpersTestClocksRequest(expand: $expand, frozenTime: $frozenTime, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), frozenTime, name);
+
+@override String toString() => 'PostTestHelpersTestClocksRequest(expand: $expand, frozenTime: $frozenTime, name: $name)';
+
  }

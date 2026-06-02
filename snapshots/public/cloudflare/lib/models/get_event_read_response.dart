@@ -177,7 +177,7 @@ GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String
   tlp: tlp ?? this.tlp,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventReadResponse &&
           attacker == other.attacker &&
           attackerCountry == other.attackerCountry &&
@@ -204,7 +204,10 @@ GetEventReadResponse copyWith({String? attacker, String? attackerCountry, String
           targetCountry == other.targetCountry &&
           targetIndustry == other.targetIndustry &&
           tlp == other.tlp &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hashAll([attacker, attackerCountry, category, datasetId, date, event, hasChildren, indicator, indicatorType, indicatorTypeId, insight, killChain, Object.hashAll(mitreAttack), numReferenced, numReferences, rawId, Object.hashAll(referenced), Object.hashAll(referencedIds), Object.hashAll(references), Object.hashAll(referencesIds), releasabilityId, Object.hashAll(tags), targetCountry, targetIndustry, tlp, uuid]); } 
-@override String toString() { return 'GetEventReadResponse(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, hasChildren: $hasChildren, indicator: $indicator, indicatorType: $indicatorType, indicatorTypeId: $indicatorTypeId, insight: $insight, killChain: $killChain, mitreAttack: $mitreAttack, numReferenced: $numReferenced, numReferences: $numReferences, rawId: $rawId, referenced: $referenced, referencedIds: $referencedIds, references: $references, referencesIds: $referencesIds, releasabilityId: $releasabilityId, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hashAll([attacker, attackerCountry, category, datasetId, date, event, hasChildren, indicator, indicatorType, indicatorTypeId, insight, killChain, Object.hashAll(mitreAttack), numReferenced, numReferences, rawId, Object.hashAll(referenced), Object.hashAll(referencedIds), Object.hashAll(references), Object.hashAll(referencesIds), releasabilityId, Object.hashAll(tags), targetCountry, targetIndustry, tlp, uuid]);
+
+@override String toString() => 'GetEventReadResponse(attacker: $attacker, attackerCountry: $attackerCountry, category: $category, datasetId: $datasetId, date: $date, event: $event, hasChildren: $hasChildren, indicator: $indicator, indicatorType: $indicatorType, indicatorTypeId: $indicatorTypeId, insight: $insight, killChain: $killChain, mitreAttack: $mitreAttack, numReferenced: $numReferenced, numReferences: $numReferences, rawId: $rawId, referenced: $referenced, referencedIds: $referencedIds, references: $references, referencesIds: $referencesIds, releasabilityId: $releasabilityId, tags: $tags, targetCountry: $targetCountry, targetIndustry: $targetIndustry, tlp: $tlp, uuid: $uuid)';
+
  }

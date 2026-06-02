@@ -28,11 +28,14 @@ DigitalExperienceMonitoringWarpConfigDetails copyWith({String? Function()? accou
   accountTag: accountTag != null ? accountTag() : this.accountTag,
   configName: configName != null ? configName() : this.configName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringWarpConfigDetails &&
           accountName == other.accountName &&
           accountTag == other.accountTag &&
-          configName == other.configName; } 
-@override int get hashCode { return Object.hash(accountName, accountTag, configName); } 
-@override String toString() { return 'DigitalExperienceMonitoringWarpConfigDetails(accountName: $accountName, accountTag: $accountTag, configName: $configName)'; } 
+          configName == other.configName;
+
+@override int get hashCode => Object.hash(accountName, accountTag, configName);
+
+@override String toString() => 'DigitalExperienceMonitoringWarpConfigDetails(accountName: $accountName, accountTag: $accountTag, configName: $configName)';
+
  }

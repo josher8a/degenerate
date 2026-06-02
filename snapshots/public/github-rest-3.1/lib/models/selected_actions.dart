@@ -31,11 +31,14 @@ SelectedActions copyWith({bool? Function()? githubOwnedAllowed, bool? Function()
   verifiedAllowed: verifiedAllowed != null ? verifiedAllowed() : this.verifiedAllowed,
   patternsAllowed: patternsAllowed != null ? patternsAllowed() : this.patternsAllowed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SelectedActions &&
           githubOwnedAllowed == other.githubOwnedAllowed &&
           verifiedAllowed == other.verifiedAllowed &&
-          listEquals(patternsAllowed, other.patternsAllowed); } 
-@override int get hashCode { return Object.hash(githubOwnedAllowed, verifiedAllowed, Object.hashAll(patternsAllowed ?? const [])); } 
-@override String toString() { return 'SelectedActions(githubOwnedAllowed: $githubOwnedAllowed, verifiedAllowed: $verifiedAllowed, patternsAllowed: $patternsAllowed)'; } 
+          listEquals(patternsAllowed, other.patternsAllowed);
+
+@override int get hashCode => Object.hash(githubOwnedAllowed, verifiedAllowed, Object.hashAll(patternsAllowed ?? const []));
+
+@override String toString() => 'SelectedActions(githubOwnedAllowed: $githubOwnedAllowed, verifiedAllowed: $verifiedAllowed, patternsAllowed: $patternsAllowed)';
+
  }

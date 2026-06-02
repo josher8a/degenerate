@@ -27,11 +27,14 @@ DlpDatasetUpload copyWith({int? numCells, DlpDatasetUploadStatus? status, int? v
   status: status ?? this.status,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetUpload &&
           numCells == other.numCells &&
           status == other.status &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(numCells, status, version); } 
-@override String toString() { return 'DlpDatasetUpload(numCells: $numCells, status: $status, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(numCells, status, version);
+
+@override String toString() => 'DlpDatasetUpload(numCells: $numCells, status: $status, version: $version)';
+
  }

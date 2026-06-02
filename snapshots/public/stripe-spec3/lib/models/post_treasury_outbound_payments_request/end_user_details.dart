@@ -21,10 +21,13 @@ EndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { retu
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   present: present ?? this.present,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EndUserDetails &&
           ipAddress == other.ipAddress &&
-          present == other.present; } 
-@override int get hashCode { return Object.hash(ipAddress, present); } 
-@override String toString() { return 'EndUserDetails(ipAddress: $ipAddress, present: $present)'; } 
+          present == other.present;
+
+@override int get hashCode => Object.hash(ipAddress, present);
+
+@override String toString() => 'EndUserDetails(ipAddress: $ipAddress, present: $present)';
+
  }

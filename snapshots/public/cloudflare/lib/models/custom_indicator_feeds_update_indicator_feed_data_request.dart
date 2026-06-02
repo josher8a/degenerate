@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String? Function()? source}) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomIndicatorFeedsUpdateIndicatorFeedDataRequest &&
-          source == other.source; } 
-@override int get hashCode { return source.hashCode; } 
-@override String toString() { return 'CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => source.hashCode;
+
+@override String toString() => 'CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(source: $source)';
+
  }

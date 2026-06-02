@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MetadataSecretScanning copyWith({List<BypassPlaceholders>? Function()? bypassPlaceholders}) { return MetadataSecretScanning(
   bypassPlaceholders: bypassPlaceholders != null ? bypassPlaceholders() : this.bypassPlaceholders,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataSecretScanning &&
-          listEquals(bypassPlaceholders, other.bypassPlaceholders); } 
-@override int get hashCode { return Object.hashAll(bypassPlaceholders ?? const []); } 
-@override String toString() { return 'MetadataSecretScanning(bypassPlaceholders: $bypassPlaceholders)'; } 
+          listEquals(bypassPlaceholders, other.bypassPlaceholders);
+
+@override int get hashCode => Object.hashAll(bypassPlaceholders ?? const []);
+
+@override String toString() => 'MetadataSecretScanning(bypassPlaceholders: $bypassPlaceholders)';
+
  }

@@ -22,9 +22,12 @@ return errors; }
 ShieldIndex copyWith({int? index}) { return ShieldIndex(
   index: index ?? this.index,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldIndex &&
-          index == other.index; } 
-@override int get hashCode { return index.hashCode; } 
-@override String toString() { return 'ShieldIndex(index: $index)'; } 
+          index == other.index;
+
+@override int get hashCode => index.hashCode;
+
+@override String toString() => 'ShieldIndex(index: $index)';
+
  }

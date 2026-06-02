@@ -27,10 +27,13 @@ Integrations copyWith({FineTuningIntegrationType? type, Wandb? wandb, }) { retur
   type: type ?? this.type,
   wandb: wandb ?? this.wandb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Integrations &&
           type == other.type &&
-          wandb == other.wandb; } 
-@override int get hashCode { return Object.hash(type, wandb); } 
-@override String toString() { return 'Integrations(type: $type, wandb: $wandb)'; } 
+          wandb == other.wandb;
+
+@override int get hashCode => Object.hash(type, wandb);
+
+@override String toString() => 'Integrations(type: $type, wandb: $wandb)';
+
  }

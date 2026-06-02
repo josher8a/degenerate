@@ -62,7 +62,7 @@ TierFrom copyWith({String? createdAt, String? description, bool? Function()? isC
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TierFrom &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -72,7 +72,10 @@ TierFrom copyWith({String? createdAt, String? description, bool? Function()? isC
           monthlyPriceInCents == other.monthlyPriceInCents &&
           monthlyPriceInDollars == other.monthlyPriceInDollars &&
           name == other.name &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(createdAt, description, isCustomAmmount, isCustomAmount, isOneTime, monthlyPriceInCents, monthlyPriceInDollars, name, nodeId); } 
-@override String toString() { return 'TierFrom(createdAt: $createdAt, description: $description, isCustomAmmount: $isCustomAmmount, isCustomAmount: $isCustomAmount, isOneTime: $isOneTime, monthlyPriceInCents: $monthlyPriceInCents, monthlyPriceInDollars: $monthlyPriceInDollars, name: $name, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(createdAt, description, isCustomAmmount, isCustomAmount, isOneTime, monthlyPriceInCents, monthlyPriceInDollars, name, nodeId);
+
+@override String toString() => 'TierFrom(createdAt: $createdAt, description: $description, isCustomAmmount: $isCustomAmmount, isCustomAmount: $isCustomAmount, isOneTime: $isOneTime, monthlyPriceInCents: $monthlyPriceInCents, monthlyPriceInDollars: $monthlyPriceInDollars, name: $name, nodeId: $nodeId)';
+
  }

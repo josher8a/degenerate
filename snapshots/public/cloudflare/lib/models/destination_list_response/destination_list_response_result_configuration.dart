@@ -45,14 +45,17 @@ DestinationListResponseResultConfiguration copyWith({String? destinationConf, Ma
   type: type ?? this.type,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationListResponseResultConfiguration &&
           destinationConf == other.destinationConf &&
           headers == other.headers &&
           jobStatus == other.jobStatus &&
           logpushDataset == other.logpushDataset &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(destinationConf, headers, jobStatus, logpushDataset, type, url); } 
-@override String toString() { return 'DestinationListResponseResultConfiguration(destinationConf: $destinationConf, headers: $headers, jobStatus: $jobStatus, logpushDataset: $logpushDataset, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(destinationConf, headers, jobStatus, logpushDataset, type, url);
+
+@override String toString() => 'DestinationListResponseResultConfiguration(destinationConf: $destinationConf, headers: $headers, jobStatus: $jobStatus, logpushDataset: $logpushDataset, type: $type, url: $url)';
+
  }

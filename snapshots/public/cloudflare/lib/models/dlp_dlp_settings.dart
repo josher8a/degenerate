@@ -30,11 +30,14 @@ DlpDlpSettings copyWith({bool? aiContextAnalysis, bool? ocr, DlpPayloadLogSettin
   ocr: ocr ?? this.ocr,
   payloadLogging: payloadLogging ?? this.payloadLogging,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDlpSettings &&
           aiContextAnalysis == other.aiContextAnalysis &&
           ocr == other.ocr &&
-          payloadLogging == other.payloadLogging; } 
-@override int get hashCode { return Object.hash(aiContextAnalysis, ocr, payloadLogging); } 
-@override String toString() { return 'DlpDlpSettings(aiContextAnalysis: $aiContextAnalysis, ocr: $ocr, payloadLogging: $payloadLogging)'; } 
+          payloadLogging == other.payloadLogging;
+
+@override int get hashCode => Object.hash(aiContextAnalysis, ocr, payloadLogging);
+
+@override String toString() => 'DlpDlpSettings(aiContextAnalysis: $aiContextAnalysis, ocr: $ocr, payloadLogging: $payloadLogging)';
+
  }

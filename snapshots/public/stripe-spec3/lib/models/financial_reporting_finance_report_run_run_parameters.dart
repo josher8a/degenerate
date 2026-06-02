@@ -78,7 +78,7 @@ FinancialReportingFinanceReportRunRunParameters copyWith({List<String>? Function
   reportingCategory: reportingCategory != null ? reportingCategory() : this.reportingCategory,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialReportingFinanceReportRunRunParameters &&
           listEquals(columns, other.columns) &&
           connectedAccount == other.connectedAccount &&
@@ -87,7 +87,10 @@ FinancialReportingFinanceReportRunRunParameters copyWith({List<String>? Function
           intervalStart == other.intervalStart &&
           payout == other.payout &&
           reportingCategory == other.reportingCategory &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone); } 
-@override String toString() { return 'FinancialReportingFinanceReportRunRunParameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(Object.hashAll(columns ?? const []), connectedAccount, currency, intervalEnd, intervalStart, payout, reportingCategory, timezone);
+
+@override String toString() => 'FinancialReportingFinanceReportRunRunParameters(columns: $columns, connectedAccount: $connectedAccount, currency: $currency, intervalEnd: $intervalEnd, intervalStart: $intervalStart, payout: $payout, reportingCategory: $reportingCategory, timezone: $timezone)';
+
  }

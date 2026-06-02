@@ -30,12 +30,15 @@ StreamOutput copyWith({StreamOutputEnabled? Function()? enabled, StreamOutputStr
   uid: uid != null ? uid() : this.uid,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamOutput &&
           enabled == other.enabled &&
           streamKey == other.streamKey &&
           uid == other.uid &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, streamKey, uid, url); } 
-@override String toString() { return 'StreamOutput(enabled: $enabled, streamKey: $streamKey, uid: $uid, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(enabled, streamKey, uid, url);
+
+@override String toString() => 'StreamOutput(enabled: $enabled, streamKey: $streamKey, uid: $uid, url: $url)';
+
  }

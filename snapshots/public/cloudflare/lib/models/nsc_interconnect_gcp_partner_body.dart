@@ -44,14 +44,17 @@ NscInterconnectGcpPartnerBody copyWith({String? account, String? name, String? F
   region: region ?? this.region,
   speed: speed != null ? speed() : this.speed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NscInterconnectGcpPartnerBody &&
           account == other.account &&
           name == other.name &&
           owner == other.owner &&
           type == other.type &&
           region == other.region &&
-          speed == other.speed; } 
-@override int get hashCode { return Object.hash(account, name, owner, type, region, speed); } 
-@override String toString() { return 'NscInterconnectGcpPartnerBody(account: $account, name: $name, owner: $owner, type: $type, region: $region, speed: $speed)'; } 
+          speed == other.speed;
+
+@override int get hashCode => Object.hash(account, name, owner, type, region, speed);
+
+@override String toString() => 'NscInterconnectGcpPartnerBody(account: $account, name: $name, owner: $owner, type: $type, region: $region, speed: $speed)';
+
  }

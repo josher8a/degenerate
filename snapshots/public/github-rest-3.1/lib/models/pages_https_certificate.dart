@@ -49,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesHttpsCertificateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesHttpsCertificateState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesHttpsCertificateState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesHttpsCertificateState($value)';
+
  }
 @immutable final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });
 
@@ -87,12 +90,15 @@ PagesHttpsCertificate copyWith({PagesHttpsCertificateState? state, String? descr
   domains: domains ?? this.domains,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesHttpsCertificate &&
           state == other.state &&
           description == other.description &&
           listEquals(domains, other.domains) &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(state, description, Object.hashAll(domains), expiresAt); } 
-@override String toString() { return 'PagesHttpsCertificate(state: $state, description: $description, domains: $domains, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(state, description, Object.hashAll(domains), expiresAt);
+
+@override String toString() => 'PagesHttpsCertificate(state: $state, description: $description, domains: $domains, expiresAt: $expiresAt)';
+
  }

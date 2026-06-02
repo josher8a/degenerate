@@ -39,13 +39,16 @@ PostEventDoRevertResponseProperties copyWith({DatasetId? datasetId, MinutesAgo? 
   targetTimestamp: targetTimestamp ?? this.targetTimestamp,
   undoBookmark: undoBookmark ?? this.undoBookmark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventDoRevertResponseProperties &&
           datasetId == other.datasetId &&
           minutesAgo == other.minutesAgo &&
           revertBookmark == other.revertBookmark &&
           targetTimestamp == other.targetTimestamp &&
-          undoBookmark == other.undoBookmark; } 
-@override int get hashCode { return Object.hash(datasetId, minutesAgo, revertBookmark, targetTimestamp, undoBookmark); } 
-@override String toString() { return 'PostEventDoRevertResponseProperties(datasetId: $datasetId, minutesAgo: $minutesAgo, revertBookmark: $revertBookmark, targetTimestamp: $targetTimestamp, undoBookmark: $undoBookmark)'; } 
+          undoBookmark == other.undoBookmark;
+
+@override int get hashCode => Object.hash(datasetId, minutesAgo, revertBookmark, targetTimestamp, undoBookmark);
+
+@override String toString() => 'PostEventDoRevertResponseProperties(datasetId: $datasetId, minutesAgo: $minutesAgo, revertBookmark: $revertBookmark, targetTimestamp: $targetTimestamp, undoBookmark: $undoBookmark)';
+
  }

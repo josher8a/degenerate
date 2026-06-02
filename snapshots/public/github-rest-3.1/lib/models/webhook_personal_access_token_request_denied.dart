@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPersonalAccessTokenRequestDeniedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestDeniedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPersonalAccessTokenRequestDeniedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPersonalAccessTokenRequestDeniedAction($value)';
+
  }
 @immutable final class WebhookPersonalAccessTokenRequestDenied {const WebhookPersonalAccessTokenRequestDenied({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });
 
@@ -65,14 +68,17 @@ WebhookPersonalAccessTokenRequestDenied copyWith({WebhookPersonalAccessTokenRequ
   sender: sender ?? this.sender,
   installation: installation ?? this.installation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPersonalAccessTokenRequestDenied &&
           action == other.action &&
           personalAccessTokenRequest == other.personalAccessTokenRequest &&
           organization == other.organization &&
           enterprise == other.enterprise &&
           sender == other.sender &&
-          installation == other.installation; } 
-@override int get hashCode { return Object.hash(action, personalAccessTokenRequest, organization, enterprise, sender, installation); } 
-@override String toString() { return 'WebhookPersonalAccessTokenRequestDenied(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, organization: $organization, enterprise: $enterprise, sender: $sender, installation: $installation)'; } 
+          installation == other.installation;
+
+@override int get hashCode => Object.hash(action, personalAccessTokenRequest, organization, enterprise, sender, installation);
+
+@override String toString() => 'WebhookPersonalAccessTokenRequestDenied(action: $action, personalAccessTokenRequest: $personalAccessTokenRequest, organization: $organization, enterprise: $enterprise, sender: $sender, installation: $installation)';
+
  }

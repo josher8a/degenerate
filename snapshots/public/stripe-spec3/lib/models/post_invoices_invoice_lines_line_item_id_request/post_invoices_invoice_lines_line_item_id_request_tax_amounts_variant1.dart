@@ -32,12 +32,15 @@ PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 copyWith({int? amoun
   taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,
   taxableAmount: taxableAmount ?? this.taxableAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 &&
           amount == other.amount &&
           taxRateData == other.taxRateData &&
           taxabilityReason == other.taxabilityReason &&
-          taxableAmount == other.taxableAmount; } 
-@override int get hashCode { return Object.hash(amount, taxRateData, taxabilityReason, taxableAmount); } 
-@override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1(amount: $amount, taxRateData: $taxRateData, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+          taxableAmount == other.taxableAmount;
+
+@override int get hashCode => Object.hash(amount, taxRateData, taxabilityReason, taxableAmount);
+
+@override String toString() => 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1(amount: $amount, taxRateData: $taxRateData, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)';
+
  }

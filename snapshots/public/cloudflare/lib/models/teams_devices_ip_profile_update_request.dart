@@ -48,14 +48,17 @@ TeamsDevicesIpProfileUpdateRequest copyWith({String? Function()? description, Te
   precedence: precedence != null ? precedence() : this.precedence,
   subnetId: subnetId != null ? subnetId() : this.subnetId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIpProfileUpdateRequest &&
           description == other.description &&
           enabled == other.enabled &&
           match == other.match &&
           name == other.name &&
           precedence == other.precedence &&
-          subnetId == other.subnetId; } 
-@override int get hashCode { return Object.hash(description, enabled, match, name, precedence, subnetId); } 
-@override String toString() { return 'TeamsDevicesIpProfileUpdateRequest(description: $description, enabled: $enabled, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId)'; } 
+          subnetId == other.subnetId;
+
+@override int get hashCode => Object.hash(description, enabled, match, name, precedence, subnetId);
+
+@override String toString() => 'TeamsDevicesIpProfileUpdateRequest(description: $description, enabled: $enabled, match: $match, name: $name, precedence: $precedence, subnetId: $subnetId)';
+
  }

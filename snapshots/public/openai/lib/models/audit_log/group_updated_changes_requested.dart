@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 GroupUpdatedChangesRequested copyWith({String? Function()? groupName}) { return GroupUpdatedChangesRequested(
   groupName: groupName != null ? groupName() : this.groupName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GroupUpdatedChangesRequested &&
-          groupName == other.groupName; } 
-@override int get hashCode { return groupName.hashCode; } 
-@override String toString() { return 'GroupUpdatedChangesRequested(groupName: $groupName)'; } 
+          groupName == other.groupName;
+
+@override int get hashCode => groupName.hashCode;
+
+@override String toString() => 'GroupUpdatedChangesRequested(groupName: $groupName)';
+
  }

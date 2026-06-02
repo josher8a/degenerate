@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AdviceCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AdviceCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AdviceCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AdviceCode($value)';
+
  }
 /// 
 @immutable final class ChargeOutcome {const ChargeOutcome({required this.type, this.adviceCode, this.networkAdviceCode, this.networkDeclineCode, this.networkStatus, this.reason, this.riskLevel, this.riskScore, this.rule, this.sellerMessage, });
@@ -127,7 +130,7 @@ ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? 
   sellerMessage: sellerMessage != null ? sellerMessage() : this.sellerMessage,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChargeOutcome &&
           adviceCode == other.adviceCode &&
           networkAdviceCode == other.networkAdviceCode &&
@@ -138,7 +141,10 @@ ChargeOutcome copyWith({AdviceCode? Function()? adviceCode, String? Function()? 
           riskScore == other.riskScore &&
           rule == other.rule &&
           sellerMessage == other.sellerMessage &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(adviceCode, networkAdviceCode, networkDeclineCode, networkStatus, reason, riskLevel, riskScore, rule, sellerMessage, type); } 
-@override String toString() { return 'ChargeOutcome(adviceCode: $adviceCode, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkStatus: $networkStatus, reason: $reason, riskLevel: $riskLevel, riskScore: $riskScore, rule: $rule, sellerMessage: $sellerMessage, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(adviceCode, networkAdviceCode, networkDeclineCode, networkStatus, reason, riskLevel, riskScore, rule, sellerMessage, type);
+
+@override String toString() => 'ChargeOutcome(adviceCode: $adviceCode, networkAdviceCode: $networkAdviceCode, networkDeclineCode: $networkDeclineCode, networkStatus: $networkStatus, reason: $reason, riskLevel: $riskLevel, riskScore: $riskScore, rule: $rule, sellerMessage: $sellerMessage, type: $type)';
+
  }

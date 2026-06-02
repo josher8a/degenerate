@@ -32,11 +32,14 @@ HyperdriveHyperdriveCachingEnabled copyWith({bool? Function()? disabled, int? Fu
   maxAge: maxAge != null ? maxAge() : this.maxAge,
   staleWhileRevalidate: staleWhileRevalidate != null ? staleWhileRevalidate() : this.staleWhileRevalidate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveHyperdriveCachingEnabled &&
           disabled == other.disabled &&
           maxAge == other.maxAge &&
-          staleWhileRevalidate == other.staleWhileRevalidate; } 
-@override int get hashCode { return Object.hash(disabled, maxAge, staleWhileRevalidate); } 
-@override String toString() { return 'HyperdriveHyperdriveCachingEnabled(disabled: $disabled, maxAge: $maxAge, staleWhileRevalidate: $staleWhileRevalidate)'; } 
+          staleWhileRevalidate == other.staleWhileRevalidate;
+
+@override int get hashCode => Object.hash(disabled, maxAge, staleWhileRevalidate);
+
+@override String toString() => 'HyperdriveHyperdriveCachingEnabled(disabled: $disabled, maxAge: $maxAge, staleWhileRevalidate: $staleWhileRevalidate)';
+
  }

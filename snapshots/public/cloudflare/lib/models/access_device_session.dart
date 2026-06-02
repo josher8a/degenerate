@@ -21,9 +21,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccessDeviceSession copyWith({double? Function()? lastAuthenticated}) { return AccessDeviceSession(
   lastAuthenticated: lastAuthenticated != null ? lastAuthenticated() : this.lastAuthenticated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessDeviceSession &&
-          lastAuthenticated == other.lastAuthenticated; } 
-@override int get hashCode { return lastAuthenticated.hashCode; } 
-@override String toString() { return 'AccessDeviceSession(lastAuthenticated: $lastAuthenticated)'; } 
+          lastAuthenticated == other.lastAuthenticated;
+
+@override int get hashCode => lastAuthenticated.hashCode;
+
+@override String toString() => 'AccessDeviceSession(lastAuthenticated: $lastAuthenticated)';
+
  }

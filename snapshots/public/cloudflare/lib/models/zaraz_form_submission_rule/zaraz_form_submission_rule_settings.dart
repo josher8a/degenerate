@@ -21,10 +21,13 @@ ZarazFormSubmissionRuleSettings copyWith({String? selector, bool? validate, }) {
   selector: selector ?? this.selector,
   validate: validate ?? this.validate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazFormSubmissionRuleSettings &&
           selector == other.selector &&
-          validate == other.validate; } 
-@override int get hashCode { return Object.hash(selector, validate); } 
-@override String toString() { return 'ZarazFormSubmissionRuleSettings(selector: $selector, validate: $validate)'; } 
+          validate == other.validate;
+
+@override int get hashCode => Object.hash(selector, validate);
+
+@override String toString() => 'ZarazFormSubmissionRuleSettings(selector: $selector, validate: $validate)';
+
  }

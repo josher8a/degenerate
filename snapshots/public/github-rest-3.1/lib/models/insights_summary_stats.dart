@@ -23,10 +23,13 @@ InsightsSummaryStats copyWith({int? Function()? totalRequestCount, int? Function
   totalRequestCount: totalRequestCount != null ? totalRequestCount() : this.totalRequestCount,
   rateLimitedRequestCount: rateLimitedRequestCount != null ? rateLimitedRequestCount() : this.rateLimitedRequestCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsSummaryStats &&
           totalRequestCount == other.totalRequestCount &&
-          rateLimitedRequestCount == other.rateLimitedRequestCount; } 
-@override int get hashCode { return Object.hash(totalRequestCount, rateLimitedRequestCount); } 
-@override String toString() { return 'InsightsSummaryStats(totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount)'; } 
+          rateLimitedRequestCount == other.rateLimitedRequestCount;
+
+@override int get hashCode => Object.hash(totalRequestCount, rateLimitedRequestCount);
+
+@override String toString() => 'InsightsSummaryStats(totalRequestCount: $totalRequestCount, rateLimitedRequestCount: $rateLimitedRequestCount)';
+
  }

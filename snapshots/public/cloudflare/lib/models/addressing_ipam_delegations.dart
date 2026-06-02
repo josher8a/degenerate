@@ -43,14 +43,17 @@ AddressingIpamDelegations copyWith({AddressingCidr? Function()? cidr, Addressing
   modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
   parentPrefixId: parentPrefixId != null ? parentPrefixId() : this.parentPrefixId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingIpamDelegations &&
           cidr == other.cidr &&
           createdAt == other.createdAt &&
           delegatedAccountId == other.delegatedAccountId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          parentPrefixId == other.parentPrefixId; } 
-@override int get hashCode { return Object.hash(cidr, createdAt, delegatedAccountId, id, modifiedAt, parentPrefixId); } 
-@override String toString() { return 'AddressingIpamDelegations(cidr: $cidr, createdAt: $createdAt, delegatedAccountId: $delegatedAccountId, id: $id, modifiedAt: $modifiedAt, parentPrefixId: $parentPrefixId)'; } 
+          parentPrefixId == other.parentPrefixId;
+
+@override int get hashCode => Object.hash(cidr, createdAt, delegatedAccountId, id, modifiedAt, parentPrefixId);
+
+@override String toString() => 'AddressingIpamDelegations(cidr: $cidr, createdAt: $createdAt, delegatedAccountId: $delegatedAccountId, id: $id, modifiedAt: $modifiedAt, parentPrefixId: $parentPrefixId)';
+
  }

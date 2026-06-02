@@ -65,7 +65,7 @@ GeolocationParent copyWith({String? Function()? code, String? geoId, String? lat
   parent: parent ?? this.parent,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GeolocationParent &&
           code == other.code &&
           geoId == other.geoId &&
@@ -73,7 +73,10 @@ GeolocationParent copyWith({String? Function()? code, String? geoId, String? lat
           longitude == other.longitude &&
           name == other.name &&
           parent == other.parent &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(code, geoId, latitude, longitude, name, parent, type); } 
-@override String toString() { return 'GeolocationParent(code: $code, geoId: $geoId, latitude: $latitude, longitude: $longitude, name: $name, parent: $parent, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(code, geoId, latitude, longitude, name, parent, type);
+
+@override String toString() => 'GeolocationParent(code: $code, geoId: $geoId, latitude: $latitude, longitude: $longitude, name: $name, parent: $parent, type: $type)';
+
  }

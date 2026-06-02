@@ -72,7 +72,7 @@ TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, Lis
   topologyKey: topologyKey ?? this.topologyKey,
   whenUnsatisfiable: whenUnsatisfiable ?? this.whenUnsatisfiable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TopologySpreadConstraint &&
           labelSelector == other.labelSelector &&
           listEquals(matchLabelKeys, other.matchLabelKeys) &&
@@ -81,7 +81,10 @@ TopologySpreadConstraint copyWith({LabelSelector? Function()? labelSelector, Lis
           nodeAffinityPolicy == other.nodeAffinityPolicy &&
           nodeTaintsPolicy == other.nodeTaintsPolicy &&
           topologyKey == other.topologyKey &&
-          whenUnsatisfiable == other.whenUnsatisfiable; } 
-@override int get hashCode { return Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), maxSkew, minDomains, nodeAffinityPolicy, nodeTaintsPolicy, topologyKey, whenUnsatisfiable); } 
-@override String toString() { return 'TopologySpreadConstraint(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, maxSkew: $maxSkew, minDomains: $minDomains, nodeAffinityPolicy: $nodeAffinityPolicy, nodeTaintsPolicy: $nodeTaintsPolicy, topologyKey: $topologyKey, whenUnsatisfiable: $whenUnsatisfiable)'; } 
+          whenUnsatisfiable == other.whenUnsatisfiable;
+
+@override int get hashCode => Object.hash(labelSelector, Object.hashAll(matchLabelKeys ?? const []), maxSkew, minDomains, nodeAffinityPolicy, nodeTaintsPolicy, topologyKey, whenUnsatisfiable);
+
+@override String toString() => 'TopologySpreadConstraint(labelSelector: $labelSelector, matchLabelKeys: $matchLabelKeys, maxSkew: $maxSkew, minDomains: $minDomains, nodeAffinityPolicy: $nodeAffinityPolicy, nodeTaintsPolicy: $nodeTaintsPolicy, topologyKey: $topologyKey, whenUnsatisfiable: $whenUnsatisfiable)';
+
  }

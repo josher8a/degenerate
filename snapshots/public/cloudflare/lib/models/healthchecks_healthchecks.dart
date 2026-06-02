@@ -33,10 +33,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HealthchecksStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HealthchecksStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HealthchecksStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HealthchecksStatus($value)';
+
  }
 extension type HealthchecksTimestamp(DateTime value) {
 factory HealthchecksTimestamp.fromJson(String json) => HealthchecksTimestamp(DateTime.parse(json));
@@ -150,7 +153,7 @@ HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Lis
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HealthchecksHealthchecks &&
           address == other.address &&
           listEquals(checkRegions, other.checkRegions) &&
@@ -169,7 +172,10 @@ HealthchecksHealthchecks copyWith({HealthchecksAddress? Function()? address, Lis
           suspended == other.suspended &&
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
-@override String toString() { return 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type);
+
+@override String toString() => 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';
+
  }

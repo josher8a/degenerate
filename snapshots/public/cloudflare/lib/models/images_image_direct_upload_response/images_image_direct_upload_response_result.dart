@@ -33,10 +33,13 @@ ImagesImageDirectUploadResponseResult copyWith({String? Function()? id, String? 
   id: id != null ? id() : this.id,
   uploadUrl: uploadUrl != null ? uploadUrl() : this.uploadUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageDirectUploadResponseResult &&
           id == other.id &&
-          uploadUrl == other.uploadUrl; } 
-@override int get hashCode { return Object.hash(id, uploadUrl); } 
-@override String toString() { return 'ImagesImageDirectUploadResponseResult(id: $id, uploadUrl: $uploadUrl)'; } 
+          uploadUrl == other.uploadUrl;
+
+@override int get hashCode => Object.hash(id, uploadUrl);
+
+@override String toString() => 'ImagesImageDirectUploadResponseResult(id: $id, uploadUrl: $uploadUrl)';
+
  }

@@ -42,10 +42,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigProxyProtocol && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigProxyProtocol($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigProxyProtocol && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpectrumConfigProxyProtocol($value)';
+
  }
 /// The type of TLS termination associated with the application.
 @immutable final class SpectrumConfigTls {const SpectrumConfigTls._(this.value);
@@ -73,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigTls && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigTls($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigTls && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpectrumConfigTls($value)';
+
  }
 /// Determines how data travels from the edge to your origin. When set to "direct", Spectrum will send traffic directly to your origin, and the application's type is derived from the `protocol`. When set to "http" or "https", Spectrum will apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.
 @immutable final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
@@ -101,10 +107,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigTrafficType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigTrafficType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigTrafficType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpectrumConfigTrafficType($value)';
+
  }
 @immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });
 
@@ -191,7 +200,7 @@ SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumCo
   tls: tls != null ? tls() : this.tls,
   trafficType: trafficType ?? this.trafficType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigAppConfig &&
           createdOn == other.createdOn &&
           id == other.id &&
@@ -206,7 +215,10 @@ SpectrumConfigAppConfig copyWith({SpectrumConfigTimestamp? createdOn, SpectrumCo
           protocol == other.protocol &&
           proxyProtocol == other.proxyProtocol &&
           tls == other.tls &&
-          trafficType == other.trafficType; } 
-@override int get hashCode { return Object.hash(createdOn, id, modifiedOn, argoSmartRouting, dns, edgeIps, ipFirewall, Object.hashAll(originDirect ?? const []), originDns, originPort, protocol, proxyProtocol, tls, trafficType); } 
-@override String toString() { return 'SpectrumConfigAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, argoSmartRouting: $argoSmartRouting, dns: $dns, edgeIps: $edgeIps, ipFirewall: $ipFirewall, originDirect: $originDirect, originDns: $originDns, originPort: $originPort, protocol: $protocol, proxyProtocol: $proxyProtocol, tls: $tls, trafficType: $trafficType)'; } 
+          trafficType == other.trafficType;
+
+@override int get hashCode => Object.hash(createdOn, id, modifiedOn, argoSmartRouting, dns, edgeIps, ipFirewall, Object.hashAll(originDirect ?? const []), originDns, originPort, protocol, proxyProtocol, tls, trafficType);
+
+@override String toString() => 'SpectrumConfigAppConfig(createdOn: $createdOn, id: $id, modifiedOn: $modifiedOn, argoSmartRouting: $argoSmartRouting, dns: $dns, edgeIps: $edgeIps, ipFirewall: $ipFirewall, originDirect: $originDirect, originDns: $originDns, originPort: $originPort, protocol: $protocol, proxyProtocol: $proxyProtocol, tls: $tls, trafficType: $trafficType)';
+
  }

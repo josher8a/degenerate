@@ -30,11 +30,14 @@ DlpUpdateIntegrationBody copyWith({bool? active, String? Function()? referenceId
   referenceId: referenceId != null ? referenceId() : this.referenceId,
   tenantUrl: tenantUrl ?? this.tenantUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpUpdateIntegrationBody &&
           active == other.active &&
           referenceId == other.referenceId &&
-          tenantUrl == other.tenantUrl; } 
-@override int get hashCode { return Object.hash(active, referenceId, tenantUrl); } 
-@override String toString() { return 'DlpUpdateIntegrationBody(active: $active, referenceId: $referenceId, tenantUrl: $tenantUrl)'; } 
+          tenantUrl == other.tenantUrl;
+
+@override int get hashCode => Object.hash(active, referenceId, tenantUrl);
+
+@override String toString() => 'DlpUpdateIntegrationBody(active: $active, referenceId: $referenceId, tenantUrl: $tenantUrl)';
+
  }

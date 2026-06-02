@@ -35,12 +35,15 @@ Box copyWith({double? Function()? xmax, double? Function()? xmin, double? Functi
   ymax: ymax != null ? ymax() : this.ymax,
   ymin: ymin != null ? ymin() : this.ymin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Box &&
           xmax == other.xmax &&
           xmin == other.xmin &&
           ymax == other.ymax &&
-          ymin == other.ymin; } 
-@override int get hashCode { return Object.hash(xmax, xmin, ymax, ymin); } 
-@override String toString() { return 'Box(xmax: $xmax, xmin: $xmin, ymax: $ymax, ymin: $ymin)'; } 
+          ymin == other.ymin;
+
+@override int get hashCode => Object.hash(xmax, xmin, ymax, ymin);
+
+@override String toString() => 'Box(xmax: $xmax, xmin: $xmin, ymax: $ymax, ymin: $ymin)';
+
  }

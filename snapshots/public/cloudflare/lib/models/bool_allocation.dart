@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BoolAllocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BoolAllocationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BoolAllocationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BoolAllocationType($value)';
+
  }
 @immutable final class BoolAllocation {const BoolAllocation({required this.type, required this.value, });
 
@@ -42,10 +45,13 @@ BoolAllocation copyWith({BoolAllocationType? type, bool? value, }) { return Bool
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BoolAllocation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'BoolAllocation(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'BoolAllocation(type: $type, value: $value)';
+
  }

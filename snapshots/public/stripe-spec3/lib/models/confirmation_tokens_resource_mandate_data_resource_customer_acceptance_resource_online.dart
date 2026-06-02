@@ -34,10 +34,13 @@ ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline co
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   userAgent: userAgent != null ? userAgent() : this.userAgent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline &&
           ipAddress == other.ipAddress &&
-          userAgent == other.userAgent; } 
-@override int get hashCode { return Object.hash(ipAddress, userAgent); } 
-@override String toString() { return 'ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+          userAgent == other.userAgent;
+
+@override int get hashCode => Object.hash(ipAddress, userAgent);
+
+@override String toString() => 'ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline(ipAddress: $ipAddress, userAgent: $userAgent)';
+
  }

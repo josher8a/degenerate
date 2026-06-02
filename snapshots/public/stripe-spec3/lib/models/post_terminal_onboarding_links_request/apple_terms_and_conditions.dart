@@ -24,10 +24,13 @@ AppleTermsAndConditions copyWith({bool? Function()? allowRelinking, String? merc
   allowRelinking: allowRelinking != null ? allowRelinking() : this.allowRelinking,
   merchantDisplayName: merchantDisplayName ?? this.merchantDisplayName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppleTermsAndConditions &&
           allowRelinking == other.allowRelinking &&
-          merchantDisplayName == other.merchantDisplayName; } 
-@override int get hashCode { return Object.hash(allowRelinking, merchantDisplayName); } 
-@override String toString() { return 'AppleTermsAndConditions(allowRelinking: $allowRelinking, merchantDisplayName: $merchantDisplayName)'; } 
+          merchantDisplayName == other.merchantDisplayName;
+
+@override int get hashCode => Object.hash(allowRelinking, merchantDisplayName);
+
+@override String toString() => 'AppleTermsAndConditions(allowRelinking: $allowRelinking, merchantDisplayName: $merchantDisplayName)';
+
  }

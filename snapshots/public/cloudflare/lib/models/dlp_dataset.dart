@@ -87,7 +87,7 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
   updatedAt: updatedAt ?? this.updatedAt,
   uploads: uploads ?? this.uploads,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDataset &&
           caseSensitive == other.caseSensitive &&
           listEquals(columns, other.columns) &&
@@ -100,7 +100,10 @@ DlpDataset copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? co
           secret == other.secret &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          listEquals(uploads, other.uploads); } 
-@override int get hashCode { return Object.hash(caseSensitive, Object.hashAll(columns), createdAt, description, encodingVersion, id, name, numCells, secret, status, updatedAt, Object.hashAll(uploads)); } 
-@override String toString() { return 'DlpDataset(caseSensitive: $caseSensitive, columns: $columns, createdAt: $createdAt, description: $description, encodingVersion: $encodingVersion, id: $id, name: $name, numCells: $numCells, secret: $secret, status: $status, updatedAt: $updatedAt, uploads: $uploads)'; } 
+          listEquals(uploads, other.uploads);
+
+@override int get hashCode => Object.hash(caseSensitive, Object.hashAll(columns), createdAt, description, encodingVersion, id, name, numCells, secret, status, updatedAt, Object.hashAll(uploads));
+
+@override String toString() => 'DlpDataset(caseSensitive: $caseSensitive, columns: $columns, createdAt: $createdAt, description: $description, encodingVersion: $encodingVersion, id: $id, name: $name, numCells: $numCells, secret: $secret, status: $status, updatedAt: $updatedAt, uploads: $uploads)';
+
  }

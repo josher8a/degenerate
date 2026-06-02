@@ -44,11 +44,14 @@ SourceTransactionSepaCreditTransferData copyWith({String? Function()? reference,
   senderIban: senderIban != null ? senderIban() : this.senderIban,
   senderName: senderName != null ? senderName() : this.senderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransactionSepaCreditTransferData &&
           reference == other.reference &&
           senderIban == other.senderIban &&
-          senderName == other.senderName; } 
-@override int get hashCode { return Object.hash(reference, senderIban, senderName); } 
-@override String toString() { return 'SourceTransactionSepaCreditTransferData(reference: $reference, senderIban: $senderIban, senderName: $senderName)'; } 
+          senderName == other.senderName;
+
+@override int get hashCode => Object.hash(reference, senderIban, senderName);
+
+@override String toString() => 'SourceTransactionSepaCreditTransferData(reference: $reference, senderIban: $senderIban, senderName: $senderName)';
+
  }

@@ -24,10 +24,13 @@ MconnSnapshotBond copyWith({String? name, String? status, }) { return MconnSnaps
   name: name ?? this.name,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotBond &&
           name == other.name &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(name, status); } 
-@override String toString() { return 'MconnSnapshotBond(name: $name, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(name, status);
+
+@override String toString() => 'MconnSnapshotBond(name: $name, status: $status)';
+
  }

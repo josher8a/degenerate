@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PcmaAudioFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PcmaAudioFormatType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PcmaAudioFormatType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PcmaAudioFormatType($value)';
+
  }
 /// The G.711 A-law format.
 @immutable final class PcmaAudioFormat {const PcmaAudioFormat({this.type});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PcmaAudioFormat copyWith({PcmaAudioFormatType? Function()? type}) { return PcmaAudioFormat(
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PcmaAudioFormat &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'PcmaAudioFormat(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'PcmaAudioFormat(type: $type)';
+
  }

@@ -108,7 +108,7 @@ GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerified
   unparsedPlaceOfBirth: unparsedPlaceOfBirth != null ? unparsedPlaceOfBirth() : this.unparsedPlaceOfBirth,
   unparsedSex: unparsedSex != null ? unparsedSex() : this.unparsedSex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoVerifiedOutputs &&
           address == other.address &&
           dob == other.dob &&
@@ -120,7 +120,10 @@ GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerified
           phone == other.phone &&
           sex == other.sex &&
           unparsedPlaceOfBirth == other.unparsedPlaceOfBirth &&
-          unparsedSex == other.unparsedSex; } 
-@override int get hashCode { return Object.hash(address, dob, email, firstName, idNumber, idNumberType, lastName, phone, sex, unparsedPlaceOfBirth, unparsedSex); } 
-@override String toString() { return 'GelatoVerifiedOutputs(address: $address, dob: $dob, email: $email, firstName: $firstName, idNumber: $idNumber, idNumberType: $idNumberType, lastName: $lastName, phone: $phone, sex: $sex, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)'; } 
+          unparsedSex == other.unparsedSex;
+
+@override int get hashCode => Object.hash(address, dob, email, firstName, idNumber, idNumberType, lastName, phone, sex, unparsedPlaceOfBirth, unparsedSex);
+
+@override String toString() => 'GelatoVerifiedOutputs(address: $address, dob: $dob, email: $email, firstName: $firstName, idNumber: $idNumber, idNumberType: $idNumberType, lastName: $lastName, phone: $phone, sex: $sex, unparsedPlaceOfBirth: $unparsedPlaceOfBirth, unparsedSex: $unparsedSex)';
+
  }

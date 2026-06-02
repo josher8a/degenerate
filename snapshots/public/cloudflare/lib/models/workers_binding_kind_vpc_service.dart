@@ -31,11 +31,14 @@ WorkersBindingKindVpcService copyWith({WorkersBindingName? name, String? service
   serviceId: serviceId ?? this.serviceId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindVpcService &&
           name == other.name &&
           serviceId == other.serviceId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, serviceId, type); } 
-@override String toString() { return 'WorkersBindingKindVpcService(name: $name, serviceId: $serviceId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, serviceId, type);
+
+@override String toString() => 'WorkersBindingKindVpcService(name: $name, serviceId: $serviceId, type: $type)';
+
  }

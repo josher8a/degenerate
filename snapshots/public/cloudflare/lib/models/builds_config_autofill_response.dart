@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BuildsPackageManager && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BuildsPackageManager($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BuildsPackageManager && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BuildsPackageManager($value)';
+
  }
 @immutable final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile, this.defaultWorkerName, this.envWorkerNames, this.packageManager, this.scripts, });
 
@@ -72,13 +75,16 @@ BuildsConfigAutofillResponse copyWith({String? Function()? configFile, String? F
   packageManager: packageManager != null ? packageManager() : this.packageManager,
   scripts: scripts != null ? scripts() : this.scripts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsConfigAutofillResponse &&
           configFile == other.configFile &&
           defaultWorkerName == other.defaultWorkerName &&
           envWorkerNames == other.envWorkerNames &&
           packageManager == other.packageManager &&
-          scripts == other.scripts; } 
-@override int get hashCode { return Object.hash(configFile, defaultWorkerName, envWorkerNames, packageManager, scripts); } 
-@override String toString() { return 'BuildsConfigAutofillResponse(configFile: $configFile, defaultWorkerName: $defaultWorkerName, envWorkerNames: $envWorkerNames, packageManager: $packageManager, scripts: $scripts)'; } 
+          scripts == other.scripts;
+
+@override int get hashCode => Object.hash(configFile, defaultWorkerName, envWorkerNames, packageManager, scripts);
+
+@override String toString() => 'BuildsConfigAutofillResponse(configFile: $configFile, defaultWorkerName: $defaultWorkerName, envWorkerNames: $envWorkerNames, packageManager: $packageManager, scripts: $scripts)';
+
  }

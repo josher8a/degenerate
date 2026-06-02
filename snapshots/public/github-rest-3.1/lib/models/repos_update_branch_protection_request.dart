@@ -79,7 +79,7 @@ ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestR
   lockBranch: lockBranch != null ? lockBranch() : this.lockBranch,
   allowForkSyncing: allowForkSyncing != null ? allowForkSyncing() : this.allowForkSyncing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateBranchProtectionRequest &&
           requiredStatusChecks == other.requiredStatusChecks &&
           enforceAdmins == other.enforceAdmins &&
@@ -91,7 +91,10 @@ ReposUpdateBranchProtectionRequest copyWith({ReposUpdateBranchProtectionRequestR
           blockCreations == other.blockCreations &&
           requiredConversationResolution == other.requiredConversationResolution &&
           lockBranch == other.lockBranch &&
-          allowForkSyncing == other.allowForkSyncing; } 
-@override int get hashCode { return Object.hash(requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, lockBranch, allowForkSyncing); } 
-@override String toString() { return 'ReposUpdateBranchProtectionRequest(requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)'; } 
+          allowForkSyncing == other.allowForkSyncing;
+
+@override int get hashCode => Object.hash(requiredStatusChecks, enforceAdmins, requiredPullRequestReviews, restrictions, requiredLinearHistory, allowForcePushes, allowDeletions, blockCreations, requiredConversationResolution, lockBranch, allowForkSyncing);
+
+@override String toString() => 'ReposUpdateBranchProtectionRequest(requiredStatusChecks: $requiredStatusChecks, enforceAdmins: $enforceAdmins, requiredPullRequestReviews: $requiredPullRequestReviews, restrictions: $restrictions, requiredLinearHistory: $requiredLinearHistory, allowForcePushes: $allowForcePushes, allowDeletions: $allowDeletions, blockCreations: $blockCreations, requiredConversationResolution: $requiredConversationResolution, lockBranch: $lockBranch, allowForkSyncing: $allowForkSyncing)';
+
  }

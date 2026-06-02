@@ -26,11 +26,14 @@ MconnAdminEventsGetResult copyWith({double? count, String? Function()? cursor, L
   cursor: cursor != null ? cursor() : this.cursor,
   items: items ?? this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminEventsGetResult &&
           count == other.count &&
           cursor == other.cursor &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(count, cursor, Object.hashAll(items)); } 
-@override String toString() { return 'MconnAdminEventsGetResult(count: $count, cursor: $cursor, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(count, cursor, Object.hashAll(items));
+
+@override String toString() => 'MconnAdminEventsGetResult(count: $count, cursor: $cursor, items: $items)';
+
  }

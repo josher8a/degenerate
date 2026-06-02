@@ -43,10 +43,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZarazLoadRuleOp && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZarazLoadRuleOp($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZarazLoadRuleOp && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZarazLoadRuleOp($value)';
+
  }
 @immutable final class ZarazLoadRule {const ZarazLoadRule({required this.id, required this.match, required this.op, required this.value, });
 
@@ -81,12 +84,15 @@ ZarazLoadRule copyWith({String? id, String? match, ZarazLoadRuleOp? op, String? 
   op: op ?? this.op,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazLoadRule &&
           id == other.id &&
           match == other.match &&
           op == other.op &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, match, op, value); } 
-@override String toString() { return 'ZarazLoadRule(id: $id, match: $match, op: $op, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, match, op, value);
+
+@override String toString() => 'ZarazLoadRule(id: $id, match: $match, op: $op, value: $value)';
+
  }

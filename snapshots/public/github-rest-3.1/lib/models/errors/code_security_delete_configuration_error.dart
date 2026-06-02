@@ -20,25 +20,29 @@ final class CodeSecurityDeleteConfigurationError$400 extends CodeSecurityDeleteC
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CodeSecurityDeleteConfigurationError$403 extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeSecurityDeleteConfigurationError$404 extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeSecurityDeleteConfigurationError$409 extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class CodeSecurityDeleteConfigurationError$Unknown extends CodeSecurityDeleteConfigurationError {const CodeSecurityDeleteConfigurationError$Unknown(this.statusCode, this.rawBody, );
 

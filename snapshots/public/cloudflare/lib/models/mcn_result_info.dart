@@ -53,13 +53,16 @@ McnResultInfo copyWith({int? count, int? page, int? perPage, int? totalCount, in
   totalCount: totalCount ?? this.totalCount,
   totalPages: totalPages != null ? totalPages() : this.totalPages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResultInfo &&
           count == other.count &&
           page == other.page &&
           perPage == other.perPage &&
           totalCount == other.totalCount &&
-          totalPages == other.totalPages; } 
-@override int get hashCode { return Object.hash(count, page, perPage, totalCount, totalPages); } 
-@override String toString() { return 'McnResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)'; } 
+          totalPages == other.totalPages;
+
+@override int get hashCode => Object.hash(count, page, perPage, totalCount, totalPages);
+
+@override String toString() => 'McnResultInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)';
+
  }

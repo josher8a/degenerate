@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhooksReviewersType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhooksReviewersType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhooksReviewersType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhooksReviewersType($value)';
+
  }
 @immutable final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });
 
@@ -41,10 +44,13 @@ WebhooksReviewers2 copyWith({WebhooksReviewersReviewer? Function()? reviewer, We
   reviewer: reviewer != null ? reviewer() : this.reviewer,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReviewers2 &&
           reviewer == other.reviewer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(reviewer, type); } 
-@override String toString() { return 'WebhooksReviewers2(reviewer: $reviewer, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(reviewer, type);
+
+@override String toString() => 'WebhooksReviewers2(reviewer: $reviewer, type: $type)';
+
  }

@@ -55,7 +55,7 @@ ListSipCredentialListMappingResponse copyWith({List<AccountSipSipDomainSipCreden
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListSipCredentialListMappingResponse &&
           listEquals(credentialListMappings, other.credentialListMappings) &&
           end == other.end &&
@@ -65,7 +65,10 @@ ListSipCredentialListMappingResponse copyWith({List<AccountSipSipDomainSipCreden
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(credentialListMappings ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListSipCredentialListMappingResponse(credentialListMappings: $credentialListMappings, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(credentialListMappings ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
+
+@override String toString() => 'ListSipCredentialListMappingResponse(credentialListMappings: $credentialListMappings, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+
  }

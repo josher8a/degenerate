@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WaitingroomRulePositionVariant1 copyWith({int? Function()? index}) { return WaitingroomRulePositionVariant1(
   index: index != null ? index() : this.index,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomRulePositionVariant1 &&
-          index == other.index; } 
-@override int get hashCode { return index.hashCode; } 
-@override String toString() { return 'WaitingroomRulePositionVariant1(index: $index)'; } 
+          index == other.index;
+
+@override int get hashCode => index.hashCode;
+
+@override String toString() => 'WaitingroomRulePositionVariant1(index: $index)';
+
  }

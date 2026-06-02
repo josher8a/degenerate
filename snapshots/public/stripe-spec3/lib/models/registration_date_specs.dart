@@ -27,11 +27,14 @@ RegistrationDateSpecs copyWith({int? day, int? month, int? year, }) { return Reg
   month: month ?? this.month,
   year: year ?? this.year,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RegistrationDateSpecs &&
           day == other.day &&
           month == other.month &&
-          year == other.year; } 
-@override int get hashCode { return Object.hash(day, month, year); } 
-@override String toString() { return 'RegistrationDateSpecs(day: $day, month: $month, year: $year)'; } 
+          year == other.year;
+
+@override int get hashCode => Object.hash(day, month, year);
+
+@override String toString() => 'RegistrationDateSpecs(day: $day, month: $month, year: $year)';
+
  }

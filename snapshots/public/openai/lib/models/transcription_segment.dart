@@ -79,7 +79,7 @@ TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, S
   compressionRatio: compressionRatio ?? this.compressionRatio,
   noSpeechProb: noSpeechProb ?? this.noSpeechProb,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptionSegment &&
           id == other.id &&
           seek == other.seek &&
@@ -90,7 +90,10 @@ TranscriptionSegment copyWith({int? id, int? seek, double? start, double? end, S
           temperature == other.temperature &&
           avgLogprob == other.avgLogprob &&
           compressionRatio == other.compressionRatio &&
-          noSpeechProb == other.noSpeechProb; } 
-@override int get hashCode { return Object.hash(id, seek, start, end, text, Object.hashAll(tokens), temperature, avgLogprob, compressionRatio, noSpeechProb); } 
-@override String toString() { return 'TranscriptionSegment(id: $id, seek: $seek, start: $start, end: $end, text: $text, tokens: $tokens, temperature: $temperature, avgLogprob: $avgLogprob, compressionRatio: $compressionRatio, noSpeechProb: $noSpeechProb)'; } 
+          noSpeechProb == other.noSpeechProb;
+
+@override int get hashCode => Object.hash(id, seek, start, end, text, Object.hashAll(tokens), temperature, avgLogprob, compressionRatio, noSpeechProb);
+
+@override String toString() => 'TranscriptionSegment(id: $id, seek: $seek, start: $start, end: $end, text: $text, tokens: $tokens, temperature: $temperature, avgLogprob: $avgLogprob, compressionRatio: $compressionRatio, noSpeechProb: $noSpeechProb)';
+
  }

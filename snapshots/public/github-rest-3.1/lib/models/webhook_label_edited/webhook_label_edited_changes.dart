@@ -26,11 +26,14 @@ WebhookLabelEditedChanges copyWith({ChangesColor? Function()? color, WebhookLabe
   description: description != null ? description() : this.description,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookLabelEditedChanges &&
           color == other.color &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(color, description, name); } 
-@override String toString() { return 'WebhookLabelEditedChanges(color: $color, description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(color, description, name);
+
+@override String toString() => 'WebhookLabelEditedChanges(color: $color, description: $description, name: $name)';
+
  }

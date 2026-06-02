@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TranscriptionDiarizedSegmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TranscriptionDiarizedSegmentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TranscriptionDiarizedSegmentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TranscriptionDiarizedSegmentType($value)';
+
  }
 /// A segment of diarized transcript text with speaker metadata.
 @immutable final class TranscriptionDiarizedSegment {const TranscriptionDiarizedSegment({required this.type, required this.id, required this.start, required this.end, required this.text, required this.speaker, });
@@ -77,14 +80,17 @@ TranscriptionDiarizedSegment copyWith({TranscriptionDiarizedSegmentType? type, S
   text: text ?? this.text,
   speaker: speaker ?? this.speaker,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptionDiarizedSegment &&
           type == other.type &&
           id == other.id &&
           start == other.start &&
           end == other.end &&
           text == other.text &&
-          speaker == other.speaker; } 
-@override int get hashCode { return Object.hash(type, id, start, end, text, speaker); } 
-@override String toString() { return 'TranscriptionDiarizedSegment(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)'; } 
+          speaker == other.speaker;
+
+@override int get hashCode => Object.hash(type, id, start, end, text, speaker);
+
+@override String toString() => 'TranscriptionDiarizedSegment(type: $type, id: $id, start: $start, end: $end, text: $text, speaker: $speaker)';
+
  }

@@ -21,10 +21,13 @@ OrderCreated copyWith({String? id, double? amount, }) { return OrderCreated(
   id: id ?? this.id,
   amount: amount ?? this.amount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrderCreated &&
           id == other.id &&
-          amount == other.amount; } 
-@override int get hashCode { return Object.hash(id, amount); } 
-@override String toString() { return 'OrderCreated(id: $id, amount: $amount)'; } 
+          amount == other.amount;
+
+@override int get hashCode => Object.hash(id, amount);
+
+@override String toString() => 'OrderCreated(id: $id, amount: $amount)';
+
  }

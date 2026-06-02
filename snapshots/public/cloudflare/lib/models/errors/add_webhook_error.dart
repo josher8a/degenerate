@@ -17,7 +17,8 @@ final class AddWebhookError$400 extends AddWebhookError {const AddWebhookError$4
 
 final RealtimekitErrorResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AddWebhookError$Unknown extends AddWebhookError {const AddWebhookError$Unknown(this.statusCode, this.rawBody, );
 

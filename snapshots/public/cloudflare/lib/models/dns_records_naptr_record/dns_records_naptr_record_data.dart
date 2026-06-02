@@ -64,14 +64,17 @@ DnsRecordsNaptrRecordData copyWith({String? Function()? flags, double? Function(
   replacement: replacement != null ? replacement() : this.replacement,
   service: service != null ? service() : this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsNaptrRecordData &&
           flags == other.flags &&
           order == other.order &&
           preference == other.preference &&
           regex == other.regex &&
           replacement == other.replacement &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(flags, order, preference, regex, replacement, service); } 
-@override String toString() { return 'DnsRecordsNaptrRecordData(flags: $flags, order: $order, preference: $preference, regex: $regex, replacement: $replacement, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(flags, order, preference, regex, replacement, service);
+
+@override String toString() => 'DnsRecordsNaptrRecordData(flags: $flags, order: $order, preference: $preference, regex: $regex, replacement: $replacement, service: $service)';
+
  }

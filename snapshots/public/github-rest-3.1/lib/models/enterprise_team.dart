@@ -86,7 +86,7 @@ EnterpriseTeam copyWith({int? id, String? name, String? Function()? description,
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseTeam &&
           id == other.id &&
           name == other.name &&
@@ -100,7 +100,10 @@ EnterpriseTeam copyWith({int? id, String? name, String? Function()? description,
           htmlUrl == other.htmlUrl &&
           membersUrl == other.membersUrl &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, name, description, slug, url, syncToOrganizations, organizationSelectionType, groupId, groupName, htmlUrl, membersUrl, createdAt, updatedAt); } 
-@override String toString() { return 'EnterpriseTeam(id: $id, name: $name, description: $description, slug: $slug, url: $url, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId, groupName: $groupName, htmlUrl: $htmlUrl, membersUrl: $membersUrl, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, name, description, slug, url, syncToOrganizations, organizationSelectionType, groupId, groupName, htmlUrl, membersUrl, createdAt, updatedAt);
+
+@override String toString() => 'EnterpriseTeam(id: $id, name: $name, description: $description, slug: $slug, url: $url, syncToOrganizations: $syncToOrganizations, organizationSelectionType: $organizationSelectionType, groupId: $groupId, groupName: $groupName, htmlUrl: $htmlUrl, membersUrl: $membersUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

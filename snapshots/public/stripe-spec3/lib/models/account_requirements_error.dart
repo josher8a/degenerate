@@ -302,10 +302,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountRequirementsErrorCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountRequirementsErrorCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountRequirementsErrorCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountRequirementsErrorCode($value)';
+
  }
 /// 
 @immutable final class AccountRequirementsError {const AccountRequirementsError({required this.code, required this.reason, required this.requirement, });
@@ -343,11 +346,14 @@ AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? r
   reason: reason ?? this.reason,
   requirement: requirement ?? this.requirement,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequirementsError &&
           code == other.code &&
           reason == other.reason &&
-          requirement == other.requirement; } 
-@override int get hashCode { return Object.hash(code, reason, requirement); } 
-@override String toString() { return 'AccountRequirementsError(code: $code, reason: $reason, requirement: $requirement)'; } 
+          requirement == other.requirement;
+
+@override int get hashCode => Object.hash(code, reason, requirement);
+
+@override String toString() => 'AccountRequirementsError(code: $code, reason: $reason, requirement: $requirement)';
+
  }

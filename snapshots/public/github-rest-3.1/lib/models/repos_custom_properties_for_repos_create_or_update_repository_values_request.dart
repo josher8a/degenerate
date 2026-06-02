@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prope
 ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest copyWith({List<CustomPropertyValue>? properties}) { return ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest(
   properties: properties ?? this.properties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest &&
-          listEquals(properties, other.properties); } 
-@override int get hashCode { return Object.hashAll(properties); } 
-@override String toString() { return 'ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest(properties: $properties)'; } 
+          listEquals(properties, other.properties);
+
+@override int get hashCode => Object.hashAll(properties);
+
+@override String toString() => 'ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesRequest(properties: $properties)';
+
  }

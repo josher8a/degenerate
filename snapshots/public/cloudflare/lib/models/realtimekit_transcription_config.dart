@@ -44,10 +44,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Language && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Language($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Language && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Language($value)';
+
  }
 /// Transcription Configurations
 @immutable final class RealtimekitTranscriptionConfig {const RealtimekitTranscriptionConfig({this.keywords, this.language = Language.enUs, this.profanityFilter = false, });
@@ -78,11 +81,14 @@ RealtimekitTranscriptionConfig copyWith({List<String>? Function()? keywords, Lan
   language: language != null ? language() : this.language,
   profanityFilter: profanityFilter != null ? profanityFilter() : this.profanityFilter,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitTranscriptionConfig &&
           listEquals(keywords, other.keywords) &&
           language == other.language &&
-          profanityFilter == other.profanityFilter; } 
-@override int get hashCode { return Object.hash(Object.hashAll(keywords ?? const []), language, profanityFilter); } 
-@override String toString() { return 'RealtimekitTranscriptionConfig(keywords: $keywords, language: $language, profanityFilter: $profanityFilter)'; } 
+          profanityFilter == other.profanityFilter;
+
+@override int get hashCode => Object.hash(Object.hashAll(keywords ?? const []), language, profanityFilter);
+
+@override String toString() => 'RealtimekitTranscriptionConfig(keywords: $keywords, language: $language, profanityFilter: $profanityFilter)';
+
  }

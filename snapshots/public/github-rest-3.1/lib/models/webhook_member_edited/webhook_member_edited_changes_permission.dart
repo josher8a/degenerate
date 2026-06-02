@@ -20,10 +20,13 @@ WebhookMemberEditedChangesPermission copyWith({String? Function()? from, String?
   from: from != null ? from() : this.from,
   to: to != null ? to() : this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberEditedChangesPermission &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'WebhookMemberEditedChangesPermission(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'WebhookMemberEditedChangesPermission(from: $from, to: $to)';
+
  }

@@ -27,10 +27,13 @@ ShieldConfidenceIntervalsBounds copyWith({double? Function()? lower, double? Fun
   lower: lower != null ? lower() : this.lower,
   upper: upper != null ? upper() : this.upper,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldConfidenceIntervalsBounds &&
           lower == other.lower &&
-          upper == other.upper; } 
-@override int get hashCode { return Object.hash(lower, upper); } 
-@override String toString() { return 'ShieldConfidenceIntervalsBounds(lower: $lower, upper: $upper)'; } 
+          upper == other.upper;
+
+@override int get hashCode => Object.hash(lower, upper);
+
+@override String toString() => 'ShieldConfidenceIntervalsBounds(lower: $lower, upper: $upper)';
+
  }

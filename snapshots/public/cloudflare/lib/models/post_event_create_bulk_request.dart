@@ -28,11 +28,14 @@ PostEventCreateBulkRequest copyWith({List<PostDosEventCreateBulkWithRelationship
   datasetId: datasetId ?? this.datasetId,
   includeCreatedEvents: includeCreatedEvents != null ? includeCreatedEvents() : this.includeCreatedEvents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventCreateBulkRequest &&
           listEquals(data, other.data) &&
           datasetId == other.datasetId &&
-          includeCreatedEvents == other.includeCreatedEvents; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), datasetId, includeCreatedEvents); } 
-@override String toString() { return 'PostEventCreateBulkRequest(data: $data, datasetId: $datasetId, includeCreatedEvents: $includeCreatedEvents)'; } 
+          includeCreatedEvents == other.includeCreatedEvents;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), datasetId, includeCreatedEvents);
+
+@override String toString() => 'PostEventCreateBulkRequest(data: $data, datasetId: $datasetId, includeCreatedEvents: $includeCreatedEvents)';
+
  }

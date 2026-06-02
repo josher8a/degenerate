@@ -72,14 +72,17 @@ SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, Secondar
   port: port != null ? port() : this.port,
   tsigId: tsigId != null ? tsigId() : this.tsigId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsPeer &&
           id == other.id &&
           ip == other.ip &&
           ixfrEnable == other.ixfrEnable &&
           name == other.name &&
           port == other.port &&
-          tsigId == other.tsigId; } 
-@override int get hashCode { return Object.hash(id, ip, ixfrEnable, name, port, tsigId); } 
-@override String toString() { return 'SecondaryDnsPeer(id: $id, ip: $ip, ixfrEnable: $ixfrEnable, name: $name, port: $port, tsigId: $tsigId)'; } 
+          tsigId == other.tsigId;
+
+@override int get hashCode => Object.hash(id, ip, ixfrEnable, name, port, tsigId);
+
+@override String toString() => 'SecondaryDnsPeer(id: $id, ip: $ip, ixfrEnable: $ixfrEnable, name: $name, port: $port, tsigId: $tsigId)';
+
  }

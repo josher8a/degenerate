@@ -64,7 +64,7 @@ UpdateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, bool F
   summarizeOnEnd: summarizeOnEnd != null ? summarizeOnEnd() : this.summarizeOnEnd,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateMeetingRequest &&
           aiConfig == other.aiConfig &&
           liveStreamOnStart == other.liveStreamOnStart &&
@@ -73,7 +73,10 @@ UpdateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, bool F
           sessionKeepAliveTimeInSecs == other.sessionKeepAliveTimeInSecs &&
           status == other.status &&
           summarizeOnEnd == other.summarizeOnEnd &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(aiConfig, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title); } 
-@override String toString() { return 'UpdateMeetingRequest(aiConfig: $aiConfig, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(aiConfig, liveStreamOnStart, persistChat, recordOnStart, sessionKeepAliveTimeInSecs, status, summarizeOnEnd, title);
+
+@override String toString() => 'UpdateMeetingRequest(aiConfig: $aiConfig, liveStreamOnStart: $liveStreamOnStart, persistChat: $persistChat, recordOnStart: $recordOnStart, sessionKeepAliveTimeInSecs: $sessionKeepAliveTimeInSecs, status: $status, summarizeOnEnd: $summarizeOnEnd, title: $title)';
+
  }

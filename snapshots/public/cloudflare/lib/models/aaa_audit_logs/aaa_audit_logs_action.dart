@@ -26,10 +26,13 @@ AaaAuditLogsAction copyWith({bool? Function()? result, String? Function()? type,
   result: result != null ? result() : this.result,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsAction &&
           result == other.result &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(result, type); } 
-@override String toString() { return 'AaaAuditLogsAction(result: $result, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(result, type);
+
+@override String toString() => 'AaaAuditLogsAction(result: $result, type: $type)';
+
  }

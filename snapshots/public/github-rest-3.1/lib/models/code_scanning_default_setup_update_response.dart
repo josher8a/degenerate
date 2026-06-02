@@ -24,10 +24,13 @@ CodeScanningDefaultSetupUpdateResponse copyWith({int? Function()? runId, String?
   runId: runId != null ? runId() : this.runId,
   runUrl: runUrl != null ? runUrl() : this.runUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningDefaultSetupUpdateResponse &&
           runId == other.runId &&
-          runUrl == other.runUrl; } 
-@override int get hashCode { return Object.hash(runId, runUrl); } 
-@override String toString() { return 'CodeScanningDefaultSetupUpdateResponse(runId: $runId, runUrl: $runUrl)'; } 
+          runUrl == other.runUrl;
+
+@override int get hashCode => Object.hash(runId, runUrl);
+
+@override String toString() => 'CodeScanningDefaultSetupUpdateResponse(runId: $runId, runUrl: $runUrl)';
+
  }

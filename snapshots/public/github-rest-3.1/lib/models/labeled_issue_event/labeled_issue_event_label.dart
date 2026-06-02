@@ -21,10 +21,13 @@ LabeledIssueEventLabel copyWith({String? name, String? color, }) { return Labele
   name: name ?? this.name,
   color: color ?? this.color,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LabeledIssueEventLabel &&
           name == other.name &&
-          color == other.color; } 
-@override int get hashCode { return Object.hash(name, color); } 
-@override String toString() { return 'LabeledIssueEventLabel(name: $name, color: $color)'; } 
+          color == other.color;
+
+@override int get hashCode => Object.hash(name, color);
+
+@override String toString() => 'LabeledIssueEventLabel(name: $name, color: $color)';
+
  }

@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookResponseIncompleteType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookResponseIncompleteType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookResponseIncompleteType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookResponseIncompleteType($value)';
+
  }
 /// Sent when a background response has been interrupted.
 /// 
@@ -73,13 +76,16 @@ WebhookResponseIncomplete copyWith({int? createdAt, String? id, WebhookBatchCanc
   object: object != null ? object() : this.object,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookResponseIncomplete &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookResponseIncomplete(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, id, data, object, type);
+
+@override String toString() => 'WebhookResponseIncomplete(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';
+
  }

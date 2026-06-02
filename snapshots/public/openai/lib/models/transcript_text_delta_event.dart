@@ -40,12 +40,15 @@ TranscriptTextDeltaEvent copyWith({String? type, String? delta, List<TranscriptT
   logprobs: logprobs != null ? logprobs() : this.logprobs,
   segmentId: segmentId != null ? segmentId() : this.segmentId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDeltaEvent &&
           type == other.type &&
           delta == other.delta &&
           listEquals(logprobs, other.logprobs) &&
-          segmentId == other.segmentId; } 
-@override int get hashCode { return Object.hash(type, delta, Object.hashAll(logprobs ?? const []), segmentId); } 
-@override String toString() { return 'TranscriptTextDeltaEvent(type: $type, delta: $delta, logprobs: $logprobs, segmentId: $segmentId)'; } 
+          segmentId == other.segmentId;
+
+@override int get hashCode => Object.hash(type, delta, Object.hashAll(logprobs ?? const []), segmentId);
+
+@override String toString() => 'TranscriptTextDeltaEvent(type: $type, delta: $delta, logprobs: $logprobs, segmentId: $segmentId)';
+
  }

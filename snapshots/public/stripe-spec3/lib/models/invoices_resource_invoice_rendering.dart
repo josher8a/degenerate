@@ -46,12 +46,15 @@ InvoicesResourceInvoiceRendering copyWith({String? Function()? amountTaxDisplay,
   template: template != null ? template() : this.template,
   templateVersion: templateVersion != null ? templateVersion() : this.templateVersion,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesResourceInvoiceRendering &&
           amountTaxDisplay == other.amountTaxDisplay &&
           pdf == other.pdf &&
           template == other.template &&
-          templateVersion == other.templateVersion; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, pdf, template, templateVersion); } 
-@override String toString() { return 'InvoicesResourceInvoiceRendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)'; } 
+          templateVersion == other.templateVersion;
+
+@override int get hashCode => Object.hash(amountTaxDisplay, pdf, template, templateVersion);
+
+@override String toString() => 'InvoicesResourceInvoiceRendering(amountTaxDisplay: $amountTaxDisplay, pdf: $pdf, template: $template, templateVersion: $templateVersion)';
+
  }

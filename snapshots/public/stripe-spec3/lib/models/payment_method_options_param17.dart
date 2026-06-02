@@ -35,13 +35,16 @@ PaymentMethodOptionsParam17 copyWith({PaymentIntentParamCaptureMethod? Function(
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsParam17 &&
           captureMethod == other.captureMethod &&
           onDemand == other.onDemand &&
           preferredLocale == other.preferredLocale &&
           setupFutureUsage == other.setupFutureUsage &&
-          subscriptions == other.subscriptions; } 
-@override int get hashCode { return Object.hash(captureMethod, onDemand, preferredLocale, setupFutureUsage, subscriptions); } 
-@override String toString() { return 'PaymentMethodOptionsParam17(captureMethod: $captureMethod, onDemand: $onDemand, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage, subscriptions: $subscriptions)'; } 
+          subscriptions == other.subscriptions;
+
+@override int get hashCode => Object.hash(captureMethod, onDemand, preferredLocale, setupFutureUsage, subscriptions);
+
+@override String toString() => 'PaymentMethodOptionsParam17(captureMethod: $captureMethod, onDemand: $onDemand, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage, subscriptions: $subscriptions)';
+
  }

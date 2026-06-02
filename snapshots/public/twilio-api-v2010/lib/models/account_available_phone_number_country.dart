@@ -40,13 +40,16 @@ AccountAvailablePhoneNumberCountry copyWith({String? Function()? countryCode, St
   beta: beta != null ? beta() : this.beta,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAvailablePhoneNumberCountry &&
           countryCode == other.countryCode &&
           country == other.country &&
           uri == other.uri &&
           beta == other.beta &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(countryCode, country, uri, beta, subresourceUris); } 
-@override String toString() { return 'AccountAvailablePhoneNumberCountry(countryCode: $countryCode, country: $country, uri: $uri, beta: $beta, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hash(countryCode, country, uri, beta, subresourceUris);
+
+@override String toString() => 'AccountAvailablePhoneNumberCountry(countryCode: $countryCode, country: $country, uri: $uri, beta: $beta, subresourceUris: $subresourceUris)';
+
  }

@@ -61,14 +61,17 @@ OutputMessage copyWith({String? id, String? type, ChatCompletionResponseMessageR
   phase: phase != null ? phase() : this.phase,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutputMessage &&
           id == other.id &&
           type == other.type &&
           role == other.role &&
           listEquals(content, other.content) &&
           phase == other.phase &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, type, role, Object.hashAll(content), phase, status); } 
-@override String toString() { return 'OutputMessage(id: $id, type: $type, role: $role, content: $content, phase: $phase, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, type, role, Object.hashAll(content), phase, status);
+
+@override String toString() => 'OutputMessage(id: $id, type: $type, role: $role, content: $content, phase: $phase, status: $status)';
+
  }

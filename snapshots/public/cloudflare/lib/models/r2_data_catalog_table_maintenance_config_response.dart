@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('maint
 R2DataCatalogTableMaintenanceConfigResponse copyWith({R2DataCatalogTableMaintenanceConfig? maintenanceConfig}) { return R2DataCatalogTableMaintenanceConfigResponse(
   maintenanceConfig: maintenanceConfig ?? this.maintenanceConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2DataCatalogTableMaintenanceConfigResponse &&
-          maintenanceConfig == other.maintenanceConfig; } 
-@override int get hashCode { return maintenanceConfig.hashCode; } 
-@override String toString() { return 'R2DataCatalogTableMaintenanceConfigResponse(maintenanceConfig: $maintenanceConfig)'; } 
+          maintenanceConfig == other.maintenanceConfig;
+
+@override int get hashCode => maintenanceConfig.hashCode;
+
+@override String toString() => 'R2DataCatalogTableMaintenanceConfigResponse(maintenanceConfig: $maintenanceConfig)';
+
  }

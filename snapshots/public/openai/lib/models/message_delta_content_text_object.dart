@@ -29,11 +29,14 @@ MessageDeltaContentTextObject copyWith({int? index, CustomTextFormatParamType? t
   type: type ?? this.type,
   text: text != null ? text() : this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextObject &&
           index == other.index &&
           type == other.type &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(index, type, text); } 
-@override String toString() { return 'MessageDeltaContentTextObject(index: $index, type: $type, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(index, type, text);
+
+@override String toString() => 'MessageDeltaContentTextObject(index: $index, type: $type, text: $text)';
+
  }

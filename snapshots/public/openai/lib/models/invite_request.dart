@@ -29,11 +29,14 @@ InviteRequest copyWith({String? email, InviteRequestRole? role, List<InviteReque
   role: role ?? this.role,
   projects: projects != null ? projects() : this.projects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InviteRequest &&
           email == other.email &&
           role == other.role &&
-          listEquals(projects, other.projects); } 
-@override int get hashCode { return Object.hash(email, role, Object.hashAll(projects ?? const [])); } 
-@override String toString() { return 'InviteRequest(email: $email, role: $role, projects: $projects)'; } 
+          listEquals(projects, other.projects);
+
+@override int get hashCode => Object.hash(email, role, Object.hashAll(projects ?? const []));
+
+@override String toString() => 'InviteRequest(email: $email, role: $role, projects: $projects)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
 MuteAllParticipantsRequest copyWith({bool? allowUnmute}) { return MuteAllParticipantsRequest(
   allowUnmute: allowUnmute ?? this.allowUnmute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MuteAllParticipantsRequest &&
-          allowUnmute == other.allowUnmute; } 
-@override int get hashCode { return allowUnmute.hashCode; } 
-@override String toString() { return 'MuteAllParticipantsRequest(allowUnmute: $allowUnmute)'; } 
+          allowUnmute == other.allowUnmute;
+
+@override int get hashCode => allowUnmute.hashCode;
+
+@override String toString() => 'MuteAllParticipantsRequest(allowUnmute: $allowUnmute)';
+
  }

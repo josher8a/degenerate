@@ -59,7 +59,7 @@ DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()
   preconditions: preconditions != null ? preconditions() : this.preconditions,
   propagationPolicy: propagationPolicy != null ? propagationPolicy() : this.propagationPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteOptions &&
           apiVersion == other.apiVersion &&
           listEquals(dryRun, other.dryRun) &&
@@ -68,7 +68,10 @@ DeleteOptions copyWith({String? Function()? apiVersion, List<String>? Function()
           kind == other.kind &&
           orphanDependents == other.orphanDependents &&
           preconditions == other.preconditions &&
-          propagationPolicy == other.propagationPolicy; } 
-@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(dryRun ?? const []), gracePeriodSeconds, ignoreStoreReadErrorWithClusterBreakingPotential, kind, orphanDependents, preconditions, propagationPolicy); } 
-@override String toString() { return 'DeleteOptions(apiVersion: $apiVersion, dryRun: $dryRun, gracePeriodSeconds: $gracePeriodSeconds, ignoreStoreReadErrorWithClusterBreakingPotential: $ignoreStoreReadErrorWithClusterBreakingPotential, kind: $kind, orphanDependents: $orphanDependents, preconditions: $preconditions, propagationPolicy: $propagationPolicy)'; } 
+          propagationPolicy == other.propagationPolicy;
+
+@override int get hashCode => Object.hash(apiVersion, Object.hashAll(dryRun ?? const []), gracePeriodSeconds, ignoreStoreReadErrorWithClusterBreakingPotential, kind, orphanDependents, preconditions, propagationPolicy);
+
+@override String toString() => 'DeleteOptions(apiVersion: $apiVersion, dryRun: $dryRun, gracePeriodSeconds: $gracePeriodSeconds, ignoreStoreReadErrorWithClusterBreakingPotential: $ignoreStoreReadErrorWithClusterBreakingPotential, kind: $kind, orphanDependents: $orphanDependents, preconditions: $preconditions, propagationPolicy: $propagationPolicy)';
+
  }

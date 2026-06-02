@@ -33,12 +33,15 @@ MagicVisibilityMnmMnmConfig copyWith({MagicVisibilityMnmMnmConfigDefaultSampling
   routerIps: routerIps ?? this.routerIps,
   warpDevices: warpDevices ?? this.warpDevices,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMnmConfig &&
           defaultSampling == other.defaultSampling &&
           name == other.name &&
           listEquals(routerIps, other.routerIps) &&
-          listEquals(warpDevices, other.warpDevices); } 
-@override int get hashCode { return Object.hash(defaultSampling, name, Object.hashAll(routerIps), Object.hashAll(warpDevices)); } 
-@override String toString() { return 'MagicVisibilityMnmMnmConfig(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)'; } 
+          listEquals(warpDevices, other.warpDevices);
+
+@override int get hashCode => Object.hash(defaultSampling, name, Object.hashAll(routerIps), Object.hashAll(warpDevices));
+
+@override String toString() => 'MagicVisibilityMnmMnmConfig(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)';
+
  }

@@ -40,11 +40,14 @@ DiscountsVariant1 copyWith({String? Function()? coupon, String? Function()? disc
   discount: discount != null ? discount() : this.discount,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiscountsVariant1 &&
           coupon == other.coupon &&
           discount == other.discount &&
-          promotionCode == other.promotionCode; } 
-@override int get hashCode { return Object.hash(coupon, discount, promotionCode); } 
-@override String toString() { return 'DiscountsVariant1(coupon: $coupon, discount: $discount, promotionCode: $promotionCode)'; } 
+          promotionCode == other.promotionCode;
+
+@override int get hashCode => Object.hash(coupon, discount, promotionCode);
+
+@override String toString() => 'DiscountsVariant1(coupon: $coupon, discount: $discount, promotionCode: $promotionCode)';
+
  }

@@ -39,13 +39,16 @@ PushEvent copyWith({int? repositoryId, int? pushId, String? ref, String? head, S
   head: head ?? this.head,
   before: before ?? this.before,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PushEvent &&
           repositoryId == other.repositoryId &&
           pushId == other.pushId &&
           ref == other.ref &&
           head == other.head &&
-          before == other.before; } 
-@override int get hashCode { return Object.hash(repositoryId, pushId, ref, head, before); } 
-@override String toString() { return 'PushEvent(repositoryId: $repositoryId, pushId: $pushId, ref: $ref, head: $head, before: $before)'; } 
+          before == other.before;
+
+@override int get hashCode => Object.hash(repositoryId, pushId, ref, head, before);
+
+@override String toString() => 'PushEvent(repositoryId: $repositoryId, pushId: $pushId, ref: $ref, head: $head, before: $before)';
+
  }

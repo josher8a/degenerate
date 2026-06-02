@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 OrgsConvertMemberToOutsideCollaboratorRequest copyWith({bool Function()? $async}) { return OrgsConvertMemberToOutsideCollaboratorRequest(
   $async: $async != null ? $async() : this.$async,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsConvertMemberToOutsideCollaboratorRequest &&
-          $async == other.$async; } 
-@override int get hashCode { return $async.hashCode; } 
-@override String toString() { return 'OrgsConvertMemberToOutsideCollaboratorRequest(\$async: ${$async})'; } 
+          $async == other.$async;
+
+@override int get hashCode => $async.hashCode;
+
+@override String toString() => 'OrgsConvertMemberToOutsideCollaboratorRequest(\$async: ${$async})';
+
  }

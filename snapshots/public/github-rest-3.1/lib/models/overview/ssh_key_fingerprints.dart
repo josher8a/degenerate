@@ -30,12 +30,15 @@ SshKeyFingerprints copyWith({String? Function()? sha256Rsa, String? Function()? 
   sha256Ecdsa: sha256Ecdsa != null ? sha256Ecdsa() : this.sha256Ecdsa,
   sha256Ed25519: sha256Ed25519 != null ? sha256Ed25519() : this.sha256Ed25519,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SshKeyFingerprints &&
           sha256Rsa == other.sha256Rsa &&
           sha256Dsa == other.sha256Dsa &&
           sha256Ecdsa == other.sha256Ecdsa &&
-          sha256Ed25519 == other.sha256Ed25519; } 
-@override int get hashCode { return Object.hash(sha256Rsa, sha256Dsa, sha256Ecdsa, sha256Ed25519); } 
-@override String toString() { return 'SshKeyFingerprints(sha256Rsa: $sha256Rsa, sha256Dsa: $sha256Dsa, sha256Ecdsa: $sha256Ecdsa, sha256Ed25519: $sha256Ed25519)'; } 
+          sha256Ed25519 == other.sha256Ed25519;
+
+@override int get hashCode => Object.hash(sha256Rsa, sha256Dsa, sha256Ecdsa, sha256Ed25519);
+
+@override String toString() => 'SshKeyFingerprints(sha256Rsa: $sha256Rsa, sha256Dsa: $sha256Dsa, sha256Ecdsa: $sha256Ecdsa, sha256Ed25519: $sha256Ed25519)';
+
  }

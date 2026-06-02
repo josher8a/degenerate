@@ -48,13 +48,16 @@ BatchUsage copyWith({int? inputTokens, ResponseUsageInputTokensDetails? inputTok
   outputTokensDetails: outputTokensDetails ?? this.outputTokensDetails,
   totalTokens: totalTokens ?? this.totalTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BatchUsage &&
           inputTokens == other.inputTokens &&
           inputTokensDetails == other.inputTokensDetails &&
           outputTokens == other.outputTokens &&
           outputTokensDetails == other.outputTokensDetails &&
-          totalTokens == other.totalTokens; } 
-@override int get hashCode { return Object.hash(inputTokens, inputTokensDetails, outputTokens, outputTokensDetails, totalTokens); } 
-@override String toString() { return 'BatchUsage(inputTokens: $inputTokens, inputTokensDetails: $inputTokensDetails, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, totalTokens: $totalTokens)'; } 
+          totalTokens == other.totalTokens;
+
+@override int get hashCode => Object.hash(inputTokens, inputTokensDetails, outputTokens, outputTokensDetails, totalTokens);
+
+@override String toString() => 'BatchUsage(inputTokens: $inputTokens, inputTokensDetails: $inputTokensDetails, outputTokens: $outputTokens, outputTokensDetails: $outputTokensDetails, totalTokens: $totalTokens)';
+
  }

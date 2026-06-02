@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PcmAudioFormatType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PcmAudioFormatType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PcmAudioFormatType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PcmAudioFormatType($value)';
+
  }
 /// The sample rate of the audio. Always `24000`.
 @immutable final class Rate {const Rate._(this.value);
@@ -39,10 +42,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Rate && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Rate($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Rate && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Rate($value)';
+
  }
 /// The PCM audio format. Only a 24kHz sample rate is supported.
 @immutable final class PcmAudioFormat {const PcmAudioFormat({this.type, this.rate, });
@@ -67,10 +73,13 @@ PcmAudioFormat copyWith({PcmAudioFormatType? Function()? type, Rate? Function()?
   type: type != null ? type() : this.type,
   rate: rate != null ? rate() : this.rate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PcmAudioFormat &&
           type == other.type &&
-          rate == other.rate; } 
-@override int get hashCode { return Object.hash(type, rate); } 
-@override String toString() { return 'PcmAudioFormat(type: $type, rate: $rate)'; } 
+          rate == other.rate;
+
+@override int get hashCode => Object.hash(type, rate);
+
+@override String toString() => 'PcmAudioFormat(type: $type, rate: $rate)';
+
  }

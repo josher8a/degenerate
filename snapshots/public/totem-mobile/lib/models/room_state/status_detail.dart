@@ -46,29 +46,22 @@ final class StatusDetailActive extends StatusDetail {
   String get type => 'active';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...activeDetail.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...activeDetail.toJson(), 'type': type};
 
   StatusDetailActive copyWith({ActiveDetail? activeDetail}) {
     return StatusDetailActive(activeDetail ?? this.activeDetail);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is StatusDetailActive && activeDetail == other.activeDetail;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusDetailActive && activeDetail == other.activeDetail;
 
   @override
-  int get hashCode {
-    return activeDetail.hashCode;
-  }
+  int get hashCode => activeDetail.hashCode;
 
   @override
-  String toString() {
-    return 'StatusDetail.active($activeDetail)';
-  }
+  String toString() => 'StatusDetail.active($activeDetail)';
 }
 
 @immutable
@@ -85,29 +78,22 @@ final class StatusDetailEnded extends StatusDetail {
   String get type => 'ended';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...endedDetail.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {...endedDetail.toJson(), 'type': type};
 
   StatusDetailEnded copyWith({EndReason? reason}) {
     return StatusDetailEnded(endedDetail.copyWith(reason: reason));
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is StatusDetailEnded && endedDetail == other.endedDetail;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusDetailEnded && endedDetail == other.endedDetail;
 
   @override
-  int get hashCode {
-    return endedDetail.hashCode;
-  }
+  int get hashCode => endedDetail.hashCode;
 
   @override
-  String toString() {
-    return 'StatusDetail.ended($endedDetail)';
-  }
+  String toString() => 'StatusDetail.ended($endedDetail)';
 }
 
 @immutable
@@ -124,30 +110,26 @@ final class StatusDetailWaitingRoom extends StatusDetail {
   String get type => 'waiting_room';
 
   @override
-  Map<String, dynamic> toJson() {
-    return {...waitingRoomDetail.toJson(), 'type': type};
-  }
+  Map<String, dynamic> toJson() => {
+    ...waitingRoomDetail.toJson(),
+    'type': type,
+  };
 
   StatusDetailWaitingRoom copyWith({WaitingRoomDetail? waitingRoomDetail}) {
     return StatusDetailWaitingRoom(waitingRoomDetail ?? this.waitingRoomDetail);
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is StatusDetailWaitingRoom &&
-            waitingRoomDetail == other.waitingRoomDetail;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusDetailWaitingRoom &&
+          waitingRoomDetail == other.waitingRoomDetail;
 
   @override
-  int get hashCode {
-    return waitingRoomDetail.hashCode;
-  }
+  int get hashCode => waitingRoomDetail.hashCode;
 
   @override
-  String toString() {
-    return 'StatusDetail.waitingRoom($waitingRoomDetail)';
-  }
+  String toString() => 'StatusDetail.waitingRoom($waitingRoomDetail)';
 }
 
 /// An unknown variant not defined in the OpenAPI spec.
@@ -162,23 +144,16 @@ final class StatusDetail$Unknown extends StatusDetail {
   String get type => json['type'] as String? ?? '';
 
   @override
-  Map<String, dynamic> toJson() {
-    return json;
-  }
+  Map<String, dynamic> toJson() => json;
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is StatusDetail$Unknown && json == other.json;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusDetail$Unknown && json == other.json;
 
   @override
-  int get hashCode {
-    return json.hashCode;
-  }
+  int get hashCode => json.hashCode;
 
   @override
-  String toString() {
-    return 'StatusDetail.unknown($json)';
-  }
+  String toString() => 'StatusDetail.unknown($json)';
 }

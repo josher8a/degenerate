@@ -40,13 +40,16 @@ RepositoriesModels copyWith({String? Function()? name, bool? Function()? isCusto
   totalPrSummariesCreated: totalPrSummariesCreated != null ? totalPrSummariesCreated() : this.totalPrSummariesCreated,
   totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoriesModels &&
           name == other.name &&
           isCustomModel == other.isCustomModel &&
           customModelTrainingDate == other.customModelTrainingDate &&
           totalPrSummariesCreated == other.totalPrSummariesCreated &&
-          totalEngagedUsers == other.totalEngagedUsers; } 
-@override int get hashCode { return Object.hash(name, isCustomModel, customModelTrainingDate, totalPrSummariesCreated, totalEngagedUsers); } 
-@override String toString() { return 'RepositoriesModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalPrSummariesCreated: $totalPrSummariesCreated, totalEngagedUsers: $totalEngagedUsers)'; } 
+          totalEngagedUsers == other.totalEngagedUsers;
+
+@override int get hashCode => Object.hash(name, isCustomModel, customModelTrainingDate, totalPrSummariesCreated, totalEngagedUsers);
+
+@override String toString() => 'RepositoriesModels(name: $name, isCustomModel: $isCustomModel, customModelTrainingDate: $customModelTrainingDate, totalPrSummariesCreated: $totalPrSummariesCreated, totalEngagedUsers: $totalEngagedUsers)';
+
  }

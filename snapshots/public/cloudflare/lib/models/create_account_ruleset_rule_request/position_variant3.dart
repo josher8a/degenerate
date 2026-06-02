@@ -25,9 +25,12 @@ return errors; }
 PositionVariant3 copyWith({int? Function()? index}) { return PositionVariant3(
   index: index != null ? index() : this.index,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PositionVariant3 &&
-          index == other.index; } 
-@override int get hashCode { return index.hashCode; } 
-@override String toString() { return 'PositionVariant3(index: $index)'; } 
+          index == other.index;
+
+@override int get hashCode => index.hashCode;
+
+@override String toString() => 'PositionVariant3(index: $index)';
+
  }

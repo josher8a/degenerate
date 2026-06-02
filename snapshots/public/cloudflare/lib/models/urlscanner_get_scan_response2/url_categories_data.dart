@@ -33,12 +33,15 @@ UrlCategoriesData copyWith({List<UrlCategoriesDataContent>? content, DataInherit
   name: name ?? this.name,
   risks: risks ?? this.risks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlCategoriesData &&
           listEquals(content, other.content) &&
           inherited == other.inherited &&
           name == other.name &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content), inherited, name, Object.hashAll(risks)); } 
-@override String toString() { return 'UrlCategoriesData(content: $content, inherited: $inherited, name: $name, risks: $risks)'; } 
+          listEquals(risks, other.risks);
+
+@override int get hashCode => Object.hash(Object.hashAll(content), inherited, name, Object.hashAll(risks));
+
+@override String toString() => 'UrlCategoriesData(content: $content, inherited: $inherited, name: $name, risks: $risks)';
+
  }

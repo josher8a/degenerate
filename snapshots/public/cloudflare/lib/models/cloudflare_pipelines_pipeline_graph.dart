@@ -21,10 +21,13 @@ CloudflarePipelinesPipelineGraph copyWith({List<CloudflarePipelinesPipelineEdge>
   edges: edges ?? this.edges,
   nodes: nodes ?? this.nodes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflarePipelinesPipelineGraph &&
           listEquals(edges, other.edges) &&
-          listEquals(nodes, other.nodes); } 
-@override int get hashCode { return Object.hash(Object.hashAll(edges), Object.hashAll(nodes)); } 
-@override String toString() { return 'CloudflarePipelinesPipelineGraph(edges: $edges, nodes: $nodes)'; } 
+          listEquals(nodes, other.nodes);
+
+@override int get hashCode => Object.hash(Object.hashAll(edges), Object.hashAll(nodes));
+
+@override String toString() => 'CloudflarePipelinesPipelineGraph(edges: $edges, nodes: $nodes)';
+
  }

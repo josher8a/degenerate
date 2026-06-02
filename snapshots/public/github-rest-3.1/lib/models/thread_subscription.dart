@@ -50,7 +50,7 @@ ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()
   threadUrl: threadUrl != null ? threadUrl() : this.threadUrl,
   repositoryUrl: repositoryUrl != null ? repositoryUrl() : this.repositoryUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadSubscription &&
           subscribed == other.subscribed &&
           ignored == other.ignored &&
@@ -58,7 +58,10 @@ ThreadSubscription copyWith({bool? subscribed, bool? ignored, String? Function()
           createdAt == other.createdAt &&
           url == other.url &&
           threadUrl == other.threadUrl &&
-          repositoryUrl == other.repositoryUrl; } 
-@override int get hashCode { return Object.hash(subscribed, ignored, reason, createdAt, url, threadUrl, repositoryUrl); } 
-@override String toString() { return 'ThreadSubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, threadUrl: $threadUrl, repositoryUrl: $repositoryUrl)'; } 
+          repositoryUrl == other.repositoryUrl;
+
+@override int get hashCode => Object.hash(subscribed, ignored, reason, createdAt, url, threadUrl, repositoryUrl);
+
+@override String toString() => 'ThreadSubscription(subscribed: $subscribed, ignored: $ignored, reason: $reason, createdAt: $createdAt, url: $url, threadUrl: $threadUrl, repositoryUrl: $repositoryUrl)';
+
  }

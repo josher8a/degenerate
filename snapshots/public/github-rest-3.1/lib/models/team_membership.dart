@@ -30,11 +30,14 @@ TeamMembership copyWith({Uri? url, TeamMembershipRole? role, OrgMembershipState?
   role: role ?? this.role,
   state: state ?? this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamMembership &&
           url == other.url &&
           role == other.role &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(url, role, state); } 
-@override String toString() { return 'TeamMembership(url: $url, role: $role, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(url, role, state);
+
+@override String toString() => 'TeamMembership(url: $url, role: $role, state: $state)';
+
  }

@@ -59,14 +59,17 @@ VectorizeIndexListVectorsResponse copyWith({int? count, DateTime? Function()? cu
   totalCount: totalCount ?? this.totalCount,
   vectors: vectors ?? this.vectors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexListVectorsResponse &&
           count == other.count &&
           cursorExpirationTimestamp == other.cursorExpirationTimestamp &&
           isTruncated == other.isTruncated &&
           nextCursor == other.nextCursor &&
           totalCount == other.totalCount &&
-          listEquals(vectors, other.vectors); } 
-@override int get hashCode { return Object.hash(count, cursorExpirationTimestamp, isTruncated, nextCursor, totalCount, Object.hashAll(vectors)); } 
-@override String toString() { return 'VectorizeIndexListVectorsResponse(count: $count, cursorExpirationTimestamp: $cursorExpirationTimestamp, isTruncated: $isTruncated, nextCursor: $nextCursor, totalCount: $totalCount, vectors: $vectors)'; } 
+          listEquals(vectors, other.vectors);
+
+@override int get hashCode => Object.hash(count, cursorExpirationTimestamp, isTruncated, nextCursor, totalCount, Object.hashAll(vectors));
+
+@override String toString() => 'VectorizeIndexListVectorsResponse(count: $count, cursorExpirationTimestamp: $cursorExpirationTimestamp, isTruncated: $isTruncated, nextCursor: $nextCursor, totalCount: $totalCount, vectors: $vectors)';
+
  }

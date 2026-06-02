@@ -33,10 +33,13 @@ LoadBalancingNotificationFilter copyWith({LoadBalancingFilterOptions? Function()
   origin: origin != null ? origin() : this.origin,
   pool: pool != null ? pool() : this.pool,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingNotificationFilter &&
           origin == other.origin &&
-          pool == other.pool; } 
-@override int get hashCode { return Object.hash(origin, pool); } 
-@override String toString() { return 'LoadBalancingNotificationFilter(origin: $origin, pool: $pool)'; } 
+          pool == other.pool;
+
+@override int get hashCode => Object.hash(origin, pool);
+
+@override String toString() => 'LoadBalancingNotificationFilter(origin: $origin, pool: $pool)';
+
  }

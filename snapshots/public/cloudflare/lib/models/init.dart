@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InitAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InitAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InitAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InitAction($value)';
+
  }
 @immutable final class Init {const Init({required this.action, required this.etag, });
 
@@ -45,10 +48,13 @@ Init copyWith({InitAction? action, String? etag, }) { return Init(
   action: action ?? this.action,
   etag: etag ?? this.etag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Init &&
           action == other.action &&
-          etag == other.etag; } 
-@override int get hashCode { return Object.hash(action, etag); } 
-@override String toString() { return 'Init(action: $action, etag: $etag)'; } 
+          etag == other.etag;
+
+@override int get hashCode => Object.hash(action, etag);
+
+@override String toString() => 'Init(action: $action, etag: $etag)';
+
  }

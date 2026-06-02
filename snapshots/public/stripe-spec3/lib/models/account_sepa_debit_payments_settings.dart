@@ -24,9 +24,12 @@ return errors; }
 AccountSepaDebitPaymentsSettings copyWith({String? Function()? creditorId}) { return AccountSepaDebitPaymentsSettings(
   creditorId: creditorId != null ? creditorId() : this.creditorId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSepaDebitPaymentsSettings &&
-          creditorId == other.creditorId; } 
-@override int get hashCode { return creditorId.hashCode; } 
-@override String toString() { return 'AccountSepaDebitPaymentsSettings(creditorId: $creditorId)'; } 
+          creditorId == other.creditorId;
+
+@override int get hashCode => creditorId.hashCode;
+
+@override String toString() => 'AccountSepaDebitPaymentsSettings(creditorId: $creditorId)';
+
  }

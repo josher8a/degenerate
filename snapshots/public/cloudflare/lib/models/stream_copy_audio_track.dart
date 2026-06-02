@@ -24,10 +24,13 @@ StreamCopyAudioTrack copyWith({StreamAudioLabel? label, Uri? Function()? url, })
   label: label ?? this.label,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamCopyAudioTrack &&
           label == other.label &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(label, url); } 
-@override String toString() { return 'StreamCopyAudioTrack(label: $label, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(label, url);
+
+@override String toString() => 'StreamCopyAudioTrack(label: $label, url: $url)';
+
  }

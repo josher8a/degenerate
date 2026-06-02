@@ -21,10 +21,13 @@ RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 copyWith({List<St
   notSpam: notSpam ?? this.notSpam,
   spam: spam ?? this.spam,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0 &&
           listEquals(notSpam, other.notSpam) &&
-          listEquals(spam, other.spam); } 
-@override int get hashCode { return Object.hash(Object.hashAll(notSpam), Object.hashAll(spam)); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(notSpam: $notSpam, spam: $spam)'; } 
+          listEquals(spam, other.spam);
+
+@override int get hashCode => Object.hash(Object.hashAll(notSpam), Object.hashAll(spam));
+
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamResponseResultSerie0(notSpam: $notSpam, spam: $spam)';
+
  }

@@ -33,11 +33,14 @@ PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String?
   name: name ?? this.name,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAppsSecretsDeleteRequest &&
           listEquals(expand, other.expand) &&
           name == other.name &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), name, scope); } 
-@override String toString() { return 'PostAppsSecretsDeleteRequest(expand: $expand, name: $name, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), name, scope);
+
+@override String toString() => 'PostAppsSecretsDeleteRequest(expand: $expand, name: $name, scope: $scope)';
+
  }

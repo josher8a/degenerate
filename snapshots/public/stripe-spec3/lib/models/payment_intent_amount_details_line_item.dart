@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentIntentAmountDetailsLineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentIntentAmountDetailsLineItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentIntentAmountDetailsLineItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentIntentAmountDetailsLineItemObject($value)';
+
  }
 /// 
 @immutable final class PaymentIntentAmountDetailsLineItem {const PaymentIntentAmountDetailsLineItem({required this.id, required this.object, required this.productName, required this.quantity, required this.unitCost, this.discountAmount, this.paymentMethodOptions, this.productCode, this.tax, this.unitOfMeasure, });
@@ -114,7 +117,7 @@ PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, St
   unitCost: unitCost ?? this.unitCost,
   unitOfMeasure: unitOfMeasure != null ? unitOfMeasure() : this.unitOfMeasure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentAmountDetailsLineItem &&
           discountAmount == other.discountAmount &&
           id == other.id &&
@@ -125,7 +128,10 @@ PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, St
           quantity == other.quantity &&
           tax == other.tax &&
           unitCost == other.unitCost &&
-          unitOfMeasure == other.unitOfMeasure; } 
-@override int get hashCode { return Object.hash(discountAmount, id, object, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure); } 
-@override String toString() { return 'PaymentIntentAmountDetailsLineItem(discountAmount: $discountAmount, id: $id, object: $object, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)'; } 
+          unitOfMeasure == other.unitOfMeasure;
+
+@override int get hashCode => Object.hash(discountAmount, id, object, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure);
+
+@override String toString() => 'PaymentIntentAmountDetailsLineItem(discountAmount: $discountAmount, id: $id, object: $object, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)';
+
  }

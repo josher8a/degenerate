@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentAttemptRecordObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentAttemptRecordObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentAttemptRecordObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentAttemptRecordObject($value)';
+
  }
 /// A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.
 /// Each payment attempt tries to collect a fixed amount of money from a fixed customer and payment
@@ -183,7 +186,7 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
   reportedBy: reportedBy ?? this.reportedBy,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentAttemptRecord &&
           amount == other.amount &&
           amountAuthorized == other.amountAuthorized &&
@@ -205,7 +208,10 @@ PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? a
           paymentRecord == other.paymentRecord &&
           processorDetails == other.processorDetails &&
           reportedBy == other.reportedBy &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hashAll([amount, amountAuthorized, amountCanceled, amountFailed, amountGuaranteed, amountRefunded, amountRequested, application, created, customerDetails, customerPresence, description, id, livemode, metadata, object, paymentMethodDetails, paymentRecord, processorDetails, reportedBy, shippingDetails]); } 
-@override String toString() { return 'PaymentAttemptRecord(amount: $amount, amountAuthorized: $amountAuthorized, amountCanceled: $amountCanceled, amountFailed: $amountFailed, amountGuaranteed: $amountGuaranteed, amountRefunded: $amountRefunded, amountRequested: $amountRequested, application: $application, created: $created, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethodDetails: $paymentMethodDetails, paymentRecord: $paymentRecord, processorDetails: $processorDetails, reportedBy: $reportedBy, shippingDetails: $shippingDetails)'; } 
+          shippingDetails == other.shippingDetails;
+
+@override int get hashCode => Object.hashAll([amount, amountAuthorized, amountCanceled, amountFailed, amountGuaranteed, amountRefunded, amountRequested, application, created, customerDetails, customerPresence, description, id, livemode, metadata, object, paymentMethodDetails, paymentRecord, processorDetails, reportedBy, shippingDetails]);
+
+@override String toString() => 'PaymentAttemptRecord(amount: $amount, amountAuthorized: $amountAuthorized, amountCanceled: $amountCanceled, amountFailed: $amountFailed, amountGuaranteed: $amountGuaranteed, amountRefunded: $amountRefunded, amountRequested: $amountRequested, application: $application, created: $created, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, id: $id, livemode: $livemode, metadata: $metadata, object: $object, paymentMethodDetails: $paymentMethodDetails, paymentRecord: $paymentRecord, processorDetails: $processorDetails, reportedBy: $reportedBy, shippingDetails: $shippingDetails)';
+
  }

@@ -40,14 +40,17 @@ SourceTypeBancontact copyWith({String? Function()? bankCode, String? Function()?
   preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeBancontact &&
           bankCode == other.bankCode &&
           bankName == other.bankName &&
           bic == other.bic &&
           ibanLast4 == other.ibanLast4 &&
           preferredLanguage == other.preferredLanguage &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(bankCode, bankName, bic, ibanLast4, preferredLanguage, statementDescriptor); } 
-@override String toString() { return 'SourceTypeBancontact(bankCode: $bankCode, bankName: $bankName, bic: $bic, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(bankCode, bankName, bic, ibanLast4, preferredLanguage, statementDescriptor);
+
+@override String toString() => 'SourceTypeBancontact(bankCode: $bankCode, bankName: $bankName, bic: $bic, ibanLast4: $ibanLast4, preferredLanguage: $preferredLanguage, statementDescriptor: $statementDescriptor)';
+
  }

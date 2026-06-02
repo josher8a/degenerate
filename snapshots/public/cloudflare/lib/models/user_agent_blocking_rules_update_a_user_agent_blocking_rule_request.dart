@@ -41,13 +41,16 @@ UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest copyWith({FirewallConf
   mode: mode ?? this.mode,
   paused: paused != null ? paused() : this.paused,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest &&
           configuration == other.configuration &&
           description == other.description &&
           id == other.id &&
           mode == other.mode &&
-          paused == other.paused; } 
-@override int get hashCode { return Object.hash(configuration, description, id, mode, paused); } 
-@override String toString() { return 'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)'; } 
+          paused == other.paused;
+
+@override int get hashCode => Object.hash(configuration, description, id, mode, paused);
+
+@override String toString() => 'UserAgentBlockingRulesUpdateAUserAgentBlockingRuleRequest(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)';
+
  }

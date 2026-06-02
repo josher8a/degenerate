@@ -30,11 +30,14 @@ WebhookCodeScanningAlertAppearedInBranchAlertRule copyWith({String? description,
   id: id ?? this.id,
   severity: severity != null ? severity() : this.severity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlertRule &&
           description == other.description &&
           id == other.id &&
-          severity == other.severity; } 
-@override int get hashCode { return Object.hash(description, id, severity); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertRule(description: $description, id: $id, severity: $severity)'; } 
+          severity == other.severity;
+
+@override int get hashCode => Object.hash(description, id, severity);
+
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlertRule(description: $description, id: $id, severity: $severity)';
+
  }

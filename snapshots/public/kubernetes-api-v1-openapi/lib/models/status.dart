@@ -59,7 +59,7 @@ Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDe
   reason: reason != null ? reason() : this.reason,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Status &&
           apiVersion == other.apiVersion &&
           code == other.code &&
@@ -68,7 +68,10 @@ Status copyWith({String? Function()? apiVersion, int? Function()? code, StatusDe
           message == other.message &&
           metadata == other.metadata &&
           reason == other.reason &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(apiVersion, code, details, kind, message, metadata, reason, status); } 
-@override String toString() { return 'Status(apiVersion: $apiVersion, code: $code, details: $details, kind: $kind, message: $message, metadata: $metadata, reason: $reason, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(apiVersion, code, details, kind, message, metadata, reason, status);
+
+@override String toString() => 'Status(apiVersion: $apiVersion, code: $code, details: $details, kind: $kind, message: $message, metadata: $metadata, reason: $reason, status: $status)';
+
  }

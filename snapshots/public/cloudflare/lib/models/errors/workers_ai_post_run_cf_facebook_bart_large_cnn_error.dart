@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfFacebookBartLargeCnnError$400 extends WorkersAiPos
 
 final WorkersAiPostRunCfFacebookBartLargeCnnResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfFacebookBartLargeCnnError$Unknown extends WorkersAiPostRunCfFacebookBartLargeCnnError {const WorkersAiPostRunCfFacebookBartLargeCnnError$Unknown(this.statusCode, this.rawBody, );
 

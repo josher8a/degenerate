@@ -73,7 +73,7 @@ AccountSipSipDomainSipCredentialListMapping copyWith({String? Function()? accoun
   sid: sid != null ? sid() : this.sid,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipDomainSipCredentialListMapping &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
@@ -81,7 +81,10 @@ AccountSipSipDomainSipCredentialListMapping copyWith({String? Function()? accoun
           domainSid == other.domainSid &&
           friendlyName == other.friendlyName &&
           sid == other.sid &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, domainSid, friendlyName, sid, uri); } 
-@override String toString() { return 'AccountSipSipDomainSipCredentialListMapping(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, domainSid: $domainSid, friendlyName: $friendlyName, sid: $sid, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, domainSid, friendlyName, sid, uri);
+
+@override String toString() => 'AccountSipSipDomainSipCredentialListMapping(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, domainSid: $domainSid, friendlyName: $friendlyName, sid: $sid, uri: $uri)';
+
  }

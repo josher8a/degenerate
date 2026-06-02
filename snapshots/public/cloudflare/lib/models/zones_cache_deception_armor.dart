@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheDeceptionArmorId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheDeceptionArmorId($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesCacheDeceptionArmorId && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesCacheDeceptionArmorId($value)';
+
  }
 @immutable final class ZonesCacheDeceptionArmor {const ZonesCacheDeceptionArmor({this.id, this.value, });
 
@@ -53,10 +56,13 @@ ZonesCacheDeceptionArmor copyWith({ZonesCacheDeceptionArmorId? Function()? id, C
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZonesCacheDeceptionArmor &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(id, value); } 
-@override String toString() { return 'ZonesCacheDeceptionArmor(id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(id, value);
+
+@override String toString() => 'ZonesCacheDeceptionArmor(id: $id, value: $value)';
+
  }

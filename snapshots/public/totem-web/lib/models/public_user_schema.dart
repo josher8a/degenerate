@@ -60,7 +60,7 @@ PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Functi
   profileImage: profileImage != null ? profileImage() : this.profileImage,
   dateCreated: dateCreated ?? this.dateCreated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicUserSchema &&
           profileAvatarType == other.profileAvatarType &&
           circleCount == other.circleCount &&
@@ -69,7 +69,10 @@ PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Functi
           isStaff == other.isStaff &&
           profileAvatarSeed == other.profileAvatarSeed &&
           profileImage == other.profileImage &&
-          dateCreated == other.dateCreated; } 
-@override int get hashCode { return Object.hash(profileAvatarType, circleCount, name, slug, isStaff, profileAvatarSeed, profileImage, dateCreated); } 
-@override String toString() { return 'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)'; } 
+          dateCreated == other.dateCreated;
+
+@override int get hashCode => Object.hash(profileAvatarType, circleCount, name, slug, isStaff, profileAvatarSeed, profileImage, dateCreated);
+
+@override String toString() => 'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)';
+
  }

@@ -27,10 +27,13 @@ Ipv6 copyWith({String? Function()? ipAddr, String? Function()? virtualNetworkId,
   ipAddr: ipAddr != null ? ipAddr() : this.ipAddr,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Ipv6 &&
           ipAddr == other.ipAddr &&
-          virtualNetworkId == other.virtualNetworkId; } 
-@override int get hashCode { return Object.hash(ipAddr, virtualNetworkId); } 
-@override String toString() { return 'Ipv6(ipAddr: $ipAddr, virtualNetworkId: $virtualNetworkId)'; } 
+          virtualNetworkId == other.virtualNetworkId;
+
+@override int get hashCode => Object.hash(ipAddr, virtualNetworkId);
+
+@override String toString() => 'Ipv6(ipAddr: $ipAddr, virtualNetworkId: $virtualNetworkId)';
+
  }

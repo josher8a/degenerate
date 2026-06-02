@@ -24,10 +24,13 @@ FlowDataSubscriptionCancel copyWith({Retention? Function()? retention, String? s
   retention: retention != null ? retention() : this.retention,
   subscription: subscription ?? this.subscription,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FlowDataSubscriptionCancel &&
           retention == other.retention &&
-          subscription == other.subscription; } 
-@override int get hashCode { return Object.hash(retention, subscription); } 
-@override String toString() { return 'FlowDataSubscriptionCancel(retention: $retention, subscription: $subscription)'; } 
+          subscription == other.subscription;
+
+@override int get hashCode => Object.hash(retention, subscription);
+
+@override String toString() => 'FlowDataSubscriptionCancel(retention: $retention, subscription: $subscription)';
+
  }

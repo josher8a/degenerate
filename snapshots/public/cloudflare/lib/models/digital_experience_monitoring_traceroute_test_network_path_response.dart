@@ -51,7 +51,7 @@ DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? F
   networkPath: networkPath != null ? networkPath() : this.networkPath,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteTestNetworkPathResponse &&
           deviceName == other.deviceName &&
           id == other.id &&
@@ -59,7 +59,10 @@ DigitalExperienceMonitoringTracerouteTestNetworkPathResponse copyWith({String? F
           kind == other.kind &&
           name == other.name &&
           networkPath == other.networkPath &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(deviceName, id, interval, kind, name, networkPath, url); } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(deviceName: $deviceName, id: $id, interval: $interval, kind: $kind, name: $name, networkPath: $networkPath, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(deviceName, id, interval, kind, name, networkPath, url);
+
+@override String toString() => 'DigitalExperienceMonitoringTracerouteTestNetworkPathResponse(deviceName: $deviceName, id: $id, interval: $interval, kind: $kind, name: $name, networkPath: $networkPath, url: $url)';
+
  }

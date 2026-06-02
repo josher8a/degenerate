@@ -119,7 +119,7 @@ AccessActiveSessionResponseResult copyWith({String? Function()? accountId, Strin
   version: version != null ? version() : this.version,
   isActive: isActive != null ? isActive() : this.isActive,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessActiveSessionResponseResult &&
           accountId == other.accountId &&
           authStatus == other.authStatus &&
@@ -139,7 +139,10 @@ AccessActiveSessionResponseResult copyWith({String? Function()? accountId, Strin
           serviceTokenStatus == other.serviceTokenStatus &&
           userUuid == other.userUuid &&
           version == other.version &&
-          isActive == other.isActive; } 
-@override int get hashCode { return Object.hash(accountId, authStatus, commonName, deviceId, deviceSessions, devicePosture, email, geo, iat, idp, ip, isGateway, isWarp, mtlsAuth, serviceTokenId, serviceTokenStatus, userUuid, version, isActive); } 
-@override String toString() { return 'AccessActiveSessionResponseResult(accountId: $accountId, authStatus: $authStatus, commonName: $commonName, deviceId: $deviceId, deviceSessions: $deviceSessions, devicePosture: $devicePosture, email: $email, geo: $geo, iat: $iat, idp: $idp, ip: $ip, isGateway: $isGateway, isWarp: $isWarp, mtlsAuth: $mtlsAuth, serviceTokenId: $serviceTokenId, serviceTokenStatus: $serviceTokenStatus, userUuid: $userUuid, version: $version, isActive: $isActive)'; } 
+          isActive == other.isActive;
+
+@override int get hashCode => Object.hash(accountId, authStatus, commonName, deviceId, deviceSessions, devicePosture, email, geo, iat, idp, ip, isGateway, isWarp, mtlsAuth, serviceTokenId, serviceTokenStatus, userUuid, version, isActive);
+
+@override String toString() => 'AccessActiveSessionResponseResult(accountId: $accountId, authStatus: $authStatus, commonName: $commonName, deviceId: $deviceId, deviceSessions: $deviceSessions, devicePosture: $devicePosture, email: $email, geo: $geo, iat: $iat, idp: $idp, ip: $ip, isGateway: $isGateway, isWarp: $isWarp, mtlsAuth: $mtlsAuth, serviceTokenId: $serviceTokenId, serviceTokenStatus: $serviceTokenStatus, userUuid: $userUuid, version: $version, isActive: $isActive)';
+
  }

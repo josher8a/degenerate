@@ -33,12 +33,15 @@ RadarGetBgpTopAsnsByPrefixesResponseResultAsns copyWith({int? asn, String? count
   name: name ?? this.name,
   pfxsCount: pfxsCount ?? this.pfxsCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpTopAsnsByPrefixesResponseResultAsns &&
           asn == other.asn &&
           country == other.country &&
           name == other.name &&
-          pfxsCount == other.pfxsCount; } 
-@override int get hashCode { return Object.hash(asn, country, name, pfxsCount); } 
-@override String toString() { return 'RadarGetBgpTopAsnsByPrefixesResponseResultAsns(asn: $asn, country: $country, name: $name, pfxsCount: $pfxsCount)'; } 
+          pfxsCount == other.pfxsCount;
+
+@override int get hashCode => Object.hash(asn, country, name, pfxsCount);
+
+@override String toString() => 'RadarGetBgpTopAsnsByPrefixesResponseResultAsns(asn: $asn, country: $country, name: $name, pfxsCount: $pfxsCount)';
+
  }

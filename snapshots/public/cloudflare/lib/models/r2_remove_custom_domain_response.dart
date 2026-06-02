@@ -22,9 +22,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
 R2RemoveCustomDomainResponse copyWith({String? domain}) { return R2RemoveCustomDomainResponse(
   domain: domain ?? this.domain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2RemoveCustomDomainResponse &&
-          domain == other.domain; } 
-@override int get hashCode { return domain.hashCode; } 
-@override String toString() { return 'R2RemoveCustomDomainResponse(domain: $domain)'; } 
+          domain == other.domain;
+
+@override int get hashCode => domain.hashCode;
+
+@override String toString() => 'R2RemoveCustomDomainResponse(domain: $domain)';
+
  }

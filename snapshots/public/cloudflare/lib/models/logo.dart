@@ -25,11 +25,14 @@ Logo copyWith({int? Function()? id, String? Function()? tag, String? Function()?
   tag: tag != null ? tag() : this.tag,
   uploadPath: uploadPath != null ? uploadPath() : this.uploadPath,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Logo &&
           id == other.id &&
           tag == other.tag &&
-          uploadPath == other.uploadPath; } 
-@override int get hashCode { return Object.hash(id, tag, uploadPath); } 
-@override String toString() { return 'Logo(id: $id, tag: $tag, uploadPath: $uploadPath)'; } 
+          uploadPath == other.uploadPath;
+
+@override int get hashCode => Object.hash(id, tag, uploadPath);
+
+@override String toString() => 'Logo(id: $id, tag: $tag, uploadPath: $uploadPath)';
+
  }

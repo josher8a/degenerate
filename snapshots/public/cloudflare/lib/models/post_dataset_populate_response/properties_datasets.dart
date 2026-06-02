@@ -22,10 +22,13 @@ PropertiesDatasets copyWith({DatasetsItems? items, String? type, }) { return Pro
   items: items ?? this.items,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PropertiesDatasets &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'PropertiesDatasets(items: $items, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(items, type);
+
+@override String toString() => 'PropertiesDatasets(items: $items, type: $type)';
+
  }

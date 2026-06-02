@@ -42,11 +42,14 @@ PaymentMethodDetailsKlarna copyWith({KlarnaPayerDetails? Function()? payerDetail
   paymentMethodCategory: paymentMethodCategory != null ? paymentMethodCategory() : this.paymentMethodCategory,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsKlarna &&
           payerDetails == other.payerDetails &&
           paymentMethodCategory == other.paymentMethodCategory &&
-          preferredLocale == other.preferredLocale; } 
-@override int get hashCode { return Object.hash(payerDetails, paymentMethodCategory, preferredLocale); } 
-@override String toString() { return 'PaymentMethodDetailsKlarna(payerDetails: $payerDetails, paymentMethodCategory: $paymentMethodCategory, preferredLocale: $preferredLocale)'; } 
+          preferredLocale == other.preferredLocale;
+
+@override int get hashCode => Object.hash(payerDetails, paymentMethodCategory, preferredLocale);
+
+@override String toString() => 'PaymentMethodDetailsKlarna(payerDetails: $payerDetails, paymentMethodCategory: $paymentMethodCategory, preferredLocale: $preferredLocale)';
+
  }

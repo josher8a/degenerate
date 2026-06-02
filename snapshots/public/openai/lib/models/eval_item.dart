@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalItemType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalItemType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalItemType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EvalItemType($value)';
+
  }
 /// A message input to the model with a role indicating instruction following
 /// hierarchy. Instructions given with the `developer` or `system` role take
@@ -60,11 +63,14 @@ EvalItem copyWith({EasyInputMessageRole? role, EvalItemContent? content, EvalIte
   content: content ?? this.content,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalItem &&
           role == other.role &&
           content == other.content &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(role, content, type); } 
-@override String toString() { return 'EvalItem(role: $role, content: $content, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(role, content, type);
+
+@override String toString() => 'EvalItem(role: $role, content: $content, type: $type)';
+
  }

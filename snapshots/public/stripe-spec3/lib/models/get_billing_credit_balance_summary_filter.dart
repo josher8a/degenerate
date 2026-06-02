@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GetBillingCreditBalanceSummaryFilterType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GetBillingCreditBalanceSummaryFilterType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GetBillingCreditBalanceSummaryFilterType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GetBillingCreditBalanceSummaryFilterType($value)';
+
  }
 @immutable final class GetBillingCreditBalanceSummaryFilter {const GetBillingCreditBalanceSummaryFilter({required this.type, this.applicabilityScope, this.creditGrant, });
 
@@ -56,11 +59,14 @@ GetBillingCreditBalanceSummaryFilter copyWith({ApplicabilityScope? Function()? a
   creditGrant: creditGrant != null ? creditGrant() : this.creditGrant,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetBillingCreditBalanceSummaryFilter &&
           applicabilityScope == other.applicabilityScope &&
           creditGrant == other.creditGrant &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(applicabilityScope, creditGrant, type); } 
-@override String toString() { return 'GetBillingCreditBalanceSummaryFilter(applicabilityScope: $applicabilityScope, creditGrant: $creditGrant, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(applicabilityScope, creditGrant, type);
+
+@override String toString() => 'GetBillingCreditBalanceSummaryFilter(applicabilityScope: $applicabilityScope, creditGrant: $creditGrant, type: $type)';
+
  }

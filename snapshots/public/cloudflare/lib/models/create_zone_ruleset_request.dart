@@ -73,7 +73,7 @@ CreateZoneRulesetRequest copyWith({String Function()? description, RulesetsRules
   phase: phase ?? this.phase,
   rules: rules != null ? rules() : this.rules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateZoneRulesetRequest &&
           description == other.description &&
           id == other.id &&
@@ -82,7 +82,10 @@ CreateZoneRulesetRequest copyWith({String Function()? description, RulesetsRules
           version == other.version &&
           kind == other.kind &&
           phase == other.phase &&
-          listEquals(rules, other.rules); } 
-@override int get hashCode { return Object.hash(description, id, lastUpdated, name, version, kind, phase, Object.hashAll(rules ?? const [])); } 
-@override String toString() { return 'CreateZoneRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)'; } 
+          listEquals(rules, other.rules);
+
+@override int get hashCode => Object.hash(description, id, lastUpdated, name, version, kind, phase, Object.hashAll(rules ?? const []));
+
+@override String toString() => 'CreateZoneRulesetRequest(description: $description, id: $id, lastUpdated: $lastUpdated, name: $name, version: $version, kind: $kind, phase: $phase, rules: $rules)';
+
  }

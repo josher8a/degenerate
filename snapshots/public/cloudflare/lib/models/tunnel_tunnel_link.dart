@@ -23,10 +23,13 @@ TunnelTunnelLink copyWith({TunnelCreatedAt? Function()? createdAt, TunnelTunnelI
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   linkedTunnelId: linkedTunnelId != null ? linkedTunnelId() : this.linkedTunnelId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelTunnelLink &&
           createdAt == other.createdAt &&
-          linkedTunnelId == other.linkedTunnelId; } 
-@override int get hashCode { return Object.hash(createdAt, linkedTunnelId); } 
-@override String toString() { return 'TunnelTunnelLink(createdAt: $createdAt, linkedTunnelId: $linkedTunnelId)'; } 
+          linkedTunnelId == other.linkedTunnelId;
+
+@override int get hashCode => Object.hash(createdAt, linkedTunnelId);
+
+@override String toString() => 'TunnelTunnelLink(createdAt: $createdAt, linkedTunnelId: $linkedTunnelId)';
+
  }

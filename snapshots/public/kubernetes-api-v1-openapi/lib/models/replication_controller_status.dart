@@ -47,14 +47,17 @@ ReplicationControllerStatus copyWith({int? Function()? availableReplicas, List<R
   readyReplicas: readyReplicas != null ? readyReplicas() : this.readyReplicas,
   replicas: replicas ?? this.replicas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationControllerStatus &&
           availableReplicas == other.availableReplicas &&
           listEquals(conditions, other.conditions) &&
           fullyLabeledReplicas == other.fullyLabeledReplicas &&
           observedGeneration == other.observedGeneration &&
           readyReplicas == other.readyReplicas &&
-          replicas == other.replicas; } 
-@override int get hashCode { return Object.hash(availableReplicas, Object.hashAll(conditions ?? const []), fullyLabeledReplicas, observedGeneration, readyReplicas, replicas); } 
-@override String toString() { return 'ReplicationControllerStatus(availableReplicas: $availableReplicas, conditions: $conditions, fullyLabeledReplicas: $fullyLabeledReplicas, observedGeneration: $observedGeneration, readyReplicas: $readyReplicas, replicas: $replicas)'; } 
+          replicas == other.replicas;
+
+@override int get hashCode => Object.hash(availableReplicas, Object.hashAll(conditions ?? const []), fullyLabeledReplicas, observedGeneration, readyReplicas, replicas);
+
+@override String toString() => 'ReplicationControllerStatus(availableReplicas: $availableReplicas, conditions: $conditions, fullyLabeledReplicas: $fullyLabeledReplicas, observedGeneration: $observedGeneration, readyReplicas: $readyReplicas, replicas: $replicas)';
+
  }

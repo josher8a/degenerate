@@ -17,7 +17,8 @@ final class RadarGetTldDetailsError$404 extends RadarGetTldDetailsError {const R
 
 final RadarGetTldDetailsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetTldDetailsError$Unknown extends RadarGetTldDetailsError {const RadarGetTldDetailsError$Unknown(this.statusCode, this.rawBody, );
 

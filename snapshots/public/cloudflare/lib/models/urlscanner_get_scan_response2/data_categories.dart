@@ -21,10 +21,13 @@ DataCategories copyWith({String? name, double? priority, }) { return DataCategor
   name: name ?? this.name,
   priority: priority ?? this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DataCategories &&
           name == other.name &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(name, priority); } 
-@override String toString() { return 'DataCategories(name: $name, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(name, priority);
+
+@override String toString() => 'DataCategories(name: $name, priority: $priority)';
+
  }

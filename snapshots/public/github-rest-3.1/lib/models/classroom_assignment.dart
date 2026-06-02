@@ -141,7 +141,7 @@ ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Classroo
   starterCodeRepository: starterCodeRepository ?? this.starterCodeRepository,
   classroom: classroom ?? this.classroom,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAssignment &&
           id == other.id &&
           publicRepo == other.publicRepo &&
@@ -161,7 +161,10 @@ ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, Classroo
           language == other.language &&
           deadline == other.deadline &&
           starterCodeRepository == other.starterCodeRepository &&
-          classroom == other.classroom; } 
-@override int get hashCode { return Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, starterCodeRepository, classroom); } 
-@override String toString() { return 'ClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, starterCodeRepository: $starterCodeRepository, classroom: $classroom)'; } 
+          classroom == other.classroom;
+
+@override int get hashCode => Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, starterCodeRepository, classroom);
+
+@override String toString() => 'ClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, starterCodeRepository: $starterCodeRepository, classroom: $classroom)';
+
  }

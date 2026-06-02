@@ -169,10 +169,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HookEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HookEvents($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HookEvents && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HookEvents($value)';
+
  }
 /// The deleted webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.
 @immutable final class WebhookMetaDeletedHook {const WebhookMetaDeletedHook({required this.active, required this.config, required this.createdAt, required this.events, required this.id, required this.name, required this.type, required this.updatedAt, });
@@ -233,7 +236,7 @@ WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? creat
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMetaDeletedHook &&
           active == other.active &&
           config == other.config &&
@@ -242,7 +245,10 @@ WebhookMetaDeletedHook copyWith({bool? active, HookConfig? config, String? creat
           id == other.id &&
           name == other.name &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(active, config, createdAt, Object.hashAll(events), id, name, type, updatedAt); } 
-@override String toString() { return 'WebhookMetaDeletedHook(active: $active, config: $config, createdAt: $createdAt, events: $events, id: $id, name: $name, type: $type, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(active, config, createdAt, Object.hashAll(events), id, name, type, updatedAt);
+
+@override String toString() => 'WebhookMetaDeletedHook(active: $active, config: $config, createdAt: $createdAt, events: $events, id: $id, name: $name, type: $type, updatedAt: $updatedAt)';
+
  }

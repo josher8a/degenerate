@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationEventType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationEventType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationEventType($value)';
+
  }
 /// Event reported for this payment evaluation.
 @immutable final class InsightsResourcesPaymentEvaluationEvent {const InsightsResourcesPaymentEvaluationEvent({required this.occurredAt, required this.type, this.disputeOpened, this.earlyFraudWarningReceived, this.refunded, this.userInterventionRaised, this.userInterventionResolved, });
@@ -83,7 +86,7 @@ InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvalua
   userInterventionRaised: userInterventionRaised != null ? userInterventionRaised() : this.userInterventionRaised,
   userInterventionResolved: userInterventionResolved != null ? userInterventionResolved() : this.userInterventionResolved,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationEvent &&
           disputeOpened == other.disputeOpened &&
           earlyFraudWarningReceived == other.earlyFraudWarningReceived &&
@@ -91,7 +94,10 @@ InsightsResourcesPaymentEvaluationEvent copyWith({InsightsResourcesPaymentEvalua
           refunded == other.refunded &&
           type == other.type &&
           userInterventionRaised == other.userInterventionRaised &&
-          userInterventionResolved == other.userInterventionResolved; } 
-@override int get hashCode { return Object.hash(disputeOpened, earlyFraudWarningReceived, occurredAt, refunded, type, userInterventionRaised, userInterventionResolved); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationEvent(disputeOpened: $disputeOpened, earlyFraudWarningReceived: $earlyFraudWarningReceived, occurredAt: $occurredAt, refunded: $refunded, type: $type, userInterventionRaised: $userInterventionRaised, userInterventionResolved: $userInterventionResolved)'; } 
+          userInterventionResolved == other.userInterventionResolved;
+
+@override int get hashCode => Object.hash(disputeOpened, earlyFraudWarningReceived, occurredAt, refunded, type, userInterventionRaised, userInterventionResolved);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationEvent(disputeOpened: $disputeOpened, earlyFraudWarningReceived: $earlyFraudWarningReceived, occurredAt: $occurredAt, refunded: $refunded, type: $type, userInterventionRaised: $userInterventionRaised, userInterventionResolved: $userInterventionResolved)';
+
  }

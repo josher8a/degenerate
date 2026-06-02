@@ -23,10 +23,13 @@ Messages44Messages copyWith({String? content, String? role, }) { return Messages
   content: content ?? this.content,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages44Messages &&
           content == other.content &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(content, role); } 
-@override String toString() { return 'Messages44Messages(content: $content, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(content, role);
+
+@override String toString() => 'Messages44Messages(content: $content, role: $role)';
+
  }

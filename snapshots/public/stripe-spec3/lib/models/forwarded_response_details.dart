@@ -35,11 +35,14 @@ ForwardedResponseDetails copyWith({String? body, List<ForwardedRequestHeader>? h
   headers: headers ?? this.headers,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardedResponseDetails &&
           body == other.body &&
           listEquals(headers, other.headers) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(body, Object.hashAll(headers), status); } 
-@override String toString() { return 'ForwardedResponseDetails(body: $body, headers: $headers, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(body, Object.hashAll(headers), status);
+
+@override String toString() => 'ForwardedResponseDetails(body: $body, headers: $headers, status: $status)';
+
  }

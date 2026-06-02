@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderStatus($value)';
+
  }
 /// A Reader represents a physical device for accepting payment details.
 /// 
@@ -136,7 +139,7 @@ TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? a
   serialNumber: serialNumber ?? this.serialNumber,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReader &&
           action == other.action &&
           deviceSwVersion == other.deviceSwVersion &&
@@ -150,7 +153,10 @@ TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? a
           metadata == other.metadata &&
           object == other.object &&
           serialNumber == other.serialNumber &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(action, deviceSwVersion, deviceType, id, ipAddress, label, lastSeenAt, livemode, location, metadata, object, serialNumber, status); } 
-@override String toString() { return 'TerminalReader(action: $action, deviceSwVersion: $deviceSwVersion, deviceType: $deviceType, id: $id, ipAddress: $ipAddress, label: $label, lastSeenAt: $lastSeenAt, livemode: $livemode, location: $location, metadata: $metadata, object: $object, serialNumber: $serialNumber, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(action, deviceSwVersion, deviceType, id, ipAddress, label, lastSeenAt, livemode, location, metadata, object, serialNumber, status);
+
+@override String toString() => 'TerminalReader(action: $action, deviceSwVersion: $deviceSwVersion, deviceType: $deviceType, id: $id, ipAddress: $ipAddress, label: $label, lastSeenAt: $lastSeenAt, livemode: $livemode, location: $location, metadata: $metadata, object: $object, serialNumber: $serialNumber, status: $status)';
+
  }

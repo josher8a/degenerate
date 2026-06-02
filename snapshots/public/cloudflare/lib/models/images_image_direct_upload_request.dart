@@ -53,13 +53,16 @@ ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? 
   metadata: metadata != null ? metadata() : this.metadata,
   requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageDirectUploadRequest &&
           creator == other.creator &&
           expiry == other.expiry &&
           id == other.id &&
           metadata == other.metadata &&
-          requireSignedUrLs == other.requireSignedUrLs; } 
-@override int get hashCode { return Object.hash(creator, expiry, id, metadata, requireSignedUrLs); } 
-@override String toString() { return 'ImagesImageDirectUploadRequest(creator: $creator, expiry: $expiry, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)'; } 
+          requireSignedUrLs == other.requireSignedUrLs;
+
+@override int get hashCode => Object.hash(creator, expiry, id, metadata, requireSignedUrLs);
+
+@override String toString() => 'ImagesImageDirectUploadRequest(creator: $creator, expiry: $expiry, id: $id, metadata: $metadata, requireSignedUrLs: $requireSignedUrLs)';
+
  }

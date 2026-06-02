@@ -30,12 +30,15 @@ DigitalExperienceMonitoringIpInfoLocation copyWith({String? Function()? city, St
   stateIso: stateIso != null ? stateIso() : this.stateIso,
   zip: zip != null ? zip() : this.zip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringIpInfoLocation &&
           city == other.city &&
           countryIso == other.countryIso &&
           stateIso == other.stateIso &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hash(city, countryIso, stateIso, zip); } 
-@override String toString() { return 'DigitalExperienceMonitoringIpInfoLocation(city: $city, countryIso: $countryIso, stateIso: $stateIso, zip: $zip)'; } 
+          zip == other.zip;
+
+@override int get hashCode => Object.hash(city, countryIso, stateIso, zip);
+
+@override String toString() => 'DigitalExperienceMonitoringIpInfoLocation(city: $city, countryIso: $countryIso, stateIso: $stateIso, zip: $zip)';
+
  }

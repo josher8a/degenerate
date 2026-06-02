@@ -56,7 +56,7 @@ BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectio
   pattern: pattern != null ? pattern() : this.pattern,
   requiredApprovingReviewCount: requiredApprovingReviewCount != null ? requiredApprovingReviewCount() : this.requiredApprovingReviewCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BranchWithProtection &&
           name == other.name &&
           commit == other.commit &&
@@ -65,7 +65,10 @@ BranchWithProtection copyWith({String? name, Commit? commit, BranchWithProtectio
           protection == other.protection &&
           protectionUrl == other.protectionUrl &&
           pattern == other.pattern &&
-          requiredApprovingReviewCount == other.requiredApprovingReviewCount; } 
-@override int get hashCode { return Object.hash(name, commit, links, protected, protection, protectionUrl, pattern, requiredApprovingReviewCount); } 
-@override String toString() { return 'BranchWithProtection(name: $name, commit: $commit, links: $links, protected: $protected, protection: $protection, protectionUrl: $protectionUrl, pattern: $pattern, requiredApprovingReviewCount: $requiredApprovingReviewCount)'; } 
+          requiredApprovingReviewCount == other.requiredApprovingReviewCount;
+
+@override int get hashCode => Object.hash(name, commit, links, protected, protection, protectionUrl, pattern, requiredApprovingReviewCount);
+
+@override String toString() => 'BranchWithProtection(name: $name, commit: $commit, links: $links, protected: $protected, protection: $protection, protectionUrl: $protectionUrl, pattern: $pattern, requiredApprovingReviewCount: $requiredApprovingReviewCount)';
+
  }

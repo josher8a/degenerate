@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StaticType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StaticType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StaticType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StaticType($value)';
+
  }
 @immutable final class Static {const Static({this.ips, this.type, });
 
@@ -48,10 +51,13 @@ Static copyWith({List<String>? Function()? ips, StaticType? Function()? type, })
   ips: ips != null ? ips() : this.ips,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Static &&
           listEquals(ips, other.ips) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ips ?? const []), type); } 
-@override String toString() { return 'Static(ips: $ips, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(ips ?? const []), type);
+
+@override String toString() => 'Static(ips: $ips, type: $type)';
+
  }

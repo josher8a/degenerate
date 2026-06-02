@@ -157,7 +157,7 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostChargesRequest &&
           amount == other.amount &&
           applicationFee == other.applicationFee &&
@@ -178,7 +178,10 @@ PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicati
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, applicationFee, applicationFeeAmount, capture, card, currency, customer, description, destination, Object.hashAll(expand ?? const []), metadata, onBehalfOf, radarOptions, receiptEmail, shipping, source, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup); } 
-@override String toString() { return 'PostChargesRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, capture: $capture, card: $card, currency: $currency, customer: $customer, description: $description, destination: $destination, expand: $expand, metadata: $metadata, onBehalfOf: $onBehalfOf, radarOptions: $radarOptions, receiptEmail: $receiptEmail, shipping: $shipping, source: $source, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, applicationFee, applicationFeeAmount, capture, card, currency, customer, description, destination, Object.hashAll(expand ?? const []), metadata, onBehalfOf, radarOptions, receiptEmail, shipping, source, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup);
+
+@override String toString() => 'PostChargesRequest(amount: $amount, applicationFee: $applicationFee, applicationFeeAmount: $applicationFeeAmount, capture: $capture, card: $card, currency: $currency, customer: $customer, description: $description, destination: $destination, expand: $expand, metadata: $metadata, onBehalfOf: $onBehalfOf, radarOptions: $radarOptions, receiptEmail: $receiptEmail, shipping: $shipping, source: $source, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

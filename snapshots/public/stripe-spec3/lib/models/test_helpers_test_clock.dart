@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TestHelpersTestClockStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TestHelpersTestClockStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TestHelpersTestClockStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TestHelpersTestClockStatus($value)';
+
  }
 /// A test clock enables deterministic control over objects in testmode. With a test clock, you can create
 /// objects at a frozen time in the past or future, and advance to a specific future time to observe webhooks and state changes. After the clock advances,
@@ -109,7 +112,7 @@ TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime,
   status: status ?? this.status,
   statusDetails: statusDetails ?? this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TestHelpersTestClock &&
           created == other.created &&
           deletesAfter == other.deletesAfter &&
@@ -119,7 +122,10 @@ TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime,
           name == other.name &&
           object == other.object &&
           status == other.status &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(created, deletesAfter, frozenTime, id, livemode, name, object, status, statusDetails); } 
-@override String toString() { return 'TestHelpersTestClock(created: $created, deletesAfter: $deletesAfter, frozenTime: $frozenTime, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, statusDetails: $statusDetails)'; } 
+          statusDetails == other.statusDetails;
+
+@override int get hashCode => Object.hash(created, deletesAfter, frozenTime, id, livemode, name, object, status, statusDetails);
+
+@override String toString() => 'TestHelpersTestClock(created: $created, deletesAfter: $deletesAfter, frozenTime: $frozenTime, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, statusDetails: $statusDetails)';
+
  }

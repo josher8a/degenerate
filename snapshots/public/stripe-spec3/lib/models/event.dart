@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EventObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EventObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EventObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EventObject($value)';
+
  }
 /// Snapshot events allow you to track and react to activity in your Stripe integration. When
 /// the state of another API resource changes, Stripe creates an `Event` object that contains
@@ -138,7 +141,7 @@ Event copyWith({String? Function()? account, String? Function()? apiVersion, Str
   request: request != null ? request() : this.request,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Event &&
           account == other.account &&
           apiVersion == other.apiVersion &&
@@ -150,7 +153,10 @@ Event copyWith({String? Function()? account, String? Function()? apiVersion, Str
           object == other.object &&
           pendingWebhooks == other.pendingWebhooks &&
           request == other.request &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, apiVersion, context, created, data, id, livemode, object, pendingWebhooks, request, type); } 
-@override String toString() { return 'Event(account: $account, apiVersion: $apiVersion, context: $context, created: $created, data: $data, id: $id, livemode: $livemode, object: $object, pendingWebhooks: $pendingWebhooks, request: $request, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, apiVersion, context, created, data, id, livemode, object, pendingWebhooks, request, type);
+
+@override String toString() => 'Event(account: $account, apiVersion: $apiVersion, context: $context, created: $created, data: $data, id: $id, livemode: $livemode, object: $object, pendingWebhooks: $pendingWebhooks, request: $request, type: $type)';
+
  }

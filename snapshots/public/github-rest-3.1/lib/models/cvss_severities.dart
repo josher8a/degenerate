@@ -20,10 +20,13 @@ CvssSeverities copyWith({CvssSeveritiesCvss? Function()? cvssV3, CvssSeveritiesC
   cvssV3: cvssV3 != null ? cvssV3() : this.cvssV3,
   cvssV4: cvssV4 != null ? cvssV4() : this.cvssV4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CvssSeverities &&
           cvssV3 == other.cvssV3 &&
-          cvssV4 == other.cvssV4; } 
-@override int get hashCode { return Object.hash(cvssV3, cvssV4); } 
-@override String toString() { return 'CvssSeverities(cvssV3: $cvssV3, cvssV4: $cvssV4)'; } 
+          cvssV4 == other.cvssV4;
+
+@override int get hashCode => Object.hash(cvssV3, cvssV4);
+
+@override String toString() => 'CvssSeverities(cvssV3: $cvssV3, cvssV4: $cvssV4)';
+
  }

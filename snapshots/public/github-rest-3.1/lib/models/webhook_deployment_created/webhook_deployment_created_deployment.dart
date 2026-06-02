@@ -116,7 +116,7 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhooksMileston
   updatedAt: updatedAt ?? this.updatedAt,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentCreatedDeployment &&
           createdAt == other.createdAt &&
           creator == other.creator &&
@@ -135,7 +135,10 @@ WebhookDeploymentCreatedDeployment copyWith({String? createdAt, WebhooksMileston
           task == other.task &&
           transientEnvironment == other.transientEnvironment &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(createdAt, creator, description, environment, id, nodeId, originalEnvironment, payload, performedViaGithubApp, productionEnvironment, ref, repositoryUrl, sha, statusesUrl, task, transientEnvironment, updatedAt, url); } 
-@override String toString() { return 'WebhookDeploymentCreatedDeployment(createdAt: $createdAt, creator: $creator, description: $description, environment: $environment, id: $id, nodeId: $nodeId, originalEnvironment: $originalEnvironment, payload: $payload, performedViaGithubApp: $performedViaGithubApp, productionEnvironment: $productionEnvironment, ref: $ref, repositoryUrl: $repositoryUrl, sha: $sha, statusesUrl: $statusesUrl, task: $task, transientEnvironment: $transientEnvironment, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(createdAt, creator, description, environment, id, nodeId, originalEnvironment, payload, performedViaGithubApp, productionEnvironment, ref, repositoryUrl, sha, statusesUrl, task, transientEnvironment, updatedAt, url);
+
+@override String toString() => 'WebhookDeploymentCreatedDeployment(createdAt: $createdAt, creator: $creator, description: $description, environment: $environment, id: $id, nodeId: $nodeId, originalEnvironment: $originalEnvironment, payload: $payload, performedViaGithubApp: $performedViaGithubApp, productionEnvironment: $productionEnvironment, ref: $ref, repositoryUrl: $repositoryUrl, sha: $sha, statusesUrl: $statusesUrl, task: $task, transientEnvironment: $transientEnvironment, updatedAt: $updatedAt, url: $url)';
+
  }

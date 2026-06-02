@@ -41,14 +41,17 @@ MagicAccountApp copyWith({MagicAccountAppId? accountAppId, List<String>? Functio
   sourceSubnets: sourceSubnets != null ? sourceSubnets() : this.sourceSubnets,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicAccountApp &&
           accountAppId == other.accountAppId &&
           listEquals(hostnames, other.hostnames) &&
           listEquals(ipSubnets, other.ipSubnets) &&
           name == other.name &&
           listEquals(sourceSubnets, other.sourceSubnets) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(accountAppId, Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(sourceSubnets ?? const []), type); } 
-@override String toString() { return 'MagicAccountApp(accountAppId: $accountAppId, hostnames: $hostnames, ipSubnets: $ipSubnets, name: $name, sourceSubnets: $sourceSubnets, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(accountAppId, Object.hashAll(hostnames ?? const []), Object.hashAll(ipSubnets ?? const []), name, Object.hashAll(sourceSubnets ?? const []), type);
+
+@override String toString() => 'MagicAccountApp(accountAppId: $accountAppId, hostnames: $hostnames, ipSubnets: $ipSubnets, name: $name, sourceSubnets: $sourceSubnets, type: $type)';
+
  }

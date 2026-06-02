@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordingAddOnResultEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordingAddOnResultEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordingAddOnResultEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordingAddOnResultEnumStatus($value)';
+
  }
 @immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });
 
@@ -145,7 +148,7 @@ AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? 
   referenceSid: referenceSid != null ? referenceSid() : this.referenceSid,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecordingRecordingAddOnResult &&
           sid == other.sid &&
           accountSid == other.accountSid &&
@@ -156,7 +159,10 @@ AccountRecordingRecordingAddOnResult copyWith({String? Function()? sid, String? 
           dateUpdated == other.dateUpdated &&
           dateCompleted == other.dateCompleted &&
           referenceSid == other.referenceSid &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hash(sid, accountSid, status, addOnSid, addOnConfigurationSid, dateCreated, dateUpdated, dateCompleted, referenceSid, subresourceUris); } 
-@override String toString() { return 'AccountRecordingRecordingAddOnResult(sid: $sid, accountSid: $accountSid, status: $status, addOnSid: $addOnSid, addOnConfigurationSid: $addOnConfigurationSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, dateCompleted: $dateCompleted, referenceSid: $referenceSid, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hash(sid, accountSid, status, addOnSid, addOnConfigurationSid, dateCreated, dateUpdated, dateCompleted, referenceSid, subresourceUris);
+
+@override String toString() => 'AccountRecordingRecordingAddOnResult(sid: $sid, accountSid: $accountSid, status: $status, addOnSid: $addOnSid, addOnConfigurationSid: $addOnConfigurationSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, dateCompleted: $dateCompleted, referenceSid: $referenceSid, subresourceUris: $subresourceUris)';
+
  }

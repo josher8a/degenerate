@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 EmailEmailRoutingDnsQueryResponse copyWith({EmailEmailRoutingDnsQueryResponseResult? Function()? result}) { return EmailEmailRoutingDnsQueryResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailEmailRoutingDnsQueryResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'EmailEmailRoutingDnsQueryResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'EmailEmailRoutingDnsQueryResponse(result: $result)';
+
  }

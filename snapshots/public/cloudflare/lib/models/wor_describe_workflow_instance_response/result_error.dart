@@ -21,10 +21,13 @@ ResultError copyWith({String? message, String? name, }) { return ResultError(
   message: message ?? this.message,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultError &&
           message == other.message &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(message, name); } 
-@override String toString() { return 'ResultError(message: $message, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(message, name);
+
+@override String toString() => 'ResultError(message: $message, name: $name)';
+
  }

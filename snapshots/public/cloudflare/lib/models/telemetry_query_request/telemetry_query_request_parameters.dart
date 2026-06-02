@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FilterCombination && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FilterCombination($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FilterCombination && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FilterCombination($value)';
+
  }
 @immutable final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });
 
@@ -105,7 +108,7 @@ TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function
   needle: needle != null ? needle() : this.needle,
   orderBy: orderBy != null ? orderBy() : this.orderBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryQueryRequestParameters &&
           listEquals(calculations, other.calculations) &&
           listEquals(datasets, other.datasets) &&
@@ -115,7 +118,10 @@ TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function
           listEquals(havings, other.havings) &&
           limit == other.limit &&
           needle == other.needle &&
-          orderBy == other.orderBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy); } 
-@override String toString() { return 'TelemetryQueryRequestParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)'; } 
+          orderBy == other.orderBy;
+
+@override int get hashCode => Object.hash(Object.hashAll(calculations ?? const []), Object.hashAll(datasets ?? const []), filterCombination, Object.hashAll(filters ?? const []), Object.hashAll(groupBys ?? const []), Object.hashAll(havings ?? const []), limit, needle, orderBy);
+
+@override String toString() => 'TelemetryQueryRequestParameters(calculations: $calculations, datasets: $datasets, filterCombination: $filterCombination, filters: $filters, groupBys: $groupBys, havings: $havings, limit: $limit, needle: $needle, orderBy: $orderBy)';
+
  }

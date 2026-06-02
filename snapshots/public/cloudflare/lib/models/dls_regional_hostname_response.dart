@@ -41,12 +41,15 @@ DlsRegionalHostnameResponse copyWith({DlsTimestamp? createdOn, DlsHostname? host
   regionKey: regionKey ?? this.regionKey,
   routing: routing != null ? routing() : this.routing,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlsRegionalHostnameResponse &&
           createdOn == other.createdOn &&
           hostname == other.hostname &&
           regionKey == other.regionKey &&
-          routing == other.routing; } 
-@override int get hashCode { return Object.hash(createdOn, hostname, regionKey, routing); } 
-@override String toString() { return 'DlsRegionalHostnameResponse(createdOn: $createdOn, hostname: $hostname, regionKey: $regionKey, routing: $routing)'; } 
+          routing == other.routing;
+
+@override int get hashCode => Object.hash(createdOn, hostname, regionKey, routing);
+
+@override String toString() => 'DlsRegionalHostnameResponse(createdOn: $createdOn, hostname: $hostname, regionKey: $regionKey, routing: $routing)';
+
  }

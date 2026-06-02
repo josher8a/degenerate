@@ -37,12 +37,15 @@ DeploymentProtectionRule copyWith({int? id, String? nodeId, bool? enabled, Custo
   enabled: enabled ?? this.enabled,
   app: app ?? this.app,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentProtectionRule &&
           id == other.id &&
           nodeId == other.nodeId &&
           enabled == other.enabled &&
-          app == other.app; } 
-@override int get hashCode { return Object.hash(id, nodeId, enabled, app); } 
-@override String toString() { return 'DeploymentProtectionRule(id: $id, nodeId: $nodeId, enabled: $enabled, app: $app)'; } 
+          app == other.app;
+
+@override int get hashCode => Object.hash(id, nodeId, enabled, app);
+
+@override String toString() => 'DeploymentProtectionRule(id: $id, nodeId: $nodeId, enabled: $enabled, app: $app)';
+
  }

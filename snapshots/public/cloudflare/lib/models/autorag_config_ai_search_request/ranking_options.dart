@@ -25,10 +25,13 @@ RankingOptions copyWith({String? Function()? ranker, double Function()? scoreThr
   ranker: ranker != null ? ranker() : this.ranker,
   scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RankingOptions &&
           ranker == other.ranker &&
-          scoreThreshold == other.scoreThreshold; } 
-@override int get hashCode { return Object.hash(ranker, scoreThreshold); } 
-@override String toString() { return 'RankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)'; } 
+          scoreThreshold == other.scoreThreshold;
+
+@override int get hashCode => Object.hash(ranker, scoreThreshold);
+
+@override String toString() => 'RankingOptions(ranker: $ranker, scoreThreshold: $scoreThreshold)';
+
  }

@@ -58,14 +58,17 @@ ResponseReasoningSummaryTextDeltaEvent copyWith({String? type, String? itemId, i
   delta: delta ?? this.delta,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseReasoningSummaryTextDeltaEvent &&
           type == other.type &&
           itemId == other.itemId &&
           outputIndex == other.outputIndex &&
           summaryIndex == other.summaryIndex &&
           delta == other.delta &&
-          sequenceNumber == other.sequenceNumber; } 
-@override int get hashCode { return Object.hash(type, itemId, outputIndex, summaryIndex, delta, sequenceNumber); } 
-@override String toString() { return 'ResponseReasoningSummaryTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
+          sequenceNumber == other.sequenceNumber;
+
+@override int get hashCode => Object.hash(type, itemId, outputIndex, summaryIndex, delta, sequenceNumber);
+
+@override String toString() => 'ResponseReasoningSummaryTextDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, summaryIndex: $summaryIndex, delta: $delta, sequenceNumber: $sequenceNumber)';
+
  }

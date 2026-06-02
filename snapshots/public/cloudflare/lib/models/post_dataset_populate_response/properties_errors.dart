@@ -22,10 +22,13 @@ PropertiesErrors copyWith({GetAttackerListResponseItems? items, String? type, })
   items: items ?? this.items,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PropertiesErrors &&
           items == other.items &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(items, type); } 
-@override String toString() { return 'PropertiesErrors(items: $items, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(items, type);
+
+@override String toString() => 'PropertiesErrors(items: $items, type: $type)';
+
  }

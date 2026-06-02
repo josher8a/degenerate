@@ -63,7 +63,7 @@ ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, boo
   transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateDeploymentRequest &&
           ref == other.ref &&
           task == other.task &&
@@ -73,7 +73,10 @@ ReposCreateDeploymentRequest copyWith({String? ref, String Function()? task, boo
           environment == other.environment &&
           description == other.description &&
           transientEnvironment == other.transientEnvironment &&
-          productionEnvironment == other.productionEnvironment; } 
-@override int get hashCode { return Object.hash(ref, task, autoMerge, Object.hashAll(requiredContexts ?? const []), payload, environment, description, transientEnvironment, productionEnvironment); } 
-@override String toString() { return 'ReposCreateDeploymentRequest(ref: $ref, task: $task, autoMerge: $autoMerge, requiredContexts: $requiredContexts, payload: $payload, environment: $environment, description: $description, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment)'; } 
+          productionEnvironment == other.productionEnvironment;
+
+@override int get hashCode => Object.hash(ref, task, autoMerge, Object.hashAll(requiredContexts ?? const []), payload, environment, description, transientEnvironment, productionEnvironment);
+
+@override String toString() => 'ReposCreateDeploymentRequest(ref: $ref, task: $task, autoMerge: $autoMerge, requiredContexts: $requiredContexts, payload: $payload, environment: $environment, description: $description, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment)';
+
  }

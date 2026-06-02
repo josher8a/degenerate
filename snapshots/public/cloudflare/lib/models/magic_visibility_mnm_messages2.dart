@@ -25,10 +25,13 @@ MagicVisibilityMnmMessages2 copyWith({int? code, String? message, }) { return Ma
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityMnmMessages2 &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'MagicVisibilityMnmMessages2(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'MagicVisibilityMnmMessages2(code: $code, message: $message)';
+
  }

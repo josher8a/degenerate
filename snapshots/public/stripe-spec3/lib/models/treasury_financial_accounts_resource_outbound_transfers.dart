@@ -21,10 +21,13 @@ TreasuryFinancialAccountsResourceOutboundTransfers copyWith({TreasuryFinancialAc
   ach: ach != null ? ach() : this.ach,
   usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceOutboundTransfers &&
           ach == other.ach &&
-          usDomesticWire == other.usDomesticWire; } 
-@override int get hashCode { return Object.hash(ach, usDomesticWire); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceOutboundTransfers(ach: $ach, usDomesticWire: $usDomesticWire)'; } 
+          usDomesticWire == other.usDomesticWire;
+
+@override int get hashCode => Object.hash(ach, usDomesticWire);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceOutboundTransfers(ach: $ach, usDomesticWire: $usDomesticWire)';
+
  }

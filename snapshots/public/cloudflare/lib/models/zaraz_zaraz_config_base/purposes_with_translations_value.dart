@@ -29,11 +29,14 @@ PurposesWithTranslationsValue copyWith({Map<String,String>? description, Map<Str
   name: name ?? this.name,
   order: order ?? this.order,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PurposesWithTranslationsValue &&
           description == other.description &&
           name == other.name &&
-          order == other.order; } 
-@override int get hashCode { return Object.hash(description, name, order); } 
-@override String toString() { return 'PurposesWithTranslationsValue(description: $description, name: $name, order: $order)'; } 
+          order == other.order;
+
+@override int get hashCode => Object.hash(description, name, order);
+
+@override String toString() => 'PurposesWithTranslationsValue(description: $description, name: $name, order: $order)';
+
  }

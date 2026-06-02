@@ -21,10 +21,13 @@ CodespacesRepoMachinesForAuthenticatedUserResponse copyWith({int? totalCount, Li
   totalCount: totalCount ?? this.totalCount,
   machines: machines ?? this.machines,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesRepoMachinesForAuthenticatedUserResponse &&
           totalCount == other.totalCount &&
-          listEquals(machines, other.machines); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(machines)); } 
-@override String toString() { return 'CodespacesRepoMachinesForAuthenticatedUserResponse(totalCount: $totalCount, machines: $machines)'; } 
+          listEquals(machines, other.machines);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(machines));
+
+@override String toString() => 'CodespacesRepoMachinesForAuthenticatedUserResponse(totalCount: $totalCount, machines: $machines)';
+
  }

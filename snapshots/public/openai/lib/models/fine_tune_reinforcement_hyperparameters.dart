@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuneReinforcementHyperparametersReasoningEffort && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuneReinforcementHyperparametersReasoningEffort($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuneReinforcementHyperparametersReasoningEffort && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuneReinforcementHyperparametersReasoningEffort($value)';
+
  }
 /// The hyperparameters used for the reinforcement fine-tuning job.
 @immutable final class FineTuneReinforcementHyperparameters {const FineTuneReinforcementHyperparameters({this.batchSize, this.learningRateMultiplier, this.nEpochs, this.reasoningEffort = FineTuneReinforcementHyperparametersReasoningEffort.$default, this.computeMultiplier, this.evalInterval, this.evalSamples, });
@@ -92,7 +95,7 @@ FineTuneReinforcementHyperparameters copyWith({BatchSize? Function()? batchSize,
   evalInterval: evalInterval != null ? evalInterval() : this.evalInterval,
   evalSamples: evalSamples != null ? evalSamples() : this.evalSamples,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuneReinforcementHyperparameters &&
           batchSize == other.batchSize &&
           learningRateMultiplier == other.learningRateMultiplier &&
@@ -100,7 +103,10 @@ FineTuneReinforcementHyperparameters copyWith({BatchSize? Function()? batchSize,
           reasoningEffort == other.reasoningEffort &&
           computeMultiplier == other.computeMultiplier &&
           evalInterval == other.evalInterval &&
-          evalSamples == other.evalSamples; } 
-@override int get hashCode { return Object.hash(batchSize, learningRateMultiplier, nEpochs, reasoningEffort, computeMultiplier, evalInterval, evalSamples); } 
-@override String toString() { return 'FineTuneReinforcementHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs, reasoningEffort: $reasoningEffort, computeMultiplier: $computeMultiplier, evalInterval: $evalInterval, evalSamples: $evalSamples)'; } 
+          evalSamples == other.evalSamples;
+
+@override int get hashCode => Object.hash(batchSize, learningRateMultiplier, nEpochs, reasoningEffort, computeMultiplier, evalInterval, evalSamples);
+
+@override String toString() => 'FineTuneReinforcementHyperparameters(batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs, reasoningEffort: $reasoningEffort, computeMultiplier: $computeMultiplier, evalInterval: $evalInterval, evalSamples: $evalSamples)';
+
  }

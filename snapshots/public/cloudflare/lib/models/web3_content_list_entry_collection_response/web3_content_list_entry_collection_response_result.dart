@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Web3ContentListEntryCollectionResponseResult copyWith({List<Web3ContentListEntry>? Function()? entries}) { return Web3ContentListEntryCollectionResponseResult(
   entries: entries != null ? entries() : this.entries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ContentListEntryCollectionResponseResult &&
-          listEquals(entries, other.entries); } 
-@override int get hashCode { return Object.hashAll(entries ?? const []); } 
-@override String toString() { return 'Web3ContentListEntryCollectionResponseResult(entries: $entries)'; } 
+          listEquals(entries, other.entries);
+
+@override int get hashCode => Object.hashAll(entries ?? const []);
+
+@override String toString() => 'Web3ContentListEntryCollectionResponseResult(entries: $entries)';
+
  }

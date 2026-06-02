@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordingEnumStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordingEnumStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordingEnumStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordingEnumStatus($value)';
+
  }
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
 @immutable final class RecordingEnumSource {const RecordingEnumSource._(this.value);
@@ -75,10 +78,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecordingEnumSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecordingEnumSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordingEnumSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecordingEnumSource($value)';
+
  }
 @immutable final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });
 
@@ -229,7 +235,7 @@ AccountRecording copyWith({String? Function()? accountSid, String? Function()? a
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
   mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRecording &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -249,7 +255,10 @@ AccountRecording copyWith({String? Function()? accountSid, String? Function()? a
           uri == other.uri &&
           encryptionDetails == other.encryptionDetails &&
           subresourceUris == other.subresourceUris &&
-          mediaUrl == other.mediaUrl; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, uri, encryptionDetails, subresourceUris, mediaUrl); } 
-@override String toString() { return 'AccountRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, uri: $uri, encryptionDetails: $encryptionDetails, subresourceUris: $subresourceUris, mediaUrl: $mediaUrl)'; } 
+          mediaUrl == other.mediaUrl;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, uri, encryptionDetails, subresourceUris, mediaUrl);
+
+@override String toString() => 'AccountRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, uri: $uri, encryptionDetails: $encryptionDetails, subresourceUris: $subresourceUris, mediaUrl: $mediaUrl)';
+
  }

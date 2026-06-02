@@ -38,10 +38,13 @@ RulesetsRewriteUriPath copyWith({String? Function()? expression, String? Functio
   expression: expression != null ? expression() : this.expression,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRewriteUriPath &&
           expression == other.expression &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(expression, value); } 
-@override String toString() { return 'RulesetsRewriteUriPath(expression: $expression, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(expression, value);
+
+@override String toString() => 'RulesetsRewriteUriPath(expression: $expression, value: $value)';
+
  }

@@ -55,7 +55,7 @@ RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({doub
   throughtput: throughtput != null ? throughtput() : this.throughtput,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation &&
           backendRtt == other.backendRtt &&
           effectiveNetworktype == other.effectiveNetworktype &&
@@ -65,7 +65,10 @@ RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation copyWith({doub
           relayConnectivity == other.relayConnectivity &&
           rtt == other.rtt &&
           throughtput == other.throughtput &&
-          turnConnectivity == other.turnConnectivity; } 
-@override int get hashCode { return Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughtput, turnConnectivity); } 
-@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughtput: $throughtput, turnConnectivity: $turnConnectivity)'; } 
+          turnConnectivity == other.turnConnectivity;
+
+@override int get hashCode => Object.hash(backendRtt, effectiveNetworktype, fractionalLoss, jitter, reflexiveConnectivity, relayConnectivity, rtt, throughtput, turnConnectivity);
+
+@override String toString() => 'RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation(backendRtt: $backendRtt, effectiveNetworktype: $effectiveNetworktype, fractionalLoss: $fractionalLoss, jitter: $jitter, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, rtt: $rtt, throughtput: $throughtput, turnConnectivity: $turnConnectivity)';
+
  }

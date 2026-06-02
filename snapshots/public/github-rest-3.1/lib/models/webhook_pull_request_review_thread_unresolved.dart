@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestReviewThreadUnresolvedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestReviewThreadUnresolvedAction($value)';
+
  }
 @immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });
 
@@ -79,7 +82,7 @@ WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThrea
   thread: thread ?? this.thread,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolved &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -89,7 +92,10 @@ WebhookPullRequestReviewThreadUnresolved copyWith({WebhookPullRequestReviewThrea
           repository == other.repository &&
           sender == other.sender &&
           thread == other.thread &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt);
+
+@override String toString() => 'WebhookPullRequestReviewThreadUnresolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)';
+
  }

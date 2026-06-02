@@ -21,31 +21,36 @@ final class SecretScanningUpdateOrgPatternConfigsError$400 extends SecretScannin
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$403 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$404 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$409 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$422 extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SecretScanningUpdateOrgPatternConfigsError$Unknown extends SecretScanningUpdateOrgPatternConfigsError {const SecretScanningUpdateOrgPatternConfigsError$Unknown(this.statusCode, this.rawBody, );
 

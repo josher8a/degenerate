@@ -61,7 +61,7 @@ UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, Processor
   urlCategories: urlCategories != null ? urlCategories() : this.urlCategories,
   wappa: wappa ?? this.wappa,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2MetaProcessors &&
           asn == other.asn &&
           dns == other.dns &&
@@ -71,7 +71,10 @@ UrlscannerGetScanResponse2MetaProcessors copyWith({ProcessorsAsn? asn, Processor
           radarRank == other.radarRank &&
           robotsTxt == other.robotsTxt &&
           urlCategories == other.urlCategories &&
-          wappa == other.wappa; } 
-@override int get hashCode { return Object.hash(asn, dns, domainCategories, geoip, phishing, radarRank, robotsTxt, urlCategories, wappa); } 
-@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessors(asn: $asn, dns: $dns, domainCategories: $domainCategories, geoip: $geoip, phishing: $phishing, radarRank: $radarRank, robotsTxt: $robotsTxt, urlCategories: $urlCategories, wappa: $wappa)'; } 
+          wappa == other.wappa;
+
+@override int get hashCode => Object.hash(asn, dns, domainCategories, geoip, phishing, radarRank, robotsTxt, urlCategories, wappa);
+
+@override String toString() => 'UrlscannerGetScanResponse2MetaProcessors(asn: $asn, dns: $dns, domainCategories: $domainCategories, geoip: $geoip, phishing: $phishing, radarRank: $radarRank, robotsTxt: $robotsTxt, urlCategories: $urlCategories, wappa: $wappa)';
+
  }

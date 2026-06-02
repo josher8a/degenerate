@@ -75,7 +75,7 @@ EnterpriseWebhooks copyWith({String? Function()? description, Uri? htmlUrl, Uri?
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   avatarUrl: avatarUrl ?? this.avatarUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnterpriseWebhooks &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -86,7 +86,10 @@ EnterpriseWebhooks copyWith({String? Function()? description, Uri? htmlUrl, Uri?
           slug == other.slug &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          avatarUrl == other.avatarUrl; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl); } 
-@override String toString() { return 'EnterpriseWebhooks(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)'; } 
+          avatarUrl == other.avatarUrl;
+
+@override int get hashCode => Object.hash(description, htmlUrl, websiteUrl, id, nodeId, name, slug, createdAt, updatedAt, avatarUrl);
+
+@override String toString() => 'EnterpriseWebhooks(description: $description, htmlUrl: $htmlUrl, websiteUrl: $websiteUrl, id: $id, nodeId: $nodeId, name: $name, slug: $slug, createdAt: $createdAt, updatedAt: $updatedAt, avatarUrl: $avatarUrl)';
+
  }

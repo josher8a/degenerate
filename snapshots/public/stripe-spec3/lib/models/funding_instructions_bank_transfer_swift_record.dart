@@ -65,7 +65,7 @@ FundingInstructionsBankTransferSwiftRecord copyWith({Address? accountHolderAddre
   bankName: bankName ?? this.bankName,
   swiftCode: swiftCode ?? this.swiftCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferSwiftRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
@@ -73,7 +73,10 @@ FundingInstructionsBankTransferSwiftRecord copyWith({Address? accountHolderAddre
           accountType == other.accountType &&
           bankAddress == other.bankAddress &&
           bankName == other.bankName &&
-          swiftCode == other.swiftCode; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankName, swiftCode); } 
-@override String toString() { return 'FundingInstructionsBankTransferSwiftRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankName: $bankName, swiftCode: $swiftCode)'; } 
+          swiftCode == other.swiftCode;
+
+@override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankName, swiftCode);
+
+@override String toString() => 'FundingInstructionsBankTransferSwiftRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankName: $bankName, swiftCode: $swiftCode)';
+
  }

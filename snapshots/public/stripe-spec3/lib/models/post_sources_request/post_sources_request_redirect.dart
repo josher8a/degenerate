@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('retur
 PostSourcesRequestRedirect copyWith({String? returnUrl}) { return PostSourcesRequestRedirect(
   returnUrl: returnUrl ?? this.returnUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesRequestRedirect &&
-          returnUrl == other.returnUrl; } 
-@override int get hashCode { return returnUrl.hashCode; } 
-@override String toString() { return 'PostSourcesRequestRedirect(returnUrl: $returnUrl)'; } 
+          returnUrl == other.returnUrl;
+
+@override int get hashCode => returnUrl.hashCode;
+
+@override String toString() => 'PostSourcesRequestRedirect(returnUrl: $returnUrl)';
+
  }

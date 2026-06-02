@@ -27,11 +27,14 @@ Serie0Variant7 copyWith({List<String>? dsa, List<String>? ecdsa, List<String>? r
   ecdsa: ecdsa ?? this.ecdsa,
   rsa: rsa ?? this.rsa,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant7 &&
           listEquals(dsa, other.dsa) &&
           listEquals(ecdsa, other.ecdsa) &&
-          listEquals(rsa, other.rsa); } 
-@override int get hashCode { return Object.hash(Object.hashAll(dsa), Object.hashAll(ecdsa), Object.hashAll(rsa)); } 
-@override String toString() { return 'Serie0Variant7(dsa: $dsa, ecdsa: $ecdsa, rsa: $rsa)'; } 
+          listEquals(rsa, other.rsa);
+
+@override int get hashCode => Object.hash(Object.hashAll(dsa), Object.hashAll(ecdsa), Object.hashAll(rsa));
+
+@override String toString() => 'Serie0Variant7(dsa: $dsa, ecdsa: $ecdsa, rsa: $rsa)';
+
  }

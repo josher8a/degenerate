@@ -25,11 +25,14 @@ D1RawResultResponse copyWith({D1QueryMeta? Function()? meta, D1RawResultResponse
   results: results != null ? results() : this.results,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1RawResultResponse &&
           meta == other.meta &&
           results == other.results &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(meta, results, success); } 
-@override String toString() { return 'D1RawResultResponse(meta: $meta, results: $results, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(meta, results, success);
+
+@override String toString() => 'D1RawResultResponse(meta: $meta, results: $results, success: $success)';
+
  }

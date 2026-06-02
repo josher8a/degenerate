@@ -29,10 +29,13 @@ ClientSecret copyWith({String? value, int? expiresAt, }) { return ClientSecret(
   value: value ?? this.value,
   expiresAt: expiresAt ?? this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClientSecret &&
           value == other.value &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(value, expiresAt); } 
-@override String toString() { return 'ClientSecret(value: $value, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(value, expiresAt);
+
+@override String toString() => 'ClientSecret(value: $value, expiresAt: $expiresAt)';
+
  }

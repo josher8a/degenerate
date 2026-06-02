@@ -17,7 +17,8 @@ final class AigConfigCreateProvidersError$400 extends AigConfigCreateProvidersEr
 
 final AigConfigCreateProvidersResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigCreateProvidersError$Unknown extends AigConfigCreateProvidersError {const AigConfigCreateProvidersError$Unknown(this.statusCode, this.rawBody, );
 

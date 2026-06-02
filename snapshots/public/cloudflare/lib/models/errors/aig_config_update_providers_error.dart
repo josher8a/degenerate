@@ -18,13 +18,15 @@ final class AigConfigUpdateProvidersError$400 extends AigConfigUpdateProvidersEr
 
 final AigConfigUpdateProvidersResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigUpdateProvidersError$404 extends AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError$404(this.error);
 
 final AigConfigUpdateProvidersResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigUpdateProvidersError$Unknown extends AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError$Unknown(this.statusCode, this.rawBody, );
 

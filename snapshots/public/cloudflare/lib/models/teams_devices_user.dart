@@ -44,11 +44,14 @@ TeamsDevicesUser copyWith({TeamsDevicesEmail? Function()? email, TeamsDevicesCom
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesUser &&
           email == other.email &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(email, id, name); } 
-@override String toString() { return 'TeamsDevicesUser(email: $email, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(email, id, name);
+
+@override String toString() => 'TeamsDevicesUser(email: $email, id: $id, name: $name)';
+
  }

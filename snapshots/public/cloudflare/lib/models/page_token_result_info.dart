@@ -26,10 +26,13 @@ PageTokenResultInfo copyWith({String? Function()? nextPageToken, int? Function()
   nextPageToken: nextPageToken != null ? nextPageToken() : this.nextPageToken,
   totalSize: totalSize != null ? totalSize() : this.totalSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PageTokenResultInfo &&
           nextPageToken == other.nextPageToken &&
-          totalSize == other.totalSize; } 
-@override int get hashCode { return Object.hash(nextPageToken, totalSize); } 
-@override String toString() { return 'PageTokenResultInfo(nextPageToken: $nextPageToken, totalSize: $totalSize)'; } 
+          totalSize == other.totalSize;
+
+@override int get hashCode => Object.hash(nextPageToken, totalSize);
+
+@override String toString() => 'PageTokenResultInfo(nextPageToken: $nextPageToken, totalSize: $totalSize)';
+
  }

@@ -21,10 +21,13 @@ Serie0Variant2 copyWith({List<String>? rfc6962, List<String>? $static, }) { retu
   rfc6962: rfc6962 ?? this.rfc6962,
   $static: $static ?? this.$static,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Serie0Variant2 &&
           listEquals(rfc6962, other.rfc6962) &&
-          listEquals($static, other.$static); } 
-@override int get hashCode { return Object.hash(Object.hashAll(rfc6962), Object.hashAll($static)); } 
-@override String toString() { return 'Serie0Variant2(rfc6962: $rfc6962, \$static: ${$static})'; } 
+          listEquals($static, other.$static);
+
+@override int get hashCode => Object.hash(Object.hashAll(rfc6962), Object.hashAll($static));
+
+@override String toString() => 'Serie0Variant2(rfc6962: $rfc6962, \$static: ${$static})';
+
  }

@@ -42,14 +42,17 @@ MagicCreateRouteRequest copyWith({MagicDescription? Function()? description, Mag
   scope: scope != null ? scope() : this.scope,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicCreateRouteRequest &&
           description == other.description &&
           nexthop == other.nexthop &&
           prefix == other.prefix &&
           priority == other.priority &&
           scope == other.scope &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(description, nexthop, prefix, priority, scope, weight); } 
-@override String toString() { return 'MagicCreateRouteRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(description, nexthop, prefix, priority, scope, weight);
+
+@override String toString() => 'MagicCreateRouteRequest(description: $description, nexthop: $nexthop, prefix: $prefix, priority: $priority, scope: $scope, weight: $weight)';
+
  }

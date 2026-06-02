@@ -17,7 +17,8 @@ final class SecretScanningGetScanHistoryError$503 extends SecretScanningGetScanH
 
 final SecretScanningGetScanHistoryResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SecretScanningGetScanHistoryError$Unknown extends SecretScanningGetScanHistoryError {const SecretScanningGetScanHistoryError$Unknown(this.statusCode, this.rawBody, );
 

@@ -30,12 +30,15 @@ PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel co
   mode: mode != null ? mode() : this.mode,
   prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel &&
           cancellationReason == other.cancellationReason &&
           enabled == other.enabled &&
           mode == other.mode &&
-          prorationBehavior == other.prorationBehavior; } 
-@override int get hashCode { return Object.hash(cancellationReason, enabled, mode, prorationBehavior); } 
-@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)'; } 
+          prorationBehavior == other.prorationBehavior;
+
+@override int get hashCode => Object.hash(cancellationReason, enabled, mode, prorationBehavior);
+
+@override String toString() => 'PostBillingPortalConfigurationsConfigurationRequestFeaturesSubscriptionCancel(cancellationReason: $cancellationReason, enabled: $enabled, mode: $mode, prorationBehavior: $prorationBehavior)';
+
  }

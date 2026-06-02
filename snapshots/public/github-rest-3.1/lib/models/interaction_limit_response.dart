@@ -29,11 +29,14 @@ InteractionLimitResponse copyWith({InteractionGroup? limit, String? origin, Date
   origin: origin ?? this.origin,
   expiresAt: expiresAt ?? this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InteractionLimitResponse &&
           limit == other.limit &&
           origin == other.origin &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(limit, origin, expiresAt); } 
-@override String toString() { return 'InteractionLimitResponse(limit: $limit, origin: $origin, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(limit, origin, expiresAt);
+
+@override String toString() => 'InteractionLimitResponse(limit: $limit, origin: $origin, expiresAt: $expiresAt)';
+
  }

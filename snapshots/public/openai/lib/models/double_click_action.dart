@@ -31,11 +31,14 @@ DoubleClickAction copyWith({String? type, int? x, int? y, }) { return DoubleClic
   x: x ?? this.x,
   y: y ?? this.y,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DoubleClickAction &&
           type == other.type &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(type, x, y); } 
-@override String toString() { return 'DoubleClickAction(type: $type, x: $x, y: $y)'; } 
+          y == other.y;
+
+@override int get hashCode => Object.hash(type, x, y);
+
+@override String toString() => 'DoubleClickAction(type: $type, x: $x, y: $y)';
+
  }

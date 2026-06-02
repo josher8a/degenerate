@@ -144,7 +144,7 @@ CreateRunRequest copyWith({String? assistantId, CreateAssistantRequestModel? Fun
   parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
   responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateRunRequest &&
           assistantId == other.assistantId &&
           model == other.model &&
@@ -162,7 +162,10 @@ CreateRunRequest copyWith({String? assistantId, CreateAssistantRequestModel? Fun
           truncationStrategy == other.truncationStrategy &&
           toolChoice == other.toolChoice &&
           parallelToolCalls == other.parallelToolCalls &&
-          responseFormat == other.responseFormat; } 
-@override int get hashCode { return Object.hash(assistantId, model, reasoningEffort, instructions, additionalInstructions, Object.hashAll(additionalMessages ?? const []), Object.hashAll(tools ?? const []), metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat); } 
-@override String toString() { return 'CreateRunRequest(assistantId: $assistantId, model: $model, reasoningEffort: $reasoningEffort, instructions: $instructions, additionalInstructions: $additionalInstructions, additionalMessages: $additionalMessages, tools: $tools, metadata: $metadata, temperature: $temperature, topP: $topP, stream: $stream, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)'; } 
+          responseFormat == other.responseFormat;
+
+@override int get hashCode => Object.hash(assistantId, model, reasoningEffort, instructions, additionalInstructions, Object.hashAll(additionalMessages ?? const []), Object.hashAll(tools ?? const []), metadata, temperature, topP, stream, maxPromptTokens, maxCompletionTokens, truncationStrategy, toolChoice, parallelToolCalls, responseFormat);
+
+@override String toString() => 'CreateRunRequest(assistantId: $assistantId, model: $model, reasoningEffort: $reasoningEffort, instructions: $instructions, additionalInstructions: $additionalInstructions, additionalMessages: $additionalMessages, tools: $tools, metadata: $metadata, temperature: $temperature, topP: $topP, stream: $stream, maxPromptTokens: $maxPromptTokens, maxCompletionTokens: $maxCompletionTokens, truncationStrategy: $truncationStrategy, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, responseFormat: $responseFormat)';
+
  }

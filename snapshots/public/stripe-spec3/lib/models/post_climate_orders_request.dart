@@ -60,7 +60,7 @@ PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersReq
   metricTons: metricTons != null ? metricTons() : this.metricTons,
   product: product ?? this.product,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostClimateOrdersRequest &&
           amount == other.amount &&
           beneficiary == other.beneficiary &&
@@ -68,7 +68,10 @@ PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersReq
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           metricTons == other.metricTons &&
-          product == other.product; } 
-@override int get hashCode { return Object.hash(amount, beneficiary, currency, Object.hashAll(expand ?? const []), metadata, metricTons, product); } 
-@override String toString() { return 'PostClimateOrdersRequest(amount: $amount, beneficiary: $beneficiary, currency: $currency, expand: $expand, metadata: $metadata, metricTons: $metricTons, product: $product)'; } 
+          product == other.product;
+
+@override int get hashCode => Object.hash(amount, beneficiary, currency, Object.hashAll(expand ?? const []), metadata, metricTons, product);
+
+@override String toString() => 'PostClimateOrdersRequest(amount: $amount, beneficiary: $beneficiary, currency: $currency, expand: $expand, metadata: $metadata, metricTons: $metricTons, product: $product)';
+
  }

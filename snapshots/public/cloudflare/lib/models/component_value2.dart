@@ -43,12 +43,15 @@ ComponentValue2 copyWith({double? Function()? $default, String? Function()? name
   price: price != null ? price() : this.price,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComponentValue2 &&
           $default == other.$default &&
           name == other.name &&
           price == other.price &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash($default, name, price, value); } 
-@override String toString() { return 'ComponentValue2(\$default: ${$default}, name: $name, price: $price, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash($default, name, price, value);
+
+@override String toString() => 'ComponentValue2(\$default: ${$default}, name: $name, price: $price, value: $value)';
+
  }

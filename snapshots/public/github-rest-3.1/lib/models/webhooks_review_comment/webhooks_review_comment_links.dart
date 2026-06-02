@@ -27,11 +27,14 @@ WebhooksReviewCommentLinks copyWith({WebhooksPullRequest5LinksHtml? html, Webhoo
   pullRequest: pullRequest ?? this.pullRequest,
   self: self ?? this.self,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksReviewCommentLinks &&
           html == other.html &&
           pullRequest == other.pullRequest &&
-          self == other.self; } 
-@override int get hashCode { return Object.hash(html, pullRequest, self); } 
-@override String toString() { return 'WebhooksReviewCommentLinks(html: $html, pullRequest: $pullRequest, self: $self)'; } 
+          self == other.self;
+
+@override int get hashCode => Object.hash(html, pullRequest, self);
+
+@override String toString() => 'WebhooksReviewCommentLinks(html: $html, pullRequest: $pullRequest, self: $self)';
+
  }

@@ -59,12 +59,15 @@ DnsRecordsSmimeaRecordData copyWith({String? Function()? certificate, double? Fu
   selector: selector != null ? selector() : this.selector,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsSmimeaRecordData &&
           certificate == other.certificate &&
           matchingType == other.matchingType &&
           selector == other.selector &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(certificate, matchingType, selector, usage); } 
-@override String toString() { return 'DnsRecordsSmimeaRecordData(certificate: $certificate, matchingType: $matchingType, selector: $selector, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(certificate, matchingType, selector, usage);
+
+@override String toString() => 'DnsRecordsSmimeaRecordData(certificate: $certificate, matchingType: $matchingType, selector: $selector, usage: $usage)';
+
  }

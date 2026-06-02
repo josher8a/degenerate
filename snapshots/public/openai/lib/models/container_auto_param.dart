@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContainerAutoParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContainerAutoParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContainerAutoParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContainerAutoParamType($value)';
+
  }
 @immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit, this.networkPolicy, this.skills, });
 
@@ -72,13 +75,16 @@ ContainerAutoParam copyWith({ContainerAutoParamType? type, List<String>? Functio
   networkPolicy: networkPolicy != null ? networkPolicy() : this.networkPolicy,
   skills: skills != null ? skills() : this.skills,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerAutoParam &&
           type == other.type &&
           listEquals(fileIds, other.fileIds) &&
           memoryLimit == other.memoryLimit &&
           networkPolicy == other.networkPolicy &&
-          listEquals(skills, other.skills); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy, Object.hashAll(skills ?? const [])); } 
-@override String toString() { return 'ContainerAutoParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy, skills: $skills)'; } 
+          listEquals(skills, other.skills);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(fileIds ?? const []), memoryLimit, networkPolicy, Object.hashAll(skills ?? const []));
+
+@override String toString() => 'ContainerAutoParam(type: $type, fileIds: $fileIds, memoryLimit: $memoryLimit, networkPolicy: $networkPolicy, skills: $skills)';
+
  }

@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BrandingSettingsBorderStyle && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BrandingSettingsBorderStyle($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BrandingSettingsBorderStyle && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BrandingSettingsBorderStyle($value)';
+
  }
 @immutable final class FontFamily {const FontFamily._(this.value);
 
@@ -124,10 +127,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FontFamily && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FontFamily($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FontFamily && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FontFamily($value)';
+
  }
 /// The branding settings for the Checkout Session. This parameter is not allowed if ui_mode is `custom`.
 @immutable final class BrandingSettings {const BrandingSettings({this.backgroundColor, this.borderStyle, this.buttonColor, this.displayName, this.fontFamily, this.icon, this.logo, });
@@ -182,7 +188,7 @@ BrandingSettings copyWith({BackgroundColor? Function()? backgroundColor, Brandin
   icon: icon != null ? icon() : this.icon,
   logo: logo != null ? logo() : this.logo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrandingSettings &&
           backgroundColor == other.backgroundColor &&
           borderStyle == other.borderStyle &&
@@ -190,7 +196,10 @@ BrandingSettings copyWith({BackgroundColor? Function()? backgroundColor, Brandin
           displayName == other.displayName &&
           fontFamily == other.fontFamily &&
           icon == other.icon &&
-          logo == other.logo; } 
-@override int get hashCode { return Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo); } 
-@override String toString() { return 'BrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)'; } 
+          logo == other.logo;
+
+@override int get hashCode => Object.hash(backgroundColor, borderStyle, buttonColor, displayName, fontFamily, icon, logo);
+
+@override String toString() => 'BrandingSettings(backgroundColor: $backgroundColor, borderStyle: $borderStyle, buttonColor: $buttonColor, displayName: $displayName, fontFamily: $fontFamily, icon: $icon, logo: $logo)';
+
  }

@@ -31,10 +31,13 @@ RetrievalOptions copyWith({List<BoostBy>? Function()? boostBy, KeywordMatchMode 
   boostBy: boostBy != null ? boostBy() : this.boostBy,
   keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RetrievalOptions &&
           listEquals(boostBy, other.boostBy) &&
-          keywordMatchMode == other.keywordMatchMode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(boostBy ?? const []), keywordMatchMode); } 
-@override String toString() { return 'RetrievalOptions(boostBy: $boostBy, keywordMatchMode: $keywordMatchMode)'; } 
+          keywordMatchMode == other.keywordMatchMode;
+
+@override int get hashCode => Object.hash(Object.hashAll(boostBy ?? const []), keywordMatchMode);
+
+@override String toString() => 'RetrievalOptions(boostBy: $boostBy, keywordMatchMode: $keywordMatchMode)';
+
  }

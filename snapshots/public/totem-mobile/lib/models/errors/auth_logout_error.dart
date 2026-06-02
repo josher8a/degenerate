@@ -31,9 +31,7 @@ final class AuthLogoutError$400 extends AuthLogoutError {
   final ErrorResponse error;
 
   @override
-  int get statusCode {
-    return 400;
-  }
+  int get statusCode => 400;
 }
 
 final class AuthLogoutError$Unknown extends AuthLogoutError {

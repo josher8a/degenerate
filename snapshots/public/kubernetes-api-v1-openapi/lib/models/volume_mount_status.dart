@@ -42,13 +42,16 @@ VolumeMountStatus copyWith({String? mountPath, String? name, bool? Function()? r
   recursiveReadOnly: recursiveReadOnly != null ? recursiveReadOnly() : this.recursiveReadOnly,
   volumeStatus: volumeStatus != null ? volumeStatus() : this.volumeStatus,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VolumeMountStatus &&
           mountPath == other.mountPath &&
           name == other.name &&
           readOnly == other.readOnly &&
           recursiveReadOnly == other.recursiveReadOnly &&
-          volumeStatus == other.volumeStatus; } 
-@override int get hashCode { return Object.hash(mountPath, name, readOnly, recursiveReadOnly, volumeStatus); } 
-@override String toString() { return 'VolumeMountStatus(mountPath: $mountPath, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, volumeStatus: $volumeStatus)'; } 
+          volumeStatus == other.volumeStatus;
+
+@override int get hashCode => Object.hash(mountPath, name, readOnly, recursiveReadOnly, volumeStatus);
+
+@override String toString() => 'VolumeMountStatus(mountPath: $mountPath, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, volumeStatus: $volumeStatus)';
+
  }

@@ -18,13 +18,15 @@ final class AiSearchInstanceListJobsError$400 extends AiSearchInstanceListJobsEr
 
 final AiSearchInstanceListJobsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchInstanceListJobsError$500 extends AiSearchInstanceListJobsError {const AiSearchInstanceListJobsError$500(this.error);
 
 final AiSearchInstanceListJobsResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class AiSearchInstanceListJobsError$Unknown extends AiSearchInstanceListJobsError {const AiSearchInstanceListJobsError$Unknown(this.statusCode, this.rawBody, );
 

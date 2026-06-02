@@ -30,11 +30,14 @@ ChatCompletionRequestFunctionMessage copyWith({String? role, String? Function()?
   content: content != null ? content() : this.content,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestFunctionMessage &&
           role == other.role &&
           content == other.content &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(role, content, name); } 
-@override String toString() { return 'ChatCompletionRequestFunctionMessage(role: $role, content: $content, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(role, content, name);
+
+@override String toString() => 'ChatCompletionRequestFunctionMessage(role: $role, content: $content, name: $name)';
+
  }

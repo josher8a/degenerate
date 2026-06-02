@@ -464,19 +464,20 @@ class DiscriminatedUnionEmitter {
               ..name = 'toJson'
               ..annotations.add(refer('override'))
               ..returns = refer('Map<String, dynamic>')
-              ..body = const Code('return json;'),
+              ..lambda = true
+              ..body = const Code('json'),
           ),
         )
         ..methods.add(
           buildEqualsOverride(
-            'return identical(this, other) ||\n'
-            '    other is $className && json == other.json;',
+            'identical(this, other) ||\n'
+            '    other is $className && json == other.json',
           ),
         )
-        ..methods.add(buildHashCodeOverride('return json.hashCode;'))
+        ..methods.add(buildHashCodeOverride('json.hashCode'))
         ..methods.add(
           buildToStringOverride(
-            "return '${escapeNameForString(union.name)}.unknown(\$json)';",
+            "'${escapeNameForString(union.name)}.unknown(\$json)'",
           ),
         )
         ..methods.addAll(commonFields.map(_unknownCommonGetter)),
@@ -545,8 +546,8 @@ class DiscriminatedUnionEmitter {
         )
         .join(' && ');
     final eqBody = eqComparisons.isEmpty
-        ? 'return identical(this, other) || other is $className;'
-        : 'return identical(this, other) ||\n      other is $className && $eqComparisons;';
+        ? 'identical(this, other) || other is $className'
+        : 'identical(this, other) ||\n      other is $className && $eqComparisons';
 
     final hashFields = fields
         .map(
@@ -555,8 +556,8 @@ class DiscriminatedUnionEmitter {
         )
         .join(', ');
     final hashBody = hashFields.isEmpty
-        ? 'return runtimeType.hashCode;'
-        : 'return Object.hash(runtimeType, $hashFields);';
+        ? 'runtimeType.hashCode'
+        : 'Object.hash(runtimeType, $hashFields)';
 
     final toStrFields = fields.map(toStringField).join(', ');
 
@@ -606,7 +607,8 @@ class DiscriminatedUnionEmitter {
               ..name = 'toJson'
               ..annotations.add(refer('override'))
               ..returns = refer('Map<String, dynamic>')
-              ..body = Code('return {\n${toJsonEntries.join('\n')}\n};'),
+              ..lambda = true
+              ..body = Code('{\n${toJsonEntries.join('\n')}\n}'),
           ),
         )
         ..methods.add(_buildObjectVariantCopyWith(className, fields))
@@ -614,7 +616,7 @@ class DiscriminatedUnionEmitter {
         ..methods.add(buildHashCodeOverride(hashBody))
         ..methods.add(
           buildToStringOverride(
-            "return '${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)';",
+            "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($toStrFields)'",
           ),
         ),
     );
@@ -630,8 +632,8 @@ class DiscriminatedUnionEmitter {
       IrDiscriminatedUnion() ||
       IrUntaggedUnion() ||
       // Spread first so the discriminator key always wins.
-      IrAnyOf() => 'return {...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName};',
-      _ => 'return {${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr};',
+      IrAnyOf() => '{...$toJsonExpr, ${dartStringLiteral(_discJsonKey)}: $_discDartName}',
+      _ => '{${dartStringLiteral(_discJsonKey)}: $_discDartName, ${dartStringLiteral('data')}: $toJsonExpr}',
     };
   }
 
@@ -700,6 +702,7 @@ class DiscriminatedUnionEmitter {
           Method(
             (m) => m
               ..name = 'toJson'
+              ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('Map<String, dynamic>')
               ..body = Code(_refVariantToJsonBody(type, fieldName)),
@@ -708,11 +711,11 @@ class DiscriminatedUnionEmitter {
         ..methods.add(_buildRefVariantCopyWith(className, fieldName, type))
         ..methods.add(
           buildEqualsOverride(
-            'return identical(this, other) ||\n'
-            '    other is $className && $fieldName == other.$fieldName;',
+            'identical(this, other) ||\n'
+            '    other is $className && $fieldName == other.$fieldName',
           ),
         )
-        ..methods.add(buildHashCodeOverride('return $fieldName.hashCode;'))
+        ..methods.add(buildHashCodeOverride('$fieldName.hashCode'))
         ..methods.add(() {
           final String fieldStr;
           if (fieldName.startsWith(r'$')) {
@@ -721,7 +724,7 @@ class DiscriminatedUnionEmitter {
             fieldStr = '\$$fieldName';
           }
           return buildToStringOverride(
-            "return '${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($fieldStr)';",
+            "'${escapeNameForString(union.name)}.${escapeNameForString(_variantCtorName(discValue))}($fieldStr)'",
           );
         }())
         ..methods.addAll(
@@ -934,18 +937,19 @@ class UntaggedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = irTypeToReference(variant)
-              ..body = const Code('return _value;'),
+              ..lambda = true
+              ..body = const Code('_value'),
           ),
         )
         ..methods.addAll([
           ..._buildVariantToJson(variant),
           buildEqualsOverride(
-            'return identical(this, other) ||\n'
-            '    other is $className && _value == other._value;',
+            'identical(this, other) ||\n'
+            '    other is $className && _value == other._value',
           ),
-          buildHashCodeOverride('return _value.hashCode;'),
+          buildHashCodeOverride('_value.hashCode'),
           buildToStringOverride(
-            "return '${escapeNameForString(union.name)}.${toCamelCase(typeName)}(\$_value)';",
+            "'${escapeNameForString(union.name)}.${toCamelCase(typeName)}(\$_value)'",
           ),
         ]),
     );
@@ -1004,17 +1008,18 @@ class UntaggedUnionEmitter {
               ..type = MethodType.getter
               ..annotations.add(refer('override'))
               ..returns = refer('dynamic')
-              ..body = const Code("return _value ?? '';"),
+              ..lambda = true
+              ..body = const Code("_value ?? ''"),
           ),
         )
         ..methods.addAll([
           buildEqualsOverride(
-            'return identical(this, other) ||\n'
-            '    other is $className && _value == other._value;',
+            'identical(this, other) ||\n'
+            '    other is $className && _value == other._value',
           ),
-          buildHashCodeOverride('return _value.hashCode;'),
+          buildHashCodeOverride('_value.hashCode'),
           buildToStringOverride(
-            "return '${escapeNameForString(union.name)}.unknown(\$_value)';",
+            "'${escapeNameForString(union.name)}.unknown(\$_value)'",
           ),
         ]),
     );

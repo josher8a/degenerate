@@ -30,11 +30,14 @@ ChatCompletionRequestToolMessage copyWith({String? role, ChatCompletionRequestTo
   content: content ?? this.content,
   toolCallId: toolCallId ?? this.toolCallId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionRequestToolMessage &&
           role == other.role &&
           content == other.content &&
-          toolCallId == other.toolCallId; } 
-@override int get hashCode { return Object.hash(role, content, toolCallId); } 
-@override String toString() { return 'ChatCompletionRequestToolMessage(role: $role, content: $content, toolCallId: $toolCallId)'; } 
+          toolCallId == other.toolCallId;
+
+@override int get hashCode => Object.hash(role, content, toolCallId);
+
+@override String toString() => 'ChatCompletionRequestToolMessage(role: $role, content: $content, toolCallId: $toolCallId)';
+
  }

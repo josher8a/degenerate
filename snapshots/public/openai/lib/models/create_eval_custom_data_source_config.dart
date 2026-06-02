@@ -44,11 +44,14 @@ CreateEvalCustomDataSourceConfig copyWith({ChatCompletionMessageCustomToolCallTy
   itemSchema: itemSchema ?? this.itemSchema,
   includeSampleSchema: includeSampleSchema != null ? includeSampleSchema() : this.includeSampleSchema,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvalCustomDataSourceConfig &&
           type == other.type &&
           itemSchema == other.itemSchema &&
-          includeSampleSchema == other.includeSampleSchema; } 
-@override int get hashCode { return Object.hash(type, itemSchema, includeSampleSchema); } 
-@override String toString() { return 'CreateEvalCustomDataSourceConfig(type: $type, itemSchema: $itemSchema, includeSampleSchema: $includeSampleSchema)'; } 
+          includeSampleSchema == other.includeSampleSchema;
+
+@override int get hashCode => Object.hash(type, itemSchema, includeSampleSchema);
+
+@override String toString() => 'CreateEvalCustomDataSourceConfig(type: $type, itemSchema: $itemSchema, includeSampleSchema: $includeSampleSchema)';
+
  }

@@ -17,7 +17,8 @@ final class GetCountryReadError$400 extends GetCountryReadError {const GetCountr
 
 final GetCountryReadResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetCountryReadError$Unknown extends GetCountryReadError {const GetCountryReadError$Unknown(this.statusCode, this.rawBody, );
 

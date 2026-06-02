@@ -23,10 +23,13 @@ PaymentLinksResourceInvoiceCreation copyWith({bool? enabled, PaymentLinksResourc
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceInvoiceCreation &&
           enabled == other.enabled &&
-          invoiceData == other.invoiceData; } 
-@override int get hashCode { return Object.hash(enabled, invoiceData); } 
-@override String toString() { return 'PaymentLinksResourceInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)'; } 
+          invoiceData == other.invoiceData;
+
+@override int get hashCode => Object.hash(enabled, invoiceData);
+
+@override String toString() => 'PaymentLinksResourceInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)';
+
  }

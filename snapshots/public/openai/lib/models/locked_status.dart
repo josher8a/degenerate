@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LockedStatusType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LockedStatusType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LockedStatusType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LockedStatusType($value)';
+
  }
 /// Indicates that a thread is locked and cannot accept new input.
 @immutable final class LockedStatus {const LockedStatus({required this.reason, this.type = LockedStatusType.locked, });
@@ -46,10 +49,13 @@ LockedStatus copyWith({LockedStatusType? type, String? Function()? reason, }) { 
   type: type ?? this.type,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LockedStatus &&
           type == other.type &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(type, reason); } 
-@override String toString() { return 'LockedStatus(type: $type, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(type, reason);
+
+@override String toString() => 'LockedStatus(type: $type, reason: $reason)';
+
  }

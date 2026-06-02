@@ -27,10 +27,13 @@ WebhookRealtimeCallIncomingData copyWith({String? callId, List<SipHeaders>? sipH
   callId: callId ?? this.callId,
   sipHeaders: sipHeaders ?? this.sipHeaders,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRealtimeCallIncomingData &&
           callId == other.callId &&
-          listEquals(sipHeaders, other.sipHeaders); } 
-@override int get hashCode { return Object.hash(callId, Object.hashAll(sipHeaders)); } 
-@override String toString() { return 'WebhookRealtimeCallIncomingData(callId: $callId, sipHeaders: $sipHeaders)'; } 
+          listEquals(sipHeaders, other.sipHeaders);
+
+@override int get hashCode => Object.hash(callId, Object.hashAll(sipHeaders));
+
+@override String toString() => 'WebhookRealtimeCallIncomingData(callId: $callId, sipHeaders: $sipHeaders)';
+
  }

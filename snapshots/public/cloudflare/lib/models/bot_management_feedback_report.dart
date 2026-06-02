@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BotManagementFeedbackType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BotManagementFeedbackType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementFeedbackType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BotManagementFeedbackType($value)';
+
  }
 @immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });
 
@@ -99,7 +102,7 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
   subtype: subtype != null ? subtype() : this.subtype,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementFeedbackReport &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -111,7 +114,10 @@ BotManagementFeedbackReport copyWith({DateTime? Function()? createdAt, String? d
           requestsByScore == other.requestsByScore &&
           requestsByScoreSrc == other.requestsByScoreSrc &&
           subtype == other.subtype &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, description, expression, firstRequestSeenAt, lastRequestSeenAt, requests, requestsByAttribute, requestsByScore, requestsByScoreSrc, subtype, type); } 
-@override String toString() { return 'BotManagementFeedbackReport(createdAt: $createdAt, description: $description, expression: $expression, firstRequestSeenAt: $firstRequestSeenAt, lastRequestSeenAt: $lastRequestSeenAt, requests: $requests, requestsByAttribute: $requestsByAttribute, requestsByScore: $requestsByScore, requestsByScoreSrc: $requestsByScoreSrc, subtype: $subtype, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, description, expression, firstRequestSeenAt, lastRequestSeenAt, requests, requestsByAttribute, requestsByScore, requestsByScoreSrc, subtype, type);
+
+@override String toString() => 'BotManagementFeedbackReport(createdAt: $createdAt, description: $description, expression: $expression, firstRequestSeenAt: $firstRequestSeenAt, lastRequestSeenAt: $lastRequestSeenAt, requests: $requests, requestsByAttribute: $requestsByAttribute, requestsByScore: $requestsByScore, requestsByScoreSrc: $requestsByScoreSrc, subtype: $subtype, type: $type)';
+
  }

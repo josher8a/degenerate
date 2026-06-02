@@ -31,14 +31,18 @@ final LocalEnvironmentParam localEnvironmentParam;
 
 @override String get type => 'local';
 
-@override Map<String, dynamic> toJson() { return {...localEnvironmentParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...localEnvironmentParam.toJson(), 'type': type};
+
 FunctionShellCallItemParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam; } 
-@override int get hashCode { return localEnvironmentParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironment.local($localEnvironmentParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallItemParamEnvironmentLocal && localEnvironmentParam == other.localEnvironmentParam;
+
+@override int get hashCode => localEnvironmentParam.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironment.local($localEnvironmentParam)';
+
  }
 @immutable final class FunctionShellCallItemParamEnvironmentContainerReference extends FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironmentContainerReference(this.containerReferenceParam);
 
@@ -48,14 +52,18 @@ final ContainerReferenceParam containerReferenceParam;
 
 @override String get type => 'container_reference';
 
-@override Map<String, dynamic> toJson() { return {...containerReferenceParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerReferenceParam.toJson(), 'type': type};
+
 FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam.copyWith(
   containerId: containerId,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam; } 
-@override int get hashCode { return containerReferenceParam.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironment.containerReference($containerReferenceParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallItemParamEnvironmentContainerReference && containerReferenceParam == other.containerReferenceParam;
+
+@override int get hashCode => containerReferenceParam.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironment.containerReference($containerReferenceParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -65,9 +73,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FunctionShellCallItemParamEnvironment$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'FunctionShellCallItemParamEnvironment.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FunctionShellCallItemParamEnvironment$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironment.unknown($json)';
+
  }

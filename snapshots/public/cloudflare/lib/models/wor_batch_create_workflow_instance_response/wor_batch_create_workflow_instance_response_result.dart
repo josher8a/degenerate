@@ -39,12 +39,15 @@ WorBatchCreateWorkflowInstanceResponseResult copyWith({String? id, WorBatchCreat
   versionId: versionId ?? this.versionId,
   workflowId: workflowId ?? this.workflowId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorBatchCreateWorkflowInstanceResponseResult &&
           id == other.id &&
           status == other.status &&
           versionId == other.versionId &&
-          workflowId == other.workflowId; } 
-@override int get hashCode { return Object.hash(id, status, versionId, workflowId); } 
-@override String toString() { return 'WorBatchCreateWorkflowInstanceResponseResult(id: $id, status: $status, versionId: $versionId, workflowId: $workflowId)'; } 
+          workflowId == other.workflowId;
+
+@override int get hashCode => Object.hash(id, status, versionId, workflowId);
+
+@override String toString() => 'WorBatchCreateWorkflowInstanceResponseResult(id: $id, status: $status, versionId: $versionId, workflowId: $workflowId)';
+
  }

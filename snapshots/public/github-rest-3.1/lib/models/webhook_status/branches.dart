@@ -27,11 +27,14 @@ Branches copyWith({BranchesCommit? commit, String? name, bool? protected, }) { r
   name: name ?? this.name,
   protected: protected ?? this.protected,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Branches &&
           commit == other.commit &&
           name == other.name &&
-          protected == other.protected; } 
-@override int get hashCode { return Object.hash(commit, name, protected); } 
-@override String toString() { return 'Branches(commit: $commit, name: $name, protected: $protected)'; } 
+          protected == other.protected;
+
+@override int get hashCode => Object.hash(commit, name, protected);
+
+@override String toString() => 'Branches(commit: $commit, name: $name, protected: $protected)';
+
  }

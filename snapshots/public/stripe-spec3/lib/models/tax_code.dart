@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxCodeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxCodeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxCodeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxCodeObject($value)';
+
  }
 /// [Tax codes](https://stripe.com/docs/tax/tax-categories) classify goods and services for tax purposes.
 @immutable final class TaxCode {const TaxCode({required this.description, required this.id, required this.name, required this.object, });
@@ -66,12 +69,15 @@ TaxCode copyWith({String? description, String? id, String? name, TaxCodeObject? 
   name: name ?? this.name,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxCode &&
           description == other.description &&
           id == other.id &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(description, id, name, object); } 
-@override String toString() { return 'TaxCode(description: $description, id: $id, name: $name, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(description, id, name, object);
+
+@override String toString() => 'TaxCode(description: $description, id: $id, name: $name, object: $object)';
+
  }

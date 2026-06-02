@@ -35,12 +35,15 @@ CinderVolumeSource copyWith({String? Function()? fsType, bool? Function()? readO
   secretRef: secretRef != null ? secretRef() : this.secretRef,
   volumeId: volumeId ?? this.volumeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CinderVolumeSource &&
           fsType == other.fsType &&
           readOnly == other.readOnly &&
           secretRef == other.secretRef &&
-          volumeId == other.volumeId; } 
-@override int get hashCode { return Object.hash(fsType, readOnly, secretRef, volumeId); } 
-@override String toString() { return 'CinderVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeId: $volumeId)'; } 
+          volumeId == other.volumeId;
+
+@override int get hashCode => Object.hash(fsType, readOnly, secretRef, volumeId);
+
+@override String toString() => 'CinderVolumeSource(fsType: $fsType, readOnly: $readOnly, secretRef: $secretRef, volumeId: $volumeId)';
+
  }

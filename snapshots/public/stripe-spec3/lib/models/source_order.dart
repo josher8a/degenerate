@@ -48,13 +48,16 @@ SourceOrder copyWith({int? amount, String? currency, String? Function()? email, 
   items: items != null ? items() : this.items,
   shipping: shipping != null ? shipping() : this.shipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceOrder &&
           amount == other.amount &&
           currency == other.currency &&
           email == other.email &&
           listEquals(items, other.items) &&
-          shipping == other.shipping; } 
-@override int get hashCode { return Object.hash(amount, currency, email, Object.hashAll(items ?? const []), shipping); } 
-@override String toString() { return 'SourceOrder(amount: $amount, currency: $currency, email: $email, items: $items, shipping: $shipping)'; } 
+          shipping == other.shipping;
+
+@override int get hashCode => Object.hash(amount, currency, email, Object.hashAll(items ?? const []), shipping);
+
+@override String toString() => 'SourceOrder(amount: $amount, currency: $currency, email: $email, items: $items, shipping: $shipping)';
+
  }

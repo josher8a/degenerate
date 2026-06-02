@@ -23,10 +23,13 @@ ConfigMediaAudio copyWith({bool Function()? enableHighBitrate, bool Function()? 
   enableHighBitrate: enableHighBitrate != null ? enableHighBitrate() : this.enableHighBitrate,
   enableStereo: enableStereo != null ? enableStereo() : this.enableStereo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMediaAudio &&
           enableHighBitrate == other.enableHighBitrate &&
-          enableStereo == other.enableStereo; } 
-@override int get hashCode { return Object.hash(enableHighBitrate, enableStereo); } 
-@override String toString() { return 'ConfigMediaAudio(enableHighBitrate: $enableHighBitrate, enableStereo: $enableStereo)'; } 
+          enableStereo == other.enableStereo;
+
+@override int get hashCode => Object.hash(enableHighBitrate, enableStereo);
+
+@override String toString() => 'ConfigMediaAudio(enableHighBitrate: $enableHighBitrate, enableStereo: $enableStereo)';
+
  }

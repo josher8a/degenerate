@@ -27,11 +27,14 @@ ValidationErrorSimple copyWith({String? message, String? documentationUrl, List<
   documentationUrl: documentationUrl ?? this.documentationUrl,
   errors: errors != null ? errors() : this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ValidationErrorSimple &&
           message == other.message &&
           documentationUrl == other.documentationUrl &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(message, documentationUrl, Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'ValidationErrorSimple(message: $message, documentationUrl: $documentationUrl, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(message, documentationUrl, Object.hashAll(errors ?? const []));
+
+@override String toString() => 'ValidationErrorSimple(message: $message, documentationUrl: $documentationUrl, errors: $errors)';
+
  }

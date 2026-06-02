@@ -26,9 +26,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cpu_m
 PagesDeploymentConfigValuesLimits copyWith({int? cpuMs}) { return PagesDeploymentConfigValuesLimits(
   cpuMs: cpuMs ?? this.cpuMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesLimits &&
-          cpuMs == other.cpuMs; } 
-@override int get hashCode { return cpuMs.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesLimits(cpuMs: $cpuMs)'; } 
+          cpuMs == other.cpuMs;
+
+@override int get hashCode => cpuMs.hashCode;
+
+@override String toString() => 'PagesDeploymentConfigValuesLimits(cpuMs: $cpuMs)';
+
  }

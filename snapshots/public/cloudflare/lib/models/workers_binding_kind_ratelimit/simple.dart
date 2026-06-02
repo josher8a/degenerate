@@ -28,10 +28,13 @@ Simple copyWith({double? limit, int? period, }) { return Simple(
   limit: limit ?? this.limit,
   period: period ?? this.period,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Simple &&
           limit == other.limit &&
-          period == other.period; } 
-@override int get hashCode { return Object.hash(limit, period); } 
-@override String toString() { return 'Simple(limit: $limit, period: $period)'; } 
+          period == other.period;
+
+@override int get hashCode => Object.hash(limit, period);
+
+@override String toString() => 'Simple(limit: $limit, period: $period)';
+
  }

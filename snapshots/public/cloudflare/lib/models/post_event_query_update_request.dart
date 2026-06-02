@@ -46,14 +46,17 @@ PostEventQueryUpdateRequest copyWith({bool? Function()? alertEnabled, bool? Func
   ruleEnabled: ruleEnabled != null ? ruleEnabled() : this.ruleEnabled,
   ruleScope: ruleScope != null ? ruleScope() : this.ruleScope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventQueryUpdateRequest &&
           alertEnabled == other.alertEnabled &&
           alertRollupEnabled == other.alertRollupEnabled &&
           name == other.name &&
           queryJson == other.queryJson &&
           ruleEnabled == other.ruleEnabled &&
-          ruleScope == other.ruleScope; } 
-@override int get hashCode { return Object.hash(alertEnabled, alertRollupEnabled, name, queryJson, ruleEnabled, ruleScope); } 
-@override String toString() { return 'PostEventQueryUpdateRequest(alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope)'; } 
+          ruleScope == other.ruleScope;
+
+@override int get hashCode => Object.hash(alertEnabled, alertRollupEnabled, name, queryJson, ruleEnabled, ruleScope);
+
+@override String toString() => 'PostEventQueryUpdateRequest(alertEnabled: $alertEnabled, alertRollupEnabled: $alertRollupEnabled, name: $name, queryJson: $queryJson, ruleEnabled: $ruleEnabled, ruleScope: $ruleScope)';
+
  }

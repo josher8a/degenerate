@@ -23,10 +23,13 @@ CodeScanningVariantAnalysisSkippedRepoGroup copyWith({int? repositoryCount, List
   repositoryCount: repositoryCount ?? this.repositoryCount,
   repositories: repositories ?? this.repositories,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysisSkippedRepoGroup &&
           repositoryCount == other.repositoryCount &&
-          listEquals(repositories, other.repositories); } 
-@override int get hashCode { return Object.hash(repositoryCount, Object.hashAll(repositories)); } 
-@override String toString() { return 'CodeScanningVariantAnalysisSkippedRepoGroup(repositoryCount: $repositoryCount, repositories: $repositories)'; } 
+          listEquals(repositories, other.repositories);
+
+@override int get hashCode => Object.hash(repositoryCount, Object.hashAll(repositories));
+
+@override String toString() => 'CodeScanningVariantAnalysisSkippedRepoGroup(repositoryCount: $repositoryCount, repositories: $repositories)';
+
  }

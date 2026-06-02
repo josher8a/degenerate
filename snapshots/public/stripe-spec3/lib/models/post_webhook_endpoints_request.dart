@@ -377,10 +377,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostWebhookEndpointsRequestVersion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostWebhookEndpointsRequestVersion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostWebhookEndpointsRequestVersion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostWebhookEndpointsRequestVersion($value)';
+
  }
 @immutable final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({required this.enabledEvents, required this.url, this.apiVersion, this.connect, this.description, this.expand, this.metadata, });
 
@@ -435,7 +438,7 @@ PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Functi
   metadata: metadata != null ? metadata() : this.metadata,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostWebhookEndpointsRequest &&
           apiVersion == other.apiVersion &&
           connect == other.connect &&
@@ -443,7 +446,10 @@ PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion? Functi
           listEquals(enabledEvents, other.enabledEvents) &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(apiVersion, connect, description, Object.hashAll(enabledEvents), Object.hashAll(expand ?? const []), metadata, url); } 
-@override String toString() { return 'PostWebhookEndpointsRequest(apiVersion: $apiVersion, connect: $connect, description: $description, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(apiVersion, connect, description, Object.hashAll(enabledEvents), Object.hashAll(expand ?? const []), metadata, url);
+
+@override String toString() => 'PostWebhookEndpointsRequest(apiVersion: $apiVersion, connect: $connect, description: $description, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)';
+
  }

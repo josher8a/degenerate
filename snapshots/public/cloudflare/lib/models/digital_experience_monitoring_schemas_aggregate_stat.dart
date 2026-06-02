@@ -25,11 +25,14 @@ DigitalExperienceMonitoringSchemasAggregateStat copyWith({DigitalExperienceMonit
   uniqueDevicesTotal: uniqueDevicesTotal != null ? uniqueDevicesTotal() : this.uniqueDevicesTotal,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringSchemasAggregateStat &&
           timestamp == other.timestamp &&
           uniqueDevicesTotal == other.uniqueDevicesTotal &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(timestamp, uniqueDevicesTotal, value); } 
-@override String toString() { return 'DigitalExperienceMonitoringSchemasAggregateStat(timestamp: $timestamp, uniqueDevicesTotal: $uniqueDevicesTotal, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(timestamp, uniqueDevicesTotal, value);
+
+@override String toString() => 'DigitalExperienceMonitoringSchemasAggregateStat(timestamp: $timestamp, uniqueDevicesTotal: $uniqueDevicesTotal, value: $value)';
+
  }

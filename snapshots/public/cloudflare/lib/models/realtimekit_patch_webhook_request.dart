@@ -35,12 +35,15 @@ RealtimekitPatchWebhookRequest copyWith({bool Function()? enabled, List<Realtime
   name: name != null ? name() : this.name,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPatchWebhookRequest &&
           enabled == other.enabled &&
           listEquals(events, other.events) &&
           name == other.name &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(events ?? const []), name, url); } 
-@override String toString() { return 'RealtimekitPatchWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(events ?? const []), name, url);
+
+@override String toString() => 'RealtimekitPatchWebhookRequest(enabled: $enabled, events: $events, name: $name, url: $url)';
+
  }

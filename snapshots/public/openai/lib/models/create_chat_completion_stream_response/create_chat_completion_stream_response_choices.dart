@@ -33,10 +33,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateChatCompletionStreamResponseChoicesFinishReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateChatCompletionStreamResponseChoicesFinishReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateChatCompletionStreamResponseChoicesFinishReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateChatCompletionStreamResponseChoicesFinishReason($value)';
+
  }
 @immutable final class CreateChatCompletionStreamResponseChoices {const CreateChatCompletionStreamResponseChoices({required this.delta, required this.finishReason, required this.index, this.logprobs, });
 
@@ -77,12 +80,15 @@ CreateChatCompletionStreamResponseChoices copyWith({ChatCompletionStreamResponse
   finishReason: finishReason != null ? finishReason() : this.finishReason,
   index: index ?? this.index,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionStreamResponseChoices &&
           delta == other.delta &&
           logprobs == other.logprobs &&
           finishReason == other.finishReason &&
-          index == other.index; } 
-@override int get hashCode { return Object.hash(delta, logprobs, finishReason, index); } 
-@override String toString() { return 'CreateChatCompletionStreamResponseChoices(delta: $delta, logprobs: $logprobs, finishReason: $finishReason, index: $index)'; } 
+          index == other.index;
+
+@override int get hashCode => Object.hash(delta, logprobs, finishReason, index);
+
+@override String toString() => 'CreateChatCompletionStreamResponseChoices(delta: $delta, logprobs: $logprobs, finishReason: $finishReason, index: $index)';
+
  }

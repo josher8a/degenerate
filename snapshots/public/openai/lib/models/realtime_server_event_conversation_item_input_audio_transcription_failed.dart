@@ -50,13 +50,16 @@ RealtimeServerEventConversationItemInputAudioTranscriptionFailed copyWith({Strin
   contentIndex: contentIndex ?? this.contentIndex,
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemInputAudioTranscriptionFailed &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, error); } 
-@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, error);
+
+@override String toString() => 'RealtimeServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)';
+
  }

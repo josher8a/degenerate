@@ -28,11 +28,14 @@ TunnelRouteCreateATunnelRouteWithCidrRequest copyWith({TunnelRouteComment? Funct
   tunnelId: tunnelId ?? this.tunnelId,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelRouteCreateATunnelRouteWithCidrRequest &&
           comment == other.comment &&
           tunnelId == other.tunnelId &&
-          virtualNetworkId == other.virtualNetworkId; } 
-@override int get hashCode { return Object.hash(comment, tunnelId, virtualNetworkId); } 
-@override String toString() { return 'TunnelRouteCreateATunnelRouteWithCidrRequest(comment: $comment, tunnelId: $tunnelId, virtualNetworkId: $virtualNetworkId)'; } 
+          virtualNetworkId == other.virtualNetworkId;
+
+@override int get hashCode => Object.hash(comment, tunnelId, virtualNetworkId);
+
+@override String toString() => 'TunnelRouteCreateATunnelRouteWithCidrRequest(comment: $comment, tunnelId: $tunnelId, virtualNetworkId: $virtualNetworkId)';
+
  }

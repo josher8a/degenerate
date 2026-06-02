@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRateDataJurisdictionLevel && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRateDataJurisdictionLevel($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRateDataJurisdictionLevel && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxRateDataJurisdictionLevel($value)';
+
  }
 @immutable final class TaxRateData {const TaxRateData({required this.displayName, required this.inclusive, required this.percentage, this.country, this.description, this.jurisdiction, this.jurisdictionLevel, this.state, this.taxType, });
 
@@ -113,7 +116,7 @@ TaxRateData copyWith({String? Function()? country, String? Function()? descripti
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRateData &&
           country == other.country &&
           description == other.description &&
@@ -123,7 +126,10 @@ TaxRateData copyWith({String? Function()? country, String? Function()? descripti
           jurisdictionLevel == other.jurisdictionLevel &&
           percentage == other.percentage &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(country, description, displayName, inclusive, jurisdiction, jurisdictionLevel, percentage, state, taxType); } 
-@override String toString() { return 'TaxRateData(country: $country, description: $description, displayName: $displayName, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, percentage: $percentage, state: $state, taxType: $taxType)'; } 
+          taxType == other.taxType;
+
+@override int get hashCode => Object.hash(country, description, displayName, inclusive, jurisdiction, jurisdictionLevel, percentage, state, taxType);
+
+@override String toString() => 'TaxRateData(country: $country, description: $description, displayName: $displayName, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, percentage: $percentage, state: $state, taxType: $taxType)';
+
  }

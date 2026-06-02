@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsNsRecordType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsRecordsNsRecordType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsRecordsNsRecordType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnsRecordsNsRecordType($value)';
+
  }
 @immutable final class DnsRecordsNsRecord {const DnsRecordsNsRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });
 
@@ -78,7 +81,7 @@ DnsRecordsNsRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
   content: content != null ? content() : this.content,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsNsRecord &&
           comment == other.comment &&
           name == other.name &&
@@ -87,7 +90,10 @@ DnsRecordsNsRecord copyWith({DnsRecordsComment? Function()? comment, DnsRecordsN
           listEquals(tags, other.tags) &&
           ttl == other.ttl &&
           content == other.content &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, type); } 
-@override String toString() { return 'DnsRecordsNsRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(comment, name, proxied, settings, Object.hashAll(tags ?? const []), ttl, content, type);
+
+@override String toString() => 'DnsRecordsNsRecord(comment: $comment, name: $name, proxied: $proxied, settings: $settings, tags: $tags, ttl: $ttl, content: $content, type: $type)';
+
  }

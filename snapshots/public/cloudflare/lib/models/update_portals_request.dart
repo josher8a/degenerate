@@ -60,13 +60,16 @@ UpdatePortalsRequest copyWith({String? Function()? description, String? Function
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers != null ? servers() : this.servers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdatePortalsRequest &&
           description == other.description &&
           hostname == other.hostname &&
           name == other.name &&
           secureWebGateway == other.secureWebGateway &&
-          listEquals(servers, other.servers); } 
-@override int get hashCode { return Object.hash(description, hostname, name, secureWebGateway, Object.hashAll(servers ?? const [])); } 
-@override String toString() { return 'UpdatePortalsRequest(description: $description, hostname: $hostname, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)'; } 
+          listEquals(servers, other.servers);
+
+@override int get hashCode => Object.hash(description, hostname, name, secureWebGateway, Object.hashAll(servers ?? const []));
+
+@override String toString() => 'UpdatePortalsRequest(description: $description, hostname: $hostname, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)';
+
  }

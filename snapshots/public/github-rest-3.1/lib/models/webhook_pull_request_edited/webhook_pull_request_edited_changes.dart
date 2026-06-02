@@ -26,11 +26,14 @@ WebhookPullRequestEditedChanges copyWith({ChangesBase? Function()? base, Webhook
   body: body != null ? body() : this.body,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestEditedChanges &&
           base == other.base &&
           body == other.body &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(base, body, title); } 
-@override String toString() { return 'WebhookPullRequestEditedChanges(base: $base, body: $body, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(base, body, title);
+
+@override String toString() => 'WebhookPullRequestEditedChanges(base: $base, body: $body, title: $title)';
+
  }

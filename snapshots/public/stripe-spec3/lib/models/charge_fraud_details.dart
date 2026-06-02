@@ -34,10 +34,13 @@ ChargeFraudDetails copyWith({String? Function()? stripeReport, String? Function(
   stripeReport: stripeReport != null ? stripeReport() : this.stripeReport,
   userReport: userReport != null ? userReport() : this.userReport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChargeFraudDetails &&
           stripeReport == other.stripeReport &&
-          userReport == other.userReport; } 
-@override int get hashCode { return Object.hash(stripeReport, userReport); } 
-@override String toString() { return 'ChargeFraudDetails(stripeReport: $stripeReport, userReport: $userReport)'; } 
+          userReport == other.userReport;
+
+@override int get hashCode => Object.hash(stripeReport, userReport);
+
+@override String toString() => 'ChargeFraudDetails(stripeReport: $stripeReport, userReport: $userReport)';
+
  }

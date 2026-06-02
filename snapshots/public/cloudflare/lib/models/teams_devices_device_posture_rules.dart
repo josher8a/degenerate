@@ -51,7 +51,7 @@ TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? de
   schedule: schedule != null ? schedule() : this.schedule,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDevicePostureRules &&
           description == other.description &&
           expiration == other.expiration &&
@@ -60,7 +60,10 @@ TeamsDevicesDevicePostureRules copyWith({TeamsDevicesDescription? Function()? de
           listEquals(match, other.match) &&
           name == other.name &&
           schedule == other.schedule &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, expiration, id, input, Object.hashAll(match ?? const []), name, schedule, type); } 
-@override String toString() { return 'TeamsDevicesDevicePostureRules(description: $description, expiration: $expiration, id: $id, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, expiration, id, input, Object.hashAll(match ?? const []), name, schedule, type);
+
+@override String toString() => 'TeamsDevicesDevicePostureRules(description: $description, expiration: $expiration, id: $id, input: $input, match: $match, name: $name, schedule: $schedule, type: $type)';
+
  }

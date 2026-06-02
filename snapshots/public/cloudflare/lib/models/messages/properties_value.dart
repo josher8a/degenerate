@@ -23,10 +23,13 @@ PropertiesValue copyWith({String? description, String? type, }) { return Propert
   description: description ?? this.description,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PropertiesValue &&
           description == other.description &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(description, type); } 
-@override String toString() { return 'PropertiesValue(description: $description, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(description, type);
+
+@override String toString() => 'PropertiesValue(description: $description, type: $type)';
+
  }

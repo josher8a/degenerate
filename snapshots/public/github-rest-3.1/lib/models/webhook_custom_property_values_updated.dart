@@ -56,7 +56,7 @@ WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyUpdatedAction?
   newPropertyValues: newPropertyValues ?? this.newPropertyValues,
   oldPropertyValues: oldPropertyValues ?? this.oldPropertyValues,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCustomPropertyValuesUpdated &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -65,7 +65,10 @@ WebhookCustomPropertyValuesUpdated copyWith({WebhookCustomPropertyUpdatedAction?
           organization == other.organization &&
           sender == other.sender &&
           listEquals(newPropertyValues, other.newPropertyValues) &&
-          listEquals(oldPropertyValues, other.oldPropertyValues); } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, repository, organization, sender, Object.hashAll(newPropertyValues), Object.hashAll(oldPropertyValues)); } 
-@override String toString() { return 'WebhookCustomPropertyValuesUpdated(action: $action, enterprise: $enterprise, installation: $installation, repository: $repository, organization: $organization, sender: $sender, newPropertyValues: $newPropertyValues, oldPropertyValues: $oldPropertyValues)'; } 
+          listEquals(oldPropertyValues, other.oldPropertyValues);
+
+@override int get hashCode => Object.hash(action, enterprise, installation, repository, organization, sender, Object.hashAll(newPropertyValues), Object.hashAll(oldPropertyValues));
+
+@override String toString() => 'WebhookCustomPropertyValuesUpdated(action: $action, enterprise: $enterprise, installation: $installation, repository: $repository, organization: $organization, sender: $sender, newPropertyValues: $newPropertyValues, oldPropertyValues: $oldPropertyValues)';
+
  }

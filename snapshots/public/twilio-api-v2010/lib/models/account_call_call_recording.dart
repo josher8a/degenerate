@@ -35,10 +35,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CallRecordingEnumSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CallRecordingEnumSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CallRecordingEnumSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CallRecordingEnumSource($value)';
+
  }
 @immutable final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.uri, this.encryptionDetails, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.track, });
 
@@ -183,7 +186,7 @@ AccountCallCallRecording copyWith({String? Function()? accountSid, String? Funct
   errorCode: errorCode != null ? errorCode() : this.errorCode,
   track: track != null ? track() : this.track,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallCallRecording &&
           accountSid == other.accountSid &&
           apiVersion == other.apiVersion &&
@@ -202,7 +205,10 @@ AccountCallCallRecording copyWith({String? Function()? accountSid, String? Funct
           channels == other.channels &&
           source == other.source &&
           errorCode == other.errorCode &&
-          track == other.track; } 
-@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, uri, encryptionDetails, priceUnit, status, channels, source, errorCode, track); } 
-@override String toString() { return 'AccountCallCallRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, uri: $uri, encryptionDetails: $encryptionDetails, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, track: $track)'; } 
+          track == other.track;
+
+@override int get hashCode => Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, uri, encryptionDetails, priceUnit, status, channels, source, errorCode, track);
+
+@override String toString() => 'AccountCallCallRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, uri: $uri, encryptionDetails: $encryptionDetails, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, track: $track)';
+
  }

@@ -19,19 +19,22 @@ final class CodeSecurityAttachEnterpriseConfigurationError$403 extends CodeSecur
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeSecurityAttachEnterpriseConfigurationError$404 extends CodeSecurityAttachEnterpriseConfigurationError {const CodeSecurityAttachEnterpriseConfigurationError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeSecurityAttachEnterpriseConfigurationError$409 extends CodeSecurityAttachEnterpriseConfigurationError {const CodeSecurityAttachEnterpriseConfigurationError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class CodeSecurityAttachEnterpriseConfigurationError$Unknown extends CodeSecurityAttachEnterpriseConfigurationError {const CodeSecurityAttachEnterpriseConfigurationError$Unknown(this.statusCode, this.rawBody, );
 

@@ -21,10 +21,13 @@ ZarazVariableMatchRuleSettings copyWith({String? match, String? variable, }) { r
   match: match ?? this.match,
   variable: variable ?? this.variable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazVariableMatchRuleSettings &&
           match == other.match &&
-          variable == other.variable; } 
-@override int get hashCode { return Object.hash(match, variable); } 
-@override String toString() { return 'ZarazVariableMatchRuleSettings(match: $match, variable: $variable)'; } 
+          variable == other.variable;
+
+@override int get hashCode => Object.hash(match, variable);
+
+@override String toString() => 'ZarazVariableMatchRuleSettings(match: $match, variable: $variable)';
+
  }

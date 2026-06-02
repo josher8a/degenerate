@@ -23,10 +23,13 @@ InvoicesPaymentsInvoicePaymentStatusTransitions copyWith({int? Function()? cance
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
   paidAt: paidAt != null ? paidAt() : this.paidAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicesPaymentsInvoicePaymentStatusTransitions &&
           canceledAt == other.canceledAt &&
-          paidAt == other.paidAt; } 
-@override int get hashCode { return Object.hash(canceledAt, paidAt); } 
-@override String toString() { return 'InvoicesPaymentsInvoicePaymentStatusTransitions(canceledAt: $canceledAt, paidAt: $paidAt)'; } 
+          paidAt == other.paidAt;
+
+@override int get hashCode => Object.hash(canceledAt, paidAt);
+
+@override String toString() => 'InvoicesPaymentsInvoicePaymentStatusTransitions(canceledAt: $canceledAt, paidAt: $paidAt)';
+
  }

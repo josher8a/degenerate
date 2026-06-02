@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CommandsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CommandsStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CommandsStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CommandsStatus($value)';
+
  }
 @immutable final class DigitalExperienceMonitoringPostCommandsResponseCommands {const DigitalExperienceMonitoringPostCommandsResponseCommands({this.args, this.deviceId, this.id, this.registrationId, this.status, this.type, });
 
@@ -77,14 +80,17 @@ DigitalExperienceMonitoringPostCommandsResponseCommands copyWith({Map<String, St
   status: status != null ? status() : this.status,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringPostCommandsResponseCommands &&
           args == other.args &&
           deviceId == other.deviceId &&
           id == other.id &&
           registrationId == other.registrationId &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(args, deviceId, id, registrationId, status, type); } 
-@override String toString() { return 'DigitalExperienceMonitoringPostCommandsResponseCommands(args: $args, deviceId: $deviceId, id: $id, registrationId: $registrationId, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(args, deviceId, id, registrationId, status, type);
+
+@override String toString() => 'DigitalExperienceMonitoringPostCommandsResponseCommands(args: $args, deviceId: $deviceId, id: $id, registrationId: $registrationId, status: $status, type: $type)';
+
  }

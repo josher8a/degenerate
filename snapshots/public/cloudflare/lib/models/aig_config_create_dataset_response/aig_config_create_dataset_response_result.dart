@@ -60,7 +60,7 @@ AigConfigCreateDatasetResponseResult copyWith({DateTime? createdAt, bool? enable
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateDatasetResponseResult &&
           createdAt == other.createdAt &&
           enable == other.enable &&
@@ -68,7 +68,10 @@ AigConfigCreateDatasetResponseResult copyWith({DateTime? createdAt, bool? enable
           gatewayId == other.gatewayId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name); } 
-@override String toString() { return 'AigConfigCreateDatasetResponseResult(createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name);
+
+@override String toString() => 'AigConfigCreateDatasetResponseResult(createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';
+
  }

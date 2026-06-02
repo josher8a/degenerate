@@ -29,11 +29,14 @@ EnvFromSource copyWith({ConfigMapEnvSource? Function()? configMapRef, String? Fu
   prefix: prefix != null ? prefix() : this.prefix,
   secretRef: secretRef != null ? secretRef() : this.secretRef,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EnvFromSource &&
           configMapRef == other.configMapRef &&
           prefix == other.prefix &&
-          secretRef == other.secretRef; } 
-@override int get hashCode { return Object.hash(configMapRef, prefix, secretRef); } 
-@override String toString() { return 'EnvFromSource(configMapRef: $configMapRef, prefix: $prefix, secretRef: $secretRef)'; } 
+          secretRef == other.secretRef;
+
+@override int get hashCode => Object.hash(configMapRef, prefix, secretRef);
+
+@override String toString() => 'EnvFromSource(configMapRef: $configMapRef, prefix: $prefix, secretRef: $secretRef)';
+
  }

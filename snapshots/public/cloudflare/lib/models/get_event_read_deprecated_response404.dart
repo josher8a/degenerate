@@ -27,11 +27,14 @@ GetEventReadDeprecatedResponse404 copyWith({List<AiSearchInstanceChangeJobStatus
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetEventReadDeprecatedResponse404 &&
           listEquals(errors, other.errors) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
-@override String toString() { return 'GetEventReadDeprecatedResponse404(errors: $errors, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), result, success);
+
+@override String toString() => 'GetEventReadDeprecatedResponse404(errors: $errors, result: $result, success: $success)';
+
  }

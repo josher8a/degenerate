@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DigitalExperienceMonitoringDexDeleteResponseCollectionResult copyWith({List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>? Function()? dexTests}) { return DigitalExperienceMonitoringDexDeleteResponseCollectionResult(
   dexTests: dexTests != null ? dexTests() : this.dexTests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringDexDeleteResponseCollectionResult &&
-          listEquals(dexTests, other.dexTests); } 
-@override int get hashCode { return Object.hashAll(dexTests ?? const []); } 
-@override String toString() { return 'DigitalExperienceMonitoringDexDeleteResponseCollectionResult(dexTests: $dexTests)'; } 
+          listEquals(dexTests, other.dexTests);
+
+@override int get hashCode => Object.hashAll(dexTests ?? const []);
+
+@override String toString() => 'DigitalExperienceMonitoringDexDeleteResponseCollectionResult(dexTests: $dexTests)';
+
  }

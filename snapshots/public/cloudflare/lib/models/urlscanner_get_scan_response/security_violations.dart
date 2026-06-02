@@ -30,11 +30,14 @@ SecurityViolations copyWith({String? category, String? text, String? url, }) { r
   text: text ?? this.text,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityViolations &&
           category == other.category &&
           text == other.text &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(category, text, url); } 
-@override String toString() { return 'SecurityViolations(category: $category, text: $text, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(category, text, url);
+
+@override String toString() => 'SecurityViolations(category: $category, text: $text, url: $url)';
+
  }

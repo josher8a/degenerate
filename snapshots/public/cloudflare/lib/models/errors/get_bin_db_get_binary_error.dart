@@ -17,7 +17,8 @@ final class GetBinDbGetBinaryError$400 extends GetBinDbGetBinaryError {const Get
 
 final GetBinDbGetBinaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetBinDbGetBinaryError$Unknown extends GetBinDbGetBinaryError {const GetBinDbGetBinaryError$Unknown(this.statusCode, this.rawBody, );
 

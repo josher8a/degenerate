@@ -23,10 +23,13 @@ IssuingCardApplePay copyWith({bool? eligible, IneligibleReason? Function()? inel
   eligible: eligible ?? this.eligible,
   ineligibleReason: ineligibleReason != null ? ineligibleReason() : this.ineligibleReason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardApplePay &&
           eligible == other.eligible &&
-          ineligibleReason == other.ineligibleReason; } 
-@override int get hashCode { return Object.hash(eligible, ineligibleReason); } 
-@override String toString() { return 'IssuingCardApplePay(eligible: $eligible, ineligibleReason: $ineligibleReason)'; } 
+          ineligibleReason == other.ineligibleReason;
+
+@override int get hashCode => Object.hash(eligible, ineligibleReason);
+
+@override String toString() => 'IssuingCardApplePay(eligible: $eligible, ineligibleReason: $ineligibleReason)';
+
  }

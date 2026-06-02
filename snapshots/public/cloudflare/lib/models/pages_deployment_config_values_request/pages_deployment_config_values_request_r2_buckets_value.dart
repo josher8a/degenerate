@@ -27,10 +27,13 @@ PagesDeploymentConfigValuesRequestR2BucketsValue copyWith({String? Function()? j
   jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestR2BucketsValue &&
           jurisdiction == other.jurisdiction &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(jurisdiction, name); } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestR2BucketsValue(jurisdiction: $jurisdiction, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(jurisdiction, name);
+
+@override String toString() => 'PagesDeploymentConfigValuesRequestR2BucketsValue(jurisdiction: $jurisdiction, name: $name)';
+
  }

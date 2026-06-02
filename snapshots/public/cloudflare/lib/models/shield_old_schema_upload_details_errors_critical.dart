@@ -22,10 +22,13 @@ ShieldOldSchemaUploadDetailsErrorsCritical copyWith({List<ShieldOldSchemaUploadL
   critical: critical != null ? critical() : this.critical,
   errors: errors != null ? errors() : this.errors,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldSchemaUploadDetailsErrorsCritical &&
           listEquals(critical, other.critical) &&
-          listEquals(errors, other.errors); } 
-@override int get hashCode { return Object.hash(Object.hashAll(critical ?? const []), Object.hashAll(errors ?? const [])); } 
-@override String toString() { return 'ShieldOldSchemaUploadDetailsErrorsCritical(critical: $critical, errors: $errors)'; } 
+          listEquals(errors, other.errors);
+
+@override int get hashCode => Object.hash(Object.hashAll(critical ?? const []), Object.hashAll(errors ?? const []));
+
+@override String toString() => 'ShieldOldSchemaUploadDetailsErrorsCritical(critical: $critical, errors: $errors)';
+
  }

@@ -17,7 +17,8 @@ final class PostDatasetCreateError$400 extends PostDatasetCreateError {const Pos
 
 final PostDatasetCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostDatasetCreateError$Unknown extends PostDatasetCreateError {const PostDatasetCreateError$Unknown(this.statusCode, this.rawBody, );
 

@@ -84,7 +84,7 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
   secureWebGateway: secureWebGateway != null ? secureWebGateway() : this.secureWebGateway,
   servers: servers ?? this.servers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FetchGatewaysResponseResult &&
           createdAt == other.createdAt &&
           createdBy == other.createdBy &&
@@ -95,7 +95,10 @@ FetchGatewaysResponseResult copyWith({DateTime? Function()? createdAt, String? F
           modifiedBy == other.modifiedBy &&
           name == other.name &&
           secureWebGateway == other.secureWebGateway &&
-          listEquals(servers, other.servers); } 
-@override int get hashCode { return Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway, Object.hashAll(servers)); } 
-@override String toString() { return 'FetchGatewaysResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)'; } 
+          listEquals(servers, other.servers);
+
+@override int get hashCode => Object.hash(createdAt, createdBy, description, hostname, id, modifiedAt, modifiedBy, name, secureWebGateway, Object.hashAll(servers));
+
+@override String toString() => 'FetchGatewaysResponseResult(createdAt: $createdAt, createdBy: $createdBy, description: $description, hostname: $hostname, id: $id, modifiedAt: $modifiedAt, modifiedBy: $modifiedBy, name: $name, secureWebGateway: $secureWebGateway, servers: $servers)';
+
  }

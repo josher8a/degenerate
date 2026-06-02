@@ -85,7 +85,7 @@ ContentTree copyWith({String? type, int? size, String? name, String? path, Strin
   encoding: encoding != null ? encoding() : this.encoding,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentTree &&
           type == other.type &&
           size == other.size &&
@@ -99,7 +99,10 @@ ContentTree copyWith({String? type, int? size, String? name, String? path, Strin
           downloadUrl == other.downloadUrl &&
           listEquals(entries, other.entries) &&
           encoding == other.encoding &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, size, name, path, sha, content, url, gitUrl, htmlUrl, downloadUrl, Object.hashAll(entries ?? const []), encoding, links); } 
-@override String toString() { return 'ContentTree(type: $type, size: $size, name: $name, path: $path, sha: $sha, content: $content, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, entries: $entries, encoding: $encoding, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(type, size, name, path, sha, content, url, gitUrl, htmlUrl, downloadUrl, Object.hashAll(entries ?? const []), encoding, links);
+
+@override String toString() => 'ContentTree(type: $type, size: $size, name: $name, path: $path, sha: $sha, content: $content, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, entries: $entries, encoding: $encoding, links: $links)';
+
  }

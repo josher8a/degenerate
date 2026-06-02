@@ -78,7 +78,7 @@ ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasA
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   require: require != null ? require() : this.require,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest &&
           listEquals(approvalGroups, other.approvalGroups) &&
           approvalRequired == other.approvalRequired &&
@@ -90,7 +90,10 @@ ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest copyWith({List<AccessSchemasA
           precedence == other.precedence &&
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
-          listEquals(require, other.require); } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const [])); } 
-@override String toString() { return 'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, decision: $decision, exclude: $exclude, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require)'; } 
+          listEquals(require, other.require);
+
+@override int get hashCode => Object.hash(Object.hashAll(approvalGroups ?? const []), approvalRequired, decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), isolationRequired, name, precedence, purposeJustificationPrompt, purposeJustificationRequired, Object.hashAll(require ?? const []));
+
+@override String toString() => 'ZoneLevelAccessPoliciesCreateAnAccessPolicyRequest(approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, decision: $decision, exclude: $exclude, include: $include, isolationRequired: $isolationRequired, name: $name, precedence: $precedence, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, require: $require)';
+
  }

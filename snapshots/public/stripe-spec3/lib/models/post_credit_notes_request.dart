@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EmailType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EmailType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EmailType($value)';
+
  }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
 @immutable final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostCreditNotesRequestReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostCreditNotesRequestReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostCreditNotesRequestReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostCreditNotesRequestReason($value)';
+
  }
 @immutable final class PostCreditNotesRequest {const PostCreditNotesRequest({required this.invoice, this.amount, this.creditAmount, this.effectiveAt, this.emailType, this.expand, this.lines, this.memo, this.metadata, this.outOfBandAmount, this.reason, this.refundAmount, this.refunds, this.shippingCost, });
 
@@ -158,7 +164,7 @@ PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? credi
   refunds: refunds != null ? refunds() : this.refunds,
   shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreditNotesRequest &&
           amount == other.amount &&
           creditAmount == other.creditAmount &&
@@ -173,7 +179,10 @@ PostCreditNotesRequest copyWith({int? Function()? amount, int? Function()? credi
           reason == other.reason &&
           refundAmount == other.refundAmount &&
           listEquals(refunds, other.refunds) &&
-          shippingCost == other.shippingCost; } 
-@override int get hashCode { return Object.hash(amount, creditAmount, effectiveAt, emailType, Object.hashAll(expand ?? const []), invoice, Object.hashAll(lines ?? const []), memo, metadata, outOfBandAmount, reason, refundAmount, Object.hashAll(refunds ?? const []), shippingCost); } 
-@override String toString() { return 'PostCreditNotesRequest(amount: $amount, creditAmount: $creditAmount, effectiveAt: $effectiveAt, emailType: $emailType, expand: $expand, invoice: $invoice, lines: $lines, memo: $memo, metadata: $metadata, outOfBandAmount: $outOfBandAmount, reason: $reason, refundAmount: $refundAmount, refunds: $refunds, shippingCost: $shippingCost)'; } 
+          shippingCost == other.shippingCost;
+
+@override int get hashCode => Object.hash(amount, creditAmount, effectiveAt, emailType, Object.hashAll(expand ?? const []), invoice, Object.hashAll(lines ?? const []), memo, metadata, outOfBandAmount, reason, refundAmount, Object.hashAll(refunds ?? const []), shippingCost);
+
+@override String toString() => 'PostCreditNotesRequest(amount: $amount, creditAmount: $creditAmount, effectiveAt: $effectiveAt, emailType: $emailType, expand: $expand, invoice: $invoice, lines: $lines, memo: $memo, metadata: $metadata, outOfBandAmount: $outOfBandAmount, reason: $reason, refundAmount: $refundAmount, refunds: $refunds, shippingCost: $shippingCost)';
+
  }

@@ -52,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FiltersKey && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FiltersKey($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FiltersKey && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FiltersKey($value)';
+
  }
 @immutable final class FiltersOperator {const FiltersOperator._(this.value);
 
@@ -82,10 +85,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FiltersOperator && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FiltersOperator($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FiltersOperator && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FiltersOperator($value)';
+
  }
 @immutable final class AigConfigCreateDatasetRequestFilters {const AigConfigCreateDatasetRequestFilters({required this.key, required this.$operator, required this.value, });
 
@@ -114,11 +120,14 @@ AigConfigCreateDatasetRequestFilters copyWith({FiltersKey? key, FiltersOperator?
   $operator: $operator ?? this.$operator,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateDatasetRequestFilters &&
           key == other.key &&
           $operator == other.$operator &&
-          listEquals(value, other.value); } 
-@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
-@override String toString() { return 'AigConfigCreateDatasetRequestFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
+          listEquals(value, other.value);
+
+@override int get hashCode => Object.hash(key, $operator, Object.hashAll(value));
+
+@override String toString() => 'AigConfigCreateDatasetRequestFilters(key: $key, \$operator: ${$operator}, value: $value)';
+
  }

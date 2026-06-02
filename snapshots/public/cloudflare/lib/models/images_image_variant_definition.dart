@@ -26,11 +26,14 @@ ImagesImageVariantDefinition copyWith({ImagesImageVariantIdentifier? id, ImagesI
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageVariantDefinition &&
           id == other.id &&
           neverRequireSignedUrLs == other.neverRequireSignedUrLs &&
-          options == other.options; } 
-@override int get hashCode { return Object.hash(id, neverRequireSignedUrLs, options); } 
-@override String toString() { return 'ImagesImageVariantDefinition(id: $id, neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)'; } 
+          options == other.options;
+
+@override int get hashCode => Object.hash(id, neverRequireSignedUrLs, options);
+
+@override String toString() => 'ImagesImageVariantDefinition(id: $id, neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)';
+
  }

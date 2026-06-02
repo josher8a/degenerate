@@ -22,10 +22,13 @@ RadarGetQualitySpeedHistogramResponseResult copyWith({Histogram0? histogram0, Ra
   histogram0: histogram0 ?? this.histogram0,
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetQualitySpeedHistogramResponseResult &&
           histogram0 == other.histogram0 &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(histogram0, meta); } 
-@override String toString() { return 'RadarGetQualitySpeedHistogramResponseResult(histogram0: $histogram0, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(histogram0, meta);
+
+@override String toString() => 'RadarGetQualitySpeedHistogramResponseResult(histogram0: $histogram0, meta: $meta)';
+
  }

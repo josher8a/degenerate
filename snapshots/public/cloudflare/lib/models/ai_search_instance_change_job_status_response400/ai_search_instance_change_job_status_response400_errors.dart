@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
 AiSearchInstanceChangeJobStatusResponse400Errors copyWith({String? message}) { return AiSearchInstanceChangeJobStatusResponse400Errors(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceChangeJobStatusResponse400Errors &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'AiSearchInstanceChangeJobStatusResponse400Errors(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'AiSearchInstanceChangeJobStatusResponse400Errors(message: $message)';
+
  }

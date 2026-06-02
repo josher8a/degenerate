@@ -43,13 +43,16 @@ FileSearchToolCallResults copyWith({String? Function()? fileId, String? Function
   attributes: attributes != null ? attributes() : this.attributes,
   score: score != null ? score() : this.score,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileSearchToolCallResults &&
           fileId == other.fileId &&
           text == other.text &&
           filename == other.filename &&
           attributes == other.attributes &&
-          score == other.score; } 
-@override int get hashCode { return Object.hash(fileId, text, filename, attributes, score); } 
-@override String toString() { return 'FileSearchToolCallResults(fileId: $fileId, text: $text, filename: $filename, attributes: $attributes, score: $score)'; } 
+          score == other.score;
+
+@override int get hashCode => Object.hash(fileId, text, filename, attributes, score);
+
+@override String toString() => 'FileSearchToolCallResults(fileId: $fileId, text: $text, filename: $filename, attributes: $attributes, score: $score)';
+
  }

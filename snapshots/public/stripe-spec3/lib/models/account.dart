@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountBusinessType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountBusinessType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountBusinessType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountBusinessType($value)';
+
  }
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
 @immutable final class AccountType {const AccountType._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountType($value)';
+
  }
 /// This is an object representing a Stripe account. You can retrieve it to see
 /// properties on the account like its current requirements or if the account is
@@ -232,7 +238,7 @@ Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBu
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Account &&
           businessProfile == other.businessProfile &&
           businessType == other.businessType &&
@@ -256,7 +262,10 @@ Account copyWith({AccountBusinessProfile? Function()? businessProfile, AccountBu
           requirements == other.requirements &&
           settings == other.settings &&
           tosAcceptance == other.tosAcceptance &&
-          type == other.type; } 
-@override int get hashCode { return Object.hashAll([businessProfile, businessType, capabilities, chargesEnabled, company, controller, country, created, defaultCurrency, detailsSubmitted, email, externalAccounts, futureRequirements, groups, id, individual, metadata, object, payoutsEnabled, requirements, settings, tosAcceptance, type]); } 
-@override String toString() { return 'Account(businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, chargesEnabled: $chargesEnabled, company: $company, controller: $controller, country: $country, created: $created, defaultCurrency: $defaultCurrency, detailsSubmitted: $detailsSubmitted, email: $email, externalAccounts: $externalAccounts, futureRequirements: $futureRequirements, groups: $groups, id: $id, individual: $individual, metadata: $metadata, object: $object, payoutsEnabled: $payoutsEnabled, requirements: $requirements, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hashAll([businessProfile, businessType, capabilities, chargesEnabled, company, controller, country, created, defaultCurrency, detailsSubmitted, email, externalAccounts, futureRequirements, groups, id, individual, metadata, object, payoutsEnabled, requirements, settings, tosAcceptance, type]);
+
+@override String toString() => 'Account(businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, chargesEnabled: $chargesEnabled, company: $company, controller: $controller, country: $country, created: $created, defaultCurrency: $defaultCurrency, detailsSubmitted: $detailsSubmitted, email: $email, externalAccounts: $externalAccounts, futureRequirements: $futureRequirements, groups: $groups, id: $id, individual: $individual, metadata: $metadata, object: $object, payoutsEnabled: $payoutsEnabled, requirements: $requirements, settings: $settings, tosAcceptance: $tosAcceptance, type: $type)';
+
  }

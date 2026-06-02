@@ -21,10 +21,13 @@ AssistantFunctionCallVariant1 copyWith({String? arguments, String? name, }) { re
   arguments: arguments ?? this.arguments,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantFunctionCallVariant1 &&
           arguments == other.arguments &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(arguments, name); } 
-@override String toString() { return 'AssistantFunctionCallVariant1(arguments: $arguments, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(arguments, name);
+
+@override String toString() => 'AssistantFunctionCallVariant1(arguments: $arguments, name: $name)';
+
  }

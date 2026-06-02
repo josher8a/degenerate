@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('posit
 ZarazScrollDepthRuleSettings copyWith({String? positions}) { return ZarazScrollDepthRuleSettings(
   positions: positions ?? this.positions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZarazScrollDepthRuleSettings &&
-          positions == other.positions; } 
-@override int get hashCode { return positions.hashCode; } 
-@override String toString() { return 'ZarazScrollDepthRuleSettings(positions: $positions)'; } 
+          positions == other.positions;
+
+@override int get hashCode => positions.hashCode;
+
+@override String toString() => 'ZarazScrollDepthRuleSettings(positions: $positions)';
+
  }

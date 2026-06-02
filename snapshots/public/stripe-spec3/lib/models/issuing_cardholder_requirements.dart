@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderRequirementsDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderRequirementsDisabledReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardholderRequirementsDisabledReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardholderRequirementsDisabledReason($value)';
+
  }
 @immutable final class PastDue {const PastDue._(this.value);
 
@@ -71,10 +74,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PastDue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PastDue($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PastDue && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PastDue($value)';
+
  }
 /// 
 @immutable final class IssuingCardholderRequirements {const IssuingCardholderRequirements({this.disabledReason, this.pastDue, });
@@ -99,10 +105,13 @@ IssuingCardholderRequirements copyWith({IssuingCardholderRequirementsDisabledRea
   disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
   pastDue: pastDue != null ? pastDue() : this.pastDue,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderRequirements &&
           disabledReason == other.disabledReason &&
-          listEquals(pastDue, other.pastDue); } 
-@override int get hashCode { return Object.hash(disabledReason, Object.hashAll(pastDue ?? const [])); } 
-@override String toString() { return 'IssuingCardholderRequirements(disabledReason: $disabledReason, pastDue: $pastDue)'; } 
+          listEquals(pastDue, other.pastDue);
+
+@override int get hashCode => Object.hash(disabledReason, Object.hashAll(pastDue ?? const []));
+
+@override String toString() => 'IssuingCardholderRequirements(disabledReason: $disabledReason, pastDue: $pastDue)';
+
  }

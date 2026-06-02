@@ -52,13 +52,16 @@ EmailSecurityUpdateTrustedDomainRequest copyWith({String? Function()? comments, 
   isSimilarity: isSimilarity != null ? isSimilarity() : this.isSimilarity,
   pattern: pattern != null ? pattern() : this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateTrustedDomainRequest &&
           comments == other.comments &&
           isRecent == other.isRecent &&
           isRegex == other.isRegex &&
           isSimilarity == other.isSimilarity &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern); } 
-@override String toString() { return 'EmailSecurityUpdateTrustedDomainRequest(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(comments, isRecent, isRegex, isSimilarity, pattern);
+
+@override String toString() => 'EmailSecurityUpdateTrustedDomainRequest(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)';
+
  }

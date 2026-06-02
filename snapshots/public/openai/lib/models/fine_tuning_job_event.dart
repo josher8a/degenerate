@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobEventObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobEventObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobEventObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuningJobEventObject($value)';
+
  }
 /// The log level of the event.
 @immutable final class Level {const Level._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Level && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Level($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Level && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Level($value)';
+
  }
 /// The type of event.
 @immutable final class FineTuningJobEventType {const FineTuningJobEventType._(this.value);
@@ -70,10 +76,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FineTuningJobEventType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FineTuningJobEventType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobEventType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FineTuningJobEventType($value)';
+
  }
 /// Fine-tuning job event object
 @immutable final class FineTuningJobEvent {const FineTuningJobEvent({required this.object, required this.id, required this.createdAt, required this.level, required this.message, this.type, this.data, });
@@ -132,7 +141,7 @@ FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? 
   type: type != null ? type() : this.type,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FineTuningJobEvent &&
           object == other.object &&
           id == other.id &&
@@ -140,7 +149,10 @@ FineTuningJobEvent copyWith({FineTuningJobEventObject? object, String? id, int? 
           level == other.level &&
           message == other.message &&
           type == other.type &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(object, id, createdAt, level, message, type, data); } 
-@override String toString() { return 'FineTuningJobEvent(object: $object, id: $id, createdAt: $createdAt, level: $level, message: $message, type: $type, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(object, id, createdAt, level, message, type, data);
+
+@override String toString() => 'FineTuningJobEvent(object: $object, id: $id, createdAt: $createdAt, level: $level, message: $message, type: $type, data: $data)';
+
  }

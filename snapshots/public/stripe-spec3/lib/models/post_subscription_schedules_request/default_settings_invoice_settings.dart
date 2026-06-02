@@ -25,11 +25,14 @@ DefaultSettingsInvoiceSettings copyWith({PostInvoicesInvoiceRequestAccountTaxIds
   daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
   issuer: issuer != null ? issuer() : this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultSettingsInvoiceSettings &&
           accountTaxIds == other.accountTaxIds &&
           daysUntilDue == other.daysUntilDue &&
-          issuer == other.issuer; } 
-@override int get hashCode { return Object.hash(accountTaxIds, daysUntilDue, issuer); } 
-@override String toString() { return 'DefaultSettingsInvoiceSettings(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => Object.hash(accountTaxIds, daysUntilDue, issuer);
+
+@override String toString() => 'DefaultSettingsInvoiceSettings(accountTaxIds: $accountTaxIds, daysUntilDue: $daysUntilDue, issuer: $issuer)';
+
  }

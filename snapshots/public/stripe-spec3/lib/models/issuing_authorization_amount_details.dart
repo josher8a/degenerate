@@ -23,10 +23,13 @@ IssuingAuthorizationAmountDetails copyWith({int? Function()? atmFee, int? Functi
   atmFee: atmFee != null ? atmFee() : this.atmFee,
   cashbackAmount: cashbackAmount != null ? cashbackAmount() : this.cashbackAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationAmountDetails &&
           atmFee == other.atmFee &&
-          cashbackAmount == other.cashbackAmount; } 
-@override int get hashCode { return Object.hash(atmFee, cashbackAmount); } 
-@override String toString() { return 'IssuingAuthorizationAmountDetails(atmFee: $atmFee, cashbackAmount: $cashbackAmount)'; } 
+          cashbackAmount == other.cashbackAmount;
+
+@override int get hashCode => Object.hash(atmFee, cashbackAmount);
+
+@override String toString() => 'IssuingAuthorizationAmountDetails(atmFee: $atmFee, cashbackAmount: $cashbackAmount)';
+
  }

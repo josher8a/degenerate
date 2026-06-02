@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MaxCountAllocationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MaxCountAllocationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MaxCountAllocationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MaxCountAllocationType($value)';
+
  }
 @immutable final class MaxCountAllocation {const MaxCountAllocation({required this.type, required this.value, });
 
@@ -42,10 +45,13 @@ MaxCountAllocation copyWith({MaxCountAllocationType? type, int? value, }) { retu
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MaxCountAllocation &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'MaxCountAllocation(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'MaxCountAllocation(type: $type, value: $value)';
+
  }

@@ -59,14 +59,17 @@ TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateF
   state: state != null ? state() : this.state,
   taxType: taxType != null ? taxType() : this.taxType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxRateDetails &&
           country == other.country &&
           flatAmount == other.flatAmount &&
           percentageDecimal == other.percentageDecimal &&
           rateType == other.rateType &&
           state == other.state &&
-          taxType == other.taxType; } 
-@override int get hashCode { return Object.hash(country, flatAmount, percentageDecimal, rateType, state, taxType); } 
-@override String toString() { return 'TaxProductResourceTaxRateDetails(country: $country, flatAmount: $flatAmount, percentageDecimal: $percentageDecimal, rateType: $rateType, state: $state, taxType: $taxType)'; } 
+          taxType == other.taxType;
+
+@override int get hashCode => Object.hash(country, flatAmount, percentageDecimal, rateType, state, taxType);
+
+@override String toString() => 'TaxProductResourceTaxRateDetails(country: $country, flatAmount: $flatAmount, percentageDecimal: $percentageDecimal, rateType: $rateType, state: $state, taxType: $taxType)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ExactDataEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ExactDataEntryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ExactDataEntryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ExactDataEntryType($value)';
+
  }
 @immutable final class ExactDataEntry {const ExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, required this.type, });
 
@@ -81,7 +84,7 @@ ExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled
   updatedAt: updatedAt ?? this.updatedAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExactDataEntry &&
           caseSensitive == other.caseSensitive &&
           createdAt == other.createdAt &&
@@ -90,7 +93,10 @@ ExactDataEntry copyWith({bool? caseSensitive, DateTime? createdAt, bool? enabled
           name == other.name &&
           secret == other.secret &&
           updatedAt == other.updatedAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt, type); } 
-@override String toString() { return 'ExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(caseSensitive, createdAt, enabled, id, name, secret, updatedAt, type);
+
+@override String toString() => 'ExactDataEntry(caseSensitive: $caseSensitive, createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, secret: $secret, updatedAt: $updatedAt, type: $type)';
+
  }

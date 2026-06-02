@@ -45,14 +45,17 @@ RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 copyWith({List<Stri
   postSyn: postSyn ?? this.postSyn,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 &&
           listEquals(laterInFlow, other.laterInFlow) &&
           listEquals(noMatch, other.noMatch) &&
           listEquals(postAck, other.postAck) &&
           listEquals(postPsh, other.postPsh) &&
           listEquals(postSyn, other.postSyn) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(laterInFlow), Object.hashAll(noMatch), Object.hashAll(postAck), Object.hashAll(postPsh), Object.hashAll(postSyn), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(laterInFlow), Object.hashAll(noMatch), Object.hashAll(postAck), Object.hashAll(postPsh), Object.hashAll(postSyn), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn, timestamps: $timestamps)';
+
  }

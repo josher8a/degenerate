@@ -80,7 +80,7 @@ ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, S
   requestedTeam: requestedTeam != null ? requestedTeam() : this.requestedTeam,
   requestedReviewer: requestedReviewer != null ? requestedReviewer() : this.requestedReviewer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewRequestRemovedIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -93,7 +93,10 @@ ReviewRequestRemovedIssueEvent copyWith({int? id, String? nodeId, String? url, S
           performedViaGithubApp == other.performedViaGithubApp &&
           reviewRequester == other.reviewRequester &&
           requestedTeam == other.requestedTeam &&
-          requestedReviewer == other.requestedReviewer; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, reviewRequester, requestedTeam, requestedReviewer); } 
-@override String toString() { return 'ReviewRequestRemovedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, reviewRequester: $reviewRequester, requestedTeam: $requestedTeam, requestedReviewer: $requestedReviewer)'; } 
+          requestedReviewer == other.requestedReviewer;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, reviewRequester, requestedTeam, requestedReviewer);
+
+@override String toString() => 'ReviewRequestRemovedIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, reviewRequester: $reviewRequester, requestedTeam: $requestedTeam, requestedReviewer: $requestedReviewer)';
+
  }

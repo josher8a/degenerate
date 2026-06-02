@@ -116,7 +116,7 @@ LogpushLogpushJob copyWith({LogpushDataset? Function()? dataset, LogpushDestinat
   name: name != null ? name() : this.name,
   outputOptions: outputOptions != null ? outputOptions() : this.outputOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LogpushLogpushJob &&
           dataset == other.dataset &&
           destinationConf == other.destinationConf &&
@@ -132,7 +132,10 @@ LogpushLogpushJob copyWith({LogpushDataset? Function()? dataset, LogpushDestinat
           maxUploadIntervalSeconds == other.maxUploadIntervalSeconds &&
           maxUploadRecords == other.maxUploadRecords &&
           name == other.name &&
-          outputOptions == other.outputOptions; } 
-@override int get hashCode { return Object.hash(dataset, destinationConf, enabled, errorMessage, frequency, id, kind, lastComplete, lastError, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions); } 
-@override String toString() { return 'LogpushLogpushJob(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, errorMessage: $errorMessage, frequency: $frequency, id: $id, kind: $kind, lastComplete: $lastComplete, lastError: $lastError, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions)'; } 
+          outputOptions == other.outputOptions;
+
+@override int get hashCode => Object.hash(dataset, destinationConf, enabled, errorMessage, frequency, id, kind, lastComplete, lastError, logpullOptions, maxUploadBytes, maxUploadIntervalSeconds, maxUploadRecords, name, outputOptions);
+
+@override String toString() => 'LogpushLogpushJob(dataset: $dataset, destinationConf: $destinationConf, enabled: $enabled, errorMessage: $errorMessage, frequency: $frequency, id: $id, kind: $kind, lastComplete: $lastComplete, lastError: $lastError, logpullOptions: $logpullOptions, maxUploadBytes: $maxUploadBytes, maxUploadIntervalSeconds: $maxUploadIntervalSeconds, maxUploadRecords: $maxUploadRecords, name: $name, outputOptions: $outputOptions)';
+
  }

@@ -115,7 +115,7 @@ ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Functio
   selfLink: selfLink != null ? selfLink() : this.selfLink,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObjectMeta &&
           annotations == other.annotations &&
           creationTimestamp == other.creationTimestamp &&
@@ -131,7 +131,10 @@ ObjectMeta copyWith({Map<String, String>? Function()? annotations, Time? Functio
           listEquals(ownerReferences, other.ownerReferences) &&
           resourceVersion == other.resourceVersion &&
           selfLink == other.selfLink &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(annotations, creationTimestamp, deletionGracePeriodSeconds, deletionTimestamp, Object.hashAll(finalizers ?? const []), generateName, generation, labels, Object.hashAll(managedFields ?? const []), name, namespace, Object.hashAll(ownerReferences ?? const []), resourceVersion, selfLink, uid); } 
-@override String toString() { return 'ObjectMeta(annotations: $annotations, creationTimestamp: $creationTimestamp, deletionGracePeriodSeconds: $deletionGracePeriodSeconds, deletionTimestamp: $deletionTimestamp, finalizers: $finalizers, generateName: $generateName, generation: $generation, labels: $labels, managedFields: $managedFields, name: $name, namespace: $namespace, ownerReferences: $ownerReferences, resourceVersion: $resourceVersion, selfLink: $selfLink, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(annotations, creationTimestamp, deletionGracePeriodSeconds, deletionTimestamp, Object.hashAll(finalizers ?? const []), generateName, generation, labels, Object.hashAll(managedFields ?? const []), name, namespace, Object.hashAll(ownerReferences ?? const []), resourceVersion, selfLink, uid);
+
+@override String toString() => 'ObjectMeta(annotations: $annotations, creationTimestamp: $creationTimestamp, deletionGracePeriodSeconds: $deletionGracePeriodSeconds, deletionTimestamp: $deletionTimestamp, finalizers: $finalizers, generateName: $generateName, generation: $generation, labels: $labels, managedFields: $managedFields, name: $name, namespace: $namespace, ownerReferences: $ownerReferences, resourceVersion: $resourceVersion, selfLink: $selfLink, uid: $uid)';
+
  }

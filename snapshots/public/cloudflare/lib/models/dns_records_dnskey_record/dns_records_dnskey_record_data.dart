@@ -59,12 +59,15 @@ DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Func
   protocol: protocol != null ? protocol() : this.protocol,
   publicKey: publicKey != null ? publicKey() : this.publicKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnskeyRecordData &&
           algorithm == other.algorithm &&
           flags == other.flags &&
           protocol == other.protocol &&
-          publicKey == other.publicKey; } 
-@override int get hashCode { return Object.hash(algorithm, flags, protocol, publicKey); } 
-@override String toString() { return 'DnsRecordsDnskeyRecordData(algorithm: $algorithm, flags: $flags, protocol: $protocol, publicKey: $publicKey)'; } 
+          publicKey == other.publicKey;
+
+@override int get hashCode => Object.hash(algorithm, flags, protocol, publicKey);
+
+@override String toString() => 'DnsRecordsDnskeyRecordData(algorithm: $algorithm, flags: $flags, protocol: $protocol, publicKey: $publicKey)';
+
  }

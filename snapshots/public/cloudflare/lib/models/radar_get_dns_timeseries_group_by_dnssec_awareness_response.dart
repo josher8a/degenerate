@@ -22,10 +22,13 @@ RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse copyWith({RadarGetDnsAs112Ti
   result: result ?? this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(result, success); } 
-@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(result, success);
+
+@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecAwarenessResponse(result: $result, success: $success)';
+
  }

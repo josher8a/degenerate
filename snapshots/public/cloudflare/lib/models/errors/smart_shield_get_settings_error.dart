@@ -18,13 +18,15 @@ final class SmartShieldGetSettingsError$500 extends SmartShieldGetSettingsError 
 
 final ResponseCommonFailure65 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class SmartShieldGetSettingsError$502 extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$502(this.error);
 
 final ResponseCommonFailure65 error;
 
-@override int get statusCode { return 502; } 
+@override int get statusCode => 502;
+
  }
 final class SmartShieldGetSettingsError$Unknown extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$Unknown(this.statusCode, this.rawBody, );
 

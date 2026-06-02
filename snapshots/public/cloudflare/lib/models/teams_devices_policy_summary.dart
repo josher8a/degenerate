@@ -49,13 +49,16 @@ TeamsDevicesPolicySummary copyWith({bool? $default, bool? deleted, String? id, S
   name: name ?? this.name,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesPolicySummary &&
           $default == other.$default &&
           deleted == other.deleted &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash($default, deleted, id, name, updatedAt); } 
-@override String toString() { return 'TeamsDevicesPolicySummary(\$default: ${$default}, deleted: $deleted, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash($default, deleted, id, name, updatedAt);
+
+@override String toString() => 'TeamsDevicesPolicySummary(\$default: ${$default}, deleted: $deleted, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

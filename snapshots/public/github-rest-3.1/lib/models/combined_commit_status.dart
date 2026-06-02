@@ -52,7 +52,7 @@ CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses
   commitUrl: commitUrl ?? this.commitUrl,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CombinedCommitStatus &&
           state == other.state &&
           listEquals(statuses, other.statuses) &&
@@ -60,7 +60,10 @@ CombinedCommitStatus copyWith({String? state, List<SimpleCommitStatus>? statuses
           totalCount == other.totalCount &&
           repository == other.repository &&
           commitUrl == other.commitUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(state, Object.hashAll(statuses), sha, totalCount, repository, commitUrl, url); } 
-@override String toString() { return 'CombinedCommitStatus(state: $state, statuses: $statuses, sha: $sha, totalCount: $totalCount, repository: $repository, commitUrl: $commitUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(state, Object.hashAll(statuses), sha, totalCount, repository, commitUrl, url);
+
+@override String toString() => 'CombinedCommitStatus(state: $state, statuses: $statuses, sha: $sha, totalCount: $totalCount, repository: $repository, commitUrl: $commitUrl, url: $url)';
+
  }

@@ -99,7 +99,7 @@ PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? 
   percentOff: percentOff != null ? percentOff() : this.percentOff,
   redeemBy: redeemBy != null ? redeemBy() : this.redeemBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCouponsRequest &&
           amountOff == other.amountOff &&
           appliesTo == other.appliesTo &&
@@ -113,7 +113,10 @@ PostCouponsRequest copyWith({int? Function()? amountOff, AppliesTo? Function()? 
           metadata == other.metadata &&
           name == other.name &&
           percentOff == other.percentOff &&
-          redeemBy == other.redeemBy; } 
-@override int get hashCode { return Object.hash(amountOff, appliesTo, currency, currencyOptions, duration, durationInMonths, Object.hashAll(expand ?? const []), id, maxRedemptions, metadata, name, percentOff, redeemBy); } 
-@override String toString() { return 'PostCouponsRequest(amountOff: $amountOff, appliesTo: $appliesTo, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, expand: $expand, id: $id, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, percentOff: $percentOff, redeemBy: $redeemBy)'; } 
+          redeemBy == other.redeemBy;
+
+@override int get hashCode => Object.hash(amountOff, appliesTo, currency, currencyOptions, duration, durationInMonths, Object.hashAll(expand ?? const []), id, maxRedemptions, metadata, name, percentOff, redeemBy);
+
+@override String toString() => 'PostCouponsRequest(amountOff: $amountOff, appliesTo: $appliesTo, currency: $currency, currencyOptions: $currencyOptions, duration: $duration, durationInMonths: $durationInMonths, expand: $expand, id: $id, maxRedemptions: $maxRedemptions, metadata: $metadata, name: $name, percentOff: $percentOff, redeemBy: $redeemBy)';
+
  }

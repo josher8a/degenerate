@@ -24,10 +24,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemWithReferenceType($value)';
+
  }
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemWithReferenceRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemWithReferenceRole($value)';
+
  }
 /// The item to add to the conversation.
 @immutable final class RealtimeConversationItemWithReference {const RealtimeConversationItemWithReference({this.id, this.type, this.object, this.status, this.role, this.content, this.callId, this.name, this.arguments, this.output, });
@@ -155,7 +161,7 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
   arguments: arguments != null ? arguments() : this.arguments,
   output: output != null ? output() : this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemWithReference &&
           id == other.id &&
           type == other.type &&
@@ -166,7 +172,10 @@ RealtimeConversationItemWithReference copyWith({String? Function()? id, Realtime
           callId == other.callId &&
           name == other.name &&
           arguments == other.arguments &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(id, type, object, status, role, Object.hashAll(content ?? const []), callId, name, arguments, output); } 
-@override String toString() { return 'RealtimeConversationItemWithReference(id: $id, type: $type, object: $object, status: $status, role: $role, content: $content, callId: $callId, name: $name, arguments: $arguments, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(id, type, object, status, role, Object.hashAll(content ?? const []), callId, name, arguments, output);
+
+@override String toString() => 'RealtimeConversationItemWithReference(id: $id, type: $type, object: $object, status: $status, role: $role, content: $content, callId: $callId, name: $name, arguments: $arguments, output: $output)';
+
  }

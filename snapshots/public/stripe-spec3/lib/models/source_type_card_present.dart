@@ -125,7 +125,7 @@ SourceTypeCardPresent copyWith({String? Function()? applicationCryptogram, Strin
   terminalVerificationResults: terminalVerificationResults != null ? terminalVerificationResults() : this.terminalVerificationResults,
   transactionStatusInformation: transactionStatusInformation != null ? transactionStatusInformation() : this.transactionStatusInformation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTypeCardPresent &&
           applicationCryptogram == other.applicationCryptogram &&
           applicationPreferredName == other.applicationPreferredName &&
@@ -149,7 +149,10 @@ SourceTypeCardPresent copyWith({String? Function()? applicationCryptogram, Strin
           readMethod == other.readMethod &&
           reader == other.reader &&
           terminalVerificationResults == other.terminalVerificationResults &&
-          transactionStatusInformation == other.transactionStatusInformation; } 
-@override int get hashCode { return Object.hashAll([applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, brand, country, cvmType, dataType, dedicatedFileName, emvAuthData, evidenceCustomerSignature, evidenceTransactionCertificate, expMonth, expYear, fingerprint, funding, last4, posDeviceId, posEntryMode, readMethod, reader, terminalVerificationResults, transactionStatusInformation]); } 
-@override String toString() { return 'SourceTypeCardPresent(applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, brand: $brand, country: $country, cvmType: $cvmType, dataType: $dataType, dedicatedFileName: $dedicatedFileName, emvAuthData: $emvAuthData, evidenceCustomerSignature: $evidenceCustomerSignature, evidenceTransactionCertificate: $evidenceTransactionCertificate, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, posDeviceId: $posDeviceId, posEntryMode: $posEntryMode, readMethod: $readMethod, reader: $reader, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)'; } 
+          transactionStatusInformation == other.transactionStatusInformation;
+
+@override int get hashCode => Object.hashAll([applicationCryptogram, applicationPreferredName, authorizationCode, authorizationResponseCode, brand, country, cvmType, dataType, dedicatedFileName, emvAuthData, evidenceCustomerSignature, evidenceTransactionCertificate, expMonth, expYear, fingerprint, funding, last4, posDeviceId, posEntryMode, readMethod, reader, terminalVerificationResults, transactionStatusInformation]);
+
+@override String toString() => 'SourceTypeCardPresent(applicationCryptogram: $applicationCryptogram, applicationPreferredName: $applicationPreferredName, authorizationCode: $authorizationCode, authorizationResponseCode: $authorizationResponseCode, brand: $brand, country: $country, cvmType: $cvmType, dataType: $dataType, dedicatedFileName: $dedicatedFileName, emvAuthData: $emvAuthData, evidenceCustomerSignature: $evidenceCustomerSignature, evidenceTransactionCertificate: $evidenceTransactionCertificate, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, last4: $last4, posDeviceId: $posDeviceId, posEntryMode: $posEntryMode, readMethod: $readMethod, reader: $reader, terminalVerificationResults: $terminalVerificationResults, transactionStatusInformation: $transactionStatusInformation)';
+
  }

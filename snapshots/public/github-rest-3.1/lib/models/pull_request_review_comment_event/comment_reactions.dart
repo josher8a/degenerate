@@ -60,7 +60,7 @@ CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int?
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommentReactions &&
           plus1 == other.plus1 &&
           minus1 == other.minus1 &&
@@ -71,7 +71,10 @@ CommentReactions copyWith({int? Function()? plus1, int? Function()? minus1, int?
           laugh == other.laugh &&
           rocket == other.rocket &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url); } 
-@override String toString() { return 'CommentReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(plus1, minus1, confused, eyes, heart, hooray, laugh, rocket, totalCount, url);
+
+@override String toString() => 'CommentReactions(plus1: $plus1, minus1: $minus1, confused: $confused, eyes: $eyes, heart: $heart, hooray: $hooray, laugh: $laugh, rocket: $rocket, totalCount: $totalCount, url: $url)';
+
  }

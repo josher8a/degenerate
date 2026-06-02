@@ -35,13 +35,16 @@ WorkersNamespace copyWith({String? Function()? $class, String? Function()? id, S
   script: script != null ? script() : this.script,
   useSqlite: useSqlite != null ? useSqlite() : this.useSqlite,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersNamespace &&
           $class == other.$class &&
           id == other.id &&
           name == other.name &&
           script == other.script &&
-          useSqlite == other.useSqlite; } 
-@override int get hashCode { return Object.hash($class, id, name, script, useSqlite); } 
-@override String toString() { return 'WorkersNamespace(\$class: ${$class}, id: $id, name: $name, script: $script, useSqlite: $useSqlite)'; } 
+          useSqlite == other.useSqlite;
+
+@override int get hashCode => Object.hash($class, id, name, script, useSqlite);
+
+@override String toString() => 'WorkersNamespace(\$class: ${$class}, id: $id, name: $name, script: $script, useSqlite: $useSqlite)';
+
  }

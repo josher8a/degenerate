@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GlobalAdvisoryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GlobalAdvisoryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GlobalAdvisoryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GlobalAdvisoryType($value)';
+
  }
 /// The severity of the advisory.
 @immutable final class GlobalAdvisorySeverity {const GlobalAdvisorySeverity._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GlobalAdvisorySeverity && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GlobalAdvisorySeverity($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GlobalAdvisorySeverity && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GlobalAdvisorySeverity($value)';
+
  }
 /// A GitHub Security Advisory.
 @immutable final class GlobalAdvisory {const GlobalAdvisory({required this.ghsaId, required this.cveId, required this.url, required this.htmlUrl, required this.repositoryAdvisoryUrl, required this.summary, required this.description, required this.type, required this.severity, required this.sourceCodeLocation, required this.identifiers, required this.references, required this.publishedAt, required this.updatedAt, required this.githubReviewedAt, required this.nvdPublishedAt, required this.withdrawnAt, required this.vulnerabilities, required this.cvss, required this.cwes, required this.credits, this.cvssSeverities, this.epss, });
@@ -234,7 +240,7 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
   cwes: cwes != null ? cwes() : this.cwes,
   credits: credits != null ? credits() : this.credits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GlobalAdvisory &&
           ghsaId == other.ghsaId &&
           cveId == other.cveId &&
@@ -258,7 +264,10 @@ GlobalAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? url,
           cvssSeverities == other.cvssSeverities &&
           epss == other.epss &&
           listEquals(cwes, other.cwes) &&
-          listEquals(credits, other.credits); } 
-@override int get hashCode { return Object.hashAll([ghsaId, cveId, url, htmlUrl, repositoryAdvisoryUrl, summary, description, type, severity, sourceCodeLocation, Object.hashAll(identifiers ?? const []), Object.hashAll(references ?? const []), publishedAt, updatedAt, githubReviewedAt, nvdPublishedAt, withdrawnAt, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, epss, Object.hashAll(cwes ?? const []), Object.hashAll(credits ?? const [])]); } 
-@override String toString() { return 'GlobalAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, repositoryAdvisoryUrl: $repositoryAdvisoryUrl, summary: $summary, description: $description, type: $type, severity: $severity, sourceCodeLocation: $sourceCodeLocation, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, githubReviewedAt: $githubReviewedAt, nvdPublishedAt: $nvdPublishedAt, withdrawnAt: $withdrawnAt, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, credits: $credits)'; } 
+          listEquals(credits, other.credits);
+
+@override int get hashCode => Object.hashAll([ghsaId, cveId, url, htmlUrl, repositoryAdvisoryUrl, summary, description, type, severity, sourceCodeLocation, Object.hashAll(identifiers ?? const []), Object.hashAll(references ?? const []), publishedAt, updatedAt, githubReviewedAt, nvdPublishedAt, withdrawnAt, Object.hashAll(vulnerabilities ?? const []), cvss, cvssSeverities, epss, Object.hashAll(cwes ?? const []), Object.hashAll(credits ?? const [])]);
+
+@override String toString() => 'GlobalAdvisory(ghsaId: $ghsaId, cveId: $cveId, url: $url, htmlUrl: $htmlUrl, repositoryAdvisoryUrl: $repositoryAdvisoryUrl, summary: $summary, description: $description, type: $type, severity: $severity, sourceCodeLocation: $sourceCodeLocation, identifiers: $identifiers, references: $references, publishedAt: $publishedAt, updatedAt: $updatedAt, githubReviewedAt: $githubReviewedAt, nvdPublishedAt: $nvdPublishedAt, withdrawnAt: $withdrawnAt, vulnerabilities: $vulnerabilities, cvss: $cvss, cvssSeverities: $cvssSeverities, epss: $epss, cwes: $cwes, credits: $credits)';
+
  }

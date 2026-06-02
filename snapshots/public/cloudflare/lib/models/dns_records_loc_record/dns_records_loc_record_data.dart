@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LatDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LatDirection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LatDirection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LatDirection($value)';
+
  }
 /// Longitude direction.
 @immutable final class LongDirection {const LongDirection._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LongDirection && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LongDirection($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LongDirection && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LongDirection($value)';
+
  }
 /// Components of a LOC record.
 @immutable final class DnsRecordsLocRecordData {const DnsRecordsLocRecordData({this.altitude, this.latDegrees, this.latDirection, this.latMinutes, this.latSeconds, this.longDegrees, this.longDirection, this.longMinutes, this.longSeconds, this.precisionHorz, this.precisionVert, this.size, });
@@ -210,7 +216,7 @@ DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function
   precisionVert: precisionVert != null ? precisionVert() : this.precisionVert,
   size: size != null ? size() : this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsLocRecordData &&
           altitude == other.altitude &&
           latDegrees == other.latDegrees &&
@@ -223,7 +229,10 @@ DnsRecordsLocRecordData copyWith({double? Function()? altitude, double? Function
           longSeconds == other.longSeconds &&
           precisionHorz == other.precisionHorz &&
           precisionVert == other.precisionVert &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(altitude, latDegrees, latDirection, latMinutes, latSeconds, longDegrees, longDirection, longMinutes, longSeconds, precisionHorz, precisionVert, size); } 
-@override String toString() { return 'DnsRecordsLocRecordData(altitude: $altitude, latDegrees: $latDegrees, latDirection: $latDirection, latMinutes: $latMinutes, latSeconds: $latSeconds, longDegrees: $longDegrees, longDirection: $longDirection, longMinutes: $longMinutes, longSeconds: $longSeconds, precisionHorz: $precisionHorz, precisionVert: $precisionVert, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(altitude, latDegrees, latDirection, latMinutes, latSeconds, longDegrees, longDirection, longMinutes, longSeconds, precisionHorz, precisionVert, size);
+
+@override String toString() => 'DnsRecordsLocRecordData(altitude: $altitude, latDegrees: $latDegrees, latDirection: $latDirection, latMinutes: $latMinutes, latSeconds: $latSeconds, longDegrees: $longDegrees, longDirection: $longDirection, longMinutes: $longMinutes, longSeconds: $longSeconds, precisionHorz: $precisionHorz, precisionVert: $precisionVert, size: $size)';
+
  }

@@ -17,7 +17,8 @@ final class RadarGetAiInferenceSummaryError$400 extends RadarGetAiInferenceSumma
 
 final RadarGetAiInferenceSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAiInferenceSummaryError$Unknown extends RadarGetAiInferenceSummaryError {const RadarGetAiInferenceSummaryError$Unknown(this.statusCode, this.rawBody, );
 

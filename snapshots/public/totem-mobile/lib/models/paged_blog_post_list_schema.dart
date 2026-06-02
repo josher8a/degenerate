@@ -41,20 +41,15 @@ final class PagedBlogPostListSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is PagedBlogPostListSchema &&
-            listEquals(items, other.items) &&
-            count == other.count;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PagedBlogPostListSchema &&
+          listEquals(items, other.items) &&
+          count == other.count;
 
   @override
-  int get hashCode {
-    return Object.hash(Object.hashAll(items), count);
-  }
+  int get hashCode => Object.hash(Object.hashAll(items), count);
 
   @override
-  String toString() {
-    return 'PagedBlogPostListSchema(items: $items, count: $count)';
-  }
+  String toString() => 'PagedBlogPostListSchema(items: $items, count: $count)';
 }

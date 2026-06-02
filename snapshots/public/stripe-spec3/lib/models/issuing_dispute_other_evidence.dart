@@ -46,12 +46,15 @@ IssuingDisputeOtherEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDo
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   productType: productType != null ? productType() : this.productType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeOtherEvidence &&
           additionalDocumentation == other.additionalDocumentation &&
           explanation == other.explanation &&
           productDescription == other.productDescription &&
-          productType == other.productType; } 
-@override int get hashCode { return Object.hash(additionalDocumentation, explanation, productDescription, productType); } 
-@override String toString() { return 'IssuingDisputeOtherEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+          productType == other.productType;
+
+@override int get hashCode => Object.hash(additionalDocumentation, explanation, productDescription, productType);
+
+@override String toString() => 'IssuingDisputeOtherEvidence(additionalDocumentation: $additionalDocumentation, explanation: $explanation, productDescription: $productDescription, productType: $productType)';
+
  }

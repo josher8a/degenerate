@@ -38,12 +38,15 @@ RumCreateRuleRequest copyWith({String? Function()? host, bool? Function()? inclu
   isPaused: isPaused != null ? isPaused() : this.isPaused,
   paths: paths != null ? paths() : this.paths,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumCreateRuleRequest &&
           host == other.host &&
           inclusive == other.inclusive &&
           isPaused == other.isPaused &&
-          listEquals(paths, other.paths); } 
-@override int get hashCode { return Object.hash(host, inclusive, isPaused, Object.hashAll(paths ?? const [])); } 
-@override String toString() { return 'RumCreateRuleRequest(host: $host, inclusive: $inclusive, isPaused: $isPaused, paths: $paths)'; } 
+          listEquals(paths, other.paths);
+
+@override int get hashCode => Object.hash(host, inclusive, isPaused, Object.hashAll(paths ?? const []));
+
+@override String toString() => 'RumCreateRuleRequest(host: $host, inclusive: $inclusive, isPaused: $isPaused, paths: $paths)';
+
  }

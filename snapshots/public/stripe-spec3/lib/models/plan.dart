@@ -159,7 +159,7 @@ Plan copyWith({bool? active, int? Function()? amount, String? Function()? amount
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   usageType: usageType ?? this.usageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Plan &&
           active == other.active &&
           amount == other.amount &&
@@ -180,7 +180,10 @@ Plan copyWith({bool? active, int? Function()? amount, String? Function()? amount
           tiersMode == other.tiersMode &&
           transformUsage == other.transformUsage &&
           trialPeriodDays == other.trialPeriodDays &&
-          usageType == other.usageType; } 
-@override int get hashCode { return Object.hash(active, amount, amountDecimal, billingScheme, created, currency, id, interval, intervalCount, livemode, metadata, meter, nickname, object, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType); } 
-@override String toString() { return 'Plan(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, created: $created, currency: $currency, id: $id, interval: $interval, intervalCount: $intervalCount, livemode: $livemode, metadata: $metadata, meter: $meter, nickname: $nickname, object: $object, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)'; } 
+          usageType == other.usageType;
+
+@override int get hashCode => Object.hash(active, amount, amountDecimal, billingScheme, created, currency, id, interval, intervalCount, livemode, metadata, meter, nickname, object, product, Object.hashAll(tiers ?? const []), tiersMode, transformUsage, trialPeriodDays, usageType);
+
+@override String toString() => 'Plan(active: $active, amount: $amount, amountDecimal: $amountDecimal, billingScheme: $billingScheme, created: $created, currency: $currency, id: $id, interval: $interval, intervalCount: $intervalCount, livemode: $livemode, metadata: $metadata, meter: $meter, nickname: $nickname, object: $object, product: $product, tiers: $tiers, tiersMode: $tiersMode, transformUsage: $transformUsage, trialPeriodDays: $trialPeriodDays, usageType: $usageType)';
+
  }

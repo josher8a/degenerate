@@ -20,10 +20,13 @@ MetadataEvents copyWith({String? Function()? name, String? Function()? timestamp
   name: name != null ? name() : this.name,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MetadataEvents &&
           name == other.name &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(name, timestamp); } 
-@override String toString() { return 'MetadataEvents(name: $name, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(name, timestamp);
+
+@override String toString() => 'MetadataEvents(name: $name, timestamp: $timestamp)';
+
  }

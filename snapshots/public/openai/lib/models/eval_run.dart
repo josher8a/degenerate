@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EvalRunObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EvalRunObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EvalRunObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EvalRunObject($value)';
+
  }
 /// A schema representing an evaluation run.
 /// 
@@ -129,7 +132,7 @@ EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? sta
   metadata: metadata != null ? metadata() : this.metadata,
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalRun &&
           object == other.object &&
           id == other.id &&
@@ -144,7 +147,10 @@ EvalRun copyWith({EvalRunObject? object, String? id, String? evalId, String? sta
           listEquals(perTestingCriteriaResults, other.perTestingCriteriaResults) &&
           dataSource == other.dataSource &&
           metadata == other.metadata &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(object, id, evalId, status, model, name, createdAt, reportUrl, resultCounts, Object.hashAll(perModelUsage), Object.hashAll(perTestingCriteriaResults), dataSource, metadata, error); } 
-@override String toString() { return 'EvalRun(object: $object, id: $id, evalId: $evalId, status: $status, model: $model, name: $name, createdAt: $createdAt, reportUrl: $reportUrl, resultCounts: $resultCounts, perModelUsage: $perModelUsage, perTestingCriteriaResults: $perTestingCriteriaResults, dataSource: $dataSource, metadata: $metadata, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(object, id, evalId, status, model, name, createdAt, reportUrl, resultCounts, Object.hashAll(perModelUsage), Object.hashAll(perTestingCriteriaResults), dataSource, metadata, error);
+
+@override String toString() => 'EvalRun(object: $object, id: $id, evalId: $evalId, status: $status, model: $model, name: $name, createdAt: $createdAt, reportUrl: $reportUrl, resultCounts: $resultCounts, perModelUsage: $perModelUsage, perTestingCriteriaResults: $perTestingCriteriaResults, dataSource: $dataSource, metadata: $metadata, error: $error)';
+
  }

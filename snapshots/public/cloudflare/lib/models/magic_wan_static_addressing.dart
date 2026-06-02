@@ -30,11 +30,14 @@ MagicWanStaticAddressing copyWith({MagicCidr? address, MagicIpAddress? gatewayAd
   gatewayAddress: gatewayAddress ?? this.gatewayAddress,
   secondaryAddress: secondaryAddress != null ? secondaryAddress() : this.secondaryAddress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicWanStaticAddressing &&
           address == other.address &&
           gatewayAddress == other.gatewayAddress &&
-          secondaryAddress == other.secondaryAddress; } 
-@override int get hashCode { return Object.hash(address, gatewayAddress, secondaryAddress); } 
-@override String toString() { return 'MagicWanStaticAddressing(address: $address, gatewayAddress: $gatewayAddress, secondaryAddress: $secondaryAddress)'; } 
+          secondaryAddress == other.secondaryAddress;
+
+@override int get hashCode => Object.hash(address, gatewayAddress, secondaryAddress);
+
+@override String toString() => 'MagicWanStaticAddressing(address: $address, gatewayAddress: $gatewayAddress, secondaryAddress: $secondaryAddress)';
+
  }

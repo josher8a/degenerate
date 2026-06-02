@@ -74,7 +74,7 @@ GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? auth
   verification: verification ?? this.verification,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitCommit &&
           sha == other.sha &&
           nodeId == other.nodeId &&
@@ -85,7 +85,10 @@ GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? auth
           tree == other.tree &&
           listEquals(parents, other.parents) &&
           verification == other.verification &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl); } 
-@override String toString() { return 'GitCommit(sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl);
+
+@override String toString() => 'GitCommit(sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)';
+
  }

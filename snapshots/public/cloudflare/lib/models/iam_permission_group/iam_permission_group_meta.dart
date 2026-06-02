@@ -29,10 +29,13 @@ IamPermissionGroupMeta copyWith({String? Function()? key, String? Function()? va
   key: key != null ? key() : this.key,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissionGroupMeta &&
           key == other.key &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, value); } 
-@override String toString() { return 'IamPermissionGroupMeta(key: $key, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(key, value);
+
+@override String toString() => 'IamPermissionGroupMeta(key: $key, value: $value)';
+
  }

@@ -44,13 +44,16 @@ TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, Shi
   tokenSources: tokenSources ?? this.tokenSources,
   tokenType: tokenType ?? this.tokenType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenValidationConfigCreateRequest &&
           credentials == other.credentials &&
           description == other.description &&
           title == other.title &&
           listEquals(tokenSources, other.tokenSources) &&
-          tokenType == other.tokenType; } 
-@override int get hashCode { return Object.hash(credentials, description, title, Object.hashAll(tokenSources), tokenType); } 
-@override String toString() { return 'TokenValidationConfigCreateRequest(credentials: $credentials, description: $description, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)'; } 
+          tokenType == other.tokenType;
+
+@override int get hashCode => Object.hash(credentials, description, title, Object.hashAll(tokenSources), tokenType);
+
+@override String toString() => 'TokenValidationConfigCreateRequest(credentials: $credentials, description: $description, title: $title, tokenSources: $tokenSources, tokenType: $tokenType)';
+
  }

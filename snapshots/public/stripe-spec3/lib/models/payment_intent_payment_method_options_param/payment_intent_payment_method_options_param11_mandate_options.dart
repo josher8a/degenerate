@@ -40,14 +40,17 @@ PaymentIntentPaymentMethodOptionsParam11MandateOptions copyWith({AmountDetailsSh
   paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
   purpose: purpose != null ? purpose() : this.purpose,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam11MandateOptions &&
           amount == other.amount &&
           amountType == other.amountType &&
           endDate == other.endDate &&
           paymentSchedule == other.paymentSchedule &&
           paymentsPerPeriod == other.paymentsPerPeriod &&
-          purpose == other.purpose; } 
-@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam11MandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose)'; } 
+          purpose == other.purpose;
+
+@override int get hashCode => Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam11MandateOptions(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose)';
+
  }

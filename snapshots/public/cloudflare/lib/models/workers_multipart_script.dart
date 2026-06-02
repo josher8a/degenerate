@@ -37,10 +37,13 @@ WorkersMultipartScript copyWith({List<Uint8List>? Function()? files, WorkersMult
   files: files != null ? files() : this.files,
   metadata: metadata ?? this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersMultipartScript &&
           listEquals(files, other.files) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(files ?? const []), metadata); } 
-@override String toString() { return 'WorkersMultipartScript(files: $files, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(files ?? const []), metadata);
+
+@override String toString() => 'WorkersMultipartScript(files: $files, metadata: $metadata)';
+
  }

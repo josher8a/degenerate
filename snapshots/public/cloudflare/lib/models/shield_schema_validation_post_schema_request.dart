@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ValidationEnabled && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ValidationEnabled($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValidationEnabled && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ValidationEnabled($value)';
+
  }
 @immutable final class ShieldSchemaValidationPostSchemaRequest {const ShieldSchemaValidationPostSchemaRequest({required this.file, required this.kind, this.name, this.validationEnabled, });
 
@@ -62,12 +65,15 @@ ShieldSchemaValidationPostSchemaRequest copyWith({Uint8List? file, ShieldOldKind
   name: name != null ? name() : this.name,
   validationEnabled: validationEnabled != null ? validationEnabled() : this.validationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldSchemaValidationPostSchemaRequest &&
           file == other.file &&
           kind == other.kind &&
           name == other.name &&
-          validationEnabled == other.validationEnabled; } 
-@override int get hashCode { return Object.hash(file, kind, name, validationEnabled); } 
-@override String toString() { return 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)'; } 
+          validationEnabled == other.validationEnabled;
+
+@override int get hashCode => Object.hash(file, kind, name, validationEnabled);
+
+@override String toString() => 'ShieldSchemaValidationPostSchemaRequest(file: $file, kind: $kind, name: $name, validationEnabled: $validationEnabled)';
+
  }

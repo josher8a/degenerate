@@ -84,7 +84,7 @@ SourceTransactionGbpCreditTransferData copyWith({String? Function()? fingerprint
   senderName: senderName != null ? senderName() : this.senderName,
   senderSortCode: senderSortCode != null ? senderSortCode() : this.senderSortCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceTransactionGbpCreditTransferData &&
           fingerprint == other.fingerprint &&
           fundingMethod == other.fundingMethod &&
@@ -92,7 +92,10 @@ SourceTransactionGbpCreditTransferData copyWith({String? Function()? fingerprint
           reference == other.reference &&
           senderAccountNumber == other.senderAccountNumber &&
           senderName == other.senderName &&
-          senderSortCode == other.senderSortCode; } 
-@override int get hashCode { return Object.hash(fingerprint, fundingMethod, last4, reference, senderAccountNumber, senderName, senderSortCode); } 
-@override String toString() { return 'SourceTransactionGbpCreditTransferData(fingerprint: $fingerprint, fundingMethod: $fundingMethod, last4: $last4, reference: $reference, senderAccountNumber: $senderAccountNumber, senderName: $senderName, senderSortCode: $senderSortCode)'; } 
+          senderSortCode == other.senderSortCode;
+
+@override int get hashCode => Object.hash(fingerprint, fundingMethod, last4, reference, senderAccountNumber, senderName, senderSortCode);
+
+@override String toString() => 'SourceTransactionGbpCreditTransferData(fingerprint: $fingerprint, fundingMethod: $fundingMethod, last4: $last4, reference: $reference, senderAccountNumber: $senderAccountNumber, senderName: $senderName, senderSortCode: $senderSortCode)';
+
  }

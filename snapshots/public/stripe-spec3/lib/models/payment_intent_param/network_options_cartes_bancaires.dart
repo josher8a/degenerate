@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CbAvalgo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CbAvalgo($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CbAvalgo && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CbAvalgo($value)';
+
  }
 @immutable final class NetworkOptionsCartesBancaires {const NetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
 
@@ -68,11 +71,14 @@ NetworkOptionsCartesBancaires copyWith({CbAvalgo? cbAvalgo, String? Function()? 
   cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,
   cbScore: cbScore != null ? cbScore() : this.cbScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NetworkOptionsCartesBancaires &&
           cbAvalgo == other.cbAvalgo &&
           cbExemption == other.cbExemption &&
-          cbScore == other.cbScore; } 
-@override int get hashCode { return Object.hash(cbAvalgo, cbExemption, cbScore); } 
-@override String toString() { return 'NetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)'; } 
+          cbScore == other.cbScore;
+
+@override int get hashCode => Object.hash(cbAvalgo, cbExemption, cbScore);
+
+@override String toString() => 'NetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)';
+
  }

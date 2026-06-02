@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConsentCollectionPromotions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConsentCollectionPromotions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConsentCollectionPromotions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConsentCollectionPromotions($value)';
+
  }
 @immutable final class ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService._(this.value);
 
@@ -43,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConsentCollectionTermsOfService && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConsentCollectionTermsOfService($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConsentCollectionTermsOfService && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConsentCollectionTermsOfService($value)';
+
  }
 /// Configure fields for the Checkout Session to gather active consent from customers.
 @immutable final class ConsentCollection {const ConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
@@ -74,11 +80,14 @@ ConsentCollection copyWith({PaymentMethodReuseAgreement? Function()? paymentMeth
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConsentCollection &&
           paymentMethodReuseAgreement == other.paymentMethodReuseAgreement &&
           promotions == other.promotions &&
-          termsOfService == other.termsOfService; } 
-@override int get hashCode { return Object.hash(paymentMethodReuseAgreement, promotions, termsOfService); } 
-@override String toString() { return 'ConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)'; } 
+          termsOfService == other.termsOfService;
+
+@override int get hashCode => Object.hash(paymentMethodReuseAgreement, promotions, termsOfService);
+
+@override String toString() => 'ConsentCollection(paymentMethodReuseAgreement: $paymentMethodReuseAgreement, promotions: $promotions, termsOfService: $termsOfService)';
+
  }

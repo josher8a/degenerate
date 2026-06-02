@@ -58,14 +58,17 @@ PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()
   reference: reference != null ? reference() : this.reference,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionDisplayBankTransferInstructions &&
           amountRemaining == other.amountRemaining &&
           currency == other.currency &&
           listEquals(financialAddresses, other.financialAddresses) &&
           hostedInstructionsUrl == other.hostedInstructionsUrl &&
           reference == other.reference &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(amountRemaining, currency, Object.hashAll(financialAddresses ?? const []), hostedInstructionsUrl, reference, type); } 
-@override String toString() { return 'PaymentIntentNextActionDisplayBankTransferInstructions(amountRemaining: $amountRemaining, currency: $currency, financialAddresses: $financialAddresses, hostedInstructionsUrl: $hostedInstructionsUrl, reference: $reference, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(amountRemaining, currency, Object.hashAll(financialAddresses ?? const []), hostedInstructionsUrl, reference, type);
+
+@override String toString() => 'PaymentIntentNextActionDisplayBankTransferInstructions(amountRemaining: $amountRemaining, currency: $currency, financialAddresses: $financialAddresses, hostedInstructionsUrl: $hostedInstructionsUrl, reference: $reference, type: $type)';
+
  }

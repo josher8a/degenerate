@@ -49,13 +49,16 @@ PostBillingMeterEventsRequest copyWith({String? eventName, List<String>? Functio
   payload: payload ?? this.payload,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMeterEventsRequest &&
           eventName == other.eventName &&
           listEquals(expand, other.expand) &&
           identifier == other.identifier &&
           payload == other.payload &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(eventName, Object.hashAll(expand ?? const []), identifier, payload, timestamp); } 
-@override String toString() { return 'PostBillingMeterEventsRequest(eventName: $eventName, expand: $expand, identifier: $identifier, payload: $payload, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(eventName, Object.hashAll(expand ?? const []), identifier, payload, timestamp);
+
+@override String toString() => 'PostBillingMeterEventsRequest(eventName: $eventName, expand: $expand, identifier: $identifier, payload: $payload, timestamp: $timestamp)';
+
  }

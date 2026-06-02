@@ -100,7 +100,7 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
   bodyText: bodyText != null ? bodyText() : this.bodyText,
   authorAssociation: authorAssociation ?? this.authorAssociation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TimelineReviewedEvent &&
           event == other.event &&
           id == other.id &&
@@ -116,7 +116,10 @@ TimelineReviewedEvent copyWith({String? event, int? id, String? nodeId, SimpleUs
           commitId == other.commitId &&
           bodyHtml == other.bodyHtml &&
           bodyText == other.bodyText &&
-          authorAssociation == other.authorAssociation; } 
-@override int get hashCode { return Object.hash(event, id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, updatedAt, commitId, bodyHtml, bodyText, authorAssociation); } 
-@override String toString() { return 'TimelineReviewedEvent(event: $event, id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, updatedAt: $updatedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)'; } 
+          authorAssociation == other.authorAssociation;
+
+@override int get hashCode => Object.hash(event, id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, updatedAt, commitId, bodyHtml, bodyText, authorAssociation);
+
+@override String toString() => 'TimelineReviewedEvent(event: $event, id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, updatedAt: $updatedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)';
+
  }

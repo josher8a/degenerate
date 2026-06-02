@@ -86,7 +86,7 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
   status: status ?? this.status,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentStatusCreatedCheckRun &&
           completedAt == other.completedAt &&
           conclusion == other.conclusion &&
@@ -99,7 +99,10 @@ WebhookDeploymentStatusCreatedCheckRun copyWith({DateTime? Function()? completed
           nodeId == other.nodeId &&
           startedAt == other.startedAt &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(completedAt, conclusion, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, startedAt, status, url); } 
-@override String toString() { return 'WebhookDeploymentStatusCreatedCheckRun(completedAt: $completedAt, conclusion: $conclusion, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, startedAt: $startedAt, status: $status, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(completedAt, conclusion, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, startedAt, status, url);
+
+@override String toString() => 'WebhookDeploymentStatusCreatedCheckRun(completedAt: $completedAt, conclusion: $conclusion, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, startedAt: $startedAt, status: $status, url: $url)';
+
  }

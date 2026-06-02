@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CloudConnectorRuleParameters copyWith({String? Function()? host}) { return CloudConnectorRuleParameters(
   host: host != null ? host() : this.host,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudConnectorRuleParameters &&
-          host == other.host; } 
-@override int get hashCode { return host.hashCode; } 
-@override String toString() { return 'CloudConnectorRuleParameters(host: $host)'; } 
+          host == other.host;
+
+@override int get hashCode => host.hashCode;
+
+@override String toString() => 'CloudConnectorRuleParameters(host: $host)';
+
  }

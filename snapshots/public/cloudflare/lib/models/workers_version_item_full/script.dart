@@ -60,12 +60,15 @@ Script copyWith({String? Function()? etag, List<String>? Function()? handlers, S
   lastDeployedFrom: lastDeployedFrom != null ? lastDeployedFrom() : this.lastDeployedFrom,
   namedHandlers: namedHandlers != null ? namedHandlers() : this.namedHandlers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Script &&
           etag == other.etag &&
           listEquals(handlers, other.handlers) &&
           lastDeployedFrom == other.lastDeployedFrom &&
-          listEquals(namedHandlers, other.namedHandlers); } 
-@override int get hashCode { return Object.hash(etag, Object.hashAll(handlers ?? const []), lastDeployedFrom, Object.hashAll(namedHandlers ?? const [])); } 
-@override String toString() { return 'Script(etag: $etag, handlers: $handlers, lastDeployedFrom: $lastDeployedFrom, namedHandlers: $namedHandlers)'; } 
+          listEquals(namedHandlers, other.namedHandlers);
+
+@override int get hashCode => Object.hash(etag, Object.hashAll(handlers ?? const []), lastDeployedFrom, Object.hashAll(namedHandlers ?? const []));
+
+@override String toString() => 'Script(etag: $etag, handlers: $handlers, lastDeployedFrom: $lastDeployedFrom, namedHandlers: $namedHandlers)';
+
  }

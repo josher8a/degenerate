@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
 MconnAdminMacrosReportExceptionResult copyWith({String? message}) { return MconnAdminMacrosReportExceptionResult(
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminMacrosReportExceptionResult &&
-          message == other.message; } 
-@override int get hashCode { return message.hashCode; } 
-@override String toString() { return 'MconnAdminMacrosReportExceptionResult(message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => message.hashCode;
+
+@override String toString() => 'MconnAdminMacrosReportExceptionResult(message: $message)';
+
  }

@@ -61,13 +61,16 @@ AccountCallUserDefinedMessageSubscription copyWith({String? Function()? accountS
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCallUserDefinedMessageSubscription &&
           accountSid == other.accountSid &&
           callSid == other.callSid &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, callSid, sid, dateCreated, uri); } 
-@override String toString() { return 'AccountCallUserDefinedMessageSubscription(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, callSid, sid, dateCreated, uri);
+
+@override String toString() => 'AccountCallUserDefinedMessageSubscription(accountSid: $accountSid, callSid: $callSid, sid: $sid, dateCreated: $dateCreated, uri: $uri)';
+
  }

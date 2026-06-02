@@ -48,13 +48,16 @@ DlpDatasetCreation copyWith({DlpDataset? dataset, int? encodingVersion, int? max
   secret: secret != null ? secret() : this.secret,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetCreation &&
           dataset == other.dataset &&
           encodingVersion == other.encodingVersion &&
           maxCells == other.maxCells &&
           secret == other.secret &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(dataset, encodingVersion, maxCells, secret, version); } 
-@override String toString() { return 'DlpDatasetCreation(dataset: $dataset, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(dataset, encodingVersion, maxCells, secret, version);
+
+@override String toString() => 'DlpDatasetCreation(dataset: $dataset, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType($value)';
+
  }
 /// Returned when input audio transcription is configured, and a transcription
 /// request for a user message failed. These events are separate from other
@@ -74,13 +77,16 @@ RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed copyWith({S
   contentIndex: contentIndex ?? this.contentIndex,
   error: error ?? this.error,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          error == other.error; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, error); } 
-@override String toString() { return 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)'; } 
+          error == other.error;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, error);
+
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailed(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, error: $error)';
+
  }

@@ -20,10 +20,13 @@ ParameterSchemas copyWith({ShieldTimestamp? Function()? lastUpdated, ShieldParam
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   parameterSchemas: parameterSchemas != null ? parameterSchemas() : this.parameterSchemas,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParameterSchemas &&
           lastUpdated == other.lastUpdated &&
-          parameterSchemas == other.parameterSchemas; } 
-@override int get hashCode { return Object.hash(lastUpdated, parameterSchemas); } 
-@override String toString() { return 'ParameterSchemas(lastUpdated: $lastUpdated, parameterSchemas: $parameterSchemas)'; } 
+          parameterSchemas == other.parameterSchemas;
+
+@override int get hashCode => Object.hash(lastUpdated, parameterSchemas);
+
+@override String toString() => 'ParameterSchemas(lastUpdated: $lastUpdated, parameterSchemas: $parameterSchemas)';
+
  }

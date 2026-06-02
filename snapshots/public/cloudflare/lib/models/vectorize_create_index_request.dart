@@ -26,11 +26,14 @@ VectorizeCreateIndexRequest copyWith({VectorizeIndexConfiguration? config, Vecto
   description: description != null ? description() : this.description,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeCreateIndexRequest &&
           config == other.config &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(config, description, name); } 
-@override String toString() { return 'VectorizeCreateIndexRequest(config: $config, description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(config, description, name);
+
+@override String toString() => 'VectorizeCreateIndexRequest(config: $config, description: $description, name: $name)';
+
  }

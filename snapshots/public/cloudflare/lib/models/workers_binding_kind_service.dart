@@ -47,13 +47,16 @@ WorkersBindingKindService copyWith({String? Function()? entrypoint, String Funct
   service: service ?? this.service,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindService &&
           entrypoint == other.entrypoint &&
           environment == other.environment &&
           name == other.name &&
           service == other.service &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(entrypoint, environment, name, service, type); } 
-@override String toString() { return 'WorkersBindingKindService(entrypoint: $entrypoint, environment: $environment, name: $name, service: $service, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(entrypoint, environment, name, service, type);
+
+@override String toString() => 'WorkersBindingKindService(entrypoint: $entrypoint, environment: $environment, name: $name, service: $service, type: $type)';
+
  }

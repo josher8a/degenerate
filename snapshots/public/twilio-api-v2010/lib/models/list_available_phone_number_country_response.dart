@@ -20,10 +20,13 @@ ListAvailablePhoneNumberCountryResponse copyWith({List<AccountAvailablePhoneNumb
   countries: countries != null ? countries() : this.countries,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListAvailablePhoneNumberCountryResponse &&
           listEquals(countries, other.countries) &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(countries ?? const []), uri); } 
-@override String toString() { return 'ListAvailablePhoneNumberCountryResponse(countries: $countries, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(countries ?? const []), uri);
+
+@override String toString() => 'ListAvailablePhoneNumberCountryResponse(countries: $countries, uri: $uri)';
+
  }

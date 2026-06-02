@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRegistrationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRegistrationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRegistrationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxRegistrationObject($value)';
+
  }
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
 @immutable final class TaxRegistrationStatus {const TaxRegistrationStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TaxRegistrationStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TaxRegistrationStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRegistrationStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TaxRegistrationStatus($value)';
+
  }
 /// A Tax `Registration` lets us know that your business is registered to collect tax on payments within a region, enabling you to [automatically collect tax](https://docs.stripe.com/tax).
 /// 
@@ -130,7 +136,7 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
   object: object ?? this.object,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxRegistration &&
           activeFrom == other.activeFrom &&
           country == other.country &&
@@ -140,7 +146,10 @@ TaxRegistration copyWith({int? activeFrom, String? country, TaxProductRegistrati
           id == other.id &&
           livemode == other.livemode &&
           object == other.object &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(activeFrom, country, countryOptions, created, expiresAt, id, livemode, object, status); } 
-@override String toString() { return 'TaxRegistration(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, object: $object, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(activeFrom, country, countryOptions, created, expiresAt, id, livemode, object, status);
+
+@override String toString() => 'TaxRegistration(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, created: $created, expiresAt: $expiresAt, id: $id, livemode: $livemode, object: $object, status: $status)';
+
  }

@@ -215,7 +215,7 @@ EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, String? 
   validation: validation != null ? validation() : this.validation,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityMailsearchMessage &&
           actionLog == other.actionLog &&
           alertId == other.alertId &&
@@ -245,7 +245,10 @@ EmailSecurityMailsearchMessage copyWith({dynamic Function()? actionLog, String? 
           listEquals(toName, other.toName) &&
           ts == other.ts &&
           validation == other.validation &&
-          id == other.id; } 
-@override int get hashCode { return Object.hashAll([actionLog, alertId, Object.hashAll(clientRecipients), deliveryMode, Object.hashAll(detectionReasons), edfHash, envelopeFrom, Object.hashAll(envelopeTo ?? const []), finalDisposition, Object.hashAll(findings ?? const []), from, fromName, htmltextStructureHash, isPhishSubmission, isQuarantined, messageId, Object.hashAll(postDeliveryOperations ?? const []), postfixId, postfixIdOutbound, properties, replyto, sentDate, subject, Object.hashAll(threatCategories ?? const []), Object.hashAll(to ?? const []), Object.hashAll(toName ?? const []), ts, validation, id]); } 
-@override String toString() { return 'EmailSecurityMailsearchMessage(actionLog: $actionLog, alertId: $alertId, clientRecipients: $clientRecipients, deliveryMode: $deliveryMode, detectionReasons: $detectionReasons, edfHash: $edfHash, envelopeFrom: $envelopeFrom, envelopeTo: $envelopeTo, finalDisposition: $finalDisposition, findings: $findings, from: $from, fromName: $fromName, htmltextStructureHash: $htmltextStructureHash, isPhishSubmission: $isPhishSubmission, isQuarantined: $isQuarantined, messageId: $messageId, postDeliveryOperations: $postDeliveryOperations, postfixId: $postfixId, postfixIdOutbound: $postfixIdOutbound, properties: $properties, replyto: $replyto, sentDate: $sentDate, subject: $subject, threatCategories: $threatCategories, to: $to, toName: $toName, ts: $ts, validation: $validation, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hashAll([actionLog, alertId, Object.hashAll(clientRecipients), deliveryMode, Object.hashAll(detectionReasons), edfHash, envelopeFrom, Object.hashAll(envelopeTo ?? const []), finalDisposition, Object.hashAll(findings ?? const []), from, fromName, htmltextStructureHash, isPhishSubmission, isQuarantined, messageId, Object.hashAll(postDeliveryOperations ?? const []), postfixId, postfixIdOutbound, properties, replyto, sentDate, subject, Object.hashAll(threatCategories ?? const []), Object.hashAll(to ?? const []), Object.hashAll(toName ?? const []), ts, validation, id]);
+
+@override String toString() => 'EmailSecurityMailsearchMessage(actionLog: $actionLog, alertId: $alertId, clientRecipients: $clientRecipients, deliveryMode: $deliveryMode, detectionReasons: $detectionReasons, edfHash: $edfHash, envelopeFrom: $envelopeFrom, envelopeTo: $envelopeTo, finalDisposition: $finalDisposition, findings: $findings, from: $from, fromName: $fromName, htmltextStructureHash: $htmltextStructureHash, isPhishSubmission: $isPhishSubmission, isQuarantined: $isQuarantined, messageId: $messageId, postDeliveryOperations: $postDeliveryOperations, postfixId: $postfixId, postfixIdOutbound: $postfixIdOutbound, properties: $properties, replyto: $replyto, sentDate: $sentDate, subject: $subject, threatCategories: $threatCategories, to: $to, toName: $toName, ts: $ts, validation: $validation, id: $id)';
+
  }

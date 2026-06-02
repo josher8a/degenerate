@@ -22,10 +22,13 @@ PostTestHelpersTreasuryInboundTransfersIdFailRequest copyWith({List<String>? Fun
   expand: expand != null ? expand() : this.expand,
   failureDetails: failureDetails != null ? failureDetails() : this.failureDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryInboundTransfersIdFailRequest &&
           listEquals(expand, other.expand) &&
-          failureDetails == other.failureDetails; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), failureDetails); } 
-@override String toString() { return 'PostTestHelpersTreasuryInboundTransfersIdFailRequest(expand: $expand, failureDetails: $failureDetails)'; } 
+          failureDetails == other.failureDetails;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), failureDetails);
+
+@override String toString() => 'PostTestHelpersTreasuryInboundTransfersIdFailRequest(expand: $expand, failureDetails: $failureDetails)';
+
  }

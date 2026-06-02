@@ -17,7 +17,8 @@ final class PostDatasetPopulateError$400 extends PostDatasetPopulateError {const
 
 final PostDatasetPopulateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostDatasetPopulateError$Unknown extends PostDatasetPopulateError {const PostDatasetPopulateError$Unknown(this.statusCode, this.rawBody, );
 

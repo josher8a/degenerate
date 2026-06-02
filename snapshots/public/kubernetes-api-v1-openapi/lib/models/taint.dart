@@ -36,12 +36,15 @@ Taint copyWith({String? effect, String? key, Time? Function()? timeAdded, String
   timeAdded: timeAdded != null ? timeAdded() : this.timeAdded,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Taint &&
           effect == other.effect &&
           key == other.key &&
           timeAdded == other.timeAdded &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(effect, key, timeAdded, value); } 
-@override String toString() { return 'Taint(effect: $effect, key: $key, timeAdded: $timeAdded, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(effect, key, timeAdded, value);
+
+@override String toString() => 'Taint(effect: $effect, key: $key, timeAdded: $timeAdded, value: $value)';
+
  }

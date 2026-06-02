@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('paylo
 WebhookSecretScanningAlertLocationCreatedFormEncoded copyWith({String? payload}) { return WebhookSecretScanningAlertLocationCreatedFormEncoded(
   payload: payload ?? this.payload,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecretScanningAlertLocationCreatedFormEncoded &&
-          payload == other.payload; } 
-@override int get hashCode { return payload.hashCode; } 
-@override String toString() { return 'WebhookSecretScanningAlertLocationCreatedFormEncoded(payload: $payload)'; } 
+          payload == other.payload;
+
+@override int get hashCode => payload.hashCode;
+
+@override String toString() => 'WebhookSecretScanningAlertLocationCreatedFormEncoded(payload: $payload)';
+
  }

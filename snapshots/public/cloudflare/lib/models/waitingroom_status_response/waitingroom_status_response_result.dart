@@ -43,10 +43,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WaitingroomStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WaitingroomStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitingroomStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WaitingroomStatus($value)';
+
  }
 extension type const WaitingroomStatusEventId(String value) {
 factory WaitingroomStatusEventId.fromJson(String json) => WaitingroomStatusEventId(json);
@@ -89,13 +92,16 @@ WaitingroomStatusResponseResult copyWith({WaitingroomEstimatedQueuedUsers? Funct
   maxEstimatedTimeMinutes: maxEstimatedTimeMinutes != null ? maxEstimatedTimeMinutes() : this.maxEstimatedTimeMinutes,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomStatusResponseResult &&
           estimatedQueuedUsers == other.estimatedQueuedUsers &&
           estimatedTotalActiveUsers == other.estimatedTotalActiveUsers &&
           eventId == other.eventId &&
           maxEstimatedTimeMinutes == other.maxEstimatedTimeMinutes &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(estimatedQueuedUsers, estimatedTotalActiveUsers, eventId, maxEstimatedTimeMinutes, status); } 
-@override String toString() { return 'WaitingroomStatusResponseResult(estimatedQueuedUsers: $estimatedQueuedUsers, estimatedTotalActiveUsers: $estimatedTotalActiveUsers, eventId: $eventId, maxEstimatedTimeMinutes: $maxEstimatedTimeMinutes, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(estimatedQueuedUsers, estimatedTotalActiveUsers, eventId, maxEstimatedTimeMinutes, status);
+
+@override String toString() => 'WaitingroomStatusResponseResult(estimatedQueuedUsers: $estimatedQueuedUsers, estimatedTotalActiveUsers: $estimatedTotalActiveUsers, eventId: $eventId, maxEstimatedTimeMinutes: $maxEstimatedTimeMinutes, status: $status)';
+
  }

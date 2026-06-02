@@ -36,11 +36,14 @@ RealtimeServerEventInputAudioBufferDtmfEventReceived copyWith({String? type, Str
   event: event ?? this.event,
   receivedAt: receivedAt ?? this.receivedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventInputAudioBufferDtmfEventReceived &&
           type == other.type &&
           event == other.event &&
-          receivedAt == other.receivedAt; } 
-@override int get hashCode { return Object.hash(type, event, receivedAt); } 
-@override String toString() { return 'RealtimeServerEventInputAudioBufferDtmfEventReceived(type: $type, event: $event, receivedAt: $receivedAt)'; } 
+          receivedAt == other.receivedAt;
+
+@override int get hashCode => Object.hash(type, event, receivedAt);
+
+@override String toString() => 'RealtimeServerEventInputAudioBufferDtmfEventReceived(type: $type, event: $event, receivedAt: $receivedAt)';
+
  }

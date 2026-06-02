@@ -21,9 +21,12 @@ return errors; }
 BillingMeterResourceBillingMeterValue copyWith({String? eventPayloadKey}) { return BillingMeterResourceBillingMeterValue(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingMeterResourceBillingMeterValue &&
-          eventPayloadKey == other.eventPayloadKey; } 
-@override int get hashCode { return eventPayloadKey.hashCode; } 
-@override String toString() { return 'BillingMeterResourceBillingMeterValue(eventPayloadKey: $eventPayloadKey)'; } 
+          eventPayloadKey == other.eventPayloadKey;
+
+@override int get hashCode => eventPayloadKey.hashCode;
+
+@override String toString() => 'BillingMeterResourceBillingMeterValue(eventPayloadKey: $eventPayloadKey)';
+
  }

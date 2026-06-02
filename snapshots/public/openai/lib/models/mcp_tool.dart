@@ -52,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ConnectorId && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ConnectorId($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConnectorId && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConnectorId($value)';
+
  }
 /// Give the model access to additional tools via remote Model Context Protocol
 /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
@@ -156,7 +159,7 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
   requireApproval: requireApproval != null ? requireApproval() : this.requireApproval,
   deferLoading: deferLoading != null ? deferLoading() : this.deferLoading,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McpTool &&
           type == other.type &&
           serverLabel == other.serverLabel &&
@@ -167,7 +170,10 @@ McpTool copyWith({String? type, String? serverLabel, String? Function()? serverU
           headers == other.headers &&
           allowedTools == other.allowedTools &&
           requireApproval == other.requireApproval &&
-          deferLoading == other.deferLoading; } 
-@override int get hashCode { return Object.hash(type, serverLabel, serverUrl, connectorId, authorization, serverDescription, headers, allowedTools, requireApproval, deferLoading); } 
-@override String toString() { return 'McpTool(type: $type, serverLabel: $serverLabel, serverUrl: $serverUrl, connectorId: $connectorId, authorization: $authorization, serverDescription: $serverDescription, headers: $headers, allowedTools: $allowedTools, requireApproval: $requireApproval, deferLoading: $deferLoading)'; } 
+          deferLoading == other.deferLoading;
+
+@override int get hashCode => Object.hash(type, serverLabel, serverUrl, connectorId, authorization, serverDescription, headers, allowedTools, requireApproval, deferLoading);
+
+@override String toString() => 'McpTool(type: $type, serverLabel: $serverLabel, serverUrl: $serverUrl, connectorId: $connectorId, authorization: $authorization, serverDescription: $serverDescription, headers: $headers, allowedTools: $allowedTools, requireApproval: $requireApproval, deferLoading: $deferLoading)';
+
  }

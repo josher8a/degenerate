@@ -117,7 +117,7 @@ WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPush &&
           after == other.after &&
           baseRef == other.baseRef &&
@@ -134,7 +134,10 @@ WebhookPush copyWith({String? after, WebhooksNullableString? Function()? baseRef
           pusher == other.pusher &&
           ref == other.ref &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(after, baseRef, before, Object.hashAll(commits), compare, created, deleted, enterprise, forced, headCommit, installation, organization, pusher, ref, repository, sender); } 
-@override String toString() { return 'WebhookPush(after: $after, baseRef: $baseRef, before: $before, commits: $commits, compare: $compare, created: $created, deleted: $deleted, enterprise: $enterprise, forced: $forced, headCommit: $headCommit, installation: $installation, organization: $organization, pusher: $pusher, ref: $ref, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(after, baseRef, before, Object.hashAll(commits), compare, created, deleted, enterprise, forced, headCommit, installation, organization, pusher, ref, repository, sender);
+
+@override String toString() => 'WebhookPush(after: $after, baseRef: $baseRef, before: $before, commits: $commits, compare: $compare, created: $created, deleted: $deleted, enterprise: $enterprise, forced: $forced, headCommit: $headCommit, installation: $installation, organization: $organization, pusher: $pusher, ref: $ref, repository: $repository, sender: $sender)';
+
  }

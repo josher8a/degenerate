@@ -30,12 +30,15 @@ PostPricesRequestCustomUnitAmount copyWith({bool? enabled, int? Function()? maxi
   minimum: minimum != null ? minimum() : this.minimum,
   preset: preset != null ? preset() : this.preset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPricesRequestCustomUnitAmount &&
           enabled == other.enabled &&
           maximum == other.maximum &&
           minimum == other.minimum &&
-          preset == other.preset; } 
-@override int get hashCode { return Object.hash(enabled, maximum, minimum, preset); } 
-@override String toString() { return 'PostPricesRequestCustomUnitAmount(enabled: $enabled, maximum: $maximum, minimum: $minimum, preset: $preset)'; } 
+          preset == other.preset;
+
+@override int get hashCode => Object.hash(enabled, maximum, minimum, preset);
+
+@override String toString() => 'PostPricesRequestCustomUnitAmount(enabled: $enabled, maximum: $maximum, minimum: $minimum, preset: $preset)';
+
  }

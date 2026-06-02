@@ -39,13 +39,16 @@ StartLivestreamingResponseData copyWith({String? Function()? id, String? Functio
   status: status != null ? status() : this.status,
   streamKey: streamKey != null ? streamKey() : this.streamKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StartLivestreamingResponseData &&
           id == other.id &&
           ingestServer == other.ingestServer &&
           playbackUrl == other.playbackUrl &&
           status == other.status &&
-          streamKey == other.streamKey; } 
-@override int get hashCode { return Object.hash(id, ingestServer, playbackUrl, status, streamKey); } 
-@override String toString() { return 'StartLivestreamingResponseData(id: $id, ingestServer: $ingestServer, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)'; } 
+          streamKey == other.streamKey;
+
+@override int get hashCode => Object.hash(id, ingestServer, playbackUrl, status, streamKey);
+
+@override String toString() => 'StartLivestreamingResponseData(id: $id, ingestServer: $ingestServer, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)';
+
  }

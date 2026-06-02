@@ -20,10 +20,13 @@ MerchantDisputeRisk copyWith({int? Function()? disputeRate, RiskLevel? riskLevel
   disputeRate: disputeRate != null ? disputeRate() : this.disputeRate,
   riskLevel: riskLevel ?? this.riskLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MerchantDisputeRisk &&
           disputeRate == other.disputeRate &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(disputeRate, riskLevel); } 
-@override String toString() { return 'MerchantDisputeRisk(disputeRate: $disputeRate, riskLevel: $riskLevel)'; } 
+          riskLevel == other.riskLevel;
+
+@override int get hashCode => Object.hash(disputeRate, riskLevel);
+
+@override String toString() => 'MerchantDisputeRisk(disputeRate: $disputeRate, riskLevel: $riskLevel)';
+
  }

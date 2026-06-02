@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitActiveSessionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitActiveSessionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitActiveSessionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitActiveSessionStatus($value)';
+
  }
 /// type of session
 @immutable final class RealtimekitActiveSessionType {const RealtimekitActiveSessionType._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitActiveSessionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitActiveSessionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitActiveSessionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitActiveSessionType($value)';
+
  }
 @immutable final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, required this.createdAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, this.breakoutRooms, this.endedAt, this.meta, });
 
@@ -163,7 +169,7 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
   type: type ?? this.type,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitActiveSession &&
           associatedId == other.associatedId &&
           listEquals(breakoutRooms, other.breakoutRooms) &&
@@ -179,7 +185,10 @@ RealtimekitActiveSession copyWith({String? associatedId, List<RealtimekitActiveS
           startedAt == other.startedAt &&
           status == other.status &&
           type == other.type &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(associatedId, Object.hashAll(breakoutRooms ?? const []), createdAt, endedAt, id, liveParticipants, maxConcurrentParticipants, meetingDisplayName, meta, minutesConsumed, organizationId, startedAt, status, type, updatedAt); } 
-@override String toString() { return 'RealtimekitActiveSession(associatedId: $associatedId, breakoutRooms: $breakoutRooms, createdAt: $createdAt, endedAt: $endedAt, id: $id, liveParticipants: $liveParticipants, maxConcurrentParticipants: $maxConcurrentParticipants, meetingDisplayName: $meetingDisplayName, meta: $meta, minutesConsumed: $minutesConsumed, organizationId: $organizationId, startedAt: $startedAt, status: $status, type: $type, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(associatedId, Object.hashAll(breakoutRooms ?? const []), createdAt, endedAt, id, liveParticipants, maxConcurrentParticipants, meetingDisplayName, meta, minutesConsumed, organizationId, startedAt, status, type, updatedAt);
+
+@override String toString() => 'RealtimekitActiveSession(associatedId: $associatedId, breakoutRooms: $breakoutRooms, createdAt: $createdAt, endedAt: $endedAt, id: $id, liveParticipants: $liveParticipants, maxConcurrentParticipants: $maxConcurrentParticipants, meetingDisplayName: $meetingDisplayName, meta: $meta, minutesConsumed: $minutesConsumed, organizationId: $organizationId, startedAt: $startedAt, status: $status, type: $type, updatedAt: $updatedAt)';
+
  }

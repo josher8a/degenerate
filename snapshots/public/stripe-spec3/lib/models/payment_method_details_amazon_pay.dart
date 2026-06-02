@@ -29,10 +29,13 @@ PaymentMethodDetailsAmazonPay copyWith({AmazonPayUnderlyingPaymentMethodFundingD
   funding: funding != null ? funding() : this.funding,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAmazonPay &&
           funding == other.funding &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(funding, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsAmazonPay(funding: $funding, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(funding, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsAmazonPay(funding: $funding, transactionId: $transactionId)';
+
  }

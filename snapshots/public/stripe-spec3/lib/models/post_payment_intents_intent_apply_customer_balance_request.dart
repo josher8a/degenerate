@@ -32,11 +32,14 @@ PostPaymentIntentsIntentApplyCustomerBalanceRequest copyWith({int? Function()? a
   currency: currency != null ? currency() : this.currency,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentApplyCustomerBalanceRequest &&
           amount == other.amount &&
           currency == other.currency &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(amount, currency, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostPaymentIntentsIntentApplyCustomerBalanceRequest(amount: $amount, currency: $currency, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(amount, currency, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostPaymentIntentsIntentApplyCustomerBalanceRequest(amount: $amount, currency: $currency, expand: $expand)';
+
  }

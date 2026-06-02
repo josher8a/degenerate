@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResolveDnsInternallyFallback && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResolveDnsInternallyFallback($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResolveDnsInternallyFallback && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResolveDnsInternallyFallback($value)';
+
  }
 /// Configure to forward the query to the internal DNS service, passing the specified 'view_id' as input. Not used when 'dns_resolvers' is specified or 'resolve_dns_through_cloudflare' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules.
 @immutable final class ResolveDnsInternally {const ResolveDnsInternally({this.fallback, this.viewId, });
@@ -48,10 +51,13 @@ ResolveDnsInternally copyWith({ResolveDnsInternallyFallback? Function()? fallbac
   fallback: fallback != null ? fallback() : this.fallback,
   viewId: viewId != null ? viewId() : this.viewId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResolveDnsInternally &&
           fallback == other.fallback &&
-          viewId == other.viewId; } 
-@override int get hashCode { return Object.hash(fallback, viewId); } 
-@override String toString() { return 'ResolveDnsInternally(fallback: $fallback, viewId: $viewId)'; } 
+          viewId == other.viewId;
+
+@override int get hashCode => Object.hash(fallback, viewId);
+
+@override String toString() => 'ResolveDnsInternally(fallback: $fallback, viewId: $viewId)';
+
  }

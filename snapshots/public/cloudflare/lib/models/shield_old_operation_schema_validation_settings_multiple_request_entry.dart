@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry copyWith({ShieldOldOperationMitigationAction? Function()? mitigationAction}) { return ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry &&
-          mitigationAction == other.mitigationAction; } 
-@override int get hashCode { return mitigationAction.hashCode; } 
-@override String toString() { return 'ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(mitigationAction: $mitigationAction)'; } 
+          mitigationAction == other.mitigationAction;
+
+@override int get hashCode => mitigationAction.hashCode;
+
+@override String toString() => 'ShieldOldOperationSchemaValidationSettingsMultipleRequestEntry(mitigationAction: $mitigationAction)';
+
  }

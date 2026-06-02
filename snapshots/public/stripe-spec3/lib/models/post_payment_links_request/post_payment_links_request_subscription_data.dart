@@ -43,13 +43,16 @@ PostPaymentLinksRequestSubscriptionData copyWith({String? Function()? descriptio
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentLinksRequestSubscriptionData &&
           description == other.description &&
           invoiceSettings == other.invoiceSettings &&
           metadata == other.metadata &&
           trialPeriodDays == other.trialPeriodDays &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hash(description, invoiceSettings, metadata, trialPeriodDays, trialSettings); } 
-@override String toString() { return 'PostPaymentLinksRequestSubscriptionData(description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)'; } 
+          trialSettings == other.trialSettings;
+
+@override int get hashCode => Object.hash(description, invoiceSettings, metadata, trialPeriodDays, trialSettings);
+
+@override String toString() => 'PostPaymentLinksRequestSubscriptionData(description: $description, invoiceSettings: $invoiceSettings, metadata: $metadata, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)';
+
  }

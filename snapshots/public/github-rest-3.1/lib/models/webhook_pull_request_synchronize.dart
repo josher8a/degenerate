@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookPullRequestSynchronizeAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookPullRequestSynchronizeAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestSynchronizeAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookPullRequestSynchronizeAction($value)';
+
  }
 @immutable final class WebhookPullRequestSynchronize {const WebhookPullRequestSynchronize({required this.action, required this.after, required this.before, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -88,7 +91,7 @@ WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? act
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestSynchronize &&
           action == other.action &&
           after == other.after &&
@@ -99,7 +102,10 @@ WebhookPullRequestSynchronize copyWith({WebhookPullRequestSynchronizeAction? act
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, after, before, enterprise, installation, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestSynchronize(action: $action, after: $after, before: $before, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, after, before, enterprise, installation, number, organization, pullRequest, repository, sender);
+
+@override String toString() => 'WebhookPullRequestSynchronize(action: $action, after: $after, before: $before, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+
  }

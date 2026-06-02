@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependencyRelationship && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependencyRelationship($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependencyRelationship && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependencyRelationship($value)';
+
  }
 /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
 @immutable final class DependencyScope {const DependencyScope._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DependencyScope && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DependencyScope($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependencyScope && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DependencyScope($value)';
+
  }
 @immutable final class Dependency {const Dependency({this.packageUrl, this.metadata, this.relationship, this.scope, this.dependencies, });
 
@@ -97,13 +103,16 @@ Dependency copyWith({String? Function()? packageUrl, Map<String, dynamic>? Funct
   scope: scope != null ? scope() : this.scope,
   dependencies: dependencies != null ? dependencies() : this.dependencies,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Dependency &&
           packageUrl == other.packageUrl &&
           metadata == other.metadata &&
           relationship == other.relationship &&
           scope == other.scope &&
-          listEquals(dependencies, other.dependencies); } 
-@override int get hashCode { return Object.hash(packageUrl, metadata, relationship, scope, Object.hashAll(dependencies ?? const [])); } 
-@override String toString() { return 'Dependency(packageUrl: $packageUrl, metadata: $metadata, relationship: $relationship, scope: $scope, dependencies: $dependencies)'; } 
+          listEquals(dependencies, other.dependencies);
+
+@override int get hashCode => Object.hash(packageUrl, metadata, relationship, scope, Object.hashAll(dependencies ?? const []));
+
+@override String toString() => 'Dependency(packageUrl: $packageUrl, metadata: $metadata, relationship: $relationship, scope: $scope, dependencies: $dependencies)';
+
  }

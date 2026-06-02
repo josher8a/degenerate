@@ -21,10 +21,13 @@ RadarGetAsBotnetThreatFeedResponseResult copyWith({List<Ases>? ases, RadarGetAsB
   ases: ases ?? this.ases,
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsBotnetThreatFeedResponseResult &&
           listEquals(ases, other.ases) &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ases), meta); } 
-@override String toString() { return 'RadarGetAsBotnetThreatFeedResponseResult(ases: $ases, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(Object.hashAll(ases), meta);
+
+@override String toString() => 'RadarGetAsBotnetThreatFeedResponseResult(ases: $ases, meta: $meta)';
+
  }

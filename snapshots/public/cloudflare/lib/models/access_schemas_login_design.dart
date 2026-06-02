@@ -50,13 +50,16 @@ AccessSchemasLoginDesign copyWith({String? Function()? backgroundColor, String? 
   logoPath: logoPath != null ? logoPath() : this.logoPath,
   textColor: textColor != null ? textColor() : this.textColor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasLoginDesign &&
           backgroundColor == other.backgroundColor &&
           footerText == other.footerText &&
           headerText == other.headerText &&
           logoPath == other.logoPath &&
-          textColor == other.textColor; } 
-@override int get hashCode { return Object.hash(backgroundColor, footerText, headerText, logoPath, textColor); } 
-@override String toString() { return 'AccessSchemasLoginDesign(backgroundColor: $backgroundColor, footerText: $footerText, headerText: $headerText, logoPath: $logoPath, textColor: $textColor)'; } 
+          textColor == other.textColor;
+
+@override int get hashCode => Object.hash(backgroundColor, footerText, headerText, logoPath, textColor);
+
+@override String toString() => 'AccessSchemasLoginDesign(backgroundColor: $backgroundColor, footerText: $footerText, headerText: $headerText, logoPath: $logoPath, textColor: $textColor)';
+
  }

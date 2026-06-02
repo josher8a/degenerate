@@ -95,7 +95,7 @@ DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, Stri
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentSimple &&
           url == other.url &&
           id == other.id &&
@@ -110,7 +110,10 @@ DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, Stri
           repositoryUrl == other.repositoryUrl &&
           transientEnvironment == other.transientEnvironment &&
           productionEnvironment == other.productionEnvironment &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hash(url, id, nodeId, task, originalEnvironment, environment, description, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp); } 
-@override String toString() { return 'DeploymentSimple(url: $url, id: $id, nodeId: $nodeId, task: $task, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)'; } 
+          performedViaGithubApp == other.performedViaGithubApp;
+
+@override int get hashCode => Object.hash(url, id, nodeId, task, originalEnvironment, environment, description, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp);
+
+@override String toString() => 'DeploymentSimple(url: $url, id: $id, nodeId: $nodeId, task: $task, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)';
+
  }

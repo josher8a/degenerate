@@ -49,14 +49,17 @@ DlpUserRiskInfo copyWith({String? email, int? eventCount, DateTime? lastEvent, D
   name: name ?? this.name,
   userId: userId ?? this.userId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpUserRiskInfo &&
           email == other.email &&
           eventCount == other.eventCount &&
           lastEvent == other.lastEvent &&
           maxRiskLevel == other.maxRiskLevel &&
           name == other.name &&
-          userId == other.userId; } 
-@override int get hashCode { return Object.hash(email, eventCount, lastEvent, maxRiskLevel, name, userId); } 
-@override String toString() { return 'DlpUserRiskInfo(email: $email, eventCount: $eventCount, lastEvent: $lastEvent, maxRiskLevel: $maxRiskLevel, name: $name, userId: $userId)'; } 
+          userId == other.userId;
+
+@override int get hashCode => Object.hash(email, eventCount, lastEvent, maxRiskLevel, name, userId);
+
+@override String toString() => 'DlpUserRiskInfo(email: $email, eventCount: $eventCount, lastEvent: $lastEvent, maxRiskLevel: $maxRiskLevel, name: $name, userId: $userId)';
+
  }

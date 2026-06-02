@@ -49,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingReason($value)';
+
  }
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 @immutable final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
@@ -77,10 +80,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceCustomerTaxExempt && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceCustomerTaxExempt($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceCustomerTaxExempt && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoiceCustomerTaxExempt($value)';
+
  }
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
 @immutable final class InvoiceStatus {const InvoiceStatus._(this.value);
@@ -111,10 +117,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoiceStatus($value)';
+
  }
 /// Invoices are statements of amounts owed by a customer, and are either
 /// generated one-off, or generated periodically from a subscription.
@@ -707,7 +716,7 @@ Invoice copyWith({String? Function()? accountCountry, String? Function()? accoun
   totalTaxes: totalTaxes != null ? totalTaxes() : this.totalTaxes,
   webhooksDeliveredAt: webhooksDeliveredAt != null ? webhooksDeliveredAt() : this.webhooksDeliveredAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Invoice &&
           accountCountry == other.accountCountry &&
           accountName == other.accountName &&
@@ -785,7 +794,10 @@ Invoice copyWith({String? Function()? accountCountry, String? Function()? accoun
           totalExcludingTax == other.totalExcludingTax &&
           listEquals(totalPretaxCreditAmounts, other.totalPretaxCreditAmounts) &&
           listEquals(totalTaxes, other.totalTaxes) &&
-          webhooksDeliveredAt == other.webhooksDeliveredAt; } 
-@override int get hashCode { return Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts ?? const []), Object.hashAll(totalTaxes ?? const []), webhooksDeliveredAt]); } 
-@override String toString() { return 'Invoice(accountCountry: $accountCountry, accountName: $accountName, accountTaxIds: $accountTaxIds, amountDue: $amountDue, amountOverpaid: $amountOverpaid, amountPaid: $amountPaid, amountRemaining: $amountRemaining, amountShipping: $amountShipping, application: $application, attemptCount: $attemptCount, attempted: $attempted, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, billingReason: $billingReason, collectionMethod: $collectionMethod, confirmationSecret: $confirmationSecret, created: $created, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, customerAddress: $customerAddress, customerEmail: $customerEmail, customerName: $customerName, customerPhone: $customerPhone, customerShipping: $customerShipping, customerTaxExempt: $customerTaxExempt, customerTaxIds: $customerTaxIds, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, endingBalance: $endingBalance, footer: $footer, fromInvoice: $fromInvoice, hostedInvoiceUrl: $hostedInvoiceUrl, id: $id, invoicePdf: $invoicePdf, issuer: $issuer, lastFinalizationError: $lastFinalizationError, latestRevision: $latestRevision, lines: $lines, livemode: $livemode, metadata: $metadata, nextPaymentAttempt: $nextPaymentAttempt, number: $number, object: $object, onBehalfOf: $onBehalfOf, parent: $parent, paymentSettings: $paymentSettings, payments: $payments, periodEnd: $periodEnd, periodStart: $periodStart, postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount, prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount, receiptNumber: $receiptNumber, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, startingBalance: $startingBalance, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, testClock: $testClock, thresholdReason: $thresholdReason, total: $total, totalDiscountAmounts: $totalDiscountAmounts, totalExcludingTax: $totalExcludingTax, totalPretaxCreditAmounts: $totalPretaxCreditAmounts, totalTaxes: $totalTaxes, webhooksDeliveredAt: $webhooksDeliveredAt)'; } 
+          webhooksDeliveredAt == other.webhooksDeliveredAt;
+
+@override int get hashCode => Object.hashAll([accountCountry, accountName, Object.hashAll(accountTaxIds ?? const []), amountDue, amountOverpaid, amountPaid, amountRemaining, amountShipping, application, attemptCount, attempted, autoAdvance, automaticTax, automaticallyFinalizesAt, billingReason, collectionMethod, confirmationSecret, created, currency, Object.hashAll(customFields ?? const []), customer, customerAccount, customerAddress, customerEmail, customerName, customerPhone, customerShipping, customerTaxExempt, Object.hashAll(customerTaxIds ?? const []), defaultPaymentMethod, defaultSource, Object.hashAll(defaultTaxRates), description, Object.hashAll(discounts), dueDate, effectiveAt, endingBalance, footer, fromInvoice, hostedInvoiceUrl, id, invoicePdf, issuer, lastFinalizationError, latestRevision, lines, livemode, metadata, nextPaymentAttempt, number, object, onBehalfOf, parent, paymentSettings, payments, periodEnd, periodStart, postPaymentCreditNotesAmount, prePaymentCreditNotesAmount, receiptNumber, rendering, shippingCost, shippingDetails, startingBalance, statementDescriptor, status, statusTransitions, subtotal, subtotalExcludingTax, testClock, thresholdReason, total, Object.hashAll(totalDiscountAmounts ?? const []), totalExcludingTax, Object.hashAll(totalPretaxCreditAmounts ?? const []), Object.hashAll(totalTaxes ?? const []), webhooksDeliveredAt]);
+
+@override String toString() => 'Invoice(accountCountry: $accountCountry, accountName: $accountName, accountTaxIds: $accountTaxIds, amountDue: $amountDue, amountOverpaid: $amountOverpaid, amountPaid: $amountPaid, amountRemaining: $amountRemaining, amountShipping: $amountShipping, application: $application, attemptCount: $attemptCount, attempted: $attempted, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, billingReason: $billingReason, collectionMethod: $collectionMethod, confirmationSecret: $confirmationSecret, created: $created, currency: $currency, customFields: $customFields, customer: $customer, customerAccount: $customerAccount, customerAddress: $customerAddress, customerEmail: $customerEmail, customerName: $customerName, customerPhone: $customerPhone, customerShipping: $customerShipping, customerTaxExempt: $customerTaxExempt, customerTaxIds: $customerTaxIds, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, endingBalance: $endingBalance, footer: $footer, fromInvoice: $fromInvoice, hostedInvoiceUrl: $hostedInvoiceUrl, id: $id, invoicePdf: $invoicePdf, issuer: $issuer, lastFinalizationError: $lastFinalizationError, latestRevision: $latestRevision, lines: $lines, livemode: $livemode, metadata: $metadata, nextPaymentAttempt: $nextPaymentAttempt, number: $number, object: $object, onBehalfOf: $onBehalfOf, parent: $parent, paymentSettings: $paymentSettings, payments: $payments, periodEnd: $periodEnd, periodStart: $periodStart, postPaymentCreditNotesAmount: $postPaymentCreditNotesAmount, prePaymentCreditNotesAmount: $prePaymentCreditNotesAmount, receiptNumber: $receiptNumber, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, startingBalance: $startingBalance, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, subtotal: $subtotal, subtotalExcludingTax: $subtotalExcludingTax, testClock: $testClock, thresholdReason: $thresholdReason, total: $total, totalDiscountAmounts: $totalDiscountAmounts, totalExcludingTax: $totalExcludingTax, totalPretaxCreditAmounts: $totalPretaxCreditAmounts, totalTaxes: $totalTaxes, webhooksDeliveredAt: $webhooksDeliveredAt)';
+
  }

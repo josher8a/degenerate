@@ -39,13 +39,16 @@ AigConfigListGatewayDynamicRouteDeploymentsResponseData copyWith({List<Deploymen
   page: page ?? this.page,
   perPage: perPage ?? this.perPage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListGatewayDynamicRouteDeploymentsResponseData &&
           listEquals(deployments, other.deployments) &&
           orderBy == other.orderBy &&
           orderByDirection == other.orderByDirection &&
           page == other.page &&
-          perPage == other.perPage; } 
-@override int get hashCode { return Object.hash(Object.hashAll(deployments), orderBy, orderByDirection, page, perPage); } 
-@override String toString() { return 'AigConfigListGatewayDynamicRouteDeploymentsResponseData(deployments: $deployments, orderBy: $orderBy, orderByDirection: $orderByDirection, page: $page, perPage: $perPage)'; } 
+          perPage == other.perPage;
+
+@override int get hashCode => Object.hash(Object.hashAll(deployments), orderBy, orderByDirection, page, perPage);
+
+@override String toString() => 'AigConfigListGatewayDynamicRouteDeploymentsResponseData(deployments: $deployments, orderBy: $orderBy, orderByDirection: $orderByDirection, page: $page, perPage: $perPage)';
+
  }

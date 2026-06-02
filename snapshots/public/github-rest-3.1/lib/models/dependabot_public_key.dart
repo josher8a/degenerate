@@ -24,10 +24,13 @@ DependabotPublicKey copyWith({String? keyId, String? key, }) { return Dependabot
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotPublicKey &&
           keyId == other.keyId &&
-          key == other.key; } 
-@override int get hashCode { return Object.hash(keyId, key); } 
-@override String toString() { return 'DependabotPublicKey(keyId: $keyId, key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => Object.hash(keyId, key);
+
+@override String toString() => 'DependabotPublicKey(keyId: $keyId, key: $key)';
+
  }

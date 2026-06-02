@@ -45,11 +45,14 @@ IamPermissionGroup copyWith({String? id, IamPermissionGroupMeta? Function()? met
   meta: meta != null ? meta() : this.meta,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissionGroup &&
           id == other.id &&
           meta == other.meta &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(id, meta, name); } 
-@override String toString() { return 'IamPermissionGroup(id: $id, meta: $meta, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(id, meta, name);
+
+@override String toString() => 'IamPermissionGroup(id: $id, meta: $meta, name: $name)';
+
  }

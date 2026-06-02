@@ -35,10 +35,13 @@ DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()
   target: target != null ? target() : this.target,
   weight: weight != null ? weight() : this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsUriRecordData &&
           target == other.target &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(target, weight); } 
-@override String toString() { return 'DnsRecordsUriRecordData(target: $target, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(target, weight);
+
+@override String toString() => 'DnsRecordsUriRecordData(target: $target, weight: $weight)';
+
  }

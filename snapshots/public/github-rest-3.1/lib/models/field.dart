@@ -59,10 +59,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FieldDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FieldDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FieldDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FieldDataType($value)';
+
  }
 /// A field inside a projects v2 project
 @immutable final class Field {const Field({required this.id, required this.projectUrl, required this.name, required this.dataType, required this.createdAt, required this.updatedAt, this.nodeId, this.options, this.configuration, });
@@ -134,7 +137,7 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Field &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -144,7 +147,10 @@ Field copyWith({int? id, String? Function()? nodeId, String? projectUrl, String?
           listEquals(options, other.options) &&
           configuration == other.configuration &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, projectUrl, name, dataType, Object.hashAll(options ?? const []), configuration, createdAt, updatedAt); } 
-@override String toString() { return 'Field(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, name: $name, dataType: $dataType, options: $options, configuration: $configuration, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, projectUrl, name, dataType, Object.hashAll(options ?? const []), configuration, createdAt, updatedAt);
+
+@override String toString() => 'Field(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, name: $name, dataType: $dataType, options: $options, configuration: $configuration, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

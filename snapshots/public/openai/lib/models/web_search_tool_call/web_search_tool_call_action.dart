@@ -37,16 +37,20 @@ final WebSearchActionSearch webSearchActionSearch;
 
 @override String get type => 'search';
 
-@override Map<String, dynamic> toJson() { return {...webSearchActionSearch.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...webSearchActionSearch.toJson(), 'type': type};
+
 WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
   query: query,
   queries: queries,
   sources: sources,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch; } 
-@override int get hashCode { return webSearchActionSearch.hashCode; } 
-@override String toString() { return 'WebSearchToolCallAction.search($webSearchActionSearch)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolCallActionSearch && webSearchActionSearch == other.webSearchActionSearch;
+
+@override int get hashCode => webSearchActionSearch.hashCode;
+
+@override String toString() => 'WebSearchToolCallAction.search($webSearchActionSearch)';
+
  }
 @immutable final class WebSearchToolCallActionOpenPage extends WebSearchToolCallAction {const WebSearchToolCallActionOpenPage(this.webSearchActionOpenPage);
 
@@ -56,14 +60,18 @@ final WebSearchActionOpenPage webSearchActionOpenPage;
 
 @override String get type => 'open_page';
 
-@override Map<String, dynamic> toJson() { return {...webSearchActionOpenPage.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...webSearchActionOpenPage.toJson(), 'type': type};
+
 WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
   url: url,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage; } 
-@override int get hashCode { return webSearchActionOpenPage.hashCode; } 
-@override String toString() { return 'WebSearchToolCallAction.openPage($webSearchActionOpenPage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolCallActionOpenPage && webSearchActionOpenPage == other.webSearchActionOpenPage;
+
+@override int get hashCode => webSearchActionOpenPage.hashCode;
+
+@override String toString() => 'WebSearchToolCallAction.openPage($webSearchActionOpenPage)';
+
  }
 @immutable final class WebSearchToolCallActionFindInPage extends WebSearchToolCallAction {const WebSearchToolCallActionFindInPage(this.webSearchActionFind);
 
@@ -73,15 +81,19 @@ final WebSearchActionFind webSearchActionFind;
 
 @override String get type => 'find_in_page';
 
-@override Map<String, dynamic> toJson() { return {...webSearchActionFind.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...webSearchActionFind.toJson(), 'type': type};
+
 WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
   url: url,
   pattern: pattern,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind; } 
-@override int get hashCode { return webSearchActionFind.hashCode; } 
-@override String toString() { return 'WebSearchToolCallAction.findInPage($webSearchActionFind)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolCallActionFindInPage && webSearchActionFind == other.webSearchActionFind;
+
+@override int get hashCode => webSearchActionFind.hashCode;
+
+@override String toString() => 'WebSearchToolCallAction.findInPage($webSearchActionFind)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -91,9 +103,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebSearchToolCallAction$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'WebSearchToolCallAction.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebSearchToolCallAction$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'WebSearchToolCallAction.unknown($json)';
+
  }

@@ -33,12 +33,15 @@ CopilotIdeCodeCompletions copyWith({int? Function()? totalEngagedUsers, List<Cop
   editors: editors != null ? editors() : this.editors,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeCodeCompletions &&
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(languages, other.languages) &&
           listEquals(editors, other.editors) &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotIdeCodeCompletions(totalEngagedUsers: $totalEngagedUsers, languages: $languages, editors: $editors, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(totalEngagedUsers, Object.hashAll(languages ?? const []), Object.hashAll(editors ?? const []), Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotIdeCodeCompletions(totalEngagedUsers: $totalEngagedUsers, languages: $languages, editors: $editors, additionalProperties: $additionalProperties)';
+
  }

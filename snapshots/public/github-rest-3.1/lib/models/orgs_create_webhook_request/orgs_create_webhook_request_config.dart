@@ -44,14 +44,17 @@ OrgsCreateWebhookRequestConfig copyWith({WebhookConfigUrl? url, WebhookConfigCon
   username: username != null ? username() : this.username,
   password: password != null ? password() : this.password,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsCreateWebhookRequestConfig &&
           url == other.url &&
           contentType == other.contentType &&
           secret == other.secret &&
           insecureSsl == other.insecureSsl &&
           username == other.username &&
-          password == other.password; } 
-@override int get hashCode { return Object.hash(url, contentType, secret, insecureSsl, username, password); } 
-@override String toString() { return 'OrgsCreateWebhookRequestConfig(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl, username: $username, password: $password)'; } 
+          password == other.password;
+
+@override int get hashCode => Object.hash(url, contentType, secret, insecureSsl, username, password);
+
+@override String toString() => 'OrgsCreateWebhookRequestConfig(url: $url, contentType: $contentType, secret: $secret, insecureSsl: $insecureSsl, username: $username, password: $password)';
+
  }

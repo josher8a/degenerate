@@ -45,12 +45,15 @@ TeamsDevicesUptycsConfigRequest copyWith({String? apiUrl, String? clientKey, Str
   clientSecret: clientSecret ?? this.clientSecret,
   customerId: customerId ?? this.customerId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesUptycsConfigRequest &&
           apiUrl == other.apiUrl &&
           clientKey == other.clientKey &&
           clientSecret == other.clientSecret &&
-          customerId == other.customerId; } 
-@override int get hashCode { return Object.hash(apiUrl, clientKey, clientSecret, customerId); } 
-@override String toString() { return 'TeamsDevicesUptycsConfigRequest(apiUrl: $apiUrl, clientKey: $clientKey, clientSecret: $clientSecret, customerId: $customerId)'; } 
+          customerId == other.customerId;
+
+@override int get hashCode => Object.hash(apiUrl, clientKey, clientSecret, customerId);
+
+@override String toString() => 'TeamsDevicesUptycsConfigRequest(apiUrl: $apiUrl, clientKey: $clientKey, clientSecret: $clientSecret, customerId: $customerId)';
+
  }

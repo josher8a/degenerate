@@ -22,37 +22,43 @@ final class CatalogSyncsDeleteError$400 extends CatalogSyncsDeleteError {const C
 
 final McnBadResponse error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CatalogSyncsDeleteError$401 extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$401(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class CatalogSyncsDeleteError$403 extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$403(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CatalogSyncsDeleteError$404 extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$404(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CatalogSyncsDeleteError$409 extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$409(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class CatalogSyncsDeleteError$500 extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$500(this.error);
 
 final McnBadResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class CatalogSyncsDeleteError$Unknown extends CatalogSyncsDeleteError {const CatalogSyncsDeleteError$Unknown(this.statusCode, this.rawBody, );
 

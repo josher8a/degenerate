@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EntitlementsFeatureObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EntitlementsFeatureObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EntitlementsFeatureObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EntitlementsFeatureObject($value)';
+
  }
 /// A feature represents a monetizable ability or functionality in your system.
 /// Features can be assigned to products, and when those products are purchased, Stripe will create an entitlement to the feature for the purchasing customer.
@@ -88,7 +91,7 @@ EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? 
   name: name ?? this.name,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EntitlementsFeature &&
           active == other.active &&
           id == other.id &&
@@ -96,7 +99,10 @@ EntitlementsFeature copyWith({bool? active, String? id, bool? livemode, String? 
           lookupKey == other.lookupKey &&
           metadata == other.metadata &&
           name == other.name &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(active, id, livemode, lookupKey, metadata, name, object); } 
-@override String toString() { return 'EntitlementsFeature(active: $active, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(active, id, livemode, lookupKey, metadata, name, object);
+
+@override String toString() => 'EntitlementsFeature(active: $active, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object)';
+
  }

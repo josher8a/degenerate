@@ -29,11 +29,14 @@ ProtectedBranchPullRequestReviewBypassPullRequestAllowances copyWith({List<Simpl
   teams: teams != null ? teams() : this.teams,
   apps: apps != null ? apps() : this.apps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchPullRequestReviewBypassPullRequestAllowances &&
           listEquals(users, other.users) &&
           listEquals(teams, other.teams) &&
-          listEquals(apps, other.apps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(users ?? const []), Object.hashAll(teams ?? const []), Object.hashAll(apps ?? const [])); } 
-@override String toString() { return 'ProtectedBranchPullRequestReviewBypassPullRequestAllowances(users: $users, teams: $teams, apps: $apps)'; } 
+          listEquals(apps, other.apps);
+
+@override int get hashCode => Object.hash(Object.hashAll(users ?? const []), Object.hashAll(teams ?? const []), Object.hashAll(apps ?? const []));
+
+@override String toString() => 'ProtectedBranchPullRequestReviewBypassPullRequestAllowances(users: $users, teams: $teams, apps: $apps)';
+
  }

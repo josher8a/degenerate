@@ -34,12 +34,15 @@ IssuesCreateMilestoneRequest copyWith({String? title, IssuesCreateMilestoneReque
   description: description != null ? description() : this.description,
   dueOn: dueOn != null ? dueOn() : this.dueOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuesCreateMilestoneRequest &&
           title == other.title &&
           state == other.state &&
           description == other.description &&
-          dueOn == other.dueOn; } 
-@override int get hashCode { return Object.hash(title, state, description, dueOn); } 
-@override String toString() { return 'IssuesCreateMilestoneRequest(title: $title, state: $state, description: $description, dueOn: $dueOn)'; } 
+          dueOn == other.dueOn;
+
+@override int get hashCode => Object.hash(title, state, description, dueOn);
+
+@override String toString() => 'IssuesCreateMilestoneRequest(title: $title, state: $state, description: $description, dueOn: $dueOn)';
+
  }

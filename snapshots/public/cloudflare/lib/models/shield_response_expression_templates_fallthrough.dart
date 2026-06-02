@@ -27,10 +27,13 @@ ShieldResponseExpressionTemplatesFallthrough copyWith({String? expression, Strin
   expression: expression ?? this.expression,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldResponseExpressionTemplatesFallthrough &&
           expression == other.expression &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(expression, title); } 
-@override String toString() { return 'ShieldResponseExpressionTemplatesFallthrough(expression: $expression, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(expression, title);
+
+@override String toString() => 'ShieldResponseExpressionTemplatesFallthrough(expression: $expression, title: $title)';
+
  }

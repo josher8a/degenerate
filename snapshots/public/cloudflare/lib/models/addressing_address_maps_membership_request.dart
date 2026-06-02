@@ -20,10 +20,13 @@ AddressingAddressMapsMembershipRequest copyWith({AddressingIdentifier? Function(
   identifier: identifier != null ? identifier() : this.identifier,
   kind: kind != null ? kind() : this.kind,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAddressMapsMembershipRequest &&
           identifier == other.identifier &&
-          kind == other.kind; } 
-@override int get hashCode { return Object.hash(identifier, kind); } 
-@override String toString() { return 'AddressingAddressMapsMembershipRequest(identifier: $identifier, kind: $kind)'; } 
+          kind == other.kind;
+
+@override int get hashCode => Object.hash(identifier, kind);
+
+@override String toString() => 'AddressingAddressMapsMembershipRequest(identifier: $identifier, kind: $kind)';
+
  }

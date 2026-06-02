@@ -22,10 +22,13 @@ PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest c
   confirmed: confirmed ?? this.confirmed,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest &&
           confirmed == other.confirmed &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(confirmed, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest(confirmed: $confirmed, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(confirmed, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationFraudChallengesRespondRequest(confirmed: $confirmed, expand: $expand)';
+
  }

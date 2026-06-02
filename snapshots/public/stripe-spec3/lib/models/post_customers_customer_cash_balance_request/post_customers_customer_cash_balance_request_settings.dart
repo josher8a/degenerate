@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SettingsReconciliationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SettingsReconciliationMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SettingsReconciliationMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SettingsReconciliationMode($value)';
+
  }
 @immutable final class PostCustomersCustomerCashBalanceRequestSettings {const PostCustomersCustomerCashBalanceRequestSettings({this.reconciliationMode});
 
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostCustomersCustomerCashBalanceRequestSettings copyWith({SettingsReconciliationMode? Function()? reconciliationMode}) { return PostCustomersCustomerCashBalanceRequestSettings(
   reconciliationMode: reconciliationMode != null ? reconciliationMode() : this.reconciliationMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerCashBalanceRequestSettings &&
-          reconciliationMode == other.reconciliationMode; } 
-@override int get hashCode { return reconciliationMode.hashCode; } 
-@override String toString() { return 'PostCustomersCustomerCashBalanceRequestSettings(reconciliationMode: $reconciliationMode)'; } 
+          reconciliationMode == other.reconciliationMode;
+
+@override int get hashCode => reconciliationMode.hashCode;
+
+@override String toString() => 'PostCustomersCustomerCashBalanceRequestSettings(reconciliationMode: $reconciliationMode)';
+
  }

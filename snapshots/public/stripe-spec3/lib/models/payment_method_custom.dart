@@ -37,11 +37,14 @@ PaymentMethodCustom copyWith({String? Function()? displayName, CustomLogo? Funct
   logo: logo != null ? logo() : this.logo,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCustom &&
           displayName == other.displayName &&
           logo == other.logo &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(displayName, logo, type); } 
-@override String toString() { return 'PaymentMethodCustom(displayName: $displayName, logo: $logo, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(displayName, logo, type);
+
+@override String toString() => 'PaymentMethodCustom(displayName: $displayName, logo: $logo, type: $type)';
+
  }

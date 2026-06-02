@@ -26,10 +26,13 @@ TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 copyWith({String? F
   httpBody: httpBody != null ? httpBody() : this.httpBody,
   httpUrl: httpUrl != null ? httpUrl() : this.httpUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 &&
           httpBody == other.httpBody &&
-          httpUrl == other.httpUrl; } 
-@override int get hashCode { return Object.hash(httpBody, httpUrl); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(httpBody: $httpBody, httpUrl: $httpUrl)'; } 
+          httpUrl == other.httpUrl;
+
+@override int get hashCode => Object.hash(httpBody, httpUrl);
+
+@override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1(httpBody: $httpBody, httpUrl: $httpUrl)';
+
  }

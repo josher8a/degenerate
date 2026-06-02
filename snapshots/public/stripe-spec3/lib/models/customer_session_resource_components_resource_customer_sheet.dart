@@ -23,10 +23,13 @@ CustomerSessionResourceComponentsResourceCustomerSheet copyWith({bool? enabled, 
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerSessionResourceComponentsResourceCustomerSheet &&
           enabled == other.enabled &&
-          features == other.features; } 
-@override int get hashCode { return Object.hash(enabled, features); } 
-@override String toString() { return 'CustomerSessionResourceComponentsResourceCustomerSheet(enabled: $enabled, features: $features)'; } 
+          features == other.features;
+
+@override int get hashCode => Object.hash(enabled, features);
+
+@override String toString() => 'CustomerSessionResourceComponentsResourceCustomerSheet(enabled: $enabled, features: $features)';
+
  }

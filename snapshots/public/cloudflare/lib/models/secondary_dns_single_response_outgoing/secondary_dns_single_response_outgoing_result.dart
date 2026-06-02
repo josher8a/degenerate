@@ -47,7 +47,7 @@ SecondaryDnsSingleResponseOutgoingResult copyWith({SecondaryDnsTime? Function()?
   peers: peers != null ? peers() : this.peers,
   soaSerial: soaSerial != null ? soaSerial() : this.soaSerial,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecondaryDnsSingleResponseOutgoingResult &&
           checkedTime == other.checkedTime &&
           createdTime == other.createdTime &&
@@ -55,7 +55,10 @@ SecondaryDnsSingleResponseOutgoingResult copyWith({SecondaryDnsTime? Function()?
           lastTransferredTime == other.lastTransferredTime &&
           name == other.name &&
           listEquals(peers, other.peers) &&
-          soaSerial == other.soaSerial; } 
-@override int get hashCode { return Object.hash(checkedTime, createdTime, id, lastTransferredTime, name, Object.hashAll(peers ?? const []), soaSerial); } 
-@override String toString() { return 'SecondaryDnsSingleResponseOutgoingResult(checkedTime: $checkedTime, createdTime: $createdTime, id: $id, lastTransferredTime: $lastTransferredTime, name: $name, peers: $peers, soaSerial: $soaSerial)'; } 
+          soaSerial == other.soaSerial;
+
+@override int get hashCode => Object.hash(checkedTime, createdTime, id, lastTransferredTime, name, Object.hashAll(peers ?? const []), soaSerial);
+
+@override String toString() => 'SecondaryDnsSingleResponseOutgoingResult(checkedTime: $checkedTime, createdTime: $createdTime, id: $id, lastTransferredTime: $lastTransferredTime, name: $name, peers: $peers, soaSerial: $soaSerial)';
+
  }

@@ -24,10 +24,13 @@ RunStepDetailsToolCallsCodeObjectCodeInterpreter copyWith({String? input, List<R
   input: input ?? this.input,
   outputs: outputs ?? this.outputs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDetailsToolCallsCodeObjectCodeInterpreter &&
           input == other.input &&
-          listEquals(outputs, other.outputs); } 
-@override int get hashCode { return Object.hash(input, Object.hashAll(outputs)); } 
-@override String toString() { return 'RunStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)'; } 
+          listEquals(outputs, other.outputs);
+
+@override int get hashCode => Object.hash(input, Object.hashAll(outputs));
+
+@override String toString() => 'RunStepDetailsToolCallsCodeObjectCodeInterpreter(input: $input, outputs: $outputs)';
+
  }

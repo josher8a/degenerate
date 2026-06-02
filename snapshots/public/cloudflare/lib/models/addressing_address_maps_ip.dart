@@ -27,10 +27,13 @@ AddressingAddressMapsIp copyWith({AddressingTimestamp? Function()? createdAt, Ad
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   ip: ip != null ? ip() : this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAddressMapsIp &&
           createdAt == other.createdAt &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(createdAt, ip); } 
-@override String toString() { return 'AddressingAddressMapsIp(createdAt: $createdAt, ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => Object.hash(createdAt, ip);
+
+@override String toString() => 'AddressingAddressMapsIp(createdAt: $createdAt, ip: $ip)';
+
  }

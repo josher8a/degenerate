@@ -34,12 +34,15 @@ PorterLargeFile copyWith({String? refName, String? path, String? oid, int? size,
   oid: oid ?? this.oid,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PorterLargeFile &&
           refName == other.refName &&
           path == other.path &&
           oid == other.oid &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(refName, path, oid, size); } 
-@override String toString() { return 'PorterLargeFile(refName: $refName, path: $path, oid: $oid, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(refName, path, oid, size);
+
+@override String toString() => 'PorterLargeFile(refName: $refName, path: $path, oid: $oid, size: $size)';
+
  }

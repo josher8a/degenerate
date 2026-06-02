@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessScimConfigAuthenticationAccessServiceTokenScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessScimConfigAuthenticationAccessServiceTokenScheme($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessScimConfigAuthenticationAccessServiceTokenScheme && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessScimConfigAuthenticationAccessServiceTokenScheme($value)';
+
  }
 /// Attributes for configuring Access Service Token authentication scheme for SCIM provisioning to an application.
 @immutable final class AccessScimConfigAuthenticationAccessServiceToken {const AccessScimConfigAuthenticationAccessServiceToken({required this.clientId, required this.clientSecret, required this.scheme, });
@@ -53,11 +56,14 @@ AccessScimConfigAuthenticationAccessServiceToken copyWith({String? clientId, Str
   clientSecret: clientSecret ?? this.clientSecret,
   scheme: scheme ?? this.scheme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigAuthenticationAccessServiceToken &&
           clientId == other.clientId &&
           clientSecret == other.clientSecret &&
-          scheme == other.scheme; } 
-@override int get hashCode { return Object.hash(clientId, clientSecret, scheme); } 
-@override String toString() { return 'AccessScimConfigAuthenticationAccessServiceToken(clientId: $clientId, clientSecret: $clientSecret, scheme: $scheme)'; } 
+          scheme == other.scheme;
+
+@override int get hashCode => Object.hash(clientId, clientSecret, scheme);
+
+@override String toString() => 'AccessScimConfigAuthenticationAccessServiceToken(clientId: $clientId, clientSecret: $clientSecret, scheme: $scheme)';
+
  }

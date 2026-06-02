@@ -34,12 +34,15 @@ PostPromotionCodesPromotionCodeRequest copyWith({bool? Function()? active, List<
   metadata: metadata != null ? metadata() : this.metadata,
   restrictions: restrictions != null ? restrictions() : this.restrictions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPromotionCodesPromotionCodeRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          restrictions == other.restrictions; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), metadata, restrictions); } 
-@override String toString() { return 'PostPromotionCodesPromotionCodeRequest(active: $active, expand: $expand, metadata: $metadata, restrictions: $restrictions)'; } 
+          restrictions == other.restrictions;
+
+@override int get hashCode => Object.hash(active, Object.hashAll(expand ?? const []), metadata, restrictions);
+
+@override String toString() => 'PostPromotionCodesPromotionCodeRequest(active: $active, expand: $expand, metadata: $metadata, restrictions: $restrictions)';
+
  }

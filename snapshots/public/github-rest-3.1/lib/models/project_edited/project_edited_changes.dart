@@ -30,12 +30,15 @@ ProjectEditedChanges copyWith({ProjectEditedChangesDescription? Function()? desc
   shortDescription: shortDescription != null ? shortDescription() : this.shortDescription,
   title: title != null ? title() : this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectEditedChanges &&
           description == other.description &&
           public == other.public &&
           shortDescription == other.shortDescription &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, public, shortDescription, title); } 
-@override String toString() { return 'ProjectEditedChanges(description: $description, public: $public, shortDescription: $shortDescription, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(description, public, shortDescription, title);
+
+@override String toString() => 'ProjectEditedChanges(description: $description, public: $public, shortDescription: $shortDescription, title: $title)';
+
  }

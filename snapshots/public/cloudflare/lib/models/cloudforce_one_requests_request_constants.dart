@@ -28,11 +28,14 @@ CloudforceOneRequestsRequestConstants copyWith({List<CloudforceOneRequestsPriori
   status: status != null ? status() : this.status,
   tlp: tlp != null ? tlp() : this.tlp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestConstants &&
           listEquals(priority, other.priority) &&
           listEquals(status, other.status) &&
-          listEquals(tlp, other.tlp); } 
-@override int get hashCode { return Object.hash(Object.hashAll(priority ?? const []), Object.hashAll(status ?? const []), Object.hashAll(tlp ?? const [])); } 
-@override String toString() { return 'CloudforceOneRequestsRequestConstants(priority: $priority, status: $status, tlp: $tlp)'; } 
+          listEquals(tlp, other.tlp);
+
+@override int get hashCode => Object.hash(Object.hashAll(priority ?? const []), Object.hashAll(status ?? const []), Object.hashAll(tlp ?? const []));
+
+@override String toString() => 'CloudforceOneRequestsRequestConstants(priority: $priority, status: $status, tlp: $tlp)';
+
  }

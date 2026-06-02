@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is GrammarSyntax1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'GrammarSyntax1($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GrammarSyntax1 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'GrammarSyntax1($value)';
+
  }
 /// A grammar defined by the user.
 @immutable final class CustomGrammarFormatParam {const CustomGrammarFormatParam({required this.syntax, required this.definition, this.type = CustomGrammarFormatParamType.grammar, });
@@ -55,11 +58,14 @@ CustomGrammarFormatParam copyWith({CustomGrammarFormatParamType? type, GrammarSy
   syntax: syntax ?? this.syntax,
   definition: definition ?? this.definition,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomGrammarFormatParam &&
           type == other.type &&
           syntax == other.syntax &&
-          definition == other.definition; } 
-@override int get hashCode { return Object.hash(type, syntax, definition); } 
-@override String toString() { return 'CustomGrammarFormatParam(type: $type, syntax: $syntax, definition: $definition)'; } 
+          definition == other.definition;
+
+@override int get hashCode => Object.hash(type, syntax, definition);
+
+@override String toString() => 'CustomGrammarFormatParam(type: $type, syntax: $syntax, definition: $definition)';
+
  }

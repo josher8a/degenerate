@@ -20,10 +20,13 @@ StreamLinesEvent copyWith({int? Function()? seq, String? Function()? data, }) { 
   seq: seq != null ? seq() : this.seq,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamLinesEvent &&
           seq == other.seq &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(seq, data); } 
-@override String toString() { return 'StreamLinesEvent(seq: $seq, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(seq, data);
+
+@override String toString() => 'StreamLinesEvent(seq: $seq, data: $data)';
+
  }

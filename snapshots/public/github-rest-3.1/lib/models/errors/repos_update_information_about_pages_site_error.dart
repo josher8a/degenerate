@@ -19,19 +19,22 @@ final class ReposUpdateInformationAboutPagesSiteError$400 extends ReposUpdateInf
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ReposUpdateInformationAboutPagesSiteError$409 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class ReposUpdateInformationAboutPagesSiteError$422 extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ReposUpdateInformationAboutPagesSiteError$Unknown extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError$Unknown(this.statusCode, this.rawBody, );
 

@@ -80,7 +80,7 @@ IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? coun
   requests: requests ?? this.requests,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpStats &&
           asn == other.asn &&
           count == other.count &&
@@ -93,7 +93,10 @@ IpStats copyWith({IpStatsAsn? asn, double? Function()? count, List<String>? coun
           ipv6 == other.ipv6 &&
           redirects == other.redirects &&
           requests == other.requests &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(asn, count, Object.hashAll(countries), Object.hashAll(domains), encodedSize, geoip, index, ip, ipv6, redirects, requests, size); } 
-@override String toString() { return 'IpStats(asn: $asn, count: $count, countries: $countries, domains: $domains, encodedSize: $encodedSize, geoip: $geoip, index: $index, ip: $ip, ipv6: $ipv6, redirects: $redirects, requests: $requests, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(asn, count, Object.hashAll(countries), Object.hashAll(domains), encodedSize, geoip, index, ip, ipv6, redirects, requests, size);
+
+@override String toString() => 'IpStats(asn: $asn, count: $count, countries: $countries, domains: $domains, encodedSize: $encodedSize, geoip: $geoip, index: $index, ip: $ip, ipv6: $ipv6, redirects: $redirects, requests: $requests, size: $size)';
+
  }

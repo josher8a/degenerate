@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('manif
 WorkersCreateAssetsUploadSessionObject copyWith({Map<String,WorkersManifestValue>? manifest}) { return WorkersCreateAssetsUploadSessionObject(
   manifest: manifest ?? this.manifest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersCreateAssetsUploadSessionObject &&
-          manifest == other.manifest; } 
-@override int get hashCode { return manifest.hashCode; } 
-@override String toString() { return 'WorkersCreateAssetsUploadSessionObject(manifest: $manifest)'; } 
+          manifest == other.manifest;
+
+@override int get hashCode => manifest.hashCode;
+
+@override String toString() => 'WorkersCreateAssetsUploadSessionObject(manifest: $manifest)';
+
  }

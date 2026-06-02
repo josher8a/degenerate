@@ -96,7 +96,7 @@ PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge
   refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
   reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostRefundsRequest &&
           amount == other.amount &&
           charge == other.charge &&
@@ -109,7 +109,10 @@ PostRefundsRequest copyWith({int? Function()? amount, String? Function()? charge
           paymentIntent == other.paymentIntent &&
           reason == other.reason &&
           refundApplicationFee == other.refundApplicationFee &&
-          reverseTransfer == other.reverseTransfer; } 
-@override int get hashCode { return Object.hash(amount, charge, currency, customer, Object.hashAll(expand ?? const []), instructionsEmail, metadata, origin, paymentIntent, reason, refundApplicationFee, reverseTransfer); } 
-@override String toString() { return 'PostRefundsRequest(amount: $amount, charge: $charge, currency: $currency, customer: $customer, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, origin: $origin, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)'; } 
+          reverseTransfer == other.reverseTransfer;
+
+@override int get hashCode => Object.hash(amount, charge, currency, customer, Object.hashAll(expand ?? const []), instructionsEmail, metadata, origin, paymentIntent, reason, refundApplicationFee, reverseTransfer);
+
+@override String toString() => 'PostRefundsRequest(amount: $amount, charge: $charge, currency: $currency, customer: $customer, expand: $expand, instructionsEmail: $instructionsEmail, metadata: $metadata, origin: $origin, paymentIntent: $paymentIntent, reason: $reason, refundApplicationFee: $refundApplicationFee, reverseTransfer: $reverseTransfer)';
+
  }

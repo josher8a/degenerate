@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest copyWith({QuerySuite? Function()? querySuite}) { return OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
   querySuite: querySuite != null ? querySuite() : this.querySuite,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest &&
-          querySuite == other.querySuite; } 
-@override int get hashCode { return querySuite.hashCode; } 
-@override String toString() { return 'OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(querySuite: $querySuite)'; } 
+          querySuite == other.querySuite;
+
+@override int get hashCode => querySuite.hashCode;
+
+@override String toString() => 'OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(querySuite: $querySuite)';
+
  }

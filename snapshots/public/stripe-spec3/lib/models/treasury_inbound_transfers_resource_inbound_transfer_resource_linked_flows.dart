@@ -24,9 +24,12 @@ return errors; }
 TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows copyWith({String? Function()? receivedDebit}) { return TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(
   receivedDebit: receivedDebit != null ? receivedDebit() : this.receivedDebit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows &&
-          receivedDebit == other.receivedDebit; } 
-@override int get hashCode { return receivedDebit.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(receivedDebit: $receivedDebit)'; } 
+          receivedDebit == other.receivedDebit;
+
+@override int get hashCode => receivedDebit.hashCode;
+
+@override String toString() => 'TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(receivedDebit: $receivedDebit)';
+
  }

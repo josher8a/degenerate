@@ -45,14 +45,17 @@ Member copyWith({DateTime? createTime, MemberId? id, Map<String,Map<String,dynam
   updateTime: updateTime ?? this.updateTime,
   user: user ?? this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Member &&
           createTime == other.createTime &&
           id == other.id &&
           meta == other.meta &&
           status == other.status &&
           updateTime == other.updateTime &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(createTime, id, meta, status, updateTime, user); } 
-@override String toString() { return 'Member(createTime: $createTime, id: $id, meta: $meta, status: $status, updateTime: $updateTime, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(createTime, id, meta, status, updateTime, user);
+
+@override String toString() => 'Member(createTime: $createTime, id: $id, meta: $meta, status: $status, updateTime: $updateTime, user: $user)';
+
  }

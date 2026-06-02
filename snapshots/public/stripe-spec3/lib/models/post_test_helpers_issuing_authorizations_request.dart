@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FraudDisputabilityLikelihood && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FraudDisputabilityLikelihood($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FraudDisputabilityLikelihood && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FraudDisputabilityLikelihood($value)';
+
  }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
 @immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
@@ -54,10 +57,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestWallet && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostTestHelpersIssuingAuthorizationsRequestWallet && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';
+
  }
 @immutable final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({required this.card, this.amount, this.amountDetails, this.authorizationMethod, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });
 
@@ -175,7 +181,7 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
   verificationData: verificationData != null ? verificationData() : this.verificationData,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -193,7 +199,10 @@ PostTestHelpersIssuingAuthorizationsRequest copyWith({int? Function()? amount, P
           networkData == other.networkData &&
           riskAssessment == other.riskAssessment &&
           verificationData == other.verificationData &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, authorizationMethod, card, currency, Object.hashAll(expand ?? const []), fleet, fraudDisputabilityLikelihood, fuel, isAmountControllable, merchantAmount, merchantCurrency, merchantData, networkData, riskAssessment, verificationData, wallet); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequest(amount: $amount, amountDetails: $amountDetails, authorizationMethod: $authorizationMethod, card: $card, currency: $currency, expand: $expand, fleet: $fleet, fraudDisputabilityLikelihood: $fraudDisputabilityLikelihood, fuel: $fuel, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, networkData: $networkData, riskAssessment: $riskAssessment, verificationData: $verificationData, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hash(amount, amountDetails, authorizationMethod, card, currency, Object.hashAll(expand ?? const []), fleet, fraudDisputabilityLikelihood, fuel, isAmountControllable, merchantAmount, merchantCurrency, merchantData, networkData, riskAssessment, verificationData, wallet);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsRequest(amount: $amount, amountDetails: $amountDetails, authorizationMethod: $authorizationMethod, card: $card, currency: $currency, expand: $expand, fleet: $fleet, fraudDisputabilityLikelihood: $fraudDisputabilityLikelihood, fuel: $fuel, isAmountControllable: $isAmountControllable, merchantAmount: $merchantAmount, merchantCurrency: $merchantCurrency, merchantData: $merchantData, networkData: $networkData, riskAssessment: $riskAssessment, verificationData: $verificationData, wallet: $wallet)';
+
  }

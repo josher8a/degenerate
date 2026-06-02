@@ -76,7 +76,7 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
   updatedAt: updatedAt ?? this.updatedAt,
   creator: creator != null ? creator() : this.creator,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Status &&
           url == other.url &&
           avatarUrl == other.avatarUrl &&
@@ -88,7 +88,10 @@ Status copyWith({String? url, String? Function()? avatarUrl, int? id, String? no
           context == other.context &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          creator == other.creator; } 
-@override int get hashCode { return Object.hash(url, avatarUrl, id, nodeId, state, description, targetUrl, context, createdAt, updatedAt, creator); } 
-@override String toString() { return 'Status(url: $url, avatarUrl: $avatarUrl, id: $id, nodeId: $nodeId, state: $state, description: $description, targetUrl: $targetUrl, context: $context, createdAt: $createdAt, updatedAt: $updatedAt, creator: $creator)'; } 
+          creator == other.creator;
+
+@override int get hashCode => Object.hash(url, avatarUrl, id, nodeId, state, description, targetUrl, context, createdAt, updatedAt, creator);
+
+@override String toString() => 'Status(url: $url, avatarUrl: $avatarUrl, id: $id, nodeId: $nodeId, state: $state, description: $description, targetUrl: $targetUrl, context: $context, createdAt: $createdAt, updatedAt: $updatedAt, creator: $creator)';
+
  }

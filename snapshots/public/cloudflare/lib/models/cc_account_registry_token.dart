@@ -44,12 +44,15 @@ CcAccountRegistryToken copyWith({CcAccountId? accountId, String? Function()? pas
   registryHost: registryHost ?? this.registryHost,
   username: username ?? this.username,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcAccountRegistryToken &&
           accountId == other.accountId &&
           password == other.password &&
           registryHost == other.registryHost &&
-          username == other.username; } 
-@override int get hashCode { return Object.hash(accountId, password, registryHost, username); } 
-@override String toString() { return 'CcAccountRegistryToken(accountId: $accountId, password: $password, registryHost: $registryHost, username: $username)'; } 
+          username == other.username;
+
+@override int get hashCode => Object.hash(accountId, password, registryHost, username);
+
+@override String toString() => 'CcAccountRegistryToken(accountId: $accountId, password: $password, registryHost: $registryHost, username: $username)';
+
  }

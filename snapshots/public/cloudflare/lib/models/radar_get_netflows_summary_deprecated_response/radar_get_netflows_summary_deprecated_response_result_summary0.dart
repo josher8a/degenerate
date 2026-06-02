@@ -32,10 +32,13 @@ RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 copyWith({String? http, 
   http: http ?? this.http,
   other: other ?? this.other,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetNetflowsSummaryDeprecatedResponseResultSummary0 &&
           http == other.http &&
-          this.other == other.other; } 
-@override int get hashCode { return Object.hash(http, other); } 
-@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultSummary0(http: $http, other: $other)'; } 
+          this.other == other.other;
+
+@override int get hashCode => Object.hash(http, other);
+
+@override String toString() => 'RadarGetNetflowsSummaryDeprecatedResponseResultSummary0(http: $http, other: $other)';
+
  }

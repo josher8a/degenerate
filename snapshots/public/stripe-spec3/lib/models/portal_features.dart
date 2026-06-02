@@ -40,13 +40,16 @@ PortalFeatures copyWith({PortalCustomerUpdate? customerUpdate, PortalInvoiceList
   subscriptionCancel: subscriptionCancel ?? this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate ?? this.subscriptionUpdate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalFeatures &&
           customerUpdate == other.customerUpdate &&
           invoiceHistory == other.invoiceHistory &&
           paymentMethodUpdate == other.paymentMethodUpdate &&
           subscriptionCancel == other.subscriptionCancel &&
-          subscriptionUpdate == other.subscriptionUpdate; } 
-@override int get hashCode { return Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate); } 
-@override String toString() { return 'PortalFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)'; } 
+          subscriptionUpdate == other.subscriptionUpdate;
+
+@override int get hashCode => Object.hash(customerUpdate, invoiceHistory, paymentMethodUpdate, subscriptionCancel, subscriptionUpdate);
+
+@override String toString() => 'PortalFeatures(customerUpdate: $customerUpdate, invoiceHistory: $invoiceHistory, paymentMethodUpdate: $paymentMethodUpdate, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate)';
+
  }

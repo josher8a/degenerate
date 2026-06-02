@@ -22,10 +22,13 @@ IssueEventRename copyWith({String? from, String? to, }) { return IssueEventRenam
   from: from ?? this.from,
   to: to ?? this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssueEventRename &&
           from == other.from &&
-          to == other.to; } 
-@override int get hashCode { return Object.hash(from, to); } 
-@override String toString() { return 'IssueEventRename(from: $from, to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => Object.hash(from, to);
+
+@override String toString() => 'IssueEventRename(from: $from, to: $to)';
+
  }

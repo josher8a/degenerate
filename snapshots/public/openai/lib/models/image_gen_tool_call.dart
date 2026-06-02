@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImageGenToolCallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImageGenToolCallStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImageGenToolCallStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImageGenToolCallStatus($value)';
+
  }
 /// An image generation request made by the model.
 /// 
@@ -75,12 +78,15 @@ ImageGenToolCall copyWith({String? type, String? id, ImageGenToolCallStatus? sta
   status: status ?? this.status,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImageGenToolCall &&
           type == other.type &&
           id == other.id &&
           status == other.status &&
-          result == other.result; } 
-@override int get hashCode { return Object.hash(type, id, status, result); } 
-@override String toString() { return 'ImageGenToolCall(type: $type, id: $id, status: $status, result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => Object.hash(type, id, status, result);
+
+@override String toString() => 'ImageGenToolCall(type: $type, id: $id, status: $status, result: $result)';
+
  }

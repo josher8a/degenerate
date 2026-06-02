@@ -25,11 +25,14 @@ InstantPayoutsPromotionFeatures copyWith({bool? Function()? disableStripeUserAut
   externalAccountCollection: externalAccountCollection != null ? externalAccountCollection() : this.externalAccountCollection,
   instantPayouts: instantPayouts != null ? instantPayouts() : this.instantPayouts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InstantPayoutsPromotionFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
           externalAccountCollection == other.externalAccountCollection &&
-          instantPayouts == other.instantPayouts; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection, instantPayouts); } 
-@override String toString() { return 'InstantPayoutsPromotionFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts)'; } 
+          instantPayouts == other.instantPayouts;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, externalAccountCollection, instantPayouts);
+
+@override String toString() => 'InstantPayoutsPromotionFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection, instantPayouts: $instantPayouts)';
+
  }

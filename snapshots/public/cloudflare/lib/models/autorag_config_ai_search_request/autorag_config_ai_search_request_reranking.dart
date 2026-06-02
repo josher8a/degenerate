@@ -20,10 +20,13 @@ AutoragConfigAiSearchRequestReranking copyWith({bool Function()? enabled, Autora
   enabled: enabled != null ? enabled() : this.enabled,
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigAiSearchRequestReranking &&
           enabled == other.enabled &&
-          model == other.model; } 
-@override int get hashCode { return Object.hash(enabled, model); } 
-@override String toString() { return 'AutoragConfigAiSearchRequestReranking(enabled: $enabled, model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => Object.hash(enabled, model);
+
+@override String toString() => 'AutoragConfigAiSearchRequestReranking(enabled: $enabled, model: $model)';
+
  }

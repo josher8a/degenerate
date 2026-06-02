@@ -197,7 +197,7 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
   volumeMode: volumeMode != null ? volumeMode() : this.volumeMode,
   vsphereVolume: vsphereVolume != null ? vsphereVolume() : this.vsphereVolume,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersistentVolumeSpec &&
           listEquals(accessModes, other.accessModes) &&
           awsElasticBlockStore == other.awsElasticBlockStore &&
@@ -229,7 +229,10 @@ PersistentVolumeSpec copyWith({List<String>? Function()? accessModes, AwsElastic
           storageos == other.storageos &&
           volumeAttributesClassName == other.volumeAttributesClassName &&
           volumeMode == other.volumeMode &&
-          vsphereVolume == other.vsphereVolume; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(accessModes ?? const []), awsElasticBlockStore, azureDisk, azureFile, capacity, cephfs, cinder, claimRef, csi, fc, flexVolume, flocker, gcePersistentDisk, glusterfs, hostPath, iscsi, local, Object.hashAll(mountOptions ?? const []), nfs, nodeAffinity, persistentVolumeReclaimPolicy, photonPersistentDisk, portworxVolume, quobyte, rbd, scaleIo, storageClassName, storageos, volumeAttributesClassName, volumeMode, vsphereVolume]); } 
-@override String toString() { return 'PersistentVolumeSpec(accessModes: $accessModes, awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, capacity: $capacity, cephfs: $cephfs, cinder: $cinder, claimRef: $claimRef, csi: $csi, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, glusterfs: $glusterfs, hostPath: $hostPath, iscsi: $iscsi, local: $local, mountOptions: $mountOptions, nfs: $nfs, nodeAffinity: $nodeAffinity, persistentVolumeReclaimPolicy: $persistentVolumeReclaimPolicy, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, storageClassName: $storageClassName, storageos: $storageos, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, vsphereVolume: $vsphereVolume)'; } 
+          vsphereVolume == other.vsphereVolume;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(accessModes ?? const []), awsElasticBlockStore, azureDisk, azureFile, capacity, cephfs, cinder, claimRef, csi, fc, flexVolume, flocker, gcePersistentDisk, glusterfs, hostPath, iscsi, local, Object.hashAll(mountOptions ?? const []), nfs, nodeAffinity, persistentVolumeReclaimPolicy, photonPersistentDisk, portworxVolume, quobyte, rbd, scaleIo, storageClassName, storageos, volumeAttributesClassName, volumeMode, vsphereVolume]);
+
+@override String toString() => 'PersistentVolumeSpec(accessModes: $accessModes, awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, capacity: $capacity, cephfs: $cephfs, cinder: $cinder, claimRef: $claimRef, csi: $csi, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, glusterfs: $glusterfs, hostPath: $hostPath, iscsi: $iscsi, local: $local, mountOptions: $mountOptions, nfs: $nfs, nodeAffinity: $nodeAffinity, persistentVolumeReclaimPolicy: $persistentVolumeReclaimPolicy, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, storageClassName: $storageClassName, storageos: $storageos, volumeAttributesClassName: $volumeAttributesClassName, volumeMode: $volumeMode, vsphereVolume: $vsphereVolume)';
+
  }

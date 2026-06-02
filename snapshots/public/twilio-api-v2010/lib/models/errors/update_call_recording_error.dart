@@ -17,7 +17,8 @@ final class UpdateCallRecordingError$408 extends UpdateCallRecordingError {const
 
 final UpdateCallRecordingResponse408 error;
 
-@override int get statusCode { return 408; } 
+@override int get statusCode => 408;
+
  }
 final class UpdateCallRecordingError$Unknown extends UpdateCallRecordingError {const UpdateCallRecordingError$Unknown(this.statusCode, this.rawBody, );
 

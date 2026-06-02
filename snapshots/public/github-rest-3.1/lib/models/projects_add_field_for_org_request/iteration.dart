@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IterationDataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IterationDataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IterationDataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IterationDataType($value)';
+
  }
 @immutable final class Iteration {const Iteration({required this.name, required this.dataType, required this.iterationConfiguration, });
 
@@ -51,11 +54,14 @@ Iteration copyWith({String? name, IterationDataType? dataType, FieldIterationCon
   dataType: dataType ?? this.dataType,
   iterationConfiguration: iterationConfiguration ?? this.iterationConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Iteration &&
           name == other.name &&
           dataType == other.dataType &&
-          iterationConfiguration == other.iterationConfiguration; } 
-@override int get hashCode { return Object.hash(name, dataType, iterationConfiguration); } 
-@override String toString() { return 'Iteration(name: $name, dataType: $dataType, iterationConfiguration: $iterationConfiguration)'; } 
+          iterationConfiguration == other.iterationConfiguration;
+
+@override int get hashCode => Object.hash(name, dataType, iterationConfiguration);
+
+@override String toString() => 'Iteration(name: $name, dataType: $dataType, iterationConfiguration: $iterationConfiguration)';
+
  }

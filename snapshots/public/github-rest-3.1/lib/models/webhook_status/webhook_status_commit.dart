@@ -63,7 +63,7 @@ WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri
   sha: sha ?? this.sha,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookStatusCommit &&
           author == other.author &&
           commentsUrl == other.commentsUrl &&
@@ -73,7 +73,10 @@ WebhookStatusCommit copyWith({WebhookStatusCommitAuthor? Function()? author, Uri
           nodeId == other.nodeId &&
           listEquals(parents, other.parents) &&
           sha == other.sha &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(author, commentsUrl, commit, committer, htmlUrl, nodeId, Object.hashAll(parents), sha, url); } 
-@override String toString() { return 'WebhookStatusCommit(author: $author, commentsUrl: $commentsUrl, commit: $commit, committer: $committer, htmlUrl: $htmlUrl, nodeId: $nodeId, parents: $parents, sha: $sha, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(author, commentsUrl, commit, committer, htmlUrl, nodeId, Object.hashAll(parents), sha, url);
+
+@override String toString() => 'WebhookStatusCommit(author: $author, commentsUrl: $commentsUrl, commit: $commit, committer: $committer, htmlUrl: $htmlUrl, nodeId: $nodeId, parents: $parents, sha: $sha, url: $url)';
+
  }

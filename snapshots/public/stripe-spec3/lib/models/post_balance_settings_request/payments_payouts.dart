@@ -32,11 +32,14 @@ PaymentsPayouts copyWith({MinimumBalanceByCurrency? Function()? minimumBalanceBy
   schedule: schedule != null ? schedule() : this.schedule,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentsPayouts &&
           minimumBalanceByCurrency == other.minimumBalanceByCurrency &&
           schedule == other.schedule &&
-          statementDescriptor == other.statementDescriptor; } 
-@override int get hashCode { return Object.hash(minimumBalanceByCurrency, schedule, statementDescriptor); } 
-@override String toString() { return 'PaymentsPayouts(minimumBalanceByCurrency: $minimumBalanceByCurrency, schedule: $schedule, statementDescriptor: $statementDescriptor)'; } 
+          statementDescriptor == other.statementDescriptor;
+
+@override int get hashCode => Object.hash(minimumBalanceByCurrency, schedule, statementDescriptor);
+
+@override String toString() => 'PaymentsPayouts(minimumBalanceByCurrency: $minimumBalanceByCurrency, schedule: $schedule, statementDescriptor: $statementDescriptor)';
+
  }

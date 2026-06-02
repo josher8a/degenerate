@@ -47,7 +47,7 @@ WebhookRepositoryRulesetDeleted copyWith({ItemDeletedAction? action, EnterpriseW
   repositoryRuleset: repositoryRuleset ?? this.repositoryRuleset,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRepositoryRulesetDeleted &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -55,7 +55,10 @@ WebhookRepositoryRulesetDeleted copyWith({ItemDeletedAction? action, EnterpriseW
           organization == other.organization &&
           repository == other.repository &&
           repositoryRuleset == other.repositoryRuleset &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, repositoryRuleset, sender); } 
-@override String toString() { return 'WebhookRepositoryRulesetDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, repositoryRuleset: $repositoryRuleset, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, repositoryRuleset, sender);
+
+@override String toString() => 'WebhookRepositoryRulesetDeleted(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, repositoryRuleset: $repositoryRuleset, sender: $sender)';
+
  }

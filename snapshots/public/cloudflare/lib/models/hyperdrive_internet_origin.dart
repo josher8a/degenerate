@@ -27,10 +27,13 @@ HyperdriveInternetOrigin copyWith({String? host, int? port, }) { return Hyperdri
   host: host ?? this.host,
   port: port ?? this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HyperdriveInternetOrigin &&
           host == other.host &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(host, port); } 
-@override String toString() { return 'HyperdriveInternetOrigin(host: $host, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(host, port);
+
+@override String toString() => 'HyperdriveInternetOrigin(host: $host, port: $port)';
+
  }

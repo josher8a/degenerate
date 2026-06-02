@@ -35,12 +35,15 @@ GotoOptions copyWith({String? Function()? referer, String? Function()? referrerP
   timeout: timeout != null ? timeout() : this.timeout,
   waitUntil: waitUntil != null ? waitUntil() : this.waitUntil,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GotoOptions &&
           referer == other.referer &&
           referrerPolicy == other.referrerPolicy &&
           timeout == other.timeout &&
-          waitUntil == other.waitUntil; } 
-@override int get hashCode { return Object.hash(referer, referrerPolicy, timeout, waitUntil); } 
-@override String toString() { return 'GotoOptions(referer: $referer, referrerPolicy: $referrerPolicy, timeout: $timeout, waitUntil: $waitUntil)'; } 
+          waitUntil == other.waitUntil;
+
+@override int get hashCode => Object.hash(referer, referrerPolicy, timeout, waitUntil);
+
+@override String toString() => 'GotoOptions(referer: $referer, referrerPolicy: $referrerPolicy, timeout: $timeout, waitUntil: $waitUntil)';
+
  }

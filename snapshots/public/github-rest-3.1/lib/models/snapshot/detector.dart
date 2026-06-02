@@ -31,11 +31,14 @@ Detector copyWith({String? name, String? version, String? url, }) { return Detec
   version: version ?? this.version,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Detector &&
           name == other.name &&
           version == other.version &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(name, version, url); } 
-@override String toString() { return 'Detector(name: $name, version: $version, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(name, version, url);
+
+@override String toString() => 'Detector(name: $name, version: $version, url: $url)';
+
  }

@@ -126,7 +126,7 @@ CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsCon
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CcPublicApplication &&
           createdAt == other.createdAt &&
           durableObject == other.durableObject &&
@@ -140,7 +140,10 @@ CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsCon
           observability == other.observability &&
           rolloutActiveGracePeriod == other.rolloutActiveGracePeriod &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version); } 
-@override String toString() { return 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version);
+
+@override String toString() => 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)';
+
  }

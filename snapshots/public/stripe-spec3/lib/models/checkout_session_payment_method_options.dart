@@ -221,7 +221,7 @@ CheckoutSessionPaymentMethodOptions copyWith({CheckoutAcssDebitPaymentMethodOpti
   twint: twint != null ? twint() : this.twint,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutSessionPaymentMethodOptions &&
           acssDebit == other.acssDebit &&
           affirm == other.affirm &&
@@ -264,7 +264,10 @@ CheckoutSessionPaymentMethodOptions copyWith({CheckoutAcssDebitPaymentMethodOpti
           sofort == other.sofort &&
           swish == other.swish &&
           twint == other.twint &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hashAll([acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, boleto, card, cashapp, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mobilepay, multibanco, naverPay, oxxo, p24, payco, paynow, paypal, payto, pix, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount]); } 
-@override String toString() { return 'CheckoutSessionPaymentMethodOptions(acssDebit: $acssDebit, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, boleto: $boleto, card: $card, cashapp: $cashapp, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, grabpay: $grabpay, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, mobilepay: $mobilepay, multibanco: $multibanco, naverPay: $naverPay, oxxo: $oxxo, p24: $p24, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hashAll([acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, boleto, card, cashapp, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mobilepay, multibanco, naverPay, oxxo, p24, payco, paynow, paypal, payto, pix, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount]);
+
+@override String toString() => 'CheckoutSessionPaymentMethodOptions(acssDebit: $acssDebit, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, boleto: $boleto, card: $card, cashapp: $cashapp, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, grabpay: $grabpay, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, mobilepay: $mobilepay, multibanco: $multibanco, naverPay: $naverPay, oxxo: $oxxo, p24: $p24, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, usBankAccount: $usBankAccount)';
+
  }

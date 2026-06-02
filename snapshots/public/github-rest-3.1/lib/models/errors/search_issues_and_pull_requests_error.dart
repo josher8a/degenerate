@@ -19,19 +19,22 @@ final class SearchIssuesAndPullRequestsError$403 extends SearchIssuesAndPullRequ
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class SearchIssuesAndPullRequestsError$422 extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SearchIssuesAndPullRequestsError$503 extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError$503(this.error);
 
 final SearchIssuesAndPullRequestsResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SearchIssuesAndPullRequestsError$Unknown extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError$Unknown(this.statusCode, this.rawBody, );
 

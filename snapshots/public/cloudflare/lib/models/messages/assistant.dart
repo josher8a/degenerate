@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AssistantRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AssistantRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AssistantRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AssistantRole($value)';
+
  }
 @immutable final class Assistant {const Assistant({required this.role, this.audio, this.content, this.functionCall, this.name, this.refusal, this.toolCalls, });
 
@@ -66,7 +69,7 @@ Assistant copyWith({AssistantAudioVariant1? Function()? audio, AssistantContent?
   role: role ?? this.role,
   toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Assistant &&
           audio == other.audio &&
           content == other.content &&
@@ -74,7 +77,10 @@ Assistant copyWith({AssistantAudioVariant1? Function()? audio, AssistantContent?
           name == other.name &&
           refusal == other.refusal &&
           role == other.role &&
-          listEquals(toolCalls, other.toolCalls); } 
-@override int get hashCode { return Object.hash(audio, content, functionCall, name, refusal, role, Object.hashAll(toolCalls ?? const [])); } 
-@override String toString() { return 'Assistant(audio: $audio, content: $content, functionCall: $functionCall, name: $name, refusal: $refusal, role: $role, toolCalls: $toolCalls)'; } 
+          listEquals(toolCalls, other.toolCalls);
+
+@override int get hashCode => Object.hash(audio, content, functionCall, name, refusal, role, Object.hashAll(toolCalls ?? const []));
+
+@override String toString() => 'Assistant(audio: $audio, content: $content, functionCall: $functionCall, name: $name, refusal: $refusal, role: $role, toolCalls: $toolCalls)';
+
  }

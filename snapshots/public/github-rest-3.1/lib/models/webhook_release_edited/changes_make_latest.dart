@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('to') 
 ChangesMakeLatest copyWith({bool? to}) { return ChangesMakeLatest(
   to: to ?? this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChangesMakeLatest &&
-          to == other.to; } 
-@override int get hashCode { return to.hashCode; } 
-@override String toString() { return 'ChangesMakeLatest(to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => to.hashCode;
+
+@override String toString() => 'ChangesMakeLatest(to: $to)';
+
  }

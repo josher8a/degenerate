@@ -67,7 +67,7 @@ SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String? Function
   path: path != null ? path() : this.path,
   port: port != null ? port() : this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldHttpConfig &&
           allowInsecure == other.allowInsecure &&
           expectedBody == other.expectedBody &&
@@ -76,7 +76,10 @@ SmartshieldHttpConfig copyWith({bool Function()? allowInsecure, String? Function
           header == other.header &&
           method == other.method &&
           path == other.path &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(allowInsecure, expectedBody, Object.hashAll(expectedCodes ?? const []), followRedirects, header, method, path, port); } 
-@override String toString() { return 'SmartshieldHttpConfig(allowInsecure: $allowInsecure, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, method: $method, path: $path, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(allowInsecure, expectedBody, Object.hashAll(expectedCodes ?? const []), followRedirects, header, method, path, port);
+
+@override String toString() => 'SmartshieldHttpConfig(allowInsecure: $allowInsecure, expectedBody: $expectedBody, expectedCodes: $expectedCodes, followRedirects: $followRedirects, header: $header, method: $method, path: $path, port: $port)';
+
  }

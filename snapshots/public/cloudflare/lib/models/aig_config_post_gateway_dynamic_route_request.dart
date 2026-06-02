@@ -21,10 +21,13 @@ AigConfigPostGatewayDynamicRouteRequest copyWith({List<AigConfigPostGatewayDynam
   elements: elements ?? this.elements,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigPostGatewayDynamicRouteRequest &&
           listEquals(elements, other.elements) &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(elements), name); } 
-@override String toString() { return 'AigConfigPostGatewayDynamicRouteRequest(elements: $elements, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(elements), name);
+
+@override String toString() => 'AigConfigPostGatewayDynamicRouteRequest(elements: $elements, name: $name)';
+
  }

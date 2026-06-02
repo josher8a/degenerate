@@ -19,19 +19,22 @@ final class CampaignsGetCampaignSummaryError$404 extends CampaignsGetCampaignSum
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CampaignsGetCampaignSummaryError$422 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$422(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class CampaignsGetCampaignSummaryError$503 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$503(this.error);
 
 final CampaignsGetCampaignSummaryResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CampaignsGetCampaignSummaryError$Unknown extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError$Unknown(this.statusCode, this.rawBody, );
 

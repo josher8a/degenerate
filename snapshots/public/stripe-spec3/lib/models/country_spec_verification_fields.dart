@@ -22,10 +22,13 @@ CountrySpecVerificationFields copyWith({CountrySpecVerificationFieldDetails? com
   company: company ?? this.company,
   individual: individual ?? this.individual,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountrySpecVerificationFields &&
           company == other.company &&
-          individual == other.individual; } 
-@override int get hashCode { return Object.hash(company, individual); } 
-@override String toString() { return 'CountrySpecVerificationFields(company: $company, individual: $individual)'; } 
+          individual == other.individual;
+
+@override int get hashCode => Object.hash(company, individual);
+
+@override String toString() => 'CountrySpecVerificationFields(company: $company, individual: $individual)';
+
  }

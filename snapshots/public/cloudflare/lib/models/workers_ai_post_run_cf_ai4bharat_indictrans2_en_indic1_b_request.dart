@@ -23,10 +23,13 @@ WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest copyWith({TargetLanguage?
   targetLanguage: targetLanguage ?? this.targetLanguage,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest &&
           targetLanguage == other.targetLanguage &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(targetLanguage, text); } 
-@override String toString() { return 'WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(targetLanguage: $targetLanguage, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(targetLanguage, text);
+
+@override String toString() => 'WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequest(targetLanguage: $targetLanguage, text: $text)';
+
  }

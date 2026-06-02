@@ -35,17 +35,12 @@ final class EndReason {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) || other is EndReason && other.value == value;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EndReason && other.value == value;
 
   @override
-  int get hashCode {
-    return value.hashCode;
-  }
+  int get hashCode => value.hashCode;
 
   @override
-  String toString() {
-    return 'EndReason($value)';
-  }
+  String toString() => 'EndReason($value)';
 }

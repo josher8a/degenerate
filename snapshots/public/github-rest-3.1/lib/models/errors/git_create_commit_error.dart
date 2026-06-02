@@ -19,19 +19,22 @@ final class GitCreateCommitError$404 extends GitCreateCommitError {const GitCrea
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GitCreateCommitError$409 extends GitCreateCommitError {const GitCreateCommitError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class GitCreateCommitError$422 extends GitCreateCommitError {const GitCreateCommitError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class GitCreateCommitError$Unknown extends GitCreateCommitError {const GitCreateCommitError$Unknown(this.statusCode, this.rawBody, );
 

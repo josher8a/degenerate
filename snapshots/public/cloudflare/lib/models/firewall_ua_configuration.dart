@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallUaConfigurationTarget && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallUaConfigurationTarget($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallUaConfigurationTarget && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallUaConfigurationTarget($value)';
+
  }
 @immutable final class FirewallUaConfiguration {const FirewallUaConfiguration({this.target, this.value, });
 
@@ -48,10 +51,13 @@ FirewallUaConfiguration copyWith({FirewallUaConfigurationTarget? Function()? tar
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallUaConfiguration &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(target, value); } 
-@override String toString() { return 'FirewallUaConfiguration(target: $target, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(target, value);
+
+@override String toString() => 'FirewallUaConfiguration(target: $target, value: $value)';
+
  }

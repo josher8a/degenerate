@@ -36,12 +36,15 @@ InputImageContent copyWith({String? type, String? Function()? imageUrl, String? 
   fileId: fileId != null ? fileId() : this.fileId,
   detail: detail ?? this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputImageContent &&
           type == other.type &&
           imageUrl == other.imageUrl &&
           fileId == other.fileId &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, imageUrl, fileId, detail); } 
-@override String toString() { return 'InputImageContent(type: $type, imageUrl: $imageUrl, fileId: $fileId, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(type, imageUrl, fileId, detail);
+
+@override String toString() => 'InputImageContent(type: $type, imageUrl: $imageUrl, fileId: $fileId, detail: $detail)';
+
  }

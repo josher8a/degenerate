@@ -33,11 +33,14 @@ Translation copyWith({String Function()? sourceLang, String? targetLang, String?
   targetLang: targetLang ?? this.targetLang,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Translation &&
           sourceLang == other.sourceLang &&
           targetLang == other.targetLang &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(sourceLang, targetLang, text); } 
-@override String toString() { return 'Translation(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(sourceLang, targetLang, text);
+
+@override String toString() => 'Translation(sourceLang: $sourceLang, targetLang: $targetLang, text: $text)';
+
  }

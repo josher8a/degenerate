@@ -46,14 +46,17 @@ ProjectRateLimitUpdateRequest copyWith({int? Function()? maxRequestsPer1Minute, 
   maxRequestsPer1Day: maxRequestsPer1Day != null ? maxRequestsPer1Day() : this.maxRequestsPer1Day,
   batch1DayMaxInputTokens: batch1DayMaxInputTokens != null ? batch1DayMaxInputTokens() : this.batch1DayMaxInputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectRateLimitUpdateRequest &&
           maxRequestsPer1Minute == other.maxRequestsPer1Minute &&
           maxTokensPer1Minute == other.maxTokensPer1Minute &&
           maxImagesPer1Minute == other.maxImagesPer1Minute &&
           maxAudioMegabytesPer1Minute == other.maxAudioMegabytesPer1Minute &&
           maxRequestsPer1Day == other.maxRequestsPer1Day &&
-          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens; } 
-@override int get hashCode { return Object.hash(maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens); } 
-@override String toString() { return 'ProjectRateLimitUpdateRequest(maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)'; } 
+          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens;
+
+@override int get hashCode => Object.hash(maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens);
+
+@override String toString() => 'ProjectRateLimitUpdateRequest(maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)';
+
  }

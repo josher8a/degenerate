@@ -40,11 +40,14 @@ DomainUpdateProperties copyWith({AutoRenew? Function()? autoRenew, Locked? Funct
   locked: locked != null ? locked() : this.locked,
   privacy: privacy != null ? privacy() : this.privacy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DomainUpdateProperties &&
           autoRenew == other.autoRenew &&
           locked == other.locked &&
-          privacy == other.privacy; } 
-@override int get hashCode { return Object.hash(autoRenew, locked, privacy); } 
-@override String toString() { return 'DomainUpdateProperties(autoRenew: $autoRenew, locked: $locked, privacy: $privacy)'; } 
+          privacy == other.privacy;
+
+@override int get hashCode => Object.hash(autoRenew, locked, privacy);
+
+@override String toString() => 'DomainUpdateProperties(autoRenew: $autoRenew, locked: $locked, privacy: $privacy)';
+
  }

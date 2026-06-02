@@ -37,12 +37,15 @@ AddressingAddressMapsMembership copyWith({AddressingSchemasCanDelete? Function()
   identifier: identifier != null ? identifier() : this.identifier,
   kind: kind != null ? kind() : this.kind,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingAddressMapsMembership &&
           canDelete == other.canDelete &&
           createdAt == other.createdAt &&
           identifier == other.identifier &&
-          kind == other.kind; } 
-@override int get hashCode { return Object.hash(canDelete, createdAt, identifier, kind); } 
-@override String toString() { return 'AddressingAddressMapsMembership(canDelete: $canDelete, createdAt: $createdAt, identifier: $identifier, kind: $kind)'; } 
+          kind == other.kind;
+
+@override int get hashCode => Object.hash(canDelete, createdAt, identifier, kind);
+
+@override String toString() => 'AddressingAddressMapsMembership(canDelete: $canDelete, createdAt: $createdAt, identifier: $identifier, kind: $kind)';
+
  }

@@ -35,10 +35,13 @@ CreateConversationBody copyWith({Map<String, String>? Function()? metadata, List
   metadata: metadata != null ? metadata() : this.metadata,
   items: items != null ? items() : this.items,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateConversationBody &&
           metadata == other.metadata &&
-          listEquals(items, other.items); } 
-@override int get hashCode { return Object.hash(metadata, Object.hashAll(items ?? const [])); } 
-@override String toString() { return 'CreateConversationBody(metadata: $metadata, items: $items)'; } 
+          listEquals(items, other.items);
+
+@override int get hashCode => Object.hash(metadata, Object.hashAll(items ?? const []));
+
+@override String toString() => 'CreateConversationBody(metadata: $metadata, items: $items)';
+
  }

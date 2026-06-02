@@ -18,13 +18,15 @@ final class AiSearchUpdateInstancesError$400 extends AiSearchUpdateInstancesErro
 
 final AiSearchUpdateInstancesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchUpdateInstancesError$404 extends AiSearchUpdateInstancesError {const AiSearchUpdateInstancesError$404(this.error);
 
 final AiSearchUpdateInstancesResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchUpdateInstancesError$Unknown extends AiSearchUpdateInstancesError {const AiSearchUpdateInstancesError$Unknown(this.statusCode, this.rawBody, );
 

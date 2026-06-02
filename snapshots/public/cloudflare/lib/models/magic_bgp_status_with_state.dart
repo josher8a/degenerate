@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicBgpStatusWithStateState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicBgpStatusWithStateState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicBgpStatusWithStateState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MagicBgpStatusWithStateState($value)';
+
  }
 @immutable final class MagicBgpStatusWithState {const MagicBgpStatusWithState({required this.state, required this.tcpEstablished, required this.updatedAt, this.bgpState, this.cfSpeakerIp, this.cfSpeakerPort, this.customerSpeakerIp, this.customerSpeakerPort, });
 
@@ -92,7 +95,7 @@ MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function
   tcpEstablished: tcpEstablished ?? this.tcpEstablished,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicBgpStatusWithState &&
           bgpState == other.bgpState &&
           cfSpeakerIp == other.cfSpeakerIp &&
@@ -101,7 +104,10 @@ MagicBgpStatusWithState copyWith({String? Function()? bgpState, String? Function
           customerSpeakerPort == other.customerSpeakerPort &&
           state == other.state &&
           tcpEstablished == other.tcpEstablished &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(bgpState, cfSpeakerIp, cfSpeakerPort, customerSpeakerIp, customerSpeakerPort, state, tcpEstablished, updatedAt); } 
-@override String toString() { return 'MagicBgpStatusWithState(bgpState: $bgpState, cfSpeakerIp: $cfSpeakerIp, cfSpeakerPort: $cfSpeakerPort, customerSpeakerIp: $customerSpeakerIp, customerSpeakerPort: $customerSpeakerPort, state: $state, tcpEstablished: $tcpEstablished, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(bgpState, cfSpeakerIp, cfSpeakerPort, customerSpeakerIp, customerSpeakerPort, state, tcpEstablished, updatedAt);
+
+@override String toString() => 'MagicBgpStatusWithState(bgpState: $bgpState, cfSpeakerIp: $cfSpeakerIp, cfSpeakerPort: $cfSpeakerPort, customerSpeakerIp: $customerSpeakerIp, customerSpeakerPort: $customerSpeakerPort, state: $state, tcpEstablished: $tcpEstablished, updatedAt: $updatedAt)';
+
  }

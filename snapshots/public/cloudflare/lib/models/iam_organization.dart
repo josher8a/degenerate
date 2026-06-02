@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IamComponentsSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IamComponentsSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IamComponentsSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IamComponentsSchemasStatus($value)';
+
  }
 /// Organization name.
 extension type const IamSchemasName(String value) {
@@ -70,13 +73,16 @@ IamOrganization copyWith({IamCommonComponentsSchemasIdentifier? Function()? id, 
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamOrganization &&
           id == other.id &&
           name == other.name &&
           listEquals(permissions, other.permissions) &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, name, Object.hashAll(permissions ?? const []), Object.hashAll(roles ?? const []), status); } 
-@override String toString() { return 'IamOrganization(id: $id, name: $name, permissions: $permissions, roles: $roles, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, name, Object.hashAll(permissions ?? const []), Object.hashAll(roles ?? const []), status);
+
+@override String toString() => 'IamOrganization(id: $id, name: $name, permissions: $permissions, roles: $roles, status: $status)';
+
  }

@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('loa_d
 IpAddressManagementPrefixesUploadLoaDocumentRequest copyWith({String? loaDocument}) { return IpAddressManagementPrefixesUploadLoaDocumentRequest(
   loaDocument: loaDocument ?? this.loaDocument,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IpAddressManagementPrefixesUploadLoaDocumentRequest &&
-          loaDocument == other.loaDocument; } 
-@override int get hashCode { return loaDocument.hashCode; } 
-@override String toString() { return 'IpAddressManagementPrefixesUploadLoaDocumentRequest(loaDocument: $loaDocument)'; } 
+          loaDocument == other.loaDocument;
+
+@override int get hashCode => loaDocument.hashCode;
+
+@override String toString() => 'IpAddressManagementPrefixesUploadLoaDocumentRequest(loaDocument: $loaDocument)';
+
  }

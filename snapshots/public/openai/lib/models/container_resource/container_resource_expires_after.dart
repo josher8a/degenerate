@@ -26,10 +26,13 @@ ContainerResourceExpiresAfter copyWith({VectorStoreExpirationAfterAnchor? Functi
   anchor: anchor != null ? anchor() : this.anchor,
   minutes: minutes != null ? minutes() : this.minutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerResourceExpiresAfter &&
           anchor == other.anchor &&
-          minutes == other.minutes; } 
-@override int get hashCode { return Object.hash(anchor, minutes); } 
-@override String toString() { return 'ContainerResourceExpiresAfter(anchor: $anchor, minutes: $minutes)'; } 
+          minutes == other.minutes;
+
+@override int get hashCode => Object.hash(anchor, minutes);
+
+@override String toString() => 'ContainerResourceExpiresAfter(anchor: $anchor, minutes: $minutes)';
+
  }

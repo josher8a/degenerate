@@ -51,14 +51,17 @@ CreateVectorStoreRequest copyWith({List<String>? Function()? fileIds, String? Fu
   chunkingStrategy: chunkingStrategy != null ? chunkingStrategy() : this.chunkingStrategy,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVectorStoreRequest &&
           listEquals(fileIds, other.fileIds) &&
           name == other.name &&
           description == other.description &&
           expiresAfter == other.expiresAfter &&
           chunkingStrategy == other.chunkingStrategy &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(fileIds ?? const []), name, description, expiresAfter, chunkingStrategy, metadata); } 
-@override String toString() { return 'CreateVectorStoreRequest(fileIds: $fileIds, name: $name, description: $description, expiresAfter: $expiresAfter, chunkingStrategy: $chunkingStrategy, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(fileIds ?? const []), name, description, expiresAfter, chunkingStrategy, metadata);
+
+@override String toString() => 'CreateVectorStoreRequest(fileIds: $fileIds, name: $name, description: $description, expiresAfter: $expiresAfter, chunkingStrategy: $chunkingStrategy, metadata: $metadata)';
+
  }

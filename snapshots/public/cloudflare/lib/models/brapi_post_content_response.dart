@@ -33,12 +33,15 @@ BrapiPostContentResponse copyWith({List<AccountsByAccountIdPipelinesByPipelineNa
   result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostContentResponse &&
           listEquals(errors, other.errors) &&
           meta == other.meta &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), meta, result, success); } 
-@override String toString() { return 'BrapiPostContentResponse(errors: $errors, meta: $meta, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), meta, result, success);
+
+@override String toString() => 'BrapiPostContentResponse(errors: $errors, meta: $meta, result: $result, success: $success)';
+
  }

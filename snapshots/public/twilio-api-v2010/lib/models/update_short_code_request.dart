@@ -46,14 +46,17 @@ UpdateShortCodeRequest copyWith({String? Function()? friendlyName, String? Funct
   smsFallbackUrl: smsFallbackUrl != null ? smsFallbackUrl() : this.smsFallbackUrl,
   smsFallbackMethod: smsFallbackMethod != null ? smsFallbackMethod() : this.smsFallbackMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateShortCodeRequest &&
           friendlyName == other.friendlyName &&
           apiVersion == other.apiVersion &&
           smsUrl == other.smsUrl &&
           smsMethod == other.smsMethod &&
           smsFallbackUrl == other.smsFallbackUrl &&
-          smsFallbackMethod == other.smsFallbackMethod; } 
-@override int get hashCode { return Object.hash(friendlyName, apiVersion, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod); } 
-@override String toString() { return 'UpdateShortCodeRequest(friendlyName: $friendlyName, apiVersion: $apiVersion, smsUrl: $smsUrl, smsMethod: $smsMethod, smsFallbackUrl: $smsFallbackUrl, smsFallbackMethod: $smsFallbackMethod)'; } 
+          smsFallbackMethod == other.smsFallbackMethod;
+
+@override int get hashCode => Object.hash(friendlyName, apiVersion, smsUrl, smsMethod, smsFallbackUrl, smsFallbackMethod);
+
+@override String toString() => 'UpdateShortCodeRequest(friendlyName: $friendlyName, apiVersion: $apiVersion, smsUrl: $smsUrl, smsMethod: $smsMethod, smsFallbackUrl: $smsFallbackUrl, smsFallbackMethod: $smsFallbackMethod)';
+
  }

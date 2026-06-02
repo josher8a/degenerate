@@ -125,7 +125,7 @@ IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteCom
   roles: roles != null ? roles() : this.roles,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserInvite &&
           expiresOn == other.expiresOn &&
           id == other.id &&
@@ -137,7 +137,10 @@ IamUserInvite copyWith({IamSchemasExpiresOn? Function()? expiresOn, IamInviteCom
           organizationIsEnforcingTwofactor == other.organizationIsEnforcingTwofactor &&
           organizationName == other.organizationName &&
           listEquals(roles, other.roles) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(expiresOn, id, invitedBy, invitedMemberEmail, invitedMemberId, invitedOn, organizationId, organizationIsEnforcingTwofactor, organizationName, Object.hashAll(roles ?? const []), status); } 
-@override String toString() { return 'IamUserInvite(expiresOn: $expiresOn, id: $id, invitedBy: $invitedBy, invitedMemberEmail: $invitedMemberEmail, invitedMemberId: $invitedMemberId, invitedOn: $invitedOn, organizationId: $organizationId, organizationIsEnforcingTwofactor: $organizationIsEnforcingTwofactor, organizationName: $organizationName, roles: $roles, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(expiresOn, id, invitedBy, invitedMemberEmail, invitedMemberId, invitedOn, organizationId, organizationIsEnforcingTwofactor, organizationName, Object.hashAll(roles ?? const []), status);
+
+@override String toString() => 'IamUserInvite(expiresOn: $expiresOn, id: $id, invitedBy: $invitedBy, invitedMemberEmail: $invitedMemberEmail, invitedMemberId: $invitedMemberId, invitedOn: $invitedOn, organizationId: $organizationId, organizationIsEnforcingTwofactor: $organizationIsEnforcingTwofactor, organizationName: $organizationName, roles: $roles, status: $status)';
+
  }

@@ -24,10 +24,13 @@ NamespaceWorkerPatchNamespaceRequest copyWith({String? Function()? name, Workers
   name: name != null ? name() : this.name,
   trustedWorkers: trustedWorkers != null ? trustedWorkers() : this.trustedWorkers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceWorkerPatchNamespaceRequest &&
           name == other.name &&
-          trustedWorkers == other.trustedWorkers; } 
-@override int get hashCode { return Object.hash(name, trustedWorkers); } 
-@override String toString() { return 'NamespaceWorkerPatchNamespaceRequest(name: $name, trustedWorkers: $trustedWorkers)'; } 
+          trustedWorkers == other.trustedWorkers;
+
+@override int get hashCode => Object.hash(name, trustedWorkers);
+
+@override String toString() => 'NamespaceWorkerPatchNamespaceRequest(name: $name, trustedWorkers: $trustedWorkers)';
+
  }

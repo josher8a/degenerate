@@ -284,7 +284,7 @@ Card copyWith({ApplicationFeeAccount? Function()? account, String? Function()? a
   status: status != null ? status() : this.status,
   tokenizationMethod: tokenizationMethod != null ? tokenizationMethod() : this.tokenizationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Card &&
           account == other.account &&
           addressCity == other.addressCity &&
@@ -317,7 +317,10 @@ Card copyWith({ApplicationFeeAccount? Function()? account, String? Function()? a
           object == other.object &&
           regulatedStatus == other.regulatedStatus &&
           status == other.status &&
-          tokenizationMethod == other.tokenizationMethod; } 
-@override int get hashCode { return Object.hashAll([account, addressCity, addressCountry, addressLine1, addressLine1Check, addressLine2, addressState, addressZip, addressZipCheck, allowRedisplay, Object.hashAll(availablePayoutMethods ?? const []), brand, country, currency, customer, cvcCheck, defaultForCurrency, dynamicLast4, expMonth, expYear, fingerprint, funding, id, iin, last4, metadata, name, networks, object, regulatedStatus, status, tokenizationMethod]); } 
-@override String toString() { return 'Card(account: $account, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine1Check: $addressLine1Check, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, addressZipCheck: $addressZipCheck, allowRedisplay: $allowRedisplay, availablePayoutMethods: $availablePayoutMethods, brand: $brand, country: $country, currency: $currency, customer: $customer, cvcCheck: $cvcCheck, defaultForCurrency: $defaultForCurrency, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, id: $id, iin: $iin, last4: $last4, metadata: $metadata, name: $name, networks: $networks, object: $object, regulatedStatus: $regulatedStatus, status: $status, tokenizationMethod: $tokenizationMethod)'; } 
+          tokenizationMethod == other.tokenizationMethod;
+
+@override int get hashCode => Object.hashAll([account, addressCity, addressCountry, addressLine1, addressLine1Check, addressLine2, addressState, addressZip, addressZipCheck, allowRedisplay, Object.hashAll(availablePayoutMethods ?? const []), brand, country, currency, customer, cvcCheck, defaultForCurrency, dynamicLast4, expMonth, expYear, fingerprint, funding, id, iin, last4, metadata, name, networks, object, regulatedStatus, status, tokenizationMethod]);
+
+@override String toString() => 'Card(account: $account, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine1Check: $addressLine1Check, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, addressZipCheck: $addressZipCheck, allowRedisplay: $allowRedisplay, availablePayoutMethods: $availablePayoutMethods, brand: $brand, country: $country, currency: $currency, customer: $customer, cvcCheck: $cvcCheck, defaultForCurrency: $defaultForCurrency, dynamicLast4: $dynamicLast4, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, id: $id, iin: $iin, last4: $last4, metadata: $metadata, name: $name, networks: $networks, object: $object, regulatedStatus: $regulatedStatus, status: $status, tokenizationMethod: $tokenizationMethod)';
+
  }

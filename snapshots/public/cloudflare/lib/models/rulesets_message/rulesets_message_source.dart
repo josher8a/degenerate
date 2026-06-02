@@ -23,9 +23,12 @@ return errors; }
 RulesetsMessageSource copyWith({String? pointer}) { return RulesetsMessageSource(
   pointer: pointer ?? this.pointer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsMessageSource &&
-          pointer == other.pointer; } 
-@override int get hashCode { return pointer.hashCode; } 
-@override String toString() { return 'RulesetsMessageSource(pointer: $pointer)'; } 
+          pointer == other.pointer;
+
+@override int get hashCode => pointer.hashCode;
+
+@override String toString() => 'RulesetsMessageSource(pointer: $pointer)';
+
  }

@@ -24,10 +24,13 @@ ReleaseNotesContent copyWith({String? name, String? body, }) { return ReleaseNot
   name: name ?? this.name,
   body: body ?? this.body,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReleaseNotesContent &&
           name == other.name &&
-          body == other.body; } 
-@override int get hashCode { return Object.hash(name, body); } 
-@override String toString() { return 'ReleaseNotesContent(name: $name, body: $body)'; } 
+          body == other.body;
+
+@override int get hashCode => Object.hash(name, body);
+
+@override String toString() => 'ReleaseNotesContent(name: $name, body: $body)';
+
  }

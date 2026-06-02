@@ -66,7 +66,7 @@ IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Functi
   policies: policies != null ? policies() : this.policies,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamTokenBase &&
           condition == other.condition &&
           expiresOn == other.expiresOn &&
@@ -77,7 +77,10 @@ IamTokenBase copyWith({IamCondition? Function()? condition, IamExpiresOn? Functi
           name == other.name &&
           notBefore == other.notBefore &&
           listEquals(policies, other.policies) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(condition, expiresOn, id, issuedOn, lastUsedOn, modifiedOn, name, notBefore, Object.hashAll(policies ?? const []), status); } 
-@override String toString() { return 'IamTokenBase(condition: $condition, expiresOn: $expiresOn, id: $id, issuedOn: $issuedOn, lastUsedOn: $lastUsedOn, modifiedOn: $modifiedOn, name: $name, notBefore: $notBefore, policies: $policies, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(condition, expiresOn, id, issuedOn, lastUsedOn, modifiedOn, name, notBefore, Object.hashAll(policies ?? const []), status);
+
+@override String toString() => 'IamTokenBase(condition: $condition, expiresOn: $expiresOn, id: $id, issuedOn: $issuedOn, lastUsedOn: $lastUsedOn, modifiedOn: $modifiedOn, name: $name, notBefore: $notBefore, policies: $policies, status: $status)';
+
  }

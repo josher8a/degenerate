@@ -35,12 +35,15 @@ NodeConfigStatus copyWith({NodeConfigSource? Function()? active, NodeConfigSourc
   error: error != null ? error() : this.error,
   lastKnownGood: lastKnownGood != null ? lastKnownGood() : this.lastKnownGood,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeConfigStatus &&
           active == other.active &&
           assigned == other.assigned &&
           error == other.error &&
-          lastKnownGood == other.lastKnownGood; } 
-@override int get hashCode { return Object.hash(active, assigned, error, lastKnownGood); } 
-@override String toString() { return 'NodeConfigStatus(active: $active, assigned: $assigned, error: $error, lastKnownGood: $lastKnownGood)'; } 
+          lastKnownGood == other.lastKnownGood;
+
+@override int get hashCode => Object.hash(active, assigned, error, lastKnownGood);
+
+@override String toString() => 'NodeConfigStatus(active: $active, assigned: $assigned, error: $error, lastKnownGood: $lastKnownGood)';
+
  }

@@ -41,13 +41,16 @@ RoleAssignmentCreated copyWith({String? Function()? id, String? Function()? prin
   resourceId: resourceId != null ? resourceId() : this.resourceId,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RoleAssignmentCreated &&
           id == other.id &&
           principalId == other.principalId &&
           principalType == other.principalType &&
           resourceId == other.resourceId &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(id, principalId, principalType, resourceId, resourceType); } 
-@override String toString() { return 'RoleAssignmentCreated(id: $id, principalId: $principalId, principalType: $principalType, resourceId: $resourceId, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(id, principalId, principalType, resourceId, resourceType);
+
+@override String toString() => 'RoleAssignmentCreated(id: $id, principalId: $principalId, principalType: $principalType, resourceId: $resourceId, resourceType: $resourceType)';
+
  }

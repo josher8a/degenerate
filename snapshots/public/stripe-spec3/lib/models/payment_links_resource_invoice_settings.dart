@@ -64,7 +64,7 @@ PaymentLinksResourceInvoiceSettings copyWith({List<InvoiceAccountTaxIds>? Functi
   metadata: metadata != null ? metadata() : this.metadata,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceInvoiceSettings &&
           listEquals(accountTaxIds, other.accountTaxIds) &&
           listEquals(customFields, other.customFields) &&
@@ -72,7 +72,10 @@ PaymentLinksResourceInvoiceSettings copyWith({List<InvoiceAccountTaxIds>? Functi
           footer == other.footer &&
           issuer == other.issuer &&
           metadata == other.metadata &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountTaxIds ?? const []), Object.hashAll(customFields ?? const []), description, footer, issuer, metadata, renderingOptions); } 
-@override String toString() { return 'PaymentLinksResourceInvoiceSettings(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)'; } 
+          renderingOptions == other.renderingOptions;
+
+@override int get hashCode => Object.hash(Object.hashAll(accountTaxIds ?? const []), Object.hashAll(customFields ?? const []), description, footer, issuer, metadata, renderingOptions);
+
+@override String toString() => 'PaymentLinksResourceInvoiceSettings(accountTaxIds: $accountTaxIds, customFields: $customFields, description: $description, footer: $footer, issuer: $issuer, metadata: $metadata, renderingOptions: $renderingOptions)';
+
  }

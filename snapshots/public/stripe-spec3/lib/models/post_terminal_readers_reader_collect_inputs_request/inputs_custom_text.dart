@@ -46,12 +46,15 @@ InputsCustomText copyWith({String? Function()? description, String? Function()? 
   submitButton: submitButton != null ? submitButton() : this.submitButton,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputsCustomText &&
           description == other.description &&
           skipButton == other.skipButton &&
           submitButton == other.submitButton &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(description, skipButton, submitButton, title); } 
-@override String toString() { return 'InputsCustomText(description: $description, skipButton: $skipButton, submitButton: $submitButton, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(description, skipButton, submitButton, title);
+
+@override String toString() => 'InputsCustomText(description: $description, skipButton: $skipButton, submitButton: $submitButton, title: $title)';
+
  }

@@ -60,7 +60,7 @@ RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? aud
   videoPacketLoss: videoPacketLoss != null ? videoPacketLoss() : this.videoPacketLoss,
   videoStats: videoStats != null ? videoStats() : this.videoStats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitParticipantQualityStatsQualityStats &&
           audioBandwidth == other.audioBandwidth &&
           audioPacketLoss == other.audioPacketLoss &&
@@ -71,7 +71,10 @@ RealtimekitParticipantQualityStatsQualityStats copyWith({double? Function()? aud
           start == other.start &&
           videoBandwidth == other.videoBandwidth &&
           videoPacketLoss == other.videoPacketLoss &&
-          listEquals(videoStats, other.videoStats); } 
-@override int get hashCode { return Object.hash(audioBandwidth, audioPacketLoss, Object.hashAll(audioStats ?? const []), averageQuality, end, peerId, start, videoBandwidth, videoPacketLoss, Object.hashAll(videoStats ?? const [])); } 
-@override String toString() { return 'RealtimekitParticipantQualityStatsQualityStats(audioBandwidth: $audioBandwidth, audioPacketLoss: $audioPacketLoss, audioStats: $audioStats, averageQuality: $averageQuality, end: $end, peerId: $peerId, start: $start, videoBandwidth: $videoBandwidth, videoPacketLoss: $videoPacketLoss, videoStats: $videoStats)'; } 
+          listEquals(videoStats, other.videoStats);
+
+@override int get hashCode => Object.hash(audioBandwidth, audioPacketLoss, Object.hashAll(audioStats ?? const []), averageQuality, end, peerId, start, videoBandwidth, videoPacketLoss, Object.hashAll(videoStats ?? const []));
+
+@override String toString() => 'RealtimekitParticipantQualityStatsQualityStats(audioBandwidth: $audioBandwidth, audioPacketLoss: $audioPacketLoss, audioStats: $audioStats, averageQuality: $averageQuality, end: $end, peerId: $peerId, start: $start, videoBandwidth: $videoBandwidth, videoPacketLoss: $videoPacketLoss, videoStats: $videoStats)';
+
  }

@@ -24,10 +24,13 @@ SetStaticHeader copyWith({RulesetsRewriteHeaderOperation? operation, RulesetsRew
   operation: operation ?? this.operation,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetStaticHeader &&
           operation == other.operation &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(operation, value); } 
-@override String toString() { return 'SetStaticHeader(operation: $operation, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(operation, value);
+
+@override String toString() => 'SetStaticHeader(operation: $operation, value: $value)';
+
  }

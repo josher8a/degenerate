@@ -27,11 +27,14 @@ TelemetryKeysListResponseResult copyWith({String? key, double? lastSeenAt, Telem
   lastSeenAt: lastSeenAt ?? this.lastSeenAt,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TelemetryKeysListResponseResult &&
           key == other.key &&
           lastSeenAt == other.lastSeenAt &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(key, lastSeenAt, type); } 
-@override String toString() { return 'TelemetryKeysListResponseResult(key: $key, lastSeenAt: $lastSeenAt, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(key, lastSeenAt, type);
+
+@override String toString() => 'TelemetryKeysListResponseResult(key: $key, lastSeenAt: $lastSeenAt, type: $type)';
+
  }

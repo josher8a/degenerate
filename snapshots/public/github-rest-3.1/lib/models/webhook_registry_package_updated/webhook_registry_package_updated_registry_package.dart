@@ -81,7 +81,7 @@ WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynami
   registry: registry != null ? registry() : this.registry,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRegistryPackageUpdatedRegistryPackage &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -94,7 +94,10 @@ WebhookRegistryPackageUpdatedRegistryPackage copyWith({String? createdAt, dynami
           packageType == other.packageType &&
           packageVersion == other.packageVersion &&
           registry == other.registry &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt); } 
-@override String toString() { return 'WebhookRegistryPackageUpdatedRegistryPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, ecosystem, htmlUrl, id, name, namespace, owner, packageType, packageVersion, registry, updatedAt);
+
+@override String toString() => 'WebhookRegistryPackageUpdatedRegistryPackage(createdAt: $createdAt, description: $description, ecosystem: $ecosystem, htmlUrl: $htmlUrl, id: $id, name: $name, namespace: $namespace, owner: $owner, packageType: $packageType, packageVersion: $packageVersion, registry: $registry, updatedAt: $updatedAt)';
+
  }

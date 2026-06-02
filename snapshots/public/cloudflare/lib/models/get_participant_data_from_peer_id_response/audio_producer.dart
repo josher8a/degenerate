@@ -60,7 +60,7 @@ AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, Str
   ssrc: ssrc != null ? ssrc() : this.ssrc,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AudioProducer &&
           bytesSent == other.bytesSent &&
           jitter == other.jitter &&
@@ -71,7 +71,10 @@ AudioProducer copyWith({int? Function()? bytesSent, int? Function()? jitter, Str
           producerId == other.producerId &&
           rtt == other.rtt &&
           ssrc == other.ssrc &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(bytesSent, jitter, mid, mosQuality, packetsLost, packetsSent, producerId, rtt, ssrc, timestamp); } 
-@override String toString() { return 'AudioProducer(bytesSent: $bytesSent, jitter: $jitter, mid: $mid, mosQuality: $mosQuality, packetsLost: $packetsLost, packetsSent: $packetsSent, producerId: $producerId, rtt: $rtt, ssrc: $ssrc, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(bytesSent, jitter, mid, mosQuality, packetsLost, packetsSent, producerId, rtt, ssrc, timestamp);
+
+@override String toString() => 'AudioProducer(bytesSent: $bytesSent, jitter: $jitter, mid: $mid, mosQuality: $mosQuality, packetsLost: $packetsLost, packetsSent: $packetsSent, producerId: $producerId, rtt: $rtt, ssrc: $ssrc, timestamp: $timestamp)';
+
  }

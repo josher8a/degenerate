@@ -24,10 +24,13 @@ PreferredSchedulingTerm copyWith({NodeSelectorTerm? preference, int? weight, }) 
   preference: preference ?? this.preference,
   weight: weight ?? this.weight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PreferredSchedulingTerm &&
           preference == other.preference &&
-          weight == other.weight; } 
-@override int get hashCode { return Object.hash(preference, weight); } 
-@override String toString() { return 'PreferredSchedulingTerm(preference: $preference, weight: $weight)'; } 
+          weight == other.weight;
+
+@override int get hashCode => Object.hash(preference, weight);
+
+@override String toString() => 'PreferredSchedulingTerm(preference: $preference, weight: $weight)';
+
  }

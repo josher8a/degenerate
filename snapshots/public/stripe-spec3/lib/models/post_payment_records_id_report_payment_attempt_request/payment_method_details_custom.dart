@@ -31,10 +31,13 @@ PaymentMethodDetailsCustom copyWith({String? Function()? displayName, String? Fu
   displayName: displayName != null ? displayName() : this.displayName,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCustom &&
           displayName == other.displayName &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(displayName, type); } 
-@override String toString() { return 'PaymentMethodDetailsCustom(displayName: $displayName, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(displayName, type);
+
+@override String toString() => 'PaymentMethodDetailsCustom(displayName: $displayName, type: $type)';
+
  }

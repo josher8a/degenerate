@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionScheduleObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionScheduleObject($value)';
+
  }
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
 @immutable final class SubscriptionScheduleStatus {const SubscriptionScheduleStatus._(this.value);
@@ -51,10 +54,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionScheduleStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionScheduleStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionScheduleStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionScheduleStatus($value)';
+
  }
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.
 /// 
@@ -208,7 +214,7 @@ SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()
   subscription: subscription != null ? subscription() : this.subscription,
   testClock: testClock != null ? testClock() : this.testClock,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedule &&
           application == other.application &&
           billingMode == other.billingMode &&
@@ -229,7 +235,10 @@ SubscriptionSchedule copyWith({BillingPortalConfigurationApplication? Function()
           releasedSubscription == other.releasedSubscription &&
           status == other.status &&
           subscription == other.subscription &&
-          testClock == other.testClock; } 
-@override int get hashCode { return Object.hash(application, billingMode, canceledAt, completedAt, created, currentPhase, customer, customerAccount, defaultSettings, endBehavior, id, livemode, metadata, object, Object.hashAll(phases), releasedAt, releasedSubscription, status, subscription, testClock); } 
-@override String toString() { return 'SubscriptionSchedule(application: $application, billingMode: $billingMode, canceledAt: $canceledAt, completedAt: $completedAt, created: $created, currentPhase: $currentPhase, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phases: $phases, releasedAt: $releasedAt, releasedSubscription: $releasedSubscription, status: $status, subscription: $subscription, testClock: $testClock)'; } 
+          testClock == other.testClock;
+
+@override int get hashCode => Object.hash(application, billingMode, canceledAt, completedAt, created, currentPhase, customer, customerAccount, defaultSettings, endBehavior, id, livemode, metadata, object, Object.hashAll(phases), releasedAt, releasedSubscription, status, subscription, testClock);
+
+@override String toString() => 'SubscriptionSchedule(application: $application, billingMode: $billingMode, canceledAt: $canceledAt, completedAt: $completedAt, created: $created, currentPhase: $currentPhase, customer: $customer, customerAccount: $customerAccount, defaultSettings: $defaultSettings, endBehavior: $endBehavior, id: $id, livemode: $livemode, metadata: $metadata, object: $object, phases: $phases, releasedAt: $releasedAt, releasedSubscription: $releasedSubscription, status: $status, subscription: $subscription, testClock: $testClock)';
+
  }

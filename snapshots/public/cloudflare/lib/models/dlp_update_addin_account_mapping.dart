@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
 DlpUpdateAddinAccountMapping copyWith({DlpAddinAuth? authRequirements}) { return DlpUpdateAddinAccountMapping(
   authRequirements: authRequirements ?? this.authRequirements,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpUpdateAddinAccountMapping &&
-          authRequirements == other.authRequirements; } 
-@override int get hashCode { return authRequirements.hashCode; } 
-@override String toString() { return 'DlpUpdateAddinAccountMapping(authRequirements: $authRequirements)'; } 
+          authRequirements == other.authRequirements;
+
+@override int get hashCode => authRequirements.hashCode;
+
+@override String toString() => 'DlpUpdateAddinAccountMapping(authRequirements: $authRequirements)';
+
  }

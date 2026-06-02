@@ -43,13 +43,16 @@ Ases copyWith({int? asn, String? country, String? name, int? rank, int? Function
   rank: rank ?? this.rank,
   rankChange: rankChange != null ? rankChange() : this.rankChange,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Ases &&
           asn == other.asn &&
           country == other.country &&
           name == other.name &&
           rank == other.rank &&
-          rankChange == other.rankChange; } 
-@override int get hashCode { return Object.hash(asn, country, name, rank, rankChange); } 
-@override String toString() { return 'Ases(asn: $asn, country: $country, name: $name, rank: $rank, rankChange: $rankChange)'; } 
+          rankChange == other.rankChange;
+
+@override int get hashCode => Object.hash(asn, country, name, rank, rankChange);
+
+@override String toString() => 'Ases(asn: $asn, country: $country, name: $name, rank: $rank, rankChange: $rankChange)';
+
  }

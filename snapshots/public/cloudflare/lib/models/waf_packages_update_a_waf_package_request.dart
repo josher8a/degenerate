@@ -22,10 +22,13 @@ WafPackagesUpdateAWafPackageRequest copyWith({FirewallActionMode? Function()? ac
   actionMode: actionMode != null ? actionMode() : this.actionMode,
   sensitivity: sensitivity != null ? sensitivity() : this.sensitivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafPackagesUpdateAWafPackageRequest &&
           actionMode == other.actionMode &&
-          sensitivity == other.sensitivity; } 
-@override int get hashCode { return Object.hash(actionMode, sensitivity); } 
-@override String toString() { return 'WafPackagesUpdateAWafPackageRequest(actionMode: $actionMode, sensitivity: $sensitivity)'; } 
+          sensitivity == other.sensitivity;
+
+@override int get hashCode => Object.hash(actionMode, sensitivity);
+
+@override String toString() => 'WafPackagesUpdateAWafPackageRequest(actionMode: $actionMode, sensitivity: $sensitivity)';
+
  }

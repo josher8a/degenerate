@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancerStatus copyWith({List<LoadBalancerIngress>? Function()? ingress}) { return LoadBalancerStatus(
   ingress: ingress != null ? ingress() : this.ingress,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancerStatus &&
-          listEquals(ingress, other.ingress); } 
-@override int get hashCode { return Object.hashAll(ingress ?? const []); } 
-@override String toString() { return 'LoadBalancerStatus(ingress: $ingress)'; } 
+          listEquals(ingress, other.ingress);
+
+@override int get hashCode => Object.hashAll(ingress ?? const []);
+
+@override String toString() => 'LoadBalancerStatus(ingress: $ingress)';
+
  }

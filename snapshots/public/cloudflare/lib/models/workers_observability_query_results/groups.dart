@@ -22,10 +22,13 @@ Groups copyWith({String? key, dynamic value, }) { return Groups(
   key: key ?? this.key,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Groups &&
           key == other.key &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, value); } 
-@override String toString() { return 'Groups(key: $key, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(key, value);
+
+@override String toString() => 'Groups(key: $key, value: $value)';
+
  }

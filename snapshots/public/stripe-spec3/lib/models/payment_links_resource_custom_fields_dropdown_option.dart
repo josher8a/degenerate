@@ -29,10 +29,13 @@ PaymentLinksResourceCustomFieldsDropdownOption copyWith({String? label, String? 
   label: label ?? this.label,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsDropdownOption &&
           label == other.label &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(label, value); } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsDropdownOption(label: $label, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(label, value);
+
+@override String toString() => 'PaymentLinksResourceCustomFieldsDropdownOption(label: $label, value: $value)';
+
  }

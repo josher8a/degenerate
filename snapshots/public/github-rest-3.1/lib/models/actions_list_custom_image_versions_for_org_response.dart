@@ -21,10 +21,13 @@ ActionsListCustomImageVersionsForOrgResponse copyWith({int? totalCount, List<Act
   totalCount: totalCount ?? this.totalCount,
   imageVersions: imageVersions ?? this.imageVersions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListCustomImageVersionsForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(imageVersions, other.imageVersions); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(imageVersions)); } 
-@override String toString() { return 'ActionsListCustomImageVersionsForOrgResponse(totalCount: $totalCount, imageVersions: $imageVersions)'; } 
+          listEquals(imageVersions, other.imageVersions);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(imageVersions));
+
+@override String toString() => 'ActionsListCustomImageVersionsForOrgResponse(totalCount: $totalCount, imageVersions: $imageVersions)';
+
  }

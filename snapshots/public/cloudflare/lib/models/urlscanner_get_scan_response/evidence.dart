@@ -21,10 +21,13 @@ Evidence copyWith({List<String>? impliedBy, List<EvidencePatterns>? patterns, })
   impliedBy: impliedBy ?? this.impliedBy,
   patterns: patterns ?? this.patterns,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Evidence &&
           listEquals(impliedBy, other.impliedBy) &&
-          listEquals(patterns, other.patterns); } 
-@override int get hashCode { return Object.hash(Object.hashAll(impliedBy), Object.hashAll(patterns)); } 
-@override String toString() { return 'Evidence(impliedBy: $impliedBy, patterns: $patterns)'; } 
+          listEquals(patterns, other.patterns);
+
+@override int get hashCode => Object.hash(Object.hashAll(impliedBy), Object.hashAll(patterns));
+
+@override String toString() => 'Evidence(impliedBy: $impliedBy, patterns: $patterns)';
+
  }

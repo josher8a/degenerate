@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineSkillParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineSkillParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InlineSkillParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InlineSkillParamType($value)';
+
  }
 @immutable final class InlineSkillParam {const InlineSkillParam({required this.name, required this.description, required this.source, this.type = InlineSkillParamType.inline, });
 
@@ -59,12 +62,15 @@ InlineSkillParam copyWith({InlineSkillParamType? type, String? name, String? des
   description: description ?? this.description,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InlineSkillParam &&
           type == other.type &&
           name == other.name &&
           description == other.description &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(type, name, description, source); } 
-@override String toString() { return 'InlineSkillParam(type: $type, name: $name, description: $description, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(type, name, description, source);
+
+@override String toString() => 'InlineSkillParam(type: $type, name: $name, description: $description, source: $source)';
+
  }

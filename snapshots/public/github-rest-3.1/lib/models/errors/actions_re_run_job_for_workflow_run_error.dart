@@ -17,7 +17,8 @@ final class ActionsReRunJobForWorkflowRunError$403 extends ActionsReRunJobForWor
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActionsReRunJobForWorkflowRunError$Unknown extends ActionsReRunJobForWorkflowRunError {const ActionsReRunJobForWorkflowRunError$Unknown(this.statusCode, this.rawBody, );
 

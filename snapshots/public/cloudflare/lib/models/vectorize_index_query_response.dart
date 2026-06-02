@@ -22,10 +22,13 @@ VectorizeIndexQueryResponse copyWith({int? Function()? count, List<VectorizeInde
   count: count != null ? count() : this.count,
   matches: matches != null ? matches() : this.matches,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexQueryResponse &&
           count == other.count &&
-          listEquals(matches, other.matches); } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(matches ?? const [])); } 
-@override String toString() { return 'VectorizeIndexQueryResponse(count: $count, matches: $matches)'; } 
+          listEquals(matches, other.matches);
+
+@override int get hashCode => Object.hash(count, Object.hashAll(matches ?? const []));
+
+@override String toString() => 'VectorizeIndexQueryResponse(count: $count, matches: $matches)';
+
  }

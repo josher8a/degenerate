@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerCashBalanceTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerCashBalanceTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerCashBalanceTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerCashBalanceTransactionObject($value)';
+
  }
 /// The type of the cash balance transaction. New types may be added in future. See [Customer Balance](https://docs.stripe.com/payments/customer-balance#types) to learn more about these types.
 @immutable final class CustomerCashBalanceTransactionType {const CustomerCashBalanceTransactionType._(this.value);
@@ -63,10 +66,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerCashBalanceTransactionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerCashBalanceTransactionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerCashBalanceTransactionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerCashBalanceTransactionType($value)';
+
  }
 /// Customers with certain payments enabled have a cash balance, representing funds that were paid
 /// by the customer to a merchant, but have not yet been allocated to a payment. Cash Balance Transactions
@@ -189,7 +195,7 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
   type: type ?? this.type,
   unappliedFromPayment: unappliedFromPayment != null ? unappliedFromPayment() : this.unappliedFromPayment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerCashBalanceTransaction &&
           adjustedForOverdraft == other.adjustedForOverdraft &&
           appliedToPayment == other.appliedToPayment &&
@@ -206,7 +212,10 @@ CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTrans
           refundedFromPayment == other.refundedFromPayment &&
           transferredToBalance == other.transferredToBalance &&
           type == other.type &&
-          unappliedFromPayment == other.unappliedFromPayment; } 
-@override int get hashCode { return Object.hash(adjustedForOverdraft, appliedToPayment, created, currency, customer, customerAccount, endingBalance, funded, id, livemode, netAmount, object, refundedFromPayment, transferredToBalance, type, unappliedFromPayment); } 
-@override String toString() { return 'CustomerCashBalanceTransaction(adjustedForOverdraft: $adjustedForOverdraft, appliedToPayment: $appliedToPayment, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, endingBalance: $endingBalance, funded: $funded, id: $id, livemode: $livemode, netAmount: $netAmount, object: $object, refundedFromPayment: $refundedFromPayment, transferredToBalance: $transferredToBalance, type: $type, unappliedFromPayment: $unappliedFromPayment)'; } 
+          unappliedFromPayment == other.unappliedFromPayment;
+
+@override int get hashCode => Object.hash(adjustedForOverdraft, appliedToPayment, created, currency, customer, customerAccount, endingBalance, funded, id, livemode, netAmount, object, refundedFromPayment, transferredToBalance, type, unappliedFromPayment);
+
+@override String toString() => 'CustomerCashBalanceTransaction(adjustedForOverdraft: $adjustedForOverdraft, appliedToPayment: $appliedToPayment, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, endingBalance: $endingBalance, funded: $funded, id: $id, livemode: $livemode, netAmount: $netAmount, object: $object, refundedFromPayment: $refundedFromPayment, transferredToBalance: $transferredToBalance, type: $type, unappliedFromPayment: $unappliedFromPayment)';
+
  }

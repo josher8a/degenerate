@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookOrgBlockUnblockedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookOrgBlockUnblockedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookOrgBlockUnblockedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookOrgBlockUnblockedAction($value)';
+
  }
 @immutable final class WebhookOrgBlockUnblocked {const WebhookOrgBlockUnblocked({required this.action, required this.blockedUser, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });
 
@@ -69,7 +72,7 @@ WebhookOrgBlockUnblocked copyWith({WebhookOrgBlockUnblockedAction? action, Webho
   repository: repository != null ? repository() : this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookOrgBlockUnblocked &&
           action == other.action &&
           blockedUser == other.blockedUser &&
@@ -77,7 +80,10 @@ WebhookOrgBlockUnblocked copyWith({WebhookOrgBlockUnblockedAction? action, Webho
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, blockedUser, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookOrgBlockUnblocked(action: $action, blockedUser: $blockedUser, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, blockedUser, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookOrgBlockUnblocked(action: $action, blockedUser: $blockedUser, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

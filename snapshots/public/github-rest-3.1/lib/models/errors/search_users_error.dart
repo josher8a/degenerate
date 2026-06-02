@@ -18,13 +18,15 @@ final class SearchUsersError$422 extends SearchUsersError {const SearchUsersErro
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SearchUsersError$503 extends SearchUsersError {const SearchUsersError$503(this.error);
 
 final SearchUsersResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class SearchUsersError$Unknown extends SearchUsersError {const SearchUsersError$Unknown(this.statusCode, this.rawBody, );
 

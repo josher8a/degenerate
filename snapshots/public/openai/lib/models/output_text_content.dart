@@ -37,12 +37,15 @@ OutputTextContent copyWith({String? type, String? text, List<Annotation>? annota
   annotations: annotations ?? this.annotations,
   logprobs: logprobs ?? this.logprobs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutputTextContent &&
           type == other.type &&
           text == other.text &&
           listEquals(annotations, other.annotations) &&
-          listEquals(logprobs, other.logprobs); } 
-@override int get hashCode { return Object.hash(type, text, Object.hashAll(annotations), Object.hashAll(logprobs)); } 
-@override String toString() { return 'OutputTextContent(type: $type, text: $text, annotations: $annotations, logprobs: $logprobs)'; } 
+          listEquals(logprobs, other.logprobs);
+
+@override int get hashCode => Object.hash(type, text, Object.hashAll(annotations), Object.hashAll(logprobs));
+
+@override String toString() => 'OutputTextContent(type: $type, text: $text, annotations: $annotations, logprobs: $logprobs)';
+
  }

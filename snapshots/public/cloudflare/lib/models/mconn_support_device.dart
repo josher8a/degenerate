@@ -77,7 +77,7 @@ MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, Str
   pkiRotationStatusCode: pkiRotationStatusCode != null ? pkiRotationStatusCode() : this.pkiRotationStatusCode,
   serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSupportDevice &&
           cryptKeyRotationFinishedAt == other.cryptKeyRotationFinishedAt &&
           cryptKeyRotationStartedAt == other.cryptKeyRotationStartedAt &&
@@ -91,7 +91,10 @@ MconnSupportDevice copyWith({String? Function()? cryptKeyRotationFinishedAt, Str
           pkiRotationFinishedAt == other.pkiRotationFinishedAt &&
           pkiRotationStartedAt == other.pkiRotationStartedAt &&
           pkiRotationStatusCode == other.pkiRotationStatusCode &&
-          serialNumber == other.serialNumber; } 
-@override int get hashCode { return Object.hash(cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt, cryptKeyRotationStatusCode, deviceType, ekCert, id, imagedAt, lastUpdated, metadata, pkiRotationFinishedAt, pkiRotationStartedAt, pkiRotationStatusCode, serialNumber); } 
-@override String toString() { return 'MconnSupportDevice(cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt: $cryptKeyRotationStartedAt, cryptKeyRotationStatusCode: $cryptKeyRotationStatusCode, deviceType: $deviceType, ekCert: $ekCert, id: $id, imagedAt: $imagedAt, lastUpdated: $lastUpdated, metadata: $metadata, pkiRotationFinishedAt: $pkiRotationFinishedAt, pkiRotationStartedAt: $pkiRotationStartedAt, pkiRotationStatusCode: $pkiRotationStatusCode, serialNumber: $serialNumber)'; } 
+          serialNumber == other.serialNumber;
+
+@override int get hashCode => Object.hash(cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt, cryptKeyRotationStatusCode, deviceType, ekCert, id, imagedAt, lastUpdated, metadata, pkiRotationFinishedAt, pkiRotationStartedAt, pkiRotationStatusCode, serialNumber);
+
+@override String toString() => 'MconnSupportDevice(cryptKeyRotationFinishedAt: $cryptKeyRotationFinishedAt, cryptKeyRotationStartedAt: $cryptKeyRotationStartedAt, cryptKeyRotationStatusCode: $cryptKeyRotationStatusCode, deviceType: $deviceType, ekCert: $ekCert, id: $id, imagedAt: $imagedAt, lastUpdated: $lastUpdated, metadata: $metadata, pkiRotationFinishedAt: $pkiRotationFinishedAt, pkiRotationStartedAt: $pkiRotationStartedAt, pkiRotationStatusCode: $pkiRotationStatusCode, serialNumber: $serialNumber)';
+
  }

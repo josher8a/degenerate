@@ -22,10 +22,13 @@ InvoicePaymentMethodOptionsUsBankAccount copyWith({InvoicePaymentMethodOptionsUs
   financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
   verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsUsBankAccount &&
           financialConnections == other.financialConnections &&
-          verificationMethod == other.verificationMethod; } 
-@override int get hashCode { return Object.hash(financialConnections, verificationMethod); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, verificationMethod: $verificationMethod)'; } 
+          verificationMethod == other.verificationMethod;
+
+@override int get hashCode => Object.hash(financialConnections, verificationMethod);
+
+@override String toString() => 'InvoicePaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, verificationMethod: $verificationMethod)';
+
  }

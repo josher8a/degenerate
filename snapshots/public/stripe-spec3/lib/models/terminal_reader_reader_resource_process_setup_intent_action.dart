@@ -35,11 +35,14 @@ TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String? Function(
   processConfig: processConfig != null ? processConfig() : this.processConfig,
   setupIntent: setupIntent ?? this.setupIntent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceProcessSetupIntentAction &&
           generatedCard == other.generatedCard &&
           processConfig == other.processConfig &&
-          setupIntent == other.setupIntent; } 
-@override int get hashCode { return Object.hash(generatedCard, processConfig, setupIntent); } 
-@override String toString() { return 'TerminalReaderReaderResourceProcessSetupIntentAction(generatedCard: $generatedCard, processConfig: $processConfig, setupIntent: $setupIntent)'; } 
+          setupIntent == other.setupIntent;
+
+@override int get hashCode => Object.hash(generatedCard, processConfig, setupIntent);
+
+@override String toString() => 'TerminalReaderReaderResourceProcessSetupIntentAction(generatedCard: $generatedCard, processConfig: $processConfig, setupIntent: $setupIntent)';
+
  }

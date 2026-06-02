@@ -35,12 +35,15 @@ NotificationSettings copyWith({bool? Function()? enabled, bool? Function()? incl
   msg: msg != null ? msg() : this.msg,
   supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationSettings &&
           enabled == other.enabled &&
           includeContext == other.includeContext &&
           msg == other.msg &&
-          supportUrl == other.supportUrl; } 
-@override int get hashCode { return Object.hash(enabled, includeContext, msg, supportUrl); } 
-@override String toString() { return 'NotificationSettings(enabled: $enabled, includeContext: $includeContext, msg: $msg, supportUrl: $supportUrl)'; } 
+          supportUrl == other.supportUrl;
+
+@override int get hashCode => Object.hash(enabled, includeContext, msg, supportUrl);
+
+@override String toString() => 'NotificationSettings(enabled: $enabled, includeContext: $includeContext, msg: $msg, supportUrl: $supportUrl)';
+
  }

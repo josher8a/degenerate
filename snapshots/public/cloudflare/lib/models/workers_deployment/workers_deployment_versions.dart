@@ -27,10 +27,13 @@ WorkersDeploymentVersions copyWith({double? percentage, String? versionId, }) { 
   percentage: percentage ?? this.percentage,
   versionId: versionId ?? this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersDeploymentVersions &&
           percentage == other.percentage &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(percentage, versionId); } 
-@override String toString() { return 'WorkersDeploymentVersions(percentage: $percentage, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(percentage, versionId);
+
+@override String toString() => 'WorkersDeploymentVersions(percentage: $percentage, versionId: $versionId)';
+
  }

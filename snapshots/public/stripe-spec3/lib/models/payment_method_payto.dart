@@ -44,11 +44,14 @@ PaymentMethodPayto copyWith({String? Function()? bsbNumber, String? Function()? 
   last4: last4 != null ? last4() : this.last4,
   payId: payId != null ? payId() : this.payId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodPayto &&
           bsbNumber == other.bsbNumber &&
           last4 == other.last4 &&
-          payId == other.payId; } 
-@override int get hashCode { return Object.hash(bsbNumber, last4, payId); } 
-@override String toString() { return 'PaymentMethodPayto(bsbNumber: $bsbNumber, last4: $last4, payId: $payId)'; } 
+          payId == other.payId;
+
+@override int get hashCode => Object.hash(bsbNumber, last4, payId);
+
+@override String toString() => 'PaymentMethodPayto(bsbNumber: $bsbNumber, last4: $last4, payId: $payId)';
+
  }

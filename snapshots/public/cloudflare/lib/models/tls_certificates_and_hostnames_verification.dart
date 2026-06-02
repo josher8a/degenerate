@@ -42,10 +42,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificateStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCertificateStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCertificateStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesCertificateStatus($value)';
+
  }
 /// Certificate's signature algorithm.
 @immutable final class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature._(this.value);
@@ -70,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasSignature && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasSignature($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasSignature && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasSignature($value)';
+
  }
 /// Validation method in use for a certificate pack order.
 @immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod._(this.value);
@@ -98,10 +104,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasValidationMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasValidationMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)';
+
  }
 /// Status of the required verification information, omitted if verification status is unknown.
 extension type const TlsCertificatesAndHostnamesVerificationStatus(bool value) {
@@ -130,10 +139,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesVerificationType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesVerificationType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesVerificationType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesVerificationType($value)';
+
  }
 @immutable final class TlsCertificatesAndHostnamesVerification {const TlsCertificatesAndHostnamesVerification({required this.certificateStatus, this.brandCheck, this.certPackUuid, this.signature, this.validationMethod, this.verificationInfo, this.verificationStatus, this.verificationType, });
 
@@ -190,7 +202,7 @@ TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBra
   verificationStatus: verificationStatus != null ? verificationStatus() : this.verificationStatus,
   verificationType: verificationType != null ? verificationType() : this.verificationType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesVerification &&
           brandCheck == other.brandCheck &&
           certPackUuid == other.certPackUuid &&
@@ -199,7 +211,10 @@ TlsCertificatesAndHostnamesVerification copyWith({TlsCertificatesAndHostnamesBra
           validationMethod == other.validationMethod &&
           verificationInfo == other.verificationInfo &&
           verificationStatus == other.verificationStatus &&
-          verificationType == other.verificationType; } 
-@override int get hashCode { return Object.hash(brandCheck, certPackUuid, certificateStatus, signature, validationMethod, verificationInfo, verificationStatus, verificationType); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesVerification(brandCheck: $brandCheck, certPackUuid: $certPackUuid, certificateStatus: $certificateStatus, signature: $signature, validationMethod: $validationMethod, verificationInfo: $verificationInfo, verificationStatus: $verificationStatus, verificationType: $verificationType)'; } 
+          verificationType == other.verificationType;
+
+@override int get hashCode => Object.hash(brandCheck, certPackUuid, certificateStatus, signature, validationMethod, verificationInfo, verificationStatus, verificationType);
+
+@override String toString() => 'TlsCertificatesAndHostnamesVerification(brandCheck: $brandCheck, certPackUuid: $certPackUuid, certificateStatus: $certificateStatus, signature: $signature, validationMethod: $validationMethod, verificationInfo: $verificationInfo, verificationStatus: $verificationStatus, verificationType: $verificationType)';
+
  }

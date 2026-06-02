@@ -121,7 +121,7 @@ WebhooksPullRequest5MergedBy copyWith({Uri? Function()? avatarUrl, bool? Functio
   url: url != null ? url() : this.url,
   userViewType: userViewType != null ? userViewType() : this.userViewType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksPullRequest5MergedBy &&
           avatarUrl == other.avatarUrl &&
           deleted == other.deleted &&
@@ -144,7 +144,10 @@ WebhooksPullRequest5MergedBy copyWith({Uri? Function()? avatarUrl, bool? Functio
           subscriptionsUrl == other.subscriptionsUrl &&
           type == other.type &&
           url == other.url &&
-          userViewType == other.userViewType; } 
-@override int get hashCode { return Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType]); } 
-@override String toString() { return 'WebhooksPullRequest5MergedBy(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
+          userViewType == other.userViewType;
+
+@override int get hashCode => Object.hashAll([avatarUrl, deleted, email, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, name, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType]);
+
+@override String toString() => 'WebhooksPullRequest5MergedBy(avatarUrl: $avatarUrl, deleted: $deleted, email: $email, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, name: $name, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)';
+
  }

@@ -25,18 +25,13 @@ final class ErrorResponseSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is ErrorResponseSchema && error == other.error;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ErrorResponseSchema && error == other.error;
 
   @override
-  int get hashCode {
-    return error.hashCode;
-  }
+  int get hashCode => error.hashCode;
 
   @override
-  String toString() {
-    return 'ErrorResponseSchema(error: $error)';
-  }
+  String toString() => 'ErrorResponseSchema(error: $error)';
 }

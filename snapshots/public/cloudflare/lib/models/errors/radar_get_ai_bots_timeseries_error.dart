@@ -17,7 +17,8 @@ final class RadarGetAiBotsTimeseriesError$400 extends RadarGetAiBotsTimeseriesEr
 
 final RadarGetAiBotsTimeseriesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAiBotsTimeseriesError$Unknown extends RadarGetAiBotsTimeseriesError {const RadarGetAiBotsTimeseriesError$Unknown(this.statusCode, this.rawBody, );
 

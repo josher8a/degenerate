@@ -41,14 +41,17 @@ AutoragConfigGetJobResponseResult copyWith({String? Function()? endReason, Strin
   source: source ?? this.source,
   startedAt: startedAt != null ? startedAt() : this.startedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoragConfigGetJobResponseResult &&
           endReason == other.endReason &&
           endedAt == other.endedAt &&
           id == other.id &&
           lastSeenAt == other.lastSeenAt &&
           source == other.source &&
-          startedAt == other.startedAt; } 
-@override int get hashCode { return Object.hash(endReason, endedAt, id, lastSeenAt, source, startedAt); } 
-@override String toString() { return 'AutoragConfigGetJobResponseResult(endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)'; } 
+          startedAt == other.startedAt;
+
+@override int get hashCode => Object.hash(endReason, endedAt, id, lastSeenAt, source, startedAt);
+
+@override String toString() => 'AutoragConfigGetJobResponseResult(endReason: $endReason, endedAt: $endedAt, id: $id, lastSeenAt: $lastSeenAt, source: $source, startedAt: $startedAt)';
+
  }

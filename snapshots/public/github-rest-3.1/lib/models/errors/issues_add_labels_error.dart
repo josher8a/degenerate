@@ -19,19 +19,22 @@ final class IssuesAddLabelsError$404 extends IssuesAddLabelsError {const IssuesA
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesAddLabelsError$410 extends IssuesAddLabelsError {const IssuesAddLabelsError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesAddLabelsError$422 extends IssuesAddLabelsError {const IssuesAddLabelsError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class IssuesAddLabelsError$Unknown extends IssuesAddLabelsError {const IssuesAddLabelsError$Unknown(this.statusCode, this.rawBody, );
 

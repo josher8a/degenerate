@@ -119,7 +119,7 @@ MconnAdminConnector copyWith({MconnAccountId? accountId, bool? activated, String
   timezone: timezone ?? this.timezone,
   upgradeAsap: upgradeAsap ?? this.upgradeAsap,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnAdminConnector &&
           accountId == other.accountId &&
           activated == other.activated &&
@@ -138,7 +138,10 @@ MconnAdminConnector copyWith({MconnAccountId? accountId, bool? activated, String
           lastUpdated == other.lastUpdated &&
           notes == other.notes &&
           timezone == other.timezone &&
-          upgradeAsap == other.upgradeAsap; } 
-@override int get hashCode { return Object.hash(accountId, activated, cloudflaredTunnelId, cloudflaredTunnelToken, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap); } 
-@override String toString() { return 'MconnAdminConnector(accountId: $accountId, activated: $activated, cloudflaredTunnelId: $cloudflaredTunnelId, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
+          upgradeAsap == other.upgradeAsap;
+
+@override int get hashCode => Object.hash(accountId, activated, cloudflaredTunnelId, cloudflaredTunnelToken, cohortId, desiredVersion, deviceId, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, lastUpdated, notes, timezone, upgradeAsap);
+
+@override String toString() => 'MconnAdminConnector(accountId: $accountId, activated: $activated, cloudflaredTunnelId: $cloudflaredTunnelId, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortId: $cohortId, desiredVersion: $desiredVersion, deviceId: $deviceId, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, lastUpdated: $lastUpdated, notes: $notes, timezone: $timezone, upgradeAsap: $upgradeAsap)';
+
  }

@@ -21,10 +21,13 @@ PostFinancialConnectionsSessionsRequestFilters copyWith({List<BankConnectionsRes
   accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
   countries: countries != null ? countries() : this.countries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostFinancialConnectionsSessionsRequestFilters &&
           listEquals(accountSubcategories, other.accountSubcategories) &&
-          listEquals(countries, other.countries); } 
-@override int get hashCode { return Object.hash(Object.hashAll(accountSubcategories ?? const []), Object.hashAll(countries ?? const [])); } 
-@override String toString() { return 'PostFinancialConnectionsSessionsRequestFilters(accountSubcategories: $accountSubcategories, countries: $countries)'; } 
+          listEquals(countries, other.countries);
+
+@override int get hashCode => Object.hash(Object.hashAll(accountSubcategories ?? const []), Object.hashAll(countries ?? const []));
+
+@override String toString() => 'PostFinancialConnectionsSessionsRequestFilters(accountSubcategories: $accountSubcategories, countries: $countries)';
+
  }

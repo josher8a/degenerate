@@ -19,19 +19,22 @@ final class CodeScanningUploadSarifError$403 extends CodeScanningUploadSarifErro
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningUploadSarifError$404 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningUploadSarifError$503 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$503(this.error);
 
 final CodeScanningUploadSarifResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningUploadSarifError$Unknown extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError$Unknown(this.statusCode, this.rawBody, );
 

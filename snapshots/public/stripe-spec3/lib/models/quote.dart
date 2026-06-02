@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is QuoteObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'QuoteObject($value)';
+
  }
 /// The status of the quote.
 @immutable final class QuoteStatus {const QuoteStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is QuoteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'QuoteStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is QuoteStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'QuoteStatus($value)';
+
  }
 /// A Quote is a way to model prices that you'd like to provide to a customer.
 /// Once accepted, it will automatically create an invoice, subscription or subscription schedule.
@@ -319,7 +325,7 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, BillingPortalConfiguratio
   totalDetails: totalDetails ?? this.totalDetails,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Quote &&
           amountSubtotal == other.amountSubtotal &&
           amountTotal == other.amountTotal &&
@@ -356,7 +362,10 @@ Quote copyWith({int? amountSubtotal, int? amountTotal, BillingPortalConfiguratio
           subscriptionSchedule == other.subscriptionSchedule &&
           testClock == other.testClock &&
           totalDetails == other.totalDetails &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hashAll([amountSubtotal, amountTotal, application, applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, computed, created, currency, customer, customerAccount, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), expiresAt, footer, fromQuote, header, id, invoice, invoiceSettings, lineItems, livemode, metadata, number, object, onBehalfOf, status, statusTransitions, subscription, subscriptionData, subscriptionSchedule, testClock, totalDetails, transferData]); } 
-@override String toString() { return 'Quote(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, computed: $computed, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expiresAt: $expiresAt, footer: $footer, fromQuote: $fromQuote, header: $header, id: $id, invoice: $invoice, invoiceSettings: $invoiceSettings, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, number: $number, object: $object, onBehalfOf: $onBehalfOf, status: $status, statusTransitions: $statusTransitions, subscription: $subscription, subscriptionData: $subscriptionData, subscriptionSchedule: $subscriptionSchedule, testClock: $testClock, totalDetails: $totalDetails, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hashAll([amountSubtotal, amountTotal, application, applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, computed, created, currency, customer, customerAccount, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), expiresAt, footer, fromQuote, header, id, invoice, invoiceSettings, lineItems, livemode, metadata, number, object, onBehalfOf, status, statusTransitions, subscription, subscriptionData, subscriptionSchedule, testClock, totalDetails, transferData]);
+
+@override String toString() => 'Quote(amountSubtotal: $amountSubtotal, amountTotal: $amountTotal, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, computed: $computed, created: $created, currency: $currency, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expiresAt: $expiresAt, footer: $footer, fromQuote: $fromQuote, header: $header, id: $id, invoice: $invoice, invoiceSettings: $invoiceSettings, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, number: $number, object: $object, onBehalfOf: $onBehalfOf, status: $status, statusTransitions: $statusTransitions, subscription: $subscription, subscriptionData: $subscriptionData, subscriptionSchedule: $subscriptionSchedule, testClock: $testClock, totalDetails: $totalDetails, transferData: $transferData)';
+
  }

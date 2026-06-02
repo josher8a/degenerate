@@ -18,13 +18,15 @@ final class WorDescribeWorkflowVersionsError$400 extends WorDescribeWorkflowVers
 
 final WorDescribeWorkflowVersionsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorDescribeWorkflowVersionsError$404 extends WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersionsError$404(this.error);
 
 final WorDescribeWorkflowVersionsResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorDescribeWorkflowVersionsError$Unknown extends WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersionsError$Unknown(this.statusCode, this.rawBody, );
 

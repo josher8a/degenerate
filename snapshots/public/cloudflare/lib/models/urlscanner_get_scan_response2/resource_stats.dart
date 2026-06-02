@@ -57,7 +57,7 @@ ResourceStats copyWith({double? compression, double? count, List<String>? countr
   size: size ?? this.size,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceStats &&
           compression == other.compression &&
           count == other.count &&
@@ -66,7 +66,10 @@ ResourceStats copyWith({double? compression, double? count, List<String>? countr
           listEquals(ips, other.ips) &&
           percentage == other.percentage &&
           size == other.size &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(compression, count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), percentage, size, type); } 
-@override String toString() { return 'ResourceStats(compression: $compression, count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, percentage: $percentage, size: $size, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(compression, count, Object.hashAll(countries), encodedSize, Object.hashAll(ips), percentage, size, type);
+
+@override String toString() => 'ResourceStats(compression: $compression, count: $count, countries: $countries, encodedSize: $encodedSize, ips: $ips, percentage: $percentage, size: $size, type: $type)';
+
  }

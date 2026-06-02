@@ -21,10 +21,13 @@ ImagesImageVariantPatchRequest copyWith({ImagesImageVariantNeverRequireSignedUrL
   neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
   options: options ?? this.options,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesImageVariantPatchRequest &&
           neverRequireSignedUrLs == other.neverRequireSignedUrLs &&
-          options == other.options; } 
-@override int get hashCode { return Object.hash(neverRequireSignedUrLs, options); } 
-@override String toString() { return 'ImagesImageVariantPatchRequest(neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)'; } 
+          options == other.options;
+
+@override int get hashCode => Object.hash(neverRequireSignedUrLs, options);
+
+@override String toString() => 'ImagesImageVariantPatchRequest(neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)';
+
  }

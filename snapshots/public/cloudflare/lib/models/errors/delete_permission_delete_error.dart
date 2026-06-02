@@ -18,13 +18,15 @@ final class DeletePermissionDeleteError$400 extends DeletePermissionDeleteError 
 
 final DeletePermissionDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeletePermissionDeleteError$404 extends DeletePermissionDeleteError {const DeletePermissionDeleteError$404(this.error);
 
 final DeletePermissionDeleteResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class DeletePermissionDeleteError$Unknown extends DeletePermissionDeleteError {const DeletePermissionDeleteError$Unknown(this.statusCode, this.rawBody, );
 

@@ -52,13 +52,16 @@ ReferencesDomains copyWith({String? certificateId, String? hostname, String? id,
   zoneId: zoneId ?? this.zoneId,
   zoneName: zoneName ?? this.zoneName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReferencesDomains &&
           certificateId == other.certificateId &&
           hostname == other.hostname &&
           id == other.id &&
           zoneId == other.zoneId &&
-          zoneName == other.zoneName; } 
-@override int get hashCode { return Object.hash(certificateId, hostname, id, zoneId, zoneName); } 
-@override String toString() { return 'ReferencesDomains(certificateId: $certificateId, hostname: $hostname, id: $id, zoneId: $zoneId, zoneName: $zoneName)'; } 
+          zoneName == other.zoneName;
+
+@override int get hashCode => Object.hash(certificateId, hostname, id, zoneId, zoneName);
+
+@override String toString() => 'ReferencesDomains(certificateId: $certificateId, hostname: $hostname, id: $id, zoneId: $zoneId, zoneName: $zoneName)';
+
  }

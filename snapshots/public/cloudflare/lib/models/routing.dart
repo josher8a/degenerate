@@ -25,9 +25,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Routing copyWith({RoutingRouting? Function()? apiRouting}) { return Routing(
   apiRouting: apiRouting != null ? apiRouting() : this.apiRouting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Routing &&
-          apiRouting == other.apiRouting; } 
-@override int get hashCode { return apiRouting.hashCode; } 
-@override String toString() { return 'Routing(apiRouting: $apiRouting)'; } 
+          apiRouting == other.apiRouting;
+
+@override int get hashCode => apiRouting.hashCode;
+
+@override String toString() => 'Routing(apiRouting: $apiRouting)';
+
  }

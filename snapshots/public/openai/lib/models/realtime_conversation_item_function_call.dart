@@ -55,7 +55,7 @@ RealtimeConversationItemFunctionCall copyWith({String? Function()? id, RealtimeC
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemFunctionCall &&
           id == other.id &&
           object == other.object &&
@@ -63,7 +63,10 @@ RealtimeConversationItemFunctionCall copyWith({String? Function()? id, RealtimeC
           status == other.status &&
           callId == other.callId &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(id, object, type, status, callId, name, arguments); } 
-@override String toString() { return 'RealtimeConversationItemFunctionCall(id: $id, object: $object, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(id, object, type, status, callId, name, arguments);
+
+@override String toString() => 'RealtimeConversationItemFunctionCall(id: $id, object: $object, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments)';
+
  }

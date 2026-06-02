@@ -35,12 +35,15 @@ IamUserGroupPolicies copyWith({IamAccess? Function()? access, IamPolicyIdentifie
   permissionGroups: permissionGroups != null ? permissionGroups() : this.permissionGroups,
   resourceGroups: resourceGroups != null ? resourceGroups() : this.resourceGroups,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamUserGroupPolicies &&
           access == other.access &&
           id == other.id &&
           listEquals(permissionGroups, other.permissionGroups) &&
-          listEquals(resourceGroups, other.resourceGroups); } 
-@override int get hashCode { return Object.hash(access, id, Object.hashAll(permissionGroups ?? const []), Object.hashAll(resourceGroups ?? const [])); } 
-@override String toString() { return 'IamUserGroupPolicies(access: $access, id: $id, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)'; } 
+          listEquals(resourceGroups, other.resourceGroups);
+
+@override int get hashCode => Object.hash(access, id, Object.hashAll(permissionGroups ?? const []), Object.hashAll(resourceGroups ?? const []));
+
+@override String toString() => 'IamUserGroupPolicies(access: $access, id: $id, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)';
+
  }

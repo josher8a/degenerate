@@ -20,10 +20,13 @@ CreateSingleMember copyWith({CreateSingleMemberStatus? Function()? status, Creat
   status: status != null ? status() : this.status,
   user: user ?? this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateSingleMember &&
           status == other.status &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(status, user); } 
-@override String toString() { return 'CreateSingleMember(status: $status, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(status, user);
+
+@override String toString() => 'CreateSingleMember(status: $status, user: $user)';
+
  }

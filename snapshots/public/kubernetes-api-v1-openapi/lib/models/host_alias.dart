@@ -23,10 +23,13 @@ HostAlias copyWith({List<String>? Function()? hostnames, String? ip, }) { return
   hostnames: hostnames != null ? hostnames() : this.hostnames,
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostAlias &&
           listEquals(hostnames, other.hostnames) &&
-          ip == other.ip; } 
-@override int get hashCode { return Object.hash(Object.hashAll(hostnames ?? const []), ip); } 
-@override String toString() { return 'HostAlias(hostnames: $hostnames, ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => Object.hash(Object.hashAll(hostnames ?? const []), ip);
+
+@override String toString() => 'HostAlias(hostnames: $hostnames, ip: $ip)';
+
  }

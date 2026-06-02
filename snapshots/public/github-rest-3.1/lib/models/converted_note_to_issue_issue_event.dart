@@ -69,7 +69,7 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
   performedViaGithubApp: performedViaGithubApp ?? this.performedViaGithubApp,
   projectCard: projectCard != null ? projectCard() : this.projectCard,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConvertedNoteToIssueIssueEvent &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -80,7 +80,10 @@ ConvertedNoteToIssueIssueEvent copyWith({int? id, String? nodeId, String? url, S
           commitUrl == other.commitUrl &&
           createdAt == other.createdAt &&
           performedViaGithubApp == other.performedViaGithubApp &&
-          projectCard == other.projectCard; } 
-@override int get hashCode { return Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard); } 
-@override String toString() { return 'ConvertedNoteToIssueIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)'; } 
+          projectCard == other.projectCard;
+
+@override int get hashCode => Object.hash(id, nodeId, url, actor, event, commitId, commitUrl, createdAt, performedViaGithubApp, projectCard);
+
+@override String toString() => 'ConvertedNoteToIssueIssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, performedViaGithubApp: $performedViaGithubApp, projectCard: $projectCard)';
+
  }

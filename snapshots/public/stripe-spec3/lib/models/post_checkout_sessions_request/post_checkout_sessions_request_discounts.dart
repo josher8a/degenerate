@@ -31,10 +31,13 @@ PostCheckoutSessionsRequestDiscounts copyWith({String? Function()? coupon, Strin
   coupon: coupon != null ? coupon() : this.coupon,
   promotionCode: promotionCode != null ? promotionCode() : this.promotionCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestDiscounts &&
           coupon == other.coupon &&
-          promotionCode == other.promotionCode; } 
-@override int get hashCode { return Object.hash(coupon, promotionCode); } 
-@override String toString() { return 'PostCheckoutSessionsRequestDiscounts(coupon: $coupon, promotionCode: $promotionCode)'; } 
+          promotionCode == other.promotionCode;
+
+@override int get hashCode => Object.hash(coupon, promotionCode);
+
+@override String toString() => 'PostCheckoutSessionsRequestDiscounts(coupon: $coupon, promotionCode: $promotionCode)';
+
  }

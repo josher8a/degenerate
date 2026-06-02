@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
 VectorizeUpdateIndexRequest copyWith({VectorizeIndexDescription? description}) { return VectorizeUpdateIndexRequest(
   description: description ?? this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeUpdateIndexRequest &&
-          description == other.description; } 
-@override int get hashCode { return description.hashCode; } 
-@override String toString() { return 'VectorizeUpdateIndexRequest(description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => description.hashCode;
+
+@override String toString() => 'VectorizeUpdateIndexRequest(description: $description)';
+
  }

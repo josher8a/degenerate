@@ -32,10 +32,13 @@ RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 copyWith({String? http, 
   http: http ?? this.http,
   https: https ?? this.https,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 &&
           http == other.http &&
-          https == other.https; } 
-@override int get hashCode { return Object.hash(http, https); } 
-@override String toString() { return 'RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(http: $http, https: $https)'; } 
+          https == other.https;
+
+@override int get hashCode => Object.hash(http, https);
+
+@override String toString() => 'RadarGetHttpSummaryByHttpProtocolResponseResultSummary0(http: $http, https: $https)';
+
  }

@@ -23,10 +23,13 @@ SetupAttemptPaymentMethodDetailsCardPresent copyWith({GeneratedCard? Function()?
   generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
   offline: offline != null ? offline() : this.offline,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetailsCardPresent &&
           generatedCard == other.generatedCard &&
-          offline == other.offline; } 
-@override int get hashCode { return Object.hash(generatedCard, offline); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardPresent(generatedCard: $generatedCard, offline: $offline)'; } 
+          offline == other.offline;
+
+@override int get hashCode => Object.hash(generatedCard, offline);
+
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCardPresent(generatedCard: $generatedCard, offline: $offline)';
+
  }

@@ -41,13 +41,16 @@ ZoneLockdownCreateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations
   priority: priority != null ? priority() : this.priority,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLockdownCreateAZoneLockdownRuleRequest &&
           listEquals(configurations, other.configurations) &&
           description == other.description &&
           paused == other.paused &&
           priority == other.priority &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(configurations), description, paused, priority, Object.hashAll(urls)); } 
-@override String toString() { return 'ZoneLockdownCreateAZoneLockdownRuleRequest(configurations: $configurations, description: $description, paused: $paused, priority: $priority, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(Object.hashAll(configurations), description, paused, priority, Object.hashAll(urls));
+
+@override String toString() => 'ZoneLockdownCreateAZoneLockdownRuleRequest(configurations: $configurations, description: $description, paused: $paused, priority: $priority, urls: $urls)';
+
  }

@@ -28,10 +28,13 @@ TeamsDevicesDiskEncryptionInputRequest copyWith({List<String>? Function()? check
   checkDisks: checkDisks != null ? checkDisks() : this.checkDisks,
   requireAll: requireAll != null ? requireAll() : this.requireAll,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDiskEncryptionInputRequest &&
           listEquals(checkDisks, other.checkDisks) &&
-          requireAll == other.requireAll; } 
-@override int get hashCode { return Object.hash(Object.hashAll(checkDisks ?? const []), requireAll); } 
-@override String toString() { return 'TeamsDevicesDiskEncryptionInputRequest(checkDisks: $checkDisks, requireAll: $requireAll)'; } 
+          requireAll == other.requireAll;
+
+@override int get hashCode => Object.hash(Object.hashAll(checkDisks ?? const []), requireAll);
+
+@override String toString() => 'TeamsDevicesDiskEncryptionInputRequest(checkDisks: $checkDisks, requireAll: $requireAll)';
+
  }

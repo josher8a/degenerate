@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersBindingKindSecretKeyFormat && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkersBindingKindSecretKeyFormat($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersBindingKindSecretKeyFormat && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersBindingKindSecretKeyFormat($value)';
+
  }
 @immutable final class Usages {const Usages._(this.value);
 
@@ -68,10 +71,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Usages && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Usages($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Usages && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Usages($value)';
+
  }
 @immutable final class WorkersBindingKindSecretKey {const WorkersBindingKindSecretKey({required this.algorithm, required this.format, required this.name, required this.type, required this.usages, this.keyBase64, this.keyJwk, });
 
@@ -132,7 +138,7 @@ WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBin
   type: type ?? this.type,
   usages: usages ?? this.usages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindSecretKey &&
           algorithm == other.algorithm &&
           format == other.format &&
@@ -140,7 +146,10 @@ WorkersBindingKindSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBin
           keyJwk == other.keyJwk &&
           name == other.name &&
           type == other.type &&
-          listEquals(usages, other.usages); } 
-@override int get hashCode { return Object.hash(algorithm, format, keyBase64, keyJwk, name, type, Object.hashAll(usages)); } 
-@override String toString() { return 'WorkersBindingKindSecretKey(algorithm: $algorithm, format: $format, keyBase64: $keyBase64, keyJwk: $keyJwk, name: $name, type: $type, usages: $usages)'; } 
+          listEquals(usages, other.usages);
+
+@override int get hashCode => Object.hash(algorithm, format, keyBase64, keyJwk, name, type, Object.hashAll(usages));
+
+@override String toString() => 'WorkersBindingKindSecretKey(algorithm: $algorithm, format: $format, keyBase64: $keyBase64, keyJwk: $keyJwk, name: $name, type: $type, usages: $usages)';
+
  }

@@ -55,7 +55,7 @@ ListOutgoingCallerIdResponse copyWith({List<AccountOutgoingCallerId>? Function()
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListOutgoingCallerIdResponse &&
           listEquals(outgoingCallerIds, other.outgoingCallerIds) &&
           end == other.end &&
@@ -65,7 +65,10 @@ ListOutgoingCallerIdResponse copyWith({List<AccountOutgoingCallerId>? Function()
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(outgoingCallerIds ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListOutgoingCallerIdResponse(outgoingCallerIds: $outgoingCallerIds, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(outgoingCallerIds ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
+
+@override String toString() => 'ListOutgoingCallerIdResponse(outgoingCallerIds: $outgoingCallerIds, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+
  }

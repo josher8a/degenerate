@@ -26,10 +26,13 @@ ResourceTaggingCursorResultInfo copyWith({int? Function()? count, String? Functi
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingCursorResultInfo &&
           count == other.count &&
-          cursor == other.cursor; } 
-@override int get hashCode { return Object.hash(count, cursor); } 
-@override String toString() { return 'ResourceTaggingCursorResultInfo(count: $count, cursor: $cursor)'; } 
+          cursor == other.cursor;
+
+@override int get hashCode => Object.hash(count, cursor);
+
+@override String toString() => 'ResourceTaggingCursorResultInfo(count: $count, cursor: $cursor)';
+
  }

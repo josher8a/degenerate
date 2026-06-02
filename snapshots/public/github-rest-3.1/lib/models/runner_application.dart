@@ -45,14 +45,17 @@ RunnerApplication copyWith({String? os, String? architecture, String? downloadUr
   tempDownloadToken: tempDownloadToken != null ? tempDownloadToken() : this.tempDownloadToken,
   sha256Checksum: sha256Checksum != null ? sha256Checksum() : this.sha256Checksum,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunnerApplication &&
           os == other.os &&
           architecture == other.architecture &&
           downloadUrl == other.downloadUrl &&
           filename == other.filename &&
           tempDownloadToken == other.tempDownloadToken &&
-          sha256Checksum == other.sha256Checksum; } 
-@override int get hashCode { return Object.hash(os, architecture, downloadUrl, filename, tempDownloadToken, sha256Checksum); } 
-@override String toString() { return 'RunnerApplication(os: $os, architecture: $architecture, downloadUrl: $downloadUrl, filename: $filename, tempDownloadToken: $tempDownloadToken, sha256Checksum: $sha256Checksum)'; } 
+          sha256Checksum == other.sha256Checksum;
+
+@override int get hashCode => Object.hash(os, architecture, downloadUrl, filename, tempDownloadToken, sha256Checksum);
+
+@override String toString() => 'RunnerApplication(os: $os, architecture: $architecture, downloadUrl: $downloadUrl, filename: $filename, tempDownloadToken: $tempDownloadToken, sha256Checksum: $sha256Checksum)';
+
  }

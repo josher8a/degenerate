@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AaaAuditLogsActorType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AaaAuditLogsActorType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AaaAuditLogsActorType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AaaAuditLogsActorType($value)';
+
  }
 @immutable final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });
 
@@ -70,12 +73,15 @@ AaaAuditLogsActor copyWith({String? Function()? email, String? Function()? id, S
   ip: ip != null ? ip() : this.ip,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogsActor &&
           email == other.email &&
           id == other.id &&
           ip == other.ip &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(email, id, ip, type); } 
-@override String toString() { return 'AaaAuditLogsActor(email: $email, id: $id, ip: $ip, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(email, id, ip, type);
+
+@override String toString() => 'AaaAuditLogsActor(email: $email, id: $id, ip: $ip, type: $type)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HttpMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HttpMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HttpMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HttpMethod($value)';
+
  }
 /// Details about the request forwarded to the destination endpoint.
 @immutable final class ForwardedRequestDetails {const ForwardedRequestDetails({required this.body, required this.headers, required this.httpMethod, });
@@ -57,11 +60,14 @@ ForwardedRequestDetails copyWith({String? body, List<ForwardedRequestHeader>? he
   headers: headers ?? this.headers,
   httpMethod: httpMethod ?? this.httpMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ForwardedRequestDetails &&
           body == other.body &&
           listEquals(headers, other.headers) &&
-          httpMethod == other.httpMethod; } 
-@override int get hashCode { return Object.hash(body, Object.hashAll(headers), httpMethod); } 
-@override String toString() { return 'ForwardedRequestDetails(body: $body, headers: $headers, httpMethod: $httpMethod)'; } 
+          httpMethod == other.httpMethod;
+
+@override int get hashCode => Object.hash(body, Object.hashAll(headers), httpMethod);
+
+@override String toString() => 'ForwardedRequestDetails(body: $body, headers: $headers, httpMethod: $httpMethod)';
+
  }

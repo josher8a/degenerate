@@ -16,21 +16,29 @@ dynamic toJson() { return value; }
 
 final TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 _value;
 
-@override TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 get value { return _value; } 
+@override TlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 get value => _value;
+
 @override dynamic toJson() { return value.toJson(); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.tlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1($_value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesOwnershipVerificationHttpTlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1 && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.tlsCertificatesAndHostnamesOwnershipVerificationHttpVariant1($_value)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 @immutable final class TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown extends TlsCertificatesAndHostnamesOwnershipVerificationHttp {const TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown(this._value);
 
 final dynamic _value;
 
-@override dynamic get value { return _value ?? ''; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.unknown($_value)'; } 
+@override dynamic get value => _value ?? '';
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesOwnershipVerificationHttp$Unknown && _value == other._value;
+
+@override int get hashCode => _value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesOwnershipVerificationHttp.unknown($_value)';
+
  }

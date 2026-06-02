@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryInboundTransferObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransferObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryInboundTransferObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryInboundTransferObject($value)';
+
  }
 /// Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`. An InboundTransfer is `processing` if it is created and pending. The status changes to `succeeded` once the funds have been "confirmed" and a `transaction` is created and posted. The status changes to `failed` if the transfer fails.
 @immutable final class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryInboundTransferStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryInboundTransferStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryInboundTransferStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryInboundTransferStatus($value)';
+
  }
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.
 /// 
@@ -214,7 +220,7 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
   statusTransitions: statusTransitions ?? this.statusTransitions,
   transaction: transaction != null ? transaction() : this.transaction,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryInboundTransfer &&
           amount == other.amount &&
           cancelable == other.cancelable &&
@@ -235,7 +241,10 @@ TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, S
           statementDescriptor == other.statementDescriptor &&
           status == other.status &&
           statusTransitions == other.statusTransitions &&
-          transaction == other.transaction; } 
-@override int get hashCode { return Object.hash(amount, cancelable, created, currency, description, failureDetails, financialAccount, hostedRegulatoryReceiptUrl, id, linkedFlows, livemode, metadata, object, originPaymentMethod, originPaymentMethodDetails, returned, statementDescriptor, status, statusTransitions, transaction); } 
-@override String toString() { return 'TreasuryInboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, failureDetails: $failureDetails, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, linkedFlows: $linkedFlows, livemode: $livemode, metadata: $metadata, object: $object, originPaymentMethod: $originPaymentMethod, originPaymentMethodDetails: $originPaymentMethodDetails, returned: $returned, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)'; } 
+          transaction == other.transaction;
+
+@override int get hashCode => Object.hash(amount, cancelable, created, currency, description, failureDetails, financialAccount, hostedRegulatoryReceiptUrl, id, linkedFlows, livemode, metadata, object, originPaymentMethod, originPaymentMethodDetails, returned, statementDescriptor, status, statusTransitions, transaction);
+
+@override String toString() => 'TreasuryInboundTransfer(amount: $amount, cancelable: $cancelable, created: $created, currency: $currency, description: $description, failureDetails: $failureDetails, financialAccount: $financialAccount, hostedRegulatoryReceiptUrl: $hostedRegulatoryReceiptUrl, id: $id, linkedFlows: $linkedFlows, livemode: $livemode, metadata: $metadata, object: $object, originPaymentMethod: $originPaymentMethod, originPaymentMethodDetails: $originPaymentMethodDetails, returned: $returned, statementDescriptor: $statementDescriptor, status: $status, statusTransitions: $statusTransitions, transaction: $transaction)';
+
  }

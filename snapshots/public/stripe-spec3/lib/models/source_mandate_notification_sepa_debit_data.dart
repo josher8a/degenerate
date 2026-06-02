@@ -44,11 +44,14 @@ SourceMandateNotificationSepaDebitData copyWith({String? Function()? creditorIde
   last4: last4 != null ? last4() : this.last4,
   mandateReference: mandateReference != null ? mandateReference() : this.mandateReference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceMandateNotificationSepaDebitData &&
           creditorIdentifier == other.creditorIdentifier &&
           last4 == other.last4 &&
-          mandateReference == other.mandateReference; } 
-@override int get hashCode { return Object.hash(creditorIdentifier, last4, mandateReference); } 
-@override String toString() { return 'SourceMandateNotificationSepaDebitData(creditorIdentifier: $creditorIdentifier, last4: $last4, mandateReference: $mandateReference)'; } 
+          mandateReference == other.mandateReference;
+
+@override int get hashCode => Object.hash(creditorIdentifier, last4, mandateReference);
+
+@override String toString() => 'SourceMandateNotificationSepaDebitData(creditorIdentifier: $creditorIdentifier, last4: $last4, mandateReference: $mandateReference)';
+
  }

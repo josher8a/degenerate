@@ -17,7 +17,8 @@ final class LoraError$400 extends LoraError {const LoraError$400(this.error);
 
 final $2LoraResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class LoraError$Unknown extends LoraError {const LoraError$Unknown(this.statusCode, this.rawBody, );
 

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallBypassName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallBypassName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FirewallBypassName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FirewallBypassName($value)';
+
  }
 @immutable final class FirewallBypass2 {const FirewallBypass2({this.name, this.value, });
 
@@ -45,10 +48,13 @@ FirewallBypass2 copyWith({FirewallBypassName? Function()? name, String? Function
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallBypass2 &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'FirewallBypass2(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'FirewallBypass2(name: $name, value: $value)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesResponseBackground && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesResponseBackground($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImagesResponseBackground && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImagesResponseBackground($value)';
+
  }
 /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
 @immutable final class ImagesResponseSize {const ImagesResponseSize._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesResponseSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesResponseSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImagesResponseSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImagesResponseSize($value)';
+
  }
 /// The quality of the image generated. Either `low`, `medium`, or `high`.
 @immutable final class ImagesResponseQuality {const ImagesResponseQuality._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ImagesResponseQuality && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ImagesResponseQuality($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ImagesResponseQuality && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImagesResponseQuality($value)';
+
  }
 /// The response from the image generation endpoint.
 @immutable final class ImagesResponse {const ImagesResponse({required this.created, this.data, this.background, this.outputFormat, this.size, this.quality, this.usage, });
@@ -133,7 +142,7 @@ ImagesResponse copyWith({int? created, List<Image>? Function()? data, ImagesResp
   quality: quality != null ? quality() : this.quality,
   usage: usage != null ? usage() : this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ImagesResponse &&
           created == other.created &&
           listEquals(data, other.data) &&
@@ -141,7 +150,10 @@ ImagesResponse copyWith({int? created, List<Image>? Function()? data, ImagesResp
           outputFormat == other.outputFormat &&
           size == other.size &&
           quality == other.quality &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(created, Object.hashAll(data ?? const []), background, outputFormat, size, quality, usage); } 
-@override String toString() { return 'ImagesResponse(created: $created, data: $data, background: $background, outputFormat: $outputFormat, size: $size, quality: $quality, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(created, Object.hashAll(data ?? const []), background, outputFormat, size, quality, usage);
+
+@override String toString() => 'ImagesResponse(created: $created, data: $data, background: $background, outputFormat: $outputFormat, size: $size, quality: $quality, usage: $usage)';
+
  }

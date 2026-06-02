@@ -73,7 +73,7 @@ ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? des
   numItems: numItems ?? this.numItems,
   numReferencingFilters: numReferencingFilters ?? this.numReferencingFilters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsList &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -82,7 +82,10 @@ ListsList copyWith({ListsCreatedOn? createdOn, ListsDescription? Function()? des
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           numItems == other.numItems &&
-          numReferencingFilters == other.numReferencingFilters; } 
-@override int get hashCode { return Object.hash(createdOn, description, id, kind, modifiedOn, name, numItems, numReferencingFilters); } 
-@override String toString() { return 'ListsList(createdOn: $createdOn, description: $description, id: $id, kind: $kind, modifiedOn: $modifiedOn, name: $name, numItems: $numItems, numReferencingFilters: $numReferencingFilters)'; } 
+          numReferencingFilters == other.numReferencingFilters;
+
+@override int get hashCode => Object.hash(createdOn, description, id, kind, modifiedOn, name, numItems, numReferencingFilters);
+
+@override String toString() => 'ListsList(createdOn: $createdOn, description: $description, id: $id, kind: $kind, modifiedOn: $modifiedOn, name: $name, numItems: $numItems, numReferencingFilters: $numReferencingFilters)';
+
  }

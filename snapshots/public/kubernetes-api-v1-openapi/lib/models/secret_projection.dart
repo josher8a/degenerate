@@ -31,11 +31,14 @@ SecretProjection copyWith({List<KeyToPath>? Function()? items, String Function()
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecretProjection &&
           listEquals(items, other.items) &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(Object.hashAll(items ?? const []), name, optional); } 
-@override String toString() { return 'SecretProjection(items: $items, name: $name, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(Object.hashAll(items ?? const []), name, optional);
+
+@override String toString() => 'SecretProjection(items: $items, name: $name, optional: $optional)';
+
  }

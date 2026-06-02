@@ -47,14 +47,17 @@ DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetC
   secret: secret != null ? secret() : this.secret,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDatasetNewVersion &&
           caseSensitive == other.caseSensitive &&
           listEquals(columns, other.columns) &&
           encodingVersion == other.encodingVersion &&
           maxCells == other.maxCells &&
           secret == other.secret &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(caseSensitive, Object.hashAll(columns ?? const []), encodingVersion, maxCells, secret, version); } 
-@override String toString() { return 'DlpDatasetNewVersion(caseSensitive: $caseSensitive, columns: $columns, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(caseSensitive, Object.hashAll(columns ?? const []), encodingVersion, maxCells, secret, version);
+
+@override String toString() => 'DlpDatasetNewVersion(caseSensitive: $caseSensitive, columns: $columns, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)';
+
  }

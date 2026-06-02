@@ -21,10 +21,13 @@ Messages10Functions copyWith({String? code, String? name, }) { return Messages10
   code: code ?? this.code,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages10Functions &&
           code == other.code &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(code, name); } 
-@override String toString() { return 'Messages10Functions(code: $code, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(code, name);
+
+@override String toString() => 'Messages10Functions(code: $code, name: $name)';
+
  }

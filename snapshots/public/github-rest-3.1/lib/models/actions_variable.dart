@@ -37,12 +37,15 @@ ActionsVariable copyWith({String? name, String? value, DateTime? createdAt, Date
   createdAt: createdAt ?? this.createdAt,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsVariable &&
           name == other.name &&
           value == other.value &&
           createdAt == other.createdAt &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(name, value, createdAt, updatedAt); } 
-@override String toString() { return 'ActionsVariable(name: $name, value: $value, createdAt: $createdAt, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(name, value, createdAt, updatedAt);
+
+@override String toString() => 'ActionsVariable(name: $name, value: $value, createdAt: $createdAt, updatedAt: $updatedAt)';
+
  }

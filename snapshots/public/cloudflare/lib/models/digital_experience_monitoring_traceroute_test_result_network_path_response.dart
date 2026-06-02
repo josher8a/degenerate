@@ -39,13 +39,16 @@ DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse copyWith({Str
   testId: testId != null ? testId() : this.testId,
   testName: testName != null ? testName() : this.testName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse &&
           deviceName == other.deviceName &&
           listEquals(hops, other.hops) &&
           resultId == other.resultId &&
           testId == other.testId &&
-          testName == other.testName; } 
-@override int get hashCode { return Object.hash(deviceName, Object.hashAll(hops), resultId, testId, testName); } 
-@override String toString() { return 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(deviceName: $deviceName, hops: $hops, resultId: $resultId, testId: $testId, testName: $testName)'; } 
+          testName == other.testName;
+
+@override int get hashCode => Object.hash(deviceName, Object.hashAll(hops), resultId, testId, testName);
+
+@override String toString() => 'DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse(deviceName: $deviceName, hops: $hops, resultId: $resultId, testId: $testId, testName: $testName)';
+
  }

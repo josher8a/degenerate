@@ -23,9 +23,12 @@ return errors; }
 PostIssuingCardholdersCardholderRequestCompany copyWith({String? Function()? taxId}) { return PostIssuingCardholdersCardholderRequestCompany(
   taxId: taxId != null ? taxId() : this.taxId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostIssuingCardholdersCardholderRequestCompany &&
-          taxId == other.taxId; } 
-@override int get hashCode { return taxId.hashCode; } 
-@override String toString() { return 'PostIssuingCardholdersCardholderRequestCompany(taxId: $taxId)'; } 
+          taxId == other.taxId;
+
+@override int get hashCode => taxId.hashCode;
+
+@override String toString() => 'PostIssuingCardholdersCardholderRequestCompany(taxId: $taxId)';
+
  }

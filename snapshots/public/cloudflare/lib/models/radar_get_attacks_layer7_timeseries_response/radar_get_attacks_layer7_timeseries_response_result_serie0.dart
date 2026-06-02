@@ -21,10 +21,13 @@ RadarGetAttacksLayer7TimeseriesResponseResultSerie0 copyWith({List<DateTime>? ti
   timestamps: timestamps ?? this.timestamps,
   values: values ?? this.values,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer7TimeseriesResponseResultSerie0 &&
           listEquals(timestamps, other.timestamps) &&
-          listEquals(values, other.values); } 
-@override int get hashCode { return Object.hash(Object.hashAll(timestamps), Object.hashAll(values)); } 
-@override String toString() { return 'RadarGetAttacksLayer7TimeseriesResponseResultSerie0(timestamps: $timestamps, values: $values)'; } 
+          listEquals(values, other.values);
+
+@override int get hashCode => Object.hash(Object.hashAll(timestamps), Object.hashAll(values));
+
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesResponseResultSerie0(timestamps: $timestamps, values: $values)';
+
  }

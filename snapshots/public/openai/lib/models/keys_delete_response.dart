@@ -28,11 +28,14 @@ KeysDeleteResponse copyWith({String? Function()? id, String? Function()? object,
   object: object != null ? object() : this.object,
   deleted: deleted != null ? deleted() : this.deleted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeysDeleteResponse &&
           id == other.id &&
           object == other.object &&
-          deleted == other.deleted; } 
-@override int get hashCode { return Object.hash(id, object, deleted); } 
-@override String toString() { return 'KeysDeleteResponse(id: $id, object: $object, deleted: $deleted)'; } 
+          deleted == other.deleted;
+
+@override int get hashCode => Object.hash(id, object, deleted);
+
+@override String toString() => 'KeysDeleteResponse(id: $id, object: $object, deleted: $deleted)';
+
  }

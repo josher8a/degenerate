@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope
 ApplicabilityConfig copyWith({ApplicabilityConfigScope? scope}) { return ApplicabilityConfig(
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ApplicabilityConfig &&
-          scope == other.scope; } 
-@override int get hashCode { return scope.hashCode; } 
-@override String toString() { return 'ApplicabilityConfig(scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => scope.hashCode;
+
+@override String toString() => 'ApplicabilityConfig(scope: $scope)';
+
  }

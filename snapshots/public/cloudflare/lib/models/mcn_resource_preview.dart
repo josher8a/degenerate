@@ -45,14 +45,17 @@ McnResourcePreview copyWith({McnCloudType? cloudType, String? detail, McnResourc
   resourceType: resourceType ?? this.resourceType,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResourcePreview &&
           cloudType == other.cloudType &&
           detail == other.detail &&
           id == other.id &&
           name == other.name &&
           resourceType == other.resourceType &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(cloudType, detail, id, name, resourceType, title); } 
-@override String toString() { return 'McnResourcePreview(cloudType: $cloudType, detail: $detail, id: $id, name: $name, resourceType: $resourceType, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(cloudType, detail, id, name, resourceType, title);
+
+@override String toString() => 'McnResourcePreview(cloudType: $cloudType, detail: $detail, id: $id, name: $name, resourceType: $resourceType, title: $title)';
+
  }

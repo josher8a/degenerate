@@ -122,7 +122,7 @@ GistSimple copyWith({List<Forks>? Function()? forks, List<GistHistory>? Function
   owner: owner != null ? owner() : this.owner,
   truncated: truncated != null ? truncated() : this.truncated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistSimple &&
           listEquals(forks, other.forks) &&
           listEquals(history, other.history) &&
@@ -145,7 +145,10 @@ GistSimple copyWith({List<Forks>? Function()? forks, List<GistHistory>? Function
           user == other.user &&
           commentsUrl == other.commentsUrl &&
           owner == other.owner &&
-          truncated == other.truncated; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(forks ?? const []), Object.hashAll(history ?? const []), forkOf, url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated]); } 
-@override String toString() { return 'GistSimple(forks: $forks, history: $history, forkOf: $forkOf, url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated)'; } 
+          truncated == other.truncated;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(forks ?? const []), Object.hashAll(history ?? const []), forkOf, url, forksUrl, commitsUrl, id, nodeId, gitPullUrl, gitPushUrl, htmlUrl, files, public, createdAt, updatedAt, description, comments, commentsEnabled, user, commentsUrl, owner, truncated]);
+
+@override String toString() => 'GistSimple(forks: $forks, history: $history, forkOf: $forkOf, url: $url, forksUrl: $forksUrl, commitsUrl: $commitsUrl, id: $id, nodeId: $nodeId, gitPullUrl: $gitPullUrl, gitPushUrl: $gitPushUrl, htmlUrl: $htmlUrl, files: $files, public: $public, createdAt: $createdAt, updatedAt: $updatedAt, description: $description, comments: $comments, commentsEnabled: $commentsEnabled, user: $user, commentsUrl: $commentsUrl, owner: $owner, truncated: $truncated)';
+
  }

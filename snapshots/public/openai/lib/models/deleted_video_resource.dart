@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DeletedVideoResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DeletedVideoResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DeletedVideoResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DeletedVideoResourceObject($value)';
+
  }
 /// Confirmation payload returned after deleting a video.
 @immutable final class DeletedVideoResource {const DeletedVideoResource({required this.deleted, required this.id, this.object = DeletedVideoResourceObject.videoDeleted, });
@@ -53,11 +56,14 @@ DeletedVideoResource copyWith({DeletedVideoResourceObject? object, bool? deleted
   deleted: deleted ?? this.deleted,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeletedVideoResource &&
           object == other.object &&
           deleted == other.deleted &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(object, deleted, id); } 
-@override String toString() { return 'DeletedVideoResource(object: $object, deleted: $deleted, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(object, deleted, id);
+
+@override String toString() => 'DeletedVideoResource(object: $object, deleted: $deleted, id: $id)';
+
  }

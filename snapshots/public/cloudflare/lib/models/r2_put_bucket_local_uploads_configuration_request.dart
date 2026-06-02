@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 R2PutBucketLocalUploadsConfigurationRequest copyWith({bool? enabled}) { return R2PutBucketLocalUploadsConfigurationRequest(
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2PutBucketLocalUploadsConfigurationRequest &&
-          enabled == other.enabled; } 
-@override int get hashCode { return enabled.hashCode; } 
-@override String toString() { return 'R2PutBucketLocalUploadsConfigurationRequest(enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => enabled.hashCode;
+
+@override String toString() => 'R2PutBucketLocalUploadsConfigurationRequest(enabled: $enabled)';
+
  }

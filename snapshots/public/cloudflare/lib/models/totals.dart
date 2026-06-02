@@ -46,7 +46,7 @@ Totals copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? pagev
   uniques: uniques != null ? uniques() : this.uniques,
   until: until != null ? until() : this.until,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Totals &&
           bandwidth == other.bandwidth &&
           pageviews == other.pageviews &&
@@ -54,7 +54,10 @@ Totals copyWith({Bandwidth2? Function()? bandwidth, Pageviews? Function()? pagev
           since == other.since &&
           threats == other.threats &&
           uniques == other.uniques &&
-          until == other.until; } 
-@override int get hashCode { return Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until); } 
-@override String toString() { return 'Totals(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)'; } 
+          until == other.until;
+
+@override int get hashCode => Object.hash(bandwidth, pageviews, requests, since, threats, uniques, until);
+
+@override String toString() => 'Totals(bandwidth: $bandwidth, pageviews: $pageviews, requests: $requests, since: $since, threats: $threats, uniques: $uniques, until: $until)';
+
  }

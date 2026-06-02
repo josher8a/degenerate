@@ -22,9 +22,12 @@ return errors; }
 Signer copyWith({String? Function()? person}) { return Signer(
   person: person != null ? person() : this.person,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Signer &&
-          person == other.person; } 
-@override int get hashCode { return person.hashCode; } 
-@override String toString() { return 'Signer(person: $person)'; } 
+          person == other.person;
+
+@override int get hashCode => person.hashCode;
+
+@override String toString() => 'Signer(person: $person)';
+
  }

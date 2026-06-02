@@ -22,10 +22,13 @@ MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation copyWith({Strin
   fileId: fileId != null ? fileId() : this.fileId,
   quote: quote != null ? quote() : this.quote,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation &&
           fileId == other.fileId &&
-          quote == other.quote; } 
-@override int get hashCode { return Object.hash(fileId, quote); } 
-@override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(fileId: $fileId, quote: $quote)'; } 
+          quote == other.quote;
+
+@override int get hashCode => Object.hash(fileId, quote);
+
+@override String toString() => 'MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(fileId: $fileId, quote: $quote)';
+
  }

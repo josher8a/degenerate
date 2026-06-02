@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VectorStoreFileBatchObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VectorStoreFileBatchObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreFileBatchObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VectorStoreFileBatchObjectObject($value)';
+
  }
 /// A batch of files attached to a vector store.
 @immutable final class VectorStoreFileBatchObject {const VectorStoreFileBatchObject({required this.id, required this.object, required this.createdAt, required this.vectorStoreId, required this.status, required this.fileCounts, });
@@ -73,14 +76,17 @@ VectorStoreFileBatchObject copyWith({String? id, VectorStoreFileBatchObjectObjec
   status: status ?? this.status,
   fileCounts: fileCounts ?? this.fileCounts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreFileBatchObject &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           vectorStoreId == other.vectorStoreId &&
           status == other.status &&
-          fileCounts == other.fileCounts; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, vectorStoreId, status, fileCounts); } 
-@override String toString() { return 'VectorStoreFileBatchObject(id: $id, object: $object, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, fileCounts: $fileCounts)'; } 
+          fileCounts == other.fileCounts;
+
+@override int get hashCode => Object.hash(id, object, createdAt, vectorStoreId, status, fileCounts);
+
+@override String toString() => 'VectorStoreFileBatchObject(id: $id, object: $object, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, fileCounts: $fileCounts)';
+
  }

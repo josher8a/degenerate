@@ -33,10 +33,13 @@ TlsCertificatesAndHostnamesCustomCertAndKey copyWith({String? customCertificate,
   customCertificate: customCertificate ?? this.customCertificate,
   customKey: customKey ?? this.customKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesCustomCertAndKey &&
           customCertificate == other.customCertificate &&
-          customKey == other.customKey; } 
-@override int get hashCode { return Object.hash(customCertificate, customKey); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesCustomCertAndKey(customCertificate: $customCertificate, customKey: $customKey)'; } 
+          customKey == other.customKey;
+
+@override int get hashCode => Object.hash(customCertificate, customKey);
+
+@override String toString() => 'TlsCertificatesAndHostnamesCustomCertAndKey(customCertificate: $customCertificate, customKey: $customKey)';
+
  }

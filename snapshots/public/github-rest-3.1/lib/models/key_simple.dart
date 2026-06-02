@@ -32,12 +32,15 @@ KeySimple copyWith({int? id, String? key, DateTime? Function()? createdAt, DateT
   createdAt: createdAt != null ? createdAt() : this.createdAt,
   lastUsed: lastUsed != null ? lastUsed() : this.lastUsed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KeySimple &&
           id == other.id &&
           key == other.key &&
           createdAt == other.createdAt &&
-          lastUsed == other.lastUsed; } 
-@override int get hashCode { return Object.hash(id, key, createdAt, lastUsed); } 
-@override String toString() { return 'KeySimple(id: $id, key: $key, createdAt: $createdAt, lastUsed: $lastUsed)'; } 
+          lastUsed == other.lastUsed;
+
+@override int get hashCode => Object.hash(id, key, createdAt, lastUsed);
+
+@override String toString() => 'KeySimple(id: $id, key: $key, createdAt: $createdAt, lastUsed: $lastUsed)';
+
  }

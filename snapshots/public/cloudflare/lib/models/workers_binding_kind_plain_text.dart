@@ -31,11 +31,14 @@ WorkersBindingKindPlainText copyWith({WorkersBindingName? name, String? text, St
   text: text ?? this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindPlainText &&
           name == other.name &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, text, type); } 
-@override String toString() { return 'WorkersBindingKindPlainText(name: $name, text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, text, type);
+
+@override String toString() => 'WorkersBindingKindPlainText(name: $name, text: $text, type: $type)';
+
  }

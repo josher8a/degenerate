@@ -37,12 +37,15 @@ ResultsStats copyWith({double? dataLength, double? requests, double? uniqCountri
   uniqCountries: uniqCountries ?? this.uniqCountries,
   uniqIPs: uniqIPs ?? this.uniqIPs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResultsStats &&
           dataLength == other.dataLength &&
           requests == other.requests &&
           uniqCountries == other.uniqCountries &&
-          uniqIPs == other.uniqIPs; } 
-@override int get hashCode { return Object.hash(dataLength, requests, uniqCountries, uniqIPs); } 
-@override String toString() { return 'ResultsStats(dataLength: $dataLength, requests: $requests, uniqCountries: $uniqCountries, uniqIPs: $uniqIPs)'; } 
+          uniqIPs == other.uniqIPs;
+
+@override int get hashCode => Object.hash(dataLength, requests, uniqCountries, uniqIPs);
+
+@override String toString() => 'ResultsStats(dataLength: $dataLength, requests: $requests, uniqCountries: $uniqCountries, uniqIPs: $uniqIPs)';
+
  }

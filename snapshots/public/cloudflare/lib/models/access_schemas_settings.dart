@@ -36,11 +36,14 @@ AccessSchemasSettings copyWith({bool? chinaNetwork, bool? clientCertificateForwa
   clientCertificateForwarding: clientCertificateForwarding ?? this.clientCertificateForwarding,
   hostname: hostname ?? this.hostname,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasSettings &&
           chinaNetwork == other.chinaNetwork &&
           clientCertificateForwarding == other.clientCertificateForwarding &&
-          hostname == other.hostname; } 
-@override int get hashCode { return Object.hash(chinaNetwork, clientCertificateForwarding, hostname); } 
-@override String toString() { return 'AccessSchemasSettings(chinaNetwork: $chinaNetwork, clientCertificateForwarding: $clientCertificateForwarding, hostname: $hostname)'; } 
+          hostname == other.hostname;
+
+@override int get hashCode => Object.hash(chinaNetwork, clientCertificateForwarding, hostname);
+
+@override String toString() => 'AccessSchemasSettings(chinaNetwork: $chinaNetwork, clientCertificateForwarding: $clientCertificateForwarding, hostname: $hostname)';
+
  }

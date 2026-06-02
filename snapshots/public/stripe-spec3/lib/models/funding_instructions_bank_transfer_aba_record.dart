@@ -65,7 +65,7 @@ FundingInstructionsBankTransferAbaRecord copyWith({Address? accountHolderAddress
   bankName: bankName ?? this.bankName,
   routingNumber: routingNumber ?? this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferAbaRecord &&
           accountHolderAddress == other.accountHolderAddress &&
           accountHolderName == other.accountHolderName &&
@@ -73,7 +73,10 @@ FundingInstructionsBankTransferAbaRecord copyWith({Address? accountHolderAddress
           accountType == other.accountType &&
           bankAddress == other.bankAddress &&
           bankName == other.bankName &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankName, routingNumber); } 
-@override String toString() { return 'FundingInstructionsBankTransferAbaRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankName: $bankName, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderAddress, accountHolderName, accountNumber, accountType, bankAddress, bankName, routingNumber);
+
+@override String toString() => 'FundingInstructionsBankTransferAbaRecord(accountHolderAddress: $accountHolderAddress, accountHolderName: $accountHolderName, accountNumber: $accountNumber, accountType: $accountType, bankAddress: $bankAddress, bankName: $bankName, routingNumber: $routingNumber)';
+
  }

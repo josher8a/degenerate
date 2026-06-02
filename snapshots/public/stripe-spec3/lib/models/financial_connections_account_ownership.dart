@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FinancialConnectionsAccountOwnershipObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FinancialConnectionsAccountOwnershipObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsAccountOwnershipObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FinancialConnectionsAccountOwnershipObject($value)';
+
  }
 /// Describes a snapshot of the owners of an account at a particular point in time.
 @immutable final class FinancialConnectionsAccountOwnership {const FinancialConnectionsAccountOwnership({required this.created, required this.id, required this.object, required this.owners, });
@@ -64,12 +67,15 @@ FinancialConnectionsAccountOwnership copyWith({int? created, String? id, Financi
   object: object ?? this.object,
   owners: owners ?? this.owners,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FinancialConnectionsAccountOwnership &&
           created == other.created &&
           id == other.id &&
           object == other.object &&
-          owners == other.owners; } 
-@override int get hashCode { return Object.hash(created, id, object, owners); } 
-@override String toString() { return 'FinancialConnectionsAccountOwnership(created: $created, id: $id, object: $object, owners: $owners)'; } 
+          owners == other.owners;
+
+@override int get hashCode => Object.hash(created, id, object, owners);
+
+@override String toString() => 'FinancialConnectionsAccountOwnership(created: $created, id: $id, object: $object, owners: $owners)';
+
  }

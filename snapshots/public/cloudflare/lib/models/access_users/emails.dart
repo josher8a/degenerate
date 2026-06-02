@@ -34,11 +34,14 @@ Emails copyWith({bool? Function()? primary, String? Function()? type, String? Fu
   type: type != null ? type() : this.type,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Emails &&
           primary == other.primary &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(primary, type, value); } 
-@override String toString() { return 'Emails(primary: $primary, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(primary, type, value);
+
+@override String toString() => 'Emails(primary: $primary, type: $type, value: $value)';
+
  }

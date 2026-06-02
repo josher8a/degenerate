@@ -45,7 +45,7 @@ PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate copyWith({PostC
   scheduleAtPeriodEnd: scheduleAtPeriodEnd != null ? scheduleAtPeriodEnd() : this.scheduleAtPeriodEnd,
   trialUpdateBehavior: trialUpdateBehavior != null ? trialUpdateBehavior() : this.trialUpdateBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
           defaultAllowedUpdates == other.defaultAllowedUpdates &&
@@ -53,7 +53,10 @@ PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate copyWith({PostC
           products == other.products &&
           prorationBehavior == other.prorationBehavior &&
           scheduleAtPeriodEnd == other.scheduleAtPeriodEnd &&
-          trialUpdateBehavior == other.trialUpdateBehavior; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, defaultAllowedUpdates, enabled, products, prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior); } 
-@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)'; } 
+          trialUpdateBehavior == other.trialUpdateBehavior;
+
+@override int get hashCode => Object.hash(billingCycleAnchor, defaultAllowedUpdates, enabled, products, prorationBehavior, scheduleAtPeriodEnd, trialUpdateBehavior);
+
+@override String toString() => 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdate(billingCycleAnchor: $billingCycleAnchor, defaultAllowedUpdates: $defaultAllowedUpdates, enabled: $enabled, products: $products, prorationBehavior: $prorationBehavior, scheduleAtPeriodEnd: $scheduleAtPeriodEnd, trialUpdateBehavior: $trialUpdateBehavior)';
+
  }

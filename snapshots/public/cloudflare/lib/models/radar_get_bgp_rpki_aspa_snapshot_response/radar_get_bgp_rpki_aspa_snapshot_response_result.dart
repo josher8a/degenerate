@@ -27,11 +27,14 @@ RadarGetBgpRpkiAspaSnapshotResponseResult copyWith({RadarGetBgpRpkiAspaChangesRe
   aspaObjects: aspaObjects ?? this.aspaObjects,
   meta: meta ?? this.meta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRpkiAspaSnapshotResponseResult &&
           asnInfo == other.asnInfo &&
           listEquals(aspaObjects, other.aspaObjects) &&
-          meta == other.meta; } 
-@override int get hashCode { return Object.hash(asnInfo, Object.hashAll(aspaObjects), meta); } 
-@override String toString() { return 'RadarGetBgpRpkiAspaSnapshotResponseResult(asnInfo: $asnInfo, aspaObjects: $aspaObjects, meta: $meta)'; } 
+          meta == other.meta;
+
+@override int get hashCode => Object.hash(asnInfo, Object.hashAll(aspaObjects), meta);
+
+@override String toString() => 'RadarGetBgpRpkiAspaSnapshotResponseResult(asnInfo: $asnInfo, aspaObjects: $aspaObjects, meta: $meta)';
+
  }

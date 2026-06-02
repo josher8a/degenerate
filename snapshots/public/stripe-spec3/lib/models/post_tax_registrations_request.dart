@@ -46,13 +46,16 @@ PostTaxRegistrationsRequest copyWith({ActiveFrom? activeFrom, String? country, C
   expand: expand != null ? expand() : this.expand,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxRegistrationsRequest &&
           activeFrom == other.activeFrom &&
           country == other.country &&
           countryOptions == other.countryOptions &&
           listEquals(expand, other.expand) &&
-          expiresAt == other.expiresAt; } 
-@override int get hashCode { return Object.hash(activeFrom, country, countryOptions, Object.hashAll(expand ?? const []), expiresAt); } 
-@override String toString() { return 'PostTaxRegistrationsRequest(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, expand: $expand, expiresAt: $expiresAt)'; } 
+          expiresAt == other.expiresAt;
+
+@override int get hashCode => Object.hash(activeFrom, country, countryOptions, Object.hashAll(expand ?? const []), expiresAt);
+
+@override String toString() => 'PostTaxRegistrationsRequest(activeFrom: $activeFrom, country: $country, countryOptions: $countryOptions, expand: $expand, expiresAt: $expiresAt)';
+
  }

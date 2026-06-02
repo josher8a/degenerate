@@ -157,10 +157,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)';
+
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
 @immutable final class WebhookIssuesEditedIssuePerformedViaGithubApp {const WebhookIssuesEditedIssuePerformedViaGithubApp({required this.createdAt, required this.description, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, required this.updatedAt, this.events, this.permissions, this.slug, });
@@ -246,7 +249,7 @@ WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
   slug: slug != null ? slug() : this.slug,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookIssuesEditedIssuePerformedViaGithubApp &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -259,7 +262,10 @@ WebhookIssuesEditedIssuePerformedViaGithubApp copyWith({DateTime? Function()? cr
           owner == other.owner &&
           permissions == other.permissions &&
           slug == other.slug &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
-@override String toString() { return 'WebhookIssuesEditedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt);
+
+@override String toString() => 'WebhookIssuesEditedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)';
+
  }

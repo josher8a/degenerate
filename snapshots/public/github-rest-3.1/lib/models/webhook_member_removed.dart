@@ -48,7 +48,7 @@ WebhookMemberRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? act
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberRemoved &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -56,7 +56,10 @@ WebhookMemberRemoved copyWith({WebhookInstallationRepositoriesRemovedAction? act
           member == other.member &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, member, organization, repository, sender); } 
-@override String toString() { return 'WebhookMemberRemoved(action: $action, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, member, organization, repository, sender);
+
+@override String toString() => 'WebhookMemberRemoved(action: $action, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, sender: $sender)';
+
  }

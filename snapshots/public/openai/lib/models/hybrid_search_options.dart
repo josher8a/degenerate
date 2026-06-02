@@ -23,10 +23,13 @@ HybridSearchOptions copyWith({double? embeddingWeight, double? textWeight, }) { 
   embeddingWeight: embeddingWeight ?? this.embeddingWeight,
   textWeight: textWeight ?? this.textWeight,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HybridSearchOptions &&
           embeddingWeight == other.embeddingWeight &&
-          textWeight == other.textWeight; } 
-@override int get hashCode { return Object.hash(embeddingWeight, textWeight); } 
-@override String toString() { return 'HybridSearchOptions(embeddingWeight: $embeddingWeight, textWeight: $textWeight)'; } 
+          textWeight == other.textWeight;
+
+@override int get hashCode => Object.hash(embeddingWeight, textWeight);
+
+@override String toString() => 'HybridSearchOptions(embeddingWeight: $embeddingWeight, textWeight: $textWeight)';
+
  }

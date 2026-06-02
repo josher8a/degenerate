@@ -40,11 +40,14 @@ PaymentIntentNextActionDisplayOxxoDetails copyWith({int? Function()? expiresAfte
   hostedVoucherUrl: hostedVoucherUrl != null ? hostedVoucherUrl() : this.hostedVoucherUrl,
   number: number != null ? number() : this.number,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionDisplayOxxoDetails &&
           expiresAfter == other.expiresAfter &&
           hostedVoucherUrl == other.hostedVoucherUrl &&
-          number == other.number; } 
-@override int get hashCode { return Object.hash(expiresAfter, hostedVoucherUrl, number); } 
-@override String toString() { return 'PaymentIntentNextActionDisplayOxxoDetails(expiresAfter: $expiresAfter, hostedVoucherUrl: $hostedVoucherUrl, number: $number)'; } 
+          number == other.number;
+
+@override int get hashCode => Object.hash(expiresAfter, hostedVoucherUrl, number);
+
+@override String toString() => 'PaymentIntentNextActionDisplayOxxoDetails(expiresAfter: $expiresAfter, hostedVoucherUrl: $hostedVoucherUrl, number: $number)';
+
  }

@@ -105,35 +105,31 @@ final class PublicUserSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is PublicUserSchema &&
-            profileAvatarType == other.profileAvatarType &&
-            circleCount == other.circleCount &&
-            name == other.name &&
-            slug == other.slug &&
-            isStaff == other.isStaff &&
-            profileAvatarSeed == other.profileAvatarSeed &&
-            profileImage == other.profileImage &&
-            dateCreated == other.dateCreated;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PublicUserSchema &&
+          profileAvatarType == other.profileAvatarType &&
+          circleCount == other.circleCount &&
+          name == other.name &&
+          slug == other.slug &&
+          isStaff == other.isStaff &&
+          profileAvatarSeed == other.profileAvatarSeed &&
+          profileImage == other.profileImage &&
+          dateCreated == other.dateCreated;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      profileAvatarType,
-      circleCount,
-      name,
-      slug,
-      isStaff,
-      profileAvatarSeed,
-      profileImage,
-      dateCreated,
-    );
-  }
+  int get hashCode => Object.hash(
+    profileAvatarType,
+    circleCount,
+    name,
+    slug,
+    isStaff,
+    profileAvatarSeed,
+    profileImage,
+    dateCreated,
+  );
 
   @override
-  String toString() {
-    return 'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)';
-  }
+  String toString() =>
+      'PublicUserSchema(profileAvatarType: $profileAvatarType, circleCount: $circleCount, name: $name, slug: $slug, isStaff: $isStaff, profileAvatarSeed: $profileAvatarSeed, profileImage: $profileImage, dateCreated: $dateCreated)';
 }

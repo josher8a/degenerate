@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Kind && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Kind($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Kind && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Kind($value)';
+
  }
 @immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });
 
@@ -68,14 +71,17 @@ FileSystemNode copyWith({String? name, Kind? kind, int? Function()? sizeBytes, L
   symlinkTarget: symlinkTarget != null ? symlinkTarget() : this.symlinkTarget,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileSystemNode &&
           name == other.name &&
           kind == other.kind &&
           sizeBytes == other.sizeBytes &&
           listEquals(children, other.children) &&
           symlinkTarget == other.symlinkTarget &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(name, kind, sizeBytes, Object.hashAll(children ?? const []), symlinkTarget, metadata); } 
-@override String toString() { return 'FileSystemNode(name: $name, kind: $kind, sizeBytes: $sizeBytes, children: $children, symlinkTarget: $symlinkTarget, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(name, kind, sizeBytes, Object.hashAll(children ?? const []), symlinkTarget, metadata);
+
+@override String toString() => 'FileSystemNode(name: $name, kind: $kind, sizeBytes: $sizeBytes, children: $children, symlinkTarget: $symlinkTarget, metadata: $metadata)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunModelError$400 extends WorkersAiPostRunModelError {c
 
 final WorkersAiPostRunModelResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunModelError$Unknown extends WorkersAiPostRunModelError {const WorkersAiPostRunModelError$Unknown(this.statusCode, this.rawBody, );
 

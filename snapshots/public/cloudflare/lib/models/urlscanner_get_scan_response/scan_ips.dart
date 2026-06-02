@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ScanIps copyWith({IpsIp? Function()? ip}) { return ScanIps(
   ip: ip != null ? ip() : this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScanIps &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'ScanIps(ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => ip.hashCode;
+
+@override String toString() => 'ScanIps(ip: $ip)';
+
  }

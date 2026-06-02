@@ -21,10 +21,13 @@ PostEventMoveToNewDsRequest copyWith({String? destDatasetId, List<String>? Funct
   destDatasetId: destDatasetId ?? this.destDatasetId,
   eventIds: eventIds != null ? eventIds() : this.eventIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventMoveToNewDsRequest &&
           destDatasetId == other.destDatasetId &&
-          listEquals(eventIds, other.eventIds); } 
-@override int get hashCode { return Object.hash(destDatasetId, Object.hashAll(eventIds ?? const [])); } 
-@override String toString() { return 'PostEventMoveToNewDsRequest(destDatasetId: $destDatasetId, eventIds: $eventIds)'; } 
+          listEquals(eventIds, other.eventIds);
+
+@override int get hashCode => Object.hash(destDatasetId, Object.hashAll(eventIds ?? const []));
+
+@override String toString() => 'PostEventMoveToNewDsRequest(destDatasetId: $destDatasetId, eventIds: $eventIds)';
+
  }

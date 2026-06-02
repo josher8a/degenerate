@@ -37,12 +37,15 @@ WebhooksPullRequest5AutoMerge copyWith({String? Function()? commitMessage, Strin
   enabledBy: enabledBy != null ? enabledBy() : this.enabledBy,
   mergeMethod: mergeMethod ?? this.mergeMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksPullRequest5AutoMerge &&
           commitMessage == other.commitMessage &&
           commitTitle == other.commitTitle &&
           enabledBy == other.enabledBy &&
-          mergeMethod == other.mergeMethod; } 
-@override int get hashCode { return Object.hash(commitMessage, commitTitle, enabledBy, mergeMethod); } 
-@override String toString() { return 'WebhooksPullRequest5AutoMerge(commitMessage: $commitMessage, commitTitle: $commitTitle, enabledBy: $enabledBy, mergeMethod: $mergeMethod)'; } 
+          mergeMethod == other.mergeMethod;
+
+@override int get hashCode => Object.hash(commitMessage, commitTitle, enabledBy, mergeMethod);
+
+@override String toString() => 'WebhooksPullRequest5AutoMerge(commitMessage: $commitMessage, commitTitle: $commitTitle, enabledBy: $enabledBy, mergeMethod: $mergeMethod)';
+
  }

@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerUpdateAddress && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerUpdateAddress($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerUpdateAddress && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerUpdateAddress($value)';
+
  }
 @immutable final class CustomerUpdateName {const CustomerUpdateName._(this.value);
 
@@ -43,10 +46,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerUpdateName && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerUpdateName($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerUpdateName && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerUpdateName($value)';
+
  }
 @immutable final class CustomerUpdateShipping {const CustomerUpdateShipping._(this.value);
 
@@ -67,10 +73,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerUpdateShipping && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerUpdateShipping($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerUpdateShipping && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerUpdateShipping($value)';
+
  }
 /// Controls what fields on Customer can be updated by the Checkout Session. Can only be provided when `customer` is provided.
 @immutable final class PostCheckoutSessionsRequestCustomerUpdate {const PostCheckoutSessionsRequestCustomerUpdate({this.address, this.name, this.shipping, });
@@ -98,11 +107,14 @@ PostCheckoutSessionsRequestCustomerUpdate copyWith({CustomerUpdateAddress? Funct
   name: name != null ? name() : this.name,
   shipping: shipping != null ? shipping() : this.shipping,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestCustomerUpdate &&
           address == other.address &&
           name == other.name &&
-          shipping == other.shipping; } 
-@override int get hashCode { return Object.hash(address, name, shipping); } 
-@override String toString() { return 'PostCheckoutSessionsRequestCustomerUpdate(address: $address, name: $name, shipping: $shipping)'; } 
+          shipping == other.shipping;
+
+@override int get hashCode => Object.hash(address, name, shipping);
+
+@override String toString() => 'PostCheckoutSessionsRequestCustomerUpdate(address: $address, name: $name, shipping: $shipping)';
+
  }

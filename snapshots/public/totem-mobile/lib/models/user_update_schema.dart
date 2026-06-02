@@ -92,31 +92,27 @@ final class UserUpdateSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is UserUpdateSchema &&
-            name == other.name &&
-            email == other.email &&
-            timezone == other.timezone &&
-            newsletterConsent == other.newsletterConsent &&
-            profileAvatarType == other.profileAvatarType &&
-            profileAvatarSeed == other.profileAvatarSeed;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is UserUpdateSchema &&
+          name == other.name &&
+          email == other.email &&
+          timezone == other.timezone &&
+          newsletterConsent == other.newsletterConsent &&
+          profileAvatarType == other.profileAvatarType &&
+          profileAvatarSeed == other.profileAvatarSeed;
 
   @override
-  int get hashCode {
-    return Object.hash(
-      name,
-      email,
-      timezone,
-      newsletterConsent,
-      profileAvatarType,
-      profileAvatarSeed,
-    );
-  }
+  int get hashCode => Object.hash(
+    name,
+    email,
+    timezone,
+    newsletterConsent,
+    profileAvatarType,
+    profileAvatarSeed,
+  );
 
   @override
-  String toString() {
-    return 'UserUpdateSchema(name: $name, email: $email, timezone: $timezone, newsletterConsent: $newsletterConsent, profileAvatarType: $profileAvatarType, profileAvatarSeed: $profileAvatarSeed)';
-  }
+  String toString() =>
+      'UserUpdateSchema(name: $name, email: $email, timezone: $timezone, newsletterConsent: $newsletterConsent, profileAvatarType: $profileAvatarType, profileAvatarSeed: $profileAvatarSeed)';
 }

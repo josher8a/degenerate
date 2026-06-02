@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDeploymentReviewRejectedWorkflowRunStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDeploymentReviewRejectedWorkflowRunStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)';
+
  }
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRun {const WebhookDeploymentReviewRejectedWorkflowRun({required this.name, required this.checkSuiteId, required this.checkSuiteNodeId, required this.headSha, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.actor, required this.htmlUrl, required this.id, required this.triggeringActor, required this.nodeId, required this.path, required this.pullRequests, required this.displayTitle, required this.runNumber, required this.status, required this.url, required this.workflowId, required this.runAttempt, required this.updatedAt, required this.runStartedAt, this.repository, this.rerunUrl, this.previousAttemptUrl, this.logsUrl, this.jobsUrl, this.headRepository, this.referencedWorkflows, this.headCommit, this.cancelUrl, this.artifactsUrl, this.workflowUrl, this.checkSuiteUrl, });
 
@@ -240,7 +243,7 @@ WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWor
   workflowUrl: workflowUrl != null ? workflowUrl() : this.workflowUrl,
   displayTitle: displayTitle ?? this.displayTitle,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDeploymentReviewRejectedWorkflowRun &&
           actor == other.actor &&
           artifactsUrl == other.artifactsUrl &&
@@ -276,7 +279,10 @@ WebhookDeploymentReviewRejectedWorkflowRun copyWith({WebhookDeploymentCreatedWor
           url == other.url &&
           workflowId == other.workflowId &&
           workflowUrl == other.workflowUrl &&
-          displayTitle == other.displayTitle; } 
-@override int get hashCode { return Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl, displayTitle]); } 
-@override String toString() { return 'WebhookDeploymentReviewRejectedWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl, displayTitle: $displayTitle)'; } 
+          displayTitle == other.displayTitle;
+
+@override int get hashCode => Object.hashAll([actor, artifactsUrl, cancelUrl, checkSuiteId, checkSuiteNodeId, checkSuiteUrl, conclusion, createdAt, event, headBranch, headCommit, headRepository, headSha, htmlUrl, id, jobsUrl, logsUrl, name, nodeId, path, previousAttemptUrl, Object.hashAll(pullRequests), Object.hashAll(referencedWorkflows ?? const []), repository, rerunUrl, runAttempt, runNumber, runStartedAt, status, triggeringActor, updatedAt, url, workflowId, workflowUrl, displayTitle]);
+
+@override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRun(actor: $actor, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, checkSuiteUrl: $checkSuiteUrl, conclusion: $conclusion, createdAt: $createdAt, event: $event, headBranch: $headBranch, headCommit: $headCommit, headRepository: $headRepository, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, jobsUrl: $jobsUrl, logsUrl: $logsUrl, name: $name, nodeId: $nodeId, path: $path, previousAttemptUrl: $previousAttemptUrl, pullRequests: $pullRequests, referencedWorkflows: $referencedWorkflows, repository: $repository, rerunUrl: $rerunUrl, runAttempt: $runAttempt, runNumber: $runNumber, runStartedAt: $runStartedAt, status: $status, triggeringActor: $triggeringActor, updatedAt: $updatedAt, url: $url, workflowId: $workflowId, workflowUrl: $workflowUrl, displayTitle: $displayTitle)';
+
  }

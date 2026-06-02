@@ -31,11 +31,14 @@ CreateThreadRequest copyWith({List<CreateMessageRequest>? Function()? messages, 
   toolResources: toolResources != null ? toolResources() : this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateThreadRequest &&
           listEquals(messages, other.messages) &&
           toolResources == other.toolResources &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(messages ?? const []), toolResources, metadata); } 
-@override String toString() { return 'CreateThreadRequest(messages: $messages, toolResources: $toolResources, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(messages ?? const []), toolResources, metadata);
+
+@override String toString() => 'CreateThreadRequest(messages: $messages, toolResources: $toolResources, metadata: $metadata)';
+
  }

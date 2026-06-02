@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookDependabotAlertAssigneesChangedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookDependabotAlertAssigneesChangedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookDependabotAlertAssigneesChangedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookDependabotAlertAssigneesChangedAction($value)';
+
  }
 @immutable final class WebhookDependabotAlertAssigneesChanged {const WebhookDependabotAlertAssigneesChanged({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });
 
@@ -69,7 +72,7 @@ WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssignees
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDependabotAlertAssigneesChanged &&
           action == other.action &&
           alert == other.alert &&
@@ -77,7 +80,10 @@ WebhookDependabotAlertAssigneesChanged copyWith({WebhookDependabotAlertAssignees
           organization == other.organization &&
           enterprise == other.enterprise &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, alert, installation, organization, enterprise, repository, sender); } 
-@override String toString() { return 'WebhookDependabotAlertAssigneesChanged(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, alert, installation, organization, enterprise, repository, sender);
+
+@override String toString() => 'WebhookDependabotAlertAssigneesChanged(action: $action, alert: $alert, installation: $installation, organization: $organization, enterprise: $enterprise, repository: $repository, sender: $sender)';
+
  }

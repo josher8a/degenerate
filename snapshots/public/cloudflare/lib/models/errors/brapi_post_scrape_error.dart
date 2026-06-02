@@ -20,25 +20,29 @@ final class BrapiPostScrapeError$400 extends BrapiPostScrapeError {const BrapiPo
 
 final BrapiPostScrapeResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class BrapiPostScrapeError$422 extends BrapiPostScrapeError {const BrapiPostScrapeError$422(this.error);
 
 final BrapiPostScrapeResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class BrapiPostScrapeError$429 extends BrapiPostScrapeError {const BrapiPostScrapeError$429(this.error);
 
 final BrapiPostScrapeResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class BrapiPostScrapeError$500 extends BrapiPostScrapeError {const BrapiPostScrapeError$500(this.error);
 
 final BrapiPostScrapeResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class BrapiPostScrapeError$Unknown extends BrapiPostScrapeError {const BrapiPostScrapeError$Unknown(this.statusCode, this.rawBody, );
 

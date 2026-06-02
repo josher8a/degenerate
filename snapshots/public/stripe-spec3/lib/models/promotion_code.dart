@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PromotionCodeObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PromotionCodeObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PromotionCodeObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PromotionCodeObject($value)';
+
  }
 /// A Promotion Code represents a customer-redeemable code for an underlying promotion.
 /// You can create multiple codes for a single promotion.
@@ -136,7 +139,7 @@ PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCus
   restrictions: restrictions ?? this.restrictions,
   timesRedeemed: timesRedeemed ?? this.timesRedeemed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PromotionCode &&
           active == other.active &&
           code == other.code &&
@@ -151,7 +154,10 @@ PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCus
           object == other.object &&
           promotion == other.promotion &&
           restrictions == other.restrictions &&
-          timesRedeemed == other.timesRedeemed; } 
-@override int get hashCode { return Object.hash(active, code, created, customer, customerAccount, expiresAt, id, livemode, maxRedemptions, metadata, object, promotion, restrictions, timesRedeemed); } 
-@override String toString() { return 'PromotionCode(active: $active, code: $code, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, object: $object, promotion: $promotion, restrictions: $restrictions, timesRedeemed: $timesRedeemed)'; } 
+          timesRedeemed == other.timesRedeemed;
+
+@override int get hashCode => Object.hash(active, code, created, customer, customerAccount, expiresAt, id, livemode, maxRedemptions, metadata, object, promotion, restrictions, timesRedeemed);
+
+@override String toString() => 'PromotionCode(active: $active, code: $code, created: $created, customer: $customer, customerAccount: $customerAccount, expiresAt: $expiresAt, id: $id, livemode: $livemode, maxRedemptions: $maxRedemptions, metadata: $metadata, object: $object, promotion: $promotion, restrictions: $restrictions, timesRedeemed: $timesRedeemed)';
+
  }

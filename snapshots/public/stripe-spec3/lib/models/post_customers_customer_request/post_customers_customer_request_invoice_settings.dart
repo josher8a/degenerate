@@ -42,12 +42,15 @@ PostCustomersCustomerRequestInvoiceSettings copyWith({PostInvoicesInvoiceRequest
   footer: footer != null ? footer() : this.footer,
   renderingOptions: renderingOptions != null ? renderingOptions() : this.renderingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerRequestInvoiceSettings &&
           customFields == other.customFields &&
           defaultPaymentMethod == other.defaultPaymentMethod &&
           footer == other.footer &&
-          renderingOptions == other.renderingOptions; } 
-@override int get hashCode { return Object.hash(customFields, defaultPaymentMethod, footer, renderingOptions); } 
-@override String toString() { return 'PostCustomersCustomerRequestInvoiceSettings(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)'; } 
+          renderingOptions == other.renderingOptions;
+
+@override int get hashCode => Object.hash(customFields, defaultPaymentMethod, footer, renderingOptions);
+
+@override String toString() => 'PostCustomersCustomerRequestInvoiceSettings(customFields: $customFields, defaultPaymentMethod: $defaultPaymentMethod, footer: $footer, renderingOptions: $renderingOptions)';
+
  }

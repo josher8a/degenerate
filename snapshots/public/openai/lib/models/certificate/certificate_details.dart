@@ -28,11 +28,14 @@ CertificateDetails copyWith({int? Function()? validAt, int? Function()? expiresA
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CertificateDetails &&
           validAt == other.validAt &&
           expiresAt == other.expiresAt &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(validAt, expiresAt, content); } 
-@override String toString() { return 'CertificateDetails(validAt: $validAt, expiresAt: $expiresAt, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(validAt, expiresAt, content);
+
+@override String toString() => 'CertificateDetails(validAt: $validAt, expiresAt: $expiresAt, content: $content)';
+
  }

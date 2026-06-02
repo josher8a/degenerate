@@ -205,7 +205,7 @@ PostCustomersCustomerSubscriptionsRequest copyWith({List<PostCustomersCustomerSu
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
   trialSettings: trialSettings != null ? trialSettings() : this.trialSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequest &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -235,7 +235,10 @@ PostCustomersCustomerSubscriptionsRequest copyWith({List<PostCustomersCustomerSu
           trialEnd == other.trialEnd &&
           trialFromPlan == other.trialFromPlan &&
           trialPeriodDays == other.trialPeriodDays &&
-          trialSettings == other.trialSettings; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, backdateStartDate, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, collectionMethod, currency, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, transferData, trialEnd, trialFromPlan, trialPeriodDays, trialSettings]); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, backdateStartDate: $backdateStartDate, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, collectionMethod: $collectionMethod, currency: $currency, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)'; } 
+          trialSettings == other.trialSettings;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(addInvoiceItems ?? const []), applicationFeePercent, automaticTax, backdateStartDate, billingCycleAnchor, billingThresholds, cancelAt, cancelAtPeriodEnd, collectionMethod, currency, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, discounts, Object.hashAll(expand ?? const []), invoiceSettings, Object.hashAll(items ?? const []), metadata, offSession, paymentBehavior, paymentSettings, pendingInvoiceItemInterval, prorationBehavior, transferData, trialEnd, trialFromPlan, trialPeriodDays, trialSettings]);
+
+@override String toString() => 'PostCustomersCustomerSubscriptionsRequest(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, backdateStartDate: $backdateStartDate, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, cancelAt: $cancelAt, cancelAtPeriodEnd: $cancelAtPeriodEnd, collectionMethod: $collectionMethod, currency: $currency, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, discounts: $discounts, expand: $expand, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, offSession: $offSession, paymentBehavior: $paymentBehavior, paymentSettings: $paymentSettings, pendingInvoiceItemInterval: $pendingInvoiceItemInterval, prorationBehavior: $prorationBehavior, transferData: $transferData, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan, trialPeriodDays: $trialPeriodDays, trialSettings: $trialSettings)';
+
  }

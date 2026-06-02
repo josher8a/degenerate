@@ -30,12 +30,15 @@ AdversarialKeys copyWith({String? Function()? itS, String? Function()? keywithqu
   $dollar: $dollar != null ? $dollar() : this.$dollar,
   backslash: backslash != null ? backslash() : this.backslash,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AdversarialKeys &&
           itS == other.itS &&
           keywithquotes == other.keywithquotes &&
           $dollar == other.$dollar &&
-          backslash == other.backslash; } 
-@override int get hashCode { return Object.hash(itS, keywithquotes, $dollar, backslash); } 
-@override String toString() { return 'AdversarialKeys(itS: $itS, keywithquotes: $keywithquotes, \$dollar: ${$dollar}, backslash: $backslash)'; } 
+          backslash == other.backslash;
+
+@override int get hashCode => Object.hash(itS, keywithquotes, $dollar, backslash);
+
+@override String toString() => 'AdversarialKeys(itS: $itS, keywithquotes: $keywithquotes, \$dollar: ${$dollar}, backslash: $backslash)';
+
  }

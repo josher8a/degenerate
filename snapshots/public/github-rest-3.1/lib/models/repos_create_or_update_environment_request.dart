@@ -40,12 +40,15 @@ ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer? Function()? waitTimer
   reviewers: reviewers != null ? reviewers() : this.reviewers,
   deploymentBranchPolicy: deploymentBranchPolicy != null ? deploymentBranchPolicy() : this.deploymentBranchPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposCreateOrUpdateEnvironmentRequest &&
           waitTimer == other.waitTimer &&
           preventSelfReview == other.preventSelfReview &&
           listEquals(reviewers, other.reviewers) &&
-          deploymentBranchPolicy == other.deploymentBranchPolicy; } 
-@override int get hashCode { return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers ?? const []), deploymentBranchPolicy); } 
-@override String toString() { return 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)'; } 
+          deploymentBranchPolicy == other.deploymentBranchPolicy;
+
+@override int get hashCode => Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers ?? const []), deploymentBranchPolicy);
+
+@override String toString() => 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)';
+
  }

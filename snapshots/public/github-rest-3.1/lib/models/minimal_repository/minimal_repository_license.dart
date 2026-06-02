@@ -35,13 +35,16 @@ MinimalRepositoryLicense copyWith({String? Function()? key, String? Function()? 
   url: url != null ? url() : this.url,
   nodeId: nodeId != null ? nodeId() : this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MinimalRepositoryLicense &&
           key == other.key &&
           name == other.name &&
           spdxId == other.spdxId &&
           url == other.url &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(key, name, spdxId, url, nodeId); } 
-@override String toString() { return 'MinimalRepositoryLicense(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(key, name, spdxId, url, nodeId);
+
+@override String toString() => 'MinimalRepositoryLicense(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId)';
+
  }

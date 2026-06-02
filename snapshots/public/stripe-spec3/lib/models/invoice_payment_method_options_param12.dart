@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InvoicePaymentMethodOptionsParam12 copyWith({InvoicePaymentMethodOptionsParam12MandateOptions? Function()? mandateOptions}) { return InvoicePaymentMethodOptionsParam12(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParam12 &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParam12(mandateOptions: $mandateOptions)'; } 
+          mandateOptions == other.mandateOptions;
+
+@override int get hashCode => mandateOptions.hashCode;
+
+@override String toString() => 'InvoicePaymentMethodOptionsParam12(mandateOptions: $mandateOptions)';
+
  }

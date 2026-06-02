@@ -32,11 +32,14 @@ DlpNewPredefinedEntry copyWith({bool? enabled, String? entryId, String? Function
   entryId: entryId ?? this.entryId,
   profileId: profileId != null ? profileId() : this.profileId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpNewPredefinedEntry &&
           enabled == other.enabled &&
           entryId == other.entryId &&
-          profileId == other.profileId; } 
-@override int get hashCode { return Object.hash(enabled, entryId, profileId); } 
-@override String toString() { return 'DlpNewPredefinedEntry(enabled: $enabled, entryId: $entryId, profileId: $profileId)'; } 
+          profileId == other.profileId;
+
+@override int get hashCode => Object.hash(enabled, entryId, profileId);
+
+@override String toString() => 'DlpNewPredefinedEntry(enabled: $enabled, entryId: $entryId, profileId: $profileId)';
+
  }

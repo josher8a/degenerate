@@ -96,7 +96,7 @@ WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, S
   tailConsumers: tailConsumers ?? this.tailConsumers,
   updatedOn: updatedOn ?? this.updatedOn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersWorker &&
           createdOn == other.createdOn &&
           deployedOn == other.deployedOn &&
@@ -108,7 +108,10 @@ WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, S
           subdomain == other.subdomain &&
           listEquals(tags, other.tags) &&
           listEquals(tailConsumers, other.tailConsumers) &&
-          updatedOn == other.updatedOn; } 
-@override int get hashCode { return Object.hash(createdOn, deployedOn, id, logpush, name, observability, references, subdomain, Object.hashAll(tags), Object.hashAll(tailConsumers), updatedOn); } 
-@override String toString() { return 'WorkersWorker(createdOn: $createdOn, deployedOn: $deployedOn, id: $id, logpush: $logpush, name: $name, observability: $observability, references: $references, subdomain: $subdomain, tags: $tags, tailConsumers: $tailConsumers, updatedOn: $updatedOn)'; } 
+          updatedOn == other.updatedOn;
+
+@override int get hashCode => Object.hash(createdOn, deployedOn, id, logpush, name, observability, references, subdomain, Object.hashAll(tags), Object.hashAll(tailConsumers), updatedOn);
+
+@override String toString() => 'WorkersWorker(createdOn: $createdOn, deployedOn: $deployedOn, id: $id, logpush: $logpush, name: $name, observability: $observability, references: $references, subdomain: $subdomain, tags: $tags, tailConsumers: $tailConsumers, updatedOn: $updatedOn)';
+
  }

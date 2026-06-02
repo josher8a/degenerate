@@ -54,12 +54,15 @@ PaymentIntentNextActionAlipayHandleRedirect copyWith({String? Function()? native
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionAlipayHandleRedirect &&
           nativeData == other.nativeData &&
           nativeUrl == other.nativeUrl &&
           returnUrl == other.returnUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(nativeData, nativeUrl, returnUrl, url); } 
-@override String toString() { return 'PaymentIntentNextActionAlipayHandleRedirect(nativeData: $nativeData, nativeUrl: $nativeUrl, returnUrl: $returnUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(nativeData, nativeUrl, returnUrl, url);
+
+@override String toString() => 'PaymentIntentNextActionAlipayHandleRedirect(nativeData: $nativeData, nativeUrl: $nativeUrl, returnUrl: $returnUrl, url: $url)';
+
  }

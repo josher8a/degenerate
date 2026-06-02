@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ProjectRateLimitObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ProjectRateLimitObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectRateLimitObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ProjectRateLimitObject($value)';
+
  }
 /// Represents a project rate limit config.
 @immutable final class ProjectRateLimit {const ProjectRateLimit({required this.object, required this.id, required this.model, required this.maxRequestsPer1Minute, required this.maxTokensPer1Minute, this.maxImagesPer1Minute, this.maxAudioMegabytesPer1Minute, this.maxRequestsPer1Day, this.batch1DayMaxInputTokens, });
@@ -91,7 +94,7 @@ ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? m
   maxRequestsPer1Day: maxRequestsPer1Day != null ? maxRequestsPer1Day() : this.maxRequestsPer1Day,
   batch1DayMaxInputTokens: batch1DayMaxInputTokens != null ? batch1DayMaxInputTokens() : this.batch1DayMaxInputTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectRateLimit &&
           object == other.object &&
           id == other.id &&
@@ -101,7 +104,10 @@ ProjectRateLimit copyWith({ProjectRateLimitObject? object, String? id, String? m
           maxImagesPer1Minute == other.maxImagesPer1Minute &&
           maxAudioMegabytesPer1Minute == other.maxAudioMegabytesPer1Minute &&
           maxRequestsPer1Day == other.maxRequestsPer1Day &&
-          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens; } 
-@override int get hashCode { return Object.hash(object, id, model, maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens); } 
-@override String toString() { return 'ProjectRateLimit(object: $object, id: $id, model: $model, maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)'; } 
+          batch1DayMaxInputTokens == other.batch1DayMaxInputTokens;
+
+@override int get hashCode => Object.hash(object, id, model, maxRequestsPer1Minute, maxTokensPer1Minute, maxImagesPer1Minute, maxAudioMegabytesPer1Minute, maxRequestsPer1Day, batch1DayMaxInputTokens);
+
+@override String toString() => 'ProjectRateLimit(object: $object, id: $id, model: $model, maxRequestsPer1Minute: $maxRequestsPer1Minute, maxTokensPer1Minute: $maxTokensPer1Minute, maxImagesPer1Minute: $maxImagesPer1Minute, maxAudioMegabytesPer1Minute: $maxAudioMegabytesPer1Minute, maxRequestsPer1Day: $maxRequestsPer1Day, batch1DayMaxInputTokens: $batch1DayMaxInputTokens)';
+
  }

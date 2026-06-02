@@ -42,13 +42,16 @@ SubscriptionsResourcePendingUpdate copyWith({int? Function()? billingCycleAnchor
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
   trialFromPlan: trialFromPlan != null ? trialFromPlan() : this.trialFromPlan,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionsResourcePendingUpdate &&
           billingCycleAnchor == other.billingCycleAnchor &&
           expiresAt == other.expiresAt &&
           listEquals(subscriptionItems, other.subscriptionItems) &&
           trialEnd == other.trialEnd &&
-          trialFromPlan == other.trialFromPlan; } 
-@override int get hashCode { return Object.hash(billingCycleAnchor, expiresAt, Object.hashAll(subscriptionItems ?? const []), trialEnd, trialFromPlan); } 
-@override String toString() { return 'SubscriptionsResourcePendingUpdate(billingCycleAnchor: $billingCycleAnchor, expiresAt: $expiresAt, subscriptionItems: $subscriptionItems, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan)'; } 
+          trialFromPlan == other.trialFromPlan;
+
+@override int get hashCode => Object.hash(billingCycleAnchor, expiresAt, Object.hashAll(subscriptionItems ?? const []), trialEnd, trialFromPlan);
+
+@override String toString() => 'SubscriptionsResourcePendingUpdate(billingCycleAnchor: $billingCycleAnchor, expiresAt: $expiresAt, subscriptionItems: $subscriptionItems, trialEnd: $trialEnd, trialFromPlan: $trialFromPlan)';
+
  }

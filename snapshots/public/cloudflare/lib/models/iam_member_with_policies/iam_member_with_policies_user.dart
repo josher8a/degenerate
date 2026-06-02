@@ -40,13 +40,16 @@ IamMemberWithPoliciesUser copyWith({IamEmail? email, IamFirstName? Function()? f
   lastName: lastName != null ? lastName() : this.lastName,
   twoFactorAuthenticationEnabled: twoFactorAuthenticationEnabled != null ? twoFactorAuthenticationEnabled() : this.twoFactorAuthenticationEnabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamMemberWithPoliciesUser &&
           email == other.email &&
           firstName == other.firstName &&
           id == other.id &&
           lastName == other.lastName &&
-          twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled; } 
-@override int get hashCode { return Object.hash(email, firstName, id, lastName, twoFactorAuthenticationEnabled); } 
-@override String toString() { return 'IamMemberWithPoliciesUser(email: $email, firstName: $firstName, id: $id, lastName: $lastName, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled)'; } 
+          twoFactorAuthenticationEnabled == other.twoFactorAuthenticationEnabled;
+
+@override int get hashCode => Object.hash(email, firstName, id, lastName, twoFactorAuthenticationEnabled);
+
+@override String toString() => 'IamMemberWithPoliciesUser(email: $email, firstName: $firstName, id: $id, lastName: $lastName, twoFactorAuthenticationEnabled: $twoFactorAuthenticationEnabled)';
+
  }

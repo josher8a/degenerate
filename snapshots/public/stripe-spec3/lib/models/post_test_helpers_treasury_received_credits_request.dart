@@ -62,7 +62,7 @@ PostTestHelpersTreasuryReceivedCreditsRequest copyWith({int? amount, String? cur
   initiatingPaymentMethodDetails: initiatingPaymentMethodDetails != null ? initiatingPaymentMethodDetails() : this.initiatingPaymentMethodDetails,
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryReceivedCreditsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -70,7 +70,10 @@ PostTestHelpersTreasuryReceivedCreditsRequest copyWith({int? amount, String? cur
           listEquals(expand, other.expand) &&
           financialAccount == other.financialAccount &&
           initiatingPaymentMethodDetails == other.initiatingPaymentMethodDetails &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, initiatingPaymentMethodDetails, network); } 
-@override String toString() { return 'PostTestHelpersTreasuryReceivedCreditsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, initiatingPaymentMethodDetails, network);
+
+@override String toString() => 'PostTestHelpersTreasuryReceivedCreditsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, network: $network)';
+
  }

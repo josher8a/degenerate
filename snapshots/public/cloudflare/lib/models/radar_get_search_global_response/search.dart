@@ -30,11 +30,14 @@ Search copyWith({String? code, String? name, String? type, }) { return Search(
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Search &&
           code == other.code &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(code, name, type); } 
-@override String toString() { return 'Search(code: $code, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(code, name, type);
+
+@override String toString() => 'Search(code: $code, name: $name, type: $type)';
+
  }

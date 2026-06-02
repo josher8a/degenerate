@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostSetupIntentsIntentCancelRequestCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostSetupIntentsIntentCancelRequestCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostSetupIntentsIntentCancelRequestCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostSetupIntentsIntentCancelRequestCancellationReason($value)';
+
  }
 @immutable final class PostSetupIntentsIntentCancelRequest {const PostSetupIntentsIntentCancelRequest({this.cancellationReason, this.expand, });
 
@@ -50,10 +53,13 @@ PostSetupIntentsIntentCancelRequest copyWith({PostSetupIntentsIntentCancelReques
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSetupIntentsIntentCancelRequest &&
           cancellationReason == other.cancellationReason &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(cancellationReason, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostSetupIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(cancellationReason, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostSetupIntentsIntentCancelRequest(cancellationReason: $cancellationReason, expand: $expand)';
+
  }

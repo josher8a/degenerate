@@ -21,10 +21,13 @@ Stripe copyWith({String? authorization, List<UsageEvents>? usageEvents, }) { ret
   authorization: authorization ?? this.authorization,
   usageEvents: usageEvents ?? this.usageEvents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Stripe &&
           authorization == other.authorization &&
-          listEquals(usageEvents, other.usageEvents); } 
-@override int get hashCode { return Object.hash(authorization, Object.hashAll(usageEvents)); } 
-@override String toString() { return 'Stripe(authorization: $authorization, usageEvents: $usageEvents)'; } 
+          listEquals(usageEvents, other.usageEvents);
+
+@override int get hashCode => Object.hash(authorization, Object.hashAll(usageEvents));
+
+@override String toString() => 'Stripe(authorization: $authorization, usageEvents: $usageEvents)';
+
  }

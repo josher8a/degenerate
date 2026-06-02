@@ -42,12 +42,15 @@ ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest copyWith({bool? Functi
   userUid: userUid != null ? userUid() : this.userUid,
   warpSessionReauth: warpSessionReauth != null ? warpSessionReauth() : this.warpSessionReauth,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest &&
           devices == other.devices &&
           email == other.email &&
           userUid == other.userUid &&
-          warpSessionReauth == other.warpSessionReauth; } 
-@override int get hashCode { return Object.hash(devices, email, userUid, warpSessionReauth); } 
-@override String toString() { return 'ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(devices: $devices, email: $email, userUid: $userUid, warpSessionReauth: $warpSessionReauth)'; } 
+          warpSessionReauth == other.warpSessionReauth;
+
+@override int get hashCode => Object.hash(devices, email, userUid, warpSessionReauth);
+
+@override String toString() => 'ZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest(devices: $devices, email: $email, userUid: $userUid, warpSessionReauth: $warpSessionReauth)';
+
  }

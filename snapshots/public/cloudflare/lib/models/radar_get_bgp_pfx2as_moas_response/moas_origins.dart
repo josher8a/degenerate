@@ -27,11 +27,14 @@ MoasOrigins copyWith({int? origin, int? peerCount, String? rpkiValidation, }) { 
   peerCount: peerCount ?? this.peerCount,
   rpkiValidation: rpkiValidation ?? this.rpkiValidation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MoasOrigins &&
           origin == other.origin &&
           peerCount == other.peerCount &&
-          rpkiValidation == other.rpkiValidation; } 
-@override int get hashCode { return Object.hash(origin, peerCount, rpkiValidation); } 
-@override String toString() { return 'MoasOrigins(origin: $origin, peerCount: $peerCount, rpkiValidation: $rpkiValidation)'; } 
+          rpkiValidation == other.rpkiValidation;
+
+@override int get hashCode => Object.hash(origin, peerCount, rpkiValidation);
+
+@override String toString() => 'MoasOrigins(origin: $origin, peerCount: $peerCount, rpkiValidation: $rpkiValidation)';
+
  }

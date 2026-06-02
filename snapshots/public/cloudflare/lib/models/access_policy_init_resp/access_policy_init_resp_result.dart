@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessStatus($value)';
+
  }
 @immutable final class AccessPolicyInitRespResult {const AccessPolicyInitRespResult({this.id, this.status, });
 
@@ -42,10 +45,13 @@ AccessPolicyInitRespResult copyWith({AccessPolicyTestId? Function()? id, AccessS
   id: id != null ? id() : this.id,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyInitRespResult &&
           id == other.id &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, status); } 
-@override String toString() { return 'AccessPolicyInitRespResult(id: $id, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, status);
+
+@override String toString() => 'AccessPolicyInitRespResult(id: $id, status: $status)';
+
  }

@@ -28,11 +28,14 @@ UpdateUsageTriggerRequest copyWith({CreateUsageTriggerRequestCallbackMethod? Fun
   callbackUrl: callbackUrl != null ? callbackUrl() : this.callbackUrl,
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateUsageTriggerRequest &&
           callbackMethod == other.callbackMethod &&
           callbackUrl == other.callbackUrl &&
-          friendlyName == other.friendlyName; } 
-@override int get hashCode { return Object.hash(callbackMethod, callbackUrl, friendlyName); } 
-@override String toString() { return 'UpdateUsageTriggerRequest(callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, friendlyName: $friendlyName)'; } 
+          friendlyName == other.friendlyName;
+
+@override int get hashCode => Object.hash(callbackMethod, callbackUrl, friendlyName);
+
+@override String toString() => 'UpdateUsageTriggerRequest(callbackMethod: $callbackMethod, callbackUrl: $callbackUrl, friendlyName: $friendlyName)';
+
  }

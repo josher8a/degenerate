@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('missi
 TrialSettingsConfigEndBehavior copyWith({MissingPaymentMethod? missingPaymentMethod}) { return TrialSettingsConfigEndBehavior(
   missingPaymentMethod: missingPaymentMethod ?? this.missingPaymentMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TrialSettingsConfigEndBehavior &&
-          missingPaymentMethod == other.missingPaymentMethod; } 
-@override int get hashCode { return missingPaymentMethod.hashCode; } 
-@override String toString() { return 'TrialSettingsConfigEndBehavior(missingPaymentMethod: $missingPaymentMethod)'; } 
+          missingPaymentMethod == other.missingPaymentMethod;
+
+@override int get hashCode => missingPaymentMethod.hashCode;
+
+@override String toString() => 'TrialSettingsConfigEndBehavior(missingPaymentMethod: $missingPaymentMethod)';
+
  }

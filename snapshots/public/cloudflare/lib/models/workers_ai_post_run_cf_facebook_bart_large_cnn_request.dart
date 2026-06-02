@@ -26,10 +26,13 @@ WorkersAiPostRunCfFacebookBartLargeCnnRequest copyWith({String? inputText, int F
   inputText: inputText ?? this.inputText,
   maxLength: maxLength != null ? maxLength() : this.maxLength,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfFacebookBartLargeCnnRequest &&
           inputText == other.inputText &&
-          maxLength == other.maxLength; } 
-@override int get hashCode { return Object.hash(inputText, maxLength); } 
-@override String toString() { return 'WorkersAiPostRunCfFacebookBartLargeCnnRequest(inputText: $inputText, maxLength: $maxLength)'; } 
+          maxLength == other.maxLength;
+
+@override int get hashCode => Object.hash(inputText, maxLength);
+
+@override String toString() => 'WorkersAiPostRunCfFacebookBartLargeCnnRequest(inputText: $inputText, maxLength: $maxLength)';
+
  }

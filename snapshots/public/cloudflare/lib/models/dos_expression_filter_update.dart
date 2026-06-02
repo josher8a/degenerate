@@ -24,10 +24,13 @@ DosExpressionFilterUpdate copyWith({String? Function()? expression, String? Func
   expression: expression != null ? expression() : this.expression,
   mode: mode != null ? mode() : this.mode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosExpressionFilterUpdate &&
           expression == other.expression &&
-          mode == other.mode; } 
-@override int get hashCode { return Object.hash(expression, mode); } 
-@override String toString() { return 'DosExpressionFilterUpdate(expression: $expression, mode: $mode)'; } 
+          mode == other.mode;
+
+@override int get hashCode => Object.hash(expression, mode);
+
+@override String toString() => 'DosExpressionFilterUpdate(expression: $expression, mode: $mode)';
+
  }

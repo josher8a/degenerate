@@ -43,13 +43,16 @@ DestinationCreateResponseResult copyWith({DestinationCreateResponseResultConfigu
   scripts: scripts ?? this.scripts,
   slug: slug ?? this.slug,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateResponseResult &&
           configuration == other.configuration &&
           enabled == other.enabled &&
           name == other.name &&
           listEquals(scripts, other.scripts) &&
-          slug == other.slug; } 
-@override int get hashCode { return Object.hash(configuration, enabled, name, Object.hashAll(scripts), slug); } 
-@override String toString() { return 'DestinationCreateResponseResult(configuration: $configuration, enabled: $enabled, name: $name, scripts: $scripts, slug: $slug)'; } 
+          slug == other.slug;
+
+@override int get hashCode => Object.hash(configuration, enabled, name, Object.hashAll(scripts), slug);
+
+@override String toString() => 'DestinationCreateResponseResult(configuration: $configuration, enabled: $enabled, name: $name, scripts: $scripts, slug: $slug)';
+
  }

@@ -60,7 +60,7 @@ WebhookPullRequestReviewCommentEdited copyWith({ItemEditedAction? action, Webhoo
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewCommentEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -70,7 +70,10 @@ WebhookPullRequestReviewCommentEdited copyWith({ItemEditedAction? action, Webhoo
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, comment, enterprise, installation, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestReviewCommentEdited(action: $action, changes: $changes, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, comment, enterprise, installation, organization, pullRequest, repository, sender);
+
+@override String toString() => 'WebhookPullRequestReviewCommentEdited(action: $action, changes: $changes, comment: $comment, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+
  }

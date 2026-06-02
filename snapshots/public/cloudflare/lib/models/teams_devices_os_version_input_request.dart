@@ -60,14 +60,17 @@ TeamsDevicesOsVersionInputRequest copyWith({TeamsDevicesDomainJoinedInputRequest
   osVersionExtra: osVersionExtra != null ? osVersionExtra() : this.osVersionExtra,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesOsVersionInputRequest &&
           operatingSystem == other.operatingSystem &&
           $operator == other.$operator &&
           osDistroName == other.osDistroName &&
           osDistroRevision == other.osDistroRevision &&
           osVersionExtra == other.osVersionExtra &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(operatingSystem, $operator, osDistroName, osDistroRevision, osVersionExtra, version); } 
-@override String toString() { return 'TeamsDevicesOsVersionInputRequest(operatingSystem: $operatingSystem, \$operator: ${$operator}, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersionExtra: $osVersionExtra, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(operatingSystem, $operator, osDistroName, osDistroRevision, osVersionExtra, version);
+
+@override String toString() => 'TeamsDevicesOsVersionInputRequest(operatingSystem: $operatingSystem, \$operator: ${$operator}, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersionExtra: $osVersionExtra, version: $version)';
+
  }

@@ -46,14 +46,17 @@ CustomSslForAZoneEditSslConfigurationRequest copyWith({TlsCertificatesAndHostnam
   policy: policy != null ? policy() : this.policy,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomSslForAZoneEditSslConfigurationRequest &&
           bundleMethod == other.bundleMethod &&
           certificate == other.certificate &&
           deploy == other.deploy &&
           geoRestrictions == other.geoRestrictions &&
           policy == other.policy &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificate, deploy, geoRestrictions, policy, privateKey); } 
-@override String toString() { return 'CustomSslForAZoneEditSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, deploy: $deploy, geoRestrictions: $geoRestrictions, policy: $policy, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(bundleMethod, certificate, deploy, geoRestrictions, policy, privateKey);
+
+@override String toString() => 'CustomSslForAZoneEditSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, deploy: $deploy, geoRestrictions: $geoRestrictions, policy: $policy, privateKey: $privateKey)';
+
  }

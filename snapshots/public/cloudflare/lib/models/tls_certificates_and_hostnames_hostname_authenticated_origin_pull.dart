@@ -94,7 +94,7 @@ TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertific
   id: id != null ? id() : this.id,
   privateKey: privateKey != null ? privateKey() : this.privateKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull &&
           certId == other.certId &&
           certStatus == other.certStatus &&
@@ -111,7 +111,10 @@ TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull copyWith({TlsCertific
           status == other.status &&
           updatedAt == other.updatedAt &&
           id == other.id &&
-          privateKey == other.privateKey; } 
-@override int get hashCode { return Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt, id, privateKey); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt, id: $id, privateKey: $privateKey)'; } 
+          privateKey == other.privateKey;
+
+@override int get hashCode => Object.hash(certId, certStatus, certUpdatedAt, certUploadedOn, certificate, createdAt, enabled, expiresOn, hostname, issuer, serialNumber, signature, status, updatedAt, id, privateKey);
+
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull(certId: $certId, certStatus: $certStatus, certUpdatedAt: $certUpdatedAt, certUploadedOn: $certUploadedOn, certificate: $certificate, createdAt: $createdAt, enabled: $enabled, expiresOn: $expiresOn, hostname: $hostname, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, updatedAt: $updatedAt, id: $id, privateKey: $privateKey)';
+
  }

@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AutomaticTaxDisabledReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AutomaticTaxDisabledReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AutomaticTaxDisabledReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AutomaticTaxDisabledReason($value)';
+
  }
 /// 
 @immutable final class AutomaticTax {const AutomaticTax({required this.enabled, this.disabledReason, this.liability, this.provider, this.status, });
@@ -73,13 +76,16 @@ AutomaticTax copyWith({AutomaticTaxDisabledReason? Function()? disabledReason, b
   provider: provider != null ? provider() : this.provider,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutomaticTax &&
           disabledReason == other.disabledReason &&
           enabled == other.enabled &&
           liability == other.liability &&
           provider == other.provider &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(disabledReason, enabled, liability, provider, status); } 
-@override String toString() { return 'AutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability, provider: $provider, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(disabledReason, enabled, liability, provider, status);
+
+@override String toString() => 'AutomaticTax(disabledReason: $disabledReason, enabled: $enabled, liability: $liability, provider: $provider, status: $status)';
+
  }

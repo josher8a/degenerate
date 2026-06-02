@@ -33,12 +33,15 @@ DestinationCreateRequestConfiguration copyWith({Map<String,String>? headers, Con
   type: type ?? this.type,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateRequestConfiguration &&
           headers == other.headers &&
           logpushDataset == other.logpushDataset &&
           type == other.type &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(headers, logpushDataset, type, url); } 
-@override String toString() { return 'DestinationCreateRequestConfiguration(headers: $headers, logpushDataset: $logpushDataset, type: $type, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(headers, logpushDataset, type, url);
+
+@override String toString() => 'DestinationCreateRequestConfiguration(headers: $headers, logpushDataset: $logpushDataset, type: $type, url: $url)';
+
  }

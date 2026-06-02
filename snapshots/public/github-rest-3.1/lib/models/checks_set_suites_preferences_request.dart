@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ChecksSetSuitesPreferencesRequest copyWith({List<AutoTriggerChecks>? Function()? autoTriggerChecks}) { return ChecksSetSuitesPreferencesRequest(
   autoTriggerChecks: autoTriggerChecks != null ? autoTriggerChecks() : this.autoTriggerChecks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChecksSetSuitesPreferencesRequest &&
-          listEquals(autoTriggerChecks, other.autoTriggerChecks); } 
-@override int get hashCode { return Object.hashAll(autoTriggerChecks ?? const []); } 
-@override String toString() { return 'ChecksSetSuitesPreferencesRequest(autoTriggerChecks: $autoTriggerChecks)'; } 
+          listEquals(autoTriggerChecks, other.autoTriggerChecks);
+
+@override int get hashCode => Object.hashAll(autoTriggerChecks ?? const []);
+
+@override String toString() => 'ChecksSetSuitesPreferencesRequest(autoTriggerChecks: $autoTriggerChecks)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 File copyWith({String? Function()? sourceLocation}) { return File(
   sourceLocation: sourceLocation != null ? sourceLocation() : this.sourceLocation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is File &&
-          sourceLocation == other.sourceLocation; } 
-@override int get hashCode { return sourceLocation.hashCode; } 
-@override String toString() { return 'File(sourceLocation: $sourceLocation)'; } 
+          sourceLocation == other.sourceLocation;
+
+@override int get hashCode => sourceLocation.hashCode;
+
+@override String toString() => 'File(sourceLocation: $sourceLocation)';
+
  }

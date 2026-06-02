@@ -34,12 +34,15 @@ GitTree copyWith({String? sha, Uri? Function()? url, bool? truncated, List<GitTr
   truncated: truncated ?? this.truncated,
   tree: tree ?? this.tree,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitTree &&
           sha == other.sha &&
           url == other.url &&
           truncated == other.truncated &&
-          listEquals(tree, other.tree); } 
-@override int get hashCode { return Object.hash(sha, url, truncated, Object.hashAll(tree)); } 
-@override String toString() { return 'GitTree(sha: $sha, url: $url, truncated: $truncated, tree: $tree)'; } 
+          listEquals(tree, other.tree);
+
+@override int get hashCode => Object.hash(sha, url, truncated, Object.hashAll(tree));
+
+@override String toString() => 'GitTree(sha: $sha, url: $url, truncated: $truncated, tree: $tree)';
+
  }

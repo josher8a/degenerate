@@ -17,7 +17,8 @@ final class DeleteEventReferenceDeleteError$400 extends DeleteEventReferenceDele
 
 final DeleteEventReferenceDeleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class DeleteEventReferenceDeleteError$Unknown extends DeleteEventReferenceDeleteError {const DeleteEventReferenceDeleteError$Unknown(this.statusCode, this.rawBody, );
 

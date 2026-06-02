@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PayPerCrawlBotAccessMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PayPerCrawlBotAccessMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PayPerCrawlBotAccessMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PayPerCrawlBotAccessMode($value)';
+
  }
 @immutable final class PayPerCrawlDaricConfig {const PayPerCrawlDaricConfig({this.botOverrides, this.enabled, this.priceUsdMicrocents, });
 
@@ -49,11 +52,14 @@ PayPerCrawlDaricConfig copyWith({Map<String, PayPerCrawlBotAccessMode>? Function
   enabled: enabled != null ? enabled() : this.enabled,
   priceUsdMicrocents: priceUsdMicrocents != null ? priceUsdMicrocents() : this.priceUsdMicrocents,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PayPerCrawlDaricConfig &&
           botOverrides == other.botOverrides &&
           enabled == other.enabled &&
-          priceUsdMicrocents == other.priceUsdMicrocents; } 
-@override int get hashCode { return Object.hash(botOverrides, enabled, priceUsdMicrocents); } 
-@override String toString() { return 'PayPerCrawlDaricConfig(botOverrides: $botOverrides, enabled: $enabled, priceUsdMicrocents: $priceUsdMicrocents)'; } 
+          priceUsdMicrocents == other.priceUsdMicrocents;
+
+@override int get hashCode => Object.hash(botOverrides, enabled, priceUsdMicrocents);
+
+@override String toString() => 'PayPerCrawlDaricConfig(botOverrides: $botOverrides, enabled: $enabled, priceUsdMicrocents: $priceUsdMicrocents)';
+
  }

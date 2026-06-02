@@ -23,10 +23,13 @@ PostDosEventCreateBulkWithRelationshipsResponseErrors copyWith({String? error, d
   error: error ?? this.error,
   eventIndex: eventIndex ?? this.eventIndex,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDosEventCreateBulkWithRelationshipsResponseErrors &&
           error == other.error &&
-          eventIndex == other.eventIndex; } 
-@override int get hashCode { return Object.hash(error, eventIndex); } 
-@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsResponseErrors(error: $error, eventIndex: $eventIndex)'; } 
+          eventIndex == other.eventIndex;
+
+@override int get hashCode => Object.hash(error, eventIndex);
+
+@override String toString() => 'PostDosEventCreateBulkWithRelationshipsResponseErrors(error: $error, eventIndex: $eventIndex)';
+
  }

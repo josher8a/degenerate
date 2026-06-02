@@ -25,18 +25,13 @@ final class RefreshTokenSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is RefreshTokenSchema && refreshToken == other.refreshToken;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RefreshTokenSchema && refreshToken == other.refreshToken;
 
   @override
-  int get hashCode {
-    return refreshToken.hashCode;
-  }
+  int get hashCode => refreshToken.hashCode;
 
   @override
-  String toString() {
-    return 'RefreshTokenSchema(refreshToken: $refreshToken)';
-  }
+  String toString() => 'RefreshTokenSchema(refreshToken: $refreshToken)';
 }

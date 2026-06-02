@@ -73,7 +73,7 @@ SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, Str
   copyrightText: copyrightText != null ? copyrightText() : this.copyrightText,
   externalRefs: externalRefs != null ? externalRefs() : this.externalRefs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SbomPackages &&
           spdxid == other.spdxid &&
           name == other.name &&
@@ -84,7 +84,10 @@ SbomPackages copyWith({String? Function()? spdxid, String? Function()? name, Str
           licenseDeclared == other.licenseDeclared &&
           supplier == other.supplier &&
           copyrightText == other.copyrightText &&
-          listEquals(externalRefs, other.externalRefs); } 
-@override int get hashCode { return Object.hash(spdxid, name, versionInfo, downloadLocation, filesAnalyzed, licenseConcluded, licenseDeclared, supplier, copyrightText, Object.hashAll(externalRefs ?? const [])); } 
-@override String toString() { return 'SbomPackages(spdxid: $spdxid, name: $name, versionInfo: $versionInfo, downloadLocation: $downloadLocation, filesAnalyzed: $filesAnalyzed, licenseConcluded: $licenseConcluded, licenseDeclared: $licenseDeclared, supplier: $supplier, copyrightText: $copyrightText, externalRefs: $externalRefs)'; } 
+          listEquals(externalRefs, other.externalRefs);
+
+@override int get hashCode => Object.hash(spdxid, name, versionInfo, downloadLocation, filesAnalyzed, licenseConcluded, licenseDeclared, supplier, copyrightText, Object.hashAll(externalRefs ?? const []));
+
+@override String toString() => 'SbomPackages(spdxid: $spdxid, name: $name, versionInfo: $versionInfo, downloadLocation: $downloadLocation, filesAnalyzed: $filesAnalyzed, licenseConcluded: $licenseConcluded, licenseDeclared: $licenseDeclared, supplier: $supplier, copyrightText: $copyrightText, externalRefs: $externalRefs)';
+
  }

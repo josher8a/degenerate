@@ -20,10 +20,13 @@ GetIssuingPersonalizationDesignsPreferences copyWith({bool? Function()? isDefaul
   isDefault: isDefault != null ? isDefault() : this.isDefault,
   isPlatformDefault: isPlatformDefault != null ? isPlatformDefault() : this.isPlatformDefault,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIssuingPersonalizationDesignsPreferences &&
           isDefault == other.isDefault &&
-          isPlatformDefault == other.isPlatformDefault; } 
-@override int get hashCode { return Object.hash(isDefault, isPlatformDefault); } 
-@override String toString() { return 'GetIssuingPersonalizationDesignsPreferences(isDefault: $isDefault, isPlatformDefault: $isPlatformDefault)'; } 
+          isPlatformDefault == other.isPlatformDefault;
+
+@override int get hashCode => Object.hash(isDefault, isPlatformDefault);
+
+@override String toString() => 'GetIssuingPersonalizationDesignsPreferences(isDefault: $isDefault, isPlatformDefault: $isPlatformDefault)';
+
  }

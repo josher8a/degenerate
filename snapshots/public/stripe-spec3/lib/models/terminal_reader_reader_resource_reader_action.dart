@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderActionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceReaderActionStatus($value)';
+
  }
 /// Type of action performed by the reader.
 @immutable final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
@@ -63,10 +66,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderActionType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalReaderReaderResourceReaderActionType($value)';
+
  }
 /// Represents an action performed by the reader
 @immutable final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({required this.status, required this.type, this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, });
@@ -150,7 +156,7 @@ TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceC
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceReaderAction &&
           collectInputs == other.collectInputs &&
           collectPaymentMethod == other.collectPaymentMethod &&
@@ -162,7 +168,10 @@ TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceC
           refundPayment == other.refundPayment &&
           setReaderDisplay == other.setReaderDisplay &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type); } 
-@override String toString() { return 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type);
+
+@override String toString() => 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)';
+
  }

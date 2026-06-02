@@ -35,13 +35,16 @@ S3SourceResponseSchema copyWith({String? Function()? bucket, String? Function()?
   pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is S3SourceResponseSchema &&
           bucket == other.bucket &&
           endpoint == other.endpoint &&
           listEquals(keys, other.keys) &&
           pathPrefix == other.pathPrefix &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, endpoint, Object.hashAll(keys ?? const []), pathPrefix, vendor); } 
-@override String toString() { return 'S3SourceResponseSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, endpoint, Object.hashAll(keys ?? const []), pathPrefix, vendor);
+
+@override String toString() => 'S3SourceResponseSchema(bucket: $bucket, endpoint: $endpoint, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)';
+
  }

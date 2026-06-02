@@ -29,11 +29,14 @@ NotificationWebhooksCreateAWebhookRequest copyWith({AaaComponentsSchemasName? na
   secret: secret != null ? secret() : this.secret,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationWebhooksCreateAWebhookRequest &&
           name == other.name &&
           secret == other.secret &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(name, secret, url); } 
-@override String toString() { return 'NotificationWebhooksCreateAWebhookRequest(name: $name, secret: $secret, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(name, secret, url);
+
+@override String toString() => 'NotificationWebhooksCreateAWebhookRequest(name: $name, secret: $secret, url: $url)';
+
  }

@@ -29,11 +29,14 @@ AccessScimConfigMappingOperations copyWith({bool? Function()? create, bool? Func
   delete: delete != null ? delete() : this.delete,
   update: update != null ? update() : this.update,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigMappingOperations &&
           create == other.create &&
           delete == other.delete &&
-          update == other.update; } 
-@override int get hashCode { return Object.hash(create, delete, update); } 
-@override String toString() { return 'AccessScimConfigMappingOperations(create: $create, delete: $delete, update: $update)'; } 
+          update == other.update;
+
+@override int get hashCode => Object.hash(create, delete, update);
+
+@override String toString() => 'AccessScimConfigMappingOperations(create: $create, delete: $delete, update: $update)';
+
  }

@@ -21,10 +21,13 @@ WebhooksSecurityAdvisoryIdentifiers copyWith({String? type, String? value, }) { 
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSecurityAdvisoryIdentifiers &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(type, value); } 
-@override String toString() { return 'WebhooksSecurityAdvisoryIdentifiers(type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(type, value);
+
+@override String toString() => 'WebhooksSecurityAdvisoryIdentifiers(type: $type, value: $value)';
+
  }

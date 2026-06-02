@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ListsBulkOperationFailedStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ListsBulkOperationFailedStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ListsBulkOperationFailedStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ListsBulkOperationFailedStatus($value)';
+
  }
 @immutable final class ListsBulkOperationFailed {const ListsBulkOperationFailed({required this.completed, required this.error, required this.id, required this.status, });
 
@@ -61,12 +64,15 @@ ListsBulkOperationFailed copyWith({ListsCompleted? completed, String? error, Lis
   id: id ?? this.id,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsBulkOperationFailed &&
           completed == other.completed &&
           error == other.error &&
           id == other.id &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(completed, error, id, status); } 
-@override String toString() { return 'ListsBulkOperationFailed(completed: $completed, error: $error, id: $id, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(completed, error, id, status);
+
+@override String toString() => 'ListsBulkOperationFailed(completed: $completed, error: $error, id: $id, status: $status)';
+
  }

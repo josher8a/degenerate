@@ -20,9 +20,12 @@ return errors; }
 ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return ToggleCertificatesRequest(
   certificateIds: certificateIds ?? this.certificateIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToggleCertificatesRequest &&
-          listEquals(certificateIds, other.certificateIds); } 
-@override int get hashCode { return Object.hashAll(certificateIds); } 
-@override String toString() { return 'ToggleCertificatesRequest(certificateIds: $certificateIds)'; } 
+          listEquals(certificateIds, other.certificateIds);
+
+@override int get hashCode => Object.hashAll(certificateIds);
+
+@override String toString() => 'ToggleCertificatesRequest(certificateIds: $certificateIds)';
+
  }

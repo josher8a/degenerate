@@ -20,10 +20,13 @@ KickAllParticipantsResponseData copyWith({String? Function()? action, double? Fu
   action: action != null ? action() : this.action,
   kickedParticipantsCount: kickedParticipantsCount != null ? kickedParticipantsCount() : this.kickedParticipantsCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KickAllParticipantsResponseData &&
           action == other.action &&
-          kickedParticipantsCount == other.kickedParticipantsCount; } 
-@override int get hashCode { return Object.hash(action, kickedParticipantsCount); } 
-@override String toString() { return 'KickAllParticipantsResponseData(action: $action, kickedParticipantsCount: $kickedParticipantsCount)'; } 
+          kickedParticipantsCount == other.kickedParticipantsCount;
+
+@override int get hashCode => Object.hash(action, kickedParticipantsCount);
+
+@override String toString() => 'KickAllParticipantsResponseData(action: $action, kickedParticipantsCount: $kickedParticipantsCount)';
+
  }

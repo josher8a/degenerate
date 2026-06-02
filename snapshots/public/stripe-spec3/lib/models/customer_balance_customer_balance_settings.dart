@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)';
+
  }
 /// 
 @immutable final class CustomerBalanceCustomerBalanceSettings {const CustomerBalanceCustomerBalanceSettings({required this.reconciliationMode, required this.usingMerchantDefault, });
@@ -49,10 +52,13 @@ CustomerBalanceCustomerBalanceSettings copyWith({CustomerBalanceCustomerBalanceS
   reconciliationMode: reconciliationMode ?? this.reconciliationMode,
   usingMerchantDefault: usingMerchantDefault ?? this.usingMerchantDefault,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceCustomerBalanceSettings &&
           reconciliationMode == other.reconciliationMode &&
-          usingMerchantDefault == other.usingMerchantDefault; } 
-@override int get hashCode { return Object.hash(reconciliationMode, usingMerchantDefault); } 
-@override String toString() { return 'CustomerBalanceCustomerBalanceSettings(reconciliationMode: $reconciliationMode, usingMerchantDefault: $usingMerchantDefault)'; } 
+          usingMerchantDefault == other.usingMerchantDefault;
+
+@override int get hashCode => Object.hash(reconciliationMode, usingMerchantDefault);
+
+@override String toString() => 'CustomerBalanceCustomerBalanceSettings(reconciliationMode: $reconciliationMode, usingMerchantDefault: $usingMerchantDefault)';
+
  }

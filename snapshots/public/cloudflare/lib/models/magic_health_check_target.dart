@@ -27,10 +27,13 @@ MagicHealthCheckTarget copyWith({String? Function()? effective, String? Function
   effective: effective != null ? effective() : this.effective,
   saved: saved != null ? saved() : this.saved,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicHealthCheckTarget &&
           effective == other.effective &&
-          saved == other.saved; } 
-@override int get hashCode { return Object.hash(effective, saved); } 
-@override String toString() { return 'MagicHealthCheckTarget(effective: $effective, saved: $saved)'; } 
+          saved == other.saved;
+
+@override int get hashCode => Object.hash(effective, saved);
+
+@override String toString() => 'MagicHealthCheckTarget(effective: $effective, saved: $saved)';
+
  }

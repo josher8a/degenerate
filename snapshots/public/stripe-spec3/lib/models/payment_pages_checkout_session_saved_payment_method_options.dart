@@ -29,11 +29,14 @@ PaymentPagesCheckoutSessionSavedPaymentMethodOptions copyWith({List<AllowRedispl
   paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
   paymentMethodSave: paymentMethodSave != null ? paymentMethodSave() : this.paymentMethodSave,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionSavedPaymentMethodOptions &&
           listEquals(allowRedisplayFilters, other.allowRedisplayFilters) &&
           paymentMethodRemove == other.paymentMethodRemove &&
-          paymentMethodSave == other.paymentMethodSave; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowRedisplayFilters ?? const []), paymentMethodRemove, paymentMethodSave); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptions(allowRedisplayFilters: $allowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave)'; } 
+          paymentMethodSave == other.paymentMethodSave;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowRedisplayFilters ?? const []), paymentMethodRemove, paymentMethodSave);
+
+@override String toString() => 'PaymentPagesCheckoutSessionSavedPaymentMethodOptions(allowRedisplayFilters: $allowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave)';
+
  }

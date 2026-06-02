@@ -52,13 +52,16 @@ PostTerminalReadersRequest copyWith({List<String>? Function()? expand, String? F
   metadata: metadata != null ? metadata() : this.metadata,
   registrationCode: registrationCode ?? this.registrationCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersRequest &&
           listEquals(expand, other.expand) &&
           label == other.label &&
           location == other.location &&
           metadata == other.metadata &&
-          registrationCode == other.registrationCode; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), label, location, metadata, registrationCode); } 
-@override String toString() { return 'PostTerminalReadersRequest(expand: $expand, label: $label, location: $location, metadata: $metadata, registrationCode: $registrationCode)'; } 
+          registrationCode == other.registrationCode;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), label, location, metadata, registrationCode);
+
+@override String toString() => 'PostTerminalReadersRequest(expand: $expand, label: $label, location: $location, metadata: $metadata, registrationCode: $registrationCode)';
+
  }

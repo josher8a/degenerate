@@ -43,12 +43,15 @@ MandateAcssDebit copyWith({List<DefaultFor>? Function()? defaultFor, String? Fun
   paymentSchedule: paymentSchedule ?? this.paymentSchedule,
   transactionType: transactionType ?? this.transactionType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandateAcssDebit &&
           listEquals(defaultFor, other.defaultFor) &&
           intervalDescription == other.intervalDescription &&
           paymentSchedule == other.paymentSchedule &&
-          transactionType == other.transactionType; } 
-@override int get hashCode { return Object.hash(Object.hashAll(defaultFor ?? const []), intervalDescription, paymentSchedule, transactionType); } 
-@override String toString() { return 'MandateAcssDebit(defaultFor: $defaultFor, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)'; } 
+          transactionType == other.transactionType;
+
+@override int get hashCode => Object.hash(Object.hashAll(defaultFor ?? const []), intervalDescription, paymentSchedule, transactionType);
+
+@override String toString() => 'MandateAcssDebit(defaultFor: $defaultFor, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)';
+
  }

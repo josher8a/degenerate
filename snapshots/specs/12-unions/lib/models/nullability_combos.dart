@@ -31,12 +31,15 @@ NullabilityCombos copyWith({String? requiredNonNullable, String? Function()? req
   optionalNonNullable: optionalNonNullable != null ? optionalNonNullable() : this.optionalNonNullable,
   optionalNullable: optionalNullable != null ? optionalNullable() : this.optionalNullable,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NullabilityCombos &&
           requiredNonNullable == other.requiredNonNullable &&
           requiredNullable == other.requiredNullable &&
           optionalNonNullable == other.optionalNonNullable &&
-          optionalNullable == other.optionalNullable; } 
-@override int get hashCode { return Object.hash(requiredNonNullable, requiredNullable, optionalNonNullable, optionalNullable); } 
-@override String toString() { return 'NullabilityCombos(requiredNonNullable: $requiredNonNullable, requiredNullable: $requiredNullable, optionalNonNullable: $optionalNonNullable, optionalNullable: $optionalNullable)'; } 
+          optionalNullable == other.optionalNullable;
+
+@override int get hashCode => Object.hash(requiredNonNullable, requiredNullable, optionalNonNullable, optionalNullable);
+
+@override String toString() => 'NullabilityCombos(requiredNonNullable: $requiredNonNullable, requiredNullable: $requiredNullable, optionalNonNullable: $optionalNonNullable, optionalNullable: $optionalNullable)';
+
  }

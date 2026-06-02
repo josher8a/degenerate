@@ -29,11 +29,14 @@ OutboundWorker copyWith({String? Function()? entrypoint, String? Function()? env
   environment: environment != null ? environment() : this.environment,
   service: service != null ? service() : this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutboundWorker &&
           entrypoint == other.entrypoint &&
           environment == other.environment &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(entrypoint, environment, service); } 
-@override String toString() { return 'OutboundWorker(entrypoint: $entrypoint, environment: $environment, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(entrypoint, environment, service);
+
+@override String toString() => 'OutboundWorker(entrypoint: $entrypoint, environment: $environment, service: $service)';
+
  }

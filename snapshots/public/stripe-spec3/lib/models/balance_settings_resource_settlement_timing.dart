@@ -23,10 +23,13 @@ BalanceSettingsResourceSettlementTiming copyWith({int? delayDays, int? Function(
   delayDays: delayDays ?? this.delayDays,
   delayDaysOverride: delayDaysOverride != null ? delayDaysOverride() : this.delayDaysOverride,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceSettingsResourceSettlementTiming &&
           delayDays == other.delayDays &&
-          delayDaysOverride == other.delayDaysOverride; } 
-@override int get hashCode { return Object.hash(delayDays, delayDaysOverride); } 
-@override String toString() { return 'BalanceSettingsResourceSettlementTiming(delayDays: $delayDays, delayDaysOverride: $delayDaysOverride)'; } 
+          delayDaysOverride == other.delayDaysOverride;
+
+@override int get hashCode => Object.hash(delayDays, delayDaysOverride);
+
+@override String toString() => 'BalanceSettingsResourceSettlementTiming(delayDays: $delayDays, delayDaysOverride: $delayDaysOverride)';
+
  }

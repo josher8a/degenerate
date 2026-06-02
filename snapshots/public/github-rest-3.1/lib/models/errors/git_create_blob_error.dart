@@ -20,25 +20,29 @@ final class GitCreateBlobError$403 extends GitCreateBlobError {const GitCreateBl
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class GitCreateBlobError$404 extends GitCreateBlobError {const GitCreateBlobError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GitCreateBlobError$409 extends GitCreateBlobError {const GitCreateBlobError$409(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 409; } 
+@override int get statusCode => 409;
+
  }
 final class GitCreateBlobError$422 extends GitCreateBlobError {const GitCreateBlobError$422(this.error);
 
 final GitCreateBlobResponse422 error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class GitCreateBlobError$Unknown extends GitCreateBlobError {const GitCreateBlobError$Unknown(this.statusCode, this.rawBody, );
 

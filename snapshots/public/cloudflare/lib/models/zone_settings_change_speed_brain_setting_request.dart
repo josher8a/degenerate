@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 ZoneSettingsChangeSpeedBrainSettingRequest copyWith({CacheRulesSmartTieredCachePatchValue? value}) { return ZoneSettingsChangeSpeedBrainSettingRequest(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneSettingsChangeSpeedBrainSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneSettingsChangeSpeedBrainSettingRequest(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZoneSettingsChangeSpeedBrainSettingRequest(value: $value)';
+
  }

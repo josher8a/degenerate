@@ -44,11 +44,14 @@ TeamsDevicesDeviceDexTestSchemasData copyWith({String? Function()? host, String?
   kind: kind != null ? kind() : this.kind,
   method: method != null ? method() : this.method,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDeviceDexTestSchemasData &&
           host == other.host &&
           kind == other.kind &&
-          method == other.method; } 
-@override int get hashCode { return Object.hash(host, kind, method); } 
-@override String toString() { return 'TeamsDevicesDeviceDexTestSchemasData(host: $host, kind: $kind, method: $method)'; } 
+          method == other.method;
+
+@override int get hashCode => Object.hash(host, kind, method);
+
+@override String toString() => 'TeamsDevicesDeviceDexTestSchemasData(host: $host, kind: $kind, method: $method)';
+
  }

@@ -33,12 +33,15 @@ Confidence copyWith({double? confidence, String? name, String? pattern, String? 
   pattern: pattern ?? this.pattern,
   patternType: patternType ?? this.patternType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Confidence &&
           confidence == other.confidence &&
           name == other.name &&
           pattern == other.pattern &&
-          patternType == other.patternType; } 
-@override int get hashCode { return Object.hash(confidence, name, pattern, patternType); } 
-@override String toString() { return 'Confidence(confidence: $confidence, name: $name, pattern: $pattern, patternType: $patternType)'; } 
+          patternType == other.patternType;
+
+@override int get hashCode => Object.hash(confidence, name, pattern, patternType);
+
+@override String toString() => 'Confidence(confidence: $confidence, name: $name, pattern: $pattern, patternType: $patternType)';
+
  }

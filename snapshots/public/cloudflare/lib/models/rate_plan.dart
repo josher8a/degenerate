@@ -56,14 +56,17 @@ RatePlan copyWith({List<ComponentValue>? Function()? components, Currency? Funct
   id: id != null ? id() : this.id,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RatePlan &&
           listEquals(components, other.components) &&
           currency == other.currency &&
           duration == other.duration &&
           frequency == other.frequency &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(components ?? const []), currency, duration, frequency, id, name); } 
-@override String toString() { return 'RatePlan(components: $components, currency: $currency, duration: $duration, frequency: $frequency, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(components ?? const []), currency, duration, frequency, id, name);
+
+@override String toString() => 'RatePlan(components: $components, currency: $currency, duration: $duration, frequency: $frequency, id: $id, name: $name)';
+
  }

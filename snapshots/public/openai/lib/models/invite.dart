@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InviteObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InviteObject($value)';
+
  }
 /// `accepted`,`expired`, or `pending`
 @immutable final class InviteStatus {const InviteStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InviteStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InviteStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InviteStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InviteStatus($value)';
+
  }
 /// Represents an individual `invite` to the organization.
 @immutable final class Invite {const Invite({required this.object, required this.id, required this.email, required this.role, required this.status, required this.invitedAt, required this.expiresAt, this.acceptedAt, this.projects, });
@@ -121,7 +127,7 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestR
   acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
   projects: projects != null ? projects() : this.projects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Invite &&
           object == other.object &&
           id == other.id &&
@@ -131,7 +137,10 @@ Invite copyWith({InviteObject? object, String? id, String? email, InviteRequestR
           invitedAt == other.invitedAt &&
           expiresAt == other.expiresAt &&
           acceptedAt == other.acceptedAt &&
-          listEquals(projects, other.projects); } 
-@override int get hashCode { return Object.hash(object, id, email, role, status, invitedAt, expiresAt, acceptedAt, Object.hashAll(projects ?? const [])); } 
-@override String toString() { return 'Invite(object: $object, id: $id, email: $email, role: $role, status: $status, invitedAt: $invitedAt, expiresAt: $expiresAt, acceptedAt: $acceptedAt, projects: $projects)'; } 
+          listEquals(projects, other.projects);
+
+@override int get hashCode => Object.hash(object, id, email, role, status, invitedAt, expiresAt, acceptedAt, Object.hashAll(projects ?? const []));
+
+@override String toString() => 'Invite(object: $object, id: $id, email: $email, role: $role, status: $status, invitedAt: $invitedAt, expiresAt: $expiresAt, acceptedAt: $acceptedAt, projects: $projects)';
+
  }

@@ -23,10 +23,13 @@ RoleUpdated copyWith({String? Function()? id, RoleUpdatedChangesRequested? Funct
   id: id != null ? id() : this.id,
   changesRequested: changesRequested != null ? changesRequested() : this.changesRequested,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RoleUpdated &&
           id == other.id &&
-          changesRequested == other.changesRequested; } 
-@override int get hashCode { return Object.hash(id, changesRequested); } 
-@override String toString() { return 'RoleUpdated(id: $id, changesRequested: $changesRequested)'; } 
+          changesRequested == other.changesRequested;
+
+@override int get hashCode => Object.hash(id, changesRequested);
+
+@override String toString() => 'RoleUpdated(id: $id, changesRequested: $changesRequested)';
+
  }

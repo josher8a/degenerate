@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Policy && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Policy($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Policy && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Policy($value)';
+
  }
 /// Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
 @immutable final class LoadBalancingOriginSteering {const LoadBalancingOriginSteering({this.policy = Policy.random});
@@ -56,9 +59,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 LoadBalancingOriginSteering copyWith({Policy Function()? policy}) { return LoadBalancingOriginSteering(
   policy: policy != null ? policy() : this.policy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingOriginSteering &&
-          policy == other.policy; } 
-@override int get hashCode { return policy.hashCode; } 
-@override String toString() { return 'LoadBalancingOriginSteering(policy: $policy)'; } 
+          policy == other.policy;
+
+@override int get hashCode => policy.hashCode;
+
+@override String toString() => 'LoadBalancingOriginSteering(policy: $policy)';
+
  }

@@ -22,10 +22,13 @@ RateLimitOverview copyWith({Resources? resources, RateLimit? rate, }) { return R
   resources: resources ?? this.resources,
   rate: rate ?? this.rate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimitOverview &&
           resources == other.resources &&
-          rate == other.rate; } 
-@override int get hashCode { return Object.hash(resources, rate); } 
-@override String toString() { return 'RateLimitOverview(resources: $resources, rate: $rate)'; } 
+          rate == other.rate;
+
+@override int get hashCode => Object.hash(resources, rate);
+
+@override String toString() => 'RateLimitOverview(resources: $resources, rate: $rate)';
+
  }

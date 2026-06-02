@@ -20,9 +20,12 @@ return errors; }
 CodespacesDeleteCodespacesAccessUsersRequest copyWith({List<String>? selectedUsernames}) { return CodespacesDeleteCodespacesAccessUsersRequest(
   selectedUsernames: selectedUsernames ?? this.selectedUsernames,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesDeleteCodespacesAccessUsersRequest &&
-          listEquals(selectedUsernames, other.selectedUsernames); } 
-@override int get hashCode { return Object.hashAll(selectedUsernames); } 
-@override String toString() { return 'CodespacesDeleteCodespacesAccessUsersRequest(selectedUsernames: $selectedUsernames)'; } 
+          listEquals(selectedUsernames, other.selectedUsernames);
+
+@override int get hashCode => Object.hashAll(selectedUsernames);
+
+@override String toString() => 'CodespacesDeleteCodespacesAccessUsersRequest(selectedUsernames: $selectedUsernames)';
+
  }

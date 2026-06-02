@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
 PagesDeploymentConfigValuesRequestMtlsCertificatesValue copyWith({String? certificateId}) { return PagesDeploymentConfigValuesRequestMtlsCertificatesValue(
   certificateId: certificateId ?? this.certificateId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesRequestMtlsCertificatesValue &&
-          certificateId == other.certificateId; } 
-@override int get hashCode { return certificateId.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesRequestMtlsCertificatesValue(certificateId: $certificateId)'; } 
+          certificateId == other.certificateId;
+
+@override int get hashCode => certificateId.hashCode;
+
+@override String toString() => 'PagesDeploymentConfigValuesRequestMtlsCertificatesValue(certificateId: $certificateId)';
+
  }

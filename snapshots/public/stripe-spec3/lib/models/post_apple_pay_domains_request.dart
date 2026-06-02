@@ -21,10 +21,13 @@ PostApplePayDomainsRequest copyWith({String? domainName, List<String>? Function(
   domainName: domainName ?? this.domainName,
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostApplePayDomainsRequest &&
           domainName == other.domainName &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hash(domainName, Object.hashAll(expand ?? const [])); } 
-@override String toString() { return 'PostApplePayDomainsRequest(domainName: $domainName, expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hash(domainName, Object.hashAll(expand ?? const []));
+
+@override String toString() => 'PostApplePayDomainsRequest(domainName: $domainName, expand: $expand)';
+
  }

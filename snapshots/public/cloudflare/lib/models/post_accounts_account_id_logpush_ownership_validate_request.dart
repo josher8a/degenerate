@@ -23,10 +23,13 @@ PostAccountsAccountIdLogpushOwnershipValidateRequest copyWith({LogpushDestinatio
   destinationConf: destinationConf ?? this.destinationConf,
   ownershipChallenge: ownershipChallenge ?? this.ownershipChallenge,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountIdLogpushOwnershipValidateRequest &&
           destinationConf == other.destinationConf &&
-          ownershipChallenge == other.ownershipChallenge; } 
-@override int get hashCode { return Object.hash(destinationConf, ownershipChallenge); } 
-@override String toString() { return 'PostAccountsAccountIdLogpushOwnershipValidateRequest(destinationConf: $destinationConf, ownershipChallenge: $ownershipChallenge)'; } 
+          ownershipChallenge == other.ownershipChallenge;
+
+@override int get hashCode => Object.hash(destinationConf, ownershipChallenge);
+
+@override String toString() => 'PostAccountsAccountIdLogpushOwnershipValidateRequest(destinationConf: $destinationConf, ownershipChallenge: $ownershipChallenge)';
+
  }

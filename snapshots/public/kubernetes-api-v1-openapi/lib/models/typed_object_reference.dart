@@ -36,12 +36,15 @@ TypedObjectReference copyWith({String? Function()? apiGroup, String? kind, Strin
   name: name ?? this.name,
   namespace: namespace != null ? namespace() : this.namespace,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TypedObjectReference &&
           apiGroup == other.apiGroup &&
           kind == other.kind &&
           name == other.name &&
-          namespace == other.namespace; } 
-@override int get hashCode { return Object.hash(apiGroup, kind, name, namespace); } 
-@override String toString() { return 'TypedObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name, namespace: $namespace)'; } 
+          namespace == other.namespace;
+
+@override int get hashCode => Object.hash(apiGroup, kind, name, namespace);
+
+@override String toString() => 'TypedObjectReference(apiGroup: $apiGroup, kind: $kind, name: $name, namespace: $namespace)';
+
  }

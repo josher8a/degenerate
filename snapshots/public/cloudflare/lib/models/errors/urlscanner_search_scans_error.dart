@@ -17,7 +17,8 @@ final class UrlscannerSearchScansError$400 extends UrlscannerSearchScansError {c
 
 final UrlscannerSearchScansResponse4002 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class UrlscannerSearchScansError$Unknown extends UrlscannerSearchScansError {const UrlscannerSearchScansError$Unknown(this.statusCode, this.rawBody, );
 

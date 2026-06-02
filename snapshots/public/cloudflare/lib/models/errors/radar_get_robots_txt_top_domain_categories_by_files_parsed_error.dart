@@ -17,7 +17,8 @@ final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError$404 extends R
 
 final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError$Unknown extends RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedError$Unknown(this.statusCode, this.rawBody, );
 

@@ -17,7 +17,8 @@ final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$404 extends
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown extends ActionsGetArtifactAndLogRetentionSettingsRepositoryError {const ActionsGetArtifactAndLogRetentionSettingsRepositoryError$Unknown(this.statusCode, this.rawBody, );
 

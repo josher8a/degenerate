@@ -30,11 +30,14 @@ RecipientShippingWithOptionalFieldsAddress copyWith({CustomerShippingAddress? ad
   name: name ?? this.name,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RecipientShippingWithOptionalFieldsAddress &&
           address == other.address &&
           name == other.name &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(address, name, phone); } 
-@override String toString() { return 'RecipientShippingWithOptionalFieldsAddress(address: $address, name: $name, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(address, name, phone);
+
+@override String toString() => 'RecipientShippingWithOptionalFieldsAddress(address: $address, name: $name, phone: $phone)';
+
  }

@@ -37,10 +37,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PortalSubscriptionCancellationReasonOptions && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PortalSubscriptionCancellationReasonOptions($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PortalSubscriptionCancellationReasonOptions && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PortalSubscriptionCancellationReasonOptions($value)';
+
  }
 /// 
 @immutable final class PortalSubscriptionCancellationReason {const PortalSubscriptionCancellationReason({required this.enabled, required this.options, });
@@ -66,10 +69,13 @@ PortalSubscriptionCancellationReason copyWith({bool? enabled, List<PortalSubscri
   enabled: enabled ?? this.enabled,
   options: options ?? this.options,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalSubscriptionCancellationReason &&
           enabled == other.enabled &&
-          listEquals(options, other.options); } 
-@override int get hashCode { return Object.hash(enabled, Object.hashAll(options)); } 
-@override String toString() { return 'PortalSubscriptionCancellationReason(enabled: $enabled, options: $options)'; } 
+          listEquals(options, other.options);
+
+@override int get hashCode => Object.hash(enabled, Object.hashAll(options));
+
+@override String toString() => 'PortalSubscriptionCancellationReason(enabled: $enabled, options: $options)';
+
  }

@@ -26,11 +26,14 @@ CategoriesInherited copyWith({List<CategoriesContent>? Function()? content, Stri
   from: from != null ? from() : this.from,
   risks: risks != null ? risks() : this.risks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CategoriesInherited &&
           listEquals(content, other.content) &&
           from == other.from &&
-          listEquals(risks, other.risks); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content ?? const []), from, Object.hashAll(risks ?? const [])); } 
-@override String toString() { return 'CategoriesInherited(content: $content, from: $from, risks: $risks)'; } 
+          listEquals(risks, other.risks);
+
+@override int get hashCode => Object.hash(Object.hashAll(content ?? const []), from, Object.hashAll(risks ?? const []));
+
+@override String toString() => 'CategoriesInherited(content: $content, from: $from, risks: $risks)';
+
  }

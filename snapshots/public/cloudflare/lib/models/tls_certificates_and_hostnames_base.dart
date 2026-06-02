@@ -41,10 +41,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesSchemasStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasStatus($value)';
+
  }
 @immutable final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });
 
@@ -123,7 +126,7 @@ TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAn
   status: status ?? this.status,
   tunnel: tunnel != null ? tunnel() : this.tunnel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TlsCertificatesAndHostnamesBase &&
           createdOn == other.createdOn &&
           enabled == other.enabled &&
@@ -134,7 +137,10 @@ TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAn
           listEquals(permissions, other.permissions) &&
           port == other.port &&
           status == other.status &&
-          tunnel == other.tunnel; } 
-@override int get hashCode { return Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel); } 
-@override String toString() { return 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)'; } 
+          tunnel == other.tunnel;
+
+@override int get hashCode => Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel);
+
+@override String toString() => 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)';
+
  }

@@ -36,10 +36,13 @@ FirewallCustomResponseVariant1 copyWith({FirewallBody? Function()? body, Firewal
   body: body != null ? body() : this.body,
   contentType: contentType != null ? contentType() : this.contentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallCustomResponseVariant1 &&
           body == other.body &&
-          contentType == other.contentType; } 
-@override int get hashCode { return Object.hash(body, contentType); } 
-@override String toString() { return 'FirewallCustomResponseVariant1(body: $body, contentType: $contentType)'; } 
+          contentType == other.contentType;
+
+@override int get hashCode => Object.hash(body, contentType);
+
+@override String toString() => 'FirewallCustomResponseVariant1(body: $body, contentType: $contentType)';
+
  }

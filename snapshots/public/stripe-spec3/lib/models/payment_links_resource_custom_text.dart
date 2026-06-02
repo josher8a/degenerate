@@ -35,12 +35,15 @@ PaymentLinksResourceCustomText copyWith({PaymentLinksResourceCustomTextPosition?
   submit: submit != null ? submit() : this.submit,
   termsOfServiceAcceptance: termsOfServiceAcceptance != null ? termsOfServiceAcceptance() : this.termsOfServiceAcceptance,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomText &&
           afterSubmit == other.afterSubmit &&
           shippingAddress == other.shippingAddress &&
           submit == other.submit &&
-          termsOfServiceAcceptance == other.termsOfServiceAcceptance; } 
-@override int get hashCode { return Object.hash(afterSubmit, shippingAddress, submit, termsOfServiceAcceptance); } 
-@override String toString() { return 'PaymentLinksResourceCustomText(afterSubmit: $afterSubmit, shippingAddress: $shippingAddress, submit: $submit, termsOfServiceAcceptance: $termsOfServiceAcceptance)'; } 
+          termsOfServiceAcceptance == other.termsOfServiceAcceptance;
+
+@override int get hashCode => Object.hash(afterSubmit, shippingAddress, submit, termsOfServiceAcceptance);
+
+@override String toString() => 'PaymentLinksResourceCustomText(afterSubmit: $afterSubmit, shippingAddress: $shippingAddress, submit: $submit, termsOfServiceAcceptance: $termsOfServiceAcceptance)';
+
  }

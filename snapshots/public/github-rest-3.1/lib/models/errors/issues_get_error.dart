@@ -18,13 +18,15 @@ final class IssuesGetError$404 extends IssuesGetError {const IssuesGetError$404(
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesGetError$410 extends IssuesGetError {const IssuesGetError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesGetError$Unknown extends IssuesGetError {const IssuesGetError$Unknown(this.statusCode, this.rawBody, );
 

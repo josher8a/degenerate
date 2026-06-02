@@ -21,10 +21,13 @@ WorkersAiPostRunCfDeepgramNova3RequestAudio copyWith({Map<String,dynamic>? body,
   body: body ?? this.body,
   contentType: contentType ?? this.contentType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfDeepgramNova3RequestAudio &&
           body == other.body &&
-          contentType == other.contentType; } 
-@override int get hashCode { return Object.hash(body, contentType); } 
-@override String toString() { return 'WorkersAiPostRunCfDeepgramNova3RequestAudio(body: $body, contentType: $contentType)'; } 
+          contentType == other.contentType;
+
+@override int get hashCode => Object.hash(body, contentType);
+
+@override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestAudio(body: $body, contentType: $contentType)';
+
  }

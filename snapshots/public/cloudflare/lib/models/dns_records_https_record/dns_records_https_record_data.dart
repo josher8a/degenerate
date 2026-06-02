@@ -43,11 +43,14 @@ DnsRecordsHttpsRecordData copyWith({double? Function()? priority, String? Functi
   target: target != null ? target() : this.target,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsHttpsRecordData &&
           priority == other.priority &&
           target == other.target &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(priority, target, value); } 
-@override String toString() { return 'DnsRecordsHttpsRecordData(priority: $priority, target: $target, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(priority, target, value);
+
+@override String toString() => 'DnsRecordsHttpsRecordData(priority: $priority, target: $target, value: $value)';
+
  }

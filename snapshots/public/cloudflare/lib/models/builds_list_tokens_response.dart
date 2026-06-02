@@ -30,12 +30,15 @@ BuildsListTokensResponse copyWith({BuildsBuildTokenName? Function()? buildTokenN
   cloudflareTokenId: cloudflareTokenId != null ? cloudflareTokenId() : this.cloudflareTokenId,
   ownerType: ownerType != null ? ownerType() : this.ownerType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsListTokensResponse &&
           buildTokenName == other.buildTokenName &&
           buildTokenUuid == other.buildTokenUuid &&
           cloudflareTokenId == other.cloudflareTokenId &&
-          ownerType == other.ownerType; } 
-@override int get hashCode { return Object.hash(buildTokenName, buildTokenUuid, cloudflareTokenId, ownerType); } 
-@override String toString() { return 'BuildsListTokensResponse(buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, cloudflareTokenId: $cloudflareTokenId, ownerType: $ownerType)'; } 
+          ownerType == other.ownerType;
+
+@override int get hashCode => Object.hash(buildTokenName, buildTokenUuid, cloudflareTokenId, ownerType);
+
+@override String toString() => 'BuildsListTokensResponse(buildTokenName: $buildTokenName, buildTokenUuid: $buildTokenUuid, cloudflareTokenId: $cloudflareTokenId, ownerType: $ownerType)';
+
  }

@@ -26,11 +26,14 @@ FileLinkData copyWith({bool? create, int? Function()? expiresAt, Metadata? Funct
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileLinkData &&
           create == other.create &&
           expiresAt == other.expiresAt &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(create, expiresAt, metadata); } 
-@override String toString() { return 'FileLinkData(create: $create, expiresAt: $expiresAt, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(create, expiresAt, metadata);
+
+@override String toString() => 'FileLinkData(create: $create, expiresAt: $expiresAt, metadata: $metadata)';
+
  }

@@ -33,12 +33,15 @@ GetIndicatorListLegacyResponsePagination copyWith({double? page, double? pageSiz
   totalCount: totalCount ?? this.totalCount,
   totalPages: totalPages ?? this.totalPages,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetIndicatorListLegacyResponsePagination &&
           page == other.page &&
           pageSize == other.pageSize &&
           totalCount == other.totalCount &&
-          totalPages == other.totalPages; } 
-@override int get hashCode { return Object.hash(page, pageSize, totalCount, totalPages); } 
-@override String toString() { return 'GetIndicatorListLegacyResponsePagination(page: $page, pageSize: $pageSize, totalCount: $totalCount, totalPages: $totalPages)'; } 
+          totalPages == other.totalPages;
+
+@override int get hashCode => Object.hash(page, pageSize, totalCount, totalPages);
+
+@override String toString() => 'GetIndicatorListLegacyResponsePagination(page: $page, pageSize: $pageSize, totalCount: $totalCount, totalPages: $totalPages)';
+
  }

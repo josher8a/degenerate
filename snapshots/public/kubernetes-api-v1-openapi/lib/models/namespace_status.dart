@@ -23,10 +23,13 @@ NamespaceStatus copyWith({List<NamespaceCondition>? Function()? conditions, Stri
   conditions: conditions != null ? conditions() : this.conditions,
   phase: phase != null ? phase() : this.phase,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NamespaceStatus &&
           listEquals(conditions, other.conditions) &&
-          phase == other.phase; } 
-@override int get hashCode { return Object.hash(Object.hashAll(conditions ?? const []), phase); } 
-@override String toString() { return 'NamespaceStatus(conditions: $conditions, phase: $phase)'; } 
+          phase == other.phase;
+
+@override int get hashCode => Object.hash(Object.hashAll(conditions ?? const []), phase);
+
+@override String toString() => 'NamespaceStatus(conditions: $conditions, phase: $phase)';
+
  }

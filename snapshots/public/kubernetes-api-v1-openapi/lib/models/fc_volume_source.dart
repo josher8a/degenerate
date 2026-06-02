@@ -41,13 +41,16 @@ FcVolumeSource copyWith({String? Function()? fsType, int? Function()? lun, bool?
   targetWwNs: targetWwNs != null ? targetWwNs() : this.targetWwNs,
   wwids: wwids != null ? wwids() : this.wwids,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FcVolumeSource &&
           fsType == other.fsType &&
           lun == other.lun &&
           readOnly == other.readOnly &&
           listEquals(targetWwNs, other.targetWwNs) &&
-          listEquals(wwids, other.wwids); } 
-@override int get hashCode { return Object.hash(fsType, lun, readOnly, Object.hashAll(targetWwNs ?? const []), Object.hashAll(wwids ?? const [])); } 
-@override String toString() { return 'FcVolumeSource(fsType: $fsType, lun: $lun, readOnly: $readOnly, targetWwNs: $targetWwNs, wwids: $wwids)'; } 
+          listEquals(wwids, other.wwids);
+
+@override int get hashCode => Object.hash(fsType, lun, readOnly, Object.hashAll(targetWwNs ?? const []), Object.hashAll(wwids ?? const []));
+
+@override String toString() => 'FcVolumeSource(fsType: $fsType, lun: $lun, readOnly: $readOnly, targetWwNs: $targetWwNs, wwids: $wwids)';
+
  }

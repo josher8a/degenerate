@@ -29,11 +29,14 @@ ResponseContent copyWith({int? Function()? compression, String? mimeType, double
   mimeType: mimeType ?? this.mimeType,
   size: size ?? this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseContent &&
           compression == other.compression &&
           mimeType == other.mimeType &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(compression, mimeType, size); } 
-@override String toString() { return 'ResponseContent(compression: $compression, mimeType: $mimeType, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(compression, mimeType, size);
+
+@override String toString() => 'ResponseContent(compression: $compression, mimeType: $mimeType, size: $size)';
+
  }

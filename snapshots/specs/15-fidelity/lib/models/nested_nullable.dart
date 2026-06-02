@@ -36,12 +36,15 @@ NestedNullable copyWith({List<String>? tags, List<int?>? scores, List<String>? F
   nullableList: nullableList != null ? nullableList() : this.nullableList,
   optionalList: optionalList != null ? optionalList() : this.optionalList,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NestedNullable &&
           listEquals(tags, other.tags) &&
           listEquals(scores, other.scores) &&
           listEquals(nullableList, other.nullableList) &&
-          listEquals(optionalList, other.optionalList); } 
-@override int get hashCode { return Object.hash(Object.hashAll(tags), Object.hashAll(scores), Object.hashAll(nullableList ?? const []), Object.hashAll(optionalList ?? const [])); } 
-@override String toString() { return 'NestedNullable(tags: $tags, scores: $scores, nullableList: $nullableList, optionalList: $optionalList)'; } 
+          listEquals(optionalList, other.optionalList);
+
+@override int get hashCode => Object.hash(Object.hashAll(tags), Object.hashAll(scores), Object.hashAll(nullableList ?? const []), Object.hashAll(optionalList ?? const []));
+
+@override String toString() => 'NestedNullable(tags: $tags, scores: $scores, nullableList: $nullableList, optionalList: $optionalList)';
+
  }

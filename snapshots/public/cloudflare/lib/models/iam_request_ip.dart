@@ -37,10 +37,13 @@ IamRequestIp copyWith({List<String>? Function()? $in, List<String>? Function()? 
   $in: $in != null ? $in() : this.$in,
   notIn: notIn != null ? notIn() : this.notIn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamRequestIp &&
           listEquals($in, other.$in) &&
-          listEquals(notIn, other.notIn); } 
-@override int get hashCode { return Object.hash(Object.hashAll($in ?? const []), Object.hashAll(notIn ?? const [])); } 
-@override String toString() { return 'IamRequestIp(\$in: ${$in}, notIn: $notIn)'; } 
+          listEquals(notIn, other.notIn);
+
+@override int get hashCode => Object.hash(Object.hashAll($in ?? const []), Object.hashAll(notIn ?? const []));
+
+@override String toString() => 'IamRequestIp(\$in: ${$in}, notIn: $notIn)';
+
  }

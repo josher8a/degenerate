@@ -17,7 +17,8 @@ final class RadarGetBgpTopPrefixesError$400 extends RadarGetBgpTopPrefixesError 
 
 final RadarGetBgpTopPrefixesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetBgpTopPrefixesError$Unknown extends RadarGetBgpTopPrefixesError {const RadarGetBgpTopPrefixesError$Unknown(this.statusCode, this.rawBody, );
 

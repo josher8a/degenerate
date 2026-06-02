@@ -32,14 +32,18 @@ final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorker
 
 @override String get type => 'binding';
 
-@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type};
+
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWith({CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource.copyWith(
   format: format,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource; } 
-@override int get hashCode { return cloudflarePipelinesWorkersPipelinesBindingSource.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.binding($cloudflarePipelinesWorkersPipelinesBindingSource)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding && cloudflarePipelinesWorkersPipelinesBindingSource == other.cloudflarePipelinesWorkersPipelinesBindingSource;
+
+@override int get hashCode => cloudflarePipelinesWorkersPipelinesBindingSource.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.binding($cloudflarePipelinesWorkersPipelinesBindingSource)';
+
 @override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => cloudflarePipelinesWorkersPipelinesBindingSource.format;
 
  }
@@ -51,16 +55,20 @@ final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPi
 
 @override String get type => 'http';
 
-@override Map<String, dynamic> toJson() { return {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type};
+
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool? Function()? authentication, Cors? Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
   authentication: authentication,
   cors: cors,
   format: format,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource; } 
-@override int get hashCode { return cloudflarePipelinesWorkersPipelinesHttpSource.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http($cloudflarePipelinesWorkersPipelinesHttpSource)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp && cloudflarePipelinesWorkersPipelinesHttpSource == other.cloudflarePipelinesWorkersPipelinesHttpSource;
+
+@override int get hashCode => cloudflarePipelinesWorkersPipelinesHttpSource.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http($cloudflarePipelinesWorkersPipelinesHttpSource)';
+
 @override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => cloudflarePipelinesWorkersPipelinesHttpSource.format;
 
  }
@@ -72,11 +80,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.unknown($json)';
+
 @override CloudflarePipelinesWorkersPipelinesBindingSourceFormat get format => CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(json['format'] as String);
 
  }

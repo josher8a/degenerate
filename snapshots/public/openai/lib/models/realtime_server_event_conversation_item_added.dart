@@ -44,12 +44,15 @@ RealtimeServerEventConversationItemAdded copyWith({String? eventId, String? type
   previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
   item: item ?? this.item,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationItemAdded &&
           eventId == other.eventId &&
           type == other.type &&
           previousItemId == other.previousItemId &&
-          item == other.item; } 
-@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
-@override String toString() { return 'RealtimeServerEventConversationItemAdded(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
+          item == other.item;
+
+@override int get hashCode => Object.hash(eventId, type, previousItemId, item);
+
+@override String toString() => 'RealtimeServerEventConversationItemAdded(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)';
+
  }

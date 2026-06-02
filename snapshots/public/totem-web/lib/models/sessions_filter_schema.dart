@@ -21,10 +21,13 @@ SessionsFilterSchema copyWith({String? Function()? category, String? Function()?
   category: category != null ? category() : this.category,
   author: author != null ? author() : this.author,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SessionsFilterSchema &&
           category == other.category &&
-          author == other.author; } 
-@override int get hashCode { return Object.hash(category, author); } 
-@override String toString() { return 'SessionsFilterSchema(category: $category, author: $author)'; } 
+          author == other.author;
+
+@override int get hashCode => Object.hash(category, author);
+
+@override String toString() => 'SessionsFilterSchema(category: $category, author: $author)';
+
  }

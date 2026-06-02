@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('place
 TaxProductRegistrationsResourceCountryOptionsDefaultStandard copyWith({TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme? placeOfSupplyScheme}) { return TaxProductRegistrationsResourceCountryOptionsDefaultStandard(
   placeOfSupplyScheme: placeOfSupplyScheme ?? this.placeOfSupplyScheme,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductRegistrationsResourceCountryOptionsDefaultStandard &&
-          placeOfSupplyScheme == other.placeOfSupplyScheme; } 
-@override int get hashCode { return placeOfSupplyScheme.hashCode; } 
-@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsDefaultStandard(placeOfSupplyScheme: $placeOfSupplyScheme)'; } 
+          placeOfSupplyScheme == other.placeOfSupplyScheme;
+
+@override int get hashCode => placeOfSupplyScheme.hashCode;
+
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsDefaultStandard(placeOfSupplyScheme: $placeOfSupplyScheme)';
+
  }

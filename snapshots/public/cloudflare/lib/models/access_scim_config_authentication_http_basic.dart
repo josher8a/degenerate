@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccessScimConfigAuthenticationHttpBasicScheme && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccessScimConfigAuthenticationHttpBasicScheme($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccessScimConfigAuthenticationHttpBasicScheme && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccessScimConfigAuthenticationHttpBasicScheme($value)';
+
  }
 /// Attributes for configuring HTTP Basic authentication scheme for SCIM provisioning to an application.
 @immutable final class AccessScimConfigAuthenticationHttpBasic {const AccessScimConfigAuthenticationHttpBasic({required this.password, required this.scheme, required this.user, });
@@ -53,11 +56,14 @@ AccessScimConfigAuthenticationHttpBasic copyWith({String? password, AccessScimCo
   scheme: scheme ?? this.scheme,
   user: user ?? this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessScimConfigAuthenticationHttpBasic &&
           password == other.password &&
           scheme == other.scheme &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(password, scheme, user); } 
-@override String toString() { return 'AccessScimConfigAuthenticationHttpBasic(password: $password, scheme: $scheme, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(password, scheme, user);
+
+@override String toString() => 'AccessScimConfigAuthenticationHttpBasic(password: $password, scheme: $scheme, user: $user)';
+
  }

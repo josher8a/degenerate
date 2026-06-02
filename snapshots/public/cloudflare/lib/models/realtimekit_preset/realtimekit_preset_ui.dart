@@ -20,10 +20,13 @@ RealtimekitPresetUi copyWith({Map<String, dynamic>? Function()? configDiff, Real
   configDiff: configDiff != null ? configDiff() : this.configDiff,
   designTokens: designTokens ?? this.designTokens,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetUi &&
           configDiff == other.configDiff &&
-          designTokens == other.designTokens; } 
-@override int get hashCode { return Object.hash(configDiff, designTokens); } 
-@override String toString() { return 'RealtimekitPresetUi(configDiff: $configDiff, designTokens: $designTokens)'; } 
+          designTokens == other.designTokens;
+
+@override int get hashCode => Object.hash(configDiff, designTokens);
+
+@override String toString() => 'RealtimekitPresetUi(configDiff: $configDiff, designTokens: $designTokens)';
+
  }

@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleMaxFileSizeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleMaxFileSizeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleMaxFileSizeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleMaxFileSizeType($value)';
+
  }
 /// Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph.
 @immutable final class RepositoryRuleMaxFileSize {const RepositoryRuleMaxFileSize({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleMaxFileSize copyWith({RepositoryRuleMaxFileSizeType? type, Reposit
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFileSize &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleMaxFileSize(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleMaxFileSize(type: $type, parameters: $parameters)';
+
  }

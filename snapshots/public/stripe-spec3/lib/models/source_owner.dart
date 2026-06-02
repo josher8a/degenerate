@@ -86,7 +86,7 @@ SourceOwner copyWith({Address? Function()? address, String? Function()? email, S
   verifiedName: verifiedName != null ? verifiedName() : this.verifiedName,
   verifiedPhone: verifiedPhone != null ? verifiedPhone() : this.verifiedPhone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceOwner &&
           address == other.address &&
           email == other.email &&
@@ -95,7 +95,10 @@ SourceOwner copyWith({Address? Function()? address, String? Function()? email, S
           verifiedAddress == other.verifiedAddress &&
           verifiedEmail == other.verifiedEmail &&
           verifiedName == other.verifiedName &&
-          verifiedPhone == other.verifiedPhone; } 
-@override int get hashCode { return Object.hash(address, email, name, phone, verifiedAddress, verifiedEmail, verifiedName, verifiedPhone); } 
-@override String toString() { return 'SourceOwner(address: $address, email: $email, name: $name, phone: $phone, verifiedAddress: $verifiedAddress, verifiedEmail: $verifiedEmail, verifiedName: $verifiedName, verifiedPhone: $verifiedPhone)'; } 
+          verifiedPhone == other.verifiedPhone;
+
+@override int get hashCode => Object.hash(address, email, name, phone, verifiedAddress, verifiedEmail, verifiedName, verifiedPhone);
+
+@override String toString() => 'SourceOwner(address: $address, email: $email, name: $name, phone: $phone, verifiedAddress: $verifiedAddress, verifiedEmail: $verifiedEmail, verifiedName: $verifiedName, verifiedPhone: $verifiedPhone)';
+
  }

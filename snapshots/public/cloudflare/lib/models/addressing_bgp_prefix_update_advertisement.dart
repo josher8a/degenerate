@@ -27,11 +27,14 @@ AddressingBgpPrefixUpdateAdvertisement copyWith({AddressingAsnPrependCount? Func
   autoAdvertiseWithdraw: autoAdvertiseWithdraw != null ? autoAdvertiseWithdraw() : this.autoAdvertiseWithdraw,
   onDemand: onDemand != null ? onDemand() : this.onDemand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingBgpPrefixUpdateAdvertisement &&
           asnPrependCount == other.asnPrependCount &&
           autoAdvertiseWithdraw == other.autoAdvertiseWithdraw &&
-          onDemand == other.onDemand; } 
-@override int get hashCode { return Object.hash(asnPrependCount, autoAdvertiseWithdraw, onDemand); } 
-@override String toString() { return 'AddressingBgpPrefixUpdateAdvertisement(asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, onDemand: $onDemand)'; } 
+          onDemand == other.onDemand;
+
+@override int get hashCode => Object.hash(asnPrependCount, autoAdvertiseWithdraw, onDemand);
+
+@override String toString() => 'AddressingBgpPrefixUpdateAdvertisement(asnPrependCount: $asnPrependCount, autoAdvertiseWithdraw: $autoAdvertiseWithdraw, onDemand: $onDemand)';
+
  }

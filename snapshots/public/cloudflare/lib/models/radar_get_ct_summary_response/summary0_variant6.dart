@@ -21,10 +21,13 @@ Summary0Variant6 copyWith({String? negative, String? positive, }) { return Summa
   negative: negative ?? this.negative,
   positive: positive ?? this.positive,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant6 &&
           negative == other.negative &&
-          positive == other.positive; } 
-@override int get hashCode { return Object.hash(negative, positive); } 
-@override String toString() { return 'Summary0Variant6(negative: $negative, positive: $positive)'; } 
+          positive == other.positive;
+
+@override int get hashCode => Object.hash(negative, positive);
+
+@override String toString() => 'Summary0Variant6(negative: $negative, positive: $positive)';
+
  }

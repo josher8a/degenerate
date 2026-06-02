@@ -51,14 +51,17 @@ PersonRequirements copyWith({List<AccountRequirementsAlternative>? Function()? a
   pastDue: pastDue ?? this.pastDue,
   pendingVerification: pendingVerification ?? this.pendingVerification,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersonRequirements &&
           listEquals(alternatives, other.alternatives) &&
           listEquals(currentlyDue, other.currentlyDue) &&
           listEquals(errors, other.errors) &&
           listEquals(eventuallyDue, other.eventuallyDue) &&
           listEquals(pastDue, other.pastDue) &&
-          listEquals(pendingVerification, other.pendingVerification); } 
-@override int get hashCode { return Object.hash(Object.hashAll(alternatives ?? const []), Object.hashAll(currentlyDue), Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification)); } 
-@override String toString() { return 'PersonRequirements(alternatives: $alternatives, currentlyDue: $currentlyDue, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
+          listEquals(pendingVerification, other.pendingVerification);
+
+@override int get hashCode => Object.hash(Object.hashAll(alternatives ?? const []), Object.hashAll(currentlyDue), Object.hashAll(errors), Object.hashAll(eventuallyDue), Object.hashAll(pastDue), Object.hashAll(pendingVerification));
+
+@override String toString() => 'PersonRequirements(alternatives: $alternatives, currentlyDue: $currentlyDue, errors: $errors, eventuallyDue: $eventuallyDue, pastDue: $pastDue, pendingVerification: $pendingVerification)';
+
  }

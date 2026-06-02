@@ -28,11 +28,14 @@ FieldConfiguration copyWith({int? Function()? startDay, int? Function()? duratio
   duration: duration != null ? duration() : this.duration,
   iterations: iterations != null ? iterations() : this.iterations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FieldConfiguration &&
           startDay == other.startDay &&
           duration == other.duration &&
-          listEquals(iterations, other.iterations); } 
-@override int get hashCode { return Object.hash(startDay, duration, Object.hashAll(iterations ?? const [])); } 
-@override String toString() { return 'FieldConfiguration(startDay: $startDay, duration: $duration, iterations: $iterations)'; } 
+          listEquals(iterations, other.iterations);
+
+@override int get hashCode => Object.hash(startDay, duration, Object.hashAll(iterations ?? const []));
+
+@override String toString() => 'FieldConfiguration(startDay: $startDay, duration: $duration, iterations: $iterations)';
+
  }

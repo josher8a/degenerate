@@ -131,7 +131,7 @@ SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssD
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupAttemptPaymentMethodDetails &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -155,7 +155,10 @@ SetupAttemptPaymentMethodDetails copyWith({SetupAttemptPaymentMethodDetailsAcssD
           sepaDebit == other.sepaDebit &&
           sofort == other.sofort &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hashAll([acssDebit, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cardPresent, cashapp, ideal, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, sofort, type, usBankAccount]); } 
-@override String toString() { return 'SetupAttemptPaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, boleto: $boleto, card: $card, cardPresent: $cardPresent, cashapp: $cashapp, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, sofort: $sofort, type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hashAll([acssDebit, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cardPresent, cashapp, ideal, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, sofort, type, usBankAccount]);
+
+@override String toString() => 'SetupAttemptPaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, boleto: $boleto, card: $card, cardPresent: $cardPresent, cashapp: $cashapp, ideal: $ideal, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, sofort: $sofort, type: $type, usBankAccount: $usBankAccount)';
+
  }

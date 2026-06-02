@@ -36,10 +36,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MagicTransitPacketType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MagicTransitPacketType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicTransitPacketType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MagicTransitPacketType($value)';
+
  }
 /// Number of packets sent at each TTL.
 extension type const MagicTransitPacketsPerTtl(int value) {
@@ -105,13 +108,16 @@ MagicTransitOptions copyWith({MagicTransitMaxTtl? Function()? maxTtl, MagicTrans
   port: port != null ? port() : this.port,
   waitTime: waitTime != null ? waitTime() : this.waitTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitOptions &&
           maxTtl == other.maxTtl &&
           packetType == other.packetType &&
           packetsPerTtl == other.packetsPerTtl &&
           port == other.port &&
-          waitTime == other.waitTime; } 
-@override int get hashCode { return Object.hash(maxTtl, packetType, packetsPerTtl, port, waitTime); } 
-@override String toString() { return 'MagicTransitOptions(maxTtl: $maxTtl, packetType: $packetType, packetsPerTtl: $packetsPerTtl, port: $port, waitTime: $waitTime)'; } 
+          waitTime == other.waitTime;
+
+@override int get hashCode => Object.hash(maxTtl, packetType, packetsPerTtl, port, waitTime);
+
+@override String toString() => 'MagicTransitOptions(maxTtl: $maxTtl, packetType: $packetType, packetsPerTtl: $packetsPerTtl, port: $port, waitTime: $waitTime)';
+
  }

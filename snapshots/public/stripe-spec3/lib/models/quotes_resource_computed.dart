@@ -22,10 +22,13 @@ QuotesResourceComputed copyWith({QuotesResourceRecurring? Function()? recurring,
   recurring: recurring != null ? recurring() : this.recurring,
   upfront: upfront ?? this.upfront,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QuotesResourceComputed &&
           recurring == other.recurring &&
-          upfront == other.upfront; } 
-@override int get hashCode { return Object.hash(recurring, upfront); } 
-@override String toString() { return 'QuotesResourceComputed(recurring: $recurring, upfront: $upfront)'; } 
+          upfront == other.upfront;
+
+@override int get hashCode => Object.hash(recurring, upfront);
+
+@override String toString() => 'QuotesResourceComputed(recurring: $recurring, upfront: $upfront)';
+
  }

@@ -23,10 +23,13 @@ RealtimeServerEventConversationCreatedConversation copyWith({String? Function()?
   id: id != null ? id() : this.id,
   object: object != null ? object() : this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventConversationCreatedConversation &&
           id == other.id &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(id, object); } 
-@override String toString() { return 'RealtimeServerEventConversationCreatedConversation(id: $id, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(id, object);
+
+@override String toString() => 'RealtimeServerEventConversationCreatedConversation(id: $id, object: $object)';
+
  }

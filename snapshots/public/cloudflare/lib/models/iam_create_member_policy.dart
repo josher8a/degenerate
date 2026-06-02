@@ -34,12 +34,15 @@ IamCreateMemberPolicy copyWith({IamAccess? access, IamPolicyIdentifier? id, List
   permissionGroups: permissionGroups ?? this.permissionGroups,
   resourceGroups: resourceGroups ?? this.resourceGroups,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamCreateMemberPolicy &&
           access == other.access &&
           id == other.id &&
           listEquals(permissionGroups, other.permissionGroups) &&
-          listEquals(resourceGroups, other.resourceGroups); } 
-@override int get hashCode { return Object.hash(access, id, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups)); } 
-@override String toString() { return 'IamCreateMemberPolicy(access: $access, id: $id, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)'; } 
+          listEquals(resourceGroups, other.resourceGroups);
+
+@override int get hashCode => Object.hash(access, id, Object.hashAll(permissionGroups), Object.hashAll(resourceGroups));
+
+@override String toString() => 'IamCreateMemberPolicy(access: $access, id: $id, permissionGroups: $permissionGroups, resourceGroups: $resourceGroups)';
+
  }

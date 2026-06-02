@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Collect && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Collect($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Collect && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Collect($value)';
+
  }
 /// The type of account link the user is requesting.
 /// 
@@ -47,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostAccountLinksRequestType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostAccountLinksRequestType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostAccountLinksRequestType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostAccountLinksRequestType($value)';
+
  }
 @immutable final class PostAccountLinksRequest {const PostAccountLinksRequest({required this.account, required this.type, this.collect, this.collectionOptions, this.expand, this.refreshUrl, this.returnUrl, });
 
@@ -111,7 +117,7 @@ PostAccountLinksRequest copyWith({String? account, Collect? Function()? collect,
   returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountLinksRequest &&
           account == other.account &&
           collect == other.collect &&
@@ -119,7 +125,10 @@ PostAccountLinksRequest copyWith({String? account, Collect? Function()? collect,
           listEquals(expand, other.expand) &&
           refreshUrl == other.refreshUrl &&
           returnUrl == other.returnUrl &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(account, collect, collectionOptions, Object.hashAll(expand ?? const []), refreshUrl, returnUrl, type); } 
-@override String toString() { return 'PostAccountLinksRequest(account: $account, collect: $collect, collectionOptions: $collectionOptions, expand: $expand, refreshUrl: $refreshUrl, returnUrl: $returnUrl, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(account, collect, collectionOptions, Object.hashAll(expand ?? const []), refreshUrl, returnUrl, type);
+
+@override String toString() => 'PostAccountLinksRequest(account: $account, collect: $collect, collectionOptions: $collectionOptions, expand: $expand, refreshUrl: $refreshUrl, returnUrl: $returnUrl, type: $type)';
+
  }

@@ -25,11 +25,14 @@ UpdatedTools copyWith({String? Function()? description, bool? Function()? enable
   enabled: enabled != null ? enabled() : this.enabled,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdatedTools &&
           description == other.description &&
           enabled == other.enabled &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, enabled, name); } 
-@override String toString() { return 'UpdatedTools(description: $description, enabled: $enabled, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, enabled, name);
+
+@override String toString() => 'UpdatedTools(description: $description, enabled: $enabled, name: $name)';
+
  }

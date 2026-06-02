@@ -28,11 +28,14 @@ BuildsCreateBuildTokenRequest copyWith({BuildsBuildTokenName? buildTokenName, St
   buildTokenSecret: buildTokenSecret ?? this.buildTokenSecret,
   cloudflareTokenId: cloudflareTokenId ?? this.cloudflareTokenId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BuildsCreateBuildTokenRequest &&
           buildTokenName == other.buildTokenName &&
           buildTokenSecret == other.buildTokenSecret &&
-          cloudflareTokenId == other.cloudflareTokenId; } 
-@override int get hashCode { return Object.hash(buildTokenName, buildTokenSecret, cloudflareTokenId); } 
-@override String toString() { return 'BuildsCreateBuildTokenRequest(buildTokenName: $buildTokenName, buildTokenSecret: $buildTokenSecret, cloudflareTokenId: $cloudflareTokenId)'; } 
+          cloudflareTokenId == other.cloudflareTokenId;
+
+@override int get hashCode => Object.hash(buildTokenName, buildTokenSecret, cloudflareTokenId);
+
+@override String toString() => 'BuildsCreateBuildTokenRequest(buildTokenName: $buildTokenName, buildTokenSecret: $buildTokenSecret, cloudflareTokenId: $cloudflareTokenId)';
+
  }

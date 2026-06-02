@@ -46,14 +46,17 @@ PostSourcesSourceRequest copyWith({int? Function()? amount, List<String>? Functi
   owner: owner != null ? owner() : this.owner,
   sourceOrder: sourceOrder != null ? sourceOrder() : this.sourceOrder,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSourcesSourceRequest &&
           amount == other.amount &&
           listEquals(expand, other.expand) &&
           mandate == other.mandate &&
           metadata == other.metadata &&
           owner == other.owner &&
-          sourceOrder == other.sourceOrder; } 
-@override int get hashCode { return Object.hash(amount, Object.hashAll(expand ?? const []), mandate, metadata, owner, sourceOrder); } 
-@override String toString() { return 'PostSourcesSourceRequest(amount: $amount, expand: $expand, mandate: $mandate, metadata: $metadata, owner: $owner, sourceOrder: $sourceOrder)'; } 
+          sourceOrder == other.sourceOrder;
+
+@override int get hashCode => Object.hash(amount, Object.hashAll(expand ?? const []), mandate, metadata, owner, sourceOrder);
+
+@override String toString() => 'PostSourcesSourceRequest(amount: $amount, expand: $expand, mandate: $mandate, metadata: $metadata, owner: $owner, sourceOrder: $sourceOrder)';
+
  }

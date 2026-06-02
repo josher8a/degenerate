@@ -22,10 +22,13 @@ RadarGetAsnsAsSetResponseResult copyWith({List<AsSets>? asSets, List<List<String
   asSets: asSets ?? this.asSets,
   paths: paths ?? this.paths,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAsnsAsSetResponseResult &&
           listEquals(asSets, other.asSets) &&
-          listEquals(paths, other.paths); } 
-@override int get hashCode { return Object.hash(Object.hashAll(asSets), Object.hashAll(paths)); } 
-@override String toString() { return 'RadarGetAsnsAsSetResponseResult(asSets: $asSets, paths: $paths)'; } 
+          listEquals(paths, other.paths);
+
+@override int get hashCode => Object.hash(Object.hashAll(asSets), Object.hashAll(paths));
+
+@override String toString() => 'RadarGetAsnsAsSetResponseResult(asSets: $asSets, paths: $paths)';
+
  }

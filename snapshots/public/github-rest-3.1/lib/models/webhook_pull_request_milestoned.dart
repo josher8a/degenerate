@@ -54,7 +54,7 @@ WebhookPullRequestMilestoned copyWith({WebhookIssuesMilestonedAction? action, En
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestMilestoned &&
           action == other.action &&
           enterprise == other.enterprise &&
@@ -63,7 +63,10 @@ WebhookPullRequestMilestoned copyWith({WebhookIssuesMilestonedAction? action, En
           organization == other.organization &&
           pullRequest == other.pullRequest &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, milestone, number, organization, pullRequest, repository, sender); } 
-@override String toString() { return 'WebhookPullRequestMilestoned(action: $action, enterprise: $enterprise, milestone: $milestone, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, milestone, number, organization, pullRequest, repository, sender);
+
+@override String toString() => 'WebhookPullRequestMilestoned(action: $action, enterprise: $enterprise, milestone: $milestone, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)';
+
  }

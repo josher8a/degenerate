@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Order && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Order($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Order && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Order($value)';
+
  }
 /// Configure the order of the results returned by the query.
 @immutable final class OrderBy {const OrderBy({required this.value, this.order, });
@@ -48,10 +51,13 @@ OrderBy copyWith({Order? Function()? order, String? value, }) { return OrderBy(
   order: order != null ? order() : this.order,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrderBy &&
           order == other.order &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(order, value); } 
-@override String toString() { return 'OrderBy(order: $order, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(order, value);
+
+@override String toString() => 'OrderBy(order: $order, value: $value)';
+
  }

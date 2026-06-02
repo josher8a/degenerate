@@ -50,7 +50,7 @@ NotificationPoliciesUpdateANotificationPolicyRequest copyWith({AaaAlertInterval?
   mechanisms: mechanisms != null ? mechanisms() : this.mechanisms,
   name: name != null ? name() : this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NotificationPoliciesUpdateANotificationPolicyRequest &&
           alertInterval == other.alertInterval &&
           alertType == other.alertType &&
@@ -58,7 +58,10 @@ NotificationPoliciesUpdateANotificationPolicyRequest copyWith({AaaAlertInterval?
           enabled == other.enabled &&
           filters == other.filters &&
           mechanisms == other.mechanisms &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(alertInterval, alertType, description, enabled, filters, mechanisms, name); } 
-@override String toString() { return 'NotificationPoliciesUpdateANotificationPolicyRequest(alertInterval: $alertInterval, alertType: $alertType, description: $description, enabled: $enabled, filters: $filters, mechanisms: $mechanisms, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(alertInterval, alertType, description, enabled, filters, mechanisms, name);
+
+@override String toString() => 'NotificationPoliciesUpdateANotificationPolicyRequest(alertInterval: $alertInterval, alertType: $alertType, description: $description, enabled: $enabled, filters: $filters, mechanisms: $mechanisms, name: $name)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TunnelManagementResources && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TunnelManagementResources($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TunnelManagementResources && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TunnelManagementResources($value)';
+
  }
 @immutable final class CloudflareTunnelGetACloudflareTunnelManagementTokenRequest {const CloudflareTunnelGetACloudflareTunnelManagementTokenRequest({required this.resources});
 
@@ -37,9 +40,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resou
 CloudflareTunnelGetACloudflareTunnelManagementTokenRequest copyWith({List<TunnelManagementResources>? resources}) { return CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(
   resources: resources ?? this.resources,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudflareTunnelGetACloudflareTunnelManagementTokenRequest &&
-          listEquals(resources, other.resources); } 
-@override int get hashCode { return Object.hashAll(resources); } 
-@override String toString() { return 'CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(resources: $resources)'; } 
+          listEquals(resources, other.resources);
+
+@override int get hashCode => Object.hashAll(resources);
+
+@override String toString() => 'CloudflareTunnelGetACloudflareTunnelManagementTokenRequest(resources: $resources)';
+
  }

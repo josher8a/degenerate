@@ -53,14 +53,17 @@ PostForwardingRequestsRequest copyWith({List<String>? Function()? expand, Map<St
   request: request != null ? request() : this.request,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostForwardingRequestsRequest &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           paymentMethod == other.paymentMethod &&
           listEquals(replacements, other.replacements) &&
           request == other.request &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata, paymentMethod, Object.hashAll(replacements), request, url); } 
-@override String toString() { return 'PostForwardingRequestsRequest(expand: $expand, metadata: $metadata, paymentMethod: $paymentMethod, replacements: $replacements, request: $request, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), metadata, paymentMethod, Object.hashAll(replacements), request, url);
+
+@override String toString() => 'PostForwardingRequestsRequest(expand: $expand, metadata: $metadata, paymentMethod: $paymentMethod, replacements: $replacements, request: $request, url: $url)';
+
  }

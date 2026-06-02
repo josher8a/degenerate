@@ -26,11 +26,14 @@ McnResponseCollection copyWith({List<McnError>? messages, McnResultInfo? Functio
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnResponseCollection &&
           listEquals(messages, other.messages) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(messages), resultInfo, success); } 
-@override String toString() { return 'McnResponseCollection(messages: $messages, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(messages), resultInfo, success);
+
+@override String toString() => 'McnResponseCollection(messages: $messages, resultInfo: $resultInfo, success: $success)';
+
  }

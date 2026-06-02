@@ -50,14 +50,17 @@ GetGroupReadResponse copyWith({DateTime? createdAt, String? description, List<Me
   updatedAt: updatedAt ?? this.updatedAt,
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetGroupReadResponse &&
           createdAt == other.createdAt &&
           description == other.description &&
           listEquals(members, other.members) &&
           name == other.name &&
           updatedAt == other.updatedAt &&
-          uuid == other.uuid; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(members), name, updatedAt, uuid); } 
-@override String toString() { return 'GetGroupReadResponse(createdAt: $createdAt, description: $description, members: $members, name: $name, updatedAt: $updatedAt, uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(members), name, updatedAt, uuid);
+
+@override String toString() => 'GetGroupReadResponse(createdAt: $createdAt, description: $description, members: $members, name: $name, updatedAt: $updatedAt, uuid: $uuid)';
+
  }

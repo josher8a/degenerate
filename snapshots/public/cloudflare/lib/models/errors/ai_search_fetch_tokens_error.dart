@@ -18,13 +18,15 @@ final class AiSearchFetchTokensError$400 extends AiSearchFetchTokensError {const
 
 final AiSearchFetchTokensResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AiSearchFetchTokensError$404 extends AiSearchFetchTokensError {const AiSearchFetchTokensError$404(this.error);
 
 final AiSearchFetchTokensResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AiSearchFetchTokensError$Unknown extends AiSearchFetchTokensError {const AiSearchFetchTokensError$Unknown(this.statusCode, this.rawBody, );
 

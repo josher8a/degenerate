@@ -24,10 +24,13 @@ VectorizeIndexDeleteVectorsByIdResponse copyWith({int? Function()? count, List<V
   count: count != null ? count() : this.count,
   ids: ids != null ? ids() : this.ids,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorizeIndexDeleteVectorsByIdResponse &&
           count == other.count &&
-          listEquals(ids, other.ids); } 
-@override int get hashCode { return Object.hash(count, Object.hashAll(ids ?? const [])); } 
-@override String toString() { return 'VectorizeIndexDeleteVectorsByIdResponse(count: $count, ids: $ids)'; } 
+          listEquals(ids, other.ids);
+
+@override int get hashCode => Object.hash(count, Object.hashAll(ids ?? const []));
+
+@override String toString() => 'VectorizeIndexDeleteVectorsByIdResponse(count: $count, ids: $ids)';
+
  }

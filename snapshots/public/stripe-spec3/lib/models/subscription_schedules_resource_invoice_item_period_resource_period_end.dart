@@ -23,10 +23,13 @@ SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd copyWith({int? F
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd &&
           timestamp == other.timestamp &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(timestamp, type); } 
-@override String toString() { return 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(timestamp: $timestamp, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(timestamp, type);
+
+@override String toString() => 'SubscriptionSchedulesResourceInvoiceItemPeriodResourcePeriodEnd(timestamp: $timestamp, type: $type)';
+
  }

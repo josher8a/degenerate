@@ -25,11 +25,14 @@ RulesUpdatedChanges copyWith({ChangesConfiguration? Function()? configuration, R
   ruleType: ruleType != null ? ruleType() : this.ruleType,
   pattern: pattern != null ? pattern() : this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesUpdatedChanges &&
           configuration == other.configuration &&
           ruleType == other.ruleType &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(configuration, ruleType, pattern); } 
-@override String toString() { return 'RulesUpdatedChanges(configuration: $configuration, ruleType: $ruleType, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(configuration, ruleType, pattern);
+
+@override String toString() => 'RulesUpdatedChanges(configuration: $configuration, ruleType: $ruleType, pattern: $pattern)';
+
  }

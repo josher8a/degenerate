@@ -36,11 +36,14 @@ DigitalExperienceMonitoringColosResponse2 copyWith({String? airportCode, String?
   city: city ?? this.city,
   countryCode: countryCode ?? this.countryCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringColosResponse2 &&
           airportCode == other.airportCode &&
           city == other.city &&
-          countryCode == other.countryCode; } 
-@override int get hashCode { return Object.hash(airportCode, city, countryCode); } 
-@override String toString() { return 'DigitalExperienceMonitoringColosResponse2(airportCode: $airportCode, city: $city, countryCode: $countryCode)'; } 
+          countryCode == other.countryCode;
+
+@override int get hashCode => Object.hash(airportCode, city, countryCode);
+
+@override String toString() => 'DigitalExperienceMonitoringColosResponse2(airportCode: $airportCode, city: $city, countryCode: $countryCode)';
+
  }

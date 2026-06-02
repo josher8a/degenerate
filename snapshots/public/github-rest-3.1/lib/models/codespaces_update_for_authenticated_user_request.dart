@@ -28,11 +28,14 @@ CodespacesUpdateForAuthenticatedUserRequest copyWith({String? Function()? machin
   displayName: displayName != null ? displayName() : this.displayName,
   recentFolders: recentFolders != null ? recentFolders() : this.recentFolders,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesUpdateForAuthenticatedUserRequest &&
           machine == other.machine &&
           displayName == other.displayName &&
-          listEquals(recentFolders, other.recentFolders); } 
-@override int get hashCode { return Object.hash(machine, displayName, Object.hashAll(recentFolders ?? const [])); } 
-@override String toString() { return 'CodespacesUpdateForAuthenticatedUserRequest(machine: $machine, displayName: $displayName, recentFolders: $recentFolders)'; } 
+          listEquals(recentFolders, other.recentFolders);
+
+@override int get hashCode => Object.hash(machine, displayName, Object.hashAll(recentFolders ?? const []));
+
+@override String toString() => 'CodespacesUpdateForAuthenticatedUserRequest(machine: $machine, displayName: $displayName, recentFolders: $recentFolders)';
+
  }

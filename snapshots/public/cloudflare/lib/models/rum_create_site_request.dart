@@ -26,11 +26,14 @@ RumCreateSiteRequest copyWith({RumAutoInstall? Function()? autoInstall, RumHost?
   host: host != null ? host() : this.host,
   zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumCreateSiteRequest &&
           autoInstall == other.autoInstall &&
           host == other.host &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(autoInstall, host, zoneTag); } 
-@override String toString() { return 'RumCreateSiteRequest(autoInstall: $autoInstall, host: $host, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(autoInstall, host, zoneTag);
+
+@override String toString() => 'RumCreateSiteRequest(autoInstall: $autoInstall, host: $host, zoneTag: $zoneTag)';
+
  }

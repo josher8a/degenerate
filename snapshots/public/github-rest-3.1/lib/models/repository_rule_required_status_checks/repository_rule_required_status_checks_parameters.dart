@@ -29,11 +29,14 @@ RepositoryRuleRequiredStatusChecksParameters copyWith({bool? Function()? doNotEn
   requiredStatusChecks: requiredStatusChecks ?? this.requiredStatusChecks,
   strictRequiredStatusChecksPolicy: strictRequiredStatusChecksPolicy ?? this.strictRequiredStatusChecksPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredStatusChecksParameters &&
           doNotEnforceOnCreate == other.doNotEnforceOnCreate &&
           listEquals(requiredStatusChecks, other.requiredStatusChecks) &&
-          strictRequiredStatusChecksPolicy == other.strictRequiredStatusChecksPolicy; } 
-@override int get hashCode { return Object.hash(doNotEnforceOnCreate, Object.hashAll(requiredStatusChecks), strictRequiredStatusChecksPolicy); } 
-@override String toString() { return 'RepositoryRuleRequiredStatusChecksParameters(doNotEnforceOnCreate: $doNotEnforceOnCreate, requiredStatusChecks: $requiredStatusChecks, strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy)'; } 
+          strictRequiredStatusChecksPolicy == other.strictRequiredStatusChecksPolicy;
+
+@override int get hashCode => Object.hash(doNotEnforceOnCreate, Object.hashAll(requiredStatusChecks), strictRequiredStatusChecksPolicy);
+
+@override String toString() => 'RepositoryRuleRequiredStatusChecksParameters(doNotEnforceOnCreate: $doNotEnforceOnCreate, requiredStatusChecks: $requiredStatusChecks, strictRequiredStatusChecksPolicy: $strictRequiredStatusChecksPolicy)';
+
  }

@@ -23,10 +23,13 @@ Outage copyWith({String? outageCause, String? outageType, }) { return Outage(
   outageCause: outageCause ?? this.outageCause,
   outageType: outageType ?? this.outageType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Outage &&
           outageCause == other.outageCause &&
-          outageType == other.outageType; } 
-@override int get hashCode { return Object.hash(outageCause, outageType); } 
-@override String toString() { return 'Outage(outageCause: $outageCause, outageType: $outageType)'; } 
+          outageType == other.outageType;
+
+@override int get hashCode => Object.hash(outageCause, outageType);
+
+@override String toString() => 'Outage(outageCause: $outageCause, outageType: $outageType)';
+
  }

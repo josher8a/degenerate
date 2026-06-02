@@ -34,12 +34,15 @@ PullsMergeRequest copyWith({String? Function()? commitTitle, String? Function()?
   sha: sha != null ? sha() : this.sha,
   mergeMethod: mergeMethod != null ? mergeMethod() : this.mergeMethod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsMergeRequest &&
           commitTitle == other.commitTitle &&
           commitMessage == other.commitMessage &&
           sha == other.sha &&
-          mergeMethod == other.mergeMethod; } 
-@override int get hashCode { return Object.hash(commitTitle, commitMessage, sha, mergeMethod); } 
-@override String toString() { return 'PullsMergeRequest(commitTitle: $commitTitle, commitMessage: $commitMessage, sha: $sha, mergeMethod: $mergeMethod)'; } 
+          mergeMethod == other.mergeMethod;
+
+@override int get hashCode => Object.hash(commitTitle, commitMessage, sha, mergeMethod);
+
+@override String toString() => 'PullsMergeRequest(commitTitle: $commitTitle, commitMessage: $commitMessage, sha: $sha, mergeMethod: $mergeMethod)';
+
  }

@@ -35,11 +35,14 @@ TerminalReaderReaderResourceLineItem copyWith({int? amount, String? description,
   description: description ?? this.description,
   quantity: quantity ?? this.quantity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceLineItem &&
           amount == other.amount &&
           description == other.description &&
-          quantity == other.quantity; } 
-@override int get hashCode { return Object.hash(amount, description, quantity); } 
-@override String toString() { return 'TerminalReaderReaderResourceLineItem(amount: $amount, description: $description, quantity: $quantity)'; } 
+          quantity == other.quantity;
+
+@override int get hashCode => Object.hash(amount, description, quantity);
+
+@override String toString() => 'TerminalReaderReaderResourceLineItem(amount: $amount, description: $description, quantity: $quantity)';
+
  }

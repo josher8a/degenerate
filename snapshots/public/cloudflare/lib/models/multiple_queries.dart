@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch
 MultipleQueries copyWith({List<D1SingleQuery>? batch}) { return MultipleQueries(
   batch: batch ?? this.batch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MultipleQueries &&
-          listEquals(batch, other.batch); } 
-@override int get hashCode { return Object.hashAll(batch); } 
-@override String toString() { return 'MultipleQueries(batch: $batch)'; } 
+          listEquals(batch, other.batch);
+
+@override int get hashCode => Object.hashAll(batch);
+
+@override String toString() => 'MultipleQueries(batch: $batch)';
+
  }

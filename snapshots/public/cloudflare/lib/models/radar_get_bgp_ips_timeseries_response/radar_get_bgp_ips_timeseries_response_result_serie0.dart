@@ -27,11 +27,14 @@ RadarGetBgpIpsTimeseriesResponseResultSerie0 copyWith({List<String>? ipv4, List<
   ipv6: ipv6 ?? this.ipv6,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpIpsTimeseriesResponseResultSerie0 &&
           listEquals(ipv4, other.ipv4) &&
           listEquals(ipv6, other.ipv6) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(ipv4), Object.hashAll(ipv6), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetBgpIpsTimeseriesResponseResultSerie0(ipv4: $ipv4, ipv6: $ipv6, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(ipv4), Object.hashAll(ipv6), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetBgpIpsTimeseriesResponseResultSerie0(ipv4: $ipv4, ipv6: $ipv6, timestamps: $timestamps)';
+
  }

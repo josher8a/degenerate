@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookSponsorshipPendingCancellationAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookSponsorshipPendingCancellationAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSponsorshipPendingCancellationAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookSponsorshipPendingCancellationAction($value)';
+
  }
 @immutable final class WebhookSponsorshipPendingCancellation {const WebhookSponsorshipPendingCancellation({required this.action, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });
 
@@ -74,7 +77,7 @@ WebhookSponsorshipPendingCancellation copyWith({WebhookSponsorshipPendingCancell
   sender: sender ?? this.sender,
   sponsorship: sponsorship ?? this.sponsorship,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSponsorshipPendingCancellation &&
           action == other.action &&
           effectiveDate == other.effectiveDate &&
@@ -83,7 +86,10 @@ WebhookSponsorshipPendingCancellation copyWith({WebhookSponsorshipPendingCancell
           organization == other.organization &&
           repository == other.repository &&
           sender == other.sender &&
-          sponsorship == other.sponsorship; } 
-@override int get hashCode { return Object.hash(action, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship); } 
-@override String toString() { return 'WebhookSponsorshipPendingCancellation(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
+          sponsorship == other.sponsorship;
+
+@override int get hashCode => Object.hash(action, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship);
+
+@override String toString() => 'WebhookSponsorshipPendingCancellation(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)';
+
  }

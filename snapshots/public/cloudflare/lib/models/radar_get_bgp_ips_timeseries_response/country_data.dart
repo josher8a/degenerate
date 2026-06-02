@@ -33,12 +33,15 @@ CountryData copyWith({double? delaySecs, String? delayStr, bool? healthy, Countr
   healthy: healthy ?? this.healthy,
   latest: latest ?? this.latest,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CountryData &&
           delaySecs == other.delaySecs &&
           delayStr == other.delayStr &&
           healthy == other.healthy &&
-          latest == other.latest; } 
-@override int get hashCode { return Object.hash(delaySecs, delayStr, healthy, latest); } 
-@override String toString() { return 'CountryData(delaySecs: $delaySecs, delayStr: $delayStr, healthy: $healthy, latest: $latest)'; } 
+          latest == other.latest;
+
+@override int get hashCode => Object.hash(delaySecs, delayStr, healthy, latest);
+
+@override String toString() => 'CountryData(delaySecs: $delaySecs, delayStr: $delayStr, healthy: $healthy, latest: $latest)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStepObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunStepObjectObject($value)';
+
  }
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
 @immutable final class RunStepObjectType {const RunStepObjectType._(this.value);
@@ -42,10 +45,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStepObjectType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunStepObjectType($value)';
+
  }
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
 @immutable final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RunStepObjectStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RunStepObjectStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStepObjectStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RunStepObjectStatus($value)';
+
  }
 /// Represents a step in execution of a run.
 /// 
@@ -209,7 +218,7 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
   metadata: metadata != null ? metadata() : this.metadata,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepObject &&
           id == other.id &&
           object == other.object &&
@@ -226,7 +235,10 @@ RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt,
           failedAt == other.failedAt &&
           completedAt == other.completedAt &&
           metadata == other.metadata &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage); } 
-@override String toString() { return 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage);
+
+@override String toString() => 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)';
+
  }

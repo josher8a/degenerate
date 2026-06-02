@@ -83,7 +83,7 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<Health
   timeout: timeout != null ? timeout() : this.timeout,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HealthchecksQueryHealthcheck &&
           address == other.address &&
           listEquals(checkRegions, other.checkRegions) &&
@@ -97,7 +97,10 @@ HealthchecksQueryHealthcheck copyWith({HealthchecksAddress? address, List<Health
           suspended == other.suspended &&
           tcpConfig == other.tcpConfig &&
           timeout == other.timeout &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type); } 
-@override String toString() { return 'HealthchecksQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, description, httpConfig, interval, name, retries, suspended, tcpConfig, timeout, type);
+
+@override String toString() => 'HealthchecksQueryHealthcheck(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, description: $description, httpConfig: $httpConfig, interval: $interval, name: $name, retries: $retries, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)';
+
  }

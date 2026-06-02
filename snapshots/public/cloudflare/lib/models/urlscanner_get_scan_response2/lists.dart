@@ -69,7 +69,7 @@ Lists copyWith({List<String>? asns, List<ListsCertificates>? certificates, List<
   servers: servers ?? this.servers,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Lists &&
           listEquals(asns, other.asns) &&
           listEquals(certificates, other.certificates) &&
@@ -80,7 +80,10 @@ Lists copyWith({List<String>? asns, List<ListsCertificates>? certificates, List<
           listEquals(ips, other.ips) &&
           listEquals(linkDomains, other.linkDomains) &&
           listEquals(servers, other.servers) &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(asns), Object.hashAll(certificates), Object.hashAll(continents), Object.hashAll(countries), Object.hashAll(domains), Object.hashAll(hashes), Object.hashAll(ips), Object.hashAll(linkDomains), Object.hashAll(servers), Object.hashAll(urls)); } 
-@override String toString() { return 'Lists(asns: $asns, certificates: $certificates, continents: $continents, countries: $countries, domains: $domains, hashes: $hashes, ips: $ips, linkDomains: $linkDomains, servers: $servers, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(Object.hashAll(asns), Object.hashAll(certificates), Object.hashAll(continents), Object.hashAll(countries), Object.hashAll(domains), Object.hashAll(hashes), Object.hashAll(ips), Object.hashAll(linkDomains), Object.hashAll(servers), Object.hashAll(urls));
+
+@override String toString() => 'Lists(asns: $asns, certificates: $certificates, continents: $continents, countries: $countries, domains: $domains, hashes: $hashes, ips: $ips, linkDomains: $linkDomains, servers: $servers, urls: $urls)';
+
  }

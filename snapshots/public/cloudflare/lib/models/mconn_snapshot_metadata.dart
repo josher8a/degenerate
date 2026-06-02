@@ -23,10 +23,13 @@ MconnSnapshotMetadata copyWith({double? a, double? t, }) { return MconnSnapshotM
   a: a ?? this.a,
   t: t ?? this.t,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotMetadata &&
           a == other.a &&
-          t == other.t; } 
-@override int get hashCode { return Object.hash(a, t); } 
-@override String toString() { return 'MconnSnapshotMetadata(a: $a, t: $t)'; } 
+          t == other.t;
+
+@override int get hashCode => Object.hash(a, t);
+
+@override String toString() => 'MconnSnapshotMetadata(a: $a, t: $t)';
+
  }

@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomerTaxLocationSource && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomerTaxLocationSource($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerTaxLocationSource && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomerTaxLocationSource($value)';
+
  }
 /// 
 @immutable final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
@@ -69,11 +72,14 @@ CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source
   source: source ?? this.source,
   state: state != null ? state() : this.state,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerTaxLocation &&
           country == other.country &&
           source == other.source &&
-          state == other.state; } 
-@override int get hashCode { return Object.hash(country, source, state); } 
-@override String toString() { return 'CustomerTaxLocation(country: $country, source: $source, state: $state)'; } 
+          state == other.state;
+
+@override int get hashCode => Object.hash(country, source, state);
+
+@override String toString() => 'CustomerTaxLocation(country: $country, source: $source, state: $state)';
+
  }

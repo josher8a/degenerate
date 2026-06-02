@@ -31,10 +31,13 @@ PaymentIntentNextActionKonbiniMinistop copyWith({String? Function()? confirmatio
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,
   paymentCode: paymentCode ?? this.paymentCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionKonbiniMinistop &&
           confirmationNumber == other.confirmationNumber &&
-          paymentCode == other.paymentCode; } 
-@override int get hashCode { return Object.hash(confirmationNumber, paymentCode); } 
-@override String toString() { return 'PaymentIntentNextActionKonbiniMinistop(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)'; } 
+          paymentCode == other.paymentCode;
+
+@override int get hashCode => Object.hash(confirmationNumber, paymentCode);
+
+@override String toString() => 'PaymentIntentNextActionKonbiniMinistop(confirmationNumber: $confirmationNumber, paymentCode: $paymentCode)';
+
  }

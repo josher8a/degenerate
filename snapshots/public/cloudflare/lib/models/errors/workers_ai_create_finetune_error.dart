@@ -17,7 +17,8 @@ final class WorkersAiCreateFinetuneError$400 extends WorkersAiCreateFinetuneErro
 
 final WorkersAiCreateFinetuneResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiCreateFinetuneError$Unknown extends WorkersAiCreateFinetuneError {const WorkersAiCreateFinetuneError$Unknown(this.statusCode, this.rawBody, );
 

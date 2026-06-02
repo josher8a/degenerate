@@ -29,11 +29,14 @@ PullRequestUser copyWith({int? Function()? id, String? Function()? login, String
   login: login != null ? login() : this.login,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequestUser &&
           id == other.id &&
           login == other.login &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, login, type); } 
-@override String toString() { return 'PullRequestUser(id: $id, login: $login, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, login, type);
+
+@override String toString() => 'PullRequestUser(id: $id, login: $login, type: $type)';
+
  }

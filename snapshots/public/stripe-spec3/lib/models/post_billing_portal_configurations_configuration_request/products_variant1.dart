@@ -30,11 +30,14 @@ ProductsVariant1 copyWith({AdjustableQuantity? Function()? adjustableQuantity, L
   prices: prices ?? this.prices,
   product: product ?? this.product,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProductsVariant1 &&
           adjustableQuantity == other.adjustableQuantity &&
           listEquals(prices, other.prices) &&
-          product == other.product; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, Object.hashAll(prices), product); } 
-@override String toString() { return 'ProductsVariant1(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)'; } 
+          product == other.product;
+
+@override int get hashCode => Object.hash(adjustableQuantity, Object.hashAll(prices), product);
+
+@override String toString() => 'ProductsVariant1(adjustableQuantity: $adjustableQuantity, prices: $prices, product: $product)';
+
  }

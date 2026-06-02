@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardCancellationReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class IssuingCardObject {const IssuingCardObject._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardObject($value)';
+
  }
 /// The reason why the previous card needed to be replaced.
 @immutable final class IssuingCardReplacementReason {const IssuingCardReplacementReason._(this.value);
@@ -76,10 +82,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardReplacementReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardReplacementReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardReplacementReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardReplacementReason($value)';
+
  }
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.
 @immutable final class IssuingCard {const IssuingCard({required this.brand, required this.cardholder, required this.created, required this.currency, required this.expMonth, required this.expYear, required this.id, required this.last4, required this.livemode, required this.metadata, required this.object, required this.spendingControls, required this.status, required this.type, this.cancellationReason, this.cvc, this.financialAccount, this.latestFraudWarning, this.number, this.personalizationDesign, this.replacedBy, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.wallets, });
@@ -281,7 +290,7 @@ IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? 
   type: type ?? this.type,
   wallets: wallets != null ? wallets() : this.wallets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCard &&
           brand == other.brand &&
           cancellationReason == other.cancellationReason &&
@@ -308,7 +317,10 @@ IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? 
           spendingControls == other.spendingControls &&
           status == other.status &&
           type == other.type &&
-          wallets == other.wallets; } 
-@override int get hashCode { return Object.hashAll([brand, cancellationReason, cardholder, created, currency, cvc, expMonth, expYear, financialAccount, id, last4, latestFraudWarning, livemode, metadata, number, object, personalizationDesign, replacedBy, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type, wallets]); } 
-@override String toString() { return 'IssuingCard(brand: $brand, cancellationReason: $cancellationReason, cardholder: $cardholder, created: $created, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, financialAccount: $financialAccount, id: $id, last4: $last4, latestFraudWarning: $latestFraudWarning, livemode: $livemode, metadata: $metadata, number: $number, object: $object, personalizationDesign: $personalizationDesign, replacedBy: $replacedBy, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type, wallets: $wallets)'; } 
+          wallets == other.wallets;
+
+@override int get hashCode => Object.hashAll([brand, cancellationReason, cardholder, created, currency, cvc, expMonth, expYear, financialAccount, id, last4, latestFraudWarning, livemode, metadata, number, object, personalizationDesign, replacedBy, replacementFor, replacementReason, secondLine, shipping, spendingControls, status, type, wallets]);
+
+@override String toString() => 'IssuingCard(brand: $brand, cancellationReason: $cancellationReason, cardholder: $cardholder, created: $created, currency: $currency, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, financialAccount: $financialAccount, id: $id, last4: $last4, latestFraudWarning: $latestFraudWarning, livemode: $livemode, metadata: $metadata, number: $number, object: $object, personalizationDesign: $personalizationDesign, replacedBy: $replacedBy, replacementFor: $replacementFor, replacementReason: $replacementReason, secondLine: $secondLine, shipping: $shipping, spendingControls: $spendingControls, status: $status, type: $type, wallets: $wallets)';
+
  }

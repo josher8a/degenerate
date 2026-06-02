@@ -21,10 +21,13 @@ ToolsFunction copyWith({ToolsFunctionFunction? function, FunctionType? type, }) 
   function: function ?? this.function,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolsFunction &&
           function == other.function &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(function, type); } 
-@override String toString() { return 'ToolsFunction(function: $function, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(function, type);
+
+@override String toString() => 'ToolsFunction(function: $function, type: $type)';
+
  }

@@ -23,10 +23,13 @@ PaymentMethodIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? bank, Bi
   bank: bank != null ? bank() : this.bank,
   bic: bic != null ? bic() : this.bic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodIdeal &&
           bank == other.bank &&
-          bic == other.bic; } 
-@override int get hashCode { return Object.hash(bank, bic); } 
-@override String toString() { return 'PaymentMethodIdeal(bank: $bank, bic: $bic)'; } 
+          bic == other.bic;
+
+@override int get hashCode => Object.hash(bank, bic);
+
+@override String toString() => 'PaymentMethodIdeal(bank: $bank, bic: $bic)';
+
  }

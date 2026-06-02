@@ -38,13 +38,16 @@ ItemDeleted copyWith({ItemDeletedAction? action, SimpleInstallation? Function()?
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemDeleted &&
           action == other.action &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2Item == other.projectsV2Item &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, organization, projectsV2Item, sender); } 
-@override String toString() { return 'ItemDeleted(action: $action, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, installation, organization, projectsV2Item, sender);
+
+@override String toString() => 'ItemDeleted(action: $action, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
+
  }

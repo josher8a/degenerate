@@ -18,13 +18,15 @@ final class WorBatchCreateWorkflowInstanceError$400 extends WorBatchCreateWorkfl
 
 final WorBatchCreateWorkflowInstanceResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorBatchCreateWorkflowInstanceError$404 extends WorBatchCreateWorkflowInstanceError {const WorBatchCreateWorkflowInstanceError$404(this.error);
 
 final WorBatchCreateWorkflowInstanceResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class WorBatchCreateWorkflowInstanceError$Unknown extends WorBatchCreateWorkflowInstanceError {const WorBatchCreateWorkflowInstanceError$Unknown(this.statusCode, this.rawBody, );
 

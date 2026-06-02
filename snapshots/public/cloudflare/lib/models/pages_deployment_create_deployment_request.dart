@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CommitDirty && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CommitDirty($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CommitDirty && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CommitDirty($value)';
+
  }
 @immutable final class PagesDeploymentCreateDeploymentRequest {const PagesDeploymentCreateDeploymentRequest({this.headers, this.redirects, this.routesJson, this.workerBundle, this.workerJs, this.branch, this.commitDirty, this.commitHash, this.commitMessage, this.functionsFilepathRoutingConfigJson, this.manifest, this.pagesBuildOutputDir, this.wranglerConfigHash, });
 
@@ -132,7 +135,7 @@ PagesDeploymentCreateDeploymentRequest copyWith({Uint8List? Function()? headers,
   pagesBuildOutputDir: pagesBuildOutputDir != null ? pagesBuildOutputDir() : this.pagesBuildOutputDir,
   wranglerConfigHash: wranglerConfigHash != null ? wranglerConfigHash() : this.wranglerConfigHash,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentCreateDeploymentRequest &&
           headers == other.headers &&
           redirects == other.redirects &&
@@ -146,7 +149,10 @@ PagesDeploymentCreateDeploymentRequest copyWith({Uint8List? Function()? headers,
           functionsFilepathRoutingConfigJson == other.functionsFilepathRoutingConfigJson &&
           manifest == other.manifest &&
           pagesBuildOutputDir == other.pagesBuildOutputDir &&
-          wranglerConfigHash == other.wranglerConfigHash; } 
-@override int get hashCode { return Object.hash(headers, redirects, routesJson, workerBundle, workerJs, branch, commitDirty, commitHash, commitMessage, functionsFilepathRoutingConfigJson, manifest, pagesBuildOutputDir, wranglerConfigHash); } 
-@override String toString() { return 'PagesDeploymentCreateDeploymentRequest(headers: $headers, redirects: $redirects, routesJson: $routesJson, workerBundle: $workerBundle, workerJs: $workerJs, branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage, functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson, manifest: $manifest, pagesBuildOutputDir: $pagesBuildOutputDir, wranglerConfigHash: $wranglerConfigHash)'; } 
+          wranglerConfigHash == other.wranglerConfigHash;
+
+@override int get hashCode => Object.hash(headers, redirects, routesJson, workerBundle, workerJs, branch, commitDirty, commitHash, commitMessage, functionsFilepathRoutingConfigJson, manifest, pagesBuildOutputDir, wranglerConfigHash);
+
+@override String toString() => 'PagesDeploymentCreateDeploymentRequest(headers: $headers, redirects: $redirects, routesJson: $routesJson, workerBundle: $workerBundle, workerJs: $workerJs, branch: $branch, commitDirty: $commitDirty, commitHash: $commitHash, commitMessage: $commitMessage, functionsFilepathRoutingConfigJson: $functionsFilepathRoutingConfigJson, manifest: $manifest, pagesBuildOutputDir: $pagesBuildOutputDir, wranglerConfigHash: $wranglerConfigHash)';
+
  }

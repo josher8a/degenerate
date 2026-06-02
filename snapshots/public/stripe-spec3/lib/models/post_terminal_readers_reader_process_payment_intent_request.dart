@@ -32,11 +32,14 @@ PostTerminalReadersReaderProcessPaymentIntentRequest copyWith({List<String>? Fun
   paymentIntent: paymentIntent ?? this.paymentIntent,
   processConfig: processConfig != null ? processConfig() : this.processConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTerminalReadersReaderProcessPaymentIntentRequest &&
           listEquals(expand, other.expand) &&
           paymentIntent == other.paymentIntent &&
-          processConfig == other.processConfig; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), paymentIntent, processConfig); } 
-@override String toString() { return 'PostTerminalReadersReaderProcessPaymentIntentRequest(expand: $expand, paymentIntent: $paymentIntent, processConfig: $processConfig)'; } 
+          processConfig == other.processConfig;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), paymentIntent, processConfig);
+
+@override String toString() => 'PostTerminalReadersReaderProcessPaymentIntentRequest(expand: $expand, paymentIntent: $paymentIntent, processConfig: $processConfig)';
+
  }

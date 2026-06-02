@@ -34,12 +34,15 @@ CopilotIdeCodeCompletionsEditors copyWith({String? Function()? name, int? Functi
   models: models != null ? models() : this.models,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotIdeCodeCompletionsEditors &&
           name == other.name &&
           totalEngagedUsers == other.totalEngagedUsers &&
           listEquals(models, other.models) &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const []), Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'CopilotIdeCodeCompletionsEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(name, totalEngagedUsers, Object.hashAll(models ?? const []), Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'CopilotIdeCodeCompletionsEditors(name: $name, totalEngagedUsers: $totalEngagedUsers, models: $models, additionalProperties: $additionalProperties)';
+
  }

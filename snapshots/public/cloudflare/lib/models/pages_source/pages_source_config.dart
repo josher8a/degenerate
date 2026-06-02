@@ -112,7 +112,7 @@ PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? own
   repoId: repoId ?? this.repoId,
   repoName: repoName ?? this.repoName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesSourceConfig &&
           deploymentsEnabled == other.deploymentsEnabled &&
           owner == other.owner &&
@@ -126,7 +126,10 @@ PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? own
           productionBranch == other.productionBranch &&
           productionDeploymentsEnabled == other.productionDeploymentsEnabled &&
           repoId == other.repoId &&
-          repoName == other.repoName; } 
-@override int get hashCode { return Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), prCommentsEnabled, Object.hashAll(previewBranchExcludes), Object.hashAll(previewBranchIncludes), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName); } 
-@override String toString() { return 'PagesSourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)'; } 
+          repoName == other.repoName;
+
+@override int get hashCode => Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), prCommentsEnabled, Object.hashAll(previewBranchExcludes), Object.hashAll(previewBranchIncludes), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName);
+
+@override String toString() => 'PagesSourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)';
+
  }

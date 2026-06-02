@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PermissionTo && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PermissionTo($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PermissionTo && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PermissionTo($value)';
+
  }
 /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`
 /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role
@@ -46,9 +49,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('to');
 WebhookMemberAddedChangesPermission copyWith({PermissionTo? to}) { return WebhookMemberAddedChangesPermission(
   to: to ?? this.to,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberAddedChangesPermission &&
-          to == other.to; } 
-@override int get hashCode { return to.hashCode; } 
-@override String toString() { return 'WebhookMemberAddedChangesPermission(to: $to)'; } 
+          to == other.to;
+
+@override int get hashCode => to.hashCode;
+
+@override String toString() => 'WebhookMemberAddedChangesPermission(to: $to)';
+
  }

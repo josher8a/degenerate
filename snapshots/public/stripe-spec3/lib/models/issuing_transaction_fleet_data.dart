@@ -46,12 +46,15 @@ IssuingTransactionFleetData copyWith({IssuingTransactionFleetCardholderPromptDat
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
   serviceType: serviceType != null ? serviceType() : this.serviceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingTransactionFleetData &&
           cardholderPromptData == other.cardholderPromptData &&
           purchaseType == other.purchaseType &&
           reportedBreakdown == other.reportedBreakdown &&
-          serviceType == other.serviceType; } 
-@override int get hashCode { return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType); } 
-@override String toString() { return 'IssuingTransactionFleetData(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)'; } 
+          serviceType == other.serviceType;
+
+@override int get hashCode => Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType);
+
+@override String toString() => 'IssuingTransactionFleetData(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)';
+
  }

@@ -30,11 +30,14 @@ PagesDeploymentConfigValuesServicesValue copyWith({String? Function()? entrypoin
   environment: environment ?? this.environment,
   service: service ?? this.service,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesServicesValue &&
           entrypoint == other.entrypoint &&
           environment == other.environment &&
-          service == other.service; } 
-@override int get hashCode { return Object.hash(entrypoint, environment, service); } 
-@override String toString() { return 'PagesDeploymentConfigValuesServicesValue(entrypoint: $entrypoint, environment: $environment, service: $service)'; } 
+          service == other.service;
+
+@override int get hashCode => Object.hash(entrypoint, environment, service);
+
+@override String toString() => 'PagesDeploymentConfigValuesServicesValue(entrypoint: $entrypoint, environment: $environment, service: $service)';
+
  }

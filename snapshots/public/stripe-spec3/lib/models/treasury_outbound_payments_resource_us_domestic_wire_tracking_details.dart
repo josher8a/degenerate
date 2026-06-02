@@ -44,11 +44,14 @@ TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails copyWith({String? 
   imad: imad != null ? imad() : this.imad,
   omad: omad != null ? omad() : this.omad,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails &&
           chips == other.chips &&
           imad == other.imad &&
-          omad == other.omad; } 
-@override int get hashCode { return Object.hash(chips, imad, omad); } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails(chips: $chips, imad: $imad, omad: $omad)'; } 
+          omad == other.omad;
+
+@override int get hashCode => Object.hash(chips, imad, omad);
+
+@override String toString() => 'TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails(chips: $chips, imad: $imad, omad: $omad)';
+
  }

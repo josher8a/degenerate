@@ -31,12 +31,15 @@ EmailSecurityPhishGuardReportFields copyWith({String? Function()? from, String? 
   to: to ?? this.to,
   ts: ts ?? this.ts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityPhishGuardReportFields &&
           from == other.from &&
           postfixId == other.postfixId &&
           listEquals(to, other.to) &&
-          ts == other.ts; } 
-@override int get hashCode { return Object.hash(from, postfixId, Object.hashAll(to), ts); } 
-@override String toString() { return 'EmailSecurityPhishGuardReportFields(from: $from, postfixId: $postfixId, to: $to, ts: $ts)'; } 
+          ts == other.ts;
+
+@override int get hashCode => Object.hash(from, postfixId, Object.hashAll(to), ts);
+
+@override String toString() => 'EmailSecurityPhishGuardReportFields(from: $from, postfixId: $postfixId, to: $to, ts: $ts)';
+
  }

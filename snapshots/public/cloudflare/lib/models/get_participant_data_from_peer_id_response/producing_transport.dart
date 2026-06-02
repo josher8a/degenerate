@@ -135,7 +135,7 @@ ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Fun
   remoteCandidateType: remoteCandidateType != null ? remoteCandidateType() : this.remoteCandidateType,
   totalRoundTripTime: totalRoundTripTime != null ? totalRoundTripTime() : this.totalRoundTripTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProducingTransport &&
           availableOutgoingBitrate == other.availableOutgoingBitrate &&
           bytesDiscardedOnSend == other.bytesDiscardedOnSend &&
@@ -161,7 +161,10 @@ ProducingTransport copyWith({int? Function()? availableOutgoingBitrate, int? Fun
           remoteCandidatePort == other.remoteCandidatePort &&
           remoteCandidateProtocol == other.remoteCandidateProtocol &&
           remoteCandidateType == other.remoteCandidateType &&
-          totalRoundTripTime == other.totalRoundTripTime; } 
-@override int get hashCode { return Object.hashAll([availableOutgoingBitrate, bytesDiscardedOnSend, bytesReceived, bytesSent, currentRoundTripTime, lastPacketReceivedTimestamp, lastPacketSentTimestamp, localCandidateAddress, localCandidateId, localCandidateNetworkType, localCandidatePort, localCandidateProtocol, localCandidateRelatedAddress, localCandidateRelatedPort, localCandidateType, nominated, packetsDiscardedOnSend, packetsReceived, packetsSent, remoteCandidateAddress, remoteCandidateId, remoteCandidatePort, remoteCandidateProtocol, remoteCandidateType, totalRoundTripTime]); } 
-@override String toString() { return 'ProducingTransport(availableOutgoingBitrate: $availableOutgoingBitrate, bytesDiscardedOnSend: $bytesDiscardedOnSend, bytesReceived: $bytesReceived, bytesSent: $bytesSent, currentRoundTripTime: $currentRoundTripTime, lastPacketReceivedTimestamp: $lastPacketReceivedTimestamp, lastPacketSentTimestamp: $lastPacketSentTimestamp, localCandidateAddress: $localCandidateAddress, localCandidateId: $localCandidateId, localCandidateNetworkType: $localCandidateNetworkType, localCandidatePort: $localCandidatePort, localCandidateProtocol: $localCandidateProtocol, localCandidateRelatedAddress: $localCandidateRelatedAddress, localCandidateRelatedPort: $localCandidateRelatedPort, localCandidateType: $localCandidateType, nominated: $nominated, packetsDiscardedOnSend: $packetsDiscardedOnSend, packetsReceived: $packetsReceived, packetsSent: $packetsSent, remoteCandidateAddress: $remoteCandidateAddress, remoteCandidateId: $remoteCandidateId, remoteCandidatePort: $remoteCandidatePort, remoteCandidateProtocol: $remoteCandidateProtocol, remoteCandidateType: $remoteCandidateType, totalRoundTripTime: $totalRoundTripTime)'; } 
+          totalRoundTripTime == other.totalRoundTripTime;
+
+@override int get hashCode => Object.hashAll([availableOutgoingBitrate, bytesDiscardedOnSend, bytesReceived, bytesSent, currentRoundTripTime, lastPacketReceivedTimestamp, lastPacketSentTimestamp, localCandidateAddress, localCandidateId, localCandidateNetworkType, localCandidatePort, localCandidateProtocol, localCandidateRelatedAddress, localCandidateRelatedPort, localCandidateType, nominated, packetsDiscardedOnSend, packetsReceived, packetsSent, remoteCandidateAddress, remoteCandidateId, remoteCandidatePort, remoteCandidateProtocol, remoteCandidateType, totalRoundTripTime]);
+
+@override String toString() => 'ProducingTransport(availableOutgoingBitrate: $availableOutgoingBitrate, bytesDiscardedOnSend: $bytesDiscardedOnSend, bytesReceived: $bytesReceived, bytesSent: $bytesSent, currentRoundTripTime: $currentRoundTripTime, lastPacketReceivedTimestamp: $lastPacketReceivedTimestamp, lastPacketSentTimestamp: $lastPacketSentTimestamp, localCandidateAddress: $localCandidateAddress, localCandidateId: $localCandidateId, localCandidateNetworkType: $localCandidateNetworkType, localCandidatePort: $localCandidatePort, localCandidateProtocol: $localCandidateProtocol, localCandidateRelatedAddress: $localCandidateRelatedAddress, localCandidateRelatedPort: $localCandidateRelatedPort, localCandidateType: $localCandidateType, nominated: $nominated, packetsDiscardedOnSend: $packetsDiscardedOnSend, packetsReceived: $packetsReceived, packetsSent: $packetsSent, remoteCandidateAddress: $remoteCandidateAddress, remoteCandidateId: $remoteCandidateId, remoteCandidatePort: $remoteCandidatePort, remoteCandidateProtocol: $remoteCandidateProtocol, remoteCandidateType: $remoteCandidateType, totalRoundTripTime: $totalRoundTripTime)';
+
  }

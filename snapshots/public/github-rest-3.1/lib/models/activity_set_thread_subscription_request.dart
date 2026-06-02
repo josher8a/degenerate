@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ActivitySetThreadSubscriptionRequest copyWith({bool Function()? ignored}) { return ActivitySetThreadSubscriptionRequest(
   ignored: ignored != null ? ignored() : this.ignored,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActivitySetThreadSubscriptionRequest &&
-          ignored == other.ignored; } 
-@override int get hashCode { return ignored.hashCode; } 
-@override String toString() { return 'ActivitySetThreadSubscriptionRequest(ignored: $ignored)'; } 
+          ignored == other.ignored;
+
+@override int get hashCode => ignored.hashCode;
+
+@override String toString() => 'ActivitySetThreadSubscriptionRequest(ignored: $ignored)';
+
  }

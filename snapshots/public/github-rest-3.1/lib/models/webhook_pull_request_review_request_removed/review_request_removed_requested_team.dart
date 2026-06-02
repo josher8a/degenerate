@@ -91,7 +91,7 @@ ReviewRequestRemovedRequestedTeam copyWith({bool? Function()? deleted, String? F
   slug: slug ?? this.slug,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReviewRequestRemovedRequestedTeam &&
           deleted == other.deleted &&
           description == other.description &&
@@ -105,7 +105,10 @@ ReviewRequestRemovedRequestedTeam copyWith({bool? Function()? deleted, String? F
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'ReviewRequestRemovedRequestedTeam(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url);
+
+@override String toString() => 'ReviewRequestRemovedRequestedTeam(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';
+
  }

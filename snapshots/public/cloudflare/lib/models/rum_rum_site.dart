@@ -44,11 +44,14 @@ RumRumSite copyWith({RumEditable? Function()? editable, RumId? Function()? id, R
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumRumSite &&
           editable == other.editable &&
           id == other.id &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(editable, id, value); } 
-@override String toString() { return 'RumRumSite(editable: $editable, id: $id, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(editable, id, value);
+
+@override String toString() => 'RumRumSite(editable: $editable, id: $id, value: $value)';
+
  }

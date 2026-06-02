@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BankTransferRequestedAddressTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BankTransferRequestedAddressTypes($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BankTransferRequestedAddressTypes && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BankTransferRequestedAddressTypes($value)';
+
  }
 /// Additional parameters for `bank_transfer` funding types
 @immutable final class PostCustomersCustomerFundingInstructionsRequestBankTransfer {const PostCustomersCustomerFundingInstructionsRequestBankTransfer({required this.type, this.euBankTransfer, this.requestedAddressTypes, });
@@ -56,11 +59,14 @@ PostCustomersCustomerFundingInstructionsRequestBankTransfer copyWith({EuBankTran
   requestedAddressTypes: requestedAddressTypes != null ? requestedAddressTypes() : this.requestedAddressTypes,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerFundingInstructionsRequestBankTransfer &&
           euBankTransfer == other.euBankTransfer &&
           listEquals(requestedAddressTypes, other.requestedAddressTypes) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type); } 
-@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestBankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(euBankTransfer, Object.hashAll(requestedAddressTypes ?? const []), type);
+
+@override String toString() => 'PostCustomersCustomerFundingInstructionsRequestBankTransfer(euBankTransfer: $euBankTransfer, requestedAddressTypes: $requestedAddressTypes, type: $type)';
+
  }

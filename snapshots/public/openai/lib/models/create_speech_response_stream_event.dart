@@ -30,14 +30,18 @@ final SpeechAudioDeltaEvent speechAudioDeltaEvent;
 
 @override String get type => 'speech.audio.delta';
 
-@override Map<String, dynamic> toJson() { return {...speechAudioDeltaEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...speechAudioDeltaEvent.toJson(), 'type': type};
+
 CreateSpeechResponseStreamEventSpeechAudioDelta copyWith({String? audio}) { return CreateSpeechResponseStreamEventSpeechAudioDelta(speechAudioDeltaEvent.copyWith(
   audio: audio,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechResponseStreamEventSpeechAudioDelta && speechAudioDeltaEvent == other.speechAudioDeltaEvent; } 
-@override int get hashCode { return speechAudioDeltaEvent.hashCode; } 
-@override String toString() { return 'CreateSpeechResponseStreamEvent.speechAudioDelta($speechAudioDeltaEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateSpeechResponseStreamEventSpeechAudioDelta && speechAudioDeltaEvent == other.speechAudioDeltaEvent;
+
+@override int get hashCode => speechAudioDeltaEvent.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEvent.speechAudioDelta($speechAudioDeltaEvent)';
+
  }
 @immutable final class CreateSpeechResponseStreamEventSpeechAudioDone extends CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEventSpeechAudioDone(this.speechAudioDoneEvent);
 
@@ -47,14 +51,18 @@ final SpeechAudioDoneEvent speechAudioDoneEvent;
 
 @override String get type => 'speech.audio.done';
 
-@override Map<String, dynamic> toJson() { return {...speechAudioDoneEvent.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...speechAudioDoneEvent.toJson(), 'type': type};
+
 CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsage? usage}) { return CreateSpeechResponseStreamEventSpeechAudioDone(speechAudioDoneEvent.copyWith(
   usage: usage,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechResponseStreamEventSpeechAudioDone && speechAudioDoneEvent == other.speechAudioDoneEvent; } 
-@override int get hashCode { return speechAudioDoneEvent.hashCode; } 
-@override String toString() { return 'CreateSpeechResponseStreamEvent.speechAudioDone($speechAudioDoneEvent)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateSpeechResponseStreamEventSpeechAudioDone && speechAudioDoneEvent == other.speechAudioDoneEvent;
+
+@override int get hashCode => speechAudioDoneEvent.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEvent.speechAudioDone($speechAudioDoneEvent)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -64,9 +72,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateSpeechResponseStreamEvent$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'CreateSpeechResponseStreamEvent.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateSpeechResponseStreamEvent$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEvent.unknown($json)';
+
  }

@@ -21,31 +21,36 @@ final class ProjectsCreateViewForOrgError$401 extends ProjectsCreateViewForOrgEr
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ProjectsCreateViewForOrgError$403 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ProjectsCreateViewForOrgError$404 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ProjectsCreateViewForOrgError$422 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ProjectsCreateViewForOrgError$503 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$503(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class ProjectsCreateViewForOrgError$Unknown extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError$Unknown(this.statusCode, this.rawBody, );
 

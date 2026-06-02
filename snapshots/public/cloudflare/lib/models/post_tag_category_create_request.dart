@@ -21,10 +21,13 @@ PostTagCategoryCreateRequest copyWith({String? Function()? description, String? 
   description: description != null ? description() : this.description,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTagCategoryCreateRequest &&
           description == other.description &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, name); } 
-@override String toString() { return 'PostTagCategoryCreateRequest(description: $description, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, name);
+
+@override String toString() => 'PostTagCategoryCreateRequest(description: $description, name: $name)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingPortalConfigurationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingPortalConfigurationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingPortalConfigurationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingPortalConfigurationObject($value)';
+
  }
 /// A portal configuration describes the functionality and behavior you embed in a portal session. Related guide: [Configure the customer portal](/customer-management/configure-portal).
 @immutable final class BillingPortalConfiguration {const BillingPortalConfiguration({required this.active, required this.businessProfile, required this.created, required this.features, required this.id, required this.isDefault, required this.livemode, required this.loginPage, required this.object, required this.updated, this.application, this.defaultReturnUrl, this.metadata, this.name, });
@@ -135,7 +138,7 @@ BillingPortalConfiguration copyWith({bool? active, BillingPortalConfigurationApp
   object: object ?? this.object,
   updated: updated ?? this.updated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingPortalConfiguration &&
           active == other.active &&
           application == other.application &&
@@ -150,7 +153,10 @@ BillingPortalConfiguration copyWith({bool? active, BillingPortalConfigurationApp
           metadata == other.metadata &&
           name == other.name &&
           object == other.object &&
-          updated == other.updated; } 
-@override int get hashCode { return Object.hash(active, application, businessProfile, created, defaultReturnUrl, features, id, isDefault, livemode, loginPage, metadata, name, object, updated); } 
-@override String toString() { return 'BillingPortalConfiguration(active: $active, application: $application, businessProfile: $businessProfile, created: $created, defaultReturnUrl: $defaultReturnUrl, features: $features, id: $id, isDefault: $isDefault, livemode: $livemode, loginPage: $loginPage, metadata: $metadata, name: $name, object: $object, updated: $updated)'; } 
+          updated == other.updated;
+
+@override int get hashCode => Object.hash(active, application, businessProfile, created, defaultReturnUrl, features, id, isDefault, livemode, loginPage, metadata, name, object, updated);
+
+@override String toString() => 'BillingPortalConfiguration(active: $active, application: $application, businessProfile: $businessProfile, created: $created, defaultReturnUrl: $defaultReturnUrl, features: $features, id: $id, isDefault: $isDefault, livemode: $livemode, loginPage: $loginPage, metadata: $metadata, name: $name, object: $object, updated: $updated)';
+
  }

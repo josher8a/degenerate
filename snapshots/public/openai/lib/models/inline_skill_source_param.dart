@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InlineSkillSourceParamType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InlineSkillSourceParamType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InlineSkillSourceParamType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InlineSkillSourceParamType($value)';
+
  }
 /// The media type of the inline skill payload. Must be `application/zip`.
 @immutable final class MediaType {const MediaType._(this.value);
@@ -39,10 +42,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MediaType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MediaType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MediaType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MediaType($value)';
+
  }
 /// Inline skill payload
 @immutable final class InlineSkillSourceParam {const InlineSkillSourceParam({required this.data, this.type = InlineSkillSourceParamType.base64, this.mediaType = MediaType.applicationZip, });
@@ -80,11 +86,14 @@ InlineSkillSourceParam copyWith({InlineSkillSourceParamType? type, MediaType? me
   mediaType: mediaType ?? this.mediaType,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InlineSkillSourceParam &&
           type == other.type &&
           mediaType == other.mediaType &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(type, mediaType, data); } 
-@override String toString() { return 'InlineSkillSourceParam(type: $type, mediaType: $mediaType, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(type, mediaType, data);
+
+@override String toString() => 'InlineSkillSourceParam(type: $type, mediaType: $mediaType, data: $data)';
+
  }

@@ -46,12 +46,15 @@ LegalEntityPersonVerificationDocument copyWith({Back? Function()? back, String? 
   detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,
   front: front != null ? front() : this.front,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LegalEntityPersonVerificationDocument &&
           back == other.back &&
           details == other.details &&
           detailsCode == other.detailsCode &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, details, detailsCode, front); } 
-@override String toString() { return 'LegalEntityPersonVerificationDocument(back: $back, details: $details, detailsCode: $detailsCode, front: $front)'; } 
+          front == other.front;
+
+@override int get hashCode => Object.hash(back, details, detailsCode, front);
+
+@override String toString() => 'LegalEntityPersonVerificationDocument(back: $back, details: $details, detailsCode: $detailsCode, front: $front)';
+
  }

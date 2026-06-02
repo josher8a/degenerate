@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('eleme
 OutputsFallback copyWith({String? elementId}) { return OutputsFallback(
   elementId: elementId ?? this.elementId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutputsFallback &&
-          elementId == other.elementId; } 
-@override int get hashCode { return elementId.hashCode; } 
-@override String toString() { return 'OutputsFallback(elementId: $elementId)'; } 
+          elementId == other.elementId;
+
+@override int get hashCode => elementId.hashCode;
+
+@override String toString() => 'OutputsFallback(elementId: $elementId)';
+
  }

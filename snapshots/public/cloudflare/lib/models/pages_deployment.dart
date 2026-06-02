@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Environment && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Environment($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Environment && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Environment($value)';
+
  }
 @immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });
 
@@ -167,7 +170,7 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
   url: url ?? this.url,
   usesFunctions: usesFunctions != null ? usesFunctions() : this.usesFunctions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeployment &&
           listEquals(aliases, other.aliases) &&
           buildConfig == other.buildConfig &&
@@ -185,7 +188,10 @@ PagesDeployment copyWith({List<String>? Function()? aliases, PagesBuildConfig? b
           source == other.source &&
           listEquals(stages, other.stages) &&
           url == other.url &&
-          usesFunctions == other.usesFunctions; } 
-@override int get hashCode { return Object.hash(Object.hashAll(aliases ?? const []), buildConfig, createdOn, deploymentTrigger, envVars, environment, id, isSkipped, latestStage, modifiedOn, projectId, projectName, shortId, source, Object.hashAll(stages), url, usesFunctions); } 
-@override String toString() { return 'PagesDeployment(aliases: $aliases, buildConfig: $buildConfig, createdOn: $createdOn, deploymentTrigger: $deploymentTrigger, envVars: $envVars, environment: $environment, id: $id, isSkipped: $isSkipped, latestStage: $latestStage, modifiedOn: $modifiedOn, projectId: $projectId, projectName: $projectName, shortId: $shortId, source: $source, stages: $stages, url: $url, usesFunctions: $usesFunctions)'; } 
+          usesFunctions == other.usesFunctions;
+
+@override int get hashCode => Object.hash(Object.hashAll(aliases ?? const []), buildConfig, createdOn, deploymentTrigger, envVars, environment, id, isSkipped, latestStage, modifiedOn, projectId, projectName, shortId, source, Object.hashAll(stages), url, usesFunctions);
+
+@override String toString() => 'PagesDeployment(aliases: $aliases, buildConfig: $buildConfig, createdOn: $createdOn, deploymentTrigger: $deploymentTrigger, envVars: $envVars, environment: $environment, id: $id, isSkipped: $isSkipped, latestStage: $latestStage, modifiedOn: $modifiedOn, projectId: $projectId, projectName: $projectName, shortId: $shortId, source: $source, stages: $stages, url: $url, usesFunctions: $usesFunctions)';
+
  }

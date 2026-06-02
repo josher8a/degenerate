@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimekitStopReasonReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimekitStopReasonReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitStopReasonReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimekitStopReasonReason($value)';
+
  }
 @immutable final class RealtimekitStopReason {const RealtimekitStopReason({this.caller, this.reason, });
 
@@ -49,10 +52,13 @@ RealtimekitStopReason copyWith({Caller? Function()? caller, RealtimekitStopReaso
   caller: caller != null ? caller() : this.caller,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitStopReason &&
           caller == other.caller &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(caller, reason); } 
-@override String toString() { return 'RealtimekitStopReason(caller: $caller, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(caller, reason);
+
+@override String toString() => 'RealtimekitStopReason(caller: $caller, reason: $reason)';
+
  }

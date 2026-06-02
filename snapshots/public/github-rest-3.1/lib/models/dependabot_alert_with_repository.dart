@@ -135,7 +135,7 @@ DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertStat
   assignees: assignees != null ? assignees() : this.assignees,
   repository: repository ?? this.repository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DependabotAlertWithRepository &&
           number == other.number &&
           state == other.state &&
@@ -154,7 +154,10 @@ DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertStat
           autoDismissedAt == other.autoDismissedAt &&
           dismissalRequest == other.dismissalRequest &&
           listEquals(assignees, other.assignees) &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const []), repository); } 
-@override String toString() { return 'DependabotAlertWithRepository(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees, repository: $repository)'; } 
+          repository == other.repository;
+
+@override int get hashCode => Object.hash(number, state, dependency, securityAdvisory, securityVulnerability, url, htmlUrl, createdAt, updatedAt, dismissedAt, dismissedBy, dismissedReason, dismissedComment, fixedAt, autoDismissedAt, dismissalRequest, Object.hashAll(assignees ?? const []), repository);
+
+@override String toString() => 'DependabotAlertWithRepository(number: $number, state: $state, dependency: $dependency, securityAdvisory: $securityAdvisory, securityVulnerability: $securityVulnerability, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedReason: $dismissedReason, dismissedComment: $dismissedComment, fixedAt: $fixedAt, autoDismissedAt: $autoDismissedAt, dismissalRequest: $dismissalRequest, assignees: $assignees, repository: $repository)';
+
  }

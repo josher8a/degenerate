@@ -52,13 +52,16 @@ MagicAppConfigUpdateRequest copyWith({MagicAccountAppId? Function()? accountAppI
   preferredWans: preferredWans != null ? preferredWans() : this.preferredWans,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicAppConfigUpdateRequest &&
           accountAppId == other.accountAppId &&
           breakout == other.breakout &&
           managedAppId == other.managedAppId &&
           listEquals(preferredWans, other.preferredWans) &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(accountAppId, breakout, managedAppId, Object.hashAll(preferredWans ?? const []), priority); } 
-@override String toString() { return 'MagicAppConfigUpdateRequest(accountAppId: $accountAppId, breakout: $breakout, managedAppId: $managedAppId, preferredWans: $preferredWans, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(accountAppId, breakout, managedAppId, Object.hashAll(preferredWans ?? const []), priority);
+
+@override String toString() => 'MagicAppConfigUpdateRequest(accountAppId: $accountAppId, breakout: $breakout, managedAppId: $managedAppId, preferredWans: $preferredWans, priority: $priority)';
+
  }

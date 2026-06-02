@@ -50,7 +50,7 @@ ScopedInstallation copyWith({AppPermissions? permissions, AuthenticationTokenRep
   repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
   account: account ?? this.account,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ScopedInstallation &&
           permissions == other.permissions &&
           repositorySelection == other.repositorySelection &&
@@ -58,7 +58,10 @@ ScopedInstallation copyWith({AppPermissions? permissions, AuthenticationTokenRep
           hasMultipleSingleFiles == other.hasMultipleSingleFiles &&
           listEquals(singleFilePaths, other.singleFilePaths) &&
           repositoriesUrl == other.repositoriesUrl &&
-          account == other.account; } 
-@override int get hashCode { return Object.hash(permissions, repositorySelection, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), repositoriesUrl, account); } 
-@override String toString() { return 'ScopedInstallation(permissions: $permissions, repositorySelection: $repositorySelection, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, repositoriesUrl: $repositoriesUrl, account: $account)'; } 
+          account == other.account;
+
+@override int get hashCode => Object.hash(permissions, repositorySelection, singleFileName, hasMultipleSingleFiles, Object.hashAll(singleFilePaths ?? const []), repositoriesUrl, account);
+
+@override String toString() => 'ScopedInstallation(permissions: $permissions, repositorySelection: $repositorySelection, singleFileName: $singleFileName, hasMultipleSingleFiles: $hasMultipleSingleFiles, singleFilePaths: $singleFilePaths, repositoriesUrl: $repositoriesUrl, account: $account)';
+
  }

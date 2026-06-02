@@ -23,10 +23,13 @@ RealtimekitUpdatePresetConfigMediaScreenshare copyWith({int? Function()? frameRa
   frameRate: frameRate != null ? frameRate() : this.frameRate,
   quality: quality != null ? quality() : this.quality,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetConfigMediaScreenshare &&
           frameRate == other.frameRate &&
-          quality == other.quality; } 
-@override int get hashCode { return Object.hash(frameRate, quality); } 
-@override String toString() { return 'RealtimekitUpdatePresetConfigMediaScreenshare(frameRate: $frameRate, quality: $quality)'; } 
+          quality == other.quality;
+
+@override int get hashCode => Object.hash(frameRate, quality);
+
+@override String toString() => 'RealtimekitUpdatePresetConfigMediaScreenshare(frameRate: $frameRate, quality: $quality)';
+
  }

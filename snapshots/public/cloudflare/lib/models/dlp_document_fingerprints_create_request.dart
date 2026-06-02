@@ -26,11 +26,14 @@ DlpDocumentFingerprintsCreateRequest copyWith({String Function()? description, i
   matchPercent: matchPercent ?? this.matchPercent,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprintsCreateRequest &&
           description == other.description &&
           matchPercent == other.matchPercent &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(description, matchPercent, name); } 
-@override String toString() { return 'DlpDocumentFingerprintsCreateRequest(description: $description, matchPercent: $matchPercent, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(description, matchPercent, name);
+
+@override String toString() => 'DlpDocumentFingerprintsCreateRequest(description: $description, matchPercent: $matchPercent, name: $name)';
+
  }

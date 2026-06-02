@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AccountUnificationAccountControllerFeesPayer && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerFeesPayer($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountUnificationAccountControllerFeesPayer && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountUnificationAccountControllerFeesPayer($value)';
+
  }
 /// 
 @immutable final class AccountUnificationAccountControllerFees {const AccountUnificationAccountControllerFees({required this.payer});
@@ -48,9 +51,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('payer
 AccountUnificationAccountControllerFees copyWith({AccountUnificationAccountControllerFeesPayer? payer}) { return AccountUnificationAccountControllerFees(
   payer: payer ?? this.payer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUnificationAccountControllerFees &&
-          payer == other.payer; } 
-@override int get hashCode { return payer.hashCode; } 
-@override String toString() { return 'AccountUnificationAccountControllerFees(payer: $payer)'; } 
+          payer == other.payer;
+
+@override int get hashCode => payer.hashCode;
+
+@override String toString() => 'AccountUnificationAccountControllerFees(payer: $payer)';
+
  }

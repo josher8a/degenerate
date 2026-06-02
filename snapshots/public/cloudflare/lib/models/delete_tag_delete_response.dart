@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('uuid'
 DeleteTagDeleteResponse copyWith({String? uuid}) { return DeleteTagDeleteResponse(
   uuid: uuid ?? this.uuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteTagDeleteResponse &&
-          uuid == other.uuid; } 
-@override int get hashCode { return uuid.hashCode; } 
-@override String toString() { return 'DeleteTagDeleteResponse(uuid: $uuid)'; } 
+          uuid == other.uuid;
+
+@override int get hashCode => uuid.hashCode;
+
+@override String toString() => 'DeleteTagDeleteResponse(uuid: $uuid)';
+
  }

@@ -49,14 +49,17 @@ AaaAuditLogs2Resource copyWith({String? Function()? id, String? Function()? prod
   scope: scope != null ? scope() : this.scope,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs2Resource &&
           id == other.id &&
           product == other.product &&
           request == other.request &&
           response == other.response &&
           scope == other.scope &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(id, product, request, response, scope, type); } 
-@override String toString() { return 'AaaAuditLogs2Resource(id: $id, product: $product, request: $request, response: $response, scope: $scope, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(id, product, request, response, scope, type);
+
+@override String toString() => 'AaaAuditLogs2Resource(id: $id, product: $product, request: $request, response: $response, scope: $scope, type: $type)';
+
  }

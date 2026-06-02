@@ -21,10 +21,13 @@ $5Request2Variant2Requests copyWith({Pooling Function()? pooling, InputEmbedding
   pooling: pooling != null ? pooling() : this.pooling,
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is $5Request2Variant2Requests &&
           pooling == other.pooling &&
-          text == other.text; } 
-@override int get hashCode { return Object.hash(pooling, text); } 
-@override String toString() { return '\$5Request2Variant2Requests(pooling: $pooling, text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => Object.hash(pooling, text);
+
+@override String toString() => '\$5Request2Variant2Requests(pooling: $pooling, text: $text)';
+
  }

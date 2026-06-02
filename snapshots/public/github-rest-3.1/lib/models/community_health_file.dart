@@ -21,10 +21,13 @@ CommunityHealthFile copyWith({Uri? url, Uri? htmlUrl, }) { return CommunityHealt
   url: url ?? this.url,
   htmlUrl: htmlUrl ?? this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommunityHealthFile &&
           url == other.url &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(url, htmlUrl); } 
-@override String toString() { return 'CommunityHealthFile(url: $url, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(url, htmlUrl);
+
+@override String toString() => 'CommunityHealthFile(url: $url, htmlUrl: $htmlUrl)';
+
  }

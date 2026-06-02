@@ -80,7 +80,7 @@ TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, Str
   slug: slug ?? this.slug,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamParent &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -92,7 +92,10 @@ TeamParent copyWith({String? Function()? description, Uri? htmlUrl, int? id, Str
           privacy == other.privacy &&
           repositoriesUrl == other.repositoriesUrl &&
           slug == other.slug &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url); } 
-@override String toString() { return 'TeamParent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, repositoriesUrl, slug, url);
+
+@override String toString() => 'TeamParent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)';
+
  }

@@ -33,12 +33,15 @@ Delay copyWith({AsnData? asnData, CountryData? countryData, bool? healthy, doubl
   healthy: healthy ?? this.healthy,
   nowTs: nowTs ?? this.nowTs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Delay &&
           asnData == other.asnData &&
           countryData == other.countryData &&
           healthy == other.healthy &&
-          nowTs == other.nowTs; } 
-@override int get hashCode { return Object.hash(asnData, countryData, healthy, nowTs); } 
-@override String toString() { return 'Delay(asnData: $asnData, countryData: $countryData, healthy: $healthy, nowTs: $nowTs)'; } 
+          nowTs == other.nowTs;
+
+@override int get hashCode => Object.hash(asnData, countryData, healthy, nowTs);
+
+@override String toString() => 'Delay(asnData: $asnData, countryData: $countryData, healthy: $healthy, nowTs: $nowTs)';
+
  }

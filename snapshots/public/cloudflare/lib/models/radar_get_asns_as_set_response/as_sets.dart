@@ -69,7 +69,7 @@ AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstream
   name: name ?? this.name,
   peeringdbAsn: peeringdbAsn != null ? peeringdbAsn() : this.peeringdbAsn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AsSets &&
           asMembersCount == other.asMembersCount &&
           asSetMembersCount == other.asSetMembersCount &&
@@ -79,7 +79,10 @@ AsSets copyWith({int? asMembersCount, int? asSetMembersCount, int? asSetUpstream
           inferredAsn == other.inferredAsn &&
           listEquals(irrSources, other.irrSources) &&
           name == other.name &&
-          peeringdbAsn == other.peeringdbAsn; } 
-@override int get hashCode { return Object.hash(asMembersCount, asSetMembersCount, asSetUpstreamsCount, asnConeSize, hierarchicalAsn, inferredAsn, Object.hashAll(irrSources), name, peeringdbAsn); } 
-@override String toString() { return 'AsSets(asMembersCount: $asMembersCount, asSetMembersCount: $asSetMembersCount, asSetUpstreamsCount: $asSetUpstreamsCount, asnConeSize: $asnConeSize, hierarchicalAsn: $hierarchicalAsn, inferredAsn: $inferredAsn, irrSources: $irrSources, name: $name, peeringdbAsn: $peeringdbAsn)'; } 
+          peeringdbAsn == other.peeringdbAsn;
+
+@override int get hashCode => Object.hash(asMembersCount, asSetMembersCount, asSetUpstreamsCount, asnConeSize, hierarchicalAsn, inferredAsn, Object.hashAll(irrSources), name, peeringdbAsn);
+
+@override String toString() => 'AsSets(asMembersCount: $asMembersCount, asSetMembersCount: $asSetMembersCount, asSetUpstreamsCount: $asSetUpstreamsCount, asnConeSize: $asnConeSize, hierarchicalAsn: $hierarchicalAsn, inferredAsn: $inferredAsn, irrSources: $irrSources, name: $name, peeringdbAsn: $peeringdbAsn)';
+
  }

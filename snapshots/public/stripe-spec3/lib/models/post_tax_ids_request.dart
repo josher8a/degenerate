@@ -35,12 +35,15 @@ PostTaxIdsRequest copyWith({List<String>? Function()? expand, PostTaxIdsRequestO
   type: type ?? this.type,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxIdsRequest &&
           listEquals(expand, other.expand) &&
           owner == other.owner &&
           type == other.type &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), owner, type, value); } 
-@override String toString() { return 'PostTaxIdsRequest(expand: $expand, owner: $owner, type: $type, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), owner, type, value);
+
+@override String toString() => 'PostTaxIdsRequest(expand: $expand, owner: $owner, type: $type, value: $value)';
+
  }

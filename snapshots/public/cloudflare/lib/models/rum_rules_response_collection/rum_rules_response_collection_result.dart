@@ -21,10 +21,13 @@ RumRulesResponseCollectionResult copyWith({List<RumRule>? Function()? rules, Rum
   rules: rules != null ? rules() : this.rules,
   ruleset: ruleset != null ? ruleset() : this.ruleset,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RumRulesResponseCollectionResult &&
           listEquals(rules, other.rules) &&
-          ruleset == other.ruleset; } 
-@override int get hashCode { return Object.hash(Object.hashAll(rules ?? const []), ruleset); } 
-@override String toString() { return 'RumRulesResponseCollectionResult(rules: $rules, ruleset: $ruleset)'; } 
+          ruleset == other.ruleset;
+
+@override int get hashCode => Object.hash(Object.hashAll(rules ?? const []), ruleset);
+
+@override String toString() => 'RumRulesResponseCollectionResult(rules: $rules, ruleset: $ruleset)';
+
  }

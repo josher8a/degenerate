@@ -25,11 +25,14 @@ InvoicePaymentMethodOptionsParamFinancialConnections copyWith({FinancialConnecti
   permissions: permissions != null ? permissions() : this.permissions,
   prefetch: prefetch != null ? prefetch() : this.prefetch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsParamFinancialConnections &&
           filters == other.filters &&
           listEquals(permissions, other.permissions) &&
-          listEquals(prefetch, other.prefetch); } 
-@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const [])); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsParamFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)'; } 
+          listEquals(prefetch, other.prefetch);
+
+@override int get hashCode => Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []));
+
+@override String toString() => 'InvoicePaymentMethodOptionsParamFinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch)';
+
  }

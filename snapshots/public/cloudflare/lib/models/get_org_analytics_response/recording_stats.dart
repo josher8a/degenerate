@@ -29,11 +29,14 @@ RecordingStats copyWith({List<RecordingStatsDayStats>? Function()? dayStats, int
   recordingCount: recordingCount != null ? recordingCount() : this.recordingCount,
   recordingMinutesConsumed: recordingMinutesConsumed != null ? recordingMinutesConsumed() : this.recordingMinutesConsumed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RecordingStats &&
           listEquals(dayStats, other.dayStats) &&
           recordingCount == other.recordingCount &&
-          recordingMinutesConsumed == other.recordingMinutesConsumed; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dayStats ?? const []), recordingCount, recordingMinutesConsumed); } 
-@override String toString() { return 'RecordingStats(dayStats: $dayStats, recordingCount: $recordingCount, recordingMinutesConsumed: $recordingMinutesConsumed)'; } 
+          recordingMinutesConsumed == other.recordingMinutesConsumed;
+
+@override int get hashCode => Object.hash(Object.hashAll(dayStats ?? const []), recordingCount, recordingMinutesConsumed);
+
+@override String toString() => 'RecordingStats(dayStats: $dayStats, recordingCount: $recordingCount, recordingMinutesConsumed: $recordingMinutesConsumed)';
+
  }

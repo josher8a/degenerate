@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 TaxProductResourceTaxSettingsStatusDetailsResourcePending copyWith({List<String>? Function()? missingFields}) { return TaxProductResourceTaxSettingsStatusDetailsResourcePending(
   missingFields: missingFields != null ? missingFields() : this.missingFields,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxSettingsStatusDetailsResourcePending &&
-          listEquals(missingFields, other.missingFields); } 
-@override int get hashCode { return Object.hashAll(missingFields ?? const []); } 
-@override String toString() { return 'TaxProductResourceTaxSettingsStatusDetailsResourcePending(missingFields: $missingFields)'; } 
+          listEquals(missingFields, other.missingFields);
+
+@override int get hashCode => Object.hashAll(missingFields ?? const []);
+
+@override String toString() => 'TaxProductResourceTaxSettingsStatusDetailsResourcePending(missingFields: $missingFields)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventRateLimitsUpdatedType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventRateLimitsUpdatedType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventRateLimitsUpdatedType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventRateLimitsUpdatedType($value)';
+
  }
 /// Emitted at the beginning of a Response to indicate the updated rate limits.
 /// When a Response is created some tokens will be "reserved" for the output
@@ -57,11 +60,14 @@ RealtimeBetaServerEventRateLimitsUpdated copyWith({String? eventId, RealtimeBeta
   type: type ?? this.type,
   rateLimits: rateLimits ?? this.rateLimits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventRateLimitsUpdated &&
           eventId == other.eventId &&
           type == other.type &&
-          listEquals(rateLimits, other.rateLimits); } 
-@override int get hashCode { return Object.hash(eventId, type, Object.hashAll(rateLimits)); } 
-@override String toString() { return 'RealtimeBetaServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)'; } 
+          listEquals(rateLimits, other.rateLimits);
+
+@override int get hashCode => Object.hash(eventId, type, Object.hashAll(rateLimits));
+
+@override String toString() => 'RealtimeBetaServerEventRateLimitsUpdated(eventId: $eventId, type: $type, rateLimits: $rateLimits)';
+
  }

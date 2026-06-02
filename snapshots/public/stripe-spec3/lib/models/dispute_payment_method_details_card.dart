@@ -29,10 +29,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CaseType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CaseType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CaseType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CaseType($value)';
+
  }
 /// 
 @immutable final class DisputePaymentMethodDetailsCard {const DisputePaymentMethodDetailsCard({required this.brand, required this.caseType, this.networkReasonCode, });
@@ -72,11 +75,14 @@ DisputePaymentMethodDetailsCard copyWith({String? brand, CaseType? caseType, Str
   caseType: caseType ?? this.caseType,
   networkReasonCode: networkReasonCode != null ? networkReasonCode() : this.networkReasonCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DisputePaymentMethodDetailsCard &&
           brand == other.brand &&
           caseType == other.caseType &&
-          networkReasonCode == other.networkReasonCode; } 
-@override int get hashCode { return Object.hash(brand, caseType, networkReasonCode); } 
-@override String toString() { return 'DisputePaymentMethodDetailsCard(brand: $brand, caseType: $caseType, networkReasonCode: $networkReasonCode)'; } 
+          networkReasonCode == other.networkReasonCode;
+
+@override int get hashCode => Object.hash(brand, caseType, networkReasonCode);
+
+@override String toString() => 'DisputePaymentMethodDetailsCard(brand: $brand, caseType: $caseType, networkReasonCode: $networkReasonCode)';
+
  }

@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CopilotSeatDetailsPlanType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CopilotSeatDetailsPlanType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CopilotSeatDetailsPlanType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CopilotSeatDetailsPlanType($value)';
+
  }
 /// Information about a Copilot Business seat assignment for a user, team, or organization.
 @immutable final class CopilotSeatDetails {const CopilotSeatDetails({required this.createdAt, this.assignee, this.organization, this.assigningTeam, this.pendingCancellationDate, this.lastActivityAt, this.lastActivityEditor, this.lastAuthenticatedAt, this.updatedAt, this.planType, });
@@ -97,7 +100,7 @@ CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimpl
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   planType: planType != null ? planType() : this.planType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CopilotSeatDetails &&
           assignee == other.assignee &&
           organization == other.organization &&
@@ -108,7 +111,10 @@ CopilotSeatDetails copyWith({SimpleUser? Function()? assignee, OrganizationSimpl
           lastAuthenticatedAt == other.lastAuthenticatedAt &&
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
-          planType == other.planType; } 
-@override int get hashCode { return Object.hash(assignee, organization, assigningTeam, pendingCancellationDate, lastActivityAt, lastActivityEditor, lastAuthenticatedAt, createdAt, updatedAt, planType); } 
-@override String toString() { return 'CopilotSeatDetails(assignee: $assignee, organization: $organization, assigningTeam: $assigningTeam, pendingCancellationDate: $pendingCancellationDate, lastActivityAt: $lastActivityAt, lastActivityEditor: $lastActivityEditor, lastAuthenticatedAt: $lastAuthenticatedAt, createdAt: $createdAt, updatedAt: $updatedAt, planType: $planType)'; } 
+          planType == other.planType;
+
+@override int get hashCode => Object.hash(assignee, organization, assigningTeam, pendingCancellationDate, lastActivityAt, lastActivityEditor, lastAuthenticatedAt, createdAt, updatedAt, planType);
+
+@override String toString() => 'CopilotSeatDetails(assignee: $assignee, organization: $organization, assigningTeam: $assigningTeam, pendingCancellationDate: $pendingCancellationDate, lastActivityAt: $lastActivityAt, lastActivityEditor: $lastActivityEditor, lastAuthenticatedAt: $lastAuthenticatedAt, createdAt: $createdAt, updatedAt: $updatedAt, planType: $planType)';
+
  }

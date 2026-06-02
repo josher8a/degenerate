@@ -27,11 +27,14 @@ Summary0Variant7 copyWith({String? dsa, String? ecdsa, String? rsa, }) { return 
   ecdsa: ecdsa ?? this.ecdsa,
   rsa: rsa ?? this.rsa,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant7 &&
           dsa == other.dsa &&
           ecdsa == other.ecdsa &&
-          rsa == other.rsa; } 
-@override int get hashCode { return Object.hash(dsa, ecdsa, rsa); } 
-@override String toString() { return 'Summary0Variant7(dsa: $dsa, ecdsa: $ecdsa, rsa: $rsa)'; } 
+          rsa == other.rsa;
+
+@override int get hashCode => Object.hash(dsa, ecdsa, rsa);
+
+@override String toString() => 'Summary0Variant7(dsa: $dsa, ecdsa: $ecdsa, rsa: $rsa)';
+
  }

@@ -37,12 +37,15 @@ RealtimekitPresetPermissionsPlugins copyWith({bool? canClose, bool? canEditConfi
   canStart: canStart ?? this.canStart,
   config: config ?? this.config,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetPermissionsPlugins &&
           canClose == other.canClose &&
           canEditConfig == other.canEditConfig &&
           canStart == other.canStart &&
-          config == other.config; } 
-@override int get hashCode { return Object.hash(canClose, canEditConfig, canStart, config); } 
-@override String toString() { return 'RealtimekitPresetPermissionsPlugins(canClose: $canClose, canEditConfig: $canEditConfig, canStart: $canStart, config: $config)'; } 
+          config == other.config;
+
+@override int get hashCode => Object.hash(canClose, canEditConfig, canStart, config);
+
+@override String toString() => 'RealtimekitPresetPermissionsPlugins(canClose: $canClose, canEditConfig: $canEditConfig, canStart: $canStart, config: $config)';
+
  }

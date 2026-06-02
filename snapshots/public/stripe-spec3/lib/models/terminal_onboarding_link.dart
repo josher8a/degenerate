@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TerminalOnboardingLinkObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TerminalOnboardingLinkObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalOnboardingLinkObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TerminalOnboardingLinkObject($value)';
+
  }
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.
 @immutable final class TerminalOnboardingLink {const TerminalOnboardingLink({required this.linkOptions, required this.linkType, required this.object, required this.redirectUrl, this.onBehalfOf, });
@@ -71,13 +74,16 @@ TerminalOnboardingLink copyWith({TerminalOnboardingLinkLinkOptions? linkOptions,
   onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
   redirectUrl: redirectUrl ?? this.redirectUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalOnboardingLink &&
           linkOptions == other.linkOptions &&
           linkType == other.linkType &&
           object == other.object &&
           onBehalfOf == other.onBehalfOf &&
-          redirectUrl == other.redirectUrl; } 
-@override int get hashCode { return Object.hash(linkOptions, linkType, object, onBehalfOf, redirectUrl); } 
-@override String toString() { return 'TerminalOnboardingLink(linkOptions: $linkOptions, linkType: $linkType, object: $object, onBehalfOf: $onBehalfOf, redirectUrl: $redirectUrl)'; } 
+          redirectUrl == other.redirectUrl;
+
+@override int get hashCode => Object.hash(linkOptions, linkType, object, onBehalfOf, redirectUrl);
+
+@override String toString() => 'TerminalOnboardingLink(linkOptions: $linkOptions, linkType: $linkType, object: $object, onBehalfOf: $onBehalfOf, redirectUrl: $redirectUrl)';
+
  }

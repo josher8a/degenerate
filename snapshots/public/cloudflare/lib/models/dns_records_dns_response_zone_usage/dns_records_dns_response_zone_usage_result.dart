@@ -37,10 +37,13 @@ DnsRecordsDnsResponseZoneUsageResult copyWith({int? Function()? recordQuota, int
   recordQuota: recordQuota != null ? recordQuota() : this.recordQuota,
   recordUsage: recordUsage != null ? recordUsage() : this.recordUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseZoneUsageResult &&
           recordQuota == other.recordQuota &&
-          recordUsage == other.recordUsage; } 
-@override int get hashCode { return Object.hash(recordQuota, recordUsage); } 
-@override String toString() { return 'DnsRecordsDnsResponseZoneUsageResult(recordQuota: $recordQuota, recordUsage: $recordUsage)'; } 
+          recordUsage == other.recordUsage;
+
+@override int get hashCode => Object.hash(recordQuota, recordUsage);
+
+@override String toString() => 'DnsRecordsDnsResponseZoneUsageResult(recordQuota: $recordQuota, recordUsage: $recordUsage)';
+
  }

@@ -17,7 +17,8 @@ final class RequestReviewError$500 extends RequestReviewError {const RequestRevi
 
 final RequestReviewResponse500 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class RequestReviewError$Unknown extends RequestReviewError {const RequestReviewError$Unknown(this.statusCode, this.rawBody, );
 

@@ -34,11 +34,14 @@ MqQueueSettings copyWith({double? Function()? deliveryDelay, bool? Function()? d
   deliveryPaused: deliveryPaused != null ? deliveryPaused() : this.deliveryPaused,
   messageRetentionPeriod: messageRetentionPeriod != null ? messageRetentionPeriod() : this.messageRetentionPeriod,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqQueueSettings &&
           deliveryDelay == other.deliveryDelay &&
           deliveryPaused == other.deliveryPaused &&
-          messageRetentionPeriod == other.messageRetentionPeriod; } 
-@override int get hashCode { return Object.hash(deliveryDelay, deliveryPaused, messageRetentionPeriod); } 
-@override String toString() { return 'MqQueueSettings(deliveryDelay: $deliveryDelay, deliveryPaused: $deliveryPaused, messageRetentionPeriod: $messageRetentionPeriod)'; } 
+          messageRetentionPeriod == other.messageRetentionPeriod;
+
+@override int get hashCode => Object.hash(deliveryDelay, deliveryPaused, messageRetentionPeriod);
+
+@override String toString() => 'MqQueueSettings(deliveryDelay: $deliveryDelay, deliveryPaused: $deliveryPaused, messageRetentionPeriod: $messageRetentionPeriod)';
+
  }

@@ -62,7 +62,7 @@ MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthSta
   recentUnhealthyPings: recentUnhealthyPings != null ? recentUnhealthyPings() : this.recentUnhealthyPings,
   tunnelId: tunnelId ?? this.tunnelId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MconnSnapshotTunnel &&
           connectorId == other.connectorId &&
           healthState == other.healthState &&
@@ -71,7 +71,10 @@ MconnSnapshotTunnel copyWith({String? Function()? connectorId, String? healthSta
           probedMtu == other.probedMtu &&
           recentHealthyPings == other.recentHealthyPings &&
           recentUnhealthyPings == other.recentUnhealthyPings &&
-          tunnelId == other.tunnelId; } 
-@override int get hashCode { return Object.hash(connectorId, healthState, healthValue, interfaceName, probedMtu, recentHealthyPings, recentUnhealthyPings, tunnelId); } 
-@override String toString() { return 'MconnSnapshotTunnel(connectorId: $connectorId, healthState: $healthState, healthValue: $healthValue, interfaceName: $interfaceName, probedMtu: $probedMtu, recentHealthyPings: $recentHealthyPings, recentUnhealthyPings: $recentUnhealthyPings, tunnelId: $tunnelId)'; } 
+          tunnelId == other.tunnelId;
+
+@override int get hashCode => Object.hash(connectorId, healthState, healthValue, interfaceName, probedMtu, recentHealthyPings, recentUnhealthyPings, tunnelId);
+
+@override String toString() => 'MconnSnapshotTunnel(connectorId: $connectorId, healthState: $healthState, healthValue: $healthValue, interfaceName: $interfaceName, probedMtu: $probedMtu, recentHealthyPings: $recentHealthyPings, recentUnhealthyPings: $recentUnhealthyPings, tunnelId: $tunnelId)';
+
  }

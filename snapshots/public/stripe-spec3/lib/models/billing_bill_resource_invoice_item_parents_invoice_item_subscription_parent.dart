@@ -31,10 +31,13 @@ BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent copyWith({Str
   subscription: subscription ?? this.subscription,
   subscriptionItem: subscriptionItem != null ? subscriptionItem() : this.subscriptionItem,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent &&
           subscription == other.subscription &&
-          subscriptionItem == other.subscriptionItem; } 
-@override int get hashCode { return Object.hash(subscription, subscriptionItem); } 
-@override String toString() { return 'BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(subscription: $subscription, subscriptionItem: $subscriptionItem)'; } 
+          subscriptionItem == other.subscriptionItem;
+
+@override int get hashCode => Object.hash(subscription, subscriptionItem);
+
+@override String toString() => 'BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(subscription: $subscription, subscriptionItem: $subscriptionItem)';
+
  }

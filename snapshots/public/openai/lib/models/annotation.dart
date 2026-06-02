@@ -39,16 +39,20 @@ final FileCitationBody fileCitationBody;
 
 @override String get type => 'file_citation';
 
-@override Map<String, dynamic> toJson() { return {...fileCitationBody.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...fileCitationBody.toJson(), 'type': type};
+
 AnnotationFileCitation copyWith({String? fileId, int? index, String? filename, }) { return AnnotationFileCitation(fileCitationBody.copyWith(
   fileId: fileId,
   index: index,
   filename: filename,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationFileCitation && fileCitationBody == other.fileCitationBody; } 
-@override int get hashCode { return fileCitationBody.hashCode; } 
-@override String toString() { return 'Annotation.fileCitation($fileCitationBody)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationFileCitation && fileCitationBody == other.fileCitationBody;
+
+@override int get hashCode => fileCitationBody.hashCode;
+
+@override String toString() => 'Annotation.fileCitation($fileCitationBody)';
+
  }
 @immutable final class AnnotationUrlCitation extends Annotation {const AnnotationUrlCitation(this.urlCitationBody);
 
@@ -58,17 +62,21 @@ final UrlCitationBody urlCitationBody;
 
 @override String get type => 'url_citation';
 
-@override Map<String, dynamic> toJson() { return {...urlCitationBody.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...urlCitationBody.toJson(), 'type': type};
+
 AnnotationUrlCitation copyWith({String? url, int? startIndex, int? endIndex, String? title, }) { return AnnotationUrlCitation(urlCitationBody.copyWith(
   url: url,
   startIndex: startIndex,
   endIndex: endIndex,
   title: title,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationUrlCitation && urlCitationBody == other.urlCitationBody; } 
-@override int get hashCode { return urlCitationBody.hashCode; } 
-@override String toString() { return 'Annotation.urlCitation($urlCitationBody)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationUrlCitation && urlCitationBody == other.urlCitationBody;
+
+@override int get hashCode => urlCitationBody.hashCode;
+
+@override String toString() => 'Annotation.urlCitation($urlCitationBody)';
+
  }
 @immutable final class AnnotationContainerFileCitation extends Annotation {const AnnotationContainerFileCitation(this.containerFileCitationBody);
 
@@ -78,7 +86,8 @@ final ContainerFileCitationBody containerFileCitationBody;
 
 @override String get type => 'container_file_citation';
 
-@override Map<String, dynamic> toJson() { return {...containerFileCitationBody.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...containerFileCitationBody.toJson(), 'type': type};
+
 AnnotationContainerFileCitation copyWith({String? containerId, String? fileId, int? startIndex, int? endIndex, String? filename, }) { return AnnotationContainerFileCitation(containerFileCitationBody.copyWith(
   containerId: containerId,
   fileId: fileId,
@@ -86,10 +95,13 @@ AnnotationContainerFileCitation copyWith({String? containerId, String? fileId, i
   endIndex: endIndex,
   filename: filename,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationContainerFileCitation && containerFileCitationBody == other.containerFileCitationBody; } 
-@override int get hashCode { return containerFileCitationBody.hashCode; } 
-@override String toString() { return 'Annotation.containerFileCitation($containerFileCitationBody)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationContainerFileCitation && containerFileCitationBody == other.containerFileCitationBody;
+
+@override int get hashCode => containerFileCitationBody.hashCode;
+
+@override String toString() => 'Annotation.containerFileCitation($containerFileCitationBody)';
+
  }
 @immutable final class AnnotationFilePath extends Annotation {const AnnotationFilePath(this.filePath);
 
@@ -99,15 +111,19 @@ final FilePath filePath;
 
 @override String get type => 'file_path';
 
-@override Map<String, dynamic> toJson() { return {...filePath.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...filePath.toJson(), 'type': type};
+
 AnnotationFilePath copyWith({String? fileId, int? index, }) { return AnnotationFilePath(filePath.copyWith(
   fileId: fileId,
   index: index,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AnnotationFilePath && filePath == other.filePath; } 
-@override int get hashCode { return filePath.hashCode; } 
-@override String toString() { return 'Annotation.filePath($filePath)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AnnotationFilePath && filePath == other.filePath;
+
+@override int get hashCode => filePath.hashCode;
+
+@override String toString() => 'Annotation.filePath($filePath)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -117,9 +133,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Annotation$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'Annotation.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Annotation$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'Annotation.unknown($json)';
+
  }

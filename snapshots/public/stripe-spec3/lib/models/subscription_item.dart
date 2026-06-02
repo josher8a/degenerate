@@ -96,7 +96,7 @@ SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billin
   subscription: subscription ?? this.subscription,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionItem &&
           billingThresholds == other.billingThresholds &&
           created == other.created &&
@@ -109,7 +109,10 @@ SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billin
           price == other.price &&
           quantity == other.quantity &&
           subscription == other.subscription &&
-          listEquals(taxRates, other.taxRates); } 
-@override int get hashCode { return Object.hash(billingThresholds, created, currentPeriodEnd, currentPeriodStart, Object.hashAll(discounts), id, metadata, object, price, quantity, subscription, Object.hashAll(taxRates ?? const [])); } 
-@override String toString() { return 'SubscriptionItem(billingThresholds: $billingThresholds, created: $created, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)'; } 
+          listEquals(taxRates, other.taxRates);
+
+@override int get hashCode => Object.hash(billingThresholds, created, currentPeriodEnd, currentPeriodStart, Object.hashAll(discounts), id, metadata, object, price, quantity, subscription, Object.hashAll(taxRates ?? const []));
+
+@override String toString() => 'SubscriptionItem(billingThresholds: $billingThresholds, created: $created, currentPeriodEnd: $currentPeriodEnd, currentPeriodStart: $currentPeriodStart, discounts: $discounts, id: $id, metadata: $metadata, object: $object, price: $price, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)';
+
  }

@@ -38,12 +38,15 @@ PublicRoleListResource copyWith({ChatCompletionListObject? object, List<Role>? d
   hasMore: hasMore ?? this.hasMore,
   next: next != null ? next() : this.next,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicRoleListResource &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
-          next == other.next; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, next); } 
-@override String toString() { return 'PublicRoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)'; } 
+          next == other.next;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, next);
+
+@override String toString() => 'PublicRoleListResource(object: $object, data: $data, hasMore: $hasMore, next: $next)';
+
  }

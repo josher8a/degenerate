@@ -234,7 +234,7 @@ PaymentMethodDetailsCardPresent copyWith({int? Function()? amountAuthorized, Str
   receipt: receipt != null ? receipt() : this.receipt,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCardPresent &&
           amountAuthorized == other.amountAuthorized &&
           brand == other.brand &&
@@ -261,7 +261,10 @@ PaymentMethodDetailsCardPresent copyWith({int? Function()? amountAuthorized, Str
           readMethod == other.readMethod &&
           reader == other.reader &&
           receipt == other.receipt &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amountAuthorized, brand, brandProduct, captureBefore, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, incrementalAuthorizationSupported, issuer, last4, location, network, networkTransactionId, offline, overcaptureSupported, Object.hashAll(preferredLocales ?? const []), readMethod, reader, receipt, wallet]); } 
-@override String toString() { return 'PaymentMethodDetailsCardPresent(amountAuthorized: $amountAuthorized, brand: $brand, brandProduct: $brandProduct, captureBefore: $captureBefore, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, incrementalAuthorizationSupported: $incrementalAuthorizationSupported, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, offline: $offline, overcaptureSupported: $overcaptureSupported, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hashAll([amountAuthorized, brand, brandProduct, captureBefore, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, incrementalAuthorizationSupported, issuer, last4, location, network, networkTransactionId, offline, overcaptureSupported, Object.hashAll(preferredLocales ?? const []), readMethod, reader, receipt, wallet]);
+
+@override String toString() => 'PaymentMethodDetailsCardPresent(amountAuthorized: $amountAuthorized, brand: $brand, brandProduct: $brandProduct, captureBefore: $captureBefore, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, incrementalAuthorizationSupported: $incrementalAuthorizationSupported, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, offline: $offline, overcaptureSupported: $overcaptureSupported, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt, wallet: $wallet)';
+
  }

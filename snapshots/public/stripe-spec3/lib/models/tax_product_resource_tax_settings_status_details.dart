@@ -21,10 +21,13 @@ TaxProductResourceTaxSettingsStatusDetails copyWith({TaxProductResourceTaxSettin
   active: active != null ? active() : this.active,
   pending: pending != null ? pending() : this.pending,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceTaxSettingsStatusDetails &&
           active == other.active &&
-          pending == other.pending; } 
-@override int get hashCode { return Object.hash(active, pending); } 
-@override String toString() { return 'TaxProductResourceTaxSettingsStatusDetails(active: $active, pending: $pending)'; } 
+          pending == other.pending;
+
+@override int get hashCode => Object.hash(active, pending);
+
+@override String toString() => 'TaxProductResourceTaxSettingsStatusDetails(active: $active, pending: $pending)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WafRulesUpdateAWafRuleResponse4Xx copyWith({WafRulesUpdateAWafRuleResponse4XxResult? Function()? result}) { return WafRulesUpdateAWafRuleResponse4Xx(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafRulesUpdateAWafRuleResponse4Xx &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'WafRulesUpdateAWafRuleResponse4Xx(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'WafRulesUpdateAWafRuleResponse4Xx(result: $result)';
+
  }

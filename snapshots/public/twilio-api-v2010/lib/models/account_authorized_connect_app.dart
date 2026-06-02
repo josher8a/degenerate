@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AuthorizedConnectAppEnumPermission && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AuthorizedConnectAppEnumPermission($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AuthorizedConnectAppEnumPermission && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AuthorizedConnectAppEnumPermission($value)';
+
  }
 @immutable final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });
 
@@ -98,7 +101,7 @@ AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Fu
   permissions: permissions != null ? permissions() : this.permissions,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountAuthorizedConnectApp &&
           accountSid == other.accountSid &&
           connectAppCompanyName == other.connectAppCompanyName &&
@@ -107,7 +110,10 @@ AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Fu
           connectAppHomepageUrl == other.connectAppHomepageUrl &&
           connectAppSid == other.connectAppSid &&
           listEquals(permissions, other.permissions) &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(accountSid, connectAppCompanyName, connectAppDescription, connectAppFriendlyName, connectAppHomepageUrl, connectAppSid, Object.hashAll(permissions ?? const []), uri); } 
-@override String toString() { return 'AccountAuthorizedConnectApp(accountSid: $accountSid, connectAppCompanyName: $connectAppCompanyName, connectAppDescription: $connectAppDescription, connectAppFriendlyName: $connectAppFriendlyName, connectAppHomepageUrl: $connectAppHomepageUrl, connectAppSid: $connectAppSid, permissions: $permissions, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(accountSid, connectAppCompanyName, connectAppDescription, connectAppFriendlyName, connectAppHomepageUrl, connectAppSid, Object.hashAll(permissions ?? const []), uri);
+
+@override String toString() => 'AccountAuthorizedConnectApp(accountSid: $accountSid, connectAppCompanyName: $connectAppCompanyName, connectAppDescription: $connectAppDescription, connectAppFriendlyName: $connectAppFriendlyName, connectAppHomepageUrl: $connectAppHomepageUrl, connectAppSid: $connectAppSid, permissions: $permissions, uri: $uri)';
+
  }

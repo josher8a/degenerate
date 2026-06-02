@@ -24,10 +24,13 @@ WorkersKvBulkResult copyWith({double? Function()? successfulKeyCount, List<Strin
   successfulKeyCount: successfulKeyCount != null ? successfulKeyCount() : this.successfulKeyCount,
   unsuccessfulKeys: unsuccessfulKeys != null ? unsuccessfulKeys() : this.unsuccessfulKeys,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvBulkResult &&
           successfulKeyCount == other.successfulKeyCount &&
-          listEquals(unsuccessfulKeys, other.unsuccessfulKeys); } 
-@override int get hashCode { return Object.hash(successfulKeyCount, Object.hashAll(unsuccessfulKeys ?? const [])); } 
-@override String toString() { return 'WorkersKvBulkResult(successfulKeyCount: $successfulKeyCount, unsuccessfulKeys: $unsuccessfulKeys)'; } 
+          listEquals(unsuccessfulKeys, other.unsuccessfulKeys);
+
+@override int get hashCode => Object.hash(successfulKeyCount, Object.hashAll(unsuccessfulKeys ?? const []));
+
+@override String toString() => 'WorkersKvBulkResult(successfulKeyCount: $successfulKeyCount, unsuccessfulKeys: $unsuccessfulKeys)';
+
  }

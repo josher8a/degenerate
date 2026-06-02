@@ -54,7 +54,7 @@ WebhooksIssue2Labels copyWith({String? color, bool? $default, String? Function()
   nodeId: nodeId ?? this.nodeId,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksIssue2Labels &&
           color == other.color &&
           $default == other.$default &&
@@ -62,7 +62,10 @@ WebhooksIssue2Labels copyWith({String? color, bool? $default, String? Function()
           id == other.id &&
           name == other.name &&
           nodeId == other.nodeId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(color, $default, description, id, name, nodeId, url); } 
-@override String toString() { return 'WebhooksIssue2Labels(color: $color, \$default: ${$default}, description: $description, id: $id, name: $name, nodeId: $nodeId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(color, $default, description, id, name, nodeId, url);
+
+@override String toString() => 'WebhooksIssue2Labels(color: $color, \$default: ${$default}, description: $description, id: $id, name: $name, nodeId: $nodeId, url: $url)';
+
  }

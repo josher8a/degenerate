@@ -41,13 +41,16 @@ EmailUpdateRuleProperties copyWith({List<EmailRuleAction>? actions, EmailRuleEna
   name: name != null ? name() : this.name,
   priority: priority != null ? priority() : this.priority,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailUpdateRuleProperties &&
           listEquals(actions, other.actions) &&
           enabled == other.enabled &&
           listEquals(matchers, other.matchers) &&
           name == other.name &&
-          priority == other.priority; } 
-@override int get hashCode { return Object.hash(Object.hashAll(actions), enabled, Object.hashAll(matchers), name, priority); } 
-@override String toString() { return 'EmailUpdateRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name, priority: $priority)'; } 
+          priority == other.priority;
+
+@override int get hashCode => Object.hash(Object.hashAll(actions), enabled, Object.hashAll(matchers), name, priority);
+
+@override String toString() => 'EmailUpdateRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name, priority: $priority)';
+
  }

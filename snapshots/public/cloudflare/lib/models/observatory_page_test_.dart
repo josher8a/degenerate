@@ -52,7 +52,7 @@ ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, Observator
   scheduleFrequency: scheduleFrequency != null ? scheduleFrequency() : this.scheduleFrequency,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryPageTest &&
           date == other.date &&
           desktopReport == other.desktopReport &&
@@ -60,7 +60,10 @@ ObservatoryPageTest copyWith({ObservatoryTimestamp? Function()? date, Observator
           mobileReport == other.mobileReport &&
           region == other.region &&
           scheduleFrequency == other.scheduleFrequency &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(date, desktopReport, id, mobileReport, region, scheduleFrequency, url); } 
-@override String toString() { return 'ObservatoryPageTest(date: $date, desktopReport: $desktopReport, id: $id, mobileReport: $mobileReport, region: $region, scheduleFrequency: $scheduleFrequency, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(date, desktopReport, id, mobileReport, region, scheduleFrequency, url);
+
+@override String toString() => 'ObservatoryPageTest(date: $date, desktopReport: $desktopReport, id: $id, mobileReport: $mobileReport, region: $region, scheduleFrequency: $scheduleFrequency, url: $url)';
+
  }

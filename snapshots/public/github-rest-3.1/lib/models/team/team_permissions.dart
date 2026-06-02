@@ -39,13 +39,16 @@ TeamPermissions copyWith({bool? pull, bool? triage, bool? push, bool? maintain, 
   maintain: maintain ?? this.maintain,
   admin: admin ?? this.admin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamPermissions &&
           pull == other.pull &&
           triage == other.triage &&
           push == other.push &&
           maintain == other.maintain &&
-          admin == other.admin; } 
-@override int get hashCode { return Object.hash(pull, triage, push, maintain, admin); } 
-@override String toString() { return 'TeamPermissions(pull: $pull, triage: $triage, push: $push, maintain: $maintain, admin: $admin)'; } 
+          admin == other.admin;
+
+@override int get hashCode => Object.hash(pull, triage, push, maintain, admin);
+
+@override String toString() => 'TeamPermissions(pull: $pull, triage: $triage, push: $push, maintain: $maintain, admin: $admin)';
+
  }

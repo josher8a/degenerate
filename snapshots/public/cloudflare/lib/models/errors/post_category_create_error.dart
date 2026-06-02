@@ -17,7 +17,8 @@ final class PostCategoryCreateError$400 extends PostCategoryCreateError {const P
 
 final PostCategoryCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostCategoryCreateError$Unknown extends PostCategoryCreateError {const PostCategoryCreateError$Unknown(this.statusCode, this.rawBody, );
 

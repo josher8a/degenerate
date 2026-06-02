@@ -21,10 +21,13 @@ Summary0Variant4 copyWith({String? certificate, String? precertificate, }) { ret
   certificate: certificate ?? this.certificate,
   precertificate: precertificate ?? this.precertificate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Summary0Variant4 &&
           certificate == other.certificate &&
-          precertificate == other.precertificate; } 
-@override int get hashCode { return Object.hash(certificate, precertificate); } 
-@override String toString() { return 'Summary0Variant4(certificate: $certificate, precertificate: $precertificate)'; } 
+          precertificate == other.precertificate;
+
+@override int get hashCode => Object.hash(certificate, precertificate);
+
+@override String toString() => 'Summary0Variant4(certificate: $certificate, precertificate: $precertificate)';
+
  }

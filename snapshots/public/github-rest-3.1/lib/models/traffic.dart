@@ -27,11 +27,14 @@ Traffic copyWith({DateTime? timestamp, int? uniques, int? count, }) { return Tra
   uniques: uniques ?? this.uniques,
   count: count ?? this.count,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Traffic &&
           timestamp == other.timestamp &&
           uniques == other.uniques &&
-          count == other.count; } 
-@override int get hashCode { return Object.hash(timestamp, uniques, count); } 
-@override String toString() { return 'Traffic(timestamp: $timestamp, uniques: $uniques, count: $count)'; } 
+          count == other.count;
+
+@override int get hashCode => Object.hash(timestamp, uniques, count);
+
+@override String toString() => 'Traffic(timestamp: $timestamp, uniques: $uniques, count: $count)';
+
  }

@@ -52,7 +52,7 @@ PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? a
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestLineItems &&
           adjustableQuantity == other.adjustableQuantity &&
           listEquals(dynamicTaxRates, other.dynamicTaxRates) &&
@@ -60,7 +60,10 @@ PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? a
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          listEquals(taxRates, other.taxRates); } 
-@override int get hashCode { return Object.hash(adjustableQuantity, Object.hashAll(dynamicTaxRates ?? const []), metadata, price, priceData, quantity, Object.hashAll(taxRates ?? const [])); } 
-@override String toString() { return 'PostCheckoutSessionsRequestLineItems(adjustableQuantity: $adjustableQuantity, dynamicTaxRates: $dynamicTaxRates, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
+          listEquals(taxRates, other.taxRates);
+
+@override int get hashCode => Object.hash(adjustableQuantity, Object.hashAll(dynamicTaxRates ?? const []), metadata, price, priceData, quantity, Object.hashAll(taxRates ?? const []));
+
+@override String toString() => 'PostCheckoutSessionsRequestLineItems(adjustableQuantity: $adjustableQuantity, dynamicTaxRates: $dynamicTaxRates, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
+
  }

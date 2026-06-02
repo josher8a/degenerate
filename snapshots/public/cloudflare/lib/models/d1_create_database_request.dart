@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1Jurisdiction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1Jurisdiction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is D1Jurisdiction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'D1Jurisdiction($value)';
+
  }
 /// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
 @immutable final class D1PrimaryLocationHint {const D1PrimaryLocationHint._(this.value);
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is D1PrimaryLocationHint && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'D1PrimaryLocationHint($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is D1PrimaryLocationHint && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'D1PrimaryLocationHint($value)';
+
  }
 @immutable final class D1CreateDatabaseRequest {const D1CreateDatabaseRequest({required this.name, this.jurisdiction, this.primaryLocationHint, });
 
@@ -90,11 +96,14 @@ D1CreateDatabaseRequest copyWith({D1Jurisdiction? Function()? jurisdiction, D1Da
   name: name ?? this.name,
   primaryLocationHint: primaryLocationHint != null ? primaryLocationHint() : this.primaryLocationHint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is D1CreateDatabaseRequest &&
           jurisdiction == other.jurisdiction &&
           name == other.name &&
-          primaryLocationHint == other.primaryLocationHint; } 
-@override int get hashCode { return Object.hash(jurisdiction, name, primaryLocationHint); } 
-@override String toString() { return 'D1CreateDatabaseRequest(jurisdiction: $jurisdiction, name: $name, primaryLocationHint: $primaryLocationHint)'; } 
+          primaryLocationHint == other.primaryLocationHint;
+
+@override int get hashCode => Object.hash(jurisdiction, name, primaryLocationHint);
+
+@override String toString() => 'D1CreateDatabaseRequest(jurisdiction: $jurisdiction, name: $name, primaryLocationHint: $primaryLocationHint)';
+
  }

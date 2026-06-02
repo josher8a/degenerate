@@ -164,7 +164,7 @@ AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSear
   systemPromptRewriteQuery: systemPromptRewriteQuery != null ? systemPromptRewriteQuery() : this.systemPromptRewriteQuery,
   tokenId: tokenId != null ? tokenId() : this.tokenId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchUpdateInstancesRequest &&
           aiGatewayId == other.aiGatewayId &&
           aiSearchModel == other.aiSearchModel &&
@@ -193,7 +193,10 @@ AiSearchUpdateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSear
           systemPromptAiSearch == other.systemPromptAiSearch &&
           systemPromptIndexSummarization == other.systemPromptIndexSummarization &&
           systemPromptRewriteQuery == other.systemPromptRewriteQuery &&
-          tokenId == other.tokenId; } 
-@override int get hashCode { return Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunk, chunkOverlap, chunkSize, Object.hashAll(customMetadata ?? const []), embeddingModel, fusionMethod, hybridSearchEnabled, maxNumResults, metadata, paused, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, sourceParams, summarization, summarizationModel, systemPromptAiSearch, systemPromptIndexSummarization, systemPromptRewriteQuery, tokenId]); } 
-@override String toString() { return 'AiSearchUpdateInstancesRequest(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunk: $chunk, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, customMetadata: $customMetadata, embeddingModel: $embeddingModel, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, maxNumResults: $maxNumResults, metadata: $metadata, paused: $paused, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, sourceParams: $sourceParams, summarization: $summarization, summarizationModel: $summarizationModel, systemPromptAiSearch: $systemPromptAiSearch, systemPromptIndexSummarization: $systemPromptIndexSummarization, systemPromptRewriteQuery: $systemPromptRewriteQuery, tokenId: $tokenId)'; } 
+          tokenId == other.tokenId;
+
+@override int get hashCode => Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunk, chunkOverlap, chunkSize, Object.hashAll(customMetadata ?? const []), embeddingModel, fusionMethod, hybridSearchEnabled, maxNumResults, metadata, paused, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, sourceParams, summarization, summarizationModel, systemPromptAiSearch, systemPromptIndexSummarization, systemPromptRewriteQuery, tokenId]);
+
+@override String toString() => 'AiSearchUpdateInstancesRequest(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunk: $chunk, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, customMetadata: $customMetadata, embeddingModel: $embeddingModel, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, maxNumResults: $maxNumResults, metadata: $metadata, paused: $paused, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, sourceParams: $sourceParams, summarization: $summarization, summarizationModel: $summarizationModel, systemPromptAiSearch: $systemPromptAiSearch, systemPromptIndexSummarization: $systemPromptIndexSummarization, systemPromptRewriteQuery: $systemPromptRewriteQuery, tokenId: $tokenId)';
+
  }

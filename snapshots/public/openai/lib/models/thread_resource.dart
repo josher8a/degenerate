@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadResourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadResourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadResourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadResourceObject($value)';
+
  }
 /// Represents a ChatKit thread and its current status.
 /// 
@@ -88,14 +91,17 @@ ThreadResource copyWith({String? id, ThreadResourceObject? object, int? createdA
   status: status ?? this.status,
   user: user ?? this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadResource &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           title == other.title &&
           status == other.status &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, title, status, user); } 
-@override String toString() { return 'ThreadResource(id: $id, object: $object, createdAt: $createdAt, title: $title, status: $status, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(id, object, createdAt, title, status, user);
+
+@override String toString() => 'ThreadResource(id: $id, object: $object, createdAt: $createdAt, title: $title, status: $status, user: $user)';
+
  }

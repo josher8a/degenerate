@@ -25,11 +25,14 @@ CampaignsCreateCampaignResponse503 copyWith({String? Function()? code, String? F
   message: message != null ? message() : this.message,
   documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CampaignsCreateCampaignResponse503 &&
           code == other.code &&
           message == other.message &&
-          documentationUrl == other.documentationUrl; } 
-@override int get hashCode { return Object.hash(code, message, documentationUrl); } 
-@override String toString() { return 'CampaignsCreateCampaignResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)'; } 
+          documentationUrl == other.documentationUrl;
+
+@override int get hashCode => Object.hash(code, message, documentationUrl);
+
+@override String toString() => 'CampaignsCreateCampaignResponse503(code: $code, message: $message, documentationUrl: $documentationUrl)';
+
  }

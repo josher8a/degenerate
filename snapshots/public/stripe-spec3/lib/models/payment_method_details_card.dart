@@ -189,7 +189,7 @@ PaymentMethodDetailsCard copyWith({int? Function()? amountAuthorized, String? Fu
   threeDSecure: threeDSecure != null ? threeDSecure() : this.threeDSecure,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsCard &&
           amountAuthorized == other.amountAuthorized &&
           authorizationCode == other.authorizationCode &&
@@ -213,7 +213,10 @@ PaymentMethodDetailsCard copyWith({int? Function()? amountAuthorized, String? Fu
           overcapture == other.overcapture &&
           regulatedStatus == other.regulatedStatus &&
           threeDSecure == other.threeDSecure &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hashAll([amountAuthorized, authorizationCode, brand, captureBefore, checks, country, expMonth, expYear, extendedAuthorization, fingerprint, funding, incrementalAuthorization, installments, last4, mandate, multicapture, network, networkToken, networkTransactionId, overcapture, regulatedStatus, threeDSecure, wallet]); } 
-@override String toString() { return 'PaymentMethodDetailsCard(amountAuthorized: $amountAuthorized, authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, extendedAuthorization: $extendedAuthorization, fingerprint: $fingerprint, funding: $funding, incrementalAuthorization: $incrementalAuthorization, installments: $installments, last4: $last4, mandate: $mandate, multicapture: $multicapture, network: $network, networkToken: $networkToken, networkTransactionId: $networkTransactionId, overcapture: $overcapture, regulatedStatus: $regulatedStatus, threeDSecure: $threeDSecure, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hashAll([amountAuthorized, authorizationCode, brand, captureBefore, checks, country, expMonth, expYear, extendedAuthorization, fingerprint, funding, incrementalAuthorization, installments, last4, mandate, multicapture, network, networkToken, networkTransactionId, overcapture, regulatedStatus, threeDSecure, wallet]);
+
+@override String toString() => 'PaymentMethodDetailsCard(amountAuthorized: $amountAuthorized, authorizationCode: $authorizationCode, brand: $brand, captureBefore: $captureBefore, checks: $checks, country: $country, expMonth: $expMonth, expYear: $expYear, extendedAuthorization: $extendedAuthorization, fingerprint: $fingerprint, funding: $funding, incrementalAuthorization: $incrementalAuthorization, installments: $installments, last4: $last4, mandate: $mandate, multicapture: $multicapture, network: $network, networkToken: $networkToken, networkTransactionId: $networkTransactionId, overcapture: $overcapture, regulatedStatus: $regulatedStatus, threeDSecure: $threeDSecure, wallet: $wallet)';
+
  }

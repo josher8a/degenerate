@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RecommendedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RecommendedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecommendedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RecommendedAction($value)';
+
  }
 /// Scores, insights and recommended action for one scorer for this PaymentEvaluation.
 @immutable final class InsightsResourcesPaymentEvaluationScorer {const InsightsResourcesPaymentEvaluationScorer({required this.recommendedAction, required this.riskScore, });
@@ -49,10 +52,13 @@ InsightsResourcesPaymentEvaluationScorer copyWith({RecommendedAction? recommende
   recommendedAction: recommendedAction ?? this.recommendedAction,
   riskScore: riskScore ?? this.riskScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationScorer &&
           recommendedAction == other.recommendedAction &&
-          riskScore == other.riskScore; } 
-@override int get hashCode { return Object.hash(recommendedAction, riskScore); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationScorer(recommendedAction: $recommendedAction, riskScore: $riskScore)'; } 
+          riskScore == other.riskScore;
+
+@override int get hashCode => Object.hash(recommendedAction, riskScore);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationScorer(recommendedAction: $recommendedAction, riskScore: $riskScore)';
+
  }

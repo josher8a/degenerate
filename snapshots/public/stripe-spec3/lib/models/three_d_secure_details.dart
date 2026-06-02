@@ -58,14 +58,17 @@ ThreeDSecureDetails copyWith({AuthenticationFlow? Function()? authenticationFlow
   transactionId: transactionId != null ? transactionId() : this.transactionId,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreeDSecureDetails &&
           authenticationFlow == other.authenticationFlow &&
           electronicCommerceIndicator == other.electronicCommerceIndicator &&
           result == other.result &&
           resultReason == other.resultReason &&
           transactionId == other.transactionId &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(authenticationFlow, electronicCommerceIndicator, result, resultReason, transactionId, version); } 
-@override String toString() { return 'ThreeDSecureDetails(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(authenticationFlow, electronicCommerceIndicator, result, resultReason, transactionId, version);
+
+@override String toString() => 'ThreeDSecureDetails(authenticationFlow: $authenticationFlow, electronicCommerceIndicator: $electronicCommerceIndicator, result: $result, resultReason: $resultReason, transactionId: $transactionId, version: $version)';
+
  }

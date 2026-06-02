@@ -23,10 +23,13 @@ IssuingCardGooglePay copyWith({bool? eligible, IneligibleReason? Function()? ine
   eligible: eligible ?? this.eligible,
   ineligibleReason: ineligibleReason != null ? ineligibleReason() : this.ineligibleReason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardGooglePay &&
           eligible == other.eligible &&
-          ineligibleReason == other.ineligibleReason; } 
-@override int get hashCode { return Object.hash(eligible, ineligibleReason); } 
-@override String toString() { return 'IssuingCardGooglePay(eligible: $eligible, ineligibleReason: $ineligibleReason)'; } 
+          ineligibleReason == other.ineligibleReason;
+
+@override int get hashCode => Object.hash(eligible, ineligibleReason);
+
+@override String toString() => 'IssuingCardGooglePay(eligible: $eligible, ineligibleReason: $ineligibleReason)';
+
  }

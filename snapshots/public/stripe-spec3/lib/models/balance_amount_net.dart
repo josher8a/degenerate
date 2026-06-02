@@ -35,12 +35,15 @@ BalanceAmountNet copyWith({int? amount, String? currency, List<BalanceNetAvailab
   netAvailable: netAvailable != null ? netAvailable() : this.netAvailable,
   sourceTypes: sourceTypes != null ? sourceTypes() : this.sourceTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceAmountNet &&
           amount == other.amount &&
           currency == other.currency &&
           listEquals(netAvailable, other.netAvailable) &&
-          sourceTypes == other.sourceTypes; } 
-@override int get hashCode { return Object.hash(amount, currency, Object.hashAll(netAvailable ?? const []), sourceTypes); } 
-@override String toString() { return 'BalanceAmountNet(amount: $amount, currency: $currency, netAvailable: $netAvailable, sourceTypes: $sourceTypes)'; } 
+          sourceTypes == other.sourceTypes;
+
+@override int get hashCode => Object.hash(amount, currency, Object.hashAll(netAvailable ?? const []), sourceTypes);
+
+@override String toString() => 'BalanceAmountNet(amount: $amount, currency: $currency, netAvailable: $netAvailable, sourceTypes: $sourceTypes)';
+
  }

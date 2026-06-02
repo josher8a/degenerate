@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CompanyTaxIdVerification copyWith({List<String>? Function()? files}) { return CompanyTaxIdVerification(
   files: files != null ? files() : this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CompanyTaxIdVerification &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hashAll(files ?? const []); } 
-@override String toString() { return 'CompanyTaxIdVerification(files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hashAll(files ?? const []);
+
+@override String toString() => 'CompanyTaxIdVerification(files: $files)';
+
  }

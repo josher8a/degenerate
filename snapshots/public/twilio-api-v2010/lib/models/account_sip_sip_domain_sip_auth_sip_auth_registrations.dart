@@ -11,7 +11,10 @@ static bool canParse(Map<String, dynamic> json) { return true; }
 AccountSipSipDomainSipAuthSipAuthRegistrations copyWith() { return const AccountSipSipDomainSipAuthSipAuthRegistrations(
 
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is AccountSipSipDomainSipAuthSipAuthRegistrations; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'AccountSipSipDomainSipAuthSipAuthRegistrations()'; } 
+@override bool operator ==(Object other) => identical(this, other) || other is AccountSipSipDomainSipAuthSipAuthRegistrations;
+
+@override int get hashCode => runtimeType.hashCode;
+
+@override String toString() => 'AccountSipSipDomainSipAuthSipAuthRegistrations()';
+
  }

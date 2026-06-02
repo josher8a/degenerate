@@ -20,10 +20,13 @@ AccessUsersComponentsSchemasResponseCollection copyWith({AccessUsersComponentsSc
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessUsersComponentsSchemasResponseCollection &&
           resultInfo == other.resultInfo &&
-          listEquals(result, other.result); } 
-@override int get hashCode { return Object.hash(resultInfo, Object.hashAll(result ?? const [])); } 
-@override String toString() { return 'AccessUsersComponentsSchemasResponseCollection(resultInfo: $resultInfo, result: $result)'; } 
+          listEquals(result, other.result);
+
+@override int get hashCode => Object.hash(resultInfo, Object.hashAll(result ?? const []));
+
+@override String toString() => 'AccessUsersComponentsSchemasResponseCollection(resultInfo: $resultInfo, result: $result)';
+
  }

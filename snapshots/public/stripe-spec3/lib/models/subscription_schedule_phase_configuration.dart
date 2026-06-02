@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';
+
  }
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.
 @immutable final class SubscriptionSchedulePhaseConfiguration {const SubscriptionSchedulePhaseConfiguration({required this.addInvoiceItems, required this.currency, required this.discounts, required this.endDate, required this.items, required this.prorationBehavior, required this.startDate, this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.defaultTaxRates, this.description, this.invoiceSettings, this.metadata, this.onBehalfOf, this.transferData, this.trialEnd, });
@@ -168,7 +171,7 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
   transferData: transferData != null ? transferData() : this.transferData,
   trialEnd: trialEnd != null ? trialEnd() : this.trialEnd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubscriptionSchedulePhaseConfiguration &&
           listEquals(addInvoiceItems, other.addInvoiceItems) &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -189,7 +192,10 @@ SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInv
           prorationBehavior == other.prorationBehavior &&
           startDate == other.startDate &&
           transferData == other.transferData &&
-          trialEnd == other.trialEnd; } 
-@override int get hashCode { return Object.hash(Object.hashAll(addInvoiceItems), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trialEnd); } 
-@override String toString() { return 'SubscriptionSchedulePhaseConfiguration(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trialEnd: $trialEnd)'; } 
+          trialEnd == other.trialEnd;
+
+@override int get hashCode => Object.hash(Object.hashAll(addInvoiceItems), applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, currency, defaultPaymentMethod, Object.hashAll(defaultTaxRates ?? const []), description, Object.hashAll(discounts), endDate, invoiceSettings, Object.hashAll(items), metadata, onBehalfOf, prorationBehavior, startDate, transferData, trialEnd);
+
+@override String toString() => 'SubscriptionSchedulePhaseConfiguration(addInvoiceItems: $addInvoiceItems, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, currency: $currency, defaultPaymentMethod: $defaultPaymentMethod, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, endDate: $endDate, invoiceSettings: $invoiceSettings, items: $items, metadata: $metadata, onBehalfOf: $onBehalfOf, prorationBehavior: $prorationBehavior, startDate: $startDate, transferData: $transferData, trialEnd: $trialEnd)';
+
  }

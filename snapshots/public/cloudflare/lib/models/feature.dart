@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
 Feature copyWith({String? key}) { return Feature(
   key: key ?? this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Feature &&
-          key == other.key; } 
-@override int get hashCode { return key.hashCode; } 
-@override String toString() { return 'Feature(key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => key.hashCode;
+
+@override String toString() => 'Feature(key: $key)';
+
  }

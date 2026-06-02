@@ -29,10 +29,13 @@ LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkill
   type: type ?? this.type,
   skills: skills != null ? skills() : this.skills,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LocalEnvironmentParam &&
           type == other.type &&
-          listEquals(skills, other.skills); } 
-@override int get hashCode { return Object.hash(type, Object.hashAll(skills ?? const [])); } 
-@override String toString() { return 'LocalEnvironmentParam(type: $type, skills: $skills)'; } 
+          listEquals(skills, other.skills);
+
+@override int get hashCode => Object.hash(type, Object.hashAll(skills ?? const []));
+
+@override String toString() => 'LocalEnvironmentParam(type: $type, skills: $skills)';
+
  }

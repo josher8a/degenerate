@@ -31,12 +31,15 @@ Web3CreateRequest copyWith({Web3Description? Function()? description, Web3Dnslin
   name: name ?? this.name,
   target: target ?? this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3CreateRequest &&
           description == other.description &&
           dnslink == other.dnslink &&
           name == other.name &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(description, dnslink, name, target); } 
-@override String toString() { return 'Web3CreateRequest(description: $description, dnslink: $dnslink, name: $name, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(description, dnslink, name, target);
+
+@override String toString() => 'Web3CreateRequest(description: $description, dnslink: $dnslink, name: $name, target: $target)';
+
  }

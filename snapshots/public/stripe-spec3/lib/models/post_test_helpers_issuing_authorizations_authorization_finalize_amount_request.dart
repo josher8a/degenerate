@@ -34,12 +34,15 @@ PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest copyWith(
   fleet: fleet != null ? fleet() : this.fleet,
   fuel: fuel != null ? fuel() : this.fuel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest &&
           listEquals(expand, other.expand) &&
           finalAmount == other.finalAmount &&
           fleet == other.fleet &&
-          fuel == other.fuel; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), finalAmount, fleet, fuel); } 
-@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(expand: $expand, finalAmount: $finalAmount, fleet: $fleet, fuel: $fuel)'; } 
+          fuel == other.fuel;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), finalAmount, fleet, fuel);
+
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequest(expand: $expand, finalAmount: $finalAmount, fleet: $fleet, fuel: $fuel)';
+
  }

@@ -288,7 +288,7 @@ WebhookWorkflowRunCompletedWorkflowRunRepository copyWith({String? archiveUrl, S
   treesUrl: treesUrl ?? this.treesUrl,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookWorkflowRunCompletedWorkflowRunRepository &&
           archiveUrl == other.archiveUrl &&
           assigneesUrl == other.assigneesUrl &&
@@ -335,7 +335,10 @@ WebhookWorkflowRunCompletedWorkflowRunRepository copyWith({String? archiveUrl, S
           tagsUrl == other.tagsUrl &&
           teamsUrl == other.teamsUrl &&
           treesUrl == other.treesUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hashAll([archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, description, downloadsUrl, eventsUrl, fork, forksUrl, fullName, gitCommitsUrl, gitRefsUrl, gitTagsUrl, hooksUrl, htmlUrl, id, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, name, nodeId, notificationsUrl, owner, private, pullsUrl, releasesUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, url]); } 
-@override String toString() { return 'WebhookWorkflowRunCompletedWorkflowRunRepository(archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, description: $description, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, fork: $fork, forksUrl: $forksUrl, fullName: $fullName, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, name: $name, nodeId: $nodeId, notificationsUrl: $notificationsUrl, owner: $owner, private: $private, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hashAll([archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, description, downloadsUrl, eventsUrl, fork, forksUrl, fullName, gitCommitsUrl, gitRefsUrl, gitTagsUrl, hooksUrl, htmlUrl, id, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, name, nodeId, notificationsUrl, owner, private, pullsUrl, releasesUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, url]);
+
+@override String toString() => 'WebhookWorkflowRunCompletedWorkflowRunRepository(archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, description: $description, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, fork: $fork, forksUrl: $forksUrl, fullName: $fullName, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, name: $name, nodeId: $nodeId, notificationsUrl: $notificationsUrl, owner: $owner, private: $private, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, url: $url)';
+
  }

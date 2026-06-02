@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NetworkStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NetworkStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NetworkStatus($value)';
+
  }
 /// Agent operational state.
 @immutable final class OperationalState {const OperationalState._(this.value);
@@ -66,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OperationalState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OperationalState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OperationalState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OperationalState($value)';
+
  }
 @immutable final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({required this.connectionId, this.activeThreats, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });
 
@@ -135,7 +141,7 @@ TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThrea
   operationalState: operationalState != null ? operationalState() : this.operationalState,
   $operator: $operator != null ? $operator() : this.$operator,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesSentineloneS2sInputRequest &&
           activeThreats == other.activeThreats &&
           connectionId == other.connectionId &&
@@ -143,7 +149,10 @@ TeamsDevicesSentineloneS2sInputRequest copyWith({double? Function()? activeThrea
           isActive == other.isActive &&
           networkStatus == other.networkStatus &&
           operationalState == other.operationalState &&
-          $operator == other.$operator; } 
-@override int get hashCode { return Object.hash(activeThreats, connectionId, infected, isActive, networkStatus, operationalState, $operator); } 
-@override String toString() { return 'TeamsDevicesSentineloneS2sInputRequest(activeThreats: $activeThreats, connectionId: $connectionId, infected: $infected, isActive: $isActive, networkStatus: $networkStatus, operationalState: $operationalState, \$operator: ${$operator})'; } 
+          $operator == other.$operator;
+
+@override int get hashCode => Object.hash(activeThreats, connectionId, infected, isActive, networkStatus, operationalState, $operator);
+
+@override String toString() => 'TeamsDevicesSentineloneS2sInputRequest(activeThreats: $activeThreats, connectionId: $connectionId, infected: $infected, isActive: $isActive, networkStatus: $networkStatus, operationalState: $operationalState, \$operator: ${$operator})';
+
  }

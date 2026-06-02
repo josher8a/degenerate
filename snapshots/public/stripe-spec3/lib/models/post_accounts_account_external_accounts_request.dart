@@ -47,13 +47,16 @@ PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountBankAcco
   externalAccount: externalAccount != null ? externalAccount() : this.externalAccount,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountExternalAccountsRequest &&
           bankAccount == other.bankAccount &&
           defaultForCurrency == other.defaultForCurrency &&
           listEquals(expand, other.expand) &&
           externalAccount == other.externalAccount &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(bankAccount, defaultForCurrency, Object.hashAll(expand ?? const []), externalAccount, metadata); } 
-@override String toString() { return 'PostAccountsAccountExternalAccountsRequest(bankAccount: $bankAccount, defaultForCurrency: $defaultForCurrency, expand: $expand, externalAccount: $externalAccount, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(bankAccount, defaultForCurrency, Object.hashAll(expand ?? const []), externalAccount, metadata);
+
+@override String toString() => 'PostAccountsAccountExternalAccountsRequest(bankAccount: $bankAccount, defaultForCurrency: $defaultForCurrency, expand: $expand, externalAccount: $externalAccount, metadata: $metadata)';
+
  }

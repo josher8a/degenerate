@@ -56,7 +56,7 @@ PostCheckoutSessionsSessionRequestLineItems copyWith({AdjustableQuantity? Functi
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsSessionRequestLineItems &&
           adjustableQuantity == other.adjustableQuantity &&
           id == other.id &&
@@ -64,7 +64,10 @@ PostCheckoutSessionsSessionRequestLineItems copyWith({AdjustableQuantity? Functi
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(adjustableQuantity, id, metadata, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostCheckoutSessionsSessionRequestLineItems(adjustableQuantity: $adjustableQuantity, id: $id, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(adjustableQuantity, id, metadata, price, priceData, quantity, taxRates);
+
+@override String toString() => 'PostCheckoutSessionsSessionRequestLineItems(adjustableQuantity: $adjustableQuantity, id: $id, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
+
  }

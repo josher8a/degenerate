@@ -23,10 +23,13 @@ InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourc
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationMoneyMovementDetails &&
           card == other.card &&
-          moneyMovementType == other.moneyMovementType; } 
-@override int get hashCode { return Object.hash(card, moneyMovementType); } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)'; } 
+          moneyMovementType == other.moneyMovementType;
+
+@override int get hashCode => Object.hash(card, moneyMovementType);
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationMoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)';
+
  }

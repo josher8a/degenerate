@@ -87,7 +87,7 @@ UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<DomainSta
   uniqAsNs: uniqAsNs ?? this.uniqAsNs,
   uniqCountries: uniqCountries ?? this.uniqCountries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerGetScanResponse2Stats &&
           iPv6Percentage == other.iPv6Percentage &&
           listEquals(domainStats, other.domainStats) &&
@@ -101,7 +101,10 @@ UrlscannerGetScanResponse2Stats copyWith({double? iPv6Percentage, List<DomainSta
           listEquals(tlsStats, other.tlsStats) &&
           totalLinks == other.totalLinks &&
           uniqAsNs == other.uniqAsNs &&
-          uniqCountries == other.uniqCountries; } 
-@override int get hashCode { return Object.hash(iPv6Percentage, Object.hashAll(domainStats), Object.hashAll(ipStats), malicious, Object.hashAll(protocolStats), Object.hashAll(resourceStats), securePercentage, secureRequests, Object.hashAll(serverStats), Object.hashAll(tlsStats), totalLinks, uniqAsNs, uniqCountries); } 
-@override String toString() { return 'UrlscannerGetScanResponse2Stats(iPv6Percentage: $iPv6Percentage, domainStats: $domainStats, ipStats: $ipStats, malicious: $malicious, protocolStats: $protocolStats, resourceStats: $resourceStats, securePercentage: $securePercentage, secureRequests: $secureRequests, serverStats: $serverStats, tlsStats: $tlsStats, totalLinks: $totalLinks, uniqAsNs: $uniqAsNs, uniqCountries: $uniqCountries)'; } 
+          uniqCountries == other.uniqCountries;
+
+@override int get hashCode => Object.hash(iPv6Percentage, Object.hashAll(domainStats), Object.hashAll(ipStats), malicious, Object.hashAll(protocolStats), Object.hashAll(resourceStats), securePercentage, secureRequests, Object.hashAll(serverStats), Object.hashAll(tlsStats), totalLinks, uniqAsNs, uniqCountries);
+
+@override String toString() => 'UrlscannerGetScanResponse2Stats(iPv6Percentage: $iPv6Percentage, domainStats: $domainStats, ipStats: $ipStats, malicious: $malicious, protocolStats: $protocolStats, resourceStats: $resourceStats, securePercentage: $securePercentage, secureRequests: $secureRequests, serverStats: $serverStats, tlsStats: $tlsStats, totalLinks: $totalLinks, uniqAsNs: $uniqAsNs, uniqCountries: $uniqCountries)';
+
  }

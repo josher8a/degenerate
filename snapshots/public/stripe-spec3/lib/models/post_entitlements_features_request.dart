@@ -40,12 +40,15 @@ PostEntitlementsFeaturesRequest copyWith({List<String>? Function()? expand, Stri
   metadata: metadata != null ? metadata() : this.metadata,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEntitlementsFeaturesRequest &&
           listEquals(expand, other.expand) &&
           lookupKey == other.lookupKey &&
           metadata == other.metadata &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), lookupKey, metadata, name); } 
-@override String toString() { return 'PostEntitlementsFeaturesRequest(expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), lookupKey, metadata, name);
+
+@override String toString() => 'PostEntitlementsFeaturesRequest(expand: $expand, lookupKey: $lookupKey, metadata: $metadata, name: $name)';
+
  }

@@ -33,11 +33,14 @@ ResourceRequirements copyWith({List<ResourceClaim>? Function()? claims, Map<Stri
   limits: limits != null ? limits() : this.limits,
   requests: requests != null ? requests() : this.requests,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceRequirements &&
           listEquals(claims, other.claims) &&
           limits == other.limits &&
-          requests == other.requests; } 
-@override int get hashCode { return Object.hash(Object.hashAll(claims ?? const []), limits, requests); } 
-@override String toString() { return 'ResourceRequirements(claims: $claims, limits: $limits, requests: $requests)'; } 
+          requests == other.requests;
+
+@override int get hashCode => Object.hash(Object.hashAll(claims ?? const []), limits, requests);
+
+@override String toString() => 'ResourceRequirements(claims: $claims, limits: $limits, requests: $requests)';
+
  }

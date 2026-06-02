@@ -54,12 +54,15 @@ PaymentMethodDetailsAchCreditTransfer copyWith({String? Function()? accountNumbe
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
   swiftCode: swiftCode != null ? swiftCode() : this.swiftCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAchCreditTransfer &&
           accountNumber == other.accountNumber &&
           bankName == other.bankName &&
           routingNumber == other.routingNumber &&
-          swiftCode == other.swiftCode; } 
-@override int get hashCode { return Object.hash(accountNumber, bankName, routingNumber, swiftCode); } 
-@override String toString() { return 'PaymentMethodDetailsAchCreditTransfer(accountNumber: $accountNumber, bankName: $bankName, routingNumber: $routingNumber, swiftCode: $swiftCode)'; } 
+          swiftCode == other.swiftCode;
+
+@override int get hashCode => Object.hash(accountNumber, bankName, routingNumber, swiftCode);
+
+@override String toString() => 'PaymentMethodDetailsAchCreditTransfer(accountNumber: $accountNumber, bankName: $bankName, routingNumber: $routingNumber, swiftCode: $swiftCode)';
+
  }

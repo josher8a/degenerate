@@ -52,7 +52,7 @@ PostCustomersCustomerSubscriptionsRequestItems copyWith({PostSubscriptionItemsIt
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSubscriptionsRequestItems &&
           billingThresholds == other.billingThresholds &&
           discounts == other.discounts &&
@@ -60,7 +60,10 @@ PostCustomersCustomerSubscriptionsRequestItems copyWith({PostSubscriptionItemsIt
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates);
+
+@override String toString() => 'PostCustomersCustomerSubscriptionsRequestItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
+
  }

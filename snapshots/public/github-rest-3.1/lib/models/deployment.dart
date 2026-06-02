@@ -120,7 +120,7 @@ Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref
   productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Deployment &&
           url == other.url &&
           id == other.id &&
@@ -139,7 +139,10 @@ Deployment copyWith({Uri? url, int? id, String? nodeId, String? sha, String? ref
           repositoryUrl == other.repositoryUrl &&
           transientEnvironment == other.transientEnvironment &&
           productionEnvironment == other.productionEnvironment &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hash(url, id, nodeId, sha, ref, task, payload, originalEnvironment, environment, description, creator, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp); } 
-@override String toString() { return 'Deployment(url: $url, id: $id, nodeId: $nodeId, sha: $sha, ref: $ref, task: $task, payload: $payload, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)'; } 
+          performedViaGithubApp == other.performedViaGithubApp;
+
+@override int get hashCode => Object.hash(url, id, nodeId, sha, ref, task, payload, originalEnvironment, environment, description, creator, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp);
+
+@override String toString() => 'Deployment(url: $url, id: $id, nodeId: $nodeId, sha: $sha, ref: $ref, task: $task, payload: $payload, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)';
+
  }

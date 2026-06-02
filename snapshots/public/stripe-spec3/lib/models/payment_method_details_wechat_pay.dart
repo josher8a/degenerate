@@ -54,12 +54,15 @@ PaymentMethodDetailsWechatPay copyWith({String? Function()? fingerprint, String?
   reader: reader != null ? reader() : this.reader,
   transactionId: transactionId != null ? transactionId() : this.transactionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsWechatPay &&
           fingerprint == other.fingerprint &&
           location == other.location &&
           reader == other.reader &&
-          transactionId == other.transactionId; } 
-@override int get hashCode { return Object.hash(fingerprint, location, reader, transactionId); } 
-@override String toString() { return 'PaymentMethodDetailsWechatPay(fingerprint: $fingerprint, location: $location, reader: $reader, transactionId: $transactionId)'; } 
+          transactionId == other.transactionId;
+
+@override int get hashCode => Object.hash(fingerprint, location, reader, transactionId);
+
+@override String toString() => 'PaymentMethodDetailsWechatPay(fingerprint: $fingerprint, location: $location, reader: $reader, transactionId: $transactionId)';
+
  }

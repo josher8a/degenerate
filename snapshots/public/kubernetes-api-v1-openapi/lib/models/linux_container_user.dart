@@ -30,11 +30,14 @@ LinuxContainerUser copyWith({int? gid, List<int>? Function()? supplementalGroups
   supplementalGroups: supplementalGroups != null ? supplementalGroups() : this.supplementalGroups,
   uid: uid ?? this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LinuxContainerUser &&
           gid == other.gid &&
           listEquals(supplementalGroups, other.supplementalGroups) &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(gid, Object.hashAll(supplementalGroups ?? const []), uid); } 
-@override String toString() { return 'LinuxContainerUser(gid: $gid, supplementalGroups: $supplementalGroups, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(gid, Object.hashAll(supplementalGroups ?? const []), uid);
+
+@override String toString() => 'LinuxContainerUser(gid: $gid, supplementalGroups: $supplementalGroups, uid: $uid)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('title
 WorkersKvCreateRenameNamespaceBody copyWith({WorkersKvNamespaceTitle? title}) { return WorkersKvCreateRenameNamespaceBody(
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersKvCreateRenameNamespaceBody &&
-          title == other.title; } 
-@override int get hashCode { return title.hashCode; } 
-@override String toString() { return 'WorkersKvCreateRenameNamespaceBody(title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => title.hashCode;
+
+@override String toString() => 'WorkersKvCreateRenameNamespaceBody(title: $title)';
+
  }

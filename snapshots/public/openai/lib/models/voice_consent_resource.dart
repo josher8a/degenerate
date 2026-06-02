@@ -47,13 +47,16 @@ VoiceConsentResource copyWith({VoiceConsentDeletedResourceObject? object, String
   language: language ?? this.language,
   createdAt: createdAt ?? this.createdAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VoiceConsentResource &&
           object == other.object &&
           id == other.id &&
           name == other.name &&
           language == other.language &&
-          createdAt == other.createdAt; } 
-@override int get hashCode { return Object.hash(object, id, name, language, createdAt); } 
-@override String toString() { return 'VoiceConsentResource(object: $object, id: $id, name: $name, language: $language, createdAt: $createdAt)'; } 
+          createdAt == other.createdAt;
+
+@override int get hashCode => Object.hash(object, id, name, language, createdAt);
+
+@override String toString() => 'VoiceConsentResource(object: $object, id: $id, name: $name, language: $language, createdAt: $createdAt)';
+
  }

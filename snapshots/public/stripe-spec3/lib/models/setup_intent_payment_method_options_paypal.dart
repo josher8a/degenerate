@@ -24,9 +24,12 @@ return errors; }
 SetupIntentPaymentMethodOptionsPaypal copyWith({String? Function()? billingAgreementId}) { return SetupIntentPaymentMethodOptionsPaypal(
   billingAgreementId: billingAgreementId != null ? billingAgreementId() : this.billingAgreementId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsPaypal &&
-          billingAgreementId == other.billingAgreementId; } 
-@override int get hashCode { return billingAgreementId.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsPaypal(billingAgreementId: $billingAgreementId)'; } 
+          billingAgreementId == other.billingAgreementId;
+
+@override int get hashCode => billingAgreementId.hashCode;
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsPaypal(billingAgreementId: $billingAgreementId)';
+
  }

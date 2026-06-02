@@ -30,12 +30,15 @@ AppsPermissions copyWith({String? Function()? metadata, String? Function()? cont
   issues: issues != null ? issues() : this.issues,
   singleFile: singleFile != null ? singleFile() : this.singleFile,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsPermissions &&
           metadata == other.metadata &&
           contents == other.contents &&
           issues == other.issues &&
-          singleFile == other.singleFile; } 
-@override int get hashCode { return Object.hash(metadata, contents, issues, singleFile); } 
-@override String toString() { return 'AppsPermissions(metadata: $metadata, contents: $contents, issues: $issues, singleFile: $singleFile)'; } 
+          singleFile == other.singleFile;
+
+@override int get hashCode => Object.hash(metadata, contents, issues, singleFile);
+
+@override String toString() => 'AppsPermissions(metadata: $metadata, contents: $contents, issues: $issues, singleFile: $singleFile)';
+
  }

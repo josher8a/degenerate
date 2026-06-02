@@ -29,11 +29,14 @@ RealtimekitTranscript copyWith({String? sessionId, String? transcriptDownloadUrl
   transcriptDownloadUrl: transcriptDownloadUrl ?? this.transcriptDownloadUrl,
   transcriptDownloadUrlExpiry: transcriptDownloadUrlExpiry ?? this.transcriptDownloadUrlExpiry,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitTranscript &&
           sessionId == other.sessionId &&
           transcriptDownloadUrl == other.transcriptDownloadUrl &&
-          transcriptDownloadUrlExpiry == other.transcriptDownloadUrlExpiry; } 
-@override int get hashCode { return Object.hash(sessionId, transcriptDownloadUrl, transcriptDownloadUrlExpiry); } 
-@override String toString() { return 'RealtimekitTranscript(sessionId: $sessionId, transcriptDownloadUrl: $transcriptDownloadUrl, transcriptDownloadUrlExpiry: $transcriptDownloadUrlExpiry)'; } 
+          transcriptDownloadUrlExpiry == other.transcriptDownloadUrlExpiry;
+
+@override int get hashCode => Object.hash(sessionId, transcriptDownloadUrl, transcriptDownloadUrlExpiry);
+
+@override String toString() => 'RealtimekitTranscript(sessionId: $sessionId, transcriptDownloadUrl: $transcriptDownloadUrl, transcriptDownloadUrlExpiry: $transcriptDownloadUrlExpiry)';
+
  }

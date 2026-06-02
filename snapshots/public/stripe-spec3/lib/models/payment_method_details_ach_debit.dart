@@ -70,14 +70,17 @@ PaymentMethodDetailsAchDebit copyWith({InboundTransfersPaymentMethodDetailsUsBan
   last4: last4 != null ? last4() : this.last4,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsAchDebit &&
           accountHolderType == other.accountHolderType &&
           bankName == other.bankName &&
           country == other.country &&
           fingerprint == other.fingerprint &&
           last4 == other.last4 &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(accountHolderType, bankName, country, fingerprint, last4, routingNumber); } 
-@override String toString() { return 'PaymentMethodDetailsAchDebit(accountHolderType: $accountHolderType, bankName: $bankName, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(accountHolderType, bankName, country, fingerprint, last4, routingNumber);
+
+@override String toString() => 'PaymentMethodDetailsAchDebit(accountHolderType: $accountHolderType, bankName: $bankName, country: $country, fingerprint: $fingerprint, last4: $last4, routingNumber: $routingNumber)';
+
  }

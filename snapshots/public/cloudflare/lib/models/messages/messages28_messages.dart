@@ -34,11 +34,14 @@ Messages28Messages copyWith({Messages28MessagesContent? Function()? content, Str
   role: role != null ? role() : this.role,
   toolCallId: toolCallId != null ? toolCallId() : this.toolCallId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Messages28Messages &&
           content == other.content &&
           role == other.role &&
-          toolCallId == other.toolCallId; } 
-@override int get hashCode { return Object.hash(content, role, toolCallId); } 
-@override String toString() { return 'Messages28Messages(content: $content, role: $role, toolCallId: $toolCallId)'; } 
+          toolCallId == other.toolCallId;
+
+@override int get hashCode => Object.hash(content, role, toolCallId);
+
+@override String toString() => 'Messages28Messages(content: $content, role: $role, toolCallId: $toolCallId)';
+
  }

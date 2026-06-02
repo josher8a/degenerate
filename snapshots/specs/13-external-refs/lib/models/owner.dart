@@ -25,11 +25,14 @@ Owner copyWith({String? name, String? Function()? email, List<Pet>? Function()? 
   email: email != null ? email() : this.email,
   pets: pets != null ? pets() : this.pets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Owner &&
           name == other.name &&
           email == other.email &&
-          listEquals(pets, other.pets); } 
-@override int get hashCode { return Object.hash(name, email, Object.hashAll(pets ?? const [])); } 
-@override String toString() { return 'Owner(name: $name, email: $email, pets: $pets)'; } 
+          listEquals(pets, other.pets);
+
+@override int get hashCode => Object.hash(name, email, Object.hashAll(pets ?? const []));
+
+@override String toString() => 'Owner(name: $name, email: $email, pets: $pets)';
+
  }

@@ -24,9 +24,12 @@ return errors; }
 RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) { return RateLimitsParam(
   maxRequestsPer1Minute: maxRequestsPer1Minute != null ? maxRequestsPer1Minute() : this.maxRequestsPer1Minute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RateLimitsParam &&
-          maxRequestsPer1Minute == other.maxRequestsPer1Minute; } 
-@override int get hashCode { return maxRequestsPer1Minute.hashCode; } 
-@override String toString() { return 'RateLimitsParam(maxRequestsPer1Minute: $maxRequestsPer1Minute)'; } 
+          maxRequestsPer1Minute == other.maxRequestsPer1Minute;
+
+@override int get hashCode => maxRequestsPer1Minute.hashCode;
+
+@override String toString() => 'RateLimitsParam(maxRequestsPer1Minute: $maxRequestsPer1Minute)';
+
  }

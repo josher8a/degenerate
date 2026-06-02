@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PostBillingMetersRequestEventTimeWindow && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PostBillingMetersRequestEventTimeWindow($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostBillingMetersRequestEventTimeWindow && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PostBillingMetersRequestEventTimeWindow($value)';
+
  }
 @immutable final class PostBillingMetersRequest {const PostBillingMetersRequest({required this.defaultAggregation, required this.displayName, required this.eventName, this.customerMapping, this.eventTimeWindow, this.expand, this.valueSettings, });
 
@@ -84,7 +87,7 @@ PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping,
   expand: expand != null ? expand() : this.expand,
   valueSettings: valueSettings != null ? valueSettings() : this.valueSettings,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostBillingMetersRequest &&
           customerMapping == other.customerMapping &&
           defaultAggregation == other.defaultAggregation &&
@@ -92,7 +95,10 @@ PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping,
           eventName == other.eventName &&
           eventTimeWindow == other.eventTimeWindow &&
           listEquals(expand, other.expand) &&
-          valueSettings == other.valueSettings; } 
-@override int get hashCode { return Object.hash(customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, Object.hashAll(expand ?? const []), valueSettings); } 
-@override String toString() { return 'PostBillingMetersRequest(customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, expand: $expand, valueSettings: $valueSettings)'; } 
+          valueSettings == other.valueSettings;
+
+@override int get hashCode => Object.hash(customerMapping, defaultAggregation, displayName, eventName, eventTimeWindow, Object.hashAll(expand ?? const []), valueSettings);
+
+@override String toString() => 'PostBillingMetersRequest(customerMapping: $customerMapping, defaultAggregation: $defaultAggregation, displayName: $displayName, eventName: $eventName, eventTimeWindow: $eventTimeWindow, expand: $expand, valueSettings: $valueSettings)';
+
  }

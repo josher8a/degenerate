@@ -20,10 +20,13 @@ ConditionsUpdated copyWith({RepositoryRulesetConditions? Function()? condition, 
   condition: condition != null ? condition() : this.condition,
   changes: changes != null ? changes() : this.changes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConditionsUpdated &&
           condition == other.condition &&
-          changes == other.changes; } 
-@override int get hashCode { return Object.hash(condition, changes); } 
-@override String toString() { return 'ConditionsUpdated(condition: $condition, changes: $changes)'; } 
+          changes == other.changes;
+
+@override int get hashCode => Object.hash(condition, changes);
+
+@override String toString() => 'ConditionsUpdated(condition: $condition, changes: $changes)';
+
  }

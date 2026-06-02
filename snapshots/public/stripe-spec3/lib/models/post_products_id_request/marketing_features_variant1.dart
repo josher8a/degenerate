@@ -19,9 +19,12 @@ return errors; }
 MarketingFeaturesVariant1 copyWith({String? name}) { return MarketingFeaturesVariant1(
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarketingFeaturesVariant1 &&
-          name == other.name; } 
-@override int get hashCode { return name.hashCode; } 
-@override String toString() { return 'MarketingFeaturesVariant1(name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => name.hashCode;
+
+@override String toString() => 'MarketingFeaturesVariant1(name: $name)';
+
  }

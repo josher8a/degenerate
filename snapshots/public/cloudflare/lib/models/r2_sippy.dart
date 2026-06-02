@@ -28,11 +28,14 @@ R2Sippy copyWith({R2SippyDestination? Function()? destination, bool? Function()?
   enabled: enabled != null ? enabled() : this.enabled,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2Sippy &&
           destination == other.destination &&
           enabled == other.enabled &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(destination, enabled, source); } 
-@override String toString() { return 'R2Sippy(destination: $destination, enabled: $enabled, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(destination, enabled, source);
+
+@override String toString() => 'R2Sippy(destination: $destination, enabled: $enabled, source: $source)';
+
  }

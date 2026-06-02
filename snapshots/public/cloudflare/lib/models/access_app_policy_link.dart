@@ -21,10 +21,13 @@ AccessAppPolicyLink copyWith({AccessSchemasUuid? Function()? id, AccessPrecedenc
   id: id != null ? id() : this.id,
   precedence: precedence != null ? precedence() : this.precedence,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessAppPolicyLink &&
           id == other.id &&
-          precedence == other.precedence; } 
-@override int get hashCode { return Object.hash(id, precedence); } 
-@override String toString() { return 'AccessAppPolicyLink(id: $id, precedence: $precedence)'; } 
+          precedence == other.precedence;
+
+@override int get hashCode => Object.hash(id, precedence);
+
+@override String toString() => 'AccessAppPolicyLink(id: $id, precedence: $precedence)';
+
  }

@@ -22,10 +22,13 @@ Sampling copyWith({dynamic Function()? unit, int? value, }) { return Sampling(
   unit: unit != null ? unit() : this.unit,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Sampling &&
           unit == other.unit &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(unit, value); } 
-@override String toString() { return 'Sampling(unit: $unit, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(unit, value);
+
+@override String toString() => 'Sampling(unit: $unit, value: $value)';
+
  }

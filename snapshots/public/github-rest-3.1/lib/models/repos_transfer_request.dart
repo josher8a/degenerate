@@ -28,11 +28,14 @@ ReposTransferRequest copyWith({String? newOwner, String? Function()? newName, Li
   newName: newName != null ? newName() : this.newName,
   teamIds: teamIds != null ? teamIds() : this.teamIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposTransferRequest &&
           newOwner == other.newOwner &&
           newName == other.newName &&
-          listEquals(teamIds, other.teamIds); } 
-@override int get hashCode { return Object.hash(newOwner, newName, Object.hashAll(teamIds ?? const [])); } 
-@override String toString() { return 'ReposTransferRequest(newOwner: $newOwner, newName: $newName, teamIds: $teamIds)'; } 
+          listEquals(teamIds, other.teamIds);
+
+@override int get hashCode => Object.hash(newOwner, newName, Object.hashAll(teamIds ?? const []));
+
+@override String toString() => 'ReposTransferRequest(newOwner: $newOwner, newName: $newName, teamIds: $teamIds)';
+
  }

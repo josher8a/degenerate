@@ -56,7 +56,7 @@ DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({DateTime? Funct
   type: type != null ? type() : this.type,
   userEmail: userEmail != null ? userEmail() : this.userEmail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringGetCommandsResponseCommands &&
           completedDate == other.completedDate &&
           createdDate == other.createdDate &&
@@ -66,7 +66,10 @@ DigitalExperienceMonitoringGetCommandsResponseCommands copyWith({DateTime? Funct
           registrationId == other.registrationId &&
           status == other.status &&
           type == other.type &&
-          userEmail == other.userEmail; } 
-@override int get hashCode { return Object.hash(completedDate, createdDate, deviceId, filename, id, registrationId, status, type, userEmail); } 
-@override String toString() { return 'DigitalExperienceMonitoringGetCommandsResponseCommands(completedDate: $completedDate, createdDate: $createdDate, deviceId: $deviceId, filename: $filename, id: $id, registrationId: $registrationId, status: $status, type: $type, userEmail: $userEmail)'; } 
+          userEmail == other.userEmail;
+
+@override int get hashCode => Object.hash(completedDate, createdDate, deviceId, filename, id, registrationId, status, type, userEmail);
+
+@override String toString() => 'DigitalExperienceMonitoringGetCommandsResponseCommands(completedDate: $completedDate, createdDate: $createdDate, deviceId: $deviceId, filename: $filename, id: $id, registrationId: $registrationId, status: $status, type: $type, userEmail: $userEmail)';
+
  }

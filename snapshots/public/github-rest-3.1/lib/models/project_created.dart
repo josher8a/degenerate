@@ -39,13 +39,16 @@ ProjectCreated copyWith({ItemCreatedAction? action, SimpleInstallation? Function
   projectsV2: projectsV2 ?? this.projectsV2,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectCreated &&
           action == other.action &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2 == other.projectsV2 &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, installation, organization, projectsV2, sender); } 
-@override String toString() { return 'ProjectCreated(action: $action, installation: $installation, organization: $organization, projectsV2: $projectsV2, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, installation, organization, projectsV2, sender);
+
+@override String toString() => 'ProjectCreated(action: $action, installation: $installation, organization: $organization, projectsV2: $projectsV2, sender: $sender)';
+
  }

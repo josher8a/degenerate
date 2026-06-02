@@ -22,9 +22,12 @@ return errors; }
 HostedConfirmation copyWith({String? Function()? customMessage}) { return HostedConfirmation(
   customMessage: customMessage != null ? customMessage() : this.customMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HostedConfirmation &&
-          customMessage == other.customMessage; } 
-@override int get hashCode { return customMessage.hashCode; } 
-@override String toString() { return 'HostedConfirmation(customMessage: $customMessage)'; } 
+          customMessage == other.customMessage;
+
+@override int get hashCode => customMessage.hashCode;
+
+@override String toString() => 'HostedConfirmation(customMessage: $customMessage)';
+
  }

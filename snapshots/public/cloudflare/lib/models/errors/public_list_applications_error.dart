@@ -18,13 +18,15 @@ final class PublicListApplicationsError$401 extends PublicListApplicationsError 
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class PublicListApplicationsError$500 extends PublicListApplicationsError {const PublicListApplicationsError$500(this.error);
 
 final BaseErrorResponse error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class PublicListApplicationsError$Unknown extends PublicListApplicationsError {const PublicListApplicationsError$Unknown(this.statusCode, this.rawBody, );
 

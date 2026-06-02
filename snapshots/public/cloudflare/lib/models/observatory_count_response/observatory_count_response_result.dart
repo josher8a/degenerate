@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ObservatoryCountResponseResult copyWith({double? Function()? count}) { return ObservatoryCountResponseResult(
   count: count != null ? count() : this.count,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ObservatoryCountResponseResult &&
-          count == other.count; } 
-@override int get hashCode { return count.hashCode; } 
-@override String toString() { return 'ObservatoryCountResponseResult(count: $count)'; } 
+          count == other.count;
+
+@override int get hashCode => count.hashCode;
+
+@override String toString() => 'ObservatoryCountResponseResult(count: $count)';
+
  }

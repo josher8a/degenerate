@@ -27,11 +27,14 @@ EmailSecurityTraceLine copyWith({int? lineno, String? message, DateTime? ts, }) 
   message: message ?? this.message,
   ts: ts ?? this.ts,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityTraceLine &&
           lineno == other.lineno &&
           message == other.message &&
-          ts == other.ts; } 
-@override int get hashCode { return Object.hash(lineno, message, ts); } 
-@override String toString() { return 'EmailSecurityTraceLine(lineno: $lineno, message: $message, ts: $ts)'; } 
+          ts == other.ts;
+
+@override int get hashCode => Object.hash(lineno, message, ts);
+
+@override String toString() => 'EmailSecurityTraceLine(lineno: $lineno, message: $message, ts: $ts)';
+
  }

@@ -44,11 +44,14 @@ PortalBusinessProfile copyWith({String? Function()? headline, String? Function()
   privacyPolicyUrl: privacyPolicyUrl != null ? privacyPolicyUrl() : this.privacyPolicyUrl,
   termsOfServiceUrl: termsOfServiceUrl != null ? termsOfServiceUrl() : this.termsOfServiceUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PortalBusinessProfile &&
           headline == other.headline &&
           privacyPolicyUrl == other.privacyPolicyUrl &&
-          termsOfServiceUrl == other.termsOfServiceUrl; } 
-@override int get hashCode { return Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl); } 
-@override String toString() { return 'PortalBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)'; } 
+          termsOfServiceUrl == other.termsOfServiceUrl;
+
+@override int get hashCode => Object.hash(headline, privacyPolicyUrl, termsOfServiceUrl);
+
+@override String toString() => 'PortalBusinessProfile(headline: $headline, privacyPolicyUrl: $privacyPolicyUrl, termsOfServiceUrl: $termsOfServiceUrl)';
+
  }

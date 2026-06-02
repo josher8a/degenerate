@@ -136,7 +136,7 @@ PostCustomersCustomerSourcesIdRequest copyWith({String? Function()? accountHolde
   name: name != null ? name() : this.name,
   owner: owner != null ? owner() : this.owner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerSourcesIdRequest &&
           accountHolderName == other.accountHolderName &&
           accountHolderType == other.accountHolderType &&
@@ -151,7 +151,10 @@ PostCustomersCustomerSourcesIdRequest copyWith({String? Function()? accountHolde
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           name == other.name &&
-          owner == other.owner; } 
-@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name, owner); } 
-@override String toString() { return 'PostCustomersCustomerSourcesIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name, owner: $owner)'; } 
+          owner == other.owner;
+
+@override int get hashCode => Object.hash(accountHolderName, accountHolderType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name, owner);
+
+@override String toString() => 'PostCustomersCustomerSourcesIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name, owner: $owner)';
+
  }

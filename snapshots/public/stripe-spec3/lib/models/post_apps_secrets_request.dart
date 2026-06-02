@@ -47,13 +47,16 @@ PostAppsSecretsRequest copyWith({List<String>? Function()? expand, int? Function
   payload: payload ?? this.payload,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAppsSecretsRequest &&
           listEquals(expand, other.expand) &&
           expiresAt == other.expiresAt &&
           name == other.name &&
           payload == other.payload &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt, name, payload, scope); } 
-@override String toString() { return 'PostAppsSecretsRequest(expand: $expand, expiresAt: $expiresAt, name: $name, payload: $payload, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), expiresAt, name, payload, scope);
+
+@override String toString() => 'PostAppsSecretsRequest(expand: $expand, expiresAt: $expiresAt, name: $name, payload: $payload, scope: $scope)';
+
  }

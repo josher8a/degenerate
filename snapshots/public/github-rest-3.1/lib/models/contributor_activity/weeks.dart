@@ -30,12 +30,15 @@ Weeks copyWith({int? Function()? w, int? Function()? a, int? Function()? d, int?
   d: d != null ? d() : this.d,
   c: c != null ? c() : this.c,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Weeks &&
           w == other.w &&
           a == other.a &&
           d == other.d &&
-          c == other.c; } 
-@override int get hashCode { return Object.hash(w, a, d, c); } 
-@override String toString() { return 'Weeks(w: $w, a: $a, d: $d, c: $c)'; } 
+          c == other.c;
+
+@override int get hashCode => Object.hash(w, a, d, c);
+
+@override String toString() => 'Weeks(w: $w, a: $a, d: $d, c: $c)';
+
  }

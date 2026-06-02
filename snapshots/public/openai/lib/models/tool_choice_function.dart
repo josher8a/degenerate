@@ -25,10 +25,13 @@ ToolChoiceFunction copyWith({AssistantToolsFunctionType? type, String? name, }) 
   type: type ?? this.type,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolChoiceFunction &&
           type == other.type &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(type, name); } 
-@override String toString() { return 'ToolChoiceFunction(type: $type, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(type, name);
+
+@override String toString() => 'ToolChoiceFunction(type: $type, name: $name)';
+
  }

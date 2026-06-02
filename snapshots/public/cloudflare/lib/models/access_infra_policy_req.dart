@@ -43,14 +43,17 @@ AccessInfraPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Funct
   require: require != null ? require() : this.require,
   connectionRules: connectionRules != null ? connectionRules() : this.connectionRules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessInfraPolicyReq &&
           decision == other.decision &&
           listEquals(exclude, other.exclude) &&
           listEquals(include, other.include) &&
           name == other.name &&
           listEquals(require, other.require) &&
-          connectionRules == other.connectionRules; } 
-@override int get hashCode { return Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), connectionRules); } 
-@override String toString() { return 'AccessInfraPolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, connectionRules: $connectionRules)'; } 
+          connectionRules == other.connectionRules;
+
+@override int get hashCode => Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), connectionRules);
+
+@override String toString() => 'AccessInfraPolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, connectionRules: $connectionRules)';
+
  }

@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 WorkersVersionItemUploaded copyWith({int? Function()? startupTimeMs}) { return WorkersVersionItemUploaded(
   startupTimeMs: startupTimeMs != null ? startupTimeMs() : this.startupTimeMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersVersionItemUploaded &&
-          startupTimeMs == other.startupTimeMs; } 
-@override int get hashCode { return startupTimeMs.hashCode; } 
-@override String toString() { return 'WorkersVersionItemUploaded(startupTimeMs: $startupTimeMs)'; } 
+          startupTimeMs == other.startupTimeMs;
+
+@override int get hashCode => startupTimeMs.hashCode;
+
+@override String toString() => 'WorkersVersionItemUploaded(startupTimeMs: $startupTimeMs)';
+
  }

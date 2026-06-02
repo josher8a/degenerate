@@ -41,13 +41,16 @@ UsageInputTokenDetails copyWith({int? Function()? cachedTokens, int? Function()?
   audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
   cachedTokensDetails: cachedTokensDetails != null ? cachedTokensDetails() : this.cachedTokensDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageInputTokenDetails &&
           cachedTokens == other.cachedTokens &&
           textTokens == other.textTokens &&
           imageTokens == other.imageTokens &&
           audioTokens == other.audioTokens &&
-          cachedTokensDetails == other.cachedTokensDetails; } 
-@override int get hashCode { return Object.hash(cachedTokens, textTokens, imageTokens, audioTokens, cachedTokensDetails); } 
-@override String toString() { return 'UsageInputTokenDetails(cachedTokens: $cachedTokens, textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens, cachedTokensDetails: $cachedTokensDetails)'; } 
+          cachedTokensDetails == other.cachedTokensDetails;
+
+@override int get hashCode => Object.hash(cachedTokens, textTokens, imageTokens, audioTokens, cachedTokensDetails);
+
+@override String toString() => 'UsageInputTokenDetails(cachedTokens: $cachedTokens, textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens, cachedTokensDetails: $cachedTokensDetails)';
+
  }

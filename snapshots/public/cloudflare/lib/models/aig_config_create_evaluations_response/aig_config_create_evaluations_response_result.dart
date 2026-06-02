@@ -72,7 +72,7 @@ AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
   results: results ?? this.results,
   totalLogs: totalLogs ?? this.totalLogs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponseResult &&
           createdAt == other.createdAt &&
           listEquals(datasets, other.datasets) &&
@@ -82,7 +82,10 @@ AigConfigCreateEvaluationsResponseResult copyWith({DateTime? createdAt, List<Aig
           name == other.name &&
           processed == other.processed &&
           listEquals(results, other.results) &&
-          totalLogs == other.totalLogs; } 
-@override int get hashCode { return Object.hash(createdAt, Object.hashAll(datasets), gatewayId, id, modifiedAt, name, processed, Object.hashAll(results), totalLogs); } 
-@override String toString() { return 'AigConfigCreateEvaluationsResponseResult(createdAt: $createdAt, datasets: $datasets, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, processed: $processed, results: $results, totalLogs: $totalLogs)'; } 
+          totalLogs == other.totalLogs;
+
+@override int get hashCode => Object.hash(createdAt, Object.hashAll(datasets), gatewayId, id, modifiedAt, name, processed, Object.hashAll(results), totalLogs);
+
+@override String toString() => 'AigConfigCreateEvaluationsResponseResult(createdAt: $createdAt, datasets: $datasets, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name, processed: $processed, results: $results, totalLogs: $totalLogs)';
+
  }

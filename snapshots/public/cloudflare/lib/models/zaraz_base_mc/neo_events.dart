@@ -41,12 +41,15 @@ NeoEvents copyWith({String? actionType, List<String>? blockingTriggers, Map<Stri
   data: data ?? this.data,
   firingTriggers: firingTriggers ?? this.firingTriggers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NeoEvents &&
           actionType == other.actionType &&
           listEquals(blockingTriggers, other.blockingTriggers) &&
           data == other.data &&
-          listEquals(firingTriggers, other.firingTriggers); } 
-@override int get hashCode { return Object.hash(actionType, Object.hashAll(blockingTriggers), data, Object.hashAll(firingTriggers)); } 
-@override String toString() { return 'NeoEvents(actionType: $actionType, blockingTriggers: $blockingTriggers, data: $data, firingTriggers: $firingTriggers)'; } 
+          listEquals(firingTriggers, other.firingTriggers);
+
+@override int get hashCode => Object.hash(actionType, Object.hashAll(blockingTriggers), data, Object.hashAll(firingTriggers));
+
+@override String toString() => 'NeoEvents(actionType: $actionType, blockingTriggers: $blockingTriggers, data: $data, firingTriggers: $firingTriggers)';
+
  }

@@ -45,14 +45,17 @@ AppsScopeTokenRequest copyWith({String? accessToken, String? Function()? target,
   repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AppsScopeTokenRequest &&
           accessToken == other.accessToken &&
           target == other.target &&
           targetId == other.targetId &&
           listEquals(repositories, other.repositories) &&
           listEquals(repositoryIds, other.repositoryIds) &&
-          permissions == other.permissions; } 
-@override int get hashCode { return Object.hash(accessToken, target, targetId, Object.hashAll(repositories ?? const []), Object.hashAll(repositoryIds ?? const []), permissions); } 
-@override String toString() { return 'AppsScopeTokenRequest(accessToken: $accessToken, target: $target, targetId: $targetId, repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => Object.hash(accessToken, target, targetId, Object.hashAll(repositories ?? const []), Object.hashAll(repositoryIds ?? const []), permissions);
+
+@override String toString() => 'AppsScopeTokenRequest(accessToken: $accessToken, target: $target, targetId: $targetId, repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)';
+
  }

@@ -44,14 +44,17 @@ RequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUr
   teams: teams ?? this.teams,
   apps: apps != null ? apps() : this.apps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RequiredPullRequestReviewsDismissalRestrictions &&
           url == other.url &&
           usersUrl == other.usersUrl &&
           teamsUrl == other.teamsUrl &&
           listEquals(users, other.users) &&
           listEquals(teams, other.teams) &&
-          listEquals(apps, other.apps); } 
-@override int get hashCode { return Object.hash(url, usersUrl, teamsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps ?? const [])); } 
-@override String toString() { return 'RequiredPullRequestReviewsDismissalRestrictions(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, users: $users, teams: $teams, apps: $apps)'; } 
+          listEquals(apps, other.apps);
+
+@override int get hashCode => Object.hash(url, usersUrl, teamsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps ?? const []));
+
+@override String toString() => 'RequiredPullRequestReviewsDismissalRestrictions(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, users: $users, teams: $teams, apps: $apps)';
+
  }

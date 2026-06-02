@@ -41,13 +41,16 @@ CsiVolumeSource copyWith({String? driver, String? Function()? fsType, LocalObjec
   readOnly: readOnly != null ? readOnly() : this.readOnly,
   volumeAttributes: volumeAttributes != null ? volumeAttributes() : this.volumeAttributes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CsiVolumeSource &&
           driver == other.driver &&
           fsType == other.fsType &&
           nodePublishSecretRef == other.nodePublishSecretRef &&
           readOnly == other.readOnly &&
-          volumeAttributes == other.volumeAttributes; } 
-@override int get hashCode { return Object.hash(driver, fsType, nodePublishSecretRef, readOnly, volumeAttributes); } 
-@override String toString() { return 'CsiVolumeSource(driver: $driver, fsType: $fsType, nodePublishSecretRef: $nodePublishSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes)'; } 
+          volumeAttributes == other.volumeAttributes;
+
+@override int get hashCode => Object.hash(driver, fsType, nodePublishSecretRef, readOnly, volumeAttributes);
+
+@override String toString() => 'CsiVolumeSource(driver: $driver, fsType: $fsType, nodePublishSecretRef: $nodePublishSecretRef, readOnly: $readOnly, volumeAttributes: $volumeAttributes)';
+
  }

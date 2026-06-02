@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PaymentFlowsAmountDetailsResourceTax copyWith({int? Function()? totalTaxAmount}) { return PaymentFlowsAmountDetailsResourceTax(
   totalTaxAmount: totalTaxAmount != null ? totalTaxAmount() : this.totalTaxAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceTax &&
-          totalTaxAmount == other.totalTaxAmount; } 
-@override int get hashCode { return totalTaxAmount.hashCode; } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceTax(totalTaxAmount: $totalTaxAmount)'; } 
+          totalTaxAmount == other.totalTaxAmount;
+
+@override int get hashCode => totalTaxAmount.hashCode;
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceTax(totalTaxAmount: $totalTaxAmount)';
+
  }

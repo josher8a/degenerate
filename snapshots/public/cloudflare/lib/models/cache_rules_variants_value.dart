@@ -146,7 +146,7 @@ CacheRulesVariantsValue copyWith({List<String>? Function()? avif, List<String>? 
   tiff: tiff != null ? tiff() : this.tiff,
   webp: webp != null ? webp() : this.webp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesVariantsValue &&
           listEquals(avif, other.avif) &&
           listEquals(bmp, other.bmp) &&
@@ -158,7 +158,10 @@ CacheRulesVariantsValue copyWith({List<String>? Function()? avif, List<String>? 
           listEquals(png, other.png) &&
           listEquals(tif, other.tif) &&
           listEquals(tiff, other.tiff) &&
-          listEquals(webp, other.webp); } 
-@override int get hashCode { return Object.hash(Object.hashAll(avif ?? const []), Object.hashAll(bmp ?? const []), Object.hashAll(gif ?? const []), Object.hashAll(jp2 ?? const []), Object.hashAll(jpeg ?? const []), Object.hashAll(jpg ?? const []), Object.hashAll(jpg2 ?? const []), Object.hashAll(png ?? const []), Object.hashAll(tif ?? const []), Object.hashAll(tiff ?? const []), Object.hashAll(webp ?? const [])); } 
-@override String toString() { return 'CacheRulesVariantsValue(avif: $avif, bmp: $bmp, gif: $gif, jp2: $jp2, jpeg: $jpeg, jpg: $jpg, jpg2: $jpg2, png: $png, tif: $tif, tiff: $tiff, webp: $webp)'; } 
+          listEquals(webp, other.webp);
+
+@override int get hashCode => Object.hash(Object.hashAll(avif ?? const []), Object.hashAll(bmp ?? const []), Object.hashAll(gif ?? const []), Object.hashAll(jp2 ?? const []), Object.hashAll(jpeg ?? const []), Object.hashAll(jpg ?? const []), Object.hashAll(jpg2 ?? const []), Object.hashAll(png ?? const []), Object.hashAll(tif ?? const []), Object.hashAll(tiff ?? const []), Object.hashAll(webp ?? const []));
+
+@override String toString() => 'CacheRulesVariantsValue(avif: $avif, bmp: $bmp, gif: $gif, jp2: $jp2, jpeg: $jpeg, jpg: $jpg, jpg2: $jpg2, png: $png, tif: $tif, tiff: $tiff, webp: $webp)';
+
  }

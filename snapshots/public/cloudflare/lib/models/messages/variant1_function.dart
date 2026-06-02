@@ -22,10 +22,13 @@ Variant1Function copyWith({Variant1FunctionFunction? function, FunctionType? typ
   function: function ?? this.function,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Function &&
           function == other.function &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(function, type); } 
-@override String toString() { return 'Variant1Function(function: $function, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(function, type);
+
+@override String toString() => 'Variant1Function(function: $function, type: $type)';
+
  }

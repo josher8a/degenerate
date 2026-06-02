@@ -34,12 +34,15 @@ DigitalExperienceMonitoringPercentiles copyWith({double? Function()? p50, double
   p95: p95 != null ? p95() : this.p95,
   p99: p99 != null ? p99() : this.p99,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringPercentiles &&
           p50 == other.p50 &&
           p90 == other.p90 &&
           p95 == other.p95 &&
-          p99 == other.p99; } 
-@override int get hashCode { return Object.hash(p50, p90, p95, p99); } 
-@override String toString() { return 'DigitalExperienceMonitoringPercentiles(p50: $p50, p90: $p90, p95: $p95, p99: $p99)'; } 
+          p99 == other.p99;
+
+@override int get hashCode => Object.hash(p50, p90, p95, p99);
+
+@override String toString() => 'DigitalExperienceMonitoringPercentiles(p50: $p50, p90: $p90, p95: $p95, p99: $p99)';
+
  }

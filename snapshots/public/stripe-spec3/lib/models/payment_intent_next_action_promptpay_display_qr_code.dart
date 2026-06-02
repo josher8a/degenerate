@@ -45,12 +45,15 @@ PaymentIntentNextActionPromptpayDisplayQrCode copyWith({String? data, String? ho
   imageUrlPng: imageUrlPng ?? this.imageUrlPng,
   imageUrlSvg: imageUrlSvg ?? this.imageUrlSvg,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentNextActionPromptpayDisplayQrCode &&
           data == other.data &&
           hostedInstructionsUrl == other.hostedInstructionsUrl &&
           imageUrlPng == other.imageUrlPng &&
-          imageUrlSvg == other.imageUrlSvg; } 
-@override int get hashCode { return Object.hash(data, hostedInstructionsUrl, imageUrlPng, imageUrlSvg); } 
-@override String toString() { return 'PaymentIntentNextActionPromptpayDisplayQrCode(data: $data, hostedInstructionsUrl: $hostedInstructionsUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)'; } 
+          imageUrlSvg == other.imageUrlSvg;
+
+@override int get hashCode => Object.hash(data, hostedInstructionsUrl, imageUrlPng, imageUrlSvg);
+
+@override String toString() => 'PaymentIntentNextActionPromptpayDisplayQrCode(data: $data, hostedInstructionsUrl: $hostedInstructionsUrl, imageUrlPng: $imageUrlPng, imageUrlSvg: $imageUrlSvg)';
+
  }

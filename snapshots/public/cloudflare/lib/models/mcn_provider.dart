@@ -86,7 +86,7 @@ McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubsc
   stateV2: stateV2 ?? this.stateV2,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnProvider &&
           awsArn == other.awsArn &&
           azureSubscriptionId == other.azureSubscriptionId &&
@@ -101,7 +101,10 @@ McnProvider copyWith({String? Function()? awsArn, String? Function()? azureSubsc
           lifecycleState == other.lifecycleState &&
           state == other.state &&
           stateV2 == other.stateV2 &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status); } 
-@override String toString() { return 'McnProvider(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(awsArn, azureSubscriptionId, azureTenantId, cloudType, description, friendlyName, gcpProjectId, gcpServiceAccountEmail, id, lastUpdated, lifecycleState, state, stateV2, status);
+
+@override String toString() => 'McnProvider(awsArn: $awsArn, azureSubscriptionId: $azureSubscriptionId, azureTenantId: $azureTenantId, cloudType: $cloudType, description: $description, friendlyName: $friendlyName, gcpProjectId: $gcpProjectId, gcpServiceAccountEmail: $gcpServiceAccountEmail, id: $id, lastUpdated: $lastUpdated, lifecycleState: $lifecycleState, state: $state, stateV2: $stateV2, status: $status)';
+
  }

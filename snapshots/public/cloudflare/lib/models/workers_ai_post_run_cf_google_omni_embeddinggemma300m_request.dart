@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'
 WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest copyWith({WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BRequestText? text}) { return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(
   text: text ?? this.text,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest &&
-          text == other.text; } 
-@override int get hashCode { return text.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(text: $text)'; } 
+          text == other.text;
+
+@override int get hashCode => text.hashCode;
+
+@override String toString() => 'WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest(text: $text)';
+
  }

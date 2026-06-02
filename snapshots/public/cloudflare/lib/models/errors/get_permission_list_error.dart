@@ -18,13 +18,15 @@ final class GetPermissionListError$400 extends GetPermissionListError {const Get
 
 final GetPermissionListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetPermissionListError$404 extends GetPermissionListError {const GetPermissionListError$404(this.error);
 
 final GetPermissionListResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetPermissionListError$Unknown extends GetPermissionListError {const GetPermissionListError$Unknown(this.statusCode, this.rawBody, );
 

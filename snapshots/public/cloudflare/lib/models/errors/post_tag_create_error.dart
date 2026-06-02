@@ -18,13 +18,15 @@ final class PostTagCreateError$400 extends PostTagCreateError {const PostTagCrea
 
 final PostTagCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostTagCreateError$404 extends PostTagCreateError {const PostTagCreateError$404(this.error);
 
 final PostTagCreateResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class PostTagCreateError$Unknown extends PostTagCreateError {const PostTagCreateError$Unknown(this.statusCode, this.rawBody, );
 

@@ -55,14 +55,17 @@ UrlscannerSearchScansResponseResultTasks copyWith({String? country, bool? succes
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerSearchScansResponseResultTasks &&
           country == other.country &&
           success == other.success &&
           time == other.time &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(country, success, time, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerSearchScansResponseResultTasks(country: $country, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(country, success, time, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerSearchScansResponseResultTasks(country: $country, success: $success, time: $time, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

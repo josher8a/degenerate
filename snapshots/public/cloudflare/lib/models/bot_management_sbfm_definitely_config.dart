@@ -38,13 +38,16 @@ BotManagementSbfmDefinitelyConfig copyWith({BotManagementOptimizeWordpress? Func
   sbfmVerifiedBots: sbfmVerifiedBots != null ? sbfmVerifiedBots() : this.sbfmVerifiedBots,
   staleZoneConfiguration: staleZoneConfiguration != null ? staleZoneConfiguration() : this.staleZoneConfiguration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BotManagementSbfmDefinitelyConfig &&
           optimizeWordpress == other.optimizeWordpress &&
           sbfmDefinitelyAutomated == other.sbfmDefinitelyAutomated &&
           sbfmStaticResourceProtection == other.sbfmStaticResourceProtection &&
           sbfmVerifiedBots == other.sbfmVerifiedBots &&
-          staleZoneConfiguration == other.staleZoneConfiguration; } 
-@override int get hashCode { return Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, staleZoneConfiguration); } 
-@override String toString() { return 'BotManagementSbfmDefinitelyConfig(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, staleZoneConfiguration: $staleZoneConfiguration)'; } 
+          staleZoneConfiguration == other.staleZoneConfiguration;
+
+@override int get hashCode => Object.hash(optimizeWordpress, sbfmDefinitelyAutomated, sbfmStaticResourceProtection, sbfmVerifiedBots, staleZoneConfiguration);
+
+@override String toString() => 'BotManagementSbfmDefinitelyConfig(optimizeWordpress: $optimizeWordpress, sbfmDefinitelyAutomated: $sbfmDefinitelyAutomated, sbfmStaticResourceProtection: $sbfmStaticResourceProtection, sbfmVerifiedBots: $sbfmVerifiedBots, staleZoneConfiguration: $staleZoneConfiguration)';
+
  }

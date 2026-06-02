@@ -237,7 +237,7 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
   headRepositoryId: headRepositoryId != null ? headRepositoryId() : this.headRepositoryId,
   displayTitle: displayTitle ?? this.displayTitle,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowRun &&
           id == other.id &&
           name == other.name &&
@@ -274,7 +274,10 @@ WorkflowRun copyWith({int? id, String? Function()? name, String? nodeId, int? Fu
           repository == other.repository &&
           headRepository == other.headRepository &&
           headRepositoryId == other.headRepositoryId &&
-          displayTitle == other.displayTitle; } 
-@override int get hashCode { return Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]); } 
-@override String toString() { return 'WorkflowRun(id: $id, name: $name, nodeId: $nodeId, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, headBranch: $headBranch, headSha: $headSha, path: $path, runNumber: $runNumber, runAttempt: $runAttempt, referencedWorkflows: $referencedWorkflows, event: $event, status: $status, conclusion: $conclusion, workflowId: $workflowId, url: $url, htmlUrl: $htmlUrl, pullRequests: $pullRequests, createdAt: $createdAt, updatedAt: $updatedAt, actor: $actor, triggeringActor: $triggeringActor, runStartedAt: $runStartedAt, jobsUrl: $jobsUrl, logsUrl: $logsUrl, checkSuiteUrl: $checkSuiteUrl, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, rerunUrl: $rerunUrl, previousAttemptUrl: $previousAttemptUrl, workflowUrl: $workflowUrl, headCommit: $headCommit, repository: $repository, headRepository: $headRepository, headRepositoryId: $headRepositoryId, displayTitle: $displayTitle)'; } 
+          displayTitle == other.displayTitle;
+
+@override int get hashCode => Object.hashAll([id, name, nodeId, checkSuiteId, checkSuiteNodeId, headBranch, headSha, path, runNumber, runAttempt, Object.hashAll(referencedWorkflows ?? const []), event, status, conclusion, workflowId, url, htmlUrl, Object.hashAll(pullRequests ?? const []), createdAt, updatedAt, actor, triggeringActor, runStartedAt, jobsUrl, logsUrl, checkSuiteUrl, artifactsUrl, cancelUrl, rerunUrl, previousAttemptUrl, workflowUrl, headCommit, repository, headRepository, headRepositoryId, displayTitle]);
+
+@override String toString() => 'WorkflowRun(id: $id, name: $name, nodeId: $nodeId, checkSuiteId: $checkSuiteId, checkSuiteNodeId: $checkSuiteNodeId, headBranch: $headBranch, headSha: $headSha, path: $path, runNumber: $runNumber, runAttempt: $runAttempt, referencedWorkflows: $referencedWorkflows, event: $event, status: $status, conclusion: $conclusion, workflowId: $workflowId, url: $url, htmlUrl: $htmlUrl, pullRequests: $pullRequests, createdAt: $createdAt, updatedAt: $updatedAt, actor: $actor, triggeringActor: $triggeringActor, runStartedAt: $runStartedAt, jobsUrl: $jobsUrl, logsUrl: $logsUrl, checkSuiteUrl: $checkSuiteUrl, artifactsUrl: $artifactsUrl, cancelUrl: $cancelUrl, rerunUrl: $rerunUrl, previousAttemptUrl: $previousAttemptUrl, workflowUrl: $workflowUrl, headCommit: $headCommit, repository: $repository, headRepository: $headRepository, headRepositoryId: $headRepositoryId, displayTitle: $displayTitle)';
+
  }

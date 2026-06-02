@@ -49,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuiteConclusion($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CheckRunWithSimpleCheckSuiteConclusion($value)';
+
  }
 /// A check performed on the code of a given code change
 @immutable final class CheckRunWithSimpleCheckSuite {const CheckRunWithSimpleCheckSuite({required this.app, required this.checkSuite, required this.completedAt, required this.conclusion, required this.detailsUrl, required this.externalId, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.output, required this.pullRequests, required this.startedAt, required this.status, required this.url, this.deployment, });
@@ -169,7 +172,7 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? check
   status: status ?? this.status,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckRunWithSimpleCheckSuite &&
           app == other.app &&
           checkSuite == other.checkSuite &&
@@ -187,7 +190,10 @@ CheckRunWithSimpleCheckSuite copyWith({Integration? app, SimpleCheckSuite? check
           listEquals(pullRequests, other.pullRequests) &&
           startedAt == other.startedAt &&
           status == other.status &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(app, checkSuite, completedAt, conclusion, deployment, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, output, Object.hashAll(pullRequests), startedAt, status, url); } 
-@override String toString() { return 'CheckRunWithSimpleCheckSuite(app: $app, checkSuite: $checkSuite, completedAt: $completedAt, conclusion: $conclusion, deployment: $deployment, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, output: $output, pullRequests: $pullRequests, startedAt: $startedAt, status: $status, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(app, checkSuite, completedAt, conclusion, deployment, detailsUrl, externalId, headSha, htmlUrl, id, name, nodeId, output, Object.hashAll(pullRequests), startedAt, status, url);
+
+@override String toString() => 'CheckRunWithSimpleCheckSuite(app: $app, checkSuite: $checkSuite, completedAt: $completedAt, conclusion: $conclusion, deployment: $deployment, detailsUrl: $detailsUrl, externalId: $externalId, headSha: $headSha, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, output: $output, pullRequests: $pullRequests, startedAt: $startedAt, status: $status, url: $url)';
+
  }

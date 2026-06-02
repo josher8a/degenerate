@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType($value)';
+
  }
 /// Returned when the model-generated function call arguments are done streaming.
 /// Also emitted when a Response is interrupted, incomplete, or cancelled.
@@ -92,7 +95,7 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? event
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaServerEventResponseFunctionCallArgumentsDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -101,7 +104,10 @@ RealtimeBetaServerEventResponseFunctionCallArgumentsDone copyWith({String? event
           outputIndex == other.outputIndex &&
           callId == other.callId &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments); } 
-@override String toString() { return 'RealtimeBetaServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments);
+
+@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)';
+
  }

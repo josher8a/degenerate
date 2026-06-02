@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DataType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DataType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DataType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DataType($value)';
+
  }
 @immutable final class CustomMetadata {const CustomMetadata({required this.dataType, required this.fieldName, });
 
@@ -53,10 +56,13 @@ CustomMetadata copyWith({DataType? dataType, String? fieldName, }) { return Cust
   dataType: dataType ?? this.dataType,
   fieldName: fieldName ?? this.fieldName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomMetadata &&
           dataType == other.dataType &&
-          fieldName == other.fieldName; } 
-@override int get hashCode { return Object.hash(dataType, fieldName); } 
-@override String toString() { return 'CustomMetadata(dataType: $dataType, fieldName: $fieldName)'; } 
+          fieldName == other.fieldName;
+
+@override int get hashCode => Object.hash(dataType, fieldName);
+
+@override String toString() => 'CustomMetadata(dataType: $dataType, fieldName: $fieldName)';
+
  }

@@ -27,10 +27,13 @@ Grant copyWith({String? Function()? accessTokenLifetime, String? Function()? ses
   accessTokenLifetime: accessTokenLifetime != null ? accessTokenLifetime() : this.accessTokenLifetime,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Grant &&
           accessTokenLifetime == other.accessTokenLifetime &&
-          sessionDuration == other.sessionDuration; } 
-@override int get hashCode { return Object.hash(accessTokenLifetime, sessionDuration); } 
-@override String toString() { return 'Grant(accessTokenLifetime: $accessTokenLifetime, sessionDuration: $sessionDuration)'; } 
+          sessionDuration == other.sessionDuration;
+
+@override int get hashCode => Object.hash(accessTokenLifetime, sessionDuration);
+
+@override String toString() => 'Grant(accessTokenLifetime: $accessTokenLifetime, sessionDuration: $sessionDuration)';
+
  }

@@ -179,7 +179,7 @@ OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, Alert
   hasMoreLocations: hasMoreLocations != null ? hasMoreLocations() : this.hasMoreLocations,
   assignedTo: assignedTo != null ? assignedTo() : this.assignedTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrganizationSecretScanningAlert &&
           number == other.number &&
           createdAt == other.createdAt &&
@@ -209,7 +209,10 @@ OrganizationSecretScanningAlert copyWith({AlertNumber? Function()? number, Alert
           isBase64Encoded == other.isBase64Encoded &&
           firstLocationDetected == other.firstLocationDetected &&
           hasMoreLocations == other.hasMoreLocations &&
-          assignedTo == other.assignedTo; } 
-@override int get hashCode { return Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, secretType, secretTypeDisplayName, secret, repository, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, resolutionComment, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]); } 
-@override String toString() { return 'OrganizationSecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, repository: $repository, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, resolutionComment: $resolutionComment, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)'; } 
+          assignedTo == other.assignedTo;
+
+@override int get hashCode => Object.hashAll([number, createdAt, updatedAt, url, htmlUrl, locationsUrl, state, resolution, resolvedAt, resolvedBy, secretType, secretTypeDisplayName, secret, repository, pushProtectionBypassed, pushProtectionBypassedBy, pushProtectionBypassedAt, pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl, resolutionComment, validity, publiclyLeaked, multiRepo, isBase64Encoded, firstLocationDetected, hasMoreLocations, assignedTo]);
+
+@override String toString() => 'OrganizationSecretScanningAlert(number: $number, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, locationsUrl: $locationsUrl, state: $state, resolution: $resolution, resolvedAt: $resolvedAt, resolvedBy: $resolvedBy, secretType: $secretType, secretTypeDisplayName: $secretTypeDisplayName, secret: $secret, repository: $repository, pushProtectionBypassed: $pushProtectionBypassed, pushProtectionBypassedBy: $pushProtectionBypassedBy, pushProtectionBypassedAt: $pushProtectionBypassedAt, pushProtectionBypassRequestReviewer: $pushProtectionBypassRequestReviewer, pushProtectionBypassRequestReviewerComment: $pushProtectionBypassRequestReviewerComment, pushProtectionBypassRequestComment: $pushProtectionBypassRequestComment, pushProtectionBypassRequestHtmlUrl: $pushProtectionBypassRequestHtmlUrl, resolutionComment: $resolutionComment, validity: $validity, publiclyLeaked: $publiclyLeaked, multiRepo: $multiRepo, isBase64Encoded: $isBase64Encoded, firstLocationDetected: $firstLocationDetected, hasMoreLocations: $hasMoreLocations, assignedTo: $assignedTo)';
+
  }

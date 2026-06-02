@@ -23,10 +23,13 @@ NodeRuntimeHandlerFeatures copyWith({bool? Function()? recursiveReadOnlyMounts, 
   recursiveReadOnlyMounts: recursiveReadOnlyMounts != null ? recursiveReadOnlyMounts() : this.recursiveReadOnlyMounts,
   userNamespaces: userNamespaces != null ? userNamespaces() : this.userNamespaces,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NodeRuntimeHandlerFeatures &&
           recursiveReadOnlyMounts == other.recursiveReadOnlyMounts &&
-          userNamespaces == other.userNamespaces; } 
-@override int get hashCode { return Object.hash(recursiveReadOnlyMounts, userNamespaces); } 
-@override String toString() { return 'NodeRuntimeHandlerFeatures(recursiveReadOnlyMounts: $recursiveReadOnlyMounts, userNamespaces: $userNamespaces)'; } 
+          userNamespaces == other.userNamespaces;
+
+@override int get hashCode => Object.hash(recursiveReadOnlyMounts, userNamespaces);
+
+@override String toString() => 'NodeRuntimeHandlerFeatures(recursiveReadOnlyMounts: $recursiveReadOnlyMounts, userNamespaces: $userNamespaces)';
+
  }

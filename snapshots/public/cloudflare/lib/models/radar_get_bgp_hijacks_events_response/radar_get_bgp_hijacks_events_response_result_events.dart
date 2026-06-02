@@ -117,7 +117,7 @@ RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int
   victimAsns: victimAsns ?? this.victimAsns,
   victimCountries: victimCountries ?? this.victimCountries,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpHijacksEventsResponseResultEvents &&
           confidenceScore == other.confidenceScore &&
           duration == other.duration &&
@@ -136,7 +136,10 @@ RadarGetBgpHijacksEventsResponseResultEvents copyWith({int? confidenceScore, int
           listEquals(prefixes, other.prefixes) &&
           listEquals(tags, other.tags) &&
           listEquals(victimAsns, other.victimAsns) &&
-          listEquals(victimCountries, other.victimCountries); } 
-@override int get hashCode { return Object.hash(confidenceScore, duration, eventType, hijackMsgsCount, hijackerAsn, hijackerCountry, id, isStale, maxHijackTs, maxMsgTs, minHijackTs, onGoingCount, Object.hashAll(peerAsns), peerIpCount, Object.hashAll(prefixes), Object.hashAll(tags), Object.hashAll(victimAsns), Object.hashAll(victimCountries)); } 
-@override String toString() { return 'RadarGetBgpHijacksEventsResponseResultEvents(confidenceScore: $confidenceScore, duration: $duration, eventType: $eventType, hijackMsgsCount: $hijackMsgsCount, hijackerAsn: $hijackerAsn, hijackerCountry: $hijackerCountry, id: $id, isStale: $isStale, maxHijackTs: $maxHijackTs, maxMsgTs: $maxMsgTs, minHijackTs: $minHijackTs, onGoingCount: $onGoingCount, peerAsns: $peerAsns, peerIpCount: $peerIpCount, prefixes: $prefixes, tags: $tags, victimAsns: $victimAsns, victimCountries: $victimCountries)'; } 
+          listEquals(victimCountries, other.victimCountries);
+
+@override int get hashCode => Object.hash(confidenceScore, duration, eventType, hijackMsgsCount, hijackerAsn, hijackerCountry, id, isStale, maxHijackTs, maxMsgTs, minHijackTs, onGoingCount, Object.hashAll(peerAsns), peerIpCount, Object.hashAll(prefixes), Object.hashAll(tags), Object.hashAll(victimAsns), Object.hashAll(victimCountries));
+
+@override String toString() => 'RadarGetBgpHijacksEventsResponseResultEvents(confidenceScore: $confidenceScore, duration: $duration, eventType: $eventType, hijackMsgsCount: $hijackMsgsCount, hijackerAsn: $hijackerAsn, hijackerCountry: $hijackerCountry, id: $id, isStale: $isStale, maxHijackTs: $maxHijackTs, maxMsgTs: $maxMsgTs, minHijackTs: $minHijackTs, onGoingCount: $onGoingCount, peerAsns: $peerAsns, peerIpCount: $peerIpCount, prefixes: $prefixes, tags: $tags, victimAsns: $victimAsns, victimCountries: $victimCountries)';
+
  }

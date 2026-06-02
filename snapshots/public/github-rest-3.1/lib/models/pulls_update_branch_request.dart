@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PullsUpdateBranchRequest copyWith({String? Function()? expectedHeadSha}) { return PullsUpdateBranchRequest(
   expectedHeadSha: expectedHeadSha != null ? expectedHeadSha() : this.expectedHeadSha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullsUpdateBranchRequest &&
-          expectedHeadSha == other.expectedHeadSha; } 
-@override int get hashCode { return expectedHeadSha.hashCode; } 
-@override String toString() { return 'PullsUpdateBranchRequest(expectedHeadSha: $expectedHeadSha)'; } 
+          expectedHeadSha == other.expectedHeadSha;
+
+@override int get hashCode => expectedHeadSha.hashCode;
+
+@override String toString() => 'PullsUpdateBranchRequest(expectedHeadSha: $expectedHeadSha)';
+
  }

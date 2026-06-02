@@ -17,7 +17,8 @@ final class WorkersAiPostRunHfMistral7bInstructError$400 extends WorkersAiPostRu
 
 final $2Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunHfMistral7bInstructError$Unknown extends WorkersAiPostRunHfMistral7bInstructError {const WorkersAiPostRunHfMistral7bInstructError$Unknown(this.statusCode, this.rawBody, );
 

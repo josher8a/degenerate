@@ -82,7 +82,7 @@ PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, Pos
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentIncrementAuthorizationRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -93,7 +93,10 @@ PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, Pos
           metadata == other.metadata &&
           paymentDetails == other.paymentDetails &&
           statementDescriptor == other.statementDescriptor &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(amount, amountDetails, applicationFeeAmount, description, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, statementDescriptor, transferData); } 
-@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, description: $description, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hash(amount, amountDetails, applicationFeeAmount, description, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, statementDescriptor, transferData);
+
+@override String toString() => 'PostPaymentIntentsIntentIncrementAuthorizationRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, description: $description, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)';
+
  }

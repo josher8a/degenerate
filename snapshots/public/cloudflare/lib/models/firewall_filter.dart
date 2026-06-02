@@ -64,13 +64,16 @@ FirewallFilter copyWith({FirewallFiltersComponentsSchemasDescription? Function()
   paused: paused != null ? paused() : this.paused,
   ref: ref != null ? ref() : this.ref,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallFilter &&
           description == other.description &&
           expression == other.expression &&
           id == other.id &&
           paused == other.paused &&
-          ref == other.ref; } 
-@override int get hashCode { return Object.hash(description, expression, id, paused, ref); } 
-@override String toString() { return 'FirewallFilter(description: $description, expression: $expression, id: $id, paused: $paused, ref: $ref)'; } 
+          ref == other.ref;
+
+@override int get hashCode => Object.hash(description, expression, id, paused, ref);
+
+@override String toString() => 'FirewallFilter(description: $description, expression: $expression, id: $id, paused: $paused, ref: $ref)';
+
  }

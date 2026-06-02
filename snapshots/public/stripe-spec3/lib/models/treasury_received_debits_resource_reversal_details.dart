@@ -23,10 +23,13 @@ TreasuryReceivedDebitsResourceReversalDetails copyWith({int? Function()? deadlin
   deadline: deadline != null ? deadline() : this.deadline,
   restrictedReason: restrictedReason != null ? restrictedReason() : this.restrictedReason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryReceivedDebitsResourceReversalDetails &&
           deadline == other.deadline &&
-          restrictedReason == other.restrictedReason; } 
-@override int get hashCode { return Object.hash(deadline, restrictedReason); } 
-@override String toString() { return 'TreasuryReceivedDebitsResourceReversalDetails(deadline: $deadline, restrictedReason: $restrictedReason)'; } 
+          restrictedReason == other.restrictedReason;
+
+@override int get hashCode => Object.hash(deadline, restrictedReason);
+
+@override String toString() => 'TreasuryReceivedDebitsResourceReversalDetails(deadline: $deadline, restrictedReason: $restrictedReason)';
+
  }

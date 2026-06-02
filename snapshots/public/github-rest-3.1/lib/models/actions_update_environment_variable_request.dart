@@ -22,10 +22,13 @@ ActionsUpdateEnvironmentVariableRequest copyWith({String? Function()? name, Stri
   name: name != null ? name() : this.name,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsUpdateEnvironmentVariableRequest &&
           name == other.name &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(name, value); } 
-@override String toString() { return 'ActionsUpdateEnvironmentVariableRequest(name: $name, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(name, value);
+
+@override String toString() => 'ActionsUpdateEnvironmentVariableRequest(name: $name, value: $value)';
+
  }

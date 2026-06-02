@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CloudforceOneRequestsRequestMessageEdit copyWith({CloudforceOneRequestsMessageContent? Function()? content}) { return CloudforceOneRequestsRequestMessageEdit(
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CloudforceOneRequestsRequestMessageEdit &&
-          content == other.content; } 
-@override int get hashCode { return content.hashCode; } 
-@override String toString() { return 'CloudforceOneRequestsRequestMessageEdit(content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => content.hashCode;
+
+@override String toString() => 'CloudforceOneRequestsRequestMessageEdit(content: $content)';
+
  }

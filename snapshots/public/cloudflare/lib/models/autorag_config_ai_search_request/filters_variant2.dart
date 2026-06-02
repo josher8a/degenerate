@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FiltersVariant2Type && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FiltersVariant2Type($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FiltersVariant2Type && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FiltersVariant2Type($value)';
+
  }
 @immutable final class FiltersVariant2 {const FiltersVariant2({required this.filters, required this.type, });
 
@@ -45,10 +48,13 @@ FiltersVariant2 copyWith({List<Variant2Filters>? filters, FiltersVariant2Type? t
   filters: filters ?? this.filters,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FiltersVariant2 &&
           listEquals(filters, other.filters) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(filters), type); } 
-@override String toString() { return 'FiltersVariant2(filters: $filters, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(filters), type);
+
+@override String toString() => 'FiltersVariant2(filters: $filters, type: $type)';
+
  }

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest copyWith({CacheRulesOriginH2MaxStreamsValue? value}) { return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest &&
-          value == other.value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(value: $value)';
+
  }

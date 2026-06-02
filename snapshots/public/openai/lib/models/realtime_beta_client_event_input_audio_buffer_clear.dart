@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventInputAudioBufferClearType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferClearType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventInputAudioBufferClearType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferClearType($value)';
+
  }
 /// Send this event to clear the audio bytes in the buffer. The server will
 /// respond with an `input_audio_buffer.cleared` event.
@@ -47,10 +50,13 @@ RealtimeBetaClientEventInputAudioBufferClear copyWith({String? Function()? event
   eventId: eventId != null ? eventId() : this.eventId,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventInputAudioBufferClear &&
           eventId == other.eventId &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(eventId, type); } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferClear(eventId: $eventId, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(eventId, type);
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferClear(eventId: $eventId, type: $type)';
+
  }

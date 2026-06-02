@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ContentSubmoduleType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ContentSubmoduleType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ContentSubmoduleType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ContentSubmoduleType($value)';
+
  }
 /// An object describing a submodule
 @immutable final class ContentSubmodule {const ContentSubmodule({required this.type, required this.submoduleGitUrl, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, });
@@ -97,7 +100,7 @@ ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int
   downloadUrl: downloadUrl != null ? downloadUrl() : this.downloadUrl,
   links: links ?? this.links,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentSubmodule &&
           type == other.type &&
           submoduleGitUrl == other.submoduleGitUrl &&
@@ -109,7 +112,10 @@ ContentSubmodule copyWith({ContentSubmoduleType? type, Uri? submoduleGitUrl, int
           gitUrl == other.gitUrl &&
           htmlUrl == other.htmlUrl &&
           downloadUrl == other.downloadUrl &&
-          links == other.links; } 
-@override int get hashCode { return Object.hash(type, submoduleGitUrl, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links); } 
-@override String toString() { return 'ContentSubmodule(type: $type, submoduleGitUrl: $submoduleGitUrl, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)'; } 
+          links == other.links;
+
+@override int get hashCode => Object.hash(type, submoduleGitUrl, size, name, path, sha, url, gitUrl, htmlUrl, downloadUrl, links);
+
+@override String toString() => 'ContentSubmodule(type: $type, submoduleGitUrl: $submoduleGitUrl, size: $size, name: $name, path: $path, sha: $sha, url: $url, gitUrl: $gitUrl, htmlUrl: $htmlUrl, downloadUrl: $downloadUrl, links: $links)';
+
  }

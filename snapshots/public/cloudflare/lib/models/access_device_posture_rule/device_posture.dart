@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('integ
 DevicePosture copyWith({String? integrationUid}) { return DevicePosture(
   integrationUid: integrationUid ?? this.integrationUid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DevicePosture &&
-          integrationUid == other.integrationUid; } 
-@override int get hashCode { return integrationUid.hashCode; } 
-@override String toString() { return 'DevicePosture(integrationUid: $integrationUid)'; } 
+          integrationUid == other.integrationUid;
+
+@override int get hashCode => integrationUid.hashCode;
+
+@override String toString() => 'DevicePosture(integrationUid: $integrationUid)';
+
  }

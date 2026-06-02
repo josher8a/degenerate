@@ -28,11 +28,14 @@ IntelPhishingUrlSubmit copyWith({List<ExcludedUrls>? Function()? excludedUrls, L
   skippedUrls: skippedUrls != null ? skippedUrls() : this.skippedUrls,
   submittedUrls: submittedUrls != null ? submittedUrls() : this.submittedUrls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelPhishingUrlSubmit &&
           listEquals(excludedUrls, other.excludedUrls) &&
           listEquals(skippedUrls, other.skippedUrls) &&
-          listEquals(submittedUrls, other.submittedUrls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(excludedUrls ?? const []), Object.hashAll(skippedUrls ?? const []), Object.hashAll(submittedUrls ?? const [])); } 
-@override String toString() { return 'IntelPhishingUrlSubmit(excludedUrls: $excludedUrls, skippedUrls: $skippedUrls, submittedUrls: $submittedUrls)'; } 
+          listEquals(submittedUrls, other.submittedUrls);
+
+@override int get hashCode => Object.hash(Object.hashAll(excludedUrls ?? const []), Object.hashAll(skippedUrls ?? const []), Object.hashAll(submittedUrls ?? const []));
+
+@override String toString() => 'IntelPhishingUrlSubmit(excludedUrls: $excludedUrls, skippedUrls: $skippedUrls, submittedUrls: $submittedUrls)';
+
  }

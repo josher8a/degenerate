@@ -34,10 +34,13 @@ AccountDashboardSettings copyWith({String? Function()? displayName, String? Func
   displayName: displayName != null ? displayName() : this.displayName,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountDashboardSettings &&
           displayName == other.displayName &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(displayName, timezone); } 
-@override String toString() { return 'AccountDashboardSettings(displayName: $displayName, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(displayName, timezone);
+
+@override String toString() => 'AccountDashboardSettings(displayName: $displayName, timezone: $timezone)';
+
  }

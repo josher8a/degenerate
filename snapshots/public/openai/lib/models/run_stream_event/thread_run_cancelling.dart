@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadRunCancellingEvent && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadRunCancellingEvent($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadRunCancellingEvent && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadRunCancellingEvent($value)';
+
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
 @immutable final class ThreadRunCancelling {const ThreadRunCancelling({required this.event, required this.data, });
@@ -43,10 +46,13 @@ ThreadRunCancelling copyWith({ThreadRunCancellingEvent? event, RunObject? data, 
   event: event ?? this.event,
   data: data ?? this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadRunCancelling &&
           event == other.event &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(event, data); } 
-@override String toString() { return 'ThreadRunCancelling(event: $event, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(event, data);
+
+@override String toString() => 'ThreadRunCancelling(event: $event, data: $data)';
+
  }

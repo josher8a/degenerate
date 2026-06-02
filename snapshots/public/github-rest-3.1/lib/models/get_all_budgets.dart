@@ -28,11 +28,14 @@ GetAllBudgets copyWith({List<Budget>? budgets, bool? Function()? hasNextPage, in
   hasNextPage: hasNextPage != null ? hasNextPage() : this.hasNextPage,
   totalCount: totalCount != null ? totalCount() : this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetAllBudgets &&
           listEquals(budgets, other.budgets) &&
           hasNextPage == other.hasNextPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(Object.hashAll(budgets), hasNextPage, totalCount); } 
-@override String toString() { return 'GetAllBudgets(budgets: $budgets, hasNextPage: $hasNextPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(Object.hashAll(budgets), hasNextPage, totalCount);
+
+@override String toString() => 'GetAllBudgets(budgets: $budgets, hasNextPage: $hasNextPage, totalCount: $totalCount)';
+
  }

@@ -21,10 +21,13 @@ TaxIdCollection copyWith({bool? enabled, Required? Function()? $required, }) { r
   enabled: enabled ?? this.enabled,
   $required: $required != null ? $required() : this.$required,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxIdCollection &&
           enabled == other.enabled &&
-          $required == other.$required; } 
-@override int get hashCode { return Object.hash(enabled, $required); } 
-@override String toString() { return 'TaxIdCollection(enabled: $enabled, \$required: ${$required})'; } 
+          $required == other.$required;
+
+@override int get hashCode => Object.hash(enabled, $required);
+
+@override String toString() => 'TaxIdCollection(enabled: $enabled, \$required: ${$required})';
+
  }

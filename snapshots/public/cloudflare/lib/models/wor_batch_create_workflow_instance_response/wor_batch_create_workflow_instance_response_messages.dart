@@ -21,10 +21,13 @@ WorBatchCreateWorkflowInstanceResponseMessages copyWith({double? code, String? m
   code: code ?? this.code,
   message: message ?? this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorBatchCreateWorkflowInstanceResponseMessages &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(code, message); } 
-@override String toString() { return 'WorBatchCreateWorkflowInstanceResponseMessages(code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(code, message);
+
+@override String toString() => 'WorBatchCreateWorkflowInstanceResponseMessages(code: $code, message: $message)';
+
  }

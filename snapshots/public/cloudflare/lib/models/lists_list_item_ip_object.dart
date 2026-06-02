@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip');
 ListsListItemIpObject copyWith({ListsItemIp? ip}) { return ListsListItemIpObject(
   ip: ip ?? this.ip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsListItemIpObject &&
-          ip == other.ip; } 
-@override int get hashCode { return ip.hashCode; } 
-@override String toString() { return 'ListsListItemIpObject(ip: $ip)'; } 
+          ip == other.ip;
+
+@override int get hashCode => ip.hashCode;
+
+@override String toString() => 'ListsListItemIpObject(ip: $ip)';
+
  }

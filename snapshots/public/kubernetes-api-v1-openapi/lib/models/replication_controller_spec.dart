@@ -35,12 +35,15 @@ ReplicationControllerSpec copyWith({int Function()? minReadySeconds, int Functio
   selector: selector != null ? selector() : this.selector,
   template: template != null ? template() : this.template,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReplicationControllerSpec &&
           minReadySeconds == other.minReadySeconds &&
           replicas == other.replicas &&
           selector == other.selector &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(minReadySeconds, replicas, selector, template); } 
-@override String toString() { return 'ReplicationControllerSpec(minReadySeconds: $minReadySeconds, replicas: $replicas, selector: $selector, template: $template)'; } 
+          template == other.template;
+
+@override int get hashCode => Object.hash(minReadySeconds, replicas, selector, template);
+
+@override String toString() => 'ReplicationControllerSpec(minReadySeconds: $minReadySeconds, replicas: $replicas, selector: $selector, template: $template)';
+
  }

@@ -67,7 +67,7 @@ MqEventSubscription copyWith({DateTime? createdAt, MqEventDestination? destinati
   name: name ?? this.name,
   source: source ?? this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqEventSubscription &&
           createdAt == other.createdAt &&
           destination == other.destination &&
@@ -76,7 +76,10 @@ MqEventSubscription copyWith({DateTime? createdAt, MqEventDestination? destinati
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(createdAt, destination, enabled, Object.hashAll(events), id, modifiedAt, name, source); } 
-@override String toString() { return 'MqEventSubscription(createdAt: $createdAt, destination: $destination, enabled: $enabled, events: $events, id: $id, modifiedAt: $modifiedAt, name: $name, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(createdAt, destination, enabled, Object.hashAll(events), id, modifiedAt, name, source);
+
+@override String toString() => 'MqEventSubscription(createdAt: $createdAt, destination: $destination, enabled: $enabled, events: $events, id: $id, modifiedAt: $modifiedAt, name: $name, source: $source)';
+
  }

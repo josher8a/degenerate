@@ -24,9 +24,12 @@ return errors; }
 RefundDestinationDetailsCrypto copyWith({String? Function()? reference}) { return RefundDestinationDetailsCrypto(
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetailsCrypto &&
-          reference == other.reference; } 
-@override int get hashCode { return reference.hashCode; } 
-@override String toString() { return 'RefundDestinationDetailsCrypto(reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => reference.hashCode;
+
+@override String toString() => 'RefundDestinationDetailsCrypto(reference: $reference)';
+
  }

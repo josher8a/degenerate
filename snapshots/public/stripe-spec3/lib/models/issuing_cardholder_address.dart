@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
 IssuingCardholderAddress copyWith({Address? address}) { return IssuingCardholderAddress(
   address: address ?? this.address,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholderAddress &&
-          address == other.address; } 
-@override int get hashCode { return address.hashCode; } 
-@override String toString() { return 'IssuingCardholderAddress(address: $address)'; } 
+          address == other.address;
+
+@override int get hashCode => address.hashCode;
+
+@override String toString() => 'IssuingCardholderAddress(address: $address)';
+
  }

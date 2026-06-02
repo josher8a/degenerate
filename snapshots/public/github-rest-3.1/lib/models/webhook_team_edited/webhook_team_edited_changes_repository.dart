@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('permi
 WebhookTeamEditedChangesRepository copyWith({RepositoryPermissions? permissions}) { return WebhookTeamEditedChangesRepository(
   permissions: permissions ?? this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamEditedChangesRepository &&
-          permissions == other.permissions; } 
-@override int get hashCode { return permissions.hashCode; } 
-@override String toString() { return 'WebhookTeamEditedChangesRepository(permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => permissions.hashCode;
+
+@override String toString() => 'WebhookTeamEditedChangesRepository(permissions: $permissions)';
+
  }

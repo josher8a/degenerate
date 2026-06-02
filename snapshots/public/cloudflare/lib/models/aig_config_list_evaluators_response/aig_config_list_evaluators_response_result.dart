@@ -57,7 +57,7 @@ AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? des
   name: name ?? this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigListEvaluatorsResponseResult &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -66,7 +66,10 @@ AigConfigListEvaluatorsResponseResult copyWith({DateTime? createdAt, String? des
           mandatory == other.mandatory &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, description, enable, id, mandatory, modifiedAt, name, type); } 
-@override String toString() { return 'AigConfigListEvaluatorsResponseResult(createdAt: $createdAt, description: $description, enable: $enable, id: $id, mandatory: $mandatory, modifiedAt: $modifiedAt, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, description, enable, id, mandatory, modifiedAt, name, type);
+
+@override String toString() => 'AigConfigListEvaluatorsResponseResult(createdAt: $createdAt, description: $description, enable: $enable, id: $id, mandatory: $mandatory, modifiedAt: $modifiedAt, name: $name, type: $type)';
+
  }

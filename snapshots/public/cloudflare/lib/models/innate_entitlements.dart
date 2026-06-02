@@ -45,14 +45,17 @@ InnateEntitlements copyWith({BoolAllocation? allowAddSubdomain, BoolAllocation? 
   mhsCertificateCount: mhsCertificateCount ?? this.mhsCertificateCount,
   partialSetupAllowed: partialSetupAllowed ?? this.partialSetupAllowed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InnateEntitlements &&
           allowAddSubdomain == other.allowAddSubdomain &&
           allowAutoAcceptInvites == other.allowAutoAcceptInvites &&
           cnameSetupAllowed == other.cnameSetupAllowed &&
           listEquals(customEntitlements, other.customEntitlements) &&
           mhsCertificateCount == other.mhsCertificateCount &&
-          partialSetupAllowed == other.partialSetupAllowed; } 
-@override int get hashCode { return Object.hash(allowAddSubdomain, allowAutoAcceptInvites, cnameSetupAllowed, Object.hashAll(customEntitlements ?? const []), mhsCertificateCount, partialSetupAllowed); } 
-@override String toString() { return 'InnateEntitlements(allowAddSubdomain: $allowAddSubdomain, allowAutoAcceptInvites: $allowAutoAcceptInvites, cnameSetupAllowed: $cnameSetupAllowed, customEntitlements: $customEntitlements, mhsCertificateCount: $mhsCertificateCount, partialSetupAllowed: $partialSetupAllowed)'; } 
+          partialSetupAllowed == other.partialSetupAllowed;
+
+@override int get hashCode => Object.hash(allowAddSubdomain, allowAutoAcceptInvites, cnameSetupAllowed, Object.hashAll(customEntitlements ?? const []), mhsCertificateCount, partialSetupAllowed);
+
+@override String toString() => 'InnateEntitlements(allowAddSubdomain: $allowAddSubdomain, allowAutoAcceptInvites: $allowAutoAcceptInvites, cnameSetupAllowed: $cnameSetupAllowed, customEntitlements: $customEntitlements, mhsCertificateCount: $mhsCertificateCount, partialSetupAllowed: $partialSetupAllowed)';
+
  }

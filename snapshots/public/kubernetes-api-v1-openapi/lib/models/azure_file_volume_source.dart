@@ -30,11 +30,14 @@ AzureFileVolumeSource copyWith({bool? Function()? readOnly, String? secretName, 
   secretName: secretName ?? this.secretName,
   shareName: shareName ?? this.shareName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AzureFileVolumeSource &&
           readOnly == other.readOnly &&
           secretName == other.secretName &&
-          shareName == other.shareName; } 
-@override int get hashCode { return Object.hash(readOnly, secretName, shareName); } 
-@override String toString() { return 'AzureFileVolumeSource(readOnly: $readOnly, secretName: $secretName, shareName: $shareName)'; } 
+          shareName == other.shareName;
+
+@override int get hashCode => Object.hash(readOnly, secretName, shareName);
+
+@override String toString() => 'AzureFileVolumeSource(readOnly: $readOnly, secretName: $secretName, shareName: $shareName)';
+
  }

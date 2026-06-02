@@ -64,7 +64,7 @@ UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Functio
   autoCorrectAddress: autoCorrectAddress != null ? autoCorrectAddress() : this.autoCorrectAddress,
   streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateAddressRequest &&
           friendlyName == other.friendlyName &&
           customerName == other.customerName &&
@@ -74,7 +74,10 @@ UpdateAddressRequest copyWith({String? Function()? friendlyName, String? Functio
           postalCode == other.postalCode &&
           emergencyEnabled == other.emergencyEnabled &&
           autoCorrectAddress == other.autoCorrectAddress &&
-          streetSecondary == other.streetSecondary; } 
-@override int get hashCode { return Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary); } 
-@override String toString() { return 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)'; } 
+          streetSecondary == other.streetSecondary;
+
+@override int get hashCode => Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary);
+
+@override String toString() => 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)';
+
  }

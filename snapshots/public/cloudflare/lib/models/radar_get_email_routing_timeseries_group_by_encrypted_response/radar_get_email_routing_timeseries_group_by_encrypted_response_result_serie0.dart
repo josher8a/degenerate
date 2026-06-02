@@ -21,10 +21,13 @@ RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 copyWith({Lis
   encrypted: encrypted ?? this.encrypted,
   notEncrypted: notEncrypted ?? this.notEncrypted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 &&
           listEquals(encrypted, other.encrypted) &&
-          listEquals(notEncrypted, other.notEncrypted); } 
-@override int get hashCode { return Object.hash(Object.hashAll(encrypted), Object.hashAll(notEncrypted)); } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(encrypted: $encrypted, notEncrypted: $notEncrypted)'; } 
+          listEquals(notEncrypted, other.notEncrypted);
+
+@override int get hashCode => Object.hash(Object.hashAll(encrypted), Object.hashAll(notEncrypted));
+
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(encrypted: $encrypted, notEncrypted: $notEncrypted)';
+
  }

@@ -57,7 +57,7 @@ RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioCo
   storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
   videoConfig: videoConfig != null ? videoConfig() : this.videoConfig,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitRecordingConfig &&
           audioConfig == other.audioConfig &&
           fileNamePrefix == other.fileNamePrefix &&
@@ -65,7 +65,10 @@ RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioCo
           maxSeconds == other.maxSeconds &&
           realtimekitBucketConfig == other.realtimekitBucketConfig &&
           storageConfig == other.storageConfig &&
-          videoConfig == other.videoConfig; } 
-@override int get hashCode { return Object.hash(audioConfig, fileNamePrefix, liveStreamingConfig, maxSeconds, realtimekitBucketConfig, storageConfig, videoConfig); } 
-@override String toString() { return 'RealtimekitRecordingConfig(audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, liveStreamingConfig: $liveStreamingConfig, maxSeconds: $maxSeconds, realtimekitBucketConfig: $realtimekitBucketConfig, storageConfig: $storageConfig, videoConfig: $videoConfig)'; } 
+          videoConfig == other.videoConfig;
+
+@override int get hashCode => Object.hash(audioConfig, fileNamePrefix, liveStreamingConfig, maxSeconds, realtimekitBucketConfig, storageConfig, videoConfig);
+
+@override String toString() => 'RealtimekitRecordingConfig(audioConfig: $audioConfig, fileNamePrefix: $fileNamePrefix, liveStreamingConfig: $liveStreamingConfig, maxSeconds: $maxSeconds, realtimekitBucketConfig: $realtimekitBucketConfig, storageConfig: $storageConfig, videoConfig: $videoConfig)';
+
  }

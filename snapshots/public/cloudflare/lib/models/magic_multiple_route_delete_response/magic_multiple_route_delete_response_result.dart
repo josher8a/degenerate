@@ -21,10 +21,13 @@ MagicMultipleRouteDeleteResponseResult copyWith({bool? Function()? deleted, List
   deleted: deleted != null ? deleted() : this.deleted,
   deletedRoutes: deletedRoutes != null ? deletedRoutes() : this.deletedRoutes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicMultipleRouteDeleteResponseResult &&
           deleted == other.deleted &&
-          listEquals(deletedRoutes, other.deletedRoutes); } 
-@override int get hashCode { return Object.hash(deleted, Object.hashAll(deletedRoutes ?? const [])); } 
-@override String toString() { return 'MagicMultipleRouteDeleteResponseResult(deleted: $deleted, deletedRoutes: $deletedRoutes)'; } 
+          listEquals(deletedRoutes, other.deletedRoutes);
+
+@override int get hashCode => Object.hash(deleted, Object.hashAll(deletedRoutes ?? const []));
+
+@override String toString() => 'MagicMultipleRouteDeleteResponseResult(deleted: $deleted, deletedRoutes: $deletedRoutes)';
+
  }

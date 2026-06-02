@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CustomPatternSettingsPushProtectionSetting && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CustomPatternSettingsPushProtectionSetting($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomPatternSettingsPushProtectionSetting && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomPatternSettingsPushProtectionSetting($value)';
+
  }
 @immutable final class CustomPatternSettings {const CustomPatternSettings({this.tokenType, this.customPatternVersion, this.pushProtectionSetting, });
 
@@ -53,11 +56,14 @@ CustomPatternSettings copyWith({String? Function()? tokenType, SecretScanningRow
   customPatternVersion: customPatternVersion != null ? customPatternVersion() : this.customPatternVersion,
   pushProtectionSetting: pushProtectionSetting != null ? pushProtectionSetting() : this.pushProtectionSetting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPatternSettings &&
           tokenType == other.tokenType &&
           customPatternVersion == other.customPatternVersion &&
-          pushProtectionSetting == other.pushProtectionSetting; } 
-@override int get hashCode { return Object.hash(tokenType, customPatternVersion, pushProtectionSetting); } 
-@override String toString() { return 'CustomPatternSettings(tokenType: $tokenType, customPatternVersion: $customPatternVersion, pushProtectionSetting: $pushProtectionSetting)'; } 
+          pushProtectionSetting == other.pushProtectionSetting;
+
+@override int get hashCode => Object.hash(tokenType, customPatternVersion, pushProtectionSetting);
+
+@override String toString() => 'CustomPatternSettings(tokenType: $tokenType, customPatternVersion: $customPatternVersion, pushProtectionSetting: $pushProtectionSetting)';
+
  }

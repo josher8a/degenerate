@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeConversationItemMessageUserContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeConversationItemMessageUserContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeConversationItemMessageUserContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeConversationItemMessageUserContentType($value)';
+
  }
 @immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail = Detail.auto, this.transcript, });
 
@@ -74,14 +77,17 @@ RealtimeConversationItemMessageUserContent copyWith({RealtimeConversationItemMes
   detail: detail != null ? detail() : this.detail,
   transcript: transcript != null ? transcript() : this.transcript,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeConversationItemMessageUserContent &&
           type == other.type &&
           text == other.text &&
           audio == other.audio &&
           imageUrl == other.imageUrl &&
           detail == other.detail &&
-          transcript == other.transcript; } 
-@override int get hashCode { return Object.hash(type, text, audio, imageUrl, detail, transcript); } 
-@override String toString() { return 'RealtimeConversationItemMessageUserContent(type: $type, text: $text, audio: $audio, imageUrl: $imageUrl, detail: $detail, transcript: $transcript)'; } 
+          transcript == other.transcript;
+
+@override int get hashCode => Object.hash(type, text, audio, imageUrl, detail, transcript);
+
+@override String toString() => 'RealtimeConversationItemMessageUserContent(type: $type, text: $text, audio: $audio, imageUrl: $imageUrl, detail: $detail, transcript: $transcript)';
+
  }

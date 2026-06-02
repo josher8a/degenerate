@@ -24,10 +24,13 @@ CreateChatCompletionResponseChoicesLogprobs copyWith({List<ChatCompletionTokenLo
   content: content != null ? content() : this.content,
   refusal: refusal != null ? refusal() : this.refusal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateChatCompletionResponseChoicesLogprobs &&
           listEquals(content, other.content) &&
-          listEquals(refusal, other.refusal); } 
-@override int get hashCode { return Object.hash(Object.hashAll(content ?? const []), Object.hashAll(refusal ?? const [])); } 
-@override String toString() { return 'CreateChatCompletionResponseChoicesLogprobs(content: $content, refusal: $refusal)'; } 
+          listEquals(refusal, other.refusal);
+
+@override int get hashCode => Object.hash(Object.hashAll(content ?? const []), Object.hashAll(refusal ?? const []));
+
+@override String toString() => 'CreateChatCompletionResponseChoicesLogprobs(content: $content, refusal: $refusal)';
+
  }

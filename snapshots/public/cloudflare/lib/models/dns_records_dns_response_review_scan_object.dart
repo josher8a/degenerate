@@ -20,10 +20,13 @@ DnsRecordsDnsResponseReviewScanObject copyWith({List<Map<String, dynamic>>? Func
   accepts: accepts != null ? accepts() : this.accepts,
   rejects: rejects != null ? rejects() : this.rejects,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDnsResponseReviewScanObject &&
           listEquals(accepts, other.accepts) &&
-          listEquals(rejects, other.rejects); } 
-@override int get hashCode { return Object.hash(Object.hashAll(accepts ?? const []), Object.hashAll(rejects ?? const [])); } 
-@override String toString() { return 'DnsRecordsDnsResponseReviewScanObject(accepts: $accepts, rejects: $rejects)'; } 
+          listEquals(rejects, other.rejects);
+
+@override int get hashCode => Object.hash(Object.hashAll(accepts ?? const []), Object.hashAll(rejects ?? const []));
+
+@override String toString() => 'DnsRecordsDnsResponseReviewScanObject(accepts: $accepts, rejects: $rejects)';
+
  }

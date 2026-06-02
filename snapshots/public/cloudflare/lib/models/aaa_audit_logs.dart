@@ -78,7 +78,7 @@ AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor
   resource: resource != null ? resource() : this.resource,
   when: when != null ? when() : this.when,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaAuditLogs &&
           action == other.action &&
           actor == other.actor &&
@@ -89,7 +89,10 @@ AaaAuditLogs copyWith({AaaAuditLogsAction? Function()? action, AaaAuditLogsActor
           oldValue == other.oldValue &&
           owner == other.owner &&
           resource == other.resource &&
-          when == other.when; } 
-@override int get hashCode { return Object.hash(action, actor, id, $interface, metadata, newValue, oldValue, owner, resource, when); } 
-@override String toString() { return 'AaaAuditLogs(action: $action, actor: $actor, id: $id, \$interface: ${$interface}, metadata: $metadata, newValue: $newValue, oldValue: $oldValue, owner: $owner, resource: $resource, when: $when)'; } 
+          when == other.when;
+
+@override int get hashCode => Object.hash(action, actor, id, $interface, metadata, newValue, oldValue, owner, resource, when);
+
+@override String toString() => 'AaaAuditLogs(action: $action, actor: $actor, id: $id, \$interface: ${$interface}, metadata: $metadata, newValue: $newValue, oldValue: $oldValue, owner: $owner, resource: $resource, when: $when)';
+
  }

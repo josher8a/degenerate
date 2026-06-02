@@ -21,9 +21,12 @@ return errors; }
 InsightsResourcesPaymentEvaluationClientDeviceMetadata copyWith({String? radarSession}) { return InsightsResourcesPaymentEvaluationClientDeviceMetadata(
   radarSession: radarSession ?? this.radarSession,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InsightsResourcesPaymentEvaluationClientDeviceMetadata &&
-          radarSession == other.radarSession; } 
-@override int get hashCode { return radarSession.hashCode; } 
-@override String toString() { return 'InsightsResourcesPaymentEvaluationClientDeviceMetadata(radarSession: $radarSession)'; } 
+          radarSession == other.radarSession;
+
+@override int get hashCode => radarSession.hashCode;
+
+@override String toString() => 'InsightsResourcesPaymentEvaluationClientDeviceMetadata(radarSession: $radarSession)';
+
  }

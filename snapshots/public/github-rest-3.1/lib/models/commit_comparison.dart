@@ -25,10 +25,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CommitComparisonStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CommitComparisonStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CommitComparisonStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CommitComparisonStatus($value)';
+
  }
 /// Commit Comparison
 @immutable final class CommitComparison {const CommitComparison({required this.url, required this.htmlUrl, required this.permalinkUrl, required this.diffUrl, required this.patchUrl, required this.baseCommit, required this.mergeBaseCommit, required this.status, required this.aheadBy, required this.behindBy, required this.totalCommits, required this.commits, this.files, });
@@ -117,7 +120,7 @@ CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffU
   commits: commits ?? this.commits,
   files: files != null ? files() : this.files,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CommitComparison &&
           url == other.url &&
           htmlUrl == other.htmlUrl &&
@@ -131,7 +134,10 @@ CommitComparison copyWith({Uri? url, Uri? htmlUrl, Uri? permalinkUrl, Uri? diffU
           behindBy == other.behindBy &&
           totalCommits == other.totalCommits &&
           listEquals(commits, other.commits) &&
-          listEquals(files, other.files); } 
-@override int get hashCode { return Object.hash(url, htmlUrl, permalinkUrl, diffUrl, patchUrl, baseCommit, mergeBaseCommit, status, aheadBy, behindBy, totalCommits, Object.hashAll(commits), Object.hashAll(files ?? const [])); } 
-@override String toString() { return 'CommitComparison(url: $url, htmlUrl: $htmlUrl, permalinkUrl: $permalinkUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, baseCommit: $baseCommit, mergeBaseCommit: $mergeBaseCommit, status: $status, aheadBy: $aheadBy, behindBy: $behindBy, totalCommits: $totalCommits, commits: $commits, files: $files)'; } 
+          listEquals(files, other.files);
+
+@override int get hashCode => Object.hash(url, htmlUrl, permalinkUrl, diffUrl, patchUrl, baseCommit, mergeBaseCommit, status, aheadBy, behindBy, totalCommits, Object.hashAll(commits), Object.hashAll(files ?? const []));
+
+@override String toString() => 'CommitComparison(url: $url, htmlUrl: $htmlUrl, permalinkUrl: $permalinkUrl, diffUrl: $diffUrl, patchUrl: $patchUrl, baseCommit: $baseCommit, mergeBaseCommit: $mergeBaseCommit, status: $status, aheadBy: $aheadBy, behindBy: $behindBy, totalCommits: $totalCommits, commits: $commits, files: $files)';
+
  }

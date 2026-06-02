@@ -30,10 +30,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsCustomNameserversCustomNsStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnsCustomNameserversCustomNsStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnsCustomNameserversCustomNsStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnsCustomNameserversCustomNsStatus($value)';
+
  }
 /// A single account custom nameserver.
 @immutable final class DnsCustomNameserversCustomNs {const DnsCustomNameserversCustomNs({required this.dnsRecords, required this.nsName, required this.status, required this.zoneTag, this.nsSet, });
@@ -78,13 +81,16 @@ DnsCustomNameserversCustomNs copyWith({List<DnsRecords>? dnsRecords, DnsCustomNa
   status: status ?? this.status,
   zoneTag: zoneTag ?? this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsCustomNameserversCustomNs &&
           listEquals(dnsRecords, other.dnsRecords) &&
           nsName == other.nsName &&
           nsSet == other.nsSet &&
           status == other.status &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(Object.hashAll(dnsRecords), nsName, nsSet, status, zoneTag); } 
-@override String toString() { return 'DnsCustomNameserversCustomNs(dnsRecords: $dnsRecords, nsName: $nsName, nsSet: $nsSet, status: $status, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(Object.hashAll(dnsRecords), nsName, nsSet, status, zoneTag);
+
+@override String toString() => 'DnsCustomNameserversCustomNs(dnsRecords: $dnsRecords, nsName: $nsName, nsSet: $nsSet, status: $status, zoneTag: $zoneTag)';
+
  }

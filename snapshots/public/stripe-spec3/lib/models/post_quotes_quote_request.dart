@@ -135,7 +135,7 @@ PostQuotesQuoteRequest copyWith({ApplicationFeeAmount? Function()? applicationFe
   subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
   transferData: transferData != null ? transferData() : this.transferData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesQuoteRequest &&
           applicationFeeAmount == other.applicationFeeAmount &&
           applicationFeePercent == other.applicationFeePercent &&
@@ -155,7 +155,10 @@ PostQuotesQuoteRequest copyWith({ApplicationFeeAmount? Function()? applicationFe
           metadata == other.metadata &&
           onBehalfOf == other.onBehalfOf &&
           subscriptionData == other.subscriptionData &&
-          transferData == other.transferData; } 
-@override int get hashCode { return Object.hash(applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, customer, customerAccount, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), expiresAt, footer, header, invoiceSettings, Object.hashAll(lineItems ?? const []), metadata, onBehalfOf, subscriptionData, transferData); } 
-@override String toString() { return 'PostQuotesQuoteRequest(applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, expiresAt: $expiresAt, footer: $footer, header: $header, invoiceSettings: $invoiceSettings, lineItems: $lineItems, metadata: $metadata, onBehalfOf: $onBehalfOf, subscriptionData: $subscriptionData, transferData: $transferData)'; } 
+          transferData == other.transferData;
+
+@override int get hashCode => Object.hash(applicationFeeAmount, applicationFeePercent, automaticTax, collectionMethod, customer, customerAccount, defaultTaxRates, description, discounts, Object.hashAll(expand ?? const []), expiresAt, footer, header, invoiceSettings, Object.hashAll(lineItems ?? const []), metadata, onBehalfOf, subscriptionData, transferData);
+
+@override String toString() => 'PostQuotesQuoteRequest(applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, collectionMethod: $collectionMethod, customer: $customer, customerAccount: $customerAccount, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, expand: $expand, expiresAt: $expiresAt, footer: $footer, header: $header, invoiceSettings: $invoiceSettings, lineItems: $lineItems, metadata: $metadata, onBehalfOf: $onBehalfOf, subscriptionData: $subscriptionData, transferData: $transferData)';
+
  }

@@ -28,11 +28,14 @@ ContributorActivity copyWith({SimpleUser? Function()? author, int? total, List<W
   total: total ?? this.total,
   weeks: weeks ?? this.weeks,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContributorActivity &&
           author == other.author &&
           total == other.total &&
-          listEquals(weeks, other.weeks); } 
-@override int get hashCode { return Object.hash(author, total, Object.hashAll(weeks)); } 
-@override String toString() { return 'ContributorActivity(author: $author, total: $total, weeks: $weeks)'; } 
+          listEquals(weeks, other.weeks);
+
+@override int get hashCode => Object.hash(author, total, Object.hashAll(weeks));
+
+@override String toString() => 'ContributorActivity(author: $author, total: $total, weeks: $weeks)';
+
  }

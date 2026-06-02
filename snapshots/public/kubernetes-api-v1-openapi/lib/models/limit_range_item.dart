@@ -47,14 +47,17 @@ LimitRangeItem copyWith({Map<String, ResourceQuantity>? Function()? $default, Ma
   min: min != null ? min() : this.min,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LimitRangeItem &&
           $default == other.$default &&
           defaultRequest == other.defaultRequest &&
           max == other.max &&
           maxLimitRequestRatio == other.maxLimitRequestRatio &&
           min == other.min &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash($default, defaultRequest, max, maxLimitRequestRatio, min, type); } 
-@override String toString() { return 'LimitRangeItem(\$default: ${$default}, defaultRequest: $defaultRequest, max: $max, maxLimitRequestRatio: $maxLimitRequestRatio, min: $min, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash($default, defaultRequest, max, maxLimitRequestRatio, min, type);
+
+@override String toString() => 'LimitRangeItem(\$default: ${$default}, defaultRequest: $defaultRequest, max: $max, maxLimitRequestRatio: $maxLimitRequestRatio, min: $min, type: $type)';
+
  }

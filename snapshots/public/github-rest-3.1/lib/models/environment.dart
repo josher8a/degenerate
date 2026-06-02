@@ -67,7 +67,7 @@ Environment copyWith({int? id, String? nodeId, String? name, String? url, String
   protectionRules: protectionRules != null ? protectionRules() : this.protectionRules,
   deploymentBranchPolicy: deploymentBranchPolicy != null ? deploymentBranchPolicy() : this.deploymentBranchPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Environment &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -77,7 +77,10 @@ Environment copyWith({int? id, String? nodeId, String? name, String? url, String
           createdAt == other.createdAt &&
           updatedAt == other.updatedAt &&
           listEquals(protectionRules, other.protectionRules) &&
-          deploymentBranchPolicy == other.deploymentBranchPolicy; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, url, htmlUrl, createdAt, updatedAt, Object.hashAll(protectionRules ?? const []), deploymentBranchPolicy); } 
-@override String toString() { return 'Environment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, protectionRules: $protectionRules, deploymentBranchPolicy: $deploymentBranchPolicy)'; } 
+          deploymentBranchPolicy == other.deploymentBranchPolicy;
+
+@override int get hashCode => Object.hash(id, nodeId, name, url, htmlUrl, createdAt, updatedAt, Object.hashAll(protectionRules ?? const []), deploymentBranchPolicy);
+
+@override String toString() => 'Environment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl, createdAt: $createdAt, updatedAt: $updatedAt, protectionRules: $protectionRules, deploymentBranchPolicy: $deploymentBranchPolicy)';
+
  }

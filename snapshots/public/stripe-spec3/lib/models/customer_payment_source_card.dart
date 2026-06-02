@@ -113,7 +113,7 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
   number: number ?? this.number,
   object: object != null ? object() : this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerPaymentSourceCard &&
           addressCity == other.addressCity &&
           addressCountry == other.addressCountry &&
@@ -127,7 +127,10 @@ CustomerPaymentSourceCard copyWith({String? Function()? addressCity, String? Fun
           metadata == other.metadata &&
           name == other.name &&
           number == other.number &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object); } 
-@override String toString() { return 'CustomerPaymentSourceCard(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object);
+
+@override String toString() => 'CustomerPaymentSourceCard(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)';
+
  }

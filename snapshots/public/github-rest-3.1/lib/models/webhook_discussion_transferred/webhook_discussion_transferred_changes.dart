@@ -21,10 +21,13 @@ WebhookDiscussionTransferredChanges copyWith({Discussion? newDiscussion, Reposit
   newDiscussion: newDiscussion ?? this.newDiscussion,
   newRepository: newRepository ?? this.newRepository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookDiscussionTransferredChanges &&
           newDiscussion == other.newDiscussion &&
-          newRepository == other.newRepository; } 
-@override int get hashCode { return Object.hash(newDiscussion, newRepository); } 
-@override String toString() { return 'WebhookDiscussionTransferredChanges(newDiscussion: $newDiscussion, newRepository: $newRepository)'; } 
+          newRepository == other.newRepository;
+
+@override int get hashCode => Object.hash(newDiscussion, newRepository);
+
+@override String toString() => 'WebhookDiscussionTransferredChanges(newDiscussion: $newDiscussion, newRepository: $newRepository)';
+
  }

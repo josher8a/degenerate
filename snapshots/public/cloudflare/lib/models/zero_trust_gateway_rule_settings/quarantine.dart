@@ -52,10 +52,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FileTypes && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FileTypes($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileTypes && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FileTypes($value)';
+
  }
 /// Configure settings that apply to quarantine rules. Settable only for `http` rules.
 @immutable final class Quarantine {const Quarantine({this.fileTypes});
@@ -74,9 +77,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Quarantine copyWith({List<FileTypes>? Function()? fileTypes}) { return Quarantine(
   fileTypes: fileTypes != null ? fileTypes() : this.fileTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Quarantine &&
-          listEquals(fileTypes, other.fileTypes); } 
-@override int get hashCode { return Object.hashAll(fileTypes ?? const []); } 
-@override String toString() { return 'Quarantine(fileTypes: $fileTypes)'; } 
+          listEquals(fileTypes, other.fileTypes);
+
+@override int get hashCode => Object.hashAll(fileTypes ?? const []);
+
+@override String toString() => 'Quarantine(fileTypes: $fileTypes)';
+
  }

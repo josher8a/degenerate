@@ -31,12 +31,15 @@ WaitingroomCreateRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDe
   enabled: enabled != null ? enabled() : this.enabled,
   expression: expression ?? this.expression,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomCreateRule &&
           action == other.action &&
           description == other.description &&
           enabled == other.enabled &&
-          expression == other.expression; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression); } 
-@override String toString() { return 'WaitingroomCreateRule(action: $action, description: $description, enabled: $enabled, expression: $expression)'; } 
+          expression == other.expression;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression);
+
+@override String toString() => 'WaitingroomCreateRule(action: $action, description: $description, enabled: $enabled, expression: $expression)';
+
  }

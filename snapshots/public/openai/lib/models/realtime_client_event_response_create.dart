@@ -60,11 +60,14 @@ RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String?
   type: type ?? this.type,
   response: response != null ? response() : this.response,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventResponseCreate &&
           eventId == other.eventId &&
           type == other.type &&
-          response == other.response; } 
-@override int get hashCode { return Object.hash(eventId, type, response); } 
-@override String toString() { return 'RealtimeClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)'; } 
+          response == other.response;
+
+@override int get hashCode => Object.hash(eventId, type, response);
+
+@override String toString() => 'RealtimeClientEventResponseCreate(eventId: $eventId, type: $type, response: $response)';
+
  }

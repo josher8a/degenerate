@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OrgMembershipRole && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OrgMembershipRole($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrgMembershipRole && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OrgMembershipRole($value)';
+
  }
 /// Org Membership
 @immutable final class OrgMembership {const OrgMembership({required this.url, required this.state, required this.role, required this.organizationUrl, required this.organization, required this.user, this.directMembership, this.enterpriseTeamsProvidingIndirectMembership, this.permissions, });
@@ -101,7 +104,7 @@ OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? 
   user: user != null ? user() : this.user,
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OrgMembership &&
           url == other.url &&
           state == other.state &&
@@ -111,7 +114,10 @@ OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? 
           organizationUrl == other.organizationUrl &&
           organization == other.organization &&
           user == other.user &&
-          permissions == other.permissions; } 
-@override int get hashCode { return Object.hash(url, state, role, directMembership, Object.hashAll(enterpriseTeamsProvidingIndirectMembership ?? const []), organizationUrl, organization, user, permissions); } 
-@override String toString() { return 'OrgMembership(url: $url, state: $state, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, organizationUrl: $organizationUrl, organization: $organization, user: $user, permissions: $permissions)'; } 
+          permissions == other.permissions;
+
+@override int get hashCode => Object.hash(url, state, role, directMembership, Object.hashAll(enterpriseTeamsProvidingIndirectMembership ?? const []), organizationUrl, organization, user, permissions);
+
+@override String toString() => 'OrgMembership(url: $url, state: $state, role: $role, directMembership: $directMembership, enterpriseTeamsProvidingIndirectMembership: $enterpriseTeamsProvidingIndirectMembership, organizationUrl: $organizationUrl, organization: $organization, user: $user, permissions: $permissions)';
+
  }

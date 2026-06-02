@@ -23,10 +23,13 @@ ActionsCacheUsageOrgEnterprise copyWith({int? totalActiveCachesCount, int? total
   totalActiveCachesCount: totalActiveCachesCount ?? this.totalActiveCachesCount,
   totalActiveCachesSizeInBytes: totalActiveCachesSizeInBytes ?? this.totalActiveCachesSizeInBytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsCacheUsageOrgEnterprise &&
           totalActiveCachesCount == other.totalActiveCachesCount &&
-          totalActiveCachesSizeInBytes == other.totalActiveCachesSizeInBytes; } 
-@override int get hashCode { return Object.hash(totalActiveCachesCount, totalActiveCachesSizeInBytes); } 
-@override String toString() { return 'ActionsCacheUsageOrgEnterprise(totalActiveCachesCount: $totalActiveCachesCount, totalActiveCachesSizeInBytes: $totalActiveCachesSizeInBytes)'; } 
+          totalActiveCachesSizeInBytes == other.totalActiveCachesSizeInBytes;
+
+@override int get hashCode => Object.hash(totalActiveCachesCount, totalActiveCachesSizeInBytes);
+
+@override String toString() => 'ActionsCacheUsageOrgEnterprise(totalActiveCachesCount: $totalActiveCachesCount, totalActiveCachesSizeInBytes: $totalActiveCachesSizeInBytes)';
+
  }

@@ -22,10 +22,13 @@ CheckSuitePreference copyWith({Preferences? preferences, MinimalRepository? repo
   preferences: preferences ?? this.preferences,
   repository: repository ?? this.repository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckSuitePreference &&
           preferences == other.preferences &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(preferences, repository); } 
-@override String toString() { return 'CheckSuitePreference(preferences: $preferences, repository: $repository)'; } 
+          repository == other.repository;
+
+@override int get hashCode => Object.hash(preferences, repository);
+
+@override String toString() => 'CheckSuitePreference(preferences: $preferences, repository: $repository)';
+
  }

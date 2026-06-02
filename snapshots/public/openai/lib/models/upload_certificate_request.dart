@@ -22,10 +22,13 @@ UploadCertificateRequest copyWith({String? Function()? name, String? content, })
   name: name != null ? name() : this.name,
   content: content ?? this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UploadCertificateRequest &&
           name == other.name &&
-          content == other.content; } 
-@override int get hashCode { return Object.hash(name, content); } 
-@override String toString() { return 'UploadCertificateRequest(name: $name, content: $content)'; } 
+          content == other.content;
+
+@override int get hashCode => Object.hash(name, content);
+
+@override String toString() => 'UploadCertificateRequest(name: $name, content: $content)';
+
  }

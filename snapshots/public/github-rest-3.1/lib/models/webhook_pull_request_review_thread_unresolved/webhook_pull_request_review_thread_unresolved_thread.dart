@@ -21,10 +21,13 @@ WebhookPullRequestReviewThreadUnresolvedThread copyWith({List<WebhookPullRequest
   comments: comments ?? this.comments,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPullRequestReviewThreadUnresolvedThread &&
           listEquals(comments, other.comments) &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(Object.hashAll(comments), nodeId); } 
-@override String toString() { return 'WebhookPullRequestReviewThreadUnresolvedThread(comments: $comments, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(Object.hashAll(comments), nodeId);
+
+@override String toString() => 'WebhookPullRequestReviewThreadUnresolvedThread(comments: $comments, nodeId: $nodeId)';
+
  }

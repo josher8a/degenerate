@@ -22,10 +22,13 @@ AssistantObjectToolResources copyWith({ToolResourcesCodeInterpreter? Function()?
   codeInterpreter: codeInterpreter != null ? codeInterpreter() : this.codeInterpreter,
   fileSearch: fileSearch != null ? fileSearch() : this.fileSearch,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AssistantObjectToolResources &&
           codeInterpreter == other.codeInterpreter &&
-          fileSearch == other.fileSearch; } 
-@override int get hashCode { return Object.hash(codeInterpreter, fileSearch); } 
-@override String toString() { return 'AssistantObjectToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)'; } 
+          fileSearch == other.fileSearch;
+
+@override int get hashCode => Object.hash(codeInterpreter, fileSearch);
+
+@override String toString() => 'AssistantObjectToolResources(codeInterpreter: $codeInterpreter, fileSearch: $fileSearch)';
+
  }

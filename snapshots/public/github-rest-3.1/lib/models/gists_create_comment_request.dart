@@ -20,9 +20,12 @@ return errors; }
 GistsCreateCommentRequest copyWith({String? body}) { return GistsCreateCommentRequest(
   body: body ?? this.body,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GistsCreateCommentRequest &&
-          body == other.body; } 
-@override int get hashCode { return body.hashCode; } 
-@override String toString() { return 'GistsCreateCommentRequest(body: $body)'; } 
+          body == other.body;
+
+@override int get hashCode => body.hashCode;
+
+@override String toString() => 'GistsCreateCommentRequest(body: $body)';
+
  }

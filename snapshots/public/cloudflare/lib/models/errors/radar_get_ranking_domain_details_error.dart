@@ -17,7 +17,8 @@ final class RadarGetRankingDomainDetailsError$400 extends RadarGetRankingDomainD
 
 final RadarGetRankingDomainDetailsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetRankingDomainDetailsError$Unknown extends RadarGetRankingDomainDetailsError {const RadarGetRankingDomainDetailsError$Unknown(this.statusCode, this.rawBody, );
 

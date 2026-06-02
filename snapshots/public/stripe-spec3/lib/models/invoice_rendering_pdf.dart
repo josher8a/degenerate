@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InvoiceRenderingPdfPageSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'InvoiceRenderingPdfPageSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceRenderingPdfPageSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InvoiceRenderingPdfPageSize($value)';
+
  }
 /// 
 @immutable final class InvoiceRenderingPdf {const InvoiceRenderingPdf({this.pageSize});
@@ -45,9 +48,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InvoiceRenderingPdf copyWith({InvoiceRenderingPdfPageSize? Function()? pageSize}) { return InvoiceRenderingPdf(
   pageSize: pageSize != null ? pageSize() : this.pageSize,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceRenderingPdf &&
-          pageSize == other.pageSize; } 
-@override int get hashCode { return pageSize.hashCode; } 
-@override String toString() { return 'InvoiceRenderingPdf(pageSize: $pageSize)'; } 
+          pageSize == other.pageSize;
+
+@override int get hashCode => pageSize.hashCode;
+
+@override String toString() => 'InvoiceRenderingPdf(pageSize: $pageSize)';
+
  }

@@ -28,10 +28,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkflowState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WorkflowState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkflowState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkflowState($value)';
+
  }
 /// A GitHub Actions workflow
 @immutable final class Workflow {const Workflow({required this.id, required this.nodeId, required this.name, required this.path, required this.state, required this.createdAt, required this.updatedAt, required this.url, required this.htmlUrl, required this.badgeUrl, this.deletedAt, });
@@ -108,7 +111,7 @@ Workflow copyWith({int? id, String? nodeId, String? name, String? path, Workflow
   badgeUrl: badgeUrl ?? this.badgeUrl,
   deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Workflow &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -120,7 +123,10 @@ Workflow copyWith({int? id, String? nodeId, String? name, String? path, Workflow
           url == other.url &&
           htmlUrl == other.htmlUrl &&
           badgeUrl == other.badgeUrl &&
-          deletedAt == other.deletedAt; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, path, state, createdAt, updatedAt, url, htmlUrl, badgeUrl, deletedAt); } 
-@override String toString() { return 'Workflow(id: $id, nodeId: $nodeId, name: $name, path: $path, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, badgeUrl: $badgeUrl, deletedAt: $deletedAt)'; } 
+          deletedAt == other.deletedAt;
+
+@override int get hashCode => Object.hash(id, nodeId, name, path, state, createdAt, updatedAt, url, htmlUrl, badgeUrl, deletedAt);
+
+@override String toString() => 'Workflow(id: $id, nodeId: $nodeId, name: $name, path: $path, state: $state, createdAt: $createdAt, updatedAt: $updatedAt, url: $url, htmlUrl: $htmlUrl, badgeUrl: $badgeUrl, deletedAt: $deletedAt)';
+
  }

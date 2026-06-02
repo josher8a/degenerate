@@ -81,7 +81,7 @@ WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? 
   treeId: treeId ?? this.treeId,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPushHeadCommit &&
           listEquals(added, other.added) &&
           author == other.author &&
@@ -93,7 +93,10 @@ WebhookPushHeadCommit copyWith({List<String>? Function()? added, CommitsAuthor? 
           listEquals(removed, other.removed) &&
           timestamp == other.timestamp &&
           treeId == other.treeId &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(added ?? const []), author, committer, distinct, id, message, Object.hashAll(modified ?? const []), Object.hashAll(removed ?? const []), timestamp, treeId, url); } 
-@override String toString() { return 'WebhookPushHeadCommit(added: $added, author: $author, committer: $committer, distinct: $distinct, id: $id, message: $message, modified: $modified, removed: $removed, timestamp: $timestamp, treeId: $treeId, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(added ?? const []), author, committer, distinct, id, message, Object.hashAll(modified ?? const []), Object.hashAll(removed ?? const []), timestamp, treeId, url);
+
+@override String toString() => 'WebhookPushHeadCommit(added: $added, author: $author, committer: $committer, distinct: $distinct, id: $id, message: $message, modified: $modified, removed: $removed, timestamp: $timestamp, treeId: $treeId, url: $url)';
+
  }

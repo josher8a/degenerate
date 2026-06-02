@@ -37,11 +37,14 @@ AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<dynamic>? Fun
   emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
   emailListUuid: emailListUuid != null ? emailListUuid() : this.emailListUuid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasApprovalGroup &&
           approvalsNeeded == other.approvalsNeeded &&
           listEquals(emailAddresses, other.emailAddresses) &&
-          emailListUuid == other.emailListUuid; } 
-@override int get hashCode { return Object.hash(approvalsNeeded, Object.hashAll(emailAddresses ?? const []), emailListUuid); } 
-@override String toString() { return 'AccessSchemasApprovalGroup(approvalsNeeded: $approvalsNeeded, emailAddresses: $emailAddresses, emailListUuid: $emailListUuid)'; } 
+          emailListUuid == other.emailListUuid;
+
+@override int get hashCode => Object.hash(approvalsNeeded, Object.hashAll(emailAddresses ?? const []), emailListUuid);
+
+@override String toString() => 'AccessSchemasApprovalGroup(approvalsNeeded: $approvalsNeeded, emailAddresses: $emailAddresses, emailListUuid: $emailListUuid)';
+
  }

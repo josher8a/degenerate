@@ -40,13 +40,16 @@ PostShippingRatesShippingRateTokenRequest copyWith({bool? Function()? active, Li
   metadata: metadata != null ? metadata() : this.metadata,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostShippingRatesShippingRateTokenRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           fixedAmount == other.fixedAmount &&
           metadata == other.metadata &&
-          taxBehavior == other.taxBehavior; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), fixedAmount, metadata, taxBehavior); } 
-@override String toString() { return 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)'; } 
+          taxBehavior == other.taxBehavior;
+
+@override int get hashCode => Object.hash(active, Object.hashAll(expand ?? const []), fixedAmount, metadata, taxBehavior);
+
+@override String toString() => 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)';
+
  }

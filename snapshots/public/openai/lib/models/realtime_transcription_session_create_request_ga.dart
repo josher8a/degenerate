@@ -34,11 +34,14 @@ RealtimeTranscriptionSessionCreateRequestGa copyWith({RealtimeTranscriptionSessi
   audio: audio != null ? audio() : this.audio,
   include: include != null ? include() : this.include,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeTranscriptionSessionCreateRequestGa &&
           type == other.type &&
           audio == other.audio &&
-          listEquals(include, other.include); } 
-@override int get hashCode { return Object.hash(type, audio, Object.hashAll(include ?? const [])); } 
-@override String toString() { return 'RealtimeTranscriptionSessionCreateRequestGa(type: $type, audio: $audio, include: $include)'; } 
+          listEquals(include, other.include);
+
+@override int get hashCode => Object.hash(type, audio, Object.hashAll(include ?? const []));
+
+@override String toString() => 'RealtimeTranscriptionSessionCreateRequestGa(type: $type, audio: $audio, include: $include)';
+
  }

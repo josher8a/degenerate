@@ -63,7 +63,7 @@ ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, i
   repository: repository ?? this.repository,
   assignment: assignment ?? this.assignment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClassroomAcceptedAssignment &&
           id == other.id &&
           submitted == other.submitted &&
@@ -72,7 +72,10 @@ ClassroomAcceptedAssignment copyWith({int? id, bool? submitted, bool? passing, i
           grade == other.grade &&
           listEquals(students, other.students) &&
           repository == other.repository &&
-          assignment == other.assignment; } 
-@override int get hashCode { return Object.hash(id, submitted, passing, commitCount, grade, Object.hashAll(students), repository, assignment); } 
-@override String toString() { return 'ClassroomAcceptedAssignment(id: $id, submitted: $submitted, passing: $passing, commitCount: $commitCount, grade: $grade, students: $students, repository: $repository, assignment: $assignment)'; } 
+          assignment == other.assignment;
+
+@override int get hashCode => Object.hash(id, submitted, passing, commitCount, grade, Object.hashAll(students), repository, assignment);
+
+@override String toString() => 'ClassroomAcceptedAssignment(id: $id, submitted: $submitted, passing: $passing, commitCount: $commitCount, grade: $grade, students: $students, repository: $repository, assignment: $assignment)';
+
  }

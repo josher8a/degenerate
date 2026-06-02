@@ -56,14 +56,17 @@ EmailDestinationAddressProperties copyWith({EmailCreated? Function()? created, E
   tag: tag != null ? tag() : this.tag,
   verified: verified != null ? verified() : this.verified,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailDestinationAddressProperties &&
           created == other.created &&
           email == other.email &&
           id == other.id &&
           modified == other.modified &&
           tag == other.tag &&
-          verified == other.verified; } 
-@override int get hashCode { return Object.hash(created, email, id, modified, tag, verified); } 
-@override String toString() { return 'EmailDestinationAddressProperties(created: $created, email: $email, id: $id, modified: $modified, tag: $tag, verified: $verified)'; } 
+          verified == other.verified;
+
+@override int get hashCode => Object.hash(created, email, id, modified, tag, verified);
+
+@override String toString() => 'EmailDestinationAddressProperties(created: $created, email: $email, id: $id, modified: $modified, tag: $tag, verified: $verified)';
+
  }

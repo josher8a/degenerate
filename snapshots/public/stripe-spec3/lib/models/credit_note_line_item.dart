@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreditNoteLineItemObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreditNoteLineItemObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreditNoteLineItemObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreditNoteLineItemObject($value)';
+
  }
 /// The credit note line item object
 @immutable final class CreditNoteLineItem {const CreditNoteLineItem({required this.amount, required this.discountAmount, required this.discountAmounts, required this.id, required this.livemode, required this.object, required this.pretaxCreditAmounts, required this.taxRates, required this.type, this.description, this.invoiceLineItem, this.quantity, this.taxes, this.unitAmount, this.unitAmountDecimal, });
@@ -143,7 +146,7 @@ CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? 
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreditNoteLineItem &&
           amount == other.amount &&
           description == other.description &&
@@ -159,7 +162,10 @@ CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? 
           listEquals(taxes, other.taxes) &&
           type == other.type &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(amount, description, discountAmount, Object.hashAll(discountAmounts), id, invoiceLineItem, livemode, object, Object.hashAll(pretaxCreditAmounts), quantity, Object.hashAll(taxRates), Object.hashAll(taxes ?? const []), type, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'CreditNoteLineItem(amount: $amount, description: $description, discountAmount: $discountAmount, discountAmounts: $discountAmounts, id: $id, invoiceLineItem: $invoiceLineItem, livemode: $livemode, object: $object, pretaxCreditAmounts: $pretaxCreditAmounts, quantity: $quantity, taxRates: $taxRates, taxes: $taxes, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(amount, description, discountAmount, Object.hashAll(discountAmounts), id, invoiceLineItem, livemode, object, Object.hashAll(pretaxCreditAmounts), quantity, Object.hashAll(taxRates), Object.hashAll(taxes ?? const []), type, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'CreditNoteLineItem(amount: $amount, description: $description, discountAmount: $discountAmount, discountAmounts: $discountAmounts, id: $id, invoiceLineItem: $invoiceLineItem, livemode: $livemode, object: $object, pretaxCreditAmounts: $pretaxCreditAmounts, quantity: $quantity, taxRates: $taxRates, taxes: $taxes, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

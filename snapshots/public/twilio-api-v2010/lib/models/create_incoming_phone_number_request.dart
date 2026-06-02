@@ -198,7 +198,7 @@ CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, Strin
   phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
   areaCode: areaCode != null ? areaCode() : this.areaCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateIncomingPhoneNumberRequest &&
           apiVersion == other.apiVersion &&
           friendlyName == other.friendlyName &&
@@ -223,7 +223,10 @@ CreateIncomingPhoneNumberRequest copyWith({String? Function()? apiVersion, Strin
           voiceReceiveMode == other.voiceReceiveMode &&
           bundleSid == other.bundleSid &&
           phoneNumber == other.phoneNumber &&
-          areaCode == other.areaCode; } 
-@override int get hashCode { return Object.hashAll([apiVersion, friendlyName, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, trunkSid, identitySid, addressSid, voiceReceiveMode, bundleSid, phoneNumber, areaCode]); } 
-@override String toString() { return 'CreateIncomingPhoneNumberRequest(apiVersion: $apiVersion, friendlyName: $friendlyName, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, trunkSid: $trunkSid, identitySid: $identitySid, addressSid: $addressSid, voiceReceiveMode: $voiceReceiveMode, bundleSid: $bundleSid, phoneNumber: $phoneNumber, areaCode: $areaCode)'; } 
+          areaCode == other.areaCode;
+
+@override int get hashCode => Object.hashAll([apiVersion, friendlyName, smsApplicationSid, smsFallbackMethod, smsFallbackUrl, smsMethod, smsUrl, statusCallback, statusCallbackMethod, voiceApplicationSid, voiceCallerIdLookup, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceUrl, emergencyStatus, emergencyAddressSid, trunkSid, identitySid, addressSid, voiceReceiveMode, bundleSid, phoneNumber, areaCode]);
+
+@override String toString() => 'CreateIncomingPhoneNumberRequest(apiVersion: $apiVersion, friendlyName: $friendlyName, smsApplicationSid: $smsApplicationSid, smsFallbackMethod: $smsFallbackMethod, smsFallbackUrl: $smsFallbackUrl, smsMethod: $smsMethod, smsUrl: $smsUrl, statusCallback: $statusCallback, statusCallbackMethod: $statusCallbackMethod, voiceApplicationSid: $voiceApplicationSid, voiceCallerIdLookup: $voiceCallerIdLookup, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceUrl: $voiceUrl, emergencyStatus: $emergencyStatus, emergencyAddressSid: $emergencyAddressSid, trunkSid: $trunkSid, identitySid: $identitySid, addressSid: $addressSid, voiceReceiveMode: $voiceReceiveMode, bundleSid: $bundleSid, phoneNumber: $phoneNumber, areaCode: $areaCode)';
+
  }

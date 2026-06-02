@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventResponseCancelType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCancelType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventResponseCancelType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventResponseCancelType($value)';
+
  }
 /// Send this event to cancel an in-progress response. The server will respond
 /// with a `response.done` event with a status of `response.status=cancelled`. If
@@ -56,11 +59,14 @@ RealtimeBetaClientEventResponseCancel copyWith({String? Function()? eventId, Rea
   type: type ?? this.type,
   responseId: responseId != null ? responseId() : this.responseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventResponseCancel &&
           eventId == other.eventId &&
           type == other.type &&
-          responseId == other.responseId; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId); } 
-@override String toString() { return 'RealtimeBetaClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)'; } 
+          responseId == other.responseId;
+
+@override int get hashCode => Object.hash(eventId, type, responseId);
+
+@override String toString() => 'RealtimeBetaClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)';
+
  }

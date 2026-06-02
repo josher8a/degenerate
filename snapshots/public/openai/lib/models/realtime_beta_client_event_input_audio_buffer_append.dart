@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeBetaClientEventInputAudioBufferAppendType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferAppendType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeBetaClientEventInputAudioBufferAppendType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppendType($value)';
+
  }
 /// Send this event to append audio bytes to the input audio buffer. The audio
 /// buffer is temporary storage you can write to and later commit. In Server VAD
@@ -64,11 +67,14 @@ RealtimeBetaClientEventInputAudioBufferAppend copyWith({String? Function()? even
   type: type ?? this.type,
   audio: audio ?? this.audio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeBetaClientEventInputAudioBufferAppend &&
           eventId == other.eventId &&
           type == other.type &&
-          audio == other.audio; } 
-@override int get hashCode { return Object.hash(eventId, type, audio); } 
-@override String toString() { return 'RealtimeBetaClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)'; } 
+          audio == other.audio;
+
+@override int get hashCode => Object.hash(eventId, type, audio);
+
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppend(eventId: $eventId, type: $type, audio: $audio)';
+
  }

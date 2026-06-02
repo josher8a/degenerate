@@ -24,10 +24,13 @@ GrammarFormat copyWith({CustomGrammarFormatParamType? type, Grammar? grammar, })
   type: type ?? this.type,
   grammar: grammar ?? this.grammar,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GrammarFormat &&
           type == other.type &&
-          grammar == other.grammar; } 
-@override int get hashCode { return Object.hash(type, grammar); } 
-@override String toString() { return 'GrammarFormat(type: $type, grammar: $grammar)'; } 
+          grammar == other.grammar;
+
+@override int get hashCode => Object.hash(type, grammar);
+
+@override String toString() => 'GrammarFormat(type: $type, grammar: $grammar)';
+
  }

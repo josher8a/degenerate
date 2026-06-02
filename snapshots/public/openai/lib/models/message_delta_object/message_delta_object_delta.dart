@@ -23,10 +23,13 @@ MessageDeltaObjectDelta copyWith({CreateMessageRequestRole? Function()? role, Li
   role: role != null ? role() : this.role,
   content: content != null ? content() : this.content,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaObjectDelta &&
           role == other.role &&
-          listEquals(content, other.content); } 
-@override int get hashCode { return Object.hash(role, Object.hashAll(content ?? const [])); } 
-@override String toString() { return 'MessageDeltaObjectDelta(role: $role, content: $content)'; } 
+          listEquals(content, other.content);
+
+@override int get hashCode => Object.hash(role, Object.hashAll(content ?? const []));
+
+@override String toString() => 'MessageDeltaObjectDelta(role: $role, content: $content)';
+
  }

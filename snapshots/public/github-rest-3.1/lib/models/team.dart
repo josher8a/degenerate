@@ -110,7 +110,7 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
   parent: parent != null ? parent() : this.parent,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Team &&
           id == other.id &&
           nodeId == other.nodeId &&
@@ -128,7 +128,10 @@ Team copyWith({int? id, String? nodeId, String? name, String? slug, String? Func
           type == other.type &&
           organizationId == other.organizationId &&
           enterpriseId == other.enterpriseId &&
-          parent == other.parent; } 
-@override int get hashCode { return Object.hash(id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, type, organizationId, enterpriseId, parent); } 
-@override String toString() { return 'Team(id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId, parent: $parent)'; } 
+          parent == other.parent;
+
+@override int get hashCode => Object.hash(id, nodeId, name, slug, description, privacy, notificationSetting, permission, permissions, url, htmlUrl, membersUrl, repositoriesUrl, type, organizationId, enterpriseId, parent);
+
+@override String toString() => 'Team(id: $id, nodeId: $nodeId, name: $name, slug: $slug, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, permissions: $permissions, url: $url, htmlUrl: $htmlUrl, membersUrl: $membersUrl, repositoriesUrl: $repositoriesUrl, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId, parent: $parent)';
+
  }

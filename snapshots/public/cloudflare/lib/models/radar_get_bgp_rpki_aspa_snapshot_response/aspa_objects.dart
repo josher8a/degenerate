@@ -22,10 +22,13 @@ AspaObjects copyWith({int? customerAsn, List<int>? providers, }) { return AspaOb
   customerAsn: customerAsn ?? this.customerAsn,
   providers: providers ?? this.providers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AspaObjects &&
           customerAsn == other.customerAsn &&
-          listEquals(providers, other.providers); } 
-@override int get hashCode { return Object.hash(customerAsn, Object.hashAll(providers)); } 
-@override String toString() { return 'AspaObjects(customerAsn: $customerAsn, providers: $providers)'; } 
+          listEquals(providers, other.providers);
+
+@override int get hashCode => Object.hash(customerAsn, Object.hashAll(providers));
+
+@override String toString() => 'AspaObjects(customerAsn: $customerAsn, providers: $providers)';
+
  }

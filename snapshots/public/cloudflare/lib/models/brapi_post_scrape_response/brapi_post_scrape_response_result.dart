@@ -22,10 +22,13 @@ BrapiPostScrapeResponseResult copyWith({BrapiPostScrapeResponseResultResults? re
   results: results ?? this.results,
   selector: selector ?? this.selector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostScrapeResponseResult &&
           results == other.results &&
-          selector == other.selector; } 
-@override int get hashCode { return Object.hash(results, selector); } 
-@override String toString() { return 'BrapiPostScrapeResponseResult(results: $results, selector: $selector)'; } 
+          selector == other.selector;
+
+@override int get hashCode => Object.hash(results, selector);
+
+@override String toString() => 'BrapiPostScrapeResponseResult(results: $results, selector: $selector)';
+
  }

@@ -118,7 +118,7 @@ PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccou
   settings: settings != null ? settings() : this.settings,
   tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequest &&
           accountToken == other.accountToken &&
           businessProfile == other.businessProfile &&
@@ -134,7 +134,10 @@ PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccou
           individual == other.individual &&
           metadata == other.metadata &&
           settings == other.settings &&
-          tosAcceptance == other.tosAcceptance; } 
-@override int get hashCode { return Object.hash(accountToken, businessProfile, businessType, capabilities, company, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance); } 
-@override String toString() { return 'PostAccountsAccountRequest(accountToken: $accountToken, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance)'; } 
+          tosAcceptance == other.tosAcceptance;
+
+@override int get hashCode => Object.hash(accountToken, businessProfile, businessType, capabilities, company, defaultCurrency, documents, email, Object.hashAll(expand ?? const []), externalAccount, groups, individual, metadata, settings, tosAcceptance);
+
+@override String toString() => 'PostAccountsAccountRequest(accountToken: $accountToken, businessProfile: $businessProfile, businessType: $businessType, capabilities: $capabilities, company: $company, defaultCurrency: $defaultCurrency, documents: $documents, email: $email, expand: $expand, externalAccount: $externalAccount, groups: $groups, individual: $individual, metadata: $metadata, settings: $settings, tosAcceptance: $tosAcceptance)';
+
  }

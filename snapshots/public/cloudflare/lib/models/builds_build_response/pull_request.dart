@@ -21,10 +21,13 @@ PullRequest copyWith({BuildsCreatedOn? Function()? createdOn, Uri? Function()? p
   createdOn: createdOn != null ? createdOn() : this.createdOn,
   pullRequestUrl: pullRequestUrl != null ? pullRequestUrl() : this.pullRequestUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PullRequest &&
           createdOn == other.createdOn &&
-          pullRequestUrl == other.pullRequestUrl; } 
-@override int get hashCode { return Object.hash(createdOn, pullRequestUrl); } 
-@override String toString() { return 'PullRequest(createdOn: $createdOn, pullRequestUrl: $pullRequestUrl)'; } 
+          pullRequestUrl == other.pullRequestUrl;
+
+@override int get hashCode => Object.hash(createdOn, pullRequestUrl);
+
+@override String toString() => 'PullRequest(createdOn: $createdOn, pullRequestUrl: $pullRequestUrl)';
+
  }

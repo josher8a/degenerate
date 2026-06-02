@@ -78,7 +78,7 @@ ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAna
   secretScanningDelegatedBypass: secretScanningDelegatedBypass != null ? secretScanningDelegatedBypass() : this.secretScanningDelegatedBypass,
   secretScanningDelegatedBypassOptions: secretScanningDelegatedBypassOptions != null ? secretScanningDelegatedBypassOptions() : this.secretScanningDelegatedBypassOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposUpdateRequestSecurityAndAnalysis &&
           advancedSecurity == other.advancedSecurity &&
           codeSecurity == other.codeSecurity &&
@@ -88,7 +88,10 @@ ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAna
           secretScanningNonProviderPatterns == other.secretScanningNonProviderPatterns &&
           secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
           secretScanningDelegatedBypass == other.secretScanningDelegatedBypass &&
-          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions; } 
-@override int get hashCode { return Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions); } 
-@override String toString() { return 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)'; } 
+          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions;
+
+@override int get hashCode => Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions);
+
+@override String toString() => 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)';
+
  }

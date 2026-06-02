@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WordListEntryType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WordListEntryType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WordListEntryType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WordListEntryType($value)';
+
  }
 @immutable final class WordListEntry {const WordListEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.wordList, required this.type, this.profileId, });
 
@@ -77,7 +80,7 @@ WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? 
   wordList: wordList != null ? wordList() : this.wordList,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WordListEntry &&
           createdAt == other.createdAt &&
           enabled == other.enabled &&
@@ -86,7 +89,10 @@ WordListEntry copyWith({DateTime? createdAt, bool? enabled, String? id, String? 
           profileId == other.profileId &&
           updatedAt == other.updatedAt &&
           wordList == other.wordList &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList, type); } 
-@override String toString() { return 'WordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, enabled, id, name, profileId, updatedAt, wordList, type);
+
+@override String toString() => 'WordListEntry(createdAt: $createdAt, enabled: $enabled, id: $id, name: $name, profileId: $profileId, updatedAt: $updatedAt, wordList: $wordList, type: $type)';
+
  }

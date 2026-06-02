@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CardDetailsParamsNetworksPreferred && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CardDetailsParamsNetworksPreferred($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CardDetailsParamsNetworksPreferred && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CardDetailsParamsNetworksPreferred($value)';
+
  }
 @immutable final class CardDetailsParamsNetworks {const CardDetailsParamsNetworks({this.preferred});
 
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CardDetailsParamsNetworks copyWith({CardDetailsParamsNetworksPreferred? Function()? preferred}) { return CardDetailsParamsNetworks(
   preferred: preferred != null ? preferred() : this.preferred,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CardDetailsParamsNetworks &&
-          preferred == other.preferred; } 
-@override int get hashCode { return preferred.hashCode; } 
-@override String toString() { return 'CardDetailsParamsNetworks(preferred: $preferred)'; } 
+          preferred == other.preferred;
+
+@override int get hashCode => preferred.hashCode;
+
+@override String toString() => 'CardDetailsParamsNetworks(preferred: $preferred)';
+
  }

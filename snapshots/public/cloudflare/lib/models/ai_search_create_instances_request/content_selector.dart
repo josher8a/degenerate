@@ -32,10 +32,13 @@ ContentSelector copyWith({String? path, String? selector, }) { return ContentSel
   path: path ?? this.path,
   selector: selector ?? this.selector,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentSelector &&
           path == other.path &&
-          selector == other.selector; } 
-@override int get hashCode { return Object.hash(path, selector); } 
-@override String toString() { return 'ContentSelector(path: $path, selector: $selector)'; } 
+          selector == other.selector;
+
+@override int get hashCode => Object.hash(path, selector);
+
+@override String toString() => 'ContentSelector(path: $path, selector: $selector)';
+
  }

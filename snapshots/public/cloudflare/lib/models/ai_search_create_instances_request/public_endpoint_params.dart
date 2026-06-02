@@ -40,14 +40,17 @@ PublicEndpointParams copyWith({List<String>? Function()? authorizedHosts, ChatCo
   rateLimit: rateLimit != null ? rateLimit() : this.rateLimit,
   searchEndpoint: searchEndpoint != null ? searchEndpoint() : this.searchEndpoint,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PublicEndpointParams &&
           listEquals(authorizedHosts, other.authorizedHosts) &&
           chatCompletionsEndpoint == other.chatCompletionsEndpoint &&
           enabled == other.enabled &&
           mcp == other.mcp &&
           rateLimit == other.rateLimit &&
-          searchEndpoint == other.searchEndpoint; } 
-@override int get hashCode { return Object.hash(Object.hashAll(authorizedHosts ?? const []), chatCompletionsEndpoint, enabled, mcp, rateLimit, searchEndpoint); } 
-@override String toString() { return 'PublicEndpointParams(authorizedHosts: $authorizedHosts, chatCompletionsEndpoint: $chatCompletionsEndpoint, enabled: $enabled, mcp: $mcp, rateLimit: $rateLimit, searchEndpoint: $searchEndpoint)'; } 
+          searchEndpoint == other.searchEndpoint;
+
+@override int get hashCode => Object.hash(Object.hashAll(authorizedHosts ?? const []), chatCompletionsEndpoint, enabled, mcp, rateLimit, searchEndpoint);
+
+@override String toString() => 'PublicEndpointParams(authorizedHosts: $authorizedHosts, chatCompletionsEndpoint: $chatCompletionsEndpoint, enabled: $enabled, mcp: $mcp, rateLimit: $rateLimit, searchEndpoint: $searchEndpoint)';
+
  }

@@ -21,10 +21,13 @@ DlpUpdateBehavior copyWith({bool? enabled, DlpRiskLevel? riskLevel, }) { return 
   enabled: enabled ?? this.enabled,
   riskLevel: riskLevel ?? this.riskLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpUpdateBehavior &&
           enabled == other.enabled &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(enabled, riskLevel); } 
-@override String toString() { return 'DlpUpdateBehavior(enabled: $enabled, riskLevel: $riskLevel)'; } 
+          riskLevel == other.riskLevel;
+
+@override int get hashCode => Object.hash(enabled, riskLevel);
+
+@override String toString() => 'DlpUpdateBehavior(enabled: $enabled, riskLevel: $riskLevel)';
+
  }

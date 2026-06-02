@@ -20,10 +20,13 @@ CandidatePairs copyWith({List<Map<String, dynamic>>? Function()? consumingTransp
   consumingTransport: consumingTransport != null ? consumingTransport() : this.consumingTransport,
   producingTransport: producingTransport != null ? producingTransport() : this.producingTransport,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CandidatePairs &&
           listEquals(consumingTransport, other.consumingTransport) &&
-          listEquals(producingTransport, other.producingTransport); } 
-@override int get hashCode { return Object.hash(Object.hashAll(consumingTransport ?? const []), Object.hashAll(producingTransport ?? const [])); } 
-@override String toString() { return 'CandidatePairs(consumingTransport: $consumingTransport, producingTransport: $producingTransport)'; } 
+          listEquals(producingTransport, other.producingTransport);
+
+@override int get hashCode => Object.hash(Object.hashAll(consumingTransport ?? const []), Object.hashAll(producingTransport ?? const []));
+
+@override String toString() => 'CandidatePairs(consumingTransport: $consumingTransport, producingTransport: $producingTransport)';
+
  }

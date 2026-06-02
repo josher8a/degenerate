@@ -27,11 +27,14 @@ ExampleComCategoriesRisks copyWith({int? id, String? name, int? Function()? supe
   name: name ?? this.name,
   superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ExampleComCategoriesRisks &&
           id == other.id &&
           name == other.name &&
-          superCategoryId == other.superCategoryId; } 
-@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
-@override String toString() { return 'ExampleComCategoriesRisks(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
+          superCategoryId == other.superCategoryId;
+
+@override int get hashCode => Object.hash(id, name, superCategoryId);
+
+@override String toString() => 'ExampleComCategoriesRisks(id: $id, name: $name, superCategoryId: $superCategoryId)';
+
  }

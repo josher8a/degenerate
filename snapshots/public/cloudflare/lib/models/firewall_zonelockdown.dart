@@ -72,7 +72,7 @@ FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, Fi
   paused: paused ?? this.paused,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallZonelockdown &&
           listEquals(configurations, other.configurations) &&
           createdOn == other.createdOn &&
@@ -80,7 +80,10 @@ FirewallZonelockdown copyWith({List<FirewallConfigurations2>? configurations, Fi
           id == other.id &&
           modifiedOn == other.modifiedOn &&
           paused == other.paused &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(configurations), createdOn, description, id, modifiedOn, paused, Object.hashAll(urls)); } 
-@override String toString() { return 'FirewallZonelockdown(configurations: $configurations, createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, paused: $paused, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(Object.hashAll(configurations), createdOn, description, id, modifiedOn, paused, Object.hashAll(urls));
+
+@override String toString() => 'FirewallZonelockdown(configurations: $configurations, createdOn: $createdOn, description: $description, id: $id, modifiedOn: $modifiedOn, paused: $paused, urls: $urls)';
+
  }

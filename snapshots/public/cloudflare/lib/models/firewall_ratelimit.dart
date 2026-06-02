@@ -69,7 +69,7 @@ FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallByp
   period: period != null ? period() : this.period,
   threshold: threshold != null ? threshold() : this.threshold,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRatelimit &&
           action == other.action &&
           listEquals(bypass, other.bypass) &&
@@ -78,7 +78,10 @@ FirewallRatelimit copyWith({FirewallAction? Function()? action, List<FirewallByp
           id == other.id &&
           match == other.match &&
           period == other.period &&
-          threshold == other.threshold; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(bypass ?? const []), description, disabled, id, match, period, threshold); } 
-@override String toString() { return 'FirewallRatelimit(action: $action, bypass: $bypass, description: $description, disabled: $disabled, id: $id, match: $match, period: $period, threshold: $threshold)'; } 
+          threshold == other.threshold;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(bypass ?? const []), description, disabled, id, match, period, threshold);
+
+@override String toString() => 'FirewallRatelimit(action: $action, bypass: $bypass, description: $description, disabled: $disabled, id: $id, match: $match, period: $period, threshold: $threshold)';
+
  }

@@ -17,7 +17,8 @@ final class PostIndicatorCreateBulkError$400 extends PostIndicatorCreateBulkErro
 
 final PostIndicatorCreateBulkResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostIndicatorCreateBulkError$Unknown extends PostIndicatorCreateBulkError {const PostIndicatorCreateBulkError$Unknown(this.statusCode, this.rawBody, );
 

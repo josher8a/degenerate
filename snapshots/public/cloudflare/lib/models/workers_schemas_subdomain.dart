@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('subdo
 WorkersSchemasSubdomain copyWith({String? subdomain}) { return WorkersSchemasSubdomain(
   subdomain: subdomain ?? this.subdomain,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersSchemasSubdomain &&
-          subdomain == other.subdomain; } 
-@override int get hashCode { return subdomain.hashCode; } 
-@override String toString() { return 'WorkersSchemasSubdomain(subdomain: $subdomain)'; } 
+          subdomain == other.subdomain;
+
+@override int get hashCode => subdomain.hashCode;
+
+@override String toString() => 'WorkersSchemasSubdomain(subdomain: $subdomain)';
+
  }

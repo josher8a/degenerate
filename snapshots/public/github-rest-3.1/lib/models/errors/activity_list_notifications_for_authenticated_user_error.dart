@@ -19,19 +19,22 @@ final class ActivityListNotificationsForAuthenticatedUserError$401 extends Activ
 
 final BasicError error;
 
-@override int get statusCode { return 401; } 
+@override int get statusCode => 401;
+
  }
 final class ActivityListNotificationsForAuthenticatedUserError$403 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ActivityListNotificationsForAuthenticatedUserError$422 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ActivityListNotificationsForAuthenticatedUserError$Unknown extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError$Unknown(this.statusCode, this.rawBody, );
 

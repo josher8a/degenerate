@@ -17,7 +17,8 @@ final class GetCategoryListCompleteError$400 extends GetCategoryListCompleteErro
 
 final GetCategoryListCompleteResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetCategoryListCompleteError$Unknown extends GetCategoryListCompleteError {const GetCategoryListCompleteError$Unknown(this.statusCode, this.rawBody, );
 

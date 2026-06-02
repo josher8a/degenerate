@@ -27,10 +27,13 @@ PaymentPagesCheckoutSessionCheckoutAddressDetails copyWith({Address? address, St
   address: address ?? this.address,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionCheckoutAddressDetails &&
           address == other.address &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(address, name); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionCheckoutAddressDetails(address: $address, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(address, name);
+
+@override String toString() => 'PaymentPagesCheckoutSessionCheckoutAddressDetails(address: $address, name: $name)';
+
  }

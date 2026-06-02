@@ -22,10 +22,13 @@ RealtimekitGenericErrorResponse copyWith({RealtimekitErrorResponseError? error, 
   error: error ?? this.error,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitGenericErrorResponse &&
           error == other.error &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(error, success); } 
-@override String toString() { return 'RealtimekitGenericErrorResponse(error: $error, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(error, success);
+
+@override String toString() => 'RealtimekitGenericErrorResponse(error: $error, success: $success)';
+
  }

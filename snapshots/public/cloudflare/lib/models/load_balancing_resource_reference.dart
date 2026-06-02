@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingResourceReferenceReferenceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingResourceReferenceReferenceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingResourceReferenceReferenceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LoadBalancingResourceReferenceReferenceType($value)';
+
  }
 /// The type of the resource.
 @immutable final class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is LoadBalancingResourceReferenceResourceType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'LoadBalancingResourceReferenceResourceType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingResourceReferenceResourceType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'LoadBalancingResourceReferenceResourceType($value)';
+
  }
 /// A reference to a load balancer resource.
 @immutable final class LoadBalancingResourceReference {const LoadBalancingResourceReference({this.referenceType, this.references, this.resourceId, this.resourceName, this.resourceType, });
@@ -100,13 +106,16 @@ LoadBalancingResourceReference copyWith({LoadBalancingResourceReferenceReference
   resourceName: resourceName != null ? resourceName() : this.resourceName,
   resourceType: resourceType != null ? resourceType() : this.resourceType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LoadBalancingResourceReference &&
           referenceType == other.referenceType &&
           listEquals(references, other.references) &&
           resourceId == other.resourceId &&
           resourceName == other.resourceName &&
-          resourceType == other.resourceType; } 
-@override int get hashCode { return Object.hash(referenceType, Object.hashAll(references ?? const []), resourceId, resourceName, resourceType); } 
-@override String toString() { return 'LoadBalancingResourceReference(referenceType: $referenceType, references: $references, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)'; } 
+          resourceType == other.resourceType;
+
+@override int get hashCode => Object.hash(referenceType, Object.hashAll(references ?? const []), resourceId, resourceName, resourceType);
+
+@override String toString() => 'LoadBalancingResourceReference(referenceType: $referenceType, references: $references, resourceId: $resourceId, resourceName: $resourceName, resourceType: $resourceType)';
+
  }

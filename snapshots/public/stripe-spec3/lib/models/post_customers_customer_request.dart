@@ -206,7 +206,7 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
   tax: tax != null ? tax() : this.tax,
   taxExempt: taxExempt != null ? taxExempt() : this.taxExempt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCustomersCustomerRequest &&
           address == other.address &&
           balance == other.balance &&
@@ -232,7 +232,10 @@ PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Func
           shipping == other.shipping &&
           source == other.source &&
           tax == other.tax &&
-          taxExempt == other.taxExempt; } 
-@override int get hashCode { return Object.hashAll([address, balance, bankAccount, businessName, card, cashBalance, defaultAlipayAccount, defaultBankAccount, defaultCard, defaultSource, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt]); } 
-@override String toString() { return 'PostCustomersCustomerRequest(address: $address, balance: $balance, bankAccount: $bankAccount, businessName: $businessName, card: $card, cashBalance: $cashBalance, defaultAlipayAccount: $defaultAlipayAccount, defaultBankAccount: $defaultBankAccount, defaultCard: $defaultCard, defaultSource: $defaultSource, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt)'; } 
+          taxExempt == other.taxExempt;
+
+@override int get hashCode => Object.hashAll([address, balance, bankAccount, businessName, card, cashBalance, defaultAlipayAccount, defaultBankAccount, defaultCard, defaultSource, description, email, Object.hashAll(expand ?? const []), individualName, invoicePrefix, invoiceSettings, metadata, name, nextInvoiceSequence, phone, Object.hashAll(preferredLocales ?? const []), shipping, source, tax, taxExempt]);
+
+@override String toString() => 'PostCustomersCustomerRequest(address: $address, balance: $balance, bankAccount: $bankAccount, businessName: $businessName, card: $card, cashBalance: $cashBalance, defaultAlipayAccount: $defaultAlipayAccount, defaultBankAccount: $defaultBankAccount, defaultCard: $defaultCard, defaultSource: $defaultSource, description: $description, email: $email, expand: $expand, individualName: $individualName, invoicePrefix: $invoicePrefix, invoiceSettings: $invoiceSettings, metadata: $metadata, name: $name, nextInvoiceSequence: $nextInvoiceSequence, phone: $phone, preferredLocales: $preferredLocales, shipping: $shipping, source: $source, tax: $tax, taxExempt: $taxExempt)';
+
  }

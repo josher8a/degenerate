@@ -90,7 +90,7 @@ PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? a
   supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostAccountsAccountRequestBusinessProfile &&
           annualRevenue == other.annualRevenue &&
           estimatedWorkerCount == other.estimatedWorkerCount &&
@@ -103,7 +103,10 @@ PostAccountsAccountRequestBusinessProfile copyWith({AnnualRevenue? Function()? a
           supportEmail == other.supportEmail &&
           supportPhone == other.supportPhone &&
           supportUrl == other.supportUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url); } 
-@override String toString() { return 'PostAccountsAccountRequestBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url);
+
+@override String toString() => 'PostAccountsAccountRequestBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)';
+
  }

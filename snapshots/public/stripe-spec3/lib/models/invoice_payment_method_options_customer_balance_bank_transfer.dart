@@ -22,10 +22,13 @@ InvoicePaymentMethodOptionsCustomerBalanceBankTransfer copyWith({InvoicePaymentM
   euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoicePaymentMethodOptionsCustomerBalanceBankTransfer &&
           euBankTransfer == other.euBankTransfer &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(euBankTransfer, type); } 
-@override String toString() { return 'InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(euBankTransfer: $euBankTransfer, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(euBankTransfer, type);
+
+@override String toString() => 'InvoicePaymentMethodOptionsCustomerBalanceBankTransfer(euBankTransfer: $euBankTransfer, type: $type)';
+
  }

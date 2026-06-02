@@ -17,7 +17,8 @@ final class PostEventCreateBulkError$400 extends PostEventCreateBulkError {const
 
 final PostEventCreateBulkResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventCreateBulkError$Unknown extends PostEventCreateBulkError {const PostEventCreateBulkError$Unknown(this.statusCode, this.rawBody, );
 

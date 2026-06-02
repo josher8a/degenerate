@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
 TaxProductResourceShipFromDetails copyWith({TaxProductResourcePostalAddress? address}) { return TaxProductResourceShipFromDetails(
   address: address ?? this.address,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TaxProductResourceShipFromDetails &&
-          address == other.address; } 
-@override int get hashCode { return address.hashCode; } 
-@override String toString() { return 'TaxProductResourceShipFromDetails(address: $address)'; } 
+          address == other.address;
+
+@override int get hashCode => address.hashCode;
+
+@override String toString() => 'TaxProductResourceShipFromDetails(address: $address)';
+
  }

@@ -37,12 +37,15 @@ GcePersistentDiskVolumeSource copyWith({String? Function()? fsType, int? Functio
   pdName: pdName ?? this.pdName,
   readOnly: readOnly != null ? readOnly() : this.readOnly,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GcePersistentDiskVolumeSource &&
           fsType == other.fsType &&
           partition == other.partition &&
           pdName == other.pdName &&
-          readOnly == other.readOnly; } 
-@override int get hashCode { return Object.hash(fsType, partition, pdName, readOnly); } 
-@override String toString() { return 'GcePersistentDiskVolumeSource(fsType: $fsType, partition: $partition, pdName: $pdName, readOnly: $readOnly)'; } 
+          readOnly == other.readOnly;
+
+@override int get hashCode => Object.hash(fsType, partition, pdName, readOnly);
+
+@override String toString() => 'GcePersistentDiskVolumeSource(fsType: $fsType, partition: $partition, pdName: $pdName, readOnly: $readOnly)';
+
  }

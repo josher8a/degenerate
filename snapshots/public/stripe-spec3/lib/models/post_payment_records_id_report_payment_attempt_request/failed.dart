@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('faile
 Failed copyWith({int? failedAt}) { return Failed(
   failedAt: failedAt ?? this.failedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Failed &&
-          failedAt == other.failedAt; } 
-@override int get hashCode { return failedAt.hashCode; } 
-@override String toString() { return 'Failed(failedAt: $failedAt)'; } 
+          failedAt == other.failedAt;
+
+@override int get hashCode => failedAt.hashCode;
+
+@override String toString() => 'Failed(failedAt: $failedAt)';
+
  }

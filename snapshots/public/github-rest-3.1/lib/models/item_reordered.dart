@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ItemReorderedAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ItemReorderedAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ItemReorderedAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ItemReorderedAction($value)';
+
  }
 @immutable final class ItemReordered {const ItemReordered({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });
 
@@ -65,14 +68,17 @@ ItemReordered copyWith({ItemReorderedAction? action, ItemReorderedChanges? chang
   projectsV2Item: projectsV2Item ?? this.projectsV2Item,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ItemReordered &&
           action == other.action &&
           changes == other.changes &&
           installation == other.installation &&
           organization == other.organization &&
           projectsV2Item == other.projectsV2Item &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2Item, sender); } 
-@override String toString() { return 'ItemReordered(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, installation, organization, projectsV2Item, sender);
+
+@override String toString() => 'ItemReordered(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)';
+
  }

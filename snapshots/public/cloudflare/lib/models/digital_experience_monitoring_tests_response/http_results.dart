@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('resou
 HttpResults copyWith({DigitalExperienceMonitoringTimingAggregates? resourceFetchTime}) { return HttpResults(
   resourceFetchTime: resourceFetchTime ?? this.resourceFetchTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is HttpResults &&
-          resourceFetchTime == other.resourceFetchTime; } 
-@override int get hashCode { return resourceFetchTime.hashCode; } 
-@override String toString() { return 'HttpResults(resourceFetchTime: $resourceFetchTime)'; } 
+          resourceFetchTime == other.resourceFetchTime;
+
+@override int get hashCode => resourceFetchTime.hashCode;
+
+@override String toString() => 'HttpResults(resourceFetchTime: $resourceFetchTime)';
+
  }

@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 InputAudioTranscription copyWith({String? Function()? model}) { return InputAudioTranscription(
   model: model != null ? model() : this.model,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InputAudioTranscription &&
-          model == other.model; } 
-@override int get hashCode { return model.hashCode; } 
-@override String toString() { return 'InputAudioTranscription(model: $model)'; } 
+          model == other.model;
+
+@override int get hashCode => model.hashCode;
+
+@override String toString() => 'InputAudioTranscription(model: $model)';
+
  }

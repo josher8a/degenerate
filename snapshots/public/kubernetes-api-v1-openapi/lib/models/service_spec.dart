@@ -135,7 +135,7 @@ ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? F
   trafficDistribution: trafficDistribution != null ? trafficDistribution() : this.trafficDistribution,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ServiceSpec &&
           allocateLoadBalancerNodePorts == other.allocateLoadBalancerNodePorts &&
           clusterIp == other.clusterIp &&
@@ -156,7 +156,10 @@ ServiceSpec copyWith({bool? Function()? allocateLoadBalancerNodePorts, String? F
           sessionAffinity == other.sessionAffinity &&
           sessionAffinityConfig == other.sessionAffinityConfig &&
           trafficDistribution == other.trafficDistribution &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(allocateLoadBalancerNodePorts, clusterIp, Object.hashAll(clusterIPs ?? const []), Object.hashAll(externalIPs ?? const []), externalName, externalTrafficPolicy, healthCheckNodePort, internalTrafficPolicy, Object.hashAll(ipFamilies ?? const []), ipFamilyPolicy, loadBalancerClass, loadBalancerIp, Object.hashAll(loadBalancerSourceRanges ?? const []), Object.hashAll(ports ?? const []), publishNotReadyAddresses, selector, sessionAffinity, sessionAffinityConfig, trafficDistribution, type); } 
-@override String toString() { return 'ServiceSpec(allocateLoadBalancerNodePorts: $allocateLoadBalancerNodePorts, clusterIp: $clusterIp, clusterIPs: $clusterIPs, externalIPs: $externalIPs, externalName: $externalName, externalTrafficPolicy: $externalTrafficPolicy, healthCheckNodePort: $healthCheckNodePort, internalTrafficPolicy: $internalTrafficPolicy, ipFamilies: $ipFamilies, ipFamilyPolicy: $ipFamilyPolicy, loadBalancerClass: $loadBalancerClass, loadBalancerIp: $loadBalancerIp, loadBalancerSourceRanges: $loadBalancerSourceRanges, ports: $ports, publishNotReadyAddresses: $publishNotReadyAddresses, selector: $selector, sessionAffinity: $sessionAffinity, sessionAffinityConfig: $sessionAffinityConfig, trafficDistribution: $trafficDistribution, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(allocateLoadBalancerNodePorts, clusterIp, Object.hashAll(clusterIPs ?? const []), Object.hashAll(externalIPs ?? const []), externalName, externalTrafficPolicy, healthCheckNodePort, internalTrafficPolicy, Object.hashAll(ipFamilies ?? const []), ipFamilyPolicy, loadBalancerClass, loadBalancerIp, Object.hashAll(loadBalancerSourceRanges ?? const []), Object.hashAll(ports ?? const []), publishNotReadyAddresses, selector, sessionAffinity, sessionAffinityConfig, trafficDistribution, type);
+
+@override String toString() => 'ServiceSpec(allocateLoadBalancerNodePorts: $allocateLoadBalancerNodePorts, clusterIp: $clusterIp, clusterIPs: $clusterIPs, externalIPs: $externalIPs, externalName: $externalName, externalTrafficPolicy: $externalTrafficPolicy, healthCheckNodePort: $healthCheckNodePort, internalTrafficPolicy: $internalTrafficPolicy, ipFamilies: $ipFamilies, ipFamilyPolicy: $ipFamilyPolicy, loadBalancerClass: $loadBalancerClass, loadBalancerIp: $loadBalancerIp, loadBalancerSourceRanges: $loadBalancerSourceRanges, ports: $ports, publishNotReadyAddresses: $publishNotReadyAddresses, selector: $selector, sessionAffinity: $sessionAffinity, sessionAffinityConfig: $sessionAffinityConfig, trafficDistribution: $trafficDistribution, type: $type)';
+
  }

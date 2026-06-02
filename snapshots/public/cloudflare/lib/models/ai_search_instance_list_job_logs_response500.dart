@@ -21,10 +21,13 @@ AiSearchInstanceListJobLogsResponse500 copyWith({List<AccountsByAccountIdPipelin
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AiSearchInstanceListJobLogsResponse500 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
-@override String toString() { return 'AiSearchInstanceListJobLogsResponse500(errors: $errors, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), success);
+
+@override String toString() => 'AiSearchInstanceListJobLogsResponse500(errors: $errors, success: $success)';
+
  }

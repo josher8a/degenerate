@@ -24,10 +24,13 @@ CodespacesUserPublicKey copyWith({String? keyId, String? key, }) { return Codesp
   keyId: keyId ?? this.keyId,
   key: key ?? this.key,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodespacesUserPublicKey &&
           keyId == other.keyId &&
-          key == other.key; } 
-@override int get hashCode { return Object.hash(keyId, key); } 
-@override String toString() { return 'CodespacesUserPublicKey(keyId: $keyId, key: $key)'; } 
+          key == other.key;
+
+@override int get hashCode => Object.hash(keyId, key);
+
+@override String toString() => 'CodespacesUserPublicKey(keyId: $keyId, key: $key)';
+
  }

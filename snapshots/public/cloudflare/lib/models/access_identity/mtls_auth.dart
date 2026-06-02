@@ -35,13 +35,16 @@ MtlsAuth copyWith({String? Function()? authStatus, String? Function()? certIssue
   certPresented: certPresented != null ? certPresented() : this.certPresented,
   certSerial: certSerial != null ? certSerial() : this.certSerial,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MtlsAuth &&
           authStatus == other.authStatus &&
           certIssuerDn == other.certIssuerDn &&
           certIssuerSki == other.certIssuerSki &&
           certPresented == other.certPresented &&
-          certSerial == other.certSerial; } 
-@override int get hashCode { return Object.hash(authStatus, certIssuerDn, certIssuerSki, certPresented, certSerial); } 
-@override String toString() { return 'MtlsAuth(authStatus: $authStatus, certIssuerDn: $certIssuerDn, certIssuerSki: $certIssuerSki, certPresented: $certPresented, certSerial: $certSerial)'; } 
+          certSerial == other.certSerial;
+
+@override int get hashCode => Object.hash(authStatus, certIssuerDn, certIssuerSki, certPresented, certSerial);
+
+@override String toString() => 'MtlsAuth(authStatus: $authStatus, certIssuerDn: $certIssuerDn, certIssuerSki: $certIssuerSki, certPresented: $certPresented, certSerial: $certSerial)';
+
  }

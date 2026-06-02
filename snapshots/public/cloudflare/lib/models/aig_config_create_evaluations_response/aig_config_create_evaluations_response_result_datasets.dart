@@ -72,7 +72,7 @@ AigConfigCreateEvaluationsResponseResultDatasets copyWith({String? accountId, St
   modifiedAt: modifiedAt ?? this.modifiedAt,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AigConfigCreateEvaluationsResponseResultDatasets &&
           accountId == other.accountId &&
           accountTag == other.accountTag &&
@@ -82,7 +82,10 @@ AigConfigCreateEvaluationsResponseResultDatasets copyWith({String? accountId, St
           gatewayId == other.gatewayId &&
           id == other.id &&
           modifiedAt == other.modifiedAt &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(accountId, accountTag, createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name); } 
-@override String toString() { return 'AigConfigCreateEvaluationsResponseResultDatasets(accountId: $accountId, accountTag: $accountTag, createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(accountId, accountTag, createdAt, enable, Object.hashAll(filters), gatewayId, id, modifiedAt, name);
+
+@override String toString() => 'AigConfigCreateEvaluationsResponseResultDatasets(accountId: $accountId, accountTag: $accountTag, createdAt: $createdAt, enable: $enable, filters: $filters, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, name: $name)';
+
  }

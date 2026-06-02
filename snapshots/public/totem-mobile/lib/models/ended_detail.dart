@@ -34,18 +34,13 @@ final class EndedDetail {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is EndedDetail && type == other.type && reason == other.reason;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EndedDetail && type == other.type && reason == other.reason;
 
   @override
-  int get hashCode {
-    return Object.hash(type, reason);
-  }
+  int get hashCode => Object.hash(type, reason);
 
   @override
-  String toString() {
-    return 'EndedDetail(type: $type, reason: $reason)';
-  }
+  String toString() => 'EndedDetail(type: $type, reason: $reason)';
 }

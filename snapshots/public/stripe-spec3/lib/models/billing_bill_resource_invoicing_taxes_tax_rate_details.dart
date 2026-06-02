@@ -21,9 +21,12 @@ return errors; }
 BillingBillResourceInvoicingTaxesTaxRateDetails copyWith({String? taxRate}) { return BillingBillResourceInvoicingTaxesTaxRateDetails(
   taxRate: taxRate ?? this.taxRate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingTaxesTaxRateDetails &&
-          taxRate == other.taxRate; } 
-@override int get hashCode { return taxRate.hashCode; } 
-@override String toString() { return 'BillingBillResourceInvoicingTaxesTaxRateDetails(taxRate: $taxRate)'; } 
+          taxRate == other.taxRate;
+
+@override int get hashCode => taxRate.hashCode;
+
+@override String toString() => 'BillingBillResourceInvoicingTaxesTaxRateDetails(taxRate: $taxRate)';
+
  }

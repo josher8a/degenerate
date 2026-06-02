@@ -42,13 +42,16 @@ PostQuotesRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDi
   quantity: quantity != null ? quantity() : this.quantity,
   taxRates: taxRates != null ? taxRates() : this.taxRates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostQuotesRequestLineItems &&
           discounts == other.discounts &&
           price == other.price &&
           priceData == other.priceData &&
           quantity == other.quantity &&
-          taxRates == other.taxRates; } 
-@override int get hashCode { return Object.hash(discounts, price, priceData, quantity, taxRates); } 
-@override String toString() { return 'PostQuotesRequestLineItems(discounts: $discounts, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
+          taxRates == other.taxRates;
+
+@override int get hashCode => Object.hash(discounts, price, priceData, quantity, taxRates);
+
+@override String toString() => 'PostQuotesRequestLineItems(discounts: $discounts, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)';
+
  }

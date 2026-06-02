@@ -41,11 +41,14 @@ EndpointSubset copyWith({List<EndpointAddress>? Function()? addresses, List<Endp
   notReadyAddresses: notReadyAddresses != null ? notReadyAddresses() : this.notReadyAddresses,
   ports: ports != null ? ports() : this.ports,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EndpointSubset &&
           listEquals(addresses, other.addresses) &&
           listEquals(notReadyAddresses, other.notReadyAddresses) &&
-          listEquals(ports, other.ports); } 
-@override int get hashCode { return Object.hash(Object.hashAll(addresses ?? const []), Object.hashAll(notReadyAddresses ?? const []), Object.hashAll(ports ?? const [])); } 
-@override String toString() { return 'EndpointSubset(addresses: $addresses, notReadyAddresses: $notReadyAddresses, ports: $ports)'; } 
+          listEquals(ports, other.ports);
+
+@override int get hashCode => Object.hash(Object.hashAll(addresses ?? const []), Object.hashAll(notReadyAddresses ?? const []), Object.hashAll(ports ?? const []));
+
+@override String toString() => 'EndpointSubset(addresses: $addresses, notReadyAddresses: $notReadyAddresses, ports: $ports)';
+
  }

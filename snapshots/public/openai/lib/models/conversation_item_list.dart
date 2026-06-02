@@ -45,13 +45,16 @@ ConversationItemList copyWith({ChatCompletionListObject? object, List<Conversati
   firstId: firstId ?? this.firstId,
   lastId: lastId ?? this.lastId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConversationItemList &&
           object == other.object &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           firstId == other.firstId &&
-          lastId == other.lastId; } 
-@override int get hashCode { return Object.hash(object, Object.hashAll(data), hasMore, firstId, lastId); } 
-@override String toString() { return 'ConversationItemList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)'; } 
+          lastId == other.lastId;
+
+@override int get hashCode => Object.hash(object, Object.hashAll(data), hasMore, firstId, lastId);
+
+@override String toString() => 'ConversationItemList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)';
+
  }

@@ -35,13 +35,16 @@ PcMetadata copyWith({String? Function()? effectiveNetworkType, bool? Function()?
   timestamp: timestamp != null ? timestamp() : this.timestamp,
   turnConnectivity: turnConnectivity != null ? turnConnectivity() : this.turnConnectivity,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PcMetadata &&
           effectiveNetworkType == other.effectiveNetworkType &&
           reflexiveConnectivity == other.reflexiveConnectivity &&
           relayConnectivity == other.relayConnectivity &&
           timestamp == other.timestamp &&
-          turnConnectivity == other.turnConnectivity; } 
-@override int get hashCode { return Object.hash(effectiveNetworkType, reflexiveConnectivity, relayConnectivity, timestamp, turnConnectivity); } 
-@override String toString() { return 'PcMetadata(effectiveNetworkType: $effectiveNetworkType, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, timestamp: $timestamp, turnConnectivity: $turnConnectivity)'; } 
+          turnConnectivity == other.turnConnectivity;
+
+@override int get hashCode => Object.hash(effectiveNetworkType, reflexiveConnectivity, relayConnectivity, timestamp, turnConnectivity);
+
+@override String toString() => 'PcMetadata(effectiveNetworkType: $effectiveNetworkType, reflexiveConnectivity: $reflexiveConnectivity, relayConnectivity: $relayConnectivity, timestamp: $timestamp, turnConnectivity: $turnConnectivity)';
+
  }

@@ -23,10 +23,13 @@ TerminalReaderReaderResourceCollectInputsAction copyWith({List<TerminalReaderRea
   inputs: inputs ?? this.inputs,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TerminalReaderReaderResourceCollectInputsAction &&
           listEquals(inputs, other.inputs) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(Object.hashAll(inputs), metadata); } 
-@override String toString() { return 'TerminalReaderReaderResourceCollectInputsAction(inputs: $inputs, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(Object.hashAll(inputs), metadata);
+
+@override String toString() => 'TerminalReaderReaderResourceCollectInputsAction(inputs: $inputs, metadata: $metadata)';
+
  }

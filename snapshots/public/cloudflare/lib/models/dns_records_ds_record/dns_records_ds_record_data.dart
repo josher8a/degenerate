@@ -59,12 +59,15 @@ DnsRecordsDsRecordData copyWith({double? Function()? algorithm, String? Function
   digestType: digestType != null ? digestType() : this.digestType,
   keyTag: keyTag != null ? keyTag() : this.keyTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsRecordsDsRecordData &&
           algorithm == other.algorithm &&
           digest == other.digest &&
           digestType == other.digestType &&
-          keyTag == other.keyTag; } 
-@override int get hashCode { return Object.hash(algorithm, digest, digestType, keyTag); } 
-@override String toString() { return 'DnsRecordsDsRecordData(algorithm: $algorithm, digest: $digest, digestType: $digestType, keyTag: $keyTag)'; } 
+          keyTag == other.keyTag;
+
+@override int get hashCode => Object.hash(algorithm, digest, digestType, keyTag);
+
+@override String toString() => 'DnsRecordsDsRecordData(algorithm: $algorithm, digest: $digest, digestType: $digestType, keyTag: $keyTag)';
+
  }

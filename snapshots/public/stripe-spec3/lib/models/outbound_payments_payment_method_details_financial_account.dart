@@ -28,10 +28,13 @@ OutboundPaymentsPaymentMethodDetailsFinancialAccount copyWith({String? id, Outbo
   id: id ?? this.id,
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OutboundPaymentsPaymentMethodDetailsFinancialAccount &&
           id == other.id &&
-          network == other.network; } 
-@override int get hashCode { return Object.hash(id, network); } 
-@override String toString() { return 'OutboundPaymentsPaymentMethodDetailsFinancialAccount(id: $id, network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => Object.hash(id, network);
+
+@override String toString() => 'OutboundPaymentsPaymentMethodDetailsFinancialAccount(id: $id, network: $network)';
+
  }

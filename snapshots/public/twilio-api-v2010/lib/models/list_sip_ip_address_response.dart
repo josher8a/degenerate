@@ -55,7 +55,7 @@ ListSipIpAddressResponse copyWith({List<AccountSipSipIpAccessControlListSipIpAdd
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListSipIpAddressResponse &&
           listEquals(ipAddresses, other.ipAddresses) &&
           end == other.end &&
@@ -65,7 +65,10 @@ ListSipIpAddressResponse copyWith({List<AccountSipSipIpAccessControlListSipIpAdd
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ipAddresses ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListSipIpAddressResponse(ipAddresses: $ipAddresses, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(ipAddresses ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
+
+@override String toString() => 'ListSipIpAddressResponse(ipAddresses: $ipAddresses, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+
  }

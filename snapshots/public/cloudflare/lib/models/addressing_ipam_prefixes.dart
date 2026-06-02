@@ -157,7 +157,7 @@ AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accoun
   ownershipValidationToken: ownershipValidationToken != null ? ownershipValidationToken() : this.ownershipValidationToken,
   rpkiValidationState: rpkiValidationState != null ? rpkiValidationState() : this.rpkiValidationState,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingIpamPrefixes &&
           accountId == other.accountId &&
           advertised == other.advertised &&
@@ -176,7 +176,10 @@ AddressingIpamPrefixes copyWith({AddressingAccountIdentifier? Function()? accoun
           onDemandLocked == other.onDemandLocked &&
           ownershipValidationState == other.ownershipValidationState &&
           ownershipValidationToken == other.ownershipValidationToken &&
-          rpkiValidationState == other.rpkiValidationState; } 
-@override int get hashCode { return Object.hash(accountId, advertised, advertisedModifiedAt, approved, asn, cidr, createdAt, delegateLoaCreation, description, id, irrValidationState, loaDocumentId, modifiedAt, onDemandEnabled, onDemandLocked, ownershipValidationState, ownershipValidationToken, rpkiValidationState); } 
-@override String toString() { return 'AddressingIpamPrefixes(accountId: $accountId, advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, approved: $approved, asn: $asn, cidr: $cidr, createdAt: $createdAt, delegateLoaCreation: $delegateLoaCreation, description: $description, id: $id, irrValidationState: $irrValidationState, loaDocumentId: $loaDocumentId, modifiedAt: $modifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked, ownershipValidationState: $ownershipValidationState, ownershipValidationToken: $ownershipValidationToken, rpkiValidationState: $rpkiValidationState)'; } 
+          rpkiValidationState == other.rpkiValidationState;
+
+@override int get hashCode => Object.hash(accountId, advertised, advertisedModifiedAt, approved, asn, cidr, createdAt, delegateLoaCreation, description, id, irrValidationState, loaDocumentId, modifiedAt, onDemandEnabled, onDemandLocked, ownershipValidationState, ownershipValidationToken, rpkiValidationState);
+
+@override String toString() => 'AddressingIpamPrefixes(accountId: $accountId, advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, approved: $approved, asn: $asn, cidr: $cidr, createdAt: $createdAt, delegateLoaCreation: $delegateLoaCreation, description: $description, id: $id, irrValidationState: $irrValidationState, loaDocumentId: $loaDocumentId, modifiedAt: $modifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked, ownershipValidationState: $ownershipValidationState, ownershipValidationToken: $ownershipValidationToken, rpkiValidationState: $rpkiValidationState)';
+
  }

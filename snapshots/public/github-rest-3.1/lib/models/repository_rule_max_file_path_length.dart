@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RepositoryRuleMaxFilePathLengthType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RepositoryRuleMaxFilePathLengthType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryRuleMaxFilePathLengthType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RepositoryRuleMaxFilePathLengthType($value)';
+
  }
 /// Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.
 @immutable final class RepositoryRuleMaxFilePathLength {const RepositoryRuleMaxFilePathLength({required this.type, this.parameters, });
@@ -42,10 +45,13 @@ RepositoryRuleMaxFilePathLength copyWith({RepositoryRuleMaxFilePathLengthType? t
   type: type ?? this.type,
   parameters: parameters != null ? parameters() : this.parameters,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleMaxFilePathLength &&
           type == other.type &&
-          parameters == other.parameters; } 
-@override int get hashCode { return Object.hash(type, parameters); } 
-@override String toString() { return 'RepositoryRuleMaxFilePathLength(type: $type, parameters: $parameters)'; } 
+          parameters == other.parameters;
+
+@override int get hashCode => Object.hash(type, parameters);
+
+@override String toString() => 'RepositoryRuleMaxFilePathLength(type: $type, parameters: $parameters)';
+
  }

@@ -74,7 +74,7 @@ PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? d
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTopupsRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -83,7 +83,10 @@ PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? d
           metadata == other.metadata &&
           source == other.source &&
           statementDescriptor == other.statementDescriptor &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata, source, statementDescriptor, transferGroup); } 
-@override String toString() { return 'PostTopupsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata, source: $source, statementDescriptor: $statementDescriptor, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), metadata, source, statementDescriptor, transferGroup);
+
+@override String toString() => 'PostTopupsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, metadata: $metadata, source: $source, statementDescriptor: $statementDescriptor, transferGroup: $transferGroup)';
+
  }

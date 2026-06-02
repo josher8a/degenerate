@@ -37,12 +37,15 @@ PurchaseDetailsReceipt copyWith({String? Function()? description, String? Functi
   total: total != null ? total() : this.total,
   unitCost: unitCost != null ? unitCost() : this.unitCost,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PurchaseDetailsReceipt &&
           description == other.description &&
           quantity == other.quantity &&
           total == other.total &&
-          unitCost == other.unitCost; } 
-@override int get hashCode { return Object.hash(description, quantity, total, unitCost); } 
-@override String toString() { return 'PurchaseDetailsReceipt(description: $description, quantity: $quantity, total: $total, unitCost: $unitCost)'; } 
+          unitCost == other.unitCost;
+
+@override int get hashCode => Object.hash(description, quantity, total, unitCost);
+
+@override String toString() => 'PurchaseDetailsReceipt(description: $description, quantity: $quantity, total: $total, unitCost: $unitCost)';
+
  }

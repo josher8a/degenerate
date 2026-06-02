@@ -40,14 +40,17 @@ GollumEventPages copyWith({String? Function()? pageName, String? Function()? tit
   sha: sha != null ? sha() : this.sha,
   htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GollumEventPages &&
           pageName == other.pageName &&
           title == other.title &&
           summary == other.summary &&
           action == other.action &&
           sha == other.sha &&
-          htmlUrl == other.htmlUrl; } 
-@override int get hashCode { return Object.hash(pageName, title, summary, action, sha, htmlUrl); } 
-@override String toString() { return 'GollumEventPages(pageName: $pageName, title: $title, summary: $summary, action: $action, sha: $sha, htmlUrl: $htmlUrl)'; } 
+          htmlUrl == other.htmlUrl;
+
+@override int get hashCode => Object.hash(pageName, title, summary, action, sha, htmlUrl);
+
+@override String toString() => 'GollumEventPages(pageName: $pageName, title: $title, summary: $summary, action: $action, sha: $sha, htmlUrl: $htmlUrl)';
+
  }

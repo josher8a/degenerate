@@ -35,12 +35,15 @@ TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions copyWit
   postedAt: postedAt != null ? postedAt() : this.postedAt,
   returnedAt: returnedAt != null ? returnedAt() : this.returnedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions &&
           canceledAt == other.canceledAt &&
           failedAt == other.failedAt &&
           postedAt == other.postedAt &&
-          returnedAt == other.returnedAt; } 
-@override int get hashCode { return Object.hash(canceledAt, failedAt, postedAt, returnedAt); } 
-@override String toString() { return 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, postedAt: $postedAt, returnedAt: $returnedAt)'; } 
+          returnedAt == other.returnedAt;
+
+@override int get hashCode => Object.hash(canceledAt, failedAt, postedAt, returnedAt);
+
+@override String toString() => 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions(canceledAt: $canceledAt, failedAt: $failedAt, postedAt: $postedAt, returnedAt: $returnedAt)';
+
  }

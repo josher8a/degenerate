@@ -20,10 +20,13 @@ WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List? Function()? file, Strin
   file: file != null ? file() : this.file,
   fileName: fileName != null ? fileName() : this.fileName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiUploadFinetuneAssetRequest &&
           file == other.file &&
-          fileName == other.fileName; } 
-@override int get hashCode { return Object.hash(file, fileName); } 
-@override String toString() { return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)'; } 
+          fileName == other.fileName;
+
+@override int get hashCode => Object.hash(file, fileName);
+
+@override String toString() => 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)';
+
  }

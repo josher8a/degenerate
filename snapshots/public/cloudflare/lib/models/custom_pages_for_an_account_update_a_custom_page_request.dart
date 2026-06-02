@@ -23,10 +23,13 @@ CustomPagesForAnAccountUpdateACustomPageRequest copyWith({CustomPagesState? stat
   state: state ?? this.state,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPagesForAnAccountUpdateACustomPageRequest &&
           state == other.state &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(state, url); } 
-@override String toString() { return 'CustomPagesForAnAccountUpdateACustomPageRequest(state: $state, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(state, url);
+
+@override String toString() => 'CustomPagesForAnAccountUpdateACustomPageRequest(state: $state, url: $url)';
+
  }

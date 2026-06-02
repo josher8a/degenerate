@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn')
 ListsListItemAsnObject copyWith({ListsItemAsn? asn}) { return ListsListItemAsnObject(
   asn: asn ?? this.asn,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListsListItemAsnObject &&
-          asn == other.asn; } 
-@override int get hashCode { return asn.hashCode; } 
-@override String toString() { return 'ListsListItemAsnObject(asn: $asn)'; } 
+          asn == other.asn;
+
+@override int get hashCode => asn.hashCode;
+
+@override String toString() => 'ListsListItemAsnObject(asn: $asn)';
+
  }

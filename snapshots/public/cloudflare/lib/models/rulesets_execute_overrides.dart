@@ -53,13 +53,16 @@ RulesetsExecuteOverrides copyWith({RulesetsRuleAction? Function()? action, List<
   rules: rules != null ? rules() : this.rules,
   sensitivityLevel: sensitivityLevel != null ? sensitivityLevel() : this.sensitivityLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsExecuteOverrides &&
           action == other.action &&
           listEquals(categories, other.categories) &&
           enabled == other.enabled &&
           listEquals(rules, other.rules) &&
-          sensitivityLevel == other.sensitivityLevel; } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(categories ?? const []), enabled, Object.hashAll(rules ?? const []), sensitivityLevel); } 
-@override String toString() { return 'RulesetsExecuteOverrides(action: $action, categories: $categories, enabled: $enabled, rules: $rules, sensitivityLevel: $sensitivityLevel)'; } 
+          sensitivityLevel == other.sensitivityLevel;
+
+@override int get hashCode => Object.hash(action, Object.hashAll(categories ?? const []), enabled, Object.hashAll(rules ?? const []), sensitivityLevel);
+
+@override String toString() => 'RulesetsExecuteOverrides(action: $action, categories: $categories, enabled: $enabled, rules: $rules, sensitivityLevel: $sensitivityLevel)';
+
  }

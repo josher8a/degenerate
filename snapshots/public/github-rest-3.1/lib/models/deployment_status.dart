@@ -106,7 +106,7 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
   logUrl: logUrl != null ? logUrl() : this.logUrl,
   performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeploymentStatus &&
           url == other.url &&
           id == other.id &&
@@ -122,7 +122,10 @@ DeploymentStatus copyWith({Uri? url, int? id, String? nodeId, DeploymentStatusSt
           repositoryUrl == other.repositoryUrl &&
           environmentUrl == other.environmentUrl &&
           logUrl == other.logUrl &&
-          performedViaGithubApp == other.performedViaGithubApp; } 
-@override int get hashCode { return Object.hash(url, id, nodeId, state, creator, description, environment, targetUrl, createdAt, updatedAt, deploymentUrl, repositoryUrl, environmentUrl, logUrl, performedViaGithubApp); } 
-@override String toString() { return 'DeploymentStatus(url: $url, id: $id, nodeId: $nodeId, state: $state, creator: $creator, description: $description, environment: $environment, targetUrl: $targetUrl, createdAt: $createdAt, updatedAt: $updatedAt, deploymentUrl: $deploymentUrl, repositoryUrl: $repositoryUrl, environmentUrl: $environmentUrl, logUrl: $logUrl, performedViaGithubApp: $performedViaGithubApp)'; } 
+          performedViaGithubApp == other.performedViaGithubApp;
+
+@override int get hashCode => Object.hash(url, id, nodeId, state, creator, description, environment, targetUrl, createdAt, updatedAt, deploymentUrl, repositoryUrl, environmentUrl, logUrl, performedViaGithubApp);
+
+@override String toString() => 'DeploymentStatus(url: $url, id: $id, nodeId: $nodeId, state: $state, creator: $creator, description: $description, environment: $environment, targetUrl: $targetUrl, createdAt: $createdAt, updatedAt: $updatedAt, deploymentUrl: $deploymentUrl, repositoryUrl: $repositoryUrl, environmentUrl: $environmentUrl, logUrl: $logUrl, performedViaGithubApp: $performedViaGithubApp)';
+
  }

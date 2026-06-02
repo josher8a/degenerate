@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 ActivityMarkRepoNotificationsAsReadRequest copyWith({DateTime? Function()? lastReadAt}) { return ActivityMarkRepoNotificationsAsReadRequest(
   lastReadAt: lastReadAt != null ? lastReadAt() : this.lastReadAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActivityMarkRepoNotificationsAsReadRequest &&
-          lastReadAt == other.lastReadAt; } 
-@override int get hashCode { return lastReadAt.hashCode; } 
-@override String toString() { return 'ActivityMarkRepoNotificationsAsReadRequest(lastReadAt: $lastReadAt)'; } 
+          lastReadAt == other.lastReadAt;
+
+@override int get hashCode => lastReadAt.hashCode;
+
+@override String toString() => 'ActivityMarkRepoNotificationsAsReadRequest(lastReadAt: $lastReadAt)';
+
  }

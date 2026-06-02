@@ -67,7 +67,7 @@ DlpDocumentFingerprint copyWith({DateTime? createdAt, String? description, Strin
   updatedAt: updatedAt ?? this.updatedAt,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpDocumentFingerprint &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -78,7 +78,10 @@ DlpDocumentFingerprint copyWith({DateTime? createdAt, String? description, Strin
           name == other.name &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(createdAt, description, entryId, fileName, id, matchPercent, name, status, updatedAt, version); } 
-@override String toString() { return 'DlpDocumentFingerprint(createdAt: $createdAt, description: $description, entryId: $entryId, fileName: $fileName, id: $id, matchPercent: $matchPercent, name: $name, status: $status, updatedAt: $updatedAt, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(createdAt, description, entryId, fileName, id, matchPercent, name, status, updatedAt, version);
+
+@override String toString() => 'DlpDocumentFingerprint(createdAt: $createdAt, description: $description, entryId: $entryId, fileName: $fileName, id: $id, matchPercent: $matchPercent, name: $name, status: $status, updatedAt: $updatedAt, version: $version)';
+
  }

@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'
 PaymentMethodFpx copyWith({PaymentMethodDetailsFpxBank? bank}) { return PaymentMethodFpx(
   bank: bank ?? this.bank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodFpx &&
-          bank == other.bank; } 
-@override int get hashCode { return bank.hashCode; } 
-@override String toString() { return 'PaymentMethodFpx(bank: $bank)'; } 
+          bank == other.bank;
+
+@override int get hashCode => bank.hashCode;
+
+@override String toString() => 'PaymentMethodFpx(bank: $bank)';
+
  }

@@ -17,7 +17,8 @@ final class CloudflareImagesListImagesError$400 extends CloudflareImagesListImag
 
 final ImagesImagesListResponse2 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CloudflareImagesListImagesError$Unknown extends CloudflareImagesListImagesError {const CloudflareImagesListImagesError$Unknown(this.statusCode, this.rawBody, );
 

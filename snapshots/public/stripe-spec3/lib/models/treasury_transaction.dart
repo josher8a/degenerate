@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryTransactionObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryTransactionObject($value)';
+
  }
 /// Status of the Transaction.
 @immutable final class TreasuryTransactionStatus {const TreasuryTransactionStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TreasuryTransactionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TreasuryTransactionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryTransactionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TreasuryTransactionStatus($value)';
+
  }
 /// Transactions represent changes to a [FinancialAccount's](https://api.stripe.com#financial_accounts) balance.
 @immutable final class TreasuryTransaction {const TreasuryTransaction({required this.amount, required this.balanceImpact, required this.created, required this.currency, required this.description, required this.financialAccount, required this.flowType, required this.id, required this.livemode, required this.object, required this.status, required this.statusTransitions, this.entries, this.flow, this.flowDetails, });
@@ -170,7 +176,7 @@ TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceIm
   status: status ?? this.status,
   statusTransitions: statusTransitions ?? this.statusTransitions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryTransaction &&
           amount == other.amount &&
           balanceImpact == other.balanceImpact &&
@@ -186,7 +192,10 @@ TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceIm
           livemode == other.livemode &&
           object == other.object &&
           status == other.status &&
-          statusTransitions == other.statusTransitions; } 
-@override int get hashCode { return Object.hash(amount, balanceImpact, created, currency, description, entries, financialAccount, flow, flowDetails, flowType, id, livemode, object, status, statusTransitions); } 
-@override String toString() { return 'TreasuryTransaction(amount: $amount, balanceImpact: $balanceImpact, created: $created, currency: $currency, description: $description, entries: $entries, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions)'; } 
+          statusTransitions == other.statusTransitions;
+
+@override int get hashCode => Object.hash(amount, balanceImpact, created, currency, description, entries, financialAccount, flow, flowDetails, flowType, id, livemode, object, status, statusTransitions);
+
+@override String toString() => 'TreasuryTransaction(amount: $amount, balanceImpact: $balanceImpact, created: $created, currency: $currency, description: $description, entries: $entries, financialAccount: $financialAccount, flow: $flow, flowDetails: $flowDetails, flowType: $flowType, id: $id, livemode: $livemode, object: $object, status: $status, statusTransitions: $statusTransitions)';
+
  }

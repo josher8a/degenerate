@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is CreateImageVariationRequestSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'CreateImageVariationRequestSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageVariationRequestSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateImageVariationRequestSize($value)';
+
  }
 @immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });
 
@@ -93,14 +96,17 @@ CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequ
   size: size != null ? size() : this.size,
   user: user != null ? user() : this.user,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateImageVariationRequest &&
           image == other.image &&
           model == other.model &&
           n == other.n &&
           responseFormat == other.responseFormat &&
           size == other.size &&
-          user == other.user; } 
-@override int get hashCode { return Object.hash(image, model, n, responseFormat, size, user); } 
-@override String toString() { return 'CreateImageVariationRequest(image: $image, model: $model, n: $n, responseFormat: $responseFormat, size: $size, user: $user)'; } 
+          user == other.user;
+
+@override int get hashCode => Object.hash(image, model, n, responseFormat, size, user);
+
+@override String toString() => 'CreateImageVariationRequest(image: $image, model: $model, n: $n, responseFormat: $responseFormat, size: $size, user: $user)';
+
  }

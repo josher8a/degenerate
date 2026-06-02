@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PollAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PollAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PollAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PollAction($value)';
+
  }
 @immutable final class Poll {const Poll({required this.action, required this.currentBookmark, });
 
@@ -45,10 +48,13 @@ Poll copyWith({PollAction? action, String? currentBookmark, }) { return Poll(
   action: action ?? this.action,
   currentBookmark: currentBookmark ?? this.currentBookmark,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Poll &&
           action == other.action &&
-          currentBookmark == other.currentBookmark; } 
-@override int get hashCode { return Object.hash(action, currentBookmark); } 
-@override String toString() { return 'Poll(action: $action, currentBookmark: $currentBookmark)'; } 
+          currentBookmark == other.currentBookmark;
+
+@override int get hashCode => Object.hash(action, currentBookmark);
+
+@override String toString() => 'Poll(action: $action, currentBookmark: $currentBookmark)';
+
  }

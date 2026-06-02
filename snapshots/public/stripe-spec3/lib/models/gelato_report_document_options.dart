@@ -35,12 +35,15 @@ GelatoReportDocumentOptions copyWith({List<AllowedTypes>? Function()? allowedTyp
   requireLiveCapture: requireLiveCapture != null ? requireLiveCapture() : this.requireLiveCapture,
   requireMatchingSelfie: requireMatchingSelfie != null ? requireMatchingSelfie() : this.requireMatchingSelfie,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoReportDocumentOptions &&
           listEquals(allowedTypes, other.allowedTypes) &&
           requireIdNumber == other.requireIdNumber &&
           requireLiveCapture == other.requireLiveCapture &&
-          requireMatchingSelfie == other.requireMatchingSelfie; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedTypes ?? const []), requireIdNumber, requireLiveCapture, requireMatchingSelfie); } 
-@override String toString() { return 'GelatoReportDocumentOptions(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)'; } 
+          requireMatchingSelfie == other.requireMatchingSelfie;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedTypes ?? const []), requireIdNumber, requireLiveCapture, requireMatchingSelfie);
+
+@override String toString() => 'GelatoReportDocumentOptions(allowedTypes: $allowedTypes, requireIdNumber: $requireIdNumber, requireLiveCapture: $requireLiveCapture, requireMatchingSelfie: $requireMatchingSelfie)';
+
  }

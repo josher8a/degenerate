@@ -35,13 +35,16 @@ ZeroTrustGatewayApplicationsReviewStatusResponseContent copyWith({List<int>? Fun
   unapprovedApps: unapprovedApps != null ? unapprovedApps() : this.unapprovedApps,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayApplicationsReviewStatusResponseContent &&
           listEquals(approvedApps, other.approvedApps) &&
           createdAt == other.createdAt &&
           listEquals(inReviewApps, other.inReviewApps) &&
           listEquals(unapprovedApps, other.unapprovedApps) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(Object.hashAll(approvedApps ?? const []), createdAt, Object.hashAll(inReviewApps ?? const []), Object.hashAll(unapprovedApps ?? const []), updatedAt); } 
-@override String toString() { return 'ZeroTrustGatewayApplicationsReviewStatusResponseContent(approvedApps: $approvedApps, createdAt: $createdAt, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(Object.hashAll(approvedApps ?? const []), createdAt, Object.hashAll(inReviewApps ?? const []), Object.hashAll(unapprovedApps ?? const []), updatedAt);
+
+@override String toString() => 'ZeroTrustGatewayApplicationsReviewStatusResponseContent(approvedApps: $approvedApps, createdAt: $createdAt, inReviewApps: $inReviewApps, unapprovedApps: $unapprovedApps, updatedAt: $updatedAt)';
+
  }

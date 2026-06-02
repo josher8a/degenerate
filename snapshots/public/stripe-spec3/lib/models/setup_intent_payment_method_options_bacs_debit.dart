@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 SetupIntentPaymentMethodOptionsBacsDebit copyWith({SetupIntentPaymentMethodOptionsMandateOptionsBacsDebit? Function()? mandateOptions}) { return SetupIntentPaymentMethodOptionsBacsDebit(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntentPaymentMethodOptionsBacsDebit &&
-          mandateOptions == other.mandateOptions; } 
-@override int get hashCode { return mandateOptions.hashCode; } 
-@override String toString() { return 'SetupIntentPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions)'; } 
+          mandateOptions == other.mandateOptions;
+
+@override int get hashCode => mandateOptions.hashCode;
+
+@override String toString() => 'SetupIntentPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions)';
+
  }

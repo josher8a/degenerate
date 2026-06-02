@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is TlsCertificatesAndHostnamesType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'TlsCertificatesAndHostnamesType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'TlsCertificatesAndHostnamesType($value)';
+
  }
 @immutable final class CustomSslForAZoneCreateSslConfigurationRequest {const CustomSslForAZoneCreateSslConfigurationRequest({required this.certificate, required this.privateKey, this.bundleMethod, this.deploy, this.geoRestrictions, this.policy, this.type, });
 
@@ -78,7 +81,7 @@ CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostn
   privateKey: privateKey ?? this.privateKey,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomSslForAZoneCreateSslConfigurationRequest &&
           bundleMethod == other.bundleMethod &&
           certificate == other.certificate &&
@@ -86,7 +89,10 @@ CustomSslForAZoneCreateSslConfigurationRequest copyWith({TlsCertificatesAndHostn
           geoRestrictions == other.geoRestrictions &&
           policy == other.policy &&
           privateKey == other.privateKey &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(bundleMethod, certificate, deploy, geoRestrictions, policy, privateKey, type); } 
-@override String toString() { return 'CustomSslForAZoneCreateSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, deploy: $deploy, geoRestrictions: $geoRestrictions, policy: $policy, privateKey: $privateKey, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(bundleMethod, certificate, deploy, geoRestrictions, policy, privateKey, type);
+
+@override String toString() => 'CustomSslForAZoneCreateSslConfigurationRequest(bundleMethod: $bundleMethod, certificate: $certificate, deploy: $deploy, geoRestrictions: $geoRestrictions, policy: $policy, privateKey: $privateKey, type: $type)';
+
  }

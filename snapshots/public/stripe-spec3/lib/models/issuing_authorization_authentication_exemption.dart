@@ -24,10 +24,13 @@ IssuingAuthorizationAuthenticationExemption copyWith({ClaimedBy? claimedBy, Issu
   claimedBy: claimedBy ?? this.claimedBy,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingAuthorizationAuthenticationExemption &&
           claimedBy == other.claimedBy &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(claimedBy, type); } 
-@override String toString() { return 'IssuingAuthorizationAuthenticationExemption(claimedBy: $claimedBy, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(claimedBy, type);
+
+@override String toString() => 'IssuingAuthorizationAuthenticationExemption(claimedBy: $claimedBy, type: $type)';
+
  }

@@ -59,7 +59,7 @@ ChatCompletionResponseMessage copyWith({String? Function()? content, String? Fun
   functionCall: functionCall != null ? functionCall() : this.functionCall,
   audio: audio != null ? audio() : this.audio,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatCompletionResponseMessage &&
           content == other.content &&
           refusal == other.refusal &&
@@ -67,7 +67,10 @@ ChatCompletionResponseMessage copyWith({String? Function()? content, String? Fun
           listEquals(annotations, other.annotations) &&
           role == other.role &&
           functionCall == other.functionCall &&
-          audio == other.audio; } 
-@override int get hashCode { return Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio); } 
-@override String toString() { return 'ChatCompletionResponseMessage(content: $content, refusal: $refusal, toolCalls: $toolCalls, annotations: $annotations, role: $role, functionCall: $functionCall, audio: $audio)'; } 
+          audio == other.audio;
+
+@override int get hashCode => Object.hash(content, refusal, Object.hashAll(toolCalls ?? const []), Object.hashAll(annotations ?? const []), role, functionCall, audio);
+
+@override String toString() => 'ChatCompletionResponseMessage(content: $content, refusal: $refusal, toolCalls: $toolCalls, annotations: $annotations, role: $role, functionCall: $functionCall, audio: $audio)';
+
  }

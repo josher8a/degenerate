@@ -20,25 +20,29 @@ final class AutoragConfigSyncError$400 extends AutoragConfigSyncError {const Aut
 
 final AutoragConfigSyncResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AutoragConfigSyncError$404 extends AutoragConfigSyncError {const AutoragConfigSyncError$404(this.error);
 
 final AutoragConfigSyncResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AutoragConfigSyncError$429 extends AutoragConfigSyncError {const AutoragConfigSyncError$429(this.error);
 
 final AutoragConfigSyncResponse429 error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class AutoragConfigSyncError$503 extends AutoragConfigSyncError {const AutoragConfigSyncError$503(this.error);
 
 final AutoragConfigSyncResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class AutoragConfigSyncError$Unknown extends AutoragConfigSyncError {const AutoragConfigSyncError$Unknown(this.statusCode, this.rawBody, );
 

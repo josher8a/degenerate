@@ -34,12 +34,15 @@ ContentTraffic copyWith({String? path, String? title, int? count, int? uniques, 
   count: count ?? this.count,
   uniques: uniques ?? this.uniques,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContentTraffic &&
           path == other.path &&
           title == other.title &&
           count == other.count &&
-          uniques == other.uniques; } 
-@override int get hashCode { return Object.hash(path, title, count, uniques); } 
-@override String toString() { return 'ContentTraffic(path: $path, title: $title, count: $count, uniques: $uniques)'; } 
+          uniques == other.uniques;
+
+@override int get hashCode => Object.hash(path, title, count, uniques);
+
+@override String toString() => 'ContentTraffic(path: $path, title: $title, count: $count, uniques: $uniques)';
+
  }

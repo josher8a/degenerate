@@ -62,13 +62,16 @@ EmailSecurityCreateTrustedDomain copyWith({String? Function()? comments, bool? i
   isSimilarity: isSimilarity ?? this.isSimilarity,
   pattern: pattern ?? this.pattern,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityCreateTrustedDomain &&
           comments == other.comments &&
           isRecent == other.isRecent &&
           isRegex == other.isRegex &&
           isSimilarity == other.isSimilarity &&
-          pattern == other.pattern; } 
-@override int get hashCode { return Object.hash(comments, isRecent, isRegex, isSimilarity, pattern); } 
-@override String toString() { return 'EmailSecurityCreateTrustedDomain(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)'; } 
+          pattern == other.pattern;
+
+@override int get hashCode => Object.hash(comments, isRecent, isRegex, isSimilarity, pattern);
+
+@override String toString() => 'EmailSecurityCreateTrustedDomain(comments: $comments, isRecent: $isRecent, isRegex: $isRegex, isSimilarity: $isSimilarity, pattern: $pattern)';
+
  }

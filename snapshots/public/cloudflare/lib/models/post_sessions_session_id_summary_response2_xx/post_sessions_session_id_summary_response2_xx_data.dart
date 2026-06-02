@@ -20,10 +20,13 @@ PostSessionsSessionIdSummaryResponse2XxData copyWith({String? Function()? messag
   message: message != null ? message() : this.message,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSessionsSessionIdSummaryResponse2XxData &&
           message == other.message &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(message, success); } 
-@override String toString() { return 'PostSessionsSessionIdSummaryResponse2XxData(message: $message, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(message, success);
+
+@override String toString() => 'PostSessionsSessionIdSummaryResponse2XxData(message: $message, success: $success)';
+
  }

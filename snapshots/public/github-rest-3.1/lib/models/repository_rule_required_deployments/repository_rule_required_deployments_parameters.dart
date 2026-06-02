@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('requi
 RepositoryRuleRequiredDeploymentsParameters copyWith({List<String>? requiredDeploymentEnvironments}) { return RepositoryRuleRequiredDeploymentsParameters(
   requiredDeploymentEnvironments: requiredDeploymentEnvironments ?? this.requiredDeploymentEnvironments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleRequiredDeploymentsParameters &&
-          listEquals(requiredDeploymentEnvironments, other.requiredDeploymentEnvironments); } 
-@override int get hashCode { return Object.hashAll(requiredDeploymentEnvironments); } 
-@override String toString() { return 'RepositoryRuleRequiredDeploymentsParameters(requiredDeploymentEnvironments: $requiredDeploymentEnvironments)'; } 
+          listEquals(requiredDeploymentEnvironments, other.requiredDeploymentEnvironments);
+
+@override int get hashCode => Object.hashAll(requiredDeploymentEnvironments);
+
+@override String toString() => 'RepositoryRuleRequiredDeploymentsParameters(requiredDeploymentEnvironments: $requiredDeploymentEnvironments)';
+
  }

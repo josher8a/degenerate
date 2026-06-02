@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Reasons && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Reasons($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Reasons && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Reasons($value)';
+
  }
 /// 
 @immutable final class TreasuryFinancialAccountsResourceClosedStatusDetails {const TreasuryFinancialAccountsResourceClosedStatusDetails({required this.reasons});
@@ -44,9 +47,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('reaso
 TreasuryFinancialAccountsResourceClosedStatusDetails copyWith({List<Reasons>? reasons}) { return TreasuryFinancialAccountsResourceClosedStatusDetails(
   reasons: reasons ?? this.reasons,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasuryFinancialAccountsResourceClosedStatusDetails &&
-          listEquals(reasons, other.reasons); } 
-@override int get hashCode { return Object.hashAll(reasons); } 
-@override String toString() { return 'TreasuryFinancialAccountsResourceClosedStatusDetails(reasons: $reasons)'; } 
+          listEquals(reasons, other.reasons);
+
+@override int get hashCode => Object.hashAll(reasons);
+
+@override String toString() => 'TreasuryFinancialAccountsResourceClosedStatusDetails(reasons: $reasons)';
+
  }

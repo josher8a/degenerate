@@ -119,7 +119,7 @@ PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? 
   threeDSecureUsage: threeDSecureUsage != null ? threeDSecureUsage() : this.threeDSecureUsage,
   wallet: wallet != null ? wallet() : this.wallet,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodCard &&
           brand == other.brand &&
           checks == other.checks &&
@@ -134,7 +134,10 @@ PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? 
           networks == other.networks &&
           regulatedStatus == other.regulatedStatus &&
           threeDSecureUsage == other.threeDSecureUsage &&
-          wallet == other.wallet; } 
-@override int get hashCode { return Object.hash(brand, checks, country, displayBrand, expMonth, expYear, fingerprint, funding, generatedFrom, last4, networks, regulatedStatus, threeDSecureUsage, wallet); } 
-@override String toString() { return 'PaymentMethodCard(brand: $brand, checks: $checks, country: $country, displayBrand: $displayBrand, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedFrom: $generatedFrom, last4: $last4, networks: $networks, regulatedStatus: $regulatedStatus, threeDSecureUsage: $threeDSecureUsage, wallet: $wallet)'; } 
+          wallet == other.wallet;
+
+@override int get hashCode => Object.hash(brand, checks, country, displayBrand, expMonth, expYear, fingerprint, funding, generatedFrom, last4, networks, regulatedStatus, threeDSecureUsage, wallet);
+
+@override String toString() => 'PaymentMethodCard(brand: $brand, checks: $checks, country: $country, displayBrand: $displayBrand, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedFrom: $generatedFrom, last4: $last4, networks: $networks, regulatedStatus: $regulatedStatus, threeDSecureUsage: $threeDSecureUsage, wallet: $wallet)';
+
  }

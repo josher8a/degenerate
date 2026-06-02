@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IngestAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IngestAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IngestAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IngestAction($value)';
+
  }
 @immutable final class Ingest {const Ingest({required this.action, required this.etag, required this.filename, });
 
@@ -52,11 +55,14 @@ Ingest copyWith({IngestAction? action, String? etag, String? filename, }) { retu
   etag: etag ?? this.etag,
   filename: filename ?? this.filename,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Ingest &&
           action == other.action &&
           etag == other.etag &&
-          filename == other.filename; } 
-@override int get hashCode { return Object.hash(action, etag, filename); } 
-@override String toString() { return 'Ingest(action: $action, etag: $etag, filename: $filename)'; } 
+          filename == other.filename;
+
+@override int get hashCode => Object.hash(action, etag, filename);
+
+@override String toString() => 'Ingest(action: $action, etag: $etag, filename: $filename)';
+
  }

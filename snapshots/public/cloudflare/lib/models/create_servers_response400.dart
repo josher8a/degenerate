@@ -21,10 +21,13 @@ CreateServersResponse400 copyWith({List<AiSearchCreateInstancesResponse400Errors
   errors: errors ?? this.errors,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateServersResponse400 &&
           listEquals(errors, other.errors) &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
-@override String toString() { return 'CreateServersResponse400(errors: $errors, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), success);
+
+@override String toString() => 'CreateServersResponse400(errors: $errors, success: $success)';
+
  }

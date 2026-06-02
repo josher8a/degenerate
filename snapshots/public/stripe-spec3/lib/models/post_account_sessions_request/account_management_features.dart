@@ -20,10 +20,13 @@ AccountManagementFeatures copyWith({bool? Function()? disableStripeUserAuthentic
   disableStripeUserAuthentication: disableStripeUserAuthentication != null ? disableStripeUserAuthentication() : this.disableStripeUserAuthentication,
   externalAccountCollection: externalAccountCollection != null ? externalAccountCollection() : this.externalAccountCollection,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountManagementFeatures &&
           disableStripeUserAuthentication == other.disableStripeUserAuthentication &&
-          externalAccountCollection == other.externalAccountCollection; } 
-@override int get hashCode { return Object.hash(disableStripeUserAuthentication, externalAccountCollection); } 
-@override String toString() { return 'AccountManagementFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection)'; } 
+          externalAccountCollection == other.externalAccountCollection;
+
+@override int get hashCode => Object.hash(disableStripeUserAuthentication, externalAccountCollection);
+
+@override String toString() => 'AccountManagementFeatures(disableStripeUserAuthentication: $disableStripeUserAuthentication, externalAccountCollection: $externalAccountCollection)';
+
  }

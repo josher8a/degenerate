@@ -17,7 +17,8 @@ final class GetEventAggregateError$400 extends GetEventAggregateError {const Get
 
 final GetEventAggregateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetEventAggregateError$Unknown extends GetEventAggregateError {const GetEventAggregateError$Unknown(this.statusCode, this.rawBody, );
 

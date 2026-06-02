@@ -196,7 +196,7 @@ RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? 
   wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
   zip: zip != null ? zip() : this.zip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RefundDestinationDetails &&
           affirm == other.affirm &&
           afterpayClearpay == other.afterpayClearpay &&
@@ -233,7 +233,10 @@ RefundDestinationDetails copyWith({DestinationDetailsUnimplemented? Function()? 
           type == other.type &&
           usBankTransfer == other.usBankTransfer &&
           wechatPay == other.wechatPay &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hashAll([affirm, afterpayClearpay, alipay, alma, amazonPay, auBankTransfer, blik, brBankTransfer, card, cashapp, crypto, customerCashBalance, eps, euBankTransfer, gbBankTransfer, giropay, grabpay, jpBankTransfer, klarna, mbWay, multibanco, mxBankTransfer, nzBankTransfer, p24, paynow, paypal, pix, revolut, sofort, swish, thBankTransfer, twint, type, usBankTransfer, wechatPay, zip]); } 
-@override String toString() { return 'RefundDestinationDetails(affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, auBankTransfer: $auBankTransfer, blik: $blik, brBankTransfer: $brBankTransfer, card: $card, cashapp: $cashapp, crypto: $crypto, customerCashBalance: $customerCashBalance, eps: $eps, euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, giropay: $giropay, grabpay: $grabpay, jpBankTransfer: $jpBankTransfer, klarna: $klarna, mbWay: $mbWay, multibanco: $multibanco, mxBankTransfer: $mxBankTransfer, nzBankTransfer: $nzBankTransfer, p24: $p24, paynow: $paynow, paypal: $paypal, pix: $pix, revolut: $revolut, sofort: $sofort, swish: $swish, thBankTransfer: $thBankTransfer, twint: $twint, type: $type, usBankTransfer: $usBankTransfer, wechatPay: $wechatPay, zip: $zip)'; } 
+          zip == other.zip;
+
+@override int get hashCode => Object.hashAll([affirm, afterpayClearpay, alipay, alma, amazonPay, auBankTransfer, blik, brBankTransfer, card, cashapp, crypto, customerCashBalance, eps, euBankTransfer, gbBankTransfer, giropay, grabpay, jpBankTransfer, klarna, mbWay, multibanco, mxBankTransfer, nzBankTransfer, p24, paynow, paypal, pix, revolut, sofort, swish, thBankTransfer, twint, type, usBankTransfer, wechatPay, zip]);
+
+@override String toString() => 'RefundDestinationDetails(affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, auBankTransfer: $auBankTransfer, blik: $blik, brBankTransfer: $brBankTransfer, card: $card, cashapp: $cashapp, crypto: $crypto, customerCashBalance: $customerCashBalance, eps: $eps, euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, giropay: $giropay, grabpay: $grabpay, jpBankTransfer: $jpBankTransfer, klarna: $klarna, mbWay: $mbWay, multibanco: $multibanco, mxBankTransfer: $mxBankTransfer, nzBankTransfer: $nzBankTransfer, p24: $p24, paynow: $paynow, paypal: $paypal, pix: $pix, revolut: $revolut, sofort: $sofort, swish: $swish, thBankTransfer: $thBankTransfer, twint: $twint, type: $type, usBankTransfer: $usBankTransfer, wechatPay: $wechatPay, zip: $zip)';
+
  }

@@ -51,14 +51,17 @@ UrlscannerCreateScanBulkResponse copyWith({String? api, UrlscannerCreateScanBulk
   uuid: uuid ?? this.uuid,
   visibility: visibility ?? this.visibility,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlscannerCreateScanBulkResponse &&
           api == other.api &&
           options == other.options &&
           result == other.result &&
           url == other.url &&
           uuid == other.uuid &&
-          visibility == other.visibility; } 
-@override int get hashCode { return Object.hash(api, options, result, url, uuid, visibility); } 
-@override String toString() { return 'UrlscannerCreateScanBulkResponse(api: $api, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+          visibility == other.visibility;
+
+@override int get hashCode => Object.hash(api, options, result, url, uuid, visibility);
+
+@override String toString() => 'UrlscannerCreateScanBulkResponse(api: $api, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)';
+
  }

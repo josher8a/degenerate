@@ -18,13 +18,15 @@ final class SecurityAdvisoriesListGlobalAdvisoriesError$422 extends SecurityAdvi
 
 final ValidationErrorSimple error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class SecurityAdvisoriesListGlobalAdvisoriesError$429 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$429(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 429; } 
+@override int get statusCode => 429;
+
  }
 final class SecurityAdvisoriesListGlobalAdvisoriesError$Unknown extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError$Unknown(this.statusCode, this.rawBody, );
 

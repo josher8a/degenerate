@@ -27,11 +27,14 @@ RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0 copyWith({List<Stri
   none: none ?? this.none,
   pass: pass ?? this.pass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0 &&
           listEquals(fail, other.fail) &&
           listEquals(none, other.none) &&
-          listEquals(pass, other.pass); } 
-@override int get hashCode { return Object.hash(Object.hashAll(fail), Object.hashAll(none), Object.hashAll(pass)); } 
-@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0(fail: $fail, none: $none, pass: $pass)'; } 
+          listEquals(pass, other.pass);
+
+@override int get hashCode => Object.hash(Object.hashAll(fail), Object.hashAll(none), Object.hashAll(pass));
+
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByArcResponseResultSerie0(fail: $fail, none: $none, pass: $pass)';
+
  }

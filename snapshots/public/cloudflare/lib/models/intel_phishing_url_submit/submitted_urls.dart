@@ -26,10 +26,13 @@ SubmittedUrls copyWith({String? Function()? url, int? Function()? urlId, }) { re
   url: url != null ? url() : this.url,
   urlId: urlId != null ? urlId() : this.urlId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SubmittedUrls &&
           url == other.url &&
-          urlId == other.urlId; } 
-@override int get hashCode { return Object.hash(url, urlId); } 
-@override String toString() { return 'SubmittedUrls(url: $url, urlId: $urlId)'; } 
+          urlId == other.urlId;
+
+@override int get hashCode => Object.hash(url, urlId);
+
+@override String toString() => 'SubmittedUrls(url: $url, urlId: $urlId)';
+
  }

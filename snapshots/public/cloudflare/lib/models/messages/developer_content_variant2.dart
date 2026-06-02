@@ -21,10 +21,13 @@ DeveloperContentVariant2 copyWith({String? text, TextType? type, }) { return Dev
   text: text ?? this.text,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeveloperContentVariant2 &&
           text == other.text &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(text, type); } 
-@override String toString() { return 'DeveloperContentVariant2(text: $text, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(text, type);
+
+@override String toString() => 'DeveloperContentVariant2(text: $text, type: $type)';
+
  }

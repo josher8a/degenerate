@@ -82,7 +82,7 @@ RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, Strin
   rpkiUnknown: rpkiUnknown ?? this.rpkiUnknown,
   rpkiValid: rpkiValid ?? this.rpkiValid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetBgpRoutesAsnsResponseResultAsns &&
           asn == other.asn &&
           coneSize == other.coneSize &&
@@ -93,7 +93,10 @@ RadarGetBgpRoutesAsnsResponseResultAsns copyWith({int? asn, int? coneSize, Strin
           pfxsCount == other.pfxsCount &&
           rpkiInvalid == other.rpkiInvalid &&
           rpkiUnknown == other.rpkiUnknown &&
-          rpkiValid == other.rpkiValid; } 
-@override int get hashCode { return Object.hash(asn, coneSize, country, ipv4Count, ipv6Count, name, pfxsCount, rpkiInvalid, rpkiUnknown, rpkiValid); } 
-@override String toString() { return 'RadarGetBgpRoutesAsnsResponseResultAsns(asn: $asn, coneSize: $coneSize, country: $country, ipv4Count: $ipv4Count, ipv6Count: $ipv6Count, name: $name, pfxsCount: $pfxsCount, rpkiInvalid: $rpkiInvalid, rpkiUnknown: $rpkiUnknown, rpkiValid: $rpkiValid)'; } 
+          rpkiValid == other.rpkiValid;
+
+@override int get hashCode => Object.hash(asn, coneSize, country, ipv4Count, ipv6Count, name, pfxsCount, rpkiInvalid, rpkiUnknown, rpkiValid);
+
+@override String toString() => 'RadarGetBgpRoutesAsnsResponseResultAsns(asn: $asn, coneSize: $coneSize, country: $country, ipv4Count: $ipv4Count, ipv6Count: $ipv6Count, name: $name, pfxsCount: $pfxsCount, rpkiInvalid: $rpkiInvalid, rpkiUnknown: $rpkiUnknown, rpkiValid: $rpkiValid)';
+
  }

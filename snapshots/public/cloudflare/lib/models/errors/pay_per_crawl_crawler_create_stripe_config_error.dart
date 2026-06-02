@@ -17,7 +17,8 @@ final class PayPerCrawlCrawlerCreateStripeConfigError$400 extends PayPerCrawlCra
 
 final ErrorResponse2 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PayPerCrawlCrawlerCreateStripeConfigError$Unknown extends PayPerCrawlCrawlerCreateStripeConfigError {const PayPerCrawlCrawlerCreateStripeConfigError$Unknown(this.statusCode, this.rawBody, );
 

@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue
 PaymentLinksResourceSubscriptionDataInvoiceSettings copyWith({ConnectAccountReference? issuer}) { return PaymentLinksResourceSubscriptionDataInvoiceSettings(
   issuer: issuer ?? this.issuer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceSubscriptionDataInvoiceSettings &&
-          issuer == other.issuer; } 
-@override int get hashCode { return issuer.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceSubscriptionDataInvoiceSettings(issuer: $issuer)'; } 
+          issuer == other.issuer;
+
+@override int get hashCode => issuer.hashCode;
+
+@override String toString() => 'PaymentLinksResourceSubscriptionDataInvoiceSettings(issuer: $issuer)';
+
  }

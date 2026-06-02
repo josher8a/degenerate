@@ -25,11 +25,14 @@ WorkflowRunUsageBillable copyWith({WorkflowRunUsageBillableUbuntu? Function()? u
   macos: macos != null ? macos() : this.macos,
   windows: windows != null ? windows() : this.windows,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkflowRunUsageBillable &&
           ubuntu == other.ubuntu &&
           macos == other.macos &&
-          windows == other.windows; } 
-@override int get hashCode { return Object.hash(ubuntu, macos, windows); } 
-@override String toString() { return 'WorkflowRunUsageBillable(ubuntu: $ubuntu, macos: $macos, windows: $windows)'; } 
+          windows == other.windows;
+
+@override int get hashCode => Object.hash(ubuntu, macos, windows);
+
+@override String toString() => 'WorkflowRunUsageBillable(ubuntu: $ubuntu, macos: $macos, windows: $windows)';
+
  }

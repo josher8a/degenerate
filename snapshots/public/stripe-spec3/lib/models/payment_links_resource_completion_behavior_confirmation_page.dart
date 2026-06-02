@@ -24,9 +24,12 @@ return errors; }
 PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({String? Function()? customMessage}) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(
   customMessage: customMessage != null ? customMessage() : this.customMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCompletionBehaviorConfirmationPage &&
-          customMessage == other.customMessage; } 
-@override int get hashCode { return customMessage.hashCode; } 
-@override String toString() { return 'PaymentLinksResourceCompletionBehaviorConfirmationPage(customMessage: $customMessage)'; } 
+          customMessage == other.customMessage;
+
+@override int get hashCode => customMessage.hashCode;
+
+@override String toString() => 'PaymentLinksResourceCompletionBehaviorConfirmationPage(customMessage: $customMessage)';
+
  }

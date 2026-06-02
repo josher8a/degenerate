@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CachePurgeFlexPurgeByPrefixes copyWith({List<String>? Function()? prefixes}) { return CachePurgeFlexPurgeByPrefixes(
   prefixes: prefixes != null ? prefixes() : this.prefixes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CachePurgeFlexPurgeByPrefixes &&
-          listEquals(prefixes, other.prefixes); } 
-@override int get hashCode { return Object.hashAll(prefixes ?? const []); } 
-@override String toString() { return 'CachePurgeFlexPurgeByPrefixes(prefixes: $prefixes)'; } 
+          listEquals(prefixes, other.prefixes);
+
+@override int get hashCode => Object.hashAll(prefixes ?? const []);
+
+@override String toString() => 'CachePurgeFlexPurgeByPrefixes(prefixes: $prefixes)';
+
  }

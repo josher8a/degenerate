@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('proje
 CreateFineTuningCheckpointPermissionRequest copyWith({List<String>? projectIds}) { return CreateFineTuningCheckpointPermissionRequest(
   projectIds: projectIds ?? this.projectIds,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateFineTuningCheckpointPermissionRequest &&
-          listEquals(projectIds, other.projectIds); } 
-@override int get hashCode { return Object.hashAll(projectIds); } 
-@override String toString() { return 'CreateFineTuningCheckpointPermissionRequest(projectIds: $projectIds)'; } 
+          listEquals(projectIds, other.projectIds);
+
+@override int get hashCode => Object.hashAll(projectIds);
+
+@override String toString() => 'CreateFineTuningCheckpointPermissionRequest(projectIds: $projectIds)';
+
  }

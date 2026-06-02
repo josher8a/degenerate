@@ -27,10 +27,13 @@ AaaResultInfo copyWith({String? Function()? count, String? Function()? cursor, }
   count: count != null ? count() : this.count,
   cursor: cursor != null ? cursor() : this.cursor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AaaResultInfo &&
           count == other.count &&
-          cursor == other.cursor; } 
-@override int get hashCode { return Object.hash(count, cursor); } 
-@override String toString() { return 'AaaResultInfo(count: $count, cursor: $cursor)'; } 
+          cursor == other.cursor;
+
+@override int get hashCode => Object.hash(count, cursor);
+
+@override String toString() => 'AaaResultInfo(count: $count, cursor: $cursor)';
+
  }

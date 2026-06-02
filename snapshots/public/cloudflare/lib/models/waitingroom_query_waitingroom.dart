@@ -228,7 +228,7 @@ WaitingroomQueryWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Functi
   turnstileAction: turnstileAction != null ? turnstileAction() : this.turnstileAction,
   turnstileMode: turnstileMode != null ? turnstileMode() : this.turnstileMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomQueryWaitingroom &&
           listEquals(additionalRoutes, other.additionalRoutes) &&
           cookieAttributes == other.cookieAttributes &&
@@ -250,7 +250,10 @@ WaitingroomQueryWaitingroom copyWith({List<WaitingroomAdditionalRoutes2>? Functi
           suspended == other.suspended &&
           totalActiveUsers == other.totalActiveUsers &&
           turnstileAction == other.turnstileAction &&
-          turnstileMode == other.turnstileMode; } 
-@override int get hashCode { return Object.hashAll([Object.hashAll(additionalRoutes ?? const []), cookieAttributes, cookieSuffix, customPageHtml, defaultTemplateLanguage, description, disableSessionRenewal, Object.hashAll(enabledOriginCommands ?? const []), host, jsonResponseEnabled, name, newUsersPerMinute, path, queueAll, queueingMethod, queueingStatusCode, sessionDuration, suspended, totalActiveUsers, turnstileAction, turnstileMode]); } 
-@override String toString() { return 'WaitingroomQueryWaitingroom(additionalRoutes: $additionalRoutes, cookieAttributes: $cookieAttributes, cookieSuffix: $cookieSuffix, customPageHtml: $customPageHtml, defaultTemplateLanguage: $defaultTemplateLanguage, description: $description, disableSessionRenewal: $disableSessionRenewal, enabledOriginCommands: $enabledOriginCommands, host: $host, jsonResponseEnabled: $jsonResponseEnabled, name: $name, newUsersPerMinute: $newUsersPerMinute, path: $path, queueAll: $queueAll, queueingMethod: $queueingMethod, queueingStatusCode: $queueingStatusCode, sessionDuration: $sessionDuration, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)'; } 
+          turnstileMode == other.turnstileMode;
+
+@override int get hashCode => Object.hashAll([Object.hashAll(additionalRoutes ?? const []), cookieAttributes, cookieSuffix, customPageHtml, defaultTemplateLanguage, description, disableSessionRenewal, Object.hashAll(enabledOriginCommands ?? const []), host, jsonResponseEnabled, name, newUsersPerMinute, path, queueAll, queueingMethod, queueingStatusCode, sessionDuration, suspended, totalActiveUsers, turnstileAction, turnstileMode]);
+
+@override String toString() => 'WaitingroomQueryWaitingroom(additionalRoutes: $additionalRoutes, cookieAttributes: $cookieAttributes, cookieSuffix: $cookieSuffix, customPageHtml: $customPageHtml, defaultTemplateLanguage: $defaultTemplateLanguage, description: $description, disableSessionRenewal: $disableSessionRenewal, enabledOriginCommands: $enabledOriginCommands, host: $host, jsonResponseEnabled: $jsonResponseEnabled, name: $name, newUsersPerMinute: $newUsersPerMinute, path: $path, queueAll: $queueAll, queueingMethod: $queueingMethod, queueingStatusCode: $queueingStatusCode, sessionDuration: $sessionDuration, suspended: $suspended, totalActiveUsers: $totalActiveUsers, turnstileAction: $turnstileAction, turnstileMode: $turnstileMode)';
+
  }

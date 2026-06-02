@@ -17,7 +17,8 @@ final class RadarGetReportsDatasetsError$400 extends RadarGetReportsDatasetsErro
 
 final RadarGetReportsDatasetsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetReportsDatasetsError$Unknown extends RadarGetReportsDatasetsError {const RadarGetReportsDatasetsError$Unknown(this.statusCode, this.rawBody, );
 

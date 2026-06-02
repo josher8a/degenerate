@@ -21,10 +21,13 @@ ParticipationStats copyWith({List<int>? all, List<int>? owner, }) { return Parti
   all: all ?? this.all,
   owner: owner ?? this.owner,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ParticipationStats &&
           listEquals(all, other.all) &&
-          listEquals(owner, other.owner); } 
-@override int get hashCode { return Object.hash(Object.hashAll(all), Object.hashAll(owner)); } 
-@override String toString() { return 'ParticipationStats(all: $all, owner: $owner)'; } 
+          listEquals(owner, other.owner);
+
+@override int get hashCode => Object.hash(Object.hashAll(all), Object.hashAll(owner));
+
+@override String toString() => 'ParticipationStats(all: $all, owner: $owner)';
+
  }

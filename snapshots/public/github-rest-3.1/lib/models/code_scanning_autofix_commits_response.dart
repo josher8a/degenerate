@@ -22,10 +22,13 @@ CodeScanningAutofixCommitsResponse copyWith({String? Function()? targetRef, Stri
   targetRef: targetRef != null ? targetRef() : this.targetRef,
   sha: sha != null ? sha() : this.sha,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningAutofixCommitsResponse &&
           targetRef == other.targetRef &&
-          sha == other.sha; } 
-@override int get hashCode { return Object.hash(targetRef, sha); } 
-@override String toString() { return 'CodeScanningAutofixCommitsResponse(targetRef: $targetRef, sha: $sha)'; } 
+          sha == other.sha;
+
+@override int get hashCode => Object.hash(targetRef, sha);
+
+@override String toString() => 'CodeScanningAutofixCommitsResponse(targetRef: $targetRef, sha: $sha)';
+
  }

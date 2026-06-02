@@ -98,7 +98,7 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
   tool: tool ?? this.tool,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertAppearedInBranchAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -113,7 +113,10 @@ WebhookCodeScanningAlertAppearedInBranchAlert copyWith({List<SimpleUser>? Functi
           rule == other.rule &&
           state == other.state &&
           tool == other.tool &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url); } 
-@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url);
+
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url)';
+
  }

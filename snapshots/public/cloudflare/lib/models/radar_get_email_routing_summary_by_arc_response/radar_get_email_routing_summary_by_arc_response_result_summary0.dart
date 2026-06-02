@@ -42,11 +42,14 @@ RadarGetEmailRoutingSummaryByArcResponseResultSummary0 copyWith({String? fail, S
   none: none ?? this.none,
   pass: pass ?? this.pass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailRoutingSummaryByArcResponseResultSummary0 &&
           fail == other.fail &&
           none == other.none &&
-          pass == other.pass; } 
-@override int get hashCode { return Object.hash(fail, none, pass); } 
-@override String toString() { return 'RadarGetEmailRoutingSummaryByArcResponseResultSummary0(fail: $fail, none: $none, pass: $pass)'; } 
+          pass == other.pass;
+
+@override int get hashCode => Object.hash(fail, none, pass);
+
+@override String toString() => 'RadarGetEmailRoutingSummaryByArcResponseResultSummary0(fail: $fail, none: $none, pass: $pass)';
+
  }

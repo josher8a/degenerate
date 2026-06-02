@@ -36,13 +36,16 @@ GelatoVerificationSessionOptions copyWith({GelatoSessionDocumentOptions? Functio
   matching: matching != null ? matching() : this.matching,
   phone: phone != null ? phone() : this.phone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GelatoVerificationSessionOptions &&
           document == other.document &&
           email == other.email &&
           idNumber == other.idNumber &&
           matching == other.matching &&
-          phone == other.phone; } 
-@override int get hashCode { return Object.hash(document, email, idNumber, matching, phone); } 
-@override String toString() { return 'GelatoVerificationSessionOptions(document: $document, email: $email, idNumber: $idNumber, matching: $matching, phone: $phone)'; } 
+          phone == other.phone;
+
+@override int get hashCode => Object.hash(document, email, idNumber, matching, phone);
+
+@override String toString() => 'GelatoVerificationSessionOptions(document: $document, email: $email, idNumber: $idNumber, matching: $matching, phone: $phone)';
+
  }

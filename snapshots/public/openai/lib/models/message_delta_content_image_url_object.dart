@@ -29,11 +29,14 @@ MessageDeltaContentImageUrlObject copyWith({int? index, ChatCompletionRequestMes
   type: type ?? this.type,
   imageUrl: imageUrl != null ? imageUrl() : this.imageUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentImageUrlObject &&
           index == other.index &&
           type == other.type &&
-          imageUrl == other.imageUrl; } 
-@override int get hashCode { return Object.hash(index, type, imageUrl); } 
-@override String toString() { return 'MessageDeltaContentImageUrlObject(index: $index, type: $type, imageUrl: $imageUrl)'; } 
+          imageUrl == other.imageUrl;
+
+@override int get hashCode => Object.hash(index, type, imageUrl);
+
+@override String toString() => 'MessageDeltaContentImageUrlObject(index: $index, type: $type, imageUrl: $imageUrl)';
+
  }

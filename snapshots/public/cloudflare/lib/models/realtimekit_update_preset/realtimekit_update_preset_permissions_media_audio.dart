@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 RealtimekitUpdatePresetPermissionsMediaAudio copyWith({CanProduce? Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaAudio(
   canProduce: canProduce != null ? canProduce() : this.canProduce,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetPermissionsMediaAudio &&
-          canProduce == other.canProduce; } 
-@override int get hashCode { return canProduce.hashCode; } 
-@override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaAudio(canProduce: $canProduce)'; } 
+          canProduce == other.canProduce;
+
+@override int get hashCode => canProduce.hashCode;
+
+@override String toString() => 'RealtimekitUpdatePresetPermissionsMediaAudio(canProduce: $canProduce)';
+
  }

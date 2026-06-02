@@ -46,14 +46,17 @@ PostWebhookEndpointsWebhookEndpointRequest copyWith({PostPaymentRecordsIdReportP
   metadata: metadata != null ? metadata() : this.metadata,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostWebhookEndpointsWebhookEndpointRequest &&
           description == other.description &&
           disabled == other.disabled &&
           listEquals(enabledEvents, other.enabledEvents) &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(description, disabled, Object.hashAll(enabledEvents ?? const []), Object.hashAll(expand ?? const []), metadata, url); } 
-@override String toString() { return 'PostWebhookEndpointsWebhookEndpointRequest(description: $description, disabled: $disabled, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(description, disabled, Object.hashAll(enabledEvents ?? const []), Object.hashAll(expand ?? const []), metadata, url);
+
+@override String toString() => 'PostWebhookEndpointsWebhookEndpointRequest(description: $description, disabled: $disabled, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)';
+
  }

@@ -35,13 +35,16 @@ AudioStats copyWith({double? Function()? concealmentEvents, double? Function()? 
   quality: quality != null ? quality() : this.quality,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AudioStats &&
           concealmentEvents == other.concealmentEvents &&
           jitter == other.jitter &&
           packetsLost == other.packetsLost &&
           quality == other.quality &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(concealmentEvents, jitter, packetsLost, quality, timestamp); } 
-@override String toString() { return 'AudioStats(concealmentEvents: $concealmentEvents, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(concealmentEvents, jitter, packetsLost, quality, timestamp);
+
+@override String toString() => 'AudioStats(concealmentEvents: $concealmentEvents, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)';
+
  }

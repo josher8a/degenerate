@@ -62,7 +62,7 @@ WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? 
   name: name ?? this.name,
   nodeId: nodeId ?? this.nodeId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSponsorshipTier &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -72,7 +72,10 @@ WebhooksSponsorshipTier copyWith({String? createdAt, String? description, bool? 
           monthlyPriceInCents == other.monthlyPriceInCents &&
           monthlyPriceInDollars == other.monthlyPriceInDollars &&
           name == other.name &&
-          nodeId == other.nodeId; } 
-@override int get hashCode { return Object.hash(createdAt, description, isCustomAmmount, isCustomAmount, isOneTime, monthlyPriceInCents, monthlyPriceInDollars, name, nodeId); } 
-@override String toString() { return 'WebhooksSponsorshipTier(createdAt: $createdAt, description: $description, isCustomAmmount: $isCustomAmmount, isCustomAmount: $isCustomAmount, isOneTime: $isOneTime, monthlyPriceInCents: $monthlyPriceInCents, monthlyPriceInDollars: $monthlyPriceInDollars, name: $name, nodeId: $nodeId)'; } 
+          nodeId == other.nodeId;
+
+@override int get hashCode => Object.hash(createdAt, description, isCustomAmmount, isCustomAmount, isOneTime, monthlyPriceInCents, monthlyPriceInDollars, name, nodeId);
+
+@override String toString() => 'WebhooksSponsorshipTier(createdAt: $createdAt, description: $description, isCustomAmmount: $isCustomAmmount, isCustomAmount: $isCustomAmount, isOneTime: $isOneTime, monthlyPriceInCents: $monthlyPriceInCents, monthlyPriceInDollars: $monthlyPriceInDollars, name: $name, nodeId: $nodeId)';
+
  }

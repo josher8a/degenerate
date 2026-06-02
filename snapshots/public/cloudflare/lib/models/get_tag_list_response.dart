@@ -21,10 +21,13 @@ GetTagListResponse copyWith({GetIndicatorListLegacyResponsePagination? paginatio
   pagination: pagination ?? this.pagination,
   tags: tags ?? this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetTagListResponse &&
           pagination == other.pagination &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hash(pagination, Object.hashAll(tags)); } 
-@override String toString() { return 'GetTagListResponse(pagination: $pagination, tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hash(pagination, Object.hashAll(tags));
+
+@override String toString() => 'GetTagListResponse(pagination: $pagination, tags: $tags)';
+
  }

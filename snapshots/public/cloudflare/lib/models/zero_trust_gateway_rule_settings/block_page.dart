@@ -23,10 +23,13 @@ BlockPage copyWith({bool? Function()? includeContext, Uri? targetUri, }) { retur
   includeContext: includeContext != null ? includeContext() : this.includeContext,
   targetUri: targetUri ?? this.targetUri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BlockPage &&
           includeContext == other.includeContext &&
-          targetUri == other.targetUri; } 
-@override int get hashCode { return Object.hash(includeContext, targetUri); } 
-@override String toString() { return 'BlockPage(includeContext: $includeContext, targetUri: $targetUri)'; } 
+          targetUri == other.targetUri;
+
+@override int get hashCode => Object.hash(includeContext, targetUri);
+
+@override String toString() => 'BlockPage(includeContext: $includeContext, targetUri: $targetUri)';
+
  }

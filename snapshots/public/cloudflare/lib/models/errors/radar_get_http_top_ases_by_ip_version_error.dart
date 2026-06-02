@@ -17,7 +17,8 @@ final class RadarGetHttpTopAsesByIpVersionError$404 extends RadarGetHttpTopAsesB
 
 final RadarGetHttpTopAsesByIpVersionResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetHttpTopAsesByIpVersionError$Unknown extends RadarGetHttpTopAsesByIpVersionError {const RadarGetHttpTopAsesByIpVersionError$Unknown(this.statusCode, this.rawBody, );
 

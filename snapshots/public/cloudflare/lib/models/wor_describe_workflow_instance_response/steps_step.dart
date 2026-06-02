@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is StepType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'StepType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StepType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StepType($value)';
+
  }
 @immutable final class StepsStep {const StepsStep({required this.attempts, required this.config, required this.end, required this.name, required this.output, required this.start, required this.success, required this.type, });
 
@@ -78,7 +81,7 @@ StepsStep copyWith({List<Attempts>? attempts, StepConfig? config, DateTime? Func
   success: success != null ? success() : this.success,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StepsStep &&
           listEquals(attempts, other.attempts) &&
           config == other.config &&
@@ -87,7 +90,10 @@ StepsStep copyWith({List<Attempts>? attempts, StepConfig? config, DateTime? Func
           output == other.output &&
           start == other.start &&
           success == other.success &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(attempts), config, end, name, output, start, success, type); } 
-@override String toString() { return 'StepsStep(attempts: $attempts, config: $config, end: $end, name: $name, output: $output, start: $start, success: $success, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(attempts), config, end, name, output, start, success, type);
+
+@override String toString() => 'StepsStep(attempts: $attempts, config: $config, end: $end, name: $name, output: $output, start: $start, success: $success, type: $type)';
+
  }

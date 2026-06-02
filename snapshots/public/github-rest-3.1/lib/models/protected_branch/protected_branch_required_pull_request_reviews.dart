@@ -46,7 +46,7 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
   dismissalRestrictions: dismissalRestrictions != null ? dismissalRestrictions() : this.dismissalRestrictions,
   bypassPullRequestAllowances: bypassPullRequestAllowances != null ? bypassPullRequestAllowances() : this.bypassPullRequestAllowances,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProtectedBranchRequiredPullRequestReviews &&
           url == other.url &&
           dismissStaleReviews == other.dismissStaleReviews &&
@@ -54,7 +54,10 @@ ProtectedBranchRequiredPullRequestReviews copyWith({Uri? url, bool? Function()? 
           requiredApprovingReviewCount == other.requiredApprovingReviewCount &&
           requireLastPushApproval == other.requireLastPushApproval &&
           dismissalRestrictions == other.dismissalRestrictions &&
-          bypassPullRequestAllowances == other.bypassPullRequestAllowances; } 
-@override int get hashCode { return Object.hash(url, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval, dismissalRestrictions, bypassPullRequestAllowances); } 
-@override String toString() { return 'ProtectedBranchRequiredPullRequestReviews(url: $url, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances)'; } 
+          bypassPullRequestAllowances == other.bypassPullRequestAllowances;
+
+@override int get hashCode => Object.hash(url, dismissStaleReviews, requireCodeOwnerReviews, requiredApprovingReviewCount, requireLastPushApproval, dismissalRestrictions, bypassPullRequestAllowances);
+
+@override String toString() => 'ProtectedBranchRequiredPullRequestReviews(url: $url, dismissStaleReviews: $dismissStaleReviews, requireCodeOwnerReviews: $requireCodeOwnerReviews, requiredApprovingReviewCount: $requiredApprovingReviewCount, requireLastPushApproval: $requireLastPushApproval, dismissalRestrictions: $dismissalRestrictions, bypassPullRequestAllowances: $bypassPullRequestAllowances)';
+
  }

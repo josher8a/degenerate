@@ -32,11 +32,14 @@ PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit copyWith({PaymentIntent
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit &&
           mandateOptions == other.mandateOptions &&
           setupFutureUsage == other.setupFutureUsage &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
+          targetDate == other.targetDate;
+
+@override int get hashCode => Object.hash(mandateOptions, setupFutureUsage, targetDate);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsBacsDebit(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';
+
  }

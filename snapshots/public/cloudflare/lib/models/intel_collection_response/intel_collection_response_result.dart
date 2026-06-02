@@ -60,7 +60,7 @@ IntelCollectionResponseResult copyWith({IntelAdditionalInformation? Function()? 
   riskScore: riskScore != null ? riskScore() : this.riskScore,
   riskTypes: riskTypes != null ? riskTypes() : this.riskTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelCollectionResponseResult &&
           additionalInformation == other.additionalInformation &&
           application == other.application &&
@@ -71,7 +71,10 @@ IntelCollectionResponseResult copyWith({IntelAdditionalInformation? Function()? 
           listEquals(inheritedRiskTypes, other.inheritedRiskTypes) &&
           popularityRank == other.popularityRank &&
           riskScore == other.riskScore &&
-          listEquals(riskTypes, other.riskTypes); } 
-@override int get hashCode { return Object.hash(additionalInformation, application, Object.hashAll(contentCategories ?? const []), domain, Object.hashAll(inheritedContentCategories ?? const []), inheritedFrom, Object.hashAll(inheritedRiskTypes ?? const []), popularityRank, riskScore, Object.hashAll(riskTypes ?? const [])); } 
-@override String toString() { return 'IntelCollectionResponseResult(additionalInformation: $additionalInformation, application: $application, contentCategories: $contentCategories, domain: $domain, inheritedContentCategories: $inheritedContentCategories, inheritedFrom: $inheritedFrom, inheritedRiskTypes: $inheritedRiskTypes, popularityRank: $popularityRank, riskScore: $riskScore, riskTypes: $riskTypes)'; } 
+          listEquals(riskTypes, other.riskTypes);
+
+@override int get hashCode => Object.hash(additionalInformation, application, Object.hashAll(contentCategories ?? const []), domain, Object.hashAll(inheritedContentCategories ?? const []), inheritedFrom, Object.hashAll(inheritedRiskTypes ?? const []), popularityRank, riskScore, Object.hashAll(riskTypes ?? const []));
+
+@override String toString() => 'IntelCollectionResponseResult(additionalInformation: $additionalInformation, application: $application, contentCategories: $contentCategories, domain: $domain, inheritedContentCategories: $inheritedContentCategories, inheritedFrom: $inheritedFrom, inheritedRiskTypes: $inheritedRiskTypes, popularityRank: $popularityRank, riskScore: $riskScore, riskTypes: $riskTypes)';
+
  }

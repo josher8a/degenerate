@@ -36,12 +36,15 @@ WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment? Function(
   service: service ?? this.service,
   zoneId: zoneId ?? this.zoneId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkerDomainAttachToDomainRequest &&
           environment == other.environment &&
           hostname == other.hostname &&
           service == other.service &&
-          zoneId == other.zoneId; } 
-@override int get hashCode { return Object.hash(environment, hostname, service, zoneId); } 
-@override String toString() { return 'WorkerDomainAttachToDomainRequest(environment: $environment, hostname: $hostname, service: $service, zoneId: $zoneId)'; } 
+          zoneId == other.zoneId;
+
+@override int get hashCode => Object.hash(environment, hostname, service, zoneId);
+
+@override String toString() => 'WorkerDomainAttachToDomainRequest(environment: $environment, hostname: $hostname, service: $service, zoneId: $zoneId)';
+
  }

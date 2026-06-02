@@ -65,7 +65,7 @@ AddressingFullResponseResult copyWith({AddressingCanDelete? Function()? canDelet
   ips: ips != null ? ips() : this.ips,
   memberships: memberships != null ? memberships() : this.memberships,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AddressingFullResponseResult &&
           canDelete == other.canDelete &&
           canModifyIps == other.canModifyIps &&
@@ -76,7 +76,10 @@ AddressingFullResponseResult copyWith({AddressingCanDelete? Function()? canDelet
           id == other.id &&
           modifiedAt == other.modifiedAt &&
           listEquals(ips, other.ips) &&
-          listEquals(memberships, other.memberships); } 
-@override int get hashCode { return Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt, Object.hashAll(ips ?? const []), Object.hashAll(memberships ?? const [])); } 
-@override String toString() { return 'AddressingFullResponseResult(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt, ips: $ips, memberships: $memberships)'; } 
+          listEquals(memberships, other.memberships);
+
+@override int get hashCode => Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt, Object.hashAll(ips ?? const []), Object.hashAll(memberships ?? const []));
+
+@override String toString() => 'AddressingFullResponseResult(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt, ips: $ips, memberships: $memberships)';
+
  }

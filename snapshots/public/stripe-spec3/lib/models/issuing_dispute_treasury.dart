@@ -31,10 +31,13 @@ IssuingDisputeTreasury copyWith({String? Function()? debitReversal, String? rece
   debitReversal: debitReversal != null ? debitReversal() : this.debitReversal,
   receivedDebit: receivedDebit ?? this.receivedDebit,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingDisputeTreasury &&
           debitReversal == other.debitReversal &&
-          receivedDebit == other.receivedDebit; } 
-@override int get hashCode { return Object.hash(debitReversal, receivedDebit); } 
-@override String toString() { return 'IssuingDisputeTreasury(debitReversal: $debitReversal, receivedDebit: $receivedDebit)'; } 
+          receivedDebit == other.receivedDebit;
+
+@override int get hashCode => Object.hash(debitReversal, receivedDebit);
+
+@override String toString() => 'IssuingDisputeTreasury(debitReversal: $debitReversal, receivedDebit: $receivedDebit)';
+
  }

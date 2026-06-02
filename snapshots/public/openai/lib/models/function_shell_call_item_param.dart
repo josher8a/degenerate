@@ -54,14 +54,17 @@ FunctionShellCallItemParam copyWith({String? Function()? id, String? callId, Str
   status: status != null ? status() : this.status,
   environment: environment != null ? environment() : this.environment,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FunctionShellCallItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           action == other.action &&
           status == other.status &&
-          environment == other.environment; } 
-@override int get hashCode { return Object.hash(id, callId, type, action, status, environment); } 
-@override String toString() { return 'FunctionShellCallItemParam(id: $id, callId: $callId, type: $type, action: $action, status: $status, environment: $environment)'; } 
+          environment == other.environment;
+
+@override int get hashCode => Object.hash(id, callId, type, action, status, environment);
+
+@override String toString() => 'FunctionShellCallItemParam(id: $id, callId: $callId, type: $type, action: $action, status: $status, environment: $environment)';
+
  }

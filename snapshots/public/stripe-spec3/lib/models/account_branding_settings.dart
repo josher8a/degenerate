@@ -46,12 +46,15 @@ AccountBrandingSettings copyWith({AccountBrandingSettingsIcon? Function()? icon,
   primaryColor: primaryColor != null ? primaryColor() : this.primaryColor,
   secondaryColor: secondaryColor != null ? secondaryColor() : this.secondaryColor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountBrandingSettings &&
           icon == other.icon &&
           logo == other.logo &&
           primaryColor == other.primaryColor &&
-          secondaryColor == other.secondaryColor; } 
-@override int get hashCode { return Object.hash(icon, logo, primaryColor, secondaryColor); } 
-@override String toString() { return 'AccountBrandingSettings(icon: $icon, logo: $logo, primaryColor: $primaryColor, secondaryColor: $secondaryColor)'; } 
+          secondaryColor == other.secondaryColor;
+
+@override int get hashCode => Object.hash(icon, logo, primaryColor, secondaryColor);
+
+@override String toString() => 'AccountBrandingSettings(icon: $icon, logo: $logo, primaryColor: $primaryColor, secondaryColor: $secondaryColor)';
+
  }

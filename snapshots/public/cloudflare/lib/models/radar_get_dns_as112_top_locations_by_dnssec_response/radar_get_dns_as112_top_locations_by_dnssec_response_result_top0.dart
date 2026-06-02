@@ -36,11 +36,14 @@ RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 copyWith({String? clientC
   clientCountryName: clientCountryName ?? this.clientCountryName,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0 &&
           clientCountryAlpha2 == other.clientCountryAlpha2 &&
           clientCountryName == other.clientCountryName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(clientCountryAlpha2, clientCountryName, value); } 
-@override String toString() { return 'RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(clientCountryAlpha2, clientCountryName, value);
+
+@override String toString() => 'RadarGetDnsAs112TopLocationsByDnssecResponseResultTop0(clientCountryAlpha2: $clientCountryAlpha2, clientCountryName: $clientCountryName, value: $value)';
+
  }

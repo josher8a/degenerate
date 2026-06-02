@@ -97,7 +97,7 @@ McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<M
   type: type ?? this.type,
   vpc: vpc != null ? vpc() : this.vpc,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnCreateOnrampRequest &&
           adoptedHubId == other.adoptedHubId &&
           listEquals(attachedHubs, other.attachedHubs) &&
@@ -114,7 +114,10 @@ McnCreateOnrampRequest copyWith({McnResourceId? Function()? adoptedHubId, List<M
           name == other.name &&
           region == other.region &&
           type == other.type &&
-          vpc == other.vpc; } 
-@override int get hashCode { return Object.hash(adoptedHubId, Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hubProviderId, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, region, type, vpc); } 
-@override String toString() { return 'McnCreateOnrampRequest(adoptedHubId: $adoptedHubId, attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hubProviderId: $hubProviderId, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, region: $region, type: $type, vpc: $vpc)'; } 
+          vpc == other.vpc;
+
+@override int get hashCode => Object.hash(adoptedHubId, Object.hashAll(attachedHubs ?? const []), Object.hashAll(attachedVpcs ?? const []), cloudAsn, cloudType, description, dynamicRouting, hubProviderId, installRoutesInCloud, installRoutesInMagicWan, manageHubToHubAttachments, manageVpcToHubAttachments, name, region, type, vpc);
+
+@override String toString() => 'McnCreateOnrampRequest(adoptedHubId: $adoptedHubId, attachedHubs: $attachedHubs, attachedVpcs: $attachedVpcs, cloudAsn: $cloudAsn, cloudType: $cloudType, description: $description, dynamicRouting: $dynamicRouting, hubProviderId: $hubProviderId, installRoutesInCloud: $installRoutesInCloud, installRoutesInMagicWan: $installRoutesInMagicWan, manageHubToHubAttachments: $manageHubToHubAttachments, manageVpcToHubAttachments: $manageVpcToHubAttachments, name: $name, region: $region, type: $type, vpc: $vpc)';
+
  }

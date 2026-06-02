@@ -54,14 +54,17 @@ GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetSubscriptionsSearchResponse &&
           listEquals(data, other.data) &&
           hasMore == other.hasMore &&
           nextPage == other.nextPage &&
           object == other.object &&
           totalCount == other.totalCount &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url); } 
-@override String toString() { return 'GetSubscriptionsSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), hasMore, nextPage, object, totalCount, url);
+
+@override String toString() => 'GetSubscriptionsSearchResponse(data: $data, hasMore: $hasMore, nextPage: $nextPage, object: $object, totalCount: $totalCount, url: $url)';
+
  }

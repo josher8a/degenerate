@@ -54,13 +54,16 @@ MqWorkerConsumerRequestSettings copyWith({MqBatchSize? Function()? batchSize, Mq
   maxWaitTimeMs: maxWaitTimeMs != null ? maxWaitTimeMs() : this.maxWaitTimeMs,
   retryDelay: retryDelay != null ? retryDelay() : this.retryDelay,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MqWorkerConsumerRequestSettings &&
           batchSize == other.batchSize &&
           maxConcurrency == other.maxConcurrency &&
           maxRetries == other.maxRetries &&
           maxWaitTimeMs == other.maxWaitTimeMs &&
-          retryDelay == other.retryDelay; } 
-@override int get hashCode { return Object.hash(batchSize, maxConcurrency, maxRetries, maxWaitTimeMs, retryDelay); } 
-@override String toString() { return 'MqWorkerConsumerRequestSettings(batchSize: $batchSize, maxConcurrency: $maxConcurrency, maxRetries: $maxRetries, maxWaitTimeMs: $maxWaitTimeMs, retryDelay: $retryDelay)'; } 
+          retryDelay == other.retryDelay;
+
+@override int get hashCode => Object.hash(batchSize, maxConcurrency, maxRetries, maxWaitTimeMs, retryDelay);
+
+@override String toString() => 'MqWorkerConsumerRequestSettings(batchSize: $batchSize, maxConcurrency: $maxConcurrency, maxRetries: $maxRetries, maxWaitTimeMs: $maxWaitTimeMs, retryDelay: $retryDelay)';
+
  }

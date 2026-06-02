@@ -40,11 +40,14 @@ R2EnableSippyAwsDestination copyWith({String? Function()? accessKeyId, Destinati
   provider: provider != null ? provider() : this.provider,
   secretAccessKey: secretAccessKey != null ? secretAccessKey() : this.secretAccessKey,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyAwsDestination &&
           accessKeyId == other.accessKeyId &&
           provider == other.provider &&
-          secretAccessKey == other.secretAccessKey; } 
-@override int get hashCode { return Object.hash(accessKeyId, provider, secretAccessKey); } 
-@override String toString() { return 'R2EnableSippyAwsDestination(accessKeyId: $accessKeyId, provider: $provider, secretAccessKey: $secretAccessKey)'; } 
+          secretAccessKey == other.secretAccessKey;
+
+@override int get hashCode => Object.hash(accessKeyId, provider, secretAccessKey);
+
+@override String toString() => 'R2EnableSippyAwsDestination(accessKeyId: $accessKeyId, provider: $provider, secretAccessKey: $secretAccessKey)';
+
  }

@@ -50,13 +50,16 @@ ClimateRemovalsOrderDeliveries copyWith({int? deliveredAt, ClimateRemovalsLocati
   registryUrl: registryUrl != null ? registryUrl() : this.registryUrl,
   supplier: supplier ?? this.supplier,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateRemovalsOrderDeliveries &&
           deliveredAt == other.deliveredAt &&
           location == other.location &&
           metricTons == other.metricTons &&
           registryUrl == other.registryUrl &&
-          supplier == other.supplier; } 
-@override int get hashCode { return Object.hash(deliveredAt, location, metricTons, registryUrl, supplier); } 
-@override String toString() { return 'ClimateRemovalsOrderDeliveries(deliveredAt: $deliveredAt, location: $location, metricTons: $metricTons, registryUrl: $registryUrl, supplier: $supplier)'; } 
+          supplier == other.supplier;
+
+@override int get hashCode => Object.hash(deliveredAt, location, metricTons, registryUrl, supplier);
+
+@override String toString() => 'ClimateRemovalsOrderDeliveries(deliveredAt: $deliveredAt, location: $location, metricTons: $metricTons, registryUrl: $registryUrl, supplier: $supplier)';
+
  }

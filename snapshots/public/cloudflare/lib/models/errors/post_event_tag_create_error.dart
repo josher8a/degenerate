@@ -17,7 +17,8 @@ final class PostEventTagCreateError$400 extends PostEventTagCreateError {const P
 
 final PostEventTagCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventTagCreateError$Unknown extends PostEventTagCreateError {const PostEventTagCreateError$Unknown(this.statusCode, this.rawBody, );
 

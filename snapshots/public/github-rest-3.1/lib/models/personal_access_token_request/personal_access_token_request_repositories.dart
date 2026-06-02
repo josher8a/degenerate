@@ -42,13 +42,16 @@ PersonalAccessTokenRequestRepositories copyWith({String? fullName, int? id, Stri
   nodeId: nodeId ?? this.nodeId,
   private: private ?? this.private,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PersonalAccessTokenRequestRepositories &&
           fullName == other.fullName &&
           id == other.id &&
           name == other.name &&
           nodeId == other.nodeId &&
-          private == other.private; } 
-@override int get hashCode { return Object.hash(fullName, id, name, nodeId, private); } 
-@override String toString() { return 'PersonalAccessTokenRequestRepositories(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)'; } 
+          private == other.private;
+
+@override int get hashCode => Object.hash(fullName, id, name, nodeId, private);
+
+@override String toString() => 'PersonalAccessTokenRequestRepositories(fullName: $fullName, id: $id, name: $name, nodeId: $nodeId, private: $private)';
+
  }

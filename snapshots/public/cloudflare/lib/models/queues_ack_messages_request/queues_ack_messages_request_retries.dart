@@ -22,10 +22,13 @@ QueuesAckMessagesRequestRetries copyWith({MqRetryDelay? Function()? delaySeconds
   delaySeconds: delaySeconds != null ? delaySeconds() : this.delaySeconds,
   leaseId: leaseId != null ? leaseId() : this.leaseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueuesAckMessagesRequestRetries &&
           delaySeconds == other.delaySeconds &&
-          leaseId == other.leaseId; } 
-@override int get hashCode { return Object.hash(delaySeconds, leaseId); } 
-@override String toString() { return 'QueuesAckMessagesRequestRetries(delaySeconds: $delaySeconds, leaseId: $leaseId)'; } 
+          leaseId == other.leaseId;
+
+@override int get hashCode => Object.hash(delaySeconds, leaseId);
+
+@override String toString() => 'QueuesAckMessagesRequestRetries(delaySeconds: $delaySeconds, leaseId: $leaseId)';
+
  }

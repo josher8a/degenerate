@@ -52,12 +52,15 @@ MagicTransitHopResult copyWith({List<MagicTransitNodeResult>? Function()? nodes,
   packetsSent: packetsSent != null ? packetsSent() : this.packetsSent,
   packetsTtl: packetsTtl != null ? packetsTtl() : this.packetsTtl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicTransitHopResult &&
           listEquals(nodes, other.nodes) &&
           packetsLost == other.packetsLost &&
           packetsSent == other.packetsSent &&
-          packetsTtl == other.packetsTtl; } 
-@override int get hashCode { return Object.hash(Object.hashAll(nodes ?? const []), packetsLost, packetsSent, packetsTtl); } 
-@override String toString() { return 'MagicTransitHopResult(nodes: $nodes, packetsLost: $packetsLost, packetsSent: $packetsSent, packetsTtl: $packetsTtl)'; } 
+          packetsTtl == other.packetsTtl;
+
+@override int get hashCode => Object.hash(Object.hashAll(nodes ?? const []), packetsLost, packetsSent, packetsTtl);
+
+@override String toString() => 'MagicTransitHopResult(nodes: $nodes, packetsLost: $packetsLost, packetsSent: $packetsSent, packetsTtl: $packetsTtl)';
+
  }

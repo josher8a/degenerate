@@ -32,11 +32,14 @@ CustomToolChatCompletionsCustom copyWith({String? name, String? Function()? desc
   description: description != null ? description() : this.description,
   format: format != null ? format() : this.format,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolChatCompletionsCustom &&
           name == other.name &&
           description == other.description &&
-          format == other.format; } 
-@override int get hashCode { return Object.hash(name, description, format); } 
-@override String toString() { return 'CustomToolChatCompletionsCustom(name: $name, description: $description, format: $format)'; } 
+          format == other.format;
+
+@override int get hashCode => Object.hash(name, description, format);
+
+@override String toString() => 'CustomToolChatCompletionsCustom(name: $name, description: $description, format: $format)';
+
  }

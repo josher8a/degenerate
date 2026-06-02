@@ -50,14 +50,17 @@ DosNewSynProtectionRule copyWith({String? burstSensitivity, String? Function()? 
   rateSensitivity: rateSensitivity ?? this.rateSensitivity,
   scope: scope ?? this.scope,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DosNewSynProtectionRule &&
           burstSensitivity == other.burstSensitivity &&
           mitigationType == other.mitigationType &&
           mode == other.mode &&
           name == other.name &&
           rateSensitivity == other.rateSensitivity &&
-          scope == other.scope; } 
-@override int get hashCode { return Object.hash(burstSensitivity, mitigationType, mode, name, rateSensitivity, scope); } 
-@override String toString() { return 'DosNewSynProtectionRule(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)'; } 
+          scope == other.scope;
+
+@override int get hashCode => Object.hash(burstSensitivity, mitigationType, mode, name, rateSensitivity, scope);
+
+@override String toString() => 'DosNewSynProtectionRule(burstSensitivity: $burstSensitivity, mitigationType: $mitigationType, mode: $mode, name: $name, rateSensitivity: $rateSensitivity, scope: $scope)';
+
  }

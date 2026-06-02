@@ -37,13 +37,16 @@ WorBatchCreateWorkflowInstanceResponseResultInfo copyWith({double? count, String
   perPage: perPage ?? this.perPage,
   totalCount: totalCount ?? this.totalCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorBatchCreateWorkflowInstanceResponseResultInfo &&
           count == other.count &&
           cursor == other.cursor &&
           page == other.page &&
           perPage == other.perPage &&
-          totalCount == other.totalCount; } 
-@override int get hashCode { return Object.hash(count, cursor, page, perPage, totalCount); } 
-@override String toString() { return 'WorBatchCreateWorkflowInstanceResponseResultInfo(count: $count, cursor: $cursor, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+          totalCount == other.totalCount;
+
+@override int get hashCode => Object.hash(count, cursor, page, perPage, totalCount);
+
+@override String toString() => 'WorBatchCreateWorkflowInstanceResponseResultInfo(count: $count, cursor: $cursor, page: $page, perPage: $perPage, totalCount: $totalCount)';
+
  }

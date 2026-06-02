@@ -25,10 +25,13 @@ UserLocation copyWith({ApproximateLocationType? type, WebSearchLocation? approxi
   type: type ?? this.type,
   approximate: approximate ?? this.approximate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserLocation &&
           type == other.type &&
-          approximate == other.approximate; } 
-@override int get hashCode { return Object.hash(type, approximate); } 
-@override String toString() { return 'UserLocation(type: $type, approximate: $approximate)'; } 
+          approximate == other.approximate;
+
+@override int get hashCode => Object.hash(type, approximate);
+
+@override String toString() => 'UserLocation(type: $type, approximate: $approximate)';
+
  }

@@ -27,15 +27,19 @@ final HyperdriveHyperdriveCachingEnabled hyperdriveHyperdriveCachingEnabled;
 
 @override String get disabled => 'false';
 
-@override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled}; } 
+@override Map<String, dynamic> toJson() => {...hyperdriveHyperdriveCachingEnabled.toJson(), 'disabled': disabled};
+
 HyperdriveHyperdriveCachingFalse copyWith({int? Function()? maxAge, int? Function()? staleWhileRevalidate, }) { return HyperdriveHyperdriveCachingFalse(hyperdriveHyperdriveCachingEnabled.copyWith(
   maxAge: maxAge,
   staleWhileRevalidate: staleWhileRevalidate,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingEnabled == other.hyperdriveHyperdriveCachingEnabled; } 
-@override int get hashCode { return hyperdriveHyperdriveCachingEnabled.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCaching.\$false($hyperdriveHyperdriveCachingEnabled)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HyperdriveHyperdriveCachingFalse && hyperdriveHyperdriveCachingEnabled == other.hyperdriveHyperdriveCachingEnabled;
+
+@override int get hashCode => hyperdriveHyperdriveCachingEnabled.hashCode;
+
+@override String toString() => 'HyperdriveHyperdriveCaching.\$false($hyperdriveHyperdriveCachingEnabled)';
+
  }
 @immutable final class HyperdriveHyperdriveCachingTrue extends HyperdriveHyperdriveCaching {const HyperdriveHyperdriveCachingTrue(this.hyperdriveHyperdriveCachingCommon);
 
@@ -45,12 +49,16 @@ final HyperdriveHyperdriveCachingCommon hyperdriveHyperdriveCachingCommon;
 
 @override String get disabled => 'true';
 
-@override Map<String, dynamic> toJson() { return {...hyperdriveHyperdriveCachingCommon.toJson(), 'disabled': disabled}; } 
+@override Map<String, dynamic> toJson() => {...hyperdriveHyperdriveCachingCommon.toJson(), 'disabled': disabled};
+
 HyperdriveHyperdriveCachingTrue copyWith({HyperdriveHyperdriveCachingCommon? hyperdriveHyperdriveCachingCommon}) { return HyperdriveHyperdriveCachingTrue(hyperdriveHyperdriveCachingCommon ?? this.hyperdriveHyperdriveCachingCommon); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HyperdriveHyperdriveCachingTrue && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon; } 
-@override int get hashCode { return hyperdriveHyperdriveCachingCommon.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCaching.\$true($hyperdriveHyperdriveCachingCommon)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HyperdriveHyperdriveCachingTrue && hyperdriveHyperdriveCachingCommon == other.hyperdriveHyperdriveCachingCommon;
+
+@override int get hashCode => hyperdriveHyperdriveCachingCommon.hashCode;
+
+@override String toString() => 'HyperdriveHyperdriveCaching.\$true($hyperdriveHyperdriveCachingCommon)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -60,9 +68,13 @@ final Map<String, dynamic> json;
 
 @override String get disabled => json['disabled'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HyperdriveHyperdriveCaching$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'HyperdriveHyperdriveCaching.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HyperdriveHyperdriveCaching$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'HyperdriveHyperdriveCaching.unknown($json)';
+
  }

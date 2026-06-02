@@ -29,11 +29,14 @@ ReposMergeRequest copyWith({String? base, String? head, String? Function()? comm
   head: head ?? this.head,
   commitMessage: commitMessage != null ? commitMessage() : this.commitMessage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposMergeRequest &&
           base == other.base &&
           head == other.head &&
-          commitMessage == other.commitMessage; } 
-@override int get hashCode { return Object.hash(base, head, commitMessage); } 
-@override String toString() { return 'ReposMergeRequest(base: $base, head: $head, commitMessage: $commitMessage)'; } 
+          commitMessage == other.commitMessage;
+
+@override int get hashCode => Object.hash(base, head, commitMessage);
+
+@override String toString() => 'ReposMergeRequest(base: $base, head: $head, commitMessage: $commitMessage)';
+
  }

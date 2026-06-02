@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DlpEmailScannerGetAccountMappingResponse copyWith({DlpAddinAccountMapping? Function()? result}) { return DlpEmailScannerGetAccountMappingResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpEmailScannerGetAccountMappingResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'DlpEmailScannerGetAccountMappingResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'DlpEmailScannerGetAccountMappingResponse(result: $result)';
+
  }

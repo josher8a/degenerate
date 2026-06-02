@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is VideoSeconds && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'VideoSeconds($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VideoSeconds && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VideoSeconds($value)';
+
  }
 /// Parameters for creating a new video generation job.
 @immutable final class CreateVideoBody {const CreateVideoBody({required this.prompt, this.model, this.inputReference, this.imageReference, this.seconds, this.size, });
@@ -79,14 +82,17 @@ CreateVideoBody copyWith({VideoModel? Function()? model, String? prompt, Uint8Li
   seconds: seconds != null ? seconds() : this.seconds,
   size: size != null ? size() : this.size,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateVideoBody &&
           model == other.model &&
           prompt == other.prompt &&
           inputReference == other.inputReference &&
           imageReference == other.imageReference &&
           seconds == other.seconds &&
-          size == other.size; } 
-@override int get hashCode { return Object.hash(model, prompt, inputReference, imageReference, seconds, size); } 
-@override String toString() { return 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)'; } 
+          size == other.size;
+
+@override int get hashCode => Object.hash(model, prompt, inputReference, imageReference, seconds, size);
+
+@override String toString() => 'CreateVideoBody(model: $model, prompt: $prompt, inputReference: $inputReference, imageReference: $imageReference, seconds: $seconds, size: $size)';
+
  }

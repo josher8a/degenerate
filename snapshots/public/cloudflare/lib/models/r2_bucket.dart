@@ -37,13 +37,16 @@ R2Bucket copyWith({String? Function()? creationDate, R2Jurisdiction? Function()?
   name: name != null ? name() : this.name,
   storageClass: storageClass != null ? storageClass() : this.storageClass,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2Bucket &&
           creationDate == other.creationDate &&
           jurisdiction == other.jurisdiction &&
           location == other.location &&
           name == other.name &&
-          storageClass == other.storageClass; } 
-@override int get hashCode { return Object.hash(creationDate, jurisdiction, location, name, storageClass); } 
-@override String toString() { return 'R2Bucket(creationDate: $creationDate, jurisdiction: $jurisdiction, location: $location, name: $name, storageClass: $storageClass)'; } 
+          storageClass == other.storageClass;
+
+@override int get hashCode => Object.hash(creationDate, jurisdiction, location, name, storageClass);
+
+@override String toString() => 'R2Bucket(creationDate: $creationDate, jurisdiction: $jurisdiction, location: $location, name: $name, storageClass: $storageClass)';
+
  }

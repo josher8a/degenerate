@@ -143,12 +143,16 @@ final ZonesAlwaysUseHttps zonesAlwaysUseHttps;
 
 @override String get id => 'always_use_https';
 
-@override Map<String, dynamic> toJson() { return {...zonesAlwaysUseHttps.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesAlwaysUseHttps.toJson(), 'id': id};
+
 ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps}) { return ZonesActions2AlwaysUseHttps(zonesAlwaysUseHttps ?? this.zonesAlwaysUseHttps); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2AlwaysUseHttps && zonesAlwaysUseHttps == other.zonesAlwaysUseHttps; } 
-@override int get hashCode { return zonesAlwaysUseHttps.hashCode; } 
-@override String toString() { return 'ZonesActions2.alwaysUseHttps($zonesAlwaysUseHttps)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2AlwaysUseHttps && zonesAlwaysUseHttps == other.zonesAlwaysUseHttps;
+
+@override int get hashCode => zonesAlwaysUseHttps.hashCode;
+
+@override String toString() => 'ZonesActions2.alwaysUseHttps($zonesAlwaysUseHttps)';
+
  }
 @immutable final class ZonesActions2AutomaticHttpsRewrites extends ZonesActions2 {const ZonesActions2AutomaticHttpsRewrites(this.zonesAutomaticHttpsRewrites);
 
@@ -158,14 +162,18 @@ final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
 @override String get id => 'automatic_https_rewrites';
 
-@override Map<String, dynamic> toJson() { return {...zonesAutomaticHttpsRewrites.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesAutomaticHttpsRewrites.toJson(), 'id': id};
+
 ZonesActions2AutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesValue? Function()? value}) { return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2AutomaticHttpsRewrites && zonesAutomaticHttpsRewrites == other.zonesAutomaticHttpsRewrites; } 
-@override int get hashCode { return zonesAutomaticHttpsRewrites.hashCode; } 
-@override String toString() { return 'ZonesActions2.automaticHttpsRewrites($zonesAutomaticHttpsRewrites)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2AutomaticHttpsRewrites && zonesAutomaticHttpsRewrites == other.zonesAutomaticHttpsRewrites;
+
+@override int get hashCode => zonesAutomaticHttpsRewrites.hashCode;
+
+@override String toString() => 'ZonesActions2.automaticHttpsRewrites($zonesAutomaticHttpsRewrites)';
+
  }
 @immutable final class ZonesActions2BrowserCacheTtl extends ZonesActions2 {const ZonesActions2BrowserCacheTtl(this.zonesBrowserCacheTtl);
 
@@ -175,14 +183,18 @@ final ZonesBrowserCacheTtl zonesBrowserCacheTtl;
 
 @override String get id => 'browser_cache_ttl';
 
-@override Map<String, dynamic> toJson() { return {...zonesBrowserCacheTtl.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesBrowserCacheTtl.toJson(), 'id': id};
+
 ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) { return ZonesActions2BrowserCacheTtl(zonesBrowserCacheTtl.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2BrowserCacheTtl && zonesBrowserCacheTtl == other.zonesBrowserCacheTtl; } 
-@override int get hashCode { return zonesBrowserCacheTtl.hashCode; } 
-@override String toString() { return 'ZonesActions2.browserCacheTtl($zonesBrowserCacheTtl)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2BrowserCacheTtl && zonesBrowserCacheTtl == other.zonesBrowserCacheTtl;
+
+@override int get hashCode => zonesBrowserCacheTtl.hashCode;
+
+@override String toString() => 'ZonesActions2.browserCacheTtl($zonesBrowserCacheTtl)';
+
  }
 @immutable final class ZonesActions2BrowserCheck extends ZonesActions2 {const ZonesActions2BrowserCheck(this.zonesBrowserCheck);
 
@@ -192,14 +204,18 @@ final ZonesBrowserCheck zonesBrowserCheck;
 
 @override String get id => 'browser_check';
 
-@override Map<String, dynamic> toJson() { return {...zonesBrowserCheck.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesBrowserCheck.toJson(), 'id': id};
+
 ZonesActions2BrowserCheck copyWith({ZonesBrowserCheckValue? Function()? value}) { return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2BrowserCheck && zonesBrowserCheck == other.zonesBrowserCheck; } 
-@override int get hashCode { return zonesBrowserCheck.hashCode; } 
-@override String toString() { return 'ZonesActions2.browserCheck($zonesBrowserCheck)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2BrowserCheck && zonesBrowserCheck == other.zonesBrowserCheck;
+
+@override int get hashCode => zonesBrowserCheck.hashCode;
+
+@override String toString() => 'ZonesActions2.browserCheck($zonesBrowserCheck)';
+
  }
 @immutable final class ZonesActions2BypassCacheOnCookie extends ZonesActions2 {const ZonesActions2BypassCacheOnCookie(this.zonesBypassCacheOnCookie);
 
@@ -209,14 +225,18 @@ final ZonesBypassCacheOnCookie zonesBypassCacheOnCookie;
 
 @override String get id => 'bypass_cache_on_cookie';
 
-@override Map<String, dynamic> toJson() { return {...zonesBypassCacheOnCookie.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesBypassCacheOnCookie.toJson(), 'id': id};
+
 ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2BypassCacheOnCookie(zonesBypassCacheOnCookie.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2BypassCacheOnCookie && zonesBypassCacheOnCookie == other.zonesBypassCacheOnCookie; } 
-@override int get hashCode { return zonesBypassCacheOnCookie.hashCode; } 
-@override String toString() { return 'ZonesActions2.bypassCacheOnCookie($zonesBypassCacheOnCookie)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2BypassCacheOnCookie && zonesBypassCacheOnCookie == other.zonesBypassCacheOnCookie;
+
+@override int get hashCode => zonesBypassCacheOnCookie.hashCode;
+
+@override String toString() => 'ZonesActions2.bypassCacheOnCookie($zonesBypassCacheOnCookie)';
+
  }
 @immutable final class ZonesActions2CacheByDeviceType extends ZonesActions2 {const ZonesActions2CacheByDeviceType(this.zonesCacheByDeviceType);
 
@@ -226,14 +246,18 @@ final ZonesCacheByDeviceType zonesCacheByDeviceType;
 
 @override String get id => 'cache_by_device_type';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheByDeviceType.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheByDeviceType.toJson(), 'id': id};
+
 ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheByDeviceType(zonesCacheByDeviceType.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheByDeviceType && zonesCacheByDeviceType == other.zonesCacheByDeviceType; } 
-@override int get hashCode { return zonesCacheByDeviceType.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheByDeviceType($zonesCacheByDeviceType)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheByDeviceType && zonesCacheByDeviceType == other.zonesCacheByDeviceType;
+
+@override int get hashCode => zonesCacheByDeviceType.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheByDeviceType($zonesCacheByDeviceType)';
+
  }
 @immutable final class ZonesActions2CacheDeceptionArmor extends ZonesActions2 {const ZonesActions2CacheDeceptionArmor(this.zonesCacheDeceptionArmor);
 
@@ -243,14 +267,18 @@ final ZonesCacheDeceptionArmor zonesCacheDeceptionArmor;
 
 @override String get id => 'cache_deception_armor';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheDeceptionArmor.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheDeceptionArmor.toJson(), 'id': id};
+
 ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheDeceptionArmor(zonesCacheDeceptionArmor.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheDeceptionArmor && zonesCacheDeceptionArmor == other.zonesCacheDeceptionArmor; } 
-@override int get hashCode { return zonesCacheDeceptionArmor.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheDeceptionArmor($zonesCacheDeceptionArmor)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheDeceptionArmor && zonesCacheDeceptionArmor == other.zonesCacheDeceptionArmor;
+
+@override int get hashCode => zonesCacheDeceptionArmor.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheDeceptionArmor($zonesCacheDeceptionArmor)';
+
  }
 @immutable final class ZonesActions2CacheKeyFields extends ZonesActions2 {const ZonesActions2CacheKeyFields(this.zonesCacheKeyFields);
 
@@ -260,14 +288,18 @@ final ZonesCacheKeyFields zonesCacheKeyFields;
 
 @override String get id => 'cache_key_fields';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheKeyFields.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheKeyFields.toJson(), 'id': id};
+
 ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? value}) { return ZonesActions2CacheKeyFields(zonesCacheKeyFields.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheKeyFields && zonesCacheKeyFields == other.zonesCacheKeyFields; } 
-@override int get hashCode { return zonesCacheKeyFields.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheKeyFields($zonesCacheKeyFields)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheKeyFields && zonesCacheKeyFields == other.zonesCacheKeyFields;
+
+@override int get hashCode => zonesCacheKeyFields.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheKeyFields($zonesCacheKeyFields)';
+
  }
 @immutable final class ZonesActions2CacheLevel extends ZonesActions2 {const ZonesActions2CacheLevel(this.zonesCacheLevel);
 
@@ -277,14 +309,18 @@ final ZonesCacheLevel zonesCacheLevel;
 
 @override String get id => 'cache_level';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheLevel.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheLevel.toJson(), 'id': id};
+
 ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue? Function()? value}) { return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheLevel && zonesCacheLevel == other.zonesCacheLevel; } 
-@override int get hashCode { return zonesCacheLevel.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheLevel($zonesCacheLevel)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheLevel && zonesCacheLevel == other.zonesCacheLevel;
+
+@override int get hashCode => zonesCacheLevel.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheLevel($zonesCacheLevel)';
+
  }
 @immutable final class ZonesActions2CacheOnCookie extends ZonesActions2 {const ZonesActions2CacheOnCookie(this.zonesCacheOnCookie);
 
@@ -294,14 +330,18 @@ final ZonesCacheOnCookie zonesCacheOnCookie;
 
 @override String get id => 'cache_on_cookie';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheOnCookie.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheOnCookie.toJson(), 'id': id};
+
 ZonesActions2CacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2CacheOnCookie(zonesCacheOnCookie.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheOnCookie && zonesCacheOnCookie == other.zonesCacheOnCookie; } 
-@override int get hashCode { return zonesCacheOnCookie.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheOnCookie($zonesCacheOnCookie)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheOnCookie && zonesCacheOnCookie == other.zonesCacheOnCookie;
+
+@override int get hashCode => zonesCacheOnCookie.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheOnCookie($zonesCacheOnCookie)';
+
  }
 @immutable final class ZonesActions2CacheTtlByStatus extends ZonesActions2 {const ZonesActions2CacheTtlByStatus(this.zonesCacheTtlByStatus);
 
@@ -311,14 +351,18 @@ final ZonesCacheTtlByStatus zonesCacheTtlByStatus;
 
 @override String get id => 'cache_ttl_by_status';
 
-@override Map<String, dynamic> toJson() { return {...zonesCacheTtlByStatus.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesCacheTtlByStatus.toJson(), 'id': id};
+
 ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? value}) { return ZonesActions2CacheTtlByStatus(zonesCacheTtlByStatus.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2CacheTtlByStatus && zonesCacheTtlByStatus == other.zonesCacheTtlByStatus; } 
-@override int get hashCode { return zonesCacheTtlByStatus.hashCode; } 
-@override String toString() { return 'ZonesActions2.cacheTtlByStatus($zonesCacheTtlByStatus)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2CacheTtlByStatus && zonesCacheTtlByStatus == other.zonesCacheTtlByStatus;
+
+@override int get hashCode => zonesCacheTtlByStatus.hashCode;
+
+@override String toString() => 'ZonesActions2.cacheTtlByStatus($zonesCacheTtlByStatus)';
+
  }
 @immutable final class ZonesActions2DisableApps extends ZonesActions2 {const ZonesActions2DisableApps(this.zonesDisableApps);
 
@@ -328,12 +372,16 @@ final ZonesDisableApps zonesDisableApps;
 
 @override String get id => 'disable_apps';
 
-@override Map<String, dynamic> toJson() { return {...zonesDisableApps.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesDisableApps.toJson(), 'id': id};
+
 ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) { return ZonesActions2DisableApps(zonesDisableApps ?? this.zonesDisableApps); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2DisableApps && zonesDisableApps == other.zonesDisableApps; } 
-@override int get hashCode { return zonesDisableApps.hashCode; } 
-@override String toString() { return 'ZonesActions2.disableApps($zonesDisableApps)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2DisableApps && zonesDisableApps == other.zonesDisableApps;
+
+@override int get hashCode => zonesDisableApps.hashCode;
+
+@override String toString() => 'ZonesActions2.disableApps($zonesDisableApps)';
+
  }
 @immutable final class ZonesActions2DisablePerformance extends ZonesActions2 {const ZonesActions2DisablePerformance(this.zonesDisablePerformance);
 
@@ -343,12 +391,16 @@ final ZonesDisablePerformance zonesDisablePerformance;
 
 @override String get id => 'disable_performance';
 
-@override Map<String, dynamic> toJson() { return {...zonesDisablePerformance.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesDisablePerformance.toJson(), 'id': id};
+
 ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisablePerformance}) { return ZonesActions2DisablePerformance(zonesDisablePerformance ?? this.zonesDisablePerformance); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2DisablePerformance && zonesDisablePerformance == other.zonesDisablePerformance; } 
-@override int get hashCode { return zonesDisablePerformance.hashCode; } 
-@override String toString() { return 'ZonesActions2.disablePerformance($zonesDisablePerformance)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2DisablePerformance && zonesDisablePerformance == other.zonesDisablePerformance;
+
+@override int get hashCode => zonesDisablePerformance.hashCode;
+
+@override String toString() => 'ZonesActions2.disablePerformance($zonesDisablePerformance)';
+
  }
 @immutable final class ZonesActions2DisableSecurity extends ZonesActions2 {const ZonesActions2DisableSecurity(this.zonesDisableSecurity);
 
@@ -358,12 +410,16 @@ final ZonesDisableSecurity zonesDisableSecurity;
 
 @override String get id => 'disable_security';
 
-@override Map<String, dynamic> toJson() { return {...zonesDisableSecurity.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesDisableSecurity.toJson(), 'id': id};
+
 ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurity}) { return ZonesActions2DisableSecurity(zonesDisableSecurity ?? this.zonesDisableSecurity); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2DisableSecurity && zonesDisableSecurity == other.zonesDisableSecurity; } 
-@override int get hashCode { return zonesDisableSecurity.hashCode; } 
-@override String toString() { return 'ZonesActions2.disableSecurity($zonesDisableSecurity)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2DisableSecurity && zonesDisableSecurity == other.zonesDisableSecurity;
+
+@override int get hashCode => zonesDisableSecurity.hashCode;
+
+@override String toString() => 'ZonesActions2.disableSecurity($zonesDisableSecurity)';
+
  }
 @immutable final class ZonesActions2DisableZaraz extends ZonesActions2 {const ZonesActions2DisableZaraz(this.zonesDisableZaraz);
 
@@ -373,12 +429,16 @@ final ZonesDisableZaraz zonesDisableZaraz;
 
 @override String get id => 'disable_zaraz';
 
-@override Map<String, dynamic> toJson() { return {...zonesDisableZaraz.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesDisableZaraz.toJson(), 'id': id};
+
 ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) { return ZonesActions2DisableZaraz(zonesDisableZaraz ?? this.zonesDisableZaraz); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2DisableZaraz && zonesDisableZaraz == other.zonesDisableZaraz; } 
-@override int get hashCode { return zonesDisableZaraz.hashCode; } 
-@override String toString() { return 'ZonesActions2.disableZaraz($zonesDisableZaraz)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2DisableZaraz && zonesDisableZaraz == other.zonesDisableZaraz;
+
+@override int get hashCode => zonesDisableZaraz.hashCode;
+
+@override String toString() => 'ZonesActions2.disableZaraz($zonesDisableZaraz)';
+
  }
 @immutable final class ZonesActions2EdgeCacheTtl extends ZonesActions2 {const ZonesActions2EdgeCacheTtl(this.zonesEdgeCacheTtl);
 
@@ -388,14 +448,18 @@ final ZonesEdgeCacheTtl zonesEdgeCacheTtl;
 
 @override String get id => 'edge_cache_ttl';
 
-@override Map<String, dynamic> toJson() { return {...zonesEdgeCacheTtl.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesEdgeCacheTtl.toJson(), 'id': id};
+
 ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) { return ZonesActions2EdgeCacheTtl(zonesEdgeCacheTtl.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2EdgeCacheTtl && zonesEdgeCacheTtl == other.zonesEdgeCacheTtl; } 
-@override int get hashCode { return zonesEdgeCacheTtl.hashCode; } 
-@override String toString() { return 'ZonesActions2.edgeCacheTtl($zonesEdgeCacheTtl)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2EdgeCacheTtl && zonesEdgeCacheTtl == other.zonesEdgeCacheTtl;
+
+@override int get hashCode => zonesEdgeCacheTtl.hashCode;
+
+@override String toString() => 'ZonesActions2.edgeCacheTtl($zonesEdgeCacheTtl)';
+
  }
 @immutable final class ZonesActions2EmailObfuscation extends ZonesActions2 {const ZonesActions2EmailObfuscation(this.zonesEmailObfuscation);
 
@@ -405,14 +469,18 @@ final ZonesEmailObfuscation zonesEmailObfuscation;
 
 @override String get id => 'email_obfuscation';
 
-@override Map<String, dynamic> toJson() { return {...zonesEmailObfuscation.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesEmailObfuscation.toJson(), 'id': id};
+
 ZonesActions2EmailObfuscation copyWith({ZonesEmailObfuscationValue? Function()? value}) { return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2EmailObfuscation && zonesEmailObfuscation == other.zonesEmailObfuscation; } 
-@override int get hashCode { return zonesEmailObfuscation.hashCode; } 
-@override String toString() { return 'ZonesActions2.emailObfuscation($zonesEmailObfuscation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2EmailObfuscation && zonesEmailObfuscation == other.zonesEmailObfuscation;
+
+@override int get hashCode => zonesEmailObfuscation.hashCode;
+
+@override String toString() => 'ZonesActions2.emailObfuscation($zonesEmailObfuscation)';
+
  }
 @immutable final class ZonesActions2ExplicitCacheControl extends ZonesActions2 {const ZonesActions2ExplicitCacheControl(this.zonesExplicitCacheControl);
 
@@ -422,14 +490,18 @@ final ZonesExplicitCacheControl zonesExplicitCacheControl;
 
 @override String get id => 'explicit_cache_control';
 
-@override Map<String, dynamic> toJson() { return {...zonesExplicitCacheControl.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesExplicitCacheControl.toJson(), 'id': id};
+
 ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2ExplicitCacheControl(zonesExplicitCacheControl.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2ExplicitCacheControl && zonesExplicitCacheControl == other.zonesExplicitCacheControl; } 
-@override int get hashCode { return zonesExplicitCacheControl.hashCode; } 
-@override String toString() { return 'ZonesActions2.explicitCacheControl($zonesExplicitCacheControl)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2ExplicitCacheControl && zonesExplicitCacheControl == other.zonesExplicitCacheControl;
+
+@override int get hashCode => zonesExplicitCacheControl.hashCode;
+
+@override String toString() => 'ZonesActions2.explicitCacheControl($zonesExplicitCacheControl)';
+
  }
 @immutable final class ZonesActions2ForwardingUrl extends ZonesActions2 {const ZonesActions2ForwardingUrl(this.zonesForwardingUrl);
 
@@ -439,14 +511,18 @@ final ZonesForwardingUrl zonesForwardingUrl;
 
 @override String get id => 'forwarding_url';
 
-@override Map<String, dynamic> toJson() { return {...zonesForwardingUrl.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesForwardingUrl.toJson(), 'id': id};
+
 ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}) { return ZonesActions2ForwardingUrl(zonesForwardingUrl.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2ForwardingUrl && zonesForwardingUrl == other.zonesForwardingUrl; } 
-@override int get hashCode { return zonesForwardingUrl.hashCode; } 
-@override String toString() { return 'ZonesActions2.forwardingUrl($zonesForwardingUrl)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2ForwardingUrl && zonesForwardingUrl == other.zonesForwardingUrl;
+
+@override int get hashCode => zonesForwardingUrl.hashCode;
+
+@override String toString() => 'ZonesActions2.forwardingUrl($zonesForwardingUrl)';
+
  }
 @immutable final class ZonesActions2HostHeaderOverride extends ZonesActions2 {const ZonesActions2HostHeaderOverride(this.zonesHostHeaderOverride);
 
@@ -456,14 +532,18 @@ final ZonesHostHeaderOverride zonesHostHeaderOverride;
 
 @override String get id => 'host_header_override';
 
-@override Map<String, dynamic> toJson() { return {...zonesHostHeaderOverride.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesHostHeaderOverride.toJson(), 'id': id};
+
 ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) { return ZonesActions2HostHeaderOverride(zonesHostHeaderOverride.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2HostHeaderOverride && zonesHostHeaderOverride == other.zonesHostHeaderOverride; } 
-@override int get hashCode { return zonesHostHeaderOverride.hashCode; } 
-@override String toString() { return 'ZonesActions2.hostHeaderOverride($zonesHostHeaderOverride)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2HostHeaderOverride && zonesHostHeaderOverride == other.zonesHostHeaderOverride;
+
+@override int get hashCode => zonesHostHeaderOverride.hashCode;
+
+@override String toString() => 'ZonesActions2.hostHeaderOverride($zonesHostHeaderOverride)';
+
  }
 @immutable final class ZonesActions2IpGeolocation extends ZonesActions2 {const ZonesActions2IpGeolocation(this.zonesIpGeolocation);
 
@@ -473,14 +553,18 @@ final ZonesIpGeolocation zonesIpGeolocation;
 
 @override String get id => 'ip_geolocation';
 
-@override Map<String, dynamic> toJson() { return {...zonesIpGeolocation.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesIpGeolocation.toJson(), 'id': id};
+
 ZonesActions2IpGeolocation copyWith({ZonesIpGeolocationValue? Function()? value}) { return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2IpGeolocation && zonesIpGeolocation == other.zonesIpGeolocation; } 
-@override int get hashCode { return zonesIpGeolocation.hashCode; } 
-@override String toString() { return 'ZonesActions2.ipGeolocation($zonesIpGeolocation)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2IpGeolocation && zonesIpGeolocation == other.zonesIpGeolocation;
+
+@override int get hashCode => zonesIpGeolocation.hashCode;
+
+@override String toString() => 'ZonesActions2.ipGeolocation($zonesIpGeolocation)';
+
  }
 @immutable final class ZonesActions2Mirage extends ZonesActions2 {const ZonesActions2Mirage(this.zonesMirage);
 
@@ -490,14 +574,18 @@ final ZonesMirage zonesMirage;
 
 @override String get id => 'mirage';
 
-@override Map<String, dynamic> toJson() { return {...zonesMirage.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesMirage.toJson(), 'id': id};
+
 ZonesActions2Mirage copyWith({ZonesMirageValue? Function()? value}) { return ZonesActions2Mirage(zonesMirage.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2Mirage && zonesMirage == other.zonesMirage; } 
-@override int get hashCode { return zonesMirage.hashCode; } 
-@override String toString() { return 'ZonesActions2.mirage($zonesMirage)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2Mirage && zonesMirage == other.zonesMirage;
+
+@override int get hashCode => zonesMirage.hashCode;
+
+@override String toString() => 'ZonesActions2.mirage($zonesMirage)';
+
  }
 @immutable final class ZonesActions2OpportunisticEncryption extends ZonesActions2 {const ZonesActions2OpportunisticEncryption(this.zonesOpportunisticEncryption);
 
@@ -507,14 +595,18 @@ final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
 @override String get id => 'opportunistic_encryption';
 
-@override Map<String, dynamic> toJson() { return {...zonesOpportunisticEncryption.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesOpportunisticEncryption.toJson(), 'id': id};
+
 ZonesActions2OpportunisticEncryption copyWith({ZonesOpportunisticEncryptionValue? Function()? value}) { return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2OpportunisticEncryption && zonesOpportunisticEncryption == other.zonesOpportunisticEncryption; } 
-@override int get hashCode { return zonesOpportunisticEncryption.hashCode; } 
-@override String toString() { return 'ZonesActions2.opportunisticEncryption($zonesOpportunisticEncryption)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2OpportunisticEncryption && zonesOpportunisticEncryption == other.zonesOpportunisticEncryption;
+
+@override int get hashCode => zonesOpportunisticEncryption.hashCode;
+
+@override String toString() => 'ZonesActions2.opportunisticEncryption($zonesOpportunisticEncryption)';
+
  }
 @immutable final class ZonesActions2OriginErrorPagePassThru extends ZonesActions2 {const ZonesActions2OriginErrorPagePassThru(this.zonesOriginErrorPagePassThru);
 
@@ -524,14 +616,18 @@ final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
 @override String get id => 'origin_error_page_pass_thru';
 
-@override Map<String, dynamic> toJson() { return {...zonesOriginErrorPagePassThru.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesOriginErrorPagePassThru.toJson(), 'id': id};
+
 ZonesActions2OriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruValue? Function()? value}) { return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2OriginErrorPagePassThru && zonesOriginErrorPagePassThru == other.zonesOriginErrorPagePassThru; } 
-@override int get hashCode { return zonesOriginErrorPagePassThru.hashCode; } 
-@override String toString() { return 'ZonesActions2.originErrorPagePassThru($zonesOriginErrorPagePassThru)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2OriginErrorPagePassThru && zonesOriginErrorPagePassThru == other.zonesOriginErrorPagePassThru;
+
+@override int get hashCode => zonesOriginErrorPagePassThru.hashCode;
+
+@override String toString() => 'ZonesActions2.originErrorPagePassThru($zonesOriginErrorPagePassThru)';
+
  }
 @immutable final class ZonesActions2Polish extends ZonesActions2 {const ZonesActions2Polish(this.zonesPolish);
 
@@ -541,14 +637,18 @@ final ZonesPolish zonesPolish;
 
 @override String get id => 'polish';
 
-@override Map<String, dynamic> toJson() { return {...zonesPolish.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesPolish.toJson(), 'id': id};
+
 ZonesActions2Polish copyWith({ZonesPolishValue? Function()? value}) { return ZonesActions2Polish(zonesPolish.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2Polish && zonesPolish == other.zonesPolish; } 
-@override int get hashCode { return zonesPolish.hashCode; } 
-@override String toString() { return 'ZonesActions2.polish($zonesPolish)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2Polish && zonesPolish == other.zonesPolish;
+
+@override int get hashCode => zonesPolish.hashCode;
+
+@override String toString() => 'ZonesActions2.polish($zonesPolish)';
+
  }
 @immutable final class ZonesActions2ResolveOverride extends ZonesActions2 {const ZonesActions2ResolveOverride(this.zonesResolveOverride);
 
@@ -558,14 +658,18 @@ final ZonesResolveOverride zonesResolveOverride;
 
 @override String get id => 'resolve_override';
 
-@override Map<String, dynamic> toJson() { return {...zonesResolveOverride.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesResolveOverride.toJson(), 'id': id};
+
 ZonesActions2ResolveOverride copyWith({String? Function()? value}) { return ZonesActions2ResolveOverride(zonesResolveOverride.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2ResolveOverride && zonesResolveOverride == other.zonesResolveOverride; } 
-@override int get hashCode { return zonesResolveOverride.hashCode; } 
-@override String toString() { return 'ZonesActions2.resolveOverride($zonesResolveOverride)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2ResolveOverride && zonesResolveOverride == other.zonesResolveOverride;
+
+@override int get hashCode => zonesResolveOverride.hashCode;
+
+@override String toString() => 'ZonesActions2.resolveOverride($zonesResolveOverride)';
+
  }
 @immutable final class ZonesActions2RespectStrongEtag extends ZonesActions2 {const ZonesActions2RespectStrongEtag(this.zonesRespectStrongEtag);
 
@@ -575,14 +679,18 @@ final ZonesRespectStrongEtag zonesRespectStrongEtag;
 
 @override String get id => 'respect_strong_etag';
 
-@override Map<String, dynamic> toJson() { return {...zonesRespectStrongEtag.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesRespectStrongEtag.toJson(), 'id': id};
+
 ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2RespectStrongEtag(zonesRespectStrongEtag.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2RespectStrongEtag && zonesRespectStrongEtag == other.zonesRespectStrongEtag; } 
-@override int get hashCode { return zonesRespectStrongEtag.hashCode; } 
-@override String toString() { return 'ZonesActions2.respectStrongEtag($zonesRespectStrongEtag)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2RespectStrongEtag && zonesRespectStrongEtag == other.zonesRespectStrongEtag;
+
+@override int get hashCode => zonesRespectStrongEtag.hashCode;
+
+@override String toString() => 'ZonesActions2.respectStrongEtag($zonesRespectStrongEtag)';
+
  }
 @immutable final class ZonesActions2ResponseBuffering extends ZonesActions2 {const ZonesActions2ResponseBuffering(this.zonesResponseBuffering);
 
@@ -592,14 +700,18 @@ final ZonesResponseBuffering zonesResponseBuffering;
 
 @override String get id => 'response_buffering';
 
-@override Map<String, dynamic> toJson() { return {...zonesResponseBuffering.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesResponseBuffering.toJson(), 'id': id};
+
 ZonesActions2ResponseBuffering copyWith({ZonesResponseBufferingValue? Function()? value}) { return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2ResponseBuffering && zonesResponseBuffering == other.zonesResponseBuffering; } 
-@override int get hashCode { return zonesResponseBuffering.hashCode; } 
-@override String toString() { return 'ZonesActions2.responseBuffering($zonesResponseBuffering)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2ResponseBuffering && zonesResponseBuffering == other.zonesResponseBuffering;
+
+@override int get hashCode => zonesResponseBuffering.hashCode;
+
+@override String toString() => 'ZonesActions2.responseBuffering($zonesResponseBuffering)';
+
  }
 @immutable final class ZonesActions2RocketLoader extends ZonesActions2 {const ZonesActions2RocketLoader(this.zonesRocketLoader);
 
@@ -609,14 +721,18 @@ final ZonesRocketLoader zonesRocketLoader;
 
 @override String get id => 'rocket_loader';
 
-@override Map<String, dynamic> toJson() { return {...zonesRocketLoader.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesRocketLoader.toJson(), 'id': id};
+
 ZonesActions2RocketLoader copyWith({ZonesRocketLoaderValue? Function()? value}) { return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2RocketLoader && zonesRocketLoader == other.zonesRocketLoader; } 
-@override int get hashCode { return zonesRocketLoader.hashCode; } 
-@override String toString() { return 'ZonesActions2.rocketLoader($zonesRocketLoader)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2RocketLoader && zonesRocketLoader == other.zonesRocketLoader;
+
+@override int get hashCode => zonesRocketLoader.hashCode;
+
+@override String toString() => 'ZonesActions2.rocketLoader($zonesRocketLoader)';
+
  }
 @immutable final class ZonesActions2SecurityLevel extends ZonesActions2 {const ZonesActions2SecurityLevel(this.zonesSecurityLevel);
 
@@ -626,14 +742,18 @@ final ZonesSecurityLevel zonesSecurityLevel;
 
 @override String get id => 'security_level';
 
-@override Map<String, dynamic> toJson() { return {...zonesSecurityLevel.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesSecurityLevel.toJson(), 'id': id};
+
 ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue? Function()? value}) { return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2SecurityLevel && zonesSecurityLevel == other.zonesSecurityLevel; } 
-@override int get hashCode { return zonesSecurityLevel.hashCode; } 
-@override String toString() { return 'ZonesActions2.securityLevel($zonesSecurityLevel)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2SecurityLevel && zonesSecurityLevel == other.zonesSecurityLevel;
+
+@override int get hashCode => zonesSecurityLevel.hashCode;
+
+@override String toString() => 'ZonesActions2.securityLevel($zonesSecurityLevel)';
+
  }
 @immutable final class ZonesActions2SortQueryStringForCache extends ZonesActions2 {const ZonesActions2SortQueryStringForCache(this.zonesSortQueryStringForCache);
 
@@ -643,14 +763,18 @@ final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
 @override String get id => 'sort_query_string_for_cache';
 
-@override Map<String, dynamic> toJson() { return {...zonesSortQueryStringForCache.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesSortQueryStringForCache.toJson(), 'id': id};
+
 ZonesActions2SortQueryStringForCache copyWith({ZonesSortQueryStringForCacheValue? Function()? value}) { return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2SortQueryStringForCache && zonesSortQueryStringForCache == other.zonesSortQueryStringForCache; } 
-@override int get hashCode { return zonesSortQueryStringForCache.hashCode; } 
-@override String toString() { return 'ZonesActions2.sortQueryStringForCache($zonesSortQueryStringForCache)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2SortQueryStringForCache && zonesSortQueryStringForCache == other.zonesSortQueryStringForCache;
+
+@override int get hashCode => zonesSortQueryStringForCache.hashCode;
+
+@override String toString() => 'ZonesActions2.sortQueryStringForCache($zonesSortQueryStringForCache)';
+
  }
 @immutable final class ZonesActions2Ssl extends ZonesActions2 {const ZonesActions2Ssl(this.zonesSsl);
 
@@ -660,14 +784,18 @@ final ZonesSsl zonesSsl;
 
 @override String get id => 'ssl';
 
-@override Map<String, dynamic> toJson() { return {...zonesSsl.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesSsl.toJson(), 'id': id};
+
 ZonesActions2Ssl copyWith({ZonesSslValue? Function()? value}) { return ZonesActions2Ssl(zonesSsl.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2Ssl && zonesSsl == other.zonesSsl; } 
-@override int get hashCode { return zonesSsl.hashCode; } 
-@override String toString() { return 'ZonesActions2.ssl($zonesSsl)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2Ssl && zonesSsl == other.zonesSsl;
+
+@override int get hashCode => zonesSsl.hashCode;
+
+@override String toString() => 'ZonesActions2.ssl($zonesSsl)';
+
  }
 @immutable final class ZonesActions2TrueClientIpHeader extends ZonesActions2 {const ZonesActions2TrueClientIpHeader(this.zonesTrueClientIpHeader);
 
@@ -677,14 +805,18 @@ final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
 @override String get id => 'true_client_ip_header';
 
-@override Map<String, dynamic> toJson() { return {...zonesTrueClientIpHeader.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesTrueClientIpHeader.toJson(), 'id': id};
+
 ZonesActions2TrueClientIpHeader copyWith({ZonesTrueClientIpHeaderValue? Function()? value}) { return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2TrueClientIpHeader && zonesTrueClientIpHeader == other.zonesTrueClientIpHeader; } 
-@override int get hashCode { return zonesTrueClientIpHeader.hashCode; } 
-@override String toString() { return 'ZonesActions2.trueClientIpHeader($zonesTrueClientIpHeader)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2TrueClientIpHeader && zonesTrueClientIpHeader == other.zonesTrueClientIpHeader;
+
+@override int get hashCode => zonesTrueClientIpHeader.hashCode;
+
+@override String toString() => 'ZonesActions2.trueClientIpHeader($zonesTrueClientIpHeader)';
+
  }
 @immutable final class ZonesActions2Waf extends ZonesActions2 {const ZonesActions2Waf(this.zonesWaf);
 
@@ -694,14 +826,18 @@ final ZonesWaf zonesWaf;
 
 @override String get id => 'waf';
 
-@override Map<String, dynamic> toJson() { return {...zonesWaf.toJson(), 'id': id}; } 
+@override Map<String, dynamic> toJson() => {...zonesWaf.toJson(), 'id': id};
+
 ZonesActions2Waf copyWith({ZonesWafValue? Function()? value}) { return ZonesActions2Waf(zonesWaf.copyWith(
   value: value,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2Waf && zonesWaf == other.zonesWaf; } 
-@override int get hashCode { return zonesWaf.hashCode; } 
-@override String toString() { return 'ZonesActions2.waf($zonesWaf)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2Waf && zonesWaf == other.zonesWaf;
+
+@override int get hashCode => zonesWaf.hashCode;
+
+@override String toString() => 'ZonesActions2.waf($zonesWaf)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -711,9 +847,13 @@ final Map<String, dynamic> json;
 
 @override String get id => json['id'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesActions2$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ZonesActions2.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesActions2$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ZonesActions2.unknown($json)';
+
  }

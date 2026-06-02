@@ -36,12 +36,15 @@ DestinationCreateRequest copyWith({DestinationCreateRequestConfiguration? config
   name: name ?? this.name,
   skipPreflightCheck: skipPreflightCheck != null ? skipPreflightCheck() : this.skipPreflightCheck,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationCreateRequest &&
           configuration == other.configuration &&
           enabled == other.enabled &&
           name == other.name &&
-          skipPreflightCheck == other.skipPreflightCheck; } 
-@override int get hashCode { return Object.hash(configuration, enabled, name, skipPreflightCheck); } 
-@override String toString() { return 'DestinationCreateRequest(configuration: $configuration, enabled: $enabled, name: $name, skipPreflightCheck: $skipPreflightCheck)'; } 
+          skipPreflightCheck == other.skipPreflightCheck;
+
+@override int get hashCode => Object.hash(configuration, enabled, name, skipPreflightCheck);
+
+@override String toString() => 'DestinationCreateRequest(configuration: $configuration, enabled: $enabled, name: $name, skipPreflightCheck: $skipPreflightCheck)';
+
  }

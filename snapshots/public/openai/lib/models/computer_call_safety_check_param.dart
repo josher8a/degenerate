@@ -29,11 +29,14 @@ ComputerCallSafetyCheckParam copyWith({String? id, String? Function()? code, Str
   code: code != null ? code() : this.code,
   message: message != null ? message() : this.message,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerCallSafetyCheckParam &&
           id == other.id &&
           code == other.code &&
-          message == other.message; } 
-@override int get hashCode { return Object.hash(id, code, message); } 
-@override String toString() { return 'ComputerCallSafetyCheckParam(id: $id, code: $code, message: $message)'; } 
+          message == other.message;
+
+@override int get hashCode => Object.hash(id, code, message);
+
+@override String toString() => 'ComputerCallSafetyCheckParam(id: $id, code: $code, message: $message)';
+
  }

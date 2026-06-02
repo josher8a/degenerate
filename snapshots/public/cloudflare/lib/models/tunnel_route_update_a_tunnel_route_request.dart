@@ -34,12 +34,15 @@ TunnelRouteUpdateATunnelRouteRequest copyWith({TunnelRouteComment? Function()? c
   tunnelId: tunnelId != null ? tunnelId() : this.tunnelId,
   virtualNetworkId: virtualNetworkId != null ? virtualNetworkId() : this.virtualNetworkId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TunnelRouteUpdateATunnelRouteRequest &&
           comment == other.comment &&
           network == other.network &&
           tunnelId == other.tunnelId &&
-          virtualNetworkId == other.virtualNetworkId; } 
-@override int get hashCode { return Object.hash(comment, network, tunnelId, virtualNetworkId); } 
-@override String toString() { return 'TunnelRouteUpdateATunnelRouteRequest(comment: $comment, network: $network, tunnelId: $tunnelId, virtualNetworkId: $virtualNetworkId)'; } 
+          virtualNetworkId == other.virtualNetworkId;
+
+@override int get hashCode => Object.hash(comment, network, tunnelId, virtualNetworkId);
+
+@override String toString() => 'TunnelRouteUpdateATunnelRouteRequest(comment: $comment, network: $network, tunnelId: $tunnelId, virtualNetworkId: $virtualNetworkId)';
+
  }

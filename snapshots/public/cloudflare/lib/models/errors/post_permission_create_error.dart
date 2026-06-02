@@ -17,7 +17,8 @@ final class PostPermissionCreateError$400 extends PostPermissionCreateError {con
 
 final PostPermissionCreateResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostPermissionCreateError$Unknown extends PostPermissionCreateError {const PostPermissionCreateError$Unknown(this.statusCode, this.rawBody, );
 

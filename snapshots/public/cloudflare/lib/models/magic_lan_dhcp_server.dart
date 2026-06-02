@@ -41,13 +41,16 @@ MagicLanDhcpServer copyWith({MagicIpAddress? Function()? dhcpPoolEnd, MagicIpAdd
   dnsServers: dnsServers != null ? dnsServers() : this.dnsServers,
   reservations: reservations != null ? reservations() : this.reservations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicLanDhcpServer &&
           dhcpPoolEnd == other.dhcpPoolEnd &&
           dhcpPoolStart == other.dhcpPoolStart &&
           dnsServer == other.dnsServer &&
           listEquals(dnsServers, other.dnsServers) &&
-          reservations == other.reservations; } 
-@override int get hashCode { return Object.hash(dhcpPoolEnd, dhcpPoolStart, dnsServer, Object.hashAll(dnsServers ?? const []), reservations); } 
-@override String toString() { return 'MagicLanDhcpServer(dhcpPoolEnd: $dhcpPoolEnd, dhcpPoolStart: $dhcpPoolStart, dnsServer: $dnsServer, dnsServers: $dnsServers, reservations: $reservations)'; } 
+          reservations == other.reservations;
+
+@override int get hashCode => Object.hash(dhcpPoolEnd, dhcpPoolStart, dnsServer, Object.hashAll(dnsServers ?? const []), reservations);
+
+@override String toString() => 'MagicLanDhcpServer(dhcpPoolEnd: $dhcpPoolEnd, dhcpPoolStart: $dhcpPoolStart, dnsServer: $dnsServer, dnsServers: $dnsServers, reservations: $reservations)';
+
  }

@@ -22,10 +22,13 @@ GetOrgAnalyticsResponseData copyWith({RecordingStats? Function()? recordingStats
   recordingStats: recordingStats != null ? recordingStats() : this.recordingStats,
   sessionStats: sessionStats != null ? sessionStats() : this.sessionStats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetOrgAnalyticsResponseData &&
           recordingStats == other.recordingStats &&
-          sessionStats == other.sessionStats; } 
-@override int get hashCode { return Object.hash(recordingStats, sessionStats); } 
-@override String toString() { return 'GetOrgAnalyticsResponseData(recordingStats: $recordingStats, sessionStats: $sessionStats)'; } 
+          sessionStats == other.sessionStats;
+
+@override int get hashCode => Object.hash(recordingStats, sessionStats);
+
+@override String toString() => 'GetOrgAnalyticsResponseData(recordingStats: $recordingStats, sessionStats: $sessionStats)';
+
  }

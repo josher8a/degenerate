@@ -23,10 +23,13 @@ ProjectCreated copyWith({String? Function()? id, ProjectCreatedData? Function()?
   id: id != null ? id() : this.id,
   data: data != null ? data() : this.data,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectCreated &&
           id == other.id &&
-          data == other.data; } 
-@override int get hashCode { return Object.hash(id, data); } 
-@override String toString() { return 'ProjectCreated(id: $id, data: $data)'; } 
+          data == other.data;
+
+@override int get hashCode => Object.hash(id, data);
+
+@override String toString() => 'ProjectCreated(id: $id, data: $data)';
+
  }

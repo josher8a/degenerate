@@ -72,7 +72,7 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
   sourceType: sourceType != null ? sourceType() : this.sourceType,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTransfersRequest &&
           amount == other.amount &&
           currency == other.currency &&
@@ -82,7 +82,10 @@ PostTransfersRequest copyWith({int? Function()? amount, String? currency, String
           metadata == other.metadata &&
           sourceTransaction == other.sourceTransaction &&
           sourceType == other.sourceType &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, sourceTransaction, sourceType, transferGroup); } 
-@override String toString() { return 'PostTransfersRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hash(amount, currency, description, destination, Object.hashAll(expand ?? const []), metadata, sourceTransaction, sourceType, transferGroup);
+
+@override String toString() => 'PostTransfersRequest(amount: $amount, currency: $currency, description: $description, destination: $destination, expand: $expand, metadata: $metadata, sourceTransaction: $sourceTransaction, sourceType: $sourceType, transferGroup: $transferGroup)';
+
  }

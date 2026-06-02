@@ -28,10 +28,13 @@ PaymentIntentPaymentMethodOptionsPayto copyWith({PaymentIntentPaymentMethodOptio
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsPayto &&
           mandateOptions == other.mandateOptions &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsPayto(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(mandateOptions, setupFutureUsage);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsPayto(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)';
+
  }

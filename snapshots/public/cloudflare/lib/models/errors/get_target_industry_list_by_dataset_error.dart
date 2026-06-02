@@ -17,7 +17,8 @@ final class GetTargetIndustryListByDatasetError$400 extends GetTargetIndustryLis
 
 final GetTargetIndustryListByDatasetResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetTargetIndustryListByDatasetError$Unknown extends GetTargetIndustryListByDatasetError {const GetTargetIndustryListByDatasetError$Unknown(this.statusCode, this.rawBody, );
 

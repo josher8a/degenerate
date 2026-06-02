@@ -35,11 +35,14 @@ R2EditCustomDomainRequest copyWith({List<String>? Function()? ciphers, bool? Fun
   enabled: enabled != null ? enabled() : this.enabled,
   minTls: minTls != null ? minTls() : this.minTls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EditCustomDomainRequest &&
           listEquals(ciphers, other.ciphers) &&
           enabled == other.enabled &&
-          minTls == other.minTls; } 
-@override int get hashCode { return Object.hash(Object.hashAll(ciphers ?? const []), enabled, minTls); } 
-@override String toString() { return 'R2EditCustomDomainRequest(ciphers: $ciphers, enabled: $enabled, minTls: $minTls)'; } 
+          minTls == other.minTls;
+
+@override int get hashCode => Object.hash(Object.hashAll(ciphers ?? const []), enabled, minTls);
+
+@override String toString() => 'R2EditCustomDomainRequest(ciphers: $ciphers, enabled: $enabled, minTls: $minTls)';
+
  }

@@ -24,10 +24,13 @@ PodExtendedResourceClaimStatus copyWith({List<ContainerExtendedResourceRequest>?
   requestMappings: requestMappings ?? this.requestMappings,
   resourceClaimName: resourceClaimName ?? this.resourceClaimName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PodExtendedResourceClaimStatus &&
           listEquals(requestMappings, other.requestMappings) &&
-          resourceClaimName == other.resourceClaimName; } 
-@override int get hashCode { return Object.hash(Object.hashAll(requestMappings), resourceClaimName); } 
-@override String toString() { return 'PodExtendedResourceClaimStatus(requestMappings: $requestMappings, resourceClaimName: $resourceClaimName)'; } 
+          resourceClaimName == other.resourceClaimName;
+
+@override int get hashCode => Object.hash(Object.hashAll(requestMappings), resourceClaimName);
+
+@override String toString() => 'PodExtendedResourceClaimStatus(requestMappings: $requestMappings, resourceClaimName: $resourceClaimName)';
+
  }

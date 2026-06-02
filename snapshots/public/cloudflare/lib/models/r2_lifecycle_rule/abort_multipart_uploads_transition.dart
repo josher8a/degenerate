@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AbortMultipartUploadsTransition copyWith({R2LifecycleAgeCondition? Function()? condition}) { return AbortMultipartUploadsTransition(
   condition: condition != null ? condition() : this.condition,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AbortMultipartUploadsTransition &&
-          condition == other.condition; } 
-@override int get hashCode { return condition.hashCode; } 
-@override String toString() { return 'AbortMultipartUploadsTransition(condition: $condition)'; } 
+          condition == other.condition;
+
+@override int get hashCode => condition.hashCode;
+
+@override String toString() => 'AbortMultipartUploadsTransition(condition: $condition)';
+
  }

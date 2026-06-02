@@ -52,12 +52,15 @@ CheckoutPaypalPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsC
   reference: reference != null ? reference() : this.reference,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CheckoutPaypalPaymentMethodOptions &&
           captureMethod == other.captureMethod &&
           preferredLocale == other.preferredLocale &&
           reference == other.reference &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(captureMethod, preferredLocale, reference, setupFutureUsage); } 
-@override String toString() { return 'CheckoutPaypalPaymentMethodOptions(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(captureMethod, preferredLocale, reference, setupFutureUsage);
+
+@override String toString() => 'CheckoutPaypalPaymentMethodOptions(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, setupFutureUsage: $setupFutureUsage)';
+
  }

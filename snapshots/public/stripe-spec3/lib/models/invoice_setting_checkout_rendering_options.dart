@@ -34,10 +34,13 @@ InvoiceSettingCheckoutRenderingOptions copyWith({String? Function()? amountTaxDi
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   template: template != null ? template() : this.template,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InvoiceSettingCheckoutRenderingOptions &&
           amountTaxDisplay == other.amountTaxDisplay &&
-          template == other.template; } 
-@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
-@override String toString() { return 'InvoiceSettingCheckoutRenderingOptions(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+          template == other.template;
+
+@override int get hashCode => Object.hash(amountTaxDisplay, template);
+
+@override String toString() => 'InvoiceSettingCheckoutRenderingOptions(amountTaxDisplay: $amountTaxDisplay, template: $template)';
+
  }

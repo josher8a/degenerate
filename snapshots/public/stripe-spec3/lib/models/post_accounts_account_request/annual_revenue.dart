@@ -31,11 +31,14 @@ AnnualRevenue copyWith({int? amount, String? currency, String? fiscalYearEnd, })
   currency: currency ?? this.currency,
   fiscalYearEnd: fiscalYearEnd ?? this.fiscalYearEnd,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AnnualRevenue &&
           amount == other.amount &&
           currency == other.currency &&
-          fiscalYearEnd == other.fiscalYearEnd; } 
-@override int get hashCode { return Object.hash(amount, currency, fiscalYearEnd); } 
-@override String toString() { return 'AnnualRevenue(amount: $amount, currency: $currency, fiscalYearEnd: $fiscalYearEnd)'; } 
+          fiscalYearEnd == other.fiscalYearEnd;
+
+@override int get hashCode => Object.hash(amount, currency, fiscalYearEnd);
+
+@override String toString() => 'AnnualRevenue(amount: $amount, currency: $currency, fiscalYearEnd: $fiscalYearEnd)';
+
  }

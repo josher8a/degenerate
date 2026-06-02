@@ -50,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is NetworkCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'NetworkCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NetworkCode($value)';
+
  }
 /// The reason why this PaymentMethod's fingerprint has been blocked
 @immutable final class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason._(this.value);
@@ -90,10 +93,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaymentMethodUsBankAccountBlockedReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaymentMethodUsBankAccountBlockedReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodUsBankAccountBlockedReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaymentMethodUsBankAccountBlockedReason($value)';
+
  }
 /// 
 @immutable final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode, this.reason, });
@@ -118,10 +124,13 @@ PaymentMethodUsBankAccountBlocked copyWith({NetworkCode? Function()? networkCode
   networkCode: networkCode != null ? networkCode() : this.networkCode,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodUsBankAccountBlocked &&
           networkCode == other.networkCode &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(networkCode, reason); } 
-@override String toString() { return 'PaymentMethodUsBankAccountBlocked(networkCode: $networkCode, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(networkCode, reason);
+
+@override String toString() => 'PaymentMethodUsBankAccountBlocked(networkCode: $networkCode, reason: $reason)';
+
  }

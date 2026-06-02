@@ -21,10 +21,13 @@ DestinationUpdateRequest copyWith({DestinationUpdateRequestConfiguration? config
   configuration: configuration ?? this.configuration,
   enabled: enabled ?? this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DestinationUpdateRequest &&
           configuration == other.configuration &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(configuration, enabled); } 
-@override String toString() { return 'DestinationUpdateRequest(configuration: $configuration, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(configuration, enabled);
+
+@override String toString() => 'DestinationUpdateRequest(configuration: $configuration, enabled: $enabled)';
+
  }

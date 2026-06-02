@@ -127,7 +127,7 @@ PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Functi
   unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostProductsRequest &&
           active == other.active &&
           defaultPriceData == other.defaultPriceData &&
@@ -143,7 +143,10 @@ PostProductsRequest copyWith({bool? Function()? active, DefaultPriceData? Functi
           statementDescriptor == other.statementDescriptor &&
           taxCode == other.taxCode &&
           unitLabel == other.unitLabel &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(active, defaultPriceData, description, Object.hashAll(expand ?? const []), id, Object.hashAll(images ?? const []), Object.hashAll(marketingFeatures ?? const []), metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url); } 
-@override String toString() { return 'PostProductsRequest(active: $active, defaultPriceData: $defaultPriceData, description: $description, expand: $expand, id: $id, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(active, defaultPriceData, description, Object.hashAll(expand ?? const []), id, Object.hashAll(images ?? const []), Object.hashAll(marketingFeatures ?? const []), metadata, name, packageDimensions, shippable, statementDescriptor, taxCode, unitLabel, url);
+
+@override String toString() => 'PostProductsRequest(active: $active, defaultPriceData: $defaultPriceData, description: $description, expand: $expand, id: $id, images: $images, marketingFeatures: $marketingFeatures, metadata: $metadata, name: $name, packageDimensions: $packageDimensions, shippable: $shippable, statementDescriptor: $statementDescriptor, taxCode: $taxCode, unitLabel: $unitLabel, url: $url)';
+
  }

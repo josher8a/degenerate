@@ -35,12 +35,15 @@ LimitRangeList copyWith({String? Function()? apiVersion, List<LimitRange>? items
   kind: kind != null ? kind() : this.kind,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is LimitRangeList &&
           apiVersion == other.apiVersion &&
           listEquals(items, other.items) &&
           kind == other.kind &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(items), kind, metadata); } 
-@override String toString() { return 'LimitRangeList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(apiVersion, Object.hashAll(items), kind, metadata);
+
+@override String toString() => 'LimitRangeList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)';
+
  }

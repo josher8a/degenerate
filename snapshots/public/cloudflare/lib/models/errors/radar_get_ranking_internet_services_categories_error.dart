@@ -17,7 +17,8 @@ final class RadarGetRankingInternetServicesCategoriesError$400 extends RadarGetR
 
 final RadarGetRankingInternetServicesCategoriesResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetRankingInternetServicesCategoriesError$Unknown extends RadarGetRankingInternetServicesCategoriesError {const RadarGetRankingInternetServicesCategoriesError$Unknown(this.statusCode, this.rawBody, );
 

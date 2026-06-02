@@ -44,11 +44,14 @@ CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBa
   ibanLast4: ibanLast4 != null ? ibanLast4() : this.ibanLast4,
   senderName: senderName != null ? senderName() : this.senderName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer &&
           bic == other.bic &&
           ibanLast4 == other.ibanLast4 &&
-          senderName == other.senderName; } 
-@override int get hashCode { return Object.hash(bic, ibanLast4, senderName); } 
-@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer(bic: $bic, ibanLast4: $ibanLast4, senderName: $senderName)'; } 
+          senderName == other.senderName;
+
+@override int get hashCode => Object.hash(bic, ibanLast4, senderName);
+
+@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer(bic: $bic, ibanLast4: $ibanLast4, senderName: $senderName)';
+
  }

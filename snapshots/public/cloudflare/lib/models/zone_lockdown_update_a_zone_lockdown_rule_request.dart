@@ -23,10 +23,13 @@ ZoneLockdownUpdateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations
   configurations: configurations ?? this.configurations,
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZoneLockdownUpdateAZoneLockdownRuleRequest &&
           listEquals(configurations, other.configurations) &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hash(Object.hashAll(configurations), Object.hashAll(urls)); } 
-@override String toString() { return 'ZoneLockdownUpdateAZoneLockdownRuleRequest(configurations: $configurations, urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hash(Object.hashAll(configurations), Object.hashAll(urls));
+
+@override String toString() => 'ZoneLockdownUpdateAZoneLockdownRuleRequest(configurations: $configurations, urls: $urls)';
+
  }

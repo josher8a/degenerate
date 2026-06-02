@@ -27,10 +27,13 @@ ShieldOldOperationSchemaValidationSettings copyWith({ShieldOldOperationMitigatio
   mitigationAction: mitigationAction != null ? mitigationAction() : this.mitigationAction,
   operationId: operationId != null ? operationId() : this.operationId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldOldOperationSchemaValidationSettings &&
           mitigationAction == other.mitigationAction &&
-          operationId == other.operationId; } 
-@override int get hashCode { return Object.hash(mitigationAction, operationId); } 
-@override String toString() { return 'ShieldOldOperationSchemaValidationSettings(mitigationAction: $mitigationAction, operationId: $operationId)'; } 
+          operationId == other.operationId;
+
+@override int get hashCode => Object.hash(mitigationAction, operationId);
+
+@override String toString() => 'ShieldOldOperationSchemaValidationSettings(mitigationAction: $mitigationAction, operationId: $operationId)';
+
  }

@@ -34,10 +34,13 @@ InfraHostnameHost copyWith({String? hostname, InfraResolverNetwork? resolverNetw
   hostname: hostname ?? this.hostname,
   resolverNetwork: resolverNetwork ?? this.resolverNetwork,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InfraHostnameHost &&
           hostname == other.hostname &&
-          resolverNetwork == other.resolverNetwork; } 
-@override int get hashCode { return Object.hash(hostname, resolverNetwork); } 
-@override String toString() { return 'InfraHostnameHost(hostname: $hostname, resolverNetwork: $resolverNetwork)'; } 
+          resolverNetwork == other.resolverNetwork;
+
+@override int get hashCode => Object.hash(hostname, resolverNetwork);
+
+@override String toString() => 'InfraHostnameHost(hostname: $hostname, resolverNetwork: $resolverNetwork)';
+
  }

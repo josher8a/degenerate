@@ -40,11 +40,14 @@ SettingsPayments copyWith({String? Function()? statementDescriptor, String? Func
   statementDescriptorKana: statementDescriptorKana != null ? statementDescriptorKana() : this.statementDescriptorKana,
   statementDescriptorKanji: statementDescriptorKanji != null ? statementDescriptorKanji() : this.statementDescriptorKanji,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SettingsPayments &&
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorKana == other.statementDescriptorKana &&
-          statementDescriptorKanji == other.statementDescriptorKanji; } 
-@override int get hashCode { return Object.hash(statementDescriptor, statementDescriptorKana, statementDescriptorKanji); } 
-@override String toString() { return 'SettingsPayments(statementDescriptor: $statementDescriptor, statementDescriptorKana: $statementDescriptorKana, statementDescriptorKanji: $statementDescriptorKanji)'; } 
+          statementDescriptorKanji == other.statementDescriptorKanji;
+
+@override int get hashCode => Object.hash(statementDescriptor, statementDescriptorKana, statementDescriptorKanji);
+
+@override String toString() => 'SettingsPayments(statementDescriptor: $statementDescriptor, statementDescriptorKana: $statementDescriptorKana, statementDescriptorKanji: $statementDescriptorKanji)';
+
  }

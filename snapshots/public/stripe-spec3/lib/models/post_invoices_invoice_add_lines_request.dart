@@ -28,11 +28,14 @@ PostInvoicesInvoiceAddLinesRequest copyWith({List<String>? Function()? expand, I
   invoiceMetadata: invoiceMetadata != null ? invoiceMetadata() : this.invoiceMetadata,
   lines: lines ?? this.lines,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceAddLinesRequest &&
           listEquals(expand, other.expand) &&
           invoiceMetadata == other.invoiceMetadata &&
-          listEquals(lines, other.lines); } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), invoiceMetadata, Object.hashAll(lines)); } 
-@override String toString() { return 'PostInvoicesInvoiceAddLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)'; } 
+          listEquals(lines, other.lines);
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), invoiceMetadata, Object.hashAll(lines));
+
+@override String toString() => 'PostInvoicesInvoiceAddLinesRequest(expand: $expand, invoiceMetadata: $invoiceMetadata, lines: $lines)';
+
  }

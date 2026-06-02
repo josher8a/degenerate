@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error$400 extends Wor
 
 final WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Response400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error$Unknown extends WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error {const WorkersAiPostRunCfHuggingfaceDistilbertSst2Int8Error$Unknown(this.statusCode, this.rawBody, );
 

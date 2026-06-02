@@ -37,12 +37,15 @@ AccountRequestTracerRequestTraceRequestContext copyWith({int? Function()? botSco
   skipChallenge: skipChallenge != null ? skipChallenge() : this.skipChallenge,
   threatScore: threatScore != null ? threatScore() : this.threatScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountRequestTracerRequestTraceRequestContext &&
           botScore == other.botScore &&
           geoloc == other.geoloc &&
           skipChallenge == other.skipChallenge &&
-          threatScore == other.threatScore; } 
-@override int get hashCode { return Object.hash(botScore, geoloc, skipChallenge, threatScore); } 
-@override String toString() { return 'AccountRequestTracerRequestTraceRequestContext(botScore: $botScore, geoloc: $geoloc, skipChallenge: $skipChallenge, threatScore: $threatScore)'; } 
+          threatScore == other.threatScore;
+
+@override int get hashCode => Object.hash(botScore, geoloc, skipChallenge, threatScore);
+
+@override String toString() => 'AccountRequestTracerRequestTraceRequestContext(botScore: $botScore, geoloc: $geoloc, skipChallenge: $skipChallenge, threatScore: $threatScore)';
+
  }

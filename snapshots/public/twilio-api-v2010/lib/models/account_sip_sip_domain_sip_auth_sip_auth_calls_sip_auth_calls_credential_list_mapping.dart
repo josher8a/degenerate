@@ -55,13 +55,16 @@ AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping copyWith
   friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
   sid: sid != null ? sid() : this.sid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping &&
           accountSid == other.accountSid &&
           dateCreated == other.dateCreated &&
           dateUpdated == other.dateUpdated &&
           friendlyName == other.friendlyName &&
-          sid == other.sid; } 
-@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, friendlyName, sid); } 
-@override String toString() { return 'AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, sid: $sid)'; } 
+          sid == other.sid;
+
+@override int get hashCode => Object.hash(accountSid, dateCreated, dateUpdated, friendlyName, sid);
+
+@override String toString() => 'AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, friendlyName: $friendlyName, sid: $sid)';
+
  }

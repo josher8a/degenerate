@@ -26,10 +26,13 @@ ModelResults copyWith({String? Function()? modelName, double? Function()? modelS
   modelName: modelName != null ? modelName() : this.modelName,
   modelScore: modelScore != null ? modelScore() : this.modelScore,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ModelResults &&
           modelName == other.modelName &&
-          modelScore == other.modelScore; } 
-@override int get hashCode { return Object.hash(modelName, modelScore); } 
-@override String toString() { return 'ModelResults(modelName: $modelName, modelScore: $modelScore)'; } 
+          modelScore == other.modelScore;
+
+@override int get hashCode => Object.hash(modelName, modelScore);
+
+@override String toString() => 'ModelResults(modelName: $modelName, modelScore: $modelScore)';
+
  }

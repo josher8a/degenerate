@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookBranchProtectionConfigurationDisabledAction && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookBranchProtectionConfigurationDisabledAction($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookBranchProtectionConfigurationDisabledAction && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookBranchProtectionConfigurationDisabledAction($value)';
+
  }
 @immutable final class WebhookBranchProtectionConfigurationDisabled {const WebhookBranchProtectionConfigurationDisabled({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });
 
@@ -63,14 +66,17 @@ WebhookBranchProtectionConfigurationDisabled copyWith({WebhookBranchProtectionCo
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookBranchProtectionConfigurationDisabled &&
           action == other.action &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookBranchProtectionConfigurationDisabled(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookBranchProtectionConfigurationDisabled(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

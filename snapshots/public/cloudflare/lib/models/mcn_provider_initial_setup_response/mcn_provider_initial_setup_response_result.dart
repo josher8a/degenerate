@@ -34,14 +34,18 @@ final McnAwsTrustPolicy mcnAwsTrustPolicy;
 
 @override String get itemType => 'mcn_aws_trust_policy';
 
-@override Map<String, dynamic> toJson() { return {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnAwsTrustPolicy.toJson(), 'item_type': itemType};
+
 McnProviderInitialSetupResponseResultMcnAwsTrustPolicy copyWith({String? awsTrustPolicy}) { return McnProviderInitialSetupResponseResultMcnAwsTrustPolicy(mcnAwsTrustPolicy.copyWith(
   awsTrustPolicy: awsTrustPolicy,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy; } 
-@override int get hashCode { return mcnAwsTrustPolicy.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy($mcnAwsTrustPolicy)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnProviderInitialSetupResponseResultMcnAwsTrustPolicy && mcnAwsTrustPolicy == other.mcnAwsTrustPolicy;
+
+@override int get hashCode => mcnAwsTrustPolicy.hashCode;
+
+@override String toString() => 'McnProviderInitialSetupResponseResult.mcnAwsTrustPolicy($mcnAwsTrustPolicy)';
+
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnAzureSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnAzureSetup(this.mcnAzureSetup);
 
@@ -51,16 +55,20 @@ final McnAzureSetup mcnAzureSetup;
 
 @override String get itemType => 'mcn_azure_setup';
 
-@override Map<String, dynamic> toJson() { return {...mcnAzureSetup.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnAzureSetup.toJson(), 'item_type': itemType};
+
 McnProviderInitialSetupResponseResultMcnAzureSetup copyWith({String? azureConsentUrl, String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnAzureSetup(mcnAzureSetup.copyWith(
   azureConsentUrl: azureConsentUrl,
   integrationIdentityTag: integrationIdentityTag,
   tagCliCommand: tagCliCommand,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup; } 
-@override int get hashCode { return mcnAzureSetup.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnAzureSetup($mcnAzureSetup)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnProviderInitialSetupResponseResultMcnAzureSetup && mcnAzureSetup == other.mcnAzureSetup;
+
+@override int get hashCode => mcnAzureSetup.hashCode;
+
+@override String toString() => 'McnProviderInitialSetupResponseResult.mcnAzureSetup($mcnAzureSetup)';
+
  }
 @immutable final class McnProviderInitialSetupResponseResultMcnGcpSetup extends McnProviderInitialSetupResponseResult {const McnProviderInitialSetupResponseResultMcnGcpSetup(this.mcnGcpSetup);
 
@@ -70,15 +78,19 @@ final McnGcpSetup mcnGcpSetup;
 
 @override String get itemType => 'mcn_gcp_setup';
 
-@override Map<String, dynamic> toJson() { return {...mcnGcpSetup.toJson(), 'item_type': itemType}; } 
+@override Map<String, dynamic> toJson() => {...mcnGcpSetup.toJson(), 'item_type': itemType};
+
 McnProviderInitialSetupResponseResultMcnGcpSetup copyWith({String? integrationIdentityTag, String? tagCliCommand, }) { return McnProviderInitialSetupResponseResultMcnGcpSetup(mcnGcpSetup.copyWith(
   integrationIdentityTag: integrationIdentityTag,
   tagCliCommand: tagCliCommand,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup; } 
-@override int get hashCode { return mcnGcpSetup.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResult.mcnGcpSetup($mcnGcpSetup)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnProviderInitialSetupResponseResultMcnGcpSetup && mcnGcpSetup == other.mcnGcpSetup;
+
+@override int get hashCode => mcnGcpSetup.hashCode;
+
+@override String toString() => 'McnProviderInitialSetupResponseResult.mcnGcpSetup($mcnGcpSetup)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -88,9 +100,13 @@ final Map<String, dynamic> json;
 
 @override String get itemType => json['item_type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnProviderInitialSetupResponseResult$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'McnProviderInitialSetupResponseResult.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is McnProviderInitialSetupResponseResult$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'McnProviderInitialSetupResponseResult.unknown($json)';
+
  }

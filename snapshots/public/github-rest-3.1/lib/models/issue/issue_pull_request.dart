@@ -38,13 +38,16 @@ IssuePullRequest copyWith({DateTime? Function()? mergedAt, Uri? Function()? diff
   patchUrl: patchUrl != null ? patchUrl() : this.patchUrl,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuePullRequest &&
           mergedAt == other.mergedAt &&
           diffUrl == other.diffUrl &&
           htmlUrl == other.htmlUrl &&
           patchUrl == other.patchUrl &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(mergedAt, diffUrl, htmlUrl, patchUrl, url); } 
-@override String toString() { return 'IssuePullRequest(mergedAt: $mergedAt, diffUrl: $diffUrl, htmlUrl: $htmlUrl, patchUrl: $patchUrl, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(mergedAt, diffUrl, htmlUrl, patchUrl, url);
+
+@override String toString() => 'IssuePullRequest(mergedAt: $mergedAt, diffUrl: $diffUrl, htmlUrl: $htmlUrl, patchUrl: $patchUrl, url: $url)';
+
  }

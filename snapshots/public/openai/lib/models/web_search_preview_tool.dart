@@ -22,10 +22,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchContextSize && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchContextSize($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SearchContextSize && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SearchContextSize($value)';
+
  }
 @immutable final class SearchContentType {const SearchContentType._(this.value);
 
@@ -46,10 +49,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SearchContentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SearchContentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SearchContentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SearchContentType($value)';
+
  }
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
 @immutable final class WebSearchPreviewTool {const WebSearchPreviewTool({this.type = 'web_search_preview', this.userLocation, this.searchContextSize, this.searchContentTypes, });
@@ -85,12 +91,15 @@ WebSearchPreviewTool copyWith({String? type, ApproximateLocation? Function()? us
   searchContextSize: searchContextSize != null ? searchContextSize() : this.searchContextSize,
   searchContentTypes: searchContentTypes != null ? searchContentTypes() : this.searchContentTypes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebSearchPreviewTool &&
           type == other.type &&
           userLocation == other.userLocation &&
           searchContextSize == other.searchContextSize &&
-          listEquals(searchContentTypes, other.searchContentTypes); } 
-@override int get hashCode { return Object.hash(type, userLocation, searchContextSize, Object.hashAll(searchContentTypes ?? const [])); } 
-@override String toString() { return 'WebSearchPreviewTool(type: $type, userLocation: $userLocation, searchContextSize: $searchContextSize, searchContentTypes: $searchContentTypes)'; } 
+          listEquals(searchContentTypes, other.searchContentTypes);
+
+@override int get hashCode => Object.hash(type, userLocation, searchContextSize, Object.hashAll(searchContentTypes ?? const []));
+
+@override String toString() => 'WebSearchPreviewTool(type: $type, userLocation: $userLocation, searchContextSize: $searchContextSize, searchContentTypes: $searchContentTypes)';
+
  }

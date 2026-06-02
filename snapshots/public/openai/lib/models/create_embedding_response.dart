@@ -37,12 +37,15 @@ CreateEmbeddingResponse copyWith({List<Embedding>? data, String? model, ChatComp
   object: object ?? this.object,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEmbeddingResponse &&
           listEquals(data, other.data) &&
           model == other.model &&
           object == other.object &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), model, object, usage); } 
-@override String toString() { return 'CreateEmbeddingResponse(data: $data, model: $model, object: $object, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), model, object, usage);
+
+@override String toString() => 'CreateEmbeddingResponse(data: $data, model: $model, object: $object, usage: $usage)';
+
  }

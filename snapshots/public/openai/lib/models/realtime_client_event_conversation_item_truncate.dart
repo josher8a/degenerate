@@ -67,13 +67,16 @@ RealtimeClientEventConversationItemTruncate copyWith({String? Function()? eventI
   contentIndex: contentIndex ?? this.contentIndex,
   audioEndMs: audioEndMs ?? this.audioEndMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeClientEventConversationItemTruncate &&
           eventId == other.eventId &&
           type == other.type &&
           itemId == other.itemId &&
           contentIndex == other.contentIndex &&
-          audioEndMs == other.audioEndMs; } 
-@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, audioEndMs); } 
-@override String toString() { return 'RealtimeClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)'; } 
+          audioEndMs == other.audioEndMs;
+
+@override int get hashCode => Object.hash(eventId, type, itemId, contentIndex, audioEndMs);
+
+@override String toString() => 'RealtimeClientEventConversationItemTruncate(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, audioEndMs: $audioEndMs)';
+
  }

@@ -23,10 +23,13 @@ RepositoryRuleParamsRestrictedCommits copyWith({String? oid, String? Function()?
   oid: oid ?? this.oid,
   reason: reason != null ? reason() : this.reason,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsRestrictedCommits &&
           oid == other.oid &&
-          reason == other.reason; } 
-@override int get hashCode { return Object.hash(oid, reason); } 
-@override String toString() { return 'RepositoryRuleParamsRestrictedCommits(oid: $oid, reason: $reason)'; } 
+          reason == other.reason;
+
+@override int get hashCode => Object.hash(oid, reason);
+
+@override String toString() => 'RepositoryRuleParamsRestrictedCommits(oid: $oid, reason: $reason)';
+
  }

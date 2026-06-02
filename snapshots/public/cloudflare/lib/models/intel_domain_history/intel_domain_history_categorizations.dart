@@ -28,11 +28,14 @@ IntelDomainHistoryCategorizations copyWith({List<CategorizationsCategories>? Fun
   end: end != null ? end() : this.end,
   start: start != null ? start() : this.start,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IntelDomainHistoryCategorizations &&
           listEquals(categories, other.categories) &&
           end == other.end &&
-          start == other.start; } 
-@override int get hashCode { return Object.hash(Object.hashAll(categories ?? const []), end, start); } 
-@override String toString() { return 'IntelDomainHistoryCategorizations(categories: $categories, end: $end, start: $start)'; } 
+          start == other.start;
+
+@override int get hashCode => Object.hash(Object.hashAll(categories ?? const []), end, start);
+
+@override String toString() => 'IntelDomainHistoryCategorizations(categories: $categories, end: $end, start: $start)';
+
  }

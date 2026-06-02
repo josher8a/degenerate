@@ -31,11 +31,14 @@ TranscriptTextDeltaEventLogprobs copyWith({String? Function()? token, double? Fu
   logprob: logprob != null ? logprob() : this.logprob,
   bytes: bytes != null ? bytes() : this.bytes,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TranscriptTextDeltaEventLogprobs &&
           token == other.token &&
           logprob == other.logprob &&
-          listEquals(bytes, other.bytes); } 
-@override int get hashCode { return Object.hash(token, logprob, Object.hashAll(bytes ?? const [])); } 
-@override String toString() { return 'TranscriptTextDeltaEventLogprobs(token: $token, logprob: $logprob, bytes: $bytes)'; } 
+          listEquals(bytes, other.bytes);
+
+@override int get hashCode => Object.hash(token, logprob, Object.hashAll(bytes ?? const []));
+
+@override String toString() => 'TranscriptTextDeltaEventLogprobs(token: $token, logprob: $logprob, bytes: $bytes)';
+
  }

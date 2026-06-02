@@ -22,10 +22,13 @@ GitUpdateRefRequest copyWith({String? sha, bool Function()? force, }) { return G
   sha: sha ?? this.sha,
   force: force != null ? force() : this.force,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GitUpdateRefRequest &&
           sha == other.sha &&
-          force == other.force; } 
-@override int get hashCode { return Object.hash(sha, force); } 
-@override String toString() { return 'GitUpdateRefRequest(sha: $sha, force: $force)'; } 
+          force == other.force;
+
+@override int get hashCode => Object.hash(sha, force);
+
+@override String toString() => 'GitUpdateRefRequest(sha: $sha, force: $force)';
+
  }

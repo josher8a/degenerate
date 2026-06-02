@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 MagicCustomRemoteIdentities copyWith({String? Function()? fqdnId}) { return MagicCustomRemoteIdentities(
   fqdnId: fqdnId != null ? fqdnId() : this.fqdnId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicCustomRemoteIdentities &&
-          fqdnId == other.fqdnId; } 
-@override int get hashCode { return fqdnId.hashCode; } 
-@override String toString() { return 'MagicCustomRemoteIdentities(fqdnId: $fqdnId)'; } 
+          fqdnId == other.fqdnId;
+
+@override int get hashCode => fqdnId.hashCode;
+
+@override String toString() => 'MagicCustomRemoteIdentities(fqdnId: $fqdnId)';
+
  }

@@ -21,10 +21,13 @@ ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse copyWith({int? totalCount
   totalCount: totalCount ?? this.totalCount,
   images: images ?? this.images,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse &&
           totalCount == other.totalCount &&
-          listEquals(images, other.images); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(images)); } 
-@override String toString() { return 'ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(totalCount: $totalCount, images: $images)'; } 
+          listEquals(images, other.images);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(images));
+
+@override String toString() => 'ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse(totalCount: $totalCount, images: $images)';
+
  }

@@ -22,10 +22,13 @@ Web3ModifyRequest copyWith({Web3Description? Function()? description, Web3Dnslin
   description: description != null ? description() : this.description,
   dnslink: dnslink != null ? dnslink() : this.dnslink,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3ModifyRequest &&
           description == other.description &&
-          dnslink == other.dnslink; } 
-@override int get hashCode { return Object.hash(description, dnslink); } 
-@override String toString() { return 'Web3ModifyRequest(description: $description, dnslink: $dnslink)'; } 
+          dnslink == other.dnslink;
+
+@override int get hashCode => Object.hash(description, dnslink);
+
+@override String toString() => 'Web3ModifyRequest(description: $description, dnslink: $dnslink)';
+
  }

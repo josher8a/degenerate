@@ -20,25 +20,29 @@ final class ReposCreateForkError$400 extends ReposCreateForkError {const ReposCr
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class ReposCreateForkError$403 extends ReposCreateForkError {const ReposCreateForkError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class ReposCreateForkError$404 extends ReposCreateForkError {const ReposCreateForkError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class ReposCreateForkError$422 extends ReposCreateForkError {const ReposCreateForkError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class ReposCreateForkError$Unknown extends ReposCreateForkError {const ReposCreateForkError$Unknown(this.statusCode, this.rawBody, );
 

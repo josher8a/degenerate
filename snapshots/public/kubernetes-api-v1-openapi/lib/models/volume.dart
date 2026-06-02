@@ -214,7 +214,7 @@ Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockSt
   storageos: storageos != null ? storageos() : this.storageos,
   vsphereVolume: vsphereVolume != null ? vsphereVolume() : this.vsphereVolume,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Volume &&
           awsElasticBlockStore == other.awsElasticBlockStore &&
           azureDisk == other.azureDisk &&
@@ -246,7 +246,10 @@ Volume copyWith({AwsElasticBlockStoreVolumeSource? Function()? awsElasticBlockSt
           scaleIo == other.scaleIo &&
           secret == other.secret &&
           storageos == other.storageos &&
-          vsphereVolume == other.vsphereVolume; } 
-@override int get hashCode { return Object.hashAll([awsElasticBlockStore, azureDisk, azureFile, cephfs, cinder, configMap, csi, downwardApi, emptyDir, ephemeral, fc, flexVolume, flocker, gcePersistentDisk, gitRepo, glusterfs, hostPath, image, iscsi, name, nfs, persistentVolumeClaim, photonPersistentDisk, portworxVolume, projected, quobyte, rbd, scaleIo, secret, storageos, vsphereVolume]); } 
-@override String toString() { return 'Volume(awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, cephfs: $cephfs, cinder: $cinder, configMap: $configMap, csi: $csi, downwardApi: $downwardApi, emptyDir: $emptyDir, ephemeral: $ephemeral, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, gitRepo: $gitRepo, glusterfs: $glusterfs, hostPath: $hostPath, image: $image, iscsi: $iscsi, name: $name, nfs: $nfs, persistentVolumeClaim: $persistentVolumeClaim, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, projected: $projected, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, secret: $secret, storageos: $storageos, vsphereVolume: $vsphereVolume)'; } 
+          vsphereVolume == other.vsphereVolume;
+
+@override int get hashCode => Object.hashAll([awsElasticBlockStore, azureDisk, azureFile, cephfs, cinder, configMap, csi, downwardApi, emptyDir, ephemeral, fc, flexVolume, flocker, gcePersistentDisk, gitRepo, glusterfs, hostPath, image, iscsi, name, nfs, persistentVolumeClaim, photonPersistentDisk, portworxVolume, projected, quobyte, rbd, scaleIo, secret, storageos, vsphereVolume]);
+
+@override String toString() => 'Volume(awsElasticBlockStore: $awsElasticBlockStore, azureDisk: $azureDisk, azureFile: $azureFile, cephfs: $cephfs, cinder: $cinder, configMap: $configMap, csi: $csi, downwardApi: $downwardApi, emptyDir: $emptyDir, ephemeral: $ephemeral, fc: $fc, flexVolume: $flexVolume, flocker: $flocker, gcePersistentDisk: $gcePersistentDisk, gitRepo: $gitRepo, glusterfs: $glusterfs, hostPath: $hostPath, image: $image, iscsi: $iscsi, name: $name, nfs: $nfs, persistentVolumeClaim: $persistentVolumeClaim, photonPersistentDisk: $photonPersistentDisk, portworxVolume: $portworxVolume, projected: $projected, quobyte: $quobyte, rbd: $rbd, scaleIo: $scaleIo, secret: $secret, storageos: $storageos, vsphereVolume: $vsphereVolume)';
+
  }

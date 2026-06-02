@@ -20,25 +20,29 @@ final class CodeScanningCommitAutofixError$400 extends CodeScanningCommitAutofix
 
 final BasicError error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class CodeScanningCommitAutofixError$403 extends CodeScanningCommitAutofixError {const CodeScanningCommitAutofixError$403(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class CodeScanningCommitAutofixError$404 extends CodeScanningCommitAutofixError {const CodeScanningCommitAutofixError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class CodeScanningCommitAutofixError$503 extends CodeScanningCommitAutofixError {const CodeScanningCommitAutofixError$503(this.error);
 
 final CodeScanningCommitAutofixResponse503 error;
 
-@override int get statusCode { return 503; } 
+@override int get statusCode => 503;
+
  }
 final class CodeScanningCommitAutofixError$Unknown extends CodeScanningCommitAutofixError {const CodeScanningCommitAutofixError$Unknown(this.statusCode, this.rawBody, );
 

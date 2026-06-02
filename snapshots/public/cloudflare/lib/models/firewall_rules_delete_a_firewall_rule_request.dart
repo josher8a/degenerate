@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 FirewallRulesDeleteAFirewallRuleRequest copyWith({FirewallDeleteFilterIfUnused? Function()? deleteFilterIfUnused}) { return FirewallRulesDeleteAFirewallRuleRequest(
   deleteFilterIfUnused: deleteFilterIfUnused != null ? deleteFilterIfUnused() : this.deleteFilterIfUnused,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FirewallRulesDeleteAFirewallRuleRequest &&
-          deleteFilterIfUnused == other.deleteFilterIfUnused; } 
-@override int get hashCode { return deleteFilterIfUnused.hashCode; } 
-@override String toString() { return 'FirewallRulesDeleteAFirewallRuleRequest(deleteFilterIfUnused: $deleteFilterIfUnused)'; } 
+          deleteFilterIfUnused == other.deleteFilterIfUnused;
+
+@override int get hashCode => deleteFilterIfUnused.hashCode;
+
+@override String toString() => 'FirewallRulesDeleteAFirewallRuleRequest(deleteFilterIfUnused: $deleteFilterIfUnused)';
+
  }

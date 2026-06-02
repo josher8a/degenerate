@@ -97,7 +97,7 @@ PostPaymentRecordsReportPaymentRequest copyWith({AmountRequested? amountRequeste
   processorDetails: processorDetails != null ? processorDetails() : this.processorDetails,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentRecordsReportPaymentRequest &&
           amountRequested == other.amountRequested &&
           customerDetails == other.customerDetails &&
@@ -111,7 +111,10 @@ PostPaymentRecordsReportPaymentRequest copyWith({AmountRequested? amountRequeste
           outcome == other.outcome &&
           paymentMethodDetails == other.paymentMethodDetails &&
           processorDetails == other.processorDetails &&
-          shippingDetails == other.shippingDetails; } 
-@override int get hashCode { return Object.hash(amountRequested, customerDetails, customerPresence, description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, processorDetails, shippingDetails); } 
-@override String toString() { return 'PostPaymentRecordsReportPaymentRequest(amountRequested: $amountRequested, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, processorDetails: $processorDetails, shippingDetails: $shippingDetails)'; } 
+          shippingDetails == other.shippingDetails;
+
+@override int get hashCode => Object.hash(amountRequested, customerDetails, customerPresence, description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, processorDetails, shippingDetails);
+
+@override String toString() => 'PostPaymentRecordsReportPaymentRequest(amountRequested: $amountRequested, customerDetails: $customerDetails, customerPresence: $customerPresence, description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, processorDetails: $processorDetails, shippingDetails: $shippingDetails)';
+
  }

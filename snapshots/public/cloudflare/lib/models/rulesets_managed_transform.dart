@@ -55,12 +55,15 @@ RulesetsManagedTransform copyWith({List<RulesetsManagedTransformId>? Function()?
   hasConflict: hasConflict ?? this.hasConflict,
   id: id ?? this.id,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsManagedTransform &&
           listEquals(conflictsWith, other.conflictsWith) &&
           enabled == other.enabled &&
           hasConflict == other.hasConflict &&
-          id == other.id; } 
-@override int get hashCode { return Object.hash(Object.hashAll(conflictsWith ?? const []), enabled, hasConflict, id); } 
-@override String toString() { return 'RulesetsManagedTransform(conflictsWith: $conflictsWith, enabled: $enabled, hasConflict: $hasConflict, id: $id)'; } 
+          id == other.id;
+
+@override int get hashCode => Object.hash(Object.hashAll(conflictsWith ?? const []), enabled, hasConflict, id);
+
+@override String toString() => 'RulesetsManagedTransform(conflictsWith: $conflictsWith, enabled: $enabled, hasConflict: $hasConflict, id: $id)';
+
  }

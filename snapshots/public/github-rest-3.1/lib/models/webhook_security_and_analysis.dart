@@ -41,14 +41,17 @@ WebhookSecurityAndAnalysis copyWith({WebhookSecurityAndAnalysisChanges? changes,
   repository: repository ?? this.repository,
   sender: sender != null ? sender() : this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookSecurityAndAnalysis &&
           changes == other.changes &&
           enterprise == other.enterprise &&
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(changes, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookSecurityAndAnalysis(changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(changes, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookSecurityAndAnalysis(changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

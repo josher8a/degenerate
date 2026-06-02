@@ -27,11 +27,14 @@ RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 c
   compromised: compromised ?? this.compromised,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 &&
           listEquals(clean, other.clean) &&
           listEquals(compromised, other.compromised) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(clean), Object.hashAll(compromised), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(clean: $clean, compromised: $compromised, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(clean), Object.hashAll(compromised), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(clean: $clean, compromised: $compromised, timestamps: $timestamps)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ActiveStatusType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ActiveStatusType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActiveStatusType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ActiveStatusType($value)';
+
  }
 /// Indicates that a thread is active.
 @immutable final class ActiveStatus {const ActiveStatus({this.type = ActiveStatusType.active});
@@ -39,9 +42,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 ActiveStatus copyWith({ActiveStatusType? type}) { return ActiveStatus(
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActiveStatus &&
-          type == other.type; } 
-@override int get hashCode { return type.hashCode; } 
-@override String toString() { return 'ActiveStatus(type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => type.hashCode;
+
+@override String toString() => 'ActiveStatus(type: $type)';
+
  }

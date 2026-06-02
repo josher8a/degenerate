@@ -69,7 +69,7 @@ ReactionRollup copyWith({Uri? url, int? totalCount, int? plus1, int? minus1, int
   eyes: eyes ?? this.eyes,
   rocket: rocket ?? this.rocket,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReactionRollup &&
           url == other.url &&
           totalCount == other.totalCount &&
@@ -80,7 +80,10 @@ ReactionRollup copyWith({Uri? url, int? totalCount, int? plus1, int? minus1, int
           heart == other.heart &&
           hooray == other.hooray &&
           eyes == other.eyes &&
-          rocket == other.rocket; } 
-@override int get hashCode { return Object.hash(url, totalCount, plus1, minus1, laugh, confused, heart, hooray, eyes, rocket); } 
-@override String toString() { return 'ReactionRollup(url: $url, totalCount: $totalCount, plus1: $plus1, minus1: $minus1, laugh: $laugh, confused: $confused, heart: $heart, hooray: $hooray, eyes: $eyes, rocket: $rocket)'; } 
+          rocket == other.rocket;
+
+@override int get hashCode => Object.hash(url, totalCount, plus1, minus1, laugh, confused, heart, hooray, eyes, rocket);
+
+@override String toString() => 'ReactionRollup(url: $url, totalCount: $totalCount, plus1: $plus1, minus1: $minus1, laugh: $laugh, confused: $confused, heart: $heart, hooray: $hooray, eyes: $eyes, rocket: $rocket)';
+
  }

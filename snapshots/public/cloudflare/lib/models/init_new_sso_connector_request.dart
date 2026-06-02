@@ -32,11 +32,14 @@ InitNewSsoConnectorRequest copyWith({bool Function()? beginVerification, String?
   emailDomain: emailDomain ?? this.emailDomain,
   useFedrampLanguage: useFedrampLanguage != null ? useFedrampLanguage() : this.useFedrampLanguage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InitNewSsoConnectorRequest &&
           beginVerification == other.beginVerification &&
           emailDomain == other.emailDomain &&
-          useFedrampLanguage == other.useFedrampLanguage; } 
-@override int get hashCode { return Object.hash(beginVerification, emailDomain, useFedrampLanguage); } 
-@override String toString() { return 'InitNewSsoConnectorRequest(beginVerification: $beginVerification, emailDomain: $emailDomain, useFedrampLanguage: $useFedrampLanguage)'; } 
+          useFedrampLanguage == other.useFedrampLanguage;
+
+@override int get hashCode => Object.hash(beginVerification, emailDomain, useFedrampLanguage);
+
+@override String toString() => 'InitNewSsoConnectorRequest(beginVerification: $beginVerification, emailDomain: $emailDomain, useFedrampLanguage: $useFedrampLanguage)';
+
  }

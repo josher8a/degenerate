@@ -27,10 +27,13 @@ ReposGetAllDeploymentProtectionRulesResponse copyWith({int? Function()? totalCou
   totalCount: totalCount != null ? totalCount() : this.totalCount,
   customDeploymentProtectionRules: customDeploymentProtectionRules != null ? customDeploymentProtectionRules() : this.customDeploymentProtectionRules,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposGetAllDeploymentProtectionRulesResponse &&
           totalCount == other.totalCount &&
-          listEquals(customDeploymentProtectionRules, other.customDeploymentProtectionRules); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(customDeploymentProtectionRules ?? const [])); } 
-@override String toString() { return 'ReposGetAllDeploymentProtectionRulesResponse(totalCount: $totalCount, customDeploymentProtectionRules: $customDeploymentProtectionRules)'; } 
+          listEquals(customDeploymentProtectionRules, other.customDeploymentProtectionRules);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(customDeploymentProtectionRules ?? const []));
+
+@override String toString() => 'ReposGetAllDeploymentProtectionRulesResponse(totalCount: $totalCount, customDeploymentProtectionRules: $customDeploymentProtectionRules)';
+
  }

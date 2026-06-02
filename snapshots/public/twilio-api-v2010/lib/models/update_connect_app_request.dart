@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UpdateConnectAppRequestDeauthorizeCallbackMethod && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UpdateConnectAppRequestDeauthorizeCallbackMethod($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UpdateConnectAppRequestDeauthorizeCallbackMethod && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UpdateConnectAppRequestDeauthorizeCallbackMethod($value)';
+
  }
 @immutable final class UpdateConnectAppRequest {const UpdateConnectAppRequest({this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, });
 
@@ -83,7 +86,7 @@ UpdateConnectAppRequest copyWith({Uri? Function()? authorizeRedirectUrl, String?
   homepageUrl: homepageUrl != null ? homepageUrl() : this.homepageUrl,
   permissions: permissions != null ? permissions() : this.permissions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateConnectAppRequest &&
           authorizeRedirectUrl == other.authorizeRedirectUrl &&
           companyName == other.companyName &&
@@ -92,7 +95,10 @@ UpdateConnectAppRequest copyWith({Uri? Function()? authorizeRedirectUrl, String?
           description == other.description &&
           friendlyName == other.friendlyName &&
           homepageUrl == other.homepageUrl &&
-          listEquals(permissions, other.permissions); } 
-@override int get hashCode { return Object.hash(authorizeRedirectUrl, companyName, deauthorizeCallbackMethod, deauthorizeCallbackUrl, description, friendlyName, homepageUrl, Object.hashAll(permissions ?? const [])); } 
-@override String toString() { return 'UpdateConnectAppRequest(authorizeRedirectUrl: $authorizeRedirectUrl, companyName: $companyName, deauthorizeCallbackMethod: $deauthorizeCallbackMethod, deauthorizeCallbackUrl: $deauthorizeCallbackUrl, description: $description, friendlyName: $friendlyName, homepageUrl: $homepageUrl, permissions: $permissions)'; } 
+          listEquals(permissions, other.permissions);
+
+@override int get hashCode => Object.hash(authorizeRedirectUrl, companyName, deauthorizeCallbackMethod, deauthorizeCallbackUrl, description, friendlyName, homepageUrl, Object.hashAll(permissions ?? const []));
+
+@override String toString() => 'UpdateConnectAppRequest(authorizeRedirectUrl: $authorizeRedirectUrl, companyName: $companyName, deauthorizeCallbackMethod: $deauthorizeCallbackMethod, deauthorizeCallbackUrl: $deauthorizeCallbackUrl, description: $description, friendlyName: $friendlyName, homepageUrl: $homepageUrl, permissions: $permissions)';
+
  }

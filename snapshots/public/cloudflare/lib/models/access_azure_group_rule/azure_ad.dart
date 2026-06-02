@@ -27,10 +27,13 @@ AzureAd copyWith({String? id, String? identityProviderId, }) { return AzureAd(
   id: id ?? this.id,
   identityProviderId: identityProviderId ?? this.identityProviderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AzureAd &&
           id == other.id &&
-          identityProviderId == other.identityProviderId; } 
-@override int get hashCode { return Object.hash(id, identityProviderId); } 
-@override String toString() { return 'AzureAd(id: $id, identityProviderId: $identityProviderId)'; } 
+          identityProviderId == other.identityProviderId;
+
+@override int get hashCode => Object.hash(id, identityProviderId);
+
+@override String toString() => 'AzureAd(id: $id, identityProviderId: $identityProviderId)';
+
  }

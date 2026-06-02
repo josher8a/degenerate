@@ -21,10 +21,13 @@ JobRuns copyWith({int? jobId, int? durationMs, }) { return JobRuns(
   jobId: jobId ?? this.jobId,
   durationMs: durationMs ?? this.durationMs,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is JobRuns &&
           jobId == other.jobId &&
-          durationMs == other.durationMs; } 
-@override int get hashCode { return Object.hash(jobId, durationMs); } 
-@override String toString() { return 'JobRuns(jobId: $jobId, durationMs: $durationMs)'; } 
+          durationMs == other.durationMs;
+
+@override int get hashCode => Object.hash(jobId, durationMs);
+
+@override String toString() => 'JobRuns(jobId: $jobId, durationMs: $durationMs)';
+
  }

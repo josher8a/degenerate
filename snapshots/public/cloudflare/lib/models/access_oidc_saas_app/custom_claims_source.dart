@@ -26,10 +26,13 @@ CustomClaimsSource copyWith({String? Function()? name, Map<String, String>? Func
   name: name != null ? name() : this.name,
   nameByIdp: nameByIdp != null ? nameByIdp() : this.nameByIdp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomClaimsSource &&
           name == other.name &&
-          nameByIdp == other.nameByIdp; } 
-@override int get hashCode { return Object.hash(name, nameByIdp); } 
-@override String toString() { return 'CustomClaimsSource(name: $name, nameByIdp: $nameByIdp)'; } 
+          nameByIdp == other.nameByIdp;
+
+@override int get hashCode => Object.hash(name, nameByIdp);
+
+@override String toString() => 'CustomClaimsSource(name: $name, nameByIdp: $nameByIdp)';
+
  }

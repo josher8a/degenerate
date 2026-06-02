@@ -39,11 +39,14 @@ PostInvoicesInvoiceAttachPaymentRequest copyWith({List<String>? Function()? expa
   paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
   paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostInvoicesInvoiceAttachPaymentRequest &&
           listEquals(expand, other.expand) &&
           paymentIntent == other.paymentIntent &&
-          paymentRecord == other.paymentRecord; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), paymentIntent, paymentRecord); } 
-@override String toString() { return 'PostInvoicesInvoiceAttachPaymentRequest(expand: $expand, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord)'; } 
+          paymentRecord == other.paymentRecord;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), paymentIntent, paymentRecord);
+
+@override String toString() => 'PostInvoicesInvoiceAttachPaymentRequest(expand: $expand, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord)';
+
  }

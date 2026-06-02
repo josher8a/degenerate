@@ -29,10 +29,13 @@ final int value;
 int toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RulesetsRedirectFromValueStatusCode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'RulesetsRedirectFromValueStatusCode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RulesetsRedirectFromValueStatusCode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RulesetsRedirectFromValueStatusCode($value)';
+
  }
 /// A redirect based on the request properties.
 @immutable final class RulesetsRedirectFromValue {const RulesetsRedirectFromValue({required this.targetUrl, this.preserveQueryString = false, this.statusCode, });
@@ -67,11 +70,14 @@ RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, Rulese
   statusCode: statusCode != null ? statusCode() : this.statusCode,
   targetUrl: targetUrl ?? this.targetUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsRedirectFromValue &&
           preserveQueryString == other.preserveQueryString &&
           statusCode == other.statusCode &&
-          targetUrl == other.targetUrl; } 
-@override int get hashCode { return Object.hash(preserveQueryString, statusCode, targetUrl); } 
-@override String toString() { return 'RulesetsRedirectFromValue(preserveQueryString: $preserveQueryString, statusCode: $statusCode, targetUrl: $targetUrl)'; } 
+          targetUrl == other.targetUrl;
+
+@override int get hashCode => Object.hash(preserveQueryString, statusCode, targetUrl);
+
+@override String toString() => 'RulesetsRedirectFromValue(preserveQueryString: $preserveQueryString, statusCode: $statusCode, targetUrl: $targetUrl)';
+
  }

@@ -30,10 +30,13 @@ RealtimekitUpdatePresetConfigMediaVideo copyWith({int? Function()? frameRate, Sc
   frameRate: frameRate != null ? frameRate() : this.frameRate,
   quality: quality != null ? quality() : this.quality,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitUpdatePresetConfigMediaVideo &&
           frameRate == other.frameRate &&
-          quality == other.quality; } 
-@override int get hashCode { return Object.hash(frameRate, quality); } 
-@override String toString() { return 'RealtimekitUpdatePresetConfigMediaVideo(frameRate: $frameRate, quality: $quality)'; } 
+          quality == other.quality;
+
+@override int get hashCode => Object.hash(frameRate, quality);
+
+@override String toString() => 'RealtimekitUpdatePresetConfigMediaVideo(frameRate: $frameRate, quality: $quality)';
+
  }

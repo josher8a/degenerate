@@ -27,10 +27,13 @@ PaymentIntentPaymentMethodOptionsParam16 copyWith({PaymentIntentParamSetupFuture
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   targetDate: targetDate != null ? targetDate() : this.targetDate,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentIntentPaymentMethodOptionsParam16 &&
           setupFutureUsage == other.setupFutureUsage &&
-          targetDate == other.targetDate; } 
-@override int get hashCode { return Object.hash(setupFutureUsage, targetDate); } 
-@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam16(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
+          targetDate == other.targetDate;
+
+@override int get hashCode => Object.hash(setupFutureUsage, targetDate);
+
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam16(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)';
+
  }

@@ -44,13 +44,16 @@ AccessSchemasBookmarkProps copyWith({dynamic Function()? appLauncherVisible, dyn
   name: name != null ? name() : this.name,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasBookmarkProps &&
           appLauncherVisible == other.appLauncherVisible &&
           domain == other.domain &&
           logoUrl == other.logoUrl &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(appLauncherVisible, domain, logoUrl, name, type); } 
-@override String toString() { return 'AccessSchemasBookmarkProps(appLauncherVisible: $appLauncherVisible, domain: $domain, logoUrl: $logoUrl, name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(appLauncherVisible, domain, logoUrl, name, type);
+
+@override String toString() => 'AccessSchemasBookmarkProps(appLauncherVisible: $appLauncherVisible, domain: $domain, logoUrl: $logoUrl, name: $name, type: $type)';
+
  }

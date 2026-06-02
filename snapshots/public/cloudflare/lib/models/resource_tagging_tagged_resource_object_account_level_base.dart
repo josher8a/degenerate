@@ -41,12 +41,15 @@ ResourceTaggingTaggedResourceObjectAccountLevelBase copyWith({ResourceTaggingEta
   name: name ?? this.name,
   tags: tags ?? this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResourceTaggingTaggedResourceObjectAccountLevelBase &&
           etag == other.etag &&
           id == other.id &&
           name == other.name &&
-          tags == other.tags; } 
-@override int get hashCode { return Object.hash(etag, id, name, tags); } 
-@override String toString() { return 'ResourceTaggingTaggedResourceObjectAccountLevelBase(etag: $etag, id: $id, name: $name, tags: $tags)'; } 
+          tags == other.tags;
+
+@override int get hashCode => Object.hash(etag, id, name, tags);
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectAccountLevelBase(etag: $etag, id: $id, name: $name, tags: $tags)';
+
  }

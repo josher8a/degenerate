@@ -20,10 +20,13 @@ PostCheckoutSessionsRequestPaymentMethodOptionsP24 copyWith({CheckoutAffirmPayme
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
   tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPaymentMethodOptionsP24 &&
           setupFutureUsage == other.setupFutureUsage &&
-          tosShownAndAccepted == other.tosShownAndAccepted; } 
-@override int get hashCode { return Object.hash(setupFutureUsage, tosShownAndAccepted); } 
-@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)'; } 
+          tosShownAndAccepted == other.tosShownAndAccepted;
+
+@override int get hashCode => Object.hash(setupFutureUsage, tosShownAndAccepted);
+
+@override String toString() => 'PostCheckoutSessionsRequestPaymentMethodOptionsP24(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)';
+
  }

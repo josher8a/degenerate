@@ -37,13 +37,16 @@ Address copyWith({String? street, String? city, String? Function()? state, Strin
   postalCode: postalCode != null ? postalCode() : this.postalCode,
   country: country ?? this.country,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Address &&
           street == other.street &&
           city == other.city &&
           state == other.state &&
           postalCode == other.postalCode &&
-          country == other.country; } 
-@override int get hashCode { return Object.hash(street, city, state, postalCode, country); } 
-@override String toString() { return 'Address(street: $street, city: $city, state: $state, postalCode: $postalCode, country: $country)'; } 
+          country == other.country;
+
+@override int get hashCode => Object.hash(street, city, state, postalCode, country);
+
+@override String toString() => 'Address(street: $street, city: $city, state: $state, postalCode: $postalCode, country: $country)';
+
  }

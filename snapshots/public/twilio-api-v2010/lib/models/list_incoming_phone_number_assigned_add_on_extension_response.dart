@@ -55,7 +55,7 @@ ListIncomingPhoneNumberAssignedAddOnExtensionResponse copyWith({List<AccountInco
   start: start != null ? start() : this.start,
   uri: uri != null ? uri() : this.uri,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListIncomingPhoneNumberAssignedAddOnExtensionResponse &&
           listEquals(extensions, other.extensions) &&
           end == other.end &&
@@ -65,7 +65,10 @@ ListIncomingPhoneNumberAssignedAddOnExtensionResponse copyWith({List<AccountInco
           pageSize == other.pageSize &&
           previousPageUri == other.previousPageUri &&
           start == other.start &&
-          uri == other.uri; } 
-@override int get hashCode { return Object.hash(Object.hashAll(extensions ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri); } 
-@override String toString() { return 'ListIncomingPhoneNumberAssignedAddOnExtensionResponse(extensions: $extensions, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)'; } 
+          uri == other.uri;
+
+@override int get hashCode => Object.hash(Object.hashAll(extensions ?? const []), end, firstPageUri, nextPageUri, page, pageSize, previousPageUri, start, uri);
+
+@override String toString() => 'ListIncomingPhoneNumberAssignedAddOnExtensionResponse(extensions: $extensions, end: $end, firstPageUri: $firstPageUri, nextPageUri: $nextPageUri, page: $page, pageSize: $pageSize, previousPageUri: $previousPageUri, start: $start, uri: $uri)';
+
  }

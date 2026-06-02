@@ -123,7 +123,7 @@ AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool
   scopes: scopes != null ? scopes() : this.scopes,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessSchemasOidcSaasApp &&
           accessTokenLifetime == other.accessTokenLifetime &&
           allowPkceWithoutClientSecret == other.allowPkceWithoutClientSecret &&
@@ -140,7 +140,10 @@ AccessSchemasOidcSaasApp copyWith({String? Function()? accessTokenLifetime, bool
           listEquals(redirectUris, other.redirectUris) &&
           refreshTokenOptions == other.refreshTokenOptions &&
           listEquals(scopes, other.scopes) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(accessTokenLifetime, allowPkceWithoutClientSecret, appLauncherUrl, authType, clientId, clientSecret, createdAt, Object.hashAll(customClaims ?? const []), Object.hashAll(grantTypes ?? const []), groupFilterRegex, hybridAndImplicitOptions, publicKey, Object.hashAll(redirectUris ?? const []), refreshTokenOptions, Object.hashAll(scopes ?? const []), updatedAt); } 
-@override String toString() { return 'AccessSchemasOidcSaasApp(accessTokenLifetime: $accessTokenLifetime, allowPkceWithoutClientSecret: $allowPkceWithoutClientSecret, appLauncherUrl: $appLauncherUrl, authType: $authType, clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, customClaims: $customClaims, grantTypes: $grantTypes, groupFilterRegex: $groupFilterRegex, hybridAndImplicitOptions: $hybridAndImplicitOptions, publicKey: $publicKey, redirectUris: $redirectUris, refreshTokenOptions: $refreshTokenOptions, scopes: $scopes, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(accessTokenLifetime, allowPkceWithoutClientSecret, appLauncherUrl, authType, clientId, clientSecret, createdAt, Object.hashAll(customClaims ?? const []), Object.hashAll(grantTypes ?? const []), groupFilterRegex, hybridAndImplicitOptions, publicKey, Object.hashAll(redirectUris ?? const []), refreshTokenOptions, Object.hashAll(scopes ?? const []), updatedAt);
+
+@override String toString() => 'AccessSchemasOidcSaasApp(accessTokenLifetime: $accessTokenLifetime, allowPkceWithoutClientSecret: $allowPkceWithoutClientSecret, appLauncherUrl: $appLauncherUrl, authType: $authType, clientId: $clientId, clientSecret: $clientSecret, createdAt: $createdAt, customClaims: $customClaims, grantTypes: $grantTypes, groupFilterRegex: $groupFilterRegex, hybridAndImplicitOptions: $hybridAndImplicitOptions, publicKey: $publicKey, redirectUris: $redirectUris, refreshTokenOptions: $refreshTokenOptions, scopes: $scopes, updatedAt: $updatedAt)';
+
  }

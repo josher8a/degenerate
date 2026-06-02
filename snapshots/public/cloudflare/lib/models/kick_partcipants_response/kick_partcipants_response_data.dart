@@ -20,10 +20,13 @@ KickPartcipantsResponseData copyWith({String? Function()? action, List<Realtimek
   action: action != null ? action() : this.action,
   participants: participants != null ? participants() : this.participants,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is KickPartcipantsResponseData &&
           action == other.action &&
-          listEquals(participants, other.participants); } 
-@override int get hashCode { return Object.hash(action, Object.hashAll(participants ?? const [])); } 
-@override String toString() { return 'KickPartcipantsResponseData(action: $action, participants: $participants)'; } 
+          listEquals(participants, other.participants);
+
+@override int get hashCode => Object.hash(action, Object.hashAll(participants ?? const []));
+
+@override String toString() => 'KickPartcipantsResponseData(action: $action, participants: $participants)';
+
  }

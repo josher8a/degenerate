@@ -17,7 +17,8 @@ final class RadarGetEntitiesAsnListError$400 extends RadarGetEntitiesAsnListErro
 
 final RadarGetEntitiesAsnListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetEntitiesAsnListError$Unknown extends RadarGetEntitiesAsnListError {const RadarGetEntitiesAsnListError$Unknown(this.statusCode, this.rawBody, );
 

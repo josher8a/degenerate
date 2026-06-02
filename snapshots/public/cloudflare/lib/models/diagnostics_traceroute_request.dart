@@ -26,11 +26,14 @@ DiagnosticsTracerouteRequest copyWith({List<String>? Function()? colos, MagicTra
   options: options != null ? options() : this.options,
   targets: targets ?? this.targets,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DiagnosticsTracerouteRequest &&
           listEquals(colos, other.colos) &&
           options == other.options &&
-          listEquals(targets, other.targets); } 
-@override int get hashCode { return Object.hash(Object.hashAll(colos ?? const []), options, Object.hashAll(targets)); } 
-@override String toString() { return 'DiagnosticsTracerouteRequest(colos: $colos, options: $options, targets: $targets)'; } 
+          listEquals(targets, other.targets);
+
+@override int get hashCode => Object.hash(Object.hashAll(colos ?? const []), options, Object.hashAll(targets));
+
+@override String toString() => 'DiagnosticsTracerouteRequest(colos: $colos, options: $options, targets: $targets)';
+
  }

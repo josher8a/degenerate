@@ -27,11 +27,14 @@ ToolCallsFunction copyWith({ToolCallsFunctionFunction? function, String? id, Fun
   id: id ?? this.id,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ToolCallsFunction &&
           function == other.function &&
           id == other.id &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(function, id, type); } 
-@override String toString() { return 'ToolCallsFunction(function: $function, id: $id, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(function, id, type);
+
+@override String toString() => 'ToolCallsFunction(function: $function, id: $id, type: $type)';
+
  }

@@ -35,13 +35,16 @@ FileCommitCommitVerification copyWith({bool? Function()? verified, String? Funct
   payload: payload != null ? payload() : this.payload,
   verifiedAt: verifiedAt != null ? verifiedAt() : this.verifiedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCommitCommitVerification &&
           verified == other.verified &&
           reason == other.reason &&
           signature == other.signature &&
           payload == other.payload &&
-          verifiedAt == other.verifiedAt; } 
-@override int get hashCode { return Object.hash(verified, reason, signature, payload, verifiedAt); } 
-@override String toString() { return 'FileCommitCommitVerification(verified: $verified, reason: $reason, signature: $signature, payload: $payload, verifiedAt: $verifiedAt)'; } 
+          verifiedAt == other.verifiedAt;
+
+@override int get hashCode => Object.hash(verified, reason, signature, payload, verifiedAt);
+
+@override String toString() => 'FileCommitCommitVerification(verified: $verified, reason: $reason, signature: $signature, payload: $payload, verifiedAt: $verifiedAt)';
+
  }

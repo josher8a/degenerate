@@ -37,13 +37,16 @@ DlpRiskEvents copyWith({String? email, List<DlpRiskEvent>? events, DateTime? Fun
   name: name ?? this.name,
   riskLevel: riskLevel != null ? riskLevel() : this.riskLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpRiskEvents &&
           email == other.email &&
           listEquals(events, other.events) &&
           lastResetTime == other.lastResetTime &&
           name == other.name &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(email, Object.hashAll(events), lastResetTime, name, riskLevel); } 
-@override String toString() { return 'DlpRiskEvents(email: $email, events: $events, lastResetTime: $lastResetTime, name: $name, riskLevel: $riskLevel)'; } 
+          riskLevel == other.riskLevel;
+
+@override int get hashCode => Object.hash(email, Object.hashAll(events), lastResetTime, name, riskLevel);
+
+@override String toString() => 'DlpRiskEvents(email: $email, events: $events, lastResetTime: $lastResetTime, name: $name, riskLevel: $riskLevel)';
+
  }

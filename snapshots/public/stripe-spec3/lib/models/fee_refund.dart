@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FeeRefundObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FeeRefundObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FeeRefundObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FeeRefundObject($value)';
+
  }
 /// `Application Fee Refund` objects allow you to refund an application fee that
 /// has previously been created but not yet refunded. Funds will be refunded to
@@ -94,7 +97,7 @@ FeeRefund copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? b
   metadata: metadata != null ? metadata() : this.metadata,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FeeRefund &&
           amount == other.amount &&
           balanceTransaction == other.balanceTransaction &&
@@ -103,7 +106,10 @@ FeeRefund copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? b
           fee == other.fee &&
           id == other.id &&
           metadata == other.metadata &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(amount, balanceTransaction, created, currency, fee, id, metadata, object); } 
-@override String toString() { return 'FeeRefund(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, fee: $fee, id: $id, metadata: $metadata, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(amount, balanceTransaction, created, currency, fee, id, metadata, object);
+
+@override String toString() => 'FeeRefund(amount: $amount, balanceTransaction: $balanceTransaction, created: $created, currency: $currency, fee: $fee, id: $id, metadata: $metadata, object: $object)';
+
  }

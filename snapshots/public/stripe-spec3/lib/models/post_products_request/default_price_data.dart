@@ -51,7 +51,7 @@ DefaultPriceData copyWith({String? currency, Map<String, PostPricesRequestCurren
   unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
   unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DefaultPriceData &&
           currency == other.currency &&
           currencyOptions == other.currencyOptions &&
@@ -60,7 +60,10 @@ DefaultPriceData copyWith({String? currency, Map<String, PostPricesRequestCurren
           recurring == other.recurring &&
           taxBehavior == other.taxBehavior &&
           unitAmount == other.unitAmount &&
-          unitAmountDecimal == other.unitAmountDecimal; } 
-@override int get hashCode { return Object.hash(currency, currencyOptions, customUnitAmount, metadata, recurring, taxBehavior, unitAmount, unitAmountDecimal); } 
-@override String toString() { return 'DefaultPriceData(currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, metadata: $metadata, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+          unitAmountDecimal == other.unitAmountDecimal;
+
+@override int get hashCode => Object.hash(currency, currencyOptions, customUnitAmount, metadata, recurring, taxBehavior, unitAmount, unitAmountDecimal);
+
+@override String toString() => 'DefaultPriceData(currency: $currency, currencyOptions: $currencyOptions, customUnitAmount: $customUnitAmount, metadata: $metadata, recurring: $recurring, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)';
+
  }

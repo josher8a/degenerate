@@ -24,10 +24,13 @@ TracerouteResultsByColo copyWith({String? colo, DigitalExperienceMonitoringTimin
   colo: colo ?? this.colo,
   roundTripTime: roundTripTime ?? this.roundTripTime,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TracerouteResultsByColo &&
           colo == other.colo &&
-          roundTripTime == other.roundTripTime; } 
-@override int get hashCode { return Object.hash(colo, roundTripTime); } 
-@override String toString() { return 'TracerouteResultsByColo(colo: $colo, roundTripTime: $roundTripTime)'; } 
+          roundTripTime == other.roundTripTime;
+
+@override int get hashCode => Object.hash(colo, roundTripTime);
+
+@override String toString() => 'TracerouteResultsByColo(colo: $colo, roundTripTime: $roundTripTime)';
+
  }

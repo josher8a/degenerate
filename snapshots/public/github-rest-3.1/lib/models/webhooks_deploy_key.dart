@@ -67,7 +67,7 @@ WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int?
   verified: verified ?? this.verified,
   enabled: enabled != null ? enabled() : this.enabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksDeployKey &&
           addedBy == other.addedBy &&
           createdAt == other.createdAt &&
@@ -78,7 +78,10 @@ WebhooksDeployKey copyWith({String? Function()? addedBy, String? createdAt, int?
           title == other.title &&
           url == other.url &&
           verified == other.verified &&
-          enabled == other.enabled; } 
-@override int get hashCode { return Object.hash(addedBy, createdAt, id, key, lastUsed, readOnly, title, url, verified, enabled); } 
-@override String toString() { return 'WebhooksDeployKey(addedBy: $addedBy, createdAt: $createdAt, id: $id, key: $key, lastUsed: $lastUsed, readOnly: $readOnly, title: $title, url: $url, verified: $verified, enabled: $enabled)'; } 
+          enabled == other.enabled;
+
+@override int get hashCode => Object.hash(addedBy, createdAt, id, key, lastUsed, readOnly, title, url, verified, enabled);
+
+@override String toString() => 'WebhooksDeployKey(addedBy: $addedBy, createdAt: $createdAt, id: $id, key: $key, lastUsed: $lastUsed, readOnly: $readOnly, title: $title, url: $url, verified: $verified, enabled: $enabled)';
+
  }

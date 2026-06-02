@@ -17,7 +17,8 @@ final class GetAttackerListError$400 extends GetAttackerListError {const GetAtta
 
 final GetAttackerListResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetAttackerListError$Unknown extends GetAttackerListError {const GetAttackerListError$Unknown(this.statusCode, this.rawBody, );
 

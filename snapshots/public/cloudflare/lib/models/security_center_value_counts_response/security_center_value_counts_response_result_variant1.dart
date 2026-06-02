@@ -21,10 +21,13 @@ SecurityCenterValueCountsResponseResultVariant1 copyWith({int? Function()? count
   count: count != null ? count() : this.count,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityCenterValueCountsResponseResultVariant1 &&
           count == other.count &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(count, value); } 
-@override String toString() { return 'SecurityCenterValueCountsResponseResultVariant1(count: $count, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(count, value);
+
+@override String toString() => 'SecurityCenterValueCountsResponseResultVariant1(count: $count, value: $value)';
+
  }

@@ -103,7 +103,7 @@ UpdateSipDomainRequest copyWith({String? Function()? friendlyName, CreateApplica
   byocTrunkSid: byocTrunkSid != null ? byocTrunkSid() : this.byocTrunkSid,
   emergencyCallerSid: emergencyCallerSid != null ? emergencyCallerSid() : this.emergencyCallerSid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateSipDomainRequest &&
           friendlyName == other.friendlyName &&
           voiceFallbackMethod == other.voiceFallbackMethod &&
@@ -117,7 +117,10 @@ UpdateSipDomainRequest copyWith({String? Function()? friendlyName, CreateApplica
           emergencyCallingEnabled == other.emergencyCallingEnabled &&
           secure == other.secure &&
           byocTrunkSid == other.byocTrunkSid &&
-          emergencyCallerSid == other.emergencyCallerSid; } 
-@override int get hashCode { return Object.hash(friendlyName, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, sipRegistration, domainName, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid); } 
-@override String toString() { return 'UpdateSipDomainRequest(friendlyName: $friendlyName, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, sipRegistration: $sipRegistration, domainName: $domainName, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)'; } 
+          emergencyCallerSid == other.emergencyCallerSid;
+
+@override int get hashCode => Object.hash(friendlyName, voiceFallbackMethod, voiceFallbackUrl, voiceMethod, voiceStatusCallbackMethod, voiceStatusCallbackUrl, voiceUrl, sipRegistration, domainName, emergencyCallingEnabled, secure, byocTrunkSid, emergencyCallerSid);
+
+@override String toString() => 'UpdateSipDomainRequest(friendlyName: $friendlyName, voiceFallbackMethod: $voiceFallbackMethod, voiceFallbackUrl: $voiceFallbackUrl, voiceMethod: $voiceMethod, voiceStatusCallbackMethod: $voiceStatusCallbackMethod, voiceStatusCallbackUrl: $voiceStatusCallbackUrl, voiceUrl: $voiceUrl, sipRegistration: $sipRegistration, domainName: $domainName, emergencyCallingEnabled: $emergencyCallingEnabled, secure: $secure, byocTrunkSid: $byocTrunkSid, emergencyCallerSid: $emergencyCallerSid)';
+
  }

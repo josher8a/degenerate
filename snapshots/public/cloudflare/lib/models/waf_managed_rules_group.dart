@@ -42,14 +42,17 @@ WafManagedRulesGroup copyWith({WafManagedRulesDescription? Function()? descripti
   packageId: packageId != null ? packageId() : this.packageId,
   rulesCount: rulesCount != null ? rulesCount() : this.rulesCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafManagedRulesGroup &&
           description == other.description &&
           id == other.id &&
           modifiedRulesCount == other.modifiedRulesCount &&
           name == other.name &&
           packageId == other.packageId &&
-          rulesCount == other.rulesCount; } 
-@override int get hashCode { return Object.hash(description, id, modifiedRulesCount, name, packageId, rulesCount); } 
-@override String toString() { return 'WafManagedRulesGroup(description: $description, id: $id, modifiedRulesCount: $modifiedRulesCount, name: $name, packageId: $packageId, rulesCount: $rulesCount)'; } 
+          rulesCount == other.rulesCount;
+
+@override int get hashCode => Object.hash(description, id, modifiedRulesCount, name, packageId, rulesCount);
+
+@override String toString() => 'WafManagedRulesGroup(description: $description, id: $id, modifiedRulesCount: $modifiedRulesCount, name: $name, packageId: $packageId, rulesCount: $rulesCount)';
+
  }

@@ -56,14 +56,17 @@ AccountsByAccountIdPipelinesDeprecatedRequestDestination copyWith({AccountsByAcc
   path: path ?? this.path,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountsByAccountIdPipelinesDeprecatedRequestDestination &&
           batch == other.batch &&
           compression == other.compression &&
           credentials == other.credentials &&
           format == other.format &&
           path == other.path &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(batch, compression, credentials, format, path, type); } 
-@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestination(batch: $batch, compression: $compression, credentials: $credentials, format: $format, path: $path, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(batch, compression, credentials, format, path, type);
+
+@override String toString() => 'AccountsByAccountIdPipelinesDeprecatedRequestDestination(batch: $batch, compression: $compression, credentials: $credentials, format: $format, path: $path, type: $type)';
+
  }

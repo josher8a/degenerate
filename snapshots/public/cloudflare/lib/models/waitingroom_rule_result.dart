@@ -57,7 +57,7 @@ WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, Waiti
   lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
   version: version != null ? version() : this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WaitingroomRuleResult &&
           action == other.action &&
           description == other.description &&
@@ -65,7 +65,10 @@ WaitingroomRuleResult copyWith({WaitingroomRuleAction? Function()? action, Waiti
           expression == other.expression &&
           id == other.id &&
           lastUpdated == other.lastUpdated &&
-          version == other.version; } 
-@override int get hashCode { return Object.hash(action, description, enabled, expression, id, lastUpdated, version); } 
-@override String toString() { return 'WaitingroomRuleResult(action: $action, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hash(action, description, enabled, expression, id, lastUpdated, version);
+
+@override String toString() => 'WaitingroomRuleResult(action: $action, description: $description, enabled: $enabled, expression: $expression, id: $id, lastUpdated: $lastUpdated, version: $version)';
+
  }

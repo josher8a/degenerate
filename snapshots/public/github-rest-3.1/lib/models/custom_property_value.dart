@@ -24,10 +24,13 @@ CustomPropertyValue copyWith({String? propertyName, CustomPropertyValueValue? Fu
   propertyName: propertyName ?? this.propertyName,
   value: value != null ? value() : this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomPropertyValue &&
           propertyName == other.propertyName &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(propertyName, value); } 
-@override String toString() { return 'CustomPropertyValue(propertyName: $propertyName, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(propertyName, value);
+
+@override String toString() => 'CustomPropertyValue(propertyName: $propertyName, value: $value)';
+
  }

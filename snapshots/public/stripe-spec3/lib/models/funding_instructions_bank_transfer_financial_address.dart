@@ -37,10 +37,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)';
+
  }
 /// The type of financial address
 @immutable final class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType._(this.value);
@@ -74,10 +77,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddressType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FundingInstructionsBankTransferFinancialAddressType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FundingInstructionsBankTransferFinancialAddressType($value)';
+
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.
 @immutable final class FundingInstructionsBankTransferFinancialAddress {const FundingInstructionsBankTransferFinancialAddress({required this.type, this.aba, this.iban, this.sortCode, this.spei, this.supportedNetworks, this.swift, this.zengin, });
@@ -132,7 +138,7 @@ FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBan
   type: type ?? this.type,
   zengin: zengin != null ? zengin() : this.zengin,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FundingInstructionsBankTransferFinancialAddress &&
           aba == other.aba &&
           iban == other.iban &&
@@ -141,7 +147,10 @@ FundingInstructionsBankTransferFinancialAddress copyWith({FundingInstructionsBan
           listEquals(supportedNetworks, other.supportedNetworks) &&
           swift == other.swift &&
           type == other.type &&
-          zengin == other.zengin; } 
-@override int get hashCode { return Object.hash(aba, iban, sortCode, spei, Object.hashAll(supportedNetworks ?? const []), swift, type, zengin); } 
-@override String toString() { return 'FundingInstructionsBankTransferFinancialAddress(aba: $aba, iban: $iban, sortCode: $sortCode, spei: $spei, supportedNetworks: $supportedNetworks, swift: $swift, type: $type, zengin: $zengin)'; } 
+          zengin == other.zengin;
+
+@override int get hashCode => Object.hash(aba, iban, sortCode, spei, Object.hashAll(supportedNetworks ?? const []), swift, type, zengin);
+
+@override String toString() => 'FundingInstructionsBankTransferFinancialAddress(aba: $aba, iban: $iban, sortCode: $sortCode, spei: $spei, supportedNetworks: $supportedNetworks, swift: $swift, type: $type, zengin: $zengin)';
+
  }

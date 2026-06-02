@@ -20,25 +20,29 @@ final class IssuesAddBlockedByDependencyError$403 extends IssuesAddBlockedByDepe
 
 final BasicError error;
 
-@override int get statusCode { return 403; } 
+@override int get statusCode => 403;
+
  }
 final class IssuesAddBlockedByDependencyError$404 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$404(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class IssuesAddBlockedByDependencyError$410 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$410(this.error);
 
 final BasicError error;
 
-@override int get statusCode { return 410; } 
+@override int get statusCode => 410;
+
  }
 final class IssuesAddBlockedByDependencyError$422 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$422(this.error);
 
 final ValidationError error;
 
-@override int get statusCode { return 422; } 
+@override int get statusCode => 422;
+
  }
 final class IssuesAddBlockedByDependencyError$Unknown extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError$Unknown(this.statusCode, this.rawBody, );
 

@@ -21,10 +21,13 @@ MessageDeltaContentTextObjectText copyWith({String? Function()? value, List<Mess
   value: value != null ? value() : this.value,
   annotations: annotations != null ? annotations() : this.annotations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MessageDeltaContentTextObjectText &&
           value == other.value &&
-          listEquals(annotations, other.annotations); } 
-@override int get hashCode { return Object.hash(value, Object.hashAll(annotations ?? const [])); } 
-@override String toString() { return 'MessageDeltaContentTextObjectText(value: $value, annotations: $annotations)'; } 
+          listEquals(annotations, other.annotations);
+
+@override int get hashCode => Object.hash(value, Object.hashAll(annotations ?? const []));
+
+@override String toString() => 'MessageDeltaContentTextObjectText(value: $value, annotations: $annotations)';
+
  }

@@ -65,7 +65,7 @@ PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostT
   person: person != null ? person() : this.person,
   pii: pii != null ? pii() : this.pii,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTokensRequest &&
           account == other.account &&
           bankAccount == other.bankAccount &&
@@ -74,7 +74,10 @@ PostTokensRequest copyWith({PostTokensRequestAccount? Function()? account, PostT
           cvcUpdate == other.cvcUpdate &&
           listEquals(expand, other.expand) &&
           person == other.person &&
-          pii == other.pii; } 
-@override int get hashCode { return Object.hash(account, bankAccount, card, customer, cvcUpdate, Object.hashAll(expand ?? const []), person, pii); } 
-@override String toString() { return 'PostTokensRequest(account: $account, bankAccount: $bankAccount, card: $card, customer: $customer, cvcUpdate: $cvcUpdate, expand: $expand, person: $person, pii: $pii)'; } 
+          pii == other.pii;
+
+@override int get hashCode => Object.hash(account, bankAccount, card, customer, cvcUpdate, Object.hashAll(expand ?? const []), person, pii);
+
+@override String toString() => 'PostTokensRequest(account: $account, bankAccount: $bankAccount, card: $card, customer: $customer, cvcUpdate: $cvcUpdate, expand: $expand, person: $person, pii: $pii)';
+
  }

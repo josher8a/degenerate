@@ -38,12 +38,15 @@ PostTaxCalculationsRequestShippingCost copyWith({int? Function()? amount, String
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   taxCode: taxCode != null ? taxCode() : this.taxCode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTaxCalculationsRequestShippingCost &&
           amount == other.amount &&
           shippingRate == other.shippingRate &&
           taxBehavior == other.taxBehavior &&
-          taxCode == other.taxCode; } 
-@override int get hashCode { return Object.hash(amount, shippingRate, taxBehavior, taxCode); } 
-@override String toString() { return 'PostTaxCalculationsRequestShippingCost(amount: $amount, shippingRate: $shippingRate, taxBehavior: $taxBehavior, taxCode: $taxCode)'; } 
+          taxCode == other.taxCode;
+
+@override int get hashCode => Object.hash(amount, shippingRate, taxBehavior, taxCode);
+
+@override String toString() => 'PostTaxCalculationsRequestShippingCost(amount: $amount, shippingRate: $shippingRate, taxBehavior: $taxBehavior, taxCode: $taxCode)';
+
  }

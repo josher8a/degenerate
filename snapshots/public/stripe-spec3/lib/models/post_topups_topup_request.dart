@@ -35,11 +35,14 @@ PostTopupsTopupRequest copyWith({String? Function()? description, List<String>? 
   expand: expand != null ? expand() : this.expand,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTopupsTopupRequest &&
           description == other.description &&
           listEquals(expand, other.expand) &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(description, Object.hashAll(expand ?? const []), metadata); } 
-@override String toString() { return 'PostTopupsTopupRequest(description: $description, expand: $expand, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(description, Object.hashAll(expand ?? const []), metadata);
+
+@override String toString() => 'PostTopupsTopupRequest(description: $description, expand: $expand, metadata: $metadata)';
+
  }

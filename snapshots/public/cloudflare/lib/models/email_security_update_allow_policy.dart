@@ -68,7 +68,7 @@ EmailSecurityUpdateAllowPolicy copyWith({String? Function()? comments, bool? Fun
   patternType: patternType != null ? patternType() : this.patternType,
   verifySender: verifySender != null ? verifySender() : this.verifySender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EmailSecurityUpdateAllowPolicy &&
           comments == other.comments &&
           isAcceptableSender == other.isAcceptableSender &&
@@ -77,7 +77,10 @@ EmailSecurityUpdateAllowPolicy copyWith({String? Function()? comments, bool? Fun
           isTrustedSender == other.isTrustedSender &&
           pattern == other.pattern &&
           patternType == other.patternType &&
-          verifySender == other.verifySender; } 
-@override int get hashCode { return Object.hash(comments, isAcceptableSender, isExemptRecipient, isRegex, isTrustedSender, pattern, patternType, verifySender); } 
-@override String toString() { return 'EmailSecurityUpdateAllowPolicy(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRegex: $isRegex, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender)'; } 
+          verifySender == other.verifySender;
+
+@override int get hashCode => Object.hash(comments, isAcceptableSender, isExemptRecipient, isRegex, isTrustedSender, pattern, patternType, verifySender);
+
+@override String toString() => 'EmailSecurityUpdateAllowPolicy(comments: $comments, isAcceptableSender: $isAcceptableSender, isExemptRecipient: $isExemptRecipient, isRegex: $isRegex, isTrustedSender: $isTrustedSender, pattern: $pattern, patternType: $patternType, verifySender: $verifySender)';
+
  }

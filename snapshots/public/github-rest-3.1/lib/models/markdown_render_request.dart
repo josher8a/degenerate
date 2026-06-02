@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is MarkdownRenderRequestMode && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'MarkdownRenderRequestMode($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MarkdownRenderRequestMode && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MarkdownRenderRequestMode($value)';
+
  }
 @immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });
 
@@ -53,11 +56,14 @@ MarkdownRenderRequest copyWith({String? text, MarkdownRenderRequestMode Function
   mode: mode != null ? mode() : this.mode,
   context: context != null ? context() : this.context,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MarkdownRenderRequest &&
           text == other.text &&
           mode == other.mode &&
-          context == other.context; } 
-@override int get hashCode { return Object.hash(text, mode, context); } 
-@override String toString() { return 'MarkdownRenderRequest(text: $text, mode: $mode, context: $context)'; } 
+          context == other.context;
+
+@override int get hashCode => Object.hash(text, mode, context);
+
+@override String toString() => 'MarkdownRenderRequest(text: $text, mode: $mode, context: $context)';
+
  }

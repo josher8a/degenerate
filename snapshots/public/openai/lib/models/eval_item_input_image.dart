@@ -33,11 +33,14 @@ EvalItemInputImage copyWith({EvalItemInputImageType? type, String? imageUrl, Str
   imageUrl: imageUrl ?? this.imageUrl,
   detail: detail != null ? detail() : this.detail,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalItemInputImage &&
           type == other.type &&
           imageUrl == other.imageUrl &&
-          detail == other.detail; } 
-@override int get hashCode { return Object.hash(type, imageUrl, detail); } 
-@override String toString() { return 'EvalItemInputImage(type: $type, imageUrl: $imageUrl, detail: $detail)'; } 
+          detail == other.detail;
+
+@override int get hashCode => Object.hash(type, imageUrl, detail);
+
+@override String toString() => 'EvalItemInputImage(type: $type, imageUrl: $imageUrl, detail: $detail)';
+
  }

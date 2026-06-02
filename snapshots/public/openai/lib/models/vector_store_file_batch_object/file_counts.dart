@@ -44,13 +44,16 @@ FileCounts copyWith({int? inProgress, int? completed, int? failed, int? cancelle
   cancelled: cancelled ?? this.cancelled,
   total: total ?? this.total,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is FileCounts &&
           inProgress == other.inProgress &&
           completed == other.completed &&
           failed == other.failed &&
           cancelled == other.cancelled &&
-          total == other.total; } 
-@override int get hashCode { return Object.hash(inProgress, completed, failed, cancelled, total); } 
-@override String toString() { return 'FileCounts(inProgress: $inProgress, completed: $completed, failed: $failed, cancelled: $cancelled, total: $total)'; } 
+          total == other.total;
+
+@override int get hashCode => Object.hash(inProgress, completed, failed, cancelled, total);
+
+@override String toString() => 'FileCounts(inProgress: $inProgress, completed: $completed, failed: $failed, cancelled: $cancelled, total: $total)';
+
  }

@@ -52,14 +52,17 @@ ComputerCallOutputItemParam copyWith({String? Function()? id, String? callId, St
   acknowledgedSafetyChecks: acknowledgedSafetyChecks != null ? acknowledgedSafetyChecks() : this.acknowledgedSafetyChecks,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ComputerCallOutputItemParam &&
           id == other.id &&
           callId == other.callId &&
           type == other.type &&
           output == other.output &&
           listEquals(acknowledgedSafetyChecks, other.acknowledgedSafetyChecks) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(id, callId, type, output, Object.hashAll(acknowledgedSafetyChecks ?? const []), status); } 
-@override String toString() { return 'ComputerCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(id, callId, type, output, Object.hashAll(acknowledgedSafetyChecks ?? const []), status);
+
+@override String toString() => 'ComputerCallOutputItemParam(id: $id, callId: $callId, type: $type, output: $output, acknowledgedSafetyChecks: $acknowledgedSafetyChecks, status: $status)';
+
  }

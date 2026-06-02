@@ -25,11 +25,14 @@ QueryRewrite copyWith({bool? Function()? enabled, AiSearchInstanceChatCompletion
   model: model != null ? model() : this.model,
   rewritePrompt: rewritePrompt != null ? rewritePrompt() : this.rewritePrompt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is QueryRewrite &&
           enabled == other.enabled &&
           model == other.model &&
-          rewritePrompt == other.rewritePrompt; } 
-@override int get hashCode { return Object.hash(enabled, model, rewritePrompt); } 
-@override String toString() { return 'QueryRewrite(enabled: $enabled, model: $model, rewritePrompt: $rewritePrompt)'; } 
+          rewritePrompt == other.rewritePrompt;
+
+@override int get hashCode => Object.hash(enabled, model, rewritePrompt);
+
+@override String toString() => 'QueryRewrite(enabled: $enabled, model: $model, rewritePrompt: $rewritePrompt)';
+
  }

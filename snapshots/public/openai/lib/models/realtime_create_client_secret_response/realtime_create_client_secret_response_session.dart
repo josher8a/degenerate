@@ -34,7 +34,8 @@ final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
 @override String get type => 'realtime';
 
-@override Map<String, dynamic> toJson() { return {...realtimeSessionCreateResponseGa.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeSessionCreateResponseGa.toJson(), 'type': type};
+
 RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
   clientSecret: clientSecret,
   outputModalities: outputModalities,
@@ -49,10 +50,13 @@ RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? client
   truncation: truncation,
   prompt: prompt,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeCreateClientSecretResponseSessionRealtime && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
-@override int get hashCode { return realtimeSessionCreateResponseGa.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretResponseSession.realtime($realtimeSessionCreateResponseGa)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeCreateClientSecretResponseSessionRealtime && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa;
+
+@override int get hashCode => realtimeSessionCreateResponseGa.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSession.realtime($realtimeSessionCreateResponseGa)';
+
 @override List<Include>? get include => realtimeSessionCreateResponseGa.include;
 
  }
@@ -64,7 +68,8 @@ final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionC
 
 @override String get type => 'transcription';
 
-@override Map<String, dynamic> toJson() { return {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type};
+
 RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int? Function()? expiresAt, List<Include>? Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio? Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
   id: id,
   object: object,
@@ -72,10 +77,13 @@ RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, Str
   include: include,
   audio: audio,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeCreateClientSecretResponseSessionTranscription && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 
-@override int get hashCode { return realtimeTranscriptionSessionCreateResponseGa.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretResponseSession.transcription($realtimeTranscriptionSessionCreateResponseGa)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeCreateClientSecretResponseSessionTranscription && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa;
+
+@override int get hashCode => realtimeTranscriptionSessionCreateResponseGa.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSession.transcription($realtimeTranscriptionSessionCreateResponseGa)';
+
 @override List<Include>? get include => realtimeTranscriptionSessionCreateResponseGa.include;
 
  }
@@ -87,11 +95,15 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is RealtimeCreateClientSecretResponseSession$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'RealtimeCreateClientSecretResponseSession.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimeCreateClientSecretResponseSession$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSession.unknown($json)';
+
 @override List<Include>? get include => (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList();
 
  }

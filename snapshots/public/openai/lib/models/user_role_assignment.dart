@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is UserRoleAssignmentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'UserRoleAssignmentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UserRoleAssignmentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UserRoleAssignmentObject($value)';
+
  }
 /// Role assignment linking a user to a role.
 @immutable final class UserRoleAssignment {const UserRoleAssignment({required this.object, required this.user, required this.role, });
@@ -51,11 +54,14 @@ UserRoleAssignment copyWith({UserRoleAssignmentObject? object, User? user, Role?
   user: user ?? this.user,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UserRoleAssignment &&
           object == other.object &&
           user == other.user &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(object, user, role); } 
-@override String toString() { return 'UserRoleAssignment(object: $object, user: $user, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(object, user, role);
+
+@override String toString() => 'UserRoleAssignment(object: $object, user: $user, role: $role)';
+
  }

@@ -18,13 +18,15 @@ final class AigConfigUpdateGatewayError$400 extends AigConfigUpdateGatewayError 
 
 final AigConfigUpdateGatewayResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigUpdateGatewayError$404 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError$404(this.error);
 
 final AigConfigUpdateGatewayResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class AigConfigUpdateGatewayError$Unknown extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError$Unknown(this.statusCode, this.rawBody, );
 

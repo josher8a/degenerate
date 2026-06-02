@@ -25,10 +25,13 @@ CacheRulesAegisValue copyWith({bool? Function()? enabled, String? Function()? po
   enabled: enabled != null ? enabled() : this.enabled,
   poolId: poolId != null ? poolId() : this.poolId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CacheRulesAegisValue &&
           enabled == other.enabled &&
-          poolId == other.poolId; } 
-@override int get hashCode { return Object.hash(enabled, poolId); } 
-@override String toString() { return 'CacheRulesAegisValue(enabled: $enabled, poolId: $poolId)'; } 
+          poolId == other.poolId;
+
+@override int get hashCode => Object.hash(enabled, poolId);
+
+@override String toString() => 'CacheRulesAegisValue(enabled: $enabled, poolId: $poolId)';
+
  }

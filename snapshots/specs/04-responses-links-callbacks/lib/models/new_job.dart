@@ -21,10 +21,13 @@ NewJob copyWith({String? name, Uri? callbackUrl, }) { return NewJob(
   name: name ?? this.name,
   callbackUrl: callbackUrl ?? this.callbackUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NewJob &&
           name == other.name &&
-          callbackUrl == other.callbackUrl; } 
-@override int get hashCode { return Object.hash(name, callbackUrl); } 
-@override String toString() { return 'NewJob(name: $name, callbackUrl: $callbackUrl)'; } 
+          callbackUrl == other.callbackUrl;
+
+@override int get hashCode => Object.hash(name, callbackUrl);
+
+@override String toString() => 'NewJob(name: $name, callbackUrl: $callbackUrl)';
+
  }

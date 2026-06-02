@@ -23,10 +23,13 @@ RepositoryAdvisoryCreateCredits copyWith({String? login, SecurityAdvisoryCreditT
   login: login ?? this.login,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryAdvisoryCreateCredits &&
           login == other.login &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(login, type); } 
-@override String toString() { return 'RepositoryAdvisoryCreateCredits(login: $login, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(login, type);
+
+@override String toString() => 'RepositoryAdvisoryCreateCredits(login: $login, type: $type)';
+
  }

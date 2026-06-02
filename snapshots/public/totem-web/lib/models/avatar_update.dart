@@ -21,10 +21,13 @@ AvatarUpdate copyWith({ProfileAvatarTypeEnum? Function()? avatarType, bool? Func
   avatarType: avatarType != null ? avatarType() : this.avatarType,
   updateAvatarSeed: updateAvatarSeed != null ? updateAvatarSeed() : this.updateAvatarSeed,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AvatarUpdate &&
           avatarType == other.avatarType &&
-          updateAvatarSeed == other.updateAvatarSeed; } 
-@override int get hashCode { return Object.hash(avatarType, updateAvatarSeed); } 
-@override String toString() { return 'AvatarUpdate(avatarType: $avatarType, updateAvatarSeed: $updateAvatarSeed)'; } 
+          updateAvatarSeed == other.updateAvatarSeed;
+
+@override int get hashCode => Object.hash(avatarType, updateAvatarSeed);
+
+@override String toString() => 'AvatarUpdate(avatarType: $avatarType, updateAvatarSeed: $updateAvatarSeed)';
+
  }

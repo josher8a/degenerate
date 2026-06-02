@@ -17,7 +17,8 @@ final class RadarGetAttacksLayer7TopTargetLocationError$404 extends RadarGetAtta
 
 final RadarGetAttacksLayer7TopTargetLocationResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetAttacksLayer7TopTargetLocationError$Unknown extends RadarGetAttacksLayer7TopTargetLocationError {const RadarGetAttacksLayer7TopTargetLocationError$Unknown(this.statusCode, this.rawBody, );
 

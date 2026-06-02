@@ -58,13 +58,16 @@ PaymentMethodOptionsKonbini copyWith({String? Function()? confirmationNumber, in
   productDescription: productDescription != null ? productDescription() : this.productDescription,
   setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodOptionsKonbini &&
           confirmationNumber == other.confirmationNumber &&
           expiresAfterDays == other.expiresAfterDays &&
           expiresAt == other.expiresAt &&
           productDescription == other.productDescription &&
-          setupFutureUsage == other.setupFutureUsage; } 
-@override int get hashCode { return Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage); } 
-@override String toString() { return 'PaymentMethodOptionsKonbini(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)'; } 
+          setupFutureUsage == other.setupFutureUsage;
+
+@override int get hashCode => Object.hash(confirmationNumber, expiresAfterDays, expiresAt, productDescription, setupFutureUsage);
+
+@override String toString() => 'PaymentMethodOptionsKonbini(confirmationNumber: $confirmationNumber, expiresAfterDays: $expiresAfterDays, expiresAt: $expiresAt, productDescription: $productDescription, setupFutureUsage: $setupFutureUsage)';
+
  }

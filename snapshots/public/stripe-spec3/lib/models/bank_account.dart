@@ -169,7 +169,7 @@ BankAccount copyWith({ApplicationFeeAccount? Function()? account, String? Functi
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BankAccount &&
           account == other.account &&
           accountHolderName == other.accountHolderName &&
@@ -189,7 +189,10 @@ BankAccount copyWith({ApplicationFeeAccount? Function()? account, String? Functi
           object == other.object &&
           requirements == other.requirements &&
           routingNumber == other.routingNumber &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(account, accountHolderName, accountHolderType, accountType, Object.hashAll(availablePayoutMethods ?? const []), bankName, country, currency, customer, defaultForCurrency, fingerprint, futureRequirements, id, last4, metadata, object, requirements, routingNumber, status); } 
-@override String toString() { return 'BankAccount(account: $account, accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, availablePayoutMethods: $availablePayoutMethods, bankName: $bankName, country: $country, currency: $currency, customer: $customer, defaultForCurrency: $defaultForCurrency, fingerprint: $fingerprint, futureRequirements: $futureRequirements, id: $id, last4: $last4, metadata: $metadata, object: $object, requirements: $requirements, routingNumber: $routingNumber, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(account, accountHolderName, accountHolderType, accountType, Object.hashAll(availablePayoutMethods ?? const []), bankName, country, currency, customer, defaultForCurrency, fingerprint, futureRequirements, id, last4, metadata, object, requirements, routingNumber, status);
+
+@override String toString() => 'BankAccount(account: $account, accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, availablePayoutMethods: $availablePayoutMethods, bankName: $bankName, country: $country, currency: $currency, customer: $customer, defaultForCurrency: $defaultForCurrency, fingerprint: $fingerprint, futureRequirements: $futureRequirements, id: $id, last4: $last4, metadata: $metadata, object: $object, requirements: $requirements, routingNumber: $routingNumber, status: $status)';
+
  }

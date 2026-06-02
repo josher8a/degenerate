@@ -38,10 +38,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFilePurpose && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFilePurpose($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OpenAiFilePurpose && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OpenAiFilePurpose($value)';
+
  }
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
 @immutable final class OpenAiFileStatus {const OpenAiFileStatus._(this.value);
@@ -66,10 +69,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is OpenAiFileStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'OpenAiFileStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OpenAiFileStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OpenAiFileStatus($value)';
+
  }
 /// The `File` object represents a document that has been uploaded to OpenAI.
 @immutable final class OpenAiFile {const OpenAiFile({required this.id, required this.bytes, required this.createdAt, required this.filename, required this.object, required this.purpose, required this.status, this.expiresAt, this.statusDetails, });
@@ -142,7 +148,7 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
   status: status ?? this.status,
   statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is OpenAiFile &&
           id == other.id &&
           bytes == other.bytes &&
@@ -152,7 +158,10 @@ OpenAiFile copyWith({String? id, int? bytes, int? createdAt, int? Function()? ex
           object == other.object &&
           purpose == other.purpose &&
           status == other.status &&
-          statusDetails == other.statusDetails; } 
-@override int get hashCode { return Object.hash(id, bytes, createdAt, expiresAt, filename, object, purpose, status, statusDetails); } 
-@override String toString() { return 'OpenAiFile(id: $id, bytes: $bytes, createdAt: $createdAt, expiresAt: $expiresAt, filename: $filename, object: $object, purpose: $purpose, status: $status, statusDetails: $statusDetails)'; } 
+          statusDetails == other.statusDetails;
+
+@override int get hashCode => Object.hash(id, bytes, createdAt, expiresAt, filename, object, purpose, status, statusDetails);
+
+@override String toString() => 'OpenAiFile(id: $id, bytes: $bytes, createdAt: $createdAt, expiresAt: $expiresAt, filename: $filename, object: $object, purpose: $purpose, status: $status, statusDetails: $statusDetails)';
+
  }

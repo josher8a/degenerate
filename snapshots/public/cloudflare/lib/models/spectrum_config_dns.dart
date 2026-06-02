@@ -27,10 +27,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SpectrumConfigDnsType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SpectrumConfigDnsType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigDnsType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SpectrumConfigDnsType($value)';
+
  }
 /// The name and type of DNS record for the Spectrum application.
 @immutable final class SpectrumConfigDns {const SpectrumConfigDns({this.name, this.type, });
@@ -53,10 +56,13 @@ SpectrumConfigDns copyWith({SpectrumConfigDnsName? Function()? name, SpectrumCon
   name: name != null ? name() : this.name,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SpectrumConfigDns &&
           name == other.name &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, type); } 
-@override String toString() { return 'SpectrumConfigDns(name: $name, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, type);
+
+@override String toString() => 'SpectrumConfigDns(name: $name, type: $type)';
+
  }

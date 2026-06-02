@@ -22,10 +22,13 @@ PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest copyWith({
   expand: expand != null ? expand() : this.expand,
   returnedDetails: returnedDetails != null ? returnedDetails() : this.returnedDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest &&
           listEquals(expand, other.expand) &&
-          returnedDetails == other.returnedDetails; } 
-@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), returnedDetails); } 
-@override String toString() { return 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest(expand: $expand, returnedDetails: $returnedDetails)'; } 
+          returnedDetails == other.returnedDetails;
+
+@override int get hashCode => Object.hash(Object.hashAll(expand ?? const []), returnedDetails);
+
+@override String toString() => 'PostTestHelpersTreasuryOutboundTransfersOutboundTransferReturnRequest(expand: $expand, returnedDetails: $returnedDetails)';
+
  }

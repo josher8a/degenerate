@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 CreateAccountRulesetRuleRequest copyWith({CreateAccountRulesetRuleRequestPosition? Function()? position}) { return CreateAccountRulesetRuleRequest(
   position: position != null ? position() : this.position,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateAccountRulesetRuleRequest &&
-          position == other.position; } 
-@override int get hashCode { return position.hashCode; } 
-@override String toString() { return 'CreateAccountRulesetRuleRequest(position: $position)'; } 
+          position == other.position;
+
+@override int get hashCode => position.hashCode;
+
+@override String toString() => 'CreateAccountRulesetRuleRequest(position: $position)';
+
  }

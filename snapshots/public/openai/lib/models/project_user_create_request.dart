@@ -23,10 +23,13 @@ ProjectUserCreateRequest copyWith({String? userId, ProjectServiceAccountRole? ro
   userId: userId ?? this.userId,
   role: role ?? this.role,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ProjectUserCreateRequest &&
           userId == other.userId &&
-          role == other.role; } 
-@override int get hashCode { return Object.hash(userId, role); } 
-@override String toString() { return 'ProjectUserCreateRequest(userId: $userId, role: $role)'; } 
+          role == other.role;
+
+@override int get hashCode => Object.hash(userId, role);
+
+@override String toString() => 'ProjectUserCreateRequest(userId: $userId, role: $role)';
+
  }

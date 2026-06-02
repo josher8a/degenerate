@@ -46,20 +46,16 @@ final class PagedMobileSpaceDetailSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is PagedMobileSpaceDetailSchema &&
-            listEquals(items, other.items) &&
-            count == other.count;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is PagedMobileSpaceDetailSchema &&
+          listEquals(items, other.items) &&
+          count == other.count;
 
   @override
-  int get hashCode {
-    return Object.hash(Object.hashAll(items), count);
-  }
+  int get hashCode => Object.hash(Object.hashAll(items), count);
 
   @override
-  String toString() {
-    return 'PagedMobileSpaceDetailSchema(items: $items, count: $count)';
-  }
+  String toString() =>
+      'PagedMobileSpaceDetailSchema(items: $items, count: $count)';
 }

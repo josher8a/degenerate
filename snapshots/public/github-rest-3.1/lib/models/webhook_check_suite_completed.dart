@@ -49,7 +49,7 @@ WebhookCheckSuiteCompleted copyWith({WebhookCheckRunCompletedAction? action, Web
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCheckSuiteCompleted &&
           action == other.action &&
           checkSuite == other.checkSuite &&
@@ -57,7 +57,10 @@ WebhookCheckSuiteCompleted copyWith({WebhookCheckRunCompletedAction? action, Web
           installation == other.installation &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, checkSuite, enterprise, installation, organization, repository, sender); } 
-@override String toString() { return 'WebhookCheckSuiteCompleted(action: $action, checkSuite: $checkSuite, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, checkSuite, enterprise, installation, organization, repository, sender);
+
+@override String toString() => 'WebhookCheckSuiteCompleted(action: $action, checkSuite: $checkSuite, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)';
+
  }

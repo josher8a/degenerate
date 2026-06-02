@@ -23,10 +23,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentCancellationReason && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentCancellationReason($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentCancellationReason && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupIntentCancellationReason($value)';
+
  }
 /// String representing the object's type. Objects of the same type share the same value.
 @immutable final class SetupIntentObject {const SetupIntentObject._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupIntentObject($value)';
+
  }
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
 @immutable final class SetupIntentStatus {const SetupIntentStatus._(this.value);
@@ -82,10 +88,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SetupIntentStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SetupIntentStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SetupIntentStatus($value)';
+
  }
 /// A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.
 /// For example, you can use a SetupIntent to set up and save your customer's card without immediately collecting a payment.
@@ -315,7 +324,7 @@ SetupIntent copyWith({ApplicationFeeApplication? Function()? application, bool? 
   status: status ?? this.status,
   usage: usage ?? this.usage,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SetupIntent &&
           application == other.application &&
           attachToSelf == other.attachToSelf &&
@@ -343,7 +352,10 @@ SetupIntent copyWith({ApplicationFeeApplication? Function()? application, bool? 
           listEquals(paymentMethodTypes, other.paymentMethodTypes) &&
           singleUseMandate == other.singleUseMandate &&
           status == other.status &&
-          usage == other.usage; } 
-@override int get hashCode { return Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(flowDirections ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]); } 
-@override String toString() { return 'SetupIntent(application: $application, attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, cancellationReason: $cancellationReason, clientSecret: $clientSecret, created: $created, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, flowDirections: $flowDirections, id: $id, lastSetupError: $lastSetupError, latestAttempt: $latestAttempt, livemode: $livemode, mandate: $mandate, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, singleUseMandate: $singleUseMandate, status: $status, usage: $usage)'; } 
+          usage == other.usage;
+
+@override int get hashCode => Object.hashAll([application, attachToSelf, automaticPaymentMethods, cancellationReason, clientSecret, created, customer, customerAccount, description, Object.hashAll(excludedPaymentMethodTypes ?? const []), Object.hashAll(flowDirections ?? const []), id, lastSetupError, latestAttempt, livemode, mandate, metadata, nextAction, object, onBehalfOf, paymentMethod, paymentMethodConfigurationDetails, paymentMethodOptions, Object.hashAll(paymentMethodTypes), singleUseMandate, status, usage]);
+
+@override String toString() => 'SetupIntent(application: $application, attachToSelf: $attachToSelf, automaticPaymentMethods: $automaticPaymentMethods, cancellationReason: $cancellationReason, clientSecret: $clientSecret, created: $created, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, flowDirections: $flowDirections, id: $id, lastSetupError: $lastSetupError, latestAttempt: $latestAttempt, livemode: $livemode, mandate: $mandate, metadata: $metadata, nextAction: $nextAction, object: $object, onBehalfOf: $onBehalfOf, paymentMethod: $paymentMethod, paymentMethodConfigurationDetails: $paymentMethodConfigurationDetails, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, singleUseMandate: $singleUseMandate, status: $status, usage: $usage)';
+
  }

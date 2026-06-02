@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_r
 ChatSessionRateLimits copyWith({int? maxRequestsPer1Minute}) { return ChatSessionRateLimits(
   maxRequestsPer1Minute: maxRequestsPer1Minute ?? this.maxRequestsPer1Minute,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ChatSessionRateLimits &&
-          maxRequestsPer1Minute == other.maxRequestsPer1Minute; } 
-@override int get hashCode { return maxRequestsPer1Minute.hashCode; } 
-@override String toString() { return 'ChatSessionRateLimits(maxRequestsPer1Minute: $maxRequestsPer1Minute)'; } 
+          maxRequestsPer1Minute == other.maxRequestsPer1Minute;
+
+@override int get hashCode => maxRequestsPer1Minute.hashCode;
+
+@override String toString() => 'ChatSessionRateLimits(maxRequestsPer1Minute: $maxRequestsPer1Minute)';
+
  }

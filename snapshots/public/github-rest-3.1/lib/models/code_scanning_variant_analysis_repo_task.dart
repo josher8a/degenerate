@@ -57,7 +57,7 @@ CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, Code
   sourceLocationPrefix: sourceLocationPrefix != null ? sourceLocationPrefix() : this.sourceLocationPrefix,
   artifactUrl: artifactUrl != null ? artifactUrl() : this.artifactUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CodeScanningVariantAnalysisRepoTask &&
           repository == other.repository &&
           analysisStatus == other.analysisStatus &&
@@ -66,7 +66,10 @@ CodeScanningVariantAnalysisRepoTask copyWith({SimpleRepository? repository, Code
           failureMessage == other.failureMessage &&
           databaseCommitSha == other.databaseCommitSha &&
           sourceLocationPrefix == other.sourceLocationPrefix &&
-          artifactUrl == other.artifactUrl; } 
-@override int get hashCode { return Object.hash(repository, analysisStatus, artifactSizeInBytes, resultCount, failureMessage, databaseCommitSha, sourceLocationPrefix, artifactUrl); } 
-@override String toString() { return 'CodeScanningVariantAnalysisRepoTask(repository: $repository, analysisStatus: $analysisStatus, artifactSizeInBytes: $artifactSizeInBytes, resultCount: $resultCount, failureMessage: $failureMessage, databaseCommitSha: $databaseCommitSha, sourceLocationPrefix: $sourceLocationPrefix, artifactUrl: $artifactUrl)'; } 
+          artifactUrl == other.artifactUrl;
+
+@override int get hashCode => Object.hash(repository, analysisStatus, artifactSizeInBytes, resultCount, failureMessage, databaseCommitSha, sourceLocationPrefix, artifactUrl);
+
+@override String toString() => 'CodeScanningVariantAnalysisRepoTask(repository: $repository, analysisStatus: $analysisStatus, artifactSizeInBytes: $artifactSizeInBytes, resultCount: $resultCount, failureMessage: $failureMessage, databaseCommitSha: $databaseCommitSha, sourceLocationPrefix: $sourceLocationPrefix, artifactUrl: $artifactUrl)';
+
  }

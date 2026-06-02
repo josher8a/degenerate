@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is AttachmentType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'AttachmentType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AttachmentType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AttachmentType($value)';
+
  }
 /// Attachment metadata included on thread items.
 @immutable final class Attachment {const Attachment({required this.type, required this.id, required this.name, required this.mimeType, required this.previewUrl, });
@@ -69,13 +72,16 @@ Attachment copyWith({AttachmentType? type, String? id, String? name, String? mim
   mimeType: mimeType ?? this.mimeType,
   previewUrl: previewUrl != null ? previewUrl() : this.previewUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Attachment &&
           type == other.type &&
           id == other.id &&
           name == other.name &&
           mimeType == other.mimeType &&
-          previewUrl == other.previewUrl; } 
-@override int get hashCode { return Object.hash(type, id, name, mimeType, previewUrl); } 
-@override String toString() { return 'Attachment(type: $type, id: $id, name: $name, mimeType: $mimeType, previewUrl: $previewUrl)'; } 
+          previewUrl == other.previewUrl;
+
+@override int get hashCode => Object.hash(type, id, name, mimeType, previewUrl);
+
+@override String toString() => 'Attachment(type: $type, id: $id, name: $name, mimeType: $mimeType, previewUrl: $previewUrl)';
+
  }

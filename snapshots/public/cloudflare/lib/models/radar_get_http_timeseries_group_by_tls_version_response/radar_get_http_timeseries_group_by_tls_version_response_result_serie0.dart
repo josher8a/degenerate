@@ -45,14 +45,17 @@ RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0 copyWith({List<Strin
   tlsQuic: tlsQuic ?? this.tlsQuic,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0 &&
           listEquals(tls10, other.tls10) &&
           listEquals(tls11, other.tls11) &&
           listEquals(tls12, other.tls12) &&
           listEquals(tls13, other.tls13) &&
           listEquals(tlsQuic, other.tlsQuic) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll(tls10), Object.hashAll(tls11), Object.hashAll(tls12), Object.hashAll(tls13), Object.hashAll(tlsQuic), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13, tlsQuic: $tlsQuic, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll(tls10), Object.hashAll(tls11), Object.hashAll(tls12), Object.hashAll(tls13), Object.hashAll(tlsQuic), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetHttpTimeseriesGroupByTlsVersionResponseResultSerie0(tls10: $tls10, tls11: $tls11, tls12: $tls12, tls13: $tls13, tlsQuic: $tlsQuic, timestamps: $timestamps)';
+
  }

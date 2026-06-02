@@ -178,7 +178,7 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
   state: state ?? this.state,
   zip: zip != null ? zip() : this.zip,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContactProperties &&
           address == other.address &&
           address2 == other.address2 &&
@@ -192,7 +192,10 @@ ContactProperties copyWith({Address? address, Address2? Function()? address2, Ci
           organization == other.organization &&
           phone == other.phone &&
           state == other.state &&
-          zip == other.zip; } 
-@override int get hashCode { return Object.hash(address, address2, city, country, email, fax, firstName, id, lastName, organization, phone, state, zip); } 
-@override String toString() { return 'ContactProperties(address: $address, address2: $address2, city: $city, country: $country, email: $email, fax: $fax, firstName: $firstName, id: $id, lastName: $lastName, organization: $organization, phone: $phone, state: $state, zip: $zip)'; } 
+          zip == other.zip;
+
+@override int get hashCode => Object.hash(address, address2, city, country, email, fax, firstName, id, lastName, organization, phone, state, zip);
+
+@override String toString() => 'ContactProperties(address: $address, address2: $address2, city: $city, country: $country, email: $email, fax: $fax, firstName: $firstName, id: $id, lastName: $lastName, organization: $organization, phone: $phone, state: $state, zip: $zip)';
+
  }

@@ -30,10 +30,13 @@ PaymentLinksResourceCustomFieldsLabel copyWith({String? Function()? custom, Paym
   custom: custom != null ? custom() : this.custom,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentLinksResourceCustomFieldsLabel &&
           custom == other.custom &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, type); } 
-@override String toString() { return 'PaymentLinksResourceCustomFieldsLabel(custom: $custom, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(custom, type);
+
+@override String toString() => 'PaymentLinksResourceCustomFieldsLabel(custom: $custom, type: $type)';
+
  }

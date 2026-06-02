@@ -204,7 +204,7 @@ AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, 
   uri: uri != null ? uri() : this.uri,
   subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountCall &&
           sid == other.sid &&
           dateCreated == other.dateCreated &&
@@ -231,7 +231,10 @@ AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, 
           queueTime == other.queueTime &&
           trunkSid == other.trunkSid &&
           uri == other.uri &&
-          subresourceUris == other.subresourceUris; } 
-@override int get hashCode { return Object.hashAll([sid, dateCreated, dateUpdated, parentCallSid, accountSid, to, toFormatted, from, fromFormatted, phoneNumberSid, status, startTime, endTime, duration, price, priceUnit, direction, answeredBy, apiVersion, forwardedFrom, groupSid, callerName, queueTime, trunkSid, uri, subresourceUris]); } 
-@override String toString() { return 'AccountCall(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentCallSid: $parentCallSid, accountSid: $accountSid, to: $to, toFormatted: $toFormatted, from: $from, fromFormatted: $fromFormatted, phoneNumberSid: $phoneNumberSid, status: $status, startTime: $startTime, endTime: $endTime, duration: $duration, price: $price, priceUnit: $priceUnit, direction: $direction, answeredBy: $answeredBy, apiVersion: $apiVersion, forwardedFrom: $forwardedFrom, groupSid: $groupSid, callerName: $callerName, queueTime: $queueTime, trunkSid: $trunkSid, uri: $uri, subresourceUris: $subresourceUris)'; } 
+          subresourceUris == other.subresourceUris;
+
+@override int get hashCode => Object.hashAll([sid, dateCreated, dateUpdated, parentCallSid, accountSid, to, toFormatted, from, fromFormatted, phoneNumberSid, status, startTime, endTime, duration, price, priceUnit, direction, answeredBy, apiVersion, forwardedFrom, groupSid, callerName, queueTime, trunkSid, uri, subresourceUris]);
+
+@override String toString() => 'AccountCall(sid: $sid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, parentCallSid: $parentCallSid, accountSid: $accountSid, to: $to, toFormatted: $toFormatted, from: $from, fromFormatted: $fromFormatted, phoneNumberSid: $phoneNumberSid, status: $status, startTime: $startTime, endTime: $endTime, duration: $duration, price: $price, priceUnit: $priceUnit, direction: $direction, answeredBy: $answeredBy, apiVersion: $apiVersion, forwardedFrom: $forwardedFrom, groupSid: $groupSid, callerName: $callerName, queueTime: $queueTime, trunkSid: $trunkSid, uri: $uri, subresourceUris: $subresourceUris)';
+
  }

@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 DigitalExperienceMonitoringFleetStatusLiveResponseResult copyWith({DigitalExperienceMonitoringFleetStatusLiveResponseResultDeviceStats? Function()? deviceStats}) { return DigitalExperienceMonitoringFleetStatusLiveResponseResult(
   deviceStats: deviceStats != null ? deviceStats() : this.deviceStats,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DigitalExperienceMonitoringFleetStatusLiveResponseResult &&
-          deviceStats == other.deviceStats; } 
-@override int get hashCode { return deviceStats.hashCode; } 
-@override String toString() { return 'DigitalExperienceMonitoringFleetStatusLiveResponseResult(deviceStats: $deviceStats)'; } 
+          deviceStats == other.deviceStats;
+
+@override int get hashCode => deviceStats.hashCode;
+
+@override String toString() => 'DigitalExperienceMonitoringFleetStatusLiveResponseResult(deviceStats: $deviceStats)';
+
  }

@@ -45,13 +45,16 @@ VectorStoreSearchRequest copyWith({Query? query, bool Function()? rewriteQuery, 
   filters: filters != null ? filters() : this.filters,
   rankingOptions: rankingOptions != null ? rankingOptions() : this.rankingOptions,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VectorStoreSearchRequest &&
           query == other.query &&
           rewriteQuery == other.rewriteQuery &&
           maxNumResults == other.maxNumResults &&
           filters == other.filters &&
-          rankingOptions == other.rankingOptions; } 
-@override int get hashCode { return Object.hash(query, rewriteQuery, maxNumResults, filters, rankingOptions); } 
-@override String toString() { return 'VectorStoreSearchRequest(query: $query, rewriteQuery: $rewriteQuery, maxNumResults: $maxNumResults, filters: $filters, rankingOptions: $rankingOptions)'; } 
+          rankingOptions == other.rankingOptions;
+
+@override int get hashCode => Object.hash(query, rewriteQuery, maxNumResults, filters, rankingOptions);
+
+@override String toString() => 'VectorStoreSearchRequest(query: $query, rewriteQuery: $rewriteQuery, maxNumResults: $maxNumResults, filters: $filters, rankingOptions: $rankingOptions)';
+
  }

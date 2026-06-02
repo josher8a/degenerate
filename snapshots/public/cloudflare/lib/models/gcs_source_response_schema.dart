@@ -30,12 +30,15 @@ GcsSourceResponseSchema copyWith({String? Function()? bucket, List<String>? Func
   pathPrefix: pathPrefix != null ? pathPrefix() : this.pathPrefix,
   vendor: vendor != null ? vendor() : this.vendor,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GcsSourceResponseSchema &&
           bucket == other.bucket &&
           listEquals(keys, other.keys) &&
           pathPrefix == other.pathPrefix &&
-          vendor == other.vendor; } 
-@override int get hashCode { return Object.hash(bucket, Object.hashAll(keys ?? const []), pathPrefix, vendor); } 
-@override String toString() { return 'GcsSourceResponseSchema(bucket: $bucket, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)'; } 
+          vendor == other.vendor;
+
+@override int get hashCode => Object.hash(bucket, Object.hashAll(keys ?? const []), pathPrefix, vendor);
+
+@override String toString() => 'GcsSourceResponseSchema(bucket: $bucket, keys: $keys, pathPrefix: $pathPrefix, vendor: $vendor)';
+
  }

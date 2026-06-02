@@ -22,10 +22,13 @@ UpdateZoneSnippetRequest copyWith({UpdateZoneSnippetRequestMetadata? metadata, M
   metadata: metadata ?? this.metadata,
   additionalProperties: additionalProperties ?? this.additionalProperties,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UpdateZoneSnippetRequest &&
           metadata == other.metadata &&
-          mapEquals(additionalProperties, other.additionalProperties); } 
-@override int get hashCode { return Object.hash(metadata, Object.hashAll(additionalProperties.entries)); } 
-@override String toString() { return 'UpdateZoneSnippetRequest(metadata: $metadata, additionalProperties: $additionalProperties)'; } 
+          mapEquals(additionalProperties, other.additionalProperties);
+
+@override int get hashCode => Object.hash(metadata, Object.hashAll(additionalProperties.entries));
+
+@override String toString() => 'UpdateZoneSnippetRequest(metadata: $metadata, additionalProperties: $additionalProperties)';
+
  }

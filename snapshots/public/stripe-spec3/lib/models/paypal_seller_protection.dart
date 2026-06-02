@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DisputeCategories && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DisputeCategories($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeCategories && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DisputeCategories($value)';
+
  }
 /// Indicates whether the transaction is eligible for PayPal's seller protection.
 @immutable final class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus._(this.value);
@@ -47,10 +50,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PaypalSellerProtectionStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PaypalSellerProtectionStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaypalSellerProtectionStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PaypalSellerProtectionStatus($value)';
+
  }
 /// 
 @immutable final class PaypalSellerProtection {const PaypalSellerProtection({required this.status, this.disputeCategories, });
@@ -75,10 +81,13 @@ PaypalSellerProtection copyWith({List<DisputeCategories>? Function()? disputeCat
   disputeCategories: disputeCategories != null ? disputeCategories() : this.disputeCategories,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaypalSellerProtection &&
           listEquals(disputeCategories, other.disputeCategories) &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(Object.hashAll(disputeCategories ?? const []), status); } 
-@override String toString() { return 'PaypalSellerProtection(disputeCategories: $disputeCategories, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(Object.hashAll(disputeCategories ?? const []), status);
+
+@override String toString() => 'PaypalSellerProtection(disputeCategories: $disputeCategories, status: $status)';
+
  }

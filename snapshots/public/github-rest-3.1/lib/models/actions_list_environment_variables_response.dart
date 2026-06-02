@@ -21,10 +21,13 @@ ActionsListEnvironmentVariablesResponse copyWith({int? totalCount, List<ActionsV
   totalCount: totalCount ?? this.totalCount,
   variables: variables ?? this.variables,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ActionsListEnvironmentVariablesResponse &&
           totalCount == other.totalCount &&
-          listEquals(variables, other.variables); } 
-@override int get hashCode { return Object.hash(totalCount, Object.hashAll(variables)); } 
-@override String toString() { return 'ActionsListEnvironmentVariablesResponse(totalCount: $totalCount, variables: $variables)'; } 
+          listEquals(variables, other.variables);
+
+@override int get hashCode => Object.hash(totalCount, Object.hashAll(variables));
+
+@override String toString() => 'ActionsListEnvironmentVariablesResponse(totalCount: $totalCount, variables: $variables)';
+
  }

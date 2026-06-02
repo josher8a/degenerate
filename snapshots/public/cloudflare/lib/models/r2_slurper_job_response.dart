@@ -45,7 +45,7 @@ R2SlurperJobResponse copyWith({String? Function()? createdAt, String? Function()
   status: status != null ? status() : this.status,
   target: target != null ? target() : this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2SlurperJobResponse &&
           createdAt == other.createdAt &&
           finishedAt == other.finishedAt &&
@@ -53,7 +53,10 @@ R2SlurperJobResponse copyWith({String? Function()? createdAt, String? Function()
           overwrite == other.overwrite &&
           source == other.source &&
           status == other.status &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(createdAt, finishedAt, id, overwrite, source, status, target); } 
-@override String toString() { return 'R2SlurperJobResponse(createdAt: $createdAt, finishedAt: $finishedAt, id: $id, overwrite: $overwrite, source: $source, status: $status, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(createdAt, finishedAt, id, overwrite, source, status, target);
+
+@override String toString() => 'R2SlurperJobResponse(createdAt: $createdAt, finishedAt: $finishedAt, id: $id, overwrite: $overwrite, source: $source, status: $status, target: $target)';
+
  }

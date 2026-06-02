@@ -32,12 +32,15 @@ Deployment copyWith({String? Function()? comment, String? createdAt, String? dep
   deploymentId: deploymentId ?? this.deploymentId,
   versionId: versionId ?? this.versionId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Deployment &&
           comment == other.comment &&
           createdAt == other.createdAt &&
           deploymentId == other.deploymentId &&
-          versionId == other.versionId; } 
-@override int get hashCode { return Object.hash(comment, createdAt, deploymentId, versionId); } 
-@override String toString() { return 'Deployment(comment: $comment, createdAt: $createdAt, deploymentId: $deploymentId, versionId: $versionId)'; } 
+          versionId == other.versionId;
+
+@override int get hashCode => Object.hash(comment, createdAt, deploymentId, versionId);
+
+@override String toString() => 'Deployment(comment: $comment, createdAt: $createdAt, deploymentId: $deploymentId, versionId: $versionId)';
+
  }

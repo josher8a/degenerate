@@ -34,10 +34,13 @@ ManagedBy copyWith({String? Function()? parentOrgId, String? Function()? parentO
   parentOrgId: parentOrgId != null ? parentOrgId() : this.parentOrgId,
   parentOrgName: parentOrgName != null ? parentOrgName() : this.parentOrgName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ManagedBy &&
           parentOrgId == other.parentOrgId &&
-          parentOrgName == other.parentOrgName; } 
-@override int get hashCode { return Object.hash(parentOrgId, parentOrgName); } 
-@override String toString() { return 'ManagedBy(parentOrgId: $parentOrgId, parentOrgName: $parentOrgName)'; } 
+          parentOrgName == other.parentOrgName;
+
+@override int get hashCode => Object.hash(parentOrgId, parentOrgName);
+
+@override String toString() => 'ManagedBy(parentOrgId: $parentOrgId, parentOrgName: $parentOrgName)';
+
  }

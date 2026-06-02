@@ -20,10 +20,13 @@ WorkersUsageModelResponseResult copyWith({WorkersUsageModel? Function()? usageMo
   usageModel: usageModel != null ? usageModel() : this.usageModel,
   userLimits: userLimits != null ? userLimits() : this.userLimits,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersUsageModelResponseResult &&
           usageModel == other.usageModel &&
-          userLimits == other.userLimits; } 
-@override int get hashCode { return Object.hash(usageModel, userLimits); } 
-@override String toString() { return 'WorkersUsageModelResponseResult(usageModel: $usageModel, userLimits: $userLimits)'; } 
+          userLimits == other.userLimits;
+
+@override int get hashCode => Object.hash(usageModel, userLimits);
+
+@override String toString() => 'WorkersUsageModelResponseResult(usageModel: $usageModel, userLimits: $userLimits)';
+
  }

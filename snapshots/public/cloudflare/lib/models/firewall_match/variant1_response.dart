@@ -23,9 +23,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 Variant1Response copyWith({FirewallOriginTraffic? Function()? originTraffic}) { return Variant1Response(
   originTraffic: originTraffic != null ? originTraffic() : this.originTraffic,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Response &&
-          originTraffic == other.originTraffic; } 
-@override int get hashCode { return originTraffic.hashCode; } 
-@override String toString() { return 'Variant1Response(originTraffic: $originTraffic)'; } 
+          originTraffic == other.originTraffic;
+
+@override int get hashCode => originTraffic.hashCode;
+
+@override String toString() => 'Variant1Response(originTraffic: $originTraffic)';
+
  }

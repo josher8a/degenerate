@@ -29,11 +29,14 @@ PostCreateEventRelationshipResponseErrors copyWith({String? childId, String? err
   error: error ?? this.error,
   errorType: errorType != null ? errorType() : this.errorType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCreateEventRelationshipResponseErrors &&
           childId == other.childId &&
           error == other.error &&
-          errorType == other.errorType; } 
-@override int get hashCode { return Object.hash(childId, error, errorType); } 
-@override String toString() { return 'PostCreateEventRelationshipResponseErrors(childId: $childId, error: $error, errorType: $errorType)'; } 
+          errorType == other.errorType;
+
+@override int get hashCode => Object.hash(childId, error, errorType);
+
+@override String toString() => 'PostCreateEventRelationshipResponseErrors(childId: $childId, error: $error, errorType: $errorType)';
+
  }

@@ -38,12 +38,15 @@ ResponseCommonFailure31 copyWith({List<DnsSettingsMessages2>? errors, List<DnsSe
   result: result != null ? result() : this.result,
   success: success ?? this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ResponseCommonFailure31 &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           result == other.result &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success); } 
-@override String toString() { return 'ResponseCommonFailure31(errors: $errors, messages: $messages, result: $result, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+
+@override String toString() => 'ResponseCommonFailure31(errors: $errors, messages: $messages, result: $result, success: $success)';
+
  }

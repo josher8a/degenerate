@@ -42,13 +42,16 @@ TracerouteStats copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availa
   roundTripTimeMs: roundTripTimeMs ?? this.roundTripTimeMs,
   uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TracerouteStats &&
           availabilityPct == other.availabilityPct &&
           hopsCount == other.hopsCount &&
           packetLossPct == other.packetLossPct &&
           roundTripTimeMs == other.roundTripTimeMs &&
-          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
-@override int get hashCode { return Object.hash(availabilityPct, hopsCount, packetLossPct, roundTripTimeMs, uniqueDevicesTotal); } 
-@override String toString() { return 'TracerouteStats(availabilityPct: $availabilityPct, hopsCount: $hopsCount, packetLossPct: $packetLossPct, roundTripTimeMs: $roundTripTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+          uniqueDevicesTotal == other.uniqueDevicesTotal;
+
+@override int get hashCode => Object.hash(availabilityPct, hopsCount, packetLossPct, roundTripTimeMs, uniqueDevicesTotal);
+
+@override String toString() => 'TracerouteStats(availabilityPct: $availabilityPct, hopsCount: $hopsCount, packetLossPct: $packetLossPct, roundTripTimeMs: $roundTripTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)';
+
  }

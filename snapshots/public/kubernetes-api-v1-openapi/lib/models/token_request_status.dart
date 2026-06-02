@@ -23,10 +23,13 @@ TokenRequestStatus copyWith({Time? Function()? expirationTimestamp, String Funct
   expirationTimestamp: expirationTimestamp != null ? expirationTimestamp() : this.expirationTimestamp,
   token: token != null ? token() : this.token,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TokenRequestStatus &&
           expirationTimestamp == other.expirationTimestamp &&
-          token == other.token; } 
-@override int get hashCode { return Object.hash(expirationTimestamp, token); } 
-@override String toString() { return 'TokenRequestStatus(expirationTimestamp: $expirationTimestamp, token: $token)'; } 
+          token == other.token;
+
+@override int get hashCode => Object.hash(expirationTimestamp, token);
+
+@override String toString() => 'TokenRequestStatus(expirationTimestamp: $expirationTimestamp, token: $token)';
+
  }

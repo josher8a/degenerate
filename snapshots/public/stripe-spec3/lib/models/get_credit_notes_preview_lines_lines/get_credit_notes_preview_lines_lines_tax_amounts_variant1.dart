@@ -31,11 +31,14 @@ GetCreditNotesPreviewLinesLinesTaxAmountsVariant1 copyWith({int? amount, String?
   taxRate: taxRate ?? this.taxRate,
   taxableAmount: taxableAmount ?? this.taxableAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is GetCreditNotesPreviewLinesLinesTaxAmountsVariant1 &&
           amount == other.amount &&
           taxRate == other.taxRate &&
-          taxableAmount == other.taxableAmount; } 
-@override int get hashCode { return Object.hash(amount, taxRate, taxableAmount); } 
-@override String toString() { return 'GetCreditNotesPreviewLinesLinesTaxAmountsVariant1(amount: $amount, taxRate: $taxRate, taxableAmount: $taxableAmount)'; } 
+          taxableAmount == other.taxableAmount;
+
+@override int get hashCode => Object.hash(amount, taxRate, taxableAmount);
+
+@override String toString() => 'GetCreditNotesPreviewLinesLinesTaxAmountsVariant1(amount: $amount, taxRate: $taxRate, taxableAmount: $taxableAmount)';
+
  }

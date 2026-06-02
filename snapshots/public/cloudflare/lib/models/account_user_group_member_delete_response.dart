@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 AccountUserGroupMemberDeleteResponse copyWith({IamUserGroupMember? Function()? result}) { return AccountUserGroupMemberDeleteResponse(
   result: result != null ? result() : this.result,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountUserGroupMemberDeleteResponse &&
-          result == other.result; } 
-@override int get hashCode { return result.hashCode; } 
-@override String toString() { return 'AccountUserGroupMemberDeleteResponse(result: $result)'; } 
+          result == other.result;
+
+@override int get hashCode => result.hashCode;
+
+@override String toString() => 'AccountUserGroupMemberDeleteResponse(result: $result)';
+
  }

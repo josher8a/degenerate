@@ -25,10 +25,13 @@ ConfigMapEnvSource copyWith({String Function()? name, bool? Function()? optional
   name: name != null ? name() : this.name,
   optional: optional != null ? optional() : this.optional,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ConfigMapEnvSource &&
           name == other.name &&
-          optional == other.optional; } 
-@override int get hashCode { return Object.hash(name, optional); } 
-@override String toString() { return 'ConfigMapEnvSource(name: $name, optional: $optional)'; } 
+          optional == other.optional;
+
+@override int get hashCode => Object.hash(name, optional);
+
+@override String toString() => 'ConfigMapEnvSource(name: $name, optional: $optional)';
+
  }

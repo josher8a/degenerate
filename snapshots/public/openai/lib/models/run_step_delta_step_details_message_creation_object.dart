@@ -22,10 +22,13 @@ RunStepDeltaStepDetailsMessageCreationObject copyWith({RunStepDeltaStepDetailsMe
   type: type ?? this.type,
   messageCreation: messageCreation != null ? messageCreation() : this.messageCreation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunStepDeltaStepDetailsMessageCreationObject &&
           type == other.type &&
-          messageCreation == other.messageCreation; } 
-@override int get hashCode { return Object.hash(type, messageCreation); } 
-@override String toString() { return 'RunStepDeltaStepDetailsMessageCreationObject(type: $type, messageCreation: $messageCreation)'; } 
+          messageCreation == other.messageCreation;
+
+@override int get hashCode => Object.hash(type, messageCreation);
+
+@override String toString() => 'RunStepDeltaStepDetailsMessageCreationObject(type: $type, messageCreation: $messageCreation)';
+
  }

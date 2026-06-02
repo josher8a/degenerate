@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookRealtimeCallIncomingType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookRealtimeCallIncomingType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookRealtimeCallIncomingType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookRealtimeCallIncomingType($value)';
+
  }
 /// Sent when Realtime API Receives a incoming SIP call.
 /// 
@@ -73,13 +76,16 @@ WebhookRealtimeCallIncoming copyWith({int? createdAt, String? id, WebhookRealtim
   object: object != null ? object() : this.object,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookRealtimeCallIncoming &&
           createdAt == other.createdAt &&
           id == other.id &&
           data == other.data &&
           object == other.object &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
-@override String toString() { return 'WebhookRealtimeCallIncoming(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(createdAt, id, data, object, type);
+
+@override String toString() => 'WebhookRealtimeCallIncoming(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)';
+
  }

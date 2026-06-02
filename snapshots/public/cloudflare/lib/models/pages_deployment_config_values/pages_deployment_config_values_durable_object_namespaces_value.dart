@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('names
 PagesDeploymentConfigValuesDurableObjectNamespacesValue copyWith({String? namespaceId}) { return PagesDeploymentConfigValuesDurableObjectNamespacesValue(
   namespaceId: namespaceId ?? this.namespaceId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesDurableObjectNamespacesValue &&
-          namespaceId == other.namespaceId; } 
-@override int get hashCode { return namespaceId.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesDurableObjectNamespacesValue(namespaceId: $namespaceId)'; } 
+          namespaceId == other.namespaceId;
+
+@override int get hashCode => namespaceId.hashCode;
+
+@override String toString() => 'PagesDeploymentConfigValuesDurableObjectNamespacesValue(namespaceId: $namespaceId)';
+
  }

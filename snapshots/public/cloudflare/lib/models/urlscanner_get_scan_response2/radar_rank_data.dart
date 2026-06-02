@@ -26,11 +26,14 @@ RadarRankData copyWith({String? bucket, String? hostname, double? Function()? ra
   hostname: hostname ?? this.hostname,
   rank: rank != null ? rank() : this.rank,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarRankData &&
           bucket == other.bucket &&
           hostname == other.hostname &&
-          rank == other.rank; } 
-@override int get hashCode { return Object.hash(bucket, hostname, rank); } 
-@override String toString() { return 'RadarRankData(bucket: $bucket, hostname: $hostname, rank: $rank)'; } 
+          rank == other.rank;
+
+@override int get hashCode => Object.hash(bucket, hostname, rank);
+
+@override String toString() => 'RadarRankData(bucket: $bucket, hostname: $hostname, rank: $rank)';
+
  }

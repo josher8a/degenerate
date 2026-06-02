@@ -50,7 +50,7 @@ VideoStats copyWith({double? Function()? frameHeight, double? Function()? frameW
   quality: quality != null ? quality() : this.quality,
   timestamp: timestamp != null ? timestamp() : this.timestamp,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is VideoStats &&
           frameHeight == other.frameHeight &&
           frameWidth == other.frameWidth &&
@@ -59,7 +59,10 @@ VideoStats copyWith({double? Function()? frameHeight, double? Function()? frameW
           jitter == other.jitter &&
           packetsLost == other.packetsLost &&
           quality == other.quality &&
-          timestamp == other.timestamp; } 
-@override int get hashCode { return Object.hash(frameHeight, frameWidth, framesDropped, framesPerSecond, jitter, packetsLost, quality, timestamp); } 
-@override String toString() { return 'VideoStats(frameHeight: $frameHeight, frameWidth: $frameWidth, framesDropped: $framesDropped, framesPerSecond: $framesPerSecond, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)'; } 
+          timestamp == other.timestamp;
+
+@override int get hashCode => Object.hash(frameHeight, frameWidth, framesDropped, framesPerSecond, jitter, packetsLost, quality, timestamp);
+
+@override String toString() => 'VideoStats(frameHeight: $frameHeight, frameWidth: $frameWidth, framesDropped: $framesDropped, framesPerSecond: $framesPerSecond, jitter: $jitter, packetsLost: $packetsLost, quality: $quality, timestamp: $timestamp)';
+
  }

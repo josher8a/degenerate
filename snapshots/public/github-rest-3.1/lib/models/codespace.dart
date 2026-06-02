@@ -215,7 +215,7 @@ Codespace copyWith({int? id, String? name, String? Function()? displayName, Stri
   retentionExpiresAt: retentionExpiresAt != null ? retentionExpiresAt() : this.retentionExpiresAt,
   lastKnownStopNotice: lastKnownStopNotice != null ? lastKnownStopNotice() : this.lastKnownStopNotice,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Codespace &&
           id == other.id &&
           name == other.name &&
@@ -248,7 +248,10 @@ Codespace copyWith({int? id, String? name, String? Function()? displayName, Stri
           idleTimeoutNotice == other.idleTimeoutNotice &&
           retentionPeriodMinutes == other.retentionPeriodMinutes &&
           retentionExpiresAt == other.retentionExpiresAt &&
-          lastKnownStopNotice == other.lastKnownStopNotice; } 
-@override int get hashCode { return Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt, lastKnownStopNotice]); } 
-@override String toString() { return 'Codespace(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt, lastKnownStopNotice: $lastKnownStopNotice)'; } 
+          lastKnownStopNotice == other.lastKnownStopNotice;
+
+@override int get hashCode => Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt, lastKnownStopNotice]);
+
+@override String toString() => 'Codespace(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt, lastKnownStopNotice: $lastKnownStopNotice)';
+
  }

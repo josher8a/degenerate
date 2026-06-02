@@ -21,10 +21,13 @@ Contexts copyWith({String? message, String? octicon, }) { return Contexts(
   message: message ?? this.message,
   octicon: octicon ?? this.octicon,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Contexts &&
           message == other.message &&
-          octicon == other.octicon; } 
-@override int get hashCode { return Object.hash(message, octicon); } 
-@override String toString() { return 'Contexts(message: $message, octicon: $octicon)'; } 
+          octicon == other.octicon;
+
+@override int get hashCode => Object.hash(message, octicon);
+
+@override String toString() => 'Contexts(message: $message, octicon: $octicon)';
+
  }

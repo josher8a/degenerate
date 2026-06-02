@@ -109,7 +109,7 @@ UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, Dat
   pricingQuantity: pricingQuantity ?? this.pricingQuantity,
   serviceName: serviceName ?? this.serviceName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UsageRecord &&
           billingCurrency == other.billingCurrency &&
           billingPeriodStart == other.billingPeriodStart &&
@@ -121,7 +121,10 @@ UsageRecord copyWith({String? billingCurrency, DateTime? billingPeriodStart, Dat
           cumulatedContractedCost == other.cumulatedContractedCost &&
           cumulatedPricingQuantity == other.cumulatedPricingQuantity &&
           pricingQuantity == other.pricingQuantity &&
-          serviceName == other.serviceName; } 
-@override int get hashCode { return Object.hash(billingCurrency, billingPeriodStart, chargePeriodEnd, chargePeriodStart, consumedQuantity, consumedUnit, contractedCost, cumulatedContractedCost, cumulatedPricingQuantity, pricingQuantity, serviceName); } 
-@override String toString() { return 'UsageRecord(billingCurrency: $billingCurrency, billingPeriodStart: $billingPeriodStart, chargePeriodEnd: $chargePeriodEnd, chargePeriodStart: $chargePeriodStart, consumedQuantity: $consumedQuantity, consumedUnit: $consumedUnit, contractedCost: $contractedCost, cumulatedContractedCost: $cumulatedContractedCost, cumulatedPricingQuantity: $cumulatedPricingQuantity, pricingQuantity: $pricingQuantity, serviceName: $serviceName)'; } 
+          serviceName == other.serviceName;
+
+@override int get hashCode => Object.hash(billingCurrency, billingPeriodStart, chargePeriodEnd, chargePeriodStart, consumedQuantity, consumedUnit, contractedCost, cumulatedContractedCost, cumulatedPricingQuantity, pricingQuantity, serviceName);
+
+@override String toString() => 'UsageRecord(billingCurrency: $billingCurrency, billingPeriodStart: $billingPeriodStart, chargePeriodEnd: $chargePeriodEnd, chargePeriodStart: $chargePeriodStart, consumedQuantity: $consumedQuantity, consumedUnit: $consumedUnit, contractedCost: $contractedCost, cumulatedContractedCost: $cumulatedContractedCost, cumulatedPricingQuantity: $cumulatedPricingQuantity, pricingQuantity: $pricingQuantity, serviceName: $serviceName)';
+
  }

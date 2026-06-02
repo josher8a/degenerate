@@ -21,10 +21,13 @@ R2AccountLevelMetrics copyWith({R2ClassBasedMetrics? Function()? infrequentAcces
   infrequentAccess: infrequentAccess != null ? infrequentAccess() : this.infrequentAccess,
   standard: standard != null ? standard() : this.standard,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2AccountLevelMetrics &&
           infrequentAccess == other.infrequentAccess &&
-          standard == other.standard; } 
-@override int get hashCode { return Object.hash(infrequentAccess, standard); } 
-@override String toString() { return 'R2AccountLevelMetrics(infrequentAccess: $infrequentAccess, standard: $standard)'; } 
+          standard == other.standard;
+
+@override int get hashCode => Object.hash(infrequentAccess, standard);
+
+@override String toString() => 'R2AccountLevelMetrics(infrequentAccess: $infrequentAccess, standard: $standard)';
+
  }

@@ -36,11 +36,14 @@ RunGraderRequest copyWith({Grader? grader, Map<String, dynamic>? Function()? ite
   item: item != null ? item() : this.item,
   modelSample: modelSample ?? this.modelSample,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RunGraderRequest &&
           grader == other.grader &&
           item == other.item &&
-          modelSample == other.modelSample; } 
-@override int get hashCode { return Object.hash(grader, item, modelSample); } 
-@override String toString() { return 'RunGraderRequest(grader: $grader, item: $item, modelSample: $modelSample)'; } 
+          modelSample == other.modelSample;
+
+@override int get hashCode => Object.hash(grader, item, modelSample);
+
+@override String toString() => 'RunGraderRequest(grader: $grader, item: $item, modelSample: $modelSample)';
+
  }

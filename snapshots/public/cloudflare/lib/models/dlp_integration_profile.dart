@@ -51,7 +51,7 @@ DlpIntegrationProfile copyWith({DateTime? createdAt, String? Function()? descrip
   sharedEntries: sharedEntries ?? this.sharedEntries,
   updatedAt: updatedAt ?? this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpIntegrationProfile &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -59,7 +59,10 @@ DlpIntegrationProfile copyWith({DateTime? createdAt, String? Function()? descrip
           id == other.id &&
           name == other.name &&
           listEquals(sharedEntries, other.sharedEntries) &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(entries), id, name, Object.hashAll(sharedEntries), updatedAt); } 
-@override String toString() { return 'DlpIntegrationProfile(createdAt: $createdAt, description: $description, entries: $entries, id: $id, name: $name, sharedEntries: $sharedEntries, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, description, Object.hashAll(entries), id, name, Object.hashAll(sharedEntries), updatedAt);
+
+@override String toString() => 'DlpIntegrationProfile(createdAt: $createdAt, description: $description, entries: $entries, id: $id, name: $name, sharedEntries: $sharedEntries, updatedAt: $updatedAt)';
+
  }

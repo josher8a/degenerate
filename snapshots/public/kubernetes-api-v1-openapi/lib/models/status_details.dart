@@ -47,14 +47,17 @@ StatusDetails copyWith({List<StatusCause>? Function()? causes, String? Function(
   retryAfterSeconds: retryAfterSeconds != null ? retryAfterSeconds() : this.retryAfterSeconds,
   uid: uid != null ? uid() : this.uid,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StatusDetails &&
           listEquals(causes, other.causes) &&
           group == other.group &&
           kind == other.kind &&
           name == other.name &&
           retryAfterSeconds == other.retryAfterSeconds &&
-          uid == other.uid; } 
-@override int get hashCode { return Object.hash(Object.hashAll(causes ?? const []), group, kind, name, retryAfterSeconds, uid); } 
-@override String toString() { return 'StatusDetails(causes: $causes, group: $group, kind: $kind, name: $name, retryAfterSeconds: $retryAfterSeconds, uid: $uid)'; } 
+          uid == other.uid;
+
+@override int get hashCode => Object.hash(Object.hashAll(causes ?? const []), group, kind, name, retryAfterSeconds, uid);
+
+@override String toString() => 'StatusDetails(causes: $causes, group: $group, kind: $kind, name: $name, retryAfterSeconds: $retryAfterSeconds, uid: $uid)';
+
  }

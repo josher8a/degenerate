@@ -17,7 +17,8 @@ final class PostEventDoRevertError$400 extends PostEventDoRevertError {const Pos
 
 final PostEventDoRevertResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class PostEventDoRevertError$Unknown extends PostEventDoRevertError {const PostEventDoRevertError$Unknown(this.statusCode, this.rawBody, );
 

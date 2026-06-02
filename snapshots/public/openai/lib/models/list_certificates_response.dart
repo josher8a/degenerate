@@ -39,13 +39,16 @@ ListCertificatesResponse copyWith({List<Certificate>? data, String? Function()? 
   hasMore: hasMore ?? this.hasMore,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ListCertificatesResponse &&
           listEquals(data, other.data) &&
           firstId == other.firstId &&
           lastId == other.lastId &&
           hasMore == other.hasMore &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(Object.hashAll(data), firstId, lastId, hasMore, object); } 
-@override String toString() { return 'ListCertificatesResponse(data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(Object.hashAll(data), firstId, lastId, hasMore, object);
+
+@override String toString() => 'ListCertificatesResponse(data: $data, firstId: $firstId, lastId: $lastId, hasMore: $hasMore, object: $object)';
+
  }

@@ -23,10 +23,13 @@ Documented copyWith({String? Function()? field1, int? Function()? field2, }) { r
   field1: field1 != null ? field1() : this.field1,
   field2: field2 != null ? field2() : this.field2,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Documented &&
           field1 == other.field1 &&
-          field2 == other.field2; } 
-@override int get hashCode { return Object.hash(field1, field2); } 
-@override String toString() { return 'Documented(field1: $field1, field2: $field2)'; } 
+          field2 == other.field2;
+
+@override int get hashCode => Object.hash(field1, field2);
+
+@override String toString() => 'Documented(field1: $field1, field2: $field2)';
+
  }

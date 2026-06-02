@@ -40,7 +40,8 @@ final ZeroTrustGatewayProxyEndpointIdentity zeroTrustGatewayProxyEndpointIdentit
 
 @override String get kind => 'identity';
 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIdentity.toJson(), 'kind': kind}; } 
+@override Map<String, dynamic> toJson() => {...zeroTrustGatewayProxyEndpointIdentity.toJson(), 'kind': kind};
+
 ZeroTrustGatewayProxyEndpointsIdentity copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIdentity(zeroTrustGatewayProxyEndpointIdentity.copyWith(
   createdAt: createdAt,
   id: id,
@@ -48,10 +49,13 @@ ZeroTrustGatewayProxyEndpointsIdentity copyWith({ZeroTrustGatewayReadOnlyTimesta
   subdomain: subdomain,
   updatedAt: updatedAt,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsIdentity && zeroTrustGatewayProxyEndpointIdentity == other.zeroTrustGatewayProxyEndpointIdentity; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIdentity.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpoints.identity($zeroTrustGatewayProxyEndpointIdentity)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsIdentity && zeroTrustGatewayProxyEndpointIdentity == other.zeroTrustGatewayProxyEndpointIdentity;
+
+@override int get hashCode => zeroTrustGatewayProxyEndpointIdentity.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpoints.identity($zeroTrustGatewayProxyEndpointIdentity)';
+
 @override ZeroTrustGatewayReadOnlyTimestamp? get createdAt => zeroTrustGatewayProxyEndpointIdentity.createdAt;
 
 @override ZeroTrustGatewayComponentsSchemasUuid? get id => zeroTrustGatewayProxyEndpointIdentity.id;
@@ -71,7 +75,8 @@ final ZeroTrustGatewayProxyEndpointIp zeroTrustGatewayProxyEndpointIp;
 
 @override String get kind => 'ip';
 
-@override Map<String, dynamic> toJson() { return {...zeroTrustGatewayProxyEndpointIp.toJson(), 'kind': kind}; } 
+@override Map<String, dynamic> toJson() => {...zeroTrustGatewayProxyEndpointIp.toJson(), 'kind': kind};
+
 ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Function()? createdAt, ZeroTrustGatewayComponentsSchemasUuid? Function()? id, List<String>? ips, ZeroTrustGatewayProxyEndpointsComponentsSchemasName? name, ZeroTrustGatewaySchemasSubdomain? Function()? subdomain, ZeroTrustGatewayReadOnlyTimestamp? Function()? updatedAt, }) { return ZeroTrustGatewayProxyEndpointsIp(zeroTrustGatewayProxyEndpointIp.copyWith(
   createdAt: createdAt,
   id: id,
@@ -80,10 +85,13 @@ ZeroTrustGatewayProxyEndpointsIp copyWith({ZeroTrustGatewayReadOnlyTimestamp? Fu
   subdomain: subdomain,
   updatedAt: updatedAt,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointsIp && zeroTrustGatewayProxyEndpointIp == other.zeroTrustGatewayProxyEndpointIp; } 
-@override int get hashCode { return zeroTrustGatewayProxyEndpointIp.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpoints.ip($zeroTrustGatewayProxyEndpointIp)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpointsIp && zeroTrustGatewayProxyEndpointIp == other.zeroTrustGatewayProxyEndpointIp;
+
+@override int get hashCode => zeroTrustGatewayProxyEndpointIp.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpoints.ip($zeroTrustGatewayProxyEndpointIp)';
+
 @override ZeroTrustGatewayReadOnlyTimestamp? get createdAt => zeroTrustGatewayProxyEndpointIp.createdAt;
 
 @override ZeroTrustGatewayComponentsSchemasUuid? get id => zeroTrustGatewayProxyEndpointIp.id;
@@ -103,11 +111,15 @@ final Map<String, dynamic> json;
 
 @override String get kind => json['kind'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpoints$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayProxyEndpoints.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayProxyEndpoints$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayProxyEndpoints.unknown($json)';
+
 @override ZeroTrustGatewayReadOnlyTimestamp? get createdAt => json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null;
 
 @override ZeroTrustGatewayComponentsSchemasUuid? get id => json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null;

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardholderObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardholderObject($value)';
+
  }
 /// Specifies whether to permit authorizations on this cardholder's cards.
 @immutable final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
@@ -45,10 +48,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingCardholderStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingCardholderStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardholderStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingCardholderStatus($value)';
+
  }
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.
 /// 
@@ -180,7 +186,7 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholder
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingCardholder &&
           billing == other.billing &&
           company == other.company &&
@@ -197,7 +203,10 @@ IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholder
           requirements == other.requirements &&
           spendingControls == other.spendingControls &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales ?? const []), requirements, spendingControls, status, type); } 
-@override String toString() { return 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(billing, company, created, email, id, individual, livemode, metadata, name, object, phoneNumber, Object.hashAll(preferredLocales ?? const []), requirements, spendingControls, status, type);
+
+@override String toString() => 'IssuingCardholder(billing: $billing, company: $company, created: $created, email: $email, id: $id, individual: $individual, livemode: $livemode, metadata: $metadata, name: $name, object: $object, phoneNumber: $phoneNumber, preferredLocales: $preferredLocales, requirements: $requirements, spendingControls: $spendingControls, status: $status, type: $type)';
+
  }

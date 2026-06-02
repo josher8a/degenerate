@@ -36,11 +36,14 @@ Saml copyWith({String? attributeName, String? attributeValue, String? identityPr
   attributeValue: attributeValue ?? this.attributeValue,
   identityProviderId: identityProviderId ?? this.identityProviderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Saml &&
           attributeName == other.attributeName &&
           attributeValue == other.attributeValue &&
-          identityProviderId == other.identityProviderId; } 
-@override int get hashCode { return Object.hash(attributeName, attributeValue, identityProviderId); } 
-@override String toString() { return 'Saml(attributeName: $attributeName, attributeValue: $attributeValue, identityProviderId: $identityProviderId)'; } 
+          identityProviderId == other.identityProviderId;
+
+@override int get hashCode => Object.hash(attributeName, attributeValue, identityProviderId);
+
+@override String toString() => 'Saml(attributeName: $attributeName, attributeValue: $attributeValue, identityProviderId: $identityProviderId)';
+
  }

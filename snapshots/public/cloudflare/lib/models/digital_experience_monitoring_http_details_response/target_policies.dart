@@ -28,11 +28,14 @@ TargetPolicies copyWith({bool? $default, DigitalExperienceMonitoringUuid? id, St
   id: id ?? this.id,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TargetPolicies &&
           $default == other.$default &&
           id == other.id &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash($default, id, name); } 
-@override String toString() { return 'TargetPolicies(\$default: ${$default}, id: $id, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash($default, id, name);
+
+@override String toString() => 'TargetPolicies(\$default: ${$default}, id: $id, name: $name)';
+
  }

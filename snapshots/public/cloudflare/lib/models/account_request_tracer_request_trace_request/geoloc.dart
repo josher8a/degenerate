@@ -62,7 +62,7 @@ Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? 
   subdivision2IsoCode: subdivision2IsoCode != null ? subdivision2IsoCode() : this.subdivision2IsoCode,
   timezone: timezone != null ? timezone() : this.timezone,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Geoloc &&
           city == other.city &&
           continent == other.continent &&
@@ -73,7 +73,10 @@ Geoloc copyWith({String? Function()? city, String? Function()? continent, bool? 
           postalCode == other.postalCode &&
           regionCode == other.regionCode &&
           subdivision2IsoCode == other.subdivision2IsoCode &&
-          timezone == other.timezone; } 
-@override int get hashCode { return Object.hash(city, continent, isEuCountry, isoCode, latitude, longitude, postalCode, regionCode, subdivision2IsoCode, timezone); } 
-@override String toString() { return 'Geoloc(city: $city, continent: $continent, isEuCountry: $isEuCountry, isoCode: $isoCode, latitude: $latitude, longitude: $longitude, postalCode: $postalCode, regionCode: $regionCode, subdivision2IsoCode: $subdivision2IsoCode, timezone: $timezone)'; } 
+          timezone == other.timezone;
+
+@override int get hashCode => Object.hash(city, continent, isEuCountry, isoCode, latitude, longitude, postalCode, regionCode, subdivision2IsoCode, timezone);
+
+@override String toString() => 'Geoloc(city: $city, continent: $continent, isEuCountry: $isEuCountry, isoCode: $isoCode, latitude: $latitude, longitude: $longitude, postalCode: $postalCode, regionCode: $regionCode, subdivision2IsoCode: $subdivision2IsoCode, timezone: $timezone)';
+
  }

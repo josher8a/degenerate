@@ -28,10 +28,13 @@ BillingBillResourceInvoicingPricingPricingPriceDetails copyWith({BillingBillReso
   price: price ?? this.price,
   product: product ?? this.product,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BillingBillResourceInvoicingPricingPricingPriceDetails &&
           price == other.price &&
-          product == other.product; } 
-@override int get hashCode { return Object.hash(price, product); } 
-@override String toString() { return 'BillingBillResourceInvoicingPricingPricingPriceDetails(price: $price, product: $product)'; } 
+          product == other.product;
+
+@override int get hashCode => Object.hash(price, product);
+
+@override String toString() => 'BillingBillResourceInvoicingPricingPricingPriceDetails(price: $price, product: $product)';
+
  }

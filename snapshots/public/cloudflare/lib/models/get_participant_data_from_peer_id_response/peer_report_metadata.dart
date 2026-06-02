@@ -75,7 +75,7 @@ PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevice
   speakerDevicesUpdates: speakerDevicesUpdates != null ? speakerDevicesUpdates() : this.speakerDevicesUpdates,
   videoDevicesUpdates: videoDevicesUpdates != null ? videoDevicesUpdates() : this.videoDevicesUpdates,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PeerReportMetadata &&
           listEquals(audioDevicesUpdates, other.audioDevicesUpdates) &&
           browserMetadata == other.browserMetadata &&
@@ -89,7 +89,10 @@ PeerReportMetadata copyWith({List<Map<String, dynamic>>? Function()? audioDevice
           sdkVersion == other.sdkVersion &&
           listEquals(selectedDeviceUpdates, other.selectedDeviceUpdates) &&
           listEquals(speakerDevicesUpdates, other.speakerDevicesUpdates) &&
-          listEquals(videoDevicesUpdates, other.videoDevicesUpdates); } 
-@override int get hashCode { return Object.hash(Object.hashAll(audioDevicesUpdates ?? const []), browserMetadata, candidatePairs, deviceInfo, Object.hashAll(events ?? const []), ipInformation, Object.hashAll(pcMetadata ?? const []), roomViewType, sdkName, sdkVersion, Object.hashAll(selectedDeviceUpdates ?? const []), Object.hashAll(speakerDevicesUpdates ?? const []), Object.hashAll(videoDevicesUpdates ?? const [])); } 
-@override String toString() { return 'PeerReportMetadata(audioDevicesUpdates: $audioDevicesUpdates, browserMetadata: $browserMetadata, candidatePairs: $candidatePairs, deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, pcMetadata: $pcMetadata, roomViewType: $roomViewType, sdkName: $sdkName, sdkVersion: $sdkVersion, selectedDeviceUpdates: $selectedDeviceUpdates, speakerDevicesUpdates: $speakerDevicesUpdates, videoDevicesUpdates: $videoDevicesUpdates)'; } 
+          listEquals(videoDevicesUpdates, other.videoDevicesUpdates);
+
+@override int get hashCode => Object.hash(Object.hashAll(audioDevicesUpdates ?? const []), browserMetadata, candidatePairs, deviceInfo, Object.hashAll(events ?? const []), ipInformation, Object.hashAll(pcMetadata ?? const []), roomViewType, sdkName, sdkVersion, Object.hashAll(selectedDeviceUpdates ?? const []), Object.hashAll(speakerDevicesUpdates ?? const []), Object.hashAll(videoDevicesUpdates ?? const []));
+
+@override String toString() => 'PeerReportMetadata(audioDevicesUpdates: $audioDevicesUpdates, browserMetadata: $browserMetadata, candidatePairs: $candidatePairs, deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, pcMetadata: $pcMetadata, roomViewType: $roomViewType, sdkName: $sdkName, sdkVersion: $sdkVersion, selectedDeviceUpdates: $selectedDeviceUpdates, speakerDevicesUpdates: $speakerDevicesUpdates, videoDevicesUpdates: $videoDevicesUpdates)';
+
  }

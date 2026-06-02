@@ -31,12 +31,15 @@ SmartshieldSmartShieldSettings copyWith({SmartshieldSmartShieldSettingsCacheRese
   smartRouting: smartRouting != null ? smartRouting() : this.smartRouting,
   smartTieredCache: smartTieredCache != null ? smartTieredCache() : this.smartTieredCache,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SmartshieldSmartShieldSettings &&
           cacheReserve == other.cacheReserve &&
           regionalTieredCache == other.regionalTieredCache &&
           smartRouting == other.smartRouting &&
-          smartTieredCache == other.smartTieredCache; } 
-@override int get hashCode { return Object.hash(cacheReserve, regionalTieredCache, smartRouting, smartTieredCache); } 
-@override String toString() { return 'SmartshieldSmartShieldSettings(cacheReserve: $cacheReserve, regionalTieredCache: $regionalTieredCache, smartRouting: $smartRouting, smartTieredCache: $smartTieredCache)'; } 
+          smartTieredCache == other.smartTieredCache;
+
+@override int get hashCode => Object.hash(cacheReserve, regionalTieredCache, smartRouting, smartTieredCache);
+
+@override String toString() => 'SmartshieldSmartShieldSettings(cacheReserve: $cacheReserve, regionalTieredCache: $regionalTieredCache, smartRouting: $smartRouting, smartTieredCache: $smartTieredCache)';
+
  }

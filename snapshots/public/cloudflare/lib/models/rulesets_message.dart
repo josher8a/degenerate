@@ -37,11 +37,14 @@ RulesetsMessage copyWith({int? Function()? code, String? message, RulesetsMessag
   message: message ?? this.message,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RulesetsMessage &&
           code == other.code &&
           message == other.message &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(code, message, source); } 
-@override String toString() { return 'RulesetsMessage(code: $code, message: $message, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(code, message, source);
+
+@override String toString() => 'RulesetsMessage(code: $code, message: $message, source: $source)';
+
  }

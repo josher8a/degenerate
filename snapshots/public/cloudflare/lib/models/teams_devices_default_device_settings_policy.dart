@@ -116,7 +116,7 @@ TeamsDevicesDefaultDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? F
   switchLocked: switchLocked != null ? switchLocked() : this.switchLocked,
   tunnelProtocol: tunnelProtocol != null ? tunnelProtocol() : this.tunnelProtocol,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesDefaultDeviceSettingsPolicy &&
           allowModeSwitch == other.allowModeSwitch &&
           allowUpdates == other.allowUpdates &&
@@ -136,7 +136,10 @@ TeamsDevicesDefaultDeviceSettingsPolicy copyWith({TeamsDevicesAllowModeSwitch? F
           serviceModeV2 == other.serviceModeV2 &&
           supportUrl == other.supportUrl &&
           switchLocked == other.switchLocked &&
-          tunnelProtocol == other.tunnelProtocol; } 
-@override int get hashCode { return Object.hash(allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, $default, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(fallbackDomains ?? const []), gatewayUniqueId, Object.hashAll(include ?? const []), registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, tunnelProtocol); } 
-@override String toString() { return 'TeamsDevicesDefaultDeviceSettingsPolicy(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, \$default: ${$default}, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, fallbackDomains: $fallbackDomains, gatewayUniqueId: $gatewayUniqueId, include: $include, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, tunnelProtocol: $tunnelProtocol)'; } 
+          tunnelProtocol == other.tunnelProtocol;
+
+@override int get hashCode => Object.hash(allowModeSwitch, allowUpdates, allowedToLeave, autoConnect, captivePortal, $default, disableAutoFallback, enabled, Object.hashAll(exclude ?? const []), excludeOfficeIps, Object.hashAll(fallbackDomains ?? const []), gatewayUniqueId, Object.hashAll(include ?? const []), registerInterfaceIpWithDns, sccmVpnBoundarySupport, serviceModeV2, supportUrl, switchLocked, tunnelProtocol);
+
+@override String toString() => 'TeamsDevicesDefaultDeviceSettingsPolicy(allowModeSwitch: $allowModeSwitch, allowUpdates: $allowUpdates, allowedToLeave: $allowedToLeave, autoConnect: $autoConnect, captivePortal: $captivePortal, \$default: ${$default}, disableAutoFallback: $disableAutoFallback, enabled: $enabled, exclude: $exclude, excludeOfficeIps: $excludeOfficeIps, fallbackDomains: $fallbackDomains, gatewayUniqueId: $gatewayUniqueId, include: $include, registerInterfaceIpWithDns: $registerInterfaceIpWithDns, sccmVpnBoundarySupport: $sccmVpnBoundarySupport, serviceModeV2: $serviceModeV2, supportUrl: $supportUrl, switchLocked: $switchLocked, tunnelProtocol: $tunnelProtocol)';
+
  }

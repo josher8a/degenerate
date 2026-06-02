@@ -25,10 +25,13 @@ L4override copyWith({String? Function()? ip, int? Function()? port, }) { return 
   ip: ip != null ? ip() : this.ip,
   port: port != null ? port() : this.port,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is L4override &&
           ip == other.ip &&
-          port == other.port; } 
-@override int get hashCode { return Object.hash(ip, port); } 
-@override String toString() { return 'L4override(ip: $ip, port: $port)'; } 
+          port == other.port;
+
+@override int get hashCode => Object.hash(ip, port);
+
+@override String toString() => 'L4override(ip: $ip, port: $port)';
+
  }

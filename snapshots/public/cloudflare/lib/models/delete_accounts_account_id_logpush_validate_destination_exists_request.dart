@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
 DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest copyWith({LogpushDestinationConf? destinationConf}) { return DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest(
   destinationConf: destinationConf ?? this.destinationConf,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest &&
-          destinationConf == other.destinationConf; } 
-@override int get hashCode { return destinationConf.hashCode; } 
-@override String toString() { return 'DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest(destinationConf: $destinationConf)'; } 
+          destinationConf == other.destinationConf;
+
+@override int get hashCode => destinationConf.hashCode;
+
+@override String toString() => 'DeleteAccountsAccountIdLogpushValidateDestinationExistsRequest(destinationConf: $destinationConf)';
+
  }

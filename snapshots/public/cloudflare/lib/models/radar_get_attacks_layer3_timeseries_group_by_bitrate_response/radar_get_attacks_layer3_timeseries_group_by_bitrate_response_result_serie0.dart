@@ -45,14 +45,17 @@ RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 copyWith({List
   under500Mbps: under500Mbps ?? this.under500Mbps,
   timestamps: timestamps ?? this.timestamps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0 &&
           listEquals($1GbpsTo10Gbps, other.$1GbpsTo10Gbps) &&
           listEquals($10GbpsTo100Gbps, other.$10GbpsTo100Gbps) &&
           listEquals($500MbpsTo1Gbps, other.$500MbpsTo1Gbps) &&
           listEquals(over100Gbps, other.over100Gbps) &&
           listEquals(under500Mbps, other.under500Mbps) &&
-          listEquals(timestamps, other.timestamps); } 
-@override int get hashCode { return Object.hash(Object.hashAll($1GbpsTo10Gbps), Object.hashAll($10GbpsTo100Gbps), Object.hashAll($500MbpsTo1Gbps), Object.hashAll(over100Gbps), Object.hashAll(under500Mbps), Object.hashAll(timestamps)); } 
-@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps, timestamps: $timestamps)'; } 
+          listEquals(timestamps, other.timestamps);
+
+@override int get hashCode => Object.hash(Object.hashAll($1GbpsTo10Gbps), Object.hashAll($10GbpsTo100Gbps), Object.hashAll($500MbpsTo1Gbps), Object.hashAll(over100Gbps), Object.hashAll(under500Mbps), Object.hashAll(timestamps));
+
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByBitrateResponseResultSerie0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps, timestamps: $timestamps)';
+
  }

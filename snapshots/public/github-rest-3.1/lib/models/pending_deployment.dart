@@ -44,13 +44,16 @@ PendingDeployment copyWith({PendingDeploymentEnvironment? environment, int? wait
   currentUserCanApprove: currentUserCanApprove ?? this.currentUserCanApprove,
   reviewers: reviewers ?? this.reviewers,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PendingDeployment &&
           environment == other.environment &&
           waitTimer == other.waitTimer &&
           waitTimerStartedAt == other.waitTimerStartedAt &&
           currentUserCanApprove == other.currentUserCanApprove &&
-          listEquals(reviewers, other.reviewers); } 
-@override int get hashCode { return Object.hash(environment, waitTimer, waitTimerStartedAt, currentUserCanApprove, Object.hashAll(reviewers)); } 
-@override String toString() { return 'PendingDeployment(environment: $environment, waitTimer: $waitTimer, waitTimerStartedAt: $waitTimerStartedAt, currentUserCanApprove: $currentUserCanApprove, reviewers: $reviewers)'; } 
+          listEquals(reviewers, other.reviewers);
+
+@override int get hashCode => Object.hash(environment, waitTimer, waitTimerStartedAt, currentUserCanApprove, Object.hashAll(reviewers));
+
+@override String toString() => 'PendingDeployment(environment: $environment, waitTimer: $waitTimer, waitTimerStartedAt: $waitTimerStartedAt, currentUserCanApprove: $currentUserCanApprove, reviewers: $reviewers)';
+
  }

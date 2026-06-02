@@ -33,12 +33,15 @@ DlpBehavior copyWith({String? description, bool? enabled, String? name, DlpRiskL
   name: name ?? this.name,
   riskLevel: riskLevel ?? this.riskLevel,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DlpBehavior &&
           description == other.description &&
           enabled == other.enabled &&
           name == other.name &&
-          riskLevel == other.riskLevel; } 
-@override int get hashCode { return Object.hash(description, enabled, name, riskLevel); } 
-@override String toString() { return 'DlpBehavior(description: $description, enabled: $enabled, name: $name, riskLevel: $riskLevel)'; } 
+          riskLevel == other.riskLevel;
+
+@override int get hashCode => Object.hash(description, enabled, name, riskLevel);
+
+@override String toString() => 'DlpBehavior(description: $description, enabled: $enabled, name: $name, riskLevel: $riskLevel)';
+
  }

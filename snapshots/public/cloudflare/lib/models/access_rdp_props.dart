@@ -20,10 +20,13 @@ AccessRdpProps copyWith({List<AccessTargetCriteriaSelfHostedApp>? targetCriteria
   targetCriteria: targetCriteria ?? this.targetCriteria,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessRdpProps &&
           listEquals(targetCriteria, other.targetCriteria) &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(Object.hashAll(targetCriteria), type); } 
-@override String toString() { return 'AccessRdpProps(targetCriteria: $targetCriteria, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(Object.hashAll(targetCriteria), type);
+
+@override String toString() => 'AccessRdpProps(targetCriteria: $targetCriteria, type: $type)';
+
  }

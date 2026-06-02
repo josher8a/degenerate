@@ -31,12 +31,15 @@ RepositoryRuleViolationError copyWith({String? Function()? message, String? Func
   status: status != null ? status() : this.status,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleViolationError &&
           message == other.message &&
           documentationUrl == other.documentationUrl &&
           status == other.status &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(message, documentationUrl, status, metadata); } 
-@override String toString() { return 'RepositoryRuleViolationError(message: $message, documentationUrl: $documentationUrl, status: $status, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(message, documentationUrl, status, metadata);
+
+@override String toString() => 'RepositoryRuleViolationError(message: $message, documentationUrl: $documentationUrl, status: $status, metadata: $metadata)';
+
  }

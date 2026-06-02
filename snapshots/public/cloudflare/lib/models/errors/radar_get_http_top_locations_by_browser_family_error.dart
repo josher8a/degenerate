@@ -17,7 +17,8 @@ final class RadarGetHttpTopLocationsByBrowserFamilyError$404 extends RadarGetHtt
 
 final RadarGetHttpTopLocationsByBrowserFamilyResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetHttpTopLocationsByBrowserFamilyError$Unknown extends RadarGetHttpTopLocationsByBrowserFamilyError {const RadarGetHttpTopLocationsByBrowserFamilyError$Unknown(this.statusCode, this.rawBody, );
 

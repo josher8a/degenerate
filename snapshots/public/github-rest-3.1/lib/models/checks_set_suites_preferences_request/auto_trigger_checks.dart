@@ -21,10 +21,13 @@ AutoTriggerChecks copyWith({int? appId, bool? setting, }) { return AutoTriggerCh
   appId: appId ?? this.appId,
   setting: setting ?? this.setting,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AutoTriggerChecks &&
           appId == other.appId &&
-          setting == other.setting; } 
-@override int get hashCode { return Object.hash(appId, setting); } 
-@override String toString() { return 'AutoTriggerChecks(appId: $appId, setting: $setting)'; } 
+          setting == other.setting;
+
+@override int get hashCode => Object.hash(appId, setting);
+
+@override String toString() => 'AutoTriggerChecks(appId: $appId, setting: $setting)';
+
  }

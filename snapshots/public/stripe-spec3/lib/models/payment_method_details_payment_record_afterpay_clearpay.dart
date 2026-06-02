@@ -34,10 +34,13 @@ PaymentMethodDetailsPaymentRecordAfterpayClearpay copyWith({String? Function()? 
   orderId: orderId != null ? orderId() : this.orderId,
   reference: reference != null ? reference() : this.reference,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentMethodDetailsPaymentRecordAfterpayClearpay &&
           orderId == other.orderId &&
-          reference == other.reference; } 
-@override int get hashCode { return Object.hash(orderId, reference); } 
-@override String toString() { return 'PaymentMethodDetailsPaymentRecordAfterpayClearpay(orderId: $orderId, reference: $reference)'; } 
+          reference == other.reference;
+
+@override int get hashCode => Object.hash(orderId, reference);
+
+@override String toString() => 'PaymentMethodDetailsPaymentRecordAfterpayClearpay(orderId: $orderId, reference: $reference)';
+
  }

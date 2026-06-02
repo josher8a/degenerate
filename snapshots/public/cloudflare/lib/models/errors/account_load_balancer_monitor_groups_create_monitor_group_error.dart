@@ -17,7 +17,8 @@ final class AccountLoadBalancerMonitorGroupsCreateMonitorGroupError$412 extends 
 
 final LoadBalancingMonitorGroupSingleResponse error;
 
-@override int get statusCode { return 412; } 
+@override int get statusCode => 412;
+
  }
 final class AccountLoadBalancerMonitorGroupsCreateMonitorGroupError$Unknown extends AccountLoadBalancerMonitorGroupsCreateMonitorGroupError {const AccountLoadBalancerMonitorGroupsCreateMonitorGroupError$Unknown(this.statusCode, this.rawBody, );
 

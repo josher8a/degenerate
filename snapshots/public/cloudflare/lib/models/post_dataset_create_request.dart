@@ -27,10 +27,13 @@ PostDatasetCreateRequest copyWith({bool? isPublic, String? name, }) { return Pos
   isPublic: isPublic ?? this.isPublic,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostDatasetCreateRequest &&
           isPublic == other.isPublic &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(isPublic, name); } 
-@override String toString() { return 'PostDatasetCreateRequest(isPublic: $isPublic, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(isPublic, name);
+
+@override String toString() => 'PostDatasetCreateRequest(isPublic: $isPublic, name: $name)';
+
  }

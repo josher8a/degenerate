@@ -150,7 +150,7 @@ BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<A
   waitForSelector: waitForSelector != null ? waitForSelector() : this.waitForSelector,
   waitForTimeout: waitForTimeout != null ? waitForTimeout() : this.waitForTimeout,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BrapiPostJsonRequestVariant1 &&
           actionTimeout == other.actionTimeout &&
           listEquals(addScriptTag, other.addScriptTag) &&
@@ -173,7 +173,10 @@ BrapiPostJsonRequestVariant1 copyWith({double? Function()? actionTimeout, List<A
           userAgent == other.userAgent &&
           viewport == other.viewport &&
           waitForSelector == other.waitForSelector &&
-          waitForTimeout == other.waitForTimeout; } 
-@override int get hashCode { return Object.hashAll([actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), Object.hashAll(customAi ?? const []), emulateMediaType, gotoOptions, html, prompt, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), responseFormat, setExtraHttpHeaders, setJavaScriptEnabled, userAgent, viewport, waitForSelector, waitForTimeout]); } 
-@override String toString() { return 'BrapiPostJsonRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, customAi: $customAi, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, html: $html, prompt: $prompt, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, responseFormat: $responseFormat, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)'; } 
+          waitForTimeout == other.waitForTimeout;
+
+@override int get hashCode => Object.hashAll([actionTimeout, Object.hashAll(addScriptTag ?? const []), Object.hashAll(addStyleTag ?? const []), Object.hashAll(allowRequestPattern ?? const []), Object.hashAll(allowResourceTypes ?? const []), authenticate, bestAttempt, Object.hashAll(cookies ?? const []), Object.hashAll(customAi ?? const []), emulateMediaType, gotoOptions, html, prompt, Object.hashAll(rejectRequestPattern ?? const []), Object.hashAll(rejectResourceTypes ?? const []), responseFormat, setExtraHttpHeaders, setJavaScriptEnabled, userAgent, viewport, waitForSelector, waitForTimeout]);
+
+@override String toString() => 'BrapiPostJsonRequestVariant1(actionTimeout: $actionTimeout, addScriptTag: $addScriptTag, addStyleTag: $addStyleTag, allowRequestPattern: $allowRequestPattern, allowResourceTypes: $allowResourceTypes, authenticate: $authenticate, bestAttempt: $bestAttempt, cookies: $cookies, customAi: $customAi, emulateMediaType: $emulateMediaType, gotoOptions: $gotoOptions, html: $html, prompt: $prompt, rejectRequestPattern: $rejectRequestPattern, rejectResourceTypes: $rejectResourceTypes, responseFormat: $responseFormat, setExtraHttpHeaders: $setExtraHttpHeaders, setJavaScriptEnabled: $setJavaScriptEnabled, userAgent: $userAgent, viewport: $viewport, waitForSelector: $waitForSelector, waitForTimeout: $waitForTimeout)';
+
  }

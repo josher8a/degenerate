@@ -43,13 +43,16 @@ StreamsRequest copyWith({CloudflarePipelinesFormat? Function()? format, Http? Fu
   schema: schema != null ? schema() : this.schema,
   workerBinding: workerBinding != null ? workerBinding() : this.workerBinding,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamsRequest &&
           format == other.format &&
           http == other.http &&
           name == other.name &&
           schema == other.schema &&
-          workerBinding == other.workerBinding; } 
-@override int get hashCode { return Object.hash(format, http, name, schema, workerBinding); } 
-@override String toString() { return 'StreamsRequest(format: $format, http: $http, name: $name, schema: $schema, workerBinding: $workerBinding)'; } 
+          workerBinding == other.workerBinding;
+
+@override int get hashCode => Object.hash(format, http, name, schema, workerBinding);
+
+@override String toString() => 'StreamsRequest(format: $format, http: $http, name: $name, schema: $schema, workerBinding: $workerBinding)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcCommonKty && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcCommonKty($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyEcCommonKty && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ShieldCredentialsJwtKeyEcCommonKty($value)';
+
  }
 @immutable final class ShieldCredentialsJwtKeyEcCommon {const ShieldCredentialsJwtKeyEcCommon({required this.kty, required this.x, required this.y, });
 
@@ -52,11 +55,14 @@ ShieldCredentialsJwtKeyEcCommon copyWith({ShieldCredentialsJwtKeyEcCommonKty? kt
   x: x ?? this.x,
   y: y ?? this.y,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldCredentialsJwtKeyEcCommon &&
           kty == other.kty &&
           x == other.x &&
-          y == other.y; } 
-@override int get hashCode { return Object.hash(kty, x, y); } 
-@override String toString() { return 'ShieldCredentialsJwtKeyEcCommon(kty: $kty, x: $x, y: $y)'; } 
+          y == other.y;
+
+@override int get hashCode => Object.hash(kty, x, y);
+
+@override String toString() => 'ShieldCredentialsJwtKeyEcCommon(kty: $kty, x: $x, y: $y)';
+
  }

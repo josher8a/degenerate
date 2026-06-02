@@ -38,12 +38,15 @@ WorkersBindingKindRatelimit copyWith({WorkersBindingName? name, String? namespac
   simple: simple ?? this.simple,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersBindingKindRatelimit &&
           name == other.name &&
           namespaceId == other.namespaceId &&
           simple == other.simple &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(name, namespaceId, simple, type); } 
-@override String toString() { return 'WorkersBindingKindRatelimit(name: $name, namespaceId: $namespaceId, simple: $simple, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(name, namespaceId, simple, type);
+
+@override String toString() => 'WorkersBindingKindRatelimit(name: $name, namespaceId: $namespaceId, simple: $simple, type: $type)';
+
  }

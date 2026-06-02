@@ -52,12 +52,15 @@ RadarGetDnsSummaryByDnssecResponseResultSummary0 copyWith({String? insecure, Str
   other: other ?? this.other,
   secure: secure ?? this.secure,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetDnsSummaryByDnssecResponseResultSummary0 &&
           insecure == other.insecure &&
           invalid == other.invalid &&
           this.other == other.other &&
-          secure == other.secure; } 
-@override int get hashCode { return Object.hash(insecure, invalid, other, secure); } 
-@override String toString() { return 'RadarGetDnsSummaryByDnssecResponseResultSummary0(insecure: $insecure, invalid: $invalid, other: $other, secure: $secure)'; } 
+          secure == other.secure;
+
+@override int get hashCode => Object.hash(insecure, invalid, other, secure);
+
+@override String toString() => 'RadarGetDnsSummaryByDnssecResponseResultSummary0(insecure: $insecure, invalid: $invalid, other: $other, secure: $secure)';
+
  }

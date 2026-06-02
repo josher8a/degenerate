@@ -48,14 +48,17 @@ StreamWatermarkBasicUpload copyWith({String? file, StreamName? Function()? name,
   position: position != null ? position() : this.position,
   scale: scale != null ? scale() : this.scale,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is StreamWatermarkBasicUpload &&
           file == other.file &&
           name == other.name &&
           opacity == other.opacity &&
           padding == other.padding &&
           position == other.position &&
-          scale == other.scale; } 
-@override int get hashCode { return Object.hash(file, name, opacity, padding, position, scale); } 
-@override String toString() { return 'StreamWatermarkBasicUpload(file: $file, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale)'; } 
+          scale == other.scale;
+
+@override int get hashCode => Object.hash(file, name, opacity, padding, position, scale);
+
+@override String toString() => 'StreamWatermarkBasicUpload(file: $file, name: $name, opacity: $opacity, padding: $padding, position: $position, scale: $scale)';
+
  }

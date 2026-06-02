@@ -18,10 +18,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseObject($value)';
+
  }
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
@@ -57,10 +60,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ResponseStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ResponseStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ResponseStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseStatus($value)';
+
  }
 /// Example:
 /// ```json
@@ -346,7 +352,7 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
   parallelToolCalls: parallelToolCalls ?? this.parallelToolCalls,
   conversation: conversation != null ? conversation() : this.conversation,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Response &&
           metadata == other.metadata &&
           topLogprobs == other.topLogprobs &&
@@ -369,7 +375,10 @@ Response copyWith({Map<String, String>? Function()? metadata, int? Function()? t
           outputText == other.outputText &&
           usage == other.usage &&
           parallelToolCalls == other.parallelToolCalls &&
-          conversation == other.conversation; } 
-@override int get hashCode { return Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]); } 
-@override String toString() { return 'Response(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, id: $id, object: $object, status: $status, createdAt: $createdAt, completedAt: $completedAt, error: $error, incompleteDetails: $incompleteDetails, output: $output, instructions: $instructions, outputText: $outputText, usage: $usage, parallelToolCalls: $parallelToolCalls, conversation: $conversation)'; } 
+          conversation == other.conversation;
+
+@override int get hashCode => Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, id, object, status, createdAt, completedAt, error, incompleteDetails, Object.hashAll(output), instructions, outputText, usage, parallelToolCalls, conversation]);
+
+@override String toString() => 'Response(metadata: $metadata, topLogprobs: $topLogprobs, temperature: $temperature, topP: $topP, user: $user, safetyIdentifier: $safetyIdentifier, promptCacheKey: $promptCacheKey, serviceTier: $serviceTier, promptCacheRetention: $promptCacheRetention, id: $id, object: $object, status: $status, createdAt: $createdAt, completedAt: $completedAt, error: $error, incompleteDetails: $incompleteDetails, output: $output, instructions: $instructions, outputText: $outputText, usage: $usage, parallelToolCalls: $parallelToolCalls, conversation: $conversation)';
+
  }

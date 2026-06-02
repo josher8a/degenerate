@@ -16,10 +16,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BillingModeType && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BillingModeType($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingModeType && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BillingModeType($value)';
+
  }
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 @immutable final class PostSubscriptionsSubscriptionMigrateRequestBillingMode {const PostSubscriptionsSubscriptionMigrateRequestBillingMode({required this.type, this.flexible, });
@@ -42,10 +45,13 @@ PostSubscriptionsSubscriptionMigrateRequestBillingMode copyWith({Flexible? Funct
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostSubscriptionsSubscriptionMigrateRequestBillingMode &&
           flexible == other.flexible &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(flexible, type); } 
-@override String toString() { return 'PostSubscriptionsSubscriptionMigrateRequestBillingMode(flexible: $flexible, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(flexible, type);
+
+@override String toString() => 'PostSubscriptionsSubscriptionMigrateRequestBillingMode(flexible: $flexible, type: $type)';
+
  }

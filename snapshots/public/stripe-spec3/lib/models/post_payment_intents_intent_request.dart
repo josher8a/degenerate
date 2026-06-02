@@ -211,7 +211,7 @@ PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIn
   transferData: transferData != null ? transferData() : this.transferData,
   transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPaymentIntentsIntentRequest &&
           amount == other.amount &&
           amountDetails == other.amountDetails &&
@@ -237,7 +237,10 @@ PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIn
           statementDescriptor == other.statementDescriptor &&
           statementDescriptorSuffix == other.statementDescriptorSuffix &&
           transferData == other.transferData &&
-          transferGroup == other.transferGroup; } 
-@override int get hashCode { return Object.hashAll([amount, amountDetails, applicationFeeAmount, captureMethod, currency, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup]); } 
-@override String toString() { return 'PostPaymentIntentsIntentRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)'; } 
+          transferGroup == other.transferGroup;
+
+@override int get hashCode => Object.hashAll([amount, amountDetails, applicationFeeAmount, captureMethod, currency, customer, customerAccount, description, excludedPaymentMethodTypes, Object.hashAll(expand ?? const []), hooks, metadata, paymentDetails, paymentMethod, paymentMethodConfiguration, paymentMethodData, paymentMethodOptions, Object.hashAll(paymentMethodTypes ?? const []), receiptEmail, setupFutureUsage, shipping, statementDescriptor, statementDescriptorSuffix, transferData, transferGroup]);
+
+@override String toString() => 'PostPaymentIntentsIntentRequest(amount: $amount, amountDetails: $amountDetails, applicationFeeAmount: $applicationFeeAmount, captureMethod: $captureMethod, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, excludedPaymentMethodTypes: $excludedPaymentMethodTypes, expand: $expand, hooks: $hooks, metadata: $metadata, paymentDetails: $paymentDetails, paymentMethod: $paymentMethod, paymentMethodConfiguration: $paymentMethodConfiguration, paymentMethodData: $paymentMethodData, paymentMethodOptions: $paymentMethodOptions, paymentMethodTypes: $paymentMethodTypes, receiptEmail: $receiptEmail, setupFutureUsage: $setupFutureUsage, shipping: $shipping, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferData: $transferData, transferGroup: $transferGroup)';
+
  }

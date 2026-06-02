@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostTreasuryOutboundPaymentsIdCancelRequest copyWith({List<String>? Function()? expand}) { return PostTreasuryOutboundPaymentsIdCancelRequest(
   expand: expand != null ? expand() : this.expand,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostTreasuryOutboundPaymentsIdCancelRequest &&
-          listEquals(expand, other.expand); } 
-@override int get hashCode { return Object.hashAll(expand ?? const []); } 
-@override String toString() { return 'PostTreasuryOutboundPaymentsIdCancelRequest(expand: $expand)'; } 
+          listEquals(expand, other.expand);
+
+@override int get hashCode => Object.hashAll(expand ?? const []);
+
+@override String toString() => 'PostTreasuryOutboundPaymentsIdCancelRequest(expand: $expand)';
+
  }

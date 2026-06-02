@@ -16,9 +16,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('urls'
 WafOverridesCreateAWafOverrideRequest copyWith({List<String>? urls}) { return WafOverridesCreateAWafOverrideRequest(
   urls: urls ?? this.urls,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WafOverridesCreateAWafOverrideRequest &&
-          listEquals(urls, other.urls); } 
-@override int get hashCode { return Object.hashAll(urls); } 
-@override String toString() { return 'WafOverridesCreateAWafOverrideRequest(urls: $urls)'; } 
+          listEquals(urls, other.urls);
+
+@override int get hashCode => Object.hashAll(urls);
+
+@override String toString() => 'WafOverridesCreateAWafOverrideRequest(urls: $urls)';
+
  }

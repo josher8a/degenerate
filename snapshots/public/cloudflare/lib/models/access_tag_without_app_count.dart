@@ -26,11 +26,14 @@ AccessTagWithoutAppCount copyWith({AccessTimestamp? Function()? createdAt, Acces
   name: name ?? this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessTagWithoutAppCount &&
           createdAt == other.createdAt &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, name, updatedAt); } 
-@override String toString() { return 'AccessTagWithoutAppCount(createdAt: $createdAt, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, name, updatedAt);
+
+@override String toString() => 'AccessTagWithoutAppCount(createdAt: $createdAt, name: $name, updatedAt: $updatedAt)';
+
  }

@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ThreadObjectObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ThreadObjectObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ThreadObjectObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadObjectObject($value)';
+
  }
 /// Represents a thread that contains [messages](/docs/api-reference/messages).
 @immutable final class ThreadObject {const ThreadObject({required this.id, required this.object, required this.createdAt, required this.toolResources, required this.metadata, });
@@ -74,13 +77,16 @@ ThreadObject copyWith({String? id, ThreadObjectObject? object, int? createdAt, A
   toolResources: toolResources != null ? toolResources() : this.toolResources,
   metadata: metadata != null ? metadata() : this.metadata,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ThreadObject &&
           id == other.id &&
           object == other.object &&
           createdAt == other.createdAt &&
           toolResources == other.toolResources &&
-          metadata == other.metadata; } 
-@override int get hashCode { return Object.hash(id, object, createdAt, toolResources, metadata); } 
-@override String toString() { return 'ThreadObject(id: $id, object: $object, createdAt: $createdAt, toolResources: $toolResources, metadata: $metadata)'; } 
+          metadata == other.metadata;
+
+@override int get hashCode => Object.hash(id, object, createdAt, toolResources, metadata);
+
+@override String toString() => 'ThreadObject(id: $id, object: $object, createdAt: $createdAt, toolResources: $toolResources, metadata: $metadata)';
+
  }

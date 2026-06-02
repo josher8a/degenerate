@@ -50,7 +50,7 @@ WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Fun
   name: name ?? this.name,
   public: public ?? this.public,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WorkersAiCreateFinetuneResponseResult &&
           createdAt == other.createdAt &&
           description == other.description &&
@@ -58,7 +58,10 @@ WorkersAiCreateFinetuneResponseResult copyWith({DateTime? createdAt, String? Fun
           model == other.model &&
           modifiedAt == other.modifiedAt &&
           name == other.name &&
-          public == other.public; } 
-@override int get hashCode { return Object.hash(createdAt, description, id, model, modifiedAt, name, public); } 
-@override String toString() { return 'WorkersAiCreateFinetuneResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name, public: $public)'; } 
+          public == other.public;
+
+@override int get hashCode => Object.hash(createdAt, description, id, model, modifiedAt, name, public);
+
+@override String toString() => 'WorkersAiCreateFinetuneResponseResult(createdAt: $createdAt, description: $description, id: $id, model: $model, modifiedAt: $modifiedAt, name: $name, public: $public)';
+
  }

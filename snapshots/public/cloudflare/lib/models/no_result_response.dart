@@ -30,12 +30,15 @@ NoResultResponse copyWith({List<PayPerCrawlMsg>? Function()? errors, List<PayPer
   resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
   success: success != null ? success() : this.success,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is NoResultResponse &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
           resultInfo == other.resultInfo &&
-          success == other.success; } 
-@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), resultInfo, success); } 
-@override String toString() { return 'NoResultResponse(errors: $errors, messages: $messages, resultInfo: $resultInfo, success: $success)'; } 
+          success == other.success;
+
+@override int get hashCode => Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), resultInfo, success);
+
+@override String toString() => 'NoResultResponse(errors: $errors, messages: $messages, resultInfo: $resultInfo, success: $success)';
+
  }

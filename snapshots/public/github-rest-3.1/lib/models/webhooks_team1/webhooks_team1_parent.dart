@@ -106,7 +106,7 @@ WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int
   organizationId: organizationId != null ? organizationId() : this.organizationId,
   enterpriseId: enterpriseId != null ? enterpriseId() : this.enterpriseId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksTeam1Parent &&
           description == other.description &&
           htmlUrl == other.htmlUrl &&
@@ -122,7 +122,10 @@ WebhooksTeam1Parent copyWith({String? Function()? description, Uri? htmlUrl, int
           url == other.url &&
           type == other.type &&
           organizationId == other.organizationId &&
-          enterpriseId == other.enterpriseId; } 
-@override int get hashCode { return Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId); } 
-@override String toString() { return 'WebhooksTeam1Parent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)'; } 
+          enterpriseId == other.enterpriseId;
+
+@override int get hashCode => Object.hash(description, htmlUrl, id, membersUrl, name, nodeId, permission, privacy, notificationSetting, repositoriesUrl, slug, url, type, organizationId, enterpriseId);
+
+@override String toString() => 'WebhooksTeam1Parent(description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, permission: $permission, privacy: $privacy, notificationSetting: $notificationSetting, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url, type: $type, organizationId: $organizationId, enterpriseId: $enterpriseId)';
+
  }

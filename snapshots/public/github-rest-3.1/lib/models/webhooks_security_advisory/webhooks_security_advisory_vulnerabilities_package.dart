@@ -21,10 +21,13 @@ WebhooksSecurityAdvisoryVulnerabilitiesPackage copyWith({String? ecosystem, Stri
   ecosystem: ecosystem ?? this.ecosystem,
   name: name ?? this.name,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhooksSecurityAdvisoryVulnerabilitiesPackage &&
           ecosystem == other.ecosystem &&
-          name == other.name; } 
-@override int get hashCode { return Object.hash(ecosystem, name); } 
-@override String toString() { return 'WebhooksSecurityAdvisoryVulnerabilitiesPackage(ecosystem: $ecosystem, name: $name)'; } 
+          name == other.name;
+
+@override int get hashCode => Object.hash(ecosystem, name);
+
+@override String toString() => 'WebhooksSecurityAdvisoryVulnerabilitiesPackage(ecosystem: $ecosystem, name: $name)';
+
  }

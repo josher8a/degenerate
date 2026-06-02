@@ -17,9 +17,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('index
 PagesDeploymentConfigValuesVectorizeBindingsValue copyWith({String? indexName}) { return PagesDeploymentConfigValuesVectorizeBindingsValue(
   indexName: indexName ?? this.indexName,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDeploymentConfigValuesVectorizeBindingsValue &&
-          indexName == other.indexName; } 
-@override int get hashCode { return indexName.hashCode; } 
-@override String toString() { return 'PagesDeploymentConfigValuesVectorizeBindingsValue(indexName: $indexName)'; } 
+          indexName == other.indexName;
+
+@override int get hashCode => indexName.hashCode;
+
+@override String toString() => 'PagesDeploymentConfigValuesVectorizeBindingsValue(indexName: $indexName)';
+
  }

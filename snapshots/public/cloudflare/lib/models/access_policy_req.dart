@@ -83,7 +83,7 @@ AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()
   purposeJustificationRequired: purposeJustificationRequired != null ? purposeJustificationRequired() : this.purposeJustificationRequired,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessPolicyReq &&
           decision == other.decision &&
           listEquals(exclude, other.exclude) &&
@@ -97,7 +97,10 @@ AccessPolicyReq copyWith({AccessDecision? decision, List<AccessRule>? Function()
           mfaConfig == other.mfaConfig &&
           purposeJustificationPrompt == other.purposeJustificationPrompt &&
           purposeJustificationRequired == other.purposeJustificationRequired &&
-          sessionDuration == other.sessionDuration; } 
-@override int get hashCode { return Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration); } 
-@override String toString() { return 'AccessPolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration)'; } 
+          sessionDuration == other.sessionDuration;
+
+@override int get hashCode => Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const []), Object.hashAll(approvalGroups ?? const []), approvalRequired, connectionRules, isolationRequired, mfaConfig, purposeJustificationPrompt, purposeJustificationRequired, sessionDuration);
+
+@override String toString() => 'AccessPolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require, approvalGroups: $approvalGroups, approvalRequired: $approvalRequired, connectionRules: $connectionRules, isolationRequired: $isolationRequired, mfaConfig: $mfaConfig, purposeJustificationPrompt: $purposeJustificationPrompt, purposeJustificationRequired: $purposeJustificationRequired, sessionDuration: $sessionDuration)';
+
  }

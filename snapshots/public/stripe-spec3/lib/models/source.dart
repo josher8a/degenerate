@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceObject($value)';
+
  }
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
 @immutable final class SourceType$1 {const SourceType$1._(this.value);
@@ -90,10 +93,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceType$1 && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceType\$1($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceType$1 && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceType\$1($value)';
+
  }
 /// `Source` objects allow you to accept a variety of payment methods. They
 /// represent a customer's payment instrument, and can be used with the Stripe API
@@ -347,7 +353,7 @@ Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, Sou
   usage: usage != null ? usage() : this.usage,
   wechat: wechat != null ? wechat() : this.wechat,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Source &&
           achCreditTransfer == other.achCreditTransfer &&
           achDebit == other.achDebit &&
@@ -386,7 +392,10 @@ Source copyWith({SourceTypeAchCreditTransfer? Function()? achCreditTransfer, Sou
           threeDSecure == other.threeDSecure &&
           type == other.type &&
           usage == other.usage &&
-          wechat == other.wechat; } 
-@override int get hashCode { return Object.hashAll([achCreditTransfer, achDebit, acssDebit, alipay, allowRedisplay, amount, auBecsDebit, bancontact, card, cardPresent, clientSecret, codeVerification, created, currency, customer, eps, flow, giropay, id, ideal, klarna, livemode, metadata, multibanco, object, owner, p24, receiver, redirect, sepaDebit, sofort, sourceOrder, statementDescriptor, status, threeDSecure, type, usage, wechat]); } 
-@override String toString() { return 'Source(achCreditTransfer: $achCreditTransfer, achDebit: $achDebit, acssDebit: $acssDebit, alipay: $alipay, allowRedisplay: $allowRedisplay, amount: $amount, auBecsDebit: $auBecsDebit, bancontact: $bancontact, card: $card, cardPresent: $cardPresent, clientSecret: $clientSecret, codeVerification: $codeVerification, created: $created, currency: $currency, customer: $customer, eps: $eps, flow: $flow, giropay: $giropay, id: $id, ideal: $ideal, klarna: $klarna, livemode: $livemode, metadata: $metadata, multibanco: $multibanco, object: $object, owner: $owner, p24: $p24, receiver: $receiver, redirect: $redirect, sepaDebit: $sepaDebit, sofort: $sofort, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, status: $status, threeDSecure: $threeDSecure, type: $type, usage: $usage, wechat: $wechat)'; } 
+          wechat == other.wechat;
+
+@override int get hashCode => Object.hashAll([achCreditTransfer, achDebit, acssDebit, alipay, allowRedisplay, amount, auBecsDebit, bancontact, card, cardPresent, clientSecret, codeVerification, created, currency, customer, eps, flow, giropay, id, ideal, klarna, livemode, metadata, multibanco, object, owner, p24, receiver, redirect, sepaDebit, sofort, sourceOrder, statementDescriptor, status, threeDSecure, type, usage, wechat]);
+
+@override String toString() => 'Source(achCreditTransfer: $achCreditTransfer, achDebit: $achDebit, acssDebit: $acssDebit, alipay: $alipay, allowRedisplay: $allowRedisplay, amount: $amount, auBecsDebit: $auBecsDebit, bancontact: $bancontact, card: $card, cardPresent: $cardPresent, clientSecret: $clientSecret, codeVerification: $codeVerification, created: $created, currency: $currency, customer: $customer, eps: $eps, flow: $flow, giropay: $giropay, id: $id, ideal: $ideal, klarna: $klarna, livemode: $livemode, metadata: $metadata, multibanco: $multibanco, object: $object, owner: $owner, p24: $p24, receiver: $receiver, redirect: $redirect, sepaDebit: $sepaDebit, sofort: $sofort, sourceOrder: $sourceOrder, statementDescriptor: $statementDescriptor, status: $status, threeDSecure: $threeDSecure, type: $type, usage: $usage, wechat: $wechat)';
+
  }

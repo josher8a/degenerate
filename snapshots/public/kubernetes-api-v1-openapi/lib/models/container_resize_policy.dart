@@ -24,10 +24,13 @@ ContainerResizePolicy copyWith({String? resourceName, String? restartPolicy, }) 
   resourceName: resourceName ?? this.resourceName,
   restartPolicy: restartPolicy ?? this.restartPolicy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ContainerResizePolicy &&
           resourceName == other.resourceName &&
-          restartPolicy == other.restartPolicy; } 
-@override int get hashCode { return Object.hash(resourceName, restartPolicy); } 
-@override String toString() { return 'ContainerResizePolicy(resourceName: $resourceName, restartPolicy: $restartPolicy)'; } 
+          restartPolicy == other.restartPolicy;
+
+@override int get hashCode => Object.hash(resourceName, restartPolicy);
+
+@override String toString() => 'ContainerResizePolicy(resourceName: $resourceName, restartPolicy: $restartPolicy)';
+
  }

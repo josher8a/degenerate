@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tags'
 PostEventTagCreateRequest copyWith({List<String>? tags}) { return PostEventTagCreateRequest(
   tags: tags ?? this.tags,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostEventTagCreateRequest &&
-          listEquals(tags, other.tags); } 
-@override int get hashCode { return Object.hashAll(tags); } 
-@override String toString() { return 'PostEventTagCreateRequest(tags: $tags)'; } 
+          listEquals(tags, other.tags);
+
+@override int get hashCode => Object.hashAll(tags);
+
+@override String toString() => 'PostEventTagCreateRequest(tags: $tags)';
+
  }

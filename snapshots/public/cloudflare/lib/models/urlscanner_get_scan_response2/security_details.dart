@@ -87,7 +87,7 @@ SecurityDetails copyWith({double? certificateId, String? certificateTransparency
   validFrom: validFrom ?? this.validFrom,
   validTo: validTo ?? this.validTo,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SecurityDetails &&
           certificateId == other.certificateId &&
           certificateTransparencyCompliance == other.certificateTransparencyCompliance &&
@@ -101,7 +101,10 @@ SecurityDetails copyWith({double? certificateId, String? certificateTransparency
           serverSignatureAlgorithm == other.serverSignatureAlgorithm &&
           subjectName == other.subjectName &&
           validFrom == other.validFrom &&
-          validTo == other.validTo; } 
-@override int get hashCode { return Object.hash(certificateId, certificateTransparencyCompliance, cipher, encryptedClientHello, issuer, keyExchange, keyExchangeGroup, protocol, Object.hashAll(sanList), serverSignatureAlgorithm, subjectName, validFrom, validTo); } 
-@override String toString() { return 'SecurityDetails(certificateId: $certificateId, certificateTransparencyCompliance: $certificateTransparencyCompliance, cipher: $cipher, encryptedClientHello: $encryptedClientHello, issuer: $issuer, keyExchange: $keyExchange, keyExchangeGroup: $keyExchangeGroup, protocol: $protocol, sanList: $sanList, serverSignatureAlgorithm: $serverSignatureAlgorithm, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)'; } 
+          validTo == other.validTo;
+
+@override int get hashCode => Object.hash(certificateId, certificateTransparencyCompliance, cipher, encryptedClientHello, issuer, keyExchange, keyExchangeGroup, protocol, Object.hashAll(sanList), serverSignatureAlgorithm, subjectName, validFrom, validTo);
+
+@override String toString() => 'SecurityDetails(certificateId: $certificateId, certificateTransparencyCompliance: $certificateTransparencyCompliance, cipher: $cipher, encryptedClientHello: $encryptedClientHello, issuer: $issuer, keyExchange: $keyExchange, keyExchangeGroup: $keyExchangeGroup, protocol: $protocol, sanList: $sanList, serverSignatureAlgorithm: $serverSignatureAlgorithm, subjectName: $subjectName, validFrom: $validFrom, validTo: $validTo)';
+
  }

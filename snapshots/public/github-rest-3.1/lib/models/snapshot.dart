@@ -69,7 +69,7 @@ Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Det
   manifests: manifests != null ? manifests() : this.manifests,
   scanned: scanned ?? this.scanned,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Snapshot &&
           version == other.version &&
           job == other.job &&
@@ -78,7 +78,10 @@ Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Det
           detector == other.detector &&
           metadata == other.metadata &&
           manifests == other.manifests &&
-          scanned == other.scanned; } 
-@override int get hashCode { return Object.hash(version, job, sha, ref, detector, metadata, manifests, scanned); } 
-@override String toString() { return 'Snapshot(version: $version, job: $job, sha: $sha, ref: $ref, detector: $detector, metadata: $metadata, manifests: $manifests, scanned: $scanned)'; } 
+          scanned == other.scanned;
+
+@override int get hashCode => Object.hash(version, job, sha, ref, detector, metadata, manifests, scanned);
+
+@override String toString() => 'Snapshot(version: $version, job: $job, sha: $sha, ref: $ref, detector: $detector, metadata: $metadata, manifests: $manifests, scanned: $scanned)';
+
  }

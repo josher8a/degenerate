@@ -43,12 +43,15 @@ CustomToolCallOutput copyWith({String? type, String? Function()? id, String? cal
   callId: callId ?? this.callId,
   output: output ?? this.output,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomToolCallOutput &&
           type == other.type &&
           id == other.id &&
           callId == other.callId &&
-          output == other.output; } 
-@override int get hashCode { return Object.hash(type, id, callId, output); } 
-@override String toString() { return 'CustomToolCallOutput(type: $type, id: $id, callId: $callId, output: $output)'; } 
+          output == other.output;
+
+@override int get hashCode => Object.hash(type, id, callId, output);
+
+@override String toString() => 'CustomToolCallOutput(type: $type, id: $id, callId: $callId, output: $output)';
+
  }

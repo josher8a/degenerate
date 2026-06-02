@@ -36,11 +36,14 @@ Oidc copyWith({String? claimName, String? claimValue, String? identityProviderId
   claimValue: claimValue ?? this.claimValue,
   identityProviderId: identityProviderId ?? this.identityProviderId,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Oidc &&
           claimName == other.claimName &&
           claimValue == other.claimValue &&
-          identityProviderId == other.identityProviderId; } 
-@override int get hashCode { return Object.hash(claimName, claimValue, identityProviderId); } 
-@override String toString() { return 'Oidc(claimName: $claimName, claimValue: $claimValue, identityProviderId: $identityProviderId)'; } 
+          identityProviderId == other.identityProviderId;
+
+@override int get hashCode => Object.hash(claimName, claimValue, identityProviderId);
+
+@override String toString() => 'Oidc(claimName: $claimName, claimValue: $claimValue, identityProviderId: $identityProviderId)';
+
  }

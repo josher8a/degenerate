@@ -45,7 +45,7 @@ Domains copyWith({List<String>? Function()? website, List<String>? Function()? c
   actionsInbound: actionsInbound != null ? actionsInbound() : this.actionsInbound,
   artifactAttestations: artifactAttestations != null ? artifactAttestations() : this.artifactAttestations,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Domains &&
           listEquals(website, other.website) &&
           listEquals(codespaces, other.codespaces) &&
@@ -53,7 +53,10 @@ Domains copyWith({List<String>? Function()? website, List<String>? Function()? c
           listEquals(packages, other.packages) &&
           listEquals(actions, other.actions) &&
           actionsInbound == other.actionsInbound &&
-          artifactAttestations == other.artifactAttestations; } 
-@override int get hashCode { return Object.hash(Object.hashAll(website ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(copilot ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(actions ?? const []), actionsInbound, artifactAttestations); } 
-@override String toString() { return 'Domains(website: $website, codespaces: $codespaces, copilot: $copilot, packages: $packages, actions: $actions, actionsInbound: $actionsInbound, artifactAttestations: $artifactAttestations)'; } 
+          artifactAttestations == other.artifactAttestations;
+
+@override int get hashCode => Object.hash(Object.hashAll(website ?? const []), Object.hashAll(codespaces ?? const []), Object.hashAll(copilot ?? const []), Object.hashAll(packages ?? const []), Object.hashAll(actions ?? const []), actionsInbound, artifactAttestations);
+
+@override String toString() => 'Domains(website: $website, codespaces: $codespaces, copilot: $copilot, packages: $packages, actions: $actions, actionsInbound: $actionsInbound, artifactAttestations: $artifactAttestations)';
+
  }

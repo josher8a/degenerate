@@ -15,9 +15,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('time_
 DnsAnalyticsReportBytimeQuery copyWith({DnsAnalyticsTimeDelta? timeDelta}) { return DnsAnalyticsReportBytimeQuery(
   timeDelta: timeDelta ?? this.timeDelta,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnsAnalyticsReportBytimeQuery &&
-          timeDelta == other.timeDelta; } 
-@override int get hashCode { return timeDelta.hashCode; } 
-@override String toString() { return 'DnsAnalyticsReportBytimeQuery(timeDelta: $timeDelta)'; } 
+          timeDelta == other.timeDelta;
+
+@override int get hashCode => timeDelta.hashCode;
+
+@override String toString() => 'DnsAnalyticsReportBytimeQuery(timeDelta: $timeDelta)';
+
  }

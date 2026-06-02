@@ -26,7 +26,8 @@ final InfraServiceCommon infraServiceCommon;
 
 @override String get type => 'http';
 
-@override Map<String, dynamic> toJson() { return {...infraServiceCommon.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...infraServiceCommon.toJson(), 'type': type};
+
 InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
   createdAt: createdAt,
   host: host,
@@ -34,10 +35,13 @@ InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHo
   serviceId: serviceId,
   updatedAt: updatedAt,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon; } 
-@override int get hashCode { return infraServiceCommon.hashCode; } 
-@override String toString() { return 'InfraServiceConfig.http($infraServiceCommon)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon;
+
+@override int get hashCode => infraServiceCommon.hashCode;
+
+@override String toString() => 'InfraServiceConfig.http($infraServiceCommon)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -47,9 +51,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is InfraServiceConfig$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'InfraServiceConfig.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InfraServiceConfig$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'InfraServiceConfig.unknown($json)';
+
  }

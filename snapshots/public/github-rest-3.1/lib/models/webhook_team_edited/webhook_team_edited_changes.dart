@@ -36,13 +36,16 @@ WebhookTeamEditedChanges copyWith({WebhookLabelEditedChangesDescription? Functio
   notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
   repository: repository != null ? repository() : this.repository,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookTeamEditedChanges &&
           description == other.description &&
           name == other.name &&
           privacy == other.privacy &&
           notificationSetting == other.notificationSetting &&
-          repository == other.repository; } 
-@override int get hashCode { return Object.hash(description, name, privacy, notificationSetting, repository); } 
-@override String toString() { return 'WebhookTeamEditedChanges(description: $description, name: $name, privacy: $privacy, notificationSetting: $notificationSetting, repository: $repository)'; } 
+          repository == other.repository;
+
+@override int get hashCode => Object.hash(description, name, privacy, notificationSetting, repository);
+
+@override String toString() => 'WebhookTeamEditedChanges(description: $description, name: $name, privacy: $privacy, notificationSetting: $notificationSetting, repository: $repository)';
+
  }

@@ -25,18 +25,13 @@ final class FcmTokenRegisterSchema {
   }
 
   @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is FcmTokenRegisterSchema && token == other.token;
-  }
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is FcmTokenRegisterSchema && token == other.token;
 
   @override
-  int get hashCode {
-    return token.hashCode;
-  }
+  int get hashCode => token.hashCode;
 
   @override
-  String toString() {
-    return 'FcmTokenRegisterSchema(token: $token)';
-  }
+  String toString() => 'FcmTokenRegisterSchema(token: $token)';
 }

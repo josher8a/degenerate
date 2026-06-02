@@ -29,10 +29,13 @@ TeamsDevicesIncludeSplitTunnelWithAddress copyWith({TeamsDevicesIncludeSplitTunn
   address: address ?? this.address,
   description: description != null ? description() : this.description,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TeamsDevicesIncludeSplitTunnelWithAddress &&
           address == other.address &&
-          description == other.description; } 
-@override int get hashCode { return Object.hash(address, description); } 
-@override String toString() { return 'TeamsDevicesIncludeSplitTunnelWithAddress(address: $address, description: $description)'; } 
+          description == other.description;
+
+@override int get hashCode => Object.hash(address, description);
+
+@override String toString() => 'TeamsDevicesIncludeSplitTunnelWithAddress(address: $address, description: $description)';
+
  }

@@ -39,12 +39,15 @@ AccountSigningKey copyWith({String? Function()? sid, String? Function()? friendl
   dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
   dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccountSigningKey &&
           sid == other.sid &&
           friendlyName == other.friendlyName &&
           dateCreated == other.dateCreated &&
-          dateUpdated == other.dateUpdated; } 
-@override int get hashCode { return Object.hash(sid, friendlyName, dateCreated, dateUpdated); } 
-@override String toString() { return 'AccountSigningKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated)'; } 
+          dateUpdated == other.dateUpdated;
+
+@override int get hashCode => Object.hash(sid, friendlyName, dateCreated, dateUpdated);
+
+@override String toString() => 'AccountSigningKey(sid: $sid, friendlyName: $friendlyName, dateCreated: $dateCreated, dateUpdated: $dateUpdated)';
+
  }

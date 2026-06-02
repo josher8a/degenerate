@@ -35,12 +35,15 @@ RealtimekitPresetListItem copyWith({DateTime? Function()? createdAt, String? Fun
   name: name != null ? name() : this.name,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimekitPresetListItem &&
           createdAt == other.createdAt &&
           id == other.id &&
           name == other.name &&
-          updatedAt == other.updatedAt; } 
-@override int get hashCode { return Object.hash(createdAt, id, name, updatedAt); } 
-@override String toString() { return 'RealtimekitPresetListItem(createdAt: $createdAt, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+          updatedAt == other.updatedAt;
+
+@override int get hashCode => Object.hash(createdAt, id, name, updatedAt);
+
+@override String toString() => 'RealtimekitPresetListItem(createdAt: $createdAt, id: $id, name: $name, updatedAt: $updatedAt)';
+
  }

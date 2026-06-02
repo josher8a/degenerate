@@ -22,10 +22,13 @@ RebootWindow copyWith({int? endHour, int? startHour, }) { return RebootWindow(
   endHour: endHour ?? this.endHour,
   startHour: startHour ?? this.startHour,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RebootWindow &&
           endHour == other.endHour &&
-          startHour == other.startHour; } 
-@override int get hashCode { return Object.hash(endHour, startHour); } 
-@override String toString() { return 'RebootWindow(endHour: $endHour, startHour: $startHour)'; } 
+          startHour == other.startHour;
+
+@override int get hashCode => Object.hash(endHour, startHour);
+
+@override String toString() => 'RebootWindow(endHour: $endHour, startHour: $startHour)';
+
  }

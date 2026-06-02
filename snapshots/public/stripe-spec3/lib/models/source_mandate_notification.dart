@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SourceMandateNotificationObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'SourceMandateNotificationObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceMandateNotificationObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SourceMandateNotificationObject($value)';
+
  }
 /// Source mandate notifications should be created when a notification related to
 /// a source mandate must be sent to the payer. They will trigger a webhook or
@@ -117,7 +120,7 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
   status: status ?? this.status,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SourceMandateNotification &&
           acssDebit == other.acssDebit &&
           amount == other.amount &&
@@ -130,7 +133,10 @@ SourceMandateNotification copyWith({SourceMandateNotificationAcssDebitData? Func
           sepaDebit == other.sepaDebit &&
           source == other.source &&
           status == other.status &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(acssDebit, amount, bacsDebit, created, id, livemode, object, reason, sepaDebit, source, status, type); } 
-@override String toString() { return 'SourceMandateNotification(acssDebit: $acssDebit, amount: $amount, bacsDebit: $bacsDebit, created: $created, id: $id, livemode: $livemode, object: $object, reason: $reason, sepaDebit: $sepaDebit, source: $source, status: $status, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(acssDebit, amount, bacsDebit, created, id, livemode, object, reason, sepaDebit, source, status, type);
+
+@override String toString() => 'SourceMandateNotification(acssDebit: $acssDebit, amount: $amount, bacsDebit: $bacsDebit, created: $created, id: $id, livemode: $livemode, object: $object, reason: $reason, sepaDebit: $sepaDebit, source: $source, status: $status, type: $type)';
+
  }

@@ -17,7 +17,8 @@ final class WorkersAiPostRunCfPfnetPlamoEmbedding1bError$400 extends WorkersAiPo
 
 final WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class WorkersAiPostRunCfPfnetPlamoEmbedding1bError$Unknown extends WorkersAiPostRunCfPfnetPlamoEmbedding1bError {const WorkersAiPostRunCfPfnetPlamoEmbedding1bError$Unknown(this.statusCode, this.rawBody, );
 

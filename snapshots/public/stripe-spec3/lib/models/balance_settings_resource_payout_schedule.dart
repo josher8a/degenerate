@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is BalanceSettingsResourcePayoutScheduleInterval && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'BalanceSettingsResourcePayoutScheduleInterval($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BalanceSettingsResourcePayoutScheduleInterval && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'BalanceSettingsResourcePayoutScheduleInterval($value)';
+
  }
 /// 
 @immutable final class BalanceSettingsResourcePayoutSchedule {const BalanceSettingsResourcePayoutSchedule({this.interval, this.monthlyPayoutDays, this.weeklyPayoutDays, });
@@ -60,11 +63,14 @@ BalanceSettingsResourcePayoutSchedule copyWith({BalanceSettingsResourcePayoutSch
   monthlyPayoutDays: monthlyPayoutDays != null ? monthlyPayoutDays() : this.monthlyPayoutDays,
   weeklyPayoutDays: weeklyPayoutDays != null ? weeklyPayoutDays() : this.weeklyPayoutDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is BalanceSettingsResourcePayoutSchedule &&
           interval == other.interval &&
           listEquals(monthlyPayoutDays, other.monthlyPayoutDays) &&
-          listEquals(weeklyPayoutDays, other.weeklyPayoutDays); } 
-@override int get hashCode { return Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const [])); } 
-@override String toString() { return 'BalanceSettingsResourcePayoutSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)'; } 
+          listEquals(weeklyPayoutDays, other.weeklyPayoutDays);
+
+@override int get hashCode => Object.hash(interval, Object.hashAll(monthlyPayoutDays ?? const []), Object.hashAll(weeklyPayoutDays ?? const []));
+
+@override String toString() => 'BalanceSettingsResourcePayoutSchedule(interval: $interval, monthlyPayoutDays: $monthlyPayoutDays, weeklyPayoutDays: $weeklyPayoutDays)';
+
  }

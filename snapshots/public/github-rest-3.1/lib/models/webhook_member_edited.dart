@@ -55,7 +55,7 @@ WebhookMemberEdited copyWith({ItemEditedAction? action, WebhookMemberEditedChang
   repository: repository ?? this.repository,
   sender: sender ?? this.sender,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookMemberEdited &&
           action == other.action &&
           changes == other.changes &&
@@ -64,7 +64,10 @@ WebhookMemberEdited copyWith({ItemEditedAction? action, WebhookMemberEditedChang
           member == other.member &&
           organization == other.organization &&
           repository == other.repository &&
-          sender == other.sender; } 
-@override int get hashCode { return Object.hash(action, changes, enterprise, installation, member, organization, repository, sender); } 
-@override String toString() { return 'WebhookMemberEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, sender: $sender)'; } 
+          sender == other.sender;
+
+@override int get hashCode => Object.hash(action, changes, enterprise, installation, member, organization, repository, sender);
+
+@override String toString() => 'WebhookMemberEdited(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, member: $member, organization: $organization, repository: $repository, sender: $sender)';
+
  }

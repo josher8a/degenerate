@@ -12,7 +12,10 @@ static bool canParse(Map<String, dynamic> json) { return true; }
 PaymentMethodPromptpay copyWith() { return const PaymentMethodPromptpay(
 
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodPromptpay; } 
-@override int get hashCode { return runtimeType.hashCode; } 
-@override String toString() { return 'PaymentMethodPromptpay()'; } 
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodPromptpay;
+
+@override int get hashCode => runtimeType.hashCode;
+
+@override String toString() => 'PaymentMethodPromptpay()';
+
  }

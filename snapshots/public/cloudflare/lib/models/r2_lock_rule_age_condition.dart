@@ -23,10 +23,13 @@ R2LockRuleAgeCondition copyWith({int? maxAgeSeconds, R2LifecycleAgeConditionType
   maxAgeSeconds: maxAgeSeconds ?? this.maxAgeSeconds,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2LockRuleAgeCondition &&
           maxAgeSeconds == other.maxAgeSeconds &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(maxAgeSeconds, type); } 
-@override String toString() { return 'R2LockRuleAgeCondition(maxAgeSeconds: $maxAgeSeconds, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(maxAgeSeconds, type);
+
+@override String toString() => 'R2LockRuleAgeCondition(maxAgeSeconds: $maxAgeSeconds, type: $type)';
+
  }

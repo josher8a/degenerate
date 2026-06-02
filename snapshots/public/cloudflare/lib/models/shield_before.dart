@@ -26,9 +26,12 @@ return errors; }
 ShieldBefore copyWith({String? Function()? before}) { return ShieldBefore(
   before: before != null ? before() : this.before,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShieldBefore &&
-          before == other.before; } 
-@override int get hashCode { return before.hashCode; } 
-@override String toString() { return 'ShieldBefore(before: $before)'; } 
+          before == other.before;
+
+@override int get hashCode => before.hashCode;
+
+@override String toString() => 'ShieldBefore(before: $before)';
+
  }

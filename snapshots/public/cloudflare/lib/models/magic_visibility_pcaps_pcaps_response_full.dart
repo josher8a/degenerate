@@ -102,7 +102,7 @@ MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLim
   timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
   type: type != null ? type() : this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MagicVisibilityPcapsPcapsResponseFull &&
           byteLimit == other.byteLimit &&
           coloName == other.coloName &&
@@ -116,7 +116,10 @@ MagicVisibilityPcapsPcapsResponseFull copyWith({MagicVisibilityPcapsPcapsByteLim
           submitted == other.submitted &&
           system == other.system &&
           timeLimit == other.timeLimit &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(byteLimit, coloName, destinationConf, errorMessage, filterV1, id, packetsCaptured, status, stopRequested, submitted, system, timeLimit, type); } 
-@override String toString() { return 'MagicVisibilityPcapsPcapsResponseFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, errorMessage: $errorMessage, filterV1: $filterV1, id: $id, packetsCaptured: $packetsCaptured, status: $status, stopRequested: $stopRequested, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(byteLimit, coloName, destinationConf, errorMessage, filterV1, id, packetsCaptured, status, stopRequested, submitted, system, timeLimit, type);
+
+@override String toString() => 'MagicVisibilityPcapsPcapsResponseFull(byteLimit: $byteLimit, coloName: $coloName, destinationConf: $destinationConf, errorMessage: $errorMessage, filterV1: $filterV1, id: $id, packetsCaptured: $packetsCaptured, status: $status, stopRequested: $stopRequested, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)';
+
  }

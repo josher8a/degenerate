@@ -26,10 +26,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Web3Status && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'Web3Status($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Web3Status && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'Web3Status($value)';
+
  }
 @immutable final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });
 
@@ -87,7 +90,7 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
   status: status != null ? status() : this.status,
   target: target != null ? target() : this.target,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Web3Web3Hostname &&
           createdOn == other.createdOn &&
           description == other.description &&
@@ -96,7 +99,10 @@ Web3Web3Hostname copyWith({Web3Timestamp? Function()? createdOn, Web3Description
           modifiedOn == other.modifiedOn &&
           name == other.name &&
           status == other.status &&
-          target == other.target; } 
-@override int get hashCode { return Object.hash(createdOn, description, dnslink, id, modifiedOn, name, status, target); } 
-@override String toString() { return 'Web3Web3Hostname(createdOn: $createdOn, description: $description, dnslink: $dnslink, id: $id, modifiedOn: $modifiedOn, name: $name, status: $status, target: $target)'; } 
+          target == other.target;
+
+@override int get hashCode => Object.hash(createdOn, description, dnslink, id, modifiedOn, name, status, target);
+
+@override String toString() => 'Web3Web3Hostname(createdOn: $createdOn, description: $description, dnslink: $dnslink, id: $id, modifiedOn: $modifiedOn, name: $name, status: $status, target: $target)';
+
  }

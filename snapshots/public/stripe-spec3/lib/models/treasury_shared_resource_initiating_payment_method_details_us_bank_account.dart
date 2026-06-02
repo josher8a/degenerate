@@ -44,11 +44,14 @@ TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount copyWith({Stri
   last4: last4 != null ? last4() : this.last4,
   routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount &&
           bankName == other.bankName &&
           last4 == other.last4 &&
-          routingNumber == other.routingNumber; } 
-@override int get hashCode { return Object.hash(bankName, last4, routingNumber); } 
-@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(bankName: $bankName, last4: $last4, routingNumber: $routingNumber)'; } 
+          routingNumber == other.routingNumber;
+
+@override int get hashCode => Object.hash(bankName, last4, routingNumber);
+
+@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount(bankName: $bankName, last4: $last4, routingNumber: $routingNumber)';
+
  }

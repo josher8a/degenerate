@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDomainCertificateAuthority && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDomainCertificateAuthority($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesDomainCertificateAuthority && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesDomainCertificateAuthority($value)';
+
  }
 @immutable final class PagesDomainStatus {const PagesDomainStatus._(this.value);
 
@@ -55,10 +58,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PagesDomainStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PagesDomainStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesDomainStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PagesDomainStatus($value)';
+
  }
 @immutable final class PagesDomain {const PagesDomain({required this.certificateAuthority, required this.createdOn, required this.domainId, required this.id, required this.name, required this.status, required this.validationData, required this.verificationData, required this.zoneTag, });
 
@@ -124,7 +130,7 @@ PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, Str
   verificationData: verificationData ?? this.verificationData,
   zoneTag: zoneTag ?? this.zoneTag,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PagesDomain &&
           certificateAuthority == other.certificateAuthority &&
           createdOn == other.createdOn &&
@@ -134,7 +140,10 @@ PagesDomain copyWith({PagesDomainCertificateAuthority? certificateAuthority, Str
           status == other.status &&
           validationData == other.validationData &&
           verificationData == other.verificationData &&
-          zoneTag == other.zoneTag; } 
-@override int get hashCode { return Object.hash(certificateAuthority, createdOn, domainId, id, name, status, validationData, verificationData, zoneTag); } 
-@override String toString() { return 'PagesDomain(certificateAuthority: $certificateAuthority, createdOn: $createdOn, domainId: $domainId, id: $id, name: $name, status: $status, validationData: $validationData, verificationData: $verificationData, zoneTag: $zoneTag)'; } 
+          zoneTag == other.zoneTag;
+
+@override int get hashCode => Object.hash(certificateAuthority, createdOn, domainId, id, name, status, validationData, verificationData, zoneTag);
+
+@override String toString() => 'PagesDomain(certificateAuthority: $certificateAuthority, createdOn: $createdOn, domainId: $domainId, id: $id, name: $name, status: $status, validationData: $validationData, verificationData: $verificationData, zoneTag: $zoneTag)';
+
  }

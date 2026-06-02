@@ -44,14 +44,17 @@ CreateEvent copyWith({String? ref, String? refType, String? fullRef, String? mas
   description: description != null ? description() : this.description,
   pusherType: pusherType ?? this.pusherType,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreateEvent &&
           ref == other.ref &&
           refType == other.refType &&
           fullRef == other.fullRef &&
           masterBranch == other.masterBranch &&
           description == other.description &&
-          pusherType == other.pusherType; } 
-@override int get hashCode { return Object.hash(ref, refType, fullRef, masterBranch, description, pusherType); } 
-@override String toString() { return 'CreateEvent(ref: $ref, refType: $refType, fullRef: $fullRef, masterBranch: $masterBranch, description: $description, pusherType: $pusherType)'; } 
+          pusherType == other.pusherType;
+
+@override int get hashCode => Object.hash(ref, refType, fullRef, masterBranch, description, pusherType);
+
+@override String toString() => 'CreateEvent(ref: $ref, refType: $refType, fullRef: $fullRef, masterBranch: $masterBranch, description: $description, pusherType: $pusherType)';
+
  }

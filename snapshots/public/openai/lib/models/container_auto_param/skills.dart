@@ -30,15 +30,19 @@ final SkillReferenceParam skillReferenceParam;
 
 @override String get type => 'skill_reference';
 
-@override Map<String, dynamic> toJson() { return {...skillReferenceParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...skillReferenceParam.toJson(), 'type': type};
+
 SkillsSkillReference copyWith({String? skillId, String? Function()? version, }) { return SkillsSkillReference(skillReferenceParam.copyWith(
   skillId: skillId,
   version: version,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillsSkillReference && skillReferenceParam == other.skillReferenceParam; } 
-@override int get hashCode { return skillReferenceParam.hashCode; } 
-@override String toString() { return 'Skills.skillReference($skillReferenceParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SkillsSkillReference && skillReferenceParam == other.skillReferenceParam;
+
+@override int get hashCode => skillReferenceParam.hashCode;
+
+@override String toString() => 'Skills.skillReference($skillReferenceParam)';
+
  }
 @immutable final class SkillsInline extends Skills {const SkillsInline(this.inlineSkillParam);
 
@@ -48,16 +52,20 @@ final InlineSkillParam inlineSkillParam;
 
 @override String get type => 'inline';
 
-@override Map<String, dynamic> toJson() { return {...inlineSkillParam.toJson(), 'type': type}; } 
+@override Map<String, dynamic> toJson() => {...inlineSkillParam.toJson(), 'type': type};
+
 SkillsInline copyWith({String? name, String? description, InlineSkillSourceParam? source, }) { return SkillsInline(inlineSkillParam.copyWith(
   name: name,
   description: description,
   source: source,
 )); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is SkillsInline && inlineSkillParam == other.inlineSkillParam; } 
-@override int get hashCode { return inlineSkillParam.hashCode; } 
-@override String toString() { return 'Skills.inline($inlineSkillParam)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SkillsInline && inlineSkillParam == other.inlineSkillParam;
+
+@override int get hashCode => inlineSkillParam.hashCode;
+
+@override String toString() => 'Skills.inline($inlineSkillParam)';
+
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
@@ -67,9 +75,13 @@ final Map<String, dynamic> json;
 
 @override String get type => json['type'] as String? ?? '';
 
-@override Map<String, dynamic> toJson() { return json; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is Skills$Unknown && json == other.json; } 
-@override int get hashCode { return json.hashCode; } 
-@override String toString() { return 'Skills.unknown($json)'; } 
+@override Map<String, dynamic> toJson() => json;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Skills$Unknown && json == other.json;
+
+@override int get hashCode => json.hashCode;
+
+@override String toString() => 'Skills.unknown($json)';
+
  }

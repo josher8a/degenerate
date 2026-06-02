@@ -83,7 +83,7 @@ IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()
   zoneSettings: zoneSettings != null ? zoneSettings() : this.zoneSettings,
   zones: zones != null ? zones() : this.zones,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IamPermissions &&
           analytics == other.analytics &&
           billing == other.billing &&
@@ -96,7 +96,10 @@ IamPermissions copyWith({IamGrants? Function()? analytics, IamGrants? Function()
           ssl == other.ssl &&
           waf == other.waf &&
           zoneSettings == other.zoneSettings &&
-          zones == other.zones; } 
-@override int get hashCode { return Object.hash(analytics, billing, cachePurge, dns, dnsRecords, lb, logs, organization, ssl, waf, zoneSettings, zones); } 
-@override String toString() { return 'IamPermissions(analytics: $analytics, billing: $billing, cachePurge: $cachePurge, dns: $dns, dnsRecords: $dnsRecords, lb: $lb, logs: $logs, organization: $organization, ssl: $ssl, waf: $waf, zoneSettings: $zoneSettings, zones: $zones)'; } 
+          zones == other.zones;
+
+@override int get hashCode => Object.hash(analytics, billing, cachePurge, dns, dnsRecords, lb, logs, organization, ssl, waf, zoneSettings, zones);
+
+@override String toString() => 'IamPermissions(analytics: $analytics, billing: $billing, cachePurge: $cachePurge, dns: $dns, dnsRecords: $dnsRecords, lb: $lb, logs: $logs, organization: $organization, ssl: $ssl, waf: $waf, zoneSettings: $zoneSettings, zones: $zones)';
+
  }

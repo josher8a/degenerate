@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WebhookCodeScanningAlertClosedByUserAlertState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlertState($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookCodeScanningAlertClosedByUserAlertState && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertState($value)';
+
  }
 /// The code scanning alert involved in the event.
 @immutable final class WebhookCodeScanningAlertClosedByUserAlert {const WebhookCodeScanningAlertClosedByUserAlert({required this.createdAt, required this.dismissedAt, required this.dismissedBy, required this.dismissedReason, required this.htmlUrl, required this.number, required this.rule, required this.state, required this.tool, required this.url, this.assignees, this.dismissedComment, this.fixedAt, this.mostRecentInstance, this.dismissalApprovedBy, });
@@ -128,7 +131,7 @@ WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()
   url: url ?? this.url,
   dismissalApprovedBy: dismissalApprovedBy != null ? dismissalApprovedBy() : this.dismissalApprovedBy,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookCodeScanningAlertClosedByUserAlert &&
           listEquals(assignees, other.assignees) &&
           createdAt == other.createdAt &&
@@ -144,7 +147,10 @@ WebhookCodeScanningAlertClosedByUserAlert copyWith({List<SimpleUser>? Function()
           state == other.state &&
           tool == other.tool &&
           url == other.url &&
-          dismissalApprovedBy == other.dismissalApprovedBy; } 
-@override int get hashCode { return Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url, dismissalApprovedBy); } 
-@override String toString() { return 'WebhookCodeScanningAlertClosedByUserAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url, dismissalApprovedBy: $dismissalApprovedBy)'; } 
+          dismissalApprovedBy == other.dismissalApprovedBy;
+
+@override int get hashCode => Object.hash(Object.hashAll(assignees ?? const []), createdAt, dismissedAt, dismissedBy, dismissedComment, dismissedReason, fixedAt, htmlUrl, mostRecentInstance, number, rule, state, tool, url, dismissalApprovedBy);
+
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlert(assignees: $assignees, createdAt: $createdAt, dismissedAt: $dismissedAt, dismissedBy: $dismissedBy, dismissedComment: $dismissedComment, dismissedReason: $dismissedReason, fixedAt: $fixedAt, htmlUrl: $htmlUrl, mostRecentInstance: $mostRecentInstance, number: $number, rule: $rule, state: $state, tool: $tool, url: $url, dismissalApprovedBy: $dismissalApprovedBy)';
+
  }

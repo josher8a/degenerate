@@ -22,10 +22,13 @@ R2EnableSippyGcs copyWith({R2EnableSippyAwsDestination? Function()? destination,
   destination: destination != null ? destination() : this.destination,
   source: source != null ? source() : this.source,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is R2EnableSippyGcs &&
           destination == other.destination &&
-          source == other.source; } 
-@override int get hashCode { return Object.hash(destination, source); } 
-@override String toString() { return 'R2EnableSippyGcs(destination: $destination, source: $source)'; } 
+          source == other.source;
+
+@override int get hashCode => Object.hash(destination, source);
+
+@override String toString() => 'R2EnableSippyGcs(destination: $destination, source: $source)';
+
  }

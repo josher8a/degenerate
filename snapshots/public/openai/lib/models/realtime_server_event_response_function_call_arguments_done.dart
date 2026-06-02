@@ -69,7 +69,7 @@ RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, 
   name: name ?? this.name,
   arguments: arguments ?? this.arguments,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RealtimeServerEventResponseFunctionCallArgumentsDone &&
           eventId == other.eventId &&
           type == other.type &&
@@ -78,7 +78,10 @@ RealtimeServerEventResponseFunctionCallArgumentsDone copyWith({String? eventId, 
           outputIndex == other.outputIndex &&
           callId == other.callId &&
           name == other.name &&
-          arguments == other.arguments; } 
-@override int get hashCode { return Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments); } 
-@override String toString() { return 'RealtimeServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)'; } 
+          arguments == other.arguments;
+
+@override int get hashCode => Object.hash(eventId, type, responseId, itemId, outputIndex, callId, name, arguments);
+
+@override String toString() => 'RealtimeServerEventResponseFunctionCallArgumentsDone(eventId: $eventId, type: $type, responseId: $responseId, itemId: $itemId, outputIndex: $outputIndex, callId: $callId, name: $name, arguments: $arguments)';
+
  }

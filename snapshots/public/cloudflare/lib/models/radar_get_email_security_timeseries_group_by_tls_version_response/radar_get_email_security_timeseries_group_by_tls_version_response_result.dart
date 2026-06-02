@@ -22,10 +22,13 @@ RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResult copyWith({RadarGe
   meta: meta ?? this.meta,
   serie0: serie0 ?? this.serie0,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResult &&
           meta == other.meta &&
-          serie0 == other.serie0; } 
-@override int get hashCode { return Object.hash(meta, serie0); } 
-@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResult(meta: $meta, serie0: $serie0)'; } 
+          serie0 == other.serie0;
+
+@override int get hashCode => Object.hash(meta, serie0);
+
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResult(meta: $meta, serie0: $serie0)';
+
  }

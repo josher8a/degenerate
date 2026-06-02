@@ -82,7 +82,7 @@ SimpleCheckSuite copyWith({String? Function()? after, Integration? Function()? a
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
   url: url != null ? url() : this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is SimpleCheckSuite &&
           after == other.after &&
           app == other.app &&
@@ -97,7 +97,10 @@ SimpleCheckSuite copyWith({String? Function()? after, Integration? Function()? a
           repository == other.repository &&
           status == other.status &&
           updatedAt == other.updatedAt &&
-          url == other.url; } 
-@override int get hashCode { return Object.hash(after, app, before, conclusion, createdAt, headBranch, headSha, id, nodeId, Object.hashAll(pullRequests ?? const []), repository, status, updatedAt, url); } 
-@override String toString() { return 'SimpleCheckSuite(after: $after, app: $app, before: $before, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headSha: $headSha, id: $id, nodeId: $nodeId, pullRequests: $pullRequests, repository: $repository, status: $status, updatedAt: $updatedAt, url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => Object.hash(after, app, before, conclusion, createdAt, headBranch, headSha, id, nodeId, Object.hashAll(pullRequests ?? const []), repository, status, updatedAt, url);
+
+@override String toString() => 'SimpleCheckSuite(after: $after, app: $app, before: $before, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headSha: $headSha, id: $id, nodeId: $nodeId, pullRequests: $pullRequests, repository: $repository, status: $status, updatedAt: $updatedAt, url: $url)';
+
  }

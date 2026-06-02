@@ -57,14 +57,17 @@ PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function(
   product: product != null ? product() : this.product,
   trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostPlansPlanRequest &&
           active == other.active &&
           listEquals(expand, other.expand) &&
           metadata == other.metadata &&
           nickname == other.nickname &&
           product == other.product &&
-          trialPeriodDays == other.trialPeriodDays; } 
-@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), metadata, nickname, product, trialPeriodDays); } 
-@override String toString() { return 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)'; } 
+          trialPeriodDays == other.trialPeriodDays;
+
+@override int get hashCode => Object.hash(active, Object.hashAll(expand ?? const []), metadata, nickname, product, trialPeriodDays);
+
+@override String toString() => 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)';
+
  }

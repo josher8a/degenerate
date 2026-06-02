@@ -18,9 +18,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('netwo
 ZeroTrustGatewayIpNetwork copyWith({String? network}) { return ZeroTrustGatewayIpNetwork(
   network: network ?? this.network,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustGatewayIpNetwork &&
-          network == other.network; } 
-@override int get hashCode { return network.hashCode; } 
-@override String toString() { return 'ZeroTrustGatewayIpNetwork(network: $network)'; } 
+          network == other.network;
+
+@override int get hashCode => network.hashCode;
+
+@override String toString() => 'ZeroTrustGatewayIpNetwork(network: $network)';
+
  }

@@ -19,9 +19,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('total
 PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax copyWith({int? totalTaxAmount}) { return PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(
   totalTaxAmount: totalTaxAmount ?? this.totalTaxAmount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax &&
-          totalTaxAmount == other.totalTaxAmount; } 
-@override int get hashCode { return totalTaxAmount.hashCode; } 
-@override String toString() { return 'PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(totalTaxAmount: $totalTaxAmount)'; } 
+          totalTaxAmount == other.totalTaxAmount;
+
+@override int get hashCode => totalTaxAmount.hashCode;
+
+@override String toString() => 'PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax(totalTaxAmount: $totalTaxAmount)';
+
  }

@@ -30,11 +30,14 @@ RepositoryRuleParamsRequiredReviewerConfiguration copyWith({List<String>? filePa
   minimumApprovals: minimumApprovals ?? this.minimumApprovals,
   reviewer: reviewer ?? this.reviewer,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is RepositoryRuleParamsRequiredReviewerConfiguration &&
           listEquals(filePatterns, other.filePatterns) &&
           minimumApprovals == other.minimumApprovals &&
-          reviewer == other.reviewer; } 
-@override int get hashCode { return Object.hash(Object.hashAll(filePatterns), minimumApprovals, reviewer); } 
-@override String toString() { return 'RepositoryRuleParamsRequiredReviewerConfiguration(filePatterns: $filePatterns, minimumApprovals: $minimumApprovals, reviewer: $reviewer)'; } 
+          reviewer == other.reviewer;
+
+@override int get hashCode => Object.hash(Object.hashAll(filePatterns), minimumApprovals, reviewer);
+
+@override String toString() => 'RepositoryRuleParamsRequiredReviewerConfiguration(filePatterns: $filePatterns, minimumApprovals: $minimumApprovals, reviewer: $reviewer)';
+
  }

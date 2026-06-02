@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPersonalizationDesignObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPersonalizationDesignObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPersonalizationDesignObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPersonalizationDesignObject($value)';
+
  }
 /// Whether this personalization design can be used to create cards.
 @immutable final class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus._(this.value);
@@ -48,10 +51,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is IssuingPersonalizationDesignStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'IssuingPersonalizationDesignStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPersonalizationDesignStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'IssuingPersonalizationDesignStatus($value)';
+
  }
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.
 @immutable final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({required this.created, required this.id, required this.livemode, required this.metadata, required this.object, required this.physicalBundle, required this.preferences, required this.rejectionReasons, required this.status, this.cardLogo, this.carrierText, this.lookupKey, this.name, });
@@ -160,7 +166,7 @@ IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Fun
   rejectionReasons: rejectionReasons ?? this.rejectionReasons,
   status: status ?? this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IssuingPersonalizationDesign &&
           cardLogo == other.cardLogo &&
           carrierText == other.carrierText &&
@@ -174,7 +180,10 @@ IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Fun
           physicalBundle == other.physicalBundle &&
           preferences == other.preferences &&
           rejectionReasons == other.rejectionReasons &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(cardLogo, carrierText, created, id, livemode, lookupKey, metadata, name, object, physicalBundle, preferences, rejectionReasons, status); } 
-@override String toString() { return 'IssuingPersonalizationDesign(cardLogo: $cardLogo, carrierText: $carrierText, created: $created, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object, physicalBundle: $physicalBundle, preferences: $preferences, rejectionReasons: $rejectionReasons, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(cardLogo, carrierText, created, id, livemode, lookupKey, metadata, name, object, physicalBundle, preferences, rejectionReasons, status);
+
+@override String toString() => 'IssuingPersonalizationDesign(cardLogo: $cardLogo, carrierText: $carrierText, created: $created, id: $id, livemode: $livemode, lookupKey: $lookupKey, metadata: $metadata, name: $name, object: $object, physicalBundle: $physicalBundle, preferences: $preferences, rejectionReasons: $rejectionReasons, status: $status)';
+
  }

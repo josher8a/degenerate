@@ -19,10 +19,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is PermissionsUpdateShippingDetails && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'PermissionsUpdateShippingDetails($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PermissionsUpdateShippingDetails && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'PermissionsUpdateShippingDetails($value)';
+
  }
 /// This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object. Can only be set when creating `embedded` or `custom` sessions.
 /// 
@@ -42,9 +45,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 PostCheckoutSessionsRequestPermissions copyWith({PermissionsUpdateShippingDetails? Function()? updateShippingDetails}) { return PostCheckoutSessionsRequestPermissions(
   updateShippingDetails: updateShippingDetails != null ? updateShippingDetails() : this.updateShippingDetails,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PostCheckoutSessionsRequestPermissions &&
-          updateShippingDetails == other.updateShippingDetails; } 
-@override int get hashCode { return updateShippingDetails.hashCode; } 
-@override String toString() { return 'PostCheckoutSessionsRequestPermissions(updateShippingDetails: $updateShippingDetails)'; } 
+          updateShippingDetails == other.updateShippingDetails;
+
+@override int get hashCode => updateShippingDetails.hashCode;
+
+@override String toString() => 'PostCheckoutSessionsRequestPermissions(updateShippingDetails: $updateShippingDetails)';
+
  }

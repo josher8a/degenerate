@@ -19,19 +19,22 @@ final class GetWorkerError$400 extends GetWorkerError {const GetWorkerError$400(
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class GetWorkerError$404 extends GetWorkerError {const GetWorkerError$404(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class GetWorkerError$500 extends GetWorkerError {const GetWorkerError$500(this.error);
 
 final ResponseCommonFailure82 error;
 
-@override int get statusCode { return 500; } 
+@override int get statusCode => 500;
+
  }
 final class GetWorkerError$Unknown extends GetWorkerError {const GetWorkerError$Unknown(this.statusCode, this.rawBody, );
 

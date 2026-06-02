@@ -35,11 +35,14 @@ EvalLogsDataSourceConfig copyWith({CodeInterpreterOutputLogsType? type, Map<Stri
   metadata: metadata != null ? metadata() : this.metadata,
   schema: schema ?? this.schema,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EvalLogsDataSourceConfig &&
           type == other.type &&
           metadata == other.metadata &&
-          schema == other.schema; } 
-@override int get hashCode { return Object.hash(type, metadata, schema); } 
-@override String toString() { return 'EvalLogsDataSourceConfig(type: $type, metadata: $metadata, schema: $schema)'; } 
+          schema == other.schema;
+
+@override int get hashCode => Object.hash(type, metadata, schema);
+
+@override String toString() => 'EvalLogsDataSourceConfig(type: $type, metadata: $metadata, schema: $schema)';
+
  }

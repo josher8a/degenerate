@@ -56,13 +56,16 @@ InternalCard copyWith({String? Function()? brand, String? Function()? country, i
   expYear: expYear != null ? expYear() : this.expYear,
   last4: last4 != null ? last4() : this.last4,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is InternalCard &&
           brand == other.brand &&
           country == other.country &&
           expMonth == other.expMonth &&
           expYear == other.expYear &&
-          last4 == other.last4; } 
-@override int get hashCode { return Object.hash(brand, country, expMonth, expYear, last4); } 
-@override String toString() { return 'InternalCard(brand: $brand, country: $country, expMonth: $expMonth, expYear: $expYear, last4: $last4)'; } 
+          last4 == other.last4;
+
+@override int get hashCode => Object.hash(brand, country, expMonth, expYear, last4);
+
+@override String toString() => 'InternalCard(brand: $brand, country: $country, expMonth: $expMonth, expYear: $expYear, last4: $last4)';
+
  }

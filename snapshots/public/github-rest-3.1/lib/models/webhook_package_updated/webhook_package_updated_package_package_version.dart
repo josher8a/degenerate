@@ -150,7 +150,7 @@ WebhookPackageUpdatedPackagePackageVersion copyWith({WebhooksRelease1Author? Fun
   updatedAt: updatedAt ?? this.updatedAt,
   version: version ?? this.version,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is WebhookPackageUpdatedPackagePackageVersion &&
           author == other.author &&
           body == other.body &&
@@ -176,7 +176,10 @@ WebhookPackageUpdatedPackagePackageVersion copyWith({WebhooksRelease1Author? Fun
           targetCommitish == other.targetCommitish &&
           targetOid == other.targetOid &&
           updatedAt == other.updatedAt &&
-          version == other.version; } 
-@override int get hashCode { return Object.hashAll([author, body, bodyHtml, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), sourceUrl, summary, tagName, targetCommitish, targetOid, updatedAt, version]); } 
-@override String toString() { return 'WebhookPackageUpdatedPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, sourceUrl: $sourceUrl, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)'; } 
+          version == other.version;
+
+@override int get hashCode => Object.hashAll([author, body, bodyHtml, createdAt, description, Object.hashAll(dockerMetadata ?? const []), draft, htmlUrl, id, installationCommand, manifest, Object.hashAll(metadata), name, Object.hashAll(packageFiles), packageUrl, prerelease, release, Object.hashAll(rubygemsMetadata ?? const []), sourceUrl, summary, tagName, targetCommitish, targetOid, updatedAt, version]);
+
+@override String toString() => 'WebhookPackageUpdatedPackagePackageVersion(author: $author, body: $body, bodyHtml: $bodyHtml, createdAt: $createdAt, description: $description, dockerMetadata: $dockerMetadata, draft: $draft, htmlUrl: $htmlUrl, id: $id, installationCommand: $installationCommand, manifest: $manifest, metadata: $metadata, name: $name, packageFiles: $packageFiles, packageUrl: $packageUrl, prerelease: $prerelease, release: $release, rubygemsMetadata: $rubygemsMetadata, sourceUrl: $sourceUrl, summary: $summary, tagName: $tagName, targetCommitish: $targetCommitish, targetOid: $targetOid, updatedAt: $updatedAt, version: $version)';
+
  }

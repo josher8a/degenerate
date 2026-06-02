@@ -38,13 +38,16 @@ ShortBranch copyWith({String? name, ShortBranchCommit? commit, bool? protected, 
   protection: protection != null ? protection() : this.protection,
   protectionUrl: protectionUrl != null ? protectionUrl() : this.protectionUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ShortBranch &&
           name == other.name &&
           commit == other.commit &&
           protected == other.protected &&
           protection == other.protection &&
-          protectionUrl == other.protectionUrl; } 
-@override int get hashCode { return Object.hash(name, commit, protected, protection, protectionUrl); } 
-@override String toString() { return 'ShortBranch(name: $name, commit: $commit, protected: $protected, protection: $protection, protectionUrl: $protectionUrl)'; } 
+          protectionUrl == other.protectionUrl;
+
+@override int get hashCode => Object.hash(name, commit, protected, protection, protectionUrl);
+
+@override String toString() => 'ShortBranch(name: $name, commit: $commit, protected: $protected, protection: $protection, protectionUrl: $protectionUrl)';
+
  }

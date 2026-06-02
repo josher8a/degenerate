@@ -17,7 +17,8 @@ final class AigConfigListEvaluatorsError$400 extends AigConfigListEvaluatorsErro
 
 final AigConfigListEvaluatorsResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class AigConfigListEvaluatorsError$Unknown extends AigConfigListEvaluatorsError {const AigConfigListEvaluatorsError$Unknown(this.statusCode, this.rawBody, );
 

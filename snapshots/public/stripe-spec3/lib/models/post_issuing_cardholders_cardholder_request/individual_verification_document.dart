@@ -31,10 +31,13 @@ IndividualVerificationDocument copyWith({String? Function()? back, String? Funct
   back: back != null ? back() : this.back,
   front: front != null ? front() : this.front,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is IndividualVerificationDocument &&
           back == other.back &&
-          front == other.front; } 
-@override int get hashCode { return Object.hash(back, front); } 
-@override String toString() { return 'IndividualVerificationDocument(back: $back, front: $front)'; } 
+          front == other.front;
+
+@override int get hashCode => Object.hash(back, front);
+
+@override String toString() => 'IndividualVerificationDocument(back: $back, front: $front)';
+
  }

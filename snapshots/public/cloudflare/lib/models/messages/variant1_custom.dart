@@ -22,10 +22,13 @@ Variant1Custom copyWith({Variant1CustomCustom? custom, CustomEntryType? type, })
   custom: custom ?? this.custom,
   type: type ?? this.type,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant1Custom &&
           custom == other.custom &&
-          type == other.type; } 
-@override int get hashCode { return Object.hash(custom, type); } 
-@override String toString() { return 'Variant1Custom(custom: $custom, type: $type)'; } 
+          type == other.type;
+
+@override int get hashCode => Object.hash(custom, type);
+
+@override String toString() => 'Variant1Custom(custom: $custom, type: $type)';
+
  }

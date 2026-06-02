@@ -45,13 +45,16 @@ UrlCitationBody copyWith({String? type, String? url, int? startIndex, int? endIn
   endIndex: endIndex ?? this.endIndex,
   title: title ?? this.title,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is UrlCitationBody &&
           type == other.type &&
           url == other.url &&
           startIndex == other.startIndex &&
           endIndex == other.endIndex &&
-          title == other.title; } 
-@override int get hashCode { return Object.hash(type, url, startIndex, endIndex, title); } 
-@override String toString() { return 'UrlCitationBody(type: $type, url: $url, startIndex: $startIndex, endIndex: $endIndex, title: $title)'; } 
+          title == other.title;
+
+@override int get hashCode => Object.hash(type, url, startIndex, endIndex, title);
+
+@override String toString() => 'UrlCitationBody(type: $type, url: $url, startIndex: $startIndex, endIndex: $endIndex, title: $title)';
+
  }

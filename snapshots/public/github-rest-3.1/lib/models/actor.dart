@@ -45,14 +45,17 @@ Actor copyWith({int? id, String? login, String? Function()? displayLogin, String
   url: url ?? this.url,
   avatarUrl: avatarUrl ?? this.avatarUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Actor &&
           id == other.id &&
           login == other.login &&
           displayLogin == other.displayLogin &&
           gravatarId == other.gravatarId &&
           url == other.url &&
-          avatarUrl == other.avatarUrl; } 
-@override int get hashCode { return Object.hash(id, login, displayLogin, gravatarId, url, avatarUrl); } 
-@override String toString() { return 'Actor(id: $id, login: $login, displayLogin: $displayLogin, gravatarId: $gravatarId, url: $url, avatarUrl: $avatarUrl)'; } 
+          avatarUrl == other.avatarUrl;
+
+@override int get hashCode => Object.hash(id, login, displayLogin, gravatarId, url, avatarUrl);
+
+@override String toString() => 'Actor(id: $id, login: $login, displayLogin: $displayLogin, gravatarId: $gravatarId, url: $url, avatarUrl: $avatarUrl)';
+
  }

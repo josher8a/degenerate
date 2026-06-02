@@ -106,7 +106,7 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
   type: type ?? this.type,
   usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandatePaymentMethodDetails &&
           acssDebit == other.acssDebit &&
           amazonPay == other.amazonPay &&
@@ -125,7 +125,10 @@ MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, M
           revolutPay == other.revolutPay &&
           sepaDebit == other.sepaDebit &&
           type == other.type &&
-          usBankAccount == other.usBankAccount; } 
-@override int get hashCode { return Object.hash(acssDebit, amazonPay, auBecsDebit, bacsDebit, card, cashapp, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, type, usBankAccount); } 
-@override String toString() { return 'MandatePaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, card: $card, cashapp: $cashapp, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, type: $type, usBankAccount: $usBankAccount)'; } 
+          usBankAccount == other.usBankAccount;
+
+@override int get hashCode => Object.hash(acssDebit, amazonPay, auBecsDebit, bacsDebit, card, cashapp, kakaoPay, klarna, krCard, link, naverPay, nzBankAccount, paypal, payto, revolutPay, sepaDebit, type, usBankAccount);
+
+@override String toString() => 'MandatePaymentMethodDetails(acssDebit: $acssDebit, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, card: $card, cashapp: $cashapp, kakaoPay: $kakaoPay, klarna: $klarna, krCard: $krCard, link: $link, naverPay: $naverPay, nzBankAccount: $nzBankAccount, paypal: $paypal, payto: $payto, revolutPay: $revolutPay, sepaDebit: $sepaDebit, type: $type, usBankAccount: $usBankAccount)';
+
  }

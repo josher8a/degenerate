@@ -21,9 +21,12 @@ return errors; }
 MandateAuBecsDebit copyWith({String? url}) { return MandateAuBecsDebit(
   url: url ?? this.url,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MandateAuBecsDebit &&
-          url == other.url; } 
-@override int get hashCode { return url.hashCode; } 
-@override String toString() { return 'MandateAuBecsDebit(url: $url)'; } 
+          url == other.url;
+
+@override int get hashCode => url.hashCode;
+
+@override String toString() => 'MandateAuBecsDebit(url: $url)';
+
  }

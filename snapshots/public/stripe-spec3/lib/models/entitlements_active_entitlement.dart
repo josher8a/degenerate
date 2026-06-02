@@ -17,10 +17,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is EntitlementsActiveEntitlementObject && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'EntitlementsActiveEntitlementObject($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EntitlementsActiveEntitlementObject && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'EntitlementsActiveEntitlementObject($value)';
+
  }
 /// An active entitlement describes access to a feature for a customer.
 @immutable final class EntitlementsActiveEntitlement {const EntitlementsActiveEntitlement({required this.feature, required this.id, required this.livemode, required this.lookupKey, required this.object, });
@@ -72,13 +75,16 @@ EntitlementsActiveEntitlement copyWith({Feature? feature, String? id, bool? live
   lookupKey: lookupKey ?? this.lookupKey,
   object: object ?? this.object,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is EntitlementsActiveEntitlement &&
           feature == other.feature &&
           id == other.id &&
           livemode == other.livemode &&
           lookupKey == other.lookupKey &&
-          object == other.object; } 
-@override int get hashCode { return Object.hash(feature, id, livemode, lookupKey, object); } 
-@override String toString() { return 'EntitlementsActiveEntitlement(feature: $feature, id: $id, livemode: $livemode, lookupKey: $lookupKey, object: $object)'; } 
+          object == other.object;
+
+@override int get hashCode => Object.hash(feature, id, livemode, lookupKey, object);
+
+@override String toString() => 'EntitlementsActiveEntitlement(feature: $feature, id: $id, livemode: $livemode, lookupKey: $lookupKey, object: $object)';
+
  }

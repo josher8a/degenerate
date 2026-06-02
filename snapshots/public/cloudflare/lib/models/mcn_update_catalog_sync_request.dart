@@ -30,12 +30,15 @@ McnUpdateCatalogSyncRequest copyWith({String? Function()? description, String? F
   policy: policy != null ? policy() : this.policy,
   updateMode: updateMode != null ? updateMode() : this.updateMode,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is McnUpdateCatalogSyncRequest &&
           description == other.description &&
           name == other.name &&
           policy == other.policy &&
-          updateMode == other.updateMode; } 
-@override int get hashCode { return Object.hash(description, name, policy, updateMode); } 
-@override String toString() { return 'McnUpdateCatalogSyncRequest(description: $description, name: $name, policy: $policy, updateMode: $updateMode)'; } 
+          updateMode == other.updateMode;
+
+@override int get hashCode => Object.hash(description, name, policy, updateMode);
+
+@override String toString() => 'McnUpdateCatalogSyncRequest(description: $description, name: $name, policy: $policy, updateMode: $updateMode)';
+
  }

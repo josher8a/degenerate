@@ -31,10 +31,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is HavingsOperation && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'HavingsOperation($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HavingsOperation && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'HavingsOperation($value)';
+
  }
 @immutable final class Havings {const Havings({required this.key, required this.operation, required this.value, });
 
@@ -63,11 +66,14 @@ Havings copyWith({String? key, HavingsOperation? operation, double? value, }) { 
   operation: operation ?? this.operation,
   value: value ?? this.value,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Havings &&
           key == other.key &&
           operation == other.operation &&
-          value == other.value; } 
-@override int get hashCode { return Object.hash(key, operation, value); } 
-@override String toString() { return 'Havings(key: $key, operation: $operation, value: $value)'; } 
+          value == other.value;
+
+@override int get hashCode => Object.hash(key, operation, value);
+
+@override String toString() => 'Havings(key: $key, operation: $operation, value: $value)';
+
  }

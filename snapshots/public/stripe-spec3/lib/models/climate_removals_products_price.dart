@@ -31,11 +31,14 @@ ClimateRemovalsProductsPrice copyWith({int? amountFees, int? amountSubtotal, int
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,
   amountTotal: amountTotal ?? this.amountTotal,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ClimateRemovalsProductsPrice &&
           amountFees == other.amountFees &&
           amountSubtotal == other.amountSubtotal &&
-          amountTotal == other.amountTotal; } 
-@override int get hashCode { return Object.hash(amountFees, amountSubtotal, amountTotal); } 
-@override String toString() { return 'ClimateRemovalsProductsPrice(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal)'; } 
+          amountTotal == other.amountTotal;
+
+@override int get hashCode => Object.hash(amountFees, amountSubtotal, amountTotal);
+
+@override String toString() => 'ClimateRemovalsProductsPrice(amountFees: $amountFees, amountSubtotal: $amountSubtotal, amountTotal: $amountTotal)';
+
  }

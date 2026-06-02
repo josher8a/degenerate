@@ -20,10 +20,13 @@ MuteAllParticipantsResponseData copyWith({String? Function()? action, double? Fu
   action: action != null ? action() : this.action,
   mutedParticipantsCount: mutedParticipantsCount != null ? mutedParticipantsCount() : this.mutedParticipantsCount,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is MuteAllParticipantsResponseData &&
           action == other.action &&
-          mutedParticipantsCount == other.mutedParticipantsCount; } 
-@override int get hashCode { return Object.hash(action, mutedParticipantsCount); } 
-@override String toString() { return 'MuteAllParticipantsResponseData(action: $action, mutedParticipantsCount: $mutedParticipantsCount)'; } 
+          mutedParticipantsCount == other.mutedParticipantsCount;
+
+@override int get hashCode => Object.hash(action, mutedParticipantsCount);
+
+@override String toString() => 'MuteAllParticipantsResponseData(action: $action, mutedParticipantsCount: $mutedParticipantsCount)';
+
  }

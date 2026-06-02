@@ -44,13 +44,16 @@ CreatePortalsRequestServers copyWith({bool Function()? defaultDisabled, bool Fun
   updatedPrompts: updatedPrompts != null ? updatedPrompts() : this.updatedPrompts,
   updatedTools: updatedTools != null ? updatedTools() : this.updatedTools,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CreatePortalsRequestServers &&
           defaultDisabled == other.defaultDisabled &&
           onBehalf == other.onBehalf &&
           serverId == other.serverId &&
           listEquals(updatedPrompts, other.updatedPrompts) &&
-          listEquals(updatedTools, other.updatedTools); } 
-@override int get hashCode { return Object.hash(defaultDisabled, onBehalf, serverId, Object.hashAll(updatedPrompts ?? const []), Object.hashAll(updatedTools ?? const [])); } 
-@override String toString() { return 'CreatePortalsRequestServers(defaultDisabled: $defaultDisabled, onBehalf: $onBehalf, serverId: $serverId, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)'; } 
+          listEquals(updatedTools, other.updatedTools);
+
+@override int get hashCode => Object.hash(defaultDisabled, onBehalf, serverId, Object.hashAll(updatedPrompts ?? const []), Object.hashAll(updatedTools ?? const []));
+
+@override String toString() => 'CreatePortalsRequestServers(defaultDisabled: $defaultDisabled, onBehalf: $onBehalf, serverId: $serverId, updatedPrompts: $updatedPrompts, updatedTools: $updatedTools)';
+
  }

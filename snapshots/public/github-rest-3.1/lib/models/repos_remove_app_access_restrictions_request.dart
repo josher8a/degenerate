@@ -24,9 +24,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apps'
 ReposRemoveAppAccessRestrictionsRequest copyWith({List<String>? apps}) { return ReposRemoveAppAccessRestrictionsRequest(
   apps: apps ?? this.apps,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is ReposRemoveAppAccessRestrictionsRequest &&
-          listEquals(apps, other.apps); } 
-@override int get hashCode { return Object.hashAll(apps); } 
-@override String toString() { return 'ReposRemoveAppAccessRestrictionsRequest(apps: $apps)'; } 
+          listEquals(apps, other.apps);
+
+@override int get hashCode => Object.hashAll(apps);
+
+@override String toString() => 'ReposRemoveAppAccessRestrictionsRequest(apps: $apps)';
+
  }

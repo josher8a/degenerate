@@ -34,11 +34,14 @@ CustomHostnameForAZoneCreateCustomHostnameRequest copyWith({Map<String, String>?
   hostname: hostname ?? this.hostname,
   ssl: ssl != null ? ssl() : this.ssl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is CustomHostnameForAZoneCreateCustomHostnameRequest &&
           customMetadata == other.customMetadata &&
           hostname == other.hostname &&
-          ssl == other.ssl; } 
-@override int get hashCode { return Object.hash(customMetadata, hostname, ssl); } 
-@override String toString() { return 'CustomHostnameForAZoneCreateCustomHostnameRequest(customMetadata: $customMetadata, hostname: $hostname, ssl: $ssl)'; } 
+          ssl == other.ssl;
+
+@override int get hashCode => Object.hash(customMetadata, hostname, ssl);
+
+@override String toString() => 'CustomHostnameForAZoneCreateCustomHostnameRequest(customMetadata: $customMetadata, hostname: $hostname, ssl: $ssl)';
+
  }

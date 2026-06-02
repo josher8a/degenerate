@@ -35,11 +35,14 @@ AccessMfaConfig copyWith({List<AllowedAuthenticators>? Function()? allowedAuthen
   mfaDisabled: mfaDisabled != null ? mfaDisabled() : this.mfaDisabled,
   sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is AccessMfaConfig &&
           listEquals(allowedAuthenticators, other.allowedAuthenticators) &&
           mfaDisabled == other.mfaDisabled &&
-          sessionDuration == other.sessionDuration; } 
-@override int get hashCode { return Object.hash(Object.hashAll(allowedAuthenticators ?? const []), mfaDisabled, sessionDuration); } 
-@override String toString() { return 'AccessMfaConfig(allowedAuthenticators: $allowedAuthenticators, mfaDisabled: $mfaDisabled, sessionDuration: $sessionDuration)'; } 
+          sessionDuration == other.sessionDuration;
+
+@override int get hashCode => Object.hash(Object.hashAll(allowedAuthenticators ?? const []), mfaDisabled, sessionDuration);
+
+@override String toString() => 'AccessMfaConfig(allowedAuthenticators: $allowedAuthenticators, mfaDisabled: $mfaDisabled, sessionDuration: $sessionDuration)';
+
  }

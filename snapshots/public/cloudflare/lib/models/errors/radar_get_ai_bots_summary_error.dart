@@ -17,7 +17,8 @@ final class RadarGetAiBotsSummaryError$400 extends RadarGetAiBotsSummaryError {c
 
 final RadarGetAiBotsSummaryResponse400 error;
 
-@override int get statusCode { return 400; } 
+@override int get statusCode => 400;
+
  }
 final class RadarGetAiBotsSummaryError$Unknown extends RadarGetAiBotsSummaryError {const RadarGetAiBotsSummaryError$Unknown(this.statusCode, this.rawBody, );
 

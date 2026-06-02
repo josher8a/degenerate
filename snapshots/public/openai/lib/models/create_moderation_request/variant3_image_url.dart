@@ -24,10 +24,13 @@ Variant3ImageUrl copyWith({ChatCompletionRequestMessageContentPartImageType? typ
   type: type ?? this.type,
   imageUrl: imageUrl ?? this.imageUrl,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Variant3ImageUrl &&
           type == other.type &&
-          imageUrl == other.imageUrl; } 
-@override int get hashCode { return Object.hash(type, imageUrl); } 
-@override String toString() { return 'Variant3ImageUrl(type: $type, imageUrl: $imageUrl)'; } 
+          imageUrl == other.imageUrl;
+
+@override int get hashCode => Object.hash(type, imageUrl);
+
+@override String toString() => 'Variant3ImageUrl(type: $type, imageUrl: $imageUrl)';
+
  }

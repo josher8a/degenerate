@@ -20,10 +20,13 @@ final String value;
 String toJson() { return value; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnssecEditDnssecStatusRequestStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'DnssecEditDnssecStatusRequestStatus($value)'; } 
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DnssecEditDnssecStatusRequestStatus && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DnssecEditDnssecStatusRequestStatus($value)';
+
  }
 @immutable final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });
 
@@ -77,12 +80,15 @@ DnssecEditDnssecStatusRequest copyWith({DnssecDnssecMultiSigner? Function()? dns
   dnssecUseNsec3: dnssecUseNsec3 != null ? dnssecUseNsec3() : this.dnssecUseNsec3,
   status: status != null ? status() : this.status,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is DnssecEditDnssecStatusRequest &&
           dnssecMultiSigner == other.dnssecMultiSigner &&
           dnssecPresigned == other.dnssecPresigned &&
           dnssecUseNsec3 == other.dnssecUseNsec3 &&
-          status == other.status; } 
-@override int get hashCode { return Object.hash(dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, status); } 
-@override String toString() { return 'DnssecEditDnssecStatusRequest(dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, status: $status)'; } 
+          status == other.status;
+
+@override int get hashCode => Object.hash(dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, status);
+
+@override String toString() => 'DnssecEditDnssecStatusRequest(dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, status: $status)';
+
  }

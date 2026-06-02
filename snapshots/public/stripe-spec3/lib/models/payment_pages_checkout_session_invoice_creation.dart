@@ -23,10 +23,13 @@ PaymentPagesCheckoutSessionInvoiceCreation copyWith({bool? enabled, PaymentPages
   enabled: enabled ?? this.enabled,
   invoiceData: invoiceData ?? this.invoiceData,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is PaymentPagesCheckoutSessionInvoiceCreation &&
           enabled == other.enabled &&
-          invoiceData == other.invoiceData; } 
-@override int get hashCode { return Object.hash(enabled, invoiceData); } 
-@override String toString() { return 'PaymentPagesCheckoutSessionInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)'; } 
+          invoiceData == other.invoiceData;
+
+@override int get hashCode => Object.hash(enabled, invoiceData);
+
+@override String toString() => 'PaymentPagesCheckoutSessionInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)';
+
  }

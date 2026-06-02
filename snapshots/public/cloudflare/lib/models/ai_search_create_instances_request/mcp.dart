@@ -21,10 +21,13 @@ Mcp copyWith({String Function()? description, bool Function()? disabled, }) { re
   description: description != null ? description() : this.description,
   disabled: disabled != null ? disabled() : this.disabled,
 ); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
+@override bool operator ==(Object other) => identical(this, other) ||
       other is Mcp &&
           description == other.description &&
-          disabled == other.disabled; } 
-@override int get hashCode { return Object.hash(description, disabled); } 
-@override String toString() { return 'Mcp(description: $description, disabled: $disabled)'; } 
+          disabled == other.disabled;
+
+@override int get hashCode => Object.hash(description, disabled);
+
+@override String toString() => 'Mcp(description: $description, disabled: $disabled)';
+
  }

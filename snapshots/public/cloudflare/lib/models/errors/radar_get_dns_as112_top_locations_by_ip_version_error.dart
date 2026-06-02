@@ -17,7 +17,8 @@ final class RadarGetDnsAs112TopLocationsByIpVersionError$404 extends RadarGetDns
 
 final RadarGetDnsAs112TopLocationsByIpVersionResponse404 error;
 
-@override int get statusCode { return 404; } 
+@override int get statusCode => 404;
+
  }
 final class RadarGetDnsAs112TopLocationsByIpVersionError$Unknown extends RadarGetDnsAs112TopLocationsByIpVersionError {const RadarGetDnsAs112TopLocationsByIpVersionError$Unknown(this.statusCode, this.rawBody, );
 
